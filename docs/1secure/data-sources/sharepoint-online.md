@@ -1,3 +1,9 @@
+---
+title: "Sharepoint Online Auditing In Netwrix 1Secure"
+sidebar_label: "Sharepoint Online Auditing"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # SharePoint Online Auditing
 
 Netwrix 1Secure allows you to audit Office 365 organizations that have established modern

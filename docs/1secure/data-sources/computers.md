@@ -1,3 +1,9 @@
+---
+title: "Computer Auditing In Netwrix 1Secure Guide"
+sidebar_label: "Computer Auditing"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Computer Auditing
 
 Before adding a Computer source, plan for the account that will be used for data collection. You

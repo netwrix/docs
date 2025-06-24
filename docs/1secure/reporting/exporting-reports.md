@@ -1,3 +1,9 @@
+---
+title: "Export A Report Or Investigation Results"
+sidebar_label: "Export A Report Or"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Export a Report or Investigation Results
 
 You can export the results of a new investigation or a report to a file for easier review. The

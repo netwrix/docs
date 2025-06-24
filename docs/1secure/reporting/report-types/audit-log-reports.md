@@ -1,3 +1,9 @@
+---
+title: "Generate A Self-audit Report In Netwrix 1Secure"
+sidebar_label: "Generate A Self-audit Report"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Generate a Self-Audit Report
 
 Built-in Netwrix 1Secure self-audit allows you to track changes to the product configuration,

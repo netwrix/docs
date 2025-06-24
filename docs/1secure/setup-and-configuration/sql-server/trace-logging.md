@@ -1,3 +1,9 @@
+---
+title: "Configure Trace Logging In Netwrix 1Secure"
+sidebar_label: "Configure Trace Logging"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Configure Trace Logging
 
 By default, the SQL Server trace logs are stored to the predefined location (depending on the SQL

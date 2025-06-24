@@ -1,3 +1,9 @@
+---
+title: "Data Collecting Account In Netwrix 1Secure"
+sidebar_label: "Data Collecting Account"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Data Collecting Account
 
 The data collecting account is a service account that Netwrix 1Secure uses to collect audit data

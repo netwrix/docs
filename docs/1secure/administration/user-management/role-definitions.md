@@ -1,3 +1,9 @@
+---
+title: "Permissions By Role In Netwrix 1Secure"
+sidebar_label: "Permissions By Role"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Permissions by Role
 
 The following tables describe permissions by role for each type of screen or action.

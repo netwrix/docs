@@ -1,3 +1,9 @@
+---
+title: "Configure The Back Up Files And Directories Policy"
+sidebar_label: "Configure The Back Up"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Configure the Back up Files and Directories Policy
 
 Configure this Back up Files and Directories policy via the **Local Security Policy Snap-in** or

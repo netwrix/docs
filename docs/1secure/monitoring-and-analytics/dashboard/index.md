@@ -1,3 +1,9 @@
+---
+title: "1Secure Dashboard In Netwrix 1Secure Guide"
+sidebar_label: "1Secure Dashboard"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # 1Secure Dashboard
 
 The Netwrix 1Secure dashboard provides an intuitive, single-pane-of-glass view of your clients

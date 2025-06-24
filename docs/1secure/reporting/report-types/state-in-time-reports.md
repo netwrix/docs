@@ -1,3 +1,9 @@
+---
+title: "State In Time Risks Reports In Netwrix 1Secure"
+sidebar_label: "State In Time Risks"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # State In Time Risks Reports
 
 The state-in-time reports allow you to generate reports on your environment's state at a specific

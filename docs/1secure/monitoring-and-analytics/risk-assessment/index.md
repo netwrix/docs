@@ -1,3 +1,9 @@
+---
+title: "Manage Risk Profiles In Netwrix 1Secure"
+sidebar_label: "Manage Risk Profiles"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Manage Risk Profiles
 
 In Netwrix 1Secure, the Managed Service Provider (MSP) can create risk profiles. A risk profile

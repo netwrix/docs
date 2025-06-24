@@ -1,3 +1,9 @@
+---
+title: "Configure Advanced Audit Policies In Netwrix 1Secure"
+sidebar_label: "Configure Advanced Audit Policies"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Configure Advanced Audit Policies
 
 Configure advanced audit policies to limit the range of events tracked and recorded by the product,

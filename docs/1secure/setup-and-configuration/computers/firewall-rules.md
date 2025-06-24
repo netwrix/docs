@@ -1,3 +1,9 @@
+---
+title: "Configure Windows Firewall Inbound Connection Rules"
+sidebar_label: "Configure Windows Firewall Inbound"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Configure Windows Firewall Inbound Connection Rules
 
 You need to configure the inbound connection rules in Windows Firewall on each target computer,

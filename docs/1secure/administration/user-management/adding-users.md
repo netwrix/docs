@@ -1,3 +1,9 @@
+---
+title: "Add Users In Netwrix 1Secure Guide"
+sidebar_label: "Add Users"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Add Users
 
 After you added the organization to your system, you may want to add users as part of your

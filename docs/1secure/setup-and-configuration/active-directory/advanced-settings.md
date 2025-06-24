@@ -1,3 +1,9 @@
+---
+title: "Group Policy Management Console In Netwrix 1Secure"
+sidebar_label: "Group Policy Management Console"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Group Policy Management Console
 
 Group Policy Management Console is an administrative tool for managing Group Policy across the

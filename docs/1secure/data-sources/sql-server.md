@@ -1,3 +1,9 @@
+---
+title: "Add A Source And Connectors For Sql Server"
+sidebar_label: "Add A Source And"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Add a Source and Connectors for SQL Server
 
 Follow the steps to add a SQL Server data source and connector to your organization.

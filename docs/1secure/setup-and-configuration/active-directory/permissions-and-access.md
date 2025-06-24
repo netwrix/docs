@@ -1,3 +1,9 @@
+---
+title: "Assigning Management Roles In Netwrix 1Secure"
+sidebar_label: "Assigning Management Roles"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Assigning Management Roles
 
 Perform this procedure only if the account selected for data collection is not a member of the

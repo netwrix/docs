@@ -1,3 +1,9 @@
+---
+title: "Microsoft 365 Permissions In Netwrix 1Secure"
+sidebar_label: "Microsoft 365 Permissions"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Microsoft 365 Permissions
 
 This page lists the permissions required for an application you registered in Microsoft Entra ID to

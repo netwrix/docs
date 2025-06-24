@@ -1,3 +1,9 @@
+---
+title: "Logon Activity Auditing In Netwrix 1Secure"
+sidebar_label: "Logon Activity Auditing"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Logon Activity Auditing
 
 Before you start adding the logon activity connector in your domain, plan for the domain account

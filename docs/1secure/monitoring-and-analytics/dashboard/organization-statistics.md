@@ -1,3 +1,9 @@
+---
+title: "Organization Statistics In Netwrix 1Secure Guide"
+sidebar_label: "Organization Statistics"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Organization Statistics
 
 You can view various statistics related to an organization, such as health status, risk level,

@@ -1,3 +1,9 @@
+---
+title: "Settings For Non-owner Mailbox Access Audit: Using Application"
+sidebar_label: "Settings For Non-owner Mailbox"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Settings for Non-Owner Mailbox Access Audit: Using Application
 
 To prepare for non-owner mailbox access auditing in the Exchange Online organization, you will need

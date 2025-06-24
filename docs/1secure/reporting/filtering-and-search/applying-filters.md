@@ -1,3 +1,9 @@
+---
+title: "Apply Filters In Netwrix 1Secure Guide"
+sidebar_label: "Apply Filters"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Apply Filters
 
 Filters are used to narrow your search results. You can create your own filters or select one of the

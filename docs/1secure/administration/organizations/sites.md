@@ -1,3 +1,9 @@
+---
+title: "Add Sites To An Organization In Netwrix 1Secure"
+sidebar_label: "Add Sites To An"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Add Sites to an Organization
 
 Sites are used to signify physical groupings within the organization. The feature is helpful for

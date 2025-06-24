@@ -1,3 +1,9 @@
+---
+title: "Permissions For Sql Server Auditing In Netwrix 1Secure"
+sidebar_label: "Permissions For Sql Server"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Permissions for SQL Server Auditing
 
 Before you create a monitoring plan to audit your SQL Server, make sure the account to be used for

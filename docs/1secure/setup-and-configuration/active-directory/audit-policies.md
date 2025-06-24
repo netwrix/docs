@@ -1,3 +1,9 @@
+---
+title: "Active Directory Auditing In Netwrix 1Secure"
+sidebar_label: "Active Directory Auditing"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Active Directory Auditing
 
 To collect data from Active Directory, you need an account with specific permissions. The following

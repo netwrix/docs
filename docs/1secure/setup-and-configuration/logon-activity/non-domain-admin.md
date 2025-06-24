@@ -1,3 +1,9 @@
+---
+title: "Configure Non-administrative Account To Collect Logon Activity"
+sidebar_label: "Configure Non-administrative Account To"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Configure Non-Administrative Account to Collect Logon Activity
 
 This section contains instructions on how to configure an account to collect Logon Activity with

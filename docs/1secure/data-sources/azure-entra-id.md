@@ -1,3 +1,9 @@
+---
+title: "Microsoft Entra Id Auditing In Netwrix 1Secure"
+sidebar_label: "Microsoft Entra Id Auditing"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Microsoft Entra ID Auditing
 
 The product supports Microsoft Entra ID  (formerly Azure AD) provided within Microsoft Office 365.

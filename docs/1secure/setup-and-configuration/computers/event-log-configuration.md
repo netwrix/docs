@@ -1,3 +1,9 @@
+---
+title: "Configure Event Log Size And Retention Settings"
+sidebar_label: "Configure Event Log Size"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Configure Event Log Size and Retention Settings
 
 The procedure below describes one of the possible ways to adjust event log settings. If you have

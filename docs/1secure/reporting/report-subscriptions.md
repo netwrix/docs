@@ -1,3 +1,9 @@
+---
+title: "Subscriptions In Netwrix 1Secure Guide"
+sidebar_label: "Subscriptions"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Subscriptions
 
 The Subscriptions feature allows Managed Service Providers (MSPs) to schedule certain reports

@@ -1,3 +1,9 @@
+---
+title: "Risk Assessment Dashboard In Netwrix 1Secure"
+sidebar_label: "Risk Assessment Dashboard"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Risk Assessment Dashboard
 
 The Risk Assessment dashboard is designed as a diagnostic tool for Managed Service Providers (MSPs)

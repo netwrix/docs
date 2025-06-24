@@ -1,3 +1,9 @@
+---
+title: "Configure Domain For Monitoring Active Directory"
+sidebar_label: "Configure Domain For Monitoring"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Configure Domain for Monitoring Active Directory
 
 You can configure your Active Directory domain for monitoring in one of the following ways:

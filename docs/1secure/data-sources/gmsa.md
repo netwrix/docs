@@ -1,3 +1,9 @@
+---
+title: "Using Group Managed Service Account (gmsa)"
+sidebar_label: "Using Group Managed Service"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Using Group Managed Service Account (gMSA)
 
 Netwrix 1Secure supports using Group Managed Service Accounts (gMSA) for data collection and

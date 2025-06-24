@@ -1,3 +1,9 @@
+---
+title: "Add A Source And Connectors For Active Directory"
+sidebar_label: "Add A Source And"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # Add a Source and Connectors for Active Directory
 
 Follow the steps to add an Active Directory data source and connector(s) to your organization.

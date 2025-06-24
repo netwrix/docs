@@ -1,3 +1,9 @@
+---
+title: "App Registration And Configuration In Microsoft Entra Id"
+sidebar_label: "App Registration And Configuration"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # App Registration and Configuration in Microsoft Entra ID
 
 This topic explains how to configure an app in Microsoft Entra ID (formerly Azure AD) to audit

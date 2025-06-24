@@ -1,3 +1,9 @@
+---
+title: "First Login To 1Secure In Netwrix 1Secure"
+sidebar_label: "First Login To 1Secure"
+description: "Learn how to configure and manage Netwrix 1Secure for hybrid security. This guide covers setup, monitoring, and analytics to help secure cloud and on prem data"
+---
+
 # First Login to 1Secure
 
 This topic describes how an MSP can access the 1Secure tenant for the first time, activate their
