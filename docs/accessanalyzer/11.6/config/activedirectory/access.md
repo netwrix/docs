@@ -24,14 +24,14 @@ and permissions in a Microsoft® Active Directory® environment described in thi
 subtopics. This solution employs the following data collectors to scan for groups, users, computers,
 passwords, permissions, group policies, and domain information:
 
-- [ADInventory Data Collector](/docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/overview.md)
-- [ActiveDirectory Data Collector](/docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/activedirectory/overview.md)
-- [ADActivity Data Collector](/docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adactivity/overview.md)
-- [GroupPolicy Data Collector](/docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/grouppolicy/overview.md)
-- [LDAP Data Collector](/docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/ldap.md)
-- [PasswordSecurity Data Collector](/docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/passwordsecurity/overview.md)
-- [PowerShell Data Collector](/docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/powershell/overview.md)
-- [Registry Data Collector](/docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/registry.md)
+- [ADInventory Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/adinventory/overview.md)
+- [ActiveDirectory Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/activedirectory/overview.md)
+- [ADActivity Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/adactivity/overview.md)
+- [GroupPolicy Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/grouppolicy/overview.md)
+- [LDAP Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/ldap.md)
+- [PasswordSecurity Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/passwordsecurity/overview.md)
+- [PowerShell Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/powershell/overview.md)
+- [Registry Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/registry.md)
 
 ## Permissions
 

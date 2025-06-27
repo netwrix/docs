@@ -3,7 +3,7 @@
 Permissions required for Enterprise Auditor to execute Access Auditing (SPAA) and/or Sensitive Data
 Discovery Auditing scans on a Windows file server are dependent upon the Scan Mode Option selected.
 See the
-[File System Supported Platforms](/docs/accessanalyzer/11.6/accessanalyzer/requirements/target/filesystems.md)
+[File System Supported Platforms](/docs/accessanalyzer/11.6/requirements/target/filesystems.md)
 topic for additional information.
 
 However, additional considerations are needed when targeting a Windows File System Clusters or DFS
@@ -21,15 +21,15 @@ Configure credentials on all cluster nodes according to the Windows Operating Sy
 permissions for the desired scan mode with these additional considerations:
 
 - For
-  [Applet Mode](/docs/accessanalyzer/11.6/accessanalyzer/requirements/solutions/filesystem/scanoptions.md#applet-mode)
+  [Applet Mode](/docs/accessanalyzer/11.6/requirements/solutions/filesystem/scanoptions.md#applet-mode)
   and
-  [Proxy Mode with Applet](/docs/accessanalyzer/11.6/accessanalyzer/requirements/solutions/filesystem/scanoptions.md#proxy-mode-with-applet):
+  [Proxy Mode with Applet](/docs/accessanalyzer/11.6/requirements/solutions/filesystem/scanoptions.md#proxy-mode-with-applet):
 
     - Applet will be deployed to each node
     - Credential used in the Connection Profile must have rights to deploy the applet to each node
 
 - For
-  [Proxy Mode as a Service](/docs/accessanalyzer/11.6/accessanalyzer/requirements/solutions/filesystem/scanoptions.md#proxy-mode-as-a-service):
+  [Proxy Mode as a Service](/docs/accessanalyzer/11.6/requirements/solutions/filesystem/scanoptions.md#proxy-mode-as-a-service):
 
     - Proxy Service must be installed on each node
     - For Sensitive Data Discovery Auditing scans, the Sensitive Data Discovery Add-on must be
@@ -53,7 +53,7 @@ host entries must have the name of the cluster in the `WinCluster` column in the
 data. This may need to be updated manually.
 
 See the View/Edit section of the
-[Host Management Activities](/docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/overview.md)
+[Host Management Activities](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/overview.md)
 topic for additional information on host inventory.
 
 - For FSAA and SDD scans, configure a custom host list to target the cluster's Role Server.
@@ -91,9 +91,9 @@ The credential used Enterprise Auditor to read the activity log files must have:
 - Membership in the local Administrators group
 
 The FileSystemAccess Data Collector needs to be specially configured to run the
-[1-FSAC System Scans Job](/docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/collection/1-fsac_system_scans.md)
+[1-FSAC System Scans Job](/docs/accessanalyzer/11.6/solutions/filesystem/collection/1-fsac_system_scans.md)
 against a Windows File System Cluster. On the
-[FSAA: Activity Settings](/docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/activitysettings.md),
+[FSAA: Activity Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/activitysettings.md),
 configure the Host Mapping option. This provides a method for mapping between the target host and
 the hosts where activity logs reside. However, this feature requires **advanced SQL scripting
 knowledge** to build the query.

@@ -8,7 +8,7 @@ scans.
 ## Access & Sensitive Data Auditing Permissions
 
 - Permissions vary based on the Scan Mode selected and target environment. See the
-  [SharePoint Support](/docs/accessanalyzer/11.6/accessanalyzer/requirements/target/sharepoint.md)
+  [SharePoint Support](/docs/accessanalyzer/11.6/requirements/target/sharepoint.md)
   topic for additional information.
 
 See the
@@ -18,13 +18,13 @@ topic for instructions.
 **NOTE:** You can use the **SP_RegisterAzureAppAuth** instant job to make the configuration for
 SharePoint Online easier. This job registers the necessary Microsoft Entra ID application and
 provisions it with the required permissions. See the
-[SP_RegisterAzureAppAuth Job](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/sp_registerazureappauth.md)
+[SP_RegisterAzureAppAuth Job](/docs/accessanalyzer/11.6/admin/jobs/instantjobs/sp_registerazureappauth.md)
 topic for additional information.
 
 ## Access & Sensitive Data Auditing Port Requirements
 
 - Ports vary based on the Scan Mode selected and target environment. See the
-  [SharePoint Scan Options](/docs/accessanalyzer/11.6/accessanalyzer/requirements/solutions/sharepoint/scanoptions.md)
+  [SharePoint Scan Options](/docs/accessanalyzer/11.6/requirements/solutions/sharepoint/scanoptions.md)
   topic for additional information.
 
 ## Activity Auditing Permissions

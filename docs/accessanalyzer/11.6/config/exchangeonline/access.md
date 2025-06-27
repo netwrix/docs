@@ -62,7 +62,7 @@ configure modern authentication for Exchange Online. It requires:
         ```
 
 See the
-[EX_RegisterAzureAppAuth Job](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/ex_registerazureappauth.md)
+[EX_RegisterAzureAppAuth Job](/docs/accessanalyzer/11.6/admin/jobs/instantjobs/ex_registerazureappauth.md)
 topic for additional information.
 
 ## Prerequisites
@@ -204,7 +204,7 @@ Optionally add a Description.
 
 The Certificate Thumbprint of this uploaded certificate is needed for the Enterprise Auditor
 Connection Profile. See the
-[Exchange Modern Authentication for User Credentials](/docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/exchangemodernauth.md)
+[Exchange Modern Authentication for User Credentials](/docs/accessanalyzer/11.6/admin/settings/connection/profile/exchangemodernauth.md)
 topic for additional information.
 
 ## Grant Permissions to the Registered Application
@@ -259,7 +259,7 @@ names** to open the Custom domain names list.
 **Step 4 –** Save this value in a text file.
 
 This is needed for the Enterprise Auditor Connection Profile. See the
-[Exchange Modern Authentication for User Credentials](/docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/exchangemodernauth.md)
+[Exchange Modern Authentication for User Credentials](/docs/accessanalyzer/11.6/admin/settings/connection/profile/exchangemodernauth.md)
 topic for additional information. Next identify the application’s Client ID.
 
 ## Identify the Client ID
@@ -279,5 +279,5 @@ list.
 **Step 3 –** Save this value in a text file.
 
 This is needed for the Enterprise Auditor Connection Profile. See the
-[Exchange Modern Authentication for User Credentials](/docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/exchangemodernauth.md)
+[Exchange Modern Authentication for User Credentials](/docs/accessanalyzer/11.6/admin/settings/connection/profile/exchangemodernauth.md)
 topic for additional information.
