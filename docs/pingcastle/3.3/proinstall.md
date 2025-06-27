@@ -1,4 +1,6 @@
-# Description
+# PingCastle Pro Installation and Configuration
+
+## Description
 
 PingCastle Pro is a tool designed to improve and follow the Active
 Directory overall security level. This software has been developed to be

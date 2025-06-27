@@ -1,4 +1,6 @@
-# Description
+# PingCastle Enterprise Installation and Configuration
+
+## Description
 
 PingCastle Enterprise is a tool designed to improve and follow the
 Active Directory overall security level. This software has been

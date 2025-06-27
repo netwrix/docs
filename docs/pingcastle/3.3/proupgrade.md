@@ -1,4 +1,6 @@
-# Before proceeding to the upgrade
+# PingCastle Pro Upgrade Guide
+
+## Before proceeding to the upgrade
 
 Version check
 

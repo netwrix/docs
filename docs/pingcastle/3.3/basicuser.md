@@ -1,4 +1,6 @@
-# About PingCastle
+# PingCastle Standard and Basic User Guide
+
+## About PingCastle
 
 "For CISO, by CISO"
 
