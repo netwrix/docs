@@ -11,7 +11,7 @@ and select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Task for the AD_DuplicateGroups Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/groups/duplicategroupsanalysis.webp)
+![Analysis Task for the AD_DuplicateGroups Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/groups/duplicategroupsanalysis.webp)
 
 The default analysis tasks are:
 

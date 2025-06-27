@@ -11,7 +11,7 @@ Navigate to the **AWS** > **5.Policies** > **AWS_SensitivePolicies** > **Configu
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AWS_SensitivePolicies Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/aws/policies/sensitivepoliciesanalysis.webp)
+![Analysis Tasks for the AWS_SensitivePolicies Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/aws/policies/sensitivepoliciesanalysis.webp)
 
 The following analysis tasks are selected by default:
 

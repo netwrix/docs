@@ -11,7 +11,7 @@ Activity** > **FS_DeniedActivity** > **Configure** node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FS_DeniedActivity Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/activity/suspiciousactivity/deniedactivityanalysis.webp)
+![Analysis Tasks for the FS_DeniedActivity Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/activity/suspiciousactivity/deniedactivityanalysis.webp)
 
 The following analysis tasks are selected by default:
 

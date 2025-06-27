@@ -11,7 +11,7 @@ Analysis to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis task(s). The analysis task(s) are
 preconfigured for this job.
 
-![Analysis Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/sql/usersroles/sqljobgroup28.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/sql/usersroles/sqljobgroup28.webp)
 
 The default analysis tasks are:
 

@@ -10,7 +10,7 @@ topic for additional information.
 and the
 [SharePoint Solution](/docs/accessanalyzer/11.6/solutions/sharepoint/overview.md).
 
-![Sensitive Data settings](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/upgrade/sensitivedata.webp)
+![Sensitive Data settings](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/upgrade/sensitivedata.webp)
 
 The tabs in the Sensitive Data node are:
 

@@ -56,7 +56,7 @@ Manage_. Also, the test ticket will have a sample attachment (_TestAttachment.tx
 **Step 5 –** Finally, at the **Summary** step, review the location of configuration file with the
 settings you specified: _C:\Addon\ITSM_CW\ConnectWiseSettings.xml_.
 
-![summary](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![summary](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
 
 If needed, you can edit the configuration file manually. See the
 [Connection and Ticketing Settings](/docs/auditor/10.6/integrations/ticketing/connectwise.md)

@@ -35,7 +35,7 @@ for additional information.
 History details in the center of the General tab are automatically populated on creation or
 modification.
 
-![Policy - General tab > History section](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/history.webp)
+![Policy - General tab > History section](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/history.webp)
 
 It contains read-only information on who created the template (Added by), when the template was
 created (Added on), who made the latest modification (Modified by), and when the latest modification
@@ -60,7 +60,7 @@ Weekly Calendar
 
 The weekly calendar at the bottom of the schedule section is where the schedule is set.
 
-![Schedule section in a policy set to Always Active](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/schedule.webp)
+![Schedule section in a policy set to Always Active](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/schedule.webp)
 
 When the schedule is set to Always Active, the weekly calendar is grayed-out.
 

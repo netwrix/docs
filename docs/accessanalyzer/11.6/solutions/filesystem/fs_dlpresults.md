@@ -5,7 +5,7 @@ sensitive data from targeted file servers. It is comprised of analysis and repor
 data collected by the **0.Collection** job group to provide information on where sensitive data is
 being shared. Best practices often dictate moving files with sensitive data out of open shares.
 
-![7.Sensitive Data > FS_DLPResults Job in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/db2/sensitivedata/sensitivedatajobstree.webp)
+![7.Sensitive Data > FS_DLPResults Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/db2/sensitivedata/sensitivedatajobstree.webp)
 
 The FS_DLPResults job is located in the 7.Sensitive Data job group.
 
@@ -17,7 +17,7 @@ View the analysis tasks by navigating to the **FileSystem** > **7.Sensitive Data
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_DLPResults Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/dlpresultsanalysis.webp)
+![Analysis Tasks for the FS_DLPResults Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/dlpresultsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

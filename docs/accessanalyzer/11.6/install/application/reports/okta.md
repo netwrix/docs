@@ -10,7 +10,7 @@ Follow the steps to create an Enterprise Auditor Application in Okta Using the 
 
 **Step 3 –** Click **Create App Integration**.
 
-![Okta Browse App Integration Catalog](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/oktawsfedtemplate.webp)
+![Okta Browse App Integration Catalog](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/oktawsfedtemplate.webp)
 
 **Step 4 –** Browse the App Integration Catalog and select **Template WS-Fed**.
 
@@ -18,7 +18,7 @@ Follow the steps to create an Enterprise Auditor Application in Okta Using the 
 
 Retrieve the Values to Paste into the Enterprise Auditor WebServer.exe.config File
 
-![Okta Application copy link address](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/oktacopylinkaddress.webp)
+![Okta Application copy link address](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/oktacopylinkaddress.webp)
 
 **Step 1 –** In the Enterprise Auditor application, click the **Sign On** tab.
 
@@ -49,7 +49,7 @@ located in the Web folder within the Enterprise Auditor installation.
 <add key="BindingUrl" value="https://+:8082" />
 ```
 
-![Okta application values in WebServer.exe.config file](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/webserverexeconfigokta.webp)
+![Okta application values in WebServer.exe.config file](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/webserverexeconfigokta.webp)
 
 **Step 3 –** Update the following values in the **WebServer.exe.config** file with the values
 retrieved from the Enterprise Auditor Okta application.
@@ -99,16 +99,16 @@ to populate the following fields.
     http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname|${user.__samaccountname__}|,
     http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid|${user.__SID__}|,http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn|${user.__upn__}|
 
-![oktaprofileeditor](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/oktaprofileeditor.webp)
+![oktaprofileeditor](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/oktaprofileeditor.webp)
 
 **Step 2 –** Navigate to the Directory menu and select **Profile Editor** from the drop-down menu.
 Click the **Edit Profile** button for the Enterprise Auditor application.
 
-![Okta Add Attribute button](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/oktaaddattribute.webp)
+![Okta Add Attribute button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/oktaaddattribute.webp)
 
 **Step 3 –** Click **Add Attribute** to open the Add Attribute window.
 
-![Okta Add Atrribute window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/oktaaddattributewindow.webp)
+![Okta Add Atrribute window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/oktaaddattributewindow.webp)
 
 **Step 4 –** In the Add Attribute window, add the following attributes:
 
@@ -123,25 +123,25 @@ Click the **Edit Profile** button for the Enterprise Auditor application.
 Click **Save** to save the attribute details and close the Add Attribute window. To add another
 attribute, click **Save and Add Another**.
 
-![To Okta option under the Directory Provisioning Tab](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/oktadirectoryprovisioningtookta.webp)
+![To Okta option under the Directory Provisioning Tab](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/oktadirectoryprovisioningtookta.webp)
 
 **Step 5 –** Navigate to the **Directory** menu and click on the **Provisioning** tab. Click **To
 Okta**.
 
-![Okta Show Unmapped Attributes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/oktashowunmappedattributes.webp)
+![Okta Show Unmapped Attributes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/oktashowunmappedattributes.webp)
 
 **Step 6 –** Locate and map the attributes that were added for the profile by clicking the
 **Pencil** icon to edit attributes. To locate the attributes, scroll down and select **Show Unmapped
 Attributes**.
 
-![Okta Unmapped Attribute configuration window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/oktaunmappedattributeconfigscreen.webp)
+![Okta Unmapped Attribute configuration window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/oktaunmappedattributeconfigscreen.webp)
 
 **Step 7 –** Click the pencil icon for **SID**, **upn**, and **samAccountName** to map the
 attributes. They will display in the mapped section.
 
 **Step 8 –** Click **Save** and return to the **Okta Attribute Mappings** page.
 
-![Okta Attribute Mappings Force Sync](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/oktaattributemappingsforcesync.webp)
+![Okta Attribute Mappings Force Sync](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/oktaattributemappingsforcesync.webp)
 
 **Step 9 –** On the Okta Attribute Mappings page, click **Force Sync**. The new attributes will
 display for any user under the profile.
@@ -154,7 +154,7 @@ additional information.
 
 Follow the steps to configure multi-factor-authentication for Enterprise Auditor:
 
-![Okta MFA App Sign on Rule window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/oktamfaappsignonrule.webp)
+![Okta MFA App Sign on Rule window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/oktamfaappsignonrule.webp)
 
 **Step 1 –** Navigate to the **Sign On Policy** page and click **Add Rule**. The App Sign On Rule
 opens. Configure the following options:
@@ -163,7 +163,7 @@ opens. Configure the following options:
 - Conditions – Select whether the rule applies to either the **Users assigned to this app** or **The
   following groups and users**.
 
-![Okta MFA App Sign on Rule window Access section](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/oktamfaappsignonruleaccess.webp)
+![Okta MFA App Sign on Rule window Access section](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/oktamfaappsignonruleaccess.webp)
 
 **Step 2 –** Scroll down to the Access section. Check the **Prompt for factor** box and select
 **Every Sign On**. Click **Save**.

@@ -38,7 +38,7 @@ The following permissions are required to utilize Enterprise Auditor’s Service
 The following instructions can only be performed with a ServiceNow admin account and access to the
 ServiceNow Action Module XML file.
 
-![ServiceNow Action Module XML file in Windows file explorer](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/servicenow/actionmodulexmlfile.webp)
+![ServiceNow Action Module XML file in Windows file explorer](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/servicenow/actionmodulexmlfile.webp)
 
 **Step 1 –** Navigate to the file path …\STEALTHbits\StealthAUDIT\Actions to access the
 `STEALTHbits SN Action Module v1.0_merged_rev2.0` file to use on ServiceNow’s website.

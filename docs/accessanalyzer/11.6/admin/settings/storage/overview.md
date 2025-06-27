@@ -3,7 +3,7 @@
 The Storage node contains objects known as Storage Profiles. Storage Profiles house the information
 Enterprise Auditor uses to connect to a SQL Server database within your environment.
 
-![Storage Node](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/storage/storage.webp)
+![Storage Node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/storage/storage.webp)
 
 Each Storage Profile consists of the following parts:
 
@@ -50,7 +50,7 @@ Each Storage Profile consists of the following parts:
     - Create new database – Enterprise Auditor automatically creates a new database using the name
       provided in the textbox. This value should be a unique, descriptive name.
 
-![Operations on the Storage view](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/storage/storageoperations.webp)
+![Operations on the Storage view](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/storage/storageoperations.webp)
 
 At the Storage view, the following operations are available:
 

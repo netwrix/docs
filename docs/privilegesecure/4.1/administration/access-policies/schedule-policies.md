@@ -96,7 +96,7 @@ The Schedule tab shows the schedule tasks for the resources in the selected prot
 protection policy schedule is run based on the platform type configuration on the
 [Platforms Page](/docs/privilegesecure/4.1/administration/resources/platforms/index.md).
 
-![schedule](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/schedule.webp)
+![schedule](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/schedule.webp)
 
 The Schedule tab has the following features:
 

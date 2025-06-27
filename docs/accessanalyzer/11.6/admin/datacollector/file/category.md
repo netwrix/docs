@@ -2,7 +2,7 @@
 
 Use the Category page to identify the type of information to retrieve in this query.
 
-![File Search Wizard Category page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/category.webp)
+![File Search Wizard Category page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/category.webp)
 
 The categories are:
 

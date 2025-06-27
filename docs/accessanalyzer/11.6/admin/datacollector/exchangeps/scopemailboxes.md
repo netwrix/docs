@@ -10,7 +10,7 @@ Enterprise Auditor Console currently resides, and only return information about 
 Remote PowerShell, the data collector will return mailboxes for the Exchange Forest as well as
 return information about those mailboxes.
 
-![ExchangePS Data Collector Wizard Scope by Mailboxes page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/exchangeps/scopemailboxes.webp)
+![ExchangePS Data Collector Wizard Scope by Mailboxes page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/exchangeps/scopemailboxes.webp)
 
 Click **Retrieve** to return all mailboxes in the Exchange Organization and populate them in the
 Available Mailboxes list. Select desired mailboxes from the Available Mailboxes list and click

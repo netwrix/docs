@@ -5,7 +5,7 @@ jobs are executed in the correct order. To create a new job group, right-click o
 location (Jobs tree or another job group) and select **Create Group**. Then provide a unique,
 descriptive name taking into consideration the alphanumeric ordering of the Jobs tree.
 
-![Example of Job Group Structure](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/group/jobgroupstructure.webp)
+![Example of Job Group Structure](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/group/jobgroupstructure.webp)
 
 Job groups are organized similar to the Jobs tree, with the Settings node at the top, followed by
 sub-job groups (job group for collection first, if applicable), then followed by analysis and
@@ -19,7 +19,7 @@ The Job Group Description page displays shortcuts, links, and important informat
 and the jobs contained within the Job Group. Depending on the type of job group, the description
 page will appear different and display information specific to the job group selected.
 
-| ![Job Group Description page for a pre-configured job group](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/group/descriptionpage.webp) | ![Job Group Description page for a user-created job group](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/group/descriptionpagenewgroup.webp) |
+| ![Job Group Description page for a pre-configured job group](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/group/descriptionpage.webp) | ![Job Group Description page for a user-created job group](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/group/descriptionpagenewgroup.webp) |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Pre-Configured Job Group                                                                                                                                        | User-Created Job Group                                                                                                                                                |
 
@@ -36,7 +36,7 @@ Job Library, and creating a job.
 Pre-configured job group description pages provide users with shortcuts and links to many of the
 functions that can be accessed in the Jobs Tree in the Navigation Pane.
 
-![Job Group Description page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/group/descriptionpage.webp)
+![Job Group Description page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/group/descriptionpage.webp)
 
 The sections of the job group description page are:
 
@@ -62,7 +62,7 @@ The sections of the job group description page are:
   [Instant Job Wizard](/docs/accessanalyzer/11.6/admin/jobs/instantjobs/overview.md)
   topic for additional information.
 
-![Overview section of Job Group description page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/group/descriptionpageoverview.webp)
+![Overview section of Job Group description page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/group/descriptionpageoverview.webp)
 
 The Overview section provides summary information about the job group. This section includes the
 following information:
@@ -94,7 +94,7 @@ proper job group execution.
 Job group settings can be applied directly or inherited. On the job group level, it is considered
 that all settings are applied directly.
 
-![Show Inherited Settings on Job Overview page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/group/showinheritedsettings.webp)
+![Show Inherited Settings on Job Overview page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/group/showinheritedsettings.webp)
 
 If not, click the **Show inherited settings** button to expand the inherited settings list (they are
 highlighted in blue).

@@ -11,7 +11,7 @@ the category selected. The Options page is a wizard page for the categories of:
 Use the Options page to specify collection options to use when gathering server audits. This is a
 page for the Server Audits Events Collection category.
 
-![SQL Data Collector Wizard Options page for Server Audit](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/sql/optionsserveraudits.webp)
+![SQL Data Collector Wizard Options page for Server Audit](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/sql/optionsserveraudits.webp)
 
 The scan options are:
 
@@ -29,7 +29,7 @@ The scan options are:
 Use the Sensitive Data Scan Settings (Options) page to specify collection options to use when
 gathering server audits. This is a page for the Sensitive Data Collection category.
 
-![SQL Data Collector Wizard Options page for Sensitive Data](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/sql/optionssensitivedata.webp)
+![SQL Data Collector Wizard Options page for Sensitive Data](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/sql/optionssensitivedata.webp)
 
 The sensitive data scan settings are:
 

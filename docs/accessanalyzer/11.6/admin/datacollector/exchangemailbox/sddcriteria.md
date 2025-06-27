@@ -7,7 +7,7 @@ and enable the Criteria Editor. See the
 [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
 topic for additional information.
 
-![Exchange Mailbox Data Collector Wizard SDD Criteria page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/sddcriteria.webp)
+![Exchange Mailbox Data Collector Wizard SDD Criteria page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/sddcriteria.webp)
 
 Select the checkbox for the criteria to be used to search for sensitive data. Criteria can also be
 selected using the **Select All** and **Select None** buttons.

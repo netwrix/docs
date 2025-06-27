@@ -3,7 +3,7 @@
 The jobs in the 2.Users group identify user conditions and pinpoint potential areas of
 administrative concerns within Microsoft Entra ID such as disabled or stale users.
 
-![2.Users Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![2.Users Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The jobs in the 2.Users Job Group are:
 

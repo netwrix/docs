@@ -14,15 +14,15 @@ The Scan Options page is a wizard page for the following categories:
 
 Follow the steps to create the Access Token:
 
-![Dropbox Access Auditor Data Collector Wizard Scan Options page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/dropboxaccess/scanoptions.webp)
+![Dropbox Access Auditor Data Collector Wizard Scan Options page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/dropboxaccess/scanoptions.webp)
 
 **Step 1 –** Click the **Authorize** button to access the Dropbox Authentication page.
 
-![Dropbox Log in page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/dropboxaccess/scanoptionsdropboxlogin.webp)
+![Dropbox Log in page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/dropboxaccess/scanoptionsdropboxlogin.webp)
 
 **Step 2 –** On the Dropbox Authentication page, log in as the Team Administrator.
 
-![Copy Access Token](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/dropboxaccess/scanoptionsaccesstoken.webp)
+![Copy Access Token](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/dropboxaccess/scanoptionsaccesstoken.webp)
 
 **Step 3 –** Once the Access Token has been generated, click **Copy to Clipboard**. Click **Next**
 to finish choosing the configuration options or click **Cancel** to close the Dropbox Access Auditor

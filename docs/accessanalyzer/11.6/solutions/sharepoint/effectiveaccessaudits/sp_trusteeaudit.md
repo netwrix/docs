@@ -12,7 +12,7 @@ Navigate to the **Jobs** > **SharePoint** > **Effective Access Audits** > **SP_T
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SP_TrusteeAudit Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/sharepoint/effectiveaccessaudits/trusteeauditanalysis.webp)
+![Analysis Tasks for the SP_TrusteeAudit Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/effectiveaccessaudits/trusteeauditanalysis.webp)
 
 The default analysis tasks are:
 

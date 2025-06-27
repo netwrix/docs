@@ -7,7 +7,7 @@ Enterprise Auditor SQL database.
 
 The 5-SPAA_BulkImport Job uses the SharePoint Access Data Collector for the following query:
 
-![spaabulkimportquery](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/sharepoint/collection/spaabulkimportquery.webp)
+![spaabulkimportquery](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/collection/spaabulkimportquery.webp)
 
 The query for the 5-SPAA_BulkImport Job is:
 
@@ -28,7 +28,7 @@ displays.
 
 **Step 3 –** Select the **Data Source** tab, and click **Configure**.
 
-![Bulk Import Settings](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/spaa/bulkimportsettings.webp)
+![Bulk Import Settings](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/spaa/bulkimportsettings.webp)
 
 **Step 4 –** On the
 [SPAA: Bulk Import Settings](/docs/accessanalyzer/11.6/admin/datacollector/spaa/bulkimportsettings.md)
@@ -54,7 +54,7 @@ node and select **Analysis** to view the analysis tasks.
 **CAUTION:** The analysis tasks are preconfigured for this job. Never modify or deselect the
 selected analysis tasks.
 
-![Analysis Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/sharepoint/collection/spaabulkimportanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/collection/spaabulkimportanalysis.webp)
 
 The default analysis tasks are:
 

@@ -49,7 +49,7 @@ C:\Program Files\Netwrix\Netwrix Privilege Secure Proxy Service
 **NOTE:** The installation process begins and the wizard displays the its Progress. This may take a
 few moments.
 
-![Netwrix Privileged Secure Proxy Service Setup wizard on the Successfully Completed page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Netwrix Privileged Secure Proxy Service Setup wizard on the Successfully Completed page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
 
 **Step 6 –** When installation is complete, click Close.
 

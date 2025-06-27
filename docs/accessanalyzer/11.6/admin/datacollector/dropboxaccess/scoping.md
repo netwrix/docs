@@ -6,7 +6,7 @@ limit the scan to specific users. The page is a wizard page for the following ca
 - Scan Dropbox Access
 - Scan for Sensitive Content
 
-![Dropbox Access Auditor Data Collector Wizard Scoping Settings page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/dropboxaccess/scoping.webp)
+![Dropbox Access Auditor Data Collector Wizard Scoping Settings page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/dropboxaccess/scoping.webp)
 
 Use the scoping options to select the depth of the scan:
 

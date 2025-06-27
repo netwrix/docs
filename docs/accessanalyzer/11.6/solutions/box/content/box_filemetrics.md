@@ -12,7 +12,7 @@ Navigate to **Box** > **2.Content** > **Box_FileMetrics** > **Configure** node a
 
 **CAUTION:** Most of these analysis tasks should never be modified and never be deselected.
 
-![Analysis Tasks for the Box_FileMetrics Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/box/content/filemetricsanalysis.webp)
+![Analysis Tasks for the Box_FileMetrics Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/content/filemetricsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

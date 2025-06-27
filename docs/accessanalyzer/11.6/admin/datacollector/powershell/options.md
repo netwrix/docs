@@ -2,7 +2,7 @@
 
 The Options page provides the option to execute the script remotely on the target host.
 
-![PowerShell Data Collector Wizard Options page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/options.webp)
+![PowerShell Data Collector Wizard Options page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/options.webp)
 
 The configurable options are:
 

@@ -4,7 +4,7 @@ The **Dropbox** > **0.Collection** job group scans the targeted Dropbox site usi
 Data Collector. The collected data is then available to other job groups in the Dropbox solution and
 the Access Information Center for analysis.
 
-![0.Collection Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![0.Collection Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The 0.Collection job group is comprised of:
 

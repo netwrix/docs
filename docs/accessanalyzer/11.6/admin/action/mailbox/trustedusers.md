@@ -6,7 +6,7 @@ server with a mailbox environment. It is a wizard page for the following operati
 - Add Delegates
 - Remove Delegates
 
-![New Mailbox Action Wizard Trusted Users page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/mailbox/trustedusers.webp)
+![New Mailbox Action Wizard Trusted Users page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/trustedusers.webp)
 
 Select Trusted User delegates using the following options:
 

@@ -3,7 +3,7 @@
 The Additional Scoping page is where the scan can be limited by depth of the scan. It is a wizard
 page for the Scan Box Permissions category.
 
-![Box DC Wizard Additional Scoping page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/box/additionalscoping.webp)
+![Box DC Wizard Additional Scoping page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/box/additionalscoping.webp)
 
 Configure the scan depth level:
 

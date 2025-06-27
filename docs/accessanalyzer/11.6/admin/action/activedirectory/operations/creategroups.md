@@ -2,7 +2,7 @@
 
 Use the Create Groups page to configure the action to create groups on the selected target.
 
-![Active Directory Action Module Wizard Create Groups page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/activedirectory/operations/creategroups.webp)
+![Active Directory Action Module Wizard Create Groups page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/activedirectory/operations/creategroups.webp)
 
 Use the following options to configure the action:
 

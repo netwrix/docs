@@ -4,7 +4,7 @@ The AD_ActivityCollection Job located in the 0.Collection Job Group, imports dat
 Activity Monitor logs into the Enterprise Auditor Database. Retention can be modified in the query
 (120 days default).
 
-![AD_ActivityCollection Job in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![AD_ActivityCollection Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 There are two ways AD Activity data can be retrieved by Enterprise Auditor:
 
@@ -22,7 +22,7 @@ parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
 
-![Configuration section on the AD_ActivityCollection job Overview page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/activity/overviewconfiguration.webp)
+![Configuration section on the AD_ActivityCollection job Overview page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/activity/overviewconfiguration.webp)
 
 The AD_ActivityCollection page has the following configurable parameters:
 
@@ -50,7 +50,7 @@ archive logs for AD Activity.
 **NOTE:** The query can be configured to connect directly to the network share where the archive
 logs are stored or the API Server.
 
-![Queries for the AD_ActivityCollection Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostdiscovery/queries.webp)
+![Queries for the AD_ActivityCollection Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostdiscovery/queries.webp)
 
 The AD_ActivityCollection Job uses the ADActivity Data Collector for the following query:
 
@@ -183,7 +183,7 @@ Navigate to the **Jobs** > **Active Directory** > **6.Activity** > **0.Collecti
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_ActivityCollection Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/activity/analysis.webp)
+![Analysis Tasks for the AD_ActivityCollection Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/activity/analysis.webp)
 
 The following analysis tasks are selected by default:
 

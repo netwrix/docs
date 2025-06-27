@@ -4,7 +4,7 @@ The 2.Activity Job Group is designed to provide insight into user login activity
 changes, unusual database activity, SQL activity against sensitive data, and SQL activity against
 selective or all database objects.
 
-![Activity Job Group](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/oracle/activity/jobgroup25.webp)
+![Activity Job Group](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/oracle/activity/jobgroup25.webp)
 
 The jobs in the 2.Activity Job Group are:
 

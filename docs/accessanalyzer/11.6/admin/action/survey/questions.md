@@ -17,7 +17,7 @@ Use this page to specify the questions on the survey. Configure the following fo
 - The question type (**Yes/No**, **Text**, or **Multiple Choice**)
 - Any additional descriptive text to include for the question
 
-![Survey Action Module Wizard Questions page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/survey/questions.webp)
+![Survey Action Module Wizard Questions page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/survey/questions.webp)
 
 The configurable options are:
 
@@ -56,7 +56,7 @@ The configurable options are:
 
 Select which subjects to use for the Survey question using the Select subjects window.
 
-![Select subjects window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/survey/selectsubjects.webp)
+![Select subjects window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/survey/selectsubjects.webp)
 
 Select a subject from the Available subjects list, then click the **Right Arrow** to move it into
 the Selected Subjects list. Remove a subject from the Selected Subjects list by selecting a subject

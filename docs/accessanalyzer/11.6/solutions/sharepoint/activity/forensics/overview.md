@@ -3,7 +3,7 @@
 This group will highlight deletions, group membership changes, permission changes, and activity
 around sensitive data.
 
-![Forensics Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/sharepoint/activity/forensics/forensicsjobstree.webp)
+![Forensics Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/activity/forensics/forensicsjobstree.webp)
 
 The jobs in the Forensics Job Group are:
 

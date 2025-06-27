@@ -3,7 +3,7 @@
 The Activity Timespan Scope page (ActivityTimeframeScope) is where Box activity data collection is
 configured. It is a wizard page for the Scan Box Activity category.
 
-![Box DC Wizard Activity Timespan Scope page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/box/activitytimeframe.webp)
+![Box DC Wizard Activity Timespan Scope page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/box/activitytimeframe.webp)
 
 Select one of the following options to configure the timeframe for Box data collection:
 

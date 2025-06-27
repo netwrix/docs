@@ -3,7 +3,7 @@
 The information in this topic applies to **Select Account Type** > **Local Windows Account** in the
 User Credentials window.
 
-![User Credentials - Local Windows Account](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/localwindowsaccount.webp)
+![User Credentials - Local Windows Account](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/localwindowsaccount.webp)
 
 The required credentials for the Local Windows Account are:
 

@@ -7,7 +7,7 @@ the categories of:
 - Collect IAM data
 - Collect S3
 
-![AWS Query Login Roles](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/aws/loginroles.webp)
+![AWS Query Login Roles](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/aws/loginroles.webp)
 
 Add the login roles that will allow Enterprise Auditor to scan the AWS accounts. See the
 [Configure AWS for Scans](/docs/accessanalyzer/11.6/requirements/target/config/aws.md)

@@ -4,7 +4,7 @@ The Activity Log Locations page is where to manually configure log locations to 
 remote registry access to locate the activity event log files. It is a wizard page for the category
 of Scan SharePoint Activity.
 
-![Activity Log Locations page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/spaa/activityloglocations.webp)
+![Activity Log Locations page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/spaa/activityloglocations.webp)
 
 The options in the Activity Log Locations page are:
 
@@ -14,7 +14,7 @@ The options in the Activity Log Locations page are:
   click **OK** to save the changes.
 - Remove – Removes the selected host
 
-![Customize Activity Log UNC Paths Window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/spaa/customizeactivityloguncpaths.webp)
+![Customize Activity Log UNC Paths Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/spaa/customizeactivityloguncpaths.webp)
 
 The options in the Customize Activity Log UNC Paths Window are:
 

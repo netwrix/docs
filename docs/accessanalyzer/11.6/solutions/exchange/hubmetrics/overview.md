@@ -5,7 +5,7 @@ mail-flow activity occurring within your organization. This job group goes out t
 contains the Message Tracking Logs and parse the log to return the data to the Enterprise Auditor
 database.
 
-![1.HUB Metrics Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![1.HUB Metrics Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The following job groups and jobs comprise the 1. HUB Metrics Job Group:
 

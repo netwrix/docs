@@ -38,7 +38,7 @@ window displays.
 **FILESYSTEMACCESS** and then click the **Configure** button. The File System Access Auditor Data
 Collector Wizard opens.
 
-![FSAA Data Collector Wizard Query Selection page with Remove scan executables and data option selected](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/queryselectionremovescanexecutablesdata.webp)
+![FSAA Data Collector Wizard Query Selection page with Remove scan executables and data option selected](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/queryselectionremovescanexecutablesdata.webp)
 
 **Step 4 –** On the Query Selection page, select the **Remove scan executables and data** category.
 
@@ -94,7 +94,7 @@ window displays.
 **FILESYSTEMACCESS** and then click **Configure**. The File System Access Auditor Data Collector
 Wizard opens.
 
-![FSAA Data Collector Wizard Query Selection page with Remove host data option selected](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/queryselectionremovehostdata.webp)
+![FSAA Data Collector Wizard Query Selection page with Remove host data option selected](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/queryselectionremovehostdata.webp)
 
 **Step 4 –** On the Query Selection page, select the **Remove host data** category.
 
@@ -115,7 +115,7 @@ execution. It is available through the Instant Job Library under the File System
 [Instant Job Wizard](/docs/accessanalyzer/11.6/admin/jobs/instantjobs/overview.md)
 topic for additional information.
 
-![FS_SDD_DELETE Job in Job's Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/sdddelete.webp)
+![FS_SDD_DELETE Job in Job's Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/sdddelete.webp)
 
 The 0.Collection Job Group must be run before executing the FS_SDD_DELETE Job.
 
@@ -126,7 +126,7 @@ The analysis tasks are deselected by default. View the analysis tasks by navigat
 
 **CAUTION:** Applying these analysis tasks result in the deletion of collected data.
 
-![FS_SDD_DELETE Job Analysis Selection page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/sdddeleteanalysistasks.webp)
+![FS_SDD_DELETE Job Analysis Selection page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/sdddeleteanalysistasks.webp)
 
 - Delete Criteria – Remove all SDD Data for a Specified Criteria
 - Delete Host – Remove all SDD Data Related to a Host
@@ -172,7 +172,7 @@ Editor. Follow the steps to customize analysis task parameters.
 **Step 2 –** In the Analysis Selection view, select the desired analysis task and click on
 **Analysis Configuration**. The SQL Script Editor opens.
 
-![ FS_SDD_DELETE Job Analysis Task in SQL Script Editor](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/sdddeletesqlscripteditor.webp)
+![ FS_SDD_DELETE Job Analysis Task in SQL Script Editor](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/sdddeletesqlscripteditor.webp)
 
 **Step 3 –** In the Parameters section at the bottom of the editor, select either the **#Criteria**
 or **#hosts** row, depending on the analysis task chosen, and then **Edit Table**. The Edit Table
@@ -180,7 +180,7 @@ window opens.
 
 **CAUTION:** Do not change any parameters where the Value states `Created during execution`.
 
-![SQL Script Editor Edit Table window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/sdddeletesqlscripteditoredittable.webp)
+![SQL Script Editor Edit Table window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/sdddeletesqlscripteditoredittable.webp)
 
 **Step 4 –** Use the **Add New Item** button to enter host names or criteria to the temporary table
 list manually, or select the **Browse** button to upload a list of hosts in CSV format. Click **OK**
@@ -206,7 +206,7 @@ not require a host to target, select Local host on the Hosts page of the Instant
 [Instant Job Wizard](/docs/accessanalyzer/11.6/admin/jobs/instantjobs/overview.md)
 topic for additional information.
 
-![FS_DropTables Job in Job's Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/droptables.webp)
+![FS_DropTables Job in Job's Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/droptables.webp)
 
 The 0.Collection Job Group must be run before executing the FS_DropTables Job.
 
@@ -217,7 +217,7 @@ The analysis tasks are deselected by default. View the analysis tasks by navigat
 
 **CAUTION:** Applying these analysis tasks result in the deletion of collected data.
 
-![FS_DropTables Job Analysis Selection page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/droptablesanalysistasks.webp)
+![FS_DropTables Job Analysis Selection page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/droptablesanalysistasks.webp)
 
 -   1. Drop FSAA functions – Removes all functions and views from previous runs of the File System
        Solution

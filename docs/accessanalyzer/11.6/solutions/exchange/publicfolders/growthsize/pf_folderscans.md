@@ -3,7 +3,7 @@
 The PF_FolderScans job is comprised of data collection that focuses on collecting sizing information
 for each public folder.
 
-![Collection > PF_FolderScans Job in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/exchange/databases/collection/collectionjobstree.webp)
+![Collection > PF_FolderScans Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/databases/collection/collectionjobstree.webp)
 
 The PF_FolderScans job is located in the Collection job group.
 
@@ -11,7 +11,7 @@ The PF_FolderScans job is located in the Collection job group.
 
 The PF_FolderScans job uses the ExchangePS Data Collector.
 
-![Queries for the PF_FolderScans Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/exchange/publicfolders/growthsize/folderscansquery.webp)
+![Queries for the PF_FolderScans Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/publicfolders/growthsize/folderscansquery.webp)
 
 The following query is included in the PF_FolderScans Job:
 
@@ -30,7 +30,7 @@ Size** > **Collection** > **PF_FolderScans** > **Configure** node and select **
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the PF_FolderScans Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/exchange/publicfolders/growthsize/folderscansanalysis.webp)
+![Analysis Tasks for the PF_FolderScans Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/publicfolders/growthsize/folderscansanalysis.webp)
 
 The following analysis task is selected by default:
 

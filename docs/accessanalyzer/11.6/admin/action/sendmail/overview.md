@@ -32,6 +32,6 @@ the following wizard pages:
 The Welcome page displays first and gives an overview of the action module. The navigation pane
 contains links to the pages in the wizard.
 
-![Send Mail Action Module Wizard Welcome page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/runninginstances/overview.webp)
+![Send Mail Action Module Wizard Welcome page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/runninginstances/overview.webp)
 
 To proceed, click **Next** or use the Steps navigation pane to open another page in the wizard.

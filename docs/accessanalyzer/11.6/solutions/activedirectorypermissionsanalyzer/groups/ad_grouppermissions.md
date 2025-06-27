@@ -11,7 +11,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **2.Groups** > **AD_
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_GroupPermissions Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectorypermissionsanalyzer/groups/grouppermissionsanalysis.webp)
+![Analysis Tasks for the AD_GroupPermissions Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectorypermissionsanalyzer/groups/grouppermissionsanalysis.webp)
 
 The default analysis tasks are:
 

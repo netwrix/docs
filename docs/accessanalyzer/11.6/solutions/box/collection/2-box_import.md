@@ -9,7 +9,7 @@ to provide detailed reports on Box access rights, policies, configurations, acti
 The Import Query uses the Box Data Collector and has been preconfigured to use the Import Box
 Permissions Category.
 
-![Queries for the 2-Box_Import Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/box/collection/importqueries.webp)
+![Queries for the 2-Box_Import Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/importqueries.webp)
 
 The 2-Box_Import Job has the following query:
 

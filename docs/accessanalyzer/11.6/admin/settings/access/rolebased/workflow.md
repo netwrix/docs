@@ -8,7 +8,7 @@ Access is enabled and roles have been assigned.
 **Step 2 –** The Job Approver reviews a new or edited job’s configuration, and either approves or
 rejects it
 
-![Lock Job option in right-click menu](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/lockjob.webp)
+![Lock Job option in right-click menu](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/lockjob.webp)
 
 - If a job is approved, then a lock needs to be applied by right-clicking the job title in the Jobs
   tree and selecting **Lock Job**
@@ -16,7 +16,7 @@ rejects it
 - If the **Lock Job** option is visible, then the job has not yet been approved
 - If the **Lock Job** option is not visible, then the job has been approved
 
-![Unlock Job option in right-click menu](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/unlockjob.webp)
+![Unlock Job option in right-click menu](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/unlockjob.webp)
 
 **Step 3 –** The Job Initiator can choose to run the job directly through the Enterprise Auditor
 Console or schedule it to run with the Schedule Service Account. This user will know the job was
@@ -39,7 +39,7 @@ approved by the grayed-out **Unlock Job** option in the right-click menu.
       [Report Settings Tab](/docs/accessanalyzer/11.6/admin/jobs/job/properties/reportsettings.md)
       topic for additional information
 
-![Report under the Results Node in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/reportjobstree.webp)
+![Report under the Results Node in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/reportjobstree.webp)
 
 **Step 4 –** After a job has been successfully run, the **Job Viewer** can now view the results of
 the job under the job’s Status and Results node, or in the Web Console. See the

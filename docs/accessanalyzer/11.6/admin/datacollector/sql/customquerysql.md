@@ -8,7 +8,7 @@ wizard page for the following categories:
 - Custom SQL Query
 - Custom Db2LUW Query
 
-![SQL Data Collector Wizard Custom SQL Query Page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/sql/customsqlquery.webp)
+![SQL Data Collector Wizard Custom SQL Query Page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/sql/customsqlquery.webp)
 
 The configurable options are:
 

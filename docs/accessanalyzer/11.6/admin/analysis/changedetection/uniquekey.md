@@ -6,6 +6,6 @@ on the Input page. See the
 [Change Detection: Input](/docs/accessanalyzer/11.6/admin/analysis/changedetection/input.md) topic
 for additional information.
 
-![Change Detection Data Analysis Module wizard Unique Key page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/analysis/changedetection/uniquekey.webp)
+![Change Detection Data Analysis Module wizard Unique Key page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/changedetection/uniquekey.webp)
 
 Select one or more fields to form a unique key for the selected table and its columns.

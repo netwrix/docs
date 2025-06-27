@@ -5,7 +5,7 @@ order to proactively identify critical security configurations that leave Active
 vulnerable to attack. The result are reports that provide a listing of findings by severity and
 category with corresponding details that can be used to prioritize and remediate security issues.
 
-![AD Security Assessment Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/securityassessmentjobstree.webp)
+![AD Security Assessment Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/securityassessmentjobstree.webp)
 
 ## Recommended Configurations for the AD_SecurityAssessment Job
 
@@ -76,7 +76,7 @@ Navigate to the **Jobs** > Active Directory > AD_SecurityAssessment > Configure 
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/securityassessmentanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/securityassessmentanalysis.webp)
 
 The following non-configurable analysis task is selected by default:
 

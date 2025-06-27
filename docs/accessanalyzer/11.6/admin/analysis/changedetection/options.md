@@ -3,7 +3,7 @@
 Use the Options page to specify whether to save history, including a running tally of all changes
 made within a certain time period, or only changes between the last two runs of the source set.
 
-![Change Detection Data Analysis Module wizard Options page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/options.webp)
+![Change Detection Data Analysis Module wizard Options page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/options.webp)
 
 Configure the additional options using the following:
 

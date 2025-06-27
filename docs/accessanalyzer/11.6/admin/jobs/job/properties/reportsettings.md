@@ -5,7 +5,7 @@ this job. Choose either to use the default settings, which could be either the g
 or configuration set via broken inheritance at a job group level, or to configure settings just for
 this job.
 
-![Report Settings tab of Job Properties](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/job/properties/reportsettings.webp)
+![Report Settings tab of Job Properties](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/properties/reportsettings.webp)
 
 Use the Publish Options drop-down menu to customize the publish setting for the job. To configure
 custom Email settings for the job, select the **Use These Email Settings** option and then provide

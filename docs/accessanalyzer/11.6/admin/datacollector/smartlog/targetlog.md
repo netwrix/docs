@@ -12,7 +12,7 @@ and
 [SMARTLog: Target Log for File Detection Log Type](/docs/accessanalyzer/11.6/admin/datacollector/smartlog/targetlogtype/filedetectionlog.md)
 topics for information on the other versions of this wizard page.
 
-![SMART Log DC Wizard Target Log page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/smartlog/targetlog.webp)
+![SMART Log DC Wizard Target Log page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/smartlog/targetlog.webp)
 
 The configurable options are:
 

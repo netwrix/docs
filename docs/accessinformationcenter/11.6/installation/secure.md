@@ -166,16 +166,16 @@ Follow the steps to configure local intranet settings.
 **Step 1 –** Open Windows Internet Properties (**Control Panel** > **Network and
 Internet** > **Internet Options**).
 
-![ConfigureLocalIntranetSettingsforSSO - 1](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/internetproperties.webp)
+![ConfigureLocalIntranetSettingsforSSO - 1](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/internetproperties.webp)
 
 **Step 2 –** Go to the Security tab, and select the **Local Intranet** option. Then, click the
 **Sites** button.
 
-![localintranet](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/localintranet.webp)
+![localintranet](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/localintranet.webp)
 
 **Step 3 –** Click the **Advanced** button.
 
-![localintranetadvanced](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/localintranetadvanced.webp)
+![localintranetadvanced](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/localintranetadvanced.webp)
 
 **Step 4 –** Enter a domain in the **Add this website in the zone** field. Ensure the fully
 qualified domain name is in the following format: `https://<server>.<domain>.com`

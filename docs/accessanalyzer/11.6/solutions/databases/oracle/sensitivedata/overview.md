@@ -7,7 +7,7 @@ Special Dependency for Data Collection
 
 - Sensitive Data Discovery Add-On installed on the Enterprise Auditor Console server
 
-![Sensitive Data Job Group](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/oracle/sensitivedata/jobgroup43.webp)
+![Sensitive Data Job Group](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/oracle/sensitivedata/jobgroup43.webp)
 
 The jobs in the 5.Sensitive Data Job Group are:
 

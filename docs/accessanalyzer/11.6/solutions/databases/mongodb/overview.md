@@ -69,7 +69,7 @@ content for sensitive data.
 The Enterprise Auditor MongoDB Solution Set is a set of pre-configured jobs and reports that
 provides visibility into MongoDB Sensitive Data.
 
-![MongoDB Overview](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/mongodb/mongdbjobgroupoverview.webp)
+![MongoDB Overview](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/mongodb/mongdbjobgroupoverview.webp)
 
 The following job groups comprise the MongoDB Solution:
 

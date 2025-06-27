@@ -4,7 +4,7 @@ The information in this topic applies to **Select Account Type** > **Azure Activ
 User Credentials window. This account type is for Microsoft Entra ID, formerly Azure Active
 Directory.
 
-![User Credentials Window - Azure Active Directory](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/entraid.webp)
+![User Credentials Window - Azure Active Directory](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/entraid.webp)
 
 The required credentials for this account type are:
 

@@ -3,7 +3,7 @@
 The 0.Collection job group scans and collects details on IAM and S3 buckets within an
 AWS organization.
 
-![0.Collection Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![0.Collection Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The 0.Collection Job Group is comprised of:
 

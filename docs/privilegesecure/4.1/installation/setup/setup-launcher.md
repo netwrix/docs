@@ -53,7 +53,7 @@ C:\Program Files\Stealthbits\Postgres12
 **NOTE:** The installation process begins and the Setup wizard displays the its Progress. This may
 take a few moments.
 
-![Stealthbits PostgreSQL v12 Setup Wizard on the Completed Successfully page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Stealthbits PostgreSQL v12 Setup Wizard on the Completed Successfully page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
 
 **Step 5 –** When installation is complete, click **Exit**. The Stealthbits PostgeSQL v12 Setup
 wizard closes.
@@ -96,7 +96,7 @@ C:\Program Files\Stealthbits\PAM
 **NOTE:** The installation process begins and the wizard displays the its Progress. This may take a
 few moments.
 
-![Netwrix Privilege Secure Setup wizard on the Completed Successfully page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Netwrix Privilege Secure Setup wizard on the Completed Successfully page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
 
 **Step 5 –** When installation is complete, click **Close**.
 

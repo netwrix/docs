@@ -11,7 +11,7 @@ View the analysis tasks by navigating to the **FileSystem** > **4.Content** > **
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_AIPLabels Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/content/tags/aiplabelsanalysis.webp)
+![Analysis Tasks for the FS_AIPLabels Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/content/tags/aiplabelsanalysis.webp)
 
 The following analysis task is selected by default:
 

@@ -11,7 +11,7 @@ Configure node and select Analysis.
 **CAUTION:** Do not modify or deselect the second selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/adhocaudits/trusteepermissionsanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/adhocaudits/trusteepermissionsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

@@ -68,7 +68,7 @@ dir cert:\localmachine\my
 **Step 3 –** Open the **WebServer.exe.config** file with a text editor, for example Notepad. It is
 located within the Web folder of the Enterprise Auditor installation directory.
 
-![WebServer.exe.config file in Notepad](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/webserverexeconfig.webp)
+![WebServer.exe.config file in Notepad](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/webserverexeconfig.webp)
 
 **Step 4 –** Change the value for the `BindingUrl` parameter from `http` to `https`:
 
@@ -112,7 +112,7 @@ Follow the steps to update the Website URL in the **Settings** > **Reporting** n
 
 **Step 1 –** Expand **Settings** and select the **Reporting** node.
 
-![Access Governance Reporting Settings page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/websiteurlreporting.webp)
+![Access Governance Reporting Settings page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/websiteurlreporting.webp)
 
 **Step 2 –** In the **Website URL** box, update the URL to: `https://[hostname.domain.com]:8082`
 
@@ -127,7 +127,7 @@ Properties window.
 
 **Step 1 –** Right click on the **Published Reports** desktop shortcut and click **Properties**.
 
-![Published Reports desktop icon properties](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/publishedreportsproperties.webp)
+![Published Reports desktop icon properties](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/publishedreportsproperties.webp)
 
 **Step 2 –** On the **Web Document** tab, update the **URL** in the text box to:
 `https://localhost:8082/`
@@ -180,17 +180,17 @@ Follow these steps to confirm the certificate is in Microsoft Management Console
 
 **Step 1 –** Open Microsoft Management Console (`mmc.exe`).
 
-![Microsoft Management Console Certificates snap-in](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/certificateaddsnapin.webp)
+![Microsoft Management Console Certificates snap-in](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/certificateaddsnapin.webp)
 
 **Step 2 –** Select **File** > **Add/Remove Snap-in**. The Add or Remove Snap-ins window opens.
 Select **Certificates**, and click **Add**. Then select **Computer account** in the Certificates
 snap-in window.
 
-![Microsoft Management Console Certificates snap-in Select Computer dialog](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/certificateselectcomputer.webp)
+![Microsoft Management Console Certificates snap-in Select Computer dialog](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/certificateselectcomputer.webp)
 
 **Step 3 –** Click **Next** and select **Local computer**. Click **Finish**.
 
-![Microsoft Management Console Certificates Add or Remove Snap-ins window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/certificatesnapins.webp)
+![Microsoft Management Console Certificates Add or Remove Snap-ins window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/certificatesnapins.webp)
 
 **Step 4 –** The certificate will appear in the Selected snap-ins list in the Add or Remove Snap-ins
 window. Click **OK** to close the window.
@@ -209,12 +209,12 @@ Follow the steps to remove the certificate error.
 
 **Step 1 –** Open the Web Console in your browser.
 
-![Your connection isn't private warning in Microsoft Edge](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/certificateconnectionnotprivate.webp)
+![Your connection isn't private warning in Microsoft Edge](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/certificateconnectionnotprivate.webp)
 
 **Step 2 –** Click **Advanced**, and then use the link to continue to the site. This loads the main
 page of the Web Console.
 
-![Access Certificat Viewer from Not Secure error in Microsoft Edge address bar](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/certificatenotsecureerror.webp)
+![Access Certificat Viewer from Not Secure error in Microsoft Edge address bar](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/certificatenotsecureerror.webp)
 
 **Step 3 –** Click the **Not Secure** warning in the browser's address bar. Open the Certificate
 Viewer from the warning details.
@@ -223,25 +223,25 @@ Viewer from the warning details.
   the certificate icon.
 - In Google Chrome, click **Certificate is not valid**.
 
-![Web browser Certificate Viewer window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/certificateviewer.webp)
+![Web browser Certificate Viewer window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/certificateviewer.webp)
 
 **Step 4 –** On the Details tab of the Certificate Viewer, click **Export**. Save the security
 certificate and close the Certificate Viewer.
 
-![Certificate window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/certificatewindow.webp)
+![Certificate window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/certificatewindow.webp)
 
 **Step 5 –** Navigate to the save location from the previous step and open the exported security
 certificate. On the Certificate window, click **Install Certificate**. The Certificate Import Wizard
 opens.
 
-![Certificate Import Wizard](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/certificateimportwizard.webp)
+![Certificate Import Wizard](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/certificateimportwizard.webp)
 
 **Step 6 –** On the Certificate Import Wizard, select the Store Location as **Local Machine**, and
 click **Next**. Keep the default selection of **Automatically select the certificate store based on
 the type of certificate**. Navigate through the wizard to save this configuration. A pop-up message
 should state that the import was successful. Click **OK** to close out all dialogs.
 
-![Microsoft Management Console Trusted Root Certification Authorities Certificates](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/addcertificateconsole.webp)
+![Microsoft Management Console Trusted Root Certification Authorities Certificates](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/addcertificateconsole.webp)
 
 **Step 7 –** In the Microsoft Management Console, check the **Trusted Root Certification
 Authorities** > **Certificates**. The self-signed certificate should now be listed there.

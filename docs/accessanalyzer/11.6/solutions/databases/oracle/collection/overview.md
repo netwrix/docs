@@ -4,7 +4,7 @@ The Oracle Job Group is designed to collect a high level summary of information 
 Oracle Database Servers. This information is used by other jobs in the Oracle Job Group for further
 analysis, and for producing reports.
 
-![Oracle 0Collection Job Group](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/oracle/collection/0collection.webp)
+![Oracle 0Collection Job Group](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/oracle/collection/0collection.webp)
 
 The job groups in the 0.Collection Job Group are:
 

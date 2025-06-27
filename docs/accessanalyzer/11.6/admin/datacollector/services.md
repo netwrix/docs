@@ -25,7 +25,7 @@ Permissions
 
 The Services Data Collector is configured through the Service Browser window.
 
-![Service Browser window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/servicebrowser.webp)
+![Service Browser window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/servicebrowser.webp)
 
 - Host – Enter a sample host which contains all of the services desired for the query
 - All Services – Select this option to build the query to extract information from all services on

@@ -13,7 +13,7 @@ queries:
 
 **CAUTION:** The queries are preconfigured for this job. Never modify the queries.
 
-![Queries for the SG_WDigestSettings Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/windows/authentication/wdigestsettingsqueries.webp)
+![Queries for the SG_WDigestSettings Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/windows/authentication/wdigestsettingsqueries.webp)
 
 The queries for the SG_WDigestSettings job are:
 
@@ -29,7 +29,7 @@ select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SG_WDigestSettings Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/windows/authentication/wdigestsettingsanalysis.webp)
+![Analysis Tasks for the SG_WDigestSettings Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/windows/authentication/wdigestsettingsanalysis.webp)
 
 The default analysis tasks are:
 

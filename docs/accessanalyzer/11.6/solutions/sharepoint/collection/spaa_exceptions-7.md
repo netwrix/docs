@@ -31,7 +31,7 @@ returned by the 2-SPAA_BulkImport Job. View the analysis tasks by navigating to 
 **CAUTION:** The analysis tasks are preconfigured for this job. Never modify or deselect the
 selected analysis tasks.
 
-![Analysis Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/sharepoint/collection/spaaexceptionsanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/collection/spaaexceptionsanalysis.webp)
 
 The default analysis tasks are:
 

@@ -65,7 +65,7 @@ for additional information.
 
 The Permissions report for imported data shows the permissions for trustees on the resource.
 
-![Permissions report for imported data](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/mailbox/permissions.webp)
+![Permissions report for imported data](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/permissions.webp)
 
 This report is comprised of the following columns:
 

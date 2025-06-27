@@ -9,7 +9,7 @@ The Server Discovery query uses the PowerShell Data Collector for the following 
 
 **CAUTION:** Do not modify the query. The query is preconfigured for this job.
 
-![Query Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/oracle/collection/jobgroup3.webp)
+![Query Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/oracle/collection/jobgroup3.webp)
 
 - Oracle Servers – Returns a list of Oracle servers from the specified host list
 
@@ -28,7 +28,7 @@ node and select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/oracle/collection/jobgroup4.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/oracle/collection/jobgroup4.webp)
 
 The default analysis task is:
 

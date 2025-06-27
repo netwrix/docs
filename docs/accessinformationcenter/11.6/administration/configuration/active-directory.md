@@ -13,7 +13,7 @@ connecting to the database. If your Database service account uses:
 - Windows authentication credentials — The same domain credentials are also used for the Active
   Directory service account
 
-![Configuration interface showing the Active Directory page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostdiscovery/wizard/activedirectory.webp)
+![Configuration interface showing the Active Directory page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostdiscovery/wizard/activedirectory.webp)
 
 There are two options for the type of Active Directory service account:
 

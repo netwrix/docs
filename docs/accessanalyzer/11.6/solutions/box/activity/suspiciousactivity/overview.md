@@ -4,7 +4,7 @@ The Suspicious Activity Job Group identifies areas and times of abnormal activit
 typical activity patterns and identifying outliers based on factors such as amount of activity or
 time of day.
 
-![Suspicious Activity Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Suspicious Activity Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The Suspicious Activity Job Group is comprised of:
 

@@ -43,7 +43,7 @@ unique ID) option**. Click **Next**.
 machine in a different location**, then specify the desired paths in the three input fields. Click
 **Next** to proceed.
 
-![ Choosing Folders for Virtual Machine Files ](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/filesystemproxy/destination.webp)
+![ Choosing Folders for Virtual Machine Files ](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/destination.webp)
 
 **Step 10 –** On the Choose Folders to Store Virtual Hard Disks section, set the desired path for
 storing imported virtual hard disk. Click **Next**.

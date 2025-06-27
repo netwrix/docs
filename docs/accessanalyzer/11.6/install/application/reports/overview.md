@@ -69,11 +69,11 @@ Follow the steps to login to the Web Console.
 
 **NOTE:** The URL that is used may need to be added to the browser’s list of trusted sites.
 
-![Web Console Login page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/webconsolelogin.webp)
+![Web Console Login page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/webconsolelogin.webp)
 
 **Step 2 –** Enter your **User Name** and **Password**. Click **Login**.
 
-![Web Console Home page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/webconsolehome.webp)
+![Web Console Home page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/webconsolehome.webp)
 
 The home page shows the solutions with published reports available. See the
 [Web Console](/docs/accessanalyzer/11.6/admin/report/view.md#web-console)

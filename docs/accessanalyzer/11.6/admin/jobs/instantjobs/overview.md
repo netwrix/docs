@@ -9,7 +9,7 @@ for additional information.
 
 Follow the steps to install an instant solution or an instant job with the Instant Job Wizard.
 
-![Add Instant Job from context menu](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/instantjobs/addinstantjob.webp)
+![Add Instant Job from context menu](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/addinstantjob.webp)
 
 **Step 1 –** Select the Jobs tree (for an instant solution) or the desired job group (for an instant
 job), right-click on the node, and select **Add Instant Job**.
@@ -18,17 +18,17 @@ job), right-click on the node, and select **Add Instant Job**.
 
 **Step 2 –** On the Welcome page, click **Next**.
 
-![Instant Job page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/instantjobs/instantjob.webp)
+![Instant Job page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/instantjob.webp)
 
 **Step 3 –** On the Instant Job page, use the filter menu to only view instant jobs in a particular
 category, or click the plus icon (+) to expand a category group.
 
-![Selected Instant Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/selectinstantjob.webp)
+![Selected Instant Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/selectinstantjob.webp)
 
 **Step 4 –** Select the desired instant solution or job. To select multiple instant solutions or
 jobs, press the Windows **Ctrl** key and select the items to install. Click **Next**.
 
-![Host Assignment page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/instantjobs/hostassignment.webp)
+![Host Assignment page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/hostassignment.webp)
 
 **Step 5 –** Some of the Library selections add a Host Assignment page. If this page does not
 appear, skip to Step 7. If the page does appear, select either the **Use default settings (Inherit
@@ -36,7 +36,7 @@ from the parent group, if any)** or **Specify individual hosts or hosts lists** 
 option is selected, skip to Step 7. If the second option is selected, click **Next** to go to the
 Host Lists and Individual Hosts wizard pages.
 
-| ![Host Lists page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/instantjobs/hostlists.webp) |     | ![Individual Hosts page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/instantjobs/individualhosts.webp) |
+| ![Host Lists page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/hostlists.webp) |     | ![Individual Hosts page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/individualhosts.webp) |
 | --------------------------------------------------------------------------------------------------------------------- | --- | --------------------------------------------------------------------------------------------------------------------------------- |
 | Host Lists page                                                                                                       |     | Individual Hosts page                                                                                                             |
 
@@ -44,11 +44,11 @@ Host Lists and Individual Hosts wizard pages.
 pages do not appear with the selection, skip to Step 7. If the pages do appear, check the host list
 to be assigned to the job group or job. Alternatively enter hosts manually. Then click **Next**.
 
-![Summary page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![Summary page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
 
 **Step 7 –** On the Summary page, click **Save & Exit**.
 
-![Instant Solutions installation dialog](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/instantjobs/installationcomplete.webp)
+![Instant Solutions installation dialog](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/installationcomplete.webp)
 
 **Step 8 –** For Instant Solutions, when the installation is complete, click **Finish**.
 

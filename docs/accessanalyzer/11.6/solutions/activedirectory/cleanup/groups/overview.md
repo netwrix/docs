@@ -3,7 +3,7 @@
 The 1.Groups Job Group provides a workflow to safely deprovision groups, as well as the ability to
 stamp security groups with what resources they are given access to.
 
-![1.Groups Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/cleanup/groups/groupsjobtree.webp)
+![1.Groups Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/cleanup/groups/groupsjobtree.webp)
 
 The jobs in the 1.Groups Job Group are:
 

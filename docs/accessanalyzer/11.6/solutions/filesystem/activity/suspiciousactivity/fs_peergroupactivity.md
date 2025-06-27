@@ -11,7 +11,7 @@ Activity** > **FS_PeerGroupActivity** > **Configure** node and select **Analysis
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FS_PeerGroupActivity Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/activity/suspiciousactivity/peergroupactivityanalysis.webp)
+![Analysis Tasks for the FS_PeerGroupActivity Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/activity/suspiciousactivity/peergroupactivityanalysis.webp)
 
 - Summarize Hourly Norms and Deviations – Creates the SA_FS_PeerGroupActivity_Details table
   accessible under the job’s Results node

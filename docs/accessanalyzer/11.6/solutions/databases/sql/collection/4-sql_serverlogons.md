@@ -10,7 +10,7 @@ Windows Event Log Type.
 
 **CAUTION:** Do not modify the query. The query is preconfigured for this job.
 
-![sqljobgroup18](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/sql/collection/sqljobgroup18.webp)
+![sqljobgroup18](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/sql/collection/sqljobgroup18.webp)
 
 - AppnLogSQL – Uses SmartLog Data Collector to gather logon events
     - See the

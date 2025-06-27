@@ -26,7 +26,7 @@ The Active Directory Solution requires a special Enterprise Auditor license. It 
 from the Enterprise Auditor Instant Job Wizard. Once installed into the Jobs tree, navigate to the
 solution: **Jobs** > **Active Directory**.
 
-![Active Directory Solution](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/solutionoverview.webp)
+![Active Directory Solution](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/solutionoverview.webp)
 
 Each job group works independently from the other job groups. Some job groups run analysis tasks
 against the analyzed data collected by the .Active Directory Inventory Solution to generate reports,
@@ -48,7 +48,7 @@ information every administrator needs for Active Directory configuration, operat
 troubleshooting, analyzing effective permissions, and tracking who is making what changes within an
 organization.
 
-![Active Directory Job Group](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/adsolutionjobgroup.webp)
+![Active Directory Job Group](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/adsolutionjobgroup.webp)
 
 The following job groups comprise the Active Directory Solution:
 

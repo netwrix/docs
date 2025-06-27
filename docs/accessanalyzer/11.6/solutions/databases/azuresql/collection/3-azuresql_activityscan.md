@@ -7,7 +7,7 @@ databases.
 
 The 3–AzureSQL_ActivityScan Job uses the SQL Data Collector for the following query:
 
-![Query Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/azuresql/collection/activityscanjob.webp)
+![Query Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/azuresql/collection/activityscanjob.webp)
 
 - Activity — Collects activity events for Azure SQL
 
@@ -19,7 +19,7 @@ Navigate to the **Databases** > **0.Collection** > **Azure SQL** >
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![3-AzureSQL_ActivityScan Job - Analysis Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/azuresql/collection/activityscanjobanalysis.webp)
+![3-AzureSQL_ActivityScan Job - Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/azuresql/collection/activityscanjobanalysis.webp)
 
 The default analysis task is:
 

@@ -5,7 +5,7 @@ Sites, which can be used for entitlement reviews. Probably Owner calculation is 
 ownership, management structure, and file activity. The goal of this report is to help you identify
 who most likely owns the SharePoint resource or at least someone who can tell you who does.
 
-![5.Probable Owner > SP_ProbableOwner Job in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/probableownerjobstree.webp)
+![5.Probable Owner > SP_ProbableOwner Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/probableownerjobstree.webp)
 
 The SP_ProbableOwner Job is located in the 5.Probable Owner Job Group.
 
@@ -17,7 +17,7 @@ Navigate to the **Jobs** > **SharePoint** > **5.Probable Owner** >
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the SP_ProbableOwner Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/probableowneranalysis.webp)
+![Analysis Tasks for the SP_ProbableOwner Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/probableowneranalysis.webp)
 
 The default analysis tasks are:
 

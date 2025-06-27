@@ -9,7 +9,7 @@ The
 topic provides information on what is collected by default. Custom attributes added on this page are
 stored in the **SA_ADInventory_ExtendedAttributes** table.
 
-![Active Directory Inventory DC Wizard Custom Attributes page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/customattributes.webp)
+![Active Directory Inventory DC Wizard Custom Attributes page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/customattributes.webp)
 
 The Custom Attribute is defined according to the following three elements:
 
@@ -37,7 +37,7 @@ Follow the steps to manually add custom attributes.
 **Step 1 –** On the Custom Attributes page of the Active Directory Inventory DC Wizard, click
 **Add**. The Custom Attribute window opens.
 
-![Custom Attribute window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/customattributesadd.webp)
+![Custom Attribute window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/customattributesadd.webp)
 
 **Step 2 –** Enter the **Domain Filter**. This can be entered either as the short domain name or the
 fully qualified domain name.
@@ -60,7 +60,7 @@ Wizard.
 **Step 1 –** On the Custom Attributes page of the Active Directory Inventory DC Wizard, click
 **Import**. The Custom Attribute Import Wizard opens.
 
-![Custom Attributes Import Wizard Credentials page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/customattributesimportcredentials.webp)
+![Custom Attributes Import Wizard Credentials page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/customattributesimportcredentials.webp)
 
 **Step 2 –** On the Credentials page, identify a domain either by entering one manually or selecting
 one from the **Domain Name** drop-down menu which displays a list of domains trusted by the one in
@@ -73,13 +73,13 @@ attributes list from the domain:
 
 Click **Next** to continue.
 
-![Custom Attributes Import Wizard Attributes page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/customattributesimportattributes.webp)
+![Custom Attributes Import Wizard Attributes page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/customattributesimportattributes.webp)
 
 **Step 3 –** The wizard populates available attributes from the domain specified on the Attributes
 page. Expand the desired object class and select the checkboxes for the custom attributes to be
 imported. Then click **Next**.
 
-![Custom Attributes Import Wizard Summary page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/customattributesimportsummary.webp)
+![Custom Attributes Import Wizard Summary page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/customattributesimportsummary.webp)
 
 **Step 4 –** On the Summary page, click **Finish**.
 

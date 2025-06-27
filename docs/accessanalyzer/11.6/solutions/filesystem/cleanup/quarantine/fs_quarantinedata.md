@@ -12,7 +12,7 @@ to prevent making unintended and potentially harmful changes to Active Directory
 
 **CAUTION:** Do not modify the action tasks. The action tasks are preconfigured for this job.
 
-![Action Tasks for the FS_QuarantineData Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/cleanup/quarantine/quarantinedataactions.webp)
+![Action Tasks for the FS_QuarantineData Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/cleanup/quarantine/quarantinedataactions.webp)
 
 The following action tasks are deselected by default:
 

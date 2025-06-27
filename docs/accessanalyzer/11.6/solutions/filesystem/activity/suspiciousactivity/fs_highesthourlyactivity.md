@@ -11,7 +11,7 @@ Activity** > **FS_HighestHourlyActivity** > **Configure** node and select **Anal
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FS_HighestHourlyActivity Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/activity/suspiciousactivity/highesthourlyactivityanalysis.webp)
+![Analysis Tasks for the FS_HighestHourlyActivity Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/activity/suspiciousactivity/highesthourlyactivityanalysis.webp)
 
 The following analysis task is selected by default:
 

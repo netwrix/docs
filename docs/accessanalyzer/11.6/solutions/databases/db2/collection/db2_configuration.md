@@ -7,7 +7,7 @@ respective reports.
 
 The 3-Db2_Configuration Job uses the SQL Data Collector for queries.
 
-![Query Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/postgresql/collection/configurationquery.webp)
+![Query Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/postgresql/collection/configurationquery.webp)
 
 The query is:
 

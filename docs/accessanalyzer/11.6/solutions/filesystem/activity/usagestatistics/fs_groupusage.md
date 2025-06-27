@@ -10,7 +10,7 @@ Statistics** > **FS_GroupUsage** > **Configure** node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FS_GroupUsage Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/activity/usagestatistics/groupusageanalysis.webp)
+![Analysis Tasks for the FS_GroupUsage Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/activity/usagestatistics/groupusageanalysis.webp)
 
 The following analysis task is selected by default:
 

@@ -16,7 +16,7 @@ Schema** > **Configure** node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection for the 0-Create Schema Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/collection/createschemaanalysis.webp)
+![Analysis Selection for the 0-Create Schema Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/collection/createschemaanalysis.webp)
 
 The following analysis tasks are selected by default:
 

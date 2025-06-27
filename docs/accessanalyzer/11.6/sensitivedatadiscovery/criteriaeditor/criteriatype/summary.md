@@ -3,12 +3,12 @@
 Summary criteria are designed as a way of combining Regular Expression (Pattern) criteria and
 Keyword criteria.
 
-![Edit new Summary criteria](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/sensitivedatadiscovery/criteriaeditor/criteriatype/newsummarycriteria.webp)
+![Edit new Summary criteria](/img/product_docs/accessanalyzer/11.6/accessanalyzer/sensitivedatadiscovery/criteriaeditor/criteriatype/newsummarycriteria.webp)
 
 Click **Add** and select **Summary** to add a new Summary criteria to the Required matched criteria
 list. Select the new criteria and click **Edit** to configure the new Summary criteria.
 
-![Summary criteria configuration page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/sensitivedatadiscovery/criteriaeditor/criteriatype/summarycriteriaconfiguration.webp)
+![Summary criteria configuration page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/sensitivedatadiscovery/criteriaeditor/criteriatype/summarycriteriaconfiguration.webp)
 
 The options on the Summary criteria configuration page are:
 

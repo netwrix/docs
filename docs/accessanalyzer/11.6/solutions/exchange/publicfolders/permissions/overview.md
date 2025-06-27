@@ -2,7 +2,7 @@
 
 The Permissions job group provides visibility into permissions applied to each public folder.
 
-![Permissions Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Permissions Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The jobs in the Permissions job group are:
 

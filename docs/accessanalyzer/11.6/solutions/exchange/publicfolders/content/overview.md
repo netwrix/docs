@@ -2,7 +2,7 @@
 
 The Content job group provides visibility into public folder sizing and content aging.
 
-![Content Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Content Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The jobs in the Content job group are:
 

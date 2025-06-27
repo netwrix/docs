@@ -3,7 +3,7 @@
 The Execution Options page provides options to define the mode of execution. It is a wizard page for
 the **Edit Profile** and **Create a New Profile** selections on the Profile Type page.
 
-![Command Line Utility Data Collector Wizard Execution Options page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/commandlineutility/executionoptions.webp)
+![Command Line Utility Data Collector Wizard Execution Options page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/commandlineutility/executionoptions.webp)
 
 The available options on the page vary depending on the selected profile type. The possible options
 are as follows:

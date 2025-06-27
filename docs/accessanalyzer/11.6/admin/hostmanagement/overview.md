@@ -32,7 +32,7 @@ The Host Management process consists of the following phases:
   [Hosts Lists](/docs/accessanalyzer/11.6/admin/hostmanagement/lists.md)
   topic for additional information.
 
-![Host Management Node in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Host Management Node in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The nodes under the Host Management node are:
 

@@ -5,7 +5,7 @@ to proactively identify critical security configurations that leave Active Direc
 attack. The result is a report which provides a listing of findings by severity and category with
 corresponding details that can be used to prioritize and remediate security issues.
 
-![AD_CleanupProgress Job in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/cleanup/cleanupprogressjobstree.webp)
+![AD_CleanupProgress Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/cleanup/cleanupprogressjobstree.webp)
 
 Workflow
 
@@ -31,7 +31,7 @@ select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the AD_CleanupProgress Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/cleanup/cleanupprogressanalysis.webp)
+![Analysis Tasks for the AD_CleanupProgress Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/cleanup/cleanupprogressanalysis.webp)
 
 The default analysis task is:
 

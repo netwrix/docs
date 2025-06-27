@@ -10,7 +10,7 @@ Navigate to the **Jobs** > **SharePoint** > **7.Activity** > **Usage Statistics*
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the SP_MostActiveSites Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/sharepoint/activity/usagestatistics/mostactivesitesanalysis.webp)
+![Analysis Tasks for the SP_MostActiveSites Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/activity/usagestatistics/mostactivesitesanalysis.webp)
 
 The default analysis task is:
 

@@ -6,7 +6,7 @@ wizard page for the categories of:
 - System Access/Permission Auditing Scan
 - Sensitive Data
 
-![FSAA Data Collector Wizard Scan Settings page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/scansettings.webp)
+![FSAA Data Collector Wizard Scan Settings page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/scansettings.webp)
 
 In the Scan Protocols section, select the desired checkboxes for including certain types of shared
 folders:
@@ -34,7 +34,7 @@ In the middle section, select the desired checkboxes for additional settings:
 - NetApp communication security – This option provides the ability to choose levels of encryption
   and authentication applied during Access Auditing scans of NetApp devices
 
-    ![NetApp communication security options](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/scansettingsnetapp.webp)
+    ![NetApp communication security options](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/scansettingsnetapp.webp)
 
     - HTTPS – Encrypts communication and verifies the targeted server's SSL certificate
     - HTTPS, Ignore Certificate Errors – Encrypts communication but ignores certificate errors
@@ -68,7 +68,7 @@ Sensitive Data Scan categories and contains the following options:
 
 If desired, enable this feature and click **Configure Query** to open the Manual Share Query window.
 
-![Maual Shares Query window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/maualsharesquery.webp)
+![Maual Shares Query window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/maualsharesquery.webp)
 
 The SQL query provided by a user should return a list of all shares in the target environment. The
 target tables must reside within the Enterprise Auditor database and contain at least the following

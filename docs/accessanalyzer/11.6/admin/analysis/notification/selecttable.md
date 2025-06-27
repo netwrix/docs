@@ -5,7 +5,7 @@ page determines the options available on this page. See the
 [Notification: Table Type](/docs/accessanalyzer/11.6/admin/analysis/notification/tabletype.md) topic
 for additional information.
 
-![Notification Data Analysis Module wizard Select Table page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/analysis/notification/selecttable.webp)
+![Notification Data Analysis Module wizard Select Table page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/notification/selecttable.webp)
 
 The Select table page has the following options:
 

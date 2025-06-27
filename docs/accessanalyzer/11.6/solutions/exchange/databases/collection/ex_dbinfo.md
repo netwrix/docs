@@ -2,7 +2,7 @@
 
 The EX_DBInfo job utilizes Exchange PowerShell to gather 2010/2013 Mailbox Size information.
 
-![1.Local > EX_DBInfo Job in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/exchange/databases/collection/localjobstree.webp)
+![1.Local > EX_DBInfo Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/databases/collection/localjobstree.webp)
 
 The EX_DBInfo job is located in the 1.Local job group.
 
@@ -16,7 +16,7 @@ topic for additional information.
 
 The EX_DBInfo Job uses the ExchangePS Data Collector.
 
-![Queries for the EX_DBInfo Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/exchange/databases/collection/dbinfoquery.webp)
+![Queries for the EX_DBInfo Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/databases/collection/dbinfoquery.webp)
 
 The following query is included in the EX_DBInfo Job:
 

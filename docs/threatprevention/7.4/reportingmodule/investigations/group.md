@@ -6,7 +6,7 @@ In an investigation report, when you click the Perpetrator (user name) link or T
 link, you land on the User Details page or the Host Details page. Click a group name here to go to
 the Group Details page.
 
-![Group Details page - Members tab](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/activedirectory/operations/groupdetails.webp)
+![Group Details page - Members tab](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/activedirectory/operations/groupdetails.webp)
 
 The top of the page displays a group profile card that may contain the following information about
 the group:

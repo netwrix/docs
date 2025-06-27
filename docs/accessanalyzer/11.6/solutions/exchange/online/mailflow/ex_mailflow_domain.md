@@ -26,7 +26,7 @@ View the analysis task by navigating to the **Exchange** > **8. Exchange Online*
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the EX_Mailflow_Domain Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/exchange/online/mailflow/mailflowdomainanalysis.webp)
+![Analysis Tasks for the EX_Mailflow_Domain Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/online/mailflow/mailflowdomainanalysis.webp)
 
 The following analysis task is selected by default:
 

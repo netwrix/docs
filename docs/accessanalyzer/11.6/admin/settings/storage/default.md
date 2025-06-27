@@ -4,12 +4,12 @@ While multiple Storage Profiles can exist, only one profile can be set as the de
 checkmark next to the profile name indicates the default Storage Profile. Follow the steps to change
 the default Storage Profile at the global level.
 
-![Set as Default option on Storage page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/storage/default.webp)
+![Set as Default option on Storage page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/storage/default.webp)
 
 **Step 1 –** Select the profile to be the new default, and click **Set as default**. The Change
 storage profile window opens.
 
-![Change storage profile window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/changestorageprofile.webp)
+![Change storage profile window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/changestorageprofile.webp)
 
 **Step 2 –** There are three options for host management data migration. Select the desired option,
 choose whether or not to apply the secondary option, and click **OK**.
@@ -33,11 +33,11 @@ choose whether or not to apply the secondary option, and click **OK**.
     - Clear data in destination table – If selected, all host management data in the destination
       table is deleted
 
-![Change storage profile window when transfer is complete](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/storage/changestorageprofilefinish.webp)
+![Change storage profile window when transfer is complete](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/storage/changestorageprofilefinish.webp)
 
 **Step 3 –** When the host management data migration has completed, click **Finish**.
 
-![Storage page with new default storage profile](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/storage/defaultsave.webp)
+![Storage page with new default storage profile](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/storage/defaultsave.webp)
 
 **Step 4 –** A blue arrow now points to the new default Storage Profile. However, the arrow is also
 an indication that the new default is not fully recognized by Enterprise Auditor. Click **Save** and

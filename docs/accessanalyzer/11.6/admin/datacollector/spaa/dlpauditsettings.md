@@ -8,7 +8,7 @@ a subsequent scan (i.e. scanning fewer web applications, scanning fewer site col
 shallower depth scan). Those resources not included in a subsequent scan are marked as deleted in
 the Tier 2 database and subsequently removed from the Tier 1 database.
 
-![DLP Audit Settings page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/spaa/dlpauditsettings.webp)
+![DLP Audit Settings page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/spaa/dlpauditsettings.webp)
 
 Configure the **Scan Performance** options:
 

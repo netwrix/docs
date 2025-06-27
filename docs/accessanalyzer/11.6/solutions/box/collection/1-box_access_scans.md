@@ -10,7 +10,7 @@ the Scan Box Permissions Category. If this query is not configured but has the a
 scan of all folders at full depth is performed. Optionally, configure the query to limit the depth
 of the scan.
 
-![Queries for the 1-Box_Access Scans Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/box/collection/accessqueries.webp)
+![Queries for the 1-Box_Access Scans Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/accessqueries.webp)
 
 The 1-Box_Access Scans Job has the following queries:
 
@@ -45,26 +45,26 @@ Query Properties window opens.
 **Step 2 –** Select the **Data Source** tab, and click **Configure**. The Box Data Collector Wizard
 opens.
 
-![Box Data Collector Wizard Exclusions page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/box/collection/accessexclusions.webp)
+![Box Data Collector Wizard Exclusions page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/accessexclusions.webp)
 
 **Step 3 –** On the Exclusions Page:
 
 - Add folders to be excluded
 - Add folders to be included (scope scan to only these folders)
 
-![Box Data Collector Wizard Additional Scoping page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/box/collection/accessadditionalscoping.webp)
+![Box Data Collector Wizard Additional Scoping page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/accessadditionalscoping.webp)
 
 **Step 4 –** On the Additional Scoping page:
 
 - Optionally, select this option to limit the depth of the scan across the targeted Box account
 
-![Box Data Collector Wizard Scope by User page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/box/collection/accessuserscope.webp)
+![Box Data Collector Wizard Scope by User page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/accessuserscope.webp)
 
 **Step 5 –** On the Scope By User Page:
 
 - Optionally, limit the scope of the scan to specified users by providing a CSV file
 
-![Box Data Collector Wizard Authenticate page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/box/collection/accessauthenticate.webp)
+![Box Data Collector Wizard Authenticate page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/accessauthenticate.webp)
 
 **Step 6 –** The Authenticate page is where the connection to the target Box environment is
 configured. Click **Authorize** to launch the BoxLogin window and generate an authorization code.

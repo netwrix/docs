@@ -4,7 +4,7 @@ The **Lockouts** > **AD_Lockouts** Job provides a listing of all account lockout
 occurring in the past 30 days, failed authentications and host information is provided to aid
 troubleshooting.
 
-![AD_Lockouts Job in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/activity/lockoutsjobstree.webp)
+![AD_Lockouts Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/activity/lockoutsjobstree.webp)
 
 **_RECOMMENDED:_** Schedule this job to run with the 0.Collection job group.
 
@@ -16,7 +16,7 @@ Navigate to the **Active Directory** > **6.Activity** > **Lockouts** > **AD_Lock
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_Lockouts Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/activity/lockoutsanalysis.webp)
+![Analysis Tasks for the AD_Lockouts Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/activity/lockoutsanalysis.webp)
 
 The default analysis tasks are:
 

@@ -12,7 +12,7 @@ The job is dependent upon the Job Statistics Retention configuration in the **Se
 [Application](/docs/accessanalyzer/11.6/admin/settings/application/overview.md)
 topic for additional information.
 
-![SAS_ExecutionStatistics job in the Jobs tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![SAS_ExecutionStatistics job in the Jobs tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 Runtime Details:
 
@@ -36,7 +36,7 @@ to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Default Analysis tasks for the job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/instantjobs/analysistasks.webp)
+![Default Analysis tasks for the job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/analysistasks.webp)
 
 The default analysis tasks are:
 

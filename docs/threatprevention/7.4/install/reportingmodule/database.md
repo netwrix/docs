@@ -34,7 +34,7 @@ checkbox. Click Next.
 
 Optionally, enter a new path or use the **Browse** buttons to modify as desired. Click Next.
 
-![Netwrix PostgreSQL Setup wizard on the Successfully Installed page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Netwrix PostgreSQL Setup wizard on the Successfully Installed page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
 
 **Step 5 –** The installation begins and the installer displays a Setup Progress window. Click Exit
 when the installation is successful. The Netwrix PostgreSQL Setup wizard closes.

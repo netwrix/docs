@@ -40,7 +40,7 @@ To manage Content Aware Protection policies, you can:
 - Switch views between Grid or Widget mode using the controls in the top-right corner
 - Edit policy priority by double-clicking on a policy listed in the Priority column
 
-![Manage the Content Aware Protection policies](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/requirements/target/config/policies.webp)
+![Manage the Content Aware Protection policies](/img/product_docs/accessanalyzer/11.6/accessanalyzer/requirements/target/config/policies.webp)
 
 ## Policy Information
 

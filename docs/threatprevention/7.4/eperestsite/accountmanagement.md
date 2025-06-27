@@ -44,7 +44,7 @@ Required Input Parameters
 
 Example
 
-![POST api/account/create](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/report/create.webp)
+![POST api/account/create](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/report/create.webp)
 
 ## GET api/account/user/`<userId>`
 

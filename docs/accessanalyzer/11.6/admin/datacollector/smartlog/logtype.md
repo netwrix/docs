@@ -2,7 +2,7 @@
 
 The Log Type page is used to select the log type to be processed.
 
-![SMART Log DC Wizard Log Type page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/smartlog/logtype.webp)
+![SMART Log DC Wizard Log Type page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/smartlog/logtype.webp)
 
 The log types are:
 

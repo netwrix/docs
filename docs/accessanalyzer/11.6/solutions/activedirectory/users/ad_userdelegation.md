@@ -14,7 +14,7 @@ select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Task for the AD_UserDelegation Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/users/userdelegationanalysis.webp)
+![Analysis Task for the AD_UserDelegation Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/users/userdelegationanalysis.webp)
 
 The default analysis tasks are:
 

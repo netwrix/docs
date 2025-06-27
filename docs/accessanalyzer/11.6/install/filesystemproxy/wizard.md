@@ -17,7 +17,7 @@ Scanning Proxy Setup wizard opens.
 **Step 3 –** On the End-User License Agreement page, select the **I accept the terms in the License
 Agreement** checkbox and click **Next**.
 
-![File System Proxy Setup Wizard Destination Folder page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/filesystemproxy/destination.webp)
+![File System Proxy Setup Wizard Destination Folder page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/destination.webp)
 
 **Step 4 –** On the Destination Folder page, click **Next** to install to the default folder or
 click **Change** to select a different location. Clicking **Change** opens the Change destination
@@ -36,7 +36,7 @@ On the Change destination folder page, choose a different destination folder for
 Click **OK** to save changes or click **Cancel** to return to the Destination Folder page without
 saving.
 
-![File System Proxy Setup Wizard Configure Service page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/filesystemproxy/configureservice.webp)
+![File System Proxy Setup Wizard Configure Service page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/configureservice.webp)
 
 **Step 5 –** On the Configure Service page, configure the credential to run the service using the
 radio buttons. Then, click **Next**.
@@ -85,13 +85,13 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\StealthAUDITFSAA\ImagePath
 
 Follow the steps to configure these service parameters.
 
-![Netwrix Enterprise Auditor FSAA Proxy Scanner service in the Services Management Console](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/filesystemproxy/service.webp)
+![Netwrix Enterprise Auditor FSAA Proxy Scanner service in the Services Management Console](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/service.webp)
 
 **Step 1 –** After installing the File System Proxy Service, open Services Management Console
 (`services.msc`). To stop the service, right-click on the Netwrix Enterprise Auditor FSAA Proxy
 Scanner service and select **Stop**.
 
-![File System Proxy ImagePath registry key in the Registry Editor](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/filesystemproxy/regedit.webp)
+![File System Proxy ImagePath registry key in the Registry Editor](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/regedit.webp)
 
 **Step 2 –** Open Registry Editor (`regedit`) and navigate to the following registry key:
 
@@ -117,7 +117,7 @@ during installation according to the installation directory location selected.
 **Step 5 –** Return to the Services Management Console and start the Netwrix Enterprise Auditor FSAA
 Proxy Scanner service. Close the Services Management Console.
 
-![Port number on File System Access Auditor Data Collector Wizard Applet Settings page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/filesystemproxy/dcwizardportnumber.webp)
+![Port number on File System Access Auditor Data Collector Wizard Applet Settings page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/dcwizardportnumber.webp)
 
 **Step 6 –** In the Enterprise Auditor Console, navigate to the **FileSystem** > **0.Collection** >
 **[Job]** > **Configure** > **Queries** node and open the File System Access Auditor Data Collector

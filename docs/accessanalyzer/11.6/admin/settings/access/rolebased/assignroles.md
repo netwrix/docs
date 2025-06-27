@@ -7,15 +7,15 @@ an error message displays.
 
 Follow the steps to assign roles in the Enterprise Auditor Console.
 
-![Add Access option on the Access page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/addaccess.webp)
+![Add Access option on the Access page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/addaccess.webp)
 
 **Step 1 –** On the Access page, click **Add Access**. The Access Type wizard opens.
 
-![Access Type page of the Access Role wizard](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/accesstypeuser.webp)
+![Access Type page of the Access Role wizard](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/accesstypeuser.webp)
 
 **Step 2 –** Select the **A user or group accessing this console** option. Click **Next**.
 
-![Console Access page of the Access Role wizard](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/consoleaccess.webp)
+![Console Access page of the Access Role wizard](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/consoleaccess.webp)
 
 **Step 3 –** On the Console Access page, specify a group or user in the **Name** field. Use the
 ellipsis (**…**) to browse for accounts with the Select User or Group window.
@@ -30,7 +30,7 @@ ellipsis (**…**) to browse for accounts with the Select User or Group window.
     - Add the gMSA name (`gMSAadmin$`), then click **OK**.
     - The Member Type will show as `msDS-GroupManagedServiceAccount` on the Access page.
 
-![Console Access page with user added](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/consoleaccessfinish.webp)
+![Console Access page with user added](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/consoleaccessfinish.webp)
 
 **Step 4 –** Select a role for the group or user from the Role list. Click **Finish**. The group or
 user and role is added to the Role Membership list in the Roles view.
@@ -42,7 +42,7 @@ they are not saved.
 
 Role Based Access is enabled when the first role has been assigned.
 
-![Error message when Administrator role is not specified](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/noadminerror.webp)
+![Error message when Administrator role is not specified](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/noadminerror.webp)
 
 The first role or set of roles saved must include the Administrator role. Clicking **Save** for the
 first role or set or roles without including the Administrator generates an error message in the
@@ -55,7 +55,7 @@ requiring local Administrator rights.
 
 |                                                                                                                                                       |                                                                                                                                                                        |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Permissions - This folder only](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/permissionsfolder.webp) | ![Permissions - Subfolders and files only](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/permissionssubfolderfiles.webp) |
+| ![Permissions - This folder only](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/permissionsfolder.webp) | ![Permissions - Subfolders and files only](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/permissionssubfolderfiles.webp) |
 
 There are two separate sets of permissions:
 
@@ -66,11 +66,11 @@ There are two separate sets of permissions:
 
 Follow the steps to edit a Enterprise Auditor user’s role.
 
-![Edit Member Role](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/editmemberrole.webp)
+![Edit Member Role](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/editmemberrole.webp)
 
 **Step 1 –** On the Access page, select the desired user and click **Edit Member Role**.
 
-![Edit Console Access wizard page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/consoleaccessedit.webp)
+![Edit Console Access wizard page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/consoleaccessedit.webp)
 
 **Step 2 –** Select a new role for the user from the Roles list.
 
@@ -89,7 +89,7 @@ changed, then the user needs to exit and re-launch the application for the role 
 
 Follow the steps to delete a user from having access to the Enterprise Auditor Console.
 
-![Delete Role Member](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/deleterolemember.webp)
+![Delete Role Member](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/deleterolemember.webp)
 
 **Step 1 –** On the Access page, select the desired user and click **Delete Role Member**. The
 selected user will be removed from the list.

@@ -30,7 +30,7 @@ Select and configure the operations using the following options:
 
 Use the Registry Browser window to navigate a computer’s registry and select a key.
 
-![Registry Browser Window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/diskinfo/registrybrowser.webp)
+![Registry Browser Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/diskinfo/registrybrowser.webp)
 
 Select a key using the following options:
 
@@ -52,7 +52,7 @@ Select a key using the following options:
 
 Use the Select Users or Groups window to select a user, group, or built-in security principal.
 
-![Select Users or Groups Window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/registry/selectusersgroups.webp)
+![Select Users or Groups Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/registry/selectusersgroups.webp)
 
 The options are:
 
@@ -79,7 +79,7 @@ The options are:
 
 Use the Object Types window to select which types of objects to query.
 
-![Object Types Window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/registry/objecttypes.webp)
+![Object Types Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/registry/objecttypes.webp)
 
 Select any of the following objects:
 
@@ -91,7 +91,7 @@ Select any of the following objects:
 
 Use the Locations window to select a location.
 
-![Locations Window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/registry/locations.webp)
+![Locations Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/registry/locations.webp)
 
 Select a location using the explorer.
 
@@ -99,7 +99,7 @@ Select a location using the explorer.
 
 Use the Advanced Select Users and Groups window to search for items with a finer focus.
 
-![Advanced Select Users and Groups Window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/registry/advancedselectusersgroups.webp)
+![Advanced Select Users and Groups Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/registry/advancedselectusersgroups.webp)
 
 This window contains the same options as the main Select Users or Groups window, but with the
 following additional options:
@@ -127,7 +127,7 @@ following additional options:
 Use this window to select columns. The columns available varies based on the source table originally
 selected.
 
-![Choose Columns Window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/registry/choosecolumns.webp)
+![Choose Columns Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/registry/choosecolumns.webp)
 
 Choose columns using the following options:
 

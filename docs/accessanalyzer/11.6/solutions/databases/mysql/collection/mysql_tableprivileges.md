@@ -9,7 +9,7 @@ The MySQL_TablePrivileges Job uses the SQL Data Collector for queries.
 
 **CAUTION:** Do not modify the query. The query is preconfigured for this job.
 
-![Query Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/mysql/collection/querytableprivileges.webp)
+![Query Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/mysql/collection/querytableprivileges.webp)
 
 The query is:
 
@@ -23,7 +23,7 @@ Navigate to the **Databases** > **0.Collection** > **MySQL** > **MySQL_TablePriv
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/mysql/collection/analysistableprivileges.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/mysql/collection/analysistableprivileges.webp)
 
 The default analysis task is:
 

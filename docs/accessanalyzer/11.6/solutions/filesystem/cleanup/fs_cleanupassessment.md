@@ -9,7 +9,7 @@ Information Center Manage Owners page. See the Resource Owners topics in the
 [Netwrix Access Information Center Documentation](https://helpcenter.netwrix.com/category/accessinformationcenter)
 for additional information.
 
-![1. Cleanup Assessment > FS_CleanupAssessment Job in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![1. Cleanup Assessment > FS_CleanupAssessment Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The FS_CleanupAssessment job is located in the 1. Cleanup Assessment job group.
 
@@ -54,7 +54,7 @@ Navigate to the **FileSystem** > **Cleanup** > **1. Cleanup Assessment** >
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_CleanupAssessment Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/cleanup/cleanupassessmentanalysis.webp)
+![Analysis Tasks for the FS_CleanupAssessment Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/cleanup/cleanupassessmentanalysis.webp)
 
 The following analysis tasks are selected by default:
 
@@ -119,11 +119,11 @@ Properties**. The Query Properties window opens.
 **Step 3 –** Select the **Data Source** tab, and click **Configure**. The File System Access Auditor
 Data Collector Wizard opens.
 
-![File Details tab of the FSAA Data Collector Wizard Default Scoping Options page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/defaultscopingoptions/filedetails.webp)
+![File Details tab of the FSAA Data Collector Wizard Default Scoping Options page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/defaultscopingoptions/filedetails.webp)
 
 **Step 4 –** Navigate to the **Default Scoping Options** page and click the **File Details** tab.
 
-![Options to select on File Details tab](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/cleanup/includemetadatatagoptions.webp)
+![Options to select on File Details tab](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/cleanup/includemetadatatagoptions.webp)
 
 **Step 5 –** On the File Details tab, select the **Scan file-level details** option, and then select
 the **Collect tags/keywords from file metadata properties** option.

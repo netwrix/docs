@@ -12,7 +12,7 @@ Navigate to **Box** > **1.Activity** > **Suspicious Activity** > **Box_FailedLog
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Box_FailedLogins Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/box/activity/suspiciousactivity/failedloginsanalysis.webp)
+![Analysis Tasks for the Box_FailedLogins Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/activity/suspiciousactivity/failedloginsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

@@ -10,7 +10,7 @@ The following example shows an interactive grid in which grouping has been enabl
 [Grid](/docs/accessanalyzer/11.6/admin/report/wizard/widgets.md#grid)
 topic for additional information.
 
-![Group by option](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/report/interactivegrids/groupby.webp)
+![Group by option](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/report/interactivegrids/groupby.webp)
 
 The drop-down list to the right of the Group by field can be accessed by clicking the down arrow.
 Click an item from the drop-down list to group the report by that category.

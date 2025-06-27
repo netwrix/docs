@@ -10,7 +10,7 @@ Navigate to the **AWS** > **5.Policies** > **AWS_ManagedPolicies** > **Configure
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AWS_ManagedPolicies Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/aws/policies/managedpoliciesanalysis.webp)
+![Analysis Tasks for the AWS_ManagedPolicies Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/aws/policies/managedpoliciesanalysis.webp)
 
 The following analysis tasks are selected by default:
 

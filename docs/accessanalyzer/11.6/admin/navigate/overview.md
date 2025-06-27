@@ -4,7 +4,7 @@ There are several options that can be used to navigate the Enterprise Auditor Co
 covers basic Enterprise Auditor Console navigation, including menu options, buttons, and the
 different panes through which users can access Enterprise Auditor’s various functions and options.
 
-![Console Navigation Overview](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationoverview.webp)
+![Console Navigation Overview](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationoverview.webp)
 
 The primary sections of the Enterprise Auditor Console are:
 

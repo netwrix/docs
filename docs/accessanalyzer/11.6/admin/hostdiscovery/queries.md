@@ -2,7 +2,7 @@
 
 The Host Discovery Queries Pane contains a list of previously-configured queries.
 
-![Host Discovery Queries Pane](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostdiscovery/queries.webp)
+![Host Discovery Queries Pane](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostdiscovery/queries.webp)
 
 The list of previously configured queries is provided in a table format with the following columns:
 
@@ -28,18 +28,18 @@ Follow the steps to view the hidden columns in the table:
 
 **Step 1 –** Right-click a header in the table, which opens a context menu.
 
-![Field Chooser option on context menu](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostdiscovery/queriesfieldchooser.webp)
+![Field Chooser option on context menu](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostdiscovery/queriesfieldchooser.webp)
 
 **Step 2 –** Select **Field Chooser**, which opens the Customization window.
 
-![Customization window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostdiscovery/queriescustomizationwindow.webp)
+![Customization window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostdiscovery/queriescustomizationwindow.webp)
 
 **Step 3 –** Select the **Columns** tab.
 
-![Drag hidden colum into table](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostdiscovery/queriesaddhiddencolumn.webp)
+![Drag hidden colum into table](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostdiscovery/queriesaddhiddencolumn.webp)
 
 **Step 4 –** Drag and drop the desired column between any header of the table.
 
-![Host Discovery Queries table with column added](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostdiscovery/querieshiddencolumnadded.webp)
+![Host Discovery Queries table with column added](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostdiscovery/querieshiddencolumnadded.webp)
 
 The header is now present in the table.

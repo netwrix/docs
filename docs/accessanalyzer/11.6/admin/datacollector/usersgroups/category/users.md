@@ -50,7 +50,7 @@ offline.
 Clicking the ellipses for the **All users in the following groups** and the **These users** options
 opens the Find a Group or Find a User browser.
 
-![Find a group window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/usersgroups/category/findagroup.webp)
+![Find a group window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/usersgroups/category/findagroup.webp)
 
 The Find a Group and Find a User browsers display a list of groups or users, depending on which one
 is being used, that can be selected for the option. Select from a specific host using the Sample

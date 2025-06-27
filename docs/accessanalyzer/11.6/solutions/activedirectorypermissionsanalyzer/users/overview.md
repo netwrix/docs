@@ -3,7 +3,7 @@
 The 1.Users Job Group reports on all Active Directory permissions applied to user objects within the
 targeted domains
 
-![1.Users Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![1.Users Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The following jobs comprise the 1.Users Job Group:
 

@@ -3,7 +3,7 @@
 The Results page is where the type of data to be returned is configured. Each type has a different
 set of options.
 
-![Users and Groups Browser wizard Results page Category selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/results.webp)
+![Users and Groups Browser wizard Results page Category selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/results.webp)
 
 Choose from the following query categories:
 

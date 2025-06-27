@@ -3,7 +3,7 @@
 The 9.Sites Job Group reports on all Active Directory permissions applied to site objects within the
 targeted domains.
 
-![9.Sites Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![9.Sites Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The jobs in the 9.Sites Job Group are:
 

@@ -4,7 +4,7 @@ The Navigation Pane, located on the left-hand side of the Enterprise Auditor Con
 major functions of Enterprise Auditor in a collapsible list format. Clicking on any node with an
 arrow will open a collapsible list that shows more navigation, configuration, and use options.
 
-![Configuration Settings](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationmenu.webp)
+![Configuration Settings](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationmenu.webp)
 
 The items in the Navigation Pane are:
 
@@ -57,7 +57,7 @@ topic for additional information on these actions.
 The Discovery node right click-menu can be accessed in the Host Management node in the Navigation
 Pane.
 
-![Discovery Node options](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane1.webp)
+![Discovery Node options](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane1.webp)
 
 The Discovery node right-click menu options are:
 
@@ -70,7 +70,7 @@ The Discovery node right-click menu options are:
 The All Hosts node right-click menu can be accessed in the Host Management node in the Navigation
 Pane.
 
-![All Hosts Node options](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane2.webp)
+![All Hosts Node options](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane2.webp)
 
 The All Hosts right-click menu options are:
 
@@ -93,7 +93,7 @@ The All Hosts right-click menu options are:
 The All Hosts > [Host List] right-click menu can be accessed in the Host Management node in the
 Navigation Pane.
 
-![Host List Node options](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane3.webp)
+![Host List Node options](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane3.webp)
 
 The All Hosts > [Host List] node right-click menu options are:
 
@@ -127,7 +127,7 @@ The Job tree primary nodes have the following right-click menu items:
 **NOTE:** These menu items apply to a Jobs Tree, Job Group, and a Job. Depending on the chosen
 selection, some menu items are grayed out.
 
-| ![Jobs Tree Primary Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane4.webp) | ![Jobs Tree Primary Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane5.webp) | ![Jobs Tree Primary Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane6.webp) |
+| ![Jobs Tree Primary Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane4.webp) | ![Jobs Tree Primary Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane5.webp) | ![Jobs Tree Primary Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane6.webp) |
 | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | Jobs Tree Node                                                                                                              | A Job Group Node                                                                                                            | A Job Node                                                                                                                  |
 
@@ -196,7 +196,7 @@ Menu items include:
 
 The [Job] > Status node has the following right-click menu items:
 
-![Status Node](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane7.webp)
+![Status Node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane7.webp)
 
 The Status node right-click menu items are:
 
@@ -209,7 +209,7 @@ The Status node right-click menu items are:
 
 The [Job] > Status > [Table/View] nodes have the following right-click menu items:
 
-| ![Table/View Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane8.webp) | ![Table/View Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane9.webp) | ![Table/View Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane10.webp) |
+| ![Table/View Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane8.webp) | ![Table/View Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane9.webp) | ![Table/View Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane10.webp) |
 | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | ConnectStatus Table                                                                                                  | Job Stats & Task Stats Tables                                                                                        | Messages Table                                                                                                        |
 
@@ -229,7 +229,7 @@ are:
 
 The [Job] > Results node has the following right-click menu items:
 
-![Results Node](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane11.webp)
+![Results Node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane11.webp)
 
 The menu items are:
 
@@ -243,7 +243,7 @@ The menu items are:
 
 The [Job] > Results > [Table/View] nodes have the following right-click menu items:
 
-![Results-Table View Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane12.webp)
+![Results-Table View Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane12.webp)
 
 The menu items are:
 
@@ -266,7 +266,7 @@ The menu items are:
 
 The [Job] > Results > [Report] nodes have the following right-click menu items:
 
-![Results-Report Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane13.webp)
+![Results-Report Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane13.webp)
 
 The [Job] > Results > [Report] node right-click menu items are:
 
@@ -279,7 +279,7 @@ The [Job] > Results > [Report] node right-click menu items are:
 
 The [Job] >Configure node have the following right-click menu items:
 
-![Configure Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane13.webp)
+![Configure Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane13.webp)
 
 The [Job] > Configure node right-click menu items are:
 
@@ -295,7 +295,7 @@ The [Job] > Configure node right-click menu items are:
 The right-click menu items for the [Job] > Configure > [Configuration] node are the same right-click
 menus as those available within the job’s individual configuration views:
 
-| ![Configure-Configuration Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane14.webp) | ![Configure-Configuration Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane15.webp) | ![Configure-Configuration Nodes](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane16.webp) |
+| ![Configure-Configuration Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane14.webp) | ![Configure-Configuration Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane15.webp) | ![Configure-Configuration Nodes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane16.webp) |
 | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | Queries Node                                                                                                                       | Analysis Node                                                                                                                      | Actions Node                                                                                                                       |
 
@@ -315,7 +315,7 @@ Each configuration node has a different right-click menu. For additional informa
 
 The [Job] >Configure > Reports node has the following right-click menu items:
 
-![Configure-Reports Node](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane17.webp)
+![Configure-Reports Node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane17.webp)
 
 The [Job] > Configure > Reports node right-click menu items are:
 
@@ -331,7 +331,7 @@ The [Job] > Configure > Reports node right-click menu items are:
 The [Job] >Configure > Reports > [Report Configuration] node has the following right-click menu
 items:
 
-![Reports Configuration Node](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/navigationpane18.webp)
+![Reports Configuration Node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/navigationpane18.webp)
 
 The [Job] > Configure > Reports > [Report Configuration] node right-click menu items are:
 

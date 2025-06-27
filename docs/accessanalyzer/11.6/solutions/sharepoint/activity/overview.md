@@ -4,7 +4,7 @@ The 7.Activity job group generates summary and detail reports of SharePoint acti
 specified sites. These reports can be used for identifying file, folder, and user related activity
 across your SharePoint environment.
 
-![7.Activity Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![7.Activity Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The job groups in the 7.Activity Job Group are:
 

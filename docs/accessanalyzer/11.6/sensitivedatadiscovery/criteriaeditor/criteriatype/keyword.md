@@ -3,7 +3,7 @@
 Keyword criteria consists of a list of comma-separated words. If any word in the list is found in
 the file, it is considered a hit.
 
-![Keywords window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/sensitivedatadiscovery/criteriaeditor/criteriatype/keywordswindow.webp)
+![Keywords window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/sensitivedatadiscovery/criteriaeditor/criteriatype/keywordswindow.webp)
 
 The options on the Keywords window are:
 

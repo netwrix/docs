@@ -3,7 +3,7 @@
 The Directory Scope page provides configuration settings for the directory connection and the scope
 for the query. It is a wizard page for the category of **Directory Objects by Domain**.
 
-![Active Directory Data Collector Wizard Directory Scope page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/activedirectory/directoryscope.webp)
+![Active Directory Data Collector Wizard Directory Scope page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/activedirectory/directoryscope.webp)
 
 The Directory Scope page has the following options:
 

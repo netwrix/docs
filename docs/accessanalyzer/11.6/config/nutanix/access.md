@@ -14,7 +14,7 @@ Follow the steps to configure the required account in the Nutanix Prism Central 
 **Step 3 –** On the new files URL page, locate the **Configuration** dropdown and select **Manage
 Roles**.
 
-![Nutanix Backup Admin: Backup Access only role](/img/versioned_docs/accessanalyzer_11.6/config/nutanix/nutanixbackupadminrole.webp)
+![Nutanix Backup Admin: Backup Access only role](/img/product_docs/accessanalyzer/11.6/config/nutanix/nutanixbackupadminrole.webp)
 
 **Step 4 –** On the Manage Roles window, add an account with the **Backup Admin: Backup Access
 only** role.

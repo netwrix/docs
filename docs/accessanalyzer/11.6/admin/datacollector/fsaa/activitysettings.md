@@ -3,7 +3,7 @@
 The File System Activity Auditor Scan Filter Settings page is where activity scan filter settings
 are configured. It is a wizard page for the category of File System Activity Scan.
 
-![FSAA Data Collector Wizard Activity Settings page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/activitysettings.webp)
+![FSAA Data Collector Wizard Activity Settings page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/activitysettings.webp)
 
 In the Scan Filters section, choose from the following options:
 
@@ -44,7 +44,7 @@ In the Host Mapping section, configure the following:
 If desired, enable the host mapping feature and select **Configure Query** to open the Host Mapping
 Query window.
 
-![Host Mapping Query window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/hostmappingquery.webp)
+![Host Mapping Query window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/hostmappingquery.webp)
 
 When the Enable host mapping checkbox is selected, the query textbox is enabled. The SQL query
 provided by a user should return a set of log locations, target hosts, and host names of the
@@ -80,11 +80,11 @@ Activity Monitor Agents for a single targeted Host. See the examples below:
 
 Single-Host Single-Agent Example:
 
-![Query Results window for single agent example](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/hostmappingsinglehostsingleagent.webp)
+![Query Results window for single agent example](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/hostmappingsinglehostsingleagent.webp)
 
 Single-Host Multiple-Agent Example:
 
-![Query Results window for multiple agent example](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/fsaa/hostmappingsinglehostmultipleagent.webp)
+![Query Results window for multiple agent example](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/hostmappingsinglehostmultipleagent.webp)
 
 **NOTE:** For multiple-agent setup, the configured Host Mapping table must have the same value for
 HostName and Host, as shown in the Single-Host Multiple-Agent example.

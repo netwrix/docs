@@ -32,7 +32,7 @@ Permissions
 
 The Registry Data Collector is configured through the Registry Browser window.
 
-![Registry Browser window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/browser.webp)
+![Registry Browser window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/browser.webp)
 
 The configurable options are:
 
@@ -60,16 +60,16 @@ topic for additional information.
 The button bar is located right above the Selected Properties window. The button bar enables users
 to do the following:
 
-![Button Bar](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/buttonbar.webp)
+![Button Bar](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/buttonbar.webp)
 
 | Icon                                                                                                                                                    | Name                                               |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| ![Select all peer keys for this node](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/selectall.webp)                   | Select all peer keys for this node                 |
-| ![Add name of currently selected key](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/addname.webp)                     | Add name of currently selected key                 |
-| ![Add full path of the currently selected key](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/addpath.webp)            | Add full path of the currently selected key        |
-| ![Add last write date/time of currently selected key](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adddatetime.webp) | Add last write date/time of currently selected key |
-| ![Add security properties for selected key](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/addproperties.webp)         | Add security properties for selected key           |
-| ![Enumerate all values for this key](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/enumeratevalues.webp)              | Enumerate all values for this key                  |
-| ![Add currently selected value](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/addvalue.webp)                          | Add currently selected value                       |
+| ![Select all peer keys for this node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/selectall.webp)                   | Select all peer keys for this node                 |
+| ![Add name of currently selected key](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/addname.webp)                     | Add name of currently selected key                 |
+| ![Add full path of the currently selected key](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/addpath.webp)            | Add full path of the currently selected key        |
+| ![Add last write date/time of currently selected key](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adddatetime.webp) | Add last write date/time of currently selected key |
+| ![Add security properties for selected key](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/addproperties.webp)         | Add security properties for selected key           |
+| ![Enumerate all values for this key](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/enumeratevalues.webp)              | Enumerate all values for this key                  |
+| ![Add currently selected value](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/addvalue.webp)                          | Add currently selected value                       |
 | ![Delete properties from selection](/img/versioned_docs/activitymonitor_7.1/activitymonitor/admin/search/query/delete.webp)                              | Delete properties from selection                   |
-| ![Go to selected key](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/goto.webp)                                        | Go to selected key                                 |
+| ![Go to selected key](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/goto.webp)                                        | Go to selected key                                 |

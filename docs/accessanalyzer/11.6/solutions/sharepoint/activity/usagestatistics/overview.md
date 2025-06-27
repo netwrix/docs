@@ -3,7 +3,7 @@
 The Usage Statistics job group identifies long term trends of activity across your SharePoint
 environment highlighting most active sites and users as well as stale sites.
 
-![Usage Statistics Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/sharepoint/activity/usagestatistics/usagestatisticsjobstree.webp)
+![Usage Statistics Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/activity/usagestatistics/usagestatisticsjobstree.webp)
 
 The jobs in the Usage Statistics Job Group are:
 

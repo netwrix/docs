@@ -3,7 +3,7 @@
 The Operation page is available when **Define a new action** is selected on the Action page. On the
 Operation page, define the action by selecting an operation from the drop-down list.
 
-![File System Action Module Wizard Operation page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/filesystem/operation.webp)
+![File System Action Module Wizard Operation page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/filesystem/operation.webp)
 
 At the Available Operations drop-down selection list, choose the operation for the action to
 perform. The selection determines which pages are available in the wizard. The following operations

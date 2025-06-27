@@ -17,7 +17,7 @@ the Enterprise Auditor Console.
 **Step 1 –** Ensure the new `StealthAUDIT.lic` license file is stored locally on the Enterprise
 Auditor Console server in order to be referenced during the installation process.
 
-![Windows Control Panel Uninstall or change a program window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/controlpaneluninstall.webp)
+![Windows Control Panel Uninstall or change a program window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/controlpaneluninstall.webp)
 
 **Step 2 –** From Programs and Features (**Control Panel** > **Programs** > **Programs and
 Features**), select the Enterprise Auditor application and click **Change**.
@@ -26,20 +26,20 @@ Features**), select the Enterprise Auditor application and click **Change**.
 
 **Step 3 –** On the Welcome page, click **Next**.
 
-![Setup Wizard Change, Repair, or Remove Installation page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/change.webp)
+![Setup Wizard Change, Repair, or Remove Installation page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/change.webp)
 
 **Step 4 –** On the Change, Repair, or Remove Installation page, click **Change**.
 
 |                                                                                                         |     |                                                                                                                                           |
 | ------------------------------------------------------------------------------------------------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| ![License File page](/img/versioned_docs/activitymonitor_7.1/activitymonitor/install/agent/license.webp) |     | ![License File page with mapped file](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/licensemapped.webp) |
+| ![License File page](/img/versioned_docs/activitymonitor_7.1/activitymonitor/install/agent/license.webp) |     | ![License File page with mapped file](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/licensemapped.webp) |
 | Default License File Page                                                                               |     | Mapped License File                                                                                                                       |
 
 **Step 5 –** On the License File page, click **Browse** and navigate to the **StealthAUDIT.lic**
 file. It must be stored on the Enterprise Auditor Console server before the installation begins.
 When the path to the file is visible in the text box, click **Next**. The license will be imported.
 
-![License Features page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/licensefeatures.webp)
+![License Features page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/licensefeatures.webp)
 
 **Step 6 –** The License Features page displays a list of all features covered by the imported
 license. It also displays the name of the organization which owns the license, the expiration date,
@@ -49,7 +49,7 @@ and the host limit. These are the features that will be installed. Click **Next*
 
 **Step 7 –** On the Ready to Change Enterprise Auditor page, click **Change** to begin the update.
 
-![Setup Wizard Completed page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Setup Wizard Completed page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
 
 **Step 8 –** When the installation has completed, click **Finish** to exit the wizard.
 

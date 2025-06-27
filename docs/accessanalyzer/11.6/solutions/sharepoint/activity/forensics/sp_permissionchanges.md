@@ -11,7 +11,7 @@ Navigate to the **Jobs** > **SharePoint** > **7.Activity** > **Forensics** >
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SP_PermissionChanges Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/box/activity/forensics/permissionchangesanalysis.webp)
+![Analysis Tasks for the SP_PermissionChanges Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/activity/forensics/permissionchangesanalysis.webp)
 
 The default analysis tasks are:
 

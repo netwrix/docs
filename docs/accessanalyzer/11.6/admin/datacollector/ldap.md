@@ -29,7 +29,7 @@ Permissions
 The LDAP Data Collector is configured through the LDAP template form. The LDAP template form has the
 following configuration options:
 
-![LDAP template form](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/templateform.webp)
+![LDAP template form](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/templateform.webp)
 
 - Connect to the server – Use the default domain controller entered in the box, or enter an
   alternate server
@@ -60,7 +60,7 @@ The button bar provides additional options for selecting objects and attributes.
 The Options window contains configure connection options and multi-value results options. Click the
 **Options** button located in the upper right corner of the LDAP template form to open it.
 
-![Options Window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/options.webp)
+![Options Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/options.webp)
 
 - Connect Securely with TL/SSL – Connect using TLS/SSL. If the checkbox is selected, the server port
   defaults to `636`.
@@ -90,7 +90,7 @@ The Options window contains configure connection options and multi-value results
 The Filter Options window is where to add filters to the query. Click the ellipses (**…**) button
 located to the right of the **LDAP filter** box in the LDAP template form to open this window.
 
-![filteroptions](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/filteroptions.webp)
+![filteroptions](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/filteroptions.webp)
 
 - Extract all objects (no filter) – No filters applied
 - Extract only objects of the following classes – Applies class filter for selected classes
@@ -109,7 +109,7 @@ located to the right of the **LDAP filter** box in the LDAP template form to ope
 
 The Custom Filter window provides options for creating a complex filter.
 
-![Custom Filter window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/customfilter.webp)
+![Custom Filter window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/customfilter.webp)
 
 Select a **Field** and **Condition** from the drop-down lists. Enter a **Value** for the condition.
 Click **Add** to add the filter to the Filter Lines table.
@@ -118,7 +118,7 @@ Click **Add** to add the filter to the Filter Lines table.
   selected by default.
 - Edit Raw Filter – Opens the Raw Filter Edit window
 
-    ![Raw Filter Edit window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/rawfilteredit.webp)
+    ![Raw Filter Edit window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/rawfilteredit.webp)
 
     Enter the entire LDAP filter in the textbox. Click **Verify** to confirm the filter, and then
     **OK** to add it to the custom filter list.
@@ -131,17 +131,17 @@ Click **OK** to save the changes and close the Custom Filter window.
 
 The button bar provides several options for configuring the query.
 
-![buttonbar](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/buttonbar.webp)
+![buttonbar](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/buttonbar.webp)
 
 | Button                                                                                                                                                         | Name                                        | Description                                                               |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------- |
-| ![Include sublevels button](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/sublevels.webp)                                    | Include sublevels                           | Include sublevel folders of the selected folder.                          |
-| ![Org wildcard button](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/orgwildcard.webp)                                       | Org wildcard                                | Search for the attribute across multiple domains.                         |
-| ![Wildcard the level button](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/wildcard.webp)                                    | Wildcard the level                          | Search everything on the selected level.                                  |
-| ![Unwildcard all levels button](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/unwildcard.webp)                               | Unwildcard all levels                       | Removes the wildcard and returns the search scope to the selected domain. |
-| ![Include a HostName Tag button](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/includehostname.webp)                         | Include a HostName Tag                      | Replaces the OU with a HostName Tag.                                      |
-| ![Remove all HostName Tags button](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/removehostname.webp)                        | Remove all HostName Tags                    | Removes the HostName Tag.                                                 |
-| ![Add Security Properties for Selected Key button](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/addsecurityproperties.webp) | Add Security Properties for Selected Key    | Adds the list of security properties.                                     |
-| ![Select Highlighted Attributes button](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/addattributes.webp)                    | Select Highlighted Attributes               | Adds the highlighted attributes to the list.                              |
-| ![Delete the Highlighted Selected Attributes button](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/deleteattributes.webp)    | Delete the Highlighted Selected Attributes  | Deletes the highlighted attributes from the list.                         |
-| ![Find the Root Path in the Directory Objects button](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/rootpath.webp)           | Find the Root Path in the Directory Objects | Returns the root path to the selected root.                               |
+| ![Include sublevels button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/sublevels.webp)                                    | Include sublevels                           | Include sublevel folders of the selected folder.                          |
+| ![Org wildcard button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/orgwildcard.webp)                                       | Org wildcard                                | Search for the attribute across multiple domains.                         |
+| ![Wildcard the level button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/wildcard.webp)                                    | Wildcard the level                          | Search everything on the selected level.                                  |
+| ![Unwildcard all levels button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/unwildcard.webp)                               | Unwildcard all levels                       | Removes the wildcard and returns the search scope to the selected domain. |
+| ![Include a HostName Tag button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/includehostname.webp)                         | Include a HostName Tag                      | Replaces the OU with a HostName Tag.                                      |
+| ![Remove all HostName Tags button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/removehostname.webp)                        | Remove all HostName Tags                    | Removes the HostName Tag.                                                 |
+| ![Add Security Properties for Selected Key button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/addsecurityproperties.webp) | Add Security Properties for Selected Key    | Adds the list of security properties.                                     |
+| ![Select Highlighted Attributes button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/addattributes.webp)                    | Select Highlighted Attributes               | Adds the highlighted attributes to the list.                              |
+| ![Delete the Highlighted Selected Attributes button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/deleteattributes.webp)    | Delete the Highlighted Selected Attributes  | Deletes the highlighted attributes from the list.                         |
+| ![Find the Root Path in the Directory Objects button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/rootpath.webp)           | Find the Root Path in the Directory Objects | Returns the root path to the selected root.                               |

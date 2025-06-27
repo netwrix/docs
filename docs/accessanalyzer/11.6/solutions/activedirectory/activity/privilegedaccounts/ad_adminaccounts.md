@@ -10,7 +10,7 @@ Navigate to the **Jobs** > **Active Directory** > **6.Activity** > **Privileged 
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_AdminAccounts Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/activity/privilegedaccounts/adminaccountsanalysis.webp)
+![Analysis Tasks for the AD_AdminAccounts Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/activity/privilegedaccounts/adminaccountsanalysis.webp)
 
 The default analysis tasks are:
 
@@ -38,14 +38,14 @@ the bottom of the SQL Script Editor. Follow the steps to customize an analysis t
 **Step 1 –** Navigate to the **Active Directory** > **6.Activity** > **Privileged Accounts** >
 **AD_AdminAccounts** > **Configure** node and select **Analysis**.
 
-![Summarizes Administrative Account Activity analysis task configuration](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/activity/privilegedaccounts/adminaccountsanalysisconfiguration.webp)
+![Summarizes Administrative Account Activity analysis task configuration](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/activity/privilegedaccounts/adminaccountsanalysisconfiguration.webp)
 
 **Step 2 –** In the Analysis Selection view, select the **Summarizes Administrative Account
 Activity** analysis task and click **Analysis Configuration**. The SQL Script Editor opens.
 
 **CAUTION:** Do not change any parameters where the Value states `Created during execution`.
 
-![Summarizes Administrative Account Activity analysis task in the SQL Script Editor](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/activity/privilegedaccounts/adminaccountssqlscripteditor.webp)
+![Summarizes Administrative Account Activity analysis task in the SQL Script Editor](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/activity/privilegedaccounts/adminaccountssqlscripteditor.webp)
 
 **Step 3 –** In the parameters section at the bottom of the editor, find the Value column. Select
 the cell for the temporary table called #AdminGroups, and click **Edit Table** to modify the value.

@@ -83,7 +83,7 @@ resource is in your list, select it and click **Remove**. Click **OK** to close
 
 **Step 7 –** Click **Next** and the Access Information Center starts the action.
 
-![Request Access wizard request sent message](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Request Access wizard request sent message](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
 
 **Step 8 –** The action status displays on the page. When the action has completed (100%), click
 **Finish**. The Request Access wizard closes.
@@ -125,7 +125,7 @@ click **Cancel**. The Cancel Request wizard opens.
 be included in the e-mail notification sent to the requester. Click **Next** and the Access
 Information Center starts the action.
 
-![Cancel Request wizard complete message](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Cancel Request wizard complete message](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
 
 **Step 3 –** The action status displays on the page. When the cancellation action has completed
 (100%), click **Finish**. The Cancel Request wizard closes.

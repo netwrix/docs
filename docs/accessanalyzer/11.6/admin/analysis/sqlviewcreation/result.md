@@ -2,7 +2,7 @@
 
 Use the Result Type page to choose a SQL database table or view for the result’s output.
 
-![View and Table Creation Analysis Module wizard Result Type page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/analysis/sqlviewcreation/resulttype.webp)
+![View and Table Creation Analysis Module wizard Result Type page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/sqlviewcreation/resulttype.webp)
 
 The options on this page determine the visual representation and name of the combined data from the
 two sourced tables. Select from the following two options:

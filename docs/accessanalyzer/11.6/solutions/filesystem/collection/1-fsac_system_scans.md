@@ -7,7 +7,7 @@ The 1-FSAC System Scans job is designed to collect activity events from the targ
 The Activity Scan query uses the FSAA Data Collector and has been preconfigured to use the File
 system activity Scan category.
 
-![Query for the 1-FSAC System Scans Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/collection/fsacsystemscansquery.webp)
+![Query for the 1-FSAC System Scans Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/collection/fsacsystemscansquery.webp)
 
 - Activity Scan – Scans for File System Activity
 
@@ -44,21 +44,21 @@ Data Collector Wizard opens.
 **CAUTION:** Do not make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 
-![Applet Settings](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/collection/fsacappletsettings.webp)
+![Applet Settings](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/collection/fsacappletsettings.webp)
 
 **Step 4 –** The Applet Settings page applies to the applet and proxy mode scans which are selected
 on the Scan Server Level Page. If employing proxy servers, see the
 [FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings.md)
 topic for configuration instructions.
 
-![Scan Server Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/collection/fsacscanserverselection.webp)
+![Scan Server Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/collection/fsacscanserverselection.webp)
 
 **Step 5 –** The Scan Server Selection page applies to the applet and proxy mode scans. Remember,
 each mode has different provisioning requirements. See the
 [FSAA: Scan Server Selection](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/scanserverselection.md) topic
 for additional information.
 
-![Activity Settings](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/collection/fsacactivitysettings.webp)
+![Activity Settings](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/collection/fsacactivitysettings.webp)
 
 **Step 6 –** On the Activity Settings page:
 

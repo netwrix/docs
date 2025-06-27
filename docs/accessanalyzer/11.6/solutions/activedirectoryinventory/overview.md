@@ -49,7 +49,7 @@ collection is conducted by the ADInventory Data Collector. See the
 [Standard Reference Tables & Views for the ADInventory Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/adinventory/standardtables.md)
 topic for database table information.
 
-![.Active Directory Inventory Solution Overview page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/runninginstances/overview.webp)
+![.Active Directory Inventory Solution Overview page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/runninginstances/overview.webp)
 
 The .Active Directory Inventory Solution has the following jobs:
 

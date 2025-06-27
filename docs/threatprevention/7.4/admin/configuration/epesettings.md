@@ -350,7 +350,7 @@ Follow the steps to install the Pwnd Passwords Downloader.
 dotnet tool install --global haveibeenpwned-downloader
 ```
 
-![hibp_installation_0](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/passwordsecurity/hibp_installation_0.webp)
+![hibp_installation_0](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/passwordsecurity/hibp_installation_0.webp)
 
 **Step 3 –** Close the command prompt.
 
@@ -366,7 +366,7 @@ Follow the steps to update an installed Pwnd Passwords Downloader.
 dotnet tool update --global haveibeenpwned-downloader
 ```
 
-![hibp_installation_1](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/passwordsecurity/hibp_installation_1.webp)
+![hibp_installation_1](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/passwordsecurity/hibp_installation_1.webp)
 
 Download NTML Hashes with the Pwnd Passwords Downloader
 
@@ -383,7 +383,7 @@ Run:
 haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm
 ```
 
-![hibp_installation_3](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/passwordsecurity/hibp_installation_3.webp)
+![hibp_installation_3](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/passwordsecurity/hibp_installation_3.webp)
 
 This screenshot shows the completed download.
 

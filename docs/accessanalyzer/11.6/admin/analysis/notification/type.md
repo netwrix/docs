@@ -2,7 +2,7 @@
 
 Use the Notification Type page to specify one or more notification types.
 
-![Notification Data Analysis Module wizard Notification Type page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/analysis/notification/type.webp)
+![Notification Data Analysis Module wizard Notification Type page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/notification/type.webp)
 
 The following options are available:
 

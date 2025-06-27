@@ -3,7 +3,7 @@
 The 5.Policies job group provides details on AWS IAM policies including the various types of
 policies, the permissions they grant, and where they are applied in the AWS organization.
 
-![5.Policies Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![5.Policies Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The 5.Policies job group is comprised of:
 

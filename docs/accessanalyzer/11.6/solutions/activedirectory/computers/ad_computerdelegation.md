@@ -16,7 +16,7 @@ and select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the analysis task. The analysis task is preconfigured for
 this job.
 
-![Analysis Task for the AD_ComputerDelegation Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/computers/computerdelegationanalysis.webp)
+![Analysis Task for the AD_ComputerDelegation Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/computers/computerdelegationanalysis.webp)
 
 The default analysis tasks are:
 

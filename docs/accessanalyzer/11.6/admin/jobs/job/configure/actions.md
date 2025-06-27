@@ -6,7 +6,7 @@ listing of locked-out accounts, an action can be executed to unlock those accoun
 
 **NOTE:** Action modules are available with a special Enterprise Auditor license.
 
-![Action Selection page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/actionselection.webp)
+![Action Selection page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/actionselection.webp)
 
 The Action Selection view lists all action tasks for the selected job. The listed information
 includes:
@@ -16,7 +16,7 @@ includes:
 - Module – Name of the Enterprise Auditor action module
 - Table – Name of the source table for the action
 
-![Options at the top of the Action Selection page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/job/configure/actionselectionoptions.webp)
+![Options at the top of the Action Selection page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/actionselectionoptions.webp)
 
 The Actions section at the top has five options:
 
@@ -42,7 +42,7 @@ The Actions section at the top has five options:
 
     - Does not require an action task to be checked, only selected
 
-![Buttons at the bottom of Action Selection page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/job/configure/actionselectiontablebuttons.webp)
+![Buttons at the bottom of Action Selection page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/actionselectiontablebuttons.webp)
 
 At the bottom of the Action Selection view, there are action buttons that apply to the table:
 
@@ -55,7 +55,7 @@ At the bottom of the Action Selection view, there are action buttons that apply 
 The Action Selection view also has its own right-click menu for taking action on the action task or
 the job.
 
-![Actions Right-Click Menu](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/job/configure/actionsrightclickmenu.webp)
+![Actions Right-Click Menu](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/actionsrightclickmenu.webp)
 
 The options for the Actions node right-click menu are:
 

@@ -7,7 +7,7 @@ Auditor Console.
 
 **Step 2 –** Locate and select a **Storage Profile** to update.
 
-![Specify a new password below option on Storage page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/storage/updateauth.webp)
+![Specify a new password below option on Storage page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/storage/updateauth.webp)
 
 **Step 3 –** In the Authentication section, click the **Specify a new password below** radio button.
 

@@ -2,7 +2,7 @@
 
 Use the Input Data Source page to choose a data source to analyze for changes.
 
-![Change Detection Data Analysis Module wizard Input Data Source page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/unix/input.webp)
+![Change Detection Data Analysis Module wizard Input Data Source page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/unix/input.webp)
 
 The configurable option is:
 

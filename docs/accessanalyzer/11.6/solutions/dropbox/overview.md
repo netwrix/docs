@@ -57,7 +57,7 @@ collection is conducted by the DropboxAccess Data Collector. See the
 [Standard Reference Tables & Views for the DropboxAccess Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/dropboxaccess/standardtables.md)
 topic for database table information.
 
-![Dropbox Solution Overview page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/runninginstances/overviewpage.webp)
+![Dropbox Solution Overview page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/runninginstances/overviewpage.webp)
 
 The following jobs comprise the Dropbox Solution:
 

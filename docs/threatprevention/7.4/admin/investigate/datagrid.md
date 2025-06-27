@@ -12,7 +12,7 @@ Follow the steps to view events in the data grid.
 - Use the arrow between the filter categories and the grid view to collapse the entire filter
   category section
 
-![Investigate interface - Data Grid](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/datagrid.webp)
+![Investigate interface - Data Grid](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/datagrid.webp)
 
 **Step 3 –** Select the **Production** or **Archive** option button to view events from the
 respective database.

@@ -7,7 +7,7 @@ for the wizard, e.g. the Enterprise Auditor Host Discovery Wizard. If the curren
 section has an associated Activities Pane, it can be found on the right-hand side of the Enterprise
 Auditor Console.
 
-![activitiespane](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/activitiespane.webp)
+![activitiespane](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/activitiespane.webp)
 
 The following console sections have associated Activities Panes:
 

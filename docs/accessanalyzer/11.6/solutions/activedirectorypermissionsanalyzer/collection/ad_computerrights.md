@@ -9,7 +9,7 @@ The AD_ComputerRights Job uses the ADPermissions Data Collector for the followin
 
 **CAUTION:** Do not modify the query. The query is preconfigured for this job.
 
-![Query for the AD_ComputerRights Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectorypermissionsanalyzer/collection/computerrightsquery.webp)
+![Query for the AD_ComputerRights Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectorypermissionsanalyzer/collection/computerrightsquery.webp)
 
 - Computer Access Permissions – Returns computer access permission
 
@@ -25,7 +25,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **0.Collection** >
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Task for the AD_ComputerRights Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectorypermissionsanalyzer/collection/computerrightsanalysis.webp)
+![Analysis Task for the AD_ComputerRights Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectorypermissionsanalyzer/collection/computerrightsanalysis.webp)
 
 - Computer Rights View – Creates the SA_AD_ComputerRights_Details_PermissionsView visible under the
   job’s Results node

@@ -75,7 +75,7 @@ recommend selecting **Proceed without a Key Pair** and then clicking **Launch In
 
 **Step 10 –** On the Summary section click **Launch Instance**.
 
-![Summary section ](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![Summary section ](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
 
 **Step 11 –** Wait for the instance to start; this might take a few minutes while the Status Checks
 appear as Initializing.

@@ -10,7 +10,7 @@ Scan Category.
 
 **CAUTION:** Do not modify the query. The query is preconfigured for this job.
 
-![Query for the 0-FSDFS System Scans Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/collection/fsdfssystemscansquery.webp)
+![Query for the 0-FSDFS System Scans Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/collection/fsdfssystemscansquery.webp)
 
 - DFS System Scan – Scans the DFS System
 
@@ -22,7 +22,7 @@ Scans** > **Configure** node and selecting **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the 0-FSDFS System Scans Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/filesystem/collection/fsdfssystemscansanalysis.webp)
+![Analysis Tasks for the 0-FSDFS System Scans Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/collection/fsdfssystemscansanalysis.webp)
 
 The following analysis tasks are selected by default:
 

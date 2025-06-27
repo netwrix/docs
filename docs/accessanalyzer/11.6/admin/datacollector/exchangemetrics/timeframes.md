@@ -5,7 +5,7 @@ metrics by server. It is a wizard page for the category of:
 
 - Delivery Time Custom.
 
-![Exchange Metrics Data Collector Wizard Time Frames page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/exchangemetrics/timeframes.webp)
+![Exchange Metrics Data Collector Wizard Time Frames page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/exchangemetrics/timeframes.webp)
 
 Configure the desired time frames using the following options:
 

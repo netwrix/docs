@@ -236,7 +236,7 @@ fpolicy policy event show ‑event-name StealthAUDITScreening‑instance
 
 Verify that the output is displayed as follows:
 
-![validatefpolciyeventcreation](/img/versioned_docs/accessanalyzer_11.6/config/netappcmode/validatefpolciyeventcreation.webp)
+![validatefpolciyeventcreation](/img/product_docs/accessanalyzer/11.6/config/netappcmode/validatefpolciyeventcreation.webp)
 
 Relevant NetApp Documentation: To learn more about creating an event, please visit the NetApp
 website and read the

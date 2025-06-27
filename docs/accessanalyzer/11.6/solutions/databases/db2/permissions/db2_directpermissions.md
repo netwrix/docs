@@ -11,7 +11,7 @@ Navigate to the **Jobs** > **Databases** > **Db2** > **Permissions** > **Db2_Dir
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Db2_DirectPermissions Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/db2/permissions/directpermissionsanalysis.webp)
+![Analysis Tasks for the Db2_DirectPermissions Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/db2/permissions/directpermissionsanalysis.webp)
 
 The default analysis tasks are:
 

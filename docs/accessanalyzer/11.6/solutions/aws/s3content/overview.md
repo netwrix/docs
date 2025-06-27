@@ -2,7 +2,7 @@
 
 The 7.S3 Content job group provide details on AWS S3 buckets and objects contained in those buckets.
 
-![7.S3 Content Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![7.S3 Content Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The 7.S3 Content job group is comprised of:
 

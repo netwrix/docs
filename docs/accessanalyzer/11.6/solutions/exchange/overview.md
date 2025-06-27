@@ -57,7 +57,7 @@ generates reports.
 
 The Exchange Solution is divided into categories based upon what is being audited.
 
-![Exchange Job Group Overview page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/runninginstances/overviewpage.webp)
+![Exchange Job Group Overview page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/runninginstances/overviewpage.webp)
 
 The following job groups comprise the Exchange Solution:
 

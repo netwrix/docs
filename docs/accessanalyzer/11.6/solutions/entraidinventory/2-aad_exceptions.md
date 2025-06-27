@@ -13,7 +13,7 @@ modified.
 deselected. There are a few which are deselected by default, as they are for troubleshooting
 purposes.
 
-![Analysis Tasks for 2-AAD_Exceptions Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/entraidinventory/exceptionsanalysistasks.webp)
+![Analysis Tasks for 2-AAD_Exceptions Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/entraidinventory/exceptionsanalysistasks.webp)
 
 The default analysis tasks are:
 
@@ -89,14 +89,14 @@ dependency.
 **Step 1 –** Navigate to the **.Entra ID Inventory** > **2-AAD_Exceptions** > **Configure** node and
 select **Analysis**.
 
-![Analysis Configuration option on Analysis Selection page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/entraidinventory/exceptionsanalysisconfiguration.webp)
+![Analysis Configuration option on Analysis Selection page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/entraidinventory/exceptionsanalysisconfiguration.webp)
 
 **Step 2 –** In the Analysis Selection view, select an analysis task and click **Analysis
 Configuration**. The SQL Script Editor opens.
 
 **Step 3 –** Click Parameters to open the Parameters section.
 
-![Change Parameter Value in SQL Script Editor](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/entraidinventory/exceptionssqlscripteditor.webp)
+![Change Parameter Value in SQL Script Editor](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/entraidinventory/exceptionssqlscripteditor.webp)
 
 **Step 4 –** Double-click in a field in the Value column and enter a custom value.
 

@@ -6,7 +6,7 @@ node and select Analysis to view the Analysis Tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/mongodb/databasesizingjobanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/mongodb/databasesizingjobanalysis.webp)
 
 The default analysis tasks are:
 

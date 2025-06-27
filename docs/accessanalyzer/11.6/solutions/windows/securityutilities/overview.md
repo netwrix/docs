@@ -4,7 +4,7 @@ The Security Utilities job group is designed to reveal all open ports along with
 executable on the targeted systems. The job remotely executes a netstat command on the target hosts
 and collects the results for reporting.
 
-![Security Utilities Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Security Utilities Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The jobs and job groups in the Security Utilities job group are:
 

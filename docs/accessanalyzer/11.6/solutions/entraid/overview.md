@@ -28,7 +28,7 @@ generate reports on the collected data.
 
 ## Job Groups
 
-![Entra ID Job Group Overview page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/runninginstances/overviewpage.webp)
+![Entra ID Job Group Overview page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/runninginstances/overviewpage.webp)
 
 The job groups in the Entra ID Solution are:
 

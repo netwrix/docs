@@ -11,7 +11,7 @@ Navigate to the **AWS** > **2.Users** > **AWS_MFAStatus** > **Configure** node a
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AWS_MFAStatus Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/aws/users/mfastatusanalysis.webp)
+![Analysis Tasks for the AWS_MFAStatus Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/aws/users/mfastatusanalysis.webp)
 
 The following analysis tasks are selected by default:
 

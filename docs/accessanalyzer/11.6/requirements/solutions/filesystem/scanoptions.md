@@ -17,7 +17,7 @@ conducted by the Enterprise Auditor Console server across the network. The data 
 SQLite database(s), or Tier 2 database(s), on the Enterprise Auditor Console server, and then
 imported into theEnterprise Auditor database, or Tier 1 database, on the SQL Server.
 
-![Illustrates the Enterprise Auditor server running the scan against a file server](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/requirements/solutions/filesystem/localmode.webp)
+![Illustrates the Enterprise Auditor server running the scan against a file server](/img/product_docs/accessanalyzer/11.6/accessanalyzer/requirements/solutions/filesystem/localmode.webp)
 
 The diagram illustrates the Enterprise Auditor server running the scan against a file server.
 
@@ -39,7 +39,7 @@ data collected in the SQLite database(s), or Tier 2 database(s), back to the Ent
 Console server. If the target host is a NAS device, the File System scans will default to local mode
 for that host.
 
-![Illustrates the Enterprise Auditor server sending an FSAA applet to a targeted Windows file server, which runs the scan against locally, and then returns data to the Enterprise Auditor server](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/requirements/solutions/filesystem/appletmode.webp)
+![Illustrates the Enterprise Auditor server sending an FSAA applet to a targeted Windows file server, which runs the scan against locally, and then returns data to the Enterprise Auditor server](/img/product_docs/accessanalyzer/11.6/accessanalyzer/requirements/solutions/filesystem/appletmode.webp)
 
 The diagram illustrates the Enterprise Auditor server sending an FSAA applet to a targeted Windows
 file server, which runs the scan against locally, and then returns data to the Enterprise Auditor
@@ -62,7 +62,7 @@ local mode-type scan to each of the target hosts. The final step in data collect
 and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Enterprise
 Auditor Console server.
 
-![Diagram of Enterprise Auditor server sending an FSAA applet to a proxy server](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/filesystemproxy/proxymodewithapplet.webp)
+![Diagram of Enterprise Auditor server sending an FSAA applet to a proxy server](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/proxymodewithapplet.webp)
 
 The diagram illustrates the Enterprise Auditor server sending an FSAA applet to a proxy server,
 which runs the scan against a file server, and then returns data to the Enterprise Auditor server.
@@ -99,7 +99,7 @@ See the
 [File System Proxy Service Installation](/docs/accessanalyzer/11.6/install/filesystemproxy/wizard.md)
 topic for additional information.
 
-![Diagram of Enterprise Auditor server communicating securely with the proxy service on a proxy server](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/filesystemproxy/proxymodeasservicewithsecurerpc.webp)
+![Diagram of Enterprise Auditor server communicating securely with the proxy service on a proxy server](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/proxymodeasservicewithsecurerpc.webp)
 
 The diagram illustrates the Enterprise Auditor server communicating securely with the proxy service
 on a proxy server, which runs the scan against a file server, collecting the data locally and

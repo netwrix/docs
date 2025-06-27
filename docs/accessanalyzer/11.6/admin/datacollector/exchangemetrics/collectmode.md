@@ -16,7 +16,7 @@ of:
 - User’s Message Activity
 - User’s Message Activity Per Hour
 
-![Exchange Metrics Data Collector Wizard Collect Mode page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/exchangemetrics/collectmode.webp)
+![Exchange Metrics Data Collector Wizard Collect Mode page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/exchangemetrics/collectmode.webp)
 
 There are two types of collection modes:
 

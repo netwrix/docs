@@ -7,7 +7,7 @@ on pre-defined or user-defined search criteria.
 
 The PgSQL_SensitiveDataScan Job uses the SQL Data Collector.
 
-![Query Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/postgresql/collection/sensitivedataquery.webp)
+![Query Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/postgresql/collection/sensitivedataquery.webp)
 
 The query is:
 
@@ -31,7 +31,7 @@ The Query Properties window appears.
 **CAUTION:** Do not make changes to other wizard pages as they have been pre-configured for this
 job.
 
-![Sensitive Data Scan Settings](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/postgresql/collection/datascanjobsettings.webp)
+![Sensitive Data Scan Settings](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/postgresql/collection/datascanjobsettings.webp)
 
 **Step 4 –** To modify sensitive data scan options, navigate to the
 [SQL Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/sql/overview.md)
@@ -41,7 +41,7 @@ page. Select the desired scan options.
 high-level table scan. Configuring these settings to increase the scope of the sensitive data scan
 may significantly increase scan time.
 
-![Select DLP Criteria](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/postgresql/collection/sensitivedatascancriteria.webp)
+![Select DLP Criteria](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/postgresql/collection/sensitivedatascancriteria.webp)
 
 **Step 5 –** To modify criteria, navigate to the
 [SQL Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/sql/overview.md)
@@ -50,12 +50,12 @@ Global Criteria settings. See the
 [Sensitive Data Criteria Editor](/docs/accessanalyzer/11.6/sensitivedatadiscovery/criteriaeditor/overview.md)
 topic for additional information.
 
-![Filters page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/postgresql/collection/sensitivedatascanfilter.webp)
+![Filters page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/postgresql/collection/sensitivedatascanfilter.webp)
 
 **Step 6 –** PostgreSQL databases must be added to the query before they can be scanned. Navigate to
 the **Filter** page and click **Connections** to open the Manage Connections window.
 
-![Manage Connections](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/postgresql/collection/manageconnectionspgsql.webp)
+![Manage Connections](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/postgresql/collection/manageconnectionspgsql.webp)
 
 **Step 7 –** In the Manage Connections window, click **New Connection** and add the following
 information:
@@ -90,7 +90,7 @@ Navigate to the **Databases** > **0.Collection** > **PostgreSQL** > **PgSQL_Sen
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/postgresql/collection/sensitivedataanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/postgresql/collection/sensitivedataanalysis.webp)
 
 The default analysis tasks are:
 

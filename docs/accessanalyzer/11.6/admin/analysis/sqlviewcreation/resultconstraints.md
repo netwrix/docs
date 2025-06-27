@@ -2,7 +2,7 @@
 
 Use the Result Constraints page to impose restraints on the dataset.
 
-![View and Table Creation Analysis Module wizard Result constraints page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/analysis/sqlviewcreation/resultconstraints.webp)
+![View and Table Creation Analysis Module wizard Result constraints page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/sqlviewcreation/resultconstraints.webp)
 
 Select one of the following options to choose if and how much data should be returned:
 
@@ -25,16 +25,16 @@ Select one of the following options to choose if and how much data should be ret
 
 The following example explains how the **With ties** option works.
 
-![cid:image027.webp@01D4CF75.96F2E110](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/analysis/sqlviewcreation/examplefull.webp)
+![cid:image027.webp@01D4CF75.96F2E110](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/sqlviewcreation/examplefull.webp)
 
 Consider a table that has ten rows with one repeating entry under the value column.
 
-![cid:image025.webp@01D4CF74.8A56D750](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/analysis/sqlviewcreation/examplereduced.webp)
+![cid:image025.webp@01D4CF74.8A56D750](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/sqlviewcreation/examplereduced.webp)
 
 If the table is sorted by the value column in ascending order and the **Return only** option is set
 to **40 percent**, then there should be four rows visible in the resulting table or view output.
 
-![cid:image026.webp@01D4CF74.8A56D750](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/analysis/sqlviewcreation/examplereducedwithties.webp)
+![cid:image026.webp@01D4CF74.8A56D750](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/sqlviewcreation/examplereducedwithties.webp)
 
 However, if the first three values in the sort column are unique but the fourth value matches the
 fifth, selecting the **With ties** option returns the first three rows as well as both the fourth

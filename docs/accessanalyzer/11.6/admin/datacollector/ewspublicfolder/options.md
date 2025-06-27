@@ -2,7 +2,7 @@
 
 The Scan options page provides general scan options. It is a wizard page for all of the categories.
 
-![options](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/options.webp)
+![options](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/options.webp)
 
 Select any desired scan options:
 

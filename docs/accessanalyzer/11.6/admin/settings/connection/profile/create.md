@@ -2,11 +2,11 @@
 
 Follow the steps to create a Connection Profile.
 
-![Add Connection Profile](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/addconnectionprofile.webp)
+![Add Connection Profile](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/addconnectionprofile.webp)
 
 **Step 1 –** Click Add Connection profile at the top of the Connection view.
 
-![Connection - Add Connection Profile](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/connectionprofilename.webp)
+![Connection - Add Connection Profile](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/connectionprofilename.webp)
 
 **Step 2 –** A new profile displays in the list with a generic name. Provide a unique, descriptive
 name in the Connection profile name textbox.
@@ -15,12 +15,12 @@ name in the Connection profile name textbox.
 time. If the profile name is changed after being applied to job groups or jobs, it requires the user
 to go back through all of those job groups or jobs and re-apply the Connection Profile.
 
-![Add User Credential](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/addusercredential.webp)
+![Add User Credential](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/addusercredential.webp)
 
 **Step 3 –** Now it is time to add credentials to this profile. Click Add User credential and the
 User Credentials window opens.
 
-![User Credentials](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/activedirectoryaccount.webp)
+![User Credentials](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/activedirectoryaccount.webp)
 
 **Step 4 –** The window options change according to the value for the Selected Account Type field.
 Select the appropriate account type and then provide the required information. The account types
@@ -39,12 +39,12 @@ are:
 
 See the individual account type sections for information on the fields. Then click OK.
 
-![Error Message for Password](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/passworddifferserror.webp)
+![Error Message for Password](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/passworddifferserror.webp)
 
 **NOTE:** If the entered passwords are not the same, an error message will pop-up after clicking OK
 on the User Credentials window. Click OK on the error message and re-type the passwords.
 
-![User Credentials](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/usercredentialslist.webp)
+![User Credentials](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/usercredentialslist.webp)
 
 **Step 5 –** Repeat Steps 3-4 until the User Credentials list for this profile is complete.
 
@@ -59,11 +59,11 @@ are no more credentials to try.
 considering that a successful authentication does not automatically mean that particular credential
 has the appropriate level of permissions in order for the data collection to occur.
 
-![Arrange Priority](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/moveupdown.webp)
+![Arrange Priority](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/moveupdown.webp)
 
 There are Move Up and Move Down buttons for arranging priority within the User Credentials list.
 
-![Apply local login credentials](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/usewindowsaccountoption.webp)
+![Apply local login credentials](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/usewindowsaccountoption.webp)
 
 **Step 6 –** (Optional): At the bottom of the Connection view, is the Use the Windows account that
 Enterprise Auditor runs with before trying the user credentials above option. This option is per
@@ -82,14 +82,14 @@ or job level.
 
 Follow the steps to edit user credentials within a Connection Profile.
 
-![Edit Connection Profile](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/editusercredentials.webp)
+![Edit Connection Profile](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/editusercredentials.webp)
 
 **Step 1 –** Select the Connection Profile to be modified from the Profile list. Remember, changing
 the Connection Profile name results in breaking job groups or jobs that are assigned this profile.
 
 **Step 2 –** Select the user credential to be edited from the User Credentials list. Click Edit.
 
-![User Credentials](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/selectaccounttype.webp)
+![User Credentials](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/selectaccounttype.webp)
 
 **Step 3 –** Modify the information in the User Credentials window. For the password, choose between
 the Use the existing password option or the Specify a new password below option. Click OK.
@@ -104,14 +104,14 @@ Profile.
 
 Follow the steps to delete a user credential from a Connection Profile.
 
-![Delete User Credentials](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/deleteusercredentials.webp)
+![Delete User Credentials](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/deleteusercredentials.webp)
 
 **Step 1 –** Select the Connection Profile to be modified from the Profile list. Remember, changing
 the Connection Profile name results in breaking job groups or jobs that are assigned this profile.
 
 **Step 2 –** Select the user credential to be edited from the User Credentials list. Click Delete.
 
-![Confirmation message for deletion](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/deleteusercredentialsconfirm.webp)
+![Confirmation message for deletion](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/deleteusercredentialsconfirm.webp)
 
 **Step 3 –** Click OK to confirm the deletion.
 
@@ -125,11 +125,11 @@ Connection Profile.
 
 The default profile is marked with the green checkmark.
 
-![defaultconnectionprofile](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/defaultconnectionprofile.webp)
+![defaultconnectionprofile](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/defaultconnectionprofile.webp)
 
 Follow the steps to set a new default Connection Profile.
 
-![Set a Default Connection Profile](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/setasdefaultconnectionprofile.webp)
+![Set a Default Connection Profile](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/setasdefaultconnectionprofile.webp)
 
 **Step 1 –** Select the desired profile in the Connection Profile list and click Set as default.
 
@@ -141,11 +141,11 @@ This Connection Profile is now used as the default Connection Profile.
 
 Follow the steps to delete a Connection Profile.
 
-![Delete a Connection Profile](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/deleteconnectionprofile.webp)
+![Delete a Connection Profile](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/deleteconnectionprofile.webp)
 
 **Step 1 –** Select the profile from the Connection Profile list and click Delete.
 
-![Confirmation message for deletion](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/connection/profile/deleteconnectionprofileconfirm.webp)
+![Confirmation message for deletion](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/deleteconnectionprofileconfirm.webp)
 
 **Step 2 –** Click OK to confirm the deletion.
 

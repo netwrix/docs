@@ -7,7 +7,7 @@ Follow the steps to configure the optional disclaimer message:
 **Step 1 –** Navigate to the Web folder of the installation directory:
 ` …\STEALTHbits\StealthAUDIT\Web`.
 
-![Disclaimer.txt file added to the Web folder](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/disclaimertxt.webp)
+![Disclaimer.txt file added to the Web folder](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/disclaimertxt.webp)
 
 **Step 2 –** Create a `Disclaimer.txt` file in the Web folder. Write a custom disclaimer that
 displays on the login page for the Web Console.
@@ -15,11 +15,11 @@ displays on the login page for the Web Console.
 - The text file must be named `Disclaimer.txt`. The disclaimer message option is not configured
   properly if using a text file with a different name.
 
-![File Explorer WebServer.exe.config](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/webserverexeconfigfile.webp)
+![File Explorer WebServer.exe.config](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/webserverexeconfigfile.webp)
 
 **Step 3 –** Locate the `WebServer.exe.config` file and open it.
 
-![WebServer.exe.config file in Notepad](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/webserverexeconfigdisclaimer.webp)
+![WebServer.exe.config file in Notepad](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/webserverexeconfigdisclaimer.webp)
 
 **Step 4 –** Find the following line in the text:
 
@@ -35,7 +35,7 @@ displays on the login page for the Web Console.
 
 **Step 6 –** Save the changes to enable the disclaimer message on the Web Console login page.
 
-![Web Console login page with disclaimer message](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/webconsolelogindisclaimer.webp)
+![Web Console login page with disclaimer message](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/webconsolelogindisclaimer.webp)
 
 **Step 7 –** To check if the disclaimer message was configured correctly, open the Web Console to
 access the login page.

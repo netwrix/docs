@@ -110,7 +110,7 @@ drop-down list provided. [See Dynamic Source Groups for more information.](#dyna
 Selecting the cog icon on the main sources grid screen for a source group allows you to amend the
 group settings:
 
-![editgroup](/img/versioned_docs/accessanalyzer_11.6/config/dellpowerscale/editgroup.webp)
+![editgroup](/img/product_docs/accessanalyzer/11.6/config/dellpowerscale/editgroup.webp)
 
 Here you can:
 

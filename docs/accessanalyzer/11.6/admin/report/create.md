@@ -20,7 +20,7 @@ to create a new report.
 
 **Step 1 –** Navigate to **Jobs** > **[Job]** > **Configure** and select the **Reports** node.
 
-![Create report option](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/report/create.webp)
+![Create report option](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/report/create.webp)
 
 **Step 2 –** On the Reports page, click Create.
 
@@ -31,7 +31,7 @@ topic for instructions. Click **Finish** on the final page of the wizard to crea
 
 The new report is added to the Reports table.
 
-![Generate report](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/report/generate.webp)
+![Generate report](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/report/generate.webp)
 
 **Step 4 –** Click the vertical ellipsis menu next to the report and select Generate.
 
@@ -45,12 +45,12 @@ You can create a new report by copying an existing report and pasting it in a jo
 You can then optionally customize the report as required. Follow the steps to create a copy of an
 existing report.
 
-![Copy Report](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/copy.webp)
+![Copy Report](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/copy.webp)
 
 **Step 1 –** Navigate to the Reports node where the desired report to copy is located. Click the
 vertical ellipsis menu next to the report and select Copy.
 
-![Paste Report](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/paste.webp)
+![Paste Report](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/paste.webp)
 
 **Step 2 –** Navigate to the Reports node in the desired destination for the new report. Click the
 vertical ellipsis menu in the header row of the Reports table and select Paste.

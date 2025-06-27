@@ -4,7 +4,7 @@ The 0.Collection Job Group collects data on permissions applied to computers, gr
 units, and users. It is dependent on data collected by the .Active Directory Inventory Job Group.
 The jobs which comprise the 0.Collection Job Group process analysis tasks.
 
-![0.Collection Job Group in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![0.Collection Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
 
 The jobs in the 0.Collection Job Group are:
 

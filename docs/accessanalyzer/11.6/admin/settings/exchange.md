@@ -3,7 +3,7 @@
 The Exchange node is for configuring the settings needed to query Microsoft® Exchange Servers.
 These settings are exclusive to the Enterprise Auditor for Exchange Solution.
 
-![Exchange - Set up the connection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/exchange_1.webp)
+![Exchange - Set up the connection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/exchange_1.webp)
 
 The Exchange node is grayed-out by default. In order for these settings to be enabled, it is
 necessary to install both Enterprise Auditor MAPI CDO and Microsoft Exchange MAPI CDO on the
@@ -11,7 +11,7 @@ Enterprise Auditor Console server. See the
 [StealthAUDIT MAPI CDO Installation](/docs/accessanalyzer/11.6/stealthaudit/install_guides/mapi_cdo_install/stealthaudit_mapi_cdo_installation.md)
 topic for additional information.
 
-![exchange_2](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/exchange_2.webp)
+![exchange_2](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/exchange_2.webp)
 
 Once the requirements have been met, the Exchange node is enabled for configuration. These settings
 are utilized to make MAPI connections to the Exchange Server for the Mailbox, PublicFolder,
@@ -19,7 +19,7 @@ Exchange2K, and ExchangePS Data Collectors. The Client Access Server field, or C
 by the ExchangePS Data Collector in order to make Remote PowerShell connections for Exchange 2010 or
 newer. The data collectors apply these settings unless modified inside the job query.
 
-![Set up the connection](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/exchange_3.webp)
+![Set up the connection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/exchange_3.webp)
 
 The three options in the Exchange Connection Setting section at the top of the window are dependent
 on which version of Exchange is audited.
@@ -55,13 +55,13 @@ In the Test Exchange Connection Settings section:
 - Enter a Mailbox Server with mailboxes to be audited in the Exchange Server textbox.
 - Click the Test Exchange settings link.
 
-    ![Test Exchange Connection Setting](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/exchange_4.webp)
+    ![Test Exchange Connection Setting](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/exchange_4.webp)
 
 If the Exchange Connection Settings are correct, an output field opens. At the bottom of the output
 field, a mailbox count is stated and a message appears which says, “You have successfully connected
 to this Exchange Server.” Click OK.
 
-![exchange_6](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/exchange_6.webp)
+![exchange_6](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/exchange_6.webp)
 
 The Cancel and Save buttons are in the lower-right corner of the Exchange view. These buttons become
 enabled when modifications are made to the Exchange global setting. Whenever changes are made at the

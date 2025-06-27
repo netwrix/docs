@@ -2,7 +2,7 @@
 
 The Folders page identifies which public folders are targeted by this action.
 
-![Public Folder Action Module Wizard Folders page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/publicfolder/folders.webp)
+![Public Folder Action Module Wizard Folders page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/publicfolder/folders.webp)
 
 The options on this page are:
 

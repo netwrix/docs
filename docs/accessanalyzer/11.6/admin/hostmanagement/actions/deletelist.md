@@ -7,7 +7,7 @@ individual host list node.
 
 **Step 1 –** In the Navigation pane, select the host list to delete and click **Delete List**.
 
-![Confirm dialog box](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/actions/confirmdeletelist.webp)
+![Confirm dialog box](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/confirmdeletelist.webp)
 
 **CAUTION:** This action cannot be undone. Click **Cancel** to stop the deletion.
 
@@ -16,7 +16,7 @@ individual host list node.
 Enterprise Auditor checks to see if any hosts within the host list are found in any other static
 host lists.
 
-![Confirm deletion of orphaned hosts from master host table dialog box](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostmanagement/actions/confirmdeletelistmaster.webp)
+![Confirm deletion of orphaned hosts from master host table dialog box](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/confirmdeletelistmaster.webp)
 
 **Step 3 –** If no hosts are found in any other host list, then Enterprise Auditor asks if you want
 to remove the host from the master host table. On the Confirm dialog box, select the desired option.

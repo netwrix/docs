@@ -3,7 +3,7 @@
 The SG_ServiceAccounts job determines which domain accounts are being used to run services on member
 servers, identifying password age and settings.
 
-![Service Accounts > SG_ServiceAccounts Job in the Jobs Tree](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/windows/privilegedaccounts/serviceaccountsjobstree.webp)
+![Service Accounts > SG_ServiceAccounts Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/windows/privilegedaccounts/serviceaccountsjobstree.webp)
 
 The SG_ServiceAccounts job is located in the Service Account job group.
 
@@ -13,7 +13,7 @@ The SG_ServiceAccounts job uses the Services Data Collector for the following qu
 
 **CAUTION:** The query is preconfigured for this job. Never modify the query.
 
-![Queries for the SG_ServiceAccounts Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/windows/privilegedaccounts/serviceaccountsquery.webp)
+![Queries for the SG_ServiceAccounts Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/windows/privilegedaccounts/serviceaccountsquery.webp)
 
 The query for the SG_ServiceAccounts job is:
 
@@ -31,7 +31,7 @@ Navigate to the **Jobs** > **Windows** > **Privileged Accounts** > **Service Acc
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SG_ServiceAccounts Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/users/serviceaccountsanalysis.webp)
+![Analysis Tasks for the SG_ServiceAccounts Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/users/serviceaccountsanalysis.webp)
 
 The default analysis tasks are:
 

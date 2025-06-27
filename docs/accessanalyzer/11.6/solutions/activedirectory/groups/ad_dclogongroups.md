@@ -13,7 +13,7 @@ select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_DCLogonGroups Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/groups/dclogongroupsanalysis.webp)
+![Analysis Tasks for the AD_DCLogonGroups Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/groups/dclogongroupsanalysis.webp)
 
 The default analysis tasks are:
 

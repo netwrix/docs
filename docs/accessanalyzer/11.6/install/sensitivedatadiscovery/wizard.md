@@ -62,7 +62,7 @@ process.
 
 **Step 5 –** Click **Install** to begin the installation.
 
-![Completed the SDD Add-on Setup Wizard page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Completed the SDD Add-on Setup Wizard page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
 
 **Step 6 –** When the installation has completed, click **Finish** to exit the wizard.
 

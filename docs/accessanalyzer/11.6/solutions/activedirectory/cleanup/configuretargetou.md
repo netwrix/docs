@@ -4,7 +4,7 @@ Follow the steps to configure the target staging OU.
 
 **Step 1 –** Navigate to the **[Job]** > **Configure** > **Actions** node.
 
-![Action Properties button on Action Selection page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/cleanup/configuretargetouactionproperties.webp)
+![Action Properties button on Action Selection page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/cleanup/configuretargetouactionproperties.webp)
 
 **Step 2 –** On the Action Selection page, select the desired action task and click **Action
 Properties**.
@@ -12,7 +12,7 @@ Properties**.
 **Step 3 –** In the Action Properties window, select **Configure Action**. The Active Directory
 Action Module Wizard opens.
 
-![Move Objects page of the Active Directory Action Module Wizard](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/activedirectory/cleanup/configuretargetouactionmodulewizard.webp)
+![Move Objects page of the Active Directory Action Module Wizard](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/cleanup/configuretargetouactionmodulewizard.webp)
 
 **Step 4 –** Navigate to the Move Objects page of the Active Directory Action Module Wizard. In the
 OU field, enter or browse to the desired target OU. To create the target OU location, select the
