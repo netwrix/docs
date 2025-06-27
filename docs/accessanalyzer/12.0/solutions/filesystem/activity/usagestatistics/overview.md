@@ -2,7 +2,7 @@
 
 The Usage Statistics job group is designed to report on usage statistics from targeted file servers.
 
-![Usage Statistics Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![Usage Statistics Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/activity/usagestatistics/jobstree.webp)
 
 The Usage Statistics job group is comprised of:
 

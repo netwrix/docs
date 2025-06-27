@@ -4,7 +4,7 @@ The UX_UsersAndGroups job collects user and group information from /etc/passwd, 
 their equivalents in order to provide details on user and group conditions to help pinpoint
 potential areas of administrative concern.
 
-![0.Collection > UX_UsersAndGroups Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/databases/collection/collectionjobstree.webp)
+![0.Collection > UX_UsersAndGroups Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/unix/usersgroups/collectionjobstree.webp)
 
 The UX_UsersAndGroups job is located in the 0.Collection job group.
 

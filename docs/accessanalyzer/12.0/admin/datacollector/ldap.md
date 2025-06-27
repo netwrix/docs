@@ -59,7 +59,7 @@ The button bar provides additional options for selecting objects and attributes.
 The Options window contains configure connection options and multi-value results options. Click the
 **Options** button located in the upper right corner of the LDAP template form to open it.
 
-![Options Window](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
+![Options Window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/options.webp)
 
 - Connect Securely with TL/SSL – Connect using TLS/SSL. If the checkbox is selected, the server port
   defaults to `636`.

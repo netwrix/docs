@@ -13,7 +13,7 @@ and select Analysis to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 pre-configured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/12.0/admin/jobs/instantjobs/analysistasks.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/configuration/analysistasks.webp)
 
 The default analysis tasks are:
 

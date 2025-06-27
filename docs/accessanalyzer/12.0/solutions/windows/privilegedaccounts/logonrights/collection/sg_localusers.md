@@ -22,7 +22,7 @@ Navigate to the **Windows** > **Privileged Accounts** > **Logon Rights** > **Col
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the SG_LocalUsers Job](/img/product_docs/accessanalyzer/12.0/solutions/unix/usersgroups/localusersanalysis.webp)
+![Analysis Tasks for the SG_LocalUsers Job](/img/product_docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/logonrights/collection/localusersanalysis.webp)
 
 The default analysis tasks is:
 

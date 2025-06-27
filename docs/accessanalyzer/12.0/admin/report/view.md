@@ -29,7 +29,7 @@ Console, see the
 [Log into the Web Console](/docs/accessanalyzer/12.0/install/application/reports/overview.md#log-into-the-web-console)
 topic.
 
-![Web Console Home page](/img/product_docs/accessanalyzer/12.0/install/application/reports/webconsolehome.webp)
+![Web Console Home page](/img/product_docs/accessanalyzer/12.0/admin/report/webconsolehome.webp)
 
 On the home page of the Web Console, select a solution to view a list of all published reports for
 that solution’s job group. This list includes reports with changed Publish Path locations.

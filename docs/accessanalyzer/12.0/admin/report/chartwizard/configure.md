@@ -9,7 +9,7 @@ The Chart Configuration tab is split into three sections, label column selection
 configuration, and a chart preview. Use this tab to configure the columns from the data source to be
 shown in the chart.
 
-![Chart Configuration wizard Configure page](/img/product_docs/accessanalyzer/12.0/admin/analysis/configure.webp)
+![Chart Configuration wizard Configure page](/img/product_docs/accessanalyzer/12.0/admin/report/chartwizard/configure.webp)
 
 The left side shows all the columns from the data source table that can be used for the label axis.
 For example, the label column is the x-axis on a line chart and the y-axis on a bar chart. Select

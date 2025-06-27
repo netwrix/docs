@@ -12,7 +12,7 @@ tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SP_SensitiveDataActivity Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/activity/suspiciousactivity/sensitivedataactivityanalysis.webp)
+![Analysis Tasks for the SP_SensitiveDataActivity Job](/img/product_docs/accessanalyzer/12.0/solutions/sharepoint/activity/forensics/sensitivedataactivityanalysis.webp)
 
 The default analysis tasks are:
 

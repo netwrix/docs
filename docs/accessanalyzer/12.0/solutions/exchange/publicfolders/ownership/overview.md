@@ -5,7 +5,7 @@ and most importantly the identification of each public folder's Most Probable O
 Probable Owner is a unique algorithm built into the public folder data collector that is determined
 based on folder ownership, content posted, and size of content posted.
 
-![Ownership Job Group](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![Ownership Job Group](/img/product_docs/accessanalyzer/12.0/solutions/exchange/publicfolders/ownership/jobstree.webp)
 
 The obs in the Ownership job group are:
 

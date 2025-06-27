@@ -13,16 +13,16 @@ is run in Administrative/privilege mode.
 **Step 1 –** Run the **Netwrixaccessanalyzer.exe** executable to open the Access Analyzer Setup
 Wizard.
 
-![Setup Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![Setup Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/install/application/welcome.webp)
 
 **Step 2 –** On the Welcome page, click **Next** to begin the installation.
 
-![ End User License Agreement](/img/product_docs/activitymonitor/activitymonitor/install/eula.webp)
+![ End User License Agreement](/img/product_docs/accessanalyzer/12.0/install/application/eula.webp)
 
 **Step 3 –** On the End-User License Agreement page, read the End User License Agreement, then check
 the **I accept the terms in the License Agreement** box and click **Next**.
 
-![Destinations Folder page](/img/product_docs/accessanalyzer/12.0/install/filesystemproxy/destination.webp)
+![Destinations Folder page](/img/product_docs/accessanalyzer/12.0/install/application/destination.webp)
 
 **Step 4 –** On the Destination Folder page, click **Change** to select the folder location to
 install Access Analyzer. The default destination folder is
@@ -45,12 +45,12 @@ installation begins.
 license. It also displays the name of the organization which owns the license, the expiration date,
 and the host limit. These are the features that will be installed. Click **Next**.
 
-![Ready to install Netwrix Access Governance page](/img/product_docs/activitymonitor/activitymonitor/install/ready.webp)
+![Ready to install Netwrix Access Governance page](/img/product_docs/accessanalyzer/12.0/install/application/ready.webp)
 
 **Step 7 –** On the Ready to install Access Analyzer page, click **Install** to begin the
 installation.
 
-![Setup Wizard Completed page](/img/product_docs/threatprevention/threatprevention/install/reportingmodule/completed.webp)
+![Setup Wizard Completed page](/img/product_docs/accessanalyzer/12.0/install/application/completed.webp)
 
 **Step 8 –** When the installation has completed, click **Finish** to exit the wizard.
 

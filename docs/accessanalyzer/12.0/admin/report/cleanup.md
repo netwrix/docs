@@ -6,7 +6,7 @@ job group that contains published reports.
 
 **CAUTION:** Deleted objects cannot be restored.
 
-![Delete Group on right-click menu](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![Delete Group on right-click menu](/img/product_docs/accessanalyzer/12.0/admin/report/jobstree.webp)
 
 **Step 1 –** In the Jobs tree, right-click on the job or group that you want to delete and select
 **Delete Job/Group**.
@@ -24,7 +24,7 @@ that you want to delete, then click **Next**.
 Select the checkboxes next to all the reports you want to delete. You can also select reports by job
 group or job. Click **Next** to proceed with the deletion.
 
-![Progress wizard page](/img/product_docs/accessanalyzer/12.0/install/application/upgrade/progress.webp)
+![Progress wizard page](/img/product_docs/accessanalyzer/12.0/admin/report/progress.webp)
 
 **Step 4 –** The Progress page shows you the status of the deletion process. When it has completed,
 click **Finish** to exit the wizard.

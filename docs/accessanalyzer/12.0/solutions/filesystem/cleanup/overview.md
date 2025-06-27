@@ -8,7 +8,7 @@ the rest of the File System solution.
 **NOTE:** The Cleanup job group requires additional licenses to function. For information, contact
 your Netwrix representative.
 
-![Cleanup Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![Cleanup Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/cleanup/jobstree.webp)
 
 The Cleanup job group includes the following job groups and jobs:
 

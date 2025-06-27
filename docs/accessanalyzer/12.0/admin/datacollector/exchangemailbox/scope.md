@@ -3,7 +3,7 @@
 The Scope page is used to define which mailboxes are to be queried. It is a wizard page for all of
 the categories.
 
-![Exchange Mailbox Data Collector Wizard Scope page](/img/product_docs/activitymonitor/config/activedirectory/scope.webp)
+![Exchange Mailbox Data Collector Wizard Scope page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchangemailbox/scope.webp)
 
 At the top, configure the mailboxes to be queried. The selected option changes how the mailboxes are
 identified for scoping.
@@ -26,7 +26,7 @@ identified for scoping.
 - Selected table – Populates the **Available tables** list with tables from the Access Analyzer
   database
 
-    ![Scope page with Selected table selected](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchangepublicfolder/scopeselectedtable.webp)
+    ![Scope page with Selected table selected](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchangemailbox/scopeselectedtable.webp)
 
     - Table – Filters this list by tables. Select the table which hosts the list of mailboxes for
       which this query will be scoped.

@@ -3,7 +3,7 @@
 On the Probable Owner page, select options for determining the owner using weighted calculations.
 This page is enabled when the **Probable Owner** property is selected on the Results page.
 
-![System Info Data Collector Wizard Probable Owner page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchangepublicfolder/probableowner.webp)
+![System Info Data Collector Wizard Probable Owner page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/systeminfo/probableowner.webp)
 
 Determine owner
 

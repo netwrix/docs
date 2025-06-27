@@ -6,7 +6,7 @@ Delegation, and Folder Permissions.
 
 **_RECOMMENDED:_** Schedule the Permissions job group to run weekly on Fridays at 6 PM.
 
-![Permissions Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![Permissions Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/mailboxes/permissions/jobstree.webp)
 
 The job groups and jobs in the Permissions job group are:
 

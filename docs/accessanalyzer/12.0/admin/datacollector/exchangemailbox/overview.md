@@ -46,7 +46,7 @@ which contains the following wizard pages:
 The query requires special permissions to connect to target Exchange servers. Assign these
 permissions on the Welcome page.
 
-![Exchange Mailbox Data Collector Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![Exchange Mailbox Data Collector Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchangemailbox/welcome.webp)
 
 Connection Setting
 

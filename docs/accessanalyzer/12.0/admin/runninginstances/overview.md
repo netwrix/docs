@@ -15,7 +15,7 @@ running.
 
 The Overview page displays information about all running jobs on the current server.
 
-![Overview page](/img/product_docs/threatprevention/threatprevention/siemdashboard/qradar/dashboard/overview.webp)
+![Overview page](/img/product_docs/accessanalyzer/12.0/admin/runninginstances/overview.webp)
 
 For each instance this screen provides :
 

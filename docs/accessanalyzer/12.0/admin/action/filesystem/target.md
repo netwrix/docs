@@ -5,7 +5,7 @@ Environmental variables (for example, Program Files, SystemRoot, SAInstallDir, a
 used when creating a path as well as fields in the raw table output to populate the **Target items**
 field.
 
-![File System Action Module Wizard Target page](/img/product_docs/activitymonitor/activitymonitor/admin/search/query/target.webp)
+![File System Action Module Wizard Target page](/img/product_docs/accessanalyzer/12.0/admin/action/filesystem/target.webp)
 
 Use the fields provided to select target items and hosts from the drop-down lists and populate the
 Target items field, or edit the field manually. The Preview field updates based on the contents of

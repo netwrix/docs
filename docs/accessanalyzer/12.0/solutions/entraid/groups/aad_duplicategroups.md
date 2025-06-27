@@ -11,7 +11,7 @@ node and select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Anaylsis tasks for AAD_DuplicateGroups Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/groups/duplicategroupsanalysis.webp)
+![Anaylsis tasks for AAD_DuplicateGroups Job](/img/product_docs/accessanalyzer/12.0/solutions/entraid/groups/duplicategroupsanalysis.webp)
 
 The default analysis tasks are:
 

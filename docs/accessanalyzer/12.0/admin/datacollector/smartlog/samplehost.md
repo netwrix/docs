@@ -2,7 +2,7 @@
 
 The Sample Host page is used to configure the host. It is a wizard page for all log types.
 
-![SMART Log DC Wizard Sample Host page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/wmicollector/samplehost.webp)
+![SMART Log DC Wizard Sample Host page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/smartlog/samplehost.webp)
 
 Select a host for running a test query on the Criteria page from the following radio buttons:
 

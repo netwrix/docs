@@ -5,7 +5,7 @@ specified here at the global level applies to all jobs in the Jobs tree unless s
 at the job group or job level. See the [History Node](/docs/accessanalyzer/12.0/admin/jobs/group/history.md) and
 [History Tab](/docs/accessanalyzer/12.0/admin/jobs/job/properties/history.md) topics for additional information.
 
-![History Global Settings](/img/product_docs/threatprevention/threatprevention/admin/policies/history.webp)
+![History Global Settings](/img/product_docs/accessanalyzer/12.0/admin/settings/history.webp)
 
 The Data Retention Period settings are for configuring the job data history retention within the
 database. There are three options:

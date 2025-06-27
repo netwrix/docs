@@ -181,9 +181,9 @@ provide basic editing options for text entries.
 | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
 | ![Undo](/img/product_docs/accessanalyzer/12.0/admin/report/wizard/undo.webp)                  | Undo a change to the text                                     |
 | ![Redo](/img/product_docs/accessanalyzer/12.0/admin/report/wizard/redo.webp)                  | Redo a change to the text                                     |
-| ![Paste](/img/product_docs/accessanalyzer/12.0/admin/navigate/paste.webp)                     | Paste the contents of the clipboard                           |
+| ![Paste](/img/product_docs/accessanalyzer/12.0/admin/report/wizard/paste.webp)                     | Paste the contents of the clipboard                           |
 | ![Paste Special](/img/product_docs/accessanalyzer/12.0/admin/report/wizard/pastespecial.webp) | Paste as either formatted text, unformatted text, or metafile |
-| ![Cut](/img/product_docs/accessanalyzer/12.0/admin/navigate/cut.webp)                         | Cut the selected text and put it on the clipboard             |
+| ![Cut](/img/product_docs/accessanalyzer/12.0/admin/report/wizard/cut.webp)                         | Cut the selected text and put it on the clipboard             |
 | ![Find](/img/product_docs/accessanalyzer/12.0/admin/report/wizard/find.webp)                  | Find and replace specified text                               |
 | ![Font](/img/product_docs/accessanalyzer/12.0/admin/report/wizard/font.webp)                  | Change the font face                                          |
 | ![Font Size](/img/product_docs/accessanalyzer/12.0/admin/report/wizard/fontsize.webp)         | Change the font size                                          |

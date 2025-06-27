@@ -4,7 +4,7 @@ The data grid provides all host inventory information collected on the hosts. Vi
 at the **Host Management** node (the Host Master Table) or at individual host list nodes. See the
 [Hosts Lists](/docs/accessanalyzer/12.0/admin/hostmanagement/lists.md) topic for information on host lists.
 
-![Host Inventory Data Grid](/img/product_docs/threatprevention/threatprevention/admin/investigate/datagrid.webp)
+![Host Inventory Data Grid](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/datagrid.webp)
 
 The icon for each host entry is an indicator of its inventory state:
 

@@ -13,7 +13,7 @@ Follow the steps to install an instant solution or an instant job with the Insta
 **Step 1 –** Select the Jobs tree (for an instant solution) or the desired job group (for an instant
 job), right-click on the node, and select **Add Instant Job**.
 
-![Instant Job Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![Instant Job Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/admin/jobs/instantjobs/welcome.webp)
 
 **Step 2 –** On the Welcome page, click **Next**.
 
@@ -22,7 +22,7 @@ job), right-click on the node, and select **Add Instant Job**.
 **Step 3 –** On the Instant Job page, use the filter menu to only view instant jobs in a particular
 category, or click the plus icon (+) to expand a category group.
 
-![Selected Instant Job](/img/product_docs/accessanalyzer/12.0/admin/navigate/selectinstantjob.webp)
+![Selected Instant Job](/img/product_docs/accessanalyzer/12.0/admin/jobs/instantjobs/selectinstantjob.webp)
 
 **Step 4 –** Select the desired instant solution or job. To select multiple instant solutions or
 jobs, press the Windows **Ctrl** key and select the items to install. Click **Next**.
@@ -43,7 +43,7 @@ Host Lists and Individual Hosts wizard pages.
 pages do not appear with the selection, skip to Step 7. If the pages do appear, check the host list
 to be assigned to the job group or job. Alternatively enter hosts manually. Then click **Next**.
 
-![Summary page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/summary.webp)
+![Summary page](/img/product_docs/accessanalyzer/12.0/admin/jobs/instantjobs/summary.webp)
 
 **Step 7 –** On the Summary page, click **Save & Exit**.
 

@@ -50,7 +50,7 @@ databases appears. If the connection cannot be established, an error warning dis
 - Create new database – Click this radio button and provide a unique, descriptive name in the
   textbox
 
-![Connection report](/img/product_docs/accessanalyzer/12.0/install/application/connectionreport.webp)
+![Connection report](/img/product_docs/accessanalyzer/12.0/admin/settings/storage/connectionreport.webp)
 
 **Step 8 –** Click **Apply** and a Connection report window opens. The Connection report checks for
 the appropriate permissions and lists any that are missing. If no permissions are present, an error

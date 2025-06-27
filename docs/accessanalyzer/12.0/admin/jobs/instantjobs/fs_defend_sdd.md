@@ -8,7 +8,7 @@ add this instant job into the Jobs tree.
 For installing the job, select **Local host** on the Hosts page of the Instant Job Wizard. Then set
 the host list according to the following information.
 
-![FS_DEFEND_SDD job in the Jobs tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![FS_DEFEND_SDD job in the Jobs tree](/img/product_docs/accessanalyzer/12.0/admin/jobs/instantjobs/jobstree_2.webp)
 
 Runtime Details:
 

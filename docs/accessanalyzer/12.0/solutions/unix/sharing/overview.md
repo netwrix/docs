@@ -2,7 +2,7 @@
 
 The 3.Sharing job group highlights potentially insecure share configurations on Unix hosts.
 
-![3.Sharing Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![3.Sharing Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/unix/sharing/jobstree.webp)
 
 The jobs in the 3.Sharing job group are:
 

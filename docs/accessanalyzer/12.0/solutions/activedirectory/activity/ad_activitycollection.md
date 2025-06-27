@@ -4,7 +4,7 @@ The AD_ActivityCollection Job located in the 0.Collection Job Group, imports dat
 Activity Monitor logs into the Access Analyzer Database. Retention can be modified in the query (120
 days default).
 
-![AD_ActivityCollection Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![AD_ActivityCollection Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/activity/jobstree_1.webp)
 
 There are two ways AD Activity data can be retrieved by Access Analyzer:
 
@@ -50,7 +50,7 @@ archive logs for AD Activity.
 **NOTE:** The query can be configured to connect directly to the network share where the archive
 logs are stored or the API Server.
 
-![Queries for the AD_ActivityCollection Job](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/queries.webp)
+![Queries for the AD_ActivityCollection Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/activity/queries.webp)
 
 The AD_ActivityCollection Job uses the ADActivity Data Collector for the following query:
 

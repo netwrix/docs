@@ -4,7 +4,7 @@ The Options page provides access to additional options for the action. Based on 
 Operation page and other choices made within the wizard, not all options on this page may be
 available.
 
-![File System Action Module Wizard Options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
+![File System Action Module Wizard Options page](/img/product_docs/accessanalyzer/12.0/admin/action/filesystem/options.webp)
 
 Select from the following additional operations:
 

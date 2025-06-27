@@ -7,7 +7,7 @@ of the following:
 - An individual host list
 - Selected hosts in a list
 
-![Schedule option on the Activities pane](/img/product_docs/threatprevention/threatprevention/admin/configuration/databasemaintenance/schedule.webp)
+![Schedule option on the Activities pane](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/schedule.webp)
 
 Select the hosts or host list to inventory and click **Schedule** in the Activities pane. The
 Schedule Wizard opens for the selected host or host list.

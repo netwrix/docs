@@ -2,7 +2,7 @@
 
 Use the Properties page to specify the recipients of the email.
 
-![Send Mail Action Module Wizard Properties page](/img/product_docs/activitymonitor/activitymonitor/install/agent/properties.webp)
+![Send Mail Action Module Wizard Properties page](/img/product_docs/accessanalyzer/12.0/admin/action/sendmail/properties.webp)
 
 Use the following fields to specify the recipient information:
 

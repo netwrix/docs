@@ -3,7 +3,7 @@
 The Options page provides additional configuration options for the query. Available options vary
 depending on the category selected. It is a wizard page for all of the categories.
 
-![Exchange 2K+ Data Collector Wizard Options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
+![Exchange 2K+ Data Collector Wizard Options page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchange2k/options.webp)
 
 Configure the Options step using the following options:
 

@@ -11,7 +11,7 @@ Follow the steps to modify an existing report.
 
 **Step 1 –** Navigate to the Reports node that contains the report.
 
-![Configure Report](/img/product_docs/accessanalyzer/12.0/admin/analysis/configure.webp)
+![Configure Report](/img/product_docs/accessanalyzer/12.0/admin/report/configure.webp)
 
 **Step 2 –** Click the **Configure** button next to the report you want to modify.
 

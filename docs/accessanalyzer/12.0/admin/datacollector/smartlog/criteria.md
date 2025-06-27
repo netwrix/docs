@@ -4,7 +4,7 @@ The Criteria page is used to specify the search criteria. A test query can be ru
 host entered on the Sample Host page to confirm the results that will be returned by the query. It
 is a wizard page for all log types.
 
-![SMART Log DC Wizard Criteria page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/criteria.webp)
+![SMART Log DC Wizard Criteria page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/smartlog/criteria.webp)
 
 The **Limit number of records to** setting has a default of `1000`.
 

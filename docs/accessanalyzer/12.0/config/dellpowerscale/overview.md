@@ -50,7 +50,7 @@ Zone.
 **Step 2 –** On the **Groups** tab, set the Providers to **LOCAL: System**. Then select **View /
 Edit** for the Administrators group. The View Group Details window opens.
 
-![Edit Group window](/img/product_docs/dataclassification/ndc/admin/sources/sourcegroups/editgroup.webp)
+![Edit Group window](/img/product_docs/accessanalyzer/12.0/config/dellpowerscale/editgroup.webp)
 
 **Step 3 –** Click **Edit Group** and the Edit Group window opens. Click **Add Members**, and enter
 the User Name and Provider in the Select a User window. Click **Select**, and then click **Save

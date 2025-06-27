@@ -53,7 +53,7 @@ contains the following wizard pages:
 - [ADInventory: Custom Attributes](/docs/accessanalyzer/12.0/admin/datacollector/adinventory/customattributes.md)
 - [ADInventory: Summary](/docs/accessanalyzer/12.0/admin/datacollector/adinventory/summary.md)
 
-![Active Directory Inventory DC Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![Active Directory Inventory DC Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/welcome.webp)
 
 The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
 when the wizard is open and configuration settings are saved.

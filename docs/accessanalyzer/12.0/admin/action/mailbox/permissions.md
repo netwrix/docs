@@ -3,7 +3,7 @@
 Use the Permissions page to determine which permissions to remove. It is a wizard page for the
 **Add/Change Permissions** and **Remove Permissions** operations.
 
-![New Mailbox Action Wizard Permissions page](/img/product_docs/threatprevention/threatprevention/admin/policies/permissions.webp)
+![New Mailbox Action Wizard Permissions page](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/permissions.webp)
 
 Use the following options to add, change or remove Permissions:
 

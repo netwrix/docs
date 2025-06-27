@@ -21,7 +21,7 @@ information from targeted file servers. It is dependent upon the following jobs:
 
 If only select sub-job groups have been run, there are blank sections in the overview report.
 
-![FS_SecurityAssessment Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/securityassessmentjobstree.webp)
+![FS_SecurityAssessment Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/securityassessmentjobstree.webp)
 
 The FS_SecurityAssessment job is comprised of analysis and reports which use the data collected by
 the 0.Collection job group and analyzed by the jobs listed above.
@@ -34,7 +34,7 @@ View the analysis tasks by navigating to the **FileSystem** > **FS_SecurityAsses
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Task for the FS_SecurityAssessment Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/securityassessmentanalysis.webp)
+![Analysis Task for the FS_SecurityAssessment Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/securityassessmentanalysis.webp)
 
 The following analysis tasks are selected by default:
 

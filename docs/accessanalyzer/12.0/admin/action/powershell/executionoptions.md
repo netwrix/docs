@@ -2,7 +2,7 @@
 
 Specify the execution options for the PowerShell script using the Execution Options page.
 
-![PowerShell Action Module Wizard Execution Options page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/commandlineutility/executionoptions.webp)
+![PowerShell Action Module Wizard Execution Options page](/img/product_docs/accessanalyzer/12.0/admin/action/powershell/executionoptions.webp)
 
 The options on the Execution Options page are:
 

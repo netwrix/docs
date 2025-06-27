@@ -3,7 +3,7 @@
 The Results page is where properties from Unix to be gathered are selected. It is a wizard page for
 both categories.
 
-![NIS Data Collector Wizard Results page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/results.webp)
+![NIS Data Collector Wizard Results page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/nis/results.webp)
 
 Available properties have checkboxes that can be selected individually, or you can use the **Select
 All**, **Clear All**, and **Reset to defaults** buttons. All selected properties are gathered.

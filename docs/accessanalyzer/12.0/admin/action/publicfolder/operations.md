@@ -2,7 +2,7 @@
 
 Use the Operations page to specify the operations to perform as part of the action.
 
-![Public Folder Action Module Wizard Operations page](/img/product_docs/activitymonitor/activitymonitor/admin/monitoreddomains/admonitoringconfiguration/operations.webp)
+![Public Folder Action Module Wizard Operations page](/img/product_docs/accessanalyzer/12.0/admin/action/publicfolder/operations.webp)
 
 The **Add operation** drop-down menu lists the operations that can be performed. Each operation
 opens a corresponding window. Operations include:
@@ -112,7 +112,7 @@ Change permissions using the following options:
 Use the Custom Attributes window to select custom attributes. It is a wizard page for the Custom
 Attributes operation.
 
-![Custom Attributes Window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/customattributes.webp)
+![Custom Attributes Window](/img/product_docs/accessanalyzer/12.0/admin/action/publicfolder/customattributes.webp)
 
 Select attributes using the following options:
 

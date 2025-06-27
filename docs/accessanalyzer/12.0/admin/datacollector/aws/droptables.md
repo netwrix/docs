@@ -9,7 +9,7 @@ tables from the Access Analyzer database. Follow the steps to configure a job to
 
 **Step 3 –** Assign a query using the **AWS** Data Collector.
 
-![Drop AWS DC Tables option on Amazon Web Services Data Collector Wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/fsaa/droptables.webp)
+![Drop AWS DC Tables option on Amazon Web Services Data Collector Wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/aws/droptables.webp)
 
 **Step 4 –** In the Amazon Web Services Data Collector Wizard on the Category page, select the
 **Drop AWS DC Tables** category task. Click **Next**.

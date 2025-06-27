@@ -37,7 +37,7 @@ contains the following wizard pages:
 - [SystemInfo: Options](/docs/accessanalyzer/12.0/admin/datacollector/systeminfo/options.md)
 - [SystemInfo: Summary](/docs/accessanalyzer/12.0/admin/datacollector/systeminfo/summary.md)
 
-![System Info Data Collector Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![System Info Data Collector Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/systeminfo/welcome.webp)
 
 The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
 when the wizard is open and configuration settings are saved.

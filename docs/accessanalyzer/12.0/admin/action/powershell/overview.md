@@ -22,6 +22,6 @@ contains the following wizard pages:
 The Welcome page displays first and gives an overview of the action module. The navigation pane
 contains links to the pages in the wizard.
 
-![PowerShell Action Module Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![PowerShell Action Module Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/admin/action/powershell/welcome.webp)
 
 To proceed, click **Next** or use the Steps navigation pane to open another page in the wizard.

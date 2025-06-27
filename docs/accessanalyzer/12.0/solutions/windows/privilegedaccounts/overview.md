@@ -5,7 +5,7 @@ system and how. The Privileged Accounts job group provides the collection and co
 capabilities needed to unravel complex access assignments, including local administrator membership,
 users with remote logon rights, and service accounts.
 
-![Privileged Accounts Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![Privileged Accounts Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/jobstree.webp)
 
 The job groups in the Privileged Accounts job group are:
 

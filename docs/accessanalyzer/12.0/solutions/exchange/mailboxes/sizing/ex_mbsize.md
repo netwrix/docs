@@ -3,7 +3,7 @@
 The EX_MBSize job collects information from the Exchange environment about the mailbox sizes in the
 environment.
 
-![0.Collection > EX_MBSize Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/databases/collection/collectionjobstree.webp)
+![0.Collection > EX_MBSize Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/mailboxes/sizing/collectionjobstree.webp)
 
 The EX_MBSize job is located in the 0.Collection job group.
 

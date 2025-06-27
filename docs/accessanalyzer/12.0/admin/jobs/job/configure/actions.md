@@ -6,7 +6,7 @@ listing of locked-out accounts, an action can be executed to unlock those accoun
 
 **NOTE:** Action modules are available with a special Access Analyzer license.
 
-![Action Selection page](/img/product_docs/accessanalyzer/12.0/admin/action/actionselection.webp)
+![Action Selection page](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/configure/actionselection.webp)
 
 The Action Selection view lists all action tasks for the selected job. The listed information
 includes:

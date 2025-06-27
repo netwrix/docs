@@ -124,7 +124,7 @@ The Menu Bar options are:
 
 The Button bar provides quick links to various actions and functions in Access Analyzer.
 
-![Button Bar](/img/product_docs/accessanalyzer/12.0/admin/datacollector/buttonbar.webp)
+![Button Bar](/img/product_docs/accessanalyzer/12.0/admin/navigate/buttonbar.webp)
 
 The options in the Button Bar are:
 
@@ -139,6 +139,6 @@ The options in the Button Bar are:
 | ![cut](/img/product_docs/accessanalyzer/12.0/admin/navigate/cut.webp)                           | Scissors                    | Cut the selected query to the clipboard (Ctrl + X)  |
 | ![copy](/img/product_docs/accessanalyzer/12.0/admin/navigate/copy.webp)                         | Duplicate papers            | Copy the selected query to the clipboard (Ctrl + C) |
 | ![paste](/img/product_docs/accessanalyzer/12.0/admin/navigate/paste.webp)                       | Clipboard with paper        | Paste the query from the clipboard (Ctrl + V)       |
-| ![delete](/img/product_docs/platgovnetsuite/integrations/delete.webp)                                 | Red X                       | Delete the selected query                           |
+| ![delete](/img/product_docs/accessanalyzer/12.0/admin/navigate/delete.webp)                                 | Red X                       | Delete the selected query                           |
 
 Select a button for the desired action.

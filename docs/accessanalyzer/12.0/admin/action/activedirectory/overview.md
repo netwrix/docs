@@ -55,7 +55,7 @@ which contains the following wizard pages:
 The Welcome page displays first in the Active Directory Action Module Wizard. Review the
 introductory and caution information about the Active Directory Action Module.
 
-![Active Directory Action Module Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![Active Directory Action Module Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/admin/action/activedirectory/welcome.webp)
 
 The navigation pane contains links to the pages in the wizard. Note that the operations added on the
 Operations page will affect the list of pages in the navigation pane. Several operations have

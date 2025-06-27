@@ -7,7 +7,7 @@ servers that data is pending cleanup.
 Global Settings. See the [Notification](/docs/accessanalyzer/12.0/admin/settings/notification.md) topic for
 additional information.
 
-![2. Notify Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![2. Notify Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/cleanup/notify/jobstree.webp)
 
 This job group includes the following jobs:
 

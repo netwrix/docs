@@ -9,7 +9,7 @@ the default Storage Profile at the global level.
 **Step 1 –** Select the profile to be the new default, and click **Set as default**. The Change
 storage profile window opens.
 
-![Change storage profile window](/img/product_docs/accessanalyzer/12.0/install/application/changestorageprofile.webp)
+![Change storage profile window](/img/product_docs/accessanalyzer/12.0/admin/settings/storage/changestorageprofile.webp)
 
 **Step 2 –** There are three options for host management data migration. Select the desired option,
 choose whether or not to apply the secondary option, and click **OK**.

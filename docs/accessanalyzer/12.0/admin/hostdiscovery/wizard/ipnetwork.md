@@ -9,7 +9,7 @@ using DNS.
 **Step 1 –** Open the Host Discovery Wizard. On the Source page, select the **Scan your IP network**
 option. Click **Next**.
 
-![Host Discovey Wizard Query page for IP network scan](/img/product_docs/accessanalyzer/12.0/admin/datacollector/nis/query.webp)
+![Host Discovey Wizard Query page for IP network scan](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/query_1.webp)
 
 **Step 2 –** On the Query page, name the query and select the credentials used to access the source.
 
@@ -72,7 +72,7 @@ Click **Next** to continue.
 
 Click **Next** to continue.
 
-![Host Discovey Wizard Options page for IP network scan](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
+![Host Discovey Wizard Options page for IP network scan](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/options_1.webp)
 
 **Step 4 –** On the Options page, configure the query options as required.
 
@@ -117,7 +117,7 @@ the discovery query.
 
 Click **Next** to continue.
 
-![Host Discovey Wizard Summary page for IP network scan](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/summary.webp)
+![Host Discovey Wizard Summary page for IP network scan](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/summary_1.webp)
 
 **Step 6 –** The Summary page displays all the selected query configuration settings. To make
 changes, click **Back** to navigate to the relevant wizard page. Click Finish to complete the

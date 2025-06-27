@@ -22,7 +22,7 @@ Navigate to the **Jobs** > **SharePoint** > **SP_Overview** > **Configure** node
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the SP_Overview Job](/img/product_docs/accessanalyzer/12.0/solutions/exchange/publicfolders/overviewanalysis.webp)
+![Analysis Tasks for the SP_Overview Job](/img/product_docs/accessanalyzer/12.0/solutions/sharepoint/overviewanalysis.webp)
 
 The default analysis tasks is:
 

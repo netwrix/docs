@@ -29,7 +29,7 @@ contains the following pages:
 - [PowerShell: Results](/docs/accessanalyzer/12.0/admin/datacollector/powershell/results.md)
 - [PowerShell: Summary](/docs/accessanalyzer/12.0/admin/datacollector/powershell/summary.md)
 
-![PowerShell Data Collector Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![PowerShell Data Collector Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/powershell/welcome.webp)
 
 The Welcome page can be hidden by checking the **Do not display this page the next time** box when
 the wizard is open and configuration settings are saved.

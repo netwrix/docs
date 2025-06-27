@@ -4,7 +4,7 @@ Use the Folder Conditions page to customize folder search filter conditions. It 
 the **No, the query results do not contain a mailbox identification** column option on the Folder
 Identification page.
 
-![New Mailbox Action Wizard Folder Conditions page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filterwizard/folderconditions.webp)
+![New Mailbox Action Wizard Folder Conditions page](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/folderconditions.webp)
 
 Customize folder search conditions using the following options:
 
@@ -24,7 +24,7 @@ Use the Folder Type window to select which folder types to run the action agains
 window opens if **specific** in **with specific folder type** is selected in the Edit Conditions
 box. .
 
-![Folder Type Window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filterwizard/foldertypewindow.webp)
+![Folder Type Window](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/foldertypewindow.webp)
 
 Select the checkbox next to any desired folder type to include it in the search criteria, including:
 
@@ -42,7 +42,7 @@ Select the checkbox next to any desired folder type to include it in the search 
 Use the Search Terms window to select terms contained in folder names to run the action against.The
 Search Terms window opens if **search terms** is selected in the Edit Conditions box.
 
-![Search Terms Window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filterwizard/searchtermswindow.webp)
+![Search Terms Window](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/searchtermswindow.webp)
 
 Edit the search terms using the following options:
 

@@ -48,7 +48,7 @@ show a green checkmark, click **Next**.
 **NOTE:** At this stage you can click **Cancel** to close the wizard and the task will not be
 renamed.
 
-![Rename Scheduled Task wizard Progress page](/img/product_docs/accessanalyzer/12.0/install/application/upgrade/progress.webp)
+![Rename Scheduled Task wizard Progress page](/img/product_docs/accessanalyzer/12.0/admin/schedule/progress.webp)
 
 **Step 5 –** The Progress page shows a progress bar and message. Once the scheduled tasks have been
 renamed successfully, click **Finish** to close the wizard.

@@ -22,7 +22,7 @@ and close the window. The task is visible in the Schedule Actions view, at the S
 The Schedule page is for setting the schedule of when and how often the task will run. This tab
 needs to be properly configured for every scheduled task.
 
-![Schedule wizard page](/img/product_docs/threatprevention/threatprevention/admin/configuration/databasemaintenance/schedule.webp)
+![Schedule wizard page](/img/product_docs/accessanalyzer/12.0/admin/schedule/schedule.webp)
 
 The options on the Schedule page are:
 
@@ -87,7 +87,7 @@ All** and **Clear All** links provide for quick selection and deselection.
 The Connection page identifies the Connection Profile that is applied to the targeted hosts being
 queried by the task being scheduled. Customizations to the configuration of this tab is optional.
 
-![Connection wizard page](/img/product_docs/activitymonitor/activitymonitor/admin/monitoredhosts/add/connection.webp)
+![Connection wizard page](/img/product_docs/accessanalyzer/12.0/admin/schedule/connection.webp)
 
 Choose the desired setting from the following options:
 
@@ -131,7 +131,7 @@ The options on the Run as wizard page are:
 
 Configure additional options for the task on the Options wizard page.
 
-![Options wizard page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
+![Options wizard page](/img/product_docs/accessanalyzer/12.0/admin/schedule/options.webp)
 
 The configurable options are:
 

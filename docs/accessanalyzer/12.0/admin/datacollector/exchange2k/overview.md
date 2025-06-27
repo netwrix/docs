@@ -43,7 +43,7 @@ contains the following wizard pages:
 - [Exchange2K: Options](/docs/accessanalyzer/12.0/admin/datacollector/exchange2k/options.md)
 - [Exchange2K: Summary](/docs/accessanalyzer/12.0/admin/datacollector/exchange2k/summary.md)
 
-![Exchange 2K+ Data Collector Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![Exchange 2K+ Data Collector Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchange2k/welcome.webp)
 
 The Welcome page can be hidden by selecting the **Do not show this page the next time** checkbox
 when the wizard is open and configuration settings are saved.

@@ -2,7 +2,7 @@
 
 The Reports node is for configuring reports to be generated during job execution.
 
-![Reports page](/img/product_docs/accessanalyzer/12.0/admin/report/reports.webp)
+![Reports page](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/configure/reports.webp)
 
 The Reports view lists any reports that have been configured for the selected job and options
 related to configuring reports. The options at the top of the Reports view are:

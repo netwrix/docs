@@ -23,7 +23,7 @@ Console server in order to be referenced during the installation process.
 **Step 2 –** From Programs and Features (**Control Panel** > **Programs** > **Programs and
 Features**), select the Access Analyzer application and click **Change**.
 
-![Setup Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![Setup Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/install/application/welcome_1.webp)
 
 **Step 3 –** On the Welcome page, click **Next**.
 
@@ -46,11 +46,11 @@ the path to the file is visible in the text box, click **Next**. The license wil
 license. It also displays the name of the organization which owns the license, the expiration date,
 and the host limit. These are the features that will be installed. Click **Next**.
 
-![Setup Wizard Ready to change page](/img/product_docs/activitymonitor/activitymonitor/install/ready.webp)
+![Setup Wizard Ready to change page](/img/product_docs/accessanalyzer/12.0/install/application/ready_1.webp)
 
 **Step 7 –** On the Ready to Change Access Analyzer page, click **Change** to begin the update.
 
-![Setup Wizard Completed page](/img/product_docs/threatprevention/threatprevention/install/reportingmodule/completed.webp)
+![Setup Wizard Completed page](/img/product_docs/accessanalyzer/12.0/install/application/completed.webp)
 
 **Step 8 –** When the installation has completed, click **Finish** to exit the wizard.
 

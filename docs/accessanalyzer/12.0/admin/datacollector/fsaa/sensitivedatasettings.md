@@ -3,7 +3,7 @@
 The Sensitive Data Settings page is where sensitive data discovery settings are configured. It is a
 wizard page for the category of Sensitive Data Scan.
 
-![FSAA Data Collector Wizard Sensitive Data Settings page](/img/product_docs/accessanalyzer/12.0/install/application/upgrade/sensitivedata.webp)
+![FSAA Data Collector Wizard Sensitive Data Settings page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/fsaa/sensitivedata.webp)
 
 - Don’t process files larger than: [number] MB – Limits the files to be scanned for sensitive
   content to only files smaller than the specified size

@@ -3,7 +3,7 @@
 The Results page is used to select which properties will be gathered out of those available for the
 category. It is a wizard page for all of the categories.
 
-![EWS Public Folder Data Collector Wizard Results page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/results.webp)
+![EWS Public Folder Data Collector Wizard Results page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewspublicfolder/results.webp)
 
 Select criteria using the following options:
 

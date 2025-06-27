@@ -17,7 +17,7 @@ pbox_Access** > **Configure** node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Dropbox_Access Job](/img/product_docs/accessanalyzer/12.0/solutions/box/accessanalysis.webp)
+![Analysis Tasks for the Dropbox_Access Job](/img/product_docs/accessanalyzer/12.0/solutions/dropbox/accessanalysis.webp)
 
 - Get access details – Creates the SA_Dropbox_Access_Details table accessible under the job’s
   Results node

@@ -40,7 +40,7 @@ displays.
 [SPAA: SharePoint Data Collection Settings](/docs/accessanalyzer/12.0/admin/datacollector/spaa/settings.md) page,
 customize as desired and click **Next**.
 
-![Scan Scoping Options](/img/product_docs/accessanalyzer/12.0/admin/datacollector/spaa/scanscopingoptions.webp)
+![Scan Scoping Options](/img/product_docs/accessanalyzer/12.0/solutions/sharepoint/collection/scanscopingoptions.webp)
 
 **Step 5 –** On the
 [SPAA: Scan Scoping Options](/docs/accessanalyzer/12.0/admin/datacollector/spaa/scanscopingoptions.md) page, no web

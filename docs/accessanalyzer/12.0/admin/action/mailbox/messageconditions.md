@@ -3,7 +3,7 @@
 Use the Message Conditions page to customize message search filter conditions. It is a wizard page
 for the Delete Mailbox Contents operation.
 
-![New Mailbox Action Wizard Mailbox Message Conditions page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filterwizard/messageconditions.webp)
+![New Mailbox Action Wizard Mailbox Message Conditions page](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/messageconditions.webp)
 
 Customize the folder search conditions using the following options:
 
@@ -84,7 +84,7 @@ To specify a date range, use the following options:
 Use the Search Terms window to select terms in messages to run the action against. The Search Terms
 window opens if **search terms** in any condition is selected in the Edit Conditions box.
 
-![Search Terms Window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filterwizard/searchtermswindow.webp)
+![Search Terms Window](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/searchtermswindow.webp)
 
 Edit the search terms using the following options:
 

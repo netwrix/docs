@@ -30,7 +30,7 @@ Navigate to the **Jobs** > **Windows** > **Privileged Accounts** > **Service Acc
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SG_ServiceAccounts Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/users/serviceaccountsanalysis.webp)
+![Analysis Tasks for the SG_ServiceAccounts Job](/img/product_docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/serviceaccountsanalysis.webp)
 
 The default analysis tasks are:
 

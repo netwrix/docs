@@ -71,5 +71,5 @@ to do the following:
 | ![Add security properties for selected key](/img/product_docs/accessanalyzer/12.0/admin/datacollector/addproperties.webp)         | Add security properties for selected key           |
 | ![Enumerate all values for this key](/img/product_docs/accessanalyzer/12.0/admin/datacollector/enumeratevalues.webp)              | Enumerate all values for this key                  |
 | ![Add currently selected value](/img/product_docs/accessanalyzer/12.0/admin/datacollector/addvalue.webp)                          | Add currently selected value                       |
-| ![Delete properties from selection](/img/product_docs/platgovnetsuite/integrations/delete.webp)                                         | Delete properties from selection                   |
+| ![Delete properties from selection](/img/product_docs/accessanalyzer/12.0/admin/datacollector/delete.webp)                                         | Delete properties from selection                   |
 | ![Go to selected key](/img/product_docs/accessanalyzer/12.0/admin/datacollector/goto.webp)                                        | Go to selected key                                 |

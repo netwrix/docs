@@ -3,7 +3,7 @@
 The Schedule node contains objects referred to as Schedule Service Accounts. A Schedule Service
 Account is used to run scheduled tasks on the Access Analyzer Console server.
 
-![Schedule node](/img/product_docs/threatprevention/threatprevention/admin/configuration/databasemaintenance/schedule.webp)
+![Schedule node](/img/product_docs/accessanalyzer/12.0/admin/settings/schedule.webp)
 
 Jobs can be executed manually as desired or scheduled to execute at designated times. For example,
 you could schedule a job to run during hours when the office is closed and network traffic is low.
@@ -201,7 +201,7 @@ Access Analyzer can now schedule tasks with this Scheduled Service Account.
 
 Follow the steps to delete a Schedule Service Account.
 
-![Delete option in the Schedule view](/img/product_docs/platgovnetsuite/integrations/delete.webp)
+![Delete option in the Schedule view](/img/product_docs/accessanalyzer/12.0/admin/settings/delete.webp)
 
 **Step 1 –** Select the credential from the User Credentials list and click **Delete**. The Delete
 Credentials confirmation window appears.

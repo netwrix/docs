@@ -73,7 +73,7 @@ The Messaging Team
 The Messages Preview window displays a preview of the email, including any dynamic fields. This
 window displays after clicking the **Preview** button.
 
-![Messages preview window](/img/product_docs/accessanalyzer/12.0/admin/action/survey/messagespreview.webp)
+![Messages preview window](/img/product_docs/accessanalyzer/12.0/admin/action/sendmail/messagespreview.webp)
 
 - Blue arrow buttons – Click to view other recipients
 - Send – Sends a single message to the addresses in the Recipients field

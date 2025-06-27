@@ -2,7 +2,7 @@
 
 A summary of the survey configuration displays.
 
-![Survey Action Module Wizard Summary page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/summary.webp)
+![Survey Action Module Wizard Summary page](/img/product_docs/accessanalyzer/12.0/admin/action/survey/summary.webp)
 
 Click **Save Template** to access the Save Survey Template window.
 

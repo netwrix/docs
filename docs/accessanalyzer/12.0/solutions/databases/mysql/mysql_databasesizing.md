@@ -2,7 +2,7 @@
 
 The Configuration Job Group is designed to provide insight into MySQL server configuration settings.
 
-![Configuration Job Group](/img/product_docs/accessanalyzer/12.0/solutions/databases/postgresql/configurationjobgroup.webp)
+![Configuration Job Group](/img/product_docs/accessanalyzer/12.0/solutions/databases/mysql/configurationjobgroup.webp)
 
 The job in the Configuration Job Group is:
 

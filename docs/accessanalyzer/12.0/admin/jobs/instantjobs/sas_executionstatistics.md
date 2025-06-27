@@ -11,7 +11,7 @@ The job is dependent upon the Job Statistics Retention configuration in the **Se
 **Application** node. See the [Application](/docs/accessanalyzer/12.0/admin/settings/application/overview.md) topic for
 additional information.
 
-![SAS_ExecutionStatistics job in the Jobs tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![SAS_ExecutionStatistics job in the Jobs tree](/img/product_docs/accessanalyzer/12.0/admin/jobs/instantjobs/jobstree_4.webp)
 
 Runtime Details:
 

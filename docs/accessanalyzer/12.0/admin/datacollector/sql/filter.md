@@ -49,7 +49,7 @@ populated manually in the Manage Connections window. See the
 [Manage Connections Window](#manage-connections-window) topic for additional information. Once the
 table has been populated, a query can be scoped.
 
-![SQL Data Collector Wizard Filter page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filter.webp)
+![SQL Data Collector Wizard Filter page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/sql/filter.webp)
 
 The configurable filter options are:
 
@@ -83,7 +83,7 @@ The configurable filter options are:
 The Manage Connections window enables you to add database instances to search. Click the
 **Connections** button to open it.
 
-![Manage Connections window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/nosql/manageconnections.webp)
+![Manage Connections window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/sql/manageconnections.webp)
 
 The Manage Connections table lists the previously added database instances and their attributes.
 Select a row in the table to edit that instance, or create a new instance to add to the table:

@@ -11,7 +11,7 @@ Navigate to the **Jobs** > **Databases** > **Db2** > **Sensitive Data** > **Db2_
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Db2 _SensitiveData Job](/img/product_docs/accessanalyzer/12.0/solutions/databases/postgresql/collection/sensitivedataanalysis.webp)
+![Analysis Tasks for the Db2 _SensitiveData Job](/img/product_docs/accessanalyzer/12.0/solutions/databases/db2/sensitivedata/sensitivedataanalysis.webp)
 
 The default analysis tasks are:
 

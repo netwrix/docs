@@ -5,7 +5,7 @@ reference tables. Follow the steps.
 
 **Step 1 –** Create a new job and assign a query using the ADActivity Data Collector.
 
-![Active Directory Activity DC wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/categoryremovetables.webp)
+![Active Directory Activity DC wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adactivity/categoryremovetables.webp)
 
 **Step 2 –** In the Active Directory Activity DC Wizard on the Category page, select the **Remove
 Tables** category task.

@@ -3,7 +3,7 @@
 The ActiveDirectory Data Collector Category page contains the following query categories,
 sub-divided by auditing focus:
 
-![Active Directory Data Collector Wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/category.webp)
+![Active Directory Data Collector Wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/activedirectory/category.webp)
 
 The categories are:
 

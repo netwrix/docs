@@ -16,7 +16,7 @@ The Scope page is used to define where to search. It is a wizard page for the ca
 - User’s Message Activity Per Hour
 - Deploy or Change Applet Settings
 
-![Exchange Metrics Data Collector Wizard Scope page](/img/product_docs/activitymonitor/config/activedirectory/scope.webp)
+![Exchange Metrics Data Collector Wizard Scope page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchangemetrics/scope.webp)
 
 Define the scope of the query using the following options:
 

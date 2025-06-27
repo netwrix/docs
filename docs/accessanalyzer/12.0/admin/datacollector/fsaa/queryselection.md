@@ -3,7 +3,7 @@
 The FSAA Data Collector Query Selection page contains the following query categories, sub-divided by
 auditing focus:
 
-![FSAA Data Collector Wizard Query Selection page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/queryselection.webp)
+![FSAA Data Collector Wizard Query Selection page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/fsaa/queryselection.webp)
 
 - The File System Access/Permission Auditing options scan hosts for file system information, and
   there are two categories to choose from:

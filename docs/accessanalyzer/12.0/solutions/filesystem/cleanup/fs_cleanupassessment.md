@@ -9,7 +9,7 @@ Information Center Manage Owners page. See the Resource Owners topics in the
 [Netwrix Access Information Center Documentation](https://helpcenter.netwrix.com/category/accessinformationcenter)
 for additional information.
 
-![1. Cleanup Assessment > FS_CleanupAssessment Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![1. Cleanup Assessment > FS_CleanupAssessment Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/cleanup/jobstree_1.webp)
 
 The FS_CleanupAssessment job is located in the 1. Cleanup Assessment job group.
 

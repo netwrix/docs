@@ -13,7 +13,7 @@ Configure the following settings as required:
 
 Header Options
 
-![header](/img/product_docs/accessanalyzer/12.0/admin/action/webrequest/header.webp)
+![header](/img/product_docs/accessanalyzer/12.0/admin/report/wizard/header.webp)
 
 - Title – The title of the report as displayed at the top of the generated report
 - Author – Name of the person or group who created the report. This is displayed at the top of the

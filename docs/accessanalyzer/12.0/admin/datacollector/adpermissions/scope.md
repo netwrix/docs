@@ -6,7 +6,7 @@ wizard page for the categories of:
 - Scan Active Directory Permissions
 - Scan Active Directory Audits
 
-![ADPermissions Data Collector wizard Scope page](/img/product_docs/activitymonitor/config/activedirectory/scope.webp)
+![ADPermissions Data Collector wizard Scope page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adpermissions/scope.webp)
 
 The configurable options are:
 

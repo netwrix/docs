@@ -35,6 +35,6 @@ perform against the selected objects. The wizard has the following pages:
 The Welcome page gives an overview of the action module. The steps navigation pane contains links to
 the pages in the wizard, which change based on the operation selected on the Operations page.
 
-![New Mailbox Action Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![New Mailbox Action Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/welcome.webp)
 
 To proceed, click **Next** or use the Steps navigation pane to open another page in the wizard.

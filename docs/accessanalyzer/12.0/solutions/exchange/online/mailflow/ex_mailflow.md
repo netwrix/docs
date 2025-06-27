@@ -2,7 +2,7 @@
 
 The EX_Mailflow job collects message trace data from Office 365.
 
-![0. Collection > EX_Mailflow Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/databases/collection/collectionjobstree.webp)
+![0. Collection > EX_Mailflow Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/online/mailflow/collectionjobstree.webp)
 
 The EX_Mailflow job is located in the **Mailflow** > **0. Collection** job group.
 

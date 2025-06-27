@@ -7,7 +7,7 @@ Follow the steps to create a new job.
 **Step 1 –** Select the Jobs tree or the desired job group to add the new job to. Right-click and
 select **Create Job**.
 
-![New Job added to Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/navigate/newjob.webp)
+![New Job added to Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/newjob.webp)
 
 **Step 2 –** Provide a unique, descriptive name for the job. The default name is `NewJob`. Some
 considerations for naming conventions:

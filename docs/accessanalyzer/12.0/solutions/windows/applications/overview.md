@@ -3,7 +3,7 @@
 The Applications job group tracks various aspects of installed application management, identifying
 installed software and utilization, unauthorized programs and rogue systems, and more.
 
-![Applications Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![Applications Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/windows/applications/jobstree.webp)
 
 The jobs in the Applications job group are:
 

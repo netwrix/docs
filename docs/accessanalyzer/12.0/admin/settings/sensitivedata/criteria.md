@@ -29,7 +29,7 @@ Follow the steps to add Search Criteria for Sensitive Data scan jobs.
 
 **Step 1 –** Click **Add** to open the Select Criteria window.
 
-![Select Criteria window](/img/product_docs/accessanalyzer/12.0/install/application/upgrade/selectcriteria.webp)
+![Select Criteria window](/img/product_docs/accessanalyzer/12.0/admin/settings/sensitivedata/selectcriteria.webp)
 
 **Step 2 –** Select the checkbox to select the criteria. Use the **Search Criteria** text field to
 filter the list using keywords or expand each category to view and select individual Sensitive Data

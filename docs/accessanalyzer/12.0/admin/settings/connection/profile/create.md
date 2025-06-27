@@ -15,7 +15,7 @@ name in the Connection profile name textbox.
 time. If the profile name is changed after being applied to job groups or jobs, it requires the user
 to go back through all of those job groups or jobs and re-apply the Connection Profile.
 
-![Add User Credential](/img/product_docs/accessanalyzer/12.0/admin/settings/addusercredential.webp)
+![Add User Credential](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/profile/addusercredential.webp)
 
 **Step 3 –** Now it is time to add credentials to this profile. Click Add User credential and the
 User Credentials window opens.

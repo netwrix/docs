@@ -2,7 +2,7 @@
 
 The Users Query category collects information for users in different contexts.
 
-![Users and Groups Browser wizard Results page Users category](/img/product_docs/activitymonitor/activitymonitor/admin/monitoreddomains/admonitoringconfiguration/users.webp)
+![Users and Groups Browser wizard Results page Users category](/img/product_docs/accessanalyzer/12.0/admin/datacollector/usersgroups/category/users.webp)
 
 In the Users section, select from the following options:
 

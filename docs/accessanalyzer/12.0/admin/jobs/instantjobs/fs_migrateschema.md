@@ -7,7 +7,7 @@ into the Jobs tree.
 
 For installing the job, select **Local host** on the Hosts page of the Instant Job Wizard.
 
-![FS_MigrateSchema job in the Jobs tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![FS_MigrateSchema job in the Jobs tree](/img/product_docs/accessanalyzer/12.0/admin/jobs/instantjobs/jobstree.webp)
 
 Runtime Details:
 

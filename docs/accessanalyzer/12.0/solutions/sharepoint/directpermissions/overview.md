@@ -8,7 +8,7 @@ or
 components of the [0.Collection Job Group](/docs/accessanalyzer/12.0/solutions/sharepoint/collection/overview.md). The jobs which comprise the
 1.Direct Permissions Job Group process analysis tasks and generate reports.
 
-![1.Direct Permissions Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![1.Direct Permissions Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/sharepoint/directpermissions/jobstree.webp)
 
 The 1.Direct Permissions Job Group is comprised of:
 

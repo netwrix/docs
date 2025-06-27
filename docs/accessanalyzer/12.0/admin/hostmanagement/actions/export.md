@@ -7,7 +7,7 @@ selected host list to a HTML, XML , or CSV file. Follow the steps to export data
 configure the data grid to contain all the columns you want to export. See the
 [Host Inventory Data Grid](/docs/accessanalyzer/12.0/admin/hostmanagement/datagrid.md) topic for additional information.
 
-![Export Data option on the Activities pane](/img/product_docs/threatprevention/threatprevention/admin/navigation/export.webp)
+![Export Data option on the Activities pane](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/export.webp)
 
 **Step 2 –** When the data grid contains all columns desired for export, click **Export Data**. A
 Save As window opens.

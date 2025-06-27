@@ -3,7 +3,7 @@
 The 8.Domains job group reports on all Active Directory permissions applied to domain objects within
 the targeted domains.
 
-![8.Domains Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![8.Domains Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/jobstree.webp)
 
 The jobs in the 8.Domains job group are:
 

@@ -52,7 +52,7 @@ may be added manually. Doing so allocates storage within Access Analyzer during 
 creates corresponding columns in the output table. Use a script to reference and populate these
 properties.
 
-![Properties on the Query Properties window](/img/product_docs/activitymonitor/activitymonitor/install/agent/properties.webp)
+![Properties on the Query Properties window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/script/properties.webp)
 
 To add properties manually, click the plus (**+**) button at the bottom of the property window. To
 remove properties, click the minus (-) button.

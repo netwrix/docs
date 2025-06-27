@@ -3,7 +3,7 @@
 Use the Custom Attributes wizard page to define custom attributes that will be used in the Microsoft
 Entra ID scan.
 
-![Entra ID Inventory Data Collector Wizard Custom Attributes page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/customattributes.webp)
+![Entra ID Inventory Data Collector Wizard Custom Attributes page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/azureadinventory/customattributes.webp)
 
 Configuration options for Custom Attributes include:
 

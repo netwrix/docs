@@ -3,7 +3,7 @@
 Use the Input Source page to select the source tables or views, containing data, to join or
 aggregate into a resulting table or view.
 
-![View and Table Creation Analysis Module wizard Input Source page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/unix/input.webp)
+![View and Table Creation Analysis Module wizard Input Source page](/img/product_docs/accessanalyzer/12.0/admin/analysis/sqlviewcreation/input.webp)
 
 At the first drop-down, select a table. The drop-down lists on this page are determined by the
 selection made on the Input Scope page. To join or aggregate data from two tables, select a second

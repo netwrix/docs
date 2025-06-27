@@ -71,7 +71,7 @@ The sections and options of the job description page are:
 - Open Folder – Opens the job folder location with supporting files in the Windows Explorer
 - View Log – Opens the job’s log
 
-![Job Description page Overview section](/img/product_docs/accessanalyzer/12.0/admin/jobs/group/descriptionpageoverview.webp)
+![Job Description page Overview section](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/descriptionpageoverview.webp)
 
 The Overview section provides summary information about the job, and includes the following
 information:

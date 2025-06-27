@@ -28,7 +28,7 @@ The wizard contains the following pages:
 
 The Welcome page provides an overview of the analysis module.
 
-![View and Table Creation Analysis Module wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![View and Table Creation Analysis Module wizard Welcome page](/img/product_docs/accessanalyzer/12.0/admin/analysis/sqlviewcreation/welcome.webp)
 
 There are no configurable settings on the Welcome page. Click **Next** to begin configuring a custom
 table or view using two formatted data sources, or use the Steps navigation pane to open another

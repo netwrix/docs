@@ -3,7 +3,7 @@
 The 5.Domains job group provides details on domains, sites, and trusts, and highlights domain level
 configurations that may leave your environment at risk.
 
-![Domains Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![Domains Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/domains/jobstree.webp)
 
 The following components comprises the 5.Domains job group:
 

@@ -7,7 +7,7 @@ selected data collector. See the
 [Permissions by Data Collector (Matrix)](/docs/accessanalyzer/12.0/admin/datacollector/permissionmatrix.md) topic for a
 chart with recommended permissions per data collector.
 
-![Query Selection page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/queryselection.webp)
+![Query Selection page](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/configure/queryselection.webp)
 
 The Query Selection view lists all queries for the selected job. Though it is possible to have
 multiple queries in a single job, it is not usually recommended. The listed information includes:

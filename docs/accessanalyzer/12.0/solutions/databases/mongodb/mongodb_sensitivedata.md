@@ -3,7 +3,7 @@
 The Sensitive Data Job Group is designed to provide insight into where sensitive data exists and who
 has access to it across all the targeted MongoDB databases.
 
-![Sensitive Data Job Group](/img/product_docs/accessanalyzer/12.0/solutions/databases/postgresql/sensitivedata/sensitivedatajobgroup.webp)
+![Sensitive Data Job Group](/img/product_docs/accessanalyzer/12.0/solutions/databases/mongodb/sensitivedatajobgroup.webp)
 
 The job in the Sensitive Data Job Group is:
 

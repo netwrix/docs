@@ -19,7 +19,7 @@ The Box Solution requires a special Access Analyzer license. It can be installed
 Job Wizard. Once it has been installed into the Jobs tree, navigate to the solution: **Jobs** >
 **Box**.
 
-![Box Solution in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![Box Solution in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/box/jobstree.webp)
 
 The 0.Collection Job Group collects the data. The other job groups run analysis on the collected
 data and generate reports.
@@ -29,7 +29,7 @@ data and generate reports.
 The Box solution contains jobs to highlight access, analyze content, and expand group membership in
 an organization's Box environment.
 
-![Box Solution Overview page](/img/product_docs/accessanalyzer/12.0/admin/runninginstances/overviewpage.webp)
+![Box Solution Overview page](/img/product_docs/accessanalyzer/12.0/solutions/box/overviewpage.webp)
 
 The Box Solution has the following job groups and jobs:
 

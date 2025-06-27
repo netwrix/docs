@@ -5,7 +5,7 @@ Analyzer source table that uniquely identifies the target Active Directory objec
 perform the action. This process enables Access Analyzer to locate those objects within Active
 Directory. Added fields are displayed in the textbox.
 
-![Active Directory Action Module Wizard Target page](/img/product_docs/activitymonitor/activitymonitor/admin/search/query/target.webp)
+![Active Directory Action Module Wizard Target page](/img/product_docs/accessanalyzer/12.0/admin/action/activedirectory/target.webp)
 
 Use the following options to configure the action:
 

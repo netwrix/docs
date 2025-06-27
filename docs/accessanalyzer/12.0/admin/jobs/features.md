@@ -40,7 +40,7 @@ additional features.
 The Export Job to Zip Archive window opens from the **Export** option in the right-click menu from
 the selected job group or job node.
 
-![Export from Jobs Tree menu](/img/product_docs/threatprevention/threatprevention/admin/navigation/export.webp)
+![Export from Jobs Tree menu](/img/product_docs/accessanalyzer/12.0/admin/jobs/export.webp)
 
 Select **Export** from the right-click menu to open the Export Group to Zip Archive window.
 

@@ -3,7 +3,7 @@
 The Options page provides additional configuration options for the query. It is a wizard page for
 all of the categories. Available options vary based on the category selected.
 
-![Exchange Public Folder Data Collector Wizard Options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
+![Exchange Public Folder Data Collector Wizard Options page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchangepublicfolder/options.webp)
 
 The Options page contains the following options:
 

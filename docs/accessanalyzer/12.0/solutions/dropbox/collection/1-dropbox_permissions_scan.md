@@ -11,7 +11,7 @@ environment.
 The 1-Dropbox_Permissions Scan job has been preconfigured to run with the default settings with the
 category of Dropbox Access.
 
-![Queries for the 1-Dropbox_Permissions Scan Job](/img/product_docs/accessanalyzer/12.0/solutions/databases/db2/collection/permissionsscanquery.webp)
+![Queries for the 1-Dropbox_Permissions Scan Job](/img/product_docs/accessanalyzer/12.0/solutions/dropbox/collection/permissionsscanquery.webp)
 
 The query for the 1-Dropbox_Permissions Scan job is:
 

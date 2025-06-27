@@ -3,7 +3,7 @@
 The Options page provides the option to select to use the default domain or specific a domain to
 use.
 
-![Active Directory Action Module Wizard Options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
+![Active Directory Action Module Wizard Options page](/img/product_docs/accessanalyzer/12.0/admin/action/activedirectory/options.webp)
 
 Use the following options to configure the action:
 

@@ -17,15 +17,15 @@ Each component within the Jobs tree has an icon for quick reference. The icons a
 | -------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
 | ![jobgroup](/img/product_docs/accessanalyzer/12.0/admin/jobs/jobgroup.webp)                    | Job Group                                                 |
 | ![modifiedjobgroup](/img/product_docs/accessanalyzer/12.0/admin/jobs/modifiedjobgroup.webp)    | Modified Job Group                                        |
-| ![settings](/img/product_docs/activitymonitor/config/dellpowerscale/settings.webp)                          | Settings node for a Job Group/ Configure node for a job   |
+| ![settings](/img/product_docs/accessanalyzer/12.0/admin/jobs/settings.webp)                          | Settings node for a Job Group/ Configure node for a job   |
 | ![job](/img/product_docs/accessanalyzer/12.0/admin/jobs/job.webp)                              | Job                                                       |
 | ![modifiedjob](/img/product_docs/accessanalyzer/12.0/admin/jobs/modifiedjob.webp)              | Modified Job                                              |
 | ![lockedjob](/img/product_docs/accessanalyzer/12.0/admin/jobs/lockedjob.webp)                  | Locked Job (Only applicable to Role Based Access feature) |
-| ![status](/img/product_docs/dataclassification/ndc/admin/sources/status.webp)                               | Status node for a Job                                     |
+| ![status](/img/product_docs/accessanalyzer/12.0/admin/jobs/status.webp)                               | Status node for a Job                                     |
 | ![connectstatus](/img/product_docs/accessanalyzer/12.0/admin/jobs/connectstatus.webp)          | Job’s ConnectStatus Node                                  |
-| ![jobstatus](/img/product_docs/platgovnetsuite/clean_up/jobstatus.webp)                              | Job Status for a Job                                      |
+| ![jobstatus](/img/product_docs/accessanalyzer/12.0/admin/jobs/jobstatus.webp)                              | Job Status for a Job                                      |
 | ![taskstatus](/img/product_docs/accessanalyzer/12.0/admin/jobs/taskstatus.webp)                | Task Status for a Job                                     |
-| ![results](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/results.webp) | Results node for a Job                                    |
+| ![results](/img/product_docs/accessanalyzer/12.0/admin/jobs/results.webp) | Results node for a Job                                    |
 | ![messages](/img/product_docs/accessanalyzer/12.0/admin/jobs/messages.webp)                    | Job’s Messages table                                      |
 | ![jobsdata](/img/product_docs/accessanalyzer/12.0/admin/jobs/jobsdata.webp)                    | Job’s Data Table or View                                  |
 | ![jobsreport](/img/product_docs/accessanalyzer/12.0/admin/jobs/jobsreport.webp)                | Job’s Report                                              |

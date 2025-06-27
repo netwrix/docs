@@ -2,7 +2,7 @@
 
 The Logon Rights job group collects local policy information and reports on privileged users.
 
-![Logon Rights Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![Logon Rights Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/logonrights/jobstree.webp)
 
 The jobs and job groups in the Logon Rights job group are:
 

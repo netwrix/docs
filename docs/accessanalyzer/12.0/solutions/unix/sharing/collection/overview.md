@@ -3,7 +3,7 @@
 The jobs within this group collect NFS and Samba configuration information which will be further
 analyzed to identify and categorize risk within audited Unix and Linux environments.
 
-![0.Collection Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/databases/collection/collectionjobstree.webp)
+![0.Collection Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/unix/sharing/collection/collectionjobstree.webp)
 
 The jobs in the 0.Collection job group are:
 

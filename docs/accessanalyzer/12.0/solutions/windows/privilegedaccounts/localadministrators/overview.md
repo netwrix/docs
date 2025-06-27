@@ -1,6 +1,6 @@
 # Local Administrators Job Group
 
-![Local Administrators Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![Local Administrators Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/localadministrators/jobstree.webp)
 
 The jobs in the Local Administrators group are:
 

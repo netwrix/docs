@@ -3,7 +3,7 @@
 The E-mail page of the Report Configuration wizard gives you the option to break inheritance and
 select report specific settings for emailing the report.
 
-![Report Configuration wizard E-mail page](/img/product_docs/accessanalyzer/12.0/admin/settings/email.webp)
+![Report Configuration wizard E-mail page](/img/product_docs/accessanalyzer/12.0/admin/report/wizard/email.webp)
 
 The default setting for new and included reports is **Use default setting**, which keeps the
 inheritance from the global, job group, or job settings (see the

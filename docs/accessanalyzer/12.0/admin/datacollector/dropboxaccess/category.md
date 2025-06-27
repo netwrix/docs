@@ -3,7 +3,7 @@
 Use the Category Selection Page to identify the type of information to retrieve. The DropboxAccess
 Data Collector contains the following query categories, sub-divided by auditing focus:
 
-![Dropbox Access Auditor Data Collector Wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/category.webp)
+![Dropbox Access Auditor Data Collector Wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/dropboxaccess/category.webp)
 
 - The Dropbox Access Audits scans for Dropbox access information:
 

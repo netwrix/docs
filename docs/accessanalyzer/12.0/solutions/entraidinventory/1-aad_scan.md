@@ -41,7 +41,7 @@ window.
 **Step 3 –** Select the **Data Source** tab, and click **Configure** to open the Entra ID Inventory
 DC Wizard.
 
-![Entra ID Inventory DC Wizard Options page](/img/product_docs/accessanalyzer/12.0/solutions/activedirectoryinventory/scandcwizardoptions.webp)
+![Entra ID Inventory DC Wizard Options page](/img/product_docs/accessanalyzer/12.0/solutions/entraidinventory/scandcwizardoptions.webp)
 
 **Step 4 –** On the Options page, select the different Scan Options as needed:
 
@@ -54,7 +54,7 @@ DC Wizard.
   objects. A message will alert users that deselecting this option will disable this function.
 - Collect Directory Audit Events – Collect Microsoft Entra ID audit logs
 
-![Entra ID Inventory DC Wizard Custom Attributes page](/img/product_docs/accessanalyzer/12.0/solutions/activedirectoryinventory/scandcwizardcustomattributes.webp)
+![Entra ID Inventory DC Wizard Custom Attributes page](/img/product_docs/accessanalyzer/12.0/solutions/entraidinventory/scandcwizardcustomattributes.webp)
 
 **Step 5 –** On the Custom Attributes page, click **Add** or **Import** to add or import custom
 attributes.

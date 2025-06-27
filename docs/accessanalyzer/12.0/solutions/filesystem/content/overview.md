@@ -3,7 +3,7 @@
 The 4.Content job group is designed to report on content information from targeted file servers. Key
 information reported on in this group is: File Types, File Sizing, Stale Content, and File Tags.
 
-![4.Content Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![4.Content Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/content/jobstree.webp)
 
 The 4.Content job group is comprised of:
 

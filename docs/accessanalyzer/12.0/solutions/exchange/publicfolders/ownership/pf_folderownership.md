@@ -6,7 +6,7 @@ algorithm built into the public folder data collector that is determined based o
 content posted, and size of content posted. Modifications can be made to the data collector to
 change the way the Most Probable Owner is determined.
 
-![Collection > PF_FolderOwnership Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/databases/collection/collectionjobstree.webp)
+![Collection > PF_FolderOwnership Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/publicfolders/ownership/collectionjobstree.webp)
 
 The PF_FolderOwnership job is located in the Collection job group.
 

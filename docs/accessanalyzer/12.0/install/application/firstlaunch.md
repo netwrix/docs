@@ -8,7 +8,7 @@ Access Analyzer, the initial settings for the Access Analyzer Console must be co
 **Step 1 –** Launch the Access Analyzer application. The installation wizard places the Access
 Analyzer icon on the desktop.
 
-![Configuration Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![Configuration Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/install/application/welcome_2.webp)
 
 **Step 2 –** On the Welcome page of the Access Analyzer Configuration Wizard, click **Next** to
 continue.
@@ -101,7 +101,7 @@ continue.
 
 - If cleared, no usage statistics are collected or sent to Netwrix
 
-![Progress page when upgrade process has completed](/img/product_docs/threatprevention/threatprevention/install/reportingmodule/completed.webp)
+![Progress page when upgrade process has completed](/img/product_docs/accessanalyzer/12.0/install/application/completed_1.webp)
 
 **Step 8 –** After the Access Analyzer Configuration Wizard finishes configuring your installation,
 click **Finish** to open the Access Analyzer Console.

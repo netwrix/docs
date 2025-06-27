@@ -3,7 +3,7 @@
 The 2.Groups Job Group reports on all Active Directory permissions applied to group objects within
 the targeted domains.
 
-![2.Groups Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
+![2.Groups Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/groups/jobstree.webp)
 
 The jobs in the 2.Groups Job Group are:
 

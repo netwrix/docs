@@ -3,7 +3,7 @@
 The PF_ContentScans job is comprised of data collection that focuses on public folder content aging
 within each public folder.
 
-![Collection > PF_ContentScans Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/databases/collection/collectionjobstree.webp)
+![Collection > PF_ContentScans Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/publicfolders/content/collectionjobstree.webp)
 
 The PF_ContentScans job is located in the 0.Collection job group.
 

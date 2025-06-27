@@ -16,7 +16,7 @@ View the analysis tasks by navigating to the **Jobs** > **Dropbox** > **3.Group 
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Dropbox_GroupMembership Job](/img/product_docs/accessanalyzer/12.0/solutions/box/groupmembershipanalysis.webp)
+![Analysis Tasks for the Dropbox_GroupMembership Job](/img/product_docs/accessanalyzer/12.0/solutions/dropbox/groupmembershipanalysis.webp)
 
 - Get group membership details – Creates an interim processing table in the database for use by
   downstream analysis and report generation

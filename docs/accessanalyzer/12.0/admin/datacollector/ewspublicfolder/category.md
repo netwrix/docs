@@ -2,7 +2,7 @@
 
 The Category page contains the following Exchange Web Service categories to search:
 
-![EWS Public Folder Data Collector Wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/category.webp)
+![EWS Public Folder Data Collector Wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewspublicfolder/category.webp)
 
 Select which type of EWS public folder information to retrieve from the following:
 

@@ -3,7 +3,7 @@
 This group provides insight into details about the Redshift environment and potential
 vulnerabilities related to instance configuration settings.
 
-![configurationjobgroup](/img/product_docs/accessanalyzer/12.0/solutions/databases/postgresql/configurationjobgroup.webp)
+![configurationjobgroup](/img/product_docs/accessanalyzer/12.0/solutions/databases/redshift/configurationjobgroup.webp)
 
 The job(s) in the Configuration Job Group are:
 

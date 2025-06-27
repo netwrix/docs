@@ -3,7 +3,7 @@
 The SDD Criteria page is where criteria to be used for discovering sensitive data are configured. It
 is a wizard page for the Mailbox sensitive data discovery category.
 
-![Exchange Mailbox Data Collector Wizard SDD Criteria page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/fsaa/sddcriteria.webp)
+![Exchange Mailbox Data Collector Wizard SDD Criteria page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchangemailbox/sddcriteria.webp)
 
 Select the checkbox for the criteria to be used to search for sensitive data. Criteria can also be
 selected using the **Select All** and **Select None** buttons.

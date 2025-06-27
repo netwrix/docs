@@ -12,7 +12,7 @@ the query to fail.
 **Step 1 –** Open the Host Discovery Wizard. On the Source page, select the **Import from a CSV
 file** option on the Source page. Click **Next**.
 
-![Host Discovery Wizard Query page for CSV import](/img/product_docs/accessanalyzer/12.0/admin/datacollector/nis/query.webp)
+![Host Discovery Wizard Query page for CSV import](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/query_3.webp)
 
 **Step 2 –** On the Query page, name the query and select the credentials used to access the source.
 
@@ -51,7 +51,7 @@ the file where the host names are located:
 
 Click **Next** to continue.
 
-![Host Discovery Wizard Options page for CSV import](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
+![Host Discovery Wizard Options page for CSV import](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/options_3.webp)
 
 **Step 4 –** On the Options page, configure the query options as required.
 
@@ -96,7 +96,7 @@ the discovery query.
 
 Click **Next** to continue.
 
-![Host Discovery Wizard Summary page for CSV import](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/summary.webp)
+![Host Discovery Wizard Summary page for CSV import](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/summary_3.webp)
 
 **Step 6 –** The Summary page displays all the selected query configuration settings. To make
 changes, click **Back** to navigate to the relevant wizard page. Click Finish to complete the

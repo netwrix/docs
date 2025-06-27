@@ -3,7 +3,7 @@
 All data grids within the Access Analyzer Console have functions and features that allow Access
 Analyzer users to group by, filter, and sort via the filtration dialog through the data.
 
-![Search Methods - Data Grid](/img/product_docs/threatprevention/threatprevention/admin/navigation/datagridfunctionality.webp)
+![Search Methods - Data Grid](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality.webp)
 
 The different grouping, filtering, and search methods in the Data Grid are:
 

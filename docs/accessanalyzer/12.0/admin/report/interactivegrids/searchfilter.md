@@ -9,7 +9,7 @@ Search icon is disabled in the report.
 The following example shows an interactive grid in which searching has been enabled. See the
 [Grid](/docs/accessanalyzer/12.0/admin/report/wizard/widgets.md#grid) topic for additional information.
 
-![Search](/img/product_docs/threatprevention/threatprevention/reportingmodule/configuration/integrations/search.webp)
+![Search](/img/product_docs/accessanalyzer/12.0/admin/report/interactivegrids/search.webp)
 
 Enter search criteria in the boxes under the columns to filter the data. Click the search icon again
 to clear the filters.

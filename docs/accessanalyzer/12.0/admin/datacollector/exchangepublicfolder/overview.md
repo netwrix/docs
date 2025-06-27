@@ -46,7 +46,7 @@ Collector Wizard, which contains the following wizard pages:
 The query requires special permissions to connect to target Exchange servers. Configure these
 permissions on the Welcome page.
 
-![Exchange Public Folder Data Collector Wizard Welcome page](/img/product_docs/activitymonitor/activitymonitor/install/welcome.webp)
+![Exchange Public Folder Data Collector Wizard Welcome page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchangepublicfolder/welcome.webp)
 
 In the Connection Setting section, choose to either maintain the global inheritance, or configure
 query specific settings.

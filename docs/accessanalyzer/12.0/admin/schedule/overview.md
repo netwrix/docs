@@ -29,7 +29,7 @@ Jobs can be scheduled at the job group or job level.
 Select the desired job group or job. Right-click on the node and select **Schedule** to open the
 Schedule wizard.
 
-![Schedule Job wizard](/img/product_docs/threatprevention/threatprevention/admin/configuration/databasemaintenance/schedule.webp)
+![Schedule Job wizard](/img/product_docs/accessanalyzer/12.0/admin/schedule/schedule.webp)
 
 The Schedule wizard has five pages with options for setting up the schedule task:
 

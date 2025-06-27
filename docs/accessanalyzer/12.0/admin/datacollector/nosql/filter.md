@@ -6,7 +6,7 @@ wizard page for the Sensitive Data Collection category.
 It is necessary to populate the available Mongo databases/instances before the query can be scoped.
 See the [Manage Connections Window](#manage-connections-window) topic for additional information.
 
-![NoSQL Data Collector Wizard Filter page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filter.webp)
+![NoSQL Data Collector Wizard Filter page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/nosql/filter.webp)
 
 The Filter page has the following buttons:
 
