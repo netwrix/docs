@@ -25,6 +25,12 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   onBrokenAnchors: 'warn',
 
+  // Set Mermaid
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
   // Performance optimizations with Docusaurus Faster
   future: {
     experimental_faster: {
@@ -103,6 +109,17 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // MermaidJS Config
+      mermaid: {
+        theme: {
+          light: 'neutral',
+          dark: 'dark',
+        },
+        options: {
+          look: 'handDrawn',
+          handDrawnSeed: 1,
+        },
+      },
       // Replace with your project's social card
       image: 'img/Logo_RGB.svg',
       docs: {
@@ -205,6 +222,7 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+        additionalLanguages: ['powershell', 'bash'],
       },
     }),
   // Add preconnect for better search performance
