@@ -66,7 +66,7 @@ sensitive data.
 The Access Analyzer PosgreSQL Solution Set is a set of pre-configured audit jobs and reports that
 provides visibility into PostgreSQL Sensitive Data.
 
-![PostgreSQL Job Group](/img/product_docs/accessanalyzer/solutions/databases/postgresql/postgresqljobgroup.webp)
+![PostgreSQL Job Group](/img/product_docs/accessanalyzer/12.0/solutions/databases/postgresql/postgresqljobgroup.webp)
 
 The job groups in the PostgreSQL Solution are:
 

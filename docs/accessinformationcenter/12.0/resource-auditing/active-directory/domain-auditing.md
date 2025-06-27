@@ -76,7 +76,7 @@ The following reports are displayed at the Domain Object level:
 The Access report at the domain object level provides information on the level of access trustees
 have at the domain object level. This report includes a Permission Source table.
 
-![Access report at the domain object level](/img/product_docs/accessanalyzer/admin/settings/access/access.webp)
+![Access report at the domain object level](/img/product_docs/accessanalyzer/12.0/admin/settings/access/access.webp)
 
 This report is comprised of the following columns:
 

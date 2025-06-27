@@ -3,7 +3,7 @@
 The Search Criteria page provides configuration options to specify the text to search for across the
 entire row of each file.
 
-![Text Search Data Collector Wizard Search Criteria page](/img/product_docs/accessanalyzer/admin/datacollector/textsearch/searchcriteria.webp)
+![Text Search Data Collector Wizard Search Criteria page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/textsearch/searchcriteria.webp)
 
 The configurable functions are:
 

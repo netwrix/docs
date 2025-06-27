@@ -52,7 +52,7 @@ Interface Icons
 | ![users](/img/product_docs/activitymonitor/activitymonitor/admin/monitoreddomains/admonitoringconfiguration/users.webp) | Users & Groups      |
 | ![resources](/img/product_docs/platgovnetsuiteflashlight/getting_started/resources.webp)                                | Resources           |
 | ![credentials](/img/product_docs/activitymonitor/activitymonitor/install/agent/credentials.webp)                        | Credentials         |
-| ![activities](/img/product_docs/accessanalyzer/admin/hostdiscovery/activities.webp)                                     | Activities          |
+| ![activities](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/activities.webp)                                     | Activities          |
 | ![configuration](/img/product_docs/privilegesecure/privilegesecure/accessmanagement/enduser/configuration.webp)         | Configuration       |
 | ![servicenodes](/img/product_docs/privilegesecure/privilegesecure/accessmanagement/enduser/servicenodes.webp)           | Service Nodes       |
 | ![auditreporting](/img/product_docs/privilegesecure/privilegesecure/accessmanagement/enduser/auditreporting.webp)       | Audit and Reporting |
@@ -157,7 +157,7 @@ Interface Icons
 | ![users](/img/product_docs/activitymonitor/activitymonitor/admin/monitoreddomains/admonitoringconfiguration/users.webp) | Users & Groups      |
 | ![resources](/img/product_docs/platgovnetsuiteflashlight/getting_started/resources.webp)                                | Resources           |
 | ![credentials](/img/product_docs/activitymonitor/activitymonitor/install/agent/credentials.webp)                        | Credentials         |
-| ![activities](/img/product_docs/accessanalyzer/admin/hostdiscovery/activities.webp)                                     | Activities          |
+| ![activities](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/activities.webp)                                     | Activities          |
 | ![configuration](/img/product_docs/privilegesecure/privilegesecure/accessmanagement/enduser/configuration.webp)         | Configuration       |
 | ![servicenodes](/img/product_docs/privilegesecure/privilegesecure/accessmanagement/enduser/servicenodes.webp)           | Service Nodes       |
 | ![auditreporting](/img/product_docs/privilegesecure/privilegesecure/accessmanagement/enduser/auditreporting.webp)       | Audit and Reporting |
@@ -253,7 +253,7 @@ Interface Icons
 | ![users](/img/product_docs/activitymonitor/activitymonitor/admin/monitoreddomains/admonitoringconfiguration/users.webp) | Users & Groups      |
 | ![resources](/img/product_docs/platgovnetsuiteflashlight/getting_started/resources.webp)                                | Resources           |
 | ![credentials](/img/product_docs/activitymonitor/activitymonitor/install/agent/credentials.webp)                        | Credentials         |
-| ![activities](/img/product_docs/accessanalyzer/admin/hostdiscovery/activities.webp)                                     | Activities          |
+| ![activities](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/activities.webp)                                     | Activities          |
 | ![configuration](/img/product_docs/privilegesecure/privilegesecure/accessmanagement/enduser/configuration.webp)         | Configuration       |
 | ![servicenodes](/img/product_docs/privilegesecure/privilegesecure/accessmanagement/enduser/servicenodes.webp)           | Service Nodes       |
 | ![auditreporting](/img/product_docs/privilegesecure/privilegesecure/accessmanagement/enduser/auditreporting.webp)       | Audit and Reporting |

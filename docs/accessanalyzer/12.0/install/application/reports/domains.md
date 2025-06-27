@@ -13,7 +13,7 @@ Analyzer resides. Follow the steps to allow access to the Web Console from other
 **Step 1 –** Open the **WebServer.exe.config** file with a text editor, for example Notepad. It is
 located within the Web folder of the Access Analyzer installation directory.
 
-![WebServer.exe.config file in Notepad](/img/product_docs/accessanalyzer/install/application/reports/webserverexeconfigmultipledomains.webp)
+![WebServer.exe.config file in Notepad](/img/product_docs/accessanalyzer/12.0/install/application/reports/webserverexeconfigmultipledomains.webp)
 
 **Step 2 –** Add the desired domains to the value for the `AuthenticationDomains` parameter:
 

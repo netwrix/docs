@@ -26,7 +26,7 @@ Exceptions** > **Configure** node and select **Analysis**.
 **CAUTION:** Most of these analysis tasks are preconfigured and should not be modified and or
 deselected. While it is possible to deselect particular tasks as specified, it is not recommended.
 
-![Analysis Tasks for the 3-FSAA Exceptions Job](/img/product_docs/accessanalyzer/solutions/filesystem/collection/fsaaexceptionsanalysis.webp)
+![Analysis Tasks for the 3-FSAA Exceptions Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/collection/fsaaexceptionsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

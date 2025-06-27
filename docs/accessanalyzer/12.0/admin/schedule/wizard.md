@@ -30,7 +30,7 @@ The options on the Schedule page are:
 - Edit – Edits the selected Trigger in the Schedule view
 - Delete – Deletes the selected trigger
 
-![Trigger window](/img/product_docs/accessanalyzer/admin/schedule/triggerwindow.webp)
+![Trigger window](/img/product_docs/accessanalyzer/12.0/admin/schedule/triggerwindow.webp)
 
 The options in the Trigger window are:
 
@@ -57,7 +57,7 @@ Access Analyzer task scheduling. See the Microsoft
 [Task Scheduler Overview](https://technet.microsoft.com/en-us/library/cc721871.aspx) article for
 additional information.
 
-![Trigger window Advanced settings](/img/product_docs/accessanalyzer/admin/schedule/triggerwindowadvancedsettings.webp)
+![Trigger window Advanced settings](/img/product_docs/accessanalyzer/12.0/admin/schedule/triggerwindowadvancedsettings.webp)
 
 The options in the Advanced settings section are:
 
@@ -70,7 +70,7 @@ The options in the Advanced settings section are:
 The Host List page identifies the host list the task being scheduled queries. Customizations to the
 configuration of this tab is optional.
 
-![Host List wizard page](/img/product_docs/accessanalyzer/admin/schedule/hostlist.webp)
+![Host List wizard page](/img/product_docs/accessanalyzer/12.0/admin/schedule/hostlist.webp)
 
 Choose the desired setting from the following options:
 
@@ -107,7 +107,7 @@ Select the Schedule Service account to run this task with on the Run as wizard p
 edit Schedule Service accounts, go to the **Settings** > **Schedule** node. See the
 [Schedule](/docs/accessanalyzer/12.0/admin/settings/schedule.md) topic for additional information.
 
-![Run as wizard page](/img/product_docs/accessanalyzer/admin/schedule/runas.webp)
+![Run as wizard page](/img/product_docs/accessanalyzer/12.0/admin/schedule/runas.webp)
 
 The options on the Run as wizard page are:
 
@@ -131,7 +131,7 @@ The options on the Run as wizard page are:
 
 Configure additional options for the task on the Options wizard page.
 
-![Options wizard page](/img/product_docs/accessanalyzer/install/application/options.webp)
+![Options wizard page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
 
 The configurable options are:
 

@@ -32,11 +32,11 @@ built-in environment variable `%SAINSTALLDIR%`):
 user. This can be as simple as copying the contents of the tasks folder from the following two
 locations:
 
-![C:\Windows\Tasks](/img/product_docs/accessanalyzer/admin/maintenance/maintenance_3.webp)
+![C:\Windows\Tasks](/img/product_docs/accessanalyzer/12.0/admin/maintenance/maintenance_3.webp)
 
 - C:\Windows\Tasks
 
-![C:\Windows\System32\Tasks](/img/product_docs/accessanalyzer/admin/maintenance/maintenance_4.webp)
+![C:\Windows\System32\Tasks](/img/product_docs/accessanalyzer/12.0/admin/maintenance/maintenance_4.webp)
 
 - C:\Windows\System32\Tasks
 
@@ -85,7 +85,7 @@ Where SA_Node = @OHost;
 
 **Step 7 –** Enable Role Based Access to write the necessary registry keys:
 
-![Role Based Access](/img/product_docs/accessanalyzer/admin/maintenance/maintenance_5.webp)
+![Role Based Access](/img/product_docs/accessanalyzer/12.0/admin/maintenance/maintenance_5.webp)
 
 - Navigate to the **Settings** > **Access** node in the Access Analyzer Console and select
   **Access**

@@ -134,19 +134,19 @@ to achieve the minimum SQL security levels without breaking core Access Analyzer
 Use SQL Server Management Studio to create the Access Analyzer database and configure the settings
 for the server roles and user mappings.
 
-![SQL Server Management Studio create New Database](/img/product_docs/accessanalyzer/install/application/createnewdatabase.webp)
+![SQL Server Management Studio create New Database](/img/product_docs/accessanalyzer/12.0/install/application/createnewdatabase.webp)
 
 **Step 1 –** Create a new database for use with Access Analyzer. Right-click on the **Databases**
 node and choose **New Database**.
 
-![SQL Server Management Studio New Database window](/img/product_docs/accessanalyzer/install/application/newdatabase.webp)
+![SQL Server Management Studio New Database window](/img/product_docs/accessanalyzer/12.0/install/application/newdatabase.webp)
 
 **Step 2 –** Set the **Database name**. Set any other desired data files configuration per company
 standards. Click **OK** on the New Database window.
 
 **_RECOMMENDED:_** Enter Access Analyzer as the Database name.
 
-![SQL Server Management Studio create New Login](/img/product_docs/accessanalyzer/install/application/newlogin.webp)
+![SQL Server Management Studio create New Login](/img/product_docs/accessanalyzer/12.0/install/application/newlogin.webp)
 
 **Step 3 –** Create a new SQL Login account by right-clicking on the **Security** > **Logins**
 folder and selecting **New Login**.
@@ -154,12 +154,12 @@ folder and selecting **New Login**.
 **Step 4 –** Choose the authentication mode as the login type for use with the newly created Access
 Analyzer database. The available options are Windows authentication and SQL Server authentication.
 
-![SQL Server Management Studio new login with Windows authentication](/img/product_docs/accessanalyzer/install/application/loginwindows.webp)
+![SQL Server Management Studio new login with Windows authentication](/img/product_docs/accessanalyzer/12.0/install/application/loginwindows.webp)
 
 - If **Windows authentication** is desired, then click **Search** and select the desired Windows
   account, which has been set up for use with Access Analyzer.
 
-![SQL Server Management Studio new login with SQL Server authentication](/img/product_docs/accessanalyzer/install/application/loginsql.webp)
+![SQL Server Management Studio new login with SQL Server authentication](/img/product_docs/accessanalyzer/12.0/install/application/loginsql.webp)
 
 - **_RECOMMENDED:_** If **SQL Server authentication** is desired, use a login name called Access
   Analyzer.
@@ -167,7 +167,7 @@ Analyzer database. The available options are Windows authentication and SQL Serv
 **NOTE:** Set the **Default Database** as Access Analyzer (or the desired Access Analyzer database)
 and choose English as the **Default Language**.
 
-![SQL Server Management Studio New Login User Mapping](/img/product_docs/accessanalyzer/install/application/loginusermapping.webp)
+![SQL Server Management Studio New Login User Mapping](/img/product_docs/accessanalyzer/12.0/install/application/loginusermapping.webp)
 
 **Step 5 –** Navigate to the **User Mapping** menu, select the Access Analyzer (or the desired
 Access Analyzer database) database, and set the **Default Schema** to **DBO**.
@@ -181,7 +181,7 @@ secured login account.
 **NOTE:** This step requires the completion of the Access Analyzer installation. See the
 [Access Analyzer Core Installation](/docs/accessanalyzer/12.0/install/application/wizard.md) topic for instructions.
 
-![Storage Profile configuration page](/img/product_docs/accessanalyzer/install/application/storageprofile.webp)
+![Storage Profile configuration page](/img/product_docs/accessanalyzer/12.0/install/application/storageprofile.webp)
 
 **Step 8 –** Launch Access Analyzer and navigate to **Settings** > **Storage**.
 
@@ -192,13 +192,13 @@ secured login account.
   **Windows authentication** or **SQL Server authentication**. If using SQL Server authentication,
   enter the **User name** and **Password**.
 
-![Connection report window](/img/product_docs/accessanalyzer/install/application/connectionreport.webp)
+![Connection report window](/img/product_docs/accessanalyzer/12.0/install/application/connectionreport.webp)
 
 - Click **Apply** and a Connection report window will open. Verify that the connection and test
   table drop were performed successfully.
 - Click **Close** on the Connection report window and then **Save** the new Storage Profile.
 
-![Change storage profile dialog](/img/product_docs/accessanalyzer/install/application/changestorageprofile.webp)
+![Change storage profile dialog](/img/product_docs/accessanalyzer/12.0/install/application/changestorageprofile.webp)
 
 **NOTE:** If previously connected to another database which already had the Access Analyzer DB
 schema applied, then a prompt should appear to merge the host management data. Choose the

@@ -4,7 +4,7 @@ The Criteria (Select DLP criteria for this scan) page is where criteria to be us
 sensitive data during a scan is configured. It is a wizard page for the category of Collect SDD
 Data.
 
-![AWS Query SDD Criteria](/img/product_docs/accessanalyzer/admin/datacollector/ewsmailbox/criteria.webp)
+![AWS Query SDD Criteria](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/criteria.webp)
 
 Default criteria is set at the **Global Settings** > **Sensitive Data** node. Choose between the
 **Use Global Criteria** Selection and the **Use the Following Selected Criteria** radio buttons.

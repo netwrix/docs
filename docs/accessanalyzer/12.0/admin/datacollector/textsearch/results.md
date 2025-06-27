@@ -2,7 +2,7 @@
 
 The Results page is where properties that will be gathered are selected.
 
-![Text Search Data Collector Wizard Results page](/img/product_docs/accessanalyzer/admin/datacollector/adinventory/results.webp)
+![Text Search Data Collector Wizard Results page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/results.webp)
 
 Properties can be selected individually or the **Check all**, **Uncheck All**, and **Reset to
 Defaults** buttons can be used. All selected properties are gathered. Available properties vary

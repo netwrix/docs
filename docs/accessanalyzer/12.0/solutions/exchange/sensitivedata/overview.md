@@ -3,7 +3,7 @@
 The 7. Sensitive Data job group is comprised of jobs which locate sensitive data found in mailboxes
 and public folders in the Exchange environment.
 
-![7.Sensitive Data Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![7.Sensitive Data Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
 
 The following comprise the 7. Sensitive Data job group:
 

@@ -10,7 +10,7 @@ Statistics** > **FS_MostActiveUsers** > **Configure** node and select **Analysis
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FS_MostActiveUsers Job](/img/product_docs/accessanalyzer/solutions/filesystem/activity/usagestatistics/mostactiveusersanalysis.webp)
+![Analysis Tasks for the FS_MostActiveUsers Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/activity/usagestatistics/mostactiveusersanalysis.webp)
 
 The following analysis task is selected by default:
 

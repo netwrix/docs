@@ -3,7 +3,7 @@
 The Exchange node is for configuring the settings needed to query Microsoft® Exchange Servers.
 These settings are exclusive to the Access Analyzer for Exchange Solution.
 
-![Exchange - Set up the connection](/img/product_docs/accessanalyzer/admin/settings/exchange_1.webp)
+![Exchange - Set up the connection](/img/product_docs/accessanalyzer/12.0/admin/settings/exchange_1.webp)
 
 The Exchange node is grayed-out by default. In order for these settings to be enabled, it is
 necessary to install both Access Analyzer MAPI CDO and Microsoft Exchange MAPI CDO on the Access
@@ -17,7 +17,7 @@ Exchange2K, and ExchangePS Data Collectors. The Client Access Server field, or C
 by the ExchangePS Data Collector in order to make Remote PowerShell connections for Exchange 2010 or
 newer. The data collectors apply these settings unless modified inside the job query.
 
-![Set up the connection](/img/product_docs/accessanalyzer/admin/settings/exchange_3.webp)
+![Set up the connection](/img/product_docs/accessanalyzer/12.0/admin/settings/exchange_3.webp)
 
 The three options in the Exchange Connection Setting section at the top of the window are dependent
 on which version of Exchange is audited.
@@ -53,13 +53,13 @@ In the Test Exchange Connection Settings section:
 - Enter a Mailbox Server with mailboxes to be audited in the Exchange Server textbox.
 - Click the Test Exchange settings link.
 
-    ![Test Exchange Connection Setting](/img/product_docs/accessanalyzer/admin/settings/exchange_4.webp)
+    ![Test Exchange Connection Setting](/img/product_docs/accessanalyzer/12.0/admin/settings/exchange_4.webp)
 
 If the Exchange Connection Settings are correct, an output field opens. At the bottom of the output
 field, a mailbox count is stated and a message appears which says, “You have successfully connected
 to this Exchange Server.” Click OK.
 
-![exchange_6](/img/product_docs/accessanalyzer/admin/settings/exchange_6.webp)
+![exchange_6](/img/product_docs/accessanalyzer/12.0/admin/settings/exchange_6.webp)
 
 The Cancel and Save buttons are in the lower-right corner of the Exchange view. These buttons become
 enabled when modifications are made to the Exchange global setting. Whenever changes are made at the

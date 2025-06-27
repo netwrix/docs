@@ -4,7 +4,7 @@ Use the Select Change Type page to choose the types of changes for which to trig
 The selections on this page are optional. This page is only active if Change Detection Table is
 selected on the Table Type page.
 
-![Notification Data Analysis Module wizard Select Change Type page](/img/product_docs/accessanalyzer/admin/analysis/notification/changetype.webp)
+![Notification Data Analysis Module wizard Select Change Type page](/img/product_docs/accessanalyzer/12.0/admin/analysis/notification/changetype.webp)
 
 The following options are available:
 

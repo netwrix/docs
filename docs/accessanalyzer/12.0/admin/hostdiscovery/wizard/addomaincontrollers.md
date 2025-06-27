@@ -4,12 +4,12 @@ Follow the steps to create a Host Discovery query using the **Query an Active Di
 (Discover Domain Controllers)** source option. This option scans the default domain controller or a
 specified server but is scoped to return only machines that are domain controllers.
 
-![Host Discovey Wizard Source page for AD Domain Controllers query](/img/product_docs/accessanalyzer/admin/hostdiscovery/wizard/source.webp)
+![Host Discovey Wizard Source page for AD Domain Controllers query](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/source.webp)
 
 **Step 1 –** Open the Host Discovery Wizard. On the Source page, select the **Query an Active
 Directory server (Discover Domain Controllers)** option. Click **Next**.
 
-![Host Discovey Wizard Query page for AD Domain Controllers query](/img/product_docs/accessanalyzer/admin/datacollector/nis/query.webp)
+![Host Discovey Wizard Query page for AD Domain Controllers query](/img/product_docs/accessanalyzer/12.0/admin/datacollector/nis/query.webp)
 
 **Step 2 –** On the Query page, name the query and select the credentials used to access the source.
 
@@ -31,7 +31,7 @@ Directory server (Discover Domain Controllers)** option. Click **Next**.
 
 Click **Next** to continue.
 
-![Host Discovey Wizard Domains & Sites page](/img/product_docs/accessanalyzer/admin/hostdiscovery/wizard/domainssites.webp)
+![Host Discovey Wizard Domains & Sites page](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/domainssites.webp)
 
 **Step 3 –** The Domains & Sites page is scoped to return all domain controllers in the targeted
 domains and sites. By default, all domains and sites are selected. If desired, scope to target
@@ -61,7 +61,7 @@ specific domains and sites.
 
 Click **Next** to continue.
 
-![Host Discovey Wizard Options page for AD Domain Controllers query](/img/product_docs/accessanalyzer/install/application/options.webp)
+![Host Discovey Wizard Options page for AD Domain Controllers query](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
 
 **Step 4 –** On the Options page, configure the query options as required.
 
@@ -82,7 +82,7 @@ Click **Next** to continue.
 
 Click **Next** to continue.
 
-![Host Discovey Wizard Inventory page for AD Domain Controllers query](/img/product_docs/accessanalyzer/admin/hostdiscovery/wizard/inventory.webp)
+![Host Discovey Wizard Inventory page for AD Domain Controllers query](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/inventory.webp)
 
 **Step 5 –** On the Inventory page, the host inventory process can be automatically included with
 the discovery query.
@@ -106,13 +106,13 @@ the discovery query.
 
 Click **Next** to continue.
 
-![Host Discovey Wizard Summary page for AD Domain Controllers query](/img/product_docs/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![Host Discovey Wizard Summary page for AD Domain Controllers query](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/summary.webp)
 
 **Step 6 –** The Summary page displays all the selected query configuration settings. To make
 changes, click **Back** to navigate to the relevant wizard page. Click Finish to complete the
 configuration process.
 
-![Confirm dialog box](/img/product_docs/accessanalyzer/admin/hostdiscovery/wizard/wizardconfirmdialog.webp)
+![Confirm dialog box](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/wizardconfirmdialog.webp)
 
 **Step 7 –** A Confirm dialog box opens. Click **Yes** to run the query now or **No** to run the
 query at another time.

@@ -19,7 +19,7 @@ select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Task for the AD_ServiceAccounts Job](/img/product_docs/accessanalyzer/solutions/activedirectory/users/serviceaccountsanalysis.webp)
+![Analysis Task for the AD_ServiceAccounts Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/users/serviceaccountsanalysis.webp)
 
 The default analysis tasks are:
 

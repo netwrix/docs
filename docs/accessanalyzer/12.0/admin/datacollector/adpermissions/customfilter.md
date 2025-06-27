@@ -7,7 +7,7 @@ the categories of:
 - Scan Active Directory Permissions
 - Scan Active Directory Audits
 
-![ADPermissions Data Collector wizard Custom Filter page](/img/product_docs/accessanalyzer/admin/datacollector/customfilter.webp)
+![ADPermissions Data Collector wizard Custom Filter page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/customfilter.webp)
 
 The configurable options are:
 

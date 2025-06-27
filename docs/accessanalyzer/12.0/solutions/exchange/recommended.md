@@ -41,7 +41,7 @@ Wizard opens.
 **CAUTION:** Unless otherwise indicated within the job group section, do not make changes to other
 wizard pages as they have been pre-configured for the purpose of the job.
 
-![CAS name on ExchangePS Data Collector Wizard Category page](/img/product_docs/accessanalyzer/solutions/exchange/exchangepscas.webp)
+![CAS name on ExchangePS Data Collector Wizard Category page](/img/product_docs/accessanalyzer/12.0/solutions/exchange/exchangepscas.webp)
 
 **Step 4 –** On the Category page, select the **Use specific server** option and enter the CAS name
 in the text box. See the

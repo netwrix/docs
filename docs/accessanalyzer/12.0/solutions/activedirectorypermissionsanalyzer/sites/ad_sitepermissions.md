@@ -11,7 +11,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **9.Sites** > **AD_S
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_SitePermissions Job](/img/product_docs/accessanalyzer/solutions/activedirectorypermissionsanalyzer/sites/sitepermissionsanalysis.webp)
+![Analysis Tasks for the AD_SitePermissions Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/sites/sitepermissionsanalysis.webp)
 
 The default analysis tasks are:
 

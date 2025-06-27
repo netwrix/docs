@@ -2,7 +2,7 @@
 
 Use the Select Hosts page to scope hosts and to select specific hosts to target.
 
-![Notification Data Analysis Module wizard Select Hosts page](/img/product_docs/accessanalyzer/admin/analysis/notification/hosts.webp)
+![Notification Data Analysis Module wizard Select Hosts page](/img/product_docs/accessanalyzer/12.0/admin/analysis/notification/hosts.webp)
 
 The following options are available:
 

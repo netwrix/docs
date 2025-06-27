@@ -35,7 +35,7 @@ dictionaries and other exceptions. Exceptions include:
 
 The AD_WeakPasswords Job uses the PasswordSecurity Data Collector.
 
-![Query for the AD_WeakPasswords Job](/img/product_docs/accessanalyzer/solutions/activedirectory/users/weakpasswordsquery.webp)
+![Query for the AD_WeakPasswords Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/users/weakpasswordsquery.webp)
 
 The query for this job are:
 
@@ -58,14 +58,14 @@ Properties**. The Query Properties window opens.
 **Step 3 –** Select the Data Source tab, and click **Configure**. The Password Security Data
 Collector Wizard opens.
 
-![Password Security Data Collection Wizard Scan options page](/img/product_docs/accessanalyzer/solutions/activedirectory/users/optionsweakpassword.webp)
+![Password Security Data Collection Wizard Scan options page](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/users/optionsweakpassword.webp)
 
 **CAUTION:** Read the warning prior to enabling the cleartext password feature.
 
 **Step 4 –** On the Options page, configure the scan options by enabling communication with the
 Active Directory via SSL or returning cleartext password entries.
 
-![Password Security Data Collection Wizard Dictionary options page](/img/product_docs/accessanalyzer/solutions/activedirectory/users/dictionariesweakpassword.webp)
+![Password Security Data Collection Wizard Dictionary options page](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/users/dictionariesweakpassword.webp)
 
 **Step 5 –** On the Dictionaries page, configure the dictionary options by enabling the Netwrix weak
 password dictionary or click **Add…** to upload a custom dictionary with NTLM hashes or plaintext
@@ -88,7 +88,7 @@ select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_WeakPasswords Job](/img/product_docs/accessanalyzer/solutions/activedirectory/users/weakpasswordsanalysis.webp)
+![Analysis Tasks for the AD_WeakPasswords Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/users/weakpasswordsanalysis.webp)
 
 The default analysis tasks are:
 

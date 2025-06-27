@@ -4,7 +4,7 @@ Access Analyzer provides the ability to report on collected data in multiple way
 views, graphs, and emails. Depending on the type of data collected, different reporting methods can
 simplify how to present and understand the information.
 
-![Reports node](/img/product_docs/accessanalyzer/admin/report/reports.webp)
+![Reports node](/img/product_docs/accessanalyzer/12.0/admin/report/reports.webp)
 
 The Reports node, contained within a job’s Configure node, lists any reports that are configured for
 the job. The page contains options to create a report, configure existing reports, and a link to

@@ -2,7 +2,7 @@
 
 The EX_OWATraffic Job provides visibility into Outlook Web Access Traffic in the organization.
 
-![Outlook Web Access > EX_OWATraffic Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/exchange/casmetrics/outlookwebaccessjobstree.webp)
+![Outlook Web Access > EX_OWATraffic Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/casmetrics/outlookwebaccessjobstree.webp)
 
 The EX_OWATraffic job is located in the Outlook Web Access Job Group.
 
@@ -14,7 +14,7 @@ Access** > **EX_OWATraffic** > **Configure** node and select **Analysis**.
 **CAUTION:** Most of these analysis tasks are preconfigured and should not be modified ordeselected.
 There is one that is deselected by default, as it is for troubleshooting purposes.
 
-![Analysis Tasks for the EX_OWATraffic Job](/img/product_docs/accessanalyzer/solutions/exchange/casmetrics/owatrafficanalysis.webp)
+![Analysis Tasks for the EX_OWATraffic Job](/img/product_docs/accessanalyzer/12.0/solutions/exchange/casmetrics/owatrafficanalysis.webp)
 
 The following analysis tasks are selected by default:
 

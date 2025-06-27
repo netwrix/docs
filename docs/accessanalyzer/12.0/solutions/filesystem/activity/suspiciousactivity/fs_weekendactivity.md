@@ -13,7 +13,7 @@ Activity** > **FS_WeekendActivity** > **Configure** node and select **Analysis**
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_WeekendActivity Job](/img/product_docs/accessanalyzer/solutions/box/activity/suspiciousactivity/weekendactivityanalysis.webp)
+![Analysis Tasks for the FS_WeekendActivity Job](/img/product_docs/accessanalyzer/12.0/solutions/box/activity/suspiciousactivity/weekendactivityanalysis.webp)
 
 The following analysis tasks are selected by default:
 

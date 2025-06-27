@@ -4,7 +4,7 @@ The **LDAP** > **AD_LDAPQueries** Job analyzes LDAP traffic to determine trends 
 expensive queries, most active servers and users, successful/failed and signing status. This data
 can be used to troubleshoot performance issues, load balancing, and poorly configured services.
 
-![AD_LDAPQueries Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/activedirectory/activity/ldapjobstree.webp)
+![AD_LDAPQueries Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/activity/ldapjobstree.webp)
 
 **_RECOMMENDED:_** Schedule this job to run with the 0.Collection job group.
 
@@ -16,7 +16,7 @@ Navigate to the **Active Directory** > **6.Activity** > **LDAP** > **AD_LDAPQuer
 **CAUTION:** Except for the **Largest Queries** task, do not modify or deselect the remaining
 selected analysis tasks. The remaining analysis tasks are preconfigured for this job.
 
-![Analysis Tasks for the AD_LDAPQueries Job](/img/product_docs/accessanalyzer/solutions/activedirectory/activity/ldapqueriesanalysis.webp)
+![Analysis Tasks for the AD_LDAPQueries Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/activity/ldapqueriesanalysis.webp)
 
 The following non-configurable analysis tasks are selected by default:
 
@@ -49,14 +49,14 @@ analysis task’s parameters.
 **Step 1 –** Navigate to the **Active Directory** > **6.Activity** > **LDAP** > **AD_LDAPQueries** >
 **Configure** node and select **Analysis**.
 
-![Largest Queries analysis task configuration](/img/product_docs/accessanalyzer/solutions/activedirectory/activity/ldapqueriesanalysisconfiguration.webp)
+![Largest Queries analysis task configuration](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/activity/ldapqueriesanalysisconfiguration.webp)
 
 **Step 2 –** In the Analysis Selection view, select the **Largest Queries** analysis task and click
 **Analysis Configuration**. The SQL Script Editor opens.
 
 **CAUTION:** Do not change any parameters where the Value states `Created during execution`.
 
-![Largest Queries analysis task in the SQL Script Editor](/img/product_docs/accessanalyzer/solutions/activedirectory/activity/ldapsqlscripteditor.webp)
+![Largest Queries analysis task in the SQL Script Editor](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/activity/ldapsqlscripteditor.webp)
 
 **Step 3 –** In the parameters section at the bottom of the editor, find the Value column. There are
 two integer variables that can be modified. Double-click on the current **value** and change as

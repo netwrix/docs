@@ -3,7 +3,7 @@
 The Target Disks page provides a selection of storage devices from which to return data from the
 target host after a query.
 
-![Disk Info wizard Target Disks page](/img/product_docs/accessanalyzer/admin/datacollector/diskinfo/targetdisks.webp)
+![Disk Info wizard Target Disks page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/diskinfo/targetdisks.webp)
 
 Use the options to select the desired target disk.
 
@@ -33,7 +33,7 @@ Clicking the browse button on the Target Disks wizard page opens the Access Anal
 Browser. Use this page to find registry keys and values that exist on a target host in the
 environment.
 
-![Registry Browser](/img/product_docs/accessanalyzer/admin/datacollector/diskinfo/registrybrowser.webp)
+![Registry Browser](/img/product_docs/accessanalyzer/12.0/admin/datacollector/diskinfo/registrybrowser.webp)
 
 The configurable options on the Registry Browser are:
 

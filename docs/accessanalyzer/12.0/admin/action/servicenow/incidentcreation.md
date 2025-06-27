@@ -5,7 +5,7 @@ this page belong to two fields: Mandatory and Optional. The type of field and it
 chosen within ServiceNow’s configuration page. Selecting a field and entering a value will include
 the incident within ServiceNow’s incident report.
 
-![ServiceNow Action Module wizard New Incident page](/img/product_docs/accessanalyzer/admin/action/servicenow/incidentcreation.webp)
+![ServiceNow Action Module wizard New Incident page](/img/product_docs/accessanalyzer/12.0/admin/action/servicenow/incidentcreation.webp)
 
 At the New Incident field list section, enter the fields for which incident to include on
 ServiceNow’s incident report. The ServiceNow account entered on the Authentication page determines

@@ -11,8 +11,8 @@ The following table contains icons for resource types:
 | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
 | ![File System icon](/img/product_docs/threatprevention/threatprevention/admin/policies/eventtype/filesystem.webp)                             | File System               |
 | ![Windows Server icon](/img/product_docs/activitymonitor/activitymonitor/admin/monitoredhosts/properties/windows.webp)                        | Windows Server            |
-| ![Server icon](/img/product_docs/accessanalyzer/admin/settings/server.webp)                                                                   | Server                    |
-| ![Policies icon](/img/product_docs/accessanalyzer/requirements/target/config/policies.webp)                                                   | Policies                  |
+| ![Server icon](/img/product_docs/accessanalyzer/12.0/admin/settings/server.webp)                                                                   | Server                    |
+| ![Policies icon](/img/product_docs/accessanalyzer/12.0/requirements/target/config/policies.webp)                                                   | Policies                  |
 | ![Shares icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/shares.webp)                         | Shares                    |
 | ![Share icon](/img/product_docs/activitymonitor/config/activedirectory/share.webp)                                                            | Share                     |
 | ![Folder icon](/img/product_docs/threatprevention/threatprevention/install/reportingmodule/folder.webp)                                       | Folder                    |
@@ -28,11 +28,11 @@ The following table contains icons for resource types:
 | ![Library icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/library.webp)                       | Library                   |
 | ![List icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/list.webp)                             | List                      |
 | ![Unknown custom node icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/unknowncustom.webp)     | Unknown, custom node      |
-| ![Active Directory icon](/img/product_docs/accessanalyzer/admin/hostdiscovery/wizard/activedirectory.webp)                                    | Active Directory          |
+| ![Active Directory icon](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/activedirectory.webp)                                    | Active Directory          |
 | ![Domain icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/domain.webp)                         | Domain                    |
 | ![Box icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/box.webp)                               | Box                       |
 | ![Google Drive icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/googledrive.webp)              | Google Drive              |
-| ![Exchange icon](/img/product_docs/accessanalyzer/admin/settings/exchange.webp)                                                               | Exchange                  |
+| ![Exchange icon](/img/product_docs/accessanalyzer/12.0/admin/settings/exchange.webp)                                                               | Exchange                  |
 | ![SQL Server/Azure SQL icon](/img/product_docs/activitymonitor/activitymonitor/admin/outputs/sql.webp)                                        | SQL Server or Azure SQL   |
 | ![Microsoft Teams icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/teams.webp)                 | Microsoft Teams           |
 | ![MongoDB icon](/img/product_docs/changetracker/changetracker/install/mongodb.webp)                                                           | MongoDB                   |
@@ -41,10 +41,10 @@ The following table contains icons for resource types:
 | ![VMware icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/vmware.webp)                         | VMware                    |
 | ![Hyper-V icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/hyperv.webp)                        | Hyper-V                   |
 | ![Amazon icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/amazon.webp)                         | Amazon                    |
-| ![Dropbox icon](/img/product_docs/accessanalyzer/admin/settings/connection/profile/dropbox.webp)                                              | Dropbox                   |
+| ![Dropbox icon](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/profile/dropbox.webp)                                              | Dropbox                   |
 | ![PostgreSQL icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/postgresql.webp)                 | PostgreSQL                |
 | ![MySQL icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/mysql.webp)                           | MySQL                     |
-| ![Oracle SQL icon](/img/product_docs/accessanalyzer/admin/settings/connection/profile/oracle.webp)                                            | Oracle SQL                |
+| ![Oracle SQL icon](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/profile/oracle.webp)                                            | Oracle SQL                |
 | ![GitHub icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/github.webp)                         | GitHub                    |
 | ![Snowflake icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/snowflake.webp)                   | Snowflake                 |
 | ![Administrative icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/administrative.webp)         | Administrative            |
@@ -52,7 +52,7 @@ The following table contains icons for resource types:
 | ![Group icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/groupresource.webp)                   | Group                     |
 | ![Server/Virtual Machine icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/servervm.webp)       | Server or Virtual Machine |
 | ![Instance/Database icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/instancedatabase.webp)    | Instance or Database      |
-| ![Table icon](/img/product_docs/accessanalyzer/admin/report/wizard/table.webp)                                                                | Table                     |
+| ![Table icon](/img/product_docs/accessanalyzer/12.0/admin/report/wizard/table.webp)                                                                | Table                     |
 | ![Function/Procedure icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/functionprocedure.webp)  | Function or Procedure     |
 | ![View icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/view.webp)                             | View                      |
 | ![Index icon](/img/product_docs/accessinformationcenter/access/informationcenter/resourceaudit/navigate/index.webp)                           | Index                     |

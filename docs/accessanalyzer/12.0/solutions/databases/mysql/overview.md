@@ -70,7 +70,7 @@ sensitive data.
 The Access Analyzer MySQL Solution Set is a set of pre-configured audit jobs and reports that
 provides visibility into MySQL Sensitive Data.
 
-![MySQL Job Group Overview](/img/product_docs/accessanalyzer/solutions/databases/mysql/mysqljobgroupoverview.webp)
+![MySQL Job Group Overview](/img/product_docs/accessanalyzer/12.0/solutions/databases/mysql/mysqljobgroupoverview.webp)
 
 The job groups in the MySQL Solution are:
 

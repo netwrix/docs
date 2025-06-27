@@ -4,7 +4,7 @@ The Host Discovery node is for configuring the settings which dictate how Access
 newly discovered hosts, what information is logged during the host discovery process, and how long
 the logged information is stored.
 
-![Host Discovery page](/img/product_docs/accessanalyzer/admin/settings/hostdiscovery.webp)
+![Host Discovery page](/img/product_docs/accessanalyzer/12.0/admin/settings/hostdiscovery.webp)
 
 In the Host Discovery Options section at the top is a checkbox for the **Perform the first inventory
 right away for newly discovered hosts** option. This option is selected by default.
@@ -19,7 +19,7 @@ The configurable options in the Discovery Log section are:
   default to 14 days which is based on average Access Analyzer usage.
 - Log level – Determines what information is stored in the Host Discover query log
 
-![Log level options](/img/product_docs/accessanalyzer/admin/settings/hostdiscoveryloglevels.webp)
+![Log level options](/img/product_docs/accessanalyzer/12.0/admin/settings/hostdiscoveryloglevels.webp)
 
 The log levels are:
 
@@ -58,6 +58,6 @@ buttons become enabled when modifications are made to the Host Discovery global 
 changes are made at the global level, click **Save** and then **OK** to confirm the changes.
 Otherwise, click **Cancel** if no changes were intended.
 
-![Host Discovery Log under Host Discovery node](/img/product_docs/accessanalyzer/admin/settings/hostdiscoverylog.webp)
+![Host Discovery Log under Host Discovery node](/img/product_docs/accessanalyzer/12.0/admin/settings/hostdiscoverylog.webp)
 
 The Host Discovery Log is located under the **Host Discovery** node.

@@ -2,7 +2,7 @@
 
 The FS_FileTypes job is designed to report on file type information from targeted file servers.
 
-![File Types > FS_FileTypes Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/filesystem/content/filetypesjobstree.webp)
+![File Types > FS_FileTypes Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/content/filetypesjobstree.webp)
 
 The FS_FileTypes job is located in the File Types job group.
 
@@ -14,7 +14,7 @@ View the analysis tasks by navigating to the **FileSystem** > **4.Content** > **
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_FileTypes Job](/img/product_docs/accessanalyzer/solutions/filesystem/content/filetypesanalysis.webp)
+![Analysis Tasks for the FS_FileTypes Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/content/filetypesanalysis.webp)
 
 The following analysis tasks are selected by default:
 

@@ -85,7 +85,7 @@ The details page has the following tabs:
 
 The Active Directory menu displays the configuration options for Active Directory platforms.
 
-![Active Directory Platform Configuration](/img/product_docs/accessanalyzer/admin/hostdiscovery/wizard/activedirectory.webp)
+![Active Directory Platform Configuration](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/activedirectory.webp)
 
 Details for the selected platform are displayed on the right side of the page. Below are the
 configuration options for an Active Directory Platform.

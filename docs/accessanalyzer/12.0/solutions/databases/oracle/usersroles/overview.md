@@ -3,7 +3,7 @@
 The 1.Users and Roles Job Group is designed to provide insight into user security, roles, and object
 permissions on all Oracle database objects.
 
-![Users and Roles Job Group](/img/product_docs/accessanalyzer/solutions/databases/oracle/usersroles/jobgroup19.webp)
+![Users and Roles Job Group](/img/product_docs/accessanalyzer/12.0/solutions/databases/oracle/usersroles/jobgroup19.webp)
 
 The jobs in the 1.Users and Roles Job Group are:
 

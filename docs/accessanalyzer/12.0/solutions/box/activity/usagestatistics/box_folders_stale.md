@@ -12,7 +12,7 @@ node and select **Analysis** to view analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Box_Folders_Stale Job](/img/product_docs/accessanalyzer/solutions/box/activity/usagestatistics/foldersstaleanalysis.webp)
+![Analysis Tasks for the Box_Folders_Stale Job](/img/product_docs/accessanalyzer/12.0/solutions/box/activity/usagestatistics/foldersstaleanalysis.webp)
 
 The following analysis tasks are selected by default:
 

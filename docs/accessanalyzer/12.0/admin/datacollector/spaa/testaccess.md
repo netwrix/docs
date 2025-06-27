@@ -8,7 +8,7 @@ environment. The Test Access page tests access to the following:
 - SQL Access (for databases associated with the SharePoint farms)
 - All Web Applications in the SharePoint environment
 
-![Test Access page](/img/product_docs/accessanalyzer/admin/datacollector/spaa/testaccess.webp)
+![Test Access page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/spaa/testaccess.webp)
 
 The options and sections on the Test Access page are:
 
@@ -26,5 +26,5 @@ The options and sections on the Test Access page are:
 
 |                                                                                                                                                         |                                                                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Successful test example](/img/product_docs/accessanalyzer/admin/datacollector/spaa/testaccessbadtest.webp) |
+| ![Successful test example](/img/product_docs/accessanalyzer/12.0/admin/datacollector/spaa/testaccessbadtest.webp) |
 | **Successful Test (Correct Credentials)**                                                                                                               | **Unsuccessful Test (Incorrect Credentials)**                                                                                                            |

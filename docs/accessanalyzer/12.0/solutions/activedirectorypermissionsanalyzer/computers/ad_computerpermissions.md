@@ -11,7 +11,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **4.Computers** >
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_ComputerPermissions Job](/img/product_docs/accessanalyzer/solutions/activedirectorypermissionsanalyzer/computers/computerpermissionsanalysis.webp)
+![Analysis Tasks for the AD_ComputerPermissions Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/computers/computerpermissionsanalysis.webp)
 
 The default analysis tasks are:
 

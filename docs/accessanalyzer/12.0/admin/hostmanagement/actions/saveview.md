@@ -9,11 +9,11 @@ apply a filter to the data grid. Follow the steps to create a dynamic host list.
 **Step 2 –** Filter the data grid for the desired criteria. See the
 [Host Inventory Data Grid](/docs/accessanalyzer/12.0/admin/hostmanagement/datagrid.md) topic for additional information.
 
-![savecurrentview](/img/product_docs/accessanalyzer/admin/hostmanagement/actions/savecurrentview.webp)
+![savecurrentview](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/savecurrentview.webp)
 
 **Step 3 –** Click **Save Current View** in the Activities pane.
 
-![Host List name window](/img/product_docs/accessanalyzer/admin/hostmanagement/actions/hostlistname.webp)
+![Host List name window](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/hostlistname.webp)
 
 **Step 4 –** On the Host list name window, provide a unique, descriptive name for the new host list
 and click **OK**.

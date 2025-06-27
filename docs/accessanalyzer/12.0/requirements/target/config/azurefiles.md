@@ -44,7 +44,7 @@ applet, and credentials for each storage account. These should be configured as 
 
     - Select Account Type – Azure Active Directory
 
-        ![Storage account name and Connection string in Azure](/img/product_docs/accessanalyzer/requirements/target/config/accesskeys.webp)
+        ![Storage account name and Connection string in Azure](/img/product_docs/accessanalyzer/12.0/requirements/target/config/accesskeys.webp)
 
     - Client ID – The name of the storage account
 
@@ -68,7 +68,7 @@ Azure Files scans require the following configuration of the job and query perfo
 For FSAA and SEEK scans targeting Azure Files storage accounts, you must clear the **Skip Hosts that
 do not respond to PING** option in the job properties.
 
-![Skip Hosts option on Performance tab of the Job Properties window](/img/product_docs/accessanalyzer/requirements/target/config/skiphostsoption.webp)
+![Skip Hosts option on Performance tab of the Job Properties window](/img/product_docs/accessanalyzer/12.0/requirements/target/config/skiphostsoption.webp)
 
 Right-click on the required scan job in the Jobs tree, and select **Properties** to open the Job
 Properties window. Navigate to the Performance tab, and ensure the **Skip Hosts that do not respond
@@ -82,7 +82,7 @@ information.
 Last Access Time (LAT) preservation is not supported for Azure Files scans. This option must not be
 selected in the query for the FSAA or SEEK scan job.
 
-![Last Access Time (LAT) preservation option in FSAA DC wizard](/img/product_docs/accessanalyzer/requirements/target/config/latpreservationoption.webp)
+![Last Access Time (LAT) preservation option in FSAA DC wizard](/img/product_docs/accessanalyzer/12.0/requirements/target/config/latpreservationoption.webp)
 
 The **Last Access Time (LAT) preservation** option is located on the Default Scoping Options page of
 the File System Access Auditor Data Collector Wizard. See the

@@ -4,7 +4,7 @@ The UX_UsersAndGroups job collects user and group information from /etc/passwd, 
 their equivalents in order to provide details on user and group conditions to help pinpoint
 potential areas of administrative concern.
 
-![0.Collection > UX_UsersAndGroups Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/exchange/databases/collection/collectionjobstree.webp)
+![0.Collection > UX_UsersAndGroups Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/databases/collection/collectionjobstree.webp)
 
 The UX_UsersAndGroups job is located in the 0.Collection job group.
 
@@ -14,7 +14,7 @@ The UX_UsersandGroups job uses the Unix Data Collector for the following queries
 
 **CAUTION:** The queries are preconfigured for this job. Never modify the queries.
 
-![Queries for the UX_UsersAndGroups Job](/img/product_docs/accessanalyzer/solutions/unix/usersgroups/usersandgroupsqueries.webp)
+![Queries for the UX_UsersAndGroups Job](/img/product_docs/accessanalyzer/12.0/solutions/unix/usersgroups/usersandgroupsqueries.webp)
 
 The queries for the UX_UsersAndGroups job are:
 
@@ -37,7 +37,7 @@ Navigate to the **Unix** > **1.Users and Groups** > **0.Collection** > **UX_User
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the UX_UsersAndGroups Job](/img/product_docs/accessanalyzer/solutions/unix/usersgroups/usersandgroupsanalysis.webp)
+![Analysis Tasks for the UX_UsersAndGroups Job](/img/product_docs/accessanalyzer/12.0/solutions/unix/usersgroups/usersandgroupsanalysis.webp)
 
 The default analysis tasks are:
 

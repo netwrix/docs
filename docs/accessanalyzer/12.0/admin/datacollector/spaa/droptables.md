@@ -15,7 +15,7 @@ the analysis tasks.
 
 **CAUTION:** Applying these analysis tasks will result in the deletion of collected data.
 
-![SP_DropTables Job Analysis tasks](/img/product_docs/accessanalyzer/admin/datacollector/spaa/droptablesanalysis.webp)
+![SP_DropTables Job Analysis tasks](/img/product_docs/accessanalyzer/12.0/admin/datacollector/spaa/droptablesanalysis.webp)
 
 The default analysis tasks are:
 

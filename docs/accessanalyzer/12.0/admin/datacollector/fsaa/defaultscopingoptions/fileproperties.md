@@ -3,7 +3,7 @@
 The File Properties (Folder Summary) tab is where file property collection settings for the scan is
 configured.
 
-![FSAA Data Collector Wizard Default Scoping Options page File Properties (Folder Summary) tab](/img/product_docs/accessanalyzer/admin/datacollector/fsaa/defaultscopingoptions/fileproperties.webp)
+![FSAA Data Collector Wizard Default Scoping Options page File Properties (Folder Summary) tab](/img/product_docs/accessanalyzer/12.0/admin/datacollector/fsaa/defaultscopingoptions/fileproperties.webp)
 
 - Scan for probable owners – Gathers file ownership information to determine the most probable owner
   of every resource

@@ -3,7 +3,7 @@
 The SPAA Data Collector Category page contains the following query categories, sub-divided by
 auditing focus:
 
-![Category page](/img/product_docs/accessanalyzer/admin/datacollector/adinventory/category.webp)
+![Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/category.webp)
 
 The options on the Category page are:
 

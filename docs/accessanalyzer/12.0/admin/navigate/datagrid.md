@@ -26,7 +26,7 @@ for sorting, filtering, and searching.
 The right-click menu that affects data grid functionality is accessible by right-clicking on the
 data grid header row.
 
-![Data Grid Functionality](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality1.webp)
+![Data Grid Functionality](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality1.webp)
 
 The Data Grid Right-click menu contains the following selections:
 
@@ -53,11 +53,11 @@ for information on right-click menus within a data grid.
 
 The Customization window can be used to customize the data grid to only display specific columns.
 
-![Customization Window](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality2.webp)
+![Customization Window](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality2.webp)
 
 To open the Customization window, select Field Chooser from the column header right-click menu.
 
-![Customization Window](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality3.webp)
+![Customization Window](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality3.webp)
 
 Any column that has been removed from the data grid, either by dragging it off the screen or by
 dropping it into this window, will be listed here. A column not currently displayed can be returned
@@ -68,17 +68,17 @@ to the data grid by dragging-and-dropping it from this window onto the header ro
 The footer provides a data grid summation row. The summation capabilities exist for every column on
 the footer either for the entire data grid or by grouped sections of the data grid.
 
-![Footer Option](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality4.webp)
+![Footer Option](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality4.webp)
 
 To enable the footer, right-click in a column header and select Footer from the right-click menu.
 
-![Footer display](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality5.webp)
+![Footer display](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality5.webp)
 
 The footer appears as a gray bar at the bottom of the grid (or grid group). Right-click on the
 footer under the desired column. Only the options applicable to the desired column will be valid for
 selection.
 
-![Footer options](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality6.webp)
+![Footer options](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality6.webp)
 
 The different footer options are:
 
@@ -93,7 +93,7 @@ The different footer options are:
 
 The data grid can be sorted in alphanumeric order by clicking on a column header.
 
-![Sort Order](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality7.webp)
+![Sort Order](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality7.webp)
 
 An arrow displays on the column header indicating if the sort is increasing or decreasing. This
 feature only works on one column at a time.
@@ -102,7 +102,7 @@ feature only works on one column at a time.
 
 Users can interact and search through data grids in the Results Pane.
 
-| ![Default Group By View](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality9.webp) |
+| ![Default Group By View](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality9.webp) |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Default view                                                                                                                                 | Organized by Column Header                                                                                                                        |
 
@@ -110,14 +110,14 @@ To use this feature, drag a column header into the “Drag a column header here 
 column” area. The data grid groups according to the data within that column. The sub-header provides
 a ‘count’ of records within each group. Expand the group to view the data.
 
-![Expand Group View](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality10.webp)
+![Expand Group View](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality10.webp)
 
 Multiple columns can be dragged into the Group By area to form tiered groupings.
 
 **NOTE:** Sorting by the FQDN column is an easy way to see if there are two entries for the same
 host.
 
-![Column Header](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality11.webp)
+![Column Header](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality11.webp)
 
 The data grid can also be grouped by dragging a column header beneath the other column headers
 either to the stationary section on the left or to the mobile section on the right. Each record
@@ -134,7 +134,7 @@ Users can filter and search data in the Data Grid by using the dropdown arrow in
 to select from a list of filters, configuring a custom filter, or by using the Data Grid filtration
 dialog located above the Activities Pane.
 
-![Filter](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality12.webp)
+![Filter](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality12.webp)
 
 In the header of every column is a drop-down arrow. This provides users with the ability to filter
 the data grid for a particular item or items within a column. The drop-down menu has the options of
@@ -150,7 +150,7 @@ grid.
 
 The Custom option opens a Custom Filter builder for the selected column.
 
-![Custom Filter](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality13.webp)
+![Custom Filter](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality13.webp)
 
 The Custom Filter window options are:
 
@@ -172,7 +172,7 @@ Follow the steps to create a Custom Filter:
 **Step 1 –** Click the dropdown arrow in the column header for the column where the Custom Filter is
 going to be applied and select (Custom…) from the list. The Custom Filter window opens.
 
-![Creating a Custom Filter](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality14.webp)
+![Creating a Custom Filter](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality14.webp)
 
 **Step 2 –** Set the desired criteria for the custom filter. Select the logical operator from the
 drop-down menu on the left and set the criteria in the textbox on the right.
@@ -188,7 +188,7 @@ records with an operating system name that contains “2008” but not “Standa
 2008 Enterprise Edition, 64 bit and Windows Server 2008 R2 Datacenter Edition, 64-bit, etc. Complex
 filters can be created using the Advanced Search option in the Filtration Dialog.
 
-![Selected Filter Criteria](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality15.webp)
+![Selected Filter Criteria](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality15.webp)
 
 The selected filter criteria will appear at the top of the data grid. A red X appears in the
 filtration dialog, and the total rows value drops to the number of records that match the filter
@@ -208,7 +208,7 @@ the data set for users to quickly return to a filtered view.
 The filtration dialog in the upper-right corner with the magnifying glass icon provides additional
 filtering options.
 
-![Filtration Dialog](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality16.webp)
+![Filtration Dialog](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality16.webp)
 
 The magnifying glass icon opens a dropdown list of columns for the selected data grid, the Advanced
 Search option, and the Recent Filters list. Typing in the textbox at the top filters the data grid
@@ -220,7 +220,7 @@ open the list of the last server filters applied to this data grid.
 The Advanced Search option opens a Set Filter builder for users to build a filter for multiple
 columns using multiple logical operators.
 
-![Advanced Search](/img/product_docs/accessanalyzer/admin/navigate/datagridfunctionality17.webp)
+![Advanced Search](/img/product_docs/accessanalyzer/12.0/admin/navigate/datagridfunctionality17.webp)
 
 The filter options and logical operators are:
 

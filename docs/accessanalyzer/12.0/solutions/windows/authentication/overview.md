@@ -3,7 +3,7 @@
 The Authentication job group provides information on authentication settings within audited systems
 to help identify potential security vulnerabilities and reduce risk within the environment.
 
-![Authentication Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Authentication Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
 
 The jobs in the Authentication job group are:
 

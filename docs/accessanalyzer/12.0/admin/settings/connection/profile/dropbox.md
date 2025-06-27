@@ -3,7 +3,7 @@
 The information in this topic applies to **Select Account Type** > **Dropbox** in the User
 Credentials window.
 
-![User Credentials - Dropbox](/img/product_docs/accessanalyzer/admin/settings/connection/profile/dropbox.webp)
+![User Credentials - Dropbox](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/profile/dropbox.webp)
 
 The required credentials for Dropbox are:
 

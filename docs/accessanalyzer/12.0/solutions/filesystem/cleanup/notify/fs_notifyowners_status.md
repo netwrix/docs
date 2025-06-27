@@ -12,7 +12,7 @@ Navigate to the **FileSystem** > **Cleanup** > **2. Notify** > **FS_NotifyOwners
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FS_NotifyOwners_Status Job](/img/product_docs/accessanalyzer/solutions/filesystem/cleanup/notify/notifyownersstatusanalysis.webp)
+![Analysis Tasks for the FS_NotifyOwners_Status Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/cleanup/notify/notifyownersstatusanalysis.webp)
 
 The following analysis tasks are selected by default:
 

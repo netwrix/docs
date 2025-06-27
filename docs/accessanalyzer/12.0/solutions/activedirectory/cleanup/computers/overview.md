@@ -3,7 +3,7 @@
 The 3.Computers Job Group identifies stale computer accounts, providing a workflow to safely
 deprovision identified accounts.
 
-![3.Computers Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/activedirectory/cleanup/computers/computersjobtree.webp)
+![3.Computers Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/cleanup/computers/computersjobtree.webp)
 
 The jobs in the 3.Computers Job Group are:
 

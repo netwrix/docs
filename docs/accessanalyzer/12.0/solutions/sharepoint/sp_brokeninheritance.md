@@ -6,7 +6,7 @@ the site level. This includes looking at site broken inheritance and the trustee
 to those sites where inheritance is broken so that you can remove that access in favor of providing
 access via group membership.
 
-![3.Broken Inheritance > SP_BrokenInheritance Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/filesystem/brokeninheritancejobstree.webp)
+![3.Broken Inheritance > SP_BrokenInheritance Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/brokeninheritancejobstree.webp)
 
 The SP_BrokenInheritance job is located in the 3.Broken Inheritance Job Group.
 
@@ -18,7 +18,7 @@ Navigate to the **Jobs** > **SharePoint** > **3.Broken Inheritance** > **SP_Brok
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SP_BrokenInheritance Job](/img/product_docs/accessanalyzer/solutions/filesystem/brokeninheritanceanalysis.webp)
+![Analysis Tasks for the SP_BrokenInheritance Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/brokeninheritanceanalysis.webp)
 
 They need to remain in the default order:
 

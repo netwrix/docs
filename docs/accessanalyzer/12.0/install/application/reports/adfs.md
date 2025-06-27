@@ -26,7 +26,7 @@ Add Relying Party Trust Wizard to configure the relying party trust:
   **Next**.
 - On the Configure URL page, do not select any options and click **Next**.
 
-    ![Identifier added on the Configure Identifiers page](/img/product_docs/accessanalyzer/install/application/reports/relyingpartytrustwizardidentifier.webp)
+    ![Identifier added on the Configure Identifiers page](/img/product_docs/accessanalyzer/12.0/install/application/reports/relyingpartytrustwizardidentifier.webp)
 
 - On the Configure Identifiers page, add an identifier of `https://` followed by the fully qualified
   domain name (FQDN) of your ADFS server.
@@ -35,7 +35,7 @@ Add Relying Party Trust Wizard to configure the relying party trust:
 
 - Click **Next** to proceed through the remaining wizard pages and complete the wizard.
 
-![Add an Endpoint window](/img/product_docs/accessanalyzer/install/application/reports/addanendpointwindow.webp)
+![Add an Endpoint window](/img/product_docs/accessanalyzer/12.0/install/application/reports/addanendpointwindow.webp)
 
 **Step 4 –** Double-click on the newly added relying party trust to open it's Properties window.
 Navigate to the Endpoints tab and click **Add WS-Federation**. On the Add an Endpoint window, add
@@ -53,18 +53,18 @@ right-hand panel.
 - On the Choose Rule Type page of the Add Transform Claim Rule Wizard, select **Send LDAP Attributes
   as Claims** as the Claim rule template. Click **Next**.
 
-    ![Configure Claim Rule page](/img/product_docs/accessanalyzer/install/application/reports/claimrulenameadfsconfig.webp)
+    ![Configure Claim Rule page](/img/product_docs/accessanalyzer/12.0/install/application/reports/claimrulenameadfsconfig.webp)
 
 - On the Configure Claim Rule page, enter a name in the **Claim rule name** field.
 
 If the SID claim is not configured by default, add it to the Claim Description as follows:
 
-![Configure Claim Rule SID Properties](/img/product_docs/accessanalyzer/install/application/reports/claimrulenamesidproperties.webp)
+![Configure Claim Rule SID Properties](/img/product_docs/accessanalyzer/12.0/install/application/reports/claimrulenamesidproperties.webp)
 
 **Step 6 –** Navigate to the Access Analyzer installation directory and open the
 `WebServer.exe.config` file in a text editor.
 
-![WebServer.exe.config file in Notepad](/img/product_docs/accessanalyzer/install/application/reports/webserverexeconfigadfs.webp)
+![WebServer.exe.config file in Notepad](/img/product_docs/accessanalyzer/12.0/install/application/reports/webserverexeconfigadfs.webp)
 
 **Step 7 –** In the `WebServer.exe.config` file, change the following parameters:
 
@@ -81,7 +81,7 @@ If the SID claim is not configured by default, add it to the Claim Description 
     <add key="WsFederationRealm" value="INSERT VALUE HERE" />
     ```
 
-    ![URL required for WsFederationRealm attribute](/img/product_docs/accessanalyzer/install/application/reports/wsfederationrealmurl.webp)
+    ![URL required for WsFederationRealm attribute](/img/product_docs/accessanalyzer/12.0/install/application/reports/wsfederationrealmurl.webp)
 
     You can retrieve the URL value from the Identifiers tab of the relying party trust properties
     window.
@@ -93,7 +93,7 @@ If the SID claim is not configured by default, add it to the Claim Description 
     <add key="WsFederationReply" value="INSERT VALUE HERE" />
     ```
 
-    ![URL required for WsFederationReply attribute](/img/product_docs/accessanalyzer/install/application/reports/wsfederationreplyurl.webp)
+    ![URL required for WsFederationReply attribute](/img/product_docs/accessanalyzer/12.0/install/application/reports/wsfederationreplyurl.webp)
 
     You can obtain the URL required for this parameter from the Endpoints tab of the relying party
     trust properties window. Select the endpoint and click **Edit** to open the Edit Endpoint
@@ -122,7 +122,7 @@ Reports URL for ADFS:
 
 **Step 1 –** Right-click the Published Reports shortcut on the desktop and select **Properties**.
 
-![Published Reports desktop shortcut properties](/img/product_docs/accessanalyzer/install/application/reports/publishedreportsproperties.webp)
+![Published Reports desktop shortcut properties](/img/product_docs/accessanalyzer/12.0/install/application/reports/publishedreportsproperties.webp)
 
 **Step 2 –** Replace the URL with `https://SAWebConsole.domain.com:8082`.
 

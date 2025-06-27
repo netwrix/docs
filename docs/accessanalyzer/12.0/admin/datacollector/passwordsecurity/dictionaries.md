@@ -3,7 +3,7 @@
 The Dictionaries page provides configuration settings for storing passwords to be used as a
 reference for the scan.
 
-![Password Security Data Collection Wizard Dictionary options page](/img/product_docs/accessanalyzer/admin/datacollector/passwordsecurity/dictionaries.webp)
+![Password Security Data Collection Wizard Dictionary options page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/passwordsecurity/dictionaries.webp)
 
 The configurable dictionary options are:
 

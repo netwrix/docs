@@ -9,7 +9,7 @@ Filter icon is disabled in the report.
 The following example shows an interactive grid in which grouping has been enabled. See the
 [Grid](/docs/accessanalyzer/12.0/admin/report/wizard/widgets.md#grid) topic for additional information.
 
-![Group by option](/img/product_docs/accessanalyzer/admin/report/interactivegrids/groupby.webp)
+![Group by option](/img/product_docs/accessanalyzer/12.0/admin/report/interactivegrids/groupby.webp)
 
 The drop-down list to the right of the Group by field can be accessed by clicking the down arrow.
 Click an item from the drop-down list to group the report by that category.

@@ -26,7 +26,7 @@ Wizard window opens.
 
 **Step 2 –** On the Welcome page, click **Next**.
 
-![FS_UpdateProxy Job in the Instant Job Wizard](/img/product_docs/accessanalyzer/install/filesystemproxy/updateproxyinstantjob.webp)
+![FS_UpdateProxy Job in the Instant Job Wizard](/img/product_docs/accessanalyzer/12.0/install/filesystemproxy/updateproxyinstantjob.webp)
 
 **Step 3 –** On the Instant Job page, locate the **Library Name: File System** category group.
 Expand the category and select the **FS_UpgradeProxy** Job. Click **Next**.
@@ -48,7 +48,7 @@ host lists have been updated.
 
 Follow the steps on the servers hosting the File System Proxy Service.
 
-![Programs and Features](/img/product_docs/accessanalyzer/install/filesystemproxy/uninstall.webp)
+![Programs and Features](/img/product_docs/accessanalyzer/12.0/install/filesystemproxy/uninstall.webp)
 
 **Step 1 –** Navigate to Programs and Features (**Control Panel** > **Programs** > **Programs and
 Features**). Uninstall the previous version of Access Analyzer File System Scanning Proxy.

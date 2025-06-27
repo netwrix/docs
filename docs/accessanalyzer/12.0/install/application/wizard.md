@@ -22,7 +22,7 @@ Wizard.
 **Step 3 –** On the End-User License Agreement page, read the End User License Agreement, then check
 the **I accept the terms in the License Agreement** box and click **Next**.
 
-![Destinations Folder page](/img/product_docs/accessanalyzer/install/filesystemproxy/destination.webp)
+![Destinations Folder page](/img/product_docs/accessanalyzer/12.0/install/filesystemproxy/destination.webp)
 
 **Step 4 –** On the Destination Folder page, click **Change** to select the folder location to
 install Access Analyzer. The default destination folder is
@@ -30,7 +30,7 @@ install Access Analyzer. The default destination folder is
 
 |                                                                                                                         |     |                                                                                                                                                       |
 | ----------------------------------------------------------------------------------------------------------------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![License File page](/img/product_docs/accessanalyzer/install/application/licensemapped.webp) |
+| ![License File page](/img/product_docs/accessanalyzer/12.0/install/application/licensemapped.webp) |
 | Default License File Page                                                                                               |     | Mapped License File                                                                                                                                   |
 
 **Step 5 –** On the License File page, click **Browse** and navigate to your **StealthAUDIT.lic**
@@ -39,7 +39,7 @@ file. When the path to the file is visible in the textbox, click **Next**.
 **NOTE:** The license file must be stored on the Access Analyzer Console server before the
 installation begins.
 
-![License Features page](/img/product_docs/accessanalyzer/install/application/licensefeatures.webp)
+![License Features page](/img/product_docs/accessanalyzer/12.0/install/application/licensefeatures.webp)
 
 **Step 6 –** The License Features page displays a list of all features covered by the imported
 license. It also displays the name of the organization which owns the license, the expiration date,

@@ -12,7 +12,7 @@ Navigate to the **Active Directory > 5.Domains > AD_DCSummary > Configure** node
 **CAUTION:** Do not modify or deselect the selected analysis task(s). The analysis task(s) are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/solutions/activedirectory/domains/dcsummaryanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/domains/dcsummaryanalysis.webp)
 
 The default analysis tasks are:
 

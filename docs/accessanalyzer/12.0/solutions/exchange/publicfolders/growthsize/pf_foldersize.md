@@ -10,7 +10,7 @@ Size** > **PF_FolderSize** > **Configure** node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the PF_FolderSize Job](/img/product_docs/accessanalyzer/solutions/exchange/publicfolders/growthsize/foldersizeanalysis.webp)
+![Analysis Tasks for the PF_FolderSize Job](/img/product_docs/accessanalyzer/12.0/solutions/exchange/publicfolders/growthsize/foldersizeanalysis.webp)
 
 The following analysis tasks are selected by default:
 

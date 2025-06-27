@@ -3,7 +3,7 @@
 The SP_SensitiveData Job identifies where sensitive data is located inside SharePoint farms. Special
 care is paid to access and user activity in these locations.
 
-![6.Sensitve Data > SP_SensitiveData Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/databases/db2/sensitivedata/sensitivedatajobstree.webp)
+![6.Sensitve Data > SP_SensitiveData Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/databases/db2/sensitivedata/sensitivedatajobstree.webp)
 
 The SP_SensitiveData Job is located in the 6.Sensitive Data Job Group.
 
@@ -15,7 +15,7 @@ Navigate to the **Jobs** > **SharePoint** > **6.Sensitive Data** > **SP_Sensitiv
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SP_SensitiveData Job](/img/product_docs/accessanalyzer/solutions/databases/postgresql/collection/sensitivedataanalysis.webp)
+![Analysis Tasks for the SP_SensitiveData Job](/img/product_docs/accessanalyzer/12.0/solutions/databases/postgresql/collection/sensitivedataanalysis.webp)
 
 The default analysis tasks are:
 

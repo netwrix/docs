@@ -3,7 +3,7 @@
 Use the Sensitive data scan options page to configure options to for discovering sensitive data. It
 is a wizard page for the Sensitive Data category.
 
-![EWS Public Folder Data Collector Wizard SDD Options page](/img/product_docs/accessanalyzer/admin/datacollector/ewsmailbox/sddoptions.webp)
+![EWS Public Folder Data Collector Wizard SDD Options page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/sddoptions.webp)
 
 Select the applicable Sensitive data scan options:
 

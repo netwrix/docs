@@ -11,7 +11,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **7.Containers** >
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_ContainerPermissions Job](/img/product_docs/accessanalyzer/solutions/activedirectorypermissionsanalyzer/containers/containerpermissionsanalysis.webp)
+![Analysis Tasks for the AD_ContainerPermissions Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/containers/containerpermissionsanalysis.webp)
 
 The default analysis tasks are:
 

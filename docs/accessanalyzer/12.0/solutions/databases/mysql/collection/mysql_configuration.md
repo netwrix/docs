@@ -9,7 +9,7 @@ The MySQL_Configuration Job uses the SQL Data Collector for queries.
 
 **CAUTION:** Do not modify the query. The query is preconfigured for this job.
 
-![Query Selection](/img/product_docs/accessanalyzer/solutions/databases/mongodb/collection/configurationjob.webp)
+![Query Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/mongodb/collection/configurationjob.webp)
 
 The query is:
 

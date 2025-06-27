@@ -7,7 +7,7 @@ mailbox.
 
 The EX_Delegates job uses the ExchangePS Data Collector.
 
-![Queries for the EX_Delegates Job](/img/product_docs/accessanalyzer/solutions/exchange/mailboxes/permissions/collection/delegatesquery.webp)
+![Queries for the EX_Delegates Job](/img/product_docs/accessanalyzer/12.0/solutions/exchange/mailboxes/permissions/collection/delegatesquery.webp)
 
 The following query is included with the EX_Delegates job:
 

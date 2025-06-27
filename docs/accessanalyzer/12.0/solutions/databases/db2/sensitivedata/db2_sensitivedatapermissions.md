@@ -12,7 +12,7 @@ tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Db2_SensitiveDataPermissions Job](/img/product_docs/accessanalyzer/solutions/databases/db2/sensitivedata/sensitivedatapermissionsanalysis.webp)
+![Analysis Tasks for the Db2_SensitiveDataPermissions Job](/img/product_docs/accessanalyzer/12.0/solutions/databases/db2/sensitivedata/sensitivedatapermissionsanalysis.webp)
 
 The default analysis tasks are:
 

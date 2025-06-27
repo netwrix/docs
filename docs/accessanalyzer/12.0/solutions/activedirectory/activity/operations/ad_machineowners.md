@@ -10,7 +10,7 @@ Navigate to the **Active Directory** > **6.Activity** > **Operations** > **AD_Ma
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_MachineOwners Job](/img/product_docs/accessanalyzer/solutions/activedirectory/activity/operations/machineownersanalysis.webp)
+![Analysis Tasks for the AD_MachineOwners Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/activity/operations/machineownersanalysis.webp)
 
 The default analysis tasks are:
 

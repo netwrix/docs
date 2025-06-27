@@ -4,7 +4,7 @@ The FS_OpenAccess job is designed to report on Open Access information from targ
 The definition of Open Access is when a security principal, such as Everyone, Authenticated Users,
 or Domain Users, have permissions on a resource.
 
-![1.Open Access > FS_OpenAccess Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/filesystem/openaccessjobstree.webp)
+![1.Open Access > FS_OpenAccess Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/openaccessjobstree.webp)
 
 The FS_OpenAccess job is located in the 1.Open Access job group.
 
@@ -16,7 +16,7 @@ View the analysis tasks by navigating to the **FileSystem** > **1.Open Access**
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_OpenAccess Job](/img/product_docs/accessanalyzer/solutions/filesystem/openaccessanalysis.webp)
+![Analysis Tasks for the FS_OpenAccess Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/openaccessanalysis.webp)
 
 The following analysis tasks are selected by default:
 

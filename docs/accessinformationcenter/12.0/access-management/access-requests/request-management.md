@@ -27,7 +27,7 @@ Canceled, with you as the Reviewer.
 Select the desired request on the [Request History Tab](/docs/accessinformationcenter/12.0/access-management/access-requests/request-interface.md#request-history-tab) of the
 Access Requests interface and click **View Changes**. The Changes window opens.
 
-![Changes window](/img/product_docs/accessanalyzer/install/application/upgrade/changes.webp)
+![Changes window](/img/product_docs/accessanalyzer/12.0/install/application/upgrade/changes.webp)
 
 The table displays the following information for selected trustee:
 

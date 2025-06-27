@@ -8,7 +8,7 @@ The UX_ParseSudoers job uses the Unix Data Collector for the following query:
 
 **CAUTION:** The query is preconfigured for this job. Never modify the query.
 
-![Queries for the UX_ParseSudoers Job](/img/product_docs/accessanalyzer/solutions/unix/privilegedaccess/sudoers/collection/parsesudoersquery.webp)
+![Queries for the UX_ParseSudoers Job](/img/product_docs/accessanalyzer/12.0/solutions/unix/privilegedaccess/sudoers/collection/parsesudoersquery.webp)
 
 The query for the UX_ParseSudoers job is:
 

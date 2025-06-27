@@ -11,7 +11,7 @@ select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AWS_CustomManagedPolicies Job](/img/product_docs/accessanalyzer/solutions/aws/policies/custommanagedpoliciesanalysis.webp)
+![Analysis Tasks for the AWS_CustomManagedPolicies Job](/img/product_docs/accessanalyzer/12.0/solutions/aws/policies/custommanagedpoliciesanalysis.webp)
 
 The following analysis tasks are selected by default:
 

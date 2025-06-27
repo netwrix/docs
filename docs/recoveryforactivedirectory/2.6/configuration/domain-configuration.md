@@ -83,7 +83,7 @@ Click **Next**.
 the backups will run at the desired frequency but will skip from midnight until the selected start
 time.
 
-![Add Domain Configuration wizard - Options page](/img/product_docs/accessanalyzer/install/application/options.webp)
+![Add Domain Configuration wizard - Options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
 
 **Step 9 –** (_Optional_) Select the **Collect GPOs** checkbox to enable GPO rollback and recovery.
 This setting requires Group Policy Management Console (GMPC). If GPO collection is not desired, skip
@@ -97,7 +97,7 @@ backup.
 
 **Step 11 –** Click **Next**.
 
-![Add Domain Configuration wizard - Notification page](/img/product_docs/accessanalyzer/admin/settings/notification.webp)
+![Add Domain Configuration wizard - Notification page](/img/product_docs/accessanalyzer/12.0/admin/settings/notification.webp)
 
 **Step 12 –** To set notifications, select the Send email notifications check box and enter the
 email address of one or more users and/or groups to receive the job start and end notifications. Use
@@ -157,7 +157,7 @@ time.
 
 **Step 9 –** Click **Next**.
 
-![Edit Domain Configuration wizard - Options page](/img/product_docs/accessanalyzer/install/application/options.webp)
+![Edit Domain Configuration wizard - Options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
 
 **Step 10 –** (_Optional_) Select or deselect the **Collect GPOs** checkbox to enable or disable GPO
 rollback and recovery. This setting requires Group Policy Management Console (GMPC). If GPO
@@ -172,7 +172,7 @@ backup.
 
 **Step 12 –** Click **Next**.
 
-![Edit Domain Configuration wizard - Notification page](/img/product_docs/accessanalyzer/admin/settings/notification.webp)
+![Edit Domain Configuration wizard - Notification page](/img/product_docs/accessanalyzer/12.0/admin/settings/notification.webp)
 
 **Step 13 –** To set notifications, select the Send email notifications check box and enter the
 email address of one or more users and/or groups to receive the job start and end notifications. Use

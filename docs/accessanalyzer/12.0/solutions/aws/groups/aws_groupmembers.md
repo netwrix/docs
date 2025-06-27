@@ -11,7 +11,7 @@ Navigate to the **AWS** > **3.Groups** > **AWS_GroupMembers** > **Configure** no
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AWS_GroupMembers Job](/img/product_docs/accessanalyzer/solutions/aws/groups/groupmembersanalysis.webp)
+![Analysis Tasks for the AWS_GroupMembers Job](/img/product_docs/accessanalyzer/12.0/solutions/aws/groups/groupmembersanalysis.webp)
 
 The following analysis tasks are selected by default:
 

@@ -4,7 +4,7 @@ The 7.Certificate Authority job group collects settings, permissions, and config
 Certificate Authorities. It details access rights for the Certificate Authority and reports on
 certificate requests, highlighting any that might expire soon.
 
-![7.Certificate Authority job group in the Jobs tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![7.Certificate Authority job group in the Jobs tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
 
 The following jobs comprise the job group:
 

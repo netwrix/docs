@@ -66,7 +66,7 @@ sensitive data.
 The Access Analyzer MongoDB Solution Set is a set of pre-configured jobs and reports that provides
 visibility into MongoDB Sensitive Data.
 
-![MongoDB Overview](/img/product_docs/accessanalyzer/solutions/databases/mongodb/mongdbjobgroupoverview.webp)
+![MongoDB Overview](/img/product_docs/accessanalyzer/12.0/solutions/databases/mongodb/mongdbjobgroupoverview.webp)
 
 The following job groups comprise the MongoDB Solution:
 

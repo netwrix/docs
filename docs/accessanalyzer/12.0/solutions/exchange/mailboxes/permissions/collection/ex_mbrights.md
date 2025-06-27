@@ -7,7 +7,7 @@ mailbox.
 
 The EX_MBRights job uses the ExchangePS Data Collector.
 
-![Queries for the EX_MBRights Job](/img/product_docs/accessanalyzer/solutions/exchange/mailboxes/permissions/collection/mbrightsquery.webp)
+![Queries for the EX_MBRights Job](/img/product_docs/accessanalyzer/12.0/solutions/exchange/mailboxes/permissions/collection/mbrightsquery.webp)
 
 The following query is included in the EX_MBRights Job:
 

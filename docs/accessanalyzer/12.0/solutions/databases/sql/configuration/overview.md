@@ -3,7 +3,7 @@
 The 4.Configuration Job Group provides information on potential vulnerabilities related to SQL and
 Azure SQL server configuration settings.
 
-![configurationjobgroup](/img/product_docs/accessanalyzer/solutions/databases/postgresql/configurationjobgroup.webp)
+![configurationjobgroup](/img/product_docs/accessanalyzer/12.0/solutions/databases/postgresql/configurationjobgroup.webp)
 
 The jobs in the 4.Configuration Job Group are:
 

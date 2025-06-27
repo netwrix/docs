@@ -27,7 +27,7 @@ set as desired, click **Next**.
 **NOTE:** The default location is `C:\Program Files\STEALTHbits\Access Information Center\`. There
 are no specific requirements for changing the path.
 
-![AIC Setup Wizard SQL Server Connection page](/img/product_docs/accessanalyzer/install/application/sqlserver.webp)
+![AIC Setup Wizard SQL Server Connection page](/img/product_docs/accessanalyzer/12.0/install/application/sqlserver.webp)
 
 **Step 5 –** On the SQL Server Connection page, provide the required database information. Click
 **Next** to test the connection to the SQL Server. If there are no errors, the next wizard page
@@ -56,7 +56,7 @@ Center on the same server as Access Analyzer. The Database settings can be modif
 installation. See the [Database Page](/docs/accessinformationcenter/12.0/administration/configuration/database.md) topic for additional
 information.
 
-![AIC Setup Wizard Configure Web Server page](/img/product_docs/accessanalyzer/admin/action/survey/webserver.webp)
+![AIC Setup Wizard Configure Web Server page](/img/product_docs/accessanalyzer/12.0/admin/action/survey/webserver.webp)
 
 **Step 6 –** On the Configure Web Server page, select the URL protocol and port on which the
 application will be accessible.

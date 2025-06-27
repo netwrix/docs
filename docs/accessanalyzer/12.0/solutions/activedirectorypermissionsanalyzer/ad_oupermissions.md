@@ -3,7 +3,7 @@
 The AD_OUPermissions job reports on all Active Directory permissions and ownership applied to
 organizational unit (OU) objects within the targeted domains.
 
-![3.OUs Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/activedirectorypermissionsanalyzer/ousjobstree.webp)
+![3.OUs Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/ousjobstree.webp)
 
 The AD_OUPermissions job is located in the 3.OUs job group.
 
@@ -15,7 +15,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **3.OUs** > **AD_OUP
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_OUPermissions Job](/img/product_docs/accessanalyzer/solutions/activedirectorypermissionsanalyzer/oupermissionsanalysis.webp)
+![Analysis Tasks for the AD_OUPermissions Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/oupermissionsanalysis.webp)
 
 The default analysis tasks are:
 

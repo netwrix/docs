@@ -8,7 +8,7 @@ will be used throughout the solution set.
 
 The 0-AzureSQL_InstanceDiscovery job uses the SQL Data Collector for the following query:
 
-![Query Selection - Instance Discovery](/img/product_docs/accessanalyzer/solutions/databases/azuresql/collection/instancediscquery.webp)
+![Query Selection - Instance Discovery](/img/product_docs/accessanalyzer/12.0/solutions/databases/azuresql/collection/instancediscquery.webp)
 
 - Azure SQL Instance Discovery — Collects the list of Azure SQL Server Instances from target
   endpoints and populates the necessary instance connection information
@@ -21,7 +21,7 @@ Navigate to the **Databases** > **0.Collection** > **AzureSQL** > **0-AzureSQL_I
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/solutions/databases/azuresql/collection/instancediscanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/azuresql/collection/instancediscanalysis.webp)
 
 The default analysis tasks is:
 

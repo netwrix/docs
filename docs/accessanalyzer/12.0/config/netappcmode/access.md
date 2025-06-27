@@ -109,7 +109,7 @@ vserver cifs share access-control show -share c$
 
 The output will list each SVM's ACL for its c$ share. For example:
 
-![ONTAP CLI Command Output Example](/img/product_docs/accessanalyzer/config/netappcmode/accesscifsmethod2.webp)
+![ONTAP CLI Command Output Example](/img/product_docs/accessanalyzer/12.0/config/netappcmode/accesscifsmethod2.webp)
 
 If the desired ACE does not exist on an SVM's c$ share, then one can be created with the following
 command:

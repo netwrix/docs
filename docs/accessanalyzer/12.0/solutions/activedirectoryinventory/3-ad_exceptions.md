@@ -34,7 +34,7 @@ the security concerns within them can be modified.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the 3-AD_Exceptions Job](/img/product_docs/accessanalyzer/solutions/activedirectoryinventory/exceptionsanalysis.webp)
+![Analysis Tasks for the 3-AD_Exceptions Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectoryinventory/exceptionsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

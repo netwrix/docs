@@ -13,7 +13,7 @@ information on the prerequisites for this job.
 
 The 1-AAD_Scan job uses the AzureADInventory and Entra Data Collectors for the following queries:
 
-![Query Selection page](/img/product_docs/accessanalyzer/solutions/entraidinventory/scanqueryselection.webp)
+![Query Selection page](/img/product_docs/accessanalyzer/12.0/solutions/entraidinventory/scanqueryselection.webp)
 
 - AAD Inventory – Targets Microsoft Entra tenants to collect inventory data for user group objects
 
@@ -31,17 +31,17 @@ ID. Follow the steps to customize configurations.
 **Step 1 –** Navigate to the **.Entra ID Inventory** > **1-AAD_Scan** > **Configure** node and
 select **Queries**.
 
-![Query Properties button on Query Selection page](/img/product_docs/accessanalyzer/solutions/entraidinventory/scanqueryselectionproperties.webp)
+![Query Properties button on Query Selection page](/img/product_docs/accessanalyzer/12.0/solutions/entraidinventory/scanqueryselectionproperties.webp)
 
 **Step 2 –** In the Query Selection view, click on **Query Properties** to open the Query Properties
 window.
 
-![Query Properties window](/img/product_docs/accessanalyzer/solutions/entraidinventory/scanqueryproperties.webp)
+![Query Properties window](/img/product_docs/accessanalyzer/12.0/solutions/entraidinventory/scanqueryproperties.webp)
 
 **Step 3 –** Select the **Data Source** tab, and click **Configure** to open the Entra ID Inventory
 DC Wizard.
 
-![Entra ID Inventory DC Wizard Options page](/img/product_docs/accessanalyzer/solutions/activedirectoryinventory/scandcwizardoptions.webp)
+![Entra ID Inventory DC Wizard Options page](/img/product_docs/accessanalyzer/12.0/solutions/activedirectoryinventory/scandcwizardoptions.webp)
 
 **Step 4 –** On the Options page, select the different Scan Options as needed:
 
@@ -54,7 +54,7 @@ DC Wizard.
   objects. A message will alert users that deselecting this option will disable this function.
 - Collect Directory Audit Events – Collect Microsoft Entra ID audit logs
 
-![Entra ID Inventory DC Wizard Custom Attributes page](/img/product_docs/accessanalyzer/solutions/activedirectoryinventory/scandcwizardcustomattributes.webp)
+![Entra ID Inventory DC Wizard Custom Attributes page](/img/product_docs/accessanalyzer/12.0/solutions/activedirectoryinventory/scandcwizardcustomattributes.webp)
 
 **Step 5 –** On the Custom Attributes page, click **Add** or **Import** to add or import custom
 attributes.
@@ -81,7 +81,7 @@ Navigate to the **.Entra ID Inventory** > **1-AAD_Scan** > **Configure** node an
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for 1-AAD_Scan Job](/img/product_docs/accessanalyzer/solutions/entraidinventory/scananalysistasks.webp)
+![Analysis Tasks for 1-AAD_Scan Job](/img/product_docs/accessanalyzer/12.0/solutions/entraidinventory/scananalysistasks.webp)
 
 The default analysis tasks are:
 

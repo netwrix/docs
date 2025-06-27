@@ -6,7 +6,7 @@ Console. If Role Based Access has not been enabled, all accounts have access to 
 table is blank. See the [Role Based Access](/docs/accessanalyzer/12.0/admin/settings/access/rolebased/overview.md) topic
 for additional information.
 
-![Report Roles tab of Job Properties](/img/product_docs/accessanalyzer/admin/jobs/job/properties/reportroles.webp)
+![Report Roles tab of Job Properties](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/properties/reportroles.webp)
 
 On the Report Roles tab, report role inheritance cannot be broken. Access to reports is inherited
 from the global level to job groups to jobs to report configuration. All user roles configured at

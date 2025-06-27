@@ -3,7 +3,7 @@
 The Category page in the SQL Data Collector Wizard lists the available query categories, sub-divided
 by auditing focus.
 
-![SQL Data Collector Wizard Category Page](/img/product_docs/accessanalyzer/admin/datacollector/adinventory/category.webp)
+![SQL Data Collector Wizard Category Page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/category.webp)
 
 The query categories are:
 

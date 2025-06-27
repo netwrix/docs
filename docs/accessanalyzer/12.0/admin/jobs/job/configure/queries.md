@@ -7,7 +7,7 @@ selected data collector. See the
 [Permissions by Data Collector (Matrix)](/docs/accessanalyzer/12.0/admin/datacollector/permissionmatrix.md) topic for a
 chart with recommended permissions per data collector.
 
-![Query Selection page](/img/product_docs/accessanalyzer/admin/datacollector/queryselection.webp)
+![Query Selection page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/queryselection.webp)
 
 The Query Selection view lists all queries for the selected job. Though it is possible to have
 multiple queries in a single job, it is not usually recommended. The listed information includes:
@@ -30,7 +30,7 @@ multiple queries in a single job, it is not usually recommended. The listed info
 
 Add and configure native data tables through the Tables section in the Query Selection view.
 
-![Tables section of Query Selection page](/img/product_docs/accessanalyzer/admin/jobs/job/configure/queryselectiontables.webp)
+![Tables section of Query Selection page](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/configure/queryselectiontables.webp)
 
 The Tables section at the top has three options:
 
@@ -47,7 +47,7 @@ The Tables section at the top has three options:
 The Queries section is where the job’s preconfigured queries can be edited and where new queries can
 be added.
 
-![Queries section of Query Selection page](/img/product_docs/accessanalyzer/admin/jobs/job/configure/queryselectionqueries.webp)
+![Queries section of Query Selection page](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/configure/queryselectionqueries.webp)
 
 The Queries section has four options and includes the list of queries for the selected job:
 
@@ -69,7 +69,7 @@ The Queries section has four options and includes the list of queries for the se
 The Query Selection view also has its own right-click menu for taking action on the queries, tables,
 or the job.
 
-![Right-click menu on the Query Selection page](/img/product_docs/accessanalyzer/admin/jobs/job/configure/queryrightclickmenu.webp)
+![Right-click menu on the Query Selection page](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/configure/queryrightclickmenu.webp)
 
 The options in the Queries node right-click menu are:
 

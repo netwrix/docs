@@ -14,7 +14,7 @@ Data Collector to gather this information.
 
 For the File Shares and Open File Shares categories:
 
-![System Info Data Collector Wizard Options page for File Shares category](/img/product_docs/accessanalyzer/admin/datacollector/systeminfo/optionsfileshares.webp)
+![System Info Data Collector Wizard Options page for File Shares category](/img/product_docs/accessanalyzer/12.0/admin/datacollector/systeminfo/optionsfileshares.webp)
 
 Select from the following options to control the depth of processing and the amount of information
 to be returned by the query:
@@ -40,7 +40,7 @@ to be returned by the query:
 
 For the Network Interface (NIC) category:
 
-![System Info Data Collector Wizard Options page for NIC category](/img/product_docs/accessanalyzer/admin/datacollector/systeminfo/optionsnic.webp)
+![System Info Data Collector Wizard Options page for NIC category](/img/product_docs/accessanalyzer/12.0/admin/datacollector/systeminfo/optionsnic.webp)
 
 The configurable option is:
 

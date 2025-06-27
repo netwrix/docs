@@ -11,7 +11,7 @@ select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the UX_LocalGroups Job](/img/product_docs/accessanalyzer/solutions/unix/usersgroups/localgroupsanalysis.webp)
+![Analysis Tasks for the UX_LocalGroups Job](/img/product_docs/accessanalyzer/12.0/solutions/unix/usersgroups/localgroupsanalysis.webp)
 
 The default analysis tasks are:
 

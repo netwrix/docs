@@ -11,7 +11,7 @@ Activity** > **FS_StaleFileActivity** > **Configure** node and select **Analysis
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FS_StaleFileActivity Job](/img/product_docs/accessanalyzer/solutions/filesystem/activity/suspiciousactivity/stalefileactivityanalysis.webp)
+![Analysis Tasks for the FS_StaleFileActivity Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/activity/suspiciousactivity/stalefileactivityanalysis.webp)
 
 - Summarize Hourly Norms and Deviations – Creates the SA_FS_StaleFileActivity_Details table
   accessible under the job’s Results node

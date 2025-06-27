@@ -6,7 +6,7 @@ is a wizard page for the categories of:
 - Scan Active Directory Permissions
 - Scan Active Directory Audits
 
-![ADPermissions Data Collector wizard Options page](/img/product_docs/accessanalyzer/install/application/options.webp)
+![ADPermissions Data Collector wizard Options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
 
 The configurable options are:
 

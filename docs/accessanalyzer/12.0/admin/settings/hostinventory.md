@@ -4,7 +4,7 @@ The Host Inventory node is for selecting what information to collect from the ta
 host inventory process, for allocating console resources to the host inventory process, and for
 setting what out-of-the box host lists are visible in the Host Management node.
 
-![Host Inventory Settings page](/img/product_docs/accessanalyzer/admin/settings/hostinventory.webp)
+![Host Inventory Settings page](/img/product_docs/accessanalyzer/12.0/admin/settings/hostinventory.webp)
 
 In the Inventory Items section, there are four program property groups:
 
@@ -84,7 +84,7 @@ filter criteria. These lists correspond to the pre-configured solution jobs whic
 The **AD** Host List can be expanded and contains five sub-groups utilized by the Active Directory
 Solution and the Active Directory Inventory Solution:
 
-![AD Host List](/img/product_docs/accessanalyzer/admin/settings/ad.webp)
+![AD Host List](/img/product_docs/accessanalyzer/12.0/admin/settings/ad.webp)
 
 The sub-groups are:
 
@@ -98,7 +98,7 @@ The sub-groups are:
 
 The **ALL WINDOWS HOSTS** Host List is utilized primarily by the Windows Solution.
 
-![ALL WINDOWS HOSTS Host List](/img/product_docs/accessanalyzer/admin/settings/allwindowshosts.webp)
+![ALL WINDOWS HOSTS Host List](/img/product_docs/accessanalyzer/12.0/admin/settings/allwindowshosts.webp)
 
 There are no sub-groups for ALL WINDOWS HOSTS.
 
@@ -107,7 +107,7 @@ There are no sub-groups for ALL WINDOWS HOSTS.
 The **DG** Host List can be expanded and contains three sub-groups utilized by the Data Access
 Governance for File System Solution.
 
-![DG Host List](/img/product_docs/accessanalyzer/admin/settings/dg.webp)
+![DG Host List](/img/product_docs/accessanalyzer/12.0/admin/settings/dg.webp)
 
 The sub-groups are:
 
@@ -120,7 +120,7 @@ The sub-groups are:
 The **EXCHANGE** Host List can be expanded and contains six sub-groups utilized by the Exchange
 Solution. Four of these sub-groups can also be expand.
 
-![EXCHANGE Host List](/img/product_docs/accessanalyzer/admin/settings/exchange.webp)
+![EXCHANGE Host List](/img/product_docs/accessanalyzer/12.0/admin/settings/exchange.webp)
 
 The sub-groups are:
 
@@ -138,7 +138,7 @@ The sub-groups are:
 
 The **SQL SERVERS** Host List is utilized primarily by the SQL Solution.
 
-![SQL Servers Host List](/img/product_docs/accessanalyzer/admin/settings/sqlservers.webp)
+![SQL Servers Host List](/img/product_docs/accessanalyzer/12.0/admin/settings/sqlservers.webp)
 
 There are no sub-groups for SQL SERVERS.
 
@@ -147,7 +147,7 @@ There are no sub-groups for SQL SERVERS.
 The **Windows Server** Host List can be expanded and contains three sub-groups utilized by the
 Windows Solution.
 
-![Windows Server Host List](/img/product_docs/accessanalyzer/admin/settings/windowsserver.webp)
+![Windows Server Host List](/img/product_docs/accessanalyzer/12.0/admin/settings/windowsserver.webp)
 
 The sub-groups are:
 
@@ -160,7 +160,7 @@ The sub-groups are:
 The **Work Station** Host List can be expanded and contains one sub-group utilized by the Windows
 Solution.
 
-![Work Station Host List](/img/product_docs/accessanalyzer/admin/settings/workstation.webp)
+![Work Station Host List](/img/product_docs/accessanalyzer/12.0/admin/settings/workstation.webp)
 
 The single sub-group is:
 

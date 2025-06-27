@@ -10,7 +10,7 @@ Navigate to the **Active Directory** > **7.Certificate Authority** > **AD_Certif
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_CertificateAudit Job](/img/product_docs/accessanalyzer/solutions/activedirectory/certificateauthority/certificateauditanalysis.webp)
+![Analysis Tasks for the AD_CertificateAudit Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/certificateauthority/certificateauditanalysis.webp)
 
 The default analysis tasks are:
 

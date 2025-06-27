@@ -38,12 +38,12 @@ Password Vault, the following prerequisites must be completed:
         [Generate an application hash value](https://docs.cyberark.com/credential-providers/Latest/en/Content/CP%20and%20ASCP/Generating-Application-Hash-Value.htm) article
         for additional information.
 
-        ![Application Details page for the CyberArk Application](/img/product_docs/accessanalyzer/admin/settings/connection/applicationidhash.webp)
+        ![Application Details page for the CyberArk Application](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/applicationidhash.webp)
 
         Add the generated hash value in the Authentication tab of the Application Details page for
         the CyberArk Application.
 
-        ![Allowed Machines list for the  CyberArk application](/img/product_docs/accessanalyzer/admin/settings/connection/allowedmachines.webp)
+        ![Allowed Machines list for the  CyberArk application](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/allowedmachines.webp)
 
     - The machine name for the Access Analyzer console needs to be added on the Allowed Machines
       list for the CyberArk application
@@ -54,7 +54,7 @@ Password Vault, the following prerequisites must be completed:
   during the Secrets Manager installation, as well as the account created automatically as a result
   of the application creation.
 
-    ![Owners window for the Safe containing the credentials](/img/product_docs/accessanalyzer/admin/settings/connection/vaultownerswindow.webp)
+    ![Owners window for the Safe containing the credentials](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/vaultownerswindow.webp)
 
     - The account created during the AIM installation is under the naming convention
       `Prov_[COMPUTERNAME]`, where `COMPUTERNAME` is the name of the computer on which AIM is
@@ -77,7 +77,7 @@ Notepad.
 
 **CAUTION:** Ensure Access Analyzer is closed when modifying this file.
 
-![GlobalOptions.xml file in Notepad](/img/product_docs/accessanalyzer/admin/settings/connection/globaloptions.webp)
+![GlobalOptions.xml file in Notepad](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/globaloptions.webp)
 
 **Step 2 –** Find the `<CYBERARKAPPLICATION>` section of the `GlobalOptions.xml` file. Add the
 Application Id of the configured CyberArk application for the integration in the `<APPID>` tag. If
@@ -117,7 +117,7 @@ If the Connection Profile with a Local Windows Account credential using CyberArk
 used to target multiple hosts, then the local credential on each host needs to have the exact same
 username and password combination.
 
-![Connection view with CyberArk credentials](/img/product_docs/accessanalyzer/admin/settings/connection/usercredentials.webp)
+![Connection view with CyberArk credentials](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/usercredentials.webp)
 
 The Connection view displays `CyberArk` in the Source column of the User Credentials list for the
 selected Connection Profile.
@@ -127,7 +127,7 @@ selected Connection Profile.
 Match the User Credentials window settings in Access Analyzer with the privilege account properties
 in CyberArk. These values are case-sensitive, and must be an exact match.
 
-![User Credentials window for Active Directory Account](/img/product_docs/accessanalyzer/admin/settings/connection/usercredentialsad.webp)
+![User Credentials window for Active Directory Account](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/usercredentialsad.webp)
 
 The table below shows the values from your CyberArk configuration that the User Credentials window
 should be populated with:
@@ -145,7 +145,7 @@ Match the User Credentials window settings in Access Analyzer with the privilege
 in CyberArk. These values are case-sensitive, and must be an exact match. The Access Analyzer Domain
 value is `<HOST>` and the CyberArk Address property value is the server address.
 
-![User Credentials window for Local Windows Account](/img/product_docs/accessanalyzer/admin/settings/connection/usercredentialslocal.webp)
+![User Credentials window for Local Windows Account](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/usercredentialslocal.webp)
 
 The table below shows the values from your CyberArk configuration that the User Credentials window
 should be populated with:

@@ -3,7 +3,7 @@
 Use the Message Actions page to specify the action to take with the messages that meet the search
 criteria. It is a wizard page for the **Delete Mailbox Contents** operation.
 
-![New Mailbox Action Wizard Message Actions page](/img/product_docs/accessanalyzer/admin/action/mailbox/messageactions.webp)
+![New Mailbox Action Wizard Message Actions page](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/messageactions.webp)
 
 To select a message action, use the following options:
 
@@ -28,7 +28,7 @@ To select a message action, use the following options:
 Use the Options window to add an appended text. The Options window opens if **Append Text Options**
 is selected in the Edit Conditions box.
 
-![Options Window](/img/product_docs/accessanalyzer/admin/action/mailbox/optionswindow.webp)
+![Options Window](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/optionswindow.webp)
 
 To append text to the attachment or body, select the checkbox to enable editing and enter the
 desired text to append in the textbox.

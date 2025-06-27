@@ -27,7 +27,7 @@ The Host Management process consists of the following phases:
   Create and manage Custom host lists under the Host Management node. See the
   [Hosts Lists](/docs/accessanalyzer/12.0/admin/hostmanagement/lists.md) topic for additional information.
 
-![Host Management Node in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Host Management Node in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
 
 The nodes under the Host Management node are:
 

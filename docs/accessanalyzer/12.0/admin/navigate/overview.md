@@ -4,7 +4,7 @@ There are several options that can be used to navigate the Access Analyzer Conso
 covers basic Access Analyzer Console navigation, including menu options, buttons, and the different
 panes through which users can access Access Analyzer’s various functions and options.
 
-![Console Navigation Overview](/img/product_docs/accessanalyzer/admin/navigate/navigationoverview.webp)
+![Console Navigation Overview](/img/product_docs/accessanalyzer/12.0/admin/navigate/navigationoverview.webp)
 
 The primary sections of the Access Analyzer Console are:
 

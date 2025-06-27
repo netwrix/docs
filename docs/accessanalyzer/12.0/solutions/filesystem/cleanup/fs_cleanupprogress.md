@@ -11,7 +11,7 @@ select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FS_CleanupProgress Job](/img/product_docs/accessanalyzer/solutions/activedirectory/cleanup/cleanupprogressanalysis.webp)
+![Analysis Tasks for the FS_CleanupProgress Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/cleanup/cleanupprogressanalysis.webp)
 
 The following analysis tasks are selected by default:
 

@@ -18,7 +18,7 @@ data collection occurs.
 
 The SensitiveDataScan Job uses the SQL Data Collector for the following query:
 
-![Query Selection](/img/product_docs/accessanalyzer/solutions/databases/sql/collection/sqljobgroup9.webp)
+![Query Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/collection/sqljobgroup9.webp)
 
 - SensitiveDataScan – Collects Sensitive Data from targeting instances
     - (Optional) This query can be modified to target specific databases/instances. See the
@@ -41,7 +41,7 @@ Properties. The Query Properties window appears.
 **CAUTION:** Do not make changes to other wizard pages as they have been pre-configured for this
 job.
 
-![2sqlsensitivedatascanoptionspage](/img/product_docs/accessanalyzer/solutions/databases/sql/collection/2sqlsensitivedatascanoptionspage.webp)
+![2sqlsensitivedatascanoptionspage](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/collection/2sqlsensitivedatascanoptionspage.webp)
 
 **Step 4 –** Select the desired scan options. Navigate to the
 [SQL: Options](/docs/accessanalyzer/12.0/admin/datacollector/sql/options.md) page for additional information.
@@ -50,7 +50,7 @@ job.
 high-level table scan. Configuring these settings to increase the scope of the sensitive data scan
 may significantly increase scan time.
 
-![Criteria Page](/img/product_docs/accessanalyzer/solutions/databases/sql/collection/2sqlsensitivedatascanquerycriteriapage.webp)
+![Criteria Page](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/collection/2sqlsensitivedatascanquerycriteriapage.webp)
 
 **Step 5 –** To modify criteria, navigate to the
 [SQL: Criteria](/docs/accessanalyzer/12.0/admin/datacollector/sql/criteria.md) page. By default, the following
@@ -66,7 +66,7 @@ System Criteria have been selected:
     [Sensitive Data Criteria Editor](/docs/accessanalyzer/12.0/sensitivedatadiscovery/criteriaeditor/overview.md)
     topic for additional information.
 
-![Filter Page](/img/product_docs/accessanalyzer/solutions/databases/sql/collection/2sqlsensitivedatascanfilterpage.webp)
+![Filter Page](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/collection/2sqlsensitivedatascanfilterpage.webp)
 
 **Step 6 –** To query for specific database/instance, navigate to the
 [SQL: Filter](/docs/accessanalyzer/12.0/admin/datacollector/sql/filter.md) page. The query is configured by
@@ -90,7 +90,7 @@ select Analysis to view the analysis task.
 **CAUTION:** Do not modify or deselect the selected analysis task(s). The analysis task(s) are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/solutions/databases/sql/collection/sqljobgroup13.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/collection/sqljobgroup13.webp)
 
 The default analysis task is:
 

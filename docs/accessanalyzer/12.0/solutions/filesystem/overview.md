@@ -70,7 +70,7 @@ collection is conducted by the FileSystemAccess (FSAA) Data Collector. See the
 [Standard Reference Tables & Views for the FSAA Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/standardtables.md)
 section for database table information.
 
-![File System Solution](/img/product_docs/accessanalyzer/admin/runninginstances/overviewpage.webp)
+![File System Solution](/img/product_docs/accessanalyzer/12.0/admin/runninginstances/overviewpage.webp)
 
 Each type of auditing depends on specific jobs within the 0.Collection Job Group to collect the data
 and its corresponding analysis and reporting job groups. The Access Auditing components represent

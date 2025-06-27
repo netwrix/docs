@@ -3,7 +3,7 @@
 The 5.Sensitive Data Job Group is designed to provide insight into where sensitive data exists and
 who has access to said data across all targeted Oracle database servers.
 
-![Sensitive Data Job Group](/img/product_docs/accessanalyzer/solutions/databases/oracle/sensitivedata/jobgroup43.webp)
+![Sensitive Data Job Group](/img/product_docs/accessanalyzer/12.0/solutions/databases/oracle/sensitivedata/jobgroup43.webp)
 
 The jobs in the 5.Sensitive Data Job Group are:
 

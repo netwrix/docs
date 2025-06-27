@@ -10,7 +10,7 @@ The Collect Weak Passwords Job uses the PowerShell Data Collector for the follow
 
 **CAUTION:** Do not modify the query. The query is preconfigured for this job.
 
-![Query Selection](/img/product_docs/accessanalyzer/solutions/databases/sql/usersroles/sqljobgroup24.webp)
+![Query Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/usersroles/sqljobgroup24.webp)
 
 - Collect Weak Passwords – Locate the dictionary file containing the weak passwords and import the
   passwords
@@ -25,7 +25,7 @@ and select Analysis to view the analysis tasks.
 **CAUTION:** Most of these analysis tasks are preconfigured and should not be modified and or
 deselected unless otherwise specified.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/solutions/databases/sql/usersroles/sqlpasswordissuesanalysistasks.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/usersroles/sqlpasswordissuesanalysistasks.webp)
 
 The default analysis tasks are:
 

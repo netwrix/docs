@@ -2,7 +2,7 @@
 
 Follow the steps to delete a False Positive Exclusion Filter.
 
-![Delete Filter on False Positives tab](/img/product_docs/accessanalyzer/admin/settings/sensitivedata/exclusions/deletefilter.webp)
+![Delete Filter on False Positives tab](/img/product_docs/accessanalyzer/12.0/admin/settings/sensitivedata/exclusions/deletefilter.webp)
 
 **Step 1 –** Select a filter from the list and click **Delete Filter**.
 

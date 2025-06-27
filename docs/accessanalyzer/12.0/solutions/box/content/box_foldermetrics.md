@@ -14,7 +14,7 @@ Navigate to **Box** > **2.Content** > **Box_FolderMetrics** > **Configure** node
 
 **CAUTION:** Most of these analysis tasks should never be modified and never be deselected.
 
-![Analysis Tasks for the Box_FolderMetrics Job](/img/product_docs/accessanalyzer/solutions/box/content/foldermetricsanalysis.webp)
+![Analysis Tasks for the Box_FolderMetrics Job](/img/product_docs/accessanalyzer/12.0/solutions/box/content/foldermetricsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

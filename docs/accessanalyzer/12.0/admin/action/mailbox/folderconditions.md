@@ -4,7 +4,7 @@ Use the Folder Conditions page to customize folder search filter conditions. It 
 the **No, the query results do not contain a mailbox identification** column option on the Folder
 Identification page.
 
-![New Mailbox Action Wizard Folder Conditions page](/img/product_docs/accessanalyzer/admin/datacollector/ewsmailbox/filterwizard/folderconditions.webp)
+![New Mailbox Action Wizard Folder Conditions page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filterwizard/folderconditions.webp)
 
 Customize folder search conditions using the following options:
 
@@ -24,7 +24,7 @@ Use the Folder Type window to select which folder types to run the action agains
 window opens if **specific** in **with specific folder type** is selected in the Edit Conditions
 box. .
 
-![Folder Type Window](/img/product_docs/accessanalyzer/admin/datacollector/ewsmailbox/filterwizard/foldertypewindow.webp)
+![Folder Type Window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filterwizard/foldertypewindow.webp)
 
 Select the checkbox next to any desired folder type to include it in the search criteria, including:
 
@@ -42,7 +42,7 @@ Select the checkbox next to any desired folder type to include it in the search 
 Use the Search Terms window to select terms contained in folder names to run the action against.The
 Search Terms window opens if **search terms** is selected in the Edit Conditions box.
 
-![Search Terms Window](/img/product_docs/accessanalyzer/admin/datacollector/ewsmailbox/filterwizard/searchtermswindow.webp)
+![Search Terms Window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filterwizard/searchtermswindow.webp)
 
 Edit the search terms using the following options:
 
@@ -64,13 +64,13 @@ Use the Folder Inclusion/Exclusion window to select individual folders to add to
 action. The Folder Inclusion/Exclusion window opens if **specific** in **with specific folder(s) to
 include/exclude** is selected in the Edit Conditions box.
 
-![Folder Inclusion/Exclusion Window](/img/product_docs/accessanalyzer/admin/action/mailbox/folderinclusionexclusionwindow.webp)
+![Folder Inclusion/Exclusion Window](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/folderinclusionexclusionwindow.webp)
 
 Include/Exclude folders using the following options:
 
 - Click **Add** to populate a field to add a folder path
 
-    ![New field added on Folder Inclusion/Exclusion window](/img/product_docs/accessanalyzer/admin/action/mailbox/folderinclusionexclusionwindownew.webp)
+    ![New field added on Folder Inclusion/Exclusion window](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/folderinclusionexclusionwindownew.webp)
 
 - Click the ellipsis (**…**) or enter the path to the desired folder in the text box
 - Scope auto-populates with **This folder**. Click **This folder** to reveal a drop-down menu to

@@ -2,7 +2,7 @@
 
 Use the Change Owner Parameters page to select a trustee to be the new owner.
 
-![File System Action Module Wizard Change Owner Parameters page](/img/product_docs/accessanalyzer/admin/action/filesystem/parameters/changeowner.webp)
+![File System Action Module Wizard Change Owner Parameters page](/img/product_docs/accessanalyzer/12.0/admin/action/filesystem/parameters/changeowner.webp)
 
 Use the options to enter the trustees:
 

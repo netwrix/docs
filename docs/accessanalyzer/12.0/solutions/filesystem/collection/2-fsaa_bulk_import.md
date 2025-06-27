@@ -8,7 +8,7 @@ servers.
 The Bulk import query uses the FSAA Data Collector and has been preconfigured to use the File system
 access/permission auditing Bulk import category.
 
-![Query for the 2-FSAA Bulk Import Job](/img/product_docs/accessanalyzer/solutions/filesystem/collection/fsaabulkimportquery.webp)
+![Query for the 2-FSAA Bulk Import Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/collection/fsaabulkimportquery.webp)
 
 - Bulk import – Imports scan data into SQL Server
 
@@ -24,7 +24,7 @@ Import** > **Configure** node and selecting **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the 2-FSAA Bulk Import Job](/img/product_docs/accessanalyzer/solutions/filesystem/collection/fsaabulkimportanalysis.webp)
+![Analysis Tasks for the 2-FSAA Bulk Import Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/collection/fsaabulkimportanalysis.webp)
 
 The following analysis tasks are selected by default:
 

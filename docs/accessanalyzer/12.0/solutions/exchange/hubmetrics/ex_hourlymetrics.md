@@ -14,7 +14,7 @@ preconfigured for this job.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the EX_HourlyMetrics Job](/img/product_docs/accessanalyzer/solutions/exchange/hubmetrics/hourlymetricsanalysis.webp)
+![Analysis Tasks for the EX_HourlyMetrics Job](/img/product_docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/hourlymetricsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

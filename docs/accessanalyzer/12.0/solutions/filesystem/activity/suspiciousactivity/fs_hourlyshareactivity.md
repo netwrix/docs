@@ -11,7 +11,7 @@ Activity** > **FS_HourlyShareActivity** > **Configure** node and select **Analys
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FS_HourlyShareActivity Job](/img/product_docs/accessanalyzer/solutions/filesystem/activity/suspiciousactivity/hourlyshareactivityanalysis.webp)
+![Analysis Tasks for the FS_HourlyShareActivity Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/activity/suspiciousactivity/hourlyshareactivityanalysis.webp)
 
 The following analysis task is selected by default:
 

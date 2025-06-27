@@ -11,7 +11,7 @@ node and select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/solutions/databases/oracle/usersroles/jobgroup23.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/oracle/usersroles/jobgroup23.webp)
 
 The default analysis tasks are:
 

@@ -14,7 +14,7 @@ wizard. Click on an operation to view its associated Parameters page.
 - [Remove Tags](/docs/accessanalyzer/12.0/admin/action/filesystem/parameters/removetags.md)
 - [Change Owner](/docs/accessanalyzer/12.0/admin/action/filesystem/parameters/changeowner.md)
 
-![File System Action Module Wizard Change File Attributes Parameters page](/img/product_docs/accessanalyzer/admin/action/filesystem/changeattributes.webp)
+![File System Action Module Wizard Change File Attributes Parameters page](/img/product_docs/accessanalyzer/12.0/admin/action/filesystem/changeattributes.webp)
 
 The Navigation pane will list this as the Parameters page, but the title for each version indicates
 the type of parameter to be configured.

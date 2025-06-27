@@ -2,7 +2,7 @@
 
 Configure what applications, users, and groups have access to Access Analyzer using the Access node
 
-![Access Window](/img/product_docs/accessanalyzer/admin/settings/access/access.webp)
+![Access Window](/img/product_docs/accessanalyzer/12.0/admin/settings/access/access.webp)
 
 The first type of access that can be granted is Role Based Access for a user or group accessing the
 Access Analyzer Console. The second type of access grants access to an application accessing data

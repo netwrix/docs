@@ -12,7 +12,7 @@ select Analysis to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis task(s). The analysis task(s) are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/solutions/databases/sql/configuration/sqljobgroup44.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/configuration/sqljobgroup44.webp)
 
 The default analysis tasks are:
 

@@ -6,7 +6,7 @@ in the corresponding section under the job’s Configure node. A single job can 
 execute one or multiple tasks. See the [Configure Node](/docs/accessanalyzer/12.0/admin/jobs/job/configure/overview.md) topic for additional
 information.
 
-![Job structure in the Job's Tree](/img/product_docs/accessanalyzer/admin/jobs/job/jobnode.webp)
+![Job structure in the Job's Tree](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/jobnode.webp)
 
 **_RECOMMENDED:_** Use job group organization to spread these tasks across jobs. For example, create
 a job to run a query and a second job to run analysis or generate a report. Then use the job group
@@ -20,7 +20,7 @@ Once a job has been configured and is being executed, job progress can be viewed
 Instances** node on the Navigation pane. See the
 [Running Instances Node](/docs/accessanalyzer/12.0/admin/runninginstances/overview.md) topic for additional information.
 
-![Running Job](/img/product_docs/accessanalyzer/admin/jobs/job/jobrunning.webp)
+![Running Job](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/jobrunning.webp)
 
 At the bottom of the Access Analyzer Console, there is an indication of how many jobs are in queue
 and the **View Job Progress** link, which opens the Running Instances node.
@@ -38,7 +38,7 @@ profiles, job properties, SQL analysis parameters, and PowerShell parameters. D
 of job, the description page will appear different and display information specific to the job
 selected.
 
-| ![Pre-Configured Job Description page](/img/product_docs/accessanalyzer/admin/jobs/job/descriptionpagenewjob.webp) |
+| ![Pre-Configured Job Description page](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/descriptionpagenewjob.webp) |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Pre-Configured Job                                                                                                                                                  | User-Created Job                                                                                                                                           |
 
@@ -54,7 +54,7 @@ Pre-configured job description pages provide users with shortcuts and links to m
 that can be accessed under the **[Job Group]** > **[Job]** node in the Jobs Tree in the Navigation
 Pane.
 
-![Job Description page options](/img/product_docs/accessanalyzer/admin/jobs/job/descriptionpageoptions.webp)
+![Job Description page options](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/descriptionpageoptions.webp)
 
 The sections and options of the job description page are:
 
@@ -71,7 +71,7 @@ The sections and options of the job description page are:
 - Open Folder – Opens the job folder location with supporting files in the Windows Explorer
 - View Log – Opens the job’s log
 
-![Job Description page Overview section](/img/product_docs/accessanalyzer/admin/jobs/group/descriptionpageoverview.webp)
+![Job Description page Overview section](/img/product_docs/accessanalyzer/12.0/admin/jobs/group/descriptionpageoverview.webp)
 
 The Overview section provides summary information about the job, and includes the following
 information:
@@ -110,7 +110,7 @@ Job settings can be applied directly or inherited from a parent job group or eve
 Settings level. If settings are applied directly to a job, these are shown in the Overview section
 under the job description:
 
-![Job Inherited settings](/img/product_docs/accessanalyzer/admin/jobs/job/inheritedsettings.webp)
+![Job Inherited settings](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/inheritedsettings.webp)
 
 In the example above, the **Assigned 1 Host List** setting is applied directly to the job. Other
 settings are inherited from the parent job group. Clicking the **Show inherited settings** button
@@ -138,14 +138,14 @@ Description Page:
 **Step 1 –** Navigate to the **Jobs > [Job Group] > [Job]** node. If the job has customizable
 parameters, they will be located under Configuration in the job's Overview section.
 
-![Configuration section of Job description page](/img/product_docs/accessanalyzer/admin/jobs/job/descriptionpageconfigurationsection.webp)
+![Configuration section of Job description page](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/descriptionpageconfigurationsection.webp)
 
 **Step 2 –** Click on a parameter to open the Parameter Configuration window.
 
 **NOTE:** To view a tool-tip that contains information about the Variable Name and the Task Name
 that the parameter is associated with, hover the mouse over the parameter.
 
-![Parameter Configuration Window](/img/product_docs/accessanalyzer/admin/jobs/job/parameterconfigurationwindow.webp)
+![Parameter Configuration Window](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/parameterconfigurationwindow.webp)
 
 **Step 3 –** Configure the parameter in the Parameter Configuration window. Click **Save** to save
 changes and exit the window. Click **Cancel** to exit without saving.

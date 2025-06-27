@@ -5,7 +5,7 @@ and SSN. Contact the organization's Paycom administrator in order to generate th
 required for this job. The recommended approach is to copy the CSV file to the Access Analyzer
 Console for best import performance.
 
-![AnyID_Paycom Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/anyid/paycomjoblocation.webp)
+![AnyID_Paycom Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/anyid/paycomjoblocation.webp)
 
 The AnyID_Paycom job is located in the **Jobs** > **AnyID Connectors** job group.
 
@@ -61,7 +61,7 @@ Workflow
 
 The AnyID_Paycom job uses the PowerShell Data Collector for the query.
 
-![Queries for the AnyID_Paycom Job](/img/product_docs/accessanalyzer/solutions/anyid/paycomqueries.webp)
+![Queries for the AnyID_Paycom Job](/img/product_docs/accessanalyzer/12.0/solutions/anyid/paycomqueries.webp)
 
 The queries are:
 
@@ -82,7 +82,7 @@ Properties**. The Query Properties window opens.
 **Step 3 –** Select the **Data Source** tab, and click **Configure**. The PowerShell Data Collector
 Wizard opens.
 
-![Edit Query Page](/img/product_docs/accessanalyzer/solutions/anyid/paycomqueryeditquery.webp)
+![Edit Query Page](/img/product_docs/accessanalyzer/12.0/solutions/anyid/paycomqueryeditquery.webp)
 
 **Step 4 –** Navigate to the Edit Query page. Click the **Parameters** tab on the right-hand side of
 the page to expand the Parameters window. See the
@@ -125,7 +125,7 @@ Navigate to the **Jobs** > **AnyID Connectors** > **AnyID_Paycom** > **Configur
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AnyID_Paycom Job](/img/product_docs/accessanalyzer/solutions/anyid/paycomanalyses.webp)
+![Analysis Tasks for the AnyID_Paycom Job](/img/product_docs/accessanalyzer/12.0/solutions/anyid/paycomanalyses.webp)
 
 The default analysis tasks are:
 

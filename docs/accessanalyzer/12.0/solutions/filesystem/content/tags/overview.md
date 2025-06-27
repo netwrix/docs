@@ -3,7 +3,7 @@
 The Tags job group is designed to report on content classification information from targeted file
 servers.
 
-![Tags Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/filesystem/content/tags/tagsjobstree.webp)
+![Tags Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/content/tags/tagsjobstree.webp)
 
 The Tags job group is comprised of:
 

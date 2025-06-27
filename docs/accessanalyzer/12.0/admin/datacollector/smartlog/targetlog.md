@@ -10,7 +10,7 @@ See the [SMARTLog: Target Log for Windows Event Log Type](/docs/accessanalyzer/
 [SMARTLog: Target Log for File Detection Log Type](/docs/accessanalyzer/12.0/admin/datacollector/smartlog/targetlogtype/filedetectionlog.md) topics for
 information on the other versions of this wizard page.
 
-![SMART Log DC Wizard Target Log page](/img/product_docs/accessanalyzer/admin/datacollector/smartlog/targetlog.webp)
+![SMART Log DC Wizard Target Log page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/smartlog/targetlog.webp)
 
 The configurable options are:
 

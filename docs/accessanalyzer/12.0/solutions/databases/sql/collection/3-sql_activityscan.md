@@ -14,7 +14,7 @@ Special Dependency
 
 The ActivityScan Job uses the SQL Data Collector for the following query:
 
-![Query Selection](/img/product_docs/accessanalyzer/solutions/databases/sql/collection/sqljobgroup14.webp)
+![Query Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/collection/sqljobgroup14.webp)
 
 - ActivityScan – Collects activity from targeted instances
     - (Optional) This query can be modified to target specific databases/instances. See the
@@ -37,7 +37,7 @@ appears.
 **CAUTION:** Do not make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 
-![Options Page](/img/product_docs/accessanalyzer/solutions/databases/sql/collection/3sqlactivityscanoptionspage.webp)
+![Options Page](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/collection/3sqlactivityscanoptionspage.webp)
 
 **Step 4 –** To modify scan options, navigate to the
 [SQL Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/sql/overview.md) page. Select the desired scan
@@ -48,7 +48,7 @@ options. The query is preconfigured with the following default settings:
 - Collect audits by name – Finds available audits in the database
 - Collect audits by path – Collects audits by a specified path
 
-![Filter Page](/img/product_docs/accessanalyzer/solutions/databases/sql/collection/3sqlactivityscanfilterpage.webp)
+![Filter Page](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/collection/3sqlactivityscanfilterpage.webp)
 
 **Step 5 –** To scope the query for specific database/instance, navigate to the
 [SQL Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/sql/overview.md) page. The query is configured
@@ -74,7 +74,7 @@ Analysis to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis task(s). The analysis task(s) are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/solutions/databases/sql/collection/sqljobgroup17.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/collection/sqljobgroup17.webp)
 
 The default analysis tasks are:
 

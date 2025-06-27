@@ -5,7 +5,7 @@ native integration may not be available, or an export is the best option.
 
 **_RECOMMENDED:_** Copy the CSV file to the Access Analyzer Console for the best import performance.
 
-![AnyID_CSV Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/anyid/csvjoblocation.webp)
+![AnyID_CSV Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/anyid/csvjoblocation.webp)
 
 The AnyID_CSV job is located in the **Jobs** > **AnyID Connectors** job group.
 
@@ -62,7 +62,7 @@ Workflow
 
 The AnyID_CSV query uses the PowerShell Data Collector.
 
-![Queries for the AnyID_CSV Job](/img/product_docs/accessanalyzer/solutions/anyid/csvqueries.webp)
+![Queries for the AnyID_CSV Job](/img/product_docs/accessanalyzer/12.0/solutions/anyid/csvqueries.webp)
 
 The query is:
 
@@ -73,7 +73,7 @@ The query is:
 
 Follow the steps to configure the AnyID_CSV query.
 
-![ The name of the source repository parameter on the job Overview page](/img/product_docs/accessanalyzer/solutions/anyid/csvoverviewpage.webp)
+![ The name of the source repository parameter on the job Overview page](/img/product_docs/accessanalyzer/12.0/solutions/anyid/csvoverviewpage.webp)
 
 **Step 1 –** Navigate to and select the **AnyID Connectors** > **AnyID_CSV** node. In the
 Configuration section of the job's Overview page, click the configure button for the **The name of
@@ -89,7 +89,7 @@ Properties**. The Query Properties window opens.
 **Step 4 –** Select the **Data Source** tab, and click **Configure**. The PowerShell Data Collector
 Wizard opens.
 
-![Edit Query Page](/img/product_docs/accessanalyzer/solutions/anyid/csvqueryeditquery.webp)
+![Edit Query Page](/img/product_docs/accessanalyzer/12.0/solutions/anyid/csvqueryeditquery.webp)
 
 **Step 5 –** Navigate to the Edit Query page. Click the **Parameters** tab on the right-hand side of
 the page to expand the Parameters window. Configure the following attributes:
@@ -129,7 +129,7 @@ Navigate to the **Jobs** > **AnyID Connectors** > **AnyID_CSV** > **Configure**
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AnyID_CSV Job](/img/product_docs/accessanalyzer/solutions/anyid/csvanalyses.webp)
+![Analysis Tasks for the AnyID_CSV Job](/img/product_docs/accessanalyzer/12.0/solutions/anyid/csvanalyses.webp)
 
 The default analysis tasks are:
 

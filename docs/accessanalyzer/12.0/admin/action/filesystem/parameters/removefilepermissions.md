@@ -3,7 +3,7 @@
 Use the Remove File Permissions Parameters page to specify whose file permissions the action
 removes.
 
-![File System Action Module Wizard Remove File Permissions Parameters page](/img/product_docs/accessanalyzer/admin/action/filesystem/parameters/removefilepermissions.webp)
+![File System Action Module Wizard Remove File Permissions Parameters page](/img/product_docs/accessanalyzer/12.0/admin/action/filesystem/parameters/removefilepermissions.webp)
 
 Use the options to enter the Permissions:
 

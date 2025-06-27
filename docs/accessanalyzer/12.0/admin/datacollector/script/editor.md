@@ -3,7 +3,7 @@
 The VBScript Editor window provides the means to add a script. The window is ideal for editing small
 scripts and for pasting larger scripts from external scripting tools.
 
-![VBScript Editor window](/img/product_docs/accessanalyzer/admin/datacollector/script/vbscripteditor.webp)
+![VBScript Editor window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/script/vbscripteditor.webp)
 
 The options in the VBScript Editor are:
 

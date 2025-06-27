@@ -9,7 +9,7 @@ The Chart Configuration tab is split into three sections, label column selection
 configuration, and a chart preview. Use this tab to configure the columns from the data source to be
 shown in the chart.
 
-![Chart Configuration wizard Configure page](/img/product_docs/accessanalyzer/admin/analysis/configure.webp)
+![Chart Configuration wizard Configure page](/img/product_docs/accessanalyzer/12.0/admin/analysis/configure.webp)
 
 The left side shows all the columns from the data source table that can be used for the label axis.
 For example, the label column is the x-axis on a line chart and the y-axis on a bar chart. Select
@@ -58,7 +58,7 @@ The Add new series and Edit series windows allow you to configure the data serie
 appropriate window is opened by clicking **Add** to create a new series, or by selecting an existing
 series and clicking **Edit**.
 
-![Add new series window](/img/product_docs/accessanalyzer/admin/report/chartwizard/addnewseries.webp)
+![Add new series window](/img/product_docs/accessanalyzer/12.0/admin/report/chartwizard/addnewseries.webp)
 
 These windows contain the following options for the data series:
 
@@ -91,7 +91,7 @@ window without saving.
 
 At the bottom of the page a preview of the currently configured chart is displayed.
 
-![Chart preview](/img/product_docs/accessanalyzer/admin/report/chartwizard/configurechartpreview.webp)
+![Chart preview](/img/product_docs/accessanalyzer/12.0/admin/report/chartwizard/configurechartpreview.webp)
 
 If the configuration is incomplete or invalid, a message with instructions to fix the configuration
 is displayed in the preview window instead. The following are possible messages and scenarios that
@@ -107,7 +107,7 @@ would cause them:
 
 The Data Preview tab allows you to see and customize the data that is to be shown in the chart.
 
-![Data Preview tab](/img/product_docs/accessanalyzer/admin/report/chartwizard/configuredatapreview.webp)
+![Data Preview tab](/img/product_docs/accessanalyzer/12.0/admin/report/chartwizard/configuredatapreview.webp)
 
 The buttons above the column names provide you the following options for configuring the table
 arrangement:

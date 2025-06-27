@@ -2,7 +2,7 @@
 
 The Options page provides format options for returned data. It is a wizard page for all categories.
 
-![Active Directory Data Collector Wizard Options page](/img/product_docs/accessanalyzer/install/application/options.webp)
+![Active Directory Data Collector Wizard Options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
 
 - How to format collected results – Select from the following options:
 

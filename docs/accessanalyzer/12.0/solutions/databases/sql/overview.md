@@ -39,7 +39,7 @@ The Database Solution license includes all supported database platforms supporte
 Analyzer. Additionally, Sensitive Data Discovery enables the solution to search database content for
 sensitive data.
 
-![SQL Job Group](/img/product_docs/accessanalyzer/solutions/databases/sql/sqljobgroup.webp)
+![SQL Job Group](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/sqljobgroup.webp)
 
 The SQL Job Group includes:
 

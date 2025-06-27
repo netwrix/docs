@@ -12,7 +12,7 @@ The SG_AccountPrivileges job uses the PowerShell Data Collector for the followin
 
 **CAUTION:** The query is preconfigured for this job. Never modify the query.
 
-![Queries for the SG_AccountPrivileges Job](/img/product_docs/accessanalyzer/solutions/windows/privilegedaccounts/logonrights/accountprivilegesquery.webp)
+![Queries for the SG_AccountPrivileges Job](/img/product_docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/logonrights/accountprivilegesquery.webp)
 
 The query for the SG_AccountPrivileges job is:
 
@@ -26,7 +26,7 @@ Navigate to the **Windows** > **Privileged Accounts** > **Logon Rights** >
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the SG_AccountPrivileges Job](/img/product_docs/accessanalyzer/solutions/windows/privilegedaccounts/logonrights/accountprivilegesanalysis.webp)
+![Analysis Tasks for the SG_AccountPrivileges Job](/img/product_docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/logonrights/accountprivilegesanalysis.webp)
 
 The default analysis task is:
 

@@ -11,7 +11,7 @@ following queries:
 
 **CAUTION:** Do not modify the queries. The queries are preconfigured for this job.
 
-![Query Selection](/img/product_docs/accessanalyzer/solutions/activedirectory/domains/domaininfoquery.webp)
+![Query Selection](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/domains/domaininfoquery.webp)
 
 The queries for this job are:
 
@@ -32,7 +32,7 @@ Navigate to the **Active Directory > 5.Domains > AD_DomainInfo > Configure** nod
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/solutions/activedirectory/domains/domaininfoanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/domains/domaininfoanalysis.webp)
 
 The default analysis tasks are:
 

@@ -11,7 +11,7 @@ select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AWS_BrokenInheritance Job](/img/product_docs/accessanalyzer/solutions/filesystem/brokeninheritanceanalysis.webp)
+![Analysis Tasks for the AWS_BrokenInheritance Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/brokeninheritanceanalysis.webp)
 
 The following analysis tasks are selected by default:
 

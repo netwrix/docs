@@ -11,7 +11,7 @@ Activity** > **FS_UserShareActivity** > **Configure** node and select **Analysis
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_UserShareActivity Job](/img/product_docs/accessanalyzer/solutions/filesystem/activity/suspiciousactivity/usershareactivityanalysis.webp)
+![Analysis Tasks for the FS_UserShareActivity Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/activity/suspiciousactivity/usershareactivityanalysis.webp)
 
 - Track Latest Activity Per User Per Share – Creates the SA_FS_UserShareActivity_LatestActivity
   table accessible under the job’s Results node

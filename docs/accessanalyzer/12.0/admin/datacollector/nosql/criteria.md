@@ -3,7 +3,7 @@
 The Criteria page is where the criteria to be used for discovering sensitive data is configured. It
 is a wizard page for the category of Sensitive Data Collection.
 
-![NoSQL Data Collector Wizard Criteria page](/img/product_docs/accessanalyzer/admin/datacollector/ewsmailbox/criteria.webp)
+![NoSQL Data Collector Wizard Criteria page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/criteria.webp)
 
 The options on the Criteria page are:
 

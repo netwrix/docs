@@ -26,7 +26,7 @@ Instant Job Wizard. See the [Instant Job Wizard](/docs/accessanalyzer/12.0/admin
 additional information. Once it has been installed in the Jobs tree, navigate to the solution:
 **Jobs** > **Windows**.
 
-![Windows Solution in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Windows Solution in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
 
 Each job group works independently from the other job groups. All of the job groups have their own
 collections that are used to analyze and report on data specific to the groups function. The
@@ -37,7 +37,7 @@ SG_SecurityAssessment job summarizes security related results from the Windows s
 The Windows Solution provides both high-level and granular views into any sized organization’s
 infrastructure.
 
-![Windows Solution Overview page](/img/product_docs/accessanalyzer/admin/runninginstances/overviewpage.webp)
+![Windows Solution Overview page](/img/product_docs/accessanalyzer/12.0/admin/runninginstances/overviewpage.webp)
 
 The jobs and job groups in the Windows Solution are:
 

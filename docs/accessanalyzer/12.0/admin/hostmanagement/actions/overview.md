@@ -3,7 +3,7 @@
 The Activities pane available at the Host Management node and at the individual host list nodes
 provides the tools needed to manage hosts and host lists.
 
-| ![Activities pane in Host Management node](/img/product_docs/accessanalyzer/admin/hostmanagement/actions/activitiesindividualhost.webp) |
+| ![Activities pane in Host Management node](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/activitiesindividualhost.webp) |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Host Management Node                                                                                                                                                              | Individual Host List Nodes                                                                                                                                                             |
 

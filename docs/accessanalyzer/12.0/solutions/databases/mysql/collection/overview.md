@@ -4,7 +4,7 @@ The MySQL Solution Collection group is designed to collect high level summary in
 targeted MySQL Servers. This information is used by other jobs in the MySQL Solution Set for further
 analysis and producing respective reports.
 
-![0.Collection Job Group for MySQL](/img/product_docs/accessanalyzer/solutions/databases/postgresql/collection/0.collectionjobgroup.webp)
+![0.Collection Job Group for MySQL](/img/product_docs/accessanalyzer/12.0/solutions/databases/postgresql/collection/0.collectionjobgroup.webp)
 
 The jobs in the 0.Collection Job Group are:
 

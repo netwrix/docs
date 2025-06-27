@@ -24,12 +24,12 @@ Enterprise Auditor) SharePoint Agent Setup Wizard.
 **Step 3 –** On the End-User License Agreement page, select the **I accept the terms in the License
 Agreement** checkbox and click **Next**.
 
-![SharePoint Agent Setup Wizard Destination Folder page](/img/product_docs/accessanalyzer/install/filesystemproxy/destination.webp)
+![SharePoint Agent Setup Wizard Destination Folder page](/img/product_docs/accessanalyzer/12.0/install/filesystemproxy/destination.webp)
 
 **Step 4 –** On the Destination Folder page, click **Next** to install to the default folder or
 click **Change** to select a different location.
 
-![SharePoint Agent Setup Wizard Configure Service Security page](/img/product_docs/accessanalyzer/install/filesystemproxy/configureservice.webp)
+![SharePoint Agent Setup Wizard Configure Service Security page](/img/product_docs/accessanalyzer/12.0/install/filesystemproxy/configureservice.webp)
 
 **Step 5 –** On the Configure Service Security page, enter the **User Name** and **Password** for
 the SharePoint Service Account. Click **Next**.

@@ -10,7 +10,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **8.Domains** >
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_CertificateTemplates Job](/img/product_docs/accessanalyzer/solutions/activedirectorypermissionsanalyzer/domains/certificatetemplatesanalysis.webp)
+![Analysis Tasks for the AD_CertificateTemplates Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/certificatetemplatesanalysis.webp)
 
 The default analysis tasks are:
 

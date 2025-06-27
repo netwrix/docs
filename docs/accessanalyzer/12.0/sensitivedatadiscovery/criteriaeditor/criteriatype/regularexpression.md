@@ -4,7 +4,7 @@ Regular Expression criteria are a set of pattern matching rules that provide a c
 means for matching strings of text. This criteria type can be used to verify a series of numbers as
 potentially valid, for example credit card numbers.
 
-![Regular Expression window](/img/product_docs/accessanalyzer/sensitivedatadiscovery/criteriaeditor/criteriatype/regularexpression.webp)
+![Regular Expression window](/img/product_docs/accessanalyzer/12.0/sensitivedatadiscovery/criteriaeditor/criteriatype/regularexpression.webp)
 
 The options on the Regular Expression window are:
 

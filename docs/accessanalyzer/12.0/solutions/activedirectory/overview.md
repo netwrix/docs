@@ -26,7 +26,7 @@ the Access Analyzer Instant Job Wizard. See the
 [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for additional information.
 Once installed into the Jobs tree, navigate to the solution: **Jobs** > **Active Directory**.
 
-![Active Directory Solution](/img/product_docs/accessanalyzer/solutions/activedirectory/solutionoverview.webp)
+![Active Directory Solution](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/solutionoverview.webp)
 
 Each job group works independently from the other job groups. Some job groups run analysis tasks
 against the analyzed data collected by the .Active Directory Inventory Solution to generate reports,
@@ -44,7 +44,7 @@ information every administrator needs for Active Directory configuration, operat
 troubleshooting, analyzing effective permissions, and tracking who is making what changes within an
 organization.
 
-![Active Directory Job Group](/img/product_docs/accessanalyzer/solutions/activedirectory/adsolutionjobgroup.webp)
+![Active Directory Job Group](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/adsolutionjobgroup.webp)
 
 The following job groups comprise the Active Directory solution:
 

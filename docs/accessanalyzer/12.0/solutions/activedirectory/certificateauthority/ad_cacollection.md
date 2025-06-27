@@ -14,7 +14,7 @@ controller** host list.
 The AD_CACollection job uses the PowerShell data collector to collect details about Certificate
 Authorities, templates, and requests.
 
-![Queries for the AD_CACollection Job](/img/product_docs/accessanalyzer/solutions/activedirectory/certificateauthority/cacollectionqueries.webp)
+![Queries for the AD_CACollection Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/certificateauthority/cacollectionqueries.webp)
 
 The queries for the job are:
 
@@ -35,7 +35,7 @@ Navigate to the **Active Directory** > **7.Certificate Authority** > **Collectio
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_CACollection Job](/img/product_docs/accessanalyzer/solutions/activedirectory/certificateauthority/cacollectionanalysis.webp)
+![Analysis Tasks for the AD_CACollection Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/certificateauthority/cacollectionanalysis.webp)
 
 The default analysis tasks are:
 

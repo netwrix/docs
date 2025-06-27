@@ -2,7 +2,7 @@
 
 Use the Parameters page to specify the file tags the action adds.
 
-![File System Action Module Wizard Add Tags Parameters page](/img/product_docs/accessanalyzer/admin/action/filesystem/parameters/addtags.webp)
+![File System Action Module Wizard Add Tags Parameters page](/img/product_docs/accessanalyzer/12.0/admin/action/filesystem/parameters/addtags.webp)
 
 Use the fields provided to select tags from the drop-down lists and populate the Tag field, or edit
 the field manually. The Preview field updates based on the contents of the Tag field.
@@ -25,7 +25,7 @@ tags.
 - Click **Add** to add the tag field to the list
 - Click **Remove** to remove the tag field from the list
 
-![Boldon James Column on Add Tags Parameters page](/img/product_docs/accessanalyzer/admin/action/filesystem/parameters/addremovetagsboldonjames.webp)
+![Boldon James Column on Add Tags Parameters page](/img/product_docs/accessanalyzer/12.0/admin/action/filesystem/parameters/addremovetagsboldonjames.webp)
 
 - Type - Select which type of tag to add. The two types of tags that can be added are:
 

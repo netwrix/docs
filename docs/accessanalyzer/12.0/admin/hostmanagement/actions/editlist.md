@@ -3,7 +3,7 @@
 Use the **Edit List** option to edit properties for the selected host list. This option is available
 only from an individual host list node.
 
-![Edit List option on Activities pane](/img/product_docs/accessanalyzer/admin/hostmanagement/actions/editlist.webp)
+![Edit List option on Activities pane](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/editlist.webp)
 
 Select the host list to edit and click **Edit List**. The Host List Wizard opens for the selected
 host list. If the selected host list is a custom static host list, the wizard opens on the Manual

@@ -3,7 +3,7 @@
 The Configuration Job Group is designed to provide insight into details about the
 PostgreSQL environment and potential vulnerabilities related to instance configuration settings.
 
-![Configuration Job Group - PostgreSQL](/img/product_docs/accessanalyzer/solutions/databases/postgresql/configurationjobgroup.webp)
+![Configuration Job Group - PostgreSQL](/img/product_docs/accessanalyzer/12.0/solutions/databases/postgresql/configurationjobgroup.webp)
 
 The job in the Configuration Job Groups is:
 
@@ -17,7 +17,7 @@ node and select Analysis to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/solutions/databases/postgresql/pssqldatabasesizinganalysistasks.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/postgresql/pssqldatabasesizinganalysistasks.webp)
 
 The default analysis tasks are:
 

@@ -32,7 +32,7 @@ Double click the **PPE Configuration** desktop shortcut.
 
 **Step 3 –** Open the **Messages** tab.
 
-![Set up messages](/img/product_docs/accessanalyzer/admin/jobs/messages.webp)
+![Set up messages](/img/product_docs/accessanalyzer/12.0/admin/jobs/messages.webp)
 
 **Step 4 –** Select the message language from the drop-down list. You can set messages for multiple
 languages. You do not have to create a Password Policy Enforcer policy for each language. To set

@@ -2,7 +2,7 @@
 
 Use this page to specify information about the web server hosting the survey website.
 
-![Survey Action Module Wizard Web Server page](/img/product_docs/accessanalyzer/admin/action/survey/webserver.webp)
+![Survey Action Module Wizard Web Server page](/img/product_docs/accessanalyzer/12.0/admin/action/survey/webserver.webp)
 
 The configurable options are:
 

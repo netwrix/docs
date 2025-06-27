@@ -3,7 +3,7 @@
 The Chart Format page of the Chart Configuration wizard is where you can select the chart type and
 configure additional format options.
 
-![Chart Configuration wizard Chart Format page](/img/product_docs/accessanalyzer/admin/report/chartwizard/chartformat.webp)
+![Chart Configuration wizard Chart Format page](/img/product_docs/accessanalyzer/12.0/admin/report/chartwizard/chartformat.webp)
 
 The Chart Format page has the following options:
 

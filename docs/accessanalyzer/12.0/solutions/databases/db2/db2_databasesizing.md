@@ -2,7 +2,7 @@
 
 The Db2_DatabaseSizing job provides details on overall database sizes.
 
-![Configuration > Db2_DatabaseSizing Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/databases/db2/configurationjobstree.webp)
+![Configuration > Db2_DatabaseSizing Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/databases/db2/configurationjobstree.webp)
 
 This job is located in the Configuration job group.
 
@@ -14,7 +14,7 @@ Navigate to the **Jobs** > **Databases** > **Db2** > **Configuration** > **Db2_
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Db2_DatabaseSizing Job](/img/product_docs/accessanalyzer/solutions/databases/db2/databasesizinganalysis.webp)
+![Analysis Tasks for the Db2_DatabaseSizing Job](/img/product_docs/accessanalyzer/12.0/solutions/databases/db2/databasesizinganalysis.webp)
 
 The default analysis tasks are:
 

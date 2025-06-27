@@ -8,7 +8,7 @@ If encryption methods have been configured for Kerberos on the Access Analyzer s
 service account running the Access Analyzer Web Server service, then users will not be able to
 log-in to the Web Console and will receive the below error message.
 
-![Kerberos Error Message](/img/product_docs/accessanalyzer/install/application/reports/kerberoserrormessage.webp)
+![Kerberos Error Message](/img/product_docs/accessanalyzer/12.0/install/application/reports/kerberoserrormessage.webp)
 
 When this occurs, the following error will be logged:
 
@@ -29,14 +29,14 @@ Follow the steps to configure a Local Security Policy to allow Kerberos.
 
 **Step 1 –** Open the Local Security Policy window.
 
-![Local Security Policy Window](/img/product_docs/accessanalyzer/install/application/reports/localsecuritypolicywindow.webp)
+![Local Security Policy Window](/img/product_docs/accessanalyzer/12.0/install/application/reports/localsecuritypolicywindow.webp)
 
 **Step 2 –** From the Security Settings list, navigate to **Local Policies** > **Security Options**.
 
 **Step 3 –** Right-click the **Network Security: Configure encryption types allows for Kerberos**
 policy > click **Properties**.
 
-![Configure Local Security Setting Window](/img/product_docs/accessanalyzer/install/application/reports/configurelocalsecuritysettingwindow.webp)
+![Configure Local Security Setting Window](/img/product_docs/accessanalyzer/12.0/install/application/reports/configurelocalsecuritysettingwindow.webp)
 
 **Step 4 –** Configure necessary settings by checking each applicable box.
 
@@ -53,7 +53,7 @@ Follow the steps to configure a Local Group Security Policy to allow Kerberos.
 
 **Step 1 –** Open the Local Group Policy Editor window.
 
-![Local Group Policy Editor window](/img/product_docs/accessanalyzer/install/application/reports/localgrouppolicywindow.webp)
+![Local Group Policy Editor window](/img/product_docs/accessanalyzer/12.0/install/application/reports/localgrouppolicywindow.webp)
 
 **Step 2 –** From the Local Computer Policy list, navigate to **Computer Configuration** > **Windows
 Settings** > **Security Settings** > **Local Policies** > **Security Options** folder .
@@ -61,7 +61,7 @@ Settings** > **Security Settings** > **Local Policies** > **Security Options*
 **Step 3 –** Right-click the **Network Security: Configure encryption types allows for Kerberos**
 policy, then click **Properties**.
 
-![Configure Local Security Setting Window](/img/product_docs/accessanalyzer/install/application/reports/configurelocalsecuritysettingwindow.webp)
+![Configure Local Security Setting Window](/img/product_docs/accessanalyzer/12.0/install/application/reports/configurelocalsecuritysettingwindow.webp)
 
 **Step 4 –** Configure necessary settings by checking each applicable box.
 
@@ -83,13 +83,13 @@ reflect the configuration options selected in the two sections above. See the
 
 **Step 1 –** Open the Active Directory Users and Computers window.
 
-![Active Directory Users and Computers Window](/img/product_docs/accessanalyzer/install/application/reports/activedirectoryusersandcomputerswindows.webp)
+![Active Directory Users and Computers Window](/img/product_docs/accessanalyzer/12.0/install/application/reports/activedirectoryusersandcomputerswindows.webp)
 
 **Step 2 –** Click and expand the Domain from the left-hand menu and click **Users**.
 
 **Step 3 –** Right-click a **User** from the list of available users, then click **Properties**.
 
-![User Properties Window](/img/product_docs/accessanalyzer/install/application/reports/userproperteswindow.webp)
+![User Properties Window](/img/product_docs/accessanalyzer/12.0/install/application/reports/userproperteswindow.webp)
 
 **Step 4 –** Click the **Account** tab.
 

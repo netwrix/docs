@@ -27,7 +27,7 @@ This will enable Access Analyzer to discover all the SQL databases present in th
 
 Follow the steps below to create an Azure SQL custom role at the subscription level.
 
-![Azure Portal - Azure Services](/img/product_docs/accessanalyzer/requirements/target/config/azuresqlperm_customrolecreation_1.webp)
+![Azure Portal - Azure Services](/img/product_docs/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_1.webp)
 
 **Step 1 –** Sign in to Azure. Navigate to the Azure Services section and click **Subscriptions**.
 This will navigate you to the Pay-As-You-Go page of the Azure Portal.
@@ -35,7 +35,7 @@ This will navigate you to the Pay-As-You-Go page of the Azure Portal.
 **Step 2 –** Locate and click the **Access Control (IAM)** view option blade from the available
 subscriptions in the left-hand menu.
 
-![Azure Portal - Pay as you Go - Access Control (IAM)](/img/product_docs/accessanalyzer/requirements/target/config/azuresqlperm_customrolecreation_2.webp)
+![Azure Portal - Pay as you Go - Access Control (IAM)](/img/product_docs/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_2.webp)
 
 **Step 3 –** Click **Add** > Add **Custom Role**.
 
@@ -105,7 +105,7 @@ example below) and save it to a local directory.
 }
 ```
 
-![Azure SQL Configuration - Create a Custom Role section](/img/product_docs/accessanalyzer/requirements/target/config/azuresqlperm_customrolecreation_3.webp)
+![Azure SQL Configuration - Create a Custom Role section](/img/product_docs/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_3.webp)
 
 **Step 5 –** Once created, click **Start from JSON** in the Azure portal and select the JSON file.
 Once that file is chosen, the Review + Create button should be enabled.
@@ -115,7 +115,7 @@ Once the JSON file is opened, the Custom Role Name and Description boxes will be
 automatically. The name and description of the custom role can be customized if required in this
 step.
 
-![Azure SQL Configuration - Create a Cusotm Role window](/img/product_docs/accessanalyzer/requirements/target/config/azuresqlperm_customrolecreation_4.webp)
+![Azure SQL Configuration - Create a Cusotm Role window](/img/product_docs/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_4.webp)
 
 **Step 6 –** Click Create. This action will save and finalize a custom role entitled Access Analyzer
 Azure SQL Role.
@@ -132,11 +132,11 @@ Follow the steps below to create an Azure SQL Application Registration in the Az
 
 **Step 1 –** In the Azure portal under Azure Services, click the **App Registration** icon.
 
-![AzureSQL - App Registrations - New Registration](/img/product_docs/accessanalyzer/requirements/target/config/azuresqlperm_customrolecreation_5.webp)
+![AzureSQL - App Registrations - New Registration](/img/product_docs/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_5.webp)
 
 **Step 2 –** Click **New Registration** in the Register an application blade.
 
-![Azure SQL - Register an Application](/img/product_docs/accessanalyzer/requirements/target/config/azuresqlperm_customrolecreation_6.webp)
+![Azure SQL - Register an Application](/img/product_docs/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_6.webp)
 
 **Step 3 –** Enter a **Name** for the application and select an appropriate option from the
 Supported account types options.
@@ -148,7 +148,7 @@ been registered, the App registration overview blade will appear. Take note of t
 **NOTE:** The _Application (client) ID_ is required to create a Connection Profile within the Access
 Analyzer.
 
-![Azure SQL - Register and App - Application ID](/img/product_docs/accessanalyzer/requirements/target/config/azuresqlperm_customrolecreation_8.webp)
+![Azure SQL - Register and App - Application ID](/img/product_docs/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_8.webp)
 
 **Step 5 –** Click the **Certificates & secrets** blade in the left-hand menu. Click **New Client
 secret**.
@@ -163,7 +163,7 @@ frame is reached (within 24 months, for example).
 
 **NOTE:** The Value key on this paged will be used to create the Access Analyzer connection profile.
 
-![Azure SQL - Access Control (IAM) page](/img/product_docs/accessanalyzer/requirements/target/config/azuresqlperm_customrolecreation_11z.webp)
+![Azure SQL - Access Control (IAM) page](/img/product_docs/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_11z.webp)
 
 ## Add a Role Assignment
 
@@ -173,7 +173,7 @@ Analyzer Azure SQL application.
 **Step 1 –** Navigate to the Subscriptions blade and click the **Access Control (IAM)** option.
 Click the **Add** drop down > Click **Add role assignment**.
 
-![Azure SQL - Add a Role Assignment](/img/product_docs/accessanalyzer/requirements/target/config/azuresqlperm_customrolecreation_13z.webp)
+![Azure SQL - Add a Role Assignment](/img/product_docs/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_13z.webp)
 
 **Step 2 –** Search for and click the recently created custom role from the Role drop down. See
 [Create a StealthAUDIT Custom Role](#create-a-stealthaudit-custom-role) for steps required to create
@@ -184,7 +184,7 @@ drop down. See [Register an Azure SQL Application](#register-an-azure-sql-applic
 required to register an Azure SQL application in the Azure portal. The registered application will
 be visible in the Selected members window. Click **Save** when finished.
 
-![Azure SQL - Add a role assignment window](/img/product_docs/accessanalyzer/requirements/target/config/azuresqlperm_customrolecreation_14z.webp)
+![Azure SQL - Add a role assignment window](/img/product_docs/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_14z.webp)
 
 **Step 4 –** Search for and select the SQL Server Contributor role in the Role drop down.
 
@@ -193,7 +193,7 @@ drop down. See [Register an Azure SQL Application](#register-an-azure-sql-applic
 required to register an Azure SQL application in the Azure portal. The registered application will
 be visible in the Selected members window. Click **Save** when finished.
 
-![Azure SQL - Access Control (IAM) window](/img/product_docs/accessanalyzer/requirements/target/config/azuresqlperm_customrolecreation_16z.webp)
+![Azure SQL - Access Control (IAM) window](/img/product_docs/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_16z.webp)
 
 **Step 6 –** Navigate to the **Subscriptions** blade. Click **Access Control (IAM)**.
 

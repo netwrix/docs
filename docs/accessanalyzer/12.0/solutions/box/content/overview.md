@@ -4,7 +4,7 @@ The 2.Content Job Group analyzes and summarizes the content of the targeted Box 
 highlighting users with the most content as well as what type of content exists. This information
 can also be used to identify stale content that can be removed or archived to reduce risk.
 
-![2.Content Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![2.Content Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
 
 The 2.Content Job Group is comprised of:
 

@@ -11,7 +11,7 @@ View the analysis tasks by navigating to the **Exchange** > **4. Mailboxes** > *
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the EX_AdminGroups Job](/img/product_docs/accessanalyzer/solutions/exchange/mailboxes/permissions/admingroupsanalysis.webp)
+![Analysis Tasks for the EX_AdminGroups Job](/img/product_docs/accessanalyzer/12.0/solutions/exchange/mailboxes/permissions/admingroupsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

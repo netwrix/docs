@@ -2,7 +2,7 @@
 
 The Options page provides format options for returned data.
 
-![Password Security Data Collection Wizard Scan options page](/img/product_docs/accessanalyzer/install/application/options.webp)
+![Password Security Data Collection Wizard Scan options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
 
 The configurable scan options are:
 

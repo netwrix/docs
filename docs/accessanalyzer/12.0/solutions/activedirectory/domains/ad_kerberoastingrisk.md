@@ -39,7 +39,7 @@ and select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_KerberoastingRisk Job](/img/product_docs/accessanalyzer/solutions/activedirectory/domains/kerberoastingriskanalysis.webp)
+![Analysis Tasks for the AD_KerberoastingRisk Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/domains/kerberoastingriskanalysis.webp)
 
 The default analysis tasks are:
 

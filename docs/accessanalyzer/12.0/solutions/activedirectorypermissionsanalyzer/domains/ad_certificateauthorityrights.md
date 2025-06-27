@@ -12,7 +12,7 @@ tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_CertificateAuthorityRights Job](/img/product_docs/accessanalyzer/solutions/activedirectorypermissionsanalyzer/domains/certificateauthorityrightsanalysis.webp)
+![Analysis Tasks for the AD_CertificateAuthorityRights Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/certificateauthorityrightsanalysis.webp)
 
 The default analysis tasks are:
 

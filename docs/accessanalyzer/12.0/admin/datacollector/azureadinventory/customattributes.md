@@ -3,7 +3,7 @@
 Use the Custom Attributes wizard page to define custom attributes that will be used in the Microsoft
 Entra ID scan.
 
-![Entra ID Inventory Data Collector Wizard Custom Attributes page](/img/product_docs/accessanalyzer/admin/datacollector/adinventory/customattributes.webp)
+![Entra ID Inventory Data Collector Wizard Custom Attributes page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/customattributes.webp)
 
 Configuration options for Custom Attributes include:
 
@@ -35,7 +35,7 @@ custom attributes to be gathered by the scan. Use the **Add** button to open the
 Input custom attributes from Microsoft Entra ID environments using the Custom Attribute pop-up
 window.
 
-![Custom Attribute Window](/img/product_docs/accessanalyzer/admin/datacollector/azureadinventory/customattributewindow.webp)
+![Custom Attribute Window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/azureadinventory/customattributewindow.webp)
 
 The options on the Custom Attributes window are:
 
@@ -61,7 +61,7 @@ steps to use this window:
 **Step 1 –** On the Custom Attributes page of the Entra Inventory DC wizard, click **Import**. The
 Custom Attributes Import Wizard opens.
 
-![Custom Attributes Import Wizard](/img/product_docs/accessanalyzer/admin/datacollector/azureadinventory/customattributesimportwizard.webp)
+![Custom Attributes Import Wizard](/img/product_docs/accessanalyzer/12.0/admin/datacollector/azureadinventory/customattributesimportwizard.webp)
 
 **Step 2 –** On the Connection page, enter the Tenant Name of the instance of Microsoft Entra ID to
 be targeted, and then select the method of supplying credentials for the specified tenant instance:
@@ -86,7 +86,7 @@ available. Click **Next** to navigate to them.
 
 |                                                                                                                                                                                                |                                                                                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![customattributesimportwizardschema](/img/product_docs/accessanalyzer/admin/datacollector/azureadinventory/customattributesimportwizardapplication.webp) |
+| ![customattributesimportwizardschema](/img/product_docs/accessanalyzer/12.0/admin/datacollector/azureadinventory/customattributesimportwizardapplication.webp) |
 | Schema Extended Attributes page                                                                                                                                                                | Application Extended Attributes page                                                                                                                                                                     |
 
 **Step 4 –** On the Schema and Application Attributes pages, the wizard populates with the available

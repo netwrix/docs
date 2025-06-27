@@ -9,7 +9,7 @@ The AD_SiteRights Job uses the ADPermissions Data Collector for the following qu
 
 **CAUTION:** Do not modify the query. The query is preconfigured for this job.
 
-![Query for the AD_SiteRights Job](/img/product_docs/accessanalyzer/solutions/activedirectorypermissionsanalyzer/collection/siterightsquery.webp)
+![Query for the AD_SiteRights Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/collection/siterightsquery.webp)
 
 - Site Access Permissions – Returns site permissions
 
@@ -24,7 +24,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **0.Collection** > *
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_SiteRights Job](/img/product_docs/accessanalyzer/solutions/activedirectorypermissionsanalyzer/collection/userrightsanalysis.webp)
+![Analysis Tasks for the AD_SiteRights Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/collection/userrightsanalysis.webp)
 
 The default analysis tasks are:
 

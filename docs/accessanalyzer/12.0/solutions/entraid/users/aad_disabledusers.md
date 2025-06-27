@@ -11,7 +11,7 @@ and select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AAD_DisabledUsers Job](/img/product_docs/accessanalyzer/solutions/entraid/users/disabledusersanalysis.webp)
+![Analysis Tasks for the AAD_DisabledUsers Job](/img/product_docs/accessanalyzer/12.0/solutions/entraid/users/disabledusersanalysis.webp)
 
 The default analysis tasks are:
 

@@ -4,7 +4,7 @@ The 0.Collection Job Group is designed to collect high level summary information
 Microsoft SQL Servers. This information is used by other jobs in the SQL solution set for further
 analysis and for producing reports.
 
-![0.Collection Job Group - SQL](/img/product_docs/accessanalyzer/solutions/databases/sql/collection/sqljobgroup1.webp)
+![0.Collection Job Group - SQL](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/collection/sqljobgroup1.webp)
 
 The jobs in the 0.Collection Job Group are:
 

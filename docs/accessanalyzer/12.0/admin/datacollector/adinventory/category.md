@@ -2,7 +2,7 @@
 
 Use the category page to identify which Active Directory task to perform.
 
-![Active Directory Inventory DC Wizard Category page](/img/product_docs/accessanalyzer/admin/datacollector/adinventory/category.webp)
+![Active Directory Inventory DC Wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/category.webp)
 
 The categories include the following tasks:
 

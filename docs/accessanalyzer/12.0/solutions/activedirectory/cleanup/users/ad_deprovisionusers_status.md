@@ -10,7 +10,7 @@ Navigate to the **Active Directory** > **Cleanup** > **2.Users** > **AD_Deprovis
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the AD_DeprovisionUsers_Status Job](/img/product_docs/accessanalyzer/solutions/activedirectory/cleanup/users/deprovisionusersstatusanalysis.webp)
+![Analysis Tasks for the AD_DeprovisionUsers_Status Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/cleanup/users/deprovisionusersstatusanalysis.webp)
 
 The default analysis task is:
 

@@ -2,7 +2,7 @@
 
 The Performance tab provides options that can be used to improve job performance and runtime.
 
-![Performance tab of Job Properties](/img/product_docs/accessanalyzer/admin/jobs/job/properties/performance.webp)
+![Performance tab of Job Properties](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/properties/performance.webp)
 
 Adjust the following settings by sliding the needle up and down the line:
 

@@ -11,7 +11,7 @@ Navigate to the **AWS** > **6.S3 Permissions** > **AWS_OpenBuckets** > **Configu
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Task for the AWS_OpenBuckets Job](/img/product_docs/accessanalyzer/solutions/aws/s3permissions/openbucketsanalysis.webp)
+![Analysis Task for the AWS_OpenBuckets Job](/img/product_docs/accessanalyzer/12.0/solutions/aws/s3permissions/openbucketsanalysis.webp)
 
 The following analysis task is selected by default:
 

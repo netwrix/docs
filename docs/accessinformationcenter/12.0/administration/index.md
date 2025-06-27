@@ -77,7 +77,7 @@ for information on where different types of users are directed after login.
 
 ## Web Console Login Page
 
-![Web Console Login page](/img/product_docs/accessanalyzer/install/application/reports/webconsolelogin.webp)
+![Web Console Login page](/img/product_docs/accessanalyzer/12.0/install/application/reports/webconsolelogin.webp)
 
 The Access Analyzer Web Console login page displays the Netwrix Access Analyzer (formerly Enterprise
 Auditor) logo at the top and the browser tab is named Netwrix Access Analyzer (formerly Enterprise

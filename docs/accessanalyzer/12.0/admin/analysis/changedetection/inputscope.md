@@ -2,7 +2,7 @@
 
 Use the Input Scope page to specify the input scope of the data source.
 
-![Change Detection Data Analysis Module wizard Input Scope page](/img/product_docs/accessanalyzer/admin/analysis/sqlviewcreation/inputscope.webp)
+![Change Detection Data Analysis Module wizard Input Scope page](/img/product_docs/accessanalyzer/12.0/admin/analysis/sqlviewcreation/inputscope.webp)
 
 Identify the scope of the data source from the following options:
 

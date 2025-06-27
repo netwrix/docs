@@ -8,7 +8,7 @@ The SG_LocalMembership job uses the UsersGroups Data Collector for the following
 
 **CAUTION:** The query is preconfigured for this job. Never modify the query.
 
-![Queries for the SG_LocalUsers Job](/img/product_docs/accessanalyzer/solutions/windows/privilegedaccounts/logonrights/collection/localusersquery.webp)
+![Queries for the SG_LocalUsers Job](/img/product_docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/logonrights/collection/localusersquery.webp)
 
 The query for the SG_LocalUsers job is:
 
@@ -22,7 +22,7 @@ Navigate to the **Windows** > **Privileged Accounts** > **Logon Rights** > **Col
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the SG_LocalUsers Job](/img/product_docs/accessanalyzer/solutions/unix/usersgroups/localusersanalysis.webp)
+![Analysis Tasks for the SG_LocalUsers Job](/img/product_docs/accessanalyzer/12.0/solutions/unix/usersgroups/localusersanalysis.webp)
 
 The default analysis tasks is:
 

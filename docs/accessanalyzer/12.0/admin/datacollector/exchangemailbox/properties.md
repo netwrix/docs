@@ -9,7 +9,7 @@ Properties can be selected individually or you can use the Select All, Clear All
 buttons. All selected properties will be gathered. Click **Message Classes** to open the Message
 classes filters window.
 
-![Message classes filters window](/img/product_docs/accessanalyzer/admin/datacollector/exchangepublicfolder/messageclassesfilterswindow.webp)
+![Message classes filters window](/img/product_docs/accessanalyzer/12.0/admin/datacollector/exchangepublicfolder/messageclassesfilterswindow.webp)
 
 The wildcard (`*`) returns all message class filters. Enter the name of the class filter and click
 **Add** to add it to the list. **Delete** will remove the selected class filter from the list. The

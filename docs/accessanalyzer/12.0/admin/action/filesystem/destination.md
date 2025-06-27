@@ -9,7 +9,7 @@ The Destination page is available only if the following operations are selected:
 Define the destination location of the files that will be copied, moved, or renamed by building the
 destination path using the Fields and Environment Variables options as needed.
 
-![File System Action Module Wizard Destination page](/img/product_docs/accessanalyzer/install/filesystemproxy/destination.webp)
+![File System Action Module Wizard Destination page](/img/product_docs/accessanalyzer/12.0/install/filesystemproxy/destination.webp)
 
 Use the fields provided to select destination items and hosts from the drop-down lists and populate
 the Destination field, or edit the field manually. The Preview field updates based on the contents

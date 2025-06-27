@@ -62,7 +62,7 @@ table, and then click **Save**.
 
 Once configured they should show under Additional claims as below:
 
-![Claims configured](/img/product_docs/accessanalyzer/install/application/reports/entraidssoclaims.webp)
+![Claims configured](/img/product_docs/accessanalyzer/12.0/install/application/reports/entraidssoclaims.webp)
 
 **Step 7 –** In the **Manage** > **Users and groups** section for your application, add any required
 users or groups to give permission to access the application.

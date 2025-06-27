@@ -18,7 +18,7 @@ Sensitive Data Criteria must be reconfigured after an upgrade. See the
 [Configure Global Sensitive Data Settings](solutionconsiderations.md#configure-global-sensitive-data-settings)
 topic for additional information.
 
-![Windows Control Panel Uninstall or change a program window](/img/product_docs/accessanalyzer/install/application/controlpaneluninstall.webp)
+![Windows Control Panel Uninstall or change a program window](/img/product_docs/accessanalyzer/12.0/install/application/controlpaneluninstall.webp)
 
 **Step 1 –** From Programs and Features (**Control Panel** > **Programs** > **Programs and
 Features**), uninstall the previous version of Access Analyzer. Jobs, application configuration
@@ -99,7 +99,7 @@ Analyzer icon on the desktop.
 **NOTE:** When Access Analyzer12.0 is installed on a server where a previous version of Access
 Analyzer had been installed, the Version Selection page of the Configuration Wizard will not appear.
 
-![Configuration Wizard Solution Set Files page with conflicts](/img/product_docs/accessanalyzer/install/application/upgrade/solutionsetfiles.webp)
+![Configuration Wizard Solution Set Files page with conflicts](/img/product_docs/accessanalyzer/12.0/install/application/upgrade/solutionsetfiles.webp)
 
 **Step 3 –** On the Solution Set Files page, only upgrade conflicts are displayed by default.
 
@@ -114,7 +114,7 @@ Additional options include:
 - Advanced – Opens the Advanced Upgrade Options window to view or modify the Upgrade option per
   solution
 
-![View conflicts in the Changes window](/img/product_docs/accessanalyzer/install/application/upgrade/changes.webp)
+![View conflicts in the Changes window](/img/product_docs/accessanalyzer/12.0/install/application/upgrade/changes.webp)
 
 **Step 5 –** (Optional) Conflicts can be resolved on the Changes window, which is opened by the
 **View conflicts** button. Remember, if the conflict is resolved prior to a solution upgrade, then
@@ -123,7 +123,7 @@ the customization will not be archived. To resolve a conflict, select it from th
 
 **Step 6 –** When the Upgrade options have been set as desired. Click **Next**.
 
-![Configuration wizard Options page](/img/product_docs/accessanalyzer/install/application/options.webp)
+![Configuration wizard Options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
 
 **Step 7 –** On the Options page, select whether to send usage statistics to Netwrix to help us
 improve our product. After the Usage Statistics option is set as desired, click **Next** to
@@ -142,7 +142,7 @@ continue.
 
 - If cleared, no usage statistics are collected or sent to Netwrix
 
-![Configuration Wizard Progress page](/img/product_docs/accessanalyzer/install/application/upgrade/progress.webp)
+![Configuration Wizard Progress page](/img/product_docs/accessanalyzer/12.0/install/application/upgrade/progress.webp)
 
 **Step 8 –** The Upgrade Progress page opens and displays the progress of the upgrade actions. When
 the action completes, click **Finish**.

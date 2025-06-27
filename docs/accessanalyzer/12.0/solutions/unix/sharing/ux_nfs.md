@@ -11,7 +11,7 @@ to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the UX_NFS Job](/img/product_docs/accessanalyzer/solutions/unix/sharing/nfsanalysis.webp)
+![Analysis Tasks for the UX_NFS Job](/img/product_docs/accessanalyzer/12.0/solutions/unix/sharing/nfsanalysis.webp)
 
 The default analysis tasks are:
 

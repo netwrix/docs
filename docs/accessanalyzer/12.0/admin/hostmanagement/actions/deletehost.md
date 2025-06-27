@@ -10,7 +10,7 @@ Follow the steps to delete a host from the Host Management node.
 **Step 1 –** In the Host Management node, select the host in the data grid and click **Delete
 Host(s)** on the Activities pane.
 
-![Confirm dialog box](/img/product_docs/accessanalyzer/admin/hostmanagement/actions/confirmdeletehost.webp)
+![Confirm dialog box](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/confirmdeletehost.webp)
 
 **CAUTION:** A deletion from the host master table at the Host Management node cannot be undone, as
 it deletes it from the host management database tables. It also removes the host from any host list
@@ -28,7 +28,7 @@ Follow the steps to delete a host from an individual host list.
 **Step 1 –** In the host list, select the host in the data grid and click **Delete Host(s)** on the
 Activities pane.
 
-![Confirm dialog box](/img/product_docs/accessanalyzer/admin/hostmanagement/actions/confirmdeletehost.webp)
+![Confirm dialog box](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/confirmdeletehost.webp)
 
 **Step 2 –** A dialog box asks for confirmation of the action. Click **OK** to proceed with the
 deletion.
@@ -36,7 +36,7 @@ deletion.
 Access Analyzer checks to see if the host exists in any other static host lists. If so, the deletion
 is limited to removing the selected host from the current host list.
 
-![Confirm deletion from master host table dialog box](/img/product_docs/accessanalyzer/admin/hostmanagement/actions/confirmdeletehostmaster.webp)
+![Confirm deletion from master host table dialog box](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/confirmdeletehostmaster.webp)
 
 **CAUTION:** A deletion from the host master table cannot be undone, as it deletes it from the host
 management database tables.

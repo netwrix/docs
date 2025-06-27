@@ -3,7 +3,7 @@
 Use the Source Table Selection page to choose the type of table to use as the data source for
 notifications.
 
-![Notification Data Analysis Module wizard Source Table Selection page](/img/product_docs/accessanalyzer/admin/analysis/notification/tabletype.webp)
+![Notification Data Analysis Module wizard Source Table Selection page](/img/product_docs/accessanalyzer/12.0/admin/analysis/notification/tabletype.webp)
 
 The following options are available:
 

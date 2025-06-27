@@ -2,11 +2,11 @@
 
 Follow the steps to add a False Positive Exclusion Filter.
 
-![Add Filter on False Positives tab](/img/product_docs/accessanalyzer/admin/settings/sensitivedata/exclusions/addfilter.webp)
+![Add Filter on False Positives tab](/img/product_docs/accessanalyzer/12.0/admin/settings/sensitivedata/exclusions/addfilter.webp)
 
 **Step 1 –** Click **Add Filter** to open the Add False Positive Exclusion Filter window.
 
-![Add False Positive Exclusion Filter window](/img/product_docs/accessanalyzer/admin/settings/sensitivedata/exclusions/addexclusionfilterwindow.webp)
+![Add False Positive Exclusion Filter window](/img/product_docs/accessanalyzer/12.0/admin/settings/sensitivedata/exclusions/addexclusionfilterwindow.webp)
 
 **Step 2 –** Enter the **File Path** according to the type of format for the repository.
 

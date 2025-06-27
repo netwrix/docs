@@ -3,7 +3,7 @@
 The 3.Groups job group provides details on AWS IAM group membership, orphaned groups (those with no
 policy assigned to them), sensitive security group membership, and stale groups.
 
-![3.Groups Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![3.Groups Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
 
 The 3.Groups job group is comprised of:
 

@@ -218,7 +218,7 @@ specific reports at:
   See the [Publish Security Page](/docs/accessanalyzer/12.0/admin/report/wizard/publishsecurity.md) topic for additional
   information.
 
-| ![Job Group Level](/img/product_docs/accessanalyzer/admin/settings/access/rolebased/reportviewerreport.webp) |
+| ![Job Group Level](/img/product_docs/accessanalyzer/12.0/admin/settings/access/rolebased/reportviewerreport.webp) |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Job Group Level                                                                                                                                             | Job Level                                                                                                                                        | Report Configuration Level                                                                                                                                           |
 

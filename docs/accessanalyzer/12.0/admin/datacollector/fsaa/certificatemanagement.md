@@ -14,7 +14,7 @@ the user's certificate store that is running the FSAA Data Collector or Applet s
 administrative access is required for the computer's certificate store. When certificates are
 generated using the Automatic option below, they are stored in the user’s certificate store.
 
-![Certificate Exchange Options section of the Applet Settings page](/img/product_docs/accessanalyzer/admin/datacollector/fsaa/appletsettingscertificateexchangeoptions.webp)
+![Certificate Exchange Options section of the Applet Settings page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettingscertificateexchangeoptions.webp)
 
 There are three Certificate Exchange Options provided by the FSAA Data collector:
 

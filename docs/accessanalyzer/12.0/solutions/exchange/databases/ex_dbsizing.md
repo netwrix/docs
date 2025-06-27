@@ -11,7 +11,7 @@ View the analysis tasks by navigating to the **Exchange** > **3. Databases** > *
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the EX_DBSizing Job](/img/product_docs/accessanalyzer/solutions/exchange/databases/dbsizinganalysis.webp)
+![Analysis Tasks for the EX_DBSizing Job](/img/product_docs/accessanalyzer/12.0/solutions/exchange/databases/dbsizinganalysis.webp)
 
 The following analysis tasks are selected by default:
 

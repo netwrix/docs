@@ -6,7 +6,7 @@ window.
 **NOTE:** SQL Authentication credentials are used in the Connection Profiles for the SQL, MySQL, and
 PostgreSQL Solutions.
 
-![User Credentials - SQL Authentication](/img/product_docs/accessanalyzer/admin/settings/connection/profile/sqlauthentication.webp)
+![User Credentials - SQL Authentication](/img/product_docs/accessanalyzer/12.0/admin/settings/connection/profile/sqlauthentication.webp)
 
 The required credentials for SQL Authentication are:
 

@@ -11,7 +11,7 @@ View the analysis tasks by navigating to the **Exchange** > **4. Mailboxes** > *
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the EX_MailboxLogons Job](/img/product_docs/accessanalyzer/solutions/exchange/mailboxes/logons/mailboxlogonsanalysis.webp)
+![Analysis Tasks for the EX_MailboxLogons Job](/img/product_docs/accessanalyzer/12.0/solutions/exchange/mailboxes/logons/mailboxlogonsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

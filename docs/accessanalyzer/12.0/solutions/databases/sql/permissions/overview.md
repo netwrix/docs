@@ -3,7 +3,7 @@
 The 3.Permissions Job Group provides insight into permissions at the instance, database, and object
 level across all targeted SQL and Azure SQL servers.
 
-![sqljobgroup36](/img/product_docs/accessanalyzer/solutions/databases/sql/permissions/sqljobgroup36.webp)
+![sqljobgroup36](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/permissions/sqljobgroup36.webp)
 
 The jobs in the 3.Permissions Job Group are:
 

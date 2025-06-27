@@ -7,7 +7,7 @@ the categories of:
 - Public Folder permissions
 - Sensitive Data
 
-![EWS Public Folder Data Collector Wizard Filter page](/img/product_docs/accessanalyzer/admin/datacollector/ewsmailbox/filter.webp)
+![EWS Public Folder Data Collector Wizard Filter page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filter.webp)
 
 All folders and attachments are scanned by default. Scope the scan for specific folders and
 attachments:
@@ -29,7 +29,7 @@ and selecting the desired folders.
 
 Follow the steps to filter the scan by selecting public folders from a list.
 
-![Choose folder to include window on Filter settings page](/img/product_docs/accessanalyzer/admin/datacollector/ewspublicfolder/filterpublicfolders.webp)
+![Choose folder to include window on Filter settings page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewspublicfolder/filterpublicfolders.webp)
 
 **Step 1 –** Click the **+** button to the right of the Include Folders or Exclude Folders box to
 open the Choose folders to include or Choose folders to exclude window.

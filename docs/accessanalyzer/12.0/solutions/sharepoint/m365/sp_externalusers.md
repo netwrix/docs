@@ -11,7 +11,7 @@ select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SP_ExternalUsers Job](/img/product_docs/accessanalyzer/solutions/sharepoint/m365/externalusersanalysis.webp)
+![Analysis Tasks for the SP_ExternalUsers Job](/img/product_docs/accessanalyzer/12.0/solutions/sharepoint/m365/externalusersanalysis.webp)
 
 The default analysis task is:
 

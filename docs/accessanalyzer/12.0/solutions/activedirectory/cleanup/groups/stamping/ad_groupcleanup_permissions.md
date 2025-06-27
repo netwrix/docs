@@ -12,7 +12,7 @@ tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_GroupCleanup_Permissions Job](/img/product_docs/accessanalyzer/solutions/activedirectory/cleanup/groups/stamping/groupcleanuppermissionsanalysis.webp)
+![Analysis Tasks for the AD_GroupCleanup_Permissions Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectory/cleanup/groups/stamping/groupcleanuppermissionsanalysis.webp)
 
 The default analysis tasks are:
 

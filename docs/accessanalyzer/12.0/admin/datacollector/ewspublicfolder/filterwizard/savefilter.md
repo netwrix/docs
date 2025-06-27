@@ -2,7 +2,7 @@
 
 Use the Save Filter Page to name and describe the custom filter created in the wizard.
 
-![Filter Wizard Save Filter page](/img/product_docs/accessanalyzer/admin/datacollector/ewsmailbox/filterwizard/savefilter.webp)
+![Filter Wizard Save Filter page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filterwizard/savefilter.webp)
 
 Label the custom filter using the following options:
 

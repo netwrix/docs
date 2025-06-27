@@ -12,7 +12,7 @@ Navigate to **Box** > **1.Activity** > **Forensics** > **Box_ExternalUserCollabo
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Box_ExternalUserCollaborations Job](/img/product_docs/accessanalyzer/solutions/box/activity/forensics/externalusercollaborationsanalysis.webp)
+![Analysis Tasks for the Box_ExternalUserCollaborations Job](/img/product_docs/accessanalyzer/12.0/solutions/box/activity/forensics/externalusercollaborationsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

@@ -5,7 +5,7 @@ uninstalling of the Access Analyzer File System Scanning Proxy program.
 
 **Step 1 –** Open Control Panel and select **Programs** > **Uninstall a program**.
 
-![Programs and Features](/img/product_docs/accessanalyzer/install/filesystemproxy/uninstall.webp)
+![Programs and Features](/img/product_docs/accessanalyzer/12.0/install/filesystemproxy/uninstall.webp)
 
 **Step 2 –** Select Netwrix Access Analyzer (formerly Enterprise Auditor) File System Scanning Proxy
 and click **Uninstall**.

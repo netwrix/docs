@@ -24,7 +24,7 @@ created, then the Rename Scheduled Task wizard displays to update the credential
 
 Jobs can be scheduled at the job group or job level.
 
-![Schedule option from Job Tree](/img/product_docs/accessanalyzer/admin/schedule/jobtree.webp)
+![Schedule option from Job Tree](/img/product_docs/accessanalyzer/12.0/admin/schedule/jobtree.webp)
 
 Select the desired job group or job. Right-click on the node and select **Schedule** to open the
 Schedule wizard.

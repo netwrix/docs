@@ -80,7 +80,7 @@ The job logs are stored within the output folder of each job. They can be read i
 Analyzer Console within the job’s **Status** > **Messages** table. To access the logs within the
 job’s directory, right-click on the job’s node in the Navigation pane and select **Explore Folder**.
 
-![Job Logs in the job's Output folder in File Explorer](/img/product_docs/accessanalyzer/admin/settings/historyjoblogs.webp)
+![Job Logs in the job's Output folder in File Explorer](/img/product_docs/accessanalyzer/12.0/admin/settings/historyjoblogs.webp)
 
 The most recent log is open. Older jobs are stored as zip files, according to the Log Retention
 Period setting. Each log is named in the following format:

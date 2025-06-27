@@ -5,7 +5,7 @@ in identifying least privilege from targeted file servers. It identifies where t
 leveraging their permissions to resources from targeted file servers. Requires **Access Auditing**
 component data collection.
 
-![Least Privileged Access > FS_LeastPrivilegedAccess Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/filesystem/activity/leastprivilegedaccessjobstree.webp)
+![Least Privileged Access > FS_LeastPrivilegedAccess Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/activity/leastprivilegedaccessjobstree.webp)
 
 The FS_LeastPrivilegedAccess job is located in the Least Privileged Access job group.
 
@@ -17,7 +17,7 @@ Access** > **FS_LeastPrivilegedAccess** > **Configure** node and select **Analys
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_LeastPrivilegedAccess Job](/img/product_docs/accessanalyzer/solutions/filesystem/activity/leastprivilegedaccessanalysis.webp)
+![Analysis Tasks for the FS_LeastPrivilegedAccess Job](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/activity/leastprivilegedaccessanalysis.webp)
 
 The following analysis tasks are selected by default:
 

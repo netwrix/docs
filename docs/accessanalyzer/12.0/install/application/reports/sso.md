@@ -13,7 +13,7 @@ Follow the steps to enable single sign-on for the Web Console.
 **Step 1 –** Open the **WebServer.exe.config** file with a text editor, for example Notepad. It is
 located within the Web folder of the Access Analyzer installation directory.
 
-![WebServer.exe.config file in Notepad](/img/product_docs/accessanalyzer/install/application/reports/webserverexeconfigsso.webp)
+![WebServer.exe.config file in Notepad](/img/product_docs/accessanalyzer/12.0/install/application/reports/webserverexeconfigsso.webp)
 
 **Step 2 –** Change the value for the `WindowsAuthentication` parameter to:
 
@@ -39,16 +39,16 @@ Follow the steps to configure local intranet settings.
 **Step 1 –** Open Windows Internet Properties (**Control Panel** > **Network and
 Internet** > **Internet Options**).
 
-![ConfigureLocalIntranetSettingsforSSO - 1](/img/product_docs/accessanalyzer/install/application/reports/internetproperties.webp)
+![ConfigureLocalIntranetSettingsforSSO - 1](/img/product_docs/accessanalyzer/12.0/install/application/reports/internetproperties.webp)
 
 **Step 2 –** Go to the Security tab, and select the **Local Intranet** option. Then, click the
 **Sites** button.
 
-![localintranet](/img/product_docs/accessanalyzer/install/application/reports/localintranet.webp)
+![localintranet](/img/product_docs/accessanalyzer/12.0/install/application/reports/localintranet.webp)
 
 **Step 3 –** Click the **Advanced** button.
 
-![localintranetadvanced](/img/product_docs/accessanalyzer/install/application/reports/localintranetadvanced.webp)
+![localintranetadvanced](/img/product_docs/accessanalyzer/12.0/install/application/reports/localintranetadvanced.webp)
 
 **Step 4 –** Enter a domain in the **Add this website in the zone** field. Ensure the fully
 qualified domain name is in the following format: `https://<server>.<domain>.com`

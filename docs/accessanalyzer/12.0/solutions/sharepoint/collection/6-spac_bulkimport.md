@@ -7,7 +7,7 @@ Access Analyzer SQL database.
 
 The 6-SPAC_BulkImport Job uses the SharePoint Access Data Collector for the following query:
 
-![Query Selection](/img/product_docs/accessanalyzer/solutions/sharepoint/collection/spacbulkimportquery.webp)
+![Query Selection](/img/product_docs/accessanalyzer/12.0/solutions/sharepoint/collection/spacbulkimportquery.webp)
 
 The query for the 6-SPAC_BulkImport Job is:
 
@@ -28,7 +28,7 @@ displays.
 
 **Step 3 –** Select the **Data Source** tab, and click **Configure**.
 
-![Bulk Import Settings](/img/product_docs/accessanalyzer/admin/datacollector/spaa/bulkimportsettings.webp)
+![Bulk Import Settings](/img/product_docs/accessanalyzer/12.0/admin/datacollector/spaa/bulkimportsettings.webp)
 
 **Step 4 –** On the
 [SPAA: Bulk Import Settings](/docs/accessanalyzer/12.0/admin/datacollector/spaa/bulkimportsettings.md) page, the
@@ -54,7 +54,7 @@ node and select **Analysis** to view the analysis tasks.
 **CAUTION:** The analysis tasks are preconfigured for this job. Never modify or deselect the
 selected analysis tasks.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/solutions/sharepoint/collection/spacbulkimportanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/sharepoint/collection/spacbulkimportanalysis.webp)
 
 The default analysis tasks are:
 

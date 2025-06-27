@@ -53,7 +53,7 @@ Category selected:
 - [SPAA: Results](/docs/accessanalyzer/12.0/admin/datacollector/spaa/results.md)
 - [SPAA: Summary Page](/docs/accessanalyzer/12.0/admin/datacollector/spaa/summary.md)
 
-![SPAA Data Collector Wizard Welcome Page](/img/product_docs/accessanalyzer/admin/datacollector/spaa/welcomepage.webp)
+![SPAA Data Collector Wizard Welcome Page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/spaa/welcomepage.webp)
 
 The Welcome page can be hidden by checking the **Do not display this page the next time** box when
 the wizard is open and configuration settings are saved.

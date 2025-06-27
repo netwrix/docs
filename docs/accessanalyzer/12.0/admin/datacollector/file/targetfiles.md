@@ -3,7 +3,7 @@
 The Target Files page provides filters to scope the data collection. This can provide better search
 results for the specific folder or file. It is a wizard page for all of the categories.
 
-![File Search Wizard Target Files page](/img/product_docs/accessanalyzer/admin/datacollector/inifile/targetfiles.webp)
+![File Search Wizard Target Files page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/inifile/targetfiles.webp)
 
 Within the Target files configuration page, select the desired method to refine the query.
 

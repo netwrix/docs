@@ -45,6 +45,6 @@ The log level feature includes the following options:
 **NOTE:** You can switch between log levels. All the levels, including the one that you choose,
 shall be set for messaging in the application.
 
-![Log Level Options](/img/product_docs/accessanalyzer/admin/jobs/job/properties/generalloglevel.webp)
+![Log Level Options](/img/product_docs/accessanalyzer/12.0/admin/jobs/job/properties/generalloglevel.webp)
 
 For example, this is where you set the messaging for Info, Warning, or Error at a job level.

@@ -13,7 +13,7 @@ tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/solutions/databases/postgresql/sensitivedata/sensitivedatapermission.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/12.0/solutions/databases/postgresql/sensitivedata/sensitivedatapermission.webp)
 
 The default analysis tasks are:
 

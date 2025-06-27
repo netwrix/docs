@@ -8,7 +8,7 @@ a subsequent scan (i.e. scanning fewer web applications, scanning fewer site col
 shallower depth scan). Those resources not included in a subsequent scan are marked as deleted in
 the Tier 2 database and subsequently removed from the Tier 1 database.
 
-![Select DLP criteria for this scan page](/img/product_docs/accessanalyzer/admin/datacollector/spaa/selectdlpcriteria.webp)
+![Select DLP criteria for this scan page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/spaa/selectdlpcriteria.webp)
 
 The options on the Select DLP Criteria page are:
 

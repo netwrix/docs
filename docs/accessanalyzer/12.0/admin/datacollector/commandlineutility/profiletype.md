@@ -2,7 +2,7 @@
 
 The Profile Type page contains options to select a new or existing profile.
 
-![Command Line Utility Data Collector Wizard Profile Type page](/img/product_docs/accessanalyzer/admin/datacollector/commandlineutility/profiletype.webp)
+![Command Line Utility Data Collector Wizard Profile Type page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/commandlineutility/profiletype.webp)
 
 The options on the Profile Type page are:
 

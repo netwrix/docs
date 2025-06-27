@@ -3,11 +3,11 @@
 The **Add Hosts** option creates a new host list. It can be accessed through the **Host Management**
 node. Follow the steps to add a new host list.
 
-![Add Hosts option on Activities pane of the Host Management node](/img/product_docs/accessanalyzer/admin/hostmanagement/actions/addhosts.webp)
+![Add Hosts option on Activities pane of the Host Management node](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/addhosts.webp)
 
 **Step 1 –** Click **Add Hosts** to open the Host List Wizard in the Results pane.
 
-![Host List Wizard Specify Manual Host Entry page](/img/product_docs/accessanalyzer/admin/hostmanagement/actions/hostlistwizardhostentry.webp)
+![Host List Wizard Specify Manual Host Entry page](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/hostlistwizardhostentry.webp)
 
 **Step 2 –** On the Manual Host Entry page, choose to either enter the hosts manually one at a time,
 or use the **Import** option. When the list is completed, click **Next**.
@@ -19,7 +19,7 @@ or use the **Import** option. When the list is completed, click **Next**.
   topic for additional information.
 - Use **Remove** to delete a selected host from the **Host list** box
 
-![Host List Wizard Specify Host List Properties page](/img/product_docs/accessanalyzer/admin/hostmanagement/actions/hostlistwizardproperties.webp)
+![Host List Wizard Specify Host List Properties page](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/actions/hostlistwizardproperties.webp)
 
 **Step 3 –** On the Specify Host List Properties page, provide a unique descriptive **Host List
 Name**.

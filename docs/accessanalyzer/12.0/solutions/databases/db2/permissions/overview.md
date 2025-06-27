@@ -3,7 +3,7 @@
 This job group provides insight into all types of permissions at the database and object level
 across all the targeted Db2 database servers.
 
-![Permissions Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/databases/db2/permissions/permissionsjobstree.webp)
+![Permissions Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/databases/db2/permissions/permissionsjobstree.webp)
 
 The jobs in the Permission job group are:
 

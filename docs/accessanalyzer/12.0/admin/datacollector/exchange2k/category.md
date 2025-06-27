@@ -3,7 +3,7 @@
 The Exchange2K Data Collector contains the following query categories, sub-divided by auditing
 focus:
 
-![Exchange 2K+ Data Collector Wizard Category page](/img/product_docs/accessanalyzer/admin/datacollector/adinventory/category.webp)
+![Exchange 2K+ Data Collector Wizard Category page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/category.webp)
 
 - Exchange Organization
 

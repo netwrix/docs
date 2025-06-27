@@ -3,7 +3,7 @@
 On the Action page, select the type of action to be configured, define a new action, and additional
 capabilities.
 
-![File System Action Module Wizard Action page](/img/product_docs/accessanalyzer/admin/action/filesystem/action.webp)
+![File System Action Module Wizard Action page](/img/product_docs/accessanalyzer/12.0/admin/action/filesystem/action.webp)
 
 The following options are available:
 

@@ -4,7 +4,7 @@ The VIP Membership provides the option to add members to a VIP List and exclude 
 about probable ownership. Any users can be added to VIP membership. This page is enabled when the
 VIPList property is selected on the Results page.
 
-![System Info Data Collector Wizard VIP Membership page](/img/product_docs/accessanalyzer/admin/datacollector/systeminfo/vipmembership.webp)
+![System Info Data Collector Wizard VIP Membership page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/systeminfo/vipmembership.webp)
 
 To add a user to the VIPList members table, enter the username in the User box in the
 `Domain\Username` format and click **Add user**. To remove a user from the list, select the user and

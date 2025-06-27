@@ -9,7 +9,7 @@ The AD_CertificateRights job uses the ADPermissions data collector for the follo
 
 **CAUTION:** Do not modify the query. The query is preconfigured for this job.
 
-![Query for the AD_CertificateRights Job](/img/product_docs/accessanalyzer/solutions/activedirectorypermissionsanalyzer/collection/certificaterightsquery.webp)
+![Query for the AD_CertificateRights Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/collection/certificaterightsquery.webp)
 
 - Certificate Template Permissions – Collects certificate templates from Active Directory
 
@@ -24,7 +24,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **0.Collection** >
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_CertificateRights Job](/img/product_docs/accessanalyzer/solutions/activedirectorypermissionsanalyzer/collection/certificaterightsanalysis.webp)
+![Analysis Tasks for the AD_CertificateRights Job](/img/product_docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/collection/certificaterightsanalysis.webp)
 
 - Certificate Rights View – Creates the SA_AD_CertificateRights_Details_PermissionsView visible
   under the job’s Results node

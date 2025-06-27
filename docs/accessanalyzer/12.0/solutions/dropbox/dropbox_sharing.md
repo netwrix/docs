@@ -7,7 +7,7 @@ sharing occurs. Best practices often dictate that these resources should be care
 to the amount of access to the data. If these resources contain privileged data, the access should
 be reevaluated or the sensitive resources relocated.
 
-![2.Sharing > Dropbox_Sharing Job in the Jobs Tree](/img/product_docs/accessanalyzer/solutions/dropbox/sharingjobstree.webp)
+![2.Sharing > Dropbox_Sharing Job in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/dropbox/sharingjobstree.webp)
 
 The Dropbox_Sharing job is located in the 2.Sharing job group.
 
@@ -19,7 +19,7 @@ View the analysis tasks by navigating to the **Jobs** > **Dropbox** > **2.Sharin
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Dropbox_Sharing Job](/img/product_docs/accessanalyzer/solutions/box/activity/forensics/sharinganalysis.webp)
+![Analysis Tasks for the Dropbox_Sharing Job](/img/product_docs/accessanalyzer/12.0/solutions/box/activity/forensics/sharinganalysis.webp)
 
 - Get shared folder details – Creates the SA_Dropbox_Sharing_Details table accessible under the
   job’s Results node

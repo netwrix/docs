@@ -3,7 +3,7 @@
 The Results page provides configuration settings for the Properties to return and ROWKEY's
 components.
 
-![PowerShell Data Collector Wizard Results page](/img/product_docs/accessanalyzer/admin/datacollector/adinventory/results.webp)
+![PowerShell Data Collector Wizard Results page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/results.webp)
 
 The Results page options are:
 

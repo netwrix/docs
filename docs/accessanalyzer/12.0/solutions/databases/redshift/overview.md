@@ -50,7 +50,7 @@ sensitive data.
 The Access Analyzer Redshift  Solution Set is a set of preconfigured audit jobs and reports that
 provides visibility into Redshift Sensitive Data.
 
-![redshiftjobgrpoverview](/img/product_docs/accessanalyzer/solutions/databases/redshift/redshiftjobgrpoverview.webp)
+![redshiftjobgrpoverview](/img/product_docs/accessanalyzer/12.0/solutions/databases/redshift/redshiftjobgrpoverview.webp)
 
 The following job groups comprise the Redshift Job Group:
 

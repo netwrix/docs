@@ -2,7 +2,7 @@
 
 The 8. Exchange Online job group collects message trace data from Office 365.
 
-![8.Exchange Online Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![8.Exchange Online Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/admin/hostmanagement/jobstree.webp)
 
 The job group in the 8. Exchange Online job group is:
 

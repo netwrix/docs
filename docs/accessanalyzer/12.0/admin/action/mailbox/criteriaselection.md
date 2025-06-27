@@ -4,7 +4,7 @@ Use the Criteria Selection page to choose search criteria saved in a previous Ex
 Collector query or define new criteria. It is a wizard page for the Delete Mailbox Contents
 operation.
 
-![New Mailbox Action Wizard Criteria Selection page](/img/product_docs/accessanalyzer/admin/action/mailbox/criteriaselection.webp)
+![New Mailbox Action Wizard Criteria Selection page](/img/product_docs/accessanalyzer/12.0/admin/action/mailbox/criteriaselection.webp)
 
 Choose whether to use existing Mailbox Search criteria or determine new criteria:
 
