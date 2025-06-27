@@ -9,5 +9,5 @@ The jobs in the Sudoers job group are:
 
 - [0.Collection Job Group](/docs/accessanalyzer/12.0/solutions/unix/privilegedaccess/sudoers/collection/overview.md) – This group collects details on all rights
   granted via sudoers within audited Unix and Linux environments
-- [UX_Sudoers Job](/docs/accessanalyzer/12.0/solutions/unix/privilegedaccess/sudoers/ux-sudoers.md) – This job details all rights granted via sudoers in the audited
+- [UX_Sudoers Job](/docs/accessanalyzer/12.0/solutions/unix/privilegedaccess/sudoers/ux_sudoers.md) – This job details all rights granted via sudoers in the audited
   environment

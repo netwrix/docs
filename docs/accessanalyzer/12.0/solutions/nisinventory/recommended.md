@@ -12,7 +12,7 @@ Targeted Hosts
 The host list assignment should be assigned under the **.NIS Inventory** > **NIS Scan** > **Hosts**
 node. Select the custom host list containing the NIS servers or manually add the host in the
 **Individual hosts** section. See the
-[Unix Connection Profile & Host List](/docs/accessanalyzer/12.0/data-collection/nis/configure-job.md) topic for
+[Unix Connection Profile & Host List](/docs/accessanalyzer/12.0/admin/datacollector/nis/configurejob.md) topic for
 additional information.
 
 Connection Profile
@@ -22,7 +22,7 @@ Properties** window on the **Connection** tab. It is set to **Use the Default Pr
 configured at the global settings level. However, if this is not the Connection Profile with the
 necessary permissions for targeting the NIS servers, select the **Select one of the following user
 defined profiles** option and select the appropriate Connection Profile. See the
-[Unix Connection Profile & Host List](/docs/accessanalyzer/12.0/data-collection/nis/configure-job.md) topic for
+[Unix Connection Profile & Host List](/docs/accessanalyzer/12.0/admin/datacollector/nis/configurejob.md) topic for
 additional information.
 
 Schedule Frequency
@@ -39,7 +39,7 @@ Query Configuration
 
 The solution requires the NIS domain to be configured in the **Inventory Scan** query. Navigate to
 the **NIS Settings** page of the NIS Data Collector Wizard. Optionally, modifications can be made
-for SID mappings within the **NIS Scan** job. See the [NIS Scan Job](/docs/accessanalyzer/12.0/solutions/nisinventory/nis-scan.md) topic for
+for SID mappings within the **NIS Scan** job. See the [NIS Scan Job](/docs/accessanalyzer/12.0/solutions/nisinventory/nis_scan.md) topic for
 additional information.
 
 Analysis Configuration

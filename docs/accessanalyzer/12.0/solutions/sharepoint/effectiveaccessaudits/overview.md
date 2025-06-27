@@ -7,11 +7,11 @@ SharePoint environment.
 
 The Effective Access Audits Job Group is comprised of:
 
-- [Scoping > SP_TrusteeAccess Job](/docs/accessanalyzer/12.0/solutions/sharepoint/effectiveaccessaudits/sp-trusteeaccess.md) – Scopes a list of users to audit their
+- [Scoping > SP_TrusteeAccess Job](/docs/accessanalyzer/12.0/solutions/sharepoint/effectiveaccessaudits/sp_trusteeaccess.md) – Scopes a list of users to audit their
   access across the SharePoint environment. This can also be accomplished by looking users up in the
   Access Information Center. However, it is recommended to use this job in scenarios where a report
   on multiple users’ effective access at once needs to be generated.
-- [SP_TrusteeAudit Job](/docs/accessanalyzer/12.0/solutions/sharepoint/effectiveaccessaudits/sp-trusteeaudit.md) – Provides functionality similar to the Access
+- [SP_TrusteeAudit Job](/docs/accessanalyzer/12.0/solutions/sharepoint/effectiveaccessaudits/sp_trusteeaudit.md) – Provides functionality similar to the Access
   Information Center by allowing scoped audits of users’ access across the environment
 
 For the SP_TrusteeAccess Job, the host list is set to Local host at the Scoping Job Group level. The

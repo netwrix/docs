@@ -6,7 +6,7 @@ The following Access Analyzer job groups need to be successfully run:
 
 - .Active Directory Inventory Job Group
 
-The following jobs need to be run prior to running the [AD_ShadowAccess Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/ad-shadowaccess.md):
+The following jobs need to be run prior to running the [AD_ShadowAccess Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/ad_shadowaccess.md):
 
 - .Active Directory Inventory >1-AD_Scan > ADInventory
 - Active Directory > 1.Groups > AD_SensitiveSecurityGroups
@@ -16,7 +16,7 @@ The following jobs need to be run prior to running the [AD_ShadowAccess Job](/do
 - Active Directory Permissions Analyzer > 2.Groups > AD_GroupMembershipPermissions
 
 The following jobs can be optionally run to enhance reporting in the
-[AD_ShadowAccess Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/ad-shadowaccess.md):
+[AD_ShadowAccess Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/ad_shadowaccess.md):
 
 - Active Directory > 2.Users > AD_WeakPasswords
 - FileSystem > 7.Sensitive Data > FS_DLPResults > FS_DLPResults
@@ -37,7 +37,7 @@ Assign a Connection Profile at the **Active Directory Permissions Analyzer** > *
 **Settings** > **Connection** node with local Administrator privileges on the target host, or Domain
 Administrator privileges if the target host is a domain controller.
 
-See the [Connection](/docs/accessanalyzer/12.0/administration/settings/connection/overview.md) topic for additional information.
+See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional information.
 
 Schedule Frequency
 

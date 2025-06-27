@@ -10,7 +10,7 @@ Supported Platforms
 
 Requirements, Permissions, and Ports
 
-See the [Target Box Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/box.md) topic
+See the [Target Box Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/target/box.md) topic
 for additional information.
 
 Location
@@ -41,8 +41,8 @@ The Box Solution has the following job groups and jobs:
   events within the Box environment
 - [2.Content Job Group](/docs/accessanalyzer/12.0/solutions/box/content/overview.md) – Analyzes and summarizes the content of the Box
   environment, highlighting users with the most content as well as what type of content exists
-- [Box_Access Job](/docs/accessanalyzer/12.0/solutions/box/box-access.md) – Analyzes access granted to users and groups in an organization's
+- [Box_Access Job](/docs/accessanalyzer/12.0/solutions/box/box_access.md) – Analyzes access granted to users and groups in an organization's
   Box environment in order to report on effective access rights, file-level permissions, and
   inactive access rights that can be revoked
-- [Box_GroupMembership Job](/docs/accessanalyzer/12.0/solutions/box/box-groupmembership.md) – Expands group membership in an organization's
+- [Box_GroupMembership Job](/docs/accessanalyzer/12.0/solutions/box/box_groupmembership.md) – Expands group membership in an organization's
   Box environment

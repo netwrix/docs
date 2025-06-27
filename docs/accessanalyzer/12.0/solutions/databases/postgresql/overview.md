@@ -30,7 +30,7 @@ Supported Platforms
 Requirements, Permissions, and Ports
 
 See the
-[Target PostgreSQL Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/database-postgresql.md)
+[Target PostgreSQL Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/target/databasepostgresql.md)
 topic for additional information.
 
 Sensitive Data Discovery Considerations
@@ -73,7 +73,7 @@ The job groups in the PostgreSQL Solution are:
 - [0.Collection Job Group](/docs/accessanalyzer/12.0/solutions/databases/postgresql/collection/overview.md) - Designed to collect high level summary
   information from targeted PostgreSQL Servers. This information is used by other jobs in the
   PostgreSQL Solution Set for further analysis and producing respective reports
-- [Configuration > PgSQL_DatabaseSizing Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/pgsql-databasesizing.md) - Designed to provide insight
+- [Configuration > PgSQL_DatabaseSizing Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/pgsql_databasesizing.md) - Designed to provide insight
   into details about the PostgreSQL environment and potential vulnerabilities related to instance
   configuration settings
 - [Sensitive Data Job Group](/docs/accessanalyzer/12.0/solutions/databases/postgresql/sensitivedata/overview.md) - Designed to provide insight into where

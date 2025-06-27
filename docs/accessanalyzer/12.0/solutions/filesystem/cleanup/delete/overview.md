@@ -7,9 +7,9 @@ file servers that can be deleted.
 
 This job group includes the following jobs:
 
-- [FS_DeleteFiles Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/delete/fs-deletefiles.md) – Designed to delete resources from targeted file servers
+- [FS_DeleteFiles Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/delete/fs_deletefiles.md) – Designed to delete resources from targeted file servers
   that were previously quarantined and can be deleted
-- [FS_DeleteFiles_Status Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/delete/fs-deletefiles-status.md) – Designed to report on deleted resources
+- [FS_DeleteFiles_Status Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/delete/fs_deletefiles_status.md) – Designed to report on deleted resources
   from targeted file servers that were deleted from the DeleteFiles job
 
 Workflow

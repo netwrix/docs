@@ -28,12 +28,12 @@ Connection Profile
 A Connection Profile must be set directly on the EX_IISLogs Job and the EX_ASPolicies Job.
 
 See the
-[Exchange Remote Connections Permissions](/docs/accessanalyzer/12.0/getting-started/system-requirements/solutions/exchange/remote-connections.md)
+[Exchange Remote Connections Permissions](/docs/accessanalyzer/12.0/requirements/solutions/exchange/remoteconnections.md)
 topic for the EX_IISLogs Job required permissions. See the
-[Exchange PowerShell Permissions](/docs/accessanalyzer/12.0/getting-started/system-requirements/solutions/exchange/powershell.md) topic for
+[Exchange PowerShell Permissions](/docs/accessanalyzer/12.0/requirements/solutions/exchange/powershell.md) topic for
 the EX_ASPolicies Job requirements.
 
-See the [Connection](/docs/accessanalyzer/12.0/administration/settings/connection/overview.md) topic for additional
+See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.
 
 Schedule Frequency

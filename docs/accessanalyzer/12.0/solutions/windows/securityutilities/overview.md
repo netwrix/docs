@@ -12,5 +12,5 @@ The jobs and job groups in the Security Utilities job group are:
   associated executable on the targeted systems leveraging the jobs within this group. This is
   accomplished through remotely executing a netstat command on the target hosts and collecting the
   results for reporting.
-- [SG_PowerShellCommands Job](/docs/accessanalyzer/12.0/solutions/windows/securityutilities/sg-powershellcommands.md) – This job highlights instances where
+- [SG_PowerShellCommands Job](/docs/accessanalyzer/12.0/solutions/windows/securityutilities/sg_powershellcommands.md) – This job highlights instances where
   suspicious PowerShell commands have been found in a host’s PowerShell log

@@ -10,11 +10,11 @@ which store that content.
 
 The 4.Content Job Group is comprised of:
 
-- [SP_LargestFiles Job](/docs/accessanalyzer/12.0/solutions/sharepoint/content/sp-largestfiles.md) – Identifies the largest files across SharePoint farms.
+- [SP_LargestFiles Job](/docs/accessanalyzer/12.0/solutions/sharepoint/content/sp_largestfiles.md) – Identifies the largest files across SharePoint farms.
   Changes to a document or its metadata create new versions that result in added storage. It is
   therefore important to manage file size and control versioning. Report includes file names, URLs,
   total file size, versions, and version size, along with file owner and file editor information.
-- [SP_StaleFiles Job](/docs/accessanalyzer/12.0/solutions/sharepoint/content/sp-stalefiles.md) – Identifies files that have been modified in at least a
+- [SP_StaleFiles Job](/docs/accessanalyzer/12.0/solutions/sharepoint/content/sp_stalefiles.md) – Identifies files that have been modified in at least a
   year across SharePoint farms. This aids administrators and users in cleaning up or archiving old
   and unchanged files to help maintain a clean and healthy SharePoint environment. Report includes
   files, their last modified time, total file size, versions and version size, along with file owner

@@ -8,10 +8,10 @@ can also be used to identify stale content that can be removed or archived to re
 
 The 2.Content Job Group is comprised of:
 
-- [Box_FileMetrics Job](/docs/accessanalyzer/12.0/solutions/box/content/box-filemetrics.md) – Offers insight into content sizing, staleness, and
+- [Box_FileMetrics Job](/docs/accessanalyzer/12.0/solutions/box/content/box_filemetrics.md) – Offers insight into content sizing, staleness, and
   ownership of files in the Box environment. The staleness threshold can be customized within the
   **File Metrics Details** analysis.
-- [Box_FolderMetrics Job](/docs/accessanalyzer/12.0/solutions/box/content/box-foldermetrics.md) – Offers insight into content sizing, staleness, and
+- [Box_FolderMetrics Job](/docs/accessanalyzer/12.0/solutions/box/content/box_foldermetrics.md) – Offers insight into content sizing, staleness, and
   ownership of folders in the Box environment. The staleness threshold can be customized within the
   **Folder Metrics Details** analysis. Largest and smallest folder size thresholds can be configured
   in a similar way in their respective analysis tasks.

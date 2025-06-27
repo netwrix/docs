@@ -5,7 +5,7 @@ Proper data security begins with a strong foundation. The Credential & Data Secu
 Directory, and Windows infrastructure.
 
 The CDSA job depends upon several Access Analyzer solutions for data collection. See the
-[Requirements](/docs/accessanalyzer/12.0/getting-started/system-requirements/overview.md) topic for installation and database requirements.
+[Requirements](/docs/accessanalyzer/12.0/requirements/overview.md) topic for installation and database requirements.
 
 ## Supporting Solutions
 
@@ -14,33 +14,33 @@ generate the CDSA presentations:
 
 - .Active Directory Inventory Solution
 
-  - See the
-    [.Active Directory Inventory Solution](/docs/accessanalyzer/12.0/solutions/active-directory-inventory/overview.md)
-    topic for additional information
+    - See the
+      [.Active Directory Inventory Solution](/docs/accessanalyzer/12.0/solutions/activedirectoryinventory/overview.md)
+      topic for additional information
 
 - Active Directory Solution
 
-  - See the [Active Directory Solution](/docs/accessanalyzer/12.0/solutions/active-directory/overview.md) topic for
-    additional information
+    - See the [Active Directory Solution](/docs/accessanalyzer/12.0/solutions/activedirectory/overview.md) topic for
+      additional information
 
 - Active Directory Permissions Analyzer Solution
 
-  - See the
-    [Active Directory Permissions Analyzer Solution](/docs/accessanalyzer/12.0/solutions/active-directory-permissions-analyzer/overview.md)
-    topic for additional information
+    - See the
+      [Active Directory Permissions Analyzer Solution](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/overview.md)
+      topic for additional information
 
 - File System Solution
 
-  - See the [File System Solution](/docs/accessanalyzer/12.0/solutions/filesystem/overview.md) topic for additional
-    information
+    - See the [File System Solution](/docs/accessanalyzer/12.0/solutions/filesystem/overview.md) topic for additional
+      information
 
 - Windows Solution
 
-  - See the [Windows Solution](/docs/accessanalyzer/12.0/solutions/windows/overview.md) topic for additional information
+    - See the [Windows Solution](/docs/accessanalyzer/12.0/solutions/windows/overview.md) topic for additional information
 
 The following additional solutions also provide data to the CDSA job:
 
-- [Entra ID Solution](/docs/accessanalyzer/12.0/solutions/entra-id/overview.md)
+- [Entra ID Solution](/docs/accessanalyzer/12.0/solutions/entraid/overview.md)
 - [AWS Solution](/docs/accessanalyzer/12.0/solutions/aws/overview.md)
 - [Box Solution](/docs/accessanalyzer/12.0/solutions/box/overview.md)
 - [Dropbox Solution](/docs/accessanalyzer/12.0/solutions/dropbox/overview.md)
@@ -50,5 +50,5 @@ The following additional solutions also provide data to the CDSA job:
 - [SQL Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/overview.md)
 
 Additionally, the Sensitive Data Discovery Add-On also contributes to the CDSA presentations. See
-the [Sensitive Data Discovery](/docs/accessanalyzer/12.0/sensitive-data-discovery/overview.md) topic for additional
+the [Sensitive Data Discovery](/docs/accessanalyzer/12.0/sensitivedatadiscovery/overview.md) topic for additional
 information.

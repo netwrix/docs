@@ -22,11 +22,11 @@ configured with a web address instead of a CAS.
   **Exchange** node)
 - Exchange 2013 & 2016 – May require a CAS name set in the ExchangePS Data Collector configuration:
 
-  - If the **Settings** > **Exchange** node was configured for **MAPI over HTTP**, then a CAS
-    server name was supplied and that is used by the ExchangePS Data Collector
-  - If the **Settings** > **Exchange** node was configured for **MAPI over HTTPS**, then the
-    global configuration has a web address instead of an actual server. Therefore, each query
-    requires the CAS server to be set as the specific server on the Category page.
+    - If the **Settings** > **Exchange** node was configured for **MAPI over HTTP**, then a CAS
+      server name was supplied and that is used by the ExchangePS Data Collector
+    - If the **Settings** > **Exchange** node was configured for **MAPI over HTTPS**, then the
+      global configuration has a web address instead of an actual server. Therefore, each query
+      requires the CAS server to be set as the specific server on the Category page.
 
 Follow the steps to supply a CAS name for data collection.
 
@@ -45,7 +45,7 @@ wizard pages as they have been pre-configured for the purpose of the job.
 
 **Step 4 –** On the Category page, select the **Use specific server** option and enter the CAS name
 in the text box. See the
-[ExchangePS: Category](/docs/accessanalyzer/12.0/data-collection/exchange-ps/category.md) topic for additional
+[ExchangePS: Category](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/category.md) topic for additional
 information.
 
 **Step 5 –** Navigate to the Summary page. Click **Finish**.

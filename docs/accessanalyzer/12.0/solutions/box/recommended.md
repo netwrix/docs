@@ -30,7 +30,7 @@ account with permission to **Run new reports and access existing reports** enabl
 needed to generate an authorization code in the form of an Access Token. This can be done through
 the query configuration either in the 1-Box_Access Scans Job’ Authentication wizard page or the
 1-Box_Activity Scans Job’s Authentication wizard page of the Box Data Collector Wizard. See the
-[Box Data Collector](/docs/accessanalyzer/12.0/data-collection/box/overview.md) topic for additional information.
+[Box Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/box/overview.md) topic for additional information.
 
 Access Token
 
@@ -60,8 +60,8 @@ can be modified:
 - The @STALETHRESHOLD parameter determines the number of days after which content is considered
   stale. It is set to default of 30 days. The @STALETHRESHOLD parameter can be customized in the
   following analysis tasks:
-  - 2.Content > Box_FileMetrics in the File Metrics Details analysis task
-  - 2.Content > Box_FolderMetrics Folder in the Metrics Details analysis task
+    - 2.Content > Box_FileMetrics in the File Metrics Details analysis task
+    - 2.Content > Box_FolderMetrics Folder in the Metrics Details analysis task
 
 Workflow
 

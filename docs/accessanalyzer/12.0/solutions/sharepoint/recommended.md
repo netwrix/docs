@@ -27,13 +27,13 @@ SharePoint environments to be targeted. Select the checkbox for the custom-creat
 Since SharePoint Online environments can only be targeted for Access Auditing and Sensitive Data
 Discovery Auditing, it is best practice to set the host list at the job level.
 
-See the [Add Hosts](/docs/accessanalyzer/12.0/host-management/actions/add.md) topic for additional information.
+See the [Add Hosts](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/add.md) topic for additional information.
 
 Connection Profile
 
 The SPAA Data Collector requires a specific set of permissions. See the
-[SharePoint Scan Options](/docs/accessanalyzer/12.0/getting-started/system-requirements/solutions/sharepoint/scan-options.md) and
-[SharePoint Support](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/sharepoint.md) topics for the necessary permissions
+[SharePoint Scan Options](/docs/accessanalyzer/12.0/requirements/solutions/sharepoint/scanoptions.md) and
+[SharePoint Support](/docs/accessanalyzer/12.0/requirements/target/sharepoint.md) topics for the necessary permissions
 for both on-premises and online target environments. Then create a custom Connection Profile
 containing the appropriate credentials for the targeted environment. If a single Connection Profile
 contains both on-premises and online credentials, it is necessary for the online credentials to be
@@ -51,7 +51,7 @@ rights on the Access Analyzer Console server to access the CSV file saved in the
 The Connection Profile can be set at either the **Effective Access Audits** > **Settings** >
 **Connection** node (applies to both jobs) or in the job’s Properties window on the Connection tab.
 
-See the [Connection](/docs/accessanalyzer/12.0/administration/settings/connection/overview.md) topic for additional information.
+See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional information.
 
 Schedule Frequency
 
@@ -74,7 +74,7 @@ and the 2-SPAC Bulk Import Job default analysis tasks.
 **_RECOMMENDED:_** If only conducting one or two types of auditing, scope the solution by disabling
 the undesired collection jobs. Disabling them allows the solution to run more efficiently. It is not
 recommended to delete any jobs. See the
-[Disable or Enable a Job](/docs/accessanalyzer/12.0/administration/job-management/job/disable-enable.md) topic for additional information.
+[Disable or Enable a Job](/docs/accessanalyzer/12.0/admin/jobs/job/disableenable.md) topic for additional information.
 
 Query Configuration
 
@@ -84,58 +84,58 @@ customizations include:
 - If using agent-based scanning, it is necessary to enable the agent services on the SharePoint
   Access Auditor Data Collector Wizard pages:
 
-  - Agent Settings page, enable agent service scans:
+    - Agent Settings page, enable agent service scans:
 
-    - Set on the **0.Collection** > **1-SPAA_SystemScans** Job for Access Auditing
-    - Set on the **0.Collection** > **1-SPSEEK_SystemScans** Job for Sensitive Data Discovery
-      Auditing
+        - Set on the **0.Collection** > **1-SPAA_SystemScans** Job for Access Auditing
+        - Set on the **0.Collection** > **1-SPSEEK_SystemScans** Job for Sensitive Data Discovery
+          Auditing
 
 - SharePoint Access Auditor Data Collector Wizard pages:
 
-  - SharePoint Data Collection Settings page, configure probable owner scanning:
+    - SharePoint Data Collection Settings page, configure probable owner scanning:
 
-    - Enable **Scan for Document Metadata** for probable owners calculations
-    - Set on the:
+        - Enable **Scan for Document Metadata** for probable owners calculations
+        - Set on the:
 
-      - **0.Collection** > **1-SPAA_SystemScans** Job for Access Auditing
-      - **0.Collection** > **1-SPSEEK_SystemScans** Job for Sensitive Data Discovery Auditing
+            - **0.Collection** > **1-SPAA_SystemScans** Job for Access Auditing
+            - **0.Collection** > **1-SPSEEK_SystemScans** Job for Sensitive Data Discovery Auditing
 
-  - Scan Scoping Options page (optional):
+    - Scan Scoping Options page (optional):
 
-    - Limit scans to specific Web Applications and site collections
-    - Set on the:
+        - Limit scans to specific Web Applications and site collections
+        - Set on the:
 
-      - **0.Collection** > **1-SPAA_SystemScans** Job for Access Auditing
-      - **0.Collection** > **1-SPSEEK_SystemScans** Job for Sensitive Data Discovery Auditing
+            - **0.Collection** > **1-SPAA_SystemScans** Job for Access Auditing
+            - **0.Collection** > **1-SPSEEK_SystemScans** Job for Sensitive Data Discovery Auditing
 
-  - Additional Scoping page (optional):
+    - Additional Scoping page (optional):
 
-    - Limit scan depth
-    - Set on the:
+        - Limit scan depth
+        - Set on the:
 
-      - **0.Collection** > **1-SPAA_SystemScans** Job for Access Auditing
-      - **0.Collection** > **1-SPSEEK_SystemScans** Job for Sensitive Data Discovery Auditing
+            - **0.Collection** > **1-SPAA_SystemScans** Job for Access Auditing
+            - **0.Collection** > **1-SPSEEK_SystemScans** Job for Sensitive Data Discovery Auditing
 
-  - DLP Audit Settings page, scope to not scan files larger than a specific size for Sensitive
-    Data Discovery Auditing:
+    - DLP Audit Settings page, scope to not scan files larger than a specific size for Sensitive
+      Data Discovery Auditing:
 
-    - Set on the **0.Collection** > **1-SPSEEK_SystemScans** Job
+        - Set on the **0.Collection** > **1-SPSEEK_SystemScans** Job
 
-  - Select DLP Criteria page, scope to scan for specific criteria or customizing criteria for
-    Sensitive Data Discovery Auditing:
+    - Select DLP Criteria page, scope to scan for specific criteria or customizing criteria for
+      Sensitive Data Discovery Auditing:
 
-    - Set on the **0.Collection** > **1-SPSEEK_SystemScans** Job
+        - Set on the **0.Collection** > **1-SPSEEK_SystemScans** Job
 
-  - Activity Data Scope page:
+    - Activity Data Scope page:
 
-    - Customize date ranges for activity to be collected
-    - Set on the **0.Collection** > **1-SPAC_SystemScans** Job for Activity Auditing
+        - Customize date ranges for activity to be collected
+        - Set on the **0.Collection** > **1-SPAC_SystemScans** Job for Activity Auditing
 
-  - Activity Log Locations page (optional):
+    - Activity Log Locations page (optional):
 
-    - Specify the log locations to avoid requiring remote registry access to locate the activity
-      event log files
-    - Set on the **0.Collection** > **1-SPAC_SystemScans** Job for Activity Auditing
+        - Specify the log locations to avoid requiring remote registry access to locate the activity
+          event log files
+        - Set on the **0.Collection** > **1-SPAC_SystemScans** Job for Activity Auditing
 
 Analysis Configuration
 
@@ -147,11 +147,11 @@ Though the analysis tasks should not be deselected, the following parameters can
 
 - Stale File is defined by default to 365 days
 
-  - Customize within the **4.Content** > **SP_StaleFiles** Job
+    - Customize within the **4.Content** > **SP_StaleFiles** Job
 
 - Stale Teams is defined by default to 30 days
 
-  - Customize within the **8.M365** > **SP_StaleTeamSites** Job
+    - Customize within the **8.M365** > **SP_StaleTeamSites** Job
 
 The .Active Directory Inventory Solution defines large groups, deeply nested groups, stale users,
 and users with large tokens. These parameters can be customized and are applicable to any solution,

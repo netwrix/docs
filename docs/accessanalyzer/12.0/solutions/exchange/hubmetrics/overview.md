@@ -11,16 +11,16 @@ The following job groups and jobs comprise the 1. HUB Metrics Job Group:
 
 - [0. Collection Job Group](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/collection/overview.md) – Comprised of jobs that process and analyze the
   message tracking logs on the Exchange Servers in the environment
-- [EX_DeliveryTimes Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex-deliverytimes.md) – Provides information around organizational and
+- [EX_DeliveryTimes Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex_deliverytimes.md) – Provides information around organizational and
   server level delivery times
-- [EX_DLMetrics Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex-dlmetrics.md) – Provides information around distribution list usage
-- [EX_DomainMetrics Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex-domainmetrics.md) – Provides information about which domains mail-flow
+- [EX_DLMetrics Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex_dlmetrics.md) – Provides information around distribution list usage
+- [EX_DomainMetrics Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex_domainmetrics.md) – Provides information about which domains mail-flow
   is going to and coming from
-- [EX_HourlyMetrics Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex-hourlymetrics.md) – Provides visibility into how much mail-flow the
+- [EX_HourlyMetrics Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex_hourlymetrics.md) – Provides visibility into how much mail-flow the
   organization sends and receives each hour
-- [EX_MessageSize Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex-messagesize.md) – Provides information around size of messages sent and
+- [EX_MessageSize Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex_messagesize.md) – Provides information around size of messages sent and
   received
-- [EX_ServerMetrics Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex-servermetrics.md) – Provides visibility into server mail-flow
+- [EX_ServerMetrics Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex_servermetrics.md) – Provides visibility into server mail-flow
   statistics, such as, sent, received, journaling, transport and NDR counts and sizes
-- [EX_UserMetrics Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex-usermetrics.md) – Provides information around each user’s mail-flow in the
+- [EX_UserMetrics Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/ex_usermetrics.md) – Provides information around each user’s mail-flow in the
   organization

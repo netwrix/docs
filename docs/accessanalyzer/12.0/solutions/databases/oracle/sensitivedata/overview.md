@@ -7,9 +7,9 @@ who has access to said data across all targeted Oracle database servers.
 
 The jobs in the 5.Sensitive Data Job Group are:
 
-- [Oracle_SensitiveData Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/sensitivedata/oracle-sensitivedata.md) – This job is designed to provide information
+- [Oracle_SensitiveData Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/sensitivedata/oracle_sensitivedata.md) – This job is designed to provide information
   on all the sensitive data that was discovered in the targeted Oracle database servers based on the
   selected scan criteria
-- [Oracle_SensitiveDataPermissions Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/sensitivedata/oracle-sensitivedatapermissions.md) – This job is designed
+- [Oracle_SensitiveDataPermissions Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/sensitivedata/oracle_sensitivedatapermissions.md) – This job is designed
   to provide all types of permissions on database objects containing sensitive data across all the
   targeted Oracle database servers

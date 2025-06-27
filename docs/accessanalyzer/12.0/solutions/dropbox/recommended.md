@@ -19,7 +19,7 @@ Dropbox Access Auditor Data Collector Wizard on the Scan Options page (accessed 
 **1-Dropbox_Permissions Scan** job’s **Queries** node). The access token only needs to be generated
 once, prior to running the job group for the first time. Then it is used as the credential in the
 Connection Profile. See the
-[DropboxAccess: Scan Options](/docs/accessanalyzer/12.0/data-collection/dropbox-access/scan-options.md) topic for
+[DropboxAccess: Scan Options](/docs/accessanalyzer/12.0/admin/datacollector/dropboxaccess/scanoptions.md) topic for
 additional information.
 
 The Dropbox solution has been configured to inherit the Connection Profile from the collection job
@@ -28,11 +28,11 @@ group level. The Connection Profile should be assigned under the **Dropbox** > *
 global settings level. However, since this may not be the Connection Profile with the necessary
 permissions for Dropbox, select the **Select one of the following user defined profiles** option and
 select the appropriate Connection Profile from the drop-down menu. See the
-[Custom Dropbox Connection Profile & Host List](/docs/accessanalyzer/12.0/data-collection/dropbox-access/configure-job.md)
+[Custom Dropbox Connection Profile & Host List](/docs/accessanalyzer/12.0/admin/datacollector/dropboxaccess/configurejob.md)
 topic for additional information on configuring the Dropbox credential. The Dropbox bulk import jobs
 requires the same connection profile as used in the corresponding Dropbox scan jobs
 
-See the [Connection](/docs/accessanalyzer/12.0/administration/settings/connection/overview.md) topic for additional information
+See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional information
 on creating Connection Profiles.
 
 Schedule Frequency
@@ -63,7 +63,7 @@ Query Configuration
 
 This solution can be run with the default query configurations. The Scoping page of the Dropbox
 Access Auditor Data Collector Wizard can be customized to target specific user accounts. See the
-[DropboxAccess: Scoping](/docs/accessanalyzer/12.0/data-collection/dropbox-access/scoping.md) topic for additional
+[DropboxAccess: Scoping](/docs/accessanalyzer/12.0/admin/datacollector/dropboxaccess/scoping.md) topic for additional
 information.
 
 Analysis Configuration
@@ -78,9 +78,9 @@ modified:
 
 - Stale content set to default of 365 days
 
-  - Configured within the **4.Content** > **Dropbox_Content** job
-  - **Determines stale data by owner** analysis task
-  - See the [4.Content > Dropbox_Content Job](/docs/accessanalyzer/12.0/solutions/dropbox/dropbox-content.md) topic for additional information
+    - Configured within the **4.Content** > **Dropbox_Content** job
+    - **Determines stale data by owner** analysis task
+    - See the [4.Content > Dropbox_Content Job](/docs/accessanalyzer/12.0/solutions/dropbox/dropbox_content.md) topic for additional information
 
 Additional Consideration
 
@@ -102,5 +102,5 @@ Scan** job).
 
 _Remember,_ prior to running the Dropbox solution for the first time, it is necessary to generate an
 access token to be used in the Connection Profile. This only needs to be done once. See the
-[Configure the Dropbox Access Query](/docs/accessanalyzer/12.0/solutions/dropbox/collection/1-dropbox-permissions-scan.md#configure-the-dropbox-access-query)
+[Configure the Dropbox Access Query](collection/1-dropbox_permissions_scan.md#configure-the-dropbox-access-query)
 topic for additional information.

@@ -7,15 +7,15 @@ the targeted domains.
 
 The jobs in the 8.Domains job group are:
 
-- [AD_CertificateAuthorityRights Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/ad-certificateauthorityrights.md) – Provides details on
+- [AD_CertificateAuthorityRights Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/ad_certificateauthorityrights.md) – Provides details on
   certificate enrollment permissions, specifically risky permissions where users have write or
   higher access
-- [AD_CertificateTemplates Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/ad-certificatetemplates.md) – Provides details on certificate
+- [AD_CertificateTemplates Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/ad_certificatetemplates.md) – Provides details on certificate
   template settings
-- [AD_CertificateVulnerabilities Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/ad-certificatevulnerabilities.md) – Highlights vulnerabilities
+- [AD_CertificateVulnerabilities Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/ad_certificatevulnerabilities.md) – Highlights vulnerabilities
   in the configuration and permission of the Certificate Authority, certificate templates, and
   Active Directory
-- [AD_DomainPermissions Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/ad-domainpermissions.md) – Reports on all Active Directory permissions
+- [AD_DomainPermissions Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/ad_domainpermissions.md) – Reports on all Active Directory permissions
   applied to domain objects within the targeted domains
-- [AD_DomainReplication Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/ad-domainreplication.md) – Highlights all Active Directory permissions
+- [AD_DomainReplication Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/domains/ad_domainreplication.md) – Highlights all Active Directory permissions
   applied to domain objects within the targeted domains

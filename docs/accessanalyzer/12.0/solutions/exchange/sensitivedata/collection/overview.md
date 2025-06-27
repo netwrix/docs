@@ -7,6 +7,6 @@ Exchange environment.
 
 The jobs in the 0.Collection job group are:
 
-- [EX_Mailbox_SDD Job](/docs/accessanalyzer/12.0/solutions/exchange/sensitivedata/collection/ex-mailbox-sdd.md) – Collects potentially sensitive data in mailboxes
-- [EX_PublicFolder_SDD Job](/docs/accessanalyzer/12.0/solutions/exchange/sensitivedata/collection/ex-publicfolder-sdd.md) – Collects potentially sensitive data in public
+- [EX_Mailbox_SDD Job](/docs/accessanalyzer/12.0/solutions/exchange/sensitivedata/collection/ex_mailbox_sdd.md) – Collects potentially sensitive data in mailboxes
+- [EX_PublicFolder_SDD Job](/docs/accessanalyzer/12.0/solutions/exchange/sensitivedata/collection/ex_publicfolder_sdd.md) – Collects potentially sensitive data in public
   folders

@@ -7,9 +7,9 @@ has access to it across all the targeted PostgreSQL databases.
 
 The job in the Sensitive Data Job Group is:
 
-- [PgSQL_SensitiveData Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/sensitivedata/pgsql-sensitivedata.md) - Designed to provide information on all the
+- [PgSQL_SensitiveData Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/sensitivedata/pgsql_sensitivedata.md) - Designed to provide information on all the
   sensitive data that was discovered in the targeted PostgreSQL servers based on the selected scan
   criteria
-- [PgSQL_SensitiveDataPermissions Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/sensitivedata/pgsql-sensitivedatapermissions.md) - Designed to provide
+- [PgSQL_SensitiveDataPermissions Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/sensitivedata/pgsql_sensitivedatapermissions.md) - Designed to provide
   information on all types of permissions on database objects containing sensitive data across all
   the targeted PostgreSQL servers based on the selected scan criteria.

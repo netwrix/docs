@@ -8,13 +8,13 @@ The following job groups need to be successfully run:
 - .Entra ID Inventory Job Group
 - (Optional) Exchange > 1. HUB Metrics Job Group
 
-  - Provides data on distribution list metrics for on-premise Exchange environments and the last
-    time a distribution list received mail
+    - Provides data on distribution list metrics for on-premise Exchange environments and the last
+      time a distribution list received mail
 
 - (Optional) Exchange > 8. Exchange Online > Mailflow Job Group
 
-  - Provides data on distribution list metrics for Exchange Online environments and the last time
-    a distribution list received mail
+    - Provides data on distribution list metrics for Exchange Online environments and the last time
+      a distribution list received mail
 
 Schedule Frequency
 

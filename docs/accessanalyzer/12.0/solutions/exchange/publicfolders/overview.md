@@ -19,7 +19,7 @@ The following comprise the 5. Public Folders job group:
   Probable Owner
 - [Permissions Job Group](/docs/accessanalyzer/12.0/solutions/exchange/publicfolders/permissions/overview.md) – Provides visibility into permissions applied to
   each public folder
-- [PF_Overview Job](/docs/accessanalyzer/12.0/solutions/exchange/publicfolders/pf-overview.md) – Comprised of analysis and reports that provides a top level
+- [PF_Overview Job](/docs/accessanalyzer/12.0/solutions/exchange/publicfolders/pf_overview.md) – Comprised of analysis and reports that provides a top level
   summary of each parent public folder and correlates information from the message tracking logs to
   identify the last time a public folder received mail
 
@@ -27,4 +27,4 @@ The **5. Public Folders** > **Ownership** job group uses the ExchangePublicFolde
 collector. Therefore, it requires both Access Analyzer MAPI CDO and Microsoft Exchange MAPI CDO to
 be installed on the Access Analyzer Console server. Once these have been installed, the
 **Settings** > **Exchange** node must be configured for proper connection to the Exchange server.
-See the [Exchange](/docs/accessanalyzer/12.0/administration/settings/exchange.md) topic for additional information.
+See the [Exchange](/docs/accessanalyzer/12.0/admin/settings/exchange.md) topic for additional information.

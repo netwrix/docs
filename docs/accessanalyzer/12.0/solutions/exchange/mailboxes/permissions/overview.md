@@ -13,8 +13,8 @@ The job groups and jobs in the Permissions job group are:
 - [0. Collection Job Group](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/permissions/collection/overview.md) – Comprised of data collection and analysis that
   focus on access granted to each mailbox in the environment including: Mailbox Rights, Active
   Directory Permissions, Delegation, and Folder Permissions
-- [EX_AdminGroups Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/permissions/ex-admingroups.md) – Provides visibility into the direct and effective
+- [EX_AdminGroups Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/permissions/ex_admingroups.md) – Provides visibility into the direct and effective
   membership of Exchange Administrative groups
-- [EX_MailboxAccess Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/permissions/ex-mailboxaccess.md) – Provides visibility into access granted to each
+- [EX_MailboxAccess Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/permissions/ex_mailboxaccess.md) – Provides visibility into access granted to each
   mailbox in the environment taking into consideration Mailbox Rights, Active Directory Permissions,
   Delegation, and Folder Permissions

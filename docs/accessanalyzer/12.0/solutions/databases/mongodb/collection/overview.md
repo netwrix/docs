@@ -8,7 +8,7 @@ further analysis and producing respective reports.
 
 The jobs in the 0.Collection Job Group are:
 
-- [MongoDB_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/mongodb/collection/mongodb-configuration.md) — Collects MongoDB server instance and
+- [MongoDB_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/mongodb/collection/mongodb_configuration.md) — Collects MongoDB server instance and
   database configuration settings for use in the following analysis jobs and respective reports.
-- [MongoDB_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/mongodb/collection/mongodb-sensitivedatascan.md) — Discovers sensitive data in
+- [MongoDB_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/mongodb/collection/mongodb_sensitivedatascan.md) — Discovers sensitive data in
   MongoDB databases based on pre-defined or user-defined search criteria

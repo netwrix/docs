@@ -15,8 +15,8 @@ The following job groups need to be successfully run:
 - .Entra ID Inventory Job Group
 - Exchange > 1. HUB Metrics Job Group (Optional)
 
-  - Provides data on public folder metrics for on-premises Exchange environments and the last time
-    a distribution list received mail
+    - Provides data on public folder metrics for on-premises Exchange environments and the last time
+      a distribution list received mail
 
 Targeted Hosts
 
@@ -30,30 +30,30 @@ list:
 
 - For Exchange 2010 or 2013 – Assign a single host from the 2010/2013 environment
 
-  - This can be assigned at the Collection job group level if the host has been added to a custom
-    host list
-  - This can be assigned at the **Collection** > **PF_FolderOwnership** job level by adding the
-    individual host at the **Configure** > **Hosts** node
+    - This can be assigned at the Collection job group level if the host has been added to a custom
+      host list
+    - This can be assigned at the **Collection** > **PF_FolderOwnership** job level by adding the
+      individual host at the **Configure** > **Hosts** node
 
-  **NOTE:** The target host should be set to an on-premises Exchange server. Exchange Online is
-  not support.
+    **NOTE:** The target host should be set to an on-premises Exchange server. Exchange Online is
+    not support.
 
 Connection Profile
 
 A Connection Profile must be set directly on the collection jobs. See the
-[Exchange PowerShell Permissions](/docs/accessanalyzer/12.0/getting-started/system-requirements/solutions/exchange/powershell.md) topic for
+[Exchange PowerShell Permissions](/docs/accessanalyzer/12.0/requirements/solutions/exchange/powershell.md) topic for
 credential requirements and assign the Connection Profile to the following jobs:
 
 - **Content** > **Collection** > **PF_ContentScans** Job
 - **Growth and Size** > **Collection** > **PF_FolderScans** Job
 - **Permissions** > **Collection** > **PF_EntitlementScans** Job
 
-See the [MAPI-Based Data Collector Permissions](/docs/accessanalyzer/12.0/getting-started/system-requirements/solutions/exchange/mapi.md)
+See the [MAPI-Based Data Collector Permissions](/docs/accessanalyzer/12.0/requirements/solutions/exchange/mapi.md)
 topic for credential requirements and assign the Connection Profile to the following job:
 
 - **Ownership** > **Collection** > **PF_FolderOwnership** Job
 
-See the [Connection](/docs/accessanalyzer/12.0/administration/settings/connection/overview.md) topic for additional
+See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.
 
 Schedule Frequency

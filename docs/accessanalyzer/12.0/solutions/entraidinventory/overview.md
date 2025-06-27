@@ -18,14 +18,14 @@ Supported Platforms
 
 Requirements, Permissions, and Ports
 
-See the [Microsoft Entra ID Tenant Target Requirements](/docs/accessanalyzer/12.0/configuration/entra-id/overview.md) topic
+See the [Microsoft Entra ID Tenant Target Requirements](/docs/accessanalyzer/12.0/config/entraid/overview.md) topic
 for additional information.
 
 Location
 
 The .Entra ID Inventory Solution is a core component of all Access Analyzer installations. It can be
 installed from the Access Analyzer Instant Job Wizard. See the
-[Instant Job Wizard](/docs/accessanalyzer/12.0/administration/job-management/instant-jobs/overview.md) topic for additional information.
+[Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for additional information.
 Navigate to the solution by expanding the Jobs tree and selecting the **.Entra ID Inventory** Job
 Group. This group has been named in such a way to keep it at the top of the Jobs tree.
 
@@ -35,15 +35,15 @@ Group. This group has been named in such a way to keep it at the top of the Jobs
 
 The jobs in the .Entra ID Inventory Solution are:
 
-- [1-AAD_Scan Job](/docs/accessanalyzer/12.0/solutions/entraidinventory/1-aad-scan.md) – Provides essential Microsoft Entra ID User and Group membership
+- [1-AAD_Scan Job](/docs/accessanalyzer/12.0/solutions/entraidinventory/1-aad_scan.md) – Provides essential Microsoft Entra ID User and Group membership
   details to several Access Analyzer built-in solution sets. Key information includes user status,
   user attributes, and group membership. This job also collects Microsoft Entra roles information.
-- [2-AAD_Exceptions Job](/docs/accessanalyzer/12.0/solutions/entraidinventory/2-aad-exceptions.md) – Runs analysis on the collected data and identifies
+- [2-AAD_Exceptions Job](/docs/accessanalyzer/12.0/solutions/entraidinventory/2-aad_exceptions.md) – Runs analysis on the collected data and identifies
   toxic conditions that exist within Microsoft Entra ID which may leave your environment at risk or
   add unnecessary administrative overhead
 
 The data collection is conducted by the AzureADInventory and Entra data collectors. See the
-[Standard Reference Tables & Views for the AzureADInventory Data Collector](/docs/accessanalyzer/12.0/data-collection/azure-ad-inventory/standard-tables.md)
+[Standard Reference Tables & Views for the AzureADInventory Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/azureadinventory/standardtables.md)
 topic for database table information.
 
 **NOTE:** This solution is required for SharePoint Online reports in the Netwrix Access Information

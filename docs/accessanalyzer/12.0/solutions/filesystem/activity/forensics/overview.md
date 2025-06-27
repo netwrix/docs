@@ -7,14 +7,14 @@ targeted file servers.
 
 The Forensics job group is comprised of:
 
-- [FS_Deletions Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/forensics/fs-deletions.md) – Designed to report on deletion activity event information
+- [FS_Deletions Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/forensics/fs_deletions.md) – Designed to report on deletion activity event information
   from targeted file servers
 
-  - Includes a Notification analysis task option
-  - Requires **Access Auditing** component data collection
+    - Includes a Notification analysis task option
+    - Requires **Access Auditing** component data collection
 
-- [FS_PermissionChanges Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/forensics/fs-permissionchanges.md) – Designed to report on permission change
+- [FS_PermissionChanges Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/forensics/fs_permissionchanges.md) – Designed to report on permission change
   activity event information from targeted file servers
 
-  - Includes a Notification analysis task option
-  - Requires **Access Auditing** component data collection
+    - Includes a Notification analysis task option
+    - Requires **Access Auditing** component data collection

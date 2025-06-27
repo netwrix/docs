@@ -7,9 +7,9 @@ policies and accounts within the organization.
 
 The 1.Organizations job jroup is comprised of:
 
-- [AWS_Accounts Job](/docs/accessanalyzer/12.0/solutions/aws/organizations/aws-accounts.md) – Provides detailed information about the accounts that exist
+- [AWS_Accounts Job](/docs/accessanalyzer/12.0/solutions/aws/organizations/aws_accounts.md) – Provides detailed information about the accounts that exist
   in each AWS Organization. This job also determines the AWS Master Account for each Organization.
   The AWS Master Account can be set manually by adding a line for each Organization in the temporary
   table #IdentitySourceAccount in the analysis task parameters for this job.
-- [AWS_MemberAccountUsers Job](/docs/accessanalyzer/12.0/solutions/aws/organizations/aws-memberaccountusers.md) – Highlights users that are not located in
+- [AWS_MemberAccountUsers Job](/docs/accessanalyzer/12.0/solutions/aws/organizations/aws_memberaccountusers.md) – Highlights users that are not located in
   the primary AWS Identity Source, which is generally the Master AWS Account for the Organization

@@ -8,16 +8,16 @@ analysis, and for producing reports.
 
 The job groups in the 0.Collection Job Group are:
 
-- [0-Oracle_Servers Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/0-oracle-servers.md) – This job is designed to enumerate and store the list
+- [0-Oracle_Servers Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/0-oracle_servers.md) – This job is designed to enumerate and store the list
   of Oracle Database Instances running on the targeted servers
-- [1-Oracle_PermissionsScan Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/1-oracle-permissionsscan.md) – This job is designed to collect
+- [1-Oracle_PermissionsScan Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/1-oracle_permissionsscan.md) – This job is designed to collect
   Oracle database level permissions from all the targeted Oracle database servers
-- [2-Oracle_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/2-oracle-sensitivedatascan.md) – This job is designed to discover
+- [2-Oracle_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/2-oracle_sensitivedatascan.md) – This job is designed to discover
   sensitive data in the Oracle database across all the targeted Oracle database servers based on
   pre-defined or user-defined search criteria
-- [3-Oracle_ActivityScan Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/3-oracle-activityscan.md) – This job is designed to capture user
+- [3-Oracle_ActivityScan Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/3-oracle_activityscan.md) – This job is designed to capture user
   activity from all the targeted Oracle database servers
-- [4-Oracle_DefaultPasswordUsers Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/4-oracle-defaultpasswordusers.md) – This job is designed to
+- [4-Oracle_DefaultPasswordUsers Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/4-oracle_defaultpasswordusers.md) – This job is designed to
   provide a list of users in the database that are configured to use default passwords
-- [5-Oracle_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/5-oracle-configuration.md) – This job is designed to return
+- [5-Oracle_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/5-oracle_configuration.md) – This job is designed to return
   additional configuration settings from Oracle servers.

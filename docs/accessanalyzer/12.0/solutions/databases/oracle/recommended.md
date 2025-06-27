@@ -38,7 +38,7 @@ most customer environments, but it is possible.
 
 If the required permissions are assigned to one Active Directory credential, once the account has
 been provisioned, create a custom Connection Profile containing the credentials for the targeted
-environment. See the [SQL Data Collector](/docs/accessanalyzer/12.0/data-collection/sql/overview.md) topic for
+environment. See the [SQL Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/sql/overview.md) topic for
 additional information on permissions and creating a SQL custom connection profile.
 
 Alternatively, create a connection profile with both the Oracle database credentials and the server
@@ -49,20 +49,20 @@ node as follows:
 
 - Both the Oracle database credentials and the Server credentials for the targeted host (or the
   previously provisioned AD credentials) for:
-  - 0-Oracle_Servers Job
+    - 0-Oracle_Servers Job
 - Oracle Database credentials only for:
-  - 1-Oracle_PermissionsScan Job
-  - 2-Oracle_SensitiveDataScan Job
-  - 3-Oracle_ActivityScan Job
-  - 4-Oracle_DefaultPasswordUsers Job
-  - 5-Oracle_Configuration Job
+    - 1-Oracle_PermissionsScan Job
+    - 2-Oracle_SensitiveDataScan Job
+    - 3-Oracle_ActivityScan Job
+    - 4-Oracle_DefaultPasswordUsers Job
+    - 5-Oracle_Configuration Job
 
 The Connection Profile is set to Use the Default Profile, as configured at the global settings
 level. However, since this may not be the Connection Profile with the necessary permissions for the
 assigned hosts, click the radio button for the Select one of the following user defined profiles
 option and select the appropriate Connection Profile drop-down menu.
 
-See the [Connection](/docs/accessanalyzer/12.0/administration/settings/connection/overview.md) topic for additional
+See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.
 
 Schedule Frequency
@@ -88,23 +88,23 @@ This solution is designed to be run with the default query configurations. Howev
 SQL Data Collector configurations can be modified if desired:
 
 - Options page – Customize scan options and/or sensitive data (DLP) options in the following jobs:
-  - 2-Oracle_SensitiveDataScan Job
-  - 1-Oracle_ActivityScan Job
+    - 2-Oracle_SensitiveDataScan Job
+    - 1-Oracle_ActivityScan Job
 - Criteria page – Customize the criteria used to define sensitive data in the following job:
-  - 2-Oracle_SensitiveDataScan Job
+    - 2-Oracle_SensitiveDataScan Job
 - Filter page – Scope the query to target specific databases/instances in the following jobs:
 
-  Remember, it is necessary for the [0-Oracle_Servers Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/0-oracle-servers.md) to run
-  at least once before attempting to scope any of the following queries:
+    Remember, it is necessary for the [0-Oracle_Servers Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/collection/0-oracle_servers.md) to run
+    at least once before attempting to scope any of the following queries:
 
-  - 1-Oracle_PermissionsScan Job
-  - 2-Oracle_SensitiveDataScan Job
-  - 3-Oracle_ActivityScan Job
-  - 4-Oracle_DefaultPasswordUsers Job
-  - 5-Oracle_Configuration Job
+    - 1-Oracle_PermissionsScan Job
+    - 2-Oracle_SensitiveDataScan Job
+    - 3-Oracle_ActivityScan Job
+    - 4-Oracle_DefaultPasswordUsers Job
+    - 5-Oracle_Configuration Job
 
-  **_RECOMMENDED:_** For reporting purposes, scope all queries to target the same
-  databases/instances if applying a scope.
+    **_RECOMMENDED:_** For reporting purposes, scope all queries to target the same
+    databases/instances if applying a scope.
 
 Analysis Configuration
 

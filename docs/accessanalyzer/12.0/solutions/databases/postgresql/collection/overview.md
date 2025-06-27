@@ -8,18 +8,18 @@ Set for further analysis and producing respective reports.
 
 The jobs in the 0.Collection Job Group are:
 
-- [PgSQL_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/collection/pgsql-configuration.md) - Designed to return additional configuration
+- [PgSQL_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/collection/pgsql_configuration.md) - Designed to return additional configuration
   settings from PostgreSQL servers
-- [PgSQL_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/collection/pgsql-sensitivedatascan.md) - Designed to discover sensitive data in
+- [PgSQL_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/collection/pgsql_sensitivedatascan.md) - Designed to discover sensitive data in
   PostgreSQL databases based on pre-defined or user-defined search criteria
-- [PgSQL_TablePrivileges Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/collection/pgsql-tableprivileges.md) - Designed to collect PostgreSQL table
+- [PgSQL_TablePrivileges Job](/docs/accessanalyzer/12.0/solutions/databases/postgresql/collection/pgsql_tableprivileges.md) - Designed to collect PostgreSQL table
   privileges from all the targeted servers.
 
 Workflow
 
 1. Set a Connection Profile for the 0.Collection Job Group with the permissions listed in the
    Recommended Configurations section. See the
-   [Connection](/docs/accessanalyzer/12.0/administration/settings/connection/overview.md) topic for additional information.
+   [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional information.
 2. For Sensitive Data Discovery Auditing – Ensure the Sensitive Data Discovery Add-On is installed
    on the Access Analyzer Console server.
 3. Schedule the solution to run daily or as desired.

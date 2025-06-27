@@ -7,15 +7,15 @@ to help identify potential security vulnerabilities and reduce risk within the e
 
 The jobs in the Authentication job group are:
 
-- [SG_LSASettings Job](/docs/accessanalyzer/12.0/solutions/windows/authentication/sg-lsasettings.md) – This job lists LSA settings on all targeted hosts. In
+- [SG_LSASettings Job](/docs/accessanalyzer/12.0/solutions/windows/authentication/sg_lsasettings.md) – This job lists LSA settings on all targeted hosts. In
   particular, the RunAsPPL, RestrictAnonymous, and ValidateKdcPacSignature keys are examined. If
   these keys are not set to 1, a host is vulnerable to mimikatz and other exploitation tools. See
   the Microsoft
-  [Configuring Additional LSA Protection](<https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408187(v=ws.11)>)
+  [Configuring Additional LSA Protection](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408187(v=ws.11))
   article for additional ininformation.
-- [SG_SecuritySupportProviders Job](/docs/accessanalyzer/12.0/solutions/windows/authentication/sg-securitysupportproviders.md) – This job identifies security
+- [SG_SecuritySupportProviders Job](/docs/accessanalyzer/12.0/solutions/windows/authentication/sg_securitysupportproviders.md) – This job identifies security
   support providers on all targeted hosts, highlighting potentially malicious SSPs
-- [SG_WDigestSettings Job](/docs/accessanalyzer/12.0/solutions/windows/authentication/sg-wdigestsettings.md) – This job lists WDigest settings on all targeted
+- [SG_WDigestSettings Job](/docs/accessanalyzer/12.0/solutions/windows/authentication/sg_wdigestsettings.md) – This job lists WDigest settings on all targeted
   hosts. In particular, the UseLogonCredentials key is examined. If the KB is not installed, and
   this key is not set properly for a given host, cleartext passwords will be stored in memory. See
   the

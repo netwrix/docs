@@ -7,15 +7,15 @@ targeted file servers.
 
 The Security Job Group is comprised of:
 
-- [FS_AdminActvity Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/security/fs-adminactvity.md) – Designed to report on administrator related activity
+- [FS_AdminActvity Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/security/fs_adminactvity.md) – Designed to report on administrator related activity
   event information from targeted file servers
 
-  - Requires **Access Auditing** component data collection
+    - Requires **Access Auditing** component data collection
 
-- [FS_HighRiskActivity Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/security/fs-highriskactivity.md) – Designed to report on high risk activity event
+- [FS_HighRiskActivity Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/security/fs_highriskactivity.md) – Designed to report on high risk activity event
   information from targeted file servers
 
-  - Requires **Access Auditing** component data collection
+    - Requires **Access Auditing** component data collection
 
-- [FS_LocalUserActivity Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/security/fs-localuseractivity.md) – Designed to report on local user activity
+- [FS_LocalUserActivity Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/security/fs_localuseractivity.md) – Designed to report on local user activity
   event information from targeted file servers

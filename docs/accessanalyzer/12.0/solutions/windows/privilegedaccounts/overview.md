@@ -15,6 +15,6 @@ The job groups in the Privileged Accounts job group are:
   privileged and how they are being secured
 - [Logon Rights Job Group](/docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/logonrights/overview.md) – The jobs within this group collect local
   policy information to provide insight into privileged users within the environment
-- [Service Accounts > SG_ServiceAccounts Job](/docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/sg-serviceaccounts.md) – This job indicates which
+- [Service Accounts > SG_ServiceAccounts Job](/docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/sg_serviceaccounts.md) – This job indicates which
   domain accounts are being used to run services on member servers, highlighting password age and
   settings

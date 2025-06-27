@@ -55,15 +55,15 @@ Query Configuration
 
 The solution is best run with the default query configuration. However, a possible modification
 might be to include configurations of the scan options or additional custom attributes within the
-[1-AD_Scan Job](/docs/accessanalyzer/12.0/solutions/active-directory-inventory/1-ad-scan.md).
+[1-AD_Scan Job](/docs/accessanalyzer/12.0/solutions/activedirectoryinventory/1-ad_scan.md).
 
 Analysis Configuration
 
 The solution is best run with the default analysis configuration. However, possible modifications
 might be to:
 
-- Enable notification analysis tasks within the [2-AD_Changes Job](/docs/accessanalyzer/12.0/solutions/active-directory-inventory/2-ad-changes.md)
-- Customize exception analysis parameters within the [3-AD_Exceptions Job](/docs/accessanalyzer/12.0/solutions/active-directory-inventory/3-ad-exceptions.md)
+- Enable notification analysis tasks within the [2-AD_Changes Job](/docs/accessanalyzer/12.0/solutions/activedirectoryinventory/2-ad_changes.md)
+- Customize exception analysis parameters within the [3-AD_Exceptions Job](/docs/accessanalyzer/12.0/solutions/activedirectoryinventory/3-ad_exceptions.md)
 
 Workflow
 
