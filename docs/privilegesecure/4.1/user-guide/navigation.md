@@ -48,7 +48,7 @@ Interface Icons
 | ![users](/img/versioned_docs/activitymonitor_7.1/activitymonitor/admin/monitoreddomains/admonitoringconfiguration/users.webp) | Users & Groups      |
 | ![resources](/img/versioned_docs/privilegesecure_4.1/privilegesecure/accessmanagement/enduser/resources.webp)                 | Resources           |
 | ![credentials](/img/versioned_docs/activitymonitor_7.1/activitymonitor/install/agent/credentials.webp)                        | Credentials         |
-| ![activities](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostdiscovery/activities.webp)                     | Activities          |
+| ![activities](/img/product_docs/accessanalyzer/11.6/admin/hostdiscovery/activities.webp)                     | Activities          |
 | ![configuration](/img/versioned_docs/privilegesecure_4.1/privilegesecure/accessmanagement/enduser/configuration.webp)         | Configuration       |
 | ![servicenodes](/img/versioned_docs/privilegesecure_4.1/privilegesecure/accessmanagement/enduser/servicenodes.webp)           | Service Nodes       |
 | ![auditreporting](/img/versioned_docs/privilegesecure_4.1/privilegesecure/accessmanagement/enduser/auditreporting.webp)       | Audit and Reporting |

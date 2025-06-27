@@ -10,7 +10,7 @@ Statistics** > **FS_StaleShares** > **Configure** node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_StaleShares Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/activity/usagestatistics/stalesharesanalysis.webp)
+![Analysis Tasks for the FS_StaleShares Job](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/activity/usagestatistics/stalesharesanalysis.webp)
 
 The following analysis tasks are selected by default:
 

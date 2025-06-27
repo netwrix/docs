@@ -11,7 +11,7 @@ been assigned a user role beyond owner.
 - For an owner without an assigned user role, the Access Information Center will open directly to
   the Owner portal.
 
-![Owner Portal interface with 3 sections identified](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/runninginstances/overview.webp)
+![Owner Portal interface with 3 sections identified](/img/product_docs/accessanalyzer/11.6/admin/runninginstances/overview.webp)
 
 The Owner portal has three sections:
 
@@ -172,7 +172,7 @@ Resource Access wizard opens.
 selected, the **Notify users about their change in access** option will send an email to the users
 who have been granted access to the resource. Click **Next**.
 
-![Change Resource Access wizard showing 2. Add Access page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/addaccess.webp)
+![Change Resource Access wizard showing 2. Add Access page](/img/product_docs/accessanalyzer/11.6/admin/settings/access/rolebased/addaccess.webp)
 
 **Step 3 –** On the Add Access page, indicate the new users. Entering a name or email address in the
 search field to find and select users from Active Directory, which populate in a drop-down menu as
@@ -208,7 +208,7 @@ menu.
 _Remember,_ Notes are included in the notification sent to the user (if selected) and recorded with
 the historical record of this change.
 
-![Change Resource Access wizard completed updates message](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Change Resource Access wizard completed updates message](/img/product_docs/accessanalyzer/11.6/install/sensitivedatadiscovery/completed.webp)
 
 **Step 8 –** The action status displays on the page. When the update has completed (100%), click
 **Finish**. The Change Resource Access wizard closes.
@@ -268,7 +268,7 @@ process the updates.
 _Remember,_ Notes are included in the notification sent to the user (if selected) and recorded with
 the historical record of this change.
 
-![Change Resource Access wizard completed updates message](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Change Resource Access wizard completed updates message](/img/product_docs/accessanalyzer/11.6/install/sensitivedatadiscovery/completed.webp)
 
 **Step 7 –** The action status displays on the page. When the update has completed (100%), click
 **Finish**. The Change Resource Access wizard closes.

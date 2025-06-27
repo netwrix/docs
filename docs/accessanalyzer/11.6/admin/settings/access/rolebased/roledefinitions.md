@@ -219,7 +219,7 @@ specific reports at:
   [Publish Security Page](/docs/accessanalyzer/11.6/admin/report/wizard/publishsecurity.md) topic
   for additional information.
 
-| ![Job Group Level](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/reportviewerjobgroup.webp) | ![Job Level](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/reportviewerjob.webp) | ![Report Configuration Level](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/reportviewerreport.webp) |
+| ![Job Group Level](/img/product_docs/accessanalyzer/11.6/admin/settings/access/rolebased/reportviewerjobgroup.webp) | ![Job Level](/img/product_docs/accessanalyzer/11.6/admin/settings/access/rolebased/reportviewerjob.webp) | ![Report Configuration Level](/img/product_docs/accessanalyzer/11.6/admin/settings/access/rolebased/reportviewerreport.webp) |
 | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Job Group Level                                                                                                                           | Job Level                                                                                                                      | Report Configuration Level                                                                                                                         |
 

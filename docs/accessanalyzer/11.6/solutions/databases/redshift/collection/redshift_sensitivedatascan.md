@@ -6,7 +6,7 @@ This job discovers sensitive data in PostgreSQL databases on pre-defined or user
 
 The Redshift_SensitiveDataScan Job uses the SQL Data Collector for queries.
 
-![Query Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/redshift/collection/collectionsensitivedataquery.webp)
+![Query Selection](/img/product_docs/accessanalyzer/11.6/solutions/databases/redshift/collection/collectionsensitivedataquery.webp)
 
 The query is:
 
@@ -29,11 +29,11 @@ Query Properties. The Query Properties window appears.
 **Step 3 –** Select the Data Source tab, and click Configure. The SQL Data Collector Wizard opens
 with Sensitive Data Collection category selected.
 
-![Category Page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/redshift/collection/collectionsensitivedatacategory.webp)
+![Category Page](/img/product_docs/accessanalyzer/11.6/solutions/databases/redshift/collection/collectionsensitivedatacategory.webp)
 
 **Step 4 –** Click **Next**. The Sensitive Data Scan Settings view appears.
 
-![Sensitive Data Scan Settings](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/redshift/collection/collectionsensitivedatajoboptions.webp)
+![Sensitive Data Scan Settings](/img/product_docs/accessanalyzer/11.6/solutions/databases/redshift/collection/collectionsensitivedatajoboptions.webp)
 
 **Step 5 –** To modify sensitive data scan options, select the desired scan options. See the
 [SQL: Options](/docs/accessanalyzer/11.6/admin/datacollector/sql/options.md)
@@ -45,7 +45,7 @@ may significantly increase scan time.
 
 **Step 6 –** Click **Next**. The Select Criteria view appears.
 
-![Select DLP Criteria for Scan](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/redshift/collection/collectionsensitivedatacriteria.webp)
+![Select DLP Criteria for Scan](/img/product_docs/accessanalyzer/11.6/solutions/databases/redshift/collection/collectionsensitivedatacriteria.webp)
 
 **Step 7 –** To modify criteria, click on **Use the following selected criteria:** and select your
 choices. By default, the Sensitive Data Scan job is set to **Use Global Criteria**. Also by default,
@@ -65,14 +65,14 @@ topic for additional information.
 
 **Step 8 –** Click **Next**. The Filters view appears.
 
-![Filters Page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/redshift/collection/collectionsensitivedatafilter.webp)
+![Filters Page](/img/product_docs/accessanalyzer/11.6/solutions/databases/redshift/collection/collectionsensitivedatafilter.webp)
 
 **Step 9 –** Click **Connections** to open the Manage Connections window.
 
 **NOTE:** SQL databases must be added to the query before they can be scanned. Before you can add a
 query, you must establish a connection to the database.
 
-![Manage Connections](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/redshift/collection/collectionsensitivedataconnection.webp)
+![Manage Connections](/img/product_docs/accessanalyzer/11.6/solutions/databases/redshift/collection/collectionsensitivedataconnection.webp)
 
 **Step 10 –** In the Manage Connections window, click **Create New Connection** and add the
 following information:
@@ -121,7 +121,7 @@ not collect data themselves.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/redshift/collection/analysiscollectionsensitivedatascan.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/solutions/databases/redshift/collection/analysiscollectionsensitivedatascan.webp)
 
 The default analysis tasks are:
 

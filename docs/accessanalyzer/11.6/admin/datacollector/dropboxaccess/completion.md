@@ -3,7 +3,7 @@
 The Completion page, is where configuration settings are summarized. This page is a wizard page for
 all categories.
 
-![Dropbox Access Auditor Data Collector Wizard Completion page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/dropboxaccess/completion.webp)
+![Dropbox Access Auditor Data Collector Wizard Completion page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/dropboxaccess/completion.webp)
 
 Click **Finish** to save configuration changes. If no changes were made, it is a best practice to
 click **Cancel** to close the Dropbox Access Auditor Data Collector Wizard ensuring that no

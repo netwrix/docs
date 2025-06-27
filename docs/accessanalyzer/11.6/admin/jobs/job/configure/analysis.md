@@ -8,7 +8,7 @@ The Notification analysis module allows for the ability to send an email notice 
 met, for example an email can be sent to an administrator to notify that disk space has reached a
 particular point (the trigger) and needs to be addressed before space runs out.
 
-![Analysis Selection page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/analysisselection.webp)
+![Analysis Selection page](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/configure/analysisselection.webp)
 
 The Analysis Selection view lists all analysis tasks for the selected job. The listed information
 includes:
@@ -20,7 +20,7 @@ includes:
   applies to analysis modules that use host list filters, for example **Business Rules** analysis
   module
 
-![Option at the top of the Analysis Section](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/analysisbuttonstop.webp)
+![Option at the top of the Analysis Section](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/configure/analysisbuttonstop.webp)
 
 The Analysis section at the top has four options:
 
@@ -36,7 +36,7 @@ The Analysis section at the top has four options:
       topic for additional information.
 - Analysis Configuration – Opens the selected analysis task’s configuration window
 
-![Buttons at the bottom of the Analysis Selection page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/analysisbuttonsbottom.webp)
+![Buttons at the bottom of the Analysis Selection page](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/configure/analysisbuttonsbottom.webp)
 
 At the bottom of the Analysis Selection view, there are action buttons that apply to the table:
 
@@ -54,7 +54,7 @@ At the bottom of the Analysis Selection view, there are action buttons that appl
 The Analysis Selection view also has its own right-click menu for taking action on the analysis task
 or the job.
 
-![Analysis Selection page right-click menu](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/analysisrightclickmenu.webp)
+![Analysis Selection page right-click menu](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/configure/analysisrightclickmenu.webp)
 
 The options for the Analysis node right-click menu are:
 

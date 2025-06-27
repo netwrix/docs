@@ -6,7 +6,7 @@ the Delete Mailbox Contents operation.
 Depending on the data in the source table, users must specify a data table column containing either
 the Mailbox display name or email address.
 
-![New Mailbox Action Wizard Mailbox Identification page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/identification.webp)
+![New Mailbox Action Wizard Mailbox Identification page](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/identification.webp)
 
 Select which mailboxes to target using the following options:
 

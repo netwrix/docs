@@ -11,7 +11,7 @@ the following queries:
 **CAUTION:** Except the first query, do not modify the remaining queries. The remaining queries are
 preconfigured for this job.
 
-![Query Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/domains/collection/domaincontrollersquery.webp)
+![Query Selection](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/domains/collection/domaincontrollersquery.webp)
 
 The queries for this job are:
 
@@ -47,11 +47,11 @@ Data Collector. This query can be optionally configured to connect securely with
 **Step 3 –** Select the **Data Source** tab, and click **Configure**. The LDAP template form wizard
 opens.
 
-![LDAP template form](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/domains/collection/ldaptemplate.webp)
+![LDAP template form](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/domains/collection/ldaptemplate.webp)
 
 **Step 4 –** Click **Options**.
 
-![Connection Options](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/domains/collection/ldaptemplateoptions.webp)
+![Connection Options](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/domains/collection/ldaptemplateoptions.webp)
 
 **Step 5 –** On the Options page, select **Connect Securely with TLS/SSL**. Optionally, select
 **Ignore Certificate Errors** to connect even if certificate errors occur. Use **Server Port** 686

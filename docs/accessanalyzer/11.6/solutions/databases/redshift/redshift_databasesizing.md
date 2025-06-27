@@ -3,7 +3,7 @@
 This group provides insight into details about the Redshift environment and potential
 vulnerabilities related to instance configuration settings.
 
-![configurationjobgroup](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/postgresql/configurationjobgroup.webp)
+![configurationjobgroup](/img/product_docs/accessanalyzer/11.6/solutions/databases/postgresql/configurationjobgroup.webp)
 
 The job(s) in the Configuration Job Group are:
 
@@ -17,7 +17,7 @@ Navigate to the **Jobs** > **Databases**> **Redshift** > **Configuration** >
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![analysisredshiftconfigurationjob](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/redshift/analysisredshiftconfigurationjob.webp)
+![analysisredshiftconfigurationjob](/img/product_docs/accessanalyzer/11.6/solutions/databases/redshift/analysisredshiftconfigurationjob.webp)
 
 The default analysis tasks are:
 

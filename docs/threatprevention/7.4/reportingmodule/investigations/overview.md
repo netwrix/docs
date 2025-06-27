@@ -60,7 +60,7 @@ topic for additional information.
 The Investigations interface includes a search field in the navigation pane to find saved
 investigations by name.
 
-![Investigations Search showing matching results](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/report/interactivegrids/search.webp)
+![Investigations Search showing matching results](/img/product_docs/accessanalyzer/11.6/admin/report/interactivegrids/search.webp)
 
 Type in the search box. As you type, a drop-down will populate with saved investigations containing
 matches. The part of the investigation name that matches the search text is in bold.

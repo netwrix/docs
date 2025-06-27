@@ -10,7 +10,7 @@ View the analysis tasks by navigating to the **Exchange** > **4. Mailboxes** >
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the EX_StoreSizes Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/mailboxes/sizing/storesizesanalysis.webp)
+![Analysis Tasks for the EX_StoreSizes Job](/img/product_docs/accessanalyzer/11.6/solutions/exchange/mailboxes/sizing/storesizesanalysis.webp)
 
 The following analysis tasks are selected by default:
 

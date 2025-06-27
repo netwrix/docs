@@ -2,7 +2,7 @@
 
 The Category page contains the following categories:
 
-![System Info Data Collector Wizard Category page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/category.webp)
+![System Info Data Collector Wizard Category page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/adinventory/category.webp)
 
 The report categories are:
 

@@ -2,7 +2,7 @@
 
 Use Groups Details page to edit selected group attributes.
 
-![Active Directory Action Module Wizard Group Details page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/activedirectory/operations/groupdetails.webp)
+![Active Directory Action Module Wizard Group Details page](/img/product_docs/accessanalyzer/11.6/admin/action/activedirectory/operations/groupdetails.webp)
 
 Highlight the attribute to edit. Add or delete attributes using the buttons to the right of Insert
 field.
@@ -46,13 +46,13 @@ attributes list from the domain:
 
 **Step 3 –** Click **Next**.
 
-![Custom Attributes Import Wizard Attributes page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/activedirectory/operations/attributesgroup.webp)
+![Custom Attributes Import Wizard Attributes page](/img/product_docs/accessanalyzer/11.6/admin/action/activedirectory/operations/attributesgroup.webp)
 
 **Step 4 –** The wizard populates available attributes from the domain specified on the Attributes
 page. Expand the desired object class and select the checkboxes for the custom attributes to be
 imported. Then click **Next**.
 
-![Custom Attributes Import Wizard Completion page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/activedirectory/operations/completionpage.webp)
+![Custom Attributes Import Wizard Completion page](/img/product_docs/accessanalyzer/11.6/admin/action/activedirectory/operations/completionpage.webp)
 
 **Step 5 –** On the Completion page, click **Finish**. On the Completion page, click **Finish**.
 

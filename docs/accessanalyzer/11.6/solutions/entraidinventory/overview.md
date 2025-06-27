@@ -29,7 +29,7 @@ of the Jobs tree.
 
 ## Jobs
 
-![.Entra ID Inventory overview page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/runninginstances/overviewpage.webp)
+![.Entra ID Inventory overview page](/img/product_docs/accessanalyzer/11.6/admin/runninginstances/overviewpage.webp)
 
 The jobs in the .Entra ID Inventory Solution are:
 

@@ -9,7 +9,7 @@ Auditor Console to define the criteria and enable the Criteria Editor. See the
 [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
 topic for additional information.
 
-![AWS Query SDD Criteria](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/ewsmailbox/criteria.webp)
+![AWS Query SDD Criteria](/img/product_docs/accessanalyzer/11.6/admin/datacollector/ewsmailbox/criteria.webp)
 
 Default criteria is set at the **Global Settings** > **Sensitive Data** node. Choose between the
 **Use Global Criteria** Selection and the **Use the Following Selected Criteria** radio buttons.

@@ -10,7 +10,7 @@ Navigate to the **Active Directory** > **6.Activity** > **Operations** > **AD_Ha
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_HardcodedDCs Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/activity/operations/hardcodeddcsanalysis.webp)
+![Analysis Tasks for the AD_HardcodedDCs Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/activity/operations/hardcodeddcsanalysis.webp)
 
 The default analysis tasks are:
 

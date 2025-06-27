@@ -3,7 +3,7 @@
 If the account type selected on the User Credentials window is **Active Directory Account**, the
 following information is required for the credential:
 
-![User Credentials Window - Active Directory](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/activedirectoryaccount.webp)
+![User Credentials Window - Active Directory](/img/product_docs/accessanalyzer/11.6/admin/settings/connection/profile/activedirectoryaccount.webp)
 
 - Domain – Drop-down menu with available trusted domains will appear. Either type the short domain
   name in the textbox or select a domain from the menu.

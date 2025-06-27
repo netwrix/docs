@@ -3,7 +3,7 @@
 The Activity Operation Scope page (ActivityOperationScope) is where Box Enterprise events can be
 selected or unselected for scans. It is a wizard page for the Scan Box Activity category.
 
-![Box DC Wizard Activity Operation Scope page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/box/activityoperation.webp)
+![Box DC Wizard Activity Operation Scope page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/box/activityoperation.webp)
 
 Event filters can be selected by group or the group may be expanded and the filters selected
 individually. All selected filters are gathered from the Box environment.

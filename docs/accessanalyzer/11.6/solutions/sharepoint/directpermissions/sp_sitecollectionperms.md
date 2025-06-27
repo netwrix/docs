@@ -12,7 +12,7 @@ Navigate to the **Jobs** > **SharePoint** > **1.Direct Permissions** > **SP_Site
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SP_SiteCollectionPerms Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/directpermissions/sitecollectionpermsanalysis.webp)
+![Analysis Tasks for the SP_SiteCollectionPerms Job](/img/product_docs/accessanalyzer/11.6/solutions/sharepoint/directpermissions/sitecollectionpermsanalysis.webp)
 
 They need to remain in the default order:
 

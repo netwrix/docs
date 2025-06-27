@@ -8,7 +8,7 @@ visibility into user activity events within Box.
 The Scan Query uses the Box Data Collector to target all Box hosts and has been preconfigured to use
 the Scan Box Permissions Category.
 
-![Queries for the 1-Box_Activity Scans Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/activityqueries.webp)
+![Queries for the 1-Box_Activity Scans Job](/img/product_docs/accessanalyzer/11.6/solutions/box/collection/activityqueries.webp)
 
 The 1-Box_Activity Scans Job has the following queries:
 
@@ -45,39 +45,39 @@ Query Properties window displays.
 **Step 3 –** Select the Data Source tab, and click **Configure**. The Box Data Collector Wizard
 opens.
 
-![Box Data Collector Wizard Exclusions page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/activityexclusions.webp)
+![Box Data Collector Wizard Exclusions page](/img/product_docs/accessanalyzer/11.6/solutions/box/collection/activityexclusions.webp)
 
 **Step 4 –** On the Exclusions page:
 
 - Add folders to be excluded
 - Add folders to be included (scope scan to only these folders)
 
-![Box Data Collector Wizard Additional Scoping page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/activityadditionalscoping.webp)
+![Box Data Collector Wizard Additional Scoping page](/img/product_docs/accessanalyzer/11.6/solutions/box/collection/activityadditionalscoping.webp)
 
 **Step 5 –** On the Additional Scoping page:
 
 - Optionally, select this option to limit the depth of the scan across the targeted Box account
 
-![Box Data Collector Wizard Scope by User page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/activityuserscope.webp)
+![Box Data Collector Wizard Scope by User page](/img/product_docs/accessanalyzer/11.6/solutions/box/collection/activityuserscope.webp)
 
 **Step 6 –** On the Scope By User Page:
 
 - Optionally, limit the scope of the scan to specified users by providing a CSV file
 
-![Box Data Collector Wizard Activity Timespan Scope page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/activitytimespanscope.webp)
+![Box Data Collector Wizard Activity Timespan Scope page](/img/product_docs/accessanalyzer/11.6/solutions/box/collection/activitytimespanscope.webp)
 
 **Step 7 –** On the Activity Timespan Scope page:
 
 - Collect activity data within a Relative Timespan
 - Collect activity data within an Absolute Timespan
 
-![Box Data Collector Wizard Activity Operation Scope page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/activityoperationscope.webp)
+![Box Data Collector Wizard Activity Operation Scope page](/img/product_docs/accessanalyzer/11.6/solutions/box/collection/activityoperationscope.webp)
 
 **Step 8 –** On the Activity Operation Scope page:
 
 - Select Box enterprise event operations to collect
 
-![Box Data Collector Wizard Authenticate page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/collection/activityauthenticate.webp)
+![Box Data Collector Wizard Authenticate page](/img/product_docs/accessanalyzer/11.6/solutions/box/collection/activityauthenticate.webp)
 
 **Step 9 –** The Authenticate page is where the connection to the target Box environment is
 configured. Click **Authorize** to launch the BoxLogin window and generate an authorization code.

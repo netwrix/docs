@@ -13,7 +13,7 @@ Navigate to the **AWS** > **1.Organizations** > **AWS_Accounts** > **Configure**
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AWS_Accounts Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/aws/organizations/accountsanalysis.webp)
+![Analysis Tasks for the AWS_Accounts Job](/img/product_docs/accessanalyzer/11.6/solutions/aws/organizations/accountsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

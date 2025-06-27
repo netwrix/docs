@@ -3,7 +3,7 @@
 Use the Message Conditions page to customize message search filter conditions. It is a wizard page
 for the Delete Mailbox Contents operation.
 
-![New Mailbox Action Wizard Mailbox Message Conditions page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/ewsmailbox/filterwizard/messageconditions.webp)
+![New Mailbox Action Wizard Mailbox Message Conditions page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/ewsmailbox/filterwizard/messageconditions.webp)
 
 Customize the folder search conditions using the following options:
 
@@ -40,13 +40,13 @@ Use the MessageClasses window to select a message class to apply to the scope of
 MessageClasses window opens if **specific** in **with specific message classes** is selected in the
 Edit Conditions box.
 
-![MessageClasses Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/messageclasseswindow.webp)
+![MessageClasses Window](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/messageclasseswindow.webp)
 
 Modify message classes using the following options:
 
 - Click **Add** to populate a field to add a message class
 
-    ![New class added in MessageClasses Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/messageclasseswindownew.webp)
+    ![New class added in MessageClasses Window](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/messageclasseswindownew.webp)
 
 - Click the ellipsis (**…**) or enter the path to the desired folder in the text box
 - Matching Strategy auto-populates with **Exact Match**. Click **Exact Match** to reveal a drop-down
@@ -65,7 +65,7 @@ Use the Date Range Selection window to determine a time period to scope. The Dat
 window opens if **in specific date** in either the **that is created in specific date** or **that is
 received in specific date** conditions is selected in the Edit condition box.
 
-![Data Range Selection Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/datarangeselectionwindow.webp)
+![Data Range Selection Window](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/datarangeselectionwindow.webp)
 
 To specify a date range, use the following options:
 
@@ -84,7 +84,7 @@ To specify a date range, use the following options:
 Use the Search Terms window to select terms in messages to run the action against. The Search Terms
 window opens if **search terms** in any condition is selected in the Edit Conditions box.
 
-![Search Terms Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/ewsmailbox/filterwizard/searchtermswindow.webp)
+![Search Terms Window](/img/product_docs/accessanalyzer/11.6/admin/datacollector/ewsmailbox/filterwizard/searchtermswindow.webp)
 
 Edit the search terms using the following options:
 
@@ -103,7 +103,7 @@ Edit the search terms using the following options:
 Use the Values window to add or remove values to or from the search. The Values window opens if
 **specific** in **with specific Message ID** is selected in the Edit Conditions box.
 
-![Values Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/valueswindow.webp)
+![Values Window](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/valueswindow.webp)
 
 - To add a term to the search, enter the desired term into the upper text box and click **Add**
 - To remove a term from the search, select a term in the lower text box and click **Remove**

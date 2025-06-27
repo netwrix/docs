@@ -3,7 +3,7 @@
 Use the Remove Share Permissions Parameters page to specify whose share permissions the action
 removes.
 
-![File System Action Module Wizard Remove Share Permissions Parameters page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/filesystem/parameters/removesharepermissions.webp)
+![File System Action Module Wizard Remove Share Permissions Parameters page](/img/product_docs/accessanalyzer/11.6/admin/action/filesystem/parameters/removesharepermissions.webp)
 
 Use the options to enter the Permissions:
 

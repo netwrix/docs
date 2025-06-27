@@ -8,7 +8,7 @@ Enterprise Auditor database for use by the analysis tasks.
 The 2-Dropbox_SDD Bulk Import Job has been preconfigured to run with the default settings with the
 category of Bulk Import Sensitive Content Scan.
 
-![Queries for the 2-Dropbox_SDD Bulk Import Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/dropbox/collection/sddbulkimportquery.webp)
+![Queries for the 2-Dropbox_SDD Bulk Import Job](/img/product_docs/accessanalyzer/11.6/solutions/dropbox/collection/sddbulkimportquery.webp)
 
 The query for the 2-Dropbox_SDD Bulk Import job is:
 

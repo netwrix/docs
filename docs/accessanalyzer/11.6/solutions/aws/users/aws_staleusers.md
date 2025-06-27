@@ -26,7 +26,7 @@ Navigate to the **AWS** > **2.Users** > **AWS_StaleUsers** > **Configure** node 
 **CAUTION:** Do not deselect the selected analysis tasks. The analysis tasks are preconfigured for
 this job. Only modify the analysis tasks listed in the customizable analysis tasks section.
 
-![Analysis Tasks for the AWS_StaleUsers Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/users/staleusersanalysis.webp)
+![Analysis Tasks for the AWS_StaleUsers Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/users/staleusersanalysis.webp)
 
 The following analysis tasks are selected by default:
 

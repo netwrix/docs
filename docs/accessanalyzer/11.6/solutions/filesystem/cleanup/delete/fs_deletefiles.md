@@ -26,7 +26,7 @@ node and select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_DeleteFiles Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/cleanup/delete/deletefilesanalysis.webp)
+![Analysis Tasks for the FS_DeleteFiles Job](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/cleanup/delete/deletefilesanalysis.webp)
 
 The following analysis tasks are selected by default:
 
@@ -57,7 +57,7 @@ node and select **Actions** to view the action tasks.
 **CAUTION:** Do not enable the action unless it is required. Disable the action after execution to
 prevent making unintended and potentially harmful changes to Active Directory.
 
-![Action Tasks for the FS_DeleteFiles Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/cleanup/delete/deletefilesaction.webp)
+![Action Tasks for the FS_DeleteFiles Job](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/cleanup/delete/deletefilesaction.webp)
 
 The following actions are deselected by default:
 

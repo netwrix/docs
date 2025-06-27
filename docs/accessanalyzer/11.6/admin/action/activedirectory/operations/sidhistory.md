@@ -7,7 +7,7 @@ The source table used for this operation must contain a column with the followin
 
 - SID History data
 
-![Active Directory Action Module Wizard Clear/Set SID History page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/activedirectory/operations/sidhistory.webp)
+![Active Directory Action Module Wizard Clear/Set SID History page](/img/product_docs/accessanalyzer/11.6/admin/action/activedirectory/operations/sidhistory.webp)
 
 Configure the action with the following options:
 

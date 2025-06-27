@@ -11,7 +11,7 @@ Navigate to the **Jobs** > **Databases** > **Redshift** >  **Sensitive Data** >
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/redshift/sensitive_data/analysissensitivedata.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/solutions/databases/redshift/sensitive_data/analysissensitivedata.webp)
 
 The default analysis tasks are:
 

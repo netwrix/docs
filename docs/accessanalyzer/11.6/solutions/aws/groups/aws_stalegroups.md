@@ -26,7 +26,7 @@ Navigate to the **AWS** > **3.Groups** > **AWS_StaleGroups** > **Configure** nod
 **CAUTION:** Do not deselect the selected analysis tasks. The analysis tasks are preconfigured for
 this job. Only modify the analysis tasks listed in the customizable analysis tasks section.
 
-![Analysis Tasks for the AWS_StaleGroups Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/distributionlists/membershipanalysis/stalegroupsanalysis.webp)
+![Analysis Tasks for the AWS_StaleGroups Job](/img/product_docs/accessanalyzer/11.6/solutions/exchange/distributionlists/membershipanalysis/stalegroupsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

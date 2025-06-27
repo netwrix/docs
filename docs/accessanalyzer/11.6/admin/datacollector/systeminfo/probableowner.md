@@ -3,7 +3,7 @@
 On the Probable Owner page, select options for determining the owner using weighted calculations.
 This page is enabled when the **Probable Owner** property is selected on the Results page.
 
-![System Info Data Collector Wizard Probable Owner page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/exchangepublicfolder/probableowner.webp)
+![System Info Data Collector Wizard Probable Owner page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/exchangepublicfolder/probableowner.webp)
 
 Determine owner
 
@@ -17,7 +17,7 @@ In the Determine owner section, select from the following options:
   These weights can be set by clicking the ellipsis next to the Result weights box to open the
   Probable Owner Settings window.
 
-![Custom weights Probable Owner Settings window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/systeminfo/customweights.webp)
+![Custom weights Probable Owner Settings window](/img/product_docs/accessanalyzer/11.6/admin/datacollector/systeminfo/customweights.webp)
 
 The Result weights box displays the custom weights set in the Probable Owner Settings window.
 
@@ -29,7 +29,7 @@ In the Exclude users list section, select from the following checkboxes:
 - Exclude locked out users
 - Exclude disabled users
 
-![Exclude users Probable Owner Settings window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/systeminfo/excludeusers.webp)
+![Exclude users Probable Owner Settings window](/img/product_docs/accessanalyzer/11.6/admin/datacollector/systeminfo/excludeusers.webp)
 
 Click **Set Users to Exclude** to open the Probable Owner Settings window:
 

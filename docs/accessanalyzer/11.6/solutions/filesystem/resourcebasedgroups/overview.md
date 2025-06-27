@@ -27,7 +27,7 @@ The **File System** > **Resource Based Groups** Job Group is a separately licens
 Enterprise Auditor File System solution set. Typically this job group is added during installation,
 but it can be installed from the Instant Job Wizard.
 
-![Resource Based Groups Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Resource Based Groups Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 Once it has been installed into the Jobs tree, navigate to the solution: **Jobs** > **FileSystem** >
 **Resource Based Groups**.
@@ -42,7 +42,7 @@ topic for additional information.
 The Resource Based Groups Job Group will transform permissions on specified folders to a resource
 based groups model.
 
-![Job Group Overview page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/runninginstances/overviewpage.webp)
+![Job Group Overview page](/img/product_docs/accessanalyzer/11.6/admin/runninginstances/overviewpage.webp)
 
 The following jobs comprise the Resource Based Groups Job Group:
 

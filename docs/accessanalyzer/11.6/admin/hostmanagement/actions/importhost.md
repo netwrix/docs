@@ -5,12 +5,12 @@ imported from either a CSV file or a database into the host list being created.
 
 Follow the steps to import hosts.
 
-![Import option on the Manual Host Entry page of the Host List Wizard](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/hostlistwizardimport.webp)
+![Import option on the Manual Host Entry page of the Host List Wizard](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/actions/hostlistwizardimport.webp)
 
 **Step 1 –** On the Manual Host Entry page of the Host List Wizard, click **Import**. The Import
 Hosts window opens.
 
-![Import Hosts window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/importhosts.webp)
+![Import Hosts window](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/actions/importhosts.webp)
 
 **Step 2 –** On the Import Hosts window, use the **Import from** dropdown to select the source as
 either **CSV File** or **Database**.
@@ -18,7 +18,7 @@ either **CSV File** or **Database**.
 **Step 3 –** Configure the source file. The necessary fields depend on the selection in the previous
 step.
 
-![Import Hosts window for importing from CSV File](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/importhostscsv.webp)
+![Import Hosts window for importing from CSV File](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/actions/importhostscsv.webp)
 
 - CSV File
 
@@ -28,7 +28,7 @@ step.
     - Includes header row – Select this checkbox if the file contains a header row. Otherwise, the
       header row will be included in the import (visible within the preview box).
 
-![Import Hosts window for importing from Database](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/importhostsdatabase.webp)
+![Import Hosts window for importing from Database](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/actions/importhostsdatabase.webp)
 
 - Database
 
@@ -49,7 +49,7 @@ column containing the host names. The selected column is highlighted in the prev
 
 **Step 5 –** Click **OK** to complete the import.
 
-![Imported hosts added in the Host list box on the Manual Host Entry page of the Host List Wizard](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/importhostscomplete.webp)
+![Imported hosts added in the Host list box on the Manual Host Entry page of the Host List Wizard](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/actions/importhostscomplete.webp)
 
 The Import Hosts window closes, and the imported list of host names is added in the Host list box on
 the Manual Host Entry page of the Host List Wizard. Click **Next** to proceed with configuring the

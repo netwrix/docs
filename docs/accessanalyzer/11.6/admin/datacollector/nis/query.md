@@ -5,7 +5,7 @@ wizard page for the category of:
 
 - Custom NIS Scan
 
-![NIS Data Collector Wizard NIS Query page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/nis/query.webp)
+![NIS Data Collector Wizard NIS Query page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/nis/query.webp)
 
 The Data Source configuration options are:
 

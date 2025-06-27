@@ -7,7 +7,7 @@ configuration settings so they can be evaluated against recommended best practic
 
 The 4–AzureSQL_ServerSettings Job uses the SQL Data Collector for the following query:
 
-![0.Collection_4–AzureSQL_ServerSettings Job - Query Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/azuresql/collection/serversettings.webp)
+![0.Collection_4–AzureSQL_ServerSettings Job - Query Selection](/img/product_docs/accessanalyzer/11.6/solutions/databases/azuresql/collection/serversettings.webp)
 
 - Database Sizing— Returns details on database sizing
 - Server Details — Collects Azure SQL Server properties
@@ -25,7 +25,7 @@ task.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/azuresql/collection/serversettingsanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/solutions/databases/azuresql/collection/serversettingsanalysis.webp)
 
 The default analysis tasks are:
 

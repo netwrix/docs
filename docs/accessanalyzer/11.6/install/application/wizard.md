@@ -22,7 +22,7 @@ Setup Wizard.
 **Step 3 –** On the End-User License Agreement page, read the End User License Agreement, then check
 the **I accept the terms in the License Agreement** box and click **Next**.
 
-![Destinations Folder page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/destination.webp)
+![Destinations Folder page](/img/product_docs/accessanalyzer/11.6/install/filesystemproxy/destination.webp)
 
 **Step 4 –** On the Destination Folder page, click **Change** to select the folder location to
 install Enterprise Auditor. The default destination folder is
@@ -30,7 +30,7 @@ install Enterprise Auditor. The default destination folder is
 
 |                                                                                                         |     |                                                                                                                                           |
 | ------------------------------------------------------------------------------------------------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| ![License File page](/img/versioned_docs/activitymonitor_7.1/activitymonitor/install/agent/license.webp) |     | ![License File page with mapped file](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/licensemapped.webp) |
+| ![License File page](/img/versioned_docs/activitymonitor_7.1/activitymonitor/install/agent/license.webp) |     | ![License File page with mapped file](/img/product_docs/accessanalyzer/11.6/install/application/licensemapped.webp) |
 | Default License File Page                                                                               |     | Mapped License File                                                                                                                       |
 
 **Step 5 –** On the License File page, click **Browse** and navigate to your **StealthAUDIT.lic**
@@ -39,7 +39,7 @@ file. When the path to the file is visible in the textbox, click **Next**.
 **NOTE:** The license file must be stored on the Enterprise Auditor Console server before the
 installation begins.
 
-![License Features page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/licensefeatures.webp)
+![License Features page](/img/product_docs/accessanalyzer/11.6/install/application/licensefeatures.webp)
 
 **Step 6 –** The License Features page displays a list of all features covered by the imported
 license. It also displays the name of the organization which owns the license, the expiration date,
@@ -50,7 +50,7 @@ and the host limit. These are the features that will be installed. Click **Next*
 **Step 7 –** On the Ready to install Enterprise Auditor page, click **Install** to begin the
 installation.
 
-![Setup Wizard Completed page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Setup Wizard Completed page](/img/product_docs/accessanalyzer/11.6/install/sensitivedatadiscovery/completed.webp)
 
 **Step 8 –** When the installation has completed, click **Finish** to exit the wizard.
 

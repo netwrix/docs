@@ -3,7 +3,7 @@
 The 5.Activity job group is designed to report on activity event information from targeted file
 servers.
 
-![5.Activity Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![5.Activity Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 The 5.Activity job group is comprised of:
 

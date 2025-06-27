@@ -6,7 +6,7 @@ its location from a variety of environments. Analysis modules are assigned to a 
 [Analysis Node](/docs/accessanalyzer/11.6/admin/jobs/job/configure/analysis.md)
 topic for information on the Analysis Selection view.
 
-![Configure an analysis](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/configure.webp)
+![Configure an analysis](/img/product_docs/accessanalyzer/11.6/admin/analysis/configure.webp)
 
 Analysis tasks are configured through the Analysis Properties page. Navigate to the job’s
 **Configure** > Analysis node. The Analysis Properties page is opened from the Analysis Selection
@@ -46,7 +46,7 @@ Analysis tasks can be created, deleted, and configured through the Analysis Sele
 with existing analysis tasks, the Analysis Selection page is used to change the order in which tasks
 are run, as well as enabling or disabling tasks.
 
-![Analysis Selection Page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/analysisselectionpage.webp)
+![Analysis Selection Page](/img/product_docs/accessanalyzer/11.6/admin/analysis/analysisselectionpage.webp)
 
 The Analysis Selection page has the following options:
 
@@ -72,7 +72,7 @@ The Analysis Selection page has the following options:
 Configure task properties through the Analysis Properties page. The Analysis Properties page is
 accessed through the Analysis Selection page.
 
-![Analysis Properties Page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/analysispropertiespage.webp)
+![Analysis Properties Page](/img/product_docs/accessanalyzer/11.6/admin/analysis/analysispropertiespage.webp)
 
 The Analysis Properties page has the following options:
 

@@ -11,7 +11,7 @@ View the analysis tasks by navigating to the **FileSystem** > **5.Activity** > *
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_HighRiskActivity Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/activity/security/highriskactivityanalysis.webp)
+![Analysis Tasks for the FS_HighRiskActivity Job](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/activity/security/highriskactivityanalysis.webp)
 
 -   0. Drop Tables – Drops tables from previous runs
 -   1. Analyze for High Risk Activity – Creates the SA_FS_HighRiskActivity_HighRiskUserActivity

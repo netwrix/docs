@@ -11,7 +11,7 @@ Navigate to the **AWS** > **5.Policies** > **AWS_UserPolicies** > **Configure** 
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AWS_UserPolicies Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/aws/policies/userpoliciesanalysis.webp)
+![Analysis Tasks for the AWS_UserPolicies Job](/img/product_docs/accessanalyzer/11.6/solutions/aws/policies/userpoliciesanalysis.webp)
 
 The following analysis tasks are selected by default:
 

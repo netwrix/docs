@@ -6,7 +6,7 @@ The EX_ASPolicies Job provides insight into what policies are enabled for which 
 
 The EX_ASPolicies Job uses the ExchangePS Data Collector.
 
-![Queries for the EX_ASPolicies Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/casmetrics/aspoliciesquery.webp)
+![Queries for the EX_ASPolicies Job](/img/product_docs/accessanalyzer/11.6/solutions/exchange/casmetrics/aspoliciesquery.webp)
 
 The following query is included in the EX_ASPolicies Job.
 
@@ -67,7 +67,7 @@ View the analysis tasks by navigating to the **Exchange** > **2. CAS Metrics** >
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the EX_ASPolicies Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/casmetrics/aspoliciesanalysis.webp)
+![Analysis Tasks for the EX_ASPolicies Job](/img/product_docs/accessanalyzer/11.6/solutions/exchange/casmetrics/aspoliciesanalysis.webp)
 
 The following analysis task is selected by default:
 

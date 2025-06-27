@@ -9,7 +9,7 @@ topic for instructions to add this instant job into the Jobs tree.
 For installing the job, select **Local host** on the Hosts page of the Instant Job Wizard. Then set
 the host list according to the following information.
 
-![FS_DEFEND_SDD job in the Jobs tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![FS_DEFEND_SDD job in the Jobs tree](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 Runtime Details:
 
@@ -50,7 +50,7 @@ Request Action Module to send the data to Threat Manager.
 Navigate to the **Jobs** > **FS_DEFEND_SDD** > **Configure** node and select **Analysis** to view
 the analysis tasks.
 
-![Default Analysis tasks for the job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/analysistasks.webp)
+![Default Analysis tasks for the job](/img/product_docs/accessanalyzer/11.6/admin/jobs/instantjobs/analysistasks.webp)
 
 The default analysis tasks are:
 
@@ -64,7 +64,7 @@ actions.
 
 **CAUTION:** This action is enabled by default.
 
-![Default Action Tasks for the Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/actiontasks.webp)
+![Default Action Tasks for the Job](/img/product_docs/accessanalyzer/11.6/admin/jobs/instantjobs/actiontasks.webp)
 
 The default action is:
 

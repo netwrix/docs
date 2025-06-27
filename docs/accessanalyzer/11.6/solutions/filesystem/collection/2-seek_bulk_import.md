@@ -8,7 +8,7 @@ targeted file servers.
 The Bulk Import query uses the FSAA Data Collector and has been preconfigured to use the Sensitive
 data Bulk import category.
 
-![Query for the 2-SEEK Bulk Import Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/collection/seekbulkimportquery.webp)
+![Query for the 2-SEEK Bulk Import Job](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/collection/seekbulkimportquery.webp)
 
 - Bulk Import – Imports data into SQL server
 

@@ -31,7 +31,7 @@ topic for additional information.
 Navigate to the **Active Directory** > **Cleanup** > **3.Computers** > **AD_Deprovision
 Computers** > **Configure** node and select **Analysis** to view the analysis tasks.
 
-![Analysis Tasks for the AD_DeprovisionComputers Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/cleanup/computers/deprovisioncomputersanalysis.webp)
+![Analysis Tasks for the AD_DeprovisionComputers Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/cleanup/computers/deprovisioncomputersanalysis.webp)
 
 The default analysis tasks are:
 
@@ -65,7 +65,7 @@ Navigate to the **Active Directory** > **Cleanup** > **3.Computers** > **AD_Depr
 **CAUTION:** Do not enable the actions unless it is required. Disable the actions after execution to
 prevent making unintended and potentially harmful changes to Active Directory.
 
-![Action Tasks for the AD_DeprovisionComputers Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/cleanup/computers/deprovisioncomputersaction.webp)
+![Action Tasks for the AD_DeprovisionComputers Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/cleanup/computers/deprovisioncomputersaction.webp)
 
 The action tasks are:
 

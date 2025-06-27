@@ -266,7 +266,7 @@ red means there were some problems that require your attention.
 
 The email looks like shown below:
 
-![email](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/email.webp)
+![email](/img/product_docs/accessanalyzer/11.6/admin/settings/email.webp)
 
 The Monitoring Overview section of the email provides detail information only for the monitoring
 plans with issues. Successfully completed monitoring plans are not included.

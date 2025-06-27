@@ -4,7 +4,7 @@ The Db2 Solution Set Collection Group collects high level summary information fr
 Database Servers. Other jobs in the Db2 Solution Set use this information for further analysis and
 for producing respective reports.
 
-![jobstree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![jobstree](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 The jobs in the 0.Collection Job Group are:
 

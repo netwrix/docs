@@ -4,7 +4,7 @@ Enterprise Auditor provides the ability to report on collected data in multiple 
 views, graphs, and emails. Depending on the type of data collected, different reporting methods can
 simplify how to present and understand the information.
 
-![Reports node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/report/reports.webp)
+![Reports node](/img/product_docs/accessanalyzer/11.6/admin/report/reports.webp)
 
 The Reports node, contained within a job’s Configure node, lists any reports that are configured for
 the job. The page contains options to create a report, configure existing reports, and a link to

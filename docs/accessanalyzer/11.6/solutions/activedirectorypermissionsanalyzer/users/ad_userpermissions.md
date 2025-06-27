@@ -12,7 +12,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **1.Users** > **AD_U
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_UserPermissions Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectorypermissionsanalyzer/users/userpermissionsanalysis.webp)
+![Analysis Tasks for the AD_UserPermissions Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectorypermissionsanalyzer/users/userpermissionsanalysis.webp)
 
 The default analysis tasks are:
 

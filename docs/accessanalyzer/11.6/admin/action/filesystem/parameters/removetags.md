@@ -2,7 +2,7 @@
 
 Use the Parameter page to specify the file tags the action removes.
 
-![File System Action Module Wizard Remove Tags Parameters page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/filesystem/parameters/removetags.webp)
+![File System Action Module Wizard Remove Tags Parameters page](/img/product_docs/accessanalyzer/11.6/admin/action/filesystem/parameters/removetags.webp)
 
 Use the fields provided to select tags from the drop-down lists and populate the Tag field, or edit
 the field manually. The Preview field updates based on the contents of the Tag field.
@@ -25,7 +25,7 @@ tags.
 - Click **Add** to add the tag field to the list for removal
 - Click **Remove** to remove the tag field from the list for removal
 
-![Boldon James Column on Remove Tags Parameters page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/filesystem/parameters/addremovetagsboldonjames.webp)
+![Boldon James Column on Remove Tags Parameters page](/img/product_docs/accessanalyzer/11.6/admin/action/filesystem/parameters/addremovetagsboldonjames.webp)
 
 - Type - Select which type of tag to remove. The two types of tags that can be removed are:
 

@@ -11,7 +11,7 @@ The NIS Scan Job uses the NIS Data Collector for the following query:
 **CAUTION:** This query must be modified. See the
 [Configure the NIS Scan Query](#configure-the-nis-scan-query) topic for additional information.
 
-![Query for the NIS Scan Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/nisinventory/nisscanquery.webp)
+![Query for the NIS Scan Job](/img/product_docs/accessanalyzer/11.6/solutions/nisinventory/nisscanquery.webp)
 
 - Inventory Scan – Targets a NIS server to collect inventory data for user and group objects
 
@@ -42,7 +42,7 @@ topic for additional information.
 
 - Optional: Test the connection to the domain using the Sample NIS Server section of the page
 
-![SID Mappings page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/nis/sidmappings.webp)
+![SID Mappings page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/nis/sidmappings.webp)
 
 **Step 5 –** On the SID Mappings page, you can add multiple SID mapping entries. See the
 [NIS: SID Mappings](/docs/accessanalyzer/11.6/admin/datacollector/nis/sidmappings.md)
@@ -61,7 +61,7 @@ and select **Analysis**.
 **CAUTION:** Most of these analysis tasks are preconfigured and should not be modified or
 deselected. There is one that is deselected by default, as it is for troubleshooting purposes.
 
-![Analysis Tasks for the NIS Scan Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/nisinventory/nisscananalysis.webp)
+![Analysis Tasks for the NIS Scan Job](/img/product_docs/accessanalyzer/11.6/solutions/nisinventory/nisscananalysis.webp)
 
 The following analysis tasks are selected by default:
 

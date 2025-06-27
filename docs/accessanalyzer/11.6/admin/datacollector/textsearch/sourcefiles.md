@@ -2,7 +2,7 @@
 
 The Source Files page provides options to specify which files to search.
 
-![Text Search Data Collector Wizard Source Files page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/textsearch/sourcefiles.webp)
+![Text Search Data Collector Wizard Source Files page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/textsearch/sourcefiles.webp)
 
 Location
 
@@ -67,7 +67,7 @@ Clicking the ellipsis in the Location section of the Source Files page opens the
 Explorer search window. In the Remote Folder Explorer window, navigate to the file folder location
 and add the path to the scope. Multiple paths can be added to the scope.
 
-![Remote Folder Explorer window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/textsearch/remotefolderexplorer.webp)
+![Remote Folder Explorer window](/img/product_docs/accessanalyzer/11.6/admin/datacollector/textsearch/remotefolderexplorer.webp)
 
 The Remote Folder Explorer functions are:
 

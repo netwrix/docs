@@ -5,7 +5,7 @@ inherited through a parent-child structure from the Settings node through the Jo
 individual jobs unless inheritance is broken by direct assignment at either the job group or the
 individual job level.
 
-![Configuration Settings](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/globalsettings.webp)
+![Configuration Settings](/img/product_docs/accessanalyzer/11.6/admin/settings/globalsettings.webp)
 
 Some of these settings are configured during the initial launching of theEnterprise Auditor Console.
 Others are configured as desired by the end-user. Expand the Settings node in the Navigation pane to

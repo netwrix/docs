@@ -3,7 +3,7 @@
 The information in this topic applies to **Select Account Type** > **Exchange Modern
 Authentication** account type in the User Credentials window.
 
-![User Credentials - Exchange Modern Authentication ](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/exchangemodernauthentication.webp)
+![User Credentials - Exchange Modern Authentication ](/img/product_docs/accessanalyzer/11.6/admin/settings/connection/profile/exchangemodernauthentication.webp)
 
 The values for the required credentials for the Exchange Modern Authentication account are:
 

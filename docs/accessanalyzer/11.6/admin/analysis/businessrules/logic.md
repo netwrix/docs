@@ -2,7 +2,7 @@
 
 Use the Logic tab to specify conditions and actions for the Business Rule.
 
-![Edit Rules window Logic tab](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/businessrules/logic.webp)
+![Edit Rules window Logic tab](/img/product_docs/accessanalyzer/11.6/admin/analysis/businessrules/logic.webp)
 
 The Logic tab contains the following sections and options:
 
@@ -38,7 +38,7 @@ The Logic tab contains the following sections and options:
 
 Use the Sample Data Viewer window to examine data in a selected table.
 
-![Sample Data Viewer Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/businessrules/sampledataviewer.webp)
+![Sample Data Viewer Window](/img/product_docs/accessanalyzer/11.6/admin/analysis/businessrules/sampledataviewer.webp)
 
 The Sample Data Viewer window provides the following options:
 
@@ -51,7 +51,7 @@ The Sample Data Viewer window provides the following options:
 
 Use the EditConditionsForm to configure conditions to be applied to the table.
 
-![EditConditionsForm Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/businessrules/editconditionsform.webp)
+![EditConditionsForm Window](/img/product_docs/accessanalyzer/11.6/admin/analysis/businessrules/editconditionsform.webp)
 
 The EditConditionsForm contains the following options:
 
@@ -71,13 +71,13 @@ The EditConditionsForm contains the following options:
 The SQL Extract Preview window previews results of the conditions added to the table in the
 Conditions section.
 
-![SQL Extract Preview Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/businessrules/sqlextractpreviewwindow.webp)
+![SQL Extract Preview Window](/img/product_docs/accessanalyzer/11.6/admin/analysis/businessrules/sqlextractpreviewwindow.webp)
 
 The SQL script requires the table have these columns: `HOST`, `SA_Host`, and `JobRunTimeKey`. If
 there is a mismatch between table and SQL script, a SQL Syntax Check window describes any detected
 issue.
 
-![SQL Syntax Check window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/businessrules/sqlsyntaxcheck.webp)
+![SQL Syntax Check window](/img/product_docs/accessanalyzer/11.6/admin/analysis/businessrules/sqlsyntaxcheck.webp)
 
 For example, this SQL Syntax Check window is reporting an error of missing information of an object
 or column.
@@ -86,7 +86,7 @@ or column.
 
 Use this window to add exceptions to the scorecard.
 
-![Configure Scorecard Action Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/businessrules/configurescorecardaction.webp)
+![Configure Scorecard Action Window](/img/product_docs/accessanalyzer/11.6/admin/analysis/businessrules/configurescorecardaction.webp)
 
 The Configure Scorecard Options window provides the following options:
 

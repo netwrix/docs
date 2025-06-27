@@ -19,7 +19,7 @@ select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_StaleUsers Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/users/staleusersanalysis.webp)
+![Analysis Tasks for the AD_StaleUsers Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/users/staleusersanalysis.webp)
 
 The default analysis tasks are:
 

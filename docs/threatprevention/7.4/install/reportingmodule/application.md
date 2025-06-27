@@ -58,7 +58,7 @@ Next button is enabled. Click **Next**.
 indicating that the installer will create these. Deselect the checkbox if you do not want the
 installer to automatically create these rules because you have already created them. Click **Next**.
 
-![Netwrix Threat Mannager Reporting Setup wizard on the Completed page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Netwrix Threat Mannager Reporting Setup wizard on the Completed page](/img/product_docs/accessanalyzer/11.6/install/sensitivedatadiscovery/completed.webp)
 
 **Step 9 –** The installation process will begin and the Setup wizard will display the progress.
 Click Exit when the installation completes successfully. The Netwrix Threat Manager Reporting Setup

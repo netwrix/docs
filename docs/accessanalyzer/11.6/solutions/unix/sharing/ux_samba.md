@@ -11,7 +11,7 @@ node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the UX_Samba Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/unix/sharing/sambaanalysis.webp)
+![Analysis Tasks for the UX_Samba Job](/img/product_docs/accessanalyzer/11.6/solutions/unix/sharing/sambaanalysis.webp)
 
 The default analysis tasks are:
 

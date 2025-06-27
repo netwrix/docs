@@ -39,7 +39,7 @@ authentication provider type, i.e., OpenID, RADIUS, or SAML.
 On the Integrations interface, select an authentication provider under the Authentication Provider
 node in the navigation pane or from the table to configure, view, or modify its details.
 
-![Integrations interface displaying the details for an Authentication Provider with the type drop-down menu open](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/notification/type.webp)
+![Integrations interface displaying the details for an Authentication Provider with the type drop-down menu open](/img/product_docs/accessanalyzer/11.6/admin/analysis/notification/type.webp)
 
 The following authentication provider types are supported; you can configure an authentication
 provider for any of these:

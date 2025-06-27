@@ -62,7 +62,7 @@ default schema of [dbo] to function properly.
 
 To create the roles within the SQL Server database, run the following script.
 
-![Query Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/sqlcreateroles.webp)
+![Query Window](/img/product_docs/accessanalyzer/11.6/admin/settings/access/rolebased/sqlcreateroles.webp)
 
 Be sure to set the context of this query to the Enterprise Auditor database by selecting the right
 database from the drop-down window. Alternatively, prefix the script with a
@@ -117,7 +117,7 @@ users to SQL Server database roles.
 
 **Step 1 –** Connect to the Enterprise Auditor database through SQL Management Studio.
 
-![Database Roles](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/sqldatabaseroles.webp)
+![Database Roles](/img/product_docs/accessanalyzer/11.6/admin/settings/access/rolebased/sqldatabaseroles.webp)
 
 **Step 2 –** Validate that the roles have been properly created by navigating to **Security** >
 **Roles** > **Database Roles**. The three new roles should be visible:
@@ -128,12 +128,12 @@ users to SQL Server database roles.
 
 |                                                                                                                               |                                                                                                                                      |
 | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| ![New User Option](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/sqlusers.webp) | ![New User Option](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/sqlusersnewuser.webp) |
+| ![New User Option](/img/product_docs/accessanalyzer/11.6/admin/settings/access/rolebased/sqlusers.webp) | ![New User Option](/img/product_docs/accessanalyzer/11.6/admin/settings/access/rolebased/sqlusersnewuser.webp) |
 
 **Step 3 –** After confirmation of role creation, the next step is to map users to these roles.
 Right-click on the **Security** > **Users** node and select **New User**.
 
-![Database User Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/sqluserwindow.webp)
+![Database User Window](/img/product_docs/accessanalyzer/11.6/admin/settings/access/rolebased/sqluserwindow.webp)
 
 **Step 4 –** Enter the user information in the dialog as follows:
 

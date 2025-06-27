@@ -3,7 +3,7 @@
 Result data is displayed using data grids on several interfaces in the Administration Console. These
 grids employ features for data sorting, filtering, searching, and more.
 
-![Data Grid Functionality pointers](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/datagridfunctionality.webp)
+![Data Grid Functionality pointers](/img/product_docs/accessanalyzer/11.6/admin/navigate/datagridfunctionality.webp)
 
 - The Group by Box [1] ribbon impacts how much data is displayed.
 - The Refresh [2] button populates the data grid with the current information according to the

@@ -12,7 +12,7 @@ node and select **Actions** to view the action tasks.
 **CAUTION:** Do not enable the action unless it is required. Disable the action after execution to
 prevent making unintended and potentially harmful changes to Active Directory.
 
-![Action Tasks for the FS_NotifyOwners Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/cleanup/notify/notifyownersaction.webp)
+![Action Tasks for the FS_NotifyOwners Job](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/cleanup/notify/notifyownersaction.webp)
 
 The following action task is deselected by default.
 
@@ -41,7 +41,7 @@ Properties** to view the Action Properties page.
 _Remember,_ the FS_CleanupAssessment job must be run before the Send Mail Action Module Wizard can
 be opened.
 
-![Send Mail Action Module Wizard Properties page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/cleanup/notify/sendmailwizardproperties.webp)
+![Send Mail Action Module Wizard Properties page](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/cleanup/notify/sendmailwizardproperties.webp)
 
 **Step 4 –** On the Properties page, customize the following fields:
 
@@ -50,7 +50,7 @@ be opened.
     **NOTE:** Email recipients may also be added within the Notification node under the Global
     Settings pane.
 
-![Send Mail Action Module Wizard Message page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/cleanup/notify/sendmailwizardmessage.webp)
+![Send Mail Action Module Wizard Message page](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/cleanup/notify/sendmailwizardmessage.webp)
 
 **Step 5 –** On the Message page, customize the following fields:
 

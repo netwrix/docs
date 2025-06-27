@@ -6,7 +6,7 @@ ServiceNow Action Module. See the
 [ServiceNow Action Module](/docs/accessanalyzer/11.6/admin/action/servicenow/overview.md)
 topic for additional information.
 
-![ServiceNow node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/servicenow.webp)
+![ServiceNow node](/img/product_docs/accessanalyzer/11.6/admin/settings/servicenow.webp)
 
 Provide ServiceNow authentication information to your ServiceNow instance.
 

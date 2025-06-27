@@ -3,7 +3,7 @@
 This job provides insight into where sensitive data exists and who has access to it across all the
 targeted Redshift databases.
 
-![sensitivedatajobgroup](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/postgresql/sensitivedata/sensitivedatajobgroup.webp)
+![sensitivedatajobgroup](/img/product_docs/accessanalyzer/11.6/solutions/databases/postgresql/sensitivedata/sensitivedatajobgroup.webp)
 
 The job(s) in the Sensitive Data Job Group are:
 

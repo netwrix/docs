@@ -11,7 +11,7 @@ View the analysis tasks by navigating to the **Exchange** > **7. Sensitive Data*
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the EX_SDDResults Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/sensitivedata/sddresultsanalysis.webp)
+![Analysis Tasks for the EX_SDDResults Job](/img/product_docs/accessanalyzer/11.6/solutions/exchange/sensitivedata/sddresultsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

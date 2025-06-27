@@ -2,7 +2,7 @@
 
 The EX_ActiveSync job provides visibility into ActiveSync Traffic in the Organization.
 
-![ActiveSync > EX_ActiveSync Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/casmetrics/activesyncjobstree.webp)
+![ActiveSync > EX_ActiveSync Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/solutions/exchange/casmetrics/activesyncjobstree.webp)
 
 The EX_ActiveSync job is located in the ActiveSync job group.
 
@@ -14,7 +14,7 @@ View the analysis tasks by navigating to the **Exchange** > **2. CAS Metrics** >
 **CAUTION:** Most of these analysis tasks are preconfigured and should not be modified or
 deselected. There are some that are deselected by default, as they are for troubleshooting purposes.
 
-![Analysis Tasks for the EX_ActiveSync Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/casmetrics/activesyncanalysis.webp)
+![Analysis Tasks for the EX_ActiveSync Job](/img/product_docs/accessanalyzer/11.6/solutions/exchange/casmetrics/activesyncanalysis.webp)
 
 The following analysis tasks are selected by default:
 

@@ -3,7 +3,7 @@
 Use the Permissions page to determine which permissions to remove. It is a wizard page for the
 **Add/Change Permissions** and **Remove Permissions** operations.
 
-![New Mailbox Action Wizard Permissions page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/permissions.webp)
+![New Mailbox Action Wizard Permissions page](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/permissions.webp)
 
 Use the following options to add, change or remove Permissions:
 
@@ -25,7 +25,7 @@ Use the following options to add, change or remove Permissions:
 Use the User window to select a user. The User window opens when the **User** down-arrow is selected
 on the Permissions page.
 
-![User Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/userwindow.webp)
+![User Window](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/userwindow.webp)
 
 Select a user using the following options:
 
@@ -61,7 +61,7 @@ Select a user using the following options:
 Use the Folder window to select folders. The Folder window opens when the **Folder** down-arrow is
 selected on the Permissions page.
 
-![Folder Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/folderwindow.webp)
+![Folder Window](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/folderwindow.webp)
 
 Select a folder using the following options:
 
@@ -83,7 +83,7 @@ Select a folder using the following options:
 Use the Permission window to specify permissions. The Permission window opens when the
 **Permission** down-arrow is selected on the Permissions page.
 
-![Permission Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/permissionwindow.webp)
+![Permission Window](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/permissionwindow.webp)
 
 Specify permissions using the following options:
 

@@ -13,7 +13,7 @@ node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis for the Box_ExternalUserActivity Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/activity/forensics/externaluseractivityanalysis.webp)
+![Analysis for the Box_ExternalUserActivity Job](/img/product_docs/accessanalyzer/11.6/solutions/box/activity/forensics/externaluseractivityanalysis.webp)
 
 The following analysis tasks are selected by default:
 

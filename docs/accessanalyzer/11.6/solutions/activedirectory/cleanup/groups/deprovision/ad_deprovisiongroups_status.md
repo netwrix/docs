@@ -11,7 +11,7 @@ tasks.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis tasks is
 preconfigured for this job.
 
-![Analysis Task for the AD_DeprovisionGroups_Status Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/cleanup/groups/deprovision/deprovisiongroupsstatusanalysis.webp)
+![Analysis Task for the AD_DeprovisionGroups_Status Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/cleanup/groups/deprovision/deprovisiongroupsstatusanalysis.webp)
 
 The default analysis task is:
 

@@ -2,7 +2,7 @@
 
 The Edit Script page allows the script to be customized.
 
-![Unix Data Collector Wizard Edit Script page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/unix/editscript.webp)
+![Unix Data Collector Wizard Edit Script page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/unix/editscript.webp)
 
 Edit the shell script in the textbox if desired.
 

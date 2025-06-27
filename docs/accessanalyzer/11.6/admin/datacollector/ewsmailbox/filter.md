@@ -7,7 +7,7 @@ the categories of:
 - Mailbox permissions
 - Sensitive data
 
-![EWS Mailbox Data Collector Wizard Filter page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/ewsmailbox/filter.webp)
+![EWS Mailbox Data Collector Wizard Filter page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/ewsmailbox/filter.webp)
 
 All folders and attachments are scanned by default. Scope the scan for specific folders and
 attachments:

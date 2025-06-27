@@ -3,23 +3,23 @@
 An application can be assigned to access data remotely through the Web Service. Follow the steps to
 assign roles in the Console.
 
-![Add Access option on Access page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/rolebased/addaccess.webp)
+![Add Access option on Access page](/img/product_docs/accessanalyzer/11.6/admin/settings/access/rolebased/addaccess.webp)
 
 **Step 1 –** Navigate to **Settings** > **Access** and click **Add Access**. The Access Type wizard
 opens.
 
-![Access Type page of the Access Role wizard](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/restapi/accesstypeapplication.webp)
+![Access Type page of the Access Role wizard](/img/product_docs/accessanalyzer/11.6/admin/settings/access/restapi/accesstypeapplication.webp)
 
 **Step 2 –** Select the **An application accessing data remotely through Web Service** option. Click
 **Next**. The Application Access window opens.
 
-![Application Access page of the Access Role Wizard](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/restapi/applicationaccess.webp)
+![Application Access page of the Access Role Wizard](/img/product_docs/accessanalyzer/11.6/admin/settings/access/restapi/applicationaccess.webp)
 
 **Step 3 –** The Application Access window displays a list of objects available in the database that
 are available for access. Select the database objects the application will access and click **Add**
 to open the Select database objects window.
 
-![Select database objects window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/restapi/selectdatabaseobjects.webp)
+![Select database objects window](/img/product_docs/accessanalyzer/11.6/admin/settings/access/restapi/selectdatabaseobjects.webp)
 
 **Step 4 –** Select the database objects to access and then click **OK** to return to the
 Application Access page.
@@ -35,7 +35,7 @@ Click Next to proceed.
 **NOTE:** Only select items that the application needs to access. Type in the **Filter objects by
 name** box to filter the list of objects by the characters entered.
 
-![Application Details page of the Access Role Wizard](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/access/restapi/applicationdetails.webp)
+![Application Details page of the Access Role Wizard](/img/product_docs/accessanalyzer/11.6/admin/settings/access/restapi/applicationdetails.webp)
 
 **Step 5 –** On the Application Details page, define the name of the application and generate the
 app token.

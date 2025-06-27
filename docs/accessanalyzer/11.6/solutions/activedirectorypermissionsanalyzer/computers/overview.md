@@ -3,7 +3,7 @@
 The 4.Computers Job Group reports on all Active Directory permissions applied to computer objects
 within the targeted domains.
 
-![4.Computers Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![4.Computers Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 The jobs in the 4.Computers Job Group are:
 

@@ -8,7 +8,7 @@ the required information before job execution.
 
 **_RECOMMENDED:_** Run these jobs independently of the solution.
 
-![Ad Hoc Audits Job Group](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Ad Hoc Audits Job Group](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 The Ad Hoc Audits Job Group is comprised of:
 

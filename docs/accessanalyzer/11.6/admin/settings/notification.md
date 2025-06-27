@@ -4,7 +4,7 @@ The Notification node is where email notifications are configured. Emails can be
 Enterprise Auditor Console for a variety of purposes: reports on collected data, change detection
 alerts, conformance analysis notification, and more.
 
-![Global Settings Notification page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/notification.webp)
+![Global Settings Notification page](/img/product_docs/accessanalyzer/11.6/admin/settings/notification.webp)
 
 To enable notifications from the Enterprise Auditor Console, a mail server must be configured for
 Enterprise Auditor to employ for sending emails.
@@ -26,7 +26,7 @@ Otherwise, click **Cancel** if no changes were intended.
 The Mail Server section at the top of the page is where an organization’s SMTP Server information is
 provided.
 
-![Mail Server settings on Notification page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/server.webp)
+![Mail Server settings on Notification page](/img/product_docs/accessanalyzer/11.6/admin/settings/server.webp)
 
 Provide the following information to enable notifications from Enterprise Auditor.
 
@@ -65,7 +65,7 @@ Console.
 
 The Sender Information section is where the sender information is provided.
 
-![Sender Information section on Notification page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/senderinformation.webp)
+![Sender Information section on Notification page](/img/product_docs/accessanalyzer/11.6/admin/settings/senderinformation.webp)
 
 Configure the sender information for all Enterprise Auditor notifications. Since this is a global
 settings, any recipients configured at this level receive all notifications sent from Enterprise
@@ -80,7 +80,7 @@ level.
 
 The Email Content section is where the recipient information is provided.
 
-![Email Content section on Notification page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/emailcontent.webp)
+![Email Content section on Notification page](/img/product_docs/accessanalyzer/11.6/admin/settings/emailcontent.webp)
 
 - To / CC / BCC – Enter the email addresses for the recipients of the email notifications. Use a
   semicolon (;) to separate multiple recipients.
@@ -93,23 +93,23 @@ Once the global **Notification** settings have been configured, it is recommende
 email to ensure proper configuration. This verifies all settings are correct and email is received
 as expected.
 
-![Test Email Settings button](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/test.webp)
+![Test Email Settings button](/img/product_docs/accessanalyzer/11.6/admin/settings/test.webp)
 
 The Test Email Settings button sends a test email to the recipient list. It is recommended that you
 test by sending an email to yourself. Once all Notification settings are configured, click the
 **Test Email Settings** button.
 
-![Test email sent successfully message](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/testsuccess.webp)
+![Test email sent successfully message](/img/product_docs/accessanalyzer/11.6/admin/settings/testsuccess.webp)
 
 A message displays stating that the test e-mail was sent successfully.
 
-![Test email error message example](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/testerror.webp)
+![Test email error message example](/img/product_docs/accessanalyzer/11.6/admin/settings/testerror.webp)
 
 **NOTE:** If there are any problems with the information, an error message will appear during the
 Test Email settings process. Correct the Notification settings until the test email is sent
 successfully.
 
-![Netwrix Enterprise Auditor test e-mail](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/testemail.webp)
+![Netwrix Enterprise Auditor test e-mail](/img/product_docs/accessanalyzer/11.6/admin/settings/testemail.webp)
 
 This email is sent to all recipients when the **Test Email settings** link is clicked. When the
 Notification settings are configured, click **Save** and then **Ok** to complete the configuration.

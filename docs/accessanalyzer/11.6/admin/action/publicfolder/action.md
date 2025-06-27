@@ -6,7 +6,7 @@ selection in the Steps pane adjust based on this selection.
 **NOTE:** Once an action is selected and saved, and the wizard is closed, this page is no longer
 available and the selection cannot be altered.
 
-![Public Folder Action Module Wizard Action page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/filesystem/action.webp)
+![Public Folder Action Module Wizard Action page](/img/product_docs/accessanalyzer/11.6/admin/action/filesystem/action.webp)
 
 Choose from the following actions:
 

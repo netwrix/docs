@@ -3,7 +3,7 @@
 The jobs within the 1.Users and Groups job group provide visibility into users and groups, helping
 to pinpoint potential areas of administrative concern.
 
-![1.Users and Groups Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![1.Users and Groups Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 The jobs in the 1.Users and Groups job group are:
 

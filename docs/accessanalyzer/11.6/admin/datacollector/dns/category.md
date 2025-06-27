@@ -3,7 +3,7 @@
 The DNS Data Collector Category page contains the following query categories, sub-divided by
 auditing focus:
 
-![Domain Name System Data Collector Wizard Category page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/category.webp)
+![Domain Name System Data Collector Wizard Category page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/adinventory/category.webp)
 
 - DNS Configuration – Collect data from the DNS configuration
 

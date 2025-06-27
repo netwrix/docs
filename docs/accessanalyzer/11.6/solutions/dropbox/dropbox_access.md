@@ -5,7 +5,7 @@ Dropbox environment, specifically highlighting inactive access rights that can b
 dependent on data collected by the 0.Collection job group. This job processes analysis tasks and
 generates reports.
 
-![1.Access > Dropbox_Access Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/dropbox/accessjobstree.webp)
+![1.Access > Dropbox_Access Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/solutions/dropbox/accessjobstree.webp)
 
 The Dropbox_Access job is located in the 1.Access job group.
 
@@ -17,7 +17,7 @@ pbox_Access** > **Configure** node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Dropbox_Access Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/accessanalysis.webp)
+![Analysis Tasks for the Dropbox_Access Job](/img/product_docs/accessanalyzer/11.6/solutions/box/accessanalysis.webp)
 
 - Get access details – Creates the SA_Dropbox_Access_Details table accessible under the job’s
   Results node

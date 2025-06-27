@@ -61,7 +61,7 @@ local mode-type scan to each of the target hosts. The final step in data collect
 and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Enterprise
 Auditor Console server.
 
-![Diagram of Enterprise Auditor server sending an FSAA applet to a proxy server](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/proxymodewithapplet.webp)
+![Diagram of Enterprise Auditor server sending an FSAA applet to a proxy server](/img/product_docs/accessanalyzer/11.6/install/filesystemproxy/proxymodewithapplet.webp)
 
 The diagram illustrates the Enterprise Auditor server sending an FSAA applet to a proxy server,
 which runs the scan against a file server, and then returns data to the Enterprise Auditor server.
@@ -92,7 +92,7 @@ See the
 [File System Proxy Service Installation](/docs/accessanalyzer/11.6/install/filesystemproxy/wizard.md)
 topic for additional information.
 
-![Diagram of Enterprise Auditor server communicating securely with the proxy service on a proxy server](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/proxymodeasservicewithsecurerpc.webp)
+![Diagram of Enterprise Auditor server communicating securely with the proxy service on a proxy server](/img/product_docs/accessanalyzer/11.6/install/filesystemproxy/proxymodeasservicewithsecurerpc.webp)
 
 The diagram illustrates the Enterprise Auditor server communicating securely with the proxy service
 on a proxy server, which runs the scan against a file server, collecting the data locally and
@@ -103,7 +103,7 @@ be scanned across all proxy hosts. Enterprise Auditor monitors the scans from th
 Once all proxy hosts have completed scanning, all results and SQLite databases are returned to the
 Enterprise Auditor Console server.
 
-![Diagram of difference between an implementation with and without proxy servers](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/filesystemproxy/fsaaproxyarchitecture.webp)
+![Diagram of difference between an implementation with and without proxy servers](/img/product_docs/accessanalyzer/11.6/install/filesystemproxy/fsaaproxyarchitecture.webp)
 
 The diagram shows the difference between an implementation of Enterprise Auditor without proxy
 servers (on the left) and with proxy servers (on the right). On the right side of the diagram, the

@@ -9,7 +9,7 @@ topic for additional information.
 The Select DLP Criteria for this scan page is a wizard page for the Scan for Sensitive Content
 category.
 
-![Dropbox Access Auditor Data Collector Wizard Select DLP criteria page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/spaa/selectdlpcriteria.webp)
+![Dropbox Access Auditor Data Collector Wizard Select DLP criteria page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/spaa/selectdlpcriteria.webp)
 
 Select the checkbox next to each criteria to be included in the search for sensitive data. You can
 also use the **Select All** and **Clear All** buttons.

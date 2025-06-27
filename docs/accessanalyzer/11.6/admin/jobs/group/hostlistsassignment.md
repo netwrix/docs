@@ -3,7 +3,7 @@
 At the job group level, the Host Lists Assignment node identifies target host lists assigned for the
 job group.
 
-![Job Group Host Lists Assignment](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/group/hostlistassignment.webp)
+![Job Group Host Lists Assignment](/img/product_docs/accessanalyzer/11.6/admin/jobs/group/hostlistassignment.webp)
 
 At a top-level job group, there is no host list to be inherited. The **Use Default Settings** option
 is grayed-out. However, a sub-job group can inherit host lists from a parent job group. Host lists

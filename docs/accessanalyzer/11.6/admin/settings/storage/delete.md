@@ -9,7 +9,7 @@ Storage Profile from this Enterprise Auditor Console.
 
 **Step 1 –** Select the Storage Profile to be removed, and click **Delete**.
 
-![Confirm delete selected profile dialog](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/storage/deleteconfirm.webp)
+![Confirm delete selected profile dialog](/img/product_docs/accessanalyzer/11.6/admin/settings/storage/deleteconfirm.webp)
 
 **Step 2 –** Confirm the operation by clicking **OK**.
 

@@ -12,7 +12,7 @@ tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the Box_Access Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/accessanalysis.webp)
+![Analysis Tasks for the Box_Access Job](/img/product_docs/accessanalyzer/11.6/solutions/box/accessanalysis.webp)
 
 The following analysis tasks are selected by default:
 

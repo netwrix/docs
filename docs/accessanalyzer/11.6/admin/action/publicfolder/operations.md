@@ -28,7 +28,7 @@ The buttons to the right of the drop-down control the operations in the field:
 Use the Rename Folder window to rename selected folders. It is a wizard page for the Rename
 operation.
 
-![Rename Folder Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/publicfolder/renamefolder.webp)
+![Rename Folder Window](/img/product_docs/accessanalyzer/11.6/admin/action/publicfolder/renamefolder.webp)
 
 Rename folders using the following options:
 
@@ -43,7 +43,7 @@ Rename folders using the following options:
 Use the Change Permissions window to change the permissions. It is a wizard page for the Change
 permissions operation.
 
-![Change Permissions Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/publicfolder/changepermissions.webp)
+![Change Permissions Window](/img/product_docs/accessanalyzer/11.6/admin/action/publicfolder/changepermissions.webp)
 
 Change permissions using the following options:
 
@@ -112,7 +112,7 @@ Change permissions using the following options:
 Use the Custom Attributes window to select custom attributes. It is a wizard page for the Custom
 Attributes operation.
 
-![Custom Attributes Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/customattributes.webp)
+![Custom Attributes Window](/img/product_docs/accessanalyzer/11.6/admin/datacollector/adinventory/customattributes.webp)
 
 Select attributes using the following options:
 
@@ -126,7 +126,7 @@ Select attributes using the following options:
 
 Use the Replicas window to replicate servers. It is a wizard page for the Replicas operation.
 
-![Replicas Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/publicfolder/replicas.webp)
+![Replicas Window](/img/product_docs/accessanalyzer/11.6/admin/action/publicfolder/replicas.webp)
 
 Replicate servers using the following options:
 
@@ -140,7 +140,7 @@ Replicate servers using the following options:
 
 Use the Limits window to select limits to the action. It is a wizard page for the Limits operation.
 
-![Limits Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/publicfolder/limits.webp)
+![Limits Window](/img/product_docs/accessanalyzer/11.6/admin/action/publicfolder/limits.webp)
 
 Use the options to select any changes for the categories. If applicable, use the dropdown to select
 desired values related to the corresponding option.
@@ -156,7 +156,7 @@ desired values related to the corresponding option.
 Use the Delete Folder window to select deletion settings for the action. It is a wizard page for the
 Delete operation.
 
-![Delete Folder Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/publicfolder/deletefolder.webp)
+![Delete Folder Window](/img/product_docs/accessanalyzer/11.6/admin/action/publicfolder/deletefolder.webp)
 
 Select deletion settings using the following options:
 

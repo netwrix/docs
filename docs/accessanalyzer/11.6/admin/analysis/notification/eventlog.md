@@ -4,7 +4,7 @@ The Event Log properties page is available when the Event log notification type 
 Type page. Use this page to specify the type of event, the event ID, and the description for the
 event.
 
-![Notification Data Analysis Module wizard Event Log properties page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/analysis/notification/eventlog.webp)
+![Notification Data Analysis Module wizard Event Log properties page](/img/product_docs/accessanalyzer/11.6/admin/analysis/notification/eventlog.webp)
 
 The following options are available:
 

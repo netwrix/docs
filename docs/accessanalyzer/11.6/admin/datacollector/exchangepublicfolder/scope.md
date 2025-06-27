@@ -36,7 +36,7 @@ In the Choose Scope of Public Folders to be queried section, select one of the f
 When Scope to **Selected Public Folders** is selected on the Scope page, the options to specify the
 desired folders are enabled.
 
-![Scope page with Selected Public Folders option selected](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/exchangepublicfolder/scopeselectedpublicfolders.webp)
+![Scope page with Selected Public Folders option selected](/img/product_docs/accessanalyzer/11.6/admin/datacollector/exchangepublicfolder/scopeselectedpublicfolders.webp)
 
 Configure the scope of the selected public folders to be queried:
 
@@ -57,7 +57,7 @@ selected word from the filter list.
 When Scope to **Selected Table** is selected on the Scope page, the options to specify the desired
 tables are enabled.
 
-![Scope page with Selected Table option selected](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/exchangepublicfolder/scopeselectedtable.webp)
+![Scope page with Selected Table option selected](/img/product_docs/accessanalyzer/11.6/admin/datacollector/exchangepublicfolder/scopeselectedtable.webp)
 
 Configure the selected tables to be queried:
 

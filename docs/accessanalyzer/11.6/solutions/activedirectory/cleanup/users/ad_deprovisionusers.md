@@ -35,7 +35,7 @@ topic for additional information.
 Navigate to the **Active Directory** > **Cleanup** > **2.Users** > **AD_DeprovisionUsers** >
 **Configure** node and select **Analysis** to view the analysis tasks.
 
-![Analysis Tasks for the AD_DeprovisionUsers Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/cleanup/users/deprovisionusersanalysis.webp)
+![Analysis Tasks for the AD_DeprovisionUsers Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/cleanup/users/deprovisionusersanalysis.webp)
 
 The default analysis tasks are:
 
@@ -70,7 +70,7 @@ Navigate to the **Active Directory** > **Cleanup** > **2.Users** > **AD_Deprovis
 **CAUTION:** Do not enable the actions unless it is required. Disable the actions after execution to
 prevent making unintended and potentially harmful changes to Active Directory.
 
-![Action Tasks for the AD_DeprovisionUsers Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/cleanup/users/deprovisionusersaction.webp)
+![Action Tasks for the AD_DeprovisionUsers Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/cleanup/users/deprovisionusersaction.webp)
 
 The action tasks are:
 

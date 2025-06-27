@@ -10,7 +10,7 @@ Analysis** > **EX_LargestGroups** > **Configure** node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the EX_LargestGroups Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/distributionlists/membershipanalysis/largestgroupsanalysis.webp)
+![Analysis Tasks for the EX_LargestGroups Job](/img/product_docs/accessanalyzer/11.6/solutions/exchange/distributionlists/membershipanalysis/largestgroupsanalysis.webp)
 
 The following analysis task is selected by default:
 

@@ -3,7 +3,7 @@
 The information in this section applies to Select Account Type > Web Services (JWT) in the User
 Credentials window.
 
-![User Credentials - Web Services (JWT)](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/webservicesjwt.webp)
+![User Credentials - Web Services (JWT)](/img/product_docs/accessanalyzer/11.6/admin/settings/connection/profile/webservicesjwt.webp)
 
 The required credentials for Web Services (JWT) are:
 

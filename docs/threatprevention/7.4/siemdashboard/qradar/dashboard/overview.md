@@ -3,7 +3,7 @@
 The Active Directory Overview dashboard contains information on monitored Active Directory events
 within the past three (3) hours. It has the following cards:
 
-![Overview Dashboard](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/runninginstances/overview.webp)
+![Overview Dashboard](/img/product_docs/accessanalyzer/11.6/admin/runninginstances/overview.webp)
 
 - Authentication Attacks – Number of authentication attacks that started in the specified timeframe,
   i.e., last three (3) hours. The value for this card is a hyperlink to the

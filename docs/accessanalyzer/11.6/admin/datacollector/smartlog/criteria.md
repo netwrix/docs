@@ -4,19 +4,19 @@ The Criteria page is used to specify the search criteria. A test query can be ru
 host entered on the Sample Host page to confirm the results that will be returned by the query. It
 is a wizard page for all log types.
 
-![SMART Log DC Wizard Criteria page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/ewsmailbox/criteria.webp)
+![SMART Log DC Wizard Criteria page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/ewsmailbox/criteria.webp)
 
 The **Limit number of records to** setting has a default of `1000`.
 
 Follow the steps to configure the search criteria.
 
-![Filter button on Criteria page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/smartlog/criteriafilter.webp)
+![Filter button on Criteria page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/smartlog/criteriafilter.webp)
 
 **Step 1 –** Click **Filter** to add a condition or a group to the root of the query.
 
 - Click the ellipsis (**…**) to add a new condition or group under an existing group
 
-![Configure search](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/smartlog/criteriarecordnumber.webp)
+![Configure search](/img/product_docs/accessanalyzer/11.6/admin/datacollector/smartlog/criteriarecordnumber.webp)
 
 **Step 2 –** Click **RecordNumber** to configure the search to look for specific events or a range
 of events.

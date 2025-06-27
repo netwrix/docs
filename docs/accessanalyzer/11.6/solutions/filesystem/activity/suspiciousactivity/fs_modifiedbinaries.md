@@ -11,7 +11,7 @@ Activity** > **FS_ModifiedBinaries** > **Configure** node and select **Analysis*
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FS_ModifiedBinaries Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/activity/suspiciousactivity/modifiedbinariesanalysis.webp)
+![Analysis Tasks for the FS_ModifiedBinaries Job](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/activity/suspiciousactivity/modifiedbinariesanalysis.webp)
 
 The following analysis task is selected by default:
 

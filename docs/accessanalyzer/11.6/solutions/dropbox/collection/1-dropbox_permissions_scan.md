@@ -11,7 +11,7 @@ environment.
 The 1-Dropbox_Permissions Scan job has been preconfigured to run with the default settings with the
 category of Dropbox Access.
 
-![Queries for the 1-Dropbox_Permissions Scan Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/db2/collection/permissionsscanquery.webp)
+![Queries for the 1-Dropbox_Permissions Scan Job](/img/product_docs/accessanalyzer/11.6/solutions/databases/db2/collection/permissionsscanquery.webp)
 
 The query for the 1-Dropbox_Permissions Scan job is:
 
@@ -31,7 +31,7 @@ window.
 **Step 3 –** Select the **Data Source** tab, and click **Configure**. The Dropbox Access Auditor
 Data Collector Wizard opens.
 
-![Dropbox Access Auditor Data Collector Wizard Scan Options page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/dropbox/collection/permissionsscanoptionspage.webp)
+![Dropbox Access Auditor Data Collector Wizard Scan Options page](/img/product_docs/accessanalyzer/11.6/solutions/dropbox/collection/permissionsscanoptionspage.webp)
 
 **Step 4 –** T Use the Scan Options page ito generate the access token prior to the first execution
 of the job group.
@@ -46,7 +46,7 @@ of the job group.
 
 **Step 5 –** If query customizations are desired, click **Next** to continue.
 
-![Dropbox Access Auditor Data Collector Wizard Scoping page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/dropbox/collection/permissionsscopingpage.webp)
+![Dropbox Access Auditor Data Collector Wizard Scoping page](/img/product_docs/accessanalyzer/11.6/solutions/dropbox/collection/permissionsscopingpage.webp)
 
 **Step 6 –** On the Scoping page, select whether to scan **All Users** or **Limited Users**. If
 **Limited Users** is selected, browse to a CSV file with one email address per row for the desired

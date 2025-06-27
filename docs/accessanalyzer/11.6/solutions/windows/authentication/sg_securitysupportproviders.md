@@ -9,7 +9,7 @@ The SG_SecuritySupportProviders job uses the Registry Data Collector for the fol
 
 **CAUTION:** The queries are preconfigured for this job. Never modify the queries.
 
-![Queries for the SG_SecuritySupportProviders Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/windows/authentication/securitysupportprovidersqueries.webp)
+![Queries for the SG_SecuritySupportProviders Job](/img/product_docs/accessanalyzer/11.6/solutions/windows/authentication/securitysupportprovidersqueries.webp)
 
 The queries for the SG_SecuritySupportProviders job are:
 
@@ -24,7 +24,7 @@ node and select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SG_SecuritySupportProviders Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/windows/authentication/securitysupportprovidersanalysis.webp)
+![Analysis Tasks for the SG_SecuritySupportProviders Job](/img/product_docs/accessanalyzer/11.6/solutions/windows/authentication/securitysupportprovidersanalysis.webp)
 
 The default analysis tasks are:
 

@@ -11,7 +11,7 @@ a subsequent scan (i.e. scanning fewer web applications, scanning fewer site col
 shallower depth scan). Those resources not included in a subsequent scan are marked as deleted in
 the Tier 2 database and subsequently removed from the Tier 1 database.
 
-![Additional Scoping page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/box/additionalscoping.webp)
+![Additional Scoping page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/box/additionalscoping.webp)
 
 If checked, set the **Limit scanned depth to: [number] level(s)** option to the desired depth. If
 this option is not checked then the entire farm is scanned. If the scoping depth is set to **0**

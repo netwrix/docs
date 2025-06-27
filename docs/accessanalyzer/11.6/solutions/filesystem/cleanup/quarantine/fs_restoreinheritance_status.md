@@ -12,7 +12,7 @@ tasks.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FS_RestoreInheritance_Status Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/cleanup/quarantine/restoreinheritancestatusanalysis.webp)
+![Analysis Tasks for the FS_RestoreInheritance_Status Job](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/cleanup/quarantine/restoreinheritancestatusanalysis.webp)
 
 The following analysis tasks are selected by default:
 

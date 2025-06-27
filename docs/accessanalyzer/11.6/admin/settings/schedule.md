@@ -3,7 +3,7 @@
 The Schedule node contains objects referred to as Schedule Service Accounts. A Schedule Service
 Account is used to run scheduled tasks on the Enterprise Auditor Console server.
 
-![Schedule node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/schedule.webp)
+![Schedule node](/img/product_docs/accessanalyzer/11.6/admin/settings/schedule.webp)
 
 Jobs can be executed manually as desired or scheduled to execute at designated times. For example,
 you could schedule a job to run during hours when the office is closed and network traffic is low.
@@ -73,7 +73,7 @@ topic for additional information.
 
 There are two types of accounts that can be used to configure the Schedule Service Account.
 
-![serviceaccounttypes](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/serviceaccounttypes.webp)
+![serviceaccounttypes](/img/product_docs/accessanalyzer/11.6/admin/settings/serviceaccounttypes.webp)
 
 Use one of the following options for the Schedule Service Account:
 
@@ -102,12 +102,12 @@ _Remember,_ the Schedule Service Account cannot be signed into an active session
 Auditor Console server when the time comes for a scheduled task to start when it has a Windows 2016
 operating system.
 
-![Add User credential option in the Schedule view](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/addusercredential.webp)
+![Add User credential option in the Schedule view](/img/product_docs/accessanalyzer/11.6/admin/settings/addusercredential.webp)
 
 **Step 1 –** Click **Add User credential** at the top of the Schedule view. The User Credentials
 window opens.
 
-![User Credentials window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/usercredentialswindow.webp)
+![User Credentials window](/img/product_docs/accessanalyzer/11.6/admin/settings/usercredentialswindow.webp)
 
 **Step 2 –** The window options change according to the value for the **Selected Account Type**
 field. Select the appropriate account type and then provide the required information. The account
@@ -148,28 +148,28 @@ messages might appear:
 
 - Passwords Do Not Match Error
 
-    ![Passwords Do Not Match Error](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/passwordsdontmatch.webp)
+    ![Passwords Do Not Match Error](/img/product_docs/accessanalyzer/11.6/admin/settings/passwordsdontmatch.webp)
 
     - This error indicates the two password entries do not match. Click **OK** and reenter the
       passwords.
 
 - Bad User Name or Password Error
 
-    ![Bad User Name or Password Error](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/incorrectlogondetails.webp)
+    ![Bad User Name or Password Error](/img/product_docs/accessanalyzer/11.6/admin/settings/incorrectlogondetails.webp)
 
     - This error indicates either the user account does not exist or the username and password do
       not match. Click **OK** and reenter the information.
 
 - Insufficient Rights Error
 
-    ![Insufficient Rights Error](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/insufficientrights.webp)
+    ![Insufficient Rights Error](/img/product_docs/accessanalyzer/11.6/admin/settings/insufficientrights.webp)
 
     - This error indicates the account supplied does not have sufficient rights to create and run
       scheduled tasks. Click **OK** and provide credentials with sufficient rights.
 
 - GPO Network Security Error
 
-    ![GPO Network Security Error](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/gponetworksecurity.webp)
+    ![GPO Network Security Error](/img/product_docs/accessanalyzer/11.6/admin/settings/gponetworksecurity.webp)
 
     - This error indicates that the GPO Network Security settings are configured to not allow
       storage of passwords and credentials for network authentication. Click OK. Disable the
@@ -192,7 +192,7 @@ _Remember,_ the Schedule Service Account cannot be signed into an active session
 Auditor Console server when the time comes for a scheduled task to start when it has a Windows 2016
 operating system.
 
-![Edit option in the Schedule view](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/edit.webp)
+![Edit option in the Schedule view](/img/product_docs/accessanalyzer/11.6/admin/settings/edit.webp)
 
 **Step 1 –** Select a credential from the User Credentials list and click on **Edit**. The User
 Credentials window opens.
@@ -215,7 +215,7 @@ Follow the steps to delete a Schedule Service Account.
 **Step 1 –** Select the credential from the User Credentials list and click **Delete**. The Delete
 Credentials confirmation window appears.
 
-![Delete Credentials confirmation window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/deletecredentials.webp)
+![Delete Credentials confirmation window](/img/product_docs/accessanalyzer/11.6/admin/settings/deletecredentials.webp)
 
 **Step 2 –** Click **OK** to confirm the deletion or **Cancel** to exit the deletion process.
 

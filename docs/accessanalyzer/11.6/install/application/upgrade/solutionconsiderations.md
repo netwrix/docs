@@ -103,14 +103,14 @@ Add-on. See the
 [Sensitive Data Discovery Add-On](/docs/accessanalyzer/11.6/sensitivedatadiscovery/overview.md)
 topic for additional information.
 
-![Global Settings Sensitive Data node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/upgrade/sensitivedata.webp)
+![Global Settings Sensitive Data node](/img/product_docs/accessanalyzer/11.6/install/application/upgrade/sensitivedata.webp)
 
 **Step 2 –** If the same Sensitive Data Criteria are used for all solutions, configure the criteria
 selection at the global Settings level, which will then be used by default in all solution sets.
 Navigate to the **Settings** > **Sensitive Data** node and click **Add** to open the Select Criteria
 window.
 
-![Sensitive Data Select Criteria window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/upgrade/selectcriteria.webp)
+![Sensitive Data Select Criteria window](/img/product_docs/accessanalyzer/11.6/install/application/upgrade/selectcriteria.webp)
 
 **Step 3 –** Select the desired criteria. Use the **Search Criteria** text field to filter the list
 using keywords or expand each category to view and select individual Sensitive Data search criteria,

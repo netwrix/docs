@@ -3,7 +3,7 @@
 The Host Discovery Wizard gives complete control over how hosts are discovered on the targeted
 network and which hosts are discovered.
 
-![Console with Create Query Option Highlighted](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostdiscovery/wizard/createqueryhighlighted.webp)
+![Console with Create Query Option Highlighted](/img/product_docs/accessanalyzer/11.6/admin/hostdiscovery/wizard/createqueryhighlighted.webp)
 
 Use the Host Discovery Wizard to create new queries. The wizard opens in the Results pane. Use any
 of the following methods in order to access the Host Discovery Wizard from the Host Discovery node:
@@ -13,7 +13,7 @@ of the following methods in order to access the Host Discovery Wizard from the H
 - Right-click anywhere in the Host Discovery Queries table and select **Create Query** from the
   pop-up menu
 
-![Host Discovery Wizard](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostdiscovery/wizard/hostdiscoverywizard.webp)
+![Host Discovery Wizard](/img/product_docs/accessanalyzer/11.6/admin/hostdiscovery/wizard/hostdiscoverywizard.webp)
 
 The first step in creating a Host Discovery query is to select the source where the query searches
 for hosts. Hosts are discoverable using one of the following options:

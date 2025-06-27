@@ -6,7 +6,7 @@ The Prior Actions page selects previously executed actions for rollback. It is a
 **NOTE:** Once an action is selected and saved, and the wizard is closed, this page is no longer
 available and the selection cannot be altered.
 
-![Public Folder Action Module Wizard Prior Actions page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/filesystem/prioractions.webp)
+![Public Folder Action Module Wizard Prior Actions page](/img/product_docs/accessanalyzer/11.6/admin/action/filesystem/prioractions.webp)
 
 The options on this page are:
 

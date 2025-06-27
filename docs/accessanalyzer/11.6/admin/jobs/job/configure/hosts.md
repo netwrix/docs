@@ -3,7 +3,7 @@
 The Hosts node provides the option to assign a preconfigured host list at the job level. It also
 provides a way to manually assign hosts to be targeted by the job using Host Selection pane.
 
-![Host Selection page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/hostselection.webp)
+![Host Selection page](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/configure/hostselection.webp)
 
 Use the default settings by selecting the **Use Default Setting** checkbox and inherit the job
 group’s assigned host lists. To break inheritance and assign host lists at the job level select from
@@ -23,11 +23,11 @@ Hosts can be added manually at the job level even when inheritance (Use Default 
 host list assignment. The job targets the hosts in any assigned host lists as well as any manually
 added at the job level. Follow these directions to manually add a host to a job.
 
-![Job's Configure > Hosts node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/hostsnode.webp)
+![Job's Configure > Hosts node](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/configure/hostsnode.webp)
 
 **Step 1 –** Navigate to the job’s **Configure** > **Hosts** node.
 
-![Individual hosts section of the Host Selection view](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/hostselectionindividualhosts.webp)
+![Individual hosts section of the Host Selection view](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/configure/hostselectionindividualhosts.webp)
 
 **Step 2 –** In the Individual hosts section of the Host Selection view, enter the Host name in the
 textbox and click **Add**.

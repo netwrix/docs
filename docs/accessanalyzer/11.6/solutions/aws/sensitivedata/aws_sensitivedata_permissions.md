@@ -11,7 +11,7 @@ Navigate to the **AWS** > **8.S3 Sensitive Data** > **AWS_SensitiveData_Permissi
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AWS_SensitiveData_Permissions Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/db2/sensitivedata/sensitivedatapermissionsanalysis.webp)
+![Analysis Tasks for the AWS_SensitiveData_Permissions Job](/img/product_docs/accessanalyzer/11.6/solutions/databases/db2/sensitivedata/sensitivedatapermissionsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

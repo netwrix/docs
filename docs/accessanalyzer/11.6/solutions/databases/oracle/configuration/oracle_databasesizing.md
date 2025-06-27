@@ -11,7 +11,7 @@ Job >Configure** node and select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/oracle/configuration/analysisdbsizing.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/solutions/databases/oracle/configuration/analysisdbsizing.webp)
 
 The default analysis tasks are:
 

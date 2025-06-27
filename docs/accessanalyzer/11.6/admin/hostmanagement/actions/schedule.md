@@ -7,12 +7,12 @@ of the following:
 - An individual host list
 - Selected hosts in a list
 
-![Schedule option on the Activities pane](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/schedule.webp)
+![Schedule option on the Activities pane](/img/product_docs/accessanalyzer/11.6/admin/settings/schedule.webp)
 
 Select the hosts or host list to inventory and click **Schedule** in the Activities pane. The
 Schedule Wizard opens for the selected host or host list.
 
-![Schedule Wizard for Host Inventory Query](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/schedulewizardhostmanagement.webp)
+![Schedule Wizard for Host Inventory Query](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/actions/schedulewizardhostmanagement.webp)
 
 Use the Schedule Wizard to configure the scheduled task. See the
 [Schedule Wizard](/docs/accessanalyzer/11.6/admin/schedule/wizard.md)

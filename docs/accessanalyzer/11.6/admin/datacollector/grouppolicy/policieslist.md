@@ -7,7 +7,7 @@ a wizard page for the categories of:
 - Policies State for all GPOs
 - Local Policies
 
-![Group Policy Data Collector Wizard Policies List page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/grouppolicy/policieslist.webp)
+![Group Policy Data Collector Wizard Policies List page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/grouppolicy/policieslist.webp)
 
 Select the policies or policy parts to be audited. The category dictates how this selection is
 applied across the domain or local host.

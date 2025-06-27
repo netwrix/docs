@@ -3,7 +3,7 @@
 The 1.Groups Job Group identifies effective group membership and pinpoints potential areas of
 administrative concern such as nested or stale groups.
 
-![1.Groups Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![1.Groups Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 The following jobs comprise the 1.Groups Job Group:
 

@@ -13,7 +13,7 @@ topic for additional information.
 **Step 2 –** When the data grid contains all columns desired for export, click **Export Data**. A
 Save As window opens.
 
-![Save As window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/exportsaveas.webp)
+![Save As window](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/actions/exportsaveas.webp)
 
 **Step 3 –** On the Save As window, select the required format (HTML Files, XML Files, or CSV Files)
 and provide a name and location for the export file.
@@ -28,12 +28,12 @@ The following examples show the different export format options.
 
 Example HTML File Export
 
-![Example HTML File Export](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/exportexamplehtml.webp)
+![Example HTML File Export](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/actions/exportexamplehtml.webp)
 
 Example XML File Export
 
-![Example XML File Export](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/exportexamplexml.webp)
+![Example XML File Export](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/actions/exportexamplexml.webp)
 
 Example CSV File Export
 
-![Example CSV File Export](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/exportexamplecsv.webp)
+![Example CSV File Export](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/actions/exportexamplecsv.webp)

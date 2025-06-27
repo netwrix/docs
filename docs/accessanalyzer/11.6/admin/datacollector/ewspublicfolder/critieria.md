@@ -8,7 +8,7 @@ enable the Criteria Editor. See the
 [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
 for additional information.
 
-![EWS Public Folder Data Collector Wizard Criteria page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/ewsmailbox/criteria.webp)
+![EWS Public Folder Data Collector Wizard Criteria page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/ewsmailbox/criteria.webp)
 
 The options on the Criteria page are:
 

@@ -3,7 +3,7 @@
 The 0.Collection Job Group is comprised of jobs that process and analyze the message tracking logs
 on the Exchange Servers in the environment.
 
-![jobstree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![jobstree](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 The jobs in the 0.Collection Job Group are:
 

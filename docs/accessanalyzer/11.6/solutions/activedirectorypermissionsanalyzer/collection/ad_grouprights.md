@@ -9,7 +9,7 @@ The AD_GroupRights Job uses the ADPermissions Data Collector for the following q
 
 **CAUTION:** Do not modify the query. The query is preconfigured for this job.
 
-![Query for the AD_GroupRights Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectorypermissionsanalyzer/collection/grouprightsquery.webp)
+![Query for the AD_GroupRights Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectorypermissionsanalyzer/collection/grouprightsquery.webp)
 
 - Group Access Permissions – Returns group access permissions
 
@@ -25,7 +25,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **0.Collection** > *
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the AD_GroupRights Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectorypermissionsanalyzer/collection/grouprightsanalysis.webp)
+![Analysis Tasks for the AD_GroupRights Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectorypermissionsanalyzer/collection/grouprightsanalysis.webp)
 
 The default analysis tasks are:
 

@@ -3,7 +3,7 @@
 The information in this topic applies to **Select Account Type** > **Unix Account** in the User
 Credentials window.
 
-![User Credentials - Unix](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/unixaccount.webp)
+![User Credentials - Unix](/img/product_docs/accessanalyzer/11.6/admin/settings/connection/profile/unixaccount.webp)
 
 The required credentials for the Unix Account are:
 

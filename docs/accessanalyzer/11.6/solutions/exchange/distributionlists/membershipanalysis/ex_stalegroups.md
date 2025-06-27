@@ -11,7 +11,7 @@ Analysis** > **EX_StaleGroups** > **Configure** node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the EX_StaleGroups Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/distributionlists/membershipanalysis/stalegroupsanalysis.webp)
+![Analysis Tasks for the EX_StaleGroups Job](/img/product_docs/accessanalyzer/11.6/solutions/exchange/distributionlists/membershipanalysis/stalegroupsanalysis.webp)
 
 The following analysis tasks are selected by default:
 

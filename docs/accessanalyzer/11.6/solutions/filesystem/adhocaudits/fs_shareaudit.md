@@ -11,7 +11,7 @@ node and select Analysis.
 **CAUTION:** Do not modify or deselect the last three selected analysis tasks. The analysis tasks
 are preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/adhocaudits/shareauditanalysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/adhocaudits/shareauditanalysis.webp)
 
 The following analysis tasks are selected by default:
 

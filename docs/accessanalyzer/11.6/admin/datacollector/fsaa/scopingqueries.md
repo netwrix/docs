@@ -8,7 +8,7 @@ wizard page for the following categories:
 - File System Access/Permission Auditing Scan
 - Sensitive Data
 
-![FSAA Data Collector Wizard Scoping Queries page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/scopingqueries.webp)
+![FSAA Data Collector Wizard Scoping Queries page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/fsaa/scopingqueries.webp)
 
 The Scoping Queries buttons have the following functionality:
 
@@ -47,11 +47,11 @@ the previous page of the wizard to exclude all other shares.
 For example, to restrict the scan to only Open Shares and exclude all other shares, the Scoping
 Options page should be configured as shown:
 
-![FSAA Data Collector Wizard Scoping Options page Open shares configuration](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/scopingoptionsopenshares.webp)
+![FSAA Data Collector Wizard Scoping Options page Open shares configuration](/img/product_docs/accessanalyzer/11.6/admin/datacollector/fsaa/scopingoptionsopenshares.webp)
 
 The Scoping Queries page should be configured as shown:
 
-![FSAA Data Collector Wizard Scoping Queries page Open shares configuration](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/scopingqueriesopenshares.webp)
+![FSAA Data Collector Wizard Scoping Queries page Open shares configuration](/img/product_docs/accessanalyzer/11.6/admin/datacollector/fsaa/scopingqueriesopenshares.webp)
 
 See the
 [FSAA: Scoping Options](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/scopingoptions.md)
@@ -62,7 +62,7 @@ topic for additional information and common scoping scenarios.
 The Scoping Query Configuration window allows you to create a custom Scoping Query to specify shares
 and folders to be included in or excluded from the scan.
 
-![Scoping Query Configuration window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/scopingqueryconfiguration.webp)
+![Scoping Query Configuration window](/img/product_docs/accessanalyzer/11.6/admin/datacollector/fsaa/scopingqueryconfiguration.webp)
 
 Configure the following fields:
 
@@ -80,7 +80,7 @@ Configure the following fields:
 Clicking **Configure Query** on the Scoping Query Configuration Window brings up the Advanced
 Scoping Options Query Configuration window.
 
-![Advanced Scoping Options Query Configuration window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/advancedscopingoptionsqueryconfiguration.webp)
+![Advanced Scoping Options Query Configuration window](/img/product_docs/accessanalyzer/11.6/admin/datacollector/fsaa/advancedscopingoptionsqueryconfiguration.webp)
 
 Follow the steps to configure a query.
 

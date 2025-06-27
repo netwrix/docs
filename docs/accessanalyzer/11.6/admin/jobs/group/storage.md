@@ -5,7 +5,7 @@ All Storage Profiles are created at the global level (**Settings** > **Storage**
 [Storage](/docs/accessanalyzer/11.6/admin/settings/storage/overview.md)
 topic for additional information.
 
-![Job Group Storage Settings](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/storage/storage.webp)
+![Job Group Storage Settings](/img/product_docs/accessanalyzer/11.6/admin/settings/storage/storage.webp)
 
 By default, all job groups are set to inherit the **Use Default Profile** option from the global
 level or a parent job group. If it is necessary for a job group to send data to a different

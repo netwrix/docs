@@ -11,7 +11,7 @@ Navigate to the **Jobs** > **SharePoint** > **1.Direct Permissions** > **SP_Unre
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the SP_UnresolvedSIDs Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/directpermissions/unresolvedsidsanalysis.webp)
+![Analysis Tasks for the SP_UnresolvedSIDs Job](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/directpermissions/unresolvedsidsanalysis.webp)
 
 They need to remain in the default order:
 

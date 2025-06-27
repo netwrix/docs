@@ -59,7 +59,7 @@ table, and then click **Save**.
 
 Once configured they should show under Additional claims as below:
 
-![Claims configured](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/entraidssoclaims.webp)
+![Claims configured](/img/product_docs/accessanalyzer/11.6/install/application/reports/entraidssoclaims.webp)
 
 **Step 7 –** In the **Manage** > **Users and groups** section for your application, add any required
 users or groups to give permission to access the application.
@@ -80,7 +80,7 @@ topic for additional information.
 **Step 1 –** Open the **WebServer.exe.config** file with a text editor, for example Notepad. It is
 located within the Web folder of the Enterprise Auditor installation directory.
 
-![Parameters in the web server config file](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/application/reports/webserverexeconfigfileentrasso.webp)
+![Parameters in the web server config file](/img/product_docs/accessanalyzer/11.6/install/application/reports/webserverexeconfigfileentrasso.webp)
 
 **Step 2 –** Locate the **WsFederationMetaData**, **WsFederationRealm**, and **WsFederationReply**
 Parameters in the config file, and add the required values from your Microsoft Entra ID application:

@@ -6,7 +6,7 @@ either the Host Management node or an individual host list node. See the
 topic for additional information on static host lists. This option is inactive until at least one
 host within the data grid is selected.
 
-![Save Selected To List option in Host Management node](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/actions/savetolist.webp)
+![Save Selected To List option in Host Management node](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/actions/savetolist.webp)
 
 Use the Windows Ctrl + left-click function to select multiple hosts from the data grid. In the
 Activities pane, click **Save Selected To List**. The Host List Wizard opens with the selected hosts

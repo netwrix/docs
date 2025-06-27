@@ -10,7 +10,7 @@ the Enterprise Auditor Console currently resides, and only returns information a
 databases. For Remote PowerShell, the data collector returns databases for the Exchange Forest and
 only returns information about those databases.
 
-![ExchangePS Data Collector Wizard Scope by Databases page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/exchangeps/scopedatabases.webp)
+![ExchangePS Data Collector Wizard Scope by Databases page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/exchangeps/scopedatabases.webp)
 
 Click **Retrieve** to return all databases in the Exchange Organization and populate them in the
 Available Databases list. Select the desired databases from Available Databases and click **Add**.

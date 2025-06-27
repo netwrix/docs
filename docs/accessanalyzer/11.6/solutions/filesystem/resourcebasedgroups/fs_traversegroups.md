@@ -81,7 +81,7 @@ was installed from the Instant Jobs library. Then go to the **FS_TraverseGroups*
 node and select **Analysis**. The Create Groups analysis task contains an analysis parameter that
 should be configured to set the naming convention for list groups.
 
-![FS_TraverseGroups analysis tasks](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/resourcebasedgroups/traverseanalysis.webp)
+![FS_TraverseGroups analysis tasks](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/resourcebasedgroups/traverseanalysis.webp)
 
 The job has the following analysis tasks:
 
@@ -136,7 +136,7 @@ specify the OU for group creation.
 **_RECOMMENDED:_** It is recommended to execute the actions one at a time and in order as opposed to
 running the entire job group with the actions enabled.
 
-![FS_TraverseGroups action tasks](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/resourcebasedgroups/traverseactions.webp)
+![FS_TraverseGroups action tasks](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/resourcebasedgroups/traverseactions.webp)
 
 There are the following action tasks:
 
@@ -163,7 +163,7 @@ Follow the steps to configure the Create Groups action task.
 
 **Step 3 –** In the Active Directory Action Module Wizard, navigate to the Create Groups page.
 
-![AD Action Module Wizard Create Groups page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/activedirectory/operations/creategroups.webp)
+![AD Action Module Wizard Create Groups page](/img/product_docs/accessanalyzer/11.6/admin/action/activedirectory/operations/creategroups.webp)
 
 **Step 4 –** In the OU box, select the OU where the groups will be created.
 

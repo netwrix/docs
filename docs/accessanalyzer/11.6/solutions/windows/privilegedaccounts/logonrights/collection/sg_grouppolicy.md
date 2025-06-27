@@ -14,7 +14,7 @@ The SG_GroupPolicy job uses the GroupPolicy Data Collector for the following que
 
 **CAUTION:** The query is preconfigured for this job. Never modify the query.
 
-![Queries for the SG_GroupPolicy Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/grouppolicy/grouppolicyquery.webp)
+![Queries for the SG_GroupPolicy Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/grouppolicy/grouppolicyquery.webp)
 
 The query for the SG_GroupPolicy job is:
 

@@ -11,7 +11,7 @@ View the analysis tasks by navigating to the **FileSystem** > **5.Activity** > *
 **CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 
-![Analysis Tasks for the FS_Deletions Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/box/activity/forensics/deletionsanalysis.webp)
+![Analysis Tasks for the FS_Deletions Job](/img/product_docs/accessanalyzer/11.6/solutions/box/activity/forensics/deletionsanalysis.webp)
 
 The following analysis tasks are selected by default:
 
@@ -57,11 +57,11 @@ Follow the steps to configure a notification analysis task.
 **CAUTION:** Do not make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 
-![Notification Data Analysis Module wizard SMTP page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/activity/forensics/notificationsmtp.webp)
+![Notification Data Analysis Module wizard SMTP page](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/activity/forensics/notificationsmtp.webp)
 
 **Step 3 –** Navigate to the SMTP page of the wizard.
 
-![Recipients section](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/activity/forensics/notificationsmtprecipients.webp)
+![Recipients section](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/activity/forensics/notificationsmtprecipients.webp)
 
 **Step 4 –** In the Recipients section, provide the email addresses or distribution lists (fully
 qualified address) for those who are to receive this notification. Multiple addresses can be
@@ -74,7 +74,7 @@ provided. You can use the following options:
 
     **_RECOMMENDED:_** Leave the **Combine multiple messages into single message** option selected.
 
-![Message section](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/activity/forensics/notificationsmtpmessage.webp)
+![Message section](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/activity/forensics/notificationsmtpmessage.webp)
 
 **Step 5 –** In the Message section, edit the **Subject**. It is not recommended to remove any
 parameters. Then, customize the email content in the textbox to provide an explanation of the

@@ -9,7 +9,7 @@ The PgSQL_TablePrivileges Job uses the SQL Data Collector for queries.
 
 **CAUTION:** Do not modify the query. The query is preconfigured for this job.
 
-![Query Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/postgresql/collection/tableprivileges_query.webp)
+![Query Selection](/img/product_docs/accessanalyzer/11.6/solutions/databases/postgresql/collection/tableprivileges_query.webp)
 
 The query is:
 
@@ -23,7 +23,7 @@ Navigate to the **Databases** > **0.Collection** > **PostgreSQL** > **PgSQL_Tabl
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Selection](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/postgresql/collection/tableprivileges_analysis.webp)
+![Analysis Selection](/img/product_docs/accessanalyzer/11.6/solutions/databases/postgresql/collection/tableprivileges_analysis.webp)
 
 The default analysis task is:
 

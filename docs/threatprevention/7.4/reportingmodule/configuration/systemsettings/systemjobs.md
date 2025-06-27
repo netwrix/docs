@@ -19,7 +19,7 @@ The table lists the system maintenance jobs:
 The Report Maintenance job details page has two tabs that provide configuration options and job
 health details.
 
-![System Settings interface on the System Jobs page showing the Report Maintenance job Settings tab](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/properties/reportsettings.webp)
+![System Settings interface on the System Jobs page showing the Report Maintenance job Settings tab](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/properties/reportsettings.webp)
 
 Settings Tab
 

@@ -3,7 +3,7 @@
 The Sudoers job group provides visibility into all rights granted via sudoers within audited Unix
 and Linux environments.
 
-![Sudoers Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/unix/privilegedaccess/sudoers/sudoersjobstree.webp)
+![Sudoers Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/solutions/unix/privilegedaccess/sudoers/sudoersjobstree.webp)
 
 The jobs in the Sudoers job group are:
 

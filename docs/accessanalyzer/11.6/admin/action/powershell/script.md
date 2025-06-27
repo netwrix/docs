@@ -3,7 +3,7 @@
 The Script page enables you to input the PowerShell script that will be used to perform the
 requested action. Built-in variables are available for use in the script.
 
-![PowerShell Action Module Wizard Script page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/powershell/script.webp)
+![PowerShell Action Module Wizard Script page](/img/product_docs/accessanalyzer/11.6/admin/action/powershell/script.webp)
 
 The PowerShell script can be entered manually into the Script window at the top of the Script page.
 To open a pre-existing PowerShell script from a file, click **Open** to select the script file.
@@ -19,12 +19,12 @@ further. The tabs are:
 
 Use the Columns tab to select the available columns.
 
-![Columns tab](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/powershell/scriptcolumns.webp)
+![Columns tab](/img/product_docs/accessanalyzer/11.6/admin/action/powershell/scriptcolumns.webp)
 
 The table in the Columns tab displays the Columns that can be used for the PowerShell script. To use
 a Column, select the checkbox under the **Use** column.
 
-![Right-click menu](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/powershell/scriptrightclickoption.webp)
+![Right-click menu](/img/product_docs/accessanalyzer/11.6/admin/action/powershell/scriptrightclickoption.webp)
 
 Right-clicking any of the variable names brings up a **Copy variable name** option that enables
 users to paste the variable name into the PowerShell script.
@@ -33,7 +33,7 @@ users to paste the variable name into the PowerShell script.
 
 The Parameters tab contains options to add, edit, or delete user-made PowerShell parameters.
 
-![Parameters tab](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/powershell/scriptparamters.webp)
+![Parameters tab](/img/product_docs/accessanalyzer/11.6/admin/action/powershell/scriptparamters.webp)
 
 The options are:
 
@@ -52,7 +52,7 @@ The options are:
 
 Configure options for a new or existing parameter using the Add/Edit Variable window.
 
-![Add/Edit Variable Window](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/powershell/addeditvariable.webp)
+![Add/Edit Variable Window](/img/product_docs/accessanalyzer/11.6/admin/action/powershell/addeditvariable.webp)
 
 The options are:
 
@@ -73,7 +73,7 @@ The options are:
 
 Preview how the input data will look in the Input Data tab.
 
-![Input Data tab](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/powershell/scriptinputdata.webp)
+![Input Data tab](/img/product_docs/accessanalyzer/11.6/admin/action/powershell/scriptinputdata.webp)
 
 Information in the Input Data tab varies depending on which source table the PowerShell action
 module is configured to pull data from.

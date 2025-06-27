@@ -4,7 +4,7 @@ The User Scope Settings page (ScopeByUserPage) is where the scope of the scan ca
 specified users and the resulting scan will only scan for the specified users. It is a wizard page
 for the Scan Box Permissions category.
 
-![Box DC Wizard User Scope Settings page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/box/scopebyuser.webp)
+![Box DC Wizard User Scope Settings page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/box/scopebyuser.webp)
 
 Select whether to scan **All Users** or **Limited Users**. If scanning for **Limited Users**, click
 **Browse** and navigate to the path of the CSV file that contains the email addresses of users to be

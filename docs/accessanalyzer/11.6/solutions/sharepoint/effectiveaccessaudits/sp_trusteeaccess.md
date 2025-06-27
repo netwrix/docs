@@ -10,7 +10,7 @@ the
 [Configure CSV File for the Query for the SP_TrusteeAccess Job](#configure-csv-file-for-the-query-for-the-sp_trusteeaccess-job)
 topic for additional information.
 
-![Scoping > SP_TrusteeAccess Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/effectiveaccessaudits/scopingjobstree.webp)
+![Scoping > SP_TrusteeAccess Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/solutions/sharepoint/effectiveaccessaudits/scopingjobstree.webp)
 
 The SP_TrusteeAccess job is located in the Scoping Job Group.
 
@@ -18,7 +18,7 @@ The SP_TrusteeAccess job is located in the Scoping Job Group.
 
 The SP_TrusteeAccess Job uses the TextSearch Data Collector for the following query:
 
-![Queries for the SP_TrusteeAccess Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/effectiveaccessaudits/trusteeaccessquery.webp)
+![Queries for the SP_TrusteeAccess Job](/img/product_docs/accessanalyzer/11.6/solutions/sharepoint/effectiveaccessaudits/trusteeaccessquery.webp)
 
 The default query is:
 
@@ -34,11 +34,11 @@ Follow the steps to specify trustees in the `UserScoping.csv` file.
 **SP_TrusteeAccess** Job and right-click on the job. Select **Explore Folder** and the job’s
 directory opens.
 
-![UserScoping.csv in the SP_TrusteeAccess Job folder in File Explorer](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/effectiveaccessaudits/userscopingfileexplorer.webp)
+![UserScoping.csv in the SP_TrusteeAccess Job folder in File Explorer](/img/product_docs/accessanalyzer/11.6/solutions/sharepoint/effectiveaccessaudits/userscopingfileexplorer.webp)
 
 **Step 2 –** Open the `UserScoping.csv` file with a text editor, for example Notepad.
 
-![UserScoping.csv file in Notepad](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/effectiveaccessaudits/userscopingnotepad.webp)
+![UserScoping.csv file in Notepad](/img/product_docs/accessanalyzer/11.6/solutions/sharepoint/effectiveaccessaudits/userscopingnotepad.webp)
 
 **Step 3 –** Enter the trustees using a `Domain\UserName` format. Enter one trustee per row.
 

@@ -8,7 +8,7 @@ Global Settings. See the
 [Notification](/docs/accessanalyzer/11.6/admin/settings/notification.md)
 topic for additional information.
 
-![2. Notify Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![2. Notify Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 This job group includes the following jobs:
 

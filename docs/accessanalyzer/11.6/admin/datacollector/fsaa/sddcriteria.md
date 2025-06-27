@@ -8,7 +8,7 @@ Auditor Console to define the criteria and enable the Sensitive Data Criteria Ed
 [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
 topic for additional information.
 
-![FSAA Data Collector Wizard SDD Criteria Settings page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/sddcriteria.webp)
+![FSAA Data Collector Wizard SDD Criteria Settings page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/fsaa/sddcriteria.webp)
 
 The options on the SDD Criteria Settings page are:
 

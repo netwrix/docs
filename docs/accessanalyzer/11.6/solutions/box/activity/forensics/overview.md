@@ -5,7 +5,7 @@ activity, collaboration activity and high-risk collaborations within the targete
 It is dependent on data collected by the 0.Collection Job Group, also housed in the Box Job Group.
 The jobs that comprise the 1.Activity Job Group process analysis tasks and generate a report.
 
-![Forensics Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Forensics Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 The Forensics Job Group is comprised of:
 

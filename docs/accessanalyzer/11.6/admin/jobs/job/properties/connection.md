@@ -10,7 +10,7 @@ list is set. For example, if the host list is set under the job group’s **Sett
 is where the Connection Profile should be configured. If the host list is set under the **[Job]** >
 **Configure** node, then this is where the Connection Profile should be configured.
 
-![Connection tab of the Jop Properties](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/properties/viewxml.webp)
+![Connection tab of the Jop Properties](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/properties/viewxml.webp)
 
 Select the desired option to identify the required Connection Profile for the job. See the
 [Connection Node](/docs/accessanalyzer/11.6/admin/jobs/group/connection.md)

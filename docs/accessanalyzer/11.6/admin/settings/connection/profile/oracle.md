@@ -3,7 +3,7 @@
 The information in this section applies to Select Account Type > Oracle in the User Credentials
 window.
 
-![User Credentials - Oracle](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/settings/connection/profile/oracle.webp)
+![User Credentials - Oracle](/img/product_docs/accessanalyzer/11.6/admin/settings/connection/profile/oracle.webp)
 
 The required credentials for Oracle are:
 

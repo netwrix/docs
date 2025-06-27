@@ -8,7 +8,7 @@ components and the components of the
 It also depends on the running of the sub-job groups within the solution. If only select sub-job
 groups have been run, there will be blank sections in the overview report.
 
-![FileSystemOverview Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/filesystemoverviewjobstree.webp)
+![FileSystemOverview Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/filesystemoverviewjobstree.webp)
 
 The FileSystemOverview job is designed to provide an overview of all relevant information from
 targeted file servers.
@@ -21,7 +21,7 @@ node and select **Analysis**.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Tasks for the FileSystemOverview Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/filesystem/filesystemoverviewanalysis.webp)
+![Analysis Tasks for the FileSystemOverview Job](/img/product_docs/accessanalyzer/11.6/solutions/filesystem/filesystemoverviewanalysis.webp)
 
 The following analysis task is selected by default:
 

@@ -4,7 +4,7 @@ The **Box** > **1.Activity** Job Group identifies long term trends of activity p
 into user activity, usage statistics, and suspicious behavior identifies long-term trends of
 activity providing insight into user activity, usage statistics, and suspicious behavior.
 
-![1.Activity Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![1.Activity Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/admin/hostmanagement/jobstree.webp)
 
 The 1.Activity Job Group is comprised of:
 

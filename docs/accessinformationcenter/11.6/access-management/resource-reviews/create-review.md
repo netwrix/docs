@@ -80,7 +80,7 @@ Follow the steps to create a review.
 **NOTE:** If creating a Sensitive Data review, continue to Step 3. For all other review types, skip
 to Step 5.
 
-![Create Review wizard Criteria page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/ewsmailbox/criteria.webp)
+![Create Review wizard Criteria page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/ewsmailbox/criteria.webp)
 
 **Step 3 –** On the Criteria page, select the types of sensitive criteria to include in the
 Sensitive Data review from the list on the left and click **Add**. Multiple items can be selected
@@ -142,7 +142,7 @@ created.
 
 - Once the desired resources have been selected, click **Next**.
 
-![Create Review wizard Summary page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![Create Review wizard Summary page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/adinventory/summary.webp)
 
 **Step 6 –** On the Summary page, review the settings and click **Next**. The Access Information
 Center begins to create the review.
@@ -200,7 +200,7 @@ edited.
 **NOTE:** If creating a Sensitive Data review, continue to Step 3. For all other review types, skip
 to Step 5.
 
-![Edit Review wizard Criteria page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/ewsmailbox/criteria.webp)
+![Edit Review wizard Criteria page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/ewsmailbox/criteria.webp)
 
 **Step 3 –** On the Criteria page, you can modify the selected types of sensitive criteria to
 include in the Sensitive Data review if no responses have been received. If responses for one or
@@ -267,12 +267,12 @@ or removing parent resources from the review also adds or removes their children
 
 - Once the desired resources have been selected, click **Next**.
 
-![Edit Review wizard Summary page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![Edit Review wizard Summary page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/adinventory/summary.webp)
 
 **Step 6 –** On the Summary page, review the updated settings and click **Next**. The Access
 Information Center begins to update the review.
 
-![Edit Review wizard update completed message](/img/product_docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Edit Review wizard update completed message](/img/product_docs/accessanalyzer/11.6/install/sensitivedatadiscovery/completed.webp)
 
 **Step 7 –** The action status displays on the page. When the review has been updated (100%), click
 **Close**. The Edit Review wizard closes.

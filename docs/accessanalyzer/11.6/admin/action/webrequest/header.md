@@ -2,7 +2,7 @@
 
 Use the Header page to enter the header values for the request.
 
-![Web Request Action Module Wizard Header page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/webrequest/header.webp)
+![Web Request Action Module Wizard Header page](/img/product_docs/accessanalyzer/11.6/admin/action/webrequest/header.webp)
 
 Use the following options to enter header values:
 

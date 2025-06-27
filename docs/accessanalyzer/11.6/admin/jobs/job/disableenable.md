@@ -21,16 +21,16 @@ task, or executed as part of the job group. Follow the steps to disable a job.
 disabled, but the job group is not disabled. Any additional jobs added to that job group at a later
 time will be enabled by default.
 
-![Disable Job from Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/disablejob.webp)
+![Disable Job from Jobs Tree](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/disablejob.webp)
 
 **Step 2 –** Right-click on the job group or job and select **Disable Job(s)** from the menu.
 
-![Disabled Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/disabledjob.webp)
+![Disabled Job in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/disabledjob.webp)
 
 The job is now disabled. If a job group was selected, all the jobs in the group are now disabled.
 Disabled jobs are grayed out, and a red cross is displayed in front of the job.
 
-![Disabled Job Description page banner](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/disabledjob2.webp)
+![Disabled Job Description page banner](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/disabledjob2.webp)
 
 A yellow banner also notifies users that a job is disabled in the Job’s Description page.
 
@@ -46,7 +46,7 @@ disabled job.
 **Step 1 –** Select the disabled job. If multiple jobs in a job group are disabled, select the job
 group to enable all of the disabled jobs.
 
-![Enable Job from Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/enablejob.webp)
+![Enable Job from Jobs Tree](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/enablejob.webp)
 
 **Step 2 –** Right-click on the job group or job and select **Enable Job(s)** from the menu.
 

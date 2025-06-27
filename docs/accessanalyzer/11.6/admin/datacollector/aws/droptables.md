@@ -9,7 +9,7 @@ tables from the Enterprise Auditor database. Follow the steps to configure a job
 
 **Step 3 –** Assign a query using the **AWS** Data Collector.
 
-![Drop AWS DC Tables option on Amazon Web Services Data Collector Wizard Category page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/droptables.webp)
+![Drop AWS DC Tables option on Amazon Web Services Data Collector Wizard Category page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/fsaa/droptables.webp)
 
 **Step 4 –** In the Amazon Web Services Data Collector Wizard on the Category page, select the
 **Drop AWS DC Tables** category task. Click **Next**.

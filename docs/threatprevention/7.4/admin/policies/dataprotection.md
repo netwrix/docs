@@ -45,7 +45,7 @@ not included in the Permissions list.
 
 Follow the steps to protect policies.
 
-![Policy folder - Permissions page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/permissions.webp)
+![Policy folder - Permissions page](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/permissions.webp)
 
 **Step 1 –** Select a folder under the Policies node in the Navigation pane. The Policies interface
 is displayed.
@@ -83,7 +83,7 @@ Events tab and the Investigate interface.
 
 Follow the steps to protect objects.
 
-![Policy folder - Permissions page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/permissions.webp)
+![Policy folder - Permissions page](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/permissions.webp)
 
 **Step 6 –** Select a folder under the Policies node in the Navigation pane. The Policies interface
 is displayed.

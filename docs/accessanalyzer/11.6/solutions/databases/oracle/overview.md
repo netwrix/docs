@@ -72,7 +72,7 @@ visibility into various aspects of an Oracle Database Server, including informat
 Roles, Sensitive Data Discovery, Object Permissions, Configuration, User Activity, and overall
 Security Assessment.
 
-![Oracle Job Group](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/oracle/oraclejobgroup.webp)
+![Oracle Job Group](/img/product_docs/accessanalyzer/11.6/solutions/databases/oracle/oraclejobgroup.webp)
 
 The job groups/jobs in the Oracle Solution are:
 

@@ -6,7 +6,7 @@ space, the content that has not been accessed for extended periods of time, and 
 describing SharePoint content and the configuration of the repositories such as lists and libraries
 which store that content.
 
-![4.Content Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/sharepoint/content/contentjobstree.webp)
+![4.Content Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/11.6/solutions/sharepoint/content/contentjobstree.webp)
 
 The 4.Content Job Group is comprised of:
 

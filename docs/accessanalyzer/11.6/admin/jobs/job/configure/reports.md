@@ -2,7 +2,7 @@
 
 The Reports node is for configuring reports to be generated during job execution.
 
-![Reports page](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/report/reports.webp)
+![Reports page](/img/product_docs/accessanalyzer/11.6/admin/report/reports.webp)
 
 The Reports view lists any reports that have been configured for the selected job and options
 related to configuring reports. The options at the top of the Reports view are:
@@ -14,7 +14,7 @@ related to configuring reports. The options at the top of the Reports view are:
 - Open Folder – Opens the Report’s folder location with supporting files in the Windows Explorer
 - View Log – Opens the log for the job that the report is for
 
-![Options on the Reports table header row](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/reportstableheaderoptions.webp)
+![Options on the Reports table header row](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/configure/reportstableheaderoptions.webp)
 
 The Reports table contains all of the configured reports for the job. The header row of the table
 contains the following options for adding reports to the table:
@@ -30,7 +30,7 @@ contains the following options for adding reports to the table:
     - The paste option is accessed from the vertical ellipsis menu of the header row of the Reports
       table
 
-![Reports table row options](/img/product_docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/reportstablerowoptions.webp)
+![Reports table row options](/img/product_docs/accessanalyzer/11.6/admin/jobs/job/configure/reportstablerowoptions.webp)
 
 Clicking on the name of a report opens it in the Results node. Clicking **Configure** next to a
 report's name opens the Report Configuration wizard for the report, see the

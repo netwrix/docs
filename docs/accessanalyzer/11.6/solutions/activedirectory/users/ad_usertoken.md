@@ -14,7 +14,7 @@ select **Analysis** to view the analysis tasks.
 **CAUTION:** Do not modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 
-![Analysis Task for the AD_UserToken Job](/img/product_docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/users/usertokenanalysis.webp)
+![Analysis Task for the AD_UserToken Job](/img/product_docs/accessanalyzer/11.6/solutions/activedirectory/users/usertokenanalysis.webp)
 
 The default analysis tasks are:
 
