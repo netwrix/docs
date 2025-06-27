@@ -1,0 +1,30 @@
+# AWS_MFAStatus Job
+
+The AWS_MFAStatus job provides details on each user's MFA status, highlighting users that have it
+disabled.
+
+## Analysis Tasks for the AWS_MFAStatus Job
+
+Navigate to the **AWS** > **2.Users** > **AWS_MFAStatus** > **Configure** node and select
+**Analysis** to view the analysis tasks.
+
+**CAUTION:** Do not modify or deselect the selected analysis tasks. The analysis tasks are
+preconfigured for this job.
+
+![Analysis Tasks for the AWS_MFAStatus Job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/aws/users/mfastatusanalysis.webp)
+
+The following analysis tasks are selected by default:
+
+- MFAStatus – Checks user accounts in AWS for Multi-Factor Authentication. Creates the
+  AWS_MFAStatus_Details table accessible under the job’s Results node.
+- MFAStatus Summary – Summarizes AWS IAM Multi-Factor Authentication status by organisation. Creates
+  the AWS_MFAStatus_Summary table accessible under the job’s Results node.
+
+## Report for the AWS_MFAStatus Job
+
+In addition to the tables and views created by the analysis task, the AWS_MFAStatus job produces the
+following preconfigured report:
+
+| Report     | Description                                            | Default Tags | Report Element                                                                                                                                            |
+| ---------- | ------------------------------------------------------ | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MFA Status | This report identifies the MFA status of each AWS user | None         | This report is comprised of the following elements: - Pie Chart – Displays MFA status - Table – Shows status by account - Table – Provides details on MFA |

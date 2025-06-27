@@ -14,5 +14,5 @@ The configurable functions are:
   for additional information.
 - Simple Criteria
 
-  - Text to match – Find files that contain the text string entered
-  - Exact match – Select this option to find files that contain only the exact text string entered
+    - Text to match – Find files that contain the text string entered
+    - Exact match – Select this option to find files that contain only the exact text string entered

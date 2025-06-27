@@ -15,21 +15,21 @@ preconfigured for this job.
 
 The following analysis tasks are selected by default:
 
-- 2. Database Size History – Creates the SA_EX_DBSizing_SizeHist table, accessible under the job’s
-     Results node
+-   2. Database Size History – Creates the SA_EX_DBSizing_SizeHist table, accessible under the job’s
+       Results node
 - SET HISTORY RETENTION – Sets retention period in months
 
-  - The default is 6 months. It can be modified.
-  - See the
-    [Exchange History Retention](/docs/accessanalyzer/11.6/solutions/exchange/metrics-analysis.md#exchange-history-retention)
-    topic for additional information
+    - The default is 6 months. It can be modified.
+    - See the
+      [Exchange History Retention](/docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/hubmetrics/collection/ex_metricscollection.md#exchange-history-retention)
+      topic for additional information
 
-- 3. Database details table – Creates the SA_EX_DBSizing_StoreDetails table, accessible under the
-     job’s Results node
-- 4. 30 day Database growth table – Creates the SA_EX_DBSizing_30DayGrowth table, accessible under
-     the job’s Results node
-- 5. 7 day Database growth table – Creates the SA_EX_DBSizing_7DayGrowth table, accessible under
-     the job’s Results node
+-   3. Database details table – Creates the SA_EX_DBSizing_StoreDetails table, accessible under the
+       job’s Results node
+-   4. 30 day Database growth table – Creates the SA_EX_DBSizing_30DayGrowth table, accessible under
+       the job’s Results node
+-   5. 7 day Database growth table – Creates the SA_EX_DBSizing_7DayGrowth table, accessible under
+       the job’s Results node
 
 The following analysis task deletes table data from data collection and analysis jobs. This analysis
 task should remain cleared unless specifically needed:
@@ -37,11 +37,11 @@ task should remain cleared unless specifically needed:
 **CAUTION:** Do not select the **00. Deletes all Stored Data** option. This analysis task is for
 troubleshooting and cleanup only. Data will be deleted from the database.
 
-- 1. Deletes all Stored Data
+-   1. Deletes all Stored Data
 
-  - See the
-    [Troubleshooting Data Collection](/docs/accessanalyzer/11.6/solutions/exchange/metrics-analysis.md#troubleshooting-data-collection)
-    topic for additional information
+    - See the
+      [Troubleshooting Data Collection](/docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/hubmetrics/collection/ex_metricscollection.md#troubleshooting-data-collection)
+      topic for additional information
 
 In addition to the tables and views created by the analysis tasks, the EX_DBSizing Job produces the
 following pre-configured reports:

@@ -10,9 +10,9 @@ based on the category selected.
 
 - Size units – Select from the following:
 
-  - Bytes
-  - KBytes
-  - MBytes
-  - GBytes
+    - Bytes
+    - KBytes
+    - MBytes
+    - GBytes
 
 - Only return results for files with at least one match

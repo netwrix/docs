@@ -15,17 +15,17 @@ options on the Results page are grayed out.
 - Disable properties that require opening file – Disables properties that require opening files that
   trigger the last accessed date timestamp
 
-  - This option is available for the **File or Folder Properties** category
+    - This option is available for the **File or Folder Properties** category
 
 - Only return permissions for the following user(s) – Defines users for the query. Enter the desired
   users in the textbox.
 
-  - This option is available for the **File or Folder Permissions** category
+    - This option is available for the **File or Folder Permissions** category
 
 - Only return permissions for the following group(s) – Defines groups for the query. Enter the
   desired users in the textbox.
 
-  - This option is available for the **File or Folder Permissions** category
+    - This option is available for the **File or Folder Permissions** category
 
 - Size Units – Identifies the unit in which the values will be displayed. The options are:
   **Bytes**, **Kb**, **Mb**, or **Gb**.

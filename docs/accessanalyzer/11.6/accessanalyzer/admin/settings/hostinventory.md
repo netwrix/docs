@@ -27,41 +27,41 @@ host inventory process:
 
 - Threads – Indicates the number of job threads that are employed during the host inventory process
 
-  - The default setting is 20 Threads
-  - Maximum thread count is 100. Thread count will revert back to 100 if values over 100 are
-    entered.
-  - Restart Enterprise Auditor if thread count is changed for changes to take place
+    - The default setting is 20 Threads
+    - Maximum thread count is 100. Thread count will revert back to 100 if values over 100 are
+      entered.
+    - Restart Enterprise Auditor if thread count is changed for changes to take place
 
 - Thread timeout [in seconds] – Indicates the time a thread will spend in retrieving information
   from a host
 
-  - Default setting is 1200 seconds
-  - If thread cannot receive an active response from target host, the thread will move on to the
-    next host in the queue
+    - Default setting is 1200 seconds
+    - If thread cannot receive an active response from target host, the thread will move on to the
+      next host in the queue
 
 - Stop on Failed Ping – If the Stop on Failed Ping checkbox is selected, hosts that do not respond
   to pings are not queried. Otherwise, hosts will be queried regardless.
 - PING timeout [in seconds] – Indicates the time a thread will spend pinging a host
 
-  - Default setting is 4 seconds
-  - If thread cannot connect with a host, the host will be designated as being offline and the
-    thread will move on to the next host in the queue
+    - Default setting is 4 seconds
+    - If thread cannot connect with a host, the host will be designated as being offline and the
+      thread will move on to the next host in the queue
 
 - Only refresh inventory items older than [time selected] – Indicates the time that needs to pass
   before the host inventory process is automatically refreshed
 
-  - Default setting is 60 days
-  - The number textbox has a five-character limit
-  - The drop-down menu includes the time-units of:
+    - Default setting is 60 days
+    - The number textbox has a five-character limit
+    - The drop-down menu includes the time-units of:
 
-    - Hours
-    - Days
-    - Weeks
-    - Months
+        - Hours
+        - Days
+        - Weeks
+        - Months
 
-  - This setting affects the Inventory page options on the Host Discovery Wizard. See the
-    [Host Discovery Wizard](/docs/accessanalyzer/11.6/administration/host-management/discovery.md)
-    topic for additional information.
+    - This setting affects the Inventory page options on the Host Discovery Wizard. See the
+      [Host Discovery Wizard](/docs/accessanalyzer/11.6/accessanalyzer/admin/hostdiscovery/wizard/overview.md)
+      topic for additional information.
 
 The Desired Host List Views section at the bottom contains all available host lists, both
 out-of-the-box lists and custom-created lists. There are seven Default Hosts Lists which correspond
@@ -127,11 +127,11 @@ The sub-groups are:
 
 - EXCHANGE GENERAL
 
-  - ALL EXCHANGE SERVERS (ACTIVE HOSTS)
-  - ALL EXCHANGE SERVERS (ALL HOSTS)
-  - EXCHANGE CAS SERVERS
-  - EXCHANGE HUB SERVERS
-  - EXCHANGE MB SERVERS
+    - ALL EXCHANGE SERVERS (ACTIVE HOSTS)
+    - ALL EXCHANGE SERVERS (ALL HOSTS)
+    - EXCHANGE CAS SERVERS
+    - EXCHANGE HUB SERVERS
+    - EXCHANGE MB SERVERS
 
 - EXCHANGE 2016
 

@@ -15,12 +15,12 @@ In the Users section, select from the following options:
   information. A specific user can also be entered manually into the text field.
 - Special users – The users found can be flagged as special users in the following categories:
 
-  - Administrator
-  - Guest
-  - Check if account has been renamed – Select this checkbox to check if the Administrator or
-    Guest account has been renamed
-  - Resolve nested group membership – Returns nested group membership
-  - Include every occurrence of a user – Show every group in which the user is a member
+    - Administrator
+    - Guest
+    - Check if account has been renamed – Select this checkbox to check if the Administrator or
+      Guest account has been renamed
+    - Resolve nested group membership – Returns nested group membership
+    - Include every occurrence of a user – Show every group in which the user is a member
 
 In the Additional Properties section, select from the following checkboxes to return additional
 information on user objects:

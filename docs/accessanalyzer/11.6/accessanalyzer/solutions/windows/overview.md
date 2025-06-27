@@ -16,14 +16,14 @@ Supported Platforms
 Requirements, Permissions, and Ports
 
 See the
-[Target Windows Server and Desktop Requirements, Permissions, and Ports](/docs/accessanalyzer/11.6/getting-started/requirements/target-requirements.md)
+[Target Windows Server and Desktop Requirements, Permissions, and Ports](/docs/accessanalyzer/11.6/accessanalyzer/requirements/target/windows.md)
 topic for additional information.
 
 Location
 
 The Windows Solution requires a special Enterprise Auditor license. It can be installed from the
 Instant Job Wizard. See the
-[Instant Job Wizard](/docs/accessanalyzer/11.6/administration/jobs-and-scheduling/instant-jobs.md)
+[Instant Job Wizard](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/instantjobs/overview.md)
 topic for additional information. Once it has been installed in the Jobs tree, navigate to the
 solution: **Jobs** > **Windows**.
 

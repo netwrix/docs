@@ -3,9 +3,9 @@
 The History node is where the history retention of job data and job logs are configured. The setting
 specified here at the global level applies to all jobs in the Jobs tree unless specifically changed
 at the job group or job level. See the
-[History Node](/docs/accessanalyzer/11.6/administration/jobs-and-scheduling/job-groups.md)
+[History Node](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/group/history.md)
 and
-[History Tab](/docs/accessanalyzer/11.6/administration/jobs-and-scheduling/job-management.md)
+[History Tab](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/properties/history.md)
 topics for additional information.
 
 ![History Global Settings](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/history.webp)
@@ -32,25 +32,25 @@ default setting. There are two settings:
 
 - Logs and Messages
 
-  - Retain previous application logs, job logs, and messages for [number] [time period] – Controls
-    how long the messages for previous job executions are stored in the SA_Messages table for each
-    job. Older job execution messages are cleared.
-  - The default value is 7 Times. With this setting, the messages are stored for the previous
-    seven job executions.
+    - Retain previous application logs, job logs, and messages for [number] [time period] – Controls
+      how long the messages for previous job executions are stored in the SA_Messages table for each
+      job. Older job execution messages are cleared.
+    - The default value is 7 Times. With this setting, the messages are stored for the previous
+      seven job executions.
 
 - Job Statistics
 
-  - Retain job statistics in database for [number] [time period] – Controls how long job
-    statistics history is stored within the Enterprise Auditor database in the following two
-    tables:
+    - Retain job statistics in database for [number] [time period] – Controls how long job
+      statistics history is stored within the Enterprise Auditor database in the following two
+      tables:
 
-    - SA_JobStatsTbl
-    - SA_JobTaskStatsTbl
+        - SA_JobStatsTbl
+        - SA_JobTaskStatsTbl
 
-  - This setting is only available at the global settings level. The default value is 100 days.
-    This directly affects each job’s **Status** node. See the
-    [Status Node](/docs/accessanalyzer/11.6/administration/jobs-and-scheduling/job-management.md)
-    topic for additional information.
+    - This setting is only available at the global settings level. The default value is 100 days.
+      This directly affects each job’s **Status** node. See the
+      [Status Node](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/status.md)
+      topic for additional information.
 
 For both the **Logs and Messages** and **Job Statistics** options above:
 
@@ -74,10 +74,10 @@ following scenario explains a common concern.
 - The **Retain previous application logs, job logs, and message for** or **Retain job statistics in
   database for** setting is set to an extended time period and the database size is unmanageable
 
-  - To reduce data retention periods, navigate to the **Settings** > **History** node. Change the
-    time period to a smaller interval, for example 90 days. Click **Save** and rerun the jobs.
-  - All of the record sets outside the new retention limit are dropped, and the database size is
-    back down where it belongs
+    - To reduce data retention periods, navigate to the **Settings** > **History** node. Change the
+      time period to a smaller interval, for example 90 days. Click **Save** and rerun the jobs.
+    - All of the record sets outside the new retention limit are dropped, and the database size is
+      back down where it belongs
 
 ## Job Logs
 

@@ -34,7 +34,7 @@ selected job group or job node. See the
 information.
 
 See the
-[Jobs Tree Right-click Menus](/docs/accessanalyzer/11.6/administration/navigation.md#jobs-tree-right-click-menus)
+[Jobs Tree Right-click Menus](/docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/pane.md#jobs-tree-right-click-menus)
 section for additional features.
 
 ## Export Job to Zip Archive Window

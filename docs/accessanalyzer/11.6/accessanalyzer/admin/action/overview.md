@@ -8,7 +8,7 @@ described in detail in the relevant topics.
 The Enterprise Auditor actions are capable of changing users, permissions, files, and objects from a
 variety of environments. Action modules are assigned to a job at the **Configure** > **Actions**
 node. See the
-[Actions Node](/docs/accessanalyzer/11.6/administration/jobs-and-scheduling/job-management.md)
+[Actions Node](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/configure/actions.md)
 topic for additional information on the Action Selection view.
 
 ![Action Selection page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/actionselection.webp)
@@ -23,19 +23,19 @@ topic for additional information.
 Most action modules are available with a special Enterprise Auditor License. The following table
 provides brief descriptions of the action modules available in Enterprise Auditor.
 
-| Action Module    | Description                                                                                                                                                                                                                                                |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Active Directory | Make changes to Active Directory such as deleting objects, creating users, and changing group membership. See the [Active Directory Action Module](/docs/accessanalyzer/11.6/analysis-and-actions/actions/active-directory.md) for additional information. |
-| File System      | Change attributes and permissions, as well as copy, delete, move, and rename file system contents. See the [File System Action Module](/docs/accessanalyzer/11.6/analysis-and-actions/actions/file-system.md) for additional information.                  |
-| Mailbox          | Add/change permissions, remove permissions, add/remove delegates, remove zombie SIDS, and delete mailbox content. See the [Mailbox Action Module](/docs/accessanalyzer/11.6/analysis-and-actions/actions/mailbox.md) for additional information.           |
-| PowerShell       | Run PowerShell scripts on the local machine or on remote hosts. See the [PowerShell Action Module](/docs/accessanalyzer/11.6/analysis-and-actions/actions/powershell.md) for additional information.                                                       |
-| PublicFolder     | Make changes to Exchange Public Folders. See the [PublicFolder Action Module](/docs/accessanalyzer/11.6/analysis-and-actions/actions/public-folder.md) for additional information.                                                                         |
-| Registry         | Make changes to the system registry. See the [Registry Action Module](/docs/accessanalyzer/11.6/analysis-and-actions/actions/registry.md) for additional information.                                                                                      |
-| SendMail         | Communicate with target audiences to supply users with dynamic content from selected audit data. See the [SendMail Action Module](/docs/accessanalyzer/11.6/analysis-and-actions/actions/send-mail.md) for additional information.                         |
-| ServiceNow       | Creates incidents in ServiceNow. See the [ServiceNow Action Module](/docs/accessanalyzer/11.6/analysis-and-actions/actions/service-now.md) for additional information.                                                                                     |
-| SharePoint       | Add/remove trustees from sites, lists, or libraries in SharePoint on-premise, apply sensitivity labels, and move files.                                                                                                                                    |
-| Survey           | Solicit feedback from users to expedite and aid in the decision making process. See the [Survey Action Module](/docs/accessanalyzer/11.6/analysis-and-actions/actions/survey.md) for additional information.                                               |
-| Web Request      | Sends data to Threat Manager. See the [WebRequest Action Module](/docs/accessanalyzer/11.6/analysis-and-actions/actions/web-request.md) for additional information.                                                                                        |
+| Action Module    | Description                                                                                                                                                                                                                                                                       |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Active Directory | Make changes to Active Directory such as deleting objects, creating users, and changing group membership. See the [Active Directory Action Module](/docs/accessanalyzer/11.6/accessanalyzer/admin/action/activedirectory/overview.md) for additional information. |
+| File System      | Change attributes and permissions, as well as copy, delete, move, and rename file system contents. See the [File System Action Module](/docs/accessanalyzer/11.6/accessanalyzer/admin/action/filesystem/overview.md) for additional information.                  |
+| Mailbox          | Add/change permissions, remove permissions, add/remove delegates, remove zombie SIDS, and delete mailbox content. See the [Mailbox Action Module](/docs/accessanalyzer/11.6/accessanalyzer/admin/action/mailbox/overview.md) for additional information.          |
+| PowerShell       | Run PowerShell scripts on the local machine or on remote hosts. See the [PowerShell Action Module](/docs/accessanalyzer/11.6/accessanalyzer/admin/action/powershell/overview.md) for additional information.                                                      |
+| PublicFolder     | Make changes to Exchange Public Folders. See the [PublicFolder Action Module](/docs/accessanalyzer/11.6/accessanalyzer/admin/action/publicfolder/overview.md) for additional information.                                                                         |
+| Registry         | Make changes to the system registry. See the [Registry Action Module](/docs/accessanalyzer/11.6/accessanalyzer/admin/action/registry/overview.md) for additional information.                                                                                     |
+| SendMail         | Communicate with target audiences to supply users with dynamic content from selected audit data. See the [SendMail Action Module](/docs/accessanalyzer/11.6/accessanalyzer/admin/action/sendmail/overview.md) for additional information.                         |
+| ServiceNow       | Creates incidents in ServiceNow. See the [ServiceNow Action Module](/docs/accessanalyzer/11.6/accessanalyzer/admin/action/servicenow/overview.md) for additional information.                                                                                     |
+| SharePoint       | Add/remove trustees from sites, lists, or libraries in SharePoint on-premise, apply sensitivity labels, and move files.                                                                                                                                                           |
+| Survey           | Solicit feedback from users to expedite and aid in the decision making process. See the [Survey Action Module](/docs/accessanalyzer/11.6/accessanalyzer/admin/action/survey/overview.md) for additional information.                                              |
+| Web Request      | Sends data to Threat Manager. See the [WebRequest Action Module](/docs/accessanalyzer/11.6/accessanalyzer/admin/action/webrequest/overview.md) for additional information.                                                                                        |
 
 ## Basic Procedure
 
@@ -88,7 +88,7 @@ created action tasks.
 - Description – Action task description. For new actions, this editable field is blank.
 - Action Module – Drop-down menu of available action modules
 
-  - Configure Action – Opens the configuration wizard for the selected action module
+    - Configure Action – Opens the configuration wizard for the selected action module
 
 - Source Table – Table with objects the action task acts upon. For new actions, this field is blank.
   Specify a source table on which to perform the action.
@@ -100,7 +100,7 @@ created action tasks.
 - Data Grid – Displays a sample of the selected Source table. This data grid functions the same as
   all data grids within Enterprise Auditor. Data can be filtered, and columns can be regrouped. See
   the
-  [Data Grid Functionality](/docs/accessanalyzer/11.6/administration/navigation.md)
+  [Data Grid Functionality](/docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/datagrid.md)
   topic for additional information.
 
 ### Source Table Configuration

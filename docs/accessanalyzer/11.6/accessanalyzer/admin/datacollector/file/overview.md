@@ -6,13 +6,13 @@ the target hosts. It can target any file extension. This data collector is a cor
 Enterprise Auditor and is available with all Enterprise Auditor licenses.
 
 **NOTE:** For enhanced file system data collections, use the
-[FileSystemAccess Data Collector](/docs/accessanalyzer/11.6/data-collection/file-systems/configuration.md).
+[FileSystemAccess Data Collector](/docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/fsaa/overview.md).
 
 Supported Platforms
 
 This data collector can target the same servers supported for the FileSystemAccess Data Collector.
 See the
-[File System Supported Platforms](/docs/accessanalyzer/11.6/getting-started/requirements/target-requirements.md)
+[File System Supported Platforms](/docs/accessanalyzer/11.6/accessanalyzer/requirements/target/filesystems.md)
 topic for a full list of supported platforms.
 
 Protocols

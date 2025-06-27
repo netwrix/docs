@@ -34,14 +34,14 @@ msiexec /i FileSystemProxy.msi /qb /l*v install.log SVC_ACCOUNT_TYPE=SYSTEM
 
 - To add a non-default install directory, append `PRODUCTDIR="[path]"` to the command.
 
-  - `path` – The path to the desired installation directory and must include
-    `...\STEALTHbits\StealthAUDIT\FSAA\...`
+    - `path` – The path to the desired installation directory and must include
+      `...\STEALTHbits\StealthAUDIT\FSAA\...`
 
-  For example:
+    For example:
 
-  ```
-  msiexec /i FileSystemProxy.msi /qb /l*v install.log SVC_ACCOUNT_TYPE=SYSTEM PRODUCTDIR="E:\STEALTHbits\StealthAUDIT\FSAA"
-  ```
+    ```
+    msiexec /i FileSystemProxy.msi /qb /l*v install.log SVC_ACCOUNT_TYPE=SYSTEM PRODUCTDIR="E:\STEALTHbits\StealthAUDIT\FSAA"
+    ```
 
 The SPN value is automatically added to the computer object in Active Directory with this option.
 
@@ -66,11 +66,11 @@ msiexec /i FileSystemProxy.msi /qb /l*v install.log SVC_ACCOUNT_TYPE=DOMAIN SVC_
 
 - To add a non-default install directory, append `PRODUCTDIR="[path]"` to the command.
 
-  - `path` – The path to the desired installation directory and must include
-    `...\STEALTHbits\StealthAUDIT\FSAA\...`
+    - `path` – The path to the desired installation directory and must include
+      `...\STEALTHbits\StealthAUDIT\FSAA\...`
 
-  For example:
+    For example:
 
-  ```
-  msiexec /i FileSystemProxy.msi/qb /l*v install.log SVC_ACCOUNT_TYPE=DOMAIN SVC_USERNAME=DOMAIN\USERNAME SVC_PASSWORD="secret" PRODUCTDIR="E:\STEALTHbits\StealthAUDIT\FSAA"
-  ```
+    ```
+    msiexec /i FileSystemProxy.msi/qb /l*v install.log SVC_ACCOUNT_TYPE=DOMAIN SVC_USERNAME=DOMAIN\USERNAME SVC_PASSWORD="secret" PRODUCTDIR="E:\STEALTHbits\StealthAUDIT\FSAA"
+    ```

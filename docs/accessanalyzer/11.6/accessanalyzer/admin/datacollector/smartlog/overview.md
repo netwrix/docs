@@ -9,9 +9,9 @@ While the data collector is available with all Enterprise Auditor license option
 are only available with a special Enterprise Auditor licenses. See following sections for additional
 information:
 
-- [Active Directory Solution](/docs/accessanalyzer/11.6/solutions/active-directory/inventory-reports.md)
+- [Active Directory Solution](/docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/overview.md)
 - [Exchange Solution](/docs/accessanalyzer/11.6/accessanalyzer/solutions/exchange/overview.md)
-- [SQL Job Group](/docs/accessanalyzer/11.6/solutions/databases/sql-server-analysis.md)
+- [SQL Job Group](/docs/accessanalyzer/11.6/accessanalyzer/solutions/databases/sql/overview.md)
 - [Windows Solution](/docs/accessanalyzer/11.6/accessanalyzer/solutions/windows/overview.md)
 
 Protocols
@@ -32,7 +32,7 @@ Permissions
 - Member of the local Administrators group
 
 See the
-[Exchange Remote Connections Permissions](/docs/accessanalyzer/11.6/getting-started/requirements/solutions-requirements.md)
+[Exchange Remote Connections Permissions](/docs/accessanalyzer/11.6/accessanalyzer/requirements/solutions/exchange/remoteconnections.md)
 topic for additional information related to permissions required for targeting Exchange servers.
 
 ## SMARTLog Query Configuration

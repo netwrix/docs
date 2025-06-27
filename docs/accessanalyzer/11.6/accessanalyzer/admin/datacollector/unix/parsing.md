@@ -9,23 +9,23 @@ The configurable options are:
 
 - Parse Columns – Select the checkbox to enable the parsing parameters options
 
-  - Delimiter – Specify the delimiter
-  - Ignore duplicate delimiters – Check the checkbox to enable
-  - Delimiter Type – Select one of the following options:
+    - Delimiter – Specify the delimiter
+    - Ignore duplicate delimiters – Check the checkbox to enable
+    - Delimiter Type – Select one of the following options:
 
-    - Split on any delimiter character
-    - Split on entire delimiter string
-    - Split on delimiter regular expression
+        - Split on any delimiter character
+        - Split on entire delimiter string
+        - Split on delimiter regular expression
 
-  - Handle additional delimited fields by – Select one of the following options:
+    - Handle additional delimited fields by – Select one of the following options:
 
-    - Ignoring them
-    - Inserting them as the last column in additional rows
-    - Including them in the last column
+        - Ignoring them
+        - Inserting them as the last column in additional rows
+        - Including them in the last column
 
 - Columns – Use the buttons to add or remove columns
 
-  - **Add** – Opens the New Column window. Enter a new column name and click **OK**.
-  - **Remove** – Removes the selected column
+    - **Add** – Opens the New Column window. Enter a new column name and click **OK**.
+    - **Remove** – Removes the selected column
 
 Click **Next** to continue the setup, or **Back** to return to the previous page.

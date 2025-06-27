@@ -17,8 +17,8 @@ Common errors that occur are:
 
 - Implicit conversion of VARCHAR value to VARCHAR cannot be performed because the collation of the
   value is unresolved due to a collation conflict.
-  - Could not find stored procedure `#SA_ImportObject`
-  - Cannot drop the procedure `#SA_ImportObject`, because it does not exist or lack of permission
+    - Could not find stored procedure `#SA_ImportObject`
+    - Cannot drop the procedure `#SA_ImportObject`, because it does not exist or lack of permission
 - Cannot resolve the collation conflict between **SQL_Latin1_General_CP1_CI_AS** and
   **French_CI_AS** in the equal to operation.
 
@@ -117,9 +117,9 @@ SELECT * FROM TestTab WHERE CharCol = CharCol2
   **French_CI_AS** in the equal to operation.
 - Resolution – If the select statement is changed as below, then it would run successfully.
 
-  ```
-  SELECT * FROM TestTab WHERE CharCol = CharCol2 COLLATE Albanian_CI_AI
-  ```
+    ```
+    SELECT * FROM TestTab WHERE CharCol = CharCol2 COLLATE Albanian_CI_AI
+    ```
 
 **NOTE:** Explicit collation (Albanian_CI_AI) is not one of any column, but after that it will
 complete successfully. The collation of two columns have not been matched, instead the third rule of

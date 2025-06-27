@@ -15,24 +15,24 @@ One or more of the following jobs must be run to generate data for the report:
 
 - Authentication
 
-  - **SG_LSASettings**
-  - **SG_SecuritySupportProviders**
-  - **SG_WDigestSettings**
+    - **SG_LSASettings**
+    - **SG_SecuritySupportProviders**
+    - **SG_WDigestSettings**
 
 - Open Access > **SG_OpenFolders**
 - Privileged Accounts
 
-  - Local Administrators
+    - Local Administrators
 
-    - **SG_LocalAdmins**
-    - **SG_MicrosoftLAPS**
+        - **SG_LocalAdmins**
+        - **SG_MicrosoftLAPS**
 
-  - Logon Rights
+    - Logon Rights
 
-    - **SG_AccountPrivileges**
-    - **SG_LocalPolicies**
+        - **SG_AccountPrivileges**
+        - **SG_LocalPolicies**
 
-  - Service Accounts > **SG_ServiceAccounts**
+    - Service Accounts > **SG_ServiceAccounts**
 
 - Security Utilities > **SG_PowerShellCommands**
 

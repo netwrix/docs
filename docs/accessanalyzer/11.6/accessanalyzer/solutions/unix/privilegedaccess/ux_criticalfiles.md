@@ -29,10 +29,10 @@ The default analysis task is:
 
 - Details critical file ownership, highlights top users
 
-  - Creates SA_UX_PrivilegedAccess_CriticalFileOwnership table accessible under the job’s Results
-    node
-  - Creates SA_UX_PrivilegedAccess_CriticalFileOwners table accessible under the job’s Results
-    node
+    - Creates SA_UX_PrivilegedAccess_CriticalFileOwnership table accessible under the job’s Results
+      node
+    - Creates SA_UX_PrivilegedAccess_CriticalFileOwners table accessible under the job’s Results
+      node
 
 In addition to the tables and views created by the analysis task, the UX_CriticalFiles job produces
 the following preconfigured report:

@@ -62,7 +62,7 @@ In order to generate results, a location must first be selected as the source of
 - Limit maximum number of displayed rows to [number] – Limits the number of rows of data displayed
   to less than or equal to the number chosen. By default it is set to **1000**.
 
-  **NOTE:** Limits that are larger than the default may slow down the run time.
+    **NOTE:** Limits that are larger than the default may slow down the run time.
 
 Export CSV Options
 
@@ -70,18 +70,18 @@ You can configure the table to allow the data to be exported as a CSV file.
 
 - Export table data as CSV – Select this option to enable a report’s table section to be exportable
   as a CSV file from the generated report
-  - When it is configured, you can click the **All Data** button on the table section of the
-    report to save the report as a CSV file. See the
-    [Interactive Grids](/docs/accessanalyzer/11.6/administration/reporting/interactive-grids.md)
-    topic for more information.
+    - When it is configured, you can click the **All Data** button on the table section of the
+      report to save the report as a CSV file. See the
+      [Interactive Grids](/docs/accessanalyzer/11.6/accessanalyzer/admin/report/interactivegrids/overview.md)
+      topic for more information.
 - Rows – Limits the amount of rows exported to the CSV file. The default is **Visible**.
-  - Visible – Only includes the amount of rows set by the **Limit Maximum number of displayed rows
-    to** option in the DataSource Options section
-  - All – Includes all rows of the data set
+    - Visible – Only includes the amount of rows set by the **Limit Maximum number of displayed rows
+      to** option in the DataSource Options section
+    - All – Includes all rows of the data set
 - Columns – Limits the amount of columns exported to the CSV file. The default is **Visible**.
-  - Visible – Only exports the visible columns (excludes any columns removed using the Column
-    Chooser)
-  - All – Includes all columns, including those in the Column Chooser
+    - Visible – Only exports the visible columns (excludes any columns removed using the Column
+      Chooser)
+    - All – Includes all columns, including those in the Column Chooser
 
 ### Table Properties
 
@@ -92,13 +92,13 @@ The Table Properties section allows you to configure the display features of the
 There are two types of grid displays:
 
 - Interactive grid – Allows the viewer to interact with the table in the generated report. See the
-  [Interactive Grids](/docs/accessanalyzer/11.6/administration/reporting/interactive-grids.md)
+  [Interactive Grids](/docs/accessanalyzer/11.6/accessanalyzer/admin/report/interactivegrids/overview.md)
   topic for additional information.
 - Non Interactive grid – Creates a report with fixed settings and stationary elements. This option
   disables all the fields within the Table Properties section.
 
-  **NOTE:** In order to view user configured Grouping in emailed reports, the report must be
-  emailed as a **Non Interactive Grid**.
+    **NOTE:** In order to view user configured Grouping in emailed reports, the report must be
+    emailed as a **Non Interactive Grid**.
 
 The following settings are available when Interactive grid is selected:
 
@@ -109,15 +109,15 @@ Grid Properties
 - Enable Paging – Enables Paging in reports. Paging allows users to interact with large sets of data
   more efficiently when viewing, filtering, and sorting generated report tables by limiting the
   amount of data being displayed at a given time. Paging is enabled by default. See the
-  [Paging](/docs/accessanalyzer/11.6/administration/reporting/interactive-grids.md)
+  [Paging](/docs/accessanalyzer/11.6/accessanalyzer/admin/report/interactivegrids/paging.md)
   topic for additional information.
 
 Column Properties
 
 - Group Column – Arranges the table to be grouped by the attributes of the selected column
 
-  **NOTE:** Paging and grouping are not compatible. When Paging is enabled, the Grouping options
-  are disabled in the Table Properties section and in the generated report.
+    **NOTE:** Paging and grouping are not compatible. When Paging is enabled, the Grouping options
+    are disabled in the Table Properties section and in the generated report.
 
 - Enum Column – Groups the data in tables based on the selected column
 - Color Column – Colors a column data displayed on the report’s table section
@@ -173,7 +173,7 @@ In order to generate results, a location must first be selected as the source of
 - Limit maximum number of displayed rows to [number] – Limits the number of rows of data displayed
   to less than or equal to the number chosen. By default it is set to **1000**.
 
-  **NOTE:** Limits that are larger than the default may slow down the run time.
+    **NOTE:** Limits that are larger than the default may slow down the run time.
 
 ### Chart Properties
 
@@ -185,15 +185,15 @@ The following options are the available in the Chart Properties:
 
 - Chart Type – Select from the following chart types:
 
-  - Area – Shaded region beneath line to indicate a group’s proportion within a column
-  - Bar – Horizontal rectangles that represent discrete units of measurement
-  - Column – Vertical bar chart
-  - Line – Vertical line chart
-  - Pie – Circular statistical graphic that demonstrates numerical proportion. First grouped
-    column can be numeric or string, but the second column should always be numeric.
-  - Stacked – Consolidated bar chart for comparing values
+    - Area – Shaded region beneath line to indicate a group’s proportion within a column
+    - Bar – Horizontal rectangles that represent discrete units of measurement
+    - Column – Vertical bar chart
+    - Line – Vertical line chart
+    - Pie – Circular statistical graphic that demonstrates numerical proportion. First grouped
+      column can be numeric or string, but the second column should always be numeric.
+    - Stacked – Consolidated bar chart for comparing values
 
-  **NOTE:** Negative numbers cannot be plotted.
+    **NOTE:** Negative numbers cannot be plotted.
 
 - Show Data Labels – Displays the column name for each section within a chart
 - Enum Column – Groups the data in chart by the selected column name
@@ -272,8 +272,8 @@ The Basic Text Editor has the following options:
 The icons listed in the table below are available in the Basic Editor (and Advanced Editor) to
 provide basic editing options for text entries.
 
-| Icon                                                                                                           | Description                                                   |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| Icon                                                                                                                | Description                                                   |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
 | ![Undo](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/report/wizard/undo.webp)                  | Undo a change to the text                                     |
 | ![Redo](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/report/wizard/redo.webp)                  | Redo a change to the text                                     |
 | ![Paste](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/navigate/paste.webp)                     | Paste the contents of the clipboard                           |
@@ -299,8 +299,8 @@ The Advanced Editor contains all the icons from the Basic Editor, see above. In 
 it has the icons with higher level editing options for text entries that are listed in the table
 below.
 
-| Icon                                                                                                               | Description                                                     |
-| ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
+| Icon                                                                                                                    | Description                                                     |
+| ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
 | ![Bold](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/report/wizard/bold.webp)                      | Makes the selected text bold                                    |
 | ![Italic](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/report/wizard/italic.webp)                  | Italicize the selected text                                     |
 | ![Decrease Indent](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/report/wizard/decreaseindent.webp) | Decrease the indent level of the paragraph                      |

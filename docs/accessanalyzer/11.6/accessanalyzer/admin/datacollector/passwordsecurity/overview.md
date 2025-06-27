@@ -8,7 +8,7 @@ The PasswordSecurity Data Collector is a core component of Enterprise Auditor, b
 preconfigured within the Active Directory Solution. While the data collector is available with all
 Enterprise Auditor license options, the Active Directory Solution is only available with a special
 Enterprise Auditor license. See the
-[Active Directory Solution](/docs/accessanalyzer/11.6/solutions/active-directory/inventory-reports.md)
+[Active Directory Solution](/docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/overview.md)
 topic for additional information.
 
 Protocols
@@ -23,11 +23,11 @@ Permissions
 
 - At the domain level:
 
-  - Read
-  - Replicating Directory Changes
-  - Replicating Directory Changes All
-  - Replicating Directory Changes in a Filtered Set
-  - Replication Synchronization
+    - Read
+    - Replicating Directory Changes
+    - Replicating Directory Changes All
+    - Replicating Directory Changes in a Filtered Set
+    - Replication Synchronization
 
 ## PasswordSecurity Query Configuration
 

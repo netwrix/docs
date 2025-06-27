@@ -18,12 +18,12 @@ The Location section provides options to scope the search.
   Auditor Registry Browser and connect to a host to select a registry key and path to be used for
   the lookup.
 
-  - Value Name – This value is automatically populated from the registry key
-  - Levels – The Levels slider can be used to truncate the path for the key value in the Adjust
-    Path dialog box
-  - Current value data – Displays the current value for the registry key
-  - Query 32-bit – Select this checkbox to query a 32-bit view
-  - Query 64-bit – Select this checkbox to query a 64-bit view
+    - Value Name – This value is automatically populated from the registry key
+    - Levels – The Levels slider can be used to truncate the path for the key value in the Adjust
+      Path dialog box
+    - Current value data – Displays the current value for the registry key
+    - Query 32-bit – Select this checkbox to query a 32-bit view
+    - Query 64-bit – Select this checkbox to query a 64-bit view
 
 Files
 
@@ -34,13 +34,13 @@ The Files section provides options to define the object or set of objects to fin
 - File type – Select the extension type of the file name entered above to tell the collection
   routine how the data within the underlying file is structured and should be handled:
 
-  - Autodetect – Select this when the data type is unknown. The data collection routine will
-    attempt to figure out what type of data it is and handle it appropriately.
-  - Plain Text
-  - CSV
-  - TSV
-  - Binary
-  - Space Separated Text
+    - Autodetect – Select this when the data type is unknown. The data collection routine will
+      attempt to figure out what type of data it is and handle it appropriately.
+    - Plain Text
+    - CSV
+    - TSV
+    - Binary
+    - Space Separated Text
 
 - First line is header captions line – Enabled when CSV, TSV, or Space Separated Text is selected
 

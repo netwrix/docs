@@ -13,7 +13,7 @@ The jobs in the Local Administrators group are:
   targeted hosts. This offers insight into LAPS enablement and configuration across an environment.
   LAPS allows for centralized local administrator password management within Active Directory. See
   the Microsoft
-  [Local Administrator Password Solution](<https://learn.microsoft.com/en-us/previous-versions/mt227395(v=msdn.10)>)
+  [Local Administrator Password Solution](https://learn.microsoft.com/en-us/previous-versions/mt227395(v=msdn.10))
   article for additional information.
 - [SG_Sessions Job](/docs/accessanalyzer/11.6/accessanalyzer/solutions/windows/privilegedaccounts/localadministrators/sg_sessions.md)
   – This job lists sessions and logged on users from all targeted hosts. These active sessions and

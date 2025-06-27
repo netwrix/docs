@@ -36,30 +36,30 @@ preconfigured for this job.
 
 The following analysis tasks are selected by default:
 
-- 1. User Overview – Creates the SA_EX_UserOverview_Permissions table, accessible under the job’s
-     Results node
-- 2. Add delegate Information to Overview – Adds Delegates to the SA_EX_UserOverview_Permissions
-     table
-- 3. Mailbox Access – Adds Mailbox Rights to the SA_EX_UserOverview_Permissions table
-- 4. Send As – Adds Send As Rights to the SA_EX_UserOverview_Permissions table
-- 5. Public Folders – Adds Public Folder Permissions to the SA_EX_UserOverview_Permissions table
-- 6. DL Membership – Adds DL Membership to the SA_EX_UserOverview_Permissions table
-- 7. Mailbox Size – Adds Mailbox Size to the SA_EX_UserOverview_Permissions table
-- 8. Permission Listing – Creates a listing of each user and their access rights in the
-     environment
-- 9. Rank by Total Permissions – Adds Ranks to the SA_EX_UserOverview_Permissions table
-- 10. Summarize User Message Traffic – Creates the SA_EX_UserOverview_MessageTraffic table,
-      accessible under the job’s Results node
-- 11. Active Sync Devices – Updates table with User ActiveSync Devices
-- 12. Message Traffic Date Ranges – Creates the SA_EX_MessageTraffic_DateRange table, accessible
-      under the job’s Results node
-- 13. Summarize User Message Volume – Creates the SA_EX_UserOverview_DataVolume table, accessible
-      under the job’s Results node
-- 14. RPC Volume – Updates SA_EX_UserOverview_Datavolume table with RPC volume
-- 15. OWA Volume – Updates SA_EX_UserOverview_Datavolume table with OWA volume
-- 16. ActiveSync Volume – Updates SA_EX_UserOverview_Datavolume table with ActiveSync volume
-- 17. Data Volume Date Ranges – Creates the SA_EX_TrafficOverview_DateRange table, accessible
-      under the job’s Results node
+-   1. User Overview – Creates the SA_EX_UserOverview_Permissions table, accessible under the job’s
+       Results node
+-   2. Add delegate Information to Overview – Adds Delegates to the SA_EX_UserOverview_Permissions
+       table
+-   3. Mailbox Access – Adds Mailbox Rights to the SA_EX_UserOverview_Permissions table
+-   4. Send As – Adds Send As Rights to the SA_EX_UserOverview_Permissions table
+-   5. Public Folders – Adds Public Folder Permissions to the SA_EX_UserOverview_Permissions table
+-   6. DL Membership – Adds DL Membership to the SA_EX_UserOverview_Permissions table
+-   7. Mailbox Size – Adds Mailbox Size to the SA_EX_UserOverview_Permissions table
+-   8. Permission Listing – Creates a listing of each user and their access rights in the
+       environment
+-   9. Rank by Total Permissions – Adds Ranks to the SA_EX_UserOverview_Permissions table
+-   10. Summarize User Message Traffic – Creates the SA_EX_UserOverview_MessageTraffic table,
+        accessible under the job’s Results node
+-   11. Active Sync Devices – Updates table with User ActiveSync Devices
+-   12. Message Traffic Date Ranges – Creates the SA_EX_MessageTraffic_DateRange table, accessible
+        under the job’s Results node
+-   13. Summarize User Message Volume – Creates the SA_EX_UserOverview_DataVolume table, accessible
+        under the job’s Results node
+-   14. RPC Volume – Updates SA_EX_UserOverview_Datavolume table with RPC volume
+-   15. OWA Volume – Updates SA_EX_UserOverview_Datavolume table with OWA volume
+-   16. ActiveSync Volume – Updates SA_EX_UserOverview_Datavolume table with ActiveSync volume
+-   17. Data Volume Date Ranges – Creates the SA_EX_TrafficOverview_DateRange table, accessible
+        under the job’s Results node
 
 In addition to the tables and views created by the analysis tasks, the EX_UserOverview job produces
 the following pre-configured reports:

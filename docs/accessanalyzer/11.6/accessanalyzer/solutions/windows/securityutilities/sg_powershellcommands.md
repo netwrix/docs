@@ -16,9 +16,9 @@ The queries for the SG_PowerShellCommands job are:
 
 - Check PowerShell log – Checks the PowerShell log
 
-  - (Optional) This query can be configured. See the
-    [Configure the Check PowerShell log Query](#configure-the-check-powershell-log-query) topic
-    for additional information.
+    - (Optional) This query can be configured. See the
+      [Configure the Check PowerShell log Query](#configure-the-check-powershell-log-query) topic
+      for additional information.
 
 - Check PowerShell Operations log – Checks the PowerShell Operational log
 

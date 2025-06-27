@@ -30,7 +30,7 @@ job.
 ![Filters](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/solutions/databases/azuresql/collection/1sqlpermissionscanfilterpage.webp)
 
 **Step 4 –** To query for specific databases/instances, navigate to the
-[SQL Data Collector](/docs/accessanalyzer/11.6/data-collection/databases/sql-server.md)
+[SQL Data Collector](/docs/accessanalyzer/11.6/accessanalyzer/admin/datacollector/sql/overview.md)
 page. The default query target is All databases. The default query scope is Only select database
 objects and click Retrieve. The Available database objects will be populated. Databases and
 instances can be added in the following ways:

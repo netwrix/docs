@@ -13,7 +13,7 @@ executed to collect the data from the target.
   process on the target host. It connects to the log, retrieves information, and returns it to the
   Enterprise Auditor Console.
 
-  **NOTE:** The applet cannot be used to target the local host.
+    **NOTE:** The applet cannot be used to target the local host.
 
 - Copy the log locally and process (Not available for all query scenarios) – Extract events from an
   offline log by moving the log to the Enterprise Auditor Console and having it processed on the

@@ -13,11 +13,11 @@ alphanumerically, first by job groups and then by any jobs that are independent 
 
 Each component within the Jobs tree has an icon for quick reference. The icons are:
 
-| Icon Description                                                                                                | Description                                               |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| Icon Description                                                                                                     | Description                                               |
+| -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
 | ![jobgroup](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/jobgroup.webp)                    | Job Group                                                 |
 | ![modifiedjobgroup](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/modifiedjobgroup.webp)    | Modified Job Group                                        |
-| ![settings](/img/versioned_docs/activitymonitor_7.1/config/dellpowerscale/settings.webp)                        | Settings node for a Job Group/ Configure node for a job   |
+| ![settings](/img/versioned_docs/activitymonitor_7.1/config/dellpowerscale/settings.webp)                              | Settings node for a Job Group/ Configure node for a job   |
 | ![job](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/job.webp)                              | Job                                                       |
 | ![modifiedjob](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/modifiedjob.webp)              | Modified Job                                              |
 | ![lockedjob](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/jobs/lockedjob.webp)                  | Locked Job (Only applicable to Role Based Access feature) |
@@ -34,7 +34,7 @@ A green checkmark over a Job or Job Group icon indicates a configuration change 
 job or job group. The global settings configured under the Settings node are inherited down through
 the Jobs tree to the job unless inheritance is broken in a job group’s Settings node, a job’s
 Configure node, or a job’s Properties window. See the
-[Navigating the Console](/docs/accessanalyzer/11.6/administration/navigation.md)
+[Navigating the Console](/docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/overview.md)
 for additional information.
 
 ## Job Execution Options
@@ -47,16 +47,16 @@ triggered to run, the jobs execute in the order triggered.
 Jobs execution options include:
 
 - Manual or Ad Hoc
-  - Applies logged in user’s credentials to execute the job on the Enterprise Auditor Console
-    server
-  - Job progress can be monitored through the **Running Instances** node
-  - Order of job execution can be manipulated on the **Running Instances** node
-  - Closing the Enterprise Auditor Console terminates the running job and clear the jobs queue
+    - Applies logged in user’s credentials to execute the job on the Enterprise Auditor Console
+      server
+    - Job progress can be monitored through the **Running Instances** node
+    - Order of job execution can be manipulated on the **Running Instances** node
+    - Closing the Enterprise Auditor Console terminates the running job and clear the jobs queue
 - Schedule
-  - Applies Schedule Service Account credentials to execute the job through Windows Task Scheduler
-  - Each scheduled task independently employs the Enterprise Auditor application, allowing
-    unrelated tasks to run simultaneously
-  - Runs on schedule whether a user is logged in or not
+    - Applies Schedule Service Account credentials to execute the job through Windows Task Scheduler
+    - Each scheduled task independently employs the Enterprise Auditor application, allowing
+      unrelated tasks to run simultaneously
+    - Runs on schedule whether a user is logged in or not
 
 ## Changes Window
 

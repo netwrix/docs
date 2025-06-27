@@ -11,7 +11,7 @@ within both the Active Directory Solution and the Windows Solution. While the da
 available with all Enterprise Auditor license options, these solutions are only available with a
 special Enterprise Auditor licenses. See the following topics for additional information:
 
-- [Active Directory Solution](/docs/accessanalyzer/11.6/solutions/active-directory/inventory-reports.md)
+- [Active Directory Solution](/docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/overview.md)
 - [Windows Solution](/docs/accessanalyzer/11.6/accessanalyzer/solutions/windows/overview.md)
 
 Protocols
@@ -62,8 +62,8 @@ to do the following:
 
 ![Button Bar](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/buttonbar.webp)
 
-| Icon                                                                                                                                               | Name                                               |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| Icon                                                                                                                                                    | Name                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
 | ![Select all peer keys for this node](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/selectall.webp)                   | Select all peer keys for this node                 |
 | ![Add name of currently selected key](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/addname.webp)                     | Add name of currently selected key                 |
 | ![Add full path of the currently selected key](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/addpath.webp)            | Add full path of the currently selected key        |
@@ -71,5 +71,5 @@ to do the following:
 | ![Add security properties for selected key](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/addproperties.webp)         | Add security properties for selected key           |
 | ![Enumerate all values for this key](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/enumeratevalues.webp)              | Enumerate all values for this key                  |
 | ![Add currently selected value](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/addvalue.webp)                          | Add currently selected value                       |
-| ![Delete properties from selection](/img/versioned_docs/activitymonitor_7.1/activitymonitor/admin/search/query/delete.webp)                        | Delete properties from selection                   |
+| ![Delete properties from selection](/img/versioned_docs/activitymonitor_7.1/activitymonitor/admin/search/query/delete.webp)                              | Delete properties from selection                   |
 | ![Go to selected key](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/goto.webp)                                        | Go to selected key                                 |

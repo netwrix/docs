@@ -25,11 +25,11 @@ The jobs in 0.Collection Jobs Group are:
 Workflow
 
 1. Prerequisite:
-   1. Successful execution of the .Active Directory Inventory Job Group
-   2. For the 1-AzureSQL_PermissionScan Job, configure SQL Server Audit and SQL Server Audit
-      Specifications on target SQL Server Databases.
+    1. Successful execution of the .Active Directory Inventory Job Group
+    2. For the 1-AzureSQL_PermissionScan Job, configure SQL Server Audit and SQL Server Audit
+       Specifications on target SQL Server Databases.
 2. (Optional) Configure the queries for the jobs in the 0.Collection Job Group
 3. Schedule the 0.Collection Job Group to run daily or as desired
 
-   **NOTE:** Running the 0.Collection Job Group is a prerequisite for the other job groups in the
-   Azure SQL solution
+    **NOTE:** Running the 0.Collection Job Group is a prerequisite for the other job groups in the
+    Azure SQL solution

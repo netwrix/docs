@@ -31,20 +31,20 @@ In the Sample section, select from the following options:
 
 - From log
 
-  - Host – Enter a sample host that contains a log with the type of events desired for the query.
-    Click **Connect** to generate a list of logs available for extraction.
-  - Log name – Select a log from the drop-down list. Events from the selected log are populated in
-    the table.
+    - Host – Enter a sample host that contains a log with the type of events desired for the query.
+      Click **Connect** to generate a list of logs available for extraction.
+    - Log name – Select a log from the drop-down list. Events from the selected log are populated in
+      the table.
 
 - From file
 
-  - Click the folder icon next to the File name box to open the Log sample browser window and
-    select a log, or manually enter the log path in the box
+    - Click the folder icon next to the File name box to open the Log sample browser window and
+      select a log, or manually enter the log path in the box
 
 - Show – Click to preview the elements in the event log file for log paths manually entered in the
   File path box
 
-  **NOTE:** A preview displays automatically if the folder icons is used to navigate to the log.
+    **NOTE:** A preview displays automatically if the folder icons is used to navigate to the log.
 
 - Lookup user name – Select this checkbox to resolve SID or GUID values to friendly display values
 
@@ -88,8 +88,8 @@ In the Available Properties section, select which properties will be collected b
 
 - Add Icon – Add properties from those available in the list to add the properties to the search
 
-  - The Description properties provide the ability to extract the bracketed pieces of information
-    found within the description and display each bracketed piece of information in its own column
+    - The Description properties provide the ability to extract the bracketed pieces of information
+      found within the description and display each bracketed piece of information in its own column
 
 - Remove Icon – Use to remove properties from the search
 

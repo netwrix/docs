@@ -7,16 +7,16 @@ select report specific settings for emailing the report.
 
 The default setting for new and included reports is **Use default setting**, which keeps the
 inheritance from the global, job group, or job settings (see the
-[Email Report Options](/docs/accessanalyzer/11.6/administration/settings/reporting.md#email-report-options),
-[Reporting Node](/docs/accessanalyzer/11.6/administration/jobs-and-scheduling/job-groups.md),
+[Email Report Options](/docs/accessanalyzer/11.6/accessanalyzer/admin/settings/reporting.md#email-report-options),
+[Reporting Node](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/group/reporting.md),
 and
-[Report Settings Tab](/docs/accessanalyzer/11.6/administration/jobs-and-scheduling/job-management.md)
+[Report Settings Tab](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/properties/reportsettings.md)
 topics for additional information). If you want to keep the default, then you can skip this page of
 the wizard by clicking **Next**.
 
 **NOTE:** In order for reports to be emailed, the SMTP server information must be configured in the
 **Settings** > **Notification** node. See the
-[Notification](/docs/accessanalyzer/11.6/administration/settings/notifications.md)
+[Notification](/docs/accessanalyzer/11.6/accessanalyzer/admin/settings/notification.md)
 topic for additional information.
 
 To configure the setting for the report, use the Settings drop-down menu to select one of the
@@ -37,12 +37,12 @@ If the **Email this report** setting is selected, then the following fields are 
 configure:
 
 - Format – Select the format of the report to be contained in the email.
-  - Web Link – Sends an email notice that the report has been published and provides the recipient
-    with a link to it in the Web console
-  - Embedded HTML – Sends the report embedded inside the email using HTML format
-  - Data Tables as CSV (No Charts) – Attaches the complete data set (as configured within the
-    report, without row limit) to an email as a CSV file, excluding any charts
-  - PDF – Attaches the report to an email as a PDF file
+    - Web Link – Sends an email notice that the report has been published and provides the recipient
+      with a link to it in the Web console
+    - Embedded HTML – Sends the report embedded inside the email using HTML format
+    - Data Tables as CSV (No Charts) – Attaches the complete data set (as configured within the
+      report, without row limit) to an email as a CSV file, excluding any charts
+    - PDF – Attaches the report to an email as a PDF file
 - Subject – The subject line of the e-mail. By default it is
   `Netwrix Enterprise Auditor Report: [ReportName]`, with the `[ReportName]`variable being
   automatically populated.
@@ -50,6 +50,6 @@ configure:
   notification. Use a semicolon (;) to separate multiple recipients.
 - Do not e-mail this report if blank – Select this checkbox to not email the report if all elements
   of it are blank when it is generated
-  - A blank report can occur if there is an error in data collection or if the report is
-    configured for data which might not always be present (for example, new computer objects
-    created since last scan)
+    - A blank report can occur if there is an error in data collection or if the report is
+      configured for data which might not always be present (for example, new computer objects
+      created since last scan)

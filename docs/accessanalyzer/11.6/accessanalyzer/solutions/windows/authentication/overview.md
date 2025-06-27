@@ -11,7 +11,7 @@ The jobs in the Authentication job group are:
   – This job lists LSA settings on all targeted hosts. In particular, the RunAsPPL,
   RestrictAnonymous, and ValidateKdcPacSignature keys are examined. If these keys are not set to 1,
   a host is vulnerable to mimikatz and other exploitation tools. See the Microsoft
-  [Configuring Additional LSA Protection](<https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408187(v=ws.11)>)
+  [Configuring Additional LSA Protection](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408187(v=ws.11))
   article for additional ininformation.
 - [SG_SecuritySupportProviders Job](/docs/accessanalyzer/11.6/accessanalyzer/solutions/windows/authentication/sg_securitysupportproviders.md)
   – This job identifies security support providers on all targeted hosts, highlighting potentially

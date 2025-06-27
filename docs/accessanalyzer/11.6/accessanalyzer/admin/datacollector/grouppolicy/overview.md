@@ -12,7 +12,7 @@ collector is available with all Enterprise Auditor license options, the Windows 
 available with a special Enterprise Auditor licenses. See the following topics for additional
 information:
 
-- [Active Directory Solution](/docs/accessanalyzer/11.6/solutions/active-directory/inventory-reports.md)
+- [Active Directory Solution](/docs/accessanalyzer/11.6/accessanalyzer/solutions/activedirectory/overview.md)
 - [Windows Solution](/docs/accessanalyzer/11.6/accessanalyzer/solutions/windows/overview.md)
 
 Protocols

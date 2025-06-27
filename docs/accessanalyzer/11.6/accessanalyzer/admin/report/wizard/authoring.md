@@ -28,22 +28,22 @@ Publish Options
 
 - Publish Report – Select an option to configure if the report should be published to the Web
   Console when it is generated.
-  - Use default setting – Applies the Global report settings, or the settings configured at the
-    job group or job levels if inheritance has been broken. (See the
-    [Publish Option](/docs/accessanalyzer/11.6/administration/settings/reporting.md#publish-option),
-    [Reporting Node](/docs/accessanalyzer/11.6/administration/jobs-and-scheduling/job-groups.md),
-    and
-    [Report Settings Tab](/docs/accessanalyzer/11.6/administration/jobs-and-scheduling/job-management.md)
-    topics for additional information.)
-  - Publish report – Select this option to publish the report
-  - Do not publish report – Select this option to not publish the report
+    - Use default setting – Applies the Global report settings, or the settings configured at the
+      job group or job levels if inheritance has been broken. (See the
+      [Publish Option](/docs/accessanalyzer/11.6/accessanalyzer/admin/settings/reporting.md#publish-option),
+      [Reporting Node](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/group/reporting.md),
+      and
+      [Report Settings Tab](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/properties/reportsettings.md)
+      topics for additional information.)
+    - Publish report – Select this option to publish the report
+    - Do not publish report – Select this option to not publish the report
 - Publish State – Shows the current publish state of the report. If the report is already published,
   you can click the link to open the report in the Web Console.
 
 ## Add Tags to a Report
 
 You can add tags to reports to describe the content and use cases of the report (see the
-[Tags](/docs/accessanalyzer/11.6/administration/reporting/tags.md) topic for
+[Tags](/docs/accessanalyzer/11.6/accessanalyzer/admin/report/tags.md) topic for
 additional information). The Tag Editor allows you to select the tags for a report, including
 creating new ones to select.
 

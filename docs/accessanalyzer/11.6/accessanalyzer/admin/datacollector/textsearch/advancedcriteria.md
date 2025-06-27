@@ -15,10 +15,10 @@ The configurable options are:
   of time it takes to load the data.
 - Customize – Click this button to open the Filter builder
 
-  ![Filter builder window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/textsearch/filterbuilder.webp)
+    ![Filter builder window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/textsearch/filterbuilder.webp)
 
-  See the
-  [Filtration Dialog](/docs/accessanalyzer/11.6/administration/navigation.md#filtration-dialog)
-  topic for information on using the Filter builder.
+    See the
+    [Filtration Dialog](/docs/accessanalyzer/11.6/accessanalyzer/admin/navigate/datagrid.md#filtration-dialog)
+    topic for information on using the Filter builder.
 
 The filter section cannot be blank.

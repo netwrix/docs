@@ -4,7 +4,7 @@ The SG_MicrosoftLAPS job assesses the Local Administrator Password Solution (LAP
 all targeted hosts. This offers insight into LAPS enablement and configuration across an
 environment. LAPS allows for centralized local administrator password management within Active
 Directory. See the Microsoft
-[Local Administrator Password Solution](<https://learn.microsoft.com/en-us/previous-versions/mt227395(v=msdn.10)>)
+[Local Administrator Password Solution](https://learn.microsoft.com/en-us/previous-versions/mt227395(v=msdn.10))
 article for additional information.
 
 ## Queries for the SG_MicrosoftLAPS Job

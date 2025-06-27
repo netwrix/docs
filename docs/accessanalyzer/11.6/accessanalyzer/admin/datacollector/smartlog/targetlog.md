@@ -22,6 +22,6 @@ The configurable options are:
   is set, all files from the listed path are returned.
 - Log files to be processed – Select from the following options:
 
-  - All
-  - Today
-  - For the last – Select the number of days or hours
+    - All
+    - Today
+    - For the last – Select the number of days or hours

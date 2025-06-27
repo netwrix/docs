@@ -15,15 +15,15 @@ preconfigured for this job.
 
 The following analysis tasks are selected by default:
 
-- 0. Drop tables – Drops tables from previous runs
-- 1. Store size history – Creates the SA_EX_DBTrending_History table, accessible under the job’s
-     Results node
-- 2. Trend Mailbox Database – Creates the SA_EX_DBTrending_MBTREND table, accessible under the
-     job’s Results node
-- 3. Trend Public Store – Creates the SA_EX_DBTrending_PFTREND table, accessible under the job’s
-     Results node
-- 4. Modify Runtime to be Date – Modifies the runtime for the SA_EX_DBTrending_MBTREND table and
-     the SA_EX_DBTrending_PFTREND table, to be set to a month/day/year (mdy) date format
+-   0. Drop tables – Drops tables from previous runs
+-   1. Store size history – Creates the SA_EX_DBTrending_History table, accessible under the job’s
+       Results node
+-   2. Trend Mailbox Database – Creates the SA_EX_DBTrending_MBTREND table, accessible under the
+       job’s Results node
+-   3. Trend Public Store – Creates the SA_EX_DBTrending_PFTREND table, accessible under the job’s
+       Results node
+-   4. Modify Runtime to be Date – Modifies the runtime for the SA_EX_DBTrending_MBTREND table and
+       the SA_EX_DBTrending_PFTREND table, to be set to a month/day/year (mdy) date format
 
 In addition to the tables and views created by the analysis tasks, the EX_DBTrending Job produces
 the following pre-configured report:

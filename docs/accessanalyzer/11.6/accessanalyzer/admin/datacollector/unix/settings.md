@@ -8,29 +8,29 @@ The configurable options are:
 
 - Time Out Settings
 
-  - Connection Timeout – Set the connection timeout
-  - Processing Timeout – Set the processing timeout
+    - Connection Timeout – Set the connection timeout
+    - Processing Timeout – Set the processing timeout
 
 - Pre-Execution File Copy
 
-  The Unix Data Collector can use SCP to copy a file from the Enterprise Auditor console to the
-  target system before running the script command.
+    The Unix Data Collector can use SCP to copy a file from the Enterprise Auditor console to the
+    target system before running the script command.
 
-  - Enable pre-execution file copy – Select the checkbox to enable
+    - Enable pre-execution file copy – Select the checkbox to enable
 
-    - Source File – Enter a file path or click the ellipsis (…) to browse to the file location
-    - Target Location – Enter the file path to copy the file to
+        - Source File – Enter a file path or click the ellipsis (…) to browse to the file location
+        - Target Location – Enter the file path to copy the file to
 
 - Credential Selection Settings
 
-  - Only use Unix Account type credentials from connection profile
-  - Use both Unix Account and Active Directory Account type credentials from connection profile
+    - Only use Unix Account type credentials from connection profile
+    - Use both Unix Account and Active Directory Account type credentials from connection profile
 
-    - AD Account user name format – Select from the dropdown the format of the user name from
-      the following:
+        - AD Account user name format – Select from the dropdown the format of the user name from
+          the following:
 
-      - username
-      - domain\username
-      - username@domain
+            - username
+            - domain\username
+            - username@domain
 
 Click **Next** to continue the setup, or **Back** to return to the previous page.

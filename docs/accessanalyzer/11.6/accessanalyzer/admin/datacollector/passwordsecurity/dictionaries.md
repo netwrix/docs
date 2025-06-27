@@ -13,20 +13,20 @@ The configurable dictionary options are:
   dictionary file when the job is executed, and downloads the latest version from the
   [Netwrix website](https://www.netwrix.com/)
 
-  - If the Enterprise Auditor server does not have an internet connection, the Stealthbits
-    dictionary can be downloaded directly from the
-    [My Products](https://www.netwrix.com/my_products.html) page of the Netwrix website.
+    - If the Enterprise Auditor server does not have an internet connection, the Stealthbits
+      dictionary can be downloaded directly from the
+      [My Products](https://www.netwrix.com/my_products.html) page of the Netwrix website.
 
 - Update Dictionary – Checks for the latest version of the dictionary file, and updates if necessary
 - Add – Add a custom dictionary file in one of the following formats:
 
-  - Plaintext – Line separated in a text file
-  - NLTM Hashes – Can be added with hashes or sorted hashes. The haveibeenpwned dictionary can be
-    used. See the
-    [Download and Configure the Have I Been Pwnd (HIBP) Hash List](#download-and-configure-the-have-i-been-pwnd-hibp-hash-list)
-    topic for additional information.
+    - Plaintext – Line separated in a text file
+    - NLTM Hashes – Can be added with hashes or sorted hashes. The haveibeenpwned dictionary can be
+      used. See the
+      [Download and Configure the Have I Been Pwnd (HIBP) Hash List](#download-and-configure-the-have-i-been-pwnd-hibp-hash-list)
+      topic for additional information.
 
-    **_RECOMMENDED:_** Use the sorted hash dictionary if adding an NLTM format
+        **_RECOMMENDED:_** Use the sorted hash dictionary if adding an NLTM format
 
 - Remove – Removes a custom dictionary file from the query scope
 
@@ -40,18 +40,18 @@ dictionary can be downloaded directly from the
 
 - If an internet connection exists on the Enterprise Auditor server:
 
-  - Place the `dictionary.dat` file in the following location:
-    `%sainstalldir%\Jobs\SA_CommonData\PasswordSecurity\Dictionaries`
-  - Rename the file to `sadictionary_hashed_sorted.dat`
+    - Place the `dictionary.dat` file in the following location:
+      `%sainstalldir%\Jobs\SA_CommonData\PasswordSecurity\Dictionaries`
+    - Rename the file to `sadictionary_hashed_sorted.dat`
 
 - If no internet connection exists on the Enterprise Auditor server:
 
-  - Copy the file to the Enterprise Auditor server and put it in a location of your choosing. The
-    default location is `%sainstalldir%\Jobs\SA_CommonData\PasswordSecurity\Dictionaries`
-  - Open the PasswordSecurity data collector configuration for the **AD_WeakPasswords** job
-  - On the Dictionaries page, deselect the **Use STEALTHbits dictionary** checkbox
-  - On the Dictionaries page, click **Add...** and select the previously downloaded
-    `dictionary.dat` file
+    - Copy the file to the Enterprise Auditor server and put it in a location of your choosing. The
+      default location is `%sainstalldir%\Jobs\SA_CommonData\PasswordSecurity\Dictionaries`
+    - Open the PasswordSecurity data collector configuration for the **AD_WeakPasswords** job
+    - On the Dictionaries page, deselect the **Use STEALTHbits dictionary** checkbox
+    - On the Dictionaries page, click **Add...** and select the previously downloaded
+      `dictionary.dat` file
 
 ## Download and Configure the Have I Been Pwnd (HIBP) Hash List
 

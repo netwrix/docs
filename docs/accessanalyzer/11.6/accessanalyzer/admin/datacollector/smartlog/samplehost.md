@@ -23,9 +23,9 @@ and select a computer. The options in the Select Computer window are:
 - Locations – Click to select the location to search. The default is **Entire Directory**.
 - Enter the object name to select – Manually enter objects into the text field
 
-  - Click the **examples** link to access the Microsoft
-    [Object Picker UI](<https://docs.microsoft.com/en-us/previous-versions/orphan-topics/ws.11/dn789205(v=ws.11)?redirectedfrom=MSDN>)
-    article for additional information
+    - Click the **examples** link to access the Microsoft
+      [Object Picker UI](https://docs.microsoft.com/en-us/previous-versions/orphan-topics/ws.11/dn789205(v=ws.11)?redirectedfrom=MSDN)
+      article for additional information
 
 - Check Names – Click to verify the object names in the text field
 - Advanced – Opens a window to perform advanced configurations of the Select Computer function
@@ -44,10 +44,10 @@ type and location in the original Select Computer window.
 - Select the number of **Days since last logon** from the drop-down menu
 - Click the **Columns** button to open the Choose Columns window
 
-  ![Choose Columns window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/smartlog/choosecolumnswindow.webp)
+    ![Choose Columns window](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/smartlog/choosecolumnswindow.webp)
 
-  Select a column from the Columns available or Columns shown lists and click **Add** or
-  **Remove** to add or remove them from each column
+    Select a column from the Columns available or Columns shown lists and click **Add** or
+    **Remove** to add or remove them from each column
 
 - Click **Find Now** to run a search for items matching the selected criteria in the location of the
   object selected

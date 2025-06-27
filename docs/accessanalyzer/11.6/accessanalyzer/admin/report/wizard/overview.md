@@ -2,9 +2,9 @@
 
 You can use the Report Configuration Wizard to configure reports. The wizard can be launched for an
 existing report or when creating a new report. See the
-[Creating a Report](/docs/accessanalyzer/11.6/administration/reporting/create-reports.md)
+[Creating a Report](/docs/accessanalyzer/11.6/accessanalyzer/admin/report/create.md)
 and
-[Editing Existing Reports](/docs/accessanalyzer/11.6/administration/reporting/edit-reports.md)
+[Editing Existing Reports](/docs/accessanalyzer/11.6/accessanalyzer/admin/report/edit.md)
 topics for additional information.
 
 Follow the steps to configure a report using the wizard.

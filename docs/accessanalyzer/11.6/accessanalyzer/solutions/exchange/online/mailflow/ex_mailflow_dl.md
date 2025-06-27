@@ -14,10 +14,10 @@ preconfigured for this job.
 
 The following analysis tasks are selected by default:
 
-- Azure Groups Direct Member Count – Creates the EX\_ MailFlow_DL_AzureMemberCount table, accessible
+- Azure Groups Direct Member Count – Creates the EX_ MailFlow_DL_AzureMemberCount table, accessible
   under the job’s Results node. Provides a direct member count for distribution lists from Azure
   groups.
-- DLs by Count – Creates the EX\_ Mailflow_DLsByCount table, accessible under the job’s Results
+- DLs by Count – Creates the EX_ Mailflow_DLsByCount table, accessible under the job’s Results
   node. Lists of all distribution lists and how much mail-flow they have received.
 
 In addition to the tables and views created by the analysis tasks, the EX_Mailflow_DL Jjb produces

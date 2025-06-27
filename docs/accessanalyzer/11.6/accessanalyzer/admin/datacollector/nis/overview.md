@@ -4,7 +4,7 @@ The NIS Data Collector inventories a NIS domain for user and group information, 
 Windows-style SIDs. This data collector is a core component of Enterprise Auditor and has been
 preconfigured within the .NIS Inventory Solution. Both this data collector and the solution are
 available with all Enterprise Auditor license options. See the
-[.NIS Inventory Solution](/docs/accessanalyzer/11.6/solutions/cross-platform/nis-inventory.md)
+[.NIS Inventory Solution](/docs/accessanalyzer/11.6/accessanalyzer/solutions/nisinventory/overview.md)
 topic for additional information.
 
 Protocols

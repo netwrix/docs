@@ -28,4 +28,4 @@ preconfigured for this job.
 
 The default analysis task is:
 
-- 1. Impose 30 Second Wait Timer – Slows processing down to allow remote command to complete
+-   1. Impose 30 Second Wait Timer – Slows processing down to allow remote command to complete

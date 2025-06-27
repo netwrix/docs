@@ -11,9 +11,9 @@ The configurable scan options are:
 - Analyze historical passwords – Scans historical passwords that have been stored in Active
   Directory
 
-  **CAUTION:** Enabling the following option will return clear text passwords to be stored in the
-  Enterprise Auditor database for the following exceptions: **Clear Text Password**, **Potential
-  Keytab Password**, and **Weak Password** (when leveraging a plaintext password dictionary).
+    **CAUTION:** Enabling the following option will return clear text passwords to be stored in the
+    Enterprise Auditor database for the following exceptions: **Clear Text Password**, **Potential
+    Keytab Password**, and **Weak Password** (when leveraging a plaintext password dictionary).
 
 - Return cleartext passwords when possible – Returns stored clear-text passwords to the Enterprise
   Auditor database

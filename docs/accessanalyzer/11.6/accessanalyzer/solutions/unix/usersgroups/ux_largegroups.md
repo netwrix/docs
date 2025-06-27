@@ -8,7 +8,7 @@ resources, or how much access is being granted to resources through these groups
 
 The Configuration section on a Job's overview page allows you to easily modify any customizable
 parameters used by analysis tasks in the job. See the
-[Parameter Configuration](/docs/accessanalyzer/11.6/administration/jobs-and-scheduling/job-management.md#parameter-configuration)
+[Parameter Configuration](/docs/accessanalyzer/11.6/accessanalyzer/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
 
 The UX_LargeGroups job has the following customizable parameter:
@@ -32,8 +32,8 @@ The default analysis task is:
   in the SQL scripting module. – Creates the UX_LargeGroups_Details table accessible under the job’s
   Results node
 
-  - The threshold value used to determine if a group is considered large can be customized. See
-    the [Parameter Configuration](#parameter-configuration) for additional information.
+    - The threshold value used to determine if a group is considered large can be customized. See
+      the [Parameter Configuration](#parameter-configuration) for additional information.
 
 In addition to the table and views created by the analysis tasks, the UX_LargeGroups job produces
 the following pre-configured report:

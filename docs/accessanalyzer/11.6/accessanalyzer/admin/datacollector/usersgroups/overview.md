@@ -24,9 +24,9 @@ Permissions
 
 - Member of the Local Administrators group
 
-  - If a less-privileged option is required, you can use a regular domain user that has been added
-    to the **Network access: Restrict clients allowed to make remote calls to SAM** Local Security
-    Policy
+    - If a less-privileged option is required, you can use a regular domain user that has been added
+      to the **Network access: Restrict clients allowed to make remote calls to SAM** Local Security
+      Policy
 
 - Member of the Domain Administrators group (if targeting domain controllers)
 

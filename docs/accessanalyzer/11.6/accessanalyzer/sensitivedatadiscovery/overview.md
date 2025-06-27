@@ -11,20 +11,20 @@ solutions:
 - Dropbox Solution
 - Database Solutions
 
-  - Azure SQL Solution
-  - Db2 Solution
-  - MongoDB Solution
-  - MySQL Solution
-  - Oracle Solution
-  - PostgreSQL Solution
-  - Redshift Solution
-  - SQL Solution
+    - Azure SQL Solution
+    - Db2 Solution
+    - MongoDB Solution
+    - MySQL Solution
+    - Oracle Solution
+    - PostgreSQL Solution
+    - Redshift Solution
+    - SQL Solution
 
 - Exchange Solution – Only with specific data collectors:
 
-  - EWSMailbox Data Collector
-  - EWSPublicFolder Data Collector
-  - ExchangeMailbox Data Collector
+    - EWSMailbox Data Collector
+    - EWSPublicFolder Data Collector
+    - ExchangeMailbox Data Collector
 
 - File System Solution
 - SharePoint Solution
@@ -40,5 +40,5 @@ customized through Java. It will not conflict with other JDKs or Java Runtimes i
 environment.
 
 See the
-[Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/installation/sensitive-data-discovery/install.md)
+[Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/accessanalyzer/install/sensitivedatadiscovery/overview.md)
 topic for installation information and prerequisites.
