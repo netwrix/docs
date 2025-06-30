@@ -93,7 +93,7 @@ Step 1 – Click on the **Plus** sign and a form will open.
 Step 2 – You can now search for a specific organizational unit by clicking on the tree on the left
 or use the search field to find the unit you need.
 
-![search](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/report/interactivegrids/search.webp)
+![search](/img/product_docs/accessanalyzer/11.6/admin/report/interactivegrids/search.webp)
 
 Step 3 – Click **OK** to close the form and your new team tab will open automatically.
 

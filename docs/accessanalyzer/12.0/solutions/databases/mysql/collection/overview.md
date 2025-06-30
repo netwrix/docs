@@ -4,22 +4,22 @@ The MySQL Solution Collection group is designed to collect high level summary in
 targeted MySQL Servers. This information is used by other jobs in the MySQL Solution Set for further
 analysis and producing respective reports.
 
-![0.Collection Job Group for MySQL](/img/product_docs/accessanalyzer/solutions/databases/postgresql/collection/0.collectionjobgroup.webp)
+![0.Collection Job Group for MySQL](/img/product_docs/accessanalyzer/12.0/solutions/databases/mysql/collection/0.collectionjobgroup.webp)
 
 The jobs in the 0.Collection Job Group are:
 
-- [MySQL_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql-configuration.md) – Designed to collect MySQL server instance and
+- [MySQL_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql_configuration.md) – Designed to collect MySQL server instance and
   database configuration settings for use in the following analysis jobs and respective reports
-- [MySQL_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql-sensitivedatascan.md) – Designed to discover sensitive data in
+- [MySQL_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql_sensitivedatascan.md) – Designed to discover sensitive data in
   MySQL databases based on pre-defined or user-defined search criteria
-- [MySQL_TablePrivileges Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql-tableprivileges.md) – Designed to collect MySQL table privileges
+- [MySQL_TablePrivileges Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql_tableprivileges.md) – Designed to collect MySQL table privileges
   from all the targeted servers.
 
 Workflow
 
 1. Set a Connection Profile for the 0.Collection Job Group with the permissions listed in the
    Recommended Configurations section. See the
-   [Connection](/docs/accessanalyzer/12.0/administration/settings/connection/overview.md) topic for additional information.
+   [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional information.
 2. For Sensitive Data Discovery Auditing – Ensure the Sensitive Data Discovery Add-On is installed
    on the StealthAUDIT Console server.
 3. Schedule the solution to run daily or as desired.

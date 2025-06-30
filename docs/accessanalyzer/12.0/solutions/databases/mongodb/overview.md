@@ -30,7 +30,7 @@ Supported Platforms
 Requirements, Permissions, and Ports
 
 See the
-[Target MongoDB Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/database-mongodb.md)
+[Target MongoDB Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/target/databasemongodb.md)
 topic for additional information.
 
 Sensitive Data Discovery Considerations
@@ -66,14 +66,14 @@ sensitive data.
 The Access Analyzer MongoDB Solution Set is a set of pre-configured jobs and reports that provides
 visibility into MongoDB Sensitive Data.
 
-![MongoDB Overview](/img/product_docs/accessanalyzer/solutions/databases/mongodb/mongdbjobgroupoverview.webp)
+![MongoDB Overview](/img/product_docs/accessanalyzer/12.0/solutions/databases/mongodb/mongdbjobgroupoverview.webp)
 
 The following job groups comprise the MongoDB Solution:
 
 - [ 0.Collection Job Group](/docs/accessanalyzer/12.0/solutions/databases/mongodb/collection/overview.md) — Collects high level summary information from
   targeted MongoDB Servers. This information is used by other jobs in the MongoDB Solution Set for
   further analysis and producing respective reports.
-- [Analysis Tasks for the MongoDB_Database_Sizing Job](/docs/accessanalyzer/12.0/solutions/databases/mongodb/mongodb-databasesizing.md) — Provides insight
+- [Analysis Tasks for the MongoDB_Database_Sizing Job](/docs/accessanalyzer/12.0/solutions/databases/mongodb/mongodb_databasesizing.md) — Provides insight
   into MongoDB server configuration settings
-- [Sensitive Data > MongoDB_SensitiveData Job](/docs/accessanalyzer/12.0/solutions/databases/mongodb/mongodb-sensitivedata.md) — Provides insight into
+- [Sensitive Data > MongoDB_SensitiveData Job](/docs/accessanalyzer/12.0/solutions/databases/mongodb/mongodb_sensitivedata.md) — Provides insight into
   where sensitive data exists and who has access to it across all the targeted MongoDB databases

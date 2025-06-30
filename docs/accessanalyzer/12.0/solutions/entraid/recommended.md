@@ -10,7 +10,7 @@ Running the .Entra ID Inventory Job Group provides essential data to the Entra 
 
 Running the .Active Directory Inventory Job Group is required to collect on-premises directory
 syncing information. See the
-[.Active Directory Inventory Solution](/docs/accessanalyzer/12.0/solutions/active-directory-inventory/overview.md) topic for additional
+[.Active Directory Inventory Solution](/docs/accessanalyzer/12.0/solutions/activedirectoryinventory/overview.md) topic for additional
 information.
 
 Targeted Hosts

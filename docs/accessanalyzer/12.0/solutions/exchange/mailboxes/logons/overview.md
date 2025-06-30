@@ -8,11 +8,11 @@ provide reporting around mailbox logon activity.
 The data collection job requires that Exchange Access Auditing is enabled in the Exchange
 environment.
 
-![Logons Job Group](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Logons Job Group](/img/product_docs/accessanalyzer/12.0/solutions/exchange/mailboxes/logons/jobstree.webp)
 
 The jobs in the Logons Job Group are:
 
-- [0.Collection > EX_MailboxActivity Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/logons/ex-mailboxactivity.md) – Collects logs of Native Mailbox
+- [0.Collection > EX_MailboxActivity Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/logons/ex_mailboxactivity.md) – Collects logs of Native Mailbox
   Access Auditing from Exchange to provide reporting around mailbox logon activity
-- [EX_MailboxLogons Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/logons/ex-mailboxlogons.md) – Provides details around Mailbox logon activity
+- [EX_MailboxLogons Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/logons/ex_mailboxlogons.md) – Provides details around Mailbox logon activity
   occurring within the Exchange environment

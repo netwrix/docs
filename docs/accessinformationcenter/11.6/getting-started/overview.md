@@ -219,7 +219,7 @@ topic for information on where different types of users are directed after login
 
 ## Web Console Login Page
 
-![Web Console Login page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/reports/webconsolelogin.webp)
+![Web Console Login page](/img/product_docs/accessanalyzer/11.6/install/application/reports/webconsolelogin.webp)
 
 The Enterprise Auditor Web Console login page displays the Netwrix Enterprise Auditor logo at the
 top and the browser tab is named Netwrix Enterprise Auditor. In order for a user to log into the Web

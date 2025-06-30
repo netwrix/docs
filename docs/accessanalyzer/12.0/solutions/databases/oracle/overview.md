@@ -35,7 +35,7 @@ Supported Platforms
 Requirements, Permissions, and Ports
 
 See the
-[Target Oracle Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/database-oracle.md)
+[Target Oracle Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/target/databaseoracle.md)
 topic for additional information.
 
 Sensitive Data Discovery Considerations
@@ -71,7 +71,7 @@ visibility into various aspects of an Oracle Database Server, including informat
 Roles, Sensitive Data Discovery, Object Permissions, Configuration, User Activity, and overall
 Security Assessment.
 
-![Oracle Job Group](/img/product_docs/accessanalyzer/solutions/databases/oracle/oraclejobgroup.webp)
+![Oracle Job Group](/img/product_docs/accessanalyzer/12.0/solutions/databases/oracle/oraclejobgroup.webp)
 
 The job groups/jobs in the Oracle Solution are:
 
@@ -92,6 +92,6 @@ The job groups/jobs in the Oracle Solution are:
 - [5.Sensitive Data Job Group](/docs/accessanalyzer/12.0/solutions/databases/oracle/sensitivedata/overview.md) – This job is designed to provide insight
   into where sensitive data exists, and who has access to it across all the targeted Oracle database
   servers
-- [Oracle_SecurityAssessment Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/oracle-securityassessment.md) – This job is designed to summarize
+- [Oracle_SecurityAssessment Job](/docs/accessanalyzer/12.0/solutions/databases/oracle/oracle_securityassessment.md) – This job is designed to summarize
   and categorize the security findings into HIGH, MEDIUM, LOW, and NO FINDING categories based on
   their severity

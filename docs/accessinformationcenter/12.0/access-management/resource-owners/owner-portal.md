@@ -171,7 +171,7 @@ Resource Access wizard opens.
 selected, the **Notify users about their change in access** option will send an email to the users
 who have been granted access to the resource. Click **Next**.
 
-![Change Resource Access wizard showing 2. Add Access page](/img/product_docs/accessanalyzer/admin/settings/access/rolebased/addaccess.webp)
+![Change Resource Access wizard showing 2. Add Access page](/img/product_docs/accessanalyzer/12.0/admin/settings/access/rolebased/addaccess.webp)
 
 **Step 3 –** On the Add Access page, indicate the new users. Entering a name or email address in the
 search field to find and select users from Active Directory, which populate in a drop-down menu as

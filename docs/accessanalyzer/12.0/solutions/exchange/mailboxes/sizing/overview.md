@@ -5,15 +5,15 @@ growth, and trends.
 
 **_RECOMMENDED:_** Schedule the Sizing job group to run daily at 4 AM.
 
-![Sizing Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Sizing Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/exchange/mailboxes/sizing/jobstree.webp)
 
 The jobs in the Sizing job group are:
 
-- [0.Collection > EX_MBSize Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/sizing/ex-mbsize.md) – Collects information from the environment about the
+- [0.Collection > EX_MBSize Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/sizing/ex_mbsize.md) – Collects information from the environment about the
   mailbox sizes in the environment
-- [EX_MailboxSizes Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/sizing/ex-mailboxsizes.md) – Provides analysis and reporting around Mailbox sizing
+- [EX_MailboxSizes Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/sizing/ex_mailboxsizes.md) – Provides analysis and reporting around Mailbox sizing
   and growth
-- [EX_StaleMailboxes Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/sizing/ex-stalemailboxes.md) – Provides analysis and reporting around orphaned
+- [EX_StaleMailboxes Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/sizing/ex_stalemailboxes.md) – Provides analysis and reporting around orphaned
   and Stale Mailboxes
-- [EX_StoreSizes Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/sizing/ex-storesizes.md) – Provides analysis and reporting around Database Sizing
+- [EX_StoreSizes Job](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/sizing/ex_storesizes.md) – Provides analysis and reporting around Database Sizing
   based on Mailbox Sizes

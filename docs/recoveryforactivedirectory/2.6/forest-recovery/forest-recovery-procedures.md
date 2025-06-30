@@ -100,7 +100,7 @@ topic for additional information.
 
 **Step 5 –** Click **Next**.
 
-![Add to Recovery Playbook wizard - Options page](/img/product_docs/accessanalyzer/install/application/options.webp)
+![Add to Recovery Playbook wizard - Options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
 
 **Step 6 –** From the **Backup** drop-down menu, select the backup to use for restoring the domain
 controller. The drop-down menu lists the backups available for the domain controller.

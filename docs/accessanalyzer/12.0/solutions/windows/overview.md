@@ -16,17 +16,17 @@ Supported Platforms
 Requirements, Permissions, and Ports
 
 See the
-[Target Windows Server and Desktop Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/windows.md)
+[Target Windows Server and Desktop Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/target/windows.md)
 topic for additional information.
 
 Location
 
 The Windows Solution requires a special Access Analyzer license. It can be installed from the
-Instant Job Wizard. See the [Instant Job Wizard](/docs/accessanalyzer/12.0/administration/job-management/instant-jobs/overview.md) topic for
+Instant Job Wizard. See the [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for
 additional information. Once it has been installed in the Jobs tree, navigate to the solution:
 **Jobs** > **Windows**.
 
-![Windows Solution in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Windows Solution in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/windows/jobstree.webp)
 
 Each job group works independently from the other job groups. All of the job groups have their own
 collections that are used to analyze and report on data specific to the groups function. The
@@ -37,7 +37,7 @@ SG_SecurityAssessment job summarizes security related results from the Windows s
 The Windows Solution provides both high-level and granular views into any sized organization’s
 infrastructure.
 
-![Windows Solution Overview page](/img/product_docs/accessanalyzer/admin/runninginstances/overviewpage.webp)
+![Windows Solution Overview page](/img/product_docs/accessanalyzer/12.0/solutions/windows/overviewpage.webp)
 
 The jobs and job groups in the Windows Solution are:
 
@@ -55,7 +55,7 @@ The jobs and job groups in the Windows Solution are:
   including local administrator membership, users with remote logon rights, and service accounts.
 - [Security Utilities Job Group](/docs/accessanalyzer/12.0/solutions/windows/securityutilities/overview.md) – This group provides a series of
   security element checks across the audited environment
-- [SG_SecurityAssessment Job](/docs/accessanalyzer/12.0/solutions/windows/sg-securityassessment.md) – This job performs checks against Windows
+- [SG_SecurityAssessment Job](/docs/accessanalyzer/12.0/solutions/windows/sg_securityassessment.md) – This job performs checks against Windows
   security best practices in order to proactively identify critical security configurations that
   leave the environment vulnerable to attack. The result is a report which provides a listing of
   findings by severity and category with corresponding details that can be used to prioritize and

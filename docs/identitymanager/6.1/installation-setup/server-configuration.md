@@ -171,7 +171,7 @@ This guide will show you how to perform these operations using SQL Server Manage
 
    - From the **Login** node, right-click and select **New** > **Login**.
 
-     ![New Login](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/newlogin.webp)
+     ![New Login](/img/product_docs/accessanalyzer/11.6/install/application/newlogin.webp)
 
    - On the **General** page, enter the service account login name in the down-level logon format,
      such as `CONTOSO/identitymanagerContosoServer`. If you're not sure about the correct spelling of your

@@ -17,7 +17,7 @@ Supported Platforms
 Requirements, Permissions, and Ports
 
 See the
-[Target SQL Server Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/database-sql.md)
+[Target SQL Server Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/target/databasesql.md)
 topic for additional information.
 
 Sensitive Data Discovery Considerations
@@ -39,7 +39,7 @@ The Database Solution license includes all supported database platforms supporte
 Analyzer. Additionally, Sensitive Data Discovery enables the solution to search database content for
 sensitive data.
 
-![SQL Job Group](/img/product_docs/accessanalyzer/solutions/databases/sql/sqljobgroup.webp)
+![SQL Job Group](/img/product_docs/accessanalyzer/12.0/solutions/databases/sql/sqljobgroup.webp)
 
 The SQL Job Group includes:
 
@@ -65,6 +65,6 @@ The SQL Job Group includes:
 - [5.Sensitive Data Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/sensitivedata/overview.md)– This job group is designed to provide
   insight into where sensitive data exists and who has access to it across all the targeted SQL
   server databases
-- [SQL_SecurityAssessment Job](/docs/accessanalyzer/12.0/solutions/databases/sql/sql-securityassessment.md) – This job is designed to summarize and
+- [SQL_SecurityAssessment Job](/docs/accessanalyzer/12.0/solutions/databases/sql/sql_securityassessment.md) – This job is designed to summarize and
   categorize the security findings into HIGH, MEDIUM, LOW, and NO FINDING categories based on their
   severity.

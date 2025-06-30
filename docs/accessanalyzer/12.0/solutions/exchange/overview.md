@@ -16,15 +16,15 @@ Supported Platforms
 - Exchange 2010 (Limited)
 
 See the
-[Exchange Support and Permissions Explained](/docs/accessanalyzer/12.0/getting-started/system-requirements/solutions/exchange/support.md) topic
+[Exchange Support and Permissions Explained](/docs/accessanalyzer/12.0/requirements/solutions/exchange/support.md) topic
 for additional information.
 
 Requirements, Permissions, and Ports
 
 See the
-[Target Exchange Servers Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/exchange.md)
+[Target Exchange Servers Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/target/exchange.md)
 and
-[Target Exchange Online Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/exchange-online.md)
+[Target Exchange Online Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/target/exchangeonline.md)
 topics for additional information.
 
 Sensitive Data Discovery Considerations
@@ -53,7 +53,7 @@ generates reports.
 
 The Exchange Solution is divided into categories based upon what is being audited.
 
-![Exchange Job Group Overview page](/img/product_docs/accessanalyzer/admin/runninginstances/overviewpage.webp)
+![Exchange Job Group Overview page](/img/product_docs/accessanalyzer/12.0/solutions/exchange/overviewpage.webp)
 
 The following job groups comprise the Exchange Solution:
 
@@ -70,11 +70,11 @@ The following job groups comprise the Exchange Solution:
 - [4.Mailboxes Job Group](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/overview.md) – Comprised of data collection, analyses, and
   reports around mailbox features, logons, permissions, and sizing
 
-  **CAUTION:** It is not recommended to run this job group at this job group level.
+    **CAUTION:** It is not recommended to run this job group at this job group level.
 
-  - See the [Recommended Configurations for the 4. Mailboxes Job Group](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/recommended.md)
-    topic for this job group. All jobs within this group are compatible with the Office 365
-    environment.
+    - See the [Recommended Configurations for the 4. Mailboxes Job Group](/docs/accessanalyzer/12.0/solutions/exchange/mailboxes/recommended.md)
+      topic for this job group. All jobs within this group are compatible with the Office 365
+      environment.
 
 - [5. Public Folders Job Group](/docs/accessanalyzer/12.0/solutions/exchange/publicfolders/overview.md) – Comprised of data collection, analysis
   and reports that focus on public folder sizing, content aging, entitlement, ownership, and the
@@ -88,7 +88,7 @@ The following job groups comprise the Exchange Solution:
   data found in mailboxes and public folders in the Exchange environment
 - [8.Exchange Online Job Group](/docs/accessanalyzer/12.0/solutions/exchange/online/overview.md) – Comprised of jobs that locate sensitive data
   found in mailboxes and public folders in the Exchange environment
-- [EX_UserOverview Job](/docs/accessanalyzer/12.0/solutions/exchange/ex-useroverview.md) – provides correlation from multiple data collection
+- [EX_UserOverview Job](/docs/accessanalyzer/12.0/solutions/exchange/ex_useroverview.md) – provides correlation from multiple data collection
   points to show information for each user about their mailbox size, mailbox access rights,
   mail-flow metrics and remote connectivity to the Exchange environment. These reports provide user
   impact analysis on the environment. This job depends upon multiple job groups.
@@ -96,4 +96,4 @@ The following job groups comprise the Exchange Solution:
 The MAPI-based data collectors require both Access Analyzer MAPI CDO and Microsoft Exchange MAPI CDO
 to be installed on the Access Analyzer Console server. Once these have been installed, configure the
 **Settings** > **Exchange** node for proper connection to the Exchange server. See the
-[Exchange](/docs/accessanalyzer/12.0/administration/settings/exchange.md) topic for additional information.
+[Exchange](/docs/accessanalyzer/12.0/admin/settings/exchange.md) topic for additional information.

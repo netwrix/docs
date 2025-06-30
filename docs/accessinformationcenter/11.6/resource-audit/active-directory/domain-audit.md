@@ -153,7 +153,7 @@ The following columns display the combined direct and inherited rights:
 The Permissions report at the domain object level provides the trustees that have rights on the
 selected Active Directory object.
 
-![Permissions report at the domain object level](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/mailbox/permissions.webp)
+![Permissions report at the domain object level](/img/product_docs/accessanalyzer/11.6/admin/action/mailbox/permissions.webp)
 
 This report is comprised of the following columns:
 

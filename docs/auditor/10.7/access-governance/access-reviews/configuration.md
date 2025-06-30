@@ -122,7 +122,7 @@ connecting to the database. If your Database service account uses:
 - Windows authentication credentials — The same domain credentials are also used for the Active
   Directory service account
 
-![Configuration interface showing the Active Directory page](/img/product_docs/accessanalyzer/admin/hostdiscovery/wizard/activedirectory.webp)
+![Configuration interface showing the Active Directory page](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/activedirectory.webp)
 
 There are two options for the type of Active Directory service account:
 
@@ -158,7 +158,7 @@ The Active Directory service account password has been updated.
 Console access is configured through the Configuration > Console Access page. Adding users to the
 Access Reviews Console requires the Active Directory service account to be configured.
 
-![Configuration interface showing the Console Access page](/img/product_docs/accessanalyzer/admin/settings/access/rolebased/consoleaccess.webp)
+![Configuration interface showing the Console Access page](/img/product_docs/accessanalyzer/12.0/admin/settings/access/rolebased/consoleaccess.webp)
 
 There are two levels of access, or roles, which can be granted to domain users or groups:
 
@@ -184,7 +184,7 @@ directed after login based on their assigned role or lack of role.
 
 Follow the steps to grant domain users or groups console access.
 
-![Console Access Page](/img/product_docs/accessanalyzer/admin/settings/access/rolebased/consoleaccess.webp)
+![Console Access Page](/img/product_docs/accessanalyzer/12.0/admin/settings/access/rolebased/consoleaccess.webp)
 
 **Step 1 –** In the Configuration interface on the Console Access page, click Add. The Console
 Access wizard opens.
@@ -492,7 +492,7 @@ sent.
 The Configuration interface is available only to users with the Administrator role. It is opened by
 the **Configuration** tab.
 
-![Configuration interface showing the Console Access page](/img/product_docs/accessanalyzer/admin/settings/access/rolebased/consoleaccess.webp)
+![Configuration interface showing the Console Access page](/img/product_docs/accessanalyzer/12.0/admin/settings/access/rolebased/consoleaccess.webp)
 
 It has the following pages:
 

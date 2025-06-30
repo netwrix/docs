@@ -7,7 +7,7 @@ scheduled.
 
 _Remember,_ the credential permissions required for the scan and host lists are affected by the scan
 mode selected. See the
-[File System Scan Options](/docs/accessanalyzer/12.0/getting-started/system-requirements/solutions/filesystem/scan-options.md) topic for
+[File System Scan Options](/docs/accessanalyzer/12.0/requirements/solutions/filesystem/scanoptions.md) topic for
 additional information.
 
 Dependencies
@@ -35,7 +35,7 @@ containing all on-premise Nasuni Edge Appliances and cloud filers.
 
 If using multiple proxy servers, these should also be configured within a different custom-created
 host list. Then assign the proxy servers host list on the
-[FSAA: Applet Settings](/docs/accessanalyzer/12.0/data-collection/fsaa/applet-settings.md) page of the File System
+[FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings.md) page of the File System
 Access Auditor Data Collector Wizard within the following jobs in the 0.Collection Job Group
 according to the type of auditing being conducted:
 
@@ -48,7 +48,7 @@ necessary to target the Windows File Server Cluster (name of the cluster) of int
 scan against a Windows File System Cluster. Within the Access Analyzer Master Host Table, there
 should be a host entry for the cluster as well as for each node. Additionally, each of these host
 entries must have the name of the cluster in the WinCluster column in the host inventory data. This
-may need to be updated manually. See the [Host Inventory](/docs/accessanalyzer/12.0/administration/settings/host-inventory.md)
+may need to be updated manually. See the [Host Inventory](/docs/accessanalyzer/12.0/admin/settings/hostinventory.md)
 topic for additional information.
 
 **NOTE:** The host targeted by the File System scans is only the host entry for the cluster. For
@@ -76,8 +76,8 @@ Connection Profile
 
 The FSAA Data Collector requires permissions based on the platform being targeted for data
 collection as well as the scan mode selected. See the
-[File System Scan Options](/docs/accessanalyzer/12.0/getting-started/system-requirements/solutions/filesystem/scan-options.md) topic and the
-[File System Supported Platforms](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/filesystems.md) topic for necessary
+[File System Scan Options](/docs/accessanalyzer/12.0/requirements/solutions/filesystem/scanoptions.md) topic and the
+[File System Supported Platforms](/docs/accessanalyzer/12.0/requirements/target/filesystems.md) topic for necessary
 permissions for the supported target platforms. See the
 [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor)
 for the necessary permission for collecting activity data. Then create a custom Connection Profile
@@ -94,7 +94,7 @@ Connection Profile containing the **API Access Key** and **Passcode** for each o
 Edge Appliance and cloud filer in the target environment. Nasuni API key names are case sensitive.
 When providing them, ensure they are entered in the exact same case as generated.
 
-See the [Connection](/docs/accessanalyzer/12.0/administration/settings/connection/overview.md) topic for additional information.
+See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional information.
 
 Schedule Frequency
 
@@ -122,10 +122,10 @@ only select sub-job groups are run.
 **_RECOMMENDED:_** If only conducting one or two types of auditing, scope the solution by disabling
 the undesired collection jobs. Disabling them allows the solution to run more efficiently. It is not
 recommended to delete any jobs. See the
-[Disable or Enable a Job](/docs/accessanalyzer/12.0/administration/job-management/job/disable-enable.md) topic for additional information.
+[Disable or Enable a Job](/docs/accessanalyzer/12.0/admin/jobs/job/disableenable.md) topic for additional information.
 
 **NOTE:** If targeting Nasuni Edge Appliances, it is necessary to add the
-[0-FS_Nasuni Job](/docs/accessanalyzer/12.0/solutions/filesystem/collection/0-fs-nasuni.md) to the **0.Collection** Job Group.
+[0-FS_Nasuni Job](/docs/accessanalyzer/12.0/solutions/filesystem/collection/0-fs_nasuni.md) to the **0.Collection** Job Group.
 
 Query Configuration
 
@@ -133,98 +133,98 @@ This solution can be run with the default query configuration. However, the most
 customizations include:
 
 - Use proxy scanning architecture, see the
-  [File System Data Collection Configuration for Proxy as a Service](/docs/accessanalyzer/12.0/getting-started/installation/filesystem-proxy/configure-data-collector.md)
+  [File System Data Collection Configuration for Proxy as a Service](/docs/accessanalyzer/12.0/install/filesystemproxy/configuredatacollector.md)
   topic for instructions
 - Default Scoping Options page > File Properties tab, optionally configure the following:
 
-  - In the Scan for Probable Owner section, limit the number of probable owners to return per
-    folder
-  - In the Scan for File Types section, add comma-separated values to limit the file types
-    returned
-  - Opt to collect file Microsoft Office metadata tags and add comma-separated values to limit the
-    metadata tags collected.
-  - Set on the following **0.Collection** Job Group jobs:
+    - In the Scan for Probable Owner section, limit the number of probable owners to return per
+      folder
+    - In the Scan for File Types section, add comma-separated values to limit the file types
+      returned
+    - Opt to collect file Microsoft Office metadata tags and add comma-separated values to limit the
+      metadata tags collected.
+    - Set on the following **0.Collection** Job Group jobs:
 
-    - **1-FSAA System Scans** Job for Access Auditing
+        - **1-FSAA System Scans** Job for Access Auditing
 
 - Default Scoping Options page > File Details tab, configure the file detail collection
 
-  - By default, file detail scans are disabled
-  - Select the type of file data to be collected and optionally add filters
-  - Set on the following **0.Collection** Job Group jobs:
+    - By default, file detail scans are disabled
+    - Select the type of file data to be collected and optionally add filters
+    - Set on the following **0.Collection** Job Group jobs:
 
-    - **1-FSAA System Scans** Job for Access Auditing
+        - **1-FSAA System Scans** Job for Access Auditing
 
 - Applet Settings page, optionally configure the applet settings:
 
-  - Opt to enable strong proxy affinity (only run scans on last proxy to scan host, unless no
-    longer in proxy host list)
-  - Configure the following:
+    - Opt to enable strong proxy affinity (only run scans on last proxy to scan host, unless no
+      longer in proxy host list)
+    - Configure the following:
 
-    - Maximum concurrent scans to run on any single applet host
-    - Maximum waiting time for strong proxy affinity
-    - Scan cancellation timeout
+        - Maximum concurrent scans to run on any single applet host
+        - Maximum waiting time for strong proxy affinity
+        - Scan cancellation timeout
 
-  - Set on the following **0.Collection** Job Group jobs:
+    - Set on the following **0.Collection** Job Group jobs:
 
-    - **1-FSAA System Scans** Job for Access Auditing
-    - **1-FSAC System Scans** Job for Activity Auditing
-    - **1-SEEK System Scans** Job for Sensitive Data Discovery Auditing
+        - **1-FSAA System Scans** Job for Access Auditing
+        - **1-FSAC System Scans** Job for Activity Auditing
+        - **1-SEEK System Scans** Job for Sensitive Data Discovery Auditing
 
 - Scan Server Selection page, set the type of mode the scans will run on
 
-  - The mode configured must align with the provisioning of the credential and environment. See
-    the [File System Scan Options](/docs/accessanalyzer/12.0/getting-started/system-requirements/solutions/filesystem/scan-options.md) topic
-    and the [File System Supported Platforms](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/filesystems.md) topic for
-    additional information.
-  - Local Mode – All of the data collection processing is conducted by the Access Analyzer Console
-    server across the network
-  - Applet Mode – The File System applet is deployed to the target host when the job is executed
-    to conduct data collection. The data is collected on the Windows target host where the applet
-    is deployed. The final step in data collection is to compress and transfer the data collected
-    in the SQLite databases, or Tier 2 databases, back to the Access Analyzer Console server. If
-    the target host is a NAS device, the File System scans default to local mode for that host.
-  - Proxy Mode with Applet – The File System applet is deployed to the Windows proxy server when
-    the job is executed to conduct data collection. The data collection processing is initiated by
-    the proxy server where the applet is deployed and leverages a local mode-type scan to each of
-    the target hosts. The final step in data collection is to compress and transfer the data
-    collected in the SQLite databases, or Tier 2 databases, back to the Access Analyzer Console
-    server.
-  - Proxy Mode as a Service – The File System Proxy Service must be installed on the Windows proxy
-    servers prior to executing the scans. The data collection processing is conducted by the proxy
-    server where the service is running and leverages a local mode-type scan to each of the target
-    hosts. The final step in data collection is to compress and transfer the data collected in the
-    SQLite databases, or Tier 2 databases, back to the Access Analyzer Console server. The
-    credential granted rights to interact with the service must be included in the assigned
-    Connection Profile.
-  - Set on the following **0.Collection** Job Group jobs:
+    - The mode configured must align with the provisioning of the credential and environment. See
+      the [File System Scan Options](/docs/accessanalyzer/12.0/requirements/solutions/filesystem/scanoptions.md) topic
+      and the [File System Supported Platforms](/docs/accessanalyzer/12.0/requirements/target/filesystems.md) topic for
+      additional information.
+    - Local Mode – All of the data collection processing is conducted by the Access Analyzer Console
+      server across the network
+    - Applet Mode – The File System applet is deployed to the target host when the job is executed
+      to conduct data collection. The data is collected on the Windows target host where the applet
+      is deployed. The final step in data collection is to compress and transfer the data collected
+      in the SQLite databases, or Tier 2 databases, back to the Access Analyzer Console server. If
+      the target host is a NAS device, the File System scans default to local mode for that host.
+    - Proxy Mode with Applet – The File System applet is deployed to the Windows proxy server when
+      the job is executed to conduct data collection. The data collection processing is initiated by
+      the proxy server where the applet is deployed and leverages a local mode-type scan to each of
+      the target hosts. The final step in data collection is to compress and transfer the data
+      collected in the SQLite databases, or Tier 2 databases, back to the Access Analyzer Console
+      server.
+    - Proxy Mode as a Service – The File System Proxy Service must be installed on the Windows proxy
+      servers prior to executing the scans. The data collection processing is conducted by the proxy
+      server where the service is running and leverages a local mode-type scan to each of the target
+      hosts. The final step in data collection is to compress and transfer the data collected in the
+      SQLite databases, or Tier 2 databases, back to the Access Analyzer Console server. The
+      credential granted rights to interact with the service must be included in the assigned
+      Connection Profile.
+    - Set on the following **0.Collection** Job Group jobs:
 
-    - **1-FSAA System Scans** Job for Access Auditing
-    - **1-FSAC System Scans** Job for Activity Auditing
-    - **1-SEEK System Scans** Job for Sensitive Data Discovery Auditing
+        - **1-FSAA System Scans** Job for Access Auditing
+        - **1-FSAC System Scans** Job for Activity Auditing
+        - **1-SEEK System Scans** Job for Sensitive Data Discovery Auditing
 
 - Default Scoping Options page > Scan Settings tab, configuring the subfolder depth
 
-  - Recommendation (allows for a proper assessment on runtime for the targeted environment):
+    - Recommendation (allows for a proper assessment on runtime for the targeted environment):
 
-    - For first time execution, recommend setting to 0
-    - For second execution, recommend setting to 2
-    - Then set to the desired depth.
+        - For first time execution, recommend setting to 0
+        - For second execution, recommend setting to 2
+        - Then set to the desired depth.
 
-  - Set on the following **0.Collection** Job Group jobs:
+    - Set on the following **0.Collection** Job Group jobs:
 
-    - **1-FSAA System Scans** Job for Access Auditing
-    - **1-SEEK System Scans** Job for Sensitive Data Discovery Auditing
+        - **1-FSAA System Scans** Job for Access Auditing
+        - **1-SEEK System Scans** Job for Sensitive Data Discovery Auditing
 
 - SDD Criteria Settings page, scope to scan for specific criteria or customizing criteria for
   Sensitive Data Discovery Auditing
 
-  - Set on the **0.Collection** > **1-SEEK System Scans** Job
+    - Set on the **0.Collection** > **1-SEEK System Scans** Job
 
 - Activity Settings page, configure data retention period
 
-  - Recommendation to run with default setting of 60 days
-  - Set on the **0.Collection** > **1-FSAC System Scans** Job for Activity Auditing
+    - Recommendation to run with default setting of 60 days
+    - Set on the **0.Collection** > **1-FSAC System Scans** Job for Activity Auditing
 
 Analysis Configuration
 
@@ -238,23 +238,23 @@ Though the analysis tasks should not be deselected, the following parameters can
   and users with large tokens. These parameters can be customized and are applicable to any
   solution, including File System, which incorporate this analyzed data into further analysis.
 
-  - Customize within **.Active Directory Inventory** > **3-AD_Exceptions** Job analysis tasks
+    - Customize within **.Active Directory Inventory** > **3-AD_Exceptions** Job analysis tasks
 
 - Activity Exception parameters which identify potential security concerns
 
-  - Customize within **0.Collection** > **3-FSAC Exceptions** Job analysis tasks
+    - Customize within **0.Collection** > **3-FSAC Exceptions** Job analysis tasks
 
 - Broken inheritance is defined by default to only analyze resources with changed permissions from
   parent
 
-  - Customize within **3.Broken Inheritance** > **FS_BrokenInheritance** Job analysis task
+    - Customize within **3.Broken Inheritance** > **FS_BrokenInheritance** Job analysis task
 
 - Probable owner calculations include folder depth parameters
 
-  - Customize within **6.Probable Owner** > **FS_ProbableOwner** Job analysis task
+    - Customize within **6.Probable Owner** > **FS_ProbableOwner** Job analysis task
 
-    **NOTE:** Changes to an exception’s definition will impact all jobs dependent upon that
-    exception as well as all AIC Active Directory Exceptions reports.
+        **NOTE:** Changes to an exception’s definition will impact all jobs dependent upon that
+        exception as well as all AIC Active Directory Exceptions reports.
 
 There are also a few Notification analysis tasks which can be configured and then enabled in the
 following jobs:

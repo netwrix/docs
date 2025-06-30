@@ -9,7 +9,7 @@ On the Active Directory page, you can access all the domains that you have confi
 
 Click **Active Directory** in the left pane to open the Active Directory page.
 
-![Active Directory page](/img/product_docs/accessanalyzer/admin/hostdiscovery/wizard/activedirectory.webp)
+![Active Directory page](/img/product_docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/activedirectory.webp)
 
 Select a domain from the drop-down menu and expand it to view the domain tree and container
 structure, which is exactly the same as you get in Active Directory Users and Computers. Objects in

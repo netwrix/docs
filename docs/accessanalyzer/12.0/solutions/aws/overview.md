@@ -25,7 +25,7 @@ Supported Platforms
 Requirements, Permissions, and Ports
 
 See the
-[Target Amazon Web Service Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/aws.md)
+[Target Amazon Web Service Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/target/aws.md)
 topic for additional information.
 
 Sensitive Data Discovery Considerations
@@ -42,7 +42,7 @@ conflict with other JDKs or Java Runtimes in the same environment.
 Location
 
 The AWS Solution requires a special Access Analyzer license. It can be installed from the Access
-Analyzer Instant Job Wizard. See the [Instant Job Wizard](/docs/accessanalyzer/12.0/administration/job-management/instant-jobs/overview.md)
+Analyzer Instant Job Wizard. See the [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md)
 topic for information on installing instant solutions from the Access Analyzer Library.
 
 Once it has been installed into the Jobs tree, navigate to the solution: **Jobs** > **AWS**.
@@ -53,7 +53,7 @@ The AWS solution is a comprehensive set of pre-configured audit jobs and report
 visibility into IAM users, groups, roles, and policies, as well as S3 permissions, content, and
 sensitive data from target AWS accounts.
 
-![AWS Solution Overview page](/img/product_docs/accessanalyzer/admin/runninginstances/overviewpage.webp)
+![AWS Solution Overview page](/img/product_docs/accessanalyzer/12.0/solutions/aws/overviewpage.webp)
 
 The AWS Solution is comprised of the following job groups:
 

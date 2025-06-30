@@ -15,14 +15,14 @@ PowerShell Data Collector. The host list needs to be set to one of the following
 - Local Host
 - Custom Host List for Exchange Online
 
-  - The host list should include the tenant name of the Microsoft Entra tenant used to connect to
-    Exchange Online. See the
-    [Exchange Online Host List](/docs/accessanalyzer/12.0/data-collection/exchange-ps/configure-job.md#exchange-online-host-list)
-    topic for additional information.
+    - The host list should include the tenant name of the Microsoft Entra tenant used to connect to
+      Exchange Online. See the
+      [Exchange Online Host List](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/configurejob.md#exchange-online-host-list)
+      topic for additional information.
 
 Connection Profile
 
-See the [Exchange PowerShell Permissions](/docs/accessanalyzer/12.0/getting-started/system-requirements/solutions/exchange/powershell.md)
+See the [Exchange PowerShell Permissions](/docs/accessanalyzer/12.0/requirements/solutions/exchange/powershell.md)
 topic for the EX_Mailflow job requirements.
 
 Additionally, the Exchange Online job group needs access to the following Exchange Online URLs to
@@ -33,7 +33,7 @@ perform collection:
 - EWS – https://outlook.office365.com/EWS/Exchange.asmx
 
 See the
-[Exchange Custom Connection Profile & Host List](/docs/accessanalyzer/12.0/data-collection/exchange-ps/configure-job.md)
+[Exchange Custom Connection Profile & Host List](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/configurejob.md)
 topic for additional information.
 
 Schedule Frequency
@@ -74,8 +74,8 @@ Workflow
 - The **Mailflow** > **0. Collection** > **EX_Mailflow** job needs to be set to run against one of
   the following:
 
-  - Local Host
-  - Custom Host List
+    - Local Host
+    - Custom Host List
 
 **Step 2 –** Set a Connection Profile on the jobs which run data collection.
 

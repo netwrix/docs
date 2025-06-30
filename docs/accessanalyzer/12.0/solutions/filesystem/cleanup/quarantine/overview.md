@@ -2,17 +2,17 @@
 
 The 3. Quarantine job group is designed to report on and quarantine files that are pending cleanup.
 
-![3. Quarantine Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![3. Quarantine Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/cleanup/quarantine/jobstree.webp)
 
 This job group includes the following jobs:
 
-- [FS_QuarantineData Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/quarantine/fs-quarantinedata.md) – Designed to quarantine files subject to be cleaned
+- [FS_QuarantineData Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/quarantine/fs_quarantinedata.md) – Designed to quarantine files subject to be cleaned
   up
-- [FS_QuarantineData_Status Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/quarantine/fs-quarantinedata-status.md) – Designed to report on the
+- [FS_QuarantineData_Status Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/quarantine/fs_quarantinedata_status.md) – Designed to report on the
   FS_QuarantineData job
-- [FS_RestoreInheritance Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/quarantine/fs-restoreinheritance.md) – Designed to restore inheritance to
+- [FS_RestoreInheritance Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/quarantine/fs_restoreinheritance.md) – Designed to restore inheritance to
   previously quarantined files
-- [FS_RestoreInheritance_Status Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/quarantine/fs-restoreinheritance-status.md) – Designed to report on
+- [FS_RestoreInheritance_Status Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/quarantine/fs_restoreinheritance_status.md) – Designed to report on
   inheritance that was restored to previously quarantined files
 
 Workflow

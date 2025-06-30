@@ -338,12 +338,12 @@ the owners:
   Tool-tips display when hovering over the icons indicating whether the resource ownership has been
   confirmed, declined, pending response, or that a confirmation has not been requested.
 
-![Add new resource wizard showing 3. Description page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/servicenow/description.webp)
+![Add new resource wizard showing 3. Description page](/img/product_docs/accessanalyzer/11.6/admin/action/servicenow/description.webp)
 
 **Step 5 –** On the Description page, optionally add a description for the resource in the textbox.
 Then click **Next**.
 
-![Add new resource wizard showing 4. Summary page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![Add new resource wizard showing 4. Summary page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/adinventory/summary.webp)
 
 **Step 6 –** On the Summary page, review the settings and click Finish. The Access Reviews
 application begins to process the ownership configuration.
@@ -443,13 +443,13 @@ information on the owners:
   Tool-tips display when hovering over the icons indicating whether the resource ownership has been
   confirmed, declined, pending response, or that a confirmation has not been requested.
 
-![Update resource wizard showing 2. Description page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/servicenow/description.webp)
+![Update resource wizard showing 2. Description page](/img/product_docs/accessanalyzer/11.6/admin/action/servicenow/description.webp)
 
 **Step 3 –** The Description page displays any description that has been provided by either the
 Ownership Administrator or the assigned owner(s) for the resource. Modify as desired by typing in
 the textbox. Then click **Next** to continue.
 
-![Update resource wizard showing 3. Summary page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![Update resource wizard showing 3. Summary page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/adinventory/summary.webp)
 
 **Step 4 –** On the Summary page, review the settings and click Finish. The Access Reviews
 application begins to process the ownership changes.

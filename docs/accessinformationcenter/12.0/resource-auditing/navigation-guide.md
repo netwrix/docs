@@ -37,7 +37,7 @@ The report for the selected resource displays in the Results pane.
 The Results pane displays report data based on the selections in both the Resources pane and the
 Reports pane. Reports may consist of multiple tables and graphs.
 
-![Results pane](/img/product_docs/accessanalyzer/admin/navigate/resultspane.webp)
+![Results pane](/img/product_docs/accessanalyzer/12.0/admin/navigate/resultspane.webp)
 
 Tables and graphs that display at the bottom of the pane vary according to the selected report. See
 the [Data Grid Features](/docs/accessinformationcenter/12.0/access-management/data-grid-operations/index.md) topic for additional information on table
@@ -91,7 +91,7 @@ For example, if the **Writes** operation is deselected, only the operations of *
 The Group Membership pane list members for an Active Directory or Entra ID group selected in the
 Results pane. Groups can also be searched for using the textbox at the top of the pane.
 
-![Group Membership pane](/img/product_docs/accessanalyzer/admin/action/activedirectory/operations/groupmembership.webp)
+![Group Membership pane](/img/product_docs/accessanalyzer/12.0/admin/action/activedirectory/operations/groupmembership.webp)
 
 All group members are listed, including any nested group membership. The **Change Group Membership**
 button displays any access changes being modeled. This is a primary component of change modeling.

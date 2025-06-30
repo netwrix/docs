@@ -4,7 +4,7 @@ The Platforms page is accessible from the Navigation pane under Policies. The me
 displays all the supported platform types and previously configured platforms. This allows
 administrators to apply default configurations across all resources defined by that platform type.
 
-![Platforms Page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/hostdiscovery/wizard/activedirectory.webp)
+![Platforms Page](/img/product_docs/accessanalyzer/11.6/admin/hostdiscovery/wizard/activedirectory.webp)
 
 The pane on the left side of the page displays a list of the configured platforms. The pane has the
 following features:

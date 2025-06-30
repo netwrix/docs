@@ -146,7 +146,7 @@ the owners:
   Tool-tips display when hovering over the icons indicating whether the resource ownership has been
   confirmed, declined, pending response, or that a confirmation has not been requested.
 
-![Add new resource wizard showing 3. Description page](/img/product_docs/accessanalyzer/admin/action/servicenow/description.webp)
+![Add new resource wizard showing 3. Description page](/img/product_docs/accessanalyzer/12.0/admin/action/servicenow/description.webp)
 
 **Step 5 –** On the Description page, optionally add a description for the resource in the textbox.
 Then click **Next**.
@@ -174,7 +174,7 @@ group appears in the table. Repeat this step for each access level desired. See 
 
 **Step 8 –** Click **Next** to continue.
 
-![Add new resource wizard showing 5. Summary page](/img/product_docs/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![Add new resource wizard showing 5. Summary page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/summary.webp)
 
 **Step 9 –** On the Summary page, review the settings and click **Next**. The Access Information
 Center begins to process the ownership configuration.
@@ -305,7 +305,7 @@ exclamation icon. You can not continue with the import if any row contains an in
 owner. To remove a resource from the table, select the row and click **Remove**. The row is removed
 from the table.
 
-![Import Owners wizard 2. Options page](/img/product_docs/accessanalyzer/install/application/options.webp)
+![Import Owners wizard 2. Options page](/img/product_docs/accessanalyzer/12.0/install/application/options.webp)
 
 **Step 4 –** On the Options page, configure the available options as required.
 
@@ -386,7 +386,7 @@ information on the owners:
   Tool-tips display when hovering over the icons indicating whether the resource ownership has been
   confirmed, declined, pending response, or that a confirmation has not been requested.
 
-![Update resource wizard showing 2. Description page](/img/product_docs/accessanalyzer/admin/action/servicenow/description.webp)
+![Update resource wizard showing 2. Description page](/img/product_docs/accessanalyzer/12.0/admin/action/servicenow/description.webp)
 
 **Step 3 –** The Description page displays any description that has been provided by either the
 Ownership Administrator or the assigned owner(s) for the resource. Modify as desired by typing in
@@ -409,7 +409,7 @@ is necessary to set a group for at least one access level. Select the desired ac
 Group window closes and the group appears in the table. Repeat this step for each access level
 desired. See the [Select Group Window](/docs/accessinformationcenter/12.0/access-management/resource-owners/managing-owners.md) topic for additional information.
 
-![Update resource wizard showing 4. Summary page](/img/product_docs/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![Update resource wizard showing 4. Summary page](/img/product_docs/accessanalyzer/12.0/admin/datacollector/adinventory/summary.webp)
 
 **Step 5 –** On the Summary page, review the settings and click **Next**. The Access Information
 Center begins to process the ownership configuration.

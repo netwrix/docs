@@ -8,13 +8,13 @@ the required information before job execution.
 
 **_RECOMMENDED:_** Run these jobs independently of the solution.
 
-![Ad Hoc Audits Job Group](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Ad Hoc Audits Job Group](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/adhocaudits/jobstree.webp)
 
 The Ad Hoc Audits Job Group is comprised of:
 
-- [FS_ShareAudit Job](/docs/accessanalyzer/12.0/solutions/filesystem/adhocaudits/fs-shareaudit.md) – Designed to report on shares from targeted file servers
+- [FS_ShareAudit Job](/docs/accessanalyzer/12.0/solutions/filesystem/adhocaudits/fs_shareaudit.md) – Designed to report on shares from targeted file servers
   based on user input
-- [FS_TrusteePermissions Job](/docs/accessanalyzer/12.0/solutions/filesystem/adhocaudits/fs-trusteepermissions.md) – Designed to report on trustees from
+- [FS_TrusteePermissions Job](/docs/accessanalyzer/12.0/solutions/filesystem/adhocaudits/fs_trusteepermissions.md) – Designed to report on trustees from
   targeted file servers based on user input
 
 For both of these jobs, the host list is set to Local host at the job level. The assigned Connection

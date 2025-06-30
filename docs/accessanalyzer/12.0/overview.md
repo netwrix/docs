@@ -33,7 +33,7 @@ accessed by other Access Analyzer solutions and the Netwrix Access Information C
 
 This is a core solution available to all Access Analyzer users.
 
-See the [.Active Directory Inventory Solution](/docs/accessanalyzer/12.0/solutions/active-directory-inventory/overview.md) topic
+See the [.Active Directory Inventory Solution](/docs/accessanalyzer/12.0/solutions/activedirectoryinventory/overview.md) topic
 for additional information.
 
 ### .Entra ID Inventory Solution
@@ -72,7 +72,7 @@ The Active Directory Solution is designed to provide the information every admin
 regarding Active Directory configuration, operational management, troubleshooting, analyzing
 effective permissions, and tracking who is making what changes within your organization.
 
-See the [Active Directory Solution](/docs/accessanalyzer/12.0/solutions/active-directory/overview.md) topic for additional
+See the [Active Directory Solution](/docs/accessanalyzer/12.0/solutions/activedirectory/overview.md) topic for additional
 information.
 
 ### Active Directory Permissions Analyzer Solution
@@ -82,7 +82,7 @@ effective permissions applied to any and all Active Directory objects, at any sc
 the most authoritative view available of who has access to what in Active Directory.
 
 See the
-[Active Directory Permissions Analyzer Solution](/docs/accessanalyzer/12.0/solutions/active-directory-permissions-analyzer/overview.md)
+[Active Directory Permissions Analyzer Solution](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/overview.md)
 topic for additional information.
 
 ### Amazon Web Services Solution
@@ -101,7 +101,7 @@ regarding Microsoft Entra ID configuration, operational management, and trouble
 within this group help pinpoint potential areas of administrative and security concerns related to
 Microsoft Entra ID users and groups, including syncing with on-premises Active Directory.
 
-See the [Entra ID Solution](/docs/accessanalyzer/12.0/solutions/entra-id/overview.md) topic for additional information.
+See the [Entra ID Solution](/docs/accessanalyzer/12.0/solutions/entraid/overview.md) topic for additional information.
 
 ### Box Solution
 

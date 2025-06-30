@@ -3,13 +3,13 @@
 The 4. Delete job group is designed to report on and take action against resources from targeted
 file servers that can be deleted.
 
-![4. Delete Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![4. Delete Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/cleanup/delete/jobstree.webp)
 
 This job group includes the following jobs:
 
-- [FS_DeleteFiles Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/delete/fs-deletefiles.md) – Designed to delete resources from targeted file servers
+- [FS_DeleteFiles Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/delete/fs_deletefiles.md) – Designed to delete resources from targeted file servers
   that were previously quarantined and can be deleted
-- [FS_DeleteFiles_Status Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/delete/fs-deletefiles-status.md) – Designed to report on deleted resources
+- [FS_DeleteFiles_Status Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/delete/fs_deletefiles_status.md) – Designed to report on deleted resources
   from targeted file servers that were deleted from the DeleteFiles job
 
 Workflow

@@ -23,10 +23,10 @@ through host inventory results.
 Connection Profile
 
 A Connection Profile must be set directly on the EX_MetricsCollection Job and the EX_MetricsDetails
-Job. See the [Exchange Mail-Flow Permissions](/docs/accessanalyzer/12.0/getting-started/system-requirements/solutions/exchange/mail-flow.md)
+Job. See the [Exchange Mail-Flow Permissions](/docs/accessanalyzer/12.0/requirements/solutions/exchange/mailflow.md)
 topic for required permissions.
 
-See the [Connection](/docs/accessanalyzer/12.0/administration/settings/connection/overview.md) topic for additional
+See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.
 
 Schedule Frequency
@@ -47,7 +47,7 @@ Modify the following analysis tasks to customize the amount of history which is 
 | EX_MetricsCollection | SET HISTORY RETENTION | 6 Months        |
 | EX_MetricsDetails    | SET HISTORY RETENTION | 6 Months        |
 
-See the [Exchange History Retention](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/collection/ex-metricscollection.md#exchange-history-retention)
+See the [Exchange History Retention](collection/ex_metricscollection.md#exchange-history-retention)
 topic for additional information.
 
 Query Configuration
@@ -59,7 +59,7 @@ following exceptions:
 - All queries in the 1.HUB Metrics Job Group that use the ExchangeMetrics Data Collector –
   (Optional) The **Enable Persistent Log State** option can be enabled on the Options page of the
   Exchange Metrics Data Collector Wizard to search the log from where the previous search left off.
-  See the [ExchangeMetrics: Options](/docs/accessanalyzer/12.0/data-collection/exchange-metrics/options.md) topic
+  See the [ExchangeMetrics: Options](/docs/accessanalyzer/12.0/admin/datacollector/exchangemetrics/options.md) topic
   for additional information.
 
 Analysis Configuration

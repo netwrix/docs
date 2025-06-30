@@ -1,7 +1,7 @@
 # CDSA Job
 
 The CDSA Job is available through the Instant Job Library under the CDSA library. See the
-[Instant Job Wizard](/docs/accessanalyzer/12.0/administration/job-management/instant-jobs/overview.md) topic for instructions of how to add
+[Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for instructions of how to add
 this instant job to the Jobs tree. When installing the job, select **Local host** on the Host pages
 of the Instant Job Wizard.
 
@@ -13,14 +13,14 @@ The CDSA job generates three PowerPoint files:
 
 - For the Presenter
 
-  - The **Netwrix_CDSA_Presentation.pptx** file is designed to be presented live to the customer
+    - The **Netwrix_CDSA_Presentation.pptx** file is designed to be presented live to the customer
 
 - For the Customer as printable assets
 
-  - The **Netwrix_CDSA_8.5x11_Presentation.pptx** file is designed to be given to the customer for
-    self-review as a PDF file
-  - The **Netwrix_CDSA_A4_Presentation.pptx** file is designed to be given to the customer for
-    self-review as a PDF file
+    - The **Netwrix_CDSA_8.5x11_Presentation.pptx** file is designed to be given to the customer for
+      self-review as a PDF file
+    - The **Netwrix_CDSA_A4_Presentation.pptx** file is designed to be given to the customer for
+      self-review as a PDF file
 
 **CAUTION:** Do not send any these presentations to a customer in PowerPoint format.
 

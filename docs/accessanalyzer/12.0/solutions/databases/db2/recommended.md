@@ -10,17 +10,17 @@ Dependencies
 - Successful installation of the IBM Data Server Client. In addition, the following clients and
   drivers must be installed:
 
-  - IBM Data Server Driver Package (DS Driver)
-  - IBM Data Server Driver for JDBC and SQLJ (JCC Driver)
-  - IBM Data Server Driver for ODBC and CLI (CLI Driver)
-  - IBM Data Server Runtime Client
-  - IBM Data Server Client
-  - IBM Database Add-Ins for Visual Studio
-  - IBM .NET Driver NuGet
+    - IBM Data Server Driver Package (DS Driver)
+    - IBM Data Server Driver for JDBC and SQLJ (JCC Driver)
+    - IBM Data Server Driver for ODBC and CLI (CLI Driver)
+    - IBM Data Server Runtime Client
+    - IBM Data Server Client
+    - IBM Database Add-Ins for Visual Studio
+    - IBM .NET Driver NuGet
 
-  **NOTE:** All necessary clients and drivers can be found on IBM Support's
-  [Download initial version 11.5 clients and drivers](https://www.ibm.com/support/pages/download-initial-version-115-clients-and-drivers)
-  page.
+    **NOTE:** All necessary clients and drivers can be found on IBM Support's
+    [Download initial version 11.5 clients and drivers](https://www.ibm.com/support/pages/download-initial-version-115-clients-and-drivers)
+    page.
 
 - .Instance Discovery Job Group run successfully
 
@@ -38,7 +38,7 @@ The SQL Data Collector requires a specific set of permissions. See the Permissio
 necessary permissions. The account used can be either an Active Directory account or a SQL account.
 Once the account has been provisioned, create a custom Connection Profile containing the credentials
 for the targeted environment. See the
-[SQL Custom Connection Profile & Default Dynamic Host List](/docs/accessanalyzer/12.0/data-collection/sql/configure-job.md)
+[SQL Custom Connection Profile & Default Dynamic Host List](/docs/accessanalyzer/12.0/admin/datacollector/sql/configurejob.md)
 topic for additional information.
 
 The Connection Profile should be assigned under the Databases > 0.Collection > Db2 > Settings >
@@ -47,7 +47,7 @@ However, since this may not be the Connection Profile with the necessary permiss
 assigned hosts, click the radio button for the Select one of the following user defined profiles
 option and select the appropriate Connection Profile drop-down menu.
 
-See the [Connection](/docs/accessanalyzer/12.0/administration/settings/connection/overview.md) topic for additional
+See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.
 
 Schedule Frequency

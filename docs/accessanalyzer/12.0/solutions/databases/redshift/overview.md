@@ -15,7 +15,7 @@ Supported Platforms
 Requirements, Permissions, and Ports
 
 See the
-[Target Redshift Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/database-redshift.md)
+[Target Redshift Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/target/databaseredshift.md)
 topic for additional information.
 
 Sensitive Data Discovery Considerations
@@ -50,7 +50,7 @@ sensitive data.
 The Access Analyzer Redshift  Solution Set is a set of preconfigured audit jobs and reports that
 provides visibility into Redshift Sensitive Data.
 
-![redshiftjobgrpoverview](/img/product_docs/accessanalyzer/solutions/databases/redshift/redshiftjobgrpoverview.webp)
+![redshiftjobgrpoverview](/img/product_docs/accessanalyzer/12.0/solutions/databases/redshift/redshiftjobgrpoverview.webp)
 
 The following job groups comprise the Redshift Job Group:
 
@@ -59,17 +59,17 @@ The following job groups comprise the Redshift Job Group:
   further analysis and producing respective report. This Job Group is comprised of the following
   jobs(s)
 
-  - [Redshift_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/collection/redshift-configuration.md)
-  - [Redshift_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/collection/redshift-sensitivedatascan.md)
-  - [Redshift_TablePrivileges Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/collection/redshift-tableprivileges.md)
+    - [Redshift_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/collection/redshift_configuration.md)
+    - [Redshift_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/collection/redshift_sensitivedatascan.md)
+    - [Redshift_TablePrivileges Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/collection/redshift_tableprivileges.md)
 
-- [Configuration > Redshift_DatabaseSizing Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/redshift-databasesizing.md) — Provides insight into
+- [Configuration > Redshift_DatabaseSizing Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/redshift_databasesizing.md) — Provides insight into
   details about the Redshift environment and potential vulnerabilities relating to instance
   configuration settings.
 
-- [Sensitive Data Job Group](/docs/accessanalyzer/12.0/solutions/databases/redshift/sensitive-data/overview.md) — Provides insight into where sensitive
+- [Sensitive Data Job Group](/docs/accessanalyzer/12.0/solutions/databases/redshift/sensitive_data/overview.md) — Provides insight into where sensitive
   data exists and who has access to it across all the targeted Redshift databases.This Job Group is
   comprised of the following job(s):
 
-  - [Redshift_SensitiveData Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/sensitive-data/redshift-sensitivedata.md)
-  - [Redshift_SensitiveDataPermissions Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/sensitive-data/redshift-sensitivedatapermissions.md)
+    - [Redshift_SensitiveData Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/sensitive_data/redshift_sensitivedata.md)
+    - [Redshift_SensitiveDataPermissions Job](/docs/accessanalyzer/12.0/solutions/databases/redshift/sensitive_data/redshift_sensitivedatapermissions.md)

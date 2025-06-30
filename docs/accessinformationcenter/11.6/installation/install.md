@@ -23,7 +23,7 @@ desired, click **Next**.
 **NOTE:** The default location is `C:\Program Files\STEALTHbits\Access Information Center\`. There
 are no specific requirements for changing the path.
 
-![AIC Setup Wizard SQL Server Connection page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/sqlserver.webp)
+![AIC Setup Wizard SQL Server Connection page](/img/product_docs/accessanalyzer/11.6/install/application/sqlserver.webp)
 
 **Step 5 –** On the SQL Server Connection page, provide the required database information. Click
 Next to test the connection to the SQL Server. If there are no errors, the next wizard page will
@@ -52,7 +52,7 @@ installation. See the
 [Database Page](/docs/accessinformationcenter/11.6/administration/configuration/database.md)
 topic for additional information.
 
-![AIC Setup Wizard Configure Web Server page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/survey/webserver.webp)
+![AIC Setup Wizard Configure Web Server page](/img/product_docs/accessanalyzer/11.6/admin/action/survey/webserver.webp)
 
 **Step 6 –** On the Configure Web Server page, you can choose between the default port and a custom
 port on which the application will be accessible. To change the port, enter a new port number in the
@@ -62,7 +62,7 @@ field. When the port is set as desired, click **Next**.
 
 **Step 7 –** On the Ready to install page, click Install to begin the process.
 
-![AIC Setup Wizard Completed page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![AIC Setup Wizard Completed page](/img/product_docs/accessanalyzer/11.6/install/sensitivedatadiscovery/completed.webp)
 
 **Step 8 –** Once the installation has successfully completed, click Finish to exit the wizard.
 

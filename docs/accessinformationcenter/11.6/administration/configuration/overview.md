@@ -3,7 +3,7 @@
 The Configuration interface is available only to users with the Administrator role. It is opened by
 the **Configure Console** link on the Home page.
 
-![Configuration interface showing the Console Access page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/settings/access/rolebased/consoleaccess.webp)
+![Configuration interface showing the Console Access page](/img/product_docs/accessanalyzer/11.6/admin/settings/access/rolebased/consoleaccess.webp)
 
 It has the following pages:
 

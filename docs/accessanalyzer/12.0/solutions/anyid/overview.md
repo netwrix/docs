@@ -29,10 +29,10 @@ activities involve consumer, patient, resident, and other subject data.
 ## Location
 
 The AnyID Connectors Solution requires a special Access Analyzer license. It can be installed from
-the Instant Job Wizard. See the [Instant Job Wizard](/docs/accessanalyzer/12.0/administration/job-management/instant-jobs/overview.md) topic
+the Instant Job Wizard. See the [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic
 for additional information.
 
-![AnyID Connectors Solution in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![AnyID Connectors Solution in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/anyid/jobstree.webp)
 
 Once installed into the Jobs tree, navigate to the solution: **Jobs** > **AnyID Connectors**.
 
@@ -48,19 +48,19 @@ attributes about potential subjects which are then used by Access Analyzer’s S
 Discovery engine to perform exact data matching against virtually any cloud or on-premises data
 repository.
 
-![AnyID Connectors Solution Overview page](/img/product_docs/accessanalyzer/admin/runninginstances/overviewpage.webp)
+![AnyID Connectors Solution Overview page](/img/product_docs/accessanalyzer/12.0/solutions/anyid/overviewpage.webp)
 
 The jobs in the AnyID Connectors Solution are:
 
-- [AnyID_CSV Job](/docs/accessanalyzer/12.0/solutions/anyid/anyid-csv.md) – Imports a list of identities and attributes from a CSV file. Use
+- [AnyID_CSV Job](/docs/accessanalyzer/12.0/solutions/anyid/anyid_csv.md) – Imports a list of identities and attributes from a CSV file. Use
   this when a native integration may not be available, or an export is the best option.
-- [AnyID_EpicClarity Job](/docs/accessanalyzer/12.0/solutions/anyid/anyid-epicclarity.md) – Collects patient information from Epic including
+- [AnyID_EpicClarity Job](/docs/accessanalyzer/12.0/solutions/anyid/anyid_epicclarity.md) – Collects patient information from Epic including
   MRNs, SSNs, Subscriber IDs, and Account IDs. An account with read access to the underlying Clarity
   Oracle database is required in order to run queries.
-- [AnyID_Paycom Job](/docs/accessanalyzer/12.0/solutions/anyid/anyid-paycom.md) – Pulls employee information from Paycom including Name,
+- [AnyID_Paycom Job](/docs/accessanalyzer/12.0/solutions/anyid/anyid_paycom.md) – Pulls employee information from Paycom including Name,
   Address, Date of Birth, and SSN. Contact your Paycom administrator in order to generate the CSV
   export required for this job.
-- [AnyID_Salesforce Job](/docs/accessanalyzer/12.0/solutions/anyid/anyid-salesforce.md) – Collects Salesforce Contact details including Phone,
+- [AnyID_Salesforce Job](/docs/accessanalyzer/12.0/solutions/anyid/anyid_salesforce.md) – Collects Salesforce Contact details including Phone,
   Address, Email, and Date of birth. This job requires API access to Salesforce in order to collect
   this information.
 

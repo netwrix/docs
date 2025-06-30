@@ -69,7 +69,7 @@ the owners:
   Tool-tips display when hovering over the icons indicating whether the resource ownership has been
   confirmed, declined, pending response, or that a confirmation has not been requested.
 
-![Add new resource wizard showing 3. Description page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/servicenow/description.webp)
+![Add new resource wizard showing 3. Description page](/img/product_docs/accessanalyzer/11.6/admin/action/servicenow/description.webp)
 
 **Step 5 –** On the Description page, optionally add a description for the resource in the textbox.
 Then click **Next**.
@@ -98,12 +98,12 @@ topic for additional information.
 
 **Step 8 –** Click **Next** to continue.
 
-![Add new resource wizard showing 5. Summary page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![Add new resource wizard showing 5. Summary page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/adinventory/summary.webp)
 
 **Step 9 –** On the Summary page, review the settings and click **Next**. The Access Information
 Center begins to process the ownership configuration.
 
-![Add new resource wizard completed page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Add new resource wizard completed page](/img/product_docs/accessanalyzer/11.6/install/sensitivedatadiscovery/completed.webp)
 
 **Step 10 –** The action status displays on the page. When the task has completed (100%), click
 **Close**. The Add new resource wizard closes.
@@ -146,7 +146,7 @@ Center begins to send the confirmation email. The table provides the following i
   Tool-tips display when hovering over the icons indicating whether the resource ownership has been
   confirmed, declined, pending response, or that a confirmation has not been requested.
 
-![Owners have been notified message](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Owners have been notified message](/img/product_docs/accessanalyzer/11.6/install/sensitivedatadiscovery/completed.webp)
 
 **Step 3 –** The action status displays on the page. When the owner confirmation notification has
 completed (100%), click Close. The Confirm Ownership wizard closes.
@@ -232,7 +232,7 @@ exclamation icon. You can not continue with the import if any row contains an in
 owner. To remove a resource from the table, select the row and click **Remove**. The row is removed
 from the table.
 
-![Import Owners wizard 2. Options page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/application/options.webp)
+![Import Owners wizard 2. Options page](/img/product_docs/accessanalyzer/11.6/install/application/options.webp)
 
 **Step 4 –** On the Options page, configure the available options as required.
 
@@ -249,7 +249,7 @@ from the table.
 
 **Step 5 –** Click **Next**. The Access Information Center will begin to process the import.
 
-![Import Owners wizard completed import page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Import Owners wizard completed import page](/img/product_docs/accessanalyzer/11.6/install/sensitivedatadiscovery/completed.webp)
 
 **Step 6 –** The action status displays on the page. When the update has completed (100%), click
 **Close**. The Import Owners wizard closes.
@@ -315,7 +315,7 @@ information on the owners:
   Tool-tips display when hovering over the icons indicating whether the resource ownership has been
   confirmed, declined, pending response, or that a confirmation has not been requested.
 
-![Update resource wizard showing 2. Description page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/action/servicenow/description.webp)
+![Update resource wizard showing 2. Description page](/img/product_docs/accessanalyzer/11.6/admin/action/servicenow/description.webp)
 
 **Step 3 –** The Description page displays any description that has been provided by either the
 Ownership Administrator or the assigned owner(s) for the resource. Modify as desired by typing in
@@ -340,12 +340,12 @@ desired. See the
 [Select Group Window](/docs/accessinformationcenter/11.6/access-management/resource-owners/manage-owners.md)
 topic for additional information.
 
-![Update resource wizard showing 4. Summary page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/admin/datacollector/adinventory/summary.webp)
+![Update resource wizard showing 4. Summary page](/img/product_docs/accessanalyzer/11.6/admin/datacollector/adinventory/summary.webp)
 
 **Step 5 –** On the Summary page, review the settings and click **Next**. The Access Information
 Center begins to process the ownership configuration.
 
-![Update resource wizard completed page](/img/versioned_docs/accessanalyzer_11.6/accessanalyzer/install/sensitivedatadiscovery/completed.webp)
+![Update resource wizard completed page](/img/product_docs/accessanalyzer/11.6/install/sensitivedatadiscovery/completed.webp)
 
 **Step 6 –** The action status displays on the page. When the update has completed (100%), click
 **Close**. The Update resource wizard closes.

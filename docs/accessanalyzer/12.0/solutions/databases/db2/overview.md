@@ -11,7 +11,7 @@ Supported Platforms
 Requirements, Permissions, and Ports
 
 See the
-[Target Db2 Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/getting-started/system-requirements/target/database-db2.md) topic
+[Target Db2 Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/target/databasedb2.md) topic
 for additional information.
 
 Sensitive Data Discovery Considerations
@@ -45,7 +45,7 @@ The Access Analyzer Db2 Solution is a comprehensive set of preconfigured audit j
 provide visibility into various aspects of a Db2 Databases: Sensitive Data Discovery and Objects
 Permissions.
 
-![Db2 Overview](/img/product_docs/threatprevention/threatprevention/siemdashboard/qradar/dashboard/overview.webp)
+![Db2 Overview](/img/product_docs/accessanalyzer/12.0/solutions/databases/db2/overview.webp)
 
 The following comprises the Db2 solution:
 
@@ -53,7 +53,7 @@ The following comprises the Db2 solution:
   targeted Db2 Servers. This information is used by other jobs in the Db2 Solution Set for further
   analysis and producing respective report.
 
-- [Configuration > Db2_DatabaseSizing Job](/docs/accessanalyzer/12.0/solutions/databases/db2/db2-databasesizing.md) — Provides insight into Db2 server
+- [Configuration > Db2_DatabaseSizing Job](/docs/accessanalyzer/12.0/solutions/databases/db2/db2_databasesizing.md) — Provides insight into Db2 server
   configuration settings
 
 - [Permissions Job Group](/docs/accessanalyzer/12.0/solutions/databases/db2/permissions/overview.md)— Provides insight into all types of permissions

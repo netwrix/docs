@@ -88,7 +88,7 @@ information.
 The Application Details page provides information about an application registered in Microsoft Entra
 ID.
 
-![Entra ID Application Page](/img/product_docs/accessanalyzer/admin/settings/application/application.webp)
+![Entra ID Application Page](/img/product_docs/accessanalyzer/12.0/admin/settings/application/application.webp)
 
 The top of the page displays a profile card which may contain the following information about the
 application:
@@ -402,7 +402,7 @@ information.
 The Role Details page provides information about a role including its description and role
 membership.
 
-![Roles Page](/img/product_docs/accessanalyzer/requirements/target/config/roles.webp)
+![Roles Page](/img/product_docs/accessanalyzer/12.0/requirements/target/config/roles.webp)
 
 The top of the page displays a profile card which may contain the following information about the
 role:
@@ -798,7 +798,7 @@ export the current rows displayed on the page into a CSV file.
 
 The Group Membership tab displays groups in which the user is a member.
 
-![groupmembership](/img/product_docs/accessanalyzer/admin/action/activedirectory/operations/groupmembership.webp)
+![groupmembership](/img/product_docs/accessanalyzer/12.0/admin/action/activedirectory/operations/groupmembership.webp)
 
 ![Group Membership Indirect Member of Page](/img/product_docs/threatmanager/threatmanager/administration/threatdetails/groupmembershipindirect.webp)
 

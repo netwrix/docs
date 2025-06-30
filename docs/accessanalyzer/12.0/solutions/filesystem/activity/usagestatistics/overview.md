@@ -2,20 +2,20 @@
 
 The Usage Statistics job group is designed to report on usage statistics from targeted file servers.
 
-![Usage Statistics Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/admin/hostmanagement/jobstree.webp)
+![Usage Statistics Job Group in the Jobs Tree](/img/product_docs/accessanalyzer/12.0/solutions/filesystem/activity/usagestatistics/jobstree.webp)
 
 The Usage Statistics job group is comprised of:
 
-- [FS_GroupUsage Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/usagestatistics/fs-groupusage.md) – Designed to report on group usage from targeted file
+- [FS_GroupUsage Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/usagestatistics/fs_groupusage.md) – Designed to report on group usage from targeted file
   servers
 
-  - Requires **Access Auditing** component data collection
+    - Requires **Access Auditing** component data collection
 
-- [FS_MostActiveServers Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/usagestatistics/fs-mostactiveservers.md) – Designed to report on the most active
+- [FS_MostActiveServers Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/usagestatistics/fs_mostactiveservers.md) – Designed to report on the most active
   servers within an environment
-- [FS_MostActiveUsers Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/usagestatistics/fs-mostactiveusers.md) – Designed to report on the most active users
+- [FS_MostActiveUsers Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/usagestatistics/fs_mostactiveusers.md) – Designed to report on the most active users
   within an environment
-- [FS_StaleShares Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/usagestatistics/fs-staleshares.md) – Designed to report on stale shares from targeted file
+- [FS_StaleShares Job](/docs/accessanalyzer/12.0/solutions/filesystem/activity/usagestatistics/fs_staleshares.md) – Designed to report on stale shares from targeted file
   servers
 
-  - Requires **Access Auditing** component data collection
+    - Requires **Access Auditing** component data collection

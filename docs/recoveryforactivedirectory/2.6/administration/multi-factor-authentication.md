@@ -23,7 +23,7 @@ and select **Manage**. The MFA page opens.
 **Step 2 –** Click the **Add authenticator app** button. The Configure authenticator app page is
 displayed, showing the instructions for setting up the app.
 
-![Configure authenticator app page](/img/product_docs/accessanalyzer/admin/analysis/configure.webp)
+![Configure authenticator app page](/img/product_docs/accessanalyzer/12.0/admin/analysis/configure.webp)
 
 **Step 3 –** Open the authenticator app on your phone and scan the QR code with it. A new account is
 created in the app for the Recovery application and a verification code is displayed under the

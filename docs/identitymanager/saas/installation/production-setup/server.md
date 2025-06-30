@@ -165,7 +165,7 @@ This guide will show you how to perform these operations using SQL Server Manage
 the Identity Manager Database with an account member of the **sysadmin** or **securityadmin**
 server-level role.
 
-![New Login](/img/product_docs/accessanalyzer/install/application/newlogin.webp)
+![New Login](/img/product_docs/accessanalyzer/12.0/install/application/newlogin.webp)
 
 **Step 2 –** Expand the **Security** and **Login** nodes, and look for the Identity Manager service
 account in the list.

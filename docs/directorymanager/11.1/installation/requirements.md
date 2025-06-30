@@ -229,7 +229,7 @@ To connect to the API, an access key is required. Follow the steps below to gene
    used.
 2. Click **ACCESS KEYS**.
 
-   ![Access Keys](/img/product_docs/accessanalyzer/requirements/target/config/accesskeys.webp)
+   ![Access Keys](/img/product_docs/accessanalyzer/12.0/requirements/target/config/accesskeys.webp)
 
 3. Click **Create Access Key** to generate an access key and provide the following information:
 
