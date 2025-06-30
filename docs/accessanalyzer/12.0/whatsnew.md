@@ -1,7 +1,5 @@
-# What's New in Access Analyzer
+# What's New
 
-This document contains information about new features and enhancements in Access Analyzer.
+## New Netwrix Community!
 
-## Latest Release
-
-For the latest release information, please visit the [Netwrix website](https://www.netwrix.com) or contact [Netwrix Support](https://www.netwrix.com/support.html).
+All Netwrix product announcements have moved to the new Netwrix Community. See announcements for Netwrix Access Analyzer (formerly Enterprise Auditor) in the [Access Analyzer](https://community.netwrix.com/c/94) area of our new community.
