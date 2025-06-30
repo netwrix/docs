@@ -202,6 +202,10 @@ async function main() {
     const mdContent = fs.readFileSync(mdFile, 'utf8');
     const links = findImageLinks(mdContent);
     let newContent = mdContent;
+    
+    // Collect all changes first, then apply them in reverse order to avoid index shifting
+    const changes = [];
+    
     for (const linkObj of links) {
       const { link, path: imgPath, index } = linkObj;
       let caseType = null;
@@ -234,7 +238,12 @@ async function main() {
         if (fs.existsSync(imgFsPath)) {
           // Use root-relative path for markdown
           const relImgPath = action.startsWith('/') ? action : '/' + action;
-          newContent = newContent.replace(link, link.replace(imgPath, relImgPath));
+          const newLink = link.replace(imgPath, relImgPath);
+          changes.push({
+            originalLink: link,
+            newLink: newLink,
+            index: index
+          });
           console.log(`${colors.green}Automatically updated image link in file with: ${action}${colors.reset}`);
         } else {
           console.log(colors.red, 'Suggested image does not exist:', imgFsPath, colors.reset);
@@ -275,10 +284,14 @@ async function main() {
           openImage(imgFsPath);
           const confirm = await promptUser('Use this image? [y/N]: ');
           if (confirm.toLowerCase() === 'y') {
-            // Update the markdown content
             // Use root-relative path for markdown
             const relImgPath = action.startsWith('/') ? action : '/' + action;
-            newContent = newContent.replace(link, link.replace(imgPath, relImgPath));
+            const newLink = link.replace(imgPath, relImgPath);
+            changes.push({
+              originalLink: link,
+              newLink: newLink,
+              index: index
+            });
             console.log('Updated image link in file.');
             break;
           } else {
@@ -287,6 +300,13 @@ async function main() {
         }
       }
     }
+    
+    // Apply all changes in reverse order to avoid index shifting
+    changes.sort((a, b) => b.index - a.index);
+    for (const change of changes) {
+      newContent = newContent.replace(change.originalLink, change.newLink);
+    }
+    
     if (newContent !== mdContent) {
       fs.writeFileSync(mdFile, newContent, 'utf8');
       console.log('File updated:', mdFile);
