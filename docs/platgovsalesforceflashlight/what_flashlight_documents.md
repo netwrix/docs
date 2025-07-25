@@ -7,7 +7,7 @@ sidebar_position: 20
 # What Does Flashlight Document?
 
 Flashlight documents over 120 Salesforce metadata types. For display within the Flashlight
-application, metadata is organized into eight categories.Open the
+application, metadata is organized into eight categories. Open the
 [Documented Metadata Types](/docs/platgovsalesforceflashlight/cleanup/documented_metadata_types.md) topic for a complete list of Metadata
 sorted by Type and by Category.
 

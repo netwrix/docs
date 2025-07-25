@@ -4,7 +4,7 @@ description: "Documented Metadata Types"
 sidebar_position: 40
 ---
 
-You can view the documented Metadata by **Type** or by Category.
+You can view the documented Metadata by [Type](#metadata-by-type) or by [Category](#metadata-by-category).
 
 ## Metadata by Type
 

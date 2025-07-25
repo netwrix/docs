@@ -15,13 +15,10 @@ Click **Download PDF** to create a PDF file of the current status.
 
 The report is divided into these sections:
 
-> Scanner Status Overview
->
-> Documentation Stats
->
-> Scanner Logs
->
-> Scanner Additional Information
+- Scanner Status Overview
+- Documentation Stats
+- Scanner Logs
+- Scanner Additional Information
 
 ## Scanner Status Overview
 
