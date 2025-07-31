@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Ins and Outs of Remote Work Delivery Manager
 
-Endpoint Policy Manager Remote Work Delivery Manager (PPRWDM) solves several huge Windows 10 issues.
+Endpoint Policy Manager Remote Work Delivery Manager (PPRWDM) solves several big Windows issues that admins would like to overcome.
 Its basic goal is to deliver files and folders from either SMB shares or HTTP(S) sources, and if the
 connection is unstable or breaks and comes back, the file(s) will continue to be downloaded. You can
 think of PPRWDM as Robocopy on steroids for Group Policy and the web. And as a bonus, after the file
