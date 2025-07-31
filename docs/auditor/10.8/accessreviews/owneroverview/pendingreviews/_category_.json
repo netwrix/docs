@@ -1,0 +1,10 @@
+{
+  "label": "Pending Reviews",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "pendingreviews"
+  }
+}

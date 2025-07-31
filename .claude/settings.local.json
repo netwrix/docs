@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:community.netwrix.com)",
+      "WebFetch(domain:community.netwrix.com)",
+      "Bash(git checkout:*)",
+      "Bash(cp:*)",
+      "Bash(npm install)",
+      "Bash(npm start)",
+      "Bash(npm run start:*)",
+      "Bash(npx docusaurus start:*)",
+      "Bash(mkdir:*)",
+      "Bash(rm:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)"
+    ],
+    "deny": []
+  }
+}
