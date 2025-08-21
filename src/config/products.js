@@ -35,7 +35,7 @@
  * All Netwrix products and their configurations
  * @type {Product[]}
  */
-export const PRODUCTS = [
+const ALL_PRODUCTS = [
   {
     id: '1secure',
     name: '1Secure',
@@ -778,3 +778,35 @@ export function generateNavbarDropdowns() {
       };
     });
 }
+
+/**
+ * Filter products based on BUILD_PRODUCTS environment variable
+ * Supports comma-separated product IDs: "pingcastle,auditor,1secure"
+ */
+function filterProducts() {
+  const buildProducts = process.env.BUILD_PRODUCTS;
+  
+  // If no filter specified, return all products
+  if (!buildProducts) {
+    return ALL_PRODUCTS;
+  }
+  
+  // Parse comma-separated list
+  const productIds = buildProducts.split(',').map(id => id.trim()).filter(Boolean);
+  
+  // Filter products that match the specified IDs
+  const filteredProducts = ALL_PRODUCTS.filter(product => 
+    productIds.includes(product.id)
+  );
+  
+  // Log what we're building for debugging
+  console.log(`Building documentation for: ${filteredProducts.map(p => p.name).join(', ')}`);
+  
+  return filteredProducts;
+}
+
+/**
+ * Exported products list - filtered based on BUILD_PRODUCTS environment variable
+ * @type {Product[]}
+ */
+export const PRODUCTS = filterProducts();
