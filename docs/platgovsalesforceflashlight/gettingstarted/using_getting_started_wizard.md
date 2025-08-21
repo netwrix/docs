@@ -18,7 +18,7 @@ To use the Getting Started Wizard:
 2. Click on the **Flashlight** tab to open the Flashlight homepage.
 3. Open **Support** > **Getting Started Wizard**
 
-   ![getting_started_wizard](/img/product_docs/platgovsalesforceflashlight/getting_started/getting_started_wizard.webp)
+   <!-- ![getting_started_wizard](/img/product_docs/platgovsalesforceflashlight/getting_started/getting_started_wizard.webp) -->
 
 4. Click **Run Scanner** to start the process.
 

@@ -68,4 +68,4 @@ Restrict Visibility. You can choose to have the list view:
     3. Choose to **Apply changes to: All the selected records**.
     4. Click **Save**.
 
-    ![flagging_mass_customizations_800x374](/img/product_docs/platgovsalesforceflashlight/clean_up/flagging_mass_customizations_800x374.webp)
+    <!-- ![flagging_mass_customizations_800x374](/img/product_docs/platgovsalesforceflashlight/clean_up/flagging_mass_customizations_800x374.webp) -->
