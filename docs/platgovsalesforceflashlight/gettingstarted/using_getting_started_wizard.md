@@ -13,7 +13,7 @@ To use the Getting Started Wizard:
 
 1. Open the Salesforce **App Launcher** and select **Flashlight**. 
 
-   ![Launch the Flashlight app](/img/product_docs/platgovsalesforceflashlight/getting_started/install_flashlight2.webp)
+   <!-- ![Launch the Flashlight app](/img/product_docs/platgovsalesforceflashlight/getting_started/install_flashlight2.webp) -->
 
 2. Click on the **Flashlight** tab to open the Flashlight homepage.
 3. Open **Support** > **Getting Started Wizard**

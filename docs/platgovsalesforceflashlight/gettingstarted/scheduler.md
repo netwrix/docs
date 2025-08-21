@@ -13,7 +13,7 @@ To use the scheduler tool:
 
 1. Open **Flashlight** > **Support** > **Scheduler**
 
-   ![scheduler](/img/product_docs/platgovsalesforce/clean_up/scheduler.webp)
+   <!-- ![scheduler](/img/product_docs/platgovsalesforce/clean_up/scheduler.webp) -->
 
 2. Toggle **Enabled**/**Disabled**by the category. Your selections are automatically saved.
 3. Select the **Frequency**, **Day** and **Time**. Your selections are automatically saved.

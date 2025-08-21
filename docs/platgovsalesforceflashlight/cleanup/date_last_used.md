@@ -57,7 +57,7 @@ Usage data fields:
 
 If Field History Tracking is enabled for a CustomField with a **DLU Status** of either **Recent** or **Expired**, the status is changed to **Pending**. Here is an example:
 
-  ![Example of the DLU status fields for a CustomField](/img/product_docs/platgovsalesforceflashlight/clean_up/dlu_status_example_customfield_800x294.webp)
+  <!-- ![Example of the DLU status fields for a CustomField](/img/product_docs/platgovsalesforceflashlight/clean_up/dlu_status_example_customfield_800x294.webp) -->
 
 ### Notes
 
