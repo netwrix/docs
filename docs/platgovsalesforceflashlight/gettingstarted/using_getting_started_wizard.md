@@ -22,7 +22,7 @@ To use the Getting Started Wizard:
 
 4. Click **Run Scanner** to start the process.
 
-   ![Run the Scanner to start the documentation process](/img/product_docs/platgovsalesforceflashlight/getting_started/run_scanner.webp)
+   <!-- ![Run the Scanner to start the documentation process](/img/product_docs/platgovsalesforceflashlight/getting_started/run_scanner.webp) -->
    
 5. Click **Next**.
 6. Click **Done**.
