@@ -784,7 +784,8 @@ export function generateNavbarDropdowns() {
  * Supports comma-separated product IDs: "pingcastle,auditor,1secure"
  */
 function filterProducts() {
-  const buildProducts = process.env.BUILD_PRODUCTS;
+  // Safe access to environment variable - fallback to undefined if process is not available (browser)
+  const buildProducts = typeof process !== 'undefined' && process.env ? process.env.BUILD_PRODUCTS : undefined;
   
   // If no filter specified, return all products
   if (!buildProducts) {
