@@ -132,7 +132,7 @@ const config = {
         // Your Algolia credentials
         appId: 'KPMSCF6G6J',
         apiKey: '1b20f30f13a874cd46f9d5c30b01d99c', // Use the search-only API key, not the admin key
-        indexName: 'Production Docs',
+        indexName: 'crawler_Production-Crawler_index',
 
         // Enable contextual search (already great that you have product/version meta tags!)
         contextualSearch: true,
