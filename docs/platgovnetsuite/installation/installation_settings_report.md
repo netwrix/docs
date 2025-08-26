@@ -10,7 +10,7 @@ Your **Installation Settings** report provides a comprehensive and live view of 
 Governance for NetSuite data in your account. This data is useful as you continue to optimize your
 account and provides you with a measurable view of your status.
 
-To access the report, open **Strongpoint** > **Strongpoint Support** > **Installation Settings**
+To access the report, open **Netwrix** > **Strongpoint Support** > **Installation Settings**
 
 - Click **View** to view or print the desired report.
 - Click **Edit** to change global settings or add user notes
@@ -45,7 +45,7 @@ workflows. Status is shown on the **Spider** Status tab: **Spider - All Standard
 Displays statistics on customizations to be investigated and cleaned up. Cleaning up customizations
 provides significant performance gains and makes your system easier to understand and maintain.
 Platform Governance for NetSuite identifies different types of clean up activities. Each of these
-fields corresponds to one or more views under **Strongpoint** > **Clean Up**.
+fields corresponds to one or more views under **Netwrix** > **Clean Up**.
 
 ### Script Management
 

@@ -23,7 +23,7 @@ request in your sandbox account.
 
 ## Create the Change Request
 
-1. Open **Strongpoint** > **Change Management Tools** > **ITGC Change Request**
+1. Open **Netwrix** > **Change Management Tools** > **ITGC Change Request**
    The status bar displays the stage of the Change Request. A new change request displays _Not
    Started_.
 2. Enter information in the **Main** and **Scope** sections:

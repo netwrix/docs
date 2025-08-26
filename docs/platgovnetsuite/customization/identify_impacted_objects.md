@@ -27,18 +27,18 @@ It enables you to:
 - Access the actual customization record by clicking on the **Link** column on the right.
 
 Changing the view enables you to access many clean up tools, which can also be accessed by going to
-**Clean Up** located under the **Strongpoint** tab.
+**Clean Up** located under the **Netwrix** tab.
 
 To access the customization list:
 
-1. Open **Strongpoint**> **Customizations** > **Customization**
+1. Open **Netwrix** > **Customizations** > **Customization**
 2. The recommended view is **Strongpoint Filter** to enable the filters to narrow down your search.
 
 ![customization-list](/images/platgovnetsuite/customizations/customization-list.webp)
 
 ## Customization Quick Search
 
-To access a customization quick search, open **Strongpoint** > **Customizations** > **Customization
+To access a customization quick search, open **Netwrix** > **Customizations** > **Customization
 Quick Search**
 
 You can search using several factors and submit. When looking up by **Name**, using **Contains**
@@ -51,7 +51,7 @@ helps if you do not have the exact name.
 The ERD provides a way to look at customizations by record type. A left click on the customization
 name brings up the customization record.
 
-1. Open **Strongpoint**> **Customizations** > **ERD View**
+1. Open **Netwrix** > **Customizations** > **ERD View**
 2. Select a **Record Type** from the list.
 3. Add any options:
 
@@ -105,7 +105,7 @@ search.
 
 To access a customization quick search:
 
-1. Select **Strongpoint** > **Customizations** > **Customization Impact Search Form**.
+1. Select **Netwrix** > **Customizations** > **Customization Impact Search Form**.
 2. Enter any criteria to narrow the results as required.
 
 ![impactsearchform](/images/platgovnetsuite/customizations/impactsearchform.webp)

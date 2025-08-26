@@ -10,7 +10,7 @@ Many non-compliant change logs are generated due to one or more related objects 
 in a Change Request. You can set up to automatically clear low risk non-compliant changes that meet
 specific criteria. By default, opportunistic clearance is not enabled. To enable it:
 
-1. Open **Strongpoint** > **Strongpoint Support** > **Installation Settings**
+1. Open **Netwrix** > **Strongpoint Support** > **Installation Settings**
 2. Click **Edit** to open **Configuration and Stats**.
 3. Select the **Change Management** tab.
 4. Select **Enable Opportunistic Clearance**.

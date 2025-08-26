@@ -24,7 +24,7 @@ process. Links to other customizations and processes are captured and managed in
 
 ## Understanding the Customization Record
 
-Selecting **Strongpoint**> **Customizations** > **Customization** opens a list of customization
+Selecting **Netwrix** > **Customizations** > **Customization** opens a list of customization
 records, or move the mouse further right to create a **New** customization or to **Search** for a
 customization.
 

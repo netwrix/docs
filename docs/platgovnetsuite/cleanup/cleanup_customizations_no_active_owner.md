@@ -11,7 +11,7 @@ can become inactive if they quit using the system, or if their licenses have bee
 [Inactive](/docs/platgovnetsuite/installation/managing_users.md). The report criteria excludes Customization
 types where owner does not apply.
 
-1. Open **Strongpoint** > **Clean Up** > **Inactive Owner**
+1. Open **Netwrix** > **Clean Up** > **Inactive Owner**
 2. Click **Edit** next to each Customization to change. You can right-click on **Edit** and select
    Open link in a new tab or window to keep your results page available.
 3. Select a new **Owner**.

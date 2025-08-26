@@ -44,7 +44,7 @@ sidebar_position: 20
 
 ## Set Up a Default Policy
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change/Approval Policy**
+1. Open **Netwrix** > **Change Management Tools** > **Change/Approval Policy**
 2. Edit the **Default Policy** so that it has the following settings:
 
     - **Header**: Everything in the Header should remain the same including the name Default.
@@ -238,7 +238,7 @@ you can attach the Customization Record to the policy.
 
 To set up additional policies:
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change/Approval Policy** > **New**
+1. Open **Netwrix** > **Change Management Tools** > **Change/Approval Policy** > **New**
 2. Enter the policy information.
 3. Assign the **Change Levels** on the **Change Controls** tab.
 4. Assign the **Approvers** on the **IT Policies** tab.

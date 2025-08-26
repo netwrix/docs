@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Tools Overview
 
-The **Strongpoint** > **Tools** menu accesses:
+The **Netwrix** > **Tools** menu accesses:
 
 - [Strongpoint Spider](/docs/platgovnetsuite/installation/running_the_spider.md): runs the Spider on your
   account.

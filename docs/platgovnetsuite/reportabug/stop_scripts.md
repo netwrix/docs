@@ -8,6 +8,6 @@ sidebar_position: 70
 
 You can stop the Spider scripts at any point during the spider process:
 
-Open **Strongpoint** > **Strongpoint Support** > **Stop Scripts**
+Open **Netwrix** > **Strongpoint Support** > **Stop Scripts**
 
 This stops the next execution of the scheduled scripts.

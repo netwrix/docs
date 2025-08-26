@@ -9,7 +9,7 @@ sidebar_position: 30
 Default IDs significantly increase the cost and risks associated with any development work, and are
 a critical clean up practice.
 
-1. Open **Strongpoint** > **Clean Up** > **Default ID**
+1. Open **Netwrix** > **Clean Up** > **Default ID**
 2. Review each item to determine how they should be modified if their identifier is changed.
 3. If you decide to change the **Script ID**, click or right click **Edit** to open the
    customization record.

@@ -17,7 +17,7 @@ Approval Change Request templates**, add them to the installation settings to pr
 being overwritten when new bundles are installed.
 :::
 
-1. Open **Strongpoint** > **Strongpoint Support** > **Installation Settings**.
+1. Open **Netwrix** > **Strongpoint Support** > **Installation Settings**.
 2. Click **Edit**.
 3. Open the **Change Management** tab.
 4. Enter your custom templates in the **CR Email Template** section.

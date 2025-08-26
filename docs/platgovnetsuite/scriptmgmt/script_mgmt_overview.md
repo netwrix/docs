@@ -25,7 +25,7 @@ The archived script versions are saved in the script archive folder, are also ac
 Customization record for the script. Archiving all script changes does use storage space. It is a
 good practice to occasionally review and clean up old versions. To enable automatic archiving:
 
-1. Open **Strongpoint** > **Strongpoint Support** > **Installation Settings**.
+1. Open **Netwrix** > **Strongpoint Support** > **Installation Settings**.
 2. Click **Edit** by the current version.
 3. Open the **Installation** tab.
 4. Check **Enable Auto Archive**.
@@ -168,8 +168,8 @@ who used it and how long it took to execute. Schedule the Script Utilization Dat
 
 ## Track Progress
 
-You can monitor the progress of the script data collection with **Strongpoint** > **Script
-Management** > **Tagged scripts with No Data**  
+You can monitor the progress of the script data collection with **Netwrix** > **Script
+Management** > **Tagged scripts with No Data**
 The scripts on this list will fall off this search as data is collected. Scripts that remain on this
 list are not being executed.
 

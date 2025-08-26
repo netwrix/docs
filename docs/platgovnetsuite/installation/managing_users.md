@@ -10,7 +10,7 @@ Users are managed through the **[**License Manager**](/docs/platgovnetsuite/inst
 
 ## Add a User
 
-1. Open **Strongpoint** > **Strongpoint Support** > **License Manager**
+1. Open **Netwrix** > **Strongpoint Support** > **License Manager**
 2. Click **View**
 3. Click **New Licensed User**
 4. Open the **User** dropdown. Select an existing NetSuite user name or select New to open a new
@@ -20,7 +20,7 @@ Users are managed through the **[**License Manager**](/docs/platgovnetsuite/inst
 
 ## Edit a User
 
-1. Open **Strongpoint** > **Strongpoint Support** > **License Manager**
+1. Open **Netwrix** > **Strongpoint Support** > **License Manager**
 2. Click **View**
 3. Select **Strongpoint Licensed Users** from **View**.
 4. Click **Edit** by the User name.
@@ -28,7 +28,7 @@ Users are managed through the **[**License Manager**](/docs/platgovnetsuite/inst
 
 ## Inactivate a Licensed User
 
-1. Open **Strongpoint** > **Strongpoint Support** > **License Manager**
+1. Open **Netwrix** > **Strongpoint Support** > **License Manager**
 2. Click **View**
 3. Select **Strongpoint Licensed Users** from **View**.
 4. Click **Edit** by the User name.

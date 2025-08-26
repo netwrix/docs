@@ -14,7 +14,7 @@ Request and add the fields you want to delete.
 
 To create a change request:
 
-1. Open Strongpoint > **Change Management** > **Change Request**
+1. Open **Netwrix** > **Change Management** > **Change Request**
 2. Fill out all relevant fields and include all the customization you want to delete in the
    **Customizations** field, add the customizations you want to delete.
 3. Click **Save**.

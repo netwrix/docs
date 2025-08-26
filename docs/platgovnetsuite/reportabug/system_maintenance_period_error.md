@@ -13,7 +13,7 @@ and your web site is online again.
 
 :::note
 If the **Take Web Site Offline for Maintenance** option is changed, you must use the
-**Strongpoint** > **Strongpoint Support** > **License Manager** > **Get Lic. Number**  
+**Netwrix** > **Strongpoint Support** > **License Manager** > **Get Lic. Number**
  Or re-push the bundle to update the Spider link.
 :::
 

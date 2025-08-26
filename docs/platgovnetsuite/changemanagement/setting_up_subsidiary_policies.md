@@ -14,13 +14,13 @@ subsidiaries and corresponding Subsidiary Processes are set to the customization
 
 To set up Subsidiary Approvals:
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change / Approval Policy**
+1. Open **Netwrix** > **Change Management Tools** > **Change / Approval Policy**
 2. **Edit** the **Default Policy**.
 3. Open the **Subsidiary** tab.
 4. Select one or more **Subsidiaries**.
 5. Check **Require Subsidiary Process Approval**.
 6. Save the **Policy**.
-7. Open **Strongpoint** > **Change Management Tools** > **Change / Approval Policy** > **New** to
+7. Open **Netwrix** > **Change Management Tools** > **Change / Approval Policy** > **New** to
    create a new Subsidiary Specific Policy.
 8. Enter a meaningful **Name**.
 9. Select **Change Levels** on the **Change Controls** tab.

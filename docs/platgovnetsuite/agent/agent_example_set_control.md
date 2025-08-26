@@ -50,7 +50,7 @@ Here is the process to create a control to monitor changes:
 
 You can wait until the next AutoSpider run, or manually create the customization record:
 
-1. Open **Strongpoint** > **Customizations** > **Customization** > **New**
+1. Open **Netwrix** > **Customizations** > **Customization** > **New**
 2. Enter information in the required fields:
 
     - **Custom Form**: Use the **Simplified Form**, or select a different form if you want to add a

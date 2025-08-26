@@ -9,18 +9,20 @@ sidebar_position: 50
 Date Last Used (DLU) enables you to see what customizations have not been used recently and could be
 deleted.
 
-Date Last Used (DLU) is captured for changes triggered by users or other customizations. Platform
+- Date Last Used (DLU) is captured for changes triggered by users or other customizations. Platform
 Governance for NetSuite uses a System Notes search to retrieve the date last used for Fields, Saved
 Searches and Records. DLU values are intended to be reasonably accurate. Complete accuracy for some
 objects would require excessive processing.
 
 :::note
 DLU is not available for display only fields.
-:::
 
 DLU is not reliable for fields with no parent record.
+
 DLU is not reliable in sandbox accounts as fields do not get actively used.
+
 DLU is not reliable until the initial spider is complete, including the Make Joins.
+:::
 
 Date Last Used is intended to be used for clean up and is set up to be accurate within a month.
 Higher levels of accuracy would require significantly more processing capacity. **The Last Used

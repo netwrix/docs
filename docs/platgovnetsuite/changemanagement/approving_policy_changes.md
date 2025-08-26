@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Approving Policy Changes
 
-1. Open **Strongpoint** > **Change Management Tools** > **Policy Change Approval (Beta)
+1. Open **Netwrix** > **Change Management Tools** > **Policy Change Approval
    ![policy_approval_new](/images/platgovnetsuite/change_management/policy_approval_new.webp)**
 2. Enter information into the required **Name**, **Change Overview** and **Policies** fields.
    **Change Type** is preset to **Policy Change Approval**.

@@ -40,7 +40,7 @@ for the UAR App or Licensing Existing Users for UAR.
 This procedure is used to add a UAR license to an existing NetSuite user who is not licensed for
 Platform Governance for NetSuite.
 
-1. Open **Strongpoint** > **Strongpoint Support** > **License Manager**.
+1. Open **Netwrix** > **Strongpoint Support** > **License Manager**.
 2. Click **View**.
 3. Set the **View** to **Strongpoint Licensed Users**.
 
@@ -64,7 +64,7 @@ Platform Governance for NetSuite.
 
 ## Licensing Existing Users for UAR
 
-1. Open **Strongpoint** > **Strongpoint Support** > **License Manager**.
+1. Open **Netwrix** > **Strongpoint Support** > **License Manager**.
 2. Click **View**.
 3. Set the **View** to **Strongpoint Licensed Users**.
 

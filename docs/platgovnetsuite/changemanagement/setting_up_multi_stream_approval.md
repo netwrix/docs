@@ -20,12 +20,15 @@ Change Request, where the mandated approvers are included.
 
 ### Create a Process Record
 
-1. Open **Strongpoint** > **Manage Processes** > **Process** > **New**
+1. Open **Netwrix** > **Manage Processes** > **Process** > **New**
 2. Enter the **Name** and **Owner** for the process. For this example, the name is **Provision
    Multi-Stream Approval**.
 3. **Custom Form** and **Step Type** should be set to **Process**.
-4. Ctrl-Click to select one or more **Additional Approvers**. NOTE: Select the additional approvers
-   in the order you want them to approve.
+4. Ctrl-Click to select one or more **Additional Approvers**.
+
+    :::note
+    Select the additional approvers in the order you want them to approve.
+    :::
 
     ![multi_stream_new_process](/images/platgovnetsuite/change_management/multi_stream_new_process.webp)
 
@@ -37,7 +40,7 @@ Change Request, where the mandated approvers are included.
 
 ### Create a new Policy Record
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change / Approval Policy** > **New**
+1. Open **Netwrix** > **Change Management Tools** > **Change / Approval Policy** > **New**
 2. Enter a **Name** and **Owner** for the Policy. For this example the name is **Process Approvers
    Only**.
 3. Set the Change Levels on the **Change Controls** tab.
@@ -60,7 +63,7 @@ Change Request, where the mandated approvers are included.
 
 ### Create a Change Request
 
-1. Open **Strongpoint** > **Change Management Tools** > **New ITGC Change Request**
+1. Open **Netwrix** > **Change Management Tools** > **New ITGC Change Request**
 2. Enter a **Name** and **Change Overview** for the Change Request. For this example the name is
    **Sample Change Request - Multi-Stream Approval**.
 3. Select the affected process. For this example it is **Provision Multi-Stream Approval**.

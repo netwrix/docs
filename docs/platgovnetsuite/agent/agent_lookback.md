@@ -12,7 +12,7 @@ a daily run.
 
 The Agent Lookback is accessed from the Customization record for the control.
 
-1. Open **Strongpoint** > **Financial Controls** > **Controls**.
+1. Open **Netwrix** > **Financial Controls** > **Controls**.
 2. **Edit** the control to run.
 3. Open the **Controls** tab.
 

@@ -8,7 +8,7 @@ sidebar_position: 130
 
 Once the changes are complete, validate the Change Request and mark it **Complete**.
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change Request** to view the list of
+1. Open **Netwrix** > **Change Management Tools** > **Change Request** to view the list of
    Change Requests.
 2. Locate your Change Request and click **View**
 3. Click **Respider Now** to start the change documentation process.

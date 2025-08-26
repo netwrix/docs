@@ -27,10 +27,10 @@ least the Strongpoint Developer Role to perform a Change Request Push.
 A best practice is to create change requests in your production account so that they are not lost,
 they have an audit trail and approvals can be shown.
 
-1. Open **Strongpoint** > **Change Management Tools** > **ITGC Change Request**.
+1. Open **Netwrix** > **Change Management Tools** > **ITGC Change Request**.
 2. Enter all required fields and additional approver(s).
 3. Click Pending Approval. Wait until the Change Request is approved.
-4. Open **Strongpoint** > **Change Management Tools** > **ITGC Change Request**.
+4. Open **Netwrix** > **Change Management Tools** > **ITGC Change Request**.
 5. Click **Edit** on the appropriate Change Request.
 6. Open the **Sync Tool** tab on the Change Request.
 7. Set the **Target** environment (where the Change Request will be pushed).
@@ -42,7 +42,7 @@ they have an audit trail and approvals can be shown.
 
 ## Update the Change Request in Testing/Development
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change Request**
+1. Open **Netwrix** > **Change Management Tools** > **Change Request**
 2. Click **Edit** on the Change Request that came from Production.
 
     - Attach **customizations created/updated**.
@@ -59,7 +59,7 @@ they have an audit trail and approvals can be shown.
 
 ## Run Pre-Deployment Environment Comparison
 
-1. Run **Strongpoint** > **Change Management Tools** > **Compare Environments**
+1. Run **Netwrix** > **Change Management Tools** > **Compare Environments**
 2. Enter the login credentials of the **Target** and **Source** Accounts.
 3. Set the **Comparison Type** to **Target Newer than Source**.
 4. Click the **Compare** button.
@@ -72,7 +72,7 @@ record is approved, deploy the customizations listed on the change request.
 
 In your Production environment:
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change Request**
+1. Open **Netwrix** > **Change Management Tools** > **Change Request**
 2. **Edit** your **master** Change Request.
 3. Open **Related Change Records** tab.
 4. Open **Change Request** tab.
@@ -85,7 +85,7 @@ In your Production environment:
 
 ## Run Post-Deployment Environment Comparison
 
-1. Run **Strongpoint** > **Change Management Tools** > **Compare Environments**
+1. Run **Netwrix** > **Change Management Tools** > **Compare Environments**
 2. Enter the login credentials of the **Target** and **Source** Accounts.
 3. Set the **Comparison Type** to **Target Newer than Source**.
 4. Click the **Compare** button.

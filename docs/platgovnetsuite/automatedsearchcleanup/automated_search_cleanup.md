@@ -53,7 +53,7 @@ Menu options are available to access the rules and lists:
 Search Clean Up rules are created by the administrator and used to locate Saved Searches matching
 the rule criteria. Search Clean Up rules are used for both Automatic and Run Now.
 
-To create or edit rules, access **Strongpoint**> **Automated Search Clean Up** > **Search Clean Up
+To create or edit rules, access **Netwrix** > **Automated Search Clean Up** > **Search Clean Up
 Rules**
 
 ![autocleanup](/images/platgovnetsuite/clean_up/autocleanup.webp)
@@ -203,7 +203,7 @@ searches**, **retained searches**, **scheduled to be archived searches** and **a
 
 ## Search Clean Up Status
 
-Open **Strongpoint**> **Search Auto Clean Up** > **Search Clean Up Status** to view current status.
+Open **Netwrix** > **Search Auto Clean Up** > **Search Clean Up Status** to view current status.
 
 - **Job Type**: **Run Now** or **Automatic**.
 - **Status**:

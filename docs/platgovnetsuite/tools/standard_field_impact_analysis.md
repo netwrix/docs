@@ -11,14 +11,18 @@ a Change Request. Results can be viewed on the **Impact Analysis** tab on the Ch
 
 To manually run the standard field impact analysis tool:
 
-1. Open **Strongpoint** > **Tools** > **Standard Field Impact Analysis
-   ![tools_menu](/images/platgovnetsuite/tools/tools_menu.webp)**
+1. Open **Netwrix** > **Tools** > **Standard Field Impact Analysis**
+
 2. On the **Impact Analysis Fields** screen, fill out the following:
+
    ![impactanalysisfieldstool-2](/images/platgovnetsuite/tools/impactanalysisfieldstool-2.webp)
+
     - **Customization Type**: Leave this field blank to pull all customizations using the given
       standard field or select a particular customization type to pull only customizations of that
       type for a given standard field.
     - **Standard Field Script ID**: Enter the Standard Field Script ID to find results.
+
 3. Click **Run**.
+
 4. Customizations using standard fields are listed in the results.
    ![impactanalysisresults](/images/platgovnetsuite/tools/impactanalysisresults.webp)

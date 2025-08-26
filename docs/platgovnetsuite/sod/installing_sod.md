@@ -16,7 +16,7 @@ Note the SoD Bundle ID has been updated due to NetSuite changes.
 
     ![Search for the SoD Bundle](/images/platgovnetsuite/sod/sod_install-2.webp)
 
-4. Select **Strongpoint SoD**
+4. Select **Netwrix Platform Governance SoD**
 5. Install the Bundle as usual.
 
 ## Installing the SoD Library Bundle
@@ -24,7 +24,7 @@ Note the SoD Bundle ID has been updated due to NetSuite changes.
 1. Open **Customization** > **SuiteBundler** > **Search & Install Bundles**
 2. Under **KEYWORDS**, type **311216**.
 3. Click **Search**.
-4. Select **Strongpoint SoD Library**
+4. Select **Netwrix Platform Governance SoD Library**
 
     ![Install the Strongpoint SoD Library Bundle](/images/platgovnetsuite/sod/sod_install_lib1.webp)
 

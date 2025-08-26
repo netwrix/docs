@@ -16,7 +16,7 @@ sidebar_position: 10
     ![servicenowinstall2](/images/platgovnetsuite/integrations/servicenowinstall2.webp)
 
 5. When **Preview Bundle** opens, review the bundle and click **Install** to finish.
-6. Open **Strongpoint** > **Strongpoint Support** > **Installation Settings** > **View**
+6. Open **Netwrix** > **Strongpoint Support** > **Installation Settings** > **View**
 7. Open the **ServiceNow Integration** tab.
 8. If the **Service Now URL** is not present:
 
@@ -65,7 +65,7 @@ sidebar_position: 10
 
 9. Click **Strongpoint NetSuite Integration** to open the Application Explorer. You use this for the
    **Configure ServiceNow** procedure.
-10. In NetSuite, open **Strongpoint** > **Strongpoint Support** > **Installation Settings**
+10. In NetSuite, open **Netwrix** > **Strongpoint Support** > **Installation Settings**
 11. Click **Edit**.
 12. Open the **ServiceNow Integration** tab and enter your credentials.
 13. **Save** your credentials.

@@ -16,7 +16,7 @@ impacts and the level of change required.
 
 To do this, in your **production** account:
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change Request** > **New**
+1. Open **Netwrix** > **Change Management Tools** > **Change Request** > **New**
 2. Fill in the following fields in the **Main** section of the change request:
 
     - **Name**: Add a name to the change request.

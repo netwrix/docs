@@ -48,9 +48,9 @@ app.
     ![Open the Zendesk Marketplace](/images/platgovnetsuite/integrations/zendesk_admin_marketplace.webp)
 
 4. Search for **Strongpoint**.
-5. Click **Strongpoint for NetSuite** when it is displayed.
+5. Click **Platform Governance for NetSuite** when it is displayed.
 
-    ![Strongpoint for NetSuite app in the Marketplace](/images/platgovnetsuite/integrations/zendesk_strongpoint.webp)
+    ![Platform Governance for NetSuite app in the Marketplace](/images/platgovnetsuite/integrations/zendesk_strongpoint.webp)
 
 6. Click **Install**. When installation is complete, you are prompted to sign in to your Zendesk
    dashboard to continue.
@@ -59,15 +59,15 @@ app.
 
     ![Configure the Strongpoint Zendesk app](/images/platgovnetsuite/integrations/zendesk_configure_app.webp)
 
-9. Hover on the **Strongpoint for NetSuite** tile to access the **Settings** menu.
+9. Hover on the **Platform Governance for NetSuite** tile to access the **Settings** menu.
 
     ![Hover to access the Settings](/images/platgovnetsuite/integrations/zendesk_configure_app_menu.webp)
 
 10. Click **Change settings**.
 
-    ![Set up the Strongpoint for NetSuite Zendesk app](/images/platgovnetsuite/integrations/zendesk_change_settings.webp)
+    ![Set up the Platform Governance for NetSuite Zendesk app](/images/platgovnetsuite/integrations/zendesk_change_settings.webp)
 
-    - **Title**: the name associated with the app. The default is **Strongpoint for NetSuite**.
+    - **Title**: the name associated with the app. The default is **Platform Governance for NetSuite**.
     - Account ID: enter the NetSuite account ID. The **Account ID** must be a lowercase string. For
       example, **tstdrv1724328**.
 
@@ -101,7 +101,7 @@ app.
 
 After you install the Zendesk app, set up the approvals.
 
-1. Click the new **Strongpoint for NetSuite** icon in the left panel. The **Group Configurations**
+1. Click the new **Platform Governance for NetSuite** icon in the left panel. The **Group Configurations**
    page opens.
 2. Enter the group and approval information:
 
