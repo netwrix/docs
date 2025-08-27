@@ -9,7 +9,7 @@ sidebar_position: 50
 The Netwrix Activity Monitor is comprised of the following components:
 
 - Activity Monitor Console - Controls configuration settings. See the
-  [Administration](/docs/activitymonitor/8.0/admin/overview.md)topic for additional information.
+  [Administration](/docs/activitymonitor/8.0/admin/overview.md) topic for additional information.
 - Deployed Agents - Monitor targeted servers and domains. See the
   [Agent Information](/docs/activitymonitor/8.0/install/agents/agents.md) topic for additional information.
 

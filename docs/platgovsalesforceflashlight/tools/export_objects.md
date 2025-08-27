@@ -13,11 +13,11 @@ to avoid timing out or exceeding the Salesforce Governor Limits. You will receiv
 link to the [Export Object Attachment](/docs/platgovsalesforceflashlight/tools/export_object_attachment_records.md) record, where you can
 download your file.
 
-NOTE: Strongpoint stores Object-level permissions in a Custom Object. There are two reports
+:::note
+Strongpoint stores Object-level permissions in a Custom Object. There are two reports
 (**Flashlight** > **Reports / List Views** > **Customizations**) for easy access to this
-information:
-**Permissions by Object**
-**Object Permissions by Profile**
+information: **Permissions by Object** and **Object Permissions by Profile**
+:::
 
 1. Open **Flashlight** > **Tools** > **Export Objects**
    **Objects** is the default tab. **Profiles and Permission Sets** and **Users** exports are on

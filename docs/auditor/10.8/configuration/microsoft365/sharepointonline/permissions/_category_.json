@@ -1,0 +1,10 @@
+{
+  "label": "Permissions for SharePoint Online Auditing",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "permissions"
+  }
+}

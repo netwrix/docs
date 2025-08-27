@@ -11,14 +11,19 @@ The Getting Started Wizard is available after you have installed the Flashlight
 
 To use the Getting Started Wizard:
 
-1. Open the Salesforce **App Launcher** and select **Flashlight**.
-   ![Launch the Flashlight app](/images/platgovsalesforceflashlight/getting_started/install_flashlight2.webp)
+1. Open the Salesforce **App Launcher** and select **Flashlight**. 
+
+   <!-- ![Launch the Flashlight app](/img/product_docs/platgovsalesforceflashlight/getting_started/install_flashlight2.webp) -->
+
 2. Click on the **Flashlight** tab to open the Flashlight homepage.
 3. Open **Support** > **Getting Started Wizard**
-   ![getting_started_wizard](/images/platgovsalesforceflashlight/getting_started/getting_started_wizard.webp)
+
+   <!-- ![getting_started_wizard](/img/product_docs/platgovsalesforceflashlight/getting_started/getting_started_wizard.webp) -->
 
 4. Click **Run Scanner** to start the process.
-   ![Run the Scanner to start the documentation process](/images/platgovsalesforceflashlight/getting_started/run_scanner.webp)
+
+   <!-- ![Run the Scanner to start the documentation process](/img/product_docs/platgovsalesforceflashlight/getting_started/run_scanner.webp) -->
+   
 5. Click **Next**.
 6. Click **Done**.
 

@@ -19,7 +19,7 @@ Open **Flashlight**> **Support** > **Status Report.**
 
 ![statusreport_800x419](/images/platgovsalesforceflashlight/tools/statusreport_800x419.webp)
 
-## Strongpoint Dependency Relationship Diagram
+## Dependency Relationship Diagram
 
 You can check data by navigating through the Strongpoint Dependency Relationship Diagram (DRD) and
 selecting object(s) types.
@@ -32,7 +32,7 @@ To validate data with the DRD:
 
 ![entity_diagram_800x309](/images/platgovsalesforceflashlight/tools/entity_diagram_800x309.webp)
 
-## Strongpoint Customization Quick Search
+## Customization Quick Search
 
 The Customization Quick Search opens a report with all customizations. From this report, you can add
 filters to find specific customizations that you need to validate the data.

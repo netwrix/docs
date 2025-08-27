@@ -1,0 +1,10 @@
+{
+  "label": "Group Policy",
+  "position": 100,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

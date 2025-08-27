@@ -130,9 +130,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '10.8',
+        label: '10.8',
+        isLatest: true,
+        sidebarFile: './sidebars/auditor/10.8.js',
+      },
+      {
         version: '10.7',
         label: '10.7',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/auditor/10.7.js',
       },
       {
@@ -142,7 +148,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/auditor/10.6.js',
       },
     ],
-    defaultVersion: '10.7',
+    defaultVersion: '10.8',
   },
   {
     id: 'changetracker',

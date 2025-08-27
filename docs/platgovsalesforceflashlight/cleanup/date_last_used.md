@@ -11,15 +11,11 @@ last date the Customization, or the data it contains, was created, changed, acce
 used.The DLU value indicates that the customization was used at least as late as the DLU. It does
 not indicate if it was used earlier. If DLU is blank, it indicates there in no verified date.
 
-> DLU CustomField Details
->
-> Setting the DLU Expiration
->
-> DLU Metadata Types
->
-> Excluded Metadata Extended Types
->
-> DLU Scheduler
+- DLU CustomField Details
+- Setting the DLU Expiration
+- DLU Metadata Types
+- Excluded Metadata Extended Types
+- DLU Scheduler
 
 ## DLU CustomField Details
 
@@ -29,8 +25,10 @@ make better decisions about the value of maintaining specific CustomFields. Usag
 - how often the field has data (_frequency_)
 - how recently the field has been used (_recency_)
 
-NOTE: DLU analysis should only be performed in Production orgs. Sandbox orgs do not reflect actual
+:::note
+DLU analysis should only be performed in Production orgs. Sandbox orgs do not reflect actual
 usage.
+:::
 
 Usage data fields:
 
@@ -48,18 +46,18 @@ Usage data fields:
   disabled. **CreatedDate** is more accurate for the CustomField than the **LastModifiedDate** for
   the record.
 - **DLU Status** displays the current status:
-   | DLU Status | DLU | Field History Tracking | Date DLU Analyzed | Parent Last Update Date | | ---
-  | --- | --- | --- | --- | | Unavailable | Blank | Never enabled for this field. | Blank |
-  Populated | | Pending | Blank | Enabled. Waiting for the scanner to run. | Blank | Populated | |
-  Current | Populated | Enabled. DLU is current and accurate using automated nightly scans. | Today
-  | Blank | | Recent | Populated, May be stale | Disabled. Last scan when enabled was within the
-  past three months. Three months is the default time period. See Setting the DLU Expiration. |
-  Within set time period | Populated | | Expired | Populated, May be stale | Disabled. Last scan
-  when enabled was longer than three months ago. Three months is the default time period. See
-  Setting the DLU Expiration. | Older than set time period | Populated | If Field History Tracking
-  is enabled for a CustomField with a **DLU Status** of either **Recent** or **Expired**, the status
-  is changed to **Pending**. Here is an example:
-  ![Example of the DLU status fields for a CustomField](/images/platgovsalesforceflashlight/clean_up/dlu_status_example_customfield_800x294.webp)
+
+| DLU Status | DLU | Field History Tracking | Date DLU Analyzed | Parent Last Update Date |
+| ---| --- | --- | --- | --- |
+| Unavailable | Blank | Never enabled for this field. | Blank | Populated |
+| Pending | Blank | Enabled. Waiting for the scanner to run. | Blank | Populated |
+| Current | Populated | Enabled. DLU is current and accurate using automated nightly scans. | Today | Blank |
+| Recent | Populated, May be stale | Disabled. Last scan when enabled was within the past three months. Three months is the default time period. See Setting the DLU Expiration. | Within set time period | Populated |
+| Expired | Populated, May be stale | Disabled. Last scan when enabled was longer than three months ago. Three months is the default time period. See Setting the DLU Expiration. | Older than set time period | Populated |
+
+If Field History Tracking is enabled for a CustomField with a **DLU Status** of either **Recent** or **Expired**, the status is changed to **Pending**. Here is an example:
+
+  <!-- ![Example of the DLU status fields for a CustomField](/img/product_docs/platgovsalesforceflashlight/clean_up/dlu_status_example_customfield_800x294.webp) -->
 
 ### Notes
 
@@ -97,7 +95,7 @@ DLU can be used for the following metadata types:
 | Salesforce Family Types & Joins                | Metadata Types                                                                                       | DLU                                                                                               |
 | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | Workflow                                       | Workflow Rule                                                                                        | Date workflow rule was last run.                                                                  |
-| Workflow Approva lProcess Flow Validation Rule | Last date base record updated, if enabled                                                            |                                                                                                   |
+| Workflow Approval Process Flow Validation Rule | Last date base record updated, if enabled                                                            |                                                                                                   |
 | Scripts                                        | Apex Class**\*** Apex Trigger**\*** Apex Component**\*** Lightning Component Lightning Web Component | The last date the code was triggered by any script based on the log of the last time it was run.  |
 | Forms                                          | Layout Compact Layout                                                                                | If assigned to a profile, it is the date the last record that belongs to the layout was updated . |
 | Apex Page**\***                                | The last date the page was accessed (the code was triggered).                                        |                                                                                                   |

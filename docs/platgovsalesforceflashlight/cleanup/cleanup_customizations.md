@@ -45,9 +45,9 @@ Use these processes to Clean up Individual Customization or Clean Up Multiple Cu
 
 5. Select fields to display:
 
-- **Clean Up Classification**
-- **Clean Up Comments**
-- **Clean Up Status**
+    - **Clean Up Classification**
+    - **Clean Up Comments**
+    - **Clean Up Status**
 
 ![createlist_view_for_cleanup_800x403](/images/platgovsalesforceflashlight/clean_up/createlist_view_for_cleanup_800x403.webp)6.
 Restrict Visibility. You can choose to have the list view:
@@ -59,11 +59,13 @@ Restrict Visibility. You can choose to have the list view:
 7. Click **Save**.
 8. Once your list view has been created, you can multi-select customizations for clean up by
    checking the box beside Action.
-   ![multi_select_cleanup_800x382](/images/platgovsalesforceflashlight/clean_up/multi_select_cleanup_800x382.webp)9.
-   You can now choose what you want to edit for the multiple customizations selected.
-    For example, if you want to change the clean up status:
-9. Go to **Edit Clean Up Status**.
-10. Select a status such as To Be Cleaned Up.
-11. Choose to **Apply changes to: All the selected records**.
-12. Click **Save**.
-    ![flagging_mass_customizations_800x374](/images/platgovsalesforceflashlight/clean_up/flagging_mass_customizations_800x374.webp)
+
+   <!-- ![multi_select_cleanup_800x382](/img/product_docs/platgovsalesforceflashlight/clean_up/multi_select_cleanup_800x382.webp) -->
+
+9. You can now choose what you want to edit for the multiple customizations selected. For example, if you want to change the clean up status:
+    1. Go to **Edit Clean Up Status**.
+    2. Select a status such as **To Be Cleaned Up**.
+    3. Choose to **Apply changes to: All the selected records**.
+    4. Click **Save**.
+
+    <!-- ![flagging_mass_customizations_800x374](/img/product_docs/platgovsalesforceflashlight/clean_up/flagging_mass_customizations_800x374.webp) -->
