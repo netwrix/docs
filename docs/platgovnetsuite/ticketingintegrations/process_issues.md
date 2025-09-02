@@ -21,7 +21,7 @@ continue to use that and reference the external ticket in the Change Request.
 
 ## Initiate a Process Issue
 
-1. Open **Strongpoint** > **Process Issue** > **New**
+1. Open **Netwrix** > **Process Issue** > **New**
 
     ![Initiate a Process Issue](/images/platgovnetsuite/processes/process_issue.webp)
 
@@ -104,7 +104,7 @@ Use the ERD tab to visually view the records and see the relationships.
 
 You can manage your Process Issues through reports:
 
-Open **Strongpoint** > **Process Issues** > **Process Issue Overview**
+Open **Netwrix** > **Process Issues** > **Process Issue Overview**
 
 You can enter filters to sort the issues and click on the column heads to change the sort order.
 Reports can be exported to CSV, Excel, PDF, printed or emailed using the icons.

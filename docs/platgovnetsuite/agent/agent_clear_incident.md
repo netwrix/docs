@@ -11,7 +11,7 @@ Report.
 
 Here is the process to clear/resolve a control incident:
 
-1. Open **Strongpoint** > **Financial Controls** > **Unresolved Control Incidents**
+1. Open **Netwrix** > **Financial Controls** > **Unresolved Control Incidents**
 2. Click on the **Customization** to display the incidents.
 3. Click **Edit** on the Incident record to clear/resolve.
 

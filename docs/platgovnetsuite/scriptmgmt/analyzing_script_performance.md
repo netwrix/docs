@@ -14,7 +14,7 @@ In order for Script Monitoring to function effectively:
 - Log level AUDIT is preferred since it is more efficient. DEBUG is not required for released code.
   It can be left in place on locked but not hidden code to permit some monitoring to occur.
 
-Scripts that are not in AUDIT mode can be found using the search **Strongpoint** > **Script
+Scripts that are not in AUDIT mode can be found using the search **Netwrix** > **Script
 Management** > **Active Script Deployments Not in Audit Log Status**. You can change the criteria to
 exclude scripts set to DEBUG.
 
@@ -38,7 +38,7 @@ to unlocked scripts.
 1. Open **Documents** > **Files** > **File Cabinet**
 2. Expand **SuiteBundles** > **Bundle 294336**
 3. Look for **Archive** under **FLODocs Enterprise** or **FLODocs Enterprise (2)**
-4. Click on folder containing **Archive**, and copy the **Internal ID** of the Archive folder. If
+4. Click on the **Archive** folder, and copy the **Internal ID** of the Archive folder. If
    the **Internal ID** column is not displayed:
 
     1. Open **NetSuite Home** > **Set Preferences**
@@ -98,6 +98,6 @@ for more information on SuiteScript 2.0.
 The audit tag information is updated in the documentation once the Script Parser runs (daily). You
 can validate the audit tags are in place by:
 
-- Running **Strongpoint** > **Script Management** > **Scripts with No Audit Tags**
+- Running **Netwrix** > **Script Management** > **Scripts with No Audit Tags**
 - Open the customization record for script and look at the **Audit Tag** field on the **Detailed
   Metadata** tab.

@@ -121,7 +121,7 @@ Administrator assignment requires approval.
 
 To assign an administrator role:
 
-1. Open **Strongpoint** > **Change Management Tools** > **ITGC Change Request** > **New**
+1. Open **Netwrix** > **Change Management Tools** > **ITGC Change Request** > **New**
 2. Enter these fields:
 
     - **Name**: Admin approval for Randy
@@ -172,9 +172,9 @@ Anyone entering customer orders cannot approve or process it.
 4. Check **Give Access**.
 5. On the **Roles** tab, select **Z - Senior Executive** for the **Role**.
 6. Click **Add**.
-7. Click **Save**.  
+7. Click **Save**.
    Result: SoD Incidents are logged. Z - Senior Executive violates both rules.
-8. Open **Strongpoint** > **Change Management Tools** > **ITGC Change Request** > **New**  
+8. Open **Netwrix** > **Change Management Tools** > **ITGC Change Request** > **New**
    Enter these fields:
 
     - **Name**: Approve Z-Senior Executive for Beverly

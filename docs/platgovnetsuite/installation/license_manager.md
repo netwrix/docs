@@ -11,13 +11,13 @@ users. Contact your customer service representative if you need modifications to
 
 :::note
 If the **Take Web Site Offline for Maintenance** option is changed, you must use the
-**Strongpoint** > **Strongpoint Support** > **License Manager** > **Get Lic. Number**
+**Netwrix** > **Strongpoint Support** > **License Manager** > **Get Lic. Number**
  Or re-push the bundle to update the Spider link.
 :::
 
 ## Add a New License
 
-1. Open **Strongpoint** > **Strongpoint Support** > **License Manager**
+1. Open **Netwrix** > **Strongpoint Support** > **License Manager**
 2. Depending on your account settings, you may have to click **View** to see the account record.
 
     ![Add a New License.](/images/platgovnetsuite/installing_strongpoint/license_new.webp)
@@ -34,7 +34,7 @@ If the **Take Web Site Offline for Maintenance** option is changed, you must use
 
 ## Edit or View an Existing License
 
-1. Open **Strongpoint** > **Strongpoint Support** > **License Manager**
+1. Open **Netwrix** > **Strongpoint Support** > **License Manager**
 2. Click **Edit** if you need to modify your **Weekly Reports Recipients** or your **License
    Number** or click **View** to [Manage Users](/docs/platgovnetsuite/installation/managing_users.md).
 3. Click **Save** if you make changes.

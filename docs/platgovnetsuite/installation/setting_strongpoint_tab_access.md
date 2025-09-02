@@ -14,11 +14,11 @@ By default, access is granted to the following roles:
 - Full Access
 - Strongpoint Developer Role
 
-Access to the Strongpoint tab must be granted to other users or roles:
+Access to the Netwrix tab must be granted to other users or roles:
 
 1. Open **Customization** > **Centers and Tabs** > **Center Tabs**
-2. Click **Edit** by Strongpoint
-   The **Label** should be **Strongpoint**.
+2. Click **Edit** by **Netwrix**
+   The **Label** should be **Netwrix**.
 3. Click the **Audience** tab.
 4. Grant access to the appropriate users and roles. Refer to NetSuite’s Help for more details on
    **Role and Tab Access**.
@@ -30,16 +30,16 @@ There are two options where to set permissions:
   tab. However, the access is removed and must be reset after every bundle update. If you choose
   this option, skip to Setting the Audience
 - If you want to avoid granting access after every bundle update, continue with the **Creating a
-  Copy of Strongpoint Classic Center** steps before **Setting Permissions**.
+  Copy of Classic Center** steps before **Setting Permissions**.
 
 ## Creating a Copy of Classic Center
 
-This procedure makes a copy of the Strongpoint Classic Center tab that is preserved through bundle
+This procedure makes a copy of the Netwrix Classic Center tab that is preserved through bundle
 updates. After you create the copy, you must add all of the appropriate category links prior to
 **Setting Permissions**.
 
 1. Open **Customization** > **Centers and Tabs** > **Center Tabs**
-2. Click **Edit** by Strongpoint
+2. Click **Edit** by **Netwrix**
 3. Select a different **Center**
 4. Click **Save a Copy**
    Leave this window open so you can see all of the categories.
@@ -74,7 +74,7 @@ updates. After you create the copy, you must add all of the appropriate category
 ## Setting the Audience
 
 1. Open **Customization** > **Centers and Tabs** > **Center Tabs**
-2. Click **Edit** by Strongpoint and the correct **Center Type** (**Engineering** in this example).
+2. Click **Edit** by **Netwrix** and the correct **Center Type** (**Engineering** in this example).
 3. Open the **Audience** tab.
 4. Assign the audience. This can be role(s) or specific employees.
 5. Click **Save**

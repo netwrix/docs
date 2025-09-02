@@ -40,7 +40,7 @@ The basic clean up process:
 
 ## Analyze Unused Customizations and Identify Dependencies
 
-1. Open **Strongpoint** > **Clean Up** > **Unused Customizations**
+1. Open **Netwrix** > **Clean Up** > **Unused Customizations**
 2. Enter filtering information to streamline your search. Searching on all unused customizations can
    take a long time to load and can time out.
 

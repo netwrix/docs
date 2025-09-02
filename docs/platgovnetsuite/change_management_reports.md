@@ -8,7 +8,7 @@ sidebar_position: 90
 
 To access change management reports:
 
-Open **Strongpoint** > **Change Management Reports** and one of the available reports:
+Open **Netwrix** > **Change Management Reports** and one of the available reports:
 
 - Policy Changes
 - Open Non-Compliant Changes

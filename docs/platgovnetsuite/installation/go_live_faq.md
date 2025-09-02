@@ -32,7 +32,7 @@ Here is a list of common questions customers have asked after they Go Live.
 
 For a Role Assignment (or any role change), you create a Change Request:
 
-1. Open **Strongpoint** > **Change Management Tools** > **ITGC Change Request** > **New**
+1. Open **Netwrix** > **Change Management Tools** > **ITGC Change Request** > **New**
 2. Enter a **Name** and **Change Overview**.
 3. Click **Lookup Customization**
 4. Select **User Role** for **Type** and click **Lookup**
@@ -61,7 +61,7 @@ customizations that do not exist in any account. Refer to
 
 ## Search for Customizations
 
-To access a customization quick search, open **Strongpoint** > **Customizations** > **Customization
+To access a customization quick search, open **Netwrix** > **Customizations** > **Customization
 Quick Search**
 
 You can search using several factors and submit. When looking up by **Name**, using **Contains**

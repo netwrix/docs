@@ -1,10 +1,10 @@
 ---
-title: "Netwrix Strongpoint for Netsuite 7.1 Release Notes"
-description: "Netwrix Strongpoint for Netsuite 7.1 Release Notes"
+title: "Netwrix Platform Governance for NetSuite 7.1 Release Notes"
+description: "Netwrix Platform Governance for NetSuite 7.1 Release Notes"
 sidebar_position: 30
 ---
 
-# Netwrix Strongpoint for Netsuite 7.1 Release Notes
+# Netwrix Platform Governance for NetSuite 7.1 Release Notes
 
 ## Core 7.1.2.1
 
@@ -27,7 +27,7 @@ November 30, 2023
 
 November 2, 2023
 
-- Removed **People Related to Customization** search from the **Strongpoint** > **Customization**
+- Removed **People Related to Customization** search from the **Netwrix** > **Customization**
   menu.
 - Increased the number of employees and roles for User Provisioning per run. If there are more than
   the limit, multiple runs are processed. The **User Provisioning Error** field reports the Change
@@ -194,7 +194,7 @@ Enable Allow NS to Jira Push
 
 This feature must be enabled before you can create tickets from NetSuite to Jira.
 
-1. Open **Strongpoint** > **Strongpoint Support** > **Installation Settings**
+1. Open **Netwrix** > **Strongpoint Support** > **Installation Settings**
 2. Open the **Jira Integration** tab
 3. Check **Allow NS to Jira Push** to enable pushing NetSuite change requests into Jira.
 

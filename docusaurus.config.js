@@ -38,8 +38,8 @@ const config = {
       swcJsMinimizer: true,
       swcHtmlMinimizer: true,
       lightningCssMinimizer: true,
-      rspackBundler: true,
-      rspackPersistentCache: true, // 2-5x faster rebuilds
+//      rspackBundler: true, //
+//      rspackPersistentCache: true, // 2-5x faster rebuilds //
       mdxCrossCompilerCache: true,
       ssgWorkerThreads: true, // 2x faster static generation
     },

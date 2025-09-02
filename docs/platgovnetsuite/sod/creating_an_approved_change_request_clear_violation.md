@@ -50,7 +50,7 @@ The violation clears in the employee record after the approved Change Request is
 
 To create an approved change request:
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change Request** > **New**
+1. Open **Netwrix** > **Change Management Tools** > **Change Request** > **New**
 2. Add the following required fields for pre-approval:
 
     - **Name**: Enter a name for the request.

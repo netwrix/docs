@@ -12,7 +12,7 @@ is reported in the Change Log as **Documentation Change** for the **Change Type*
 **Resolution** set to _Automatically cleared documentation change. Only Help or Description
 changed_. The Change Log is closed.
 
-1. Open **Strongpoint** > **Clean Up** > **Update Field Description and Help**<br />
+1. Open **Netwrix** > **Clean Up** > **Update Field Description and Help**<br />
 You can filter the
    results or check **Description/Help is Empty** to focus the **Field List**. Click on a column
    heading in the **Field List** to sort the list by the selected column.

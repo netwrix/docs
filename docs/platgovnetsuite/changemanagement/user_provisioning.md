@@ -15,12 +15,12 @@ remove access, or grant temporary access. You can specify the access by **Affect
 The **administrator** role cannot be automatically provisioned.
 :::
 
-The new form is accessed from **Strongpoint** > **Change Management Tools** > **User Provisioning
+The new form is accessed from **Netwrix** > **Change Management Tools** > **User Provisioning
 Change Request**.
 
 The **Enhanced User Provisioning** feature is enabled as part of the **Installation Settings**.
 
-If you choose to continue with the original method, use the **Strongpoint** > **Change Management
+If you choose to continue with the original method, use the **Netwrix** > **Change Management
 Tools** > **ITGC Change Request**. When you view the Change Log, you see **Change Type** is set to
 **User Role Assignment Change** instead of **User Onboarding**.
 
@@ -32,7 +32,7 @@ custom form.
 
 ## Enable Enhanced User Provisioning
 
-1. Open **Strongpoint** > **Strongpoint Support** > **Installation Settings**.
+1. Open **Netwrix** > **Strongpoint Support** > **Installation Settings**.
 2. Open the **Change Management** tab.
 
     ![Enabling Enhanced User Provisioning](/images/platgovnetsuite/change_management/enhanced_user_provisioning.webp)
@@ -47,7 +47,7 @@ custom form.
 
 ## Onboarding Users
 
-1. Open **Strongpoint** > **Change Management Tools** > **User Provisioning Change Request**.
+1. Open **Netwrix** > **Change Management Tools** > **User Provisioning Change Request**.
 
     ![New User Access Change Request form](/images/platgovnetsuite/change_management/user_access_change_request.webp)
 
@@ -70,7 +70,7 @@ The **Values** tab shows the details of the role changes.
 
 ## Offboarding Users
 
-1. Open **Strongpoint** > **Change Management Tools** > **User Provisioning Change Request**.
+1. Open **Netwrix** > **Change Management Tools** > **User Provisioning Change Request**.
 2. Enter a descriptive **Name** and **Change Overview**.
 3. Select **Role Reductions** for **Access type**. The Offboarding detail fields are now visible.
 4. Check **Inactivate After Removal** if the affected employees should be inactivated. This should
@@ -104,5 +104,5 @@ Error** field reports the Change Request is in process until all of the runs are
 
 ## Viewing User Provisioning Change Requests
 
-To view the list of all User Access change requests: **Strongpoint** > **Change Management Tools** >
+To view the list of all User Access change requests: **Netwrix** > **Change Management Tools** >
 **User Provisioning Change Request List**.

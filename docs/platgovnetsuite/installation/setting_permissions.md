@@ -13,7 +13,7 @@ in the Permission List for a record type are denied access.
 
 :::note
 Remember to give your [licensed](/docs/platgovnetsuite/installation/license_manager.md) users access to the
-[Strongpoint tab](/docs/platgovnetsuite/installation/setting_strongpoint_tab_access.md).
+[Netwrix tab](/docs/platgovnetsuite/installation/setting_strongpoint_tab_access.md).
 :::
 
 To use Platform Governance for NetSuite with your custom roles, add the record types to the
@@ -40,30 +40,30 @@ Here are the Custom Permissions needed for each role.
 
 #### Change Request Approvers
 
-> Assign a [User License](/docs/platgovnetsuite/installation/license_manager.md)
+- Assign a [User License](/docs/platgovnetsuite/installation/license_manager.md)
 
 #### Process Issue
 
-> No Permission Required
+- No Permission Required
 
 #### Manage ITGC
 
-> [Strongpoint License](/docs/platgovnetsuite/installation/license_manager.md) +
-> Account Role: **Edit**
-> Change / Approval Policy: **Full**
-> Change Log: **Edit**
-> Change Request: **Edit**
-> Configuration and Stats: **Full**
-> Customization: **Full**
-> Environment: **Full**
-> Environment Compare Log: **Full**
-> Licensed User: **Full**
-> Process: **Full**
-> Spider Log: **View**
-> Test Record: **Full**
-> Users and License Manager: **Full**
-> Validation Log: **View**
-> Warning Log: **Full**
+- [Strongpoint License](/docs/platgovnetsuite/installation/license_manager.md) +
+- Account Role: **Edit**
+- Change / Approval Policy: **Full**
+- Change Log: **Edit**
+- Change Request: **Edit**
+- Configuration and Stats: **Full**
+- Customization: **Full**
+- Environment: **Full**
+- Environment Compare Log: **Full**
+- Licensed User: **Full**
+- Process: **Full**
+- Spider Log: **View**
+- Test Record: **Full**
+- Users and License Manager: **Full**
+- Validation Log: **View**
+- Warning Log: **Full**
 
 #### Manage SoD
 
@@ -71,48 +71,47 @@ Here are the Custom Permissions needed for each role.
 On the Custom Role, you must check **Do Not Restrict Employee Fields**.
 :::
 
-> [Strongpoint License](/docs/platgovnetsuite/installation/license_manager.md) +
-> Account Role: **Edit**
-> Change / Approval Policy: **Edit**
-> Change Log: **Edit**
-> Change Request: **Edit**
-> Configuration and Stats: **Edit**
-> Customization: **View**
-> Environment: **View**
-> Process: **View**
-> Test Record: **View**
-> Warning Log: **Edit**
->
-> Permission: **Full**
-> Permission / Permission Level Map: **Full**
-> Permission Level: **Full**
-> SoD Rule: **Full**
-> SoD Rule Processing Status: **Full**
+- [Strongpoint License](/docs/platgovnetsuite/installation/license_manager.md) +
+- Account Role: **Edit**
+- Change / Approval Policy: **Edit**
+- Change Log: **Edit**
+- Change Request: **Edit**
+- Configuration and Stats: **Edit**
+- Customization: **View**
+- Environment: **View**
+- Process: **View**
+- Test Record: **View**
+- Warning Log: **Edit**
+- Permission: **Full**
+- Permission / Permission Level Map: **Full**
+- Permission Level: **Full**
+- SoD Rule: **Full**
+- SoD Rule Processing Status: **Full**
 
 #### User Access Review (UAR)
 
-> [Strongpoint License](/docs/platgovnetsuite/installation/license_manager.md) +
-> Audit Trail: **Full**
-> Find Transaction: **Full**
+- [Strongpoint License](/docs/platgovnetsuite/installation/license_manager.md) +
+- Audit Trail: **Full**
+- Find Transaction: **Full**
 
 #### Manage Internal Audit - **View** Only
 
-> [Strongpoint License](/docs/platgovnetsuite/installation/license_manager.md) +
-> Account Role: **View**
-> Change / Approval Policy: **View**
-> Change Log: **View**
-> Change Request: **View**
-> Configuration and Stats: **View**
-> Customization: **View**
-> Environment: **View**
-> Environment Compare Log: **View**
-> Licensed User: **View**
-> Process: **View**
-> Spider Log: **View**
-> Test Record: **View**
-> Users and License Manager: **View**
-> Validation Log: **View**
-> Warning Log: **View**
+- [Strongpoint License](/docs/platgovnetsuite/installation/license_manager.md) +
+- Account Role: **View**
+- Change / Approval Policy: **View**
+- Change Log: **View**
+- Change Request: **View**
+- Configuration and Stats: **View**
+- Customization: **View**
+- Environment: **View**
+- Environment Compare Log: **View**
+- Licensed User: **View**
+- Process: **View**
+- Spider Log: **View**
+- Test Record: **View**
+- Users and License Manager: **View**
+- Validation Log: **View**
+- Warning Log: **View**
 
 **Default Custom Record Types and Permission Lists**
 

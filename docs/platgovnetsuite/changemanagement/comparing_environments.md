@@ -21,7 +21,7 @@ notification that there were more than 1000 records to compare and to restrict t
 Your TBA Credentials only need to be set up once. These are the credentials you need to run Compare
 Environments and to use the **Change Account** feature on a Change Requests.
 
-1. Open **Strongpoint** > **Change Management Tools** > **Compare Environments**
+1. Open **Netwrix** > **Change Management Tools** > **Compare Environments**
 
     ![Set up your TBA Credentials](/images/platgovnetsuite/change_management/tba_cred_1.webp)
 
@@ -54,7 +54,7 @@ Token-based authentication (TBA) is required by NetSuite. Follow the steps in t
 TBA Credentials** section the first time you use this feature.
 :::
 
-1. Open **Strongpoint** > **Change Management Tools** > **Compare Environments**
+1. Open **Netwrix** > **Change Management Tools** > **Compare Environments**
 
     ![Compare Environments](/images/platgovnetsuite/change_management/comp_env.webp)
 
@@ -172,7 +172,7 @@ to ensure the environments are synchronized.
 
 Environment comparison can be used on any Customization Type, including Body Fields.
 
-1. Open **Strongpoint** > **Change Management Tools** > **Compare Environments**.
+1. Open **Netwrix** > **Change Management Tools** > **Compare Environments**.
 2. Enter the **Name**, select the **Source** and **Target** environments and all the required
    credential information.
 3. Select **Body Field** for the **Customization Type**.

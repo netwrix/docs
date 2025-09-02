@@ -8,7 +8,7 @@ sidebar_position: 150
 
 To access the Open Non-Compliant Changes Report:
 
-1. Open **Strongpoint** > **Change Management Reports** > **Open NonCompliant Changes**
+1. Open **Netwrix** > **Change Management Reports** > **Open NonCompliant Changes**
    The Non-Compliant Changes Report gives you a list of the [Change Logs](/docs/platgovnetsuite/changemanagement/using_change_logs.md). You
    can filter the report or sort by the column heads.
 

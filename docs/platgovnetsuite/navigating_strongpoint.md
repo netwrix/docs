@@ -6,24 +6,24 @@ sidebar_position: 18
 
 # Navigation
 
-There are two ways to access Platform Governance for NetSuite's functionality: the **Strongpoint**
-tab on the NetSuite tab bar or from the **Strongpoint Overview**. Menu options are available based
+There are two ways to access Platform Governance for NetSuite's functionality: the **Netwrix**
+tab on the NetSuite tab bar or from the **Netwrix Overview**. Menu options are available based
 on your [License Type](/docs/platgovnetsuite/installation/features_by_license_type.md). In addition, menu items
 can be hidden for each account through [Menu Management](/docs/platgovnetsuite/installation/managing_menus.md).
 These examples show all the options for an **Enterprise Compliance** license.
 
 :::note
-If you do not see the **Strongpoint** tab, contact your Administrator regarding
+If you do not see the **Netwrix** tab, contact your Administrator regarding
 [Setting Tab Access](/docs/platgovnetsuite/installation/setting_strongpoint_tab_access.md).
 :::
 
-## Strongpoint Tab Menu
+## Netwrix Tab Menu
 
-The Strongpoint tab menu provides navigation to all the key tools:
+The Netwrix tab menu provides navigation to all the key tools:
 
-![strongpoint_menu](/images/platgovnetsuite/strongpoint_menu.webp)
+![Netwrix_menu](/images/platgovnetsuite/strongpoint_menu.webp)
 
-Strongpoint Menu tab includes:
+Netwrix Menu tab includes:
 
 - **Strongpoint Support**: How to, installation settings and reference information.
 - **Tools**: Access to the Spider, field impact analysis and SQL Library.
@@ -46,9 +46,9 @@ Strongpoint Menu tab includes:
   projects.
 - **Testing**: Develop, organize, track and analyze testing of your processes and customizations.
 
-## Strongpoint Overview
+## Netwrix Overview
 
-Click **Strongpoint** > **Strongpoint Overview** to open the dashboard, providing an at-a-glance
+Click **Netwrix** > **Netwrix Overview** to open the dashboard, providing an at-a-glance
 overview of your reminders, automated documentation summary and easy access to all the features.
 
-![Strongpoint Overview Dashboard](/images/platgovnetsuite/dashboard_overview.webp)
+![Netwrix Overview Dashboard](/images/platgovnetsuite/dashboard_overview.webp)

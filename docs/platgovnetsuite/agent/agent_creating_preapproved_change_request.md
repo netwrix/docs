@@ -12,7 +12,7 @@ implementing your custom form.
 
 Here are the steps to create a pre-approved change request for a control:
 
-1. Open **Strongpoint** > **Financial Controls** > **New Agent Control Approval**
+1. Open **Netwrix** > **Financial Controls** > **New Agent Control Approval**
 
     ![agent_pre_app_not_started](/images/platgovnetsuite/financial_controls/agent_pre_app_not_started.webp)
 

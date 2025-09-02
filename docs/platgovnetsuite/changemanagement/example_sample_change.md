@@ -8,7 +8,7 @@ sidebar_position: 160
 
 ## New Object Compliant Change with a Change Request
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change Request** > **New**
+1. Open **Netwrix** > **Change Management Tools** > **Change Request** > **New**
 2. Enter a **Name** and **Change Overview**.
 3. Click **Lookup Customization**. Enter a sample **Name** and set **Type** to **Entity Field**.
 4. Click **Add Selected Customization** to add the field as a proposed customization.
@@ -32,13 +32,13 @@ sidebar_position: 160
 
 ## Create the Entity Field
 
-1. Open **Strongpoint** > **Customizations** > **Customization** > **New**
+1. Open **Netwrix** > **Customizations** > **Customization** > **New**
 2. Add the **Name** of your proposed entity field customization.
 3. Select **Entity Field** for **Type**.
 4. Click **Save**.
 5. Open the **Change Log** tab to view the change.
 6. Check **Customer** on the **Applies To** tab.
-7. Open **Strongpoint** > **Change Management Tools** > **Change Request**
+7. Open **Netwrix** > **Change Management Tools** > **Change Request**
 8. Select your **Change Request** from the list.
 9. Click **Respider Now**.
 
@@ -64,6 +64,6 @@ This change will be flagged as non-compliant and appear on the report as **Non-C
 
 ## Open the Non-Compliant Changes Report
 
-1. Open **Strongpoint** > **Change Management Reports** > **Open Non-Compliant Changes**
+1. Open **Netwrix** > **Change Management Reports** > **Open Non-Compliant Changes**
 2. Set the **Date Created** to **Today**
 3. Resolve and close non-compliant change.

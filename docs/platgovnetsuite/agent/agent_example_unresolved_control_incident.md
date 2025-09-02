@@ -13,7 +13,7 @@ be found under **Unresolved Control Incidents**.
 
 To view unresolved control incidents:
 
-1. Open **Strongpoint** > **Financial Controls** > **Unresolved Control Incidents**
+1. Open **Netwrix** > **Financial Controls** > **Unresolved Control Incidents**
 
     ![Viewing Unresolved Control Incidents](/images/platgovnetsuite/financial_controls/agent_unresolved_example1.webp)
 

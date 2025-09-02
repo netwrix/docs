@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Installing Platform Governance for NetSuite
 
-To get Platform Governance for NetSuite up and running, you need to do the following:
+To get Platform Governance for NetSuite up and running:
 
 1. [Install the bundle](#install-the-bundle) using the correct bundle name and the bundle ID.
 2. [Set the number of rows in list segments](#set-the-number-of-row-in-list-segments) to 1,000. This
@@ -30,7 +30,7 @@ The Bundle ID has been updated due to NetSuite changes.
 
     ![Search for the Strongpoint Bundle](/images/platgovnetsuite/installing_strongpoint/searchandinstallbundles.webp)
 
-5. Click **Strongpoint**
+5. Click **Netwrix Platform Governance (Strongpoint)**
 6. Click **Install** to start the bundle installation.
 7. Verify the installation is complete. Open **Customization** > **SuiteBundler** > **Search &
    Install Bundles** > **List**
@@ -63,7 +63,7 @@ If the field is grayed out, it should be set as a **Company Preference:**
 
 ## Assign a License
 
-1. Open **Strongpoint** > **Strongpoint Support** > **License Manager**
+1. Open **Netwrix** > **Strongpoint Support** > **License Manager**
 2. Click **View**.
 3. Click **New Licensed User**.
 4. Click **Edit** by your name.
