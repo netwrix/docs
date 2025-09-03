@@ -60,7 +60,7 @@ Restrict Visibility. You can choose to have the list view:
 8. Once your list view has been created, you can multi-select customizations for clean up by
    checking the box beside Action.
 
-   ![multi_select_cleanup_800x382](/img/product_docs/platgovsalesforceflashlight/clean_up/multi_select_cleanup_800x382.webp)
+   <!-- ![multi_select_cleanup_800x382](/img/product_docs/platgovsalesforceflashlight/clean_up/multi_select_cleanup_800x382.webp) -->
 
 9. You can now choose what you want to edit for the multiple customizations selected. For example, if you want to change the clean up status:
     1. Go to **Edit Clean Up Status**.
@@ -68,4 +68,4 @@ Restrict Visibility. You can choose to have the list view:
     3. Choose to **Apply changes to: All the selected records**.
     4. Click **Save**.
 
-    ![flagging_mass_customizations_800x374](/img/product_docs/platgovsalesforceflashlight/clean_up/flagging_mass_customizations_800x374.webp)
+    <!-- ![flagging_mass_customizations_800x374](/img/product_docs/platgovsalesforceflashlight/clean_up/flagging_mass_customizations_800x374.webp) -->

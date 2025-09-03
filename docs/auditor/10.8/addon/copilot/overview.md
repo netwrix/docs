@@ -35,8 +35,7 @@ follows:
 - Alternatively, you can grant the Global administrator role or add the user to the Netwrix Auditor
   Administrators group. In this case, this user will have the most extended permissions in the
   product.
-- Active Directory Domain Services or Microsoft Entra Kerberos is used as an Identity source. See
-  the [Deployment Procedure](/docs/auditor/10.8/addon/azurefiles/deployment.md) topic for additional information.
+- Active Directory Domain Services or Microsoft Entra Kerberos is used as an Identity source. 
 
 ## How the Copilot Add-on Works
 

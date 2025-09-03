@@ -24,7 +24,7 @@ To run the scanner:
 3. You can select several types to scan or you can scan the whole environment by clicking the **+**
    by **Name** to select all the types.
 
-   ![scanner](/img/product_docs/platgovsalesforce/installing_strongpoint/scanner.webp)
+   <!-- ![scanner](/img/product_docs/platgovsalesforce/installing_strongpoint/scanner.webp) -->
    
 4. Click **Run Scanner**.
 5. The batch runs in the background. You receive an email notification when the scan is complete.
