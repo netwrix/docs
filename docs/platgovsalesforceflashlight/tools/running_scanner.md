@@ -13,7 +13,9 @@ Metadata type of the affected customization, instead of scanning the entire envi
 of scan reduces the run time. For example if you change a Report, pick reports as the Metadata type
 and Strongpoint only scans reports.
 
-NOTE: The scanner is only available to Administrators.
+:::note
+The scanner is only available to Administrators.
+:::
 
 To run the scanner:
 
@@ -21,10 +23,12 @@ To run the scanner:
 2. Optional: You can enter all of part of a **Type** in **Search Types** to filter the list.
 3. You can select several types to scan or you can scan the whole environment by clicking the **+**
    by **Name** to select all the types.
-   ![scanner](/images/platgovsalesforce/installing_strongpoint/scanner.webp)4.
-   Click **Run Scanner**.
-4. The batch runs in the background. You receive an email notification when the scan is complete.
-5. You can open **Flashlight** > **Support** > **Status Report** to view the **Flashlight
+
+   <!-- ![scanner](/img/product_docs/platgovsalesforce/installing_strongpoint/scanner.webp) -->
+   
+4. Click **Run Scanner**.
+5. The batch runs in the background. You receive an email notification when the scan is complete.
+6. You can open **Flashlight** > **Support** > **Status Report** to view the **Flashlight
    Configuration and Stats**.
 
 If you are missing objects, you can run a scan on a **Customization** from the open record by

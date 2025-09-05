@@ -18,6 +18,9 @@ packages
 .env.test.local
 .env.production.local
 
+# Claude settings
+.claude/settings.local.json
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

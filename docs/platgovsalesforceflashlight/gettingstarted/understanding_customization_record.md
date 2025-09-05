@@ -35,17 +35,12 @@ Customization record fields include:
 
 These are the tabs inside a customization record:
 
-> Metadata
->
-> Improvements
->
-> Control
->
-> DRD
->
-> Raw Data
->
-> Related Lists
+- Metadata
+- Improvements
+- Control
+- DRD
+- Raw Data
+- Related Lists
 
 ### Metadata
 
@@ -80,9 +75,6 @@ as clean up:
 - **Clean Up Comments**: This field is used to make notes during clean up and improvements.
 - **Clean-up Classification**: This field shows an overview of the clean-up classification.
 - **Add to Change Request**: Lookup tool to associate the clean up to an existing change request.
-
-- : This is one or more Customization records representing the data source(s) for this particular
-  field.
 
 ### Control
 

@@ -130,9 +130,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '10.8',
+        label: '10.8',
+        isLatest: true,
+        sidebarFile: './sidebars/auditor/10.8.js',
+      },
+      {
         version: '10.7',
         label: '10.7',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/auditor/10.7.js',
       },
       {
@@ -142,7 +148,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/auditor/10.6.js',
       },
     ],
-    defaultVersion: '10.7',
+    defaultVersion: '10.8',
   },
   {
     id: 'changetracker',
@@ -166,6 +172,22 @@ export const PRODUCTS = [
       },
     ],
     defaultVersion: '8.1',
+  },
+  {
+    id: 'customer',
+    name: 'Customer Portal & Training Guide',
+    description: 'Access custsomer resources and training materials',
+    path: 'docs/customer',
+    categories: ['Other'],
+    icon: '',
+    versions: [
+      {
+        version: 'current',
+        label: 'Current',
+        isLatest: true,
+        sidebarFile: './sidebars/customer.js',
+      },
+    ],
   },
   {
     id: 'dataclassification',
@@ -280,6 +302,22 @@ export const PRODUCTS = [
       },
     ],
     defaultVersion: '6.2',
+  },
+  {
+    id: 'partner',
+    name: 'Partner Certification Guide',
+    description: 'Learn about partner training materials',
+    path: 'docs/partner',
+    categories: ['Other'],
+    icon: '',
+    versions: [
+      {
+        version: 'current',
+        label: 'Current',
+        isLatest: true,
+        sidebarFile: './sidebars/partner.js',
+      },
+    ],
   },
   {
     id: 'passwordpolicyenforcer',

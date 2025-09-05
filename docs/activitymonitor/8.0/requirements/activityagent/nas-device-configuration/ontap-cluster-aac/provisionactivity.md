@@ -349,17 +349,27 @@ requirements are met:
 - It is recommended to use lowercase for both domain and username. The case of domain and username
   created during the account provisioning process must match exactly to the credentials provided to
   the Activity Monitor activity agent for authentication to work.
+- In the `application` parameter, use `ontapi` for the ONTAPI/ZAPI and `http` for the REST API. 
 
 Use the following command to create the security login for the security role created in Part 1:
 
+#### ONTAPI/ZAPI
 ```
 security login create -user-or-group-name [DOMAIN\DOMAINUSER] -application ontapi -authentication-method [DOMAIN_OR_PASSWORD_AUTH] -role [ROLE_NAME] -vserver [SVM_NAME]
 ```
 
 Example:
-
 ```
 security login create -user-or-group-name example\user1 -application ontapi -authentication-method domain -role enterpriseauditor -vserver testserver
+```
+
+#### REST API
+```
+security login create -user-or-group-name [DOMAIN\DOMAINUSER] -application http -authentication-method [DOMAIN_OR_PASSWORD_AUTH] -role [ROLE_NAME] -vserver [SVM_NAME]
+```
+Example:
+```
+security login create -user-or-group-name example\user1 -application http -authentication-method domain -role enterpriseauditor -vserver testserver
 ```
 
 Validate this security login was created.

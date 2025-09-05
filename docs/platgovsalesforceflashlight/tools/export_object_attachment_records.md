@@ -17,9 +17,8 @@ Salesforce. Your download file is available under **Notes & Attachments**.
 The export history is saved in Salesforce. You can view the list, or add the Export Object
 Attachments tabs to your menu bar.
 
-> Salesforce Classic View
->
-> Salesforce Lightning
+- Salesforce Classic View
+- Salesforce Lightning
 
 ## Salesforce Classic View
 

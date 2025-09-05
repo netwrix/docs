@@ -31,12 +31,7 @@ script.![drd_800x155](/images/platgovsalesforceflashlight/customizations/drd_800
 
 These reports are available from **Flashlight** > **Reports / List Views** > **Customizations**.
 
-> **All Customizations**: This enables you to use Salesforce functionality to filter searches
-> quickly for specific customizations.
->
-> **Customization Impact**: This report shows your customizations and how they impact other objects.
->
-> **Permissions by Object**: This report displays **Permissions** grouped by **Object**.
->
-> **Object Permissions by Profile**: This report displays **Object Permissions** grouped by
-> **Profile**.
+- **All Customizations**: This enables you to use Salesforce functionality to filter searches quickly for specific customizations.
+- **Customization Impact**: This report shows your customizations and how they impact other objects.
+- **Permissions by Object**: This report displays **Permissions** grouped by **Object**.
+- **Object Permissions by Profile**: This report displays **Object Permissions** grouped by **Profile**.

@@ -10,8 +10,8 @@ Clean up involves some or all of the following steps:
 
 1. Identify and remove unused customizations (either individual or multiple):
 
-- Completely unused
-- Useless or inefficient
+    - Completely unused
+    - Useless or inefficient
 
 2. Identify and fix improperly set-up customizations (eg. no help text, inactive owner).
 3. Describe each object and its clean up task (under the improvements tab.)
@@ -29,8 +29,10 @@ follow the same steps:
 4. Manage the clean up as appropriate
 5. Run the scanner
 
-NOTE: Always check the Last Date Scanned on any object and re-scan that object if necessary to
+:::note
+Always check the Last Date Scanned on any object and re-scan that object if necessary to
 ensure the information about that object is up to date.
+:::
 
 ### Select the Approach
 
@@ -55,9 +57,11 @@ Strongpoint homepage under Strongpoint Features and Reports.
 You can clean up individual or multiple customizations by going to the Customization tab and
 selecting **Create New View**. Use the filters to generate your list.
 
-NOTE: Before moving on to other clean up activities, it is often a good idea to delete unused
+:::note
+Before moving on to other clean up activities, it is often a good idea to delete unused
 customizations that are highly likely safe to delete, such as fields that have not been used in
 years or that are not used by any other customization.
+:::
 
 ### Analyze and Organize the Results
 

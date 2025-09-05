@@ -20,7 +20,9 @@ Strongpoint:
 4. Click **Install**
    ![Install Flashlight by Strongpoint](/images/platgovsalesforceflashlight/getting_started/install_flashlight1_800x399.webp)
 
-NOTE: Strongpoint installs in the background. An email notification is sent to you when the
+:::note
+Strongpoint installs in the background. An email notification is sent to you when the
 installation is complete.
+:::
 
 **Next Step:** [Using the Getting Started Wizard](/docs/platgovsalesforceflashlight/gettingstarted/using_getting_started_wizard.md)

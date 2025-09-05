@@ -1,0 +1,10 @@
+{
+  "label": "Zendesk",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "zendesk_integration"
+  }
+}

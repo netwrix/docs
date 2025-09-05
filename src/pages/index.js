@@ -27,7 +27,15 @@ function HomepageHeader() {
           </p>
           <div className={styles.buttons}>
             <Link className="button button--secondary button--lg" to={defaultLink}>
-              Browse the docs
+              Browse the Docs
+            </Link>
+            {/* Add Customer Portal button */}
+            <Link className="button button--secondary button--lg" to="/docs/customer">
+              Customer Portal & Training Guide
+            </Link>
+            {/* Add Partner Certification button */}
+            <Link className="button button--secondary button--lg" to="/docs/partner">
+              Partner Certification Guide
             </Link>
           </div>
         </div>
