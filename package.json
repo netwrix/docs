@@ -6,12 +6,14 @@
   "scripts": {
     "docusaurus": "npx docusaurus",
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=16384 CHOKIDAR_USEPOLLING=false npx docusaurus start --port=4500 --no-open",
-    "build": "NODE_OPTIONS=--max-old-space-size=16384 npx docusaurus build",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=16384 npx docusaurus build",
     "swizzle": "npx docusaurus swizzle",
     "clear": "npx docusaurus clear",
     "serve": "npx serve -s build -l 8080",
     "write-translations": "npx docusaurus write-translations",
-    "write-heading-ids": "npx docusaurus write-heading-ids"
+    "write-heading-ids": "npx docusaurus write-heading-ids",
+    "start:product": "node scripts/build-product.js start",
+    "build:product": "node scripts/build-product.js build"
   },
   "dependencies": {
     "@docusaurus/babel": "^3.8.1",

@@ -90,15 +90,36 @@ npm run start
 
 ```bash
 # Development
-npm run start                     # Start development server
+npm run start                     # Start development server (all products)
 
 # Building & Testing
-npm run build                     # Full production build
+npm run build                     # Full production build (all products)
 
 # Utilities
 npm run clear                     # Clear Docusaurus cache
 npm run serve                     # Serve production build after `npm run build`
 ```
+
+### Single Product Builds
+
+For faster development and reduced memory usage, you can build documentation for specific products only:
+
+```bash
+# Development server for single product
+npm run start:product pingcastle
+
+# Build single product
+npm run build:product pingcastle
+
+# Multiple products
+npm run start:product pingcastle,auditor
+npm run build:product 1secure,threatmanager
+```
+
+**Benefits:**
+- ⚡ Faster startup times (seconds vs minutes)
+- 💾 Reduced memory usage
+- 🎯 Cleaner development focus
 
 ### Development Workflow
 
