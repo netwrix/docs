@@ -84,6 +84,7 @@ Directory. Specufy the following:
   monitor data for this connector. With this, you can generate state-in-time reports on Active
   Directory data. See the [State In Time Risks Reports](/docs/1secure/admin/searchandreports/stateintime.md) topic
   for additional information.
+- Ping Castle - Toggle the **Ping Castle** switch to ON to collect data for this connector. With this, you can generate risks from the Ping Castle collector and generate the full PingCastle report.
 
 **Step 10 –** Optionally, select the following for each connector:
 

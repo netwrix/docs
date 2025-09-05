@@ -100,10 +100,12 @@ The following cards are available for filtering data:
 
 The following drop-down menus are available for filtering data:
 
-- Category – Select a category from the drop-down menu. The Risks list is filtered to display risk
-  metrics that belong to the selected category. The risk profile associated with the organization
-  includes risk metrics, and each metric is assigned a category. By default, _All Categories_ is
-  selected. Other options are:
+- Risks - Select the Risk source from the drop-down menu. By default, _All Risks_ is selected.
+Other options are:
+    - PingCastle
+
+- Category – Select a category from the drop-down menu. The Risks list is filtered to display risk metrics that belong to the selected category. The risk profile associated with the organization includes risk metrics, and each metric is assigned a category. By default, _All Categories_ is selected.
+Other options are:
 
     - Data
     - Identity
@@ -232,11 +234,11 @@ The left pane displays the following details for an enumerated risk:
 
 - Description – A description of the risk metric
 - NIST Regulations – Displays the NIST regulation names associated with the risk metric
-- Open Report – Click this button to navigate to the State In Time Risk Reports page, where you can
-  view a detailed report for that risk metric. See the
-  [State In Time Risks Reports](/docs/1secure/admin/searchandreports/stateintime.md) topic for additional
-  information.
-- Remediate – On clicking this button, the Remediate `<risk name>` pane is displayed, which provides
+- View - A drop-down menu with three potential options:
+
+  - Open Report – Click this button to navigate to the State In Time Risk Reports page, where you can view a detailed report for that risk metric. See the [State In Time Risks Reports](/docs/1secure/admin/searchandreports/stateintime.md) topic for additional information.
+  - Export PingCastle report - Click this button to navigate to the full PingCastle HTML report to review the details of the specific risk and all other PingCastle risks. This option is only available on risks from the PingCastle data source.
+  - Remediate – On clicking this button, the Remediate `<risk name>` pane is displayed, which provides
   AI-generated step-by-step guidance to help you remediate the risk.
 - Edit risk settings – Click this link to navigate to the Risk Profiles page where you can manage
   the risk profiles. See the [Manage Risk Profiles](/docs/1secure/admin/riskprofiles/riskprofiles.md) topic for additional
