@@ -38,8 +38,8 @@ safeguard critical business data.
 ### Support Status Overview
 
 - **Current Version (2509+)**: Full active support with new features, security updates, and comprehensive technical assistance
-- **Previous Versions (5.9.4.2 and earlier)**: Limited support until **November 30, 2025**
-- **After November 30, 2025**: All previous versions transition to discontinued support
+- **Previous Versions (5.9.4.2 and earlier)**: Limited support until **December 29, 2025**
+- **After December 29, 2025**: All previous versions transition to discontinued support
 
 ### What This Means
 

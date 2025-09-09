@@ -19,7 +19,8 @@
       "Bash(powershell:*)",
       "Bash(python:*)",
       "Bash(sed:*)",
-      "Bash(/bashes)"
+      "Bash(/bashes)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }
