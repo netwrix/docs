@@ -26,9 +26,6 @@ function HomepageHeader() {
             Read more about the security solutions from Netwrix. Comprehensive guides, product knowledge, and references for all Netwrix products.
           </p>
           <div className={styles.buttons}>
-            <Link className="button button--secondary button--lg" to={defaultLink}>
-              Browse the Docs
-            </Link>
             {/* Add Customer Portal button */}
             <Link className="button button--secondary button--lg" to="/docs/customer">
               Customer Portal & Training Guide
