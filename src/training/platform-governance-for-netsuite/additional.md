@@ -2,7 +2,7 @@ import { NPGN } from '@site/src/training/products';
 
 ## Additional <NPGN /> Courses for Partners
 
-The following courses are available for self-enrollment through the Learning Library:
+The following course is available for self-enrollment through the Learning Library:
 
 :::note
 
