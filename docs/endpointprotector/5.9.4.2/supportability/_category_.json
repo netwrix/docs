@@ -1,0 +1,11 @@
+{
+  "label": "Supportability",
+  "position": 1,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Supportability",
+    "description": "Supportability information for Netwrix Endpoint Protector"
+  }
+}

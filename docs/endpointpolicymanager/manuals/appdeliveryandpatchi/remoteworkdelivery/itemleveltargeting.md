@@ -46,7 +46,7 @@ Work Delivery Manager:
 - Mobile computers — To deploy settings exclusively for users on mobile PCs, filter the rule by
   using the Portable Computer targeting item.
 - Operating system version — You might want to specify different settings for applications based on
-  the operating system. for example, you might want different settings for those running Windows 10.
+  the operating system. for example, you might want different settings for those running Windows.
   In this case, simply create one rule for each operating system. Then, filter each rule using the
   Operating System targeting item.
 - Group membership — Group membership can be used to link the GPO to the whole domain or
