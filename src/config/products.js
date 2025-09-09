@@ -253,26 +253,20 @@ export const PRODUCTS = [
   },
   {
     id: 'endpointprotector',
-    name: 'Endpoint Protector',
+    name: 'Netwrix Endpoint Protector',
     description: 'Comprehensive endpoint security',
     path: 'docs/endpointprotector',
     categories: ['Endpoint Management'],
     icon: '',
     versions: [
       {
-        version: '5.9.4.2',
-        label: '5.9.4.2',
+        version: '2509',
+        label: '2509',
         isLatest: true,
-        sidebarFile: './sidebars/endpointprotector/5.9.4.2.js',
-      },
-      {
-        version: '5.9.4',
-        label: '5.9.4',
-        isLatest: false,
-        sidebarFile: './sidebars/endpointprotector/5.9.4.js',
+        sidebarFile: './sidebars/endpointprotector/2509.js',
       },
     ],
-    defaultVersion: '5.9.4.2',
+    defaultVersion: '2509',
   },
   {
     id: 'identitymanager',

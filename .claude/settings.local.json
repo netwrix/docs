@@ -15,6 +15,12 @@
       "Bash(git commit:*)",
       "Bash(find:*)",
       "Bash(ls:*)",
+      "Bash(npx kill-port:*)",
+      "Bash(powershell:*)",
+      "Bash(python:*)",
+      "Bash(sed:*)",
+      "Bash(/bashes)",
+      "Bash(git push:*)",
       "Bash(git merge:*)"
     ],
     "deny": []
