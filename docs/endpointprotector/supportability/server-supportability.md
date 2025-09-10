@@ -16,9 +16,9 @@ Here is the current state of all versions of Endpoint Protector Server.
 
 **Currently Supported Versions Matrix**
 
-| **Discontinued Support** | **Limited Support** | **N-1 Track (ACTIVE SUPPORT)** | **N Track (ACTIVE SUPPORT)** |
+| **Discontinued Support** | **Limited Support** | **N-1 Track (Active Support)** | **N Track (Active Support)** |
 | --- | --- | --- | --- |
-| After Dec 29, 2025 all versions prior to 2509 (5.9.4.2 and earlier) transition to Discontinued Support. | All versions prior to 2509 (5.9.4.2 and earlier are in Limited support until Dec 29, 2025 (90 days). | There is no N-1 supported version at this time. | 2509.0.1.0 Endpoint Protector Server (sometimes abbreviated 2509 or as 25.9)<br/><br/>&lt;Link to release notes&gt;<br/><br/>There is no offline patches yet required to maintain Active support. |
+| All versions prior to 5.9.4.1 | 5.9.4.2 (5942)<br/><br/>In Limited Support from Sep 29, 2025 to Jan 27, 2026. (120 days)<br/><br/>No new feature development or critical fixes.<br/><br/>Support is limited to configuration guidance for 5942. | There is no N-1 track at this time. | 2509.0.1.0 (25.9)<br/><br/>Released Sep 29, 2025.<br/>Full Active Support. [Link to release notes] |
 
 # Support Definitions Used In This Document
 
@@ -292,20 +292,19 @@ In this theoretical diagram (also where the version numbers and release dates ma
 
 ![Server N-Paths Architecture](server-N-paths.png)
 
-- Version N is 2509.0.1.0
-- Version N-1 is 2602.0.1.0
+- Version N is 2509.0.1.0 (25.9)
+- Version N-1 is currently not available
 
-Both “tracks” are fully supported as long as the latest Offline Patch is applied to that track. In this theoretical diagram, if the date is currently June 2026 the actual two supported configurations would be:
+Both "tracks" are fully supported as long as the latest Offline Patch is applied to that track. In this theoretical diagram, if the date is currently June 2026 the actual supported configuration would be:
 
-- 2601.0.1.0 (2509.0.1.0 with 2601.0.1 Offline Patch) and
-- 2606.0.1.0 (2602.0.1.0 with 2606.0.1.0 Offline Patch)
+- 2509.0.1.0 (25.9) with any applicable Offline Patches and CSPs
 
 … PLUS any corresponding CSPs which were generated after those Fixes & Features Patches.
 
 In some future date, should a new major N release ships, then and only then does:
 
-- The “Track” of 2509.0.1.0 go to Limited Support (for 90 days), then Discontinued support (after 90 days)
-- The 2602.0.1.0 track then transitions to N-1 support (immediately.)
+- The "Track" of 2509.0.1.0 go to Limited Support (for 120 days), then Discontinued support (after 120 days)
+- The new N+1 version becomes the current N track, and 2509.0.1.0 (25.9) transitions to N-1 support (immediately.)
 
 # Final Thoughts
 
