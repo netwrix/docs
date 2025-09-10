@@ -260,13 +260,12 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '2509',
-        label: '2509',
+        version: 'current',
+        label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/endpointprotector/2509.js',
+        sidebarFile: './sidebars/endpointprotector.js',
       },
     ],
-    defaultVersion: '2509',
   },
   {
     id: 'identitymanager',
