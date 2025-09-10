@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Agents
 
-To pull data on agent statues, configurations and group memberships, use the agentsRanked endpoint.
+To request data on agent statues, configurations and group memberships, use the agentsRanked endpoint.
 
 ## /api/agentsRanked
 
