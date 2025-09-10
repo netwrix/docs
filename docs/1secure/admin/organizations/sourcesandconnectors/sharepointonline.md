@@ -53,7 +53,7 @@ pane is displayed.
 
 **Step 6 –** Click **Next**.
 
-![Choose New Connector %28Step 3 of 3%29 pane](/images/1secure/admin/organizations/sourcesandconnectors/addsourcesharepointonlineconnector.webp)
+![Choose New Connector %28Step 3 of 3%29 pane](addconnectorspo.png)
 
 **Step 7 –** The Choose new connector (Step 3 of 3) pane lists three connectors for SharePoint
 Online. Specify the following:
@@ -78,6 +78,9 @@ Online. Specify the following:
   switch to ON to allow 1Secure to read the documents in order to classify and label them based on
   the type of data they contain.
 
+    - Establish connection to your Classifier app – See the 
+      [Configure SharePoint Online Classification App](/docs/1secure/configuration/registerconfig/1secure-classifier-setup-guide.md) 
+      topic for additional information.
     - Run OCR to improve classification of images (increases processing time) – Toggle this switch
       to ON to use Optical Character Recognition (OCR) to scan images for text, which helps to
       classify the sensitive data more effectively. Note that this increases the processing time for
