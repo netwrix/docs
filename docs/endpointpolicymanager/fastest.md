@@ -62,9 +62,9 @@ Endpoint Policy Manager has a few Quick start topics to provide specific guidanc
 
 Quick tart topics for delivery method of policies you plan to use:
 
-- [Group Policy Delivery Quick Start](/docs/endpointpolicymanager/manuals/introductionandquick/quickstart/grouppolicy.md)
-- [MDM / Intune Delivery Quick Start](/docs/endpointpolicymanager/manuals/introductionandquick/quickstart/mdm.md)
-- [Endpoint Policy Manager Cloud Delivery Quick Start](/docs/endpointpolicymanager/manuals/introductionandquick/quickstart/cloud.md)
+- [Group Policy Delivery Quick Start](/docs/endpointpolicymanager/gettingstarted/quickstart/grouppolicy.md)
+- [MDM / Intune Delivery Quick Start](/docs/endpointpolicymanager/gettingstarted/quickstart/mdm.md)
+- [Endpoint Policy Manager Cloud Delivery Quick Start](/docs/endpointpolicymanager/gettingstarted/quickstart/cloud.md)
 
 A detailed Installation Guide for On-Prem scenarios that takes you from download to verified.
 

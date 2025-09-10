@@ -15,7 +15,7 @@ access control and system security.
 
 From this section you can view, create, manage and delete administrators.
 
-![System Administrators](/images/endpointprotector/2509/admin/systemconfiguration/clientuninstall.webp)
+![System Administrators](clientuninstall.webp)
 
 To create a new Administrator, under the table with existing administrators, click Create and then
 provide the following information:
@@ -59,7 +59,7 @@ situations:
 - Managed Departments – assign the Administrator to one or more departments
 - Managed Administrators Groups – assign the Administrator to one or more Administrators Group
 
-![Super Administrator Details](/images/endpointprotector/2509/admin/systemconfiguration/superadministratordetails.webp)
+![Super Administrator Details](superadministratordetails.webp)
 
 ## Administrator Types
 
@@ -139,7 +139,7 @@ you assign to the Administrator Group.
 :::
 
 
-![Administrators Groups](/images/endpointprotector/2509/admin/systemconfiguration/administratorsgroups.webp)
+![Administrators Groups](administratorsgroups.webp)
 
 ### User Role Matrix
 
@@ -148,7 +148,7 @@ Administrators have based on their role. This matrix ensures that users only hav
 features they need to fulﬁll their duties, boosting security and lowering the chance of
 unintentional changes or data breaches.
 
-![User Role Matrix](/images/endpointprotector/2509/admin/systemconfiguration/userrolematrix.webp)
+![User Role Matrix](userrolematrix.webp)
 
 Within the Endpoint Protector, there are several different user roles, each with their own set of
 permissions. The Super Administrator role is the most powerful and has access to all features,
@@ -168,13 +168,13 @@ temporary code generated via the Google Authenticator app. With the Two Factor A
 once the user creation or edit is saved, the administrator will be redirected to a veriﬁcation
 screen.
 
-![Two Factor Authentication](/images/endpointprotector/2509/admin/systemconfiguration/twofactorauthentication.webp)
+![Two Factor Authentication](twofactorauthentication.webp)
 
 The Google Authenticator app will ask you to register using a unique code or QR Code. Following the
 registration process, your account will be added to the list with a validity timer for the unique
 code that will be used for the second authentication factor.
 
-![Google Authenticator app](/images/endpointprotector/2509/admin/systemconfiguration/googleauthenticator.webp)
+![Google Authenticator app](googleauthenticator.webp)
 
 ## System Departments
 
@@ -194,7 +194,7 @@ administrators’ roles.
 :::
 
 
-![System Departments](/images/endpointprotector/2509/admin/systemconfiguration/systemdepartments.webp)
+![System Departments](systemdepartments.webp)
 
 To create a new department click Create and then provide a name, description and unique code.
 
@@ -204,7 +204,7 @@ invalid and that computer will be assigned to the default department (defdep).
 :::
 
 
-![Create a new department click Create and then provide a name, description and unique code](/images/endpointprotector/2509/admin/systemconfiguration/newdepartment.webp)
+![Create a new department click Create and then provide a name, description and unique code](newdepartment.webp)
 
 In terms of terminology, a similarity between Endpoint Protector and Active Directory (or any other
 Director Service software) would make the Department equivalent to an Organization Unit. Of course,

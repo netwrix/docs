@@ -67,7 +67,7 @@ authorization is set on the Samba server.
 :::
 
 
-![Enable the Endpoint Protector Client to send File Shadows directly](/images/endpointprotector/2509/admin/systemmaintenance/fileshadowrepository.webp)
+![Enable the Endpoint Protector Client to send File Shadows directly](fileshadowrepository.webp)
 
 ## Test Connection
 
@@ -169,7 +169,7 @@ in the Audit.
 :::
 
 
-![S3 Bucket File Shadow Repository](/images/endpointprotector/2509/admin/systemmaintenance/fileshadowrepositorytwo.webp)
+![S3 Bucket File Shadow Repository](fileshadowrepositorytwo.webp)
 
 :::note
 In the scenario where there may be an unreliable network, the Client will attempt to
@@ -187,12 +187,12 @@ To add the Endpoint Protector Server IP to the S3 Bucket whitelist, follow these
 
 **Step 2 –** Click on an entry from the **S3 Bucket list**.
 
-![Adding the Netwrix Endpoint Protector Server IP to the S3 Bucket whitelist](/images/endpointprotector/2509/admin/systemmaintenance/amazons3one.webp)
+![Adding the Netwrix Endpoint Protector Server IP to the S3 Bucket whitelist](amazons3one.webp)
 
 **Step 3 –** On the S3 Bucket, select the **Permission** tab, scroll down to the Bucket policy
 section, and then click **Edit**.
 
-![Adding the Netwrix Endpoint Protector Server IP to the S3 Bucket whitelist](/images/endpointprotector/2509/admin/systemmaintenance/amazons3two.webp)
+![Adding the Netwrix Endpoint Protector Server IP to the S3 Bucket whitelist](amazons3two.webp)
 
 **Step 4 –** On the Bucket Policy, add the following IPs:
 
@@ -202,7 +202,7 @@ section, and then click **Edit**.
 **Step 5 –** Use the Policy generator from the top-right corner to help you edit or create a new
 Bucket policy. This will open a new page with the AWS Policy Generator.
 
-![Adding the Netwrix Endpoint Protector Server IP to the S3 Bucket whitelist](/images/endpointprotector/2509/admin/systemmaintenance/amazons3three.webp)
+![Adding the Netwrix Endpoint Protector Server IP to the S3 Bucket whitelist](amazons3three.webp)
 
 On the AWS Policy Generator, provide the following information:
 
@@ -220,7 +220,7 @@ Add the Statement, click **Generate Policy**, and then use the **Bucket Policy**
 For more information on this procedure, read the
 [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html).
 
-![ AWS Policy Generator](/images/endpointprotector/2509/admin/systemmaintenance/awspolicygenerator.webp)
+![ AWS Policy Generator](awspolicygenerator.webp)
 
 ```
 Example: S3 Bucket Policy (JSON)

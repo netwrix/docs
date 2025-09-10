@@ -17,15 +17,15 @@ Follow the steps to conﬁgure the Endpoint Protector Appliance for the ﬁrst t
 
 **Step 1 –** Select **Continue** when ﬁnished reading the End User License Agreement.
 
-![End User License Agreement](/images/endpointprotector/2509/install/licenseagreement.webp)
+![End User License Agreement](licenseagreement.webp)
 
 **Step 2 –** Select **Accept**.
 
-![Accepting the term of the license](/images/endpointprotector/2509/install/acceptagreement.webp)
+![Accepting the term of the license](acceptagreement.webp)
 
 **Step 3 –** Select **Networking**.
 
-![Selecting Networking](/images/endpointprotector/2509/install/networking.webp)
+![Selecting Networking](networking.webp)
 
 **Step 4 –** The conﬁguration methods are now available.
 
@@ -34,7 +34,7 @@ We recommend a manual conﬁguration of the network settings.
 :::
 
 
-![Automatic Network configuration for Endpoint Protector Appliance](/images/endpointprotector/2509/install/autonetworkconfig.webp)
+![Automatic Network configuration for Endpoint Protector Appliance](autonetworkconfig.webp)
 
 ## Manual Conﬁguration
 
@@ -43,16 +43,16 @@ the appliance is correctly set up and accessible.
 
 **Step 1 –** Select **Conﬁgure Network manually** (recommended).
 
-![Manual Network configuration for Endpoint Protector Appliance](/images/endpointprotector/2509/install/manualnetworkconfig.webp)
+![Manual Network configuration for Endpoint Protector Appliance](manualnetworkconfig.webp)
 
 **Step 2 –** Set the IP Address, and Default Gateway (in our example we set the IP Address as
 192.168.7.94 and the Default Gateway as 192.168.7.1).
 
-![Setting IP and default GateAway](/images/endpointprotector/2509/install/setip.webp)
+![Setting IP and default GateAway](setip.webp)
 
 **Step 3 –** Press **Tab**.
 
-![Select tab to move to the apply button](/images/endpointprotector/2509/install/setip21.webp)
+![Select tab to move to the apply button](setip21.webp)
 
 **Step 4 –** Select **Apply**. The virtual appliance is now accessible from the conﬁgured IP
 Address. (e.g., https:// 192.168.7.94).
@@ -61,6 +61,6 @@ Address. (e.g., https:// 192.168.7.94).
 
 Select **conﬁgure network automatically**, and click **Enter**.
 
-![ IP Address and Default Gateway conﬁgured automatically](/images/endpointprotector/2509/install/autonetworkconfig.webp)
+![ IP Address and Default Gateway conﬁgured automatically](autonetworkconfig.webp)
 
 The IP Address and Default Gateway will be conﬁgured automatically.

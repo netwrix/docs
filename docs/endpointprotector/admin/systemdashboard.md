@@ -23,7 +23,7 @@ ticket through the
 For detailed information on settings change or creating additional administrators, refer to the
 [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic.
 
-![Page for default login credentials for the root account](/images/endpointprotector/2509/admin/dashboard/login.webp)
+![Page for default login credentials for the root account](login.webp)
 
 ## Conﬁguration Wizard
 
@@ -45,7 +45,7 @@ You can customize the session timeout and timeout counter from the
 :::
 
 
-![The Conﬁguration Wizard provides you with several steps to deﬁne basic settings](/images/endpointprotector/2509/admin/dashboard/configwizard.webp)
+![The Conﬁguration Wizard provides you with several steps to deﬁne basic settings](configwizard.webp)
 
 ## General Dashboard
 
@@ -55,19 +55,19 @@ important activities logged by Endpoint Protector.
 You will view more speciﬁc dashboards on the Device Control, Content Aware Protection and eDiscovery
 sections.
 
-![View general information as graphics and charts related to the most important activities](/images/endpointprotector/2509/admin/dashboard/general.webp)
+![View general information as graphics and charts related to the most important activities](general.webp)
 
 ## System Status
 
 In this section you can view general information of the system’s functionality, alerts, and backup
 status.
 
-![View general information of the system’s functionality, alerts, and backup status](/images/endpointprotector/2509/admin/dashboard/systemstatus.webp)
+![View general information of the system’s functionality, alerts, and backup status](systemstatus.webp)
 
 From the System Functionality section, you can enable Endpoint Protector, as well as just speciﬁc
 modules (Device Control, Content Aware Protection, or eDiscovery).
 
-![Enable EPP , as well as just speciﬁc modules](/images/endpointprotector/2509/admin/dashboard/systemfunctionality.webp)
+![Enable EPP , as well as just speciﬁc modules](systemfunctionality.webp)
 
 From the System Status subsection, you can enable the HDD Disk Space and Log Rotation.
 
@@ -77,16 +77,16 @@ If this setting is enabled, when the Server’s disk space reaches a certain per
 :::
 
 
-![Enable the HDD Disk Space and Log Rotation.](/images/endpointprotector/2509/admin/dashboard/diskspace.webp)
+![Enable the HDD Disk Space and Log Rotation.](diskspace.webp)
 
 From the System Alerts subsection, you can enable important alerts notifying the expiration of the
 APNS Certiﬁcate, Updates, and Support or Passwords.
 
-![Enable important alerts ](/images/endpointprotector/2509/admin/dashboard/systemalerts.webp)
+![Enable important alerts ](systemalerts.webp)
 
 From the System Backup subsection, you can enable the System Backup.
 
-![Enable the System Backup](/images/endpointprotector/2509/admin/dashboard/systembackup.webp)
+![Enable the System Backup](systembackup.webp)
 
 ## Live Update
 
@@ -99,16 +99,16 @@ This feature communicates through port 80. Whitelist the liveupdate.endpointprot
 :::
 
 
-![Check and apply the latest security and  Server updates](/images/endpointprotector/2509/admin/dashboard/liveupdate.webp)
+![Check and apply the latest security and  Server updates](liveupdate.webp)
 
 ### Software Update
 
-![Management of software updates](/images/endpointprotector/2509/admin/dashboard/softwareupdate.webp)
+![Management of software updates](softwareupdate.webp)
 
 Click **Conﬁgure Live Update** to select manual or automatic live updates check, the number of
 retries, and manage the Automatic Reporting to the LiveUpdate Server.
 
-![Configuring Live Updates](/images/endpointprotector/2509/admin/dashboard/configliveupdate.webp)
+![Configuring Live Updates](configliveupdate.webp)
 
 Click **Check Now** to search for the Endpoint Protector Server updates displayed in the Available
 Updates section. You can select and install an update with **Apply Updates**, or all updates with
@@ -117,7 +117,7 @@ Updates section. You can select and install an update with **Apply Updates**, or
 You can also schedule an update. Select an entry from the available updates, click **Schedule
 update** and then use the calendar to select the date and conﬁrm your selection.
 
-![Checking for available EPP server Updates](/images/endpointprotector/2509/admin/dashboard/availableupdates.webp)
+![Checking for available EPP server Updates](availableupdates.webp)
 
 Use the Oﬄine Patch upload option to select the oﬄine patches from your computer and successively
 install them to the latest Endpoint Protector version.
@@ -128,7 +128,7 @@ To request the Offline Patch, submit a support ticket through the
 :::
 
 
-![Select the oﬄine patches from your computer and successively install them to the latest](/images/endpointprotector/2509/admin/dashboard/offlinepatch.webp)
+![Select the oﬄine patches from your computer and successively install them to the latest](offlinepatch.webp)
 
 :::warning
 Before upgrading your Endpoint Protector server to the 5.7.0.0 server version from a
@@ -169,7 +169,7 @@ Select one of the security updates type available and then click **Check Updates
 
 If there are updates available, click **Apply Updates**.
 
-![Applying Backend Security Updates](/images/endpointprotector/2509/admin/dashboard/backendsecurityupdates.webp)
+![Applying Backend Security Updates](backendsecurityupdates.webp)
 
 :::note
 For history of applied Backend Updates go to admin action report and choose **Apply

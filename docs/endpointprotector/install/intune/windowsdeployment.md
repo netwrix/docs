@@ -13,7 +13,7 @@ To deploy the Endpoint Protector MSI package for Windows using Intune, follow th
 **Step 2 –** Go to the System Configuration, Client Software and download the Windows Endpoint
 Protector MSI package;
 
-![Downloading the Windows Endpoint Protector MSI Package](/images/endpointprotector/2509/install/agent/intune/msipackagedownload.webp)
+![Downloading the Windows Endpoint Protector MSI Package](msipackagedownload.webp)
 
 :::warning
 When deploying the .msi package, delete the information contained in the brackets as
@@ -24,24 +24,24 @@ well as the underscore that precedes it - EPPClientSetup.5.6.3.1_x86_64.msi
 ![A black text on a white background
 
 Description automatically
-generated](/images/endpointprotector/2509/install/agent/intune/msipackage.webp)
+generated](msipackage.webp)
 
 **Step 3 –** Go to the Microsoft Endpoint Manager admin center and sign in;
 
 **Step 4 –** Go to Apps from the left-hand side menu, and on the Apps Overview page, select the
 Windows platform;
 
-![Apps Overview Page](/images/endpointprotector/2509/install/agent/intune/appsoverview.webp)
+![Apps Overview Page](appsoverview.webp)
 
 **Step 5 –** On the Windows App page, click Add, select the Line of business app type, and then
 click Select;
 
-![Selecting the Line of business app type](/images/endpointprotector/2509/install/agent/intune/apptype.webp)
+![Selecting the Line of business app type](apptype.webp)
 
 **Step 6 –** Click Select app package file and from the right-hand side, select the Endpoint
 Protector MSI file and click OK;
 
-![Selecting Endpoint Protector Package file ](/images/endpointprotector/2509/install/agent/intune/apppackagefile.webp)
+![Selecting Endpoint Protector Package file ](apppackagefile.webp)
 
 **Step 7 –** On the App information page, fill in the mandatory fields and then click Next:
 
@@ -52,14 +52,14 @@ Protector MSI file and click OK;
 
     - WSIP="EPP_server_IP" WSPORT="443" /q REBOOT=ReallySuppress
 
-![App information page to add information. ](/images/endpointprotector/2509/install/agent/intune/addapp.webp)
+![App information page to add information. ](addapp.webp)
 
 **Step 8 –** On the Assignments page, in the Requirement section, select the group for which you
 want to deploy the Endpoint Protector client and then click Next;
 
-![Selecting the group for which you want to deploy the Endpoint Protector Client](/images/endpointprotector/2509/install/agent/intune/assignmentspage.webp)
+![Selecting the group for which you want to deploy the Endpoint Protector Client](assignmentspage.webp)
 
 **Step 9 –** On the Review + create page, click Create - this will start the Endpoint Protector MSI
 package upload.
 
-![Initiating the Endpoint Protector Package MSI upload](/images/endpointprotector/2509/install/agent/intune/reviewpage.webp)
+![Initiating the Endpoint Protector Package MSI upload](reviewpage.webp)

@@ -15,7 +15,7 @@ New;
 
 **Step 3 –** Right-click the new GPO and click Edit;
 
-![Creating the Deployment Group Policy Objects](/images/endpointprotector/2509/configuration/activedirectory/gpoeditor.webp)
+![Creating the Deployment Group Policy Objects](gpoeditor.webp)
 
 **Step 4 –** Expand Computer Configuration / Software Settings and right-click Software
 Installation, and then select New/Package;
@@ -26,7 +26,7 @@ and accessible by the computers on your Active Directory.
 :::
 
 
-![Configuring Deployment for Group Policy Objects](/images/endpointprotector/2509/configuration/activedirectory/gpoconfiguration.webp)
+![Configuring Deployment for Group Policy Objects](gpoconfiguration.webp)
 
 **Step 5 –** Close the Group Policy Object Editor console and repeat this step for the Endpoint
 Protector 64-bit GPO.

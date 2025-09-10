@@ -11,15 +11,15 @@ Machine. To create a disk, follow these steps.
 
 **Step 1 –** From the top right side of the page, go to All resources and click +Create;
 
-![createdisk](/images/endpointprotector/2509/configuration/azure/createdisk.webp)
+![createdisk](createdisk.webp)
 
 **Step 2 –** Search the marketplace for Managed Disks;
 
-![marketplace](/images/endpointprotector/2509/configuration/azure/marketplace.webp)
+![marketplace](marketplace.webp)
 
 **Step 3 –** Go to Managed Disks and select Create;
 
-![manageddisk](/images/endpointprotector/2509/configuration/azure/manageddisk.webp)
+![manageddisk](manageddisk.webp)
 
 **Step 4 –** To create a managed disk, provide the following information
 
@@ -43,7 +43,7 @@ displayed.
 ![A screenshot of a computer
 
 Description automatically
-generated](/images/endpointprotector/2509/configuration/azure/createmanageddisk.webp)
+generated](createmanageddisk.webp)
 
 ## Creating the Virtual Machine
 
@@ -51,7 +51,7 @@ To start the Endpoint Protector Virtual Machine in Azure, follow these steps:
 
 **Step 6 –** Go to the All resources page, select the newly created disks and then click Create VM
 
-![createvm](/images/endpointprotector/2509/configuration/azure/createvm.webp)
+![createvm](createvm.webp)
 
 **Step 7 –** To create the Virtual Machine, provide the following information:
 
@@ -66,7 +66,7 @@ To start the Endpoint Protector Virtual Machine in Azure, follow these steps:
 ![A screenshot of a computer
 
 Description automatically
-generated](/images/endpointprotector/2509/configuration/azure/newvm.webp)
+generated](newvm.webp)
 
 - On the Networking tab, fill in the following:
 
@@ -84,12 +84,12 @@ payments for an unused SSD attached to the Virtual Machine.
 ![A screenshot of a computer
 
 Description automatically
-generated](/images/endpointprotector/2509/configuration/azure/publicip.webp)
+generated](publicip.webp)
 
 **Step 9 –** Once the deployment has finished, go to Virtual Machines on the right side and select
 the Endpoint Protector image.
 
-![connetctip](/images/endpointprotector/2509/configuration/azure/connetctip.webp)
+![connetctip](connetctip.webp)
 
 **Step 10 –** Open a web browser and connect to the Public IP address assigned to the Endpoint
 Protector image.

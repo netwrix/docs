@@ -32,14 +32,14 @@ Server.
 :::
 
 
-![MIME Type Allowlists ](/images/endpointprotector/2509/admin/denylistsallowlists/mimetypeallowlists.webp)
+![MIME Type Allowlists ](mimetypeallowlists.webp)
 
 ## Allowed Files
 
 Allowed Files Allowlists are custom groups of ﬁles you exclude from Endpoint Protector sensitive
 content detection, available for both Content Aware Protection and eDiscovery modules.
 
-![Allowed Files Allowlists ](/images/endpointprotector/2509/admin/denylistsallowlists/allowedfilesallowlists.webp)
+![Allowed Files Allowlists ](allowedfilesallowlists.webp)
 
 You can add a new allowlist or edit and delete from the Actions column.
 
@@ -50,7 +50,7 @@ allowlists.
 Once the allowlist is created, it will be displayed on the Allowed File list and will be available
 when creating or editing a Content Aware Protection or eDiscovery policy.
 
-![New Allowed Files Allowlists ](/images/endpointprotector/2509/admin/denylistsallowlists/newallowedfilesallowlists.webp)
+![New Allowed Files Allowlists ](newallowedfilesallowlists.webp)
 
 ## File Location
 
@@ -81,7 +81,7 @@ a desktop folder on Windows use the pattern "?:\Users\\\*\Desktop\".
 | Implicit       | \\ﬁle-share\public | \\ﬁle-share\public\jdoe\ﬁle.txt \\ﬁle-share\public\user512\ﬁle2.txt                | \\ﬁle-share\c$\ﬁle.txt \\ﬁle-server\public\jdoe\ﬁle.txt                 |
 | Explicit       | \\\*\public\\\*    | \\localhost\public\payslip.xlsx \\192.168.20.2\public\Windows\system32\notepad.exe | \\localhost\c$\system32\notepad.exe C:\Windows.old\system32\notepad.exe |
 
-![File Location Allowlists](/images/endpointprotector/2509/admin/denylistsallowlists/filelocationallowlists.webp)
+![File Location Allowlists](filelocationallowlists.webp)
 
 You can add a new allowlist or edit, delete or export from the Actions column.
 
@@ -95,7 +95,7 @@ and **description**, add the items separated by a new line, comma, or semicolon 
 File Location Allowlists will not apply to groups of users, only to groups of computers. File
 Location Allowlists will only apply for the selected computer groups after 15 minutes.
 
-![New File Location Allowlists ](/images/endpointprotector/2509/admin/denylistsallowlists/filelocationnewdenylists.webp)
+![New File Location Allowlists ](filelocationnewdenylists.webp)
 
 ## Network Share
 
@@ -117,7 +117,7 @@ inside a Content Aware Protection Policy.
 :::
 
 
-![Network Share Allowlists ](/images/endpointprotector/2509/admin/denylistsallowlists/networkshareallowlists.webp)
+![Network Share Allowlists ](networkshareallowlists.webp)
 
 You can add a new allowlist or edit, delete or export from the Actions column.
 
@@ -134,7 +134,7 @@ Do not type the network share path with backslashes (\\) 192.168.0.1\public\user
 :::
 
 
-![New Network Share Allowlists](/images/endpointprotector/2509/admin/denylistsallowlists/newnetworkshareallowlists.webp)
+![New Network Share Allowlists](newnetworkshareallowlists.webp)
 
 ## E-mail Domain
 
@@ -146,7 +146,7 @@ E-mail Domain Allowlists are available only for the Content Aware Protection mod
 :::
 
 
-![E-mail Domain Allowlists](/images/endpointprotector/2509/admin/denylistsallowlists/emaildomainallowlists.webp)
+![E-mail Domain Allowlists](emaildomainallowlists.webp)
 
 You can add a new allowlist or edit, delete or export from the Actions column.
 
@@ -157,7 +157,7 @@ comma, or semicolon. You can import content using the sample ﬁle provided on t
 Once the allowlist is created, it will be displayed on the E-mail Domain list and will be available
 when creating or editing a Content Aware Protection policy.
 
-![New E-mail Domain Allowlists ](/images/endpointprotector/2509/admin/denylistsallowlists/newemaildomainallowlists.webp)
+![New E-mail Domain Allowlists ](newemaildomainallowlists.webp)
 
 You can use wildcard patterns in the e-mail domain to specify wildcard matching as displayed in the
 following example.
@@ -174,7 +174,7 @@ Available only for the Content Aware Protection module, Deep Packet Inspection A
 custom-deﬁned lists or dictionaries with web domains Endpoint Protector will allow conﬁdential
 information uploads.
 
-![Deep Packet Inspection Allowlists ](/images/endpointprotector/2509/admin/denylistsallowlists/dpiallowlists.webp)
+![Deep Packet Inspection Allowlists ](dpiallowlists.webp)
 
 You can add a new allowlist or edit, delete or export from the Actions column.
 
@@ -210,7 +210,7 @@ Due to Gmail usage, take the following into consideration:
 Once the allowlist is created, it will be displayed on the Deep Packet Inspection list and will be
 available when creating or editing a Content Aware Protection policy.
 
-![New Deep Packet Inspection Allowlists](/images/endpointprotector/2509/admin/denylistsallowlists/newdpiallowlists.webp)
+![New Deep Packet Inspection Allowlists](newdpiallowlists.webp)
 
 **Wildcards Usage Examples for Deep Packet Inspection**
 

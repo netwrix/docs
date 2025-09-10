@@ -12,7 +12,7 @@ proceed to create a new Virtual Machine Instance:
 **Step 1 –** In the Google Cloud Platform Console, go to the VM Instances page and click Create
 instance.
 
-![Creating Virtual Machine instance.](/images/endpointprotector/2509/configuration/googlecloudplatform/createinstance.webp)
+![Creating Virtual Machine instance.](createinstance.webp)
 
 **Step 2 –** In the Boot disk section, click Change to begin configuring your boot disk and on the
 Custom Images tab, fill in the following:
@@ -22,12 +22,12 @@ Custom Images tab, fill in the following:
 - Size – add a size larger than the Endpoint Protector image size received
 - Click Select to confirm the boot disk configuration.
 
-![Boot disk Configuration](/images/endpointprotector/2509/configuration/googlecloudplatform/bootdisk.webp)
+![Boot disk Configuration](bootdisk.webp)
 
 **Step 3 –** On the Firewall section, select Allow HTTP traffic and Allow HTTPS traffic, and then
 click Create.
 
-![Firewall configuration](/images/endpointprotector/2509/configuration/googlecloudplatform/firewall.webp)
+![Firewall configuration](firewall.webp)
 
 ## Requesting a Static IP
 
@@ -39,7 +39,7 @@ restarted and the Endpoint Protector Clients have to be reinstalled.
 
 To request a Static IP, go to IP addresses and select the External IP addresses tab.
 
-![Requesting a static IP](/images/endpointprotector/2509/configuration/googlecloudplatform/externalip.webp)
+![Requesting a static IP](externalip.webp)
 
 ## Create Firewall Rules
 
@@ -47,11 +47,11 @@ To create a Firewall rule, on the Google Cloud Platform Console, follow these st
 
 **Step 4 –** Go to the Firewall page and select default-allow-ssh;
 
-![Creating firewall rules](/images/endpointprotector/2509/configuration/googlecloudplatform/firewallrules.webp)
+![Creating firewall rules](firewallrules.webp)
 
 **Step 5 –** Click Edit and on the Protocols and ports section provide the following information:
 
 - select Specified protocols and ports
 - check the tcp box and enter 64848
 
-![Editing firewall rules](/images/endpointprotector/2509/configuration/googlecloudplatform/editrules.webp)
+![Editing firewall rules](editrules.webp)

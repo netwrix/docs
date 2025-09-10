@@ -10,7 +10,7 @@ Single Sign On (SSO) allows you to log in the Endpoint Protector Server with Azu
 integration simplifies authentication, enhancing security and user convenience by enabling access
 with existing organizational credentials.
 
-![Allows you to log in the Endpoint Protector Server with Azure AD and OKTA](/images/endpointprotector/2509/admin/systemconfiguration/singlesignon/singlesignonpage.webp)
+![Allows you to log in the Endpoint Protector Server with Azure AD and OKTA](singlesignonpage.webp)
 
 The Single Sign On section includes the following:
 

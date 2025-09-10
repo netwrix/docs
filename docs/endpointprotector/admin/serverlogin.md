@@ -24,7 +24,7 @@ Please ensure to update your login credentials after the first login to enhance 
 :::
 
 
-![ Input your assigned username and password to log in to the Server](/images/endpointprotector/2509/admin/serverlogin.webp)
+![ Input your assigned username and password to log in to the Server](serverlogin.webp)
 
 Upon successful log in, the **Dashboard** > **General Dashboard** window will be displayed (see
 below image). This window is intended to provide a high-level overview of endpoints under management
@@ -34,7 +34,7 @@ Your available modules are displayed in the left-side navigation pane. These can
 further manage module-specific policies. Ultimately, policies define the actions allowed /
 disallowed on the endpoint.
 
-![High-level overview of endpoints under management as well as activity](/images/endpointprotector/2509/admin/dashboard.webp)
+![High-level overview of endpoints under management as well as activity](dashboard.webp)
 
 Before deploying any agents, each module’s policy should be reviewed. If agents have already been
 delivered to systems, a review of the configuration(s) can be accomplished by verifying active

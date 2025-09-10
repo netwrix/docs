@@ -9,7 +9,7 @@ sidebar_position: 110
 From this section, you can import and synchronize the entities (Users, Computers, and Groups) from
 the company’s Active Directories.
 
-![Import and synchronize the entities (Users, Computers, and Groups) from the company’s Active Directories](/images/endpointprotector/2509/admin/directoryservices/directoryservices.webp)
+![Import and synchronize the entities (Users, Computers, and Groups) from the company’s Active Directories](directoryservices.webp)
 
 ## Microsoft Active Directory
 
@@ -17,7 +17,7 @@ You can create and manage connections from the Directory Services, Microsoft Act
 section. The required information includes the Connection Type, Server, Port, Username, and
 Password.
 
-![Manage connections from the Directory Services](/images/endpointprotector/2509/admin/directoryservices/newconnection.webp)
+![Manage connections from the Directory Services](newconnection.webp)
 
 :::note
 When having to import a very large number of entities, we recommend using the Base Search
@@ -35,7 +35,7 @@ further edited, to include the required entities.
 For the deﬁned connections, several synchronization options are available. From this section, the
 connection credentials and synchronization interval can also be changed.
 
-![Change connection credentials and synchronization interval](/images/endpointprotector/2509/admin/directoryservices/testsync.webp)
+![Change connection credentials and synchronization interval](testsync.webp)
 
 The Advanced Groups Filter can be used to import and synchronize only speciﬁc groups, ignoring all
 other entities.
@@ -47,11 +47,11 @@ You can view only Organizational units (OU) and Groups in the Directory Browser.
 :::
 
 
-![From the Directory Browser section, you can select the entities that need to be synced.](/images/endpointprotector/2509/admin/directoryservices/directorybrowser.webp)
+![From the Directory Browser section, you can select the entities that need to be synced.](directorybrowser.webp)
 
 Once the entities have been selected, they can be saved to sync.
 
-![Synchronization Filters](/images/endpointprotector/2509/admin/directoryservices/synchfilters.webp)
+![Synchronization Filters](synchfilters.webp)
 
 ## Microsoft Entra ID
 
@@ -87,7 +87,7 @@ Follow the steps to create the application on Microsoft Entra ID.
 **Step 3 –** Click App Registrations from the Manage section on the Active Directory menu on the
 left side, then on New Registration.
 
-![Create the application on Microsoft Entra ID](/images/endpointprotector/2509/admin/directoryservices/appregmsentraid.webp)
+![Create the application on Microsoft Entra ID](appregmsentraid.webp)
 
 **Step 4 –** On the Registration page enter your **Name**.
 
@@ -100,7 +100,7 @@ Do not ﬁll in the Redirect URI ﬁeld!
 
 **Step 6 –** Click **Register**.
 
-![Create the application on Microsoft Entra ID](/images/endpointprotector/2509/admin/directoryservices/appregmsentraidtwo.webp)
+![Create the application on Microsoft Entra ID](appregmsentraidtwo.webp)
 
 **Step 7 –** On the Essentials section save the following information:
 
@@ -109,7 +109,7 @@ Do not ﬁll in the Redirect URI ﬁeld!
 - Directory (tenant) ID will be needed for adding it in the Tenant ID ﬁeld on the Endpoint
   ProtectorEndpoint Protector Server
 
-![Create the Application on Azure Active Directory](/images/endpointprotector/2509/admin/directoryservices/testapplication.webp)
+![Create the Application on Azure Active Directory](testapplication.webp)
 
 #### Create a Secret ID for the Application
 
@@ -118,19 +118,19 @@ API.
 
 **Step 1 –** Click **Certiﬁcates & Secrets** on the side menu from the Manage section.
 
-![Create a Secret ID for the Application](/images/endpointprotector/2509/admin/directoryservices/certsecrets.webp)
+![Create a Secret ID for the Application](certsecrets.webp)
 
 **Step 2 –** Click **New client secret** on the Certiﬁcates & secrets page.
 
-![Create a Secret ID for the Application](/images/endpointprotector/2509/admin/directoryservices/certsecretestwo.webp)
+![Create a Secret ID for the Application](certsecretestwo.webp)
 
 **Step 3 –** Enter a **Description** for the secret ID.
 
-![Create a Secret ID for the Application](/images/endpointprotector/2509/admin/directoryservices/certsecretsthree.webp)
+![Create a Secret ID for the Application](certsecretsthree.webp)
 
 **Step 4 –** Click **Add** and **Add a client** secret section.
 
-![Create a Secret ID for the Application](/images/endpointprotector/2509/admin/directoryservices/certsecretsfour.webp)
+![Create a Secret ID for the Application](certsecretsfour.webp)
 
 **Step 5 –** Take note of the Secret ID value and make sure to copy it to the clipboard and also to
 store it safely because it will be needed further on.
@@ -140,7 +140,7 @@ Notice that when navigating back, the secret ID will be hidden.
 :::
 
 
-![Create a Secret ID for the Application](/images/endpointprotector/2509/admin/directoryservices/certsecretsfive.webp)
+![Create a Secret ID for the Application](certsecretsfive.webp)
 
 #### Create Users/Groups Using Graph API
 
@@ -148,17 +148,17 @@ Follow the steps to create users/groups using Graph API.
 
 **Step 1 –** Click **Home** and then Microsoft Entra ID.
 
-![Create Users/Groups Using Graph API](/images/endpointprotector/2509/admin/directoryservices/certsecretsfivesix.webp)
+![Create Users/Groups Using Graph API](certsecretsfivesix.webp)
 
-![Azure Home Page](/images/endpointprotector/2509/admin/directoryservices/azurehome.webp)
+![Azure Home Page](azurehome.webp)
 
 **Step 2 –** Click **Add** from the Default Directory| Overview page
 
-![Default Directory| Overview page](/images/endpointprotector/2509/admin/directoryservices/azureadoverview.webp)
+![Default Directory| Overview page](azureadoverview.webp)
 
 **Step 3 –** Click **Add User**.
 
-![Overview Add User ](/images/endpointprotector/2509/admin/directoryservices/overviewadduser.webp)
+![Overview Add User ](overviewadduser.webp)
 
 - Select **Create User**.
 - Enter the **Username** and select the **Domain**.
@@ -167,7 +167,7 @@ Follow the steps to create users/groups using Graph API.
 - Add the **Department**.
 - Click **Create**.
 
-![Azure Active Director Create User](/images/endpointprotector/2509/admin/directoryservices/azureadnewuser.webp)
+![Azure Active Director Create User](azureadnewuser.webp)
 
 **Step 4 –** Repeat Steps 1 and 2, then click **Group**.
 
@@ -176,7 +176,7 @@ Follow the steps to create users/groups using Graph API.
 - Click **No members selected** to add membership.
 - Search for the newly created user and click **Select**.
 
-![ Default Directory| New Group](/images/endpointprotector/2509/admin/directoryservices/azureadnewgroup.webp)
+![ Default Directory| New Group](azureadnewgroup.webp)
 
 #### Add Permissions to the Application
 
@@ -190,32 +190,32 @@ Make sure the created application is open then:
 
 **Step 1 –** Click **API Permissions**.
 
-![Add Permissions to the Application](/images/endpointprotector/2509/admin/directoryservices/azureadapipermissionone.webp)
+![Add Permissions to the Application](azureadapipermissionone.webp)
 
 **Step 2 –** Click **Add a Permission**.
 
-![Add Permissions to the Application](/images/endpointprotector/2509/admin/directoryservices/azureadapipermissiontwo.webp)
+![Add Permissions to the Application](azureadapipermissiontwo.webp)
 
 **Step 3 –** Click **Microsoft Graph**.
 
-![Add Permissions to the Application](/images/endpointprotector/2509/admin/directoryservices/azureadapipermissionthree.webp)
+![Add Permissions to the Application](azureadapipermissionthree.webp)
 
 **Step 4 –** Click **Application Permissions**.
 
-![Add Permissions to the Application](/images/endpointprotector/2509/admin/directoryservices/azureadapipermissionfour.webp)
+![Add Permissions to the Application](azureadapipermissionfour.webp)
 
 **Step 5 –** Search for the permissions mentioned above and check each of the permissions.
 (Directory.Read.All, Group.Read.All, User.Read.All)
 
-![Add Permissions to the Application](/images/endpointprotector/2509/admin/directoryservices/azureadapipermissionfive.webp)
+![Add Permissions to the Application](azureadapipermissionfive.webp)
 
 **Step 6 –** Click **Add Permissions**.
 
-![Add Permissions to the Application](/images/endpointprotector/2509/admin/directoryservices/azureadapipermissionsix.webp)
+![Add Permissions to the Application](azureadapipermissionsix.webp)
 
 **Step 7 –** Click **Grant admin consent for Default Directory** from the API Permission page.
 
-![Add Permissions to the Application](/images/endpointprotector/2509/admin/directoryservices/azureadapipermissionseven.webp)
+![Add Permissions to the Application](azureadapipermissionseven.webp)
 
 #### Add Graph Application to Server
 
@@ -227,7 +227,7 @@ Entra ID**.
 **Step 2 –** Click **Add** to add an API Consumer – One API Consumer can be used for multiple
 synchronization jobs.
 
-![Add Graph Application to Endpoint Protector Server](/images/endpointprotector/2509/admin/directoryservices/azuread.webp)
+![Add Graph Application to Endpoint Protector Server](azuread.webp)
 
 **Step 3 –** Provide the following details:
 
@@ -237,11 +237,11 @@ synchronization jobs.
 - Application (client) ID saved earlier on the Application (Client) ID ﬁeld
 - Secret ID saved earlier in the Client Secret Value ﬁeld
 
-![Add Graph Application to Endpoint Protector Server](/images/endpointprotector/2509/admin/directoryservices/azureadtwo.webp)
+![Add Graph Application to Endpoint Protector Server](azureadtwo.webp)
 
 **Step 4 –** Click **Test** and then **Save**.
 
-![Add Graph Application to Endpoint Protector Server](/images/endpointprotector/2509/admin/directoryservices/azureadthree.webp)
+![Add Graph Application to Endpoint Protector Server](azureadthree.webp)
 
 #### Create a Synchronization Job on the Server
 
@@ -249,7 +249,7 @@ Follow the steps to create a synchronization job on the Endpoint Protector serve
 
 **Step 1 –** Click **Create Sync Job**.
 
-![Create a Synchronization Job on the Endpoint Protector Server](/images/endpointprotector/2509/admin/directoryservices/createsynchjob.webp)
+![Create a Synchronization Job on the Endpoint Protector Server](createsynchjob.webp)
 
 **Step 2 –** Provide Synchronization information:
 
@@ -260,7 +260,7 @@ Follow the steps to create a synchronization job on the Endpoint Protector serve
 
 **Step 3 –** Click **Save**.
 
-![Create a Synchronization Job on the Endpoint Protector Server](/images/endpointprotector/2509/admin/directoryservices/mapon-premisesusers.webp)
+![Create a Synchronization Job on the Endpoint Protector Server](mapon-premisesusers.webp)
 
 The **Map on-premises users** switch in the Microsoft Entra ID connector controls how Endpoint
 Protector retrieves user names in hybrid environments with both a local Active Directory and

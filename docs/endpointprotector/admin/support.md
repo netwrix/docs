@@ -14,4 +14,4 @@ You can contact our technical support team by submitting a ticket through the
 [Netwrix Customer Portal](https://www.netwrix.com/sign_in.html?rf=my_products.html). A team member
 will respond to your inquiry as soon as possible.
 
-![Support Details](/images/endpointprotector/2509/admin/support/support.webp)
+![Support Details](support.webp)

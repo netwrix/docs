@@ -13,16 +13,16 @@ address every time it is restarted and the Endpoint Protector Clients have to be
 To request an Elastic IP, go in the AWS Management Console to the option Network & Security, Elastic
 IPs, and click Allocate New Address.
 
-![ Allocate Elastic IP Address](/images/endpointprotector/2509/configuration/amazonwebservices/allocateelasticip.webp)
+![ Allocate Elastic IP Address](allocateelasticip.webp)
 
 **Step 1 –** Associate the Elastic IP with your Endpoint Protector Instance.
 
-![Associating the Elastic IP with your Instance.](/images/endpointprotector/2509/configuration/amazonwebservices/allocationsuccessful.webp)
+![Associating the Elastic IP with your Instance.](allocationsuccessful.webp)
 
 **Step 2 –** Select the Endpoint Protector Instance from the dropdown list, the Private IP address,
 and then click Associate;
 
-![Associating Elastic IP Address](/images/endpointprotector/2509/configuration/amazonwebservices/associateelasticip.webp)
+![Associating Elastic IP Address](associateelasticip.webp)
 
 The Elastic IP is now associated with your Endpoint Protector Instance. After a few minutes, the
 Endpoint Protector Instance will be running associated with the Elastic IP.

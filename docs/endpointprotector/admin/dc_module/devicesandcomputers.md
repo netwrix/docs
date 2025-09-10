@@ -24,7 +24,7 @@ and assigned to its ﬁrst user which can be changed later.
 :::
 
 
-![View, sort, and export in Excel, PDF or CSV format any devices from the system](/images/endpointprotector/2509/admin/devicecontrol/devices.webp)
+![View, sort, and export in Excel, PDF or CSV format any devices from the system](devices.webp)
 
 Click **Create** to manually add a new device on the list by providing device information: name,
 friendly name, type PID, department, description, friendly description, VID, serial number and
@@ -64,7 +64,7 @@ For detailed information, refer to the
 If you conﬁgure device rights granularly for all entities, the priority order will be the following,
 starting with the highest:
 
-![Priority order whech configuring device rights](/images/endpointprotector/2509/admin/devicecontrol/priortyorder.webp)
+![Priority order whech configuring device rights](priortyorder.webp)
 
 For example, If global rights indicate that no computer on the system has access to a speciﬁc
 device, and for one computer that device has been authorized, then that computer will have access to
@@ -75,27 +75,27 @@ that device.
 To manage device rights for speciﬁc computers, groups, or users, select **Manage Rights** from the
 Actions column.
 
-![Manage device rights for speciﬁc computers, groups, or users](/images/endpointprotector/2509/admin/devicecontrol/effectiverights.webp)
+![Manage device rights for speciﬁc computers, groups, or users](effectiverights.webp)
 
-![Managing device rights](/images/endpointprotector/2509/admin/devicecontrol/devicerights.webp)
+![Managing device rights](devicerights.webp)
 
 After selecting a device and assigning rights to speciﬁc users, computers or groups follow these
 steps:
 
 **Step 1 –** Select the **Entity** and the **Device** right.
 
-![Selecting the Entity and the Device right](/images/endpointprotector/2509/admin/devicecontrol/entintydeviceright.webp)
+![Selecting the Entity and the Device right](entintydeviceright.webp)
 
 **Step 2 –** Select the **Entities** (Computers, Groups, or Users).
 
-![Selecting the Entities (Computers, Groups, or Users)](/images/endpointprotector/2509/admin/devicecontrol/entitiesrights.webp)
+![Selecting the Entities (Computers, Groups, or Users)](entitiesrights.webp)
 
 ### Device History
 
 From this section, you can view the device history by selecting the View Device History action. This
 will display the Logs Report page ﬁltered for the respective device.
 
-![ Logs Report page ﬁltered for the respective device](/images/endpointprotector/2509/admin/devicecontrol/logsreport.webp)
+![ Logs Report page ﬁltered for the respective device](logsreport.webp)
 
 ## Computers
 
@@ -110,7 +110,7 @@ Inspection is used.
 Any new computer that has the Endpoint Protector Client deployed will be automatically added to the
 database, thus making it manageable.
 
-![Filter, create, uninstall or delete a computer ](/images/endpointprotector/2509/admin/devicecontrol/computers.webp)
+![Filter, create, uninstall or delete a computer ](computers.webp)
 
 The Endpoint Protector Client has a self-registration mechanism. This process is run once after the
 Client software is installed on a client computer. The Client will then communicate to the Server
@@ -155,7 +155,7 @@ You can manage computer rights from the Actions column for a speciﬁc computer 
 Rights**. This section is built around the computers, allowing you to specify which Device Types and
 Speciﬁc Devices can be accessible.
 
-![Specifies which Device Types and Speciﬁc Devices can be accessible](/images/endpointprotector/2509/admin/devicecontrol/computerrights.webp)
+![Specifies which Device Types and Speciﬁc Devices can be accessible](computerrights.webp)
 
 The Standard device control rights include the Device Types and Already Existing Devices sections.
 These are generally the only device rights used.
@@ -186,14 +186,14 @@ It will do this by either inheriting the settings from the group it belongs to o
 the global settings, which are mandatory and exist in the system with default values from
 installation.
 
-![Editing the settings for each computer](/images/endpointprotector/2509/admin/devicecontrol/computersettings.webp)
+![Editing the settings for each computer](computersettings.webp)
 
 ### Computer History
 
 From this section, you can view the computer history by selecting the View Computer History action.
 This will display the Logs Report page ﬁltered for the respective computer.
 
-![This will display the Logs Report page ﬁltered for the respective computer](/images/endpointprotector/2509/admin/devicecontrol/logsreport.webp)
+![This will display the Logs Report page ﬁltered for the respective computer](logsreport.webp)
 
 ### Terminal Servers and Thin Clients
 
@@ -204,13 +204,13 @@ Servers can be enforced through Endpoint Protector, as detailed below.
 
 The process starts with the menu view from Device Control > Computers, namely the action to Mark as
 Terminal Server
-![Mark as Terminal Server Action](/images/endpointprotector/2509/admin/devicecontrol/terminalserver_19x14.webp)
+![Mark as Terminal Server Action](terminalserver_19x14.webp)
 .
 
 After you selected the computer in the system as a Terminal Server, “Yes” will be displayed for ease
 of identiﬁcation, as seen below:
 
-![Displays List of computers](/images/endpointprotector/2509/admin/devicecontrol/computers.webp)
+![Displays List of computers](computers.webp)
 
 :::note
 The computers that can be targeted by this action are strictly Windows Servers with
@@ -225,7 +225,7 @@ appear when choosing to Edit it under Device Control, Computers, Computer Rights
 The settings for the Terminal Server-speciﬁc Device Types are: Preserve Global Settings, Allow
 Access, Deny Access, and Read-Only Access.
 
-![ Preserves Global Settings, Allow Access, Deny Access, and Read-Only Access.](/images/endpointprotector/2509/admin/devicecontrol/rdpstorage.webp)
+![ Preserves Global Settings, Allow Access, Deny Access, and Read-Only Access.](rdpstorage.webp)
 
 An Allow Access right set to the RDP Storage device type will enable all users that connect to the
 Terminal Server by RDP to transfer ﬁles to and from their local disk volume or shared storage
@@ -244,15 +244,15 @@ Endpoint Rights Functionality for the rights policy to apply on user logins with
 Secondly, the menu from Device Control > Users > Rights will present an additional device type for
 all the users in Endpoint Protector, namely Thin Client Storage (RDP Storage).
 
-![Thin Client Storage (RDP Storage) device type](/images/endpointprotector/2509/admin/devicecontrol/thinclientstorage.webp)
+![Thin Client Storage (RDP Storage) device type](thinclientstorage.webp)
 
 Multiple users can be recognized as active users on any given Terminal Server, and so, the setting
 of this right can be used as a powerful tool to create access policies for speciﬁc users, as
 detailed in the use case below.
 
-![Illustrate tool to create access policies for speciﬁc users](/images/endpointprotector/2509/admin/devicecontrol/thingrouptools.webp)
+![Illustrate tool to create access policies for speciﬁc users](thingrouptools.webp)
 
 On a Windows Terminal Server, the Endpoint Protector Client will display RDP Storage disks shared by
 one or multiple Thin Clients as seen below.
 
-![Client version displays RDP Storage disks shared by one or multiple Thin Clients](/images/endpointprotector/2509/admin/devicecontrol/clientversiondc.webp)
+![Client version displays RDP Storage disks shared by one or multiple Thin Clients](clientversiondc.webp)

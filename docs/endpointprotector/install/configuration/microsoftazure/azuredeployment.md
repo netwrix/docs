@@ -41,7 +41,7 @@ account / Container, following these steps:
 
 **Step 4 –** Click Review + create;
 
-![ Creating a storage account](/images/endpointprotector/2509/configuration/azure/createstorage.webp)
+![ Creating a storage account](createstorage.webp)
 
 **Step 5 –** Go to Storage accounts and click the newly created account;
 
@@ -50,7 +50,7 @@ account / Container, following these steps:
 **Step 7 –** Give the container the same name as you did to the storage account and for the Public
 access level select Container (anonymous read access for containers and blobs);
 
-![Naming the container ](/images/endpointprotector/2509/configuration/azure/createcontainer.webp)
+![Naming the container ](createcontainer.webp)
 
 **Step 8 –** Select the container you created, and then click Shared access tokens.
 
@@ -62,7 +62,7 @@ Make sure you are creating a token on the container level, not the storage accou
 **Step 9 –** Configure the SAS token with Create, Write and Add Permissions with a 5-day window to
 allow the Netwrix team to copy the image;
 
-![Configuring the SAS token](/images/endpointprotector/2509/configuration/azure/accesstokens.webp)
+![Configuring the SAS token](accesstokens.webp)
 
 **Step 10 –** Copy the Blob SAS URL and send it to Netwrix.
 

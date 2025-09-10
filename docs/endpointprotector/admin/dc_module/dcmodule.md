@@ -21,4 +21,4 @@ This section offers an overview in the form of graphics and charts related to th
 Entities. You can select the start and end date for the data used in these visual representations
 from the top-right calendars and view the data in real time.
 
-![Overview in the form of graphics and charts ](/images/endpointprotector/2509/admin/devicecontrol/dcdashboard.webp)
+![Overview in the form of graphics and charts ](dcdashboard.webp)

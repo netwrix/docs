@@ -20,4 +20,4 @@ The new policies will be applied only when the target computers are rebooted.
 :::
 
 
-![Linking Group Policy Objects to Organization Units ](/images/endpointprotector/2509/configuration/activedirectory/gpotooulinking.webp)
+![Linking Group Policy Objects to Organization Units ](gpotooulinking.webp)

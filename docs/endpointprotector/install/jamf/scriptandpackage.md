@@ -34,11 +34,11 @@ Protector Client on specific departments or custom ports.
 :::
 
 
-![Uploading the new Script.](/images/endpointprotector/2509/install/agent/jamf/newscript.webp)
+![Uploading the new Script.](newscript.webp)
 
 **Step 5 –** From the Computer Management section, select **Package** and then, in the upper right,
 click **+ New**.
 
 **Step 6 –** On the General tab, add a name and then upload the package `EndpointProtector.pkg`.
 
-![Uploading the new Package](/images/endpointprotector/2509/install/agent/jamf/newpackage.webp)
+![Uploading the new Package](newpackage.webp)

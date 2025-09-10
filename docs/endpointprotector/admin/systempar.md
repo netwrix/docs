@@ -12,7 +12,7 @@ From this section you can view and manage device types and notiﬁcations, view 
 notiﬁcations and their translations and deﬁne custom notiﬁcations for Content Aware Protection
 policies and Device Control User Remediation.
 
-![Manage device types and notiﬁcations](/images/endpointprotector/2509/admin/systemparameters/devicetypesnotif.webp)
+![Manage device types and notiﬁcations](devicetypesnotif.webp)
 
 ### List of Device Types and Notiﬁcations
 
@@ -23,7 +23,7 @@ Content Aware Protection module.
 You can enable and edit the notiﬁcation messages that appear on the Endpoint Protector Client from
 the Actions column.
 
-![List of Device Types and Notiﬁcations](/images/endpointprotector/2509/admin/systemparameters/devicetypesnotiftwo.webp)
+![List of Device Types and Notiﬁcations](devicetypesnotiftwo.webp)
 
 You can enable or disable messages from the Default Notifications list and edit custom notification
 translations.
@@ -34,7 +34,7 @@ individually for computers or groups, from their speciﬁc Settings sections.
 :::
 
 
-![Enable/disable a message from the list of Default Notiﬁcations or edit the custom notiﬁcations translations](/images/endpointprotector/2509/admin/systemparameters/listdefaultnotif.webp)
+![Enable/disable a message from the list of Default Notiﬁcations or edit the custom notiﬁcations translations](listdefaultnotif.webp)
 
 ### Custom Content Aware Protection Notiﬁcations
 
@@ -67,7 +67,7 @@ Follow the steps to create notifications.
 
 **Step 5 –** Click **Save** to finalize your custom notification.
 
-![Custom Content Aware Protection Notiﬁcations](/images/endpointprotector/2509/admin/systemparameters/capnotifications.webp)
+![Custom Content Aware Protection Notiﬁcations](capnotifications.webp)
 
 For example, the file named 'financial_report.xlsx' (`\{fileName\}`) was classified as
 'Confidential' (`\{type\}`) because it contains confidential data.
@@ -130,7 +130,7 @@ Once the notiﬁcation was created, you can select the custom notiﬁcation from
 Notiﬁcation Template drop-down located in the Device Control section, Global Setting, Users,
 Computers and Groups.
 
-![Custom Device Control User Remediation Notiﬁcations](/images/endpointprotector/2509/admin/systemparameters/userremediationnotif.webp)
+![Custom Device Control User Remediation Notiﬁcations](userremediationnotif.webp)
 
 ## Contextual Detection
 
@@ -175,9 +175,9 @@ prioritization of individual policy conﬁgurations.
 This method is recommended for general use as it is the easiest method and it can cover most use
 cases.
 
-![Creating the XML](/images/endpointprotector/2509/admin/systemparameters/contextualdetectionone.webp)
+![Creating the XML](contextualdetectionone.webp)
 
-![Creating the XML](/images/endpointprotector/2509/admin/systemparameters/contextualdetectiontwo.webp)
+![Creating the XML](contextualdetectiontwo.webp)
 
 For each category of Predeﬁned Content (e.g.: Credit Cards, IDs, Passports, Driving Licenses, etc.),
 contextual detection can be conﬁgured by clicking on the **Add** button and selecting options such
@@ -303,13 +303,13 @@ Printing and MTP Scanning features enabled.
 :::
 
 
-![Advanced Scanning Detection](/images/endpointprotector/2509/admin/systemparameters/advancedscanningexceptions.webp)
+![Advanced Scanning Detection](advancedscanningexceptions.webp)
 
 ## Rights
 
 This subsection displays a list with all access rights that can be assigned to devices.
 
-![Displays a list with all access rights that can be assigned to devices](/images/endpointprotector/2509/admin/systemparameters/rights.webp)
+![Displays a list with all access rights that can be assigned to devices](rights.webp)
 
 ## Events
 
@@ -317,7 +317,7 @@ In this section you can view, manage and export the events list logged by Endpoi
 can also edit event names and descriptions or enable/disable logging for speciﬁc events from the
 Actions column.
 
-![View, manage and export the events list logged by Netwrix Endpoint Protector](/images/endpointprotector/2509/admin/systemparameters/listofevents.webp)
+![View, manage and export the events list logged by Netwrix Endpoint Protector](listofevents.webp)
 
 ### Events Types and Descriptions
 
@@ -391,7 +391,7 @@ For a detailed view of all events and their descriptions, please see the table b
 User remediation is a feature that allows the end-users to apply a justiﬁcation and self-remediate a
 policy violation or a restricted-access device.
 
-![Allows the end-users to apply a justiﬁcation and self-remediate a policy violation or a restricted-access device](/images/endpointprotector/2509/admin/systemparameters/userremediation.webp)
+![Allows the end-users to apply a justiﬁcation and self-remediate a policy violation or a restricted-access device](userremediation.webp)
 
 ### User Remediation Settings
 
@@ -445,7 +445,7 @@ Remediation for Device Control.
     :::
 
 
-![User Remediation Settings](/images/endpointprotector/2509/admin/systemparameters/userremediationsettings.webp)
+![User Remediation Settings](userremediationsettings.webp)
 
 ### Justiﬁcations List
 
@@ -459,7 +459,7 @@ but make sure that at least one justiﬁcation is enabled all the time.
 To enable and enforce the end-user to view User Remediation pop-up notiﬁcations, manage the option
 from Device Control, Global Settings, [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md).
 
-![Justiﬁcations List](/images/endpointprotector/2509/admin/systemparameters/justflist.webp)
+![Justiﬁcations List](justflist.webp)
 
 ### Enabling User Remediation
 
@@ -468,7 +468,7 @@ Follow the steps to use User Remediation for Device Control.
 **Step 1 –** Enable the User Remediation for Device Control feature from
 [User Remediation Settings](#user-remediation-settings)
 
-![Enabling User Remediation](/images/endpointprotector/2509/admin/systemparameters/dcuserremediation.webp)
+![Enabling User Remediation](dcuserremediation.webp)
 
 **Step 2 –** Customize the User Remediation notiﬁcations for Device Control.
 
@@ -476,13 +476,13 @@ To do so, go to the Devices Types and Notiﬁcations,
 [Custom Device Control User Remediation Notiﬁcations](#custom-device-control-user-remediation-notiﬁcations)
 section, click **Create**, ﬁll in the mandatory ﬁelds and **Save**.
 
-![Custom Device Control User Remediation Notiﬁcations](/images/endpointprotector/2509/admin/systemparameters/customdcuserremediationnotif.webp)
+![Custom Device Control User Remediation Notiﬁcations](customdcuserremediationnotif.webp)
 
 **Step 3 –** Enable the **User Remediation Pop-up** setting from the
 [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic and then select the **customized notiﬁcation**
 from the User Remediation Notiﬁcation Template drop-down list;
 
-![User Remediation Pop-up](/images/endpointprotector/2509/admin/systemparameters/userremediationpopup.webp)
+![User Remediation Pop-up](userremediationpopup.webp)
 
 **Step 4 –** Navigate to [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md), Device Types section and
 enable **User Remediation** for devices with limited access – devices that have full access
@@ -494,7 +494,7 @@ not available.
 :::
 
 
-![These are device types that apply in General](/images/endpointprotector/2509/admin/systemparameters/devicetypes.webp)
+![These are device types that apply in General](devicetypes.webp)
 
 ### User Remediation Usage
 
@@ -504,7 +504,7 @@ Follow these steps to remediate the device.
 
 **Step 2 –** Select the device for remediation and click Self Remediate.
 
-![User Remediation Usage](/images/endpointprotector/2509/admin/systemparameters/dcselfremediate.webp)
+![User Remediation Usage](dcselfremediate.webp)
 
 **Step 3 –** On the Self Remediate section:
 
@@ -528,9 +528,9 @@ User Remediation sections.
 :::
 
 
-![Self Remediate section](/images/endpointprotector/2509/admin/systemparameters/selfremediatesection.webp)
+![Self Remediate section](selfremediatesection.webp)
 
 To stop the device remediation session at any time during the time interval, select the device from
 the Device Control tab in the Endpoint Protector notiﬁer and then click **Revoke Remediation**.
 
-![ Stopping the device remediation session](/images/endpointprotector/2509/admin/systemparameters/revokeremediation.webp)
+![ Stopping the device remediation session](revokeremediation.webp)

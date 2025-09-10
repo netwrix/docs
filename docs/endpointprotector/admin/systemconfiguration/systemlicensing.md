@@ -11,7 +11,7 @@ for Modules, such as Content Aware Protection and eDiscovery, as well as Endpoin
 you protect. You can import licenses, view details, and handle free trials, ensuring efficient and
 flexible license management.
 
-![System Licensing](/images/endpointprotector/2509/admin/systemconfiguration/systemlicensing.webp)
+![System Licensing](systemlicensing.webp)
 
 :::note
 As of Endpoint Protector Version 5.9.0.0, a new subscription-based licensing system has
@@ -53,7 +53,7 @@ Click **Import Licenses** to allow browsing for the license ﬁle. It contains a
 information in a single ﬁle (modules, number of endpoints, expiry date, type of Support, etc.).
 Click **View Licenses** to allow the management of the endpoint licenses.
 
-![Import and Manage Licenses](/images/endpointprotector/2509/admin/systemconfiguration/importmanagelicenses.webp)
+![Import and Manage Licenses](importmanagelicenses.webp)
 
 If one or more licensed endpoints become inactive and need to be reassigned, you can release those
 licenses, which will automatically be reassigned to other online computers.
@@ -62,7 +62,7 @@ By using the Automatic Release Licenses functionality, licenses will be released
 endpoints that have not been seen online in a speciﬁc number of days (15 days, 30 days, 90 days,
 etc. or a custom value).
 
-![Automatic Release Licenses  ](/images/endpointprotector/2509/admin/systemconfiguration/autoreleaselicenses.webp)
+![Automatic Release Licenses  ](autoreleaselicenses.webp)
 
 To streamline license management within System Conﬁguration, navigate to **System Licensing** and
 discover the Serial Number ﬁeld under the **View Licenses** section. In the licensing table, you
@@ -77,4 +77,4 @@ endpoint machine reliability, now featuring in the license page column across al
 :::
 
 
-![Licensing Table](/images/endpointprotector/2509/admin/systemconfiguration/licensingtable.webp)
+![Licensing Table](licensingtable.webp)

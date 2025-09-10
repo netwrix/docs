@@ -36,14 +36,14 @@ modules, and requires separate licensing.
 :::
 
 
-![eDiscovery Activation](/images/endpointprotector/2509/admin/ediscovery/activation.webp)
+![eDiscovery Activation](activation.webp)
 
 ## Dashboard
 
 This section offers a quick overview in the form of graphics and charts related to the eDiscovery
 module.
 
-![A quick overview in the form of graphics and charts related to the eDiscovery module](/images/endpointprotector/2509/admin/ediscovery/dashboard.webp)
+![A quick overview in the form of graphics and charts related to the eDiscovery module](dashboard.webp)
 
 ## eDiscovery Policies and Scans
 
@@ -75,7 +75,7 @@ eDiscovery Automatic Scanning is also available, allowing you to set an Incremen
 - Weekly – a scan will run every 7 days, from the set date and time
 - Monthly – a scan will run every 30 days, from the set date and time
 
-![eDiscovery Automatic Scanning](/images/endpointprotector/2509/admin/ediscovery/automaticscanning.webp)
+![eDiscovery Automatic Scanning](automaticscanning.webp)
 
 An eDiscovery Scan can be stopped at any time as results can also be automatically cleared. This can
 be done by using:
@@ -94,12 +94,12 @@ and all the Logs cleared.
 You can easily create and manage eDiscovery Policies and Scans from the eDiscovery, Policies and
 Scans section.
 
-![Creating an eDiscovery Policy and Scan](/images/endpointprotector/2509/admin/ediscovery/policiesscans.webp)
+![Creating an eDiscovery Policy and Scan](policiesscans.webp)
 
 To create a new policy click **Create Custom Policy** and to edit an available policy, double-click
 it. You need to select a policy to edit, duplicate or delete a policy.
 
-![Creating a new Policy](/images/endpointprotector/2509/admin/ediscovery/newpolicy.webp)
+![Creating a new Policy](newpolicy.webp)
 
 When creating a new policy, select the following:
 
@@ -136,21 +136,21 @@ After an eDiscovery Scan starts, you can inspect the items found and apply actio
 (e.g., delete on target, encrypt on target, decrypt on target, etc.). All results are displayed in
 the eDiscovery, Scan Results, and Actions section.
 
-![eDiscovery Scan Result and Actions](/images/endpointprotector/2509/admin/ediscovery/scanresults.webp)
+![eDiscovery Scan Result and Actions](scanresults.webp)
 
 You can also access the Scan Results and Actions section directly from eDiscovery > Policies and
 Scans by selecting a computer from the eDiscovery Scans list and choosing the Inspect found items
 action. This will automatically ﬁlter the Scan Results list and display the items only for that
 speciﬁc computer.
 
-![eDiscovery Scan Result and Actions](/images/endpointprotector/2509/admin/ediscovery/ediscoveryscans.webp)
+![eDiscovery Scan Result and Actions](ediscoveryscans.webp)
 
 ### Viewing Scan Results and Taking Actions
 
 From this section, you can manage the scan results. A list of all the computers that were scanned
 can be viewed and actions such as deleting, encrypting or decrypting ﬁles can be taken.
 
-![Viewing Scan Results and Taking Actions](/images/endpointprotector/2509/admin/ediscovery/ediscoveryactions.webp)
+![Viewing Scan Results and Taking Actions](ediscoveryactions.webp)
 
 You can apply an action to each item individually or, can select multiple items and apply the action
 simultaneously by using the Choose action button.

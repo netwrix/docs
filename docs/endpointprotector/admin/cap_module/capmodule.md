@@ -48,7 +48,7 @@ correctly and that the Content Aware Protection module was enabled successfully.
 :::
 
 
-![The module is displayed but requires a simple activation by pressing the Enable button](/images/endpointprotector/2509/admin/contentawareprotection/activation.webp)
+![The module is displayed but requires a simple activation by pressing the Enable button](activation.webp)
 
 :::note
 The Content Aware Protection module is separate from Device Control or eDiscovery modules,
@@ -61,4 +61,4 @@ and requires separate licensing.
 This section offers a quick overview in the form of graphics and charts related to the Content Aware
 Protection module.
 
-![A quick overview in the form of graphics and charts related to the Content Aware Protection module](/images/endpointprotector/2509/admin/contentawareprotection/dashboard.webp)
+![A quick overview in the form of graphics and charts related to the Content Aware Protection module](dashboard.webp)

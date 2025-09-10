@@ -10,26 +10,26 @@ To create the Windows Management Instrumentation (WMI) filters, follow these ste
 
 **Step 1 –** Open the Group Policy Management console, expand Domains and then the domain tree;
 
-![Group Policy Management Window](/images/endpointprotector/2509/configuration/activedirectory/grouppolicywindow_198x327.webp)
+![Group Policy Management Window](grouppolicywindow_198x327.webp)
 
 **Step 2 –** Right-click WMI Filters and select New – this will open the New WMI Filter window;
 
-![New Windows Management Instrumentation Filter Window](/images/endpointprotector/2509/configuration/activedirectory/newwmifilter_624x202.webp)
+![New Windows Management Instrumentation Filter Window](newwmifilter_624x202.webp)
 
 **Step 3 –** On the New WMI Filter window, add entries for 32-bit and 64-bit WMI filters by
 providing the name, description, and queries;
 
 32-bit WMI Filters:
 
-![32-bit Windows Management Instrumentation Filters Wizard](/images/endpointprotector/2509/configuration/activedirectory/32bitwmi_filter_624x224.webp)
+![32-bit Windows Management Instrumentation Filters Wizard](32bitwmi_filter_624x224.webp)
 
 64-bit WMI Filters:
 
-![64-bit Windows Management Instrumentation Filters](/images/endpointprotector/2509/configuration/activedirectory/64bitwmi_filter_624x193.webp)
+![64-bit Windows Management Instrumentation Filters](64bitwmi_filter_624x193.webp)
 
 **Step 4 –** The new filters will be displayed in the WMI Filters folder.
 
-![Newly Created Windows Management Instrumentation Filters](/images/endpointprotector/2509/configuration/activedirectory/createdwmifilters_118x25.webp)
+![Newly Created Windows Management Instrumentation Filters](createdwmifilters_118x25.webp)
 
 Selecting the 32-bit and 64-bit operating systems:
 

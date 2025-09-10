@@ -11,7 +11,7 @@ sidebar_position: 120
 From this section you can view general information about the Server, the System Fail/Over status,
 information on Disk Space usage and Database, and the Server Uptime.
 
-![View general information about the Server](/images/endpointprotector/2509/admin/appliance/serverinformation.webp)
+![View general information about the Server](serverinformation.webp)
 
 ## Server Maintenance
 
@@ -19,7 +19,7 @@ In this section, you can set up a preferential time zone and NTP synchronization
 the IP and DNS, register the client certiﬁcate, set up a self-signing certiﬁcate, perform routine
 operations and manage the SSH access.
 
-![ Set up a preferential time zone and NTP synchronization server](/images/endpointprotector/2509/admin/appliance/servermaintenance.webp)
+![ Set up a preferential time zone and NTP synchronization server](servermaintenance.webp)
 
 ### Time Zone
 
@@ -42,7 +42,7 @@ The appliances are preﬁgured to sync once a week with pool.ntp.org.
   Alerts and Logs will be reported after the 5 minutes in a format of your choice
 - Click Refresh Current Time to update the Current server time ﬁeld
 
-![Set a preferential time zone and/or sync the appliance to an NTP source](/images/endpointprotector/2509/admin/appliance/timezone.webp)
+![Set a preferential time zone and/or sync the appliance to an NTP source](timezone.webp)
 
 ### IP Conﬁguration
 
@@ -55,13 +55,13 @@ the Endpoint Protector Administration and Reporting Tool with the new IP address
 :::
 
 
-![ Change the network settings for the appliance to communicate correctly in your network](/images/endpointprotector/2509/admin/appliance/ipconfg.webp)
+![ Change the network settings for the appliance to communicate correctly in your network](ipconfg.webp)
 
 ### DNS Conﬁguration
 
 In this section you can modify or add a DNS server address and then Save your changes.
 
-![Modify or add a DNS server address and then Save your changes](/images/endpointprotector/2509/admin/appliance/dnsconfg.webp)
+![Modify or add a DNS server address and then Save your changes](dnsconfg.webp)
 
 ### Client Registration Certiﬁcate
 
@@ -106,7 +106,7 @@ the endpoints.
 - On Windows they should be placed in the Certiﬁcate Manager's Local Computer\Certiﬁcates\Personal
   section
 
-![Register and then verify the Endpoint Protector Client certiﬁcate signature](/images/endpointprotector/2509/admin/appliance/clientregcert.webp)
+![Register and then verify the Endpoint Protector Client certiﬁcate signature](clientregcert.webp)
 
 ### Server Certiﬁcate Validation
 
@@ -138,7 +138,7 @@ ensuring trusted and valid certiﬁcates are used.
 
 In this section you can perform appliance operations such as Reboot or Shutdown.
 
-![Perform appliance operations such as Reboot or Shutdown](/images/endpointprotector/2509/admin/appliance/applianceoperations.webp)
+![Perform appliance operations such as Reboot or Shutdown](applianceoperations.webp)
 
 ### SSH Server
 
@@ -149,7 +149,7 @@ Set this option to **Enable** before requesting Support access.
 :::
 
 
-![Manage user access to the Appliance through the SSH protocol](/images/endpointprotector/2509/admin/appliance/sshserver.webp)
+![Manage user access to the Appliance through the SSH protocol](sshserver.webp)
 
 ## SIEM Integration
 
@@ -165,7 +165,7 @@ You can conﬁgure a maximum number of 4 SIEM Server integrations.
 :::
 
 
-![Add, edit or delete an existing SIEM Server integration](/images/endpointprotector/2509/admin/appliance/siemserverintegration.webp)
+![Add, edit or delete an existing SIEM Server integration](siemserverintegration.webp)
 
 To create a SIEM Server, click **Add New** and provide the following information:
 
@@ -198,7 +198,7 @@ To create a SIEM Server, click **Add New** and provide the following information
 
 - Log Types – select from the available options the logs to send to the SIEM Server
 
-![SIEM Intergration - Adding a New Server](/images/endpointprotector/2509/admin/appliance/siemintegrationnewserver.webp)
+![SIEM Intergration - Adding a New Server](siemintegrationnewserver.webp)
 
 :::warning
 Please be aware that the SIEM integration feature in Endpoint Protector comes with

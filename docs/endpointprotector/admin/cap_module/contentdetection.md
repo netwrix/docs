@@ -34,7 +34,7 @@ the following information:
 Use the up and down arrows or drag and drop an entry from the list to change the order from the
 operation.
 
-![Content Detection Summary](/images/endpointprotector/2509/admin/contentawareprotection/contentdetectionsummary.webp)
+![Content Detection Summary](contentdetectionsummary.webp)
 
 To Restrict Content Detection, select from the drop-down list the ﬁle types you want to apply the
 Content Detection Rule to.
@@ -76,7 +76,7 @@ To create a new Context Detection Rules click **Add**, ﬁll in the following an
     :::
 
 
-![Creating new Context Detection Rules ](/images/endpointprotector/2509/admin/contentawareprotection/contentdetectionrules.webp)
+![Creating new Context Detection Rules ](contentdetectionrules.webp)
 
 :::warning
 To address conﬂicts between per-policy and Global Contextual Rules, Endpoint Protector
@@ -164,7 +164,7 @@ The new Endpoint Protector agent versions will report on both Italian ID and SSN
 - HIPAA
 - Domain and URL
 
-![Policy Denylists](/images/endpointprotector/2509/admin/contentawareprotection/policydenylists.webp)
+![Policy Denylists](policydenylists.webp)
 
 ### HIPAA Compliance
 
@@ -173,7 +173,7 @@ HIPAA tab are selected. The available options refer to FDA-approved lists and IC
 automatically report or block transfer ﬁles containing PII like Health Insurance Numbers, Social
 Security Numbers, Addresses, and much more.
 
-![HIPAA Compliance](/images/endpointprotector/2509/admin/contentawareprotection/hipaacompliance.webp)
+![HIPAA Compliance](hipaacompliance.webp)
 
 :::note
 For a HIPAA policy to be effective and more accurate, it is recommended to utilize
@@ -215,7 +215,7 @@ connection has been reestablished.
 :::
 
 
-![Policy Allowlists](/images/endpointprotector/2509/admin/contentawareprotection/policyallowlists.webp)
+![Policy Allowlists](policyallowlists.webp)
 
 ## DPI Monitored URL Categories
 
@@ -225,7 +225,7 @@ selected, Deep Packet Inspection will ﬁlter all content uploaded for any URL.
 You can add, delete and edit [Denylists and Allowlists](/docs/endpointprotector/admin/denylistsallowlists/overview.md) from the
 Denylists and Allowlists section.
 
-![Deﬁne the monitored URL categories the Deep Packet Inspection](/images/endpointprotector/2509/admin/contentawareprotection/dpimonitored.webp)
+![Deﬁne the monitored URL categories the Deep Packet Inspection](dpimonitored.webp)
 
 ## Policy Entities
 
@@ -246,7 +246,7 @@ when clicking on it, the corresponding network entities on which it was applied 
 You can also deﬁne a list of entities that will be excluded from the policy by selecting from the
 Excluded section.
 
-![Policy Entities](/images/endpointprotector/2509/admin/contentawareprotection/policyentities.webp)
+![Policy Entities](policyentities.webp)
 
 ## Block and Remediate Policies
 
@@ -267,7 +267,7 @@ To remediate the threat, the user has to follow these steps:
 
 **Step 2 –** Select the ﬁle for remediation and click Self **Remediate**.
 
-![Block and Remediate Policies](/images/endpointprotector/2509/admin/contentawareprotection/blockremediateclient.webp)
+![Block and Remediate Policies](blockremediateclient.webp)
 
 **Step 3 –** On the Self Remediate section:
 
@@ -297,7 +297,7 @@ To enable Deep Packet Inspection for other applications, navigate to the **Conte
 Protection** module, specifically the **Deep Packet Inspection** section, and manually activate it
 in the **Actions** column.
 
-![Configuring Self Remediate ](/images/endpointprotector/2509/admin/contentawareprotection/selfremediate.webp)
+![Configuring Self Remediate ](selfremediate.webp)
 
 - When Deep Packet Inspection is enabled – you can apply User Remediation for ﬁles transferred on a
   speciﬁc web domain.
@@ -311,12 +311,12 @@ in the **Actions** column.
     For example; If you upload a ﬁle on Chrome and apply User Remediation, you can upload the ﬁle on
     any URL from Chrome.
 
-![Deep Packet Inspection Applications](/images/endpointprotector/2509/admin/contentawareprotection/dpiapplications.webp)
+![Deep Packet Inspection Applications](dpiapplications.webp)
 
 You can view the web domains used for the User Remediation in the Endpoint Protector Client, the
 Content Aware Protection tab on the Web Domains column.
 
-![selfremediatetwo](/images/endpointprotector/2509/admin/contentawareprotection/selfremediatetwo.webp)
+![selfremediatetwo](selfremediatetwo.webp)
 
 ## Applying multiple Content Aware Policies
 
@@ -364,7 +364,7 @@ Endpoint Protector and not as Allowed.
 
 The deep packet inspection feature has been expanded to email scanning based on domain allowing.
 
-![Applying multiple Content Aware Policies](/images/endpointprotector/2509/admin/contentawareprotection/capeditpolicy.webp)
+![Applying multiple Content Aware Policies](capeditpolicy.webp)
 
 :::info
 HIPAA should be considered a Content Aware Policy that, besides the options in
@@ -382,4 +382,4 @@ HIPAA policies can be created and used on their own or in combination with regul
 better control of the data inside the network. These policies are available for Windows, Mac OS X,
 or Linux computers.
 
-![HIPAA policies can be created and used on their own or in combination with regular policies](/images/endpointprotector/2509/admin/contentawareprotection/hipaapolicies.webp)
+![HIPAA policies can be created and used on their own or in combination with regular policies](hipaapolicies.webp)

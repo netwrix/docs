@@ -50,7 +50,7 @@ Contact Customer Support to provide the tool as well as assistance.
 :::
 
 
-![Download and install the Endpoint Protector Client corresponding to your operating system](/images/endpointprotector/2509/admin/systemconfiguration/clientsoftware.webp)
+![Download and install the Endpoint Protector Client corresponding to your operating system](clientsoftware.webp)
 
 :::note
 Endpoint Protector Client versions are displayed in the format X.X.X.XXXX on endpoints.
@@ -165,7 +165,7 @@ The feature is not compatible for Endpoint Protector instances that are running 
 :::
 
 
-![Client Software Upgrade](/images/endpointprotector/2509/admin/systemconfiguration/clientsoftwareupgrade.webp)
+![Client Software Upgrade](clientsoftwareupgrade.webp)
 
 :::note
 Endpoint Protector Client versions are displayed in the format X.X.X.XXXX on endpoints.
@@ -183,7 +183,7 @@ steps:
 
 **Step 1 –** Select the OS version from the drop-down list and then click **Next**.
 
-![Create New Upgrade Job](/images/endpointprotector/2509/admin/systemconfiguration/createnewupgradejob.webp)
+![Create New Upgrade Job](createnewupgradejob.webp)
 
 **Step 2 –** Select the groups and/or computers to perform or exclude from the upgrade and then
 click **Next**. You will view a summary of your selection above the table with endpoints.
@@ -196,7 +196,7 @@ upgraded.
 :::
 
 
-![Select the groups and/or computers to perform or exclude from the upgrade](/images/endpointprotector/2509/admin/systemconfiguration/selectendpointsupgrade.webp)
+![Select the groups and/or computers to perform or exclude from the upgrade](selectendpointsupgrade.webp)
 
 **Step 3 –** Edit the default job title, add a description and conﬁrm the upgrade job details by
 clicking **Start Upgrade job**. You will view the upgrade as an entry on the Upgrade jobs section.
@@ -208,7 +208,7 @@ checks and updates process status to Completed or Completed with failures.
 :::
 
 
-![Edit the default job title, add a description and conﬁrm the upgrade job details](/images/endpointprotector/2509/admin/systemconfiguration/upgradejobdetails.webp)
+![Edit the default job title, add a description and conﬁrm the upgrade job details](upgradejobdetails.webp)
 
 ### Manage Upgrade Jobs
 
@@ -224,7 +224,7 @@ selection in other jobs.
 :::
 
 
-![Manage Upgrade Jobs](/images/endpointprotector/2509/admin/systemconfiguration/manageupgradejobs.webp)
+![Manage Upgrade Jobs](manageupgradejobs.webp)
 
 ## Client Uninstall
 
@@ -238,7 +238,7 @@ performed.
 
 The uninstall command can be canceled if it was not already executed.
 
-![Client Uninstall](/images/endpointprotector/2509/admin/systemconfiguration/clientuninstall.webp)
+![Client Uninstall](clientuninstall.webp)
 
 :::note
 If the server and Endpoint Protector client can't communicate due to missing server

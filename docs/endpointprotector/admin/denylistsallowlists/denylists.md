@@ -11,7 +11,7 @@ sidebar_position: 10
 Custom Content denylists are custom-deﬁned lists of terms and expressions detected as sensitive
 content by Endpoint Protector, available for both Content Aware Protection and eDiscovery modules.
 
-![Denylists Custom Content configuration](/images/endpointprotector/2509/admin/denylistsallowlists/customecontent.webp)
+![Denylists Custom Content configuration](customecontent.webp)
 
 From this section, you can view and add e-mail custom content denylists and from the Actions column,
 you can edit, delete or export an existing denylist.
@@ -30,7 +30,7 @@ uploaded again.
 Once the denylist is created, it will be displayed on the Custom Content list and will be available
 when creating or editing a Content Aware Protection or eDiscovery policy.
 
-![Creating a new denylist](/images/endpointprotector/2509/admin/denylistsallowlists/newdenylist.webp)
+![Creating a new denylist](newdenylist.webp)
 
 ## File Name
 
@@ -65,7 +65,7 @@ Policies. The Case Sensitive and Whole Words Only features do not apply.
 :::
 
 
-![File Name Denylists ](/images/endpointprotector/2509/admin/denylistsallowlists/filename.webp)
+![File Name Denylists ](filename.webp)
 
 ## File Location
 
@@ -75,7 +75,7 @@ or permissions deﬁned in various Policies.
 
 File Location Denylists are available for both Content Aware Protection and eDiscovery modules.
 
-![File Location Denylists](/images/endpointprotector/2509/admin/denylistsallowlists/filelocation.webp)
+![File Location Denylists](filelocation.webp)
 
 Enabling the option to Include subfolders for File Location Denylists will affect all other File
 Location Denylists and Allowlists throughout the system. By default, the File Location Denylists
@@ -101,7 +101,7 @@ File Location Denylist will only apply for the selected computer groups after 15
 :::
 
 
-![File Location New Denylist](/images/endpointprotector/2509/admin/denylistsallowlists/filelocationnewdenylists.webp)
+![File Location New Denylist](filelocationnewdenylists.webp)
 
 You can use wildcard patterns in the File Location Denylists to specify wildcard matching. To match
 a desktop folder on Windows, use the pattern "?:\Users\\\*\Desktop\".
@@ -119,7 +119,7 @@ Scan Location Denylists are custom-deﬁned lists of locations identiﬁed by th
 Data at rest within this location are automatically inspected for content, depending on the rules
 deﬁned in various Policies.
 
-![Scan Location Denylists are custom-deﬁned lists of locations identiﬁed by the eDiscovery module](/images/endpointprotector/2509/admin/denylistsallowlists/scanlocation.webp)
+![Scan Location Denylists are custom-deﬁned lists of locations identiﬁed by the eDiscovery module](scanlocation.webp)
 
 From this section, you can view and add scan location denylists and from the Actions column, you can
 edit or delete an existing denylist.
@@ -133,7 +133,7 @@ When deﬁning a Scan Location, use these special characters to deﬁne the path
 - \* - to replace any word
 - ? - to replace any character
 
-![Scan Location New Denylist](/images/endpointprotector/2509/admin/denylistsallowlists/scanlocationnewdenylist.webp)
+![Scan Location New Denylist](scanlocationnewdenylist.webp)
 
 ## Regex
 
@@ -158,7 +158,7 @@ or delete an existing denylist.
 To create a new denylist, under the list of available denylists, click **Ad**d, provide a **name**
 and **description** and then add the regex expression.
 
-![You can view and add regex expressions and from the Actions column](/images/endpointprotector/2509/admin/denylistsallowlists/regexdenylists.webp)
+![You can view and add regex expressions and from the Actions column](regexdenylists.webp)
 
 You can test a regular expression for accuracy using the right-side option. Add the content and then
 click Test. If the Regular Expression has no errors, then the same content should appear into the
@@ -175,7 +175,7 @@ implement regular expressions and to thoroughly test.
 :::
 
 
-![You can test a regular expression for accuracy using the right-side option](/images/endpointprotector/2509/admin/denylistsallowlists/regexnewdenylist.webp)
+![You can test a regular expression for accuracy using the right-side option](regexnewdenylist.webp)
 
 ## Domain and URL
 
@@ -187,7 +187,7 @@ Domain and URL Denylists are available only for the Content Aware Protection mod
 :::
 
 
-![Domain and URL Denylists ](/images/endpointprotector/2509/admin/denylistsallowlists/domainurldenylists.webp)
+![Domain and URL Denylists ](domainurldenylists.webp)
 
 From this section, you can view and add domain and URL denylists and from the Actions column, you
 can edit, delete or export an existing denylist.
@@ -212,7 +212,7 @@ https://website.com
 Once the denylist is created, it will be displayed on the Domain and URL list and will be available
 when creating or editing a Content Aware Protection policy.
 
-![Creating a New Domain URL denylists](/images/endpointprotector/2509/admin/denylistsallowlists/domainurlnewdenylists.webp)
+![Creating a New Domain URL denylists](domainurlnewdenylists.webp)
 
 ## E-mail Domain
 
@@ -233,7 +233,7 @@ Aware Protection Policy.
 :::
 
 
-![E-mail Domain Denylists](/images/endpointprotector/2509/admin/denylistsallowlists/e-maildomaindenylists.webp)
+![E-mail Domain Denylists](e-maildomaindenylists.webp)
 
 From this section, you can view and add e-mail domain denylists and from the Actions column, you can
 edit, delete or export an existing e-mail domain denylist.
@@ -242,7 +242,7 @@ To create a new denylist, under the list of available denylists, click **Add**, 
 and **description**, add the items separated by a new line, comma, or semicolon and then select the
 **groups** and **computers**. You can import content using the sample ﬁle provided on the form.
 
-![E-mail Domain New Denylists](/images/endpointprotector/2509/admin/denylistsallowlists/e-maildomainnewdenylists.webp)
+![E-mail Domain New Denylists](e-maildomainnewdenylists.webp)
 
 ## Microsoft Information Protection
 
@@ -282,7 +282,7 @@ future releases.
 :::
 
 
-![Confguration for Microsoft Information Protection (MIP) ](/images/endpointprotector/2509/admin/denylistsallowlists/mipclassification.webp)
+![Confguration for Microsoft Information Protection (MIP) ](mipclassification.webp)
 
 ## Applications
 
@@ -320,7 +320,7 @@ want to control.
 **Step 3 –** Incorporate these criteria into your CAP policies as arguments to ensure precise
 control and monitoring of application usage.
 
-![Configuring Applications Denylists](/images/endpointprotector/2509/admin/denylistsallowlists/applicationsdenylists.webp)
+![Configuring Applications Denylists](applicationsdenylists.webp)
 
 Follow these steps and leverage CLI commands denylists to enhance your organization's security
 posture and ensure that applications are used in compliance with your policies and regulations.

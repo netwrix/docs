@@ -60,7 +60,7 @@ transparently by the Endpoint Protector Client. No additional steps are required
 :::
 
 
-![Conﬁguring the Deep Packet Inspection - Auto-refresh Certiﬁcate feature](/images/endpointprotector/2509/admin/contentawareprotection/autorefreshcert.webp)
+![Conﬁguring the Deep Packet Inspection - Auto-refresh Certiﬁcate feature](autorefreshcert.webp)
 
 ## Deep Packet Inspection Certiﬁcate on macOS
 
@@ -84,22 +84,22 @@ Certiﬁcate**,
 
 and download the **CA Certiﬁcate**.
 
-![Deep Packet Inspection Certiﬁcate on macOS](/images/endpointprotector/2509/install/agent/dpicertificate.webp)
+![Deep Packet Inspection Certiﬁcate on macOS](dpicertificate.webp)
 
 **Step 2 –** Open the **Keychain Access** application from your macOS and select **System**.
 
-![Keychain Access application settings on MacOs](/images/endpointprotector/2509/install/agent/keychainaccess.webp)
+![Keychain Access application settings on MacOs](keychainaccess.webp)
 
 **Step 3 –** Decompress the downloaded **ClientCerts** ﬁle.
 
 **Step 4 –** Select **cacert.pem** ﬁle and drag and drop it on **System** > **Keychain Access**.
 
-![Configuring Client Certificate on MacOs](/images/endpointprotector/2509/install/agent/clientcerts.webp)
+![Configuring Client Certificate on MacOs](clientcerts.webp)
 
 **Step 5 –** Double click the **X** from the newly added certiﬁcate and from the Trust section,
 select **Always Trust**.
 
-![Keychain Access application settings on MacOs](/images/endpointprotector/2509/install/agent/keychainaccesstwo.webp)
+![Keychain Access application settings on MacOs](keychainaccesstwo.webp)
 
 **Step 6 –** **Save** the changes.
 
@@ -182,7 +182,7 @@ By default, the Deep Packet Inspection functionality comes with a list of prede�
 particularly by one of the monitored applications deﬁned as an Exit Point within a Content Aware
 Protection Policy.
 
-![Deep Packet Inspection Ports and Settings](/images/endpointprotector/2509/admin/contentawareprotection/dpiports.webp)
+![Deep Packet Inspection Ports and Settings](dpiports.webp)
 
 In this section you can also manage the following settings:
 
@@ -254,7 +254,7 @@ In this section you can also manage the following settings:
     :::
 
 
-![Allowed domains for Google Business accounts](/images/endpointprotector/2509/admin/contentawareprotection/alloweddomainsgoogle.webp)
+![Allowed domains for Google Business accounts](alloweddomainsgoogle.webp)
 
 ### Monitor Webmail JSON Format Parser Usage
 
@@ -293,7 +293,7 @@ Endpoint Protector Server UI:
     - The subject here is located at a speciﬁc path inside nested arrays without having to go
       through all elements of a speciﬁc array and use \[:]
 
-![Monitor Webmail JSON Format Parser Usage](/images/endpointprotector/2509/admin/contentawareprotection/webmailjson.webp)
+![Monitor Webmail JSON Format Parser Usage](webmailjson.webp)
 
 :::info
 It is advised, that due to recent changes applied by cloud providers, to not
@@ -326,7 +326,7 @@ Only the applications that support Deep Packet Inspection are available in the l
 :::
 
 
-![Deep Packet Inspection Applications](/images/endpointprotector/2509/admin/contentawareprotection/dpiapplications.webp)
+![Deep Packet Inspection Applications](dpiapplications.webp)
 
 :::note
 The Deep Packet Inspection functionality needs to be ﬁrst enabled from **Device

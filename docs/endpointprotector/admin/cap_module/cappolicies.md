@@ -49,7 +49,7 @@ To manage Content Aware Protection policies, you can:
 - Switch views between Grid or Widget mode using the controls in the top-right corner
 - Edit policy priority by double-clicking on a policy listed in the Priority column
 
-![Manage the Content Aware Protection policies](/images/endpointprotector/2509/admin/contentawareprotection/policies.webp)
+![Manage the Content Aware Protection policies](policies.webp)
 
 ## Policy Information
 
@@ -142,7 +142,7 @@ numbers, emphasizing the distinctions between Regular and Global Thresholds.
     - Regular Threshold: Does not block two threats (SSN + phone number)
     - Global Threshold: Blocks two SSNs or any combination of two threats
 
-![Block & Report policies to handle Social Security Numbers (SSN) and phone numbers](/images/endpointprotector/2509/admin/contentawareprotection/policyinformation.webp)
+![Block & Report policies to handle Social Security Numbers (SSN) and phone numbers](policyinformation.webp)
 
 ## Policy Exit Points
 
@@ -176,7 +176,7 @@ To distinguish OneDrive for Business from OneDrive, enable Deep Packet Inspectio
 :::
 
 
-![Monitor transfers from the following exit points](/images/endpointprotector/2509/admin/contentawareprotection/policyexistpoints.webp)
+![Monitor transfers from the following exit points](policyexistpoints.webp)
 
 ### Storage Devices
 
@@ -197,7 +197,7 @@ other gnome sessions the paste functionality is disabled (ex: wayland).
 :::
 
 
-![From the storage devices tab, you can select to monitor transfers](/images/endpointprotector/2509/admin/contentawareprotection/policyexitstoragedevices.webp)
+![From the storage devices tab, you can select to monitor transfers](policyexitstoragedevices.webp)
 
 :::note
 The **Block CD/DVD Burning** feature is only available for Windows, built-in or
@@ -341,7 +341,7 @@ security, content blocking occurs during the copy operation.
 :::
 
 
-![The Clipboard functionality enables you to monitor all content captured through Copy & Paste or Cut & Paste operations](/images/endpointprotector/2509/admin/contentawareprotection/policyexitclipboard.webp)
+![The Clipboard functionality enables you to monitor all content captured through Copy & Paste or Cut & Paste operations](policyexitclipboard.webp)
 
 Newer Linux Ubuntu versions have 'snap'-based applications installed by default, affecting Endpoint
 Protector Client functionality. This may result in missing ﬁle-related events in Content Aware
