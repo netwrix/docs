@@ -1,0 +1,10 @@
+{
+  "label": "Video Learning Center",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "videolearningcenter"
+  }
+}
