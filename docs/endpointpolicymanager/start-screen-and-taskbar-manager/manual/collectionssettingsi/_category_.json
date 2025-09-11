@@ -1,0 +1,10 @@
+{
+  "label": "Collections, Policy Settings, and Item-Level Targeting",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "collectionssettingsilt"
+  }
+}
