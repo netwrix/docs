@@ -19,7 +19,9 @@ packages
 .env.production.local
 
 # Claude settings
+.claude/
 .claude/settings.local.json
+CLAUDE.md
 
 npm-debug.log*
 yarn-debug.log*
