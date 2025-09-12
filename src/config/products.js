@@ -260,19 +260,13 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '5.9.4.2',
-        label: '5.9.4.2',
+        version: 'current',
+        label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/endpointprotector/5.9.4.2.js',
-      },
-      {
-        version: '5.9.4',
-        label: '5.9.4',
-        isLatest: false,
-        sidebarFile: './sidebars/endpointprotector/5.9.4.js',
+        sidebarFile: './sidebars/endpointprotector/epp.js',
       },
     ],
-    defaultVersion: '5.9.4.2',
+    defaultVersion: 'current',
   },
   {
     id: 'identitymanager',
@@ -704,10 +698,10 @@ export function getDefaultProduct() {
  */
 export function generateDocusaurusPlugins() {
   const plugins = [];
-  
+
   // Filter products if DOCS_PRODUCT environment variable is set
   const targetProduct = process.env.DOCS_PRODUCT;
-  const productsToProcess = targetProduct 
+  const productsToProcess = targetProduct
     ? PRODUCTS.filter(product => product.id === targetProduct)
     : PRODUCTS;
 

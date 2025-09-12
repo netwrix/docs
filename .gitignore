@@ -24,3 +24,5 @@ packages
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+CLAUDE.md
+.claude/settings.local.json
