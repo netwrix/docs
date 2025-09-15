@@ -139,4 +139,4 @@ If you want an overview on how Failed Logon information is collected, check this
 
 If you have multiple Failed Logons, check this article: https://kb.netwrix.com/3553
 
-<div id="hzImg" style="width: auto;height: auto;background-color: rgb(255, 255, 255);display: none;"> </div>
+<div id="hzImg" style={{width: 'auto', height: 'auto', backgroundColor: 'rgb(255, 255, 255)', display: 'none'}}> </div>

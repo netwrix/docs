@@ -7,13 +7,13 @@ keywords:
   - custom attributes
 sidebar_label: Custom Attribute Warning
 tags: []
-title: "Error: The Custom Attribute {x} Was Requested, but Not Set in Domain 1 for the {y} Object Class"
+title: "Error: The Custom Attribute {'{'}x{'}'} Was Requested, but Not Set in Domain 1 for the {'{'}y{'}'} Object Class"
 knowledge_article_id: kA0Qk000000306jKAA
 products:
   - auditor
 ---
 
-# Error: The Custom Attribute {x} Was Requested, but Not Set in Domain 1 for the {y} Object Class
+# Error: The Custom Attribute {'{'}x{'}'} Was Requested, but Not Set in Domain 1 for the {'{'}y{'}'} Object Class
 
 ## Related Queries
 

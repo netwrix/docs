@@ -49,4 +49,4 @@ There are 3 possible solutions:
    `*The file * is not in a valid format and must be replaced.*`  
    If you didn't find a solution please refer to the following Microsoft article regarding this issue - http://support.microsoft.com/kb/814751
 
-<div id="cke_pastebin" style="width: 1px;height: 1px;"> </div>
+<div id="cke_pastebin" style={{width: '1px', height: '1px'}}> </div>

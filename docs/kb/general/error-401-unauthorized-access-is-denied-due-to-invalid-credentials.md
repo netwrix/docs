@@ -65,4 +65,4 @@ To resolve the issue verify authentication settings and account permisions.
 
    ![User-added image](./images/ka04u00000116cs_0EM700000004xco.png)
 
-<div id="cke_pastebin" style="width: 1px;height: 1px;"></div>
+<div id="cke_pastebin" style={{width: '1px', height: '1px'}}></div>
