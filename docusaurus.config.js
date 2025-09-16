@@ -21,9 +21,9 @@ const config = {
   baseUrl: '/',
 
   // throw on anything that is not configured correctly
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
-  onBrokenAnchors: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
+  onBrokenAnchors: 'throw',
 
   // Set Mermaid
   markdown: {
