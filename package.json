@@ -7,7 +7,7 @@
     "docusaurus": "npx docusaurus",
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=16384 CHOKIDAR_USEPOLLING=false npx docusaurus start --port=4500 --no-open",
     "start-chok": "cross-env NODE_OPTIONS=--max-old-space-size=16384 CHOKIDAR_USEPOLLING=true npx docusaurus start --port=4500 --no-open",
-    "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=16384\" DOCS_PRODUCT=kb npx docusaurus build",
+    "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=16384\" npx docusaurus build",
     "swizzle": "npx docusaurus swizzle",
     "clear": "npx docusaurus clear",
     "serve": "npx serve -s build -l 8080",
