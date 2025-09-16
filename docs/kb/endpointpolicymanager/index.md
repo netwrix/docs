@@ -1,7 +1,7 @@
 ---
 title: "Endpoint Policy Manager Knowledge Base"
 description: "Endpoint Policy Manager knowledge base articles and troubleshooting guides"
-slug: kb/endpointpolicymanager
+slug: endpointpolicymanager
 ---
 
 # Endpoint Policy Manager Knowledge Base

@@ -1,7 +1,7 @@
 ---
 title: "Log Tracker Knowledge Base"
 description: "Log Tracker knowledge base articles and troubleshooting guides"
-slug: kb/logtracker
+slug: logtracker
 ---
 
 # Log Tracker Knowledge Base

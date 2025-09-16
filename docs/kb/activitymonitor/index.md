@@ -1,7 +1,7 @@
 ---
 title: "Activity Monitor Knowledge Base"
 description: "Activity Monitor knowledge base articles and troubleshooting guides"
-slug: kb/activitymonitor
+slug: activitymonitor
 ---
 
 # Activity Monitor Knowledge Base

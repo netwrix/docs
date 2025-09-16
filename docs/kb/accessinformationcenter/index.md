@@ -1,7 +1,7 @@
 ---
 title: "Access Information Center Knowledge Base"
 description: "Access Information Center knowledge base articles and troubleshooting guides"
-slug: kb/accessinformationcenter
+slug: accessinformationcenter
 ---
 
 # Access Information Center Knowledge Base

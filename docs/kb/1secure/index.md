@@ -1,7 +1,7 @@
 ---
 title: "1Secure Knowledge Base"
 description: "1Secure knowledge base articles and troubleshooting guides"
-slug: kb/1secure
+slug: 1secure
 ---
 
 # 1Secure Knowledge Base

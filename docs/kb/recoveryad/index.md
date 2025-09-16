@@ -1,7 +1,7 @@
 ---
 title: "Recovery for Active Directory Knowledge Base"
 description: "Recovery for Active Directory knowledge base articles and troubleshooting guides"
-slug: kb/recoveryad
+slug: recoveryad
 ---
 
 # Recovery for Active Directory Knowledge Base

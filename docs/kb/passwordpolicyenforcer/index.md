@@ -1,7 +1,7 @@
 ---
 title: "Password Policy Enforcer Knowledge Base"
 description: "Password Policy Enforcer knowledge base articles and troubleshooting guides"
-slug: kb/passwordpolicyenforcer
+slug: passwordpolicyenforcer
 ---
 
 # Password Policy Enforcer Knowledge Base

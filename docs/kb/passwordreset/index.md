@@ -1,7 +1,7 @@
 ---
 title: "Password Reset Knowledge Base"
 description: "Password Reset knowledge base articles and troubleshooting guides"
-slug: kb/passwordreset
+slug: passwordreset
 ---
 
 # Password Reset Knowledge Base
