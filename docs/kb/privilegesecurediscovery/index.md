@@ -1,7 +1,7 @@
 ---
 title: "Privilege Secure Discovery Knowledge Base"
 description: "Privilege Secure Discovery knowledge base articles and troubleshooting guides"
-slug: kb/privilegesecurediscovery
+slug: privilegesecurediscovery
 ---
 
 # Privilege Secure Discovery Knowledge Base

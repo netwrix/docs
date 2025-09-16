@@ -1,7 +1,7 @@
 ---
 title: "Threat Manager Knowledge Base"
 description: "Threat Manager knowledge base articles and troubleshooting guides"
-slug: kb/threatmanager
+slug: threatmanager
 ---
 
 # Threat Manager Knowledge Base

@@ -1,7 +1,7 @@
 ---
 title: "General Knowledge Base"
 description: "General knowledge base articles and troubleshooting guides"
-slug: kb/general
+slug: general
 ---
 
 # General Knowledge Base

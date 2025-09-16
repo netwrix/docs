@@ -1,7 +1,7 @@
 ---
 title: "Directory Manager Knowledge Base"
 description: "Directory Manager knowledge base articles and troubleshooting guides"
-slug: kb/directorymanager
+slug: directorymanager
 ---
 
 # Directory Manager Knowledge Base

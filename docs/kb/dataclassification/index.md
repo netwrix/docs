@@ -1,7 +1,7 @@
 ---
 title: "Data Classification Knowledge Base"
 description: "Data Classification knowledge base articles and troubleshooting guides"
-slug: kb/dataclassification
+slug: dataclassification
 ---
 
 # Data Classification Knowledge Base

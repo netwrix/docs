@@ -1,7 +1,7 @@
 ---
 title: "Threat Prevention Knowledge Base"
 description: "Threat Prevention knowledge base articles and troubleshooting guides"
-slug: kb/threatprevention
+slug: threatprevention
 ---
 
 # Threat Prevention Knowledge Base

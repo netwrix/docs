@@ -1,7 +1,7 @@
 ---
 title: "Access Analyzer Knowledge Base"
 description: "Access Analyzer knowledge base articles and troubleshooting guides"
-slug: kb/accessanalyzer
+slug: accessanalyzer
 ---
 
 # Access Analyzer Knowledge Base

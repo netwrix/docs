@@ -1,7 +1,7 @@
 ---
 title: "Auditor Knowledge Base"
 description: "Auditor knowledge base articles and troubleshooting guides"
-slug: kb/auditor
+slug: auditor
 ---
 
 # Auditor Knowledge Base

@@ -1,7 +1,7 @@
 ---
 title: "Privilege Secure Knowledge Base"
 description: "Privilege Secure knowledge base articles and troubleshooting guides"
-slug: kb/privilegesecure
+slug: privilegesecure
 ---
 
 # Privilege Secure Knowledge Base

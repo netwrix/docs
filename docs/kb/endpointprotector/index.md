@@ -1,7 +1,7 @@
 ---
 title: "Endpoint Protector Knowledge Base"
 description: "Endpoint Protector knowledge base articles and troubleshooting guides"
-slug: kb/endpointprotector
+slug: endpointprotector
 ---
 
 # Endpoint Protector Knowledge Base
