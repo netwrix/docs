@@ -28,7 +28,7 @@ operating systems that they support.
 | Operating System | OS Versions            |
 | ---------------- | ---------------------- |
 | Windows Desktop  | 11, 10, 8, 7           |
-| Windows Server   | 2022, 2019, 2016, 2012 |
+| Windows Server   | 2025, 2022, 2019, 2016, 2012 |
 
 ## Linux
 
@@ -41,8 +41,8 @@ operating systems that they support.
 | Debian Server                        | 10, 9, 8            |
 | Oracle Linux Workstation             | 7, 6                |
 | Oracle Linux Server                  | 7, 6                |
-| Red Hat Enterprise Linux Workstation | 8, 7, 6             |
-| Red Hat Enterprise Linux Server      | 8, 7, 6             |
+| Red Hat Enterprise Linux Workstation | 9, 8, 7, 6          |
+| Red Hat Enterprise Linux Server      | 9, 8, 7, 6          |
 | Rocky Linux Workstation              | 8                   |
 | Rocky Linux Server                   | 8                   |
 | SUSE Workstation                     | 15                  |
