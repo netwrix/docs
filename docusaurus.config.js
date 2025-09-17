@@ -56,23 +56,6 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  scripts: [
-    {
-      src: 'https://widget.kapa.ai/kapa-widget.bundle.js',
-      'data-website-id': 'c8052612-e9cf-49f8-b7a4-e717c6adc398',
-      'data-project-name': 'Netwrix',
-      'data-project-color': '#F5F5F5',
-      'data-project-logo': 'https://img.netwrix.com/elements/social_communities/netwrix_blog.svg',
-      'data-user-analytics-cookie-enabled': 'true',
-      'data-modal-title': 'Netwrix Docs AI Assistant',
-      'data-modal-example-questions-title': 'Try asking me...',
-      'data-modal-disclaimer': 'This **AI assistant answers Netwrix questions** using the documentation.',
-      'data-modal-example-questions':
-        'How to reduce Audit DB size?,How to scan for sensitive data?,How to migrate NEA to new server?,How to upload archive to SQL DB?',
-      'data-button-text-color': '#E32C2D',
-      async: true,
-    },
-  ],
   presets: [
     [
       'classic',
