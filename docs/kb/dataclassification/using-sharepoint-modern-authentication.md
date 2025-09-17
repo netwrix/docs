@@ -82,7 +82,7 @@ Do the following: When found, click on the entry and proceed with adding the nec
 Having configured the app, you can upload its application certificate.
 
 1. In the app settings, click **Certificates & secrets** and select **Upload certificate**.
-2. Upload the `.CER` file you prepared in Step 1: Preparing an Application Certificate (see https://docs.netwrix.com/docs/dataclassification/5.7/systemconfigurationoverview/configuration/configuration.md).
+2. Upload the `.CER` file you prepared in Step 1: Preparing an Application Certificate (see https://docs.netwrix.com/docs/dataclassification/5_7).
 3. Copy the certificate thumbprint to a safe location.
 
 ## Step 5: Obtaining Tenant ID

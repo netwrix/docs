@@ -58,9 +58,9 @@ Use the following syntax:
 monitoring plan name, server name, WIN32_PRINTER
 ```
 
-Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver/overview
+Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8/configuration/windowsserver/overview
 
-This method can be used to exclude the error by excluding the Print Spooler events from the monitoring scope. Refer to the following article for the full list of objects monitored on Windows Servers: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver/overview Scroll down to **Object type** > **Printing**.
+This method can be used to exclude the error by excluding the Print Spooler events from the monitoring scope. Refer to the following article for the full list of objects monitored on Windows Servers: https://docs.netwrix.com/docs/auditor/10_8/configuration/windowsserver/overview Scroll down to **Object type** > **Printing**.
 
 The **Printer Changes** report for Windows Server also will show only events collected before this resolution.
 
@@ -76,5 +76,5 @@ monitoring plan name, server name,*The WMI Classes data provider failed to get i
 
 ## Related articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver/overview
-- https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver/overview
+- https://docs.netwrix.com/docs/auditor/10_8/configuration/windowsserver/overview
+- https://docs.netwrix.com/docs/auditor/10_8/configuration/windowsserver/overview

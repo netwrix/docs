@@ -63,9 +63,9 @@ The time allotted to this operation may have been a portion of a longer timeout.
 
 Follow the resolution for the corresponding error you encounter:
 
-1. Error 1: Recreate your SharePoint monitoring plan. Refer to the following article for additional information on configuration of SharePoint monitoring plans: https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans/sharepoint (Monitoring Plans − SharePoint · v10.6).
+1. Error 1: Recreate your SharePoint monitoring plan. Refer to the following article for additional information on configuration of SharePoint monitoring plans: https://docs.netwrix.com/docs/auditor/10_8 (Monitoring Plans − SharePoint · v10.6).
 
-2. Error 2: Verify the audited site collection can be reached and is configured correctly − refer to the following article for additional information on the initial setup: https://docs.netwrix.com/docs/auditor/10.8/configuration/sharepoint (Configuration − SharePoint · v10.6).
+2. Error 2: Verify the audited site collection can be reached and is configured correctly − refer to the following article for additional information on the initial setup: https://docs.netwrix.com/docs/auditor/10_8 (Configuration − SharePoint · v10.6).
 
 3. Error 3: Verify the audited site collection can be reached. Extend the timeout on a binding − learn more in https://learn.microsoft.com/en-us/dotnet/framework/wcf/feature-details/configuring-timeout-values-on-a-binding (Configuring Timeout Values on a Binding ⸱ Microsoft 🐍).
 
@@ -73,6 +73,6 @@ Follow the resolution for the corresponding error you encounter:
 
 ## Related articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans/sharepoint (Monitoring Plans − SharePoint · v10.6)
-- https://docs.netwrix.com/docs/auditor/10.8/configuration/sharepoint (Configuration − SharePoint · v10.6)
+- https://docs.netwrix.com/docs/auditor/10_8 (Monitoring Plans − SharePoint · v10.6)
+- https://docs.netwrix.com/docs/auditor/10_8 (Configuration − SharePoint · v10.6)
 - https://learn.microsoft.com/en-us/dotnet/framework/wcf/feature-details/configuring-timeout-values-on-a-binding (Extend the timeout on a binding − learn more in Configuring Timeout Values on a Binding ⸱ Microsoft 🐍)

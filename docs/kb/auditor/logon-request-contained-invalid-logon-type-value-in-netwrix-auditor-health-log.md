@@ -62,8 +62,8 @@ To verify the data collection account credentials were specified correctly, refe
 
 Alternatively, you might have a particular data collecting account set up for a specific item. You can review the corresponding data collecting account credentials by clicking **Edit Item** under the **Item** section.
 
-For additional information on configuring your data collecting account, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans (Monitoring Plans — Data Collecting Account ⸱ v10.6).
+For additional information on configuring your data collecting account, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8 (Monitoring Plans — Data Collecting Account ⸱ v10.6).
 
 ## Related articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans (Monitoring Plans — Data Collecting Account ⸱ v10.6)
+- https://docs.netwrix.com/docs/auditor/10_8 (Monitoring Plans — Data Collecting Account ⸱ v10.6)

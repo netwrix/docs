@@ -31,7 +31,7 @@ Netwrix Auditor uses SQL Server Reporting Services (SSRS) to generate reports. I
 2. In the left pane, select **Web Service URL**.
 3. In the **HTTPS Certificate** dropdown list, select the certificate you installed previously. Both **HTTPS Port** and **Report Server Web Services URL** fields will fill in automatically.
 
-   > **NOTE:** For additional information on installing and using self-signed and authority-issued certificates, refer to the following articles: [Use Certificate Authority-issued Certificates in SSRS](https://docs.netwrix.com/docs/kb/auditor/use-certificate-authority-issued-certificates-in-ssrs), [Generate Self-signed SSL Certificate for SSRS](https://docs.netwrix.com/docs/kb/auditor/generate-self-signed-ssl-certificate-for-ssrs).
+   > **NOTE:** For additional information on installing and using self-signed and authority-issued certificates, refer to the following articles: [Use Certificate Authority-issued Certificates in SSRS](/docs/kb/auditor/use-certificate-authority-issued-certificates-in-ssrs.md), [Generate Self-signed SSL Certificate for SSRS](/docs/kb/auditor/generate-self-signed-ssl-certificate-for-ssrs.md).
 
 4. Click **Apply**.
 5. Select the **Web Portal URL** tab in the left pane—the **Virtual Directory** field should fill in automatically.
@@ -64,5 +64,5 @@ The traffic between Auditor and SSRS is now encrypted. It is recommended to upda
 
 ## Related Articles
 
-- [Use Certificate Authority-issued Certificates in SSRS](https://docs.netwrix.com/docs/kb/auditor/use-certificate-authority-issued-certificates-in-ssrs)
-- [Generate Self-signed SSL Certificate for SSRS](https://docs.netwrix.com/docs/kb/auditor/generate-self-signed-ssl-certificate-for-ssrs)
+- [Use Certificate Authority-issued Certificates in SSRS](/docs/kb/auditor/use-certificate-authority-issued-certificates-in-ssrs.md)
+- [Generate Self-signed SSL Certificate for SSRS](/docs/kb/auditor/generate-self-signed-ssl-certificate-for-ssrs.md)

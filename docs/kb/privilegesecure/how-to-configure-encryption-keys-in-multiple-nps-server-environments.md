@@ -36,7 +36,7 @@ Refer to the following steps to verify that NPS encryption keys are configured o
 
 > **IMPORTANT:** For the following steps, if the application was installed to a dedicated drive, change the drive letter from **X** to the appropriate letter.
 
-1. Install NPS on the primary and secondary servers. Apply your license file to both NPS instances. Refer to the following article for additional information on applying a license: [Apply a New License](https://docs.netwrix.com/docs/kb/privilegesecure/apply-a-new-license.md).
+1. Install NPS on the primary and secondary servers. Apply your license file to both NPS instances. Refer to the following article for additional information on applying a license: [Apply a New License](/docs/kb/privilegesecure/apply-a-new-license.md).
 
 2. On your primary server, run the following lines in elevated Command Prompt:
 
@@ -65,4 +65,4 @@ cd "X:\Program Files\Stealthbits\PAM\KeyTools"
 ## Related articles
 
 - [How to Use NPS.HaMgr.exe](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA04u0000000HfOCAU.html)
-- [Apply a New License](https://docs.netwrix.com/docs/kb/privilegesecure/apply-a-new-license.md)
+- [Apply a New License](/docs/kb/privilegesecure/apply-a-new-license.md)

@@ -24,11 +24,11 @@ knowledge_article_id: kA00g000000H9SmCAK
 
 This article contains references to the most popular Active Directory, Exchange, and Group Policy changes which may be reported as made by **System** by Netwrix Auditor:
 
-- [Who Changed Shows System for Real Time Alerts](https://docs.netwrix.com/docs/kb/auditor/alert-reported-change-made-by-system.md).
-- [System Changed Object Path after Account Name Change](https://docs.netwrix.com/docs/kb/auditor/system-changed-object-path-after-account-name-change.md).
-- [System Changed Client Operating System](https://docs.netwrix.com/docs/kb/auditor/system-changed-client-operating-system.md).
+- [Who Changed Shows System for Real Time Alerts](/docs/kb/auditor/alert-reported-change-made-by-system.md).
+- [System Changed Object Path after Account Name Change](/docs/kb/auditor/system-changed-object-path-after-account-name-change.md).
+- [System Changed Client Operating System](/docs/kb/auditor/system-changed-client-operating-system.md).
 - [Active Directory Changes Duplicated in Reports with System and Unknown](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA00g000000H9RyCAK.html).
-- [System Changed Directory Objects for Foreign Security Principals](https://docs.netwrix.com/docs/kb/auditor/system-changed-directory-objects-for-foreign-security-principals.md).
+- [System Changed Directory Objects for Foreign Security Principals](/docs/kb/auditor/system-changed-directory-objects-for-foreign-security-principals.md).
 - Workstation Field Reported as Unknown.
-- [Duplicate Configuration and Schema Changes for All Monitored Domains in Forest Made by System](https://docs.netwrix.com/docs/kb/auditor/duplicate-configuration-and-schema-changes-for-all-monitored-domains-in-forest-made-by-system.md).
-- [System Changed Service Principle Name Attribute](https://docs.netwrix.com/docs/kb/auditor/system-changed-service-principle-name-attribute.md).
+- [Duplicate Configuration and Schema Changes for All Monitored Domains in Forest Made by System](/docs/kb/auditor/duplicate-configuration-and-schema-changes-for-all-monitored-domains-in-forest-made-by-system.md).
+- [System Changed Service Principle Name Attribute](/docs/kb/auditor/system-changed-service-principle-name-attribute.md).

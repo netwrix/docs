@@ -45,9 +45,9 @@ Review the installation of the File System Proxy service and verify that there i
    C:\Program Files (x86)\STEALTHbits\StealthAUDIT\FSAA\
    ```
 
-2. Uninstall the File System Proxy service. Refer to the following article for additional information: https://docs.netwrix.com/docs/accessanalyzer/11.6/install/filesystemproxy (File System Proxy as a Service Overview — Uninstall Proxy Service Process · v11.6).
+2. Uninstall the File System Proxy service. Refer to the following article for additional information: https://docs.netwrix.com/docs/accessanalyzer/12_0 (File System Proxy as a Service Overview — Uninstall Proxy Service Process · v11.6).
 
-3. Install the File System Proxy service to a different drive to allow operation without disk space errors. Refer to the following article for additional information: https://docs.netwrix.com/docs/accessanalyzer/11.6/install/filesystemproxy (File System Proxy as a Service Overview — File System Proxy Service Installation · v11.6).
+3. Install the File System Proxy service to a different drive to allow operation without disk space errors. Refer to the following article for additional information: https://docs.netwrix.com/docs/accessanalyzer/12_0 (File System Proxy as a Service Overview — File System Proxy Service Installation · v11.6).
 
 4. Navigate to **Services** and stop the proxy service named **Netwrix Enterprise Auditor FSAA Proxy Scanner**.
 
@@ -63,5 +63,5 @@ Review the installation of the File System Proxy service and verify that there i
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/accessanalyzer/11.6/install/filesystemproxy (File System Proxy as a Service Overview — Uninstall Proxy Service Process · v11.6)
-- https://docs.netwrix.com/docs/accessanalyzer/11.6/install/filesystemproxy (File System Proxy as a Service Overview — File System Proxy Service Installation · v11.6)
+- https://docs.netwrix.com/docs/accessanalyzer/12_0 (File System Proxy as a Service Overview — Uninstall Proxy Service Process · v11.6)
+- https://docs.netwrix.com/docs/accessanalyzer/12_0 (File System Proxy as a Service Overview — File System Proxy Service Installation · v11.6)

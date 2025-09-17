@@ -64,11 +64,11 @@ These errors may be caused by one of the following:
 
 2. If the script result says: **`Run FS_MigrateSchema job from InstantJobs before running 0-Create Schema job`**, then open the Access Analyzer console and add the **`FS_MigrateSchema`** job from the **InstantJob** Library.
 
-   > **NOTE:** For more information on pulling jobs from the **InstantJob** Library, see [InstantJobs Overview in Netwrix Access Analyzer 12.0](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview).
+   > **NOTE:** For more information on pulling jobs from the **InstantJob** Library, see [InstantJobs Overview in Netwrix Access Analyzer 12.0](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/jobs/instantjobs/overview).
 
 3. Configure the job with the following runtime details:
 
-   > **NOTE:** For more information on the **`FS_MigrateSchema`** job, see [FS_MigrateSchema Job in Netwrix Access Analyzer 12.0](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/jobs/instantjobs/fs_migrateschema).
+   > **NOTE:** For more information on the **`FS_MigrateSchema`** job, see [FS_MigrateSchema Job in Netwrix Access Analyzer 12.0](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/jobs/instantjobs/fs_migrateschema).
 
    - **Hosts:** localhost
    - **Connection Profile:** Account with DBO permissions on the Access Analyzer database
@@ -82,5 +82,5 @@ These errors may be caused by one of the following:
 
 ## Related Links
 
-- [InstantJobs Overview in Netwrix Access Analyzer 12.0](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview)
-- [FS_MigrateSchema Job in Netwrix Access Analyzer 12.0](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/jobs/instantjobs/fs_migrateschema)
+- [InstantJobs Overview in Netwrix Access Analyzer 12.0](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/jobs/instantjobs/overview)
+- [FS_MigrateSchema Job in Netwrix Access Analyzer 12.0](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/jobs/instantjobs/fs_migrateschema)

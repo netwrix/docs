@@ -36,7 +36,7 @@ Refer to the following steps to configure Netwrix Auditor in failover mode:
 
    > **NOTE:** If Netwrix Auditor is already installed on a physical machine, consider migrating it to a virtual box. Some vendors support "physical to VM" migration."
 
-2. Configure the Long-Term Archive (LTA) to be stored on a remote location, such as a shared iSCSI volume. Refer to the following Netwrix knowledge base article for instructions on how to move LTA to a new location: https://docs.netwrix.com/docs/kb/auditor/how-to-move-long-term-archive-to-a-new-location
+2. Configure the Long-Term Archive (LTA) to be stored on a remote location, such as a shared iSCSI volume. Refer to the following Netwrix knowledge base article for instructions on how to move LTA to a new location: /docs/kb/auditor/how-to-move-long-term-archive-to-a-new-location
 
 3. For setting up backup and failover, ensure that the volume under LTA and Working Folder is redundant enough to survive failure.
 
@@ -60,4 +60,4 @@ For alternative backup and failover options, refer to the steps below.
 
 ## Related Articles
 
-- How to Move Long-Term Archive to a New Location: https://docs.netwrix.com/docs/kb/auditor/how-to-move-long-term-archive-to-a-new-location
+- How to Move Long-Term Archive to a New Location: /docs/kb/auditor/how-to-move-long-term-archive-to-a-new-location

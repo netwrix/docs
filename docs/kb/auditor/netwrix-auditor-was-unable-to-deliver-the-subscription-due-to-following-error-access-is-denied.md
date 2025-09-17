@@ -32,7 +32,7 @@ When I subscribe to the report and want to have report results delivered to the 
 
 When you select the **Upload to a file share** option in the **create\edit subscription** menu (**'General'** tab), Netwrix uses different accounts to upload the report to the share:
 
-- For SSRS-based subscriptions, the account specified for Long-Term Archive (LTA) is used, as reflected in our documentation: https://docs.netwrix.com/docs/auditor/
+- For SSRS-based subscriptions, the account specified for Long-Term Archive (LTA) is used, as reflected in our documentation: https://docs.netwrix.com/docs/auditor/10_8
 - For Search-based and Risk Assessment reports, Netwrix uses a Local System account, regardless of which account was specified for LTA.
 
 As a result, with different types of subscriptions and a custom LTA account, you must give access to the share to two accounts at once: the computer account of the Netwrix server and the LTA account.

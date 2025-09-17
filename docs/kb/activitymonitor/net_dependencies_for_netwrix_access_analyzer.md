@@ -59,7 +59,7 @@ Example:
 ## Related Articles
 
 - Netwrix Access Analyzer
-- [.NET Dependencies for Netwrix Threat Prevention](https://docs.netwrix.com/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_prevention)
-- [.NET Dependencies for Netwrix Recovery for Active Directory](https://docs.netwrix.com/docs/kb/activitymonitor/net_dependencies_for_netwrix_recovery_for_active_directory)
-- [.NET Dependencies for Netwrix Threat Manager](https://docs.netwrix.com/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_manager)
-- [.NET Dependencies for Netwrix Activity Monitor](https://docs.netwrix.com/docs/kb/activitymonitor/net_dependencies_for_netwrix_activity_monitor)
+- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_prevention.md)
+- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/activitymonitor/net_dependencies_for_netwrix_recovery_for_active_directory.md)
+- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_manager.md)
+- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/net_dependencies_for_netwrix_activity_monitor.md)

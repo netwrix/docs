@@ -48,4 +48,4 @@ Yes, this is possible. Follow the steps below to set or remove rights for a spec
 5. Filter for the device, then click **Actions** and select **Manage rights**.
 
 ## Related Links
-- How to Add Specific Devices to the Allow List: https://docs.netwrix.com/docs/kb/endpointprotector/[update]-_how_to_add_specific_devices_to_allow_list!
+- How to Add Specific Devices to the Allow List: /docs/kb/endpointprotector/[update]-_how_to_add_specific_devices_to_allow_list!

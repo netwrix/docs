@@ -15,7 +15,7 @@ products:
 
 # Retrieving a List of Expiring SSL/TLS Certificates and Their Expiration Dates
 
-> **IMPORTANT:** If you are using Netwrix Access Analyzer (formerly Enterprise Auditor) v12.0, you may refer to the following [7.Certificate Authority Job Group](/docs/accessanalyzer/12.0/solutions/activedirectory/certificateauthority/overview). This job should be functional in v12.0, but if not, you should contact [Netwrix Technical Support](https://www.netwrix.com/support.html) to open a ticket and proceed with the following steps as a workaround.
+> **IMPORTANT:** If you are using Netwrix Access Analyzer (formerly Enterprise Auditor) v12.0, you may refer to the following [7.Certificate Authority Job Group](https://docs.netwrix.com/docs/accessanalyzer/12_0/solutions/activedirectory/certificateauthority/overview). This job should be functional in v12.0, but if not, you should contact [Netwrix Technical Support](https://www.netwrix.com/support.html) to open a ticket and proceed with the following steps as a workaround.
 
 ## Overview
 

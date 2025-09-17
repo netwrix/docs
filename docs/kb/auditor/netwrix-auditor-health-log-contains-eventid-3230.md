@@ -53,8 +53,8 @@ As a workaround, you can exclude personal site collections from being audited by
 >
 > If this script does not return a value, then your Working Folder is our default location of `C:\ProgramData\Netwrix Auditor\`.
 
-For additional information on how to configure your SharePoint Online monitoring scope, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans/sharepointonline (SharePoint Online Monitoring Plans — Monitoring Scope — v10.6).
+For additional information on how to configure your SharePoint Online monitoring scope, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8 (SharePoint Online Monitoring Plans — Monitoring Scope — v10.6).
 
 ## Related Articles
 
-- SharePoint Online Monitoring Plans — Monitoring Scope — v10.6: https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans/sharepointonline
+- SharePoint Online Monitoring Plans — Monitoring Scope — v10.6: https://docs.netwrix.com/docs/auditor/10_8

@@ -39,8 +39,8 @@ Follow the recommendations below:
 - It is impossible to preserve LAT on a directory. It can be enabled for files only.
 - *LAT Preservation is only applicable to Windows File Servers.* Enabling **Preserve LAT** on NAS and other file servers may cause unexpected results.
 
-For more information, please see the following article: https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/datacollector/fsaa/defaultscopingoptions (Scan Settings Tab).
+For more information, please see the following article: https://docs.netwrix.com/docs/auditor/10_8 (Scan Settings Tab).
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/datacollector/fsaa/defaultscopingoptions (Scan Settings Tab)
+- https://docs.netwrix.com/docs/auditor/10_8 (Scan Settings Tab)

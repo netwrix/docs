@@ -42,6 +42,6 @@ knowledge_article_id: kA04u0000000GtoCAE
 
 ## Related articles
 
-- Read about role types and how to apply a role in the DSAR Roles article: https://docs.netwrix.com/docs/dataclassification/5.7/dataanalysisoverview/dsar/overview.md
-- NDC Licensing ⸱ v5.6.2: https://docs.netwrix.com/docs/dataclassification/5.7/systemconfigurationoverview/configuration/configuration.md
-- NDC Licensing ⸱ v5.7: https://docs.netwrix.com/docs/dataclassification/5.7/systemconfigurationoverview/configuration/configuration.md
+- Read about role types and how to apply a role in the DSAR Roles article: https://docs.netwrix.com/docs/dataclassification/5_7/dataanalysisoverview/dsar/overview
+- NDC Licensing ⸱ v5.6.2: https://docs.netwrix.com/docs/dataclassification/5_7
+- NDC Licensing ⸱ v5.7: https://docs.netwrix.com/docs/dataclassification/5_7

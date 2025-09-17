@@ -27,4 +27,4 @@ If drivers are not installed, the camera is detected as a **Windows Portable Dev
 
 ## Related Links
 
-- [Endpoint Protector Deployment Resources](https://docs.netwrix.com/docs/endpointprotector/)
+- [Endpoint Protector Deployment Resources](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2

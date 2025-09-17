@@ -41,7 +41,7 @@ Exception of type 'SCMLib.DataCollecting.DNSDataProviderException2' was thrown.
 1. In the main **Netwrix Auditor** menu, select **Monitoring Plans**.
 2. In the left pane, select the affected monitoring Windows Server plan, and click **Edit**.
 3. In the right pane, select **Edit data source** > uncheck the **Adjust audit settings automatically** checkbox under the **Configure audit settings** section.
-4. Configure advanced audit settings for your Windows Server plan − refer to the following article for additional information: [Windows Server − Configure Advanced Audit Policies · v10.6](/docs/auditor/10.8/configuration/windowsserver/advancedpolicy).
+4. Configure advanced audit settings for your Windows Server plan − refer to the following article for additional information: [Windows Server − Configure Advanced Audit Policies · v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/windowsserver/advancedpolicy).
 
 ### Step 2 − Configure Auditor and Monitored Servers to Support a Common Protocol
 
@@ -53,5 +53,5 @@ Review the path stated in the error message to verify it can be resolved and is 
 
 ## Related Articles
 
-- [Windows Server − Configure Advanced Audit Policies · v10.6](/docs/auditor/10.8/configuration/windowsserver/advancedpolicy)
+- [Windows Server − Configure Advanced Audit Policies · v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/windowsserver/advancedpolicy)
 - Connection Issue when TLS 1.2 Is Required

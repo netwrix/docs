@@ -44,6 +44,6 @@ This error is caused when the ACL reaches its maximum size. The size of an ACL v
 To prevent the error from immediately terminating the scan when the ACL maximum size is reached, follow these steps:
 
 1. Perform a cumulative update to Netwrix Access Analyzer version `11.6.0.114` or later.
-2. Follow the steps in this document to perform the upgrade process: Netwrix Access Analyzer Console Upgrade — https://docs.netwrix.com/docs/auditor/10.8/addon/installation/application/upgrade
+2. Follow the steps in this document to perform the upgrade process: Netwrix Access Analyzer Console Upgrade — https://docs.netwrix.com/docs/auditor/10_8
 
 > **IMPORTANT:** This hotfix changes the exception handling so that instead of terminating the scan, a warning is logged about the user not being scanned.

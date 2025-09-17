@@ -30,7 +30,7 @@ How to reduce the Netwrix Auditor audit database size?
 
 ## Answer
 
-> **NOTE:** Data removed after altering or deleting audit databases will no longer be readily available to be searched and reported. To query that data, you'll have to perform an investigation. For additional data on investigations, refer to the following article: Auditor Settings – Investigations · v10.6: https://docs.netwrix.com/docs/auditor/10.8/admin/settings
+> **NOTE:** Data removed after altering or deleting audit databases will no longer be readily available to be searched and reported. To query that data, you'll have to perform an investigation. For additional data on investigations, refer to the following article: Auditor Settings – Investigations · v10.6: https://docs.netwrix.com/docs/auditor/10_8
 
 You can configure the audit database retention settings by following the next steps:
 

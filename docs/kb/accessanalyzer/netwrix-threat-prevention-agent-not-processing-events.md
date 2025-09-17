@@ -58,7 +58,7 @@ This issue may be caused by any one of the following:
 To resolve this issue, refer to the following steps:
 
 1. Tune the NTP policies to collect and monitor only data that is considered important, while excluding anything that is not. Begin by following the Best Practices documentation:
-   - https://docs.netwrix.com/docs/threatprevention/7.5/threatprevention/troubleshooting
+   - https://docs.netwrix.com/docs/threatprevention/7_5
 2. Perform mass deletion of AD objects in batches to mitigate the probability of an agent not responding or entering into an event queue overflow.
 3. Schedule tasks that result in an abnormal amount of event traffic to be performed during off hours or low traffic periods.
 4. Verify that the EM and agent log settings are set to **WARN**.
@@ -67,4 +67,4 @@ To resolve this issue, refer to the following steps:
 ## Related Article
 
 - Best Practices and Troubleshooting  
-  https://docs.netwrix.com/docs/threatprevention/7.5/threatprevention/troubleshooting
+  https://docs.netwrix.com/docs/threatprevention/7_5

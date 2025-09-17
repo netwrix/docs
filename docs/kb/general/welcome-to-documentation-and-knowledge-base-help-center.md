@@ -43,7 +43,7 @@ Help us improve contents by providing feedback via the form which is available o
 > ![Group 142.png](images/servlet_image_6d5dba18caac.png)
 
 1. Select the Knowledge base filter. To do this, use one of the following options:
-   - Open a [search page with the selected **Knowledge Base** filter](https://docs.netwrix.com/docs/kb/ or
+   - Open a [search page with the selected **Knowledge Base** filter](/docs/kb/ or
    - Go to [/) and click on the **Filters** dropdown near the search pane. Then select **Knowledge Base** from the **Sources** category.
 
 2. Select a product name from the **Netwrix Product** category.
@@ -62,10 +62,10 @@ Netwrix Help Center contains both product documentation (explains how products w
 
 A KB article:
 
-- Has the following URL: [https://docs.netwrix.com/docs/kb/
+- Has the following URL: [/docs/kb/
 - Is unstructured. There is no table of contents for KB articles. To find a KB, use the search pane and filters.
 
 A Documentation article:
 
-- Has the following URL: [https://docs.netwrix.com/docs/
+- Has the following URL: [https://docs.netwrix.com
 - Is structured. You may find its position in the table of contents placed on the left pane.

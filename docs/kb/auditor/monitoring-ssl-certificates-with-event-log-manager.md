@@ -34,7 +34,7 @@ The following is a list of events that are related to SSL Certificates:
 
 In order to audit these events, create a new filter in Event Log Manager.
 
-**NOTE:** Please follow this guide for fundamental configurations of Event Log Manager in Netwrix Auditor: https://docs.netwrix.com/docs/auditor/10.8/tools/eventlogmanager Failure to do so may result in a delay or absence of audit data.
+**NOTE:** Please follow this guide for fundamental configurations of Event Log Manager in Netwrix Auditor: https://docs.netwrix.com/docs/auditor/10_8/tools/eventlogmanager Failure to do so may result in a delay or absence of audit data.
 
 ## Create a filter to audit SSL certificate events
 

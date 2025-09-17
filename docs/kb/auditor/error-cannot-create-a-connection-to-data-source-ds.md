@@ -43,7 +43,7 @@ The affected user tries to access SQL Server Reporting Services reports from a r
 
 Refer to the following possible resolutions:
 
-- Review the required account permissions and roles to access SSRS reports: https://docs.netwrix.com/docs/auditor/10.8/requirements and https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
+- Review the required account permissions and roles to access SSRS reports: https://docs.netwrix.com/docs/auditor/10_8 https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
 - Specify the credentials to access the Reporting Services database.
 
 Perform the following steps to specify the credentials to access the Reporting Services database:
@@ -63,5 +63,5 @@ Perform the following steps to specify the credentials to access the Reporting S
 
 ## Related Articles
 
-- Requirements for SQL Server to Store Audit Data — SQL Server · v10.6: https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
-- SQL Server Reporting Services · v10.6: https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
+- Requirements for SQL Server to Store Audit Data — SQL Server · v10.6: https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
+- SQL Server Reporting Services · v10.6: https://docs.netwrix.com/docs/auditor/10_8/requirements/overview

@@ -69,4 +69,4 @@ SELECT name FROM sys.indexes WHERE object_id = OBJECT_ID('SA_FSAA_ResourceMap');
 
 ## Related Link
 
-- [Create Schema Job Documentation](/docs/accessanalyzer/12.0/solutions/filesystem/collection/0-create_schema)
+- [Create Schema Job Documentation](https://docs.netwrix.com/docs/accessanalyzer/12_0)

@@ -33,7 +33,7 @@ This article provides preparation steps for upgrading an operating system (Windo
 
 Taking a snapshot or creating a backup of the Netwrix Auditor Server is recommended for data protection and recovery. The method to be used depends on the approach used for Auditor installation, whether it's on a virtual or physical machine.
 
-> **TIP:** You can configure Netwrix Auditor in the failover mode. To learn about failover and backup scenarios, read [How to configure Netwrix Auditor in the Failover Mode?](https://docs.netwrix.com/docs/kb/auditor/how-to-configure-netwrix-auditor-in-failover-mode.md)
+> **TIP:** You can configure Netwrix Auditor in the failover mode. To learn about failover and backup scenarios, read [How to configure Netwrix Auditor in the Failover Mode?](/docs/kb/auditor/how-to-configure-netwrix-auditor-in-failover-mode.md)
 
 Stop all Netwrix services running in your server − run the following line in elevated PowerShell:
 
@@ -55,4 +55,4 @@ After the upgrade, you might notice warnings in the Health log. These warnings o
 
 ## Related articles
 
-- [How to configure Netwrix Auditor in the Failover Mode?](https://docs.netwrix.com/docs/kb/auditor/how-to-configure-netwrix-auditor-in-failover-mode.md)
+- [How to configure Netwrix Auditor in the Failover Mode?](/docs/kb/auditor/how-to-configure-netwrix-auditor-in-failover-mode.md)

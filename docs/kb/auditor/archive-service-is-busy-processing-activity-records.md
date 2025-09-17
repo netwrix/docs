@@ -53,7 +53,7 @@ Refer to the following steps to troubleshoot the SQL Server-based causes:
    1. In the main Netwrix Auditor screen, select **Health Status** and click **View details** in the **Database Statistics** pane.
    2. Review the database states. If a database state reads **Failed to store data**, review the database details.
 
-      > **IMPORTANT:** The SQL Server Express databases have a 10 GB size limit. In case the affected database states **Failed to store data** with the size limit of **10 GB**, refer to the following article: https://docs.netwrix.com/docs/kb/auditor/sql-server-express-database-size-reached-10gb (SQL Server Express Database Size Reached 10GB).
+      > **IMPORTANT:** The SQL Server Express databases have a 10 GB size limit. In case the affected database states **Failed to store data** with the size limit of **10 GB**, refer to the following article: /docs/kb/auditor/sql-server-express-database-size-reached-10gb (SQL Server Express Database Size Reached 10GB).
 
    3. If multiple or all databases state **Failed to store data** with no size limits, refer to the following troubleshooting steps.
 2. Verify that the SQL Server instance is available.
@@ -75,14 +75,14 @@ Refer to the following steps to troubleshoot the Long-Term Archive-based causes:
    1. In the main Netwrix Auditor screen, select **Settings** > **Long-Term Archive**.
    2. Click **Modify** under the **Location and Retention Settings** section.
    3. Verify the account credentials. Click **OK** to save the changes.
-3. If using a custom account to connect to the Long-Term Account, assign the permissions to the account used. Refer to the following article for additional information on required permissions: https://docs.netwrix.com/docs/auditor/10.8/requirements (File-Based Repository for Long-Term Archive — Assign Permissions on the Long-Term Archive Folder · v10.6).
+3. If using a custom account to connect to the Long-Term Account, assign the permissions to the account used. Refer to the following article for additional information on required permissions: https://docs.netwrix.com/docs/auditor/10_8 Repository for Long-Term Archive — Assign Permissions on the Long-Term Archive Folder · v10.6).
 
 ### Other Causes
 
-Verify that the Audit Database account has the correct permissions—refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/requirements (Requirements for SQL Server to Store Audit Data — Configure Audit Database Account · v10.6).
+Verify that the Audit Database account has the correct permissions—refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8 for SQL Server to Store Audit Data — Configure Audit Database Account · v10.6).
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/kb/auditor/sql-server-express-database-size-reached-10gb (SQL Server Express Database Size Reached 10GB)
-- https://docs.netwrix.com/docs/auditor/10.8/requirements (Requirements for SQL Server to Store Audit Data — Configure Audit Database Account · v10.6)
-- https://docs.netwrix.com/docs/auditor/10.8/requirements (File-Based Repository for Long-Term Archive — Assign Permissions on the Long-Term Archive Folder · v10.6)
+- /docs/kb/auditor/sql-server-express-database-size-reached-10gb (SQL Server Express Database Size Reached 10GB)
+- https://docs.netwrix.com/docs/auditor/10_8 for SQL Server to Store Audit Data — Configure Audit Database Account · v10.6)
+- https://docs.netwrix.com/docs/auditor/10_8 Repository for Long-Term Archive — Assign Permissions on the Long-Term Archive Folder · v10.6)

@@ -28,7 +28,7 @@ This problem can occur when the Agent password being sent to the Hub Server is i
 ## Resolution
 
 1. Stop the **Netwrix Agent Service**.
-2. Navigate to your Agent Directory which contains the Rolling-Log Files. Read more [here](https://docs.netwrix.com/docs/kb/general/netwrix-software-problem-what-info-should-i-provide).
+2. Navigate to your Agent Directory which contains the Rolling-Log Files. Read more [here](/docs/kb/general/netwrix-software-problem-what-info-should-i-provide.md).
 3. Right-click and edit the **Hubdetails.xml** file.
 4. Remove the `<E1></E1>` tags as they are the agent password which has been encrypted.
 5. In place of `<E1></E1>`, enter the `<Password></Password>` tags. See an example of **HubDetails.xml** below. The default password is used as an example.

@@ -40,7 +40,7 @@ Refer to the following options to save the report:
 - Verify that another browser is installed on your server.
 
 - Export the report via Report Manager.
-  > **IMPORTANT:** A non-gMSA account with the **Content Manager** role is required to access SSRS. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
+  > **IMPORTANT:** A non-gMSA account with the **Content Manager** role is required to access SSRS. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
 
   1. In Netwrix Auditor, navigate to **Settings** > **Audit Database**.
   2. Click the **Report Manager URL**, locate the required report, and export it.
@@ -54,4 +54,4 @@ Refer to the following options to save the report:
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
+- https://docs.netwrix.com/docs/auditor/10_8/requirements/overview

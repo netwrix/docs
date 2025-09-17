@@ -17,7 +17,7 @@ products:
 
 # Permission Manifests for Auditing Office 365 and Microsoft Entra ID (Auditor v10.0 and Older)
 
-> **IMPORTANT:** For Netwrix Auditor v10.6 and later, refer to the following documentation articles: [Microsoft 365 — Permissions for Microsoft Entra ID Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/permissions), [Microsoft 365 — Permissions for Exchange Online Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/exchangeonline/permissions), [Microsoft 365 — Permissions for SharePoint Online Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/sharepointonline/permissions), [Microsoft 365 — Permissions for Teams Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/teams/permissions).
+> **IMPORTANT:** For Netwrix Auditor v10.6 and later, refer to the following documentation articles: [Microsoft 365 — Permissions for Microsoft Entra ID Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/microsoftentraid/permissions), [Microsoft 365 — Permissions for Exchange Online Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/exchangeonline/permissions), [Microsoft 365 — Permissions for SharePoint Online Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/sharepointonline/permissions), [Microsoft 365 — Permissions for Teams Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/teams/permissions).
 
 ## Question
 
@@ -189,8 +189,8 @@ You can use the following screenshots for permissions reference:
 
 ## Related Articles
 
-- [Microsoft 365 — Permissions for Microsoft Entra ID Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/permissions)
-- [Microsoft 365 — Permissions for Exchange Online Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/exchangeonline/permissions)
-- [Microsoft 365 — Permissions for SharePoint Online Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/sharepointonline/permissions)
-- [Microsoft 365 — Permissions for Teams Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/teams/permissions)
+- [Microsoft 365 — Permissions for Microsoft Entra ID Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/microsoftentraid/permissions)
+- [Microsoft 365 — Permissions for Exchange Online Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/exchangeonline/permissions)
+- [Microsoft 365 — Permissions for SharePoint Online Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/sharepointonline/permissions)
+- [Microsoft 365 — Permissions for Teams Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/teams/permissions)
 - [Microsoft Entra Admin Center ⸱ Microsoft 🡥](https://entra.microsoft.com)

@@ -31,7 +31,7 @@ The Twilio CLI allows to manage phone numbers, call Twilio APIs, and test webhoo
 ## Instructions
 
 1. Download Twilio from the official website (recommended to use Windows): Install the Twilio CLI ⸱ Twilio 🐍  
-   https://www.twilio.comhttps://www.twilio.comhttps://docs.netwrix.com/docs/twilio-cli/getting-started/install#windows
+   https://www.twilio.comhttps://www.twilio.comhttps://docs.netwrix.com
 
 2. Being logged in with the Netwrix Password Reset (NPR) Service Account, open CMD and log into Twilio accaunt.
 

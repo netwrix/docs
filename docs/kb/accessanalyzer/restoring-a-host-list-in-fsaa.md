@@ -37,7 +37,7 @@ Refer to the following options to restore a host list in your environment:
 %SAINSTALLDIR%Jobs\GROUP_FileSystem\GROUP_0.Collection\JOB_1-FSAA System Scans\OUTPUT
 ```
 
-Import a list of audited hosts via **Add Hosts**. Refer to the following articles for additional information: https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/hostmanagement/actions (Host Management Activities — Add Hosts · v11.6); https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/hostmanagement/actions (Import Hosts Option).
+Import a list of audited hosts via **Add Hosts**. Refer to the following articles for additional information: https://docs.netwrix.com/docs/auditor/10_8 (Host Management Activities — Add Hosts · v11.6); https://docs.netwrix.com/docs/auditor/10_8 (Import Hosts Option).
 
 - Review the **Task Stats** of the affected job to collect the list of servers and import the list via **Add Hosts**.
 
@@ -45,5 +45,5 @@ Import a list of audited hosts via **Add Hosts**. Refer to the following article
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/hostmanagement/actions (Host Management Activities — Add Hosts · v11.6)
-- https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/hostmanagement/actions (Import Hosts Option)
+- https://docs.netwrix.com/docs/auditor/10_8 (Host Management Activities — Add Hosts · v11.6)
+- https://docs.netwrix.com/docs/auditor/10_8 (Import Hosts Option)

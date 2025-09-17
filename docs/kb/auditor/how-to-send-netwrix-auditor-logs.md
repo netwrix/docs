@@ -34,7 +34,7 @@ knowledge_article_id: kA00g000000H9efCAC
 
 Netwrix Technical Support might request a collection of your Netwrix Auditor logs for troubleshooting purposes. Make sure you gather the following items to help your Technical Support Engineer resolve your issue.
 
-- **Netwrix Auditor System Health event log**. Refer to the following article for additional information on exporting the System Health event log: https://docs.netwrix.com/docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log (How to Save and Zip Netwrix Auditor System Health Event Log).
+- **Netwrix Auditor System Health event log**. Refer to the following article for additional information on exporting the System Health event log: /docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log (How to Save and Zip Netwrix Auditor System Health Event Log).
 
 - **Netwrix Auditor configuration files**. Navigate to ` %Working Folder%\AuditCore\ConfigServer ` and copy the **ConfigServer** folder. The default location of the **ConfigServer** folder is `C:\ProgramData\Netwrix Auditor\AuditCore\ConfigServer`.
 
@@ -78,5 +78,5 @@ Netwrix Technical Support might request a collection of your Netwrix Auditor log
 
 ## Related links
 
-- How to Save and Zip Netwrix Auditor System Health Event Log: https://docs.netwrix.com/docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log
+- How to Save and Zip Netwrix Auditor System Health Event Log: /docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log
 - My Tickets — Open Tickets: https://www.netwrix.com/tickets.html#/tickets/open

@@ -46,4 +46,4 @@ Within the Endpoint Protector (EPP) Management Console, administrators can gener
 
 > **NOTE:** The OTP is unique to the specified device and computer and cannot be reused for other devices or computers. The OTP must be redeemed on the same day it is generated, unless you use the Universal Offline Temporary Password feature. For multinational environments, adjust the time interval for the OTP based on the time zone difference between the EPP Server and the endpoint.
 
-For more information, review the documentation: [Offline Temporary Password](/docs/endpointprotector/5.9.4.2/admin/otpassword).
+For more information, review the documentation: [Offline Temporary Password](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/admin/otpassword).

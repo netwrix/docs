@@ -30,7 +30,7 @@ How can I enable OCR for non-English images?
 
 ## Answer
 
-The steps below explain how to deploy additional **OCR language pack(s)** and how to identify which **files** should be processed via the installed **pack(s)**. This assumes that you have enabled **OCR** correctly. More details can be found in the following KB article: [Process Document Images results in no extracted text or invalid text](https://docs.netwrix.com/docs/kb/auditor/process-document-images-results-in-no-extracted-text-or-invalid-text.md).
+The steps below explain how to deploy additional **OCR language pack(s)** and how to identify which **files** should be processed via the installed **pack(s)**. This assumes that you have enabled **OCR** correctly. More details can be found in the following KB article: [Process Document Images results in no extracted text or invalid text](/docs/kb/auditor/process-document-images-results-in-no-extracted-text-or-invalid-text.md).
 
 Select the language you wish to use from the list below to download the corresponding language pack:
 

@@ -51,7 +51,7 @@ Download the installation package for upgrade. Customers who are logged in to th
 2. After that, navigate to your Working Folder (default location is `C:\ProgramData\Netwrix Auditor\FileStorageAuditor\Data`) and delete the **FileStorageAuditor** folder.
 3. Run the upgrade package.
    
-   > **NOTE:** Make sure you took all required upgrade preparatory steps. Learn more in the following article: https://docs.netwrix.com/docs/auditor/10.8/install (Installation — Before Starting the Upgrade — v10.6).
+   > **NOTE:** Make sure you took all required upgrade preparatory steps. Learn more in the following article: https://docs.netwrix.com/docs/auditor/10_8 — Before Starting the Upgrade — v10.6).
 4. Upon the upgrade completion, run data collection for your File Servers monitoring plan – click **Update** next to the plan.
 
    You will get the following error once that is expected:

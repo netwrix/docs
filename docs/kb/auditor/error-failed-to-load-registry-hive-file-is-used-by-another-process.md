@@ -53,7 +53,7 @@ This issue may be caused by one or more of the following factors:
 
 Apply one or more of the following solutions to resolve this error:
 
-- Configure antivirus exclusions in your Netwrix Auditor environment. For details, see the following article: https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor (Antivirus Exclusions for Netwrix Auditor).
+- Configure antivirus exclusions in your Netwrix Auditor environment. For details, see the following article: /docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor (Antivirus Exclusions for Netwrix Auditor).
 
 - Follow these steps if excluding Auditor-related folders did not resolve the issue:
 
@@ -89,4 +89,4 @@ Apply one or more of the following solutions to resolve this error:
 
 ## Related Article
 
-- Antivirus Exclusions for Netwrix Auditor: https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor
+- Antivirus Exclusions for Netwrix Auditor: /docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor

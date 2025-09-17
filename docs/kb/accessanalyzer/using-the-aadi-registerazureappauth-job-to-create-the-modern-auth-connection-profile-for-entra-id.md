@@ -51,7 +51,7 @@ Follow the steps below to configure and run the AADI_RegisterAzureAppAuth job.
 3. To install the **AADI_RegisterAzureAppAuth** job from the Instant Job Library (under **Library Name: Azure**), follow these steps:
    1. Right-click the **Z_RegisterAzureAppAuth** Job Group that you just created and select **Add Instant Job**.
    2. Expand **Library Name: Azure** to select the **AADI_RegisterAzureAppAuth** instant job.
-   3. After installation, the job tree automatically refreshes with the new job available within the selected Job Group. For additional information, see the Instant Job Wizard topic: https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/jobs/instantjobs
+   3. After installation, the job tree automatically refreshes with the new job available within the selected Job Group. For additional information, see the Instant Job Wizard topic: https://docs.netwrix.com/docs/auditor/10_8
 
 ### Configuring the AADI_RegisterAzureAppAuth Job
 1. Navigate to the Configuration section of the job overview and description page then select the **Edit** button for **Name of the app as it will appear in the Azure applications list**.
@@ -75,8 +75,8 @@ Follow the steps below to configure and run the AADI_RegisterAzureAppAuth job.
 4. Enter the `Key_(Secret_Value)` in the **Key** value and click **OK** to save.
 5. Once you have created and verified your `<EntraID>` connection and `<MYORG.MICROSOFT.COM>` EntraID host list under the global settings as a result of the process defined in this article, you can configure each of these parameters to run both the **Entra ID Inventory** and **Entra ID** jobs.
 
-> **IMPORTANT:** The required rights, roles, and configuration for Microsoft Entra ID Auditing must still be configured. For additional information, see the Microsoft Entra ID Auditing Configuration topic: https://docs.netwrix.com/docs/auditor/10.8/configuration/entraid
+> **IMPORTANT:** The required rights, roles, and configuration for Microsoft Entra ID Auditing must still be configured. For additional information, see the Microsoft Entra ID Auditing Configuration topic: https://docs.netwrix.com/docs/auditor/10_8
 
 ## Related Articles
-- Instant Job Wizard: https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/jobs/instantjobs
-- Microsoft Entra ID Auditing Configuration: https://docs.netwrix.com/docs/auditor/10.8/configuration/entraid
+- Instant Job Wizard: https://docs.netwrix.com/docs/auditor/10_8
+- Microsoft Entra ID Auditing Configuration: https://docs.netwrix.com/docs/auditor/10_8

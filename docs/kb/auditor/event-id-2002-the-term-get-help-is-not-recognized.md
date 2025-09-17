@@ -43,4 +43,4 @@ To resolve the issue, upgrade Netwrix Auditor to the version 10.6 build 12322 an
 
 ### Related article:
 
-- Administrator Audit Logging (AAL) configuration details: https://docs.netwrix.com/docs/kb/auditor/administrator-audit-logging-aal-configuration-details
+- Administrator Audit Logging (AAL) configuration details: /docs/kb/auditor/administrator-audit-logging-aal-configuration-details

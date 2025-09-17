@@ -51,7 +51,7 @@ The request is not supported. (Exception from HRESULT: 0x80070032)
   - Refer to the list of protocols and ports required for Netwrix Auditor for Windows Server: Protocols and Ports — Windows Server.
   - Refer to the list of inbound connection rules to be configured: Windows Servers — Windows Firewall Inbound Connection Rules.
 
-- Review the recommended antivirus exclusions — refer to the following article for additional information: [Antivirus Exclusions for Netwrix Auditor](https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md).
+- Review the recommended antivirus exclusions — refer to the following article for additional information: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md).
 
 - Review the gMSA configuration — refer to the following article for additional information: Data Collection Account — Group Managed Service Account (gMSA).
 

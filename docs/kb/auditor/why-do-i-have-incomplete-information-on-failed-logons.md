@@ -40,4 +40,4 @@ If you would like to have information on how to investigate Failed Logons, check
 
 - [Investigating Failed Logons](https://kb.netwrix.com/5198)
 - [How to detect the root cause of multiple failed logons](https://kb.netwrix.com/3553)
-- [How to Find Destination of Failed NTLM Logons?](https://docs.netwrix.com/docs/kb/auditor/how-to-find-destination-of-failed-ntlm-logons.md)
+- [How to Find Destination of Failed NTLM Logons?](/docs/kb/auditor/how-to-find-destination-of-failed-ntlm-logons.md)

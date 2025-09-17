@@ -59,10 +59,10 @@ $from = (Get-Date).AddMinutes(-2).ToString("yyyy-MM-ddTHH:mm:sszzz");
 
 ## Resolutions
 
-- Verify that the required ports are open. Refer to the following article for additional information on ports required for Netwrix Auditor add-ons to operate: https://docs.netwrix.com/docs/auditor/10.8/api (Integration API Ports · v10.6).
-- Insufficient RAM may lead to the timeout error. Ensure that you have enough RAM to run the export—refer to the following article for general recommendations on deployment in various environments: https://docs.netwrix.com/docs/auditor/10.8/requirements (Sample Deployment Scenarios · v10.6).
+- Verify that the required ports are open. Refer to the following article for additional information on ports required for Netwrix Auditor add-ons to operate: https://docs.netwrix.com/docs/auditor/10_8 API Ports · v10.6).
+- Insufficient RAM may lead to the timeout error. Ensure that you have enough RAM to run the export—refer to the following article for general recommendations on deployment in various environments: https://docs.netwrix.com/docs/auditor/10_8 Deployment Scenarios · v10.6).
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/api (Integration API Ports · v10.6)
-- https://docs.netwrix.com/docs/auditor/10.8/requirements (Sample Deployment Scenarios · v10.6)
+- https://docs.netwrix.com/docs/auditor/10_8 API Ports · v10.6)
+- https://docs.netwrix.com/docs/auditor/10_8 Deployment Scenarios · v10.6)

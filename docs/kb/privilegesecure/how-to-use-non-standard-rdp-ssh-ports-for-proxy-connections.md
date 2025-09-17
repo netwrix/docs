@@ -21,7 +21,7 @@ knowledge_article_id: kA04u0000000HhKCAU
 
 # How to Use Non-Standard RDP & SSH Ports for Proxy Connections
 
-> **IMPORTANT:** This guidance is applicable to Privilege Secure **v3.5** and prior! In the latest release, you can configure ports directly from the Host Details Page. Explore further details in the following article: https://docs.netwrix.com/docs/privilegesecure/4.2/privilegesecure/admin-guide/resources/page
+> **IMPORTANT:** This guidance is applicable to Privilege Secure **v3.5** and prior! In the latest release, you can configure ports directly from the Host Details Page. Explore further details in the following article: https://docs.netwrix.com/docs/privilegesecure/4_2
 
 ## Summary
 

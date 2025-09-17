@@ -27,7 +27,7 @@ You have used the **Remove host data** option in the **FILESYSTEMACCESS** Data C
 
 Re-run the job used to remove the host data against the full **!Removed-…** name.
 
-- This is typically a custom job that was created. If you are unsure what job was run, please see the following article for how to create a custom job to drop File Server host data: [How to Drop Data for Decommissioned File Servers](https://docs.netwrix.com/docs/kb/activitymonitor/dropping_file_system_data).
+- This is typically a custom job that was created. If you are unsure what job was run, please see the following article for how to create a custom job to drop File Server host data: [How to Drop Data for Decommissioned File Servers](/docs/kb/activitymonitor/dropping_file_system_data.md).
 
 - If you have already rerun the job and it throws a timeout error, then change the job timeout to a longer value.
 
@@ -37,4 +37,4 @@ Re-run the job used to remove the host data against the full **!Removed-…** na
 
 ## Related Article
 
-- [How to Drop Data for Decommissioned File Servers](https://docs.netwrix.com/docs/kb/activitymonitor/dropping_file_system_data)
+- [How to Drop Data for Decommissioned File Servers](/docs/kb/activitymonitor/dropping_file_system_data.md)

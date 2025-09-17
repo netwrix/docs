@@ -48,4 +48,4 @@ Also make sure the account used to collect to ONTAPI is assigned a custom role o
 | vserver audit rotate-log            | all          |
 | vserver cifs                        | readonly     |
 
-See [Creating Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](/docs/auditor/10.8/index).
+See [Creating Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](https://docs.netwrix.com/docs/auditor/10_8).

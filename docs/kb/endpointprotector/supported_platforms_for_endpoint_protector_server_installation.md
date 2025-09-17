@@ -23,7 +23,7 @@ On which platforms can Endpoint Protector Server be installed?
 
 ## Answer
 
-Endpoint Protector Server can be installed as a Virtual Appliance. For a complete list of supported server virtualization environments and client operating systems, see the official documentation: [Supported Platforms and Deployment Methods ⸱ Netwrix Help Center 🡥](/docs/endpointprotector/5.9.4.2/install/overview).
+Endpoint Protector Server can be installed as a Virtual Appliance. For a complete list of supported server virtualization environments and client operating systems, see the official documentation: [Supported Platforms and Deployment Methods ⸱ Netwrix Help Center 🡥](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/install/overview).
 
 Deployment methods include:
 

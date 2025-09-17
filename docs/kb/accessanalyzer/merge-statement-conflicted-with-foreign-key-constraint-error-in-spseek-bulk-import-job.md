@@ -44,11 +44,11 @@ The foreign key constraint conflict was caused during the latest scan.
 Drop the SharePoint tables and run the scan again. To drop the tables, run the **SP_DropTables** job. For additional information, refer to the following Netwrix Access Analyzer article:
 
 1. SharePointAccess Data Collector − SPAA Drop Tables & Views Workflow ⸱ v11.6  
-   https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/datacollector/spaa
+   https://docs.netwrix.com/docs/auditor/10_8
 
 ## Related articles
 
 - SharePointAccess Data Collector − SPAA Drop Tables & Views Workflow ⸱ v11.6  
-  https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/datacollector/spaa
+  https://docs.netwrix.com/docs/auditor/10_8
 - Could Not Drop Object Referenced by Foreign Key Constraint  
-  https://docs.netwrix.com/docs/accessanalyzer/could-not-drop-object-referenced-by-foreign-key-constraint
+  https://docs.netwrix.com/docs/accessanalyzer/12_0

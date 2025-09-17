@@ -34,4 +34,4 @@ A trial version and a full version of Netwrix Auditor are the same version of th
 
    - In case you already have Netwrix Auditor installed, apply you new license to the existing Auditor instance.
 
-Refer to the following article for additional information on applying a license to your Netwrix Auditor instance: [How to Apply Netwrix Auditor License](https://docs.netwrix.com/docs/kb/auditor/how-to-apply-netwrix-auditor-license).
+Refer to the following article for additional information on applying a license to your Netwrix Auditor instance: [How to Apply Netwrix Auditor License](/docs/kb/auditor/how-to-apply-netwrix-auditor-license.md).

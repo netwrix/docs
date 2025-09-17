@@ -39,8 +39,8 @@ gMSAs are not supported for the **Active Directory\4. Group Policy** or **Active
 - **ActiveDirectory DC**
 - **SmartLog DC**
 
-To run these collections successfully, configure and use a standard domain user account that has the necessary permissions for each target system. For details on the least-privilege permissions model, see: [Active Directory Auditing Least Privilege Model Permissions](/docs/accessanalyzer/12.0/requirements/activedirectory/target/access).
+To run these collections successfully, configure and use a standard domain user account that has the necessary permissions for each target system. For details on the least-privilege permissions model, see: [Active Directory Auditing Least Privilege Model Permissions](https://docs.netwrix.com/docs/accessanalyzer/12_0).
 
 ## Related Link
 
-- [Active Directory Auditing Least Privilege Model Permissions](/docs/accessanalyzer/12.0/requirements/activedirectory/target/access)
+- [Active Directory Auditing Least Privilege Model Permissions](https://docs.netwrix.com/docs/accessanalyzer/12_0)

@@ -31,4 +31,4 @@ Create a subscription to Netwrix search results with the following parameters:
 2. **Schedule**  
    Set the schedule to whatever frequency you want – the Subscription returns all events that occurred after the latest Subscription delivery. The initial one may have a lot.
 
-For additional information on how to create subscriptions, refer to the following article: [Administration – Subscriptions](/docs/auditor/10.8/admin/subscriptions/overview).
+For additional information on how to create subscriptions, refer to the following article: [Administration – Subscriptions](https://docs.netwrix.com/docs/auditor/10_8/admin/subscriptions/overview).

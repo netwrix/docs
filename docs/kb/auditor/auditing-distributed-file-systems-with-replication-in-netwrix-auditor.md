@@ -35,16 +35,16 @@ How to configure File Servers audit settings for Distributed File Systems with r
 
 Refer to the following steps to ensure the DFSR audit is configured correctly in your environment:
 
-- The corresponding data collection account should meet requirements for the file server audit. For additional information on the account setup, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers/windows/overview (Windows File Servers — Permissions for Windows File Server Auditing).
+- The corresponding data collection account should meet requirements for the file server audit. For additional information on the account setup, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/windows/overview (Windows File Servers — Permissions for Windows File Server Auditing).
 
-- Object access audit should be enabled for DFS file shares or every cluster node. For additional information on object access audit, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers/windows/overview (Windows File Servers — Configure Object-Level Access Auditing).
+- Object access audit should be enabled for DFS file shares or every cluster node. For additional information on object access audit, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/windows/overview (Windows File Servers — Configure Object-Level Access Auditing).
 
 - When adding a DFS file share for auditing, specify a Windows file share item and provide the UNC path of the whole namespace or UNC path of the DFS link (folder).
 
   - `\domain\dfsnamespace\` (domain-based namespace)
   - `\server\dfsnamespace\` (in case of stand-alone namespace)
 
-Refer to the following article for additional information on the initial setup: https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers/windows/overview (Configuration — Windows File Servers).
+Refer to the following article for additional information on the initial setup: https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/windows/overview (Configuration — Windows File Servers).
 
 ### SACL replication
 
@@ -81,13 +81,13 @@ Refer to the following steps to optimize the initial SACL replication:
 ### Related articles
 
 - Windows File Servers — Permissions for Windows File Server Auditing ⸱ v10.6  
-  https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers/windows/overview
+  https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/windows/overview
 
 - Windows File Servers — Configure Object-Level Access Auditing ⸱ v10.6  
-  https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers/windows/overview
+  https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/windows/overview
 
 - Configuration — Windows File Servers ⸱ v10.6  
-  https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers/windows/overview
+  https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/windows/overview
 
 - How to determine the minimum staging area DFSR needs for a replicated folder ⸱ Microsoft  
   https://learn.microsoft.com/en-us/windows-server/troubleshoot/how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder

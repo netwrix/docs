@@ -51,6 +51,6 @@ Follow the steps below to decrease the retention period for the archive:
 
 It is up to you to decide how long you want to keep historical data. If you know that no historical data will be needed past one year, decrease the retention to `12 months`. The historical data can be imported from the Archive back to your Audit Database when needed via the **Investigations** feature.
 
-Learn more about Investigations in the following article: https://docs.netwrix.com/docs/auditor/10.8/admin/settings
+Learn more about Investigations in the following article: https://docs.netwrix.com/docs/auditor/10_8
 
-Review additional recommendations for preventing Long-Term Archive overflow in the following article: https://docs.netwrix.com/docs/kb/auditor/how-to-prevent-long-term-archive-overflow
+Review additional recommendations for preventing Long-Term Archive overflow in the following article: /docs/kb/auditor/how-to-prevent-long-term-archive-overflow

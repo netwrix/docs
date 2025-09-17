@@ -32,12 +32,12 @@ You can use Netwrix Auditor to audit EMC Unity storage systems deployed in your 
 
 2. Then use the *EMC Unity/VBX/VNXe NAS Management* utility to enable **Audit object access** policy (both *Success* and *Failure*).  
    Alternatively, you can follow the steps described in the Dell Data Storage – Configure Audit Object Access Policy ⸱ v10.6 article:
-   https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers/delldatastorage/overview
+   https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/delldatastorage/overview
 
 3. Ensure that EMC Unity logging options are configured in the NAS Server settings.
 
 **NOTE:** To configure maximum log size to be processed by Netwrix Auditor, follow the steps described in the Dell Data Storage – Configure Security Event Log Maximum Size ⸱ v10.6 article:
-https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers/delldatastorage/overview
+https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/delldatastorage/overview
 
 ## Configuring Netwrix Auditor
 

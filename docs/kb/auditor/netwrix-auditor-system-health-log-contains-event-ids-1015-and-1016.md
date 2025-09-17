@@ -47,4 +47,4 @@ The **Everyone** group should have permission to access the necessary registry k
 
 Grant the necessary permissions to access the registry keys to the **Everyone** group.
 
-Review the complete list of the required registry keys and learn more about configuring permissions in the following article: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver (Data Source Configuration — Configure Windows Registry Audit Settings — v10.6).
+Review the complete list of the required registry keys and learn more about configuring permissions in the following article: https://docs.netwrix.com/docs/auditor/10_8 Source Configuration — Configure Windows Registry Audit Settings — v10.6).

@@ -33,4 +33,4 @@ This article explains how to configure priorities for **content aware policies**
 
 > **NOTE:** One or more Content Aware Policies can be enforced on the same computer, user, group, or department. To avoid conflicts between applied rules, use prioritization to determine which policy is enforced when there is a conflict. In the current Endpoint Protector implementation, there is no guarantee in which order **Block** CAP policies will trigger. Policies are evaluated simultaneously (not sequentially) against a file. When a conflict is encountered (for example, one policy only reports a PII and another blocks the PII), Endpoint Protector will apply the policy with the higher priority.
 
-You can find more information in the [Policy Configuration and Application](/docs/endpointprotector/5.9.4.2/admin/cap_module/cappolicies) documentation.
+You can find more information in the [Policy Configuration and Application](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/admin/cap_module/cappolicies) documentation.

@@ -48,11 +48,11 @@ The affected domain controller name cannot be resolved. Refer to the following l
 
 ## Resolutions
 
-- Review the ports configured for the Logon Activity monitoring — refer to the following link for additional information: https://docs.netwrix.com/docs/auditor/10.8/configuration/logonactivity/overview (Logon Activity − Logon Activity Ports ⸱ v10.6).
+- Review the ports configured for the Logon Activity monitoring — refer to the following link for additional information: https://docs.netwrix.com/docs/auditor/10_8/configuration/logonactivity/overview (Logon Activity − Logon Activity Ports ⸱ v10.6).
 - Review the audit policies set up in your environment — refer to the following links:
-  - https://docs.netwrix.com/docs/auditor/10.8/configuration/logonactivity/overview (Logon Activity − Configure Basic Domain Audit Policies ⸱ v10.6)
-  - https://docs.netwrix.com/docs/auditor/10.8/configuration/logonactivity/overview (Logon Activity − Configure Advanced Audit Policies ⸱ v10.6)
-- Review the permissions for your Logon Activity data collecting account — refer to the following article for additional information on requirements: https://docs.netwrix.com/docs/auditor/10.8/configuration/logonactivity/overview (Logon Activity − Permissions for Logon Activity Auditing ⸱ v10.6).
+  - https://docs.netwrix.com/docs/auditor/10_8/configuration/logonactivity/overview (Logon Activity − Configure Basic Domain Audit Policies ⸱ v10.6)
+  - https://docs.netwrix.com/docs/auditor/10_8/configuration/logonactivity/overview (Logon Activity − Configure Advanced Audit Policies ⸱ v10.6)
+- Review the permissions for your Logon Activity data collecting account — refer to the following article for additional information on requirements: https://docs.netwrix.com/docs/auditor/10_8/configuration/logonactivity/overview (Logon Activity − Permissions for Logon Activity Auditing ⸱ v10.6).
 
 In case the error occurred after a recent domain controller name change, review the following steps:
 
@@ -96,13 +96,13 @@ Once completed, this will ensure the renamed domain controller is able to replic
 ## Related articles
 
 - Logon Activity − Logon Activity Ports ⸱ v10.6  
-  https://docs.netwrix.com/docs/auditor/10.8/configuration/logonactivity/overview
+  https://docs.netwrix.com/docs/auditor/10_8/configuration/logonactivity/overview
 
 - Logon Activity − Configure Basic Domain Audit Policies ⸱ v10.6  
-  https://docs.netwrix.com/docs/auditor/10.8/configuration/logonactivity/overview
+  https://docs.netwrix.com/docs/auditor/10_8/configuration/logonactivity/overview
 
 - Logon Activity − Configure Advanced Audit Policies ⸱ v10.6  
-  https://docs.netwrix.com/docs/auditor/10.8/configuration/logonactivity/overview
+  https://docs.netwrix.com/docs/auditor/10_8/configuration/logonactivity/overview
 
 - Logon Activity − Permissions for Logon Activity Auditing ⸱ v10.6  
-  https://docs.netwrix.com/docs/auditor/10.8/configuration/logonactivity/overview
+  https://docs.netwrix.com/docs/auditor/10_8/configuration/logonactivity/overview

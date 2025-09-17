@@ -48,12 +48,12 @@ Refer to the following possible causes for the symptoms:
 
 Depending on the cause, implement the corresponding resolution to address the issue:
 
-1. Exclude Netwrix Auditor-related folders from the monitoring scope of your antivirus solution. Refer to the following article to learn more about recommended antivirus exclusions: [Antivirus Exclusions for Netwrix Auditor](https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md).
+1. Exclude Netwrix Auditor-related folders from the monitoring scope of your antivirus solution. Refer to the following article to learn more about recommended antivirus exclusions: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md).
 2. Verify the open ports in both the target and Netwrix Auditor servers. Refer to the following article to learn more about the ports required for correct User Activity operation: Data Source Configuration − User Activity Ports · v10.6.
 3. Verify that the .NET Framework v4.8 is installed on both the target and Netwrix Auditor servers. Refer to the following article to learn more about software requirements in Netwrix Auditor v10.6: Requirements − Software Requirements · v10.6.
 
 ## Related Articles
 
-- [Antivirus Exclusions for Netwrix Auditor](https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)
+- [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)
 - Data Source Configuration − User Activity Ports · v10.6
 - Requirements − Software Requirements · v10.6

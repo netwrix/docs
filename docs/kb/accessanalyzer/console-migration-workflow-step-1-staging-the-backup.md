@@ -24,9 +24,9 @@ knowledge_article_id: kA0Qk0000002OnpKAE
 
 # Console Migration Workflow: Step 1—Staging the Backup
 
-> **NOTE:** Return to the main workflow page via this link: [Console Migration Workflow](https://docs.netwrix.com/docs/kb/accessanalyzer/console-migration-workflow.md).
+> **NOTE:** Return to the main workflow page via this link: [Console Migration Workflow](/docs/kb/accessanalyzer/console-migration-workflow.md).
 >
-> Proceed to the next section via this link: [Console Migration Workflow: Step 2—Prepare the Database](https://docs.netwrix.com/docs/kb/accessanalyzer/console-migration-workflow-step-2-prepare-the-database).
+> Proceed to the next section via this link: [Console Migration Workflow: Step 2—Prepare the Database](/docs/kb/accessanalyzer/console-migration-workflow-step-2-prepare-the-database.md).
 
 ## Overview
 
@@ -98,5 +98,5 @@ Within the `NAA_Migration` folder, create a folder named **AIC**, and add the fo
 
 ## Related Links
 
-- [Console Migration Workflow](https://docs.netwrix.com/docs/kb/accessanalyzer/console-migration-workflow.md)
-- [Console Migration Workflow: Step 2—Prepare the Database](https://docs.netwrix.com/docs/kb/accessanalyzer/console-migration-workflow-step-2-prepare-the-database)
+- [Console Migration Workflow](/docs/kb/accessanalyzer/console-migration-workflow.md)
+- [Console Migration Workflow: Step 2—Prepare the Database](/docs/kb/accessanalyzer/console-migration-workflow-step-2-prepare-the-database.md)

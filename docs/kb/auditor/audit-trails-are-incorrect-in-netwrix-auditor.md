@@ -40,7 +40,7 @@ Follow the steps below to resolve the issue:
 1. On your file server, navigate to a problematic folder/share. Right-click it and select **Properties**.
 2. Select the **Security** tab > **Advanced**.
 3. Under the **Audit** tab, disable inheritance.
-4. Then, confirm that security principals are configured according to Netwrix documentation: https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers/windows (Successful Changes and Failed Reads).
+4. Then, confirm that security principals are configured according to Netwrix documentation: https://docs.netwrix.com/docs/auditor/10_8 Changes and Failed Reads).
 5. Click **Apply**. The server will propagate all permissions to the target folders.
 
 Setting up permissions manually will ensure that Netwrix is detecting the settings and that correct Security log events are written on the file server.

@@ -41,8 +41,8 @@ The **Leverage Integration API** switch is turned off subsequently.
 
 ## Resolution
 
-Assign a new SSL certificate to Integration API. Refer to the following article for additional information on commands: https://docs.netwrix.com/docs/auditor/10.8/api (Integration API − Security ⸱ v10.6).
+Assign a new SSL certificate to Integration API. Refer to the following article for additional information on commands: https://docs.netwrix.com/docs/auditor/10_8 API − Security ⸱ v10.6).
 
 ### Related articles
 
-- Integration API − Security ⸱ v10.6: https://docs.netwrix.com/docs/auditor/10.8/api
+- Integration API − Security ⸱ v10.6: https://docs.netwrix.com/docs/auditor/10_8

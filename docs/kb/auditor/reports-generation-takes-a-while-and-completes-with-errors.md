@@ -51,7 +51,7 @@ To resolve the issue, do one of the following:
 
 - On your SQL Server host, restart the **SQL Server (Instance name)** windows service.
 
-- Follow the recommendations to improve the overall Netwrix Auditor performance. Learn more in [Long Data Collection — Improving the Performance](https://docs.netwrix.com/docs/kb/auditor/long-data-collection-improving-the-performance).
+- Follow the recommendations to improve the overall Netwrix Auditor performance. Learn more in [Long Data Collection — Improving the Performance](/docs/kb/auditor/long-data-collection-improving-the-performance.md).
 
 - Disable the report generating timeout by following these steps:
   1. Open the **ReportManager URL** and click the **Site Settings** link in the top-right corner.
@@ -64,4 +64,4 @@ To resolve the issue, do one of the following:
 
 ### Related Articles
 
-- [Long Data Collection — Improving the Performance](https://docs.netwrix.com/docs/kb/auditor/long-data-collection-improving-the-performance)
+- [Long Data Collection — Improving the Performance](/docs/kb/auditor/long-data-collection-improving-the-performance.md)

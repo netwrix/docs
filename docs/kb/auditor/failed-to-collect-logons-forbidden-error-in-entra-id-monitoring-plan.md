@@ -50,10 +50,10 @@ Failed to collect Azure Logons audit data due to the following error: The remote
 ## Resolutions
 
 - Review the app setup procedure for your monitoring plan. Refer to the following articles for additional information on Microsoft Entra ID, SharePoint Online, Exchange Online, and Teams correspondingly:
-  - https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/overview (Permissions for Microsoft Entra ID Auditing ⸱ v10.6)
-  - https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/sharepointonline/overview (SharePoint Online — Permissions for SharePoint Online Auditing ⸱ v10.6)
-  - https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/exchangeonline/overview (Exchange Online — Permissions for Exchange Online Auditing ⸱ v10.6)
-  - https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/teams/overview (Teams — Permissions for Teams Auditing ⸱ v10.6)
+  - https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/microsoftentraid/overview (Permissions for Microsoft Entra ID Auditing ⸱ v10.6)
+  - https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/sharepointonline/overview (SharePoint Online — Permissions for SharePoint Online Auditing ⸱ v10.6)
+  - https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/exchangeonline/overview (Exchange Online — Permissions for Exchange Online Auditing ⸱ v10.6)
+  - https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/teams/overview (Teams — Permissions for Teams Auditing ⸱ v10.6)
 
 - Disable logon activity for your monitored Microsoft 365 (Office 365) tenant:
   1. In the main **Netwrix Auditor** menu, click **Monitoring Plans**.
@@ -66,8 +66,8 @@ Failed to collect Azure Logons audit data due to the following error: The remote
 
 ## Related articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/overview
-- https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/sharepointonline/overview
-- https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/exchangeonline/overview
-- https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/teams/overview
+- https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/microsoftentraid/overview
+- https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/sharepointonline/overview
+- https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/exchangeonline/overview
+- https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/teams/overview
 - https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/get-started-premium

@@ -44,7 +44,7 @@ Invalid configuration: Error updating SQL schema
 2. The service account to connect to the dedicated SQL database does not have the `db_owner` role.
 3. After a recent migration, your NDC instance cannot connect to the dedicated NDC SQL database.
 
-> NOTE: Refer to the following article to learn more about requirements for the NDC service account: https://docs.netwrix.com/docs/dataclassification/5.7/introduction/overview.md (Requirements to Install Netwrix Data Classification − Accounts and Required Permissions · v5.7).
+> NOTE: Refer to the following article to learn more about requirements for the NDC service account: https://docs.netwrix.com/docs/dataclassification/5_7 (Requirements to Install Netwrix Data Classification − Accounts and Required Permissions · v5.7).
 
 ## Resolutions
 
@@ -62,11 +62,11 @@ Invalid configuration: Error updating SQL schema
    2. In the left pane, proceed to **Security** > **Logins** > **target_account**. Right-click the account and select **Properties**.
    3. In the left pane, select **User Mapping**. Locate the NDC database, highlight it, and verify the `db_owner` role is assigned. If not, assign the role. Save the changes.
 
-3. Verify the NDC database still exists in your SQL server. If none exists, you can create a new database to use instead. Refer to the following article for additional information on NDC database configuration: https://docs.netwrix.com/docs/dataclassification/5.7/introduction/overview.md (Install Netwrix Data Classification − Configure NDC SQL Database · v5.7).
+3. Verify the NDC database still exists in your SQL server. If none exists, you can create a new database to use instead. Refer to the following article for additional information on NDC database configuration: https://docs.netwrix.com/docs/dataclassification/5_7 (Install Netwrix Data Classification − Configure NDC SQL Database · v5.7).
 
 > NOTE: To alter the server name in case of a recent SQL Server migration, run the NDC installer to select the **Repair** option. You can specify the new SQL Server instance there.
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/dataclassification/5.7/introduction/overview.md (Requirements to Install Netwrix Data Classification − Accounts and Required Permissions · v5.7)
-- https://docs.netwrix.com/docs/dataclassification/5.7/introduction/overview.md (Install Netwrix Data Classification − Configure NDC SQL Database · v5.7)
+- https://docs.netwrix.com/docs/dataclassification/5_7 (Requirements to Install Netwrix Data Classification − Accounts and Required Permissions · v5.7)
+- https://docs.netwrix.com/docs/dataclassification/5_7 (Install Netwrix Data Classification − Configure NDC SQL Database · v5.7)

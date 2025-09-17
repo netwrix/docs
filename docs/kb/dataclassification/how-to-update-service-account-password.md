@@ -25,7 +25,7 @@ knowledge_article_id: kA04u00000110uzCAA
 
 ## Before You Start
 
-> IMPORTANT: this article is made for versions **5.6** and **5.7.** Variation in the service name is very likely as between these two major versions they were changed. If you previously had 5.6 and upgraded to 5.7, you will retain old service names; if a fresh install, you get new service names. Keep it in mind if setting up Distributed Query Server (DQS) where one server was set up before the others in your environment (read more about applying DQS mode in Configuring NDC Servers Cluster and Load Balancing with DQS Mode ・ v 5.7: https://docs.netwrix.com/docs/dataclassification/5.7/introduction/overview.md).
+> IMPORTANT: this article is made for versions **5.6** and **5.7.** Variation in the service name is very likely as between these two major versions they were changed. If you previously had 5.6 and upgraded to 5.7, you will retain old service names; if a fresh install, you get new service names. Keep it in mind if setting up Distributed Query Server (DQS) where one server was set up before the others in your environment (read more about applying DQS mode in Configuring NDC Servers Cluster and Load Balancing with DQS Mode ・ v 5.7: https://docs.netwrix.com/docs/dataclassification/5_7).
 
 ### Check Your Netwrix Data Classification Version
 

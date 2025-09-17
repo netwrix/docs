@@ -44,9 +44,9 @@ Error details: Access is denied.
 ## Resolution
 
 - Configure the permissions for the data collection account used in the Event Log Manager. For additional information, refer to the following article: Windows Server — Permissions for Windows Server Auditing.
-- Configure the password for your data collection account in Event Log Manager. Refer to the following article for additional information: [Failed Logon Attempts after Recent Service Account Password Change](https://docs.netwrix.com/docs/kb/auditor/failed-logon-attempts-after-recent-service-account-password-change.md).
+- Configure the password for your data collection account in Event Log Manager. Refer to the following article for additional information: [Failed Logon Attempts after Recent Service Account Password Change](/docs/kb/auditor/failed-logon-attempts-after-recent-service-account-password-change.md).
 
 ## Related articles
 
 - Windows Server — Permissions for Windows Server Auditing — 10.6
-- [Failed Logon Attempts after Recent Service Account Password Change](https://docs.netwrix.com/docs/kb/auditor/failed-logon-attempts-after-recent-service-account-password-change.md)
+- [Failed Logon Attempts after Recent Service Account Password Change](/docs/kb/auditor/failed-logon-attempts-after-recent-service-account-password-change.md)

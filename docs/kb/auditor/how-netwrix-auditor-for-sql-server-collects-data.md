@@ -78,7 +78,7 @@ All internal traces are stored in `.trc` files in the SQL Server logs folder - b
 
 More information about internal SQL Server audit can be found in the following Microsoft article: https://learn.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms191006(v=sql.105)?redirectedfrom=MSDN
 
-Also, the detailed list of monitored objects can be found in the following article: https://docs.netwrix.com/docs/auditor/10.8/configuration/sqlserver/overview
+Also, the detailed list of monitored objects can be found in the following article: https://docs.netwrix.com/docs/auditor/10_8/configuration/sqlserver/overview
 
 **2. Audit database content changes**  
 For more in-depth auditing of SQL databases, Netwrix Auditor for SQL Server — database content auditing can be enabled. If the **Monitor changes to data in the database tables** option is enabled, the product performs the following steps:

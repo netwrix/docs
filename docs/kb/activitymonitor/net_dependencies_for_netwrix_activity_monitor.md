@@ -25,7 +25,7 @@ Which version of .NET is required for Netwrix Activity Monitor?
 
 ## Answer
 
-.NET Framework 4.7.2 or newer is required. You can also navigate to the [Netwrix Activity Monitor](/docs/activitymonitor/8.0/index) landing page for the product **Requirements** located under **Getting Started**.
+.NET Framework 4.7.2 or newer is required. You can also navigate to the [Netwrix Activity Monitor](https://docs.netwrix.com/docs/activitymonitor/8_0) landing page for the product **Requirements** located under **Getting Started**.
 
 > **NOTE:** .NET Framework is not the same as ASP.NET Core, and having one does not mean you have the other. ASP.NET Core and .NET Desktop Runtime should appear on the list of installed Apps & Features. However, .NET Framework does not appear on that list.
 
@@ -41,8 +41,8 @@ Select PSChildName, version
 
 ## Related Articles
 
-- [Netwrix Activity Monitor](/docs/activitymonitor/8.0/index)
+- [Netwrix Activity Monitor](https://docs.netwrix.com/docs/activitymonitor/8_0)
 - Netwrix Access Analyzer
-- [.NET Dependencies for Netwrix Threat Prevention](https://docs.netwrix.com/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_prevention)
-- [.NET Dependencies for Netwrix Recovery for Active Directory](https://docs.netwrix.com/docs/kb/activitymonitor/net_dependencies_for_netwrix_recovery_for_active_directory)
-- [.NET Dependencies for Netwrix Threat Manager](https://docs.netwrix.com/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_manager)
+- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_prevention.md)
+- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/activitymonitor/net_dependencies_for_netwrix_recovery_for_active_directory.md)
+- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_manager.md)

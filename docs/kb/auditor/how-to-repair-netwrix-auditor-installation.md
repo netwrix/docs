@@ -33,7 +33,7 @@ How to repair a Netwrix Auditor installation in our environment?
 > Stop-Service -Displayname Netwrix*
 > ```
 
-1. Establish the Netwrix Auditor version and build you're currently running in your environment. Refer to the following article for additional information: [How to Find Out My Netwrix Auditor Version](https://docs.netwrix.com/docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version.md).
+1. Establish the Netwrix Auditor version and build you're currently running in your environment. Refer to the following article for additional information: [How to Find Out My Netwrix Auditor Version](/docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version.md).
 2. Proceed to your **My Products** page to download the executable for the corresponding version. Refer to the following link: [Netwrix — My Products](https://www.netwrix.com/my_products.html).
 3. Run the downloaded executable. Once the files are extracted, a setup screen will be prompted.
 
@@ -47,4 +47,4 @@ How to repair a Netwrix Auditor installation in our environment?
 
 ## Related articles
 
-- [How to Find Out My Netwrix Auditor Version](https://docs.netwrix.com/docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version.md)
+- [How to Find Out My Netwrix Auditor Version](/docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version.md)

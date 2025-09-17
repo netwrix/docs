@@ -40,11 +40,11 @@ The default memory limit has been reached for the process.
 
 ## Resolution
 
-Increase the resource pool on your Netwrix Auditor server. Refer to the following article for additional information on hardware requirements for different deployment scenarios: https://docs.netwrix.com/docs/auditor/10.8/requirements (Requirements — Hardware Requirements · v10.7).
+Increase the resource pool on your Netwrix Auditor server. Refer to the following article for additional information on hardware requirements for different deployment scenarios: https://docs.netwrix.com/docs/auditor/10_8 — Hardware Requirements · v10.7).
 
-> **IMPORTANT:** Verify that the antivirus exclusions are in place on your Netwrix Auditor server. Review the following article for recommendations on antivirus exclusions in the Auditor environment: https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor (Antivirus Exclusions for Netwrix Auditor).
+> **IMPORTANT:** Verify that the antivirus exclusions are in place on your Netwrix Auditor server. Review the following article for recommendations on antivirus exclusions in the Auditor environment: /docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor (Antivirus Exclusions for Netwrix Auditor).
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/requirements (Requirements — Hardware Requirements · v10.7)
-- https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor (Antivirus Exclusions for Netwrix Auditor)
+- https://docs.netwrix.com/docs/auditor/10_8 — Hardware Requirements · v10.7)
+- /docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor (Antivirus Exclusions for Netwrix Auditor)

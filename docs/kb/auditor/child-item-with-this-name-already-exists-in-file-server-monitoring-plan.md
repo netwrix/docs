@@ -42,5 +42,5 @@ The licensing data was corrupted.
 ## Resolution
 
 - In case you've encountered the issue after a recent upgrade, wait for 24 hours to see if the issue is resolved on its own.
-- Reapply the license file. Refer to the following article for additional information: [How to Apply Netwrix Auditor License](https://docs.netwrix.com/docs/kb/auditor/how-to-apply-netwrix-auditor-license.md).
+- Reapply the license file. Refer to the following article for additional information: [How to Apply Netwrix Auditor License](/docs/kb/auditor/how-to-apply-netwrix-auditor-license.md).
 - In case reapplying the license did not help, contact [Netwrix Technical Support](https://www.netwrix.com/open_a_ticket.html).

@@ -55,9 +55,9 @@ Data Processing Account has insufficient permissions to write data to the databa
   
      > **NOTE:** To establish the name of the Audit Database, click **Edit settings** in the monitoring plan view > review the database name in the **Audit Database** tab.
 
-- Cause #2 − Verify the Data Collecting Account has the correct permissions to write to the Audit Database. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/admin/settings (Audit Database − Configure Default SQL Server Settings · v10.6).
+- Cause #2 − Verify the Data Collecting Account has the correct permissions to write to the Audit Database. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8 Database − Configure Default SQL Server Settings · v10.6).
 
 ## Related articles
 
 - Audit Database − Configure Default SQL Server Settings · v10.6  
-  https://docs.netwrix.com/docs/auditor/10.8/admin/settings
+  https://docs.netwrix.com/docs/auditor/10_8

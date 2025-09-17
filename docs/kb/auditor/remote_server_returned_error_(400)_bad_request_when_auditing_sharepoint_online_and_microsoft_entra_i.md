@@ -86,6 +86,6 @@ In case of any further issues, submit a case with Netwrix Technical Support.
 - [Office 365 Management Activity API FAQs and troubleshooting ⸱ Microsoft 🡥](https://docs.microsoft.com/en-us/office/office-365-management-api/troubleshooting-the-office-365-management-activity-api)
 - [Microsoft 365 — Turn Auditing On or Off ⸱ Microsoft 🡥](https://docs.microsoft.com/en-us/microsoft-365/compliance/turn-audit-log-search-on-or-off)
 - [Microsoft Purview — Audit ⸱ Microsoft 🡥](https://compliance.microsoft.com/solutioncatalog/solution/auditlogsearch?solutionname=Audit)
-- [Microsoft 365 — Permissions for Microsoft Entra ID Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/permissions)
-- [Microsoft 365 — Permissions for SharePoint Online Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/sharepointonline/permissions)
+- [Microsoft 365 — Permissions for Microsoft Entra ID Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/microsoftentraid/permissions)
+- [Microsoft 365 — Permissions for SharePoint Online Auditing ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/microsoft365/sharepointonline/permissions)
 - [Locate important IDs for a user ⸱ Microsoft 🡥](https://learn.microsoft.com/en-us/partner-center/find-ids-and-domain-names)

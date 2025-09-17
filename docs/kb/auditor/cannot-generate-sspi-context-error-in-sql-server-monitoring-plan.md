@@ -53,7 +53,7 @@ This error may also affect the state-in-time snapshot collection, the SQL Server
 
 ### Cause #1 – Firewall Settings
 
-Verify the firewall settings in your environment. For additional information on ports required for SQL Server monitoring, see SQL Server – SQL Server Ports · v10.7: https://docs.netwrix.com/docs/auditor/10.8/configuration/sqlserver/overview
+Verify the firewall settings in your environment. For additional information on ports required for SQL Server monitoring, see SQL Server – SQL Server Ports · v10.7: https://docs.netwrix.com/docs/auditor/10_8/configuration/sqlserver/overview
 
 ### Cause #2 – SQL Server Service Accounts and SPN Registration
 
@@ -98,16 +98,16 @@ If you are unable to resolve the issue with SPN registration, and if your scenar
 
 ### Cause #3 – Different TLS Protocol Versions
 
-Allow the operating systems to select the protocol for incoming and outgoing communication on both your Netwrix Auditor and SQL servers. For more information, see Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm: https://docs.netwrix.com/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm
+Allow the operating systems to select the protocol for incoming and outgoing communication on both your Netwrix Auditor and SQL servers. For more information, see Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm: /docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm
 
 ### Cause #4 – SQL and Netwrix Auditor Servers Time Difference
 
-Synchronize the time on both SQL and Netwrix Auditor servers to eliminate clock skew. For more information, see Clock Skew Is Too Great: https://docs.netwrix.com/docs/kb/auditor/clock-skew-is-too-great
+Synchronize the time on both SQL and Netwrix Auditor servers to eliminate clock skew. For more information, see Clock Skew Is Too Great: /docs/kb/auditor/clock-skew-is-too-great
 
 ## Related Articles
 
-- SQL Server – SQL Server Ports · v10.7: https://docs.netwrix.com/docs/auditor/10.8/configuration/sqlserver/overview
+- SQL Server – SQL Server Ports · v10.7: https://docs.netwrix.com/docs/auditor/10_8/configuration/sqlserver/overview
 - Cannot Generate SSPI Context – Fix the Error with Kerberos Configuration Manager · Microsoft: https://learn.microsoft.com/en-US/troubleshoot/sql/database-engine/connect/cannot-generate-sspi-context-error#fix-the-error-with-kerberos-configuration-manager-recommended
 - Register Service Principal Name for Kerberos Connections – Automatic SPN Registration · Microsoft: https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/register-a-service-principal-name-for-kerberos-connections?view=sql-server-ver16#Auto
-- Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm: https://docs.netwrix.com/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm
-- Clock Skew Is Too Great: https://docs.netwrix.com/docs/kb/auditor/clock-skew-is-too-great
+- Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm: /docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm
+- Clock Skew Is Too Great: /docs/kb/auditor/clock-skew-is-too-great

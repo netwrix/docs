@@ -48,10 +48,10 @@ Refer to the following possible causes for the error in your environment:
 
 Refer to the respective resolution for the cause in your environment:
 
-1. Increase the session timeout to allow the data collection to complete. Refer to the following article for additional information on connection profile setup in Netwrix Privilege Secure: https://docs.netwrix.com/docs/privilegesecure/4.2/privilegesecure/accessmanagement/admin-guide/policy/add (Connection Profiles Page — Add COnnection Profile · v4.2).
-2. Specify different credentials in the monitoring plans and data sources using Netwrix Privilege Secure accounts. Refer to the following article for the list of supported data sources: https://docs.netwrix.com/docs/auditor/10.8/admin/settings (Netwrix Auditor Settings — Netwrix Privilege Secure · v10.7).
+1. Increase the session timeout to allow the data collection to complete. Refer to the following article for additional information on connection profile setup in Netwrix Privilege Secure: https://docs.netwrix.com/docs/privilegesecure/4_2 (Connection Profiles Page — Add COnnection Profile · v4.2).
+2. Specify different credentials in the monitoring plans and data sources using Netwrix Privilege Secure accounts. Refer to the following article for the list of supported data sources: https://docs.netwrix.com/docs/auditor/10_8 Auditor Settings — Netwrix Privilege Secure · v10.7).
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/privilegesecure/4.2/privilegesecure/accessmanagement/admin-guide/policy/add (Connection Profiles Page — Add COnnection Profile · v4.2)
-- https://docs.netwrix.com/docs/auditor/10.8/admin/settings (Netwrix Auditor Settings — Netwrix Privilege Secure · v10.7)
+- https://docs.netwrix.com/docs/privilegesecure/4_2 (Connection Profiles Page — Add COnnection Profile · v4.2)
+- https://docs.netwrix.com/docs/auditor/10_8 Auditor Settings — Netwrix Privilege Secure · v10.7)

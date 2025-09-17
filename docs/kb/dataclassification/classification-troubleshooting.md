@@ -35,7 +35,7 @@ Identify a document with incorrect classifications:
 Go to the workflow logs (`https://[YourNDCServerName]/NDC/Workflows/Logs`) on your Netwrix Data Classification server and check the status:
 
 - If it's **negative**, then there was an error. Enable collector tracing and reindex the file, then view the event logs for details of the issue. You will usually see either the `PageID`, `PageURL`, or both in the logs to know which errors are related.
-- If it's less than 400, it means that it is not classified and needs to finish processing first. Check codes in the `Netwrix Data Classification Page Status Codes` article: https://docs.netwrix.com/docs/kb/dataclassification/ndc_page_status_codes
+- If it's less than 400, it means that it is not classified and needs to finish processing first. Check codes in the `Netwrix Data Classification Page Status Codes` article: /docs/kb/dataclassification/ndc_page_status_codes
 - If the status is **Classified (400)** and the **ReindexStatus** is 3, then it means it hasn't been reindexed or reclassified. This means that a change was detected or the user manually requested reprocessing. Give Netwrix Data Classification time to reprocess the document.
 - If the status is 400 and the reindex status is 0, check the **Text** and **Metadata** tabs. This is an easy way to confirm issues where Optical Character Recognition (OCR) has failed to extract the text you're looking for or if there was an issue processing text extraction for the document. If it doesn't match, enable collector tracing and reindex the document for details in the logs.
 

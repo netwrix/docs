@@ -32,4 +32,4 @@ Upgrade your Access Analyzer instance to version v11.6.0.46 or later. You can do
 ## Related Links
 
 - [My Products · Netwrix](https://www.netwrix.com/my_products.html)
-- [Netwrix Access Analyzer v11.6 Bug Fix List](/docs/accessanalyzer/12.0/index)
+- [Netwrix Access Analyzer v11.6 Bug Fix List](https://docs.netwrix.com/docs/accessanalyzer/12_0)

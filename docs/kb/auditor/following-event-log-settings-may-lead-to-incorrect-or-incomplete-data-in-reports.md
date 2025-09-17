@@ -38,4 +38,4 @@ This error is caused by incorrect event log retention settings, specifically by 
 
 ## Resolution
 
-It is required to have **Overwrite events as needed** option selected in order to allow for newer events to be audited. Check your Group Policy retention settings for the affected event log — refer to the following Netwrix Auditor article for additional information on adjusting event log retention settings: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
+It is required to have **Overwrite events as needed** option selected in order to allow for newer events to be audited. Check your Group Policy retention settings for the affected event log — refer to the following Netwrix Auditor article for additional information on adjusting event log retention settings: https://docs.netwrix.com/docs/auditor/10_8

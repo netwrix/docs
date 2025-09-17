@@ -39,7 +39,7 @@ User "%domain\\user" does not have required permissions.
 Verify that sufficient permissions have been granted and Windows User Account Control (UAC) restrictions have been addressed.
 ```
 
-- The affected user has sufficient roles granted in the **Security** tab of both **Site Settings** and the Netwrix Auditor **reports** folder. Refer to the following article for additional information on roles required for a service account: https://docs.netwrix.com/docs/auditor/10.8/requirements/sqlserverreportingservice.md (Configure Netwrix Auditor Service Accounts − Configure SSRS Account · v10.6).
+- The affected user has sufficient roles granted in the **Security** tab of both **Site Settings** and the Netwrix Auditor **reports** folder. Refer to the following article for additional information on roles required for a service account: https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserverreportingservice (Configure Netwrix Auditor Service Accounts − Configure SSRS Account · v10.6).
 
 ## Causes
 
@@ -67,4 +67,4 @@ Verify that sufficient permissions have been granted and Windows User Account Co
 ## Related articles
 
 - Configure Netwrix Auditor Service Accounts − Configure SSRS Account · v10.6  
-  https://docs.netwrix.com/docs/auditor/10.8/requirements/sqlserverreportingservice.md
+  https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserverreportingservice

@@ -77,7 +77,7 @@ Refer to the following steps to resolve the error:
   Verify the name of the installation file—it should be named as specified in the error prompt.
 
 - The Netwrix Auditor installation wizard includes both server and client setup files. Refer to the following options to extract the contents:
-  - Extract the executable contents via Command Prompt. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/install (Install Client via Group Policy — Extract MSI File · v10.6).
+  - Extract the executable contents via Command Prompt. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8 Client via Group Policy — Extract MSI File · v10.6).
   - Extract the executable contents using 7-Zip or alternative software. Link the folder containing the extracted files to proceed with installation\uninstallation.
 
 - When you upgrade your Netwrix Auditor instance, you might encounter the error during the service upgrade procedure. Refer to the default locations of the service installation files to provide the version-specific executable:
@@ -98,4 +98,4 @@ Refer to the following steps to resolve the error:
 
 - https://support.microsoft.com/en-us/topic/fix-problems-that-block-programs-from-being-installed-or-removed-cca7d1b6-65a9-3d98-426b-e9f927e1eb4d (Fix Problems that Block Programs from Being Installed or Removed · Microsoft)
 - https://www.netwrix.com/tickets.html#/tickets/open (My Tickets · Netwrix)
-- https://docs.netwrix.com/docs/auditor/10.8/install (Install Client via Group Policy — Extract MSI File · v10.7)
+- https://docs.netwrix.com/docs/auditor/10_8 Client via Group Policy — Extract MSI File · v10.7)

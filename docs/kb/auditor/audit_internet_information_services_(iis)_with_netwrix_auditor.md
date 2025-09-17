@@ -24,7 +24,7 @@ How to configure Internet Information Services (IIS) events monitoring?
 ### Prerequisites
 
 1. Enable the **Remote Registry** service — for additional information, refer to the following article: Configuration – Windows Server: Windows Event Logs · v10.6.
-2. Configure the operational log of Internet Information Services — for additional information, refer to the following article: [Configuration – Windows Server – Internet Information Services (IIS) · v10.6](https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver/iis).
+2. Configure the operational log of Internet Information Services — for additional information, refer to the following article: [Configuration – Windows Server – Internet Information Services (IIS) · v10.6](https://docs.netwrix.com/docs/auditor/10_8/configuration/windowsserver/iis).
 
 ### Set Up IIS Monitoring Plan
 

@@ -42,9 +42,9 @@ In the Netwrix Auditor health log, some error events mention issues with the com
 
    Here is an article on how to check ports:
 
-   - [How to check TCP, UDP and Dynamic ports required for Netwrix Auditor monitoring plans](https://docs.netwrix.com/docs/kb/auditor/check-tcp-and-udp-ports-required.md) (opens in a new window)
+   - [How to check TCP, UDP and Dynamic ports required for Netwrix Auditor monitoring plans](/docs/kb/auditor/check-tcp-and-udp-ports-required.md) (opens in a new window)
 4. Check Remote Registry and Windows Management Instrumentation Services:
    - For File Servers Auditing: Windows File Servers – Enable Remote Registry Service ⸱ v10.6 (opens in a new window)
    - For Windows Server Auditing: Windows Server – Enable Remote Registry and Windows Management Instrumentation Services ⸱ v10.6 (opens in a new window)
 5. Add antivirus exclusions on the Netwrix and target servers for folders:
-   - See the article on how to do it: [Antivirus Exclusions for Netwrix Auditor](https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md) (opens in a new window)
+   - See the article on how to do it: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md) (opens in a new window)

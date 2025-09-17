@@ -46,7 +46,7 @@ There is also the chance that the Health Log is relaying an error received from 
 
 The Health Log also provides the option for filtering, allowing administrators to view messages from specific data sources/monitoring plans, as well as different types of messages (Information, warning, errors).
 
-There may be times where Netwrix Auditor Technical Support requests a copy of your Health Log. To provide this file, please view the steps [here](https://docs.netwrix.com/docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log.md). More details on the Health Log can be obtained here.
+There may be times where Netwrix Auditor Technical Support requests a copy of your Health Log. To provide this file, please view the steps [here](/docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log.md). More details on the Health Log can be obtained here.
 
 ### Database Statistics
 
@@ -62,4 +62,4 @@ This simple, yet effective, tile gives administrators insight on Long Term Archi
 
 ### Working Folder
 
-The Working Folder is a structure of files that plays an integral part in event processing. Similar to the LTA tile, this tile will provide visibility on Working Folder growth. Expect this directory to grow and shrink periodically as it receives data, processes, and then sends it off for storage in SQL and the LTA. This directory can also be migrated to a drive independent to the system drive. The steps to migrate the Working Folder can be viewed [here](https://docs.netwrix.com/docs/kb/auditor/how-to-migrate-netwrix-auditor-working-folder-to-a-new-location.md).
+The Working Folder is a structure of files that plays an integral part in event processing. Similar to the LTA tile, this tile will provide visibility on Working Folder growth. Expect this directory to grow and shrink periodically as it receives data, processes, and then sends it off for storage in SQL and the LTA. This directory can also be migrated to a drive independent to the system drive. The steps to migrate the Working Folder can be viewed [here](/docs/kb/auditor/how-to-migrate-netwrix-auditor-working-folder-to-a-new-location.md).

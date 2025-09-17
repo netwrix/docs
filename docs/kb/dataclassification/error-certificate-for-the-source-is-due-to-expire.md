@@ -46,8 +46,8 @@ The certificate used to authenticate to your Microsoft 365-based source is due t
 
 ## Resolution
 
-Update your certificate. Keep the existing certificate in place until you deploy the new certificate to all NDC servers and update the configuration to avoid any interruption in monitoring. Refer to the following steps for additional information: https://docs.netwrix.com/docs/dataclassification/5.7/systemconfigurationoverview/configuration/configuration.md (Configure Microsoft Exchange for Crawling and Classification — Create Azure AD app for Modern Authentication · v5.7).
+Update your certificate. Keep the existing certificate in place until you deploy the new certificate to all NDC servers and update the configuration to avoid any interruption in monitoring. Refer to the following steps for additional information: https://docs.netwrix.com/docs/dataclassification/5_7 (Configure Microsoft Exchange for Crawling and Classification — Create Azure AD app for Modern Authentication · v5.7).
 
 ## Related Articles
 
-- Configure Microsoft Exchange for Crawling and Classification — Create Azure AD app for Modern Authentication · v5.7: https://docs.netwrix.com/docs/dataclassification/5.7/systemconfigurationoverview/configuration/configuration.md
+- Configure Microsoft Exchange for Crawling and Classification — Create Azure AD app for Modern Authentication · v5.7: https://docs.netwrix.com/docs/dataclassification/5_7

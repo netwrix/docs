@@ -45,8 +45,8 @@ Prerequisites for a problematic Domain Controller:
 
 - Install latest Windows updates
 - Update .Net Framework to 4.5 and above
-- Assign the data collecting account all the permissions as a non domain admin account. For additional information, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
-- If the **Adjust Audit Settings Automatically** option is disabled for a monitoring plan, make sure all audit settings for Active Directory were configured properly. For additional information, refer to the following articles: https://docs.netwrix.com/docs/auditor/10.8/configuration/activedirectory and https://docs.netwrix.com/docs/auditor/10.8/configuration/activedirectory
+- Assign the data collecting account all the permissions as a non domain admin account. For additional information, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8
+- If the **Adjust Audit Settings Automatically** option is disabled for a monitoring plan, make sure all audit settings for Active Directory were configured properly. For additional information, refer to the following articles: https://docs.netwrix.com/docs/auditor/10_8 https://docs.netwrix.com/docs/auditor/10_8
 
 Follow the steps below to resolve the issue:
 
@@ -68,6 +68,6 @@ Follow the steps below to resolve the issue:
 
 ### Related Articles
 
-- Configuration — Windows Server — Adjusting Event Log Size and Retention Settings — v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
-- Configuration — Active Directory Ports — v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/activedirectory
-- Configuration — Active Directory: Manual Configuration — v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/activedirectory
+- Configuration — Windows Server — Adjusting Event Log Size and Retention Settings — v10.6: https://docs.netwrix.com/docs/auditor/10_8
+- Configuration — Active Directory Ports — v10.6: https://docs.netwrix.com/docs/auditor/10_8
+- Configuration — Active Directory: Manual Configuration — v10.6: https://docs.netwrix.com/docs/auditor/10_8

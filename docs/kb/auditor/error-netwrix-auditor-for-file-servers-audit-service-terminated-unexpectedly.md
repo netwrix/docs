@@ -59,4 +59,4 @@ If you are currently on a 10.5 version and build other than 10950, perform the p
 
 ## Related articles
 
-- [How to Upgrade Netwrix Auditor](https://docs.netwrix.com/docs/kb/auditor/how-to-upgrade-netwrix-auditor.md)
+- [How to Upgrade Netwrix Auditor](/docs/kb/auditor/how-to-upgrade-netwrix-auditor.md)

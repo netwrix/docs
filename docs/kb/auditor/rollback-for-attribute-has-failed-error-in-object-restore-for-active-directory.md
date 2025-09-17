@@ -41,7 +41,7 @@ The rollback for the attribute %attribute% of %user% from %state% to %state% has
 
 ## Resolutions
 
-- Ensure the account you use to run the Netwrix Auditor Object Restore tool is a member of the Domain Administrators user group and has permissions to read the Deleted Objects container. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/configuration/activedirectory
+- Ensure the account you use to run the Netwrix Auditor Object Restore tool is a member of the Domain Administrators user group and has permissions to read the Deleted Objects container. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8
 
 - Particular AD object attributes cannot be restored with the tool. You can review the `omitproplist_rw.txt` file to see the list of object types and attributes excluded from the list of changes available for rollback. Refer to the following default path to find the .txt file:
 
@@ -72,6 +72,6 @@ C:\Program Files (x86)\Netwrix Auditor\Active Directory Auditing
 
 ## Related Links
 
-- Permissions for AD Auditing: Grant Permissions for 'Deleted Objects' Container — https://docs.netwrix.com/docs/auditor/10.8/configuration/activedirectory
+- Permissions for AD Auditing: Grant Permissions for 'Deleted Objects' Container — https://docs.netwrix.com/docs/auditor/10_8
 - How to disable User Account Control (UAC) on Windows Server ⸱ Microsoft — https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/disable-user-account-control
 - How can I add permissions to sidHistory attribute? — https://learn.microsoft.com/en-us/answers/questions/973114/how-can-i-add-permissions-to-sidhistory-attribute

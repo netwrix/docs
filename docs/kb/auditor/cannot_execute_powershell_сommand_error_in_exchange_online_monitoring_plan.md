@@ -59,7 +59,7 @@ Update-Module -Name "ExchangeOnlineManagement"
 
 ### Resolution 2. For Netwrix Auditor v10.6
 
-> **NOTE:** Netwrix Auditor v10.6.12275 (GA) installs and requires ExchangeOnlineManagement PowerShell module v3.0 to operate. For Netwrix Auditor v10.6.12275 users, it is recommended to upgrade to the latest version available. For additional information, refer to the following link: [Upgrade to the Latest Version ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10.8/install/upgrade).  
+> **NOTE:** Netwrix Auditor v10.6.12275 (GA) installs and requires ExchangeOnlineManagement PowerShell module v3.0 to operate. For Netwrix Auditor v10.6.12275 users, it is recommended to upgrade to the latest version available. For additional information, refer to the following link: [Upgrade to the Latest Version ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/install/upgrade).  
 > Netwrix Auditor v10.6.12299 (Update 1) installs and requires ExchangeOnlineManagement PowerShell module v3.2 to operate.
 
 1. Netwrix Auditor v10.6.12299 (Update 1) uses the ExchangeOnlineManagement PowerShell (EXO) module v3.2 and newer.

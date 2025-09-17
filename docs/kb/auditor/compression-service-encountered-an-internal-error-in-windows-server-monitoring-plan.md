@@ -107,5 +107,5 @@ The Windows Server Auditing host and compression service cannot operate due to d
 
 ## Related articles
 
-- Сonnection Issue when TLS 1.2 Is Required: https://docs.netwrix.com/docs/kb/auditor/сonnection_issue_when_tls_1.2_is_required
-- Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm: https://docs.netwrix.com/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm
+- Сonnection Issue when TLS 1.2 Is Required: /docs/kb/auditor/сonnection_issue_when_tls_1.2_is_required
+- Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm: /docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm

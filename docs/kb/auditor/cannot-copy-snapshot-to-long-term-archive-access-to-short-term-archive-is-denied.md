@@ -42,7 +42,7 @@ Write permissions for the custom Long-Term Archive service account are misconfig
 
 ## Resolution
 
-1. Review the permissions settings for the affected Long-Term Archive service account. Refer to the following article for additional information: Installation − Configure Long-Term Archive Account ⸱ v10.5 https://docs.netwrix.com/docs/auditor/10.8/requirements/longtermarchive.md).
+1. Review the permissions settings for the affected Long-Term Archive service account. Refer to the following article for additional information: Installation − Configure Long-Term Archive Account ⸱ v10.5 https://docs.netwrix.com/docs/auditor/10_8/requirements/longtermarchive).
 
 2. Allow Full Control permissions to the affected Long-Term Archive service account for the following 2 folders:
 
@@ -53,4 +53,4 @@ Write permissions for the custom Long-Term Archive service account are misconfig
 ## Related articles
 
 - Installation − Configure Long-Term Archive Account ⸱ v10.5  
-  https://docs.netwrix.com/docs/auditor/10.8/requirements/longtermarchive.md
+  https://docs.netwrix.com/docs/auditor/10_8/requirements/longtermarchive

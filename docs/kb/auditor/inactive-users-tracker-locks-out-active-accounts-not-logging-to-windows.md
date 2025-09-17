@@ -33,4 +33,4 @@ Netwrix Auditor's Inactive Users Tracker uses the `LastLogonTime` AD attribute t
 
 You can work around this issue by omitting either the user or the OU from the monitoring scope of Netwrix Auditor's Inactive Users Tracker. This prevents IUT from acting on the account in any way, making it impossible for the tracker to set the locked status for the specified accounts.
 
-For additional information on omit lists for Inactive Users Tracker, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringscope
+For additional information on omit lists for Inactive Users Tracker, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8

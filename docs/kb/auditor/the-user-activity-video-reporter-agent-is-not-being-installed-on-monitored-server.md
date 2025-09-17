@@ -43,10 +43,10 @@ This error indicates that the agent failed to be installed for one of the follow
 To troubleshoot the issue with agent installation, perform the following steps:
 
 1. Make sure that target computers are configured properly per the article:
-   - https://docs.netwrix.com/docs/auditor/10.8/configuration/useractivity/overview
+   - https://docs.netwrix.com/docs/auditor/10_8/configuration/useractivity/overview
 
 2. Make sure the following ports are opened on the local machine and target machine firewall settings:
-   - https://docs.netwrix.com/docs/auditor/10.8/configuration/ports  
+   - https://docs.netwrix.com/docs/auditor/10_8  
    Or disable the firewall for testing purposes to localize the problem. The agent status should be updated in `10 - 15 minutes`.
 
 3. Try to connect to the target machine from the local server through Remote Registry:

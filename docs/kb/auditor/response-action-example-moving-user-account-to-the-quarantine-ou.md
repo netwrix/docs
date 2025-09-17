@@ -26,7 +26,7 @@ knowledge_article_id: kA00g000000H9dtCAC
 
 ## Overview
 
-This article explains how to set up a response action in Netwrix Auditor alert to move an AD user account to the quarantine Organizational Unit (OU). Read more about alert response action settings in the Administration – Alerts – Configure a Response Action for Alert ⸱ v10.6 article: https://docs.netwrix.com/docs/auditor/10.8/admin/alertsettings/responseaction.md
+This article explains how to set up a response action in Netwrix Auditor alert to move an AD user account to the quarantine Organizational Unit (OU). Read more about alert response action settings in the Administration – Alerts – Configure a Response Action for Alert ⸱ v10.6 article: https://docs.netwrix.com/docs/auditor/10_8/admin/alertsettings/responseaction
 
 A quarantine OU is an OU with restrictive policies applied, used to limit access to sensitive and business-critical resources. Removal of a significant number of files from a file server within a short period of time may indicate potentially harmful user activity. To mitigate the risks of account usage with malicious intent, it is recommended to move suspicious user accounts to the quarantine OU. With this measure, you can limit user privileges without deleting the account from Active Directory. With Netwrix Auditor alerting and response action feature, you can automate and verify this course of action. To simulate suspicious activity and trigger the response action, you can do the following:
 

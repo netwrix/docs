@@ -42,12 +42,12 @@ One of the following error messages under Event ID 1259 is prompted in Health Lo
 
 ## Resolutions
 
-1. Error #1 − Verify Netwrix Auditor for SharePoint Core Service is still installed in the SharePoint Central Administration server. For additional information on installation, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/install (Installation − Install for SharePoint Core Service · v10.6).
+1. Error #1 − Verify Netwrix Auditor for SharePoint Core Service is still installed in the SharePoint Central Administration server. For additional information on installation, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8 − Install for SharePoint Core Service · v10.6).
 2. Error #2 − Verify the SQL Server hosting the SharePoint configuration database is accessible, and that the audited SharePoint farm is operational.
 3. Error #3 − Verify the configuration database is online, and that the Farm Account has the necessary rights to access the configuration database.
 4. Error #4 − Verify the farm can be reached. It might be required to extend the timeout on a binding − learn more in Configuring Timeout Values on a Binding ⸱ Microsoft: https://learn.microsoft.com/en-us/dotnet/framework/wcf/feature-details/configuring-timeout-values-on-a-binding
 
 ## Related articles
 
-- Installation − Install for SharePoint Core Service · v10.6: https://docs.netwrix.com/docs/auditor/10.8/install
+- Installation − Install for SharePoint Core Service · v10.6: https://docs.netwrix.com/docs/auditor/10_8
 - Configuring Timeout Values on a Binding ⸱ Microsoft: https://learn.microsoft.com/en-us/dotnet/framework/wcf/feature-details/configuring-timeout-values-on-a-binding

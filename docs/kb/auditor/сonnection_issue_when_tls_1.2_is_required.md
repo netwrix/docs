@@ -23,7 +23,7 @@ How to set up connections between the internal environment and Microsoft (Office
 
 ### Option 1: For Up-to-Date Environments
 
-For up-to-date environments, refer to the following KB article for additional information: [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](https://docs.netwrix.com/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm). You can also use this registry key to achieve the same results: [TLS Registry Key](https://netwrix.com/download/products/KnowledgeBase/TLSRegkey.reg).
+For up-to-date environments, refer to the following KB article for additional information: [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm.md). You can also use this registry key to achieve the same results: [TLS Registry Key](https://netwrix.com/download/products/KnowledgeBase/TLSRegkey.reg).
 
 ### Option 2: For Pre-Windows Server 2019 Environments and Earlier
 
@@ -108,7 +108,7 @@ For 32-bit applications that are running on 64-bit OSs, update the following sub
 
 ### Related Articles
 
-- [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](https://docs.netwrix.com/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm)
+- [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm.md)
 
 - [How to enable TLS 1.2 on clients ⸱ Microsoft 🡥](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/security/enable-tls-1-2-client)
 

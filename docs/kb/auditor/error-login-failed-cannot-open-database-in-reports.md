@@ -47,11 +47,11 @@ Verify that the **db_owner** role for the target database is assigned to the def
 2. In the **Object Explorer** pane of SQL Server Management Studio, navigate to **Security > Logins >** ` %Audit_Database_account%`. Right-click the account and select **Properties**.
 3. In the **User Mapping** tab, locate the affected database and verify that the **db_owner** role is assigned. Click **OK** to save the changes.
 
-For additional information on required access rights, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/requirements (Configure Audit Database Account — Requirements for SQL Server to Store Audit Data · v10.7).
+For additional information on required access rights, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8 Audit Database Account — Requirements for SQL Server to Store Audit Data · v10.7).
 
 > **IMPORTANT:** If your account lacks the correct permissions to assign the roles, you can run your SSMS instance in the single-user mode. Learn more in https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/start-sql-server-in-single-user-mode?view=sql-server-ver16 (Single-user Mode for SQL Server · Microsoft &#129125;).
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/requirements (Configure Audit Database Account — Requirements for SQL Server to Store Audit Data · v10.7)
+- https://docs.netwrix.com/docs/auditor/10_8 Audit Database Account — Requirements for SQL Server to Store Audit Data · v10.7)
 - https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/start-sql-server-in-single-user-mode?view=sql-server-ver16 (Single-user Mode for SQL Server · Microsoft &#129125;)

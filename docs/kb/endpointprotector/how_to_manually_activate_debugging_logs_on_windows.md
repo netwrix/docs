@@ -17,7 +17,7 @@ products:
 
 ## Overview
 
-If you are experiencing issues with the **Endpoint Protector Client** and cannot use the [UI Debug option](/docs/endpointprotector/5.9.4.2/admin/dc_module/globalsettings) or the SupportTool, you can manually activate debugging logs on Windows. Follow the instructions below to enable logging for troubleshooting purposes.
+If you are experiencing issues with the **Endpoint Protector Client** and cannot use the [UI Debug option](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/admin/dc_module/globalsettings) or the SupportTool, you can manually activate debugging logs on Windows. Follow the instructions below to enable logging for troubleshooting purposes.
 
 ## Instructions
 

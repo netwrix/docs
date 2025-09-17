@@ -46,6 +46,6 @@ The ReportServer database is corrupted and has to be rebuilt.
    1. Once you've opened SSMS, unfold the **Databases** folder in the **Object Explorer** pane on the left.
    2. Right-click each (`ReportServer` and `ReportServerTemp`) database and select **Delete**.
    3. Before confirming the deletion, make sure to check the **Close existing connections** checkbox.
-3. Once the databases are deleted, regenerate the `ReportServer` database. Refer to the following article for additional information: https://docs.netwrix.com/docs/kb/auditor/deploying-the-report-server-database (Deploying the Report Server Database).
-4. After you've configured the `ReportServer` database, grant the roles to the SSRS service account the roles required. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/requirements/sqlserverreportingservice.md (Configure SSRS Account).
+3. Once the databases are deleted, regenerate the `ReportServer` database. Refer to the following article for additional information: /docs/kb/auditor/deploying-the-report-server-database (Deploying the Report Server Database).
+4. After you've configured the `ReportServer` database, grant the roles to the SSRS service account the roles required. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserverreportingservice (Configure SSRS Account).
 5. Restart **Netwrix Auditor Archive Service** and **Netwrix Auditor Management Service** via **Services**.

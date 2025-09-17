@@ -29,7 +29,7 @@ If no data is present in reports, **Change Summaries**, and search results, or t
 2. If automatic configuration is not possible, configure audit manually.
 
 See the Netwrix Auditor configuration overview for more information:
-https://docs.netwrix.com/docs/auditor/10.8/configuration
+https://docs.netwrix.com/docs/auditor/10_8
 
 If data is still reported incorrectly, refer to the following knowledge base article:
 https://kb.netwrix.com/2750

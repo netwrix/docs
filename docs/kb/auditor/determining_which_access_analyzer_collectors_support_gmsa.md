@@ -43,8 +43,8 @@ The following Netwrix Access Analyzer data collectors have been tested and confi
 
 Ensure that the gMSA account is granted all required permissions as described in the Help Center:
 
-[Configure a gMSA Account for Collector Connections](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/settings/connection/gmsa)
+[Configure a gMSA Account for Collector Connections](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/connection/gmsa)
 
 ## Related Link
 
-- [Configure a gMSA Account for Collector Connections](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/settings/connection/gmsa)
+- [Configure a gMSA Account for Collector Connections](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/connection/gmsa)

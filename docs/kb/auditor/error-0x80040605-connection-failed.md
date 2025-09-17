@@ -50,8 +50,8 @@ One (or more) of the following services has stopped in the Netwrix Auditor serve
 
 Review the services running in the Netwrix Auditor server − make sure the services are running with their startup type set to **Automatic**.
 
-> **IMPORTANT:** If the disk storing Long-Term Archive is running out of space, you'll corresponding events in Health Log. When the free disk space is below 3GB, the Netwrix services responsible for audit data collection will be stopped, preventing the data collection. For additional information on reducing disk space consumption, refer to the following article: [Netwrix Auditor Consumes Disk Space — Recommendations](https://docs.netwrix.com/docs/kb/auditor/netwrix-auditor-consumes-disk-space-recommendations).
+> **IMPORTANT:** If the disk storing Long-Term Archive is running out of space, you'll corresponding events in Health Log. When the free disk space is below 3GB, the Netwrix services responsible for audit data collection will be stopped, preventing the data collection. For additional information on reducing disk space consumption, refer to the following article: [Netwrix Auditor Consumes Disk Space — Recommendations](/docs/kb/auditor/netwrix-auditor-consumes-disk-space-recommendations.md).
 
 ## Related articles
 
-- [Netwrix Auditor Consumes Disk Space — Recommendations](https://docs.netwrix.com/docs/kb/auditor/netwrix-auditor-consumes-disk-space-recommendations)
+- [Netwrix Auditor Consumes Disk Space — Recommendations](/docs/kb/auditor/netwrix-auditor-consumes-disk-space-recommendations.md)

@@ -28,7 +28,7 @@ knowledge_article_id: kA0Qk0000002VvlKAE
 
 The `sbpam-url` utility, located in the **Extras** folder of the download package, registers an SSH URL handler. This utility helps you automatically connect to an NPS-proxied SSH session.
 
-For additional information, refer to the following article: https://docs.netwrix.com/docs/kb/privilegesecure/invoking_desktop_ssh_client_automatically (How to Invoke a Desktop SSH Client Automatically).
+For additional information, refer to the following article: /docs/kb/privilegesecure/invoking_desktop_ssh_client_automatically (How to Invoke a Desktop SSH Client Automatically).
 
 At the time this article was written, the referenced KB article instructed users to download the utility from a static link, which may provide an outdated version. Use the utility bundled in the **Extras** folder to ensure you have the latest version.
 
@@ -164,6 +164,6 @@ The `sbpam-url` utility updates the following registry keys to register the prot
 
 ## Related Links
 
-- https://docs.netwrix.com/docs/kb/privilegesecure/invoking_desktop_ssh_client_automatically (How to Invoke a Desktop SSH Client Automatically)
+- /docs/kb/privilegesecure/invoking_desktop_ssh_client_automatically (How to Invoke a Desktop SSH Client Automatically)
 - https://www.putty.org/ (Download Putty ⸱ PuTTY 🐍)
 - https://winscp.net/eng/download.php (Download WinSCP ⸱ WinSCP 🐘)

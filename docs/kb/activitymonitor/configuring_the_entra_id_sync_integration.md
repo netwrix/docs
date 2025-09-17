@@ -34,7 +34,7 @@ This article explains how to configure a Microsoft Entra ID integration with Net
 4. Navigate to **API permissions** within your new app registration and select **+ Add a permission**.
 5. Select **Microsoft Graph**.
    - ![Selecting Microsoft Graph API permissions](./images/servlet_image_2c936cc3af52.png)
-6. Select **Application** and add the permissions outlined in [Threat Manager Server Requirements](/docs/threatmanager/3.0/requirements/server).
+6. Select **Application** and add the permissions outlined in [Threat Manager Server Requirements](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server).
 7. After adding all the permissions, select **Grant admin consent for [tenant]**.
    - > **NOTE:** The status will change to a green checkmark when complete.
    - ![Granting admin consent in Entra admin center](./images/servlet_image_590daa2ead13.png)
@@ -62,4 +62,4 @@ This article explains how to configure a Microsoft Entra ID integration with Net
 
 ## Related Link
 
-- [Threat Manager Server Requirements](/docs/threatmanager/3.0/requirements/server)
+- [Threat Manager Server Requirements](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server)

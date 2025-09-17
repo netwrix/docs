@@ -44,27 +44,27 @@ For the initial setup and post-setup stages, it is highly recommended to stick t
 > - Average number of activity records of your single data source.
 > - Hardware limitations.
 
-In general, it is recommended to use different databases for different data sources to avoid rapid database size growth and ease the troubleshooting process. For additional information on creation of monitoring plans, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans
+In general, it is recommended to use different databases for different data sources to avoid rapid database size growth and ease the troubleshooting process. For additional information on creation of monitoring plans, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8
 
 ### Hardware limitations
 
-In case of recent changes to your environment that led to hindered performance, refer to the following article for reference on hardware requirements for your infrastructure: https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
+In case of recent changes to your environment that led to hindered performance, refer to the following article for reference on hardware requirements for your infrastructure: https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
 
 ### Network traffic compression
 
-To reduce network traffic in distributed deployments, multi-site networks, and other environments with remote locations that have limited bandwidth, it is recommended to use network traffic compression. This option also helps reduce the CPU load for the Netwrix Auditor host — for additional information on setting up traffic compression, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/admin/healthstatus
+To reduce network traffic in distributed deployments, multi-site networks, and other environments with remote locations that have limited bandwidth, it is recommended to use network traffic compression. This option also helps reduce the CPU load for the Netwrix Auditor host — for additional information on setting up traffic compression, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8
 
 ### Decrease database retention period
 
-Depending on your environment and needs, the Audit Database retention period can be either increased or decreased. It should be noted, that higher retention period for any database will also lead to greater database sizes and longer times to search for stored data. For additional information on setting a database retention period, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/admin/settings
+Depending on your environment and needs, the Audit Database retention period can be either increased or decreased. It should be noted, that higher retention period for any database will also lead to greater database sizes and longer times to search for stored data. For additional information on setting a database retention period, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8
 
 ### Exclude Netwrix-related folders from antivirus scans
 
-As Netwrix Auditor creates and writes audit data in smaller portions, your antivirus suite will attempt to check every new or edited file to complete the threat check. Full file reads might take extra time to complete, hindering the writing capability of Netwrix Auditor, in some cases leading to timeouts and additional RAM and CPU loads. Refer to the following article for additional information on folders to be excluded from regular antivirus checks: https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor
+As Netwrix Auditor creates and writes audit data in smaller portions, your antivirus suite will attempt to check every new or edited file to complete the threat check. Full file reads might take extra time to complete, hindering the writing capability of Netwrix Auditor, in some cases leading to timeouts and additional RAM and CPU loads. Refer to the following article for additional information on folders to be excluded from regular antivirus checks: /docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor
 
 ### Set up data collection for State-in-Time reports
 
-Some collectors allow for scheduling of State-in-Time data collection — increasing the time window between these events will help to avoid resource consumption spikes. Same applies to Activity Summary reports — increasing the time window between these reports will allow you to decrease the momentary loads. Both these changes won't affect the overall resource consumption, they will distribute the consumption evenly. Refer to the following article for additional information on editing data sources: https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans
+Some collectors allow for scheduling of State-in-Time data collection — increasing the time window between these events will help to avoid resource consumption spikes. Same applies to Activity Summary reports — increasing the time window between these reports will allow you to decrease the momentary loads. Both these changes won't affect the overall resource consumption, they will distribute the consumption evenly. Refer to the following article for additional information on editing data sources: https://docs.netwrix.com/docs/auditor/10_8
 
 ### Specify domain controllers and Exchange servers for data collection
 
@@ -89,15 +89,15 @@ In case you have an Event Log Manager plan set up, make sure it doesn't monitor 
 
 ### Omit lists
 
-You can limit the monitoring scope in your environment via omit lists — this allows to proactively decrease the DB loads as changes for omitted items are not recorded. For additional information on how to exclude users and objects via Netwrix Auditor UI, refer to the following article: https://docs.netwrix.com/docs/kb/auditor/how-to-exclude-users-and-objects-from-monitoring-scope-in-netwrix-auditor-ui. For additional information on available omit lists, review the corresponding article applicable to your target system. For example, for Active Directory omit lists, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans/activedirectory
+You can limit the monitoring scope in your environment via omit lists — this allows to proactively decrease the DB loads as changes for omitted items are not recorded. For additional information on how to exclude users and objects via Netwrix Auditor UI, refer to the following article: /docs/kb/auditor/how-to-exclude-users-and-objects-from-monitoring-scope-in-netwrix-auditor-ui. For additional information on available omit lists, review the corresponding article applicable to your target system. For example, for Active Directory omit lists, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8
 
 ### Related articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans
-- https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
-- https://docs.netwrix.com/docs/auditor/10.8/admin/healthstatus
-- https://docs.netwrix.com/docs/auditor/10.8/admin/settings
-- https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor
-- https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans
-- https://docs.netwrix.com/docs/kb/auditor/how-to-exclude-users-and-objects-from-monitoring-scope-in-netwrix-auditor-ui
-- https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans/activedirectory
+- https://docs.netwrix.com/docs/auditor/10_8
+- https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
+- https://docs.netwrix.com/docs/auditor/10_8
+- https://docs.netwrix.com/docs/auditor/10_8
+- /docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor
+- https://docs.netwrix.com/docs/auditor/10_8
+- /docs/kb/auditor/how-to-exclude-users-and-objects-from-monitoring-scope-in-netwrix-auditor-ui
+- https://docs.netwrix.com/docs/auditor/10_8

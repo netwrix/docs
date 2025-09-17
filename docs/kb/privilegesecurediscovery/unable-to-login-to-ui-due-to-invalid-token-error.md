@@ -46,4 +46,4 @@ Troubleshooting steps:
 2. Confirm that the correct Google Authenticator token was used when attempting logon
 3. Log in using the Local Account
 4. Navigate to the **Configure** > **Users & Groups** pane.
-5. Reset the token and log in again. Read more in the Configuration – Resetting MFA Tokens ⸱ v2.20 article: https://docs.netwrix.com/docs/endpointprotector/5.9.4.2/secureone
+5. Reset the token and log in again. Read more in the Configuration – Resetting MFA Tokens ⸱ v2.20 article: https://docs.netwrix.com/docs/endpointprotector/5_9_4_2

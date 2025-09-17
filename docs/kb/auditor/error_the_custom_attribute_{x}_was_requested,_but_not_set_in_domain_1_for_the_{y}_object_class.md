@@ -67,8 +67,8 @@ This warning is informational and not indicative of a failure. It does **not** i
 
 > **IMPORTANT:** Some reports depend on specific attributes (e.g., delegation, DS heuristics). Removing attributes could impact the completeness of those reports.
 
-- You can lower the logging level of the job from the default WARNING to ERROR in the [Job Properties](/docs/accessanalyzer/12.0/admin/jobs/job/properties/general) window.
+- You can lower the logging level of the job from the default WARNING to ERROR in the [Job Properties](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/jobs/job/properties/general) window.
 
 ## Related Link
 
-- [Job Properties](/docs/accessanalyzer/12.0/admin/jobs/job/properties/general)
+- [Job Properties](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/jobs/job/properties/general)

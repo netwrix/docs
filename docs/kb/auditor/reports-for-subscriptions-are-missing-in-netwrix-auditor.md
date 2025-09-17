@@ -39,7 +39,7 @@ Enable the **Send empty subscriptions when no activity occurred** setting to rec
 2. Select the affected subscription, and click **Edit**.
 3. In the **General** tab, enable the **Send empty subscriptions when no activity occurred** switch, and click **Save & Close**.
 
-Refer to the following article for additional information on subscriptions in Netwrix Auditor: https://docs.netwrix.com/docs/auditor/10.8/admin/subscriptions (Subscriptions — Create Subscriptions ⸱ v10.6).
+Refer to the following article for additional information on subscriptions in Netwrix Auditor: https://docs.netwrix.com/docs/auditor/10_8 — Create Subscriptions ⸱ v10.6).
 
 > NOTE: Alternatively, you can alter the schedule to include records from multiple days:
 >
@@ -49,4 +49,4 @@ Refer to the following article for additional information on subscriptions in Ne
 
 ## Related articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/admin/subscriptions (Subscriptions — Create Subscriptions ⸱ v10.6)
+- https://docs.netwrix.com/docs/auditor/10_8 — Create Subscriptions ⸱ v10.6)

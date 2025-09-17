@@ -33,7 +33,7 @@ Yes, you are able to migrate audit databases to another Microsoft SQL Server ins
 
 ### Prerequisites
 
-- Required Permissions: The account used by Netwrix Auditor must have **db_owner** rights on the target audit databases. For SQL Server Reporting Services (SSRS), the account must have the **Content Manager** role on the Home folder, and users must have the **Browser** role on the Report Server. For detailed steps on assigning these permissions, see Requirements – SQL Server Reporting Services · v10.7: https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
+- Required Permissions: The account used by Netwrix Auditor must have **db_owner** rights on the target audit databases. For SQL Server Reporting Services (SSRS), the account must have the **Content Manager** role on the Home folder, and users must have the **Browser** role on the Report Server. For detailed steps on assigning these permissions, see Requirements – SQL Server Reporting Services · v10.7: https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
 - SQL Server and SSRS must be installed and configured on the new server.
 
 ### Instructions
@@ -50,7 +50,7 @@ Yes, you are able to migrate audit databases to another Microsoft SQL Server ins
    3. Under the **Source** section, select the **Device** option, and click **...** to browse for databases.
    4. In the **Specify Backup Devices** window, click **Add** and select the backup database file. Click **OK**.
    5. Specify the database name and check the **Restore** checkbox under the **Backup sets to restore** section.
-5. Deploy the new Report Database. For more information, see Deploying the Report Server Database: https://docs.netwrix.com/docs/kb/auditor/deploying-the-report-server-database
+5. Deploy the new Report Database. For more information, see Deploying the Report Server Database: /docs/kb/auditor/deploying-the-report-server-database
 6. Stop the old **SQL Server (%instance_name%)** service.
 7. Start `Netwrix Auditor Archive Service` and `Netwrix Auditor Management Service`.
 8. In the main Netwrix Auditor menu, select **Settings** > **Audit Database** tab, and specify the new SQL Server and Reporting Service settings.
@@ -66,6 +66,6 @@ Yes, you are able to migrate audit databases to another Microsoft SQL Server ins
 
 ## Related Links
 
-- Requirements – SQL Server Reporting Services · v10.7: https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
-- How to Prepare the Netwrix Server for a SQL Upgrade: https://docs.netwrix.com/docs/kb/auditor/how-to-prepare-the-netwrix-server-for-a-sql-upgrade
-- Deploying the Report Server Database: https://docs.netwrix.com/docs/kb/auditor/deploying-the-report-server-database
+- Requirements – SQL Server Reporting Services · v10.7: https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
+- How to Prepare the Netwrix Server for a SQL Upgrade: /docs/kb/auditor/how-to-prepare-the-netwrix-server-for-a-sql-upgrade
+- Deploying the Report Server Database: /docs/kb/auditor/deploying-the-report-server-database

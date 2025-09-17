@@ -30,7 +30,7 @@ How to set up SQL Server Reporting Services for the first time or during the Net
 
 ## Answer
 
-In case you are configuring SQL Server Reporting Services for the first time, grant the appropriate role permissions to the user. Refer to the following link for additional info: https://docs.netwrix.com/docs/auditor/10.8/requirements Launch the **Report Server Configuration Manager** and connect to the Report Server.
+In case you are configuring SQL Server Reporting Services for the first time, grant the appropriate role permissions to the user. Refer to the following link for additional info: https://docs.netwrix.com/docs/auditor/10_8 the **Report Server Configuration Manager** and connect to the Report Server.
 
 > **NOTE:** In most cases, there is only one Report Server to be hosted locally on the same server as SQL.
 
@@ -54,7 +54,7 @@ In your SQL server, run **Report Server Configuration Manager**. Select the SQL 
 
 3. In the **Database Server** tab, confirm the SQL Server instance and click **Next**.
 
-   > **NOTE:** In case you are unable to proceed with the authentication type specified, make sure the user has the appropriate role permissions. If you need to review the SQL permissions, refer to the following link: https://docs.netwrix.com/docs/auditor/10.8/admin/reports/types/stateintime
+   > **NOTE:** In case you are unable to proceed with the authentication type specified, make sure the user has the appropriate role permissions. If you need to review the SQL permissions, refer to the following link: https://docs.netwrix.com/docs/auditor/10_8
 
 4. In the **Database** tab, you can use the default database name or change it. Click **Next** to proceed to the next setup stage.
 
@@ -79,7 +79,7 @@ Netwrix Auditor should now be able to process and generate reports.
 ## Related articles
 
 - Requirements – SQL Server Reporting Services · v10.6  
-  https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
+  https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
 
 - SQL Server State-In-Time Reports · v10.6  
-  https://docs.netwrix.com/docs/auditor/10.8/admin/reports/types/stateintime
+  https://docs.netwrix.com/docs/auditor/10_8

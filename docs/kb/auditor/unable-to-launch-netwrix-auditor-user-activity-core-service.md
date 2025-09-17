@@ -66,9 +66,9 @@ where `yourservername` is the name of your SMTP server in the FQDN format and `9
 
 5. Complete the installation.
 
-> NOTE: In case User Activity Core Service is installed in target servers, make sure to check the Core Service version in **Apps & Features**. In case of version mismatch, refer to the following article for additional information: [Manually Update User Activity Core Service](https://docs.netwrix.com/docs/kb/auditor/manually-update-user-activity-core-service.md).
+> NOTE: In case User Activity Core Service is installed in target servers, make sure to check the Core Service version in **Apps & Features**. In case of version mismatch, refer to the following article for additional information: [Manually Update User Activity Core Service](/docs/kb/auditor/manually-update-user-activity-core-service.md).
 
 ### Related articles
 
 - Configuration — User Activity — User Activity Ports — v10.6
-- [Manually Update User Activity Core Service](https://docs.netwrix.com/docs/kb/auditor/manually-update-user-activity-core-service.md)
+- [Manually Update User Activity Core Service](/docs/kb/auditor/manually-update-user-activity-core-service.md)

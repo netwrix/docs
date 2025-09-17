@@ -39,10 +39,10 @@ This can be due to one of the following reasons:
 ## Resolutions
 
 - If the manual installation mode was used, check that you have specified a valid SharePoint Central Administration URL.
-- Install the Netwrix Auditor for SharePoint Core Service manually. For detailed instructions, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/install
+- Install the Netwrix Auditor for SharePoint Core Service manually. For detailed instructions, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8
 
 > **TIP:** After the successful manual installation, the error will persist until the next scheduled data collection. To start the collection manually, navigate to a SharePoint monitoring plan, select **Edit** and click **Update** on the right pane.
 
 ## Related Article
 
-- https://docs.netwrix.com/docs/auditor/10.8/install
+- https://docs.netwrix.com/docs/auditor/10_8

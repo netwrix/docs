@@ -47,15 +47,15 @@ Make sure that it is online and reachable, Remote Registry service is enabled.
 
 - Enable the Remote Registry service in the affected client — refer to the following article for additional information: Windows File Servers − Enable Remote Registry Service ⸱ v10.6.
 - Review the allowed connections in the affected server in accordance with the following article guidelines: User Activity − User Activity Ports ⸱ v10.6.
-- Exclude the Netwrix-related folders from the monitoring scope of your antivirus suite — refer to the following article for additional information: [Antivirus Exclusions for Netwrix Auditor](https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md).
+- Exclude the Netwrix-related folders from the monitoring scope of your antivirus suite — refer to the following article for additional information: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md).
 - Enable the SMB v2/v3 protocol in both the client and server — learn more in [Detect, Enable and Disable SMBv1, SMBv2, and SMBv3 ⸱ Windows Learn](https://learn.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3?tabs=server#how-to-detect-status-enable-and-disable-smb-protocols).
-- Review the list of apps installed in the affected server. If User Activity Core Service is either missing or is outdated, refer to the following articles for additional information: Installation − Install for User Activity Core Service · v10.6 and [Manually Update User Activity Core Service](https://docs.netwrix.com/docs/kb/auditor/manually-update-user-activity-core-service.md).
+- Review the list of apps installed in the affected server. If User Activity Core Service is either missing or is outdated, refer to the following articles for additional information: Installation − Install for User Activity Core Service · v10.6 and [Manually Update User Activity Core Service](/docs/kb/auditor/manually-update-user-activity-core-service.md).
 
 ## Related articles
 
 - Windows File Servers − Enable Remote Registry Service ⸱ v10.6
 - User Activity − User Activity Ports ⸱ v10.6
-- [Antivirus Exclusions for Netwrix Auditor](https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)
+- [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)
 - [Detect, Enable and Disable SMBv1, SMBv2, and SMBv3 ⸱ Windows Learn](https://learn.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3?tabs=server#how-to-detect-status-enable-and-disable-smb-protocols)
 - Installation − Install for User Activity Core Service · v10.6
-- [Manually Update User Activity Core Service](https://docs.netwrix.com/docs/kb/auditor/manually-update-user-activity-core-service.md)
+- [Manually Update User Activity Core Service](/docs/kb/auditor/manually-update-user-activity-core-service.md)

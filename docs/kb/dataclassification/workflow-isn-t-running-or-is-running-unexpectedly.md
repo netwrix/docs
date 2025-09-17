@@ -36,7 +36,7 @@ This article offers step-by-step guidance for resolving common workflow issues. 
 
    - **Failed to run the workflow** – A basic error message will be displayed that may assist you with troubleshooting the issue. If it doesn't give enough details, then enable workflow trace logging and reclassify the document. Check the Windows Event Logs for details of any issues.
 
-   - **No attempts to run the workflow** – Check that the conditions are configured correctly for the workflow and workflow rule. If the workflow and workflow rules are configured correctly, then check the classifications of the document. If the classifications aren't as expected, then please reference the following documentation for the troubleshooting steps: https://docs.netwrix.com/docs/kb/dataclassification/classification_troubleshooting (Classification Troubleshooting).
+   - **No attempts to run the workflow** – Check that the conditions are configured correctly for the workflow and workflow rule. If the workflow and workflow rules are configured correctly, then check the classifications of the document. If the classifications aren't as expected, then please reference the following documentation for the troubleshooting steps: /docs/kb/dataclassification/classification_troubleshooting (Classification Troubleshooting).
 
 3. Filter the workflow logs and check if there are other workflows being run for the document. Workflows run in a priority order. If there is more than one migration action, then the second migration will fail as the document has already been moved.
 
@@ -44,6 +44,6 @@ This article offers step-by-step guidance for resolving common workflow issues. 
 
 This typically means that the document has a classification that isn't expected to have or that the conditions in the workflow rule are not configured correctly.
 
-1. Check the workflow rule conditions. Pay attention to the parameters. Learn more about rule configuration and description of classification rules: https://docs.netwrix.com/docs/dataclassification/5.7/ndc/admin-guide/workflows/advancedwindow (Configure a Workflow using Advanced dialog ⸱ v5.7)
+1. Check the workflow rule conditions. Pay attention to the parameters. Learn more about rule configuration and description of classification rules: https://docs.netwrix.com/docs/dataclassification/5_7 (Configure a Workflow using Advanced dialog ⸱ v5.7)
 
-2. Check the document's classifications. If there is a classification that is not intended, then reference the following documentation for troubleshooting steps: https://docs.netwrix.com/docs/kb/dataclassification/classification_troubleshooting (Document isn't classified as expected)
+2. Check the document's classifications. If there is a classification that is not intended, then reference the following documentation for troubleshooting steps: /docs/kb/dataclassification/classification_troubleshooting (Document isn't classified as expected)

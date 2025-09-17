@@ -48,4 +48,4 @@ Re-apply your license:
 
 ### For Netwrix Auditor Free Community Edition
 
-Reinstall your Netwrix Auditor instance. For additional information on the Auditor uninstallation process, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/install
+Reinstall your Netwrix Auditor instance. For additional information on the Auditor uninstallation process, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8

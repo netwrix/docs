@@ -42,7 +42,7 @@ NO MONITORING PLANS FOUND
 
 ## Resolutions
 
-- Create a new monitoring plan for the data source. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans (Monitoring Plans – Create a New Plan).
+- Create a new monitoring plan for the data source. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8 (Monitoring Plans – Create a New Plan).
 
 - Review the corresponding data source settings:
   - Review your Health Log for errors related to the monitoring plan containing the data source.
@@ -94,8 +94,8 @@ NO MONITORING PLANS FOUND
 >
 > - The account specified in **Audit database settings** for Report Server should have local admin permissions, as well as permissions to create folders, and upload folders.
 > - Any folder/report access permissions set up in Report Manager directly instead of monitoring plans delegation will have to be reconfigured. Alternatively, you can delete a particular affected report instead of deleting the entire **Netwrix Auditor** reports folder.
-> - In case you've previously added a custom report, you will have to manually set it up again. This could apply to the report provided in the following article: https://docs.netwrix.com/docs/kb/auditor/how-to-monitor-print-service-activity (How to Monitor Print Service Activity).
+> - In case you've previously added a custom report, you will have to manually set it up again. This could apply to the report provided in the following article: /docs/kb/auditor/how-to-monitor-print-service-activity (How to Monitor Print Service Activity).
 
 ## Related articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/admin/monitoringplans (Monitoring Plans – Create a New Plan)
+- https://docs.netwrix.com/docs/auditor/10_8 (Monitoring Plans – Create a New Plan)

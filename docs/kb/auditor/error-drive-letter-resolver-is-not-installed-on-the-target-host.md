@@ -44,5 +44,5 @@ To solve the issue, deploy Network Traffic Compression Service on the audited fi
 
 Consider that using this service will also minimize network load and speed up state-in-time snapshot collection and SACL configuration. See also:
 
-- Monitored Object Types, Actions, and Attributes: File Servers ⸱ v10.5: https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers
-- Monitored Object Types, Actions, and Attributes: File Servers ⸱ v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers
+- Monitored Object Types, Actions, and Attributes: File Servers ⸱ v10.5: https://docs.netwrix.com/docs/auditor/10_8
+- Monitored Object Types, Actions, and Attributes: File Servers ⸱ v10.6: https://docs.netwrix.com/docs/auditor/10_8

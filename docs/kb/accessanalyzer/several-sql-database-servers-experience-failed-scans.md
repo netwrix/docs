@@ -42,10 +42,10 @@ Refer to the possible causes:
 
 Ensure that the service account has the necessary privileges, including **VIEW ANY DEFINITION** on the master database. This permission allows the account to view the definition of any object in the SQL server instance.
 
-While permissions requirements are outlined in existing documentation, for further guidance and troubleshooting, please refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/accessreviews Analyzer/Solutions/SQL_Solution.htm#permissions
+While permissions requirements are outlined in existing documentation, for further guidance and troubleshooting, please refer to the following article: https://docs.netwrix.com/docs/auditor/10_8/accessreviews Analyzer/Solutions/SQL_Solution.htm#permissions
 
 (Reference: Netwrix Auditor documentation linked above.)
 
 ## Related articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/accessreviews Analyzer/Solutions/SQL_Solution.htm#permissions
+- https://docs.netwrix.com/docs/auditor/10_8/accessreviews Analyzer/Solutions/SQL_Solution.htm#permissions

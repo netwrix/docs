@@ -40,5 +40,5 @@ The possible cause of this issue is the Security event log on the file server:
 - If you changed the Security event log location and did not reboot your file server, the system services may fail to update their settings based on the updated configuration. Therefore, you must reboot your file server.
 - If you did not relocate the Security event log, perform one of the following to resolve the issue:
   - Open the Security event log using the **Event Viewer**. If the log is corrupted or contains events with ID `521`, this may indicate that there is not enough free disk space to store new information. Provide more disk space and clear the log. Refer to the The disk on a monitored file server is overfilled knowledge base article for more information: https://kb.netwrix.com/1262
-  - Make sure that either the **Overwrite events as needed** retention method is selected, or the Security log automatic archiving option is enabled: https://docs.netwrix.com/docs/auditor/10.8/configuration/fileservers/windows/overview
+  - Make sure that either the **Overwrite events as needed** retention method is selected, or the Security log automatic archiving option is enabled: https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/windows/overview
   - Verify with the `gpresult` tool if your settings are being overwritten by Group Policies.

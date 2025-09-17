@@ -91,19 +91,19 @@ The audit settings in the target server are misconfigured. The affected server i
 
 Review the resolutions to ensure the settings are configured correctly in your target servers.
 
-- Verify both the `Remote Registry` and `Windows Management Instrumentation` services are set up to have the **Automatic** startup type. Refer to the following article for additional information: Windows Server − Enable Remote Registry and Windows Management Instrumentation Services · v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
+- Verify both the `Remote Registry` and `Windows Management Instrumentation` services are set up to have the **Automatic** startup type. Refer to the following article for additional information: Windows Server − Enable Remote Registry and Windows Management Instrumentation Services · v10.6: https://docs.netwrix.com/docs/auditor/10_8
 
-- Verify the Windows Registry audit settings are configured correctly − refer to the following article for additional information on the manual setup: Windows Server − Configure Windows Registry Audit Settings · v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
+- Verify the Windows Registry audit settings are configured correctly − refer to the following article for additional information on the manual setup: Windows Server − Configure Windows Registry Audit Settings · v10.6: https://docs.netwrix.com/docs/auditor/10_8
 
-- Verify the local audit policies are configured correctly − refer to the following article for additional information on the manual setup: Windows Server − Configure Local Audit Policies · v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver Alternatively, you can set up the advanced audit policies − refer to the following article for additional information on the manual setup: Windows Server − Configure Advanced Audit Policies · v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
+- Verify the local audit policies are configured correctly − refer to the following article for additional information on the manual setup: Windows Server − Configure Local Audit Policies · v10.6: https://docs.netwrix.com/docs/auditor/10_8 you can set up the advanced audit policies − refer to the following article for additional information on the manual setup: Windows Server − Configure Advanced Audit Policies · v10.6: https://docs.netwrix.com/docs/auditor/10_8
 
-- Verify the event log size and retention method settings in target servers − refer to the following article for additional information: Windows Server − Adjusting Event Log Size and Retention Settings · v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
+- Verify the event log size and retention method settings in target servers − refer to the following article for additional information: Windows Server − Adjusting Event Log Size and Retention Settings · v10.6: https://docs.netwrix.com/docs/auditor/10_8
 
 ## Related articles
 
 - gpresult · Microsoft: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/gpresult
-- Windows Server − Enable Remote Registry and Windows Management Instrumentation Services · v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
-- Windows Server − Configure Windows Registry Audit Settings · v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
-- Windows Server − Configure Local Audit Policies · v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
-- Windows Server − Configure Advanced Audit Policies · v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
-- Windows Server − Adjusting Event Log Size and Retention Settings · v10.6: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver
+- Windows Server − Enable Remote Registry and Windows Management Instrumentation Services · v10.6: https://docs.netwrix.com/docs/auditor/10_8
+- Windows Server − Configure Windows Registry Audit Settings · v10.6: https://docs.netwrix.com/docs/auditor/10_8
+- Windows Server − Configure Local Audit Policies · v10.6: https://docs.netwrix.com/docs/auditor/10_8
+- Windows Server − Configure Advanced Audit Policies · v10.6: https://docs.netwrix.com/docs/auditor/10_8
+- Windows Server − Adjusting Event Log Size and Retention Settings · v10.6: https://docs.netwrix.com/docs/auditor/10_8

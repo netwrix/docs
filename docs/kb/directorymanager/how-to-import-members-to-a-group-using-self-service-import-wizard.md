@@ -91,9 +91,9 @@ The process to import members is discussed in these steps:
 9. Click **Finish**.
 
 ### Related Articles:
-- [Walkthrough Search Policy - Define Scope and Filter Results](https://docs.netwrix.com/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results)
-- [How To Enforce Users to Create Groups in a Specific OU](https://docs.netwrix.com/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
+- [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results.md)
+- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
 - How to Trigger a workflow When a User Сreates a Group
-- [How To Add Message Approvers in Group Properties in Self-Service](https://docs.netwrix.com/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal.md)
-- [Best Practices for Controlling Changes to Group Membership](https://docs.netwrix.com/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
-- [Best Practices for Preventing Accidental Data Leakage](https://docs.netwrix.com/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage.md)
+- [How To Add Message Approvers in Group Properties in Self-Service](/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal.md)
+- [Best Practices for Controlling Changes to Group Membership](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
+- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage.md)

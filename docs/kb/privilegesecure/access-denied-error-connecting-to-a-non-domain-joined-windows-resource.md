@@ -49,9 +49,9 @@ New-ItemProperty -Name LocalAccountTokenFilterPolicy `
 
 > **NOTE:** Learn more in [about_Remote_Troubleshooting − How to enable remoting for administrators in other domains ⸱ Microsoft &#129125;](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting?view=powershell-7.3#how-to-enable-remoting-for-administrators-in-other-domains).
 
-You should now be able to use your service account to connect to the resource via NPS. For additional information on configuring non-domain-joined NPS resources, to refer to the following article: [Managing Non-domain-joined Windows Computers with Netwrix Privilege Secure](https://docs.netwrix.com/docs/kb/privilegesecure/managing-non-domain-joined-windows-computers-with-privilege-secure).
+You should now be able to use your service account to connect to the resource via NPS. For additional information on configuring non-domain-joined NPS resources, to refer to the following article: [Managing Non-domain-joined Windows Computers with Netwrix Privilege Secure](/docs/kb/privilegesecure/managing-non-domain-joined-windows-computers-with-privilege-secure.md).
 
 ## Related articles
 
 - [about_Remote_Troubleshooting − How to enable remoting for administrators in other domains ⸱ Microsoft &#129125;](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting?view=powershell-7.3#how-to-enable-remoting-for-administrators-in-other-domains)
-- [Managing Non-domain-joined Windows Computers with Netwrix Privilege Secure](https://docs.netwrix.com/docs/kb/privilegesecure/managing-non-domain-joined-windows-computers-with-privilege-secure)
+- [Managing Non-domain-joined Windows Computers with Netwrix Privilege Secure](/docs/kb/privilegesecure/managing-non-domain-joined-windows-computers-with-privilege-secure.md)

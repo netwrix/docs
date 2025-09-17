@@ -44,10 +44,10 @@ Netwrix Auditor Logon Activity Audit Service is corrupted or cannot be found.
 
 - Upgrade your Netwrix Auditor instance to the latest version to repair the corrupted service. Refer to the following article for additional information: Installation — Upgrade to the Latest Version ⸱ v10.6.
 
-- If the latest Netwrix Auditor version is installed in your environment, you can repair your Netwrix Auditor instance. Refer to the following article for additional information: [How to Repair Netwrix Auditor Installation](https://docs.netwrix.com/docs/kb/auditor/how-to-repair-netwrix-auditor-installation.md).
+- If the latest Netwrix Auditor version is installed in your environment, you can repair your Netwrix Auditor instance. Refer to the following article for additional information: [How to Repair Netwrix Auditor Installation](/docs/kb/auditor/how-to-repair-netwrix-auditor-installation.md).
 
 ### Related articles
 
 - Installation — Upgrade to the Latest Version ⸱ v10.6
 
-- [How to Repair Netwrix Auditor Installation](https://docs.netwrix.com/docs/kb/auditor/how-to-repair-netwrix-auditor-installation.md)
+- [How to Repair Netwrix Auditor Installation](/docs/kb/auditor/how-to-repair-netwrix-auditor-installation.md)

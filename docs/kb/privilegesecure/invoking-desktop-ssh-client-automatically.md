@@ -54,8 +54,8 @@ To automatically invoke a local SSH client for sessions, you need to register a 
 
    ![Setting Netwrix Privilege Secure URL Handler as the default app by protocol](./images/ka0Qk000000E5z7_0EM4u000008M1Gl.png)
 
-7. If none of these built-in command files are successful, then you may refer to the following provided options: Registering and Using the sbpam-url SSH Protocol Handler https://docs.netwrix.com/docs/kb/privilegesecure/registering-and-using-the-sbpam-url-ssh-protocol-handler).
+7. If none of these built-in command files are successful, then you may refer to the following provided options: Registering and Using the sbpam-url SSH Protocol Handler /docs/kb/privilegesecure/registering-and-using-the-sbpam-url-ssh-protocol-handler).
 
 ## Related Article
 
-- Registering and Using the sbpam-url SSH Protocol Handler — https://docs.netwrix.com/docs/kb/privilegesecure/registering-and-using-the-sbpam-url-ssh-protocol-handler
+- Registering and Using the sbpam-url SSH Protocol Handler — /docs/kb/privilegesecure/registering-and-using-the-sbpam-url-ssh-protocol-handler

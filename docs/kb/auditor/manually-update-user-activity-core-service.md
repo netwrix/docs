@@ -29,7 +29,7 @@ The Netwrix Auditor User Activity Core Service version in a target server does n
 
 ## Answer
 
-> **NOTE:** Refer to the following article for additional information on establishing the version of your Auditor server: https://docs.netwrix.com/docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version (How to Find Out My Netwrix Auditor Version).
+> **NOTE:** Refer to the following article for additional information on establishing the version of your Auditor server: /docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version (How to Find Out My Netwrix Auditor Version).
 
 > **IMPORTANT:** It is recommended to stop User Activity services in the Netwrix server before making changes to installed Core Services in targets. Run the following command in elevated PowerShell to stop User Activity Core Service and Audit Service:
 >
@@ -117,5 +117,5 @@ User Activity Core Service is designed to be deployed automatically when adding 
 
 ## Related links
 
-- How to Find Out My Netwrix Auditor Version: https://docs.netwrix.com/docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version
+- How to Find Out My Netwrix Auditor Version: /docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version
 - Uninstall-NetwrixProduct.ps1: https://www.netwrix.com/download/products/KnowledgeBase/Uninstall-NetwrixProduct.ps1

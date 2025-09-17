@@ -27,7 +27,7 @@ knowledge_article_id: kA00g000000H9TbCAK
 
 How to configure Netwrix Auditor for Exchange to monitor clusters of Exchange servers for non-owner access.
 
-To monitor a cluster of Exchange servers, specify IP addresses of all Exchange servers with mailbox role, which belong to the monitored cluster to the Non-owner Mailbox Access Reporter Exchange server list. You can find out more about data excluding in this [Help Center article](/docs/auditor/10.8/index).
+To monitor a cluster of Exchange servers, specify IP addresses of all Exchange servers with mailbox role, which belong to the monitored cluster to the Non-owner Mailbox Access Reporter Exchange server list. You can find out more about data excluding in this [Help Center article](https://docs.netwrix.com/docs/auditor/10_8).
 
 ## Procedure
 

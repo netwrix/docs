@@ -75,7 +75,7 @@ Resetting the password for the GroupID service account in **Netwrix Directory Ma
 10. If you encounter errors such as “Failed to save the Security Service Configuration,” ensure all previous steps are complete and try again.
 11. Use the **Signing Key Utility** to generate a new SSL certificate for GroupID if prompted:
     - [Download the Signing Key Utility](https://releases.netwrix.com/products/groupid/10.0/groupid-V10-Signing-Key-Utility-10.0.0.zip)
-    - [Signing Key Utility Documentation](/docs/directorymanager/11.1/index)
+    - [Signing Key Utility Documentation](https://docs.netwrix.com/docs/directorymanager/11_1)
 12. To update the password in the identity store properties, open the **GroupID MMC**.
 13. Navigate to the **Identity Stores** tab from the left pane.
 14. Open the properties of the on-prem **AD Identity Store**.
@@ -88,4 +88,4 @@ Resetting the password for the GroupID service account in **Netwrix Directory Ma
 
 ## Related Articles
 
-- [GroupID 10.0 Signing Key Utility Documentation](/docs/directorymanager/11.1/index)
+- [GroupID 10.0 Signing Key Utility Documentation](https://docs.netwrix.com/docs/directorymanager/11_1)

@@ -27,7 +27,7 @@ knowledge_article_id: kA00g000000H9e8CAC
 
 How can you set up single sign-on (SSO) for Netwrix Data Classification (NDC) via Microsoft Entra ID authentication (formerly Azure AD)?
 
-> **IMPORTANT:** The Netwrix Data Classification and Netwrix Auditor integration (NDC Provider) currently does not support single sign-on (SSO). SSO needs to be disabled in Netwrix Data Classification for the account used by the NDC Provider to authenticate. For up-to-date information on the NDC Provider integration, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10.8/admin/settings (Sensitive Data Discovery — Permissions for Integration with Netwrix Data Classification · v10.6).
+> **IMPORTANT:** The Netwrix Data Classification and Netwrix Auditor integration (NDC Provider) currently does not support single sign-on (SSO). SSO needs to be disabled in Netwrix Data Classification for the account used by the NDC Provider to authenticate. For up-to-date information on the NDC Provider integration, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 Data Discovery — Permissions for Integration with Netwrix Data Classification · v10.6).
 
 ## Answer
 

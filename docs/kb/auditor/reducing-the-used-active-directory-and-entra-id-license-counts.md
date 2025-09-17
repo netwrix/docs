@@ -22,7 +22,7 @@ knowledge_article_id: kA04u000000PoL7CAK
 
 # Reducing the Used Active Directory and Entra ID License Counts
 
-> **IMPORTANT:** Netwrix Auditor is licensed per enabled Active Directory (AD) and Entra ID user object. For additional information on determining the number of enabled users, refer to the following articles: [Determining the Number of Enabled Active Directory User Accounts](https://docs.netwrix.com/docs/kb/auditor/determining-the-number-of-enabled-active-directory-user-accounts) — [Determining the Number of Enabled Microsoft Entra ID Accounts](https://docs.netwrix.com/docs/kb/auditor/determining-the-number-of-enabled-microsoft-entra-id-accounts). Netwrix Auditor only collects data from objects that are not excluded (omitted), which means that any objects that are omitted will not be monitored.
+> **IMPORTANT:** Netwrix Auditor is licensed per enabled Active Directory (AD) and Entra ID user object. For additional information on determining the number of enabled users, refer to the following articles: [Determining the Number of Enabled Active Directory User Accounts](/docs/kb/auditor/determining-the-number-of-enabled-active-directory-user-accounts.md) — [Determining the Number of Enabled Microsoft Entra ID Accounts](/docs/kb/auditor/determining-the-number-of-enabled-microsoft-entra-id-accounts.md). Netwrix Auditor only collects data from objects that are not excluded (omitted), which means that any objects that are omitted will not be monitored.
 
 ## Question
 
@@ -72,7 +72,7 @@ Refer to the following examples to learn about how the exclusion rules work for 
 
 ### Exclude an OU via the Omit List
 
-Populate the `omitpathlist.txt` omit list with the OU you would like to omit. Use the exclusion rules provided above. For additional information on AD omit lists, refer to the following article: [Active Directory Monitoring Scope](/docs/auditor/10.8/admin/monitoringplans/activedirectory/scope).
+Populate the `omitpathlist.txt` omit list with the OU you would like to omit. Use the exclusion rules provided above. For additional information on AD omit lists, refer to the following article: [Active Directory Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8).
 
 ### Exclude Entra ID Users via the omitUPNlist.txt File
 
@@ -83,7 +83,7 @@ To exclude specific Entra ID users from the license count, populate the `omitUPN
 
 `Wildcard *` is supported and can replace any number of characters.
 
-> **IMPORTANT:** Excluding users via the `omitUPNlist.txt` file will reduce the Entra ID user count used for licensing but will also exclude these users from monitoring. For more information, please see [Microsoft Entra ID Monitoring Scope](/docs/auditor/10.8/admin/monitoringplans/microsoftentraid/scope).
+> **IMPORTANT:** Excluding users via the `omitUPNlist.txt` file will reduce the Entra ID user count used for licensing but will also exclude these users from monitoring. For more information, please see [Microsoft Entra ID Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8).
 
 ## Tips
 
@@ -95,7 +95,7 @@ To exclude specific Entra ID users from the license count, populate the `omitUPN
 
 ## Related Links
 
-- [Determining the Number of Enabled Active Directory User Accounts](https://docs.netwrix.com/docs/kb/auditor/determining-the-number-of-enabled-active-directory-user-accounts)
-- [Determining the Number of Enabled Microsoft Entra ID Accounts](https://docs.netwrix.com/docs/kb/auditor/determining-the-number-of-enabled-microsoft-entra-id-accounts)
-- [Active Directory Monitoring Scope](/docs/auditor/10.8/admin/monitoringplans/activedirectory/scope)
-- [Microsoft Entra ID Monitoring Scope](/docs/auditor/10.8/admin/monitoringplans/microsoftentraid/scope)
+- [Determining the Number of Enabled Active Directory User Accounts](/docs/kb/auditor/determining-the-number-of-enabled-active-directory-user-accounts.md)
+- [Determining the Number of Enabled Microsoft Entra ID Accounts](/docs/kb/auditor/determining-the-number-of-enabled-microsoft-entra-id-accounts.md)
+- [Active Directory Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8)
+- [Microsoft Entra ID Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8)

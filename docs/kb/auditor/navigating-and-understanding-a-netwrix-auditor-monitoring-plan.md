@@ -43,7 +43,7 @@ Navigate to any of your configured monitoring plans. In the upper-right pane of 
 
 #### Delegation
 
-**Delegation** allows administrators to provide Role-Based Access to Monitoring Plans and specific data. If you would like to learn more about Delegation, visit our [Help Center](/docs/auditor/10.8/index).
+**Delegation** allows administrators to provide Role-Based Access to Monitoring Plans and specific data. If you would like to learn more about Delegation, visit our [Help Center](https://docs.netwrix.com/docs/auditor/10_8).
 
 #### Update
 
@@ -65,7 +65,7 @@ You should not perform an update on an Active Directory Data Source. Due to its 
     - When enabled, more processing is done at the target server. When disabled, more data is sent over the network and processed locally on the Netwrix Auditor host.
     - If you notice performance issues, you can toggle this option on or off to trial performance.
 
-  All other configurations for a data source will heavily depend on the data source. You should visit our [configuration guides](/docs/auditor/10.8/index) on the Help Center for more specific information.
+  All other configurations for a data source will heavily depend on the data source. You should visit our [configuration guides](https://docs.netwrix.com/docs/auditor/10_8) on the Help Center for more specific information.
 
 - **Remove Data Source –** Highlight a data source and select this option to remove it from the Monitoring Plan. The audit database for this monitoring plan will still contain audit data for this data source but will no longer collect and store further information after the data source is removed.
 

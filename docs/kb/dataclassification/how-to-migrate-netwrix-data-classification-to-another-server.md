@@ -37,7 +37,7 @@ This article describes how to change or replace the server on which Netwrix Data
 
 2. Back up the **NDC database** and the files in the **NDC Index** at `C:\Program Files\ConceptSearching\ConceptDB` (by default).
 
-3. Prior to installation, ensure that the necessary software [pre-requisites](/docs/dataclassification/5.7/index) are in place.
+3. Prior to installation, ensure that the necessary software [pre-requisites](https://docs.netwrix.com/docs/dataclassification/5_7) are in place.
 
 4. Install the same version of NDC on the new server, pointing to the original database location with the same service account. The installer should detect an existing NDC schema. (You may refer to Install Netwrix Data Classification for instructions on NDC installation.)
 

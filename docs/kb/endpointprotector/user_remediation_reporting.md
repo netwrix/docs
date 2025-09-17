@@ -30,5 +30,5 @@ This article explains how to locate and review logs of end user responses to **U
 
 ## Related Links
 
-- [How to Configure User Remediation for Device Control](https://docs.netwrix.com/docs/kb/endpointprotector/how-to-configure-user-remediation-for-device-control)
-- [Enabling User Remediation in Content Aware Protection Policies](https://docs.netwrix.com/docs/kb/endpointprotector/enabling-user-remediation-in-content-aware-protection-policies)
+- [How to Configure User Remediation for Device Control](/docs/kb/endpointprotector/how-to-configure-user-remediation-for-device-control.md)
+- [Enabling User Remediation in Content Aware Protection Policies](/docs/kb/endpointprotector/enabling-user-remediation-in-content-aware-protection-policies.md)

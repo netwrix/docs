@@ -50,10 +50,10 @@ You can set the Collector Threads value in the **NDC Management Web Console** at
 When the **Collector Threads** slider is set to `0`, Netwrix Data Classification automatically detects the number of available CPU cores and allocates threads accordingly. This ensures optimal use of system resources without manual configuration.
 
 For more information on hardware requirements, see Netwrix Data Classification — Hardware Requirements:
-https://docs.netwrix.com/docs/dataclassification/5.7/introduction/overview.md
+https://docs.netwrix.com/docs/dataclassification/5_7
 
 > **NOTE:** After changing the **Collector Threads** value, restart the corresponding service in Windows Services Manager. For example, restart the NDC Indexer service if you change the number of Indexer threads.
 
 ## Related Links
 
-- Netwrix Data Classification — Hardware Requirements: https://docs.netwrix.com/docs/dataclassification/5.7/introduction/overview.md
+- Netwrix Data Classification — Hardware Requirements: https://docs.netwrix.com/docs/dataclassification/5_7

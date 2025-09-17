@@ -38,7 +38,7 @@ The account used to run Threat Prevention Enterprise Manager Service is not incl
 
 ## Resolution
 
-Include the service account used to run Threat Prevention Enterprise Manager Service in the local administrators group. Refer to the following article for additional information on requierements for installation and application use: https://docs.netwrix.com/docs/threatprevention/7.5/stealthintercept/requirements (Requirements − Console Server Requirements · v7.3).
+Include the service account used to run Threat Prevention Enterprise Manager Service in the local administrators group. Refer to the following article for additional information on requierements for installation and application use: https://docs.netwrix.com/docs/threatprevention/7_5 (Requirements − Console Server Requirements · v7.3).
 
 ## Troubleshooting License Issues
 
@@ -49,4 +49,4 @@ Refer to the following steps in case adding the account to the local administrat
 
 ## Related articles
 
-- https://docs.netwrix.com/docs/threatprevention/7.5/stealthintercept/requirements (Requirements − Console Server Requirements · v7.3)
+- https://docs.netwrix.com/docs/threatprevention/7_5 (Requirements − Console Server Requirements · v7.3)

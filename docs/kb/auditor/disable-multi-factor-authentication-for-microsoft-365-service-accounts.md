@@ -58,17 +58,17 @@ To disable MFA for your data-collecting account in any Microsoft 365 source, use
 
 Refer to the following articles for additional information on data-collecting account setup for your Microsoft 365 sources:
 
-- Microsoft 365 — Permissions for Microsoft Entra ID Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/microsoftentraid)
-- Microsoft 365 — Permissions for Exchange Online Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/exchangeonline)
-- Microsoft 365 — Permissions for SharePoint Online Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/sharepointonline)
-- Microsoft 365 — Permissions for Teams Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/teams)
+- Microsoft 365 — Permissions for Microsoft Entra ID Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10_8
+- Microsoft 365 — Permissions for Exchange Online Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10_8
+- Microsoft 365 — Permissions for SharePoint Online Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10_8
+- Microsoft 365 — Permissions for Teams Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10_8
 
 ### Related articles
 
 - Azure AD Built-in Roles — Conditional Access Administrator ⸱ Microsoft (https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#conditional-access-administrator)
 - Microsoft Entra ID — Conditional Access ⸱ Microsoft (https://entra.microsoft.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Overview/fromNav/Identity)
 - Common Conditional Access Policy — Require MFA for All Users ⸱ Microsoft (https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/howto-conditional-access-policy-all-users-mfa#create-a-conditional-access-policy)
-- Microsoft 365 — Permissions for Microsoft Entra ID Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/microsoftentraid)
-- Microsoft 365 — Permissions for Exchange Online Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/exchangeonline)
-- Microsoft 365 — Permissions for SharePoint Online Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/sharepointonline)
-- Microsoft 365 — Permissions for Teams Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10.8/configuration/microsoft365/teams)
+- Microsoft 365 — Permissions for Microsoft Entra ID Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10_8
+- Microsoft 365 — Permissions for Exchange Online Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10_8
+- Microsoft 365 — Permissions for SharePoint Online Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10_8
+- Microsoft 365 — Permissions for Teams Auditing ⸱ v10.6 https://docs.netwrix.com/docs/auditor/10_8

@@ -31,7 +31,7 @@ The system cannot find the file specified.
 
 ## Cause
 
-The .NET Framework version installed in your environment does not comply with the software requirements for **Netwrix Auditor**. Refer to the following article for additional information: [Software Requirements ⸱ v10.6](/docs/auditor/10.8/requirements/software).
+The .NET Framework version installed in your environment does not comply with the software requirements for **Netwrix Auditor**. Refer to the following article for additional information: [Software Requirements ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/requirements/software).
 
 ## Resolution
 
@@ -39,5 +39,5 @@ Update the .NET Framework version in both the **Auditor** server and affected cl
 
 ## Related Articles
 
-- [Software Requirements ⸱ v10.6](/docs/auditor/10.8/requirements/software)
+- [Software Requirements ⸱ v10.6](https://docs.netwrix.com/docs/auditor/10_8/requirements/software)
 - [Download .NET Framework 4.8.1 ⸱ Microsoft 🡥](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net481)

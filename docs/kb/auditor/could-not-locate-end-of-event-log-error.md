@@ -48,15 +48,15 @@ Could not locate the end of the event log for '%item_name%'. The event log might
 
 ### Cause #1 − Incorrectly configured maximum log size
 
-Review retention settings for the target logs − refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver (Windows Server − Adjusting Event Log Size and Retention Settings · v10.6).
+Review retention settings for the target logs − refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8 Server − Adjusting Event Log Size and Retention Settings · v10.6).
 
 ### Cause #2 −Insufficient hardware resources
 
-Review the hardware resources of your Netwrix Auditor server − refer to the following article for for additional information on sample deployment scenarios depending on the enivornment size: https://docs.netwrix.com/docs/auditor/10.8/requirements (Requirements − Sample Deployment Scenarios · v10.6).
+Review the hardware resources of your Netwrix Auditor server − refer to the following article for for additional information on sample deployment scenarios depending on the enivornment size: https://docs.netwrix.com/docs/auditor/10_8 − Sample Deployment Scenarios · v10.6).
 
 ### Cause #3 − Network traffic compression option is disabled
 
-Enable the network traffic compression option − refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/admin/healthstatus (Netwrix Auditor Operations and Health − Network Traffic Compression · v10.6).
+Enable the network traffic compression option − refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8 (Netwrix Auditor Operations and Health − Network Traffic Compression · v10.6).
 
 ### Cause #4 − Settings are reverted
 
@@ -68,6 +68,6 @@ Specify the maximum log size and action settings for the affected event log:
 
 ## Related articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/configuration/windowsserver (Windows Server − Adjusting Event Log Size and Retention Settings · v10.6)
-- https://docs.netwrix.com/docs/auditor/10.8/requirements (Requirements − Sample Deployment Scenarios · v10.6)
-- https://docs.netwrix.com/docs/auditor/10.8/admin/healthstatus (Netwrix Auditor Operations and Health − Network Traffic Compression · v10.6)
+- https://docs.netwrix.com/docs/auditor/10_8 Server − Adjusting Event Log Size and Retention Settings · v10.6)
+- https://docs.netwrix.com/docs/auditor/10_8 − Sample Deployment Scenarios · v10.6)
+- https://docs.netwrix.com/docs/auditor/10_8 (Netwrix Auditor Operations and Health − Network Traffic Compression · v10.6)

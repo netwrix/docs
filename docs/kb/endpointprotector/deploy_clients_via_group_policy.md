@@ -76,4 +76,4 @@ This article explains how to deploy Endpoint Protector client software to Window
 
 > **NOTE:** The new policies will be applied only after the target computers are rebooted.
 
-For more information, see the [Endpoint Protector User Manual](/docs/endpointprotector/5.9.4.2/admin/overview).
+For more information, see the [Endpoint Protector User Manual](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/admin/overview).

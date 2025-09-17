@@ -34,7 +34,7 @@ Refer to the entries below for possible causes and resolutions based on event de
 ### `Fatal error during installation`
 
 - Cause: The **Timeout expired** error is prompted after SharePoint Core Service installation has taken over 10 minutes.
-  **Resolution:** Refer to the following article for additional information: https://docs.netwrix.com/docs/kb/auditor/timeout-expired-error-on-sharepoint-core-service-deployment (Timeout Expired Error on SharePoint Core Service Deployment).
+  **Resolution:** Refer to the following article for additional information: /docs/kb/auditor/timeout-expired-error-on-sharepoint-core-service-deployment (Timeout Expired Error on SharePoint Core Service Deployment).
 
 - Cause: An invalid SharePoint Central Administration URL was specified during monitoring plan creation.  
   **Resolution:**
@@ -54,7 +54,7 @@ Refer to the entries below for possible causes and resolutions based on event de
   **Resolution:**
   1. Specify a different data collecting account for the affected monitoring plan or grant corresponding permissions to the current account:
      - Navigate to your SharePoint monitoring plan > **Edit Item** > **General**, and enter user name and password for the custom account.
-     - Grant the current account the necessary rights and permissions — refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/configuration/sharepoint (SharePoint − Permissions for SharePoint Auditing · v10.6).
+     - Grant the current account the necessary rights and permissions — refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8 (SharePoint − Permissions for SharePoint Auditing · v10.6).
 
 - Cause: SharePoint Central Administration is not functioning properly due to connection problems with the SharePoint Configuration Database, or some other unexpected error.  
   **Resolution:**
@@ -72,7 +72,7 @@ Refer to the entries below for possible causes and resolutions based on event de
 
 - Cause: The port of SharePoint Central Administration is blocked in the Windows Firewall settings in the target server, or in the Netwrix Auditor host.  
   **Resolution:**
-  1. Refer to the following article for additional information on required ports: https://docs.netwrix.com/docs/auditor/10.8/configuration/sharepoint (SharePoint − SharePoint Ports · v10.6).
+  1. Refer to the following article for additional information on required ports: https://docs.netwrix.com/docs/auditor/10_8 (SharePoint − SharePoint Ports · v10.6).
 
 - Cause: The computer that hosts SharePoint Central Administration is not reachable.  
   **Resolution:**
@@ -96,7 +96,7 @@ Refer to the entries below for possible causes and resolutions based on event de
   **Resolution:**
   1. Specify a different data collecting account for the affected monitoring plan or grant corresponding permissions to the current account:
      - Navigate to your SharePoint monitoring plan > **Edit Item** > **General**, and enter user name and password for the custom account.
-     - Grant the current account the necessary rights and permissions — refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10.8/configuration/sharepoint (SharePoint − Permissions for SharePoint Auditing · v10.6).
+     - Grant the current account the necessary rights and permissions — refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8 (SharePoint − Permissions for SharePoint Auditing · v10.6).
 
 ### `The system cannot find the file specified.`
 
@@ -110,11 +110,11 @@ Refer to the entries below for possible causes and resolutions based on event de
   **Resolution:**
   1. Retry installation:
      - To retry the automatic deployment, update the SharePoint monitoring plan.
-     - For additional information on manual installation of SharePoint Core Service, refer to the following article: https://docs.netwrix.com/docs/auditor/10.8/install (Installation − Install for SharePoint Core Service · v10.6).
+     - For additional information on manual installation of SharePoint Core Service, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8 − Install for SharePoint Core Service · v10.6).
 
 ## Related articles
 
-- Timeout Expired Error on SharePoint Core Service Deployment — https://docs.netwrix.com/docs/kb/auditor/timeout-expired-error-on-sharepoint-core-service-deployment  
-- SharePoint − Permissions for SharePoint Auditing · v10.6 — https://docs.netwrix.com/docs/auditor/10.8/configuration/sharepoint  
-- SharePoint − SharePoint Ports · v10.6 — https://docs.netwrix.com/docs/auditor/10.8/configuration/sharepoint  
-- Installation − Install for SharePoint Core Service · v10.6 — https://docs.netwrix.com/docs/auditor/10.8/install
+- Timeout Expired Error on SharePoint Core Service Deployment — /docs/kb/auditor/timeout-expired-error-on-sharepoint-core-service-deployment  
+- SharePoint − Permissions for SharePoint Auditing · v10.6 — https://docs.netwrix.com/docs/auditor/10_8  
+- SharePoint − SharePoint Ports · v10.6 — https://docs.netwrix.com/docs/auditor/10_8  
+- Installation − Install for SharePoint Core Service · v10.6 — https://docs.netwrix.com/docs/auditor/10_8

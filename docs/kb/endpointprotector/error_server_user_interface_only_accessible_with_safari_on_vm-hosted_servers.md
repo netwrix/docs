@@ -22,7 +22,7 @@ This article explains how to resolve an issue where the Endpoint Protector Serve
 ## Instructions
 
 1. Access the VM where the Endpoint Protector server is hosted.
-2. Validate the networking settings are configured correctly. For detailed guidance, see the [Endpoint Protector Setup Wizard – Network Settings](/docs/endpointprotector/5.9.4.2/install/virtualappliance/setupwizard) documentation.
+2. Validate the networking settings are configured correctly. For detailed guidance, see the [Endpoint Protector Setup Wizard – Network Settings](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/install/virtualappliance/setupwizard) documentation.
 3. Ensure that the gateway is configured and added.
 4. Save the settings.
 

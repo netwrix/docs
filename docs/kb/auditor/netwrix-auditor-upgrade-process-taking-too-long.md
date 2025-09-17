@@ -33,7 +33,7 @@ Depending on the version you're upgrading from and to, there could be major chan
 
 Refer to the following steps in case your upgrade process takes over 20 hours to complete:
 
-- Add corresponding exclusions to the monitoring scope of your antivirus suite — refer to the following article for additional information: [Antivirus Exclusions for Netwrix Auditor](https://docs.netwrix.com/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md).
+- Add corresponding exclusions to the monitoring scope of your antivirus suite — refer to the following article for additional information: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md).
 
 - Clear the temporary folder:
 

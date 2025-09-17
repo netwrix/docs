@@ -117,9 +117,9 @@ You can edit and customize the notification and report templates in Netwrix Pass
 
 ### Edit email header and footer
 
-You can disable header and footer in Netwrix Password Reset emails. Refer to the following article for additional information: [Hide and Disable Header and Footer in Password Expiration Notifier Emails](https://docs.netwrix.com/docs/kb/auditor/hide-and-disable-header-and-footer-in-password-expiration-notifier-emails.md).
+You can disable header and footer in Netwrix Password Reset emails. Refer to the following article for additional information: [Hide and Disable Header and Footer in Password Expiration Notifier Emails](/docs/kb/auditor/hide-and-disable-header-and-footer-in-password-expiration-notifier-emails.md).
 
 ## Related articles
 
-- [Hide and Disable Header and Footer in Password Expiration Notifier Emails](https://docs.netwrix.com/docs/kb/auditor/hide-and-disable-header-and-footer-in-password-expiration-notifier-emails.md)
+- [Hide and Disable Header and Footer in Password Expiration Notifier Emails](/docs/kb/auditor/hide-and-disable-header-and-footer-in-password-expiration-notifier-emails.md)
 - [All attributes ⸱ Microsoft 🡺](https://learn.microsoft.com/en-us/windows/win32/adschema/attributes-all)

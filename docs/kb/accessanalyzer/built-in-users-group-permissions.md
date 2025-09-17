@@ -35,8 +35,8 @@ The use of the **Users** group is not required—Netwrix Access Analyzer impleme
 C:\Program Files (x86)\STEALTHbits\StealthAUDIT\
 ```
 
-Refer to the following article for additional information on Role Based Access to the Netwrix Access Analyzer console: https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/settings/access/rolebased (Access — Role Based Access · v11.6).
+Refer to the following article for additional information on Role Based Access to the Netwrix Access Analyzer console: https://docs.netwrix.com/docs/auditor/10_8 (Access — Role Based Access · v11.6).
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/addon/admin-guide/settings/access/rolebased (Access — Role Based Access · v11.6)
+- https://docs.netwrix.com/docs/auditor/10_8 (Access — Role Based Access · v11.6)

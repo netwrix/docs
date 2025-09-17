@@ -30,6 +30,6 @@ The same Netwrix Auditor-related executable files are being regularly removed an
 
 ## Answer
 
-Yes, this behavior is to be expected — these executable files represent the network traffic compression service running on domain controllers. The use of the up-to-date version of compression service executables is ensured when copying these files on every data collection. The compression service collects and pre-filters data to send it to your Netwrix Auditor server in a highly compressed format. For additional information on network traffic compression service, refer to the following article: [How the Network Traffic Compression Service Works](https://docs.netwrix.com/docs/kb/auditor/how-the-network-traffic-compression-service-works.md).
+Yes, this behavior is to be expected — these executable files represent the network traffic compression service running on domain controllers. The use of the up-to-date version of compression service executables is ensured when copying these files on every data collection. The compression service collects and pre-filters data to send it to your Netwrix Auditor server in a highly compressed format. For additional information on network traffic compression service, refer to the following article: [How the Network Traffic Compression Service Works](/docs/kb/auditor/how-the-network-traffic-compression-service-works.md).
 
 > **IMPORTANT:** While not recommended, you can disable the compression service. Refer to the following article for additional information on monitoring plan setup: Monitoring Plans — Create a New Plan.

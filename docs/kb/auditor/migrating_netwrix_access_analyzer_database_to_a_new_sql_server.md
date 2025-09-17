@@ -77,7 +77,7 @@ GO
 ALTER USER [<SA User ID>] WITH DEFAULT_SCHEMA = dbo
 ```
 
-> **NOTE:** If Role-Based Access is used, make sure all required database roles are copied or recreated in the new database. For more information, see [Configuring Roles in Access Analyzer](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/settings/access/rolebased/configureroles).
+> **NOTE:** If Role-Based Access is used, make sure all required database roles are copied or recreated in the new database. For more information, see [Configuring Roles in Access Analyzer](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/access/rolebased/configureroles).
 
 ### 4. Update Access Analyzer Storage Configuration
 
@@ -87,20 +87,20 @@ After restoring the database and setting permissions, follow these steps to reco
 2. When the console opens, an error message may appear stating the database cannot be reached. This is expected.
 3. Close the error window.
 4. Select **Add New Storage Profile**.  
-   > **NOTE:** For more details, see [Add a Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/settings/storage/add).
+   > **NOTE:** For more details, see [Add a Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/storage/add).
 5. Enter the connection details for the new SQL Server and database.
 6. Test connectivity and ensure the console connects successfully.
 7. Select the **Set as Default** option on the new storage profile.  
-   > **NOTE:** For more details, see [Set a Default Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/settings/storage/default).
+   > **NOTE:** For more details, see [Set a Default Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/storage/default).
 8. Close and reopen **Access Analyzer** to verify persistent connectivity.
 9. Once you have confirmed successful reconnection, delete the old storage profile.  
-   > **NOTE:** For more details, see [Delete a Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/settings/storage/delete).
+   > **NOTE:** For more details, see [Delete a Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/storage/delete).
 
 ## Related Links
 
-- [Configuring Roles in Access Analyzer](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/settings/access/rolebased/configureroles)
-- [Managing Storage in Access Analyzer](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/settings/storage/overview)
+- [Configuring Roles in Access Analyzer](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/access/rolebased/configureroles)
+- [Managing Storage in Access Analyzer](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/storage/overview)
 - [Move a Database ⸱ Microsoft 🡥](https://learn.microsoft.com/en-us/data-migration/)
-- [Add a Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/settings/storage/add)
-- [Set a Default Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/settings/storage/default)
-- [Delete a Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12.0/admin/settings/storage/delete)
+- [Add a Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/storage/add)
+- [Set a Default Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/storage/default)
+- [Delete a Storage Profile](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/storage/delete)

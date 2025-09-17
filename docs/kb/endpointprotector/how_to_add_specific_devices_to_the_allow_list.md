@@ -33,4 +33,4 @@ This article explains how to add specific devices to the allow list using the we
 
 ## Related Links
 
-- [Set Rights for a Specific Device](https://docs.netwrix.com/docs/kb/endpointprotector/set-rights-for-a-specific-device)
+- [Set Rights for a Specific Device](/docs/kb/endpointprotector/set-rights-for-a-specific-device.md)

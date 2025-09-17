@@ -39,9 +39,9 @@ Invalid user credentials. Update your settings if necessary or proceed with curr
 
 ## Resolutions
 
-- Review the permissions granted to the SSRS account − refer to the following article for additional information on the initial setup: https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
+- Review the permissions granted to the SSRS account − refer to the following article for additional information on the initial setup: https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
 - Review the credentials specified for the SSRS account.
 
 ## Related articles
 
-- https://docs.netwrix.com/docs/auditor/10.8/requirements/overview.md
+- https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
