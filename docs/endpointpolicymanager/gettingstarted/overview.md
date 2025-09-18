@@ -13,15 +13,15 @@ working with Netwrix Endpoint Policy Manager (formerly PolicyPak) quickly.
 
 Select the deployment method that matches your environment:
 
-- **[Cloud](./cloud/)** - For Endpoint Policy Manager Cloud deployments
-- **[Group Policy](./grouppolicy/)** - For traditional Active Directory environments
-- **[MDM](./mdm/)** - For mobile device management and modern management
-- **[Misc](./misc/)** - General getting started information and support resources
+- **Cloud** - For Endpoint Policy Manager Cloud deployments
+- **Group Policy** - For traditional Active Directory environments
+- **MDM** - For mobile device management and modern management
+- **Misc** - General getting started information and support resources
 
 ## Quick Resources
 
-- **[Support and Resources](./fastest.md)** - Fast support options and important resources
-- **[General Getting Started Information](./misc/)** - Basic concepts, tips, and FAQs
+- **Support and Resources** - Fast support options and important resources
+- **General Getting Started Information** - Basic concepts, tips, and FAQs
 
 ## The Portal and Downloads
 

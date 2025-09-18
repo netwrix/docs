@@ -9,10 +9,10 @@ This manual provides comprehensive information about Browser Router, a component
 
 ## Manual Sections
 
-- [Getting to Know Browser Router](gettingtoknow) - Overview and basic concepts
-- [Understanding Default Browser Policies](understandingdefaultbrowser) - How default browser management works
-- [Configuration](configuration) - Rules, targeting, and advanced settings  
-- [Internet Explorer](internetexplorer) - IE-specific configuration and features
+- Getting to Know Browser Router - Overview and basic concepts
+- Understanding Default Browser Policies - How default browser management works
+- Configuration - Rules, targeting, and advanced settings
+- Internet Explorer - IE-specific configuration and features
 
 ## Overview
 
@@ -27,7 +27,7 @@ Browser Router solves the common problem of ensuring the right browser opens for
 
 ### Getting Started
 
-1. Start with [Getting to Know Browser Router](gettingtoknow) to understand the basics
-2. Learn about [Configuration](configuration) to set up routing rules
-3. Check [Internet Explorer](internetexplorer) settings if using IE routing
-4. Review [Understanding Default Browser Policies](understandingdefaultbrowser) for advanced scenarios
+1. Start with Getting to Know Browser Router to understand the basics
+2. Learn about Configuration to set up routing rules
+3. Check Internet Explorer settings if using IE routing
+4. Review Understanding Default Browser Policies for advanced scenarios

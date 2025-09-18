@@ -10,20 +10,20 @@ Remote Work Delivery Manager provides centralized software deployment and manage
 
 ## Quick Links
 
-### 📖 [Manual](./manual/)
+### 📖 Manual
 Complete documentation for using Remote Work Delivery Manager:
 - **Cloud and MDM Integration** - Deploy via cloud services
 - **Export Collections** - Package and distribute software
 - **Configuration** - Advanced deployment settings
 
-### 🎥 [Videos](./videos/) 
+### 🎥 Videos
 Video tutorials and demonstrations:
 - Getting Started guides
 - Mass deployment methods
 - SMB and web-based shares
 - Cloud integration tutorials
 
-### 🔧 [Tech Notes](./technotes/)
+### 🔧 Tech Notes
 Technical information and troubleshooting:
 - Installation tips and tricks
 - Variable usage and configuration
@@ -38,4 +38,4 @@ Technical information and troubleshooting:
 - Support for various file share methods
 - Integration with Azure Blob Storage and web services
 
-Start with the [Manual](./manual/) section to learn the basics, then explore specific topics as needed.
+Start with the Manual section to learn the basics, then explore specific topics as needed.

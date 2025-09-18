@@ -9,9 +9,9 @@ Technical documentation for Scripts and Triggers Manager installation, scripting
 
 ## Technical Sections
 
-- [Installation and Uninstallation](installation) - Setup and deployment procedures
-- [Troubleshooting](troubleshooting) - Script debugging and issue resolution
-- [Tips and Tricks](tipsandtricks) - Advanced scripting techniques
+- Installation and Uninstallation - Setup and deployment procedures
+- Troubleshooting - Script debugging and issue resolution
+- Tips and Tricks - Advanced scripting techniques
 
 ## Overview
 

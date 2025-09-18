@@ -10,20 +10,20 @@ GP Compliance Reporter is a powerful component of Endpoint Policy Manager that p
 
 ## Quick Links
 
-### 📖 [Manual](./manual/)
+### 📖 Manual
 Complete documentation for using GP Compliance Reporter:
 - **Installation and Setup** - Get started with GP Compliance Reporter
 - **Configuration** - Configure reporting and compliance settings
 - **Advanced Features** - Leverage advanced reporting capabilities
 
-### 🎥 [Videos](./videos/) 
+### 🎥 Videos
 Video tutorials and demonstrations:
 - Getting Started guides
 - Configuration tutorials
 - Best practices and tips
 - Troubleshooting scenarios
 
-### 🔧 [Tech Notes](./technotes/)
+### 🔧 Tech Notes
 Technical information and troubleshooting:
 - Licensing and setup guides
 - Installation troubleshooting
@@ -41,4 +41,4 @@ Technical information and troubleshooting:
 
 ## Getting Started
 
-Start with the [Manual](./manual/) section to learn the basics and get GP Compliance Reporter installed and configured in your environment.
+Start with the Manual section to learn the basics and get GP Compliance Reporter installed and configured in your environment.

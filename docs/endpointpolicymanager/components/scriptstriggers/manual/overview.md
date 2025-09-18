@@ -9,9 +9,9 @@ This manual provides comprehensive information about Scripts and Triggers Manage
 
 ## Manual Sections
 
-- [Getting to Know Scripts and Triggers Manager](gettingtoknow) - Overview and basic concepts
-- [Configuration](configuration) - Script setup and trigger configuration
-- [Item Level Targeting](itemleveltargeting) - Advanced targeting and filtering
+- Getting to Know Scripts and Triggers Manager - Overview and basic concepts
+- Configuration - Script setup and trigger configuration
+- Item Level Targeting - Advanced targeting and filtering
 
 ## Overview
 
@@ -26,6 +26,6 @@ Scripts and Triggers Manager transforms static Group Policy environments into dy
 
 ### Getting Started
 
-1. Start with [Getting to Know Scripts and Triggers Manager](gettingtoknow) for fundamental concepts
-2. Learn [Configuration](configuration) for setting up scripts and triggers
-3. Use [Item Level Targeting](itemleveltargeting) for advanced deployment scenarios
+1. Start with Getting to Know Scripts and Triggers Manager for fundamental concepts
+2. Learn Configuration for setting up scripts and triggers
+3. Use Item Level Targeting for advanced deployment scenarios

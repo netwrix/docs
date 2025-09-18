@@ -9,9 +9,9 @@ Technical documentation for Device Manager installation, configuration, and trou
 
 ## Technical Sections
 
-- [Installation and Uninstallation](installation) - Setup and deployment procedures
-- [Troubleshooting](troubleshooting) - Issue resolution and diagnostics
-- [Tips and Tricks](tipsandtricks) - Advanced configuration techniques
+- Installation and Uninstallation - Setup and deployment procedures
+- Troubleshooting - Issue resolution and diagnostics
+- Tips and Tricks - Advanced configuration techniques
 
 ## Overview
 

@@ -10,7 +10,7 @@ Security Settings Manager enables administrators to harness the power of Microso
 
 ## Quick Links
 
-### 📖 [Manual](./manual/)
+### 📖 Manual
 Complete documentation for using Security Settings Manager:
 - **Overview** - Getting started with security settings
 - **Export Wizard** - Exporting security settings for deployment

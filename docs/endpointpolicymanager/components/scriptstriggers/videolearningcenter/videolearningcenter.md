@@ -9,11 +9,11 @@ Learn Scripts and Triggers Manager through comprehensive video tutorials coverin
 
 ## Video Categories
 
-- [Getting Started](gettingstarted) - Basic concepts and first scripts
-- [Methods: Cloud, MDM and SCCM](methods) - Deployment across different platforms
-- [Tips and Tricks](tipsandtricks) - Advanced techniques and best practices
-- [Triggers Examples](triggersexamples) - Real-world trigger scenarios and scripts
-- [With Cloud](withcloud) - Cloud-specific implementations and considerations
+- Getting Started - Basic concepts and first scripts
+- Methods: Cloud, MDM and SCCM - Deployment across different platforms
+- Tips and Tricks - Advanced techniques and best practices
+- Triggers Examples - Real-world trigger scenarios and scripts
+- With Cloud - Cloud-specific implementations and considerations
 
 ## Featured Topics
 

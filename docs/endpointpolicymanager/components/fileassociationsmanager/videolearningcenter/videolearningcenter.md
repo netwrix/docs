@@ -9,9 +9,9 @@ Learn File Associations Manager through comprehensive video tutorials covering s
 
 ## Video Categories
 
-- [Getting Started](gettingstarted) - Basic concepts and initial setup
-- [Methods: Cloud, MDM and SCCM](methods) - Deployment and management methods
-- [Tips and Tricks](tipsandtricks) - Advanced techniques and best practices
+- Getting Started - Basic concepts and initial setup
+- Methods: Cloud, MDM and SCCM - Deployment and management methods
+- Tips and Tricks - Advanced techniques and best practices
 
 ## Featured Topics
 

@@ -9,17 +9,17 @@ Learn Browser Router through comprehensive video tutorials covering everything f
 
 ## Video Categories
 
-- [Getting Started](gettingstarted) - Basic concepts and first steps
-- [Methods: Cloud, MDM and SCCM](methods) - Deployment and management methods
-- [Tips and Tricks](tipsandtricks) - Advanced techniques and best practices
-- [Citrix Virtual Apps](citrixvirtualapps) - Citrix-specific configurations
+- Getting Started - Basic concepts and first steps
+- Methods: Cloud, MDM and SCCM - Deployment and management methods
+- Tips and Tricks - Advanced techniques and best practices
+- Citrix Virtual Apps - Citrix-specific configurations
 
 ## Featured Videos
 
 ### Getting Started
 Perfect for new users who want to understand Browser Router fundamentals and see it in action.
 
-### Deployment Methods  
+### Deployment Methods
 Learn how to deploy and manage Browser Router using different enterprise methods including Cloud, MDM, and SCCM.
 
 ### Advanced Techniques

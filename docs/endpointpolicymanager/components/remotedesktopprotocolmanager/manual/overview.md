@@ -10,10 +10,10 @@ This manual covers all aspects of using Remote Desktop Protocol Manager to confi
 
 ## Getting Started
 
-### [Getting to Know RDP Manager](./gettingtoknow/)
+### Getting to Know RDP Manager
 Learn the basics of Remote Desktop Protocol Manager, including the interface and core concepts.
 
-### [Configuration](./configuration/)
+### Configuration
 Advanced configuration options including item-level targeting and process order precedence.
 
 ## Key Topics
@@ -25,8 +25,8 @@ Advanced configuration options including item-level targeting and process order 
 
 ## Quick Links
 
-- [Main RDP Manager Overview](../overview.md)
-- [Videos](../videolearningcenter/)
-- [Tech Notes](../knowledgebase/)
+- Main RDP Manager Overview
+- Videos
+- Tech Notes
 
-Get started by exploring the [Getting to Know RDP Manager](./gettingtoknow/) section.
+Get started by exploring the Getting to Know RDP Manager section.

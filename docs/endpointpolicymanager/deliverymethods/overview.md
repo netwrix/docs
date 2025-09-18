@@ -13,21 +13,21 @@ Netwrix Endpoint Policy Manager supports multiple delivery methods to suit diffe
 ### Cloud Delivery
 Modern cloud-based deployment for organizations wanting to minimize on-premises infrastructure:
 
-- **[Cloud Manual](/docs/endpointpolicymanager/deliverymethods/cloud/)** - Comprehensive cloud deployment guidance
+- **Cloud Manual** - Comprehensive cloud deployment guidance
 - **Key Benefits**: No server infrastructure required, automatic updates, simplified management
 - **Best For**: Organizations with cloud-first strategies, remote workforces, simplified IT environments
 
 ### Group Policy Delivery
 Traditional Active Directory Group Policy deployment for domain-joined environments:
 
-- **[Group Policy](/docs/endpointpolicymanager/deliverymethods/grouppolicy/)** - Complete Group Policy implementation guide
+- **Group Policy** - Complete Group Policy implementation guide
 - **Key Benefits**: Leverages existing AD infrastructure, familiar to Windows administrators, centralized policy management
 - **Best For**: Domain-joined environments, organizations with established AD infrastructure
 
 ### MDM Delivery
 Mobile Device Management integration for modern device management scenarios:
 
-- **[MDM Manual](/docs/endpointpolicymanager/deliverymethods/mdm/)** - MDM deployment and configuration guide
+- **MDM Manual** - MDM deployment and configuration guide
 - **Key Benefits**: Integrates with existing MDM solutions, supports BYOD scenarios, modern device management
 - **Best For**: Mixed environments, BYOD programs, organizations using Microsoft Intune or other MDM solutions
 

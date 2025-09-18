@@ -17,13 +17,13 @@ Scripts and Triggers Manager is a component of Endpoint Policy Manager (PolicyPa
 
 ## Documentation Sections
 
-- [Manual](manual/) - Configuration guides and scripting reference
-- [Videos](videolearningcenter/) - Video tutorials and examples
-- [Tech Notes](knowledgebase/) - Technical guidance and troubleshooting
+- Manual - Configuration guides and scripting reference
+- Videos - Video tutorials and examples
+- Tech Notes - Technical guidance and troubleshooting
 
 ## Quick Links
 
-- [Script Configuration](manual/configuration)
-- [Getting Started Videos](videolearningcenter/gettingstarted)
-- [Trigger Examples](videolearningcenter/triggersexamples)
-- [Troubleshooting](knowledgebase/troubleshooting)
+- Script Configuration
+- Getting Started Videos
+- Trigger Examples
+- Troubleshooting

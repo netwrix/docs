@@ -9,9 +9,9 @@ Technical documentation for Browser Router installation, troubleshooting, and ad
 
 ## Technical Sections
 
-- [Installation and Uninstallation](installation) - Setup procedures and requirements
-- [Troubleshooting](troubleshooting) - Common issues and solutions
-- [Tips and Tricks](tipsandtricks) - Advanced techniques and best practices
+- Installation and Uninstallation - Setup procedures and requirements
+- Troubleshooting - Common issues and solutions
+- Tips and Tricks - Advanced techniques and best practices
 
 ## Installation Guide
 
@@ -22,7 +22,7 @@ Browser Router integrates with your existing management infrastructure. Whether 
 When Browser Router isn't working as expected, our comprehensive troubleshooting section helps you identify and resolve issues quickly. Common topics include:
 
 - Browser extension conflicts
-- Routing rule problems  
+- Routing rule problems
 - Chrome and Firefox specific issues
 - Network and security considerations
 
@@ -32,4 +32,4 @@ Learn advanced techniques and best practices from real-world implementations. Ou
 
 ---
 
-*For immediate support needs, see our [Contact Support](troubleshooting/contactsupport) section.*
+*For immediate support needs, see our [Contact Support](/docs/endpointpolicymanager/components/browserrouter/knowledgebase/troubleshooting/contactsupport.md) section.*

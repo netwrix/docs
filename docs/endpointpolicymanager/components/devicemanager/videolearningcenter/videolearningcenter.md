@@ -9,8 +9,8 @@ Learn Device Manager through video tutorials covering device policies, configura
 
 ## Video Categories
 
-- [Getting Started](gettingstarted) - Basic concepts and initial configuration
-- [Methods: Cloud, MDM and SCCM](methods) - Deployment and management approaches
+- Getting Started - Basic concepts and initial configuration
+- Methods: Cloud, MDM and SCCM - Deployment and management approaches
 
 ## Featured Topics
 

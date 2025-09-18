@@ -10,11 +10,11 @@ Endpoint Privilege Manager (formerly Least Privilege Manager) enables you to get
 
 ## Quick Links
 
-### 📖 [Manual](./manual/)
+### 📖 Manual
 Complete documentation for using Endpoint Privilege Manager:
 - **Windows** - Windows-based privilege management
 - **macOS** - macOS client configuration and management
 
-### 🔧 [Tech Notes](./technotes/)
+### 🔧 Tech Notes
 Implementation guides and technical documentation:
 - **Implementation QuickStart Guide** - Step-by-step setup procedures

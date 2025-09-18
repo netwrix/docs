@@ -17,13 +17,13 @@ Browser Router is a powerful component of Endpoint Policy Manager (PolicyPak) th
 
 ## Documentation Sections
 
-- [Manual](manual/) - Comprehensive documentation and configuration guides
-- [Videos](videolearningcenter/) - Video tutorials and demonstrations  
-- [Tech Notes](knowledgebase/) - Installation, troubleshooting, and tips
+- Manual - Comprehensive documentation and configuration guides
+- Videos - Video tutorials and demonstrations
+- Tech Notes - Installation, troubleshooting, and tips
 
 ## Quick Links
 
-- [Understanding Browser Routing Rules](manual/configuration/rules)
-- [Installation Guide](knowledgebase/installation)
-- [Troubleshooting Guide](knowledgebase/troubleshooting)
-- [Getting Started Videos](videolearningcenter/gettingstarted)
+- Understanding Browser Routing Rules
+- Installation Guide
+- Troubleshooting Guide
+- Getting Started Videos

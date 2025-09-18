@@ -9,9 +9,9 @@ Technical documentation for File Associations Manager installation, troubleshoot
 
 ## Technical Sections
 
-- [Installation and Uninstallation](installation) - Setup procedures and requirements
-- [Troubleshooting](troubleshooting) - Common issues and solutions
-- [Tips and Tricks](tipsandtricks) - Advanced techniques and best practices
+- Installation and Uninstallation - Setup procedures and requirements
+- Troubleshooting - Common issues and solutions
+- Tips and Tricks - Advanced techniques and best practices
 
 ## Overview
 

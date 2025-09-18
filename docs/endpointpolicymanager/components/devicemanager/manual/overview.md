@@ -9,8 +9,8 @@ This manual provides comprehensive information about Device Manager, a component
 
 ## Manual Sections
 
-- [Getting to Know Device Manager](gettingtoknow) - Overview and basic concepts
-- [Configuration](configuration) - Policy setup and device rules
+- Getting to Know Device Manager - Overview and basic concepts
+- Configuration - Policy setup and device rules
 
 ## Overview
 
@@ -25,5 +25,5 @@ Device Manager addresses the security challenge of controlling hardware device a
 
 ### Getting Started
 
-1. Review [Getting to Know Device Manager](gettingtoknow) for fundamental concepts
-2. Configure policies using [Configuration](configuration) guides
+1. Review Getting to Know Device Manager for fundamental concepts
+2. Configure policies using Configuration guides

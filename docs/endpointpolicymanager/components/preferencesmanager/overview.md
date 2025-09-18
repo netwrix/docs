@@ -10,7 +10,7 @@ Preferences Manager enables administrators to harness the power of Microsoft's G
 
 ## Quick Links
 
-### 📖 [Manual](./manual/)
+### 📖 Manual
 Complete documentation for using Preferences Manager:
 - **Overview** - Getting started with preferences management
 - **Setup** - Configuration and setup procedures
