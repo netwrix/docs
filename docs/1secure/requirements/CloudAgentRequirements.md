@@ -50,7 +50,8 @@ To review the security incorporated by the agent in your system, examine the tar
 
 This should show as:
 
-`https://1secure-agent-us.netwrix.com/api`
+`https://1secure-agent-us.netwrix.com/api` for the Americas.
+`https://1secure-agent-eu.netwrix.com/api` for the European Union.
 
 You must also open the outbound TCP port 443 on the server where the Netwrix Cloud Agent resides.
 See the [Install Agent](/docs/1secure/install/installagent.md) topic
