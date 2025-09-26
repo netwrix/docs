@@ -1,4 +1,28 @@
-# How to Configure File System Delete Action to Prevent "File Missing" Errors
+---
+description: >-
+  Learn how to configure the File System delete action in Netwrix Enterprise
+  Auditor to target files directly, avoid misleading 'file missing' errors, and
+  ensure reliable job execution with proper input table mapping and permissions.
+keywords:
+  - file missing error
+  - delete action
+  - file system action
+  - Netwrix Enterprise Auditor
+  - StealthAUDIT
+  - SG_LocalAdmins
+  - input.db
+  - UNC path
+  - privileged accounts
+  - job configuration
+products:
+  - enterprise-auditor
+sidebar_label: 'Configuring Delete Action to Target Files'
+tags: [How to]
+title: 'Configuring Delete Action to Target Files'
+knowledge_article_id: ka0Qk000000GEF7IAO
+---
+
+# Configuring Delete Action to Target Files
 
 ## Related Query
 
