@@ -25,13 +25,14 @@ its reports. An organization is selected by default, but you can choose a differ
 **Step 3 –** Click the **Compliance** tab to access the compliance reports. This opens the
 Compliance page with the Group Membership report selected by default in the left pane.
 
-![Compliance Reports Page](/images/1secure/admin/searchandreports/reportscompliance.webp)
+![Compliance Reports Page](/images/1secure/admin/searchandreports/compliancereport.png)
 
 **Step 4 –** In the left pane, click a category to view its reports. Categories are:
 
 - [Active Directory](#active-directory)
 - [Microsoft Entra ID](#microsoft-entra-id)
 - [SharePoint Online](#sharepoint-online)
+- [Permissions](#permissions)
 
 **Step 5 –** Click a report to open it. Reports without a filter are automatically generated when
 you open them. Click **Search** to generate reports with a predefined filter set.
@@ -64,12 +65,17 @@ A list of the available Compliance reports(category-wise) is given below.
 | Name                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                |
 | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Broken Permissions Inheritance   | Lists objects with permissions that differ from their parent, such as a folder with permissions different from its parent site.                                                                                                                                                                                                                                                                                            |
+| Sensitive Documents              | Lists the documents that are classified according to the sensitive data types enabled in the SharePoint Online Data Classification connector. See step 7 in the [Add a Source and Connectors for SharePoint Online](/docs/1secure/admin/organizations/sourcesandconnectors/sharepointonline.md) topic for addition information.                                                                                                             |
+| Sharing Links                    | Provides an overview of all the active sharing links within your SharePoint Online site. For each record, it displays the site collection, URL of the shared resource, name of the shared object, link creation and expiration dates, link type, assigned permissions, and more. Click the "Shared with" link to see exactly who or which groups have access.                                                              |
+
+### Permissions
+
+| Name                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Direct Object Permissions        | Lists all identities (users or groups) that have assigned permissions to specific objects, such as documents, lists, or sites. Use this report to review which users or groups have access to data objects.                                                                                                                                                                                                                |
 | Direct User Permissions          | Lists user accounts with direct permissions to specific objects. Use this report to see which users have permissions to what data.                                                                                                                                                                                                                                                                                         |
 | High Risk Permissions            | Lists the permissions and permission levels of high-risk trustees, such as Everyone, Authenticated Users, and Everyone except external users.                                                                                                                                                                                                                                                                              |
 | Permissions Overview by Resource | Provides a summary of assigned permissions in your organization, including the count of direct user permissions, stale permissions, broken permission inheritance, and high-risk permissions for each object. Click any permissions value to navigate to the specific permissions report for the selected resource. For example, clicking a High Risk Permissions value will take you to the High Risk Permissions report. |
-| Sensitive Documents              | Lists the documents that are classified according to the sensitive data types enabled in the SharePoint Online Data Classification connector. See step 7 in the [Add a Source and Connectors for SharePoint Online](/docs/1secure/admin/organizations/sourcesandconnectors/sharepointonline.md) topic for addition information.                                                                                                             |
-| Sharing Links                    | Provides an overview of all the active sharing links within your SharePoint Online site. For each record, it displays the site collection, URL of the shared resource, name of the shared object, link creation and expiration dates, link type, assigned permissions, and more. Click the "Shared with" link to see exactly who or which groups have access.                                                              |
 
 **Sort a Report**
 
@@ -86,6 +92,29 @@ You can select more than one filter.
 
 For options displayed in the Operator drop-down menu, see the
 [Filter Operators ](/docs/1secure/admin/searchandreports/filteroperators.md)topic.
+
+**Save Custom Filter Views**
+
+You can save your applied filters as a custom view for quick access and future use. This allows you to:
+
+- Quickly reapply frequently used filter combinations
+- Create subscriptions based on your custom filtered view
+- Share consistent report configurations across your team
+
+To save a custom filter view:
+
+1. Apply the desired filters to your compliance report
+2. Click **Save View** 
+3. Enter a descriptive name for your custom view
+4. Click **Save**
+
+Your saved view will appear in the left navigation pane under the report category for easy access.
+
+**Subscribe to Compliance Reports**
+
+You can subscribe to compliance reports to receive them automatically via email, or have them uploaded to a specified folder in SharePoint Online. When you create a subscription from a custom filtered view, the subscription will preserve all applied filters and generate reports using the same filter criteria.
+
+Since compliance reports reflect the current state of your environment, subscriptions are based on frequency rather than time periods. See the [Subscriptions](/docs/1secure/admin/searchandreports/subscriptions.md) topic for additional information.
 
 ## Filter Descriptions
 

@@ -119,6 +119,10 @@ the following:
 - Advanced Activity Selection – Select this checkbox to choose the successful and failed actions to
   audit on the computer.
 
+    :::note
+    By default, Read activity is not available for auditing. Contact Netwrix support if you need it.
+    :::
+
 ![Advanced Activity Selection options](/images/1secure/configuration/computer/objectlevelaccessaudit.webp)
 
 **Step 10 –** Click **Finish**.
