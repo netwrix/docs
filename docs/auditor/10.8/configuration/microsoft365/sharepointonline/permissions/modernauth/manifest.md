@@ -26,7 +26,7 @@ Do one of the following:
 - If you upgraded Netwrix Auditor from the version 10.0, replace all existing content under the
   **requiredResourceAccess** property.
 
-```json
+```jsonc
 {
     "resourceAppId": "00000003-0000-0ff1-ce00-000000000000",
     "resourceAccess": [

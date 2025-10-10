@@ -26,7 +26,7 @@ Depending on your installation type, do one of the following:
 - If you upgraded Auditor from previous version, replace all existing content under the
   requiredResourcdAccess property.
 
-```json
+```jsonc
 {
     "resourceAppId": "00000003-0000-0000-c000-000000000000",
     "resourceAccess": [
