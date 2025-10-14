@@ -182,8 +182,11 @@ While the Registry Data Collector typically requires Domain Administrator permis
 a domain controller, that level of access is not required to run the 5.Domains > 0.Collection >
 AD_DSRM Job. The minimum requirements for running this job are:
 
-- Requires read access to the following Registry key and its children:  
+- Requires read access to the following Registry key and its children:
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa
+  HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg
+
+Alternatively, granting access to the Server Operators and Network Configuration Operators groups also allows read-only access to the Lsa and W32Time keys, respectively, just requiring access added to the winreg key
 
 **AD_TimeSync Job Permissions**
 
@@ -193,6 +196,9 @@ AD_TimeSync Job. The minimum requirements for running this job are:
 
 - Requires Read access to the following Registry keys and its children:
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time
+  HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg
+
+Alternatively, granting access to the Server Operators and Network Configuration Operators groups also allows read-only access to the Lsa and W32Time keys, respectively, just requiring access added to the winreg key
 
 **AD_DomainInfo Job Permissions**
 
