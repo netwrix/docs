@@ -17,11 +17,11 @@ This learning path grants <Company /> certification as a Sales Professional for 
 
 It contains the following course:
 
-* Introduction to the Netwrix Solution for Directory Management
+* Introduction to the <Company /> Solution for Directory Management
 
-## Introduction to the Netwrix Solution for Directory Management
+## Introduction to the <Company /> Solution for Directory Management
 
-This course, designed for sellers of Netwrix products, focuses on the <Company /> Directory Management Solution.
+This course, designed for sellers of <Company /> products, focuses on the <Company /> Directory Management Solution.
 
 Upon completion of this module, sellers will be able to:
 

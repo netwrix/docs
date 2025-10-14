@@ -14,19 +14,18 @@ Estimated length: 1.25 hours
 In this learning path, you will learn how to use <NPPE />. It contains the following courses:
 
 * 1240 <NPPE /> – Valuable Features
-* What's New in Netwrix Password Policy Enforcer v10.2
+* What's New in Netwrix Password Policy Enforcer v11.0
 
 <NPPEValue />
 
-## What's New in <NPPE /> v10.2
+## What's New in <NPPE /> v11.0
 
-Watch our customer webinar to learn about the newest updates and enhancements in <NPPE /> 10.2.
+Watch our customer webinar to learn about the key new features and enhancements in the latest version of <NPPE />.
 
-Tyler Reese, Director of Product Management, and Maurice Lethbridge, Solutions Engineer, will show you how to:
-
-* Download the most recent HIBP hash list and incremental updates directly from <Company />.
-* Automatically expire passwords when a compromised one is found.
-* Bulk test passwords against your policies and get a report.
-* Provide users real-time password feedback based on applied policies.
+During the session, you will learn how to:
+* Navigate the new user interface and installer
+* Manage policies, generate reports, and perform health checks with new PowerShell cmdlets
+* Perform health checks on your installation and configuration
+* Use <NPPE /> Web for password changes via any web browser
 
 Estimated length: 1 hour

@@ -1,9 +1,9 @@
 ---
-title: Netwrix 1Secure Data Security Posture Management MSPs Sales Professional
+title: Netwrix 1Secure Sales Professional
 sidebar_position: 1050
-tags: [certification, partners, sales, 1secure, data-security-posture-management]
-keywords: [training, course, certification, partners, sales, 1secure, data security posture management]
-description: "Become a certified Sales Professional for Netwrix 1Secure Data Security Posture Management"
+tags: [certification, partners, sales, 1secure]
+keywords: [training, course, certification, partners, sales, 1secure]
+description: "Become a certified Sales Professional for Netwrix 1Secure"
 ---
 
 import { Company, N1S } from '@site/src/training/products';

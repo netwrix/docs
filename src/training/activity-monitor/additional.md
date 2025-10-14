@@ -2,6 +2,6 @@ import { NAM } from '@site/src/training/products';
 
 ## Additional <NAM /> Courses for Partners
 
-The following courses are available for self-enrollment through the Learning Library:
+The following course is available for self-enrollment through the Learning Library:
 
-* What's New in <NAM /> v8.0
+* What's New in <NAM /> v9.0
