@@ -186,7 +186,7 @@ AD_DSRM Job. The minimum requirements for running this job are:
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg
 
-Alternatively, granting access to the Server Operators group also allows read-only access to the Lsa key, respectively, just requiring access added to the winreg key.
+Alternatively, granting access to the Server Operators group also allows read-only access to the Lsa key, just requiring access added to the winreg key.
 
 **AD_TimeSync Job Permissions**
 
