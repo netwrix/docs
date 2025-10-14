@@ -183,6 +183,7 @@ a domain controller, that level of access is not required to run the 5.Domains >
 AD_DSRM Job. The minimum requirements for running this job are:
 
 - Requires read access to the following Registry key and its children:
+
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg
 
@@ -195,6 +196,7 @@ a domain controller, that level of access is not required to run the 5.Domains >
 AD_TimeSync Job. The minimum requirements for running this job are:
 
 - Requires Read access to the following Registry keys and its children:
+
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg
 
