@@ -126,8 +126,7 @@ The API permissions are granted to the application.
 
 ## Assign Roles to the App
 
-The registered application must be assigned to the Global Administrator or Exchange Administrator
-role for Microsoft Entra ID state collection.  
+The registered application must be assigned the Exchange Administrator role for Microsoft Entra ID state collection.  
 Follow the steps to assign role(s) to an application.
 
 **Step 1 –** Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
@@ -144,13 +143,11 @@ is displayed.
 **Step 5 –** Click **Roles and administrators** under the Manage section. The Roles and
 administrators page is displayed. From here, go to the All roles page.
 
-**Step 6 –** On the All roles page, search for one of the following roles as required.
+**Step 6 –** On the All roles page, search for the following role.
 
-- Global Administrator – Can manage all aspects of Microsoft Entra ID and Microsoft services that
-  use Microsoft Entra identities
 - Exchange Administrator – Can manage all aspects of the Exchange product
 
-**Step 7 –** Click the desired role. The Assignments page is displayed for it.
+**Step 7 –** Click the role. The Assignments page is displayed for it.
 
 **Step 8 –** Click **Add assignments** in the top toolbar. The Add assignments pane is displayed.
 
