@@ -18,8 +18,7 @@ for long passwords.
 
 Select the **Dictionary** check box to enable the Dictionary rule.
 
-Browse to a dictionary file. A sample file **Dict.txt** is installed in the **\Program
-Files\Password Policy Enforcer** folder. This file is sorted and ready to use. It contains
+Browse to a dictionary file. A sample file **Dict.txt** is installed in the **\Program Files\Netwrix\Password Policy Enforcer\\** folder. This file is sorted and ready to use. It contains
 approximately 257,000 words, names, and acronyms.
 
 Select the **Detect inclusion of non-alpha characters** check box if Password Policy Enforcer should
@@ -114,7 +113,7 @@ local disk. Using a shared dictionary degrades performance, and could jeopardize
 
 :::note
 The `\Program Files (x86)\` folder does not exist on 32-bit Windows, so move the
-dictionary into the `\Program Files\Password Policy Enforcer\` folder if you have 32-bit and 64-bit
+dictionary into the `\Program Files\Netwrix\Password Policy Enforcer\` folder if you have 32-bit and 64-bit
 computers sharing a common Password Policy Enforcer configuration.
 :::
 

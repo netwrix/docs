@@ -76,7 +76,7 @@ Here are the requirements for both the full and evaluation Password Policy Enfor
 - 10
 - 11
 
-- .NET 8.0.15 or higher
+- .NET Desktop Runtime 8.0.15 or higher
 
 ## Password Policy Enforcer Web
 

@@ -86,7 +86,7 @@ Users with write permission to these objects can configure Password Policy Enfor
   Policy to distribute a local configuration to many computers. See the
   [Domain and Local Policies](/docs/passwordpolicyenforcer/11.1/installation/domain_and_local_policies.md) topic for additional information.
 
-![Connected To Local Configuration](/images/passwordpolicyenforcer/11.1/administration/connecttodomain.webp)
+![Connected To Local Configuration](/images/passwordpolicyenforcer/11.1/administration/connecttolocal.webp)
 
 ### Help
 
@@ -105,10 +105,11 @@ Links to documentation and support tools.
 
 ### Settings
 
-There are three tabs:
+There are four tabs:
 
 - General
 - Notifications
+- Mail Service
 - License
 
 #### General
@@ -174,6 +175,8 @@ Here are the default settings.
 - **Log event when password accepted by service** adds an entry to the Windows Application Event Log
   whenever a password is accepted. The logged event includes the username. Default is not checked.
 
+- **Use old icons in Live Policy Feedback** allows switching between displaying old-style and new-style icons in the Password Policy Enforcer Client on the change password screen.
+
 #### Notifications
 
 Open the **Settings** > **Notifications** tab to set up notifications. Notifications are only
@@ -181,28 +184,16 @@ available when **domain** is selected with the Connected To configuration settin
 
 If you make changes, click **Save** to keep your changes or **Discard** to cancel.
 
-Here are the default settings.
-
 ![Notifications Settings](/images/passwordpolicyenforcer/11.1/administration/settingsnotifications.webp)
 
 - **Send email reminders**: check this option to send reminders. Default is not checked.
-
-    - **SMTP Server**: enter IP address.
-    - **Port**: enter port number.
-    - **Username**: enter your username.
-    - **Password**: enter your password.
-    - **Use TLS**: check this option to enable TLS email encryption.
-
-- **Save email to a pickup folder**: check this option to have the Mailer save emails to a folder
-  for later delivery by a mail server. The mail server must monitor this folder for new email.
-
+- **Save email to a pickup folder**: check this option to have the Mailer save emails to a folder for later delivery by a mail server. The mail server must monitor this folder for new email.
     - **Path**: Click **Browse** and select the path to the pickup folder.
 
 :::note
 Saving email to a pickup folder is the fastest and most reliable delivery method. Use this
 option if your mail server supports pickup folders.
 :::
-
 
 The Password Policy Enforcer Mailer sends emails at 2:00 AM every day (local time on your server).
 Check the Windows Application Event Log to monitor its progress. You can also run the Password
@@ -214,6 +205,74 @@ You can change the time the mailer runs. Set the **PPE Mailer** service startup
 desired time.
 :::
 
+##### Configuring Email Settings
+
+There are three possible ways to configure email settings:
+ - **SMTP Server**
+ - **Google OAuth2**
+ - **O365 OAuth2**
+
+###### SMTP Server
+
+![Notifications Settings](/images/passwordpolicyenforcer/11.1/administration/settingsnotifications2.webp)
+
+- **SMTP Server**: enter IP address.
+- **Port**: enter port number.
+- **Username**: enter your username.
+- **Password**: enter your password.
+- **Use TLS**: check this option to enable TLS email encryption.
+
+###### Google OAuth2
+
+![Notifications Settings](/images/passwordpolicyenforcer/11.1/administration/settingsnotifications3.webp)
+
+- **User Account**: authenticated Google Workspace account.
+- **Client ID**: value configured in the Google Workspace Admin Console.
+- **Client Secret**: value configured in the Google Workspace Admin Console.
+- **Clear Credentials**: removes stored values and tokens.
+- **Update Credentials**: initiates token generation in a browser window.
+
+:::note
+The Google OAuth2 timeout can be configured in **PPEConfiguration.json**.
+By default, it is set to **1 minute**:
+```
+"Configuration": { 
+  "GoogleOAuthTimeout": 60
+}
+```
+:::
+
+###### O365 OAuth2
+
+![Notifications Settings](/images/passwordpolicyenforcer/11.1/administration/settingsnotifications4.webp)
+
+- **User Account**: Office 365 account.
+- **Client ID**: value configured in the Office 365 Admin Console.
+- **Client Secret**: value configured in the Office 365 Admin Console.
+- **Tenant ID**: Office 365 tenant identifier.
+- **Clear Credentials**: removes values.
+
+#### Mail Service
+
+Open the **Settings** > **Mail Service** tab to set up mail service for notifications. 
+
+If you make changes, click **Save** to keep your changes or **Discard** to cancel.
+
+![Mail Server Tab](/images/passwordpolicyenforcer/11.1/administration/settingsmailserver.webp)
+
+- **Service**: specify the address of the machine where the mail service is installed.
+- **Port**: specify the port number.
+
+:::note
+If you need to use a port other than 12345, open the **PPEMailService.json** file on the machine where 
+the mail service is installed, update the port value, and restart the mail service to apply the changes.
+```
+"MailService": {
+  "HostName": "localhost",
+  "Port": 6000
+}
+```
+:::
 
 #### License
 

@@ -35,9 +35,8 @@ If a reboot was not done, add **/forcerestart** at the end
 ## Mailer
 
 You can run the Password Policy Enforcer Mailer from the command line to deliver email immediately,
-or to troubleshoot problems. PPEMail.exe is copied into the \Program Files (x86)
-
-\Password Policy Enforcer\ folder when the Password Policy Enforcer Mailer is installed.
+or to troubleshoot problems. PPEMail.exe is copied into the \Program Files\Netwrix\Password Policy 
+Enforcer\ folder when the Password Policy Enforcer Mailer is installed.
 
 PPEMail.exe starts a simulation when run without any parameters. It finds users whose password will
 expire soon, but no email is sent or saved to the pickup folder. Use the simulation mode to find

@@ -62,8 +62,7 @@ Agreement**.
   selected by default.
 - Configuration Console – manages policy configuration. Install where ever needed. Selected by
   default.
-- Mailer Service – sends email reminders. Should be installed on a Domain Controller. It is not
-  selected by default.
+- Mailer Service – sends email reminders. It is not selected by default.
 
 **Step 8 –** The default location is shown. Click **Browse** and select a new location if needed.
 

@@ -28,13 +28,12 @@ Policy Guide have been added.
 
 The policy management links are all on the Password Policies tile:
 
-- Add a Policy.
-- Set Up a Policy (click on existing policy name).
-- Test Policy.
-- Set Priorities.
-- Export.
-- Context menu (3 stacked dots) beside each defined policy Make Copy, Make Default/Remove Default,
-  Rename and Delete .
+- [Add a Policy.](#add-a-policy)
+- [Set Up a Policy](#set-up-a-policy) (click on existing policy name).
+- [Test Policy.](#test-policy)
+- [Set Priorities.](#set-priorities)
+- [Export.](#export)
+- Context menu (3 stacked dots) beside each defined policy [Make Copy](#make-copy), [Make Default/Remove Default](#make-defaultremove-default), [Rename](#rename) and [Delete](#delete).
 
 ## Add a Policy
 

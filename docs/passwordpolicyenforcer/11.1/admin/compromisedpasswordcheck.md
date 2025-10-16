@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Compromised Password Check
 
-The Compromised Password Checker finds compromised passwords. Users can be notified via email and
-advised or forced to change their password. The check can be scheduled to check existing passwords
-against a compromised hash list at any time.
+The Compromised Password Checker identifies weak or unsafe passwords, including compromised, reused, 
+or empty ones. Users can be notified via email and advised or forced to change their password. 
+The check can be scheduled to run at any time to verify existing passwords against security rules.
 
 :::note
 Create the **Compromised Passwords Base** file prior to enabling the Compromised Password
@@ -39,6 +39,9 @@ Click the **Compromised Password Check** toggle to enable/disable the feature.
 - **Log events in Windows Application Event Viewer** select this option if you want to log events.
 - **Force users to change password** select this option to force users to change compromised
   passwords.
+- **Report password reuse by another account** select this option to generate password reuse report.
+- **Force users to change password** select this option to force users to change reused
+  passwords.
 - **Recipient of the full report on the found compromised passwords** specify the email address of
   the administrator who should receive the full report.
 - **From** specify the email sender.
@@ -54,12 +57,26 @@ Click **Save** to save your settings before running the check or setting up a sc
 Click **Run now** to run the check. Depending on your network, the check can take quite a while to
 complete. You can schedule it for off hours instead of running it now.
 
-Here is an example of the compromised passwords list:
+Here is an example of the compromised passwords report:
 
+---
+**List of compromised passwords**
 |User  |  Account | Sid | Email | Description |
 | --- | --- | --- | --- | --- |
 | admin    | Administrator | S-1-5-21-1006207104-1546379664-2458629591-500  |      | Sending emails is not possible due to the lack of an email address in the account. |
 | user2   | user2  | S-1-5-21-1006207104-1546379664-2458629591-1118 | user2@company.com | Email has been sent  |
+
+
+**List of reused passwords**
+|User  |  Account | Sid | Email | Description |
+| --- | --- | --- | --- | --- |
+| admin    | Administrator | S-1-5-21-1006207104-1546379664-2458629591-500  |      | Sending emails is not possible due to the lack of an email address in the account. |
+| user2   | user2  | S-1-5-21-1006207104-1546379664-2458629591-1118 | user2@company.com | Email has been sent  |
+
+**Users with empty password:**
+Guest (S-1-5-21-1006207104-1546379664-2458629591-501)
+
+---
 
 #### Schedule the Compromised Password Check
 
