@@ -1,0 +1,165 @@
+name: KB Security Review - Customer Data Leakage Detection
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "docs/kb/**/*.md"
+      - "docs/kb/**/*.mdx"
+
+jobs:
+  kb-security-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: read
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for comprehensive diff analysis
+
+      - name: Run Claude KB Security Review
+        id: claude-security-review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            **SECURITY REVIEW: Knowledge Base Customer Data Leakage Detection**
+
+            You are performing a security review of documentation changes to detect potential customer data leakage.
+
+            ## Your Task
+
+            1. Use `gh pr diff ${{ github.event.pull_request.number }}` to get all changes in this PR
+            2. Focus ONLY on changes to files in `docs/kb/` directory
+            3. Analyze the diff for potential customer-identifying, environment-specific, or proprietary information
+
+            ## What to Flag
+
+            Identify and flag ANY of the following types of sensitive data in the ADDED lines (+):
+
+            ### High Priority - Customer Infrastructure
+            - **Hostnames, FQDNs, or domains** that are NOT:
+              - Netwrix domains (netwrix.com, stealthbits.com, anixis.com)
+              - Microsoft/vendor domains (microsoft.com, azure.com, office365.com, github.com, etc.)
+              - Generic documentation examples (example.com, contoso.com, fabrikam.com, northwind.com)
+            - **IP addresses** that appear to be real customer infrastructure (not obviously generic like 192.0.2.x)
+            - **MAC addresses**
+            - **Server names or computer names** that look customer-specific (not generic like "server1", "dc01")
+
+            ### High Priority - Identifiable Information
+            - **Email addresses** that are NOT:
+              - Netwrix employees (@netwrix.com)
+              - Generic examples (user@example.com, admin@contoso.com)
+            - **Usernames or account names** that appear customer-specific (not generic like "testuser", "john.doe")
+            - **Company or organization names** that are NOT part of Netwrix products/brands
+            - **Customer-specific Active Directory structures** (OU paths with non-generic naming)
+
+            ### Medium Priority - System Details
+            - **File paths** that reference real customer systems or contain customer-specific naming
+            - **URLs** pointing to customer infrastructure
+            - **Registry keys** with customer-specific values or paths
+            - **Database names** or connection strings with customer-specific information
+
+            ### Medium Priority - Credentials & Keys
+            - **License keys, serial numbers, or activation codes**
+            - **API tokens, access tokens, or credentials**
+            - **GUIDs or UUIDs** that appear in security contexts (credential IDs, API keys)
+            - **SSH fingerprints or cryptographic keys**
+            - **Certificate thumbprints or serial numbers** from real certificates
+
+            ### Medium Priority - Log Output
+            - **Log snippets or error messages** containing:
+              - Customer hostnames, domains, or IP addresses
+              - Customer usernames or email addresses
+              - Customer-specific paths or identifiers
+              - Real timestamps that could identify customer activity patterns
+
+            ## What NOT to Flag (False Positives)
+
+            - Netwrix product domains and infrastructure
+            - Microsoft example domains (contoso.com, fabrikam.com, northwind.com, tailspintoys.com)
+            - Generic placeholders like "example.com", "domain.com", "company.com"
+            - RFC 5737 documentation IP addresses (192.0.2.x, 198.51.100.x, 203.0.113.x)
+            - Generic server names (server1, dc01, web-server, etc.)
+            - Generic usernames (admin, testuser, john.doe, jane.smith)
+            - Placeholder GUIDs in obvious example contexts
+            - localhost, 127.0.0.1, or other loopback addresses
+            - Private IP ranges in obviously generic examples (10.0.0.1, 192.168.1.1)
+
+            ## Output Format
+
+            If you find ANY potential customer data leakage:
+
+            1. Use `gh pr comment` to post a review comment with the following structure:
+
+            ```markdown
+            ## ⚠️ KB Security Review: Potential Customer Data Leakage Detected
+
+            This PR contains changes to Knowledge Base files that may include customer-identifying or environment-specific information that should be reviewed and potentially redacted.
+
+            ### Findings
+
+            #### 📁 File: `path/to/file.md`
+
+            **Line X:** [Brief description of what type of data was found]
+            - **Action Required:** [Specific, actionable guidance on what to review/replace]
+            - **Suggestion:** [Generic replacement if applicable]
+
+            ---
+
+            ### Review Checklist
+
+            Before merging this PR, please verify:
+            - [ ] All hostnames and domains are either Netwrix-owned, well-known vendors, or generic examples
+            - [ ] No customer-specific email addresses or usernames are present
+            - [ ] IP addresses are either RFC 5737 documentation IPs or clearly generic examples
+            - [ ] File paths and URLs do not reference real customer systems
+            - [ ] Log snippets have been sanitized of customer-identifying information
+            - [ ] No license keys, tokens, or credentials are exposed
+
+            ### Need Help?
+
+            - Replace customer domains with: `example.com`, `contoso.com`, `fabrikam.com`
+            - Replace customer IPs with: `192.0.2.1`, `198.51.100.1`, `203.0.113.1`
+            - Replace customer servers with: `server01`, `dc01`, `web-server01`
+            - Replace customer accounts with: `testuser`, `serviceaccount`, `domain\admin`
+            - Replace GUIDs with: `<credential-id>`, `<guid>`, or obviously fake ones
+            ```
+
+            2. Keep findings GENERAL and ACTIONABLE - never quote the actual sensitive data in your review
+            3. Focus on WHAT needs review, not on explaining WHY the data is sensitive
+            4. Group findings by file for clarity
+            5. Provide specific line numbers or sections to review
+
+            If NO customer data leakage is found:
+
+            1. Use `gh pr comment` to post:
+
+            ```markdown
+            ## ✅ KB Security Review: No Customer Data Leakage Detected
+
+            This PR has been reviewed for potential customer data leakage in Knowledge Base files. No customer-identifying, environment-specific, or proprietary information was detected in the changes.
+
+            The documentation changes appear to use appropriate generic examples and do not expose customer infrastructure or identifiable information.
+            ```
+
+            ## Important Guidelines
+
+            - Be thorough but practical - focus on real risks, not theoretical ones
+            - Prioritize HIGH and MEDIUM severity findings
+            - When in doubt about whether something is customer-specific, FLAG IT for human review
+            - Provide actionable guidance, not just identification
+            - Keep the tone professional and helpful, not accusatory
+            - Remember: The goal is to protect customer privacy and maintain documentation quality
+
+            Now perform the security review and post your findings.
+
+          claude_args: '--allowed-tools "Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(gh pr view:*),Bash(gh pr list:*)"'
