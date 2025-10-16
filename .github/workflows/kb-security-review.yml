@@ -49,7 +49,8 @@ jobs:
             - **Hostnames, FQDNs, or domains** that are NOT:
               - Netwrix domains (netwrix.com, stealthbits.com, anixis.com)
               - Microsoft/vendor domains (microsoft.com, azure.com, office365.com, github.com, etc.)
-              - Generic documentation examples (example.com, contoso.com, fabrikam.com, northwind.com)
+              - RFC 6761 special-use domains (example.com, example.net, example.org, *.example, *.test, *.localhost, *.local, *.invalid)
+              - Microsoft example domains (contoso.com, fabrikam.com, northwind.com, tailspintoys.com)
             - **IP addresses** that appear to be real customer infrastructure (not obviously generic like 192.0.2.x)
             - **MAC addresses**
             - **Server names or computer names** that look customer-specific (not generic like "server1", "dc01")
@@ -86,7 +87,13 @@ jobs:
 
             - Netwrix product domains and infrastructure
             - Microsoft example domains (contoso.com, fabrikam.com, northwind.com, tailspintoys.com)
-            - Generic placeholders like "example.com", "domain.com", "company.com"
+            - RFC 6761 special-use domains and their subdomains:
+              - example.com, example.net, example.org, *.example
+              - *.test (e.g., mycompany.test, server.test)
+              - *.localhost (e.g., api.localhost, dev.localhost)
+              - *.local (e.g., printer.local, fileserver.local)
+              - *.invalid (e.g., invalid.invalid, badhost.invalid)
+            - Generic placeholders like "domain.com", "company.com"
             - RFC 5737 documentation IP addresses (192.0.2.x, 198.51.100.x, 203.0.113.x)
             - Generic server names (server1, dc01, web-server, etc.)
             - Generic usernames (admin, testuser, john.doe, jane.smith)
@@ -118,17 +125,24 @@ jobs:
             ### Review Checklist
 
             Before merging this PR, please verify:
-            - [ ] All hostnames and domains are either Netwrix-owned, well-known vendors, or generic examples
+            - [ ] All hostnames and domains are either Netwrix-owned, well-known vendors, or RFC 6761 special-use domains (*.example, *.test, *.localhost, *.local, *.invalid)
             - [ ] No customer-specific email addresses or usernames are present
-            - [ ] IP addresses are either RFC 5737 documentation IPs or clearly generic examples
+            - [ ] IP addresses are either RFC 5737 documentation IPs (192.0.2.x, 198.51.100.x, 203.0.113.x) or clearly generic examples
             - [ ] File paths and URLs do not reference real customer systems
             - [ ] Log snippets have been sanitized of customer-identifying information
             - [ ] No license keys, tokens, or credentials are exposed
 
             ### Need Help?
 
-            - Replace customer domains with: `example.com`, `contoso.com`, `fabrikam.com`
-            - Replace customer IPs with: `192.0.2.1`, `198.51.100.1`, `203.0.113.1`
+            **RFC 6761 Compliant Domain Replacements:**
+            - Replace customer domains with: `example.com`, `example.net`, `example.org`, `company.test`, `mycompany.test`
+            - Replace customer subdomains with: `mail.example.com`, `server.example.org`, `app.test`
+            - Use Microsoft examples: `contoso.com`, `fabrikam.com`, `northwind.com`, `tailspintoys.com`
+            - For localhost scenarios: `api.localhost`, `dev.localhost`
+            - For invalid examples: `invalid.invalid`, `badhost.invalid`
+
+            **Other Replacements:**
+            - Replace customer IPs with: `192.0.2.1`, `198.51.100.1`, `203.0.113.1` (RFC 5737)
             - Replace customer servers with: `server01`, `dc01`, `web-server01`
             - Replace customer accounts with: `testuser`, `serviceaccount`, `domain\admin`
             - Replace GUIDs with: `<credential-id>`, `<guid>`, or obviously fake ones
