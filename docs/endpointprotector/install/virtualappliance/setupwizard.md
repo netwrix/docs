@@ -10,8 +10,6 @@ The Endpoint Protector Appliance requires incoming traffic for ports 443 inbound
 from the firewall. They are used for:
 
 - Endpoint Protector Server and Client communication: 443 inbound
-- Live Update (liveupdate.endpointprotector.com): 80 & 443 outbound to this single address
-  (178.63.3.86/32)
 
 Follow the steps to conﬁgure the Endpoint Protector Appliance for the ﬁrst time.
 
@@ -30,11 +28,9 @@ Follow the steps to conﬁgure the Endpoint Protector Appliance for the ﬁrst t
 **Step 4 –** The conﬁguration methods are now available.
 
 :::warning
-We recommend a manual conﬁguration of the network settings.
+Starting with version 2509, only the manual configuration option is available. Also for older versions, we recommend a manual conﬁguration of the network settings.
 :::
 
-
-![Automatic Network configuration for Endpoint Protector Appliance](autonetworkconfig.webp)
 
 ## Manual Conﬁguration
 
@@ -43,7 +39,7 @@ the appliance is correctly set up and accessible.
 
 **Step 1 –** Select **Conﬁgure Network manually** (recommended).
 
-![Manual Network configuration for Endpoint Protector Appliance](manualnetworkconfig.webp)
+![Manual Network configuration for Endpoint Protector Appliance](manualnetworkconfig.png)
 
 **Step 2 –** Set the IP Address, and Default Gateway (in our example we set the IP Address as
 192.168.7.94 and the Default Gateway as 192.168.7.1).
@@ -56,11 +52,3 @@ the appliance is correctly set up and accessible.
 
 **Step 4 –** Select **Apply**. The virtual appliance is now accessible from the conﬁgured IP
 Address. (e.g., https:// 192.168.7.94).
-
-## Automatic Conﬁguration
-
-Select **conﬁgure network automatically**, and click **Enter**.
-
-![ IP Address and Default Gateway conﬁgured automatically](autonetworkconfig.webp)
-
-The IP Address and Default Gateway will be conﬁgured automatically.

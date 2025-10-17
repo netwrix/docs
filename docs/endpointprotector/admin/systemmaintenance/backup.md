@@ -130,8 +130,8 @@ downloaded before proceeding.
 **Example**
 
 The initial Endpoint Protector deployed was version 4.4.0.7. Over time, updates were applied though
-the Live Update section, bringing the appliance to Endpoint Protector version 5.2.0.6. While these
-constantly included patches and security updates, they did not include a full roll-out of a new core
+the Live Update section (deprecated starting with the 2509 version), bringing the appliance to Endpoint Protector version 5.2.0.6.
+While these constantly included patches and security updates, they did not include a full roll-out of a new core
 OS version (e.g.: the appliance is still running on Ubuntu 14.04 LTS).
 
 As Ubuntu 14.04 no longer receives security patches since 2019, those that want to migrate to a

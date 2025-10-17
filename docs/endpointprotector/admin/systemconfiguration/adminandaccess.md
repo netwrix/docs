@@ -67,7 +67,7 @@ The Super Administrator has complete control over the entire system. By enabling
 super administrators settings in the Administration and Access Control section, you can grant Super
 Administrator privilege to all Azure Single Sign On imported users.
 
-Super Administrators have access to the General Dashboard, can control Live Updates, can run
+Super Administrators have access to the General Dashboard, can run
 Effective Rights reports, can manage Device Control, can manage Content Aware Protection including
 Deep Packet Inspection, can manage eDiscovery, can manage Denylists, Allowlists, and URL Categories,
 can manage Enforced Encryption, can manage Oﬄine Temporary Password, can view Reporting and

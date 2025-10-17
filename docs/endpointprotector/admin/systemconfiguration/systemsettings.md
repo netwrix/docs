@@ -80,8 +80,11 @@ By disabling this setting, you will delete the Default Group for Computers.
 By disabling this setting, you will delete the Default Group for Users.
 :::
 
+:::note
+Smart Group sync job interval: the default configured time is 60 min. There is a possible configuration time between that goes from 15 min up to 1440 minutes.
+:::
 
-![Smart Groups](smartgroups.webp)
+![Smart Groups](SmartGroupSettings.png)
 
 ## Client Update Mechanism
 

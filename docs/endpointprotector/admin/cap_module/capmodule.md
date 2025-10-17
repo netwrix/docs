@@ -42,11 +42,6 @@ Content Aware Protection comes as the second level of data protection available 
 Protector. The module is displayed but requires a simple activation by pressing the Enable button.
 If not previously provided, the contact details of the Main Administrator will be required.
 
-:::note
-Any details provided will only be used to ensure the Live Update Server is conﬁgured
-correctly and that the Content Aware Protection module was enabled successfully.
-:::
-
 
 ![The module is displayed but requires a simple activation by pressing the Enable button](activation.webp)
 

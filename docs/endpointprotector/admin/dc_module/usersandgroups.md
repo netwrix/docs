@@ -133,7 +133,7 @@ assigned to the Default Group unless you create a Smart Group.
 :::
 
 
-![ Membership can be deﬁned based on element name patterns](smartgroups.webp)
+![ Membership can be deﬁned based on element name patterns](SmartGroupSettings.png)
 
 **Step 2 –** Create a Smart Groups from Device Control, Groups section. Click **Create**, provide
 the following and then click **Save**:
@@ -141,14 +141,35 @@ the following and then click **Save**:
 - Group name, description and Department
 - Enable the Smart Group setting
 - Select the Entity, Computers or Users
-- Set rules for the Computers or Users by inclusion and exclusion.
+- Set rules for the Computers or Users by adding conditions for their selected properties.
 
-Deﬁne the rules Computers or Users are added to the Smart Groups based on the naming pattern rules:
-XYZ\*, \*XYZ\*,\*XYZ.
+These entities support similar, but slightly different properties that can be used in filtering, as follows:
+
+  | Computer   | Users     |
+  |-------------------------------------- |---------------------------------------|
+  | Computer ID   | First Name   |
+  | Username   | Last Name   |
+  | Main IP   | Employee ID   |
+  | Main MAC Address   | Phone   |
+  | Serial Number   | e-mail   |
+  | Domain   | Team   |
+  | Workgroup   | Last Computer   |
+  | Department   | Domain   |
+  | Groups   | Department   |
+  | OS   | Groups   |
+  | Last Seen   | Last Seen   |
+  | Location   | Certificate added to Keychain/store   |
+  | Client Version   | |
+  | Terminal Server   | |
+  | Certificate added to Keychain/store   | |
+
+
+- Define the rules by adding a property, an operator and a value for that operator like: XYZ*, *XYZ*,*XYZ. You can add multiple rules using different or the same property.
 
 :::warning
-The rules set are key-sensitive!
-:::
+The values set are key-sensitive!
+
+- After defining the rules, validate the expressions used in the conditions by clicking the Validate button. If the conditions are built correctly, the top ten matching results are displayed after validation.
 
 
 :::note
@@ -156,7 +177,7 @@ Once created, you can manage the group's priority by drag and drop actions.
 :::
 
 
-![Adding users to smart groups](groupinformation.webp)
+![Adding users to smart groups](groupinformationcreation.png)
 
 **Step 3 –** Synchronize entities to the Smart Groups.
 
@@ -175,7 +196,7 @@ assigned to that Group.
 If the new Computer does not match the rule, it will be added to the Default Group, if Default
 Groups are enabled from System Conﬁguration, System Settings, and the Smart Groups section.
 
-![Editing Group Information](groupinfoedit.webp)
+![Editing Group Information](groupinformationedit.png)
 
 **Step 4 –** Delete a Smart Group from the Actions column or select the group from the list and then
 click **Delete**.

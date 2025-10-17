@@ -408,8 +408,11 @@ In this section, you can manage the following settings:
     Learn more about [Bypass Log Reporting Frequency](#bypass-log-reporting-frequency).
     :::
 
+- DPI Bypass for Unidentified Application – this will enable bypassing DPI while logging traffic details,
+  if available. Applicable only to EPP Clients for Linux with version 2.4.5.x or higher.
 
-![If enabled, network and browser traﬃc can be inspected for content](dpiconfiguration.webp)
+
+![If enabled, network and browser traﬃc can be inspected for content](dpiconfiguration.png)
 
 ### Intercept VPN Traﬃc
 

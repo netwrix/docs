@@ -31,4 +31,4 @@ the TLS protocol.
 
 | Older than 5.7.0.0        |                                                                                                    |
 | ------------------------- | -------------------------------------------------------------------------------------------------- |
-| Version 5.7.0.0 or higher | For in-place upgrades via Live Update, the Linux OS libraries must be upgraded by Customer Support |
+| Version 5.7.0.0 or higher | For in-place upgrades via Live Update (deprecated feature starting with 2509 version), the Linux OS libraries must be upgraded by Customer Support |

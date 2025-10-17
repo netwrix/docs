@@ -6,33 +6,23 @@ sidebar_position: 140
 
 # System Configuration
 
-This section includes essential elements such as Endpoint Protector Clients, System Licensing, and
+This section includes essential elements such as Endpoint Protector Clients, Licensing, and
 advanced configurations. These settings are critical for maintaining the system's performance,
 stability, and compliance, as they directly influence both the operational efficiency and
 reliability of the Endpoint Protector solution.
 
 ## Client Software
 
-From this section, you can download and install the Endpoint Protector Client corresponding to your
-operating system.
-
-:::note
-The Server and Client communicate through port 443.
-:::
-
+From this section, you can download the Endpoint Protector and Enforced Encryption Clients corresponding to
+your operating system.
 
 When using a custom WebUI port, please contact
 [Netwrix Support](https://www.netwrix.com/support.html) to assist in conﬁguring the Nginx
 conﬁguration ﬁle.
 
-The Windows Client installers allow the option to download the package with or without add-ons. This
-option ﬁxes any incompatibility that may arise between Endpoint Protector and the speciﬁc solutions.
-
 :::warning
-Only the latest Endpoint Protector Clients are available for download. You cannot set
-another default Endpoint Protector Client version from the Client Software Upgrade section.
+Only the latest Endpoint Protector and Enforced Encryption Clients are available for download.
 :::
-
 
 To improve the Endpoint Protector installation process, use the Endpoint Protector tool that allows
 you to run installation-related actions, identify your current Linux distribution, and view Endpoint
@@ -45,17 +35,22 @@ Use the following commands:
 - rn - release notes
 - l - distribution list
 
+When installing, you can simply click Generate to download a client with the configuration in the UI or
+copy the following details from this screen using the Copy button:
+
+- Endpoint Protector Server IP
+- Endpoint Protector Server port
+- Deprtment Code
+
 :::note
 Contact Customer Support to provide the tool as well as assistance.
 :::
 
 
-![Download and install the Endpoint Protector Client corresponding to your operating system](clientsoftware.webp)
+![Download and install the Endpoint Protector Client corresponding to your operating system](ClientSoftwarePage.png)
 
 :::note
-Endpoint Protector Client versions are displayed in the format X.X.X.XXXX on endpoints.
-This version will be saved in the Endpoint Protector Server database, although the web console will
-truncate the last 3 digits.
+Starting with the current release - 2509.0.1.0 - Endpoint Protector Client versions are displayed in the format XXXX.X.X.X on endpoints.
 :::
 
 
@@ -149,9 +144,9 @@ Additional CLI commands for Linux in speciﬁc mode:
 
 ## Client Software Upgrade
 
-From this section, you can upgrade the Endpoint Protector Client and manage the upgraded jobs. The
-Client Software Upgrade feature is only available for Windows and macOS Clients. To upgrade your
-Linux Clients, submit a request using the[online form](https://www.endpointprotector.com/linux).
+From this section, you can upload the latest clients previously downloaded from the **Client Software** section in order to upgrade
+the Endpoint Protector Client and manage the upgraded jobs. The Client Software Upgrade feature is only available
+for Windows and macOS Clients.To upgrade your Linux Clients, submit a request using the[online form](https://www.endpointprotector.com/linux).
 
 :::note
 When updating your operating system to the latest macOS Ventura, eppclient.log and
@@ -165,14 +160,10 @@ The feature is not compatible for Endpoint Protector instances that are running 
 :::
 
 
-![Client Software Upgrade](clientsoftwareupgrade.webp)
+![Client Software Upgrade](ClientSoftwareUpdatePage.png)
 
 :::note
-Endpoint Protector Client versions are displayed in the format X.X.X.XXXX on endpoints.
-This version will be saved in the Endpoint Protector Server database, although the web console will
-truncate the last 3 digits. In case Endpoint Protector Client versions are identical (ﬁrst
-4-digits), Endpoint Protector Server will still compare the full version number against each other,
-identifying the most recent version.
+Starting with the current release - 2509.0.1.0 - Endpoint Protector Client versions are displayed in the format XXXX.X.X.X on endpoints.
 :::
 
 

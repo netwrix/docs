@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Updates
 
-Endpoint Protector updates are available through the Live Update or Offline Patches features. The
+Endpoint Protector updates are available through Offline Patches features. The
 average size of an update is:
 
 - Endpoint Protector Client for Windows ~ 50 MB

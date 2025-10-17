@@ -1,17 +1,17 @@
 ---
-title: "System Licensing"
-description: "System Licensing"
+title: "Licensing"
+description: "Licensing"
 sidebar_position: 40
 ---
 
-# System Licensing
+# Licensing
 
 This section provides a complete overview of your licensing status and allows you to manage licenses
 for Modules, such as Content Aware Protection and eDiscovery, as well as Endpoints, the computers
 you protect. You can import licenses, view details, and handle free trials, ensuring efficient and
 flexible license management.
 
-![System Licensing](systemlicensing.webp)
+![Licensing](licensingpage.png)
 
 :::note
 As of Endpoint Protector Version 5.9.0.0, a new subscription-based licensing system has
@@ -64,7 +64,7 @@ etc. or a custom value).
 
 ![Automatic Release Licenses  ](autoreleaselicenses.webp)
 
-To streamline license management within System Conﬁguration, navigate to **System Licensing** and
+To streamline license management within System Conﬁguration, navigate to **Licensing** and
 discover the Serial Number ﬁeld under the **View Licenses** section. In the licensing table, you
 will ﬁnd a Serial Number column. To customize your view, use the **Show/Hide Columns** button,
 including a checkbox for "Serial Number" (defaulted to 'show'). This resolves issues with identical
