@@ -26,8 +26,8 @@ Image keys:
 
 ## Add Users to Managing Organization
 
-The Users page allows a Managed Service Provider to provide the client's manager with access to
-review reports or other activities. In this case, the MSP shall assign the Viewer rights to the
+The Users page allows a managing organization to provide the client's manager with access to
+review reports or other activities. In this case, the organization shall assign the Viewer rights to the
 manager.
 
 Follow the instructions to add a user.
@@ -57,19 +57,19 @@ Users**.
 | Request deletion for a child tenant                     | +     | +      | -      |
 | Check/Manage child organization settings                | +     | +      | -      |
 | Add/Manage child-level users                            | +     | +      | -      |
-| Add/Manage MSP-level users                              | +     | -      | -      |
+| Add/Manage parent organization-level users              | +     | -      | -      |
 | Resend Invite for already added users                   | +     | +      | -      |
 | Customize existing Alerts                               | +     | +      | -      |
 | Edit Alerts delivery settings                           | +     | -      | -      |
 | Activate/Deactivate alerts                              | +     | +      | -      |
 | Managing and assigning alert profiles for child tenants | +     | +      | -      |
 | Managing integrations                                   | +     | -      | -      |
-| Requesting deletion for MSP-level tenants               | +     | -      | -      |
+| Requesting deletion for parent organization-level tenants | +   | -      | -      |
 | Performing Search                                       | +     | +      | +      |
 | Saving/Deleting a custom report/folder                  | +     | +      | -      |
 | Exporting report data                                   | +     | +      | -      |
 | Managing/Configuring agent Self-update                  | +     | -      | -      |
-| Segregating access to child tenants for MSP users       | +     | -      | -      |
+| Segregating access to child tenants for parent org users | +    | -      | -      |
 
 **Step 3 –** Select the Grant user temporary access check box if you need to allow access to
 specific user for certain period.

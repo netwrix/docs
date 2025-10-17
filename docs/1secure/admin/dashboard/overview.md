@@ -21,7 +21,7 @@ page of the application when you sign in.
 If you are a managed organization user, this page displays insights specific to your organization.
 See the [Organization Statistics](/docs/1secure/admin/dashboard/organizationstatistics.md) topic for additional information.
 
-If you are a managing organization (MSP) user, this page provides insights for all your
+If you are a managing organization (e.g., Managed Service Provider) user, this page provides insights for all your
 organizations.
 
 **Top 5 Triggered Alerts by Type**

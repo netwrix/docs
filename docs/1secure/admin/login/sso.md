@@ -44,7 +44,7 @@ click **Continue**. Based on your authentication status, one of the following wi
 
 ## SSO Configuration with Authentication Services
 
-To enable Single Sign-On (SSO) for tenant users, an MSP must configure SSO using one of the
+To enable Single Sign-On (SSO) for tenant users, an organization must configure SSO using one of the
 following authentication services:
 
 - [Configure SSO with Microsoft Entra ID Authentication](#configure-sso-with-microsoft-entra-id-authentication)
