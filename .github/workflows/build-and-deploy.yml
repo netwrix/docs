@@ -18,7 +18,7 @@ on:
 
 jobs:
   determine-environment:
-    runs-on: gh-runner-large
+    runs-on: ubuntu-latest
     outputs:
       environment: ${{ steps.set-env.outputs.environment }}
     steps:
@@ -34,7 +34,7 @@ jobs:
           fi
 
   build:
-      runs-on: gh-runner-large
+      runs-on: ubuntu-latest
       needs: determine-environment
       environment: ${{ needs.determine-environment.outputs.environment }}
       permissions:
@@ -44,16 +44,16 @@ jobs:
       steps:
         - name: Check out source code
           uses: actions/checkout@v4
-  
+
         - name: Set up Node.js
           uses: actions/setup-node@v3
           with:
             node-version: '22.x'
-  
+
         - name: Get npm cache directory
           id: npm-cache-dir
           run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
-  
+
         - name: Cache Node.js dependencies
           uses: actions/cache@v3
           with:
@@ -62,7 +62,7 @@ jobs:
             key: v2-${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
             restore-keys: |
               v2-${{ runner.os }}-node-
-  
+
         - name: Cache Docusaurus build
           uses: actions/cache@v3
           id: cache-build
@@ -73,7 +73,7 @@ jobs:
             key: v2-${{ runner.os }}-docusaurus-${{ hashFiles('src/**', 'docs/**', 'blog/**', 'docusaurus.config.js', 'sidebars.js') }}
             restore-keys: |
               v2-${{ runner.os }}-docusaurus-
-  
+
         - name: Cache webpack
           uses: actions/cache@v3
           with:
@@ -82,30 +82,30 @@ jobs:
             key: v2-${{ runner.os }}-webpack-${{ hashFiles('**/package-lock.json') }}
             restore-keys: |
               v2-${{ runner.os }}-webpack-
-  
+
         - name: Install dependencies and build site
           run: |
             npm ci
-  
+
             if [[ "${{ steps.cache-build.outputs.cache-hit }}" == "true" ]]; then
               echo "Build cache found, checking if rebuild needed..."
             else
               echo "No build cache found, performing full build..."
             fi
-  
+
             npm run ci
           env:
             NODE_OPTIONS: "--max-old-space-size=16384"
             NODE_ENV: ${{ needs.determine-environment.outputs.environment }}
-  
+
         - name: Upload artifact for deployment
           uses: actions/upload-artifact@v4
           with:
             name: build-output
             path: build/
-          
+
   deploy:
-    runs-on: gh-runner-large
+    runs-on: ubuntu-latest
     needs: [build, determine-environment]
     environment: ${{ needs.determine-environment.outputs.environment }}
     steps:
