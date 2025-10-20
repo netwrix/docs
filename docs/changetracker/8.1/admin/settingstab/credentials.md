@@ -61,6 +61,7 @@ it's ESXi nodes.
 ## Database Credentials
 
 These credentials are used by database compliance reports to connect directly to a database
-instance.
+instance. v1 database credentials are now depricated and only maintained for backward compatibility.
+v2 database credentials should be used for any new connections.
 
 ![Database Credentials](/images/changetracker/8.1/admin/settings/database_credentials_1113x358.webp)
