@@ -67,7 +67,7 @@ instance.
 
 **Note:** v1 database credentials are now deprecated and only maintained for backward compatibility. v2 database credentials should be used for any new connections.
 
-When adding a v1 database credential a database connection strings was required. This required a separate database credential for each database instance to monitor even if the username and password were the same! To address this, v2 database credentials only contain username and password.
+When adding a v1 database credential a database connection string was required. This required a separate database credential for each database instance to monitor even if the username and password were the same! To address this, v2 database credentials only contain username and password.
 
 Connection strings are now required when defining a proxied device for a database connection. This allows you to use the same database credential for multiple database connections. It also means there is only one credential to update when its password expires.
 
