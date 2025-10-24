@@ -22,7 +22,6 @@ For its correct installation Netwrix Cloud Agent needs the following software re
     - Windows Server 2022
     - Windows Server 2019
     - Windows Server 2016
-    - Windows Server 2012 R2
 
 - Windows Desktop OS (64-bit):
 
@@ -45,9 +44,14 @@ The machine where you plan to deploy the agent must meet the requirements listed
 ## Requirements for outbound communications with a Netwrix Cloud Agent
 
 To review the security incorporated by the agent in your system, examine the target URL in the
-Configuration.xml file, which is located on the agent host at:
+**Configuration.xml** file, which is located on the agent host at:
 
 `C:\ProgramData\Netwrix Cloud Agent\AgentCore\ConfigServer\Configuration.xml`
+
+This should show as:
+
+`https://1secure-agent-us.netwrix.com/api` for the Americas.
+`https://1secure-agent-eu.netwrix.com/api` for the European Union.
 
 You must also open the outbound TCP port 443 on the server where the Netwrix Cloud Agent resides.
 See the [Install Agent](/docs/1secure/install/installagent.md) topic
