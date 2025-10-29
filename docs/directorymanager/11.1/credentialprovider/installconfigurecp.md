@@ -202,7 +202,7 @@ Open `CPSettings.xml` in a text editor (as administrator) and modify these value
 
 **Important**: After modifying `CPSettings.xml`, restart the computer or lock/unlock the session twice for changes to take effect.
 
-For complete configuration options, see [Configure Required Settings](#configure-required-settings) below.
+For complete configuration options, see [Configure Required Settings](#step-3-configure-required-settings) below.
 
 ---
 
@@ -1158,11 +1158,11 @@ After saving the configuration and restarting (or locking the screen):
 **Basic Setup Complete!** You now have a working credential provider.
 
 **Optional Next Steps**:
-- [Configure filtering](#filtering-configuration) to control which other login options appear
-- [Customize the appearance](#ui-customization-1) with logos and custom text
-- [Configure proxy settings](#network--proxy-settings-1) if behind a corporate proxy
+- [Configure filtering](#credential-provider-filtering) to control which other login options appear
+- [Customize the appearance](#ui-customization) with logos and custom text
+- [Configure proxy settings](#network--proxy-settings) if behind a corporate proxy
 - [Deploy via GPO](#step-1a-enterprise-deployment-via-group-policy-software-installation) for enterprise environments
-- [Enable logging](#logging-and-debugging-1) for troubleshooting
+- [Enable logging](#logging-and-debugging) for troubleshooting
 
 ---
 
