@@ -35,7 +35,7 @@ both these functions. Using it:
         The client software to install on user workstations is called
         [ Credential Provider](/docs/directorymanager/11.1/credentialprovider/credentialprovider.md) and available for distribution using various
         IT enabled distribution methods such as group policy and Microsoft System Center
-        Configuration Manager (SCCM). See the [Install Credential Provider](/docs/directorymanager/11.1/credentialprovider/installcp.md) topic for
+        Configuration Manager (SCCM). See the [Install Credential Provider](/docs/directorymanager/11.1/credentialprovider/installconfigurecp.md) topic for
         additional information.
 
         The distributed client enables the **Forgot Password?** and **Unlock Account** links on the
