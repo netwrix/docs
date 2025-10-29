@@ -35,7 +35,7 @@ The term 'get-help' is not recognized as the name of a cmndlet, function, script
 
 ## Cause
 
-The issue caused by Microsoft cumulative update for multiple editions of MS Exchange. Learn more in Description of the security update for Microsoft Exchange Server 2019 and 2016: October 10, 2023 (KB5030877) ⸱ Microsoft 📝: https://support.microsoft.com/en-us/topic/description-of-the-security-update-for-microsoft-exchange-server-2019-and-2016-october-10-2023-kb5030877-ec769ff1-f60f-411e-a7ed-b63b42a686eb
+The issue caused by Microsoft cumulative update for multiple editions of MS Exchange. Learn more in Description of the security update: [Microsoft Exchange Server 2019 and 2016: October 10, 2023 (KB5030877) ⸱ Microsoft 📝](https://support.microsoft.com/en-us/topic/description-of-the-security-update-for-microsoft-exchange-server-2019-and-2016-october-10-2023-kb5030877-ec769ff1-f60f-411e-a7ed-b63b42a686eb)
 
 ## Resolution
 
@@ -43,4 +43,4 @@ To resolve the issue, upgrade Netwrix Auditor to the version 10.6 build 12322 an
 
 ### Related article:
 
-- Administrator Audit Logging (AAL) configuration details: /docs/kb/auditor/administrator-audit-logging-aal-configuration-details
+- [Administrator Audit Logging (AAL) configuration details](/docs/kb/auditor/administrator-audit-logging-aal-configuration-details.md)

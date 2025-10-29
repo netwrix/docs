@@ -32,19 +32,14 @@ In the Netwrix Auditor health log, some error events mention issues with the com
 2. Log in to the Netwrix server with **Data Collection Account** credentials (monitoring plan – settings – data collection) and check that you can open this path via File Explorer:
    - `\*audited_server*\c$\Windows\`
 
-   Check if you can add or remove files from this folder. If not, check the permissions for the Data Collection account:
-
-   - MonitoringPlans – Data Collecting Account ⸱ v10.6 (opens in a new window)
+   Check if you can add or remove files from this folder. If not, check the permissions for the Data Collection account: [Data Collecting Account](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/dataaccounts)
 
    **Note:** Pay attention to which collector you're going to adjust permissions.
 3. Test the ports required for the problematic monitoring plan:
-   - Requirements – Protocols and Ports ⸱ v10.6 (choose the problematic monitoring plan on the left).
-
-   Here is an article on how to check ports:
-
-   - [How to check TCP, UDP and Dynamic ports required for Netwrix Auditor monitoring plans](/docs/kb/auditor/check-tcp-and-udp-ports-required.md) (opens in a new window)
+   - [Protocols and Ports](https://docs.netwrix.com/docs/auditor/10_8/requirements/ports)
+   - [Check TCP and UDP Ports Required](/docs/kb/auditor/check-tcp-and-udp-ports-required.md)
 4. Check Remote Registry and Windows Management Instrumentation Services:
-   - For File Servers Auditing: Windows File Servers – Enable Remote Registry Service ⸱ v10.6 (opens in a new window)
-   - For Windows Server Auditing: Windows Server – Enable Remote Registry and Windows Management Instrumentation Services ⸱ v10.6 (opens in a new window)
+   - [Enable Remote Registry and Windows Management Instrumentation Services for Windows Server](https://docs.netwrix.com/docs/auditor/10_8/configuration/windowsserver/remoteregistry)
+   - [Enable Remote Registry Services for File Server](https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/windows/remoteregistryservice)
 5. Add antivirus exclusions on the Netwrix and target servers for folders:
-   - See the article on how to do it: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md) (opens in a new window)
+   - [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)

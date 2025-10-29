@@ -11,7 +11,7 @@ import { NDCValue, NDCConcepts, NDCIntro, NDCTaxonomies, NDCWorkflows, NDCUsersR
 import { Company, NA, NDC } from '@site/src/training/products';
 
 
-Estimated length: 5.25 hours
+Estimated length: 9 hours
 
 In this learning path, you will learn how to use <NDC />. It contains the following courses:
 

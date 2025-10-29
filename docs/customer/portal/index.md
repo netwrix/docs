@@ -8,7 +8,7 @@ description: "Register for a Netwrix Customer Portal account, access downloads, 
 
 import { Company } from '@site/src/training/products';
 
-Follow the step to register for a Customer Portal account.
+Follow the steps to register for a Customer Portal account.
 
  1. Navigate to the [Netwrix website](https://www.netwrix.com/)
 

@@ -43,19 +43,19 @@ The following recommendations will allow you to reduce disk space consumption:
    Follow these Knowledge Base articles for additional information:
 
    - [How to Move Long-Term Archive to a New Location](/docs/kb/auditor/how-to-move-long-term-archive-to-a-new-location.md)
-   - [How to Prevent Overflow on the Drive Where the Long-Term Archive is Located?](/docs/kb/auditor/how-to-prevent-long-term-archive-overflow.md)
+   - [How to Prevent Long-Term Archive Overflow](/docs/kb/auditor/how-to-prevent-long-term-archive-overflow.md)
 
 3. Migrate Working Folder to a new location.
 
    The size of your Working Folder may grow significantly (normally, up to `10 – 20GB`) depending on the workload, especially during activity peaks. If your system drive capacity is limited, you might want to keep the temporary files and trace logs on another drive, i.e. change the Working Folder default location.
 
-   For additional information on how to move the Working Folder, refer to the following article: [How to Migrate Netwrix Auditor Working Folder to a New Location?](/docs/kb/auditor/how-to-migrate-netwrix-auditor-working-folder-to-a-new-location.md).
+   For additional information on how to move the Working Folder, refer to the following article: [How to Migrate Netwrix Auditor Working Folder to a New Location](/docs/kb/auditor/how-to-migrate-netwrix-auditor-working-folder-to-a-new-location.md).
 
 4. Remove the **Netwrix Backup** folder. Netwrix strongly recommends keeping the backups for supported product versions.
 
    For additional information about the Backup folder, refer to the following article: [Backups Folder in Netwrix Auditor](/docs/kb/auditor/backups-folder-in-netwrix-auditor.md).
 
-5. Additional space might be consumed by the **Local DB** in the **ShortTerm** folder; this can occur when the SQL communication is not working properly or the DB files getting corrupted. Follow the resolution steps in the article: [Netwrix Auditor System Health Log Contains EventID 2002](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA04u000000wnpOCAQ.html).
+5. Additional space might be consumed by the **Local DB** in the **ShortTerm** folder; this can occur when the SQL communication is not working properly or the DB files getting corrupted. Follow the resolution steps in the article: [Netwrix Auditor System Health Log Contains EventID 2002](https://docs.netwrix.com/docs/kb/auditor/netwrix-auditor-health-log-contains-eventid-2002).
 
 6. Check the size of the Windows page file. If it grows big, this indicates lack of RAM and Windows tries to compensate it with disk space. Adding more RAM helps fixing disk space consumption by page files.
 
@@ -75,5 +75,5 @@ The following recommendations will allow you to reduce disk space consumption:
 
 - [Error: Netwrix Auditor for File Servers Audit Service Terminated Unexpectedly](/docs/kb/auditor/error-netwrix-auditor-for-file-servers-audit-service-terminated-unexpectedly.md)
 - [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)
-- [How to Add Additional Space to Long-Term Archive?](/docs/kb/auditor/how-to-add-additional-space-to-long-term-archive.md)
-- [Netwrix Auditor System Health Log Contains EventID 2002](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA04u000000wnpOCAQ.html)
+- [How to Add Additional Space to Long-Term Archive](/docs/kb/auditor/how-to-add-additional-space-to-long-term-archive.md)
+- [Netwrix Auditor System Health Log Contains EventID 2002](https://docs.netwrix.com/docs/kb/auditor/netwrix-auditor-health-log-contains-eventid-2002)

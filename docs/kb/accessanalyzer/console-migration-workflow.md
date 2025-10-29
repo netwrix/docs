@@ -27,7 +27,7 @@ knowledge_article_id: kA0Qk0000002OmDKAU
 
 This article outlines the upgrade workflow for Netwrix Access Analyzer. Refer to the following list of articles:
 
-1. [Access Analyzer Console Migration Workflow: Step 1 - Staging the Backup](/docs/kb/accessanalyzer/console-migration-workflow-step-1-staging-the-backup.md)
-2. [Access Analyzer Console Migration Workflow: Step 2 - Prepare the Database](/docs/kb/accessanalyzer/console-migration-workflow-step-2-prepare-the-database.md)
-3. [Access Analyzer Console Migration Workflow: Step 3 - Rebuild the Console](/docs/kb/accessanalyzer/console-migration-workflow-step-3-rebuild-the-console.md)
-4. [Access Analyzer Console Migration Workflow: Step 4 - Validate the Migration](/docs/kb/accessanalyzer/console-migration-workflow-step-4-validate-the-migration.md)
+1. [Console Migration Workflow: Step 1—Staging the Backup](/docs/kb/accessanalyzer/console-migration-workflow-step-1-staging-the-backup.md)
+2. [Console Migration Workflow: Step 2—Prepare the Database](/docs/kb/accessanalyzer/console-migration-workflow-step-2-prepare-the-database.md)
+3. [Console Migration Workflow: Step 3—Rebuild the Console](/docs/kb/accessanalyzer/console-migration-workflow-step-3-rebuild-the-console.md)
+4. [Console Migration Workflow: Step 4—Validate the Migration](/docs/kb/accessanalyzer/console-migration-workflow-step-4-validate-the-migration.md)

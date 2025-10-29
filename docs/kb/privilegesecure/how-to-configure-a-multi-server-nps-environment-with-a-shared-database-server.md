@@ -28,7 +28,7 @@ knowledge_article_id: kA04u0000000JyXCAU
 
 This article will guide the user through the process of setting up a deployment with multiple Netwrix Privilege Secure servers communicating with a single Postgres server. Instructions are included for configuring TLS for all network traffic to the Postgres server. Optional migration steps are included for users who wish to use a Postgres database from an existing Netwrix Privilege Secure deployment.
 
-This diagram illustrates the desired network architecture.  
+This diagram illustrates the desired network architecture.
 ![nps_diagram.png](images/ka0Qk0000009L21_0EMQk000006FKxR.png)
 
 ## Instructions
@@ -103,8 +103,8 @@ Edit this file so that the `Database` key references the hostname of the Postgre
 ```
 3. Obtain a copy of the `\ProgramData\Stealthbits\PAM\tls\cacerts\sbpam-region.crt` certificate from the Postgres server. Open the **Certificate Manager**. Import the `sbpam-region.crt` certificate into the **Trusted Root** of the local machine.
 
-You should now be able to access the Netwrix Privilege Secure console at `https://[yourNPSServerIP]:6500`, and all traffic should be TLS encrypted. *Note: if you are receiving an IIS certificate warning from your browser, install an IIS certificate using [this KB article](https://kb.netwrix.com/5872).*
+You should now be able to access the Netwrix Privilege Secure console at `https://[yourNPSServerIP]:6500`, and all traffic should be TLS encrypted. *Note: if you are receiving an IIS certificate warning from your browser, install an IIS certificate using [Install an IIS Certificate](https://docs.netwrix.com/docs/kb/privilegesecure/installing-an-iis-certificate)
 
 ### Key Export/Import
 
-*In order to ensure that encryption keys are in agreement between Netwrix Privilege Secure servers, please follow the instructions outlined in [this article](/docs/kb/privilegesecure/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md).*
+*In order to ensure that encryption keys are in agreement between Netwrix Privilege Secure servers, please follow the instructions outlined in [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md).*

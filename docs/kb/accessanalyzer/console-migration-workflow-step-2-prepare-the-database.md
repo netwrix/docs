@@ -38,7 +38,7 @@ This article lists the steps to prepare the Netwrix Access Analyzer database for
 
 For Host Management and Host List Replication, follow these steps to restore the backup of the Access Analyzer console to a new server.
 
-> **IMPORTANT:** This only applies if the new server name differs from the old server name; otherwise, skip to [Access Analyzer Console Migration Workflow: Step 3 - Rebuild the Console](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA0Qk0000001T1ZKAU.html).
+> **IMPORTANT:** This only applies if the new server name differs from the old server name; otherwise, skip to [Access Analyzer Console Migration Workflow: Step 3 - Rebuild the Console](/docs/kb/accessanalyzer/console-migration-workflow-step-3-rebuild-the-console.md).
 
 On the Access Analyzer Database, copy the script below and configure the `OldServer` and `NewServer` values (lines 5 & 6, below), then run:
 

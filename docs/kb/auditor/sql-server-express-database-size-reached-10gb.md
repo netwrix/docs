@@ -44,7 +44,7 @@ While it is highly recommended to implement either a SQL Server Standard or Ente
 
 - Recreate the database for the monitoring plan:
 
-  > **IMPORTANT:** The monitoring plan data collected previously will be available in the Long-Term Archive. Refer to the following article for additional information on investigations: https://docs.netwrix.com/docs/auditor/10_8 Auditor Settings − Investigations · v10.6).
+  > **IMPORTANT:** The monitoring plan data collected previously will be available in the Long-Term Archive. Refer to the following article for additional information on investigations:[Investigations](https://docs.netwrix.com/docs/auditor/10_8/admin/settings/investigations)
 
   1. Confirm the name of the affected database − it should be stated both in the error message and **Database Statistics**. The **Database Statistics** data will also include the affected monitoring plan name.
   2. Disable the data collection for the affected monitoring plan − in the main Netwrix Auditor screen, select **Monitoring Plans** > **%affected_monitoring_plan%** > **Edit** > **Edit data source** > switch the **Monitor this data source and collect activity data** switch off > click **Save & Close**.
@@ -68,10 +68,10 @@ While it is highly recommended to implement either a SQL Server Standard or Ente
 
 - Split items in multiple monitoring plans to decrease the amount of data written to a single database.
 
-- Decrease the database retention period. Refer to the following article for additional information: /docs/kb/auditor/how-to-reduce-audit-database-size-for-netwrix-auditor (How to Reduce Audit Database Size for Netwrix Auditor).
+- Decrease the database retention period. Refer to the following article for additional information: [How to Reduce Audit Database Size for Netwrix Auditor](/docs/kb/auditor/how-to-reduce-audit-database-size-for-netwrix-auditor.md)
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/auditor/10_8 Auditor Settings − Investigations · v10.6)
-- /docs/kb/auditor/how-to-reduce-audit-database-size-for-netwrix-auditor (How to Reduce Audit Database Size for Netwrix Auditor)
-- /docs/kb/auditor/could-not-allocate-space-for-object-objectname-in-database-databasename)_in_database_(databasename) (Could not allocate space for object (ObjectName) in database (DatabaseName))
+- [Investigations](https://docs.netwrix.com/docs/auditor/10_8/admin/settings/investigations)
+- [How to Reduce Audit Database Size for Netwrix Auditor](/docs/kb/auditor/how-to-reduce-audit-database-size-for-netwrix-auditor.md) 
+- [Could Not Allocate Space for Object (ObjectName) in Database (DatabaseName)](/docs/kb/auditor/could-not-allocate-space-for-object-objectname-in-database-databasename.md)

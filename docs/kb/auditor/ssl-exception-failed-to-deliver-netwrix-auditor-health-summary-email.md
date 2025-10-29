@@ -36,4 +36,4 @@ Your TLS\SSL certificate has expired — Netwrix Auditor stops generating report
 
 ## Resolution
 
-To establish whether your certificate has expired, check the Microsoft Management Console (MMC) Certificates Snap-in (your certificate store). For additional information on setting up the SSL\TLS channel communication, refer to the following article: /docs/kb/auditor/set_up_secure_connection_between_auditor_and_ssrs_via_ssltls_channel (Set Up Secure Connection Between Netwrix Auditor and SSRS via SSL/TLS Channel).
+To establish whether your certificate has expired, check the Microsoft Management Console (MMC) Certificates Snap-in (your certificate store). For additional information on setting up the SSL\TLS channel communication, refer to the following article: [Set Up Secure Connection Between Auditor and SSRS via SSL/TLS Channel](/docs/kb/auditor/set_up_secure_connection_between_auditor_and_ssrs_via_ssltls_channel.md)

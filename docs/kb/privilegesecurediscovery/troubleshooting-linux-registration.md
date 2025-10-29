@@ -36,8 +36,8 @@ Netwrix Privilege Secure Discovery (formerly SecureONE)
 
 ## Common Error Messages
 
-- [Invalid SSH Credentials: Authentication Failed](/docs/kb/privilegesecurediscovery/error-invalid-ssh-credentials-authentication-failed.md)
+- [Error: Invalid SSH Credentials Authentication Failed](/docs/kb/privilegesecurediscovery/error-invalid-ssh-credentials-authentication-failed.md)
 - UnprocessableEntityError: SSH Connection Error: Encountered RSA Key, Expected OPENSSH Key
 - UnprocessableEntityError: Missing Result for Task checkAdminPrivilege. Code:9999
 - Unhandled Error: there has been an Error Processing the Registration Request: 'ascii' Codec can't Encode Character u
-- [Unhandled Error: MODULE FAILURE See stdout/stderr for the Exact Error](/docs/kb/privilegesecurediscovery/unhandled-error-module-failure.md)
+- [Unhandled Error: Module Failure](/docs/kb/privilegesecurediscovery/unhandled-error-module-failure.md)

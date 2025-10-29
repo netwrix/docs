@@ -41,10 +41,10 @@ Netwrix Auditor is unable to collect farm configuration changes due to network c
 
 Refer to the corresponding article for additional information on resolution:
 
-- Event ID 1204 in Health Log: /docs/kb/auditor/event-id-1204-in-health-log
-- Event ID 1205 in Health Log: /docs/kb/auditor/event-id-1205-in-health-log
+- [Event ID 1204 in Health Log](/docs/kb/auditor/event-id-1204-in-health-log.md)
+- [Event ID 1205 in Health Log](/docs/kb/auditor/event-id-1205-in-health-log.md)
 
 ## Related articles
 
-- Event ID 1204 in Health Log: /docs/kb/auditor/event-id-1204-in-health-log
-- Event ID 1205 in Health Log: /docs/kb/auditor/event-id-1205-in-health-log
+- [Event ID 1204 in Health Log](/docs/kb/auditor/event-id-1204-in-health-log.md)
+- [Event ID 1205 in Health Log](/docs/kb/auditor/event-id-1205-in-health-log.md)

@@ -50,11 +50,11 @@ The following best practices act as preemptive and reactive measures to guard gr
 
   These settings enable you to specify the maximum number of members a group can have.
 
-  You can also set up a group membership update threshold, that compares the existing member count to the new member count in order to detect unusual and large changes to group membership. In the event of a threshold violation, Netwrix Directory Manager notifies the group owner or administrator via email, who can approve or deny the change. Click here for more: https://support.imanami.com/knowledgebase/article/KA-01200/en-us?how-to-prevent-massive-changes-to-group-membership
+  You can also set up a group membership update threshold, that compares the existing member count to the new member count in order to detect unusual and large changes to group membership. In the event of a threshold violation, Netwrix Directory Manager notifies the group owner or administrator via email, who can approve or deny the change.
 
 - Define a workflow that is triggered when a user makes a change to the query of a Smart Group or Dynasty.
 
-  In Netwrix Directory Manager, the Query Designer enables you to define membership update queries for Smart Groups and Dynasties. As a proactive measure, create a workflow for an identity store, that routes an approval request to an authorized approver when a user makes a change to this query in the Query Designer. The request must be approved for changes to take effect. Click here for more: https://imanami.microsoftcrmportals.com/knowledgebase/article/KA-01201/en-us
+  In Netwrix Directory Manager, the Query Designer enables you to define membership update queries for Smart Groups and Dynasties. As a proactive measure, create a workflow for an identity store, that routes an approval request to an authorized approver when a user makes a change to this query in the Query Designer. The request must be approved for changes to take effect.
 
 - For a Netwrix Directory Manager portal, use the Visibility and Access controls to restrict user roles from viewing and updating Smart Group and Dynasty queries.
 
@@ -63,7 +63,7 @@ The following best practices act as preemptive and reactive measures to guard gr
   - **Visibility level** determines the security roles who can view a field in the portal.
   - **Access level** determines the security roles that can update the value of a field using the portal.
 
-  You can hide the Smart Group query and Dynasty query fields or render them as read-only in the portal for all except an authoritative user role. Click here for more: https://support.imanami.com/knowledgebase/article/KA-01199/en-us?how-to-control-access-and-visibility-on-the-group-query-in-the-self-service-portal
+  You can hide the Smart Group query and Dynasty query fields or render them as read-only in the portal for all except an authoritative user role.
 
 - Allow selective security roles to access Netwrix Directory Manager Management Shell.
 
@@ -75,36 +75,28 @@ The following best practices act as preemptive and reactive measures to guard gr
 
 These practices make use of workflows, access controls, and alerts to offer foolproof security for your groups, which in turn secure your organization.
 
-## References:
 
-- Netwrix Directory Manager Online Help topic: Workflows  
-  https://docs.netwrix.com/docs/directorymanager/11_1
 
-- Netwrix Directory Manager Online Help topic: Query Designer dialog box  
-  https://docs.netwrix.com/docs/directorymanager/11_1
 
-- Netwrix Directory Manager Online Help topic: Group Membership Settings  
-  https://docs.netwrix.com/docs/directorymanager/11_1
-
-- Netwrix Directory Manager Online Help topic: Customize Object Properties  
-  https://docs.netwrix.com/docs/directorymanager/11_1
 
 ### Related Articles:
 
-- Walkthrough Search Policy - Define Scope and Filter Results  
-  /docs/kb/directorymanager/walkthrough_search_policy_-_define_scope_and_filter_results
+-  [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results.md)
 
-- How To Enforce Users to Create Groups in a Specific OU  
-  /docs/kb/directorymanager/how_to_enforce_users_to_create_groups_in_a_specific_ou
+- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
 
-- How To Import Members to a Group Using Self-Service Import Wizard  
-  /docs/kb/directorymanager/how_to_import_members_to_a_group_using_self-service_import_wizard
+- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard.md)
 
-- How to Trigger a workflow When a User Сreates a Group  
-  /docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group
+- [How to Trigger a workflow When a User Сreates a Group](/docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group.md)
 
-- How To Add Message Approvers in Group Properties in Self-Service  
-  /docs/kb/directorymanager/how_to_add_message_approvers_in_group_properties_in_groupid_portal
+- [How To Add Message Approvers in Group Properties in Netwrix Directory Manager Portal](/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal.md)
 
-- Best Practices for Preventing Accidental Data Leakage  
-  /docs/kb/directorymanager/best_practices_for_preventing_accidental_data_leakage
+- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage.md)
+- [Directory Manager Workflows](https://docs.netwrix.com/docs/directorymanager/11_0/signin/workflow/overview)
+
+
+- [Query Designer](https://docs.netwrix.com/docs/directorymanager/11_0/welcome/group/querydesigner/overview#)
+
+- [Group Membership Settings](https://docs.netwrix.com/docs/directorymanager/11_1/admincenter/identitystore/configure/outofbounds)
+
+- [Customize Object Properties](https://docs.netwrix.com/docs/directorymanager/11_0/signin/service/mobileservice/design/objectproperties)

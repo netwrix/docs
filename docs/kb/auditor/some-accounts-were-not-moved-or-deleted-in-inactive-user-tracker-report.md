@@ -28,7 +28,7 @@ Your report states some accounts were not moved or deleted. Why were they not af
 
 ## Answer
 
-Since Inactive User Tracker (IUT) in Netwrix Auditor has the ability to make actual changes within your Active Directory, it has requirements to meet to introduce these changes. IUT requires all DCs to be operating, otherwise it cannot verify that a user is truly inactive. In case there are non-operable or decommissioned domain controllers in your network, you can omit them — refer to the following article for additional information: [Exclude Non-operable Domain Controllers from Monitoring](/docs/kb/auditor/how-to-exclude-non-operable-domain-controllers-from-monitoring-in-netwrix-auditor.md).
+Since Inactive User Tracker (IUT) in Netwrix Auditor has the ability to make actual changes within your Active Directory, it has requirements to meet to introduce these changes. IUT requires all DCs to be operating, otherwise it cannot verify that a user is truly inactive. In case there are non-operable or decommissioned domain controllers in your network, you can omit them — refer to the following article for additional information: [How to Exclude Non-operable Domain Controllers from Monitoring in Netwrix Auditor](/docs/kb/auditor/how-to-exclude-non-operable-domain-controllers-from-monitoring-in-netwrix-auditor.md).
 
 If you still encounter reports showing the `Cannot delete the account` status for accounts after omitting the inoperable DCs, refer to the following steps:
 

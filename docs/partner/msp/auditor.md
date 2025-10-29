@@ -12,7 +12,7 @@ import { NDCValue, NDCConcepts, NDCIntro, NDCTaxonomies, NDCWorkflows, NDCUsersR
 import { Company, NA, NDC, NPS } from '@site/src/training/products';
 
 
-Estimated length: 7.75 hours + 11 hrs Lab Experiences
+Estimated length: 13.25 hours
 
 This learning path grants <Company /> certification as an MSP Engineer for these products:
 

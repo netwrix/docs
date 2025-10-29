@@ -67,7 +67,7 @@ This will stop all Netwrix Services and prevent complications during the upgrade
 | 8.5 / 9.0      | 9.5            | Not recommended! |
 | 9.5            | 9.7            | [Download](https://www.netwrix.com/my_products.html) |
 | 9.7 / 9.8      | 9.9            | [Download](https://www.netwrix.com/my_products.html) |
-| 9.9            | 9.96           | [Download](https://www.netwrix.com/my_products.html)<br />Refer to the following article for additional information:<br /> [Upgrade to from 9.9 to 9.96 if I get the error “Your Netwrix Auditor version cannot be upgraded”](https://docs.netwrix.com/docs/kb/auditor/upgrade_from_9.9_to_9.96_with_your_netwrix_auditor_version_cannot_be_upgraded_error) |
+| 9.9            | 9.96           | [Download](https://www.netwrix.com/my_products.html)<br />Refer to the following article for additional information:<br /> [Upgrade from 9.9 to 9.96 with Your Netwrix Auditor Version Cannot Be Upgraded Error](/docs/kb/auditor/upgrade_from_9.9_to_9.96_with_your_netwrix_auditor_version_cannot_be_upgraded_error.md)|
 | 9.96 / 10.0    | 10.5           | [Download](https://www.netwrix.com/my_products.html) |
 | 10 / 10.5      | 10.6           | [Download](https://www.netwrix.com/my_products.html) |
 | 10.5 / 10.6    | 10.7           | [Download](https://www.netwrix.com/my_products.html) |
@@ -75,4 +75,4 @@ This will stop all Netwrix Services and prevent complications during the upgrade
 
 ### Related articles
 
-[How To Upgrade Netwrix Auditor](/docs/kb/auditor/how-to-upgrade-netwrix-auditor.md)
+[How to Upgrade Netwrix Auditor](/docs/kb/auditor/how-to-upgrade-netwrix-auditor.md)

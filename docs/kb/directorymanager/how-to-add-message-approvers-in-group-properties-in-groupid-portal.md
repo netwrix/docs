@@ -36,13 +36,13 @@ We have set up message approvers/moderators for various distribution lists in ou
 
 To enable Netwrix Directory Manager portal customization for displaying Message Approvers for Distribution Lists using Microsoft Exchange-based Active Directory attributes, you can utilize the following Active Directory attributes associated with Message Moderation for On-Premises MS Exchange:
 
-- **msExchEnableModeration**  
+- **msExchEnableModeration**
   This attribute is used in Microsoft Exchange to enable or disable message moderation for a specific distribution group. When this attribute is set to true, it indicates that messages sent to the distribution group will be subject to moderation, which means they will need approval from a moderator before being delivered to the group members.
 
-- **msExchModeratedByLink**  
+- **msExchModeratedByLink**
   This attribute is used to associate a distribution list or security group that contains the list of moderators for a moderated recipient. When this attribute is configured, it links the moderated recipient to the specified distribution list or security group, allowing the members of that group to act as moderators for the recipient.
 
-- **msExchBypassModerationLink**  
+- **msExchBypassModerationLink**
   This attribute is used to associate a distribution list or security group that contains the list of senders who can bypass the moderation process for a moderated recipient. When this attribute is set, it links the moderated recipient to the specified distribution list or security group, allowing the members of that group to send messages that bypass the moderation process.
 
 By leveraging these attributes, you can create a customized view in the Netwrix Directory Manager portal that shows the appropriate Message Approvers for the Distribution Lists. This customization enables you to manage message moderation effectively and efficiently within your organization's Exchange environment.
@@ -89,27 +89,21 @@ Follow the below-provided instructions to customize the portal:
 
     ![User-added image](images/ka0Qk000000D2Dh_0EMQk000001gb0z.png)
 
-## Reference:
 
-- Admin Center — Applications — Customize Properties Pages — v11.0  
-  https://docs.netwrix.com/docs/directorymanager/11_1
+
+
 
 ## Related Articles:
 
-- Walkthrough Search Policy - Define Scope and Filter Results  
-  /docs/kb/directorymanager/walkthrough_search_policy_-_define_scope_and_filter_results
+- [Customize Properties Pages](https://docs.netwrix.com/docs/directorymanager/11_0/signin/service/mobileservice/design/objectproperties)
+-  [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results.md)
 
-- How To Enforce Users to Create Groups in a Specific OU  
-  /docs/kb/directorymanager/how_to_enforce_users_to_create_groups_in_a_specific_ou
+- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
 
-- How To Import Members to a Group Using Self-Service Import Wizard  
-  /docs/kb/directorymanager/how_to_import_members_to_a_group_using_self-service_import_wizard
+- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard.md)
 
-- How to Trigger a workflow When a User Сreates a Group  
-  /docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group
+- [How to Trigger a workflow When a User Сreates a Group](/docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group.md)
 
-- Best Practices for Controlling Changes to Group Membership  
-  /docs/kb/directorymanager/how_to_enforce_users_to_create_groups_in_a_specific_ou
+- [Best Practices for Controlling Changes to Group Membership](https://docs.netwrix.com/docs/kb/directorymanager/best-practices-for-controlling-changes-to-group-membership#netwrix-directory-manager-best-practices)
 
-- Best Practices for Preventing Accidental Data Leakage  
-  /docs/kb/directorymanager/best_practices_for_preventing_accidental_data_leakage
+- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage.md)

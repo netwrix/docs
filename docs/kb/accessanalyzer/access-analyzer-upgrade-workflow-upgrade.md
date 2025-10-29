@@ -20,9 +20,9 @@ knowledge_article_id: ka0Qk000000GInNIAW
 # Upgrading Access Analyzer
 
 > **NOTE:**
-> - Return to the main workflow page: [Access Analyzer Upgrade Workflow](/docs/kb/accessanalyzer/access-analyzer-upgrade-workflow.md)
-> - Return to the previous section: [Access Analyzer Upgrade Workflow — Preparations](/docs/kb/accessanalyzer/access-analyzer-upgrade-workflow-preparations.md)
-> - Proceed to the next section: [Access Analyzer Upgrade Workflow — Post-Upgrade](/docs/kb/accessanalyzer/access-analyzer-upgrade-workflow-post-upgrade.md)
+> - Return to the main workflow page: [Access Analyzer Upgrade Workflow Articles](/docs/kb/accessanalyzer/access-analyzer-upgrade-workflow.md)
+> - Return to the previous section: [Preparing for Access Analyzer Upgrade](/docs/kb/accessanalyzer/access-analyzer-upgrade-workflow-preparations.md)
+> - Proceed to the next section: [Completing Access Analyzer Upgrade](/docs/kb/accessanalyzer/access-analyzer-upgrade-workflow-post-upgrade.md)
 
 ## Overview
 

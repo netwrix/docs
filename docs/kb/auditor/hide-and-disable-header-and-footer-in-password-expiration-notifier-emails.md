@@ -28,7 +28,7 @@ You'd like to remove the Netwrix header and footer from emails sent to users and
 
 ## Resolution
 
-> **IMPORTANT:** In some cases both header and footer reset after your Netwrix Auditor instance has been upgraded to v10.6. For additional information, refer to the following article: /docs/kb/auditor/password-expiration-notifier-email-header-and-footer-reset-after-upgrade (Password Expiration Notifier Email Header and Footer Reset After Upgrade).
+> **IMPORTANT:** In some cases both header and footer reset after your Netwrix Auditor instance has been upgraded to v10.6. For additional information, refer to the following article: [Netwrix Password Reset Email Header and Footer Reset After Upgrade](/docs/kb/auditor/password-expiration-notifier-email-header-and-footer-reset-after-upgrade.md)
 
 1. Open Registry Editor on the Netwrix Auditor Server host.
 2. Navigate to `HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Netwrix Auditor\Password Expiration Notifier`.
@@ -47,9 +47,9 @@ You'd like to remove the Netwrix header and footer from emails sent to users and
 
 > **NOTE:** If you'd like to re-enable the header and footer, simply change the value data to `0`.
 
-To further customize Netwrix Password Reset emails, refer to the following article: /docs/kb/auditor/customize-notifications-and-reports-in-password-expiration-notifier (Customize Notifications and Reports in Password Expiration Notifier).
+To further customize Netwrix Password Reset emails, refer to the following article: [Customize Notifications and Reports in Netwrix Password Reset](/docs/kb/auditor/customize-notifications-and-reports-in-password-expiration-notifier.md).
 
 ### Related articles
 
-- /docs/kb/auditor/customize-notifications-and-reports-in-password-expiration-notifier - Customize Notifications and Reports in Netwrix Password Reset  
-- /docs/kb/auditor/password-expiration-notifier-email-header-and-footer-reset-after-upgrade - Password Expiration Notifier Email Header and Footer Reset After Upgrade
+- [Customize Notifications and Reports in Netwrix Password Reset](/docs/kb/auditor/customize-notifications-and-reports-in-password-expiration-notifier.md)
+- [Netwrix Password Reset Email Header and Footer Reset After Upgrade](/docs/kb/auditor/password-expiration-notifier-email-header-and-footer-reset-after-upgrade.md)

@@ -85,9 +85,9 @@ Admin Center — Workflows — Overview — v11.0
 
 ### Related Articles
 
-- [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results.md).
-- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md).
-- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard.md).
-- [How To Add Message Approvers in Group Properties in Self-Service](/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal.md).
-- [Best Practices for Controlling Changes to Group Membership](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md).
-- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage.md).
+- [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results.md)
+- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
+- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard.md)
+- [How To Add Message Approvers in Group Properties in Netwrix Directory Manager Portal](/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal.md)
+- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
+- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage.md)

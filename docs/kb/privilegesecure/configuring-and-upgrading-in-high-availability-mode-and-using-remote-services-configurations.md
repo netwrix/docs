@@ -88,8 +88,8 @@ Perform the following steps to configure an HA pair:
    >
    > **IMPORTANT:** Do not proceed to the next step until both servers have a green check mark in the HA Manager.
 
-5. Follow the instructions in How to Configure Encryption Keys in Multiple Netwrix Privilege Secure Server Environments ⸱ Netwrix to export the encryption keys from the primary server to the secondary server.  
-   /docs/kb/privilegesecure/how_to_configure_encryption_keys_in_multiple_nps_server_environments)
+5. Follow the instructions in How to Configure Encryption Keys in Multiple Netwrix Privilege Secure Server Environments ⸱ Netwrix to export the encryption keys from the primary server to the secondary server.
+   [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md)
 6. On the primary server, locate the `appsettings.json` file at `C:\ProgramData\Stealthbits\PAM\HA\appsettings.json` and copy it to the same path on the secondary server.
 7. Run the HA tool on the secondary server. Specify the **Primary IP**, **Primary Port**, and **Secondary IP**.
 

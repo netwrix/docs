@@ -36,7 +36,7 @@ Error: The remote certificate is invalid according to the validation procedure.
 If enforced certificate validation is intended, refer to the following steps to troubleshoot the issue:
 
 - Ensure your SSL certificate is still valid. Netwrix Auditor stops generating reports once your certificate expires. In case you’re using a self-signed certificate in your environment, you can reboot your Netwrix Auditor server to reissue the certificate.
-- If you would like to set up a secure connection between your Netwrix Auditor instance and SQL Server Reporting Services, refer to the following article for additional information: [Set Up Secure Connection Between Netwrix Auditor and SSRS via SSL/TLS Channel](/docs/kb/auditor/set_up_secure_connection_between_auditor_and_ssrs_via_ssltls_channel.md).
+- If you would like to set up a secure connection between your Netwrix Auditor instance and SQL Server Reporting Services, refer to the following article for additional information: [Set Up Secure Connection Between Auditor and SSRS via SSL/TLS Channel](/docs/kb/auditor/set_up_secure_connection_between_auditor_and_ssrs_via_ssltls_channel.md).
 - Make sure the FQDN of your SMTP server is stated instead of the IP address in **Netwrix Auditor settings** > **Notifications**.
 
 If certificate validation was not intended, refer to the following steps:
@@ -47,4 +47,4 @@ If certificate validation was not intended, refer to the following steps:
 
 ### Related Articles
 
-[Set Up Secure Connection Between Netwrix Auditor and SSRS via SSL/TLS Channel](/docs/kb/auditor/set_up_secure_connection_between_auditor_and_ssrs_via_ssltls_channel.md)
+[Set Up Secure Connection Between Auditor and SSRS via SSL/TLS Channel](/docs/kb/auditor/set_up_secure_connection_between_auditor_and_ssrs_via_ssltls_channel.md)

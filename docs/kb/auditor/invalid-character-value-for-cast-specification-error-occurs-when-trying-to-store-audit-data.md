@@ -57,7 +57,7 @@ The source of the issue was resolved in newer versions, and since you are on 9.9
    2. Select a data source, check the desired monitoring plan, and set the dates.
    3. Click **Run**.
 
-   For additional information on how to import previously collected data, refer to the following article: Investigations https://docs.netwrix.com/docs/auditor/10_8.
+   For additional information on how to import previously collected data, refer to the following article: [Investigations](https://docs.netwrix.com/docs/auditor/10_8/admin/settings/investigations)
 
 2. Resolution 2
 
@@ -67,4 +67,4 @@ The source of the issue was resolved in newer versions, and since you are on 9.9
 
    After the database retention period passes, you will be able to remove the old database from the SQL Server completely and will not need this empty plan anymore (stale data would be cleared according to database retention settings, and all the current data will be in the new database).
 
-**IMPORTANT:** If, after these workarounds, you will have the *Archive Service is busy processing activity records* error, refer to the following article: Archive Service is busy processing activity records /docs/kb/auditor/archive-service-is-busy-processing-activity-records).
+**IMPORTANT:** If, after these workarounds, you will have the *Archive Service is busy processing activity records* error, refer to the following article: [Archive Service is Busy Processing Activity Records](/docs/kb/auditor/archive-service-is-busy-processing-activity-records.md).

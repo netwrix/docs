@@ -28,8 +28,8 @@ knowledge_article_id: kA00g000000H9WsCAK
 The following error message appears in the Netwrix Auditor Health Log or under the database status on the Database Statistics page:
 
 ```text
-Error in reports stating Could not allocate space for object '*' in database '*' because the 'PRIMARY' filegroup is full. 
-Create disk space by deleting unneeded files, dropping objects in the filegroup, adding additional files to the filegroup, 
+Error in reports stating Could not allocate space for object '*' in database '*' because the 'PRIMARY' filegroup is full.
+Create disk space by deleting unneeded files, dropping objects in the filegroup, adding additional files to the filegroup,
 or setting autogrowth on for existing files in the filegroup
 ```
 
@@ -68,9 +68,9 @@ To help prevent recurring database storage issues and support long-term stabilit
 The following solutions can temporarily offer more database storage and disk space but do not address the root cause of database size constraints.
 
 - Disable state-in-time data collection for the File Server monitoring plan by unselecting the **Collect data for state-in-time reports** option in the monitoring plan settings (**Edit monitoring plan** > **Edit Data Source**).
-- Allocate additional disk space to Netwrix Auditor and SQL Server. Hardware Requirements: https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
+- Allocate additional disk space to Netwrix Auditor and SQL Server. [Hardware Requirements](https://docs.netwrix.com/docs/auditor/10_8/requirements/console)
 - Change the **Database Retention** period via the Netwrix Auditor Console (**Settings** > **Audit Database**) to reduce the amount of time collected data is stored.
-- Recreate the database associated with the problematic Monitoring Plan. Since all collected data is also stored in the Long-Term Archive, no data loss is expected. However, recreating the database will remove its data from Searching and Reporting. To access this data, use the Netwrix Auditor Settings – Investigations (v10.6) feature: https://docs.netwrix.com/docs/auditor/10_8
+- Recreate the database associated with the problematic Monitoring Plan. Since all collected data is also stored in the Long-Term Archive, no data loss is expected. However, recreating the database will remove its data from Searching and Reporting. To access this data, use the [Netwrix Auditor Settings – Investigations (v10.6) feature](https://docs.netwrix.com/docs/auditor/10_8/admin/settings/investigations).
 
 To recreate the database, follow these steps:
 
@@ -87,5 +87,6 @@ To recreate the database, follow these steps:
 - 'PRIMARY' Filegroup Is Full: https://learn.microsoft.com/en-us/answers/questions/555422/primary-filegroup-is-full
 - Resolving SQL Server Errors: The Primary Filegroup Is Full: https://www.sqlshack.com/resolving-sql-server-errors-the-primary-filegroup-is-full/
 - Considerations for the Autogrow and Autoshrink Settings in SQL Server: https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/database-file-operations/considerations-autogrow-autoshrink
-- Netwrix Auditor Settings – Investigations ⸱ v10.6: https://docs.netwrix.com/docs/auditor/10_8
-- SQL Server Express Database Size Reached 10GB: /docs/kb/auditor/sql-server-express-database-size-reached-10gb
+- [Hardware Requirements](https://docs.netwrix.com/docs/auditor/10_8/requirements/console)
+- [Netwrix Auditor Settings – Investigations (v10.6) feature](https://docs.netwrix.com/docs/auditor/10_8/admin/settings/investigations)
+- [SQL Server Express Database Size Reached 10GB](/docs/kb/auditor/sql-server-express-database-size-reached-10gb.md)

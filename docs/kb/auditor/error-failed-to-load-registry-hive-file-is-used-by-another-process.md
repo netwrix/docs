@@ -29,13 +29,13 @@ knowledge_article_id: kA00g000000H9ahCAC
 The following warning appears during each data collection in the Netwrix Auditor Health Log:
 
 ```
-%timestamp%: %server%: 
+%timestamp%: %server%:
 The Add/Remove Software data provider failed to load the user %SID%.bak registry hive on the computer %server% due to the following error:
 The process cannot access the file because it is being used by another process.
 ```
 
 ```
-%timestamp%: %server%: 
+%timestamp%: %server%:
 The Add/Remove Software data provider failed to load the user %domain\\user% registry hive on the computer %server% due to the following error:
 The process cannot access the %PATH%\ntuser.dat file because it is being used by another process.
 ```
@@ -53,7 +53,7 @@ This issue may be caused by one or more of the following factors:
 
 Apply one or more of the following solutions to resolve this error:
 
-- Configure antivirus exclusions in your Netwrix Auditor environment. For details, see the following article: /docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor (Antivirus Exclusions for Netwrix Auditor).
+- Configure antivirus exclusions in your Netwrix Auditor environment. For details, see the following article: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)
 
 - Follow these steps if excluding Auditor-related folders did not resolve the issue:
 
@@ -89,4 +89,4 @@ Apply one or more of the following solutions to resolve this error:
 
 ## Related Article
 
-- Antivirus Exclusions for Netwrix Auditor: /docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor
+- [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)

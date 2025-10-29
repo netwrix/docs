@@ -56,12 +56,10 @@ HTTP Error 503. The service is unavailable.
 
 ## Resolutions
 
-- Review Web Service and Web Portal URLs — refer to the following article for additional information: Deploying the Report Server Database.
-  - /docs/kb/auditor/deploying-the-report-server-database
+- Review Web Service and Web Portal URLs — refer to the following article for additional information: [Deploying the Report Server Database](/docs/kb/auditor/deploying-the-report-server-database.md)
 - Verify the `SQL Server Reporting Services` service on your SSRS server is running. You can also run **Report Server Configuration Manager** > the **Report Server Status** tab to verify the report server status.
 
-  IMPORTANT: Refer to the following article if you're unable to start the `SQL Server Reporting Services` service: Error: Service Did Not Respond to Start or Control Request in SSRS.
-  - /docs/kb/auditor/error-service-did-not-respond-to-start-or-control-request-in-ssrs
+  IMPORTANT: Refer to the following article if you're unable to start the `SQL Server Reporting Services` service: [Error: Service Did Not Respond to Start or Control Request in SSRS](/docs/kb/auditor/error-service-did-not-respond-to-start-or-control-request-in-ssrs.md)
 
 - Remove the SSRS account from the Protected Users security group. Learn more about Protected Users in Protected Users Security Group ⸱ Microsoft.
   - https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/protected-users-security-group
@@ -80,16 +78,14 @@ If your SSRS instance edition is **Evaluation**, check the install date for the 
 Review the SSRS logs in `C:\Program Files\Microsoft SQL Server Reporting Services\SSRS\LogFiles:`:
 
 ```
-The report server has encountered a configuration error.  
+The report server has encountered a configuration error.
 Microsoft.ReportingServices.Diagnostics.EvaluationCopyExpiredException:
-The evaluation period for this instance of Microsoft SQL Server Reporting Services has expired.  
+The evaluation period for this instance of Microsoft SQL Server Reporting Services has expired.
 A license is now required.
 ```
 
 ## Related articles
 
-- Deploying the Report Server Database  
-  /docs/kb/auditor/deploying-the-report-server-database
+- [Deploying the Report Server Database](/docs/kb/auditor/deploying-the-report-server-database.md)
 
-- Error: Service Did Not Respond to Start or Control Request in SSRS  
-  /docs/kb/auditor/error-service-did-not-respond-to-start-or-control-request-in-ssrs
+- [Error: Service Did Not Respond to Start or Control Request in SSRS](/docs/kb/auditor/error-service-did-not-respond-to-start-or-control-request-in-ssrs.md)

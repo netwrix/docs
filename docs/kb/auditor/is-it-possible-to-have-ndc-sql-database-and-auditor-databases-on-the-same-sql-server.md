@@ -32,4 +32,4 @@ Is it possible to have both: Netwrix Data Classification (NDC) SQL database and 
 
 Netwrix strongly recommends **do not keep** these databases on the same SQL Server. This may lead to significant performance loss.
 
-If, for some reasons, you need to migrate your Netwrix Data Classification (NDC) SQL database to another server, refer to the following article for additional information: [How to Migrate Netwrix Data Classification Database](/docs/kb/dataclassification/how-to-migrate-the-netwrix-data-classification-database.md).
+If, for some reasons, you need to migrate your Netwrix Data Classification (NDC) SQL database to another server, refer to the following article for additional information: [How to Migrate the Netwrix Data Classification Database](/docs/kb/dataclassification/how-to-migrate-the-netwrix-data-classification-database.md).

@@ -33,7 +33,7 @@ There are two options for removing out-of-scope data:
 
 Netwrix Support can assist with dropping all file system data for the specified host. This removes all collected data for that host, not just the out-of-scope folders.
 
-Refer to [Dropping File System Data](/docs/kb/activitymonitor/dropping_file_system_data.md) for detailed instructions.
+Refer to [How to Drop File System Data from Netwrix Access Analyzer](/docs/kb/activitymonitor/dropping_file_system_data.md) for detailed instructions.
 
 **Considerations:**
 
@@ -55,4 +55,4 @@ For more granular removal (e.g., specific folders or paths), a one-time cleanup 
 
 ## Related Link
 
-- [Dropping File System Data](/docs/kb/activitymonitor/dropping_file_system_data.md)
+- [How to Drop File System Data from Netwrix Access Analyzer](/docs/kb/activitymonitor/dropping_file_system_data.md)

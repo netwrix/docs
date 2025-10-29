@@ -32,64 +32,64 @@ Omit lists serve as tools for filtering data. It is important to take careful co
 
 ### Active Directory
 
-Active Directory omit lists are found under `\%Netwrix Auditor installation folder%\Active Directory Auditing`. For additional information on Active Directory omit lists, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 Directory Plans – Monitoring Scope · v10.7).
+Active Directory omit lists are found under `\%Netwrix Auditor installation folder%\Active Directory Auditing`. For additional information on Active Directory omit lists, refer to the following documentation article: [Active Directory Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/activedirectory/scope)
 
 ### Microsoft Entra ID (formerly Azure AD)
 
-Microsoft Entra ID omit lists are found under `\%Netwrix Auditor installation folder%\Azure AD Auditing`. For additional information on Microsoft Entra ID omit lists, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 Entra ID Plans – Monitoring Scope · v10.7).
+Microsoft Entra ID omit lists are found under `\%Netwrix Auditor installation folder%\Azure AD Auditing`. For additional information on Microsoft Entra ID omit lists, refer to the following documentation article: [Entra ID Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/microsoftentraid/scope)
 
 ### Event Log Manager
 
-Event Log Manager omit lists are found under `\%Netwrix Auditor installation folder%\Event Log Management`. For additional information on Event Log Manager omit lists, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 (Windows Server Plans – Windows Server Monitoring Scope: Event Log · v10.7).
+Event Log Manager omit lists are found under `\%Netwrix Auditor installation folder%\Event Log Management`. For additional information on Event Log Manager omit lists, refer to the following documentation article: [Event Log Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/tools/eventlogmanager/eventlog)
 
 ### Exchange
 
-Exchange omit lists are found under `\%Netwrix Auditor installation folder%\Active Directory Auditing`. For additional information on Exchange omit lists, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 (Exchange Plans – Monitoring Scope · v10.7).
+Exchange omit lists are found under `\%Netwrix Auditor installation folder%\Active Directory Auditing`. For additional information on Exchange omit lists, refer to the following documentation article: [Exchange Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/exchange/scope)
 
 ### Exchange Online
 
-Exchange Online omit lists are found under `\%Netwrix Auditor installation folder%\Exchange Online Auditing`. For additional information on Exchange Online omit lists, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 (Exchange Online Plans – Monitoring Scope · v10.7).
+Exchange Online omit lists are found under `\%Netwrix Auditor installation folder%\Exchange Online Auditing`. For additional information on Exchange Online omit lists, refer to the following documentation article: [Exchange Online Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/exchangeonline/scope)
 
 ### File Servers
 
-File Servers omit lists are found under `\%Netwrix Auditor installation folder%\File Server Auditing`. For additional information on File Servers omit lists, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 (File Servers Plans – Monitoring Scope · v10.7).
+File Servers omit lists are found under `\%Netwrix Auditor installation folder%\File Server Auditing`. For additional information on File Servers omit lists, refer to the following documentation article: [File Server Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/fileservers/scope)
 
 ### Group Policy
 
-Group Policy omit lists are found under `\%Netwrix Auditor installation folder%\Active Directory Auditing`. For additional information on Group Policy omit lists, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 (Group Policy Plans – Monitoring Scope · v10.7).
+Group Policy omit lists are found under `\%Netwrix Auditor installation folder%\Active Directory Auditing`. For additional information on Group Policy omit lists, refer to the following documentation article: [Group Policy Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/grouppolicy/scope)
 
 ### Inactive User Tracker
 
-Inactive User Tracker omit lists are found under `\%Working Folder%\Inactive Users Tracker`. For additional information on Inactive User Tracker omit lists, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8 Objects from Monitoring Scope – Inactive Users · v10.7).
+Inactive User Tracker omit lists are found under `\%Working Folder%\Inactive Users Tracker`. For additional information on Inactive User Tracker omit lists, refer to the following article: [Inactive Users Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/tools/inactiveusertracker#monitoring-scope)
 
 ### Logon Activity
 
-Logon Activity omit lists are found under `\%Working Folder%\NLA\Settings`. For additional information on Group Policy omit lists, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 (Logon Activity Plans – Monitoring Scope · v10.7).
+Logon Activity omit lists are found under `\%Working Folder%\NLA\Settings`. For additional information on Group Policy omit lists, refer to the following documentation article: [Logon Activity Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/logonactivity/scope)
 
 ### Oracle Database
 
-For additional information on Oracle Database omit lists, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8 (Oracle Database Plans – Monitoring Scope · v10.7).
+For additional information on Oracle Database omit lists, refer to the following article: [Oracle Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/oracle/scope)
 
-### Netwrix Password Reset
+### Netwrix Password Expiration
 
-Netwrix Password Reset omit lists are found under `\%Netwrix Auditor installation folder%\Password Expiration Alerting`. For additional information on Netwrix Password Reset omit lists, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 Directory Plans – AD Monitoring Scope: Password Expiration · v10.7).
+Netwrix Password Expiration Notifier omit lists are found under `\%Netwrix Auditor installation folder%\Password Expiration Alerting`. For additional information on Netwrix Password Expiration Notifier omit lists, refer to the following documentation article: [Password Expiration Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_7/tools/passwordexpirationnotifier/monitoringscope)
 
 ### SharePoint
 
-SharePoint omit lists are found under `\%Working Folder%\Netwrix Auditor for SharePoint\Configuration\GUID\`. For additional information on SharePoint omit lists, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8 (SharePoint Plans – Monitoring Scope · v10.7).
+SharePoint omit lists are found under `\%Working Folder%\Netwrix Auditor for SharePoint\Configuration\GUID\`. For additional information on SharePoint omit lists, refer to the following article: [SharePoint Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/sharepoint/scope)
 
 ### SharePoint Online
 
-SharePoint Online omit lists are found under `\%Working Folder%\Netwrix Auditor for SharePoint Online\Configuration\GUID`. For additional information on SharePoint Online omit lists, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8 (SharePoint Online Plans – Monitoring Scope · v10.7).
+SharePoint Online omit lists are found under `\%Working Folder%\Netwrix Auditor for SharePoint Online\Configuration\GUID`. For additional information on SharePoint Online omit lists, refer to the following article: [SharePoint Online Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/sharepointonline/scope)
 
 ### SQL Server Auditing
 
-SQL Server omit lists are found under `\%Netwrix Auditor installation folder%\SQL Server Auditing`. For additional information on SQL Server omit lists, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 (SQL Server Plans – Monitoring Scope · v10.7).
+SQL Server omit lists are found under `\%Netwrix Auditor installation folder%\SQL Server Auditing`. For additional information on SQL Server omit lists, refer to the following documentation article: [SQL Server Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/sqlserver/scope)
 
 ### VMWare
 
-VMWare omit lists are found under `\%Netwrix Auditor installation folder%\VMware Auditing`. For additional information on VMWare omit lists, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8 (VMware Plans – Monitoring Scope · v10.7).
+VMWare omit lists are found under `\%Netwrix Auditor installation folder%\VMware Auditing`. For additional information on VMWare omit lists, refer to the following article: [VMWare Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/vmware/scope)
 
 ### Windows Server
 
-Windows Server omit lists are found under `\%Netwrix Auditor installation folder%\Windows Server Auditing`. For additional information on Windows Server omit lists, refer to the following documentation article: https://docs.netwrix.com/docs/auditor/10_8 (Windows Server Plans – Monitoring Scope · v10.7).
+Windows Server omit lists are found under `\%Netwrix Auditor installation folder%\Windows Server Auditing`. For additional information on Windows Server omit lists, refer to the following documentation article: [Windows Server Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/windows/scope)

@@ -27,12 +27,12 @@ knowledge_article_id: kA04u0000000JqxCAE
 
 This article outlines the steps to configure a service mesh in Netwrix Privilege Secure for Access Management. Follow these instructions to ensure proper setup and high availability.
 
-- If you have two application servers with internal PostgreSQL on each, you must configure high availability (HA) before configuring a service mesh. For additional information on the HA setup, see Configure and Upgrade Netwrix Privilege Secure in High Availability Mode and Using Remote Services Configurations: /docs/kb/privilegesecure/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations
-- In both PostgreSQL and SQL Server deployments, you must complete the key exchange in your environment before configuring a service mesh. For additional information on the key exchange setup, see How to Configure Encryption Keys in Multiple Netwrix Privilege Secure Server Environments: /docs/kb/privilegesecure/how-to-configure-encryption-keys-in-multiple-nps-server-environments
+- If you have two application servers with internal PostgreSQL on each, you must configure high availability (HA) before configuring a service mesh. For additional information on the HA setup, see Configure and Upgrade Netwrix Privilege Secure in High Availability Mode and Using Remote Services Configurations: [Configuring and Upgrading in High Availability Mode and Using Remote Services Configurations](/docs/kb/privilegesecure/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations.md)
+- In both PostgreSQL and SQL Server deployments, you must complete the key exchange in your environment before configuring a service mesh. For additional information on the key exchange setup, see [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md)
 
 > **IMPORTANT:** Multi-factor authentication should be disabled for the Netwrix Privilege Secure Administrator account, if used. While this will be indicated by an error message when running `sbpam-proxy.exe`, the error will not indicate the missing 2FA or the need to disable it prior to running.
 
-For additional information on used protocols and ports, see Installation — System Architecture · v4.2: https://docs.netwrix.com/docs/privilegesecure/4_2
+For additional information on used protocols and ports, see [Port, Firewall, and Datacenter Requirements](https://docs.netwrix.com/docs/privilegesecurediscovery/requirements/portsandfirewalls#firewall-rules)
 
 ## Instructions
 
@@ -130,11 +130,10 @@ To enable replication of session recordings (`.webm` files for web sessions, `.i
 
 3. Once the file is saved, restart the proxy service and recording replication should occur.
 
-For detailed steps on moving the recording locations, see How to Change the Path Where Session Recordings Are Stored: /docs/kb/privilegesecure/how-to-change-the-path-where-session-recordings-are-stored
+For detailed steps on moving the recording locations, see How to Change the Path Where Session Recordings Are Stored: [How to Change the Path Where Session Recordings Are Stored](/docs/kb/privilegesecure/how-to-change-the-path-where-session-recordings-are-stored.md)
 
 ## Related Articles
 
-- Configure and Upgrade Netwrix Privilege Secure in High Availability Mode and Using Remote Services Configurations: /docs/kb/privilegesecure/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations
-- How to Configure Encryption Keys in Multiple Netwrix Privilege Secure Server Environments: /docs/kb/privilegesecure/how-to-configure-encryption-keys-in-multiple-nps-server-environments
-- Installation — System Architecture · v4.2: https://docs.netwrix.com/docs/privilegesecure/4_2
-- How to Change the Path Where Session Recordings Are Stored: /docs/kb/privilegesecure/how-to-change-the-path-where-session-recordings-are-stored
+- [Configuring and Upgrading in High Availability Mode and Using Remote Services Configurations](/docs/kb/privilegesecure/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations.md)
+- [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md)
+- [Port, Firewall, and Datacenter Requirements](https://docs.netwrix.com/docs/privilegesecurediscovery/requirements/portsandfirewalls#firewall-rules)- [How to Change the Path Where Session Recordings Are Stored](/docs/kb/privilegesecure/how-to-change-the-path-where-session-recordings-are-stored.md)

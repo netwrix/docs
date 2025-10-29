@@ -37,14 +37,14 @@ You can exclude specific users and objects from your monitoring scope using the 
 
 1. In the main Netwrix Auditor menu, select **Monitoring plans** under **Configuration**.
 2. Select the relevant monitoring plan, select the data source and click **Edit**.
-3. Select the data source and click **Edit data source**.  
-   
+3. Select the data source and click **Edit data source**.
+
    ![bM2zhsogPP.png](images/ka04u000000Qmg4_0EM4u000007cgGr.png)
 4. In the left pane, select **Users**. Check the **Exclude these users:** checkbox and click **Add** to add users to be excluded from the monitoring plan. Once all the users are added, click **Save & Close** in the bottom left corner.
-   
+
    ![UwJqLVpUZx.png](images/ka04u000000Qmg4_0EM4u000007cgOC.png)
-5. For objects, select the **Objects** tab in the left pane, check the **Exclude these objects** checkbox and click **Add** to exclude objects from the monitoring scope. Once you've added the objects, click **Save & Close**.  
-   
+5. For objects, select the **Objects** tab in the left pane, check the **Exclude these objects** checkbox and click **Add** to exclude objects from the monitoring scope. Once you've added the objects, click **Save & Close**.
+
    ![RmVD0BXEc0.png](images/ka04u000000Qmg4_0EM4u000007cgPy.png)
 
 The following examples explain how the exclusion rules work for **Objects**. Same logic applies to the inclusion rules:
@@ -53,4 +53,4 @@ The following examples explain how the exclusion rules work for **Objects**. Sam
 - `dc11.local/OU/*` will exclude objects within the OU. However, the OU itself will not be excluded.
 - `dc11.local/OU*` will exclude the OU itself, all objects within it, and also all objects whose path begins with `dc11.local/OU` (like `dc11.local/OU_HQ`).
 
-For additional information on omit lists and excluding data sources, refer to the following article: Exclude Objects from Monitoring Scope.
+For additional information on omit lists and excluding data sources, refer to the following article: [How to Use Omit Lists](https://docs.netwrix.com/docs/kb/auditor/how-to-use-omit-lists)

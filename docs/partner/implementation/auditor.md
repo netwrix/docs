@@ -11,7 +11,7 @@ import { NDCIntegrationNA } from '@site/src/training/data-classification';
 import { Company, NA, NDC, NPS } from '@site/src/training/products';
 
 
-Estimated length: 6 hours + 3 hours Lab Experience
+Estimated length: 8.5 hours
 
 This learning path grants <Company /> certification as a Professional Services Engineer for this product. It contains the following courses:
 

@@ -28,7 +28,7 @@ knowledge_article_id: kA0Qk0000002VvlKAE
 
 The `sbpam-url` utility, located in the **Extras** folder of the download package, registers an SSH URL handler. This utility helps you automatically connect to an NPS-proxied SSH session.
 
-For additional information, refer to the following article: /docs/kb/privilegesecure/invoking_desktop_ssh_client_automatically (How to Invoke a Desktop SSH Client Automatically).
+For additional information, refer to the following article: [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/invoking-desktop-ssh-client-automatically.md)
 
 At the time this article was written, the referenced KB article instructed users to download the utility from a static link, which may provide an outdated version. Use the utility bundled in the **Extras** folder to ensure you have the latest version.
 
@@ -110,8 +110,8 @@ Use the following syntax to register a handler:
 
 You can use WinSCP to install an SSH handler as an alternative to `sbpam-url`. Note that WinSCP requires Putty to be installed first.
 
-- https://www.putty.org/ (Download Putty ⸱ PuTTY 🐍)
-- https://winscp.net/eng/download.php (Download WinSCP ⸱ WinSCP 🐘)
+- [Download Putty ⸱ PuTTY 🐍](https://www.putty.org/)
+- [Download WinSCP ⸱ WinSCP 🐘](https://winscp.net/eng/download.php)
 
 ### Registry Keys Modified by sbpam-url
 
@@ -164,6 +164,6 @@ The `sbpam-url` utility updates the following registry keys to register the prot
 
 ## Related Links
 
-- /docs/kb/privilegesecure/invoking_desktop_ssh_client_automatically (How to Invoke a Desktop SSH Client Automatically)
-- https://www.putty.org/ (Download Putty ⸱ PuTTY 🐍)
-- https://winscp.net/eng/download.php (Download WinSCP ⸱ WinSCP 🐘)
+- [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/invoking-desktop-ssh-client-automatically.md)
+- [Download Putty ⸱ PuTTY 🐍](https://www.putty.org/)
+- [Download WinSCP ⸱ WinSCP 🐘](https://winscp.net/eng/download.php)

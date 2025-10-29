@@ -27,8 +27,8 @@ knowledge_article_id: kA0Qk0000000LhBKAU
 You see the following error in the Netwrix Auditor System Health log:
 
 ```text
- 
-            Error: can not process SQL commands for the Netwrix Auditor Self Audit database. 
+
+            Error: can not process SQL commands for the Netwrix Auditor Self Audit database.
 ```
 
 ## Cause
@@ -53,4 +53,4 @@ Follow the steps below to turn off the **Recovery** mode for the database:
 
 ### Related Article:
 
-- Recovery Mode Changes in SQL Databases: /docs/kb/auditor/recovery-mode-changes-in-sql-databases
+- [Recovery Mode Changes in SQL Databases](/docs/kb/auditor/recovery-mode-changes-in-sql-databases.md)

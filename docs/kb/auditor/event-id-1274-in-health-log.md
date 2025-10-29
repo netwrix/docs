@@ -43,11 +43,11 @@ because the product is unable to detect the forest where the audited SharePoint 
 
 - Cause #1 − Verify the **SharePoint Central Administration** site is reachable by opening the URL in a browser.
 - Cause #2 − Refer to the following articles for additional information:
-  - Event ID 1204 in Health Log: /docs/kb/auditor/event-id-1204-in-health-log
-  - Event ID 1205 in Health Log: /docs/kb/auditor/event-id-1205-in-health-log
+  - [Event ID 1204 in Health Log](/docs/kb/auditor/event-id-1204-in-health-log.md)
+  - [Event ID 1205 in Health Log](/docs/kb/auditor/event-id-1205-in-health-log.md)
 - Cause #3 − Verify the global catalog domain controller is reachable.
 
 ## Related articles
 
-- Event ID 1204 in Health Log: /docs/kb/auditor/event-id-1204-in-health-log
-- Event ID 1205 in Health Log: /docs/kb/auditor/event-id-1205-in-health-log
+- [Event ID 1204 in Health Log](/docs/kb/auditor/event-id-1204-in-health-log.md)
+- [Event ID 1205 in Health Log](/docs/kb/auditor/event-id-1205-in-health-log.md)

@@ -3,7 +3,7 @@ description: >-
   This article explains how to resolve the "System cannot find the file
   specified" (0x80070002) rsInternalError when running reports in Netwrix
   Auditor, typically caused by a missing report server database. It lists
-  symptoms, cause, and step-by-step resolution. 
+  symptoms, cause, and step-by-step resolution.
 keywords:
   - report server
   - rsInternalError
@@ -49,6 +49,6 @@ A report server database is missing.
 Refer to the following steps to resolve the issue:
 
 1. In your Netwrix Auditor server, disable **Netwrix Auditor Archive Service** and **Netwrix Auditor Management Service** via **Services**.
-2. Deploy the report server database — refer to the following article for in-depth instructions: /docs/kb/auditor/deploying-the-report-server-database (Deploying the Report Server Database).
-3. Once you've configured the report server database, grant the roles to the SSRS service account the roles required. Refer to the following article for additional information: https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserverreportingservice (Configure SSRS Account).
+2. Deploy the report server database — refer to the following article for in-depth instructions: [Deploying the Report Server Database](/docs/kb/auditor/deploying-the-report-server-database.md)
+3. Once you've configured the report server database, grant the roles to the SSRS service account the roles required. Refer to the following article for additional information: [Configure SSRS account](https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserverreportingservice) and [How to Assign db_owner Permissions](docs\kb\auditor\how-to-assign-db-owner-permissions.md)
 4. Restart **Netwrix Auditor Archive Service** and **Netwrix Auditor Management Service** on your Netwrix Auditor server via **Services**.

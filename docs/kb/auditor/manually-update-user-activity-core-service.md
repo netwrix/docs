@@ -29,7 +29,7 @@ The Netwrix Auditor User Activity Core Service version in a target server does n
 
 ## Answer
 
-> **NOTE:** Refer to the following article for additional information on establishing the version of your Auditor server: /docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version (How to Find Out My Netwrix Auditor Version).
+> **NOTE:** Refer to the following article for additional information on establishing the version of your Auditor server: [How to Find Out My Netwrix Auditor Version](/docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version.md)
 
 > **IMPORTANT:** It is recommended to stop User Activity services in the Netwrix server before making changes to installed Core Services in targets. Run the following command in elevated PowerShell to stop User Activity Core Service and Audit Service:
 >
@@ -59,7 +59,7 @@ User Activity Core Service is designed to be deployed automatically when adding 
 
 ### Manually update Core Service in multiple target servers − Option #1
 
-1. Download the following PowerShell script: https://www.netwrix.com/download/products/KnowledgeBase/Uninstall-NetwrixProduct.ps1 (Uninstall-NetwrixProduct.ps1).
+1. Download the following PowerShell script: [Uninstall Netwrix Product](https://www.netwrix.com/download/products/KnowledgeBase/Uninstall-NetwrixProduct.ps1).
 2. In elevated PowerShell in your Netwrix server, run the script to uninstall Core Service from all target servers in the User Activity monitoring plan:
 
    ```powershell
@@ -117,5 +117,5 @@ User Activity Core Service is designed to be deployed automatically when adding 
 
 ## Related links
 
-- How to Find Out My Netwrix Auditor Version: /docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version
-- Uninstall-NetwrixProduct.ps1: https://www.netwrix.com/download/products/KnowledgeBase/Uninstall-NetwrixProduct.ps1
+- [How to Find Out My Netwrix Auditor Version](/docs/kb/auditor/how-to-find-out-my-netwrix-auditor-version.md)
+- [Uninstall Netwrix Product](https://www.netwrix.com/download/products/KnowledgeBase/Uninstall-NetwrixProduct.ps1)

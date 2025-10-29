@@ -34,7 +34,7 @@ knowledge_article_id: kA00g000000H9efCAC
 
 Netwrix Technical Support might request a collection of your Netwrix Auditor logs for troubleshooting purposes. Make sure you gather the following items to help your Technical Support Engineer resolve your issue.
 
-- **Netwrix Auditor System Health event log**. Refer to the following article for additional information on exporting the System Health event log: /docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log (How to Save and Zip Netwrix Auditor System Health Event Log).
+- **Netwrix Auditor System Health event log**. Refer to the following article for additional information on exporting the System Health event log: [How to Save and Zip Netwrix Auditor System Health Event Log](/docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log.md)
 
 - **Netwrix Auditor configuration files**. Navigate to ` %Working Folder%\AuditCore\ConfigServer ` and copy the **ConfigServer** folder. The default location of the **ConfigServer** folder is `C:\ProgramData\Netwrix Auditor\AuditCore\ConfigServer`.
 
@@ -66,17 +66,17 @@ Netwrix Technical Support might request a collection of your Netwrix Auditor log
 
 1. Once you have located all the required logs, copy them to a single folder and compress it by right-clicking the folder and selecting **Send to** > **Compressed (zipped) folder**.
 
-2. Log in to the Customer Portal and attach the archived logs to the opened ticket. Use the following link to open the **Open tickets** page: https://www.netwrix.com/tickets.html#/tickets/open (My Tickets — Open Tickets).
+2. Log in to the Customer Portal and attach the archived logs to the opened ticket. Use the following link to open the **Open tickets** page: [Netwrix Customer Portal](https://www.netwrix.com/tickets.html#/tickets/open)
 
 > **NOTE:** Once you have opened the **Open Tickets** page and identified the corresponding ticket (with a matching ticket #), you can attach the logs via one of the following ways:
 >
-> - Click the **Add attachments** button located under the **Actions** column of the ticket.  
+> - Click the **Add attachments** button located under the **Actions** column of the ticket.
 >   ![Customer Portal Attachments 1](images/ka0Qk000000Bei5_00N0g000004CA0p_0EMQk000008M3Qr.png)
 >
-> - Expand the ticket details by clicking the **down carat (▼)** button and click the **plus (+)** button next to **Attachments**.  
+> - Expand the ticket details by clicking the **down carat (▼)** button and click the **plus (+)** button next to **Attachments**.
 >   ![Customer Portal Attachments 2](images/ka0Qk000000Bei5_00N0g000004CA0p_0EMQk000008M3U5.png)
 
 ## Related links
 
-- How to Save and Zip Netwrix Auditor System Health Event Log: /docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log
-- My Tickets — Open Tickets: https://www.netwrix.com/tickets.html#/tickets/open
+- [How to Save and Zip Netwrix Auditor System Health Event Log](/docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log.md)
+- [Netwrix Customer Portal](https://www.netwrix.com/tickets.html#/tickets/open)
