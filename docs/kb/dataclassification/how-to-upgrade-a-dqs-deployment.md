@@ -32,6 +32,11 @@ knowledge_article_id: kA00g000000PbcmCAC
 
 1. Stop all three NDC services on each node in the cluster (`conceptcollector`, `conceptindexer`, `conceptclassifier`)
 2. On the primary node (the original NDC server, also referred to as DQS1), run the installer for the new version as an administrator. Select **Next** on each prompt until the installer completes.
+
+:::note
+When upgrading to version 5.7.10 onwards: if you are not running the installer as the NDC service account, you will need to run through the DQS resynchronisation steps when upgrading secondary instances. This is because the installer cannot decrypt the encryption key if it is not running as the service account.
+:::
+
 3. To ensure that the upgrade was a success, open a browser and navigate to the NDC dashboard which is found here by default: (`http://localhost/conceptQS`). Ensure that the version and build correspond to the version that you were attempting to upgrade to, if that is the case then you have successfully upgraded the server.
 4. Repeat steps 2 and 3 for all subsequent nodes in the cluster, upgrading one server at a time and confirming that the upgrade was a success via the browser.
 5. Once all nodes in the cluster are showing the same version, you have completed the upgrade successfully.
