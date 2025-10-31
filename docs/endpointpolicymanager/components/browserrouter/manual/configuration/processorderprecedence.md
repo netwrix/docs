@@ -39,7 +39,7 @@ you can specify a baseline setting for various computers and then have particula
 policies when specific users log on.
 
 If policies are on the same side, a more-specific URL pattern takes precedence over a less-specific
-URL pattern. For example, mail.endpointpolicymanager.com takes precedence over \*.endpointpolicymanager.com.
+URL pattern. For example, mail.policypak.com takes precedence over \*.policypak.com.
 
 If patterns are equally specific, a pattern in a more specific policy always takes precedence over a
 pattern in a less-specific policy. For example, a pattern in a GPO linked to an OU wins over a

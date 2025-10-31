@@ -32,7 +32,7 @@ in Figure 5.
 Figure 5. Endpoint Policy Manager managing permissions within Firefox.
 
 Video: To see a video of Endpoint Policy Manager managing bookmarks, go to
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-firefox-bookmarks.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-firefox-bookmarks.html).
+[http://www.policypak.com/video/endpointpolicymanager-manage-firefox-bookmarks.html](http://www.policypak.com/video/endpointpolicymanager-manage-firefox-bookmarks.html).
 
 The format you need to specify is
 
@@ -40,11 +40,11 @@ The format you need to specify is
 
 So, for example,
 
-`Folder123\PolicyPak, http://endpointpolicymanager.com, toolbar, add `
+`Folder123\PolicyPak, http://policypak.com, toolbar, add `
 
-would add endpointpolicymanager.com to the folder named Folder123 inside the toolbar.
+would add policypak.com to the folder named Folder123 inside the toolbar.
 
-`Folder123\PolicyPak, http://endpointpolicymanager.com, menu, add `
+`Folder123\PolicyPak, http://policypak.com, menu, add `
 
 would add Endpoint Policy Manager to a folder named Folder123 inside the menu system.
 

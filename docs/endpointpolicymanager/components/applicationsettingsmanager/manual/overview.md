@@ -34,5 +34,5 @@ Some of our most popular AppSets are for use with:
 - Microsoft products
 
 You can find the latest versions of our AppSets on our website at
-[http://www.endpointpolicymanager.com/products/endpointpolicymanager-preconfigured-paks.html](http://www.endpointpolicymanager.com/videos/sn6j7q1clmq.html).
+[http://www.policypak.com/products/endpointpolicymanager-preconfigured-paks.html](http://www.policypak.com/videos/sn6j7q1clmq.html).
 Most AppSets have corresponding videos with examples showing you how to use the AppSets.

@@ -20,7 +20,7 @@ only normally apply on the user side to any computer you want.
 This is kind of an advanced under-the-hood technique, but you're an advanced under-the-hood
 technique kind of guy, so I'm going to show you how this works. Basically, we're going to do some
 magic with Group Policy Preferences without
-[https://www.endpointpolicymanager.com/pp-blog/group-policy-loopback](https://www.endpointpolicymanager.com/pp-blog/group-policy-loopback),
+[https://www.policypak.com/pp-blog/group-policy-loopback](https://www.policypak.com/pp-blog/group-policy-loopback),
 but it does require that you're licensed for the PolicyPak On-Prem Suite or the PolicyPak Cloud
 Suite.
 

@@ -58,7 +58,7 @@ build and this build. Yes? → As ADMIN.. Run `PPLOGS` and send us PPLOGS (renam
 - Do NOT run with the Driver disabled in Production.
 - This will stop much of Endpoint Policy Manager's inner workings such as:
   - Endpoint Policy Manager
-    [https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html) (completely).
+    [https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html) (completely).
   - Endpoint Policy Manager Application Manager (Reapply on launch.)
   - Endpoint Policy Manager Browser Router (FF extension installation in some cases).
   - Endpoint Policy Manager Applock.

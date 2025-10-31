@@ -17,7 +17,7 @@ can deliver Chrome bookmarks.
 
   ```
   [ { "name": "GP Answers", "url": "gpanswer.com" }, { "name": "PolicyPak", "url": 
-  "endpointpolicymanager.com" }, { "name": "Chrome links", "children": [ { "name": "Chromium", 
+  "policypak.com" }, { "name": "Chrome links", "children": [ { "name": "Chromium", 
   "url": "chromium.org" }, { "name": "List of Policies", "url": 
   "http://www.chromium.org/administrators/policy-list-3" } ] } ]
   ```

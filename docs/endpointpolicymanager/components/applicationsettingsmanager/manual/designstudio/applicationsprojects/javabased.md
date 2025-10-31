@@ -14,8 +14,7 @@ This is done in two steps:
 
 **Step 2 –** Turning off the user account control in Windows 7
 
-The link for the installable Java Access Bridge can be hard to find. Email Endpoint Policy Manager
-tech support at [support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com), and we can provide you with a
+The link for the installable Java Access Bridge can be hard to find. Please [open a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket) and we can provide you with a
 copy. Once installed, don't reboot yet, even though the Java Access Bridge installation process asks
 you to.
 

@@ -72,5 +72,5 @@ Administrator user and you are using it for the advanced Group Policy management
 back up, restore, perform history and do modeling on your GPOs themselves, you're in good company
 because PolicyPak is going to work with it.
 
-[Thanks](https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/) so much, and I'll talk to you
+[Thanks](https://dev.policypak.com/resources/thank-you-whitepapers/) so much, and I'll talk to you
 soon.

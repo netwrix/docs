@@ -36,7 +36,7 @@ How did I perform this magic here? The first thing is that I have a little batch
 is that it silences it as much as it can ("@echo off").
 
 Then it says "set address=%1" which means it's going to take in the item that you're passing. So
-that would be the address: "mailto:jeremym@endpointpolicymanager.com." Then what it does is removes the first
+that would be the address: "mailto:jeremym@policypak.com." Then what it does is removes the first
 seven characters which would be "mailto:" and then what we do is that we run the default browser
 against the special link in "https://outlook.office.com" and then we put in "`%address%`" which is
 the address without the "mailto:".

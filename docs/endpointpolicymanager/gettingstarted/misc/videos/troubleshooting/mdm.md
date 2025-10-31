@@ -47,8 +47,8 @@ for a Group Policy Edition or for the pre-deployment testing for the Cloud or MD
 
 All right, and we are back. Let's check and see if this machine is behaving as though it's licensed.
 See if Process Monitor ("Procmon") will run elevated. There we go. It runs elevated just like we
-told it to. If we come over to "Firefox," let's see if it takes us to endpointpolicymanager.com homepage that I
-set for it. There we go: "Waiting for www.endpointpolicymanager.com." It looks like it's going to take us there,
+told it to. If we come over to "Firefox," let's see if it takes us to policypak.com homepage that I
+set for it. There we go: "Waiting for www.policypak.com." It looks like it's going to take us there,
 and there we have it.
 
 All right, so just to prove that I haven't pulled any trickery on you, let's go back and look at my

@@ -35,8 +35,8 @@ You can either use "MODE=REPLACE" or "MODE=MERGE." MODE=MERGE says, "We don't ca
 settings. If they do, we'll go ahead and leave them there. But if they have anything at all,
 MODE=REPLACE says, "Smash down," replacing whatever they have with whatever we put right here.
 
-Let's go ahead and say on endpointpolicymanager.com we want popup, allow. You can see how the template works.
-You just go through, give it a name, comma, "popup," comma, "allow" ("endpointpolicymanager.com, popup, allow").
+Let's go ahead and say on policypak.com we want popup, allow. You can see how the template works.
+You just go through, give it a name, comma, "popup," comma, "allow" ("policypak.com, popup, allow").
 
 There are these other permissions as well. I'll just use Facebook as the example here. You can see
 we've got "camera," "microphone," "install," "pointerLock" and "desktop-notification." These
@@ -58,9 +58,9 @@ would see that these would occur as well.
 
 Now that that's done, let me close this out. We'll go ahead and run "Mozilla Firefox" here. Let's
 head right over to "Options," back to "Content." For "Block pop-up windows," you can see
-"endpointpolicymanager.com" is set to "Allow."
+"policypak.com" is set to "Allow."
 
-If we look and go to "about:permissions" here, you can see that "endpointpolicymanager.com" is dictated, the
+If we look and go to "about:permissions" here, you can see that "policypak.com" is dictated, the
 permission for "Open Pop-up Windows" is "Allow." Here, "www.facebook.com" is set to "Block" "Use the
 Camera" and "Use the Microphone."
 

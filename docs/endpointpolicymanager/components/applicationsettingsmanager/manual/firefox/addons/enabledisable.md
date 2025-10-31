@@ -7,7 +7,7 @@ sidebar_position: 10
 # Using Endpoint Policy Manager to Enable or Disable Add-Ons
 
 Video: To see a video of Endpoint Policy Manager enabling or disabling Firefox's add-ons, go to
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-firefox-add-ons-using-group-policy.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-firefox-add-ons-using-group-policy.html)
+[http://www.policypak.com/video/endpointpolicymanager-manage-firefox-add-ons-using-group-policy.html](http://www.policypak.com/video/endpointpolicymanager-manage-firefox-add-ons-using-group-policy.html)
 
 Firefox has four categories of add-ons, as shown in Figure 16.
 

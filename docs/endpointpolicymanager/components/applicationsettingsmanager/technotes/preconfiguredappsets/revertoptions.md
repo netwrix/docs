@@ -8,7 +8,7 @@ sidebar_position: 130
 
 Here's a video on how to do that
 
-[Download this video](https://www.endpointpolicymanager.com/automation/download.php?vid=2rhdHskV4tU&pid=how-can-i-use-policypak-to-revert-firefoxs-options-back-to-the-old-style)
+[Download this video](https://www.policypak.com/automation/download.php?vid=2rhdHskV4tU&pid=how-can-i-use-policypak-to-revert-firefoxs-options-back-to-the-old-style)
 
 ### Firefox 28 and Endpoint Policy Manager — Deliver and lockdown settings, and also switch back to old UI for Options
 

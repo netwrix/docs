@@ -52,25 +52,25 @@ Allowed with Path Rule 1
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
-<policy xmlns:lpm="http://www.endpointpolicymanager.com/2016/LPM/CommonTypes" xmlns:ext="http://www.endpointpolicymanager.com/2019/LPM/PolicyEntryExtension" xmlns:security="http://www.endpointpolicymanager.com/2016/LPM/Security" xmlns:pd="http://www.endpointpolicymanager.com/2014/Policies/PolicyData" xmlns:pp="http://www.endpointpolicymanager.com/2014/CommonTypes" id="{f15e00f9-31ab-4e3c-956a-21d4b49e280b}" productId="{58DE0268-6384-49E0-A333-20EC46654B82}" scope="machine" timestamp="1711029993" xmlns="http://www.endpointpolicymanager.com/2016/LPM/PolicyData">
+<policy xmlns:lpm="http://www.policypak.com/2016/LPM/CommonTypes" xmlns:ext="http://www.policypak.com/2019/LPM/PolicyEntryExtension" xmlns:security="http://www.policypak.com/2016/LPM/Security" xmlns:pd="http://www.policypak.com/2014/Policies/PolicyData" xmlns:pp="http://www.policypak.com/2014/CommonTypes" id="{f15e00f9-31ab-4e3c-956a-21d4b49e280b}" productId="{58DE0268-6384-49E0-A333-20EC46654B82}" scope="machine" timestamp="1711029993" xmlns="http://www.policypak.com/2016/LPM/PolicyData">
   <collection order="0" id="{245fa453-d68a-49ea-ab81-54c96152fe5d}" displayName="Container for policy: UiPath.Assistant PowerShell command Allowed with PATH rule 1">
     <entry order="0" scope="machine" id="{e495c7c7-c377-439b-8cbb-48619daaef82}" displayName="UiPath.Assistant PowerShell command Allowed with PATH rule 1">
       <rule-v1>
-        <executableRule xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules-V1">
-          <conditions xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
-            <pathCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+        <executableRule xmlns="http://www.policypak.com/2016/LPM/Rules-V1">
+          <conditions xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
+            <pathCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <path kind="File">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</path>
             </pathCondition>
-            <commandLineCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+            <commandLineCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <value>*"$assemblies=(\"System\");$source=\"*</value>
               <useAndSpecifierForArguments>false</useAndSpecifierForArguments>
             </commandLineCondition>
           </conditions>
-          <settings justificationTextRequired="false" xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
+          <settings justificationTextRequired="false" xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
             <applyToChildProcesses>true</applyToChildProcesses>
           </settings>
-          <action xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
-            <doNothing xmlns="http://www.endpointpolicymanager.com/2016/LPM/Actions" />
+          <action xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
+            <doNothing xmlns="http://www.policypak.com/2016/LPM/Actions" />
           </action>
         </executableRule>
       </rule-v1>
@@ -85,25 +85,25 @@ Allowed with Path Rule 2
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
-<policy xmlns:lpm="http://www.endpointpolicymanager.com/2016/LPM/CommonTypes" xmlns:ext="http://www.endpointpolicymanager.com/2019/LPM/PolicyEntryExtension" xmlns:security="http://www.endpointpolicymanager.com/2016/LPM/Security" xmlns:pd="http://www.endpointpolicymanager.com/2014/Policies/PolicyData" xmlns:pp="http://www.endpointpolicymanager.com/2014/CommonTypes" id="{7e0b0353-402e-44c9-9138-109c2701678f}" productId="{58DE0268-6384-49E0-A333-20EC46654B82}" scope="machine" timestamp="1711029984" xmlns="http://www.endpointpolicymanager.com/2016/LPM/PolicyData">
+<policy xmlns:lpm="http://www.policypak.com/2016/LPM/CommonTypes" xmlns:ext="http://www.policypak.com/2019/LPM/PolicyEntryExtension" xmlns:security="http://www.policypak.com/2016/LPM/Security" xmlns:pd="http://www.policypak.com/2014/Policies/PolicyData" xmlns:pp="http://www.policypak.com/2014/CommonTypes" id="{7e0b0353-402e-44c9-9138-109c2701678f}" productId="{58DE0268-6384-49E0-A333-20EC46654B82}" scope="machine" timestamp="1711029984" xmlns="http://www.policypak.com/2016/LPM/PolicyData">
   <collection order="0" id="{813b29c6-dbe8-44af-a423-293a68d8955a}" displayName="Container for policy: UiPath.Assistant PowerShell Command Allowed with PATH rule 2">
     <entry order="1" scope="machine" id="{3b19b7c4-c55e-44b3-9065-503c8e6faad2}" displayName="UiPath.Assistant PowerShell Command Allowed with PATH rule 2">
       <rule-v1>
-        <executableRule xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules-V1">
-          <conditions xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
-            <pathCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+        <executableRule xmlns="http://www.policypak.com/2016/LPM/Rules-V1">
+          <conditions xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
+            <pathCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <path kind="File">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</path>
             </pathCondition>
-            <commandLineCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+            <commandLineCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <value>"$FileContent = Get-Content -Encoding unicode %Temp%\shortcuts-params.txt; Invoke-Expression $FileContent"</value>
               <useAndSpecifierForArguments>false</useAndSpecifierForArguments>
             </commandLineCondition>
           </conditions>
-          <settings justificationTextRequired="false" xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
+          <settings justificationTextRequired="false" xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
             <applyToChildProcesses>true</applyToChildProcesses>
           </settings>
-          <action xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
-            <doNothing xmlns="http://www.endpointpolicymanager.com/2016/LPM/Actions" />
+          <action xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
+            <doNothing xmlns="http://www.policypak.com/2016/LPM/Actions" />
           </action>
         </executableRule>
       </rule-v1>

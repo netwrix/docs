@@ -15,7 +15,7 @@ other scripts and also ELEVATE yet other scripts? In this video you'll find out 
 
 Hi. This is Jeremy Moskowitz. In this video, I'm going to show you how you can manage the heck out
 of your scripts, PowerShell and Java using PolicyPak and
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html).
+[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html).
 
 Here's the example. Let's pretend you are the IT administrator here and you've deployed a couple of
 scripts that you want, but these scripts are a little special. When you double click them as a

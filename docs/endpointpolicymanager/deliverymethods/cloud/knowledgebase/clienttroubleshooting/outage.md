@@ -28,7 +28,7 @@ Syncing with the cloud...
 Could not sync with the cloud.
 
 ```
-A network error occurred during sending Sync to https://cloudsvc.endpointpolicymanager.com/Services/Synchronization: 
+A network error occurred during sending Sync to https://cloudsvc.policypak.com/Services/Synchronization: 
 The request channel timed out while waiting for a reply after 00:00:29.9686167. 
 Increase the timeout value passed to the call to Request or increase the SendTimeout value on the Binding. 
 The time allotted to this operation may have been a portion of a longer timeout.
@@ -36,15 +36,15 @@ The time allotted to this operation may have been a portion of a longer timeout.
 ```
 
 ```
-A network error occurred during sending Sync to https://cloudsvc.endpointpolicymanager.com/Services/Synchronization: 
+A network error occurred during sending Sync to https://cloudsvc.policypak.com/Services/Synchronization: 
 The request channel timed out while waiting for a reply after 00:00:29.9530410. 
 Increase the timeout value passed to the call to Request or increase the SendTimeout value on the Binding. 
 The time allotted to this operation may have been a portion of a longer timeout.
 ```
 
 ```
-A security error occurred during sending Sync to http://cloudsvc.endpointpolicymanager.com/Services/Synchronization: 
-The token provider cannot get tokens for target 'http://cloudsvc.endpointpolicymanager.com/Services/Synchronization'. 
+A security error occurred during sending Sync to http://cloudsvc.policypak.com/Services/Synchronization: 
+The token provider cannot get tokens for target 'http://cloudsvc.policypak.com/Services/Synchronization'. 
 Elapsed time: 00:01:00.7012049
 ```
 

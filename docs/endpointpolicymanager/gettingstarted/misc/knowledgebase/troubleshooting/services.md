@@ -33,7 +33,7 @@ when you use Endpoint Policy Manager to perform the following:
 - Making sure users only execute allowed applications (PP Least Priv / SecureRun).
 - Allowing users to [run applications or access settings that require administrative privileges
   without giving them full
-  privileges](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html on their
+  privileges](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html on their
   system.) (PP Least Priv.)
 - Manage Java control (PP Java Rules Manager.)
 

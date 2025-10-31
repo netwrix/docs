@@ -10,9 +10,9 @@ sidebar_position: 140
 
 When editing the Admin Approval policy you receive the error message below.
 
-The element ‘emailSettings'in namespace ‘http://www.endpointpolicymanager.com/2017/LPM/AdminApproval' has
+The element ‘emailSettings'in namespace ‘http://www.policypak.com/2017/LPM/AdminApproval' has
 incomplete content. List of possible elements expected: ‘sendTo' in namespace
-‘http://www.endpointpolicymanager.com/2017/LPM/AdminApproval'.
+‘http://www.policypak.com/2017/LPM/AdminApproval'.
 
 ![994_1_image-20230926224931-1](/images/endpointpolicymanager/troubleshooting/error/leastprivilege/994_1_image-20230926224931-1.webp)
 

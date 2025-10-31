@@ -38,7 +38,7 @@ Endpoint Policy Manager was designed by Microsoft MVP Jeremy Moskowitz – who "
 desktop management and lives and breathes enterprise software deployments and desktop lockdown.
 
 If you'd like to trial Endpoint Policy Manager, we're here for you. Call 800-883-8002 or click on
-download button ([https://dev.endpointpolicymanager.com/webinar/](https://dev.endpointpolicymanager.com/webinar/)).
+download button ([https://dev.policypak.com/webinar/](https://dev.policypak.com/webinar/)).
 
 ### Endpoint Policy Manager and Specops Deploy Video Transcript
 
@@ -157,6 +157,6 @@ software. Said another way, if it's important enough to deploy, it's important e
 hope this gives you a quick feel for how both Specops Deploy and PolicyPak can work better together.
 
 If you're looking to get started, just click on the download button
-([https://dev.endpointpolicymanager.com/webinar/](https://dev.endpointpolicymanager.com/webinar/)).
+([https://dev.policypak.com/webinar/](https://dev.policypak.com/webinar/)).
 
 Thanks so very much.

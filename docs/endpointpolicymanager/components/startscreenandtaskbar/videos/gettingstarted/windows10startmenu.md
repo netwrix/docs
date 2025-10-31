@@ -17,7 +17,7 @@ Hi. This is Jeremy Moskowitz, former Group Policy MVP and Founder of Netwrix End
 Windows 10 Start Screen. How do we do it? We're going to use our Start Screen Manager program.
 
 You can see, we already have three groups that are here in the
-[https://www.endpointpolicymanager.com/pp-blog/windows-10-start-screen](https://www.endpointpolicymanager.com/pp-blog/windows-10-start-screen).
+[https://www.policypak.com/pp-blog/windows-10-start-screen](https://www.policypak.com/pp-blog/windows-10-start-screen).
 We're going to create our own called Our Important Apps. What are we're going to add there? We're
 going to add maybe "Adobe Reader," maybe add the "Calculator" and also add and Edge tile. We'll see
 how to do that.
@@ -67,7 +67,7 @@ go ahead and choose the "Large" and I'll call this "big calc."
 
 Then the last thing I'll do is I'll "Add/New Edge Tile." My Edge tile will let me give it a name.
 I'll call this "Get Endpoint Policy Manager Help," and then the "URL" can be
-[https://www.endpointpolicymanager.com](https://www.endpointpolicymanager.com); There we go, and click "Next" and I can make
+[https://www.policypak.com](https://www.policypak.com); There we go, and click "Next" and I can make
 this a "Wide" tile.
 
 You can also change the Desktop "Background" colors if you're so inclined and all that sort of

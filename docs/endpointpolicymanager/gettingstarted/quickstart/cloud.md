@@ -13,7 +13,7 @@ Follow the steps below to carry out the Endpoint Policy Manager cloud delivery:
 
 **Step 1 –** Install the Endpoint Policy Manager Cloud Client on an example endpoint
 
-Log on to [cloud.endpointpolicymanager.com](http://cloud.endpointpolicymanager.com/) with the credentials provided to you
+Log on to [cloud.policypak.com](http://cloud.policypak.com/) with the credentials provided to you
 via email from Netwrix sales. In the Company tab download the PolicyPak Cloud Client MSI for your
 PolicyPak Cloud tenant.
 

@@ -15,7 +15,7 @@ Netwrix Endpoint Policy Manager (formerly PolicyPak).
 
 Hi. This is Jeremy Moskowitz. In this video, I'm going to show you how you can do event forwarding
 for any kind of application, including Endpoint Policy Manager
-[Least Privilege Manager](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html).
+[Least Privilege Manager](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html).
 This can help you decide what things you need to make rules for.
 
 By way of example, let's say you have a user who double clicks on something that requires a UAC

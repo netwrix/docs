@@ -8,7 +8,7 @@ sidebar_position: 40
 
 Video: For a quick overview of how to manage the Content tab using Endpoint Policy Manager
 Application Settings Manager see the following video:
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-content-tab.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-content-tab.html).
+[http://www.policypak.com/video/endpointpolicymanager-manage-ie-content-tab.html](http://www.policypak.com/video/endpointpolicymanager-manage-ie-content-tab.html).
 
 The Content tab lets you specify various restrictions. The IE AppSet now has content advisor
 settings, as shown in Figure 14.

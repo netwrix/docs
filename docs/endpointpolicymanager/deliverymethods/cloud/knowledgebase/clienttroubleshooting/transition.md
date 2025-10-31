@@ -13,7 +13,7 @@ endpoints.  This will MAINTAIN the Endpoint Policy Manager Client Side Extensio
 
 **Step 2 –** Leave in place -or- Upgrade to the LATEST Endpoint Policy Manager Client Side Extension
 using SCCM or PDQ Deploy Example:
-[https://www.endpointpolicymanager.com/video/managing-group-policy-using-Endpoint Policy Manager-and-pdq-deploy.html ](https://www.endpointpolicymanager.com/video/managing-group-policy-using-endpointpolicymanager-and-pdq-deploy.html)
+[https://www.policypak.com/video/managing-group-policy-using-Endpoint Policy Manager-and-pdq-deploy.html ](https://www.policypak.com/video/managing-group-policy-using-endpointpolicymanager-and-pdq-deploy.html)
 
 **Step 3 –** In Endpoint Policy Manager Cloud, you will already have some POLICIES. You can DOWNLOAD
 the policies from Endpoint Policy Manager Cloud like this. (see below.)

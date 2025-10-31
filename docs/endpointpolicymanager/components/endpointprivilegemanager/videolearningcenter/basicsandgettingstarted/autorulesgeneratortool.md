@@ -15,7 +15,7 @@ free tool from Netwrix Endpoint Policy Manager (formerly PolicyPak) !
 
 Hi. This is Jeremy Moskowitz. In this video, I'm going to show you how you can automatically and
 quickly generate rules
-for[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)
+for[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)
 using our Automatic Rule Generator utility.You're going to find this utility in your download here
 in the "PolicyPak Extras" folder. I'm going to go into that in just a minute, but here it is:
 "PolicyPak LPM Auto Rule Generator Tool."

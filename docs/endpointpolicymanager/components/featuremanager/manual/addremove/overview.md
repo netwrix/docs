@@ -9,7 +9,7 @@ sidebar_position: 20
 :::note
 For some video overviews of Netwrix Endpoint Policy Manager (formerly PolicyPak) Feature
 Manager for Windows, see
-[https://www.endpointpolicymanager.com/products/feature-manager-for-windows.html](https://www.endpointpolicymanager.com/products/feature-manager-for-windows.html).
+[https://www.policypak.com/products/feature-manager-for-windows.html](https://www.policypak.com/products/feature-manager-for-windows.html).
 :::
 
 

@@ -147,7 +147,7 @@ Follow the steps to resolve Netskope errors.
 [Creating a Custom Certificate Pinned Application](https://docs.netskope.com/en/creating-a-custom-certificate-pinned-application/#creating-a-custom-certificate-pinned-application)
 for additional information.
 
-**Step 2 –** Create a local domain bypass for `cloud-agent.endpointpolicymanager.com`.
+**Step 2 –** Create a local domain bypass for `cloud-agent.policypak.com`.
 
 Explanation of Root Cause
 

@@ -188,7 +188,7 @@ scope or if something is not true anymore. It allows you a lot more control than
 mechanisms.
 
 Now that I have given you the rough rundown of what all of our components do, I want to come over
-here and go to "www.endpointpolicymanager.com" and I want to show you the "Video Learning Center." If you come
+here and go to "www.policypak.com" and I want to show you the "Video Learning Center." If you come
 to the "SUPPORT" tab right here and go to "Video Learning Center," then you're going to choose if
 you're working with the "Group Policy Edition/Cloud Edition/MDM Edition" or if you're working with
 specifically the "GP Compliance Reporter."

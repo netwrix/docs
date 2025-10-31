@@ -51,7 +51,7 @@ system-wide config file" so now users can't work around it.
 We'll also manage the "Exception Site List." It's really easy to do. You can either merge whatever
 is there, so you can set this to "MODE=MERGE," that's an option, or "MODE=REPLACE." I'm going to
 demo "MODE=REPLACE," which is going to say, "I don't care what users have. We're just going to erase
-it and put down what we think is important." I'm going to dictate "https://www.endpointpolicymanager.com/,"
+it and put down what we think is important." I'm going to dictate "https://www.policypak.com/,"
 "https://www.GPanswers.com" and I'm making up this website "http://www.java.com/7."
 
 For my Java 8 people, let's go ahead and make things a little bit different. We'll go to the

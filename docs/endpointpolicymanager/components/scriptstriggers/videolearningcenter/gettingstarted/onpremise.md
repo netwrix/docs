@@ -7,7 +7,7 @@ sidebar_position: 10
 
 Netwrix Endpoint Policy Manager (formerly PolicyPak) Scripts Manager goes beyond in-box Group Policy
 and enables you to deliver settings MORE than once, use any language you want, and eliminate
-[https://www.endpointpolicymanager.com/pp-blog/group-policy-loopback](https://www.endpointpolicymanager.com/pp-blog/group-policy-loopback)
+[https://www.policypak.com/pp-blog/group-policy-loopback](https://www.policypak.com/pp-blog/group-policy-loopback)
 so you can apply scripts to all users on the machine.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WVsQurIIJpY?si=vN94cOUbhE3JqYox" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

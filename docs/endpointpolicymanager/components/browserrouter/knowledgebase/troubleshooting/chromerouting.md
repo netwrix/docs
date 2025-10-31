@@ -65,7 +65,7 @@ Q: How should I update to the latest extension?
 A: Our general guidance is, and has always been… please try to stick closely to us in our release
 schedule as possible. We know this is not always possible, but have generalized guidance here of how
 you should update the CSE and exactly what "supported" means.
-[https://www.endpointpolicymanager.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/](https://www.endpointpolicymanager.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/)
+[https://www.policypak.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/](https://www.policypak.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/)
 
 Q: I cannot update to the latest extension, but I am using builds CSE 18.7.1779.937 -
 19.12.2283.849. What is this workaround of which you speak?

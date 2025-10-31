@@ -46,13 +46,12 @@ sidebar_position: 60
   in the first place.
 - When we cut keys for existing customers (who started before 2021) we always provided Universal
   keys and sometimes provided Legacy keys.
-- Therefore: You should be able to pick up your existing keys at portal.endpointpolicymanager.com. Example of
+- Therefore: You should be able to pick up your existing keys at portal.policypak.com. Example of
   how to find existing keys:
 
   ![840_1_1](/images/endpointpolicymanager/troubleshooting/license/840_1_1.webp)
 
-- Only email [support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com) if you cannot locate your
-  Universal license because it should already be in the Portal at portal.endpointpolicymanager.com.
+- If you cannot locate your Universal license because it should already be in the Portal at portal.policypak.com, please [open a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket).
 
 ## In the portal, after I download my license keys, how can I tell which are UNIVERSAL and which are LEGACY keys?
 

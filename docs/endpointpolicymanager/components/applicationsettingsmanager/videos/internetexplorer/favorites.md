@@ -28,7 +28,7 @@ as it is.
 You can also set up new favorites. By way of example, you can just put one right on the root. I'll
 call this "Hello1, http://Microsoft.com." That will put a favorite right on the root. You can also
 make a folder and put a favorite in the folder. I'll call this "PolPakFolder/PolicyPakWebSite,
-https://www.endpointpolicymanager.com/, add." That's going to deliver PolicyPak into a folder called PolPak
+https://www.policypak.com/, add." That's going to deliver PolicyPak into a folder called PolPak
 Folder.
 
 You can also, if you want to, specify the icon. There's an "optional-icon" that you can specify.

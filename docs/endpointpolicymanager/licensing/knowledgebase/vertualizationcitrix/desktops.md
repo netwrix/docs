@@ -13,7 +13,7 @@ This depends on what kind of virtual desktops they are:
   Edition and the Citrix licenses are accounted for.
 - Same with Windows Virtual Desktop (if using Multi-session Windows). Those sessions each count as
   onelicense. See
-  [Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.endpointpolicymanager.com/purchasing/vdi-licensing-scenarios/)
+  [Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.policypak.com/purchasing/vdi-licensing-scenarios/)
   for additional information.
 - However, full VDI single-session desktops are licensed in the same manner as physical desktops.
   From a licensing perspective, there is no difference between the two. If there's a computer

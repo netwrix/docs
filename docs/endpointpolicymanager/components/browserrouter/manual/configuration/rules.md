@@ -19,8 +19,8 @@ to match against Host.
 
 | Pattern Rule               | Example                             | Matches                                                                |
 | -------------------------- | ----------------------------------- | ---------------------------------------------------------------------- |
-| Specific URL String        | www.endpointpolicymanager.com       | [www.endpointpolicymanager.com](http://www.endpointpolicymanager.com/) |
-| Wildcard String            | www.pol\*.com                       | endpointpolicymanager.com, politicos.com, pollution.org                |
+| Specific URL String        | www.policypak.com       | [www.policypak.com](http://www.policypak.com/) |
+| Wildcard String            | www.pol\*.com                       | policypak.com, politicos.com, pollution.org                |
 | RegEx (Regular Expression) | (.\*)(pol)(.\*).com                 | SpolE.com, ESpol24.com, pol.com, etc.                                  |
 | Windows IE Zone Pattern    | Trusted sites, intranet sites, etc. | All trusted sites, intranet sites, etc.                                |
 
@@ -71,10 +71,10 @@ Description: Matches any port and path on a URL with a matching host name that c
 
 Matching examples:
 
-- http://www.endpointpolicymanager.com
-- https://www.endpointpolicymanager.com
-- http://www.endpointpolicymanager.com:1234/
-- http://www.endpointpolicymanager.com:5678/any_other_path
+- http://www.policypak.com
+- https://www.policypak.com
+- http://www.policypak.com:1234/
+- http://www.policypak.com:5678/any_other_path
 
 Example 2:  Criteria matching all hosts and a wildcard path
 

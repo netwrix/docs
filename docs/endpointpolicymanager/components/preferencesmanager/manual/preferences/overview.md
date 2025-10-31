@@ -22,8 +22,8 @@ To get you working as quickly as possible, please send us the following items:
 - Your Group Policy Preferences XML data file(s).
 - An example of a client's log files. All Endpoint Policy Manager products have a universal log
   "collector" utility. Simply run` pplogs.exe` from a command prompt and a ZIP file will be
-  generated for you. Mail that ZIP file to [support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com) or
-  directly to your support representative if asked.
+  generated for you. [Open a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket) and attach that ZIP file, or
+  contact your support representative if asked.
 - Screenshots or a video of the problem, if there's something to see. Use an application such as
   ScreenShot Pilot ([http://tinyurl.com/screenshotpilot](http://tinyurl.com/screenshotpilot)) or
   Jing ([www.Techsmith.com](http://www.Techsmith.com)) to capture images or videos showing your

@@ -33,7 +33,7 @@ on Windows 10 or Windows Server (2016 and later):
 
 :::note
 Watch this video for an overview of Endpoint Policy Manager Feature Manager for Windows:
-[https://www.endpointpolicymanager.com/video/endpointpolicymanager-feature-manager-for-windows.html](https://www.endpointpolicymanager.com/video/endpointpolicymanager-feature-manager-for-windows.html)
+[https://www.policypak.com/video/endpointpolicymanager-feature-manager-for-windows.html](https://www.policypak.com/video/endpointpolicymanager-feature-manager-for-windows.html)
 :::
 
 

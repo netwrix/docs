@@ -74,7 +74,7 @@ if endpoints got the contents of the CIS Benchmarks you expect.
 
 :::note
 View
-[https://www.endpointpolicymanager.com/products/compliance-reporter.html](https://www.endpointpolicymanager.com/products/compliance-reporter.html)
+[https://www.policypak.com/products/compliance-reporter.html](https://www.policypak.com/products/compliance-reporter.html)
 to get the general feel for how you would do this.
 :::
 

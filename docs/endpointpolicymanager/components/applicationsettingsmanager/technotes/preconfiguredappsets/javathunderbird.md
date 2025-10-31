@@ -12,7 +12,7 @@ However, that UI lockout is implemented differently and, as such, comes with a c
 
 Tip: To see a video of FireFox UI lockout in action, see the following video:
 
-[https://www.endpointpolicymanager.com/products/manage-firefox-with-group-policy.html](https://www.endpointpolicymanager.com/products/manage-firefox-with-group-policy.html)
+[https://www.policypak.com/products/manage-firefox-with-group-policy.html](https://www.policypak.com/products/manage-firefox-with-group-policy.html)
 
 Tip: To see a video of Thunderbird UI lockout in action, see the following video:
 

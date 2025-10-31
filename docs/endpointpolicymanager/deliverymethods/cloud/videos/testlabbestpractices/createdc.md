@@ -70,7 +70,7 @@ this. We're going to choose "Edit." You're going to see we have the nodes. We ha
 "Administrative Templates," however many thousand of them. They're all hidden up in here.
 
 But you're going to notice that we don't have a Endpoint Policy Manager node, so we can't do
-Endpoint Policy Manager magic yet. What we need here is go to "www.endpointpolicymanager.com." We're going to go
+Endpoint Policy Manager magic yet. What we need here is go to "www.policypak.com." We're going to go
 to this "Customer Login" here. In this particular case, it's going to take us to the "Endpoint
 Policy Manager CLOUD Login" and the "CUSTOMER PORTAL & CUSTOMER SUPPORT LOGIN."
 

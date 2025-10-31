@@ -6,7 +6,7 @@ sidebar_position: 40
 # More security with Combo Rules
 
 Netwrix Endpoint Policy Manager (formerly PolicyPak)
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)
+[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)
 enables you to select multiple criteria for the action type. Watch this video to learn how it's
 done.
 

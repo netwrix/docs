@@ -26,7 +26,7 @@ to "Google Chrome."
 I'm then going to create a "New Policy" that says "FF to FF," "Wildcard" "\*mozilla\*" and we'll go
 to "Firefox" here. If I were to go "Add" a "New Policy" that says "GPanswers.com to EDGE," we can
 then go to "Url" "GPanswers.com" and go to "Edge." Then if I wanted to create one for Endpoint
-Policy Manager to Internet Explorer, "New Policy," "PP to IE" and go to "endpointpolicymanager.com" and go to
+Policy Manager to Internet Explorer, "New Policy," "PP to IE" and go to "policypak.com" and go to
 "Internet Explorer."
 
 Okay, great, so now we've set that all up just the way we want, and now we're ready to test it out.
@@ -59,7 +59,7 @@ browser. Then we said if we're in Chrome and we go to "www.gpanswers.com," we wa
 Edge. So here comes Edge, and now we're in Edge.
 
 Now here's where finally the new support comes in. If you're in Edge, up until recently there was no
-way to go from Edge to another browser. If you wanted to go back to "www.endpointpolicymanager.com," which we
+way to go from Edge to another browser. If you wanted to go back to "www.policypak.com," which we
 said open up only in Internet Explorer, or www.mozilla.org open up in Firefox, when you click on
 Edge the very first time you run Edge it will not actually do what you ask it to do.
 
@@ -74,7 +74,7 @@ charm. That's it. That's all you need to do. So let's do it all again because no
 closed Edge, and now this user is locked and loaded and we support it.
 
 Let's start again. We'll go from "Google Chrome" to Edge. So we'll go from Chrome and we'll say
-"www.gpanswers.com." Here we are in Edge now. We can go to "www.endpointpolicymanager.com." Watch Edge. We will
+"www.gpanswers.com." Here we are in Edge now. We can go to "www.policypak.com." Watch Edge. We will
 close Edge and open up Internet Explorer.
 
 If we're in Edge and we want to do some great stuff in Edge here which is fine and have this tab and

@@ -48,7 +48,7 @@ When you're ready to manage your applications and settings using Microsoft Intun
 Manager is here for you.
 
 Click on the following link
-[https://www.endpointpolicymanager.com/webinar/evaluate.html](https://www.endpointpolicymanager.com/webinar/evaluate.html)
+[https://www.policypak.com/webinar/evaluate.html](https://www.policypak.com/webinar/evaluate.html)
 to get the software and try it out for yourself.
 
 ### Perform Desktop Lockdown using Microsoft Intune Video Transcript

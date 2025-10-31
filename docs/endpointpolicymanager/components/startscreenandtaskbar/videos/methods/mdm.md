@@ -119,7 +119,7 @@ Start Screen. There we go. We have the "Important Apps" just like we directed.
 
 If I click on any of these, it takes me just exactly where it's supposed to. The "Calculator" works.
 "Adobe Acrobat Reader DC" opens right up. If I go to the Edge tile, then we'll go to
-"www.endpointpolicymanager.com." So they all are there and they all work.
+"www.policypak.com." So they all are there and they all work.
 
 Now notice that there are still the original groups still there and the original pins. That is
 because when we created the collection, we chose the PARTIAL (PRESERVE) option. That is why we

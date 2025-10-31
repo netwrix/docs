@@ -57,31 +57,31 @@ PowerShell V2 Workaround
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
-<policy xmlns:lpm="http://www.endpointpolicymanager.com/2016/LPM/CommonTypes" xmlns:ext="http://www.endpointpolicymanager.com/2019/LPM/PolicyEntryExtension" xmlns:security="http://www.endpointpolicymanager.com/2016/LPM/Security" xmlns:pd="http://www.endpointpolicymanager.com/2014/Policies/PolicyData" xmlns:pp="http://www.endpointpolicymanager.com/2014/CommonTypes" id="{16bd96da-fbdf-41ee-b5c7-928c2f4d7bb4}" productId="{58DE0268-6384-49E0-A333-20EC46654B82}" scope="machine" timestamp="1695653890" xmlns="http://www.endpointpolicymanager.com/2016/LPM/PolicyData">
+<policy xmlns:lpm="http://www.policypak.com/2016/LPM/CommonTypes" xmlns:ext="http://www.policypak.com/2019/LPM/PolicyEntryExtension" xmlns:security="http://www.policypak.com/2016/LPM/Security" xmlns:pd="http://www.policypak.com/2014/Policies/PolicyData" xmlns:pp="http://www.policypak.com/2014/CommonTypes" id="{16bd96da-fbdf-41ee-b5c7-928c2f4d7bb4}" productId="{58DE0268-6384-49E0-A333-20EC46654B82}" scope="machine" timestamp="1695653890" xmlns="http://www.policypak.com/2016/LPM/PolicyData">
   <collection order="0" id="{88ed31d2-b92b-455c-a430-df0ef4c628f0}" displayName="Collection for policy: Block Powershell by SIG and FILE INFO">
     <entry order="0" scope="user" id="{cf4d5203-0b5e-4f34-a604-51eebf79f29a}" displayName="Block Powershell by SIG and FILE INFO (Rule 1)">
       <rule-v1>
-        <executableRule xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules-V1">
-          <conditions xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
-            <signatureCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+        <executableRule xmlns="http://www.policypak.com/2016/LPM/Rules-V1">
+          <conditions xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
+            <signatureCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <commonName>CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US</commonName>
             </signatureCondition>
-            <fileInfoCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+            <fileInfoCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <productName>Microsoft® Windows® Operating System</productName>
               <productVersion mode="HigherOrEquals">10.0.14393.206</productVersion>
               <fileName useWildcards="true">*powersh*</fileName>
               <fileVersion mode="HigherOrEquals">10.0.14393.206</fileVersion>
             </fileInfoCondition>
-            <commandLineCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+            <commandLineCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <value>-v* 2*</value>
               <useAndSpecifierForArguments>false</useAndSpecifierForArguments>
             </commandLineCondition>
           </conditions>
-          <settings justificationTextRequired="false" xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
+          <settings justificationTextRequired="false" xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
             <applyToChildProcesses>false</applyToChildProcesses>
           </settings>
-          <action xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
-            <denyExecution xmlns="http://www.endpointpolicymanager.com/2016/LPM/Actions">
+          <action xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
+            <denyExecution xmlns="http://www.policypak.com/2016/LPM/Actions">
               <useDefaultMessage>false</useDefaultMessage>
             </denyExecution>
           </action>
@@ -90,27 +90,27 @@ PowerShell V2 Workaround
     </entry>
     <entry order="1" scope="user" id="{3ef0d0a6-4c7a-4e77-8935-c564d55e6a7c}" displayName="Block Powershell by SIG and FILE INFO (Rule 2)">
       <rule-v1>
-        <executableRule xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules-V1">
-          <conditions xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
-            <signatureCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+        <executableRule xmlns="http://www.policypak.com/2016/LPM/Rules-V1">
+          <conditions xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
+            <signatureCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <commonName>CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US</commonName>
             </signatureCondition>
-            <fileInfoCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+            <fileInfoCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <productName>Microsoft® Windows® Operating System</productName>
               <productVersion mode="HigherOrEquals">10.0.14393.206</productVersion>
               <fileName useWildcards="true">*powersh*</fileName>
               <fileVersion mode="HigherOrEquals">10.0.14393.206</fileVersion>
             </fileInfoCondition>
-            <commandLineCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+            <commandLineCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <value>* -v* 2*</value>
               <useAndSpecifierForArguments>false</useAndSpecifierForArguments>
             </commandLineCondition>
           </conditions>
-          <settings justificationTextRequired="false" xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
+          <settings justificationTextRequired="false" xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
             <applyToChildProcesses>false</applyToChildProcesses>
           </settings>
-          <action xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
-            <denyExecution xmlns="http://www.endpointpolicymanager.com/2016/LPM/Actions">
+          <action xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
+            <denyExecution xmlns="http://www.policypak.com/2016/LPM/Actions">
               <useDefaultMessage>false</useDefaultMessage>
             </denyExecution>
           </action>

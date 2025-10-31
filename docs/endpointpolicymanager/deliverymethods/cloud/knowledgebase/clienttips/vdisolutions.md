@@ -23,7 +23,7 @@ the Gold Image VM.
 
 Endpoint Policy Manager Cloud Client version 20.5.2449.838 and higher can be found within your PPC
 Portal on the following page
-[https://cloud.endpointpolicymanager.com/ManageCustomer/UserList](https://cloud.endpointpolicymanager.com/ManageCustomer/UserList)
+[https://cloud.policypak.com/ManageCustomer/UserList](https://cloud.policypak.com/ManageCustomer/UserList)
 under the Downloads section, by clicking on the **Download other versions** link at the bottom of
 the page.
 

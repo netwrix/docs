@@ -21,7 +21,7 @@ What customers typically want to know is:
 To answer question #1: Use Endpoint Policy Manager Group Policy Compliance Reporter. PPGPCR can tell
 you "Did your Group Policy & Endpoint Policy Manager settings make it there when using Group Policy
 as the settings delivery
-mechanism." [https://www.endpointpolicymanager.com/products/endpointpolicymanager-compliance-reporter.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-compliance-reporter.html)
+mechanism." [https://www.policypak.com/products/endpointpolicymanager-compliance-reporter.html](https://www.policypak.com/products/endpointpolicymanager-compliance-reporter.html)
 
 To answer question #2: Use the free Endpoint Policy Manager Cloud reporting tool. The Endpoint
 Policy Manager Cloud reporting tool can tell you "Did your Endpoint Policy Manager cloud directives

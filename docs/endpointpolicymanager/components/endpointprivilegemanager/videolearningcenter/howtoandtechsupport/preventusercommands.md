@@ -14,7 +14,7 @@ command line options.
 
 Hi. This is Jeremy Moskowitz. In this video, I'm going to show you how you can use Netwrix Endpoint
 Policy Manager (formerly PolicyPak)
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)
+[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)
 to prevent users from doing naughty things like running Firefox or Chrome with specific flags that
 might work around your security.
 

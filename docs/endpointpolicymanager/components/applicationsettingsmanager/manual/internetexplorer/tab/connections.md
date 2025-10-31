@@ -8,7 +8,7 @@ sidebar_position: 50
 
 Video: For a quick overview of how to manage the Connections tab using Endpoint Policy Manager
 Application Settings Manager see the following video:
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-connections-tab.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-connections-tab.html).
+[http://www.policypak.com/video/endpointpolicymanager-manage-ie-connections-tab.html](http://www.policypak.com/video/endpointpolicymanager-manage-ie-connections-tab.html).
 
 The "LAN settings" button on Internet Explorer's Connections tab is configurable, as shown in
 Figure 18.

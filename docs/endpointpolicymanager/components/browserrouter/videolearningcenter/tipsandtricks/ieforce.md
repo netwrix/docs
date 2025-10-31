@@ -38,7 +38,7 @@ automatically switch and that's the number one thing it's going to do.
 
 But if you want to make an exception for certain websites like you're timecard app or some other
 weird thing, that's fine. Like in this example, I have Endpoint Policy Manager going to Chrome
-("www.endpointpolicymanager.com in CH") and Bing going to Firefox ("www.bing.com in FF").
+("www.policypak.com in CH") and Bing going to Firefox ("www.bing.com in FF").
 
 Then we have this unusual one. This is a two-step thing you need to do here. This last item here
 basically says when you open Chrome, at least open the new browser tab ("CH new tab in CH") or else
@@ -86,7 +86,7 @@ work in Internet Explorer just the way we wanted to.
 
 But we did say we wanted to make two exceptions to the list. The first exception we have is let's
 say you decide you want to go over to Endpoint Policy Manager. It's just an exception that we set.
-If we go to "www.endpointpolicymanager.com," what do we get? That opens up in Chrome. We'll just wait for that
+If we go to "www.policypak.com," what do we get? That opens up in Chrome. We'll just wait for that
 finish here for a second. If you're over here in Internet Explorer and you go to "www.bing.com,"
 we're going to say that's going to open up in Firefox land.
 

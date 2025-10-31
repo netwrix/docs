@@ -18,7 +18,7 @@ In this video, we're going to see how PolicyPak can manage Opera Next.
 
 There are two tracks to Opera. There's the standard track and then there's the Next track, and
 PolicyPak has
-[https://www.endpointpolicymanager.com/support-sharing/preconfigured-paks.html](https://www.endpointpolicymanager.com/support-sharing/preconfigured-paks.html)
+[https://www.policypak.com/support-sharing/preconfigured-paks.html](https://www.policypak.com/support-sharing/preconfigured-paks.html)
 for both tracks. It's really easy to manage. Let me show you what it would look like.
 
 As you can see, I'm logged on as a standard user. This guy is called "eastsalesuser6," no admin
@@ -64,7 +64,7 @@ shouldn't do. The very next time the application runs, PolicyPak automatically r
 settings to ensure the experience is the same every time.
 
 That's it. if you're ready to get started using PolicyPak, just click on the
-[https://dev.endpointpolicymanager.com/webinar/](https://dev.endpointpolicymanager.com/webinar/) button on the right, and
+[https://dev.policypak.com/webinar/](https://dev.policypak.com/webinar/) button on the right, and
 we'll look forward to seeing you at a webinar and give you the chance to try PolicyPak out in your
 own test lab.
 

@@ -78,8 +78,7 @@ dialog prompt when you re-run Process Monitor.
 
 
 If you discover a file that stores data for your application, but it isn't a currently supported
-type (INI, XML, JS, .properties, etc.) then let us know by emailing
-[support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com) with details so we can include its support in
+type (INI, XML, JS, .properties, etc.) then let us know by [opening a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket) with details so we can include its support in
 a future release. For more information on using Process Monitor, be sure to watch this in-depth
 video (from the 35:30 mark) as well for more tips:
 

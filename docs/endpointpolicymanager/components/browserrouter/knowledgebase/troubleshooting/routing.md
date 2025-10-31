@@ -50,7 +50,7 @@ What should you do now?
 Our general guidance is, and has always been… please try to stick closely to us in our release
 schedule as possible. We know this is not always possible, but have generalized guidance here of how
 you should update the CSE and exactly what "supported" means.
-[https://www.endpointpolicymanager.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/](https://www.endpointpolicymanager.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/)
+[https://www.policypak.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/](https://www.policypak.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/)
 
 Will we have this problem in the future?
 

@@ -163,6 +163,6 @@ For instance, if you're looking inside the Group Policy Object Editor, you're go
 well.
 
 With that in mind, I'll sign off. I hope this is very helpful. If you need help, we have the forums
-and also support at endpointpolicymanager.com.
+and also support at policypak.com.
 
 Thanks so very much, and welcome to PolicyPak.

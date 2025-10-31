@@ -37,7 +37,7 @@ can overcome are:
 - "Do you want to run this application"
 
 To see exactly how to work around these prompts, see
-[https://www.endpointpolicymanager.com/support-sharing/preconfigured-paks.html](https://www.endpointpolicymanager.com/support-sharing/preconfigured-paks.html)
+[https://www.policypak.com/support-sharing/preconfigured-paks.html](https://www.policypak.com/support-sharing/preconfigured-paks.html)
 and look for the KB articles which start with the word "Java:"
 
 ### Type 2: Java Messages specifically found in Firefox

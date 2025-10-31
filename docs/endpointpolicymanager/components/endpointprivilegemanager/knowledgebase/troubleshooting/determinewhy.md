@@ -7,7 +7,7 @@ sidebar_position: 20
 # What log can help me determine why an application (MSI, etc.) was ALLOWED, ELEVATED or BLOCKED?
 
 The log file you want to look in is` %LOCALAPPDATA%\PolicyPak\PolicyPak`
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)
+[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)
 and is called `ppUser_Operational.log.`
 
 ![544_1_dfdhdghjkhjkl](/images/endpointpolicymanager/troubleshooting/log/leastprivilege/544_1_dfdhdghjkhjkl.webp)

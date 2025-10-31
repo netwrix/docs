@@ -12,7 +12,7 @@ doesn't, then this is the guide for you.
 
 :::note
 Firefox version must be Firefox ESR and not Firefox RR (rapid release). For more details,
-[https://www.endpointpolicymanager.com/pp-blog/policypak-will-soon-only-support-firefox-esr](https://www.endpointpolicymanager.com/pp-blog/endpointpolicymanager-will-soon-only-support-firefox-esr).
+[https://www.policypak.com/pp-blog/policypak-will-soon-only-support-firefox-esr](https://www.policypak.com/pp-blog/endpointpolicymanager-will-soon-only-support-firefox-esr).
 :::
 
 

@@ -157,7 +157,7 @@ of using Group Policy.
 :::note
 For a video overview of using Endpoint Policy Manager with SCCM and similar tools (such as
 KACE) visit:
-[http://www.endpointpolicymanager.com/video/deploying-endpointpolicymanager-directives-without-group-policy-endpointpolicymanager-exporter-utility.html](http://www.endpointpolicymanager.com/video/deploying-endpointpolicymanager-directives-without-group-policy-endpointpolicymanager-exporter-utility.html)
+[http://www.policypak.com/video/deploying-endpointpolicymanager-directives-without-group-policy-endpointpolicymanager-exporter-utility.html](http://www.policypak.com/video/deploying-endpointpolicymanager-directives-without-group-policy-endpointpolicymanager-exporter-utility.html)
 :::
 
 
@@ -183,7 +183,7 @@ systems. However, each session needs to be accounted for.
 
 :::note
 To learn more about Citrix and WVD multi-session Windows licensing scenarios,
-[https://www.endpointpolicymanager.com/purchasing/vdi-licensing-scenarios/](https://www.endpointpolicymanager.com/purchasing/vdi-licensing-scenarios/).
+[https://www.policypak.com/purchasing/vdi-licensing-scenarios/](https://www.policypak.com/purchasing/vdi-licensing-scenarios/).
 :::
 
 

@@ -225,7 +225,7 @@ Jeremy:Yep. We live to serve. We love this feature. It's great for MSP's and gre
 and roaming people.
 
 Shane: That's fantastic. Hey,
-[https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/](https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/)
+[https://dev.policypak.com/resources/thank-you-whitepapers/](https://dev.policypak.com/resources/thank-you-whitepapers/)
 Jeremy.
 
 Jeremy:Thank you man. Appreciate it.

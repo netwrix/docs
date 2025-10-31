@@ -8,7 +8,7 @@ sidebar_position: 10
 
 :::note
 For some video overviews of Endpoint Policy Manager Scripts & Triggers Manager, see
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-scripts-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-scripts-manager.html)
+[https://www.policypak.com/products/endpointpolicymanager-scripts-manager.html](https://www.policypak.com/products/endpointpolicymanager-scripts-manager.html)
 :::
 
 

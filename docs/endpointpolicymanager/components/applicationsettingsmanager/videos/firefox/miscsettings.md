@@ -63,7 +63,7 @@ private browsing.
 
 In this video, we're going to use PolicyPak to "Always clear saved passwords" between sessions. By
 way of example, if you're on any given website that has a garden-variety logon, for instance if I
-log on as "jeremym@endpointpolicymanager.com" to this website, Firefox would cheerfully ask if you want to
+log on as "jeremym@policypak.com" to this website, Firefox would cheerfully ask if you want to
 "Remember Password," which is not good.
 
 If you were to "Remember Password" here and then you were to even "Logout," close out the browser,

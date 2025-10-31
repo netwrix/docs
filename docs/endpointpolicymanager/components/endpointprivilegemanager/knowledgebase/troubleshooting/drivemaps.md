@@ -87,7 +87,7 @@ And also for all Non-EXE rules as of version 2340 and higher:
 
 - You do not need to make any explicit "Drive map" rules. So, don't elevate "S:" in Endpoint Policy
   Manager
-  [https://www.endpointpolicymanager.com/products/least-privilege-manager.html](https://www.endpointpolicymanager.com/products/least-privilege-manager.html).
+  [https://www.policypak.com/products/least-privilege-manager.html](https://www.policypak.com/products/least-privilege-manager.html).
   That is incorrect syntax.
 - Instead, you would make a UNC path rule for what S: is really pointing to.
 - So, for instance, if you want to elevate all files in S: (which is mapping to

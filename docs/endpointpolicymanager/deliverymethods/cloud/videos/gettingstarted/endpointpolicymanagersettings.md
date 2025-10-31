@@ -75,7 +75,7 @@ Go back to our test machine here. We'll run ppcloud/sync. Give this a second to 
 make sure we got it, Browser Router Manager Test. I'm just going to open up Notepad file that's
 going to represent getting a Teams link or something like that.
 
-If I go to www.endpointpolicymanager.com and I click on it, it's not going to go to my default browser. It's
+If I go to www.policypak.com and I click on it, it's not going to go to my default browser. It's
 going to go to the routed browser that I selected using PolicyPak Browser Router. That's going to be
 Chrome.
 

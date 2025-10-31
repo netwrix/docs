@@ -114,7 +114,7 @@ the user changes job roles, we're going to totally put those settings back the w
 also remove the lockout. You can see how we do that in some of our other videos when we talk about
 our superpowers.
 
-[https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/](https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/)
+[https://dev.policypak.com/resources/thank-you-whitepapers/](https://dev.policypak.com/resources/thank-you-whitepapers/)
 for watching. If you like what you see here with Acrobat Reader, it's available for most
 applications. We've got a whole bunch of preconfigured Paks ready to use right now. Thanks so much.
 Take care.

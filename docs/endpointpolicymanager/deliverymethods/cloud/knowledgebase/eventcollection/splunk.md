@@ -32,7 +32,7 @@ Internet.
 
 **Configure Event Forwarder in PP Cloud**
 
-**Step 2 –** Navigate to [https://cloud.endpointpolicymanager.com/,](https://cloud.endpointpolicymanager.com/) go to
+**Step 2 –** Navigate to [https://cloud.policypak.com/,](https://cloud.policypak.com/) go to
 **Company details** > **Event Forwarder List** > **Add Event Forwarder** .
 
 ![976_1_1](/images/endpointpolicymanager/cloud/eventcollection/976_1_1.webp)

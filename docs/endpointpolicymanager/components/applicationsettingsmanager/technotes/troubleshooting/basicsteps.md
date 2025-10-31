@@ -103,7 +103,7 @@ manager…
 
 **Step 1 –** From an affected machine, AS ADMIN run pplogs.exe from an ADMIN command prompt.
 
-**Step 2 –** Simply send the .ZIP file it creates to support[at ]endpointpolicymanager.com and explain the issue
+**Step 2 –** Simply send the .ZIP file it creates to support[at ]policypak.com and explain the issue
 as specifically as you can.
 
 **Step 3 –** GOOD descriptions would include

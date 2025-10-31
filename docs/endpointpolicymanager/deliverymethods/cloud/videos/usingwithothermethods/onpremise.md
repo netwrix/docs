@@ -64,7 +64,7 @@ WIN-10-Computer-1607, we will add that. Now we are in good shape.
 Now for my roaming computers, I can add cloud-based items. I can choose to link XML here and I can
 choose some of these example polices which, in this case, I'll go ahead and grab the example of
 putting a shortcut on the desktop. Let's add that and there we go. We see the Roaming Machines is
-going to receive shortcuttoendpointpolicymanager.com on all desktops.
+going to receive shortcuttopolicypak.com on all desktops.
 
 We'll go back to our cloud machine and I'm going to run ppcloud/sync. What it does is takes a look
 out into the cloud and sees what has changed. Just like that, you can see that we got the items that

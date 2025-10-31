@@ -66,8 +66,8 @@ Licensed Mode and Trial Mode.
 
 
 :::note
-Sometimes disabling the item can help you continue to compile the AppSet. You should send
-any failed compiles to [support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com) along with your pXML
+Sometimes disabling the item can help you continue to compile the AppSet. You should [open a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket) and send
+any failed compiles along with your pXML
 file for inspection.
 
 :::

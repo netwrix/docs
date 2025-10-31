@@ -22,7 +22,7 @@ You can see here if we want to do primary and secondary start pages – by way o
 "www.primary.com" – you can see that when we do something it underlines. Underline means go.
 
 You could do the same thing here. If you want to make those your "Secondary Start Pages" or you want
-to replace this with "https://www.endpointpolicymanager.com/," that's great. You can do that as well, and you
+to replace this with "https://www.policypak.com/," that's great. You can do that as well, and you
 can see there that we're going to deliver those settings. You can also, when the policy no longer
 applies, you can "Revert this policy setting to (empty string) when it is no longer applied."
 

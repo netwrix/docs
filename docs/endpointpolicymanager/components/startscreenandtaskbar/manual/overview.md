@@ -35,7 +35,7 @@ perform the following operations on Windows 10:
 :::note
 For an overview of Endpoint Policy Manager Start Screen & Taskbar Manager, watch the
 videos at
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-start-screen-taskbar-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-start-screen-taskbar-manager.html).
+[https://www.policypak.com/products/endpointpolicymanager-start-screen-taskbar-manager.html](https://www.policypak.com/products/endpointpolicymanager-start-screen-taskbar-manager.html).
 :::
 
 

@@ -18,7 +18,7 @@ option to avoid the long delays during the installation, or just as a precautio
 failed installation due to timeout errors during the process.
 
 CSE is available for download within the Customer Portal only. Go to
-[https://portal.endpointpolicymanager.com](https://portal.endpointpolicymanager.com/) and download **Latest Bits**. You'll
+[https://portal.policypak.com](https://portal.policypak.com/) and download **Latest Bits**. You'll
 find the Endpoint Policy Manager Client-Side Extension folder in the archive.
 
 ![image1](/images/endpointpolicymanager/install/cloud/image1.webp)

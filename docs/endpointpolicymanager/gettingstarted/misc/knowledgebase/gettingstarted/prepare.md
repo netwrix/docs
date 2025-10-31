@@ -66,7 +66,7 @@ It is important to get organized before the session starts. Follow these steps t
 is ready on your side:
 
 **Step 1 –** Use the Endpoint Policy Manager Customer Portal
-([http://www.endpointpolicymanager.com/customerportal](http://www.endpointpolicymanager.com/customerportal)) to download
+([http://www.policypak.com/customerportal](http://www.policypak.com/customerportal)) to download
 Everything.
 
 ![289_1_image-20240111131924-2](/images/endpointpolicymanager/gettingstarted/289_1_image-20240111131924-2.webp)
@@ -257,8 +257,8 @@ Example machine renamed to work UN-licensed:
 - The Endpoint Policy Manager Cloud is the service to manage machines over the Internet.
 - You should have a Welcome Letter to the Endpoint Policy Manager Cloud. If you cannot find your
   welcome letter, go to
-  [https://cloud.endpointpolicymanager.com/Account/ForgotPassword](https://cloud.endpointpolicymanager.com/Account/ForgotPassword)
-  and request it. Then log on to [https://cloud.endpointpolicymanager.com](https://cloud.endpointpolicymanager.com/).
+  [https://cloud.policypak.com/Account/ForgotPassword](https://cloud.policypak.com/Account/ForgotPassword)
+  and request it. Then log on to [https://cloud.policypak.com](https://cloud.policypak.com/).
 - Verify that you can log on to the Endpoint Policy Manager Cloud.
 - Make sure that from your machine we can remote control the endpoint which is the machine you'll be
   managing using Endpoint Policy Manager Cloud.

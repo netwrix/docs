@@ -39,4 +39,4 @@ AppSet is unique for several reasons:
   PolicyPak DesignStudio (advanced).
 
 Video: To get started with the IE AppSet, use this video:
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-internet-explorer-getting-started.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-internet-explorer-getting-started.html)
+[http://www.policypak.com/video/endpointpolicymanager-manage-internet-explorer-getting-started.html](http://www.policypak.com/video/endpointpolicymanager-manage-internet-explorer-getting-started.html)

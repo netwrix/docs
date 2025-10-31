@@ -8,7 +8,7 @@ sidebar_position: 10
 
 :::note
 For a demonstration of Item-Level Targeting, please see this video:
-[http://www.endpointpolicymanager.com/videos/sn6j7q1clmq.html](https://www.youtube.com/watch)
+[http://www.policypak.com/videos/sn6j7q1clmq.html](https://www.youtube.com/watch)
 :::
 
 

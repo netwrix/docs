@@ -31,7 +31,7 @@ A: We do it for you. For Windows, Office and Endpoint Policy Manager ADMX settin
 
 Q: Do you have Windows 10 and 11 settings in Endpoint Policy Manager Cloud?  
 A: Yes. See
-[How Netwrix PolicyPak Enables Flexibility of Different Group Policy Stores for Windows 10 and Windows 11](https://www.endpointpolicymanager.com/resources/pp-blog/group-policy-stores/)
+[How Netwrix PolicyPak Enables Flexibility of Different Group Policy Stores for Windows 10 and Windows 11](https://www.policypak.com/resources/pp-blog/group-policy-stores/)
 for additional information.
 
 Q: What about Custom ADMX, like Acrobat and Chrome? Can I upload those myself?  

@@ -15,7 +15,7 @@ Manager to manage those applications on the Start Menu and on the TaskBar. AWESO
 ### PolicyPak + FSLogix: Manage the Windows 10 Start Menu
 
 Hi. This is Jeremy Moskowitz. In this video, I'm going to show you how you can tame the
-[https://www.endpointpolicymanager.com/pp-blog/windows-10-start-screen](https://www.endpointpolicymanager.com/pp-blog/windows-10-start-screen)
+[https://www.policypak.com/pp-blog/windows-10-start-screen](https://www.policypak.com/pp-blog/windows-10-start-screen)
 with PolicyPak and FSLogix better together. In this example, I have a bunch of applications that are
 installed on the machine, but I'm going to use FSLogix to hide or mask those applications. The
 things is that you want to put them back with FSLogix for some users and put them into special Start

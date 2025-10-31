@@ -150,6 +150,6 @@ idea here is that we've ensured that all four checkboxes are checked, or whateve
 settings are, and even while the app is running no shenanigans can actually occur. That is the key
 point of how PolicyPak works.  
 With that in mind, if you're interested in learning more about this, you can come to one of the
-webinars that we do at endpointpolicymanager.com. I hope to see you there.
+webinars that we do at policypak.com. I hope to see you there.
 
 Thanks so very much. Take care.

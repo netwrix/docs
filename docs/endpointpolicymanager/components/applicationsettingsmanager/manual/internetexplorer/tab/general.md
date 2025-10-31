@@ -8,7 +8,7 @@ sidebar_position: 10
 
 Video: For a quick overview of how to manage the General tab using Netwrix Endpoint Policy Manager
 (formerly PolicyPak) Application Settings Manager, see the following video:
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-general-tab.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-general-tab.html).
+[http://www.policypak.com/video/endpointpolicymanager-manage-ie-general-tab.html](http://www.policypak.com/video/endpointpolicymanager-manage-ie-general-tab.html).
 
 The General tab for IE can be seen in Figure 4.
 

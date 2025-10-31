@@ -43,7 +43,7 @@ folder" for this user is "`C:Userseastsalesuser2Desktop`."
 There are a lot of other options here, but let me give you a quick technique to go to the advanced
 level here. On every target machine, all these environment variables are declared inside a special
 location in the registry. I'm going to show you that location. Actually, I'm going to
-"[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)."
+"[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)."
 This is an advanced technique, so I'm going to run this as administrator here.
 
 I'll type "regedit." I'm looking under

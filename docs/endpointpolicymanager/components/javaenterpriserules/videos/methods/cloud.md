@@ -8,7 +8,7 @@ sidebar_position: 30
 Use Netwrix Endpoint Policy Manager (formerly PolicyPak) Cloud to deliver Endpoint Policy Manager
 Java Rules Manager policies. Configure websites to use the version of Java you choose, or block Java
 websites entirely
-([https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites](https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites))
+([https://www.policypak.com/pp-blog/windows-10-block-websites](https://www.policypak.com/pp-blog/windows-10-block-websites))
 – even for remote machines via the Cloud. Making a Java Deployment Rule Set for your Enterprise has
 never been easier or more flexible.
 

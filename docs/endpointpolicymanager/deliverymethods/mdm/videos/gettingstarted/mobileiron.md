@@ -34,7 +34,7 @@ browser.
 
 I have one that will run an application with elevated rights. If you have an application that won't
 let you bypass the UAC prompt, we can do that by elevating the rights using "Endpoint Policy Manager
- [https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)."
+ [https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)."
 We can also deploy Group Policy Preferences "shortcut" items or just about every other "Microsoft
 Group Policy Preferences" item and also "Microsoft Group Policy Security Settings" where you can
 rename a "guest-account."
@@ -90,7 +90,7 @@ example, I deployed it to every computer. So therefore, as soon as they join the
 time it should come down, install these guys and we should see the result.
 
 What I'm going to do is go over to my Windows 10 machine here and I'm going to join the MDM service
-here. Let's go ahead and say "mdmuser1@endpointpolicymanager.com." Here's the "Letter from MobileIron" I got as
+here. Let's go ahead and say "mdmuser1@policypak.com." Here's the "Letter from MobileIron" I got as
 the example user. It told me when prompted, to run this from a browser to then tell me what to put
 here in the server. Let me go ahead and do that.
 

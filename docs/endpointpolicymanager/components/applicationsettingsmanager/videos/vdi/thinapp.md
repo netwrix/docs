@@ -88,7 +88,7 @@ have via ThinApp. In that way, you might want to ensure that some particular sec
 look-and-feel settings are always the same for both versions.
 
 I'm going to do this on the computer side. On "PolicyPak/Applications/New/Application," I'll select
-"PolicyPak for Mozilla Firefox." Then for the "Home Page" I'll change this to "www.endpointpolicymanager.com."
+"PolicyPak for Mozilla Firefox." Then for the "Home Page" I'll change this to "www.policypak.com."
 While I'm here, I will also "Lockdown this setting using the system-wide config file." This is going
 to guarantee that users can't work around this setting.
 
@@ -134,7 +134,7 @@ If I take a look at the one that's distributed through ThinApp and VMWare View â
 that's version "21.0"
 
 The key point is, let's take a look back at version 6 again. If I go to the "Options" here, right
-there you can see that the "Home Page" is being set by "www.endpointpolicymanager.com" and it's locked down so
+there you can see that the "Home Page" is being set by "www.policypak.com" and it's locked down so
 users can't work around it.
 
 If we go to "Security," those settings again are being delivered. You saw me configure this

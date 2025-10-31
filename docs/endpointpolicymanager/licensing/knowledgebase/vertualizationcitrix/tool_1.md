@@ -31,4 +31,4 @@ There are also multiple ways the Endpoint Policy Manager On-Prem suite can be li
 For understanding all the scenarios, please see the following additional technotes:
 
 - [How are Terminal Services and/or Citrix connections licensed?](/docs/endpointpolicymanager/licensing/knowledgebase/vertualizationcitrix/terminalservices.md)
-- [Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.endpointpolicymanager.com/purchasing/vdi-licensing-scenarios/)
+- [Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.policypak.com/purchasing/vdi-licensing-scenarios/)

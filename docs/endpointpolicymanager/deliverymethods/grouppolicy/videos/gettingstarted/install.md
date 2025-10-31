@@ -15,7 +15,7 @@ Group Policy Edition!
 Hi, this is Whitney with PolicyPak Software. In this video, we're going to look at getting started
 with the PolicyPak Group Policy Edition.
 
-In order to get prepared for this video, I went ahead and I went to endpointpolicymanager.com. I went to the
+In order to get prepared for this video, I went ahead and I went to policypak.com. I went to the
 "Customer Login" area and then went ahead and logged in. Once I got there, I went ahead and I went
 over to the "Downloads" tab, which should load in just a second here. There we go. I went to this
 "Downloads" tab, and I went to the "Latest Bits" and I installed those. These are, as it says right

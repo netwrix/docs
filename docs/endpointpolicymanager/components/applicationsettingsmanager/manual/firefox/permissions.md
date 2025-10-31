@@ -51,7 +51,7 @@ for the sites that are allowed to have pop-ups and you can set permissions, as s
 Figure 11. Using Endpoint Policy Manager to configure the Permissions tab.
 
 To see a video of Endpoint Policy Manager managing permissions and pop-ups, to go
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-firefox-pop-ups-and-permissions-using-group-policy.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-firefox-pop-ups-and-permissions-using-group-policy.html).
+[http://www.policypak.com/video/endpointpolicymanager-manage-firefox-pop-ups-and-permissions-using-group-policy.html](http://www.policypak.com/video/endpointpolicymanager-manage-firefox-pop-ups-and-permissions-using-group-policy.html).
 
 In Figure 11, you can see the key word after the website, like "image," "Geo," "cookie," and so on.
 Use Table 1 to find the key word for the area on the website you would like to manage.
@@ -79,7 +79,7 @@ website. To do this, you need the "short name" of the plugin.
 
 Video: To see a video of how to discover the short name of a plugin and ensure it always works for a
 particular website, go to
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-firefox-plug-ins-per-website.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-firefox-plug-ins-per-website.html).
+[http://www.policypak.com/video/endpointpolicymanager-manage-firefox-plug-ins-per-website.html](http://www.policypak.com/video/endpointpolicymanager-manage-firefox-plug-ins-per-website.html).
 
 For example, if you want to ensure that when end-users go to a specific Citrix website, the Citrix
 ICA plugin is always set to ALLOW for that site, you would need to know the Citrix plugin short

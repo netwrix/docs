@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Video: For a quick overview of how to manage the Security tab using Endpoint Policy Manager
 Application Settings Manager, see the following video:
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-security.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-security.html).
+[http://www.policypak.com/video/endpointpolicymanager-manage-ie-security.html](http://www.policypak.com/video/endpointpolicymanager-manage-ie-security.html).
 
 The Security tab lets you set levels for all four zone types. The dialog within IE can be seen in
 Figure 6.

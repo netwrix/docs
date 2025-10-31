@@ -30,7 +30,7 @@ this problem
 Most pre-configured Paks ship with internal Item-Level Targeting, which means the Pak is designed to
 only affect a specific version of the application. You can bypass internal Item-Level Targeting in
 the Pak. Refer to the video at
-[http://www.endpointpolicymanager.com/videos/bypassing-internal-item-level-targeting-filters.html](https://www.endpointpolicymanager.com/integration/endpointpolicymanager-group-policy-change-management-utilities.html)
+[http://www.policypak.com/videos/bypassing-internal-item-level-targeting-filters.html](https://www.policypak.com/integration/endpointpolicymanager-group-policy-change-management-utilities.html)
 to see how to bypass internal Item-Level Targeting.
 
 - Did you use block inheritance to block the licensing GPO or block the GPO that is delivering the

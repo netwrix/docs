@@ -79,7 +79,7 @@ going to do this is either use the Event Viewer or the PolicyPak logs.
 
 I'm going to use the PolicyPak logs to do it. In "AppData," "Local," "PolicyPak," if we go to
 "PolicyPak
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)"
+[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)"
 here, what you're looking for is the file "ppUser_operational.log." You're going to see what thing
 triggered that prompt.
 

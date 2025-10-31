@@ -67,25 +67,25 @@ XML Policy
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
-<policy xmlns:lpm="http://www.endpointpolicymanager.com/2016/LPM/CommonTypes" xmlns:ext="http://www.endpointpolicymanager.com/2019/LPM/PolicyEntryExtension" xmlns:security="http://www.endpointpolicymanager.com/2016/LPM/Security" xmlns:pd="http://www.endpointpolicymanager.com/2014/Policies/PolicyData" xmlns:pp="http://www.endpointpolicymanager.com/2014/CommonTypes" id="{08556a99-a6ea-4ce9-9dee-9cc490567c39}" productId="{58DE0268-6384-49E0-A333-20EC46654B82}" scope="machine" timestamp="1709820468" xmlns="http://www.endpointpolicymanager.com/2016/LPM/PolicyData">
+<policy xmlns:lpm="http://www.policypak.com/2016/LPM/CommonTypes" xmlns:ext="http://www.policypak.com/2019/LPM/PolicyEntryExtension" xmlns:security="http://www.policypak.com/2016/LPM/Security" xmlns:pd="http://www.policypak.com/2014/Policies/PolicyData" xmlns:pp="http://www.policypak.com/2014/CommonTypes" id="{08556a99-a6ea-4ce9-9dee-9cc490567c39}" productId="{58DE0268-6384-49E0-A333-20EC46654B82}" scope="machine" timestamp="1709820468" xmlns="http://www.policypak.com/2016/LPM/PolicyData">
   <collection order="0" id="{68b6fd6b-2d0c-4fa7-b7f8-4a74fd67d909}" displayName="Container for policy: Allow Non-Admins to manage Remote Registry Service Using SC.EXE">
     <entry order="0" scope="machine" id="{4943c522-8613-438f-b7b5-eb0c25032787}" displayName="Allow Non-Admins to manage Remote Registry Service Using SC.EXE">
       <rule-v1>
-        <executableRule xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules-V1">
-          <conditions xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
-            <pathCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+        <executableRule xmlns="http://www.policypak.com/2016/LPM/Rules-V1">
+          <conditions xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
+            <pathCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <path kind="File">%SYSTEMROOT%\System32\sc.exe</path>
             </pathCondition>
-            <commandLineCondition xmlns="http://www.endpointpolicymanager.com/2016/LPM/Rules">
+            <commandLineCondition xmlns="http://www.policypak.com/2016/LPM/Rules">
               <value>* RemoteRegistry*</value>
               <useAndSpecifierForArguments>false</useAndSpecifierForArguments>
             </commandLineCondition>
           </conditions>
-          <settings justificationTextRequired="false" restrictOpenSaveDialog="true" xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
+          <settings justificationTextRequired="false" restrictOpenSaveDialog="true" xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
             <applyToChildProcesses>true</applyToChildProcesses>
           </settings>
-          <action xmlns="http://www.endpointpolicymanager.com/2016/LPM/ExecutableRule">
-            <changeProcess xmlns="http://www.endpointpolicymanager.com/2016/LPM/Actions">
+          <action xmlns="http://www.policypak.com/2016/LPM/ExecutableRule">
+            <changeProcess xmlns="http://www.policypak.com/2016/LPM/Actions">
               <security:changeToken baseToken="Elevated">
                 <security:groups />
                 <security:privileges />

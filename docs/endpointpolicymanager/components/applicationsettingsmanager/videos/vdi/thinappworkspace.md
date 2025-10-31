@@ -86,7 +86,7 @@ we'll select "Manages Firefox (Real and ThinApp)." We're just utilizing the Grou
 we created the last time.
 
 If we just take a look at the "Settings" report here, we'll see that we've got settings on the
-"General Tab." We're delivering "www.endpointpolicymanager.com," and we're also delivering some important
+"General Tab." We're delivering "www.policypak.com," and we're also delivering some important
 "Security" settings. We can see that if we right click, click "Edit…" and take a look at the
 computer side "PolicyPak/Applications/New/Application" and just dive in there and see our changes.
 

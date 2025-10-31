@@ -15,7 +15,7 @@ In addition, Endpoint Policy Manager Application Settings Manager can perform AC
 :::note
 To see Endpoint Policy Manager Application Settings Manager ACL Lockdown™ in action,
 watch this video:
-[https://www.endpointpolicymanager.com/video/endpointpolicymanager-acl-lockdown-for-registry-based-applications.html](http://www.endpointpolicymanager.com/videos/bypassing-internal-item-level-targeting-filters.html).
+[https://www.policypak.com/video/endpointpolicymanager-acl-lockdown-for-registry-based-applications.html](http://www.policypak.com/videos/bypassing-internal-item-level-targeting-filters.html).
 :::
 
 

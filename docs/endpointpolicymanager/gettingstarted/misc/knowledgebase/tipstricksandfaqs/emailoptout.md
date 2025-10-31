@@ -27,7 +27,7 @@ What you cannot opt out of are the following types of emails:
 - Renewal-time emails before you expire (which start 90 days before you expire.)
 - General announcements and requests (like survey requests, etc.)
 
-You may use the portal.endpointpolicymanager.com login, then select Your Profile to choose to opt out of SOME
+You may use the portal.policypak.com login, then select Your Profile to choose to opt out of SOME
 emails.
 
 If, after un-selecting the items below, you still want to receive LESS email, then you will need to

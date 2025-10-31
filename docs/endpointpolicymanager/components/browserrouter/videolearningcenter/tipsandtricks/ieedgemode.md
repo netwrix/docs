@@ -40,7 +40,7 @@ screen for a couple more seconds, and let's move on.
 
 Now what we're going to do is let's go ahead and set our routes. Here's Browser Router here. You've
 always been able to right click Add and new policy here, and if you want it to do something like
-Endpoint Policy Manager to IE, that's fine. You can go to www.endpointpolicymanager.com to Internet Explorer,
+Endpoint Policy Manager to IE, that's fine. You can go to www.policypak.com to Internet Explorer,
 and here is where you get to set if you want to open it up in standalone IE or open it up in IE Edge
 tab, so let's go ahead and do that here. What I'm going to also do – I think I've got another
 conflicting one. I want to get rid of that one so it doesn't actually conflict. Let me go ahead and
@@ -51,11 +51,11 @@ so let's go ahead and let's give this a second or two to catch up. Now that that
 see that our original routes work, so if we go to Google, that's going to go over to Chrome, which
 I've already got set up. That's all good to go. Here we go. Chrome, happy as a clam. If I were to
 click on mozilla.org, I've set that to go to Firefox. That should be good to go. Let's go ahead and
-see that. Go ahead and launch. There we go, mozilla.org over to Firefox. Now we said endpointpolicymanager.com
+see that. Go ahead and launch. There we go, mozilla.org over to Firefox. Now we said policypak.com
 goes to Internet Explorer in the Edge tab, right? Whoops, let's go ahead and – we don't care about
 any of that stuff.
 
-Now let's go ahead and click on endpointpolicymanager.com, and remember, I said it's guaranteed working in the
+Now let's go ahead and click on policypak.com, and remember, I said it's guaranteed working in the
 2004 edition. Lo and behold, it's not working right away. What is going on? Why doesn't it work
 right away? It doesn't work right away because this is something that's built into Edge and Internet
 Explorer, which is the enterprise mode site list, which takes two minutes. Let me go ahead and get
@@ -74,9 +74,9 @@ have all the ducks in a row and it's all working fine. It still won't work unles
 Explorer and then wait 65 seconds. The second time shouldn't be a big deal.
 
 Let's go ahead and close all these browsers out. We don't need them anymore. Now let's go and click
-on endpointpolicymanager.com. If it doesn't work, you should close – try to close Edge here and then try it
+on policypak.com. If it doesn't work, you should close – try to close Edge here and then try it
 again here. If you go back to Edge – again, should take 65 seconds or so and there we go. If we go
-to endpointpolicymanager.com, we can see Edge is – we're now in Edge, but we're in Internet Explorer mode in
+to policypak.com, we can see Edge is – we're now in Edge, but we're in Internet Explorer mode in
 Edge, and what's happening underneath the hood, which I think is pretty interesting – if we go to
 Task Manager here and we take a look at Edge, Edge is really running the real Internet Explorer.
 That's the magic of how they do that.

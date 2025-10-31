@@ -12,7 +12,7 @@ serving multiple people on the same machine, then that usage counts as multiple 
 two FAQs for details:
 
 - General Citrix & Multi-Session Windows Licensing:
-  [Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.endpointpolicymanager.com/purchasing/citrix-licensing-scenarios.html)
+  [Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.policypak.com/purchasing/citrix-licensing-scenarios.html)
 - For Citrix + Cloud:
   [How do I license my Citrix, RDS, WVD, VDI or other multi-session Windows version with Endpoint Policy Manager Cloud ?](/docs/endpointpolicymanager/licensing/knowledgebase/vertualizationcitrix/multisession.md)
 
@@ -23,7 +23,7 @@ Here are some examples:
    reduce the amount of GPOs and then target them to specific servers. There are many, many use
    cases for this, but just one is Windows Update, where you can take a bunch of GPOs and get them
    down to one. See this blog for details:
-   [https://www.endpointpolicymanager.com/pp-blog/windows-update-business](https://www.endpointpolicymanager.com/pp-blog/windows-update-business).
+   [https://www.policypak.com/pp-blog/windows-update-business](https://www.policypak.com/pp-blog/windows-update-business).
    Then, here's the video on how to perform reduction of existing GPOs:
    [Reduce GPOs (and/or export them for use with Endpoint Policy Manager Cloud or with MDM)](/docs/endpointpolicymanager/components/admintemplatesmanager/videolearningcenter/admintemplatesmethods/reducegpos.md)
 2. You can use Endpoint Policy Manager Admin Templates Manager to specify and lockdown settings for

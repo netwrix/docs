@@ -63,4 +63,4 @@ must already be present to be modified by Endpoint Policy Manager
 
 DesignStudio. Additionally, it is now recommended that if you wish to deliver and maintain `.rdp`
 files, you do so with Endpoint Policy Manager Remote Desktop Protocol Manager
-([https://www.endpointpolicymanager.com/policies/remote-desktop-protocol-manager/](https://www.endpointpolicymanager.com/policies/remote-desktop-protocol-manager/)).
+([https://www.policypak.com/policies/remote-desktop-protocol-manager/](https://www.policypak.com/policies/remote-desktop-protocol-manager/)).

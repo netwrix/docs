@@ -13,13 +13,13 @@ which elements to configure, enforce, and even disable or hide.
 
 :::note
 To see an overview of the Enforcement modes, watch this quick tutorial video:
-[https://www.endpointpolicymanager.com/video/endpointpolicymanager-the-superpowers.html](http://tinyurl.com/screenshotpilot).
+[https://www.policypak.com/video/endpointpolicymanager-the-superpowers.html](http://tinyurl.com/screenshotpilot).
 :::
 
 
 :::note
 To see an overview of ACL Lockdown™ mode, watch this tutorial:
-[https://www.endpointpolicymanager.com/video/endpointpolicymanager-acl-lockdown-for-registry-based-applications.html](https://support.microsoft.com/en-us/kb/3087759).
+[https://www.policypak.com/video/endpointpolicymanager-acl-lockdown-for-registry-based-applications.html](https://support.microsoft.com/en-us/kb/3087759).
 :::
 
 

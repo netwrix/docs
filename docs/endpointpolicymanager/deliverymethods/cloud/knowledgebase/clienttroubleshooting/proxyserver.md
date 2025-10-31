@@ -11,6 +11,6 @@ encrypted end to end. Endpoint Policy Manager cloud will try on port 443 or 80 a
 need to configure your Proxy Server to allow communication to specific hosts, you need to set the
 following:
 
-- cloud-agent.endpointpolicymanager.com via HTTPS/443
-- cloud-events.endpointpolicymanager.com via HTTPS/443
+- cloud-agent.policypak.com via HTTPS/443
+- cloud-events.policypak.com via HTTPS/443
 - ppdl.blob.core.windows.net via HTTPS/443

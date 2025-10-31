@@ -27,11 +27,11 @@ little bit wider.
 We're going to actually use three different components of the PolicyPak software. Here we go. Let's
 open up this node. I'm going to use the "Application Settings Manager" to manage some Firefox
 settings. I'm going to use the
-"[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)"
+"[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)"
 component here to make sure that my users can't download and run unknown ware, malicious software.
 And I'm going to use the "Browser Router" to make sure that every URL with the word "Google" in it
 will open up in Chrome, and I'll use it also to
-[https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites](https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites)
+[https://www.policypak.com/pp-blog/windows-10-block-websites](https://www.policypak.com/pp-blog/windows-10-block-websites)
 like Facebook.
 
 Let's start off with the "Application Settings Manager." There are other videos on the website that
@@ -39,7 +39,7 @@ will go into greater detail on all of these components. For today, all I want to
 some settings and then export them and deploy them using not Group Policy.
 
 Let's go over here. I want to deliver the setting that I want a particular "Home Page" to be there.
-Let's just go with "www.endpointpolicymanager.com." Then let's also say that we can't have users going into
+Let's just go with "www.policypak.com." Then let's also say that we can't have users going into
 incognito mode. Let's go over to "Extras." We're going to "Turn off private browsing," and we'll
 save that.
 
@@ -118,7 +118,7 @@ here.
 
 Now that we've done this, when we go to our settings that used to be ungoverned we'll find out a new
 thing. Let's open up "Mozilla Firefox" and see what happens. There we go. We have our homepage set
-to "www.endpointpolicymanager.com" just like we told it to. When we come here, we can no longer get into the
+to "www.policypak.com" just like we told it to. When we come here, we can no longer get into the
 incognito mode. So we ripped the knob off of that one, we set this homepage, and that was done using
 the Application Settings Manager.
 

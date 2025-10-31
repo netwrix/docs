@@ -17,7 +17,7 @@ Dell/Quest/Scriptlogic GPOadmin, and Quest ActiveAdministrator.
 :::note
 Video: For an overview of Endpoint Policy Manager and Change Management utilities like
 GPA, AGPM, etc, see
-[https://www.endpointpolicymanager.com/integration/endpointpolicymanager-group-policy-change-management-utilities.html](http://www.endpointpolicymanager.com/videos/endpointpolicymanager-using-shares-to-store-your-paks-share-based-storage.html).
+[https://www.policypak.com/integration/endpointpolicymanager-group-policy-change-management-utilities.html](http://www.policypak.com/videos/endpointpolicymanager-using-shares-to-store-your-paks-share-based-storage.html).
 :::
 
 

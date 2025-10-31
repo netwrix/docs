@@ -46,6 +46,5 @@ annotations.
 
 Figure 33. An example of a Endpoint Policy Manager Scripts & Triggers Manager log.
 
-**Step 2 –** If needed, logs are automatically wrapped up and can be sent to
-[support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com) using the `PPLOGS.EXE` command on any endpoint
+**Step 2 –** If needed, logs are automatically wrapped up and can be sent to support by [opening a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket) using the `PPLOGS.EXE` command on any endpoint
 where the client-side extension is installed.

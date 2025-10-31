@@ -9,7 +9,7 @@ sidebar_position: 20
 Getting Started
 
 First, download the Netwrix Endpoint Policy Manager (formerly PolicyPak) software from the portal at
-endpointpolicymanager.com. See the
+policypak.com. See the
 [Endpoint Policy ManagerPortal: How to download Endpoint Policy Manager and get free training](/docs/endpointpolicymanager/gettingstarted/misc/videos/gettingstartedmisc/freetraining.md)
 topic for video details on downloading.
 

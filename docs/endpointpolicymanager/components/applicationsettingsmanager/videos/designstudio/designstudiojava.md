@@ -63,5 +63,5 @@ Edit ILT Conditions" to also specify XP.
 That's all there is to it. If you have any questions, do post in the forums about how to do this.
 This is a "how do I" question.
 
-[https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/](https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/)
+[https://dev.policypak.com/resources/thank-you-whitepapers/](https://dev.policypak.com/resources/thank-you-whitepapers/)
 so much, and talk to you soon.

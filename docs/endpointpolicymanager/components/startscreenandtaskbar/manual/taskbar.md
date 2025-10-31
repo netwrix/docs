@@ -10,7 +10,7 @@ Now you're ready to create Netwrix Endpoint Policy Manager (formerly PolicyPak) 
 
 :::note
 For a video overview of Taskbar Manager, see
-[](https://www.endpointpolicymanager.com/products/endpointpolicymanager-start-screen-manager.html)[Endpoint Policy Taskbar Manager: Quick Demo](/docs/endpointpolicymanager/components/startscreenandtaskbar/videos/gettingstarted/demotaskbar.md).
+[](https://www.policypak.com/products/endpointpolicymanager-start-screen-manager.html)[Endpoint Policy Taskbar Manager: Quick Demo](/docs/endpointpolicymanager/components/startscreenandtaskbar/videos/gettingstarted/demotaskbar.md).
 :::
 
 

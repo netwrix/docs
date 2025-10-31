@@ -18,7 +18,7 @@ Hi. This is Jeremy Moskowitz, former Group Policy MVP and Founder of Endpoint Po
 Software. In this video, I'm going to show you how you can get real Group Policy settings –
 "Policies," "Preferences" and Endpoint Policy Manager's special settings like "Application Settings
 Manager,"
-"[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html),"
+"[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html),"
 "Java Rules Manager" and so on – all of these settings out to your AirWatch investment and all of
 your clients using MDM.
 
@@ -28,7 +28,7 @@ Extension." It's a little MSI that gets deployed to all of your endpoints. It's 
 work.
 
 You're also going to upload the license file that we give you (" Endpoint Policy Manager MDM
-Licenses for \*@endpointpolicymanager.com") that lights up your client side extension. Basically, what we do is
+Licenses for \*@policypak.com") that lights up your client side extension. Basically, what we do is
 we say that you're welcome to light up anybody at a particular domain name. In my case, it would be
 anyone at the "Endpoint Policy Manager.com" domain name can join AirWatch and get Group Policy
 settings or Endpoint Policy Manager special settings.
@@ -83,7 +83,7 @@ of configuration stuff and lock it down so users can't be naughty and work aroun
 
 Let's go ahead and close all this out. Now it's time to do an MDM join, and then we'll wait a little
 bit and we'll take a look at the after picture. To get started here, we'll put in
-"mdmuser1@endpointpolicymanager.com." It needs to know the special "Server URL" here. This is exactly the
+"mdmuser1@policypak.com." It needs to know the special "Server URL" here. This is exactly the
 process your end users would do in order to join AirWatch or any MDM service here. "Group ID" they
 would have gotten in an email. I just copied it here to make it easy on myself.
 

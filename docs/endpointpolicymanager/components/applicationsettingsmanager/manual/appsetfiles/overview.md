@@ -26,6 +26,6 @@ existing Endpoint Policy Manager XMLs when necessary.
 :::note
 You can watch an introductory video overview of this section in the tutorial video we
 created, which can be found here:
-[https://www.endpointpolicymanager.com/video/working-with-others-and-using-the-central-store.html](https://www.endpointpolicymanager.com/video/endpointpolicymanager-acl-lockdown-for-registry-based-applications.html).
+[https://www.policypak.com/video/working-with-others-and-using-the-central-store.html](https://www.policypak.com/video/endpointpolicymanager-acl-lockdown-for-registry-based-applications.html).
 
 :::

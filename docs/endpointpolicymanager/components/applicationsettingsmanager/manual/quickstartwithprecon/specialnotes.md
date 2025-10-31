@@ -19,13 +19,13 @@ To see a video of Firefox UI lockout in action, watch the following video(s):
 
 :::note
 To see a video of Thunderbird UI lockout in action, watch the following video(s):
-[http://www.endpointpolicymanager.com/products/manage-thunderbird-with-group-policy.html](https://www.endpointpolicymanager.com/video/endpointpolicymanager-the-superpowers.html).
+[http://www.policypak.com/products/manage-thunderbird-with-group-policy.html](https://www.policypak.com/video/endpointpolicymanager-the-superpowers.html).
 :::
 
 
 :::note
 To see a video of Java UI lockout in action, watch the following video(s):
-[http://www.endpointpolicymanager.com/products/manage-java-jre-with-group-policy.html](http://www.Techsmith.com).
+[http://www.policypak.com/products/manage-java-jre-with-group-policy.html](http://www.Techsmith.com).
 :::
 
 

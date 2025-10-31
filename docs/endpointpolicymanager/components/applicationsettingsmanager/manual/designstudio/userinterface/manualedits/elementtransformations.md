@@ -31,7 +31,7 @@ Figure 73. Selecting the type of element to change to.
 
 :::note
 If you discover a transformation you need, but DesignStudio does not provide it, please
-email [support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com), describe the scenario you need, and
+[open a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket), describe the scenario you need, and
 indicate the application that you are trying to create an AppSet for (plus a screenshot if
 possible).
 

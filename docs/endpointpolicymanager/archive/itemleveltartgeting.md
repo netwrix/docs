@@ -7,7 +7,7 @@ sidebar_position: 280
 # Group Policy Preferences: Item Level Targeting
 
 Learn how to use **Group Policy Preferences**
-[https://www.endpointpolicymanager.com/pp-blog/item-level-targeting](https://www.endpointpolicymanager.com/pp-blog/item-level-targeting)
+[https://www.policypak.com/pp-blog/item-level-targeting](https://www.policypak.com/pp-blog/item-level-targeting)
 from former Group Policy MVP Jeremy Moskowitz.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lIt_dPTD0os?si=c2_szR6fjIbcAWnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -24,7 +24,7 @@ the Group Policy Preferences.
 
 I want to talk about a very specific piece of it, which is that for every single item you create,
 like "Shortcuts," let's say I want to create this shortcut on the "Desktop" and make it a "URL" like
-"www.endpointpolicymanager.com." I'll give it a little lock "Icon." If I were to just hit go right here, every
+"www.policypak.com." I'll give it a little lock "Icon." If I were to just hit go right here, every
 West Sales User is going to get this particular setting because this entry is linked over to my
 "West Sales Users." All of my West Sales users are going to get this.
 
@@ -49,9 +49,9 @@ item to appear when the "Computer Name" has "64." It has to have a match of "6" 
 
 Those are my two items. Normally, both of these would appear on both of my desktops, but that's not
 what's going to happen here. If I run "gpupdate" on this computer and I go over here and run
-"gpupdate" on that computer, let's go back to the first one. There's the "www.endpointpolicymanager.com" icon,
+"gpupdate" on that computer, let's go back to the first one. There's the "www.policypak.com" icon,
 but we don't get the www.GPanswers.com icon because that didn't match. If I go over to this one, we
-get the "www.GPanswers.com" icon but not the www.endpointpolicymanager.com icon.
+get the "www.GPanswers.com" icon but not the www.policypak.com icon.
 
 That's Group Policy Preferences item-level targeting in a nutshell. Hope that helps you out.
 

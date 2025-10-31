@@ -59,7 +59,7 @@ a tall order.
 
 What are we going to do? Let's go ahead and go to New Policy here, New Browser Router Policy. We'll
 call this Endpoint Policy Manager Example Site. If you want to use Internet Explorer Special Mode,
-you have to give it an exact URL. I'm going to go ahead and give it https://www.endpointpolicymanager.com. It
+you have to give it an exact URL. I'm going to go ahead and give it https://www.policypak.com. It
 should work without the https before it, and it should also work without the www before it. That's
 all the same there.
 

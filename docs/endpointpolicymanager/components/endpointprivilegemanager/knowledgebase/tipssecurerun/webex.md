@@ -33,7 +33,7 @@ under` %LocalAppData%\WebEx\WebEx\Meetings`
 WebEx under `%LocalAppData%\WebEx`
 
 Alternatively, download the Guidance XMLs from
-[https://portal.endpointpolicymanager.com/downloads/guidance,](https://portal.endpointpolicymanager.com/downloads/guidance)
+[https://portal.policypak.com/downloads/guidance,](https://portal.policypak.com/downloads/guidance)
 then browse to the `…\Production-Guidance\PolicyPak Least Privilege Manager XMLs` folder after
 extracting the contents of the downloaded zip, and import the
 `WebEx Elevated by Signature and File Info.xml` for use in your environment.

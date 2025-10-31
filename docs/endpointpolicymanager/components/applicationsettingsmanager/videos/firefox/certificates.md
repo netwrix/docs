@@ -86,7 +86,7 @@ SHA-1 fingerprint ", remove" and that will blast it out. That's it.
 
 Let's go ahead and take a look. Let's go ahead and close this guy out. We'll run "gpupdate" here.
 We'll wait for this to finish. Close this out here. Go ahead and go to "Mozilla Firefox." Back to
-"Options/View Certificates." It was right above the "\*.endpointpolicymanager.com" one, and now it's gone. So
+"Options/View Certificates." It was right above the "\*.policypak.com" one, and now it's gone. So
 that certificate that was here is now gone.
 
 The last thing I want to just talk about ever so briefly is a little troubleshooting step in case

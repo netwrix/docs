@@ -61,7 +61,7 @@ go to 470. But you will only (in practice) use the 400 licenses:
 Total Usage: 402. Total in your pool after agreement: 470.
 
 This is really no different than how we ask PP Group Policy customers to do. See
-[Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.endpointpolicymanager.com/purchasing/vdi-licensing-scenarios/)
+[Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.policypak.com/purchasing/vdi-licensing-scenarios/)
 for additional information.
 
 In summary: If you want to use Endpoint Policy Manager Cloud with any kind of multi-session version

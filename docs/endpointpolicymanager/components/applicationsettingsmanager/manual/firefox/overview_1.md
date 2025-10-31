@@ -12,7 +12,7 @@ need to learn how to convert a certificate, see the section "Exporting Certifica
 Binary-Encoded DER Format" below.
 
 Video: To see a video of Endpoint Policy Manager managing Firefox's add-ons, go to
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-firefox-certificates.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-firefox-certificates.html)
+[http://www.policypak.com/video/endpointpolicymanager-manage-firefox-certificates.html](http://www.policypak.com/video/endpointpolicymanager-manage-firefox-certificates.html)
 
 You can see Firefox's certificates under` Options | Advanced | Certificates | View Certificates`, as
 shown in Figure 42.
@@ -59,7 +59,7 @@ following
 
 :::note
 
-[http://www.endpointpolicymanager.com/knowledge-base/preconfigured-paks/firefox-how-can-i-deliver-certificates-to-certificate-authority-store-and-select-websites-mail-users-and-software-makers.html](http://www.endpointpolicymanager.com/knowledge-base/preconfigured-paks/firefox-how-can-i-deliver-certificates-to-certificate-authority-store-and-select-websites-mail-users-and-software-makers.html).
+[http://www.policypak.com/knowledge-base/preconfigured-paks/firefox-how-can-i-deliver-certificates-to-certificate-authority-store-and-select-websites-mail-users-and-software-makers.html](http://www.policypak.com/knowledge-base/preconfigured-paks/firefox-how-can-i-deliver-certificates-to-certificate-authority-store-and-select-websites-mail-users-and-software-makers.html).
 :::
 
 

@@ -9,7 +9,7 @@ sidebar_position: 90
 This document will help you to understand how to use the AppSet named "Mozilla Firefox 23.0". This
 AppSet works for Firefox 23 and later but only works with Firefox ESR, and not the regular version.
 For more details on this see:
-[https://www.endpointpolicymanager.com/pp-blog/policypak-will-soon-only-support-firefox-esr](https://www.endpointpolicymanager.com/pp-blog/endpointpolicymanager-will-soon-only-support-firefox-esr)
+[https://www.policypak.com/pp-blog/policypak-will-soon-only-support-firefox-esr](https://www.policypak.com/pp-blog/endpointpolicymanager-will-soon-only-support-firefox-esr)
 
 Only use this document after you have read and worked through Book 3: Application Settings Manager
 and have successfully tested "Winzip 14," or an example application. Some features are only

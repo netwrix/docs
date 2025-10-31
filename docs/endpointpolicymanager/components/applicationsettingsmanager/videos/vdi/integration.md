@@ -28,7 +28,7 @@ Add more value to your Microsoft VDI investment.
 
 Tip: After you watch the video, please download our free whitepaper "What Most IT admins don't know
 about
-VDI": [https://www.endpointpolicymanager.com/integration/solutions/why-vdi-admin-need-endpointpolicymanager.html](https://www.endpointpolicymanager.com/integration/solutions/why-vdi-admin-need-endpointpolicymanager.html)
+VDI": [https://www.policypak.com/integration/solutions/why-vdi-admin-need-endpointpolicymanager.html](https://www.policypak.com/integration/solutions/why-vdi-admin-need-endpointpolicymanager.html)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ay1Llyn46Mg?si=vzWeY08Wu0xUnplS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -229,7 +229,7 @@ that anybody who logs on to those machines regardless of who they are is going t
 settings. That's very powerful.
 
 I'm going to use "Mozilla Firefox" in this example. Let me set the "Home Page" to
-"www.endpointpolicymanager.com." I'll lock it down with "Revert the policy setting to the default value when it
+"www.policypak.com." I'll lock it down with "Revert the policy setting to the default value when it
 is no longer applied," a superpower from PolicyPak. I'll go to "Security." You saw me work around
 these settings. I want to make sure users can't work around these settings, so I'm going to "lock
 down this setting using the system-wide config file." I'm going to lock down each of these settings

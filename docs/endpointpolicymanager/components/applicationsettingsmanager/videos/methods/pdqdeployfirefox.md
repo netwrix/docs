@@ -118,7 +118,7 @@ Jeremy: So, we go to computer side, PolicyPak. We'll go to applications settings
 do a lot in Firefox. A lot of times people come to us because they want to manage the certificates
 in Firefox. They want to manage the bookmarks in Firefox. But we'll just go right for things that we
 can just touch really quick. But we can do just about do nearly everything. So, if we go to the
-homepage here. We'll go to endpointpolicymanager.com and we'll right click on this thing and we will lock down
+homepage here. We'll go to policypak.com and we'll right click on this thing and we will lock down
 this setting using the system wide config file. We'll go also over to security and we'll check all
 these three checkboxes because we said if the user has the ability to work around these settings
 you're in the doghouse.

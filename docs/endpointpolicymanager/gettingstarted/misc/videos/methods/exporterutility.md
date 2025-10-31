@@ -23,7 +23,7 @@ service.
 By now, you've probably seen a lot of great videos showing you a bunch of awesome things that
 Endpoint Policy Manager can do: delivering settings using Group Policy, giving single applications
 elevated rights for standard users, you can
-[https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites](https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites)
+[https://www.policypak.com/pp-blog/windows-10-block-websites](https://www.policypak.com/pp-blog/windows-10-block-websites)
 – all kinds of great things.
 
 But what if you aren't using Group Policy? What if you're using SCCM or KACE or LANDESK or you have
@@ -97,7 +97,7 @@ right click and "Export Collections as XML." Since I have two, I'll go ahead and
 "Save" and we're done.
 
 With
-"[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html),"
+"[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html),"
 which allows you to kill local admin rights and elevate only the applications you need, you'll
 create your directives like I've done here. Again, we can right click and "Export as XML," we can
 "EXPORT COLLECTION," or we can right click and "Export Collections as XML." If we do this, this will

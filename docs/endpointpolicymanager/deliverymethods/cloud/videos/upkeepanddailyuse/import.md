@@ -62,7 +62,7 @@ If you want to, you can put multiple GPOs in. I recommend you just do one at a t
 you at this point to make some choices. I'm just going to import this one here.
 
 If you don't know what the contents are here, let's say this shortcut item, we give you a little
-brief overview of what's going on here. Oh, yeah, that's the shortcut to endpointpolicymanager.com. The point is
+brief overview of what's going on here. Oh, yeah, that's the shortcut to policypak.com. The point is
 that we kind of give you the XML view of what's happening here. I'll show you another one here. This
 is some items that manage the Control Panel. It will kind of give you like a brief overview of
 what's happening here.

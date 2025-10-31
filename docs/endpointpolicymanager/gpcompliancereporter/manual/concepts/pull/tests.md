@@ -52,7 +52,7 @@ Management Editor appears, as shown in Figure 20.
 Figure 20. A temporary Group Policy Object is created.
 
 At this point you can test for thousands of possible conditions. In Figure 19, we're using a Group
-Policy Preferences item and making a test to see that [www.endpointpolicymanager.com](http://www.endpointpolicymanager.com)
+Policy Preferences item and making a test to see that [www.policypak.com](http://www.policypak.com)
 (and all related settings within the Preference item) are tested for.
 
 When you're done editing your test, click "OK" and close the GPO. Note, you may receive a "Waiting…"

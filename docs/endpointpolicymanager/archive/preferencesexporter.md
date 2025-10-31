@@ -19,7 +19,7 @@ Group Policy mechanism to get them delivered by using PolicyPak Preferences – 
 free utility, the PolicyPak Exporter.
 
 To get started, you want to have a couple of Group Policy Preference items. Here's one that puts a
-shortcut called "www.endpointpolicymanager.com" on the desktop, another one that puts "www.GPanswers.com" on the
+shortcut called "www.policypak.com" on the desktop, another one that puts "www.GPanswers.com" on the
 desktop. You're welcome to use "Item-level targeting." We have another video for that that says when
 a particular item will apply under what conditions.
 
@@ -41,7 +41,7 @@ Files."
 
 I've got another folder here. Here we go: "GPPrefs Items." Here are the ones that we just did. You
 can just add them right in just like that. This utility, the PolicyPak Exporter, works for our
-[https://dev.endpointpolicymanager.com/products/](https://dev.endpointpolicymanager.com/products/) – PolicyPak Preferences
+[https://dev.policypak.com/products/](https://dev.policypak.com/products/) – PolicyPak Preferences
 that deals with Group Policy Preferences and also PolicyPak Application Manager that deals with
 things like Java, Flash, Firefox and so on. You can do things like "Never check for updates" and so
 on.
@@ -94,5 +94,5 @@ or our own little targeting feature which lets you specify everyone on the "Comp
 
 That's it for this utility. I hope that helps you out.
 
-[https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/](https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/)
+[https://dev.policypak.com/resources/thank-you-whitepapers/](https://dev.policypak.com/resources/thank-you-whitepapers/)
 so much, and talk to you soon.

@@ -13,7 +13,7 @@ connection.
 
 In other words, if one Citrix server can handle 100 inbound connections, that would require a
 declaration of 100 Endpoint Policy Manager licenses. See
-[Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.endpointpolicymanager.com/purchasing/vdi-licensing-scenarios/)
+[Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.policypak.com/purchasing/vdi-licensing-scenarios/)
 for additional information on how we count licenses for any kind of multi-session Windows.
 
 ## On-Prem / Active Directory Notes

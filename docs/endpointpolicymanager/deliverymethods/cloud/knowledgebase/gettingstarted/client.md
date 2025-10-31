@@ -21,7 +21,7 @@ Client Side Extension, you need to be proactive.
 
 Please see this article for keeping things proactive:
 
-[https://www.endpointpolicymanager.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/](https://www.endpointpolicymanager.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/)
+[https://www.policypak.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/](https://www.policypak.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/)
 
 This video also has some important information on how to perform updates:
 

@@ -9,7 +9,7 @@ sidebar_position: 10
 You should have received credentials to log on to Endpoint Policy Manager Cloud. To log on, go to
 the Endpoint Policy Manager home page and click **Customer Login**. Then, select Log In from the
 Endpoint Policy Manager Cloud path on the right side of the screen. You may also go to and bookmark
-cloud.endpointpolicymanager.com if you want a specific link.
+cloud.policypak.com if you want a specific link.
 
 ![concepts_logons_and_downloads_2](/images/endpointpolicymanager/cloud/concepts_logons_and_downloads_2.webp)
 

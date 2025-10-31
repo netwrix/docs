@@ -102,7 +102,7 @@ application."We'll make it hard for them to work around our settings.
 
 Also while we're here, we'll go to "PolicyPak/Applications/New/Application"and we'll go to
 "PolicyPak for Mozilla Firefox."Like I said, what we want to do here is we want to for the "Home
-Page" we'll do this "www.endpointpolicymanager.com."
+Page" we'll do this "www.policypak.com."
 
 Then while we're here, we'll also go to "Security." Well, remember, that user unchecked those
 checkboxes. Let's make sure that those checkboxes, those important security things, are in fact

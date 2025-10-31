@@ -98,7 +98,7 @@ Domain 2 and deploy it there
 3. Restore GPO to Domain 2
 4. This article describes the general process of backing up and restoring GPO's, specifically in the
    "About Backup and Import (between domains)" section -
-   [https://www.endpointpolicymanager.com/pp-blog/backing-up-your-gpos-with-and-without-policypak-data-dont-get-burned](https://www.endpointpolicymanager.com/pp-blog/backing-up-your-gpos-with-and-without-policypak-data-dont-get-burned)
+   [https://www.policypak.com/pp-blog/backing-up-your-gpos-with-and-without-policypak-data-dont-get-burned](https://www.policypak.com/pp-blog/backing-up-your-gpos-with-and-without-policypak-data-dont-get-burned)
 
 **Step 3 –** Create an AD group with the SAME NAME as the AD Group in Domain 1
 

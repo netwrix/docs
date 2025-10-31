@@ -12,7 +12,7 @@ to the RCT, as shown in Figure 33. In this way you can test for any complex comb
 Policy, Group Policy Preferences, Application Settings Manager, or Admin Templates Manager settings.
 Items that are not conflicting and are in different tests are sorted alphabetically within a
 category. This is why you see [www.GPanswers.com](http://www.GPanswers.com) appear before
-[www.endpointpolicymanager.com](http://www.endpointpolicymanager.com) in the example in Figure 33.
+[www.policypak.com](http://www.policypak.com) in the example in Figure 33.
 
 ![gpcr_concepts_and_quickstart_34](/images/endpointpolicymanager/grouppolicycompliancereporter/gpcr_concepts_and_quickstart_34.webp)
 

@@ -44,7 +44,7 @@ If you don't want to do that, you can also go to "chrome://extensions" and then 
 bottom you can click "Enable." That's a second choice. Now you can see that the Browser Router
 Chrome extension is ready to go.
 
-If we were to now be in "Google Chrome" and we were to say I want to go to "www.endpointpolicymanager.com," what
+If we were to now be in "Google Chrome" and we were to say I want to go to "www.policypak.com," what
 it's going to do is close Chrome and open up the browser of your choice, which in my case is
 Firefox. I don't know if it has ever been run before so it might ask for first run stuff. Yeah,
 there we go, first run stuff.

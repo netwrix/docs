@@ -18,7 +18,7 @@ done.
 
 Hi. This is Jeremy Moskowitz, Microsoft MVP, Enterprise Mobility and Founder of PolicyPak Software.
 In this video, we're going to learn how to manage and
-[ lockdown ](https://dev.endpointpolicymanager.com/lockdown-recordings-portal/)GoToMeeting using PolicyPak.
+[ lockdown ](https://dev.policypak.com/lockdown-recordings-portal/)GoToMeeting using PolicyPak.
 
 I've already got "GoToMeeting" installed on my target computer, and I'm just a regular user here. As
 you can see, I'm logged on as a guy called "EastSales User4." If we open up this application from
@@ -81,7 +81,7 @@ doing.
 And we're done. That is how incredibly easy it is for you to use PolicyPak and to manage and
 lockdown GoToMeeting as well as tons of your other desktop applications. If you're looking for a
 trial of PolicyPak, just click on the
-[https://dev.endpointpolicymanager.com/webinar/](https://dev.endpointpolicymanager.com/webinar/) button on the right.
+[https://dev.policypak.com/webinar/](https://dev.policypak.com/webinar/) button on the right.
 
-[https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/](https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/)
+[https://dev.policypak.com/resources/thank-you-whitepapers/](https://dev.policypak.com/resources/thank-you-whitepapers/)
 so much for watching, and get in touch with us if you're looking to get started. Talk with you soon.

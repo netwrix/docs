@@ -81,7 +81,7 @@ me, the administrator, to my management station. That's this guy right here.
 
 As I'm logging on here, what we're going to do right away – and you might have seen me do this in
 some of my other videos for PolicyPak–is we're going to take the "PreConfigured PolicyPaks," which
-are downloadable when you trial endpointpolicymanager.com. You can see we've got a whole army of Paks that are
+are downloadable when you trial policypak.com. You can see we've got a whole army of Paks that are
 available to you.
 
 For these examples, we're only going to pick two or three. We've got "Acrobat Reader X" that we want
@@ -153,7 +153,7 @@ There we go, one down and two to go. Let's go ahead and let's do another one. Ba
 console here, we'll go to "PolicyPak/Applications/New/Application."We'll go ahead and pick
 "PolicyPak for Mozilla Firefox" here. We'll go ahead and click on "Mozilla Firefox" here.
 
-Let's click on some important things, like maybe the "Home Page." We'll go to "www.endpointpolicymanager.com." I
+Let's click on some important things, like maybe the "Home Page." We'll go to "www.policypak.com." I
 mean, there are a lot of settings here, a lot of security things for you to set for your company. I
 just want to prove a point that it works perfectly inside of VMware View. I'll go ahead and click
 "OK" here and show you what it looks like on the client.
@@ -165,7 +165,7 @@ just take effect naturally. But we're just going ahead and accelerating the hand
 GPUpdate. You could log off and log back on, get a new VDI machine, anything like that.
 
 Let's go ahead and run "Mozilla Firefox" and see what happens. There we go, perfectly. It connected
-to "www.endpointpolicymanager.com." I didn't even let it finish. Maybe I should, just to prove a point. There we
+to "www.policypak.com." I didn't even let it finish. Maybe I should, just to prove a point. There we
 go, so we set it. If I wanted to, I want to also show you that if a user decides they want to go to
 the "Options" and change the "Home Page" to something else like "www.GPanswers.com" and they click
 "OK," let's see what happens the very next time Firefox is run.

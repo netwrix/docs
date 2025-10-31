@@ -35,7 +35,7 @@ involved.
 
 The same thing with a group policy preference or shortcut or really any other group policy
 preferences; Endpoint Policy Manager supports all of these. For instance, in this example, I've got
-a shortcut called www.endpointpolicymanager.com, and it's going to head on over to the desktop. We're going to
+a shortcut called www.policypak.com, and it's going to head on over to the desktop. We're going to
 do that only when the machine has got the computer name with the NetBIOS name as "ndj" for not
 domain joined in its machine name.
 
@@ -170,10 +170,10 @@ as this is done.
 
 We're back. Now that InTune has deployed the three moving pieces, we can see some things have
 changed. First, we can see the icon here on the desktop, this group policy preferences item on the
-desktop going to endpointpolicymanager.com, of course, and opening up Edge as the browser. Next, we said to use
+desktop going to policypak.com, of course, and opening up Edge as the browser. Next, we said to use
 Endpoint Policy Manager to open up PDFs in Acrobat Reader. Sure enough, we're able to do that. Go
 ahead and just see this white paper called Why Am Microsoft Endpoint Manager Admins Need Endpoint
-Policy Manager, available at our website endpointpolicymanager.com.
+Policy Manager, available at our website policypak.com.
 
 Then let's go ahead and take a look at some other items. We said don't show me Mr. Evil CD-ROM
 anymore. You can see no more D drive. No CD-ROM. That's not a thing anymore.

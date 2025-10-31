@@ -41,7 +41,7 @@ said Firefox is the default browser, and we get Firefox as the default browser.
 
 If we were to, however, go to something that does have a route like "www.google.com" that has a
 route to Chrome, let's see what happens there. That should open the Chrome browser. In fact, it
-does. We have another route to "www.endpointpolicymanager.com," and that should go to Internet Explorer because
+does. We have another route to "www.policypak.com," and that should go to Internet Explorer because
 we have a route to that.
 
 If you use User Selectable, that says anything we don't have a route for and the user has made a

@@ -30,7 +30,7 @@ knowledge_article_id: kA04u000000PoLbCAK
 
 This article outlines the process of configuring Netwrix Endpoint Policy Manager to integrate with Netwrix Privilege Secure. This integration allows Endpoint Policy Manager to be granted on-demand privilege elevation when launching a specified program from a server or workstation. It is assumed that Endpoint Policy Manager is already installed and configured. In this example we will configure the integration with `dbeaver.exe`, but the configured program can be anything.
 
-Additionally, the Netwrix Endpoint Policy Manager documentation offers two video demos that outline the NPS/Endpoint Policy Manager integration: https://kb.policypak.com/kb/section/429/
+Additionally, the Netwrix Endpoint Policy Manager documentation offers two video demos that outline the NPS/Endpoint Policy Manager integration: https://docs.netwrix.com/docs/endpointpolicymanager/gettingstarted/misc/videos/
 
 ## Instructions
 
@@ -40,7 +40,7 @@ Additionally, the Netwrix Endpoint Policy Manager documentation offers two video
 \PolicyPak ADMX (Troubleshooting)\PolicyDefinitions\
 ```
 
-2. Reference this PolicyPak video to decide how you want to implement the ADMX settings: https://kb.policypak.com/kb/article/505-troubleshooting-with-admx-files/
+2. Reference this PolicyPak video to decide how you want to implement the ADMX settings: https://docs.netwrix.com/docs/endpointpolicymanager/gettingstarted/misc/videos/troubleshooting/admxfiles
 
 3. Create a domain-based GPO (`GPMC.MSC`) or a local Group Policy (`GPEDIT.MSC`), and ensure the endpoint machine(s) will be addressed. Navigate to the **Bypass SbPAM server SSL certificate verification** setting under the indicated path:
 

@@ -8,7 +8,7 @@ sidebar_position: 70
 
 Video: For a quick overview of how to manage Favorites in IE using Endpoint Policy Manager
 Application Settings Manager, see the following video:
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-managing-favorites-in-ie.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-managing-favorites-in-ie.html).
+[http://www.policypak.com/video/endpointpolicymanager-managing-favorites-in-ie.html](http://www.policypak.com/video/endpointpolicymanager-managing-favorites-in-ie.html).
 
 There are three sections within the Endpoint Policy Manager Favorites and Links tab:
 

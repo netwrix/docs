@@ -132,7 +132,7 @@ profile (e.g. Domain).
 When installing GPCR, download the latest bits from Endpoint Policy Manager. It is our
 recommendation that when downloading the latest software version, to grab "everything" (latest bits
 plus Paks, manuals and guidance). They can be found at
-[https://portal.endpointpolicymanager.com/downloads/everything](https://portal.endpointpolicymanager.com/downloads/everything)
+[https://portal.policypak.com/downloads/everything](https://portal.policypak.com/downloads/everything)
 
 ### GPCR Server
 

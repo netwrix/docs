@@ -26,17 +26,17 @@ however, it might work in versions 1909, 1903, and 1809.
 
 
 Create a rule for
-[www.endpointpolicymanager.com](http://www.endpointpolicymanager.com/video/endpointpolicymanager-browser-router-and-ports.html) and
+[www.policypak.com](http://www.policypak.com/video/endpointpolicymanager-browser-router-and-ports.html) and
 assign it to IE. This time select **Open as IE in Edge tab** .
 
 ![about_policypak_browser_router_29](/images/endpointpolicymanager/browserrouter/internetexplorer/about_endpointpolicymanager_browser_router_29.webp)
 
-When the user logs on and tries to access [www.endpointpolicymanager.com](http://www.endpointpolicymanager.com/) they should
+When the user logs on and tries to access [www.policypak.com](http://www.policypak.com/) they should
 see it open as an IE tab in Edge. We say should because the rule will not work right away. There is
 a detail called the 65 second rule, which you can read more about here
-[https://docs.microsoft.com/en-us/microsoft-edge/deploy/emie-to-improve-compatibility](http://www.endpointpolicymanager.com/video/endpointpolicymanager-troubleshooting-with-admx-files.html).
+[https://docs.microsoft.com/en-us/microsoft-edge/deploy/emie-to-improve-compatibility](http://www.policypak.com/video/endpointpolicymanager-troubleshooting-with-admx-files.html).
 From the first time a user accesses
-[www.endpointpolicymanager.com](http://www.endpointpolicymanager.com/knowledge-base/browser-router-troubleshooting/how-to-quickly-troubleshoot-endpointpolicymanager-browser-router.html),
+[www.policypak.com](http://www.policypak.com/knowledge-base/browser-router-troubleshooting/how-to-quickly-troubleshoot-endpointpolicymanager-browser-router.html),
 a period of 65 seconds or so has to transpire until the rule comes fully into effect. Here you can
 see that the Endpoint Policy Manager website now appears in IE mode within the Edge browser itself:
 

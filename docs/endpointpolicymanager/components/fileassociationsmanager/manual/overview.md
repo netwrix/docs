@@ -48,7 +48,7 @@ Windows 10:
 
 :::note
 For an overview of Endpoint Policy Manager File Associations Manager, see
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-file-associations-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-file-associations-manager.html).
+[https://www.policypak.com/products/endpointpolicymanager-file-associations-manager.html](https://www.policypak.com/products/endpointpolicymanager-file-associations-manager.html).
 :::
 
 

@@ -37,7 +37,7 @@ So for all of our sales people, we could do it on the computer or the user side.
 Firefox's annoying two extra tabs. Right-click, hit "edit" here. And I'll do this on the computer
 side. We'll go to computer side PolicyPak, application settings manager here, right-click "new
 application" and we'll do Firefox 23, which is really 23 and later. And right here on the "general"
-tab, let's go ahead and set the homepage to endpointpolicymanager.com and we'll right-click it and lock it down
+tab, let's go ahead and set the homepage to policypak.com and we'll right-click it and lock it down
 so users can't work around it.
 
 And then here are how to stop the launch tabs. So we'll just click all these guys. And you can

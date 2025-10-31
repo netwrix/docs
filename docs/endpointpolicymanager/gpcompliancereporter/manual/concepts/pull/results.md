@@ -55,7 +55,7 @@ the computer-side OK status will indicate which part is out of compliance.
 
 Figure 28. Checking the status of a particular computer.
 
-On this computer, the [www.endpointpolicymanager.com](http://www.endpointpolicymanager.com) URL was delivered to the
+On this computer, the [www.policypak.com](http://www.policypak.com) URL was delivered to the
 Desktop; however, two of the settings in the Group Policy Preferences shortcut item were different
 than those that were tested for. Specifically, the Group Policy Preferences "Action" and "Icon
 index" types were different on the computer than what was desired in the test. These values are

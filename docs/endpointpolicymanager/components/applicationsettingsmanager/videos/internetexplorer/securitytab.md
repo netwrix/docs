@@ -58,7 +58,7 @@ intranet” has got “https://website.fabrikam.com” and so on.
 
 You can also flip this into what’s called Merge Mode. If you look at this, you can go back here and
 select “MODE=MERGE.” Merge Mode says no matter what the user already has – and we’ve now established
-some things – go ahead and put in “https://www.endpointpolicymanager.com/.intranet.”
+some things – go ahead and put in “https://www.policypak.com/.intranet.”
 
 We’re now saying no matter what the user already has, just leave it in place and now just merge what
 we’re about to deliver. It will not delete first. It will simply merge this set, whatever this set
@@ -67,7 +67,7 @@ is, and put it where we want to. In this case, it’s just “intranet.”
 Let’s go ahead and take a look and see if that does what it’s supposed to do. We’ll run “gpupdate”
 here. Because we had already put some stuff in there, it should stay behind. Now we’re simply saying
 to merge what we’ve done in “Local intranet.” Here we go. You can see that it added
-“https://www.endpointpolicymanager.com/” but left behind what the user has already established.
+“https://www.policypak.com/” but left behind what the user has already established.
 
 That is how that works. If you have any other questions, then please post them to the forums or open
 a support ticket https://www.netwrix.com/sign_in.html?rf=tickets.html#/open-a-ticket. Please

@@ -23,7 +23,7 @@ through SecureRun.
 
 :::note
 This policy (SYNAPTICS-Allow-AND-log.xml ) is provided in the
-[https://portal.endpointpolicymanager.com/downloads/guidance](https://portal.endpointpolicymanager.com/downloads/guidance)
+[https://portal.policypak.com/downloads/guidance](https://portal.policypak.com/downloads/guidance)
 download, and can be found in the extracted contents under the PolicyPak Least Privilege Manager
 XMLs folder.
 :::

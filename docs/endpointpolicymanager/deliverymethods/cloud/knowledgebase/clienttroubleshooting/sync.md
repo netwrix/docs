@@ -18,28 +18,28 @@ The client and server cannot communicate, because they do not possess a common a
 ## Could not sync with the cloud
 
 A communication error occurred during sending Sync to
-[https://cloudsvc.endpointpolicymanager.com/Services/Synchronization](https://cloudsvc.endpointpolicymanager.com/Services/Synchronization):
+[https://cloudsvc.policypak.com/Services/Synchronization](https://cloudsvc.policypak.com/Services/Synchronization):
 
 An error occurred while making the HTTP request to
-[https://cloudsvc.endpointpolicymanager.com/Services/Synchronization](https://cloudsvc.endpointpolicymanager.com/Services/Synchronization).
+[https://cloudsvc.policypak.com/Services/Synchronization](https://cloudsvc.policypak.com/Services/Synchronization).
 This could be due to the fact that the server certificate is not configured properly with HTTP.SYS
 in the HTTPS case. This could also be caused by a mismatch of the security binding between the
 client and the server.
 
 A communication error occurred during sending Sync to
-[https://cloudsvc.endpointpolicymanager.com/Services/Synchronization](https://cloudsvc.endpointpolicymanager.com/Services/Synchronization):
+[https://cloudsvc.policypak.com/Services/Synchronization](https://cloudsvc.policypak.com/Services/Synchronization):
 
 An error occurred while making the HTTP request to
-[https://cloudsvc.endpointpolicymanager.com/Services/Synchronization](https://cloudsvc.endpointpolicymanager.com/Services/Synchronization).
+[https://cloudsvc.policypak.com/Services/Synchronization](https://cloudsvc.policypak.com/Services/Synchronization).
 This could be due to the fact that the server certificate is not configured properly with HTTP.SYS
 in the HTTPS case. This could also be caused by a mismatch of the security binding between the
 client and the server.
 
 A security error occurred during sending Sync to
-[http://cloudsvc.endpointpolicymanager.com/Services/Synchronization](http://cloudsvc.endpointpolicymanager.com/Services/Synchronization):
+[http://cloudsvc.policypak.com/Services/Synchronization](http://cloudsvc.policypak.com/Services/Synchronization):
 
 The token provider cannot get tokens for target
-'[http://cloudsvc.endpointpolicymanager.com/Services/Synchronization](http://cloudsvc.endpointpolicymanager.com/Services/Synchronization)'.
+'[http://cloudsvc.policypak.com/Services/Synchronization](http://cloudsvc.policypak.com/Services/Synchronization)'.
 
 To resolve this issue, you need to edit the registry on any computers experiencing this issue to add
 a DWORD = "SchUseStrongCrypto" with a value of "1", under the following two registry keys:

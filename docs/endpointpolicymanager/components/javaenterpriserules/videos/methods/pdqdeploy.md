@@ -95,7 +95,7 @@ Shane: I'm the admin.
 
 Jeremy: You're in charge not them. Now, we're driving in these two settings, PolicyPak and GP
 Answers in here, but, wait, there's more. We can say even if a user tries to be super naughty,
-perform ACL lockdown ([https://www.endpointpolicymanager.com/lockdown](https://www.endpointpolicymanager.com/lockdown)) thus
+perform ACL lockdown ([https://www.policypak.com/lockdown](https://www.policypak.com/lockdown)) thus
 taking ownership of that file so the user can't work around your settings.
 
 Shane: After you drop the site exceptions file.

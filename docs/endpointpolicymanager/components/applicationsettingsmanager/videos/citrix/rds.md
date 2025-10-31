@@ -81,7 +81,7 @@ side and thus I will affect everybody. This is another PolicyPak superpower. We'
 settings, so therefore everybody who is on the computer is going to get these user side settings.
 
 I'm going to pick "PolicyPak for Mozilla Firefox" for this example here. Let me go ahead and set the
-"Home Page" to "www.endpointpolicymanager.com," and I'll make sure that is locked down ("Lockdown this setting
+"Home Page" to "www.policypak.com," and I'll make sure that is locked down ("Lockdown this setting
 using the system-wide config file") so users can't work around it. I'll also go to "Security" and
 make sure these important security settings are always checked and always locked down. I'm going to
 "Lockdown this setting using the system-wide config file."

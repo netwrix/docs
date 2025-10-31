@@ -7,7 +7,7 @@ sidebar_position: 470
 # Other: What is "Internal (pre-Defined)" Item Level Targeting?
 
 Many (not all) of our Paks have Internal
-[Item Level Targeting](https://www.endpointpolicymanager.com/pp-blog/item-level-targeting) (aka pre-defined
+[Item Level Targeting](https://www.policypak.com/pp-blog/item-level-targeting) (aka pre-defined
 filters.)
 
 The goal is to only apply settings from a Pak WHEN the actual application is really on the machine.

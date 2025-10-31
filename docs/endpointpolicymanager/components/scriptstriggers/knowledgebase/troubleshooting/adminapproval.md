@@ -97,7 +97,7 @@ environment in policy #2, see below.
 
 ![927_3_3_950x296](/images/endpointpolicymanager/troubleshooting/scriptstriggers/927_3_3_950x296.webp)
 
-[https://www.endpointpolicymanager.com/pp-files/PPScripts\_\_MS_Teams_update_to_resolve_issue_with_Admin_Approval_prompts.xml](https://www.endpointpolicymanager.com/pp-files/PPScripts__MS_Teams_update_to_resolve_issue_with_Admin_Approval_prompts.xml)
+[https://www.policypak.com/pp-files/PPScripts\_\_MS_Teams_update_to_resolve_issue_with_Admin_Approval_prompts.xml](https://www.policypak.com/pp-files/PPScripts__MS_Teams_update_to_resolve_issue_with_Admin_Approval_prompts.xml)
 
 ### WORKAROUND 3: For CSEs previous to 24.4 (Not recommended - as any MSIEXEC command line with "-embedding \*" will be elevated - use at own risk)
 

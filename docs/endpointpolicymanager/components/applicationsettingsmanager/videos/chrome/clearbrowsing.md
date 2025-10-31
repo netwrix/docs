@@ -12,7 +12,7 @@ Endpoint Policy Manager (formerly PolicyPak) to manage these items in Chrome.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VviwZSFFrQ4?si=0eAFNyrM-PnWDM6X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Download this video:
-[https://www.endpointpolicymanager.com/automation/download.php?vid=VviwZSFFrQ4&pid=policypak-google-chrome-clear-browsing-history-cookies-password-images-and-more](https://www.endpointpolicymanager.com/automation/download.php?vid=VviwZSFFrQ4&pid=policypak-google-chrome-clear-browsing-history-cookies-password-images-and-more)
+[https://www.policypak.com/automation/download.php?vid=VviwZSFFrQ4&pid=policypak-google-chrome-clear-browsing-history-cookies-password-images-and-more](https://www.policypak.com/automation/download.php?vid=VviwZSFFrQ4&pid=policypak-google-chrome-clear-browsing-history-cookies-password-images-and-more)
 
 ### Endpoint Policy Manager: Google Chrome: Clear Browsing History, Cookies, Password, Images and more
 

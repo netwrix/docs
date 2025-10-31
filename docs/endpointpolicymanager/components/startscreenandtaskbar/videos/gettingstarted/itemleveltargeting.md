@@ -21,7 +21,7 @@ This is East Sales User 1 who is currently logged on, and he's getting "My Impor
 maintain that for East Sales Users, so what we'll do is we'll go over to "Collection 1" over here.
 Let's rename that. Let's "Edit Collection" and call it "East Sales Users." While we're here, we'll
 change the
-"[https://www.endpointpolicymanager.com/pp-blog/item-level-targeting](https://www.endpointpolicymanager.com/pp-blog/item-level-targeting)"
+"[https://www.policypak.com/pp-blog/item-level-targeting](https://www.policypak.com/pp-blog/item-level-targeting)"
 and specify that this stuff will only work when the "Security Group" is our "EastSalesUsers."What
 we're doing is we're marrying using item-level targeting and saying do this stuff called "My
 Important Apps" when the guys are "East Sales Users."

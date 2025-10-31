@@ -7,7 +7,7 @@ sidebar_position: 10
 # Admin Console (Item Level Targeting): Why would I want to bypass Internal (pre-defined) Item Level Targeting?
 
 Starting in build 603, you have the ability to bypass
-Internal [Item Level Targeting](https://www.endpointpolicymanager.com/pp-blog/item-level-targeting).
+Internal [Item Level Targeting](https://www.policypak.com/pp-blog/item-level-targeting).
 
 You might want to do this for several reasons:
 

@@ -8,7 +8,7 @@ sidebar_position: 30
 
 Video: For a quick overview of how to manage the Privacy tab using Endpoint Policy Manager
 Application Settings Manager, see the following video:
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-privacy-tab.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-privacy-tab.html).
+[http://www.policypak.com/video/endpointpolicymanager-manage-ie-privacy-tab.html](http://www.policypak.com/video/endpointpolicymanager-manage-ie-privacy-tab.html).
 
 The Privacy tab, shown in Figure 10, lets you specify how cookies should be handled and which
 websites are allowed and blocked.

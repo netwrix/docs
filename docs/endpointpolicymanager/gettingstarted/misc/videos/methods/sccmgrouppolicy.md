@@ -37,7 +37,7 @@ and "Save" that. There we go. It just dropped it right on the desktop there.
 The next things we're going to do, the Group Policy Preferences and the Security Settings, are a
 little bit different. Instead of creating stuff within the "PolicyPak" node, I've done a little
 prepro on this and I have created "Shortcuts" over on the computer side. It's just a little
-"PolicyPak" shortcut. It's going to take you to "www.endpointpolicymanager.com" and the icon is a little
+"PolicyPak" shortcut. It's going to take you to "www.policypak.com" and the icon is a little
 butterfly.
 
 I've already created that in "Preferences." What PolicyPak now allows me to do is when I go to
@@ -112,11 +112,11 @@ real quick. Again, this would be done silently in the background if you were usi
 software. I'm just doing it manually for this video.
 
 And here we are. We have the butterfly icon that popped up. If we double click it, it's going to
-take us to "endpointpolicymanager.com" just like we said. If I'm trying to get back into that "Control Panel,"
+take us to "policypak.com" just like we said. If I'm trying to get back into that "Control Panel,"
 I'm not going to be able to do it. It has been restricted.
 
 Finally, let me just
-"[Run as administrator](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)"
+"[Run as administrator](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)"
 so we can check out that guest account. All right, let's drill down to "Windows Settings/Security
 Settings/Local Policies/Security Options." What do you know? "PolicyPakGuest."
 

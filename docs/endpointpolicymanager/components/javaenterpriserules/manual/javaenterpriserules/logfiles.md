@@ -31,8 +31,7 @@ Group Policy applies. The following list shows some of these logs:
 - `ppComputer_onSchedule` is used when Endpoint Policy Manager's internal processes attempt to look
   for any changes while offline (usually every 60 minutes).
 
-Logs are automatically wrapped up and can be sent to
-[support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com) with the `PPLOGS.EXE` command on any endpoint
+Logs are automatically wrapped up and can be sent to support by [opening a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket) with the `PPLOGS.EXE` command on any endpoint
 where the client-side extension (CSE) is installed. Since the main logs for Endpoint Policy Manager
 Java Rules Manager are in ProgramData, run an Elevated Command Prompt (as admin), and run
 `PPLOGS.EXE` to obtain the data from the PolicyPak Java Rules Manager logs.

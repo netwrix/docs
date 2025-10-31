@@ -90,5 +90,5 @@ different users in the same OU using Netwrix Endpoint Policy Manager (formerly P
   things under different conditions, have one slightly bigger GPO that has the smarts built in to
   evaluate on the fly.
 - Love it. Fantastic.
-- [https://www.endpointpolicymanager.com/purchasing/thanks.html](https://www.endpointpolicymanager.com/purchasing/thanks.html) man.
+- [https://www.policypak.com/purchasing/thanks.html](https://www.policypak.com/purchasing/thanks.html) man.
 - We'll talk to you guys later.

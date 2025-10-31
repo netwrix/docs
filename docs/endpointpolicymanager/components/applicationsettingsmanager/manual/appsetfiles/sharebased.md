@@ -9,7 +9,7 @@ sidebar_position: 30
 :::note
 For an overview of Share-Based Storage for Endpoint Policy Manager extension DLLs, see
 this video:
-[http://www.endpointpolicymanager.com/videos/endpointpolicymanager-using-shares-to-store-your-paks-share-based-storage.html](http://www.endpointpolicymanager.com/videos/bypassing-internal-item-level-targeting-filters.html).
+[http://www.policypak.com/videos/endpointpolicymanager-using-shares-to-store-your-paks-share-based-storage.html](http://www.policypak.com/videos/bypassing-internal-item-level-targeting-filters.html).
 :::
 
 

@@ -38,7 +38,7 @@ central storage. We'll just go ahead and select "Endpoint Policy Manager for Moz
 for fun.
 
 We'll go ahead and click on this guy right here, "Mozilla Firefox." We'll change the
-[https://dev.endpointpolicymanager.com/](https://dev.endpointpolicymanager.com/) from "about:blank" to "www.web1.com," just
+[https://dev.policypak.com/](https://dev.policypak.com/) from "about:blank" to "www.web1.com," just
 something like that. So we've changed the homepage to "www.web1.com," and we'll go ahead and click
 "OK." That's it.
 

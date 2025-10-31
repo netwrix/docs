@@ -180,7 +180,7 @@ target application" in Cameras. I've gone ahead and done that.
 
 Now for Firefox, we're just going to right click, "New/Application" and we'll pick "PolicyPak for
 Mozilla Firefox" as well. We'll go ahead and also pick the local storage one. We're just going to go
-ahead and set up the "Home Page." We'll just do "www.endpointpolicymanager.com." We'll go ahead and just set
+ahead and set up the "Home Page." We'll just do "www.policypak.com." We'll go ahead and just set
 that up. We can set "Security" options the way we want to. We can guarantee various security options
 if that's important to us. We'll go ahead and click "OK." That's it.
 
@@ -200,7 +200,7 @@ Policy refresh, and when Group Policy refreshes so does endpointpolicymanager.Yo
 Policy update has completed successfully" and "Computer Policy update has completed successfully."
 
 Now we're ready to test out our apps. In no particular order, let's go over to "Mozilla Firefox"
-first. We'll go to "Options" and "General." There we go. We got "www.endpointpolicymanager.com" as the "Home
+first. We'll go to "Options" and "General." There we go. We got "www.policypak.com" as the "Home
 Page," just as we told it to do. That's good news. If we were to look at "Security," it would
 guarantee those settings. That's one application that we just did inside of XenDesktop.
 

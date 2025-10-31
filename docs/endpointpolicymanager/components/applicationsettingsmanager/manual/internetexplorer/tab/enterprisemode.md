@@ -8,7 +8,7 @@ sidebar_position: 110
 
 Video: For a quick overview of how to manage IE Enterprise Mode using Endpoint Policy Manager
 Browser Router see the following video:
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-browser-router-enterprise-and-document-modes.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-browser-router-enterprise-and-document-modes.html)
+[http://www.policypak.com/video/endpointpolicymanager-browser-router-enterprise-and-document-modes.html](http://www.policypak.com/video/endpointpolicymanager-browser-router-enterprise-and-document-modes.html)
 
 Enterprise Mode (also known as Enterprise Compatibility Mode for IE 11) is a different method for IE
 11 to specify which websites go into an enhanced compatibility rendering engine. The following are

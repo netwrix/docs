@@ -8,7 +8,7 @@ sidebar_position: 40
 Need Standard Users to install their own applications? We've got some preconfigured knowledge for
 that, and it's a simple drag and drop to get started. Let users install iTunes or any software you
 like.. using PP
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html).
+[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vo2TF48DLX4" title="PPLPM: Installing applications-and-Preconfigured-Rules" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
 

@@ -54,7 +54,7 @@ the next example, we will route www.GPanswers.com to Firefox.
 
 Click OK to save the entry.
 
-Create another policy to route \*.endpointpolicymanager.com to Edge.
+Create another policy to route \*.policypak.com to Edge.
 
 ![about_policypak_browser_router_6](/images/endpointpolicymanager/browserrouter/about_endpointpolicymanager_browser_router_6.webp)
 
@@ -88,7 +88,7 @@ On the endpoint, log on as a user who gets the GPO (or run GPupdate if the user 
 on). Make sure that Internet Explorer, Firefox, and Chrome are all installed. You will be ready to
 go if you followed along with the Endpoint Policy Manager Browser Router Quickstart, created a new
 Wordpad document, and typed in each URL (www.microsoft.com, www.gpanswers.com,
-[www.endpointpolicymanager.com](https://technet.microsoft.com/en-us/library/dn321432.aspx)). Next, type in a URL
+[www.policypak.com](https://technet.microsoft.com/en-us/library/dn321432.aspx)). Next, type in a URL
 that is unrelated to anything, such as www.abc.com. Based on the rules, the correct browser is
 opened for each URL.
 

@@ -9,7 +9,7 @@ sidebar_position: 20
 :::note
 To see an overview of Internal ItemLevel Targeting, including how to bypass the filters,
 see this video:
-[http://www.endpointpolicymanager.com/videos/bypassing-internal-item-level-targeting-filters.html](http://www.endpointpolicymanager.com/products/endpointpolicymanager-preconfigured-paks.html).
+[http://www.policypak.com/videos/bypassing-internal-item-level-targeting-filters.html](http://www.policypak.com/products/endpointpolicymanager-preconfigured-paks.html).
 :::
 
 

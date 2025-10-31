@@ -8,7 +8,7 @@ sidebar_position: 90
 
 Video: For a quick overview of how to manage certificates in IE using Endpoint Policy Manager
 Application Settings Manager see the following video:
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-certificates.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-manage-ie-certificates.html).
+[http://www.policypak.com/video/endpointpolicymanager-manage-ie-certificates.html](http://www.policypak.com/video/endpointpolicymanager-manage-ie-certificates.html).
 
 The Extras tab in the IE AppSet enables you to do the following:
 

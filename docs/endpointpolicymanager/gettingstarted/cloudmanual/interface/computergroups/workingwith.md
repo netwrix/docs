@@ -103,7 +103,7 @@ latest policies and directives. However, mass updating 100% of your endpoints at
 ill-advised for the same reasons you wouldn't want to roll out new system-level software to 100% of
 your machines at once. As such, we encourage you to review Microsoft's recommendation for a ring
 model when it comes to rollouts. We have documented this in great detail here:
-[https://www.endpointpolicymanager.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/](https://www.endpointpolicymanager.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/).
+[https://www.policypak.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/](https://www.policypak.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/).
 
 In Endpoint Policy Manager Cloud, because the concept of groups is already established, you can use
 a Endpoint Policy Manager Cloud group like a ring. To do this, choose a group and manually specify

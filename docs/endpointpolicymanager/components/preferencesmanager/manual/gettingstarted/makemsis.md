@@ -8,7 +8,7 @@ sidebar_position: 10
 
 :::note
 For an overview of the Endpoint Policy Manager Exporter utility, please watch this video:
-[](http://www.endpointpolicymanager.com/video/endpointpolicymanager-preferences-with-endpointpolicymanager-exporter.html)[Endpoint Policy ManagerPreferences with Endpoint Policy Manager Exporter](/docs/endpointpolicymanager/archive/preferencesexporter.md)l.
+[](http://www.policypak.com/video/endpointpolicymanager-preferences-with-endpointpolicymanager-exporter.html)[Endpoint Policy ManagerPreferences with Endpoint Policy Manager Exporter](/docs/endpointpolicymanager/archive/preferencesexporter.md)l.
 :::
 
 

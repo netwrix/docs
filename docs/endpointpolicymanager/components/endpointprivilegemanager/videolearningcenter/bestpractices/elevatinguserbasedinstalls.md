@@ -79,7 +79,7 @@ it updated themselves. Does that make sense? As long as it's iTunesSetup signed 
 
 So "itunes setup installed by apple," now we're getting somewhere. This is the least rule possible
 in order to make it
-happen, [Least Privilege Manager](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html).
+happen, [Least Privilege Manager](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html).
 Okay, we'll go ahead and close that out and then we'll go ahead and try "iTunes" and see if it all
 matched up and all worked. Ten seconds ago, we got a UAC prompt. No more UAC prompt. It continues
 onward.

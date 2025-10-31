@@ -53,7 +53,7 @@ Complete. If a customer is a Endpoint Policy Manager Enterprise or SaaS customer
 Privilege Manager Complete. If the customer is a Endpoint Policy Manager Professional customer, they
 can decide between Least Privilege Manager Standard or Complete. For an overview of the two
 versions, check out this page:
-[https://www.endpointpolicymanager.com/paks/least-privilege-security-pak/](https://www.endpointpolicymanager.com/paks/least-privilege-security-pak/).
+[https://www.policypak.com/paks/least-privilege-security-pak/](https://www.policypak.com/paks/least-privilege-security-pak/).
 :::
 
 
