@@ -32,8 +32,8 @@ does not have access to or store any of your data outside of your NetSuite platf
 
 #### Can I install Platform Governance for NetSuite in the Sandbox or Release Preview?
 
-Many of our customers install Platform Governance for NetSuite in their sandbox before installing it
-in production. Your license covers both sandbox and production instances. We currently do not have
+Many of our customers install Platform Governance for NetSuite in their Sandbox before installing it
+in Production. Your license covers both Sandbox and Production instances. We currently do not have
 the ability to have the bundle installed in release previews.
 
 #### Is our private data being transmitted or shared in any way?
