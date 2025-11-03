@@ -18,8 +18,11 @@ The following learning paths provide Partner certification for Sales Professiona
 * Endpoint Management Solution
     * [Netwrix Endpoint Policy Manager Sales Professional](./endpoint-policy-manager.md)
     * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
+    * [Netwrix Endpoint Management Solution Sales Professional](endpoint-management.md)
 * Identity Management Solution
     * [Netwrix Identity Manager Sales Professional](./identity-manager.md)
+    * [Netwrix Platform Governance for NetSuite Sales Professional](./platform-governance-netsuite.md)
+    * [Netwrix Platform Governance for Salesforce Sales Professional](./platform-governance-salesforce.md)
 * Identity Threat Detection & Response Solution
     * [Netwrix PingCastle Sales Professional](./pingcastle.md)
     * [Netwrix Identity Threat Detection & Response Solution Sales Professional](./identity-threat-detection-response.md)
@@ -27,6 +30,3 @@ The following learning paths provide Partner certification for Sales Professiona
     * [Netwrix Endpoint Policy Manager Sales Professional](./endpoint-policy-manager.md)
     * [Netwrix Password Secure Sales Professional](./password-secure.md)
     * [Netwrix Privileged Access Management Solution Sales Professional](./privileged-access-management.md)
-* Additional Products
-    * [Netwrix Platform Governance for NetSuite Sales Professional](./platform-governance-netsuite.md)
-    * [Netwrix Platform Governance for Salesforce Sales Professional](./platform-governance-salesforce.md)

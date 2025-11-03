@@ -26,7 +26,7 @@ the internet.
 
 Follow these steps to install Netwrix Auditor
 
-**Step 1 –** Download Netwrix Auditor 10.7 from
+**Step 1 –** Download Netwrix Auditor 10.8 from
 [Netwrix website](https://www.netwrix.com/auditor.html).
 
 NOTE: Before installing Netwrix Auditor, make sure that the Windows Firewall service is started. If
@@ -36,7 +36,7 @@ you must be a member of the local Administrators group to run the Netwrix Audito
 **Step 2 –** Unpack the installation package. The following window will be displayed on successful
 operation completion:
 
-![installationscreen](/images/auditor/10.7/install/installationscreen.webp)
+![installationscreen](/images/auditor/10.8/install/installationscreen.webp)
 
 **Step 3 –** Follow the instructions of the setup wizard. When prompted, accept the license
 agreement.
@@ -67,7 +67,7 @@ After a successful installation, Auditor shortcut will be added to the **Start**
 the product will start. See the [First Launch](/docs/auditor/10.8/install/firstlaunch.md) topic for additional information on
 the product navigation.
 
-![welcome_screen](/images/auditor/10.7/install/welcome_screen.webp)
+![welcome_screen](/images/auditor/10.8/install/welcome_screen.webp)
 
 Netwrix looks beyond the traditional on-premises installation and provides Auditor for cloud and
 virtual environments. For example, you can deploy Auditor on a pre-configured Microsoft Azure

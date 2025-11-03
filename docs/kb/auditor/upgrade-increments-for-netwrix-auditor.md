@@ -1,14 +1,14 @@
 ---
 description: >-
   Describes the approved incremental upgrade paths for Netwrix Auditor up to
-  version 10.5 and provides recommendations and prerequisites for successful
+  version 10.8 and provides recommendations and prerequisites for successful
   upgrades.
 keywords:
   - Netwrix Auditor
   - upgrade
   - incremental upgrade
   - database upgrade
-  - 10.5
+  - 10.8
   - 9.9
   - license
 products:
@@ -23,7 +23,7 @@ knowledge_article_id: kA00g000000H9eJCAS
 
 ## Overview
 
-When upgrading from old versions of Netwrix Auditor, you must do that **incrementally**. Below is the list of approved upgrade paths up to the version 10.5.
+When upgrading from old versions of Netwrix Auditor, you must do that **incrementally**. Below is the list of approved upgrade paths up to the version 10.8.
 
 ## Before you start
 

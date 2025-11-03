@@ -10,7 +10,7 @@ import { NPRValue } from '@site/src/training/password-reset';
 import { NPR } from '@site/src/training/products';
 
 
-Estimated length: 5 minutes
+Estimated length: 2 minutes
 
 In this learning path, you will learn how to use <NPR />. It contains the following courses:
 

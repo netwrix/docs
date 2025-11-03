@@ -10,7 +10,7 @@ import { NPGSValue } from '@site/src/training/platform-governance-for-salesforce
 import { NPGS } from '@site/src/training/products';
 
 
-Estimated length: 5 minutes
+Estimated length: 2 minutes
 
 In this learning path, you will be introduced to <NPGS />. It contains the following courses:
 

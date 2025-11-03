@@ -22,7 +22,6 @@ You can choose to self-enroll in "Learn About" learning paths available within t
 * [Learn About Netwrix Endpoint Protector Learning Path](./endpoint-protector.md)
 * [Learn About Netwrix Identity Manager Learning Path](./identity-manager.md)
 * [Learn About Netwrix Password Policy Enforcer Learning Path](./password-policy-enforcer.md)
-* [Learn About Netwrix Password Reset Learning Path](./password-secure.md)
 * [Learn About Netwrix Password Secure Learning Path](./password-secure.md)
 * [Learn About Netwrix Platform Governance for NetSuite Learning Path](./platform-governance-for-netsuite.md)
 * [Learn About Netwrix Platform Governance for Salesforce Learning Path](./platform-governance-for-salesforce.md)

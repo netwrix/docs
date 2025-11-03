@@ -27,7 +27,7 @@ To start using Netwrix Auditor
 
 After logging into Netwrix Auditor, you will see the following window:
 
-![welcome_screen_thumb_0_0](/images/auditor/10.7/install/welcome_screen_thumb_0_0.webp)
+![welcome_screen_thumb_0_0](/images/auditor/10.8/install/welcome_screen_thumb_0_0.webp)
 
 Take a closer look at the Home page. It contains everything you need to enable complete visibility
 in your environment.

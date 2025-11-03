@@ -6,20 +6,23 @@ keywords: [training, course, certification, partners, sales, endpoint policy man
 description: "Become a certified Sales Professional for Netwrix Privileged Access Management"
 ---
 
-import { Company, NEPM, NPWS, NPS } from '@site/src/training/products';
+import { PAMIntro } from '@site/src/training/privileged-access-management';
+import { Company, NPWS, NPS } from '@site/src/training/products';
 
 
 This learning path grants <Company /> certification as a Sales Professional for this solution. The following products comprise this solution:
 
-* <NEPM />
 * <NPWS />
 * <NPS />
 
 It contains the following course: 
 
-* Introduction to the Netwrix Solution for Privileged Access Management (PAM)
+* 1985 Introduction to <Company /> Privileged Access Management Solution
+* Introduction to the <Company /> Solution for Privileged Access Management (PAM)
 
-## Introduction to the Netwrix Solution for Privileged Access Management (PAM)
+<PAMIntro />
+
+## Introduction to the <Company /> Solution for Privileged Access Management (PAM)
 
 This course will cover the <Company /> Privileged Access Management (PAM) solution — a unified, powerful approach to securing privileged accounts, credentials, and endpoints across your organization.
 
