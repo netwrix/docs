@@ -1,10 +1,22 @@
 ---
 title: "ExchangePS Error: The WinRM Shell Client Cannot Process the Request"
 sidebar_label: "ExchangePS Error: The WinRM Shell Client Cannot Process the Request"
-description: "Learn how to resolve the 'WinRM Shell client cannot process the request' error in ExchangePS data collector jobs by updating the PackageManagement and ExchangeOnlineManagement PowerShell modules."
-keywords: [ExchangePS, WinRM, New-ExoPSSession, PowerShell, ExchangeOnlineManagement, PackageManagement, StealthAUDIT, data collector, Office 365, remote session]
-products: [enterprise-auditor, access-analyzer]
-knowledge_article_id: ka0Qk000000GS0LIAW
+description: "Resolves the 'WinRM Shell client cannot process the request' error in ExchangePS data collector jobs by updating the PackageManagement and ExchangeOnlineManagement PowerShell modules to supported versions."
+keywords:
+  - WinRM
+  - ExchangePS
+  - PowerShell
+  - New-ExoPSSession
+  - ExchangeOnlineManagement
+  - PackageManagement
+  - Office 365
+  - remote session
+  - module update
+  - data collector
+  - Netwrix Access Analyzer
+  - Netwrix Enterprise Auditor
+products: [enterprise_auditor, access_analyzer]
+knowledge_article_id: kA0Qk0000003Fc1KAE
 ---
 
 ## Related Queries

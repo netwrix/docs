@@ -1,54 +1,57 @@
 ---
-description: >-
-  An Activity Auditing (SPAC) scan fails after upgrading Netwrix Access Analyzer
-  with an Invalid local SPAA storage version error; follow the steps to update
-  the SPAA database schema.
+title: "Error: Invalid Local SPAA Storage Version. Expected 11603 but Found 0"
+sidebar_label: "Error: Invalid Local SPAA Storage Version. Expected 11603 but Found 0"
+description: "Resolves the 'Invalid local SPAA storage version' error that occurs when running a SPAC System Scan in Netwrix Access Analyzer by updating the SPAA database schema through the appropriate System Scan and Bulk Import jobs."
 keywords:
   - SPAA
   - SPAC
-  - Invalid local storage version
-  - SPSEEK
-  - SPAA_BulkImport
+  - System Scan
+  - Bulk Import
+  - InvalidStorageVersionException
+  - SharePoint
+  - schema update
   - Netwrix Access Analyzer
-  - database schema
-  - SystemScans
+  - Netwrix Enterprise Auditor
+  - database version
+  - upgrade issue
+  - SPSEEK
 products:
-  - access-analyzer
-sidebar_label: "Error: Invalid Local Storage Version"
-tags: []
-title: 'Error: Invalid Local Storage Version'
+  - enterprise_auditor
 knowledge_article_id: kA0Qk0000001RUPKA2
 ---
 
-# Error: Invalid Local Storage Version
+# Error: Invalid Local SPAA Storage Version When Running SPAC System Scan
 
 ## Symptom
 
-After the recent Netwrix Access Analyzer upgrade (`11.6.0.69`), an Activity Auditing (SPAC) scan populates the following error:
+When attempting to run a **SPAC System Scan** in **Netwrix Access Analyzer** (formerly Enterprise Auditor) after upgrading, the following error occurs:
 
 ```text
 Stealthbits.StealthAUDIT.DataCollectors.SPAA.Storage.InvalidStorageVersionException:
-Invalid local SPAA storage version. Expected %x& but found %y%.
+Invalid local SPAA storage version. Expected 11603 but found 0.
 ```
 
 ## Cause
 
-The SPAA database schema is outdated and requires an update.
+The SPAA database schema is outdated and requires an update. This error occurs when a SPAC System Scan* is run *before* a SPAA System Scan or SPSEEK System Scan has been executed.
 
 ## Resolution
 
 Perform the following steps to update the database schema:
 
-1. Run either the **1-SPSEEK_SystemScans** or **2-SPAA_SystemScans** job at `level 0`. Refer to the following articles for additional information:
-   - https://docs.netwrix.com/docs/auditor/10_8
-   - https://docs.netwrix.com/docs/auditor/10_8
-2. Depending on the previously selected job, run either the **4-SPSEEK_BulkImport** or **5-SPAA_BulkImport** job to update the schema.
-3. Run the **3-SPAC_SystemScans** job to verify that the issue is resolved.
+1. **Run a System Scan job at level 0**
+   - Run either the **1-SPSEEK_SystemScans** or **2-SPAA_SystemScans** job.
+   - Refer to the following documentation for details:
+     - [1-SPSEEK_SystemScans Job ⸱ Netwrix Docs 🡥](https://docs.netwrix.com/docs/accessanalyzer/12_0/solutions/sharepoint/collection/spseek_systemscans)
+     - [2-SPAA_SystemScans Job ⸱ Netwrix Docs 🡥](https://docs.netwrix.com/docs/accessanalyzer/12_0/solutions/sharepoint/collection/spaa_systemscans)
 
-## Related Articles
+2. **Run a Bulk Import job to update the schema**
+   - Depending on the job used in step 1, run either the **4-SPSEEK_BulkImport** or **5-SPAA_BulkImport** job.
 
-- 0.Collection Job Group — 1-SPSEEK_SystemScans Job · v11.6  
-  https://docs.netwrix.com/docs/auditor/10_8
+3. **Verify the issue is resolved**
+   - Run the **3-SPAC_SystemScans** job to confirm that the error no longer appears.
 
-- 0.Collection Job Group — 2-SPAA_SystemScans Job · v11.6  
-  https://docs.netwrix.com/docs/auditor/10_8
+## Related Links
+
+- [1-SPSEEK_SystemScans Job](https://docs.netwrix.com/docs/accessanalyzer/12_0/solutions/sharepoint/collection/spseek_systemscans)
+- [2-SPAA_SystemScans Job](https://docs.netwrix.com/docs/accessanalyzer/12_0/solutions/sharepoint/collection/spaa_systemscans)

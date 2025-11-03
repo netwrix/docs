@@ -1,10 +1,22 @@
 ---
 title: "SEEK Bulk Import Warning: DLPEX Database Does Not Exist"
 sidebar_label: "SEEK Bulk Import Warning: DLPEX Database Does Not Exist"
-description: "Learn why the SEEK Bulk Import warning 'DLPEX database does not exist' appears and how to resolve it by verifying SEEK Scan completion and DLPEX database availability."
-keywords: [SEEK, DLPEX, T2 database, bulk import, SEEK Scan, data classification, import warning, Netwrix, scan failure, sensitive data]
-products: [enterprise-auditor, access-analyzer]
-knowledge_article_id: ka0Qk000000GKnZIAW
+description: "Explains why the warning 'DLPEX database does not exist' appears during SEEK Bulk Import and how to resolve it by verifying SEEK Scan completion and DLPEX database availability."
+keywords:
+  - SEEK
+  - DLPEX
+  - bulk import
+  - T2 database
+  - data classification
+  - sensitive data
+  - SEEK Scan
+  - import warning
+  - Netwrix Access Analyzer
+  - Netwrix Enterprise Auditor
+  - scan failure
+  - missing database
+products: [enterprise_auditor, access_analyzer]
+knowledge_article_id: kA0Qk0000003BdFKAU
 ---
 
 ## Related Queries

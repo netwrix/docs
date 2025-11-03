@@ -1,10 +1,22 @@
 ---
 title: "ExchangePS Error: Cannot Find a Variable With the Name 'EnableSearchOnlySession'"
 sidebar_label: "ExchangePS Error: Cannot Find a Variable With the Name 'EnableSearchOnlySession'"
-description: "Resolve the ExchangePS data collector error 'Cannot find a variable with the name EnableSearchOnlySession' by configuring the job to use an explicit connection profile with valid Exchange credentials."
-keywords: [ExchangePS, EnableSearchOnlySession, PowerShell, StealthAUDIT, EX_MBRights, EX_SendAs, data collector, connection profile, Exchange, credentials]
-products: [enterprise-auditor, access-analyzer]
-knowledge_article_id: ka0Qk000000GCtFIAW
+description: "Resolves the 'Cannot find a variable with the name EnableSearchOnlySession' error in ExchangePS data collector jobs by configuring an explicit connection profile with valid Exchange credentials."
+keywords:
+  - WinRM
+  - ExchangePS
+  - EnableSearchOnlySession
+  - PowerShell
+  - Exchange
+  - connection profile
+  - EX_MBRights
+  - EX_SendAs
+  - data collector
+  - Netwrix Access Analyzer
+  - Netwrix Enterprise Auditor
+  - Exchange credentials
+products: [enterprise_auditor, access_analyzer]
+knowledge_article_id: kA0Qk00000039TNKAY
 ---
 
 ## Related Queries
