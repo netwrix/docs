@@ -47,7 +47,7 @@ Requirements below apply to Netwrix Auditor server.
 | Others             | —                                      | —                                        | Network capacity 1 Gbit                   | Network capacity 1 Gbit                                          |
 
 \* — ARs stands for Activity Records, that is, Netwrix-compatible format for the audit data. See
-[Activity Records](/docs/auditor/10.8/api/postdata/activityrecords.md)[Activity Records](/docs/auditor/10.8/api/postdata/activityrecords.md)
+[Activity Records](/docs/auditor/10.8/api/postdata/activityrecords.md)
 for more details.
 
 \*\* — By default, the Long-Term Archive and working folder are stored on a system drive. To reduce
