@@ -58,8 +58,8 @@ Step 8 – Add a Synchronize job or a job collection or both to this schedule.
   collections from the list and click **Add**.
 
 The selected job(s) and job collection(s) are listed in the Target(s) area. They will be executed
-when the schedule runs.  
-To remove a job or job collection in the Target(s)area, click **Remove** for it.  
+when the schedule runs.
+To remove a job or job collection in the Target(s)area, click **Remove** for it.
 To remove all target objects, click **Remove All**.
 
 Step 9 – Click **Add Triggers** in the Triggers area to specify a triggering criterion for the
@@ -72,9 +72,13 @@ the schedule in the identity store. Follow step 12 in the
 [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
 topic for additional information.
 
+:::important Password Re-insertion Required
+Due to security enhancements, when editing a schedule, you must re-enter the account password in the Authentication section, even if you are not changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
+:::
+
 Step 11 – On the Create Schedule page, click **Create Schedule**.
 
-Step 12 – On the Schedules page, click **Save**.  
+Step 12 – On the Schedules page, click **Save**.
 The schedule is displayed under **Synchronize**. See the
 [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store) topic
 for additional information.

@@ -67,9 +67,13 @@ the schedule in the identity store. Follow step 12 in the
 [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
 topic for additional information.
 
+:::important Password Re-insertion Required
+Due to security enhancements, when editing a schedule, you must re-enter the account password in the Authentication section, even if you are not changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
+:::
+
 Step 11 – On the Create Schedule page, click **Create Schedule**.
 
-Step 12 – On the Schedules page, click **Save**.  
+Step 12 – On the Schedules page, click **Save**.
 The schedule is displayed under **User Life Cycle**. See the
 [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store)topic
 for additional information.

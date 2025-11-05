@@ -86,6 +86,15 @@ Step 2 – On the Synchronize portal, click **All Jobs**.
 Step 3 – In the jobs list, click the **three vertical dots** icon on the job that you want to edit
 and click **Edit**.
 
+:::important Password Field Re-configuration Required
+Due to security enhancements, if your Synchronize job uses password field mapping or password transformations, you must re-configure the password field when editing the job. This includes:
+- Re-selecting the password field in the field mapping section
+- Re-applying any password transformations
+- Re-entering password complexity settings if using auto-generated passwords
+
+This is a required security measure to ensure password field sanitization across the product.
+:::
+
 Step 4 – Go through the wizard pages to modify the job as required.
 
 Step 5 – Click **Finish** twice to close both wizards.
