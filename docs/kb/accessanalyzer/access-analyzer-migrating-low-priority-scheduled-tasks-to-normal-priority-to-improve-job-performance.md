@@ -24,7 +24,7 @@ knowledge_article_id: kA04u0000000K1CCAU
 
 ## Summary
 
-In some cases, Scheduled Tasks in Netwrix Access Analyzer are created with priority 7 (Below Normal) instead of 5 (Normal), or with no priority set at all. This results in StealthAUDIT.exe I/O to/from Tier 2 databases being Low Priority which could lead to reduced performance. This article outlines how to migrate Scheduled Tasks to be Priority 5 rather than Priority 7 via PowerShell.
+In some cases, Scheduled Tasks in Netwrix Access Analyzer (formerly Enterprise Auditor) are created with priority 7 (Below Normal) instead of 5 (Normal), or with no priority set at all. This results in StealthAUDIT.exe I/O to/from Tier 2 databases being Low Priority which could lead to reduced performance. This article outlines how to migrate Scheduled Tasks to be Priority 5 rather than Priority 7 via PowerShell.
 
 ## Instructions
 
