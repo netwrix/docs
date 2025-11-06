@@ -14,7 +14,6 @@ knowledge_article_id: kA04u000000wnpYCAQ
 products:
   - auditor
 ---
-
 # Could Not Create SSL/TLS Secure Channel Error in Windows Server Monitoring Plan
 
 ## Symptoms
@@ -35,7 +34,7 @@ products:
 
 ## Resolutions
 
-- Enable TLS 1.2 in your environment − refer to the following article for additional information: Connection Issue when TLS 1.2 Is Required.
+- Enable TLS 1.2 in your environment − refer to the following article for additional information: [Connection Issue when TLS 1.2 Is Required.](/docs/kb/auditor/сonnection_issue_when_tls_1.2_is_required.md)
 - In case TLS protocol versions are limited to specific versions in your environment, make sure to allow the operating system to select the protocol for incoming and outgoing communication. Refer to the following article for additional information: [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm.md).
 - Review the certificate used for Windows Server auditing:
   1. In the Netwrix Auditor server, either press **Win + R** or launch the **Run** command window.
@@ -44,12 +43,12 @@ products:
   4. In the left **Available snap-ins** window, select **Certificates**, and click **Add >**.
 
      > **NOTE:** Once you add the **Certificates** snap-in, the following options should be selected in the prompted pop-up windows: **Computer account** > **Local computer** > **Finish** > **OK**.
-
+     >
   5. In the left pane, expand the **Certificates (Local Computer)** store, and proceed to **Netwrix Auditor for Windows Server** > **Certificates**.
   6. Review the certificate located in the **Certificates** folder. If expired (or multiple certificates are present), right-click the corresponding certificate and select **Delete**.
   7. Restart the server to reissue the certificate.
 
 ## Related Articles
 
-- Connection Issue when TLS 1.2 Is Required
+- [Connection Issue when TLS 1.2 Is Required](/docs/kb/auditor/сonnection_issue_when_tls_1.2_is_required.md)
 - [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm.md)
