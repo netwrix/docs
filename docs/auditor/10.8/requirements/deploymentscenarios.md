@@ -26,7 +26,7 @@ required, 16+ GB recommended.
 
 To learn more, see the How It Works and Deployment Planning topics in the Netwrix Data
 Classification Knowlege center:
-[Netwrix Data Classification Documentation](https://helpcenter.netwrix.com/category/dataclassification)..
+[Netwrix Data Classification Documentation](https://docs.netwrix.com/docs/dataclassification/5_7).
 
 When planning for hardware resources, consider that insufficient CPU and RAM may lead to performance
 bottlenecks. Thus, try to provide not minimal but recommended configuration. Same recommendations
@@ -38,8 +38,8 @@ periods (e.g., to provide for investigations, compliance audit, etc.) - SSD
 Recommendations below refer to deployment in the evaluation lab or small infrastructure (up to 500
 users):
 
-1. Prepare a virtual machine meeting the following requirements: 
-   
+1. Prepare a virtual machine meeting the following requirements:
+
 | Hardware Component  | Requirement                                                                                   |
 |---------------------|-----------------------------------------------------------------------------------------------|
 | Processor           | 2 cores                                                                                       |
@@ -74,7 +74,7 @@ Recommendations below refer to the product deployment in a in a regular environm
 users, approximately up to 1 million of activity records generated per day):
 
 1. Prepare a physical or a virtual machine meeting the following requirements:
-   
+
 | Hardware Component  | Requirement                                                                                          |
 |---------------------|------------------------------------------------------------------------------------------------------|
 | Processor           | 4 cores                                                                                              |
@@ -102,7 +102,7 @@ Recommendations below refer to the product deployment in a large environment (up
 approximately 1+ million of activity records generated per day):
 
 1. Prepare a physical or a virtual machine for Netwrix Auditor server, meeting the following
-   requirements: 
+   requirements:
 
 | Hardware Component  | Requirement                                                                                          |
 |---------------------|------------------------------------------------------------------------------------------------------|
@@ -118,13 +118,13 @@ approximately 1+ million of activity records generated per day):
     Client-server connection requires user sign-in. You can automate this process, as described in
     the [Automate Sign-in to the Client](/docs/auditor/10.8/install/automatelogin.md) section of Online Help.
 
-3. Prepare Microsoft SQL Server meeting the following requirements: 
-   
+3. Prepare Microsoft SQL Server meeting the following requirements:
+
 | Hardware Component  | Requirement                                                                 |
 |---------------------|-----------------------------------------------------------------------------|
-| Processor           | 2-4 cores                                                                   |            
-| RAM                 | 16-32 GB                                                                    |           
-| Disk space          | - 100 GB on system drive                                                    |           
+| Processor           | 2-4 cores                                                                   |
+| RAM                 | 16-32 GB                                                                    |
+| Disk space          | - 100 GB on system drive                                                    |
 |                     | - 200-400 GB on data drive                                                  |
 
 | Software Component                    | Requirement                                                                                 |
@@ -132,7 +132,7 @@ approximately 1+ million of activity records generated per day):
 | Microsoft SQL Server 2012 or later    | Standard or Enterprise edition (Express cannot be used due to its database size limitation) |
 | Dedicated SQL Server instance or cluster is recommended |                                                                                   |
 | SQL Server Reporting Services for reporting |                                                                                   |
-   
+
 4. When prompted to configure the Audit database settings, proceed using the dedicated SQL Server
    with Reporting Services.
 
@@ -142,7 +142,7 @@ Recommendations below refer to the product deployment in an extra-large environm
 more than 20 000 users (10+ million of activity records generated per day):
 
 1. Prepare a physical or a virtual machine for Auditor Server, meeting the following requirements:
-   
+
 | Hardware Component  | Requirement                                                                     |
 |---------------------|----------------------------------------------------------------------------------|
 | Processor           | 16 cores (recommended)                                                           |
@@ -161,9 +161,9 @@ more than 20 000 users (10+ million of activity records generated per day):
 
 | Hardware Component  | Requirement                                                                 |
 |---------------------|-----------------------------------------------------------------------------|
-| Processor           | 4 cores                                                                     |            
-| RAM                 | 32 - 64 GB                                                                  |           
-| Disk space          | - 100 GB on system drive                                                    |           
+| Processor           | 4 cores                                                                     |
+| RAM                 | 32 - 64 GB                                                                  |
+| Disk space          | - 100 GB on system drive                                                    |
 |                     | - 1 TB on data drive                                                        |
 
 | Software Component                      | Requirement                                                                                          |
@@ -173,7 +173,7 @@ more than 20 000 users (10+ million of activity records generated per day):
 | SQL Server Reporting Services           | For reporting                                                                                       |
 
 4. As an option, you can install Reporting Services on a dedicated machine. The following hardware
-   configuration is recommended: 
+   configuration is recommended:
 
 | Hardware Component  | Requirement                |
 |---------------------|-----------------------------|
