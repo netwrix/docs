@@ -20,9 +20,9 @@ knowledge_article_id: ka0Qk000000GIozIAG
 # Completing Access Analyzer Upgrade
 
 > **NOTE:**
-> - Return to the main workflow page: [Access Analyzer Upgrade Workflow Articles](/docs/kb/accessanalyzer/access-analyzer-upgrade-workflow.md).
-> - Return to the previous section: [Upgrading Access Analyzer](/docs/kb/accessanalyzer/access-analyzer-upgrade-workflow-upgrade.md).
-> - Proceed to the next section: [Upgrading Access Information Center (AIC)](/docs/kb/accessanalyzer/access-analyzer-upgrade-workflow-aic.md).
+> - Return to the main workflow page: [Access Analyzer Upgrade Workflow Articles](/docs/kb/accessanalyzer/installation-and-upgrades/access-analyzer-upgrade-workflow.md).
+> - Return to the previous section: [Upgrading Access Analyzer](/docs/kb/accessanalyzer/installation-and-upgrades/access-analyzer-upgrade-workflow-upgrade.md).
+> - Proceed to the next section: [Upgrading Access Information Center (AIC)](/docs/kb/accessanalyzer/installation-and-upgrades/access-analyzer-upgrade-workflow-aic.md).
 
 
 

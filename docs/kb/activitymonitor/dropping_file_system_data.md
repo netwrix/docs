@@ -21,7 +21,7 @@ A file server has been decommissioned, and/or its data is no longer needed in th
 
 ## Instructions
 
-> **IMPORTANT:** Applying this query will permanently delete collected data. Before running the job, ensure all configurations are correct. To prevent rescanning the same hosts, remove the host from the host list first, as described in [How to Remove Servers from Host Lists](/docs/kb/accessanalyzer/how-to-remove-servers-from-host-lists.md).
+> **IMPORTANT:** Applying this query will permanently delete collected data. Before running the job, ensure all configurations are correct. To prevent rescanning the same hosts, remove the host from the host list first, as described in [How to Remove Servers from Host Lists](/docs/kb/accessanalyzer/job-management-and-scheduling/how-to-remove-servers-from-host-lists.md).
 
 1. Create a new job in Access Analyzer by selecting **Job > Create a New Job** from the top taskbar. You can also right-click **any job folder in the job tree** and select **Create New Job**.
    > **NOTE:** It is recommended to add the job to a **Sandbox folder**, if available.
@@ -79,5 +79,5 @@ A file server has been decommissioned, and/or its data is no longer needed in th
 
 ## Related Links
 
-- [How to Remove Servers from Host Lists](/docs/kb/accessanalyzer/how-to-remove-servers-from-host-lists.md)
+- [How to Remove Servers from Host Lists](/docs/kb/accessanalyzer/job-management-and-scheduling/how-to-remove-servers-from-host-lists.md)
 - [Error: !REMOVED- Host Name in AIC and/or FSAA Host Table](/docs/kb/accessanalyzer/error-removed-host-name-in-aic-andor-fsaa-host-table.md)

@@ -33,18 +33,18 @@ The exact cause of this error is currently unknown, but it typically occurs afte
 Set the report grid to interactive to resolve the issue. Follow these steps to enable an interactive grid:
 
 1. In the affected Access Analyzer job **Reports** node, configure the affected report by clicking **Configure**.
-   ![Configure report in Access Analyzer Reports node](./images/servlet_image_73e60a4574bb.png)
+   ![Configure report in Access Analyzer Reports node](./../0-images/servlet_image_73e60a4574bb.png)
 
 2. Click **Widgets** and select any Grid-type widget. Check it, then click **Configure**.
-   ![Select and configure Grid-type widget in Access Analyzer](./images/servlet_image_bd5be116677a.png)
+   ![Select and configure Grid-type widget in Access Analyzer](./../0-images/servlet_image_bd5be116677a.png)
 
 3. Ensure that the **Table Properties** setting is set to **Interactive grid**.
-   ![Set Table Properties to Interactive grid in Access Analyzer](./images/servlet_image_a02a8fc4212e.png)
+   ![Set Table Properties to Interactive grid in Access Analyzer](./../0-images/servlet_image_a02a8fc4212e.png)
 
 4. Click **OK** and then **Finish** on the Widget screen to save your changes.
 
 5. Regenerate the report to verify that the error is resolved:
    - Click the **three dots** next to Configure and click **Generate**.
-     ![Generate report in Access Analyzer](./images/servlet_image_b962017fe9d6.png)
+     ![Generate report in Access Analyzer](./../0-images/servlet_image_b962017fe9d6.png)
 
 6. Review the report to confirm that the generation did not error.
