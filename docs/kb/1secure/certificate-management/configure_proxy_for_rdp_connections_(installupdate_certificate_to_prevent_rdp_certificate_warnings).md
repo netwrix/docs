@@ -6,7 +6,8 @@ keywords:
   - certificate installation
   - SbPAM
 sidebar_label: Configure Proxy for RDP Connections
-tags: []
+tags:
+  - certificate-management
 title: "Configure Proxy for RDP Connections (Install/Update Certificate to Prevent RDP Certificate Warnings)"
 knowledge_article_id: kA04u0000000HRRCA2
 products:

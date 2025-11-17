@@ -6,7 +6,8 @@ keywords:
   - PowerShell Remoting
   - WinRM
 sidebar_label: Troubleshoot Failed Action Service Connections
-tags: []
+tags:
+  - troubleshooting
 title: "Troubleshoot Failed Action Service Connections to Windows Resources (PSRemoting/WinRM)"
 knowledge_article_id: kA04u0000000HiICAU
 products:
