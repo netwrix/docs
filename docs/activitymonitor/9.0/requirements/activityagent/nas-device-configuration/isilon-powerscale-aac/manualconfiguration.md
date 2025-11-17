@@ -48,9 +48,10 @@ For each monitored access zone:
 **Step 4 –** In the Event Forwarding section, add the CEE Server URI value for the Windows or Linux
 server hosting CEE. Use either of the following format:
 
-**http://[IP ADDRESS]:[PORT]/cee**
+- `http://[IP ADDRESS]:[PORT]/cee`
 
-http://[SERVER Name]:[PORT]/cee
+- `http://[SERVER Name]:[PORT]/cee`
+
 
 :::info
 When deploying multiple Dell CEE instances at scale, it is recommended that an

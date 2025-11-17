@@ -107,7 +107,7 @@ and Disable monitoring.
 
 **Step 8 –** Download and install the Debug View tool from Microsoft on the CEE server:
 
-**> [http://docs.microsoft.com/en-us/sysinternals/downloads/debugview](http://docs.microsoft.com/en-us/sysinternals/downloads/debugview)**
+**> [https://docs.microsoft.com/en-us/sysinternals/downloads/debugview](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview)**
 
 **Step 9 –** Open the Registry Editor (run regedit). Navigate to following location:
 

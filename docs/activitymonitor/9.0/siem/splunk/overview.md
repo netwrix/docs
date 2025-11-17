@@ -24,7 +24,7 @@ to Splunk. See the product user guide on the
 ## App Installation in Splunk
 
 After downloading the Netwrix File Activity Monitor App for Splunk from [Splunkbase](https://splunkbase.splunk.com/), follow the
-[guide](http://docs.splunk.com/Documentation/AddOns/released/Overview/Installingadd-ons) provided by
+[guide](https://docs.splunk.com/Documentation/AddOns/released/Overview/Installingadd-ons) provided by
 Splunk to install the app.
 
 :::note

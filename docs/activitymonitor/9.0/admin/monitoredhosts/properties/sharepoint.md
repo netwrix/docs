@@ -22,7 +22,7 @@ The configurable options are:
     - Scope to specific sites – List URLs for sites to be monitored in the textbox. List should be
       semicolon separated. For example:
 
-**http://sharpoint.local/sites/marketing; http://sharepoint.local/sites/personal/user1**
+**http://sharepoint.local/sites/marketing; http://sharepoint.local/sites/personal/user1**
 
 - Audit polling interval – Select the interval for how often the activity agent will request new
   events from SharePoint. Number of seconds between polling request, set to 15 seconds by default

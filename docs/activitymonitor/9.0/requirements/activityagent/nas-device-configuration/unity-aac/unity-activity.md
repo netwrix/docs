@@ -31,7 +31,7 @@ Instructions for each item of the checklist are detailed within the following to
     - Account with access to the CLI
     - Download the Dell CEE from:
 
-        - [http://support.emc.com](http://support.emc.com/)
+        - [https://support.emc.com](https://support.emc.com/)
 
 **Checklist Item 2: [Install Dell CEE](/docs/activitymonitor/9.0/requirements/activityagent/nas-device-configuration/unity-aac/installcee.md)**
 
