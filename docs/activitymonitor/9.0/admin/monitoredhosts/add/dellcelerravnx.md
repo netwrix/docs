@@ -98,10 +98,10 @@ are the activity logs created by the activity agent on the proxy host. Select th
   TSV files
     - This option corresponds to the REPORT_UNC_PATH parameter in the INI file. It is disabled by
       default. The UNC Path is in the following format:
-        - For CIFS activity – \\[HOST]\[SHARE]\[PATH]
-        - Example CIFS activity – \\ExampleHost\TestShare\DocTeam\Temp.txt
-        - For NFS activity – [HOST]:/[VOLUME]/[PATH]
-        - Example NFS activity – ExampleHost:/ExampleVolume/DocTeam/Temp.txt
+        - For CIFS activity – `\\[HOST]\[SHARE]\[PATH]`
+        - Example CIFS activity – `\\ExampleHost\TestShare\DocTeam\Temp.txt`
+        - For NFS activity – `[HOST]:/[VOLUME]/[PATH]`
+        - Example NFS activity – `ExampleHost:/ExampleVolume/DocTeam/Temp.txt`
     - When the option is enabled, the added columns are populated when a file is accessed remotely
       through the UNC Path. If a file is accessed locally, these columns are empty. These columns
       have also been added as Syslog macros.
@@ -189,10 +189,10 @@ Output page can be configured.
   TSV files
     - This option corresponds to the REPORT_UNC_PATH parameter in the INI file. It is disabled by
       default. The UNC Path is in the following format:
-        - For CIFS activity – \\[HOST]\[SHARE]\[PATH]
-        - Example CIFS activity – \\ExampleHost\TestShare\DocTeam\Temp.txt
-        - For NFS activity – [HOST]:/[VOLUME]/[PATH]
-        - Example NFS activity – ExampleHost:/ExampleVolume/DocTeam/Temp.txt
+        - For CIFS activity – `\\[HOST]\[SHARE]\[PATH]`
+        - Example CIFS activity – `\\ExampleHost\TestShare\DocTeam\Temp.txt`
+        - For NFS activity – `[HOST]:/[VOLUME]/[PATH]`
+        - Example NFS activity – `ExampleHost:/ExampleVolume/DocTeam/Temp.txt`
     - When the option is enabled, the added columns are populated when a file is accessed remotely
       through the UNC Path. If a file is accessed locally, these columns are empty. These columns
       have also been added as Syslog macros.

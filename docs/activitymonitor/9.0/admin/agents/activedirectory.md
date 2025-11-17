@@ -89,7 +89,7 @@ connection is verified, click **Next** to continue.
   administrators want to monitor file activity on Windows servers, it is easier to enable it after
   installation of the agent. Windows file activity monitoring can be enabled and configured later in
   the console.
-- Management Group – By default, the agent only accepts commands form members of the
+- Management Group – By default, the agent only accepts commands from members of the
   BUILTIN\Administrators group. Less privilege accounts can be configured to manage the agent with
   the Management Group setting. Keep in mind that only administrators can install, update and
   uninstall the agent.
