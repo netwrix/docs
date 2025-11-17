@@ -25,11 +25,11 @@ knowledge_article_id: kA0Qk0000002OpRKAU
 
 # Console Migration Workflow: Step 2—Prepare the Database
 
-> **NOTE:** Return to the main workflow page via this link: [Console Migration Workflow](/docs/kb/accessanalyzer/console-migration-workflow.md).
+> **NOTE:** Return to the main workflow page via this link: [Console Migration Workflow](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow.md).
 >
-> Return to the previous section via this link: [Console Migration Workflow: Step 1—Staging the Backup](/docs/kb/accessanalyzer/console-migration-workflow-step-1-staging-the-backup.md).
+> Return to the previous section via this link: [Console Migration Workflow: Step 1—Staging the Backup](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow-step-1-staging-the-backup.md).
 >
-> Proceed to the next section via this link: [Console Migration Workflow: Step 3—Rebuild the Console](/docs/kb/accessanalyzer/console-migration-workflow-step-3-rebuild-the-console.md).
+> Proceed to the next section via this link: [Console Migration Workflow: Step 3—Rebuild the Console](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow-step-3-rebuild-the-console.md).
 
 ## Overview
 
@@ -39,7 +39,7 @@ This article lists the steps to prepare the Netwrix Access Analyzer database for
 
 For Host Management and Host List Replication, follow these steps to restore the backup of the Access Analyzer console to a new server.
 
-> **IMPORTANT:** This only applies if the new server name differs from the old server name; otherwise, skip to [Access Analyzer Console Migration Workflow: Step 3 - Rebuild the Console](/docs/kb/accessanalyzer/console-migration-workflow-step-3-rebuild-the-console.md).
+> **IMPORTANT:** This only applies if the new server name differs from the old server name; otherwise, skip to [Access Analyzer Console Migration Workflow: Step 3 - Rebuild the Console](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow-step-3-rebuild-the-console.md).
 
 On the Access Analyzer Database, copy the script below and configure the `OldServer` and `NewServer` values (lines 5 & 6, below), then run:
 
@@ -71,6 +71,6 @@ Where SA_Node = @OHost;
 
 ## Related Links
 
-- [Console Migration Workflow](/docs/kb/accessanalyzer/console-migration-workflow.md)
-- [Console Migration Workflow: Step 1—Staging the Backup](/docs/kb/accessanalyzer/console-migration-workflow-step-1-staging-the-backup.md)
-- [Console Migration Workflow: Step 3—Rebuild the Console](/docs/kb/accessanalyzer/console-migration-workflow-step-3-rebuild-the-console.md)
+- [Console Migration Workflow](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow.md)
+- [Console Migration Workflow: Step 1—Staging the Backup](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow-step-1-staging-the-backup.md)
+- [Console Migration Workflow: Step 3—Rebuild the Console](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow-step-3-rebuild-the-console.md)

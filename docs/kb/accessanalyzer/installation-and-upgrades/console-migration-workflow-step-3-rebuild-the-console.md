@@ -23,11 +23,11 @@ knowledge_article_id: kA0Qk0000002Or3KAE
 
 # Console Migration Workflow: Step 3—Rebuild the Console
 
-> **NOTE:** Return to the main workflow page via this link: [Console Migration Workflow](/docs/kb/accessanalyzer/console-migration-workflow.md).
+> **NOTE:** Return to the main workflow page via this link: [Console Migration Workflow](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow.md).
 >
-> Return to the previous section via this link: [Console Migration Workflow: Step 2—Prepare the Database](/docs/kb/accessanalyzer/console-migration-workflow-step-2-prepare-the-database.md)
+> Return to the previous section via this link: [Console Migration Workflow: Step 2—Prepare the Database](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow-step-2-prepare-the-database.md)
 >
-> Proceed to the next section via this link: [Console Migration Workflow: Step 4—Validate the Migration](/docs/kb/accessanalyzer/console-migration-workflow-step-4-validate-the-migration.md).
+> Proceed to the next section via this link: [Console Migration Workflow: Step 4—Validate the Migration](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow-step-4-validate-the-migration.md).
 ## Overview
 
 This article lists the steps for rebuilding the Netwrix Access Analyzer console during the Access Analyzer Migration.
@@ -98,7 +98,7 @@ Register-ScheduledTask -Xml (get-content $_.FullName | out-string) -TaskName $ta
 
 4. Open `\NAA_Migration\NAA\Web\webserver.exe.config` and copy the content between `<appSettings></appSettings>` and paste it in place of the `<appSettings></appSettings>` block in `%SAInstallDir%Web\webserver.exe.config`.
 
-   ![webserver config image](./images/ka0Qk000000FDY1_0EMQk00000CFkgO.png)
+   ![webserver config image](./../0-images/ka0Qk000000FDY1_0EMQk00000CFkgO.png)
 
    NOTE: Open the destination `webserver.exe.config` as an administrator by following these steps:
 
@@ -116,7 +116,7 @@ Register-ScheduledTask -Xml (get-content $_.FullName | out-string) -TaskName $ta
 
 6. Open the Netwrix Access Analyzer application and follow through the Access Analyzer Configuration Wizard, selecting **Choose a StealthAUDIT root folder path to copy from** if prompted.
 
-   ![Configuration Wizard image](./images/ka0Qk000000FDY1_0EMQk00000CFxaL.png)
+   ![Configuration Wizard image](./../0-images/ka0Qk000000FDY1_0EMQk00000CFxaL.png)
 
    1. See the following for more information on the Netwrix Access Analyzer Configuration Wizard: [Access Analyzer Initial Configuration](https://docs.netwrix.com/docs/accessanalyzer/12_0)
 
@@ -124,7 +124,7 @@ Register-ScheduledTask -Xml (get-content $_.FullName | out-string) -TaskName $ta
 
 8. In the Access Analyzer Console, navigate to **Settings** > **Reporting**, and set the **Website URL** to contain the new console server's name.
 
-   ![Reporting settings image](./images/ka0Qk000000FDY1_0EMQk00000CFqfK.png)
+   ![Reporting settings image](./../0-images/ka0Qk000000FDY1_0EMQk00000CFqfK.png)
 
 9. If using Windows Authentication to connect Access Analyzer to its database (click **Settings** > **Storage**), open `services.msc` and set the **Netwrix Access Analyzer Web Server** service to log on as a **Windows** service account with appropriate permissions on the Access Analyzer database.
 
@@ -138,9 +138,9 @@ If using any of the below, please recreate the certificate for the new NAA Conso
 - [Secured AIC Site (HTTPS)](https://docs.netwrix.com/docs/accessinformationcenter/12_0/installation/secure)
 ## Related Links
 
-- [Console Migration Workflow](/docs/kb/accessanalyzer/console-migration-workflow.md)
-- [Console Migration Workflow: Step 2—Prepare the Database](/docs/kb/accessanalyzer/console-migration-workflow-step-2-prepare-the-database.md)
-- [Console Migration Workflow: Step 4—Validate the Migration](/docs/kb/accessanalyzer/console-migration-workflow-step-4-validate-the-migration.md)
+- [Console Migration Workflow](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow.md)
+- [Console Migration Workflow: Step 2—Prepare the Database](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow-step-2-prepare-the-database.md)
+- [Console Migration Workflow: Step 4—Validate the Migration](/docs/kb/accessanalyzer/installation-and-upgrades/console-migration-workflow-step-4-validate-the-migration.md)
 - [Netwrix Access Analyzer 12.0 System Requirements](https://docs.netwrix.com/docs/accessanalyzer/12_0)
 - [Access Analyzer Initial Configuration](https://docs.netwrix.com/docs/accessanalyzer/12_0)
 - [Netwrix Access Analyzer for SharePoint Online](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/sharepoint/sharepoint/sharepointonline/activity)
