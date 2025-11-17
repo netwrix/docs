@@ -18,7 +18,7 @@ agents will be limited in monitoring capability until upgraded.
 
 The installation and configuration paths for Netwrix Activity Monitor have been updated from
 Activity Monitor 7.1. See the
-[Netwrix Activity Monitor Paths](/docs/kb/activitymonitor/netwrix_activity_monitor_(nam)_7.0_paths) article
+[Netwrix Activity Monitor Paths](/docs/kb/activitymonitor/netwrix_activity_monitor_(nam)_7.0_paths) knowledge base article
 for additional information.
 
 ## Activity Monitor Upgrade Procedure
