@@ -156,7 +156,7 @@ Click **Finish**.
 ![activitymonitorsqlserverhost](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitorsqlserverhost.webp)
 
 The added SQL Server host is displayed in the monitored hosts/services table. Once a host has been added for
-monitoring, configure the desired ouptuts. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
+monitoring, configure the desired outputs. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
 for additional information.
 
 ## Host Properties for SQL Server

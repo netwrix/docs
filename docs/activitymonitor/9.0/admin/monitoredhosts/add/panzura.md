@@ -120,7 +120,7 @@ Click **Next**.
 ![wheretologgeneric](/images/activitymonitor/9.0/admin/monitoredhosts/add/wheretologgeneric.webp)
 
 **Step 7 –** On the Where To Log The Activity page, select whether to send the activity to either a
-**Log File)** or **Syslog Server**. Click **Next**.
+**Log File** or **Syslog Server**. Click **Next**.
 
 :::note
 An option must be selected before moving to the next step.
@@ -129,7 +129,7 @@ An option must be selected before moving to the next step.
 
 ![fileoutput](/images/activitymonitor/9.0/admin/monitoredhosts/add/fileoutput.webp)
 
-**Step 8 –** If **Log File)** is selected on the **Where To Log The Activity** page, the **File
+**Step 8 –** If **Log File** is selected on the **Where To Log The Activity** page, the **File
 Output** page can be configured.
 
 - Specify output file path – Specify the file path where TSV log files are saved on the agent's
@@ -189,7 +189,7 @@ Click **Finish**.
 ![activitymonitorpanzura](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitorpanzura.webp)
 
 The added Panzura host is displayed in the monitored hosts/services table. Once a host has been added for
-monitoring, configure the desired ouptuts. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
+monitoring, configure the desired outputs. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
 for additional information.
 
 ## Host Properties for Panzura

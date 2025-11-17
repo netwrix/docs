@@ -71,7 +71,7 @@ Click **Next**.
 ![Configure Operations page for Windows host](/images/activitymonitor/9.0/admin/monitoredhosts/add/configureoperationswindows.webp)
 
 **Step 5 –** On the Configure Operations page, select the **File Operations**,**Directory
-Operations**, **Share Operations** and **VSS Opertions** to be monitored. Users may also filter
+Operations**, **Share Operations** and **VSS Operations** to be monitored. Users may also filter
 events by operation type by selecting the radio button:
 
 - All – Reports both allowed and denied operations
@@ -126,11 +126,11 @@ Click **Next**.
 ![Where to log activity page](/images/activitymonitor/9.0/admin/monitoredhosts/add/wheretologgeneric.webp)
 
 **Step 7 –** On the Where To Log The Activity page, select whether to send the activity to either a
-**Log File)** or **Syslog Server**. Click **Next**.
+**Log File** or **Syslog Server**. Click **Next**.
 
 ![File Output page](/images/activitymonitor/9.0/admin/monitoredhosts/add/fileouputpage.webp)
 
-**Step 8 –** If **Log File)** is selected on the **Where To Log The Activity** page, the **File
+**Step 8 –** If **Log File** is selected on the **Where To Log The Activity** page, the **File
 Output** page can be configured.
 
 - Specify output file path – Specify the file path where log files are saved. Click the ellipses
@@ -188,7 +188,7 @@ Click **Finish**.
 ![Activity Monitor with Windows Host added](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitorwindows.webp)
 
 The added Windows file server host is displayed in the monitored hosts/services table. Once a host has been
-added for monitoring, configure the desired ouptuts. See the
+added for monitoring, configure the desired outputs. See the
 [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic for additional information.
 
 ## Host Properties for Windows File Server

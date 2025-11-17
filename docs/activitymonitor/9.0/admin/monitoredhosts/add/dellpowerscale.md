@@ -163,7 +163,7 @@ Click **Next**.
 
 ![File Output Page](/images/activitymonitor/9.0/admin/monitoredhosts/add/fileoutputpage.webp)
 
-**Step 9 –** If **Log File)** is selected on the **Where To Log The Activity** page, the **File
+**Step 9 –** If **Log File** is selected on the **Where To Log The Activity** page, the **File
 Output** page can be configured.
 
 - Specify output file path – Specify the file path where log files are saved. Click the ellipses
@@ -257,7 +257,7 @@ Click **Finish**.
 ![Activity Monitor with Dell Isilon added](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitoremcisilon.webp)
 
 The added Dell Isilon/PowerScale host is displayed in the monitored hosts/services table. Once a host has
-been added for monitoring, configure the desired ouptuts. See the
+been added for monitoring, configure the desired outputs. See the
 [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic for additional information.
 
 ## Host Properties for Dell Isilon/PowerScale

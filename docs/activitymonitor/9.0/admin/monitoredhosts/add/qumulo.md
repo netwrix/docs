@@ -153,7 +153,7 @@ Click **Finish**.
 ![addhostqumulo06](/images/activitymonitor/9.0/admin/monitoredhosts/add/addhostqumulo06.webp)
 
 The added Qumulo host is displayed in the monitored hosts/services table. Once a host has been added for
-monitoring, configure the desired ouptuts. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
+monitoring, configure the desired outputs. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
 for additional information.
 
 ## Host Properties for Qumulo

@@ -214,7 +214,7 @@ Click **Finish**.
 ![Activity Monitor with Dell Unity host added](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitoremcunity.webp)
 
 The added Dell Unity host is displayed in the monitored hosts/service table. Once a host has been added for
-monitoring, configure the desired ouptuts. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
+monitoring, configure the desired outputs. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
 for additional information.
 
 ## Host Properties for Dell Unity

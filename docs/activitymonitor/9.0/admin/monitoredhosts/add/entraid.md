@@ -148,7 +148,7 @@ Click **Finish**.
 ![Azure Active Directory in Activity Monitor](/images/activitymonitor/9.0/admin/monitoredhosts/add/entraidadded.webp)
 
 The added Microsoft Entra ID host is displayed in the monitored hosts/service table. Once a host has been
-added for monitoring, configure the desired ouptuts. See the
+added for monitoring, configure the desired outputs. See the
 [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic for additional information.
 
 ## Host Properties for Microsoft Entra ID

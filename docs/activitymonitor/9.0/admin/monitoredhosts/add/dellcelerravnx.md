@@ -214,7 +214,7 @@ Click **Finish**.
 ![activitymonitoremcvnxcelerra](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitoremcvnxcelerra.webp)
 
 The added Dell Celerra or VNX host is displayed in the Monitored Hosts & Services table. Once a host has been
-added for monitoring, configure the desired ouptuts. See the
+added for monitoring, configure the desired outputs. See the
 [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic for additional information.
 
 ## Host Properties for Dell Celerra or VNX

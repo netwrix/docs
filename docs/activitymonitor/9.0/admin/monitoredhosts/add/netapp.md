@@ -238,7 +238,7 @@ Click **Next**.
 
 ![fileoutput](/images/activitymonitor/9.0/admin/monitoredhosts/add/fileoutput.webp)
 
-**Step 10 –** If **Log File)** is selected on the **Where To Log The Activity** page, the **File
+**Step 10 –** If **Log File** is selected on the **Where To Log The Activity** page, the **File
 Output** page can be configured.
 
 - Specify output file path – Specify the file path where log files are saved. Click the ellipses
@@ -297,7 +297,7 @@ Click **Finish**.
 ![Activity Monitor with NetApp Host added](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitornetapp.webp)
 
 The added NetApp host is displayed in the monitored hosts/services table. Once a host has been added for
-monitoring, configure the desired ouptuts. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
+monitoring, configure the desired outputs. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
 for additional information.
 
 :::tip

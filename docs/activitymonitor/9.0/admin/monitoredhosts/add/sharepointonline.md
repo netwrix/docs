@@ -165,7 +165,7 @@ Click **Finish**.
 ![Activity Monitor with SharePoint Online host added](/images/activitymonitor/9.0/admin/monitoredhosts/add/sharepointonline.webp)
 
 The added SharePoint Online host is displayed in the monitored hosts/services table. Once a host has been
-added for monitoring, configure the desired ouptuts. See the
+added for monitoring, configure the desired outputs. See the
 [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic for additional information.
 
 ## Host Properties for SharePoint Online
