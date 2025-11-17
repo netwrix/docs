@@ -31,7 +31,7 @@ default port is 4498. Click **Next**.
 
 ![Credentials to Connect to the Server(s) page](/images/activitymonitor/9.0/install/agent/credentials.webp)
 
-**Step 4 –** On the Credentials To Connect To The Server(s) page, select ether Windows or Linux file
+**Step 4 –** On the Credentials To Connect To The Server(s) page, select either Windows or Linux file
 monitoring. Then, enter the **User name** and **Password** to connect to the API Server.
 
 ![Test Account Connection](/images/activitymonitor/9.0/admin/agents/add/testaccountconnection.webp)

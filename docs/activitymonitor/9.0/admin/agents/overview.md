@@ -21,10 +21,11 @@ Agent Messages box. The button bar allows users to take the following actions:
     - [Multiple Activity Agents Deployment](/docs/activitymonitor/9.0/admin/agents/multiple.md)
     - [Active Directory Agent Deployment](/docs/activitymonitor/9.0/admin/agents/activedirectory.md)
     - [Linux Agent Deployment](/docs/activitymonitor/9.0/admin/agents/linux.md)
-    - Remove – Opens the Remove Agents window where users can choose to remove the hosting server
-      from the activity agents table or uninstalling the activity agent from the hosting server
-      before removing the activity agent from the table. See the
-      [Remove Agents](/docs/activitymonitor/9.0/install/upgrade/removeagent.md) topic for additional information.
+
+- Remove – Opens the Remove Agents window where users can choose to remove the hosting server
+  from the activity agents table or uninstalling the activity agent from the hosting server
+  before removing the activity agent from the table. See the
+  [Remove Agents](/docs/activitymonitor/9.0/install/upgrade/removeagent.md) topic for additional information.
 
 - Edit – Opens the selected server’s Properties window to modify the server name or credentials. See
   the [Agent Properties Window](/docs/activitymonitor/9.0/admin/agents/properties/overview.md) topic for additional information.

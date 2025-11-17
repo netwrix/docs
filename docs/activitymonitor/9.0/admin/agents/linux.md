@@ -84,7 +84,7 @@ cat ~/.ssh/id_ecdsa.pub >> ~/.ssh/authorized_keys
 It is required to add public key to authorized keys for Activity Monitor. By default, a
 private key is generated at ~/.ssh/id_ecdsa location along with the public key (.pub file). A user
 can use a different file location. Copy the following command into a command prompt to generate a
-private key for Activity Monitorto use:
+private key for Activity Monitor to use:
 :::
 
 

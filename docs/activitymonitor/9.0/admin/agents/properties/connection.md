@@ -23,7 +23,7 @@ Remember, **Test** the credentials before clicking OK to ensure a successful con
 
 Agent server fields:
 
-- Server name – Name or IP address of the server where the agent is deploy
+- Server name – Name or IP address of the server where the agent is deployed
 - Port – Port the agent uses for communication with the application
 
 Credential fields:
@@ -87,7 +87,7 @@ Remember, **Test** the credentials before clicking OK to ensure a successful con
 
 Agent server fields:
 
-- Server name – Name or IP address of the server where the agent is deploy
+- Server name – Name or IP address of the server where the agent is deployed
 - Port – Port the agent uses for communication with the application
 
 Credential fields:
