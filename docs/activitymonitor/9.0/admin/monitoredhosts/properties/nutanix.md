@@ -25,8 +25,9 @@ The configurable options are:
 
 - Connect – Click to connect using the selected protocol and validate the connection with Nutanix
 
-![Trusted Server Certificate popup window](/images/activitymonitor/9.0/admin/monitoredhosts/add/trustedservercertificate.webp)-
-HTTPS Options – Opens the Trusted server certificate window to customize the certificate
+![Trusted Server Certificate popup window](/images/activitymonitor/9.0/admin/monitoredhosts/add/trustedservercertificate.webp)
+
+- HTTPS Options – Opens the Trusted server certificate window to customize the certificate
 verification during a TLS session
 
 - Import – Click to browse for a trusted server certificate
