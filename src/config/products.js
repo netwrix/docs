@@ -107,9 +107,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '9.0',
+        label: '9.0',
+        isLatest: true,
+        sidebarFile: './sidebars/activitymonitor/9.0.js',
+      },
+      {
         version: '8.0',
         label: '8.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/activitymonitor/8.0.js',
       },
       {

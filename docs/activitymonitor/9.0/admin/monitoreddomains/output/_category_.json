@@ -1,0 +1,10 @@
+{
+  "label": "Output for Monitored Domains",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "output"
+  }
+}

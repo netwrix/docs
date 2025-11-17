@@ -1,0 +1,10 @@
+{
+  "label": "Microsoft Entra ID Search Query",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "entraid"
+  }
+}

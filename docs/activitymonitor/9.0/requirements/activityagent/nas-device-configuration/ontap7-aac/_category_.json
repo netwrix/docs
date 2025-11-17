@@ -1,0 +1,10 @@
+{
+  "label": "NetApp Data ONTAP 7-Mode Activity Auditing Configuration",
+  "position": 80,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "ontap7-activity"
+  }
+}
