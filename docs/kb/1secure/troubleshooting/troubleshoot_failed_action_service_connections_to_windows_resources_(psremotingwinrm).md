@@ -87,7 +87,7 @@ There are Group Policy settings used to filter the origin of WinRM requests via 
 
 Learn more about the **Allow remote server management through WinRM** Group Policy setting in [Configure Remote Management in Server Manager − Enabling or Disabling Remote Management ⸱ Microsoft 🡥](https://learn.microsoft.com/en-us/windows-server/administration/server-manager/configure-remote-management-in-server-manager#enabling-or-disabling-remote-management).
 
-![Windows Group Policy: Allow remote server management through WinRM](./images/servlet_image_16fc9e2e2432.png)
+![Windows Group Policy: Allow remote server management through WinRM](../images/servlet_image_16fc9e2e2432.png)
 
 ### Allow full control to Remote Management Users
 
