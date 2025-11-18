@@ -116,6 +116,8 @@ Remove the Netwrix Auditor User Activity Core Service manually on each audited c
 
 **Step 2 –** Select the **Netwrix Auditor User Activity** **Core Service** and click **Uninstall**.
 
+**NOTE:** You may also use the attached PowerShell script in order to remove the User Activity Core Service from multiple systems: [Uninstall-NetwrixProduct.ps1](/files/auditor/Uninstall-NetwrixProduct.ps1)
+
 ### Delete the Netwrix Auditor Application Deployment Service
 
 The Netwrix Auditor **Application Deployment Service** allows collecting file events and data. The
