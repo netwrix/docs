@@ -71,11 +71,6 @@ RBAC roles to access storage accounts.
 A user account with the **Global Administrator** role is required to register an app and grant admin consent in Microsoft Azure.
 :::
 
-Before you begin, make sure you have:
-- Access to the Azure portal
-- Permissions to create app registrations
-- Permissions to grant admin consent for your tenant
-
 If you already have an application registered for Activity Monitor for Entra ID, SharePoint Online, or Exchange Online, you can reuse that  
 registration for Azure Files by assigning additional RBAC roles.
 
