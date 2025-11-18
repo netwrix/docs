@@ -8,7 +8,7 @@ sidebar_position: 20
 
 This topic explains how to configure an app in Microsoft Entra ID (formerly Azure AD) to audit
 Microsoft 365 data sources (SharePoint Online, Microsoft Entra ID, and Exchange Online) in Netwrix
-1Secure using modern authentication. This app enables secure access to the Netwrix 1Secure
+1Secure DSPM using modern authentication. This app enables secure access to the Netwrix 1Secure
 cloud-based infrastructure via Microsoft Graph and other modern APIs.
 
 You have to configure the app in Microsoft Entra ID once, as it can be used to audit multiple
@@ -127,7 +127,7 @@ The API permissions are granted to the application.
 ## Assign Roles to the App
 
 The registered application must be assigned to the Global Administrator or Exchange Administrator
-role for Microsoft Entra ID state collection.  
+role for Microsoft Entra ID state collection.
 Follow the steps to assign role(s) to an application.
 
 **Step 1 –** Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).

@@ -7,7 +7,7 @@ sidebar_position: 40
 # Prepare for Windows File Server Monitoring
 
 This topic provides the requirements, limitations, protocols, and other considerations necessary for
-data collection from the computer while working with Netwrix 1Secure.
+data collection from the computer while working with Netwrix 1Secure DSPM.
 
 ## Check requirements
 
