@@ -123,11 +123,15 @@ analysis and reports downstream.
 
 | Required Columns | Description                                                                                                                                                   |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| rowGUID          | Identifies each data row as unique. The datatype in the table is uniqueidentifier (GUID).                                                                     |
+| RowKey           | Identifies each data row as unique. Sometimes the value is a GUID, but the datatype in the table is a varchar (text string).                                  |
+
+| Recommended Columns | Description                                                                                                                                                |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Host             | Name of the target server                                                                                                                                     |
 | SA_HOST          | This column determines the Access Analyzer server to which the data belongs in the event multiple Access Analyzer consoles are connected to a single database |
 | JobRunTimeKey    | Contains the run time and date for the job. If history is active, Access Analyzer can identify data collected during a specific collection execution.         |
-| rowGUID          | Identifies each data row as unique. The datatype in the table is uniqueidentifier (GUID).                                                                     |
-| RowKey           | Identifies each data row as unique. Sometimes the value is a GUID, but the datatype in the table is a varchar (text string).                                  |
+
 
 :::tip
 Remember, the individual action modules may have their own column requirements in addition to the
