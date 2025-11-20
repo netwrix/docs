@@ -8,7 +8,7 @@ sidebar_position: 40
 If you want to deploy real Microsoft GPO settings via SCCM this is how to do it. Export with Netwrix
 Endpoint Policy Manager (formerly PolicyPak) Export manager then wrap up and deploy using SCCM.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/H9rMyRF1VVQ" title="Endpoint Policy Manager Exporter and SCCM: Deploy real GPOs via SCCM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/H9rMyRF1VVQ" title="Endpoint Policy Manager Exporter and SCCM: Deploy real GPOs via SCCM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 In a previous video, you saw me export my real Microsoft group policy settings and export them to
 XMLs. Now we're going to wrap them up and use it with our SCCM service. How do we do that? Well,
@@ -48,3 +48,5 @@ Manager land, export them with the exporter, drop them into XMLs, wrap them up a
 the know-how you already have with SCCM to get those deployed over using SCCM. Hope this video helps
 you out. Looking forward to getting you started with Endpoint Policy Manager Exporter real soon.
 Thanks so much.
+
+

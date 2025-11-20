@@ -16,7 +16,7 @@ typically inside a GPO.
 
 To understand how / where your license keys might live, please check this video:
 
-[https://kb.endpointpolicymanager.com/kb/article/458-policypak-licensing-onpremise-licensing-methods-compared](https://kb.endpointpolicymanager.com/kb/article/458-policypak-licensing-onpremise-licensing-methods-compared)
+[https://docs.netwrix.com/docs/endpointpolicymanager/licensing/knowledgebase/miscquestions/licensingmethods](https://docs.netwrix.com/docs/endpointpolicymanager/licensing/knowledgebase/miscquestions/licensingmethods)
 
 Also, before continuing, reboot the endpoint with the Endpoint Policy Manager CSE / Endpoint Policy
 Manager Browser Router installed upon it.
@@ -126,3 +126,5 @@ If your email system strips ZIP files, rename it to `.ZIPP` or `.TXT` or whateve
 want.
 
 :::
+
+

@@ -47,7 +47,7 @@ Follow the steps to install the Pwnd Passwords Downloader.
 dotnet tool install --global haveibeenpwned-downloader
 ```
 
-![A screenshot of a computer  Description automatically generated with medium confidence](images/ka0Qk000000Dk3S_0EM4u000008L8RW.png)
+![A screenshot of a computer  Description automatically generated with medium confidence](./images/ka0Qk000000Dk3S_0EM4u000008L8RW.png)
 
 3. Close the command prompt.
 
@@ -61,7 +61,7 @@ Follow the steps to update an installed Pwnd Passwords Downloader.
 dotnet tool update --global haveibeenpwned-downloader
 ```
 
-![A picture containing text, screenshot, font  Description automatically generated](images/ka0Qk000000Dk3S_0EM4u000008L8RX.png)
+![A picture containing text, screenshot, font  Description automatically generated](./images/ka0Qk000000Dk3S_0EM4u000008L8RX.png)
 
 ### Download NTML Hashes with the Pwnd Passwords Downloader
 Follow the steps to download NTLM hashes (for Netwrix Password Policy Enforcer v10.1 and up):
@@ -75,7 +75,7 @@ Run:
 haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm
 ```
 
-![A picture containing text, screenshot, font  Description automatically generated](images/ka0Qk000000Dk3S_0EM4u000008L8RY.png)
+![A picture containing text, screenshot, font  Description automatically generated](./images/ka0Qk000000Dk3S_0EM4u000008L8RY.png)
 
 This screenshot shows the completed download.
 

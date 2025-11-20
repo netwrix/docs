@@ -8,7 +8,7 @@ sidebar_position: 40
 Use Netwrix Endpoint Policy Manager (formerly PolicyPak)'s Scripts and Triggers Manager and
 Auditpol.exe to configure advanced auditing on your remote (domain or non-domain joined) computers.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OPnQLVSV3xI?si=xBxA6bnEAu9oDQOW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OPnQLVSV3xI?si=xBxA6bnEAu9oDQOW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is John from Endpoint Policy Manager. In this video, we're going to show you how you can
 enable advanced auditing for remote domain or nondomain joined computers using Endpoint Policy
@@ -66,3 +66,5 @@ different set of auditing. Either way. Minimize that. Let's update the policy. N
 policy is no longer there. Query object access, and again, back to no auditing. Let's clear the log.
 Open up my file. Close it. Refresh. No logging. Okay, so this is how we can enable advanced auditing
 in remote domain or nondomain joined computers. Thanks for watching.
+
+

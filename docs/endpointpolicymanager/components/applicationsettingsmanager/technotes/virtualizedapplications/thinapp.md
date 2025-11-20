@@ -38,3 +38,5 @@ name so it's clear what it's doing. Then recompile.
 package's Java will automatically be configured at this point with the settings you dictate.
 
 ![147_4_image0061](/images/endpointpolicymanager/applicationsettings/147_4_image0061.webp)
+
+

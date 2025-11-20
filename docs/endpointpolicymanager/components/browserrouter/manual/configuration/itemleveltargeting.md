@@ -68,3 +68,5 @@ off **No**.
 
 This feature allows you toadd very granular filters. First, filter with Item-Level Targeting in a
 collection, and then filter on any specific rule if any Item-Level Targeting is applied there.
+
+

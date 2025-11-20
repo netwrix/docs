@@ -27,3 +27,5 @@ version of the client. In this case, you can click on Download other versions an
 version.
 
 ![web_interface_and_controls_87_624x282](/images/endpointpolicymanager/cloud/interface/companydetails/web_interface_and_controls_87_624x282.webp)
+
+

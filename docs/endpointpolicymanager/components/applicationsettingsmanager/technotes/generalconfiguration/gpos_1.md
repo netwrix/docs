@@ -11,3 +11,5 @@ fast. Simply go to the PolicyPak Management screen in the GPO edit console. Open
 Policy Manager and look for the Endpoint Policy Manager button in the bottom left-hand corner. Click
 the button and choose Export and select the export destination.You do the same process except select
 Import when you want to import the GPO.
+
+

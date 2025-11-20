@@ -16,3 +16,4 @@ application log.
 Figure 76. Creating a custom view for Endpoint Policy Manager GPCR events.
 
 If asked by Endpoint Policy Manager Support, be prepared to export these events for analysis.
+

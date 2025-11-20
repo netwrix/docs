@@ -17,7 +17,7 @@ the example below, and you want to use Item Level Targeting (ITM) to do it.
 :::note
 Item Level Targeting is a Microsoft technology provided as part of the their Group Policy
 Preferences CSE for Group Policy.See
-[Apply Item-Level Targeting Outside Domains & GP Preferences](https://www.endpointpolicymanager.com/resources/pp-blog/item-level-targeting/)
+[Apply Item-Level Targeting Outside Domains & GP Preferences](https://www.policypak.com/resources/pp-blog/item-level-targeting/)
 for additional information. Endpoint Policy Manager utilizes this ability to filter based on
 criteria, but the underlying engine is developed by Microsoft. Because this is not our code, What
 that means is that its not our code and so sometimes there are behaviors related to ILT that we
@@ -67,3 +67,4 @@ This is the sequence after clicking the three dots:
 ![139_5_overall-faq-01-img-05](/images/endpointpolicymanager/itemleveltargeting/139_5_overall-faq-01-img-05.webp)
 
 ![139_6_overall-faq-01-img-06](/images/endpointpolicymanager/itemleveltargeting/139_6_overall-faq-01-img-06.webp)
+

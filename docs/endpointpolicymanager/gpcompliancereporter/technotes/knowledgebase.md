@@ -39,3 +39,4 @@ See the following Knowledge Base articles for Endpoint Policy Manager GP Complia
 - [When using a remote SQL Server, GPCR Snapshot fails with error "System.InvalidOperationException" and "MSDTC has been disabled" in Debug log](/docs/endpointpolicymanager/gpcompliancereporter/technotes/troubleshooting/systeminvalidoperationexceptionmsdtc.md)
 - [When does the Auditor process send up events to the server?](/docs/endpointpolicymanager/gpcompliancereporter/technotes/troubleshooting/processauditor.md)
 - [How do I turn on enhanced logging for Endpoint Policy Manager Group Policy Compliance Reporter if asked to do so?](/docs/endpointpolicymanager/gpcompliancereporter/technotes/troubleshooting/logenhanced.md)
+

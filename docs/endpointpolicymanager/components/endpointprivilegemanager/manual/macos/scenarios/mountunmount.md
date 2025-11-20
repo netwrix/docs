@@ -52,3 +52,6 @@ The result of trying to attach a new device by USB can be seen here, as Endpoint
 blocked it.
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/mac/scenarios/mount_unmount_for_usb_and_2.webp)
+
+
+

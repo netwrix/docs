@@ -87,3 +87,5 @@ Reference Article
 
 - [How to use Scripts Manager to workaround the "PPAppLockdr64.dll is either not designed to run on Windows or it contains an error" message when running Microsoft Remote Assistance (MSRA.exe) and the Endpoint Policy Manager CSE is installed on Windows 10 1903](/docs/endpointpolicymanager/components/applicationsettingsmanager/technotes/troubleshooting/microsoftremoteassistance.md)
 - [Deploy any script via the Cloud to domain joined and non-domain joined machines](/docs/endpointpolicymanager/components/scriptstriggers/videolearningcenter/gettingstarted/cloud.md)
+
+

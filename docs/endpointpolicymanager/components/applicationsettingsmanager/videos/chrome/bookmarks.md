@@ -17,10 +17,12 @@ can deliver Chrome bookmarks.
 
   ```
   [ { "name": "GP Answers", "url": "gpanswer.com" }, { "name": "PolicyPak", "url": 
-  "endpointpolicymanager.com" }, { "name": "Chrome links", "children": [ { "name": "Chromium", 
+  "policypak.com" }, { "name": "Chrome links", "children": [ { "name": "Chromium", 
   "url": "chromium.org" }, { "name": "List of Policies", "url": 
   "http://www.chromium.org/administrators/policy-list-3" } ] } ]
   ```
 
 More Information: Available on this link:
 [https://www.chromium.org/administrators/complex-policies-on-windows](https://www.chromium.org/administrators/complex-policies-on-windows)
+
+

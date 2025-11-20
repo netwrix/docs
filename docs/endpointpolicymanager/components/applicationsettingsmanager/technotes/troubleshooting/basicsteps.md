@@ -103,7 +103,7 @@ manager…
 
 **Step 1 –** From an affected machine, AS ADMIN run pplogs.exe from an ADMIN command prompt.
 
-**Step 2 –** Simply send the .ZIP file it creates to support[at ]endpointpolicymanager.com and explain the issue
+**Step 2 –** Simply send the .ZIP file it creates to support[at ]policypak.com and explain the issue
 as specifically as you can.
 
 **Step 3 –** GOOD descriptions would include
@@ -131,3 +131,5 @@ a certificate and it's not working."Under ALL circumstances you should expect we
 update at least one machine to the latest CSE if your logs show a not-latest CSE.We'll try to get
 you an answer right away. Call 800-883-8002 if you think we haven't gotten your request for help. We
 want to help you!
+
+

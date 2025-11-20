@@ -23,3 +23,5 @@ The following roles are available:
   [Edit Notification Configuration](/docs/endpointpolicymanager/gettingstarted/cloudmanual/interface/companydetails/editnotificationconfiguration.md) section).
 - Customer Admin Manager: An admin with this role can approve newly created admins when other admins
   initiate the request.
+
+

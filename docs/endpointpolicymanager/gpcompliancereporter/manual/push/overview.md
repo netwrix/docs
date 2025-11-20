@@ -35,3 +35,4 @@ Manager GPCR data will not be corrupted when multiple admins try to access it at
 
 Endpoint Policy Manager GPCR Server does not require any extra licensing to be used. Only computer
 endpoints must be licensed for GPCR.
+

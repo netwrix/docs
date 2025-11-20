@@ -10,7 +10,7 @@ Starting in build 545, you can flip / flop specific settings even when offline. 
 this video how we change Firefox's Proxy settings — even when there is no DC. You're going to love
 this tip !
 
-<iframe width="1700" height="956" src="https://www.youtube.com/embed/GcRNnadBw08" title="Endpoint Policy Manager: Manage different proxy settings, even when offline" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GcRNnadBw08" title="Endpoint Policy Manager: Manage different proxy settings, even when offline" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Manage different proxy settings, even when offline video transcript
 
@@ -95,3 +95,5 @@ have any questions on how to do this, please feel free to post your questions in
 forum.
 
 Thanks so much. Talk to you soon.
+
+

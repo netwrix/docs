@@ -50,7 +50,7 @@ Make sure that you have the following:
    7. Vault Connecter (`<none>`)
 4. Click **Save**
 
-![User-added image](images/ka04u000000ww6m_0EM4u0000052ZhJ.png)
+![User-added image](./images/ka04u000000ww6m_0EM4u0000052ZhJ.png)
 
 ### Adding the Computer to Netwrix Privilege Secure
 
@@ -65,7 +65,7 @@ Make sure that you have the following:
 
 This will start the scanning step, you can close the dialog or wait for the scan to complete. If there are failures during the scan you can review the logs by navigating to the resource page.
 
-![User-added image](images/ka04u000000ww6m_0EM4u0000052ZhE.png)
+![User-added image](./images/ka04u000000ww6m_0EM4u0000052ZhE.png)
 
 ### Troubleshooting a Failed Scan
 
@@ -77,7 +77,7 @@ If the scan fails, you can troubleshoot it by viewing the scan logs on the **Res
 3. Click on the **History** tab
 4. Select the last scan event and click **View Logs**
 
-![User-added image](images/ka04u000000ww6m_0EM4u0000052Zh9.png)
+![User-added image](./images/ka04u000000ww6m_0EM4u0000052Zh9.png)
 
 ### Additional Troubleshooting: "Access Denied""
 
@@ -89,4 +89,4 @@ After going through this process, you can use this computer's resource in Activi
 
 To configure a local Activity Token/Managed Account activity, when creating the activity remove the “%targetdomain%\” portion of the default Login Account Format. Make sure to use the **Windows** Platform as well.
 
-![User-added image](images/ka04u000000ww6m_0EM4u0000052Zh4.png)
+![User-added image](./images/ka04u000000ww6m_0EM4u0000052Zh4.png)

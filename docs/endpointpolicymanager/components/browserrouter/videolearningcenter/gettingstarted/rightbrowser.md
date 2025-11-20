@@ -10,7 +10,7 @@ using the WRONG website most of the time. With PP Browser Router, you create pol
 where specific websites are launched only into the specific browsers. It couldn't be easier. Check
 it out.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ACQOzjQcT6A" title="Ensure users utilize the RIGHT browser for the right website !" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ACQOzjQcT6A" title="Ensure users utilize the RIGHT browser for the right website !" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with Netwrix Endpoint Policy Manager (formerly PolicyPak) Software. In this
 video, I'm going to show you a gaggle of problems that you can fix using Endpoint Policy Manager's
@@ -61,3 +61,5 @@ Facebook.com. This website is blocked by company policy. Please contact Support 
 have it. We have set a default browser. We routed particular websites to particular browsers and we
 even made sure to block Facebook. If this is of interest to you, sign up for our webinar and we'll
 get you started on your free trial right away. Thanks so much.
+
+

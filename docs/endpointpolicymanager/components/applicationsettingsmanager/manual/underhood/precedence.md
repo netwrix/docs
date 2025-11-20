@@ -33,3 +33,6 @@ following order of predence:
 For example, if you delivered a setting using Endpoint Policy Manager Cloud for Java and undelivered
 that same setting using an XML data file, then use Group Policy to redeliver that same setting; that
 way, Group Policy always takes precedence.
+
+
+

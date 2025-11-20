@@ -8,7 +8,7 @@ sidebar_position: 20
 In PPGPCR you now have a way to take one OU, or multiple OUs and keep your tests updated. This video
 shows you how.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Rg40nLHjZ5E" title="PPGPCR: Take existing GPOs and quickly bring them into PPGPCR (and keep them updated)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rg40nLHjZ5E" title="PPGPCR: Take existing GPOs and quickly bring them into PPGPCR (and keep them updated)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, and in this video, I'm going to show you how you can take lots of
 different GPOs from across your entire estate here in Active Directory and make them into tests in
@@ -67,3 +67,4 @@ then when it's time to test for those things, you now have an all-encompassing s
 to round trip take those items and bring them into your test world, and you can go generate your
 results, and you're off to the races. Hope this feature helps you out. Looking forward to getting
 you started with PolicyPak Group Policy Compliance Reporter real soon. Thanks so much.
+

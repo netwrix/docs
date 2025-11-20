@@ -28,6 +28,10 @@ string in their names are displayed.
 You can update the details provided for a data source, such as its display name, the service account
 credentials to connect to it, and any other info you provided while creating it.
 
+:::important Password Re-insertion Required
+Due to security enhancements, when updating a data source, you must re-enter the **Service Account Password** even if you are not changing it. This is a required security measure to ensure password field sanitization across the product.
+:::
+
 Follow the steps to update the details for a data source.
 
 Step 1 – In Admin Center, click **Data Sources** in the left pane.

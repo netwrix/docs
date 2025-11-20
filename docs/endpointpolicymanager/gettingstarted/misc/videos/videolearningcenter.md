@@ -80,3 +80,4 @@ See the following Video topics for getting started with Endpoint Policy Manager 
 - [Endpoint Policy Manager Integrates with NetIQ GPA](/docs/endpointpolicymanager/gettingstarted/misc/videos/changemanagementutilities/netiq.md)
 - [Endpoint Policy Manager and Quest (ScriptLogic) ActiveAdministrator](/docs/endpointpolicymanager/gettingstarted/misc/videos/changemanagementutilities/scriptlogicactiveadministrator.md)
 - [Endpoint Policy Manager and SDM CHANGE MANAGER](/docs/endpointpolicymanager/gettingstarted/misc/videos/changemanagementutilities/sdmchangemanager.md)
+

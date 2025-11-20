@@ -7,7 +7,7 @@ sidebar_position: 30
 
 Quickly see what the PPGPCR Standalone Mode can do for you.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RKPVxz8Orw8" title="PPGPCR:  Standalone Mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RKPVxz8Orw8" title="PPGPCR:  Standalone Mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PPGPCR: Standalone Mode
 
@@ -76,3 +76,4 @@ the ability for endpoints to push their data to a central storage location, go a
 next video.
 
 Thanks so much, and we'll talk to you soon.
+

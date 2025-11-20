@@ -35,7 +35,7 @@ By default, the Netwrix Directory Manager (formerly GroupID) Password Center Hel
 - Password Expires On
 - Enrolled With
 
-![Default enrolled users export fields in Directory Manager 10](images/ka0Qk000000EWo1_0EMQk00000Bh5ni.png)
+![Default enrolled users export fields in Directory Manager 10](./images/ka0Qk000000EWo1_0EMQk00000Bh5ni.png)
 
 However, you cannot add additional fields to the exported file using the Password Center interface, as the design node is not available in the MMC for design changes. As a workaround, you can use the Netwrix Directory Manager management shell to export user data with additional fields such as `SamAccountName` and `Email Address`.
 

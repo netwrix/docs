@@ -142,3 +142,4 @@ installed. Without the CSE installed, Endpoint Policy Manager directives are ign
 because there's a GPO linked to the domain doesn't mean that computers will be able to do anything.
 They have to be in scope of management and also have the CSE installed to pick up Endpoint Policy
 Manager directives.
+

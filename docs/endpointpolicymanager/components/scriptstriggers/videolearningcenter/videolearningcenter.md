@@ -32,3 +32,5 @@ Specialized guidance for implementing Scripts and Triggers Manager in cloud envi
 ---
 
 *All videos include practical examples and downloadable sample scripts.*
+
+

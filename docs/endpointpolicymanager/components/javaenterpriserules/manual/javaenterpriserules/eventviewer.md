@@ -18,3 +18,5 @@ Figure 34. Event 8021 shows the XML used to write the Java Rules.
 Event Forwarding, which is built into Windows, can be set up. Information on Event Forwarding is
 demonstrated here:
 [https://blogs.technet.microsoft.com/jepayne/2015/11/23/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem/](https://blogs.technet.microsoft.com/jepayne/2015/11/23/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem/).
+
+

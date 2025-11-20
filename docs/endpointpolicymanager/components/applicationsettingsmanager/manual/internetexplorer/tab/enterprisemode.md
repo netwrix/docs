@@ -8,7 +8,7 @@ sidebar_position: 110
 
 Video: For a quick overview of how to manage IE Enterprise Mode using Endpoint Policy Manager
 Browser Router see the following video:
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-browser-router-enterprise-and-document-modes.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-browser-router-enterprise-and-document-modes.html)
+[https://www.policypak.com/video/endpointpolicymanager-browser-router-enterprise-and-document-modes.html](http://www.policypak.com/video/endpointpolicymanager-browser-router-enterprise-and-document-modes.html)
 
 Enterprise Mode (also known as Enterprise Compatibility Mode for IE 11) is a different method for IE
 11 to specify which websites go into an enhanced compatibility rendering engine. The following are
@@ -31,13 +31,16 @@ need for the following:
 
 In short, Endpoint Policy Manager IE AppSet makes this process easy. You use the Endpoint Policy
 Manager Browser Router component and not the Endpoint Policy Manager Application Settings Manager
-component, as shown in Figure 36.
+component, as shown In the figure shown.
 
 ![ie_appset_tab_by_tab_32](/images/endpointpolicymanager/applicationsettings/preconfigured/internetexplorer/tab/ie_appset_tab_by_tab_32.webp)
 
-Figure 36. Setting up a dynamic list in Enterprise Mode using Endpoint Policy Manager Browser
+The figure shown. Setting up a dynamic list in Enterprise Mode using Endpoint Policy Manager Browser
 Router.
 
 Note that, as described in Microsoft's documentation
 ([http://msdn.microsoft.com/en-us/library/dn640699.aspx](http://msdn.microsoft.com/en-us/library/dn640699.aspx)),
 Enterprise Mode takes 65 seconds or a restart of IE the first time to see it take effect.
+
+
+

@@ -24,3 +24,4 @@ This will enable Windows 7 to honor 256-hash signed files.
 As you can see here, all Endpoint Policy Manager files are signed with SHA256.
 
 ![351_2_image002](/images/endpointpolicymanager/troubleshooting/install/351_2_image002.webp)
+

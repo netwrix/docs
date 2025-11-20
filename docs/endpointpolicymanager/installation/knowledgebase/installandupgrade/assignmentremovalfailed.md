@@ -18,3 +18,4 @@ message is generated in the System Event log:
 To resolve this error, uncheck "Make this 32-bit X86 application available to Win64 computers"
 checkbox for the 32bit Endpoint Policy Manager Client-Side Extension in the Group Policy Software
 Deployment policy.
+

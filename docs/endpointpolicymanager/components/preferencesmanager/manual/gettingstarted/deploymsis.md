@@ -26,7 +26,7 @@ install, and the MSI would install silently in the background.
 
 Next, the Group Policy Preferences XML file is placed within a Endpoint Policy Manager directory on
 the machine, to be read and processed. Within 10 seconds, you should see the Group Policy Preference
-item apply the www.endpointpolicymanager.com shortcut URL on the desktop.
+item apply the www.policypak.com shortcut URL on the desktop.
 
 ![quickstart_using_policypak_10](/images/endpointpolicymanager/preferences/quickstart_using_endpointpolicymanager_10.webp)
 
@@ -36,3 +36,5 @@ mode (with "computer" in the name) and the Endpoint Policy Manager Preferences M
 extension (CSE) is installed on the machine.
 
 :::
+
+

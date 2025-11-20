@@ -31,9 +31,9 @@ This article explains how you can enforce the Group Type as `Distribution` in th
 ## Instructions
 1. In the Directory Manager Admin Center, go to **Applications** > **Directory Manager Portals** and locate the required portal.  
 2. Once you have chosen the required portal, click the three-dot icon on the portal then click **Settings**.  
-   ![Steps 1-2](images/ka0Qk000000DusP_0EMQk00000C19C1.png)
+   ![Steps 1-2](./images/ka0Qk000000DusP_0EMQk00000C19C1.png)
 3. Under **Application Settings**, select an identity store from the **Design Settings** section.  
-   ![Step 3](images/ka0Qk000000DusP_0EMQk00000C13Mk.png)
+   ![Step 3](./images/ka0Qk000000DusP_0EMQk00000C13Mk.png)
 4. Click the **Create Object** tab.
 5. In the **Select Directory Object** list, choose **Group**.
 6. In the **Name** list, select **General** and click **Edit**.

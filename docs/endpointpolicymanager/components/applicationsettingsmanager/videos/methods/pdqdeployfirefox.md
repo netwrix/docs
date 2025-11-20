@@ -8,7 +8,7 @@ sidebar_position: 50
 Microsoft MVP Jeremy Moskowitz and Shane from Admin Arsenal deploy Firefox with PDQ Deploy and
 manage the heck out of it with Netwrix Endpoint Policy Manager (formerly PolicyPak).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NCrZnIMgimE?si=I4STS2IBWiSKftX5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NCrZnIMgimE?si=I4STS2IBWiSKftX5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Deploy and Manage Firefox with PDQ Deploy and Endpoint Policy Manager
 
@@ -118,7 +118,7 @@ Jeremy: So, we go to computer side, PolicyPak. We'll go to applications settings
 do a lot in Firefox. A lot of times people come to us because they want to manage the certificates
 in Firefox. They want to manage the bookmarks in Firefox. But we'll just go right for things that we
 can just touch really quick. But we can do just about do nearly everything. So, if we go to the
-homepage here. We'll go to endpointpolicymanager.com and we'll right click on this thing and we will lock down
+homepage here. We'll go to policypak.com and we'll right click on this thing and we will lock down
 this setting using the system wide config file. We'll go also over to security and we'll check all
 these three checkboxes because we said if the user has the ability to work around these settings
 you're in the doghouse.
@@ -147,3 +147,5 @@ about everything in Firefox so deploy with those guys, manage it with us guys.
 Shane: Rock on. Hey everybody. We'll see you at the next video.
 
 Jeremy: Next video.
+
+

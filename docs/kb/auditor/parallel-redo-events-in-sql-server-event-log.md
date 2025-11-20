@@ -60,7 +60,7 @@ Disable the AUTO_CLOSE option for the affected database:
 3. Right-click the affected database and select **Properties**.
 4. In the left pane, select the **Options** tab, locate the **Auto Close** option under the **Automatic** section, and select the **False** option from the drop-down list.
 
-![Auto Close option screenshot](images/ka04u00000118GJ_0EM4u000008MgWU.png)
+![Auto Close option screenshot](./images/ka04u00000118GJ_0EM4u000008MgWU.png)
 
 5. Click **OK** to save changes.
 
@@ -68,3 +68,4 @@ Disable the AUTO_CLOSE option for the affected database:
 
 - Set the AUTO_CLOSE Database Option to OFF ⸱ Microsoft 🤝  
   https://learn.microsoft.com/en-us/sql/relational-databases/policy-based-management/set-the-auto-close-database-option-to-off?view=sql-server-ver16#for-more-information
+

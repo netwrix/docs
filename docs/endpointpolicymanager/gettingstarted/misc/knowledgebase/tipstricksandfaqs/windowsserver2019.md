@@ -62,3 +62,4 @@ following technique:
 Windows 10 and BuildNumber \<= 17704
 
 ![88_7_image](/images/endpointpolicymanager/itemleveltargeting/88_7_image.webp)
+

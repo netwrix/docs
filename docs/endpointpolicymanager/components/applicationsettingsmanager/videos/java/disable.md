@@ -8,7 +8,7 @@ sidebar_position: 10
 The Department of Homeland security strongly recommends that you disable Java temporarily. Exactly
 how will you do that ? Watch this video to find out.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pMgesKjAmDo?si=S--ubHfdwNIvmE8x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pMgesKjAmDo?si=S--ubHfdwNIvmE8x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Turn off Java immediately on all machines video transcript
 
@@ -90,6 +90,8 @@ months.
 
 Thank you very much for watching. If you're looking to get a demo of PolicyPak, come on over and
 we'll show you what it's all about. Click on the Webinar/Download button on the right in the
-endpointpolicymanager.com website.
+policypak.com website.
 
 Thanks so much, and we'll talk to you soon.
+
+

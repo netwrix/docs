@@ -10,4 +10,6 @@ Take a quick tour of Netwrix Endpoint Policy Manager (formerly PolicyPak) Least 
 for Mac showing Mount/Unmount with Allow, Block, and Elevate for USB and DMG. Then proceed to part
 II video for even more options.
 
-<iframe width="1700" height="956" src="https://www.youtube.com/embed/3vklQNvZ7go" title="Endpoint Policy Manager for Mac and Admin Approval" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3vklQNvZ7go" title="Endpoint Policy Manager for Mac and Admin Approval" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+

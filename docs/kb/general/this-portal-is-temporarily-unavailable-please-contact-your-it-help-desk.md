@@ -28,7 +28,7 @@ knowledge_article_id: kA00g000000H9ZECA0
 Self-Service portal of Password Manager shows the following message:
 
 **`This portal is temporarily unavailable, please contact your IT help desk.`**
-![User-added](images/servlet_image_6d5dba18caac.png)
+![User-added](./images/servlet_image_6d5dba18caac.png)
 
 ---
 
@@ -39,7 +39,7 @@ Password Manager allows you to select options that are available on the Self-Ser
 If all options are disabled, then the portal shows the **"This portal is temporarily unavailable, please contact your IT help desk."** message.
 
 This configuration is done on the **Administrative portal**, in **Settings - User options** tab.
-![User-added](images/servlet_image_6d5dba18caac.png)
+![User-added](./images/servlet_image_6d5dba18caac.png)
 
 ---
 
@@ -48,10 +48,10 @@ This configuration is done on the **Administrative portal**, in **Settings - Use
 To resolve this, enable at least one option for the Self-Service portal.
 
 1. Navigate to the **Administrative portal**, and go to **Settings**  
-   ![User-added](images/servlet_image_6d5dba18caac.png)
+   ![User-added](./images/servlet_image_6d5dba18caac.png)
 
 2. Then select the **User options** tab and enable options you need  
-   ![User-added](images/servlet_image_6d5dba18caac.png)
+   ![User-added](./images/servlet_image_6d5dba18caac.png)
 
 3. Click **Apply**
 

@@ -128,3 +128,5 @@ Policy Manager Cloud based Internal Item-Level Targeting Filter window.
 ![732_16_image-20200213172020-9_950x629](/images/endpointpolicymanager/cloud/732_16_image-20200213172020-9_950x629.webp)
 
 **Step 10 –** Click the **OK** button.
+
+

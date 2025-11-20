@@ -9,7 +9,7 @@ Maybe you don't want a Least Privilege rule to apply everywhere the GPO is linke
 the power of Item Level Targeting and filter who gets it based upon computer, group membership, IP
 address and more.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TFpiq04E75U" title="Endpoint Privilege Manager:  Use Item Level Targeting to hone in when rules apply." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TFpiq04E75U" title="Endpoint Privilege Manager:  Use Item Level Targeting to hone in when rules apply." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PPLPM: Use Item Level Targeting to hone in when rules apply
 
@@ -54,3 +54,5 @@ condition occurs. You can see that we do a little color change to orange wheneve
 targeting is on.
 
 I hope this helps you get started with item-level targeting. It's super powerful, so use it wisely.
+
+

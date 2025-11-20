@@ -17,3 +17,5 @@ is set to BLOCK.
 blocking policy is last in the list, so all whitelisted items will process before the blockitem.
 
 ![170_2_image002](/images/endpointpolicymanager/browserrouter/editpolicytemplate/170_2_image002.webp)
+
+

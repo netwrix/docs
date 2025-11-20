@@ -22,3 +22,4 @@ as is shown in Figure 14.
 ![deploying_policypak_directives_14](/images/endpointpolicymanager/mdm/xmldatafiles/deploying_endpointpolicymanager_directives_14.webp)
 
 Figure 14. Exporting a single Endpoint Policy Manager Java Enterprise Rules Manager entry.
+

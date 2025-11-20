@@ -47,44 +47,44 @@ Follow the instructions below to configure the Netwrix Directory Manager Portal:
 
 2. On the **Replication** tab, click **Add Replication Attributes** and add the required attributes.
 
-   ![Replication attribute screenshot](images/ka0Qk000000E76T_0EMQk00000BdPOP.png)
+   ![Replication attribute screenshot](./images/ka0Qk000000E76T_0EMQk00000BdPOP.png)
 
 3. Click **Settings**. A new page will appear.
 
-   ![Portal settings screenshot](images/ka0Qk000000E76T_0EMQk00000BdNHn.png)
+   ![Portal settings screenshot](./images/ka0Qk000000E76T_0EMQk00000BdNHn.png)
 
 4. Select the appropriate **Identity Store**.
 
-   ![Identity Store selection screenshot](images/ka0Qk000000E76T_0EMQk00000BdPHx.png)
+   ![Identity Store selection screenshot](./images/ka0Qk000000E76T_0EMQk00000BdPHx.png)
 
 5. Under the **Properties** tab, select **Group** from the **Select Directory Object** list.
 
 6. Select **Advanced** in the **Name** list and click the **Pencil** icon.
 
-   ![Advanced group design](images/ka0Qk000000E76T_0EMQk00000BdPRd.png)
+   ![Advanced group design](./images/ka0Qk000000E76T_0EMQk00000BdPRd.png)
 
 7. On the Edit Design Category dialog box, click **Add Field**.
 
-   ![Add Field screenshot](images/ka0Qk000000E76T_0EMQk00000BdPJZ.png)
+   ![Add Field screenshot](./images/ka0Qk000000E76T_0EMQk00000BdPJZ.png)
 
 8. Select `mxExchEnableModeration` from the **Field** list, enter the display name as **Is Moderation Enabled** and set the display type to **Check**.
 
 9. Click **OK** and then click **Add Fields** again.
 
-   ![ModeratedByLink field screenshot](images/ka0Qk000000E76T_0EMQk00000BdPLB.png)
+   ![ModeratedByLink field screenshot](./images/ka0Qk000000E76T_0EMQk00000BdPLB.png)
 
 10. Select `mxExchModeratedByLink`, enter the display name as **Moderators**, and set the display type to **DNs**.
 
 11. Click **OK** and then click **Add Fields** again.
 
-   ![A screenshot of adding attribute.](images/ka0Qk000000E76T_0EMQk00000BdDrv.png)
+   ![A screenshot of adding attribute.](./images/ka0Qk000000E76T_0EMQk00000BdDrv.png)
 
 12. Select `mxExchBypassModerationLink`, enter the display name as **Bypass Moderation**, and set the display type to **DNs**.
 
 13. Click **OK** and then click the **Save** icon at the top of the page.
 
-   ![Bypass moderators field screenshot](images/ka0Qk000000E76T_0EMQk00000BdPMn.png)
+   ![Bypass moderators field screenshot](./images/ka0Qk000000E76T_0EMQk00000BdPMn.png)
 
 14. Launch the **Netwrix Directory Manager Portal**. The new attributes should appear under the **Groups** tab under **Advanced**.
 
-   ![Final portal attributes screenshot](images/ka0Qk000000E76T_0EMQk00000BdPQ1.png)
+   ![Final portal attributes screenshot](./images/ka0Qk000000E76T_0EMQk00000BdPQ1.png)

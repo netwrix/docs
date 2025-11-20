@@ -39,3 +39,5 @@ Users can then change the default browser to their own liking, even though their
 the web browser is managed by their organization.
 
 ![about_policypak_browser_router_13](/images/endpointpolicymanager/browserrouter/defaultbrowser/about_endpointpolicymanager_browser_router_13.webp)
+
+

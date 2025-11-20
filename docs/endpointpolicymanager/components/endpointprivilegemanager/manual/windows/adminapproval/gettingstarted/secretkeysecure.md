@@ -52,3 +52,6 @@ You can verify the computer got the GPO key by opening an Admin command prompt, 
 shown here.
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/adminapproval/securing_the_secret_key_when_2.webp)
+
+
+

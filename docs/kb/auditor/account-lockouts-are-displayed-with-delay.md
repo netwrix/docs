@@ -46,7 +46,7 @@ To change to all DCs mode, perform the following steps:
 2. Select your domain and click **Edit**.
 3. Select **All DCs** radio button and click **OK** to save the changes.
 
-![User-added image](images/ka04u000000HcUw_0EM700000004wlz.png)
+![User-added image](./images/ka04u000000HcUw_0EM700000004wlz.png)
 
 ### Change event processing method
 
@@ -56,4 +56,5 @@ To change to all DCs mode, perform the following steps:
 4. Create a new value called `UseWatcher`, set its type to `DWORD` and value to `1`.
 5. Restart NetWrix Account Lockout Examiner Service via `services.msc`.
 
-![User-added image](images/ka04u000000HcUw_0EM700000004wm4.png)
+![User-added image](./images/ka04u000000HcUw_0EM700000004wm4.png)
+

@@ -9,7 +9,7 @@ If you have a specific USB device vendor you trust, and those devices are always
 Netwrix Endpoint Policy Manager (formerly PolicyPak) Device Manager to restrict device use to THOSE
 vendor IDs only!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/78p9CKfdJdU" title="Endpoint Policy Device Manager: Authorize USB Sticks by VENDOR type" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/78p9CKfdJdU" title="Endpoint Policy Device Manager: Authorize USB Sticks by VENDOR type" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 In our first video, we put the smackdown on all evil CD-ROMs and USB sticks. Then we opened it up
 for one trusted user to either just read or maybe full access if we really trust them. The thing,
@@ -54,3 +54,5 @@ that maybe you don't want to do, like read from the device or to run stuff that 
 be running. If that is super important to you, and I can see where it would be, you can dictate that
 particular USB sticks are allowed and controlled because of serial number. Go ahead and take a look
 at that video. That's the next one on the list. Thanks so much.
+
+

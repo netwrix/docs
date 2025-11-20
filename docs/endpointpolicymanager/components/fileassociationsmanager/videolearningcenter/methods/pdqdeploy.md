@@ -12,7 +12,7 @@ Policy Manager File Associations Manager, after your applications are deployed, 
 clicks to get ALL of your associations handled. Check out this video to see how to map everything
 from Acrobat Reader to Outlook.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sEErDOmFNuk" title="Setting Default File Associations with Endpoint Policy Manager and PDQ Deploy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sEErDOmFNuk" title="Setting Default File Associations with Endpoint Policy Manager and PDQ Deploy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Setting Default File Associations with Endpoint Policy Manager and PDQ Deploy
 
@@ -219,3 +219,5 @@ Jeremy: So simple. That's it for us.
 Katie: I'm Katie.
 
 Jeremy: I'm Jeremy. Thanks for watching.
+
+

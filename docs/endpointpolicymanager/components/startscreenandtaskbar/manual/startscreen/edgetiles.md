@@ -42,3 +42,5 @@ you to log off and log on again to see the Start Menu changes.
 ![quickstart_start_screen_manager_22](/images/endpointpolicymanager/startscreentaskbar/startscreen/quickstart_start_screen_manager_22.webp)
 
 Figure 27. The application tiles inside the new group.
+
+

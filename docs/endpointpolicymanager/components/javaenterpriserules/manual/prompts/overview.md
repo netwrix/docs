@@ -13,3 +13,5 @@ Therefore, you will receive Java prompts, which apply to the following browsers:
   either browser.)
 - Type 2 — Firefox
 - Type 3 — Internet Explorer
+
+

@@ -16,4 +16,7 @@ delete it.
 
 ![deleting_stray_elements](/images/endpointpolicymanager/applicationsettings/designstudio/deleting_stray_elements.webp)
 
-Figure 158. Deleting stray elements with the Hierarchy tab.
+The figure shown. Deleting stray elements with the Hierarchy tab.
+
+
+

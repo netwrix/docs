@@ -16,3 +16,5 @@ This is indicative of Folder Redirection in use.
 Try to change the Pak properties so it runs as USER as seen here:
 
 ![484_1_2015-02-20_1513](/images/endpointpolicymanager/troubleshooting/applicationsettings/484_1_2015-02-20_1513.webp)
+
+

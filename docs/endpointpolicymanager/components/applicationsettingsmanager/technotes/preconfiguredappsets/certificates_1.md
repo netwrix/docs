@@ -11,7 +11,7 @@ There are various areas you should troubleshoot FIRST with FF and Certificates.
 Shortest possible answer to 99% of problems with FF + Certificates:
 
 1. Are you using FF ESR? You must use FF ESR…
-   [Read THIS](https://www.endpointpolicymanager.com/pp-blog/endpointpolicymanager-will-soon-only-support-firefox-esr).
+   [Read THIS](https://www.policypak.com/pp-blog/endpointpolicymanager-will-soon-only-support-firefox-esr).
 2. Do you have the LATEST CSE on the endpoint? STOP: Make sure.
 3. Also; couldn't hurt to upgrade your MMC console to latest version.
 4. Are you using the LATEST Firefox pak? STOP: Make sure.
@@ -95,3 +95,5 @@ well which are helpful for troubleshooting.
 
 We can try to see if YOUR CERT works in OUR environment.
 We can also send you OUR TEST CERT and see if it works in YOURs.
+
+

@@ -39,3 +39,6 @@ right click inside the Open/Save dialog and gain elevated privilege to launch ot
 If, however, you need the Open/Save dialog to be elevated, you can uncheck the option, and the
 Open/Save dialog will be elevated as well. This is sometimes required if applications require access
 to files or directories that the standard user doesn't have access to.
+
+
+

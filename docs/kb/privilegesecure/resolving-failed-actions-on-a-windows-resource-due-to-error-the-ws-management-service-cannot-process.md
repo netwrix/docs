@@ -34,11 +34,11 @@ If remote shell access is disabled on a Windows resource, Netwrix Privilege Secu
 Unable to connect using PowerShell remoting to <hostname> with user <domain>\<user>: Connecting to remote server <ip_address> failed with the following error message : The WS-Management service cannot process the request. The service is configured to not accept any remote shell requests.
 ```
 
-![User-added image](images/ka04u000000HcZv_0EM4u000004bUoa.png)
+![User-added image](./images/ka04u000000HcZv_0EM4u000004bUoa.png)
 
 This is caused by a Group Policy, configured at the local or domain level, that disables remote shell access on the resources the GPO targets:
 
-![User-added image](images/ka04u000000HcZv_0EM4u000004bUof.png)
+![User-added image](./images/ka04u000000HcZv_0EM4u000004bUof.png)
 
 ## Instructions
 
@@ -48,7 +48,7 @@ You can verify this GPO in the Group Policy Editor on the target resource (or in
 Computer Configuration > Administrative Templates > Windows Components > Windows Remote Shell > Allow Remote Shell Access
 ```
 
-![User-added image](images/ka04u000000HcZv_0EM4u000004bUok.png)
+![User-added image](./images/ka04u000000HcZv_0EM4u000004bUok.png)
 
 You can also verify the setting in PowerShell, but the GPO must first have been **Enabled** or **Disabled** so the correct registry key exists:
 
@@ -59,6 +59,6 @@ Get-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\WinRM\Service\
 - If the value is set to **0**, then remote shell access is **Disabled**.
 - If the value is set to **1**, then remote shell access is **Enabled**.
 
-![User-added image](images/ka04u000000HcZv_0EM4u000004bUop.png)
+![User-added image](./images/ka04u000000HcZv_0EM4u000004bUop.png)
 
 To resolve the error, set this GPO to either **Enabled** or **Not Configured**. In a domain environment, you should make this change via a domain-configured GPO rather than manually modifying the registry key on the target resource.

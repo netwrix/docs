@@ -8,7 +8,7 @@ sidebar_position: 30
 If you need to manage applications, the desktop, Java, the Start Menu and more.. you have to see
 this action packed Netwrix Endpoint Policy Manager (formerly PolicyPak) + Citrix demo.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KEOkp-2pimI?si=WxMmP-bBjZVpJPDp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KEOkp-2pimI?si=WxMmP-bBjZVpJPDp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager on Citrix: You Gotta Try This
 
@@ -191,12 +191,12 @@ over here. Let's say you're having a good time. You're over here at "citrix.com.
 going great at "citrix.com" here, but you know that the PolicyPak website doesn't work perfectly
 unless it's in Internet Explorer.
 
-You can start another tab. Don't blink. Here's the magic: "www.endpointpolicymanager.com." Watch this. We're
+You can start another tab. Don't blink. Here's the magic: "www.policypak.com." Watch this. We're
 going to close the tab and open up the right browser for the right website. Did you see that go?
 This is coming from Citrix. This is not local to the desktop. This is happening all on the Citrix
 server.  
 I can show you that again if you want to here in Chrome land. Don't blink. I'm here on the Citrix
-server. I go to "www.endpointpolicymanager.com," and we route you over to Internet Explorer. If you're in
+server. I go to "www.policypak.com," and we route you over to Internet Explorer. If you're in
 Firefox as well, I've actually set up a couple of routes.
 
 In fact, let me show you what routes I have set up so you can see how easy this is to do. "PP
@@ -204,7 +204,7 @@ Browser Router Demo," he's already ready to go. Let me click "Edit" on this guy.
 saying when I'm on this wrong website, route me to the right browser.
 
 If I go to "PolicyPak/Browser Router" here, these policies are set up. I have whenever I go to
-"www.endpointpolicymanager.com," head on over to "Internet Explorer." Whenever I go to "mozilla," make me use
+"www.policypak.com," head on over to "Internet Explorer." Whenever I go to "mozilla," make me use
 "Firefox." Whenever I go over to "google," I want to use "Google Chrome." Whenever I go to
 "facebook," "Block" it.
 
@@ -230,7 +230,7 @@ run perfectly as needed can be done not only on the desktop but also on Citrix.
 
 You can see this is being prompted from a Citrix box for UAC prompts, but that is not the best way
 to do this. The best way to do this is to create a PolicyPak Least Provilege Manager rule
-([https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)),
+([https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)),
 which I've already got set up here. Let me go ahead and select "Link Enabled." Then I'll go ahead
 and click "Edit" just to show you what it looks like here.
 
@@ -288,7 +288,7 @@ PolicyPak is kicking in inside the desktop session and if all goes well here we 
 and click on "Google Chrome."
 
 All the stuff I showed you earlier of course also works inside. If you're in the browser and you
-need to go to the right browser, like I said you want to "endpointpolicymanager.com" here, what are we going to
+need to go to the right browser, like I said you want to "policypak.com" here, what are we going to
 do? Browser Router kicks in here and so on.
 
 It all is one unified system. No brain power involved. You already know how to use it because you
@@ -303,3 +303,5 @@ winner, I will reach out to you and send you a copy of my book.
 
 I think that's it. I'm 20 seconds under time. With that in mind, I'm going to hand it back over to
 my pal, Eric.
+
+

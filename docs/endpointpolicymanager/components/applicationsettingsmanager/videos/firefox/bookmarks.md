@@ -8,7 +8,7 @@ sidebar_position: 50
 With Netwrix Endpoint Policy Manager (formerly PolicyPak) you can add or remove bookmarks to the
 menus or the toolbar. Watch this video to see exactly how to do it.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JGuMqQXqNcY?si=94_raIJ6JLqNTKXG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JGuMqQXqNcY?si=94_raIJ6JLqNTKXG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Manage Firefox Bookmarks
 
@@ -64,3 +64,5 @@ It's just that simple. If you want to manipulate Firefox settings, such as the b
 is the way for you to do that.
 
 Thanks very much, and we'll talk to you soon.
+
+

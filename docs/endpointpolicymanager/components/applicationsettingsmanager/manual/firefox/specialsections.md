@@ -11,12 +11,12 @@ values listed for how to use that section. Many also let you specify the first l
 
 `MODE=REPLACE` or `MODE=MERGE`
 
-In Figure 2, you can see Permissions tab has the default example set with `MODE=REPLACE` and shows
+In the figure shown, you can see Permissions tab has the default example set with `MODE=REPLACE` and shows
 some examples on how to use the special section.
 
 ![how_to_use_special_sections](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/how_to_use_special_sections.webp)
 
-Figure 2. Site to Zone assignment special section.
+The figure shown. Site to Zone assignment special section.
 
 :::note
 If you leave the MODE line off, the default is MERGE.
@@ -36,3 +36,6 @@ additions make it to their environment.
 Note that with some sections (like Bookmarks), MERGE is the only option and is not changeable. In
 the next sections we'll explore each tab and highlight anything noteworthy with examples, tips,
 tricks, and exceptions.
+
+
+

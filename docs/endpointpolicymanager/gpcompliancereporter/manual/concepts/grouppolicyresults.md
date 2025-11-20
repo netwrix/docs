@@ -35,3 +35,4 @@ cannot:
 Endpoint Policy Manager GPCR allows you to define pass/fail settings compliance across your network,
 providing a metric to test against. Its two modes of operation, pull mode and push mode, are
 described next.
+

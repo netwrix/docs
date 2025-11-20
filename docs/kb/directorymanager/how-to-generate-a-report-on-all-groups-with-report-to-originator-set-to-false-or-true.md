@@ -37,16 +37,16 @@ Netwrix Directory Manager (formerly GroupID) allows you to generate reports on a
 ### Generate a Report for All Groups with Report to Originator Set to False
 1. Open the Netwrix Directory Manager Portal and go to the **Reports** options.
 2. Select **Group Reports** > **All groups with report to originator set to False**.  
-   ![Group Reports section in Directory Manager Reports module](images/ka0Qk000000FXID_0EMQk00000BxOMY.png)
+   ![Group Reports section in Directory Manager Reports module](./images/ka0Qk000000FXID_0EMQk00000BxOMY.png)
 3. Click **Create Report** to launch the **Create Report** wizard.
 4. On the first page, specify a custom title for your report in the **Report Name** box if desired. The default title is **All Groups with Report to Originator Set to False**.  
-   ![Create Report wizard in Directory Manager](images/ka0Qk000000FXID_0EMQk00000BxQsz.png)
+   ![Create Report wizard in Directory Manager](./images/ka0Qk000000FXID_0EMQk00000BxQsz.png)
 5. Click **Browse** to open the **Select Container** dialog box and select the required source container. The default selection is the **Global Catalog**.
 6. Select the **Include sub containers** check box to include sub-containers for the selected container.
 7. In the **Filter Criteria** section, modify the default LDAP filter as required. To add additional filters, click **Add More Filters**.
 8. Click **Next**.
 9. In the **Fields** section, add or remove fields as needed and adjust their order.  
-   ![Fields section in Create Report wizard](images/ka0Qk000000FXID_0EMQk00000BxIu1.png)
+   ![Fields section in Create Report wizard](./images/ka0Qk000000FXID_0EMQk00000BxIu1.png)
 10. From the **Sort By** drop-down list, select the field by which to sort the report results.
 11. From the **Schedule** drop-down list, select a schedule for the report if desired. The report will run automatically at the specified time.
 12. Click **Finish**.
@@ -57,7 +57,7 @@ Netwrix Directory Manager (formerly GroupID) allows you to generate reports on a
     - Date the report was created
     - Filter applied
     - List of report results  
-    ![Sample report output in Directory Manager](images/ka0Qk000000FXID_0EMQk00000BxR5t.png)
+    ![Sample report output in Directory Manager](./images/ka0Qk000000FXID_0EMQk00000BxR5t.png)
 14. The report is listed in the template's page. You can create multiple reports from the same template.
 15. To download the report, click **Download** and select the format (PDF, Excel, or HTML).
 16. You can also pin the report to the Dashboard by clicking **Pin Report**.
@@ -65,16 +65,16 @@ Netwrix Directory Manager (formerly GroupID) allows you to generate reports on a
 ### Generate a Report for All Groups with Report to Originator Set to True
 1. Open the Netwrix Directory Manager Portal and go to the **Reports** options.
 2. Select **Group Reports** > **All groups with report to originator set to True**.  
-   ![Group Reports section for report to originator set to True](images/ka0Qk000000FXID_0EMQk00000BxHL4.png)
+   ![Group Reports section for report to originator set to True](./images/ka0Qk000000FXID_0EMQk00000BxHL4.png)
 3. Click **Create Report** to launch the **Create Report** wizard.
 4. On the first page, specify a custom title for your report in the **Report Name** box if desired. The default title is **All Groups with Report to Originator Set to True**.  
-   ![Create Report wizard for report to originator set to True](images/ka0Qk000000FXID_0EMQk00000BxMhJ.png)
+   ![Create Report wizard for report to originator set to True](./images/ka0Qk000000FXID_0EMQk00000BxMhJ.png)
 5. Click **Browse** to open the **Select Container** dialog box and select the required source container. The default selection is the **Global Catalog**.
 6. Select the **Include sub containers** check box to include sub-containers for the selected container.
 7. In the **Filter Criteria** section, modify the default LDAP filter as required. To add additional filters, click **Add More Filters**.
 8. Click **Next**.
 9. In the **Fields** section, add or remove fields as needed and adjust their order.  
-   ![Fields section in Create Report wizard for report to originator set to True](images/ka0Qk000000FXID_0EMQk00000BxMpN.png)
+   ![Fields section in Create Report wizard for report to originator set to True](./images/ka0Qk000000FXID_0EMQk00000BxMpN.png)
 10. From the **Sort By** drop-down list, select the field by which to sort the report results.
 11. From the **Schedule** drop-down list, select a schedule for the report if desired. The report will run automatically at the specified time.
 12. Click **Finish**.
@@ -85,7 +85,7 @@ Netwrix Directory Manager (formerly GroupID) allows you to generate reports on a
     - Date the report was created
     - Filter applied
     - List of report results  
-    ![Sample report output for report to originator set to True](images/ka0Qk000000FXID_0EMQk00000BxMuD.png)
+    ![Sample report output for report to originator set to True](./images/ka0Qk000000FXID_0EMQk00000BxMuD.png)
 14. The report is listed in the template's page. You can create multiple reports from the same template.
 15. To download the report, click **Download** and select the format (PDF, Excel, or HTML).
 16. You can also pin the report to the Dashboard by clicking **Pin Report**.

@@ -72,3 +72,5 @@ permissions, the user cannot read the User side of the GPO's contents.
 ![tips_security_and_troubleshooting_5](/images/endpointpolicymanager/troubleshooting/remoteworkdelivery/tips_security_and_troubleshooting_5.webp)
 
 Figure 54. The result of hardening a GPO.
+
+

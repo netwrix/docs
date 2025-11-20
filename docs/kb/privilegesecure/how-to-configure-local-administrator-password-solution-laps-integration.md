@@ -66,7 +66,7 @@ This article outlines how to integrate Netwrix Privilege Secure activities with 
    - Select the service account that has read and reset permissions for the LAPS OU(s) from the **ServiceAccount** dropdown.
    - Add the domain name (for example, `lab.local`) in **DomainName** and click **Save**.
 
-   ![Screenshot demonstrating LAPS connector configuration in SbPAM's web application interface.](images/ka04u000000Hca2_0EM4u000004bnRk.png)
+   ![Screenshot demonstrating LAPS connector configuration in SbPAM's web application interface.](./images/ka04u000000Hca2_0EM4u000004bnRk.png)
 
 4. Create an activity that uses the LAPS connector
    - Navigate to **Activities** to create an activity that provides the built-in Administrator access to a Windows resource managed by LAPS.
@@ -75,7 +75,7 @@ This article outlines how to integrate Netwrix Privilege Secure activities with 
    - Set **Platform** to **Windows**.
    - Ensure the **Login Account Template** matches the expected built-in admin account name (in most cases this is the default value `Administrator`).
 
-   ![Screenshot demonstrating an SbPAM activity definition that's configured to use a LAPS connector.](images/ka04u000000Hca2_0EM4u000004bnS4.png)
+   ![Screenshot demonstrating an SbPAM activity definition that's configured to use a LAPS connector.](./images/ka04u000000Hca2_0EM4u000004bnS4.png)
 
    - Add any other desired actions to the activity.
 

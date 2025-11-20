@@ -80,3 +80,5 @@ encrypted. Here is how the client attempts to communicate with Endpoint Policy M
   algorithm suite that uses RSA15 as the key wrap algorithm, SHA256 for the signature digest, and
   256-bit Basic as the message encryption algorithm. In HTTP mode the Endpoint Policy Manager Cloud
   client verifies the identity of the server using a hardcoded certificate.
+
+

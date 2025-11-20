@@ -11,3 +11,6 @@ Support, zip up these three logs. As the customer, you can find useful informati
 endpointpolicymanagerd.log and cloud.log (details later in this document).
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/mac/1329_1_6e10551394ec326177434ffc228df475.webp)
+
+
+

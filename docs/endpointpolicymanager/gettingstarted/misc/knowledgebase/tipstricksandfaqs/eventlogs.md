@@ -15,7 +15,7 @@ If you want to learn more about on-prem Event Forwarding, you can see my Walkthr
 that here
 [Using Windows Event Forwarding to search for interesting events](/docs/endpointpolicymanager/components/endpointprivilegemanager/videolearningcenter/eventing/windowseventforwarding.md)
 and
-[How to forward interesting events for Least Privilege Manager (or anything else) to a centralized location using Windows Event Forwarding.](/docs/endpointpolicymanager/components/endpointprivilegemanager/knowledgebase/eventing/windowseventforwarding.md).
+[How to forward interesting events for Least Privilege Manager (or anything else) to a centralized location using Windows Event Forwarding.](/docs/endpointpolicymanager/components/endpointprivilegemanager/technotes/eventing/windowseventforwarding.md).
 :::
 
 

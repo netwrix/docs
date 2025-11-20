@@ -15,11 +15,14 @@ they can be contained within frames.
 
 Your goal with Endpoint Policy Manager DesignStudio is to bring in as much of the applications' user
 interface (UI) that you want to configure as possible. Then, you can use the DesignStudio to tweak
-the design and configure each setting (see Figure 49.
+the design and configure each setting (See the figure here.
 
 ![getting_around](/images/endpointpolicymanager/applicationsettings/designstudio/navigation/getting_around.webp)
 
-Figure 49. Some of the main Endpoint Policy Manager DesignStudio components.
+The figure shown. Some of the main Endpoint Policy Manager DesignStudio components.
 
 Now that we've discussed vocabulary, we'll examine each item in DesignStudio to understand how it's
 used to create AppSets.
+
+
+

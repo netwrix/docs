@@ -7,7 +7,7 @@ sidebar_position: 50
 
 Need to route specific websites to specific browsers based upon ports? Check out this demo.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Zy08Oi7e0ak" title="Endpoint Policy Manager: Browser Router and Ports" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zy08Oi7e0ak" title="Endpoint Policy Manager: Browser Router and Ports" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Browser Router and Ports
 
@@ -61,3 +61,5 @@ an exact match.
 With that in mind, if you have any questions about how to use Endpoint Policy Manager Browser
 Router, we look forward to answering them and hope you get to take advantage of this real soon.
 Thanks.
+
+

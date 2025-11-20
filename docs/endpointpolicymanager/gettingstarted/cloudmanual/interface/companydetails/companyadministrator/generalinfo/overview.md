@@ -17,3 +17,5 @@ The actions you can take are listed below and explained in the following section
 - [Resend Welcome Letter](/docs/endpointpolicymanager/gettingstarted/cloudmanual/interface/companydetails/companyadministrator/generalinfo/resendwelcomeletter.md)
 - [Login Restrictions Editor](/docs/endpointpolicymanager/gettingstarted/cloudmanual/interface/companydetails/companyadministrator/generalinfo/loginrestrictionseditor.md)
 - [N](/docs/endpointpolicymanager/gettingstarted/cloudmanual/interface/companydetails/editnotificationconfiguration.md)[Notification Editor](/docs/endpointpolicymanager/gettingstarted/cloudmanual/interface/companydetails/companyadministrator/generalinfo/notificationeditor.md)ditor
+
+

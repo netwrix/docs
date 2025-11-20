@@ -9,7 +9,7 @@ Making an MDM policy to manage the Start Menu and Taskbar can be a NIGHTMARE. Bu
 Endpoint Policy Manager (formerly PolicyPak) Start Screen Manager. With us you can have ONE policy
 which can be used again and again. See how it's done.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/amWoU2LMiBk" title="Endpoint Policy Manager Start Screen Manager and MDM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/amWoU2LMiBk" title="Endpoint Policy Manager Start Screen Manager and MDM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak Start Screen Manager and MDM
 
@@ -69,3 +69,5 @@ Manager Start Screen Manager settings.
 
 I hope that helps you out. Looking forward to getting started with you soon.  
 Take care.
+
+

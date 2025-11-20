@@ -8,7 +8,7 @@ sidebar_position: 30
 Want to deploy Windows Store Apps via Software Package Manager, but want to enforce that ONLY
 specific UWP apps can run? This is the one-two combination you need to get the job done!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NT07ngb0aJM" title="Endpoint Policy Manager Software Package Manager: AppX Manager" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NT07ngb0aJM" title="Endpoint Policy Manager Software Package Manager: AppX Manager" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 In a previous video you saw me use Netwrix Endpoint Policy Manager (formerly PolicyPak)'s Software
@@ -119,3 +119,5 @@ remove applications. Many of them you can add using Software Package Manager. Th
 put the full smack down on the Least Privilege Manager with our Add New UWP Policy to Deny your UWP
 Applications and then Allow the ones that you expressly want to open up, there you go. I hope this
 helps you out. Looking forward to getting you started with Endpoint Policy Manager real soon.
+
+

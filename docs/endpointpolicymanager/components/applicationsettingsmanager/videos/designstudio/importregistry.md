@@ -9,7 +9,7 @@ If you've already got collections of registry keys you want to deliver, Endpoint
 ensure that they are always delivered and consistently reinforced. In this tip, use the PP
 DesignStudio to import your registry keys for both ON and OFF values.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/x36X-KR8vlw?si=ab8hoTKDNEOFlwsd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x36X-KR8vlw?si=ab8hoTKDNEOFlwsd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Use the DesignStudio to import existing registry keys
 
@@ -56,3 +56,5 @@ your target machines. That is a new feature in the Design Studio called Registry
 any questions, we're here for you.
 
 Thanks so very much.
+
+

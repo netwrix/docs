@@ -30,3 +30,5 @@ in Figure 18.
 ![troubleshooting](/images/endpointpolicymanager/troubleshooting/remotedesktopprotocol/troubleshooting.webp)
 
 Figure 18. The ppuser log file.
+
+

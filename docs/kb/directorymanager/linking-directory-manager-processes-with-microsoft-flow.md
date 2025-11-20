@@ -48,7 +48,7 @@ Refer to the official Microsoft documentation to create a custom connector in MS
 
 During setup, you must enter the **Client ID** and **Client Secret** and import the `GroupIDConnector.swagger.json` file.
 
-![Security page showing fields for Client ID and Client Secret](images/ka0Qk000000DS6X_0EMQk000004nFgL.png)
+![Security page showing fields for Client ID and Client Secret](./images/ka0Qk000000DS6X_0EMQk000004nFgL.png)
 
 ### Step 2: Retrieve the Client ID, Secret, and Swagger File
 
@@ -56,7 +56,7 @@ During setup, you must enter the **Client ID** and **Client Secret** and import 
 2. On the **Identity Stores** tab, double-click the identity store you want to link to MS Flow.
 3. On the **Workflow** tab in identity store properties, click the **MS Flow** link.
 
-![Workflow tab showing Microsoft Flow link](images/ka0Qk000000DS6X_0EMQk000004nFgM.png)
+![Workflow tab showing Microsoft Flow link](./images/ka0Qk000000DS6X_0EMQk000004nFgM.png)
 
 4. Click the copy button next to **MS Flow Client ID** to copy the client ID to the clipboard, then paste the ID in the **Client ID** box in MS Flow.
 5. Click the copy button next to **MS Flow Client Secret** to copy the client secret (password) to the clipboard, then paste this password in the **Client Secret** box in MS Flow.

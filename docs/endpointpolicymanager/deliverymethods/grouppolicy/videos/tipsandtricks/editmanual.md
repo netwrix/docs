@@ -7,7 +7,7 @@ sidebar_position: 10
 
 PolicyPak: Manual editing Item Level Targeting to affect local Admins and other local accounts
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KTKunCi0uY0?si=jB0UqQPxv0-ld1X8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KTKunCi0uY0?si=jB0UqQPxv0-ld1X8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Manual editing Item Level Targeting to affect local Admins and other local accounts
 
@@ -17,7 +17,7 @@ Group Policy or PolicyPak-land to local administrators and local groups.
 Let me show you what the problem is. The idea is that if you go to "Add" a "New Policy" setting here
 – and I'm going to say something like "Control Panel," "Prohibit access to the Control Panel" – you
 can use our "Item Level Targeting" feature
-([https://www.endpointpolicymanager.com/pp-blog/item-level-targeting](https://www.endpointpolicymanager.com/pp-blog/item-level-targeting))
+([https://www.policypak.com/pp-blog/item-level-targeting](https://www.policypak.com/pp-blog/item-level-targeting))
 and specify a "Security Group." So you only want to do this thing when the guy is a member of a
 "Security Group."
 
@@ -72,7 +72,7 @@ the opportunity to utilize it in PolicyPak Cloud.
 
 The same thing goes for just about everything else we do. For instance, if you have an item-level
 targeting for "Application Settings Manager," "Browser Router," "Least Privilege Manager"
-([https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html))
+([https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html))
 or anything, this all looks exactly the same. You can use the same exact technique if you want to
 find the SID.
 
@@ -94,3 +94,5 @@ That should give you enough to go on to modify it. I hope that helps you out and
 PolicyPak to affect your local users or groups with item-level targeting.
 
 Thanks so much and talk to you soon.
+
+

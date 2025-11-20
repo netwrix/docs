@@ -35,7 +35,7 @@ Password Expiration Notifier may include data on expiring accounts, if enabled. 
 3. Select the **Advanced** tab, and either check or uncheck the **Include data on expiring accounts**.
 4. The next report will be affected.
 
-![Include data on expiring accounts](images/ka04u00000117wO_0EM4u000008MQhR.png)
+![Include data on expiring accounts](./images/ka04u00000117wO_0EM4u000008MQhR.png)
 
 To verify the account expiration date, refer to the following steps:
 
@@ -43,8 +43,9 @@ To verify the account expiration date, refer to the following steps:
 2. Right-click the user, and select **Properties**.
 3. The account expiration date is provided in the **Account** tab > **Account expires**, and the **Attribute Editor** tab > `accountExpires` attribute.
 
-![Account expires and accountExpires attribute](images/ka04u00000117wO_0EM4u000008MQmb.png)
+![Account expires and accountExpires attribute](./images/ka04u00000117wO_0EM4u000008MQmb.png)
 
 ### Related articles
 
 - [How Long Until My Password Expires? ⸱ Microsoft 🙅](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/ms974598(v=msdn.10)?redirectedfrom=MSDN)
+

@@ -14,3 +14,4 @@ Apply this KB to apply to all your DCs:
 [https://support.microsoft.com/en-us/kb/2791372](https://support.microsoft.com/en-us/kb/2791372)
 
 Then retry the Netwrix Endpoint Policy Manager (formerly PolicyPak) operation.
+

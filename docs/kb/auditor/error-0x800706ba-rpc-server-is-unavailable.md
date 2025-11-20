@@ -73,7 +73,7 @@ Failed to update the agent on the following server: %server%
 
   > **NOTE:** If you see the following error in the Event Viewer while checking **Event Viewer (Local)** connection to another computer, enable inbound rules (COM+ Network Access and all rules in the Remote Event Log Management group) on the target computer. Refer to the following article for additional information: Configuration − Logon Activity Ports: Configure Windows Firewall Inbound Connection Rules ⸱ v10.6.
   >
-  > ![COM+ Network Access screenshot](images/ka04u000000wvy4_0EM4u000008LkB8.png)
+  > ![COM+ Network Access screenshot](./images/ka04u000000wvy4_0EM4u000008LkB8.png)
   >
   > Learn more in: 0x80004027 error when you try to remotely access COM+ object after you upgrade to Windows Server 2016 or later versions ⸱ Microsoft
 
@@ -105,3 +105,4 @@ Failed to update the agent on the following server: %server%
 - [Windows Server Troubleshooting: RPC server is unavailable ⸱ Microsoft](https://social.technet.microsoft.com/wiki/contents/articles/4494.windows-server-troubleshooting-rpc-server-is-unavailable.aspx)
 - Сonnection Issue when TLS 1.2 Is Required
 - [Server Hardware Performance Considerations ⸱ Microsoft](https://learn.microsoft.com/en-us/windows-server/administration/performance-tuning/hardware/)
+

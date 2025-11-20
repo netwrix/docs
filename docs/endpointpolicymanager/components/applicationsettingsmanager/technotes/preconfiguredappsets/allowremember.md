@@ -56,3 +56,5 @@ Now that you know that, you can use Endpoint Policy Manager Application Settings
 Firefox Pak to set this permission to Allow or Block.
 
 ![132_5_ff-kb-img-05](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/132_5_ff-kb-img-05.webp)
+
+

@@ -93,3 +93,4 @@ method. So as per the EULA, you must manually state if you plan to use Endpoint 
 Terminal Services sessions and add that number to the computer count.
 
 :::
+

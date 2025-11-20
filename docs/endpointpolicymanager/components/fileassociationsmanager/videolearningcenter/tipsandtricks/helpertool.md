@@ -10,7 +10,7 @@ Associations Manager, and you want to associate a file to a program that's not o
 station? Use the File Associations Manager Helper Tool, then use the resulting XML file to manage
 File Associations on your MDM enrolled machine like a boss!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4lutKddiiHs" title="Endpoint Policy Manager MDM: File Associations Manager Helper Tool" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4lutKddiiHs" title="Endpoint Policy Manager MDM: File Associations Manager Helper Tool" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager MDM: File Associations Manager Helper Tool
 
@@ -107,3 +107,5 @@ That's how you're going to fix the problem of having an application on your endp
 can't get on your management station but you still want to associate files to it.
 
 Thanks for watching, and we'll see you in the next video.
+
+

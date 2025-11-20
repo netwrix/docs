@@ -54,7 +54,7 @@ The **Faulting module name** dynamic-link library file was corrupted. This could
 
 ## Resolutions
 
-1. Set up antivirus exclusions to prevent both your antivirus solution and Netwrix Auditor from conflicting — refer to the following article for additional information: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)
+1. Set up antivirus exclusions to prevent both your antivirus solution and Netwrix Auditor from conflicting — refer to the following article for additional information: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)
 
 2. Establish the scope of affected `.dll` files. In case the **Faulting module path** links the system folder (e.g., `C:\Windows\System32`), follow these steps:
 
@@ -80,9 +80,9 @@ The **Faulting module name** dynamic-link library file was corrupted. This could
 
    3. Once the commands are completed and components are restored, restart the server.
 
-3. In case the **Faulting module path** links a Netwrix-related folder (e.g., `C:\Program Files (x86)\Netwrix Auditor\Active Directory Auditing`), repair your Netwrix Auditor installation. Refer to the following article for additional information: [How to Repair Netwrix Auditor Installation](/docs/kb/auditor/how-to-repair-netwrix-auditor-installation.md)
+3. In case the **Faulting module path** links a Netwrix-related folder (e.g., `C:\Program Files (x86)\Netwrix Auditor\Active Directory Auditing`), repair your Netwrix Auditor installation. Refer to the following article for additional information: [How to Repair Netwrix Auditor Installation](/docs/kb/auditor/how-to-repair-netwrix-auditor-installation)
 
 ## Related articles
 
-- [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)
-- [How to Repair Netwrix Auditor Installation](/docs/kb/auditor/how-to-repair-netwrix-auditor-installation.md)
+- [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)
+- [How to Repair Netwrix Auditor Installation](/docs/kb/auditor/how-to-repair-netwrix-auditor-installation)

@@ -11,7 +11,7 @@ Netwrix Endpoint Policy Manager (formerly PolicyPak) File Associations Manager. 
 with "Set a default associations configuration" is for the birds, and isn't flexible. Instead,
 manage it quickly using Group Policy, and Endpoint Policy Manager.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7OM2EJkUvsI" title="Endpoint Policy Manager: File Associations Manager ... and Microsoft Endpoint Manager (or any MDM service)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7OM2EJkUvsI" title="Endpoint Policy Manager: File Associations Manager ... and Microsoft Endpoint Manager (or any MDM service)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 In a previous video, you saw me send file associations down to the right applications at the right
 time for user side and computers using Group Policy. In this video, I'm going to show you how to do
@@ -69,3 +69,5 @@ If you want to take your file associations on the road with you to your non doma
 you can do it with Endpoint Policy Manager File Associations Manager and your MDM service like
 Microsoft Endpoint Manager. Hope this video helps you out. Looking forward to getting you started
 real soon. Take care.
+
+

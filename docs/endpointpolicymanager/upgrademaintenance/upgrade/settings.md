@@ -64,3 +64,4 @@ utility to update each GPO automatically with the latest version of the AppSet D
 
 To see a video overview of how to manually touch a GPO, see
 [GPOTouch Utility](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/centralstoresharing/touchutility.md).
+

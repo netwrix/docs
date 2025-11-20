@@ -36,4 +36,4 @@ The default setting for the **Performed By** field is `Any` instead of `End User
 1. Select `End User` in the **Performed By** field.
 2. Search for the user by typing their display name in the **User Name** field.
 
-![User-added image](images/ka0Qk0000001Q0T_0EMQk000002TgcF.png)
+![User-added image](./images/ka0Qk0000001Q0T_0EMQk000002TgcF.png)

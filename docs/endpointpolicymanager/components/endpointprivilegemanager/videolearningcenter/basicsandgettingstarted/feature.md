@@ -13,7 +13,7 @@ using Netwrix Endpoint Policy Manager (formerly PolicyPak) SecureRun. With Secur
 letting applications run if they were “properly installed” or otherwise sanctioned by you. Check out
 this video, and block all unknown Malware and zero-day threats.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JZn7ew4j2aU?si=6VBJZLuPuRTF533L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JZn7ew4j2aU?si=6VBJZLuPuRTF533L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak MDM: Using Least Privilege Managers SecureRun Feature
 
@@ -107,3 +107,5 @@ that’s how you’re going to smack that right down but then maybe allow someth
 know to be good.
 
 Thanks for watching, and we’ll see you in the next video.
+
+

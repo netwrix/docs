@@ -60,7 +60,7 @@ Depending on your environment and needs, the Audit Database retention period can
 
 ### Exclude Netwrix-related folders from antivirus scans
 
-As Netwrix Auditor creates and writes audit data in smaller portions, your antivirus suite will attempt to check every new or edited file to complete the threat check. Full file reads might take extra time to complete, hindering the writing capability of Netwrix Auditor, in some cases leading to timeouts and additional RAM and CPU loads. Refer to the following article for additional information on folders to be excluded from regular antivirus checks: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)
+As Netwrix Auditor creates and writes audit data in smaller portions, your antivirus suite will attempt to check every new or edited file to complete the threat check. Full file reads might take extra time to complete, hindering the writing capability of Netwrix Auditor, in some cases leading to timeouts and additional RAM and CPU loads. Refer to the following article for additional information on folders to be excluded from regular antivirus checks: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)
 
 ### Set up data collection for State-in-Time reports
 
@@ -89,7 +89,7 @@ In case you have an Event Log Manager plan set up, make sure it doesn't monitor 
 
 ### Omit lists
 
-You can limit the monitoring scope in your environment via omit lists — this allows to proactively decrease the DB loads as changes for omitted items are not recorded. For additional information on how to exclude users and objects via Netwrix Auditor UI, refer to the following article: [How to Exclude Users and Objects from Monitoring Scope in Netwrix Auditor UI](/docs/kb/auditor/how-to-exclude-users-and-objects-from-monitoring-scope-in-netwrix-auditor-ui.md). For additional information on how to use omit lists, refer to the following article: [How to Use Omit Lists](https://docs.netwrix.com/docs/kb/auditor/how-to-use-omit-lists)
+You can limit the monitoring scope in your environment via omit lists — this allows to proactively decrease the DB loads as changes for omitted items are not recorded. For additional information on how to exclude users and objects via Netwrix Auditor UI, refer to the following article: [How to Exclude Users and Objects from Monitoring Scope in Netwrix Auditor UI](/docs/kb/auditor/how-to-exclude-users-and-objects-from-monitoring-scope-in-netwrix-auditor-ui). For additional information on how to use omit lists, refer to the following article: [How to Use Omit Lists](https://docs.netwrix.com/docs/kb/auditor/how-to-use-omit-lists)
 
 ### Related articles
 
@@ -97,7 +97,7 @@ You can limit the monitoring scope in your environment via omit lists — this a
 - [Hardware Requirements](https://docs.netwrix.com/docs/auditor/10_8/requirements/console)
 - [Settings for Data Collection](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/create#settings-for-data-collection)
 - [Configure Database Retention](https://docs.netwrix.com/docs/auditor/10_8/admin/settings/auditdatabase#configure-database-retention)
-- [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)
+- [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)
 - [Manage Data Sources](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/datasources)
-- [How to Exclude Users and Objects from Monitoring Scope in Netwrix Auditor UI](/docs/kb/auditor/how-to-exclude-users-and-objects-from-monitoring-scope-in-netwrix-auditor-ui.md)
+- [How to Exclude Users and Objects from Monitoring Scope in Netwrix Auditor UI](/docs/kb/auditor/how-to-exclude-users-and-objects-from-monitoring-scope-in-netwrix-auditor-ui)
 - [How to Use Omit Lists](https://docs.netwrix.com/docs/kb/auditor/how-to-use-omit-lists)

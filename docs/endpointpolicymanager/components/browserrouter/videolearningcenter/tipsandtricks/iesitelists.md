@@ -8,7 +8,7 @@ sidebar_position: 70
 Use the in-the-box converter utility to take your existing IE Enterprise Site list files and
 immediately use them with Browser Router.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UNvGz-fdJ3M" title="Endpoint Policy Manager: Internet Explorer to Endpoint Policy Manager Browser Router Site lists" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UNvGz-fdJ3M" title="Endpoint Policy Manager: Internet Explorer to Endpoint Policy Manager Browser Router Site lists" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager:  Internet Explorer to Endpoint Policy Manager Browser Router Site lists
 
@@ -51,3 +51,5 @@ using Browser Router right away, you don't have to hand convert it over. We'll d
 you. There you go. Hope that helps you out.
 
 Thank you very much. Looking forward to getting you started.
+
+

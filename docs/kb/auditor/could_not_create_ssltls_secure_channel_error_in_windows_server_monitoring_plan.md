@@ -36,7 +36,7 @@ products:
 ## Resolutions
 
 - Enable TLS 1.2 in your environment − refer to the following article for additional information: Connection Issue when TLS 1.2 Is Required.
-- In case TLS protocol versions are limited to specific versions in your environment, make sure to allow the operating system to select the protocol for incoming and outgoing communication. Refer to the following article for additional information: [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm.md).
+- In case TLS protocol versions are limited to specific versions in your environment, make sure to allow the operating system to select the protocol for incoming and outgoing communication. Refer to the following article for additional information: [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm).
 - Review the certificate used for Windows Server auditing:
   1. In the Netwrix Auditor server, either press **Win + R** or launch the **Run** command window.
   2. In the **Run** command window, type `mmc` and press **OK**. Select **Yes** in the following prompt.
@@ -52,4 +52,4 @@ products:
 ## Related Articles
 
 - Connection Issue when TLS 1.2 Is Required
-- [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm.md)
+- [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm)

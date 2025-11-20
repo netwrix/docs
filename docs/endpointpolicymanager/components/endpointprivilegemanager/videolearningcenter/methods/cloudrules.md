@@ -10,7 +10,7 @@ rights? Is this 1998? No, and with Endpoint Policy Manager Cloud and Endpoint Po
 Privelege manager you can remove local admin rights, but ensure that Standard Users can do key tasks
 to keep doing their jobs and get into the places you need them to in the operating system.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RDxfSzpZxlM" title="Use Endpoint Policy Manager Cloud to deploy PP Least Privilege Manager rules" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RDxfSzpZxlM" title="Use Endpoint Policy Manager Cloud to deploy PP Least Privilege Manager rules" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with Endpoint Policy Manager Software. Have you seen the latest and greatest
 Least Privilege Manager features and you're wondering how that works with our Endpoint Policy
@@ -68,3 +68,5 @@ started this video, Reflect would throw a UAC prompt, and now by using Least Pri
 the Endpoint Policy Manager Cloud, we have managed to elevate this application on a non-domain
 joined machine. If that is of interest to you, sign up for our webinar, and once you're done, we
 will hand over the bits and get you started on your 30-day free trial. Thanks so much.
+
+

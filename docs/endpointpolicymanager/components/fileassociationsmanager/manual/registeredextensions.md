@@ -61,3 +61,5 @@ log on again. When you do, you'll see the XML file icon change to Notepad++. Dou
 icon will launch Notepad++ Portable.
 
 ![about_policypak_file_associations_22](/images/endpointpolicymanager/fileassociations/about_endpointpolicymanager_file_associations_22.webp)
+
+

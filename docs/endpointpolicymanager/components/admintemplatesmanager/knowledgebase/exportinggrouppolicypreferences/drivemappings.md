@@ -64,3 +64,5 @@ as a guide.
 the policy, to verify that they get the drive mapping.
 
 ![106_9_img-9](/images/endpointpolicymanager/preferences/106_9_img-9.webp)
+
+

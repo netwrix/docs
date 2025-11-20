@@ -20,3 +20,4 @@ then one of two things happens:
 
 So, in practice, if you have any available licenses in the Endpoint Policy Manager cloud pool, when
 computers re-connect, they'll simply pick right back up again where they left off.
+

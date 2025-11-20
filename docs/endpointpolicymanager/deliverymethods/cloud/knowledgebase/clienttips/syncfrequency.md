@@ -10,3 +10,5 @@ The Netwrix Endpoint Policy Manager (formerly PolicyPak) Cloud client will sync 
 the computer starts.
 
 If a computer started at 2:22, the next sync will be at 3:22.
+
+

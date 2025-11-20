@@ -31,22 +31,22 @@ You can enable the print event logging by following the steps below:
 1. Enable logging for the print service of the print server — open **Event Viewer** > **Applications and Services Logs** > **Microsoft** > **Windows** > **PrintService**.
 2. Right-click the **Operational** item to select **Properties**.
 
-   ![1.png](images/ka04u000000HdPU_0EM4u0000084ozs.png)
+   ![1.png](./images/ka04u000000HdPU_0EM4u0000084ozs.png)
 
 3. Check the **Enable logging** checkbox — print service events will now be logged. Click **OK** to save changes.
 
-   ![2.png](images/ka04u000000HdPU_0EM4u0000084ozx.png)
+   ![2.png](./images/ka04u000000HdPU_0EM4u0000084ozx.png)
 
 Create an inclusive filter in Netwrix Auditor Event Log Manager:
 
 1. Create a new monitoring plan by clicking **Add** or select the preexisting monitoring plan and click **Edit**.
 2. Click the **Configure** button for Audit archiving filters.
 
-   ![1.png](images/ka04u000000HdPU_0EM4u0000084p07.png)
+   ![1.png](./images/ka04u000000HdPU_0EM4u0000084p07.png)
 
 3. Click **Add** for Inclusive Filters.
 
-   ![2.png](images/ka04u000000HdPU_0EM4u0000084p0C.png)
+   ![2.png](./images/ka04u000000HdPU_0EM4u0000084p0C.png)
 
 4. Fill in the filter name and description with the **Event Log** field to contain the following line:
 
@@ -56,7 +56,7 @@ Create an inclusive filter in Netwrix Auditor Event Log Manager:
 
    Verify the location for the print server event logs via Event Viewer — the Log Name should correspond with the actual event logs location.
 
-   ![3.png](images/ka04u000000HdPU_0EM4u0000084p0D.png)
+   ![3.png](./images/ka04u000000HdPU_0EM4u0000084p0D.png)
 
 5. You can specify Event IDs in the **Event Fields** tab to filter the events (e.g. Event ID 307 for **Printing a document**). Additionally you can filter the events via **Insertion Strings**, refer to the index numbers specified in event details (e.g. Param1 stands for Index 1 with "Job #" value).
 
@@ -65,7 +65,7 @@ Download the **Printed Documents RDL.zip** archive provided below and extract th
 1. Open the Reports Server URL in your browser and navigate to the folder you'd like to upload the report to (e.g. **Home** > **Netwrix Auditor** > **Netwrix Auditor for Event Log** > **Change Reports**).
 2. Click **Upload** to upload the report to the folder.
 
-   ![1.png](images/ka04u000000HdPU_0EM4u0000084p0b.png)
+   ![1.png](./images/ka04u000000HdPU_0EM4u0000084p0b.png)
 
 Configure the report to use the `Netwrix_Auditor_EventLog` database:
 
@@ -79,14 +79,15 @@ Configure the report to use the `Netwrix_Auditor_EventLog` database:
 
    NOTE: `SQLINSTANCE` should be replaced with the name of your SQL Server instance.
 
-   ![2.png](images/ka04u000000HdPU_0EM4u0000084p0l.png)
+   ![2.png](./images/ka04u000000HdPU_0EM4u0000084p0l.png)
 
 4. Input your credentials, test the connection and save the changes.
 
-   ![3.png](images/ka04u000000HdPU_0EM4u0000084p0q.png)
+   ![3.png](./images/ka04u000000HdPU_0EM4u0000084p0q.png)
 
 5. The report is now available via the web interface of your Report Server. It will not appear under Reports in the Netwrix Auditor console.
 
-   ![4.png](images/ka04u000000HdPU_0EM4u0000084p15.png)
+   ![4.png](./images/ka04u000000HdPU_0EM4u0000084p15.png)
 
 Printed Documents RDL: https://www.netwrix.com/download/Printed-Documents-RDL.zip
+

@@ -32,3 +32,5 @@ This technique works for most virtualized browsers such as Microsoft App-V, VMwa
 Note that once a virtualized browser is opened, Endpoint Policy Manager Browser Router cannot route
 away from those browsers and then back to real browsers. This is because Endpoint Policy Manager
 Browser Router's helper extensions are not installed in the virtualized browser.
+
+

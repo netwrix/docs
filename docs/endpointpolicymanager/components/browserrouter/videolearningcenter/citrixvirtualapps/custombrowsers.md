@@ -8,13 +8,13 @@ sidebar_position: 20
 If you have App-V, ThinApp, or Citrix or RDS published applications, use this trick to route from a
 real built-in browser to your virtual / published browser.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0Ch4mQ6Sbf8" title="Endpoint Policy Manager:  Browser Router with Custom Browsers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0Ch4mQ6Sbf8" title="Endpoint Policy Manager:  Browser Router with Custom Browsers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager \_ Browser Router with Custom Browsers
 
 Hi. In this video I'm going to show you how you can use custom browser router routes to ensure that
 the right browser opens for the right time. So, the scenario might be a user might be using the
-built-in version of; say; Internet Explorer and they go to a website like endpointpolicymanager.com. You always
+built-in version of; say; Internet Explorer and they go to a website like policypak.com. You always
 want this to fire off, not here in the built-in browser but either in an Appv4 or 5 browsers or a
 thin app browser or a Citrix browser. For instance, this browser is hanging out over there on the
 Citrix server, so it's connecting to my Citrix server over here. It's real easy to do this. We'll
@@ -67,9 +67,11 @@ That's correct and if I go to vmware, that's going to launch, _boom_, the thin a
 Firefox right there. So, if you've got Appv4, Appv5, Thin App or Citrix, using browser router you
 can specifically say that when they go to the website using the built-in browsers on their machine,
 you will automatically launch the custom browser. Okay? That being said, we do know that if you were
-in the custom browser right here and you try to go back to, for instance, endpointpolicymanager.com, this is
+in the custom browser right here and you try to go back to, for instance, policypak.com, this is
 where the routes end. We do not route from the custom browsers like thin app or Appv back outward to
 your original browser. So, for custom browsers like this, it is a one-way street. For custom routes
 for browsers that are actually installed on the machine, it will route between browsers just fine as
 you have seen in the previous videos. If you have any questions, we are here for you and we hope you
 get started with it soon. Thanks so much.
+
+

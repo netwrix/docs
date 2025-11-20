@@ -209,3 +209,5 @@ reg add HKCU\Software\Microsoft\Windows Photo Viewer\Slideshow\Screensaver /v En
 FINISH
 
 ![207_37_image-20200819181623-19](/images/endpointpolicymanager/scriptstriggers/207_37_image-20200819181623-19.webp)
+
+

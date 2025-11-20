@@ -63,3 +63,5 @@ In summary,
 
 All this becomes time consuming every time you update and roll out an application that will be the
 registered extension or protocol.
+
+

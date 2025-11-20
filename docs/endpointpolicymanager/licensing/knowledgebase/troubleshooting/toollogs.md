@@ -23,3 +23,4 @@ Log files and related files for LT.exe (if any errors are detected) are located 
 
 When asked, a customer need to access this location and ZIP the content of this folder for a further
 transfer to the Support team. The user behind the asterisks is the one who was executing` LT.exe.`
+

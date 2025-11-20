@@ -80,3 +80,4 @@ Support.
 | Type    | REG_DWORD                                                                                                                                                                                                                                                              |
 | Data    | ILT cache lifetime in milliseconds.                                                                                                                                                                                                                                    |
 | Purpose | CSE doesn't re-evaluate ILT filter if it was evaluated less than Lifetime milliseconds ago. When Lifetime is not set in the registry, it defaults to 5000ms (5 seconds).                                                                                               |
+

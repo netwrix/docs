@@ -29,3 +29,5 @@ Scripts and Triggers Manager transforms static Group Policy environments into dy
 1. Start with Getting to Know Scripts and Triggers Manager for fundamental concepts
 2. Learn Configuration for setting up scripts and triggers
 3. Use Item Level Targeting for advanced deployment scenarios
+
+

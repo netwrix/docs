@@ -50,7 +50,7 @@ Test-NetConnection -ComputerName $RPC_host -Port 8766 -InformationLevel Detailed
 Test-NetConnection -ComputerName $RPC_host -Port 8767 -InformationLevel Detailed
 ```
 
-![Test-NetConnection output image](images/ka0Qk000000E4gT_0EMQk000009AG1X.png)
+![Test-NetConnection output image](./images/ka0Qk000000E4gT_0EMQk000009AG1X.png)
 
 2. If the test connections are successful on both ports, then the error should not appear.
 

@@ -22,3 +22,5 @@ Someone with this role may set the following values:
   minutes. This can be changed here.
 
 ![web_interface_and_controls_103_625x304](/images/endpointpolicymanager/cloud/interface/companydetails/web_interface_and_controls_103_625x304.webp)
+
+

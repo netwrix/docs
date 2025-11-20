@@ -10,3 +10,5 @@ The least supported combination for Netwrix Endpoint Policy Manager (formerly Po
 Templates Manager MSI Console (MMC snap-in) 753 and CSE of 747.
 
 Whenever possible, please upgrade both the MMC and CSE to latest shipping version!
+
+

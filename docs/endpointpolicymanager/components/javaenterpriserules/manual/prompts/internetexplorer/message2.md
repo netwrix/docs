@@ -41,3 +41,5 @@ By creating these registry values, you can make the Java messages automatically 
 ![overcoming_java_prompts_10](/images/endpointpolicymanager/javaenterpriserules/prompts/internetexplorer/overcoming_java_prompts_10.webp)
 
 The result is that the prompt for iCacls is no longer received, but the Java applet will not run.
+
+

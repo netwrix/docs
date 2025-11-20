@@ -30,3 +30,4 @@ correctly.
 **Step 4 –** After that, reproduce the problem, and run` PPLOGS` as seen in Step 3
 [What must I send to Endpoint Policy Manager support in order to get the FASTEST support?](/docs/endpointpolicymanager/gettingstarted/misc/knowledgebase/troubleshooting/fastsupport.md)
 and attach to your support case.
+

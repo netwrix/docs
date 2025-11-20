@@ -42,7 +42,7 @@ Refer to the corresponding resolution:
 
 1. Log in to Netwrix Access Analyzer (NEA) with a user account that has properly provisioned permissions to the SQL database. Hold **Shift** and right-click the **Netwrix Access Analyzer** icon. Select **Run as different user**.
 
-   ![Netwrix Access Analyzer Run as different user](images/ka0Qk0000006PDR_0EMQk000007SBir.png)
+   ![Netwrix Access Analyzer Run as different user](./images/ka0Qk0000006PDR_0EMQk000007SBir.png)
 
 2. Grant the correct SQL DB permissions to the current user via the SQL Server Management Studio (SSMS) application. Refer to the following article for additional information on required permissions: Netwrix Access Analyzer Database — Database Creation & First Level of Security · v11.6.
 

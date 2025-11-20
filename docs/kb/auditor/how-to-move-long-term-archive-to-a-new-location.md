@@ -37,7 +37,7 @@ For a clean installation of Netwrix Auditor 8.5 or newer, follow these steps:
      - Navigate to **Start** > **All Programs** > **Task Scheduler** > **Task Scheduler Library** and locate the tasks named Netwrix Auditor with descriptions mentioning the Netwrix Password Reset, Inactive User Tracker, or Event Log Manager applications.
      - Select these tasks (if any) and click **Disable** in the right pane.
      
-     ![lta_mig_1.png](images/ka04u00000117ad_0EM4u000008LFeu.png)
+     ![lta_mig_1.png](./images/ka04u00000117ad_0EM4u000008LFeu.png)
 
 2. Copy all files from the old Long-Term-Archive folder into the new Long-Term-Archive folder except for the `ActivityRecords` folder.
 
@@ -51,3 +51,4 @@ For a clean installation of Netwrix Auditor 8.5 or newer, follow these steps:
 5. Start the other services and tasks you previously disabled.
 
 6. Copy the rest of the files from the old `ActivityRecords` folder to the new one. If you are prompted to overwrite any files, skip those files instead.
+

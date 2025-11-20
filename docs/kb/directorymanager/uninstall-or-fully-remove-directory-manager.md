@@ -38,7 +38,7 @@ This article explains how to uninstall Netwrix Directory Manager (formerly Group
 ### Uninstall Directory Manager to Upgrade to a Newer Version
 
 1. Double-click the **`setup.exe`** file in the Directory Manager installation package to launch the installer.  
-   ![Directory Manager installer main screen](images/ka0Qk000000EZIr_0EMQk00000BuNWf.png)
+   ![Directory Manager installer main screen](./images/ka0Qk000000EZIr_0EMQk00000BuNWf.png)
 2. Click **Uninstall Directory Manager**. This removes the application files from **Programs & Features** in the **Control Panel**.
 
 ### Upgrade to a newer version

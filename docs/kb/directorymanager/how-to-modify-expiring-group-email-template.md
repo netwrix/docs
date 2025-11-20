@@ -31,17 +31,17 @@ By default, the Group Lifecycle notification email in Netwrix Directory Manager 
 
 ## Instructions
 1. In the Netwrix Directory Manager Admin Center, select **Notifications** then **Notification Editor**.  
-   ![Notification Editor in Directory Manager Admin Center](images/ka0Qk000000D8m9_0EMQk00000BpGZ3.png)
+   ![Notification Editor in Directory Manager Admin Center](./images/ka0Qk000000D8m9_0EMQk00000BpGZ3.png)
 
 2. On the next page, you will see a list of all notifications in Netwrix Directory Manager. Search for the notification named `GLMExpiredNotify`. Under **Actions**, click **Edit**.  
-   ![List of notifications with Edit option in Directory Manager](images/ka0Qk000000D8m9_0EMQk00000BpGXR.png)
+   ![List of notifications with Edit option in Directory Manager](./images/ka0Qk000000D8m9_0EMQk00000BpGXR.png)
 
 3. Select the **Source Code** tab and go to line 44. This line contains the consequence of not renewing a group. Edit the text as needed to include your custom message.  
-   ![Source Code tab with editable email body in Directory Manager](images/ka0Qk000000D8m9_0EMQk00000BpGaf.png)
+   ![Source Code tab with editable email body in Directory Manager](./images/ka0Qk000000D8m9_0EMQk00000BpGaf.png)
 
 4. After making your changes, go to the **Interactive** tab to preview the results in a clean, easy-to-read format.  
-   ![Interactive tab showing email preview in Directory Manager](images/ka0Qk000000D8m9_0EMQk00000BpGcH.png)
+   ![Interactive tab showing email preview in Directory Manager](./images/ka0Qk000000D8m9_0EMQk00000BpGcH.png)
 
 5. If you are satisfied with the output, return to the **Source Code** tab and click **Save**. Confirm your changes by clicking **Save** again.  
-   ![Save button in Source Code tab in Directory Manager](images/ka0Qk000000D8m9_0EMQk00000BpCs2.png)  
-   ![Confirmation of saved changes in Directory Manager](images/ka0Qk000000D8m9_0EMQk00000BpGdt.png)
+   ![Save button in Source Code tab in Directory Manager](./images/ka0Qk000000D8m9_0EMQk00000BpCs2.png)  
+   ![Confirmation of saved changes in Directory Manager](./images/ka0Qk000000D8m9_0EMQk00000BpGdt.png)

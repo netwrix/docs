@@ -53,7 +53,7 @@ Refer to the following steps to troubleshoot the SQL Server-based causes:
    1. In the main Netwrix Auditor screen, select **Health Status** and click **View details** in the **Database Statistics** pane.
    2. Review the database states. If a database state reads **Failed to store data**, review the database details.
 
-      > **IMPORTANT:** The SQL Server Express databases have a 10 GB size limit. In case the affected database states **Failed to store data** with the size limit of **10 GB**, refer to the following article: [SQL Server Express Database Size Reached 10GB](/docs/kb/auditor/sql-server-express-database-size-reached-10gb.md)
+      > **IMPORTANT:** The SQL Server Express databases have a 10 GB size limit. In case the affected database states **Failed to store data** with the size limit of **10 GB**, refer to the following article: [SQL Server Express Database Size Reached 10GB](/docs/kb/auditor/sql-server-express-database-size-reached-10gb)
    3. If multiple or all databases state **Failed to store data** with no size limits, refer to the following troubleshooting steps.
 2. Verify that the SQL Server instance is available.
 3. Verify the credentials of the SQL Server instance account:
@@ -82,6 +82,6 @@ Verify that the Audit Database account has the correct permissions—refer to th
 
 ## Related Articles
 
-- [SQL Server Express Database Size Reached 10GB](/docs/kb/auditor/sql-server-express-database-size-reached-10gb.md)
+- [SQL Server Express Database Size Reached 10GB](/docs/kb/auditor/sql-server-express-database-size-reached-10gb)
 - [Configure Audit Database Account](https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserver#configure-audit-database-account)
 - [Configure Long-Term Archive Account](https://docs.netwrix.com/docs/auditor/10_8/requirements/longtermarchive#configure-long-term-archive-account)

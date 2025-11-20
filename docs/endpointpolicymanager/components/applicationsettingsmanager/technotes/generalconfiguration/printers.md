@@ -10,3 +10,5 @@ Because Microsoft's Group Policy Preferences already does a good job of pushing 
 printers to your network, Netwrix Endpoint Policy Manager (formerly PolicyPak) does not duplicate
 this functionality. Endpoint Policy Manager will manage specific settings inside your printer
 drivers such as a "Tools | Options" page or component that stores settings.
+
+

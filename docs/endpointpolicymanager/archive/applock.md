@@ -10,7 +10,7 @@ Prior to Netwrix Endpoint Policy Manager (formerly PolicyPak) 3.5, it was necess
 display previous AppLock (TM) elements. In this video you can see how to quickly and easily restore
 the element within the GPO.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k_5-Os9Ai5g?si=2X8ELCYS8XephKX-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/k_5-Os9Ai5g?si=2X8ELCYS8XephKX-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak 3.5 Applock Update Behavior Change video transcript
 
@@ -50,3 +50,5 @@ control in target application." We have removed that requirement.
 I hope that helps you out. We're here for you if you need us.
 
 Thanks so much.
+
+

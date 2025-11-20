@@ -34,3 +34,5 @@ which is typically set up as follows:
 
 After you're done testing and you're ready to get a pool of licenses, which are good for a year,
 contact Netwrixsupport to obtain a license.
+
+

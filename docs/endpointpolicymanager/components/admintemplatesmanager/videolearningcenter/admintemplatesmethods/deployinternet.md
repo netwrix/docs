@@ -8,7 +8,7 @@ sidebar_position: 20
 Want to perform real Group Policy settings over the Internet? Check out Netwrix Endpoint Policy
 Manager (formerly PolicyPak) cloud (and watch this video.)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mXvgyaRcaY4" title="Endpoint Policy Manager Cloud: Deploy Group Policy Admin template settings over the internet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mXvgyaRcaY4" title="Endpoint Policy Manager Cloud: Deploy Group Policy Admin template settings over the internet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with Endpoint Policy Manager software Are you working with a situation where
 you've got roaming computers, people working from home, domain-joined or even nondomain-joined
@@ -86,3 +86,5 @@ There you have it. we got real ADMX group policy over to your cloud-joined machi
 level targeting to deliver the right settings to the right machines at the right time If that's of
 interest to you, please get signed up for our webinar and we'll hand over the software and get you
 started on your free 30-day trial right away. Thanks so much.
+
+

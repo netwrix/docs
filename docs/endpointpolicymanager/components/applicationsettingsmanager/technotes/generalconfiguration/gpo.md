@@ -10,5 +10,7 @@ First, try running the LT as Domain Administrator. 99.9% of the problems with th
 that the person creating the licensing GPO doesn't have rights to do so. So, try that first.
 
 If that fails, this
-[https://kb.endpointpolicymanager.com/kb/article/828-policypak-troubleshooting-license-gpo-creation/](https://kb.endpointpolicymanager.com/kb/article/828-policypak-troubleshooting-license-gpo-creation/)
+[https://docs.netwrix.com/docs/endpointpolicymanager/licensing/knowledgebase/troubleshooting/licensinggpo](https://docs.netwrix.com/docs/endpointpolicymanager/licensing/knowledgebase/troubleshooting/licensinggpo)
 demonstrates how you can definitely get it to work.
+
+

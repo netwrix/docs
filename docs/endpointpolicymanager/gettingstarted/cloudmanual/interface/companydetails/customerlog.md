@@ -46,3 +46,5 @@ before and after editing. If you discover that a change is unwanted, you can imm
 to the previous version by selecting **Revert**.
 
 ![web_interface_and_controls_101_623x491](/images/endpointpolicymanager/cloud/interface/companydetails/web_interface_and_controls_101_623x491.webp)
+
+

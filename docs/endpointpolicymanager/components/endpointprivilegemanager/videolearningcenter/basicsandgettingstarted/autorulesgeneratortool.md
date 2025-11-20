@@ -9,13 +9,13 @@ Once PPLPM and SecureRun are on, users are blocked from running unwanted stuff. 
 create some rules automatically to ALLOW or ELEVATE applications and installations? Check out this
 free tool from Netwrix Endpoint Policy Manager (formerly PolicyPak) !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Jju3eIdqq08" title="PPLPM: Auto Rules Generator Utility" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Jju3eIdqq08" title="PPLPM: Auto Rules Generator Utility" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PPLPM: Auto Rules Generator Utility
 
 Hi. This is Jeremy Moskowitz. In this video, I'm going to show you how you can automatically and
 quickly generate rules
-for[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)
+for[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)
 using our Automatic Rule Generator utility.You're going to find this utility in your download here
 in the "PolicyPak Extras" folder. I'm going to go into that in just a minute, but here it is:
 "PolicyPak LPM Auto Rule Generator Tool."
@@ -215,3 +215,5 @@ Remember, this is a free tool available as part of the download. When you get th
 included inside the download in the "PolicyPak Extras" folder. There you go. I hope this helps you
 out. Looking forward to seeing you on board real soon.  
 Bye.
+
+

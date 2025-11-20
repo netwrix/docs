@@ -95,6 +95,14 @@ and **description**, add the items separated by a new line, comma, or semicolon 
 File Location Allowlists will not apply to groups of users, only to groups of computers. File
 Location Allowlists will only apply for the selected computer groups after 15 minutes.
 
+:::note
+By clicking the "Select All Computers" checkbox, ONLY computers existing in the Computers list at that moment can be checked and selected all at once. This DOES NOT imply that all the computers that will ever exist in the EPP Server Computer's list will be added to the "Allowlist - File Location" exception.
+
+This is because adding new entities by default to the File Location's Allowlist exceptions without the Administrator knowledge could prove troublesome. When a new computer is added to the EPP Server, the "Select All Computers" checkbox becomes unchecked again but the computers that were checked before remain selected. By pressing that checkbox again, the newly added/unselected computers are added to the selectoion.
+
+The same behavior also applies for Groups. The Administrator has the option to create custom Groups based on the existing computers/users already existing in the EPP Server's DB. When a new computer is added, it is not allocated to a group by default because the group in which the computer will be placed might not be the one that the Administrator intended for it to be in and it needs to be added manually.
+:::
+
 ![New File Location Allowlists ](filelocationnewdenylists.webp)
 
 ## Network Share

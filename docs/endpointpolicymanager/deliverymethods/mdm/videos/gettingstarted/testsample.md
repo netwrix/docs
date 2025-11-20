@@ -10,7 +10,7 @@ watch this video and WALK BEFORE YOU RUN with Netwrix Endpoint Policy Manager (f
 MDM, and try this example.. before using your MDM service to do all the work to deploy the MSI
 files. When you test this procedure our first, you will have a lot more of a guarantee of success!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Kojo2mq3JhM?si=1vDNcZm_30k8y9QP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Kojo2mq3JhM?si=1vDNcZm_30k8y9QP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video we’re going to walk before we run with our MDM service
 and PolicyPak. You do need to be a little bit prepared for this. In this example I’ve got my
@@ -82,3 +82,5 @@ into an MSI file using your MDM service.
 
 Hope this video helps you out. Thank you for walking before you run before you try to do this for
 real with your MDM service. Thank you very much. Talk to you soon.
+
+

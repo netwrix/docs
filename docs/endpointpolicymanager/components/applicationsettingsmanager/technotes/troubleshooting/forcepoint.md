@@ -39,3 +39,5 @@ This method causes a universal block to Reapply of application settings. You can
 the first method doesn't operate as expected.
 
 [How do I turn off "Reapply on Launch" for all applications if asked by tech support?](/docs/endpointpolicymanager/components/applicationsettingsmanager/technotes/troubleshooting/reapplylaunchdisable.md)
+
+

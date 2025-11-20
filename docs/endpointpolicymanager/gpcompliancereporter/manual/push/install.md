@@ -55,3 +55,4 @@ uninstall Endpoint Policy Manager. Then, remove
 `C:\ProgramData\PolicyPak\PolicyPak Group Policy Compliance Reporter Server` and all subfolders.
 Additionally, remove the Endpoint Policy Manager Group Policy Compliance Reporter (endpoint) license
 from the Group Policy Object (GPO).
+

@@ -11,4 +11,6 @@ Internet Explorer Maintenance (IEM) has been deprecated, this is your answer. If
 it, we bring a true "one stop shop" to managing ALL areas and settings of Internet Explorer (All
 Versions).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AjDei_aqL8Y?si=Mxpl_4AtOYyKPZAd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AjDei_aqL8Y?si=Mxpl_4AtOYyKPZAd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+

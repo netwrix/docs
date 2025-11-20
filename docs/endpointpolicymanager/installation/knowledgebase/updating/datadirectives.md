@@ -25,3 +25,4 @@ An example output can be seen below, which returns all the GPOs and which Endpoi
 Client Side Extension data types are inside them.
 
 ![548_2_gpe-fag-06-img-02](/images/endpointpolicymanager/troubleshooting/powershell/548_2_gpe-fag-06-img-02.webp)
+

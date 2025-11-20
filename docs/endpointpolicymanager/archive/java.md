@@ -9,7 +9,7 @@ sidebar_position: 140
 Here is an update for Java 7 u 45. Learn how Netwrix Endpoint Policy Manager (formerly PolicyPak)
 can manage major settings in Java very quickly.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aQrGCzGk0SQ?si=LgCJ5aTeLS8B9g67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aQrGCzGk0SQ?si=LgCJ5aTeLS8B9g67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Manage Java 7 u 45 using Group Policy Video Transcript
 
@@ -162,3 +162,5 @@ work, why, what's going on – the first place to get started is the community f
 them, and the answers we provide there will help everybody.
 
 Thanks so very much, and we'll talk to you soon.
+
+

@@ -75,11 +75,11 @@ Deploying the agent via Group Policy requires editing the MSI either directly or
 1. Download the Orca MSI (or your preferred MSI editing software; these instructions use Orca).
    1. Orca can be installed from the Windows SDK and selecting the MSI options.
 
-   ![image.png](images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lsoU.png)
+   ![image.png](./images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lsoU.png)
 
 2. Right-click on the `EPPClientSetup` MSI and select **Edit with Orca**.
 
-   ![image.png](images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lrve.png)
+   ![image.png](./images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lrve.png)
 
 3. Click on **Transform** > **New Transform**.
 4. Add the required properties to the Property Table.
@@ -89,9 +89,9 @@ Deploying the agent via Group Policy requires editing the MSI either directly or
    4. Click **Ok**.
    5. Optional: If there are more properties that need changing or adding, such as not using the default department code, refer to the Appendix for the list of properties and change them all in the Properties table.
 
-   ![image.png](images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005ls6y.png)
+   ![image.png](./images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005ls6y.png)
 
-   ![image.png](images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lxoA.png)
+   ![image.png](./images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lxoA.png)
 
 5. Generate the Transform.
    1. Click on **Transform**.
@@ -99,7 +99,7 @@ Deploying the agent via Group Policy requires editing the MSI either directly or
    3. In the open box, save your transform.
    4. Ensure the packages are placed on a network share that is accessible to all clients that need to install it.
 
-   ![image.png](images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3Ov.png)
+   ![image.png](./images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3Ov.png)
 
 6. Deploy the MSI with the Transform file via Group Policy.
    1. Open Group Policy Management Console.
@@ -115,11 +115,11 @@ Deploying the agent via Group Policy requires editing the MSI either directly or
    11. Select the transform file and click **Ok**.
    12. Click **Ok**.
 
-   ![image.png](images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3VN.png)
-   ![image.png](images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lwId.png)
-   ![image.png](images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3gf.png)
-   ![image.png](images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m13n.png)
-   ![image.png](images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lzGU.png)
+   ![image.png](./images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3VN.png)
+   ![image.png](./images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lwId.png)
+   ![image.png](./images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3gf.png)
+   ![image.png](./images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m13n.png)
+   ![image.png](./images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lzGU.png)
 
 ## Appendix
 

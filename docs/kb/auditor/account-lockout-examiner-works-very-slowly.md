@@ -35,4 +35,5 @@ To address the slow performance issue, perform the following steps:
    **NOTE**: This will remove info about all old lockouts from Account Lockout Examiner. Backup this files if you need them for the further access.
 4. Start Netwrix Account Lockout Examiner Service
 
-[![User-added image](images/ka04u000000HcWK_0EM700000004wmE.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAbJ&amp;feoid=00N700000032Pj2&amp;refid=0EM700000004wmE)
+[![User-added image](./images/ka04u000000HcWK_0EM700000004wmE.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAbJ&amp;feoid=00N700000032Pj2&amp;refid=0EM700000004wmE)
+

@@ -8,7 +8,7 @@ sidebar_position: 40
 Automatically specify "who should get what" settings based upon conditions like security group,
 Laptop vs. Not laptop and so on.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Y9CIdIDhAZQ" title="Endpoint Policy Manager Start Screen Manager: Using Item Level Targeting" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y9CIdIDhAZQ" title="Endpoint Policy Manager Start Screen Manager: Using Item Level Targeting" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak Start Screen Manager: Using Item Level Targeting
 
@@ -21,7 +21,7 @@ This is East Sales User 1 who is currently logged on, and he's getting "My Impor
 maintain that for East Sales Users, so what we'll do is we'll go over to "Collection 1" over here.
 Let's rename that. Let's "Edit Collection" and call it "East Sales Users." While we're here, we'll
 change the
-"[https://www.endpointpolicymanager.com/pp-blog/item-level-targeting](https://www.endpointpolicymanager.com/pp-blog/item-level-targeting)"
+"[https://www.policypak.com/pp-blog/item-level-targeting](https://www.policypak.com/pp-blog/item-level-targeting)"
 and specify that this stuff will only work when the "Security Group" is our "EastSalesUsers."What
 we're doing is we're marrying using item-level targeting and saying do this stuff called "My
 Important Apps" when the guys are "East Sales Users."
@@ -65,3 +65,5 @@ when I have that application do that. It's incredibly flexible.
 I just wanted to give you a quick taste of how that would work. One policy to rule them all. You
 don't have to be stuck with one fixed policy. Just as simple as that. I hope this helps you out.
 We're looking to get you started soon with Endpoint Policy Manager Start Screen Manager.
+
+

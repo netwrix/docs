@@ -19,3 +19,4 @@ The example files we provide are examples to use or ignore. And, we even put it 
 the folder about the possibility of this file being seen by download filters.
 
 ![756_3_img2](/images/endpointpolicymanager/troubleshooting/756_3_img2.webp)
+

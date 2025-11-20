@@ -37,7 +37,7 @@ viewing the Long-Term Archive widget of the Health Status dashboard, click Open 
 
 **Step 5 –** To move data from the old repository to the new location, take the steps described in
 the following Netwrix knowledge base article:
-[How to Move Long-Term Archive to a New Location](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA00g000000H9SSCA0.html).
+[How to Move Long-Term Archive to a New Location](/docs/kb/auditor/how-to-move-long-term-archive-to-a-new-location).
 
 Auditor client will start writing data to the new location right after you complete data moving
 procedure.

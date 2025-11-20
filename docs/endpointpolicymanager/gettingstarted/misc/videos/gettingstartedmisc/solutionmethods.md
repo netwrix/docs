@@ -12,7 +12,7 @@ Intune, we've got you covered. Or maybe you're using or nothing at all, where yo
 Policy Manager Cloud. Watch this technical video to learn about the differences in the Solutions
 methods and walk away knowing which one(s) you should use.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7XUB1hWJh9Y" title="Endpoint Policy Manager Solution Methods: Group Policy, MDM, UEM Tools, and Endpoint Policy Manager Cloud compared." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7XUB1hWJh9Y" title="Endpoint Policy Manager Solution Methods: Group Policy, MDM, UEM Tools, and Endpoint Policy Manager Cloud compared." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. If you've made it here, you want to understand the PolicyPak methods.
 Now you know you can buy in at either the Enterprise or Professional or SaaS levels. Maybe you're a
@@ -382,3 +382,4 @@ With that in mind, I hope this has been informative for you. If you have any que
 personally take your questions. Of course, the sales team is also available to help you through your
 journey. Thank you very much for being a PolicyPak customer. Looking forward to helping you out real
 soon. Thanks so very much.
+

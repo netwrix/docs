@@ -49,3 +49,6 @@ again. This time the UAC prompt is removed from the Install icon, and the MSI ap
 install as expected.
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/elevate/elevating_msi_installer_files.webp)
+
+
+

@@ -9,4 +9,6 @@ Here is a quick demonstration of Netwrix Endpoint Policy Manager (formerly Polic
 manager, managing Firefox, Java, and Chrome settings using Endpoint Policy Manager Application
 Manager and our Endpoint Policy Manager Cloud Edition.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gMcplbZc9iY" title="Endpoint Policy Manager Cloud: Deploy Application Settings Over The Internet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gMcplbZc9iY" title="Endpoint Policy Manager Cloud: Deploy Application Settings Over The Internet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+

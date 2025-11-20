@@ -36,7 +36,7 @@ Depending on the needs, the historical data retention option can be set up in Ne
 
      The default History Retention setting is set to 6 months for both `EX_MetricsCollection` and `EX_MetricsDetail` Jobs. To adjust it, modify the **SET HISTORY RETENTION** analysis task for the corresponding job. This can be configured for months or days.
 
-     ![histRetention](images/ka0Qk000000DYzx_0EMQk000002q3VJ.png)
+     ![histRetention](./images/ka0Qk000000DYzx_0EMQk000002q3VJ.png)
 
   2. **CAS Metrics Job Group** − **ActiveSync Job Group** − **EX_ActiveSync Job**
 

@@ -21,3 +21,5 @@ To remove all the Example policies at once perform the following steps.
 **Step 4 –** Click **Remove**.
 
 ![799_3_image-20201230211039-3](/images/endpointpolicymanager/cloud/799_3_image-20201230211039-3.webp)
+
+

@@ -13,3 +13,5 @@ In this section, you will learn how to do the following:
 - Understand the processing order of rules
 - Learn how to export collections and rules to deploy using Microsoft Endpoint Manager (SCCM and
   Intune) or Netwrix Endpoint Policy Manager (formerly PolicyPak) Cloud
+
+

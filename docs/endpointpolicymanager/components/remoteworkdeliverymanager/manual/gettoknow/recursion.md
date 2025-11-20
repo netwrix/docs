@@ -60,3 +60,5 @@ the number of files copied during an operation.
 You can also require that files be only copied when an attribute is set or not set.
 
 ![getting_to_know_policypak_30](/images/endpointpolicymanager/remoteworkdelivery/advanced/standard/getting_to_know_endpointpolicymanager_30.webp)
+
+

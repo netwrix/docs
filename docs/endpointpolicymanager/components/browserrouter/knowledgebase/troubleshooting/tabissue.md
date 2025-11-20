@@ -40,3 +40,5 @@ Or visit Edge:compat in Edge and click the Force update button, the screen shoul
 to below.
 
 ![1323_2_faaa54cf16d85c909ec4de3a83505ac9](/images/endpointpolicymanager/troubleshooting/browserrouter/internetexplorer/1323_2_faaa54cf16d85c909ec4de3a83505ac9.webp)
+
+

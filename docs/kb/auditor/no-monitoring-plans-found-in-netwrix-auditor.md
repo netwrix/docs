@@ -30,7 +30,7 @@ When attempting to view a report, the **Monitoring Plan** dropdown list reads as
 NO MONITORING PLANS FOUND
 ```
 
-![Monitoring Plan dropdown showing NO MONITORING PLANS FOUND](images/ka04u00000117TM_0EM4u000008M6Wx.png)
+![Monitoring Plan dropdown showing NO MONITORING PLANS FOUND](./images/ka04u00000117TM_0EM4u000008M6Wx.png)
 
 ## Causes
 
@@ -95,8 +95,9 @@ NO MONITORING PLANS FOUND
 >
 > - The account specified in **Audit database settings** for Report Server should have local admin permissions, as well as permissions to create folders, and upload folders.
 > - Any folder/report access permissions set up in Report Manager directly instead of monitoring plans delegation will have to be reconfigured. Alternatively, you can delete a particular affected report instead of deleting the entire **Netwrix Auditor** reports folder.
-> - In case you've previously added a custom report, you will have to manually set it up again. This could apply to the report provided in the following article: [How to Monitor Print Service Activity](/docs/kb/auditor/how-to-monitor-print-service-activity.md).
+> - In case you've previously added a custom report, you will have to manually set it up again. This could apply to the report provided in the following article: [How to Monitor Print Service Activity](/docs/kb/auditor/how-to-monitor-print-service-activity).
 
 ## Related articles
 
 - [Monitoring Plans](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/overview)
+

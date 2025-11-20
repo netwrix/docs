@@ -36,32 +36,32 @@ This article explains how to drop data collected from SQL Servers using the Data
 > **NOTE:** You can create a separate folder (e.g., Sandbox) for custom jobs.
 
 1. Right-click the **custom** or **Jobs** folder and select **Create Job** `Ctrl+Alt+A`.  
-   ![ ](images/ka0Qk000000DG6z_0EMQk00000BvYY7.png)
+   ![ ](./images/ka0Qk000000DG6z_0EMQk00000BvYY7.png)
 2. Navigate to the **Configure** node of the NewJob and select the **Queries** node.  
-   ![ ](images/ka0Qk000000DG6z_0EMQk00000BvhTJ.png)
+   ![ ](./images/ka0Qk000000DG6z_0EMQk00000BvhTJ.png)
 3. Click the **Create Query** button.  
-   ![ ](images/ka0Qk000000DG6z_0EMQk00000BvhZl.png)
+   ![ ](./images/ka0Qk000000DG6z_0EMQk00000BvhZl.png)
 4. In the General tab, designate a clear **Name** and **Description** (e.g., `DropSQLHostData`).
 5. In the Data Source tab, select **SQL** from the **Data Collector** dropdown menu.  
-   ![ ](images/ka0Qk000000DG6z_0EMQk00000Bvheb.png)
+   ![ ](./images/ka0Qk000000DG6z_0EMQk00000Bvheb.png)
 6. Click **Configure** to launch the SQL Data Collector Configuration Wizard.  
-   ![ ](images/ka0Qk000000DG6z_0EMQk00000BvhgD.png)
+   ![ ](./images/ka0Qk000000DG6z_0EMQk00000BvhgD.png)
 7. On the Wizard Category page, select the **Utilities > Remove Storage Tables** option under the appropriate database type and click **Next** to drop all collected SQL data for SQL Servers.  
-   ![Category page with Utilities > Remove Storage Tables option highlighted](images/ka0Qk000000DG6z_0EMQk00000BvdWA.png)
+   ![Category page with Utilities > Remove Storage Tables option highlighted](./images/ka0Qk000000DG6z_0EMQk00000BvdWA.png)
 8. To complete the query, ensure you have selected the desired Available Properties, click **Next**, and then **Finish**. Last, click **OK**.
 9. To run the job, you can either select **Run now** from the job windowpane or right-click the job and select **Run Job**.  
-   ![ ](images/ka0Qk000000DG6z_0EMQk00000Bvjzl.png)
+   ![ ](./images/ka0Qk000000DG6z_0EMQk00000Bvjzl.png)
 
 ### Drop Data for Specific Hosts/Instances for SQL Servers or Drop Specific Data for SQL Hosts/Instances
 
 1. Follow steps 1–6 detailed above.
 2. On the SQL Data Collector Configuration Wizard Category page, select the **Utilities > Remove Storage Data** option and click **Next**.  
-   ![Category page with Utilities > Remove Storage Data option highlighted](images/ka0Qk000000DG6z_0EMQk00000Bvk6D.png)
+   ![Category page with Utilities > Remove Storage Data option highlighted](./images/ka0Qk000000DG6z_0EMQk00000Bvk6D.png)
 3. On the Filters page, select the databases/instances via the **Filter Options** drop-down menu:
    - All database objects
    - Only select database objects
      - When using this option, select the database objects you want to delete in the **Available database objects** pane, then click **Add**.  
-       ![Available database objects pane with Add highlighted](images/ka0Qk000000DG6z_0EMQk00000Bvbfg.png)
+       ![Available database objects pane with Add highlighted](./images/ka0Qk000000DG6z_0EMQk00000Bvbfg.png)
 4. On the Settings page, select the type of data you would like to remove for your specified hosts:
    - Permissions
    - Audits

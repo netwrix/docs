@@ -88,3 +88,4 @@ Troubleshooting:
 
 Logs for the Rollback process and MSI install process can both be found in `"C:\Temp\PP_CSE"` once
 the script has executed.
+

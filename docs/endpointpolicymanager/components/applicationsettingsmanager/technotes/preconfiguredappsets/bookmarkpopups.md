@@ -27,3 +27,5 @@ in there, and have them appear, even at first use.
 
 Which is why you can see seeing mixed results: Some settings appear a-ok first time, others not
 until Firefox is run two times.
+
+

@@ -8,3 +8,4 @@ sidebar_position: 70
 
 See this
 article: [What is the fastest way to get started in an Endpoint Policy Manager trial, without running the License Request Tool?](/docs/endpointpolicymanager/licensing/knowledgebase/requestingall/trial.md)
+

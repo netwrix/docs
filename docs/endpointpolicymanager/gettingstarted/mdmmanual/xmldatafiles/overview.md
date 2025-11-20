@@ -157,3 +157,4 @@ Figure 10. Naming the MSI.
 **Step 7 –** When you click "Next" in the Installer Properties page, you will be prompted to save
 your MSI file. If you need it later, the MSI file can be opened and edited again (see the section
 "Modifying Existing MSI files with Endpoint Policy Manager Exporter").
+

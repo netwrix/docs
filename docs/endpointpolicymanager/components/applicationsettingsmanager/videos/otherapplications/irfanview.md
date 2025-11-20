@@ -15,13 +15,13 @@ time they launch it. Oh, and Endpoint Policy Manager also supports IrfanView too
 many other applications. Keep your IrfanView configuration settings enforced and streamlined with
 Endpoint Policy Manager. Check out this video to see how it's done.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/evQsOAGTczo" title="Endpoint Policy Manager: Manage InfranView using Group Policy, SCCM or your own management utility" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/evQsOAGTczo" title="Endpoint Policy Manager: Manage InfranView using Group Policy, SCCM or your own management utility" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Lockdown IrfanView with Group Policy video transcript
 
 Hi, this is Jeremy Moskowitz, Microsoft MVP, Enterprise Mobility and Founder of PolicyPak Software. 
 In this video, we're going to learn how to manage
-and [https://www.endpointpolicymanager.com/lockdown](https://www.endpointpolicymanager.com/lockdown) IrfanView using
+and [https://www.policypak.com/lockdown](https://www.policypak.com/lockdown) IrfanView using
 PolicyPak.
 
 I've already got IrfanView installed on my computer, and I'm just a regular user here.  As you can
@@ -41,7 +41,7 @@ We'll go ahead and right click over our "East Sales Users", "Create a GPO" and w
 it "Lockdown IrfanView."  So this GPO is now associated with the "East Sales Users." I'll right
 click over it.  I'll click "Edit…" I'll dive down under "User Configuration,"
 "PolicyPak/Applications/New/Application." There it is,
-"[https://www.endpointpolicymanager.com/products/manage-irfanview-with-group-policy-endpointpolicymanager.html](https://www.endpointpolicymanager.com/products/manage-irfanview-with-group-policy-endpointpolicymanager.html)"
+"[https://www.policypak.com/products/manage-irfanview-with-group-policy-endpointpolicymanager.html](https://www.policypak.com/products/manage-irfanview-with-group-policy-endpointpolicymanager.html)"
 along with other applications like "Java," "Flash" "Firefox," "Skype" and lots of other important
 desktop applications that your users utilize every day (and you want to make more secure.).
 
@@ -77,7 +77,9 @@ And we are done.  That is how incredibly easy it is for you to use PolicyPak to
 Irfanview as well as tons of other desktop applications.
 
 If you're looking for a trial of PolicyPak, just click on the
-"[Webinar](https://www.endpointpolicymanager.com/webinar/evaluate.html) / Download" button on the right.
+"[Webinar](https://www.policypak.com/webinar/evaluate.html) / Download" button on the right.
 
 Thanks so much for watching, and get in touch with us if you're looking to get started. Talk to you
 soon.
+
+

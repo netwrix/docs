@@ -98,16 +98,21 @@ If you are unable to resolve the issue with SPN registration, and if your scenar
 
 ### Cause #3 – Different TLS Protocol Versions
 
-Allow the operating systems to select the protocol for incoming and outgoing communication on both your Netwrix Auditor and SQL servers. For more information, see Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm: [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm.md)
+Allow the operating systems to select the protocol for incoming and outgoing communication on both your Netwrix Auditor and SQL servers. For more information, see Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm: [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm)
 
 ### Cause #4 – SQL and Netwrix Auditor Servers Time Difference
 
-Synchronize the time on both SQL and Netwrix Auditor servers to eliminate clock skew. For more information, see Clock Skew Is Too Great: [Clock Skew Is Too Great](/docs/kb/auditor/clock-skew-is-too-great.md)
+Synchronize the time on both SQL and Netwrix Auditor servers to eliminate clock skew. For more information, see Clock Skew Is Too Great: [Clock Skew Is Too Great](/docs/kb/auditor/clock-skew-is-too-great)
 
 ## Related Articles
 
 - [SQL Server Ports](https://docs.netwrix.com/docs/auditor/10_8/configuration/sqlserver/ports)
 - Cannot Generate SSPI Context – Fix the Error with Kerberos Configuration Manager · Microsoft: https://learn.microsoft.com/en-US/troubleshoot/sql/database-engine/connect/cannot-generate-sspi-context-error#fix-the-error-with-kerberos-configuration-manager-recommended
 - Register Service Principal Name for Kerberos Connections – Automatic SPN Registration · Microsoft: https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/register-a-service-principal-name-for-kerberos-connections?view=sql-server-ver16#Auto
-- [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm.md)
-- [Clock Skew Is Too Great](/docs/kb/auditor/clock-skew-is-too-great.md)
+- [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm)
+- [Clock Skew Is Too Great](/docs/kb/auditor/clock-skew-is-too-great)
+
+
+
+
+

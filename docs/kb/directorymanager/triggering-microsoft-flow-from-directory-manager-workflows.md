@@ -34,7 +34,7 @@ By integrating Directory Manager workflows with MS Flow, you ensure that when a 
 
 The Directory Manager application in Azure must have the following permissions for MS Flow:
 
-![Directory Manager Azure permissions screenshot](images/ka0Qk000000DSL3_0EMQk000004nGNu.png)
+![Directory Manager Azure permissions screenshot](./images/ka0Qk000000DSL3_0EMQk000004nGNu.png)
 
 ## Instructions
 
@@ -50,12 +50,12 @@ Follow the steps below to link a MS Flow to a Directory Manager Workflow:
 4. Click **OK** to save changes.  
 5. Log into the MS Flow portal and open the flow you want to link.  
 6. Generate a request URL for the MS Flow.  
-   ![Generate request URL screenshot](images/ka0Qk000000DSL3_0EMQk00000C1KQo.png)
+   ![Generate request URL screenshot](./images/ka0Qk000000DSL3_0EMQk00000C1KQo.png)
 7. In the Directory Manager Console, go back to the **Workflow** tab of the identity store properties.  
 8. Select the workflow to link (e.g., **Create User**) and click **Edit**.  
 9. In the **Edit Workflow Route** dialog box, paste the MS Flow request URL into the **Microsoft Flow Request URL** field.  
 10. Click **Authenticate** and provide identity store credentials.  
-    ![Authenticate screenshot](images/ka0Qk000000DSL3_0EMQk00000C1M61.png)
+    ![Authenticate screenshot](./images/ka0Qk000000DSL3_0EMQk00000C1M61.png)
 
 > **NOTE:** To quickly define a flow in MS Flow, click **Create Temp** to create a basic template and connect it.
 

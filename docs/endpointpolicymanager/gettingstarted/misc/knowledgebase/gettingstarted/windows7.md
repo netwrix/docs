@@ -48,3 +48,4 @@ updated all the time.
 
 More details about .Net framework versions can be found here:
 [https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies)
+

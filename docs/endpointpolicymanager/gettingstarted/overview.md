@@ -36,7 +36,7 @@ Figure 1. Inside the Endpoint Policy Manager Customer Portal.
 :::note
 Video: For an overview on how to use the Endpoint Policy Manager Customer Portal and
 understand subscriptions, please watch the following video:
-[https://www.endpointpolicymanager.com/video/endpointpolicymanager-portal-how-to-download-endpointpolicymanager-and-get-free-training.html](https://www.endpointpolicymanager.com/video/endpointpolicymanager-portal-how-to-download-endpointpolicymanager-and-get-free-training.html)
+[https://www.policypak.com/video/endpointpolicymanager-portal-how-to-download-endpointpolicymanager-and-get-free-training.html](https://www.policypak.com/video/endpointpolicymanager-portal-how-to-download-endpointpolicymanager-and-get-free-training.html)
 :::
 
 
@@ -141,3 +141,5 @@ MDM provider.
 - For video overviews of using Endpoint Policy Manager with a UEM tool like SCCM see: Getting
   Started with Endpoint Policy Manager (Misc) >
   [Knowledge Base](/docs/endpointpolicymanager/).
+
+

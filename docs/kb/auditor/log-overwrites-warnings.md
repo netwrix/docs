@@ -56,14 +56,14 @@ NOTE: for **Security** and **System** event logs, you can figure out who cleared
    IMPORTANT: Before changing `Maximum log size`, make sure that the system drive has enough free space to store the event log of the maximum size. If not, the event log will grow and fill up all free space on the system drive and the system will stop responding.
 4. Make sure the **Overwrite events as needed** option is selected and click **Apply**.
 
-![Configuring maximum log size](images/ka04u000000HcXR_0EM700000004vPE.png)
+![Configuring maximum log size](./images/ka04u000000HcXR_0EM700000004vPE.png)
 
 ## Procedure 2: Increase `Maximum log size` via Group Policy Object
 
 1. Go to **Start** / **Administrative Tools** / **Group Policy Management**.
 2. In the window displayed, go to **Group Policy Management** / **Forest Name** / **Domains** / **Group Policy Objects** / right-click the appropriate policy (or create new) and select **Edit**. **Group Policy Management Editor** starts.
 
-![Group Policy Management](images/ka04u000000HcXR_0EM700000004vPJ.png)
+![Group Policy Management](./images/ka04u000000HcXR_0EM700000004vPJ.png)
 
 3. In the left pane, go to **Computer Configuration** / **Policies** / **Windows Settings** / **Security Settings** / **Event Log**. Right-click **Retention method for `<problematic event log>`**, choose **Properties**.
 4. In the **Security Policy Setting** tab, check the **Define this policy setting** box and select **Do not overwrite events (clear log manually)**. Click OK.
@@ -71,7 +71,7 @@ NOTE: for **Security** and **System** event logs, you can figure out who cleared
 6. In the **Security Policy Setting** tab, check the **Define this policy setting** box and set the size to `4194240` Kb as recommended by Microsoft: http://support.microsoft.com/kb/957662  
    IMPORTANT: The affected machines must have enough free space on their system drives for storing the event log of the maximum size. If not, the event log will grow and fill up all free space on the system drive and the system will stop responding.
 
-![Group Policy Management Editor](images/ka04u000000HcXR_0EM700000004vPO.png)
+![Group Policy Management Editor](./images/ka04u000000HcXR_0EM700000004vPO.png)
 
 7. Close **Group Policy Object Editor** and link the configured GPO to the required OUs and containers in **Group Policy Management**.
 8. OPTIONAL: Upgrade the group policies on the problematic servers by performing the following command:  
@@ -85,7 +85,7 @@ NOTE: for **Security** and **System** event logs, you can figure out who cleared
 2. When the **Resultant Set of Policy** is processed, expand **Computer Configuration** / **Windows Setting** / **Security Settings** / **Event Log**.
 3. Make sure that the **Retention method for `<problematic log>`** policy setting has the **Not Defined** or **Manually** value set. If not, change this setting using **Group Policy Management Editor** as described in **Procedure 2**.
 
-![RSOP Results](images/ka04u000000HcXR_0EM700000004vPT.png)
+![RSOP Results](./images/ka04u000000HcXR_0EM700000004vPT.png)
 
 4. Perform the following steps:
    - Click **Start** / **Run**, type `eventvwr.msc` and press **Enter**. The **Event Viewer** window will be displayed.
@@ -94,7 +94,7 @@ NOTE: for **Security** and **System** event logs, you can figure out who cleared
    - Select the **Archive the log when full, do not overwrite events** radio button.
    - Click the **Clear Log** button. Click the **Apply** button.
 
-![Event Viewer Settings on Windows 2008](images/ka04u000000HcXR_0EM700000004vPn.png)
+![Event Viewer Settings on Windows 2008](./images/ka04u000000HcXR_0EM700000004vPn.png)
 
 NOTE: These maximum sizes are recommended by Microsoft: http://support.microsoft.com/kb/957662  
 IMPORTANT: Before you change `Maximum log size` and enable the **Archive events when full** option, make sure that the system drive has enough free space to store the event log and log's backup files of the maximum size. If not, the event log will grow and fill up all free space on the system drive and the system will stop responding.
@@ -110,4 +110,5 @@ IMPORTANT: Before you change `Maximum log size` and enable the **Archive events 
 - `ProcessBackupLogs` set to `1`
 - `CleanAutoBackupLogs` set to `X` (if you want the archives to be removed when all events in them are older than `X` hours, for example: `24` hours).
 
-![Event Log Manager Registry Settings](images/ka04u000000HcXR_0EM700000004vPs.png)
+![Event Log Manager Registry Settings](./images/ka04u000000HcXR_0EM700000004vPs.png)
+

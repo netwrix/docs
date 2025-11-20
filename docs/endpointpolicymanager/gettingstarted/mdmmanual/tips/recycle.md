@@ -24,3 +24,4 @@ as shown in Figure 57.
 ![policypak_exporter_tips_tricks_6](/images/endpointpolicymanager/mdm/tips/endpointpolicymanager_exporter_tips_tricks_6.webp)
 
 Figure 57. The steps to copy an existing user list by working in the "Select Users" dialog.
+

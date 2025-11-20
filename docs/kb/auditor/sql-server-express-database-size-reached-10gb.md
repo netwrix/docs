@@ -68,10 +68,11 @@ While it is highly recommended to implement either a SQL Server Standard or Ente
 
 - Split items in multiple monitoring plans to decrease the amount of data written to a single database.
 
-- Decrease the database retention period. Refer to the following article for additional information: [How to Reduce Audit Database Size for Netwrix Auditor](/docs/kb/auditor/how-to-reduce-audit-database-size-for-netwrix-auditor.md)
+- Decrease the database retention period. Refer to the following article for additional information: [How to Reduce Audit Database Size for Netwrix Auditor](/docs/kb/auditor/how-to-reduce-audit-database-size-for-netwrix-auditor)
 
 ## Related Articles
 
 - [Investigations](https://docs.netwrix.com/docs/auditor/10_8/admin/settings/investigations)
-- [How to Reduce Audit Database Size for Netwrix Auditor](/docs/kb/auditor/how-to-reduce-audit-database-size-for-netwrix-auditor.md) 
-- [Could Not Allocate Space for Object (ObjectName) in Database (DatabaseName)](/docs/kb/auditor/could-not-allocate-space-for-object-objectname-in-database-databasename.md)
+- [How to Reduce Audit Database Size for Netwrix Auditor](/docs/kb/auditor/how-to-reduce-audit-database-size-for-netwrix-auditor) 
+- [Could Not Allocate Space for Object (ObjectName) in Database (DatabaseName)](/docs/kb/auditor/could-not-allocate-space-for-object-objectname-in-database-databasename)
+

@@ -43,4 +43,5 @@ To migrate NetWrix Account Lockout Examiner to a different server, perform the f
 5. Start the NetWrix Account Lockout Examiner service on the new server.
 6. If you are using the NetWrix Account Lockout Examiner Web Help-Desk Portal, install it on the new server.
 
-![User-added image](images/ka04u000000HcNT_0EM700000004wyK.png)
+![User-added image](./images/ka04u000000HcNT_0EM700000004wyK.png)
+

@@ -12,7 +12,7 @@ constructs: check-in, check-out, deploy, differences reports, and more. Check ou
 you're a Quest GPOADmin customer to see how Endpoint Policy Manager integrates perfectly with your
 Quest GPOADmin Group Policy management solution.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0_N9h1EKZ3s" title="Endpoint Policy Manager and Quest GPOadmin Tool" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0_N9h1EKZ3s" title="Endpoint Policy Manager and Quest GPOadmin Tool" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager works along Quest's GPOADmin Video Transcript
 
@@ -38,7 +38,7 @@ central storage. We'll just go ahead and select "Endpoint Policy Manager for Moz
 for fun.
 
 We'll go ahead and click on this guy right here, "Mozilla Firefox." We'll change the
-[https://dev.endpointpolicymanager.com/](https://dev.endpointpolicymanager.com/) from "about:blank" to "www.web1.com," just
+[https://policypak.com/](https://policypak.com/) from "about:blank" to "www.web1.com," just
 something like that. So we've changed the homepage to "www.web1.com," and we'll go ahead and click
 "OK." That's it.
 

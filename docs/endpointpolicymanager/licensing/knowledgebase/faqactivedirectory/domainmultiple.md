@@ -17,3 +17,4 @@ We then create licensing keys, one for each domain.
 
 See
 [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/endpointpolicymanager/licensing/videolearningcenter/installall/installuniversal.md)
+

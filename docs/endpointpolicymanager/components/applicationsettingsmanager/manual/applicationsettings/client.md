@@ -44,8 +44,11 @@ Table 2: Endpoint Policy Manager Application Settings Manager log files.
 | `ppUser_spoon.log` `ppSwtiched_spoon.log`````` ppComputer_spoon.log` | LocalAppData | Spoon .DLL Shim | Logs for Spoon.Net and Novell ZENworks Application Virtualization.                                                                                                                                          |
 | `ppTemp.log`                                                         | Temp         | Any             | Emergency log created when all other locations are not accessible. (Log name could be ppTemp or any of the above.)                                                                                          |
 
-You can see an example of the contents of the logs in Figure 101.
+You can see an example of the contents of the logs In the figure shown.
 
 ![troubleshooting_policypak_5](/images/endpointpolicymanager/troubleshooting/applicationsettings/logs/troubleshooting_endpointpolicymanager_5.webp)
 
-Figure 101. An example of the logs.
+The figure shown. An example of the logs.
+
+
+

@@ -12,3 +12,5 @@ settings that are contained within a GPO.
 
 In addition, a computer must be online in order to execute the `gpupdate` command while `ppupdate`
 will execute if the client computer is online or offline.
+
+

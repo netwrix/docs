@@ -248,3 +248,4 @@ When Endpoint Policy Manager Device Manager becomes unlicensed, it will:
 - Not honor new Endpoint Policy Manager Device Manager policies
 - Any removable drive protections are stopped and existing rules will be unenforced, basically
   reverting it back to normal Windows' in-box behavior
+

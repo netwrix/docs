@@ -33,4 +33,4 @@ When the EasyLock software is used on a computer without Netwrix Endpoint Protec
 
 After you open EasyLock, the application will prompt you for a password. Any data you copy into the application will be encrypted using 256-bit AES software encryption. Only users with the correct password can access the encrypted data.
 
-![EasyLock password prompt on launch](images/ka0Qk000000DeHN_0EMQk00000CJ50H.png)
+![EasyLock password prompt on launch](./images/ka0Qk000000DeHN_0EMQk00000CJ50H.png)

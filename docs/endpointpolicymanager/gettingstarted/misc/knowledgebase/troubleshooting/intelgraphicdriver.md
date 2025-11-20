@@ -23,7 +23,7 @@ not show a UAC prompt, which is needed for the update to install.
 Resolution 1
 
 See the Scenario 2 section of the
-[How can I change the behavior of "Run as Admin" with Endpoint Privilege Manager and how has it changed from previous versions?](/docs/endpointpolicymanager/components/endpointprivilegemanager/knowledgebase/tipspplpm/runasadmin.md)
+[How can I change the behavior of "Run as Admin" with Endpoint Privilege Manager and how has it changed from previous versions?](/docs/endpointpolicymanager/components/endpointprivilegemanager/technotes/tipspplpm/runasadmin.md)
 topic for additional information on how to disable the Explicit Elevate option.
 
 Resolution 2
@@ -32,7 +32,7 @@ Alternatively, you can import and use the Endpoint Policy Manager Admin Template
 with this setting already configured.
 
 ```
-<policy xmlns="http://www.endpointpolicymanager.com/2014/Policies/ATM" xmlns:common="http://www.endpointpolicymanager.com/2014/CommonTypes" xmlns:mmc="http://www.endpointpolicymanager.com/2014/Policies/MMC" xmlns:policies="http://www.endpointpolicymanager.com/2014/Policies/PolicyData" id="{97cfdeb3-1811-402b-a8f3-5baaeca1cd8b}" productId="{E0088A46-AB54-4FBD-A733-303C58244C5E}" scope="machine" timestamp="1736976809">
+<policy xmlns="https://www.policypak.com/2014/Policies/ATM" xmlns:common="https://www.policypak.com/2014/CommonTypes" xmlns:mmc="https://www.policypak.com/2014/Policies/MMC" xmlns:policies="https://www.policypak.com/2014/Policies/PolicyData" id="{97cfdeb3-1811-402b-a8f3-5baaeca1cd8b}" productId="{E0088A46-AB54-4FBD-A733-303C58244C5E}" scope="machine" timestamp="1736976809">
 <admxFiles>
 <file fileName="ppcses.admx" namespace="endpointpolicymanager.CSEs"/>
 </admxFiles>

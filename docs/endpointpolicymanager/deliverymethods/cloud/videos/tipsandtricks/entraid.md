@@ -8,3 +8,5 @@ sidebar_position: 20
 Netwrix Endpoint Policy Manager (formerly PolicyPak) Cloud lets you marry your Endpoint Policy
 Manager Cloud account to Azure AD. When you do you'll turn on COMPUTER SIDE targeting for ILT and
 also the ability to link policies to Azure Groups.
+
+

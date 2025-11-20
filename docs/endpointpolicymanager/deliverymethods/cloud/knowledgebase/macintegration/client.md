@@ -69,3 +69,5 @@ When you see Synchronized: Yes you are ready to make rules in Endpoint Policy Ma
 You should see your Mac in the MacOS | All group like what's seen here.
 
 ![888_9_image_16_950x511](/images/endpointpolicymanager/cloud/install/mac/888_9_image_16_950x511.webp)
+
+

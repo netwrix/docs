@@ -10,11 +10,11 @@ Let's simulate what would happen if the user changes job roles or the GPO is no 
 
 **Step 1 –** Find the account you're using within the OU. Use Active Directory Users and Computers
 to move the account to another OU. Find the account, right-click on it, and select "Move," as seen
-in Figure 17.
+In the figure shown.
 
 ![policypak_application_settings_16](/images/endpointpolicymanager/applicationsettings/preconfigured/quickstart/endpointpolicymanager_application_settings_16.webp)
 
-Figure 17. Moving user accounts to a different OU.
+The figure shown. Moving user accounts to a different OU.
 
 **Step 2 –** Move the user account to an OU that will not be affected by the GPO. Then, as the user
 on the target computer, log off and then log back in. Since the GPO no longer affects the location
@@ -28,11 +28,11 @@ be as follows:
 - Users can manage all settings now that Endpoint Policy Manager Application Settings Manager ACL
   Lockdown™ has been removed.
 
-Results are shown in Figure 18.
+Results are shown In the figure shown.
 
 ![policypak_application_settings_17](/images/endpointpolicymanager/applicationsettings/preconfigured/quickstart/endpointpolicymanager_application_settings_17.webp)
 
-Figure 18. The settings have been reverted to their original values.
+The figure shown. The settings have been reverted to their original values.
 
 Congratulations! This completes your initial Quickstart of Endpoint Policy Manager Application
 Settings Manager with Endpoint Policy Manager DesignStudio. Continue onward to learn about
@@ -41,3 +41,6 @@ additional Endpoint Policy Manager Application Settings Manager features.
 Jump to the section, "Endpoint Policy Manager Application Settings Manager: DesignStudio
 Quickstart," in Appendix B: Endpoint Policy Manager Application Manager DesignStudio Guide if you'd
 like to take the Quickstart tour of how to create your own AppSets for your own applications.
+
+
+

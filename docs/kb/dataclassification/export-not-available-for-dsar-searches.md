@@ -36,4 +36,4 @@ Exporting DSAR reports requires that you specify an output location.
 
 Refer to the following article for additional information on DSAR settings: DSAR Settings.
 
-![DSAR Settings screenshot](images/ka04u000001170U_0EM4u000008LceH.png)
+![DSAR Settings screenshot](./images/ka04u000001170U_0EM4u000008LceH.png)

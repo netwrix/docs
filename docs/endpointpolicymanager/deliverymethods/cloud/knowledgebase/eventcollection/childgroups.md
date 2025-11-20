@@ -29,3 +29,5 @@ settings, then the following rules apply:
   then the previous rule doesn't apply. All always takes precedence.
 
 ![940_1_image002_950x536](/images/endpointpolicymanager/cloud/eventcollection/940_1_image002_950x536.webp)
+
+

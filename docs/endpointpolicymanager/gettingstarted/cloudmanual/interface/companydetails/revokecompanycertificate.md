@@ -31,3 +31,5 @@ existing MSIs will stop functioning. Attempts to use them will fail and the inst
 message:.
 
 ![web_interface_and_controls_90_624x510](/images/endpointpolicymanager/cloud/interface/companydetails/web_interface_and_controls_90_624x510.webp)
+
+

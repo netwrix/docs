@@ -54,3 +54,5 @@ before the "set-content".
 steps on the wizard.
 
 ![438_5_image-20200626100413-4](/images/endpointpolicymanager/scriptstriggers/438_5_image-20200626100413-4.webp)
+
+

@@ -33,3 +33,4 @@ sidebar_position: 110
 | Endpoint Policy Manager Preferences 2.0 Registry                                                    | 071E543B-68D3-4886-A2FF-21032C825C0D     | 3375                            | Only used for searching for data within GPOs; cannot be turned off unless all of GPPRefs 2.0 is disabled.                      |
 | Endpoint Policy Manager Shortcuts                                                                   | 67B2F97B-C990-4590-823F-53246DC8D9D5     | 3467                            | Only used for searching for data within GPOs; cannot be turned off unless all of GPPRefs 2.0 is disabled.                      |
 | Enterprise Universal Product Component (aka Enterprise Full)                                        | fddb98dd-4668-4742-9b8a-757274b86fc8     | 3557                            | Only used for searching for LICENSING data within GPOs; cannot be turned off in Licensing XML file.                            |
+

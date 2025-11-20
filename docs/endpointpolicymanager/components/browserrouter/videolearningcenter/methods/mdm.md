@@ -10,7 +10,7 @@ using the WRONG website most of the time. With PP Browser Router, you create pol
 where specific websites are launched only into the specific browsers, then deploy those policies
 using the MDM service of your choice. It couldn't be easier. Check it out!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D6mVGE4GH5k" title="Map the Right Website to the Right Browser using your MDM Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D6mVGE4GH5k" title="Map the Right Website to the Right Browser using your MDM Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with Netwrix Endpoint Policy Manager (formerly PolicyPak) Software. In a
 previous video, we learned how to use the Browser Router component to create policies to route the
@@ -77,3 +77,5 @@ There you have it. We set a default browser. We routed particular websites to pa
 We even made sure to block Facebook. Then after wrapping that all up in an MSI, we delivered the
 settings to our MDM enrolled non-domain joined machine. If this is of interest to you, sign up for
 our webinar, and we'll get you started on your free trial right away. Thanks so much.
+
+

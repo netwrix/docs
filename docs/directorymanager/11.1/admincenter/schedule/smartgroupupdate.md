@@ -81,14 +81,14 @@ processes the added groups only (i.e., it does not process nested groups).
     - Select the **Include Sub-Containers** check box to include the sub-containers within the
       selected container to search for the group(s).
     - Enter a search string in the search box; group names starting with the string are displayed as
-      you type. Click **Add** for a group to select it.  
+      you type. Click **Add** for a group to select it.
       You can also perform an advanced search to locate a group. Click **Advanced** in the search
       box and use the search fields to enter a search string. On clicking **Search**, groups
       matching the string are displayed. Select the group you want to add as target.
     - After selecting one or more groups, click **Add** the groups are displayed in the Target(s)
       area.
 
-3. To remove a container or group in the Target(s) area, click **Remove** for it.  
+3. To remove a container or group in the Target(s) area, click **Remove** for it.
    To remove all target objects, click **Remove All**.
 
 Step 10 – Click **Add Triggers** in the Triggers area to specify a triggering criterion for the
@@ -100,6 +100,10 @@ Step 11 – Click **Add Authentication** in the Authentication area to specify a
 the schedule in the identity store. Follow step 12 in the
 [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
 topic for additional information.
+
+:::important Password Re-insertion Required
+Due to security enhancements, when editing a schedule, you must re-enter the account password in the Authentication section, even if you are not changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
+:::
 
 Step 12 – To enable notifications for the schedule, click **Notifications**. On the Notifications
 dialog box, specify an event for triggering notifications for the schedule and add recipients.
@@ -118,7 +122,7 @@ dialog box, specify an event for triggering notifications for the schedule and a
 
 3. Select the **Send Report to group owner(s)** check box to send a report to each unique group
    owner of the groups processed by the schedule. A Dynasty owner receives a notification for its
-   groups and direct child Dynasties.  
+   groups and direct child Dynasties.
    Group owners include the primary owner, additional owner(s), and Exchange additional owner(s).
 
     :::note
@@ -152,7 +156,7 @@ dialog box, specify an event for triggering notifications for the schedule and a
 
 Step 13 – On the Create Schedule page, click **Create Schedule**.
 
-Step 14 – On the Schedules page, click **Save**.  
+Step 14 – On the Schedules page, click **Save**.
 The schedule is displayed under Smart Group Update. See the
 [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store) topic
 for more info for additional information.

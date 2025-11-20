@@ -35,3 +35,4 @@ Server Start menu, as shown in Figure 7.
 ![gpcr_concepts_and_quickstart_8](/images/endpointpolicymanager/grouppolicycompliancereporter/prepare/gpcr_concepts_and_quickstart_8.webp)
 
 Figure 7. Endpoint Policy Manager GPCR in the Start menu.
+

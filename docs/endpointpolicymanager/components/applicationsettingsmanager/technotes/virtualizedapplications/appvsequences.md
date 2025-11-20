@@ -9,3 +9,5 @@ sidebar_position: 10
 No. Netwrix Endpoint Policy Manager (formerly PolicyPak) treats App-V sequences like other installed
 applications. This means if you have real installed applications and also App-V applications the
 transition is very smooth.
+
+

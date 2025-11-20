@@ -7,8 +7,7 @@ sidebar_position: 20
 # Preferences Manager
 
 :::note
-Before reading this section, please ensure you have read Book 2:
-[Installation Quick Start](/docs/endpointpolicymanager/gettingstarted/overviewinstall/overviewinstall.md), which will help you
+Before reading this section, please ensure you have read the [Installation Quick Start](/docs/endpointpolicymanager/gettingstarted/overviewinstall/overviewinstall.md), which will help you
 learn to do the following:
 :::
 
@@ -112,3 +111,5 @@ schema. Additionally, you do not need to install any server components, upgrade 
 or buy any server-side infrastructure. There is no requirement for domain mode or functional level.
 To be clear, every client computer (Windows 7 and higher) or Terminal Services (RDS)/Citrix machine
 (Windows Server 2008 or higher) must have the Endpoint Policy Manager CSE installed and licensed.
+
+

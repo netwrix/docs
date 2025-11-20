@@ -32,7 +32,7 @@ Netwrix Endpoint Protector includes an improved method for Printer and MTP Conte
 1. In the Netwrix Endpoint Protector Console, navigate to **Device Control** > **Global Settings**, **Groups**, or **Computers** > **Manage Settings** > **File Tracing and Shadowing**.
 2. Toggle the switch to enable **Advanced Printer and MTP Scanning**.
 3. Click **Save** within the **File Tracing and Shadowing** section.  
-   ![File Tracing and Shadowing settings with Advanced Printer and MTP Scanning option enabled](images/ka0Qk000000DsH7_0EMQk00000CB1Rh.png)
+   ![File Tracing and Shadowing settings with Advanced Printer and MTP Scanning option enabled](./images/ka0Qk000000DsH7_0EMQk00000CB1Rh.png)
 4. Save your changes and ensure the updated settings are deployed to Netwrix Endpoint Protector Clients by waiting for the clients to update their policies.
 5. Restart the machines protected by Netwrix Endpoint Protector.
 

@@ -45,11 +45,11 @@ There are several possible reasons for this error to appear:
 1. Make sure the problematic server is started and is accessible through the network.
 2. Make sure the **Server** service is started and set to **Automatic** on the problematic server.
 
-![Services snap-in: Server service](images/ka04u000000HcUb_0EM7000000051QD.png)
+![Services snap-in: Server service](./images/ka04u000000HcUb_0EM7000000051QD.png)
 
 3. Make sure the **File and Printer Sharing for Microsoft Networks** component is enabled in the Local Area Connection properties.
 
-![Local Area Connection Properties: File and Printer sharing](images/ka04u000000HcUb_0EM7000000051QI.png)
+![Local Area Connection Properties: File and Printer sharing](./images/ka04u000000HcUb_0EM7000000051QI.png)
 
 4. Disable the **Windows Firewall** service on the problematic server:
 
@@ -62,4 +62,5 @@ Or configure the Windows Firewall exception:
 - Expand nodes as follow: `Computer Configuration / Administrative Templates / Network / Network Connections / Windows Firewall`, and then open either Domain Profile or Standard Profile, depending on which profile you want to configure.
 - Enable the **Allow inbound file and printer sharing exception** exception.
 
-![Firewall Settings: Allow inbound file and printer sharing exception](images/ka04u000000HcUb_0EM7000000051QN.png)
+![Firewall Settings: Allow inbound file and printer sharing exception](./images/ka04u000000HcUb_0EM7000000051QN.png)
+

@@ -26,7 +26,7 @@ knowledge_article_id: kA04u00000110xFCAQ
 ## Symptom
 
 1. Netwrix Auditor Event Log Manager does not collect logs and shows the following error while trying to 'verify' if the messages were being sent in the Event Log Manager monitoring plan.  
-   ![User-added image](images/ka04u00000116xf_0EM4u000008Ljuv.png)
+   ![User-added image](./images/ka04u00000116xf_0EM4u000008Ljuv.png)
 
 2. When providing credentials for the Netwrix Auditor Event Log Manager monitoring plan, the following dialog appears:
 
@@ -59,3 +59,4 @@ Follow the steps below to resolve the issue:
    - `HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\DefaultSecureProtocols = (DWORD): 0xAA0`
 
 5. Restart both: Netwrix Auditor and the target server(s).
+

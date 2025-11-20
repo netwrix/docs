@@ -25,3 +25,5 @@ As such, you can use a collection to:
   order.
 - Process policies synchronously — When checked, this will ensure that each individual policy is
   finished processing before the next one starts.
+
+

@@ -25,7 +25,7 @@ knowledge_article_id: kA00g000000H9cCCAS
 
 When trying to access the Help-Desk portal, a non-admin user gets a "You do not have a Helpdesk operator permissions" message or "Permission denied" error (error code -2146828218)
 
-![User-added image](images/ka04u000000HcUx_0EM700000004wyo.png)
+![User-added image](./images/ka04u000000HcUx_0EM700000004wyo.png)
 
 ---
 
@@ -44,7 +44,7 @@ To grant a user access to the Help-Desk portal, add this user to the Help Desk O
 2. In the **Help-Desk Operators** section, click the **Modify** button.  
 3. In the dialog that opens, click the **Add** button and specify user(s) that you want to add to this role.
 
-![User-added image](images/ka04u000000HcUx_0EM700000004wyy.png)
+![User-added image](./images/ka04u000000HcUx_0EM700000004wyy.png)
 
 If the issue persists, check that Authentication options are configured properly in IIS:
 
@@ -52,4 +52,5 @@ If the issue persists, check that Authentication options are configured properly
 5. Select this folder by left-clicking on it and look for the **Authentication** feature under the IIS block in the central pane. Double-click on it.  
 6. Make sure that `"Anonymous Authentication"` is disabled.
 
-![User-added image](images/ka04u000000HcUx_0EM700000004wyt.png)
+![User-added image](./images/ka04u000000HcUx_0EM700000004wyt.png)
+

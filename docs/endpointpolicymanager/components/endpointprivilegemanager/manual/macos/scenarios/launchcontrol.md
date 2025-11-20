@@ -45,3 +45,6 @@ Other actions besides Deny Execution are Allow Execution, with some options:
 Examples of the dialog boxes may be seen here:
 
 ![Screens screenshot of a computer Description automatically generated](/images/endpointpolicymanager/mac/scenarios/application_launch_approval_5.webp)
+
+
+

@@ -9,7 +9,7 @@ No login scripts in MDM and Intune got your down? Looking to have something fast
 (and something that works offline) for GPO and Netwrix Endpoint Policy Manager (formerly PolicyPak)
 cloud? Then check out Endpoint Policy Manager Scripts + Login Script Triggers... right here!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y14Q4qUndxM" title="Endpoint Policy Manager Scripts and Triggers: Get to understand login script trigger with GP and MDM systems !" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y14Q4qUndxM" title="Endpoint Policy Manager Scripts and Triggers: Get to understand login script trigger with GP and MDM systems !" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video, we're going to learn how to use triggers with regards
 to Endpoint Policy Manager scripts. There's a bunch of problems we want to overcome. The first one
@@ -69,3 +69,5 @@ script is running.
 
 If you like the idea of Endpoint Policy Manager scripts and triggers, you're welcome to watch some
 more videos on how the triggers work. Thanks so very much and talk to you soon.
+
+

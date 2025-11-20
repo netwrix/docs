@@ -7,7 +7,7 @@ sidebar_position: 10
 
 Learn how PolicyPak enables increased security, management, automation, remote work and reporting.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yTcN57wz3Fg" title="PP On Prem &amp; MDM Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yTcN57wz3Fg" title="PP On Prem &amp; MDM Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Editions Overview
 
@@ -48,3 +48,5 @@ Get started with PolicyPak today and learn the secret that other I.T. admins and
 their machines and applications configured, compliant and secure.
 
 PolicyPak: Securing Your Standards.
+
+

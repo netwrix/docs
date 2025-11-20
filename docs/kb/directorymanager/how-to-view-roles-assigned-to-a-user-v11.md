@@ -44,15 +44,15 @@ These roles can be customized or extended with additional custom roles as needed
 1. Log in to the **Netwrix Directory Admin Center**.  
 2. Click **Identity Stores** in the left pane.  
 3. Click the three-dot icon next to the relevant identity store and select **Edit**.  
-   ![Three-dot icon and Edit option for identity store](images/ka0Qk000000Du7d_0EMQk00000BN8mX.png)
+   ![Three-dot icon and Edit option for identity store](./images/ka0Qk000000Du7d_0EMQk00000BN8mX.png)
 4. Click **Security Roles** under the **Settings** section.  
-   ![Security Roles option in identity store settings](images/ka0Qk000000Du7d_0EMQk00000BN8pl.png)
+   ![Security Roles option in identity store settings](./images/ka0Qk000000Du7d_0EMQk00000BN8pl.png)
 5. Click **Check Security Roles** and the dialog box opens.  
-   ![Check Security Roles button in Security Roles section](images/ka0Qk000000Du7d_0EMQk00000BN8ub.png)
+   ![Check Security Roles button in Security Roles section](./images/ka0Qk000000Du7d_0EMQk00000BN8ub.png)
 6. From the **Client name** drop-down list, select one of the following Netwrix Directory Manager clients:
    - Select a deployed client (e.g., portal) to view the user's role in that client.
    - Select **None** to view the user's highest privileged role across the entire identity store.  
-   ![Client name drop-down and user search in Check Security Roles dialog](images/ka0Qk000000Du7d_0EMQk00000BN8zR.png)
+   ![Client name drop-down and user search in Check Security Roles dialog](./images/ka0Qk000000Du7d_0EMQk00000BN8zR.png)
 7. Search for a user using one of the following methods:
    - Enter a search string and press **Enter** to filter users by username.
    - Click **Advanced** to search by additional fields such as name, department, company, or email. Click **Search** and select the desired user.

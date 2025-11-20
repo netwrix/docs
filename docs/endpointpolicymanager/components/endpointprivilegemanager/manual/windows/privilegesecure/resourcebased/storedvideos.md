@@ -13,3 +13,6 @@ Back at the Netwrix Privilege Secure server, your videos are found in the **Dash
 **Historical videos** section.
 
 ![watching_stored_videos](/images/endpointpolicymanager/integration/privilegesecure/resourcebased/watching_stored_videos.webp)
+
+
+

@@ -10,7 +10,7 @@ Endpoint Policy Manager (formerly PolicyPak) Scripts + Triggers of course. Its e
 pre-try your script first, then use Endpoint Policy Manager Scripts + Triggers to do the magic. Its
 easy!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5tOXS2buwKU" title="Endpoint Policy Manager Scripts + Triggers: Map a printer or drive when a process runs and un-map it when closed." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5tOXS2buwKU" title="Endpoint Policy Manager Scripts + Triggers: Map a printer or drive when a process runs and un-map it when closed." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, and in this video, I'm going to show you how you can use Endpoint
 Policy Manager scripts and triggers to map a drive, or map a printer, or do some other exciting
@@ -82,3 +82,5 @@ how the printer takes a couple seconds the very first time to probably get that 
 rocking and rolling. After that, you can see it actually happens really, really quickly. I hope this
 helps you out and you're ready to use Endpoint Policy Manager scripts and triggers. Thanks very
 much.
+
+

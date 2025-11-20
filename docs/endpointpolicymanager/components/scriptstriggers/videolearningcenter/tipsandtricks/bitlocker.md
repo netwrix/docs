@@ -9,7 +9,7 @@ If you need to encrypt your company data to protect it against prying eyes, Netw
 Manager (formerly PolicyPak) can help configure and implement BitLocker into your existing
 environment.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yqZbDBzH7e8" title="Implementing BitLocker through GP Using  Scripts Manager and Administrative Templates Manger" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yqZbDBzH7e8" title="Implementing BitLocker through GP Using  Scripts Manager and Administrative Templates Manger" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is John from Endpoint Policy Manager. We're going to look at deploying BitLocker. With more
 and more out of the office in potentially less secure locations, protecting data from theft is of
@@ -119,3 +119,5 @@ a couple minutes when it's all done. Let's see where we stand now.
 
 It's at 0%. BitLocker version is at none. It's fully decrypted. No key protectors. It has been
 successfully uninstalled. Thanks for watching. Have yourself a great day.
+
+

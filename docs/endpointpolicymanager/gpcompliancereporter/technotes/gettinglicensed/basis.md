@@ -9,3 +9,4 @@ sidebar_position: 10
 Netwrix Endpoint Policy Manager (formerly PolicyPak) products are always licensed on
 a per-computer basis. Any desktop, laptop, VDI and/or concurrent Terminal Services/Citrix
 connections count as a license.
+

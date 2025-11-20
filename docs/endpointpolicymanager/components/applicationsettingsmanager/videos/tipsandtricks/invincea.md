@@ -8,7 +8,7 @@ sidebar_position: 30
 Invincea is great for Sandboxing the IE, FF, and Chrome browsers. But you can use Netwrix Endpoint
 Policy Manager (formerly PolicyPak) to manage all the in-browser settings. Here's a demonstration.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8pye7kyPfNs" title="Endpoint Policy Manager and Invincea Integration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8pye7kyPfNs" title="Endpoint Policy Manager and Invincea Integration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak and Invincea Integration Demo
 
@@ -44,7 +44,7 @@ So, right-click here, click edit, and then the first thing we'll do is we'll do 
 and Chrome, so we'll go to user side PolicyPak here, we'll click on Application Settings Manager,
 right-click New Application and we'll pick Internet Explorer 8 and later for windows 7 and later.
 So, there's nothing special you need to do in PolicyPak in order to get Invincea stuff to work. You
-just go ahead and make this endpointpolicymanager.com and while we're here we will right-click and we will lock
+just go ahead and make this policypak.com and while we're here we will right-click and we will lock
 it down, so we'll disable the corresponding control in the target application, thus making it not
 possible for you to just change it in the UI. We can also, if we want to – I'm not going to
 demonstrate this. You can perform ACL lockdown, which will ensure that if the user goes to the
@@ -58,7 +58,7 @@ the purpose of this demonstration. I'm just sort of proving a point here that we
 settings into the Invincea browser and the regular browser and I'll demonstrate both of those. Okay?
 So, that's Internet Explorer and while I'm here I'll also do Chrome here. So, I'll take Chrome and
 I've got to pick the right one. There we go. I'll double-click that guy here and let's go ahead and
-set the specific Homepage. We'll also set this to endpointpolicymanager.com and we'll go over to Advanced and I
+set the specific Homepage. We'll also set this to policypak.com and we'll go over to Advanced and I
 like this one.
 
 I want you NOT check offer to save passwords I enter on the web because if the bad guys get into the
@@ -67,14 +67,14 @@ attack vector. Even though the browser is protected it's still an attack vector 
 into the end-user's machine. So, we uncheck offer to save passwords as I enter them on the web.
 Okay, and then lastly we will go, over on the computer side, we'll go to PolicyPak Application
 Settings Manager and we'll manage Firefox New Application. Then we'll go to Firefox 23 and Later Pak
-and once again we will also drive in the Homepage of endpointpolicymanager.com, right-click, we'll go ahead and
+and once again we will also drive in the Homepage of policypak.com, right-click, we'll go ahead and
 lockdown the setting using the system wide config file.
 
 Firefox has a slightly different way of doing things. We'll go ahead and go to Security and we want
 to check all three of these checkboxes here and lock them all down. Okay, so we're making sure that,
 again, even though the browser itself is protected from the bad guys breaking through, we still have
 to protect the attack vectors inside the browser itself. So,
-[https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites](https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites)
+[https://www.policypak.com/pp-blog/windows-10-block-websites](https://www.policypak.com/pp-blog/windows-10-block-websites)
 and don't remember password for sites. You know, these are the kinds of things you want to make sure
 that you still do no matter what your browser situation looks like. Oh, and also, I forgot. While
 I'm here also I will right-click New Application and select PolicyPak for Acrobat Reader X, okay.
@@ -132,3 +132,5 @@ Invincea, we will fully support our configurations together. All you need to do 
 version of PolicyPak and keep on going and that's it. Hope that explains our PolicyPak and Invincea
 integration. I hope you enjoy it, get to use it, and looking forward to having you try it out and
 let us know how it works. Thanks so much. Take care.
+
+

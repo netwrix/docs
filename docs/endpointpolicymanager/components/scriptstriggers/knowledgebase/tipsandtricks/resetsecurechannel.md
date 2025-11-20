@@ -79,3 +79,5 @@ PowerShell to verify the Secure Channel is working again.
 Example of successful result in log file (`c:\temp\SecureChannel_PS.log` ) is below:
 
 ![300_9_image-20200623000029-9_950x181](/images/endpointpolicymanager/scriptstriggers/300_9_image-20200623000029-9_950x181.webp)
+
+

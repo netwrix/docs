@@ -48,3 +48,4 @@ individual policies. As such you might see an undesired "flip flop" behavior whe
 Security Settings are delivered from multiple sources like Group Policy and Endpoint Policy Manager
 Cloud. For details on this particular problem see this existing KB:
 [Why do I sometimes see Endpoint Policy Manager Cloud security settings and sometimes see on-prem GPO security settings?](/docs/endpointpolicymanager/components/admintemplatesmanager/knowledgebase/exportinggrouppolicysecurity/onpremisecloud.md)
+

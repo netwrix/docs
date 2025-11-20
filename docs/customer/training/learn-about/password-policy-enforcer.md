@@ -10,7 +10,7 @@ import { NPPEValue } from '@site/src/training/password-policy-enforcer';
 import { NPPE } from '@site/src/training/products';
 
 
-Estimated length: 5 minutes
+Estimated length: 2 minutes
 
 In this learning path, you will be introduced to <NPPE />. It contains the following courses:
 

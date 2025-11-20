@@ -17,3 +17,5 @@ See the following Knowledge Base articles for Java Enterprise Rules Manager.
 - [Does Endpoint Policy Manager Java Rules Manager work with 64-bit versions of Java?](/docs/endpointpolicymanager/components/javaenterpriserules/technotes/gettingstarted/version64bit.md)
 - [What is the earliest version / what versions of Java are required for Java Rules Manager to work with?](/docs/endpointpolicymanager/components/javaenterpriserules/technotes/gettingstarted/versionjava.md)
 - [Why is the latest Java version installed being used instead of the version specified by Java Rules Manager?](/docs/endpointpolicymanager/components/javaenterpriserules/technotes/gettingstarted/versionlatest.md)
+
+

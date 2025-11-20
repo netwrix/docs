@@ -12,3 +12,4 @@ PolicyPak) on Windows 7.
 
 For users running Windows 8 and later, ensure you have .Net Framework 4.0 or higher installed on
 your management station.
+

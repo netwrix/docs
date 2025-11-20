@@ -4,7 +4,7 @@ Want to get started with Netwrix Endpoint Policy Manager (formerly PolicyPak)? W
 number of computers in on-prem AD and, if desired, in Intune. Here's how to choose which path, and a
 walk through of each scenario.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VEfdj8mMM4I" title="How to Request a &quot;License Request Key&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VEfdj8mMM4I" title="How to Request a &quot;License Request Key&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, and in this video we're going to learn how to request licenses from
 PolicyPak. You'll have to do this every year, so it's good to understand how this works.

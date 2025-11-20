@@ -36,7 +36,7 @@ The steps below guide you through uninstalling Netwrix Directory Manager for an 
 ### Uninstall Netwrix Directory Manager to Upgrade to a Newer Version
 
 1. Double-click the **setup.exe** file in the Directory Manager installation package to launch the Directory Manager Installer.  
-   ![Directory Manager Installer main screen with Uninstall Directory Manager option](images/ka0Qk0000006YdJ_0EMQk000004nD8J.png)
+   ![Directory Manager Installer main screen with Uninstall Directory Manager option](./images/ka0Qk0000006YdJ_0EMQk000004nD8J.png)
 2. Click **Uninstall Directory Manager** to remove the application files via **Programs & Features** in Control Panel.
 3. Proceed with the upgrade to the newer version of Directory Manager.
 4. Click the **Install Directory Manager** link on the Directory Manager Installer to install the latest version.
@@ -98,7 +98,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Imanami\GroupID\Version 11.0
 1. Open the Internet Information Services (IIS) console by typing `inetmgr` in the Windows **Run** dialog box.
 2. Expand the **\<machine name\>** node in the console tree and click **Application Pools**.
 3. On the Application Pools page, delete **Directory Manager App Pool 11** and all other pools that start with **GroupID11_GroupIDSite11** prefixes.  
-   ![IIS Application Pools page with Directory Manager App Pool 11 selected](images/ka0Qk0000006YdJ_0EMQk000004nD8S.png)
+   ![IIS Application Pools page with Directory Manager App Pool 11 selected](./images/ka0Qk0000006YdJ_0EMQk000004nD8S.png)
 
 ### Remove Directory Manager Certificates
 

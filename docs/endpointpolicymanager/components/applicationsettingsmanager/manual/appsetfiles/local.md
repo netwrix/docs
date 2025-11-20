@@ -13,12 +13,12 @@ directories.
 - `%ProgramFiles%\PolicyPak\Design Studio\Extensions`
 - `%appdata%\PolicyPak\Extensions`
 
-In Figure 64, you can see the`%ProgramFiles%\PolicyPak\Extensions`directory and the compiled AppSets
+In the figure shown, you can see the`%ProgramFiles%\PolicyPak\Extensions`directory and the compiled AppSets
 within it.
 
 ![policypak_application_settings_3_1](/images/endpointpolicymanager/applicationsettings/appsetfiles/storage/endpointpolicymanager_application_settings_3_1.webp)
 
-Figure 64. The files that are contained in the` %ProgramFiles%\PolicyPak\Extensions` directory.
+The figure shown. The files that are contained in the` %ProgramFiles%\PolicyPak\Extensions` directory.
 
 Note that each compiled AppSet has a specific name: `PP-{name of file that you saved}.dll`.
 
@@ -30,11 +30,11 @@ All compiled AppSets must have a name starting with "PP-". This is to prevent er
 placed into the Extensions directory and, consequently, the Endpoint Policy Manager MMC snap-in
 trying to load them, which could cause an error.
 
-In Figure 65, you can see the extension DLL is being leveraged from Local Storage.
+In the figure shown, you can see the extension DLL is being leveraged from Local Storage.
 
 ![policypak_application_settings_3_2](/images/endpointpolicymanager/applicationsettings/appsetfiles/storage/endpointpolicymanager_application_settings_3_2.webp)
 
-Figure 65. The Local Storage is being leveraged by the extension DLL.
+The figure shown. The Local Storage is being leveraged by the extension DLL.
 
 Local Storage is fine if you only have one administrator in the domain. However, you should always
 make backup copies of your original pXML files (XML files) and your compiled extension DLLs. This is
@@ -75,7 +75,7 @@ Group Policy Editor, he or she must install the included Endpoint Policy Manager
 
 Once he or she has done that, the administrator edits the existing GPO and Endpoint Policy Manager
 directive that contains WinZip directives and receives a message similar to what is shown in
-Figure 66.
+The figure shown.
 
 :::note
 If you use the Group Policy Editor and don't see the Endpoint Policy Manager node while
@@ -86,7 +86,7 @@ the GPMC.
 
 ![policypak_application_settings_3_3](/images/endpointpolicymanager/applicationsettings/appsetfiles/storage/endpointpolicymanager_application_settings_3_3.webp)
 
-Figure 66. This message informs the adminstrator that they need to set up
+The figure shown. This message informs the adminstrator that they need to set up
 `c:\Program Files\PolicyPak\Extensions` directory on this computer.
 
 When the administrator is on the Admin3 machine, the Endpoint Policy Manager MMC console simply
@@ -98,15 +98,18 @@ needs to copy the extension DLL from the Admin1 computer's `c:\Program Files\Pol
 directory to the Admin3 computer's `c:\Program Files\PolicyPak\Extensions` directory.
 
 Additionally, since the DLL isn't on the local machine, there is no way for that administrator to
-create a new GPO that contains Endpoint Policy Manager directives, as seen in Figure 67. If there
+create a new GPO that contains Endpoint Policy Manager directives, as seen In the figure shown. If there
 are no Endpoint Policy Manager extension DLLs on the machine that is running the GPMC, then there is
 no way to define an AppSet item.
 
 ![policypak_application_settings_3_4](/images/endpointpolicymanager/applicationsettings/appsetfiles/storage/endpointpolicymanager_application_settings_3_4.webp)
 
-Figure 67. The application is unavailable because there is no way for the administrator to create a
+The figure shown. The application is unavailable because there is no way for the administrator to create a
 new GPO if the DLL isn't on the local machine.
 
 Ensuring that these DLLs are always available wherever an administrator might roam can be a real
 nuisance. With that in mind, Endpoint Policy Manager will honor Endpoint Policy Manager Central
 Storage and Endpoint Policy Manager Share-Based Storage, as explored in the next sections.
+
+
+

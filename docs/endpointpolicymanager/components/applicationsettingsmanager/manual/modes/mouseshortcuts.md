@@ -9,11 +9,11 @@ sidebar_position: 60
 The Endpoint Policy Manager Application Settings Manager user interface has several shortcuts to
 help you quickly configure each tab. To discover the mouse shortcuts, right-click the whitespace
 (i.e., not on any specific element like a checkbox or dropdown menu). You should see the flyout
-menu, shown in Figure 38.
+menu, shown In the figure shown.
 
 ![policypak_application_settings_1_17](/images/endpointpolicymanager/applicationsettings/modes/endpointpolicymanager_application_settings_1_17.webp)
 
-Figure 38. Application Settings Manager flyout menu.
+The figure shown. Application Settings Manager flyout menu.
 
 This menu reveals several shortcuts.
 
@@ -53,8 +53,11 @@ This menu reveals several shortcuts.
   features (like Hide or Disable).
 
 Note that if there are no values in any of the elements on a tab, the first two sets of shortcuts
-will not be available, as seen in Figure 39.
+will not be available, as seen In the figure shown.
 
 ![policypak_application_settings_1_18](/images/endpointpolicymanager/applicationsettings/modes/endpointpolicymanager_application_settings_1_18.webp)
 
-Figure 39. The visible options when there are no values in any of the elements on a tab.
+The figure shown. The visible options when there are no values in any of the elements on a tab.
+
+
+

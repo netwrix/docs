@@ -35,7 +35,7 @@ License name: Entitlement reviews.
 Your subscription plan for Netwrix Auditor has expired.
 ```
 
-![image001.png](images/ka04u0000011688_0EM4u000008LCjZ.png)
+![image001.png](./images/ka04u0000011688_0EM4u000008LCjZ.png)
 
 ## Cause
 
@@ -53,3 +53,4 @@ Netwrix Auditor Access Reviews is no longer installed.
 ```
 
 Click **OK** to proceed to the configuration tool.
+

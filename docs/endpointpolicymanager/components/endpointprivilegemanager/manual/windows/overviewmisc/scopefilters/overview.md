@@ -28,3 +28,6 @@ User side.
 
 In this topic, we will explore various use cases when you might use the Policy Scope option (which
 again, will only be un-gray / valid on the Computer side.)
+
+
+

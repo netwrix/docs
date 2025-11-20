@@ -43,3 +43,6 @@ This would strengthen security if malware ended up using an elevated process to 
 its work as LOCAL SYSTEM and tries to run an un-trusted file. Therefore, when the application (.EXE)
 or script, etc. was attempted to fire off, the attack will fail because the user isn’t on the
 SecureRun trusted list.
+
+
+

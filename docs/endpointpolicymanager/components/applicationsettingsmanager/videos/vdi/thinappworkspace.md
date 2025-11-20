@@ -18,7 +18,7 @@ based upon the user's circumstances, and ensures those settings on the computer.
 Video: To see a video of VMware Horizon Workspace ThinApp applications' settings managed by Endpoint
 Policy Manager, watch this video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OkN8tc9L8aI?si=yGSd_Rm5LJjNLKHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OkN8tc9L8aI?si=yGSd_Rm5LJjNLKHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager and VMware Horizon Workspace Applications and ThinApp Entitled Packages
 
@@ -86,7 +86,7 @@ we'll select "Manages Firefox (Real and ThinApp)." We're just utilizing the Grou
 we created the last time.
 
 If we just take a look at the "Settings" report here, we'll see that we've got settings on the
-"General Tab." We're delivering "www.endpointpolicymanager.com," and we're also delivering some important
+"General Tab." We're delivering "www.policypak.com," and we're also delivering some important
 "Security" settings. We can see that if we right click, click "Edit…" and take a look at the
 computer side "PolicyPak/Applications/New/Application" and just dive in there and see our changes.
 
@@ -123,3 +123,5 @@ OK. That's it. Thanks so much for watching. If you're looking to get started wit
 here for you.
 
 Thank you so much for watching, and talk to you soon.
+
+

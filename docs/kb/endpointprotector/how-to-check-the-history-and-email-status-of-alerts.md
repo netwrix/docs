@@ -30,8 +30,8 @@ This article explains how to check the alert history, log details, and the statu
 
 1. Navigate to the desired alert category, such as **System Alerts**, **Device Control Alerts**, **Content Aware Alerts**, or **EasyLock Alerts**.  
 2. Click **View History** to see the list of generated alerts. The alerts are listed under **Alerts History**. Each alert listed in **Alerts History** is also sent via email.  
-   ![Alerts History page showing list of generated alerts](images/ka0Qk000000Dzth_0EMQk00000CJ9iD.png)
+   ![Alerts History page showing list of generated alerts](./images/ka0Qk000000Dzth_0EMQk00000CJ9iD.png)
 3. In the **Actions** column for the desired alert, click the three-line menu, and then click **View**.  
-   ![Actions column with View option highlighted](images/ka0Qk000000Dzth_0EMQk00000CJ1Co.png)
+   ![Actions column with View option highlighted](./images/ka0Qk000000Dzth_0EMQk00000CJ1Co.png)
 4. The **Log Details** and **Alert Details** will be displayed, along with the **E-mail Status**. Here, you can see if the email was sent successfully from the Netwrix Endpoint Protector Server.  
-   ![Log Details and E-mail Status section showing email delivery status](images/ka0Qk000000Dzth_0EMQk00000CJA4n.png)
+   ![Log Details and E-mail Status section showing email delivery status](./images/ka0Qk000000Dzth_0EMQk00000CJA4n.png)

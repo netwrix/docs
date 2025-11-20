@@ -35,7 +35,7 @@ perform the following operations on Windows 10:
 :::note
 For an overview of Endpoint Policy Manager Start Screen & Taskbar Manager, watch the
 videos at
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-start-screen-taskbar-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-start-screen-taskbar-manager.html).
+[https://www.policypak.com/products/endpointpolicymanager-start-screen-taskbar-manager.html](https://www.policypak.com/products/endpointpolicymanager-start-screen-taskbar-manager.html).
 :::
 
 
@@ -75,3 +75,5 @@ settings even to non-domain-joined machines over the Internet.
   Manager Admin Templates Manager and our other products' XML files and wrap them into a "portable"
   MSI file for deployment using Microsoft Endpoint Manager (SCCM and Intune), an MDM service, or
   your own systems management software.
+
+

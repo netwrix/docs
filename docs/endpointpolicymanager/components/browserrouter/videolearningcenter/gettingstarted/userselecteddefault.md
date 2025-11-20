@@ -9,7 +9,7 @@ Netwrix Endpoint Policy Manager (formerly PolicyPak) Browser Router now lets you
 back to your end-users. They can specify their browser of choice, and Endpoint Policy Manager will
 let them utilize it. Here's how to set up the feature.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Xk9rJpb98mM" title="Endpoint Policy Manager: Endpoint Policy Manager Browser Router User-Selected Default" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Xk9rJpb98mM" title="Endpoint Policy Manager: Endpoint Policy Manager Browser Router User-Selected Default" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Set up a default browser using PolicyPak Application Manager
 
@@ -41,9 +41,11 @@ said Firefox is the default browser, and we get Firefox as the default browser.
 
 If we were to, however, go to something that does have a route like "www.google.com" that has a
 route to Chrome, let's see what happens there. That should open the Chrome browser. In fact, it
-does. We have another route to "www.endpointpolicymanager.com," and that should go to Internet Explorer because
+does. We have another route to "www.policypak.com," and that should go to Internet Explorer because
 we have a route to that.
 
 If you use User Selectable, that says anything we don't have a route for and the user has made a
 choice to decide what their default browser is, then honor that. That's a good new feature for
 Endpoint Policy Manager customers. I hope you like it. We'll talk to you soon.
+
+

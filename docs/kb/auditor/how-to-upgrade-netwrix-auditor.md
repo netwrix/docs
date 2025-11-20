@@ -40,7 +40,7 @@ How to update Netwrix Auditor?
 ### Netwrix Auditor v.9.95 and earlier
 
 Older versions of Netwrix Auditor must be upgraded incrementally. You must wait 24 hours in between each incremental upgrade.
-> **NOTE:** For additional information on upgrade increments, refer to the following article: [Upgrade Increments for Netwrix Auditor](/docs/kb/auditor/upgrade-increments-for-netwrix-auditor.md)
+> **NOTE:** For additional information on upgrade increments, refer to the following article: [Upgrade Increments for Netwrix Auditor](/docs/kb/auditor/upgrade-increments-for-netwrix-auditor)
 
 If you are upgrading from a version earlier than 9.96, view the additional steps under **Post Upgrade** > **Legacy Steps** further in this article.
 
@@ -64,9 +64,10 @@ Upon completion, Netwrix Auditor will launch. To confirm integrity, run the foll
 - **Legacy Steps:** On version 8.5 and lower, you will need to launch the Netwrix Auditor Administrator Console and manually upgrade the Audit Databases in SQL.
   - Click **Audit Database** and then click **Upgrade**.
 
-  ![8.0-Upgrade-6-1.png](images/ka0Qk000000Csfl_0EM4u0000084TwA.png)
+  ![8.0-Upgrade-6-1.png](./images/ka0Qk000000Csfl_0EM4u0000084TwA.png)
 
 ## Related articles
 
 - [Upgrading to the Latest Version](https://docs.netwrix.com/docs/auditor/10_8/install/upgrade)
-- [Upgrade Increments for Netwrix Auditor](/docs/kb/auditor/upgrade-increments-for-netwrix-auditor.md)
+- [Upgrade Increments for Netwrix Auditor](/docs/kb/auditor/upgrade-increments-for-netwrix-auditor)
+

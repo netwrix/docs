@@ -32,3 +32,5 @@ UN-check the Experimental flag checkbox.
 Then you issues should be resolved.
 
 ![589_3_img-02_950x665](/images/endpointpolicymanager/troubleshooting/browserrouter/editpolicytemplate/589_3_img-02_950x665.webp)
+
+

@@ -8,7 +8,7 @@ sidebar_position: 120
 If you have applications which SHOULD run most of the time with STANDARD RIGHTS, but SOMETIMES with
 elevated / admin rights, this is the technique to use.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QZ_uSNABS30" title="Endpoint Privilege Manager: Apply on Demand Rules" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QZ_uSNABS30" title="Endpoint Privilege Manager: Apply on Demand Rules" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video, I'm going to show you how you can use Netwrix Endpoint
 Policy Manager (formerly PolicyPak) to apply certain rules on demand.
@@ -69,3 +69,5 @@ video. This video is about Apply On Demand. That other video is about Self Eleva
 
 Hope this helps you out. Looking forward to getting you started with Endpoint Policy Manager real
 soon. Take care.
+
+

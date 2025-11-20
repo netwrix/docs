@@ -38,3 +38,5 @@ the Computer side.
 And here is "Configure extension installation allow list" on the User side.
 
 ![759_9_img-05](/images/endpointpolicymanager/troubleshooting/error/browserrouter/759_9_img-05.webp)
+
+

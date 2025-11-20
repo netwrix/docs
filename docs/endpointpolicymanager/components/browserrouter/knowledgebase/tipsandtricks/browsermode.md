@@ -47,3 +47,5 @@ see this kb article for more
 information: [Endpoint Policy Manager Browser Router: Internet Explorer in Edge mode](/docs/endpointpolicymanager/components/browserrouter/videolearningcenter/tipsandtricks/ieedgemode.md)
 
 :::
+
+

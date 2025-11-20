@@ -49,3 +49,5 @@ the required version of java.
 
 ![889_4_image-20210721212259-12](/images/endpointpolicymanager/troubleshooting/javaenterpriserules/889_4_image-20210721212259-12.webp)
 ![889_5_image-20210721212259-13](/images/endpointpolicymanager/troubleshooting/javaenterpriserules/889_5_image-20210721212259-13.webp)
+
+

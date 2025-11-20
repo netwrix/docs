@@ -35,23 +35,23 @@ This article explains how to add jobs for a newly licensed solution to an existi
 ### Add Solution via Instant Solutions
 
 1. Open the Netwrix Access Analyzer console, right-click the **Jobs** folder, and select **Add Instant Job**.  
-   ![image](images/ka0Qk000000DDCL_0EMQk00000Bv4AE.png)
+   ![image](./images/ka0Qk000000DDCL_0EMQk00000Bv4AE.png)
 
 2. In the Instant Job Wizard, expand **Library Name: Instant Solutions** by clicking the **+** icon.
-   ![Instant Solutions library with newly licensed module selected](images/ka0Qk000000DDCL_0EMQk00000BvBy5.png)
+   ![Instant Solutions library with newly licensed module selected](./images/ka0Qk000000DDCL_0EMQk00000BvBy5.png)
 
 3. Select the newly licensed module (e.g., `.Active Directory Inventory`), then click **Next**.  
-   ![image](images/ka0Qk000000DDCL_0EMQk00000BvEJF.png)
+   ![image](./images/ka0Qk000000DDCL_0EMQk00000BvEJF.png)
 
 4. On the Summary page of the Instant Job Wizard, select **Save & Exit**.  
-   ![Summary page of Instant Job Wizard with Save & Exit button highlighted](images/ka0Qk000000DDCL_0EMQk00000Bv76U.png)
+   ![Summary page of Instant Job Wizard with Save & Exit button highlighted](./images/ka0Qk000000DDCL_0EMQk00000Bv76U.png)
 
 5. Your newly licensed module should now appear in the Netwrix Access Analyzer Job Tree.
 
 ### Add Solution via File Explorer
 
 1. With the Netwrix Access Analyzer console closed, navigate to the **Instant Solutions** folder in Netwrix Access Analyzer's installation directory (`%SAInstallDir%InstantSolutions`).  
-   ![Instant Solutions folder in installation directory](images/ka0Qk000000DDCL_0EMQk00000ArqFd.png)
+   ![Instant Solutions folder in installation directory](./images/ka0Qk000000DDCL_0EMQk00000ArqFd.png)
 
 2. Locate the **GROUP_** folder for the new solution and copy it to the Jobs folder (`%SAInstallDir%Jobs`).
 

@@ -15,7 +15,7 @@ amount of data, this allows a quick turn on and off to limit the amount of ‘ju
 ## Pre-requisites:
 
 Download the .reg update files from
-[https://www.endpointpolicymanager.com/pp-files/PPGPCR_Logging.zip](https://www.endpointpolicymanager.com/pp-files/PPGPCR_Logging.zip).
+[https://www.policypak.com/pp-files/PPGPCR_Logging.zip](https://www.policypak.com/pp-files/PPGPCR_Logging.zip).
 After downloading, unzip the files and copy them to the required computer(s): GPCR Server, Client
 (Admin console), and/or Endpoint.
 
@@ -82,3 +82,4 @@ ticket number (e.g. `SRX0000????-gpcr.zip`)
 
 
 **Step 6 –** Upload to ShareFile link provided by your support rep.
+

@@ -17,3 +17,5 @@ Figure 49. After a policy no longer applies, users are free to manage their Star
 
 At this point, users are free to add or remove icons from the groups or delete the group. If the
 policies ever come back into effect, they will reapply and lock down the groups again.
+
+

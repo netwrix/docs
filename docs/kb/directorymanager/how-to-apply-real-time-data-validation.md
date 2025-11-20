@@ -42,7 +42,7 @@ Netwrix Directory Manager validates data according to rules for uniqueness and s
 5. Enter a name for the display type in the **Name** box.
 6. From the **Type** list, select *Textbox* and click **OK**.
 
-![Creating a textbox display type with real-time validation in Netwrix Directory Manager](images/ka0Qk000000FE97_0EMQk00000BxDMI.png)
+![Creating a textbox display type with real-time validation in Netwrix Directory Manager](./images/ka0Qk000000FE97_0EMQk00000BxDMI.png)
 
 7. Enter a value in the **Default Value** box to set it as the default for the text box. Users can modify this value in the portal.
 8. In the **Regular Expression** box, type a regular expression to validate data entered in the text box. Leave this box blank if you do not want to apply a validation rule.

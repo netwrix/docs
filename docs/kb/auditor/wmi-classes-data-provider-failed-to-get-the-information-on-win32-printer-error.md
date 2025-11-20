@@ -42,7 +42,7 @@ The Print Spooler service is stopped or disabled on the monitored server.
 4. In the **General** tab, review the **Startup type** value − switch it to **Automatic** and click **Start**.
 5. Click **Apply**.
 
-![User-added image](images/ka0Qk0000001f7Z_0EM4u000002CQsV.png)
+![User-added image](./images/ka0Qk0000001f7Z_0EM4u000002CQsV.png)
 
 ---
 
@@ -78,3 +78,4 @@ monitoring plan name, server name,*The WMI Classes data provider failed to get i
 
 - https://docs.netwrix.com/docs/auditor/10_8/configuration/windowsserver/overview
 - https://docs.netwrix.com/docs/auditor/10_8/configuration/windowsserver/overview
+

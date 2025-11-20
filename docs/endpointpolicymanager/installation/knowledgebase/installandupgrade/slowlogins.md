@@ -169,3 +169,4 @@ version for you to test.
 
 **Step 4 –** Here is how to get us log files and results reports (perform EVERY
 step):[What must I send to Endpoint Policy Manager support in order to get the FASTEST support?](/docs/endpointpolicymanager/gettingstarted/misc/knowledgebase/troubleshooting/fastsupport.md)
+

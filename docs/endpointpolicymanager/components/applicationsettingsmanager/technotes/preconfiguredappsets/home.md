@@ -19,3 +19,5 @@ And the other way will specify what happens at launch. You need to set BOTH "Ope
 set of pages" and specify at least one "Set Pages" URL for this to work.
 
 ![211_1_image0012](/images/endpointpolicymanager/applicationsettings/preconfigured/chrome/211_1_image0012.webp)
+
+

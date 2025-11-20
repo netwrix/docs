@@ -6,6 +6,7 @@ keywords: [training, course, certification, partners, sales, identity threat det
 description: "Become a certified Sales Professional for Netwrix Identity Threat Detection & Response"
 ---
 
+import { ITDRIntro } from '@site/src/training/identity-threat-detection-response';
 import { Company, NAA, NPC, NRAD, NTM, NTP } from '@site/src/training/products';
 
 
@@ -17,9 +18,12 @@ This learning path grants <Company /> certification as a Sales Professional for 
 * <NTM />
 * <NTP />
 
-It contains the following course:
+It contains the following courses:
 
+* 1984 Introduction to <Company /> Identity Threat Detection & Response Solution
 * Introduction to the <Company /> Solution for Identity Threat Detection & Response (ITDR)
+
+<ITDRIntro />
 
 ## Introduction to the <Company /> Solution for Identity Threat Detection & Response (ITDR)
 

@@ -21,7 +21,10 @@ Then you can **Deny execution** of the DLL when it is encountered.
 
 :::note
 Some additional details and examples can be found in the
-[How to Defend against malicious PowerShell attacks (DLLs)?](/docs/endpointpolicymanager/components/endpointprivilegemanager/knowledgebase/tipsforadminapproval/maliciousattacks.md)
+[How to Defend against malicious PowerShell attacks (DLLs)?](/docs/endpointpolicymanager/components/endpointprivilegemanager/technotes/tipsforadminapproval/maliciousattacks.md)
 topic.
 
 :::
+
+
+

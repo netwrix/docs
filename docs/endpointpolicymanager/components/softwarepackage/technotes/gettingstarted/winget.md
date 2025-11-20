@@ -45,3 +45,5 @@ installs Chocolaty on your server.
 ![820_3_image-20230824192325-3_950x265](/images/endpointpolicymanager/softwarepackage/820_3_image-20230824192325-3_950x265.webp)
 
 ![820_4_image-20230824192325-4_950x521](/images/endpointpolicymanager/softwarepackage/820_4_image-20230824192325-4_950x521.webp)
+
+

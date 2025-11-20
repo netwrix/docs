@@ -48,7 +48,7 @@ Windows 10:
 
 :::note
 For an overview of Endpoint Policy Manager File Associations Manager, see
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-file-associations-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-file-associations-manager.html).
+[https://www.policypak.com/products/endpointpolicymanager-file-associations-manager.html](https://www.policypak.com/products/endpointpolicymanager-file-associations-manager.html).
 :::
 
 
@@ -86,3 +86,5 @@ settings to non-domain-joined machines over the Internet.
   Manager Admin Templates Manager and our other products' XML files and wrap them into a "portable"
   MSI file for deployment using Microsoft Endpoint Manager (SCCM and Intune), an MDM service, or
   your own systems management software.
+
+

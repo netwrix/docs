@@ -66,3 +66,4 @@ Endpoint Policy Manager directives, including the following:
   Instead, you want it to get some Endpoint Policy Manager directives.
 - You are using Microsoft Intune or another remote management system to manage machines, and you
   want to add Group Policy functionality, but that utility doesn't have Group Policy functionality.
+

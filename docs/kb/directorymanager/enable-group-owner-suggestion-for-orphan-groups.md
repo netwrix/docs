@@ -40,13 +40,13 @@ There are two ways to address Orphan Groups:
 4. Netwrix Directory Manager will suggest a primary owner for an orphan group on the **Owner** tab in group properties. The suggestion is based on group membership. Netwrix Directory Manager checks the managers of group members and suggests the user who appears most frequently as a manager, even if that user is not a group member.  
 5. Click the **Save** icon on the toolbar.
 
-![Suggest Owner/Manager setting in Directory Manager portal settings](images/ka0Qk000000EWsr_0EMQk00000Bo2pu.png)
+![Suggest Owner/Manager setting in Directory Manager portal settings](./images/ka0Qk000000EWsr_0EMQk00000Bo2pu.png)
 
 ## Use Owner Suggestion in the Portal
 1. Log in to the Netwrix Directory Manager portal.  
 2. Go to the properties page of an orphan group and click the **Owner** tab.
 
-![Owner tab in group properties showing suggested owner](images/ka0Qk000000EWsr_0EMQk00000BoBA3.png)
+![Owner tab in group properties showing suggested owner](./images/ka0Qk000000EWsr_0EMQk00000BoBA3.png)
 
 3. Netwrix Directory Manager will display a suggested owner for the group.  
 4. Click **Make Owner** to set the suggested user as the group's primary owner.  

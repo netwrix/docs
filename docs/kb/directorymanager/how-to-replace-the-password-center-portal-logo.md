@@ -29,7 +29,7 @@ Netwrix Directory Manager 11.1 – Directory Manager Portal
 ## Question
 Can you replace the logo on the Password Center portal in Netwrix Directory Manager (formerly GroupID)?
 
-![Password Center portal with default logo](images/ka0Qk000000CapJ_0EMQk00000Az6M6.png)
+![Password Center portal with default logo](./images/ka0Qk000000CapJ_0EMQk00000Az6M6.png)
 
 ## Answer
 Yes, you can replace the Password Center logo. Follow the steps below.
@@ -39,13 +39,13 @@ Yes, you can replace the Password Center logo. Follow the steps below.
    `C:\Program Files\Imanami\GroupID 11.0\GroupIDPortal\Inetpub\<Your Portal Name>\Web\wwwroot\Content\Images\vector`
 2. Locate the file named `PCFullLogoTransaprent.svg`. This file is used to render the logo on the portal.
 
-   ![Directory showing PCFullLogoTransaprent.svg file](images/ka0Qk000000CapJ_0EMQk00000AzEMr.png)
+   ![Directory showing PCFullLogoTransaprent.svg file](./images/ka0Qk000000CapJ_0EMQk00000AzEMr.png)
 
 3. Convert your logo to the `.svg` format and copy it to the same directory.
 4. Rename the existing `PCFullLogoTransaprent.svg` file to `PCFullLogoTransaprentbackup.svg` for backup purposes.
 5. Rename your new logo file to `PCFullLogoTransaprent.svg`.
 6. Open the Password Center portal in incognito mode to verify that the new logo appears.
 
-![Password Center portal with updated logo](images/ka0Qk000000CapJ_0EMQk00000Az8kU.png)
+![Password Center portal with updated logo](./images/ka0Qk000000CapJ_0EMQk00000Az8kU.png)
 
 > **NOTE:** Adjust the dimensions of your logo as needed to fit the portal layout.

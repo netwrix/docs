@@ -69,7 +69,7 @@ After you rename your computer to have Computer in the name, then:
 If you're trying our Endpoint Policy Manager Enterprise, Endpoint Policy Manager Professional or
 Endpoint Policy Manager SaaS, they all come with an included Endpoint Policy Manager Cloud license. 
 Your trial should automatically generate credentials
-to [cloud.endpointpolicymanager.com](http://cloud.endpointpolicymanager.com/) (aka the Endpoint Policy Manager Cloud
+to [cloud.policypak.com](https://cloud.policypak.com/) (aka the Endpoint Policy Manager Cloud
 Service.)
 
 When you install the Endpoint Policy Manager Cloud client, a license is automatically taken from
@@ -141,3 +141,4 @@ instructions: [How to install UNIVERSAL licenses for NEW Customers (via GPO, SC
 Then follow these directions to get started with Endpoint Policy Manager and your MDM service,
 making sure to follow the "Walk Before You Run" video: Getting Started with MDM >
 [Video Learning Center](/docs/endpointpolicymanager/deliverymethods/mdm/videos/videolearningcenter.md)
+

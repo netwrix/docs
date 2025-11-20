@@ -60,7 +60,7 @@ Printing
 
 To print SSRS-based reports, SSRS Report Viewer and Auditor Client require ActiveX Control to be
 installed and enabled on the local machine. See the
-[Impossible to Export a Report ](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA04u000000HDfkCAG.html)
+[Impossible to Export a Report ](/docs/kb/auditor/impossible-to-export-a-report)
 Netwrix knowledge base article for additional information.
 
 You can, for example, open any SSRS-based report using your default web browser and click **Print**.

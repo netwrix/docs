@@ -54,8 +54,8 @@ Get-SmartGroup | select DisplayName, ManagedGroupType | Sort-Object ManagedGroup
 
 > **NOTE:** You can change the export directory by updating the file path in the cmdlet (for example, `D:\exports\list.csv`).
 
-![Exported CSV file example](images/ka0Qk000000DvA9_0EMQk00000BSFdi.png)
-![Directory Manager Management Shell output](images/ka0Qk000000DvA9_0EMQk00000BSG3V.png)
+![Exported CSV file example](./images/ka0Qk000000DvA9_0EMQk00000BSFdi.png)
+![Directory Manager Management Shell output](./images/ka0Qk000000DvA9_0EMQk00000BSG3V.png)
 
 5. To retrieve additional details, you can append more attributes to the cmdlet. Example attributes include:
    - `smartGroupType`

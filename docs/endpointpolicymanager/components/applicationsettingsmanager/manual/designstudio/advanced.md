@@ -15,38 +15,38 @@ values. Let's explore all these areas.
 ## Basic Settings
 
 By default, all elements show their basic view. You can see at a glance the most important items
-that the Configuration Wizard has configured, as shown in Figure 142.
+that the Configuration Wizard has configured, as shown In the figure shown.
 
 ![advanced_appset_design_and](/images/endpointpolicymanager/applicationsettings/designstudio/advanced_appset_design_and.webp)
 
-Figure 142. The basic properties of an element.
+The figure shown. The basic properties of an element.
 
 The Configuration Wizard should auto-fill in all basic properties for most items. However, one item
 that might need attention is the label link. Remember, the label link is the item that describes
 elements that have no text, like text boxes, spinboxes, dropdowns, sliders, and radio button groups.
 To configure the label link for an item, click on "Label Link" in the properties of the item, select
 the "…" (not shown), and then select the text on the page that most closely represents what the text
-box, spinbox, etc. is trying to configure. In Figure 143, the radio button group is being described
+box, spinbox, etc. is trying to configure. In the figure shown, the radio button group is being described
 by the text "Associated image viewer."
 
 ![advanced_appset_design_and_1](/images/endpointpolicymanager/applicationsettings/designstudio/advanced_appset_design_and_1.webp)
 
-Figure 143. Example of an element's label link.
+The figure shown. Example of an element's label link.
 
 ## Advanced Settings
 
 You can also click the "Advanced" button within Properties to see more detailed information about an
-element, as shown in Figure 144.>
+element, as shown In the figure shown.>
 
 ![advanced_appset_design_and_2](/images/endpointpolicymanager/applicationsettings/designstudio/advanced_appset_design_and_2.webp)
 
-Figure 144. The "Advanced" button in the Properties dialog.
+The figure shown. The "Advanced" button in the Properties dialog.
 
 The Advanced menu contains sections labeled "Control data" and "Actions." The control data specifies
 items like dimensions, the display name ("Text"), the default state, the revert state, whether or
 not the item is disabled ("Enabled"), and whether or not the item's text will stretch within the
 boundaries of the element's handles ("AutoSize"). The Actions area shows what occurs when the
-checkbox is checked. In Figure 145, you can see the following:
+checkbox is checked. In the figure shown, you can see the following:
 
 - "First Action" performs a registry update.
 - "`Reg. key`" is set to `WinZip\Policies`. This field is always relative to the data root, so the
@@ -62,33 +62,36 @@ checkbox is checked. In Figure 145, you can see the following:
   value inside "passwordreqlower" is deleted.
 
 It's possible to see (or set) second and third actions when an element changes. You can dictate
-values within any of the supported datatypes, as shown in Figure 145.
+values within any of the supported datatypes, as shown In the figure shown.
 
 ![advanced_appset_design_and_3](/images/endpointpolicymanager/applicationsettings/designstudio/advanced_appset_design_and_3.webp)
 
-Figure 145. Examples of second actions.
+The figure shown. Examples of second actions.
 
 You might want to do this if you had to configure both a registry item and also an INI file when a
 checkbox is checked. This is a very rare occurrence, but it does happen.
 
 After selecting the data type (Registry, INI, XML, etc.) you are then prompted for the section and
-property (or registry key and registry value), which in Figure 146 are shown as "[MainFrame]" and
+property (or registry key and registry value), which In the figure shown are shown as "[MainFrame]" and
 "AdvertiseIndex."
 
 ![advanced_appset_design_and_4](/images/endpointpolicymanager/applicationsettings/designstudio/advanced_appset_design_and_4.webp)
 
-Figure 146. Selecting the section and property.
+The figure shown. Selecting the section and property.
 
 Once the value is manually selected, you are able to place the value automatically within the On or
-Off values (or both or neither), as shown in Figure 147.
+Off values (or both or neither), as shown In the figure shown.
 
 ![advanced_appset_design_and_5](/images/endpointpolicymanager/applicationsettings/designstudio/advanced_appset_design_and_5.webp)
 
-Figure 147. Placing the value within the "On" or "Off" fields.
+The figure shown. Placing the value within the "On" or "Off" fields.
 
 After placing the items, you can further specify the On and Off values within the action itself, as
-shown in Figure 148. Checkboxes are only allowed three actions.
+shown In the figure shown. Checkboxes are only allowed three actions.
 
 ![advanced_appset_design_and_6](/images/endpointpolicymanager/applicationsettings/designstudio/advanced_appset_design_and_6.webp)
 
-Figure 148. Specifying "On" and "Off" values within the action.
+The figure shown. Specifying "On" and "Off" values within the action.
+
+
+

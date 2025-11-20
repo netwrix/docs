@@ -11,7 +11,7 @@ up to date if a user changes it. Welcome Netwrix Endpoint Policy Manager (former
 Manager. Endpoint Policy Manager RDP manager enables you to deliver .RDP files and dictate
 connections as YOU want them defined. Don't leave it up to end users... you set it for them!
 
-<iframe width="1678" height="943" src="https://www.youtube.com/embed/Xa4BkblshUY" title="Endpoint Policy RDP Manager: Create and update .RDP files for end-users for Remote Work and VDI scenarios" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Xa4BkblshUY" title="Endpoint Policy RDP Manager: Create and update .RDP files for end-users for Remote Work and VDI scenarios" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz and in this video, we're going to learn how to use Endpoint Policy
 Manager RDP Manager. The basic gist is that users, if they knew what they were doing, which they
@@ -106,3 +106,5 @@ the way we want.
 All these things are available to you to keep updated. You can dictate the remote work and
 work-from-home scenarios that you're after using Endpoint Policy Manager RDP link manager. I hope
 this video helps you out. Looking forward to getting you started real soon. Thanks so much.
+
+

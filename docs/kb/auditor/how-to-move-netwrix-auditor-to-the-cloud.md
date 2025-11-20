@@ -32,7 +32,7 @@ Consider it to simply be an installation on another network. Netwrix recommends 
 
 1. Spin up a new Windows Server VM in your cloud environment, provision it based on the Auditor Requirements: [Requirements](https://docs.netwrix.com/docs/auditor/10_8/requirements/overview)
 
-2. After that, migrate your old instance according to the following article: Migrating Netwrix Auditor to New Server: [Migrating Auditor to New Server](/docs/kb/auditor/migrating-auditor-to-new-server.md).
+2. After that, migrate your old instance according to the following article: Migrating Netwrix Auditor to New Server: [Migrating Auditor to New Server](/docs/kb/auditor/migrating-auditor-to-new-server).
 
    > **NOTE:** When you go to migrate, both the old and new instances of Netwrix Auditor must be exactly the same version and build. In Netwrix Auditor, navigate to **Settings** -> **About Netwrix Auditor** and check the build number.
 

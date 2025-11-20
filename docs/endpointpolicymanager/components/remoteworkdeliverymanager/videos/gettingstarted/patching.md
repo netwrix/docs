@@ -8,7 +8,7 @@ sidebar_position: 40
 Instead of specifying time and time again which computers should update, instead use the auto-update
 feature. This video shows how to use the "Always" property to always check for updates. Here's how !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5Z0vb2XXz8A" title="Endpoint Policy Manager Remote Work Delivery Manager: Automatic Patching and Updates" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5Z0vb2XXz8A" title="Endpoint Policy Manager Remote Work Delivery Manager: Automatic Patching and Updates" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 :::note
 This technique works with SMB and web-based shares.
@@ -58,3 +58,5 @@ exchange program underneath the hood, and you're off to the races.
 That's how you can keep software updated and patched all automatically using Endpoint Policy Manager
 Remote Work Delivery Manager. Hope this video helps you out. Looking forward to getting you started
 real soon with Endpoint Policy Manager. Thanks.
+
+

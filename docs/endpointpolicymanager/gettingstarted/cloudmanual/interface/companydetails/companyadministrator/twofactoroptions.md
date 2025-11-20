@@ -11,3 +11,5 @@ method. If you want to force an admin to use a different method (email-based ver
 application-based or vice versa) or both methods, you can do that here.
 
 ![web_interface_and_controls_84_625x94](/images/endpointpolicymanager/cloud/interface/companydetails/companyadministrators/web_interface_and_controls_84_625x94.webp)
+
+

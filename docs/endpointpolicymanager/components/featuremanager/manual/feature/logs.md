@@ -63,6 +63,7 @@ you can open up the PPComputerOperational.log (see Figure 46) located at
 
 Figure 46. Log files showing when a policy installs and uninstalls items.
 
-If needed, logs are automatically wrapped up and can be sent to
-[support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com) using the `PPLOGS.EXE` command on any endpoint
+If needed, logs are automatically wrapped up and can be sent to support by [opening a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket) using the `PPLOGS.EXE` command on any endpoint
 where the client-side extension (CSE) is installed.
+
+

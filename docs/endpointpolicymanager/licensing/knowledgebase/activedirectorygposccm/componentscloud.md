@@ -41,3 +41,4 @@ result should be similar to this example, where you can see the license is valid
 (in this case Browser Router) is prevented from being licensed by a policy.
 
 ![188_7_img-2_950x649](/images/endpointpolicymanager/license/unlicense/188_7_img-2_950x649.webp)
+

@@ -63,3 +63,5 @@ changed to orange, which shows that it now has Item-Level Targeting.
 When Item-Level Targeting is on, the policy won't apply unless the conditions are **True**. If
 Item-Level Targeting is on a collection, then none of the items in the collection will apply unless
 the Item-Level Targeting on the collection evaluates to **True**.
+
+

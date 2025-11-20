@@ -30,11 +30,14 @@ perform.
 - It grayed out (disabled) the "at least one symbol character" checkbox.
 - It locked out the Cameras tab.
 
-You can see the results in Figure 13.
+You can see the results In the figure shown.
 
 ![policypak_application_settings_12](/images/endpointpolicymanager/applicationsettings/preconfigured/quickstart/endpointpolicymanager_application_settings_12.webp)
 
-Figure 13. The results of the Application Settings Manager setting changes.
+The figure shown. The results of the Application Settings Manager setting changes.
 
 Note that the settings are all delivered as expected, and the options you specified have been locked
 down. Close WinZip for now. Rejoice in your newfound power!
+
+
+

@@ -31,3 +31,4 @@ As you can see in the figure, items with lower numbered Policy Layer IDs will pr
 with higher numbered Policy Layer IDs.
 
 ![policypak_exporter_tips_tricks_1](/images/endpointpolicymanager/mdm/tips/endpointpolicymanager_exporter_tips_tricks_1.webp)
+

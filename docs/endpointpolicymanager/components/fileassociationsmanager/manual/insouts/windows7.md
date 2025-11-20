@@ -27,3 +27,5 @@ This method worked well on Windows XP to Windows 8, but stopped working with Win
 Endpoint Policy Manager File Associations Manager fills in this gap. If you are already accustomed
 to using Group Policy (with Group Policy Preferences) to manage file associations, then Endpoint
 Policy Manager File Associations Manager will be a familiar way to perform that work.
+
+

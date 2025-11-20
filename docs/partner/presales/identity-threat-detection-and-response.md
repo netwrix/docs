@@ -6,6 +6,7 @@ keywords: [training, course, certification, partners, presales, access analyzer,
 description: "Become a certified Presales Engineer for Netwrix Identity Threat Detection & Response"
 ---
 
+import { ITDRIntro } from '@site/src/training/identity-threat-detection-response';
 import { NAADemo } from '@site/src/training/access-analyzer';
 import { NPCDemo } from '@site/src/training/pingcastle';
 import { NRADDemo } from '@site/src/training/recovery-for-ad';
@@ -20,12 +21,15 @@ Prerequisite: <Company /> Identity Threat Detection & Response Solution Sales Pr
 
 This learning path grants <Company /> certification as a Presales Engineer for this solution. It contains the following courses:
 
+* 1984 Introduction to <Company /> Identity Threat Detection & Response Solution
 * 5000 <NAA /> – Demo the Basic Use Cases
 * 5680 <NPC /> – Demo the Basic Use Cases
 * 5400 <NRAD /> – Demo the Basic Use Cases
 * 5500 <NTP /> – Demo the Basic Use Cases
 * 5560 <NTM /> – Demo the Basic Use Cases
 * 5984 <Company /> Identity Threat Detection & Response Solution – Demo the Basic Use Cases
+
+<ITDRIntro />
 
 <NAADemo />
 

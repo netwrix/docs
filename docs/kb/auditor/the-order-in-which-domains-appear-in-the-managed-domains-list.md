@@ -26,4 +26,5 @@ The list of managed domains shown on the **Self-Service Portal** is sorted alpha
 
 To sort domains, specify the domain name you want at the top in capital letters in the **Domains** section of the **Administrative Portal**.
 
-[![User-added image](images/ka04u000000HcWF_0EM700000004xUV.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000Xdsq&feoid=00N700000032Pj2&refid=0EM700000004xUV)
+[![User-added image](./images/ka04u000000HcWF_0EM700000004xUV.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000Xdsq&feoid=00N700000032Pj2&refid=0EM700000004xUV)
+

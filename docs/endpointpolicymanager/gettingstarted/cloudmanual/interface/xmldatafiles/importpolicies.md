@@ -56,3 +56,4 @@ When the process is completed you can see each selected policy to import with it
 appearing in the XML Data Files section like any other policy you create.
 
 ![web_interface_and_controls_43_500x301](/images/endpointpolicymanager/cloud/interface/xmldatafiles/web_interface_and_controls_43_500x301.webp)
+

@@ -37,4 +37,5 @@ In order to reduce CPU load and memory usage, perform the following steps:
 
 If this does not help, set the `LockoutStatusRefreshPeriod` key value to `0`, but in this case the Account Lockout Examiner will not verify accounts status via Active Directory, so account lockouts will not be reported if a corresponding event is not found in the event log.
 
-![User-added image](images/ka04u000000HcN0_0EM700000004wxW.png)
+![User-added image](./images/ka04u000000HcN0_0EM700000004wxW.png)
+

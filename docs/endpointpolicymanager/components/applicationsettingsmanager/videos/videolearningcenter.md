@@ -158,3 +158,5 @@ See the following Video topics for Application Manager.
 - [Endpoint Policy Manager for Microsoft Office 2013 and 2016](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/otherapplications/office.md)
 - [Endpoint Policy Manager for Microsoft Skype for Business (formerly Lync)](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/otherapplications/skype.md)
 - [Endpoint Policy Manager for Thunderbird](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/otherapplications/thunderbird.md)
+
+

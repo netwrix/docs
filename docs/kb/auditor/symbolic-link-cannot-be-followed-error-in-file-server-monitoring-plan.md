@@ -52,7 +52,7 @@ Enable all symbolic link types.
 
     Once executed, you'll see the settings for symbolic links (enabled or disabled).
 
-    ![SymlinkEvaluation output](images/servlet_image_3823966b1661.png)
+    ![SymlinkEvaluation output](./images/servlet_image_3823966b1661.png)
 
 2. To enable a symlink type, run the following command:
 
@@ -63,3 +63,6 @@ Enable all symbolic link types.
     The `R2L:1` stands for remote-to-local enabled. You can change `R` to `L` and vice versa to enable the disabled symlink.
 
 Learn more about fsutil syntax in the Microsoft documentation: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil-behavior (fsutil behavior ⸱ Microsoft)
+
+
+

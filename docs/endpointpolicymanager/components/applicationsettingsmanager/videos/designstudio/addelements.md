@@ -8,7 +8,7 @@ sidebar_position: 30
 Quicky and easily add additional bells and whistles to your project. In this quick demo Jeremy shows
 you how to add a radio button element that he captures from a different part of the UI.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GfT_A2kIj0g?si=VNLit56WOOtG_qmu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GfT_A2kIj0g?si=VNLit56WOOtG_qmu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Using DesignStudio to add elements from an alternate UI video transcript
 
@@ -52,3 +52,5 @@ That's it. I hope that gives you instruction for how to add simple UI elements, 
 aren't on the regular UI.
 
 Thanks.
+
+

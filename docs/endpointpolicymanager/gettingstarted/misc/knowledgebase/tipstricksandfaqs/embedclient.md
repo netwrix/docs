@@ -71,3 +71,4 @@ Extension) to a Citrix machine that hosts multiple users. This is because Endpoi
 Cloud sees this as ONE consumed license; where you would need to pay licensing fees for each
 concurrent connection. The only time this is permissible is with an express written agreement
 between your company and Endpoint Policy Manager where we both agree that you are doing this.
+

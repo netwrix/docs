@@ -9,7 +9,7 @@ If you have an application you simply cannot install on your own Management Stat
 included PPFAM Helper utility to capture the association, then bring the XML file over to your
 machine.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0cL1kLhb1K8" title="PPFAM: Helper Application" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0cL1kLhb1K8" title="PPFAM: Helper Application" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager File Associations Manager: Helper Application
 
@@ -73,3 +73,5 @@ I hope this helps you out. If you're looking to get started, we're here to help 
 Just join us for the webinar and see you onboard.
 
 Thanks.
+
+

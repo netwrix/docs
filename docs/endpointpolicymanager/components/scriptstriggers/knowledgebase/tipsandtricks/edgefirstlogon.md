@@ -47,3 +47,5 @@ this option.
 the screen below after a successful 1st logon.
 
 ![868_3_image-20220225024809-3_900x490](/images/endpointpolicymanager/scriptstriggers/868_3_image-20220225024809-3_900x490.webp)
+
+

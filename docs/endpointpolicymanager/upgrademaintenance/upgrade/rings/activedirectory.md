@@ -47,7 +47,7 @@ While it's possible to deploy the Endpoint Policy Manager CSE via Microsoft's Gr
 software installation, it is not recommended. The best practice to deploy the Endpoint Policy
 Manager CSE, should you have no on-prem software deployment tool, is the free version of PDQ Deploy.
 For more information, see the video series at
-[https://www.endpointpolicymanager.com/integration/endpointpolicymanager-and-pdq.html](https://www.endpointpolicymanager.com/integration/endpointpolicymanager-and-pdq.html).
+[https://www.policypak.com/integration/endpointpolicymanager-and-pdq.html](https://www.policypak.com/integration/endpointpolicymanager-and-pdq.html).
 :::
 
 
@@ -117,3 +117,4 @@ topic for additional information.
 See the
 [Using Remote Work Delivery Manager to Update the Endpoint Policy Manager Client Side Extension](/docs/endpointpolicymanager/components/remoteworkdeliverymanager/videos/tipsandtricks/updateclientsideextension.md)video for
 additional information.
+

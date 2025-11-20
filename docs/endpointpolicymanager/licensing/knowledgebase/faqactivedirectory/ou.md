@@ -8,3 +8,4 @@ sidebar_position: 20
 
 If Sales Comptuers OU is licensed, and you want to also license Marketing Computers OU, that's fine.
 Re-Run your licensing tool, and perform a mid-year True Up. You only need to pay for overage.
+

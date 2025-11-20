@@ -31,4 +31,5 @@ The Netwrix Account Lockout Examiner service account you entered during installa
 4. Change the account, click **OK**.  
 5. Restart the **Account Lockout Examiner** service.
 
-![User-added](images/servlet_image_3823966b1661.png)
+![User-added](./images/servlet_image_3823966b1661.png)
+

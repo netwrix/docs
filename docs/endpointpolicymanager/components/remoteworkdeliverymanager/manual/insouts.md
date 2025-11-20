@@ -42,3 +42,5 @@ use the MDM service's MSI file deployment ability. Even though it works, and wou
 time, this is not a great system when you need to update one or more files on a regular basis,
 because the process becomes tedious and error-prone. With Endpoint Policy Manager, you'll see how to
 quickly copy files to endpoints and keep them updated on a regular basis.
+
+

@@ -9,3 +9,5 @@ sidebar_position: 10
 You will need to install the free Visual C++ 2008 SP1, 2010 or 2012, 2015 or 2017 Express Edition as
 well as any applications you wish to manage with Netwrix Endpoint Policy Manager (formerly
 PolicyPak) Design Studio. This is a free download from Microsoft.
+
+

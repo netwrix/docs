@@ -158,3 +158,5 @@ is similar to the questions when adding a USB device earlier.
 The typical route is Allow Users to use specific phones or other WPDs.
 
 ![wpd3](/images/endpointpolicymanager/device/devicemanager/wpd3.webp)
+
+

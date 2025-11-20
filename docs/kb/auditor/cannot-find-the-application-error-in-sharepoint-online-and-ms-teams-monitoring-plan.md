@@ -50,7 +50,7 @@ Cannot find the application.
 
 - Review the Application ID provided. You can find the Application ID of your app in the **Overview** page once you select the app in the **App registrations** section. Refer to the following Netwrix Auditor article for additional information on the initial Azure app setup: Netwrix Auditor — Permissions for SharePoint Online Auditing − Creating and registering a new app in Microsoft Entra ID ⸱ v10.6. For additional information on creating an app for Teams auditing, refer to the following Netwrix Auditor article: Netwrix Auditor — Permissions for Teams Auditing − Create and Register a New App in Microsoft Entra ID ⸱ v10.6.
 
-![SPOAppID](images/ka0Qk0000001L8r_0EM4u000008MV3l.png)
+![SPOAppID](./images/ka0Qk0000001L8r_0EM4u000008MV3l.png)
 
 - Review the app API permissions granted. You can either specify API permissions manually or use a manifest. Refer to the following Netwrix Auditor article for additional information on granting permissions: Netwrix Auditor — Permissions for SharePoint Online Auditing − Granting required permissions ⸱ v10.6. For additional information on permissions for Teams auditing, refer to the following Netwrix Auditor article: Netwrix Auditor — Permissions for Teams Auditing − Grant Required Permissions ⸱ v10.6.
 
@@ -63,3 +63,6 @@ Cannot find the application.
 - Netwrix Auditor — Permissions for SharePoint Online Auditing − Granting Required Permissions ⸱ v10.6
 
 - Netwrix Auditor — Permissions for Teams Auditing − Grant Required Permissions ⸱ v10.6
+
+
+

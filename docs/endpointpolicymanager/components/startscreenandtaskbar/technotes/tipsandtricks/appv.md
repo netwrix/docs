@@ -42,3 +42,5 @@ The target application path must exist in the client machine.
 **Step 7 –** Log-off and log back on to see the required Starts Screen items.
 
 ![808_5_image-20201121192420-5](/images/endpointpolicymanager/integration/808_5_image-20201121192420-5.webp)
+
+

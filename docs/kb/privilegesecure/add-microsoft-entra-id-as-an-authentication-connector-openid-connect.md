@@ -42,7 +42,7 @@ Perform the following steps in Microsoft Entra ID as an administrator to prepare
    https://your-sbpam-server-hostname:6500/callback
    ```
 
-   ![App registration page with Redirect URI field highlighted](images/ka0Qk000000DtGP_0EM4u000004bUjf.png)
+   ![App registration page with Redirect URI field highlighted](./images/ka0Qk000000DtGP_0EM4u000004bUjf.png)
 
 4. Click **Register**. After registration completes, you will be redirected to the new app's **Overview** page.
 5. In the left sidebar, click **Authentication**. Scroll down and enter the same **Callback Address** from Step 3 in the **Front-channel logout URL** field.  
@@ -50,7 +50,7 @@ Perform the following steps in Microsoft Entra ID as an administrator to prepare
    - **Access tokens (used for implicit flows)**
    - **ID tokens (used for implicit and hybrid flows)**
 
-   ![Authentication settings with token options enabled](images/ka0Qk000000DtGP_0EM4u000004bUjk.png)
+   ![Authentication settings with token options enabled](./images/ka0Qk000000DtGP_0EM4u000004bUjk.png)
 
 6. Click **Save** at the top of the page, then return to the app's **Overview** page.
 7. Click **Endpoints** near the top of the page. Copy the **OpenID Connect metadata document** URL and open it in a new browser tab.  
@@ -71,19 +71,19 @@ After completing the **Steps for Microsoft Entra ID**, perform the following ste
 1. As a Netwrix Privilege Secure administrator, navigate to **Configuration > Authentication** and click the green **+** button to add a new Authentication Connector.
 2. Enter a name and (optionally) a description for the new connector. Set the **Connector Type** to **OpenID Connect**.
 
-   ![Authentication Connector creation dialog with OpenID Connect selected](images/ka0Qk000000DtGP_0EM4u000004bUjp.png)
+   ![Authentication Connector creation dialog with OpenID Connect selected](./images/ka0Qk000000DtGP_0EM4u000004bUjp.png)
 
 3. Click **Configuration Wizard**.
 4. On the wizard's **Configure Client** page, enter the **Issuer** and **Client ID** (from the **Steps for Microsoft Entra ID**) in the respective fields.
 
-   ![Configure Client page with Issuer and Client ID fields](images/ka0Qk000000DtGP_0EM4u000004bUju.png)
+   ![Configure Client page with Issuer and Client ID fields](./images/ka0Qk000000DtGP_0EM4u000004bUju.png)
 
 5. Click **Test Connection**.  
    On the Microsoft Entra ID sign-in page that loads, **do not sign in**. Once you have verified that the sign-in page loaded properly, click the back button in your browser to return to Netwrix Privilege Secure. The connection test is successful if Microsoft Entra ID did not display an error.
 6. Click **Next** to advance in the Authentication Connector Configuration Wizard. You will now be on the **Test Login** page.
 7. Click **Login** and sign in as any Microsoft Entra ID user (this does not need to be an administrator). You will be prompted to accept the app's requested permissions. Check **Consent on behalf of your organization** and click **Accept**.
 
-   ![Microsoft Entra ID permissions consent dialog](images/ka0Qk000000DtGP_0EM4u000004bUjz.png)
+   ![Microsoft Entra ID permissions consent dialog](./images/ka0Qk000000DtGP_0EM4u000004bUjz.png)
 
 8. Click **Next** in the wizard. You will now be on the **Configure Id Mapping** page.
 9. Click **Get User Data**.  
@@ -95,21 +95,21 @@ After completing the **Steps for Microsoft Entra ID**, perform the following ste
 
    > **IMPORTANT:** Make sure to use a field that has an `ID TOKEN` source, rather than `ACCESS TOKEN`.
 
-   ![User data mapping table with ID Token source highlighted](images/ka0Qk000000DtGP_0EM4u000004bUk9.png)
+   ![User data mapping table with ID Token source highlighted](./images/ka0Qk000000DtGP_0EM4u000004bUk9.png)
 
    Once the desired field has been found, click on it and then click **Select**.
 10. You will now be back in the Authentication Connector Configuration Wizard, on the **Configure Id Mapping** page. Make sure the **Login Format** dropdown matches the ID Token field selected from Microsoft Entra ID in the previous step.  
     For example, if you chose **Email** for the field in the previous step, then this dropdown should also be **Email Address**.
 
-    ![Login Format dropdown with Email Address selected](images/ka0Qk000000DtGP_0EM4u000004bUkE.png)
+    ![Login Format dropdown with Email Address selected](./images/ka0Qk000000DtGP_0EM4u000004bUkE.png)
 
 11. Click **Finish** on the summary modal, and then **Save** for the authentication connector.
 12. You can now assign this authentication connector to a user via the **Authentication Connector** tab for a user accessed in Netwrix Privilege Secure's **Users & Groups** page.
 
-    ![Authentication Connector assignment in Users & Groups page](images/ka0Qk000000DtGP_0EM4u000004bUkJ.png)
+    ![Authentication Connector assignment in Users & Groups page](./images/ka0Qk000000DtGP_0EM4u000004bUkJ.png)
 
     Users with this authentication connector assignment can now use this authentication connector option on the Netwrix Privilege Secure log-in screen.
 
-    ![Netwrix Privilege Secure login screen with OpenID Connect option](images/ka0Qk000000DtGP_0EM4u000004bUkO.png)
+    ![Netwrix Privilege Secure login screen with OpenID Connect option](./images/ka0Qk000000DtGP_0EM4u000004bUkO.png)
 
     When using the OpenID Connect log-in option, the user will be redirected to sign in to Microsoft Entra ID. Upon successful authentication, the user will be redirected to the Netwrix Privilege Secure UI as their signed-in user.

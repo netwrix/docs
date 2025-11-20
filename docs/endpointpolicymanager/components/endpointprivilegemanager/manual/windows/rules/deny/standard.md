@@ -39,3 +39,6 @@ corporate policies.
 
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/deny/denying_standard_applications_3.webp)
+
+
+

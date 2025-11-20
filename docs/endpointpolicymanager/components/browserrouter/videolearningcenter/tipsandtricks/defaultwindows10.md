@@ -8,7 +8,7 @@ sidebar_position: 10
 You want to set the users' Default Browser. Great ! But how can you deliver the setting... one
 time... then let the user drift from that configuration? Easy !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HJbn69MS6WM" title="Endpoint Policy Manager Browser Router: Set the Windows 10 Default Browser (once) then drift" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HJbn69MS6WM" title="Endpoint Policy Manager Browser Router: Set the Windows 10 Default Browser (once) then drift" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video, I'm going to show you how you can use Netwrix Endpoint
 Policy Manager (formerly PolicyPak) Browser Router to set a default browser policy and let it drift
@@ -79,3 +79,5 @@ and drift, so you can deploy this one time after you've rolled out Windows 10, g
 that they want and then let them make the choice afterward. Then finally, Once or when forced will
 snap it back to the thing you say when gpupdate/force is run. Hope this helps you out. Looking
 forward to getting started real soon with Endpoint Policy Manager. Thanks.
+
+

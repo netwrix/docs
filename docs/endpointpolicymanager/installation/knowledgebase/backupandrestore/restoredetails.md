@@ -26,3 +26,4 @@ Then you can use this file from the backup, and perform an "Import from XML" lik
 
 Note this might not work for all types of Endpoint Policy Manager items, like Endpoint Policy
 Manager Application Settings Manager; but should work in most cases.
+

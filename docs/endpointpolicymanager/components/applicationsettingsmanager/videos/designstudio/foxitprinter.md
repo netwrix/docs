@@ -8,7 +8,7 @@ sidebar_position: 50
 In this tutorial we show how to capture FoxIT Printer's settings. Check out the video to see how its
 done.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KVNCv0SFzX8?si=sdrcLV13u8kZox4d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KVNCv0SFzX8?si=sdrcLV13u8kZox4d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PP Design Studio – FoxIT Printer Settings Tutorial Video Transcript
 
@@ -104,3 +104,5 @@ That's the scoop right there. That is how I created this Pak. If you have any qu
 your "how do I" questions to the forums. Looking forward to helping you out.
 
 Thanks so much.
+
+

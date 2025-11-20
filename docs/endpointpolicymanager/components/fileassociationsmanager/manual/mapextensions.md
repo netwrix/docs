@@ -90,3 +90,5 @@ should open Acrobat Reader, double-clicking on the MP4 should open Metro Media P
 your Wordpad doc, which has a MAILTO: email address, should open Claws Mail (or Outlook).
 
 ![about_policypak_file_associations_19](/images/endpointpolicymanager/fileassociations/about_endpointpolicymanager_file_associations_19.webp)
+
+

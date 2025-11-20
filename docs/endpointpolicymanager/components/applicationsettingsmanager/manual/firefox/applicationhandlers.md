@@ -8,12 +8,12 @@ sidebar_position: 70
 
 Netwrix Endpoint Policy Manager (formerly PolicyPak) can manage which applications open outside of
 Firefox. The most common use cases are to open Adobe Reader instead of the internal Firefox PDF
-viewer, or launch WinZip when a ZIP file is encountered. These can be seen in Figure 51. The node
+viewer, or launch WinZip when a ZIP file is encountered. These can be seen In the figure shown. The node
 only works with client-side extension (CSE) build 1560 or later.
 
 ![managing_application_handlers](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/managing_application_handlers.webp)
 
-Figure 51. Settings for opening applications outside of Firefox.
+The figure shown. Settings for opening applications outside of Firefox.
 
 You can use keyword MODE=REPLACE or MODE=MERGE. MODE=REPLACE will wipe out whatever the user has
 already selected, and put in your entries. MODE=MERGE will take the entries listed here and add them
@@ -33,11 +33,11 @@ MODE=REPLACE    
 ```
 
 However, that doesn't happen because the UI doesn't change for the hard-coded items. Your list might
-look different from what is shown in Figure 52.
+look different from what is shown In the figure shown.
 
 ![managing_application_handlers_1](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/managing_application_handlers_1.webp)
 
-Figure 52. Choosing how Firefox will handle downloaded files.
+The figure shown. Choosing how Firefox will handle downloaded files.
 
 - Internal versus external programs
 
@@ -46,11 +46,11 @@ Figure 52. Choosing how Firefox will handle downloaded files.
   with some special meaning for the Web (CSS, JS, etc.).  The actual decision is made based on
   so-called MIME type, and not on file extension. In the case of HTTP/HTTP surfing, Firefox
   usually uses the MIME type returned in the "content-type" response header, as shown in
-  Figure 53.
+  The figure shown.
 
 ![managing_application_handlers_2](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/managing_application_handlers_2.webp)
 
-Figure 53. The MIME type is determined by the "content-type" response header.
+The figure shown. The MIME type is determined by the "content-type" response header.
 
 If the MIME type is "`text/plain`," "`text/html`," "`text/css`," "`image/jpeg`," or any other
 special type, the file is opened internally. Even if the "content-type" header is not set in the web
@@ -59,11 +59,11 @@ opens resources of special types internally. For this reason, even though it is 
 handlers for JPG, HTML, HTM, TXT, etc., which will appear in the UI, Firefox will keep opening
 resources of such types internally. The general rule of thumb here is the following: when there is
 no handler for the given type and Firefox normally shows an "Open with" dialog box for this type, it
-fires Application Handler for the same type when there is a handler, as shown in Figure 54.
+fires Application Handler for the same type when there is a handler, as shown In the figure shown.
 
 ![managing_application_handlers_3](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/managing_application_handlers_3.webp)
 
-Figure 54. The "Open with" dialog box.
+The figure shown. The "Open with" dialog box.
 
 MIME type returns from web servers
 
@@ -72,14 +72,17 @@ The actual behavior during Web surfing depends on the MIME type for the resource
 (application/x-zip-compressed), it might not work for resources returned with a non-standard MIME
 type. If the returned MIME type is a generic type for binary resources (application/octet stream),
 or some type with no special meaning for Firefox, Firefox fires Application Handler to open files
-like this, as shown in Figure 55.
+like this, as shown In the figure shown.
 
 ![managing_application_handlers_4](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/managing_application_handlers_4.webp)
 
-Figure 55. The Firefox Application Handler.
+The figure shown. The Firefox Application Handler.
 
 Otherwise, the file will be opened internally. The MIME type returned in response depends on
 "Web-Server" and resource settings, and it's up to the server to return the correct MIME type. The
 general rule of thumb here is similar to that in the second bullet point above. If Firefox shows an
 "Open with" dialog box when there is no handler for the resource, it fires Application Handler for
 the same resource if there is one.
+
+
+

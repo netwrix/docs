@@ -27,3 +27,5 @@ The results are that Item-Level Targeting evaluations can now be performed direc
 users in Azure AD.
 
 ![web_interface_and_controls_107_623x361](/images/endpointpolicymanager/cloud/interface/companydetails/web_interface_and_controls_107_623x361.webp)
+
+

@@ -12,3 +12,5 @@ Endpoint Policy Manager (formerly PolicyPak).
 
 To see videos on these solutions watch go to Application Manager >
 [Video Learning Center](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/videolearningcenter.md).
+
+

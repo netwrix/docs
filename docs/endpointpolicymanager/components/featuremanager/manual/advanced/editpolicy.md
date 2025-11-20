@@ -19,3 +19,5 @@ In the bottom left corner, you can see the Item-Level Targeting button. This is 
 next section in more detail.
 
 ![advanced_manipulations_of_2](/images/endpointpolicymanager/feature/advanced/advanced_manipulations_of_2.webp)
+
+

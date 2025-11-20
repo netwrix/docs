@@ -8,7 +8,7 @@ sidebar_position: 10
 Got Endpoint Policy Manager Cloud... and naughty users with USB sticks? See how to take your
 policies and get them working with Endpoint Policy Manager Cloud !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zvFFLDv7D4w" title="Endpoint Policy Device Manager: Block USB sticks using Endpoint Policy Manager Cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zvFFLDv7D4w" title="Endpoint Policy Device Manager: Block USB sticks using Endpoint Policy Manager Cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, and in this video, I'm going to show you how you can use Endpoint
 Policy Manager Device Manager and Endpoint Policy Manager Cloud together. First things first, you're
@@ -72,3 +72,5 @@ We've allowed that, but naughty USB sticks are blocked, and there you go.
 If you want to become a better security admin with Endpoint Policy Manager, hope this video helps
 you out. Looking forward to getting you started with Endpoint Policy Manager Cloud and Endpoint
 Policy Manager Device Manager real soon. Thanks.
+
+

@@ -5,7 +5,7 @@ sidebar_position: 10
 ---
 # Using Item Level Targeting
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xJH4MJxMhOo" title="Endpoint Policy Manager: Using Item Level Targeting with Applications Manager" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xJH4MJxMhOo" title="Endpoint Policy Manager: Using Item Level Targeting with Applications Manager" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with PolicyPak Software. In this video, we are going to talk about the idea of
 using item-level targeting with the application settings manager. What that is is a way for you to
@@ -85,3 +85,5 @@ All three of these are checked, and this one is hidden.
 
 That is item-level targeting as used with the Application Settings Manager. Hope this helps you out.
 Thanks so much.
+
+

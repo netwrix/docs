@@ -95,3 +95,5 @@ tile, and Edge tile), by right-clicking and selecting "Add to Group," as seen in
 
 Figure 13. Use the MMC editor to add a new universal (UWP) application tile, desktop application
 tile, and new Edge tile.
+
+

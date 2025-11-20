@@ -20,3 +20,5 @@ There are two options available:
 The end result looks like this. Note that the default browser is also displayed.
 
 ![about_policypak_browser_router_46](/images/endpointpolicymanager/browserrouter/about_endpointpolicymanager_browser_router_46.webp)
+
+

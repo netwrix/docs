@@ -8,7 +8,7 @@ sidebar_position: 50
 See how PolicyPak installs into Group Policy, backs up and restores with Group Policy, works with GP
 Reporting and more!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WY3ljr8NflQ" title="Endpoint Policy Manager: Integration with Group Policy (Basics: Installation, Backup, Restore and Reporting !)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WY3ljr8NflQ" title="Endpoint Policy Manager: Integration with Group Policy (Basics: Installation, Backup, Restore and Reporting !)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, 15-year group policy and Microsoft endpoint manager MVP, and in this
 video I'm going to show you how PolicyPak hooks right into the group policy infrastructure you
@@ -84,3 +84,5 @@ policy as if Microsoft had shipped it from the factory. We also do a great job w
 Endpoint Manager as well, and you can see that in our other integrations.
 
 Thanks so very much, and we'll talk to you soon.
+
+

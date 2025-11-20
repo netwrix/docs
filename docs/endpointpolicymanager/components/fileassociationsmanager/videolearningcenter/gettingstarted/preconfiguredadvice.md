@@ -9,7 +9,7 @@ Endpoint Policy Manager File Associations Manager comes with some preconfigure a
 easy to use. Here's the how to video, to associate Adobe Reader, Writer and other applications in
 Windows 10.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Pukkx08jYPw" title="Endpoint Policy Manager File Associations Manager: Use our preconfigured advice" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Pukkx08jYPw" title="Endpoint Policy Manager File Associations Manager: Use our preconfigured advice" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager File Associations Manager: Use our preconfigured advice
 
@@ -72,3 +72,5 @@ If you're looking to get started with Endpoint Policy Manager File Associations 
 a webinar, we'll hand over the bits and you can get started right away.
 
 Thanks so much.
+
+

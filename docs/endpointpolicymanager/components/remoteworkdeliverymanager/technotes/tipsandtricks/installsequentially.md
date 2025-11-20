@@ -37,3 +37,5 @@ and close the script, thus completing it.
 But if your goals are modest, and you simply want to download applications in order, and at the end
 of each download, run a single installer (either .msi or .exe), then we recommend the **Run
 Process** method instead of PowerShell.
+
+

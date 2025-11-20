@@ -37,3 +37,4 @@ COMPUTER side RSOP..)
 The final result will be that THIS USER can now see the COMPUTER SIDE RSOP.
 
 ![560_9_img-05](/images/endpointpolicymanager/troubleshooting/560_9_img-05.webp)
+

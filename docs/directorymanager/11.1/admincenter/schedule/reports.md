@@ -90,7 +90,7 @@ settings here, such as the container and filter settings.
 
 4. Select the check box for a report and click **Add**. The selected reports are displayed in the
    Reports area on the Create Schedule page. When this Reports schedule runs, it auto generates all
-   added reports.  
+   added reports.
    To remove a report , click **Remove** for it.
 
 Step 9 – Click **Add Triggers** in the Triggers area to specify a triggering criterion for the
@@ -103,6 +103,10 @@ running the schedule in the identity store. Follow step 12 in the
 [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
 topic for additional information.
 
+:::important Password Re-insertion Required
+Due to security enhancements, when editing a schedule, you must re-enter the account password in the Authentication section, even if you are not changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
+:::
+
 Step 11 – To set up notifications for the schedule, click **Notifications**.
 
 1. On the Notifications dialog box, enter the email address of recipient(s) to whom you want to send
@@ -111,7 +115,7 @@ Step 11 – To set up notifications for the schedule, click **Notifications**.
 
 Step 12 – On the Create Schedule page, click **Create Schedule**.
 
-Step 13 – On the Schedules page, click **Save**.  
+Step 13 – On the Schedules page, click **Save**.
 The schedule is displayed under **Reports**. See the
 [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store)topic
 for details.

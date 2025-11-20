@@ -11,3 +11,6 @@ is Event 100, which describes when a User or Computer picks up new Endpoint Poli
 Privilege Manager policies. An example of this kind of event can be seen here.
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/events/client_events.webp)
+
+
+

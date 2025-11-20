@@ -30,6 +30,7 @@ Netwrix Account Lockout Examiner shows no data in the **Workstation** field, whi
 
 Because Netwrix Account Lockout Examiner processes Windows security logs, it only gets the data that is present in those logs. This issue means that the Account locked out event (ID `644` for Windows XP/2003, ID `4740` for the later versions of Windows) contains an empty **Caller Machine Name** field. Here is an example of the Account locked out event `644` with the empty **Caller Machine Name** field:
 
-[![User-added image](images/ka04u00000118ES_0EM700000004udP.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KSJ&feoid=00N700000032Pj2&refid=0EM700000004udP)
+[![User-added image](./images/ka04u00000118ES_0EM700000004udP.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KSJ&feoid=00N700000032Pj2&refid=0EM700000004udP)
 
 The field can be empty for events where a local computer account was locked out due to a local policy or as a result of computer synchronization with a mobile device.
+

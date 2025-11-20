@@ -74,3 +74,5 @@ or `%AppData%\Microsoft\Windows\Start Menu\Programs` will get you the results yo
 this.
 
 ![735_15_image-20200723210823-8_950x998](/images/endpointpolicymanager/troubleshooting/startscreentaskbar/735_15_image-20200723210823-8_950x998.webp)
+
+

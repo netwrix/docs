@@ -51,7 +51,7 @@ This issue may be caused by any one of the following:
 >
 > `C:\Program Files\Netwrix\Netwrix Threat Prevention\SIWindowsAgent`
 >
-> ![Screenshot of logging ini file](images/ka0Qk000000Co13_0EMQk00000AJwk5.png)
+> ![Screenshot of logging ini file](./images/ka0Qk000000Co13_0EMQk00000AJwk5.png)
 
 ## Resolution
 

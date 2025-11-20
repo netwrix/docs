@@ -30,4 +30,5 @@ A possible cause is blank lines accidentally added at the beginning, in the midd
 2. Remove any blank lines at the beginning, middle, or end of the file.
 3. Save the file.
 
-![image.png](images/ka04u000000HdDR_0EM4u0000084XpS.png)
+![image.png](./images/ka04u000000HdDR_0EM4u0000084XpS.png)
+

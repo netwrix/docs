@@ -12,7 +12,7 @@ demonstration, see how Netwrix Endpoint Policy Manager (formerly PolicyPak) enab
 environments to truly receive Group Policy settings for any Xenapp application, plus lock those
 applications down so users cannot work around your important IT and security settings.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/r_qXQ7nz1Ws?si=J90BNUSpxWKuLlNB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r_qXQ7nz1Ws?si=J90BNUSpxWKuLlNB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak enhances XenApp with Group Policy video transcript
 
@@ -73,7 +73,7 @@ application."We'll make it hard for them to work around our settings.
 
 Also while we're here, we'll go to "PolicyPak/Applications/New/Application"and we'll go to
 "PolicyPak for Mozilla Firefox."Like I said, what we want to do here is we want to for the "Home
-Page" we'll do this "www.endpointpolicymanager.com."
+Page" we'll do this "www.policypak.com."
 
 Then while we're here, we'll also go to "Security." Well, remember, that user unchecked those
 checkboxes. Let's make sure that those checkboxes, those important security things, are in fact
@@ -127,3 +127,5 @@ I hope you had fun watching this demonstration of PolicyPak and XenApp. If you h
 we're happy to help.
 
 Thanks so much, and we'll talk to you soon.
+
+

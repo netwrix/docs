@@ -14,8 +14,8 @@ Windows machines.
 ## Endpoint Policy Manager Shortcut Preferences
 
 We have pre-loaded a Group Policy Preferences shortcut item to display a shortcut to
-[www.endpointpolicymanager.com](http://www.endpointpolicymanager.com/) on the desktop for all joined machines. You can see
-the [www.endpointpolicymanager.com](http://www.endpointpolicymanager.com/) icon on the desktop of your client machine
+[www.policypak.com](https://www.policypak.com/) on the desktop for all joined machines. You can see
+the [www.policypak.com](https://www.policypak.com/) icon on the desktop of your client machine
 immediately after successfully joining Endpoint Policy Manager Cloud.
 
 ![policypak_cloud_quickstart_5_624x496](/images/endpointpolicymanager/cloud/endpointpolicymanager_cloud_quickstart_5_624x496.webp)
@@ -64,7 +64,7 @@ Cameras tabs, which were pre-populated from an example file in Endpoint Policy M
 If you installed Chrome and Firefox you are welcome to test Endpoint Policy Manager Browser Router.
 For a very quick test, run Chrome and see the Endpoint Policy Manager Browser Router extension get
 loaded. Note this pop-up should only happen one time per user. Then, in the search bar, type
-[www.endpointpolicymanager.com](http://www.endpointpolicymanager.com/) and hit enter.
+[www.policypak.com](https://www.policypak.com/) and hit enter.
 
 ![policypak_cloud_quickstart_9_624x391](/images/endpointpolicymanager/cloud/endpointpolicymanager_cloud_quickstart_9_624x391.webp)
 
@@ -97,3 +97,4 @@ By default your computer is only a member of two special built-in groups named *
 
 These examples show that Endpoint Policy Manager Cloud is working. You are now all set up and ready
 to create and upload your own directives to Endpoint Policy Manager Cloud.
+

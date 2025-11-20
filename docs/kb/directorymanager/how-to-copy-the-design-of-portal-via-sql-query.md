@@ -33,7 +33,7 @@ This article provides step-by-step instructions for copying a portal design betw
 
 1. Go to the database used with the test server.
 2. Select the database and create a new query.  
-   ![SQL Server Management Studio new query window with database selected](images/ka0Qk000000DSzN_0EMQk000004n9O2.png)
+   ![SQL Server Management Studio new query window with database selected](./images/ka0Qk000000DSzN_0EMQk000004n9O2.png)
 3. Enter the following query:
 
 ```sql
@@ -48,13 +48,13 @@ WHERE ClientId = @toClient AND IdentityStoreId = @tostore
 ```
 
 4. In `@fromClient`, enter the Client ID of the portal you want to copy. For example, to copy the design of Portal 1, use Client ID 11.  
-   ![PortalDesigns table showing Client ID and Identity Store ID values](images/ka0Qk000000DSzN_0EMQk000004nLdh.png)
+   ![PortalDesigns table showing Client ID and Identity Store ID values](./images/ka0Qk000000DSzN_0EMQk000004nLdh.png)
 5. In `@fromStore`, enter the Identity Store ID. For example, use 2.  
-   ![Identity Store ID value in PortalDesigns table](images/ka0Qk000000DSzN_0EMQk000004nH3t.png)
+   ![Identity Store ID value in PortalDesigns table](./images/ka0Qk000000DSzN_0EMQk000004nH3t.png)
 6. In `@toClient` and `@toStore`, enter the Client ID and Identity Store ID for the target portal. For example, Client ID 13 and Store ID 2.
 7. Run the query.
 8. The following screenshot shows the executed query:  
-   ![Screenshot of executed SQL query](images/ka0Qk000000DSzN_0EMQk000004nLfJ.png)
+   ![Screenshot of executed SQL query](./images/ka0Qk000000DSzN_0EMQk000004nLfJ.png)
 
 ### Copy the Design with the Same SQL Server and Different Databases
 
@@ -76,11 +76,11 @@ WHERE ClientId = @toClient AND IdentityStoreId = @tostore
 
 3. In `@fromClient`, `@fromStore`, `@toClient`, and `@toStore`, enter the appropriate Client ID and Store ID values as described above.
 4. In `[toDB]`, enter the database name of the production portal.  
-   ![Screenshot of SQL query for copying design between databases](images/ka0Qk000000DSzN_0EMQk000004nLgv.png)
+   ![Screenshot of SQL query for copying design between databases](./images/ka0Qk000000DSzN_0EMQk000004nLgv.png)
 5. In `[fromDB]`, enter the database name of the test portal.
 6. Run the query.
 7. The following screenshot shows the executed query:  
-   ![Screenshot of executed SQL query for different databases](images/ka0Qk000000DSzN_0EMQk000004nLiX.png)
+   ![Screenshot of executed SQL query for different databases](./images/ka0Qk000000DSzN_0EMQk000004nLiX.png)
 
 ### Copy the Design with Different SQL Servers and Databases
 
@@ -91,17 +91,17 @@ Environment: Test server configured with **DB1**, production server configured w
 3. Create a new linked server.
 4. In the **New Linked Server** window, enter the name of the server you want to link.
 5. Select **Server type** as **SQL Server**.  
-   ![Linked server properties window](images/ka0Qk000000DSzN_0EMQk000004nIXn.png)
+   ![Linked server properties window](./images/ka0Qk000000DSzN_0EMQk000004nIXn.png)
 6. Select **Security** from the left pane, choose the appropriate login option, and enter the server credentials.
 7. Click **OK**. The linked server will appear in the list.  
-   ![Linked server security settings](images/ka0Qk000000DSzN_0EMQk000004nIXo.png)
+   ![Linked server security settings](./images/ka0Qk000000DSzN_0EMQk000004nIXo.png)
 
-![Linked server shown in SQL Server Management Studio](images/ka0Qk000000DSzN_0EMQk000004nIXp.png)
+![Linked server shown in SQL Server Management Studio](./images/ka0Qk000000DSzN_0EMQk000004nIXp.png)
 
 8. Go to the Netwrix Directory Manager portal of the test server and make the required changes to the portal design.
 9. Return to SQL Server.
 10. Right-click the server and select **New Query**.  
-    ![SQL Server Management Studio new query window for linked server](images/ka0Qk000000DSzN_0EMQk000004nIXq.png)
+    ![SQL Server Management Studio new query window for linked server](./images/ka0Qk000000DSzN_0EMQk000004nIXq.png)
 11. Enter the following query:
 
 ```sql
@@ -120,9 +120,9 @@ WHERE ClientId = @toClient AND IdentityStoreId = @tostore
 
 12. In `@fromClient`, `@fromStore`, `@toClient`, and `@toStore`, enter the appropriate Client ID and Store ID values as described above.
 13. In `[toSourceServer]`, enter the server name of the production server.  
-    ![Linked server name entry in SQL query](images/ka0Qk000000DSzN_0EMQk000004nIXr.png)
+    ![Linked server name entry in SQL query](./images/ka0Qk000000DSzN_0EMQk000004nIXr.png)
 14. In `[fromSourceServer]`, enter the server name of the test server.
 15. In `[fromDB]` and `[toDB]`, enter the database names as described above.
 16. Execute the query.  
 
-![Screenshot of executed SQL query for linked server](images/ka0Qk000000DSzN_0EMQk000004nIXs.png)
+![Screenshot of executed SQL query for linked server](./images/ka0Qk000000DSzN_0EMQk000004nIXs.png)

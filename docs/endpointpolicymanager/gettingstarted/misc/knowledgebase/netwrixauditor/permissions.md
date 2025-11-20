@@ -56,3 +56,4 @@ Final result can be seen here where the user is now permitted to see the Endpoin
 report.
 
 ![969_5_image-20231017185713-5_950x730](/images/endpointpolicymanager/integration/auditor/969_5_image-20231017185713-5_950x730.webp)
+

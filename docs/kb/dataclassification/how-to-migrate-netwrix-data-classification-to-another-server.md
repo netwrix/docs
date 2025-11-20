@@ -31,7 +31,7 @@ This article describes how to change or replace the server on which Netwrix Data
 
 1. Stop/disable **all NDC services** on the application server (**conceptClassifier, conceptIndexer, conceptCollector**).
 
-   ![User-added image](images/ka0Qk0000007H0v_0EM4u000002Qwyh.png)
+   ![User-added image](./images/ka0Qk0000007H0v_0EM4u000002Qwyh.png)
 
    > **NOTE:** You can also disable the NDC services using the **Service Viewer** located at: `C:\Program Files\ConceptSearching\ServiceViewer` (by default).
 

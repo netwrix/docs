@@ -31,4 +31,5 @@ The account list is stored in the `alinfo.xml` file and you can manually delete 
 4. Save the `alinfo.xml` file.
 5. Start the Netwrix Auditor service.
 
-![User-added image](images/ka04u000000HcNX_0EM700000004wxg.png)
+![User-added image](./images/ka04u000000HcNX_0EM700000004wxg.png)
+

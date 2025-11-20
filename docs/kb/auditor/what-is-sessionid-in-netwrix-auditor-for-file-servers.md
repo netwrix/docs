@@ -33,7 +33,7 @@ This attribute is based on the user’s logon ID within the current session. Bei
 
 Session IDs are used to identify changes made by users with unique logon ID's. Session IDs are a combination of both the logon ID itself and the current session associated with this logon ID, to help identifying who made the change. Thus, session ID can be changed due to the fact that Netwrix would count that as a separate activity record too.
 
-![User-added image](images/ka0Qk0000001OrV_0EMQk000002Tph8.png)
+![User-added image](./images/ka0Qk0000001OrV_0EMQk000002Tph8.png)
 
 In addition, Netwrix Auditor generates the following attribute besides Session ID, associated with the object and reserved for internal use:
 
@@ -43,4 +43,7 @@ Since the product associates Session IDs with the current session of the user, t
 
 ### Related Article
 
-- [How Does Merging Logon Activity Events Work?](/docs/kb/auditor/how-does-merging-logon-activity-events-work.md)
+- [How Does Merging Logon Activity Events Work?](/docs/kb/auditor/how-does-merging-logon-activity-events-work)
+
+
+

@@ -10,7 +10,7 @@ Endpoint Policy Manager (formerly PolicyPak), it's super easy. Here's how to cre
 upload your software, then use Endpoint Policy Manager Remote Work Delivery Manager to deploy that
 software (and keep it updated.)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GPvAJLQEbVc" title="Endpoint Policy Manager: Use Azure Blob Storage to Deploy and Patch your software" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GPvAJLQEbVc" title="Endpoint Policy Manager: Use Azure Blob Storage to Deploy and Patch your software" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, and in this video, I'm going to show you how you can use Endpoint
 Policy Manager Remote Work Delivery Manager with Azure Blob Storage. If you're not familiar with
@@ -111,3 +111,5 @@ You replace the files in Azure Blob Storage as you need to making it update, and
 off to the races. Azure Blob Storage, Endpoint Policy Manager Remote Work Delivery Manager, your
 endpoints, it's a match made in heaven. Hope this video helps you out. Thanks for watching. Hope to
 get you started with Endpoint Policy Manager real soon. Bye-bye.
+
+

@@ -19,3 +19,5 @@ is valid; this determines which Endpoint Policy Manager Rules Manager should aut
 ![troubleshooting_policypak_4](/images/endpointpolicymanager/troubleshooting/javaenterpriserules/troubleshooting_endpointpolicymanager_4.webp)
 
 Figure 33. The active Deployment Rule Sets.
+
+

@@ -32,11 +32,11 @@ Windows could not start the Netwrix Auditor Configuration Server Service service
 Error 0x80040209: An interface has too many methods to fire events from.
 ```
 
-![Screenshot 1](images/ka04u00000117L8_0EM4u000008LCum.png)
+![Screenshot 1](./images/ka04u00000117L8_0EM4u000008LCum.png)
 
 Other services are running as expected.
 
-![Screenshot 2](images/ka04u00000117L8_0EM4u000008LCuw.png)
+![Screenshot 2](./images/ka04u00000117L8_0EM4u000008LCuw.png)
 
 - The following error is prompted in the main Netwrix Auditor screen:
 
@@ -45,7 +45,7 @@ Connection failed
 Access is denied
 ```
 
-![Screenshot 3](images/ka04u00000117L8_0EM4u000008M2Tz.png)
+![Screenshot 3](./images/ka04u00000117L8_0EM4u000008M2Tz.png)
 
 Upon checking Services running, Netwrix Auditor Configuration Server Service appears to have stopped. When attempting to restart the service, the same error is prompted.
 
@@ -64,7 +64,7 @@ Refer to the following steps to troubleshoot the issue:
 1. Back up the ConfigServer folder located in ` %Working Folder%\AuditCore\ConfigServer`.
 2. Delete all files in the original ConfigServer folder except for the StorageBackups folder and the Configuration.xml file.
 
-![ConfigServer folder contents](images/ka04u00000117L8_0EM4u000008LCv1.png)
+![ConfigServer folder contents](./images/ka04u00000117L8_0EM4u000008LCv1.png)
 
 3. Restart Netwrix Auditor Configuration Server Service.
 4. Make sure the following services are running (including all the monitoring plan-related services):
@@ -77,11 +77,11 @@ In case the aforementioned steps did not help, refer to the following steps to t
 1. Back up the ConfigServer folder located in ` %Working Folder%\AuditCore\ConfigServer`.
 2. Delete all files in the original ConfigServer folder except for the StorageBackups folder. It is located in ` %Working Folder%\AuditCore\ConfigServer`.
 
-![ConfigServer StorageBackups folder](images/ka04u00000117L8_0EM4u000008LCvL.png)
+![ConfigServer StorageBackups folder](./images/ka04u00000117L8_0EM4u000008LCvL.png)
 
 3. Copy the Configuration.xml file from the latest **BACKUP_%DATE%**\%GUID% folder.
 
-![Backup folder selection](images/ka04u00000117L8_0EM4u000008LCvk.png)
+![Backup folder selection](./images/ka04u00000117L8_0EM4u000008LCvk.png)
 
 4. Paste the copied Configuration.xml file to ` %Working Folder%\AuditCore\ConfigServer`.
 5. Restart Netwrix Auditor Configuration Server Service.
@@ -92,6 +92,7 @@ In case the aforementioned steps did not help, refer to the following steps to t
 
 > **NOTE:** If these steps did not help, try using the Configuration.xml file from the second to the last **BACKUP_%DATE%**\%GUID% folder. Paste the file to ` %Working Folder%\AuditCore\ConfigServer` and restart Netwrix Auditor services.
 
-![Configuration restored](images/ka04u00000117L8_0EM4u000008LCwE.png)
+![Configuration restored](./images/ka04u00000117L8_0EM4u000008LCwE.png)
 
 > **NOTE:** If the issue reoccurs after some time, contact [Netwrix Technical Support](https://www.netwrix.com/open_a_ticket.html).
+

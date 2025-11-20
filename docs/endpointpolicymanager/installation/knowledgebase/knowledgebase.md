@@ -74,3 +74,4 @@ See the following Knowledge Base articles for all things installation and upkeep
 - [How do I uninstall Endpoint Policy Manager?](/docs/endpointpolicymanager/installation/knowledgebase/uninstallation/uninstall.md)
 - [How to Rollback CSE version from newer to older using PowerShell](/docs/endpointpolicymanager/installation/knowledgebase/uninstallation/rollback.md)
 - [How can I uninstall the Least Privilege Manager client for MacOS?](/docs/endpointpolicymanager/installation/knowledgebase/uninstallation/uninstall_1.md)
+

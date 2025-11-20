@@ -36,6 +36,7 @@ To review your data in these reports, you should configure a monitoring plan for
 
 1. On the computer that hosts Netwrix Auditor Server, run Netwrix Auditor Event Log Manager.
 2. Navigate to Audit Archiving filters and configure them as described in Configure Audit Archiving Filters for Event Log.  
-   ![User-added image](images/ka04u0000011776_0EM4u000008Ls7s.png)
+   ![User-added image](./images/ka04u0000011776_0EM4u000008Ls7s.png)
 3. Perform any test changes, for example, log in to a server for which you want to review data in reports.
 4. Wait for 10 - 15 minutes for changes to take effect and run reports.
+

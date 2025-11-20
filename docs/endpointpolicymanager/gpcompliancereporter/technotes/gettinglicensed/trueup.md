@@ -27,3 +27,4 @@ anything for new licenses. However, you are still bound to pay the maintenance
 amount of computers found in the last three audits.
 
 :::
+

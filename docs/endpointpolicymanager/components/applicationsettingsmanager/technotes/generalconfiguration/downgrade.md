@@ -11,3 +11,5 @@ version to another, they can be downgraded from one version to another as well. 
 however, is that any deleted items within the Pak will also be "dropped" from within the Group
 Policy data. So, please upgrade and download your paks with caution. See the section "Version
 Control of Endpoint Policy Manager Extension DLLs" in the PolicyPakQuickStart guide.
+
+

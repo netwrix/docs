@@ -33,7 +33,7 @@ on Windows 10 or Windows Server (2016 and later):
 
 :::note
 Watch this video for an overview of Endpoint Policy Manager Feature Manager for Windows:
-[https://www.endpointpolicymanager.com/video/endpointpolicymanager-feature-manager-for-windows.html](https://www.endpointpolicymanager.com/video/endpointpolicymanager-feature-manager-for-windows.html)
+[https://www.policypak.com/video/endpointpolicymanager-feature-manager-for-windows.html](https://www.policypak.com/video/endpointpolicymanager-feature-manager-for-windows.html)
 :::
 
 
@@ -129,3 +129,5 @@ policy method you already employ.
 - For those using Endpoint Policy Manager Cloud and Endpoint Policy Manager MDM: Because your
   machines might be roaming, you can use Endpoint Policy Manager to deliver a new policy to install
   or uninstall a required feature.
+
+

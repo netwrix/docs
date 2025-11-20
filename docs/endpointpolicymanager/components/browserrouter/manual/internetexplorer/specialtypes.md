@@ -30,3 +30,5 @@ automatically be routed to Internet Explorer 11.
 Enterprise site list and routes those to Internet Explorer. In other words, once this policy is
 applied, if a user opens any website within Edge that you've set to Enterprise Mode, it will
 automatically be routed to Internet Explorer 11.
+
+

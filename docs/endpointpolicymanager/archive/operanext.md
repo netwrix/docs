@@ -9,7 +9,7 @@ sidebar_position: 90
 Netwrix Endpoint Policy Manager (formerly PolicyPak): Manage Opera using Group Policy, SCCM or your
 own systems management utility.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9NivCskbpC0?si=dVaW8978R_qf6PfJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9NivCskbpC0?si=dVaW8978R_qf6PfJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Manage Opera Next using Group Policy, SCCM or your own management utility
 
@@ -18,7 +18,7 @@ In this video, we're going to see how PolicyPak can manage Opera Next.
 
 There are two tracks to Opera. There's the standard track and then there's the Next track, and
 PolicyPak has
-[https://www.endpointpolicymanager.com/support-sharing/preconfigured-paks.html](https://www.endpointpolicymanager.com/support-sharing/preconfigured-paks.html)
+[https://www.policypak.com/support-sharing/preconfigured-paks.html](https://www.policypak.com/support-sharing/preconfigured-paks.html)
 for both tracks. It's really easy to manage. Let me show you what it would look like.
 
 As you can see, I'm logged on as a standard user. This guy is called "eastsalesuser6," no admin
@@ -64,8 +64,9 @@ shouldn't do. The very next time the application runs, PolicyPak automatically r
 settings to ensure the experience is the same every time.
 
 That's it. if you're ready to get started using PolicyPak, just click on the
-[https://dev.endpointpolicymanager.com/webinar/](https://dev.endpointpolicymanager.com/webinar/) button on the right, and
+[https://policypak.com/webinar/](https://policypak.com/webinar/) button on the right, and
 we'll look forward to seeing you at a webinar and give you the chance to try PolicyPak out in your
 own test lab.
 
 Thanks so much, and we'll talk to you soon.
+

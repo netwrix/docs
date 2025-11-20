@@ -31,4 +31,4 @@ How to establish the new name a file was renamed to in Netwrix Access Analyzer?
 2. Right-click the header bar and select **Target Path**.
 3. The **Target Path** will show the new name of the renamed file.
 
-![Activity Details showing Target Path](images/ka04u000000wwHf_0EM4u000008pesA.png)
+![Activity Details showing Target Path](./images/ka04u000000wwHf_0EM4u000008pesA.png)

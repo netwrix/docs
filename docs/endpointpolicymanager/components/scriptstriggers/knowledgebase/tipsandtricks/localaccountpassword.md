@@ -86,3 +86,5 @@ The targeted endpoint must have rights to read the share and file used above (i.
 
 
 Lastly, apply the policy to any endpoints as needed and you are good to go.
+
+

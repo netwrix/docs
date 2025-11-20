@@ -76,3 +76,4 @@ profile (e.g. Domain).
 ![669_11_image-20200327172830-7](/images/endpointpolicymanager/troubleshooting/error/gpocompilancereporter/669_11_image-20200327172830-7.webp)
 
 **Step 4 –** Click OK to save and close
+

@@ -23,7 +23,7 @@ knowledge_article_id: kA00g000000H9YCCA0
 
 During installation of NetWrix Account Lockout Examiner on **Windows 2003**, a "Service 'NetWrix Account Lockout Examiner' (ALService) failed to start" message is received that the service cannot be started due to insufficient permissions. The account in use is a domain admin.
 
-![User-added image](images/ka04u000000HcRH_0EM700000004wmJ.png)
+![User-added image](./images/ka04u000000HcRH_0EM700000004wmJ.png)
 
 ## Cause
 
@@ -39,3 +39,6 @@ Also:
 1. Verify that the account specified during installation is a local admin.
 2. Check that there are no restrictive policies for this account to run services.
 3. Try entering another local admin or domain admin account during the installation.
+
+
+

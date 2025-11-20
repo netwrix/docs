@@ -60,3 +60,5 @@ example, from within Firefox or via the OS selector.
 as the default.
 
 **Step 4 –** The user will believe that their default browser is actually what has been set here.
+
+

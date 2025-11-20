@@ -112,3 +112,5 @@ on any given MDM solution, since they are all very different).
   - The scripts only run when a computer is associated with a user; so with kiosk devices, using
     the MDM scripting is often not possible.
   - The scripts will not run with hybrid scenarios (domain-joined and Azure registered devices.)
+
+

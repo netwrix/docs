@@ -11,3 +11,5 @@ must open and edit the setting and then add the comment. The comments can be see
 within the GPO.
 
 ![about_policypak_admin_templates_20](/images/endpointpolicymanager/adminstrativetemplates/about_endpointpolicymanager_admin_templates_20.webp)
+
+

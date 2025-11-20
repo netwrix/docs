@@ -40,3 +40,5 @@ You can use this Apply once and drift approach for a single policy as well. Simp
 **New Policy** and click the **Apply** drop down menu and select **Once**.
 
 ![about_policypak_file_associations_31](/images/endpointpolicymanager/fileassociations/about_endpointpolicymanager_file_associations_31.webp)
+
+

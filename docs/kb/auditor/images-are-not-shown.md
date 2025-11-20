@@ -25,7 +25,7 @@ knowledge_article_id: kA00g000000H9YHCA0
 ## Question
 Web Portal shows no images just red boxes. Whats the case?
 
-![User-added image](images/ka04u00000117dv_0EM7000000050pb.png)
+![User-added image](./images/ka04u00000117dv_0EM7000000050pb.png)
 
 ## Answer
 The issue occurs because IIS cannot display images because of configuration.  
@@ -41,3 +41,4 @@ To address the issue, enable the **Static content** feature within IIS.
 
 1. Navigate to **Server Manager - Roles - Web server**, find the Role services in the right pane, click **Add role services**.  
 2. Enable **Static content** under **Common HTTP Features**.
+

@@ -33,7 +33,7 @@ The Web App Launcher can be downloaded from [this link](https://dl.netwrix.com/a
 
 On the RDS server, extract the files to a directory of your choosing. For the examples in this article, `C:\webapp-launcher\` will be used.
 
-![image.png](images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tL01.png)
+![image.png](./images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tL01.png)
 
 ## Configuration
 
@@ -48,23 +48,23 @@ There are configurable runtime settings that you can apply to the Web App Launch
 
 In order to configure these settings, open `appsettings.json` in your Web App Launcher directory. The `ChromeOptions` section contains the above settings. Change the values as required, and save the file.
 
-![image.png](images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tH7k.png)
+![image.png](./images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tH7k.png)
 
 Note that these settings affect all websites launched from this Web App Launcher. If it is necessary to have multiple sets of settings, create another Web App Launcher directory with a different `appsettings.json` configuration, and use the appropriate one in NPS.
 
 ### API Settings
 In order to use the Web App Launcher, an Application User must be created in NPS. Once this is done, supply the username and API Key into the `AppUser` and `AppSecret` fields, respectively. The certificate should be placed in the Web App Launcher directory, with the directory indicated in the `AppCert` field as indicated:
 
-:::warning 
-Any backslashes (\\) in the app secret must be escaped with a preceeding backslash (\\\)
+:::warning
+Any backslashes (\\) in the app secret must be escaped with a preceding backslash (\\\\)
 :::
 
-![image.png](images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tPOb.png)
+![image.png](./images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tPOb.png)
 
 ### Web App Launcher Directories
 Ensure that the indicated paths correspond to the chosen Web App Launcher directory.
 
-![image.png](images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tlXC.png)
+![image.png](./images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tlXC.png)
 
 ## Launch Options and Examples
 
@@ -83,7 +83,7 @@ Example:
 launch-website.exe https://website.com jsmith Password123
 ```
 
-![image.png](images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tMXD.png)
+![image.png](./images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tMXD.png)
 
 Note that the login account in this example connects to the RDS session running the web app launcher as a remote app. The web app launcher will launch the website under the context of the user and password supplied as command line arguments.
 
@@ -102,7 +102,7 @@ Example:
 launch-website.exe https://website.com %token% %sessionid%
 ```
 
-![image.png](images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tOSX.png)
+![image.png](./images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tOSX.png)
 
 Note that the login account in this example both connects to the RDS session running the web app launcher as a remote app, and is used as the credential to be passed to the website.
 
@@ -126,6 +126,6 @@ Example:
 launch-website.exe https://website.com lab\jsmith
 ```
 
-![image.png](images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tLo2.png)
+![image.png](./images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tLo2.png)
 
 Note that the login account in this example connects to the RDS session running the web app launcher as a remote app. The web app launcher will launch the website under the context of the username provided on the command line. The web app launcher will call the API to get the managed password of the user, and will enter it into the password field of the website.

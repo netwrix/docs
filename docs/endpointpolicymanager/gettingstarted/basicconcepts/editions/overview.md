@@ -36,3 +36,5 @@ Products and solution methods.
 | Cloud Hybrid Method (MDM or RMM + Endpoint Policy Manager Cloud) | ✓                                                     | ✓                                                             | ✓                                                |
 | Unified Endpoint Management Method                               | ✓                                                     | ✓                                                             | X                                                |
 | Virtualization                                                   | ✓ (Single desktops, shared desktops, shared sessions) | ✓ (Single desktops, shared desktops, shared sessions)         | ✓ (Single virtualized desktops)                  |
+
+

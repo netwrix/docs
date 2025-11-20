@@ -8,7 +8,7 @@ sidebar_position: 80
 More power than ever before; now you can individually remove specific UI elements from Firefox in
 the about:preferences panel. Fine tune exactly what users can see and do (and not see and not do.)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hyMjihq_tcg?si=5AqfenglfR7bVGn9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hyMjihq_tcg?si=5AqfenglfR7bVGn9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Firefox Remove Specific Elements from about:preferences panel
 
@@ -58,3 +58,5 @@ using PolicyPak.
 
 Okay, that's it for now. I hope this helps you out. If you're looking to get started with a trial,
 give us a buzz or start coming to our webinar. See you then. Thanks. Bye-bye.
+
+

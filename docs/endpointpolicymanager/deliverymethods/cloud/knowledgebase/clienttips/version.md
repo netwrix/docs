@@ -15,3 +15,5 @@ select the **Company Details** tab.
 
 **Step 3 –** View the PPC Client Version and PPC CSE version columns in the **Computer list**
 report, filter the columns if needed.
+
+

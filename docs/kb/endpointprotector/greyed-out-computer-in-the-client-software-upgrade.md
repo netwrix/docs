@@ -28,7 +28,7 @@ knowledge_article_id: kA0Qk0000002B5pKAE
 
 The affected computer is displayed as greyed out and cannot be selected in the Netwrix Endpoint Protector client software upgrade or update interface.
 
-![Example](images/servlet_image_3f1c3b331cfe.png)
+![Example](./images/servlet_image_3f1c3b331cfe.png)
 
 ## Cause
 

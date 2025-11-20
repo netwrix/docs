@@ -14,7 +14,7 @@ integrity, otherwise your change reports may contain warnings, errors or incompl
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
-[Antivirus Exclusions for Netwrix Auditor](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA04u0000000HirCAE.html)
+[Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
 ## Configuration Overview
@@ -236,7 +236,7 @@ folder is placed within a share targeted by a DFS folder.
 
 For recommendations on configuring DFS replication, refer to the following Netwrix knowledge base
 article:
-[Why did loss of performance occur when configuring audit settings for Windows File Servers?](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA00g000000H9SyCAK.html).
+[Why did loss of performance occur when configuring audit settings for Windows File Servers?](/docs/kb/auditor/auditing-distributed-file-systems-with-replication-in-netwrix-auditor).
 Remember that replication of namespace roots is not supported.
 
 ## File Servers and Antivirus

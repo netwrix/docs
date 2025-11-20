@@ -37,3 +37,6 @@ The script types that are supported for elevation and for blocking are:
 
 These script types can also be blocked automatically and universally by using the Endpoint Policy
 Manager Least Privilege Manager SecureRun™ feature, as described in later topics.
+
+
+

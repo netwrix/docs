@@ -65,3 +65,4 @@ images and files is checked.
 All 3 browsers have the Ctrl-Shift-Del shortcut that provides quick access to this setting.
 
 ![926_8_image-20230104100124-9_370x346](/images/endpointpolicymanager/troubleshooting/cloud/926_8_image-20230104100124-9_370x346.webp) ![926_9_image-20230104100144-10_322x350](/images/endpointpolicymanager/troubleshooting/cloud/926_9_image-20230104100144-10_322x350.webp) ![926_10_image-20230104100211-11_294x358](/images/endpointpolicymanager/troubleshooting/cloud/926_10_image-20230104100211-11_294x358.webp)
+

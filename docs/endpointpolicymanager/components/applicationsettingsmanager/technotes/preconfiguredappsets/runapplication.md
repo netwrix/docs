@@ -28,3 +28,5 @@ Java 8 Pak technique:
 ![2_4_16a-8](/images/endpointpolicymanager/applicationsettings/preconfigured/java/2_4_16a-8.webp)
 
 ![2_5_16b-8](/images/endpointpolicymanager/applicationsettings/preconfigured/java/2_5_16b-8.webp)
+
+

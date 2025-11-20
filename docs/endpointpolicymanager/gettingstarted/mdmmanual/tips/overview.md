@@ -15,3 +15,4 @@ tips and tricks. Below are the tips we will be exploring:
 - Enabling Priority Mode
 - Understand how XML data files are processed when they are delivered
 - Manually placing XML data files on target computers (advanced topic)
+

@@ -10,7 +10,7 @@ Users cannot auto-update the Remote Desktop app for Windows Virtual Desktop. Wit
 Policy Manager (formerly PolicyPak) though, this is a slam-dunk. See how users on their own laptops
 can keep the WVD Remote Desktop app updated themsevles.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Q_LEsCNQlQg" title="Endpoint Policy Manager + WVD: Elevate the installation of the Remote Deskop app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q_LEsCNQlQg" title="Endpoint Policy Manager + WVD: Elevate the installation of the Remote Deskop app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Users cannot auto-update the Remote Desktop app for Windows Virtual Desktop. With Netwrix Endpoint
 Policy Manager (formerly PolicyPak) though, this is a slam-dunk. See how users on their own laptops
@@ -92,3 +92,4 @@ And that's it. Let me go ahead and relaunch it just for fun. The user has then a
 completed the goal of keeping their own "Remote Desktop" up to date just like that.
 
 All right, hope this video helps you out, and continue onward to the next video.
+

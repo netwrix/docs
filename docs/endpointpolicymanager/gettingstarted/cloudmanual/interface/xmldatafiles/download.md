@@ -38,3 +38,4 @@ from XML.
 
 
 ![web_interface_and_controls_12_562x337](/images/endpointpolicymanager/cloud/interface/xmldatafiles/web_interface_and_controls_12_562x337.webp)
+

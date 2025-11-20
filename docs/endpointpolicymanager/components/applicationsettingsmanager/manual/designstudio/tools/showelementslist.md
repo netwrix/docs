@@ -17,11 +17,11 @@ able to quickly identify the following information about your project:
 
 To that end, Endpoint Policy Manager DesignStudio has a "Show Elements List" feature (also known as
 "List All Elements"), which is found by selecting `Tools|Show Element List`. You can also use the
-keyboard shortcut Ctrl+F to go to this list, as shown in Figure 171.
+keyboard shortcut Ctrl+F to go to this list, as shown In the figure shown.
 
 ![using_designstudio_tools_7_624x330](/images/endpointpolicymanager/applicationsettings/designstudio/tools/using_designstudio_tools_7_624x330.webp)
 
-Figure 171. Selecting the "Show Elements List" feature.
+The figure shown. Selecting the "Show Elements List" feature.
 
 The List All Elements box shows you which elements will work in Endpoint Policy Manager Application
 Settings Manager Community Edition and which ones will only work when fully licensed (or in Trial
@@ -32,16 +32,16 @@ a specific Tab within your project.
 
 ![using_designstudio_tools_8](/images/endpointpolicymanager/applicationsettings/designstudio/tools/using_designstudio_tools_8.webp)
 
-Figure 172. Searching by text in the "List All Elements" box.
+The figure shown. Searching by text in the "List All Elements" box.
 
 You can also use the "List All Elements" dialog to help determine which elements are not yet
 configured inside the AppSet. To do this, sort on the Configured column, then look for items that
-have "No" in that column, as shown in Figure 173. Double-click the item to zoom to the item, then
+have "No" in that column, as shown In the figure shown. Double-click the item to zoom to the item, then
 right-click to run the Configuration Wizard to configure it.
 
 ![using_designstudio_tools_9](/images/endpointpolicymanager/applicationsettings/designstudio/tools/using_designstudio_tools_9.webp)
 
-Figure 173. Determining which elements have not been configured.
+The figure shown. Determining which elements have not been configured.
 
 :::note
 Items with N/A in the Configured column cannot be configured, like labels, frames, and
@@ -57,7 +57,7 @@ the "List all Elements" items by ID number, this element can be quickly found.
 
 ![using_designstudio_tools_10](/images/endpointpolicymanager/applicationsettings/designstudio/tools/using_designstudio_tools_10.webp)
 
-Figure 174. Sorting elements by ID number.
+The figure shown. Sorting elements by ID number.
 
 :::note
 The color coding is only to express if the element will work in Community Edition or
@@ -66,8 +66,11 @@ Licensed Mode and Trial Mode.
 
 
 :::note
-Sometimes disabling the item can help you continue to compile the AppSet. You should send
-any failed compiles to [support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com) along with your pXML
+Sometimes disabling the item can help you continue to compile the AppSet. You should [open a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket) and send
+any failed compiles along with your pXML
 file for inspection.
 
 :::
+
+
+

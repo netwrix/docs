@@ -7,19 +7,19 @@ sidebar_position: 10
 # Configuration Data in Program Files
 
 Using Windows Explorer, you can look for INI files (expressed as "Configuration settings" in the
-file type in Explorer), XML files, and other file types. In Figure 88, you can see an INI file for
+file type in Explorer), XML files, and other file types. In the figure shown, you can see an INI file for
 an application within Program Files (x86).
 
 ![discovering_configuration_1_624x213](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_1_624x213.webp)
 
-Figure 88. Example of INI files.
+The figure shown. Example of INI files.
 
 However, if you try to select this file using Netwrix Endpoint Policy Manager (formerly PolicyPak)
-DesignStudio, you will be provided a warning message, as shown in Figure 89.
+DesignStudio, you will be provided a warning message, as shown In the figure shown.
 
 ![discovering_configuration_2](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_2.webp)
 
-Figure 89. Warning message when selecting an INI file.
+The figure shown. Warning message when selecting an INI file.
 
 The warning indicates a problem not with where this application's data was found (right now), but
 actually where that data is likely to be stored (on the client machine).
@@ -48,12 +48,15 @@ Applications running within Windows will do one of two things when run as standa
   store their files in what is known as the VirtualStore (`%localappdata%\VirtualStore`)
 
 When this application is run as a standard user, the configuration data is within
-`%appdata%\roaming` as shown in Figure 90(in this case, `%appdata%\roaming\Qualcomm\Eudora`). That's
+`%appdata%\roaming` as shown In the figure shown(in this case, `%appdata%\roaming\Qualcomm\Eudora`). That's
 because this application was smart enough to know to use
 `%appdata% as its data store when run as a standard user.`
 
 ![discovering_configuration_3](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_3.webp)
 
-`Figure 90. Configuration data stored within %appdata%\roaming.`
+`The figure shown. Configuration data stored within %appdata%\roaming.`
 
 Let's continue onward and examine another case of where user data might be stored.
+
+
+

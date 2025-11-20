@@ -26,7 +26,7 @@ knowledge_article_id: kA00g000000H9bxCAC
 
 You receive the "request timeout" error message when you launch the Netwrix Account Lockout Examiner console or some time after.
 
-![User-added image](images/ka04u000000HcUi_0EM700000004xfn.png)
+![User-added image](./images/ka04u000000HcUi_0EM700000004xfn.png)
 
 ---
 
@@ -45,7 +45,7 @@ In order to resolve the issue perform the following steps on the Account Lockout
    f. Set `invLogonCleaningPeriod` to `10 decimal`  
    g. Restart the NetWrix Account Lockout Examiner service
 
-   ![User-added image](images/ka04u000000HcUi_0EM700000004xfx.png)
+   ![User-added image](./images/ka04u000000HcUi_0EM700000004xfx.png)
 
 2. If the above does not help, disable searching of invalid logons on workstations. This will reduce the service load.
    a. Run Registry Editor (`Start - Run - regedit`)  
@@ -53,11 +53,12 @@ In order to resolve the issue perform the following steps on the Account Lockout
    c. Create a DWORD called `PF_Enabled` with the value of `0`  
    d. Restart the NetWrix Account Lockout Examiner service
 
-   ![User-added image](images/ka04u000000HcUi_0EM700000004xg2.png)
+   ![User-added image](./images/ka04u000000HcUi_0EM700000004xg2.png)
 
 3. If all of the registry settings did not address the issue set Account Lockout Examiner to monitor the PDC only:
    a. In Netwrix Account Lockout Examiner navigate to **File > Settings > Managed Objects**.  
    b. Select your domain and click **Edit**.  
    c. Select the **Only PDC emulator** radio button and click **OK** to save the changes.
 
-   ![User-added image](images/ka04u000000HcUi_0EM700000004xg7.png)
+   ![User-added image](./images/ka04u000000HcUi_0EM700000004xg7.png)
+

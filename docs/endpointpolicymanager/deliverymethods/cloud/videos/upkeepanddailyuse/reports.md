@@ -8,7 +8,7 @@ sidebar_position: 10
 Learn how to find out what XML files your non-domain joined machines are receiving by using the
 Reporting tab of the Netwrix Endpoint Policy Manager (formerly PolicyPak) Cloud portal.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JCKcCKTA9yI" title="Endpoint Policy Manager Cloud Reporting Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JCKcCKTA9yI" title="Endpoint Policy Manager Cloud Reporting Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak Cloud Reporting Demo
 
@@ -51,3 +51,5 @@ some of them are not receiving it at all.
 This is how you're going to go about finding out which machines are receiving what directives. I
 hope that helps you out.  
 Thanks.
+
+

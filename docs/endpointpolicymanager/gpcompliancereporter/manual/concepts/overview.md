@@ -32,3 +32,4 @@ to be on at the time administrators want to query their status. As soon as Group
 data is automatically delivered to the shared database on the designated Endpoint Policy Manager
 GPCR server. Additionally, since all data is centrally stored in a server, administrators can share
 all tests or results.
+

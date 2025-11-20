@@ -18,7 +18,7 @@ But you still have some big problems:
 Watch this video (exclusively for VMware ThinApp administrators) to see exactly how to manage
 ThinApp packages using Group Policy and Netwrix Endpoint Policy Manager (formerly PolicyPak):
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rNR-SriYen8?si=RxicLU3bl9Xy8iXb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rNR-SriYen8?si=RxicLU3bl9Xy8iXb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 So, if you needed to tweak a configuration file, edit the package's registry, or otherwise configure
 your ThinApp package, you've got a real problem.
@@ -52,7 +52,7 @@ When you're ready to manage your ThinApp packages using Group Policy, Endpoint P
 here for you.
 
 Click on Webinar
-([https://www.endpointpolicymanager.com/video/support-sharing/webinar-2.html](https://www.endpointpolicymanager.com/video/support-sharing/webinar-2.html))
+([https://www.policypak.com/video/support-sharing/webinar-2.html](https://www.policypak.com/video/support-sharing/webinar-2.html))
 to get the software and try it out for yourself.
 
 ### Manage ThinApp Packages on Physical or VDI machines Video Transcript
@@ -158,7 +158,7 @@ on the computer side. I'll click "Edit" here, and I'll dive down under the compu
 "PolicyPak/Applications/New/Application." I'm going to pick on "PolicyPak for Mozilla Firefox 23.0."
 Now this version of Firefox says it's 23, but it will work for pretty much every version you have.
 
-If I click over here, let me go ahead and deliver a "Home Page." I'll go to "www.endpointpolicymanager.com." I
+If I click over here, let me go ahead and deliver a "Home Page." I'll go to "www.policypak.com." I
 also want to right click and "Lockdown this setting using the system-wide config file." This is
 going to ensure these settings can't be worked around.
 
@@ -181,7 +181,7 @@ background either using Group Policy or a tool like SCCM or LANDesk or whatever 
 tool you have. I just happen to be using Group Policy in this case.
 
 Let's start off with the real application. We'll go to "Mozilla Firefox" here.  We'll go to 
-"Firefox/Options" and you can see we've driven the "www.endpointpolicymanager.com" "Home Page" in there. The
+"Firefox/Options" and you can see we've driven the "www.policypak.com" "Home Page" in there. The
 "Security" checkboxes are delivered and checked on. If we go to "about:config" here and we look for
 those three settings that I manipulated – there they are – these three settings were in the Pak
 configuration, and I've delivered those in.
@@ -224,3 +224,5 @@ recommend that folks attend a webinar, and then we'll hand over the bits. Then y
 and see if it's right for you.
 
 Thanks so much for watching, and we'll talk to you soon.
+
+

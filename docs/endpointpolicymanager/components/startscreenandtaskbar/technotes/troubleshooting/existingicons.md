@@ -17,3 +17,5 @@ In short, there are two categories of Start Screen items:
 
 Items that fall into the second category "Applications pinned by Enterprise" are wiped out when new
 layout is applied by Endpoint Policy Manager Start Screen & Taskbar Manager.
+
+

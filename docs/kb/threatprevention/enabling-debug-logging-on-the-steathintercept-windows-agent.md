@@ -37,7 +37,7 @@ There are two options.
 3. Edit the file named `SIWindowsAgent.log.config` in your favorite text editor.
 4. Change `WARN` to `DEBUG` in the appropriate portion of that file:
 
-   ![LogConfig.png](images/ka0Qk000000DmDJ_0EM4u000004d1hf.png)
+   ![LogConfig.png](./images/ka0Qk000000DmDJ_0EM4u000004d1hf.png)
 
 5. Save the `.log.config` file and restart the `SIWindowsAgent` service.
 

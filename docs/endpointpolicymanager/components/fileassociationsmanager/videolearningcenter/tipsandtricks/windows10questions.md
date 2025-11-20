@@ -9,7 +9,7 @@ How do I get Windows 10 to stop asking me to open PDFs in Microsoft Edge? When y
 Policy Manager File Associations Manager, you might have done "everything right" but even then, it
 still doesn't work as expected. See this video for a universal fix.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cMioz4JQPYI" title="Endpoint Policy Manager File Associations: Don't ask questions (even when you did it right)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cMioz4JQPYI" title="Endpoint Policy Manager File Associations: Don't ask questions (even when you did it right)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz and if you're watching this video, you're probably wondering why when
 you use file associations manager you still get this question. Do you want to open this file? You've
@@ -38,3 +38,5 @@ no questions. Hopefully that policy setting helps you out and therefore you can 
 associations manager quickly and easily and no more questions.
 
 Thanks so very much for watching and talk to you soon.
+
+

@@ -15,3 +15,4 @@ Uncheck **Send a weekly report of inactive computers to all company admins**. Al
 also change the Threshold.
 
 ![613_2_hfkb-1089-img-02_950x609](/images/endpointpolicymanager/license/cloud/613_2_hfkb-1089-img-02_950x609.webp)
+

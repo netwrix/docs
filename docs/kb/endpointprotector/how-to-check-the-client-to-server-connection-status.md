@@ -41,4 +41,4 @@ This article explains how to check the connection status between the Netwrix End
    - The connection status
    - The time and date when the policies were last received
 
-   ![Netwrix Endpoint Protector Client Settings tab showing server connection status details](images/ka0Qk000000Dzs5_0EMQk00000CAOoZ.png)
+   ![Netwrix Endpoint Protector Client Settings tab showing server connection status details](./images/ka0Qk000000Dzs5_0EMQk00000CAOoZ.png)

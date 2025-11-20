@@ -18,7 +18,7 @@ agents will be limited in monitoring capability until upgraded.
 
 The installation and configuration paths for Netwrix Activity Monitor 8.0 have been updated from
 Activity Monitor 7.1. See the
-[Netwrix Activity Monitor Paths](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA04u00000111AOCAY.html) article
+[Netwrix Activity Monitor Paths](/docs/kb/activitymonitor/netwrix_activity_monitor_(nam)_7.0_paths) knowledge base article
 for additional information.
 
 ## Activity Monitor Upgrade Procedure

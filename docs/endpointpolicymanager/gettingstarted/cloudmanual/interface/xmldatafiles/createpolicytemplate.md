@@ -20,3 +20,4 @@ Once selected, all the policies from that level are implemented, but are changea
 ![web_interface_and_controls_34_624x344](/images/endpointpolicymanager/cloud/interface/xmldatafiles/web_interface_and_controls_34_624x344.webp)
 
 Once saved, the policy is like any other XML data file.
+

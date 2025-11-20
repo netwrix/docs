@@ -34,7 +34,7 @@ Policy Manager licenses. For instance, if you want to use Endpoint Policy Manage
 200 laptops, and 100 concurrent Terminal Services or Citrix session connections, then you will need
 800 Endpoint Policy Manager licenses. Full details of how Endpoint Policy Manager licenses Terminal
 Services (RDS) or Citrix inbound connections can be found at the following link:
-[http://www.endpointpolicymanager.com/purchasing/citrix-licensing-scenarios.html](http://www.endpointpolicymanager.com/purchasing/citrix-licensing-scenarios.html).
+[https://www.policypak.com/purchasing/citrix-licensing-scenarios.html](http://www.policypak.com/purchasing/citrix-licensing-scenarios.html).
 :::
 
 
@@ -295,6 +295,8 @@ Volume licenses and domain-wide licenses for Endpoint Policy Manager are availab
 
 :::note
 For an overview and FAQ of the licensing process, please visit:
-[http://www.endpointpolicymanager.com/support-sharing/licensing-faq.html](http://www.endpointpolicymanager.com/support-sharing/licensing-faq.html).
+[https://www.policypak.com/support-sharing/licensing-faq.html](http://www.policypak.com/support-sharing/licensing-faq.html).
 
 :::
+
+

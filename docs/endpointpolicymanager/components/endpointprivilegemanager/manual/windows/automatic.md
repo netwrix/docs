@@ -90,3 +90,6 @@ Rules are now exported.
 The result after looking at the GPO is shown here, with your rules ready to go.
 
 ![policypak_automatic_rules_10](/images/endpointpolicymanager/leastprivilege/tool/rulesgenerator/endpointpolicymanager_automatic_rules_10.webp)
+
+
+

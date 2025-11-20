@@ -29,3 +29,4 @@ the target server (in this case DC), as shown in Figure 75.
 ![tuning_and_troubleshooting_16](/images/endpointpolicymanager/troubleshooting/grouppolicycompliancereporter/tuning_and_troubleshooting_16.webp)
 
 Figure 75. Verifying the action is set correctly.
+

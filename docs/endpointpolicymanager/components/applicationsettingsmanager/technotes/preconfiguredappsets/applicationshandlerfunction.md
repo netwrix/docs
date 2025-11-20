@@ -77,3 +77,5 @@ server to return "correct" MIME type.
 The general rule of thumb here is similar to rule in #2. If Firefox shows "Open with dialog" when
 there is no handler for resource, it fires Application Handler for the same resource if there is
 one.
+
+

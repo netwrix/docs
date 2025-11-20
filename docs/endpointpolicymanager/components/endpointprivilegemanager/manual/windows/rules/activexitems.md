@@ -26,3 +26,6 @@ You can use ActiveX rules and specify the CAB file you want to permit.
 
 Then, clicking on **Validate & Add** will attempt to determine if the CAB is signed and add that
 requirement to the rule.
+
+
+

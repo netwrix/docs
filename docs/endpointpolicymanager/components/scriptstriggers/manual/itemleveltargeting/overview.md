@@ -71,3 +71,5 @@ Figure 27. When the policy or collection's icon is orange, the entry has Item-Le
 When Item-Level Targeting is on, the policy won't apply unless the conditions are true. If
 Item-Level Targeting is on a collection, then none of the items in the collection will apply unless
 the Item-Level Targeting on the collection evaluates to True.
+
+

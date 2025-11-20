@@ -30,11 +30,11 @@ This article explains how to configure the default sort attribute for search res
 ## Instructions
 1. In the Netwrix Directory Manager Admin Center, go to **Applications**. For the application or portal where you want to change the setting, click the three dots and select **Settings**.
 
-   ![Accessing portal settings in Directory Manager Admin Center](images/ka0Qk000000DvQH_0EMQk00000BSXab.png)
+   ![Accessing portal settings in Directory Manager Admin Center](./images/ka0Qk000000DvQH_0EMQk00000BSXab.png)
 
 2. Click **Advanced Settings**. In the right pane, find the **Sort Search** option and select your desired sort attribute from the drop-down menu.
 
-   ![Selecting the default sort attribute in Advanced Settings](images/ka0Qk000000DvQH_0EMQk00000BSXfR.png)
+   ![Selecting the default sort attribute in Advanced Settings](./images/ka0Qk000000DvQH_0EMQk00000BSXfR.png)
 
 3. Scroll down and click **Save** to apply your changes.
 

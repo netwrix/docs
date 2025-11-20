@@ -47,7 +47,7 @@ To change this on the machine where ALE is installed:
 3. Change the `UseWMI_Workstations` value to `0`.
 4. Restart the Netwrix Account Lockout Examiner service via `Services.msc`.
 
-![User-added image](images/ka04u000000HcUO_0EM7000000052ir.png)
+![User-added image](./images/ka04u000000HcUO_0EM7000000052ir.png)
 
 ### Option 2 — Disable searching for detailed info about invalid logons
 
@@ -60,4 +60,5 @@ To change this on the machine where ALE is installed:
 3. Create a new DWORD called `PF_Enabled` and set its value to `0`.
 4. Restart the Netwrix Account Lockout Examiner service via `Services.msc`.
 
-![User-added image](images/ka04u000000HcUO_0EM7000000052im.png)
+![User-added image](./images/ka04u000000HcUO_0EM7000000052im.png)
+

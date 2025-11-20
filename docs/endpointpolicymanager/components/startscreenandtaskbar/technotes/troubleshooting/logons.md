@@ -23,3 +23,5 @@ Scenario 2:
 - When the User logs on, because policies are applied asynchronously, the end-user missed the chance
   to apply those to Explorer. So, you see the result at the next logon because the Start Screen &
   Taskbar policies are "now written, but not yet seen."
+
+

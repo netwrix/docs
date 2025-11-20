@@ -44,39 +44,39 @@ Netwrix recommends using Netwrix Directory Manager in conjunction with a FIDO2-b
 
 1. Enable YubiKey support in the configuration, even if you do not plan on using YubiKey hardware tokens.
 
-   ![A screenshot of a computerDescription automatically generated](images/ka0Qk000000Bt1B_0EMQk00000AAgZi.png)
+   ![A screenshot of a computerDescription automatically generated](./images/ka0Qk000000Bt1B_0EMQk00000AAgZi.png)
 
-   ![A screenshot of a phoneDescription automatically generated](images/ka0Qk000000Bt1B_0EMQk00000AAfKI.png)
+   ![A screenshot of a phoneDescription automatically generated](./images/ka0Qk000000Bt1B_0EMQk00000AAfKI.png)
 
-   ![A screenshot of a phoneDescription automatically generated](images/ka0Qk000000Bt1B_0EMQk00000AAfow.png)
+   ![A screenshot of a phoneDescription automatically generated](./images/ka0Qk000000Bt1B_0EMQk00000AAfow.png)
 
-   ![A screenshot of a computer screenDescription automatically generated](images/ka0Qk000000Bt1B_0EMQk00000AAl4j.png)
+   ![A screenshot of a computer screenDescription automatically generated](./images/ka0Qk000000Bt1B_0EMQk00000AAl4j.png)
 
 2. From the user portal, users should enroll their account and select YubiKey from the available options.
 
-   ![A screenshot of a phoneDescription automatically generated](images/ka0Qk000000Bt1B_0EMQk00000AAkS2.png)
+   ![A screenshot of a phoneDescription automatically generated](./images/ka0Qk000000Bt1B_0EMQk00000AAkS2.png)
 
-   ![A screenshot of a computer screenDescription automatically generated](images/ka0Qk000000Bt1B_0EMQk00000AAl7x.png)
+   ![A screenshot of a computer screenDescription automatically generated](./images/ka0Qk000000Bt1B_0EMQk00000AAl7x.png)
 
 3. Give your passkey-enabled device an appropriate name.
 
-   ![A screenshot of a computerDescription automatically generated](images/ka0Qk000000Bt1B_0EMQk00000AAl9Z.png)
+   ![A screenshot of a computerDescription automatically generated](./images/ka0Qk000000Bt1B_0EMQk00000AAl9Z.png)
 
 4. You will be prompted to choose a location to save your passkey.
 
-   ![A screenshot of a computerDescription automatically generated](images/ka0Qk000000Bt1B_0EMQk00000AAlBB.png)
+   ![A screenshot of a computerDescription automatically generated](./images/ka0Qk000000Bt1B_0EMQk00000AAlBB.png)
 
 5. You will receive a notification on your device or be prompted to insert a USB token, depending on the chosen method.
 
-   ![A screenshot of a computer error messageDescription automatically generated](images/ka0Qk000000Bt1B_0EMQk00000AAlEP.png)
+   ![A screenshot of a computer error messageDescription automatically generated](./images/ka0Qk000000Bt1B_0EMQk00000AAlEP.png)
 
 6. If using a mobile phone, you should be prompted to create a key for the web portal enrollment.
 
-   ![A screenshot of a phoneDescription automatically generated](images/ka0Qk000000Bt1B_0EMQk00000AAlO5.png)
+   ![A screenshot of a phoneDescription automatically generated](./images/ka0Qk000000Bt1B_0EMQk00000AAlO5.png)
 
 7. After completion, you will receive confirmation on both the mobile device and the portal.
 
-   ![A white sign with black textDescription automatically generated](images/ka0Qk000000Bt1B_0EMQk00000AAlUX.png)
+   ![A white sign with black textDescription automatically generated](./images/ka0Qk000000Bt1B_0EMQk00000AAlUX.png)
 
 ## What is a Passkey, and why do we recommend using it?
 

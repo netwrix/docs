@@ -35,4 +35,5 @@ How to specify a custom port for Netwrix Auditor to communicate with the SQL Ser
 SERVER-SQL\TEST-SQL,14337
 ```
 
-![Specify custom SQL Server port image](images/ka04u00000117sv_0EM4u000008LXSz.png)
+![Specify custom SQL Server port image](./images/ka04u00000117sv_0EM4u000008LXSz.png)
+

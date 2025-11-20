@@ -41,3 +41,5 @@ Next, we'll ensure that only the East Sales Users get these policy settings whil
 Targeting. See the
 [Using Item-Level Targeting with Collections and Policies](/docs/endpointpolicymanager/components/admintemplatesmanager/manual/itemleveltargeting.md) topic for
 additional information on the next steps.
+
+

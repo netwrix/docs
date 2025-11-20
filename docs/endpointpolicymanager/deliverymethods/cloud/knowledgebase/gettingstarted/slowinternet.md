@@ -18,7 +18,7 @@ option to avoid the long delays during the installation, or just as a precautio
 failed installation due to timeout errors during the process.
 
 CSE is available for download within the Customer Portal only. Go to
-[https://portal.endpointpolicymanager.com](https://portal.endpointpolicymanager.com/) and download **Latest Bits**. You'll
+[https://portal.policypak.com](https://portal.policypak.com/) and download **Latest Bits**. You'll
 find the Endpoint Policy Manager Client-Side Extension folder in the archive.
 
 ![image1](/images/endpointpolicymanager/install/cloud/image1.webp)
@@ -48,3 +48,5 @@ For more details about setting up machines for VDI environments please check the
 [Can I embed the Endpoint Policy ManagerClient Side Extension and/or Endpoint Policy Manager Cloud client into a master image for VDI, MDT, Ghost, Citrix, etc?](/docs/endpointpolicymanager/gettingstarted/misc/knowledgebase/tipstricksandfaqs/embedclient.md)
 
 [How to install the Endpoint Policy Manager Cloud Client for use in an Azure Virtual Desktop image](/docs/endpointpolicymanager/deliverymethods/cloud/knowledgebase/clienttips/azurevirutaldesktop.md)
+
+

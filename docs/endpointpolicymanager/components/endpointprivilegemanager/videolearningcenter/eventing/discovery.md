@@ -10,7 +10,7 @@ out what users are doing with those admin rights, so you can transition from Loc
 User. Use this same technique to transition to SecureRun, so users cannot run applications that were
 not installed by IT staff.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u0S-A4l_TQ8" title="Endpoint Policy Manager: Use Discovery to know what rules to make as you transition from Local Admin rights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u0S-A4l_TQ8" title="Endpoint Policy Manager: Use Discovery to know what rules to make as you transition from Local Admin rights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Transcript: Use Discovery to know what rules to make as you transition from Local Admin rights
 
@@ -162,3 +162,5 @@ IDs and route them through to automatically create rules.
 
 Okay, I hope this helps you out. Thank you very much and looking to help you get started with
 PolicyPak Least Privilege Manager real soon. Thanks.
+
+

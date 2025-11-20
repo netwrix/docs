@@ -9,11 +9,11 @@ sidebar_position: 80
 Netwrix recommends that you upgrade from the older versions of Netwrix Auditor to the latest version
 available to take advantage of the new features.
 
-Seamless upgrade to Netwrix Auditor 10.7 is supported for versions 10.6 and 10.5.
+Seamless upgrade to Netwrix Auditor 10.8 is supported for versions 10.7 and 10.6.
 
 If you use an earlier version of Netwrix Auditor, then you need to upgrade sequentially right to
-version 10.7. See the following Netwrix knowledge base article for more information:
-[Upgrade Increments for Netwrix Auditor](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA00g000000H9eJCAS.html).
+version 10.8. See the following Netwrix knowledge base article for more information:
+[Upgrade Increments for Netwrix Auditor](/docs/kb/auditor/upgrade-increments-for-netwrix-auditor).
 
 ## Before Starting the Upgrade
 
@@ -108,7 +108,7 @@ operation. The issues listed below apply to upgrade from 9.96 and 10.
 
 ## Upgrade Procedure
 
-You can upgrade Netwrix Auditor to 10.7 by running the installation package.
+You can upgrade Netwrix Auditor to 10.8 by running the installation package.
 
 Customers who are logged in to the Netwrix Customer Portal can download the latest version of their
 software products from the My Products page:

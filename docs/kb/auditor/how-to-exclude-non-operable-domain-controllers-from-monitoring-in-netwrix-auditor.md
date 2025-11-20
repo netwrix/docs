@@ -51,8 +51,9 @@ To exclude domain controllers from monitoring, refer to the following steps:
    MYDC.MYDOMAIN.LOCAL
    ```
 
-   ![User-added image](images/ka0Qk0000003W1l_0EMQk000003oywv.png)
+   ![User-added image](./images/ka0Qk0000003W1l_0EMQk000003oywv.png)
 
 3. Save the changes. Inactive User Tracker will exclude this domain controller.
 
 Refer to the following article for additional information: Monitoring Plans — User Activity Monitoring Scope — v10.6.
+

@@ -10,7 +10,7 @@ Want to nuke Candy Crush and other pre-installed Windows 10 apps? And would you 
 install Windows Store apps? You've got it with Netwrix Endpoint Policy Manager (formerly PolicyPak)
 Software Package Manager and our AppX Manager function.
 
-<iframe width="1700" height="956" src="https://www.youtube.com/embed/NT07ngb0aJM" title="Endpoint Policy Manager Software Package Manager: AppX Manager" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NT07ngb0aJM" title="Endpoint Policy Manager Software Package Manager: AppX Manager" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video we're going to talk about adding and removing packages
 from the Microsoft Store, also known as AppX packages. You know the drill. Your users think you
@@ -95,3 +95,5 @@ it.
 
 Check out our other videos if you like Endpoint Policy Manager Package Manager and everything we
 have to offer. Thanks very much for watching. We'll talk to you soon.
+
+

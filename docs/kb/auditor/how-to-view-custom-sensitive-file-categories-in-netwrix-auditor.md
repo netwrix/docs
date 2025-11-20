@@ -50,7 +50,8 @@ Refer to the following steps:
    > **NOTE:** To delete parent terms, first delete the children terms.
 3. Once the built-in terms are cleared, create a new child term under the root taxonomy term. Right-click the root term and click **Add Child Term(s)**. Then, insert the new clues to the child term.
 
-   ![User-added image](images/ka0Qk0000002kpx_0EMQk000003xxWz.png)
+   ![User-added image](./images/ka0Qk0000002kpx_0EMQk000003xxWz.png)
 4. Set up your sources to include target files for the modified taxonomy. Wait for the files to be crawled and classified.
 
 The corresponding Netwrix Auditor report will include the used taxonomy and file owner.
+

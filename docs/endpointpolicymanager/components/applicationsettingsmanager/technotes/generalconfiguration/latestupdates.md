@@ -8,3 +8,5 @@ sidebar_position: 130
 
 All Netwrix Endpoint Policy Manager (formerly PolicyPak) customers are sent timely email update
 alerts to keep them informed.
+
+

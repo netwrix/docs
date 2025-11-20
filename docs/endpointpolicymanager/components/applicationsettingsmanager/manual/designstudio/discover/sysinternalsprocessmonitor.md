@@ -26,30 +26,30 @@ to perform its capture. Process monitor can be downloaded from Microsoft at:
 
 Let's explore some quick tips for running Process Monitor. First, make sure Process Monitor is
 capturing events by clicking on File|Capture Events (this should be on by default) and Edit|Auto
-Scroll (which is not the default). You can see these configuration options in Figure 102 and
-Figure 103.
+Scroll (which is not the default). You can see these configuration options In the figure shown and
+The figure shown.
 
 ![discovering_configuration_15_499x277](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_15_499x277.webp)
 
-Figure 102. Selecting the option to capture events.
+The figure shown. Selecting the option to capture events.
 
 ![discovering_configuration_16](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_16.webp)
 
-Figure 103. Selecting the option for autoscrolling.
+The figure shown. Selecting the option for autoscrolling.
 
 Next, you're going to create a filter automatically. To do this, use Process Monitor's Target Sight
-icon and drag it directly onto the target application's main window as shown in Figure 104.
+icon and drag it directly onto the target application's main window as shown In the figure shown.
 
 ![discovering_configuration_17](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_17.webp)
 
-Figure 104. Dragging the Target Sight icon into the main window.
+The figure shown. Dragging the Target Sight icon into the main window.
 
-Next, have the first two filter types selected, Registry and File, as shown in Figure 105. Unselect
+Next, have the first two filter types selected, Registry and File, as shown In the figure shown. Unselect
 the remaining three items (Network Activity, Process & Thread, and Profiling Events).
 
 ![discovering_configuration_18_624x105](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_18_624x105.webp)
 
-Figure 105. Selecting the "Registry" and "File" types.
+The figure shown. Selecting the "Registry" and "File" types.
 
 Next, make a change in your application and click "Apply" or "OK." Look for registry or disk
 activity that occurs when you click "OK." It takes a little practice but you should see some disk
@@ -58,12 +58,12 @@ will keep settings in memory and only to write their data (to the registry or di
 application is closed. This can be a little bit frustrating, so if don't see the changes you expect,
 you can also try to close the application and see if it wrote any changes to the registry or disk.
 
-In Figure 106 you can see the deployment.properties file was changed after checkbox was unselected
+In the figure shown you can see the deployment.properties file was changed after checkbox was unselected
 and the change was applied.
 
 ![discovering_configuration_19](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_19.webp)
 
-Figure 106. Applying changes.
+The figure shown. Applying changes.
 
 Knowing this, you can use Endpoint Policy Manager DesignStudio to use this location (in this case, a
 file) as the data root and continue to build an AppSet for the application.
@@ -78,8 +78,7 @@ dialog prompt when you re-run Process Monitor.
 
 
 If you discover a file that stores data for your application, but it isn't a currently supported
-type (INI, XML, JS, .properties, etc.) then let us know by emailing
-[support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com) with details so we can include its support in
+type (INI, XML, JS, .properties, etc.) then let us know by [opening a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket) with details so we can include its support in
 a future release. For more information on using Process Monitor, be sure to watch this in-depth
 video (from the 35:30 mark) as well for more tips:
 
@@ -87,3 +86,6 @@ video (from the 35:30 mark) as well for more tips:
 You can also purchase the book on Sysinternals tools (where Process Monitor is covered) by Mark
 Russinovich and Aaron Margosis by visiting this link:
 [http://www.amazon.com/Windows%C2%AE-Sysinternals-Administrators-Reference-Russinovich/dp/073565672X](http://www.amazon.com/Windows®-Sysinternals-Administrators-Reference-Russinovich/dp/073565672X).
+
+
+

@@ -30,12 +30,12 @@ Can I audit another domain with Netwrix Auditor?
 With Netwrix Auditor you can audit domains different from the one where the Netwrix Auditor host resides. Refer to the following scenarios:
 
 - If there is a two-way trust set up between the audited domain and the domain where the Netwrix Auditor host is installed, no limitations apply. Learn more about trusts in [How trust relationships work for forests in Active Directory ⸱ Microsoft 🤝](https://learn.microsoft.com/en-us/azure/active-directory-domain-services/concepts-forest-trust).
-- For audit of non-trusted domains, refer to the following article for additional information: [How to Audit a Non-Trusted Domain](/docs/kb/auditor/how-to-audit-a-non-trusted-domain.md).
+- For audit of non-trusted domains, refer to the following article for additional information: [How to Audit a Non-Trusted Domain](/docs/kb/auditor/how-to-audit-a-non-trusted-domain).
 
 > **NOTE:** The data collecting account should have required permissions in the monitored domain. Refer to the following article for additional information on Data Collecting Account and group Managed Service Account (gMSA) requirements: Monitoring Plans — Data Collecting Account ⸱ v10.6.
 
 ### Related articles
 
 - [How trust relationships work for forests in Active Directory ⸱ Microsoft 🤝](https://learn.microsoft.com/en-us/azure/active-directory-domain-services/concepts-forest-trust)
-- [How to Audit a Non-Trusted Domain](/docs/kb/auditor/how-to-audit-a-non-trusted-domain.md)
+- [How to Audit a Non-Trusted Domain](/docs/kb/auditor/how-to-audit-a-non-trusted-domain)
 - Monitoring Plans — Data Collecting Account ⸱ v10.6

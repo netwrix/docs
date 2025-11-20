@@ -7,8 +7,7 @@ sidebar_position: 10
 # Remote Work Delivery Manager
 
 :::note
-Before reading this section, please ensure you have read Book 2:
-[Installation Quick Start](/docs/endpointpolicymanager/gettingstarted/overviewinstall/overviewinstall.md), which will help you
+Before reading this section, please ensure you have read the [Installation Quick Start](/docs/endpointpolicymanager/gettingstarted/overviewinstall/overviewinstall.md), which will help you
 learn to do the following:
 :::
 
@@ -69,8 +68,9 @@ even to non-domain-joined machines over the Internet.
   Policy Manager CSE must be present in order to accept Endpoint Policy Manager Remote Work Delivery
   Manager directives via Group Policy, or when using MEMCM, KACE, MDM, or similar utilities.
 - Endpoints — In order to use these, they must be licensed for Endpoint Policy Manager Remote Work
-  Delivery Manager using one of the licensing methods, which are described in Book 1:
-  [Introduction and Basic Concepts](/docs/endpointpolicymanager/gettingstarted/basicconcepts/basicconcepts.md).
+  Delivery Manager using one of the licensing methods, which are described in the [Introduction and Basic Concepts](/docs/endpointpolicymanager/gettingstarted/basicconcepts/basicconcepts.md).
 - PolicyPak Exporter (optional) — A free utility that lets you take Endpoint Policy Manager Admin
   Templates Manager and our other products' XML files and wrap them into a portable MSI file for
   deployment using MEMCM, an MDM service, or your own systems management software.
+
+

@@ -19,13 +19,13 @@ To see a video of Firefox UI lockout in action, watch the following video(s):
 
 :::note
 To see a video of Thunderbird UI lockout in action, watch the following video(s):
-[http://www.endpointpolicymanager.com/products/manage-thunderbird-with-group-policy.html](https://www.endpointpolicymanager.com/video/endpointpolicymanager-the-superpowers.html).
+[https://www.policypak.com/products/manage-thunderbird-with-group-policy.html](https://www.policypak.com/video/endpointpolicymanager-the-superpowers.html).
 :::
 
 
 :::note
 To see a video of Java UI lockout in action, watch the following video(s):
-[http://www.endpointpolicymanager.com/products/manage-java-jre-with-group-policy.html](http://www.Techsmith.com).
+[https://www.policypak.com/products/manage-java-jre-with-group-policy.html](http://www.Techsmith.com).
 :::
 
 
@@ -38,11 +38,11 @@ Figure 19 displays an example of how to create and link a GPO to computers.
 
 ![policypak_application_settings_18](/images/endpointpolicymanager/applicationsettings/preconfigured/quickstart/endpointpolicymanager_application_settings_18.webp)
 
-Figure 19. Creating and linking a GPO.
+The figure shown. Creating and linking a GPO.
 
 This example is set up as though you've put your target computers in the East Sales Desktops folder.
 
-Then when you edit the GPO, edit it on the Computer side, as seen in Figure 20. At that point, you
+Then when you edit the GPO, edit it on the Computer side, as seen In the figure shown. At that point, you
 can modify settings for Firefox, Thunderbird, and Java, including "Lockdown this setting using the
 system-wide config file," as seen in the top of the figure with Firefox and the bottom of the figure
 with Java.
@@ -51,17 +51,17 @@ with Java.
 
 ![policypak_application_settings_20](/images/endpointpolicymanager/applicationsettings/preconfigured/quickstart/endpointpolicymanager_application_settings_20.webp)
 
-Figure 20. System-wide lockdown using config files is only available on the Computer side, as seen
+The figure shown. System-wide lockdown using config files is only available on the Computer side, as seen
 in the examples of Firefox (top) and Java (bottom).
 
 It is important to note that the option "Lockdown this setting using the system-wide config file"
 does not appear on the User side. If you try to edit these three AppSets on the User side, you will
 not see an option to perform UI lockdown. An example of editing one of these AppSets (the Firefox
-AppSet) on the User side (and therefore, not seeing the system-wide lockdown) is shown in Figure 21.
+AppSet) on the User side (and therefore, not seeing the system-wide lockdown) is shown In the figure shown.
 
 ![policypak_application_settings_19](/images/endpointpolicymanager/applicationsettings/preconfigured/quickstart/endpointpolicymanager_application_settings_19.webp)
 
-Figure 21. The lockdown via system-wide config file is not present on the User side.
+The figure shown. The lockdown via system-wide config file is not present on the User side.
 
 Moreover, we have created a supplementary manual specifically for Firefox and another for Internet
 Explorer because they act a little differently. In the Endpoint Policy Manager Portal, in the
@@ -74,3 +74,6 @@ Explorer. The reference documents are:
 
 These documents will explain how to manage certificates, prevent add-ons, manage bookmarks, and so
 on.
+
+
+

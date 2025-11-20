@@ -19,18 +19,21 @@ the benefits of the Endpoint Policy Manager Application Settings Manager engine,
 anywhere and being able to revert when the setting no longer applies.
 
 The `.reg` importer utility is only available to use with checkboxes. When you select any checkbox,
-a special icon will appear, as shown in Figure 162.
+a special icon will appear, as shown In the figure shown.
 
 ![using_the_reg_importer_utility](/images/endpointpolicymanager/applicationsettings/designstudio/using_the_reg_importer_utility.webp)
 
-Figure 162. The .reg importer utility.
+The figure shown. The .reg importer utility.
 
 Using the utility, you can import existing .reg files and specify which state (checked or unchecked)
-matches which .reg file (see Figure 163).
+matches which .reg file (See the figure here).
 
 ![using_the_reg_importer_utility_1](/images/endpointpolicymanager/applicationsettings/designstudio/using_the_reg_importer_utility_1.webp)
 
-Figure 163. The .reg importer utility interface.
+The figure shown. The .reg importer utility interface.
 
 For a full end-to-end example on this mini-utility, please watch the video here:
 [Use the DesignStudio to import existing registry keys](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/designstudio/importregistry.md).
+
+
+

@@ -61,7 +61,7 @@ Unbind the port from the application. Refer to the following steps:
 
     The `BindingURL` includes the port number and the protocol (HTTP or HTTPS).
 
-    ![Config file](images/ka0Qk0000005DxV_0EMQk0000075k4b.png)
+    ![Config file](./images/ka0Qk0000005DxV_0EMQk0000075k4b.png)
 
 2. On your Netwrix Access Analyzer host, run the following line in an elevated Command Prompt instance to retrieve all reserved URLs:
 
@@ -85,6 +85,6 @@ Unbind the port from the application. Refer to the following steps:
 
     If the output does not include the affected port, refer to the following article to learn more about the SSL binding: https://docs.netwrix.com/docs/auditor/10_8
 
-## Related Articles
+## Related Link
 
 - https://docs.netwrix.com/docs/auditor/10_8 (Reports via the Web Console — Securing the Web Console · v11.6)

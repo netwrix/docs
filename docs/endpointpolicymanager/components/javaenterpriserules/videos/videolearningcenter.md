@@ -31,3 +31,5 @@ See the following Video topics for Java Enterprise Rules Manager.
 ## Troubleshooting
 
 - [Endpoint Policy Manager Java Rules Manager: XML Surgery](/docs/endpointpolicymanager/components/javaenterpriserules/videos/troubleshooting/xmlsurgery.md)
+
+

@@ -8,7 +8,7 @@ sidebar_position: 90
 Want to really put the smackdown on malware? Use SecureRun on both the User AND System side. See
 this video for details.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/W9q35n6cgY4?si=j6xA1VAtqUNdKobS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W9q35n6cgY4?si=j6xA1VAtqUNdKobS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi. This is Jeremy Moskowitz. in this video, I'm going to show you how you can use the PolicyPak
 Least Privilege Manager to dictate how to shore up a security hole on the computer side using
@@ -87,3 +87,5 @@ Hopefully, this helps you out, and then you can continue on to the next video to
 more items around the User and System Processes scope policy.
 
 Thank you very much.
+
+

@@ -8,7 +8,7 @@ sidebar_position: 60
 Got Cisco AnyConnect? And want to make a specific script run ON connect and another script when the
 VPN disconnects? If yes, you're gonna love this !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hJ7YThxdZ4A?si=2OFbH4Bvf7ijnKae" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hJ7YThxdZ4A?si=2OFbH4Bvf7ijnKae" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, and in this video, I'm going to show you how you can run a script like
 map a drive or map a printer or clean up the computer, whatever you want to do, on Cisco AnyConnect
@@ -54,3 +54,5 @@ you've got it all set, bring it in to Endpoint Policy Manager Scripts with the T
 you can have a nice on script and a nice off script, and you are off to the races with Endpoint
 Policy Manager and Cisco AnyConnect. Hope this video helps you out. Looking forward to getting you
 started with Endpoint Policy Manager real soon.
+
+

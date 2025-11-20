@@ -41,3 +41,6 @@ The result is that users can now use the Copy with Endpoint Policy Manager Secur
 copy items from your store to their locations and then perform automatic elevation on those items.
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/understanding_securecopy_5.webp)
+
+
+

@@ -8,14 +8,14 @@ sidebar_position: 20
 Learn where to download and how to install the Bits that you'll need to get started with PolicyPak
 Group Policy Edition!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GLU2bihX354" title="PPGP: Admin Console And CSE Installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GLU2bihX354" title="PPGP: Admin Console And CSE Installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Admin Console And CSE Installation
 
 Hi, this is Whitney with PolicyPak Software. In this video, we're going to look at getting started
 with the PolicyPak Group Policy Edition.
 
-In order to get prepared for this video, I went ahead and I went to endpointpolicymanager.com. I went to the
+In order to get prepared for this video, I went ahead and I went to policypak.com. I went to the
 "Customer Login" area and then went ahead and logged in. Once I got there, I went ahead and I went
 over to the "Downloads" tab, which should load in just a second here. There we go. I went to this
 "Downloads" tab, and I went to the "Latest Bits" and I installed those. These are, as it says right
@@ -94,3 +94,5 @@ In the next video, we're going to talk about some of what the components do and 
 PolicyPak itself, so I hope to see you there.
 
 Thank you very much.
+
+

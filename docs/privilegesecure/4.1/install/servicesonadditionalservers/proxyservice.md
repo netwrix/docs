@@ -27,7 +27,7 @@ application.
 
 :::tip
 Remember, You must configure the Antivirus exclusions according to the
-[Exclusions for Antivirus (AV) & Endpoint Software](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA04u0000000Hi8CAE.html)
+[Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/exclusions-for-antivirus-av-endpoint-software)
 knowledge base article.
 :::
 

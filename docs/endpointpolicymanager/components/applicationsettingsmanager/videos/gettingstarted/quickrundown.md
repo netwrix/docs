@@ -7,7 +7,7 @@ sidebar_position: 30
 
 Learn how to get started with Application Settings Manager quickly and easily with this video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yYNeVOKtO-s" title="PPGP Quick Rundown: Application Manager" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yYNeVOKtO-s" title="PPGP Quick Rundown: Application Manager" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PPGP Quick Rundown: Application Manager Video Transcript
 
@@ -30,7 +30,7 @@ Software" and "Google Chrome" and "Mozilla Firefox." Where the heck did all of t
 is with the random amount of applications I see here? Well, it came from the central store, and it's
 actually not random at all.
 
-What I did before this video is, I went to the endpointpolicymanager.com customer portal, and I went to the
+What I did before this video is, I went to the policypak.com customer portal, and I went to the
 Downloads tab and downloaded our Paks. Those Paks are right here, and they're all in folders. Let me
 just pick one here. Inside most of the folders, you're going to see three files here. One is a
 "Readme" file. It's exactly what you think it is. Just any information that we have that you may
@@ -114,7 +114,7 @@ the computer side if we do that. So we're going to come over here to the "Applic
 Manager" over here on the computer side. We are going to right click and select "New Application,"
 and we'll go with "PolicyPak for Mozilla Firefox" first.
 
-Let's get into here. I want to deliver a "Home Page" here. I'll go with "https://www.endpointpolicymanager.com."
+Let's get into here. I want to deliver a "Home Page" here. I'll go with "https://www.policypak.com."
 Why not? What I want to do is "Show my home page." There we go. This is where I "Lockdown this
 setting using the system-wide config file" which means that the user is going to have no way to
 change this at any point. It's, like I said, kind of ripping the knob off of it.
@@ -142,7 +142,7 @@ we come over here and try to get into the "Cameras" tab where I could before, no
 So we disabled that just like we thought we were going to.
 
 Now let's see what we did with "Mozilla Firefox." All right, opening up. There we go. We have
-delivered that "https://www.endpointpolicymanager.com" homepage. When I come over here, there we go. The
+delivered that "https://www.policypak.com" homepage. When I come over here, there we go. The
 incognito mode or new private browsing is no longer there. If I try to go to "Options" and I want to
 try to change the "Home Page," I can't do anything. I can't change it because we've locked that down
 with that system-wide config file. So like I said, no more private browsing, no more changing of
@@ -161,3 +161,5 @@ creating that central store if it wasn't already there. We talked about how to w
 Firefox, and Java in particular. But the rest of those 500 applications in general.
 
 So we hope that helps you out and talk to you soon. Thanks.
+
+

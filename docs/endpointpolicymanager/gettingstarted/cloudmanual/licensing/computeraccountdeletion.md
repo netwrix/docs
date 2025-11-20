@@ -21,3 +21,4 @@ The computer account then goes to the **Deleted** group. From there, you have tw
   connection).
 
 ![licensing_with_policypak_cloud_5_499x266](/images/endpointpolicymanager/cloud/licensing/licensing_with_endpointpolicymanager_cloud_5_499x266.webp)
+

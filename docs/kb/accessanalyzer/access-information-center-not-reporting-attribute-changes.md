@@ -37,7 +37,7 @@ Ensure that differential scans for AD Inventory are enabled and running. This wi
 
 - To enable differential scanning of AD Inventory, enable the **Collect only updates since the last scan** option in the query configuration as shown below:
 
-  ![Collect only updates since the last scan](images/servlet_image_bd5be116677a.png)
+  ![Collect only updates since the last scan](./images/servlet_image_bd5be116677a.png)
 
 - For further information on customizing the `AD > 1-AD_Scan` job, please visit: https://docs.netwrix.com/docs/auditor/10_8
 

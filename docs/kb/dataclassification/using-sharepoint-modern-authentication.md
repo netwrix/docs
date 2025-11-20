@@ -44,11 +44,11 @@ To register a new application, do the following:
 2. Search for and select the **Microsoft Entra admin center**.
 3. Under the Azure Directory select the **App registrations** section.
 4. Select **New registration**.  
-   ![Picture1.png](images/ka0Qk0000000wyT_0EM4u000004dBat.png)
+   ![Picture1.png](./images/ka0Qk0000000wyT_0EM4u000004dBat.png)
 5. In the **Name** field, enter the application name.
 6. In the **Supported account types** select who can use this application – use the **Accounts in this organizational directory only** option.
 7. Click the **Register** button.  
-   ![Picture2.png](images/ka0Qk0000000wyT_0EM4u000004dBay.png)  
+   ![Picture2.png](./images/ka0Qk0000000wyT_0EM4u000004dBay.png)  
    **NOTE**: Application redirect URL is optional; you can leave it blank on this step.
 8. Copy your application ID from the **Overview** section to a safe location.
 
@@ -74,7 +74,7 @@ Do the following: When found, click on the entry and proceed with adding the nec
       - `Sites.FullControl.All` (Crawling)
       - `TermStore.ReadWrite.All` (Term Set access)  
         **NOTE**: For taxonomy manager to fully operate you must also make the user `app@sharepoint` a taxonomy admin (or group admin)  
-        ![Picture3.png](images/ka0Qk0000000wyT_0EM4u000004dBb3.png)
+        ![Picture3.png](./images/ka0Qk0000000wyT_0EM4u000004dBb3.png)
 5. Click **Add permissions**.
 
 ## Step 4: Configuring Certificates & Secrets

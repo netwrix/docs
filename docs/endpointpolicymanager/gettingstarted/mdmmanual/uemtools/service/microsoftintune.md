@@ -27,3 +27,4 @@ item from the Add/Remove Programs options to prevent uninstallation. Using the f
 Once you select the group, you can change the Deployment Action to Required Install. Be sure the
 computer is MDM-joined and in the correct group. If the MSIs do not download as expected, see the
 [Troubleshooting](/docs/endpointpolicymanager/gettingstarted/mdmmanual/uemtools/mdm/overview.md) section.
+

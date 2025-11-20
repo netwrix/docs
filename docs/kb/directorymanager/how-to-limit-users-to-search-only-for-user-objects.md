@@ -31,11 +31,11 @@ By default, the **Find** dialog box allows users to search for all object types,
 
 1. In the **Directory Manager Admin Center**, go to **Applications**. Locate the desired application/portal and click the three-dot icon to select **Settings**.
 
-   ![Accessing application settings in Netwrix Directory Manager Admin Center](images/ka0Qk000000FGyv_0EMQk00000CAMWb.png)
+   ![Accessing application settings in Netwrix Directory Manager Admin Center](./images/ka0Qk000000FGyv_0EMQk00000CAMWb.png)
 
 2. Click **Advanced Settings**. Under the **Portal & Search** tab on the right, locate the **Find Dialogue / Look For** option. Uncheck **Groups** and **Contacts** to limit searches to User objects only.
 
-   ![Configuring Find Dialogue object types in Advanced Settings](images/ka0Qk000000FGyv_0EMQk00000CAMYD.png)
+   ![Configuring Find Dialogue object types in Advanced Settings](./images/ka0Qk000000FGyv_0EMQk00000CAMYD.png)
 
 3. Scroll down and click **Save** to apply your changes.
 
@@ -43,8 +43,8 @@ By default, the **Find** dialog box allows users to search for all object types,
 
 By default, the **Find** dialog box allows searches for *Users*, *Contacts*, and *Groups*.
 
-![Default Find dialog box showing all object types](images/ka0Qk000000FGyv_0EMQk00000CAMUz.png)
+![Default Find dialog box showing all object types](./images/ka0Qk000000FGyv_0EMQk00000CAMUz.png)
 
 After applying the configuration, the **Find** dialog box will display only the **User** object type in searches.
 
-![Find dialog box limited to User object type](images/ka0Qk000000FGyv_0EMQk00000CALUk.png)
+![Find dialog box limited to User object type](./images/ka0Qk000000FGyv_0EMQk00000CALUk.png)

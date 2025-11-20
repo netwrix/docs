@@ -21,7 +21,7 @@ machine will store user `settings within \Profiles\edk2qe8w.default`.
 
 ![special_applications_and_project_5](/images/endpointpolicymanager/applicationsettings/designstudio/applicationsprojects/special_applications_and_project_5.webp)
 
-Figure 205. The location where using settings will be stored.
+The figure shown. The location where using settings will be stored.
 
 Every machine on your network will have a storage location, meaning Firefox (or Thunderbird,
 Seamonkey, or Evergreen profiles) is stored in a unique directory on each computer. You can see in
@@ -30,7 +30,7 @@ settings.
 
 ![special_applications_and_project_6](/images/endpointpolicymanager/applicationsettings/designstudio/applicationsprojects/special_applications_and_project_6.webp)
 
-Figure 206. The `prefs.js` file location.
+The figure shown. The `prefs.js` file location.
 
 The good news is Endpoint Policy Manager DesignStudio and the Endpoint Policy Manager Application
 Settings Manager CSE can handle this problem. Endpoint Policy Manager Application Settings Manager
@@ -49,21 +49,21 @@ the following three files:
 To control Mozilla-based applications using Endpoint Policy Manager Application Settings Manager and
 Endpoint Policy Manager DesignStudio, we only need to teach DesignStudio where the profiles.ini file
 lives. This file is not the file that contains our user settings. This is the file that points us to
-where the user settings (`prefs.js`) are stored (see Figure 207).
+where the user settings (`prefs.js`) are stored (See the figure here).
 
 ![special_applications_and_project_7](/images/endpointpolicymanager/applicationsettings/designstudio/applicationsprojects/special_applications_and_project_7.webp)
 
-Figure 207. The `profiles.ini `file.
+The figure shown. The `profiles.ini `file.
 
 In Endpoint Policy Manager DesignStudio, for all other file-based project types (INI, XML,
 .properties, .js-type, etc.), you can select the specific file you want to manage. But with Mozilla
 project type files, you must always point to the profiles.ini file of the Mozilla application. For
-example, with Firefox, you will likely want to specify what's shown in Figure 208. This is because
+example, with Firefox, you will likely want to specify what's shown In the figure shown. This is because
 the `profiles.ini` file for Firefox lives in `%appdata%\Mozilla\Firefox`.
 
 ![special_applications_and_project_8](/images/endpointpolicymanager/applicationsettings/designstudio/applicationsprojects/special_applications_and_project_8.webp)
 
-Figure 208. Pointing to the profiles.ini file location.
+The figure shown. Pointing to the profiles.ini file location.
 
 Note also that the "Application name (optional)" field is filled in as "Mozilla Firefox." The
 "Application name (optional)" field is different than the project name. "Project name" is the
@@ -75,7 +75,7 @@ Endpoint Policy Manager Application Settings Manager looks in the MSI installed 
 like `*{string}*`. Therefore, its best to make the "Application name (optional)" field text more
 generic.
 
-So, in the example in Figure 209, it is specified as "Mozilla Firefox," which will be generic enough
+So, in the example In the figure shown, it is specified as "Mozilla Firefox," which will be generic enough
 to cover all versions of Mozilla Firefox.
 
 A common mistake is to add a string in this field that is too specific. For instance, putting
@@ -84,7 +84,7 @@ will apply only when a product matching \*Mozilla Firefox 23.0\* is found on the
 
 This same idea applies to Thunderbird, Chatzilla, and all other Firefox-type applications. For
 Thunderbird, the right data file location is `%appdata%\Thunderbird\profiles.ini`, as shown in
-Figure 209. This is because the Thunderbird profiles.ini file lives in `%appdata%\Thunderbird`.
+The figure shown. This is because the Thunderbird profiles.ini file lives in `%appdata%\Thunderbird`.
 (Note that
 
 Thunderbird does not contain a "Mozilla" subdirectory like Firefox). Note also that the "Application
@@ -92,15 +92,15 @@ name (optional)" field should be generic enough for all version of Mozilla Thund
 
 ![special_applications_and_project_9](/images/endpointpolicymanager/applicationsettings/designstudio/applicationsprojects/special_applications_and_project_9.webp)
 
-Figure 209. Filling in the "Application name" field for Mozilla Thunderbird.
+The figure shown. Filling in the "Application name" field for Mozilla Thunderbird.
 
-For Sunbird, the location is `%appdata%\Mozilla\Sunbird\profiles.ini`, as shown in Figure 210. This
+For Sunbird, the location is `%appdata%\Mozilla\Sunbird\profiles.ini`, as shown In the figure shown. This
 is because the Sunbird profiles.ini file lives in `%appdata%\Mozilla\Sunbird` (similar to Firefox).
 The "Application name (optional)" field should be "Mozilla Sunbird" (not shown in this screenshot).
 
 ![special_applications_and_project_10](/images/endpointpolicymanager/applicationsettings/designstudio/applicationsprojects/special_applications_and_project_10.webp)
 
-Figure 210. The location of the Sunbird `profiles.ini` file.
+The figure shown. The location of the Sunbird `profiles.ini` file.
 
 :::note
 Evergreen is a popular system for managing libraries. This application has been verified
@@ -120,19 +120,19 @@ modify an existing file), named `user.js`. The file `user.js` will contain your 
 application's settings, and will not modify the existing `prefs.js`.
 
 For example, before a Mozilla-based AppSet is written to a machine, the application's folder will
-usually only have a `prefs.js` file describing the user experience, as shown in Figure 211.
+usually only have a `prefs.js` file describing the user experience, as shown In the figure shown.
 
 ![special_applications_and_project_11](/images/endpointpolicymanager/applicationsettings/designstudio/applicationsprojects/special_applications_and_project_11.webp)
 
-Figure 211. The `prefs.js` file.
+The figure shown. The `prefs.js` file.
 
 After the AppSet successfully applies, Endpoint Policy Manager Application Settings Manager will
 write a new file, `user.js`, instead of changing the `prefs.js` file directly. You can see the
-new` user.js` file after the AppSet settings are deployed to Firefox on the machine in Figure 212.
+new` user.js` file after the AppSet settings are deployed to Firefox on the machine In the figure shown.
 
 ![special_applications_and_project_12](/images/endpointpolicymanager/applicationsettings/designstudio/applicationsprojects/special_applications_and_project_12.webp)
 
-Figure 212. The `user.js `file.
+The figure shown. The `user.js `file.
 
 Note again that `prefs.js` is not touched during the delivery of the settings. The Mozilla-based
 applications will treat `user.js` as special file that has two very important characteristics:
@@ -152,3 +152,6 @@ inside Firefox, those changes are thrown away for next time.
 
 For more information on `user.js` files you can check out the following web article:
 `http://kb.mozillazine.org/User.js_file`
+
+
+

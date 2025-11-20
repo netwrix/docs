@@ -14,3 +14,4 @@ don't want to have to populate the tests or the snapshot again.
 ![gpcr_concepts_and_quickstart_33](/images/endpointpolicymanager/grouppolicycompliancereporter/mode/pull/gpcr_concepts_and_quickstart_33.webp)
 
 Figure 32. The "History" button populates the Results pane with a test scenario you used before.
+

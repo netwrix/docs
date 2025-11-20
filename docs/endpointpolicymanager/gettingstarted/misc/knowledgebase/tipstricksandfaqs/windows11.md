@@ -114,3 +114,4 @@ SELECT OperatingSystemSKU FROM Win32_OperatingSystem WHERE OperatingSystemSKU = 
 Here's an example:
 
 ![14_8_faq-4-rev-1-img-8](/images/endpointpolicymanager/itemleveltargeting/14_8_faq-4-rev-1-img-8.webp)
+

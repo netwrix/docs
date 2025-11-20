@@ -10,4 +10,5 @@ Got some websites which only render perfectly in IE or Chrome or FF? Then ROUTE 
 upon URLs or patterns. Use FSLogix to do the MASKING of BROWSERS, and let Netwrix Endpoint Policy
 Manager (formerly PolicyPak)do the ROUTING.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/l9rRkliCd3c?si=xj4_Jk34HXkTiimB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l9rRkliCd3c?si=xj4_Jk34HXkTiimB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+

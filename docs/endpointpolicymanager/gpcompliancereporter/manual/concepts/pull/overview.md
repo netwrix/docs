@@ -24,3 +24,4 @@ Figure 11. The Results pane of the GPCR client (admin console).
 
 Endpoint Policy Manager GPCR starts on the Snapshots pane. We'll start on this pane and move through
 each of the panes in the sections below.
+

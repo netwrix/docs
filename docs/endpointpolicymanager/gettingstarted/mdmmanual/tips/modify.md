@@ -50,3 +50,4 @@ this technical note from Microsoft:
 In short, when you open and utilize the MSI, save it again (using the same name or a different
 name), and update the product version, the resulting MSI will correctly remove any old references
 and correctly update any new references.
+

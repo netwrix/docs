@@ -11,7 +11,7 @@ PolicyPak) directives if you are using Intune, SCCM, LanDesk, KACE or similar so
 deployment, and your team doesn't want to use Group Policy but wants to use Endpoint Policy Manager.
 See this video to see how it's done.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1yXhbpAz8uI" title="PolicyPak: Deploying Endpoint Policy Manager directives without Group Policy (Endpoint Policy Manager Exporter Utility)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1yXhbpAz8uI" title="PolicyPak: Deploying Endpoint Policy Manager directives without Group Policy (Endpoint Policy Manager Exporter Utility)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Deploying PolicyPak directives without Group Policy(PolicyPak Exporter Utility)
 
@@ -23,7 +23,7 @@ service.
 By now, you've probably seen a lot of great videos showing you a bunch of awesome things that
 Endpoint Policy Manager can do: delivering settings using Group Policy, giving single applications
 elevated rights for standard users, you can
-[https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites](https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites)
+[https://www.policypak.com/pp-blog/windows-10-block-websites](https://www.policypak.com/pp-blog/windows-10-block-websites)
 – all kinds of great things.
 
 But what if you aren't using Group Policy? What if you're using SCCM or KACE or LANDESK or you have
@@ -97,7 +97,7 @@ right click and "Export Collections as XML." Since I have two, I'll go ahead and
 "Save" and we're done.
 
 With
-"[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html),"
+"[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html),"
 which allows you to kill local admin rights and elevate only the applications you need, you'll
 create your directives like I've done here. Again, we can right click and "Export as XML," we can
 "EXPORT COLLECTION," or we can right click and "Export Collections as XML." If we do this, this will
@@ -174,3 +174,5 @@ webinar to learn all of the things Endpoint Policy Manager can do. Then we'll ha
 and you'll be off to the races for your very own trial of Endpoint Policy Manager.
 
 Thanks, and we'll see you in the next video.
+
+

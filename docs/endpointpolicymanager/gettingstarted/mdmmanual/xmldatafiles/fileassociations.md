@@ -18,3 +18,4 @@ Figure 17. Exporting a single Endpoint Policy Manager File Associations Manager 
 ![deploying_policypak_directives_18](/images/endpointpolicymanager/mdm/xmldatafiles/deploying_endpointpolicymanager_directives_18.webp)
 
 Figure 18. Exporting a whole collection.
+

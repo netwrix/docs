@@ -48,3 +48,5 @@ done this, you can then use the Import button in the Remove Package Policy Mode.
 Next, select an application from the list to be populated into the policy.
 
 ![appx_policies_and_settings_16](/images/endpointpolicymanager/softwarepackage/appx/appx_policies_and_settings_16.webp)
+
+

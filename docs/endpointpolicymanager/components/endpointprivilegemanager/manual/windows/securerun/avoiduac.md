@@ -30,3 +30,6 @@ For more information on Combo rules, see
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/securerun/creating_rules_to_avoid_uac_1.webp)
 
 After the rules are created, you should not see pop-ups from installers with rules in place.
+
+
+

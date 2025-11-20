@@ -8,7 +8,7 @@ sidebar_position: 70
 Use Netwrix Endpoint Policy Manager (formerly PolicyPak) to dynamically set Enterprise and Document
 modes, as well as force an Internet Explorer tab to open--inside Edge!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QwQF3a5Dqb0" title="IE 11 Compatibility (Enterprise and Document modes) + IE in Edge mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QwQF3a5Dqb0" title="IE 11 Compatibility (Enterprise and Document modes) + IE in Edge mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with Endpoint Policy Manager Software. In other videos, we talked about setting
 default browsers, routing the right website to the right browser, and making sure that the naughty
@@ -60,3 +60,5 @@ right down here. However, there is your Internet Explorer mode tab. There you ha
 easy it is to set up an Internet Explorer Enterprise or document mode easily and quickly as well as
 forcing an Internet Explorer tab open inside of Edge. If this is of interest to you, sign up for our
 webinar, and we'll get you started on a free trial right away. Thanks so much.
+
+

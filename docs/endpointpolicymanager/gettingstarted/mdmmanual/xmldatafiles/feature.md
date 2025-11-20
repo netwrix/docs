@@ -23,3 +23,4 @@ the menu, as shown in Figure 29.
 ![deploying_policypak_directives_29](/images/endpointpolicymanager/mdm/xmldatafiles/deploying_endpointpolicymanager_directives_29.webp)
 
 Figure 29. Exporting a single Endpoint Policy Manager Feature Manager entry.
+

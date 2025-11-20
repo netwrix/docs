@@ -8,7 +8,7 @@ sidebar_position: 110
 Firefox always opens PDF files in it's own internal viewer. Most customers want to change this to an
 external PDF reader. See how to do it in this video (and also for any other extension type!)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wumX4WfwvZQ?si=X4pOOJOHkdc8nyec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wumX4WfwvZQ?si=X4pOOJOHkdc8nyec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Change Firefox application handler (like PDF) to Adobe Reader
 
@@ -93,3 +93,5 @@ That's it. That takes us to the end of the video. This is a huge leap forward. W
 requests for this, and we did it because you asked for it.
 
 I hope this helps you out. Looking forward to getting you started with PolicyPak soon.
+
+

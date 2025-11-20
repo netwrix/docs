@@ -33,3 +33,4 @@ Manager GPCR client (admin console). That machine can be named anything. In addi
 already having Group Policy Objects (GPOs) set up on the machines. The contents of those GPOs can be
 Microsoft ADMX policies, Microsoft security policies, Microsoft Group Policy Preferences settings,
 or any Endpoint Policy Manager Settings.
+

@@ -12,3 +12,4 @@ automatically. This means you can create and/or delete as many OUs within your l
 wish. This makes our licensing structure highly flexible and worry-free. At the time of your
 Endpoint Policy Manager license renewal date you will have the opportunity to true up, but, again,
 this would only be for additional computer accounts within your AD structure.
+

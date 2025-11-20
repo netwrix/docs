@@ -126,3 +126,6 @@ On your endpoint, log on as the user who will obtain the GPO (e.g., EastSalesUse
 GPupdate. Once the GPO applies, Process Monitor will run without a UAC prompt, as demonstrated here.
 
 ![elevating_executables_9](/images/endpointpolicymanager/leastprivilege/elevate/elevating_executables_9.webp)
+
+
+

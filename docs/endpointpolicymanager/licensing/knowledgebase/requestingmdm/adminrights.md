@@ -34,3 +34,4 @@ Application permissions
 | -------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
 | DeviceManagementServiceConfig.Read.All | Read Microsoft Intune configuration                     | Allows the app to read Intune service properties, including device enrollment and third party service connection configuration.                   | Yes                    |
 | DeviceManagementConfiguration.Read.All | Read Microsoft Intune device configuration and policies | Allows the app to read properties of Microsoft Intune-managed device configuration and device compliance policies and their assignment to groups. | Yes                    |
+

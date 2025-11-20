@@ -27,10 +27,10 @@ knowledge_article_id: kA0Qk00000023ufKAA
 When creating a report for a custom job or group, the following issues are present in your environment:
 
 - The custom job or group name appears normally in the **Netwrix Access Analyzer** console.  
-  ![](images/ka0Qk000000CW0v_0EMQk00000AxazR.png)
+  ![](./images/ka0Qk000000CW0v_0EMQk00000AxazR.png)
 - After publishing the report, it does not appear in the reporting web interface.
 - The custom job or group name is truncated in the reporting web interface.  
-  ![](images/ka0Qk000000CW0v_0EMQk00000Axnrl.png)
+  ![](./images/ka0Qk000000CW0v_0EMQk00000Axnrl.png)
 
 ## Cause
 

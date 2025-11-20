@@ -36,7 +36,7 @@ In Netwrix Directory Manager, you can convert a Smart Group to a static group by
 4. Click the **Clear** button next to the Smart Group query.
 5. When prompted, click **Clear query text** to confirm. The group will be converted to a static group, and the current membership will remain unchanged.
 
-![Clearing Smart Group query in Directory Manager](images/ka0Qk000000EYrR_0EMQk00000BpDeP.png)
+![Clearing Smart Group query in Directory Manager](./images/ka0Qk000000EYrR_0EMQk00000BpDeP.png)
 
 ### Convert a Static Group to a Smart Group
 1. Log in to the application portal of Netwrix Directory Manager.
@@ -45,4 +45,4 @@ In Netwrix Directory Manager, you can convert a Smart Group to a static group by
 4. When prompted, confirm the action. The query designer will open, allowing you to specify the LDAP query as required.
 5. After confirming the query, the group will be converted to a Smart Group.
 
-![Upgrading a static group to a Smart Group in Directory Manager](images/ka0Qk000000EYrR_0EMQk00000BpDcn.png)
+![Upgrading a static group to a Smart Group in Directory Manager](./images/ka0Qk000000EYrR_0EMQk00000BpDcn.png)

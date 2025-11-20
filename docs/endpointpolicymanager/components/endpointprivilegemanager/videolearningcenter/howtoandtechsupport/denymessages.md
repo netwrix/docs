@@ -8,7 +8,7 @@ sidebar_position: 50
 If you're blocking a desktop or UWP application, you can now choose to display a standard blocked
 message, a custom message, or just block the application silently with no message at all!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/c2LmzLuuXtc" title="Endpoint Policy Manager: Least Privilege Manager Deny Messages" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/c2LmzLuuXtc" title="Endpoint Policy Manager: Least Privilege Manager Deny Messages" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with Netwrix Endpoint Policy Manager (formerly PolicyPak) Software. In this
 video we are going to talk about the ability to create custom messages when you choose to deny a
@@ -48,3 +48,5 @@ That is usually a good idea if you are having someone run a program that may try
 where it might throw a block message even though the user didn't click on anything. You may have
 something run silently so that people don't get hit with messages they didn't click on, so that's
 that. I hope this video helps you out. Thanks so much.
+
+

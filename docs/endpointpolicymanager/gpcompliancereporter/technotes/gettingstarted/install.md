@@ -132,7 +132,7 @@ profile (e.g. Domain).
 When installing GPCR, download the latest bits from Endpoint Policy Manager. It is our
 recommendation that when downloading the latest software version, to grab "everything" (latest bits
 plus Paks, manuals and guidance). They can be found at
-[https://portal.endpointpolicymanager.com/downloads/everything](https://portal.endpointpolicymanager.com/downloads/everything)
+[https://portal.policypak.com/downloads/everything](https://portal.policypak.com/downloads/everything)
 
 ### GPCR Server
 
@@ -205,3 +205,4 @@ higher. Select "Yes, I confirm" and "Next >" to continue
 For information on completing the GPCR configuration wizard, setting up Auditing and Licensing, and
 for general usage, please refer to the manual. In addition, review the KB video
 [Installing Compliance Reporter Server and Client](/docs/endpointpolicymanager/gpcompliancereporter/videos/gettingstarted/install.md)
+

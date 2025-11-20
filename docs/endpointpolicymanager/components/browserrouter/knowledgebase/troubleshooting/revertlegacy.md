@@ -46,3 +46,5 @@ An example of the user required to manually specify Endpoint Policy Manager Brow
 seen here.
 
 ![764_3_image-20201027210423-2](/images/endpointpolicymanager/troubleshooting/browserrouter/764_3_image-20201027210423-2.webp)
+
+

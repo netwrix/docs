@@ -16,3 +16,5 @@ Best practices and helpful tips for using RDP Manager effectively.
 
 ## Troubleshooting
 Solutions to common issues and problems with RDP Manager.
+
+

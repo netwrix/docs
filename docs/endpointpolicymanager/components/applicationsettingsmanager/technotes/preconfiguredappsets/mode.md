@@ -12,3 +12,5 @@ Netwrix Endpoint Policy Manager (formerly PolicyPak)'s job is to populate those 
 dynamically instead of having to make your own lists.
 
 [https://techcommunity.microsoft.com/t5/windows-blog-archive/ie11-enterprise-mode-and-compatibility-view-are-additive-not/ba-p/228730](https://techcommunity.microsoft.com/t5/windows-blog-archive/ie11-enterprise-mode-and-compatibility-view-are-additive-not/ba-p/228730)
+
+

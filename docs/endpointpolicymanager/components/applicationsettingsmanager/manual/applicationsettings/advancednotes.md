@@ -37,3 +37,6 @@ ALL policies (User, Switched, and Computer) and create three logs: `ppUser_onLog
 `ppSwitched_onLogon.log`, and `ppComputer_onLogon.log`. This step helps us to ensure that we process
 XML data policies even if there are no GPO-based policies linked to a computer. It also ensures that
 Switched mode policies are processed after User mode policies and, hence, overrides them.
+
+
+

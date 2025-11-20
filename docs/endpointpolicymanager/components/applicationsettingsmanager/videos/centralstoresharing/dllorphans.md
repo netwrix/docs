@@ -9,7 +9,7 @@ If a DLL that supports a GPO is removed, you need a way to discover and quickly 
 Endpoint Policy Manager (formerly PolicyPak) GPOTouch utility has a function called Find & Repair
 Orphaned Paks within GPOs. Here's how it works.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zBlHNLLB7oo" title="Endpoint Policy Manager: Understanding and fixing Endpoint Policy Manager DLL Orphans" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zBlHNLLB7oo" title="Endpoint Policy Manager: Understanding and fixing Endpoint Policy Manager DLL Orphans" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Understanding and fixing PolicyPak DLL Orphans video transcript
 
@@ -70,3 +70,5 @@ I hope this helps understand the condition of orphans. If you ever need some hel
 you.
 
 Thanks so much.
+
+

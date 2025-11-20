@@ -31,7 +31,7 @@ Why is Netwrix Data Classification (NDC) crawling your documents successfully, b
 
 Issues with text extraction can have a range of causes. You can find a summary of text extraction errors in the **Stats** dashboard. Click **Details** to view a breakdown by type of error.
 
-![thumbnail_image.png](images/ka0Qk000000309x_0EMQk000004P1LC.png)
+![thumbnail_image.png](./images/ka0Qk000000309x_0EMQk000004P1LC.png)
 
 ### Steps to Diagnose Text Extraction Failure
 

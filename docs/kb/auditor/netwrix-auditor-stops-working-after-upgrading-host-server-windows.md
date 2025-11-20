@@ -29,7 +29,7 @@ knowledge_article_id: kA04u000000PoKECA0
 - Netwrix Auditor stops working after the Windows version on the Netwrix host server was upgraded.
 - Monitoring plans are disabled.
 - License status for a product states **Unavailable**.  
-  ![1.png](images/ka04u00000116G7_0EM4u000007ceka.png)
+  ![1.png](./images/ka04u00000116G7_0EM4u000007ceka.png)
 
 ## Cause
 
@@ -42,10 +42,11 @@ Windows Setup suite overwrites license-related settings of Netwrix Auditor durin
 Re-apply your license:
 
 1. In the main Netwrix Auditor screen, go to **Settings** > **Licenses** and click **Update**.  
-   ![2.png](images/ka04u00000116G7_0EM4u000007cekk.png)
+   ![2.png](./images/ka04u00000116G7_0EM4u000007cekk.png)
 2. Navigate to your `.lic` file and select the file.
 3. Click **Open**.
 
 ### For Netwrix Auditor Free Community Edition
 
 Reinstall your Netwrix Auditor instance. For additional information on the Auditor uninstallation process, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8
+

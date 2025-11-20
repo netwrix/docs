@@ -12,3 +12,5 @@ standards of Group Policy: at logon, and in the background every 90–120 minute
 policies, they are downloaded and applied after that. When using Endpoint Policy Manager Cloud,
 clients check in for new policies every 60 minutes, and this is configurable within Endpoint Policy
 Manager Cloud per computer group.
+
+

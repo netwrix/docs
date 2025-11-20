@@ -8,11 +8,11 @@ sidebar_position: 40
 Use Netwrix Endpoint Policy Manager (formerly PolicyPak) Java Rules Manager policies and specify
 which version of Java you want to run for a website, but vary it by operating system. Learn how to
 use Item Level Targeting
-([https://www.endpointpolicymanager.com/pp-blog/item-level-targeting](https://www.endpointpolicymanager.com/pp-blog/item-level-targeting))
+([https://www.policypak.com/pp-blog/item-level-targeting](https://www.policypak.com/pp-blog/item-level-targeting))
 with Endpoint Policy Manager Java Rules quickly. Making a Java Deployment Rule Set for your
 Enterprise has never been easier or more flexible.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/A3Tf2zudnd8" title="Endpoint Policy Manager Java Rules Manager: Using item Level Targeting to Specify which version of Java to use" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A3Tf2zudnd8" title="Endpoint Policy Manager Java Rules Manager: Using item Level Targeting to Specify which version of Java to use" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager Java Rules Manager: Specify which version of Java for which computer
 
@@ -78,3 +78,5 @@ helps you out and gets you on the road to getting you started with Java Rules Ma
 
 Thanks so very much. If you're looking to get started, go ahead and connect with us and we'll get
 you the bits and we'll get you started real soon. Thanks.
+
+

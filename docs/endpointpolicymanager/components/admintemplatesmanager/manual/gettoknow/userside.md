@@ -29,3 +29,5 @@ Similarities between the two windows include the same options (**Not Configured*
 **Disabled**) and sub-options, like the **Comment** field, the **Supported on** field (read-only),
 and the **Help** text box. The only difference is the Item-Level Targeting button, which is found on
 the bottom left. We will cover this in detail later.
+
+

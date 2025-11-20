@@ -44,3 +44,4 @@ The server will only accept data from computers which are specifically enabled t
 via an Active Directory group. This will be discussed in more detail in the next section.
 
 :::
+

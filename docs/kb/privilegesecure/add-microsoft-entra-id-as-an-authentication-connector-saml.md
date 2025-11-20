@@ -38,13 +38,13 @@ This article outlines the process of adding Microsoft Entra ID (formerly Azure A
 
    Give the app any name, and set the radio button to **Integrate any other application you don't find in the gallery (Non-gallery)**. Click **Create**.
 
-   ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUkT.png)
+   ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUkT.png)
 
 4. You’ll be redirected to the new app’s **Overview** page.
 
    In the left sidebar, select **Single sign-on**, then select **SAML**.
 
-   ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUkY.png)
+   ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUkY.png)
 
 5. For Step 1 in this wizard (**Basic SAML Configuration**), click **Edit**.
 
@@ -56,17 +56,17 @@ This article outlines the process of adding Microsoft Entra ID (formerly Azure A
    https://<sbpam-hostname>:6500/samlSigninCallback
    ```
 
-   ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUh1.png)
+   ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUh1.png)
 
    Click **Save** after making changes, and then close the editor for **Basic SAML Configuration**.
 
 6. Scroll down to section 3, and download the **Certificate (Base64)**.
 
-   ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUkd.png)
+   ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUkd.png)
 
 7. Scroll down to section 4, and copy the **Login URL** for later use.
 
-   ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUki.png)
+   ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUki.png)
 
 8. In the left sidebar, click on **Users and Groups**. Add a Microsoft Entra ID user to this page (**Add user/group** button near the top).
 
@@ -87,12 +87,12 @@ This article outlines the process of adding Microsoft Entra ID (formerly Azure A
 1. As a Netwrix Privilege Secure admin, navigate in Netwrix Privilege Secure to **Configuration > Authentication**, and click the green **"+"** button to add a new Authentication Connector.
 2. Give the new connector a name, description (optional), and a Connector Type of "SAML".
 
-   ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUkn.png)
+   ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUkn.png)
 
 3. Click on **Configuration Wizard**.
 4. On the **Configure Client** page of that wizard, use the **Login URL** in the **Signin URI** field (the **Login URL** was obtained in the Steps for Microsoft Entra ID). All fields should now be filled in.
 
-   ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUks.png)
+   ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUks.png)
 
 5. Click **Test Connection**.
 
@@ -112,7 +112,7 @@ This article outlines the process of adding Microsoft Entra ID (formerly Azure A
 
    In simple terms, there needs to be a property for each user in on-prem Active Directory and Microsoft Entra ID that matches. Often, this is an email address.
 
-   ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUkx.png)
+   ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUkx.png)
 
    Once the desired field has been found, click on it and then click **Select** (you may need to scroll down in the modal to see this button).
 
@@ -120,7 +120,7 @@ This article outlines the process of adding Microsoft Entra ID (formerly Azure A
 
     For example, if you chose **Email** for the field in the previous step then this dropdown should also be **Email Address**.
 
-    ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUl2.png)
+    ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUl2.png)
 
 11. Click **Next**. On the next page, enter the following for the **Signout URI**:
 
@@ -130,14 +130,14 @@ This article outlines the process of adding Microsoft Entra ID (formerly Azure A
 
     Click **Test Log Out** to sign out of the SAML provider. If the log out was performed correctly, click **Finish** then **Okay**, otherwise confirm the settings and try again.
 
-    ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUl7.png)
+    ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUl7.png)
 
 12. You can now assign this authentication connector to a user via the **Authentication Connector** tab for a user accessed in Netwrix Privilege Secure's **Users & Groups** page.
 
-    ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUlC.png)
+    ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUlC.png)
 
     Users with this authentication connector assignment can now use this authentication connector option on the Netwrix Privilege Secure log-in screen.
 
-    ![User-added image](images/ka0Qk0000003IQD_0EM4u000004bUlH.png)
+    ![User-added image](./images/ka0Qk0000003IQD_0EM4u000004bUlH.png)
 
     When using the SAML log-in option, the user will be redirected to sign in to Microsoft Entra ID. Upon successful authentication, the user will be redirected to the Netwrix Privilege Secure UI as their now signed-in user.

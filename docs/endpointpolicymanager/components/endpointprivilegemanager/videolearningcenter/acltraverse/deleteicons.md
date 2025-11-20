@@ -7,4 +7,6 @@ sidebar_position: 10
 
 Got pesky icons on desktop and want to let users self-delete them? Here's how to do it !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5R-JJcAy3LQ?si=y3geTpdmGDK-mw68" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5R-JJcAy3LQ?si=y3geTpdmGDK-mw68" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+

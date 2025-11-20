@@ -31,3 +31,4 @@ See the following Video topics for Endpoint Policy Manager GP Compliance Reporte
 ## Troubleshooting
 
 - [Open required firewall ports](/docs/endpointpolicymanager/gpcompliancereporter/videos/troubleshooting/firewallports.md)
+

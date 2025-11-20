@@ -86,3 +86,4 @@ Figure 18. Renaming a snapshot once taken.
 
 At this point, you have a snapshot created for the computer set. Now you're ready to move on to
 creating tests.
+

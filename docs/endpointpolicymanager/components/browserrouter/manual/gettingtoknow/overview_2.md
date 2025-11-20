@@ -28,6 +28,7 @@ Log files for Endpoint Policy Manager Browser Router are found in the two follow
 - `%appdata%\local\PolicyPak\PolicyPak Browser Router`
 - `%Programdata%\PolicyPak\PolicyPak Browser Router`
 
-Logs are automatically wrapped up and can be sent to
-[support@endpointpolicymanager.com](https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/what-is-enterprise-mode)
+Logs are automatically wrapped up and can be sent to support by [opening a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket)
 with the PPLOGS.EXE command on any endpoint where the CSE is installed.
+
+

@@ -25,3 +25,5 @@ So, our general recommendation (if you're looking for one) is:
 For more information on this, see the following FAQ item.
 
 [Firefox (and Java and Thunderbird): Why can't I seem to find (or perform) UI lockdown for Firefox, Java or Thunderbird ?](/docs/endpointpolicymanager/components/applicationsettingsmanager/technotes/preconfiguredappsets/javathunderbird.md)
+
+

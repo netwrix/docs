@@ -34,7 +34,7 @@ It should be a reply to lockout notification and shall have the code specified a
 
 For example:
 
-![User-added image](images/ka04u000000HcT2_0EM700000005kEC.png)
+![User-added image](./images/ka04u000000HcT2_0EM700000005kEC.png)
 
 ---
 
@@ -43,3 +43,4 @@ Make sure that:
 2. `UNLOCK:` keyword is specified
 3. the quoted e-mail was not changed
 4. you reply in UTF-8 encoding.
+

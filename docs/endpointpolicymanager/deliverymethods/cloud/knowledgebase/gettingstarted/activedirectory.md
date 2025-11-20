@@ -8,3 +8,5 @@ sidebar_position: 50
 
 No, there is no Active Directory connector. Our feedback is that most companies don't want something
 reaching into their Active Directory and causing a security concern.
+
+

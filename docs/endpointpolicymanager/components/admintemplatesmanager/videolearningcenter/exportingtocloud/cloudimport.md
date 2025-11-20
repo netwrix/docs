@@ -10,7 +10,7 @@ Policy Manager (formerly PolicyPak) Cloud. As a bonus, you can also continue to 
 within Endpoint Policy Manager Cloud AFTER you've uploaded them. If you want to say goodbye to
 on-prem GPOs and use our Endpoint Policy Manager.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iYj9C-sn8P8" title="Endpoint Policy Manager Exporter: Use your GPOs with Endpoint Policy Manager Cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iYj9C-sn8P8" title="Endpoint Policy Manager Exporter: Use your GPOs with Endpoint Policy Manager Cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 In a previous video, we exported the three kinds of Group Policy Settings that you wanted to use for
 Endpoint Policy Manager Cloud, and we've got them here just hanging out in exported form. It's super
@@ -63,3 +63,5 @@ Cloud and continue to keep them updated or edited in Endpoint Policy Manager Clo
 back to the Group Policy Editor for most things. Hope this video helps you out. Looking forward to
 getting you started with Endpoint Policy Manager Cloud and Endpoint Policy Manager Exporter real
 soon. Thanks so much.
+
+

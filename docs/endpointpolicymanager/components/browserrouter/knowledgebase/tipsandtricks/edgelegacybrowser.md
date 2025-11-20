@@ -26,3 +26,5 @@ the other extensions.
 It can be managed by clicking on **Extensions** >**…** >, **Manage extension**.
 
 ![907_3_image-20220403003715-3](/images/endpointpolicymanager/browserrouter/907_3_image-20220403003715-3.webp)
+
+

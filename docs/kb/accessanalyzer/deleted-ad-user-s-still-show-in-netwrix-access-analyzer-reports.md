@@ -35,9 +35,9 @@ A failure on the ADI scan that could be caused by a myriad of reasons.
 Run a full **AD Inventory Scan** by disabling differential scanning for the **1-AD_Scan** job using the steps below:
 
 1. Navigate to **Access Analyzer > Jobs > .Active Directory Inventory > 1-AD_Scan > Configure > Queries > Query Properties > Configure > Options**.  
-   ![Image_2024-11-19_15-36-30.png](images/ka0Qk000000DYa9_0EMQk00000AdoIX.png)
+   ![Image_2024-11-19_15-36-30.png](./images/ka0Qk000000DYa9_0EMQk00000AdoIX.png)
 2. Uncheck the box for **Collect only updates since the last scan**.  
-   ![Image_2024-11-19_15-37-33.png](images/ka0Qk000000DYa9_0EMQk00000AdoSD.png)
+   ![Image_2024-11-19_15-37-33.png](./images/ka0Qk000000DYa9_0EMQk00000AdoSD.png)
 3. Click **Next** through the end of the Active Directory Inventory DC Wizard.
 4. Re-run the **1-AD_Scan** job.
 5. Select the previously-unchecked box for **Collect only updates since the last scan**.

@@ -18,3 +18,5 @@ Note that SOME Paks have "extra superpowers" which are only available on the COM
 three special Paks are: Firefox, Java and Thunderbird.
 
 We explain this in the Netwrix Endpoint Policy Manager (formerly PolicyPak) On-Prem Manual.
+
+

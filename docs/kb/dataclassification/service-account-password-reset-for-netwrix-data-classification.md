@@ -28,7 +28,7 @@ After resetting the service account password for Netwrix Data Classification the
 
 ## Services
 
-![User-added image](images/ka0Qk000000455x_0EM4u000001rDFz.png)
+![User-added image](./images/ka0Qk000000455x_0EM4u000001rDFz.png)
 
 Update the **Logon As** value for each of the services listed above to reflect the password change.
 
@@ -46,7 +46,7 @@ Open IIS and click **Application Pools** on the left-hand pane. Right-click on t
 
 Find the **Identity** and update the password to match the new password for the account, then restart the application pool.
 
-![User-added image](images/ka0Qk000000455x_0EM4u000001rDGn.png)
+![User-added image](./images/ka0Qk000000455x_0EM4u000001rDGn.png)
 
 ## Taxonomy Global Settings
 

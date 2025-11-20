@@ -17,3 +17,5 @@ open it in some third party program) it will be opened with IE.
 But note that if you type a URL into, say, the Firefox or Chrome address bar (or follow some
 hyperlink) to navigate to `file://server/site.htm`, it will stay in the same browser and not
 magically open in IE.
+
+

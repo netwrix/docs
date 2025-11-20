@@ -45,3 +45,5 @@ users not be on the corporate LAN.
 
 In this example, the Pak would only apply to Windows 10 machines when the machine is portable and
 not on the corporate LAN subnet, and the user is in the FABRIKAM\Traveling Sales Users group.
+
+

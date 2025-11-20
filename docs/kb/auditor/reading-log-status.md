@@ -26,7 +26,7 @@ knowledge_article_id: kA00g000000H9TZCA0
 
 In NetWrix Account Lockout Examiner Console, a domain controller has a yellow exclamation mark in front of the **DC Name** column of the **Monitored Domain Controllers** grid. Connection status is shown **Reading log**. Lockout events from this domain controller cannot be read by the program as well.
 
-![User-added image](images/ka04u000000HcNK_0EM700000004x01.png)
+![User-added image](./images/ka04u000000HcNK_0EM700000004x01.png)
 
 ---
 
@@ -43,4 +43,5 @@ To fix the issue, do the following:
 3. In the right pane, double-click `readLog`, specify `0` in the Value data field and click **OK**.
 4. In NetWrix Account Lockout Examiner Console main menu bar, navigate to **File - Settings** and click **OK** to apply registry changes.
 
-![User-added image](images/ka04u000000HcNK_0EM700000004wzw.png)
+![User-added image](./images/ka04u000000HcNK_0EM700000004wzw.png)
+

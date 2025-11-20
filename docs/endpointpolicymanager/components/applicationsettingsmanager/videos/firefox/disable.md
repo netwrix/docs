@@ -8,7 +8,7 @@ sidebar_position: 70
 Need to remove about:config, about:addons, and the Australis button? How about entire menu items
 inside Fireofx Preferences? Check out this video. It couldn't be easier.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TR_U_baI-o4?si=smWTP10U6LrN65Yg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TR_U_baI-o4?si=smWTP10U6LrN65Yg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Remove many common UI elements in Firefox with one click
 
@@ -82,3 +82,5 @@ Pak, then attend one of our webinars or get in touch and we'll look forward to s
 inside.
 
 Thanks so much, and we'll talk to you soon.
+
+

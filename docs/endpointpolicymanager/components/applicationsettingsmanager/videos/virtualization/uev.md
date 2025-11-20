@@ -13,7 +13,7 @@ story.
 Here's the video to show how Endpoint Policy Manager and Microsoft UE-V (or, really, any User
 Environment Manager (UEM) tool) can work together seamlessly.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0yIjVqid_A0?si=8bnUOZlCY8setNRe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0yIjVqid_A0?si=8bnUOZlCY8setNRe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Okay. Let's review:
 
@@ -41,7 +41,7 @@ applications settings using
 Group Policy, Endpoint Policy Manager is here for you.
 
 Click on Webiar/Downdload
-([https://www.endpointpolicymanager.com/integration/webinar](https://www.endpointpolicymanager.com/integration/webinar)) on
+([https://www.policypak.com/integration/webinar](https://www.policypak.com/integration/webinar)) on
 the right to try it out for yourself.
 
 ### Endpoint Policy Manager enhances Microsoft User Experience Virtualization Video Transcript
@@ -129,3 +129,5 @@ for delivery and enforcement and UE-V for users' preferences to roam around with
 any questions about how these two tools make an awesome better together story, we're here for you,
 just reach out. We'd love to get you the bits of PolicyPak and you can try it yourself and see how
 wonderful the better together story really is. Thanks so very much, and we'll talk to you soon.
+
+

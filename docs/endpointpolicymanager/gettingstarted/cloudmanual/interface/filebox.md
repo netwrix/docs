@@ -68,3 +68,5 @@ Now you're ready to use the uploaded ADMX and ADML files when using the Endpoint
 Cloud in-cloud ADMX editors to create administrative template policies.
 
 ![web_interface_and_controls_49_624x318](/images/endpointpolicymanager/cloud/interface/web_interface_and_controls_49_624x318.webp)
+
+

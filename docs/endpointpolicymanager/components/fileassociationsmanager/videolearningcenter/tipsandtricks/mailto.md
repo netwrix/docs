@@ -10,7 +10,7 @@ directly in Office 365. When done OWA will be the default handler for the mailto
 Windows, so that clicking an email address will open the OWA "Compose message" window. Hope this
 helps you out.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3N38DsZY-mo" title="Endpoint Policy Manager: How to get mailto: to open in Office 365" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3N38DsZY-mo" title="Endpoint Policy Manager: How to get mailto: to open in Office 365" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Code:
 
@@ -36,7 +36,7 @@ How did I perform this magic here? The first thing is that I have a little batch
 is that it silences it as much as it can ("@echo off").
 
 Then it says "set address=%1" which means it's going to take in the item that you're passing. So
-that would be the address: "mailto:jeremym@endpointpolicymanager.com." Then what it does is removes the first
+that would be the address: "mailto:jeremym@policypak.com." Then what it does is removes the first
 seven characters which would be "mailto:" and then what we do is that we run the default browser
 against the special link in "https://outlook.office.com" and then we put in "`%address%`" which is
 the address without the "mailto:".
@@ -85,3 +85,5 @@ If you like what you see here and want to get started with PolicyPak , then go a
 you in the webinar. Then after that, we'll hand over the bits, and you can try it out yourself.
 
 Thanks so very much, and we'll talk to you soon.
+
+

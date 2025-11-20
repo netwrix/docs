@@ -45,6 +45,9 @@ Make sure you provided the same parameters in a Netwrix Auditor monitoring plan 
 1. **Tenant name** in Netwrix should equal the `Directory (tenant) ID` in Microsoft Office 365 Admin center.
 2. **Modern authentication application ID** should equal `Application (client) ID` in Microsoft Office 365 Admin center.
 
-![00371273 O365 Tenant.PNG](images/ka04u00000117A1_0EM4u000008LuEC.png)
+![00371273 O365 Tenant.PNG](./images/ka04u00000117A1_0EM4u000008LuEC.png)
 
 For additional information on configuring Office 365 tenant, refer to the following article: Microsoft 365. Select the data source you want to audit and review the corresponding section.
+
+
+

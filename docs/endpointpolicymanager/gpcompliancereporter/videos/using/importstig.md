@@ -10,7 +10,7 @@ applications like Java, Firefox, Internet Explorer and more … and make them mo
 US Government recommendations. See how Endpoint Policy Manager can deliver these settings to your
 machines and lock them down using Group Policy.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/A5mq2IpU19g" title="Endpoint Policy Manager: Import STIG files to make your applications more secure" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A5mq2IpU19g" title="Endpoint Policy Manager: Import STIG files to make your applications more secure" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Manage Different Users In The Same OU (And Reduce Number of GPOs) With Endpoint Policy Manager
 
@@ -159,3 +159,4 @@ determine, "Did I really get the settings as delivered by the STIG?" That's what
 about.
 
 Thanks so much for watching, and we'll talk to you soon.
+

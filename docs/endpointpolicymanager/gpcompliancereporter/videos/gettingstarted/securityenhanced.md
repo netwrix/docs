@@ -7,7 +7,7 @@ sidebar_position: 40
 
 Upgrade PPGPCR Compliance Reporter Server and Client for enhanced AD security.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DH5VIDFDcmQ" title="PPGPCR: Enhanced Security for Server" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DH5VIDFDcmQ" title="PPGPCR: Enhanced Security for Server" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy, and in this video, I'm going to show you how to upgrade your Compliance Reporter
 server for enhanced and increased security. The current problem is that the Compliance Reporter
@@ -79,3 +79,4 @@ This is a big, big security enhancement. Hope this helps you out. Thanks for usi
 Reporter. Remember, it's free except for reporting on Microsoft settings, so we want you to be sure
 use it as much as possible to make sure your real Group Policy and PolicyPak settings are making its
 way out there. Thanks so much and talk to you soon.
+

@@ -35,3 +35,5 @@ application you want to launch (as in, MSTSC) and the command line arguments to 
 `c:\temp\file1.rdp /v:server1 8080`).
 
 ![about_policypak_browser_router_22](/images/endpointpolicymanager/browserrouter/about_endpointpolicymanager_browser_router_22.webp)
+
+

@@ -97,7 +97,7 @@ Register-ScheduledTask -Xml (get-content $_.FullName | out-string) -TaskName $ta
 
 4. Open `\NAA_Migration\NAA\Web\webserver.exe.config` and copy the content between `<appSettings></appSettings>` and paste it in place of the `<appSettings></appSettings>` block in `%SAInstallDir%Web\webserver.exe.config`.
 
-   ![webserver config image](images/ka0Qk000000FDY1_0EMQk00000CFkgO.png)
+   ![webserver config image](./images/ka0Qk000000FDY1_0EMQk00000CFkgO.png)
 
    NOTE: Open the destination `webserver.exe.config` as an administrator by following these steps:
 
@@ -115,7 +115,7 @@ Register-ScheduledTask -Xml (get-content $_.FullName | out-string) -TaskName $ta
 
 6. Open the Netwrix Access Analyzer application and follow through the Access Analyzer Configuration Wizard, selecting **Choose a StealthAUDIT root folder path to copy from** if prompted.
 
-   ![Configuration Wizard image](images/ka0Qk000000FDY1_0EMQk00000CFxaL.png)
+   ![Configuration Wizard image](./images/ka0Qk000000FDY1_0EMQk00000CFxaL.png)
 
    1. See the following for more information on the Netwrix Access Analyzer Configuration Wizard: [Access Analyzer Initial Configuration](https://docs.netwrix.com/docs/accessanalyzer/12_0)
 
@@ -123,7 +123,7 @@ Register-ScheduledTask -Xml (get-content $_.FullName | out-string) -TaskName $ta
 
 8. In the Access Analyzer Console, navigate to **Settings** > **Reporting**, and set the **Website URL** to contain the new console server's name.
 
-   ![Reporting settings image](images/ka0Qk000000FDY1_0EMQk00000CFqfK.png)
+   ![Reporting settings image](./images/ka0Qk000000FDY1_0EMQk00000CFqfK.png)
 
 9. If using Windows Authentication to connect Access Analyzer to its database (click **Settings** > **Storage**), open `services.msc` and set the **Netwrix Access Analyzer Web Server** service to log on as a **Windows** service account with appropriate permissions on the Access Analyzer database.
 

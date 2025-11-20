@@ -7,7 +7,7 @@ sidebar_position: 30
 
 Netwrix Endpoint Policy Manager (formerly PolicyPak): Manage IE Connections tab
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dtuO2oFNiZ0?si=VK98Pyv_dnkiEnYX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dtuO2oFNiZ0?si=VK98Pyv_dnkiEnYX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Manage IE Connections tab
 
@@ -61,3 +61,5 @@ That's it for this little video. Go ahead and continue on to the next one and se
 more stuff.
 
 Thanks.
+
+

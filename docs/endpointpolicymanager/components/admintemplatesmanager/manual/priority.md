@@ -39,3 +39,5 @@ This is the same way Group Policy Preferences performs ordering as well.
 
 To change the priority of a particular AppSet, click on it and select ether **Raise Priority**,
 **Lower Priority**, **Maximum Priority**, or **Minimum Priority**.
+
+

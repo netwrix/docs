@@ -59,9 +59,9 @@ settings:
 1. Download the Send-SlackMessage.zip archive to the SbPAM server: https://dl.netwrix.com/additional/Send-SlackMessage.Addon.zip
 2. Extract the archive, which contains a README file, an ActionTemplates directory, and an `Install-Addon.ps1` script file. Right-click `Install-Addon.ps1` and select **Run with PowerShell**.
 3. When prompted, select `Y` to proceed.
-![image.png](images/ka0Qk0000001ELt_0EMQk000001pkUr.png)
+![image.png](./images/ka0Qk0000001ELt_0EMQk000001pkUr.png)
 4. The PowerShell window should quickly execute the script and close.
 5. Log in to the SbPAM console. (If SbPAM was already open, be sure to refresh the console.)
 6. In SbPAM, navigate to **Activities**, select an **Activity**, and click the green plus sign in either the **Pre-Session** or **Post-Session**. Note that the **Send Message to Slack** activity step is now available.
 7. Provide the URL from step 6 of Preparing Your Slack App when configuring the action step.
-![image.png](images/ka0Qk0000001ELt_0EMQk000001ovYn.png)
+![image.png](./images/ka0Qk0000001ELt_0EMQk000001ovYn.png)

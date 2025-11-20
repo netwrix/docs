@@ -22,3 +22,4 @@ For more information
 Example of error and results in Event log:
 
 ![97_1_carbonblack1](/images/endpointpolicymanager/troubleshooting/error/install/97_1_carbonblack1.webp)
+

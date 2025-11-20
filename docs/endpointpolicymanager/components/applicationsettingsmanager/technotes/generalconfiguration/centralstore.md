@@ -13,3 +13,5 @@ files that currently reside in your local storage and paste them into that folde
 
 Here is the how-to video:
 [Working with Others and using the Central Store](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/centralstoresharing/centralstorework.md)
+
+

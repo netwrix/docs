@@ -11,3 +11,4 @@ Citrix App Layering lets you add packages at the OS, PLATFORM or APP LAYER.
 While it ispossible that Netwrix Endpoint Policy Manager (formerly PolicyPak) should work at any
 layer, we recommend the OS layer since Endpoint Policy Manager acts as part of the operating system
 and is tightly integrated with Group Policy.
+

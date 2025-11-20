@@ -48,11 +48,11 @@ Enable **Configure Offer Remote Assistance** policy.
 Policies > Administrative Templates > System > Remote Assistance > Configure Offer Remote Assistance
 ```
 
-![User-added image](images/ka04u000000HcZw_0EM4u000004bWI7.png)
+![User-added image](./images/ka04u000000HcZw_0EM4u000004bWI7.png)
 
 Enable the policy and assign a domain group to control access.
 
-![User-added image](images/ka04u000000HcZw_0EM4u000004bWIC.png)
+![User-added image](./images/ka04u000000HcZw_0EM4u000004bWIC.png)
 
 ### Activity Setup
 
@@ -60,30 +60,30 @@ Create an Interactive App Launch Activity making note of the highlighted areas b
 
 **NOTE:** The Domain groups for Group Policy and RDS server local admin will have been created in the previous steps.
 
-![User-added image](images/ka04u000000HcZw_0EM4u000004bWIH.png)
+![User-added image](./images/ka04u000000HcZw_0EM4u000004bWIH.png)
 
 ### Use Case
 
 Via Netwrix Privilege Secure UI or DirectConnect, the helpdesk admin selects the Remote Assistance Activity and chooses the resource to which remote assistance is to be provided.
 
-![User-added image](images/ka04u000000HcZw_0EM4u000004bWIM.png)
+![User-added image](./images/ka04u000000HcZw_0EM4u000004bWIM.png)
 
 When the Activity has been provisioned, the session is launched, and the target users’ desktop displays a message asking permission for the helpdesk admin to connect.
 
-![User-added image](images/ka04u000000HcZw_0EM4u000004bWIR.png)
+![User-added image](./images/ka04u000000HcZw_0EM4u000004bWIR.png)
 
 The helpdesk admin can now view the target users’ desktop and can establish a chat session.
 
-![User-added image](images/ka04u000000HcZw_0EM4u000004bWIW.png)
+![User-added image](./images/ka04u000000HcZw_0EM4u000004bWIW.png)
 
 If the helpdesk admin needs to take control of the remote system, they select **Request Control** and the end user is prompted for permission.
 
-![User-added image](images/ka04u000000HcZw_0EM4u000004bWIb.png)
+![User-added image](./images/ka04u000000HcZw_0EM4u000004bWIb.png)
 
 Once shared, control can be terminated at any time by the helpdesk admin or the end user.
 
-![User-added image](images/ka04u000000HcZw_0EM4u000004bWIg.png)
+![User-added image](./images/ka04u000000HcZw_0EM4u000004bWIg.png)
 
 The live session may be viewed via the Netwrix Privilege Secure administrator dashboard or reviewed later as a recording at any time.
 
-![User-added image](images/ka04u000000HcZw_0EM4u000004bWIl.png)
+![User-added image](./images/ka04u000000HcZw_0EM4u000004bWIl.png)

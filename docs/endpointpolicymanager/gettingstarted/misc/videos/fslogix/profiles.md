@@ -11,7 +11,7 @@ Manager (formerly PolicyPak) helps you go beyond additional Group Policy to mana
 Taskbar, File Associations, Least Privilege, applications, browsers and more ! This isn't a short
 video, but it does show the better together story !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xGvWG4JW-WM" title="Endpoint Policy Manager and FSLogix Profiles: Better Together" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xGvWG4JW-WM" title="Endpoint Policy Manager and FSLogix Profiles: Better Together" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak and FSLogix Profiles: Better Together
 
@@ -305,3 +305,4 @@ applications profiles work better together. Looking forward to getting you start
 products real soon.
 
 Thanks so very much and see you soon. Bye-bye.
+

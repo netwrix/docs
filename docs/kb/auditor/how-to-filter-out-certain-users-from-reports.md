@@ -38,8 +38,9 @@ How do I filter out certain users from mailbox access reports?
 
 ## Image
 
-![User-added image](images/ka04u000000HcPk_0EM7000000054Bf.png)
+![User-added image](./images/ka04u000000HcPk_0EM7000000054Bf.png)
 
 ## Note
 
 **NOTE.** The `userstoexclude.txt` file contains a list of users who must be excluded from reports if they perform non-owner access to mailboxes. But the audit data for these users will still be stored in the snapshots, so if a user is removed from this list, the information on the user actions can be viewed with the **Report Viewer**.
+

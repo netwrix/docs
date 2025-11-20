@@ -50,7 +50,7 @@ It is recommended to set both values to the same amount to maintain performance 
 
    > **NOTE:** Make sure both `Xms` and `Xmx` values are the same.
 
-5. ![Registry Editor showing Xms and Xmx heap size parameters for Elasticsearch](images/ka0Qk000000Dv0T_0EMQk00000BSBWr.png)
+5. ![Registry Editor showing Xms and Xmx heap size parameters for Elasticsearch](./images/ka0Qk000000Dv0T_0EMQk00000BSBWr.png)
 6. Close the **Registry Editor** after saving the changes.
 7. Restart the **GroupIDElasticSearchService11** service for the changes to take effect.
 

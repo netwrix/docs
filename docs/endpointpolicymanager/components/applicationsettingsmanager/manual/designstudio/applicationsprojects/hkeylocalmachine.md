@@ -13,14 +13,14 @@ a service and has entries only in `HKEY_Local_Machine`. You set the project up a
 
 ![special_applications_and_project_13](/images/endpointpolicymanager/applicationsettings/designstudio/applicationsprojects/special_applications_and_project_13.webp)
 
-Figure 213. Defining the data root as `HKEY_Local_Machine`.
+The figure shown. Defining the data root as `HKEY_Local_Machine`.
 
 However, when you do, you'll be prompted with a message suggesting that this might or might not work
-as shown in Figure 214.
+as shown In the figure shown.
 
 ![special_applications_and_project_14](/images/endpointpolicymanager/applicationsettings/designstudio/applicationsprojects/special_applications_and_project_14.webp)
 
-Figure 214. The warning when defining the data root as `HKEY_Local_Machine`.
+The figure shown. The warning when defining the data root as `HKEY_Local_Machine`.
 
 If you are sure that the application's value is best suited for `HKEY_Local_Machine`, you can safely
 ignore this warning.
@@ -34,3 +34,6 @@ You'll get the same message for applications that store most of their settings i
 Acrobat Reader is an example in which most settings are in
 `HKEY_Current_User\Software\Adobe\Acrobat Reader\10.0`, but the updater settings are stored within
 `HKEY_LOCAL_MACHINE\SOFTWARE\Adobe\Adobe ARM\1.0\ARM` in the iCheck setting.
+
+
+

@@ -9,7 +9,7 @@ How can you populate Java's Site List Exceptions using Group Policy and also loc
 cannot make changes? Watch this video. Netwrix Endpoint Policy Manager (formerly PolicyPak) works
 with ALL versions of Java right out of the box.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/B9o5QCKEIVA?si=co_e7DT5jmI3DapS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B9o5QCKEIVA?si=co_e7DT5jmI3DapS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Manage and Lock down Java Site List Exceptions
 
@@ -51,7 +51,7 @@ system-wide config file" so now users can't work around it.
 We'll also manage the "Exception Site List." It's really easy to do. You can either merge whatever
 is there, so you can set this to "MODE=MERGE," that's an option, or "MODE=REPLACE." I'm going to
 demo "MODE=REPLACE," which is going to say, "I don't care what users have. We're just going to erase
-it and put down what we think is important." I'm going to dictate "https://www.endpointpolicymanager.com/,"
+it and put down what we think is important." I'm going to dictate "https://www.policypak.com/,"
 "https://www.GPanswers.com" and I'm making up this website "http://www.java.com/7."
 
 For my Java 8 people, let's go ahead and make things a little bit different. We'll go to the
@@ -118,3 +118,5 @@ actually perform the work. Your "Exception Site List" is the only thing that's a
 
 That's it. That's how, in a nutshell, to manage the Exception Site List and also updates with Java
 and PolicyPak.
+
+

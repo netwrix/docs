@@ -31,25 +31,25 @@ While it is essential that remote access to the Netwrix Privilege Secure (NPS) s
 ## Instructions
 
 1. On the Netwrix Privilege Secure (NPS) server, navigate to the "Extras" folder in the NPS installer download directory. The Database Configuration tool installer (`DbCfg.msi`) is included in this directory. Launch the installer, and select **Next**.  
-   ![image.png](images/ka04u00000117Sx_0EM4u000008LxNl.png)
+   ![image.png](./images/ka04u00000117Sx_0EM4u000008LxNl.png)
 
 2. Review and accept the EULA. Select **Next**.  
-   ![image.png](images/ka04u00000117Sx_0EM4u000008LxOZ.png)
+   ![image.png](./images/ka04u00000117Sx_0EM4u000008LxOZ.png)
 
 3. Choose an installation path. The default installation path is `C:\Program Files\Stealthbits\PAM\`. Select **Next**.  
-   ![image.png](images/ka04u00000117Sx_0EM4u000008LxOj.png)
+   ![image.png](./images/ka04u00000117Sx_0EM4u000008LxOj.png)
 
 4. Select **Install**, and confirm any UAC prompt that occurs.  
-   ![image.png](images/ka04u00000117Sx_0EM4u000008LxOo.png)
+   ![image.png](./images/ka04u00000117Sx_0EM4u000008LxOo.png)
 
 5. The installation will complete shortly.  
-   ![image.png](images/ka04u00000117Sx_0EM4u000008LxOt.png)
+   ![image.png](./images/ka04u00000117Sx_0EM4u000008LxOt.png)
 
 6. Navigate to the installation directory and launch `DbCfg.exe` from your chosen installation directory.  
-   ![image.png](images/ka04u00000117Sx_0EM4u000008LxOy.png)
+   ![image.png](./images/ka04u00000117Sx_0EM4u000008LxOy.png)
 
 7. You can click **Test** to confirm your connection to the Postgres DB.  
-   ![image.png](images/ka04u00000117Sx_0EM4u000008LxP3.png)
+   ![image.png](./images/ka04u00000117Sx_0EM4u000008LxP3.png)
 
 8. Set a new password in the Password field and hit **Save** to change the Postgres password. If your Test connection from step 7 was successful, you should receive a "Configuration saved successfully" response, which indicates a successful password change. This change will propagate to any NPS service that needs to use the database password.  
-   ![image.png](images/ka04u00000117Sx_0EM4u000008LxP8.png)
+   ![image.png](./images/ka04u00000117Sx_0EM4u000008LxP8.png)

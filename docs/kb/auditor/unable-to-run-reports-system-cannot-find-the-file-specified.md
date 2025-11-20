@@ -49,6 +49,6 @@ A report server database is missing.
 Refer to the following steps to resolve the issue:
 
 1. In your Netwrix Auditor server, disable **Netwrix Auditor Archive Service** and **Netwrix Auditor Management Service** via **Services**.
-2. Deploy the report server database — refer to the following article for in-depth instructions: [Deploying the Report Server Database](/docs/kb/auditor/deploying-the-report-server-database.md)
+2. Deploy the report server database — refer to the following article for in-depth instructions: [Deploying the Report Server Database](/docs/kb/auditor/deploying-the-report-server-database)
 3. Once you've configured the report server database, grant the roles to the SSRS service account the roles required. Refer to the following article for additional information: [Configure SSRS account](https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserverreportingservice) and [How to Assign db_owner Permissions](docs\kb\auditor\how-to-assign-db-owner-permissions.md)
 4. Restart **Netwrix Auditor Archive Service** and **Netwrix Auditor Management Service** on your Netwrix Auditor server via **Services**.

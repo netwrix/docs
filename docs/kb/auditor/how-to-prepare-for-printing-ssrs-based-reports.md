@@ -36,10 +36,11 @@ Take the following steps:
    - **Script ActiveX controls marked safe for scripting**
    - **Download signed ActiveX controls**
 
-![User-added image](images/ka04u000000HcZ6_0EM4u000002P6Cl.png)
+![User-added image](./images/ka04u000000HcZ6_0EM4u000002P6Cl.png)
 
 6. Click **OK**.
 7. Open any SSRS-based report using Internet Explorer and click **Print**.
 8. Internet Explorer will prompt for installation of the additional components it needs for printing. Click **Yes**. The ActiveX Control automatically downloads and installs.
 
 Then you will be able to print the reports from Internet Explorer and Netwrix Auditor UI.
+

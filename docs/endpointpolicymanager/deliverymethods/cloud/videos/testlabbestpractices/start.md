@@ -7,7 +7,7 @@ sidebar_position: 10
 
 Lets get you set up right. Watch this Netwrix Endpoint Policy Manager (formerly PolicyPak) Cloud orientation video to make sure you have everything you need to rock and roll with Endpoint Policy Manager Cloud.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aapXBfVyAME" title="Endpoint Policy Manager Cloud: What you need to get Started" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aapXBfVyAME" title="Endpoint Policy Manager Cloud: What you need to get Started" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak Cloud: What you need to get Started
 
@@ -48,3 +48,5 @@ also look at how to create the directives, how to upload them, what the portal l
 all of it works all running together.
 
 So keep watching, and I'll look forward to seeing you in the next videos.
+
+

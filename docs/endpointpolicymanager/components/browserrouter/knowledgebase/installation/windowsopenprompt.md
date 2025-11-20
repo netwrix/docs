@@ -22,3 +22,5 @@ So, the Endpoint Policy Manager CSE itself doesn't require a reboot to start wor
 
 However, for Endpoint Policy Manager Browser Router to solidify itself as the default browser (to
 then perform the routing) you must logoff and log on to pick up this new setting.
+
+

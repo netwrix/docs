@@ -25,3 +25,5 @@ However, the following Endpoint Policy Manager protections will stop working:
   PPupdate
 - Endpoint Policy Manager will no longer re-apply any settings when the application is re-launched,
   in the background or when the computer is offline.
+
+

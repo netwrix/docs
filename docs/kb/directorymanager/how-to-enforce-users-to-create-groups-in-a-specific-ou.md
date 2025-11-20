@@ -43,9 +43,9 @@ Netwrix Directory Manager’s **New Object** policy enables you to restrict role
 
    The selected OU appears below the **Groups** option.
 
-   ![User-added image](images/ka0Qk000000Dg4f_0EMQk000001f3Kk.png)
+   ![User-added image](./images/ka0Qk000000Dg4f_0EMQk000001f3Kk.png)
 
-   ![User-added image](images/ka0Qk000000Dg4f_0EMQk000001f68v.png)
+   ![User-added image](./images/ka0Qk000000Dg4f_0EMQk000001f68v.png)
 7. Click **OK**.
 8. Click **Update Security Role** and then **Save**.
 
@@ -53,10 +53,10 @@ Now when members of the security role try to create groups, they will be created
 
 
 ## Related Articles:
-- [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results.md)
-- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard.md)
-- [How to Trigger a workflow When a User Сreates a Group](/docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group.md)
-- [How To Add Message Approvers in Group Properties in Netwrix Directory Manager Portal](/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal.md)
+- [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results)
+- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard)
+- [How to Trigger a workflow When a User Сreates a Group](/docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group)
+- [How To Add Message Approvers in Group Properties in Netwrix Directory Manager Portal](/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal)
 - [Best Practices for Controlling Changes to Group Membership](https://docs.netwrix.com/docs/kb/directorymanager/best-practices-for-controlling-changes-to-group-membership#netwrix-directory-manager-best-practices)
-- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
-- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage.md)
+- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou)
+- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage)

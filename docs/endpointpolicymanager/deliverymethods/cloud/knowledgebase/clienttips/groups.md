@@ -16,3 +16,5 @@ Information on creating jointokens:
   [https://helpcenter.netwrix.com/bundle/endpointpolicymanager_AppendixE/page/Tools.html](https://helpcenter.netwrix.com/bundle/endpointpolicymanager_AppendixE/page/Tools.html) and
 - Video:
   [Endpoint Policy Manager Cloud: Automatically Join Groups with JOINTOKEN](/docs/endpointpolicymanager/deliverymethods/cloud/videos/upkeepanddailyuse/jointoken.md)
+
+

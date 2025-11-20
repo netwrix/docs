@@ -19,3 +19,4 @@ The mindump file is automatically created by CSE 750 and later if any of our com
 encounter a crash.Having the minidump file turned on automatically is a pretty good idea anyway.
 
 ![473_1_image007](/images/endpointpolicymanager/troubleshooting/log/473_1_image007.webp)
+

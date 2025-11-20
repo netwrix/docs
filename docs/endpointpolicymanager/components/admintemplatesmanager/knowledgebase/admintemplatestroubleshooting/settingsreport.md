@@ -20,3 +20,5 @@ Admin Console MSI 753 you need to open and save each collection and policy.
 After that, reporting is written as seen here. (An example of a Policy in a Collection.)
 
 ![494_2_image0041](/images/endpointpolicymanager/troubleshooting/administrativetemplates/494_2_image0041.webp)
+
+

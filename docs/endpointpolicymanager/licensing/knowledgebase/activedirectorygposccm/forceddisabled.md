@@ -170,3 +170,4 @@ then PolicyPak Preferences will always be unlicensed and disabled (even if the a
 
 In the future, we plan for Endpoint Policy Manager Preferences to evolve to enable co-existence from
 multiple sources.
+

@@ -114,3 +114,4 @@ Manager use with Active Directory, SCCM, or MDM. The following is an example:
   - March: 900
 
 In summary, you are charged for the highest number (averaged) in the 12-month period which is 1,083.
+

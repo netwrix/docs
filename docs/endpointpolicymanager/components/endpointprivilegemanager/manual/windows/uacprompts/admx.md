@@ -65,3 +65,6 @@ The result of these settings can be seen here, where only a limited number of pr
 for removal.
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/tool/helper/using_the_endpointpolicymanager_least_2.webp)
+
+
+

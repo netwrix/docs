@@ -9,3 +9,5 @@ sidebar_position: 490
 Features that are grayed out in any AppSet means that the setting isn't available to be delivered
 via Netwrix Endpoint Policy Manager (formerly PolicyPak). For some applications, everything works,
 for others, not everything is manageable.
+
+

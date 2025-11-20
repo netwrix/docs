@@ -29,7 +29,7 @@ knowledge_article_id: kA0Qk00000015iPKAQ
 
 Can you change the logo in the header and footer of Netwrix Directory Manager notifications?
 
-![Notification Logo Screenshot](images/ka0Qk000000DSOH_0EMQk000004nEE1.png)
+![Notification Logo Screenshot](./images/ka0Qk000000DSOH_0EMQk000004nEE1.png)
 
 ## Answer
 

@@ -26,3 +26,5 @@ See the following Video topics for Software Package Manager.
 ## Using with other METHODS (Cloud, MDM, etc.)
 
 - [Endpoint Policy Package Manager (AppX Policies): Add or Remove Microsoft Store using your MDM service.](/docs/endpointpolicymanager/components/softwarepackage/videos/usingwithothermethod/mdm.md)
+
+

@@ -95,3 +95,4 @@ If you still think Endpoint Policy Manager is causing high disk usage / slowdown
 **Step 2 –** Screenshot of the perfmon as configured above running for a full minute.
 
 **Step 3 –** Dump file created with task manager.
+

@@ -41,3 +41,6 @@ You’ll run the command as `EastSalesUser1`, and give your Active Directory cre
 The result is that a new Domain Admin account is created for this one session and deleted after use.
 
 ![resource_based_policy_match_4](/images/endpointpolicymanager/integration/privilegesecure/resourcebased/resource_based_policy_match_4.webp)
+
+
+

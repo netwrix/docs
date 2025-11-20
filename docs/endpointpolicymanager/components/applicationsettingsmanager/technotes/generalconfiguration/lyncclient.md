@@ -10,3 +10,5 @@ When a selection is underlined in the GPO, it means that the selected value of t
 delivered to the users affected by the GPO. If the setting is not underlined, then it means that the
 setting cannot be delivered using the Netwrix Endpoint Policy Manager (formerly PolicyPak). You can
 however, hide or disable these settings if you wish.
+
+

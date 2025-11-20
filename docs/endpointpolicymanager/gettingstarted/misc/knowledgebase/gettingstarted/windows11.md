@@ -41,7 +41,7 @@ The general rules are as follows:
 
 If you have an explicit route to a URL and specify Internet Explorer, Endpoint Policy Manager
 Browser Router will attempt to invoke IE in Edge mode. An explicit route could be something like
-https://www.endpointpolicymanager.com/webinar.
+https://www.policypak.com/webinar.
 
 An example can be seen below. Note it doesn't matter if the pulldown is set for **Open in standalone
 IE** or **Open as IE in Edge tab** is set. Those settings only matter for Windows 10 and are ignored
@@ -128,3 +128,4 @@ No particular Windows 11 changes or incompatibilities.
 If you were to use an older CSE you shouldn't see any incompatibilities or any differences.
 
 That being said, we always recommend you use the latest CSE, as fixes and updates occur regularly.
+

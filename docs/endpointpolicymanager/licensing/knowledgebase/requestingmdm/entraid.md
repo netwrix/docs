@@ -172,3 +172,4 @@ Final number for purchase, where each machine is licensed once:
 - 150
 
 Grand total: 1,250 computers
+

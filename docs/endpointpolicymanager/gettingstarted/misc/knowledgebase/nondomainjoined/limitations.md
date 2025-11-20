@@ -38,3 +38,4 @@ There are some items which will not work if the computer is not domain joined…
 
 4. Windows Edge + Chromium: The Browser Router Extension will not install automatically. There is NO
    workaround at this time except to manually install the Chrome Extension on Edge by hand.
+

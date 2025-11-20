@@ -25,12 +25,12 @@ knowledge_article_id: kA04u0000000HdXCAU
 ## Summary
 In a specific scenario, valid Netwrix Privilege Secure `DirectConnect` strings used in mRemoteNG will result in an invalid connection string error, stating the connection string is empty.
 
-![Screenshot of Netwrix Privilege Secure DirectConnect error, stating the connection string is invalid (empty).](images/ka04u000000Hca3_0EM4u000004bv9Z.png)
+![Screenshot of Netwrix Privilege Secure DirectConnect error, stating the connection string is invalid (empty).](./images/ka04u000000Hca3_0EM4u000004bv9Z.png)
 
 ## Instructions
 This error is caused by having credentials saved for the Netwrix Privilege Secure server (for example, the Netwrix Privilege Secure Proxy Server) in the Windows built-in RDP client, **Remote Desktop Connection**, on the same host that is running mRemoteNG.
 
-![Screenshot of a credential saved in Remote Desktop Connection, the built-in Windows RDP client, for the Netwrix Privilege Secure Proxy Server.](images/ka04u000000Hca3_0EM4u000004bv9t.png)
+![Screenshot of a credential saved in Remote Desktop Connection, the built-in Windows RDP client, for the Netwrix Privilege Secure Proxy Server.](./images/ka04u000000Hca3_0EM4u000004bv9t.png)
 
 To resolve the issue, you have two options:
 

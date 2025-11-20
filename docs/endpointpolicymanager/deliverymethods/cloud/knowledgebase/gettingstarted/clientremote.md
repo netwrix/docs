@@ -47,3 +47,5 @@ deployed remotely to the computer.
 
 If the computer is also connected to an RMM tool: Most RMM tools have a way to deploy other
 software; you could get the PPC Client MSI file deployed this way.
+
+

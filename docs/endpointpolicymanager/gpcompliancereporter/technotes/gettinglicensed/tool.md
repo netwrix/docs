@@ -21,3 +21,4 @@ Management tool to perform a "True-Up." We will continue to send email reminders
 effort to call you if we see you're getting close to lapsing. At the one year anniversary, Endpoint
 Policy Manager Group Policy Compliance Reporter will stop functioning – unless you get a new license
 file from us each year.
+

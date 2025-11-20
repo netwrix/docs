@@ -44,3 +44,4 @@ example, AppLocker requires Windows Enterprise edition.
 \* Endpoint Policy Manager utilizes the built-in GPPrefs Item Level Targeting. As such, any item
 which relies upon Item Level Targeting will evaluate to TRUE or not function, since GPPrefs are not
 part of this operating system.
+

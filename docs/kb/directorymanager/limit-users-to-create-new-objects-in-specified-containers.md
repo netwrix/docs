@@ -49,7 +49,7 @@ This article explains how to limit users to creating new objects only in specifi
 
 6. Click **Apply** and then **OK** on the **New Object** page.
 
-![New Object policy configuration in Directory Manager](images/ka0Qk000000EZFd_0EMQk00000BuMdp.png)
+![New Object policy configuration in Directory Manager](./images/ka0Qk000000EZFd_0EMQk00000BuMdp.png)
 
 > **NOTE:** Removing all containers for an object type means the New Object policy no longer applies to that object type, and users can create the object in any OU in the identity store.
 
@@ -60,12 +60,12 @@ With the New Object policy applied, role members can create new objects only in 
 ### In Automate
 
 - On the **Group Options** page of the **New Group** wizard, users can view and select only the specified OUs for new group creation.  
-  ![OU selection in Automate New Group wizard](images/ka0Qk000000EZFd_0EMQk00000BuMYz.png)
+  ![OU selection in Automate New Group wizard](./images/ka0Qk000000EZFd_0EMQk00000BuMYz.png)
 
 ### In the Self-Service portal
 
 - On the **General** page of the **Create Group** wizard, users can view and select only the specified OUs for new group creation.  
-  ![OU selection in Self-Service Create Group wizard](images/ka0Qk000000EZFd_0EMQk00000BuMab.png)
+  ![OU selection in Self-Service Create Group wizard](./images/ka0Qk000000EZFd_0EMQk00000BuMab.png)
 
 - On the **Account** page of the **Create Contact** wizard, users can view and select only the specified OUs for new contact creation.  
-  ![OU selection in Self-Service Create Contact wizard](images/ka0Qk000000EZFd_0EMQk00000BuMcD.png)
+  ![OU selection in Self-Service Create Contact wizard](./images/ka0Qk000000EZFd_0EMQk00000BuMcD.png)

@@ -50,3 +50,5 @@ Figure 42. Applications with Item-Level Targeting evaluating to FALSE will alway
 
 The application is not shown and there is no Edge tile to explain why. This is expected when
 Item-Level Targeting for an application tile evaluates to False.
+
+

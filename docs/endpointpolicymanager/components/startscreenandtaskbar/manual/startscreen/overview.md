@@ -34,3 +34,5 @@ the Start Menu. Using Start Screen & Taskbar Manager, we want to place all of ou
 applications into a single group called "My Important Apps." In this Quickstart, we will create a
 group policy object (GPO) and link it to your sample users. (You could also create and link a GPO to
 your computers, but we will not be doing that in this Quickstart.)
+
+

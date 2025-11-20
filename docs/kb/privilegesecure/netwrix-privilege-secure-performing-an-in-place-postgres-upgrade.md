@@ -47,11 +47,11 @@ cd 'C:\Program Files\Stealthbits\Postgres12\bin\'
 
 5. On the **Select Components** page, select only **PostgreSQL Server** and **Command Line Tools** to install/upgrade:
 
-![Postgres Select Components](images/ka0Qk000000CGIj_0EM4u000005feFD.png)
+![Postgres Select Components](./images/ka0Qk000000CGIj_0EM4u000005feFD.png)
 
 6. Proceed through the prompts until you see the **Pre-Installation Summary** window and confirm that it matches your server's settings:
 
-![Postgres Pre-Installation Summary](images/ka0Qk000000CGIj_0EM4u000005feFN.png)
+![Postgres Pre-Installation Summary](./images/ka0Qk000000CGIj_0EM4u000005feFN.png)
 
 7. Once satisfied with the **Pre-Installation Summary** window, click **Next** two more times to proceed with the installation.
 

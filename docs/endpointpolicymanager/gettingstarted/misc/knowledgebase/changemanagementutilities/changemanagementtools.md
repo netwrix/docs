@@ -118,3 +118,4 @@ Additionally, tools like Netwrix Auditor can monitor all GPO changes for both Mi
 Policy Manager-specific and alert you to unwanted changes.
 
 ![921_3_image-20230207205126-1](/images/endpointpolicymanager/troubleshooting/921_3_image-20230207205126-1.webp)
+

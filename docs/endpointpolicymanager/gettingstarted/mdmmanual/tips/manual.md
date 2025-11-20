@@ -54,3 +54,4 @@ The reason Endpoint Policy Manager uses the SID and not the actual user or group
 SIDs are permanent, whereas the underlying name in Active Directory can be changed. Once the
 exported XML data files are in the directory, the Endpoint Policy Manager engine will pick up the
 change within 10 seconds and perform the function.
+

@@ -34,3 +34,4 @@ your purchase.
   multi-session computer without a specific agreement. This is because Endpoint Policy Manager cloud
   will see the license use as a single license for a multi-session server, instead of handling
   actual usage to the maximum extent of the server.
+

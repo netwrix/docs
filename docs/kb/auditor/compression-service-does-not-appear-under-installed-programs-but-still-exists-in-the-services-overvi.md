@@ -38,7 +38,7 @@ You can manually delete the Service and its components. For that:
 
 1. Open the **Services** snap-in and open properties of the problematic service.
 2. Copy the full name of the service and the path to executable, for example, to a **Notepad** document.  
-   ![User-added image](images/ka0Qk0000001hxN_0EMQk000002u2KX.png)
+   ![User-added image](./images/ka0Qk0000001hxN_0EMQk000002u2KX.png)
 3. Run the command prompt as administrator and run the following command:
 
    ```bat
@@ -47,3 +47,6 @@ You can manually delete the Service and its components. For that:
 
    where the `<service_name>` is the full name of the service you copied on the step 2.
 4. After that, navigate to the file path you copied earlier and delete all the files.
+
+
+

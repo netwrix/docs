@@ -45,3 +45,6 @@ Again, rule 2, the rule that does the ELEVATE or ALLOW, is just a standard rule,
 the user or computer side.
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/scopefilters/scenario_3_running_or_elevating_2.webp)
+
+
+

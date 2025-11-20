@@ -12,3 +12,5 @@ XP and Vista machine as well and create the designated Endpoint Policy Manager s
 create the paks on one machine type and then re-capture the AppLock codes on the second machine
 type. See the section "How to Merge Endpoint Policy Manager s using the pXML Merge Wizard" in the
 Endpoint Policy Manager Design Studio guide.
+
+

@@ -10,12 +10,12 @@ Managing the Windows 10 Start Menu after using FSLogix is a piece of cake with N
 Policy Manager (formerly PolicyPak). Use FSLogix to hide/expose apps, then use Endpoint Policy
 Manager to manage those applications on the Start Menu and on the TaskBar. AWESOME!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UyL7wJTCgGE" title="Endpoint Policy Manager+FSLogix: Manage the Windows 10 Start Menu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UyL7wJTCgGE" title="Endpoint Policy Manager+FSLogix: Manage the Windows 10 Start Menu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak + FSLogix: Manage the Windows 10 Start Menu
 
 Hi. This is Jeremy Moskowitz. In this video, I'm going to show you how you can tame the
-[https://www.endpointpolicymanager.com/pp-blog/windows-10-start-screen](https://www.endpointpolicymanager.com/pp-blog/windows-10-start-screen)
+[https://www.policypak.com/pp-blog/windows-10-start-screen](https://www.policypak.com/pp-blog/windows-10-start-screen)
 with PolicyPak and FSLogix better together. In this example, I have a bunch of applications that are
 installed on the machine, but I'm going to use FSLogix to hide or mask those applications. The
 things is that you want to put them back with FSLogix for some users and put them into special Start
@@ -113,3 +113,4 @@ PolicyPak, great better together story. If you're looking to get started, hit us
 you the bits and you can get started right away.
 
 Thanks so much.
+

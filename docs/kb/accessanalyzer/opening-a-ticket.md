@@ -65,7 +65,7 @@ Follow these steps to gather logs:
 
   - On the home page of the job, click **View Log**, and save the log file.
 
-    ![Job View Log screenshot](images/ka0Qk000000C8rR_0EMQk000007oXpZ.png)
+    ![Job View Log screenshot](./images/ka0Qk000000C8rR_0EMQk000007oXpZ.png)
 
   - Locate the **job logs** using the following path:
 
@@ -81,7 +81,7 @@ Follow these steps to gather logs:
 
   - In the **Navigation Pane**, right-click the job and select **Export**. In the new window, specify the components to export and proceed with the export.
 
-    ![Export Job screenshot](images/ka0Qk000000C8rR_0EMQk000007oXrB.png)
+    ![Export Job screenshot](./images/ka0Qk000000C8rR_0EMQk000007oXrB.png)
 
 ## Messages Table
 

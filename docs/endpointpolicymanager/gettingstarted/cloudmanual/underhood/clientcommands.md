@@ -28,3 +28,4 @@ The Endpoint Policy Manager Cloud client can be invoked from an elevated command
   license. Used with a virtual desktops scenario.
 - `/jointoken:value`: Used in conjunction with the `/sysprep `switch to automatically join a
   computer to specified groups. Used with a virtual desktop scenario.
+

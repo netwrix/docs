@@ -10,7 +10,7 @@ Got multiple browsers with WVD? Great, we have you covered. See how to get the R
 RIGHT website with Netwrix Endpoint Policy Manager (formerly PolicyPak) Browser Router and Windows
 Virtual Desktop !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NpVvCj8TJA8" title="Endpoint Policy Manager + WVD: Browser Router ... the right browser for the right website" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NpVvCj8TJA8" title="Endpoint Policy Manager + WVD: Browser Router ... the right browser for the right website" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, Microsoft MVP and founder of PolicyPak Software. In this video we're
 going to learn how to get the right browser for the right website. In fact, in previous videos you
@@ -145,3 +145,4 @@ it doesn't matter what browser we're in. We're going to smack that down.
 
 Again, I hope this video helps you out. I'm looking forward to getting you start with PolicyPak and
 Windows virtual desktop and Browser Router real soon. Thank you very much. Take care.
+

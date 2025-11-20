@@ -26,3 +26,4 @@ Once you have collected the required logs, please ZIP up the following folder an
 support case in SHAREFILE.
 
 ![182_1_1_950x786](/images/endpointpolicymanager/troubleshooting/license/182_1_1_950x786.webp)
+

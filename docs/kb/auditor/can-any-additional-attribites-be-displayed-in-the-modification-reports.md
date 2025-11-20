@@ -49,6 +49,7 @@ objectType:Attribute:
 ```
 Examples:
 
-![Attr](images/ka04u000000HcP8_0EM7000000051Zt.png)
+![Attr](./images/ka04u000000HcP8_0EM7000000051Zt.png)
 
 **NOTE:** Each attribute should be put in a separate line. The pound key at the beginning of a line means exclusion of the line.
+

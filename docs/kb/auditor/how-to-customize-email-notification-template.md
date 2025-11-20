@@ -52,4 +52,5 @@ You can modify the template in the following ways:
   - ` %Link%` - shows the link to the web portal.
 
 ## Example
-[![User-added image](images/ka04u000000HcWM_0EM700000004wyA.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAdA&feoid=00N700000032Pj2&refid=0EM700000004wyA)
+[![User-added image](./images/ka04u000000HcWM_0EM700000004wyA.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAdA&feoid=00N700000032Pj2&refid=0EM700000004wyA)
+

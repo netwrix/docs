@@ -8,7 +8,7 @@ sidebar_position: 50
 Want to trap and require users to request permission when installing anything? Then use this
 setting; plus how to work around the byproduct of this setting.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tE8_hk_X7Jg?si=LL6eSvM2xpS7YdZO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tE8_hk_X7Jg?si=LL6eSvM2xpS7YdZO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PPLPM Admin Approval: "Enforce Admin Approval for all installers" enabled
 
@@ -79,7 +79,7 @@ going to do this is either use the Event Viewer or the PolicyPak logs.
 
 I'm going to use the PolicyPak logs to do it. In "AppData," "Local," "PolicyPak," if we go to
 "PolicyPak
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)"
+[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)"
 here, what you're looking for is the file "ppUser_operational.log." You're going to see what thing
 triggered that prompt.
 
@@ -139,3 +139,5 @@ naturally because now we're going to start trapping for them.
 Hope this video helps you out, and looking forward to getting started real soon.
 
 Thanks.
+
+

@@ -111,3 +111,5 @@ you will see that Edge has become the default browser.
 ![141_7_image](/images/endpointpolicymanager/troubleshooting/browserrouter/install/141_7_image.webp)
 
 ![141_8_image](/images/endpointpolicymanager/troubleshooting/browserrouter/install/141_8_image.webp)
+
+

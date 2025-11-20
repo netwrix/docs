@@ -46,10 +46,10 @@ The error can be resolved by performing one of the following steps:
 2. Add **ProfileImagePath** value (Expandable String Value) with an empty value to the profiles with the value missing.
 3. Check the affected server for unknown user profiles by accessing **Control Panel** > **System** > **Advanced system settings** > **Advanced** tab > **Settings** button under the **User Profiles** section to delete them.
 4. Ask the remaining users to log in to the system — a user affected by a faulty `NTUSER.DAT` won't be able to log in.
-5. In case collection is not affected (e.g., the user does not appear in the registry), you can omit the error. Add the `%*,*,*Remove Software data provider failed to load the user *domain\user*%` line to the Windows Server Auditing **omiterror** list. Refer to the following article for additional information on omit lists: [How to Use Omit Lists](/docs/kb/auditor/how-to-use-omit-lists.md).
+5. In case collection is not affected (e.g., the user does not appear in the registry), you can omit the error. Add the `%*,*,*Remove Software data provider failed to load the user *domain\user*%` line to the Windows Server Auditing **omiterror** list. Refer to the following article for additional information on omit lists: [How to Use Omit Lists](/docs/kb/auditor/how-to-use-omit-lists).
 
 Once the changes are introduced, reboot the target server.
 
 ### Related Articles
 
-[How to Use Omit Lists](/docs/kb/auditor/how-to-use-omit-lists.md)
+[How to Use Omit Lists](/docs/kb/auditor/how-to-use-omit-lists)

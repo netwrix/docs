@@ -68,3 +68,4 @@ most current is marked for future deletion. You can tune when this occurs with t
 setting:
 
 ![762_7_image-20191028221305-4_950x726](/images/endpointpolicymanager/requirements/gpocompilancereporter/762_7_image-20191028221305-4_950x726.webp)
+

@@ -9,7 +9,7 @@ sidebar_position: 120
 You can specify any particular VM’s hardware and options settings plus lock down the user interface.
 Here’s how to do it.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/L18VVKKy4qs?si=bNVQtSHXga-nSc1r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L18VVKKy4qs?si=bNVQtSHXga-nSc1r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### VmWare Workstation hardware
 
@@ -59,3 +59,5 @@ the “Options” tab, “Shared Folders” is now delivered and it is grayed ou
 I hope it helps. If you have any questions, you can put those questions on our support forum or you
 can open a support ticket here https://www.netwrix.com/sign_in.html?rf=tickets.html#/open-a-ticket.
 Thanks.
+
+

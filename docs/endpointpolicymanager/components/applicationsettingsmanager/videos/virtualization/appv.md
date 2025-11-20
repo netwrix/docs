@@ -13,7 +13,7 @@ App-V has NO Group Policy support inside of sequences. So, if you needed to twea
 file, edit the registry, or otherwise configure your App-V packages, you've got a real problem.
 
 See this detailed blog entry
-([https://www.endpointpolicymanager.com/integration/blog-entry-link.html](https://www.endpointpolicymanager.com/integration/blog-entry-link.html))
+([https://www.policypak.com/integration/blog-entry-link.html](https://www.policypak.com/integration/blog-entry-link.html))
 and example.
 
 Good news for you: We've got that problem totally handled.
@@ -21,7 +21,7 @@ Good news for you: We've got that problem totally handled.
 Watch this video (exclusively for App-V administrators) to see exactly how to manage App-V sequences
 using Group Policy using Netwrix Endpoint Policy Manager (formerly PolicyPak):
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9NPOcRjOrvs?si=tCaXFOOd7KjV7CrO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9NPOcRjOrvs?si=tCaXFOOd7KjV7CrO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 You're smart. You picked App-V to make application deployment easier.
 
@@ -51,9 +51,9 @@ When you're ready to manage your App-V packages using Group Policy, Endpoint Pol
 for you.
 
 Click on Download
-([https://www.endpointpolicymanager.com/integration/about-us/contact-us.html](https://www.endpointpolicymanager.com/integration/about-us/contact-us.html))
+([https://www.policypak.com/integration/about-us/contact-us.html](https://www.policypak.com/integration/about-us/contact-us.html))
 or Webiar
-([https://www.endpointpolicymanager.com/integration/webinar](https://www.endpointpolicymanager.com/integration/webinar)) to
+([https://www.policypak.com/integration/webinar](https://www.policypak.com/integration/webinar)) to
 get the software and try it out for yourself.
 
 ### Manage App-V applications dynamically with Group Policy video transcript
@@ -112,7 +112,7 @@ right click and click "Edit" here, we'll do this on the computer side. We'll go 
 "PolicyPak/Applications/New/Application," and we'll pick "PolicyPak for Mozilla Firefox 23.0." We'll
 go ahead and use that.
 
-While we're here, let's go ahead and do the "Home Page" and make this "www.endpointpolicymanager.com." We'll
+While we're here, let's go ahead and do the "Home Page" and make this "www.policypak.com." We'll
 also do some superpowers as well like "Lockdown this setting using the system-wide config file" so
 users can't work around it. We'll go to "Security" and we'll check all three of these checkboxes.
 We'll also lock down two of them as well, just to be on the safe side.
@@ -155,3 +155,5 @@ If you have any other questions, we're happy to help. We look forward to helping
 you started with PolicyPak real soon.
 
 Thanks so much.
+
+

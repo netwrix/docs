@@ -12,7 +12,7 @@ lock users down so they can't work around your settings. See how Endpoint Policy
 Citrix XenApp streaming environments by providing true Group Policy support to any Citrix XenApp
 streamed application PLUS lock users down so they cannot work around your settings.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k8GzrHk4snY?si=ubDOTF6bexwK_XHP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/k8GzrHk4snY?si=ubDOTF6bexwK_XHP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager enhances Xenapp Streaming with Group Policy video transcript
 
@@ -130,7 +130,7 @@ application. It lives on this machine. If we were to now target Firefox, we're g
 Click "Edit…" here and once again under "PolicyPak/Applications/New/Application" and we'll go to
 "PolicyPak for Mozilla Firefox." Now remember, Firefox doesn't keep its stuff in the registry.
 There's no easy-peasy way to say wherever a user roams make sure they get the exact same settings,
-until now. We're going to deploy "www.endpointpolicymanager.com" as the "Home Page." We'll also go to "Security"
+until now. We're going to deploy "www.policypak.com" as the "Home Page." We'll also go to "Security"
 settings and dictate that, because the user turned off these "Security" settings, we're going to
 turn them right back on. It's just that easy. We'll go back to our target machine. We'll run
 "gpupdate" and now after GPUpdate succeeds, the very next time we run Firefox from the XenApp
@@ -138,10 +138,10 @@ streaming server, we're going to ensure that our settings will dynamically be pl
 If you have a new security concern, you have something that's updated, something you need to make
 sure is pushed out to all of your users or computers, you can do it instantly using the Group Policy
 infrastructure you already have. Let's go ahead and run "Firefox8 Streaming" again. There it is,
-"www.endpointpolicymanager.com." There's the home page. We'll go to "Options" and go to "Security." It's checked
+"www.policypak.com." There's the home page. We'll go to "Options" and go to "Security." It's checked
 just the way we expect. If they were to uncheck these settings or change the "Home Page" to
 "www.google.com" something like that, the very next time Group Policy is updated and then Firefox is
-run you will see that we will get it back to "www.endpointpolicymanager.com" and all of the "Home Page" settings
+run you will see that we will get it back to "www.policypak.com" and all of the "Home Page" settings
 are there and the "Security" settings are there. You might be wondering, how hard is this to set up?
 Does it take a lot of infrastructure, a lot of moving parts to make this happen? The answer is no.
 It's very, very simple. It is true that PolicyPak does require that on all of your client machines
@@ -171,7 +171,9 @@ OpenOffice, Thunderbird, WinZip, Lync – none of those use the proper policies 
 wanted to manage any of those guys – Flash, Chrome, Java, Firefox, Thunderbird, Lync, any of those
 things – using Group Policy to set settings and lock things out, PolicyPak is your answer. Thank you
 so much for watching. If you would like to get the trial bits, all you've got to do is come to
-www.endpointpolicymanager.com. Go ahead and click here under "Webinar/Download." Sign up for one of our one-hour
+www.policypak.com. Go ahead and click here under "Webinar/Download." Sign up for one of our one-hour
 demonstrations, and then afterward we'll send you the bits and you can try it out yourself. Looking
 forward to having you as part of the PolicyPak team. Thanks so much, because remember, with
 PolicyPak what you set it what they get. Thanks so much. Bye bye.
+
+

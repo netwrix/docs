@@ -37,7 +37,7 @@ If you change the hostname for the Netwrix Directory Manager (formerly GroupID) 
 2. On the **Identity Stores** tab, click the three-dot icon next to the relevant identity store and select **Edit**.
 3. Click the **Workflows** tab. Select the workflow for which you want to change the portal URL and click **Edit**.  
    To change the URL in email notifications that alert group owners to approve or deny membership requests, select **Workflow to Join a Group**.  
-   ![Editing a workflow in Directory Manager 11](images/ka0Qk000000EMbl_0EMQk00000Ba629.png)
+   ![Editing a workflow in Directory Manager 11](./images/ka0Qk000000EMbl_0EMQk00000Ba629.png)
 4. In the **Portal URL** box, select the portal URL you want to use.  
-   ![Selecting the Portal URL in Directory Manager 11](images/ka0Qk000000EMbl_0EMQk00000Ba65N.png)
+   ![Selecting the Portal URL in Directory Manager 11](./images/ka0Qk000000EMbl_0EMQk00000Ba65N.png)
 5. Click **Update Workflow** and save your changes. The email notifications for this workflow will now include the specified portal URL. Repeat these steps for each workflow as needed.

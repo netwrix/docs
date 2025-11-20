@@ -16,3 +16,5 @@ Allow Now or Allow and Remember appear
 See
 [Firefox: How do I set "Allow Now", "Allow and Remember" or "Block Plugin" as plug-ins are requested?](https://helpcenter.netwrix.com/bundle/endpointpolicymanager/page/Content/endpointpolicymanager/ApplicationSettings/Preconfigured/Firefox/AllowRemember.htm)
 for additional information.
+
+

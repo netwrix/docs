@@ -20,4 +20,5 @@ connections do not need to be declared at purchase time.
 
 For example scenarios of how to license Endpoint Policy Manager Group Policy Edition with Citrix
 and/or Terminal Services, please
-see [Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.endpointpolicymanager.com/purchasing/vdi-licensing-scenarios/)[.](https://www.endpointpolicymanager.com/support-sharing/citrix-licensing-scenarios.html)
+see [Citrix & WVD Multi-session Windows Licensing Scenarios](https://www.policypak.com/purchasing/vdi-licensing-scenarios/)[.](https://www.policypak.com/support-sharing/citrix-licensing-scenarios.html)
+

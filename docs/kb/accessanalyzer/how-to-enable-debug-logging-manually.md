@@ -42,4 +42,4 @@ Refer to the following steps to manually enable the debug mode in Netwrix Access
 
 Refer to the example of the value in the configuration file that must be changed to `0`:
 
-![Configuration example](images/ka0Qk00000056mL_0EMQk000006Clm6.png)
+![Configuration example](./images/ka0Qk00000056mL_0EMQk000006Clm6.png)

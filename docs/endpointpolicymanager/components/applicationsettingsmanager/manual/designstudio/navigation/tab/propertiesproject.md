@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Project Properties
 
-The Project Properties tab shows overall project properties such as the following (see Figure 54):
+The Project Properties tab shows overall project properties such as the following (See the figure here):
 
 - Project name
 - Target data type (Registry, INI, XML, etc.)
@@ -15,7 +15,7 @@ The Project Properties tab shows overall project properties such as the followin
 
 ![getting_around_5](/images/endpointpolicymanager/applicationsettings/designstudio/navigation/tab/getting_around_5.webp)
 
-Figure 53. The Project Properties tab.
+The figure shown. The Project Properties tab.
 
 Video: To understand predefined Item-Level Targeting (ILT) conditions, please see this video:
 [Predefined ILTs (Internal Filters)](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/designstudio/itemleveltargeting.md).
@@ -25,8 +25,11 @@ portable Windows 10 machine with IE version 11 present.
 
 ![getting_around_6](/images/endpointpolicymanager/applicationsettings/designstudio/navigation/tab/getting_around_6.webp)
 
-Figure 54. You can use Item-Level Targeting to narrow your target scope.
+The figure shown. You can use Item-Level Targeting to narrow your target scope.
 
 Tip: Endpoint Policy Manager has some AppSets that have pre-defined filters and others that do not.
 For instance, all of the Internet Explorer AppSets and Java AppSets that Endpoint Policy Manager
 ships have pre-defined filters.
+
+
+

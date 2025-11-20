@@ -52,17 +52,17 @@ The three templates are configurable, whereas the custom Dynasty can fulfill num
 ### Creating an Organizational Dynasty
 
 1. In Netwrix Directory Manager Portal, select **Create New** > **Organizational Dynasty** template and click **Next**.  
-   ![Selecting Organizational Dynasty template](images/ka0Qk000000Du4P_0EMQk00000BS5BL.png)
+   ![Selecting Organizational Dynasty template](./images/ka0Qk000000Du4P_0EMQk00000BS5BL.png)
 2. On the **Group Options** page, enter the group name, select the container where the group will be created, and specify the group type, scope, and security settings.  
-   ![Group Options page](images/ka0Qk000000Du4P_0EMQk00000BS8nW.png)
+   ![Group Options page](./images/ka0Qk000000Du4P_0EMQk00000BS8nW.png)
 3. On the **Dynasty Options** page, review and modify the attributes that will be used to create child groups. For example, you can remove *Title* and add *Office* as needed.  
-   ![Dynasty Options page](images/ka0Qk000000Du4P_0EMQk00000BS9zh.png)
+   ![Dynasty Options page](./images/ka0Qk000000Du4P_0EMQk00000BS9zh.png)
 4. On the **Query Options** page, review the current configuration of your Dynasty. You can click **Query Designer** to launch the Query Designer, where you can modify the query to filter the objects for group membership. For example, you may filter out disabled users or get a specific employee type.  
-   ![Query Options page](images/ka0Qk000000Du4P_0EMQk00000BRwsy.png)
+   ![Query Options page](./images/ka0Qk000000Du4P_0EMQk00000BRwsy.png)
 5. Once your query is complete, proceed to the **Update Options** page. The Dynasty can be updated manually or via an automated schedule.  
-   ![Update Options page](images/ka0Qk000000Du4P_0EMQk00000BS4Gs.png)
+   ![Update Options page](./images/ka0Qk000000Du4P_0EMQk00000BS4Gs.png)
 6. On the **Owners** page, you can specify additional owners for the group. By default, Netwrix Directory Manager sets the logged-in user as the primary owner. The primary owner will be inherited by all child groups. You can add additional owners by clicking the **Add** button. Users, contacts, and even security groups can be set as additional owners.  
-   ![Owners page](images/ka0Qk000000Du4P_0EMQk00000BS48q.png)
+   ![Owners page](./images/ka0Qk000000Du4P_0EMQk00000BS48q.png)
 7. The **Completion** page gives a summary of the selected settings. Click **Finish**.
 8. If you selected **Now** for your update options, a parent Dynasty will be created with the name provided on the **Group Options** page, and child groups will be created according to the configured template.
 

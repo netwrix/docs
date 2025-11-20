@@ -60,3 +60,5 @@ before the word JOINTOKEN.
 `msiexec /i "PolicyPak Cloud Client.msi" /qn /norestart /log `
 
 "`c:\temp\ppcloudinstall.log" JOINTOKEN="AQOLsGUcYHV6OL03pP88Qe0=`"
+
+

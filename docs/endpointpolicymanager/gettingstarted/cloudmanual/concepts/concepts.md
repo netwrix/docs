@@ -71,3 +71,5 @@ more detail later.
 
 Tip: When you use the Endpoint Policy Manager Cloud service, you can deliver any Endpoint Policy
 Manager setting plus nearly any Microsoft Group Policy setting, even to non-domain-joined machines.
+
+

@@ -39,7 +39,7 @@ The HA Configuration tool expects a port value at the end of the NPS Rest URL. I
 > 1. On the main Privilege Secure screen, click the **Configuration** tab.
 > 2. In the left pane, select **Services**. The page will include the **NPS Rest URL** field. To learn more about the **Services** page in Netwrix Privilege Secure, refer to the following article: System Settings Pages − Services Page · v4.0.
 >
-> ![Services page screenshot](images/ka0Qk0000002ijJ_0EMQk000003vpYj.png)
+> ![Services page screenshot](./images/ka0Qk0000002ijJ_0EMQk000003vpYj.png)
 
 ## Resolution
 

@@ -55,3 +55,6 @@ Click on the **Misc** tab, which enables you to configure the two policies shown
 This setting should be set to **Enforce Admin Approval for all installers**. Click **OK** to save
 the Admin Approval policy, which will appear on the Computer side of Endpoint Policy Manager Least
 Privilege Manager within the GPO.
+
+
+

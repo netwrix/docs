@@ -11,7 +11,7 @@ are introducing a UNIVERSAL AppSet for Java which works for all versions of Java
 incremental versions. Here is the guidance you need to transition from lots of AppSets down to one
 universal AppSet. If you have questions about this feature, PLEASE use the FORUMS.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aa8pFCFqnM0" title="Endpoint Policy Manager: Transitioning to the Universal Oracle Java Pak (7 thru 9)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aa8pFCFqnM0" title="Endpoint Policy Manager: Transitioning to the Universal Oracle Java Pak (7 thru 9)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Transitioning to the Universal Oracle Java Pak(7 thru 9)
 
@@ -132,3 +132,5 @@ Pak and getting over to the universal Pak for Oracle Java 7 to 9.
 I hope this helps you out. If you have any questions, please use the forums for this particular
 function.  
 Thanks so very much.
+
+

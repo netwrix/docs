@@ -24,3 +24,4 @@ Understand Endpoint Policy Manager versioning and update frequency:
 - [Update Frequency and Support](/docs/endpointpolicymanager/upgrademaintenance/bestpractices/frequency_1.md) - How often EPM is updated and version support policy
 
 These best practices will help ensure your Endpoint Policy Manager deployment remains stable, secure, and fully supported.
+

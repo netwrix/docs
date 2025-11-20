@@ -38,9 +38,9 @@ This timeout setting is governed by a Group Policy. The following steps allow yo
 
 1. Open Group Policy Editor: `gpedit.msc`
 2. Navigate to `Computer Configuration > Windows Settings > Security Settings > Public Key Policies`  
-   ![User-added image](images/ka04u000000HdFp_0EM4u0000052lrQ.png)
+   ![User-added image](./images/ka04u000000HdFp_0EM4u0000052lrQ.png)
 3. Double-click on **Certificate Path Validation Settings** and go to the **Network Retrieval** tab.  
-   ![User-added image](images/ka04u000000HdFp_0EM4u0000052lrf.png)
+   ![User-added image](./images/ka04u000000HdFp_0EM4u0000052lrf.png)
 4. Check the **Define these policy settings** box, and reduce both **Default retrieval timeout settings** to `1`.  
-   ![User-added image](images/ka04u000000HdFp_0EM4u0000052lrk.png)
+   ![User-added image](./images/ka04u000000HdFp_0EM4u0000052lrk.png)
 5. Click **Apply** to save the configuration.

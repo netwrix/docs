@@ -30,15 +30,15 @@ Use these steps to configure the **My Groups** tab in Netwrix Directory Manager 
 1. From the Admin portal, navigate to **Applications** > **your application portal**.  
 2. Click the three-dot icon and select **Settings**.  
 
-   ![Admin portal navigation to application portal settings](images/ka0Qk000000EZ4L_0EMQk00000Bsr2b.png)
+   ![Admin portal navigation to application portal settings](./images/ka0Qk000000EZ4L_0EMQk00000Bsr2b.png)
 3. In the settings menu, go to **Advanced Settings** > **Listing Displays**.  
 
-   ![Advanced settings and listing displays in admin portal](images/ka0Qk000000EZ4L_0EMQk00000Bsr4D.png)
+   ![Advanced settings and listing displays in admin portal](./images/ka0Qk000000EZ4L_0EMQk00000Bsr4D.png)
 4. Find the option for **Display Groups in My Groups** and toggle it to include groups where the user is an additional owner.  
 
-   ![Toggle for Display Groups in My Groups setting](images/ka0Qk000000EZ4L_0EMQk00000Bsr0z.png)
+   ![Toggle for Display Groups in My Groups setting](./images/ka0Qk000000EZ4L_0EMQk00000Bsr0z.png)
 5. Click **Save** and then **OK** to apply the changes.
 6. Log in to the application portal. The **My Groups** page will now display groups for which the logged-in user is an additional owner.
 7. Individual users can adjust their own settings in the application portal to view groups they own as both primary and additional owner. After changing this setting, remember to click **Save**.
 
-   ![User-level setting to display groups as primary and additional owner](images/ka0Qk000000EZ4L_0EMQk00000Bsr5p.png)
+   ![User-level setting to display groups as primary and additional owner](./images/ka0Qk000000EZ4L_0EMQk00000Bsr5p.png)

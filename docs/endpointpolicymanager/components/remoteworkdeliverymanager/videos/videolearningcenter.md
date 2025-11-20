@@ -25,3 +25,5 @@ See the following Video topics for Remote Work Delivery Manager.
 - [Endpoint Policy Manager: Remote Work Delivery Manager Local File Copy Magic](/docs/endpointpolicymanager/components/remoteworkdeliverymanager/videos/tipsandtricks/localfilecopy.md)
 - [Endpoint Policy Manager: Use Azure Blob Storage to Deploy and Patch your software](/docs/endpointpolicymanager/components/remoteworkdeliverymanager/videos/tipsandtricks/azureblobstorage.md)
 - [Using Remote Work Delivery Manager to Update the Endpoint Policy Manager Client Side Extension](/docs/endpointpolicymanager/components/remoteworkdeliverymanager/videos/tipsandtricks/updateclientsideextension.md)
+
+

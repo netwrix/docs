@@ -45,3 +45,5 @@ valid network path for your environment.
 successfully check your network share to see the results.
 
 ![784_9_hf-faq-914-img-05](/images/endpointpolicymanager/grouppolicy/784_9_hf-faq-914-img-05.webp)
+
+

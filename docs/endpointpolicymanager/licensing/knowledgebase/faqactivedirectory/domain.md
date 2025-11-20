@@ -21,3 +21,4 @@ What happens then if you add OUs mid-year?
 - If you pick option 2, you would need to re-run the tool mid-year if you update OUs. But it doesn't
   cost you anything, unless you increase a lot of machines mid-year (20% of your current count). We
   would call that a mid-year true up.
+

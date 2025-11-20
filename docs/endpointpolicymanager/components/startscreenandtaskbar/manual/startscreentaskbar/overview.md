@@ -19,3 +19,5 @@ Here are some tips when trying to troubleshoot Start Screen & Taskbar Manager:
   then logs on again.
 - Start Screen & Taskbar Manager's policies may not work the very first time a user logs onto a
   Windows 10 machine, but will take effect in the background a bit later.
+
+

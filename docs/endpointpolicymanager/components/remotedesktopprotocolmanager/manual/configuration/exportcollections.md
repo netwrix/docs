@@ -19,3 +19,5 @@ Remember that Endpoint Policy Manager RDP policies can be created and exported o
 Computer side. For instance, below we have a collection being exported.
 
 ![using_item_level_targeting_8](/images/endpointpolicymanager/remotedesktopprotocol/itemleveltargeting/using_item_level_targeting_8.webp)
+
+

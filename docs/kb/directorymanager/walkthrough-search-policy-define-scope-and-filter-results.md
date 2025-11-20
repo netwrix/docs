@@ -50,19 +50,19 @@ By default, or in the absence of this policy, any search performed by role membe
 1. In Netwrix Directory Manager Admin Center, click the **Identity Stores** node.
 2. On the **Identity Stores** tab, click on the **Triple Dot** button, and then click on the **Edit** button to go to the properties of the required identity store.
 
-   ![User-added image](images/ka0Qk000000Dg1R_0EMQk000001eu1K.png)
+   ![User-added image](./images/ka0Qk000000Dg1R_0EMQk000001eu1K.png)
 
 3. On the **Security Roles** tab, select a role to define a search policy for it, and click **Edit**.
 
-   ![User-added image](images/ka0Qk000000Dg1R_0EMQk000001f0gD.png)
+   ![User-added image](./images/ka0Qk000000Dg1R_0EMQk000001f0gD.png)
 
 4. On the **Role Properties** page, click the **Policies** tab and then click **Search** in the left pane.
 
-   ![User-added image](images/ka0Qk000000Dg1R_0EMQk000001ezqc.png)
+   ![User-added image](./images/ka0Qk000000Dg1R_0EMQk000001ezqc.png)
 
 5. Click the **Plus** button and select a container. A search performed by role members would return objects that reside in this container.
 
-   ![User-added image](images/ka0Qk000000Dg1R_0EMQk000001f0pt.png)
+   ![User-added image](./images/ka0Qk000000Dg1R_0EMQk000001f0pt.png)
 
 ### Choose a Search Filter:
 When you apply an LDAP filter, a search performed by role members only shows objects that match the specified criterion.
@@ -71,7 +71,7 @@ When you apply an LDAP filter, a search performed by role members only shows obj
 2. Select an operator from the second drop-down list (for example, *Is Exactly*).
 3. Enter a value concerning the selected schema attribute in the third box.
 
-   ![User-added image](images/ka0Qk000000Dg1R_0EMQk000001ezDu.png)
+   ![User-added image](./images/ka0Qk000000Dg1R_0EMQk000001ezDu.png)
 
 You can define multiple queries by clicking on the **+Add More Filters** and using the **AND** or **OR** operator to group all rows that make up a query.
 
@@ -86,23 +86,23 @@ A down arrow appears in the applied operator's icon. Click it to display the con
 ## Some Useful Examples:
 - To limit searches to mail-enabled distribution groups and all users:
 
-  ![User-added image](images/ka0Qk000000Dg1R_0EMQk000001exAU.png)
+  ![User-added image](./images/ka0Qk000000Dg1R_0EMQk000001exAU.png)
 
 - Limit searches to all global security groups and all users:
 
-  ![User-added image](images/ka0Qk000000Dg1R_0EMQk000001evqG.png)
+  ![User-added image](./images/ka0Qk000000Dg1R_0EMQk000001evqG.png)
 
 - Limit searches to mail-enabled groups and mail-enabled users:
 
-  ![User-added image](images/ka0Qk000000Dg1R_0EMQk000001f1KX.png)
+  ![User-added image](./images/ka0Qk000000Dg1R_0EMQk000001f1KX.png)
 
 
 
 ### Related Articles:
-- [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results.md)
-- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard.md)
-- [How to Trigger a workflow When a User Сreates a Group](/docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group.md)
-- [How To Add Message Approvers in Group Properties in Netwrix Directory Manager Portal](/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal.md)
+- [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results)
+- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard)
+- [How to Trigger a workflow When a User Сreates a Group](/docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group)
+- [How To Add Message Approvers in Group Properties in Netwrix Directory Manager Portal](/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal)
 - [Best Practices for Controlling Changes to Group Membership](https://docs.netwrix.com/docs/kb/directorymanager/best-practices-for-controlling-changes-to-group-membership#netwrix-directory-manager-best-practices)
-- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
-- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage.md)
+- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou)
+- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage)

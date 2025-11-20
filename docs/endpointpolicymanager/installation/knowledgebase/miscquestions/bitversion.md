@@ -11,3 +11,4 @@ utilizing Group Policy to push out the Endpoint Policy Manager Client Side Exten
 you can even configure a GPO to automatically deliver the correct version to each computer by using
 the WMI filters option that is built into Group Policy.But even if you don't — nothing "bad" will
 happen. The installation simply won't "incorrectly" occur.
+

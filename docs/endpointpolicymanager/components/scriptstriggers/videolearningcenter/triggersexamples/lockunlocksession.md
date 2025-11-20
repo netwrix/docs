@@ -9,7 +9,7 @@ In this demo you'll see how to use Session Lock and Session Unlock trigger types
 Endpoint Policy Manager (formerly PolicyPak) Scripts. It's easy to do ! Pre-test your script first,
 then you're off to the races. Remember which processes require RUN INTERACTIVE though!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p00SeWdMn7U" title="Endpoint Policy Manager Scripts + Triggers: Perform actions at LOCK and UNLOCK of session" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p00SeWdMn7U" title="Endpoint Policy Manager Scripts + Triggers: Perform actions at LOCK and UNLOCK of session" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, and in this video, I'm going to show you how you can use Endpoint
 Policy Manager scripts and triggers to fire off activities when the session is locked and unlocked.
@@ -61,3 +61,5 @@ background. Of course, we can't see it. Now if we unlock, bang, we put it back o
 Endpoint Policy Manager scripts and triggers enables you to at session lock or unlock time, do some
 superpower magic and hopefully this example will give you some great stuff for your imagination.
 Hope this helps you out. Looking forward to helping you get started real soon.
+
+

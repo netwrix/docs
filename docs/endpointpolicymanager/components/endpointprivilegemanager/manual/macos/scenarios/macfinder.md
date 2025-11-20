@@ -74,3 +74,6 @@ The three action types on a rule are:
 See the
 [Endpoint Policy Manager MacOS: Mac Finder Policies](/docs/endpointpolicymanager/components/endpointprivilegemanager/videolearningcenter/macintegration/finder.md) video
 for examples of Action types with Finder policies
+
+
+

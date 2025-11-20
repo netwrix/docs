@@ -28,3 +28,5 @@ File Associations Manager provides enterprise-level control over file type assoc
 ---
 
 *For additional support, consult the troubleshooting section or contact technical support.*
+
+

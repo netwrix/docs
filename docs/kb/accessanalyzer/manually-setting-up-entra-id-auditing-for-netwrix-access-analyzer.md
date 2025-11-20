@@ -36,17 +36,17 @@ While it is always recommended to use the `AZ_RegisterAzureAppAuth` instant job 
 1. Open the Microsoft Entra admin center: https://entra.microsoft.com/#home.
 
 2. Navigate to **Identity > Applications > App registrations** and select **+ New registration**.  
-   ![Entra App Registration](images/ka0Qk000000DYVJ_0EMQk00000B6ziP.png)
+   ![Entra App Registration](./images/ka0Qk000000DYVJ_0EMQk00000B6ziP.png)
 
 3. On the **Register an application** page, set the following:
    - **Name:** Something meaningful, e.g., `NEA_EntraID`.
    - **Support account types:** Accounts in this org. directory only.
 
 4. From the **Application Overview** page, navigate to **Manage > API Permissions** and select **Add a permission**.  
-   ![API Permissions](images/ka0Qk000000DYVJ_0EMQk00000B6i4s.png)
+   ![API Permissions](./images/ka0Qk000000DYVJ_0EMQk00000B6i4s.png)
 
 5. From the **Request API permissions** page, select **Microsoft Graph**.  
-   ![Request API permissions](images/ka0Qk000000DYVJ_0EMQk00000B6qwr.png)
+   ![Request API permissions](./images/ka0Qk000000DYVJ_0EMQk00000B6qwr.png)
 
    - Add the following **Delegated Permissions**:
      - `Group.Read.All` – Read all groups
@@ -56,20 +56,20 @@ While it is always recommended to use the `AZ_RegisterAzureAppAuth` instant job 
      - `Directory.Read.All` – Read directory data
 
 6. After adding the aforementioned permissions, grant them admin consent by selecting **Grant admin consent for `\{TENANT NAME\}`**.  
-   ![Grant admin consent](images/ka0Qk000000DYVJ_0EMQk00000B6f5O.png)
+   ![Grant admin consent](./images/ka0Qk000000DYVJ_0EMQk00000B6f5O.png)
 
 7. Navigate to the Entra app registration and on the **Certificates & secrets** page, select **+ New client secret**.  
-   ![Certificates & secrets](images/ka0Qk000000DYVJ_0EMQk00000B6fbf.png)
+   ![Certificates & secrets](./images/ka0Qk000000DYVJ_0EMQk00000B6fbf.png)
 
 8. On the **Add a client secret** page, add the following:
    - **Description:** Something meaningful, e.g., `Access Analyzer Entra ID`.
    - **Expires:** Usually recommended to set this to the longest option OR per the organization’s internal certificate expiration timeframe.
 
 9. After creating the client secret, copy the secret **Value** to a notepad.  
-   ![Client secret value](images/ka0Qk000000DYVJ_0EMQk00000B6d20.png)
+   ![Client secret value](./images/ka0Qk000000DYVJ_0EMQk00000B6d20.png)
 
 10. Next, navigate to the **Overview** tab and copy the **Application (client) ID** which is needed for the Netwrix Access Analyzer Connection Profile.  
-    ![Application client ID](images/ka0Qk000000DYVJ_0EMQk00000B6kbK.png)
+    ![Application client ID](./images/ka0Qk000000DYVJ_0EMQk00000B6kbK.png)
 
 ## Netwrix Access Analyzer Connection Profile
 

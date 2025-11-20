@@ -11,7 +11,7 @@ So to ensure Protected Mode is on and guarantee it stays on? Not to mention, how
 manage any of the other 1000+ Acrobat Pro X settings using Group Policy? Watch this video to find
 out.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/R5ApRNERoHA?si=duJCaStkuy9Pjb2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R5ApRNERoHA?si=duJCaStkuy9Pjb2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 One problem with Acrobat X Pro's **Protected Mode** security feature is that it is not enabled by
 default, especially if you need this feature to be always on. Furthermore, efficiently managing
@@ -114,7 +114,8 @@ the user changes job roles, we're going to totally put those settings back the w
 also remove the lockout. You can see how we do that in some of our other videos when we talk about
 our superpowers.
 
-[https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/](https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/)
+[https://policypak.com/resources/thank-you-whitepapers/](https://policypak.com/resources/thank-you-whitepapers/)
 for watching. If you like what you see here with Acrobat Reader, it's available for most
 applications. We've got a whole bunch of preconfigured Paks ready to use right now. Thanks so much.
 Take care.
+

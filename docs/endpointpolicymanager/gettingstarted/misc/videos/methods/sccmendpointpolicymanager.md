@@ -10,7 +10,7 @@ Do you want to deploy Netwrix Endpoint Policy Manager (formerly PolicyPak) setti
 idea of using Group Policy to do it? You're in luck–this video tells you how to create, export, and
 deploy Endpoint Policy Manager magic using your own desktop management system like SCCM or LanDesk!
 
-<iframe width="1700" height="956" src="https://www.youtube.com/embed/n1ZZpUbbNd0" title="Deploy Endpoint Policy Manager Settings Using SCCM or Other Management System!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n1ZZpUbbNd0" title="Deploy Endpoint Policy Manager Settings Using SCCM or Other Management System!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Deploy PolicyPak Settings Using SCCM or Other Management System
 
@@ -27,11 +27,11 @@ little bit wider.
 We're going to actually use three different components of the PolicyPak software. Here we go. Let's
 open up this node. I'm going to use the "Application Settings Manager" to manage some Firefox
 settings. I'm going to use the
-"[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)"
+"[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)"
 component here to make sure that my users can't download and run unknown ware, malicious software.
 And I'm going to use the "Browser Router" to make sure that every URL with the word "Google" in it
 will open up in Chrome, and I'll use it also to
-[https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites](https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites)
+[https://www.policypak.com/pp-blog/windows-10-block-websites](https://www.policypak.com/pp-blog/windows-10-block-websites)
 like Facebook.
 
 Let's start off with the "Application Settings Manager." There are other videos on the website that
@@ -39,7 +39,7 @@ will go into greater detail on all of these components. For today, all I want to
 some settings and then export them and deploy them using not Group Policy.
 
 Let's go over here. I want to deliver the setting that I want a particular "Home Page" to be there.
-Let's just go with "www.endpointpolicymanager.com." Then let's also say that we can't have users going into
+Let's just go with "www.policypak.com." Then let's also say that we can't have users going into
 incognito mode. Let's go over to "Extras." We're going to "Turn off private browsing," and we'll
 save that.
 
@@ -118,7 +118,7 @@ here.
 
 Now that we've done this, when we go to our settings that used to be ungoverned we'll find out a new
 thing. Let's open up "Mozilla Firefox" and see what happens. There we go. We have our homepage set
-to "www.endpointpolicymanager.com" just like we told it to. When we come here, we can no longer get into the
+to "www.policypak.com" just like we told it to. When we come here, we can no longer get into the
 incognito mode. So we ripped the knob off of that one, we set this homepage, and that was done using
 the Application Settings Manager.
 
@@ -141,3 +141,4 @@ it using SCCM or KACE or whatever you have.
 If this is interesting to you, let us know and we'll get you started on a free trial right away.
 
 I'll see you in the next video. Thanks for watching.
+

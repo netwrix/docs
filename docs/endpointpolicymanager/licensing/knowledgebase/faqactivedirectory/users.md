@@ -11,3 +11,4 @@ a computer is licensed for Endpoint Policy Manager, all/any users logged on that
 receive all computer and user GPOs involving Endpoint Policy Manager. This means that the users and
 computers can reside in separate OUs within your Active Directory structure. Only the computer needs
 to be licensed.
+

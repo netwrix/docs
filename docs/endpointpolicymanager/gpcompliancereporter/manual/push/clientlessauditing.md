@@ -48,3 +48,4 @@ with.
 ![gpcr_server_with_push_mode_20](/images/endpointpolicymanager/grouppolicycompliancereporter/mode/push/gpcr_server_with_push_mode_20.webp)
 
 Figure 56. Users reporting audit data.
+

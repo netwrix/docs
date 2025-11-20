@@ -7,7 +7,7 @@ sidebar_position: 100
 
 Netwrix Endpoint Policy Manager (formerly PolicyPak): Managing Favorites in IE
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4xYA0FaD53A?si=KEXNMi7GUl7QwsU1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4xYA0FaD53A?si=KEXNMi7GUl7QwsU1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Managing Favorites in IE
 
@@ -28,7 +28,7 @@ as it is.
 You can also set up new favorites. By way of example, you can just put one right on the root. I'll
 call this "Hello1, http://Microsoft.com." That will put a favorite right on the root. You can also
 make a folder and put a favorite in the folder. I'll call this "PolPakFolder/PolicyPakWebSite,
-https://www.endpointpolicymanager.com/, add." That's going to deliver PolicyPak into a folder called PolPak
+https://www.policypak.com/, add." That's going to deliver PolicyPak into a folder called PolPak
 Folder.
 
 You can also, if you want to, specify the icon. There's an "optional-icon" that you can specify.
@@ -88,3 +88,5 @@ ones that you declare, and it will only remove on delete the ones that you put t
 they put there. I hope that helps you out.
 
 Thanks so much. Talk to you soon.
+
+

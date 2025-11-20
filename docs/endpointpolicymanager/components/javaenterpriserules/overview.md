@@ -7,8 +7,7 @@ sidebar_position: 30
 # Java Enterprise Rules Manager
 
 :::note
-Before reading this section, please ensure you have read Book 2:
-[Installation Quick Start](/docs/endpointpolicymanager/gettingstarted/overviewinstall/overviewinstall.md), which will help you
+Before reading this section, please ensure you have read the [Installation Quick Start](/docs/endpointpolicymanager/gettingstarted/overviewinstall/overviewinstall.md), which will help you
 learn to do the following:
 :::
 
@@ -92,3 +91,5 @@ If you use the PolicyPak Cloud service, you can deliver Group Policy settings ev
 non-domain-joined machines over the Internet.
 
 :::
+
+

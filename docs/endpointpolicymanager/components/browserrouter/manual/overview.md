@@ -31,3 +31,5 @@ Browser Router solves the common problem of ensuring the right browser opens for
 2. Learn about Configuration to set up routing rules
 3. Check Internet Explorer settings if using IE routing
 4. Review Understanding Default Browser Policies for advanced scenarios
+
+

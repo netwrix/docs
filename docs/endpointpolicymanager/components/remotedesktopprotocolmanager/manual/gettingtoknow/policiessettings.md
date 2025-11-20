@@ -52,3 +52,5 @@ green it means that no value has been assigned to that variable.
 You can also configure experience settings such as optimized performance speed.
 
 ![getting_to_know_policypak_5](/images/endpointpolicymanager/remotedesktopprotocol/getting_to_know_endpointpolicymanager_5.webp)
+
+

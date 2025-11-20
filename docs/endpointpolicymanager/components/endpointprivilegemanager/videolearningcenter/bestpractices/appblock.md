@@ -9,7 +9,7 @@ If you're in charge of your domain, you can block local and other domain admins 
 applications you want to be elevated via Netwrix Endpoint Policy Manager (formerly PolicyPak) Least
 Priv manager. See the video for details.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZnjRd9NjMws?si=vnm3ofa1VwsPdCsh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZnjRd9NjMws?si=vnm3ofa1VwsPdCsh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi. This is Jeremy Moskowitz. In this video, I'm going to show you how you can enable your users to
 double click on items to install them in their context but elevated but prevent other admins like
@@ -108,3 +108,5 @@ way they want.
 Hope this video helps you out. Looking forward to helping you get started real soon.
 
 Thank you very much, and talk to you soon.
+
+

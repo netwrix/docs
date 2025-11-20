@@ -62,3 +62,6 @@ UWP applications are denied, but then applications with "Calc" or "Store" in the
 the publisher are allowed to run as shown below.
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/deny/denying_uwp_applications_6.webp)
+
+
+

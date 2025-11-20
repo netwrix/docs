@@ -33,11 +33,11 @@ Either of the following symptoms is present in your environment:
 ! Request for downloading published reports failed: Internal Server Error
 ```
 
-![Error message indicating 'Request for downloading published reports failed: Internal Server Error'](images/ka0Qk000000EHKL_0EMQk00000C2keA.png)
+![Error message indicating 'Request for downloading published reports failed: Internal Server Error'](./images/ka0Qk000000EHKL_0EMQk00000C2keA.png)
 
 - If the file is corrupted, the following error could appear when opening the Netwrix Access Analyzer console.
 
-![Console pop-up showing the error message 'Hexadecimal value 0x00, is an invalid character.'](images/ka0Qk000000EHKL_0EMQk00000C2hzg.png)
+![Console pop-up showing the error message 'Hexadecimal value 0x00, is an invalid character.'](./images/ka0Qk000000EHKL_0EMQk00000C2hzg.png)
 
   - Log entry example:
 
@@ -62,18 +62,18 @@ To resolve these errors, follow the steps below.
 
 3. To publish the report(s) again, right-click a needed Job Group (for example, **Jobs**), and select **Publish** to publish the reports from the selected job group or job without regenerating the report.
 
-![Publishing from a job group in Access Analyzer](images/ka0Qk000000EHKL_0EMQk00000BzUfZ.png)
+![Publishing from a job group in Access Analyzer](./images/ka0Qk000000EHKL_0EMQk00000BzUfZ.png)
 
 4. Select **Publish Reports** and click **Next**.
 
-![Navigation and publishing actions in Access Analyzer](images/ka0Qk000000EHKL_0EMQk00000BzScA.png)
+![Navigation and publishing actions in Access Analyzer](./images/ka0Qk000000EHKL_0EMQk00000BzScA.png)
 
 5. Select objects as needed. Then, click **Next** to run the report.
 
-![Selecting objects to publish](images/ka0Qk000000EHKL_0EMQk00000BzbFd.png)
+![Selecting objects to publish](./images/ka0Qk000000EHKL_0EMQk00000BzbFd.png)
 
 6. Once the report has run successfully, click **Finish** to close out of the Reporting web page.
 
-![Finish publishing reports](images/ka0Qk000000EHKL_0EMQk00000BzVN9.png)
+![Finish publishing reports](./images/ka0Qk000000EHKL_0EMQk00000BzVN9.png)
 
 > **NOTE:** Additionally, reports will be rebuilt when the related job completes its next run.

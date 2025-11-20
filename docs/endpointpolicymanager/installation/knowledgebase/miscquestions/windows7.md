@@ -12,10 +12,11 @@ algorithm that un-patched Windows 7 doesn't understand.
 
 So to get Endpoint Policy Manager Application Settings Manager Re-apply on Launch to work, Group
 Policy Preferences Scheduled Tasks, and Endpoint Policy Manager
- [https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html) to
+ [https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html) to
 work as expected, Windows 7 requires and updated patch.
 
 For Endpoint Policy Manager to work as expected on Windows 7, Windows 7
 requires [https://www.microsoft.com/en-us/download/details.aspx?id=46148](https://www.microsoft.com/en-us/download/details.aspx?id=46148) for
 64-bit and requires
 32-bit [https://www.microsoft.com/en-pk/download/details.aspx?id=46078](https://www.microsoft.com/en-pk/download/details.aspx?id=46078)
+

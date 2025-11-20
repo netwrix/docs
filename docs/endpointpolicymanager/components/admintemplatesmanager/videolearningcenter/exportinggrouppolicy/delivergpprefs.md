@@ -9,7 +9,7 @@ Not every GPPrefs item can be used on the Computer side. In this demonstration l
 Printers, Drive Maps and Internet settings… and deploy them to an OU of computers… regardless of
 where the user resides.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9XpPQUJ9Zm4" title="Endpoint Policy Manager:  Deliver GPPrefs items without using loopback mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9XpPQUJ9Zm4" title="Endpoint Policy Manager:  Deliver GPPrefs items without using loopback mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### GPprefs without loopback
 
@@ -20,7 +20,7 @@ only normally apply on the user side to any computer you want.
 This is kind of an advanced under-the-hood technique, but you're an advanced under-the-hood
 technique kind of guy, so I'm going to show you how this works. Basically, we're going to do some
 magic with Group Policy Preferences without
-[https://www.endpointpolicymanager.com/pp-blog/group-policy-loopback](https://www.endpointpolicymanager.com/pp-blog/group-policy-loopback),
+[https://www.policypak.com/pp-blog/group-policy-loopback](https://www.policypak.com/pp-blog/group-policy-loopback),
 but it does require that you're licensed for the PolicyPak On-Prem Suite or the PolicyPak Cloud
 Suite.
 
@@ -82,3 +82,5 @@ of the three.
 Okay, thanks so very much, and I hope this helps you out.
 
 Talk to you soon.
+
+

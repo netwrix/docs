@@ -9,7 +9,7 @@ This isn't a problem with Endpoint Policy Manager File Associations Manager, but
 the behavior of what occurs at very first login. Good news: There's a quick fix; just log out and
 back on, and then.. boom. Problem solved for good!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PH8zDNUE8XI" title="Endpoint Policy Manager File Associations Manager: Understanding the First Login" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PH8zDNUE8XI" title="Endpoint Policy Manager File Associations Manager: Understanding the First Login" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 :::note
 This is OLD behavior; Endpoint Policy Manager doesn't require logoff and back on for File
@@ -71,3 +71,5 @@ that person to log off and log back on not to see those prompts anymore, so do k
 you're using Endpoint Policy Manager File Associations Manager.
 
 I hope this helps you out. Looking forward to getting you started real soon.
+
+

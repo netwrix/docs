@@ -42,7 +42,7 @@ To resolve this error, follow the steps below:
 1. Open the **Query Properties** for the EWSMailbox task.
 2. Select **View XML**.
 
-![View XML screenshot](images/ka0Qk000000CDO5_0EMQk000008w1gf.png)
+![View XML screenshot](./images/ka0Qk000000CDO5_0EMQk000008w1gf.png)
 
 3. Insert the following code that best matches your environment within the ` <EWS_PROPERTIES></EWS_PROPERTIES> ` tags. This is located near the bottom of the XML.
 
@@ -82,11 +82,11 @@ To resolve this error, follow the steps below:
 
 4. On the **Query Properties** window, select **Configure**.
 
-![Configure button screenshot](images/ka0Qk000000CDO5_0EMQk000008vjWt.png)
+![Configure button screenshot](./images/ka0Qk000000CDO5_0EMQk000008vjWt.png)
 
 5. On the **Scan options** window, uncheck the option for **Match job host against autodiscovered host**.
 
-![Scan options screenshot](images/ka0Qk000000CDO5_0EMQk000008w3KH.png)
+![Scan options screenshot](./images/ka0Qk000000CDO5_0EMQk000008w3KH.png)
 
 6. Proceed through the wizard by selecting **Next** and complete the process by clicking **Finish** to close out the **EWSMailbox DC Wizard**.
 7. Select **OK** to close the **Query Properties** window.

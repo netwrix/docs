@@ -31,4 +31,5 @@ To fix the issue, restart the **WMI service** on the **target domain controller*
 3. Locate the **Windows Management Instrumentation Service** in the list.
 4. Right-click this service and select **Restart** from the popup menu.
 
-![User-added image](images/ka04u000000HcMv_0EM700000004wr9.png)
+![User-added image](./images/ka04u000000HcMv_0EM700000004wr9.png)
+

@@ -62,3 +62,5 @@ Figure 32. Choosing this option will allow the user to export the policy for lat
 Note that exported collections or policies maintain any Item-Level Targeting set within them. If
 you've used items that represent Group Membership in Active Directory, then those items will only
 function when the machine is domain-joined.
+
+

@@ -12,3 +12,5 @@ Replace the command-line argument (RED text-color) as per your requirement.
 `%systemroot%\explorer.exe "%userprofile%\Desktop\New Folder"`
 
 ![824_1_image-20210304053215-1](/images/endpointpolicymanager/startscreentaskbar/824_1_image-20210304053215-1.webp)
+
+

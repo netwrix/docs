@@ -5,7 +5,7 @@ get it installed? This is your "one-stop shop" video to explain it all. Just get
 deployed via GPO, an on-prem tool like SCCM, or an MDM tool like Intune, and... you're done! Once
 license... and that's it. We call it the "universal" license!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BXlR3yVoMxQ?si=BHZuzZDTOo9DsXoO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BXlR3yVoMxQ?si=BHZuzZDTOo9DsXoO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video, we're going to learn how to install your license files.
 This is what your license files should look like. Maybe the file names are a little different, but
@@ -148,3 +148,4 @@ saw how to do that too.
 
 Long story short, hope this helps you out. Looking forward to getting you started with PolicyPak
 real soon. Thank you so much.
+

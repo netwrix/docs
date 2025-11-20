@@ -23,21 +23,24 @@ Manager Creation Station.
 every system (or at least a test system where you want to perform troubleshooting).
 
 If those steps fail, and your problem reoccurs, please be prepared with the version information from
-the following areas, shown in Figure 98, Figure 99, and Figure 100.
+the following areas, shown In the figure shown, Figure 99, and The figure shown.
 
 ![troubleshooting_policypak_2](/images/endpointpolicymanager/troubleshooting/applicationsettings/troubleshooting_endpointpolicymanager_2.webp)
 
-Figure 98. Endpoint Policy Manager DesignStudio: Help | About.
+The figure shown. Endpoint Policy Manager DesignStudio: Help | About.
 
 ![troubleshooting_policypak_3](/images/endpointpolicymanager/troubleshooting/applicationsettings/troubleshooting_endpointpolicymanager_3.webp)
 
-Figure 99. Pak compiled version. With any Pak, open in the Group Policy Editor, and click Endpoint
+The figure shown. Pak compiled version. With any Pak, open in the Group Policy Editor, and click Endpoint
 Policy Manager and then About. The About dialog shows the version number used to compile your Pak.
 
 ![troubleshooting_policypak_4](/images/endpointpolicymanager/troubleshooting/applicationsettings/troubleshooting_endpointpolicymanager_4.webp)
 
-Figure 100. On Windows 7, you can see the version number of the CSE in the "Uninstall or change a
+The figure shown. On Windows 7, you can see the version number of the CSE in the "Uninstall or change a
 program" applet in Control Panel.
 
 Note that these screenshots do NOT necessarily represent the latest versions of Endpoint Policy
 Manager Application Settings Manager and are only shown here for the purposes of our example.
+
+
+

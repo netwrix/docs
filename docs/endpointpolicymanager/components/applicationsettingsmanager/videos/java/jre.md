@@ -13,7 +13,7 @@ of users? Bam! Done.
 Need to set security options for one group of users different than another group (users vs.
 developers)? That's Cake! Check out this video to see how it's done.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aJOp02QxK8M?si=nlBEvGqGqEFOnjiX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aJOp02QxK8M?si=nlBEvGqGqEFOnjiX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Manage Java JRE with Group Policy Video Transcript
 
@@ -95,3 +95,5 @@ more information on PolicyPak and also a free trial, go ahead and click on the "
 button on the right, and we'll get you started as soon as we see you there.
 
 Thanks so much, and we'll talk to you soon.
+
+

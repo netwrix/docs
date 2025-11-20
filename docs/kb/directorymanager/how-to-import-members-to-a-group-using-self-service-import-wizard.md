@@ -39,7 +39,7 @@ The process to import members is discussed in these steps:
 1. Launch the Netwrix Directory Manager portal and search for the Group you would like to import members into.
 2. Navigate to the **Members** tab and click on the **Import** button to launch the Import Wizard.
 
-   ![User-added image](images/ka0Qk000000Dfzp_0EMQk000001fbhN.png)
+   ![User-added image](./images/ka0Qk000000Dfzp_0EMQk000001fbhN.png)
 
 3. On the **Membership Lifecycle** page, specify whether the imported members will remain in the group permanently or temporarily. Provide the following information and click **Next**.
 
@@ -56,26 +56,26 @@ The process to import members is discussed in these steps:
 
    Members are added to the group on the date in the From box.
 
-   ![User-added image](images/ka0Qk000000Dfzp_0EMQk000001fbkb.png)
+   ![User-added image](./images/ka0Qk000000Dfzp_0EMQk000001fbkb.png)
 
 4. On the **Data Source** page, select and configure the data source that contains the objects to import to the group. You can choose between a **Local File** such as TXT, CSV, XLS, XLSX, and XML or an **External Data Source** such as SQL DB, ODBC, SCIM providers, etc.
 
-   ![User-added image](images/ka0Qk000000Dfzp_0EMQk000001fYTO.png)
+   ![User-added image](./images/ka0Qk000000Dfzp_0EMQk000001fYTO.png)
 
    - For an **External Data Source**, provide LDAP Criteria and an External Source in the Query Designer.
 
-     ![User-added image](images/ka0Qk000000Dfzp_0EMQk000001fbpR.png)
+     ![User-added image](./images/ka0Qk000000Dfzp_0EMQk000001fbpR.png)
 
      Click on the **Query Designer** button and provide the Data Source from where you would like to import the Membership.
 
-     ![User-added image](images/ka0Qk000000Dfzp_0EMQk000001fc5Z.png)
+     ![User-added image](./images/ka0Qk000000Dfzp_0EMQk000001fc5Z.png)
 
    - For the **Local File**, simply upload the relevant file.
 
-     ![User-added image](images/ka0Qk000000Dfzp_0EMQk000001fc8n.png)
+     ![User-added image](./images/ka0Qk000000Dfzp_0EMQk000001fc8n.png)
 
 5. Click **Next**.
-   ![User-added image](images/ka0Qk000000Dfzp_0EMQk000001fcDd.png)
+   ![User-added image](./images/ka0Qk000000Dfzp_0EMQk000001fcDd.png)
 
 6. On the **Import Options** step, select the search option and map the data source fields to the corresponding Active Directory fields. The wizard matches the values of the mapped fields to determine the objects to import.
 
@@ -86,15 +86,15 @@ The process to import members is discussed in these steps:
 
 8. Click **Next** to preview the objects returned for adding as group members.
 
-   ![User-added image](images/ka0Qk000000Dfzp_0EMQk000001fVfD.png)
+   ![User-added image](./images/ka0Qk000000Dfzp_0EMQk000001fVfD.png)
 
 9. Click **Finish**.
 
 ### Related Articles:
-- [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results.md)
-- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard.md)
-- [How to Trigger a workflow When a User Сreates a Group](/docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group.md)
-- [How To Add Message Approvers in Group Properties in Netwrix Directory Manager Portal](/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal.md)
+- [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results)
+- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard)
+- [How to Trigger a workflow When a User Сreates a Group](/docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group)
+- [How To Add Message Approvers in Group Properties in Netwrix Directory Manager Portal](/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal)
 - [Best Practices for Controlling Changes to Group Membership](https://docs.netwrix.com/docs/kb/directorymanager/best-practices-for-controlling-changes-to-group-membership#netwrix-directory-manager-best-practices)
-- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
-- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage.md)
+- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou)
+- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage)

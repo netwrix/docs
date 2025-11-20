@@ -29,13 +29,13 @@ Settings Manager for WinZip, which will affect all users who log onto the machin
 Switched policies are created on the Computer side, and they affect all users who use the effected
 machines.
 
-In Figure 40, you can see a GPO that affects Computer accounts. You use the AppSet in the same way
+In the figure shown, you can see a GPO that affects Computer accounts. You use the AppSet in the same way
 as you would on the User side; however, you configure it for the Computer side. The User-side policy
 settings will automatically affect every user who logs onto the targeted computer.
 
 ![policypak_application_settings_1_19](/images/endpointpolicymanager/applicationsettings/modes/endpointpolicymanager_application_settings_1_19.webp)
 
-Figure 40. A GPO that affects Computer accounts.
+The figure shown. A GPO that affects Computer accounts.
 
 :::tip
 Remember, that in order for Switched policies to apply, the GPO must be linked to an
@@ -67,3 +67,6 @@ processing, loopback is enabled for every GPO, which often means a lot more poli
 placed on the machine than are desired.
 
 :::
+
+
+

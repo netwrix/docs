@@ -38,7 +38,7 @@ The computer is included in this or another monitoring plan
 
 - The list of monitored computers in your User Activity monitoring plan states the **Duplicate** status for one or multiple servers.
 
-![Duplicate status screenshot](images/ka0Qk0000004pqL_0EM4u000008M4JN.png)
+![Duplicate status screenshot](./images/ka0Qk0000004pqL_0EM4u000008M4JN.png)
 
 - No monitoring data is available for the **Duplicate** servers.
 
@@ -70,7 +70,7 @@ Stop-Service -Name "NwUserActivitySvc"
 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Netwrix\User Activity Video Reporter Agent
 ```
 
-   ![Registry key screenshot](images/ka0Qk0000004pqL_0EM4u000008M4JS.png)
+   ![Registry key screenshot](./images/ka0Qk0000004pqL_0EM4u000008M4JS.png)
 
    Locate the `UniqID` value. Copy the value data and refer to it in the future steps—right-click the key and select **Modify...**. Once you copy the value, delete the `UniqID` value.
 
@@ -100,3 +100,4 @@ Start-Service -Name "NwUserActivitySvc"
 
 - Uninstall Netwrix Auditor — Delete Netwrix Auditor User Activity Core Service · v10.7  
   https://docs.netwrix.com/docs/auditor/10_8
+

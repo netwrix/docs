@@ -126,10 +126,12 @@ convenience the required User side Group Policy Preference XMLS are attached bel
 :::
 
 
-HTTP: [https://www.endpointpolicymanager.com/pp-files/2020-12-29_no-default-or-default-edge-
-then-set-to-chrome-http.xml](https://www.endpointpolicymanager.com/pp-files/2020-12-29_no-default-or-default-edge-
+HTTP: [https://www.policypak.com/pp-files/2020-12-29_no-default-or-default-edge-
+then-set-to-chrome-http.xml](https://www.policypak.com/pp-files/2020-12-29_no-default-or-default-edge-
 then-set-to-chrome-http.xml)
 
-HTTPS: [https://www.endpointpolicymanager.com/pp-files/2020-12-29_no-default-or-default-edge-
-then-set-to-chrome-https.xml](https://www.endpointpolicymanager.com/pp-files/2020-12-29_no-default-or-default-edge-
+HTTPS: [https://www.policypak.com/pp-files/2020-12-29_no-default-or-default-edge-
+then-set-to-chrome-https.xml](https://www.policypak.com/pp-files/2020-12-29_no-default-or-default-edge-
 then-set-to-chrome-https.xml)
+
+

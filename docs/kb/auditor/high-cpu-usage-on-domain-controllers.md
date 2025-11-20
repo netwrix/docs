@@ -39,7 +39,7 @@ There are two options to fix the issue:
    3. Create a DWORD called `UseWatcher` with value `1`
    4. Restart the **Netwrix Account Lockout Examiner service** via **Services.msc**
 
-   ![User-added image](images/ka04u000000HcUT_0EM7000000052iw.png)
+   ![User-added image](./images/ka04u000000HcUT_0EM7000000052iw.png)
 
 2. If the above does not help, disable usage of WMI to communicate with domain controllers. (A .Net-based mechanism will be used for it.)
 
@@ -50,4 +50,5 @@ There are two options to fix the issue:
    3. Change the `UseWMI` value to `0`
    4. Restart the **Netwrix Account Lockout Examiner service** via **Services.msc**
 
-   ![User-added image](images/ka04u000000HcUT_0EM7000000052jG.png)
+   ![User-added image](./images/ka04u000000HcUT_0EM7000000052jG.png)
+

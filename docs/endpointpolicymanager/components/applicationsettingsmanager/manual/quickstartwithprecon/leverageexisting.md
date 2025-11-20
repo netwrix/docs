@@ -26,11 +26,11 @@ manage Group Policy with the GPMC.
 **Step 2 –** To get started immediately, all you need to do is copy the` pp-WinZip 14 to 17.dll`
 file to the `C:\Program` Files `(x86)\PolicyPak\Extensions` folder (on 64-bit machines) or
 `C:\Program Files\PolicyPak\Extensions (on 32-bit machines)`. You can see how this is done in
-Figure 1.
+The figure shown.
 
 ![policypak_application_settings](/images/endpointpolicymanager/applicationsettings/preconfigured/quickstart/endpointpolicymanager_application_settings.webp)
 
-Figure 1. Copying the `DLL` file to the C: drive.
+The figure shown. Copying the `DLL` file to the C: drive.
 
 :::note
 If you don't see the `PolicyPak\Extensions` folder, you may not have installed the
@@ -38,3 +38,6 @@ Endpoint Policy Manager Admin Console.MSI (32-bit or 64-bit). This must be done 
 you manage Group Policy, and you must have the GPMC installed.
 
 :::
+
+
+

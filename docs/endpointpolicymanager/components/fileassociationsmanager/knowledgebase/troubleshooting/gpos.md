@@ -22,3 +22,5 @@ resulting association list:
 - .`txt -> Sublime.exe`, (Because GPO2 wins in the conflict.)
 - .`log-> Notepad.exe`, (Because there are no conflicts.)
 - `.cfg -> Sublime.exe` (Because there are no conflicts.)
+
+

@@ -15,3 +15,4 @@ three items by hand, then we can quickly rule out the following issues:
 - Licensing issues
 - Problems with the wrong CSE (too old or incorrect bits—32-bit or 64-bit—on the machine)
 - Problems wrapping up your XMLs into an MSI
+

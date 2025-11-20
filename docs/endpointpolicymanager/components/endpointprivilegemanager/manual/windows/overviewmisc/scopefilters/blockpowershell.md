@@ -22,3 +22,6 @@ set the scope to User and System processes, but use the scope Filter to SYSTEM.
 Result:
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/scopefilters/scenario_2b_block_powershell_2.webp)
+
+
+

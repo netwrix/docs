@@ -8,7 +8,7 @@ sidebar_position: 10
 Want to copy files from the same box to a different source? Here's the magic unlock on how to
 hand-edit the XML to do that.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u-5BzO1F3QQ" title="Endpoint Policy Manager: Remote Work Delivery Manager Local File Copy Magic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u-5BzO1F3QQ" title="Endpoint Policy Manager: Remote Work Delivery Manager Local File Copy Magic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy, and in this video, I'm going to show you how you can take files that live in a
 source folder locally and copy them to another local source folder using them Netwrix Endpoint
@@ -80,3 +80,5 @@ You can't just change the destination path to something like \\server\share\123.
 permitted. You can trick it locally here with the sources, but you can't trick the destination. That
 is not permitted by Remote Work Delivery Manager. Hope this video helps you out, and looking forward
 to seeing you in the inside. Take care.
+
+

@@ -9,7 +9,7 @@ Creating packs for your own applications is fun and easy. Watch this how-to vide
 you can create your own Paks for the software you use within your company. Goodbye ADM and ADMX
 files, hello Netwrix Endpoint Policy Manager (formerly PolicyPak)!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QiPSIhPa0pE?si=t6fWsV_PuogRtDkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QiPSIhPa0pE?si=t6fWsV_PuogRtDkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Creating Your First Pak using Endpoint Policy Manager Design Studio video transcript
 
@@ -219,3 +219,5 @@ manage that PolicyPak. We've talked about that in other videos.
 
 So with that in mind, I hope you've enjoyed "How to Create Your First PolicyPak." Thanks so much.
 I'll talk to you soon.
+
+

@@ -14,14 +14,14 @@ Configuration Wizard detects multiple values and what is meant by a labeled link
 
 :::tip
 Remember, the Configuration Wizard may find values that are new, changed, or deleted during any
-given capture. In the example in Figure 121, the "Name" text box field was configured by the wizard.
+given capture. In the example In the figure shown, the "Name" text box field was configured by the wizard.
 A value of "Test" was entered into the application.
 :::
 
 
 ![configuring_elements_using_14](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/configuring_elements_using_14.webp)
 
-Figure 121. A change to the Name textbox field.
+The figure shown. A change to the Name textbox field.
 
 Here, the wizard detected multiple changes. The key to the changes is as follows:
 
@@ -47,7 +47,7 @@ Figure 122, we can see that checking on the setting was changing "passwordreqlow
 
 ![configuring_elements_using_15](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/configuring_elements_using_15.webp)
 
-Figure 122. Re-trying a specific item with the Configuration Wizard.
+The figure shown. Re-trying a specific item with the Configuration Wizard.
 
 The Configuration Wizard will check the settings that are unknown and guess what the value should
 be, placing it into the appropriate checkbox. You have two choices here:
@@ -58,17 +58,17 @@ be, placing it into the appropriate checkbox. You have two choices here:
 - Continue onward with the Configuration Wizard and it will ask you to re-try a specific state (in
   this case, unchecking a checkbox) to see how the application behaves. Once the value is definitely
   known, the red color is removed from the value. No checkmarks are present to re-discover any
-  specific values. An example is shown in Figure 123.
+  specific values. An example is shown In the figure shown.
 
 ![configuring_elements_using_16](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/configuring_elements_using_16.webp)
 
-Figure 123. Neither checkbox is selected after re-trying a specific state.
+The figure shown. Neither checkbox is selected after re-trying a specific state.
 
 ## Linked Label Selection
 
 Some items in the Configuration Wizard will ask you about linked label selection (also known as
 label links). During the Configuration Wizard process, some elements, like text boxes, spinboxes,
-sliders, and other elements need know what they are setting. In Figure 124, you can see an example
+sliders, and other elements need know what they are setting. In the figure shown, you can see an example
 of setting a text box label link. The word that is most similar to the name of the element itself is
 its label. It might look like just some text on the form, but inside Endpoint Policy Manager
 DesignStudio, it has a type called "Label." In short, when asked to select the linked label, it's
@@ -78,13 +78,16 @@ the word "Name" on the Linked Label Selection page.
 
 ![configuring_elements_using_17](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/configuring_elements_using_17.webp)
 
-Figure 124. Selecting the linked label for an element.
+The figure shown. Selecting the linked label for an element.
 
-In the second example in Figure 125, we're configuring a slider and need to choose the linked label.
+In the second example In the figure shown, we're configuring a slider and need to choose the linked label.
 In this case, it could be argued that either "Speed:" or "Double-click speed" would make good linked
 label selections, because either one describes what the slider does. "Double-click speed" is likely
 a slightly better choice here for clarity.
 
 ![configuring_elements_using_18](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/configuring_elements_using_18.webp)
 
-Figure 125. Choosing a linked label.
+The figure shown. Choosing a linked label.
+
+
+

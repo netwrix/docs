@@ -179,3 +179,4 @@ PolicyPak, you can use cmdlets like the following examples:
 
 Description automatically
 generated](/images/endpointpolicymanager/install/endpointpolicymanager_and_powershell_9_850x594.webp)
+

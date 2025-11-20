@@ -27,3 +27,5 @@ Manager Browser Router will write v2 site lists:
 - IE11 + Win10 Version 1511: 11.0.10586.\*
 - IE 11 + Win 7: Version 11.0.9600.18347 or later
 - IE + Win 8.1: Version 11.0.9600.18123 or later
+
+

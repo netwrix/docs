@@ -9,7 +9,7 @@ Microsoft MVP Jeremy Moskowitz and Shane from Admin Arsenal show how to easily d
 PDQ Deploy and manage it with Netwrix Endpoint Policy Manager (formerly PolicyPak) for your entire
 organization.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LiRqOyVXR60?si=Jo5cmCCyDNMavIdV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LiRqOyVXR60?si=Jo5cmCCyDNMavIdV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Deploy and Manage WinZip with PDQ Deploy and Endpoint Policy Manager
 
@@ -115,3 +115,5 @@ Shane: I love it. I love your stuff.
 Jeremy: Onto the next video.
 
 Shane: Yes sir.
+
+

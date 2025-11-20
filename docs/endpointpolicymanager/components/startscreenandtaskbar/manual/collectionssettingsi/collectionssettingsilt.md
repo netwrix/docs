@@ -20,3 +20,5 @@ the following ways:
   policies that add icons to those groups.
 - With Endpoint Policy Manager Taskbar Manager, Item-Level Targeting can be used within collections,
   as well as policies, that pin icons to the Taskbar.
+
+

@@ -18,8 +18,11 @@ PolicyPak) DesignStudio:
 - Preview an existing AppSet (`Tools|Pak Preview`)
 
 You can see the list of items from the Endpoint Policy Manager DesignStudio Tools menu in
-Figure 164.
+The figure shown.
 
 ![using_designstudio_tools](/images/endpointpolicymanager/applicationsettings/designstudio/tools/using_designstudio_tools.webp)
 
-Figure 164. DesignStudio Tools menu.
+The figure shown. DesignStudio Tools menu.
+
+
+

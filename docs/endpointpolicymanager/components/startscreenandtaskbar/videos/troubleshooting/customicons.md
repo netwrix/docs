@@ -11,7 +11,7 @@ back in twice to see the changes the first time.
 
 `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2A8i7DhKWME" title="Endpoint Policy Manager Start Screen Manager and Special Custom Icons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2A8i7DhKWME" title="Endpoint Policy Manager Start Screen Manager and Special Custom Icons" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager Start Screen Manager and Special Custom Icons
 
@@ -97,3 +97,5 @@ requires you to also nuke those things. Hope this video helps you out and gets y
 doing custom icons.
 
 Thanks so very much. Talk to you soon.
+
+

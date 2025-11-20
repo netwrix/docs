@@ -30,7 +30,7 @@ Netwrix Directory Manager 11
 ## Symptom
 When you attempt to sort the **My Groups** listing in Netwrix Directory Manager (formerly GroupID) by the **Display Name** attribute, the groups do not sort in ascending (alphabetical) order as expected. The screen may display a “Loading” message, but the system fails to sort the listing.
 
-![Group listing in Directory Manager portal with Display Name column sorted in ascending order](images/ka0Qk000000EZ2j_0EMQk00000BoBWe.png)
+![Group listing in Directory Manager portal with Display Name column sorted in ascending order](./images/ka0Qk000000EZ2j_0EMQk00000BoBWe.png)
 
 ## Causes
 - The **Display Name** attribute is not mandatory for groups created directly in Active Directory, so some groups may not have this attribute populated.

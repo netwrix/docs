@@ -12,7 +12,7 @@ PolicyPak) with VMware Horizon Mirage, you will see instant results. When you im
 your desktops, Endpoint Policy Manager can manage that layer. Check out this video to see exactly
 how it is done:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/toDL5Z2G37Q?si=0GQO5z8JyHkDG_Fl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/toDL5Z2G37Q?si=0GQO5z8JyHkDG_Fl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak and VMware Horizon Mirage Video Transcript
 
@@ -48,11 +48,11 @@ Desktops") we will "Manage Firefox via PolicyPak." Now again, the applications d
 because we haven't gotten them there using Mirage.
 
 On the computer side, under "PolicyPak/Applications/New/Application" we'll pick
-[https://www.endpointpolicymanager.com/products/manage-mozilla-firefox-with-group-policy.html](https://www.endpointpolicymanager.com/products/manage-mozilla-firefox-with-group-policy.html)
+[https://www.policypak.com/products/manage-mozilla-firefox-with-group-policy.html](https://www.policypak.com/products/manage-mozilla-firefox-with-group-policy.html)
 Now remember, PolicyPak isn't delivering the application. That's what Mirage is going to do.
 PolicyPak is going to deliver and enforce the application's settings.
 
-If we pick "www.vmware.com" as the [https://dev.endpointpolicymanager.com/](https://dev.endpointpolicymanager.com/) we can
+If we pick "www.vmware.com" as the [https://policypak.com/](https://policypak.com/) we can
 also right click and "Lockdown this setting using the system-wide config file" so now the users
 can't work around it. Under "Security," we'll make sure that these checkboxes are always checked and
 also "Lockdown this setting using the system-wide config file." I'll go ahead and lockdown two out
@@ -102,3 +102,4 @@ together story with PolicyPak and VMWare Horizon Mirage.
 If you have any questions or want to get started with your trial of PolicyPak, we're here for you.
 
 Thanks so very much, and we'll talk to you soon.
+

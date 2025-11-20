@@ -16,3 +16,5 @@ Here's a video on how to do that (using Netwrix Endpoint Policy Manager (formerl
 Application Manager)
 
 [Using Shares to Store Your Paks (Share-Based Storage)](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/centralstoresharing/shares.md)
+
+

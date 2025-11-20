@@ -57,3 +57,5 @@ additional information on the event categories and IDs.
 ![1331_7_1836b2dba9db9365124356840324b8d1](/images/endpointpolicymanager/cloud/eventcollection/1331_7_1836b2dba9db9365124356840324b8d1.webp)
 
 **Step 8 –** You can edit the policy name and the policy conditions if needed.
+
+

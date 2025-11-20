@@ -40,7 +40,7 @@ Help us improve contents by providing feedback via the form which is available o
 
 > **IMPORTANT:** It is highly recommended to register and login to the Help Center in order to get access to all the content. Check these options in the top-right corner:  
 >  
-> ![Group 142.png](images/servlet_image_6d5dba18caac.png)
+> ![Group 142.png](./images/servlet_image_6d5dba18caac.png)
 
 1. Select the Knowledge base filter. To do this, use one of the following options:
    - Open a [search page with the selected **Knowledge Base** filter](/docs/kb/ or

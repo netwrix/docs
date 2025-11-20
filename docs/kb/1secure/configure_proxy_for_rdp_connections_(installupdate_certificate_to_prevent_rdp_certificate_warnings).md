@@ -151,3 +151,4 @@ This article outlines the process for installing or updating a certificate to pr
    ![Command Prompt showing sbpam-proxy.exe ca import command](./images/servlet_image_07c7409683d2.png)
 
 3. The new certificate has now been imported to an SbPAM Proxy Server. Repeat this process for all SbPAM Proxy Servers if using more than one. (The default installation of SbPAM uses one proxy service on the SbPAM server itself; however, additional proxy services can be distributed.)
+

@@ -24,3 +24,5 @@ See the following Knowledge Base articles for getting started with Group Policy.
 ## Endpoint Policy Manager Group Policy
 
 - [How to use PDQ Deploy to collect PPLOGS from remote computers then save them to a network location](/docs/endpointpolicymanager/deliverymethods/grouppolicy/knowledgebase/grouppolicy/pdqdeploy.md)
+
+

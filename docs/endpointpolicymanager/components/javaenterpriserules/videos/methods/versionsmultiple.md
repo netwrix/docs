@@ -11,7 +11,7 @@ Enterprise Mobility from Netwrix Endpoint Policy Manager (formerly PolicyPak) So
 multiple versions of Java and then MAP the correct version of Java to the right website. If you have
 ANY applications that have Java, you're going to FLIP OUT when you see this.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YFbWuREaXJc" title="Deploying Multiple Versions of Java to the Same Endpoint Using Endpoint Policy Manager and PDQ Deploy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YFbWuREaXJc" title="Deploying Multiple Versions of Java to the Same Endpoint Using Endpoint Policy Manager and PDQ Deploy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Deploying Multiple Versions of Java to the Same Endpoint Using Endpoint Policy Manager and PDQ Deploy
 
@@ -120,3 +120,5 @@ Shane: All right, I'm Shane.
 Jeremy: And I'm Jeremy.
 
 Shane: Talk to you later
+
+

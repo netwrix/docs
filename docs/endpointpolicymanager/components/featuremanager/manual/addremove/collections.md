@@ -22,3 +22,5 @@ The only item you might want to change regularly is the **Reboot Mode**. For now
 You can see your collection added.
 
 ![quickstart_adding_and_removing_2](/images/endpointpolicymanager/feature/addremove/quickstart_adding_and_removing_2.webp)
+
+

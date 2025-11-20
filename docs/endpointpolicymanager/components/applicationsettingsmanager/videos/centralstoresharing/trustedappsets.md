@@ -19,4 +19,6 @@ Before heading down this path please watch the backup / restore videos:
 - [Endpoint Policy Manager Application Settings Manager: Backup, Restore, Export, Import](/docs/endpointpolicymanager/gettingstarted/misc/videos/upgradingmaintenance/backup.md)
 - [Endpoint Policy Manager: Backup and Restore Options to Recover from nearly any problem](/docs/endpointpolicymanager/gettingstarted/misc/videos/upgradingmaintenance/backupoptions.md)
 
-<iframe width="1642" height="924" src="https://www.youtube.com/embed/j8NnBbMuaUQ" title="Endpoint Privilege Admin Approval: Using Email / Long Codes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j8NnBbMuaUQ" title="Endpoint Privilege Admin Approval: Using Email / Long Codes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+

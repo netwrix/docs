@@ -64,3 +64,5 @@ Use" from the CMD prompt try enabling the "Launch folder windows in a separate p
 image below) to see if that resolves the issue.
 
 ![216_9_image-20210204105234-1](/images/endpointpolicymanager/scriptstriggers/mappeddrives/216_9_image-20210204105234-1.webp)
+
+

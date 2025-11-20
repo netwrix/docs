@@ -10,7 +10,7 @@ Some applications just don't work properly without admin rights. But DONT give t
 administrator access! Instead, use FSLogix to hide/reveal apps users need, and use Netwrix Endpoint
 Policy Manager (formerly PolicyPak) to ELEVATE those applications and situations when needed.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/a8bq9EejG6U" title="Endpoint Policy Manager + FSLogix: Elevating applications when needed (and available by FSLogix)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/a8bq9EejG6U" title="Endpoint Policy Manager + FSLogix: Elevating applications when needed (and available by FSLogix)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak + FSLogix: Elevating applications when needed (and available by FSLogix)
 
@@ -92,3 +92,4 @@ all because the application is being hidden with FSLogix.
 So there you go. That's the better together story using PolicyPak to elevate applications when
 needed and use FSLogix to hide them for the guys you don't want to see them.  
 Thanks so much.
+

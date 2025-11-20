@@ -22,3 +22,5 @@ Java 7 Pak technique:
 Java 8 Pak technique:
 
 ![105_3_17-8](/images/endpointpolicymanager/applicationsettings/preconfigured/java/105_3_17-8.webp)
+
+

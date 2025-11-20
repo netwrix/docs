@@ -9,7 +9,7 @@ sidebar_position: 30
 Endpoint Policy Manager Browser Router settings can be exported as an XML file.
 Right-click` Computer Configuration | PolicyPak | Browser Router` or
 `User Configuration | PolicyPak | Browser Router`, and pick the collection you wish to export, as
-shown in Figure 13. For full details on the Endpoint Policy Manager Browser Router, see Book 5:
+shown in Figure 13. For full details on the Endpoint Policy Manager Browser Router, see the
 [Browser Router](/docs/endpointpolicymanager/components/browserrouter/overview.md).
 
 ![deploying_policypak_directives_12](/images/endpointpolicymanager/mdm/xmldatafiles/deploying_endpointpolicymanager_directives_12.webp)

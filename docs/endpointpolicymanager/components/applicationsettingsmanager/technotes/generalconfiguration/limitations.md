@@ -22,3 +22,5 @@ almost 10-15 Paks entries to reach 5MB.
 On Windows 8 and later, the max size is 100MB per Group Policy Object, meaning you can have a lot
 more entries if you wanted within one Group Policy Object without issue (provided your target
 machines are Windows 8 and later).
+
+

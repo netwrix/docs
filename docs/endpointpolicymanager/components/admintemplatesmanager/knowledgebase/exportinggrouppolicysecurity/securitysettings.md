@@ -27,3 +27,5 @@ with the cloud or MDM service, as seen here.
 ![617_4_ppsec-kb-01-img-04](/images/endpointpolicymanager/troubleshooting/gpoexport/617_4_ppsec-kb-01-img-04.webp)
 
 You'll be managing your Windows Security Settings through the cloud or MDM service in no time!
+
+

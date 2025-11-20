@@ -9,7 +9,7 @@ Windows 10 File Associations shouldn't be done via XML file. That's a total wast
 doesn't help you out when your needs change. Instead, use Endpoint Policy Manager File Associations
 Manager to manage both COMPUTER and USER file associations. You're gonna love it.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nUCLWJ3VVNg" title="Endpoint Policy Manager File Associations Manager: Manage User and Computer File Associations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nUCLWJ3VVNg" title="Endpoint Policy Manager File Associations Manager: Manage User and Computer File Associations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, Founder and CTO of Endpoint Policy Manager Software, and in this video
 I'm going to show you how you can manage the heck out of your Windows 10 file associations. Boy
@@ -111,3 +111,5 @@ gets exactly the same settings.
 
 This is amazing. I hope you love it as much as we love to bring it to you. Thank you very much for
 watching, and hope to get you started with a trial real soon. Take care.
+
+

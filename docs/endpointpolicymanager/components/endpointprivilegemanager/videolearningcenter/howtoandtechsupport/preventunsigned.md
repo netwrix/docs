@@ -8,7 +8,7 @@ sidebar_position: 90
 Unsigned apps? Bah. If they're not signed, make sure they don't run. Use one checkbox and PolicyPak
 SecureRun makes it happen.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aComODiEzDk?si=zaDRzbz-w1tOueaC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aComODiEzDk?si=zaDRzbz-w1tOueaC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, and in this video, we're going to talk about an increased security
 feature to PolicyPak SecureRun. In other videos, you saw me turn on PolicyPak SecureRun, which will
@@ -46,3 +46,5 @@ that run through anyway, but this version is also going to just be blocked. Okay
 you've got your bases covered. Nice new feature helping make your world even more secure than it was
 before that. Hope this helps you out. Looking forward to getting you started with PolicyPak real
 soon.
+
+

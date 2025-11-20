@@ -33,7 +33,7 @@ on the Master Desktop Image.
 
 The required PPC client version (20.5.2449.838 or higher) can be found within your PPC Portal at the
 following page
-[https://cloud.endpointpolicymanager.com/ManageCustomer/UserList](https://cloud.endpointpolicymanager.com/ManageCustomer/UserList)
+[https://cloud.policypak.com/ManageCustomer/UserList](https://cloud.policypak.com/ManageCustomer/UserList)
 under the Downloads section, by clicking on the Download other versions link at the bottom of the
 page.
 
@@ -102,7 +102,7 @@ on the Master Desktop Image.
 
 The required PPC client version (20.5.2449.838 or higher) can be found within your PPC Portal on the
 following page
-[https://cloud.endpointpolicymanager.com/ManageCustomer/UserList](https://cloud.endpointpolicymanager.com/ManageCustomer/UserList)
+[https://cloud.policypak.com/ManageCustomer/UserList](https://cloud.policypak.com/ManageCustomer/UserList)
 under the **Downloads** section, by clicking on the Download other versions link at the bottom of
 the page.
 
@@ -192,7 +192,7 @@ ensure that you have followed all steps exactly.
 
 ```
 Could not sync with the cloud. 
-A network error occurred during sending RegisterComputer to https://cloudsvc.endpointpolicymanager.com/Services/Registration: Keyset does not exist
+A network error occurred during sending RegisterComputer to https://cloudsvc.policypak.com/Services/Registration: Keyset does not exist
 ```
 
 ![332_10_image-20210529214259-11](/images/endpointpolicymanager/integration/332_10_image-20210529214259-11.webp)
@@ -204,3 +204,5 @@ Using `GPEDIT.MSC`, verify that the following setting **Run startup scripts asy
 enabled under **Local Computer Policy** > **Administrative Templates** > **System**.
 
 ![332_11_image-20210529214259-10](/images/endpointpolicymanager/integration/332_11_image-20210529214259-10.webp)
+
+

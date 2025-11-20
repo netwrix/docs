@@ -32,7 +32,7 @@ information.
 :::
 
 
-**Step 2 –** At a command prompt, type in the following: `telnet cloud-agent.endpointpolicymanager.com 443`
+**Step 2 –** At a command prompt, type in the following: `telnet cloud-agent.policypak.com 443`
 
 ![Telnet Cloud Agent Script](/images/endpointpolicymanager/troubleshooting/cloud/telnetcloudagent.webp)
 
@@ -43,7 +43,7 @@ information.
 
 ![Communication Passes](/images/endpointpolicymanager/troubleshooting/cloud/communicationpasses.webp)
 
-**Step 3 –** You can also try `telnet cloud-agent.endpointpolicymanager.com 80`
+**Step 3 –** You can also try `telnet cloud-agent.policypak.com 80`
 
 - If the command just hangs and takes a long time to complete, then comes back with "Connection
   failed", then the communication failed.
@@ -60,3 +60,5 @@ Additional Considerations
   succeeds. If that still fails to work, see the
   [I am getting an error about "GPSVC failed at sign-in". This error occurs exactly one time. What does this mean?](/docs/endpointpolicymanager/installation/knowledgebase/installandupgrade/gpsvcfailed.md) topic
   for additional information on alternative time fix instructions.
+
+

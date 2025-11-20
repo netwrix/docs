@@ -21,3 +21,5 @@ In those cases, they are done upon customer request and are a "best effort" basi
 Remember though: Netwrix Endpoint Policy Manager (formerly PolicyPak) Application Manager comes with
 the PolicyPak DesignStudio, which means you are always able to create and/or update the AppSets
 without waiting for us if you so choose.
+
+

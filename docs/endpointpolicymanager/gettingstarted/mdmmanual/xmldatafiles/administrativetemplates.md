@@ -18,3 +18,4 @@ Figure 15. Exporting the policy as an XML file.
 ![deploying_policypak_directives_16](/images/endpointpolicymanager/mdm/xmldatafiles/deploying_endpointpolicymanager_directives_16.webp)
 
 Figure 16. Exporting the collection as an XML file.
+

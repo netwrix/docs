@@ -50,7 +50,7 @@ Check for the current Netwrix Data Classification version on any of the Netwrix 
    3. Right click a service with the **Running** status and select **Stop**.
 
    > TIP: you can change startup type to **Manual**, so then they don’t startup on their own:  
-   > ![User-added image](images/ka0Qk000000Codl_0EM4u000008Liup.png)
+   > ![User-added image](./images/ka0Qk000000Codl_0EM4u000008Liup.png)
 
 3. In the **Services** window, scroll down to find the following services:
    - NDC Classifier
@@ -58,7 +58,7 @@ Check for the current Netwrix Data Classification version on any of the Netwrix 
    - NDC Indexer
 
 4. For each service, do the following:  
-   ![Picture2.png](images/ka0Qk000000Codl_0EM4u000008LhoR.png)
+   ![Picture2.png](./images/ka0Qk000000Codl_0EM4u000008LhoR.png)
    1. Right click a service name, select **Properties** and go to the **Log on** tab.
    2. Enter new password.
    3. Click on **Apply**.
@@ -73,24 +73,24 @@ Check for the current Netwrix Data Classification version on any of the Netwrix 
       > **Fresh install of v5.7.x.x**: NDCAppPool
 
    3. Click on the application and then on the right pane, click on **Advanced Settings**.  
-      ![Picture3.png](images/ka0Qk000000Codl_0EM4u000008LhrQ.png)
+      ![Picture3.png](./images/ka0Qk000000Codl_0EM4u000008LhrQ.png)
 
 6. Once you are in the **Advanced Settings**, go to **Process Model** > **Identity** > **...**  
-   ![Picture4.png](images/ka0Qk000000Codl_0EM4u000008Lhog.png)
+   ![Picture4.png](./images/ka0Qk000000Codl_0EM4u000008Lhog.png)
 
 7. In the **Application Pool Identity** window do the following:
    1. Click on **Set**.
    2. Enter new credentials (always enter your domain before the user as not doing so can cause problems later).
    3. Click on **OK**.  
-      ![Picture5.png](images/ka0Qk000000Codl_0EM4u000008Lhol.png)
+      ![Picture5.png](./images/ka0Qk000000Codl_0EM4u000008Lhol.png)
 
 8. Since you are in the IIS, head into your Netwrix Data Classification webpage by doing the following:
    1. Expand the **Sites** folder.
    2. Expand **Default Web Site** then click on **NDC2** or **ConceptQS**.
    3. Click on **Browse** on the right pane.  
-      ![Picture6.png](images/ka0Qk000000Codl_0EM4u000008LhrV.png)  
+      ![Picture6.png](./images/ka0Qk000000Codl_0EM4u000008LhrV.png)  
       Result: the Netwrix Data Classification's **System Dashboard** section appears:
-      ![Picture7.png](images/ka0Qk000000Codl_0EM4u000008Lhrk.png)
+      ![Picture7.png](./images/ka0Qk000000Codl_0EM4u000008Lhrk.png)
 
    > IMPORTANT: follow the steps below if only you have setup the same Service Account for more than just the services such as SQL Access or SQL Server Instance Services
 
@@ -102,12 +102,12 @@ Check for the current Netwrix Data Classification version on any of the Netwrix 
     1. Open the `conceptindexer` folder.
     2. To sort documents, click **Type** once.
     3. Open the `ConceptConfig.exe` file.  
-       ![Picture8.png](images/ka0Qk000000Codl_0EM4u000008Lhp0.png)
+       ![Picture8.png](./images/ka0Qk000000Codl_0EM4u000008Lhp0.png)
 
 11. In the **Netwrix Data Classification: Database Configuration** window, proceed as follows:
     1. Change user password.
     2. Click on **Test Connection** to have Netwrix Data Classification try to connect with your new credentials.  
-       ![Picture9.png](images/ka0Qk000000Codl_0EM4u000008LhpP.png)  
+       ![Picture9.png](./images/ka0Qk000000Codl_0EM4u000008LhpP.png)  
        Result: a dialog window with the **Connection Test Succeeded** message appears.
 
 12. Repeat for the other service folder.

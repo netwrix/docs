@@ -66,3 +66,5 @@ Item-Level Targeting is applied to a collection, then none of the items in the c
 unless the Item-Level Targeting on the collection evaluates to True.
 
 :::
+
+

@@ -13,12 +13,12 @@ use that section. Many also let you specify the first line as:
 MODE=REPLACE or MODE=MERGE
 ```
 
-In Figure 3, you can see the Site to Zone Assignment in the Security tab has the default example set
+In the figure shown, you can see the Site to Zone Assignment in the Security tab has the default example set
 with MODE=REPLACE. The figure also shows some examples on how to use the special section.
 
 ![how_to_use_special_sections](/images/endpointpolicymanager/applicationsettings/preconfigured/internetexplorer/how_to_use_special_sections.webp)
 
-Figure 3. Using the Site to Zone Assignment special section.
+The figure shown. Using the Site to Zone Assignment special section.
 
 :::note
 If you leave the MODE line off, the default is MERGE.
@@ -36,3 +36,6 @@ Here's what each mode does:
 
 In the next sections, we'll explore each tab and highlight anything noteworthy with examples, tips
 and tricks, and exceptions.
+
+
+

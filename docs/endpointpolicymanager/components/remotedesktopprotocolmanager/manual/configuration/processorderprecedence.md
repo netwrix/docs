@@ -14,3 +14,5 @@ to highest.
 ![using_item_level_targeting_5](/images/endpointpolicymanager/remotedesktopprotocol/itemleveltargeting/using_item_level_targeting_5.webp)
 
 ![using_item_level_targeting_6](/images/endpointpolicymanager/remotedesktopprotocol/itemleveltargeting/using_item_level_targeting_6.webp)
+
+

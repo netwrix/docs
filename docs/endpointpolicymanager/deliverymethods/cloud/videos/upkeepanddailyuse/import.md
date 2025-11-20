@@ -10,7 +10,7 @@ PolicyPak) Cloud. Use our wizard-driven UI to take GPO contents for Group Policy
 GPPreferences and/or Endpoint Policy Manager settings and quickly upload them. When you want the
 FASTEST onramp from GPO to the Cloud... this is it !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hovqVVeekU8" title="Endpoint Policy Manager Cloud: Instantly import existing real GPOs to Endpoint Policy Manager Cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hovqVVeekU8" title="Endpoint Policy Manager Cloud: Instantly import existing real GPOs to Endpoint Policy Manager Cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video I want to show you how you can take an existing GPO or
 multiple GPOs and quickly import them into PolicyPak Cloud. Here's a GPO that's called DEMO GPO.
@@ -62,7 +62,7 @@ If you want to, you can put multiple GPOs in. I recommend you just do one at a t
 you at this point to make some choices. I'm just going to import this one here.
 
 If you don't know what the contents are here, let's say this shortcut item, we give you a little
-brief overview of what's going on here. Oh, yeah, that's the shortcut to endpointpolicymanager.com. The point is
+brief overview of what's going on here. Oh, yeah, that's the shortcut to policypak.com. The point is
 that we kind of give you the XML view of what's happening here. I'll show you another one here. This
 is some items that manage the Control Panel. It will kind of give you like a brief overview of
 what's happening here.
@@ -98,3 +98,5 @@ They're now hanging out in XML data files, and you're ready to link them over to
 places in Computer Groups. Couldn't be easier to take existing GPO contents and get them into
 PolicyPak Cloud. I think this is just amazing. I hope you do too. I hope this helps you out. Looking
 forward to getting you started with PolicyPak Cloud real soon. Thanks.
+
+

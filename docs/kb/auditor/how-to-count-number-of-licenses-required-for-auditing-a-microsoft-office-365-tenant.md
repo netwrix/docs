@@ -60,3 +60,6 @@ $userMailboxes.count
 3. The displayed number represents how many mailbox accounts you need to purchase licenses for.
 
 Original KB Article 2082
+
+
+

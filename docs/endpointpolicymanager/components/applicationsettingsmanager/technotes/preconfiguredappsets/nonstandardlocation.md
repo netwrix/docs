@@ -25,3 +25,5 @@ Therefore the most common cases and scenarios are:
   to perform UI lockdown.
 - If they run a portable version of Firefox which has no install AND stores nothing in the users'
   profile, you typically cannot deliver settings or perform UI lockdown.
+
+

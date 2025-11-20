@@ -38,3 +38,4 @@ See [MDM Intune company name troubleshooting](/docs/endpointpolicymanager/licens
 Between the count (pictures) and the company name (text file), we'll have the two pieces we need.
 
 Send them to your Sales team if requested and/or to close the loop on a support request.
+

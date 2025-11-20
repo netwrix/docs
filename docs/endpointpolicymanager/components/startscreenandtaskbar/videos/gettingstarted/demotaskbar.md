@@ -8,7 +8,7 @@ sidebar_position: 30
 Quickly and easily manage what icons are pinned to the Windows 10 Taskbar. Use Group Policy, SCCM or
 your MDM service. It couldn't be easier.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JPLm1OCqKpo" title="Endpoint Policy Taskbar Manager: Quick Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JPLm1OCqKpo" title="Endpoint Policy Taskbar Manager: Quick Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak Taskbar Manager: Quick Demo
 
@@ -66,3 +66,5 @@ knock your socks off, I don't know what will. I hope this makes you as happy as 
 you're looking to get started soon, just join us for the webinar and you can get started right away.
 
 Thanks so very much, and talk to you soon.
+
+

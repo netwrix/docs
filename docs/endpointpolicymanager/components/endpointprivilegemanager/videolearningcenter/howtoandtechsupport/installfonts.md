@@ -8,7 +8,7 @@ sidebar_position: 20
 How do enable users to install their own fonts? With Netwrix Endpoint Policy Manager (formerly
 PolicyPak) of course! Check out this video to see how its done.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jVvEfx98054?si=KHsyNHk2tzc-3Nrx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jVvEfx98054?si=KHsyNHk2tzc-3Nrx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Enable end-users to install their own fonts.
 
@@ -45,3 +45,5 @@ able to install the font here as well.
 
 Okay, I hope it helps.  
 Thank you.
+
+

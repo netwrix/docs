@@ -33,3 +33,5 @@ MDM.
 Inside the exported XML you can see the certificate embedded like this and ready for use.
 
 ![663_2_q10-img-2](/images/endpointpolicymanager/cloud/security/580_2_q10-img-2.webp)
+
+

@@ -165,3 +165,5 @@ from a CMD prompt to speed up the process. Chrome and Firefox will create a shor
 by default but the WinZip 14.5 MSI does not, to verify that WinZip installed correctly you can try
 to launch WinZip with the following command:` "C:\Program Files (x86)\WinZip\WINZIP32.EXE"` from
 Start > Run or a CMD prompt.
+
+

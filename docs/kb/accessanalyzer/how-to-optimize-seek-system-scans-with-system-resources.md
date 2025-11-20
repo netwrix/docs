@@ -56,7 +56,7 @@ To comfortably scan 4 file systems using a dedicated proxy server, the optimized
 2. Verify the number of SDD scan processes:
    - On the **Sensitive Data Settings** page of the FSAA Data Collector query settings, set the **Number of SDD Scan Processes** to reflect the available CPU threads on the scanning server. This number should not exceed `1-2x` the number of available CPU threads. By default, this is set to `2`.
 
-   ![Sensitive Data Settings page example](images/ka0Qk000000D59x_0EMQk00000BK3Rd.png)
+   ![Sensitive Data Settings page example](./images/ka0Qk000000D59x_0EMQk00000BK3Rd.png)
 
    > **NOTE:** If the scan server has other responsibilities (e.g., NEA Console server, busy file server, SQL server), take those into account when configuring how many CPU threads should be allocated for SDD scan processes.
 

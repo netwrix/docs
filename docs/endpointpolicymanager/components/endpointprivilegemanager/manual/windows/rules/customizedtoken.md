@@ -21,5 +21,8 @@ The common use cases for needing to manage a customized token are:
   [Reduce or specify Service Account Rights](/docs/endpointpolicymanager/components/endpointprivilegemanager/videolearningcenter/bestpractices/serviceaccountrights.md)
   video demonstration.
 - Drag-and-drop issues between applications. For ore information, see the
-  [I elevated an application, but drag and drop between the elevated and other non-elevated applications isn't working anymore. What can I try?](/docs/endpointpolicymanager/components/endpointprivilegemanager/knowledgebase/tipsforadminapproval/dragdrop.md)
+  [I elevated an application, but drag and drop between the elevated and other non-elevated applications isn't working anymore. What can I try?](/docs/endpointpolicymanager/components/endpointprivilegemanager/technotes/tipsforadminapproval/dragdrop.md)
   topic.
+
+
+

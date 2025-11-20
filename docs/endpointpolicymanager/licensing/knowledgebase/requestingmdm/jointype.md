@@ -33,3 +33,4 @@ Using LT, you can see all computers noted above would be counted within LT for l
 as seen here.
 
 ![754_2_2_950x795](/images/endpointpolicymanager/license/mdm/754_2_2_950x795.webp)
+

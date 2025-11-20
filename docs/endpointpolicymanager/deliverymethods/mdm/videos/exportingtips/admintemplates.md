@@ -9,7 +9,7 @@ MDM solutions are awesome, but they don't have real group policy, or extra Windo
 management features. Watch this video and learn how to use Netwrix Endpoint Policy Manager (formerly
 PolicyPak) to deliver REAL Group Policy settings to all your MDM enrolled Windows 10 machines.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZXp4gGKYgO0" title="Deliver Group Policy Admin Templates Using Your MDM Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZXp4gGKYgO0" title="Deliver Group Policy Admin Templates Using Your MDM Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with Endpoint Policy Manager Software. Imagine this scenario. You're getting
 prepared for having remote workers, people working from home, and you invest in an MDM solution,
@@ -61,3 +61,5 @@ here, just like we expected. We were able to deliver real group policy settings 
 machines using the Admin Templates Manager and then deploying with your existing MDM service. If
 this is of interest to you, get signed up for our webinar, and we'll get you started on a 30-day
 free trial right away. Thanks so much.
+
+

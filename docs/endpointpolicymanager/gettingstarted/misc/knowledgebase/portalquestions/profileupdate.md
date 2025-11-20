@@ -37,3 +37,4 @@ and acknowledge.
 
 **Step 4 –** Afterward, the contact will receive an email at the new address where they can click to
 confirm the email address.
+

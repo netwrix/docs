@@ -10,7 +10,7 @@ WVD is "all about the apps" which is great. Now how do you manage them? We have 
 our website, but this one shows how quickly and easily you can manage your WVD apps using Netwrix
 Endpoint Policy Manager (formerly PolicyPak).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JBBOS6oImFw" title="Endpoint Policy Manager + WVD: Manage Applications Settings" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JBBOS6oImFw" title="Endpoint Policy Manager + WVD: Manage Applications Settings" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi. This is Jeremy Moskowitz, former 15-year Group Policy MVP and Founder of PolicyPak Software. In
 this video, we're going to learn how you can take your Windows Virtual Desktop applications and
@@ -54,7 +54,7 @@ Now I'll just right click, "New Application," and I'll pick "PolicyPak for Mozil
 We'll go ahead and double click on this guy. We have over 500 preconfigured Paks so if there's some
 particular application you want to manage, chances are we can do it.
 
-If you want to set the "Home Page" to "www.endpointpolicymanager.com," that's great. While we're here, why don't
+If you want to set the "Home Page" to "www.policypak.com," that's great. While we're here, why don't
 we right click and "Lockdown this setting using the same system-wide config file" so users can't be
 naughty and work around it. We'll go ahead and do that.
 
@@ -81,7 +81,7 @@ are fast enough here, maybe we can see PolicyPak's magic kick in right here. It 
 its thing, but the idea is that PolicyPak runs right alongside with Group Policy at logon time. And
 when it does, magic occurs.
 
-There you can see, "www.endpointpolicymanager.com" as the default there. If we take a look at some of the other
+There you can see, "www.policypak.com" as the default there. If we take a look at some of the other
 settings that we set, go to "Tools/Options" here, we can see that we've got the "Home page" locked
 down. We can see that we've got "Never check for updates" the way we want to as well. And then if we
 go to "Privacy & Security," we've unchecked "Remember logins and passwords for websites."
@@ -97,3 +97,4 @@ All right, I hope this video helps you out. Looking forward to getting you start
 real soon.
 
 Thanks.
+

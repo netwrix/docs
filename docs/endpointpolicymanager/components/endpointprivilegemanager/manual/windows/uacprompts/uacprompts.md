@@ -45,3 +45,6 @@ that they no longer need, they will also be prevented by a UAC prompt, seen here
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/tool/helper/overcoming_common_uac_prompts_1.webp)
 
 After setting up Endpoint Policy Manager’s Helper Tools, you can overcome all three of these issues.
+
+
+

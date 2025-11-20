@@ -9,3 +9,5 @@ If you are enabling remote work for your users, you might want to get the PP Clo
 installed... on your ON-prem machines. This is permitted, but you need a PP Least Priv manager rule
 on the machine via Group Policy FIRST. Use this idea to get the machine READY to install the PP
 Cloud client which requires local admin rights.
+
+

@@ -9,20 +9,23 @@ sidebar_position: 50
 You may want to work on several AppSets before you begin the compiling process for each one.  You
 can go back and compile any DesignStudio project at any time, and you can use the Batch Compile tool
 to compile multiple AppSets at once.  To do this, go to `Tools > Batch Compile`, as shown in
-Figure 180.
+The figure shown.
 
 ![using_designstudio_tools_16_624x300](/images/endpointpolicymanager/applicationsettings/designstudio/tools/using_designstudio_tools_16_624x300.webp)
 
-Figure 180. Using the Batch Compile tool.
+The figure shown. Using the Batch Compile tool.
 
-Then, select the XML files you want to compile. In Figure 181, we have selected Putty and WinZip.
+Then, select the XML files you want to compile. In the figure shown, we have selected Putty and WinZip.
 
 ![using_designstudio_tools_17](/images/endpointpolicymanager/applicationsettings/designstudio/tools/using_designstudio_tools_17.webp)
 
-Figure 181. Selecting the projects to compile.
+The figure shown. Selecting the projects to compile.
 
-It is recommended that you perform the compiling processes in the background as shown in Figure 182.
+It is recommended that you perform the compiling processes in the background as shown In the figure shown.
 
 ![using_designstudio_tools_18](/images/endpointpolicymanager/applicationsettings/designstudio/tools/using_designstudio_tools_18.webp)
 
-Figure 182. Selecting the option to perform the compile in the background.
+The figure shown. Selecting the option to perform the compile in the background.
+
+
+

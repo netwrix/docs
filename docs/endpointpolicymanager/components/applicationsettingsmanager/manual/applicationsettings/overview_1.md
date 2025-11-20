@@ -12,3 +12,6 @@ captured the application's UI using Endpoint Policy Manager DesignStudio, did yo
 type of machine and then try to deploy it to another? For instance, did you capture WinZip while
 running on Windows 7 and then try to deploy it to a Windows 10 machine? This might work, but
 sometimes it might not.
+
+
+

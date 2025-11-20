@@ -24,3 +24,5 @@ See the following Video topics for getting started with Group Policy.
 - [Expand Modular View of Endpoint Policy Manager Components in the GPMC back to the Flat Legacy View](/docs/endpointpolicymanager/deliverymethods/grouppolicy/videos/tipsandtricks/flatlegacyview.md)
 - [Trim the MMC console for OU admins](/docs/endpointpolicymanager/deliverymethods/grouppolicy/videos/tipsandtricks/mmcconsole.md)
 - [Prevent a Remote Desktop Connection Drop During GP Update](/docs/endpointpolicymanager/deliverymethods/grouppolicy/videos/tipsandtricks/remotedesktopconnection.md)
+
+

@@ -12,7 +12,7 @@ creating policies with the in-cloud editors, and also creating a directive insid
 uploading. Remember: There's also the method to import a whole GPO and make PP Cloud policies, but
 that's another video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_ivWHTrUo8M?si=iL5ayk3KsjRn-Rqr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_ivWHTrUo8M?si=iL5ayk3KsjRn-Rqr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video I'm going to show you how you can use PolicyPak Cloud to
 deliver real Microsoft Group Policy settings through PolicyPak Cloud. We have another video
@@ -221,3 +221,5 @@ we're going to use the PolicyPak in-cloud editors first. If that doesn't work, y
 use any of our MMC editors and take those settings and upload those to PolicyPak Cloud, basically
 the same gist. I hope this video helps you out. Looking forward to getting you started with
 PolicyPak Cloud real soon. Thanks.
+
+

@@ -65,7 +65,7 @@ Follow these steps to migrate the Netwrix Data Classification database:
 
    > **IMPORTANT:** If you are using the Windows Authentication method, verify that the user has the `db_owner` role assigned in the Netwrix Data Classification database. Alternatively, run `conceptConfig.exe` using the service account.
 
-   ![conceptConfig.exe configuration window with database server and credentials fields visible](images/ka0Qk0000005157_0EMQk000006Wq6T.png)
+   ![conceptConfig.exe configuration window with database server and credentials fields visible](./images/ka0Qk0000005157_0EMQk000006Wq6T.png)
 
 5. Open the **Service Viewer** and start all three Netwrix Data Classification services. The default path is:
 

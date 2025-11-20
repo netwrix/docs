@@ -19,3 +19,5 @@ Pak offerings change from time to time when new components are added. Below we s
 available Paks from the Endpoint Policy Manager home page at time of publication of this manual.
 
 ![editions_solutions_paks_and_7](/images/endpointpolicymanager/editions/editions_solutions_paks_and_7.webp)
+
+

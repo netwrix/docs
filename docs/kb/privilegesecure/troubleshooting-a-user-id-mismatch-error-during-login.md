@@ -26,7 +26,7 @@ knowledge_article_id: kA04u000000LLjtCAG
 
 When logging into the Netwrix Privilege Secure console, you may receive a "User Id Mismatch" response that prevents login. This is caused when there is a mismatch between a Netwrix Privilege Secure user stored in a cookie, and the user attempting login. Generally this is caused when multiple sessions are being launched from the same browser using different users.
 
-![image.png](images/ka04u000000HdEG_0EM4u000005gCr9.png)
+![image.png](./images/ka04u000000HdEG_0EM4u000005gCr9.png)
 
 ## Instructions
 

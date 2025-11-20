@@ -49,3 +49,5 @@ Figure 16. Specifying the UWP policy name.
 ![quickstart_start_screen_manager_12](/images/endpointpolicymanager/startscreentaskbar/startscreen/quickstart_start_screen_manager_12.webp)
 
 Figure 17. The UWP application icon entry.
+
+

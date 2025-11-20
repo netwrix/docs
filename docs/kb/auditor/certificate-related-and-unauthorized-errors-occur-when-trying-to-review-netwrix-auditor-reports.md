@@ -31,7 +31,7 @@ An error occurred while enrolling for a certificate, the certificate request cou
 ```
 
 2. Symptom 2. Unauthorized error while accessing a report.  
-   ![User-added image](images/ka04u000001173i_0EM4u000008Liq9.png)
+   ![User-added image](./images/ka04u000001173i_0EM4u000008Liq9.png)
 
 ## Causes
 
@@ -52,4 +52,5 @@ Here are possible options to resolve the issue:
 - Check that the account used for data collection is on the same domain as the Netwrix Auditor Server or another domain.
 - Check if those domains are trusted. If not, add the Netwrix Site to the trusted list.
 
-![User-added image](images/ka04u000001173i_0EM4u000008LirC.png)
+![User-added image](./images/ka04u000001173i_0EM4u000008LirC.png)
+

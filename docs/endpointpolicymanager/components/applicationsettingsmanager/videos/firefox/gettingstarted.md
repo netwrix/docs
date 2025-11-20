@@ -11,7 +11,7 @@ which will repackage, modify and "re-sell" Firefox —- each and every time an u
 also true they provide some ADM support with this modified software.  
 But there's a better way —- a much better way. See how we do it using this video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xuWm4jch3qE?si=PSaGf6_nZvN7QsyN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xuWm4jch3qE?si=PSaGf6_nZvN7QsyN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Manage Firefox with Group Policy Video Transcript
 
@@ -42,7 +42,7 @@ get one Pak. You actually get all the Paks, including this one, Firefox.
 
 We'll go ahead and click there, and let's go ahead and manage Firefox. The first thing to notice, it
 looks a lot like Firefox so no learning curve required. If you want to set the "Home Page," go to
-"www.endpointpolicymanager.com," that's great. But while we're here, let's go the extra mile. Let's lock this
+"www.policypak.com," that's great. But while we're here, let's go the extra mile. Let's lock this
 down by right clicking and performing the lockdown setting right there: "Lockdown this setting using
 the system-wide config file."
 
@@ -119,8 +119,10 @@ settings to ensure that these things are configured the way you want to.
 
 PolicyPak is a true settings management system. We don't just manage Firefox. We can manage tons of
 your important key applications. If you're looking for a trial for PolicyPak, it's super easy to do.
-Just go ahead, go over to endpointpolicymanager.com, click on the "Webinar" download button that's on the right
+Just go ahead, go over to policypak.com, click on the "Webinar" download button that's on the right
 side. After we see you in a webinar, we'll hand over the bits and you can try this all out for
 yourself.
 
 Thanks so much for watching, and we'll talk to you soon.
+
+

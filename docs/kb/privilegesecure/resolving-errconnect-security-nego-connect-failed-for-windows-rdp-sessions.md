@@ -33,7 +33,7 @@ Failed to connect to target server
 The connection failed at negotiating security settings
 ```
 
-![User-added image](images/ka04u000000HcZu_0EM4u000004bUoG.png)
+![User-added image](./images/ka04u000000HcZu_0EM4u000004bUoG.png)
 
 ## Instructions
 
@@ -47,7 +47,7 @@ Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\W
 
 If the output for **SecurityLayer** is `0`, then this condition has been met.
 
-![User-added image](images/ka04u000000HcZu_0EM4u000004bUoL.png)
+![User-added image](./images/ka04u000000HcZu_0EM4u000004bUoL.png)
 
 2. **Network Level Authentication (NLA)** has been disabled for RDP.
 
@@ -61,7 +61,7 @@ In the menu that opens, navigate to the Remote tab. The control **Allow connecti
 
 If this control is disabled, then this condition has been met.
 
-![User-added image](images/ka04u000000HcZu_0EM4u000004bUoQ.png)
+![User-added image](./images/ka04u000000HcZu_0EM4u000004bUoQ.png)
 
 There are two ways to resolve the error, depending on the desired security settings for your environment:
 
@@ -73,7 +73,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\W
 
 2. Enable **Network Level Authentication (NLA)** while leaving RDP's **SecurityLayer** value at `0`:
 
-![User-added image](images/ka04u000000HcZu_0EM4u000004bUoV.png)
+![User-added image](./images/ka04u000000HcZu_0EM4u000004bUoV.png)
 
 IMPORTANT: For optimal security, it's recommended to have RDP's **SecurityLayer** value set to `2` while enabling **Network Level Authentication (NLA)**.
 

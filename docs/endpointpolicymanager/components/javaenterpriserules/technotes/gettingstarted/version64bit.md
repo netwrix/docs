@@ -29,3 +29,5 @@ Then you can map 32-bit Javas to the 32-bit browsers you have.
 - When running 32-bit IE www.bar.com –> 32-bit Java 7 U 95.
 - When running 64-bit IE www.xyz.com –> 64-bit Java 7 U 99.
 - When running 64-bit IE www.pdq.com –> 64-bit Java U 51.
+
+

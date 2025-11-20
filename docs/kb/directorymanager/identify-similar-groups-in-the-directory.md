@@ -46,9 +46,9 @@ For example, if you have a distribution group (Group A) with three members (A1, 
 
 > **NOTE:** Netwrix Directory Manager only displays up to six similar groups, even if more exist in the directory. The similarity ranking is based on group type and the number of shared members.
 
-![Similar Groups tab in Directory Manager group properties page](images/ka0Qk000000EMTh_0EMQk00000BWvT4.png)
+![Similar Groups tab in Directory Manager group properties page](./images/ka0Qk000000EMTh_0EMQk00000BWvT4.png)
 
 6. Click a bar for a group to view similarity details.  
 7. The **Similarity Details** dialog box displays the common type and common members that both groups have.
 
-![Similarity Details dialog box showing common type and members](images/ka0Qk000000EMTh_0EMQk00000BX24j.png)
+![Similarity Details dialog box showing common type and members](./images/ka0Qk000000EMTh_0EMQk00000BX24j.png)

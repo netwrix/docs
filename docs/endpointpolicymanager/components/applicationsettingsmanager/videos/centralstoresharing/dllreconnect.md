@@ -8,7 +8,7 @@ sidebar_position: 60
 This is an advancedNetwrix Endpoint Policy Manager (formerly PolicyPak) topic showing how to
 reconnect a DLL if the inner name was changed, and someone deleted the existing DLL.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/unz-8F9ohWo" title="Endpoint Policy Manager: Reconnecting DLLs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/unz-8F9ohWo" title="Endpoint Policy Manager: Reconnecting DLLs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Reconnecting DLLs video transcript
 
@@ -64,3 +64,5 @@ sure to connect to the right one, and you'll be in the club. That's how you can 
 if you have "DLL not found" under your extension storage.
 
 I hope that was helpful for you, and I'll talk to you soon.
+
+

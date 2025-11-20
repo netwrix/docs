@@ -85,3 +85,5 @@ Endpoint Firewall settings BEFORE import:
 Endpoint Firewall settings AFTER import:
 
 ![788_11_image-20210309203819-11](/images/endpointpolicymanager/cloud/788_11_image-20210309203819-11.webp)
+
+

@@ -5,7 +5,7 @@ sidebar_position: 40
 ---
 # Security and Child Processes
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GsydgID-lo4?si=AlDDSH1Iwu4CtYHZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GsydgID-lo4?si=AlDDSH1Iwu4CtYHZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Transcript:Security and Child Processes
 
@@ -179,3 +179,5 @@ apply to child processes, at least you have these extra thumbscrews to turn such
 can't jump out and run additional processes that you do not want elevated.
 
 All right, hope this helps you out. Thank you very much, and talk to you soon.
+
+

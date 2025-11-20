@@ -35,3 +35,5 @@ See the following Knowledge Base articles for Start Screen and Task Bar Manager.
 - [How-To create a folder shortcut in Windows 10 Start Menu using Endpoint Policy Manager Starts Screen Manager?](/docs/endpointpolicymanager/components/startscreenandtaskbar/technotes/tipsandtricks/foldershortcut.md)
 - [How can I add a link to the Control Panel to the Start Screen or Taskbar using Endpoint Policy Manager Start Screen Manager?](/docs/endpointpolicymanager/components/startscreenandtaskbar/technotes/tipsandtricks/addlink.md)
 - [How to automatically kill explorer at 1st Logon to Bypass needing to logout and back in for Start Screen Manager to apply](/docs/endpointpolicymanager/components/startscreenandtaskbar/technotes/tipsandtricks/logonworkaround.md)
+
+

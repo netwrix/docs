@@ -54,3 +54,6 @@ In the next section we will see how to create Netwrix Endpoint Policy Manager (f
 Netwrix Privilege Secure policies which will not need an endpoint license to work out of the box.
 Again, the idea is that you are already paying for an Netwrix Privilege Secure license, and because
 Netwrix Privilege Secure is involved in the policy, those policies work on the endpoint for free.
+
+
+

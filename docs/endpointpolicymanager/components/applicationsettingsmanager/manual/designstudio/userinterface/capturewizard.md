@@ -11,7 +11,7 @@ The process for using the Capture Wizard to capture UI elements was already cove
 that information here.
 
 When you start a new project after running Endpoint Policy Manager DesignStudio, you are asked to
-select the application and the correct window, as shown in Figure 59. Sometimes the process name is
+select the application and the correct window, as shown In the figure shown. Sometimes the process name is
 not obvious.
 
 Be sure to capture the Options or Configuration window of an application, and not the main page,
@@ -20,26 +20,29 @@ you will mostly be capturing options, properties, and configuration pages.
 
 ![crafting_the_user_interface](/images/endpointpolicymanager/applicationsettings/designstudio/userinterface/crafting_the_user_interface.webp)
 
-Figure 59. Selecting the target application and window.
+The figure shown. Selecting the target application and window.
 
 :::note
 See the section entitled "Special Applications and Project Types" for more information on
-how to manage Control Panel items, like the mouse properties shown in Figure 58.
+how to manage Control Panel items, like the mouse properties shown In the figure shown.
 :::
 
 
 After the first tab of your application is captured, you'll be able to select more tabs using the
-"Capture another tab" button, as shown in Figure 60.
+"Capture another tab" button, as shown In the figure shown.
 
 ![crafting_the_user_interface_1](/images/endpointpolicymanager/applicationsettings/designstudio/userinterface/crafting_the_user_interface_1.webp)
 
-Figure 60. Capturing additional tabs.
+The figure shown. Capturing additional tabs.
 
-In most cases, your application's look and feel is exactly captured, as shown in Figure 61.
+In most cases, your application's look and feel is exactly captured, as shown In the figure shown.
 
 ![crafting_the_user_interface_2](/images/endpointpolicymanager/applicationsettings/designstudio/userinterface/crafting_the_user_interface_2.webp)
 
-Figure 61. Capturing the look and feel of the application.
+The figure shown. Capturing the look and feel of the application.
 
 Endpoint Policy Manager DesignStudio usually captures the existing states of the elements as well,
 such the status of a checkbox or radio button.
+
+
+

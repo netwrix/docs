@@ -6,11 +6,11 @@ sidebar_position: 40
 # More security with Combo Rules
 
 Netwrix Endpoint Policy Manager (formerly PolicyPak)
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)
+[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)
 enables you to select multiple criteria for the action type. Watch this video to learn how it's
 done.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/V_Dl8_fr3HQ" title="Endpoint Privilege Manager: More security with Combo Rules" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V_Dl8_fr3HQ" title="Endpoint Privilege Manager: More security with Combo Rules" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PPLPM: More security with Combo Rules
 
@@ -58,3 +58,5 @@ be that, together as a combo rule that gives you the magic you need. That will g
 security in a very wide variety of situations.
 
 I hope this helps you out. Thanks so much.
+
+

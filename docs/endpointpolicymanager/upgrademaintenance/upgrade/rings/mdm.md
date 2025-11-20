@@ -24,3 +24,4 @@ automatically be part of the first or second dynamic group. But because the firs
 group with hand-picked machines, those machines are the only ones that will get the initial rollout
 of a new CSE. Then, because the Endpoint Policy Manager CSE is an MSI, you can use the MSI
 deployment method with your MDM service to target to these groups.
+

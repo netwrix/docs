@@ -9,7 +9,7 @@ Create Group Policy Preferences inside theNetwrix Endpoint Policy Manager (forme
 portal without having to go to your GPMC! Watch this video and see how to create and deploy Group
 Policy Preferences within our cloud portal!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3U-4zOMQHLI" title="Endpoint Policy Manager Cloud + GPPrefs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3U-4zOMQHLI" title="Endpoint Policy Manager Cloud + GPPrefs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager Cloud + GPPrefs video transcript
 
@@ -132,7 +132,7 @@ In this section of our video, we are going to learn how to deploy shortcuts usin
 Preferences inside the PolicyPak Cloud portal.
 
 Right now we are over here on my cloud-joined machine here. We don't have a shortcut here or here,
-which is what I want to create. I want to create a shortcut that's going to take me to endpointpolicymanager.com
+which is what I want to create. I want to create a shortcut that's going to take me to policypak.com
 and I also want to deploy a shortcut that will take me to the Calculator that's in the system
 already.
 
@@ -145,7 +145,7 @@ I'm going to go ahead and choose "Replace" because later on down here in the "Co
 to choose to remove this when it's no longer applied and it will change it to Replace anyway. So
 I'll put it there. I'm going to "Name" this "PolicyPak." This is not going to be a "File system
 location." It's actually going to be a "URL." I'm going to send this to the "Desktop." My "Target
-URL" is going to be "https://www.endpointpolicymanager.com."
+URL" is going to be "https://www.policypak.com."
 
 While you can work with the rest of this, I'm going to just leave it alone for now. I'm going to
 choose "Common." I want to "Remove this when it's no longer applied." There we go. You can see that
@@ -167,9 +167,9 @@ Let's come back over to our endpoint here. Let's run a "ppcloud /sync." All righ
 we saw these shortcuts pop up on the Desktop.
 
 Just for good measure, let me go ahead and double click on this and make sure it's going to open up
-"https://www.endpointpolicymanager.com" like we think it's going to. Sure enough, here we go. While that's
+"https://www.policypak.com" like we think it's going to. Sure enough, here we go. While that's
 loading, let's check out this "Calculator." Just like we expected, it links us right to that
-Calculator, so we created that shortcut. And here we go, showing right up and endpointpolicymanager.com.
+Calculator, so we created that shortcut. And here we go, showing right up and policypak.com.
 
 All right and once again just as we've done in some of the other videos, let's go ahead and we will
 "Unlink XML Data file from Computer Group." We will come back over here and run that "ppcloud
@@ -183,3 +183,5 @@ items within the PolicyPak Cloud portal and then deploying those as you'd like. 
 you out.
 
 Thanks so much. Bye-bye.
+
+

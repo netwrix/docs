@@ -26,3 +26,12 @@ packages
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+fix_fullscreen.py
+fix_video_dimensions.py
+fix_videos_v2.py
+fix_videos_v3.py
+fix_videos.py
+verify_dimensions.py
+git_status.txt
+touch_all_modified.py
+touch_files.py

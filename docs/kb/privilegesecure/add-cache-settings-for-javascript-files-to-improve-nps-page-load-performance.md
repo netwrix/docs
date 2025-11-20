@@ -69,10 +69,10 @@ To address this issue, you can create an IIS configuration setting that will upd
 8. Open your NPS web page and look at the `Network` tab in the developer tools Window.
 
 9. See the page download:  
-   ![001.png](images/ka0Qk0000000zjR_0EM4u000008M2O1.png)
+   ![001.png](./images/ka0Qk0000000zjR_0EM4u000008M2O1.png)
 
 10. Reload the page, see it is loaded from the cache:  
-    ![002.png](images/ka0Qk0000000zjR_0EM4u000008M2O6.png)
+    ![002.png](./images/ka0Qk0000000zjR_0EM4u000008M2O6.png)
 
 11. Copy the updated `web.config` to `C:\Program Files\Stealthbits\PAM\Web\web.config.rewrite`, you will need this for future upgrades.
 

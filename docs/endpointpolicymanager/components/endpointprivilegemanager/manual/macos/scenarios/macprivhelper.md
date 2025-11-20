@@ -73,3 +73,6 @@ The three action types on a rule are:
   [Endpoint Policy Manager for Mac and Admin Approval](/docs/endpointpolicymanager/components/endpointprivilegemanager/videolearningcenter/macintegration/adminapproval.md)
   for additional information on this topic.
 - Credentials — User must re-enter credentials for the task to be performed
+
+
+

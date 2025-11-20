@@ -49,7 +49,7 @@ You may see icons missing in the Netwrix Access Analyzer Web Console.
 
   4. Right-click the `MitigationOptions` value and select **Modify**. Verify the **Value data** field states Hexadecimal `2000000000000`. Click **OK** to save changes.
 
-  ![Registry screenshot](images/ka0Qk000000DZ6P_0EM4u000008Ma1V.png)
+  ![Registry screenshot](./images/ka0Qk000000DZ6P_0EM4u000008Ma1V.png)
 
 ### Related articles
 

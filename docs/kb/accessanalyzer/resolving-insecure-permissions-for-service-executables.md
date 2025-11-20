@@ -51,4 +51,4 @@ Follow the steps below to resolve this issue:
 
 > **NOTE:** This approach ensures secure operation and mitigates the risk of privilege escalation.
 
-![Screenshot showing the Member Type configuration in Netwrix Access Analyzer settings](images/ka0Qk000000E7EX_0EMQk00000CHoHe.png)
+![Screenshot showing the Member Type configuration in Netwrix Access Analyzer settings](./images/ka0Qk000000E7EX_0EMQk00000CHoHe.png)

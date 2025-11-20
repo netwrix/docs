@@ -29,3 +29,4 @@ enable the Group Policy Method, you need to transition from Endpoint Policy Mana
 Policy Manager Enterprise Edition or Endpoint Policy Manager Professional Edition. You can still
 manage Active Directory joined machines, but you must use the Endpoint Policy Manager Cloud delivery
 mechanism to perform the operation, and not Active Directory / GPO.
+

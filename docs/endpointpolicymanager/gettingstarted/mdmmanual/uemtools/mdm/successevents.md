@@ -27,3 +27,4 @@ By attempting to deploy the free Terminals MSI without any other Endpoint Policy
 can see if the problem is in the MDM deployment of MSIs in general. For instance, you might have the
 MDM targeting set up incorrectly or there might be some other MDM problem that you can work with
 your MDM vendor to solve.
+

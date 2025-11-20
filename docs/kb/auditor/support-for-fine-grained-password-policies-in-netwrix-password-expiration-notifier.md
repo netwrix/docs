@@ -33,5 +33,6 @@ Yes, PEN supports Fine-Grained Password Policies. To configure PEN to work only 
 2. Select or create a **Monitoring Plan** that will apply Fine-Grained Password Policies.
 3. Click the **Advanced Tab**.
 4. At the bottom of the Advanced Options window, select the **Only report on users with Fine-Grained Password Policies** applied box.  
-   ![Fine-grained password policies applied](images/ka0Qk0000006sTx_0EMQk000008Iaq1.png)
+   ![Fine-grained password policies applied](./images/ka0Qk0000006sTx_0EMQk000008Iaq1.png)
 5. Click **Save**.
+

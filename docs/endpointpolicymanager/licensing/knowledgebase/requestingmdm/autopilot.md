@@ -19,3 +19,4 @@ An example, taken from
 can be seen here.
 
 ![1336_1_f6195331f68904f96c183fe8a7dfdd29](/images/endpointpolicymanager/license/mdm/1336_1_f6195331f68904f96c183fe8a7dfdd29.webp)
+

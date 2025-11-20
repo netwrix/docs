@@ -8,7 +8,7 @@ sidebar_position: 50
 Microsoft MVP Jeremy Moskowitz shows you how to prevent disconnect during GP update / force using
 registry settings.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VXeylj9vqss?si=UJY02cKo2R_S4bwA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VXeylj9vqss?si=UJY02cKo2R_S4bwA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### How to Prevent a Remote Desktop Connection Drop During GP Update
 
@@ -40,3 +40,5 @@ setting. And you can blast that same registry setting out using Group Policy Pre
 PolicyPak or any number of items and get it out there and you'll be ready to go.
 
 I hope this video helps you out. Talk to you soon.
+
+

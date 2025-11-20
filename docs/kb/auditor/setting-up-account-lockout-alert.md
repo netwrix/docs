@@ -28,18 +28,19 @@ This article explains how to set up an account lockout alert in Netwrix Auditor 
 
 ## Steps
 1. Select **New Real-Time Alert** by clicking on **Real-Time Alert** and then right-clicking on **Real-Time Alert**  
-   ![User-added image](images/ka04u000000HcRf_0EM70000000xMZN.png)
+   ![User-added image](./images/ka04u000000HcRf_0EM70000000xMZN.png)
 
 2. Name the alert, then click **Next**. Click **Add** to add the alert filters needed.  
-   ![User-added image](images/ka04u000000HcRf_0EM70000000xMZS.png)
+   ![User-added image](./images/ka04u000000HcRf_0EM70000000xMZS.png)
 
 3. Here, if you would like to see lockouts for a specific OU, select the highlighted box. This can also be left as `*` for a wildcard to monitor all user account lockouts.  
-   ![User-added image](images/ka04u000000HcRf_0EM70000000xMZc.png)
+   ![User-added image](./images/ka04u000000HcRf_0EM70000000xMZc.png)
 
 4. Select the existing attribute filter that is added by default and select **Edit**.  
-   ![User-added image](images/ka04u000000HcRf_0EM70000000xMZr.png)
+   ![User-added image](./images/ka04u000000HcRf_0EM70000000xMZr.png)
 
 5. Place in the following attribute filters to see all account lockouts.  
-   ![User-added image](images/ka04u000000HcRf_0EM70000000xMZw.png)
+   ![User-added image](./images/ka04u000000HcRf_0EM70000000xMZw.png)
 
 6. Hit **OK** and follow the rest of the prompts for filling in the specified e-mail address the alert will go to.
+

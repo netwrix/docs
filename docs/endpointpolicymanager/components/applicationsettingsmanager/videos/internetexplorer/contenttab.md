@@ -7,7 +7,7 @@ sidebar_position: 40
 
 Netwrix Endpoint Policy Manager (formerly PolicyPak): Manage IE Content tab
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xYUqURrA8hc?si=YJfKVAgFcm-Arxs5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xYUqURrA8hc?si=YJfKVAgFcm-Arxs5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Manage IE Content tab
 
@@ -56,3 +56,5 @@ If you have any questions about this, be sure to post your questions to the foru
 and we'll get you going from there.
 
 Thanks so much. Talk to you soon.
+
+

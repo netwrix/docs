@@ -50,3 +50,5 @@ Use Item Level Targeting filter to control the scope of this setting.
 **Step 4 –** Click **OK** to save the changes made.
 
 The command bar buttons and menu items are now disabled.
+
+

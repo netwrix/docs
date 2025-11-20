@@ -8,7 +8,7 @@ sidebar_position: 20
 Learn how to set up the PP Least Privilege Manager Helper tools, so users can overcome UAC prompts
 for Printers, Network Adapters and uninstall software.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3SRE-N6EBuU" title="PP Least Priv Manager: Helper Tools Setup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3SRE-N6EBuU" title="PP Least Priv Manager: Helper Tools Setup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy, and in this video, I'm going to show you how you can set up the tools, the
 Netwrix Endpoint Policy Manager (formerly PolicyPak) Least Privilege Manager tools using
@@ -80,3 +80,5 @@ that's done, let's rerun the programs, and there we go. We just have these items
 right click and Uninstall something, we're allowed to do it because we're permitting those items.
 With that in mind, hope this – hope getting the tools set up helps you out. Looking forward to
 getting you started real soon. Thanks so much.
+
+

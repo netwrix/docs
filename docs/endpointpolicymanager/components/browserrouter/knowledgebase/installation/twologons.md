@@ -18,3 +18,5 @@ Then on the next Group Policy refresh (second logon or one logon plus a manual o
 GPupdate), Endpoint Policy Manager Browser Router should be "saved" and ready for use.
 
 All Endpoint Policy Manager Browser Router policies should work at that point.
+
+

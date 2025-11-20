@@ -14,3 +14,5 @@ Then browse to the saved RDP file. Below you can see the imported path of the RD
 the file path setting was automatically imported, as are all other settings.
 
 ![getting_to_know_policypak_7](/images/endpointpolicymanager/remotedesktopprotocol/getting_to_know_endpointpolicymanager_7.webp)
+
+

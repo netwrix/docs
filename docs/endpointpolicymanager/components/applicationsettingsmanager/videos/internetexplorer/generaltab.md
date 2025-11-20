@@ -7,7 +7,7 @@ sidebar_position: 50
 
 Netwrix Endpoint Policy Manager (formerly PolicyPak): Manage IE General tab
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tgnolJwqVlU?si=oryodA-yhjPPIsZC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tgnolJwqVlU?si=oryodA-yhjPPIsZC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Manage IE General tab
 
@@ -22,7 +22,7 @@ You can see here if we want to do primary and secondary start pages – by way o
 "www.primary.com" – you can see that when we do something it underlines. Underline means go.
 
 You could do the same thing here. If you want to make those your "Secondary Start Pages" or you want
-to replace this with "https://www.endpointpolicymanager.com/," that's great. You can do that as well, and you
+to replace this with "https://www.policypak.com/," that's great. You can do that as well, and you
 can see there that we're going to deliver those settings. You can also, when the policy no longer
 applies, you can "Revert this policy setting to (empty string) when it is no longer applied."
 
@@ -55,3 +55,5 @@ universal and should work for all operating systems and all versions of Internet
 Continue on with the next set of videos to learn more.
 
 Thanks so much.
+
+

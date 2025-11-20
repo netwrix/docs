@@ -43,6 +43,7 @@ Figure 55. An example of a Endpoint Policy Manager File Associations Manager log
 
 Figure 56. Highlights from the Endpoint Policy Manager k File Associations Manager log.
 
-If needed, logs can be automatically wrapped up and sent to
-[support@endpointpolicymanager.com](mailto:support@endpointpolicymanager.com) with the `PPLOGS.EXE` command on any endpoint
+If needed, logs can be automatically wrapped up and sent to support by [opening a support ticket](https://www.netwrix.com/tickets.html#/open-a-ticket) with the `PPLOGS.EXE` command on any endpoint
 where the client-side extension is installed.
+
+

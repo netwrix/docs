@@ -12,7 +12,7 @@ However, that UI lockout is implemented differently and, as such, comes with a c
 
 Tip: To see a video of FireFox UI lockout in action, see the following video:
 
-[https://www.endpointpolicymanager.com/products/manage-firefox-with-group-policy.html](https://www.endpointpolicymanager.com/products/manage-firefox-with-group-policy.html)
+[https://www.policypak.com/products/manage-firefox-with-group-policy.html](https://www.policypak.com/products/manage-firefox-with-group-policy.html)
 
 Tip: To see a video of Thunderbird UI lockout in action, see the following video:
 
@@ -48,3 +48,5 @@ seeing the System-Wide lockdown) is shown in this figure.
 ![148_3_ff3](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/148_3_ff3.webp)
 
 Note that the lockdown via System-Wide config file is not present on the user side.
+
+

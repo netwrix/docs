@@ -35,7 +35,7 @@ When the report grid settings are configured for a non-interactive grid on the A
 Unable to log error to Access Analyzer: Object doesn't support property or method 'LogJSMessage'.
 ```
 
-![Error image](images/ka0Qk000000CgOT_0EMQk00000B05RB.png)
+![Error image](./images/ka0Qk000000CgOT_0EMQk00000B05RB.png)
 
 ## Cause
 
@@ -46,19 +46,19 @@ This error message is caused by setting the report grid configuration to Non Int
 To resolve this error, refer to the following steps:
 
 1. Click **Configure** to access the report settings.  
-   ![Configure button image](images/ka0Qk000000CgOT_0EMQk00000Aq6Zr.png)
+   ![Configure button image](./images/ka0Qk000000CgOT_0EMQk00000Aq6Zr.png)
 
 2. Navigate to the **Widgets** node and select **Configure** on the layout location of the report.  
-   ![Widgets configure image](images/ka0Qk000000CgOT_0EMQk00000AqZFF.png)
+   ![Widgets configure image](./images/ka0Qk000000CgOT_0EMQk00000AqZFF.png)
 
 3. After clicking **Configure**, select the **Interactive grid** option in the top-right corner under Table Properties.  
-   ![Interactive grid option image](images/ka0Qk000000CgOT_0EMQk00000AqJtg.png)
+   ![Interactive grid option image](./images/ka0Qk000000CgOT_0EMQk00000AqJtg.png)
 
 4. Ensure that you have the **Export table data as CSV** box checked.  
-   ![Export table data as CSV image](images/ka0Qk000000CgOT_0EMQk00000BF2eH.png)
+   ![Export table data as CSV image](./images/ka0Qk000000CgOT_0EMQk00000BF2eH.png)
 
 5. Confirm that the error has been resolved using either of the following methods:
    - Right-click the **Job** itself and select **Run Job**.  
-     ![Run Job image](images/ka0Qk000000CgOT_0EMQk00000Aqj6X.png)
+     ![Run Job image](./images/ka0Qk000000CgOT_0EMQk00000Aqj6X.png)
    - In the Reports pane, click the **Kebab menu** (three vertical dots) next to **Configure** and select **Generate**.  
-     ![Generate image](images/ka0Qk000000CgOT_0EMQk00000Aqj6Y.png)
+     ![Generate image](./images/ka0Qk000000CgOT_0EMQk00000Aqj6Y.png)

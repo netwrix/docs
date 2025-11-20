@@ -87,3 +87,5 @@ then PowerShell will be blocked.
 ![867_7_image-20210721211958-7](/images/endpointpolicymanager/scriptstriggers/867_7_image-20210721211958-7.webp)
 
 ![867_8_image-20210721211958-8](/images/endpointpolicymanager/scriptstriggers/867_8_image-20210721211958-8.webp)
+
+

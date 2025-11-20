@@ -8,7 +8,7 @@ sidebar_position: 10
 Use this tip to open the required ports in the client machines' firewalls, so the PP GP Compliance
 Reporter can pull data from your endpoints.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/P5WS0-Ywzz4" title="PPGPCR: firewall ports" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P5WS0-Ywzz4" title="PPGPCR: firewall ports" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PPGPCR: firewall ports
 
@@ -61,3 +61,4 @@ addresses will allow this inbound remote admin exception and once you do that, y
 started with the Compliance Reporter and see what's going on there. Use the other videos to figure
 out how to create tests and to perform results but, hopefully, that gets you off the starting line
 to get going. Thanks so much and we'll talk to you soon.
+

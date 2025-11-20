@@ -9,7 +9,7 @@ Use Netwrix Endpoint Policy Manager (formerly PolicyPak) Device Manager to speci
 users can use which serial numbers of USB sticks and DVD devices. This way, you issue the device,
 and you know EXACTLY who has USB Read/ Read/Write or Full access.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/O8qGAIpor54" title="Endpoint Policy Device Manager (Complete): Permit specific devices by serial number" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O8qGAIpor54" title="Endpoint Policy Device Manager (Complete): Permit specific devices by serial number" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 In a previous video, you saw me limit which USB sticks are allowed by USB vendor type. The problem,
 however, even though it works great when you give the correct USB sticks to your end users, is that
@@ -55,3 +55,5 @@ whatever they want, you can hammer – put the hammer down based upon a device t
 put the screws it by dictating it by serial number. You can decide which is the most important way
 for you to get the job accomplished, and hope this tool helps you out. Thank you very much. Talk to
 you soon.
+
+

@@ -14,3 +14,5 @@ the Start Screen, then it means that either the Application is not present at t
 it is configured with a Mapped Drive instead of the UNC Path.
 
 ![841_1_image-20201201090844-1](/images/endpointpolicymanager/requirements/support/startscreentaskbar/841_1_image-20201201090844-1.webp)
+
+

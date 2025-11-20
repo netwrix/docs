@@ -31,9 +31,9 @@ Licensing of Netwrix Access Analyzer is based on the quantity of enabled AD user
 To find this data:
 
 1. Ensure **.Active Directory Inventory** has recently run or run now. Navigate to **Jobs** > **.Active Directory Inventory** > **1-AD_Scan** and click **Run Now**  
-   ![Group_001.png](images/ka0Qk000000Dl4L_0EM4u000008M8wx.png)
+   ![Group_001.png](./images/ka0Qk000000Dl4L_0EM4u000008M8wx.png)
 
 2. Navigate to **Jobs** > **.Active Directory Inventory** > **1-AD_Scan** > **Results** > **Active Directory Summary**
 
 3. Take a screenshot or otherwise capture the values displayed in **Total Users** and **Disabled Users**  
-   ![Group_002.png](images/ka0Qk000000Dl4L_0EM4u000008M8x2.png)
+   ![Group_002.png](./images/ka0Qk000000Dl4L_0EM4u000008M8x2.png)

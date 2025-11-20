@@ -11,3 +11,5 @@ the basic goal is to map a file extension, like .pdf, to an application, like Ad
 This sounds easy to do, but it is actually very difficult. In this section, we'll examine the
 history around file associations, explain Microsoft's way to perform file associations, and explain
 how Endpoint Policy Manager File Associations Manager works and what its limitations are.
+
+

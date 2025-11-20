@@ -13,3 +13,5 @@ There are two articles you can read to fix the problem permanently:
 
 1. [https://support.microsoft.com/en-us/help/3077013/-microsoft-policies-sensors-windowslocationprovider-is-already-defined](https://support.microsoft.com/en-us/help/3077013/-microsoft-policies-sensors-windowslocationprovider-is-already-defined) And
 2. [https://jorgequestforknowledge.wordpress.com/2016/10/13/namespace-already-defined-as-the-target-namespace-for-another-file-in-the-policy-store/](https://jorgequestforknowledge.wordpress.com/2016/10/13/namespace-already-defined-as-the-target-namespace-for-another-file-in-the-policy-store/)
+
+

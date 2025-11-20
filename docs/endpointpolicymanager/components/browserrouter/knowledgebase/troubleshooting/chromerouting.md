@@ -65,7 +65,7 @@ Q: How should I update to the latest extension?
 A: Our general guidance is, and has always been… please try to stick closely to us in our release
 schedule as possible. We know this is not always possible, but have generalized guidance here of how
 you should update the CSE and exactly what "supported" means.
-[https://www.endpointpolicymanager.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/](https://www.endpointpolicymanager.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/)
+[https://www.policypak.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/](https://www.policypak.com/resources/pp-blog/using-rings-to-test-and-update-the-policypak-client-side-extension-and-how-to-stay-supported/)
 
 Q: I cannot update to the latest extension, but I am using builds CSE 18.7.1779.937 -
 19.12.2283.849. What is this workaround of which you speak?
@@ -84,3 +84,5 @@ A: We have figured out how to have ONE Chrome Extension for all versions going f
 Chrome Extension … with the easy to remember name "fmbfiodledfjldlhiemaadmgppoeklbn" … is going to
 be the "going forward one" that we can just always use. If you upgrade to the latest CSE then stick
 reasonably close to our release schedule and guidance we think you won't likely have a problem.
+
+

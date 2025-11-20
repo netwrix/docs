@@ -11,3 +11,5 @@ may be tempting to map http or https to a particular browser as a way of enforci
 browser. That will work until Browser Router has any rules at all in that component, and then
 Browser Router takes over. If you want to set a default browser, use Browser Router instead of File
 Associations Manager.
+
+

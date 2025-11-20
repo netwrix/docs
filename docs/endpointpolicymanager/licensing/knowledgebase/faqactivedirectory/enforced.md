@@ -20,3 +20,4 @@ Below all Endpoint Policy Manager Licenses are contained within one GPO. But you
 licensing GPOs, all which need to be enforced.
 
 ![168_1_image0013](/images/endpointpolicymanager/license/activedirectory/168_1_image0013.webp)
+

@@ -10,7 +10,7 @@ important Windows 10 Store applications? With Netwrix Endpoint Policy Manager (f
 Package Manager (AppX) policies of course! Use your Intune (or any other MDM service) to remove
 "junkware" but then add important business related Windows 10 Store applications!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tjoNyqcvWRU" title="Endpoint Policy Package Manager (AppX Policies): Add or Remove Microsoft Store using your MDM service." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tjoNyqcvWRU" title="Endpoint Policy Package Manager (AppX Policies): Add or Remove Microsoft Store using your MDM service." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video I'm going to show you how you can use Endpoint Policy
 Manager Software Package Manager to deliver AppX settings and also remove AppX settings from your
@@ -74,3 +74,5 @@ even with the latest edition of Windows 10.
 I hope this helps you out, giving you the power to deploy and remove applications from the Microsoft
 Store using Endpoint Policy Manager and your MDM service. I hope this helps you out. Looking forward
 to getting you started with Endpoint Policy Manager real soon. Thanks.
+
+

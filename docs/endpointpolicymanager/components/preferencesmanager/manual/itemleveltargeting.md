@@ -79,3 +79,5 @@ Filters section.
 ![group_policy_preferences_item_4](/images/endpointpolicymanager/preferences/group_policy_preferences_item_4.webp)
 
 The XML of the Group Policy Preference item verifies that Item-Level Targeting is being used.
+
+

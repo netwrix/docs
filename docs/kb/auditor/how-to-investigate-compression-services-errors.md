@@ -37,9 +37,9 @@ In the Netwrix Auditor health log, some error events mention issues with the com
    **Note:** Pay attention to which collector you're going to adjust permissions.
 3. Test the ports required for the problematic monitoring plan:
    - [Protocols and Ports](https://docs.netwrix.com/docs/auditor/10_8/requirements/ports)
-   - [Check TCP and UDP Ports Required](/docs/kb/auditor/check-tcp-and-udp-ports-required.md)
+   - [Check TCP and UDP Ports Required](/docs/kb/auditor/check-tcp-and-udp-ports-required)
 4. Check Remote Registry and Windows Management Instrumentation Services:
    - [Enable Remote Registry and Windows Management Instrumentation Services for Windows Server](https://docs.netwrix.com/docs/auditor/10_8/configuration/windowsserver/remoteregistry)
    - [Enable Remote Registry Services for File Server](https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/windows/remoteregistryservice)
 5. Add antivirus exclusions on the Netwrix and target servers for folders:
-   - [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor.md)
+   - [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)

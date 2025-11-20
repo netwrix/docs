@@ -38,6 +38,6 @@ This article describes how to configure site collection permissions so you can r
 5. Click **Owners** > **Manage Administrators**.
 6. Add the account configured in the SPAA scan job to access sites to the **Site Collection Administrators** field.
 
-   ![Site Collection Administrators dialog](images/ka0Qk0000006P8b_0EMQk000007UAdp.png)
+   ![Site Collection Administrators dialog](./images/ka0Qk0000006P8b_0EMQk000007UAdp.png)
 
 7. Click **OK** to save changes.

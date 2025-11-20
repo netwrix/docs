@@ -9,7 +9,7 @@ sidebar_position: 30
 If you're a renewing customer, take a moment and find your old licenses and clean them out. This
 video shows you how.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sxcJgME4HKY" title="Endpoint Policy Manager:  Using LT for license cleanup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sxcJgME4HKY" title="Endpoint Policy Manager:  Using LT for license cleanup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Using LT for license cleanup
 
@@ -70,3 +70,4 @@ I hope that helps explain how to clean up old licenses if you happen to have any
 you have any questions about this, we're here for you on the support forums.
 
 Thanks. Take care.
+

@@ -26,3 +26,5 @@ File Associations Manager is a component of Endpoint Policy Manager (PolicyPak) 
 - Configuration Guide
 - Getting Started Videos
 - Troubleshooting
+
+

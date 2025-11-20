@@ -42,7 +42,7 @@ Manager node. This is super easy. You probably want to do this step by hand. You
 Deploy to do it, but just to make things easier for this demonstration, I just want to go to the
 downloaded Endpoint Policy Manager, which you get my contacting Endpoint Policy Manager first of
 all. Then you go to the "Admin Console MSI for all On-Prem
-[https://dev.endpointpolicymanager.com/products/](https://dev.endpointpolicymanager.com/products/)," and you just install
+[https://policypak.com/products/](https://policypak.com/products/)," and you just install
 the admin.
 
 I'm pretty sure this machine is x86, right?.

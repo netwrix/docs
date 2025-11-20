@@ -45,7 +45,7 @@ Netwrix Directory Manager allows you to customize the Create wizard for director
    - Select the **Is Read Only** checkbox.
    - Or set the **Visibility Role** to `Never`.
 
-   ![Set Group Type as Distribution and restrict editing](images/ka0Qk000000Duu1_0EMQk00000BS90Q.png)
+   ![Set Group Type as Distribution and restrict editing](./images/ka0Qk000000Duu1_0EMQk00000BS90Q.png)
 
 11. To enforce the `Distribution` group type for a specific role (for example, Role C), set the visibility level to a role with a higher priority than Role C. Only users with the selected role or higher can modify the group type. Users with Role C or lower will not be able to change the default selection.
 12. Click **OK** to close the dialog boxes and save your changes.
@@ -53,4 +53,4 @@ Netwrix Directory Manager allows you to customize the Create wizard for director
 ## Expected Results
 In the Create Group wizard in the Directory Manager portal, the **Group Type** field will be set to `Distribution` by default. Users will not be able to change the group type, so all new groups will be created as distribution lists only.
 
-![Create Group wizard with Group Type set to Distribution](images/ka0Qk000000Duu1_0EMQk00000BS31S.png)
+![Create Group wizard with Group Type set to Distribution](./images/ka0Qk000000Duu1_0EMQk00000BS31S.png)

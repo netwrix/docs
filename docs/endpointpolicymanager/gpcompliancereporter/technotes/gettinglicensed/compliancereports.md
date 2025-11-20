@@ -13,3 +13,4 @@ via Netwrix Endpoint Policy Manager (formerly PolicyPak) Group Policy Compliance
 available via the Paid License.
 
 The Free License allows reporting on Endpoint Policy Manager products only.
+

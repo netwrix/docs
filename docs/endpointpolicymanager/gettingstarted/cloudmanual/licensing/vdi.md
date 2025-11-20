@@ -33,3 +33,4 @@ scenarios:
   [How to install the Endpoint Policy Manager Cloud Client for use in an Azure Virtual Desktop image](/docs/endpointpolicymanager/deliverymethods/cloud/knowledgebase/clienttips/azurevirutaldesktop.md).
 - Endpoint Policy Manager Cloud and VMware Horizon:
   [How to install and configure the PPC Client for a Non-Persistent VDI Image in VMware Horizon](/docs/endpointpolicymanager/deliverymethods/cloud/knowledgebase/clienttips/vdisolutions.md).
+

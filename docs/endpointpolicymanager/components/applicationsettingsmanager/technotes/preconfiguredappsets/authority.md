@@ -73,3 +73,5 @@ C;; – Root CA for websites only
 ;;c – CA for software makers only
 
 P;; – a trusted certificate for websites
+
+

@@ -37,3 +37,5 @@ If you want to manipulate how long the ILT timeout occurs, we have a policy sett
 Policy Manager ADMX settings here:
 
 ![499_1_q15-img1](/images/endpointpolicymanager/grouppolicy/itemleveltargeting/499_1_q15-img1.webp)
+
+

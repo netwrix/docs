@@ -41,7 +41,7 @@ How can you set up single sign-on (SSO) for Netwrix Data Classification (NDC) vi
 
    > **NOTE:** Make sure to check the **Superuser** checkbox.
 
-   ![Add user Superuser screenshot](images/ka0Qk0000004LM1_0EMQk000005O4sP.png)
+   ![Add user Superuser screenshot](./images/ka0Qk0000004LM1_0EMQk000005O4sP.png)
 
 4. Visit the App registrations menu in your Microsoft Azure Portal to register an application: https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps
 
@@ -51,7 +51,7 @@ How can you set up single sign-on (SSO) for Netwrix Data Classification (NDC) vi
    4. Copy the **Application (Client) ID** of the newly created application.
    5. Select your application and open the **Authentication** tab in the left pane.
 
-   ![Authentication tab screenshot](images/ka0Qk0000004LM1_0EMQk000005O4u1.png)
+   ![Authentication tab screenshot](./images/ka0Qk0000004LM1_0EMQk000005O4u1.png)
 
    6. Check the **ID tokens (used for implicit and hybrid flows)** checkbox and click **Save**.
 
@@ -64,7 +64,7 @@ How can you set up single sign-on (SSO) for Netwrix Data Classification (NDC) vi
 <add key="ida:AzureTenant" value="tenantname.onmicrosoft.com"/>
 ```
 
-![web.config snippet screenshot](images/ka0Qk0000004LM1_0EMQk000005O4qo.png)
+![web.config snippet screenshot](./images/ka0Qk0000004LM1_0EMQk000005O4qo.png)
 
 > **NOTE:** Replace the **Application (Client) ID** with the one copied previously and the `tenantname.onmicrosoft.com` with your tenant's name.
 

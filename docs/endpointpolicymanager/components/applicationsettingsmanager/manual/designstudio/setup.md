@@ -6,19 +6,19 @@ sidebar_position: 40
 
 # Setting Up Application Configuration Data
 
-When you create a new project (see Book 3: Application Settings Manager), you'll find that in the
-initial wizard windows, you can choose how the capture process occurs, as shown in Figure 85.
+When you create a new project (see the Application Settings Manager documentation), you'll find that in the
+initial wizard windows, you can choose how the capture process occurs, as shown In the figure shown.
 
 ![setting_up_application_configuration](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/setting_up_application_configuration.webp)
 
-Figure 85. Choosing how to capture the application.
+The figure shown. Choosing how to capture the application.
 
 Choose to start a new project using the Capture Wizard. Then, select your project type, as shown in
-Figure 86.
+The figure shown.
 
 ![setting_up_application_configuration_1](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/setting_up_application_configuration_1.webp)
 
-Figure 86. Selecting your project type.
+The figure shown. Selecting your project type.
 
 The following project types are currently supported, and more project types may be available in the
 future.
@@ -63,4 +63,7 @@ must already be present to be modified by Endpoint Policy Manager
 
 DesignStudio. Additionally, it is now recommended that if you wish to deliver and maintain `.rdp`
 files, you do so with Endpoint Policy Manager Remote Desktop Protocol Manager
-([https://www.endpointpolicymanager.com/policies/remote-desktop-protocol-manager/](https://www.endpointpolicymanager.com/policies/remote-desktop-protocol-manager/)).
+([https://www.policypak.com/policies/remote-desktop-protocol-manager/](https://www.policypak.com/policies/remote-desktop-protocol-manager/)).
+
+
+

@@ -77,3 +77,5 @@ Then, assuming the Monthly Highest Numbers for each month was something like:
 - March: 900
 
 Your average among the Monthly Highest Number would be 1083.
+
+

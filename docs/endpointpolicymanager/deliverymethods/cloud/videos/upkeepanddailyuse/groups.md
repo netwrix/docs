@@ -7,7 +7,7 @@ sidebar_position: 30
 
 How do PP Cloud Groups work with regard to CSE versions? Here's how to use them.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0FdczHYKNh4" title="Endpoint Policy Manager Cloud: Perform Small Scale Testing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0FdczHYKNh4" title="Endpoint Policy Manager Cloud: Perform Small Scale Testing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy. In this video, we're going to learn how to use PolicyPak Groups to dictate
 exactly how to do small scale, medium scale, and large scale testing, so you can do a roll-out with
@@ -91,3 +91,5 @@ upgrade some medium scale and then finally full scale with the All group.
 
 Hope this video helps you out. Looking forward to getting you started with PolicyPak real soon. Take
 care.
+
+

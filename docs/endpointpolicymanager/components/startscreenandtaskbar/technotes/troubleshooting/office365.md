@@ -38,3 +38,5 @@ Summary to get Office icons to appear on endpoints:
 **Step 2 –** Use the Helper tool.
 
 **Step 3 –** Then create the icons from the export the helper tool made.
+
+

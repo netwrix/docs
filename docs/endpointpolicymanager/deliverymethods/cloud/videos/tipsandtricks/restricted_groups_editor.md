@@ -9,7 +9,7 @@ Netwrix Endpoint Policy Manager (formerly PolicyPak) Cloud has a Restricted Grou
 Use this video to understand all the details how to take existing GPO Restricted Groups and then use
 it in Cloud; then use the in-cloud editors after that.
 
-<iframe width="1700" height="956" src="https://www.youtube.com/embed/bNTHcYWgMs0" title="Endpoint Policy Manager Cloud: Restricted Groups Editor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bNTHcYWgMs0" title="Endpoint Policy Manager Cloud: Restricted Groups Editor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video, we're going to talk about the Restricted Groups Editor
 in PolicyPak Cloud. Now as we do that, we're going to first get started with a little bit of what's
@@ -122,3 +122,5 @@ it and copy it to PolicyPak Cloud and then continue your editing using PolicyPak
 
 Okay, I know that was a lot of information to keep in your head. I hope that was clear enough and
 hope that helps you out and gets you started real soon. Thanks.
+
+

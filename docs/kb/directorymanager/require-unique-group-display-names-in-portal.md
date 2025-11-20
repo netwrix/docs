@@ -32,15 +32,15 @@ To prevent duplicate group names, you can configure Netwrix Directory Manager to
 
 ### Configure the Portal to Require Unique Group Display Names
 1. In the Netwrix Directory Manager Admin Center, navigate to **Applications > [Your Portal] > Settings**.  
-   ![Portal settings in Directory Manager Admin Center](images/ka0Qk000000EYoD_0EMQk00000BpDHp.png)
+   ![Portal settings in Directory Manager Admin Center](./images/ka0Qk000000EYoD_0EMQk00000BpDHp.png)
 2. Click the identity store name under the **Design Settings** section.  
-   ![Identity store selection in Design Settings](images/ka0Qk000000EYoD_0EMQk00000BpDEb.png)
+   ![Identity store selection in Design Settings](./images/ka0Qk000000EYoD_0EMQk00000BpDEb.png)
 3. On the **Properties** tab, select **Group** as the directory object then select **General** and click **Edit**.  
-   ![Editing group properties in Directory Manager](images/ka0Qk000000EYoD_0EMQk00000BpDGD.png)
+   ![Editing group properties in Directory Manager](./images/ka0Qk000000EYoD_0EMQk00000BpDGD.png)
 4. In the **Edit Design Category** box, select **Display name** and click **Edit**.  
-   ![Edit Design Category dialog in Directory Manager](images/ka0Qk000000EYoD_0EMQk00000BpDL3.png)
+   ![Edit Design Category dialog in Directory Manager](./images/ka0Qk000000EYoD_0EMQk00000BpDL3.png)
 5. In the **Edit Field** dialog box, ensure `displayName` is selected in the **Field** box. For **Display Type**, select `UniqueText`.  
-   ![Edit Field dialog in Directory Manager](images/ka0Qk000000EYoD_0EMQk00000BpDJR.png)
+   ![Edit Field dialog in Directory Manager](./images/ka0Qk000000EYoD_0EMQk00000BpDJR.png)
 6. Click **OK** then click **Save** in the outer window.
 7. If you want to apply this setting to Smart Groups, select **Smart Group** as the directory object in step 3 and repeat the same steps.
 8. After this configuration, when a user tries to create a group from the Self-Service portal with a display name that already exists, the portal will not allow it.

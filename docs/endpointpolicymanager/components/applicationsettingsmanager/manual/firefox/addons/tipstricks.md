@@ -24,11 +24,11 @@ The Add-ons section in the Firefox AppSet has the following extra special checkb
   user interface (UI) to make it harder for users to work around your settings.
 - Hide about:addons page UI: This completely blanks out the add-ons page.
 
-You can see these checkboxes below in Figure 25.
+You can see these checkboxes below In the figure shown.
 
 ![add_ons_9](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/addons/add_ons_9.webp)
 
-Figure 25. Disabling and hiding add-ons.
+The figure shown. Disabling and hiding add-ons.
 
 :::note
 If you select "Disable the installation of Firefox extensions" you must right-click the
@@ -40,11 +40,11 @@ blocked from installing Firefox extensions manually.
 
 
 The result of selecting "Disable the installation of Firefox extensions" is that when users attempt
-to install any extension, in any manner, they are blocked, as shown in Figure 26.
+to install any extension, in any manner, they are blocked, as shown In the figure shown.
 
 ![add_ons_10](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/addons/add_ons_10.webp)
 
-Figure 26. A disabled add-on.
+The figure shown. A disabled add-on.
 
 The result of selecting the checkbox, "Hide Firefox UI for installing extensions," is shown in
 Figure 27 below. This makes it more difficult for user to use the Add-ons Manager and manipulate
@@ -52,4 +52,7 @@ settings.
 
 ![add_ons_11](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/addons/add_ons_11.webp)
 
-Figure 27. Before (above) and after (below) hiding the Firefox UI for installing extensions.
+The figure shown. Before (above) and after (below) hiding the Firefox UI for installing extensions.
+
+
+

@@ -70,6 +70,6 @@ Start-Service w3svc
 
 8. Log in to the Privilege Secure web application as an Admin, and re-register services by clicking the logged-in user's name in the upper-right, clicking **Settings**, and then clicking **Register Services**.
 
-![The SbPAM web application interface's user settings menu dropdown.](images/ka04u000000wvts_0EM4u000004bjDZ.png)
+![The SbPAM web application interface's user settings menu dropdown.](./images/ka04u000000wvts_0EM4u000004bjDZ.png)
 
-![The SbPAM web application interface's settings page, displaying the Register Services button.](images/ka04u000000wvts_0EM4u000004bjDe.png)
+![The SbPAM web application interface's settings page, displaying the Register Services button.](./images/ka04u000000wvts_0EM4u000004bjDe.png)

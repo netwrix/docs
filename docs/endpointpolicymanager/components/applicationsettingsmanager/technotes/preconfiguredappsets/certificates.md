@@ -13,3 +13,5 @@ setting Chrome at the same time.
 Here's the how-to video in using the IE + Certs features (again, which should also set Chrome too):
 
 [Manage IE Certificates](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/internetexplorer/certificates.md)
+
+

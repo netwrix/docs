@@ -36,3 +36,4 @@ The Paid License (which requires a licensing XML file), enables unlimited use of
 - You can report upon Microsoft Group Policy settings (Group Policy ADM/ADMX settings within the
   Microsoft "Administrative Templates Node", most Microsoft Group Policy Preferences item types,
   mostly all Microsoft Group Policy Security Settings)
+

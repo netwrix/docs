@@ -54,3 +54,5 @@ command prompt.
 
 
 `netsh wlan delete profile name="Company WiFi"`
+
+

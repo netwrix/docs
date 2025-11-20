@@ -34,21 +34,21 @@ To grant or deny permission to create specific objects in the Netwrix Directory 
 
 1. Open the Netwrix Directory Manager Admin Portal at `https://servername/AdminCenter/`. Navigate to **Identity Stores**. Under an identity store's name, click the three dots (**...**) to edit it.
 
-   ![Identity Stores list with edit option highlighted in Directory Manager Admin Portal](images/ka0Qk000000CuJN_0EMQk00000BSXU9.png)
+   ![Identity Stores list with edit option highlighted in Directory Manager Admin Portal](./images/ka0Qk000000CuJN_0EMQk00000BSXU9.png)
 
 2. In the identity store's properties, click the **Security Roles** tab. Select the role you want to modify and click **Edit**.
 
-   ![Security Roles tab and Edit button in Directory Manager Admin Portal](images/ka0Qk000000CuJN_0EMQk00000BSXPJ.png)
+   ![Security Roles tab and Edit button in Directory Manager Admin Portal](./images/ka0Qk000000CuJN_0EMQk00000BSXPJ.png)
 
 3. On the **Role Properties** page, click the **Permissions** tab.
 
-   ![Permissions tab in Role Properties in Directory Manager Admin Portal](images/ka0Qk000000CuJN_0EMQk00000BSXNh.png)
+   ![Permissions tab in Role Properties in Directory Manager Admin Portal](./images/ka0Qk000000CuJN_0EMQk00000BSXNh.png)
 
 4. The **Create** permissions for the User portal are shown in the following images:
 
-   ![Create permissions for object types in Directory Manager User portal](images/ka0Qk000000CuJN_0EMQk00000BSXQv.png)
+   ![Create permissions for object types in Directory Manager User portal](./images/ka0Qk000000CuJN_0EMQk00000BSXQv.png)
 
-   ![Additional create permissions for object types in Directory Manager User portal](images/ka0Qk000000CuJN_0EMQk00000BSXVl.png)
+   ![Additional create permissions for object types in Directory Manager User portal](./images/ka0Qk000000CuJN_0EMQk00000BSXVl.png)
 
 5. Select the **Allow** option for **Group** and **Contact** object types to permit creation. Select the **Deny** option for all other object types to restrict creation.
 
@@ -56,4 +56,4 @@ To grant or deny permission to create specific objects in the Netwrix Directory 
 
 When you allow the role to create *groups* and *contacts* using the portal, the result will look like this:
 
-![User portal showing only group and contact creation options](images/ka0Qk000000CuJN_0EMQk00000BSXSX.png)
+![User portal showing only group and contact creation options](./images/ka0Qk000000CuJN_0EMQk00000BSXSX.png)

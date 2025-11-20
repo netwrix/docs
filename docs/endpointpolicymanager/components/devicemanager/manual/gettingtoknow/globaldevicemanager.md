@@ -54,3 +54,5 @@ system responds.
 Selecting More information shows Device Info which may be used in the next steps to allow a device
 type. It is recommended to copy these details to Notepad to keep them handy for use during the
 read-through of the manual.
+
+

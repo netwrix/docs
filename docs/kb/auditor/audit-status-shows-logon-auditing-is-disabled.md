@@ -25,7 +25,7 @@ knowledge_article_id: kA00g000000H9YbCAK
 
 Audit status of some Domain controllers in the list shows that some auditing is disabled, for example "Logon Auditing is disabled, some funcionality will be unavailable for this DC. Please turn on auditing of invalid logons in audit policy for this DC"
 
-![User-added image](images/ka04u000000HcRc_0EM700000004wxR.png)
+![User-added image](./images/ka04u000000HcRc_0EM700000004wxR.png)
 
 ---
 
@@ -49,7 +49,7 @@ To resolve the issue configure audit policies/ advanced audit policies.
    - **Audit account logon events: Failure**
    - **Audit logon events: Failure**
 
-   ![User-added image](images/ka04u000000HcRc_0EM700000004wxC.png)
+   ![User-added image](./images/ka04u000000HcRc_0EM700000004wxC.png)
 
 5. Update group policy an all monitored DCs (for example run `gpupdate /force`)
 
@@ -60,7 +60,7 @@ To resolve the issue configure audit policies/ advanced audit policies.
 3. Expand the **Computer Configuration** -> **Policies** -> **Windows Settings** -> **Security Settings** -> **Advanced Audit Policy Configuration** node.
 4. Configure audit policies according to page 12, Section 4.2: Enabling Audit Policy, of the [Account Lockout Examiner Administrator Guide](https://www.netwrix.com/download/documents/NetWrix_Account_Lockout_Examiner_Administrator_Guide.pdf?_ga=2.126161166.2092059225.1569427026-1766003445.1557946744).
 
-![User-added image](images/ka04u000000HcRc_0EM7000000054jS.png) ![User-added image](images/ka04u000000HcRc_0EM7000000054jX.png) ![User-added image](images/ka04u000000HcRc_0EM700000004wxH.png)
+![User-added image](./images/ka04u000000HcRc_0EM7000000054jS.png) ![User-added image](./images/ka04u000000HcRc_0EM7000000054jX.png) ![User-added image](./images/ka04u000000HcRc_0EM700000004wxH.png)
 
 5. Update group policy an all monitored DCs (for example run `gpupdate /force`)
 
@@ -77,4 +77,5 @@ In order to do this:
 3. Change the value of **UseWMI_Audit** to `0`,
 4. In the Account Lockout Examiner console go to **File - Settings** and click **OK** to apply registry changes.
 
-![User-added image](images/ka04u000000HcRc_0EM700000004wxM.png)
+![User-added image](./images/ka04u000000HcRc_0EM700000004wxM.png)
+

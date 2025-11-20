@@ -12,3 +12,5 @@ then install the PP CSE.
 ```
 Do {$ieCheck = Get-Process iexplore -ErrorAction SilentlyContinueIf ($ieCheck -eq $null) {msiexec /i ‘PolicyPak Client-Side Extension x64.msi' /q#Write-Host ‘Installing'Start-Sleep -s 600Exit}else {#Write-Host ‘IE Open'Start-Sleep -s 600}} while ($ieCheck -ne $null)
 ```
+
+

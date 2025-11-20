@@ -9,13 +9,13 @@ In this video, you'll learn the steps you need to do in order to set up event fo
 and by using your existing infrastructure, you can collect interesting events which come out of
 Netwrix Endpoint Policy Manager (formerly PolicyPak).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/K8AWtkHwUi8" title="Endpoint Policy Manager: Using Windows Event Forward to search for interesting events (PPLPM or anything else)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K8AWtkHwUi8" title="Endpoint Policy Manager: Using Windows Event Forward to search for interesting events (PPLPM or anything else)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Using Windows Event Forward to search for interesting events
 
 Hi. This is Jeremy Moskowitz. In this video, I'm going to show you how you can do event forwarding
 for any kind of application, including Endpoint Policy Manager
-[Least Privilege Manager](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html).
+[Least Privilege Manager](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html).
 This can help you decide what things you need to make rules for.
 
 By way of example, let's say you have a user who double clicks on something that requires a UAC
@@ -195,4 +195,4 @@ throwing UAC prompts and help you create rules to bypass them, you can do that r
 Thank you very much for watching, and talk to you soon.
 
 Related
-article: [How to forward interesting events for Least Privilege Manager (or anything else) to a centralized location using Windows Event Forwarding.](/docs/endpointpolicymanager/components/endpointprivilegemanager/knowledgebase/eventing/windowseventforwarding.md)
+article: [How to forward interesting events for Least Privilege Manager (or anything else) to a centralized location using Windows Event Forwarding.](/docs/endpointpolicymanager/components/endpointprivilegemanager/technotes/eventing/windowseventforwarding.md)

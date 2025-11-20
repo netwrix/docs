@@ -190,3 +190,5 @@ it as the basis to start a rule.
 ![event1](/images/endpointpolicymanager/device/devicemanager/event1.webp)
 
 # ![event2](/images/endpointpolicymanager/device/devicemanager/event2.webp)
+
+

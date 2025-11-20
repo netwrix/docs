@@ -38,7 +38,7 @@ Get-SmartGroup | Select Name, @{Name="Owner"; Expression={ (Get-User -Identity $
 
 > **NOTE:** To change the directory, replace `C:\smartgroups.csv` with the desired directory path.
 
-![Exporting Smart Group owners and additional owners in Directory Manager Management Shell](images/ka0Qk000000EZ7Z_0EMQk00000BuCxp.png)
+![Exporting Smart Group owners and additional owners in Directory Manager Management Shell](./images/ka0Qk000000EZ7Z_0EMQk00000BuCxp.png)
 
 4. To export the owner and additional owner list for all types of groups (managed and unmanaged), run the command below. This cmdlet will provide the owner and additional owner information for all types of groups.
 

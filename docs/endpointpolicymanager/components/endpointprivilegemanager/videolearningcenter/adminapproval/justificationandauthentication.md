@@ -13,6 +13,8 @@ the number of times executed to remember.
 
 See this video for additional information.
 
-<iframe width="1700" height="956" src="https://www.youtube.com/embed/09eH09WcGmo" title="Endpoint Policy Manager: Gathering and Uploading Logs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/09eH09WcGmo" title="Endpoint Policy Manager: Gathering and Uploading Logs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ![Remember Justification and Authentication](/images/endpointpolicymanager/video/leastprivilege/selfelevatemode/rememberjustificationandauthentication.webp)
+
+

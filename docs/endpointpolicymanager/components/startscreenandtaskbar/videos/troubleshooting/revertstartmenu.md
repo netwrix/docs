@@ -7,7 +7,7 @@ sidebar_position: 20
 
 If your Start Menu is a little unhappy, use these scripts to make it right.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u59dI77JP8M?si=nOUK4FTUtGTghTG5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u59dI77JP8M?si=nOUK4FTUtGTghTG5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Using PP SCRIPTS to Revert Start Menu
 
@@ -114,3 +114,5 @@ mind, if you have any questions, please ask on the forums in the Start Screen an
 forum.
 
 Thank you very much, and talk to you soon.
+
+

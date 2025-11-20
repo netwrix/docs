@@ -48,4 +48,4 @@ The file is available at the following locations for the respective portals:
    ```
 3. Set the value in minutes as needed. If the key does not exist, add the line and save the changes.
 
-![web.config file showing sessiontimeout key under appSettings section](images/ka0Qk000000CsUT_0EMQk00000BP4Jp.png)
+![web.config file showing sessiontimeout key under appSettings section](./images/ka0Qk000000CsUT_0EMQk00000BP4Jp.png)

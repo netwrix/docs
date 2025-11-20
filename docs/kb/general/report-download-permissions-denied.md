@@ -24,7 +24,7 @@ knowledge_article_id: kA00g000000H9aWCAS
 
 You receive `Error: Permissions denied` or `Can't create the file: Permission denied` when trying to download any report from the Helpdesk portal
 
-![User-added](images/servlet_image_6d5dba18caac.png)
+![User-added](./images/servlet_image_6d5dba18caac.png)
 
 ---
 
@@ -44,4 +44,4 @@ To grant permission:
 3. **Add** the account and enable **Write** Allow checkbox
 4. Click **Ok**, then **Ok** again
 
-![User-added](images/servlet_image_6d5dba18caac.png)
+![User-added](./images/servlet_image_6d5dba18caac.png)

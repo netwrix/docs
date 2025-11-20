@@ -11,7 +11,7 @@ Group Policy MVP Jeremy Moskowitz shows how ADM and ADMX files do not perform th
 them to. Jeremy demonstrates how a 3rd party tool like Netwrix Endpoint Policy Manager (formerly
 PolicyPak) can actually deliver settings, plus perform lockdown so your settings are ensured.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UK23JWVJm-c?si=3Yz1sgdu3OBnaN-k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UK23JWVJm-c?si=3Yz1sgdu3OBnaN-k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Group Policy: ADM/X Files – why they cannot prevent user shenanigans video transcript
 
@@ -150,6 +150,8 @@ idea here is that we've ensured that all four checkboxes are checked, or whateve
 settings are, and even while the app is running no shenanigans can actually occur. That is the key
 point of how PolicyPak works.  
 With that in mind, if you're interested in learning more about this, you can come to one of the
-webinars that we do at endpointpolicymanager.com. I hope to see you there.
+webinars that we do at policypak.com. I hope to see you there.
 
 Thanks so very much. Take care.
+
+

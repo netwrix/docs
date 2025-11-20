@@ -27,3 +27,4 @@ Directory, for example, then all directives are merged together. In the case of 
 Policy always wins.
 
 ![licensing_with_policypak_cloud_1_624x574](/images/endpointpolicymanager/cloud/licensing/licensing_with_endpointpolicymanager_cloud_1_624x574.webp)
+

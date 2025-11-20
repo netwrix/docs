@@ -1,0 +1,10 @@
+{
+  "label": "Backup settings",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "backup_settings"
+  }
+}

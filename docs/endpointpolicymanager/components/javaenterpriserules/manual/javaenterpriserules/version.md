@@ -28,3 +28,5 @@ version of Java is utilized.
 
 Figure 32. "Latest on machine" does what it implies; it utilizes the latest version of Java
 available and installs it on the machine.
+
+

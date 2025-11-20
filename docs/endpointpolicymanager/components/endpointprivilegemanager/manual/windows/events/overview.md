@@ -34,11 +34,11 @@ forwarding to capture and forward events from multiple machines. In this way you
 multiple users are doing and look through the events for interesting ideas to convert into rules.
 
 - See the
-  [How to forward interesting events for Least Privilege Manager (or anything else) to a centralized location using Windows Event Forwarding.](/docs/endpointpolicymanager/components/endpointprivilegemanager/knowledgebase/eventing/windowseventforwarding.md)
+  [How to forward interesting events for Least Privilege Manager (or anything else) to a centralized location using Windows Event Forwarding.](/docs/endpointpolicymanager/components/endpointprivilegemanager/technotes/eventing/windowseventforwarding.md)
   topic to learn more about event forwarding.
 - You can also use Netwrix Auditor to capture events from endpoints to bring them to a centralized
   source for investigation. See the
-  [How to use Netwrix Auditor to Report on Endpoint Policy Manager events](/docs/endpointpolicymanager/components/endpointprivilegemanager/knowledgebase/eventing/reports.md)
+  [How to use Netwrix Auditor to Report on Endpoint Policy Manager events](/docs/endpointpolicymanager/components/endpointprivilegemanager/technotes/eventing/reports.md)
   topic for additional information.
 - You can use Azure Log Analytics to store Endpoint Policy Manager Least Privilege Manager events.
   See the

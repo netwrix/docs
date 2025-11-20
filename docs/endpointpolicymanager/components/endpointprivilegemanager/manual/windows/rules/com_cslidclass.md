@@ -41,3 +41,6 @@ function will not work as expected.
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/elevate/elevating_com_cslid_class_3.webp)
 
 After the policy applies, the COM item will have its UAC prompt overcome.
+
+
+

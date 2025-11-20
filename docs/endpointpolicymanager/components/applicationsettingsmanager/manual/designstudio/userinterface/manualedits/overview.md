@@ -10,3 +10,6 @@ The Endpoint Policy Manager Capture Wizard usually does a pretty good job of cap
 for most applications. However, sometimes it needs a little manual help to get the applications'
 elements to where they need to be. The sections below describe some circumstances that may require
 manual editing.
+
+
+

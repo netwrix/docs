@@ -17,3 +17,5 @@ Under the hood, the keys that are edited are in
 ```
 HKEY_Current_UserSoftwareMicrosoftInternet ExplorerMain
 ```
+
+

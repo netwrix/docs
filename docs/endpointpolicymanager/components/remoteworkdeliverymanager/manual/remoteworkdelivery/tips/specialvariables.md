@@ -50,3 +50,5 @@ Policy Manager Cloud:
 - Install a non-MSI application, like Notepad++ setup installer immediately after downloading it
   (with its own switches, such as capital /S for silent, in the case of Notepad++ setup routine):
   `npp.7.5.6.Installer.exe $Env:DestinationFile /S`
+
+

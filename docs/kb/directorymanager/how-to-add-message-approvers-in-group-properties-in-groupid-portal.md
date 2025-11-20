@@ -53,7 +53,7 @@ Follow the below-provided instructions to customize the portal:
 
 1. In the **Netwrix Directory Manager Admin Center Portal**, select **Self-Service** **GroupID Portals** **[required portal]** **Triple Dot button** **Settings**.
 
-   ![User-added image](images/ka0Qk000000D2Dh_0EMQk000001gaph.png)
+   ![User-added image](./images/ka0Qk000000D2Dh_0EMQk000001gaph.png)
 
 2. Under the **Design Settings** tab, select the **Identity Store** you want to customize in the portal.
 
@@ -61,33 +61,33 @@ Follow the below-provided instructions to customize the portal:
 
 4. Select **Advanced** in the **Name** list and click **Edit**.
 
-   ![User-added image](images/ka0Qk000000D2Dh_0EMQk000001garJ.png)
+   ![User-added image](./images/ka0Qk000000D2Dh_0EMQk000001garJ.png)
 
 5. On the **Edit Design Category** dialog box, click **Add Field**.
 
-   ![User-added image](images/ka0Qk000000D2Dh_0EMQk000001gasv.png)
+   ![User-added image](./images/ka0Qk000000D2Dh_0EMQk000001gasv.png)
 
 6. Select the `mxExchEnableModeration` attribute in the **Field** list, enter the display name as **Is Moderator Enabled** and set the display type to **Check**.
 
-   ![User-added image](images/ka0Qk000000D2Dh_0EMQk000001gauX.png)
+   ![User-added image](./images/ka0Qk000000D2Dh_0EMQk000001gauX.png)
 
 7. Click **Add** on the dialog boxes and then click **Add Field** again on the **Edit Design Category**.
 
 8. Select the `mxExchModeratedByLink` attribute in the **Field** list, enter the display name as **Moderators**, and set the display type to **DNs**.
 
-   ![User-added image](images/ka0Qk000000D2Dh_0EMQk000001gaxl.png)
+   ![User-added image](./images/ka0Qk000000D2Dh_0EMQk000001gaxl.png)
 
 9. Click **Add** on the dialog boxes and then click **Add Fields** again on the **Edit Design Category**.
 
 10. Select the `mxExchBypassModerationLink` attribute in the **Field** list, enter the display name as **Bypass Moderators**, and set the display type to **DNs**.
 
-    ![User-added image](images/ka0Qk000000D2Dh_0EMQk000001gazN.png)
+    ![User-added image](./images/ka0Qk000000D2Dh_0EMQk000001gazN.png)
 
 11. Click **Add** on the dialog boxes and then click the **Save** button to save the settings.
 
 12. Launch the **Netwrix Directory Manager** portal. You should be able to see the newly added attributes in the **Group’s Properties** under the **Advanced** tab.
 
-    ![User-added image](images/ka0Qk000000D2Dh_0EMQk000001gb0z.png)
+    ![User-added image](./images/ka0Qk000000D2Dh_0EMQk000001gb0z.png)
 
 
 
@@ -96,14 +96,14 @@ Follow the below-provided instructions to customize the portal:
 ## Related Articles:
 
 - [Customize Properties Pages](https://docs.netwrix.com/docs/directorymanager/11_0/signin/service/mobileservice/design/objectproperties)
--  [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results.md)
+-  [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results)
 
-- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou.md)
+- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou)
 
-- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard.md)
+- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard)
 
-- [How to Trigger a workflow When a User Сreates a Group](/docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group.md)
+- [How to Trigger a workflow When a User Сreates a Group](/docs/kb/directorymanager/how_to_trigger_a_workflow_when_a_user_сreates_a_group)
 
 - [Best Practices for Controlling Changes to Group Membership](https://docs.netwrix.com/docs/kb/directorymanager/best-practices-for-controlling-changes-to-group-membership#netwrix-directory-manager-best-practices)
 
-- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage.md)
+- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage)

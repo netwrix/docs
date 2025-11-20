@@ -38,3 +38,5 @@ Finally, take the defaults… and/or change the ShortCut name to suit.
 Final results should look like this…
 
 ![724_9_hf-936-img-05](/images/endpointpolicymanager/startscreentaskbar/724_9_hf-936-img-05.webp)
+
+

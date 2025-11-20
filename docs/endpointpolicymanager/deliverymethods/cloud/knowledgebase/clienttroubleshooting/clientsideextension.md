@@ -63,7 +63,7 @@ Download the CSE from the Endpoint Policy Manager Portal
 
 **Step 1 –** Browse to the portal and sign in
 
-- [https://portal.endpointpolicymanager.com](https://portal.endpointpolicymanager.com)
+- [https://portal.policypak.com](https://portal.policypak.com)
 
 **Step 2 –** On the Home page, download the "Latest Bits" in the form of either a ZIP or ISO file
 
@@ -80,3 +80,5 @@ and copy out the "Endpoint Policy Manager Client Side Extension x??.msi"
 Can be run from anywhere, does not have to be in the cached install folder above
 
 :::
+
+

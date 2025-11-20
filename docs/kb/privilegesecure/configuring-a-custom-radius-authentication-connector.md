@@ -33,9 +33,9 @@ Ensure that you have a RADIUS server installed and configured in your environmen
 ## Instructions
 1. In Netwrix Privilege Secure (NPS), navigate to **Configuration > Authentication**. Select the **green plus sign** to create a new Authentication Connector.
 2. Provide a name for the Connector and select the **MFA** Connector Type.  
-   ![rtaImage.jpg](images/ka0Qk000000B1aH_0EMQk000008j38P.png)
+   ![rtaImage.jpg](./images/ka0Qk000000B1aH_0EMQk000008j38P.png)
 3. Click **Save**, and then configure the connector with the appropriate values for your RADIUS server.  
-   ![rtaImage 2.jpg](images/ka0Qk000000B1aH_0EMQk000008j3Bd.png)
+   ![rtaImage 2.jpg](./images/ka0Qk000000B1aH_0EMQk000008j3Bd.png)
 4. Open the **appsettings.json** file. On a default installation, it will be located in the following path:
 
    ```

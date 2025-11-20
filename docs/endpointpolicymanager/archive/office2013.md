@@ -12,7 +12,7 @@ they get the same experience, every time they launch it, especially for an ubiqu
 such as this. Keep your Microsoft Office 2013 configuration settings delivered, enforced and
 automatically remediated with Endpoint Policy Manager. Check out this video to see how it's done.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b7MBQBnRn-c?si=9j-EvONdRtaEL2Qz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b7MBQBnRn-c?si=9j-EvONdRtaEL2Qz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Lockdown Microsoft Office Suite 2013 Video Transcript
 
@@ -43,7 +43,7 @@ Center Settings" such as "Macro Settings."
 
 If you open up Microsoft Word and review my "Trust Center Settings" you'll see some more tabs that
 are important to this application as well such as "Protected View" and
-[https://dev.endpointpolicymanager.com/company/privacy/](https://dev.endpointpolicymanager.com/company/privacy/) Options."
+[https://policypak.com/company/privacy/](https://policypak.com/company/privacy/) Options."
 
 Let's go over to our "Task Monitoring," and we'll see that it's "In Progress" here. Let's go over to
 my target machine here, and we'll take a look at the Mirage client and it's doing its thing. This is
@@ -67,7 +67,7 @@ PolicyPak. I'll go ahead and switch over to my Management Station computer.
 
 We'll go ahead and right click over our "East Sales Users", "Create a GPO" and we're going to call
 it
-[https://dev.endpointpolicymanager.com/lockdown-recordings-portal/](https://dev.endpointpolicymanager.com/lockdown-recordings-portal/)
+[https://policypak.com/lockdown-recordings-portal/](https://policypak.com/lockdown-recordings-portal/)
 Office 2013." So this GPO is now associated with the "East Sales Users." you'll right click over it.
 You'll click "Edit…" you'll dive down under "User Configuration,"
 "PolicyPak/Applications/New/Application." There it is, "PolicyPak for Microsoft Outlook 2013" along
@@ -130,7 +130,8 @@ And we are done. That is how incredibly easy it is for you to use PolicyPak to m
 2013 suite as well as tons of other desktop applications.
 
 If you're looking for a trial of PolicyPak, just click on the
-[https://dev.endpointpolicymanager.com/webinar/](https://dev.endpointpolicymanager.com/webinar/) button on the right.
+[https://policypak.com/webinar/](https://policypak.com/webinar/) button on the right.
 
 Thanks so much for watching, and get in touch with us if you're looking to get started. Talk to you
 soon.
+

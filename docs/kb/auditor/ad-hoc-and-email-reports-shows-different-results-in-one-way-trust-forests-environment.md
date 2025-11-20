@@ -46,7 +46,7 @@ To check if the Data Processing Account has enough permissions please perform th
 
 If you do not see the `CN=Password Settings Container` under the `CN=System` node or cannot read the properties this indicates Data Processing Account does have read rights (see the screenshot below: the account does not have rights to access the Password Settings Container).
 
-![User-added image](images/ka04u000000HcS1_0EM700000007Jf8.png)
+![User-added image](./images/ka04u000000HcS1_0EM700000007Jf8.png)
 
 ## To provide read permissions to the Data Processing Account
 1. Run ADSI Edit as a domain Administrator.
@@ -56,4 +56,5 @@ If you do not see the `CN=Password Settings Container` under the `CN=System` nod
 
 Once the read permission for the Data Processing Account is set, verify the access by opening the `CN=Password Settings Container` properties with the Data Processing Account. This time you should be able to see `CN=Password Settings Container` under the `CN=System` node and read its properties (see the screenshot below).
 
-![User-added image](images/ka04u000000HcS1_0EM700000007JfD.png)
+![User-added image](./images/ka04u000000HcS1_0EM700000007JfD.png)
+

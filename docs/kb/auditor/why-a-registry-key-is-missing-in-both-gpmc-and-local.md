@@ -39,6 +39,7 @@ Registry audit settings are required for some data sources, for example, for Log
 5. On this screen that pops up, add the required permissions.
 6. On the next screen, you’ll be prompted to configure the key, then how you want the settings to be applied; or not allow permission to be replaced.
 7. Manually add the path to the Registry Key in the **Selected Key** dialog.  
-   ![User-added image](images/ka0Qk0000001VD3_0EMQk000002dT5q.png)
+   ![User-added image](./images/ka0Qk0000001VD3_0EMQk000002dT5q.png)
 
 This will apply the key settings to the GPO, and all computers affected by the GPO.
+

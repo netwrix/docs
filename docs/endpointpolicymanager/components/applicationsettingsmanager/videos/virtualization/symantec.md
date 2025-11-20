@@ -23,7 +23,7 @@ Watch this video (exclusively for SWS and SWV administrators) to see exactly how
 applications using Netwrix Endpoint Policy Manager (formerly PolicyPak) (via Group Policy, Altiris,
 or SCCM):
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7nJZCHYn3To?si=woLLaZ1qp3lYlDnj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7nJZCHYn3To?si=woLLaZ1qp3lYlDnj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 You're smart. You picked SWS and SWV to make application deployment easier.
 
@@ -146,7 +146,7 @@ these settings afterward and also optionally lock it down. That's what PolicyPak
 
 If we go back to our Group Policy Object here, we can go to "New Application" and we'll pick
 "PolicyPak for Mozilla Firefox" here. We'll go ahead and double click it, and we'll set the "Home
-Page" – notice again that our Pak looks pretty much exactly like the app – "www.endpointpolicymanager.com."
+Page" – notice again that our Pak looks pretty much exactly like the app – "www.policypak.com."
 While we're here, for "Security" we will check all of these checkboxes and really ensure that those
 settings are going to be dynamically delivered.
 
@@ -157,7 +157,7 @@ show you how to do that.
 Alright, now that that's done, I'll go ahead and close that out. Let's go ahead and run "Mozilla
 Firefox" and see if our settings were set dynamically using PolicyPak. We'll go to
 "Firefox/Options." There we go. The "Security" tab shows that all three settings were set, and the
-"General" tab shows that "www.endpointpolicymanager.com" is the now "Home Page."
+"General" tab shows that "www.policypak.com" is the now "Home Page."
 
 If they change this to "www.oops.com" and they do something they shouldn't do, click "OK" and click
 close, well the next time Firefox is run, whether or not they're online or offline, those settings
@@ -175,3 +175,5 @@ Virtualization. If you're looking to get a trial or an eval copy of PolicyPak, c
 webinars and as soon as we see you there we'll hand over the bits.
 
 Thanks so much, and I'll talk to you soon.
+
+

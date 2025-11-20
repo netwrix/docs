@@ -51,7 +51,7 @@ wrapped-up version of the provided XML files. Below is a summary of what each XM
 - `Ppatm-screensaver-settings.xml` sets the Windows screensaver to 17 minutes and forces the machine
   to be locked when it is powered back on.
 - `Ppbr-examples` makes some sample Endpoint Policy Manager Browser Router routes. Specifically, it
-  will route endpointpolicymanager.com to Internet Explorer, GPanswers.com to Chrome, and Mozilla.org to
+  will route policypak.com to Internet Explorer, GPanswers.com to Chrome, and Mozilla.org to
   Firefox, and it will block Facebook.com.
 - `Pplpm-run-procmon-elevated.xml` enables Process Monitor to bypass UAC prompts and run elevated.
 - P`pprefs-shortcut.xml` shows a Endpoint Policy Manager shortcut item on the desktop.
@@ -77,3 +77,4 @@ following video:
 
 Then, you can learn more about how to use Endpoint Policy Manager with your own MDM tool on this
 page: Getting Started with MDM > [Video Learning Center](/docs/endpointpolicymanager/deliverymethods/mdm/videos/videolearningcenter.md).
+

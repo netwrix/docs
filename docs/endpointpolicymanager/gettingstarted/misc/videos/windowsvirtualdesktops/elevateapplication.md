@@ -10,7 +10,7 @@ Sometimes and app won't run unless you're running with local admin rights. NOT a
 Instead, use Netwrix Endpoint Policy Manager (formerly PolicyPak) Least Privilege Manager to elevate
 applications when needed, and keep Standard Users just that... users and NOT admins.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7jd800gl6gU" title="Endpoint Policy Manager + WVD: Elevate application inside WVD and bypass UAC prompts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7jd800gl6gU" title="Endpoint Policy Manager + WVD: Elevate application inside WVD and bypass UAC prompts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi. This is Jeremy Moskowitz, former 15-year Group Policy MVP and Founder of PolicyPak Software. In
 this video, we're going to talk about a Windows Virtual Desktop problem that you can overcome with
@@ -79,3 +79,4 @@ Okay, well, with that in mind, I hope this helps you out and gets you past a bun
 privilege problems using PolicyPak Least Privilege Manager.
 
 Thanks so very much for watching and talk to you soon.
+

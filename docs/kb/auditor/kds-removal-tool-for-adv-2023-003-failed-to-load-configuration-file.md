@@ -32,7 +32,7 @@ Failed to load configuration file.
 Could not find a part of the path
 ```
 
-![Error dialog image](images/ka04u00000117HW_0EM4u000008LwaA.png)
+![Error dialog image](./images/ka04u00000117HW_0EM4u000008LwaA.png)
 
 ## Cause
 
@@ -69,3 +69,4 @@ Change it to a full path (example):
 3. Save changes and run the tool again.
 
 In case these steps did not help, contact Netwrix Technical Support: https://www.netwrix.com/open_a_ticket.html.
+

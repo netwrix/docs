@@ -6,6 +6,7 @@ keywords: [training, course, certification, partners, sales, access analyzer, au
 description: "Become a certified Sales Professional for Netwrix Data Security Posture Management"
 ---
 
+import { DSPMIntro } from '@site/src/training/data-security-posture-management';
 import { Company, NAA, NA, NDC, NEP } from '@site/src/training/products';
 
 
@@ -16,9 +17,12 @@ This learning path grants <Company /> certification as a Sales Professional for 
 * <NDC />
 * <NEP />
 
-It contains the following course:
+It contains the following courses:
 
+* 1980 Introduction to <Company /> Data Security Posture Management Solution
 * Introduction to the Netwrix Solution for Data Security Posture Management (DSPM)
+
+<DSPMIntro />
 
 ## Introduction to the Netwrix Solution for Data Security Posture Management (DSPM)
 

@@ -31,6 +31,7 @@ Netwrix technical support may ask you to create a dump of a particular process (
 5. Specify location to save the dump file.
 6. Provide the dump file to the technical support.
 
-![User-added image](images/ka0Qk000000DRwr_0EM7000000051zm.png)
+![User-added image](./images/ka0Qk000000DRwr_0EM7000000051zm.png)
 
 **NOTE:** If you receive Access Denied error during the process, please check the ["Debug Programs" Computer Policy](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/debug-programs). Consider adding the account that you use to the list of allowed users or use an Account which has this permission (e.g. local administrator account)"
+

@@ -33,3 +33,4 @@ steps are covered in the following sections.
 ![gpcr_server_with_push_mode_9](/images/endpointpolicymanager/grouppolicycompliancereporter/mode/push/setup/gpcr_server_with_push_mode_9.webp)
 
 Figure 45. The Audit Setup Wizard.
+

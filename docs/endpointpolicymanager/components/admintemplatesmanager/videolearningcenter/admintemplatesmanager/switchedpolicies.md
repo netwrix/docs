@@ -7,7 +7,7 @@ sidebar_position: 20
 
 Deliver user side settings on the computer side, but get rid of Loopback!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GRJBVV7yr8U" title="Endpoint Policy Manager Admin Templates Manager: Switched Policies (without Loopback)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GRJBVV7yr8U" title="Endpoint Policy Manager Admin Templates Manager: Switched Policies (without Loopback)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with Netwrix Endpoint Policy Manager (formerly PolicyPak) Software. In this
 video, I'm going to show you how you can get out of the dirty, dirty business of using group policy
@@ -62,3 +62,5 @@ There you have it, the ability to drive user side settings into the computer sid
 controlled way avoiding loopback altogether an keeping your sanity intact. If this super power blows
 you away, too, sign up for our webinar and we'll get you started on your 30-day free trial right
 away. Thanks so much.
+
+

@@ -10,4 +10,6 @@ Do you have a specific rule you want to override against a blanket Self Elevate 
 is that explicit rules will win, but if you need to fall-back and let Self Elevate win, we've added
 this feature for you.
 
-<iframe width="1642" height="924" src="https://www.youtube.com/embed/Tauss8P73mw" title="Endpoint Policy Manager: Least Privilege Manager Deny Messages" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Tauss8P73mw" title="Endpoint Policy Manager: Least Privilege Manager Deny Messages" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+

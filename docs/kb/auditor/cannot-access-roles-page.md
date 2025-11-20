@@ -30,7 +30,7 @@ All pages on Administrative portals work except the Roles.
 An error occurred on the server when processing the URL. Please contact the system administrator.
 If you are the system administrator please click here to find out more about this error.
 
-![User-added](images/servlet_image_3823966b1661.png)
+![User-added](./images/servlet_image_3823966b1661.png)
 
 ---
 
@@ -46,5 +46,6 @@ Follow these steps to fix the issue:
 2. Locate the web-site that is hosting the `PM` virtual directory.
 3. Navigate to the **admin** virtual directory.
 4. Open **ASP** settings under the **IIS** section.
-   ![User-added](images/servlet_image_3823966b1661.png)
+   ![User-added](./images/servlet_image_3823966b1661.png)
 5. Make sure that **Enable Buffering** is set to `True`.
+

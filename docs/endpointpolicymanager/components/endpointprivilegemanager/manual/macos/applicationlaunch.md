@@ -33,3 +33,6 @@ to perform approval requests.
 The following options are honored in the Mac (and Windows) client:
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/mac/using_macos_admin_approval_2.webp)
+
+
+

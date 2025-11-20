@@ -46,21 +46,21 @@ examples, you'll see a file named `ppprefs-shortcut.xml`.
 
 Remove the file from the ZIP archive, and put it in a handy place for the deployment step.
 
-The Group Policy Preference item has a simple goal: to place a shortcut for www.endpointpolicymanager.com on the
+The Group Policy Preference item has a simple goal: to place a shortcut for www.policypak.com on the
 desktop. If you wish to create a Group Policy Preference item from scratch, see the next section.
 
 ## Option 2 - Using Microsoft Group Policy Preferences Editor
 
 While you can use any combination of Group Policy Preference items, we strongly recommend that you
-use the Group Policy Preference item shown below, which puts an icon for www.endpointpolicymanager.com on the
+use the Group Policy Preference item shown below, which puts an icon for www.policypak.com on the
 desktop.
 
 These are the settings used to make the Group Policy Preference item:
 
-- Name: www.endpointpolicymanager.com
+- Name: www.policypak.com
 - Target Type: URL
 - Location: Desktop
-- Target URL: www.endpointpolicymanager.com
+- Target URL: www.policypak.com
 - Icon file path: `%SystemRoot%\system32\SHELL32.dll`
 - Icon index: 47
 
@@ -81,3 +81,5 @@ Computer side, depending on which side on are on.
 ![quickstart_using_policypak_3](/images/endpointpolicymanager/preferences/quickstart_using_endpointpolicymanager_3.webp)
 
 Keep the Group Policy Preference item file you created handy for the next step.
+
+

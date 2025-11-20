@@ -21,3 +21,5 @@ PolicyPak File Associations Manager. If you are expecting an application extensi
 application, but it does not, first check this file to see if what you expected is here or not. If
 the association is absent, then the target computer most likely did not get the policy to make the
 association. Fixing that should be your next step.
+
+

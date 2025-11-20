@@ -11,3 +11,5 @@ permanently** command, the next time the Cloud Client syncs to the Cloud Service
 (Cloud agent and Cloud CSE) are physically removed from the endpoint automatically.
 
 ![588_1_image001](/images/endpointpolicymanager/install/cloud/588_1_image001.webp)
+
+

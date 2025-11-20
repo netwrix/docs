@@ -17,3 +17,5 @@ When this is set, this will stop applications from attempting to apply settings 
 increase compatibility with some antivirus and security software.
 
 ![290_1_img-1_950x551](/images/endpointpolicymanager/troubleshooting/applicationsettings/290_1_img-1_950x551.webp)
+
+

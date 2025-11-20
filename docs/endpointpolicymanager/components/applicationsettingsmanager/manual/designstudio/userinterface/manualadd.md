@@ -9,11 +9,11 @@ sidebar_position: 30
 Although you will likely use the captured UI elements as they are, you might choose to manually add
 more elements or replace the existing ones. To do this, select an element from the toolbar, and
 hover over it for a tooltip about what the element is. The element will be placed on the tab or
-subdialog you are editing and will be shown with a thick green line, as shown in Figure 77.
+subdialog you are editing and will be shown with a thick green line, as shown In the figure shown.
 
 ![crafting_the_user_interface_18_624x507](/images/endpointpolicymanager/applicationsettings/designstudio/userinterface/crafting_the_user_interface_18_624x507.webp)
 
-Figure 77. Adding elements from the toolbar.
+The figure shown. Adding elements from the toolbar.
 
 Drag the element where you want to place it. Note that this does not configure the element (we will
 talk about how to configure the element later).
@@ -25,3 +25,6 @@ out. Therefore, manually added elements are underlined, demonstrating that they 
 using Endpoint Policy Manager AppLock™.
 
 :::
+
+
+

@@ -10,4 +10,6 @@ Learn how you can specify the text of the dialog box presented to users when Net
 Manager is actively managing a process. You can even use links in the dialog to send them to your
 helpdesk for more information !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IjMuffTkQMk?si=hqzXR2m73HnFJ8U8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IjMuffTkQMk?si=hqzXR2m73HnFJ8U8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+

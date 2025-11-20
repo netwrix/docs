@@ -40,3 +40,4 @@ same shared location. To share Endpoint Policy Manager GPCR data, you must utili
 Policy Manager GPCR server component.
 
 :::
+

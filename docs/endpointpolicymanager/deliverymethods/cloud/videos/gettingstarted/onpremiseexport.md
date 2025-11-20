@@ -8,7 +8,7 @@ sidebar_position: 80
 Copy and Paste to get your DC / on-prem directives uploaded. This video shows you how. It's a faster
 way to get going with Netwrix Endpoint Policy Manager (formerly PolicyPak) cloud !
 
-<iframe width="560" height="315" src="https://youtube.com/embed/21P5d3WOJtU" title="int Policy Manager Cloud: General Tips about On-Prem to PP Cloud Export" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/21P5d3WOJtU" title="int Policy Manager Cloud: General Tips about On-Prem to PP Cloud Export" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager Cloud: Quick upload method
 

@@ -19,7 +19,7 @@ components such as:
 - Endpoint Policy Manager File Associations Manager
 - Endpoint Policy Manager Browser Router
 - Endpoint Policy Manager
-  [Least Privilege Manager ](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)
+  [Least Privilege Manager ](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)
 - Endpoint Policy Manager Java Rules Manager
 - Endpoint Policy Manager Start Screen & Taskbar Manager
 - Endpoint Policy Manager Scripts Manager
@@ -70,5 +70,6 @@ To generate license request keys for Endpoint Policy Manager On-Prem suite endpo
 fort additional information.
 
 Once you acquire licenses from our sales team, you can implement them in two ways.
-[See PolicyPak Solution Methods: Group Policy, MDM, UEM Tools, and PolicyPak Cloud compared. for additional information on ](https://kb.endpointpolicymanager.com/kb/article/489-policypak-licensing-onpremise-licensing-methods-compared)
+[See PolicyPak Solution Methods: Group Policy, MDM, UEM Tools, and PolicyPak Cloud compared. for additional information on ](https://docs.netwrix.com/docs/endpointpolicymanager/licensing/knowledgebase/miscquestions/licensingmethods)
 how to import the licenses.
+

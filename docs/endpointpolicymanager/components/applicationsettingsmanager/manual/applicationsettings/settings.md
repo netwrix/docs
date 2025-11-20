@@ -12,8 +12,8 @@ this problem
 
 - Did you go through the Quickstart guide (see "Endpoint Policy Manager Application Settings Manager
   Quickstart with Preconfigured Paks") and work through the suggested example start to end? When
-  people sit down and patiently work through the installation steps in Book 2: Installation
-  Quickstart, and the Quickstart examples in this book, most will see what they were doing wrong.
+  people sit down and patiently work through the installation steps in the Installation
+  Quickstart, and the Quickstart examples in this documentation, most will see what they were doing wrong.
 - Did you install the Endpoint Policy Manager CSE on your client machines?
 - Did you create the Endpoint Policy Manager Application Settings Manager settings within the group
   policy object (GPO) on the correct side? Most of the time, you'll want to edit the User side of
@@ -30,7 +30,7 @@ this problem
 Most pre-configured Paks ship with internal Item-Level Targeting, which means the Pak is designed to
 only affect a specific version of the application. You can bypass internal Item-Level Targeting in
 the Pak. Refer to the video at
-[http://www.endpointpolicymanager.com/videos/bypassing-internal-item-level-targeting-filters.html](https://www.endpointpolicymanager.com/integration/endpointpolicymanager-group-policy-change-management-utilities.html)
+[https://www.policypak.com/videos/bypassing-internal-item-level-targeting-filters.html](https://www.policypak.com/integration/endpointpolicymanager-group-policy-change-management-utilities.html)
 to see how to bypass internal Item-Level Targeting.
 
 - Did you use block inheritance to block the licensing GPO or block the GPO that is delivering the

@@ -31,13 +31,13 @@ You can configure Netwrix Directory Manager 11 (formerly GroupID) to send users 
 ## Instructions
 1. In Directory Manager Admin Center, click the **Identity Stores** node.  
 2. For your identity store, click the three dots (**...**) button and select **Edit**.  
-   ![Identity Stores list with edit option highlighted in Directory Manager Admin Center](images/ka0Qk000000D8iv_0EMQk00000BpFrV.png)
+   ![Identity Stores list with edit option highlighted in Directory Manager Admin Center](./images/ka0Qk000000D8iv_0EMQk00000BpFrV.png)
 3. On the next page, click the **Configurations** button.  
-   ![Configurations button in Directory Manager Admin Center](images/ka0Qk000000D8iv_0EMQk00000BpFoH.png)
+   ![Configurations button in Directory Manager Admin Center](./images/ka0Qk000000D8iv_0EMQk00000BpFoH.png)
 4. Click the **Notifications** button.  
-   ![Notifications button in Directory Manager Admin Center](images/ka0Qk000000D8iv_0EMQk00000BpFmf.png)
+   ![Notifications button in Directory Manager Admin Center](./images/ka0Qk000000D8iv_0EMQk00000BpFmf.png)
 5. Under the **Also Notify** option, select the checkbox labeled **Logged in users for their actions**.  
-   ![Also Notify option with Logged in users for their actions checkbox selected](images/ka0Qk000000D8iv_0EMQk00000BpFuj.png)
+   ![Also Notify option with Logged in users for their actions checkbox selected](./images/ka0Qk000000D8iv_0EMQk00000BpFuj.png)
 6. Scroll down and click the **Save** button.
 
 With this notification setting enabled, email notifications will be sent to the logged-in user for changes they make to directory objects using the portal.
@@ -47,8 +47,8 @@ With this notification setting enabled, email notifications will be sent to the 
 ## Impact
 In the example below, an end user changes the **Description** field of a group.
 
-![User editing the Description field of a group in Directory Manager user portal](images/ka0Qk000000D8iv_0EMQk00000BpFt7.png)
+![User editing the Description field of a group in Directory Manager user portal](./images/ka0Qk000000D8iv_0EMQk00000BpFt7.png)
 
 The user will receive an email notification for the changes they made.
 
-![Sample email notification sent to user after making changes in Directory Manager user portal](images/ka0Qk000000D8iv_0EMQk00000BpFpt.png)
+![Sample email notification sent to user after making changes in Directory Manager user portal](./images/ka0Qk000000D8iv_0EMQk00000BpFpt.png)

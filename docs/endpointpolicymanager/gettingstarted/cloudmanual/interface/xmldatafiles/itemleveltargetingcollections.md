@@ -107,3 +107,4 @@ root node Item-Level Targeting must evaluate to "True" first, and only then will
 root node be evaluated for additional policy and collection Item-Level Targeting.
 
 ![web_interface_and_controls_32_624x277](/images/endpointpolicymanager/cloud/interface/xmldatafiles/web_interface_and_controls_32_624x277.webp)
+

@@ -9,7 +9,7 @@ Why do you need PPGPCR Server mode? Because all your computers' GP Results will 
 place, and you can quickly test to see if you are in compliance or not. Without PPGPCR Server, you
 simply don't know what's going on with ALL of your users or computers.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iVIWRr_oxBI" title="PPGPCR: Server Mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iVIWRr_oxBI" title="PPGPCR: Server Mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PPGPCR: Server Mode
 
@@ -56,3 +56,4 @@ If you want to get started with the Group Policy Compliance Reporter Server, it'
 go ahead and connect with us, and we'll get you the bits and you can try it real soon.
 
 Thanks so much, and we'll talk to you soon.
+

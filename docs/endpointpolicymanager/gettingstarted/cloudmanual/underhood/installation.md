@@ -28,7 +28,7 @@ Cloud.
 :::note
 If you always use a proxy, and the Endpoint Policy Manager Cloud client cannot seem to
 contact the Endpoint Policy Manager services, please read this Endpoint Policy Manager KB article:
-[http://www.endpointpolicymanager.com/knowledge-base/client-installation-troubleshooting/i-always-use-a-proxy-and-the-cloud-client-cannot-seem-to-make-contact-with-the-services-see-faq-item-3-above-first-what-else-can-i-try.html](http://www.endpointpolicymanager.com/knowledge-base/client-installation-troubleshooting/i-always-use-a-proxy-and-the-cloud-client-cannot-seem-to-make-contact-with-the-services-see-faq-item-3-above-first-what-else-can-i-try.html).
+[https://www.policypak.com/knowledge-base/client-installation-troubleshooting/i-always-use-a-proxy-and-the-cloud-client-cannot-seem-to-make-contact-with-the-services-see-faq-item-3-above-first-what-else-can-i-try.html](http://www.policypak.com/knowledge-base/client-installation-troubleshooting/i-always-use-a-proxy-and-the-cloud-client-cannot-seem-to-make-contact-with-the-services-see-faq-item-3-above-first-what-else-can-i-try.html).
 :::
 
 
@@ -101,3 +101,4 @@ computer and keep existing records)" for VDI machines.
 ![web_interface_and_controls_71_624x518](/images/endpointpolicymanager/troubleshooting/cloud/underhood/web_interface_and_controls_71_624x518.webp)
 
 Figure 162. Selecting the registration mode.
+

@@ -25,3 +25,4 @@ Explorer includes in order to make it easier to read.
 **Step 4 –** Click **Validate**. If successful, the **Validate** button will change to Save.
 
 ![policypak_exporter_tips_tricks_4](/images/endpointpolicymanager/mdm/tips/endpointpolicymanager_exporter_tips_tricks_4.webp)
+

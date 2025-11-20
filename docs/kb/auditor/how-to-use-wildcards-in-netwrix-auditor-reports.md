@@ -72,4 +72,5 @@ Netwrix Auditor reports are based on SQL Server Reporting Services — the same 
   - `AOE`
   - Not `ABE`, `ACE`, `AAE`, `ADE`.
 
-![Wildcards image](images/ka04u00000117UP_0EM4u000008M7Sw.png)
+![Wildcards image](./images/ka04u00000117UP_0EM4u000008M7Sw.png)
+

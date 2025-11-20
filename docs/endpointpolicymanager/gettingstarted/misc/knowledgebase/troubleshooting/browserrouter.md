@@ -27,3 +27,4 @@ If you want to open an investigation on WHY a machine's Endpoint Policy Manager 
 crashing, open a support ticket and prepare to generate both user and admin logs for investigation.
 
 ![378_5_img-03-image009_950x1116](/images/endpointpolicymanager/troubleshooting/378_5_img-03-image009_950x1116.webp)
+

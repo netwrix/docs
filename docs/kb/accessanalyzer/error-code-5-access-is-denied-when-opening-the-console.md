@@ -31,7 +31,7 @@ When opening the Netwrix Access Analyzer console, you receive the following erro
 System Error. Code: 5. Access is denied.
 ```
 
-![Error dialog image](images/ka0Qk000000EMFB_0EMQk00000CzhkH.png)
+![Error dialog image](./images/ka0Qk000000EMFB_0EMQk00000CzhkH.png)
 
 ## Cause
 

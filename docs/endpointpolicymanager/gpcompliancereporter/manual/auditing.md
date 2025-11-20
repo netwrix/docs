@@ -57,3 +57,4 @@ The "Has Audit Task" column is only present when the Endpoint Policy Manager GPC
 is communicating with a Endpoint Policy Manager GPCR server (clientless auditing mode).
 
 :::
+

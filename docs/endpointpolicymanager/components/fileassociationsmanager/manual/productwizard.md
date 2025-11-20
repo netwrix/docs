@@ -33,3 +33,5 @@ When you are done, you have , a collection that contains all the selected extens
 Media Player to use.
 
 ![about_policypak_file_associations_26](/images/endpointpolicymanager/fileassociations/about_endpointpolicymanager_file_associations_26.webp)
+
+

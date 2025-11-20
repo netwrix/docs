@@ -102,3 +102,5 @@ Click **Next** through the remainder of the wizard, accepting the defaults.
 At this point you should have seven policies.
 
 ![quickstart_adding_and_removing_15](/images/endpointpolicymanager/feature/addremove/quickstart_adding_and_removing_15.webp)
+
+

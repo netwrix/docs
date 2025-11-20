@@ -74,7 +74,7 @@ if endpoints got the contents of the CIS Benchmarks you expect.
 
 :::note
 View
-[https://www.endpointpolicymanager.com/products/compliance-reporter.html](https://www.endpointpolicymanager.com/products/compliance-reporter.html)
+[https://www.policypak.com/products/compliance-reporter.html](https://www.policypak.com/products/compliance-reporter.html)
 to get the general feel for how you would do this.
 :::
 
@@ -135,3 +135,4 @@ The basics for how to take existing Group Policy settings (from CIS Benchmarks o
 use with Endpoint Policy Manager MDM can be found
 [Reduce GPOs (and/or export them for use with Endpoint Policy Manager Cloud or with MDM)](/docs/endpointpolicymanager/deliverymethods/grouppolicy/videos/tipsandtricks/exportgpos.md)
 and [Endpoint Policy Manager and Microsoft Intune](/docs/endpointpolicymanager/deliverymethods/mdm/videos/gettingstarted/microsoftintune.md).
+

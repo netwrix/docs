@@ -30,7 +30,7 @@ answers more than 90% of use cases and installation questions.
 
 :::info
 Learn about what you already own/what it can do. Sign up for the IT Admin webinar
-at: [https://www.endpointpolicymanager.com/demo/](https://www.endpointpolicymanager.com/demo/)
+at: [https://www.policypak.com/demo/](https://www.policypak.com/demo/)
 :::
 
 
@@ -39,9 +39,9 @@ at: [https://www.endpointpolicymanager.com/demo/](https://www.endpointpolicymana
 Endpoint Policy Manager has two login areas, both of which are accessible from the main Customer
 Login page at Endpoint Policy Manager.com:
 
-- [Portal](http://portal.endpointpolicymanager.com/) — On-Prem bits downloads, extras, Endpoint Policy Manager
+- [Portal](https://portal.policypak.com/) — On-Prem bits downloads, extras, Endpoint Policy Manager
   Bootcamp (Free Training), Payment location for monthly usage
-- [Cloud](http://cloud.endpointpolicymanager.com/) — The Endpoint Policy Manager Cloud service
+- [Cloud](https://cloud.policypak.com/) — The Endpoint Policy Manager Cloud service
 
 ![gs1](/images/endpointpolicymanager/gettingstarted/gs1.webp)
 
@@ -100,7 +100,7 @@ way to get oriented on the navigation.
 ## Get Help from Support
 
 :::warning
-Email is no longer monitored at the old support @endpointpolicymanager.com email address.
+Email is no longer monitored at the old support @policypak.com email address.
 :::
 
 
@@ -134,3 +134,5 @@ secondary user of Endpoint Policy Manager, Welcome!
 
 We strive to give you world-class support and resources. If you need anything at all, please reach
 out!
+
+

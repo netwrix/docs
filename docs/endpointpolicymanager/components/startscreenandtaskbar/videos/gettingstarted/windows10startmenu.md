@@ -8,7 +8,7 @@ sidebar_position: 20
 The Windows 10 Start Menu is a beast to configure. Instead of leaving the Start Menu to users, YOU
 be in charge. See this video to get the basics down in minutes !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/05p9hGDMxGE" title="Endpoint Policy Manager Start Screen Manager: Own the Win10 Start Menu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/05p9hGDMxGE" title="Endpoint Policy Manager Start Screen Manager: Own the Win10 Start Menu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak Start Screen Manager: Own the Win10 Start Menu
 
@@ -17,7 +17,7 @@ Hi. This is Jeremy Moskowitz, former Group Policy MVP and Founder of Netwrix End
 Windows 10 Start Screen. How do we do it? We're going to use our Start Screen Manager program.
 
 You can see, we already have three groups that are here in the
-[https://www.endpointpolicymanager.com/pp-blog/windows-10-start-screen](https://www.endpointpolicymanager.com/pp-blog/windows-10-start-screen).
+[https://www.policypak.com/pp-blog/windows-10-start-screen](https://www.policypak.com/pp-blog/windows-10-start-screen).
 We're going to create our own called Our Important Apps. What are we're going to add there? We're
 going to add maybe "Adobe Reader," maybe add the "Calculator" and also add and Edge tile. We'll see
 how to do that.
@@ -67,7 +67,7 @@ go ahead and choose the "Large" and I'll call this "big calc."
 
 Then the last thing I'll do is I'll "Add/New Edge Tile." My Edge tile will let me give it a name.
 I'll call this "Get Endpoint Policy Manager Help," and then the "URL" can be
-[https://www.endpointpolicymanager.com](https://www.endpointpolicymanager.com); There we go, and click "Next" and I can make
+[https://www.policypak.com](https://www.policypak.com); There we go, and click "Next" and I can make
 this a "Wide" tile.
 
 You can also change the Desktop "Background" colors if you're so inclined and all that sort of
@@ -141,3 +141,5 @@ videos, like how to change
 to see how you can easily open PDFs, MAILTO and MP4s with the programs you want.
 
 Thanks so much for watching, and talk to you soon.
+
+

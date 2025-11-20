@@ -97,3 +97,5 @@ the final result of policies upon the machine. This is helpful so you can know w
 current state actually is. Example with some text removed to save space…
 
 ![887_15_image-20230525200517-14_950x1022](/images/endpointpolicymanager/troubleshooting/cloud/887_15_image-20230525200517-14_950x1022.webp)
+
+

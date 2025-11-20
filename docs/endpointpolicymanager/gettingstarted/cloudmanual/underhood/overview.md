@@ -26,3 +26,4 @@ interaction with the client machines, let's explore three areas:
 - XML data storage (where XML directives are downloaded)
 - Troubleshooting installation of the Cloud client and connection troubles
 - Command line syntax for initiating commands from the client to the server
+

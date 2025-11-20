@@ -37,3 +37,5 @@ Here is how precedence works:
 - Endpoint Policy Manager file-based policies (including those delivered from an MDM service) have
   the next highest precedence.
 - Endpoint Policy Manager Group Policy policies have the highest precedence.
+
+

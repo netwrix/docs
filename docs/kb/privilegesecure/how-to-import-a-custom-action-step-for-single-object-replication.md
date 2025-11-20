@@ -35,14 +35,14 @@ It can be necessary in certain Active Directory environments to force replicatio
    https://www.netwrix.com/download/SingleObjReplication.Addon.zip
 
 2. Extract the archive, which contains a README file, an ActionTemplates directory, and an `Install-Addon.ps1` script file. Right-click `Install-Addon.ps1` and select **Run with PowerShell**.  
-   ![Untitled.png](images/ka04u000000HdDb_0EM4u000005f3zs.png)
+   ![Untitled.png](./images/ka04u000000HdDb_0EM4u000005f3zs.png)
 
 3. When prompted, select "Y" to proceed.  
-   ![Untitled2.png](images/ka04u000000HdDb_0EM4u000005f3zZ.png)
+   ![Untitled2.png](./images/ka04u000000HdDb_0EM4u000005f3zZ.png)
 
 4. The PowerShell window should quickly execute the script and close.
 
 5. Log in to the Netwrix Privilege Secure console. (If Netwrix Privilege Secure was already open, be sure to refresh the console.)
 
 6. In Netwrix Privilege Secure, navigate to **Activities**, select an Activity, and click the green plus sign in either the **Pre-Session** or **Post-Session**. Note that the **Run AD Replication for User** activity step is now available.  
-   ![Untitled3.png](images/ka04u000000HdDb_0EM4u000005f40R.png)
+   ![Untitled3.png](./images/ka04u000000HdDb_0EM4u000005f40R.png)

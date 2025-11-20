@@ -31,3 +31,6 @@ be used when specific users log on. If SecureRun™ is enabled and performs work
 processes), then user-created processes aren’t created unless expressly allowed with the Allow and
 log rule. At this point, each rule is applied one by one to perform elevation (or Block or Allow and
 log).
+
+
+

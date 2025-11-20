@@ -10,7 +10,7 @@ if you want to take away local admin rights, but still give users the ability to
 if they have an emergency. This technique isn't generally recommended due to a potential lowering of
 your security posture, but it can be very useful for the right circumstances.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6MtBFMLyrTE?si=4a48b7MOdwy2BFDR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6MtBFMLyrTE?si=4a48b7MOdwy2BFDR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, and in this video we're going to talk about how to use PolicyPak Least
 Privilege Manager Self-Elevate Mode. Now before I get too far into it, I want to advise against
@@ -139,3 +139,5 @@ figure out what you can then make rules for and then eventually turn off self-el
 
 So I hope this gets you to where you need to go and looking forward to seeing you in PolicyPak land
 real soon. Thanks so much.
+
+

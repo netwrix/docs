@@ -30,33 +30,33 @@ By default, users can choose from several security types when creating a group i
 
 ## Instructions
 1. Open the Directory Manager Admin Portal at `https://servername/AdminCenter/`. Navigate to **Applications**, select your desired portal, and click the three dots (**...**) to edit it.  
-   ![Applications page in Netwrix Directory Manager Admin Portal with edit option highlighted](images/ka0Qk000000CsSr_0EMQk00000BP3cH.png)
+   ![Applications page in Netwrix Directory Manager Admin Portal with edit option highlighted](./images/ka0Qk000000CsSr_0EMQk00000BP3cH.png)
 
 2. Click **Settings**.  
-   ![Settings option in Netwrix Directory Manager Admin Portal](images/ka0Qk000000CsSr_0EMQk00000BP3fV.png)
+   ![Settings option in Netwrix Directory Manager Admin Portal](./images/ka0Qk000000CsSr_0EMQk00000BP3fV.png)
 
 3. Under **Design Settings**, click your identity store’s name.  
-   ![Design Settings section in Netwrix Directory Manager Admin Portal](images/ka0Qk000000CsSr_0EMQk00000BP3af.png)
+   ![Design Settings section in Netwrix Directory Manager Admin Portal](./images/ka0Qk000000CsSr_0EMQk00000BP3af.png)
 
 4. On the **Create Object** tab, select **Group** from the **Select Directory Object** drop-down list.  
-   ![Create Object tab with Group selected](images/ka0Qk000000CsSr_0EMQk00000BP3dt.png)
+   ![Create Object tab with Group selected](./images/ka0Qk000000CsSr_0EMQk00000BP3dt.png)
 
 5. In the **Name** list, select *General* and click **Edit**.
 
 6. In the **Edit Design Category** dialog box, select **Security** and click **Edit**.  
-   ![Edit Design Category dialog box with Security field selected](images/ka0Qk000000CsSr_0EMQk00000BP3kL.png)
+   ![Edit Design Category dialog box with Security field selected](./images/ka0Qk000000CsSr_0EMQk00000BP3kL.png)
 
 7. In the **Edit Field** dialog box, click the **Advanced options** link.  
-   ![Edit Field dialog box with Advanced options link](images/ka0Qk000000CsSr_0EMQk00000BP3lx.png)
+   ![Edit Field dialog box with Advanced options link](./images/ka0Qk000000CsSr_0EMQk00000BP3lx.png)
 
 8. Select `Semi_Private` from the **Default Value** drop-down list.  
-   ![Default Value drop-down list with Semi_Private selected](images/ka0Qk000000CsSr_0EMQk00000BP3nZ.png)
+   ![Default Value drop-down list with Semi_Private selected](./images/ka0Qk000000CsSr_0EMQk00000BP3nZ.png)
 
 9. Optional: To enforce the semi-private security type, select the **Is Read-Only** check box. This action disables the **Security** drop-down list in the **Create Group** wizard and displays only the default value.  
-   ![Is Read-Only check box selected in Edit Field dialog box](images/ka0Qk000000CsSr_0EMQk00000BP3ij.png)  
-   ![Create Group wizard with Security drop-down list disabled](images/ka0Qk000000CsSr_0EMQk00000BP3qn.png)
+   ![Is Read-Only check box selected in Edit Field dialog box](./images/ka0Qk000000CsSr_0EMQk00000BP3ij.png)  
+   ![Create Group wizard with Security drop-down list disabled](./images/ka0Qk000000CsSr_0EMQk00000BP3qn.png)
 
 10. Optional: To hide the **Security** drop-down list from a specific role, select the desired role (such as **Administrator** or **Helpdesk**) from the **Visibility Role** drop-down list. The **Security** drop-down list is visible to users of the selected role and to roles with a higher priority value, but hidden from all roles with a lower priority value.  
-    ![Visibility Role drop-down list in Edit Field dialog box](images/ka0Qk000000CsSr_0EMQk00000BP3pB.png)
+    ![Visibility Role drop-down list in Edit Field dialog box](./images/ka0Qk000000CsSr_0EMQk00000BP3pB.png)
 
 11. Click **OK** to close the dialog boxes then save your changes.

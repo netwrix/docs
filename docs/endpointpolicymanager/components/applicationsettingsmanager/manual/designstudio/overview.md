@@ -8,9 +8,7 @@ sidebar_position: 110
 
 This document will help you to understand Netwrix Endpoint Policy Manager (formerly PolicyPak)
 DesignStudio. However, you should only use this document after you have read and worked through the
-DesignStudio example in Book 3:
-
-Application Settings Manager. We assume in this manual that you have already read that document and
+DesignStudio example in the Application Settings Manager documentation. We assume in this manual that you have already read that document and
 can create simple AppSets.
 
 This document is a reference guide for the rest of the DesignStudio utility and addresses some
@@ -21,3 +19,6 @@ applicable to many scenarios while building AppSets.
 Video: You may also wish to watch our DesignStudio videos, which cover some higher level details of
 Endpoint Policy Manager: Application Manager >
 [DesignStudio How-To](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/videolearningcenter.md).
+
+
+

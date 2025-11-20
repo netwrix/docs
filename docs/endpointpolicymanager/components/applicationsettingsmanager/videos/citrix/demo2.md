@@ -5,10 +5,10 @@ sidebar_position: 40
 ---
 # CUGC Connect Endpoint Policy Manager + Citrix Demo You Gotta Try This!
 
-For more helpful content, visit [www.endpointpolicymanager.com](http://www.endpointpolicymanager.com/) or join the Citrix
+For more helpful content, visit [www.policypak.com](https://www.policypak.com/) or join the Citrix
 User Group Community at [https://www.mycugc.org/](https://www.mycugc.org/)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WcmzBCoZavo?si=0cbuN4FMuJ67ddjq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WcmzBCoZavo?si=0cbuN4FMuJ67ddjq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### CUGC Connect: Endpoint Policy Manager plus Citrix Demo – You Gotta Try This
 
@@ -130,7 +130,7 @@ did it the other day, it's like 1.3 million. That's a hard problem to solve.
 You have four browsers now: Internet Explorer, Firefox, Chrome and Edge. How do you open up the
 right browser for the right website and also the right Java for the right website and block naughty
 websites
-([https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites](https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites))
+([https://www.policypak.com/pp-blog/windows-10-block-websites](https://www.policypak.com/pp-blog/windows-10-block-websites))
 and maybe turn Java off except for certain websites? What we can do is any browser routing and also
 mapping particular versions of Java to a particular website. I know you have this problem, and we
 will be demonstrating this today. You're going to love it.
@@ -183,7 +183,7 @@ Group Policy Edition, that's sort of your on-prem way. Then if you are using the
 can also get it deployed that way too.
 
 Least Privilege Manager
-([https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html))
+([https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html))
 gets you out of the local admin rights business. Browser Router maps specific websites to specific
 browsers. Java Rules Manager will guarantee a particular version of Java to a particular website.
 File Associations Manager is where you can map specific extensions or protocols like PDF or MAILTO:
@@ -362,7 +362,7 @@ Jeremy: Okay, sure. FSLogix and us have a great partnership. We have a good bet
 In fact, what I can do just to prove out the point real fast is let me show you on the website where
 you can learn more about how those two things go great together.
 
-If you go to "endpointpolicymanager.com," you can go to "INTEGRATION." Under "INTEGRATION" there's "PolicyPak &
+If you go to "policypak.com," you can go to "INTEGRATION." Under "INTEGRATION" there's "PolicyPak &
 FSLogix." You can see all of our better together stories. We have about six of them. FSLogix is
 great about the actual file system. Their claim to fame is hiding applications and also doing a
 great job with maintaining user state as a guy roams from machine to machine. We don't do that. We
@@ -493,7 +493,7 @@ have this user here. He's in Firefox land and he's at "citrix.com." He decides h
 website that doesn't render well in Firefox.
 
 Let's pretend that PolicyPak doesn't render very well in Firefox land. Watch this, Webster. I think
-you're going to flip over it when I do this. Here I am. I'm going to type in "www.endpointpolicymanager.com,"
+you're going to flip over it when I do this. Here I am. I'm going to type in "www.policypak.com,"
 but we know that it doesn't render perfectly in Firefox.
 
 Watch the birdy. We're going to click on the tab. We close the wrong browser; we open up the right
@@ -893,7 +893,7 @@ way for you to get in touch with us.
 Webster: Yeah, we also have people saying, yes, we need to stop that receiver pop-up.
 
 Jeremy: Fair enough. Let me go ahead and actually open up Internet Explorer here. Well, actually,
-Browser Router is going to kick in so if I go to "endpointpolicymanager.com," it's going to open up in Internet
+Browser Router is going to kick in so if I go to "policypak.com," it's going to open up in Internet
 Explorer. If you want to get started on a trial, I want you to get started on a trial too.
 
 There are a couple of ways you can do it. The best way, click on "Contact Us." Don't wait until,
@@ -951,3 +951,5 @@ Jeremy: Thanks again for everything, both of you. You guys get a big hug from m
 Stephanie: Awesome. All right, everybody, have a great afternoon, and we'll see you all later. Bye.
 
 Webster: All right, thank you. Bye-bye.
+
+

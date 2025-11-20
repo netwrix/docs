@@ -12,3 +12,5 @@ From 603 onwards we have made this fact more obvious by showing the "Item-Level 
 MMC.
 
 ![368_1_pp-predefined-targeting](/images/endpointpolicymanager/applicationsettings/preconfigured/itemleveltargeting/368_1_pp-predefined-targeting.webp)
+
+

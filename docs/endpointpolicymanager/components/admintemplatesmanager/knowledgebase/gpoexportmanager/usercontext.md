@@ -61,3 +61,5 @@ If you fail to change the context from System to User and attempt to map a print
 following in the Group Policy Preferences Trace logs, which show the Access Denied details.
 
 ![403_5_hfkb-1131-img-05_950x612](/images/endpointpolicymanager/gpoexport/403_5_hfkb-1131-img-05_950x612.webp)
+
+

@@ -13,7 +13,7 @@ locations on the local computer.
 The net result is that applications which need writable locations to perform their installs or runs
 may do so in an elevated state; where they would not able to run within the UNC share.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bg--i4NtNxY" title="Endpoint Policy Manager Least Priv Manager: SecureCopy(TM). Empower users to copy then elevate items." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bg--i4NtNxY" title="Endpoint Policy Manager Least Priv Manager: SecureCopy(TM). Empower users to copy then elevate items." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video, I'm going to talk to you about Endpoint Policy
 Manager's Secure Copy and Least Privilege Manager.
@@ -95,3 +95,5 @@ rescue.
 
 Hope this video helps you out. Looking forward to getting you started with Endpoint Policy Manager
 real soon. Thanks.
+
+

@@ -12,7 +12,7 @@ Endpoint Policy ManagerLeast Privilege Manager is located within the Netwrix Pri
 
 :::note
 You will only see all components of Endpoint Policy Manager if you download the Endpoint
-Policy Manager Admin Console from Portal.endpointpolicymanager.com, but not if you are using only the Netwrix
+Policy Manager Admin Console from Portal.policypak.com, but not if you are using only the Netwrix
 Privilege Secure console.
 :::
 
@@ -119,3 +119,6 @@ Manager.
 When you download these applications, it is ideal to store them in two places. The first copy should
 be sitting on your endpoint. The second copy should be sitting on your Group Policy management
 station, as these will also be required to help create the rules for these examples.
+
+
+

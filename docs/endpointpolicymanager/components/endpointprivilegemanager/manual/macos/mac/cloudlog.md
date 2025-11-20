@@ -14,3 +14,6 @@ working, endpointpolicymanagerd.log will give tell not only what processes were 
 what processes weren’t – and may should have been.
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/troubleshooting/mac/understanding_cloud_log.webp)
+
+
+

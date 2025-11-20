@@ -107,3 +107,5 @@ Notepad++ appear under the Recently added heading.
 to Link Enabled, or delete the GPO, and see Notepad++ go away.
 
 ![getting_to_know_policypak_15](/images/endpointpolicymanager/remoteworkdelivery/gettingstarted/getting_to_know_endpointpolicymanager_15.webp)
+
+

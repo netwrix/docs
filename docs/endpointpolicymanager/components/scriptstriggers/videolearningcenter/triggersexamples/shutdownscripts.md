@@ -9,7 +9,7 @@ Want to do ANY kind of shutdown script... with Group Policy, an MDM service like
 PolicyPak cloud? Here's how to do it, with PolicyPak Scripts and Triggers.... and Shutdown triggers
 !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8NjZNNXxFts" title="Endpoint Policy Manager Scripts + Triggers: Shutdown scripts on computer side" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8NjZNNXxFts" title="Endpoint Policy Manager Scripts + Triggers: Shutdown scripts on computer side" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, and in this video we're going to use PolicyPak scripts and triggers to
 do something at computer shutdown time. We're going to keep it simple in this video and we're going
@@ -38,3 +38,5 @@ Triggers to the rescue.
 
 Hope this helps you out. Remember doing this on the computer side because you can only do shutdown
 on the computer side. Hope this helps you out. Thanks very much and talk to you soon.
+
+

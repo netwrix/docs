@@ -45,4 +45,5 @@ There is also an option to disable examination of workstations. In this case nam
 3. Create a new DWORD value `PF_Enabled` and set its value to `0`.
 4. Restart Netwrix Account Lockout Examiner Service via the **Services** snap-in.
 
-![User-added image](images/ka04u000000HcUv_0EM700000004wr4.png)
+![User-added image](./images/ka04u000000HcUv_0EM700000004wr4.png)
+

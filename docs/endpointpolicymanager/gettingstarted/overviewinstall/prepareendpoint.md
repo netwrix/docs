@@ -78,3 +78,4 @@ topic for further details on validating licensing. See also the
 [Testing and Troubleshooting By Renaming an endpoint Computer](/docs/endpointpolicymanager/gettingstarted/misc/videos/troubleshooting/mdm.md)
 topic for further details showing what happens when you rename a computer and how Endpoint Policy
 Manager reacts.
+

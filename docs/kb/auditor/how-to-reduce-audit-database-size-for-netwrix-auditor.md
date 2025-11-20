@@ -38,7 +38,7 @@ You can configure the audit database retention settings by following the next st
 2. In the left pane, select the **Audit Database** tab.
 3. Click **Modify** under the **Database Retention** section and input the retention period in days.
 
-   ![User-added image](images/ka04u00000117bz_0EM0g000000hGVv.png)
+   ![User-added image](./images/ka04u00000117bz_0EM0g000000hGVv.png)
 
    - **Tip:** Longer retention periods results in larger audit databases.
 
@@ -51,7 +51,7 @@ Data that exceeds the new retention period will be removed during the next colle
 1. In Windows Services Manager on your Netwrix host, stop both **Netwrix Auditor Archive Service** and **Netwrix Auditor Management Service**.
 2. Run your SQL Management Studio instance and navigate to ` %SQL_Server_database_name% > Databases` to select the database you are going to delete.
 
-   ![User-added image](images/ka04u00000117bz_0EM70000000QIPr.png)
+   ![User-added image](./images/ka04u00000117bz_0EM70000000QIPr.png)
 
 3. In the Delete Object window, check both option checkboxes:
    1. Delete backup and restore history information for databases.
@@ -66,7 +66,7 @@ The audit database has now been successfully deleted. Refer to the **Rebuilding 
 2. In the left pane, select the **Audit Database** tab. Review the database name and update it if necessary.  
    Netwrix Auditor allows you to specify settings for each monitoring plan individually, so you'll have to rebuild the database for each monitoring plan separately.
 
-   ![User-added image](images/ka04u00000117bz_0EM0g000000hGWo.png)
+   ![User-added image](./images/ka04u00000117bz_0EM0g000000hGWo.png)
 
 3. Refresh or reopen the SQL Management Studio to ensure the audit database was rebuilt.
 
@@ -76,7 +76,7 @@ The audit database has now been successfully deleted. Refer to the **Rebuilding 
 2. Run your SQL Management Studio instance and navigate to ` %SQL_Server_database_name% > Databases` to select the database you are going to rename.
 3. Right-click the selected database and select **Rename**.
 
-   ![Screenshot_1.png](images/ka04u00000117bz_0EM4u000004dCnj.png)
+   ![Screenshot_1.png](./images/ka04u00000117bz_0EM4u000004dCnj.png)
 
 4. Add **_old** or another word to the end of the database name to differentiate it from other databases.
 5. Once the database has been renamed, restart **Netwrix Auditor Archive Service** and **Netwrix Auditor Management Service**.
@@ -89,13 +89,14 @@ The audit database has now been successfully renamed. Refer to the **Rebuilding 
 
 > **NOTE:** In order to correctly set the retention period, you have to estimate your audit database growth. If you are using Netwrix Auditor 9.6 or newer, this can be done by monitoring **Health Status** > **Database statistics**.
 
-![db_stats.png](images/ka04u00000117bz_0EM4u000008LKwz.png)
+![db_stats.png](./images/ka04u00000117bz_0EM4u000008LKwz.png)
 
 1. Run your SQL Management Studio instance and navigate to ` %SQL_Server_database_name% > Databases` to locate the required database.
 2. Right-click it and select **Properties**.
 
-   ![User-added image](images/ka04u00000117bz_0EM70000000QIQN.png)
+   ![User-added image](./images/ka04u00000117bz_0EM70000000QIQN.png)
 
 3. Review **Size** and **Space Available** parameters.
 
 > **NOTE:** This should be done over the course of several days to get the best estimate of growth.
+

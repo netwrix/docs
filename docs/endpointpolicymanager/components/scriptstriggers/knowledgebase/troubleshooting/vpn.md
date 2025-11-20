@@ -104,3 +104,5 @@ the VPN disconnects by using the script below and also changing the trigger to "
 
 **Step 12 –** "On trigger" does not work with Revert action script which is why you need to create a
 new policy to disconnect the drives.
+
+

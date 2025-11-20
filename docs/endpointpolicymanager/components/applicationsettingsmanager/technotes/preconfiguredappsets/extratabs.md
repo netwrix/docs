@@ -11,3 +11,5 @@ Netwrix Endpoint Policy Manager (formerly PolicyPak) is delivering "blank" when 
 this setting" is present upon items. So right-click and uncheck each unwanted page as seen here.
 
 ![282_1_faq-images7](/images/endpointpolicymanager/applicationsettings/preconfigured/chrome/282_1_faq-images7.webp)
+
+

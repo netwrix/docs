@@ -48,4 +48,4 @@ Review the possible resolutions depending on you cause:
 
 - For cause 2. Make sure you assigned all required rights and permissions to the account used for data collection. For additional information on the data collecting account configuration, refer to the following article: [Data Collecting Account](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/dataaccounts)
 
-- For cause 3. For additional information on the data collecting account configuration, refer to the following article: [Error 0x800706BA − RPC Server Is Unavailable](/docs/kb/auditor/error-0x800706ba-rpc-server-is-unavailable.md)
+- For cause 3. For additional information on the data collecting account configuration, refer to the following article: [Error 0x800706BA − RPC Server Is Unavailable](/docs/kb/auditor/error-0x800706ba-rpc-server-is-unavailable)

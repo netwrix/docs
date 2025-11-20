@@ -44,3 +44,5 @@ You can see an example of the contents of the logs in Figure 21.
 ![troubleshooting_2](/images/endpointpolicymanager/troubleshooting/preferences/troubleshooting_2.webp)
 
 Figure 21. The contents of the logs that are required for troubleshooting.
+
+

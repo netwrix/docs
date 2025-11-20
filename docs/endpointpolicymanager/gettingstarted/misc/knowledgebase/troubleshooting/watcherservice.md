@@ -33,3 +33,4 @@ of 7 processes.
 An x86 system with TWO users logged in would look like this.
 
 ![670_2_2017-11-13_2302](/images/endpointpolicymanager/troubleshooting/490_2_2017-11-13_2302.webp)
+

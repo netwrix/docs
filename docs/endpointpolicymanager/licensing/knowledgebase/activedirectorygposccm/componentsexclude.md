@@ -143,3 +143,4 @@ After the computer picks up the new license (via GPO, MDM, etc.) you can verify 
 The result of modified components via blocked license can be seen in this example.
 
 ![748_5_image-20230820022159-5_950x814](/images/endpointpolicymanager/license/unlicense/748_5_image-20230820022159-5_950x814.webp)
+

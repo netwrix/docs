@@ -58,3 +58,5 @@ specified each time Group Policy is processed
 
 **Step 8 –** Give a descriptive name to the policy and set Item Level Targeting if required ->
 FINISH
+
+

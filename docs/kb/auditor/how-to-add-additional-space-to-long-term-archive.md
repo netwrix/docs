@@ -53,4 +53,4 @@ It is up to you to decide how long you want to keep historical data. If you know
 
 Learn more about Investigations in the following article: [Investigations](https://docs.netwrix.com/docs/auditor/10_8/admin/settings/investigations)
 
-Review additional recommendations for preventing Long-Term Archive overflow in the following article: [How to Prevent Long-Term Archive Overflow](/docs/kb/auditor/how-to-prevent-long-term-archive-overflow.md)
+Review additional recommendations for preventing Long-Term Archive overflow in the following article: [How to Prevent Long-Term Archive Overflow](/docs/kb/auditor/how-to-prevent-long-term-archive-overflow)

@@ -44,4 +44,5 @@ For Event Log Manager, Inactive User Tracker and Netwrix Password Reset:
 
 Refer to the following screenshots for reference on service accounts credentials to be changed in case you've reset a password in Netwrix Auditor:
 
-![Service account credentials screenshot](images/ka04u00000117Vm_0EM4u000008M8Pe.png)
+![Service account credentials screenshot](./images/ka04u00000117Vm_0EM4u000008M8Pe.png)
+

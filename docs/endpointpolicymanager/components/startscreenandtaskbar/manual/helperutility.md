@@ -62,3 +62,5 @@ Figure 57. On the management station you can import from the XML file.
 At this point, your list will change to what was imported from the XML file. This process means you
 don't need to install the actual application on your machine to deliver Endpoint Policy Manager
 Start Screen or Endpoint Policy Manager Taskbar Manager policies.
+
+

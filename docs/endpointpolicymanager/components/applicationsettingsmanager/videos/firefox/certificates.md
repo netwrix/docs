@@ -9,7 +9,7 @@ Need to add or remove a certificate dynamically within Firefox? Netwrix Endpoint
 (formerly PolicyPak) makes it drop dead easy. Just point to the file and specify the store. Watch
 this video to see how it's done.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F31JfOmvKXI?si=jvMj08Zs8p_9KFdn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F31JfOmvKXI?si=jvMj08Zs8p_9KFdn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Manage Firefox Certificates
 
@@ -86,7 +86,7 @@ SHA-1 fingerprint ", remove" and that will blast it out. That's it.
 
 Let's go ahead and take a look. Let's go ahead and close this guy out. We'll run "gpupdate" here.
 We'll wait for this to finish. Close this out here. Go ahead and go to "Mozilla Firefox." Back to
-"Options/View Certificates." It was right above the "\*.endpointpolicymanager.com" one, and now it's gone. So
+"Options/View Certificates." It was right above the "\*.policypak.com" one, and now it's gone. So
 that certificate that was here is now gone.
 
 The last thing I want to just talk about ever so briefly is a little troubleshooting step in case
@@ -104,3 +104,5 @@ right away, you know how to get in touch with us. Just simply click on "Contact 
 you want to do, and we'll get you started in a trial.
 
 Thanks so very much, and we'll talk to you soon.
+
+

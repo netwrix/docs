@@ -39,4 +39,5 @@ By default, the **Administrator** role includes users belonging to the local `Ad
 2. Click the **Modify** button next to the group that you want to edit.
 3. In the dialog that opens, click **Add** to add a member to the selected security role, or select a user and click **Remove** to exclude them.
 
-[![User-added image](images/ka04u000000HcVz_0EM700000004wyU.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAd1&feoid=00N700000032Pj2&refid=0EM700000004wyU)
+[![User-added image](./images/ka04u000000HcVz_0EM700000004wyU.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAd1&feoid=00N700000032Pj2&refid=0EM700000004wyU)
+

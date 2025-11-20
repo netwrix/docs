@@ -38,7 +38,7 @@ If you have access to another Administrator within the AIC, follow the steps bel
 2. Navigate to **Configure Console**.
 3. Modify the Built-In Administrator, as shown below:
 
-![Modify Built-In Administrator](images/ka0Qk000000EatF_0EMQk000009FrLO.png)
+![Modify Built-In Administrator](./images/ka0Qk000000EatF_0EMQk000009FrLO.png)
 
 ### Without Access to Another Administrator in AIC
 
@@ -48,7 +48,7 @@ If you do not have access to another AIC Administrator account, perform the foll
 
 1. Open the file as an administrator and remove the hash between " " for the **AuthBuiltinAdminPassword3 key**:
 
-   ![Remove hash for AuthBuiltinAdminPassword3](images/ka0Qk000000EatF_0EMQk000009FkN9.png)
+   ![Remove hash for AuthBuiltinAdminPassword3](./images/ka0Qk000000EatF_0EMQk000009FkN9.png)
 
 2. Restart the Netwrix AIC service in `Services.msc`.
 

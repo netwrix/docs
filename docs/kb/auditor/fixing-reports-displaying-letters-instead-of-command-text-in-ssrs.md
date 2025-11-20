@@ -26,7 +26,7 @@ knowledge_article_id: kA04u000000Tt80CAC
 ## Scenario
 Upon opening reports, the command buttons have been replaced by text symbols and it looks similar to this:
 
-![Screenshot_1.png](images/ka04u000000HdFq_0EM4u0000052m0m.png)
+![Screenshot_1.png](./images/ka04u000000HdFq_0EM4u0000052m0m.png)
 
 ## Solution
 The issue is with Internet Explorer's handling of permissions. To fix the issue you need to add the reporting server to the **Trusted Sites** and disable the **Protected Mode** for Admins on the Netwrix Server.
@@ -49,3 +49,4 @@ This operation can be done using Group Policy. You need to locate the Group Poli
 5. Select `DISABLED` from the PROTECTED MODE selection box.
 
 If this solution didn't help, please contact Netwrix Technical Support.
+

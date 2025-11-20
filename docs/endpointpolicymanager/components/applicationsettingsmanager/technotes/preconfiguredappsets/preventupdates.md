@@ -19,3 +19,5 @@ Then the result is that Firefox FORBIDS both automatic updated AND manual update
 here:
 
 ![264_2_2222222222222](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/264_2_2222222222222.webp)
+
+

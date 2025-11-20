@@ -43,5 +43,5 @@ If "Overwrite" option is not enough to meet your data retention requirements, yo
 _auto-archiving_ option for Security event log to preserve historical event data in the archive
 files. With that option enabled, you may want to adjust the retention settings for log archives
 (backups). Related procedures are described in the
-[Auto-archiving Windows Security log](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA04u000000Pcx6CAC.html)
+[Auto-archiving Windows Security log](/docs/kb/auditor/auto-archiving-windows-security-log)
 Netwrix Knowledge Base article.

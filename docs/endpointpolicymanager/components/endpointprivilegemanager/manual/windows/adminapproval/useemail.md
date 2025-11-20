@@ -49,3 +49,6 @@ You can then check the item using VirusTotal (optional) and get the response cod
 board and/or send an email back to the user.
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/leastprivilege/adminapproval/using_email_for_admin_approval_3.webp)
+
+
+

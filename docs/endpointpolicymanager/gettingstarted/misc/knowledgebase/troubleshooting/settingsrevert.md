@@ -48,3 +48,4 @@ This flag must be set or Endpoint Policy Manager cannot revert the item when the
 applies
 
 ![417_3_image008](/images/endpointpolicymanager/troubleshooting/417_3_image008.webp)
+

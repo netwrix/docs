@@ -10,7 +10,7 @@ Policy Manager (formerly PolicyPak). Using Endpoint Policy Manager Scripts you c
 to your machines which are domain joined and VPN, or those with Endpoint Policy Manager Cloud.
 Here's how to do it!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1j-_J0FTh50" title="Endpoint Policy Manager Scripts .. Deploy Software via VPN or with Endpoint Policy Manager Cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1j-_J0FTh50" title="Endpoint Policy Manager Scripts .. Deploy Software via VPN or with Endpoint Policy Manager Cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, and in this video, I'm going to show you how you can use Endpoint
 Policy Manager Scripts to deploy software to remote workers. In this demonstration, this machine,
@@ -103,3 +103,5 @@ Manager Scripts Manager to deploy your software through the internet, through yo
 machines and VPN, or to your not domain joined machines with Endpoint Policy Manager Cloud as well.
 Hope this helps you out. Looking forward to getting you started with Endpoint Policy Manager real
 soon. Take care.
+
+

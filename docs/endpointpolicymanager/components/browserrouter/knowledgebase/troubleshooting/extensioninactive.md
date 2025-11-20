@@ -30,3 +30,5 @@ This should snap it back in place the next time Chrome re-launches.
 As a last resort, if the above does not work you can rename the
 `%LocalAppData%\Google\Chrome\User Data\Default `folder to reset Chrome and then close and relaunch
 Chrome.
+
+

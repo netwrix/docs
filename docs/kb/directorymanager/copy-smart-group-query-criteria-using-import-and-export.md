@@ -36,10 +36,10 @@ Netwrix Directory Manager supports exporting and importing Smart Group query def
 2. Open the properties of the Smart Group whose criteria you want to copy.
 3. Navigate to the **Smart Group** tab and open **Query Designer**.
 4. In the Query Designer window, click the three-dot icon and select **Export query**. The JSON file will be downloaded to your default download location.  
-   ![Exporting a Smart Group query in Directory Manager Query Designer](images/ka0Qk000000EYwH_0EMQk00000BpDrJ.png)
+   ![Exporting a Smart Group query in Directory Manager Query Designer](./images/ka0Qk000000EYwH_0EMQk00000BpDrJ.png)
 5. Open the properties of the Smart Group where you want to apply the copied criteria.
 6. Navigate to the **Smart Group** tab and open **Query Designer**.
 7. In the Query Designer window, click the three-dot icon and select **Import query** to upload the previously exported JSON file.  
-   ![Importing a Smart Group query in Directory Manager Query Designer](images/ka0Qk000000EYwH_0EMQk00000BpBfq.png)
+   ![Importing a Smart Group query in Directory Manager Query Designer](./images/ka0Qk000000EYwH_0EMQk00000BpBfq.png)
 8. Click **Preview** to confirm that the query returns the expected results.
 9. Complete the remaining steps of the Smart Group wizard to save your changes.

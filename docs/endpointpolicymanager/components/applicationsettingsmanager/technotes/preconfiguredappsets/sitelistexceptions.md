@@ -20,3 +20,5 @@ For manual testing on one machine, delete that file, then run GPupdate to refres
 See if Java Site exceptions starts to work.
 
 ![46_1_tip-if-java-site-lists-stop-working](/images/endpointpolicymanager/troubleshooting/applicationsettings/java/46_1_tip-if-java-site-lists-stop-working.webp)
+
+

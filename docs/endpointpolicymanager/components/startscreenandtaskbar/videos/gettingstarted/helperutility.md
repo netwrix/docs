@@ -8,7 +8,7 @@ sidebar_position: 10
 If you don't have the application already installed on your management station, then use this
 utility to grab application IDs. It's easy. Check it out!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WD4OaEoM6KQ" title="Endpoint Policy Manager Start Screen and Taskbar Manager Helper Utility" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WD4OaEoM6KQ" title="Endpoint Policy Manager Start Screen and Taskbar Manager Helper Utility" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak Start Screen and Taskbar Manager Helper Utility
 
@@ -84,3 +84,5 @@ way I wanted to.
 That's all we have for now. I hope this helps you out. Looking forward to getting you started real
 soon.  
 Thanks.
+
+

@@ -19,3 +19,5 @@ it. Batch and PowerShell scripts when run from within an open cmd.exe or powersh
 however, do not open a new process; they run within that existing process. As no new process is
 started, there's nothing for Least Privilege Manager to intercept and the command is thereby allowed
 to run.
+
+

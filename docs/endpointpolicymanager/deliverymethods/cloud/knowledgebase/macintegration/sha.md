@@ -28,3 +28,5 @@ Mac-mini ~ % shasum -a 512 /Users/sashadaft/Downloads/SkypeForBusinessInstaller-
 819dadbaceae58fc24f48c6ddd187325619e82d4c8d7fb5744b4c966262f4d2fd0114541b6dbfdfad29431f1417c074d947285f4ab1bd2b002d57d1a0aa288fd  
 /Users/sashadaft/Downloads/SkypeForBusinessInstaller-16.29.0.72.pkg
 ```
+
+

@@ -39,7 +39,7 @@ There are two solutions:
 
 1. Configure SMTP authentication in the settings of the **Netwrix Auditor** management console
 
-   ![SMTP authentication settings in Netwrix Auditor](images/ka04u000000HcSG_0EM700000005pJq.png)
+   ![SMTP authentication settings in Netwrix Auditor](./images/ka04u000000HcSG_0EM700000005pJq.png)
 
 2. Disable the "require authentication" option in distribution group options as follows
 
@@ -47,16 +47,16 @@ There are two solutions:
    2. Navigate to **MS Exchange - Recipient configuration - Distribution groups**  
    3. Select the required distribution group and open its **Properties**
 
-      ![User-added image](images/ka04u000000HcSG_0EM7000000054Pc.png)
+      ![User-added image](./images/ka04u000000HcSG_0EM7000000054Pc.png)
 
    4. Go to **Mail Flow Setting** tab  
    5. Select **Message Delivery Restrictions** from the list and open its **Properties**
 
-      ![User-added image](images/ka04u000000HcSG_0EM7000000054Ph.png)
+      ![User-added image](./images/ka04u000000HcSG_0EM7000000054Ph.png)
 
    6. Uncheck **Require that all senders are authenticated** and click **OK**
 
-      ![User-added image](images/ka04u000000HcSG_0EM7000000054Pm.png)
+      ![User-added image](./images/ka04u000000HcSG_0EM7000000054Pm.png)
 
    Alternatively, you can run the following command via Exchange Management Shell:
 
@@ -65,3 +65,4 @@ There are two solutions:
    ```
 
    where ` %group% ` is like `dynamic.group@example.com`
+

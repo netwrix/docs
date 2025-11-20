@@ -119,3 +119,5 @@ See the following Video topics for more information on Least Privilege Manager.
 - [Endpoint Policy Manager MacOS: Mac Finder Policies](/docs/endpointpolicymanager/components/endpointprivilegemanager/videolearningcenter/macintegration/finder.md)
 - [Endpoint Policy Manager LPM for MacOS: Privilege Policies (for Helper Apps)](/docs/endpointpolicymanager/components/endpointprivilegemanager/videolearningcenter/macintegration/privilege.md)
 - [Collect Diagnostics](/docs/endpointpolicymanager/components/endpointprivilegemanager/videolearningcenter/macintegration/collectdiagnostics.md)
+
+

@@ -28,3 +28,5 @@ Examples:
   additional character (like Folder1, Folder4, Folder9) and then match every file that has two
   characters (like 11.pdf, 12.pdf, 22.pdf) from `\\server\share\Folder1`, `\\server\share\Folder2`,
   and so on.
+
+

@@ -27,7 +27,7 @@ knowledge_article_id: kA04u000000HDhRCAW
 
 Old data in the Active Directory Permissions Analyzer **(ADPA)** reports from deprecated Domains.  
 Example of the incorrect data:  
-![Chart  Description automatically generated](images/ka04u000000HdDV_0EM4u0000084aiy.png)
+![Chart  Description automatically generated](./images/ka04u000000HdDV_0EM4u0000084aiy.png)
 
 ## Cause
 
@@ -41,28 +41,28 @@ To do so you can follow the steps below.
 
 1. Create a new Job in the Netwrix Auditor console: right click the **Jobs Node** in the left-hand window and select **Create Job**:
 
-   ![Graphical user interface, application  Description automatically generated](images/ka04u000000HdDV_0EM4u0000084aiz.png)
+   ![Graphical user interface, application  Description automatically generated](./images/ka04u000000HdDV_0EM4u0000084aiz.png)
 
    Select the **Local host** in the jobs host list:
 
-   ![Graphical user interface, application  Description automatically generated](images/ka04u000000HdDV_0EM4u0000084aj0.png)
+   ![Graphical user interface, application  Description automatically generated](./images/ka04u000000HdDV_0EM4u0000084aj0.png)
 
 2. Click on the **Create Query**:
 
-   ![Graphical user interface, application, Word  Description automatically generated](images/ka04u000000HdDV_0EM4u0000084aj1.png)
+   ![Graphical user interface, application, Word  Description automatically generated](./images/ka04u000000HdDV_0EM4u0000084aj1.png)
 
 3. Configure the jobs query Properties.  
    Under the **Data Sources** tab, select the **ADPERMISSIONS** option from the dropdown menu then click on **Configure**.
 
-   ![Graphical user interface, application, Word  Description automatically generated](images/ka04u000000HdDV_0EM4u0000084aj2.png)
+   ![Graphical user interface, application, Word  Description automatically generated](./images/ka04u000000HdDV_0EM4u0000084aj2.png)
 
    Select **Remove Tables** and click **Next**:
 
-   ![Graphical user interface, text, application, email  Description automatically generated](images/ka04u000000HdDV_0EM4u0000084aj3.png)
+   ![Graphical user interface, text, application, email  Description automatically generated](./images/ka04u000000HdDV_0EM4u0000084aj3.png)
 
    Check the Results option: Click **Next** → **Finish** → **Ok**.
 
-   ![Graphical user interface, text, application  Description automatically generated](images/ka04u000000HdDV_0EM4u0000084aj4.png)
+   ![Graphical user interface, text, application  Description automatically generated](./images/ka04u000000HdDV_0EM4u0000084aj4.png)
 
 4. Now run the new Job.
 

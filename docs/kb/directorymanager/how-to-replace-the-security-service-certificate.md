@@ -41,31 +41,31 @@ Follow the steps below to replace the Security Service certificate:
 2. Select Version as `10.2` and download patch #`370874`, but DO NOT apply it yet.
 3. If you do not have the Directory Manager Updates tool, you can download it from https://www.netwrix.com/my_products.html.
 
-![](images/ka0Qk000000DSRV_0EMQk00000A0EV5.png)
+![](./images/ka0Qk000000DSRV_0EMQk00000A0EV5.png)
 
-![](images/ka0Qk000000DSRV_0EMQk00000A2mh7.png)
+![](./images/ka0Qk000000DSRV_0EMQk00000A2mh7.png)
 
-![](images/ka0Qk000000DSRV_0EMQk00000A0P5V.png)
+![](./images/ka0Qk000000DSRV_0EMQk00000A0P5V.png)
 
 4. Once downloaded, navigate to the patch download folder. Rename the file `370874.gpb` to `370874.zip`.
 5. Once renamed, right-click the zip file and click **Properties**. In the **General** tab, uncheck **Unblock** and apply the changes.
 
-![](images/ka0Qk000000DSRV_0EMQk00000A0IX3.png)
+![](./images/ka0Qk000000DSRV_0EMQk00000A0IX3.png)
 
 6. After the zip file is unblocked, extract the contents of the ZIP file to access the utility. Run the `GroupIDSecurityServiceCertificateUpdate.exe` as an **Administrator**.
 
-![](images/ka0Qk000000DSRV_0EMQk00000A0ISD.png)
+![](./images/ka0Qk000000DSRV_0EMQk00000A0ISD.png)
 
 7. Verify that the **DataService** path and **Service Account** are correct.
 8. Enter the information for the **Service Account** (e.g., Domain\Account_Name).
 9. Click **Replace Security Service**. This action assigns the necessary permissions to the new certificate, replaces the existing one, and updates the thumbprints across all integrated applications.
 
-![](images/ka0Qk000000DSRV_0EMQk00000A0ITp.png)
+![](./images/ka0Qk000000DSRV_0EMQk00000A0ITp.png)
 
 10. Perform an `IISRESET` by launching Windows PowerShell/Command Prompt as an Administrator and typing `IISRESET`.
 11. Verify the expiry date for the Security Service certificate by launching **IIS Manager Home** then clicking **Server Certificates**. The new expiration date should show **1/13/2045**.
 
-![](images/ka0Qk000000DSRV_0EMQk00000A0IYf.png)
+![](./images/ka0Qk000000DSRV_0EMQk00000A0IYf.png)
 
 ### Update or Recreate Scheduled Jobs
 
@@ -77,16 +77,16 @@ Once the Directory Manager Security Service Certificate has been updated, you ha
 1. Create a backup of the Directory Manager Scheduled Job task files located at `\Program Files\Imanami\GroupID 10.0\Schedules`.
 2. Create a new scheduled job in the Directory Manager Management Console. Any job type is acceptable, but the SmartGroup Update Job is recommended.
 
-![](images/ka0Qk000000DSRV_0EMQk00000A2A0j.png)
+![](./images/ka0Qk000000DSRV_0EMQk00000A2A0j.png)
 
 3. Navigate to `\Program Files\Imanami\GroupID 10.0\Schedules` and open the newly created task file. Sort by **Modified Date** to identify it.
 4. Open the task file in Notepad.
 5. Click at the beginning of the first line and press **CTRL + F**.
 6. Search for `<#!#>`. On the second occurrence, copy everything afterward to the end of the file.
 
-![](images/ka0Qk000000DSRV_0EMQk00000A25Yw.png)
+![](./images/ka0Qk000000DSRV_0EMQk00000A25Yw.png)
 
-![](images/ka0Qk000000DSRV_0EMQk00000A21Os.png)
+![](./images/ka0Qk000000DSRV_0EMQk00000A21Os.png)
 
 7. Open another Notepad file and save the copied information. You will use this in the next step.
 8. Open each remaining task file in the same directory and replace the content after the second occurrence of `<#!#>` with the copied token.

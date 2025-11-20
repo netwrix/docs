@@ -47,3 +47,5 @@ user and confirm that the ASM node remained operational in both GPEDIT and GPMC.
 The ASM node should look similar to screen shot below.
 
 ![1322_2_d34f038d53ae47ca403950284e354cdd](/images/endpointpolicymanager/troubleshooting/applicationsettings/1322_2_d34f038d53ae47ca403950284e354cdd.webp)
+
+

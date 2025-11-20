@@ -10,7 +10,7 @@ PolicyPak)'s PP Merge Utility to take entire GPOs, or portions of GPOs and merge
 Templates Files format. Then, after that you've got LESS GPOs.. and also a quick way to export for
 use with PP Cloud or PP with MDM.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/a1QE8ljmGFA" title="Endpoint Policy Manager: Reduce GPOs (and/or export them for use with Endpoint Policy Manager Cloud or with MDM)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/a1QE8ljmGFA" title="Endpoint Policy Manager: Reduce GPOs (and/or export them for use with Endpoint Policy Manager Cloud or with MDM)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Reduce GPOs (and/or export them for use with PolicyPak Cloud or with MDM)
 
@@ -138,3 +138,5 @@ Objects you have. A lot of people asked us for this, and this is the way that yo
 hope this helps you out and gets you started.
 
 Thanks so much.
+
+

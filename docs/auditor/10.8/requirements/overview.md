@@ -45,7 +45,7 @@ product architecture and components interactions are shown in the figure below.
 **NOTE:** When auditing Active Directory domains, Exchange servers, expired passwords, and inactive
 users, the data sent by the product can be encrypted using [Signing and Sealing](https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/enable-ldap-signing-in-windows-server). See the following
 Netwrix knowledge base article for additional information on how to secure Netwrix Auditor:
-[Best Practices for Securing Netwrix Auditor](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA00g000000H9SPCA0.html).
+[Best Practices for Securing Netwrix Auditor](/docs/kb/auditor/best-practices-for-securing-netwrix-auditor).
 
 ### Workflow Stages
 

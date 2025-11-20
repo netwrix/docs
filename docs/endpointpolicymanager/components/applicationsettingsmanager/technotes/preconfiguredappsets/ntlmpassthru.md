@@ -40,3 +40,5 @@ Then, if you do, then use Endpoint Policy Manager Application Manager to actuall
 you want to all your machines that you wish to get these values.
 
 ![82_1_image001](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/82_1_image001.webp)
+
+

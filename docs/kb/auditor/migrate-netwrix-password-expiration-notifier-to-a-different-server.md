@@ -35,7 +35,7 @@ In Netwrix Auditor versions 9.0 and newer, Netwrix Password Reset is installed a
 2. Copy the following data from the old server to the new server:
    - Templates folder from `C:\Program Files (x86)\Netwrix Auditor\Password Expiration Alerting\Templates`.
    - Screenshot all four tabs of the Netwrix Password Reset interface for configuration details.  
-     ![tIfrvbFLMt.png](images/ka04u00000117hE_0EM4u000007ccaS.png)
+     ![tIfrvbFLMt.png](./images/ka04u00000117hE_0EM4u000007ccaS.png)
 3. Reconfigure Netwrix Password Reset according to the screenshots you captured.
 4. Apply your Netwrix Auditor License to the new instance of Netwrix Auditor.
 
@@ -43,4 +43,5 @@ In Netwrix Auditor versions 9.0 and newer, Netwrix Password Reset is installed a
 
 Message templates customized via the Netwrix Password Reset UI should be transferred manually — make sure to copy the contents of the **Actions** tab reports highlighted in the screenshot.
 
-![CslItbePFg.png](images/ka04u00000117hE_0EM4u000007ccac.png)
+![CslItbePFg.png](./images/ka04u00000117hE_0EM4u000007ccac.png)
+

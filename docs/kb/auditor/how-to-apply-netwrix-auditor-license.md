@@ -33,10 +33,11 @@ You may have received an email from our licensing team — download the attached
 
 1. In the main Netwrix Auditor screen, go to **Settings** > **Licenses** and click **Update**.
 
-   ![2.png](images/ka04u00000116MV_0EM4u000007cekk.png)
+   ![2.png](./images/ka04u00000116MV_0EM4u000007cekk.png)
 
 2. Navigate to your `*.lic` file and select the file.
 
 3. Click **Open**.
 
 The license is now applied to your Netwrix Auditor instance. Verify the information in the **Licenses** section.
+

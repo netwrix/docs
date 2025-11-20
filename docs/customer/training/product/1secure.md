@@ -6,11 +6,11 @@ keywords: [training, course, 1secure]
 description: "Learn to use Netwrix 1Secure through courses"
 ---
 
-import { N1SValue, N1SConcepts, N1SIntroGS, N1SIntroMO, N1SIntroConf, N1SIntroData, N1SIntroReport } from '@site/src/training/1secure';
+import { N1SValue, N1SConcepts, N1SIntroGS, N1SIntroMO, N1SIntroConf, N1SIntroData, N1SIntroReport, N1SIntroAlertRisk } from '@site/src/training/1secure';
 import { N1S } from '@site/src/training/products';
 
 
-Estimated length: 2 hours with optional course
+Estimated length: 2.5 hours with optional course
 
 In this learning path, you will learn how to use <N1S />. It contains the following course:
 
@@ -21,6 +21,7 @@ In this learning path, you will learn how to use <N1S />. It contains the follow
 * 3600.3 Introduction to <N1S /> – Configuration
 * 3600.4 Introduction to <N1S /> – Data Sources
 * 3600.5 Introduction to <N1S /> – Reports
+* 3600.6 Introduction to <N1S /> – Alerts & Risk Assessment
 
 <N1SValue />
 
@@ -35,3 +36,5 @@ In this learning path, you will learn how to use <N1S />. It contains the follow
 <N1SIntroData />
 
 <N1SIntroReport />
+
+<N1SIntroAlertRisk />

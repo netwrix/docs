@@ -49,3 +49,4 @@ Then you can add up the RAM used. For this example with three logged on users th
 memory is 13.92 MB.
 
 ![490_3_hf-kb-img-001](/images/endpointpolicymanager/troubleshooting/490_3_hf-kb-img-001.webp)
+

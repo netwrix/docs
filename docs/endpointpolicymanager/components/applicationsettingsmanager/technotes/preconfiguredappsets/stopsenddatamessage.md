@@ -14,3 +14,5 @@ below.
 
 To do this, use the Endpoint Policy Manager Application Manager pak About:Config A-I Pak.
 Use the setting datareporting.policy.dataSubmissionPolicyBypassNotification and set to TRUE.
+
+

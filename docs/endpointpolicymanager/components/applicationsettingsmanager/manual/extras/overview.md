@@ -14,3 +14,6 @@ management capabilities. In this section, we'll discuss the following features:
 - Creating multiple AppSets and changing priority
 - Setting a comment or description about an AppSet's settings
 - Adding "Managed by Endpoint Policy Manager" to applications under management
+
+
+

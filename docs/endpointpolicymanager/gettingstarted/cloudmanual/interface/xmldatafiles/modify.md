@@ -17,3 +17,4 @@ take an existing Endpoint Policy Manager XML export from the MMC console and ent
 .
 
 ![web_interface_and_controls_7_624x431](/images/endpointpolicymanager/cloud/interface/xmldatafiles/web_interface_and_controls_7_624x431.webp)
+

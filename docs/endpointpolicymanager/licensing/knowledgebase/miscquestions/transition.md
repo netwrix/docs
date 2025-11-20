@@ -69,3 +69,4 @@ In the Group Policy editor you can consume the Universal license and it will loo
 And finally using` PPUPDATE` command on the endpoint, you can see how you are licensed :
 
 ![861_7_hfkb-1130-img-07_950x984](/images/endpointpolicymanager/license/861_7_hfkb-1130-img-07_950x984.webp)
+

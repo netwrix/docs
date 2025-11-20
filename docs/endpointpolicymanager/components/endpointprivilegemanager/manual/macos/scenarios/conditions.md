@@ -53,3 +53,6 @@ Teacher2, etc.) to perform the work.
 
 
 ![A screenshot of a computer Description automatically generated](/images/endpointpolicymanager/mac/scenarios/conditions_6.webp)
+
+
+

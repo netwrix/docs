@@ -38,7 +38,7 @@ knowledge_article_id: kA04u0000000II7CAM
 - Exchange2k DC
 - Smartlog DC
 
-This issue can be caused by having UAC turned on, or the account running Netwrix Access Analyzer not having sufficient local administrator privileges.
+This issue can be caused by having UAC turned on, or the account running Netwrix Access Analyzer (formerly Enterprise Auditor) not having sufficient local administrator privileges.
 
 A workaround for this is to set all `.exe` files in the Private Assemblies folder to always Run as Administrator.
 

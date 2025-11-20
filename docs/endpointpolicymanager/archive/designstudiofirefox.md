@@ -10,7 +10,7 @@ Firefox is easy to manage using Netwrix Endpoint Policy Manager (formerly Policy
 how-to using the Endpoint Policy Manager **DesignStudio** to implement about:config settings within
 your Paks.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k8GhOSdHWGU?si=YE3802CFHwL0xnoB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/k8GhOSdHWGU?si=YE3802CFHwL0xnoB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Use the DesignStudio to manage FireFox's about:config settings video transcript
 
@@ -114,3 +114,5 @@ I hope this has been helpful. If you have any questions, please post them to the
 talk to you soon.
 
 Thanks so much.
+
+

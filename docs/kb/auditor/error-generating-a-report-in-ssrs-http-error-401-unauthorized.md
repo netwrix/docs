@@ -57,12 +57,12 @@ HTTP Error 401 - Unauthorized. Provide another credentials or change security se
   2. In the left pane, click **Local server**.
   3. Click **On** to the right of **IE Enhanced Security Configuration**.
 
-  ![](images/ka0Qk00000031Iv_0EM4u000008LafD.png)
+  ![](./images/ka0Qk00000031Iv_0EM4u000008LafD.png)
 
   4. In the configuration window, switch both **Administrators** and **Users** categories to **Off**.
   5. Click **OK** to save changes.
 
-  ![](images/ka0Qk00000031Iv_0EM4u000008LafI.png)
+  ![](./images/ka0Qk00000031Iv_0EM4u000008LafI.png)
 
 - Review your SSRS account permissions. For additional information, refer to: SQL Server Reporting Services: Configure SSRS Account · v10.6 — https://docs.netwrix.com/docs/auditor/10_8/requirements/overview
 
@@ -121,3 +121,4 @@ HTTP Error 401 - Unauthorized. Provide another credentials or change security se
 ## Related articles
 
 - Netwrix Auditor Settings − Investigations · v10.6 — https://docs.netwrix.com/docs/auditor/10_8
+

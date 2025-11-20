@@ -44,4 +44,4 @@ Review the system time in both NPS server and clients in your environment.
 
 ## Reference
 
-![Capture.png](images/ka04u000000wvuC_0EM4u000008pS5A.png)
+![Capture.png](./images/ka04u000000wvuC_0EM4u000008pS5A.png)

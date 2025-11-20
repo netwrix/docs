@@ -185,3 +185,5 @@ groups a user or a computer has in Azure Active Directory and then take an actio
 that's what you want to do.
 
 Hope this helps you out. Thank you very much and talk to you soon.
+
+

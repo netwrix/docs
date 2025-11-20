@@ -38,3 +38,5 @@ It is the last entry in the S: category
 Note that if you're looking for general advice in how to get started with Windows certificates and
 browsers support, you
 can [find that here](https://www.techrepublic.com/article/how-to-add-a-trusted-certificate-authority-certificate-to-chrome-and-firefox/).
+
+

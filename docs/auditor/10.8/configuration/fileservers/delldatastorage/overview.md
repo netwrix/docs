@@ -17,7 +17,7 @@ integrity, otherwise your change reports may contain warnings, errors or incompl
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
-[Antivirus Exclusions for Netwrix Auditor](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA04u0000000HirCAE.html)
+[Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
 You can configure your IT Infrastructure for monitoring in one of the following ways:

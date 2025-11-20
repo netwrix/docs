@@ -45,6 +45,6 @@ Netwrix Directory Manager allows you to add users to Active Directory groups as 
 2. Select the group on the **Search Results** page and click **Properties** on the toolbar. The **Members** tab in group properties lists the group members.  
 3. To change a member's membership type, click anywhere in the respective row to make it editable. Select **Temporary Member** from the **Membership** column then specify the membership period using the **Beginning** and **Ending** fields. Other membership options are described in the table above.
 
-![Editing membership type and period for a group member in Directory Manager](images/ka0Qk000000FGZ7_0EMQk00000C65MH.png)
+![Editing membership type and period for a group member in Directory Manager](./images/ka0Qk000000FGZ7_0EMQk00000C65MH.png)
 
 4. Save the changes.

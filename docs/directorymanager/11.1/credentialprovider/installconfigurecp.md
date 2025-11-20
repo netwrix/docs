@@ -1,10 +1,10 @@
 ---
-title: "Netwrix Directory Manager Credential Provider Installation and Configuration"
-description: "Installation and Configuration Guide for Netwrix Directory Manager Credential Provider"
+title: "Installation and Configuration"
+description: "Installation and Configuration"
 sidebar_position: 1
 ---
 
-# Netwrix Directory Manager Credential Provider - Technical Documentation
+# Installation and Configuration
 ---
 
 ## Table of Contents
@@ -111,7 +111,7 @@ This method is suitable for single computers or small deployments where centrali
 #### Installation Steps
 
 1. **Download the Installer**
-   - Obtain `PasswordCenterClientSetup64.msi` (also referred to as `NetwrixdirectorymanagerCredentialprovider.msi` in legacy documentation) from your Netwrix Product Library or link shared by your Account Manager
+   - Obtain `Netwrix Directory Manager Credential Provider` from your Netwrix Product Library or link shared by your Account Manager
    - Verify the file is digitally signed by Netwrix
 
 2. **Run the Installer**
@@ -146,7 +146,7 @@ C:\Program Files\Imanami\Password Center Client (x64)\
 
 After reboot, the Windows logon screen will display with the credential provider active:
 
-![Windows Logon Screen Example]
+![Windows Logon Screen](/images/directorymanager/11.1/portal/user/manage/windows_screen.webp)
 
 The logon screen will show:
 - **Netwrix logo** (or custom logo if configured)
@@ -255,7 +255,7 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
 
 **Prerequisites**:
 - Orca MSI editor tool (included in Windows SDK)
-- MSI package (PasswordCenterClientSetup64.msi or NetwrixdirectorymanagerCredentialprovider.msi)
+- MSI package (PasswordCenterClientSetup64.msi)
 
 **Steps to Create MST Transform File**:
 
@@ -265,20 +265,28 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
    - Run `Orca-x86_en-us.msi` to install Orca
    - The Orca console will open after installation
 
+   ![Orca console](/images/directorymanager/11.1/portal/user/manage/orca_console.webp)
+
 2. **Open MSI in Orca**:
    - Launch Orca application
    - Click **File** → **Open**
    - Browse to the Credential Provider folder
-   - Select and open `NetwrixdirectorymanagerCredentialprovider.msi` (or `PasswordCenterClientSetup64.msi`)
+   - Select and open `PasswordCenterClientSetup64.msi` 
+
+   ![Credential Provider in Orca](/images/directorymanager/11.1/portal/user/manage/cp_loaded.webp)
 
 3. **Create New Transform**:
    - From the menu, select **Transform** → **New Transform**
    - This creates a new transform that will store your customizations
 
+   ![New Transform option](/images/directorymanager/11.1/portal/user/manage/new_transform.webp)
+
 4. **Modify Properties**:
    - In the left pane, click **Property**
    - The main window displays a list of MSI properties
    - Locate the **SOURCEPATH** property in the property list
+
+   ![Property page](/images/directorymanager/11.1/portal/user/manage/property.webp)
 
 5. **Configure Source Path**:
    - Create a shared folder for configuration files:
@@ -290,8 +298,13 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
    - Enter the UNC path to the shared folder: `\\fileserver\software\CredentialProvider\Config\`
    - Click **OK**
 
+   ![Property path](/images/directorymanager/11.1/portal/user/manage/property_path.webp)
+
 6. **Generate Transform File**:
    - From the menu, select **Transform** → **Generate Transform**
+
+   ![Generate Transform option](/images/directorymanager/11.1/portal/user/manage/generate_transform.webp)
+
    - Save the transform file with a descriptive name (e.g., `CustomConfig.mst`)
    - Save it to the same shared folder as the MSI package:
      ```
@@ -305,7 +318,7 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
 **Files Required in Network Share After This Step**:
 ```
 \\fileserver\software\CredentialProvider\
-├── PasswordCenterClientSetup64.msi  (or NetwrixdirectorymanagerCredentialprovider.msi)
+├── PasswordCenterClientSetup64.msi
 ├── CustomConfig.mst                  (your generated transform file)
 └── Config\
     └── CPSettings.xml                (configuration file)
@@ -323,11 +336,26 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
    - Run: `gpmc.msc`
    - Or: Start → Administrative Tools → Group Policy Management
 
+   ![Group Policy Management console](/images/directorymanager/11.1/portal/user/manage/gp_policy.webp)
+
+   :::note
+   Group Policy Management console is available if the Group Policy Management feature has been installed.
+   :::
+
 2. **Create New GPO**:
    - Navigate to your domain or appropriate Organizational Unit (OU)
    - Right-click → "Create a GPO in this domain, and Link it here"
+
+   ![Create a GPO in this domain and link it here option](/images/directorymanager/11.1/portal/user/manage/new_gpo.webp)
+
    - Name: "Deploy Netwrix Credential Provider"
    - Click "OK"
+
+**Or**
+
+   Right-click the Select **Default Domain Policy** and select **Edit**:
+
+   ![Edit Default Domain Policy option](/images/directorymanager/11.1/portal/user/manage/edit_gpo.webp)
 
 3. **Link GPO to Target OUs** (if not already linked):
    - Right-click the GPO
@@ -348,11 +376,19 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
    - Expand: `Software Settings`
    - Click: `Software installation`
 
+   ![New Package option](/images/directorymanager/11.1/portal/user/manage/software_installation.webp)
+
+   :::note
+   This documentation describes steps for editing the default policy.
+   :::
+
 3. **Add New Package**:
    - Right-click in the right pane → New → Package
    - Navigate to the network share: `\\fileserver\software\CredentialProvider\`
    - Select: `PasswordCenterClientSetup64.msi`
    - **Important**: Use UNC path, not mapped drive letter
+
+   ![Deploy Software](/images/directorymanager/11.1/portal/user/manage/deploy_cp.webp)
 
 4. **Choose Deployment Method**:
    - Dialog appears: "Deploy Software"
@@ -378,6 +414,9 @@ If you selected "Advanced" in step 3.4, configure additional options:
    If you created an MST transform file using Orca (see section 1A above), apply it here:
 
    - Click the **Modifications** tab
+
+   ![Modifications tab](/images/directorymanager/11.1/portal/user/manage/modification_tab.webp)
+
    - Click **Add** button
    - Browse to the network share where you saved the .mst file
    - Select your transform file (e.g., `CustomConfig.mst`)
@@ -529,6 +568,8 @@ Once the GPO is configured and linked, client machines within the scope of the p
    - "Forgot Password?" link
    - "Unlock Account" link
    - Custom title text under the logo
+
+   ![Windows Logon screen](/images/directorymanager/11.1/portal/user/manage/windows_screen.webp)
 
    The credential provider is now active and ready for use on client workstations.
 
@@ -2886,6 +2927,73 @@ msiexec /x {4C3F32FA-8AAE-41B7-806E-195782B986D5} /quiet /norestart
 msiexec /x "C:\Path\To\PasswordCenterClientSetup64.msi" /quiet /norestart
 ```
 
+**Method 4: Uninstall via Group Policy Object**
+
+For enterprise environments where the credential provider was deployed via GPO:
+
+1. **Open Group Policy Management**:
+   - Run: `gpmc.msc`
+   - Or: Start → Administrative Tools → Group Policy Management
+
+2. **Locate and Edit the GPO**:
+   - Right-click the GPO that contains the credential provider deployment (e.g., "Deploy Netwrix Credential Provider" or "Default Domain Policy")
+   - Select **Edit**
+   - The Group Policy Management Editor opens
+
+3. **Navigate to Software Installation**:
+   - Expand: `Computer Configuration`
+   - Expand: `Policies`
+   - Expand: `Software Settings`
+   - Click: `Software installation`
+
+4. **Remove the Package**:
+   - Right-click the Credential Provider package
+   - Point to **All Tasks**
+   - Click **Remove**
+
+5. **Select Removal Method**:
+   - In the "Remove Software" dialog box:
+   - Select: **"Immediately uninstall the software from users and computers"**
+   - Click **OK**
+
+6. **Close the Editor**:
+   - Click **Close** to close the Group Policy Object Editor
+
+7. **Client Workstation Removal Process**:
+   - When client workstations restart, the GPO (now without the Credential Provider) is applied
+   - This removes the installed Credential Provider from all client workstations
+   - **Important**: Once the software is removed, users must restart the workstation **again** to remove the links from the Windows logon screen
+
+**Force Immediate Removal on Specific Computers**:
+
+On client computers, administrators can force policy update:
+```cmd
+gpupdate /force /boot
+```
+
+**Verify Removal on Client Machines**:
+
+Check if credential provider has been uninstalled:
+```powershell
+Get-WmiObject -Class Win32_Product | Where-Object {$_.Name -like "*Credential*"}
+```
+
+Or check registry:
+```cmd
+reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers\{c8765b62-7058-4d7f-9421-11a75d623206}"
+```
+
+If registry key doesn't exist, uninstallation was successful.
+
+**Monitoring Uninstallation Status**:
+
+Check GPO application results:
+```cmd
+gpresult /h gpreport.html
+```
+Review the HTML report to verify the software removal policy was applied.
+
+
 ---
 
 ### Rollback Scenario 3: Emergency Removal (System Locked Out)
@@ -3237,4 +3345,4 @@ Complete list of common Windows credential provider CLSIDs for filtering:
 
 **Document End**
 
-*For the latest version of this documentation, visit: https://www.netwrix.com/groupid-credential-provider-docs*
+

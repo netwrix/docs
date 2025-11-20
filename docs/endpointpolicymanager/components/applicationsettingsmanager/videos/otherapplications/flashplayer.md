@@ -8,7 +8,7 @@ sidebar_position: 40
 Got Super cookies? I bet you do – and, no, it's not your Aunt Edna's latest diet craze. It's your
 latest security threat. And it lives on your corporate Windows machines.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UEHHthW_YZY" title="Endpoint Policy Manager:  Manage Flash Player using Group Policy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UEHHthW_YZY" title="Endpoint Policy Manager:  Manage Flash Player using Group Policy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 The problem is:
 
@@ -159,3 +159,5 @@ That's it with regards to using Group Policy, PolicyPak and Flash Player setting
 enjoyed this video, and happy locking things down.
 
 Take care.
+
+

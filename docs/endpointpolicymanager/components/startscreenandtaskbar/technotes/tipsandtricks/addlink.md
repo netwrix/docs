@@ -12,3 +12,5 @@ we recommend you choose a Shortcut Icon from Shell32.DLL.
 The other fields may be left blank.
 
 ![914_1_image001](/images/endpointpolicymanager/startscreentaskbar/914_1_image001.webp)
+
+

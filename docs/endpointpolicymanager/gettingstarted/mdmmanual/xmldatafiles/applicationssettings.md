@@ -24,3 +24,4 @@ to XMLData File," as shown in Figure 11. Then save the XML file for the next ste
 
 Figure 11. Using an existing GPO with a Endpoint Policy Manager Application Settings Manager
 directive to select "Export settings to XMLData File."
+

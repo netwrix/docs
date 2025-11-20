@@ -80,3 +80,6 @@ complete, the MMC list will demonstrate the multiple conditions in the **Conditi
 
 Description automatically
 generated](/images/endpointpolicymanager/leastprivilege/bestpractices/rules/creating_and_using_executable_5.webp)
+
+
+

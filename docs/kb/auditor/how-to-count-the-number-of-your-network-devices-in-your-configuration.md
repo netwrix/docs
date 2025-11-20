@@ -25,6 +25,7 @@ knowledge_article_id: kA00g000000H9SnCAK
 
 The licensing **does not depend** on your Syslog forwarding configuration. In the example below, Netwrix Auditor collects audit data from five devices, one of them (6) also serving as a relay:
 
-![User-added](images/servlet_image_3823966b1661.png)
+![User-added](./images/servlet_image_3823966b1661.png)
 
 The computer (5) does not send any data, so it does not count for a licensed object. Therefore, for this example configuration, purchase Netwrix Auditor license for five network devices.   Original KB Article 2122
+

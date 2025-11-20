@@ -27,7 +27,7 @@ You may receive a Group Policy daily summary email with the error: "The file `DC
 ---
 
 The group policy is corrupted or it is not in a valid format. If you open the Group Policy Management Console (GPMC) > highlight the group policy in Summary and navigate to > **Settings** tab, most likely it will return you an error message.  
-![Settings](images/ka04u000000HcUd_0EM7000000051OC.png)
+![Settings](./images/ka04u000000HcUd_0EM7000000051OC.png)
 
 ---
 
@@ -36,7 +36,7 @@ The group policy is corrupted or it is not in a valid format. If you open the Gr
 First of all you need to find out the affected policy.
 
 In the error message `"DC01.corp.<MyDomain>.com\sysvol\corp.<MyDomain>.com\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\Machine\registry.pol"` — `31B2F340-016D-11D2-945F-00C04FB984F9` is the GUID of the affected group policy. To find out the GUID of a group policy open GPMC > highlight a group policy and open **Details** tab > **Unique ID** is the GUID of a GPO.  
-![GUID GPO](images/ka04u000000HcUd_0EM7000000051O7.png)
+![GUID GPO](./images/ka04u000000HcUd_0EM7000000051O7.png)
 
 There are 3 possible solutions:
 
@@ -50,3 +50,4 @@ There are 3 possible solutions:
    If you didn't find a solution please refer to the following Microsoft article regarding this issue - http://support.microsoft.com/kb/814751
 
 <div id="cke_pastebin" style={{width: '1px', height: '1px'}}> </div>
+

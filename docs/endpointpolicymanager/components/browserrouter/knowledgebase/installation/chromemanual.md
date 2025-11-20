@@ -30,11 +30,11 @@ Note down the Extension ID. You'll need this step every time we release updates
 
 ![535_1_image-20191222210303-1](/images/endpointpolicymanager/browserrouter/install/535_1_image-20191222210303-1.webp)
 
-**Step 3 –** ote the PPBR Chrome Extension's Version Number.
+**Step 3 –** Note the PPBR Chrome Extension's Version Number.
 
-**Step 4 –** Launch this URL, [https://www.crxextractor.com/](https://www.crxextractor.com/)
+**Step 4 –** Find a CRX Extractor tool. There are a variety of them online.  Steps follow are generic and may be different based upon the CRX tool you have chosen.
 
-**Step 5 –** Insert the updated PPBR Chrome Extension URL that you appended in step 1.2.
+**Step 5 –** Insert the updated PPBR Chrome Extension URL that you appended in step 2.
 
 ![535_3_image-20191222210303-2_457x162](/images/endpointpolicymanager/browserrouter/install/535_3_image-20191222210303-2_457x162.webp)
 

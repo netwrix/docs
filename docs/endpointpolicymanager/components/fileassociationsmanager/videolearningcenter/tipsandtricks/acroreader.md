@@ -8,7 +8,7 @@ sidebar_position: 70
 How do you make PP File Associations "think" about what to do, and have one group of associations
 with Acrobat READER and another with Acrobat WRITER. Here's how.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/l-WS3otjkP0" title="Endpoint Policy Manager File Associations Trick: Acro Reader AND Writer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l-WS3otjkP0" title="Endpoint Policy Manager File Associations Trick: Acro Reader AND Writer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak File Associations Trick – Acro Reader AND Writer
 
@@ -171,3 +171,5 @@ With that in mind, that's all there is really to it. Hope this helps you get on 
 Endpoint Policy Manager File Associations Manager. Looking forward to getting you started real
 soon.  
 Thanks so much. Take care.
+
+

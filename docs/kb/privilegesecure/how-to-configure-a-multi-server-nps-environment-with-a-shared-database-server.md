@@ -29,7 +29,7 @@ knowledge_article_id: kA04u0000000JyXCAU
 This article will guide the user through the process of setting up a deployment with multiple Netwrix Privilege Secure servers communicating with a single Postgres server. Instructions are included for configuring TLS for all network traffic to the Postgres server. Optional migration steps are included for users who wish to use a Postgres database from an existing Netwrix Privilege Secure deployment.
 
 This diagram illustrates the desired network architecture.
-![nps_diagram.png](images/ka0Qk0000009L21_0EMQk000006FKxR.png)
+![nps_diagram.png](./images/ka0Qk0000009L21_0EMQk000006FKxR.png)
 
 ## Instructions
 

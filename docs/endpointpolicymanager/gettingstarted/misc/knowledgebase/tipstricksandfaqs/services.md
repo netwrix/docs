@@ -8,3 +8,4 @@ sidebar_position: 140
 
 Yes. The services are an integral part of every Netwrix Endpoint Policy Manager (formerly PolicyPak)
 component and required for each of them to function properly.
+

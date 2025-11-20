@@ -50,3 +50,5 @@ Then, you may use this list using the previously described wizard pages such as 
 Serial Number and Allow Device by BitLocker Key, as shown in the example screen below.
 
 ![helper5](/images/endpointpolicymanager/device/devicemanager/helper5.webp)
+
+

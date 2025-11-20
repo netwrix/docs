@@ -9,7 +9,7 @@ CEM is great ! But it has no way to deliver real Group Policy settings, or Netwr
 Manager (formerly PolicyPak)'s own special settings. Use Endpoint Policy Manager MDM alongside
 Citrix CEM for a powerful combination to increase your endpoint management capabilities !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PLwimJ92PUg" title="Endpoint Policy Manager and Citrix Endpoint Manager: Deploy real Group Policy and Endpoint Policy Manager settings via CEM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PLwimJ92PUg" title="Endpoint Policy Manager and Citrix Endpoint Manager: Deploy real Group Policy and Endpoint Policy Manager settings via CEM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz, Microsoft MVP and founder of Endpoint Policy Manager Software. In this
 video we're going to learn how to use Endpoint Policy Manager plus Citrix Endpoint Management or CEM
@@ -169,3 +169,5 @@ can analyze them and do everything to your heart's content. I hope this video he
 with Endpoint Policy Manager and Citrix CEM. If you need any TLC, we're here to help you out and so
 are our friends at Citrix. Thank you very much and looking forward to getting you started with
 Endpoint Policy Manager and Citrix CEM soon. Thanks very much. Take care.
+
+

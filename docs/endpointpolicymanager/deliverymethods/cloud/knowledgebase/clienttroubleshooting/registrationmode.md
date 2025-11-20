@@ -55,3 +55,5 @@ then re-established and Endpoint Policy Manager Cloud software reinstalled.
 | Loose (UUID)        | Re-established connection to existing account                             | All group memberships maintained                                                                           |
 | Loose (UUID or MAC) | Re-established connection to existing account                             | All group memberships maintained                                                                           |
 | Advanced            | Old computer account remained AND new account created (Duplicate Entries) | Old account maintained existing group memberships and new account reverted to built-in default memberships |
+
+

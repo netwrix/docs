@@ -25,3 +25,5 @@ Item-level targeting provides granular control over which users or computers rec
 - Target based on computer properties
 
 For detailed configuration steps, see the original item-level targeting documentation.
+
+

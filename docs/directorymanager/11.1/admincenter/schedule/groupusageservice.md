@@ -30,7 +30,7 @@ Step 2 – On the Identity Stores page, click the ellipsis button for an identit
 
 Step 3 – Click **Schedules** under Settings in the left pane.
 
-Step 4 – On the Schedules page, click **Add Schedule** and select **Group Usage Service Job**.  
+Step 4 – On the Schedules page, click **Add Schedule** and select **Group Usage Service Job**.
 The Create Schedule page is displayed.
 
 Step 5 – In the **Schedule Name** box, enter a name for the schedule.
@@ -66,13 +66,13 @@ Step 9 – You can specify containers as targets for the schedule. The schedule 
 groups in those containers and sub-containers.
 
 - Select the **Include all containers** check box to run the schedule on all the containers in the
-  identity store.  
+  identity store.
   Or
 - Click **Add Container** to add one or more containers as targets. The Add Container(s) dialog box
   shows the domain name and the OUs in the identity store. Select the check boxes for the required
   containers and click **Add**; the selected containers are displayed in the Target(s) area. To
   exclude a sub-container, clear the check box for it on the Add Container(s) dialog box.
-- To remove a container in the Target(s) area, click **Remove** for it.  
+- To remove a container in the Target(s) area, click **Remove** for it.
   To remove all target objects, click **Remove All**.
 
 Step 10 – You can also specify one or more messaging servers. The job reads expansion logs from
@@ -98,13 +98,13 @@ Step 12 – After specifying the settings for triggers, click **Add**. The trigg
 Triggers area.
 
 A schedule can have one or more triggers, allowing the schedule to be started in many ways. With
-multiple triggers, the schedule will start when any of the triggers occur.  
+multiple triggers, the schedule will start when any of the triggers occur.
 To enable or disable a trigger - Click **Edit** for a trigger in the Triggers area and use the
-toggle button at the top of the Update Trigger dialog box to enable or disable the trigger.  
+toggle button at the top of the Update Trigger dialog box to enable or disable the trigger.
 To remove a trigger - Click **Remove** for a trigger to remove it.
 
 Step 13 – Click **Add Authentication** in the Authentication area to specify an account for running
-the schedule in the identity store.  
+the schedule in the identity store.
 The Authentication dialog box displays your accounts in the respective identity store that you have
 used for signing in. Select an account to authenticate with it or click **Login with a different
 user** to provide the credentials of another account to run the schedule in the identity store.
@@ -114,6 +114,9 @@ Make sure this account falls under a high priority security role that has elevat
 in the identity store (for example, Administrator).
 :::
 
+:::important Password Re-insertion Required
+Due to security enhancements, when editing a schedule, you must re-enter the account password in the Authentication section, even if you are not changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
+:::
 
 :::note
 If you are creating this schedule in a Microsoft Entra ID identity store, you can only specify
@@ -125,7 +128,7 @@ section of the [Schedules](/docs/directorymanager/11.1/admincenter/schedule/over
 
 Step 14 – On the Create Schedule page, click **Create Schedule**.
 
-Step 15 – On the Schedules page, click **Save**.  
+Step 15 – On the Schedules page, click **Save**.
  The schedule is displayed under Group Usage Service. See the
 [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store) topic
 for additional information.

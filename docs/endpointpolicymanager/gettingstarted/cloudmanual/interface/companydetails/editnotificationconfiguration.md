@@ -60,3 +60,5 @@ When the check box for remaining license notification threshold is set and the p
 below the reporting threshold, all admins get a notification.
 
 ![web_interface_and_controls_97_624x209](/images/endpointpolicymanager/cloud/interface/companydetails/web_interface_and_controls_97_624x209.webp)
+
+

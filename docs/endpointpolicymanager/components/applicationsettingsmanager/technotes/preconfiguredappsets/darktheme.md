@@ -38,3 +38,5 @@ To fix this on all your client machines please use Firefox About:Config PAKs an
 as instructed. Here is just a reference screenshot:
 
 ![222_3_2017-10-11_1531](/images/endpointpolicymanager/applicationsettings/preconfigured/firefox/222_3_2017-10-11_1531.webp)
+
+

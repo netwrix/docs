@@ -72,3 +72,5 @@ Once you have your exported policy XML data file, you can select the group, then
 link a new XML here and then, paste the XML data.
 
 ![web_interface_and_controls_53_623x265](/images/endpointpolicymanager/cloud/interface/computergroups/web_interface_and_controls_53_623x265.webp)
+
+

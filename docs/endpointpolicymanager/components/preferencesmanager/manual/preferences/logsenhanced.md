@@ -25,3 +25,5 @@ logs called `Service`. Then within `Service` add a `Reg_DWORD` called Verbose an
 
 Figure 23. The Service key will not exist by default and must be created before the value is set
 within it.
+
+

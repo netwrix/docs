@@ -47,3 +47,5 @@ pending request and approve/reject from there.
 ![956_4_image-20230706151408-8_663x573](/images/endpointpolicymanager/cloud/add/956_4_image-20230706151408-8_663x573.webp)
 
 The requester will receive an email indicating if the request was approved or rejected.
+
+

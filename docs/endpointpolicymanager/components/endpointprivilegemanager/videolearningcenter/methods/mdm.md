@@ -8,7 +8,7 @@ sidebar_position: 20
 Use your own MDM solution to deploy rules which enable Standard Users to do things that only admins
 can!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/J6_Bg9ZkqPM" title="Endpoint Privilege Manager + Your MDM Service!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J6_Bg9ZkqPM" title="Endpoint Privilege Manager + Your MDM Service!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with Netwrix Software. Have you seen all of the great Least Privilege Manager
 features and wondered how that works with our MDM edition? We've got you covered. You can create
@@ -74,3 +74,5 @@ using Least Privilege Manager with your own MDM service we managed to elevate th
 non domain-joined MDM enrolled machine. If this is as awesome to you as it is to me, sign up for our
 webinar, and we'll hand over the bits and get you started on a 30-day free trial right away. Thanks
 so much.
+
+

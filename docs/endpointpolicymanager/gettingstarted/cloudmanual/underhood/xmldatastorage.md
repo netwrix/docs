@@ -57,3 +57,4 @@ Therefore, for instance, if you delivered a setting using Endpoint Policy Manage
 then undelivered that same setting using an XML data file, and then used Group Policy to re-deliver
 that same setting, Group Policy would always win. In short, directives delivered by Endpoint Policy
 Manager Cloud have the least precedence, and Group Policy always wins.
+

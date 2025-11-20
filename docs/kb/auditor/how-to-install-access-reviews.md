@@ -35,4 +35,7 @@ In case you're planning the on-premise deployment, click **On-premises Deploymen
 
 For the VM deployment, proceed with the **Virtual Appliance** option and select the suitable package. Netwrix Auditor Access Reviews will come preinstalled for the VM of your choice.
 
-![pI1UIaaJkT.png](images/ka04u00000116Ju_0EM4u000008LKrz.png)
+![pI1UIaaJkT.png](./images/ka04u00000116Ju_0EM4u000008LKrz.png)
+
+
+

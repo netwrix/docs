@@ -15,3 +15,5 @@ Figure 29.
 
 Figure 29. Endpoint Policy Manager Java Rules Manager must be licensed like every other Endpoint
 Policy Manager component.
+
+

@@ -35,7 +35,7 @@ This article explains how to delegate the password reset function to users in th
 4. Click the **Navigation bar** tab.
 5. In the **Tab** list, select *Users* and click **Edit**.
 6. On the **Edit Tab** dialog box, select **Reset Password** in the **Links** section and click **Edit**.  
-   ![Edit Tab dialog with Reset Password link highlighted](images/ka0Qk000000DtrV_0EMQk00000BSBJx.png)
+   ![Edit Tab dialog with Reset Password link highlighted](./images/ka0Qk000000DtrV_0EMQk00000BSBJx.png)
 7. From the **Access Level** list on the **Edit Link** dialog box, select a security role. This role and any roles with a higher priority value can reset the passwords of other users through the Self-Service portal.
 8. Click **OK** to close the dialog boxes and then save the changes.
 

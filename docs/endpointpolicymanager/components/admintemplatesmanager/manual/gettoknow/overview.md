@@ -11,3 +11,5 @@ node. The Endpoint Policy Manager Admin Templates Manager allows you to create a
 collection.
 
 ![about_policypak_admin_templates_2](/images/endpointpolicymanager/adminstrativetemplates/gettoknow/about_endpointpolicymanager_admin_templates_2.webp)
+
+

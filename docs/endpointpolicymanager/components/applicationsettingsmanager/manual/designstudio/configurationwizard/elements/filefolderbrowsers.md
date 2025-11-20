@@ -14,12 +14,15 @@ Endpoint Policy Manager DesignStudio that this is the case.
 
 In the example below, a working folder item is shown. To configure the dialog as a folder browser,
 right-click the "…" and select "Change type to…." Then, select "Folder Browser," as shown in
-Figure 138.
+The figure shown.
 
 ![configuring_elements_using_31](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/elements/configuring_elements_using_31.webp)
 
-Figure 138. Configuring a dialog as a folder browser.
+The figure shown. Configuring a dialog as a folder browser.
 
 Then, right-click the "…" again and select "Configuration Wizard." The goal is to change the folder
 (or file) to anything different so that the Capture Wizard detects the change. You may choose the
 original folder (or file) as the default and revert settings.
+
+
+

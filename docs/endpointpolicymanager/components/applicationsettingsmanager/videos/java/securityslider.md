@@ -8,7 +8,7 @@ sidebar_position: 40
 A quick update to our Java pak gives you the ability to manage and manipulate the slider on the
 security tab and lock it down. See how!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dM-dHbEtcCk?si=jwmT6-3VgJTGBi5B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dM-dHbEtcCk?si=jwmT6-3VgJTGBi5B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### How to Manage the security slider in Java 7 video transcript
 
@@ -104,3 +104,5 @@ help remediate and deliver and enforce settings just like you saw it here in the
 Panel" applet.
 
 Thanks so much. Talk to you soon.
+
+

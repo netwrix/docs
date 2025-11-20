@@ -23,3 +23,4 @@ instructions on how to install your new license.
 
 See [Using LT for license cleanup](/docs/endpointpolicymanager/licensing/videolearningcenter/troubleshooting/cleanup.md) for additional information on how
 to use our LT to help you do a Deep search for licenses and help you automatically clean up
+

@@ -24,3 +24,5 @@ Then the expected behavior we should see is:
 
 - 7zip uninstall (REVERT script is run.)
 - 7zip reinstall (Changed on script is run.)
+
+

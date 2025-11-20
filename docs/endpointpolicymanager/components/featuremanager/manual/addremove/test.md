@@ -24,3 +24,5 @@ result.
 ![quickstart_adding_and_removing_18](/images/endpointpolicymanager/feature/addremove/quickstart_adding_and_removing_18.webp)
 
 ![quickstart_adding_and_removing_19](/images/endpointpolicymanager/feature/addremove/quickstart_adding_and_removing_19.webp)
+
+

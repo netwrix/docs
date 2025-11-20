@@ -11,7 +11,7 @@ Client-less Endpoint Auditing
 Use this video to set up PPGPCR Server’s Client-less endpoint Push-based auditing. Once set up, all
 clients will send GP data to the server in real time.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9JPx_Ksuk6g?si=anX8gQH0jZ81OcDd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9JPx_Ksuk6g?si=anX8gQH0jZ81OcDd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager GP Compliance Reporter Server: Setting up Client-less Endpoint Auditing
 
@@ -164,3 +164,4 @@ I hope this helps. If you have questions about getting the Compliance Reporter s
 support ticket https://www.netwrix.com/sign_in.html?rf=tickets.html#/open-a-ticket
 
 Thanks so much, and we’ll talk to you soon.
+

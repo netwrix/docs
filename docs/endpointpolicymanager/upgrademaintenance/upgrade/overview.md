@@ -54,3 +54,4 @@ This way you can install the latest Endpoint Policy Manager CSE by hand and do s
 CSE before you attempt to roll it out to more client machines. Then, if you encounter a bug, you can
 quickly validate your bug report and collect logs from a machine that is available whenever you need
 it, not just when the user is available.
+

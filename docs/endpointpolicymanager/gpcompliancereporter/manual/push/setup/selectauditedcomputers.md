@@ -24,3 +24,4 @@ Figure 47.
 ![gpcr_server_with_push_mode_11](/images/endpointpolicymanager/grouppolicycompliancereporter/mode/push/setup/gpcr_server_with_push_mode_11.webp)
 
 Figure 47. Choosing a self-made Active Directory group containing the computers to audit.
+

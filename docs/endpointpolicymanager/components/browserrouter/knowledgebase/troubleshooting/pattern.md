@@ -21,3 +21,5 @@ We suggest you pick EITHER `"*abc* -> Chrome"` (example) or `"*ghi* -> Chrome
 
 But AVOID following pattern: `"*def* -> Chrome" `which is in the MIDDLE of the redirect and not
 expected to work.
+
+

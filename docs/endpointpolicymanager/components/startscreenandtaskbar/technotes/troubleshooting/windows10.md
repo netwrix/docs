@@ -11,3 +11,5 @@ fully work with Windows 10 build 1703.
 With build 1607 only Start Screen policies are expected to work.  
 To get both Start Screen and Taskbar Manager policies to work, you will need to have the endpoint(s)
 be 1703 or later.
+
+

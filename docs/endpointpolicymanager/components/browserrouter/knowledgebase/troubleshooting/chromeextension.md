@@ -70,3 +70,5 @@ These two files can sit side by side without issue if you need to use an OLDER C
 UPGRADE to latest CSE later.
 
 ![774_7_img-05_950x675](/images/endpointpolicymanager/troubleshooting/browserrouter/clientsideextension/774_7_img-05_950x675.webp)
+
+

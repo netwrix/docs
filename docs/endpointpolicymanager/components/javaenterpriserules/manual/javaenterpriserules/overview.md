@@ -12,3 +12,5 @@ Java Rules Manager only applies to the Computer side and not to the User side. T
 encountered with Endpoint Policy Manager Java Rules Manager is that RIA websites don't honor the
 version of Java JRE you expect on an endpoint. The sections below list the most common reasons why
 they don't and provide some troubleshooting steps.
+
+

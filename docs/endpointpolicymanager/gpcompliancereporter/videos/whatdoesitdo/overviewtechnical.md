@@ -10,7 +10,7 @@ PolicyPak) Group Policy Compliance Reporter. You can use it alone, or with your 
 which machines on your network did and did not get the IT and security settings you need for them to
 get to be compliant.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2PwlaYfUkmw" title="Endpoint Policy Manager Group Policy Compliance Reporter: 7 Minute Technical Overview for IT Pros" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2PwlaYfUkmw" title="Endpoint Policy Manager Group Policy Compliance Reporter: 7 Minute Technical Overview for IT Pros" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager Group Policy Compliance Reporter: 7 Minute Technical Overview for IT Pros
 
@@ -49,7 +49,7 @@ accelerate things for this little demonstration, I have three tests that I've al
 instance, if I want to verify that the "Screen Saver Password Lock must be ENABLED," and that is
 called "Password protect the screen saver," you can see it's set to "Enabled." Or you can use Group
 Policy Preference item, and you can verify things like: Is a particular "URL" like
-"www.endpointpolicymanager.com" delivered to the desktop? Or a PolicyPak Application Manager setting, for
+"www.policypak.com" delivered to the desktop? Or a PolicyPak Application Manager setting, for
 instance: Is Java set to very high security ("Set Java Security to Very High")?
 
 Creating a new test couldn't be simpler. You can either right click and "Create test." I'll call
@@ -95,7 +95,7 @@ Policy Compliance Reporter has actually verified that that's true.
 
 If we move back to the "Compliance Reporter," we can then also subtract a test and add another
 particular test or you can summate tests together.If you want to test for the "Screen Saver Password
-Lock must be ENABLED" and PolicyPak must be on the desktop ("Place www.endpointpolicymanager.com on Desktop")
+Lock must be ENABLED" and PolicyPak must be on the desktop ("Place www.policypak.com on Desktop")
 and "Set Java Security to Very High," you can do that very quickly.
 
 This represents the thing that you want to make sure is compliant. This is the report of everything
@@ -146,3 +146,4 @@ Thanks so much for watching. If you're looking to get started with the Group Pol
 Reporter, just get in touch with the PolicyPak sales team, and we'll get you started.
 
 Thanks so much, and we'll talk to you soon.
+

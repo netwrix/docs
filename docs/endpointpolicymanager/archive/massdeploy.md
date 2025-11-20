@@ -10,7 +10,7 @@ You have tested out Netwrix Endpoint Policy Manager (formerly PolicyPak) on one 
 working great. Now you are ready to roll the client side extension (CSE) out to a numberof machines
 at once. Watch this video to see how easy this to implement.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GvgnnIbhXfY?si=9iWhea6MliCI-63j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GvgnnIbhXfY?si=9iWhea6MliCI-63j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Mass Deploy the PolicyPak CSE using GPSI Transcript
 
@@ -132,3 +132,5 @@ happen to be using Group Policy to do this, but you can use if you have your own
 software to deploy any MSI you want and it works just like this. That's it.
 
 I hope this was helpful. Have fun installing PolicyPak and getting more secure. Thanks so much.
+
+

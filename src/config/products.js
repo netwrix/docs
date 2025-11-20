@@ -107,9 +107,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '9.0',
+        label: '9.0',
+        isLatest: true,
+        sidebarFile: './sidebars/activitymonitor/9.0.js',
+      },
+      {
         version: '8.0',
         label: '8.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/activitymonitor/8.0.js',
       },
       {
@@ -119,7 +125,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/activitymonitor/7.1.js',
       },
     ],
-    defaultVersion: '8.0',
+    defaultVersion: '9.0',
   },
   {
     id: 'auditor',
@@ -374,9 +380,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '9.3',
+        label: '9.3',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordsecure/9.3.js',
+      },
+      {
         version: '9.2',
         label: '9.2',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/passwordsecure/9.2.js',
       },
       {
@@ -386,7 +398,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/passwordsecure/9.1.js',
       },
     ],
-    defaultVersion: '9.2',
+    defaultVersion: '9.3',
   },
   {
     id: 'pingcastle',

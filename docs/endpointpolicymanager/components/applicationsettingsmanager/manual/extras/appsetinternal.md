@@ -9,7 +9,7 @@ sidebar_position: 20
 :::note
 To see an overview of Internal ItemLevel Targeting, including how to bypass the filters,
 see this video:
-[http://www.endpointpolicymanager.com/videos/bypassing-internal-item-level-targeting-filters.html](http://www.endpointpolicymanager.com/products/endpointpolicymanager-preconfigured-paks.html).
+[https://youtu.be/nw6LAE5b-pE](https://youtu.be/nw6LAE5b-pE).
 :::
 
 
@@ -29,7 +29,7 @@ Figure 51 shows an example of how you might configure an internal filter.
 
 ![policypak_application_settings_2_5](/images/endpointpolicymanager/applicationsettings/extras/itemleveltargeting/endpointpolicymanager_application_settings_2_5.webp)
 
-Figure 51. Configuring an internal filter.
+The figure shown. Configuring an internal filter.
 
 The purpose is to make sure that configuration items aren't delivered unless these predefined
 conditions match and are actually present on the target machine.
@@ -40,13 +40,13 @@ Manager data is written unless it's actually needed.
 However, you might find the need to bypass sets of internal filters and apply the AppSet anyway,
 regardless of whether the application is present on the machine. To do this, you need to modify the
 AppSet entry's options and change the "Predefined Item-Level Targeting" switch, as seen in
-Figure 52.
+The figure shown.
 
 ![policypak_application_settings_2_6](/images/endpointpolicymanager/applicationsettings/extras/itemleveltargeting/endpointpolicymanager_application_settings_2_6.webp)
 
-Figure 52.  Changing the Predefined Item-Level Targeting switch.
+The figure shown.  Changing the Predefined Item-Level Targeting switch.
 
-There are three ways to configure this entry, which are presented in Table 1 (also see Figure 53 for
+There are three ways to configure this entry, which are presented in Table 1 (also See the figure here for
 an example of one of the scenarios).
 
 Table 1: Internal Item-Level Targeting settings options.
@@ -59,4 +59,7 @@ Table 1: Internal Item-Level Targeting settings options.
 
 ![policypak_application_settings_2_7](/images/endpointpolicymanager/applicationsettings/extras/itemleveltargeting/endpointpolicymanager_application_settings_2_7.webp)
 
-Figure 53. One scenario for item-level targeting on installed applications only.
+The figure shown. One scenario for item-level targeting on installed applications only.
+
+
+

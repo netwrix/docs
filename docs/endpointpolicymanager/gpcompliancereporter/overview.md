@@ -42,3 +42,4 @@ Technical information and troubleshooting:
 ## Getting Started
 
 Start with the Manual section to learn the basics and get GP Compliance Reporter installed and configured in your environment.
+

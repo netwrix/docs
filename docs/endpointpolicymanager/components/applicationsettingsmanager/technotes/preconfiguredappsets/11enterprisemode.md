@@ -35,3 +35,5 @@ Unless the enable key exists, you won't see Enterprise Mode on the menu or on th
 tab's "browser profile" section.
 
 ![162_3_image007](/images/endpointpolicymanager/troubleshooting/applicationsettings/internetexplorer/162_3_image007.webp)
+
+

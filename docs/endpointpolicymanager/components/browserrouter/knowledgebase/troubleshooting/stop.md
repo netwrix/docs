@@ -37,3 +37,5 @@ Then, Endpoint Policy Manager Browser Router will be 100% in charge of your URLs
 redirection.
 
 ![456_1_image001_950x573](/images/endpointpolicymanager/troubleshooting/browserrouter/edge/456_1_image001_950x573.webp)
+
+

@@ -23,3 +23,4 @@ Inspect the logs from: `C:\Users\user\AppData\Local\PolicyPak` and see if your i
 any logs and/or obvious errors. Send the logs to support as instructed.
 
 ![753_1_img-01_950x545](/images/endpointpolicymanager/troubleshooting/license/753_1_img-01_950x545.webp)
+

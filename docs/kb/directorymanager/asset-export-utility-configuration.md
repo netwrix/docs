@@ -41,27 +41,27 @@ This article provides step-by-step instructions for migrating schedules and sync
 3. Select the schedules and synchronize jobs to export.
 4. Click **Export** and select a folder to save the exported assets.
 
-![Asset Export utility main screen on Directory Manager 10](images/ka0Qk0000004nIH_0EMQk000004nICn.png) ![Selecting schedules and synchronize jobs for export](images/ka0Qk0000004nIH_0EMQk000004nICo.png) ![Export folder selection dialog](images/ka0Qk0000004nIH_0EMQk000004nICp.png)
+![Asset Export utility main screen on Directory Manager 10](./images/ka0Qk0000004nIH_0EMQk000004nICn.png) ![Selecting schedules and synchronize jobs for export](./images/ka0Qk0000004nIH_0EMQk000004nICo.png) ![Export folder selection dialog](./images/ka0Qk0000004nIH_0EMQk000004nICp.png)
 
 ### Provide the Encryption Key
 
 1. When prompted, enter the encryption key (passphrase) used for database encryption in Directory Manager 10. The key must match the one used in Directory Manager 10 SR 2.
 
-![Encryption key entry screen in Asset Export utility](images/ka0Qk0000004nIH_0EMQk000004nICq.png)
+![Encryption key entry screen in Asset Export utility](./images/ka0Qk0000004nIH_0EMQk000004nICq.png)
 
 ### Copy Required Folders to Directory Manager 11 Server
 
 - Copy the default installation folder of Directory Manager 10 to the Directory Manager 11 server.
 
-![Default installation folder location for Directory Manager 10](images/ka0Qk0000004nIH_0EMQk000004nICr.png)
+![Default installation folder location for Directory Manager 10](./images/ka0Qk0000004nIH_0EMQk000004nICr.png)
 
 - Copy the `ProgramData` location to the Directory Manager 11 server for synchronize jobs.
 
-![ProgramData folder for synchronize jobs](images/ka0Qk0000004nIH_0EMQk000004nICs.png)
+![ProgramData folder for synchronize jobs](./images/ka0Qk0000004nIH_0EMQk000004nICs.png)
 
 - Copy the `Reports` folder in ProgramData to the Directory Manager 11 server.
 
-![Reports folder in ProgramData on Directory Manager 11 server](images/ka0Qk0000004nIH_0EMQk000004nICt.png)
+![Reports folder in ProgramData on Directory Manager 11 server](./images/ka0Qk0000004nIH_0EMQk000004nICt.png)
 
 > **NOTE:** The `schedules` and `synchronize job` folders should be empty (the Asset Export utility will import these files). However, for the `Reports` folder, copy reports from the Directory Manager 10 server for the respective schedules upgrade.
 
@@ -73,7 +73,7 @@ This article provides step-by-step instructions for migrating schedules and sync
 4. The schedules and synchronize jobs will be imported into the respective folders on the Directory Manager 11 server.
 5. After import, run the upgrade on the Directory Manager 11 server.
 
-![Asset Export utility import screen on Directory Manager 11](images/ka0Qk0000004nIH_0EMQk000004nICu.png) ![Import progress screen](images/ka0Qk0000004nIH_0EMQk000004nICv.png) ![Imported schedules and synchronize jobs in Directory Manager 11](images/ka0Qk0000004nIH_0EMQk000004nICw.png) ![Upgrade process on Directory Manager 11 server](images/ka0Qk0000004nIH_0EMQk000004nICx.png)
+![Asset Export utility import screen on Directory Manager 11](./images/ka0Qk0000004nIH_0EMQk000004nICu.png) ![Import progress screen](./images/ka0Qk0000004nIH_0EMQk000004nICv.png) ![Imported schedules and synchronize jobs in Directory Manager 11](./images/ka0Qk0000004nIH_0EMQk000004nICw.png) ![Upgrade process on Directory Manager 11 server](./images/ka0Qk0000004nIH_0EMQk000004nICx.png)
 
 ## Related Links
 

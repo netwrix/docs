@@ -38,3 +38,4 @@ Update the CSE first or the Cloud Client first in the test groups and let each p
 software update. Upgrading both at the same time is supported but is not recommended.
 
 :::
+

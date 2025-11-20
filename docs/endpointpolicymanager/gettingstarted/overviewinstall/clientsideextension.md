@@ -115,3 +115,4 @@ Policy Software Installation, it's easy to do.
 
 For more information on how to perform an upgrade using Group Policy Software Installation. See the
 [Upgrading the CSE using GPSI](/docs/endpointpolicymanager/archive/upgrading.md) topic for additional information.
+

@@ -44,7 +44,7 @@ In the main Netwrix Auditor menu, click **Settings**. In the left pane, select t
 - Specify any email address for one of your Microsoft 365 or Office 365 accepted domains in the **Sender address** field. This email does not need to have a mailbox.
 - The use of SSL/TLS is optional.
 
-![Netwrix Auditor SMTP settings](images/ka04u00000116zv_0EM4u000008Ll2v.png)
+![Netwrix Auditor SMTP settings](./images/ka04u00000116zv_0EM4u000008Ll2v.png)
 
 > **NOTE:** When sending messages from a static IP, add the IP to your SPF record in your domain registrar's DNS settings to avoid having messages flagged as spam:
 >
@@ -61,8 +61,9 @@ In the main Netwrix Data Classification screen, click **Settings**. In the left 
 - Specify any email address for one of your Microsoft 365 or Office 365 accepted domains in the **Sender address** field. This email does not need to have a mailbox.
 - The use of SSL is optional.
 
-![Netwrix Data Classification Email Server settings](images/ka04u00000116zv_0EM4u000008LlzE.png)
+![Netwrix Data Classification Email Server settings](./images/ka04u00000116zv_0EM4u000008LlzE.png)
 
 > **NOTE:** Direct send does not support SMTP AUTH. You can enter any SMTP credentials to proceed.
 
 Learn more on direct send in [Send Email Using Microsoft 365 or Office 365 ⸱ Microsoft &#129125;](https://learn.microsoft.com/en-us/Exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365?redirectSourcePath=%252fen-gb%252farticle%252fhow-to-set-up-a-multifunction-device-or-application-to-send-email-using-office-365-69f58e99-c550-4274-ad18-c805d654b4c4#option-2-send-mail-directly-from-your-printer-or-application-to-microsoft-365-or-office-365-direct-send).
+

@@ -12,7 +12,7 @@ machines? This video shows you how to do it, AND let users still download SOME i
 as you see fit. You won't need the Microsoft Store for Business… when you're using this method to
 manage your Windows Universal applications.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Tn7xce6nCZg" title="Manage, block and allow Windows Universal (UWP) applications" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Tn7xce6nCZg" title="Manage, block and allow Windows Universal (UWP) applications" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with Netwrix Endpoint Policy Manager (formerly PolicyPak) Software. Are you
 tired of your users taking advantage of built-in UWP apps on Windows 10? Do you want to make sure
@@ -90,3 +90,5 @@ whole publisher, and that's it. You're ready to rock.
 There you have it. That's how you can manage and allow or block specific UWP applications easily and
 efficiently using the Least Privilege Manager. If that's of interest to you, sign up for a one-hour
 webinar and we'll hand over the bits and get you started on your 30-day free trial. Thanks so much.
+
+

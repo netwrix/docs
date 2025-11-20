@@ -12,11 +12,11 @@ For a demonstration of the ACL Lockdown™ Mode feature, please see this video:
 :::
 
 
-ACL Lockdown mode can be seen when you right-click a setting within an AppSet (see Figure 34).
+ACL Lockdown mode can be seen when you right-click a setting within an AppSet (See the figure here).
 
 ![policypak_application_settings_1_13](/images/endpointpolicymanager/applicationsettings/modes/endpointpolicymanager_application_settings_1_13.webp)
 
-Figure 34. Selecting the ACL Lockdown setting.
+The figure shown. Selecting the ACL Lockdown setting.
 
 This is a very powerful Endpoint Policy Manager Application Settings Manager feature; it increases
 your application's security. When it is selected, two things occur:
@@ -41,34 +41,37 @@ elements within the ApSet share the same file or Registry container.
 
 For instance, in WinZip, if you right-click "Minimum password length" and select "Perform ACL
 Lockdown," Endpoint Policy Manager will automatically select it for all other items in the AppSet
-that share the same location in the Registry (see Figure 35). If you right-click any of the
+that share the same location in the Registry (See the figure here). If you right-click any of the
 checkboxes in the Passwords tab, you can see that "Perform ACL Lockdown" will be already checked,
 because all the elements on this page are within the same portion of the Registry.
 
 ![policypak_application_settings_1_14](/images/endpointpolicymanager/applicationsettings/modes/endpointpolicymanager_application_settings_1_14.webp)
 
-Figure 35. With "Perform ACL Lockdown" selected, all password options are automatically checked.
+The figure shown. With "Perform ACL Lockdown" selected, all password options are automatically checked.
 
 However, clicking on another tab—such as Cameras—and right-clicking a setting will show that
-"Perform ACL Lockdown" is not set (see Figure 36).
+"Perform ACL Lockdown" is not set (See the figure here).
 
 ![policypak_application_settings_1_15](/images/endpointpolicymanager/applicationsettings/modes/endpointpolicymanager_application_settings_1_15.webp)
 
-Figure 36. If other tabs are selected, "Perform ACL Lockdown" will not be set.
+The figure shown. If other tabs are selected, "Perform ACL Lockdown" will not be set.
 
 This is because the items within the Cameras tab are located in a different place in the Registry
 than the items in the Passwords tab.
 
 To reiterate, if an application's data is stored in a file, then usually ALL items within the AppSet
-will be locked when "Perform ACL Lockdown" is selected. In the example shown in Figure 37, "Perform
+will be locked when "Perform ACL Lockdown" is selected. In the example shown In the figure shown, "Perform
 ACL Lockdown" is selected for one Firefox setting.
 
 ![policypak_application_settings_1_16](/images/endpointpolicymanager/applicationsettings/modes/endpointpolicymanager_application_settings_1_16.webp)
 
-Figure 37. "Perform ACL Lockdown" is selected for one Firefox setting.
+The figure shown. "Perform ACL Lockdown" is selected for one Firefox setting.
 
 However, because all the settings within Firefox are stored in the same file, they will be
 uneditable by the end user.
 
 When the GPO no longer applies, the ACL Lockdown settings that were originally on the Registry or on
 the files are returned to the state they were in before Endpoint Policy Manager took ownership.
+
+
+

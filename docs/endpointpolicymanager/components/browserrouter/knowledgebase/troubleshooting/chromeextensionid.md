@@ -53,3 +53,5 @@ Chromium by visiting edge://extensions from within Edge Chromium.
 | 6.14.2017  | 17.6.1371.1049   | 0.0.3.8              | jdadlnndcplobhfcdfcfobnecakhmkhd | No                               |
 | 4.27.2017  | 17.3.1281.984    | 0.0.3.8              | jdadlnndcplobhfcdfcfobnecakhmkhd | No                               |
 | 2.22.2017  | 17.2.1260.930    | 0.0.3.8              | jdadlnndcplobhfcdfcfobnecakhmkhd | No                               |
+
+

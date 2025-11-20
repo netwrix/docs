@@ -18,3 +18,4 @@ Anytime a computer's Active Directory account is moved to an un-licensed OU, or 
 another domain (or the license simply expires), then Endpoint Policy Manager
 
 Group Policy Compliance reporter will stop reporting on those target computers.
+

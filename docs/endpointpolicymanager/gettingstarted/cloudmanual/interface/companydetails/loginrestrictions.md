@@ -16,3 +16,5 @@ you only want a connection to be allowed from your on-prem network, which remain
 This is the result of a blocked login:
 
 ![web_interface_and_controls_73_312x450](/images/endpointpolicymanager/cloud/interface/companydetails/web_interface_and_controls_73_312x450.webp)
+
+

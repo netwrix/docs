@@ -34,13 +34,13 @@ Email notifications in Netwrix Directory Manager (formerly GroupID) inform users
 2. On the **Identity Stores** tab, double-click the required identity store to open its properties.  
 3. Select the **Configurations** tab, then click **Notification** in the left pane.
 
-![Notification configuration tab in Directory Manager identity store properties](images/ka0Qk000000EZCP_0EMQk00000BuMPJ.png)
+![Notification configuration tab in Directory Manager identity store properties](./images/ka0Qk000000EZCP_0EMQk00000BuMPJ.png)
 
 4. Configure the following notification settings:
 
 - **SMTP server:** Enter the IP address or FQDN of the SMTP server that will route notifications.  
 - **From email address:** Enter the sender address for notification emails (for example, `no-reply@domain.com` or `notification@demo.com`).  
-  ![From email address field in notification settings](images/ka0Qk000000EZCP_0EMQk00000BuMNh.png)  
+  ![From email address field in notification settings](./images/ka0Qk000000EZCP_0EMQk00000BuMNh.png)  
 - **Port:** Enter the port number for the SMTP server.  
 - **Test:** After entering the email address and port, click **Test** to verify the server settings. Enter a destination address to send a test notification. If successful, a confirmation message appears and a test email is sent.  
 - **Use SMTP User Authentication:** By default, the credentials of the logged-in user are used. To use a different account, select **Use SMTP User Authentication** and enter the **Username** and **Password** for an authorized account.  

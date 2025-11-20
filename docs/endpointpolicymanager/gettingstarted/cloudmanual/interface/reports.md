@@ -63,3 +63,5 @@ most recent XML file (in green), the date and time the computer got an old versi
 ![web_interface_and_controls_118_499x373](/images/endpointpolicymanager/cloud/interface/web_interface_and_controls_118_499x373.webp)
 
 This allows you to precisely knows which XML policy files were embraced by what machine and when.
+
+

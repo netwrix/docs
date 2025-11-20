@@ -41,7 +41,7 @@ Exchange Online relies on PowerShell gathering proxy settings from the network a
    netsh winhttp show proxy
    ```
 
-   ![netsh winhttp show proxy output](images/ka0Qk0000000ws1_0EM4u000008MMY1.png)
+   ![netsh winhttp show proxy output](./images/ka0Qk0000000ws1_0EM4u000008MMY1.png)
 
 2. If the system prompts **Direct settings**, configure the network adapter to use the correct proxy settings:
 
@@ -51,7 +51,7 @@ Exchange Online relies on PowerShell gathering proxy settings from the network a
 
    Replace the proxy server settings in the line with your actual settings.
 
-   ![netsh winhttp set proxy example](images/ka0Qk0000000ws1_0EM4u000008MMY6.png)
+   ![netsh winhttp set proxy example](./images/ka0Qk0000000ws1_0EM4u000008MMY6.png)
 
 ### Microsoft Entra ID (formerly Azure AD)
 
@@ -84,11 +84,11 @@ After editing:
 
 Before editing image:
 
-![Before editing configuration](images/ka0Qk0000000ws1_0EM4u000008MMXd.png)
+![Before editing configuration](./images/ka0Qk0000000ws1_0EM4u000008MMXd.png)
 
 After editing image:
 
-![After editing configuration](images/ka0Qk0000000ws1_0EM4u000008MMYB.png)
+![After editing configuration](./images/ka0Qk0000000ws1_0EM4u000008MMYB.png)
 
 Replace `***.***.***.***:port` with your actual proxy settings.
 
@@ -110,3 +110,6 @@ Replace `proxyaddress="***.***.***.***:port"` with your actual proxy settings.
 ### Microsoft Teams
 
 To use proxy server settings for the Teams audit, set up both Microsoft Entra ID and SharePoint Online settings.
+
+
+

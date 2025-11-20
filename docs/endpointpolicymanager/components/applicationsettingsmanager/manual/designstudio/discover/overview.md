@@ -7,12 +7,12 @@ sidebar_position: 50
 # Discovering Configuration Data Locations
 
 Usually, it's quite easy to discover where an application has stored its configuration data. Most
-times, applications store their data in` HKEY_Current_User\Software`. In Figure 87, you can see the
+times, applications store their data in` HKEY_Current_User\Software`. In the figure shown, you can see the
 data for many popular applications stored in the registry.
 
 ![discovering_configuration_624x429](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_624x429.webp)
 
-Figure 87. Many applications store their data in the registry.
+The figure shown. Many applications store their data in the registry.
 
 Note that although most applications store their information in `HKEY_Current_User\Software`, if
 you're trying to do something in Control Panel, those values would be stored in
@@ -25,3 +25,6 @@ manually. You can look in the following three common key locations for user conf
 - `C:\program files\<application vendor>\<application>` for 32-bit and 64-bit machines
 - `C:\program files(x86)\<application vendor>\<application>` for 64-bit machines
 - `%localappdata%`
+
+
+

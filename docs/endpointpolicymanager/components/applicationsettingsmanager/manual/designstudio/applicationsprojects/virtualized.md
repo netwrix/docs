@@ -14,3 +14,6 @@ Virtualization (SWV).
 Creating application virtualization packages is beyond the scope of this document, but if you're
 already using an application virtualization solution, then Endpoint Policy Manager Application
 Settings Manager can manage those applications naturally using Group Policy.
+
+
+

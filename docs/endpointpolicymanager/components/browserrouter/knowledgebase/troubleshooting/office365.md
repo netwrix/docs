@@ -58,3 +58,5 @@ Now set the value to "System default browser" instead of "Microsoft Edge" in the
 ### AFTER:
 
 ![966_7_image-20230922212443-6](/images/endpointpolicymanager/troubleshooting/browserrouter/966_7_image-20230922212443-6.webp)
+
+

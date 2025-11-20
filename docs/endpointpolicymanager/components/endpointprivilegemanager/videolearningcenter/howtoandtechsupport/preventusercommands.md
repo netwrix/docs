@@ -8,13 +8,13 @@ sidebar_position: 70
 Customer requested demo to show how to block users from running Chrome or Firefox with specific
 command line options.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Ew6cdP0oAzM" title="Endpoint Policy Manager: Prevent Users Running some commands with command lines" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ew6cdP0oAzM" title="Endpoint Policy Manager: Prevent Users Running some commands with command lines" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Prevent Users Running some commands with command lines
 
 Hi. This is Jeremy Moskowitz. In this video, I'm going to show you how you can use Netwrix Endpoint
 Policy Manager (formerly PolicyPak)
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)
+[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)
 to prevent users from doing naughty things like running Firefox or Chrome with specific flags that
 might work around your security.
 
@@ -71,3 +71,5 @@ not intend them to.
 I hope this video helps you out. If you're looking to get started, the best first step is to join us
 for the webinar and after that we'll hand over the bits and you can try it yourself.  
 Thanks so much.
+
+

@@ -33,3 +33,4 @@ Figure 53. The Group Policy Settings Report.
 can link it to any level (or multiple levels) if you want. The only requirements for endpoints are
 that they are (a) licensed and (b) contained within the security group specified in the Audited
 group, as covered in the previous section, "Select Audited Computers."
+

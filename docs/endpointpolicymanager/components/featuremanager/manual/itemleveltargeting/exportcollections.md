@@ -17,7 +17,7 @@ select Export to XML. This will enable you to save an XML file for later use.
 :::note
 For a video demonstrating the use of Endpoint Policy Manager Feature Manager for Windows
 with Endpoint Policy Manager MDM see
-[https://www.endpointpolicymanager.com/video/endpointpolicymanager-feature-manager-for-windows-mdm.html](https://www.endpointpolicymanager.com/video/endpointpolicymanager-feature-manager-for-windows-mdm.html).
+[https://www.policypak.com/video/endpointpolicymanager-feature-manager-for-windows-mdm.html](https://www.policypak.com/video/endpointpolicymanager-feature-manager-for-windows-mdm.html).
 :::
 
 
@@ -29,7 +29,7 @@ also do this for an entire collection (not shown).
 
 :::note
 For a video showing how to export policies and use Endpoint Policy Manager Exporter, watch
-[https://www.endpointpolicymanager.com/video/deploying-endpointpolicymanager-directives-without-group-policy-endpointpolicymanager-exporter-utility.html](https://www.endpointpolicymanager.com/video/deploying-endpointpolicymanager-directives-without-group-policy-endpointpolicymanager-exporter-utility.html).
+[https://www.policypak.com/video/deploying-endpointpolicymanager-directives-without-group-policy-endpointpolicymanager-exporter-utility.html](https://www.policypak.com/video/deploying-endpointpolicymanager-directives-without-group-policy-endpointpolicymanager-exporter-utility.html).
 :::
 
 
@@ -43,3 +43,5 @@ function when the machine is domain-joined.
 For more information on how to use exported policies with Endpoint Policy Manager Cloud or Endpoint
 Policy Manager MDM see
 [Using Endpoint Policy Manager with MDM and UEM Tools](/docs/endpointpolicymanager/gettingstarted/mdmmanual/uemtools/uemtools.md). 
+
+

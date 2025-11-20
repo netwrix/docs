@@ -1,0 +1,10 @@
+{
+  "label": "Schema and Resources",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "resources"
+  }
+}

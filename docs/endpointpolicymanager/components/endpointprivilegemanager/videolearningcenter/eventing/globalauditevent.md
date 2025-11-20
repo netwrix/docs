@@ -9,7 +9,7 @@ In this video learn how to make a workflow between EVENTS in the endpoint event 
 management station. Just make the event occur, then copy and paste, and Netwrix Endpoint Policy
 Manager (formerly PolicyPak) does the rest.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k7VeeCwKH4E" title="PPLPM: Auto-Create Policy from Global Audit event" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/k7VeeCwKH4E" title="PPLPM: Auto-Create Policy from Global Audit event" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video I'm going to show you how you can use Global Audit
 Policy to turn on auditable events and then take those auditable events and feed it back into Least
@@ -135,3 +135,5 @@ you've got those events all lined up in your event viewer like I just showed you
 this data, right click, copy the text to the event, and smash it right in. Bang, you've got your
 workflow all set up. I hope this video helps you out. Looking forward to getting you started with
 Endpoint Policy Manager Least Privilege Manager real soon. Bye-bye.
+
+

@@ -23,3 +23,4 @@ Figure 69. Ensuring the firewall is properly configured.
 
 If this does not solve the problem, temporarily disable the server's firewall to determine whether
 requests start to come in.
+

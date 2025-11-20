@@ -59,3 +59,5 @@ It will remove the Endpoint Policy Manager tile from the Start Menu. The example
 sample script is below.
 
 ![819_5_c4b607f18774d1a207d45cbd8a96b426](/images/endpointpolicymanager/troubleshooting/startscreentaskbar/819_5_c4b607f18774d1a207d45cbd8a96b426.webp)
+
+

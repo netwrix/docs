@@ -15,3 +15,4 @@ as shown in Figure 12.
 ![deploying_policypak_directives_11](/images/endpointpolicymanager/mdm/xmldatafiles/deploying_endpointpolicymanager_directives_11.webp)
 
 Figure 12. Exporting a collection as an XML file via Least Privilege Manager.
+

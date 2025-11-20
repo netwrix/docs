@@ -29,9 +29,9 @@ Periodic app pool recycling is a necessary IIS process, and as such the Netwrix 
 ## Instructions
 1. On the server hosting Netwrix Privilege Secure, launch IIS Manager (`inetmgr.exe`).
 2. In the left-hand menu, select **Application Pools**, and in the main window, select **SbPAMAppPool**  
-   ![image.png](images/ka0Qk0000000zl3_0EM4u000008Lyes.png)
+   ![image.png](./images/ka0Qk0000000zl3_0EM4u000008Lyes.png)
 3. On the right-hand menu, select **Recycling** to open the Recycling settings.  
-   ![image.png](images/ka0Qk0000000zl3_0EM4u000008LyfH.png)
+   ![image.png](./images/ka0Qk0000000zl3_0EM4u000008LyfH.png)
 4. You can change the default value of `1740 minutes (29 hours)` to **Specific time(s)** in order to recycle the application pool either less frequently, and/or to recycle the application pool during off-peak hours. Click **Next**.
 5. Click **Finish** to save your new app pool recycling schedule.  
-   ![image.png](images/ka0Qk0000000zl3_0EM4u000008LyfW.png)
+   ![image.png](./images/ka0Qk0000000zl3_0EM4u000008LyfW.png)

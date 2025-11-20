@@ -88,3 +88,5 @@ See the following Knowledge Base articles for getting started with Cloud.
 
 - [How can I keep the same or specify different parameters for Event Collection for child groups? How does a computer behave if a member of multiple groups?](/docs/endpointpolicymanager/deliverymethods/cloud/knowledgebase/eventcollection/childgroups.md)
 - [ Endpoint Policy Manager Cloud Event Forwarding to Splunk](/docs/endpointpolicymanager/deliverymethods/cloud/knowledgebase/eventcollection/splunk.md)
+
+

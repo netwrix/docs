@@ -13,24 +13,24 @@ which elements to configure, enforce, and even disable or hide.
 
 :::note
 To see an overview of the Enforcement modes, watch this quick tutorial video:
-[https://www.endpointpolicymanager.com/video/endpointpolicymanager-the-superpowers.html](http://tinyurl.com/screenshotpilot).
+[https://www.policypak.com/video/endpointpolicymanager-the-superpowers.html](http://tinyurl.com/screenshotpilot).
 :::
 
 
 :::note
 To see an overview of ACL Lockdown™ mode, watch this tutorial:
-[https://www.endpointpolicymanager.com/video/endpointpolicymanager-acl-lockdown-for-registry-based-applications.html](https://support.microsoft.com/en-us/kb/3087759).
+[https://www.policypak.com/video/endpointpolicymanager-acl-lockdown-for-registry-based-applications.html](https://support.microsoft.com/en-us/kb/3087759).
 :::
 
 
-In Figure 22, you can see which modes are available when right-clicking a Endpoint Policy Manager
+In the figure shown, you can see which modes are available when right-clicking a Endpoint Policy Manager
 Application Settings Manager attribute with settings data inside.
 
 ![policypak_application_settings_1_1](/images/endpointpolicymanager/applicationsettings/modes/endpointpolicymanager_application_settings_1_1.webp)
 
-Figure 22. The modes available in Endpoint Policy Manager Application Settings Manager.
+The figure shown. The modes available in Endpoint Policy Manager Application Settings Manager.
 
-Let's examine the areas of control for an element, as seen in Figure 23. You can see we've
+Let's examine the areas of control for an element, as seen In the figure shown. You can see we've
 highlighted the following modes:
 
 - Enforcement modes
@@ -40,7 +40,7 @@ highlighted the following modes:
 
 ![policypak_application_settings_1_2](/images/endpointpolicymanager/applicationsettings/modes/endpointpolicymanager_application_settings_1_2.webp)
 
-Figure 23. The areas of control for an element.
+The figure shown. The areas of control for an element.
 
 :::note
 There is a special AppLock mode that you can apply to the entire tab to disable it. We'll
@@ -49,3 +49,6 @@ discuss this in the "AppLock Modes" section.
 
 
 We first need to discuss how to set and deliver settings and values.
+
+
+

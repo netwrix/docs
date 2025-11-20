@@ -38,7 +38,7 @@ echo %PROGRAMDATA%
 
 Netwrix Privilege Secure logs can also be viewed, and downloaded, via the Netwrix Privilege Secure web interface by navigating to **Audit & Reporting > Log Files**.
 
-![Image of Netwrix Privilege Secure web application's log files page, listing log files and displaying contents.](images/ka04u000000HdEt_0EM4u000004bh8h.png)
+![Image of Netwrix Privilege Secure web application's log files page, listing log files and displaying contents.](./images/ka04u000000HdEt_0EM4u000004bh8h.png)
 
 ## Log Descriptions
 

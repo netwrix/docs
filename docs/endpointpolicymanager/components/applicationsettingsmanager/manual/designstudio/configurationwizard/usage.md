@@ -11,11 +11,11 @@ capture tool. When the Configuration Wizard runs, it takes a snapshot of all the
 root, asks you to make some changes, and then captures what you've done. Then it sets your element's
 settings. To perform these tasks, the Configuration Wizard may ask you some questions about the
 current state of the application first. For instance, it may asked if a checkbox is currently
-checked or unchecked, as shown in Figure 114.
+checked or unchecked, as shown In the figure shown.
 
 ![configuring_elements_using_7](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/configuring_elements_using_7.webp)
 
-Figure 114. Selecting whether a checkbox is checked or unchecked.
+The figure shown. Selecting whether a checkbox is checked or unchecked.
 
 This is to make sure nothing has changed from when the Capture Wizard captured the application's UI
 settings. If you look at the actual application and the setting is checked, changed, or otherwise
@@ -38,11 +38,11 @@ values are only stored in memory and only get changed to the registry or disk wh
 is fully closed. This means you might have to open and close the application dozens of times.
 
 If you click "Next" in the wizard but the wizard was unable to detect any changes, it will tell you
-that no changes were detected, as shown in Figure 115.
+that no changes were detected, as shown In the figure shown.
 
 ![configuring_elements_using_8](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/configuring_elements_using_8.webp)
 
-Figure 115. The message to indicate no changes were detected.
+The figure shown. The message to indicate no changes were detected.
 
 To resolve this, you can try doing the following:
 
@@ -76,3 +76,6 @@ sign of a successful discovery. The wizard will usually ask you to confirm the f
 If the wizard discovers one change perfectly, you can easily go through the Configuration Wizard for
 the element. If the wizard detects multiple changes during configuration, you are prompted for what
 to do.
+
+
+

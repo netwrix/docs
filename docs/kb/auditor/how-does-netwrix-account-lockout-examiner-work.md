@@ -38,4 +38,5 @@ To run an examination:
 1. Click the **Examine** button at the bottom of the list in the **Summary** tab, or
 2. Right-click an account and select **Examine**.
 
-When you run an examination, it shows a list of invalid logons, specifies the names of the processes that used invalid credentials, and checks the most common reasons for lockouts: mapped drives, scheduled tasks, RDP sessions, and services running under the credentials of the account in question. Examination results look like this: [![User-added image](images/ka0Qk00000045if_0EM700000004wzI.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAbd&feoid=00N700000032Pj2&refid=0EM700000004wzI)
+When you run an examination, it shows a list of invalid logons, specifies the names of the processes that used invalid credentials, and checks the most common reasons for lockouts: mapped drives, scheduled tasks, RDP sessions, and services running under the credentials of the account in question. Examination results look like this: [![User-added image](./images/ka0Qk00000045if_0EM700000004wzI.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAbd&feoid=00N700000032Pj2&refid=0EM700000004wzI)
+

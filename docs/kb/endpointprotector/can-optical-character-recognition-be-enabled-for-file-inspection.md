@@ -30,6 +30,6 @@ Yes, OCR is the process that converts an image of text into a machine-readable t
 
 You can enable OCR at the global, computer, user, or group level from the following location in the Endpoint Protector console:
 
-![OCR enablement settings page in the EPP console](images/ka0Qk000000DzFN_0EMQk00000C8zgv.png)
+![OCR enablement settings page in the EPP console](./images/ka0Qk000000DzFN_0EMQk00000C8zgv.png)
 
 Once enabled, the Endpoint Protector client can inspect the content of **JPEG**, **PNG**, **GIF**, **BMP**, and **TIFF** file types. Enabling this option will also update the global MIME Type Allowlists.

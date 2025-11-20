@@ -36,3 +36,6 @@ mechanisms to prevent application to child processes in all circumstances.
   application is not signed by the same signed vendor who originated the process.
 - Don't apply to unrelated executables. Don't pass the elevation status if the application is not in
   the same directory structure (including recursively).
+
+
+

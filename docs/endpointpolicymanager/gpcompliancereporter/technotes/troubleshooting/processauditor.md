@@ -56,3 +56,4 @@ If you turn on enhanced PPGPCR Auditor logging (as explained in this article) yo
 - And did the data get sent successfully to the server.
 
 ![741_7_image-20200409172758-4_950x475](/images/endpointpolicymanager/troubleshooting/grouppolicycompliancereporter/741_7_image-20200409172758-4_950x475.webp)
+

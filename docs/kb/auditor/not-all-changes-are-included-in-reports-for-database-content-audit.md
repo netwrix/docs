@@ -29,4 +29,5 @@ When you perform bulk inserts, not all modified rows are reported. How do you ch
 
 In the **SQL Server data source settings** there is a value that defines the number of data changes per SQL transaction to be included in a report. By default it is set to `10`.
 
-![sql_transactions_9](images/ka04u00000116R6_0EM0g000000hUdK.png)
+![sql_transactions_9](./images/ka04u00000116R6_0EM0g000000hUdK.png)
+

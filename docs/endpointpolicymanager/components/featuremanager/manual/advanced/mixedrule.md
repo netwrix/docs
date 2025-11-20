@@ -15,3 +15,5 @@ features.
 
 We recommend first getting the hang of **Install Rule** and **Uninstall Rule**. Once you get a
 better understand of the UI, you can start using the **Mixed Rule**.
+
+

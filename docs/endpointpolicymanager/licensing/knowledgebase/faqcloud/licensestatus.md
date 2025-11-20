@@ -46,3 +46,4 @@ the waiting list. You will see the computer name, OS, last known IP address, las
 the status of the machine. Under Status you'll see either Active, indicating that the computer has
 correctly consumed a license, or Waiting List (Check in overdue)\], which indicates that the
 computer attempted to consume a license, but there were none available.
+

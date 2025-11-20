@@ -42,10 +42,11 @@ Using SQL Management Studio give the Data Processing Account `DB_Owner` rights t
 1) Log into the instance which contains the product database using SQL Management Studio with a **sysadmin account**.
 
 2) Expand **Security** and then **Logins**.  
-   ![User-added image](images/ka04u000000HcT5_0EM700000008DPW.png)
+   ![User-added image](./images/ka04u000000HcT5_0EM700000008DPW.png)
 
 3) **Right click** the **Data Processing Account** and go to **Properties** (add the account if it doesn't exist).  
-   ![User-added image](images/ka04u000000HcT5_0EM700000008DPb.png)
+   ![User-added image](./images/ka04u000000HcT5_0EM700000008DPb.png)
 
 4) Under **Server Roles** you can give **sysadmin** to this account OR alternatively you can go to **User Mapping** and select each Netwrix database individually and add **DB_Owner** permissions.  
-   ![User-added image](images/ka04u000000HcT5_0EM700000008DPg.png)
+   ![User-added image](./images/ka04u000000HcT5_0EM700000008DPg.png)
+

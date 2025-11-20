@@ -21,8 +21,11 @@ The default is to have the "at least one symbol character (!,@,#,$,%,^,&,\*…)"
 which means that the value will be retained on the client—even though the GPO falls out of scope.
 
 Note that when the reversion mode is set, the text in the Endpoint Policy Manager Application
-Settings Manager user interface changes to italics as a visual signal, as seen in Figure 27.
+Settings Manager user interface changes to italics as a visual signal, as seen In the figure shown.
 
 ![policypak_application_settings_1_6](/images/endpointpolicymanager/applicationsettings/modes/endpointpolicymanager_application_settings_1_6.webp)
 
-Figure 27. Text in italics show that the reversion mode is in effect.
+The figure shown. Text in italics show that the reversion mode is in effect.
+
+
+

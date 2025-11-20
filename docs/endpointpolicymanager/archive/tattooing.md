@@ -10,7 +10,7 @@ Tattooing the registry means that settings are left behind when they no longe
 Learn where ADM and ADMX files may cause you problems, and how Netwrix Endpoint Policy Manager
 (formerly PolicyPak), a third-party solution, can help provide solutions.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bJHx_4A3AHo?si=DIx4r0HJnEq0eM2O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bJHx_4A3AHo?si=DIx4r0HJnEq0eM2O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Group Policy: Understanding ADM-ADMX files Tattooing (and what to do about it) Video Transcript
 
@@ -141,3 +141,5 @@ I hope this was helpful for you. PolicyPak has a free download after watching th
 hope we'll see you over there for that.
 
 Thanks so much. Take care.
+
+

@@ -30,3 +30,5 @@ for XML reporting purposes. Its classification as a high severity issue can be i
 More information about T1001:Data Obfuscation is at this link:
 
 [https://attack.mitre.org/techniques/T1001/](https://attack.mitre.org/techniques/T1001/)
+
+

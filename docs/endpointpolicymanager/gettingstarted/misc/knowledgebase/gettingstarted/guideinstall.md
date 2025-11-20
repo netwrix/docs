@@ -8,3 +8,4 @@ sidebar_position: 20
 
 Yes, see the [Installation Quick Start](/docs/endpointpolicymanager/gettingstarted/overviewinstall/overviewinstall.md) topic for information on how to install
 Netwrix Endpoint Policy Manager (formerly PolicyPak) .
+

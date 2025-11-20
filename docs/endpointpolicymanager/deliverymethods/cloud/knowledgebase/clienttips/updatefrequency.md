@@ -10,3 +10,5 @@ The Netwrix Endpoint Policy Manager (formerly PolicyPak) cloud client pulls down
 directives every 60 minutes while the computer is on.
 
 You can also run the `PPUPDATE` command or `PPCLOUD /SYNC` which will force an update now.
+
+

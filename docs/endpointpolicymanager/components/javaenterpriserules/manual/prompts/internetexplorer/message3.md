@@ -41,3 +41,5 @@ values as shown in the table below:
 The result is that the Java applet is allowed. Since Endpoint Policy Manager Application Settings
 Manager does not yet have a way to set this dynamically, we suggest Group Policy Preferences be used
 to deliver these registry values.
+
+

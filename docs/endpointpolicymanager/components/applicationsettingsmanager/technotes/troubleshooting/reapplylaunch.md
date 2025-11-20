@@ -15,3 +15,5 @@ After Netwrix Endpoint Policy Manager (formerly PolicyPak) CSE build 901, this p
 required.
 
 ![518_1_image0011](/images/endpointpolicymanager/troubleshooting/applicationsettings/518_1_image0011.webp)
+
+

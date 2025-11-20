@@ -136,3 +136,5 @@ See the following Knowledge Base articles for Application Manager.
 - [What happens to Application Settings Manager settings when the Endpoint Policy Manager license expires / if my company chooses not to renew?](/docs/endpointpolicymanager/components/applicationsettingsmanager/technotes/generalconfiguration/gpooutofscope.md)
 - [Why does Microsoft 365 Defender report suspicious encoded content in Endpoint Policy Manager Application Settings Manager values?](/docs/endpointpolicymanager/components/applicationsettingsmanager/technotes/troubleshooting/microsoftdefender.md)
 - [Why do I see "Extra Registry Settings" in Endpoint Policy Manager Application Settings Manager items in the GPMC?](/docs/endpointpolicymanager/components/applicationsettingsmanager/technotes/troubleshooting/gpmc.md)
+
+

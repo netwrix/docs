@@ -35,3 +35,5 @@ Figure 4. Adding collections and policies.
 
 The next sections provide a Quickstart to using the Start Screen Manager node and the Taskbar
 Manager node.
+
+

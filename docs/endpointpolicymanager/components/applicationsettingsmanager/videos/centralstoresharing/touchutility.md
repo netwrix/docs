@@ -9,7 +9,7 @@ Updating your Pak DLLs and GPOs to a newer version manually can be a pain in the
 this utility to automatically update your GPOs with Netwrix Endpoint Policy Manager (formerly
 PolicyPak) data to the latest versions. It installs alongside DesignStudio.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ggYBVfzniro" title="Endpoint Policy Manager GPO Touch Utility" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ggYBVfzniro" title="Endpoint Policy Manager GPO Touch Utility" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: GPOTouch Utility video transcript
 
@@ -96,3 +96,5 @@ I hope that helps. I know it helps me out a lot when I help customers, and I hop
 out too.
 
 Thanks so very much.
+
+

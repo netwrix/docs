@@ -11,7 +11,7 @@ Endpoint Policy Manager File Associations Manager. Trying to manage with "Set a 
 configuration" is for the birds, and isn't flexible. Instead, manage it quickly using Group Policy,
 and PolicyPak.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wDQX54Omoz4" title="Endpoint Policy Manager File Associations Manager: Use it with Endpoint Policy Manager Cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wDQX54Omoz4" title="Endpoint Policy Manager File Associations Manager: Use it with Endpoint Policy Manager Cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 If you've got not domain-joined machines, as I have here, and you're using Endpoint Policy Manager
 Cloud, how do you use Endpoint Policy Manager File Associations Manager with it? Well, it's super
@@ -44,3 +44,5 @@ emailer. Instead, it is the Clause Mail, which is what I wanted.
 There you go; that's it. we've done our file associations This is one of the shortest videos ever.
 Hope this makes sense and hope you love Endpoint Policy Manager as much as we love bringing it to
 you. Thanks so much. Take care.
+
+

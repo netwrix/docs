@@ -49,3 +49,4 @@ Test-ComputerSecureChannel -Repair -Server PDCEmulatorName -Credential Domain\Us
 See this article from PCPMag,
 [Rejoin a Computer from a Domain In One Easy Step!](https://mcpmag.com/articles/2015/03/05/rejoin-a-computer-from-a-domain.aspx)
 for information on alternate steps.
+

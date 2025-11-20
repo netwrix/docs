@@ -44,12 +44,12 @@ The exported System Health event log will appear on your Desktop.
 1. Open **Event Viewer**.
 2. Expand the **Applications and Services Logs** folder.
 
-   ![Netwrix Auditor System Health Logs](images/ka04u00000117Ay_0EM70000000tnyM.png)
+   ![Netwrix Auditor System Health Logs](./images/ka04u00000117Ay_0EM70000000tnyM.png)
 
 3. Right-click the **Netwrix Auditor System Health** log file and select **Save All Events As...**.
 4. Name the file and click **Save**.
 
-   ![Save All Events As](images/ka04u00000117Ay_0EM70000000tnyW.png)
+   ![Save All Events As](./images/ka04u00000117Ay_0EM70000000tnyW.png)
 
 5. Select the option to **Display information for these languages**, check the **English (United States)** checkbox, and click **OK**.
 6. Once the file is saved, right-click it and zip the file.
@@ -57,3 +57,4 @@ The exported System Health event log will appear on your Desktop.
 ### Sending Netwrix Auditor logs
 
 Your Technical Support Engineer may request you to attach Netwrix Auditor logs. Refer to the following article for additional information: https://kb.netwrix.com/4645 (How to Send Netwrix Auditor Logs).
+

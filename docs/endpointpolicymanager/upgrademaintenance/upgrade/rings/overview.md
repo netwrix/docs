@@ -31,7 +31,7 @@ with Microsoft's idea of rings using the following resources:
 - Microsoft documentation:
   [Prepare a servicing strategy for Windows client updates](https://learn.microsoft.com/en-us/windows/deployment/update/waas-servicing-strategy-windows-10-updates)
 - Endpoint Policy Manager's blog post:
-  [Windows Update for Business (WuFB): A Simplified Guide](https://www.endpointpolicymanager.com/resources/pp-blog/windows-update-business/)
+  [Windows Update for Business (WuFB): A Simplified Guide](https://www.policypak.com/resources/pp-blog/windows-update-business/)
 - Microsoft Ignite's talk about rings:
   [Strategic and tactical considerations for ring-based Windows 10 deployments](https://www.youtube.com/watch?v=omwelzp-Hlw)
 - Jeremy's MDM book (Chapter 9): [MDMandGPanswers.com/book](https://www.mdmandgpanswers.com/books)
@@ -88,3 +88,4 @@ started using it.
 
 In the follow sections, we'll provide our recommendations for various Endpoint Policy Manager
 products on how to implement a ring policy for Endpoint Policy Manager CSE updates.
+

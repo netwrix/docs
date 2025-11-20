@@ -34,3 +34,5 @@ You can also use Endpoint Policy Manager Application Settings Manager to merge y
 user's.
 
 ![overcoming_java_prompts_7](/images/endpointpolicymanager/javaenterpriserules/prompts/internetexplorer/overcoming_java_prompts_7.webp)
+
+

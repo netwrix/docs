@@ -38,10 +38,13 @@ The Netwrix Active Directory Object Restore tool recovers removed Active Directo
 
 The account used for recovery and restore is the same account used for data collection in your Netwrix Auditor Active Directory monitoring plan.
 
-<div>![Active](images/servlet_image_3823966b1661.png)</div>
+<div>![Active](./images/servlet_image_3823966b1661.png)</div>
 
 > **NOTE:** This tool should **NOT** be used to revert the changes caused by raising the forest functional level. For additional information, refer to the following article: Object Restore for Active Directory.
 
 ## Related Link
 
 - Object Restore for Active Directory
+
+
+

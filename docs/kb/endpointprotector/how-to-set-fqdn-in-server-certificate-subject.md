@@ -40,7 +40,7 @@ Yes, this is possible. Follow these steps to set the FQDN in the server certific
 8. A green banner will appear at the top of the screen stating that the server certificate will be regenerated in a few minutes. You will be logged out from the user interface and will need to log in again.
 9. Wait a few minutes until the certificate is regenerated.
 
-![Server Certificate Stack configuration page with FQDN field highlighted](images/ka0Qk000000Dynx_0EMQk00000CKudS.png)
+![Server Certificate Stack configuration page with FQDN field highlighted](./images/ka0Qk000000Dynx_0EMQk00000CKudS.png)
 
 ### Important Notes
 

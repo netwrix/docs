@@ -20,7 +20,7 @@ certain websites for a more compatible view.
 :::note
 To get an overview of Endpoint Policy Manager Browser Router and Internet Explorer 11's
 Enterprise and Document Modes, please see
-[http://www.endpointpolicymanager.com/video/endpointpolicymanager-browser-router-enterprise-and-document-modes.html](http://www.endpointpolicymanager.com/video/endpointpolicymanager-browser-router-block-web-sites-from-opening-in-all-browsers.html).
+[https://www.policypak.com/video/endpointpolicymanager-browser-router-enterprise-and-document-modes.html](http://www.policypak.com/video/endpointpolicymanager-browser-router-block-web-sites-from-opening-in-all-browsers.html).
 :::
 
 
@@ -29,7 +29,7 @@ To learn more about Internet Explorer 11 Enterprise and Document Modes, see the 
 Microsoft websites: Enterprise Mode is at:
 [Internet Explorer to Endpoint Policy Manager Browser Router Site lists](/docs/endpointpolicymanager/components/browserrouter/videolearningcenter/tipsandtricks/iesitelists.md)
 and Document Modes is at:
-[https://technet.microsoft.com/en-us/library/dn321432.aspx](http://www.endpointpolicymanager.com/video/endpointpolicymanager-using-pp-browser-router-on-citrix-or-rds-servers-with-published-browser-applications.html).
+[https://technet.microsoft.com/en-us/library/dn321432.aspx](https://www.policypak.com/video/endpointpolicymanager-using-pp-browser-router-on-citrix-or-rds-servers-with-published-browser-applications.html).
 :::
 
 
@@ -86,3 +86,5 @@ for **Developer Tools**, and then click the Emulation tab.
 
 In this way, you can easily create routes for all webpages that need special rendering modes using
 Endpoint Policy Manager Browser Router.
+
+

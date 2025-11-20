@@ -40,3 +40,4 @@ video to install a license file.
 Check the
 [What is the fastest way to get started in an Endpoint Policy Manager trial, without running the License Request Tool?](/docs/endpointpolicymanager/licensing/knowledgebase/requestingall/trial.md)
 topic to see how to rename a computer or perform alternative licensing.
+

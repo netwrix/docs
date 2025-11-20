@@ -26,12 +26,12 @@ knowledge_article_id: kA0Qk0000001jO5KAI
 ## Symptom
 You receive the following error when Domain Prefix is required for log-in:
 
-![image (14).png](images/ka0Qk000000DXNx_00N0g000004CA0p_0EMQk00000AGwf1.png)
+![image (14).png](./images/ka0Qk000000DXNx_00N0g000004CA0p_0EMQk00000AGwf1.png)
 
 ## Cause
 Due to the change from IIS to a new web server, subdomain users will now need to include their domain prefix before their username when logging in.
 
-![Login prompt showing username field with domain prefix required.](images/ka0Qk000000DXNx_00N0g000004CA0p_0EMQk000009d2RO.png)
+![Login prompt showing username field with domain prefix required.](./images/ka0Qk000000DXNx_00N0g000004CA0p_0EMQk000009d2RO.png)
 
 > **NOTE:** You can create a more uniform and consistent log-in experience across all domains connected to the AIC by leaving it as is and requiring the domain prefix.
 

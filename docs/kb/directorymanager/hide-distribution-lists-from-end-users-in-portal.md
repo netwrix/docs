@@ -41,6 +41,6 @@ In some environments, it may be necessary to prevent end users from viewing dist
 5. Save the settings in the security roles.  
 6. Sign out of the Netwrix Directory Manager portal and sign in again with an account that is part of the user security role to verify the change.
 
-![LDAP filter settings in Netwrix Directory Manager security role](images/ka0Qk000000EYmb_0EMQk00000BoN3A.png)
+![LDAP filter settings in Netwrix Directory Manager security role](./images/ka0Qk000000EYmb_0EMQk00000BoN3A.png)
 
 > **NOTE:** For Universal and Global distribution groups, the `sAMAccountType` value is **268435457**. For Domain local distribution groups, the value is **536870913**.

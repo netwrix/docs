@@ -101,3 +101,4 @@ In our testing, here are the settings which will and will not work when non-doma
 | Extension-Install-Sources                                                            | ![Checkmark Icon](/images/endpointpolicymanager/troubleshooting/nondomain/517_1_thick.webp)         |
 
 If you have questions about our results, please use the Endpoint Policy Manager Forums.
+

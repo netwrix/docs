@@ -46,3 +46,5 @@ This same idea extends, say to Firefox which gets updated quite often in the VER
 usually, no new checkboxes or features appear in the Firefox Options.
 
 In this way, newer versions of Firefox will "just work" when using our latest Firefox AppSet.
+
+

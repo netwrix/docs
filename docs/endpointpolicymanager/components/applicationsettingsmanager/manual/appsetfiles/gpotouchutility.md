@@ -19,11 +19,11 @@ DesignStudio setup MSI.
 
 
 To start the Endpoint Policy Manager GPOTouch utility, find it in the Start Menu, as seen in
-Figure 87.
+The figure shown.
 
 ![policypak_application_settings_3_25](/images/endpointpolicymanager/applicationsettings/appsetfiles/endpointpolicymanager_application_settings_3_25.webp)
 
-Figure 87. The Start Menu showing Endpoint Policy Manager GPOTouch.
+The figure shown. The Start Menu showing Endpoint Policy Manager GPOTouch.
 
 Then follow the prompts to specify the source for the latest AppSets that you want to update:
 Central Storage, Share-Based Storage, Local Store, or All GPOs with the latest AppSets.
@@ -33,3 +33,6 @@ To see an overview of the Endpoint Policy Manager GPOTouch utility, please watch
 tutorial video: [GPOTouch Utility](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/centralstoresharing/touchutility.md).
 
 :::
+
+
+

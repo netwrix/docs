@@ -8,7 +8,7 @@ sidebar_position: 10
 Microsoft MVP Jeremy Moskowitz and Shane from Admin Arsenal show how to deploy Java with PDQ Deploy
 and manage the group policy with Netwrix Endpoint Policy Manager (formerly PolicyPak).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/x3B-I_CqeDM?si=25F5EG3HHNFpbLlb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x3B-I_CqeDM?si=25F5EG3HHNFpbLlb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Deploy and Manage Java with PDQ Deploy and Endpoint Policy Manager
 
@@ -95,7 +95,7 @@ Shane: I'm the admin.
 
 Jeremy: You're in charge not them. Now, we're driving in these two settings, PolicyPak and GP
 Answers in here, but, wait, there's more. We can say even if a user tries to be super naughty,
-perform ACL lockdown ([https://www.endpointpolicymanager.com/lockdown](https://www.endpointpolicymanager.com/lockdown)) thus
+perform ACL lockdown ([https://www.policypak.com/lockdown](https://www.policypak.com/lockdown)) thus
 taking ownership of that file so the user can't work around your settings.
 
 Shane: After you drop the site exceptions file.
@@ -165,3 +165,5 @@ Shane: PolicyPak guys. I'm Shane.
 Jeremy: Jeremy.
 
 Shane: Talk to you later.
+
+

@@ -44,14 +44,14 @@ Endpoint Policy Manager extension DLL from it. These files are usually quite sma
 stored.
 
 The Endpoint Policy Manager Application Settings Manager data inside a GPO is backed up and restored
-with normal GPMC backup procedures, as seen in Figure 90.
+with normal GPMC backup procedures, as seen In the figure shown.
 
 ![backup_restore_and_xml_export](/images/endpointpolicymanager/troubleshooting/applicationsettings/backup/backup_restore_and_xml_export.webp)
 
-Figure 90. Backing up data with normal GPMC backup procedures.
+The figure shown. Backing up data with normal GPMC backup procedures.
 
 If a GPO is ever deleted, its data can be quickly restored using the GPMC's "Manage Backups" option,
-also seen in Figure 89.
+also seen In the figure shown.
 
 When restoring, the Endpoint Policy Manager Application Settings Manager data and all the modes
 (Enforcement, Reversion, and Endpoint Policy Manager AppLock™) are restored.
@@ -72,11 +72,11 @@ configure a group of settings within an AppSet and share those exact settings wi
 administrator for later implementation.
 
 The idea of exporting is simple: use your AppSet, set your settings, click on the Options button,
-and then select "Export" to export the data, as seen in Figure 91.
+and then select "Export" to export the data, as seen In the figure shown.
 
 ![backup_restore_and_xml_export_1](/images/endpointpolicymanager/troubleshooting/applicationsettings/backup/backup_restore_and_xml_export_1.webp)
 
-Figure 91. The exact settings you specified inside a Pak within a GPO can be exported and, later,
+The figure shown. The exact settings you specified inside a Pak within a GPO can be exported and, later,
 imported by selecting one of these options.
 
 You will be prompted for a location to save your data. Be sure to give a name that makes sense for
@@ -99,3 +99,6 @@ instance, with use of Microsoft Endpoint Configuration Manager, Endpoint Policy 
 Endpoint Policy Manager Cloud.
 
 :::
+
+
+

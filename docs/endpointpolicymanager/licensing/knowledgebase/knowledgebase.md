@@ -91,3 +91,4 @@ licensing.
 - [When and why would I license Endpoint Policy Manager on servers?](/docs/endpointpolicymanager/licensing/knowledgebase/miscquestions/whenwhy.md)
 - [What items and components are licensed, and what components are free?](/docs/endpointpolicymanager/licensing/knowledgebase/miscquestions/components_1.md)
 - [Why must I transition from Legacy to Universal licenses (and what are the differences?)](/docs/endpointpolicymanager/licensing/knowledgebase/miscquestions/transition.md)
+

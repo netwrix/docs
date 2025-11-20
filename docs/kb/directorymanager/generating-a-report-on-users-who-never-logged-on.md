@@ -29,16 +29,16 @@ This article provides step-by-step instructions for generating a report on users
 
 ## Instructions
 1. Navigate to the **Application Portal** and click **Reports**.  
-   ![Reports section in the Application Portal](images/ka0Qk000000Dtxx_0EMQk00000BSNt0.png)
+   ![Reports section in the Application Portal](./images/ka0Qk000000Dtxx_0EMQk00000BSNt0.png)
 
 2. In the new tab that opens, click **User Reports**.  
-   ![User Reports section](images/ka0Qk000000Dtxx_0EMQk00000BSOST.png)
+   ![User Reports section](./images/ka0Qk000000Dtxx_0EMQk00000BSOST.png)
 
 3. Sort the reports by clicking the **Title** column. Locate the report titled **Users Who Never Logged On** on the second page and click it.  
-   ![Sorting and selecting the Users Who Never Logged On report](images/ka0Qk000000Dtxx_0EMQk00000BSOU5.png)
+   ![Sorting and selecting the Users Who Never Logged On report](./images/ka0Qk000000Dtxx_0EMQk00000BSOU5.png)
 
 4. Click **Create Report**.  
-   ![Create Report button](images/ka0Qk000000Dtxx_0EMQk00000BSOQr.png)
+   ![Create Report button](./images/ka0Qk000000Dtxx_0EMQk00000BSOQr.png)
 
 5. On the **Create Report** page, configure the following settings:
    - **Report Name:** Enter a descriptive name, such as "Users Who Never Logged On.""
@@ -50,7 +50,7 @@ This article provides step-by-step instructions for generating a report on users
      - `lastLogonTimeStamp` – Not Present: Captures accounts that have never logged in.
 
    Use the **Add More Filters** option for additional criteria.  
-   ![Create Report configuration page](images/ka0Qk000000Dtxx_0EMQk00000BSLmM.png)
+   ![Create Report configuration page](./images/ka0Qk000000Dtxx_0EMQk00000BSLmM.png)
 
 6. Customize the report output by selecting the fields to display:
    - Use the **Add Field** button to add or remove fields.
@@ -66,11 +66,11 @@ This article provides step-by-step instructions for generating a report on users
 8. Optionally, schedule the report generation by selecting a predefined job from the dropdown menu in the **Scheduled Job** section.
 
 9. Click **Finish** to complete the report generation process.  
-   ![Finish button to complete report generation](images/ka0Qk000000Dtxx_0EMQk00000BSKYY.png)
+   ![Finish button to complete report generation](./images/ka0Qk000000Dtxx_0EMQk00000BSKYY.png)
 
 ## Viewing and Managing the Report
 After clicking **Finish**, the report results will display all users who have never logged into their accounts.  
-![Report results showing users who never logged on](images/ka0Qk000000Dtxx_0EMQk00000BSLMa.png)
+![Report results showing users who never logged on](./images/ka0Qk000000Dtxx_0EMQk00000BSLMa.png)
 
 Additional actions you can perform include:
 - Pin Report: Pin the report for quick access on the dashboard.

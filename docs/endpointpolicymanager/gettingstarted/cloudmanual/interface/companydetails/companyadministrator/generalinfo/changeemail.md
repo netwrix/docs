@@ -35,3 +35,5 @@ needs to be entered as well to confirm the change.
 ![web_interface_and_controls_81_499x312](/images/endpointpolicymanager/cloud/interface/companydetails/companyadministrators/generalinfo/web_interface_and_controls_81_499x312.webp)
 
 You will then be immediately logged out and must log on with the new email to continue.
+
+

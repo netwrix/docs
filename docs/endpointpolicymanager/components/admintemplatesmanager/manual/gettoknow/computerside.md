@@ -26,3 +26,5 @@ This feature allows you to avoid the complex process of Group Policy Loopback pr
 the sake of delivering one (or more) user-side settings to a series of computers. Alternatively, you
 may change the Scope Filter and elect to show User Policy only, Computer Policy only, or All Policy
 (both user and computer).
+
+

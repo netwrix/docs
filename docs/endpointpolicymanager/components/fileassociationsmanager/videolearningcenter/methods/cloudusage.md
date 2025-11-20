@@ -9,7 +9,7 @@ When you don't have a "Fake DC" to create file association policies on-prem to e
 Endpoint Policy Manager's File Association Manager Helper utility can be used to create the desired
 associations on a sample workstation.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DQt5Dkv2YBc" title="Using File Association Manager in the Endpoint Policy Manager Cloud environment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DQt5Dkv2YBc" title="Using File Association Manager in the Endpoint Policy Manager Cloud environment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is John at Endpoint Policy Manager, and in this video, we're going to take a look at
 setting up File Association Manager in the cloud. I have here my non-domain joined machine here, and
@@ -53,3 +53,5 @@ you're going to see these applications change before your very eyes. There we go
 opening up now in Adobe Reader. We've got this little video opening up in VLC now. You can see the
 little pylon there. We've got our mailto link opening up in Chrome. It doesn't actually do anything
 in Chrome, but the change was made. That's it. Thank you very much for watching.
+
+

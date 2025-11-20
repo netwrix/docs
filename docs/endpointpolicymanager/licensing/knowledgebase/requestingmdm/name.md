@@ -56,3 +56,4 @@ who enrolled the machine does not match what is in the license file.
 See the Microsoft article on how to
 [Plan and troubleshoot User Principal Name changes in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/howto-troubleshoot-upn-changes)
 for additional information regarding UPN names in Azure.
+

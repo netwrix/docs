@@ -10,3 +10,5 @@ Netwrix Endpoint Policy Manager (formerly PolicyPak) Java Rules Manager will wor
 or later is on the machine. Then you can make maps to any version of Java higher or lower.
 
 Keep in mind that PPJRM will not work without at LEAST Java 7 U 40 installed on the machine.
+
+

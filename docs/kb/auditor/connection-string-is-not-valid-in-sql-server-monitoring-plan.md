@@ -53,10 +53,13 @@ Review the affected item in your SQL Server monitoring plan:
 4. Review the instance name specified:
    - For a default SQL instance name (`MSSQLSERVER`), only specify the server FQDN or NetBIOS name. See the example for a reference.
 
-     ![Default instance example](images/ka04u000000wvzg_0EM4u000008pVor.png)
+     ![Default instance example](./images/ka04u000000wvzg_0EM4u000008pVor.png)
 
    - For a named SQL instance, specify `FQDN\Instance_name`.
 
-     ![Named instance example](images/ka04u000000wvzg_0EM4u000008pVow.png)
+     ![Named instance example](./images/ka04u000000wvzg_0EM4u000008pVow.png)
 
 5. Once the changes are introduced, click **Save & Close**.
+
+
+

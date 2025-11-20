@@ -11,3 +11,5 @@ another admin to reset his password. In this case, the helping admin would selec
 Letter, which would send a new welcome letter to the other admin, thus enabling access again.
 
 ![web_interface_and_controls_82_499x294](/images/endpointpolicymanager/cloud/interface/companydetails/companyadministrators/generalinfo/web_interface_and_controls_82_499x294.webp)
+
+

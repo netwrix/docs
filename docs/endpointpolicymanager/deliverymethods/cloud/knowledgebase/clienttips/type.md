@@ -70,3 +70,5 @@ This does not affect the operation of the policy in any way. The policy is still
 Endpoint Policy Manager Cloud to `\programdata\policypak\Xmldata\cloud`, and processed by a licensed
 CSE. The policy affects all users (by default), and then any ILT on the user-side (if any) will then
 be processed, thus limiting the scope of where the policy is affected.
+
+

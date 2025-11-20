@@ -13,3 +13,4 @@ multiple settings, and collections of settings.
 ![web_interface_and_controls_8_624x164](/images/endpointpolicymanager/cloud/interface/xmldatafiles/web_interface_and_controls_8_624x164.webp)
 
 ![web_interface_and_controls_9_624x317](/images/endpointpolicymanager/cloud/interface/xmldatafiles/web_interface_and_controls_9_624x317.webp)
+

@@ -32,22 +32,22 @@ The `conceptClassifierAppInstaller.exe` can be used to install or upgrade the `c
 
 Extract the files and run `conceptClassifierAppInstaller.exe`.
 
-![User-added image](images/ka04u000000HcXh_0EM4u000002Qx7U.png)
+![User-added image](./images/ka04u000000HcXh_0EM4u000002Qx7U.png)
 
 1. Click *next* after reading the wizard introduction and recommendations.
 
 Read and confirm that you accept the EULA and click *next*.
 
-![User-added image](images/ka04u000000HcXh_0EM4u000002Qx7Z.png)
+![User-added image](./images/ka04u000000HcXh_0EM4u000002Qx7Z.png)
 
 Specify connection details for your organization's app catalog (you may have more than one of these if you are working across multiple web applications; if so, you will need to run the installer once per app catalog).
 
-![User-added image](images/ka04u000000HcXh_0EM4u000002Qx7t.png)
+![User-added image](./images/ka04u000000HcXh_0EM4u000002Qx7t.png)
 
 Enter the location of the conceptSearching server (which must be installed onto a secure server with a secure (HTTPS) endpoint): in the case of SharePoint Online, the certificate used must be externally verifiable (from a trusted source).  
 Select the **Use SharePoint Online Login** checkbox if you want to use the new authentication method.
 
-![User-added image](images/ka04u000000HcXh_0EM4u000002Qx8I.png)
+![User-added image](./images/ka04u000000HcXh_0EM4u000002Qx8I.png)
 
 Please also note, the HTTPS binding in IIS should have the host header specified — in the case of the above example the host header would be `secure.conceptsearching.com`. To do this please follow these steps:
 
@@ -122,3 +122,6 @@ Please complete the necessary fields. If you are an Office 365 customer you will
 ### If you would like to continue with the deployment of the SharePoint Application:
 
 [Follow this article](https://kb.netwrix.com/5505)
+
+
+

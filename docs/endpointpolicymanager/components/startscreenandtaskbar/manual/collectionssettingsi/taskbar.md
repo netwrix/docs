@@ -40,3 +40,5 @@ The fields inside the Taskbar Manager Pinned Collection Editor are as follows:
 
 Figure 45. Pinned desktop icons will appear in the Endpoint Policy Manager Start Screen Manager
 advertisement group, or a group of your choice.
+
+

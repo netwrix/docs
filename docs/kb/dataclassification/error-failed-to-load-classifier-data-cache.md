@@ -29,7 +29,7 @@ The Netwrix Data Classification: Service Viewer displays the following error mes
 
 `Failed-to-load-Classifier-data-cache`
 
-![User-added image](images/ka04u000000HdG2_0EM4u000001rDFG.png)
+![User-added image](./images/ka04u000000HdG2_0EM4u000001rDFG.png)
 
 ## Solution
 

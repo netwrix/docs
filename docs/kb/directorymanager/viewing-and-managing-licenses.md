@@ -48,7 +48,7 @@ This article outlines the licensing model for Netwrix Directory Manager, includi
 ### Entering License Information
 
 1. During installation, on the **License** page of the Configuration Tool, enter a valid license number and license key.  
-   ![Config Tool](images/ka0Qk000000DSHp_0EMQk00000C1NoU.png)
+   ![Config Tool](./images/ka0Qk000000DSHp_0EMQk00000C1NoU.png)
 2. If the **Next** button remains disabled, retype your entry for accuracy.
 3. If using module-based licensing, enter any one module license during setup.
 4. To add more licenses later:
@@ -59,10 +59,10 @@ This article outlines the licensing model for Netwrix Directory Manager, includi
 
 1. Contact Netwrix Sales to obtain a full or module license number and key.
 2. In the **Netwrix Directory Manager Admin Center**, click the **Settings** node.  
-   ![Settings](images/ka0Qk000000DSHp_0EMQk00000C1GiC.png)
+   ![Settings](./images/ka0Qk000000DSHp_0EMQk00000C1GiC.png)
 3. In the **Licensing Settings** dialog box, click **Edit**.
 4. Enter the new license number and key provided by Netwrix.  
-   ![Edit in License Settings](images/ka0Qk000000DSHp_0EMQk00000C1Nq7.png)
+   ![Edit in License Settings](./images/ka0Qk000000DSHp_0EMQk00000C1Nq7.png)
 5. Click **Update** and relaunch Netwrix Directory Manager.
 
 ### Viewing License Information

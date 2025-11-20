@@ -47,3 +47,4 @@ Now you are ready to install the Endpoint Policy Manager Admin Console MSI, whic
 Endpoint Policy Manager node within the Group Policy Editor.
 
 ![268_7_img-04_950x743](/images/endpointpolicymanager/install/268_7_img-04_950x743.webp)
+

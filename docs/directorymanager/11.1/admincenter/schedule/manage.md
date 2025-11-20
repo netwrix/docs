@@ -21,7 +21,7 @@ Step 2 – On the Identity Stores page, click the ellipsis button for an identit
 Step 3 – Click **Schedules** under Settings in the left pane.
 
 Step 4 – On the Schedules page, click the plus sign next to a job name to view the schedules defined
-for it.  
+for it.
 The following is displayed for a schedule:
 
 | Label | Description |
@@ -90,7 +90,7 @@ Step 3 – Click **Schedules** under Settings in the left pane.
 
 Step 4 – On the Schedules page, click the plus sign for a job to view the schedules defined for it.
 
-Step 5 – Use the Enable toggle button for a schedule to enable or disable it.  
+Step 5 – Use the Enable toggle button for a schedule to enable or disable it.
 A disabled schedule is not executed in the identity store.
 
 Step 6 – Click **Save**.
@@ -124,6 +124,14 @@ Step 7 – Click **Update Schedule**.
 
 Step 8 – Click **Save** on the Schedules page.
 
+:::important Password Re-insertion Required
+Due to security enhancements, when editing any schedule settings, you must re-enter the account password in the Authentication section even if you are not changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product. The password must be re-entered when:
+- Updating triggers
+- Updating targets
+- Updating notification settings
+- Making any other changes to the schedule
+:::
+
 ## Update Targets for a Schedule
 
 Targets in a schedule are the objects processed by that schedule.
@@ -142,7 +150,7 @@ Step 4 – On the Schedules page, click the plus sign for a job to view the sche
 Step 5 – Click the ellipsis button for a schedule and select **Edit**.
 
 Step 6 – On the Edit Schedule page, the Target(s) area displays the target objects for the
-schedule.  
+schedule.
 Target types differ for different schedule types. For example, you can set containers as targets for
 a Group Lifecycle schedule; and jobs and job collections for a Synchronize schedule. Other
 schedules, such as a User Lifecycle schedule, may not require a target, as they execute certain
@@ -172,11 +180,11 @@ Step 4 – On the Schedules page, click the plus sign for a job to view the sche
 Step 5 – Click the ellipsis button for a schedule and select **Edit**.
 
 Step 6 – On the Edit Schedule page, click the **Notifications** button to update notification
-settings for the schedule.  
+settings for the schedule.
 Notification settings differ for different schedule types. For example, a Smart Group Update
 schedule has a different set of notification options from a Group Lifecycle schedule. Other
 schedules, such as the Directory Manager Entitlement and Workflow Acceleration schedules, do not
-have notification settings.  
+have notification settings.
 To manage the notification settings for a schedule, refer to the instructions for the respective
 schedule.
 
@@ -232,7 +240,7 @@ Step 3 – Click **Schedules** under Settings in the left pane.
 
 Step 4 – On the Schedules page, click the plus sign for a job to view the schedules defined for it.
 
-Step 5 – Click the ellipsis button for a schedule and select **Delete**.  
+Step 5 – Click the ellipsis button for a schedule and select **Delete**.
 The Delete option is not available for system-defined schedules.
 
 Step 6 – On the Delete Schedule dialog box, click **Delete**.

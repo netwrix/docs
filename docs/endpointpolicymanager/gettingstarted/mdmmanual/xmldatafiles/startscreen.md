@@ -21,3 +21,4 @@ You can export a single Endpoint Policy Manager Start Screen Manager entry, as s
 ![deploying_policypak_directives_23](/images/endpointpolicymanager/mdm/xmldatafiles/deploying_endpointpolicymanager_directives_23.webp)
 
 Figure 23. Exporting a single Endpoint Policy Manager Start Screen Manager entry.
+

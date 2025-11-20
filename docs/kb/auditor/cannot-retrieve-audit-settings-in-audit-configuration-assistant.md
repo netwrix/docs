@@ -41,7 +41,7 @@ Cannot retrieve admin audit logging settings. Cannot execute the PowerShell comm
 The user %user% isn't assigned to any management roles.
 ```
 
-![Audit Configuration Assistant error screenshot](images/ka04u00000117HQ_0EM4u000008M035.png)
+![Audit Configuration Assistant error screenshot](./images/ka04u00000117HQ_0EM4u000008M035.png)
 
 ## Cause
 
@@ -50,3 +50,4 @@ The user is not included in any or one of the following groups: Domain Admins, E
 ## Resolution
 
 Configure the user to be used in the Audit Configuration Assistant utility. For additional information on user permissions required for Audit Configuration Assistant utility, refer to the following article: https://docs.netwrix.com/docs/auditor/10_8/tools/overview
+

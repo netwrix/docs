@@ -33,4 +33,4 @@ This article explains how you can enable the **Monitor webmail** setting in Netw
 
 When you enable this setting, it allows monitoring of the subject and body fields for Gmail, Outlook, and Yahoo webmail accessed through browsers.
 
-![Deep Packet Inspection settings page with Monitor webmail option highlighted](images/ka0Qk000000Drsv_0EMQk00000CB41O.png)
+![Deep Packet Inspection settings page with Monitor webmail option highlighted](./images/ka0Qk000000Drsv_0EMQk00000CB41O.png)

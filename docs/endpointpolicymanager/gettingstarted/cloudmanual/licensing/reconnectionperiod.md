@@ -28,3 +28,4 @@ no way to know if a machine is still valid and should maintain a license. If you
 circumstance, you can work with the Endpoint Policy Manager sales team to configure a reasonable
 number of days in which computers must re-connect and re-validate with Endpoint Policy Manager
 Cloud.
+

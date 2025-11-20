@@ -20,7 +20,7 @@ So watch this video to see how Netwrix Endpoint Policy Manager (formerly PolicyP
 users' desktops and applications are locked down and help add more value to your XenDesktop
 investment.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RaRemLGCEMM?si=sjQy7hJxn826AePj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RaRemLGCEMM?si=sjQy7hJxn826AePj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 You might know that some licensed Citrix customers get to take advantage of some Citrix addons:
 
@@ -180,7 +180,7 @@ target application" in Cameras. I've gone ahead and done that.
 
 Now for Firefox, we're just going to right click, "New/Application" and we'll pick "PolicyPak for
 Mozilla Firefox" as well. We'll go ahead and also pick the local storage one. We're just going to go
-ahead and set up the "Home Page." We'll just do "www.endpointpolicymanager.com." We'll go ahead and just set
+ahead and set up the "Home Page." We'll just do "www.policypak.com." We'll go ahead and just set
 that up. We can set "Security" options the way we want to. We can guarantee various security options
 if that's important to us. We'll go ahead and click "OK." That's it.
 
@@ -200,7 +200,7 @@ Policy refresh, and when Group Policy refreshes so does endpointpolicymanager.Yo
 Policy update has completed successfully" and "Computer Policy update has completed successfully."
 
 Now we're ready to test out our apps. In no particular order, let's go over to "Mozilla Firefox"
-first. We'll go to "Options" and "General." There we go. We got "www.endpointpolicymanager.com" as the "Home
+first. We'll go to "Options" and "General." There we go. We got "www.policypak.com" as the "Home
 Page," just as we told it to do. That's good news. If we were to look at "Security," it would
 guarantee those settings. That's one application that we just did inside of XenDesktop.
 
@@ -229,3 +229,5 @@ I hope this explains how PolicyPak works with XenDesktop. If you have any questi
 help. This is, again, Jeremy Moskowitz, former Group Policy MVP and Founder of PolicyPak Software.
 
 I'll talk to you soon. Thanks.
+
+

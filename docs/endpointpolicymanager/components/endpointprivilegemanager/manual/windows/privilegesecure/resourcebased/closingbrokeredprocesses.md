@@ -12,3 +12,6 @@ When the activity / process is terminated, you get the following message.
 
 Additionally, if the **Enable Video Recording (Netwrix Privilege Secure**) option was checked, a
 video session recording is sent to the server for processing.
+
+
+

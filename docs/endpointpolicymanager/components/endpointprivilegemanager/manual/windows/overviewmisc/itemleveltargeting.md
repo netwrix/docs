@@ -81,3 +81,6 @@ Level Targeting, as seen below.
 When Item-Level Targeting is on, the policy won’t apply unless the conditions are true. If
 Item-Level Targeting is applied to a collection, then none of the items in the collection will apply
 unless the Item-Level Targeting on the collection evaluates to true.
+
+
+

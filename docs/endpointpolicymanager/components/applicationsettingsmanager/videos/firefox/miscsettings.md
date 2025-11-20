@@ -16,7 +16,7 @@ be configured. Here are the misc settings, and the time index where they can be 
 - Prevent Firefox Sync: 7:17.
 - Prevent Misc Buttons and Controls: 9:36.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fKohXLGFv5A?si=LYnOBNj7YX-jsIGW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fKohXLGFv5A?si=LYnOBNj7YX-jsIGW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Manage Firefox Misc Settings and Buttons Using Endpoint Policy Manager
 
@@ -63,7 +63,7 @@ private browsing.
 
 In this video, we're going to use PolicyPak to "Always clear saved passwords" between sessions. By
 way of example, if you're on any given website that has a garden-variety logon, for instance if I
-log on as "jeremym@endpointpolicymanager.com" to this website, Firefox would cheerfully ask if you want to
+log on as "jeremym@policypak.com" to this website, Firefox would cheerfully ask if you want to
 "Remember Password," which is not good.
 
 If you were to "Remember Password" here and then you were to even "Logout," close out the browser,
@@ -198,3 +198,5 @@ Thanks. Take care.
 If you're looking to get started, just reach out and give us a buzz.
 
 Thanks.
+
+

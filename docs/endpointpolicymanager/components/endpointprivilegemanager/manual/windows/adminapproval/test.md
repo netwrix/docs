@@ -82,3 +82,6 @@ You can also see and launch the Admin Approval Tool from within a GPO, provided 
 key inside the GPO, as seen here.
 
 ![A computer screen shot of a computer screen Description automatically generated](/images/endpointpolicymanager/leastprivilege/adminapproval/testing_admin_approval_4.webp)
+
+
+

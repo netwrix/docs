@@ -59,3 +59,4 @@ June:
 - On June 30th you install the Endpoint Policy Manager Cloud Client on 100 computers, bringing your
   consumption to 250.
 - We will automatically bill you June 30th for the 250 licenses you used in June.
+

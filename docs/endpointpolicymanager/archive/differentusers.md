@@ -9,7 +9,7 @@ sidebar_position: 20
 Microsoft MVP Jeremy Moskowitz and Shane from Admin Arsenal demonstrate how it is possible to manage
 different users in the same OU using Netwrix Endpoint Policy Manager (formerly PolicyPak).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0A-JsCUug4o?si=d93xPzB3b4oy9-g-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0A-JsCUug4o?si=d93xPzB3b4oy9-g-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Manage Different Users In The Same OU (And Reduce Number of GPOs) With PolicyPak
 
@@ -90,5 +90,7 @@ different users in the same OU using Netwrix Endpoint Policy Manager (formerly P
   things under different conditions, have one slightly bigger GPO that has the smarts built in to
   evaluate on the fly.
 - Love it. Fantastic.
-- [https://www.endpointpolicymanager.com/purchasing/thanks.html](https://www.endpointpolicymanager.com/purchasing/thanks.html) man.
+- [https://www.policypak.com/purchasing/thanks.html](https://www.policypak.com/purchasing/thanks.html) man.
 - We'll talk to you guys later.
+
+

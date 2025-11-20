@@ -33,7 +33,7 @@ To be able to download and install the new version, renew your maintenance contr
 Your subscription plan for Netwrix Auditor has expired
 ```
 
-![AboutNetwrixAuditor.png](images/ka0Qk0000002uxN_0EM4u000008LHag.png)
+![AboutNetwrixAuditor.png](./images/ka0Qk0000002uxN_0EM4u000008LHag.png)
 
 ## Cause
 
@@ -47,9 +47,10 @@ Even if you have valid support and maintenance licenses, you might still have so
 2. In the left pane, select **Licenses**.
 3. Select any expired licenses and click **Remove**.
 
-If you would like to upgrade to the latest product version from a version that is no longer supported, refer to the following incremental upgrade guide: [Upgrade Increments for Netwrix Auditor](/docs/kb/auditor/upgrade-increments-for-netwrix-auditor.md).
+If you would like to upgrade to the latest product version from a version that is no longer supported, refer to the following incremental upgrade guide: [Upgrade Increments for Netwrix Auditor](/docs/kb/auditor/upgrade-increments-for-netwrix-auditor).
 
 ## Related articles
 
 - Installation — Upgrade to the Latest Version ⸱ v10.6
-- [Upgrade Increments for Netwrix Auditor](/docs/kb/auditor/upgrade-increments-for-netwrix-auditor.md)
+- [Upgrade Increments for Netwrix Auditor](/docs/kb/auditor/upgrade-increments-for-netwrix-auditor)
+

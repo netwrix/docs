@@ -26,7 +26,7 @@ knowledge_article_id: kA00g000000H9afCAC
 I installed Password Manager portals on a server in a DMZ and configured as per Administrator's guide, but I cannot get to any portal.  
 All 3 of them keep loading and do not show anything.
 
-![User-added](images/servlet_image_6d5dba18caac.png)
+![User-added](./images/servlet_image_6d5dba18caac.png)
 
 ---
 

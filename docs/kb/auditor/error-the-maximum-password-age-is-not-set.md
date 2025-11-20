@@ -43,4 +43,5 @@ To set the Maximum Password Age policy for the domain:
 4. In the right pane define the **Maximum password age** value
 5. Update policies, for example run `gpupdate /force`
 
-![User-added image](images/ka04u000000HcU6_0EM7000000054Ba.png)
+![User-added image](./images/ka04u000000HcU6_0EM7000000054Ba.png)
+

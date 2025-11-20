@@ -27,7 +27,7 @@ This article provides an example of a Task Automation script that can be used to
 
 ## Summary
 1. In Netwrix Privilege Secure, navigate to the **Activities** page and create an Activity with the **Task Automation** Activity Type. The activity should be configured to provide sufficient privilege to remotely execute scripts on the target resource, and the **Login Account**, **Requester Login Format**, and **Pre- and Post-Session** action steps should reflect this.  
-   ![image.png](images/ka0Qk0000003etl_0EMQk000004iG8P.png)
+   ![image.png](./images/ka0Qk0000003etl_0EMQk000004iG8P.png)
 
 2. In the **Session** of the Activity, click the **+** button and add a **Run Custom Powershell Script** action step.
 

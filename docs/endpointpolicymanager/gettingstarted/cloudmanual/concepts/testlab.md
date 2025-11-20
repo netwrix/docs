@@ -36,3 +36,5 @@ machines (each one within a "tab" in VMware Workstation):
 ![concepts_logons_and_downloads_13_624x282](/images/endpointpolicymanager/cloud/concepts_logons_and_downloads_13_624x282.webp)
 
 ![concepts_logons_and_downloads_14_623x372](/images/endpointpolicymanager/cloud/concepts_logons_and_downloads_14_623x372.webp)
+
+

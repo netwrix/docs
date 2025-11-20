@@ -9,7 +9,7 @@ Want more details about what processes users are attempting to launch? Then use 
 Policy Manager (formerly PolicyPak)'s Email / Long codes function. Users send emails. Admins
 approve. UAC prompts are overcome. Poof. Easy.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s6qzARZnVGQ" title="Endpoint Privilege Admin Approval: Using Email / Long Codes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s6qzARZnVGQ" title="Endpoint Privilege Admin Approval: Using Email / Long Codes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz and in this video, I'm going to show you how you can use email to
 authorize items using Endpoint Policy Manager Least Privilege Manager. In a previous video, I set up
@@ -58,3 +58,5 @@ In this way the email version gives you more information and a workflow that you
 anytime. In this way, nobody has to be at the help desk at present in order for this to achieve. You
 can do it in asynchronous time. Hope this feature helps you out and looking forward to getting you
 started real soon with Endpoint Policy Manager. Thanks.
+
+

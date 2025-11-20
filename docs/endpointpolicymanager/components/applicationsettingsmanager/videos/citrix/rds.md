@@ -10,7 +10,7 @@ Desktop Services such as RemoteApp to give you perfect control over your applica
 
 See how to use them together in this video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JCIr-2sUD34?si=DXPuoVbHN9_SSFdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JCIr-2sUD34?si=DXPuoVbHN9_SSFdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager and Microsoft RDS and RemoteApp – Better Together to Manage Applications' settings video transcript
 
@@ -81,7 +81,7 @@ side and thus I will affect everybody. This is another PolicyPak superpower. We'
 settings, so therefore everybody who is on the computer is going to get these user side settings.
 
 I'm going to pick "PolicyPak for Mozilla Firefox" for this example here. Let me go ahead and set the
-"Home Page" to "www.endpointpolicymanager.com," and I'll make sure that is locked down ("Lockdown this setting
+"Home Page" to "www.policypak.com," and I'll make sure that is locked down ("Lockdown this setting
 using the system-wide config file") so users can't work around it. I'll also go to "Security" and
 make sure these important security settings are always checked and always locked down. I'm going to
 "Lockdown this setting using the system-wide config file."
@@ -137,3 +137,5 @@ also support, you're welcome to get started any time. Just go ahead and fill out
 see if it's right for you.
 
 Thanks so much, and I'll talk to you soon.
+
+

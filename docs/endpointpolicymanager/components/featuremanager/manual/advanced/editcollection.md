@@ -45,3 +45,5 @@ allows you to change three settings.
   - **Prevent** - Actively blocks reboots and does not prompt user.
   - **Allow** - Automatically reboots a machine, if required.
   - **Asks User** - Prompts the user if Windows determines a reboot is needed.
+
+

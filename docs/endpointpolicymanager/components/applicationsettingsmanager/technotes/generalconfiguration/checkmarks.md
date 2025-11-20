@@ -12,3 +12,5 @@ Manager will deliver the configured value of that setting. For instance, if you 
 that by default is unchecked, the setting will then become underlined, stating that Endpoint Policy
 Manager will now enforce that checked value. Simply uncheck the checkbox and the setting remains
 underlined, showing that the unchecked value will not be delivered.
+
+

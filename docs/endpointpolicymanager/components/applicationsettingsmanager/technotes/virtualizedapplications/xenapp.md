@@ -12,3 +12,5 @@ server, you only need to:
 - Ensure the XenAPP server is licensed like any other computer, and
 - Apply the GPO settings to the user, or
 - Apply the GPO setting to the server itself.
+
+

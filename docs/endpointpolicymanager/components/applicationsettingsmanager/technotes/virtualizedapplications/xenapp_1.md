@@ -10,3 +10,5 @@ Yes, besides delivering application settings to real installed applications, the
 Policy Manager (formerly PolicyPak) Application Settings Manager PAK, will also deliver them to
 applications that either reside on a XenAPP server or are being streamed (virtualized) from a XenAPP
 server
+
+

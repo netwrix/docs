@@ -8,7 +8,7 @@ sidebar_position: 90
 Watch this video to learn how to use Netwrix Endpoint Policy Manager (formerly PolicyPak)
 Application managers Google Chrome Pak to deliver pre-configured bookmarks to your endpoints.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Cu3feJgMLU8" title="Endpoint Policy Manager:  Deliver pre-configured Bookmarks in Chrome" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Cu3feJgMLU8" title="Endpoint Policy Manager:  Deliver pre-configured Bookmarks in Chrome" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Deliver pre-configured Bookmarks in Chrome
 
@@ -39,3 +39,5 @@ it again. If we go into the three dots icon, you'll see that under "Bookmarks" w
 "Managed bookmarks" this time with all our required URLs.
 
 Okay, I hope it helps. Thank you.
+
+

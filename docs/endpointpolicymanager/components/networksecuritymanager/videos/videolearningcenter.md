@@ -15,3 +15,5 @@ See the following Video topics for Network Security Manager.
 - [Endpoint Policy Manager Network Security Manager - Applications and Ports](/docs/endpointpolicymanager/components/networksecuritymanager/videos/gettingstarted/applicationsports.md)
 - [Endpoint Policy Manager Network Security Manager - Global settings](/docs/endpointpolicymanager/components/networksecuritymanager/videos/gettingstarted/globalsettings.md)
 - [Endpoint Policy Manager Network Security Manager - Auditing Events](/docs/endpointpolicymanager/components/networksecuritymanager/videos/gettingstarted/auditingevents.md)
+
+

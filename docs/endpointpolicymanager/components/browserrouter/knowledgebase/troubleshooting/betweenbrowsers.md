@@ -12,7 +12,7 @@ doesn't, then this is the guide for you.
 
 :::note
 Firefox version must be Firefox ESR and not Firefox RR (rapid release). For more details,
-[https://www.endpointpolicymanager.com/pp-blog/policypak-will-soon-only-support-firefox-esr](https://www.endpointpolicymanager.com/pp-blog/endpointpolicymanager-will-soon-only-support-firefox-esr).
+[https://www.policypak.com/pp-blog/policypak-will-soon-only-support-firefox-esr](https://www.policypak.com/pp-blog/endpointpolicymanager-will-soon-only-support-firefox-esr).
 :::
 
 
@@ -117,3 +117,5 @@ webstore): [https://chrome.google.com/webstore/category/extensions?hl=en-US](ht
 
 **Step 7 –** Related.. If you see ONLY Chrome, and not any FORCED extensions,
 [Endpoint Policy Manager Browser Router removes other Chrome ‘force installed' extensions. How can I work around this?](/docs/endpointpolicymanager/components/browserrouter/knowledgebase/troubleshooting/forceinstall.md)
+
+

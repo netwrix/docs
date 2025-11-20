@@ -9,7 +9,7 @@ Starting in build 545, you can silently update the PP CSE anytime you want. You 
 Netwrix Endpoint Policy Manager (formerly PolicyPak) Central Store, or a share of your choice. In
 this video, we'll explore exactly how to demonstrate the new PP Automatic updates.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_aC6D9hnTeQ" title="Endpoint Policy Manager: Auto-updating the CSE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_aC6D9hnTeQ" title="Endpoint Policy Manager: Auto-updating the CSE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 :::note
 Extra details are covered in Appendix A of the PP Quickstart and User guide.
@@ -131,3 +131,4 @@ questions, we're here for you. Please go to the support forums, and we'll look f
 you out.
 
 Thanks so much. Take care.
+

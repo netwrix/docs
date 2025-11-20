@@ -16,31 +16,31 @@ To be specific, the Configuration Wizard doesn't look for all changed files and 
 entries. It's only looking where you tell it to look. At the start of every project, you are asked
 where the application's data is stored, and you set that as your default data root. We set up the
 data root in the previous section, "Setting Up Application Configuration Data." Recall that your
-data root can be a registry key (as shown in Figure 108) or a specific file, like an INI or XML file
+data root can be a registry key (as shown In the figure shown) or a specific file, like an INI or XML file
 (Figure 109).
 
 ![configuring_elements_using_1](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/configuring_elements_using_1.webp)
 
-Figure 108. Data root selection with registry key.
+The figure shown. Data root selection with registry key.
 
 ![configuring_elements_using_2](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/configuring_elements_using_2.webp)
 
-Figure 109. Data root selection with an INI file.
+The figure shown. Data root selection with an INI file.
 
 This can be done at the start of any new project or later on in a project by selecting the Project
-Properties tab and changing the data root, as shown in Figure 110.
+Properties tab and changing the data root, as shown In the figure shown.
 
 ![configuring_elements_using_3](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/configuring_elements_using_3.webp)
 
-Figure 110. Changing the data root.
+The figure shown. Changing the data root.
 
 There is also another way to change the data root, which is inside the Configuration Wizard itself.
 While configuring items, if you realize that you need to make a change, it's easy to set a location
-for the data root, as shown in Figure 111.
+for the data root, as shown In the figure shown.
 
 ![configuring_elements_using_4](/images/endpointpolicymanager/applicationsettings/designstudio/configurationwizard/configuring_elements_using_4.webp)
 
-Figure 111. Changing the location of the data root.
+The figure shown. Changing the location of the data root.
 
 :::note
 This adjusts all existing elements such that their paths are now relative to this new
@@ -59,3 +59,6 @@ files. In most cases, simply select the top most entry within a file and the Con
 will look for all changes that happen within that file.
 
 :::
+
+
+

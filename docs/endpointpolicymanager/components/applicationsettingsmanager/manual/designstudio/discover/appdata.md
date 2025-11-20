@@ -28,15 +28,15 @@ the application's data file within `%appdata%`, even if you browse using the ful
 with `C:\`. Endpoint Policy Manager DesignStudio will automatically detect if you are within
 `%appdata%` or `%localappdata%` and substitute the
 
-`%appdata%` or `%localappdata%` variables for you as needed, as shown in Figure 99 and Figure 100.
+`%appdata%` or `%localappdata%` variables for you as needed, as shown In the figure shown and The figure shown.
 
 ![discovering_configuration_12](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_12.webp)
 
-Figure 99. DesignStudio detecting the data location.
+The figure shown. DesignStudio detecting the data location.
 
 ![discovering_configuration_13](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_13.webp)
 
-Figure 100. DesignStudio detecting the data location.
+The figure shown. DesignStudio detecting the data location.
 
 :::note
 You will not be able to compile your AppSet to a DLL as standard user unless you change
@@ -49,11 +49,11 @@ Application Settings Manager .dlls on machines.
 
 Therefore, capture all the data from your application first as a standard user, then test your
 compiling as a standard user. You can see the preview of your AppSet by selecting "Show test
-Endpoint Policy Manager when complete" within the Compilation tab, as shown in Figure 101
+Endpoint Policy Manager when complete" within the Compilation tab, as shown In the figure shown
 
 ![discovering_configuration_14](/images/endpointpolicymanager/applicationsettings/designstudio/configurationdata/discover/discovering_configuration_14.webp)
 
-Figure 101. Choosing to preview the AppSet.
+The figure shown. Choosing to preview the AppSet.
 
 Then, when ready, switch to an administrative user to move the compiled Endpoint Policy Manager DLL
 to
@@ -62,3 +62,6 @@ to
 
 (or `c:\Program Files(x86)\PolicyPak\Extensions` on 64-bit machines) and use the Group Policy Editor
 to see your completed AppSet.
+
+
+

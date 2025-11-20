@@ -35,3 +35,5 @@ seen below.
 
 Currently, the Endpoint Policy Manager **Group Policy Merge Tool** can only migrate GPOs containing
 ADM/ADMX (REG.POL) items. In the future, more formats will be available for other scenarios.
+
+

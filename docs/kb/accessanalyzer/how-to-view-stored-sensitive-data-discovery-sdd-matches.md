@@ -41,7 +41,7 @@ You can view stored SDD matches using one of the following methods.
 1. Select the server.
 2. In the right **Reports** pane, select **Sensitive Content Details**.
 
-![rtaImage.png](images/ka0Qk0000009j17_00N0g000004CA0p_0EMQk000002m1YX.png)
+![rtaImage.png](./images/ka0Qk0000009j17_00N0g000004CA0p_0EMQk000002m1YX.png)
 
 For additional information, refer to: Resource Audit Overview − Sensitive Content Reports · v11.6  
 https://docs.netwrix.com/docs/accessanalyzer/12_0)
@@ -55,7 +55,7 @@ https://docs.netwrix.com/docs/accessanalyzer/12_0)
 
 > **IMPORTANT:** Check the **Reviewers are able to see the sensitive data match if available** checkbox for the review to contain sensitive data matches.
 
-![rtaImage1.png](images/ka0Qk0000009j17_00N0g000004CA0p_0EMQk000002m1a9.png)
+![rtaImage1.png](./images/ka0Qk0000009j17_00N0g000004CA0p_0EMQk000002m1a9.png)
 
 ### Netwrix Access Analyzer − Custom report
 

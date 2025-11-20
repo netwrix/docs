@@ -62,3 +62,6 @@ MSI, you maintain your console with upgrades only via the Endpoint Policy Manage
 and don’t attempt a re-install of Netwrix Privilege Secure Console MSI.
 
 :::
+
+
+

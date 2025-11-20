@@ -8,7 +8,7 @@ sidebar_position: 20
 If you trust one person, like a doctor or consultant, etc. then you can grant the one person (or
 group) READ, READ/WRITE, FULL access to all device.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sSb0M1trCrA" title="Endpoint Policy Device Manager: Allow ONE user (or group) access to USB and/or CD-ROM and DVDs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sSb0M1trCrA" title="Endpoint Policy Device Manager: Allow ONE user (or group) access to USB and/or CD-ROM and DVDs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 In a previous video, you saw me put the smackdown on CD-ROMs and USB sticks. This blanket is going
 to hit every user on this computer, but what if you had one user that you trusted, like a doctor or
@@ -66,3 +66,5 @@ If you think that is too much access, go ahead and check out the next video wher
 you how you can allow one user to have specific access to a specific USB stick by serial number.
 That's even more cranking it down. Hope this video helps you out. Looking forward to getting you
 started with Endpoint Policy Manager real soon. Thanks.
+
+

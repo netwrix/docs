@@ -9,6 +9,8 @@ Instead of having to use your on-prem MMC snap in to create your Least Priv poli
 Information Viewer instead. This lightweight utility enables you to get information about your
 application and then copy/paste into PP Cloud editors !
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/X65ajrbab-U" title="PP Cloud + File Info Viewer: Get file info, without the MMC console" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Hi, this is Jeremy Moskowitz and in this video, I'm going to show you how you can use the File
 Information Viewer in conjunction with PolicyPak Cloud to set policies without needing to use the
 on-prem editor. By way of example, let's pretend you wanted to create a new policy here for your

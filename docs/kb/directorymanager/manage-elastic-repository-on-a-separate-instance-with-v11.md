@@ -40,7 +40,7 @@ Yes, this is possible. To improve performance and manageability, you can install
 1. Install Elasticsearch on a separate machine by downloading the latest version from the official website.
 2. Extract the package and open CMD.
 3. Navigate to the `bin` directory and run `elasticsearch.bat`.  
-   ![Steps 1-3 in CMD](images/ka0Qk000000DSPt_0EMQk00000C0zmA.png)
+   ![Steps 1-3 in CMD](./images/ka0Qk000000DSPt_0EMQk00000C0zmA.png)
 4. Take note of the **username** and **password** provided upon successful installation. You may keep the password provided, but if you would like to reset the password, run the command below:
 
 ```bat
@@ -62,7 +62,7 @@ in CMD. Let the installation complete.
 3. Verify Elasticsearch is running by navigating to the service URL in your browser.
 4. On the Netwrix Directory Manager server, open the **Netwrix Directory Manager Configuration Tool**. When prompted, select **I will install and manage Elastic myself**.
 5. Enter the **URL** and **credentials** for the separate Elasticsearch machine.  
-   ![GroupID Config Tool](images/ka0Qk000000DSPt_0EMQk00000C15Bd.png)
+   ![GroupID Config Tool](./images/ka0Qk000000DSPt_0EMQk00000C15Bd.png)
 6. Complete the remaining configuration steps to finalize the setup.
 
 Once completed, Netwrix Directory Manager 11 will be successfully configured to use an external Elasticsearch instance for its repository.

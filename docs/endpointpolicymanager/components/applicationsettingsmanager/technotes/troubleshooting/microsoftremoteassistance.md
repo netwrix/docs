@@ -73,3 +73,5 @@ settings
 **Step 7 –** Lastly, click "Apply" to save your changes
 
 ![280_6_image-20191015113622-2](/images/endpointpolicymanager/troubleshooting/applicationsettings/280_6_image-20191015113622-2.webp)
+
+

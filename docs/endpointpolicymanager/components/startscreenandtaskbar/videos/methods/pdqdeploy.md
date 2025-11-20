@@ -12,7 +12,7 @@ In this video, Kris from PDQ and Jeremy Moskowitz, former Group Policy MVP from 
 Manager Software show you how to get it "out there" and nicely manage that Windows 10 Start Screen
 and Taskbar.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-Wid5A4pSbY?si=W3sIaBKmyM96QvRf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-Wid5A4pSbY?si=W3sIaBKmyM96QvRf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Taking Control of Your Taskbar and Start Menu with PolicyPak and PDQ Deploy
 
@@ -277,3 +277,5 @@ Jeremy: Well, thanks for having me on the video.
 Kris: Yeah. Thanks for watching.
 
 Jeremy: Thanks, guys.
+
+

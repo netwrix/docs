@@ -8,11 +8,11 @@ sidebar_position: 30
 Use Netwrix Endpoint Policy Manager (formerly PolicyPak) Cloud to deliver Endpoint Policy Manager
 Java Rules Manager policies. Configure websites to use the version of Java you choose, or block Java
 websites entirely
-([https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites](https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites))
+([https://www.policypak.com/pp-blog/windows-10-block-websites](https://www.policypak.com/pp-blog/windows-10-block-websites))
 – even for remote machines via the Cloud. Making a Java Deployment Rule Set for your Enterprise has
 never been easier or more flexible.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/85lzyp5oTmg" title="Use Endpoint Policy Manager Cloud to choose which version of Java for what website" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/85lzyp5oTmg" title="Use Endpoint Policy Manager Cloud to choose which version of Java for what website" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with PolicyPak software. Have you ever had the situation where you were using
 some older legacy web app that needs an older version of Java but everywhere else you wanted to run
@@ -51,3 +51,5 @@ happening in the same browser at the same time. Every other site that uses Java 
 going to fall upward to whatever is latest on the machine. If that's as magical to you as it is to
 me, then sign up for our webinar. We will get you started on your 30-day free trial right away.
 Thanks so much
+
+

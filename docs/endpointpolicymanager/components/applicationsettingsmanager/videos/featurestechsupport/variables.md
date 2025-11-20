@@ -8,7 +8,7 @@ sidebar_position: 60
 You might want to deliver settings based upon Windows' environment variables. There are several
 types of Env variables, and in this demo, we show you how to find them and some use cases.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xOOKQY-QrfQ" title="Endpoint Policy Manager: Using Environment Variables in Paks" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xOOKQY-QrfQ" title="Endpoint Policy Manager: Using Environment Variables in Paks" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Using Environment Variables in Paks Video Transcript
 
@@ -43,7 +43,7 @@ folder" for this user is "`C:Userseastsalesuser2Desktop`."
 There are a lot of other options here, but let me give you a quick technique to go to the advanced
 level here. On every target machine, all these environment variables are declared inside a special
 location in the registry. I'm going to show you that location. Actually, I'm going to
-"[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)."
+"[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)."
 This is an advanced technique, so I'm going to run this as administrator here.
 
 I'll type "regedit." I'm looking under
@@ -91,3 +91,5 @@ That's it for environment variables. If you have questions on that, we're here f
 post your questions in the forum, and we'll see you there.
 
 Thanks so much.
+
+

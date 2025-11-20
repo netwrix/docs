@@ -6,11 +6,11 @@ sidebar_position: 40
 # Use SCCM, KACE, etc to specify different websites for different Java
 
 Configure websites to use the version of Java you choose, or block Java websites entirely
-([https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites](https://www.endpointpolicymanager.com/pp-blog/windows-10-block-websites))
+([https://www.policypak.com/pp-blog/windows-10-block-websites](https://www.policypak.com/pp-blog/windows-10-block-websites))
 – this demo uses SCCM, KACE, Altiris, whatever method you like (instead of Group Policy.) Making a
 Java Deployment Rule Set for your Enterprise has never been easier or more flexible.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RKUbyiAHIos" title="Endpoint Policy Manager Java Rules Manager: Use SCCM, KACE, etc to specify different websites for different Java" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RKUbyiAHIos" title="Endpoint Policy Manager Java Rules Manager: Use SCCM, KACE, etc to specify different websites for different Java" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager Java Rules Manager: Use SCCM, KACE, etc to specify different websites for different Java
 
@@ -69,3 +69,5 @@ if you don't want to.
 I hope this helps you out and you're ready to get started real soon.
 
 Thanks so much.
+
+

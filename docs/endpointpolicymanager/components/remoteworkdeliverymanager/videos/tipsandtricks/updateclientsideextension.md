@@ -8,7 +8,7 @@ sidebar_position: 30
 Want to keep everyone running the same version of the Client Side Extension and then update them all
 automatically when you're ready to? Here's how to do that using Remote Work Delivery Manager.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/M3Tm1mbK6wg" title="Using Remote Work Delivery Manager to Update the Endpoint Policy Manager Client Side Extension" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M3Tm1mbK6wg" title="Using Remote Work Delivery Manager to Update the Endpoint Policy Manager Client Side Extension" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is John with Netwrix Endpoint Policy Manager (formerly PolicyPak) Software. Today, we're
 going to walk through updating your Endpoint Policy Manager client-side extension using Remote Work
@@ -82,3 +82,5 @@ It's a 68-meg file, so it takes a little bit of time to do. Then in a second, it
 actually installing the file, so you should probably see another command prompt pop up here.
 Alright, and it's done already. Now we can see that it's at 20.10.2592. Where it was at 2536, it's
 now at 2592. That's it. Thanks for watching and hope this helps.
+
+

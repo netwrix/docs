@@ -9,3 +9,4 @@ sidebar_position: 20
 Yes. Netwrix Endpoint Policy Manager (formerly PolicyPak) is licensed as a suite, and as such you
 have paid for multiple components. Use LT to install each received license file, which will fully
 enable the client's Client Side Extension on your endpoints.
+

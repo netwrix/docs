@@ -36,9 +36,12 @@ following values live in `HKLM\Software\PolicyPak\Config\CSE\ILT `and are REG_DW
   seconds).
 
 An example of using one of these entries—the `BypassAllILT `entry, which would turn off all ILT
-processing—can be seen in Figure 102. Note that the ILT key will not exist by default and must be
+processing—can be seen In the figure shown. Note that the ILT key will not exist by default and must be
 created before the value is set within it.
 
 ![troubleshooting_policypak_6](/images/endpointpolicymanager/troubleshooting/applicationsettings/itemleveltargeting/troubleshooting_endpointpolicymanager_6.webp)
 
-Figure 102. An example of a `BypassAllILT `entry.
+The figure shown. An example of a `BypassAllILT `entry.
+
+
+

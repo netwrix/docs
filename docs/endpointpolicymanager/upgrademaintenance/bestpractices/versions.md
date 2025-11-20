@@ -67,3 +67,4 @@ In this screenshot, you can see the original style and the new style:
 - New Style (15.12.827.19) means build 827 of the DesignStudio compiled the Pak.
 
 ![217_5_image006](/images/endpointpolicymanager/troubleshooting/217_5_image006.webp)
+

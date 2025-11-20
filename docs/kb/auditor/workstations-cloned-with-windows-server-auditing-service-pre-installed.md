@@ -46,7 +46,7 @@ To establish the affected servers, refer to the following steps:
 
    Copy the **AgentID** value.
 
-   ![Registry AgentID screenshot](images/ka04u000001177u_0EM4u000008Lr6o.png)
+   ![Registry AgentID screenshot](./images/ka04u000001177u_0EM4u000008Lr6o.png)
 
 2. In your Netwrix Auditor host, navigate to the `C:\ProgramData\Netwrix Auditor\ShortTerm\WSA\Agents\` folder. Look for a folder named after **AgentID** (e.g.,52656fc3-d325-424d-9bef-fb68d14bc919). The **RemoteAgentState.xml** file contains a list of affected servers.
 
@@ -158,3 +158,4 @@ To establish the affected servers, refer to the following steps:
    1. Open the folder `C:\Program Files (x86)\Netwrix Auditor\User Activity Video Recording` in the Netwrix server.
    2. Copy the **UACoreSvcSetup.msi** file to each cloned server.
    3. Install it manually.
+

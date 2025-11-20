@@ -22,3 +22,5 @@ which should be pinned to the Taskbar. If you are expecting an application to be
 Start Menu or Taskbar, but it is absent, start by checking this file to see if the application is
 present. If the association is absent, then, most likely, the target computer didn't get the policy
 to add the icon to the Start Menu or Taskbar.
+
+

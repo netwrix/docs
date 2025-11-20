@@ -9,3 +9,5 @@ sidebar_position: 330
 Yes, Here is a videos to demonstrate that.
 
 [Manage IE Certificates](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/internetexplorer/certificates.md)
+
+

@@ -8,7 +8,7 @@ sidebar_position: 10
 
 :::note
 For some video overviews of Endpoint Policy Manager Scripts & Triggers Manager, see
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-scripts-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-scripts-manager.html)
+[https://www.policypak.com/products/endpointpolicymanager-scripts-manager.html](https://www.policypak.com/products/endpointpolicymanager-scripts-manager.html)
 :::
 
 
@@ -124,3 +124,5 @@ Figure 16. Make a policy stop applying by removing the "Link Enabled" settings i
 
 The policy has now fallen out of scope and will stop applying. Back on the endpoint, run GPupdate.
 When you do, the "Off" script will run and the "Visit Endpoint Policy Manager" icon will disappear.
+
+

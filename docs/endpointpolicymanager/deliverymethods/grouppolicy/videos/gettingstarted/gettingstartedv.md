@@ -9,7 +9,7 @@ This video gives you a basic rundown of what our components do, where to find th
 more in-depth information on our website. This is great if you're just getting started and want to
 get some brief information on all of our PolicyPak components.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5-C4szQA75o" title="PPGP Quick Rundown: Getting Started" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5-C4szQA75o" title="PPGP Quick Rundown: Getting Started" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PPGP Quick Rundown: Getting Started Video Transcript
 
@@ -188,7 +188,7 @@ scope or if something is not true anymore. It allows you a lot more control than
 mechanisms.
 
 Now that I have given you the rough rundown of what all of our components do, I want to come over
-here and go to "www.endpointpolicymanager.com" and I want to show you the "Video Learning Center." If you come
+here and go to "www.policypak.com" and I want to show you the "Video Learning Center." If you come
 to the "SUPPORT" tab right here and go to "Video Learning Center," then you're going to choose if
 you're working with the "Group Policy Edition/Cloud Edition/MDM Edition" or if you're working with
 specifically the "GP Compliance Reporter."
@@ -216,3 +216,5 @@ wasn't able to show you.
 
 In the next video, I'll be talking more about the Application Settings Manager, how to set that up
 and how to work with it. So thanks for watching, and I'll see you there.
+
+

@@ -108,3 +108,4 @@ column to verify that the policy applied.
 Alternatively, check the Endpoint Policy Manager event log:
 
 ![1_21_image-20200129215924-11](/images/endpointpolicymanager/itemleveltargeting/1_21_image-20200129215924-11.webp)
+

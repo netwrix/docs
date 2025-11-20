@@ -100,3 +100,4 @@ From the Analyze page, go to Reporting > Devices & Apps and take a screenshot sh
 count and Ownership:
 
 ![44_14_image-20200815220310-29](/images/endpointpolicymanager/license/mdm/44_14_image-20200815220310-29.webp)
+

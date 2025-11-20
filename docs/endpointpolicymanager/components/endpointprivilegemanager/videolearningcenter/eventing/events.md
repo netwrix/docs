@@ -7,7 +7,7 @@ sidebar_position: 10
 
 Learn about the Eventing System in PolicyPak Least Privilege Manger.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/v2t3B5rBK6Y" title="Least Privilege Manager: Events" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v2t3B5rBK6Y" title="Least Privilege Manager: Events" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Transcript:  Least Privilege Manager: Events
 
@@ -90,3 +90,5 @@ something like Splunk to paw through them and get pretty charts and graphs and s
 this is a very quick tour to help you get on your way. Hope this gets you on the right path.
 
 Thank you very much, and talk to you soon.
+
+

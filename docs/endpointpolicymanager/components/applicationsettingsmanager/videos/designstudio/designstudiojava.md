@@ -9,7 +9,7 @@ sidebar_position: 60
 In this video, you will see how to take our existing Java Paks, which only work on Windows 7 and
 later, and make them work on WIndows XP.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/l6J6cNYsYNc?si=K9ykRUq4uWhAT_Wr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l6J6cNYsYNc?si=K9ykRUq4uWhAT_Wr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak: Using PolicyPak DesignStudio to modify the Java Paks for XP Video Transcript
 
@@ -63,5 +63,6 @@ Edit ILT Conditions" to also specify XP.
 That's all there is to it. If you have any questions, do post in the forums about how to do this.
 This is a "how do I" question.
 
-[https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/](https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/)
+[https://policypak.com/resources/thank-you-whitepapers/](https://policypak.com/resources/thank-you-whitepapers/)
 so much, and talk to you soon.
+

@@ -9,7 +9,7 @@ What happens when you nuke the Netwrix Endpoint Policy Manager (formerly PolicyP
 from an endpoint, then re-install the client and re-register your computer with the cloud? There are
 a few different options, and this video explains them all!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EjsFul9yGNA" title="Endpoint Policy Manager Cloud: Strict vs. Loose Computer Registration Mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EjsFul9yGNA" title="Endpoint Policy Manager Cloud: Strict vs. Loose Computer Registration Mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak Cloud – Strict vs. Loose Computer Registration Mode
 
@@ -86,3 +86,5 @@ put it back into the groups that it was originally in.
 If we come back over here, if we refresh this page right here, you'll see that the computer stayed
 in the groups that we had originally put it in because we now have it on Loose mode. So there you
 have it. I hope that helps, and I'll see you soon in the next video.
+
+

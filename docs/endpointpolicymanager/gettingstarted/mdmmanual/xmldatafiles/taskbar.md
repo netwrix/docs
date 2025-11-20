@@ -22,3 +22,4 @@ Figure 25.
 ![deploying_policypak_directives_25](/images/endpointpolicymanager/mdm/xmldatafiles/deploying_endpointpolicymanager_directives_25.webp)
 
 Figure 25. Exporting a single Endpoint Policy Manager Taskbar Manager entry.
+

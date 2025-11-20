@@ -78,3 +78,5 @@ for Windows Desktop" option.
   within the Start Menu, as seen here in this example station.
 
 ![387_4_image004](/images/endpointpolicymanager/troubleshooting/applicationsettings/appset/387_4_image004.webp)
+
+

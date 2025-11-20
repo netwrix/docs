@@ -5,7 +5,7 @@ sidebar_position: 20
 ---
 # Perform Desktop Lockdown using Microsoft SCCM and Endpoint Policy Manager
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fO5g-i0a2zA?si=LWjmUvnWUjQ71Gt-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fO5g-i0a2zA?si=LWjmUvnWUjQ71Gt-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Whitney with PolicyPak Software, and in this video. I am talking specifically to SCCM
 folks. If you're an SCCM shop, then you've got a great way to deliver your application, but that
@@ -44,7 +44,7 @@ to check that we only want to deliver TLS 1.2 as an option. I'll tell that OK.
 
 Now I'm going to do this again, and I'll go find Chrome, and once we open up Chrome, then I can come
 over here, and let's see. I can choose to Open a specific set of pages here, or in this case
-actually just one. We'll put it to endpointpolicymanager.com. Alright. We're going to come over here to the
+actually just one. We'll put it to policypak.com. Alright. We're going to come over here to the
 Extras, and Extras, you have to scroll down just a little bit to find the setting about the
 incognito mode, so there we go. We're going to go ahead and disable that, and when I come over here
 to Advanced, I can choose no, do not offer to save passwords. Thank you very much. I'm going to tell
@@ -66,10 +66,12 @@ system-wide config file, and when I come over here to Advanced, I can scroll dow
 are only using TLS1.2, and we are restricting TLS 1.1 and 1.0.
 
 We did that, and when I come over here to Chrome, you're going to notice there our homepage is
-endpointpolicymanager.com just like we asked it to. No incognito mode option anymore, and when I come down to
+policypak.com just like we asked it to. No incognito mode option anymore, and when I come down to
 Settings and I go to that Autofill area – Autofill, Passwords, there we go. You see that this
 setting is being enforced by your administrator, and it's grayed out. I cannot click that at all, at
 all. That is how you can go about managing the application settings using PolicyPak, but getting rid
 of Group Policy and using SCCM instead. If this is of interest to you, get in touch with us. We'll
 have you watch a webinar. We'll give you the bits, and you can get started on your trial right away.
 Thanks so much.
+
+

@@ -30,7 +30,7 @@ If the procedure from Microsoft's article is unsuccessful, try the following ste
 
 **Step 1 –** Remove existing CSE version to allow a re-installation of the newest CSE, download
 MSICUU from this link:
-[https://www.endpointpolicymanager.com/pp-files/msicuu2.zip](https://www.endpointpolicymanager.com/pp-files/msicuu2.zip)
+[https://www.policypak.com/pp-files/msicuu2.zip](https://www.policypak.com/pp-files/msicuu2.zip)
 
 **Step 2 –** Then launch it and select the CSE version and click **Remove**.
 
@@ -56,7 +56,7 @@ tool, either version will work.
 Once the new CSE is deployed to the remainder of your machines, follow these steps.
 
 **Step 1 –** Download our
-[`MSIZAP` and batch file](https://www.endpointpolicymanager.com/pp-files/ppMSIzapscript-4191.zip).
+[`MSIZAP` and batch file](https://www.policypak.com/pp-files/ppMSIzapscript-4191.zip).
 
 :::note
 `MSIZAP` is a command line version of `MSICUU` that was used in the previous steps..
@@ -94,3 +94,4 @@ yield more success, according to at least one customer report.
 
 The machines are now updated with a new CSE. If this solution was unsuccessful, contact your Netwrix
 support representative for additional assistance.
+

@@ -9,7 +9,7 @@ The Netwrix Endpoint Policy Manager (formerly PolicyPak) Group Policy Compliance
 you know if your existing settings (from a GPO) have -made it- to a target machine. Watch this video
 to learn how to utilize an existing GPO as a PPGPCR Test.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZRhqeiBzt3Q" title="Endpoint Policy Manager GP Compliance Reporter: Using an Existing GPO as a test" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZRhqeiBzt3Q" title="Endpoint Policy Manager GP Compliance Reporter: Using an Existing GPO as a test" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager GP Compliance Reporter: Using an Existing GPO as a test
 
@@ -117,3 +117,4 @@ has, such as Group Policy admin templates or security settings or Group Policy P
 that's the paid version of the Compliance Reporter.
 
 I hope this has been helpful. Thanks so very much, and we'll talk to you soon.
+

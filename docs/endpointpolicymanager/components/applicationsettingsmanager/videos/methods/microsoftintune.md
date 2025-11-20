@@ -27,7 +27,7 @@ constantly nag the users.
 Watch this video (exclusively for Microsoft Intune administrators) to see exactly how to manage your
 applications Endpoint Policy Manager and Intune:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/i35w5oj1_Og?si=mC1Ii7UdVph-c_6C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i35w5oj1_Og?si=mC1Ii7UdVph-c_6C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 If you're a Microsoft Intune customer, you might have 5, 10 or 20 customers that you manage. Here's
 the best part: Create your Endpoint Policy Manager directives once, and what you do for one customer
@@ -48,7 +48,7 @@ When you're ready to manage your applications and settings using Microsoft Intun
 Manager is here for you.
 
 Click on the following link
-[https://www.endpointpolicymanager.com/webinar/evaluate.html](https://www.endpointpolicymanager.com/webinar/evaluate.html)
+[https://www.policypak.com/webinar/evaluate.html](https://www.policypak.com/webinar/evaluate.html)
 to get the software and try it out for yourself.
 
 ### Perform Desktop Lockdown using Microsoft Intune Video Transcript
@@ -184,3 +184,5 @@ the PolicyPak Design Studio – it's super easy to do. Just go ahead and click o
 "Webinar/Download" button on the right, and we'll hand over the bits and that's it.
 
 Alright, very good. Thanks so much for watching, and we'll talk to you soon.
+
+

@@ -30,8 +30,9 @@ When creating a new filter for **Event Log Manager**, you can select the log nam
 2. Right click on it and select **Log Properties**.
 3. On the **Properties** window, copy **Full Name** of the event log.
 
-![EventViewer - select desired log](images/ka04u000000HcPp_0EM700000005DIQ.png)
+![EventViewer - select desired log](./images/ka04u000000HcPp_0EM700000005DIQ.png)
 
 4. Paste that name to the **Event Log** field of the filter:
 
-![image.png](images/ka04u000000HcPp_0EM4u000007qsVK.png)
+![image.png](./images/ka04u000000HcPp_0EM4u000007qsVK.png)
+

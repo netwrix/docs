@@ -37,7 +37,7 @@ Use the Directory Manager Management Shell in Netwrix Directory Manager to bulk 
 Get-SmartGroup -SearchContainer "Distinguished Name of Organizational Unit" -SmartFilter "(IMSGManagedGroupType=2)" | Set-SmartGroup -ObjectTypes "1","2","3"
 ```
 
-![PowerShell command to update Smart Group object types in Netwrix Directory Manager Management Shell](images/ka0Qk000000EZ5x_0EMQk00000Bu2Dh.png)
+![PowerShell command to update Smart Group object types in Netwrix Directory Manager Management Shell](./images/ka0Qk000000EZ5x_0EMQk00000Bu2Dh.png)
 
 4. This command updates all Smart Groups in the specified OU to include the following object types:
    - Users with Mailboxes

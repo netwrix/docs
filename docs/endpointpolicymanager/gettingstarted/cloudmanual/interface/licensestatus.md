@@ -59,3 +59,5 @@ Below you can see that nine computers have transitioned from consumed to waiting
 waiting for all of those nine computers was due to inactivity, not because of oversubscription.
 
 ![web_interface_and_controls_4_625x326](/images/endpointpolicymanager/cloud/interface/web_interface_and_controls_4_625x326.webp)
+
+

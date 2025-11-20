@@ -31,7 +31,7 @@ Each data source that Netwrix Auditor audits is associated with a license. For e
 
 > **Note:** License usage data does not include any sensitive information. See the following screenshot for an example of what data Netwrix receives:
 
-![User-added image](images/ka04u00000116GR_0EM4u000002PWPR.png)
+![User-added image](./images/ka04u00000116GR_0EM4u000002PWPR.png)
 
 If a Netwrix server in your environment has limited Internet access, whitelist the following URLs so Netwrix can collect license usage data:
 
@@ -41,3 +41,4 @@ http://updates.netwrix.com/
 http://www.netwrix.com/
 https://stats.netwrix.com/
 ```
+

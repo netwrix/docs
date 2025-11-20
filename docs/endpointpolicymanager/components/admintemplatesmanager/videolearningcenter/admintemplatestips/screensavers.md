@@ -9,7 +9,7 @@ Let me guess: You have MOST machines that you want to get standard screensaver s
 machines where you want to BYPASS getting the screensaver. This video will blow your mind. Only with
 Netwrix Endpoint Policy Manager (formerly PolicyPak) !
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zuYhG4hbhb8" title="Endpoint Policy Manager: The Ultimate Guide to Managing Screensavers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zuYhG4hbhb8" title="Endpoint Policy Manager: The Ultimate Guide to Managing Screensavers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: The Ultimate Guide to Managing Screensavers
 
@@ -191,3 +191,5 @@ If you're just getting started with Endpoint Policy Manager and you want to try 
 buzz and we will get you the bits and you can try it out yourself.
 
 Thanks so much.
+
+

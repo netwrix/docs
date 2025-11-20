@@ -100,3 +100,5 @@ Google Chrome:
 ![870_5_image-20220217002324-5](/images/endpointpolicymanager/troubleshooting/browserrouter/chrome/870_5_image-20220217002324-5.webp)
 
 Use this Endpoint Policy Manager Scripts Manager policy to mass deploy for any future issues.
+
+

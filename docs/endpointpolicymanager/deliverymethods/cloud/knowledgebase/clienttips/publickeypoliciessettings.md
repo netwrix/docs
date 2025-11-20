@@ -28,3 +28,5 @@ you export, then deploy using PPCloud or Netwrix Endpoint Policy Manager (former
 Inside the exported XML you can see the certificate embedded like this and ready for use.
 
 ![580_2_q10-img-2](/images/endpointpolicymanager/cloud/security/580_2_q10-img-2.webp)
+
+

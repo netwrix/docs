@@ -19,3 +19,4 @@ You can see that only that component's license is revoked.
 The next time this computer connects, it will stop participating with the specified Endpoint Policy
 Manager Cloud component. The license, however, is immediately recovered and available to the license
 pool for other computers to consume.
+

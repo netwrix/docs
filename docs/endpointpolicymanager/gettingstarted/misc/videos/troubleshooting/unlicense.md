@@ -10,7 +10,7 @@ If directed by Netwrix Endpoint Policy Manager (formerly PolicyPak) support, you
 some computers up to stop processing some directives by actively un-licensing all components, then
 re-enabling SOME components. This video shows you how.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FC2WRAbmx-o" title="Endpoint Policy Manager CSE Troubleshooting: Unlicense all components, and re-license the one to isolate." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FC2WRAbmx-o" title="Endpoint Policy Manager CSE Troubleshooting: Unlicense all components, and re-license the one to isolate." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy. In this video, I'm going to show you how to use the ADMX templates that we have
 to narrow down troubleshooting. If you're watching this video, it probably means that we asked you
@@ -67,3 +67,4 @@ we can just get down and figure out exactly which component it is that's causing
 
 ope this video helps you out. Looking forward to getting you fixed, up and running with PolicyPak
 real soon. Thanks so much.
+

@@ -37,3 +37,6 @@ the downloads will be redirected to another volume or even to a network share.
 Therefore the direct environment variable names such as
 `%{374DE290-123F-4565-9164-39C4925E467B}%`,` %Desktop%, and %Favorites%` are safer to use because
 they expand to the actual path that client-side extension (CSE) gets from the Registry.
+
+
+

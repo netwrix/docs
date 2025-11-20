@@ -31,3 +31,5 @@ Specialized guidance for using Browser Router in Citrix Virtual Apps environment
 ---
 
 *All videos include step-by-step guidance and real-world examples to help you implement Browser Router successfully.*
+
+

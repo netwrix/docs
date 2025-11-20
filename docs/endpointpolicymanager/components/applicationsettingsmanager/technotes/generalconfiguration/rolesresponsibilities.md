@@ -25,3 +25,5 @@ based upon operating system type, the role it plays, and which Endpoint Policy M
 needs to be installed (if any).
 
 ![190_1_2014-09-22_0927](/images/endpointpolicymanager/applicationsettings/190_1_2014-09-22_0927.webp)
+
+

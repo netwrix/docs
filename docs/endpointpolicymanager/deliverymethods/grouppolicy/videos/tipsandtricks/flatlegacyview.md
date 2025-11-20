@@ -7,7 +7,7 @@ sidebar_position: 30
 
 Adjust the view style of the PolicyPak Components in the GPMC to suite your preference.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2XcK6glUK30" title="Expand Modular View of Endpoint Policy Manager Components in the GPMC back to the Flat Legacy View" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2XcK6glUK30" title="Expand Modular View of Endpoint Policy Manager Components in the GPMC back to the Flat Legacy View" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 This is John with PolicyPak. As you go into a policy to create a new one or edit an existing, you'll
 notice with the latest CSEs that we've kind of combined all the different components that make up
@@ -24,3 +24,5 @@ If you wanted to put it back, all you need to do, again, is highlight it, right-
 select Group Snap-Ins. Now it's back to the new way of taking a look at it. When you exit this and
 go back in the next time or any policy, it is right back to where you left it off the last time. I
 hope this answers your question. Thanks for listening.
+
+

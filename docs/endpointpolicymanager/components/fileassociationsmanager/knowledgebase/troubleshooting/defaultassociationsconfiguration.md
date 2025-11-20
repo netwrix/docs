@@ -29,3 +29,5 @@ Associations file for it to work reliably.
 Summary: Use only Endpoint Policy Manager … when using Endpoint Policy Manager Browser Router and
 also Endpoint Policy Manager File Associations Manager and don't try to use a Group Policy or MDM
 File Associations alongside it.
+
+

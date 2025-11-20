@@ -7,11 +7,11 @@ sidebar_position: 20
 # Tabs
 
 Endpoint Policy Manager DesignStudio has six main tabs that help you perform tasks in your project.
-You can see the tabs highlighted in Figure 50.
+You can see the tabs highlighted In the figure shown.
 
 ![getting_around_1](/images/endpointpolicymanager/applicationsettings/designstudio/navigation/tab/getting_around_1.webp)
 
-Figure 50. The DesignStudio tabs.
+The figure shown. The DesignStudio tabs.
 
 Those tabs are:
 
@@ -30,8 +30,11 @@ The Tabs tab enables you to see the overall hierarchy of your project. You will 
 listed in your project and any subdialogs you have within each tab. This is the quickest way to see
 the overall structure of your project and how all the major objects (tabs and subdialogs) relate to
 each other. When you click on a tab inside the Tabs area, the corresponding tab is automatically
-displayed in the main pane for quick navigation (see Figure 51).
+displayed in the main pane for quick navigation (See the figure here).
 
 ![getting_around_2](/images/endpointpolicymanager/applicationsettings/designstudio/navigation/tab/getting_around_2.webp)
 
-Figure 51. Using the Tabs tab for quick navigation.
+The figure shown. Using the Tabs tab for quick navigation.
+
+
+

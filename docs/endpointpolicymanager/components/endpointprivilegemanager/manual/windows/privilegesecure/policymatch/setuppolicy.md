@@ -32,3 +32,6 @@ Back on the Netwrix Privilege Secure server, you need to make sure there is a ma
 Based** policy.
 
 ![setting_up_the_policypak_policy_2](/images/endpointpolicymanager/integration/privilegesecure/credentialbased/setting_up_the_endpointpolicymanager_policy_2.webp)
+
+
+

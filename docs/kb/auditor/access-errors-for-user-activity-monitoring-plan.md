@@ -25,7 +25,7 @@ knowledge_article_id: kA04u00000110zkCAA
 
 ## Symptom
 
-A User Activity (UAVR) monitoring plan generates errors on missing access permissions:
+User Activity (UAVR) monitoring plan generates errors on missing access permissions:
 
 ```text
 Requested registry access is not allowed

@@ -82,3 +82,6 @@ The application phase proceeds in the following order:
 ## Skipping Phase
 
 Any GPOs that are unchanged and any Paks within GPOs that are unchanged are simply skipped.
+
+
+

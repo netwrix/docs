@@ -10,7 +10,7 @@ actually made it to your endpoints. With Netwrix Endpoint Policy Manager (former
 Policy Compliance Reporter, you can be sure that all your machines have your IT Team's desired
 settings, and no holes in your armor.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gG3s9yEYfVc" title="Endpoint Policy Manager Group Policy Compliance Reporter: 2 Minute Quick Overview for Managers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gG3s9yEYfVc" title="Endpoint Policy Manager Group Policy Compliance Reporter: 2 Minute Quick Overview for Managers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager Group Policy Compliance Reporter: 2 Minute Quick Overview for Managers
 
@@ -44,3 +44,4 @@ Snapshot" and "Generate Results."
 
 I know you'll love this tool because it will help you quickly determine which computers are, in
 fact, in compliance and which aren't, based on the tests you selected.
+

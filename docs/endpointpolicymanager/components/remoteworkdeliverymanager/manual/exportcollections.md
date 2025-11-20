@@ -55,3 +55,5 @@ for additional information on how to export policies and use Endpoint Policy Man
 Note that exported collections or policies maintain any Item-Level Targeting set within them. If
 you've used items that represent Group Membership in Active Directory, then those items will only
 function when the machine is domain-joined.
+
+

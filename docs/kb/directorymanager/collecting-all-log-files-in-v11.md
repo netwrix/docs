@@ -46,4 +46,4 @@ Follow the steps below to use the **Logs Download** feature to collect and save 
 5. Click **Download**.
 6. A zipped file containing the logs will be downloaded to your server's Downloads folder.
 
-![Logs Download screen in Directory Manager Admin Center](images/ka0Qk000000DvID_0EMQk00000BSOM1.png)
+![Logs Download screen in Directory Manager Admin Center](./images/ka0Qk000000DvID_0EMQk00000BSOM1.png)

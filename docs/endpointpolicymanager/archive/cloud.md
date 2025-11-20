@@ -10,7 +10,7 @@ Microsoft MVP Jeremy Moskowitz and Shane from Admin Arsenal show how you can dep
 settings to domain joined or non-domain joined machines through the cloud with Netwrix Endpoint
 Policy Manager (formerly PolicyPak) Cloud.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dUtt2cD4AWw?si=YPFMGIUjZR459WkR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dUtt2cD4AWw?si=YPFMGIUjZR459WkR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Deliver Group Policy to Domain Joined and non-Domain Joined machines thru the Cloud
 
@@ -225,9 +225,10 @@ Jeremy:Yep. We live to serve. We love this feature. It's great for MSP's and gre
 and roaming people.
 
 Shane: That's fantastic. Hey,
-[https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/](https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/)
+[https://policypak.com/resources/thank-you-whitepapers/](https://policypak.com/resources/thank-you-whitepapers/)
 Jeremy.
 
 Jeremy:Thank you man. Appreciate it.
 
 Shane: Alright. Rock on everybody. Thanks.
+

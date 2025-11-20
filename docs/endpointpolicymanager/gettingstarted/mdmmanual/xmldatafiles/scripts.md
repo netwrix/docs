@@ -18,3 +18,4 @@ Alternatively, you can export a whole collection, as shown in Figure 27, by righ
 ![deploying_policypak_directives_27](/images/endpointpolicymanager/mdm/xmldatafiles/deploying_endpointpolicymanager_directives_27.webp)
 
 Figure 27. Exporting a whole collection using Endpoint Policy Manager Scripts Manager.
+

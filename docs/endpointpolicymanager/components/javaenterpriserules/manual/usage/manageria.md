@@ -119,3 +119,5 @@ when you paste it into the Endpoint Policy Manager Java Rules Manager MMC snap i
 automatically stripped.
 
 ![using_policypak_java_rules_6](/images/endpointpolicymanager/javaenterpriserules/using_endpointpolicymanager_java_rules_6.webp)
+
+

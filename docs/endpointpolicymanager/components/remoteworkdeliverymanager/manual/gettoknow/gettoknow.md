@@ -26,3 +26,5 @@ The functions of collections and policies are as follows:
 
 Both collections and policies may have Item-Level Targeting (explained in more detail later), which
 enables you to target policies based on criteria that you specify.
+
+

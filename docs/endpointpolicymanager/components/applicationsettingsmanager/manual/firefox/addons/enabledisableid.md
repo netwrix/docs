@@ -14,3 +14,6 @@ readable@evernote.com, enable
 {47c11ff1-bbce-4481-83be-54e0c0adfda7}, disable
 In the next section, we will give you some tips on how to find the GUID or friendly name of your extensions.
 ```
+
+
+

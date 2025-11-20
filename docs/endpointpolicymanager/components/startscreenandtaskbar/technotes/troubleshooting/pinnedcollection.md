@@ -17,3 +17,5 @@ see how to do it in the second screenshot.
 ![623_1_faq-07-img-01](/images/endpointpolicymanager/troubleshooting/startscreentaskbar/623_1_faq-07-img-01.webp)
 
 ![623_2_faq-07-img-02](/images/endpointpolicymanager/troubleshooting/startscreentaskbar/623_2_faq-07-img-02.webp)
+
+

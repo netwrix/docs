@@ -34,7 +34,7 @@ Step 2 – On the Identity Stores page, click the ellipsis button for an identit
 
 Step 3 – Click **Schedules** under Settings in the left pane.
 
-Step 4 – On the Schedules page, click **Add Schedule** and select **Group Life Cycle Job**.  
+Step 4 – On the Schedules page, click **Add Schedule** and select **Group Life Cycle Job**.
 The Create Schedule page is displayed.
 
 Step 5 – In the Schedule Name box, enter a name for the schedule.
@@ -90,6 +90,10 @@ the schedule in the identity store. Follow step 12 in the
 [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
 topic for additional information.
 
+:::important Password Re-insertion Required
+Due to security enhancements, when editing a schedule, you must re-enter the account password in the Authentication section, even if you are not changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
+:::
+
 Step 12 – To set notifications for the schedule, click **Notifications**.
 
 1. On the Notifications dialog box, select the **Send group life extension notification** check box
@@ -102,7 +106,7 @@ Step 12 – To set notifications for the schedule, click **Notifications**.
 
 Step 13 – On the Create Schedule page, click **Create Schedule**.
 
-Step 14 – On the Schedules page, click **Save**.  
+Step 14 – On the Schedules page, click **Save**.
 The schedule is displayed under Group Life Cycle. See the
 [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store) topic
 for additional information.

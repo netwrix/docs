@@ -8,7 +8,7 @@ sidebar_position: 10
 Don't provide TOO MANY rights with PP Least Priv manager. This video goes over some best practices
 on what to do and what NOT to do with PPLPM and user-self installs with MSIs and EXEs.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6Mhggaly8Z8?si=N5ckfWG5sK6QDags" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6Mhggaly8Z8?si=N5ckfWG5sK6QDags" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PPLPM: Best Practices for Elevating User-Based Installs
 
@@ -79,7 +79,7 @@ it updated themselves. Does that make sense? As long as it's iTunesSetup signed 
 
 So "itunes setup installed by apple," now we're getting somewhere. This is the least rule possible
 in order to make it
-happen, [Least Privilege Manager](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html).
+happen, [Least Privilege Manager](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html).
 Okay, we'll go ahead and close that out and then we'll go ahead and try "iTunes" and see if it all
 matched up and all worked. Ten seconds ago, we got a UAC prompt. No more UAC prompt. It continues
 onward.
@@ -206,3 +206,5 @@ elevated, not just the installers for the actual applications themselves.
 I hope this clears up some things and helps you get started doing best practice with Least Privilege
 Manager.  
 Thanks so much.
+
+

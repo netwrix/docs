@@ -31,32 +31,32 @@ Netwrix Directory Manager, however, requires the **displayName** attribute becau
 
 This article describes a workaround that allows you to save changes to these groups by making the **displayName** attribute optional in the portal design.
 
-![Error message displayed in Self-Service Portal when displayName is missing](images/ka0Qk000000DvbZ_0EMQk00000BSYlB.png) ![Error details dialog showing missing displayName attribute](images/ka0Qk000000DvbZ_0EMQk00000BSWjO.png)
+![Error message displayed in Self-Service Portal when displayName is missing](./images/ka0Qk000000DvbZ_0EMQk00000BSYlB.png) ![Error details dialog showing missing displayName attribute](./images/ka0Qk000000DvbZ_0EMQk00000BSWjO.png)
 
 ## Instructions
 1. In the Netwrix Directory Manager Admin Center, go to the **Applications** tab. Open the settings for the application where you want to remove the **displayName** requirement by clicking the **Settings** button (top right corner of the application card).
    
-   ![Open application settings in Directory Manager Admin Center](images/ka0Qk000000DvbZ_0EMQk00000BSYmn.png)
+   ![Open application settings in Directory Manager Admin Center](./images/ka0Qk000000DvbZ_0EMQk00000BSYmn.png)
 
 2. Under **Design Settings**, click the domain name.
    
-   ![Select domain under Design Settings](images/ka0Qk000000DvbZ_0EMQk00000BSYoP.png)
+   ![Select domain under Design Settings](./images/ka0Qk000000DvbZ_0EMQk00000BSYoP.png)
 
 3. Go to the **Properties** tab and set the **Directory Object** to **Groups**.
    
-   ![Set Directory Object to Groups](images/ka0Qk000000DvbZ_0EMQk00000BSYq1.png)
+   ![Set Directory Object to Groups](./images/ka0Qk000000DvbZ_0EMQk00000BSYq1.png)
 
 4. Edit the **General** field by clicking the pencil icon.
    
-   ![Edit General field](images/ka0Qk000000DvbZ_0EMQk00000BSYrd.png)
+   ![Edit General field](./images/ka0Qk000000DvbZ_0EMQk00000BSYrd.png)
 
 5. Edit the **DisplayName** field by clicking the pencil icon in the Design category window.
    
-   ![Edit DisplayName field](images/ka0Qk000000DvbZ_0EMQk00000BSYtF.png)
+   ![Edit DisplayName field](./images/ka0Qk000000DvbZ_0EMQk00000BSYtF.png)
 
 6. Expand **Advanced Options** and uncheck the **Is Required** box.
    
-   ![Uncheck Is Required for DisplayName](images/ka0Qk000000DvbZ_0EMQk00000BSYwT.png)
+   ![Uncheck Is Required for DisplayName](./images/ka0Qk000000DvbZ_0EMQk00000BSYwT.png)
 
 7. Click all **OK** buttons to save your changes, then log in to your portal. You should now be able to save changes to a group even if the **displayName** attribute is not populated.
 

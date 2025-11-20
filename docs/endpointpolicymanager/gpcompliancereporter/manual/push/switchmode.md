@@ -24,3 +24,4 @@ Troubleshooting."
 ![gpcr_server_with_push_mode_5](/images/endpointpolicymanager/grouppolicycompliancereporter/mode/push/gpcr_server_with_push_mode_5.webp)
 
 Figure 41. The server connection error.
+

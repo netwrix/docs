@@ -26,3 +26,5 @@ If you need to troubleshoot switched mode, all switched mode log files will appe
 - `ppSwitched_onSchedule.log`: For when directives are re-delivered using the Endpoint Policy
   Manager timer mechanism (which is off by default. See the section Automatic Re-Application of
   settings with the Reinforcement Timer for details on how to use the timer.)
+
+

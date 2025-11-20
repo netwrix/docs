@@ -43,3 +43,4 @@ This is the final result in VMware Workspace ONE:
 
 **Step 4 –** As a test, on an example client, perform your MDM enrollment to your VMware Workspace
 ONE service.
+

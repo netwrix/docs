@@ -30,7 +30,7 @@ This article explains how to disable the server header in Netwrix Access Analyze
 > **NOTE:** Banner grabbing is the process of capturing banner information, such as application type and version, that is transmitted by a remote port when a connection is initiated. For more information, see Banner Grabbing ⸱ NIST 🔗  
 > https://csrc.nist.gov/glossary/term/banner_grabbing
 >
-> ![Screenshot showing server information revealed through banner grabbing](images/ka0Qk000000E74r_0EMQk00000Brg4P.png)
+> ![Screenshot showing server information revealed through banner grabbing](./images/ka0Qk000000E74r_0EMQk00000Brg4P.png)
 
 ## Instructions
 
@@ -42,11 +42,11 @@ Follow these steps to disable the server header in Netwrix Access Analyzer:
 3. Set the value to:
    `DWORD: 000002`
    
-   ![Registry editor showing disabled server header](images/ka0Qk000000E74r_0EMQk00000CHuq5.png)
+   ![Registry editor showing disabled server header](./images/ka0Qk000000E74r_0EMQk00000CHuq5.png)
 4. Reboot the server to apply the changes.
 5. After the reboot, the result should resemble the Edge example below, in which the Server node is no longer listed.
 
-![Screenshot showing browser developer tools with no server header information displayed](images/ka0Qk000000E74r_0EMQk00000BrSj0.png)
+![Screenshot showing browser developer tools with no server header information displayed](./images/ka0Qk000000E74r_0EMQk00000BrSj0.png)
 
 > **IMPORTANT:** Modifications to this registry setting may occur due to the following reasons:
 > - Netwrix Access Analyzer and Netwrix Access Information Center do not modify this setting during patching.

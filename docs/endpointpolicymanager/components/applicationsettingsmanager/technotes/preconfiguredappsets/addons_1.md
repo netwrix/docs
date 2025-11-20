@@ -9,3 +9,5 @@ sidebar_position: 320
 Yes. Here is a videos to demonstrate that.
 
 [Manage IE Programs Tab](/docs/endpointpolicymanager/components/applicationsettingsmanager/videos/internetexplorer/programstab.md)
+
+

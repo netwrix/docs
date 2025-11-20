@@ -8,7 +8,7 @@ sidebar_position: 20
 
 If asked by support, you might want to unlicense a specific component. This video shows you how.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UKrfo8KCOlg" title="Endpoint Policy Manager: Unlicensing a Component" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UKrfo8KCOlg" title="Endpoint Policy Manager: Unlicensing a Component" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video we're going to talk about how to unlicensed one
 component, if asked by tech support. The idea is that if you were to go to an endpoint and type PP
@@ -75,3 +75,4 @@ There's two different methods to get unlicensed, which you kind of need to know 
 need to. Typically you would only need to do this if asked. If there's something that you want to do
 this for, you can let us know and we can talk through it. I hope this video helps you out. Looking
 forward to getting you started with PolicyPak real soon. Bye.
+

@@ -18,3 +18,5 @@ Each log occurs when different policy triggering events occur. Special log is
 ppComputer_Operational.log which explains what's happening in real-time on the machine.
 
 ![logging1](/images/endpointpolicymanager/device/devicemanager/logging1.webp)
+
+

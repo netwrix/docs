@@ -20,3 +20,5 @@ achieve File Associations goals. Remove any in-box Group Policy settings, etc, w
 to set File Associations and use only Endpoint Policy Manager to do it.
 
 ![660_1_faq4-img1](/images/endpointpolicymanager/fileassociations/660_1_faq4-img1.webp)
+
+

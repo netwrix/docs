@@ -13,3 +13,4 @@ requires the specified port to be open. By installing Endpoint Policy Manager GP
 ![gpcr_server_with_push_mode_14](/images/endpointpolicymanager/grouppolicycompliancereporter/mode/push/setup/gpcr_server_with_push_mode_14.webp)
 
 Figure 50. Specifing the PolicyPak GPCR server name and port.
+

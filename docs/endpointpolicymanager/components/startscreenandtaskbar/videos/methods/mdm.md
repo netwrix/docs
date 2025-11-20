@@ -9,7 +9,7 @@ The Windows 10 Start Menu is a beast to configure, and once configured, it's not
 Instead of leaving the Start Menu to users, YOU be in charge. See this video to get the basics down
 in minutes, then deploy your settings using the MDM service of your choice!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2PJdBeDKdFg" title="Endpoint Policy Manager MDM: Manage the Windows 10 Start Screen Like a Boss" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2PJdBeDKdFg" title="Endpoint Policy Manager MDM: Manage the Windows 10 Start Screen Like a Boss" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak MDM: Manage the Windows 10 Start Screen Like a Boss
 
@@ -119,7 +119,7 @@ Start Screen. There we go. We have the "Important Apps" just like we directed.
 
 If I click on any of these, it takes me just exactly where it's supposed to. The "Calculator" works.
 "Adobe Acrobat Reader DC" opens right up. If I go to the Edge tile, then we'll go to
-"www.endpointpolicymanager.com." So they all are there and they all work.
+"www.policypak.com." So they all are there and they all work.
 
 Now notice that there are still the original groups still there and the original pins. That is
 because when we created the collection, we chose the PARTIAL (PRESERVE) option. That is why we
@@ -136,3 +136,5 @@ So there we are. If that's interesting for you, then let us know. We'll be happy
 with a free trial right away.
 
 Look forward to seeing you in the next video. Thanks.
+
+

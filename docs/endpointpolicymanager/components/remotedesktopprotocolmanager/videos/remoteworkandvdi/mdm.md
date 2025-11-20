@@ -11,4 +11,6 @@ up to date if a user changes it. Welcome Endpoint Policy Manager RDP Manager. En
 Manager RDP manager enables you to deliver .RDP files and dictate connections as YOU want them
 defined. Don't leave it up to end users-- you set it for them!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/c7ujEZWtpA8?si=0ZUWnUyhj7eLXjgV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/c7ujEZWtpA8?si=0ZUWnUyhj7eLXjgV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+

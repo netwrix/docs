@@ -45,3 +45,6 @@ user account should be members. This is achieved by clicking the **Add** button 
 
 Once the policy is deployed, you will have removed all non-privileged users from the local admins
 group of all targeted desktops.
+
+
+

@@ -67,3 +67,5 @@ The Start Screen icon policy you created can be seen in Figure 22.
 
 Figure 22. The Endpoint Policy Manager Start Screen Manager policy is contained within the
 collection.
+
+

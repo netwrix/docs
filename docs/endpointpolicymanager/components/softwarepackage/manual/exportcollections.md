@@ -21,3 +21,5 @@ Remember that Endpoint Policy Manager RDP policies can be created and exported o
 Computer side. For instance, below you can see an item being exported from the Computer side.
 
 ![exporting_collections_1](/images/endpointpolicymanager/softwarepackage/exporting_collections_1.webp)
+
+

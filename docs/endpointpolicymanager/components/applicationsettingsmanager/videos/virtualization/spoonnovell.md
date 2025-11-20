@@ -28,7 +28,7 @@ Application Virtualization customers.)
 What you'll see is how to dynamically manage and lock down your virtualized applications using Group
 Policy and Netwrix Endpoint Policy Manager (formerly PolicyPak):
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p8ismZANLqc?si=IgQK06roMSdj-xRi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p8ismZANLqc?si=IgQK06roMSdj-xRi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 So, neither Spoon.Net nor Novell ZENworks Application Virtualization can redeploy, adjust, lockdown
 or guarantee application or operating system settings.
@@ -55,7 +55,7 @@ When you're ready to manage your Spoon or Novell ZENworks Application Virtualiza
 Endpoint Policy Manager is here for you.
 
 Click on Webinar
-([https://www.endpointpolicymanager.com/integration/webinar](https://www.endpointpolicymanager.com/integration/webinar)) to
+([https://www.policypak.com/integration/webinar](https://www.policypak.com/integration/webinar)) to
 get the software and try it out for yourself.
 
 ### Endpoint Policy Manager extends Group Policy to Spoon / Novell ZENworks App Virtualization video transcript
@@ -112,7 +112,7 @@ If we go to "Updater," let's go ahead and "Do not download or install updates au
 again, we'll "Disable corresponding control in target application."
 
 While I'm also here, let me go to "PolicyPak for Mozilla Firefox" and let's take a look at this.
-Let's go ahead and set our Firefox settings to "www.endpointpolicymanager.com" and also ensure that our
+Let's go ahead and set our Firefox settings to "www.policypak.com" and also ensure that our
 "Security" settings are always set.
 
 Once we've done that, let's go back over to the target machine. Let's run "gpupdate,"or we could
@@ -133,7 +133,7 @@ setting and also grayed it out. If we go to "Updater," we've delivered "Do not d
 updates automatically"and also grayed it out.
 
 Let's head over to "Firefox with Spoon (PolicyPak)." If we go to "Options," you can see the
-"Security" settings are all set and our "www.endpointpolicymanager.com" is delivered as the "Home Page."If we
+"Security" settings are all set and our "www.policypak.com" is delivered as the "Home Page."If we
 make this "www.abc.com" or something we shouldn't do and close this out and rerun the application,
 as soon as we rerun the application our settings are redelivered and re-guaranteed.
 
@@ -179,3 +179,5 @@ If you are ready to get started and you want to test this all out yourself, we a
 the PPSpoonShim DLL to any customer or prospect who asks.
 
 Thanks so much, and we'll look forward to talking to you soon. Thanks.
+
+

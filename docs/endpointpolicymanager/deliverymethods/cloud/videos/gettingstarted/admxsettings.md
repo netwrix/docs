@@ -5,7 +5,7 @@ sidebar_position: 60
 ---
 # Endpoint Policy ManagerCloud: Use in-cloud ADMX settings maintained by Endpoint Policy Manager for Windows, Office, Chrome and more
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Q45U2NFY20I" title="Endpoint Policy Manager Cloud: Use Endpoint Policy Manager Cloud to make ANY ADMX policy setting !" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q45U2NFY20I" title="Endpoint Policy Manager Cloud: Use Endpoint Policy Manager Cloud to make ANY ADMX policy setting !" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Amazing new breakthrough with Netwrix Endpoint Policy Manager (formerly PolicyPak) Cloud. Just CLICK
 your way to creating any ADMX setting for Windows or Office. Takes about 10 seconds to make your
@@ -83,3 +83,5 @@ With that in mind, have fun using this amazing new functionality of being able t
 new Policy," and then you'll be able to see new policy types pop in, in the near future.
 
 Thank you very much. Talk to you soon.
+
+

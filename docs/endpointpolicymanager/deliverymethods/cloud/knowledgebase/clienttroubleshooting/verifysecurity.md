@@ -30,3 +30,5 @@ Please follow the following steps
 **Step 5 –** After join, change timezone to your correct timezone.
 
 **Step 6 –** Verify PPcloud still works with commandline: `ppcloud /sync`
+
+

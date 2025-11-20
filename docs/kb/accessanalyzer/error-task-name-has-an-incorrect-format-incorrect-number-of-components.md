@@ -27,7 +27,7 @@ knowledge_article_id: kA0Qk0000002gRNKAY
 
 When selecting **Schedules** or any **Job**, the following pop-up task format error message appears:
 
-![Pop-up error message](images/ka0Qk000000Ea0P_0EMQk00000DDGST.png)
+![Pop-up error message](./images/ka0Qk000000Ea0P_0EMQk00000DDGST.png)
 
 ## Cause
 

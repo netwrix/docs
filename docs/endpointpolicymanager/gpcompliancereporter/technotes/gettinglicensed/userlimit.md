@@ -10,3 +10,4 @@ Unlimited Administrators may use the Netwrix Endpoint Policy Manager (formerly P
 Policy Compliance Reporter console.
 
 You only pay for endpoints to report data.
+

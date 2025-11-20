@@ -43,3 +43,4 @@ To add additional targets, simply add another Registry Match option for CurrentB
 specify the additional value and change the separator option from AND to OR.
 
 ![803_5_image-20230207212701-6](/images/endpointpolicymanager/itemleveltargeting/803_5_image-20230207212701-6.webp)
+

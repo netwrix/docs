@@ -9,7 +9,7 @@ Your users have a ton of (evil?) extensions in Firefox. How did they get there? 
 you have some you want them to have, but don't know how to get rid of the junk they put there. Check
 out this video to see how to add or remove Firefox extensions using URLs, Flies, or over HTTPS.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0vyJ6SUSKFs?si=CZ7VuXRkS87eFWsJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0vyJ6SUSKFs?si=CZ7VuXRkS87eFWsJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Force Installing Extensions using Group Policy
 
@@ -135,3 +135,5 @@ add-ons and extensions and enable them or disable them.
 This is everything you probably ever need to do with regards to Firefox "Add-Ons: Extensions,
 Appearance, Plugins and Services." I hope this helps you out. I'm looking forward to getting you
 started real soon. Thanks so much.
+
+

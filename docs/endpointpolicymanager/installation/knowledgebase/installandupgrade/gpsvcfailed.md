@@ -22,3 +22,4 @@ There is more information at the Microsoft website:
 [https://support.microsoft.com/en-us/help/2976660/first-logon-fails-with-the-universal-unique-identifier-uuid-type-is-no](https://support.microsoft.com/en-us/help/2976660/first-logon-fails-with-the-universal-unique-identifier-uuid-type-is-no)
 
 ![20_1_sdgdfhfgnfjfghjfghjfghjfghj](/images/endpointpolicymanager/troubleshooting/error/20_1_sdgdfhfgnfjfghjfghjfghjfghj.webp)
+

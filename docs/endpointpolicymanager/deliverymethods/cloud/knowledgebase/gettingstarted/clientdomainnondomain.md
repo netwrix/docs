@@ -11,3 +11,5 @@ Windows machines: non-domain joined and domain joined. That being said, the oppo
 You cannot install the on-prem CSE and have it connect to the cloud service. You need the cloud
 client to claim a cloud license, and that can be used for either/both Domain Joined and non-DJ
 machines.
+
+

@@ -44,31 +44,31 @@ Endpoint Policy Manager DesignStudio.
 
 ![policypak_application_settings_5](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_5.webp)
 
-Figure 6. The PuTTY interface.
+The figure shown. The PuTTY interface.
 
 **Step 5 –** Click on the various setting categories to get a feel for the settings contained within
 PuTTY. Leave the PuTTY application open as you proceed to run the Endpoint Policy Manager
 DesignStudio tool. Run` PolicyPak DesignStudio` by clicking
 `Start|PolicyPak|PolicyPak Design Studio`. When you do, the Endpoint Policy Manager Design Studio
-Wizard will run, as shown in Figure 7. Choose to start a new project using the Capture Wizard. Then
+Wizard will run, as shown In the figure shown. Choose to start a new project using the Capture Wizard. Then
 click "Next."
 
 ![policypak_application_settings_6](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_6.webp)
 
-Figure 7. The Endpoint Policy Manager Design Studio Wizard.
+The figure shown. The Endpoint Policy Manager Design Studio Wizard.
 
 **Step 6 –** You will now see a list of all the processes that are running and might have a UI for
-the Endpoint Policy Manager Capture Wizard to capture, as shown in Figure 8. In the top pane
+the Endpoint Policy Manager Capture Wizard to capture, as shown In the figure shown. In the top pane
 (Processes), select "PuTTY Configuration [```putty.exe```]." You will then see "PuTTY Configuration"
 in the bottom pane (Windows).
 
 ![policypak_application_settings_7](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_7.webp)
 
-Figure 8. Selecting "PuTTY Configuration" from the list of running processes.
+The figure shown. Selecting "PuTTY Configuration" from the list of running processes.
 
 **Step 7 –** Once PuTTY is selected, click "Next." You'll then be prompted to name your project and
 define what type of project it is. Keep the project type to the default value of "Registry," as
-shown in Figure 9. Endpoint Policy Manager Application Settings Manager can deliver settings to
+shown In the figure shown. Endpoint Policy Manager Application Settings Manager can deliver settings to
 applications that store data inside the registry or in `.ini` files, `.js` files (Firefox-style
 files), Mozilla-specific config files (also `.js` files), `.xml` files, .preferences files (Java
 config file types), `.xcu` files (`OpenOffice/LibreOffice config files`), and `.rdp` files (remote
@@ -77,7 +77,7 @@ stored.
 
 ![policypak_application_settings_8](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_8.webp)
 
-Figure 9. Selecting "Registry" as the project type.
+The figure shown. Selecting "Registry" as the project type.
 
 :::note
 Your version of DesignStudio might support more file types than this one since
@@ -85,14 +85,14 @@ DesignStudio is always being updated.
 :::
 
 
-**Step 8 –** Next, you'll specify the data root for your project, as shown in Figure 10. The data
+**Step 8 –** Next, you'll specify the data root for your project, as shown In the figure shown. The data
 root is the topmost location where your application, in this case PuTTY, stores the majority of its
 settings. Select "Simon Tatham," which is located in `HKEY_Current_USER\Software`. Then click
 "Finish."
 
 ![policypak_application_settings_9](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_9.webp)
 
-Figure 10. Selecting "Simon Tatham" as the data root.
+The figure shown. Selecting "Simon Tatham" as the data root.
 
 :::note
 Finding the data root for your project can take some amount of trial and error. Most
@@ -103,7 +103,7 @@ store their data.
 
 
 **Step 9 –** At this point, the Endpoint Policy Manager Capture Wizard will bring the first tab of
-settings into DesignStudio, as shown in Figure 11. While there are no tabs within the PuTTY
+settings into DesignStudio, as shown In the figure shown. While there are no tabs within the PuTTY
 interface, the term tab refers to the current category of visible settings. Each time you capture a
 new category of settings, a new tab will be created. Note that Endpoint Policy Manager DesignStudio
 will usually bring in all the existing defaults for your application. For instance, Endpoint Policy
@@ -113,41 +113,41 @@ everything now, we'll focus on what's most important during your project creatio
 
 ![policypak_application_settings_10](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_10.webp)
 
-Figure 11. The first tab of captured settings.
+The figure shown. The first tab of captured settings.
 
 **Step 10 –** In the next step, you'll add a new tab by clicking on the "Add a new tab" icon at the
-upper left corner of the Tabs tab, as indicated by the arrow in Figure 12. When you do, you'll be
+upper left corner of the Tabs tab, as indicated by the arrow In the figure shown. When you do, you'll be
 prompted for another tab in PuTTY. Select the next setting category, which in this case is Logging.
 Once the tab is selected in the application, return to the Endpoint Policy Manager DesignStudio
 tool. When you do, the tab will be captured automatically. Click "OK" to capture the active tab.
 
 ![policypak_application_settings_11](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_11.webp)
 
-Figure 12. Capturing another tab of settings.
+The figure shown. Capturing another tab of settings.
 
 **Step 11 –** Sometimes, as in the case of PuTTY, you will be asked to if you want to supply a new
-name for the captured tab, as shown in Figure 13. Click "Yes," and give the tab the same name as its
+name for the captured tab, as shown In the figure shown. Click "Yes," and give the tab the same name as its
 category.
 
 ![policypak_application_settings_12](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_12.webp)
 
-Figure 13. Applying a new name for the captured tab.
+The figure shown. Applying a new name for the captured tab.
 
 **Step 12 –** The new tab will be brought into the Endpoint Policy Manager Capture Wizard, as shown
-in Figure 14. Note the tab hierarchy listed on the right side of the screen.
+In the figure shown. Note the tab hierarchy listed on the right side of the screen.
 
 ![policypak_application_settings_13](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_13.webp)
 
-Figure 14. The new Logging tab.
+The figure shown. The new Logging tab.
 
-**Step 13 –** For this Quickstart, we will also capture the Keyboard tab as shown in Figure 15.
+**Step 13 –** For this Quickstart, we will also capture the Keyboard tab as shown In the figure shown.
 Follow the same procedure you did for the Logging tab. Also, note the arrow in the figure that is
 pointing to text that has been cut off. This is because the capture process doesn't always process
 cleanly. One option to fix this is to delete the tab and recapture it.
 
 ![policypak_application_settings_14](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_14.webp)
 
-Figure 15. The Keyboard tab.
+The figure shown. The Keyboard tab.
 
 **Step 14 –** If you click around the tab, you will notice that it is split into segmented blocks.
 Figure 16 shows a block of settings that are grouped together. As you can see, the block is covering
@@ -155,7 +155,7 @@ up the text behind it.
 
 ![policypak_application_settings_15](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_15.webp)
 
-Figure 16. Settings grouped together that are blocking the text behind them.
+The figure shown. Settings grouped together that are blocking the text behind them.
 
 In this example, we have solved this problem by highlighting the block segment that contains the
 obstructed text and deleting it. Figure 17 shows the final result. You can add text and other types
@@ -164,14 +164,14 @@ menu.
 
 ![policypak_application_settings_16](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_16.webp)
 
-Figure 17. Using the DesignStudio menu.
+The figure shown. Using the DesignStudio menu.
 
 **Step 15 –** You can capture tabs in any order and reorder them using the up and down arrows in
-DesignStudio, as shown in Figure 18.
+DesignStudio, as shown In the figure shown.
 
 ![policypak_application_settings_17](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_17.webp)
 
-Figure 18. Reordering the tabs.
+The figure shown. Reordering the tabs.
 
 :::note
 The Endpoint Policy Manager Capture Wizard isn't perfect. There are some UI elements that
@@ -186,11 +186,11 @@ When complete, your capture should have tabs such as PuTTY Configuration, Loggin
 of each checkbox, dropdown, radio button, slider, or other element in your project. To get started,
 we'll work with the initial PuTTY Configuration tab settings. Let's begin with the most common PuTTY
 setting which is the "Host Name (or IP address)" field. Right-click and select "Configuration
-Wizard…," as shown in Figure 19.
+Wizard…," as shown In the figure shown.
 
 ![policypak_application_settings_18](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_18.webp)
 
-Figure 19. Opening the Configuration Wizard.
+The figure shown. Opening the Configuration Wizard.
 
 **Step 17 –** Each element may be independently configured. To help you understand how an element
 acts when it is configured, the system has created a wizard that helps guide you through the
@@ -201,7 +201,7 @@ automatically chosen registry as the place you want your registry items stored.
 
 ![policypak_application_settings_19](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_19.webp)
 
-Figure 20. Items will be stored in the Windows registry.
+The figure shown. Items will be stored in the Windows registry.
 
 **Step 18 –** You can see that the wizard already knows the location that you previously selected
 for the storage of PuTTY's registry items (Simon Tatham). Often times, settings may congregate
@@ -211,72 +211,72 @@ element. In this case, we have selected the PuTTY subkey.
 
 ![policypak_application_settings_20](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_20.webp)
 
-Figure 21. Choosing the PuTTY subkey.
+The figure shown. Choosing the PuTTY subkey.
 
 :::note
 If you made a mistake earlier and selected the wrong data root, you can change it in the
 Registry Key Selection window. Once there, select "Set this location as Default Data Root," as shown
-in Figure 20.
+In the figure shown.
 :::
 
 
 **Step 19 –** Note that the current state of the Host Name (IP address) in PuTTY is blank. In
 Endpoint Policy Manager DesignStudio, ensure that the field is blank to begin with. This will help
 the DesignStudio know what the current state is before moving to the next step. The wizard will
-prompt you to change the value at this point, as displayed in Figure 22.
+prompt you to change the value at this point, as displayed In the figure shown.
 
 ![policypak_application_settings_21](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_21.webp)
 
-Figure 22. Changing the Host Name setting.
+The figure shown. Changing the Host Name setting.
 
 **Step 20 –** In order for the settings to be stored within the registry, you must first save your
 changes. Type in 192.168.50.101 as the IP address. Then, click the "Save" button and create a name
-for the saved session. In Figure 23, we chose "Design Studio Capture" as the name. Now click "Save"
+for the saved session. In the figure shown, we chose "Design Studio Capture" as the name. Now click "Save"
 again.
 
 ![policypak_application_settings_22](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_22.webp)
 
-Figure 23. Saving your session changes to preserve them within the registry.
+The figure shown. Saving your session changes to preserve them within the registry.
 
-**Step 21 –** In Figure 24, you can see what DesignStudio has learned about the new value. Note that
+**Step 21 –** In the figure shown, you can see what DesignStudio has learned about the new value. Note that
 in the capture, the port setting was also captured as it underwent a change as well. In this case,
 we want to work with the HostName setting. Click the radio button next to HostName to select it, and
 click "Next."
 
 ![policypak_application_settings_23](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_23.webp)
 
-Figure 24. Selecting the HostName setting.
+The figure shown. Selecting the HostName setting.
 
 **Step 22 –** You must then choose a default value for the HostName setting. We want the default
-value to be blank so delete the embedded value and click "Next," as shown in Figure 25. The next
+value to be blank so delete the embedded value and click "Next," as shown In the figure shown. The next
 screen will prompt you for a revert value and you will do the same thing on that screen as well.
 
 ![policypak_application_settings_24](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_24.webp)
 
-Figure 25. Deleting the text in the HostName field.
+The figure shown. Deleting the text in the HostName field.
 
 **Step 23 –** The last step is to choose the linked label for any GPMC reports you may run for the
-PuTTY application, as shown in Figure 26. Then, click "Next."
+PuTTY application, as shown In the figure shown. Then, click "Next."
 
 ![policypak_application_settings_25](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_25.webp)
 
-Figure 26. Choosing the linked label.
+The figure shown. Choosing the linked label.
 
 **Step 24 –** You have now completed your first setting capture using Endpoint Policy Manager
 DesignStudio. Figure 27 shows the congratulatory screen that you should see when you are finished.
 
 ![policypak_application_settings_26](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_26.webp)
 
-Figure 27. The completion of the Configuration Wizard process.
+The figure shown. The completion of the Configuration Wizard process.
 
 **Step 25 –** Now we'll move on to some other elements. We will illustrate the process for capturing
 a check element. For this example, we will capture the "Omit known password fields" setting. Note
 that this setting is checked by default. Right-click on the element, and select "Configuration
-Wizard," as shown in Figure 28.
+Wizard," as shown In the figure shown.
 
 ![policypak_application_settings_27](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_27.webp)
 
-Figure 28. Capturing the "Omit known password fields" setting.
+The figure shown. Capturing the "Omit known password fields" setting.
 
 **Step 26 –** We won't recap all of the steps in the wizard. However, Figure 29 shows the current
 checkbox state for the setting in the "Indicating the Current Checkbox State" step of the wizard.
@@ -284,7 +284,7 @@ After selecting this, click "Next."
 
 ![policypak_application_settings_28](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_28.webp)
 
-Figure 29. Verifying the checkbox state.
+The figure shown. Verifying the checkbox state.
 
 **Step 27 –** Now the wizard will prompt you to return to PuTTY and uncheck the setting (see Figure
 30). Remember that you have to save your session as you did previously in order to save the change
@@ -292,19 +292,19 @@ you made.
 
 ![policypak_application_settings_29](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_29.webp)
 
-Figure 30. Returning to PuTTY to uncheck the setting.
+The figure shown. Returning to PuTTY to uncheck the setting.
 
 **Step 28 –** The process is now complete as DesignStudio has discovered the associated registry
 values for the checked and unchecked states. When the checkbox is checked the SSHLogOmitPasswords
 registry value is set to 1. When the checkbox is unchecked, the SSHLogOmitPasswords registry value
-is set to 0, as shown in Figure 31.
+is set to 0, as shown In the figure shown.
 
 ![policypak_application_settings_30](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_30.webp)
 
-Figure 31. The SSHLogOmitPasswords registry values have been discovered.
+The figure shown. The SSHLogOmitPasswords registry values have been discovered.
 
 :::note
-If you don't see the result shown in Figure 30, but instead get an error, it's possible
+If you don't see the result shown In the figure shown, but instead get an error, it's possible
 that you didn't select the right default data root, or you didn't click "OK" in WinZip. Either way,
 DesignStudio needs to be able to see where the changes occurred. Try changing the default data root,
 as specified earlier, or try clicking "OK" in WinZip again if you didn't earlier.
@@ -317,39 +317,39 @@ the revert state before finishing.
 
 ![policypak_application_settings_31](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_31.webp)
 
-Figure 32. Check or uncheck the value as desired for the default state.
+The figure shown. Check or uncheck the value as desired for the default state.
 
 **Step 30 –** Next, we'll work with a radio button. We will capture the registry settings for a
-radio button set called "Initial state of numeric keypad," as shown in Figure 33.
+radio button set called "Initial state of numeric keypad," as shown In the figure shown.
 
 ![policypak_application_settings_32](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_32.webp)
 
-Figure 33. Using the Configuration Wizard to capture radio button settings.
+The figure shown. Using the Configuration Wizard to capture radio button settings.
 
 **Step 31 –** In the wizard, you will asked to confirm which radio button is currently selected,
 which is this case is "Normal." Click "Next" and you will be asked to select the application radio
 button within the PuTTY application. After selecting it, save the session, return to the
 Configuration Wizard, and click "Next." Here you will be asked to choose which captured data change
-applies to the radio button. Choose the "ApplicationKeypad" registry setting, as shown in Figure 34.
+applies to the radio button. Choose the "ApplicationKeypad" registry setting, as shown In the figure shown.
 
 ![policypak_application_settings_33](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_33.webp)
 
-Figure 34. Choosing the ApplicationKeypad registry setting.
+The figure shown. Choosing the ApplicationKeypad registry setting.
 
 **Step 32 –** Click "Next." You will now be asked to select the NetHack radio button, as shown in
-Figure 35. Go to PuTTY, make the change, and save the session one more time. Then click "Next."
+The figure shown. Go to PuTTY, make the change, and save the session one more time. Then click "Next."
 
 ![policypak_application_settings_34](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_34.webp)
 
-Figure 35. Capturing the radio button called NetHack.
+The figure shown. Capturing the radio button called NetHack.
 
 **Step 33 –** The process is complete now that the registry values have been captured, as shown in
-Figure 36. You will then be asked to select the default and revert values. Once you've done that,
+The figure shown. You will then be asked to select the default and revert values. Once you've done that,
 you are finished.
 
 ![policypak_application_settings_35](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_35.webp)
 
-Figure 36. The completion of the process.
+The figure shown. The completion of the process.
 
 :::note
 A red shading on a value indicates that the Endpoint Policy Manager DesignStudio
@@ -361,77 +361,77 @@ state to help the capture process.
 **Step 34 –** There are no spinbox elements within the PuTTY interface so let's use WinZip to
 illustrate how the capturing process works for spinboxes since you may come across these from time
 to time. In this example, we will work with the "Minimum password length" under the Passwords tab,
-as shown in Figure 37. To work with this element, right-click it, and then select "Configuration
+as shown In the figure shown. To work with this element, right-click it, and then select "Configuration
 Wizard."
 
 ![policypak_application_settings_36](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_36.webp)
 
-Figure 37. Using the Configuration Wizard with the "Minimum password length" setting.
+The figure shown. Using the Configuration Wizard with the "Minimum password length" setting.
 
-**Step 35 –** The wizard indicates that you are configuring a spinbox, as shown in Figure 38. Keep
+**Step 35 –** The wizard indicates that you are configuring a spinbox, as shown In the figure shown. Keep
 the selection for the "Registry" option that the wizard chooses automatically, and click "Next" to
 continue.
 
 ![policypak_application_settings_37](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_37.webp)
 
-Figure 38. Choosing the registry as the location to track changes.
+The figure shown. Choosing the registry as the location to track changes.
 
 **Step 36 –** Next, you'll confirm the default data root, which should be configured to the "Niko
-Mak Computing" entry, as shown in Figure 39. Click "Next" to continue.
+Mak Computing" entry, as shown In the figure shown. Click "Next" to continue.
 
 ![policypak_application_settings_38](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_38.webp)
 
-Figure 39. Confirming the data root.
+The figure shown. Confirming the data root.
 
 **Step 37 –** You'll be prompted to set the minimum value for this spinbox. Change WinZip's "Minimum
-password length" to 1, as shown in Figure 40, and click "OK" inside WinZip. Close WinZip's
+password length" to 1, as shown In the figure shown, and click "OK" inside WinZip. Close WinZip's
 Configuration page, and then click "Next" to continue in the wizard.
 
 ![policypak_application_settings_39](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_39.webp)
 
-Figure 40. Setting the "Minimum password length" option to 1.
+The figure shown. Setting the "Minimum password length" option to 1.
 
 **Step 38 –** Next, open WinZip's Configuration page (Tools | Options), and follow the wizard's
-prompts. That is, change "Minimum password length" to 2, as illustrated in Figure 41, and then click
+prompts. That is, change "Minimum password length" to 2, as illustrated In the figure shown, and then click
 "OK" inside WinZip. After doing this, close WinZip's Configuration page, and then click "Next" in
 the wizard.
 
 ![policypak_application_settings_40](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_40.webp)
 
-Figure 41. Setting the "Minimum password length" option to 2.
+The figure shown. Setting the "Minimum password length" option to 2.
 
 **Step 39 –** Next, the wizard asks for the maximum value of the minimum password length. This might
 be 99 for most apps, but it could also be any other number. The maximum value for this spinbox is
-99, so enter this value into WinZip, as shown in Figure 42. Then, click "OK" in WinZip. Close the
+99, so enter this value into WinZip, as shown In the figure shown. Then, click "OK" in WinZip. Close the
 WinZip Configuration page, and click "Next" in the wizard.
 
 ![policypak_application_settings_41](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_41.webp)
 
-Figure 42. Setting the "Minimum password length" option to the maximum value.
+The figure shown. Setting the "Minimum password length" option to the maximum value.
 
-**Step 40 –** The wizard will then show you what it learned, as shown in Figure 43. Make sure the
+**Step 40 –** The wizard will then show you what it learned, as shown In the figure shown. Make sure the
 discovered values match the values you entered. If they don't, you can manually edit the cells to
 match. Once that's complete, click "Next" to continue.
 
 ![policypak_application_settings_42](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_42.webp)
 
-Figure 43. Confirming the discovered values.
+The figure shown. Confirming the discovered values.
 
 **Step 41 –** You are then asked to choose the default value. We already discovered it was 8 when we
-captured the values originally, so set the value to 8, as shown in Figure 44. Then, click "Next" to
+captured the values originally, so set the value to 8, as shown In the figure shown. Then, click "Next" to
 continue.
 
 ![policypak_application_settings_43](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_43.webp)
 
-Figure 44. Choosing the default value.
+The figure shown. Choosing the default value.
 
-**Step 42 –** You are then asked to set the revert value, as shown in Figure 45. This is what will
+**Step 42 –** You are then asked to set the revert value, as shown In the figure shown. This is what will
 be set when the policy no longer applies. You will usually want to keep the revert value the same as
 the default value, but you are welcome to change it.
 
 ![policypak_application_settings_44](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_44.webp)
 
-Figure 45. Setting the revert value.
+The figure shown. Setting the revert value.
 
 **Step 43 –** Next, you will need to set the linked label selection. This selection will help us
 when we do Group Policy reporting. To set this selection, choose the words on the page that most
@@ -440,7 +440,7 @@ is set, click "Next" to continue.
 
 ![policypak_application_settings_45](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_45.webp)
 
-Figure 46. Selecting the words on the page that most closely represent what is being configured.
+The figure shown. Selecting the words on the page that most closely represent what is being configured.
 
 **Step 44 –** You are then presented with the Congratulations page, which states that you are
 finished (not shown). You are welcome to configure more settings using PuTTY, but the above steps
@@ -448,20 +448,23 @@ should have given you an idea of how to use the DesignStudio Configuration Wizar
 continue onward with utilizing your AppSet.
 
 **Step 45 –** Now, you're ready to make your AppSet by compiling it. Click the Compilation tab on
-the left pane of DesignStudio. Click "Save pXML and Compile," as shown in Figure 47. You are forced
-to save your work before continuing. At this point, the AppSet is compiled (see Figure 48). Remember
+the left pane of DesignStudio. Click "Save pXML and Compile," as shown In the figure shown. You are forced
+to save your work before continuing. At this point, the AppSet is compiled (See the figure here). Remember
 that compiling only works when you have the Microsoft C++ Express Edition (2008 and later) compiler
 loaded on your Endpoint Policy Manager creation station.
 
 ![policypak_application_settings_46](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_46.webp)
 
-Figure 47. The wizard prompts the user to save their work.
+The figure shown. The wizard prompts the user to save their work.
 
 Tip: Use the "Show test Endpoint Policy Manager when complete" checkbox to see a preview of your
 AppSet.
 
 ![policypak_application_settings_47](/images/endpointpolicymanager/applicationsettings/designstudio/quickstart/endpointpolicymanager_application_settings_47.webp)
 
-Figure 48. The successful compilation of the project.
+The figure shown. The successful compilation of the project.
 
 **Step 46 –** Click "OK" to exit, and then close Endpoint Policy Manager DesignStudio.
+
+
+

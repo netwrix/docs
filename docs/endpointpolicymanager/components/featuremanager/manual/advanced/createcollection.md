@@ -12,3 +12,5 @@ the screen shown below. This process is the same as creating a collection manual
 options are available.
 
 ![advanced_manipulations_of_6](/images/endpointpolicymanager/feature/advanced/advanced_manipulations_of_6.webp)
+
+

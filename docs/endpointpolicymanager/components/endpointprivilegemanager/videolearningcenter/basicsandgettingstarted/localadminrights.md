@@ -12,4 +12,6 @@ your endpoint security for Windows machines.
 
 PPLPM: Run applications without local admin rights
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZVXVCTOiqjc?si=7ampmz5Oh40T9yDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZVXVCTOiqjc?si=7ampmz5Oh40T9yDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+

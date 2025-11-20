@@ -10,7 +10,7 @@ then remove the source using in-box GPpreferences. Then use Netwrix Endpoint Pol
 (formerly PolicyPak) to elevate your now-standard-users to keep doing the (admin like) things they
 always have.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iD4HSQJjak0" title="Endpoint Policy Manager: Use Group Policy to remove local admin rights (then Endpoint Policy Manager to enable Least Privilege)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iD4HSQJjak0" title="Endpoint Policy Manager: Use Group Policy to remove local admin rights (then Endpoint Policy Manager to enable Least Privilege)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Endpoint Policy Manager: Use Group Policy to remove local admin rights – then Endpoint Policy Manager to enable Least Privilege
 
@@ -20,7 +20,7 @@ Manager to get out of the local admin rights business.
 
 The question I get from time to time is, "I really want to do Least Privilege and I get the general
 gist of what the Endpoint Policy Manager
-[https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.endpointpolicymanager.com/products/endpointpolicymanager-least-privilege-manager.html)
+[https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html](https://www.policypak.com/products/endpointpolicymanager-least-privilege-manager.html)
 product does, but how do I actually get to the Promised Land of no local admin rights? How do I do
 that?"
 
@@ -167,3 +167,5 @@ everywhere.
 So that's it. I hope that helps you out and that gets you to the goal with Endpoint Policy Manager
 Least Privilege Manager.  
 Thanks so much.
+
+

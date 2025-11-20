@@ -63,15 +63,15 @@ You can update the default Dynasty grouping behavior when creating a new Dynasty
 1. When creating a new Dynasty, continue through the wizard until you reach the **Dynasty Options** window.
 2. Select the attribute you want to group by and click **Edit**. In the **GroupBy settings** dialog, click **Filter**.
 
-   ![Dynasty Options in Dynasty Creation Wizard - Netwrix Directory Manager 10](images/ka0Qk000000DUI2_0EMQk000009t78Z.png)
+   ![Dynasty Options in Dynasty Creation Wizard - Netwrix Directory Manager 10](./images/ka0Qk000000DUI2_0EMQk000009t78Z.png)
 
-   ![Dynasty Options in Dynasty Creation Wizard - Netwrix Directory Manager 11](images/ka0Qk000000DUI2_0EMQk000009tEWb.png)
+   ![Dynasty Options in Dynasty Creation Wizard - Netwrix Directory Manager 11](./images/ka0Qk000000DUI2_0EMQk000009tEWb.png)
 
 3. To change the default operator, choose **Left** and enter the desired number of characters if using **Starts with**. Choose **Right** to switch to **Ends with**.
 
-   ![Filter Options in Netwrix Directory Manager 10](images/ka0Qk000000DUI2_0EMQk000009tETN.png)
+   ![Filter Options in Netwrix Directory Manager 10](./images/ka0Qk000000DUI2_0EMQk000009tETN.png)
 
-   ![Filter Options in Netwrix Directory Manager 11](images/ka0Qk000000DUI2_0EMQk000009tEUz.png)
+   ![Filter Options in Netwrix Directory Manager 11](./images/ka0Qk000000DUI2_0EMQk000009tEUz.png)
 
 4. After saving your changes, the Dynasty will reflect the updated grouping behavior.
 
@@ -81,10 +81,10 @@ You can update the default Dynasty grouping behavior when creating a new Dynasty
 2. Navigate to the **Netwrix Directory Manager** tab and click **Options**.
 3. Follow steps 2 and 3 in the **Creating a New Dynasty** section above to configure and apply the GroupBy filter.
 
-   ![Dynasty Option in an existing parent dynasty in Netwrix Directory Manager 10](images/ka0Qk000000DUI2_0EMQk000009t4Na.png)
+   ![Dynasty Option in an existing parent dynasty in Netwrix Directory Manager 10](./images/ka0Qk000000DUI2_0EMQk000009t4Na.png)
 
-   ![Dynasty Option in an existing parent dynasty in Netwrix Directory Manager 11](images/ka0Qk000000DUI2_0EMQk000009tEI7.png)
+   ![Dynasty Option in an existing parent dynasty in Netwrix Directory Manager 11](./images/ka0Qk000000DUI2_0EMQk000009tEI7.png)
 
 4. After saving your changes, the Dynasty will reflect the updated grouping behavior.
 
-   ![Modified Attribute Filter Example](images/ka0Qk000000DUI2_0EMQk000009tEYD.png)
+   ![Modified Attribute Filter Example](./images/ka0Qk000000DUI2_0EMQk000009tEYD.png)

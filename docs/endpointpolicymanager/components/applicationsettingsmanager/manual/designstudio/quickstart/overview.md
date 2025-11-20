@@ -36,3 +36,6 @@ to create GPOs. However, note that it is common to separate out these two roles,
 Manager makes it easy to do so. In this discussion, we'll assume you're using a Windows 10 machine
 with the RSAT tools and the GPMC enabled. This will now be your Group Policy management station and
 your Endpoint Policy Manager creation station.
+
+
+

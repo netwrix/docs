@@ -31,3 +31,5 @@ Workaround for many computers using GPPref Item:
 - Use Group Policy Preferences Item to remove those folders from the location.
 
 ![678_2_image-20191219082753-6](/images/endpointpolicymanager/troubleshooting/startscreentaskbar/678_2_image-20191219082753-6.webp)
+
+

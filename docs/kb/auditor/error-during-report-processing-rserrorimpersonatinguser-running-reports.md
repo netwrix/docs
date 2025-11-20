@@ -49,7 +49,7 @@ SQL Server Reporting Services (SSRS) connection issues or insufficient permissio
 
    If you use a `gMSA` account for data collection, refer to the following article for additional information: [GMSA](https://docs.netwrix.com/docs/auditor/10_8/requirements/gmsa)
 
-4. Check your Report Services configuration. [Deploying the Report Server Database](/docs/kb/auditor/deploying-the-report-server-database.md)
+4. Check your Report Services configuration. [Deploying the Report Server Database](/docs/kb/auditor/deploying-the-report-server-database)
 
 5. Check the permissions for your SSRS Account. Refer to the following article:[Configure SSRS Account](https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserverreportingservice#configure-ssrs-account)
 
@@ -67,5 +67,5 @@ SQL Server Reporting Services (SSRS) connection issues or insufficient permissio
 - [Configure Audit Database Account](https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserver#configure-audit-database-account)
 - [Data Collecting Accounts](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/dataaccounts)
 - [Requirements – Use Group Managed Service Account (gMSA](https://docs.netwrix.com/docs/auditor/10_8/requirements/gmsa)
-- [Deploying the Report Server Database](/docs/kb/auditor/deploying-the-report-server-database.md)
+- [Deploying the Report Server Database](/docs/kb/auditor/deploying-the-report-server-database)
 - [Configure SSRS Account](https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserverreportingservice#configure-ssrs-account)

@@ -83,3 +83,5 @@ Finally, on the endpoint, use Regedit to verify the final value is or is not pre
 Endpoint Policy Manager did the work you expect.
 
 ![611_7_image-20200923152313-3](/images/endpointpolicymanager/troubleshooting/cloud/611_7_image-20200923152313-3.webp)
+
+

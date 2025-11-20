@@ -36,6 +36,6 @@ Follow the steps below to install the EPP agent with proxy settings on macOS:
 4. If your proxy requires authentication, enter valid credentials in the appropriate fields.
 5. You can enter a proxy IP address, DNS name, or fully qualified domain name (FQDN) in the proxy IP field.
 
-![ ](images/ka0Qk000000Dein_0EMQk00000CV0zJ.png)
+![ ](./images/ka0Qk000000Dein_0EMQk00000CV0zJ.png)
 
 6. After installation is complete, wait a few minutes for processing. Then, verify that the computer appears in the **Device Control** > **Computers** section of the **Netwrix Endpoint Protector Web Console**.

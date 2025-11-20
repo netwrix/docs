@@ -115,3 +115,4 @@ the future.
 Endpoint Policy Manager Sales can send you a working Endpoint Policy Manager GPCR key. To install
 the key, follow these instructions:
 [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/endpointpolicymanager/licensing/videolearningcenter/installall/installuniversal.md).
+

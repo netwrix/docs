@@ -12,13 +12,13 @@ so that they get the right experience, every time they launch it. Keep your GoTo
 configuration settings enforced with Endpoint Policy Manager. Check out this video to see how it is
 done.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rPy2hribT6M?si=CFwLG3_V3PdbsDN-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rPy2hribT6M?si=CFwLG3_V3PdbsDN-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Manage Goto Meetings
 
 Hi. This is Jeremy Moskowitz, Microsoft MVP, Enterprise Mobility and Founder of PolicyPak Software.
 In this video, we're going to learn how to manage and
-[ lockdown ](https://dev.endpointpolicymanager.com/lockdown-recordings-portal/)GoToMeeting using PolicyPak.
+[ lockdown ](https://policypak.com/lockdown-recordings-portal/)GoToMeeting using PolicyPak.
 
 I've already got "GoToMeeting" installed on my target computer, and I'm just a regular user here. As
 you can see, I'm logged on as a guy called "EastSales User4." If we open up this application from
@@ -81,7 +81,8 @@ doing.
 And we're done. That is how incredibly easy it is for you to use PolicyPak and to manage and
 lockdown GoToMeeting as well as tons of your other desktop applications. If you're looking for a
 trial of PolicyPak, just click on the
-[https://dev.endpointpolicymanager.com/webinar/](https://dev.endpointpolicymanager.com/webinar/) button on the right.
+[https://policypak.com/webinar/](https://policypak.com/webinar/) button on the right.
 
-[https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/](https://dev.endpointpolicymanager.com/resources/thank-you-whitepapers/)
+[https://policypak.com/resources/thank-you-whitepapers/](https://policypak.com/resources/thank-you-whitepapers/)
 so much for watching, and get in touch with us if you're looking to get started. Talk with you soon.
+

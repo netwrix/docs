@@ -32,3 +32,5 @@ settings that the in-box Microsoft method uses. That is Endpoint Policy Manager 
 Taskbar Manager will create its own XML file (one per computer when computer-side Group Policy is
 used and one per user when user-side Group Policy is used). It works with Microsoft's method (using
 the XML file and corresponding Group Policy setting), but adds functionality.
+
+

@@ -7,8 +7,7 @@ sidebar_position: 40
 # Security Settings Manager
 
 :::note
-Before reading this section, please ensure you have read Book 2:
-[Installation Quick Start](/docs/endpointpolicymanager/gettingstarted/overviewinstall/overviewinstall.md), which will help you
+Before reading this section, please ensure you have read the [Installation Quick Start](/docs/endpointpolicymanager/gettingstarted/overviewinstall/overviewinstall.md), which will help you
 learn to do the following:
 :::
 
@@ -59,3 +58,5 @@ Endpoint Policy Manager Security Settings Manager has the following components:
   Policy Manager Admin Templates Manager and other Endpoint Policy Manager products' XML files and
   wrap them into a portable MSI file for deployment using Microsoft Endpoint Manager (SCCM and
   Intune), a mobile device management service, or your own systems management software.
+
+

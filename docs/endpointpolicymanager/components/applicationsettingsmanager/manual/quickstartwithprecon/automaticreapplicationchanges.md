@@ -20,3 +20,6 @@ application changes when the application is run. This is set automatically for a
 under Endpoint Policy Manager Application Settings Manager by default, but can be changed. For more
 information on Endpoint Policy Manager Application Settings Manager's automatic reapplication of
 settings, see section, "Settings Delivery and Reinforcement Options" in the next major section.
+
+
+

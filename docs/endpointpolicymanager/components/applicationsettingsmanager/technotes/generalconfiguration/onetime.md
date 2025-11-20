@@ -12,3 +12,5 @@ PolicyPak) application settings you configure:
 - Always reapply this setting (this is the default)
 - Apply once and do not reapply in the background. Only reapply with GP update /force
 - Apply once and do not re-apply. Ignore GPupdate /force (similar to Group Policy Preferences)
+
+

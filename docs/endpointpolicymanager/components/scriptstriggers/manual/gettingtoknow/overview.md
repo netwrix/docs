@@ -42,3 +42,5 @@ should have a folder that looks similar to what's seen in Figure 6.
 ![getting_to_know_scripts_triggers_2](/images/endpointpolicymanager/scriptstriggers/gettoknow/getting_to_know_scripts_triggers_2.webp)
 
 Figure 6. Endpoint Policy Manager script examples unpacked.
+
+

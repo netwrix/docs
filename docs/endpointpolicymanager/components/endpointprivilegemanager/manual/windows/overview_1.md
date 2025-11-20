@@ -107,3 +107,6 @@ Admin Approval Dialog (2018/07/14, 15:56:10.279, PID: 1360, TID: 2920)
 
 If requested by support, logs are automatically wrapped up and can be sent to Netwrix Support with
 the PPLOGS.EXE command on any endpoint where the client-side extension is installed.
+
+
+

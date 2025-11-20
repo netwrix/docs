@@ -113,3 +113,4 @@ following two Endpoint Policy Manager On-Prem Suite's log files:
 - Additional logs (to see if the CSE is finding the `update.config` file at all) are found in
   `%programdata%\endpointpolicymanager\ppWatcher.log` (for 32-bit machines) or
   `%programdata%\endpointpolicymanager\ppWatcher_x64.log` (for 64-bit machines).
+

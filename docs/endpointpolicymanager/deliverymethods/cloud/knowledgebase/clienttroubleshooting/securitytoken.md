@@ -25,3 +25,5 @@ certificate like this.
 Then re-download the MSIs here, and re-attempt your Endpoint Policy Manager Cloud join.
 
 ![209_4_img-4](/images/endpointpolicymanager/troubleshooting/error/cloud/209_4_img-4.webp)
+
+

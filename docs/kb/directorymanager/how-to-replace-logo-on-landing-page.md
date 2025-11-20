@@ -30,7 +30,7 @@ Netwrix Directory Manager 11 – Directory Manager Portal
 
 Can you replace the logo and picture on the landing page of the Netwrix Directory Manager portal?
 
-![Directory Manager portal landing page with default logo and image](images/ka0Qk000000De4T_0EMQk00000BO0Jt.png)
+![Directory Manager portal landing page with default logo and image](./images/ka0Qk000000De4T_0EMQk00000BO0Jt.png)
 
 ## Answer
 
@@ -43,7 +43,7 @@ Yes, you are able to replace the logo and picture. This can be acheived by follo
 2. Replace the file named `imanami-logos-master-1@3x.webp`.  
    **IMPORTANT:** The new file must have the same name, size, and extension as the original.
 
-![Directory showing imanami-logos-master-1@3x.webp file](images/ka0Qk000000De4T_0EMQk00000BNz9K.png)
+![Directory showing imanami-logos-master-1@3x.webp file](./images/ka0Qk000000De4T_0EMQk00000BNz9K.png)
 
 > **IMPORTANT:** Take a backup of the original file before replacing it.
 
@@ -54,7 +54,7 @@ Yes, you are able to replace the logo and picture. This can be acheived by follo
 2. Replace the file named `groupid-3x.webp`.  
    **IMPORTANT:** The new file must have the same name, size, and extension as the original.
 
-![Directory showing groupid-3x.webp file](images/ka0Qk000000De4T_0EMQk00000BO3JN.png)
+![Directory showing groupid-3x.webp file](./images/ka0Qk000000De4T_0EMQk00000BO3JN.png)
 
 > **IMPORTANT:** Take a backup of the original file before replacing it.
 
@@ -62,4 +62,4 @@ Yes, you are able to replace the logo and picture. This can be acheived by follo
 
 1. Open the landing page of the Directory Manager portal in incognito mode to verify that the logo and image have been updated.
 
-![Directory Manager portal landing page with updated logo and image](images/ka0Qk000000De4T_0EMQk00000BNzAx.png)
+![Directory Manager portal landing page with updated logo and image](./images/ka0Qk000000De4T_0EMQk00000BNzAx.png)

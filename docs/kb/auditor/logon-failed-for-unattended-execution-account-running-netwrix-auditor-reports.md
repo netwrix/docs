@@ -64,6 +64,7 @@ If no credentials are visible in Report Server Configuration Manager, follow the
 
 2. Open the `rsreportserver.config` file in a text editor, and locate the `<UnattendedExecutionAccount>` node.
 
-   ![UnattendedExecutionAccount node](images/ka04u00000117zS_0EM4u000008MT4S.png)
+   ![UnattendedExecutionAccount node](./images/ka04u00000117zS_0EM4u000008MT4S.png)
 
 3. Delete the credentials specified in `<UserName>`, `<Password>`, and `<Domain>` fields.
+

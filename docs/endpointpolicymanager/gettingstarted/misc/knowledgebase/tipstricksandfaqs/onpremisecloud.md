@@ -16,3 +16,4 @@ All policies are simply merged together. If there's a conflict, the on-premise d
 Group Policy) wins.
 
 ![609_1_img19-deliveryconflict005-resized-450px](/images/endpointpolicymanager/tips/609_1_img19-deliveryconflict005-resized-450px.webp)
+

@@ -41,7 +41,7 @@ The **Collector Threads** slider allows you to set the number of concurrent thre
 
 You can set the Collector Threads value in the **NDC Management Web Console** at `http://localhost/conceptQS/Configuration`.
 
-![Collector Threads slider in the NDC Management Web Console configuration page](images/ka0Qk000000FgmvIAC.jpeg)
+![Collector Threads slider in the NDC Management Web Console configuration page](./images/ka0Qk000000FgmvIAC.jpeg)
 
 > **NOTE:** If you notice a decrease in processing capacity, set the **Collector Threads** slider to `0` to enable dynamic allocation.
 

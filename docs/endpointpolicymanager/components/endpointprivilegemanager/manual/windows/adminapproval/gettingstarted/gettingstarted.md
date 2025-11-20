@@ -68,3 +68,6 @@ not a PolicyPak Admin Approval prompt. These instances include:
   Chrome installer shows a UAC prompt to see if a user can or wants to install Chrome for all users.
   To help work around this issue, we provide the **Enforce Admin Approval for all installers**
   option, which is explained later.
+
+
+

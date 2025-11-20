@@ -9,7 +9,7 @@ sidebar_position: 40
 WVD is great. But finding the icons to run applications can be hard. Use Netwrix Endpoint Policy
 Manager (formerly PolicyPak) to add visibility to your icons on the Start Screen and Taskbar!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3I1M9kFznYk" title="Endpoint Policy Manager + WVD: Manage the Start Screen and Taskbar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3I1M9kFznYk" title="Endpoint Policy Manager + WVD: Manage the Start Screen and Taskbar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi. This is Jeremy Moskowitz, former 15-year Group Policy MVP and Founder of Endpoint Policy Manager
 Software. In this video, we're going to take the Windows Virtual Desktop icons and put them into a
@@ -182,3 +182,4 @@ Start Screen & Taskbar Manager.
 I hope this video helps you out. Looking forward to helping you get started real soon.
 
 Thanks a bunch.
+

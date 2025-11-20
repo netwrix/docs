@@ -7,7 +7,7 @@ sidebar_position: 40
 
 If you want to hide some of the PolicyPak MMC items for your OU admins, this is how to do it.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5mJe4XBghFY" title="Endpoint Policy Manager: Trim the MMC console for OU admins" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5mJe4XBghFY" title="Endpoint Policy Manager: Trim the MMC console for OU admins" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi. This is Jeremy Moskowitz, former 15-year Group Policy MVP and Founder of PolicyPak Software. In
 this vid, I'm going to show you how you can trim what you see in the PolicyPak Management Console.
@@ -94,3 +94,5 @@ don't consider this a security boundary. Consider this light electric fencing.
 All right, well, I hope this helps you out and helps you get started.
 
 Thank you very much and talk to you soon.
+
+

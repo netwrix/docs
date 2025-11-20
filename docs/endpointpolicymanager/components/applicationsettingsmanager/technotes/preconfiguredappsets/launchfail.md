@@ -19,3 +19,5 @@ Example 1:
 Example 2:
 
 ![299_2_image005](/images/endpointpolicymanager/troubleshooting/applicationsettings/internetexplorer/299_2_image005.webp)
+
+

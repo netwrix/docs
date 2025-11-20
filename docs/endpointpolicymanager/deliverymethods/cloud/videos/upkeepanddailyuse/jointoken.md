@@ -10,7 +10,7 @@ to one or more specific groups? With the JOINTOKEN flag you simply pick one or m
 token, and... just pass it on the command line. Use Intune or another MDM service if you want to do
 deploy the PP Cloud client and get those machines to join the groups you want... instantly!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZspZfEbu3Ic" title="Endpoint Policy Manager Cloud: Automatically Join Groups with JOINTOKEN" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZspZfEbu3Ic" title="Endpoint Policy Manager Cloud: Automatically Join Groups with JOINTOKEN" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Hi, this is Jeremy Moskowitz. In this video, I'm going to show you how you can automatically join
 your computers to specific computer groups using PolicyPak Cloud and this thing called Join Token.
@@ -122,3 +122,5 @@ Computers. There we go. The point is, is that, we can now enable you to join the
 groups you want with the link Join Token. Hopefully, that helps you enormously and if you have any
 questions, you can email support or you can try us in the forums. Thank you very much and talk to
 you soon.
+
+

@@ -42,6 +42,6 @@ To configure granular permissions for a Service Account:
 3. Add Write permissions to the index files' location (NTFS Permissions).  
    The index files' location can be looked up in `conceptConfig.exe` in `C:\inetpub\wwwroot\NDC\bin`:
 
-   ![index_files_location.png](images/ka0Qk0000005NaH_0EM4u000008LGlJ.png)
+   ![index_files_location.png](./images/ka0Qk0000005NaH_0EM4u000008LGlJ.png)
 
 > **TIP:** In some instances, the Netwrix Data Classification Service Viewer Utility won't work correctly if the service account is not a member of the Local Administrators group on the Netwrix Data Classification server. In this case, you should use the **Service Viewer** built into the web UI.

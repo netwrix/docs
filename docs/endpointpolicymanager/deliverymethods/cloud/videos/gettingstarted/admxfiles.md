@@ -5,7 +5,7 @@ sidebar_position: 70
 ---
 # Endpoint Policy ManagerCloud: Upload and use your own ADMX files to Endpoint Policy Manager Cloud
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oUTjeGSdb6o" title="Endpoint Policy Manager Cloud: ADMX thru the cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oUTjeGSdb6o" title="Endpoint Policy Manager Cloud: ADMX thru the cloud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Using Netwrix Endpoint Policy Manager (formerly PolicyPak) Cloud and want to use your own custom
 ADMX files? Here's how to do it.
@@ -148,3 +148,5 @@ All right, that's it. I hope that this feature helps you out and you're looking 
 PolicyPak Cloud real soon.
 
 Thanks. Bye-bye.
+
+

@@ -8,7 +8,7 @@ sidebar_position: 30
 
 When a computer is off the network and out of contact with a domain controller, Group Policy
 Preferences has no way to reapply its settings. Endpoint Policy Manager Preferences Manager fixes
-this problem. To see this in action, delete the www.endpointpolicymanager.com icon from the desktop. Then, test
+this problem. To see this in action, delete the www.policypak.com icon from the desktop. Then, test
 Endpoint Policy Manager Preferences Manager's automatic compliance on the client machine by
 unplugging the network cable and then doing one of the following:
 
@@ -30,3 +30,5 @@ You can filter which users will see this shortcut item via Item-Level Targeting 
 Targeting within the MSI itself.
 
 :::
+
+

@@ -123,3 +123,5 @@ This ends the Endpoint Policy Manager Java Rules Manager Quickstart, which demon
 Endpoint Policy Manager Java Enterprise Rules Manager in the fastest amount of time. Note that
 prompts for various Java-related items might be received during your Quickstart. To overcome this,
 please see section on [Overcoming Java Prompts](/docs/endpointpolicymanager/components/javaenterpriserules/manual/prompts/overview.md).
+
+

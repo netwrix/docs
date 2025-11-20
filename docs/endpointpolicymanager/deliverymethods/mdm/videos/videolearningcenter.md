@@ -33,3 +33,5 @@ See the following Video topics for getting started with MDM.
 - [Determine the Azure AAD Group Membership for User or Computers](/docs/endpointpolicymanager/deliverymethods/mdm/videos/iltwithscripts/entraid.md)
 - [Use Endpoint Policy Manager cloud + Azure AAD Group Membership for User or Computers](/docs/endpointpolicymanager/deliverymethods/mdm/videos/iltwithscripts/entraidgroupmembership.md)
 - [Use PP MDM to determine the Azure AAD Group Membership for User or Computers](/docs/endpointpolicymanager/deliverymethods/mdm/videos/iltwithscripts/entraidgroupdetermine.md)
+
+

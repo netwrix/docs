@@ -9,7 +9,7 @@ sidebar_position: 110
 PARCC testing is very important. Make it go very smoothly for your students and teacherby
 implementing our preconfigured PARCC settings, as seen in this video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DdFqtP3UT3w?si=zCWSbAlKjd1vGhtW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DdFqtP3UT3w?si=zCWSbAlKjd1vGhtW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### PolicyPak Configure PARCC Testing Configuration Stations using PolicyPak to prevent pop ups
 
@@ -69,3 +69,5 @@ It will straightaway open the full-screen Java-enabled content website. Actually
 time to load up all the content from Java. Now you can see that it opened that website successfully.
 
 I hope it helps. Thank you.
+
+

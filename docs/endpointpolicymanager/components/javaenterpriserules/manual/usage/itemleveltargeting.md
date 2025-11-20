@@ -65,3 +65,5 @@ orange. The Item-Level Targeting column will indicate if Item-Level Targeting is
 In this way, you can have granular control over policies and collections. First, filter with
 Item-Level Targeting on a collection, and then filter any specific rule if any Item-Level Targeting
 is applied there.
+
+
