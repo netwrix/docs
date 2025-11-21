@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Deployment
 
-This section lists all information to flawlessly install Netwrix Data Classification.
+This section provides instructions for installing Netwrix Data Classification and setting up data sources.
 
 Review the following for additional information:
 
