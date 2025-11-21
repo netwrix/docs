@@ -44,7 +44,7 @@ DQS mode can only be configured by a user whose account has the **Superuser** ro
     strongly recommends ensuring that you have taken a full backup of your environment prior to enabling DQS.
     :::
 
-### Enabling DQS Mode (Up to 5.7.9)
+### Enabling DQS Mode (5.7.9 and earlier versions)
 
 1. Install and configure the first Netwrix Data Classification Server as described in the
    [Install Netwrix Data Classification](/docs/dataclassification/5.7/introduction/install/overview.md) section.
@@ -86,7 +86,7 @@ Ignore the confirmation dialog informing you of the existing schema in the selec
 
 ![dqs_servers_list_thumb_0_0](/images/dataclassification/5.7/requirements/dqs_servers_list_thumb_0_0.webp)
 
-### Enabling DQS Mode (5.7.10 onwards)
+### Enabling DQS Mode (5.7.10 and later versions)
 
 1. Install and configure the first Netwrix Data Classification Server as described in the
    [Install Netwrix Data Classification](/docs/dataclassification/5.7/introduction/install/overview.md) section.

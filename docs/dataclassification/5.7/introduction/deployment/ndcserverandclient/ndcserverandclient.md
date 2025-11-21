@@ -25,7 +25,6 @@ machine image with pre-installed Netwrix Data Classification on Generalized Wind
 [Requirements to Deploy Virtual Appliance](/docs/dataclassification/5.7/introduction/virtualappliance/systemrequirements.md).
 :::
 
-
 Remember that for production environments, your NDC Server and database server must meet the
 [Requirements to Install Netwrix Data Classification](/docs/dataclassification/5.7/introduction/requirements/overview.md). The virtual appliance configuration is insufficient
 for production and is not recommended for that purpose.
