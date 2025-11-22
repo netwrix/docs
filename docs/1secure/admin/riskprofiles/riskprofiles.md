@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Manage Risk Profiles
 
-In Netwrix 1Secure, the Managed Service Provider (MSP) can create risk profiles.  A risk profile
+In Netwrix 1Secure, the managing organization (e.g., Managed Service Provider) can create risk profiles. A risk profile
 consists of a set of risk metrics, each with preconfigured risk thresholds that represent low,
 medium, and high risk levels for the metric. You cannot add new metrics but you can change the risk
 thresholds for each metric. A risk metric is a measurable security parameter that helps analyze
