@@ -39,7 +39,7 @@ System.IO.IOException:
 
 The formatting of the private key in the JSON file is incorrect. Refer to the following example:
 
-![private key example](./images/ka0Qk0000005chN_0EMQk000007eSHh.png)
+![private key example](./../0-images/ka0Qk0000005chN_0EMQk000007eSHh.png)
 
 The private key contains multiple `\n` entries that represent line breaks.
 
