@@ -204,6 +204,13 @@ This enables matching regardless of the case of letters in the input text.
 **Pattern:** `(?i)test@example\\.com`<br />
 **Matches:** `test@example.com`, `TEST@EXAMPLE.COM`, `Test@Example.Com`
 
+In the following example, the pattern '(?i)test' will match “test,” “Test,” “TEST,” and other variations, regardless of letter case, as follows:
+
+1. The Regex pattern is defined, added to the dictionary, and saved. Ensure that it is also included in the CAP Policy for proper application.<br />
+   ![](Regexcaseinsensitivity1.png)
+2. The Content Aware Report confirms that the test has completed successfully and that case-insensitive matching is functioning as expected.<br />
+   ![](Regexcaseinsensitivity2.png)
+
 **3. Partial Case-Insensitive Matching**
 Regex also allows you to apply case-insensitive matching only to specific parts of your pattern.
  You can enable and disable this mode using the following flags:
