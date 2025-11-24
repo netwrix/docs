@@ -32,9 +32,9 @@ You can remove spaces (or other special characters) from group names when creati
 2. Once the Parent Dynasty properties are open, click the **Dynasty Options** tab.
 3. In the **Attributes** field, select the attribute for which you want to omit the spaces.
 4. Click the **Edit** button. A new window will appear.  
-   ![Edit attribute in Dynasty Options](./images/servlet_image_8d7ae7d88783.png)
+   ![Edit attribute in Dynasty Options](./../0-images/servlet_image_8d7ae7d88783.png)
 5. Click the **Edit Script** button. The script editor will open.  
-   ![Open script editor for attribute](./images/servlet_image_51f97ae10a3e.png)
+   ![Open script editor for attribute](./../0-images/servlet_image_51f97ae10a3e.png)
 6. Edit the script as shown in the picture below and click **Build**.  
-   ![Script to remove spaces from attribute](./images/servlet_image_bf59e4f45fbe.png)
+   ![Script to remove spaces from attribute](./../0-images/servlet_image_bf59e4f45fbe.png)
 7. Manually update the Parent Dynasty and verify the changes in the group names.

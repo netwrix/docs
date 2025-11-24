@@ -33,16 +33,16 @@ In the Directory Manager portal, the **Member Of** tab shows the **Display Name*
 3. Select the **Identity Store** you want to customize the design for.
 4. Navigate to **Custom Display Types** and look for **userMembersOfGrid**.
 
-   ![Custom Display Types - userMembersOfGrid](./images/servlet_image_6436205e3d96.png)
+   ![Custom Display Types - userMembersOfGrid](./../0-images/servlet_image_6436205e3d96.png)
 
 5. Click the pencil icon to **Edit**. The **Edit Grid Display Type** window will appear.
 6. Select **WEB_Display_Name** from the list under **Fields** and click **Edit**. The **Grid Column** window will appear.
 
-   ![Edit Grid Column for Display Name](./images/servlet_image_7007481a5d12.png)
+   ![Edit Grid Column for Display Name](./../0-images/servlet_image_7007481a5d12.png)
 
 7. Select **CN** in the **Field** dropdown box and provide a suitable name in the **Display Name** textbox. Click **OK**.
 
-   ![Set CN as Display Name in Grid Column](./images/servlet_image_1736a7d682a3.png)
+   ![Set CN as Display Name in Grid Column](./../0-images/servlet_image_1736a7d682a3.png)
 
 8. After making changes, click **Save**.
 9. Relaunch the Directory Manager Portal. In the **Member Of** tab of any user, you can now sort the list of groups alphabetically by **Common Name (CN)**, even if the **Display Name** is not available.

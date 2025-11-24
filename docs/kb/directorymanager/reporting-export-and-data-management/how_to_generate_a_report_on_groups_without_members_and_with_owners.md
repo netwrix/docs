@@ -28,7 +28,7 @@ This article explains how to generate a report in **Netwrix Directory Manager** 
 
 1. In the **Directory Manager** portal, select **Reports** from the left navigation bar. The Reports portal will open in a new browser tab.
 
-   ![Reports portal in Directory Manager](./images/servlet_image_d0599b0659d9.png)
+   ![Reports portal in Directory Manager](./../0-images/servlet_image_d0599b0659d9.png)
 
 2. Click the **Group Reports** button on the navigation bar.
 
@@ -36,11 +36,11 @@ This article explains how to generate a report in **Netwrix Directory Manager** 
 
 4. Select the first report template in the list.
 
-   ![Selecting Groups with no members report template](./images/servlet_image_4fe9472d99b5.png)
+   ![Selecting Groups with no members report template](./../0-images/servlet_image_4fe9472d99b5.png)
 
 5. Click **Create Report** to initiate the report creation wizard.
 
-   ![Create Report wizard in Directory Manager](./images/servlet_image_f6521717eb4e.png)
+   ![Create Report wizard in Directory Manager](./../0-images/servlet_image_f6521717eb4e.png)
 
 6. On the first page, enter a name for the report, select the search scope within the directory, and specify a filter criterion. By default, the wizard searches the Global Catalog.
 
@@ -50,16 +50,16 @@ This article explains how to generate a report in **Netwrix Directory Manager** 
    3. In the **Filter Criteria** box, modify the default LDAP filter. The default filter generates a list of all users in the domain along with their group memberships.
    4. Add new clauses, **XAdditionalOwner Present** and **Member Not Present**, with an **OR** condition between **XAdditionalOwner** and **ManagedBy** clauses to fetch a list of all groups without members but at least one owner or additional owner.
 
-   ![Filter criteria for groups with no members but at least one owner](./images/servlet_image_1eb116ff6215.png)
+   ![Filter criteria for groups with no members but at least one owner](./../0-images/servlet_image_1eb116ff6215.png)
 
 7. Click **Next**.
 
 8. The **Report Fields** page displays the fields that will be included in the report. To add more fields, click **Add**. To remove a field, select it and click the **X** icon. You can change the order of these fields by using the double bar buttons.
 
-   ![Report Fields page in Directory Manager](./images/servlet_image_a3ec24f5f973.png)
+   ![Report Fields page in Directory Manager](./../0-images/servlet_image_a3ec24f5f973.png)
 
 9. Click **Finish**.
 
 10. The report will be generated. You can download the report in your desired format or pin the report to the Reports portal Dashboard.
 
-    ![Generated report on groups with no members but at least one owner](./images/servlet_image_016adaeb1887.png)
+    ![Generated report on groups with no members but at least one owner](./../0-images/servlet_image_016adaeb1887.png)

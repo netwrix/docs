@@ -27,12 +27,12 @@ Groups may lose their primary owner if the owner is removed manually or if the o
 1. In the **Directory Manager Admin Center**, select **Identity Stores**.
 2. On your target identity store, click the three-dot icon to edit it.
 
-   ![Editing an identity store in GroupID Admin Center](./images/servlet_image_f8caf3dfb1cd.png)
+   ![Editing an identity store in GroupID Admin Center](./../0-images/servlet_image_f8caf3dfb1cd.png)
 
 3. Scroll down on the next page and select **Schedules**.
 4. Click **Add Schedule** and select **Orphan Group Update Job**.
 
-   ![Adding an Orphan Group Update Job schedule](./images/servlet_image_726f9a6cd53c.png)
+   ![Adding an Orphan Group Update Job schedule](./../0-images/servlet_image_726f9a6cd53c.png)
 
 5. Under **Schedule Name**, enter a unique name for the schedule.
 6. In **Targets**, click **Add Container** and select the organizational unit (OU) where the job should run.
@@ -42,6 +42,6 @@ Groups may lose their primary owner if the owner is removed manually or if the o
 10. In the **Authentication** area, click **Add Authentication** to specify an account for running the schedule in the identity store.
 11. Click **Create Schedule**.
 
-   ![Configuring schedule details for Orphan Group Update Job](./images/servlet_image_10e331322e68.png)
+   ![Configuring schedule details for Orphan Group Update Job](./../0-images/servlet_image_10e331322e68.png)
 
 12. When the schedule runs, it searches for groups in the specified OU that do not have a primary owner but have additional owners and promotes the first additional owner to primary owner.

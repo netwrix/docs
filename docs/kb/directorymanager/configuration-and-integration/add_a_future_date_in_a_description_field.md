@@ -31,11 +31,11 @@ This article explains how to automatically add a future date to the **Descriptio
 2. Select the Synchronize job you want to edit and click **Edit**.
 3. On the **Map Fields** page, click the **Transform** button for the **Description** field.
 
-   ![Map Fields page with Transform button for Description field highlighted](./images/servlet_image_9047bdcaeea4.png)
+   ![Map Fields page with Transform button for Description field highlighted](./../0-images/servlet_image_9047bdcaeea4.png)
 
 4. In the **Transform** dialog box, select **Script** from the dropdown menu.
 
-   ![Transform dialog box with Script option selected in dropdown menu](./images/servlet_image_abc59d241180.png)
+   ![Transform dialog box with Script option selected in dropdown menu](./../0-images/servlet_image_abc59d241180.png)
 
 5. Copy and paste the following script into the Script Editor:
 

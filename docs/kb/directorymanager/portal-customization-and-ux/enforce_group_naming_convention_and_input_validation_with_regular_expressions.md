@@ -31,15 +31,15 @@ Enforcing naming standards is especially important when users have access to Act
 
 1. In the **Directory Manager Admin Panel**, select **Applications**. Click the three-dot icon on the desired portal/application and select **Settings**.
 
-   ![Accessing application settings in GroupID Admin Panel](./images/servlet_image_677f21527b05.png)
+   ![Accessing application settings in GroupID Admin Panel](./../0-images/servlet_image_677f21527b05.png)
 
 2. Under **Design Settings**, select your identity store’s name to expand it.
 
-   ![Expanding identity store under Design Settings](./images/servlet_image_1a6e50068bb6.png)
+   ![Expanding identity store under Design Settings](./../0-images/servlet_image_1a6e50068bb6.png)
 
 3. Select **Custom Display Types** and click **Add**.
 
-   ![Adding a custom display type](./images/servlet_image_a1edb8bd189c.png)
+   ![Adding a custom display type](./../0-images/servlet_image_a1edb8bd189c.png)
 
 4. On the **New Display Type** page, enter a name for the display type in the **Name** box (for example, **Regular Expression Policy 1**). From the **Type** list, select **Textbox** and click **OK**. Complete the other options as described below:
 
@@ -49,7 +49,7 @@ Enforcing naming standards is especially important when users have access to Act
    | *Regular Expression* | Enter a regular expression to validate the data entered in the textbox.                           |
    | *Error Message*      | Enter the error message to display when the input does not match the regular expression.          |
 
-   ![Configuring regular expression and error message for display type](./images/servlet_image_21d548cd380a.png)
+   ![Configuring regular expression and error message for display type](./../0-images/servlet_image_21d548cd380a.png)
 
 5. Click **OK** and then **Save** to save your changes. The new display type appears under **Custom Display Types**.
 
@@ -60,15 +60,15 @@ Enforcing naming standards is especially important when users have access to Act
 3. Scroll down and click **Create Object**. Under **Select Directory Object**, select **Group** from the drop-down list.
 4. In the **Name** list, select **General** and click **Edit**.
 
-   ![Editing general settings for group object](./images/servlet_image_96e97acfbe1a.png)
+   ![Editing general settings for group object](./../0-images/servlet_image_96e97acfbe1a.png)
 
 5. On the **Edit Design Category** page, select **Group name** in the **Fields** area and click **Edit**.
 
-   ![Editing group name field](./images/servlet_image_4909739e6c29.png)
+   ![Editing group name field](./../0-images/servlet_image_4909739e6c29.png)
 
 6. On the **Edit Field** page, select the display type you created (for example, *Regular Expression Policy 1*) from the **Display Type** drop-down list.
 
-   ![Selecting display type for group name field](./images/servlet_image_43757b5dda2e.png)
+   ![Selecting display type for group name field](./../0-images/servlet_image_43757b5dda2e.png)
 
 7. Click **OK** twice to close the dialog boxes, then scroll down and click **Save** to apply the changes. The display type is now linked to the **Group name** field in the **Create Group** wizard.
 
@@ -76,7 +76,7 @@ Enforcing naming standards is especially important when users have access to Act
 
 The naming convention defined by the regular expression ensures that group names meet your requirements. For example, if the policy allows only alphabetic characters, the portal will reject names with spaces or special characters and display the specified error message.
 
-![Error message for invalid group name input](./images/servlet_image_4739340f8812.png)
+![Error message for invalid group name input](./../0-images/servlet_image_4739340f8812.png)
 
 ### Regular Expression Examples
 

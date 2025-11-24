@@ -37,7 +37,7 @@ Organizations need accurate employee directory profiles, but manual updates are 
 7. In the **Reminder Notification Settings** area, add or edit the email notification information. These notifications remind users to validate their profiles.
 8. Click **OK**.
 
-![Profile Validation configuration screen in Directory Manager Admin Center](./images/servlet_image_2d039145ce56.png)
+![Profile Validation configuration screen in Directory Manager Admin Center](./../0-images/servlet_image_2d039145ce56.png)
 
 ### Define a User Life Cycle Job for the Identity Store
 
@@ -49,7 +49,7 @@ The profile validation feature is monitored by the User Life Cycle job. This job
 4. Set the trigger time and authentication for the scheduled job.
 5. Click **Create Schedule** and save the changes.
 
-![User Life Cycle job scheduling screen in Directory Manager](./images/servlet_image_91b42553a485.png)
+![User Life Cycle job scheduling screen in Directory Manager](./../0-images/servlet_image_91b42553a485.png)
 
 ### Specify Schema Attributes for Validation
 
@@ -68,8 +68,8 @@ The profile validation feature is monitored by the User Life Cycle job. This job
 13. Click **OK** to close the dialog box.
 14. Click **Save** to apply the changes.
 
-![Property Validation tab in Directory Manager portal settings](./images/servlet_image_5c02509b695c.png)  
-![Add new schema attribute dialog in Directory Manager](./images/servlet_image_2a6f33988aed.png)
+![Property Validation tab in Directory Manager portal settings](./../0-images/servlet_image_5c02509b695c.png)  
+![Add new schema attribute dialog in Directory Manager](./../0-images/servlet_image_2a6f33988aed.png)
 
 ### Profile Validation in the Portal
 
@@ -84,7 +84,7 @@ Directory Manager provides multiple alerts and reminder notifications to prompt 
    - Terminate your direct reports.
 4. After verifying and updating the information, click the **Validate Now** button.
 
-![Validate Profile Properties window in Directory Manager portal](./images/servlet_image_488a33f61b88.png)
+![Validate Profile Properties window in Directory Manager portal](./../0-images/servlet_image_488a33f61b88.png)
 
 ### Grant an Extension Period to Expired Users
 
@@ -95,4 +95,4 @@ Directory Manager expires users who do not validate their profiles within the re
 3. Click the **Disabled Users** tab.
 4. Select an expired user and click **Extend** on the toolbar. The user's account is temporarily unlocked for the duration specified in profile validation configurations. See Step 1 for configuration details.
 
-![Disabled Users tab and Extend option in Directory Manager portal](./images/servlet_image_b50d7c6bf441.png)
+![Disabled Users tab and Extend option in Directory Manager portal](./../0-images/servlet_image_b50d7c6bf441.png)

@@ -31,21 +31,21 @@ This article explains how to use the **Multi-Valued Control** custom display typ
 1. In the Admin Center, select **Applications** from the left pane. On the **Directory Manager Portal** tab, locate the portal card.
 2. Click the three-dot icon for a portal and select **Settings**.
 
-   ![Portal settings menu showing ellipsis and Settings option](./images/servlet_image_838afdd9728e.png)
+   ![Portal settings menu showing ellipsis and Settings option](./../0-images/servlet_image_838afdd9728e.png)
 
 3. Under **Design Settings**, select an identity store to define a custom display type. Each portal can have different identity store designs.
 
-   ![Design Settings showing available identity stores](./images/servlet_image_fea3fbed856a.png)
+   ![Design Settings showing available identity stores](./../0-images/servlet_image_fea3fbed856a.png)
 
 4. Click **Custom Display Types** in the left pane.
 5. On the **Custom Display Types** page, click the **+** icon.
 
-   ![Custom Display Types page with add icon](./images/servlet_image_afa10e0d547c.png)
+   ![Custom Display Types page with add icon](./../0-images/servlet_image_afa10e0d547c.png)
 
 6. In the **New Display Type** pane, enter a name for the display type and select **Multi-Valued Control** in the **Type** drop-down list.  
    You cannot change the name after creation.
 
-   ![New Display Type pane with Multi-Valued Control option](./images/servlet_image_01944865d03d.png)
+   ![New Display Type pane with Multi-Valued Control option](./../0-images/servlet_image_01944865d03d.png)
 
 7. In the **Values** area, configure the options for the multi-valued drop-down list:
    - Click **Add Value**.
@@ -54,11 +54,11 @@ This article explains how to use the **Multi-Valued Control** custom display typ
    - Use the **Accessibility** drop-down list to specify which roles can select the value. Users without access see the value greyed out.
    - Click **OK** to add the value to the list.
 
-   ![Values area showing multiple options for Multi-Valued Control](./images/servlet_image_be23d68c0d2d.png)
+   ![Values area showing multiple options for Multi-Valued Control](./../0-images/servlet_image_be23d68c0d2d.png)
 
 8. Repeat step 7 to add more values. You can also edit or delete values as needed.
 
-   ![Values list with edit and delete options](./images/servlet_image_3de32358d4ee.png)
+   ![Values list with edit and delete options](./../0-images/servlet_image_3de32358d4ee.png)
 
 9. Optional: Select one or more values in the **Default Selection** list to set them as default.
 10. Optional: In **Custom Value Edit Roles**, allow specific roles to enter new values directly in the portal.
@@ -72,17 +72,17 @@ This article explains how to use the **Multi-Valued Control** custom display typ
 4. Click **Properties** in the left pane.
 5. On the **Properties** page, select **User** in the **Select Directory Object** list.
 
-   ![Properties page showing directory object selection](./images/servlet_image_7bd539394c44.png)
+   ![Properties page showing directory object selection](./../0-images/servlet_image_7bd539394c44.png)
 
 6. On the **User Properties** page, click **Edit** for the **Phone/Notes** tab.
 7. On the **Edit Design Category** pane, edit the `otherTelephone` field. Under **Display Type**, select your custom multi-valued control.
 
-   ![Linking otherTelephone field to Multi-Valued Control display type](./images/servlet_image_17dfc113b856.png)
+   ![Linking otherTelephone field to Multi-Valued Control display type](./../0-images/servlet_image_17dfc113b856.png)
 
 8. Click **OK** to close the panes, then click **Save** on the **Custom Display Types** page.
 
 Users will now see a drop-down list for the `otherTelephone` field, allowing them to select multiple values that update in Active Directory.
 
-![Portal UI showing otherTelephone field with multi-valued drop-down](./images/servlet_image_940193d7017a.png)
+![Portal UI showing otherTelephone field with multi-valued drop-down](./../0-images/servlet_image_940193d7017a.png)
 
-![Multi-valued drop-down in action with multiple selections](./images/servlet_image_15e29be6b499.png)
+![Multi-valued drop-down in action with multiple selections](./../0-images/servlet_image_15e29be6b499.png)

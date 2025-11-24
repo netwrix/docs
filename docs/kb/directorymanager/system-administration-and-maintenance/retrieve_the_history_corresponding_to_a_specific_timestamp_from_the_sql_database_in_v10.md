@@ -76,4 +76,4 @@ This article explains how to retrieve a list of all modifications made by **Netw
 
 3. Execute the query to retrieve all history events between January 1, 2024, and December 31, 2024.
 
-![Query results showing history events in SQL Management Studio](./images/servlet_image_4fff323ed49a.png)
+![Query results showing history events in SQL Management Studio](./../0-images/servlet_image_4fff323ed49a.png)

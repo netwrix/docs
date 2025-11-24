@@ -31,19 +31,19 @@ Netwrix Directory Manager (formerly GroupID) allows you to set delivery restrict
 1. On the Dynasty **Properties**, click the **Dynasty Options** tab.
 2. In **Dynasty Options**, make sure the **Always Inherit** option is selected.
 
-   ![Always Inherit option in Dynasty Options tab](./images/servlet_image_7ea6e2461c60.png)
+   ![Always Inherit option in Dynasty Options tab](./../0-images/servlet_image_7ea6e2461c60.png)
 
 3. Go to the Admin Center and open the settings of the identity store.
 4. Click the **Configurations** tab, then click the **Dynasties** tab.
 5. Make sure **authOrig** and **unauthOrig** are present under **Selected Attributes**. These attributes control authentication and are required to apply restrictions or rules to Dynasties.
 
-   ![Selected Attributes for Dynasties in Directory Manager](./images/servlet_image_122aab207b28.png)
+   ![Selected Attributes for Dynasties in Directory Manager](./../0-images/servlet_image_122aab207b28.png)
 
 ### Set Delivery Restrictions on a Dynasty Group
 
 1. In the Directory Manager application, expand **Groups > All Groups > Dynasties**.
 
-   ![Dynasties section in Directory Manager](./images/servlet_image_3044fdaa3692.png)
+   ![Dynasties section in Directory Manager](./../0-images/servlet_image_3044fdaa3692.png)
 
 2. Select the Dynasty group you want to set delivery restrictions for (for example, "Direct Reports of Abbey.Crawford") and go to its **Properties**.
 3. Click the **Delivery Restriction** tab. You will see three types of filters that control who can and cannot send email messages to the group:
@@ -52,6 +52,6 @@ Netwrix Directory Manager (formerly GroupID) allows you to set delivery restrict
    - Reject Messages (to restrict specific users/groups from sending emails to the Dynasty)
 4. In the **Accept Messages** section, click **Add** and add any user or group who should be allowed to send emails to the Dynasty.
 
-   ![Accept Messages filter in Delivery Restriction tab](./images/servlet_image_ce789c2367af.png)
+   ![Accept Messages filter in Delivery Restriction tab](./../0-images/servlet_image_ce789c2367af.png)
 
 5. After adding the user or group, click **Save**.

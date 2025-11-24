@@ -38,22 +38,22 @@ When you create a new identity store, **Netwrix Directory Manager** replicates a
 1. Open the SQL database that **Directory Manager** uses and go to the table named **SVC.IdentityStoreReplication**.
 2. Right-click the table and select **Edit Top 200 Rows**.
 
-   ![SQL Server Management Studio showing Edit Top 200 Rows option for the SVC.IdentityStoreReplication table](./images/servlet_image_8d96cfd05aa6.png)
+   ![SQL Server Management Studio showing Edit Top 200 Rows option for the SVC.IdentityStoreReplication table](./../0-images/servlet_image_8d96cfd05aa6.png)
 
 3. Expand the column named **TimeStamps**. The content will look similar to the following:
 
-   ![TimeStamps column with values for multiple object types](./images/servlet_image_20358dd58f8b.png)
+   ![TimeStamps column with values for multiple object types](./../0-images/servlet_image_20358dd58f8b.png)
 
 4. The **TimeStamps** column contains a long string of values. To force replication for users, find the entry labeled **User** and change its value to **0**. In the example above, the **User** entry shows a long number before modification.
 
 5. After replacing the value with **0**, the entry should look similar to the following:
 
-   ![TimeStamps column after User value replaced with 0](./images/servlet_image_f0713f2e8798.png)
+   ![TimeStamps column after User value replaced with 0](./../0-images/servlet_image_f0713f2e8798.png)
 
 6. If you want to replicate other object types from scratch, repeat this process for each relevant value.
 
 7. Once finished, click **Save All**.
 
-   ![SQL Server Management Studio showing Save All button highlighted](./images/servlet_image_7ef0789252e7.png)
+   ![SQL Server Management Studio showing Save All button highlighted](./../0-images/servlet_image_7ef0789252e7.png)
 
 8. Go to the **Admin Panel** of **Directory Manager**. Navigate to the **Replication** node and click **Force Replicate Now**. Wait for the replication to complete.

@@ -22,27 +22,27 @@ This article explains how to add additional attributes to the list of exportable
 
 To add more attributes to the Export list, you must update the portal's design settings.
 
-![Default export attributes in the Application portal](./images/servlet_image_fcd2d3f5505b.png)
+![Default export attributes in the Application portal](./../0-images/servlet_image_fcd2d3f5505b.png)
 
 ## Instructions
 
 1. Log in to the **Directory Manager Admin** portal and navigate to the **Applications** tab.
 
-   ![Applications tab in the Admin portal](./images/servlet_image_4a2ca5fd6383.png)
+   ![Applications tab in the Admin portal](./../0-images/servlet_image_4a2ca5fd6383.png)
 
 2. Open the settings for the application where you want to add the attribute, and click the identity store name.
 
-   ![Selecting the identity store in application settings](./images/servlet_image_05a15540dbe3.png)  
-   ![Identity store settings page](./images/servlet_image_6be283cbacf3.png)
+   ![Selecting the identity store in application settings](./../0-images/servlet_image_05a15540dbe3.png)  
+   ![Identity store settings page](./../0-images/servlet_image_6be283cbacf3.png)
 
 3. Navigate to the **Import/Export** tab.
 
-   ![Import/Export tab in identity store settings](./images/servlet_image_b3b231c5084a.png)
+   ![Import/Export tab in identity store settings](./../0-images/servlet_image_b3b231c5084a.png)
 
 4. Click the **(+)** button. Select the field you want to add and provide a display name for it.
 
-   ![Adding a new attribute to the export list](./images/servlet_image_e3c8f74e9668.png)
+   ![Adding a new attribute to the export list](./../0-images/servlet_image_e3c8f74e9668.png)
 
 5. Save your changes. The new field will now be available in the Export wizard of the Application portal.
 
-   ![New attribute visible in the Export wizard](./images/servlet_image_8105d4d50a18.png)
+   ![New attribute visible in the Export wizard](./../0-images/servlet_image_8105d4d50a18.png)

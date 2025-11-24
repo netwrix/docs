@@ -34,26 +34,26 @@ This article explains how to restrict users from creating contacts with target a
 
 6. You can also set an error message, for example, "Please use the correct target address".
 
-   ![Custom display type configuration with regex restriction](./images/servlet_image_eaba61cfe7f3.png)
+   ![Custom display type configuration with regex restriction](./../0-images/servlet_image_eaba61cfe7f3.png)
 
 7. Save the settings for the custom display type.
 8. While in the design node of the application portal, click the **Create Object** tab.
 9. On the **Create Object** tab, click the drop-down for **Select Directory Object** and select **Contact**.
 
-   ![Selecting Contact object in Create Object tab](./images/servlet_image_500ece5f2fd0.png)
+   ![Selecting Contact object in Create Object tab](./../0-images/servlet_image_500ece5f2fd0.png)
 
 10. Edit the **Exchange** category.
 
-    ![Editing Exchange category](./images/servlet_image_e19f8454e124.png)
+    ![Editing Exchange category](./../0-images/servlet_image_e19f8454e124.png)
 
 11. In the Edit Design category of Exchange, edit **EmailAddress**.
 12. Change the display type for **EmailAddress**.
 
-    ![Setting EmailAddress field to custom display type](./images/servlet_image_a71427568143.png)
+    ![Setting EmailAddress field to custom display type](./../0-images/servlet_image_a71427568143.png)
 
 13. Save the changes in the design node.
 14. Reset IIS and refresh your application portal. Now when you create a contact, the new contact cannot be created with any of the specified target addresses.
 
-    ![Validation error when using restricted target address](./images/servlet_image_49eb4179d182.png)
+    ![Validation error when using restricted target address](./../0-images/servlet_image_49eb4179d182.png)
 
 > **NOTE:** Contact Name can be any name for the newly created contact.

@@ -24,7 +24,7 @@ Directory Manager 11
 
 By default, Netwrix Directory Manager (formerly GroupID) formats a user's display name as **Last, First** during user creation in the portal. Some organizations may require the **First.Last** format instead. You can change this by modifying the portal’s JavaScript file. This article explains how to make this customization.
 
-![Default display name format in Directory Manager portal](./images/servlet_image_0945c0342a68.png)
+![Default display name format in Directory Manager portal](./../0-images/servlet_image_0945c0342a68.png)
 
 ## Instructions
 
@@ -66,7 +66,7 @@ By default, Netwrix Directory Manager (formerly GroupID) formats a user's displa
    }
    ```
 
-   ![Editing getFullName function in CreateWizard.js](./images/servlet_image_5a9e2c271111.png)
+   ![Editing getFullName function in CreateWizard.js](./../0-images/servlet_image_5a9e2c271111.png)
 
 7. Save the file.
 
@@ -79,4 +79,4 @@ By default, Netwrix Directory Manager (formerly GroupID) formats a user's displa
 
 10. After the IIS reset is complete, log in to the portal and create a new user. The **Display Name** will now appear in the **First.Last** format.
 
-![Display Name in First.Last format in Directory Manager portal](./images/servlet_image_f33ddc126856.png)
+![Display Name in First.Last format in Directory Manager portal](./../0-images/servlet_image_f33ddc126856.png)

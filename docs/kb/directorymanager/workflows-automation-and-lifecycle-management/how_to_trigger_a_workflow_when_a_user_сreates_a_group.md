@@ -43,11 +43,11 @@ This implies that when a user meeting a certain workflow triggering condition cr
 2. Click on the **Triple Dot** button on the identity store and then click on **Edit** to open its properties.
 3. Click the **Workflow** tab.
 
-   ![Workflow Tab in Directory Manager](./images/servlet_image_a379d546d249.png)
+   ![Workflow Tab in Directory Manager](./../0-images/servlet_image_a379d546d249.png)
 
 4. Click **Add Workflow**. A new window will appear.
 
-   ![Add Workflow Window](./images/servlet_image_18e10f2b3bb5.png)
+   ![Add Workflow Window](./../0-images/servlet_image_18e10f2b3bb5.png)
 
 5. Make sure the **Enabled** check box is selected for the workflow to apply.
 6. In the **Object(s)** list, select *Group*.
@@ -71,7 +71,7 @@ This implies that when a user meeting a certain workflow triggering condition cr
 
     - Click **Add Approvers** in the **Approvers** area.
 
-      ![Add Approvers](./images/servlet_image_db963bd15765.png)
+      ![Add Approvers](./../0-images/servlet_image_db963bd15765.png)
 
     - Select the user/group to approve the requests generated for this workflow. It is safer to specify an administrator/helpdesk as the approver rather than the group owners.
     - Click **Add**.
@@ -86,9 +86,9 @@ Admin Center — Workflows — Overview — v11.0
 
 ### Related Articles
 
-- [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/walkthrough-search-policy-define-scope-and-filter-results)
-- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou)
-- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/how-to-import-members-to-a-group-using-self-service-import-wizard)
-- [How To Add Message Approvers in Group Properties in Netwrix Directory Manager Portal](/docs/kb/directorymanager/how-to-add-message-approvers-in-group-properties-in-groupid-portal)
-- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/how-to-enforce-users-to-create-groups-in-a-specific-ou)
-- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/best-practices-for-preventing-accidental-data-leakage)
+- [Walkthrough Search Policy - Define Scope and Filter Results](/docs/kb/directorymanager/security-permissions-and-access-control/walkthrough-search-policy-define-scope-and-filter-results)
+- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/security-permissions-and-access-control/how-to-enforce-users-to-create-groups-in-a-specific-ou)
+- [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/workflows-automation-and-lifecycle-management/how-to-import-members-to-a-group-using-self-service-import-wizard)
+- [How To Add Message Approvers in Group Properties in Netwrix Directory Manager Portal](/docs/kb/directorymanager/configuration-and-integration/how-to-add-message-approvers-in-group-properties-in-groupid-portal)
+- [How To Enforce Users to Create Groups in a Specific OU](/docs/kb/directorymanager/security-permissions-and-access-control/how-to-enforce-users-to-create-groups-in-a-specific-ou)
+- [Best Practices for Preventing Accidental Data Leakage](/docs/kb/directorymanager/security-permissions-and-access-control/best-practices-for-preventing-accidental-data-leakage)

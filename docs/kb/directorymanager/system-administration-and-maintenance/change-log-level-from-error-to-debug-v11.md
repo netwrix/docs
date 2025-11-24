@@ -39,7 +39,7 @@ By default, Netwrix Directory Manager records only critical errors in its logs. 
 5. Select **Logging**.
 6. Set both **File Logging** and **Windows Logging** to **Debug** using the dropdown lists.
 7. Click **Save** to apply the changes.  
-   ![Logging settings in Netwrix Directory Manager application](./images/ka0Qk000000EPRZ_0EMQk00000BbJji.png)
+   ![Logging settings in Netwrix Directory Manager application](./../0-images/ka0Qk000000EPRZ_0EMQk00000BbJji.png)
 8. Repeat these steps for each of the following applications:
    - Replication Service
    - Admin Center
@@ -49,6 +49,6 @@ By default, Netwrix Directory Manager records only critical errors in its logs. 
    - Mobile Service
    - Scheduler Service
 
-![List of Netwrix Directory Manager services for log configuration](./images/ka0Qk000000EPRZ_0EMQk00000BbINr.png)
+![List of Netwrix Directory Manager services for log configuration](./../0-images/ka0Qk000000EPRZ_0EMQk00000BbINr.png)
 
 9. Once complete, Netwrix Directory Manager will capture detailed logs for better system monitoring and troubleshooting.
