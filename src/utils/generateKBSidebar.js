@@ -79,10 +79,6 @@ function cleanSlug(filename, productName) {
 }
 
 function generateKBSidebar(productName) {
-  // DIAGNOSTIC TEST: Return empty array to test if this function causes broken KB links
-  // TODO: Remove this return statement after diagnostic test
-  return [];
-
   // Find the project root by looking for package.json
   let currentDir = __dirname;
   while (!fs.existsSync(path.join(currentDir, 'package.json')) && currentDir !== '/') {
@@ -106,11 +102,13 @@ function generateKBSidebar(productName) {
       .map(file => {
         const filePath = path.join(folderPath, file);
         const fallbackName = file.replace('.md', '');
+        const fileNameWithoutExt = file.replace('.md', '');
 
         // Handle index.md files specially - they should link to parent directory
+        // Encode each path segment separately to handle special characters
         const href = file === 'index.md'
-          ? `/docs/kb/${productName}/${folder.name}`
-          : `/docs/kb/${productName}/${folder.name}/${encodeURIComponent(file.replace('.md', ''))}`;
+          ? `/docs/kb/${encodeURIComponent(productName)}/${encodeURIComponent(folder.name)}`
+          : `/docs/kb/${encodeURIComponent(productName)}/${encodeURIComponent(folder.name)}/${encodeURIComponent(fileNameWithoutExt)}`;
 
         return {
           type: 'link',
@@ -141,11 +139,13 @@ function generateKBSidebar(productName) {
     .map(file => {
       const filePath = path.join(kbPath, file.name);
       const fallbackName = file.name.replace('.md', '');
+      const fileNameWithoutExt = file.name.replace('.md', '');
 
       // Handle index.md files specially - they should link to parent directory
+      // Encode each path segment separately to handle special characters
       const href = file.name === 'index.md'
-        ? `/docs/kb/${productName}`
-        : `/docs/kb/${productName}/${encodeURIComponent(file.name.replace('.md', ''))}`;
+        ? `/docs/kb/${encodeURIComponent(productName)}`
+        : `/docs/kb/${encodeURIComponent(productName)}/${encodeURIComponent(fileNameWithoutExt)}`;
 
       return {
         type: 'link',
