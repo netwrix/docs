@@ -32,7 +32,7 @@ This article contains permission manifests for Microsoft 365 and Microsoft Entra
 3. Select the app you would like to configure.
 4. In the left pane of the new **Overview** window, select the **Manifest** tab. You can either edit the manifest in the web-based manifest editor, or select **Download** to edit the manifest locally to **Upload** it to reapply it to your application.
 
-   ![Manifest tab in the Overview window](./images/servlet_image_31a741be3a3d.png)
+   ![Manifest tab in the Overview window]./../0-images/servlet_image_31a741be3a3d.png)
 
 5. After opening the manifest file, replace the contents of **requiredResourceAccess** with the data provided below.
 6. Once changes are introduced, save the manifest and grant administrator permissions in the **API Permissions** tab.
@@ -41,15 +41,15 @@ You can use the following screenshots for permissions reference:
 
 - **SharePoint Online**
 
-  ![SharePoint Online permissions](./images/servlet_image_b88c6cd43443.png)
+  ![SharePoint Online permissions]./../0-images/servlet_image_b88c6cd43443.png)
 
 - **Exchange Online**
 
-  ![Exchange Online permissions](./images/servlet_image_a59a6a87d3a0.png)
+  ![Exchange Online permissions]./../0-images/servlet_image_a59a6a87d3a0.png)
 
 - **Microsoft Entra ID**
 
-  ![Microsoft Entra ID permissions](./images/servlet_image_bcb70814f4ea.png)
+  ![Microsoft Entra ID permissions]./../0-images/servlet_image_bcb70814f4ea.png)
 
 ### Manifest for SharePoint Online
 

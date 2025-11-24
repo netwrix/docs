@@ -23,7 +23,7 @@ knowledge_article_id: kA00g000000H9Z2CAK
 
 You receive the following pop-up related to Reporting:
 
-![User-added image](./images/ka04u000000HcS3_0EM700000005HCR.png)
+![User-added image]./../0-images/ka04u000000HcS3_0EM700000005HCR.png)
 
 ---
 

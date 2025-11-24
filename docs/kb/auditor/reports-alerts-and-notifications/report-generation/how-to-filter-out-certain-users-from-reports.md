@@ -38,7 +38,7 @@ How do I filter out certain users from mailbox access reports?
 
 ## Image
 
-![User-added image](./images/ka04u000000HcPk_0EM7000000054Bf.png)
+![User-added image]./../0-images/ka04u000000HcPk_0EM7000000054Bf.png)
 
 ## Note
 

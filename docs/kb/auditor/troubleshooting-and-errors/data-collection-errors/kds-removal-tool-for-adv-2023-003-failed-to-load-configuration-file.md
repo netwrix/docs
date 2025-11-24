@@ -32,7 +32,7 @@ Failed to load configuration file.
 Could not find a part of the path
 ```
 
-![Error dialog image](./images/ka04u00000117HW_0EM4u000008LwaA.png)
+![Error dialog image]./../0-images/ka04u00000117HW_0EM4u000008LwaA.png)
 
 ## Cause
 

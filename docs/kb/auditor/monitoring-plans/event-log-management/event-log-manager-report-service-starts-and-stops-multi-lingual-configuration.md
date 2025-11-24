@@ -33,7 +33,7 @@ If your servers are configured in any language other than English, the Event Log
    - `C:\ProgramData\Netwrix Auditor\Reports\Netwrix Auditor for Event Log\Change Reports\Service Starts and Stops.rdl`
 2. Use `Control + F` to find the English words `Running`, `Start`, and `Stop`. Add the correct words in the alternative language to the string values. Example:
    - `('RUNNING', 'START', 'WORD3', 'WORD4')`
-   - ![User-added image](./images/ka04u000000HdFvAAK.jpeg)
+   - ![User-added image]./../0-images/ka04u000000HdFvAAK.jpeg)
 3. Save the file.
 4. Navigate to the SSRS Report Manager URL, which you can find under **Netwrix Auditor Settings** > **Audit Database** tab.
 5. Drill down through the **Netwrix Auditor Report** folder on the homepage.

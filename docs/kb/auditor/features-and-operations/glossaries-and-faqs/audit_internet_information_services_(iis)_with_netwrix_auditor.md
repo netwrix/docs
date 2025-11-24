@@ -43,6 +43,6 @@ How to configure Internet Information Services (IIS) events monitoring?
 
    3. Switch the **Write to** switch to **Both**. Refer to the following screenshot for reference.
 
-   ![Configuration of Audit Archiving Filters with the Write to switch set to Both](./images/servlet_image_69af0d1737a5.png)
+   ![Configuration of Audit Archiving Filters with the Write to switch set to Both]./../0-images/servlet_image_69af0d1737a5.png)
 
 Dedicated predefined reports are available in Netwrix Auditor. Follow **Reports** > **Predefined** > **Windows Server** > **Event Log** to see both IIS reports, **IIS Application Pool Changes** and **IIS Website Changes**.

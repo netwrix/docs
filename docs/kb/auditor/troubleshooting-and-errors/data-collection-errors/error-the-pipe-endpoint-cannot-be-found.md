@@ -24,7 +24,7 @@ knowledge_article_id: kA00g000000H9c4CAC
 
 You get the "pipe endpoint cannot be found" error when you launch the console, or after some time after launching it.
 
-![User-added image](./images/ka04u000000HcUp_0EM700000004xfs.png)
+![User-added image]./../0-images/ka04u000000HcUp_0EM700000004xfs.png)
 
 The issue occurs when the Account Lockout Examiner does not start or crashes.
 

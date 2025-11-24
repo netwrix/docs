@@ -46,7 +46,7 @@ To disable MFA for your data-collecting account in any Microsoft 365 source, use
      3. Select the service user to be used in the **Select excluded users and groups** window, and click **Select**.
      4. To complete the setup, click **Save** in the bottom left corner.
 
-     ![Exclude user from MFA policy](./images/ka0Qk0000001LLl_0EM4u000008MMJG.png)
+     ![Exclude user from MFA policy]./../0-images/ka0Qk0000001LLl_0EM4u000008MMJG.png)
 
    - To exclude an app from the MFA policy:
      1. Click the highlighted text under the **Target sources** section.
@@ -54,7 +54,7 @@ To disable MFA for your data-collecting account in any Microsoft 365 source, use
      3. Select the app to be used in the **Select excluded cloud apps** window, and click **Select**.
      4. To complete the setup, click **Save** in the bottom left corner.
 
-     ![Exclude app from MFA policy](./images/ka0Qk0000001LLl_0EM4u000008MMJL.png)
+     ![Exclude app from MFA policy]./../0-images/ka0Qk0000001LLl_0EM4u000008MMJL.png)
 
 Refer to the following articles for additional information on data-collecting account setup for your Microsoft 365 sources:
 

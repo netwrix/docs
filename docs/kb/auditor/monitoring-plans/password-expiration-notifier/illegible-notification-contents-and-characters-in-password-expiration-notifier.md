@@ -26,7 +26,7 @@ knowledge_article_id: kA0Qk0000000Q8zKAE
 
 When previewing or viewing notifications sent by Netwrix Auditor Netwrix Password Reset (PEN), the contents are illegible. The text and particular characters do not correspond to the intended language.
 
-![IllegibleCharacters](./images/ka0Qk0000001Zjh_0EMQk000002jqCb.png)
+![IllegibleCharacters]./../0-images/ka0Qk0000001Zjh_0EMQk000002jqCb.png)
 
 ## Cause
 

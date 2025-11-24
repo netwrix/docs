@@ -34,7 +34,7 @@ It should be a reply to lockout notification and shall have the code specified a
 
 For example:
 
-![User-added image](./images/ka04u000000HcT2_0EM700000005kEC.png)
+![User-added image]./../0-images/ka04u000000HcT2_0EM700000005kEC.png)
 
 ---
 

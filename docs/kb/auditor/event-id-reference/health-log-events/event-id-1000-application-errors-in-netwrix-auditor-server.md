@@ -80,9 +80,9 @@ The **Faulting module name** dynamic-link library file was corrupted. This could
 
    3. Once the commands are completed and components are restored, restart the server.
 
-3. In case the **Faulting module path** links a Netwrix-related folder (e.g., `C:\Program Files (x86)\Netwrix Auditor\Active Directory Auditing`), repair your Netwrix Auditor installation. Refer to the following article for additional information: [How to Repair Netwrix Auditor Installation](/docs/kb/auditor/how-to-repair-netwrix-auditor-installation)
+3. In case the **Faulting module path** links a Netwrix-related folder (e.g., `C:\Program Files (x86)\Netwrix Auditor\Active Directory Auditing`), repair your Netwrix Auditor installation. Refer to the following article for additional information: [How to Repair Netwrix Auditor Installation](/docs/kb/auditor/configuration-and-setup/general-configuration/how-to-repair-netwrix-auditor-installation)
 
 ## Related articles
 
 - [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)
-- [How to Repair Netwrix Auditor Installation](/docs/kb/auditor/how-to-repair-netwrix-auditor-installation)
+- [How to Repair Netwrix Auditor Installation](/docs/kb/auditor/configuration-and-setup/general-configuration/how-to-repair-netwrix-auditor-installation)

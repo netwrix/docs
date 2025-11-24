@@ -22,7 +22,7 @@ knowledge_article_id: kA00g000000H9ZpCAK
 
 # Object type" and "What Changed" columns are empty
 
-![User-added](./images/servlet_image_3823966b1661.png)
+![User-added]./../0-images/servlet_image_3823966b1661.png)
 
 ---
 

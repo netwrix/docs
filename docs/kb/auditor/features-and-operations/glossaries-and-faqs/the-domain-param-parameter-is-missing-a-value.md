@@ -25,7 +25,7 @@ knowledge_article_id: kA00g000000H9bECAS
 
 You are getting the following warning during AD snapshot report generation:
 
-![User-added image](./images/ka04u000000HcTz_0EM700000005AFx.png)
+![User-added image]./../0-images/ka04u000000HcTz_0EM700000005AFx.png)
 
 ---
 

@@ -60,7 +60,7 @@ CREATE INDEX SA_FSAA_ResourceMap_DLPID_IDX ON SA_FSAA_ResourceMap (HOST, DLPID);
 SELECT name FROM sys.indexes WHERE object_id = OBJECT_ID('SA_FSAA_ResourceMap');
 ```
 
-![SQL Server Management Studio showing index names for the SA_FSAA_ResourceMap table](./images/servlet_image_69209af72eac.png)
+![SQL Server Management Studio showing index names for the SA_FSAA_ResourceMap table]./../0-images/servlet_image_69209af72eac.png)
 
 7. **Restart File System Bulk Imports**  
    Once indexes are confirmed, resume any imports that were previously paused.

@@ -25,7 +25,7 @@ knowledge_article_id: kA00g000000H9YHCA0
 ## Question
 Web Portal shows no images just red boxes. Whats the case?
 
-![User-added image](./images/ka04u00000117dv_0EM7000000050pb.png)
+![User-added image]./../0-images/ka04u00000117dv_0EM7000000050pb.png)
 
 ## Answer
 The issue occurs because IIS cannot display images because of configuration.  

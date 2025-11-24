@@ -58,11 +58,11 @@ Refer to the following steps to exclude OUs and user objects from the monitoring
 2. Select the relevant AD monitoring plan and click **Edit**.
 3. Select the data source and click **Edit data source**.
 
-![Edit data source](./images/ka0Qk000000EIjS_0EMQk00000661ik.png)
+![Edit data source]./../0-images/ka0Qk000000EIjS_0EMQk00000661ik.png)
 
 4. In the left pane, select the **Objects** tab. Select the **Exclude these objects** checkbox, then click **Add** to exclude objects from the monitoring scope. After adding the objects, click **Save & Close**.
 
-![Exclude these objects](./images/ka0Qk000000EIjS_0EMQk000005FPXt.png)
+![Exclude these objects]./../0-images/ka0Qk000000EIjS_0EMQk000005FPXt.png)
 
 Refer to the following examples to learn about how the exclusion rules work for **Objects**. The same logic applies to the inclusion rules:
 

@@ -38,11 +38,11 @@ The reasons why the auditing policies are not being enabled on domain controller
 - Run Resultant Set of Policy (RSoP): `Start > Run` > type `rsop.msc` and press Enter.
 - Expand Audit Policy as shown in the picture below and make sure you see the corresponding source GPO (the GPO which you enabled auditing policies in) for auditing policies and ensure there are no warnings or errors. In our case we see that Audit Account Management policy is set to Failure, while for successful auditing we need to have this policy set to Success.
 
-![rsop](./images/ka04u000000HcSR_0EM7000000053Be.png)
+![rsop]./../0-images/ka04u000000HcSR_0EM7000000053Be.png)
 
 - To fix this problem open **Group Policy Management Console** (**Start > Administrative Tools > Group Policy Management**), select the **Domain Controllers** node, open the **Group Policy Inheritance** tab and in the right pane review the order the GPOs are being applied to the Domain Controllers OU. In our case the Default Domain Policy is enforced and being applied first which causes a GPO conflict. Manage your GPO inheritance to exclude the necessary policy settings from being overridden. For more details regarding GPO inheritance please refer to the following Microsoft KB article: http://technet.microsoft.com/en-us/library/cc757050(v=ws.10).aspx
 
-![gpmc](./images/ka04u000000HcSR_0EM7000000053Bj.png)
+![gpmc]./../0-images/ka04u000000HcSR_0EM7000000053Bj.png)
 
 ## If GPO distribution is correct but auditing settings still not applied
 
@@ -52,7 +52,7 @@ If you resolved the inheritance issue and corresponding GPOs are being distribut
 2. Open Local Group Policy Editor: `Start > Run` > `secpol.msc`.
 3. Expand Audit Policy as shown in the picture below and make sure that the necessary auditing policies are set to Success (for example, Audit Account Management, Audit Directory Service Access) and are equal to the ones you see in Resultant Set of Policy (RSoP).
 
-![secpol](./images/ka04u000000HcSR_0EM7000000053Bo.png)
+![secpol]./../0-images/ka04u000000HcSR_0EM7000000053Bo.png)
 
 - If the Local Group Policy Editor indicates different auditing settings (different from the ones you configured and see in Resultant Set of Policy (RSoP)), this may indicate an issue with GPO applying on that particular domain controller. To troubleshoot this issue please refer to the following Microsoft KB articles:
 

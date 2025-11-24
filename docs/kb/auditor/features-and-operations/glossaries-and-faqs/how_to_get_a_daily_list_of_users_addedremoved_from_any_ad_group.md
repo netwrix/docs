@@ -24,7 +24,7 @@ How to get the list of users added/removed from an Active Directory group on a r
 Create a subscription to Netwrix search results with the following parameters:
 
 1. **Filters**  
-   ![User-added image](./images/servlet_image_ebe11c05eb6f.png)  
+   ![User-added image]./../0-images/servlet_image_ebe11c05eb6f.png)  
 
    Windows records users adding or removing as a change to the group itself, since the group is an AD object. Therefore, the **Action** filter type is suggested to be *Modified*.
 

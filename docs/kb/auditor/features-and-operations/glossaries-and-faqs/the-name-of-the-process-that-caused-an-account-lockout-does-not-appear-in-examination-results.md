@@ -27,7 +27,7 @@ Netwrix Account Lockout Examiner relies on the Windows audit system.
 
 The name of the process is logged in the invalid logon event (`4625` in Windows Vista/2008/7/2008R2, events `529-539` in older versions).
 
-[![User-added image](./images/ka04u000000HcW6_0EM700000004wzN.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcv&amp;feoid=00N700000032Pj2&amp;refid=0EM700000004wzN)
+[![User-added image]./../0-images/ka04u000000HcW6_0EM700000004wzN.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcv&amp;feoid=00N700000032Pj2&amp;refid=0EM700000004wzN)
 
 **Account Lockout Examiner** will not show the name of the process if either there is no corresponding invalid logon event or the name of the process is not tracked by Windows Audit.
 

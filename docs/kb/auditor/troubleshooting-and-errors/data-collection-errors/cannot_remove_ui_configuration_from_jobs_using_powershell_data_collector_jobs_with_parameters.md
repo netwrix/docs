@@ -19,7 +19,7 @@ products:
 
 In the **Netwrix Access Analyzer** (formerly **Enterprise Auditor**) Management Console, you cannot remove an unneeded output path in a job's configuration settings via the UI. When the path is removed, the option to save the setting appears disabled as shown below.
 
-![Output path disabled in UI](./images/servlet_image_b26ce25b201c.png)
+![Output path disabled in UI]./../0-images/servlet_image_b26ce25b201c.png)
 
 ## Cause
 
@@ -35,10 +35,10 @@ To remove the output path variable, use the **PowerShell Data Collector** wizard
 4. Select the **Edit Query** option.
 5. Click the **Parameters** button on the right side of the Edit PowerShell Query Settings.
 6. Select the parameter to be cleared and click **Edit**.  
-   ![Edit parameter](./images/servlet_image_dcd3919a2b21.png)  
+   ![Edit parameter]./../0-images/servlet_image_dcd3919a2b21.png)  
    
 7. Once the value box appears, delete the value and click **OK**.  
-   ![Delete value](./images/servlet_image_df5aa01d204f.png)  
+   ![Delete value]./../0-images/servlet_image_df5aa01d204f.png)  
    
 8. Complete the rest of the **PowerShell Data Collector** wizard by clicking **Next** and **Finish**.
 9. Click **OK** on the query properties box.

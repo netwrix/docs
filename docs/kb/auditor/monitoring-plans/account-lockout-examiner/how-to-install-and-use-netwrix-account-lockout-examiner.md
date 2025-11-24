@@ -32,7 +32,7 @@ Once you've downloaded ALE, open the folder. Here you will find the following it
 1. Right click the `Netwrix_Account_Lockout_Examiner.exe` and click **Run as Administrator**.
 2. A window will appear with a License Agreement and EULA. Please read the contents carefully and then choose to **Accept**.
 
-![User-added image](./images/ka04u000000HdES_0EM4u000002CO3k.png)
+![User-added image]./../0-images/ka04u000000HdES_0EM4u000002CO3k.png)
 
 ## Operating Netwrix Account Lockout Examiner
 The next page that appears the the starting page for ALE. Here is a brief description of the options available to you.

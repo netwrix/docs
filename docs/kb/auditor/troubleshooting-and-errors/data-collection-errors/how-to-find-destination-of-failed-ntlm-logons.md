@@ -44,4 +44,4 @@ To find the actual source of failed logons, enable NTLM auditing temporarily. Fo
 
 ## Related Articles:
 
-- [Why Do I Have Incomplete Information on Failed Logons?](/docs/kb/auditor/why-do-i-have-incomplete-information-on-failed-logons)
+- [Why Do I Have Incomplete Information on Failed Logons?](/docs/kb/auditor/troubleshooting-and-errors/data-collection-errors/why-do-i-have-incomplete-information-on-failed-logons)

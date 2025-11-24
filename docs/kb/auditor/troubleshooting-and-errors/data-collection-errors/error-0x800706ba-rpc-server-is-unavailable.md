@@ -73,7 +73,7 @@ Failed to update the agent on the following server: %server%
 
   > **NOTE:** If you see the following error in the Event Viewer while checking **Event Viewer (Local)** connection to another computer, enable inbound rules (COM+ Network Access and all rules in the Remote Event Log Management group) on the target computer. Refer to the following article for additional information: Configuration − Logon Activity Ports: Configure Windows Firewall Inbound Connection Rules ⸱ v10.6.
   >
-  > ![COM+ Network Access screenshot](./images/ka04u000000wvy4_0EM4u000008LkB8.png)
+  > ![COM+ Network Access screenshot]./../0-images/ka04u000000wvy4_0EM4u000008LkB8.png)
   >
   > Learn more in: 0x80004027 error when you try to remotely access COM+ object after you upgrade to Windows Server 2016 or later versions ⸱ Microsoft
 

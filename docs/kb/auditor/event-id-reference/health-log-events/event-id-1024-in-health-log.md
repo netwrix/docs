@@ -58,9 +58,9 @@ Regenerate the Activity Summary:
 > wevtutil epl "Netwrix Auditor" %userprofile%\desktop\NASH.evtx
 > ```
 >
-> Refer to the following article for additional information for an option to manually save the Auditor event log: [How to Save and Zip Netwrix Auditor System Health Event Log](/docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log).
+> Refer to the following article for additional information for an option to manually save the Auditor event log: [How to Save and Zip Netwrix Auditor System Health Event Log](/docs/kb/auditor/monitoring-plans/event-log-management/how-to-save-and-zip-netwrix-auditor-system-health-event-log).
 
 ## Related articles
 
-- [How to Save and Zip Netwrix Auditor System Health Event Log](/docs/kb/auditor/how-to-save-and-zip-netwrix-auditor-system-health-event-log)
+- [How to Save and Zip Netwrix Auditor System Health Event Log](/docs/kb/auditor/monitoring-plans/event-log-management/how-to-save-and-zip-netwrix-auditor-system-health-event-log)
 - [My Tickets · Netwrix](https://www.netwrix.com/tickets.html#/tickets/open)

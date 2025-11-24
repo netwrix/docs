@@ -41,7 +41,7 @@ Cannot retrieve admin audit logging settings. Cannot execute the PowerShell comm
 The user %user% isn't assigned to any management roles.
 ```
 
-![Audit Configuration Assistant error screenshot](./images/ka04u00000117HQ_0EM4u000008M035.png)
+![Audit Configuration Assistant error screenshot]./../0-images/ka04u00000117HQ_0EM4u000008M035.png)
 
 ## Cause
 

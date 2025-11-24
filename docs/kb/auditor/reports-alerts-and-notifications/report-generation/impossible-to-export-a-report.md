@@ -49,7 +49,7 @@ Refer to the following options to save the report:
 
   1. In Netwrix Auditor, navigate to the **Reports** menu and run a report.
   2. Click the **Print** icon, select the appropriate format, and click **Print**.  
-     ![Print dialog or options](./images/ka0Qk000000CoU5_0EM4u0000084Tco.png)
+     ![Print dialog or options]./../0-images/ka0Qk000000CoU5_0EM4u0000084Tco.png)
   3. Proceed with the further steps to save the report.
 
 ## Related Articles

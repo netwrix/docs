@@ -19,7 +19,7 @@ products:
 
 This article addresses the error message "Result: Administrator restricted access to users of your domain" encountered during the enrollment or password reset process on the Self-Service portal.
 
-![Error message indicating restricted access](./images/servlet_image_427ba59f8bbf.png)
+![Error message indicating restricted access]./../0-images/servlet_image_427ba59f8bbf.png)
 
 ## Symptom
 
@@ -43,4 +43,4 @@ To resolve the issue, ensure that the domain of the user account that receives t
 4. Ensure there are no additional symbols in the domain name (spaces, unnecessary characters).
 5. Add the domain if necessary.
 
-![Domains management in the Administrative portal](./images/servlet_image_cf580c3eff6f.png)
+![Domains management in the Administrative portal]./../0-images/servlet_image_cf580c3eff6f.png)

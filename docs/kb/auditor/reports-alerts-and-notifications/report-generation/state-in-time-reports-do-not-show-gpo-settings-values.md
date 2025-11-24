@@ -28,7 +28,7 @@ knowledge_article_id: kA04u000000Pcy9CAC
 GPO SIT reports do not show GPO settings values. Only GPO summary information is present.  
 For example: “Empty Group Policy Objects” report lists Policies that actually contain some settings set.
 
-![User-added image](./images/ka04u000000HdEa_0EM4u000002CmYD.png)
+![User-added image]./../0-images/ka04u000000HdEa_0EM4u000002CmYD.png)
 
 Another example: “Group Policy Objects by Policy Name” report lists only settings of the following sections:
 
@@ -37,10 +37,10 @@ Another example: “Group Policy Objects by Policy Name” report lists only set
 - General/Links
 - General/Security Filtering
 
-![User-added image](./images/ka04u000000HdEa_0EM4u000002CmYI.png)
+![User-added image]./../0-images/ka04u000000HdEa_0EM4u000002CmYI.png)
 
 All the other data is missing from the report:  
-![User-added image](./images/ka04u000000HdEa_0EM4u000002CmYN.png)
+![User-added image]./../0-images/ka04u000000HdEa_0EM4u000002CmYN.png)
 
 ## Affected environment
 
@@ -60,7 +60,7 @@ The conditions below must take place altogether:
 
 3. Domain Item Data Processing Account in the Netwrix Auditor configuration setting for the monitored domain is set in a format of `NETBIOSDOMAINNAME\ACCOUNTSAMACCOUNTMANE` (e.g. `corp\administrator`).
 
-![User-added image](./images/ka04u000000HdEa_0EM4u000002CmYS.png)
+![User-added image]./../0-images/ka04u000000HdEa_0EM4u000002CmYS.png)
 
 ## Cause
 
@@ -70,4 +70,4 @@ By default NetBios names cannot be resolved across different subnets using broad
 
 Set the data processing account for the monitored domain item in a format of `FQDNDOMAINNAME\ACCOUNTSAMACCOUNTNAME` (e.g. `corp.local\administrator`)
 
-![User-added image](./images/ka04u000000HdEa_0EM4u000002CsNQ.png)
+![User-added image]./../0-images/ka04u000000HdEa_0EM4u000002CsNQ.png)

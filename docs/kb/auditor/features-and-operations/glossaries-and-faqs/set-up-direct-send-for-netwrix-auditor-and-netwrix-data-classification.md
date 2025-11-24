@@ -44,7 +44,7 @@ In the main Netwrix Auditor menu, click **Settings**. In the left pane, select t
 - Specify any email address for one of your Microsoft 365 or Office 365 accepted domains in the **Sender address** field. This email does not need to have a mailbox.
 - The use of SSL/TLS is optional.
 
-![Netwrix Auditor SMTP settings](./images/ka04u00000116zv_0EM4u000008Ll2v.png)
+![Netwrix Auditor SMTP settings]./../0-images/ka04u00000116zv_0EM4u000008Ll2v.png)
 
 > **NOTE:** When sending messages from a static IP, add the IP to your SPF record in your domain registrar's DNS settings to avoid having messages flagged as spam:
 >
@@ -61,7 +61,7 @@ In the main Netwrix Data Classification screen, click **Settings**. In the left 
 - Specify any email address for one of your Microsoft 365 or Office 365 accepted domains in the **Sender address** field. This email does not need to have a mailbox.
 - The use of SSL is optional.
 
-![Netwrix Data Classification Email Server settings](./images/ka04u00000116zv_0EM4u000008LlzE.png)
+![Netwrix Data Classification Email Server settings]./../0-images/ka04u00000116zv_0EM4u000008LlzE.png)
 
 > **NOTE:** Direct send does not support SMTP AUTH. You can enter any SMTP credentials to proceed.
 

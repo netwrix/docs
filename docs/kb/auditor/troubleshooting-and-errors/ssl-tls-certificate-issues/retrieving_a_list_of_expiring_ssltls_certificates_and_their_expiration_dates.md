@@ -46,4 +46,4 @@ If you need to filter the output, follow these steps:
 
 Your results should resemble the following example output:
 
-![Example output showing a table of certificates with their thumbprints, friendly names, expiration dates, and parent paths](./images/servlet_image_a39f37f6c350.png)
+![Example output showing a table of certificates with their thumbprints, friendly names, expiration dates, and parent paths]./../0-images/servlet_image_a39f37f6c350.png)

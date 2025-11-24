@@ -34,7 +34,7 @@ Refer to the entries below for possible causes and resolutions based on event de
 ### `Fatal error during installation`
 
 - Cause: The **Timeout expired** error is prompted after SharePoint Core Service installation has taken over 10 minutes.
-  **Resolution:** Refer to the following article for additional information: [Timeout Expired Error on SharePoint Core Service Deployment](/docs/kb/auditor/timeout-expired-error-on-sharepoint-core-service-deployment)
+  **Resolution:** Refer to the following article for additional information: [Timeout Expired Error on SharePoint Core Service Deployment](/docs/kb/auditor/configuration-and-setup/sharepoint-and-teams-auditing/timeout-expired-error-on-sharepoint-core-service-deployment)
 
 - Cause: An invalid SharePoint Central Administration URL was specified during monitoring plan creation.
   **Resolution:**
@@ -114,7 +114,7 @@ Refer to the entries below for possible causes and resolutions based on event de
 
 ## Related articles
 
-- [Timeout Expired Error on SharePoint Core Service Deployment](/docs/kb/auditor/timeout-expired-error-on-sharepoint-core-service-deployment)
+- [Timeout Expired Error on SharePoint Core Service Deployment](/docs/kb/auditor/configuration-and-setup/sharepoint-and-teams-auditing/timeout-expired-error-on-sharepoint-core-service-deployment)
 - [Permissions for SharePoint Auditing](https://docs.netwrix.com/docs/auditor/10_8/configuration/sharepoint/permissions)
 - [SharePoint Ports](https://docs.netwrix.com/docs/auditor/10_8/configuration/sharepoint/ports)
 - [Install for SharePoint Core Service](https://docs.netwrix.com/docs/auditor/10_8/install/sharepointcoreservice)

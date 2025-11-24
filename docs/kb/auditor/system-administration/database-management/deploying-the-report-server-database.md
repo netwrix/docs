@@ -68,7 +68,7 @@ Once the database has been successfully deployed, provide the Report Server URL 
 
 1. In the main Netwrix Auditor screen, click **Settings**. In the left pane, select the **Audit Database** tab and click **Modify** under the **Audit Database** section.
 
-   ![Audit Database Modify](./images/ka04u000000wvtY_0EM4u000008pRVW.png)
+   ![Audit Database Modify]./../0-images/ka04u000000wvtY_0EM4u000008pRVW.png)
 
 2. Input the credentials and click **Next**.
 

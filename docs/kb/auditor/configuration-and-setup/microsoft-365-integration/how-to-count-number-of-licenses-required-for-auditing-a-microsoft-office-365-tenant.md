@@ -44,7 +44,7 @@ To determine the actual number of licenses you need to purchase from Netwrix, do
 3. Enter your Office 365 account credentials when prompted and click **OK**.
 4. When the script completes, you will see the number of mailbox accounts for which you need to purchase licenses:
 
-![User-added image](./images/ka04u000000HcMr_0EM0g000000hNsh.png)
+![User-added image]./../0-images/ka04u000000HcMr_0EM0g000000hNsh.png)
 
 ## For MFA-enabled account
 

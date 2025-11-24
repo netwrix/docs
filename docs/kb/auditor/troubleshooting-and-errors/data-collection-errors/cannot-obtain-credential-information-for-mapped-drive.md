@@ -26,7 +26,7 @@ The following error is returned on account lockout examination:
 
 `Cannot obtain credential information for drive <> mapped by <>`
 
-![User-added image](./images/ka04u000000HcMw_0EM700000004wzm.png)
+![User-added image]./../0-images/ka04u000000HcMw_0EM700000004wzm.png)
 
 ---
 

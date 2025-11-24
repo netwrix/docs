@@ -26,9 +26,9 @@ knowledge_article_id: kA00g000000H9btCAC
 
 The first time you create a real-time alert, you see the following errors:
 
-![Error 1](./images/ka04u000000HcUe_0EM7000000050xL.png)
+![Error 1]./../0-images/ka04u000000HcUe_0EM7000000050xL.png)
 
-![Error 2](./images/ka04u000000HcUe_0EM7000000050xQ.png)
+![Error 2]./../0-images/ka04u000000HcUe_0EM7000000050xQ.png)
 
 Also in the event viewer System log you can find events like this:
 

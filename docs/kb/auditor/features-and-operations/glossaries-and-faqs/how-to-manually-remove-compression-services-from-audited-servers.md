@@ -93,7 +93,7 @@ Do make sure to replace `*PATH TO FILESHARE*` with a relevant path.
 
 If you'd like to remove Compression Service from a single server, replace `@"*PATH TO FILESHARE*\serverlist.txt"` with `\Servername`. Refer to the following screenshot for the output reference:
 
-![Output reference](./images/ka04u00000116iG_0EM4u000004bz9T.png)
+![Output reference]./../0-images/ka04u00000116iG_0EM4u000004bz9T.png)
 
 The script calls upon the functions in the msi to upgrade the Compression Service to the version of .msi installer and then to remove said Compression Service, since it only can execute remove command on a Compression Service of the same version.
 

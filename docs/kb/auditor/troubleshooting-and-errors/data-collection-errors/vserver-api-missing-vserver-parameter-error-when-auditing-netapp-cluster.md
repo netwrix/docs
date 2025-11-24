@@ -36,7 +36,7 @@ The specified management interface is not the management interface of the CIFS S
 2. Find the interface that has **Management Access** enabled and is assigned to the SVM you are trying to audit.
 3. Remember its IP address and specify it in the properties of the NetApp item in Netwrix Auditor in the **ONTAPI** node.
 
-![Management_Interface_NetApp](./images/ka04u000000HcZ5_0EM0g000002CGLg.png)
+![Management_Interface_NetApp]./../0-images/ka04u000000HcZ5_0EM0g000002CGLg.png)
 
 Also make sure the account used to collect to ONTAPI is assigned a custom role on the SVM that has the following capabilities with access query levels:
 

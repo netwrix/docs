@@ -48,11 +48,11 @@ In case the **SQL Server Reporting Services** service has stopped − enable the
 
 In case of the failed SQL Server upgrade, repair your SQL Server installation. Learn more in [Repair a Failed SQL Server Installation · Microsoft 🤝](https://learn.microsoft.com/en-us/sql/database-engine/install-windows/repair-a-failed-sql-server-installation?view=sql-server-ver16).
 
-For additional information on expired evaluation license in SSRS, refer to the following article: [Error 503 − Reports and Subscriptions Not Working](/docs/kb/auditor/error-503-reports-and-subscriptions-not-working).
+For additional information on expired evaluation license in SSRS, refer to the following article: [Error 503 − Reports and Subscriptions Not Working](/docs/kb/auditor/reports-alerts-and-notifications/report-generation/error-503-reports-and-subscriptions-not-working).
 
 ## Related articles
 
-- [Error 503 − Reports and Subscriptions Not Working](/docs/kb/auditor/error-503-reports-and-subscriptions-not-working)
+- [Error 503 − Reports and Subscriptions Not Working](/docs/kb/auditor/reports-alerts-and-notifications/report-generation/error-503-reports-and-subscriptions-not-working)
 - [Start and Stop the Report Server Service · Microsoft 🤝](https://learn.microsoft.com/en-us/sql/reporting-services/report-server/start-and-stop-the-report-server-service?view=sql-server-ver16)
 - [Setting Time-out Values for Report and Shared Dataset Processing (SSRS) · Microsoft 🤝](https://learn.microsoft.com/en-us/sql/reporting-services/report-server/setting-time-out-values-for-report-and-shared-dataset-processing-ssrs?view=sql-server-ver16)
 - [Repair a Failed SQL Server Installation · Microsoft 🤝](https://learn.microsoft.com/en-us/sql/database-engine/install-windows/repair-a-failed-sql-server-installation?view=sql-server-ver16)

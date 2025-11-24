@@ -32,7 +32,7 @@ The **Volume Shadow Copy Service** (hereafter **VSS**) can be enabled via **Netw
 1. Navigate to **Managed Objects -> your_File_Servers_Managed_Object_name -> File Servers.**
 2. Click **Configure** next to **Advanced Settings** and select the **Enable file versioning and rollback capabilities (based on Volume Shadow Copy).**
 
-![User-added image](./images/ka04u000000HcNV_0EM700000007LkF.png)
+![User-added image]./../0-images/ka04u000000HcNV_0EM700000007LkF.png)
 
 ## Where Shadow Copy data is stored
 

@@ -87,7 +87,7 @@ foreach ($item in $Who)
 2. On the **General** tab, turn alerting on.  
 3. On the **Recipients** tab, specify your email address to get a notification on the alert triggering.  
 4. On the **Filters** tab, in the **Where** field, specify the name of file server you will be monitoring:  
-   ![response_action_filter.png](./images/ka0Qk000000EAE1_0EM4u000008LFTc.png)
+   ![response_action_filter.png]./../0-images/ka0Qk000000EAE1_0EM4u000008LFTc.png)
 5. On the **Thresholds** tab, leave the default values — the alert will be triggered if _10+_ files are created by the same user within _600_ seconds.  
 6. On the **Response Action** tab, do the following:
    - Enable the response action by switching the slider ON.

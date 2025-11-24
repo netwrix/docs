@@ -52,7 +52,7 @@ Enable all symbolic link types.
 
     Once executed, you'll see the settings for symbolic links (enabled or disabled).
 
-    ![SymlinkEvaluation output](./images/servlet_image_3823966b1661.png)
+    ![SymlinkEvaluation output]./../0-images/servlet_image_3823966b1661.png)
 
 2. To enable a symlink type, run the following command:
 
