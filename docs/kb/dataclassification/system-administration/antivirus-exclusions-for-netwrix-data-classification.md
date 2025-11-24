@@ -48,4 +48,4 @@ During data collection, a collector uses a specific to store copies of the files
 
 ## Related articles
 
-- [How to back up the Netwrix Data Classification Index](/docs/kb/dataclassification/how-to-back-up-the-ndc-index)
+- [How to back up the Netwrix Data Classification Index](/docs/kb/dataclassification/system-administration/how-to-back-up-the-ndc-index)
