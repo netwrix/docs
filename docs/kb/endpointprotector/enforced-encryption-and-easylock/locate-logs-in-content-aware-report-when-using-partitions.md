@@ -30,4 +30,4 @@ This article explains how to locate logs in the **Content Aware Report** when pa
 1. If no results are shown when filtering by date in the **Content Aware Report**, check which partition is currently selected.  
 2. Select the partition that corresponds to the time interval you are searching for to view the relevant logs.
 
-![Screenshot showing no results in Content Aware Report when filtering by date](./images/ka0Qk000000E7Pp_0EMQk00000C51uD.png)
+![Screenshot showing no results in Content Aware Report when filtering by date](./../0-images/ka0Qk000000E7Pp_0EMQk00000C51uD.png)

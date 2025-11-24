@@ -31,4 +31,4 @@ This article outlines how to create a backup of all settings, rights, policies, 
 ## Related Links
 
 - [System Backup V2](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/admin/systemmaintenance/backup)
-- [How to Perform a Backup Restore](/docs/kb/endpointprotector/how_to_perform_a_backup_restore)
+- [How to Perform a Backup Restore](/docs/kb/endpointprotector/enforced-encryption-and-easylock/how_to_perform_a_backup_restore)

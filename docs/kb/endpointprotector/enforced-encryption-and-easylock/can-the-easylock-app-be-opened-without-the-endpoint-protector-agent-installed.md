@@ -30,4 +30,4 @@ Yes, you can configure whether EasyLock can be opened only when the Netwrix Endp
 
 To configure this option, navigate to **Device Control** > **Global Settings** > **EasyLock Settings** and toggle the switch next to **Endpoint Protector Client presence required**.
 
-![Endpoint Protector Client presence required setting in EasyLock Settings](./images/ka0Qk000000EaBh_0EMQk00000CD9g6.png)
+![Endpoint Protector Client presence required setting in EasyLock Settings](./../0-images/ka0Qk000000EaBh_0EMQk00000CD9g6.png)

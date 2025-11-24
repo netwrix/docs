@@ -39,7 +39,7 @@ This article explains how to locate and modify rights for Network Shares at the 
 
 If you configure device rights granularly for all entities, the priority order is as follows, starting with the highest:
 
-![Priority order for device rights in Endpoint Protector](./images/ka0Qk000000FAdN_0EMQk00000Dgxc5.png)
+![Priority order for device rights in Endpoint Protector](./../0-images/ka0Qk000000FAdN_0EMQk00000Dgxc5.png)
 
 If global rights indicate that no computer on the system has access to a specific device, and for one computer that device has been authorized, then that computer will have access to that device.
 

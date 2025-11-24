@@ -29,6 +29,6 @@ Follow the steps below to complete this process:
 1. Install EasyLock on a USB storage device.
 2. Once EasyLock is installed, the device is turned into a **Trusted Device Level 1 (TD1)**.
 3. Configure the EPP appliance with the **Allow Access if device is TD Level 1** setting so that the appliance is made aware of the device status.  
-   ![EPP appliance configuration screen showing Allow Access if device is TD Level 1 option](./images/servlet_image_2f2abfe498d8.png)
+   ![EPP appliance configuration screen showing Allow Access if device is TD Level 1 option](./../0-images/servlet_image_2f2abfe498d8.png)
 4. All file transfers on the device are managed through EasyLock's vault software, ensuring secure data handling.
 5. Optional: You can allow regular device usage. If the EasyLock device has the **Allow Access** right, it can be used like a regular device.

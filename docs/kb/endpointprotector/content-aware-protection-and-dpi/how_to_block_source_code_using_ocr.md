@@ -30,7 +30,7 @@ Follow these steps to enable OCR to allow the system to detect source code in im
 2. Enable the OCR option.
 3. Click **Save** to apply the settings.
 
-![OCR option in Global Settings](./images/servlet_image_8da7245d9529.png)
+![OCR option in Global Settings](./../0-images/servlet_image_8da7245d9529.png)
 
 ### Creating a Content Aware Protection Policy for Source Code
 
@@ -40,7 +40,7 @@ Follow these steps to create a custom policy to block or report source code dete
 2. Select the operating system type, enter a policy name, and choose the action and type for the policy.
 3. Choose all relevant exit points.
 4. Select only the relevant source code types.  
-   ![Selecting source code types in Content Aware Protection policy](./images/servlet_image_089dc363ae67.png)
+   ![Selecting source code types in Content Aware Protection policy](./../0-images/servlet_image_089dc363ae67.png)
 5. Select the computers and/or users to which the policy should apply.
 6. Click **Save** to create the policy.
 7. The system will now block or report source code found in transferred or uploaded images according to the policy settings.

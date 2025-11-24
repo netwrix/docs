@@ -29,7 +29,7 @@ This article explains how to deploy Endpoint Protector agents to endpoint system
 ## Instructions
 
 1. Retrieve the Endpoint Protector Client package(s) from the Endpoint Protector Management Console under **System Configuration** > **Client Software**.  
-   ![Client Software section in Endpoint Protector Management Console](./images/ka0Qk000000ESMD_0EMQk00000C8gT0.png)
+   ![Client Software section in Endpoint Protector Management Console](./../0-images/ka0Qk000000ESMD_0EMQk00000C8gT0.png)
 
 2. For Windows, select the add-ons that align with your blocking strategy. You can choose any combination of add-ons, or none at all.
 

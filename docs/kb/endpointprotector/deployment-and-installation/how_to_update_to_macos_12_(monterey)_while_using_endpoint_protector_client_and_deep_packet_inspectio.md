@@ -31,11 +31,11 @@ This article explains how to update to macOS 12 (Monterey) when using the Endpoi
 7. Unzip the downloaded **ClientCerts** file.
 8. Select the **cacert.pem** file and move it into **System** in **Keychain Access**.
 
-   ![Dragging cacert.pem into System in Keychain Access on macOS](./images/servlet_image_7fc401abe1e3.png)
+   ![Dragging cacert.pem into System in Keychain Access on macOS](./../0-images/servlet_image_7fc401abe1e3.png)
 
 9. Double-click the newly added certificate. In the **Trust** section, select **Always Trust**.
 
-   ![Setting certificate to Always Trust in Keychain Access](./images/servlet_image_910151bbafe1.png)
+   ![Setting certificate to Always Trust in Keychain Access](./../0-images/servlet_image_910151bbafe1.png)
 
 10. Save the changes.
 11. Update the macOS Endpoint Protector client to the latest version.

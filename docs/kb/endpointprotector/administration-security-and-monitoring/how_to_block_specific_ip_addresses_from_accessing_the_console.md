@@ -28,7 +28,7 @@ To block specific IP addresses from accessing the console, configure login IP re
 2. Right-click the administrator account you want to restrict and select **Edit**.
 3. Turn on **Enforce login IP restrictions**.
 
-   ![Dialog box for enforcing login IP restrictions with the option enabled](./images/servlet_image_1e592ef62413.png)
+   ![Dialog box for enforcing login IP restrictions with the option enabled](./../0-images/servlet_image_1e592ef62413.png)
 
 4. Enter the IP addresses from which the user is not allowed to log in.
 5. Click **Save** to apply the changes.

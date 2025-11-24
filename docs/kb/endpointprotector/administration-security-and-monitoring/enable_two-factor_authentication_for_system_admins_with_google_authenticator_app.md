@@ -25,7 +25,7 @@ This article explains how to enable two-factor authentication (2FA) for system a
 1. Navigate to **System Configuration > System Administrators** in Endpoint Protector.
 2. Find the system administrator and toggle the switch labeled **Two Factor Authenticator** to **On**.
 
-![Two Factor Authenticator toggle for system administrator in Endpoint Protector](./images/servlet_image_618265510504.png)
+![Two Factor Authenticator toggle for system administrator in Endpoint Protector](./../0-images/servlet_image_618265510504.png)
 
 3. Scan the **QR Code** with the **Google Authenticator app** or enter the provided code into the app to configure the authenticator app.
 4. Enter the authentication code from the app into the **Google 2FA Validation** field in Endpoint Protector after importing the account.

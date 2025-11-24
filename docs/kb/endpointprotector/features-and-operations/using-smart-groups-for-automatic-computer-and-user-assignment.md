@@ -41,4 +41,4 @@ Smart Groups enable automatic assignment of computers or users to groups based o
    - `*XYZ` — Name ends with XYZ
 7. To exclude certain computers or users from the group, specify names or patterns to be excluded.
 8. For example, all computers with names starting with **XYZ** will be included in the group, except those starting with **XYZA**.  
-   ![Smart Group configuration example in Netwrix Endpoint Protector](./images/ka0Qk000000EaoP_0EMQk00000BmIKT.png)
+   ![Smart Group configuration example in Netwrix Endpoint Protector](./../0-images/ka0Qk000000EaoP_0EMQk00000BmIKT.png)

@@ -25,7 +25,7 @@ This article provides guidance on adding an SSL certificate to Endpoint Protecto
 Follow the steps below to add an SSL certificate to Endpoint Protector:
 
 1. In the Endpoint Protector Console, navigate to **Appliance > Server Maintenance**.  
-   ![Server Maintenance section in the UI](./images/servlet_image_9e6a518233f7.png)
+   ![Server Maintenance section in the UI](./../0-images/servlet_image_9e6a518233f7.png)
 
 2. Once a `.pem` SSL certificate is generated (`certificate.pem` and `certificate.key`), paste their contents into the self-signing certificate fields and save the changes.  
    > **NOTE:** When copying the certificate and key, ensure you select the **BEGIN** and **END** lines.

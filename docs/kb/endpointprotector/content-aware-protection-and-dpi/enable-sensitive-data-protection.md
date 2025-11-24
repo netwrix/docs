@@ -40,4 +40,4 @@ Follow the steps below to complete this process:
 3. Re-enter the chosen password in the **New Password (confirm)** field.
 4. Click **Save** to apply the changes.
 
-![Screenshot showing the Additional Security Password for Sensitive Data Protection settings in Netwrix Endpoint Protector Server](./images/ka0Qk000000E7ZV_0EMQk00000C52IP.png)
+![Screenshot showing the Additional Security Password for Sensitive Data Protection settings in Netwrix Endpoint Protector Server](./../0-images/ka0Qk000000E7ZV_0EMQk00000C52IP.png)

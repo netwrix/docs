@@ -33,7 +33,7 @@ This article summarizes the network ports used by Netwrix Endpoint Protector Ser
 
 | Port | Purpose | Direction | Notes |
 |------|---------|-----------|-------|
-| `443` | HTTPS communication between Netwrix Endpoint Protector Server and Clients | Inbound to Server | Default port for client-server communication. Required for agent deployment and management. ![Default port 443 setting in Client Software download section](./images/ka0Qk000000FFRl_0EMQk00000C7FeY.png) |
+| `443` | HTTPS communication between Netwrix Endpoint Protector Server and Clients | Inbound to Server | Default port for client-server communication. Required for agent deployment and management. ![Default port 443 setting in Client Software download section](./../0-images/ka0Qk000000FFRl_0EMQk00000C7FeY.png) |
 | `22` | SSH (Support access) | Inbound to Server | Used by Netwrix Technical Support for remote intervention if required. Should be restricted to trusted sources. |
 | `389` | Active Directory integration | Outbound from Server | Default port for LDAP communication with Active Directory. |
 

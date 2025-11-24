@@ -26,4 +26,4 @@ This article explains how to resolve issues where Active Directory (AD) administ
 
 2. Navigate to **System Configuration** > **System Security** to ensure they match the configuration shown below.
 
-   ![Password settings in System Security section of Endpoint Protector](./images/servlet_image_40736f16d061.png)
+   ![Password settings in System Security section of Endpoint Protector](./../0-images/servlet_image_40736f16d061.png)

@@ -38,9 +38,9 @@ Follow the steps below to complete this process:
 3. Click the **Add to content** button.  
 4. Click the **Generate** button.
 
-![Screenshot showing how to add applications or CLI commands to the denylist](./images/ka0Qk000000ES65_0EMQk00000C528j.png)
+![Screenshot showing how to add applications or CLI commands to the denylist](./../0-images/ka0Qk000000ES65_0EMQk00000C528j.png)
 
 5. To include the newly created **Applications** denylist in a content aware policy, you must select the denylist in the policy settings.  
 6. Target the client machines where the policy should apply.
 
-![Screenshot showing how to include the denylist in a content aware policy and target client machines](./images/ka0Qk000000ES65_0EMQk00000C52DZ.png)
+![Screenshot showing how to include the denylist in a content aware policy and target client machines](./../0-images/ka0Qk000000ES65_0EMQk00000C52DZ.png)

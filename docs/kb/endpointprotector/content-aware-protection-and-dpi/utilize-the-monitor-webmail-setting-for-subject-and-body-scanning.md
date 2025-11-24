@@ -34,5 +34,5 @@ The **Monitor webmail** setting in Netwrix Endpoint Protector enables subject an
 1. Activate the **Deep Packet Inspection** module if it is not already activated.
 2. Go to **Content Aware Protection** > **Deep Packet Inspection** and check the **Monitor webmail for Gmail** setting.  
    
-   ![Creating a policy in Content Aware Protection](./images/ka0Qk000000ESkP_0EMQk00000C7Jbh.png)
+   ![Creating a policy in Content Aware Protection](./../0-images/ka0Qk000000ESkP_0EMQk00000C7Jbh.png)
 3. Go to **Content Aware Protection** and create the desired policy.

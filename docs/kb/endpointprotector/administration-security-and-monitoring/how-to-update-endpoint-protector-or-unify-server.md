@@ -33,14 +33,14 @@ To find the version of the Netwrix Endpoint Protector server, follow the below s
 2. Log in.  
 3. View the bottom right of the screen to find the version information.
 
-![Netwrix Endpoint Protector version number](./images/ka0Qk0000004M3Z_0EMQk000005fb5Z.png)
+![Netwrix Endpoint Protector version number](./../0-images/ka0Qk0000004M3Z_0EMQk000005fb5Z.png)
 
 To find the version of the Unify server, follow the below steps:
 
 1. Log in to the Unify web console.  
 2. Check the top left for the version information.
 
-![Unify version number](./images/ka0Qk0000004M3Z_0EMQk000005fOGR.png)
+![Unify version number](./../0-images/ka0Qk0000004M3Z_0EMQk000005fOGR.png)
 
 ## Updating with Live Update
 
@@ -54,9 +54,9 @@ To install the latest updates with Live Update, follow the below steps:
 4. Check the box on the update(s) to be installed.  
 5. Select **Apply Updates.**
 
-![How to check Live Update](./images/ka0Qk0000004M3Z_0EMQk000005fTch.png)
+![How to check Live Update](./../0-images/ka0Qk0000004M3Z_0EMQk000005fTch.png)
 
-![How to configure Live Update](./images/ka0Qk0000004M3Z_0EMQk000005fbGr.png)
+![How to configure Live Update](./../0-images/ka0Qk0000004M3Z_0EMQk000005fbGr.png)
 
 ## Updating Using the Offline Patch Uploader
 
@@ -72,7 +72,7 @@ To apply an offline update, follow the below steps:
 6. Click **Ok.**  
 7. Wait for the system to apply the update.
 
-![The button to activate offline patching](./images/ka0Qk0000004M3Z_0EMQk000005fbNJ.png)
+![The button to activate offline patching](./../0-images/ka0Qk0000004M3Z_0EMQk000005fbNJ.png)
 
 ## Verifying an Update Installed
 
@@ -83,6 +83,6 @@ To verify an update was applied to the Netwrix Endpoint Protector server, follow
 3. Click on **View Applied EPP Software Updates.**  
 4. Look through the applied updates to see if the update was installed.
 
-![The button to open the view of all updates](./images/ka0Qk0000004M3Z_0EMQk000005fbTl.png)
+![The button to open the view of all updates](./../0-images/ka0Qk0000004M3Z_0EMQk000005fbTl.png)
 
-![The list of all updates](./images/ka0Qk0000004M3Z_0EMQk000005fbWz.png)
+![The list of all updates](./../0-images/ka0Qk0000004M3Z_0EMQk000005fbWz.png)

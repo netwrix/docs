@@ -29,7 +29,7 @@ This article explains how to export the list of computers, users, or devices fro
 1. Open the Endpoint Protector console and navigate to the **Device Control** section.
 2. Select **Computers**, **Users**, or **Devices**.
 3. Click **Choose action** and select **Export list of**...  
-   ![Export list action in Device Control](./images/servlet_image_df060b1c08ad.png)
+   ![Export list action in Device Control](./../0-images/servlet_image_df060b1c08ad.png)
 4. A banner appears at the top of the page indicating where the export file can be found.
 5. On the **List of exports** page, navigate to **System Maintenance** > **Exported Entities**.
 6. In the **Actions** menu, you can download or delete the exported list.
@@ -39,7 +39,7 @@ This article explains how to export the list of computers, users, or devices fro
 1. Open the Endpoint Protector console and navigate to the **Device Control** section.
 2. Select **Computers**, **Users**, or **Devices**.
 3. Click **Choose action** and select **Schedule export list**.  
-   ![Schedule export action in Device Control](./images/servlet_image_7abe59223977.png)
+   ![Schedule export action in Device Control](./../0-images/servlet_image_7abe59223977.png)
 4. Select the **frequency** and **start date** for the export. Click **Schedule**.
 5. A banner appears at the top of the page confirming that the export has been scheduled.
 6. On the **List of exports** page, navigate to **System Maintenance** > **Exported Entities**.

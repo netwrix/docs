@@ -27,4 +27,4 @@ Follow these steps to set a custom password validity period or remove password e
 1. Navigate to **System Configuration > System Security** in Endpoint Protector.
 2. In the **Advanced User Password Settings** section, select a custom validity period or choose to remove the expiry completely.
 
-![Advanced User Password Settings section in System Security](./images/servlet_image_bd860b27c3ec.png)
+![Advanced User Password Settings section in System Security](./../0-images/servlet_image_bd860b27c3ec.png)

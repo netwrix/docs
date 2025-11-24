@@ -41,7 +41,7 @@ This article explains how to review and change the Netwrix Endpoint Protector (E
 
    The current configuration details will be displayed as shown below.
 
-   ![Current configuration details in Netwrix Endpoint Protector Notifier](./images/ka0Qk000000EcJx_0EMQk00000C91kM.png)
+   ![Current configuration details in Netwrix Endpoint Protector Notifier](./../0-images/ka0Qk000000EcJx_0EMQk00000C91kM.png)
 
 4. Open the folder containing the `SetServerIP` application and run `EppSetServer.exe`.
 5. Enter the new EPP server IP address, communication port number, or department code.

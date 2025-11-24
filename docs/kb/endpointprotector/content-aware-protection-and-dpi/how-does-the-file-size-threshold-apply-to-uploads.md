@@ -34,6 +34,6 @@ To activate this option, do the following:
 1. Go to **Content Aware Protection** > **Content Aware Policies**.
 2. Select your CAP policy and enable the **File Size Threshold** option.
 
-![File Size Threshold option in Content Aware Policies settings](./images/ka0Qk000000ESKb_0EMQk00000C8iL7.png)
+![File Size Threshold option in Content Aware Policies settings](./../0-images/ka0Qk000000ESKb_0EMQk00000C8iL7.png)
 
 > **NOTE:** If a File Size Threshold is set, it applies to the entire policy, regardless of which file types or custom contents are selected. The value must be a positive, whole number. For example, if the File Size Threshold is set to `1024 MB`, any file smaller than `1 GB` can be uploaded. If ten `200 MB` files are uploaded, all will be accepted. However, if one of the ten files is `1.5 GB`, the upload attempt will be blocked.

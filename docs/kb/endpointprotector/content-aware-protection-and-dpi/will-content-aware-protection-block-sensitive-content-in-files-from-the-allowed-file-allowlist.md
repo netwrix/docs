@@ -33,10 +33,10 @@ No, Content Aware Protection will not block sensitive content in files that are 
 
 You can find the Allowed Files allowlist under **Denylists and Allowlists** > **Allowlists** > **Allowed File.**
 
-![Allowed File allowlist in Netwrix Endpoint Protector](./images/ka0Qk000000ETJt_0EMQk00000C8uNt.png)
+![Allowed File allowlist in Netwrix Endpoint Protector](./../0-images/ka0Qk000000ETJt_0EMQk00000C8uNt.png)
 
 After creating the allowlist, add it to the Content Aware Protection (CAP) policy under **Policy Allowlists.**
 
-![Assigning Allowed File allowlist to a CAP policy](./images/ka0Qk000000ETJt_0EMQk00000C8uB1.png)
+![Assigning Allowed File allowlist to a CAP policy](./../0-images/ka0Qk000000ETJt_0EMQk00000C8uB1.png)
 
 Once the allowlist is assigned to the policy, the Content Aware Protection policy will inspect but ignore sensitive content in files included in the Allowed File list. Files on the allowlist are not blocked, even if they contain sensitive content.

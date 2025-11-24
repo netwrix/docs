@@ -44,15 +44,15 @@ To stay informed about future version releases, visit the [Netwrix Community End
 1. Open a web browser and access the **Endpoint Protector** console's web interface.
 2. Log in with an account that has administrator privileges.
 3. Navigate to **Dashboard** > **Live Update** > **Offline Patch Uploader**.  
-   ![Offline Patch Uploader option in EPP Software Update section](./images/servlet_image_06bccc2709d5.png)
+   ![Offline Patch Uploader option in EPP Software Update section](./../0-images/servlet_image_06bccc2709d5.png)
 4. Select **Choose File**. Browse for the downloaded or provided offline patch file and click **Upload Patch**.  
-   ![Upload Patch button in Offline Patch Uploader](./images/servlet_image_c1cc54905886.png)
+   ![Upload Patch button in Offline Patch Uploader](./../0-images/servlet_image_c1cc54905886.png)
 5. Wait for a green confirmation message stating **Patch applied successfully!** to appear above the Offline Patch Uploader section.  
-   ![Patch applied successfully banner in Offline Patch Uploader](./images/servlet_image_6bd0b54ef795.png)
+   ![Patch applied successfully banner in Offline Patch Uploader](./../0-images/servlet_image_6bd0b54ef795.png)
 6. Remain on the page and monitor the upgrade progress at **Dashboard** > **Live Update**. The progress bar should reach 100%, usually within 5–10 minutes, depending on your database size.  
-   ![Upgrade progress bar in Live Update section](./images/servlet_image_65b2f6cd5406.png)
+   ![Upgrade progress bar in Live Update section](./../0-images/servlet_image_65b2f6cd5406.png)
 7. After the upgrade completes, refresh your browser and verify the updated server version in the bottom right corner of the console interface.  
-   ![Endpoint Protector version number in the console interface](./images/servlet_image_138e8d943c1b.png)
+   ![Endpoint Protector version number in the console interface](./../0-images/servlet_image_138e8d943c1b.png)
 8. If you need to apply additional offline patches, repeat steps 4–7. Offline patches are incremental, like the Live Update functionality. You must apply them one at a time to correctly upgrade the server and avoid issues.
 
 > **NOTE:** There may be a delay between a new general availability (GA) release and the availability of an offline patch for the new server version.

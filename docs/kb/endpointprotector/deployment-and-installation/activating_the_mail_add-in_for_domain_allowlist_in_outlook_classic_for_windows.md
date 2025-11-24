@@ -24,7 +24,7 @@ This article explains how to activate the Endpoint Protector (EPP) Mail Add-in i
 
 1. In the EPP Console, ensure the Mail Add-in is included when downloading the client.
 
-   ![EPP Mail Add-in included in client download](./images/servlet_image_5271b231d0a2.png)
+   ![EPP Mail Add-in included in client download](./../0-images/servlet_image_5271b231d0a2.png)
 
 2. To verify that the EPP Mail Add-in is present in the list of active add-ins, open Outlook and navigate to **Outlook Options** > **Add-ins** > **Active Add-ins**.
 

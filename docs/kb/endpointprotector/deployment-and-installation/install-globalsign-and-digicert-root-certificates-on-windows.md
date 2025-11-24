@@ -37,13 +37,13 @@ Installing the correct root certificates ensures that Windows recognizes the dig
 1. To verify if the required GlobalSign root certificate is present, navigate to `Program Files\Cososys\EPPNotifier.exe`.
 2. Right-click **EPPNotifier.exe** and select **Properties**.
 3. Navigate to the **Digital Signatures** tab and select the certificate then click **Details**.  
-   ![Viewing digital signature details for EPPNotifier.exe](./images/ka0Qk000000ETF3_0EMQk00000C8rxt.png)
+   ![Viewing digital signature details for EPPNotifier.exe](./../0-images/ka0Qk000000ETF3_0EMQk00000C8rxt.png)
 4. If the GlobalSign root certificate is missing, download it from the official GlobalSign website:  
    GlobalSign Root Certificates ⸱ GlobalSign ↗️  
    https://support.globalsign.com/ca-certificates/root-certificates/globalsign-root-certificates
 5. Search for the certificate named **GlobalSign Root R3** then download and install it in the **Trusted Root Certification Authorities** store.
 6. If required, check for the **GlobalSign Code Signing Root R45** certificate in the certificate store:  
-   ![Checking for GlobalSign Code Signing Root R45 in certificate store](./images/ka0Qk000000ETF3_0EMQk00000C8rLD.png)
+   ![Checking for GlobalSign Code Signing Root R45 in certificate store](./../0-images/ka0Qk000000ETF3_0EMQk00000C8rLD.png)
 7. For digital signature time-stamping, ensure the **DigiCert Assured ID Root CA** certificate (valid until 10 November 2031) is trusted. Download it from:  
    DigiCert Root Certificates ⸱ DigiCert ↗️  
    https://www.digicert.com/kb/digicert-root-certificates.htm

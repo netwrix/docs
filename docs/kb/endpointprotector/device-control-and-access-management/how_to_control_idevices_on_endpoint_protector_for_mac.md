@@ -28,4 +28,4 @@ Follow these steps to configure settings for devices:
 2. Alternatively, set the device rights at the group, computer, or user level.
 3. Ensure these settings align with your requirements for managing iPhones, iPads, and iPods Touch.
 
-![Device Control Global Rights configuration for iDevices on Mac in Endpoint Protector](./images/servlet_image_d669c51c8b7d.png)
+![Device Control Global Rights configuration for iDevices on Mac in Endpoint Protector](./../0-images/servlet_image_d669c51c8b7d.png)

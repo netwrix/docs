@@ -38,7 +38,7 @@ This article explains how to configure SMTP settings in **Endpoint Protector** t
    - **Send test email to my account:** Enabled
    - **No-reply email address:** Default
 
-   ![SMTP configuration for Gmail in Endpoint Protector](./images/servlet_image_e9d389c827d7.png)
+   ![SMTP configuration for Gmail in Endpoint Protector](./../0-images/servlet_image_e9d389c827d7.png)
 
 5. To use a custom no-reply email address, select **Custom** and enter your preferred email address, or leave the default.
 

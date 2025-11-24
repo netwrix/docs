@@ -35,9 +35,9 @@ This article explains how to reset an administrator password on the Netwrix Endp
 4. Check **Require password change at next login** to allow the administrator to set a password of their choice upon their next login.  
 5. Save the modifications.  
 
-![Edit administrator password fields in Endpoint Protector](./images/ka0Qk000000EbSj_0EMQk00000CAmm2.png)
+![Edit administrator password fields in Endpoint Protector](./../0-images/ka0Qk000000EbSj_0EMQk00000CAmm2.png)
 
-![Require password change at next login option in Endpoint Protector](./images/ka0Qk000000EbSj_0EMQk00000CAaeP.png)
+![Require password change at next login option in Endpoint Protector](./../0-images/ka0Qk000000EbSj_0EMQk00000CAaeP.png)
 
 6. If you encounter any issues and are unable to reset the password, create a support ticket via the [Netwrix Support portal](https://www.netwrix.com/support.html) for assistance.
 7. If the server is hosted on your end, the support team will contact you to schedule a remote session for resetting the password in the server's backend.

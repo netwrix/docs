@@ -25,7 +25,7 @@ This article explains how to check the version of the client installed on your c
 You can use either of the following options to check the installed client version:
 
 1. Click the client icon in the system tray to view the installed version directly on your computer.  
-   ![Client icon in system tray showing installed version](./images/servlet_image_e95427bb0c8e.png)
+   ![Client icon in system tray showing installed version](./../0-images/servlet_image_e95427bb0c8e.png)
 
 2. Open the **Endpoint Protector Management Console** and go to **Device Control > Computers**. Check the **Client Version** column to see the version installed on each computer.  
-   ![Endpoint Protector Management Console showing Client Version](./images/servlet_image_01861a9421d2.png)
+   ![Endpoint Protector Management Console showing Client Version](./../0-images/servlet_image_01861a9421d2.png)

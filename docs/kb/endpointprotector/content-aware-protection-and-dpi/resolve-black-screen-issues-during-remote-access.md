@@ -36,10 +36,10 @@ Follow the steps below to resolve this issue:
 
 1. Open the CAP policy settings by navigating to **Content Aware Policies** and **Edit** the policy.
 
-   ![CAP policy settings screenshot](./images/ka0Qk000000ES7h_0EMQk00000Cp0a9.png)
+   ![CAP policy settings screenshot](./../0-images/ka0Qk000000ES7h_0EMQk00000Cp0a9.png)
 
 2. Disable the **Print screen** blocking option.
 
-   ![Disable Print screen blocking screenshot](./images/ka0Qk000000ES7h_0EMQk00000Cp0ez.png)
+   ![Disable Print screen blocking screenshot](./../0-images/ka0Qk000000ES7h_0EMQk00000Cp0ez.png)
 
 3. Save the changes to the policy.

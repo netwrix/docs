@@ -28,4 +28,4 @@ This article explains how to display the **Destination URL** in Content Aware Re
 4. Click the **Show/Hide Columns** button.
 5. Select the **Destination** column to display the Destination URL in the report.
 
-![Show/Hide Columns option in Content Aware Reports](./images/servlet_image_744e12be3cff.png)
+![Show/Hide Columns option in Content Aware Reports](./../0-images/servlet_image_744e12be3cff.png)

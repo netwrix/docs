@@ -32,6 +32,6 @@ This article explains how to identify and remove duplicate computers in Netwrix 
 
 1. In the Netwrix Endpoint Protector Console, navigate to the **Device Control** menu and select **Computers**.
 2. In the Filters section, select **Duplicates** > **Yes** > **Apply**.  
-   ![Filtering for duplicate computers in Netwrix Endpoint Protector](./images/ka0Qk000000ETN7_0EMQk00000C91kL.png)
+   ![Filtering for duplicate computers in Netwrix Endpoint Protector](./../0-images/ka0Qk000000ETN7_0EMQk00000C91kL.png)
 3. Review the list of duplicate computers. You can further filter for **Licensed** and **Offline** computers.
 4. Delete the unwanted duplicate entries to release the associated licenses.

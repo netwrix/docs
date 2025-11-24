@@ -69,7 +69,7 @@ This article provides instructions for upgrading to Netwrix Endpoint Protector (
   1. Open the EPP agent via the system tray icon.
   2. Navigate to **Settings** and press `Ctrl + Alt + i` (Windows) or `Command + Option + i` (macOS).
   
-  ![EPP agent settings and version check](./images/servlet_image_13588715e752.png)
+  ![EPP agent settings and version check](./../0-images/servlet_image_13588715e752.png)
 
 - From the EPP server 5.9.4.2 console:
   1. Navigate to **Device Control** > **Computers** > **List of Computers**.

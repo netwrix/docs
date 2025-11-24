@@ -32,7 +32,7 @@ This article explains how to create custom eDiscovery policies and manage scans 
 ## Instructions
 
 1. In the Netwrix Endpoint Protector Console, navigate to **eDiscovery** > **Policies and Scans** and click the **Create Custom Policy** button.  
-   ![Create Custom Policy button in eDiscovery Policies and Scans](./images/ka0Qk000000Eb9N_0EMQk00000CAPJB.png)
+   ![Create Custom Policy button in eDiscovery Policies and Scans](./../0-images/ka0Qk000000Eb9N_0EMQk00000CAPJB.png)
 
 2. Choose the OS type, provide a policy name, select items of focus and click **Save**.
 
