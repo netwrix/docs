@@ -26,7 +26,7 @@ knowledge_article_id: kA00g000000H9bOCAS
 ## Symptom
 On the Helpdesk portal statuses of users changes from **Not locked** to **Not found** and back after every page refresh.
 
-![User-added image](./images/ka04u00000116cN_0EM7000000054QQ.png)
+![User-added image](./../0-images/ka04u00000116cN_0EM7000000054QQ.png)
 
 ---
 
@@ -43,4 +43,4 @@ It could be related to an invalid domain name.
 3. Make sure domain name is correct and is entered in `UPPERCASE`
 4. Click **OK** to save changes
 
-![User-added image](./images/ka04u00000116cN_0EM7000000054QL.png)
+![User-added image](./../0-images/ka04u00000116cN_0EM7000000054QL.png)

@@ -33,7 +33,7 @@ Prior to upgrade backup the following files from the product installation direct
 - **Predefined Questions.txt**
 - **Templates folder**
 
-![User-added image](./images/ka04u00000116Oz_0EM7000000054kp.png)
+![User-added image](./../0-images/ka04u00000116Oz_0EM7000000054kp.png)
 
 ### I. Procedure for single server setup
 
@@ -53,7 +53,7 @@ Prior to upgrade backup the following files from the product installation direct
    - Right click **Netwrix Password Secure** node and select **Properties**
    - Go to **Location** tab and make sure that **Run application on this computer** checkbox is disabled and **Run application on the following computer** is enabled and points to the backend
 
-![User-added image](./images/ka04u00000116Oz_0EM7000000056MB.png)
+![User-added image](./../0-images/ka04u00000116Oz_0EM7000000056MB.png)
 
 **NOTE.** For the update it is possible to use both the Identity Management installer or explicit installer `prm_setup.exe` that you may get from support.
 

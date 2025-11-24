@@ -32,4 +32,4 @@ To hide the domain list, do the following:
    - Locate the `DefaultDomain` and enter the predefined domain name.
 3. Save the changes to the file and refresh the **Self-Service portal**.
 
-[![User-added image](./images/ka04u00000116es_0EM700000004xUQ.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000Xdsv&feoid=00N700000032Pj2&refid=0EM700000004xUQ)
+[![User-added image](./../0-images/ka04u00000116es_0EM700000004xUQ.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000Xdsv&feoid=00N700000032Pj2&refid=0EM700000004xUQ)

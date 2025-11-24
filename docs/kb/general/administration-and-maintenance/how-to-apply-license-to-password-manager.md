@@ -30,11 +30,11 @@ To enter a new license, do the following:
 1. In the browser navigate to the Admin portal of Password Manager (default URL is `http://%pmserver%/pm/admin`)
 2. Click the **License** button
 
-![User-added image](./images/ka04u00000116S3_0EM700000005b8K.png)
+![User-added image](./../0-images/ka04u00000116S3_0EM700000005b8K.png)
 
 3. If there is a license applied already, click **Change license**.
 4. Enter the new code and click **OK**.
 
-![User-added image](./images/ka04u00000116S3_0EM700000005b7r.png)
+![User-added image](./../0-images/ka04u00000116S3_0EM700000005b7r.png)
 
 **Note:** When entering the license code it is recommended to use copy/paste to input the license code. Also it is common if copying from an HTML document to also copy an extra space so ensure these are removed upon paste.

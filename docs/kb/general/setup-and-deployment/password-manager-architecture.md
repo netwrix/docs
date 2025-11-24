@@ -33,7 +33,7 @@ Netwrix Password Manager is a web-based application that actually consists of 3 
 
 1. **Password Manager Service:** executes the operations in AD requested through the web portals. It communicates with Active Directory via encrypted LDAP and RPC channels.
 
-[![User-added image](./images/ka04u00000116Of_0EM7000000052QT.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052QT)
+[![User-added image](./../0-images/ka04u00000116Of_0EM7000000052QT.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052QT)
 
 Password Manager Service holds a secure profile database in the local file system.
 
@@ -43,15 +43,15 @@ Password Manager Service holds a secure profile database in the local file syste
 
 - **Administrative Portal:** allows configuring password policies and user options, importing user account data for batch enrollment, etc.
 
-[![User-added image](./images/ka04u00000116Of_0EM7000000052QY.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052QY)
+[![User-added image](./../0-images/ka04u00000116Of_0EM7000000052QY.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052QY)
 
 - **Help-Desk Portal:** allows centralized management and reporting on the enrolled users" accounts."
 
-[![User-added image](./images/ka04u00000116Of_0EM7000000052Qi.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052Qi)
+[![User-added image](./../0-images/ka04u00000116Of_0EM7000000052Qi.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052Qi)
 
 - **Self-Service Portal:** a web-interface for end users to perform password management operations without contacting the help-desk.
 
-[![User-added image](./images/ka04u00000116Of_0EM7000000052Qn.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052Qn)
+[![User-added image](./../0-images/ka04u00000116Of_0EM7000000052Qn.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052Qn)
 
 Web-service is based on IIS services and can be accessed via the HTTP or HTTPS protocol. The web service, in turn, connects to the Password Manager Service via the RPC protocols.
 
@@ -59,11 +59,11 @@ Web-service is based on IIS services and can be accessed via the HTTP or HTTPS p
 
 3. **Password Manager client** is deployed to workstation and allows to access self-service password management without logging on. It is also referred as Windows Logon Prompt Extension because it extends the standard Windows logon prompt and pops up a dialog box that allows end users to perform self-service password management operations.
 
-[![User-added image](./images/ka04u00000116Of_0EM7000000052QE.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052QE)
+[![User-added image](./../0-images/ka04u00000116Of_0EM7000000052QE.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052QE)
 
 It also supports the enrollment wizard.
 
-[![User-added image](./images/ka04u00000116Of_0EM7000000052QO.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052QO)
+[![User-added image](./../0-images/ka04u00000116Of_0EM7000000052QO.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g0000004KRf&feoid=00N700000032Pj2&refid=0EM7000000052QO)
 
 The client part uses web-requests (IE engine) to connect to the Password Manager web-service via the HTTP or HTTPS protocol.
 

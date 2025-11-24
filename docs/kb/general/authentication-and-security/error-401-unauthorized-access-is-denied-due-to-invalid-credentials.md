@@ -27,7 +27,7 @@ knowledge_article_id: kA00g000000H9Y6CAK
 
 Error 401 occurs when trying to access Administrative and Help-Desk Portals, while Self-Service Portal works fine.
 
-![User-added image](./images/ka04u00000116cs_0EM700000004xce.png)
+![User-added image](./../0-images/ka04u00000116cs_0EM700000004xce.png)
 
 ---
 
@@ -48,7 +48,7 @@ To resolve the issue verify authentication settings and account permisions.
    3. In the **Properties** dialog, open the **Directory Security** tab, and select **Edit** for Authentication and access control.
    4. In the **Authentication Methods** dialog, enable either the **Integrated Windows authentication** box or **Basic authentication** (password is sent in clear text), and clear all other authentication options for Authentication access.
 
-   ![User-added image](./images/ka04u00000116cs_0EM700000004xcF.png)
+   ![User-added image](./../0-images/ka04u00000116cs_0EM700000004xcF.png)
 
    To ensure the required settings are enabled in IIS7, do the following:
 
@@ -56,14 +56,14 @@ To resolve the issue verify authentication settings and account permisions.
    2. In the Manager central pane, double-click the **Authentication** option under IIS block
    3. In the **Authentication** list, enable either **Windows Authentication** option or **Basic Authentication**, and disable all other authentication options.
 
-   ![User-added image](./images/ka04u00000116cs_0EM700000004xcK.png) ![User-added image](./images/ka04u00000116cs_0EM700000004xcP.png)
+   ![User-added image](./../0-images/ka04u00000116cs_0EM700000004xcK.png) ![User-added image](./../0-images/ka04u00000116cs_0EM700000004xcP.png)
 
 2. The account whose credentials are specified to access the portal has Read permisison to the Password Manager instalaltion directory.
 
-   ![User-added image](./images/ka04u00000116cs_0EM700000004xcj.png)
+   ![User-added image](./../0-images/ka04u00000116cs_0EM700000004xcj.png)
 
 3. The account is granted the appropriate role: Administrators role to access Administrative portal and Help Desk Operators role to access Help Desk portal.
 
-   ![User-added image](./images/ka04u00000116cs_0EM700000004xco.png)
+   ![User-added image](./../0-images/ka04u00000116cs_0EM700000004xco.png)
 
 <div id="cke_pastebin" style={{width: '1px', height: '1px'}}></div>

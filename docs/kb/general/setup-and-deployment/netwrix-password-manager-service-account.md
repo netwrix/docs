@@ -33,7 +33,7 @@ If you do not want to use a Domain Administrator account, on the computer where 
 - Full access to the registry key `HKLM\Software\Wow6432Node\NetWrix Password Manager` (Wow6432Node only for x64 OS) (Allow Full control security permissions)
 - The Logon as a service right (added to **Local policies** > **User rights assignment** > **Logon as a service** policy)
 
-[![User-added image](./images/ka04u00000116bK_0EM700000004xbH.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xbH) [![User-added image](./images/ka04u00000116bK_0EM700000004xbC.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xbC) [![User-added image](./images/ka04u00000116bK_0EM700000004xb7.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xb7)
+[![User-added image](./../0-images/ka04u00000116bK_0EM700000004xbH.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xbH) [![User-added image](./../0-images/ka04u00000116bK_0EM700000004xbC.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xbC) [![User-added image](./../0-images/ka04u00000116bK_0EM700000004xb7.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xb7)
 
 Alternatively, you can add the service account to the local Administrators group.
 
@@ -53,24 +53,24 @@ To grant these rights to the service account in AD, do the following:
 1. Navigate to **Start** > **Administrative Tools** > **Active Directory Users and Computers**.
 2. Select **View** from the main menu and make sure that the **Advanced Features** option is selected.
 
-[![User-added image](./images/ka04u00000116bK_0EM700000004xaY.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xaY)
+[![User-added image](./../0-images/ka04u00000116bK_0EM700000004xaY.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xaY)
 
 3. In the left pane, right-click the managed domain node and select **Properties** from the pop-up menu.
 4. Open the **Security** tab and click the **Advanced** button.
 
-[![User-added image](./images/ka04u00000116bK_0EM700000004xan.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xan)
+[![User-added image](./../0-images/ka04u00000116bK_0EM700000004xan.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xan)
 
 5. In the Advanced Security Settings dialog, in the **Permissions** tab, click the **Add** button.
 6. Select the account you want to use as the service account and click **OK**.
 
-[![User-added image](./images/ka04u00000116bK_0EM700000004xas.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xas)
+[![User-added image](./../0-images/ka04u00000116bK_0EM700000004xas.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xas)
 
 7. In the Permission dialog that opens after you have specified an account, in the **Object** tab, under Apply to, select `Descendant User objects` from the drop-down list.
 8. Select the following check boxes in the Allow column:
    - Reset Password
    - Change Password
 
-[![User-added image](./images/ka04u00000116bK_0EM700000004xax.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xax)
+[![User-added image](./../0-images/ka04u00000116bK_0EM700000004xax.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xax)
 
 9. In the **Properties** tab, under Apply to, select `Descendant User objects` from the drop-down list.
 10. Select the following check boxes in the Allow column:
@@ -81,7 +81,7 @@ To grant these rights to the service account in AD, do the following:
     - Write pwdLastSet
     - Read pwdLastSet
 
-[![User-added image](./images/ka04u00000116bK_0EM700000004xb2.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xb2)
+[![User-added image](./../0-images/ka04u00000116bK_0EM700000004xb2.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000kAcg&feoid=00N700000032Pj2&refid=0EM700000004xb2)
 
 11. Click **OK** to save the changes.
 

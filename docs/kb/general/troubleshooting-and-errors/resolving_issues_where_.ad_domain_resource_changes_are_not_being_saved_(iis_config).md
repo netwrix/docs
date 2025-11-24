@@ -19,7 +19,7 @@ knowledge_article_id: kA04u00000110fGCAQ
 
 This article highlights the procedure for resolving problems where clicking the **Save** button after modifying an Active Directory domain resource results in the **Save** button spinning. In this instance, the frequency of the sync schedule was just saved:
 
-![IIS Configuration Issue](./images/servlet_image_bc580d43e371.png)
+![IIS Configuration Issue](./../0-images/servlet_image_bc580d43e371.png)
 
 This issue occurs because the ".ad" domain suffix is being filtered by IIS.
 
@@ -28,7 +28,7 @@ This issue occurs because the ".ad" domain suffix is being filtered by IIS.
 1. To remediate this, first open **IIS Manager** (`inetmgr`) on the **Privilege Secure** server.
 2. In the left-hand tree, select the **Privilege Secure** server's node. The **file name extensions** tab should be visible.
    
-   ![File Name Extensions Tab](./images/servlet_image_2583da6d156d.png)
+   ![File Name Extensions Tab](./../0-images/servlet_image_2583da6d156d.png)
 
 3. Select the **.ad** extension and in the right-hand pane, select **Remove**.
 4. In a command prompt, run `iisreset`. You should now be able to save changes to the configuration on a domain ending in ".ad".

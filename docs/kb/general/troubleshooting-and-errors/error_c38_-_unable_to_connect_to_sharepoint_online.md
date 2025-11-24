@@ -37,7 +37,7 @@ To resolve this error, follow these steps:
 
 1. Replace the app password value within the PS script with the password associated with the Azure AD connection profile.
 
-   ![PowerShell script showing app password replacement](./images/servlet_image_a57eed7fed62.png)
+   ![PowerShell script showing app password replacement](./../0-images/servlet_image_a57eed7fed62.png)
 
 2. After updating these lines within the PS script and the connection profile, run the `SP_RegisterAzureAppAuth` Job. This job generates a new connection profile and automatically opens a browser to confirm permissions.
 

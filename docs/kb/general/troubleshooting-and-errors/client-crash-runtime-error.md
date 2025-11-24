@@ -25,7 +25,7 @@ knowledge_article_id: kA00g000000H9bcCAC
 
 I deployed the Password Manager client on several machines and on some of them I receive the following error at startup
 
-![User-added image](./images/ka04u00000116ci_0EM7000000052dI.png)
+![User-added image](./../0-images/ka04u00000116ci_0EM7000000052dI.png)
 
 ---
 
@@ -45,7 +45,7 @@ If the issue persists, please manually check that after deployment of the client
 - `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\NetWrixPasswordManager`
 - `HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\NetwrixPasswordManager` (this is only in 64-bit OS)
 
-![User-added image](./images/ka04u00000116ci_0EM7000000052dS.png)
+![User-added image](./../0-images/ka04u00000116ci_0EM7000000052dS.png)
 
 If the key does not exist you can create it manually. No values are necessary.  
 Change the deployment procedure to create this key.

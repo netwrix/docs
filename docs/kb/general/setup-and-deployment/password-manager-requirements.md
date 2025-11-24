@@ -60,7 +60,7 @@ To enable these modules on the client OS, perform the following steps:
 10. Select **Static content**.
 11. Click **OK**.
 
-[![User-added image](./images/ka04u00000116Op_0EM700000004xkx.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000Xe0a&amp;feoid=00N700000032Pj2&amp;refid=0EM700000004xkx)
+[![User-added image](./../0-images/ka04u00000116Op_0EM700000004xkx.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000Xe0a&amp;feoid=00N700000032Pj2&amp;refid=0EM700000004xkx)
 
 ## Enable required IIS features on Windows Server 2008 and 2008 R2
 
@@ -74,7 +74,7 @@ To enable these features on Windows Server 2008 and 2008R2, perform the followin
 6. Expand **Common HTTP features** and enable **Static content**.
 7. Click **Next** and then click **Install**.
 
-[![User-added image](./images/ka04u00000116Op_0EM700000004xl2.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000Xe0a&amp;feoid=00N700000032Pj2&amp;refid=0EM700000004xl2)
+[![User-added image](./../0-images/ka04u00000116Op_0EM700000004xl2.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000Xe0a&amp;feoid=00N700000032Pj2&amp;refid=0EM700000004xl2)
 
 ## Enable required IIS features on Windows Server 2012 and 2012 R2
 
@@ -89,4 +89,4 @@ To enable these features on Windows Server 2012 and 2012R2, perform the followin
 7. Expand **Common HTTP features** and enable **Static content**.
 8. Click **Next** and then click **Install**.
 
-[![User-added image](./images/ka04u00000116Op_0EM700000005OBu.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000Xe0a&amp;feoid=00N700000032Pj2&amp;refid=0EM700000005OBu)
+[![User-added image](./../0-images/ka04u00000116Op_0EM700000005OBu.png)](https://netwrix.secure.force.com/kb/servlet/rtaImage?eid=ka40g000000Xe0a&amp;feoid=00N700000032Pj2&amp;refid=0EM700000005OBu)

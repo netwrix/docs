@@ -29,4 +29,4 @@ This article explains how to collect HTTP Archive (HAR) logs in a web browser. H
 5. Reproduce the issue so that all relevant network activity is captured. If required, repeat this step with and without DPI enabled.
 6. Click the **Export HAR** button and save the file to your computer as **Save as HAR with Content**.
 
-![Dialog box for exporting HAR logs with the Export HAR button highlighted](./images/servlet_image_25a6a63e2d98.png)
+![Dialog box for exporting HAR logs with the Export HAR button highlighted](./../0-images/servlet_image_25a6a63e2d98.png)

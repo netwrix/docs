@@ -27,7 +27,7 @@ How can I remove Enrollment Wizard from startup after deployment of the client?
 
 Please see [KB2014](https://kb.netwrix.com/2014) if you are looking for a way to disable the client from adding itself to startup. During deployment the client adds a Reg_SZ value called `Netwrix Password Manager` to the startup registry key.
 
-![User-added image](./images/ka04u00000116Q2_0EM700000005b6s.png)
+![User-added image](./../0-images/ka04u00000116Q2_0EM700000005b6s.png)
 
 ## Registry keys
 

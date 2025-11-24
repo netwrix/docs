@@ -43,7 +43,7 @@ To resolve the issue, either obtain a signed third-party SSL certificate, or dep
    - Click Agree to continue on the notification screen.
    - In the address bar, find the certificate and open the certificate information (see screenshots – **View certificates** or **Certificate information**).
 
-   ![User-added image](./images/ka04u00000116cj_0EM700000004yH3.png)
+   ![User-added image](./../0-images/ka04u00000116cj_0EM700000004yH3.png)
 
 2. Go to the **Details** tab and click **Copy to file…** (a wizard opens).
 3. Select **Cryptographic Message Syntax Standard (PKCS #7)** and click **Next**.
@@ -56,7 +56,7 @@ To resolve the issue, either obtain a signed third-party SSL certificate, or dep
 9. Leave Certificate Store as default and click **Next**, then click **Finish**.
 10. Run `gpupdate /force` or wait until the policy applies automatically.
 
-![User-added image](./images/ka04u00000116cj_0EM700000004yHD.png)
+![User-added image](./../0-images/ka04u00000116cj_0EM700000004yHD.png)
 
 ## Additional notes
 - Also make sure that the name of the server stored in the certificate matches the name you specified on the Password Manager client setup.

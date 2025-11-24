@@ -39,4 +39,4 @@ Make sure the providers for Windows authentication are configured correctly. Fol
 6. Ensure **NTLM** is present. Add it if needed.
 7. Click **OK** to apply changes.
 
-![Configuration for Windows Authentication](./images/servlet_image_2f7e50c41ebc.png)
+![Configuration for Windows Authentication](./../0-images/servlet_image_2f7e50c41ebc.png)

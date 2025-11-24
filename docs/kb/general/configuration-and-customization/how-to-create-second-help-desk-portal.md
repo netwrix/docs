@@ -30,7 +30,7 @@ To create another portal and assign permissions, do the following:
 1. Navigate to the Netwrix Password Manager installation directory, the default path: `C:Program Files (x86)Netwrix Password Manager`.
 2. In the installation directory, create a copy of the **Web** folder and name it as **Helpdesk2**.
 
-![User-added image](./images/ka04u00000116eV_0EM700000004y52.png)
+![User-added image](./../0-images/ka04u00000116eV_0EM700000004y52.png)
 
 3. Select the **Web** folder, right-click it and select **Properties**.
 4. In the **Properties** dialog, navigate to the **Security** tab and change Windows security permissions:
@@ -38,13 +38,13 @@ To create another portal and assign permissions, do the following:
    - leave full control for SYSTEM, CREATOR OWNER, Administrators
    - create a group of users who should have access to the fully functional Help-desk portal, and grant this group full control.
 
-![User-added image](./images/ka04u00000116eV_0EM700000004y5C.png)
+![User-added image](./../0-images/ka04u00000116eV_0EM700000004y5C.png)
 
 5. Start the Internet Informational Services (IIS) Manager.
 6. In the left pane, navigate to **%ComputerName%** - **Sites** - **Default Web Site** - **PM**, right-click the **PM** node and select **Add Virtual Directory**.
 7. In the **Add Virtual Directory** dialog, specify **Alias** (for example, helpdesk2), and **Physical path** to the new directory created earlier: `C:Program Files (x86)Netwrix Password ManagerHelpdesk2`.
 
-![User-added image](./images/ka04u00000116eV_0EM700000004y5M.png)
+![User-added image](./../0-images/ka04u00000116eV_0EM700000004y5M.png)
 
 8. Make sure that only Windows authentication is enabled for this new virtual directory.
 9. Open the **Administrative portal**, go to **Roles** and add the security group created in step 4 to the **Help Desk Operators** role.

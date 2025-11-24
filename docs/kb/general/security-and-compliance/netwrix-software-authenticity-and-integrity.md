@@ -43,7 +43,7 @@ Netwrix uses industry-standard code signing technologies to provide evidence of 
 
 In addition to signing our releases, Netwrix publishes cryptographic hashes for each download. A file containing the hash can be downloaded from the Customer Portal by clicking the image next to each download:
 
-![User-added image](./images/ka0Qk000000Ctn7_0EM4u000008LiI7.png)
+![User-added image](./../0-images/ka0Qk000000Ctn7_0EM4u000008LiI7.png)
 
 To protect from unauthorized modification, these files are signed with the "Netwrix Corporation (PGP Signing Key) productsecurity@netwrix.com" PGP key. The public key fingerprint is `3F5EB22771A2BD66D1AA011A43E7B9B0AE7B49D8` and can be obtained at https://releases.netwrix.com/netwrixcorporation-pgp-signing.asc.
 

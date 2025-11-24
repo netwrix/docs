@@ -37,7 +37,7 @@ To migrate Netwrix Password Manager perfrom the following steps:
    - `PredefinedQuestions.txt` (if you changed predefined questions)
    - `Templates` subfolder (if you cahnged notifications text)
 
-![User-added image](./images/ka04u00000116Rj_0EM700000004xV4.png)
+![User-added image](./../0-images/ka04u00000116Rj_0EM700000004xV4.png)
 
 5. Start the Netwrix Password Manager service on the new server.
 6. Wait for several minutes to allow the service read the users enrollment data.

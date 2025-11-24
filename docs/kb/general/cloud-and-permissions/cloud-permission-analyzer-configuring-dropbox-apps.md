@@ -37,8 +37,8 @@ This article will cover the process of configuring Netwrix Cloud Permission Anal
    - Choose the type of access you need = Full Dropbox
    - Name your app = `Netwrix Cloud Permission Analyzer for <team name>` *
 
-   ![User-added image](./images/ka04u000000HdEw_0EM4u000002DWQU.png)
-   ![User-added image](./images/ka04u000000HdEw_0EM4u000002DWQP.png)
+   ![User-added image](./../0-images/ka04u000000HdEw_0EM4u000002DWQU.png)
+   ![User-added image](./../0-images/ka04u000000HdEw_0EM4u000002DWQP.png)
 
    **NOTE**: Name of the App should be unique among all the Dropbox Apps.
 
@@ -52,7 +52,7 @@ This article will cover the process of configuring Netwrix Cloud Permission Anal
    - set OAuth 2/Access Token Expiration = `No Expiration`
    - generate access token in OAuth 2/Generated Access Token/[Generate]
 
-   ![User-added image](./images/ka04u000000HdEw_0EM4u000002DWQj.png)
+   ![User-added image](./../0-images/ka04u000000HdEw_0EM4u000002DWQj.png)
 
    4.3. Check the setting responsible for the usage of the Apps outside the App Center.
    - In Dropbox, go to **Admin console > Settings > Application permissions > Other apps** and check the status of **Default permission for apps not listed in App Center**
@@ -62,7 +62,7 @@ This article will cover the process of configuring Netwrix Cloud Permission Anal
 
        1. In the **App Console**, on the **Settings tab**, copy the `App key`.
 
-       ![User-added image](./images/ka04u000000HdEw_0EM4u000002DrWi.png)
+       ![User-added image](./../0-images/ka04u000000HdEw_0EM4u000002DrWi.png)
 
        2. In the **Admin console > Settings > Application permissions** on the Other apps tab: click **Add exception**, and in the window that appears, insert the `App key` from the previous step.
        3. Select the **Allow** option.

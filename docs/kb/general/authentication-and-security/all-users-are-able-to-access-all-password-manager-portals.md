@@ -47,4 +47,4 @@ Note that the **Self Service Portal** uses **Anonymous Authentication** so any u
 
 See the image below for reference
 
-![User-added image](./images/ka04u00000116Ru_0EM700000005hyC.png)
+![User-added image](./../0-images/ka04u00000116Ru_0EM700000005hyC.png)

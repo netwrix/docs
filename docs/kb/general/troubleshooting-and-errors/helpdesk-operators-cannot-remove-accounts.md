@@ -24,7 +24,7 @@ knowledge_article_id: kA00g000000H9XzCAK
 
 Helpdesk Operators cannot remove accounts from the list — when they attempt to remove an account, they receive an error message — `Permissions denied`.
 
-![User-added image](./images/ka04u00000116ex_0EM700000005jDw.png)
+![User-added image](./../0-images/ka04u00000116ex_0EM700000005jDw.png)
 
 ---
 
@@ -41,4 +41,4 @@ In order to grant the permission, perform the following steps:
 3. Create DWORD `AllowRemoveByHelpdesk` with value of `1`.
 4. Restart the **Netwrix Password Manager** service via **Services snap-in**.
 
-![User-added image](./images/ka04u00000116ex_0EM700000004xLJ.png)
+![User-added image](./../0-images/ka04u00000116ex_0EM700000004xLJ.png)

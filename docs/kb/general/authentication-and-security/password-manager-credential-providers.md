@@ -28,7 +28,7 @@ knowledge_article_id: kA00g000000H9cHCAS
 
 With Windows Vista and each Microsoft Operating System since, the Windows logon screen existed as a group of credential providers. There are several provided by default by Microsoft but also 3rd party software and hardware vendors can integrate their own credential providers as well. Credential providers listed on the logon screen are determined by the Credential Providers registry key: `HKLMSoftwareMicrosoftWindowsCurrentVersionAuthenticationCredential Providers`
 
-![User-added image](./images/ka04u00000116P4_0EM700000005ZT6.png)
+![User-added image](./../0-images/ka04u00000116P4_0EM700000005ZT6.png)
 
 The default credential provider that allows users to log in is called PasswordProvider `{6f45dc1e-5384-457a-bc13-2cd81b0d28ed}`.
 
@@ -47,7 +47,7 @@ When you install an icon you simply create an additional credential provider cal
 
 When a link is used, however, the process becomes a bit more complicated since the logon screen cannot show more than one credential provider at a time. By default the PasswordProvider is shown. Since you cannot modify this credential provider you must disable it and replace it with one of your own and disable the original.
 
-![User-added image](./images/ka04u00000116P4_0EM700000005ZTB.png)
+![User-added image](./../0-images/ka04u00000116P4_0EM700000005ZTB.png)
 
 This credential provider is called Netwrix Password Manager Credential Provider for Windows Vista `{92D58847-74F9-4bfa-9324-14C139D3A}`. Note the only difference in GUID of the two Password Manager credential providers is the last value (A or B). This can help in determining automated ways to know which method, link or icon, is being used.
 

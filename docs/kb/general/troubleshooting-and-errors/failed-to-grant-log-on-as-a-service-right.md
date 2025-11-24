@@ -25,7 +25,7 @@ During product installation you are asked to specify credentials to run the soft
 
 But you receive the "Failed to grant the "Log on as  a service" right to the service account" error.
 
-![User-added image](./images/ka04u00000116cm_0EM700000005joE.png)
+![User-added image](./../0-images/ka04u00000116cm_0EM700000005joE.png)
 
 ---
 
@@ -46,4 +46,4 @@ To grant the "Log on as a service" rights please:
 3. Double-click the **Log on as a service** entry in the right pane and add the account you want the service to run under
 4. Click **OK** to apply
 
-![User-added image](./images/ka04u00000116cm_0EM700000005jox.png)
+![User-added image](./../0-images/ka04u00000116cm_0EM700000005jox.png)

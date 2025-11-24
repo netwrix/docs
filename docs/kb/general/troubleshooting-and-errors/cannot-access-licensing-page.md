@@ -47,8 +47,8 @@ To address the issue make sure that the Password Manager service account has Ful
 1. Password Manager installation directory
 2. Registry key `HKLMSoftware[Wow6432Node]NetwrixPassword Manager (Wow6432Node only for x64 OS)`
 
-![User-added image](./images/ka04u00000116bt_0EM700000004yh6.png)
-![User-added image](./images/ka04u00000116bt_0EM700000004yh1.png)
+![User-added image](./../0-images/ka04u00000116bt_0EM700000004yh6.png)
+![User-added image](./../0-images/ka04u00000116bt_0EM700000004yh1.png)
 
 Even if the service account is a member of local Administrators group, please try to grant Full control to the service account explicitly.
 Restart the Netwrix Password Manager service after granting permissions.

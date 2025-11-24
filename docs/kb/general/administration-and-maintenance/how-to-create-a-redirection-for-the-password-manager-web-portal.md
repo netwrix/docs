@@ -46,7 +46,7 @@ Change the `iisstart.htm` file in the root folder of the Default Web Site. Note 
 
 Refer to the IIS documentation for additional information: http://www.iis.net/configreference/system.webserver/httpredirect
 
-![httpredirect - Copy.png](./images/ka04u00000116bf_0EM4u0000084iLI.png)
+![httpredirect - Copy.png](./../0-images/ka04u00000116bf_0EM4u0000084iLI.png)
 
 Perform the following steps:
 
@@ -58,13 +58,13 @@ Perform the following steps:
 6. Set **Status code** to **Found (302)**.
 7. Click **Apply** in the right pane.
 
-![httpredirect_ex - Copy1.png](./images/ka04u00000116bf_0EM4u0000084iLS.png)
+![httpredirect_ex - Copy1.png](./../0-images/ka04u00000116bf_0EM4u0000084iLS.png)
 
 ### Option 3. Use **URL Rewrite** rules
 
 Download and install the URL Rewrite module from: http://www.iis.net/downloads/microsoft/url-rewrite
 
-![url_re.png](./images/ka04u00000116bf_0EM4u0000084iLX.png)
+![url_re.png](./../0-images/ka04u00000116bf_0EM4u0000084iLX.png)
 
 After installing the URL Rewrite module, perform these steps:
 
@@ -85,7 +85,7 @@ After installing the URL Rewrite module, perform these steps:
 8. Click **Apply** and then click **Back to Rules**. The configured rule should now be listed.
 9. Restart IIS by running the `iisreset` command in **Command Prompt** run as administrator.
 
-![url_re_complete.png](./images/ka04u00000116bf_0EM4u0000084iLw.png)
+![url_re_complete.png](./../0-images/ka04u00000116bf_0EM4u0000084iLw.png)
 
 These steps allow the self-service portal to be accessible via the short URL `http://<servername>` instead of `http://<servername>/pm`.
 

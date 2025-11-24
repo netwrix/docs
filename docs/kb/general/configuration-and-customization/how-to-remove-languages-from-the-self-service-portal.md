@@ -52,6 +52,6 @@ The following table lists the files and their corresponding languages:
 
 EXAMPLE: to remove German, rename the `de.asp` file to `de.asp.old`
 
-![User-added image](./images/ka04u00000116cK_0EM700000004xIe.png)
+![User-added image](./../0-images/ka04u00000116cK_0EM700000004xIe.png)
 
 NOTE: English (`en.asp`) cannot be removed by design of the software

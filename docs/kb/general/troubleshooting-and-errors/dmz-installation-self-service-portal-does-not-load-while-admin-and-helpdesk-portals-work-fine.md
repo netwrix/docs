@@ -30,18 +30,18 @@ knowledge_article_id: kA00g000000H9acCAC
 ## Symptoms
 The Self-service portal returns an error or does not load at all.
 
-![User-added image](./images/ka04u00000116Nr_0EM700000005OPh.png)
+![User-added image](./../0-images/ka04u00000116Nr_0EM700000005OPh.png)
 
 However Admin and Helpdesk portals work.
 
-![User-added image](./images/ka04u00000116Nr_0EM700000005ORT.png)
+![User-added image](./../0-images/ka04u00000116Nr_0EM700000005ORT.png)
 
 ---
 
 ## Cause
 When you log in to the **Admin** or **Helpdesk** portal, the portal prompts for credentials and then uses those credentials to communicate with the back-end once authentication is complete. The Self-Service portal uses anonymous authentication and, as a result, uses the account specified in IIS at **Connect as**:
 
-![User-added image](./images/ka04u00000116Nr_0EM700000005ORY.png)
+![User-added image](./../0-images/ka04u00000116Nr_0EM700000005ORY.png)
 
 The issue occurs when the account specified for anonymous authentication in **Connect as** does not have the required permissions on the back-end server.
 
@@ -52,8 +52,8 @@ Make sure that COM settings on the back-end server are correct:
 
 1. Ensure **COM Security** properties for the **My Computer** node allow `Remote activation`.
 
-   ![User-added image](./images/ka04u00000116Nr_0EM700000005ORn.png)
+   ![User-added image](./../0-images/ka04u00000116Nr_0EM700000005ORn.png)
 
 2. Ensure properties of the Netwrix Password Manager COM object allow `Remote activation`.
 
-   ![User-added image](./images/ka04u00000116Nr_0EM700000005ORx.png)
+   ![User-added image](./../0-images/ka04u00000116Nr_0EM700000005ORx.png)

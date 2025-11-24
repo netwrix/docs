@@ -50,12 +50,12 @@ NOTE: Google administrative interfaces tend to change over time, so if you canno
 1. Log in to the **Google Cloud Platform** web console: [https://console.cloud.google.com/](https://console.cloud.google.com/) as a Google Workspace administrator.
 2. Click **Select a project**. In the **Select a project** dialog, click **New Project**:
 
-![User-added image](./images/ka04u000000HcZf_0EM4u000002D34F.png)
+![User-added image](./../0-images/ka04u000000HcZf_0EM4u000002D34F.png)
 
 3. In the dialog, specify the following:
    - Project name — *NetwrixPermissionAnalyzer*.
      - IMPORTANT! Provide a meaningful name for your project **without spaces**. Pay attention to the **Project ID** below and make sure it is identifiable for you since you cannot edit it later.
-     ![User-added image](./images/ka04u000000HcZf_0EM4u000002D3i0.png)
+     ![User-added image](./../0-images/ka04u000000HcZf_0EM4u000002D3i0.png)
    - Organization — provide your organization's domain.
    - Location — provide your parent organization or folder.
 4. Click **Create**.
@@ -66,7 +66,7 @@ NOTE: Google administrative interfaces tend to change over time, so if you canno
 2. Navigate to **IAM & Admin** → **Service Accounts**.
 3. Click **Create Service Account**:
 
-![User-added image](./images/ka04u000000HcZf_0EM4u000002D35r.png)
+![User-added image](./../0-images/ka04u000000HcZf_0EM4u000002D35r.png)
 
 4. In the **Create service account** dialog, provide the **Service account details**:
    - Service account name — new service account name. For example, *Netwrix Permission Analyzer Service Account*.
@@ -93,7 +93,7 @@ NOTE: Your new public / private keypair is generated and downloaded to your mach
 5. Once completed, make sure that *Domain-wide delegation* is enabled for the account.
 6. Click the **View Client ID** link.
 
-![User-added image](./images/ka04u000000HcZf_0EM4u000002D3i5.png)
+![User-added image](./../0-images/ka04u000000HcZf_0EM4u000002D3i5.png)
 
 7. Copy the Client ID, you will need it later.
 
@@ -103,7 +103,7 @@ NOTE: Your new public / private keypair is generated and downloaded to your mach
 2. Navigate to **APIs & Services** on the left, and select the **Dashboard** menu.
 3. Click **Enable APIs and Services** at the top.
 
-![User-added image](./images/ka04u000000HcZf_0EM4u000002Plj2.png)
+![User-added image](./../0-images/ka04u000000HcZf_0EM4u000002Plj2.png)
 
 NOTE: If you already have any enabled APIs and/or Services in your project, skip this step and proceed with the instructions below.
 
@@ -114,7 +114,7 @@ NOTE: If you already have any enabled APIs and/or Services in your project, skip
    - Find the **Queries per 100 seconds per user** line and click the edit icon to edit.
    - Set the quota limit to `"10,000"` and save your changes.
 
-   ![User-added image](./images/ka04u000000HcZf_0EM4u000002Pljb.png)
+   ![User-added image](./../0-images/ka04u000000HcZf_0EM4u000002Pljb.png)
 
 6. IMPORTANT! Go back to **APIs & Services** → **Dashboard** and repeat steps 2 - 3 to enable the **Admin SDK API**. If you have this API in your project, skip this step, and proceed.
 

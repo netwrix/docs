@@ -30,24 +30,24 @@ Use the **Manual Audit Log Backup** option to perform a one-time backup of audit
 
 Use this option to perform a one-time backup of audit logs.
 
-![Manual Audit Log Backup section in Endpoint Protector](./images/servlet_image_5c836ce7f58d.png)
+![Manual Audit Log Backup section in Endpoint Protector](./../0-images/servlet_image_5c836ce7f58d.png)
 
 ### Scheduled Audit Log Backup
 
 Use this option to create a recurring audit log backup that runs at a frequency you choose (from a few days to several months). This is similar to the manual backup, but it runs automatically at the specified interval.
 
-![Scheduled Audit Log Backup section in Endpoint Protector](./images/servlet_image_d9422308ff4b.png)
+![Scheduled Audit Log Backup section in Endpoint Protector](./../0-images/servlet_image_d9422308ff4b.png)
 
 ### Configure the Audit Log Backup
 
 1. Choose the type of logs you want to back up.  
-   ![Select log types for backup in Endpoint Protector](./images/servlet_image_cfc48ae58743.png)
+   ![Select log types for backup in Endpoint Protector](./../0-images/servlet_image_cfc48ae58743.png)
 
 2. If you intend to delete logs after backup to avoid filling up the server, leave the following option unchecked:  
-   ![Option to keep logs after backup in Endpoint Protector](./images/servlet_image_43592b74bddb.png)
+   ![Option to keep logs after backup in Endpoint Protector](./../0-images/servlet_image_43592b74bddb.png)
 
 3. Select which old logs to back up. All logs older than the specified number of days or months will be removed from the server and saved as backups.  
-   ![Select old logs to backup in Endpoint Protector](./images/servlet_image_6d5dba18caac.png)
+   ![Select old logs to backup in Endpoint Protector](./../0-images/servlet_image_6d5dba18caac.png)
 
 4. Select the number of logs in one package; the default is 1 million.
 
@@ -56,4 +56,4 @@ Use this option to create a recurring audit log backup that runs at a frequency 
 6. Choose whether to delete and back up Shadows as well. Including Shadows is recommended, as file shadows can occupy more space than logs and may be the main cause of increased server disk space usage.
 
 7. Once the Audit Log Backup has completed, the archived logs will appear at the bottom of this menu in the **Backup List**:
-   ![Backup List section in Endpoint Protector](./images/servlet_image_c59a8c7e74e8.png)
+   ![Backup List section in Endpoint Protector](./../0-images/servlet_image_c59a8c7e74e8.png)

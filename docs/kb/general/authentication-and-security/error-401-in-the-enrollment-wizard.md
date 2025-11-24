@@ -36,7 +36,7 @@ To resolve the issue, add the Password Manager Self-service portal URL to the **
 5. Type the URL and click **Add**
 6. Click **Close**, then **Ok**, and again **Ok**
 
-![User-added image](./images/ka04u00000116cL_0EM700000004yGK.png)
+![User-added image](./../0-images/ka04u00000116cL_0EM700000004yGK.png)
 
 ## Workaround: Force the browser to send credentials to the Internet zone
 
@@ -49,6 +49,6 @@ As a workaround, you can force the browser to send credentials to the Internet z
 5. Select **Automatic logon with current username and password** radio-button under **User authentication - Logon**
 6. Click **Ok** then **Ok** again
 
-![User-added image](./images/ka04u00000116cL_0EM700000004yGP.png)
+![User-added image](./../0-images/ka04u00000116cL_0EM700000004yGP.png)
 
 These settings can also be applied via Group Policy.

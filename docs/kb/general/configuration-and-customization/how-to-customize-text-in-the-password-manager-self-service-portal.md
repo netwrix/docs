@@ -36,7 +36,7 @@ Names of values are intuitive. If you want to remove a string of text completely
 
 For example, if you want to remove the copyright text, set `strCopyright=`.
 
-![User-added image](./images/ka04u00000116bQ_0EM700000004yGU.png)
+![User-added image](./../0-images/ka04u00000116bQ_0EM700000004yGU.png)
 
 ## Language files
 | File   | Language            |
