@@ -128,7 +128,7 @@ Run the following checks for your migrated Netwrix Auditor instance:
 - Run a search with blank parameters (an open search).
 - Run a report on a data source you are auditing.
 - Confirm your monitoring plans have carried over.
-- Apply the Auditor license. Refer to the following article for additional information:[How to Apply Netwrix Auditor License](/docs/kb/auditor/system-administration/licensing-and-compliance/how-to-apply-netwrix-auditor-license)
+- Apply the Auditor license. Refer to the following article for additional information: [How to Apply Netwrix Auditor License](/docs/kb/auditor/system-administration/licensing-and-compliance/how-to-apply-netwrix-auditor-license)
 
 > **IMPORTANT:** The SSL certificate previously used for Integration API will be missing from the certificate store in your new Netwrix Auditor server. Generate a new SSL certificate for Netwrix Auditor Integration API − refer to the following article for additional information: [Integration API](https://docs.netwrix.com/docs/auditor/10_8/api/overview)
 
@@ -144,6 +144,6 @@ Monitor the system over the next few days to confirm the migration has been comp
 - [Requirements for SQL Server to Store Audit Data](https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserver)
 [Integration API](https://docs.netwrix.com/docs/auditor/10_8/api/overview)
 - [Specified Logon Session Does Not Exist Error in Netwrix Auditor](/docs/kb/auditor/troubleshooting-and-errors/data-collection-errors/specified-logon-session-does-not-exist-error-in-netwrix-auditor)
-- [How to Apply Netwrix Auditor License](/docs/kb/auditor/how-to-apply-netwrix-auditor-license)
+- [How to Apply Netwrix Auditor License](/docs/kb/auditor/system-administration/licensing-and-compliance/how-to-apply-netwrix-auditor-license)
 - [Migrate PEN to a Different Server](/docs/kb/auditor/monitoring-plans/password-expiration-notifier/migrate-netwrix-password-expiration-notifier-to-a-different-server)
 - [How to Migrate Netwrix Inactive Users Tracker to Other Servers](/docs/kb/auditor/monitoring-plans/user-activity-monitoring/how-to-migrate-netwrix-inactive-users-tracker-to-other-servers)

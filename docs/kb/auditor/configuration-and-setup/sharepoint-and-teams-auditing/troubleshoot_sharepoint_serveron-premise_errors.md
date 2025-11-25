@@ -33,7 +33,7 @@ This is a reference list of articles on troubleshooting errors in SharePoint Ser
 - [Event ID 1223 in Health Log](/docs/kb/auditor/event-id-reference/health-log-events/event-id-1223-in-health-log)
 - [Event ID 1225 in Health Log](/docs/kb/auditor/event-id-reference/health-log-events/event-id-1225-in-health-log)
 - [Event ID 1236 in Health Log](/docs/kb/auditor/event-id-reference/health-log-events/event-id-1236-in-health-log)
-- [Event ID 1237/1238 in Health Log](/docs/kb/auditor/event_id_12371238_in_health_log)
+- [Event ID 1237/1238 in Health Log](/docs/kb/auditor/event-id-reference/health-log-events/event_id_12371238_in_health_log)
 - [Event ID 1239 in Health Log](/docs/kb/auditor/event-id-reference/health-log-events/event-id-1239-in-health-log)
 - [Event ID 1240 in Health Log](/docs/kb/auditor/event-id-reference/health-log-events/event-id-1240-in-health-log)
 - [Event ID 1241 in Health Log](/docs/kb/auditor/event-id-reference/health-log-events/event-id-1241-in-health-log)

@@ -47,7 +47,7 @@ After that, the **Netwrix Auditor Application Deployment Service** appears on th
 
 ### Related Articles
 
-- [How to Investigate Compression Services Errors](/docs/kb/auditor/how-to-investigate-compression-services-errors)
+- [How to Investigate Compression Services Errors](/docs/kb/auditor/troubleshooting-and-errors/data-collection-errors/how-to-investigate-compression-services-errors)
 - [Windows File Servers — Enable Remote Registry Service — v10.8.](https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/windows/remoteregistryservice)
 
 

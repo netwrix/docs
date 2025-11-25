@@ -56,7 +56,7 @@ Refer to the list of possible causes for the error:
 2. Configure your SQL Server instance to allow remote connections. Learn more in [Configure remote access (server configuration option) — Use SQL Server Management Studio ⸱ Microsoft 🧩](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-the-remote-access-server-configuration-option?view=sql-server-ver16#SSMSProcedure).
 3. Enable the TCP/IP protocol in the SQL Server—refer to the following article for additional information: Enable TCP/IP Protocol in SQL Server.
 
-> **NOTE:** Alternatively, review the TCP port used for SQL Server communication—learn more in [Configure SQL Server to listen on a specific TCP port — Assign a TCP/IP port number to the SQL Server Database Engine ⸱ Microsoft 🧩](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-a-server-to-listen-on-a-specific-tcp-port?view=sql-server-ver15#assign-a-tcpip-port-number-to-the-sql-server-database-engine). For additional information on setting a custom TCP port in Netwrix Auditor, refer to the following article: [Specify Custom SQL Server Port for Netwrix Auditor Audit Database](/docs/kb/auditor/specify-custom-sql-server-port-for-netwrix-auditor-audit-database).
+> **NOTE:** Alternatively, review the TCP port used for SQL Server communication—learn more in [Configure SQL Server to listen on a specific TCP port — Assign a TCP/IP port number to the SQL Server Database Engine ⸱ Microsoft 🧩](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-a-server-to-listen-on-a-specific-tcp-port?view=sql-server-ver15#assign-a-tcpip-port-number-to-the-sql-server-database-engine). For additional information on setting a custom TCP port in Netwrix Auditor, refer to the following article: [Specify Custom SQL Server Port for Netwrix Auditor Audit Database](/docs/kb/auditor/configuration-and-setup/sql-server-auditing/specify-custom-sql-server-port-for-netwrix-auditor-audit-database).
 
 ## Related Articles
 
@@ -64,7 +64,7 @@ Refer to the list of possible causes for the error:
 - [Configure remote access (server configuration option) — Use SQL Server Management Studio ⸱ Microsoft 🧩](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-the-remote-access-server-configuration-option?view=sql-server-ver16#SSMSProcedure)
 - Enable TCP/IP Protocol in SQL Server
 - [Configure SQL Server to listen on a specific TCP port — Assign a TCP/IP port number to the SQL Server Database Engine ⸱ Microsoft 🧩](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-a-server-to-listen-on-a-specific-tcp-port?view=sql-server-ver15#assign-a-tcpip-port-number-to-the-sql-server-database-engine)
-- [Specify Custom SQL Server Port for Netwrix Auditor Audit Database](/docs/kb/auditor/specify-custom-sql-server-port-for-netwrix-auditor-audit-database)
+- [Specify Custom SQL Server Port for Netwrix Auditor Audit Database](/docs/kb/auditor/configuration-and-setup/sql-server-auditing/specify-custom-sql-server-port-for-netwrix-auditor-audit-database)
 
 
 

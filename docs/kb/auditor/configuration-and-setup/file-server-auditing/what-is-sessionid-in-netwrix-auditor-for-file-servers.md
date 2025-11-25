@@ -43,7 +43,7 @@ Since the product associates Session IDs with the current session of the user, t
 
 ### Related Article
 
-- [How Does Merging Logon Activity Events Work?](/docs/kb/auditor/how-does-merging-logon-activity-events-work)
+- [How Does Merging Logon Activity Events Work?](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-does-merging-logon-activity-events-work)
 
 
 

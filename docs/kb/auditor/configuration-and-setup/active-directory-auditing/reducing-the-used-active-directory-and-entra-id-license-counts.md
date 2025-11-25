@@ -95,7 +95,7 @@ To exclude specific Entra ID users from the license count, populate the `omitUPN
 
 ## Related Links
 
-- [Determining the Number of Enabled Active Directory User Accounts](/docs/kb/auditor/determining-the-number-of-enabled-active-directory-user-accounts)
-- [Determining the Number of Enabled Microsoft Entra ID Accounts](/docs/kb/auditor/determining-the-number-of-enabled-microsoft-entra-id-accounts)
+- [Determining the Number of Enabled Active Directory User Accounts](/docs/kb/auditor/configuration-and-setup/active-directory-auditing/determining-the-number-of-enabled-active-directory-user-accounts)
+- [Determining the Number of Enabled Microsoft Entra ID Accounts](/docs/kb/auditor/configuration-and-setup/microsoft-365-integration/determining-the-number-of-enabled-microsoft-entra-id-accounts)
 - [Active Directory Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8)
 - [Microsoft Entra ID Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8)
