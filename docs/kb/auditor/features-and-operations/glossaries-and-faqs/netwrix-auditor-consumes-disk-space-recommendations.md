@@ -74,6 +74,6 @@ The following recommendations will allow you to reduce disk space consumption:
 ## Related Articles
 
 - [Error: Netwrix Auditor for File Servers Audit Service Terminated Unexpectedly](/docs/kb/auditor/configuration-and-setup/file-server-auditing/error-netwrix-auditor-for-file-servers-audit-service-terminated-unexpectedly)
-- [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)
+- [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 - [How to Add Additional Space to Long-Term Archive](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-add-additional-space-to-long-term-archive)
 - [Netwrix Auditor System Health Log Contains EventID 2002](https://docs.netwrix.com/docs/kb/auditor/features-and-operations/glossaries-and-faqs/netwrix-auditor-health-log-contains-eventid-2002)

@@ -22,7 +22,7 @@ knowledge_article_id: kA04u000000PoL7CAK
 
 # Reducing the Used Active Directory and Entra ID License Counts
 
-> **IMPORTANT:** Netwrix Auditor is licensed per enabled Active Directory (AD) and Entra ID user object. For additional information on determining the number of enabled users, refer to the following articles: [Determining the Number of Enabled Active Directory User Accounts](/docs/kb/auditor/determining-the-number-of-enabled-active-directory-user-accounts) — [Determining the Number of Enabled Microsoft Entra ID Accounts](/docs/kb/auditor/determining-the-number-of-enabled-microsoft-entra-id-accounts). Netwrix Auditor only collects data from objects that are not excluded (omitted), which means that any objects that are omitted will not be monitored.
+> **IMPORTANT:** Netwrix Auditor is licensed per enabled Active Directory (AD) and Entra ID user object. For additional information on determining the number of enabled users, refer to the following articles: [Determining the Number of Enabled Active Directory User Accounts](/docs/kb/auditor/configuration-and-setup/active-directory-auditing/determining-the-number-of-enabled-active-directory-user-accounts) — [Determining the Number of Enabled Microsoft Entra ID Accounts](/docs/kb/auditor/configuration-and-setup/microsoft-365-integration/determining-the-number-of-enabled-microsoft-entra-id-accounts). Netwrix Auditor only collects data from objects that are not excluded (omitted), which means that any objects that are omitted will not be monitored.
 
 ## Question
 

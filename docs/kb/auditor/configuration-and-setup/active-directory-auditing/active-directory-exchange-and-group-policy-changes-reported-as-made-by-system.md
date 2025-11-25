@@ -24,13 +24,13 @@ knowledge_article_id: kA00g000000H9SmCAK
 
 This article contains references to the most popular Active Directory, Exchange, and Group Policy changes which may be reported as made by **System** by Netwrix Auditor:
 
-- [Alert Reported Change Made by System](/docs/kb/auditor/alert-reported-change-made-by-system).
-- [System Changed Object Path after Account Name Change](/docs/kb/auditor/system-changed-object-path-after-account-name-change).
-- [System Changed Client Operating System](/docs/kb/auditor/system-changed-client-operating-system).
-- [System Changed Directory Objects for Foreign Security Principals](/docs/kb/auditor/system-changed-directory-objects-for-foreign-security-principals).
-- [Workstation Field Reported as Unknown](/docs/kb/auditor/workstation-field-reported-as-unknown)
-- [Duplicate Configuration and Schema Changes for All Monitored Domains in Forest Made by System](/docs/kb/auditor/duplicate-configuration-and-schema-changes-for-all-monitored-domains-in-forest-made-by-system).
-- [System Changed Service Principle Name Attribute](/docs/kb/auditor/system-changed-service-principle-name-attribute).
+- [Alert Reported Change Made by System](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/alert-reported-change-made-by-system).
+- [System Changed Object Path after Account Name Change](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/system-changed-object-path-after-account-name-change).
+- [System Changed Client Operating System](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/system-changed-client-operating-system).
+- [System Changed Directory Objects for Foreign Security Principals](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/system-changed-directory-objects-for-foreign-security-principals).
+- [Workstation Field Reported as Unknown](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/workstation-field-reported-as-unknown)
+- [Duplicate Configuration and Schema Changes for All Monitored Domains in Forest Made by System](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/duplicate-configuration-and-schema-changes-for-all-monitored-domains-in-forest-made-by-system).
+- [System Changed Service Principle Name Attribute](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/system-changed-service-principle-name-attribute).
 
 
 
