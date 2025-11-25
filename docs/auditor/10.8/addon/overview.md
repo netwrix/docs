@@ -6,9 +6,9 @@ sidebar_position: 80
 
 # Add-Ons
 
-The [Netwrix Auditor Add-on Store](https://www.netwrix.com/netwrix_addons.html) contains free
-add-ons developed by Netwrix and your peers in the community. The add-ons help you leverage
-integration between your on-premises or cloud applications and Netwrix Auditor.
+The Netwrix Auditor Add-on Store contains free add-ons developed by Netwrix and your peers in
+the community. The add-ons help you leverage integration between your on-premises or cloud
+applications and Netwrix Auditor.
 
 The list of available add-ons keeps growing because with the new RESTful API, the integration
 capabilities of Netwrix Auditor are unlimited. Netwrix encourages users to develop add-ons, upload
