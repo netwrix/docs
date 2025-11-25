@@ -108,7 +108,7 @@ For 32-bit applications that are running on 64-bit OSs, update the following sub
 
 ### Related Articles
 
-- [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm)
+- [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/troubleshooting-and-errors/data-collection-errors/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm)
 
 - [How to enable TLS 1.2 on clients ⸱ Microsoft 🡥](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/security/enable-tls-1-2-client)
 
