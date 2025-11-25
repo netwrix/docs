@@ -33,7 +33,7 @@ Yes, you are able to migrate audit databases to another Microsoft SQL Server ins
 
 ### Prerequisites
 
-- Required Permissions: The account used by Netwrix Auditor must have **db_owner** rights on the target audit databases. For SQL Server Reporting Services (SSRS), the account must have the **Content Manager** role on the Home folder, and users must have the **Browser** role on the Report Server. For detailed steps on assigning these permissions, see [How to Assign db_owner Permissions](docs/kb/auditor/how-to-assign-db-owner-permissions.md) and [SQL Server Reporting Services](https://docs.netwrix.com/docs/auditor/10_8/requirements/overview)
+- Required Permissions: The account used by Netwrix Auditor must have **db_owner** rights on the target audit databases. For SQL Server Reporting Services (SSRS), the account must have the **Content Manager** role on the Home folder, and users must have the **Browser** role on the Report Server. For detailed steps on assigning these permissions, see [How to Assign db_owner Permissions](/docs/kb/auditor/system-administration/database-management/how-to-assign-db-owner-permissions) and [SQL Server Reporting Services](https://docs.netwrix.com/docs/auditor/10_8/requirements/overview)
 - SQL Server and SSRS must be installed and configured on the new server.
 
 ### Instructions
@@ -66,7 +66,7 @@ Yes, you are able to migrate audit databases to another Microsoft SQL Server ins
 
 ## Related Links
 
-- [How to Assign db_owner Permissions](docs/kb/auditor/how-to-assign-db-owner-permissions.md)
+- [How to Assign db_owner Permissions](/docs/kb/auditor/system-administration/database-management/how-to-assign-db-owner-permissions)
 - [SQL Server Reporting Services](https://docs.netwrix.com/docs/auditor/10_8/requirements/overview)
 - [How to Prepare the Netwrix Server for a SQL Upgrade](/docs/kb/auditor/system-administration/migration-and-upgrade/how-to-prepare-the-netwrix-server-for-a-sql-upgrade)
 - [Deploying the Report Server Database](/docs/kb/auditor/system-administration/database-management/deploying-the-report-server-database)
