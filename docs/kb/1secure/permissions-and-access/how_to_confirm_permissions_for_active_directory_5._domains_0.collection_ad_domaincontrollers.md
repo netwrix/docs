@@ -6,7 +6,8 @@ keywords:
   - Netwrix Enterprise Auditor
   - permissions
 sidebar_label: Confirm Permissions for AD Domain Controllers
-tags: []
+tags:
+  - permissions-and-access
 title: "How to Confirm Permissions for Active Directory > 5. Domains > 0.Collection > AD_DomainControllers"
 knowledge_article_id: kA0Qk0000001hNtKAI
 products:
