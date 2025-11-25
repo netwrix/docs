@@ -36,4 +36,4 @@ To upgrade to v9.96, contact Technical Support for download links for the latest
 ## Related Articles
 
 - [Upgrade Increments for Netwrix Auditor](/docs/kb/auditor/system-administration/migration-and-upgrade/upgrade-increments-for-netwrix-auditor)
-- [How to Upgrade Netwrix Auditor](/docs/kb/auditor/how-to-upgrade-netwrix-auditor)
+- [How to Upgrade Netwrix Auditor](/docs/kb/auditor/system-administration/migration-and-upgrade/how-to-upgrade-netwrix-auditor)

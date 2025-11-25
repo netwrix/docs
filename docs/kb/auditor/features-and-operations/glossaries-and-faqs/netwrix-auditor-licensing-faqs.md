@@ -59,7 +59,7 @@ Per server |
 | Netwrix Auditor for MS Teams | Per enabled Microsoft Entra ID user |
 
 ## How Can I Count Enabled AD Users?
-To count the number of licenses, you should provide the number of `enabled AD user accounts`, that is, calculate the number of your Active Directory user accounts in the Enabled state. Follow the instructions provided in this Netwrix Auditor Knowledge Base article: [Determining the Number of Enabled Active Directory User Accounts](/docs/kb/auditor/determining-the-number-of-enabled-active-directory-user-accounts). Then round up the calculation result to reserve some space for growth and to prevent scalability issues. For example:
+To count the number of licenses, you should provide the number of `enabled AD user accounts`, that is, calculate the number of your Active Directory user accounts in the Enabled state. Follow the instructions provided in this Netwrix Auditor Knowledge Base article: [Determining the Number of Enabled Active Directory User Accounts](/docs/kb/auditor/configuration-and-setup/active-directory-auditing/determining-the-number-of-enabled-active-directory-user-accounts). Then round up the calculation result to reserve some space for growth and to prevent scalability issues. For example:
 
 - If the calculation script returns 214, round up this value to 220 when applying for the license.
 - If the calculation script returns 1841, round up this value to 2000 when applying for the license.
@@ -79,7 +79,7 @@ Oracle defines the number of processor licenses as follows:
 “The number of required licenses shall be determined by multiplying the total number of cores of the processor by a core processor licensing factor specified on the Oracle Processor Core Factor Table.”
 
 If you are unsure how many Oracle processor licenses you have, check your processor type, find the corresponding factor in the [Oracle Processor Core Factor Table](http://www.oracle.com/us/corporate/contracts/processor-core-factor-table-070634.pdf), and multiply it by the number of CPU cores on your Oracle Database deployment.
-To obtain the `number of CPU cores`, go to the How to Count Number of CPU Cores on Your Oracle Database Deployment article: /docs/kb/auditor/how-to-count-number-of-cpu-cores-on-your-oracle-database-deployment.
+To obtain the `number of CPU cores`, go to the How to Count Number of CPU Cores on Your Oracle Database Deployment article: /docs/kb/auditor/system-administration/database-management/how-to-count-number-of-cpu-cores-on-your-oracle-database-deployment.
 
 ## What Should I Provide for Netwrix Auditor for Windows Server Licensing?
 Netwrix Auditor for Windows Server is licensed either by the number of enabled AD users or the total number of virtual and physical servers.
@@ -87,7 +87,7 @@ Refer to the questions above for more information on how to count the number of 
 For per-server licensing, count and provide the total number of the servers (physical or virtual) you are going to monitor with Netwrix Auditor.
 
 ## What Should I Provide for Netwrix Auditor for Microsoft Entra ID Licensing?
-You should provide the number of `enabled Microsoft Entra ID user accounts`. Starting from version 9.96, guest/external users are not included in the license count. Follow the instructions outlined in the How to Determine the Count of Enabled Microsoft Entra ID Accounts article: /docs/kb/auditor/determining-the-number-of-enabled-microsoft-entra-id-accounts.
+You should provide the number of `enabled Microsoft Entra ID user accounts`. Starting from version 9.96, guest/external users are not included in the license count. Follow the instructions outlined in the How to Determine the Count of Enabled Microsoft Entra ID Accounts article: /docs/kb/auditor/configuration-and-setup/microsoft-365-integration/determining-the-number-of-enabled-microsoft-entra-id-accounts.
 
 You can use `omitUPNlist.txt` omit list to reduce user count by omitting certain user UPNs from being audited. You will not gain any information on these users; however, the amount of licenses will be reduced. For additional information on reducing the user count via Netwrix Auditor UI, refer to the following article: [Reducing the Used Active Directory and Entra ID License Counts](/docs/kb/auditor/configuration-and-setup/active-directory-auditing/reducing-the-used-active-directory-and-entra-id-license-counts). For additional information on omit lists, refer to the following article: [How to Use Omit Lists](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-use-omit-lists).
 
@@ -139,7 +139,7 @@ Here:
 You may choose to no longer audit a data source, and thus not renew the license for the corresponding application. Unused licenses do not need to be removed from Netwrix Auditor, with the exception of one special case. This case is upgrading a Netwrix Auditor installation that has some expired licenses. Most recent (9.95 and up) versions of Netwrix Auditor allow you to remove a license directly from the user interface. If you have an older version of Netwrix Auditor and need to remove an expired license as it blocks your upgrade, contact Netwrix Technical Support.
 
 ## Related Articles
-- [Determining the Number of Enabled Active Directory User Accounts](/docs/kb/auditor/determining-the-number-of-enabled-active-directory-user-accounts)
+- [Determining the Number of Enabled Active Directory User Accounts](/docs/kb/auditor/configuration-and-setup/active-directory-auditing/determining-the-number-of-enabled-active-directory-user-accounts)
 - [Reducing the Used Active Directory and Entra ID License Counts](/docs/kb/auditor/configuration-and-setup/active-directory-auditing/reducing-the-used-active-directory-and-entra-id-license-counts)
 - [How to Use Omit Lists](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-use-omit-lists)
 - [How to count the number of your network devices in your configuration?](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-count-the-number-of-your-network-devices-in-your-configuration)

@@ -41,4 +41,4 @@ Upgrade your Auditor instance to v10.7.13710 or later. Download the executable i
 ## Related Articles
 
 - [My Products · Netwrix](https://www.netwrix.com/my_products.html)
-- [How to Upgrade Netwrix Auditor](/docs/kb/auditor/how-to-upgrade-netwrix-auditor)
+- [How to Upgrade Netwrix Auditor](/docs/kb/auditor/system-administration/migration-and-upgrade/how-to-upgrade-netwrix-auditor)
