@@ -123,11 +123,11 @@ function generateKBSidebar(productName) {
         .split('-')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
-      
+
       items.push({
         type: 'category',
         label: categoryLabel,
-        collapsed: false,
+        collapsed: true,
         items: folderFiles
       });
     }
@@ -159,7 +159,7 @@ function generateKBSidebar(productName) {
     items.push({
       type: 'category',
       label: 'General',
-      collapsed: false,
+      collapsed: true,
       items: rootFiles
     });
   }
