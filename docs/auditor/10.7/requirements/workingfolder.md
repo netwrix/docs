@@ -19,5 +19,5 @@ capacity, you can use the Working Folder widget of the Health Status dashboard.
 
 If you want to change the working folder default location, run the specially designed utility. See
 the
-[How to Migrate Netwrix Auditor Working Folder to a New Location](/docs/kb/auditor/how-to-migrate-netwrix-auditor-working-folder-to-a-new-location)
+[How to Migrate Netwrix Auditor Working Folder to a New Location](/docs/kb/auditor/system-administration/migration-and-upgrade/how-to-migrate-netwrix-auditor-working-folder-to-a-new-location)
 Knowledge Base article for additional information.
