@@ -3,13 +3,117 @@ title: "System Configuration"
 description: "System Configuration"
 sidebar_position: 140
 ---
-
 # System Configuration
 
 This section includes essential elements such as Endpoint Protector Clients, Licensing, and
 advanced configurations. These settings are critical for maintaining the system's performance,
 stability, and compliance, as they directly influence both the operational efficiency and
 reliability of the Endpoint Protector solution.
+
+## Server Update
+
+From this section, you can check and apply the latest security and Endpoint Protector Server
+updates.
+
+![Check and apply the latest security and  Server updates](serverupdate.webp)
+
+### Software Update
+
+![Management of software updates](softwareupdate.webp)
+
+Starting with the EPP 5.9.4.2 release, EPP server patches are offered only as Offline Patch files. Use the Offline Patch upload option to select the patch files from your computer and install them to update Endpoint Protector to the latest version.
+
+Beginning with EPP Server version 2509, all patches are delivered as cumulative updates, bringing your server directly to the latest version regardless of your current patch level.
+
+:::note
+Download the latest offline patches from the Netwrix My Products portal:
+[Netwrix Customer Portal](https://www.netwrix.com/sign_in.html?rf=my_products.html).
+:::
+Click on the "Offline Patch Upload" button to begin the EPP Server patching procedure, and select the downloaded patch file.
+![Select the oﬄine patches from your computer and successively install them to the latest](offlinepatch.webp)
+
+:::note
+Customers using environments with version 5.9.4.2 or older should familiarize themselves with the [EPP Server 2509 release announcement](https://community.netwrix.com/t/major-version-announcement-endpoint-protector-server-version-2509/114025) and the associated [migration procedure for self hosted (on premises) customers](https://community.netwrix.com/t/on-premises-migration-procedures-for-endpoint-protector-server-v2509/114021).
+:::
+
+>**This functionality and section have been removed starting with EPP Server version 2509. It is retained in the User Manual solely as guidance for customers using older server versions, until limited supportability expires.** <br />
+>Click **Conﬁgure Live Update** to select manual or automatic live updates check, the number of
+>retries, and manage the Automatic Reporting to the LiveUpdate Server.
+>![Configuring Live Updates](configliveupdate.webp)
+>
+>Click **Check Now** to search for the Endpoint Protector Server updates displayed in the Available
+>Updates section. You can select and install an update with **Apply Updates**, or all updates with
+>**Apply all updates**. To view the latest installed updates, click **View Applied Updates**.
+>
+>You can also schedule an update. Select an entry from the available updates, click **Schedule
+>update** and then use the calendar to select the date and conﬁrm your selection.
+>
+>![Checking for available EPP server Updates](availableupdates.webp)
+>
+>Use the Oﬄine Patch upload option to select the oﬄine patches from your computer and successively
+>install them to the latest Endpoint Protector version.
+>
+>:::note
+>To request the Offline Patch, submit a support ticket through the
+>[Netwrix Customer Portal](https://www.netwrix.com/sign_in.html?rf=my_products.html).
+>:::
+>
+>
+>![Select the oﬄine patches from your computer and successively install them to the latest](offlinepatch.webp)
+>
+>:::warning
+>Before upgrading your Endpoint Protector server to the 5.7.0.0 server version from a
+>pre-5206 version and adjacent OS image, you need to enable database partitions. For assistance,
+>submit a support ticket through the
+>[Netwrix Customer Portal](https://www.netwrix.com/sign_in.html?rf=my_products.html).[](https://support.endpointprotector.com/hc/en-us/requests/new)
+>:::
+
+### Security Updates
+
+You can use this section to check and apply different types of security updates, view information on
+recent updates checked or installed, and a list of updates available.
+
+:::note
+The security update options will only be available for customer-hosted instances (e.g.
+AWS, Goggle, etc.) with the exception for Operating System and Kernel upgrades.
+:::
+
+:::warning
+Netwrix does not allow on-premise (self-hosted) customers to perform backend security updates by any method other than the web UI. Any violation of this rule is outside of Netwrix support and may cause EPP Server malfunction.
+:::
+
+:::note
+Updates are not tested beforehand but are pulled from the oﬃcial Linux repository.
+:::
+
+
+To ensure the updates will not harm the system, follow these actions:
+
+- test the updates in a test environment ﬁrst
+- make a VM snapshot
+- make a system backup from the System Maintenance, the System Backup v2 section
+
+Select one of the security updates type available and then click **Check Updates**:
+
+- Security – this will update all security-related updates of installed packages (Critical and High)
+- Other – this will download and apply any update available to 3rd party libraries, kernel, OS
+  packages and MySQL database
+- All Updates – this will download and apply Informational and Optional/Unclassiﬁed updates
+
+If there are updates available, click **Apply Updates**.
+
+![Applying Backend Security Updates](backendsecurityupdates.webp)
+
+:::note
+For history of applied Backend Updates go to admin action report and choose **Apply
+Updates** under Activity ﬁlter.
+:::
+
+
+:::note
+Due to patching nature, some updates may automatically restart the Endpoint Protector
+server or other sub-services in the background
+:::
 
 ## Client Software
 
