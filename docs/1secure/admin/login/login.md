@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # First Login to 1Secure
 
-This topic describes how an MSP can access the 1Secure tenant for the first time, activate their
-account, and complete the initial login. After logging in, the MSP can add users to the tenant and
+This topic describes how an organization can access the 1Secure tenant for the first time, activate their
+account, and complete the initial login. After logging in, the organization can add users to the tenant and
 assign them roles based on the required access levels.
 
 When the Netwrix team adds a new user account for your organization, you will receive an email
@@ -81,7 +81,7 @@ authentication method. After that, one of the following happens:
 After successful authorization, You are redirected to the dashboard. See the
 [1Secure Dashboard](/docs/1secure/admin/dashboard/overview.md) topic for additional information.
 
-Once the initial login is completed, an MSP can configure Single Sign On (SSO) using supported
+Once the initial login is completed, an organization can configure Single Sign On (SSO) using supported
 authentication services, including Entra ID, 1Secure Authentication, or OpenID Connect. See the
 [SSO Configuration with Authentication Services](/docs/1secure/admin/login/sso.md#sso-configuration-with-authentication-services)
 topic for additional information.

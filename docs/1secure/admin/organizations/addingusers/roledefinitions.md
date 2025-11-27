@@ -10,8 +10,8 @@ The following tables describe permissions by role for each type of screen or act
 
 ## Alerts Overview
 
-| Screen/Action       | MSP | Business Viewer | Co-managing Administrator |
-| ------------------- | --- | --------------- | ------------------------- |
+| Screen/Action       | Administrator | Business Viewer | Co-managing Administrator |
+| ------------------- | ------------- | --------------- | ------------------------- |
 | **Alerts Overview** | Yes | Yes             | Yes                       |
 | Switch Organization | Yes | No              | No                        |
 | Edit Alert Settings | Yes | No              | No                        |
@@ -19,8 +19,8 @@ The following tables describe permissions by role for each type of screen or act
 
 ## Configuration
 
-| Screen/Action         | MSP | Business Viewer | Co-managing Administrator |
-| --------------------- | --- | --------------- | ------------------------- |
+| Screen/Action         | Administrator | Business Viewer | Co-managing Administrator |
+| --------------------- | ------------- | --------------- | ------------------------- |
 | **Configuration**     | Yes | No              | Yes                       |
 | Managed Organizations | Yes | No              | No                        |
 | Users                 | Yes | No              | No                        |
@@ -32,15 +32,15 @@ The following tables describe permissions by role for each type of screen or act
 
 ## Configuration Credentials
 
-| Screen/Action    | MSP | Business Viewer | Co-managing Administrator |
-| ---------------- | --- | --------------- | ------------------------- |
+| Screen/Action    | Administrator | Business Viewer | Co-managing Administrator |
+| ---------------- | ------------- | --------------- | ------------------------- |
 | **Credentials**  | Yes | No              | Yes                       |
 | Edit Credentials | Yes | No              | Yes                       |
 
 ## Configuration Sites/Agent
 
-| Screen/Action                           | MSP | Business Viewer | Co-managing Administrator |
-| --------------------------------------- | --- | --------------- | ------------------------- |
+| Screen/Action                           | Administrator | Business Viewer | Co-managing Administrator |
+| --------------------------------------- | ------------- | --------------- | ------------------------- |
 | **Sites**                               | Yes | No              | Yes                       |
 | Edit Site                               | Yes | No              | Yes                       |
 | Delete Site                             | Yes | No              | Yes                       |
@@ -50,8 +50,8 @@ The following tables describe permissions by role for each type of screen or act
 
 ## Configuration Sources
 
-| Screen/Action           | MSP | Business Viewer | Co-managing Administrator |
-| ----------------------- | --- | --------------- | ------------------------- |
+| Screen/Action           | Administrator | Business Viewer | Co-managing Administrator |
+| ----------------------- | ------------- | --------------- | ------------------------- |
 | **Sources**             | Yes | No              | Yes                       |
 | Add Source              | Yes | No              | Yes                       |
 | Edit Source             | Yes | No              | Yes                       |
@@ -62,8 +62,8 @@ The following tables describe permissions by role for each type of screen or act
 
 ## Configuration Users
 
-| Screen/Action | MSP | Business Viewer | Co-managing Administrator |
-| ------------- | --- | --------------- | ------------------------- |
+| Screen/Action | Administrator | Business Viewer | Co-managing Administrator |
+| ------------- | ------------- | --------------- | ------------------------- |
 | **Users**     | Yes | No              | Yes                       |
 | Add User      | Yes | No              | only business viewers     |
 | Edit User     | Yes | No              | only business viewers     |
@@ -71,8 +71,8 @@ The following tables describe permissions by role for each type of screen or act
 
 ## Organization Configuration
 
-| Screen/Action                      | MSP | Business Viewer | Co-managing Administrator |
-| ---------------------------------- | --- | --------------- | ------------------------- |
+| Screen/Action                      | Administrator | Business Viewer | Co-managing Administrator |
+| ---------------------------------- | ------------- | --------------- | ------------------------- |
 | **Organization Configuration**     | Yes | No              | Yes                       |
 | Sources                            | Yes | No              | Yes                       |
 | Sites                              | Yes | No              | Yes                       |
@@ -86,8 +86,8 @@ The following tables describe permissions by role for each type of screen or act
 
 This table explains the functionality that each role can perform on an organization dashboard.
 
-| Screen/Action                   | MSP | Business Viewer | Co-managing Administrator |
-| ------------------------------- | --- | --------------- | ------------------------- |
+| Screen/Action                   | Administrator | Business Viewer | Co-managing Administrator |
+| ------------------------------- | ------------- | --------------- | ------------------------- |
 | **View Organization Dashboard** | Yes | Yes             | Yes                       |
 | Switch Organization             | Yes | No              | No                        |
 | Go to Investigation             | Yes | Yes             | Yes                       |
@@ -97,8 +97,8 @@ This table explains the functionality that each role can perform on an organizat
 
 ## Risk Assessment Dashboard
 
-| Screen/Action                 | MSP | Business Viewer | Co-managing Administrator |
-| ----------------------------- | --- | --------------- | ------------------------- |
+| Screen/Action                 | Administrator | Business Viewer | Co-managing Administrator |
+| ----------------------------- | ------------- | --------------- | ------------------------- |
 | **Risk Assessment Dashboard** | Yes | Yes             | Yes                       |
 | Switch Organization           | Yes | No              | No                        |
 | Select Time Frame             | Yes | Yes             | Yes                       |
@@ -110,8 +110,8 @@ This table explains the functionality that each role can perform on an organizat
 
 ## Reports
 
-| Screen/Action                    | MSP | Business Viewer          | Co-managing Administrator |
-| -------------------------------- | --- | ------------------------ | ------------------------- |
+| Screen/Action                    | Administrator | Business Viewer          | Co-managing Administrator |
+| -------------------------------- | ------------- | ------------------------ | ------------------------- |
 | **Reports**                      | Yes | Yes                      | Yes                       |
 | Switch Organization              | Yes | No                       | No                        |
 | New Investigation                | Yes | Yes                      | Yes                       |
@@ -128,8 +128,8 @@ This table explains the functionality that each role can perform on an organizat
 
 ## Subscriptions
 
-| Screen/Action            | MSP | Business Viewer | Co-managing Administrator |
-| ------------------------ | --- | --------------- | ------------------------- |
+| Screen/Action            | Administrator | Business Viewer | Co-managing Administrator |
+| ------------------------ | ------------- | --------------- | ------------------------- |
 | **Subscriptions**        | Yes | No              | Yes                       |
 | Turn on/off subscription | Yes | No              | Yes                       |
 | Delete subscription      | Yes | No              | Yes                       |

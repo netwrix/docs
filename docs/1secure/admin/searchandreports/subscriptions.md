@@ -6,9 +6,9 @@ sidebar_position: 80
 
 # Subscriptions
 
-The Subscriptions feature allows Managed Service Providers (MSPs) to schedule certain reports
+The Subscriptions feature allows organizations to schedule certain reports
 (including Risk Assessment Dashboard reports), send them to specific email addresses automatically,
-or upload reports to a designated folder in SharePoint Online. This enables MSPs to:
+or upload reports to a designated folder in SharePoint Online. This enables organizations to:
 
 - Carry out reporting obligations with the clients
 - Store an audit trail for compliance purposes
@@ -114,7 +114,7 @@ report:
   /Shared Documents/FolderName)
 
     :::note
-    For MSP organizations, reports will always be saved to the location in a sub-folder
+    For parent organizations, reports will always be saved to the location in a sub-folder
     named after the child organization.
     :::
 

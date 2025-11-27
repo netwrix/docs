@@ -6,13 +6,13 @@ sidebar_position: 30
 
 # Risk Assessment Dashboard
 
-The Risk Assessment dashboard is designed as a diagnostic tool for Managed Service Providers (MSPs)
+The Risk Assessment dashboard is designed as a diagnostic tool for managing organizations (e.g., Managed Service Providers)
 and managed organization users to assess and monitor the security posture of an organization. By
 regularly reviewing this dashboard, you can get a comprehensive view of the security risks for an
 organization, track risk levels, address vulnerabilities, and ensure that your environment aligns
 with industry best practices and standards such as NIST.
 
-- If you are a managing organization (MSP) user, this page provides insights for all your
+- If you are a managing organization (e.g., Managed Service Provider) user, this page provides insights for all your
   organizations.
 - If you are a managed organization user, this page displays insights specific to your organization.
 
@@ -51,7 +51,7 @@ Multiple filters are available on this page to enable you to filter data as desi
 one or more filters at a time.
 
 - Organizations – Select an organization from the drop-down menu located at the top left of the
-  dashboard. This option is only available to managing organization (MSP) users.
+  dashboard. This option is only available to managing organization (e.g., Managed Service Provider) users.
 - Trend since – Select a time period from this drop-down menu to view the risk-related data for that
   period. For example, if you select Last week, the data will reflect information for the last week.
   By default, Last month is selected. Options are:
