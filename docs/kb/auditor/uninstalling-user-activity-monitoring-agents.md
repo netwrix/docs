@@ -25,7 +25,7 @@ knowledge_article_id: kA04u000000TssMCAS
 
 # Uninstalling User Activity Monitoring Agents
 
-The attached PowerShell functions assist customers with removing User Activity monitoring agents (Netwrix Auditor User Activity Core Service) that Netwrix Auditor could not automatically uninstall. You can download the script from our website: https://www.netwrix.com/download/products/KnowledgeBase/Uninstall-NetwrixProduct.ps1
+The attached PowerShell functions assist customers with removing User Activity monitoring agents (Netwrix Auditor User Activity Core Service) that Netwrix Auditor could not automatically uninstall. You can download the script from our website: [Uninstall-NetwrixProduct.ps1](/files/auditor/Uninstall-NetwrixProduct.ps1)
 
 ## Prerequisites
 
@@ -36,16 +36,16 @@ The attached PowerShell functions assist customers with removing User Activity m
 
 ## Functions
 
-- `Uninstall-UAVRAgents`  
+- `Uninstall-UAVRAgents`
   Uninstalls all versions of the User Activity data source agent.
 
-- `Uninstall-ADV2022003UAVRAgents`  
+- `Uninstall-ADV2022003UAVRAgents`
   Uninstalls versions of the User Activity data source agent affected by the vulnerability detailed in security advisory ADV-2022-003 (https://security.netwrix.com/Advisories/ADV-2022-003).
 
-- `Uninstall-GenericProduct`  
+- `Uninstall-GenericProduct`
   Uses built-in `PackageManager` features to uninstall a specified product. Used by the other helper functions.
 
-- `Get-IPRange`  
+- `Get-IPRange`
   An internal function to resolve CIDR notation to an enumeration of IP addresses.
 
 ## Parameters
