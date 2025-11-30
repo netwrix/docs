@@ -72,7 +72,7 @@ see Advanced options can enable this by:
 
 See the following Knowledge Base article to learn how to set up single sign-on for Netwrix Data
 Classification via Microsoft Entra ID authentication:
-[How to Set Up SSO via Microsoft Entra ID Authentication](/docs/kb/dataclassification/how-to-set-up-single-sign-on-via-microsoft-entra-id-authentication).
+[How to Set Up SSO via Microsoft Entra ID Authentication](/docs/kb/dataclassification/authentication-and-security/how-to-set-up-single-sign-on-via-microsoft-entra-id-authentication).
 
 ## Add or Remove Users
 
