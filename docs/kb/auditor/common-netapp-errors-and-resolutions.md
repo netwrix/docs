@@ -11,7 +11,7 @@ products:
   - auditor
 sidebar_label: NetApp Clustered Data ONTAP Error Resolution Guide
 title: NetApp Clustered Data ONTAP Error Resolution Guide
-knowledge_article_id: 
+knowledge_article_id:
 ---
 
 # NetApp Clustered Data ONTAP Error Resolution Guide
@@ -23,10 +23,10 @@ This knowledge base article provides a comprehensive guide to troubleshooting co
 
 ### Error 6104: Access Denied - Insufficient Privileges
 
-**Error Description:**  
+**Error Description:**
 Unable to process item: Access is denied. Insufficient privileges: user `<DPA user>` does not have read/write access to this resource.
 
-**Cause:**  
+**Cause:**
 The SVM (Storage Virtual Machine) role doesn't have sufficient rights to perform the required operations.
 
 **Resolution:**
@@ -35,15 +35,15 @@ The SVM (Storage Virtual Machine) role doesn't have sufficient rights to perform
 3. Ensure the role includes necessary ONTAPI and REST API permissions.
 4. Verify both ONTAPI role and RESTAPI role configurations.
 
-**Documentation:**  
+**Documentation:**
 [NetApp Role Permissions Configuration](/docs/auditor/10_8/configuration/fileservers/netappcmode/permissions#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)
 
 ### Error 6181: Auditing Not Enabled
 
-**Error Description:**  
+**Error Description:**
 Auditing is not enabled for the target system.
 
-**Cause:**  
+**Cause:**
 SVM audit is disabled.
 
 **Resolution:**
@@ -52,17 +52,17 @@ SVM audit is disabled.
 3. Ensure audit destination directory exists and is accessible.
 4. Configure appropriate log file size limits (recommended: 300 MB).
 
-**Documentation:**  
+**Documentation:**
 [Event Categories Configuration](/docs/auditor/10_8/configuration/fileservers/netappcmode/eventcategories)
 
 ### Error 6186: Event Log Files Deleted
 
-**Error Description:**  
+**Error Description:**
 Event log files were deleted for server `<SVM>`. Some changes could be lost.
 
 #### Scenario 1: Missing Log Files
 
-**Cause:**  
+**Cause:**
 Cannot find audit logs - logs were deleted.
 
 **Resolution:**
@@ -73,7 +73,7 @@ Cannot find audit logs - logs were deleted.
 
 #### Scenario 2: Wrong Log Path
 
-**Cause:**  
+**Cause:**
 The path to the log folder is wrong or has been changed.
 
 **Resolution:**
@@ -81,15 +81,15 @@ The path to the log folder is wrong or has been changed.
 2. Update the audit destination if necessary: `vserver audit modify -destination <correct_path>`
 3. Ensure the destination directory exists and has proper permissions.
 
-**Documentation:**  
+**Documentation:**
 [Event Categories Configuration](/docs/auditor/10_8/configuration/fileservers/netappcmode/eventcategories)
 
 ### Error 6127: Incorrectly Configured Auditing Entries
 
-**Error Description:**  
+**Error Description:**
 The following objects have incorrectly configured auditing entries: `<objects list>`
 
-**Cause:**  
+**Cause:**
 Autoaudit is disabled and the provided list of files/folders have insufficient SACLs (System Access Control Lists) or inheritance is disabled.
 
 **Resolution:**
@@ -98,15 +98,15 @@ Autoaudit is disabled and the provided list of files/folders have insufficient S
 3. Verify that audit inheritance is properly configured.
 4. Review CIFS share audit settings.
 
-**Documentation:**  
+**Documentation:**
 [CIFS Configuration and SACL Settings](/docs/auditor/10_8/configuration/fileservers/netappcmode/cifs)
 
 ### Error 6129: Cannot Adjust Audit Settings
 
-**Error Description:**  
+**Error Description:**
 Netwrix Auditor could not adjust audit settings.
 
-**Cause:**  
+**Cause:**
 The DPA (Data Processing Account) doesn't have rights to set or change SACLs.
 
 **Resolution:**
@@ -122,6 +122,7 @@ For comprehensive configuration guides and detailed setup instructions, refer to
 - [CIFS Configuration and Auditing](/docs/auditor/10_8/configuration/fileservers/netappcmode/cifs)
 - [Event Categories and Audit Setup](docs/auditor/10_8/configuration/fileservers/netappcmode/eventcategories)
 
-> **NOTE:** Ensure proper backup procedures are in place before making configuration changes.
-> **NOTE:** Consider performance impacts when enabling detailed audit logging on high-traffic systems.
-> **NOTE:** Regularly monitor HealthLog events to stay updated on significant occurrences.
+## Important Notes
+- Ensure proper backup procedures are in place before making configuration changes.
+- Consider performance impacts when enabling detailed audit logging on high-traffic systems.
+- Regularly monitor HealthLog events to stay updated on significant occurrences.
