@@ -2,5 +2,9 @@
   "label": "Troubleshooting Articles",
   "position": 999,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "index"
+  }
 }
