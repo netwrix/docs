@@ -8,7 +8,7 @@ sidebar_position: 1
 
 Netwrix Endpoint Policy Manager supports multiple delivery methods to suit different organizational needs and infrastructure requirements. Each method offers unique advantages depending on your environment.
 
-## Available Delivery Methods
+## Available Delivery Methods you can use
 
 ### Cloud Delivery
 Modern cloud-based deployment for organizations wanting to minimize on-premises infrastructure:
@@ -43,5 +43,3 @@ Consider these factors when selecting your delivery method:
 ## Getting Started
 
 Each delivery method section contains detailed implementation guides, best practices, and troubleshooting information specific to that deployment model.
-
-
