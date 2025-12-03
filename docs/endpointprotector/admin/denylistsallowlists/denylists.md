@@ -164,9 +164,9 @@ You can test a regular expression for accuracy using the right-side option. Add 
 click Test. If the Regular Expression has no errors, then the same content should appear into the
 Matched content box, as shown below:
 
-- To match an E-mail – [-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}
+- To match an E-mail – `[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}`
 - To match an IP –
-  (25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}
+  `(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}`
 
 :::note
 This feature is provided “as is” and requires advanced knowledge of the Regular Expression
@@ -176,6 +176,66 @@ implement regular expressions and to thoroughly test.
 
 
 ![You can test a regular expression for accuracy using the right-side option](regexnewdenylist.webp)
+
+### Regex Supported Formats
+
+Endpoint Protector supports both standard Regex syntax and **Perl-Compatible Regular Expression (PCRE)** extensions and modifiers. For example, you can use the (?i) modifier at the beginning of a regex pattern to make it case-insensitive during matching.
+
+**Case Sensitivity Options in Regular Expressions**
+
+Regular expressions allow you to control how text matching handles letter casing. Depending on your requirements, you can use case-sensitive, case-insensitive, or partially case-insensitive matching.
+
+**1. Case-Sensitive Matching (Default)**
+
+By default, Regex matching is case-sensitive.
+This means that only text with the exact same casing will be matched.
+
+**Example:**<br />
+**Pattern:** `test@example\\.com`<br />
+**Matches:** `test@example.com`<br />
+Does **not match:** `TEST@EXAMPLE.COM` or `Test@Example.Com`
+
+
+**2. Case-Insensitive Matching**
+To make a Regex pattern case-insensitive, use the (?i) flag.
+This enables matching regardless of the case of letters in the input text.
+
+**Example:**<br />
+**Pattern:** `(?i)test@example\\.com`<br />
+**Matches:** `test@example.com`, `TEST@EXAMPLE.COM`, `Test@Example.Com`
+
+**3. Partial Case-Insensitive Matching**
+Regex also allows you to apply case-insensitive matching only to specific parts of your pattern.
+ You can enable and disable this mode using the following flags:
+
+-   `(?i)` — enables case-insensitive mode
+-   `(?-i)` — disables case-insensitive mode
+
+**Example:**<br />
+**Pattern:** `(?i)confidential(?-i) document`<br />
+**Matches:** `"CONFIDENTIAL document"`, `"Confidential document"`<br />
+Does **not match:** `"CONFIDENTIAL DOCUMENT"`
+
+**Regex Operators**
+
+| **Character** | **Description**                                                         | **Example**                                                          |
+|---------------|-------------------------------------------------------------------------|----------------------------------------------------------------------|
+| &circ;            | Matches the start of a string or line.                                  | \^abc matches “abc” only if it appears at the beginning of the line. |
+| \$            | Matches the end of a string or line.                                    | abc\$ matches “abc” only if it’s at the end of the line.             |
+| .             | Matches any single character except newline (\\n).                      | a.c matches “abc”, “axc”, etc.                                       |
+| \*            | Matches 0 or more occurrences of the preceding character or group.      | bo\* matches “b”, “bo”, “boo”, “booo”, etc.                          |
+| []            | Defines a character class, matching any one of the enclosed characters. | [abc] matches “a”, “b”, or “c”.                                      |
+| [abc]         | Any single character of a, b or c                                       | [abc] matches “a”, “b”, or “c”.                                      |
+| [&circ;abc]       | Any single character expect a, b or c                                   | It will match any single charact expect “a”, “b”, or “c”.            |
+| [a-z]         | A character in range a-z                                                | It will match single character in range of a – z.                    |
+| [a-zA-Z]      | A character in range a-z & A-Z                                          | It will match single character in range of a – z & A - Z             |
+| \\d           | Any digit character                                                     | \\d will match any digit 0-9                                         |
+| \|            | Groups expressions together or captures them for backreferences.        | (abc)+ matches one or more repetitions of “abc”.                     |
+| ()            | Groups expressions together or captures them for backreferences.        | (abc)+ matches one or more repetitions of “abc”.                     |
+| \\            | Used to escape special characters or indicate special sequences.        | \\. matches a literal period “.”; \\d matches any digit.             |
+| (?i)          | Enables case-insensitive matching.                                      | (?i)abc matches “abc”, “ABC”, “AbC”, etc.                            |
+| \\s           | Any whitespace character                                                |                                                                      |
+| \\S           | Any non-whitespace character                                            |                                                                      |
 
 ## Domain and URL
 

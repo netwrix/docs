@@ -30,6 +30,45 @@ To ensure consistent DPI behavior after enabling or disabling the feature or upg
 the Endpoint Protector, a restart of your computer is required.
 :::
 
+## Stealthy DPI vs. regular DPI
+
+What are the different network visibility strategies available on Windows?
+
+-   Stealthy DPI: Taps into a newly established network flow, where the content is extracted, decrypted, analyzed, encrypted, and then reintroduced. This method creates a direct network flow between the original application and the internet, without intermediaries.
+-   Regular DPI (Redirect-Based): Redirects network traffic to a transparent proxy server on localhost before it reaches the internet. This approach results in observable traffic directed to the localhost proxy on the local computer.
+
+How do Stealthy DPI and Redirect-Based DPI compare in terms of EPP Client functionality?
+
+-   Stealthy DPI and Redirect-Based DPI are functionally similar and require no changes to Endpoint Protector policies. Users can select the mode that best suits their infrastructure preferences. Both methods use the same resources and generate identical events.
+-   However, they differ in handling bypasses for failed connections:
+    -   Regular DPI (Redirect-Based): Offers more flexibility by allowing a feature to bypass connections that cannot be intercepted, with the proxy rebuilding the network connection to the destination after a failure.
+    -   Stealthy DPI: Achieves a similar bypass result using the improved "DPI Bypass" feature available in Endpoint Protector version 5.9.3.0.
+
+When should you choose Stealthy DPI over Regular DPI (Redirect-Based)?
+
+-   Third-Party DLP or Firewall Software: If third-party software has trouble handling or blocking network traffic originating from a local proxy, switching to Stealthy DPI is recommended.
+-   Security-Enhanced Applications: If certain applications experience connectivity issues with Regular DPI (Redirect-Based), opting for Stealthy DPI can resolve these issues.
+
+## Deep Packet Inspection Diagrams
+
+The diagrams below illustrate the high-level logic for Deep Packet Inspection (DPI) across different operating systems. Additionally, they illustrate the distinctions between Stealthy and Regular DPI modes of operation for macOS.
+
+### For Windows
+- regular DPI
+![Deep Packet Inspection on Windows - regular DPI](dpiwinregular.webp)
+
+- Stealthy DPI:
+![Deep Packet Inspection on Windows - Stealth DPI](dpiwinstealth.webp)
+
+### For MacOS
+- intercept VPN off:
+![Deep Packet Inspection on Windows - intercept VPN off](dpimacosvpnoff.webp)
+
+- intercept VPN on:
+![Deep Packet Inspection on Windows - intercept VPN on](dpimacosvpnon.webp)
+
+### For Linux
+![Deep Packet Inspection on Linux](dpilinux.webp)
 
 ## Deep Packet Inspection Certiﬁcate
 
@@ -58,9 +97,14 @@ generated.
 Issuing the Deep Packet Inspection Certificate on Windows is handled automatically and
 transparently by the Endpoint Protector Client. No additional steps are required.
 :::
-
-
 ![Conﬁguring the Deep Packet Inspection - Auto-refresh Certiﬁcate feature](autorefreshcert.webp)
+
+EPP DPI module generates a certificate only at the first time a user visits a website and caches that certificate for subsequent visits to the same website. The certificate cache deletion interval can be configured in EPP Server versions 5.8.0.0 and above (please refer to this UM section [System Settings - DPI certificate](/docs/endpointprotector/admin/systemconfiguration/systemsettings) . Alternatively, the certificate cache is cleared either upon computer reboot or when the DPI feature is disabled.
+
+Endpoint Protector employs the same criteria as the Chromium open-source web browser for verifying website certificates, referencing the corporate CA certificates found in the system certificate stores. You can assess this validation by using diagnostic websites like https://badssl.com/.
+
+If needed, this feature can be configured through the DPI Bypass option described here [Global Settings - DPI configuration](/docs/endpointprotector/admin/dc_module/globalsettings#dpi-conﬁguration).
+
 
 ## Deep Packet Inspection Certiﬁcate on macOS
 
@@ -184,6 +228,10 @@ Protection Policy.
 
 ![Deep Packet Inspection Ports and Settings](dpiports.webp)
 
+:::note
+The "Local" flag setting will only function with "Stealthy DPI" on Windows and "Intercept VPN Traffic" on macOS. It is not operational on Linux.
+:::
+
 In this section you can also manage the following settings:
 
 - Text Inspection - enable this setting to monitor conﬁdential content typed in Teams, Skype, Slack,
@@ -215,8 +263,7 @@ In this section you can also manage the following settings:
     :::
 
 
-- Block unsupported protocols in New Outlook – Enable this setting to block the send email
-  functionality in the New Outlook without interacting with the Outlook legacy functionality.
+- Block unsupported protocols in New Outlook – Enable this setting to block unsupported protocols and the send email function in New Outlook without affecting legacy Outlook. Recommended for those not using the EPP add-in to limit the app as an egress channel. Keep off if EPP add-in is used.
 
 - Monitor webmail – Enable this setting to scan the subject and body for Gmail, Outlook and Yahoo on
   the browser. Attachments will be monitored regardless of this setting.
@@ -255,6 +302,9 @@ In this section you can also manage the following settings:
 
 
 ![Allowed domains for Google Business accounts](alloweddomainsgoogle.webp)
+    :::warning
+    "To include consumer Google Accounts, such as those ending in @gmail.com and @googlemail.com, enter "consumer_accounts" in the list instead of "gmail.com". This change is necessary, and the current issue is being closed as "won't fix". We may consider opening a documentation task to link the relevant Google document to our user manual. For more information, refer to: [Google Support](https://support.google.com/a/answer/1668854?hl=en).
+    :::
 
 ### Monitor Webmail JSON Format Parser Usage
 
@@ -300,21 +350,6 @@ It is advised, that due to recent changes applied by cloud providers, to not
 apply any changes in the JSON parser, unless Monitor Webmail is not working
 :::
 
-
-### Note on Peer Certiﬁcate Validation Usage
-
-If Deep Packet Inspection is ON and Peer Certiﬁcate Validation is enabled then you cannot access
-unsecured websites and a certiﬁcate warning message is displayed.
-
-If Deep Packet Inspection is ON and Peer Certiﬁcate Validation is disabled then you can access
-unsecured websites and no certiﬁcate warning messages are displayed.
-
-For Example; your organization uses an SSL inspection proxy or gateway. The certiﬁcates injected by
-the proxy or gateway cannot be validated on the endpoint because they are either invalid or the
-issuer CA certiﬁcate is not installed in the "Trusted Root Certiﬁcation Authorities" in the computer
-certiﬁcate store. To allow Deep Packet Inspection to work in this case you must skip peer
-certiﬁcates validation. Endpoint Protector Client assumes that in this case the peer certiﬁcate
-validation is performed by the proxy or gateway so that security is not compromised.
 
 ## Deep Packet Inspection Applications
 

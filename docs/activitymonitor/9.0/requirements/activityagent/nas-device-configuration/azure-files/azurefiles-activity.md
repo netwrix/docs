@@ -67,6 +67,10 @@ It may take up to 90 minutes for the changes to take effect.
 Monitoring of Azure Files requires an application to be registered in the Azure portal, assigning it permissions to access the Graph API and  
 RBAC roles to access storage accounts.  
 
+:::note
+A user account with the **Global Administrator** role is required to register an app and grant admin consent in Microsoft Azure.
+:::
+
 If you already have an application registered for Activity Monitor for Entra ID, SharePoint Online, or Exchange Online, you can reuse that  
 registration for Azure Files by assigning additional RBAC roles.
 
@@ -102,6 +106,10 @@ On the **Overview** page, copy the **Application (client) ID** and **Directory (
 3. Specify a description and an expiration period.  
 4. On the **Certificates & secrets** page, copy the **Value** of the created secret and save it for later.  
 
+:::note
+Be aware of the client secret's expiration date. You'll need to generate a new one before it expires to ensure uninterrupted monitoring.
+:::
+
 :::warning
 Make sure you copy the **Value**, not the **Secret ID**.
 :::
@@ -115,7 +123,8 @@ Activity Monitor requires the `User.Read.All` permission to resolve user SIDs in
    **Microsoft Graph**  
    Type: **Application permissions**  
    Permission: `User.Read.All`  
-3. Click **Grant admin consent for Your Company**.  
+3. Click **Grant admin consent for [tenant name]**, then confirm when prompted.  
+   This action requires a Global Administrator.  
 
 ## Assign Azure RBAC roles for storage accounts
 

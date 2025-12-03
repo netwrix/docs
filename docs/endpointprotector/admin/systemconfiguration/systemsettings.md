@@ -550,10 +550,14 @@ Edit contact details for the main administrator and then click Save to keep all 
 
 ### Server Display Name
 
-Endpoint Protector users have the capability to visually differentiate environments within the
-Endpoint Protector console. This feature enables users to add custom text above the Endpoint
-Protector logo on the login page and alongside the logo in the Endpoint Protector header. You can
-customize text and upload a custom logo for further personalization. These visual cues are designed
-to prevent incidents like unintentional modiﬁcations on the wrong environment
+Endpoint Protector users can easily visually differentiate environments within the Endpoint Protector console, ensuring precise identification and preventing unintended actions in the wrong environment. This customization feature allows users to add custom text above the Endpoint Protector logo on the login page and alongside the logo in the console header. Moreover, users have the capability to upload a custom logo for further personalization.
+
+To assist customers in distinguishing between multiple EPP Server consoles, Netwrix has introduced options for configuring custom text, icon markings, and extended legal banners for compliance purposes. Organizations managing multiple consoles, such as those for production and testing environments, can implement distinct visual cues. These elements, including custom login text, background colors, and legal banner specifications, help administrators easily identify the environment they are working in, ensuring the appropriate usage of each console.
+
+Refer to the image above for guidance on customizing these elements. You can enable custom login and header displays, Enter your desired text and choose colors that will best highlight your environment’s uniqueness. Additionally, you can upload a custom logo and configure legal banners for added clarity and compliance. By strategically using these visual indicators, administrators can effortlessly distinguish between different operational contexts, enhancing both security and workflow efficienc
 
 ![EPP Server Display Name](serverdisplayname.webp)
+
+:::note
+The legal banner placeholder can accommodate up to 5,000 characters.
+:::

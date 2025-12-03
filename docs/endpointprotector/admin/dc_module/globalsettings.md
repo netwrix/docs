@@ -228,7 +228,7 @@ Select from the drop-down list a client mode to deﬁne the Endpoint Protector C
 
     - Display the system tray icon
     - Display system tray notiﬁcations
-    - Block all devices, regardless of authorization,, with the following exceptions:
+    - Block all devices, regardless of authorization, with the following exceptions:
 
         - Keyboards are blocked either when a third one is connected to the same computer or after
           48 hours have passed
@@ -266,6 +266,10 @@ systems, keep the Endpoint Protector Notifier window open.
 
 
 ## DPI Conﬁguration
+
+:::note
+For more Deep Packet Inspection (DPI) description please refer to dedicated chapter: [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket.md).
+:::
 
 In this section, you can manage the following settings:
 
@@ -415,6 +419,10 @@ In this section, you can manage the following settings:
 ![If enabled, network and browser traﬃc can be inspected for content](dpiconfiguration.png)
 
 ### Intercept VPN Traﬃc
+
+:::note
+For more additional DPI Intercept VPN traffic, check: [Deep Packet Inspection Intercept VPN Traﬃc](/docs/endpointprotector/admin/cap_module/deeppacket.md#deep-packet-inspection-diagrams).
+:::
 
 If you enable this setting, the Endpoint Protector Client will intercept VPN traﬃc on macOS using
 the network extension framework.
@@ -610,19 +618,17 @@ for recommended settings.
 - Metadata Scanning - if you disable this setting, metadata will not be scanned for PDFs, ZIPs, and
   Oﬃce Files DOCX, XLSX, PPTX, DOC, XLX, PPT).
 
-- Advanced Printer and MTP Scanning – Advanced Printer and MTP Scanning – if you enable this
-  setting, a DLL is loaded into certain Windows applications when they are launched. This DLL
-  enables Endpoint Protector to monitor printing and files copied to MTP devices by hooking into
-  Windows API functions responsible for these actions. For example, when a user opens Microsoft
-  Word, an Endpoint Protector DLL is loaded into Word’s address space. If the user attempts to print
-  a document, the DLL scans the printed document content, and if sensitive data is detected,
-  Endpoint Protector can block the print operation.
+- Advanced Printer and MTP Scanning – enables a feature in Endpoint Protector by which a small DLL is loaded into certain Windows applications when they are launched. That small DLL enables Endpoint Protector to monitor printing and files copied to MTP devices, by hooking Windows API functions responsible with printing and copying files to MTP devices.
+For example, when a user opens Microsoft Word, an Endpoint Protector DLL is loaded into Microsoft Word's address space. If the user wants to print a document, that DLL is called, and Endpoint Protector can scan the printed document content. If the printed content contains sensitive data Endpoint Protector can block the print operation.
+
 
     :::note
     This feature increases accuracy and reduces false positives for File Tracing and File
     Shadowing. It is available only for Windows and will require a computer restart.
     :::
 
+- Advanced Scanning Exceptions is a list of applications into which Endpoint Protector won't inject its DLL when the "Advanced Printer and MTP Scanning" is enabled.
+For example, many applications can't be used to print or to copy files to MTP devices, so it does not make sense to inject the Endpoint Protector DLL into them. For best performance or to avoid unexpected interactions with Endpoint Protector, these applications can be added to the “Advanced Scanning Exceptions” list.
 
 - Block Print from Browsers – Enable this setting to prevent users from printing web pages from any
   supported browser on Windows.
@@ -993,6 +999,10 @@ From this section you can allow EasyLock to be installed and run only on compute
 Endpoint Protector installed or in relation to a list of trusted Endpoint Protector Servers.
 
 ![Allow EasyLock to be installed](easylocksettings.webp)
+
+EE Read Only mode, will block write access to encrypted drive on computers not managed by EPP Client. Default value is OFF, it means that EE application will not start on computer not managed by EPP Client. For more information refer to [Enforced Encryption in Read-Only mode](/docs/endpointprotector/admin/ee_module/eemodule.md#enforced-encryption-in-read-only-mode)
+
+![Enforced Encryption in Read-Only mode](eeromode.webp)
 
 ## Additional Information
 

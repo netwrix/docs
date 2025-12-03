@@ -125,7 +125,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/activitymonitor/7.1.js',
       },
     ],
-    defaultVersion: '8.0',
+    defaultVersion: '9.0',
   },
   {
     id: 'auditor',

@@ -1,5 +1,5 @@
 ---
-description: >
+description: >-
   Users encounter a 500 Internal Server Error when accessing the Netwrix Access Analyzer Published Reports site using Okta Single Sign-On (SSO). The issue occurs because the Okta application uses the SHA1 algorithm, which is not supported by modern .NET Framework and OWIN security libraries.
 keywords:
   - 500 error

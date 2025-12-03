@@ -6,10 +6,7 @@ sidebar_position: 70
 
 # Enforced Encryption
 
-Enforced Encryption, Formerly known as EasyLock, is a cross-platform solution that protects data
-with government-approved 256 bit AES CBC-mode encryption. For USB devices, it needs to be deployed
-on the root of the device. With the intuitive Drag & Drop interface, ﬁles can be quickly copied to
-and from the device.
+Enforced Encryption, Formerly known as EasyLock, is a cross-platform solution that protects data with government-approved FIPS 140-3 validated encryption. For USB devices, it needs to be deployed on the root of the device. With the intuitive Drag & Drop interface, ﬁles can be quickly copied to and from the device.
 
 ![Enforced Encryption, Formerly known as EasyLock](enforcedencryption.webp)
 
@@ -38,6 +35,17 @@ version must be used. This is available for the Endpoint Protector User Interfac
 Enforced Encryption works on read-only mode if the device was formatted on Windows, the Enforced
 Encryption conﬁgured on Windows or some ﬁles were encrypted on Windows. On macOS, these ﬁles can be
 decrypted, except for NTFS due to incompatibility with Enforced Encryption.
+
+
+## Enforced Encryption 140-3 FIPS Validated Engine
+
+:::note
+Starting with Netwrix Enforced Encryption version 3.0.0.2 (5.9.4.2 release), a new encryption engine has been introduced, replacing the previous 256-bit AES CBC-mode encryption with FIPS 140-3 validated cryptography. This FIPS 140-3 validated encryption provides the highest standards of data protection, ensuring compliance with the latest industry regulations. While the new encryption engine is fully backward compatible for existing users, allowing for a seamless upgrade and continued use of previously encrypted drives, USB sticks encrypted with the FIPS 140-3 validated engine will not be compatible with older Enforced Encryption Clients. Therefore, we recommend updating EE Clients to ensure compatibility.
+:::
+
+To verify the version of the 140-3 FIPS validated engine and view certification details, check the "About" section in the Enforced Encryption application.
+
+![Enforced Encryption FIPS engine details](eeaboutfips.webp)
 
 ## Enforced Encryption Deployment
 
@@ -118,6 +126,21 @@ Enabling global File Tracing will not automatically activate the File Tracing op
 Enforced Encryption Trusted Device™ and vice versa.
 :::
 
+:::warning Important
+After deploying the Enforced Encryption Client with Read-Only (RO) mode enabled, ensure you launch the EE Client for the first time on the EPP Client-managed computer to complete the configuration process.
+:::
+
+:::warning Important
+When an Enforced Encryption (EE) encrypted USB drive is used by multiple users or across different machines with varying EE settings, the settings will not update automatically. To apply individual computer or user settings, the EPP administrator must update the related EE settings on the EPP Server at the computer/user level each time the USB drive is used on a specific computer or by a particular user. These settings will remain stored in the EE USB drive's configuration until further modifications are made.
+:::
+
+## Enforced Encryption in Read-Only mode
+
+Netwrix Enforced Encryption Read-Only Mode for unmanaged computers is an innovative feature designed to maintain data security standards across non-corporate devices. It allows administrators to grant access to EE encrypted drives on personal computers, conference room setups, or exhibition areas while ensuring security through a Read-Only configuration. This enables the seamless transfer of corporate data across different environments, providing robust protection without sacrificing accessibility.
+
+To activate this mode, navigate to the "Global Settings" section related to Enforced Encryption, and switch on the "EE Read-Only mode" toggle. Please refer to [Global Settings - EE configuration](/docs/endpointprotector/admin/dc_module/globalsettings#easylock-settings).
+
+![Enforced Encryption Read-Only Mode](eeromode.webp)
 
 ### Enforced Encryption Clients
 

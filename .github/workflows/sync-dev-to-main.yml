@@ -1,0 +1,319 @@
+name: Sync dev to main
+
+# Automatically merge dev → main daily at 8 AM PST (16:00 UTC)
+# Uses github-actions[bot] with bypass permissions to skip PR approval requirements
+# Handles conflicts gracefully (logs warning, skips merge, doesn't fail)
+
+on:
+  schedule:
+    # Run daily at 8:00 AM PST (16:00 UTC)
+    - cron: '0 16 * * *'
+
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write      # Push to main branch
+  issues: write        # Create issues on conflict
+  actions: read        # Check workflow status (optional)
+
+env:
+  SOURCE_BRANCH: dev
+  TARGET_BRANCH: main
+  # Teams webhook URL stored in GitHub Secrets for security
+  TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+
+jobs:
+  sync-branches:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for merge
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Check if dev has new commits
+        id: check-new-commits
+        run: |
+          git fetch origin ${{ env.SOURCE_BRANCH }}
+          git fetch origin ${{ env.TARGET_BRANCH }}
+
+          # Get commit counts
+          COMMITS_AHEAD=$(git rev-list --count origin/${{ env.TARGET_BRANCH }}..origin/${{ env.SOURCE_BRANCH }})
+
+          echo "commits_ahead=$COMMITS_AHEAD" >> $GITHUB_OUTPUT
+
+          if [ "$COMMITS_AHEAD" -eq 0 ]; then
+            echo "ℹ️  No new commits in ${{ env.SOURCE_BRANCH }} - nothing to sync"
+            echo "has_new_commits=false" >> $GITHUB_OUTPUT
+          else
+            echo "✅ Found $COMMITS_AHEAD new commit(s) in ${{ env.SOURCE_BRANCH }}"
+            echo "has_new_commits=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Wait for build workflow to complete
+        if: steps.check-new-commits.outputs.has_new_commits == 'true'
+        run: |
+          echo "⏳ Waiting for 'build-and-deploy.yml' workflow to complete on ${{ env.SOURCE_BRANCH }}..."
+
+          MAX_WAIT=1800  # 30 minutes max wait
+          WAIT_INTERVAL=30  # Check every 30 seconds
+          ELAPSED=0
+
+          while [ $ELAPSED -lt $MAX_WAIT ]; do
+            # Get latest build workflow run on dev
+            BUILD_RUN=$(gh run list --workflow="build-and-deploy.yml" \
+              --branch ${{ env.SOURCE_BRANCH }} --limit 1 --json status,conclusion,databaseId \
+              --jq '.[0]' 2>/dev/null || echo '{}')
+
+            STATUS=$(echo "$BUILD_RUN" | jq -r '.status // "unknown"')
+            CONCLUSION=$(echo "$BUILD_RUN" | jq -r '.conclusion // "none"')
+            RUN_ID=$(echo "$BUILD_RUN" | jq -r '.databaseId // "none"')
+
+            echo "Build status: $STATUS | Conclusion: $CONCLUSION | Run ID: $RUN_ID"
+
+            # Check if build completed
+            if [ "$STATUS" = "completed" ]; then
+              if [ "$CONCLUSION" = "success" ]; then
+                echo "✅ Build workflow completed successfully!"
+                break
+              elif [ "$CONCLUSION" = "failure" ]; then
+                echo "❌ Build workflow failed on ${{ env.SOURCE_BRANCH }}"
+                echo "⚠️  Cannot sync to main - build must pass first"
+                exit 1
+              elif [ "$CONCLUSION" = "cancelled" ]; then
+                echo "⚠️  Build workflow was cancelled"
+                echo "⚠️  Cannot sync to main - build must complete successfully"
+                exit 1
+              else
+                echo "⚠️  Build completed with conclusion: $CONCLUSION"
+                exit 1
+              fi
+            fi
+
+            # Build still in progress
+            echo "⏳ Build still running... waiting ${WAIT_INTERVAL}s (${ELAPSED}s elapsed)"
+            sleep $WAIT_INTERVAL
+            ELAPSED=$((ELAPSED + WAIT_INTERVAL))
+          done
+
+          if [ $ELAPSED -ge $MAX_WAIT ]; then
+            echo "❌ Timeout: Build did not complete within ${MAX_WAIT}s"
+            exit 1
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Attempt merge
+        id: merge
+        if: steps.check-new-commits.outputs.has_new_commits == 'true'
+        run: |
+          echo "🔄 Attempting to merge ${{ env.SOURCE_BRANCH }} → ${{ env.TARGET_BRANCH }}..."
+
+          # Checkout target branch
+          git checkout ${{ env.TARGET_BRANCH }}
+
+          # Attempt merge (don't fail on conflict)
+          set +e
+          git merge --no-edit --no-ff origin/${{ env.SOURCE_BRANCH }} 2>&1 | tee merge_output.txt
+          MERGE_EXIT_CODE=$?
+          set -e
+
+          if [ $MERGE_EXIT_CODE -ne 0 ]; then
+            echo "❌ Merge conflict detected"
+            echo "conflict=true" >> $GITHUB_OUTPUT
+
+            # Get conflicted files
+            git status --short | grep '^UU\|^AA\|^DD' > conflicts.txt || echo "Unable to detect specific files" > conflicts.txt
+
+            # Abort the merge
+            git merge --abort
+
+            echo "⚠️  Skipping automated merge due to conflicts"
+            exit 0  # Exit success to allow graceful handling
+          else
+            echo "✅ Merge completed successfully"
+            echo "conflict=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Push to main
+        if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'false'
+        run: |
+          echo "📤 Pushing merged changes to ${{ env.TARGET_BRANCH }}..."
+
+          # Push directly to main (bypass branch protection via github-actions[bot])
+          git push origin ${{ env.TARGET_BRANCH }}
+
+          echo "✅ Successfully synced ${{ env.SOURCE_BRANCH }} → ${{ env.TARGET_BRANCH }}"
+
+      - name: Get merge details for notification
+        if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'false'
+        id: merge-details
+        run: |
+          # Get commit details
+          COMMIT_COUNT=${{ steps.check-new-commits.outputs.commits_ahead }}
+          COMMIT_SHA=$(git rev-parse HEAD | cut -c1-7)
+
+          # Get commit messages
+          git log --oneline origin/${{ env.TARGET_BRANCH }}~$COMMIT_COUNT..origin/${{ env.TARGET_BRANCH }} | head -10 > commits.txt
+
+          echo "commit_count=$COMMIT_COUNT" >> $GITHUB_OUTPUT
+          echo "commit_sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
+
+      - name: Send success notification to Teams
+        if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'false'
+        run: |
+          # Get commit messages (truncate if too long)
+          COMMITS=$(cat commits.txt | head -5 | sed 's/^/  - /')
+
+          curl -H "Content-Type: application/json" -d '{
+            "@type": "MessageCard",
+            "@context": "https://schema.org/extensions",
+            "summary": "Dev → Main Sync Successful",
+            "themeColor": "28a745",
+            "title": "✅ Automated Sync: dev → main",
+            "sections": [{
+              "activityTitle": "Successfully merged '${{ steps.check-new-commits.outputs.commits_ahead }}' commits",
+              "activitySubtitle": "Repository: netwrix/docs",
+              "facts": [
+                {"name": "Commits merged:", "value": "${{ steps.merge-details.outputs.commit_count }}"},
+                {"name": "Latest commit:", "value": "${{ steps.merge-details.outputs.commit_sha }}"},
+                {"name": "Triggered by:", "value": "${{ github.event_name }}"},
+                {"name": "Workflow:", "value": "${{ github.workflow }}"}
+              ],
+              "text": "**Recent commits:**\n\n'"$(echo "$COMMITS" | sed 's/$/\\n/' | tr -d '\n')"'"
+            }],
+            "potentialAction": [{
+              "@type": "OpenUri",
+              "name": "View Workflow Run",
+              "targets": [{"os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}]
+            }, {
+              "@type": "OpenUri",
+              "name": "View Repository",
+              "targets": [{"os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}"}]
+            }]
+          }' "${{ env.TEAMS_WEBHOOK_URL }}" || echo "Failed to send Teams notification"
+
+      - name: Create GitHub issue for conflict
+        if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const conflictedFiles = require('fs').readFileSync('conflicts.txt', 'utf8');
+            const mergeOutput = require('fs').readFileSync('merge_output.txt', 'utf8');
+
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '⚠️ Automated dev→main sync blocked by merge conflict',
+              labels: ['automated-sync', 'merge-conflict'],
+              body: '## Automated Sync Conflict\n\n' +
+                'The automated sync from `dev` to `main` encountered merge conflicts and was skipped.\n\n' +
+                '**Workflow Run:** ' + context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId + '\n' +
+                '**Triggered by:** ' + context.eventName + '\n' +
+                '**Date:** ' + new Date().toISOString() + '\n\n' +
+                '### Conflicted Files\n\n' +
+                '```\n' +
+                conflictedFiles + '\n' +
+                '```\n\n' +
+                '### Merge Output\n\n' +
+                '```\n' +
+                mergeOutput + '\n' +
+                '```\n\n' +
+                '### Resolution Steps\n\n' +
+                '1. Manually resolve conflicts:\n' +
+                '   ```bash\n' +
+                '   git checkout main\n' +
+                '   git pull origin main\n' +
+                '   git merge origin/dev\n' +
+                '   # Resolve conflicts in your editor\n' +
+                '   git add .\n' +
+                '   git commit\n' +
+                '   git push origin main\n' +
+                '   ```\n\n' +
+                '2. Or create a PR from dev → main and resolve conflicts there\n\n' +
+                '3. Once resolved, the next scheduled sync will proceed normally\n\n' +
+                '---\n' +
+                '*This issue was created automatically by the sync-dev-to-main workflow.*'
+            });
+
+            console.log('Created issue #' + issue.data.number);
+
+      - name: Send conflict notification to Teams
+        if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'true'
+        run: |
+          curl -H "Content-Type: application/json" -d '{
+            "@type": "MessageCard",
+            "@context": "https://schema.org/extensions",
+            "summary": "Dev → Main Sync Blocked by Conflict",
+            "themeColor": "ff9800",
+            "title": "⚠️ Automated Sync Blocked: Merge Conflict",
+            "sections": [{
+              "activityTitle": "Manual intervention required",
+              "activitySubtitle": "Repository: netwrix/docs",
+              "facts": [
+                {"name": "Source branch:", "value": "${{ env.SOURCE_BRANCH }}"},
+                {"name": "Target branch:", "value": "${{ env.TARGET_BRANCH }}"},
+                {"name": "Commits waiting:", "value": "${{ steps.check-new-commits.outputs.commits_ahead }}"},
+                {"name": "Status:", "value": "Merge conflict detected"}
+              ],
+              "text": "The automated sync encountered merge conflicts. A GitHub issue has been created with details. Please resolve the conflicts manually."
+            }],
+            "potentialAction": [{
+              "@type": "OpenUri",
+              "name": "View Workflow Run",
+              "targets": [{"os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}]
+            }, {
+              "@type": "OpenUri",
+              "name": "View Issues",
+              "targets": [{"os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}/issues?q=is:issue+is:open+label:merge-conflict"}]
+            }]
+          }' "${{ env.TEAMS_WEBHOOK_URL }}" || echo "Failed to send Teams notification"
+
+      - name: Send skip notification to Teams
+        if: steps.check-new-commits.outputs.has_new_commits == 'false'
+        run: |
+          curl -H "Content-Type: application/json" -d '{
+            "@type": "MessageCard",
+            "@context": "https://schema.org/extensions",
+            "summary": "No Changes to Sync",
+            "themeColor": "0078D4",
+            "title": "ℹ️ No Changes to Sync",
+            "sections": [{
+              "activityTitle": "Branches are already in sync",
+              "activitySubtitle": "Repository: netwrix/docs",
+              "text": "No new commits found in dev branch. Nothing to sync."
+            }]
+          }' "${{ env.TEAMS_WEBHOOK_URL }}" || echo "Failed to send Teams notification"
+
+      - name: Workflow summary
+        if: always()
+        run: |
+          echo "## Sync Dev to Main - Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.check-new-commits.outputs.has_new_commits }}" == "false" ]; then
+            echo "ℹ️ **Status:** No new commits to sync" >> $GITHUB_STEP_SUMMARY
+            echo "- Source: \`${{ env.SOURCE_BRANCH }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "- Target: \`${{ env.TARGET_BRANCH }}\`" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.merge.outputs.conflict }}" == "true" ]; then
+            echo "⚠️ **Status:** Merge conflict detected" >> $GITHUB_STEP_SUMMARY
+            echo "- Commits waiting: ${{ steps.check-new-commits.outputs.commits_ahead }}" >> $GITHUB_STEP_SUMMARY
+            echo "- Action: GitHub issue created" >> $GITHUB_STEP_SUMMARY
+            echo "- Resolution: Manual merge required" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ **Status:** Successfully synced" >> $GITHUB_STEP_SUMMARY
+            echo "- Commits merged: ${{ steps.merge-details.outputs.commit_count }}" >> $GITHUB_STEP_SUMMARY
+            echo "- Latest commit: \`${{ steps.merge-details.outputs.commit_sha }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "- Pushed to: \`${{ env.TARGET_BRANCH }}\`" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Automated by github-actions[bot] with branch protection bypass*" >> $GITHUB_STEP_SUMMARY

@@ -79,6 +79,9 @@ On macOS version 14 (Sonoma) and higher, Bluetooth devices are managed only when
 device is connected and visible under ‘My Devices’ in the Bluetooth section of ‘System settings’.
 :::
 
+:::note
+Occasionally, the EPP system may display a limitation where certain webcams can be activated in Zoom meetings, even when rights are set to DENY in computer settings. To enforce proper rights after configuration, a restart of the PC is mandatory in such cases.
+:::
 
 ![Bluetooth Device Management on Mac](macbluetooth.webp)
 

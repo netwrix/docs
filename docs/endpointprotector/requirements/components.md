@@ -27,8 +27,7 @@ The Client-side of Endpoint Protector has two different components:
 - Endpoint Protector Client – enforcing the rights and settings received from the Server on Windows,
   Mac, and Linux computers; it also automatically deploys Enforced Encryption on the USB storage
   devices.
-- Enforced Encryption Client – enforcing 256 AES encryption on USB storage devices as specified from
-  the Server; it is a stand-alone application compatible with Windows and Mac computers.
+- Enforced Encryption Client – enforcing FIPS 140-3 validated encryption on USB storage devices as specified from the Server; it is a stand-alone application compatible with Windows and Mac computers.
 
 ![Main Components](maincomponents.webp)
 

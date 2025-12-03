@@ -53,19 +53,82 @@ below.
 
 #### Recommended Exclusions for Windows
 
+**Folder Level Exclusions**
 
-
-
+```
+cssguard
+Endpoint Protector
+Netwrix Endpoint Protector Notifier
+```
 
 **Folder Level Exclusions**
+
+```
+C:\Program Files\CoSoSys\Endpoint Protector\*
+  Alternative:
+  C:\Program Files\CoSoSys\Endpoint Protector\EPPservice.exe
+  C:\Program Files\CoSoSys\Endpoint Protector\sslsplit.exe
+  C:\Program Files\CoSoSys\Endpoint Protector\cssguard.exe
+  C:\Program Files\CoSoSys\Endpoint Protector\EPPNotifier.exe
+C:\Windows\System32\config\systemprofile\AppData\Local\CoSoSys\EPP*
+```
+
+**File Level Exclusions**
+
+```
+C:\Program Files\CoSoSys\Endpoint Protector\EPPservice.exe
+C:\Program Files\CoSoSys\Endpoint Protector\sslsplit.exe
+C:\Program Files\CoSoSys\Endpoint Protector\cssguard.exe
+C:\Program Files\CoSoSys\Endpoint Protector\EPPNotifier.exe
+  Alternative (for the above 4 files):
+  C:\Program Files\CoSoSys\Endpoint Protector\*
+C:\Windows\System32\drivers\cssdlp20.sys
+C:\Windows\System32\drivers\cssredir.sys
+C:\Windows\System32\drivers\cssdcflt.sys
+C:\Windows\System32\drivers\cssnwtap.sys
+C:\eppclient.log
+C:\eppsslsplit.log
+```
+
+**Process Level Exclusions**
+
+```
+cssguard.exe
+EPPNotifier.exe
+EPPservice.exe
+```
+
+**Registry level exclusions**
+
+```
+Computer\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows
+NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Store\
+  Key:
+  C:\Program Files\CoSoSys\Endpoint Protector\EPPNotifier.exe
+HKEY_LOCAL_MACHINE\DRIVERS\DriverDatabase\DriverPackages\cssdlp20.inf_*
+HKEY_LOCAL_MACHINE\DRIVERS\DriverDatabase\DriverPackages\cssdcflt.inf_*
+HKEY_LOCAL_MACHINE\SOFTWARE\Google\Chrome\NativeMessagingHosts\com.cososys.epp_browser_broker
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DIFx\DriverStore\cssdcflt.inf_*
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DIFx\DriverStore\cssdlp20.inf_*
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DIFx\DriverStore\cssdlp20_*
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DIFx\DriverStore\sieflt20_*
+```
+
+####
+
+
+#### Recommended Exclusions for macOS
+
+**Folder Level Exclusions**
+
 ```
 /Applications/EndpointProtectorClient.app/*
 /private/etc/epp/*
 /private/var/tmp/epp/*
 ```
 
-
 **File Level Exclusions**
+
 ```
 /Applications/EndpointProtectorClient.app/Contents/MacOS/EppClient
 /Applications/EndpointProtectorClient.app/Contents/MacOS/sslsplit
@@ -76,81 +139,8 @@ below.
 /var/log/eppsslsplit.log
 ```
 
-
 **Process Level Exclusions**
-```
-EppClient
-sslsplit
-netdlp_setup
-EppNotifier
-```
 
-#### Recommended Exclusions for Linux
-
-
-**Folder Level Exclusions**
-```
-/opt/cososys/*
-/var/log/epp-client/*
-```
-
-
-**File Level Exclusions**
-```
-/opt/cososys/sbin/epp-client-daemon
-/opt/cososys/sbin/epp_sslsplit
-/opt/cososys/sbin/epp_netdlp_setup
-/opt/cososys/sbin/netdlp_scripts/linux_install_certicates.sh
-/opt/cososys/bin/epp-client
-/var/log/epp-client/epp_client_daemon.log
-/var/log/epp-client/eppsslsplit.log
-```
-
-
-**Process Level Exclusions**
-```
-epp-client-daemon
-epp-client
-epp_sslsplit
-epp_netdlp_setup
-linux_install_certicates.sh
-```
-
-
-**Folder Level Exclusions**
-```
-/opt/cososys/*
-/var/log/epp-client/*
-```
-
-**File Level Exclusions**
-```
-/opt/cososys/sbin/epp-client-daemon
-/opt/cososys/sbin/epp_sslsplit
-/opt/cososys/sbin/epp_netdlp_setup
-/opt/cososys/sbin/netdlp_scripts/linux_install_certicates.sh
-/opt/cososys/bin/epp-client
-/var/log/epp-client/epp_client_daemon.log
-/var/log/epp-client/eppsslsplit.log
-```
-
-**Process Level Exclusions**
-```
-epp-client-daemon
-epp-client
-epp_sslsplit
-epp_netdlp_setup
-linux_install_certicates.sh
-```
-
-**File Level Exclusions**
-```
-/MacOS/EppNotifier
-/var/log/eppclient.log
-/var/log/eppsslsplit.log
-```
-
-**Process Level Exclusions**
 ```
 EppClient
 sslsplit
@@ -161,12 +151,14 @@ EppNotifier
 #### Recommended Exclusions for Linux
 
 **Folder Level Exclusions**
+
 ```
 /opt/cososys/*
 /var/log/epp-client/*
 ```
 
 **File Level Exclusions**
+
 ```
 /opt/cososys/sbin/epp-client-daemon
 /opt/cososys/sbin/epp_sslsplit
@@ -178,6 +170,7 @@ EppNotifier
 ```
 
 **Process Level Exclusions**
+
 ```
 epp-client-daemon
 epp-client
@@ -186,5 +179,5 @@ epp_netdlp_setup
 linux_install_certicates.sh
 ```
 
-By applying these exclusions, you will allow the Endpoint Protector Client to operate smoothly
-alongside other security products, ensuring both functionality and protection across endpoints.
+By applying these exclusions, you will allow the Endpoint Protector Client to operate smoothly alongside other security products, ensuring both functionality and protection across endpoints.
+```

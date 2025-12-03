@@ -53,5 +53,3 @@ This ensures the session uses the appropriate credentials, allowing the necessar
 > Navigate to **Settings > Connection** to verify which credentials are valid for Exchange.
 
 6. Click **OK** to save the changes.
-
----
