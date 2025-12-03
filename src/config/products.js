@@ -484,15 +484,21 @@ export const PRODUCTS = [
   {
     id: 'privilegesecure',
     name: 'Privilege Secure',
-    description: 'Privileged access management',
+    description: 'Privileged Access Management',
     path: 'docs/privilegesecure',
     categories: ['Privileged Access Management (PAM)'],
     icon: '',
     versions: [
       {
+        version: '25.12',
+        label: '25.12',
+        isLatest: true,
+        sidebarFile: './sidebars/privilegesecure/25.12.js',
+      },
+      {
         version: '4.2',
         label: '4.2',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/privilegesecure/4.2.js',
       },
       {
@@ -502,7 +508,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/privilegesecure/4.1.js',
       },
     ],
-    defaultVersion: '4.2',
+    defaultVersion: '25.12',
   },
   {
     id: 'privilegesecurediscovery',

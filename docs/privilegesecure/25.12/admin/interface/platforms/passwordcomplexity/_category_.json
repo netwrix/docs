@@ -1,0 +1,10 @@
+{
+  "label": "Password Complexity Page",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "passwordcomplexity"
+  }
+}

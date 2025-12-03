@@ -1,0 +1,10 @@
+{
+  "label": "Resources Tab for Protection Policies",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "resources"
+  }
+}
