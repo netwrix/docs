@@ -58,7 +58,7 @@ Test-NetConnection -ComputerName $RPC_host -Port 8767 -InformationLevel Detailed
    - If the proxy is not installed, then ensure it is installed and running following these steps: Netwrix Access Analyzer v12.0 > **File System Proxy Service Installation**.
    - If the proxy is installed and running, then the environment must either have a firewall or other security software preventing communication on ports `8767` and `8766`.
 
-## Related Articles
+## Related Links
 
 For more information on port requirements, please see the various guides for each scan mode below:
 
