@@ -10,7 +10,7 @@ tags: []
 title: "How to Drop File System Data from Netwrix Access Analyzer"
 knowledge_article_id: kA0Qk0000001qvpKAA
 products:
-  - activitymonitor
+  - accessanalyzer
 ---
 
 # How to Drop File System Data from Netwrix Access Analyzer
@@ -33,7 +33,7 @@ A file server has been decommissioned, and/or its data is no longer needed in th
    2. Select **Properties**.
    3. Click the **Performance** tab.
    4. Clear the **Skip Hosts that do not respond to the PING** box.  
-      ![Performance tab with Skip Hosts that do not respond to the PING option](./images/servlet_image_5085710697d8.png)
+      ![Performance tab with Skip Hosts that do not respond to the PING option](../0-images/servlet_image_5085710697d8.png)
 
 4. Navigate to **Configure > Queries** under the new job.
 
@@ -42,7 +42,7 @@ A file server has been decommissioned, and/or its data is no longer needed in th
 6. On the Data Source tab, use the dropdown to set the Data Collector to **`FILESYSTEMACCESS`** then click **Configure**.
 
 7. On the Query Selection page of the File System Access Auditor Data Collector Wizard, select the option for **Remove host data** under the **Maintenance** section, and then click **Finish**.  
-   ![Query Selection page with Remove host data option](./images/servlet_image_22428c95d7b3.png)
+   ![Query Selection page with Remove host data option](../0-images/servlet_image_22428c95d7b3.png)
 
 8. Navigate to **Configure > Analysis** under the new job.
 
@@ -54,7 +54,7 @@ A file server has been decommissioned, and/or its data is no longer needed in th
        ```sql
        SELECT * from [SA_FSAA_Hosts]
        ```  
-       ![SQL scripting with SA_FSAA_Hosts table](./images/servlet_image_1773855cdc8d.png)
+       ![SQL scripting with SA_FSAA_Hosts table](../0-images/servlet_image_1773855cdc8d.png)
 
 11. After saving and closing the analysis, right-click **the analysis** and select **Execute Analyses**. This will list all the file system hosts in the Access Analyzer database under the Results node of the job.
 
