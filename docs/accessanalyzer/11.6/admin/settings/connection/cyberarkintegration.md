@@ -15,6 +15,7 @@ Password Vault, the following prerequisites must be completed:
   installation to complete. See the CyberArk
   [Credential Provider (CP)](https://docs.cyberark.com/credential-providers/Latest/en/Content/CP%20and%20ASCP/Installing-CP.htm) article
   for additional information.
+- Enterprise Auditor uses CyberArk's Application Password SDKs v13.0. Enterprise Auditor  will work with any version of CyberArk as long it is compatible with this SDK version. See the CyberArk [Application Password SDKs](https://docs.cyberark.com/credential-providers/latest/en/content/cp%20and%20ascp/sysreq-application-password-sdks.htm?tocpath=Installation%7CSystem%20Requirements%7C_____2) article for your version to check compatibility.
 - An application must be added to CyberArk for the integration with Enterprise Auditor. The
   Application Id of this application must then be added to the `GlobalOptions.xml` file for
   Enterprise Auditor. See the
