@@ -26,6 +26,9 @@ for additional information.
 Follow the steps to upgrade from the Netwrix Activity Monitor V7.1 to Netwrix Activity Monitor 8.0.
 
 _Prerequisite_ – Ensure console and agent servers have .NET Framework 4.7.2 installed.
+:::info 
+Uninstall of the existing Activity Monitor Console is not required
+:::
 
 **Step 1 –** Install the Activity Monitor 8.0 on the same machine where the V7.1 console resides
 following the instructions in the [Install Application](/docs/activitymonitor/8.0/install/application.md) section.
