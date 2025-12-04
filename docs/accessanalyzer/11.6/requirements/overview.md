@@ -183,7 +183,6 @@ additional:
 
 The following are additional requirements for the SQL Server:
 
-- SQL Server must be equal or newer version than the version to be targeted
 - All SQL Server databases configured to use ‘Simple Recovery Model’
 
 **Additional Server Considerations**
@@ -192,8 +191,6 @@ The following additional considerations are recommended for the SQL Server:
 
 - The standard Autogrowth setting can cause Enterprise Auditor job delays. Database growth is
   computationally intensive. While SQL Server is growing the database, no other activity can occur.
-  If this option is employed, please speak with a Netwrix engineer to determine an appropriate
-  setting for best performance.
 - Microsoft SQL Server supports TLS 1.2, which requires the Enterprise Auditor Console server to
   have either SQL Server Native Client 11 or Microsoft OleDB 18 installed.
 - _Optional_: SQL Server Management Studio installed on the Enterprise Auditor Console server
