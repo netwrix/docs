@@ -7,7 +7,7 @@ sidebar_position: 20
 # Manage Deployment Settings
 
 You can manage various deployment settings for a Mobile service in any of the web servers: native
-IIS, remote IIS, and Docker.
+IIS and remote IIS.
 
 What do you want to do?
 
@@ -18,7 +18,7 @@ What do you want to do?
 - [Manage Event Logging for an Instance](#manage-event-logging-for-an-instance)
 - [Change the IIS Application Name for an Instance (Native IIS)](#change-the-iis-application-name-for-an-instance-native-iis)
 - [Move an Instance under a Different Site (Native IIS)](#move-an-instance-under-a-different-site-native-iis)
-- [View the Deployment Settings for an Instance (Remote IIS and Docker)](#view-the-deployment-settings-for-an-instance-remote-iis-and-docker)
+- [View the Deployment Settings for an Instance (Remote IIS)](#view-the-deployment-settings-for-an-instance-remote-iis)
 
 ## View the Deployment(s) for a Mobile Service
 
@@ -42,8 +42,6 @@ certain settings for each deployment instance of a service.
       GroupID uses to communicate with the remote IIS server, the credentials used to communicate
       with the API, the site that hosts the instance, the Data service and Security service
       associated with the instance, and logging levels.
-    - The **Docker** tab is available when one or more service instances are deployed in Docker.
-      Select an instance to view the port and Service URL used for deployment.
 
 ## Start or Stop a Deployment Instance
 
@@ -83,12 +81,12 @@ An instance of a mobile service is assigned an IIS application name to represent
 IIS. The name uniquely identifies the deployment in the IIS site and is used to name:
 
 - The instance’s directory in IIS.
-- It’s physical directory at the following path on the GroupID server:  
-  X:\Program Files\Imanami\GroupID 11.0\GroupIDMobileService\Inetpub\  
+- It’s physical directory at the following path on the GroupID server:
+  X:\Program Files\Imanami\GroupID 11.0\GroupIDMobileService\Inetpub\
   (X represents the GroupID installation drive).
 
 This name is also appended to the web server address to construct the URL that users click to launch
-the GroupIDMobileService page. For example:  
+the GroupIDMobileService page. For example:
 `https://<web-server-name>:<port>/<IIS-application-name>`
 
 When you change the IIS application name, it propagates to the instance’s IIS directory, physical
@@ -128,23 +126,18 @@ configure the GroupID app with this deployment instance of the Mobile service.
    move the instance’s directory under it. The list displays the websites defined in native IIS.
 7. Click **Save**.
 
-## View the Deployment Settings for an Instance (Remote IIS and Docker)
+## View the Deployment Settings for an Instance (Remote IIS)
 
-1. n Admin Center, select **Applications** in the left pane.
+1. In Admin Center, select **Applications** in the left pane.
 2. On the **Mobile Service** tab, click the ellipsis button for a service and select **Settings**.
 3. Click **Deployments** under **Server Settings**; the **Deployment Settings** page is displayed.
-   Click the **Remote IIS** or **Docker** tab.
+   Click the **Remote IIS** tab.
 4. The **Select Application Deployment** drop-down list displays all service instances deployed in
-   the respective web server. Select an instance to view its settings.
-5. On the **Deployment Configurations** tab:
-
-    - For a remote IIS deployment, you can view the Microsoft IIS Administration API URL, access
-      token, and credentials. You can also view the name of the service application in remote IIS,
-      the site where it is hosted, the URL to launch the instance, and the Data service and Security
-      service the instance uses.
-    - For a Docker deployment, you can view the port and service URL used to communicate with Docker
-      engine. You can also view the URL to launch the instance, and the Data service and Security
-      service the instance uses.
+   remote IIS. Select an instance to view its settings.
+5. On the **Deployment Configurations** tab, you can view the Microsoft IIS Administration API URL,
+   access token, and credentials. You can also view the name of the service application in remote
+   IIS, the site where it is hosted, the URL to launch the instance, and the Data service and
+   Security service the instance uses.
 
 **See Also**
 

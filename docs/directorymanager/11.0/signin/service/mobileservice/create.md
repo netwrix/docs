@@ -6,13 +6,12 @@ sidebar_position: 10
 
 # Create a Mobile Service
 
-You can create a Mobile service in native IIS, remote IIS, and Docker.
+You can create a Mobile service in native IIS and remote IIS.
 
 What do you want to do?
 
 - [Create a Mobile Service in Native IIS](#create-a-mobile-service-in-native-iis)
 - [Create a Mobile Service in Remote IIS](#create-a-mobile-service-in-remote-iis)
-- [Create a Mobile Service in Docker](#create-a-mobile-service-in-docker)
 - [Deploy Another Instance of a Mobile Service](#deploy-another-instance-of-a-mobile-service)
 - [Create a Mobile Service by Copying an Existing Service](#create-a-mobile-service-by-copying-an-existing-service)
 - [View Mobile Service Details](#view-mobile-service-details)
@@ -42,7 +41,7 @@ located on disk.
    name. The Mobile service is displayed with this name in GroupID.
 6. In the **Deployment Name** box, enter a deployment name for the service. This name is used to
    indicate the deployment instance of the service in GroupID. A service can have multiple
-   deployments, for example, one in IIS and another in Docker. The application name and deployment
+   deployments, for example, one in native IIS and another in remote IIS. The application name and deployment
    name are displayed on the service card, as shown below:
 
     ![ms_card](/images/directorymanager/11.0/admincenter/mobileservice/ms_card.webp)
@@ -106,7 +105,7 @@ topic.
    name. The service is displayed in GroupID with this name.
 6. In the **Deployment Name** box, enter a deployment name for the service. This name is used to
    indicate the deployment instance of the service in GroupID. A Mobile service can have multiple
-   deployments, for example, one in IIS and another in Docker.
+   deployments, for example, one in native IIS and another in remote IIS.
    The application name and deployment name are displayed on the service card.
 7. To enter information for **API URL**, **Access Token**, **Username**, **Password**, **IIS
    Application Name**, and **Website**, refer to steps 7-11 in the
@@ -118,44 +117,10 @@ topic.
 9. Click **Create Application**.
    The Mobile service is displayed on the **Mobile Service** tab.
 
-## Create a Mobile Service in Docker
-
-GroupID enables you to deploy a Mobile service in Docker. For this, you need to connect with the API
-running on a Docker deamon in your environment, so that GroupID can create a container for the
-service there and run the service from within that container.
-
-For an overview on application deployment in Docker, see the
-[Prerequisites for Deployments in Docker](/docs/directorymanager/11.0/signin/applications/dockerprerequisites.md)
-topic.
-
-NOTE: To host the Mobile service, Docker daemon should be configured to run Windows containers.
-
-**To create a service:**
-
-1. In Admin Center, click **Applications** in the left pane.
-2. Click **Add Application**.
-3. On the next page, select **Mobile Service** and click **Next step**.
-4. On the **Create GroupID Application** page, select the **Docker** tile.
-5. In the **Application Name** box, enter a unique name for the Mobile service or use the default
-   name. The service is displayed in GroupID with this name.
-6. In the **Deployment Name** box, enter a deployment name for the service. This name is used to
-   indicate the deployment instance of the service in GroupID. A service can have multiple
-   deployments, for example, one in IIS and another in Docker.
-   The application name and deployment name are displayed on the service card.
-7. To enter information for **Port**, **Service URL**, and **Container Name**, refer to steps 7-9 in
-   the
-   [Create a Portal in Docker](/docs/directorymanager/11.0/signin/applications/portal/create.md#create-a-portal-in-docker)
-   topic. Replace any reference to the portal with the Mobile service.
-8. To enter information in the **Service Endpoints** and **Select Identity Stores** areas, refer to
-   steps 9-10 in the [Create a Mobile Service in Native IIS](#create-a-mobile-service-in-native-iis)
-   topic.
-9. Click **Create Application**.
-   The service is created and displayed on the **Mobile Service** tab.
-
 ## Deploy Another Instance of a Mobile Service
 
 GroupID enables you to deploy more than one instance of a Mobile Service. Instances can be deployed
-in different web servers, for example, one in IIS, another in Remote IIS, and yet another in Docker.
+in different web servers, for example, one in native IIS and another in remote IIS.
 For more on how instances work, see the
 [Deploy Multiple Instances of a Portal](/docs/directorymanager/11.0/signin/applications/portal/create.md#deploy-multiple-instances-of-a-portal)
 topic.
@@ -170,8 +135,8 @@ a shared setting propagates to all deployment instances of the service.
 1. In Admin Center, select **Applications** in the left pane.
 2. On the **Mobile Service** tab, click the ellipsis button for a service and select **Deploy
    Another Instance**.
-3. Select the **IIS**, **Remote IIS**, or **Docker** tile to indicate the web server where you want
-   to deploy the service instance.
+3. Select the **IIS** or **Remote IIS** tile to indicate the web server where you want to deploy the
+   service instance.
    The **Application Name** field displays the name of the service as read-only.
 4. Fields on the page vary, depending on the web server selected. In any case, the **Select Identity
    Stores** area is not available, as it remains the same for all instances.
@@ -180,8 +145,6 @@ a shared setting propagates to all deployment instances of the service.
       [Create a Mobile Service in Native IIS](#create-a-mobile-service-in-native-iis) topic.
     - To deploy an instance in remote IIS, follow steps 6-8 in the
       [Create a Mobile Service in Remote IIS](#create-a-mobile-service-in-remote-iis) topic.
-    - To deploy an instance in Docker, follow steps 6-8 in the
-      [Create a Mobile Service in Docker](#create-a-mobile-service-in-docker) topic.
 
 5. After entering the required information, click **Deploy Instance**.
    The new instance is created and displayed on the service’s card.
@@ -204,16 +167,13 @@ duplicated, so you can choose to deploy the new service in any of the supported 
     - The Data service and Security service linked to the service
     - The identity store(s) linked with the service
 
-3. You can deploy the new service in native IIS, remote IIS, or Docker.
+3. You can deploy the new service in native IIS or remote IIS.
 
     - To specify settings for a native IIS deployment, follow the instructions in the
       [Create a Mobile Service in Native IIS](#create-a-mobile-service-in-native-iis) topic,
       beginning at step 4.
     - To specify settings for a remote IIS deployment, follow the instructions in the
       [Create a Mobile Service in Remote IIS](#create-a-mobile-service-in-remote-iis), beginning at
-      step 4.
-    - To specify settings for a Docker deployment, follow the instructions in the
-      [Create a Mobile Service in Docker](#create-a-mobile-service-in-docker) topic, beginning at
       step 4.
 
 ## View Mobile Service Details

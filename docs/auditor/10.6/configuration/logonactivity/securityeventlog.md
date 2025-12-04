@@ -33,4 +33,4 @@ needed**.
 **NOTE:** After configuring security event settings via Group Policy, you may notice that the log
 size on a specific computer is not set correctly. In this case, follow the resolution steps from the
 Netwrix Knowledge base article to fix the issue:
-[Security log settings do not apply via GPO](/docs/kb/auditor/security-log-settings-do-not-apply-via-gpo).
+[Security log settings do not apply via GPO](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/security-log-settings-do-not-apply-via-gpo).
