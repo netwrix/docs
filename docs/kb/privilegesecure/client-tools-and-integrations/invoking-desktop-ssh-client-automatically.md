@@ -36,24 +36,24 @@ To automatically invoke a local SSH client for sessions, you need to register a 
 
      > **NOTE:** If you download the `sbpam-url` file, it includes batch files that have known configurations for popular SSH clients.
 
-     ![Extracting the sbpam-url archive to a static location](./images/ka0Qk000000E5z7_0EM4u000005yg22.png)
+     ![Extracting the sbpam-url archive to a static location](./../0-images/ka0Qk000000E5z7_0EM4u000005yg22.png)
 
 2. Ensure that your preferred SSH app (for example, PuTTY) is installed and note its installation location.
 
 3. Right-click the Windows command file corresponding to the application you wish to register. Ensure that it is configured with the correct installation directory you noted in the previous step. If it is not, edit the file with the correct path and save it.
 
-   ![Editing the Windows command file to configure the correct installation directory](./images/ka0Qk000000E5z7_0EM4u000005yg27.png)
+   ![Editing the Windows command file to configure the correct installation directory](./../0-images/ka0Qk000000E5z7_0EM4u000005yg27.png)
 
 4. Double-click the command file you previously opened to execute it.
 
-   ![Executing the command file to register the application](./images/ka0Qk000000E5z7_0EM4u000005yg2C.png)
+   ![Executing the command file to register the application](./../0-images/ka0Qk000000E5z7_0EM4u000005yg2C.png)
 
 5. The command file will modify the registry and register the application to the URL handler. Your registered SSH client will now be invoked automatically when starting SSH sessions from the Netwrix Privilege Secure user interface.
 
 6. Ensure that your SSH handler is indicated in Windows' **Choose default apps by protocol** settings as **Netwrix Privilege Secure URL Handler**.
 
-   ![Setting Netwrix Privilege Secure URL Handler as the default app by protocol](./images/ka0Qk000000E5z7_0EM4u000008M1Gl.png)
+   ![Setting Netwrix Privilege Secure URL Handler as the default app by protocol](./../0-images/ka0Qk000000E5z7_0EM4u000008M1Gl.png)
 
-7. If none of these built-in command files are successful, then you may refer to the following provided options: [Registering and Using the sbpam-url SSH Protocol Handler](/docs/kb/privilegesecure/registering-and-using-the-sbpam-url-ssh-protocol-handler.md)
+7. If none of these built-in command files are successful, then you may refer to the following provided options: [Registering and Using the sbpam-url SSH Protocol Handler](/docs/kb/privilegesecure/client-tools-and-integrations/registering-and-using-the-sbpam-url-ssh-protocol-handler.md)
 
 

@@ -36,19 +36,19 @@ After receiving the certificate from a CA, the bindings for the Netwrix Privileg
 1. Open the **IIS Manager** on the Netwrix Privilege Secure server.  
 2. In the left sidebar, navigate to the **Netwrix Privilege Secure Web Service** website, right-click, and click **Edit Bindings...**  
 
-![User-added image](./images/ka04u000001172V_0EM4u000004baX1.png)
+![User-added image](./../0-images/ka04u000001172V_0EM4u000004baX1.png)
 
 1. Double-click **https**.  
 2. Select the **SSL certificate** for the DNS hostname of your Netwrix Privilege Secure server (the DNS name used as the Subject Alternative Name (SAN) in the cert).
 
-![User-added image](./images/ka04u000001172V_0EM4u000004baX6.png)
+![User-added image](./../0-images/ka04u000001172V_0EM4u000004baX6.png)
 
 After making these changes, restart the Netwrix Privilege Secure website by running the `iisreset` command in an elevated Command Prompt.
 
 ### Updating Service Configuration Files (Netwrix Privilege Secure 3.6 or later)
 Netwrix Privilege Secure service configuration files will need to be updated to use the same DNS name as the certificate. These updates can be triggered via the Netwrix Privilege Secure UI. Navigate to the **System Settings** menu, and the **Services** node.  
 
-![User-added image](./images/ka04u000001172V_0EM4u000004dDEz.png)
+![User-added image](./../0-images/ka04u000001172V_0EM4u000004dDEz.png)
 
 Enter the FQDN that matches the name of your cert (e.g. `https://yourcert.company.com:6500`). Leave **Ignore HTTPS Certificate Errors** unchecked.
 Click the **Register Services** button. A "Services registered" pop-up will appear when the necessary changes have been made.
@@ -72,6 +72,6 @@ In each file, locate the `Url` key and change its value so it matches the DNS na
 
 After updating each config file, verify Netwrix Privilege Secure services are running properly by navigating to the **Service Nodes** page in the Netwrix Privilege Secure Web UI. The services should be all green:
 
-![User-added image](./images/ka04u000001172V_0EM4u000004baat.png)
+![User-added image](./../0-images/ka04u000001172V_0EM4u000004baat.png)
 
 If any services are red, Register Services by selecting your **username** in the top-right of the Netwrix Privilege Secure UI, click **Settings**, then click **Register Services**.

@@ -31,10 +31,10 @@ This article outlines how to disable Multi-factor Authentication (MFA) for indiv
 
 1. Log in to Netwrix Privilege Secure as an Administrator, then navigate to **Users & Groups** in the sidebar navigation.
 
-   ![User-added image](./images/ka04u000000HdEsAAK_1.png)
+   ![User-added image](./../0-images/ka04u000000HdEsAAK_1.png)
 
 2. Click on a user or a group, then navigate to that principal's **Authentication Connector** tab.
 
-   ![User-added image](./images/ka04u000000HdEsAAK_2.png)
+   ![User-added image](./../0-images/ka04u000000HdEsAAK_2.png)
 
 3. Click **Not Required**, which will immediately disable the MFA requirement for the user or all users that are a member of the group.

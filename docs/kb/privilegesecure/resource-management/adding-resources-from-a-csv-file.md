@@ -32,11 +32,11 @@ Resources can be imported to Netwrix Privilege Secure from a CSV file, where eac
 
 2. In Netwrix Privilege Secure, navigate to the **Resources** page. Click **+ Add**, then select the **Import from CSV** radio button at the top of the dialog that appears.
 
-   ![User-added image](./images/ka04u000000HdEp_0EM4u000004bh1g.png)
+   ![User-added image](./../0-images/ka04u000000HdEp_0EM4u000004bh1g.png)
 
 3. Click **Import CSV**, then browse to and select the CSV of DNS hostnames you would like to import to Netwrix Privilege Secure.
 
-   ![User-added image](./images/ka04u000000HdEp_0EM4u000004bh1q.png)
+   ![User-added image](./../0-images/ka04u000000HdEp_0EM4u000004bh1q.png)
 
 4. The **Add Resources** page will now list the resources found in the CSV, with a row for each DNS hostname.
 

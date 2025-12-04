@@ -27,7 +27,7 @@ knowledge_article_id: kA04u000000Pd8ECAS
 
 If Netwrix Privilege Secure services are down, you will receive a warning at the top of the user interface. This article outlines steps that you can take to bring Netwrix Privilege Secure services back online.
 
-![Netwrix Privilege Secure's web application interface, displaying a warning that a service is not running or registered.](./images/ka04u000000HdEuAAK_1.png)
+![Netwrix Privilege Secure's web application interface, displaying a warning that a service is not running or registered.](./../0-images/ka04u000000HdEuAAK_1.png)
 
 ## Instructions
 
@@ -37,7 +37,7 @@ If a warning appears at the top of the Netwrix Privilege Secure interface statin
    - Open **Windows Services** and verify whether any Netwrix Privilege Secure services are not running.  
    - Example screenshot:
      
-     ![Windows Services interface displaying installed Netwrix Privilege Secure services, with five out of six displayed as not running.](./images/ka04u000000HdEu_0EM4u000004bjCb.png)
+     ![Windows Services interface displaying installed Netwrix Privilege Secure services, with five out of six displayed as not running.](./../0-images/ka04u000000HdEu_0EM4u000004bjCb.png)
 
    - If any services are not running, start them using the **Windows Services** interface or run the following in an elevated PowerShell:
 
@@ -52,9 +52,9 @@ If a warning appears at the top of the Netwrix Privilege Secure interface statin
    - Log in to Netwrix Privilege Secure's web application as an Admin.
    - In the upper-right, click the current logged-in user's name, then click **Settings**, and then click **Register Services**.
 
-   ![The Netwrix Privilege Secure web application interface's user settings menu dropdown.](./images/ka04u000000HdEu_0EM4u000004bjCq.png)
+   ![The Netwrix Privilege Secure web application interface's user settings menu dropdown.](./../0-images/ka04u000000HdEu_0EM4u000004bjCq.png)
 
-   ![The Netwrix Privilege Secure web application interface's settings page, displaying the Register Services button.](./images/ka04u000000HdEu_0EM4u000004bjCv.png)
+   ![The Netwrix Privilege Secure web application interface's settings page, displaying the Register Services button.](./../0-images/ka04u000000HdEu_0EM4u000004bjCv.png)
 
 3. If issues persist
    - Gather Netwrix Privilege Secure's logs by following the steps in this article: https://kb.netwrix.com/5874

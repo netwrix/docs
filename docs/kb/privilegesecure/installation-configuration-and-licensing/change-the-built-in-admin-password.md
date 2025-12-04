@@ -29,17 +29,17 @@ This article outlines how to change the password of Netwrix Privilege Secure's b
 
 1. Sign in to Netwrix Privilege Secure using the Admin account.
 
-   ![A filled-in log-in form for SbPAM's web interface.](./images/ka04u000000HdF3AAK_1.png)
+   ![A filled-in log-in form for SbPAM's web interface.](./../0-images/ka04u000000HdF3AAK_1.png)
 
 2. IMPORTANT: The `Domain` field must be set to `"<none>"` in order to log in with the built-in Admin account.
 
 3. In the upper-right of the page, click **Admin** and then **Settings**.
 
-   ![The user settings dropdown menu in SbPAM.](./images/ka04u000000HdF3AAK_2.png)
+   ![The user settings dropdown menu in SbPAM.](./../0-images/ka04u000000HdF3AAK_2.png)
 
 4. The **Change Password** menu will appear on the page and can be used to set a new password for the built-in Admin account.
 
-   ![The Change Password form for SbPAM's built-in Admin account.](./images/ka04u000000HdF3AAK_3.png)
+   ![The Change Password form for SbPAM's built-in Admin account.](./../0-images/ka04u000000HdF3AAK_3.png)
 
 5. If the password change is successful, you will be immediately logged out of Netwrix Privilege Secure and presented with the log-in page.
 
