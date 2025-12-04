@@ -92,6 +92,3 @@ settings for each deployment instance of a portal.
       communicate with the API, the site that hosts the instance, the Data service and Security
       service associated with the instance, and logging levels. See the
       [Manage Settings for a Remote IIS Deployment](/docs/directorymanager/11.1/admincenter/applications/portal/server/remoteiis.md) topic for details.
-    - The **Docker** tab is available when one or more portal instances are deployed in Docker.
-      Select an instance to view the port and Service URL used for deployment. See the
-      [Manage Settings for a Docker Deployment](/docs/directorymanager/11.1/admincenter/applications/portal/server/docker.md) topic for details.

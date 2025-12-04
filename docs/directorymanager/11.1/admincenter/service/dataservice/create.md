@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Create a Data Service
 
-You can create a Data service in native IIS, remote IIS, and Docker.
+You can create a Data service in native IIS and remote IIS.
 
 ## Create a Data Service in Native IIS
 
@@ -119,43 +119,3 @@ Service in Native IIS topic.
 
 Step 9 – Click **Create Application**.
 The new Data service is displayed on the Data Service tab.
-
-## Create a Data Service in Docker
-
-Directory Manager enables you to deploy a Data service in Docker. For this, you need to connect with
-the API running on a Docker deamon in your environment, so that Directory Manager can create a
-container for the service there and run the service from within that container.
-
-For an overview on application deployment in Docker, see the
-[Prerequisites for Deployments in Docker](/docs/directorymanager/11.1/admincenter/applications/dockerprerequisites.md) topic.
-
-:::note
-To host the Data service, Docker daemon should be configured to run Windows containers.
-:::
-
-
-Follow the steps to create a Data service.
-
-Step 1 – In Admin Center, click **Applications** in the left pane.
-
-Step 2 – Click **Add Application**.
-
-Step 3 – On the next page, select **Data Service** and click **Next step**.
-
-Step 4 – On the Create Directory Manager Application page, select the **Docker** tile.
-
-Step 5 – In the Application Name box, enter a unique name for the Data service or use the default
-name. The Data service is displayed in Directory Manager with this name.
-
-Step 6 – In the Deployment Name box, enter a deployment name for the service. The application name
-and deployment name are displayed on the service card.
-
-Step 7 – To enter information for Port, Service URL, and Container Name, refer to steps 7-9 in the
-[Create a Portal in Docker](/docs/directorymanager/11.1/admincenter/applications/portal/create.md#create-a-portal-in-docker) topic. Replace any
-reference to the portal with the Data service.
-
-Step 8 – For entering information in the Service Endpoints area, follow step 9 in the Create a Data
-Service in Native IIS topic.
-
-Step 9 – Click **Create Application**.
-The Data service is created and displayed on the Data Service tab.

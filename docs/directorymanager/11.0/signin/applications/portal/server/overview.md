@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Server Settings
 
-A GroupID portal is deployed as a web application on a web server (native IIS, remote IIS, or
-Docker). You can manage the following server-related settings for a portal:
+A GroupID portal is deployed as a web application on a web server (native IIS or remote IIS). You
+can manage the following server-related settings for a portal:
 
 - Change a portal’s name (i.e., the application name given to the portal).
 - Update support information for the portal, i.e., the contact email address and the portal’s help
@@ -31,7 +31,6 @@ logged out. When accessed again, the portal runs under the new configurations.
 - [Manage General Server Settings](/docs/directorymanager/11.0/signin/applications/portal/server/general.md)
 - [Manage Settings for a Native IIS Deployment](/docs/directorymanager/11.0/signin/applications/portal/server/nativeiis.md)
 - [Manage Settings for a Remote IIS Deployment](/docs/directorymanager/11.0/signin/applications/portal/server/remoteiis.md)
-- [Manage Settings for a Docker Deployment](/docs/directorymanager/11.0/signin/applications/portal/server/docker.md)
 - [Manage Log Settings](/docs/directorymanager/11.0/signin/applications/portal/server/log.md)
 - [Add Support for a Portal](/docs/directorymanager/11.0/signin/applications/portal/server/support.md)
 - [Manage Advanced Settings](/docs/directorymanager/11.0/signin/applications/portal/server/advanced.md)
