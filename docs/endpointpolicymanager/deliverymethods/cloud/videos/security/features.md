@@ -7,6 +7,9 @@ sidebar_position: 10
 
 If you've ever wondered how to keep your cloud service secure, watch this video and learn about how
 all our features work together to keep you safe.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7pu_UKWx6sc" title="Endpoint Policy Manager Cloud: Security Features" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 
 Hi, this is Whitney with PolicyPak Software. Recently, we have added a whole lot of new security
 features to our PolicyPak Cloud edition. This video here is going to be a multi-part guide to
@@ -150,5 +153,3 @@ restricting logon based on whitelisting or blacklisting IP addresses or IP addre
 
 That covers the new PolicyPak Cloud security features. I hope this video helps you out. Thanks so
 much.
-
-
