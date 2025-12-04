@@ -31,21 +31,15 @@ the default computer account. See the Accounts to Run the Servicestopic for deta
 
 ### Where are these Services Hosted?
 
-Directory Manager services are hosted on a web server, that could be native IIS, remote IIS, and
-Docker.
+Directory Manager services are hosted on a web server, that could be native IIS or remote IIS.
 
 You can create multiple Data services and Security services while hosting them on different web
-servers. For example, you can host one Data service in native IIS and another in Docker.
+servers. For example, you can host one Data service in native IIS and another in remote IIS.
 
 - To launch IIS on a machine, see
   [Opening IIS Manager](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525920(v=vs.90)).
 
 ![in_iis](/images/directorymanager/11.1/admincenter/portal/in_iis.webp)
-
-- To open Docker Desktop on Windows, search for Docker and select Docker Desktop in the search
-  results.
-
-![indocker](/images/directorymanager/11.1/admincenter/service/indocker.webp)
 
 ## Third-party Services
 

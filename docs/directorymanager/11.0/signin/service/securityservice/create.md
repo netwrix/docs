@@ -6,13 +6,12 @@ sidebar_position: 10
 
 # Create a Security Service
 
-You can create a Security service in native IIS, remote IIS, and Docker.
+You can create a Security service in native IIS and remote IIS.
 
 What do you want to do?
 
 - [Create a Security Service in Native IIS](#create-a-security-service-in-native-iis)
 - [Create a Security Service in Remote IIS](#create-a-security-service-in-remote-iis)
-- [Create a Security Service in Docker](#create-a-security-service-in-docker)
 - [Launch a Security Service](#launch-a-security-service)
 
 ## Create a Security Service in Native IIS
@@ -93,38 +92,6 @@ topic.
    multifactor authentication.
 9. Click **Create Application**.
    The Security service is displayed on the **Security Service** tab.
-
-## Create a Security Service in Docker
-
-GroupID enables you to deploy a Security service in Docker. For this, you need to connect with the
-API running on a Docker deamon in your environment, so that GroupID can create a container for the
-service there and run the service from within that container.
-
-For an overview on application deployment in Docker, see the
-[Prerequisites for Deployments in Docker](/docs/directorymanager/11.0/signin/applications/dockerprerequisites.md)
-topic.
-
-NOTE: To host the Security service, Docker daemon should be configured to run Windows containers.
-
-**To create a Security service:**
-
-1. In Admin Center, click **Applications** in the left pane.
-2. Click **Add Application**.
-3. On the next page, select **Security Service** and click **Next step**.
-4. On the **Create GroupID Application** page, select the **Docker** tile.
-5. In the **Application Name** box, enter a name for the Security service or use the default name.
-   The service is displayed in GroupID with this name.
-6. In the **Deployment Name** box, enter a deployment name for the service. The application name and
-   deployment name are displayed on the service card.
-7. To enter information for **Port**, **Service URL**, and **Container Name**, refer to steps 7-9 in
-   the
-   [Create a Portal in Docker](/docs/directorymanager/11.0/signin/applications/portal/create.md#create-a-portal-in-docker)
-   topic. Replace any reference to the portal with the Security service.
-8. In the **Data Service** drop-down list, select a Data service to bind to this Security service.
-   A Security service needs a Data service to perform various tasks, such as authentication and
-   multifactor authentication.
-9. Click **Create Application**.
-   The Security service is created and displayed on the **Security Service** tab.
 
 ## Launch a Security Service
 
