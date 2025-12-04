@@ -57,67 +57,63 @@ See the [Exchange](/docs/auditor/10.8/configuration/exchange/overview.md) topic 
 
 ## File Servers
 
-Dell Data Storage
+#### Dell Data Storage
 
 Auditor supports monitoring the following device versions:
 
 - Dell Data Storage (Unity XT, UnityVSA) running any of the following operating environment
-  versions:
-
+versions:
+    - 5.5.x
     - 5.4.x
     - 5.2.x
     - 5.0.x
     - 4.5.x
     - 4.4.x
-
 - Dell VNX/VNXe/Celerra families
 - Dell PowerStore family
 
-**NOTE:** Only CIFS configuration is supported.
+> **NOTE:** Only CIFS configuration is supported.
 
 See the [Dell Data Storage](/docs/auditor/10.8/configuration/fileservers/delldatastorage/overview.md) topic for
 additional information.
 
-Dell Isilon/PowerScale
+#### Dell Isilon/PowerScale
 
 Auditor supports monitoring the following device versions:
 
 - Dell Isilon/PowerScale versions 7.2 – 9.10
 
-**NOTE:** Only CIFS configuration is supported.
+> **NOTE:** Only CIFS configuration is supported.
 
-Auditing of _System_ zone is not supported. As stated by Dell, this zone should be reserved for
+> **IMPORTANT:** Auditing of _System_ zone is not supported. As stated by Dell, this zone should be reserved for
 configuration access only. Current data should be stored in other access zones. See the
-[Isilon OneFS 8.2.1 CLI Administration Guide](https://www.dellemc.com/en-us/collaterals/unauth/technical-guides-support-information/2019/09/docu95372.pdf)
-for additional information.
 
 See the [Dell Isilon/PowerScale](/docs/auditor/10.8/configuration/fileservers/dellisilon/overview.md) topic for
 additional information.
 
-NetApp Data ONTAP
+#### NetApp Data ONTAP
 
 Auditor supports monitoring the following device versions:
 
 - Clustered-Mode
-
     - 9.0 – 9.16
     - 8.3
 
-**NOTE:** Only CIFS configuration is supported.
+> **NOTE:** Only CIFS configuration is supported.
 
 See the [NetApp Data ONTAP](/docs/auditor/10.8/configuration/fileservers/netappcmode/overview.md) topic for
 additional information.
 
-Nutanix
+#### Nutanix
 
 Auditor supports monitoring the following device versions:
 
-- Files 3.6 - 4.3.0
+- Files 3.6 - 5.2
 
 See the [Nutanix](/docs/auditor/10.8/configuration/fileservers/nutanix/overview.md) topic for additional
 information.
 
-Qumulo
+#### Qumulo
 
 Auditor supports monitoring the following device versions:
 
@@ -125,11 +121,11 @@ Auditor supports monitoring the following device versions:
 
 See the [Qumulo](/docs/auditor/10.8/configuration/fileservers/qumulo/overview.md) topic for additional information.
 
-Synology
+#### Synology
 
 Auditor supports monitoring the following device versions:
 
-- DSM 7.2
+- DSM 7.2.1
 - DSM 7.1
 - DSM 7.0
 - DSM 6.2.3
@@ -137,7 +133,7 @@ Auditor supports monitoring the following device versions:
 See the [Synology](/docs/auditor/10.8/configuration/fileservers/synology/overview.md) topic for additional
 information.
 
-Windows File Servers
+#### Windows File Servers
 
 Auditor supports monitoring the following operating system versions:
 
@@ -192,7 +188,7 @@ Auditor supports monitoring the following versions:
 - Exchange Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-    **NOTE:** DoD tenant types are not supported.
+> **NOTE:** DoD tenant types are not supported.
 
 See the [Exchange Online](/docs/auditor/10.8/configuration/microsoft365/exchangeonline/overview.md) topic for
 additional information.
@@ -204,7 +200,7 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-    **NOTE:** DoD tenant types are not supported.
+> **NOTE:** DoD tenant types are not supported.
 
 See the
 [Microsoft Entra ID (formerly Azure AD)](/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/overview.md)
@@ -217,7 +213,7 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-    **NOTE:** DoD tenant types are not supported.
+> **NOTE:** DoD tenant types are not supported.
 
 See the [MS Teams](/docs/auditor/10.8/configuration/microsoft365/teams/overview.md) topic for additional
 information.
@@ -229,7 +225,7 @@ Auditor supports monitoring the following versions:
 - SharePoint Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-    **NOTE:** DoD tenant types are not supported.
+> **NOTE:** DoD tenant types are not supported.
 
 See the [SharePoint Online](/docs/auditor/10.8/configuration/microsoft365/sharepointonline/overview.md) topic for
 additional information.
@@ -337,9 +333,8 @@ Auditor supports monitoring the following versions:
 - Database 12c On-Premise (12.1, 12.2)
 - Database 11g, limited support
 
-    **NOTE:** See the
-    [Considerations for Oracle Database 11g](/docs/auditor/10.8/configuration/oracle/overview.md#considerations-for-oracle-database-11g)
-    topic for additional information.
+See the [Considerations for Oracle Database 11g](/docs/auditor/10.8/configuration/oracle/overview.md#considerations-for-oracle-database-11g)
+topic for additional information.
 
 - Oracle Database Cloud Service (Enterprise Edition)
 
@@ -368,7 +363,7 @@ Auditor supports monitoring the following versions:
 - Microsoft SQL Server 2014
 - Microsoft SQL Server 2012
 
-**NOTE:** Linux-based versions are not supported.
+> **NOTE:** Linux-based versions are not supported.
 
 See the [SQL Server](/docs/auditor/10.8/configuration/sqlserver/overview.md) topic for additional information.
 
@@ -444,8 +439,8 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2012 R2
 - Windows Server 2012
 
-**NOTE:** DNS support is limited on Windows Server 2008 to Windows Server 2008 SP2 (32 and 64-bit).
-DHCP is not supported on Windows Server 2008.
+> **NOTE:** DNS support is limited on Windows Server 2008 to Windows Server 2008 SP2 (32 and 64-bit).
+> **NOTE:** DHCP is not supported on Windows Server 2008.
 
 Internet Information Services (IIS)
 
