@@ -440,6 +440,7 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2012
 
 > **NOTE:** DNS support is limited on Windows Server 2008 to Windows Server 2008 SP2 (32 and 64-bit).
+
 > **NOTE:** DHCP is not supported on Windows Server 2008.
 
 Internet Information Services (IIS)
