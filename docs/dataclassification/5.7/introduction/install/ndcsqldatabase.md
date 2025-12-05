@@ -15,8 +15,8 @@ instructions on how to create a new database:
 [Create a Database](https://docs.microsoft.com/en-us/sql/relational-databases/databases/create-a-database).
 
 :::note
-For performance purposes, Netwrix strongly recommends to separate NDC and SQL Server
-machine.
+For performance purposes, Netwrix strongly recommends to install NDC and the SQL Server hosting
+the NDC database on separate servers.
 :::
 
 
@@ -47,5 +47,5 @@ role.
     :::note
     Netwrix recommends that you do not change the recovery model to avoid log files
     growth.
-    
+
     :::
