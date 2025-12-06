@@ -75,7 +75,7 @@ folder and open the **dbparam.ini** file for editing.
 
 ## Download the Add-On
 
-**Step 1 –** Download the distribution package **Netwrix_Auditor_Add-on_for_CyberArk_PAS.zip**.
+**Step 1 –** Download the distribution package.
 
 **Step 2 –** Unpack it to a folder on the computer where you plan to deploy the add-on.
 
@@ -85,20 +85,20 @@ _Remember,_ deploy the add-on on the same machine with the Auditor Server.
 
 Follow the steps to install the Add-On:
 
-**Step 3 –** Navigate to your add-on package.
+**Step 1 –** Navigate to your add-on package.
 
-**Step 4 –** Unzip the Add-On to a desired folder.
+**Step 2 –** Unzip the Add-On to a desired folder.
 
-**Step 5 –** Run the installation package.
+**Step 3 –** Run the installation package.
 
-**Step 6 –** Accept the license agreement and follow the instructions of the setup wizard.
+**Step 4 –** Accept the license agreement and follow the instructions of the setup wizard.
 
-**Step 7 –** On the **Destination Folder** step, specify the installation folder (_C:\Program Files
+**Step 5 –** On the **Destination Folder** step, specify the installation folder (_C:\Program Files
 (x86)\Netwrix Add-ons\<Add-on name>_ by default).
 
-**Step 8 –** Click **Install**.
+**Step 6 –** Click **Install**.
 
-**Step 9 –** When done, click **Finish**.
+**Step 7 –** When done, click **Finish**.
 
 ## Configure Add-on Parameters
 
