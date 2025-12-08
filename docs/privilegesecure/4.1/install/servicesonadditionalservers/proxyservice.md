@@ -27,7 +27,7 @@ application.
 
 :::tip
 Remember, You must configure the Antivirus exclusions according to the
-[Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/exclusions-for-antivirus-av-endpoint-software)
+[Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
 knowledge base article.
 :::
 
