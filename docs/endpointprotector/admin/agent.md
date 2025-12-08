@@ -179,7 +179,7 @@ the macOS Endpoint Protector Agent.
 
 **Step 3 –** Decompress the downloaded ﬁle.
 
-![Installation on macOS with Deep Packet Inspection and VPN Traﬃc Intercept Active](clientinstallationios.webp)
+![Installation on macOS with Deep Packet Inspection and VPN Traﬃc Intercept Active](./systemconfiguration/ClientSoftwarePage.png)
 
 **Step 4 –** Open the **.pkg** ﬁle and follow the installation steps and give the requested
 permissions.
@@ -194,7 +194,11 @@ checkbox, and then **save** the changes.
 **Device Control** > **Users/Computer/Group/Global Settings** > **Manage Settings** > **Endpoint
 Protector Client** > **Deep Packet Inspection**.
 
-![Activating Deep Packet Inspection](dpion.webp)
+![Activating Deep Packet Inspection](./systemconfiguration/dpion.webp)
+
+:::note
+For more information about Deep Packet Inspection and configurable options, please visit the dedicated [documentation section for DPI](/docs/endpointprotector/admin/cap_module/deeppacket.md).
+:::
 
 **Step 7 –** Go to the **System Conﬁguration** section, then **System Settings** > **Deep Packet
 Inspection Certiﬁcate**, and download the **CA Certiﬁcate**.
@@ -227,7 +231,7 @@ Inspection Certiﬁcate**, and download the **CA Certiﬁcate**.
 - Block Internet Access – this option will end the Internet connection until the end-user approves
   the Endpoint Protector Proxy Conﬁguration once the computer is rebooted.
 
-![Activate Intercept VPN Traﬃc](interceptvpntraffic.webp)
+![Activate Intercept VPN Traﬃc](./systemconfiguration/interceptvpntraffic.webp)
 
 **Step 15 –** **Save** the changes.
 
@@ -254,8 +258,6 @@ machine. In situations where the Endpoint Protector Client is installed and then
 macOS, you may still see EPPNotiﬁer in the Notiﬁcation settings. To remove it from the list, simply
 right-click and select "Reset notiﬁcations."
 :::
-
-For more information about Deep Packet Inspection and configurable options, please visit the dedicated [documentation section for DPI](/docs/endpointprotector/admin/cap_module/deeppacket.md).
 
 ### Debian Based Distributions
 
@@ -301,7 +303,7 @@ The following are several examples of supported distributions:
 
 ![RedHat based distributions](redhatbaseddistributionstwo.webp)
 
-### Setting the Server IP
+#### Setting the Server IP
 
 For all RedHat-based distributions, you need to follow an additional step after executing the above
 commands in order to set the Endpoint Protector Server IP.
@@ -312,7 +314,7 @@ Based on each distribution, follow the corresponding method:
 
 ![Setting the Endpoint Protector Server IP](setserveriptwo.webp)
 
-### The Windows Subsystem for Linux
+## The Windows Subsystem for Linux
 
 The Windows Subsystem for Linux (WSL) allows you to run native Linux distributions directly within
 your Windows environment. However, due to its nature, the Endpoint Protector Client cannot be

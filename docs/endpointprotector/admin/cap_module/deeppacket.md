@@ -93,10 +93,7 @@ generated.
 
 **Step 4 –** Reboot the endpoint to enforce a new Certiﬁcate.
 
-:::note
-Issuing the Deep Packet Inspection Certificate on Windows is handled automatically and
-transparently by the Endpoint Protector Client. No additional steps are required.
-:::
+
 ![Conﬁguring the Deep Packet Inspection - Auto-refresh Certiﬁcate feature](autorefreshcert.webp)
 
 EPP DPI module generates a certificate only at the first time a user visits a website and caches that certificate for subsequent visits to the same website. The certificate cache deletion interval can be configured in EPP Server versions 5.8.0.0 and above (please refer to this UM section [System Settings - DPI certificate](/docs/endpointprotector/admin/systemconfiguration/systemsettings) . Alternatively, the certificate cache is cleared either upon computer reboot or when the DPI feature is disabled.
@@ -105,8 +102,14 @@ Endpoint Protector employs the same criteria as the Chromium open-source web bro
 
 If needed, this feature can be configured through the DPI Bypass option described here [Global Settings - DPI configuration](/docs/endpointprotector/admin/dc_module/globalsettings#dpi-conﬁguration).
 
+### DPI on Windows
 
-## Deep Packet Inspection Certiﬁcate on macOS
+:::note
+Issuing the Deep Packet Inspection Certificate on Windows is handled automatically and
+transparently by the Endpoint Protector Client. No additional steps are required.
+:::
+
+### DPI Certiﬁcate on macOS
 
 Due to the latest changes in the macOS 11.0 that affect Deep Packet Inspection, a new Root
 Certiﬁcate is needed in order for the Deep Packet Inspection feature to work on the mentioned macOS
@@ -153,8 +156,7 @@ Linux users to manually add the new certificate into the keychain. On Windows, t
 be updated automatically.
 :::
 
-
-## Deep Packet Inspection Certificate on Linux
+### DPI Certificate on Linux
 
 Due to system-level requirements in Linux, adding the Deep Packet Inspection certificate involves
 specific steps to ensure compatibility. The certificate enables Endpoint Protector to perform secure
