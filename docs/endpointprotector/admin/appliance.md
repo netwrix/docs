@@ -55,7 +55,16 @@ the Endpoint Protector Administration and Reporting Tool with the new IP address
 :::
 
 
-![ Change the network settings for the appliance to communicate correctly in your network](ipconfg.webp)
+![ Change the network settings for the appliance to communicate correctly in your network using IPV4](ipconfg.webp)
+
+Additionally, if you want to switch to using IPV6 exclusively, starting with version 2512, you can do so by turning on the IPV6 option.
+Doing so will disable the IPV4 option and vice versa.
+
+![ Change the network settings for the appliance to communicate correctly in your network using IPV6](IPV6appliancesettings.png)
+
+:::note
+For appliances hosted on the following types of images, IP change options will not be available in the UI, but only in the command line: AWS AZURE, GCP. If you are hosting EPP on one of these image types, please use command line option to enter the Setup wizard and change the IP address from there.
+:::
 
 ### DNS Conﬁguration
 
