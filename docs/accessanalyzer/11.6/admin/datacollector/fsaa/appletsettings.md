@@ -122,6 +122,7 @@ In the Certificate Exchange Options section, configure the following options:
         :::note
         If the FSAA Data Collector and the applet server are on separate domains without a
         trust, this option must be used.
+        Certificate Deployment mechanisms cannot be mixed in the same console. 
         :::
 
 
