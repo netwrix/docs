@@ -12,7 +12,7 @@ information on these activities.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
-[Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)
+[Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
 ## Supported File Servers and Devices

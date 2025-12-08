@@ -146,7 +146,7 @@ _General Guidance_
 Customers are strongly encouraged to plan migrations to supported operating systems ahead of published Microsoft EOL timelines. This ensures continued compatibility, access to full product capabilities, and ongoing support.
 
 **Important:**
-Netwrix EPP is **not supported** on Windows Server 2012 R2, Windows Server 2008, Windows 7, Windows XP, or any earlier versions. The final EPP Agent build with “best effort” support for these operating systems is 5.9.4.0 (Windows version 6.2.3.1010). No future builds will be produced for them.
+Netwrix EPP is **not supported** on of Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2008, Windows 7, Windows XP, or any earlier versions. The final EPP Agent build with “best effort” support for these operating systems is 5.9.4.0 (Windows version 6.2.3.1010). No future builds will be produced for them.
 
 ### macOS Clients
 

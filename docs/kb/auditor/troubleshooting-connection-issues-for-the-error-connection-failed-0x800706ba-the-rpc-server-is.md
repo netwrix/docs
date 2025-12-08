@@ -41,11 +41,7 @@ Maintaining a stable network connection helps the data collection process comple
 
 ### 2. Unstable Connection During Large-Scale Audits
 
-During large-scale audits, unstable connections may interrupt or halt the audit process. To reduce connection load and improve performance:
-
-- Divide large audit scopes into smaller, manageable items.
-  - For example, instead of adding the entire target audited server with all shares as a single item, add each share separately.
-- Segment the audit into phases to reduce network load and improve reliability.
+During large-scale audits, unstable connections may disrupt the process. To reduce network load and improve reliability, divide large audit scopes into smaller parts — for example, add each server share separately as an individual item instead of adding the entire server at once.
 
 > **IMPORTANT:** Apply this recommendation to critical audit objects only. For example, if a file server includes many shared folders but not all need auditing, exclude the unnecessary folders using **Excludes**. The collector will then focus on necessary data only. Use the **Resource Estimation Tool (RET)** to calculate your audit scope and estimate server resources: [Resource Estimation Tool](https://releases.netwrix.com/products/auditor/10.7/auditor-resource-estimation-tool-1.2.39.zip)
 
@@ -87,7 +83,7 @@ To prevent this interference, add the following exclusions to your antivirus con
 - `NwxEventCollectorAgent.exe`
 - `NwxSaclTunerAgent.exe`
 
-For a complete list of antivirus exclusions, see [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor).
+For a complete list of antivirus exclusions, see [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor).
 
 ### 4. Insufficient Disk Space on the Target Audited Server
 
@@ -113,4 +109,4 @@ Recommended actions:
 
 ## Related Links
 
-- [Error: 0x800706BA - RPC Server Is Unavailable](/docs/kb/auditor/error-0x800706ba-rpc-server-is-unavailable)
+- [Error: 0x800706BA - RPC Server Is Unavailable](/docs/kb/auditor/troubleshooting-and-errors/data-collection-errors/error-0x800706ba-rpc-server-is-unavailable)

@@ -97,7 +97,7 @@ remote syslog listener, and specify the logging level. For that, run the followi
 
 `ncli> rsyslog-config add-module server-name=<CustomServerName> module-name=AUDIT include-monitor-logs=false level=notice`
 
-**Step 5 –** Finally, enable syslog forwarding to remote server:  
+**Step 5 –** Finally, enable syslog forwarding to remote server:
 ` ncli> rsyslog-config set-status enable=true`
 
 This syslog server will be added to the cluster automatically.
@@ -131,23 +131,6 @@ to _5_ (_Notice_). For that, follow the steps below:
 **Step 2 –** Select **Audit** module and select **5 - Notice** level.
 
 **Step 3 –** Finally, click **Save**.
-
-## Download the Add-On
-
-Download the distribution package from the Netwrix website and unpack it to a folder on the computer
-where you plan to deploy the add-on.
-
-Customers who are logged in to the Netwrix Customer Portal can download the latest version of their
-software products from the My Products page:
-[https://www.netwrix.com/my_products.html](https://www.netwrix.com/my_products.html). See the
-[Customer Portal Access](https://helpcenter.netwrix.com/bundle/NetwrixCustomerPortalAccess/page/Customer_Portal_Access.html)
-topic for information on how to register for a Customer Portal account.
-
-Partners and MSPs who are logged into the Netwrix Partner Portal can download the latest version of
-their software products from the My Product page:
-[https://www.netwrix.com/par/site/products](https://www.netwrix.com/my_products.html). To receive an
-invitation to the Partner Portal, please contact
-[netwrix.msp@netwrix.com](http://netwrix.msp@netwrix.com/).
 
 ## Configure Add-On Parameters
 

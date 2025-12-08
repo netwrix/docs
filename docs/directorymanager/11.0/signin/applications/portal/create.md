@@ -14,16 +14,12 @@ You can create multiple GroupID portals as well as create multiple instances for
 
 ## Host a Portal
 
-A portal is hosted on a web server, with native IIS, remote IIS, and Docker as the supported
-servers.
+A portal is hosted on a web server, with native IIS and remote IIS as the supported servers.
 
 - **IIS deployment** - Your GroupID portal is hosted within a site in IIS. To launch IIS,
-  see [Opening IIS Manager](https://learn.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525920(v=vs.90)).
+  see [Opening IIS Manager](https://learn.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525920(v=vs.90)).
 
     ![in_iis](/images/directorymanager/11.0/admincenter/portal/in_iis.webp)
-
-- **Docker deployment** - For a Docker deployment, make sure you have a running instance of Docker
-  daemon in your environment. A portal runs within a container in Docker.
 
 ## Deploy Multiple Instances of a Portal
 
@@ -44,7 +40,6 @@ What do you want to do?
 
 - [Create a Portal in Native IIS](#create-a-portal-in-native-iis)
 - [Create a Portal in Remote IIS](#create-a-portal-in-remote-iis)
-- [Create a Portal in Docker](#create-a-portal-in-docker)
 - [Deploy Another Instance of a Portal](#deploy-another-instance-of-a-portal)
 - [Create a Portal by Copying an Existing Portal](#create-a-portal-by-copying-an-existing-portal)
 - [View the Details of a Portal](#view-the-details-of-a-portal)
@@ -73,7 +68,7 @@ located on disk.
    portal is displayed with this name in GroupID.
 6. In the **Deployment Name** box, enter a deployment name for the portal. This name is used to
    indicate the deployment instance for the portal in GroupID.
-   A portal can have multiple deployments, for example, one in IIS and another in Docker.
+   A portal can have multiple deployments, for example, one in native IIS and another in remote IIS.
    The application name and deployment name are displayed on the portal card on the **GroupID
    Portal** tab.
 
@@ -236,7 +231,7 @@ topic.
    portal is displayed in GroupID with this name.
 6. In the **Deployment Name** box, enter a deployment name for the portal. This name is used to
    indicate the deployment instance for the portal in GroupID. A portal can have multiple
-   deployments, for example, one in IIS and another in Docker.
+   deployments, for example, one in native IIS and another in remote IIS.
    The application name and deployment name are displayed on the portal card on the **GroupID
    Portal** tab.
 7. In the **API URL** box, enter the URL of the API to use for communicating with the remote IIS
@@ -271,54 +266,11 @@ topic.
 13. Click **Create Application**.
     The new portal is displayed on the **GroupID Portal** tab.
 
-## Create a Portal in Docker
-
-GroupID enables you to host a portal in Docker. For this, you need to connect with the API running
-on a Docker deamon in your environment, so that GroupID can create a container for the portal there
-and run the portal from within that container.
-
-For an overview on application deployment in Docker, see the
-[Prerequisites for Deployments in Docker](/docs/directorymanager/11.0/signin/applications/dockerprerequisites.md)
-topic.
-
-NOTE: To host the portal, Docker daemon should be configured to run Windows containers.
-
-**To create a portal:**
-
-1. In Admin Center, click **Applications** in the left pane.
-2. Click **Add Application**.
-3. On the next page, select **GroupID Portal** and click **Next step**.
-4. On the **Create GroupID Application** page, select the **Docker** tile.
-5. In the **Application Name** box, enter a unique name for the portal or use the default name. The
-   portal is displayed in GroupID with this name.
-6. In the **Deployment Name** box, enter a deployment name for the portal. This name is used to
-   indicate the deployment instance for the portal in GroupID. A portal can have multiple
-   deployments, for example, one in IIS and another in Docker.
-   The application name and deployment name are displayed on the portal card on the **GroupID
-   Portal** tab.
-7. In the **Port** box, enter the port for the host machine to map the container to host ports. By
-   default, the container port is 443.
-   This enables network access to the portal in Docker over this port.
-8. In the **Service URL** box, enter the API URL to use for accessing and communicating with Docker
-   Engine.
-   On installing Docker Engine, you must expose an API over TCP on the same machine to enable
-   communication with GroupID.
-   The URL you provide in the **Service URL** box identifies the Docker deamon where you want to
-   host the portal.
-9. In the **Container Name** box, enter a name for the container that is created in Docker for
-   deploying the portal.
-10. For entering information in the **Service Endpoints**, **Support Information**, **Select
-    Identity Stores**, and **Advanced Settings** areas, follow steps 9-13 in the
-    [Create a Portal in Native IIS](#create-a-portal-in-native-iis) topic.
-11. Click **Create Application**.
-    The new portal is displayed on the **GroupID Portal** tab.
-
 ## Deploy Another Instance of a Portal
 
 You can deploy more than one instance of a portal. Instances can be deployed in different web
-servers, for example, one in IIS, another in remote IIS, and yet another in Docker. For more on how
-instances work, see the
-[Deploy Multiple Instances of a Portal](#deploy-multiple-instances-of-a-portal) topic.
+servers, for example, one in native IIS and another in remote IIS. For more on how instances work,
+see the [Deploy Multiple Instances of a Portal](#deploy-multiple-instances-of-a-portal) topic.
 
 To deploy a new instance, you have to provide deployment details only. All instances share the same
 server and design configurations, while only deployment details differ. For example, all instances
@@ -330,8 +282,8 @@ a shared setting propagates to all deployment instances of the portal.
 1. In Admin Center, select **Applications** in the left pane.
 2. On the **GroupID Portal** tab, click the ellipsis button for a portal and select **Deploy Another
    Instance**.
-3. On the **Deploy Another Instance** page, select the **IIS**, **Remote IIS**, or **Docker** tile
-   to indicate the web server where you want to deploy the instance.
+3. On the **Deploy Another Instance** page, select the **IIS** or **Remote IIS** tile to indicate
+   the web server where you want to deploy the instance.
    The **Application Name** field displays the name of the portal as read-only.
 4. Fields on the page vary, depending on the web server selected. In any case, the **Support
    Information**, **Select Identity Stores**, and **Advanced Settings** areas are not available, as
@@ -341,8 +293,6 @@ a shared setting propagates to all deployment instances of the portal.
       [Create a Portal in Native IIS](#create-a-portal-in-native-iis) topic.
     - To deploy an instance in remote IIS, follow steps 6-12 in the
       [Create a Portal in Remote IIS](#create-a-portal-in-remote-iis) topic.
-    - To deploy an instance in Docker, follow steps 6-10 in the
-      [Create a Portal in Docker](#create-a-portal-in-docker) topic.
 
 5. After entering the required information, click **Deploy Instance**.
    The new instance is displayed on the portal’s card.
@@ -365,14 +315,12 @@ you can choose to deploy the new portal in any of the supported web servers.
       portal’s help URL
     - The identity store(s) associated with the portal
 
-3. You can deploy the new portal in native IIS, remote IIS, or Docker.
+3. You can deploy the new portal in native IIS or remote IIS.
 
     - To specify settings for a native IIS deployment, follow the instructions in the
       [Create a Portal in Native IIS](#create-a-portal-in-native-iis) topic, beginning at step 4.
     - To specify settings for a remote IIS deployment, follow the instructions in the
       [Create a Portal in Remote IIS](#create-a-portal-in-remote-iis) topic, beginning at step 4.
-    - To specify settings for a Docker deployment, follow the instructions in the
-      [Create a Portal in Docker](#create-a-portal-in-docker) topic, beginning at step 4.
 
 ## View the Details of a Portal
 

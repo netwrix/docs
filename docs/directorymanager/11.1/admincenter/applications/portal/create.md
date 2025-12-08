@@ -17,16 +17,12 @@ Manager portal that only facilitates password-related functions.
 
 ## Host a Portal
 
-A portal is hosted on a web server, with native IIS, remote IIS, and Docker as the supported
-servers.
+A portal is hosted on a web server, with native IIS and remote IIS as the supported servers.
 
 - IIS Deployment - Your Directory Manager portal is hosted within a site in IIS. To launch IIS, see
   [Opening IIS Manager](https://learn.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525920(v=vs.90)).
 
     ![in_iis](/images/directorymanager/11.1/admincenter/portal/in_iis.webp)
-
-- Docker Deployment - For a Docker deployment, make sure you have a running instance of Docker
-  daemon in your environment. A portal runs within a container in Docker.
 
 ## Deploy Multiple Instances of a Portal
 
@@ -67,7 +63,7 @@ located on disk.
    portal is displayed with this name in Directory Manager.
 6. In the **Deployment Name** box, enter a deployment name for the portal. This name is used to
    indicate the deployment instance for the portal in Directory Manager.
-   A portal can have multiple deployments, for example, one in IIS and another in Docker.
+   A portal can have multiple deployments, for example, one in native IIS and another in remote IIS.
    The application name and deployment name are displayed on the portal card on the **GroupID
    Portal** tab.
 
@@ -249,7 +245,7 @@ the[Prerequisites for Deployments in Remote IIS](/docs/directorymanager/11.1/adm
    portal is displayed in Directory Manager with this name.
 6. In the **Deployment Name** box, enter a deployment name for the portal. This name is used to
    indicate the deployment instance for the portal in Directory Manager. A portal can have multiple
-   deployments, for example, one in IIS and another in Docker.
+   deployments, for example, one in native IIS and another in remote IIS.
    The application name and deployment name are displayed on the portal card on the **GroupID
    Portal** tab.
 7. In the **API URL** box, enter the URL of the API to use for communicating with the remote IIS
@@ -282,52 +278,10 @@ the[Prerequisites for Deployments in Remote IIS](/docs/directorymanager/11.1/adm
     Mode**, **Select Identity Stores**, and **Advanced Settings** areas and create the portal,
     follow the steps in the Create a Portal in Native IIS topic, starting at step 9.
 
-## Create a Portal in Docker
-
-Directory Manager enables you to host a portal in Docker. For this, you need to connect with the API
-running on a Docker deamon in your environment, so that Directory Manager can create a container for
-the portal there and run the portal from within that container.
-
-For an overview on application deployment in Docker, see the
-[Prerequisites for Deployments in Docker](/docs/directorymanager/11.1/admincenter/applications/dockerprerequisites.md) topic.
-
-:::note
-To host the portal, Docker daemon should be configured to run Windows containers.
-:::
-
-
-**To create a portal:**
-
-1. In Admin Center, click **Applications** in the left pane.
-2. Click **Add Application**.
-3. On the next page, select **GroupID Portal** and click **Next step**.
-4. On the **Create GroupID Application** page, select the **Docker** tile.
-5. In the **Application Name** box, enter a unique name for the portal or use the default name. The
-   portal is displayed in Directory Manager with this name.
-6. In the **Deployment Name** box, enter a deployment name for the portal. This name is used to
-   indicate the deployment instance for the portal in Directory Manager. A portal can have multiple
-   deployments, for example, one in IIS and another in Docker.
-   The application name and deployment name are displayed on the portal card on the **GroupID
-   Portal** tab.
-7. In the **Port** box, enter the port for the host machine to map the container to host ports. By
-   default, the container port is 443.
-   This enables network access to the portal in Docker over this port.
-8. In the **Service URL** box, enter the API URL to use for accessing and communicating with Docker
-   Engine.
-   On installing Docker Engine, you must expose an API over TCP on the same machine to enable
-   communication with Directory Manager.
-   The URL you provide in the **Service URL** box identifies the Docker deamon where you want to
-   host the portal.
-9. In the **Container Name** box, enter a name for the container that is created in Docker for
-   deploying the portal.
-10. For entering information in the **Service Endpoints**, **Support Information**, **Password
-    Center Mode**, **Select Identity Stores**, and **Advanced Settings** areas and create the
-    portal, follow the steps in the Create a Portal in Native IIS topic, starting at step 9.
-
 ## Create a Self-Service Password Reset Portal
 
-A Directory Manager portal can be created as a Self-Service Password Reset portal (SSPR in native
-IIS, remote IIS, and Docker. A SSPR portal only provides password management functions to end-users.
+A Directory Manager portal can be created as a Self-Service Password Reset portal (SSPR) in native
+IIS and remote IIS. A SSPR portal only provides password management functions to end-users.
 
 Creating an SSPR portal is similar to creating a standard Directory Manager portal; you only have to
 select the **Password Center Mode** check box on the Create GroupID Application page. For details,
@@ -342,8 +296,8 @@ version) to an SSPR portal. You have to create the SSPR portal as a new portal.
 ## Deploy Another Instance of a Portal
 
 You can deploy more than one instance of a portal. Instances can be deployed in different web
-servers, for example, one in IIS, another in remote IIS, and yet another in Docker. For more on how
-instances work, see the Deploy Multiple Instances of a Portal topic.
+servers, for example, one in native IIS and another in remote IIS. For more on how instances work,
+see the Deploy Multiple Instances of a Portal topic.
 
 To deploy a new instance, you have to provide deployment details only. All instances share the same
 server and design configurations, while only deployment details differ. For example, all instances
@@ -361,8 +315,8 @@ multiple instances.
 1. In Admin Center, select **Applications** in the left pane.
 2. On the **GroupID Portal** tab, click the ellipsis button for a portal and select **Deploy Another
    Instance**.
-3. On the **Deploy Another Instance** page, select the **IIS**, **Remote IIS**, or **Docker** tile
-   to indicate the web server where you want to deploy the instance.
+3. On the **Deploy Another Instance** page, select the **IIS** or **Remote IIS** tile to indicate
+   the web server where you want to deploy the instance.
    The **Application Name** field displays the name of the portal as read-only.
 4. Fields on the page vary, depending on the web server selected. In any case, the **Support
    Information**, **Select Identity Stores**, and **Advanced Settings** areas are not available, as
@@ -372,7 +326,6 @@ multiple instances.
       topic.
     - To deploy an instance in remote IIS, follow steps 6-12 in the Create a Portal in Remote IIS
       topic.
-    - To deploy an instance in Docker, follow steps 6-10 in the Create a Portal in Docker topic.
 
 5. After entering the required information, click **Deploy Instance**.
    The new instance is displayed on the portal's card.
@@ -402,14 +355,12 @@ can choose to deploy the new portal in any of the supported web servers. Conside
       portal's help URL
     - The identity store(s) associated with the portal
 
-3. You can deploy the new portal in native IIS, remote IIS, or Docker.
+3. You can deploy the new portal in native IIS or remote IIS.
 
     - To specify settings for a native IIS deployment, follow the instructions in the Create a
       Portal in Native IIS topic, beginning at step 4.
     - To specify settings for a remote IIS deployment, follow the instructions in the Create a
       Portal in Remote IIS topic, beginning at step 4.
-    - To specify settings for a Docker deployment, follow the instructions in the Create a Portal in
-      Docker topic, beginning at step 4.
 
 ## View the Details of a Portal
 

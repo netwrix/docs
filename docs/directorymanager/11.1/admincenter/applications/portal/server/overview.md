@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Server Settings
 
-A Directory Manager portal is deployed as a web application on a web server (native IIS, remote IIS,
-or Docker). You can manage the following server-related settings for a portal:
+A Directory Manager portal is deployed as a web application on a web server (native IIS or remote
+IIS). You can manage the following server-related settings for a portal:
 
 - Change a portal’s name (i.e., the application name given to the portal).
 - Associate identity stores with a portal.

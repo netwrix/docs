@@ -6,13 +6,12 @@ sidebar_position: 10
 
 # Create a Data Service
 
-You can create a Data service in native IIS, remote IIS, and Docker.
+You can create a Data service in native IIS and remote IIS.
 
 What do you want to do?
 
 - [Create a Data Service in Native IIS](#create-a-data-service-in-native-iis)
 - [Create a Data Service in Remote IIS](#create-a-data-service-in-remote-iis)
-- [Create a Data Service in Docker](#create-a-data-service-in-docker)
 
 ## Create a Data Service in Native IIS
 
@@ -108,37 +107,6 @@ topic.
    [Create a Data Service in Native IIS](#create-a-data-service-in-native-iis) topic.
 9. Click **Create Application**.
    The new Data service is displayed on the **Data Service** tab.
-
-## Create a Data Service in Docker
-
-GroupID enables you to deploy a Data service in Docker. For this, you need to connect with the API
-running on a Docker deamon in your environment, so that GroupID can create a container for the
-service there and run the service from within that container.
-
-For an overview on application deployment in Docker, see the
-[Prerequisites for Deployments in Docker](/docs/directorymanager/11.0/signin/applications/dockerprerequisites.md)
-topic.
-
-NOTE: To host the Data service, Docker daemon should be configured to run Windows containers.
-
-**To create a Data service:**
-
-1. In Admin Center, click **Applications** in the left pane.
-2. Click **Add Application**.
-3. On the next page, select **Data Service** and click **Next step**.
-4. On the **Create GroupID Application** page, select the **Docker** tile.
-5. In the **Application Name** box, enter a unique name for the Data service or use the default
-   name. The Data service is displayed in GroupID with this name.
-6. In the **Deployment Name** box, enter a deployment name for the service. The application name and
-   deployment name are displayed on the service card.
-7. To enter information for **Port**, **Service URL**, and **Container Name**, refer to steps 7-9 in
-   the
-   [Create a Portal in Docker](/docs/directorymanager/11.0/signin/applications/portal/create.md#create-a-portal-in-docker)
-   topic. Replace any reference to the portal with the Data service.
-8. For entering information in the **Service Endpoints** area, follow step 9 in the
-   [Create a Data Service in Native IIS](#create-a-data-service-in-native-iis) topic.
-9. Click **Create Application**.
-   The Data service is created and displayed on the **Data Service** tab.
 
 **See Also**
 
