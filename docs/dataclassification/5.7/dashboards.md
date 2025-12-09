@@ -12,8 +12,9 @@ The Dashboard administration area provides a selection of tools to review applic
 
 The default screen shows a high-level overview of Netwrix Data Classification statistics, displaying
 the last active times of each service (with inactive services shown in red). Select the "i" icon
-next to each date to view the name of the active server as well as batch processing statistics. You
-will also view the processing throughput.
+next to each date to view the name of the active server as well as batch processing statistics.
+If you have Distributed Query Server enabled, any instances that are missing their encryption key
+will also be displayed. You will also view the processing throughput.
 
 The following statistics are available for each thread type:
 
