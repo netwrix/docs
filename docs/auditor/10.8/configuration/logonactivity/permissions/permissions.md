@@ -1,7 +1,7 @@
 ---
 title: "Permissions for Logon Activity Auditing"
 description: "Permissions for Logon Activity Auditing"
-sidebar_position: 50
+sidebar_position: 10
 ---
 
 # Permissions for Logon Activity Auditing
@@ -45,9 +45,8 @@ Follow the steps to configure non-administrative account to collect logon activi
 - Back up files and directories. See the
    [Configure the Back up Files and Directories Policy](/docs/auditor/10.8/configuration/fileservers/windows/configuration.md)
   topic for additional information.
-- Log on as a batch job. See the
-  [Permissions for Active Directory Auditing](/docs/auditor/10.8/configuration/activedirectory/permissions.md) topic for
-  additional information.
+- Access this computer from the network. See the
+  [Configure Access this computer from the network Policy](/docs/auditor/10.8/configuration/logonactivity/permissions/networkaccess.md) topic for additional information.
 - Manage auditing and security log. See the
   [Configure the Manage Auditing and Security Log Policy](/docs/auditor/10.8/configuration/activedirectory/permissions.md#configure-the-manage-auditing-and-security-log-policy)
   topic for additional information.
