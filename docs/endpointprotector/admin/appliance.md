@@ -50,10 +50,13 @@ In this section you can change the network settings for the appliance to communi
 your network.
 
 :::note
+Starting with the 2509 EPP Server release, the EPP Server no longer supports the DHCP client option. This means that administrators must assign a fixed IP address to the EPP Server.
+:::
+
+:::note
 Once you change the IP address, close and open again the Internet browser and then access
 the Endpoint Protector Administration and Reporting Tool with the new IP address.
 :::
-
 
 ![ Change the network settings for the appliance to communicate correctly in your network](ipconfg.webp)
 

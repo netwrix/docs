@@ -179,7 +179,7 @@ the macOS Endpoint Protector Agent.
 
 **Step 3 –** Decompress the downloaded ﬁle.
 
-![Installation on macOS with Deep Packet Inspection and VPN Traﬃc Intercept Active](./systemconfiguration/ClientSoftwarePage.png)
+![Installation on macOS with Deep Packet Inspection and VPN Traﬃc Intercept Active](./systemconfiguration/ClientSoftwarePage.webp)
 
 **Step 4 –** Open the **.pkg** ﬁle and follow the installation steps and give the requested
 permissions.
