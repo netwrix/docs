@@ -85,7 +85,7 @@ This article outlines the process for installing or updating a certificate to pr
    HashAlgorithm = SHA256
    [Extensions]
    2.5.29.17 = "{text}"
-   _continue_ = "dns=**sbpam-3.sblab.local**&"
+   \_continue\_ = "dns=**sbpam-3.sblab.local**&"
    [EnhancedKeyUsageExtension]
    OID=1.3.6.1.5.5.7.3.1
    ```
