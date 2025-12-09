@@ -7,14 +7,11 @@ sidebar_position: 20
 # Server Functionality
 
 Once the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User
-Interface from the assigned IP address.
-
-The default Endpoint Protector Appliance IP address is https://192.168.0.201
+Interface from the assigned IP address. For more information, please refer to the dedicated chapter [Configuring EPP Server IP](/docs/endpointprotector/admin/appliance.md#ip-conﬁguration).
 
 :::note
 Always use the IP address with HTTPS (Hypertext Transfer Protocol Secure).
 :::
-
 
 Use the default login credentials for the root account. To obtain the password, submit a support
 ticket through the
