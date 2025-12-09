@@ -11,7 +11,7 @@ market. The resources it consumes or the bandwidth it uses is insignificant. The
 consumed, and bandwidth used by the Client depends on the functions, settings, policies used, and
 the endpoint’s hardware configuration. In an idle state, the base requirements are:
 
-- CPU: At least 1 GHz dual-core CPU
+- CPU: At least 1 GHz dual-core 64bit architecture CPU
 - RAM: 30 MB
 - Bandwidth: Less than 1 Kbs (Kilobit per second) when idle. This may increase depending on usage
   when sending logs or uploading shadow files.
@@ -36,7 +36,7 @@ security exclusions within third-party security software, such as antivirus, EDR
 solutions. The Endpoint Protector Client is designed to be lightweight, but certain antivirus
 programs may scan its files and processes intensively, which can impact performance.
 
-### Importance of Exclusions
+**Importance of Exclusions**
 
 The Endpoint Protector Client logs data in small, frequent increments. Antivirus software may
 attempt to scan each entry as it is written, which can lead to:
@@ -51,7 +51,11 @@ To prevent these conflicts and allow the Endpoint Protector Client to function w
 add exclusions for specific files, folders, and processes on Windows, macOS, and Linux, as outlined
 below.
 
-#### Recommended Exclusions for Windows
+:::warning Important
+Before escalating any Endpoint Client performance issue, please ensure that the security tool exclusions listed below for EPP have been configured and deployed on the affected endpoint, and that the computer has been rebooted.
+:::
+
+### Recommended Exclusions for Windows
 
 **Folder Level Exclusions**
 
@@ -114,10 +118,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DIFx\DriverStore\cs
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DIFx\DriverStore\sieflt20_*
 ```
 
-####
-
-
-#### Recommended Exclusions for macOS
+### Recommended Exclusions for macOS
 
 **Folder Level Exclusions**
 
@@ -148,7 +149,7 @@ netdlp_setup
 EppNotifier
 ```
 
-#### Recommended Exclusions for Linux
+### Recommended Exclusions for Linux
 
 **Folder Level Exclusions**
 
