@@ -3,7 +3,7 @@ title: 'Configure Access this computer from the network Policy'
 description: "Configure Access this computer from the network Policy"
 sidebar_position: 20
 ---
-Follow the steps to configure the 'Access this computer from the network' Policy.
+Follow the steps to configure the Access this computer from the network Policy.
 
 **Step 1** – Open the **Group Policy Management console** on any domain controller in the target domain: navigate to Start > Windows Administrative Tools (Windows Server 2016 and higher) or Administrative Tools (Windows 2012) **Group Policy Management**.
 
