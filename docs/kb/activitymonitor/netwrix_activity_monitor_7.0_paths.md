@@ -1,21 +1,21 @@
 ---
 description: >-
-  This article outlines the installation and configuration paths for Netwrix Activity Monitor (NAM) 7.0, detailing the various locations and files used for the NAM agent and console.
+  This article outlines the installation and configuration paths for Netwrix Activity Monitor 7.0, detailing the various locations and files used for the NAM agent and console.
 keywords:
   - Netwrix Activity Monitor
   - installation paths
   - configuration files
   - NAM agent
   - NAM console
-sidebar_label: NAM 7.0 Paths
+sidebar_label: Activity Monitor 7.0 Paths
 tags: []
-title: "Netwrix Activity Monitor (NAM) 7.0 Paths"
+title: "Netwrix Activity Monitor 7.0 Paths"
 knowledge_article_id: kA04u00000111AOCAY
 products:
   - activitymonitor
 ---
 
-# Netwrix Activity Monitor (NAM) 7.0 Paths
+# Netwrix Activity Monitor 7.0 Paths
 
 ## Overview
 
@@ -79,19 +79,19 @@ NAM 7.0 has changed its installation and configuration paths from 6.0. This arti
 
 ### Console
 
-**Console’s list of agents and encrypted credentials** (access given to SYSTEM and BUILTIN\Administrators only)
+**Console's list of agents and encrypted credentials** (access given to SYSTEM and BUILTIN\Administrators only)
 
 ```
 %PROGRAMDATA%\Netwrix\Activity Monitor\Console\Agents.ini
 ```
 
-**NAM Console’s license file**
+**NAM Console's license file**
 
 ```
 %PROGRAMDATA%\Netwrix\Activity Monitor\Console\FileMonitor.lic
 ```
 
-**NAM Console’s Debug Logs**
+**NAM Console's Debug Logs**
 
 ```
 %PROGRAMDATA%\Netwrix\Activity Monitor\Console\DebugLogs
@@ -99,25 +99,25 @@ NAM 7.0 has changed its installation and configuration paths from 6.0. This arti
 
 ### Windows Agent
 
-**NAM Agent’s config file**
+**NAM Agent's config file**
 
 ```
 %PROGRAMDATA%\Netwrix\Activity Monitor\Agent\SBTFileMon.ini
 ```
 
-**NAM Agent’s SI config File** (only used for AD Activity)
+**NAM Agent's SI config File** (only used for AD Activity)
 
 ```
 %PROGRAMFILES%\Stealthbits\StealthINTERCEPT\SIWindowsAgent\SAMConfig.xml
 ```
 
-**Main SI Agent’s Config File** (only used for AD Activity)
+**Main SI Agent's Config File** (only used for AD Activity)
 
 ```
 %PROGRAMFILES%\Stealthbits\StealthINTERCEPT\SIWindowsAgent\SIWindowsAgent.exe.Config
 ```
 
-**NAM Agent’s debug logs**
+**NAM Agent's debug logs**
 
 ```
 %PROGRAMDATA%\Netwrix\Activity Monitor\Agent\DebugLogs
@@ -155,13 +155,13 @@ NAM 7.0 has changed its installation and configuration paths from 6.0. This arti
 
 ### Linux Agent
 
-**NAM Agent’s config file**
+**NAM Agent's config file**
 
 ```
 /usr/bin/activity-monitor-agentd/config/SBTFileMon.ini
 ```
 
-**NAM Agent’s debug logs**
+**NAM Agent's debug logs**
 
 ```
 /usr/bin/activity-monitor-agentd/DebugLogs
