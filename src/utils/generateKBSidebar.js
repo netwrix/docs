@@ -60,6 +60,25 @@ function extractYamlField(frontmatter, fieldName) {
   return null;
 }
 
+// Helper function to capitalize folder names with proper handling of acronyms
+function capitalizeFolderName(folderName) {
+  // Common acronyms that should be all caps (based on actual KB folder names)
+  const acronyms = ['sql', 'faq', 'faqs', 'sso', 'api', 'url', 'http', 'https', 'ssl', 'tls', 'ldap', 'ad', 'vm', 'kb', 'csv', 'json', 'xml', 'html', 'css', 'saml', 'oauth', 'id', 'mfa', 'rds', 'ux', 'dpi'];
+
+  return folderName
+    .split('-')
+    .map(word => {
+      const lowerWord = word.toLowerCase();
+      // Check if this is a known acronym
+      if (acronyms.includes(lowerWord)) {
+        return word.toUpperCase();
+      }
+      // Otherwise, capitalize first letter only
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(' ');
+}
+
 // Recursively process a folder and its subfolders to build sidebar items
 function processFolderRecursive(folderPath, productName, relativePath = '') {
   const items = [];
@@ -96,10 +115,7 @@ function processFolderRecursive(folderPath, productName, relativePath = '') {
     const subfolderItems = processFolderRecursive(subfolderPath, productName, subfolderRelativePath);
 
     if (subfolderItems.length > 0) {
-      const categoryLabel = subfolder.name
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
+      const categoryLabel = capitalizeFolderName(subfolder.name);
 
       items.push({
         type: 'category',
@@ -143,10 +159,7 @@ function generateKBSidebar(productName) {
     const folderItems = processFolderRecursive(folderPath, productName, folder.name);
 
     if (folderItems.length > 0) {
-      const categoryLabel = folder.name
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
+      const categoryLabel = capitalizeFolderName(folder.name);
 
       items.push({
         type: 'category',
