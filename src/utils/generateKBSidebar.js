@@ -79,10 +79,6 @@ function cleanSlug(filename, productName) {
 }
 
 function generateKBSidebar(productName) {
-  // DIAGNOSTIC TEST: Return empty array to test if this function causes broken KB links
-  // TODO: Remove this return statement after diagnostic test
-  return [];
-
   // Find the project root by looking for package.json
   let currentDir = __dirname;
   while (!fs.existsSync(path.join(currentDir, 'package.json')) && currentDir !== '/') {
@@ -108,9 +104,10 @@ function generateKBSidebar(productName) {
         const fallbackName = file.replace('.md', '');
 
         // Handle index.md files specially - they should link to parent directory
+        // Use relative paths from site root (routeBasePath already includes /docs/kb)
         const href = file === 'index.md'
-          ? `/docs/kb/${productName}/${folder.name}`
-          : `/docs/kb/${productName}/${folder.name}/${encodeURIComponent(file.replace('.md', ''))}`;
+          ? `/kb/${productName}/${folder.name}`
+          : `/kb/${productName}/${folder.name}/${file.replace('.md', '')}`;
 
         return {
           type: 'link',
@@ -119,17 +116,17 @@ function generateKBSidebar(productName) {
         };
       })
       .sort((a, b) => a.label.localeCompare(b.label));
-    
+
     if (folderFiles.length > 0) {
       const categoryLabel = folder.name
         .split('-')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
-      
+
       items.push({
         type: 'category',
         label: categoryLabel,
-        collapsed: false,
+        collapsed: true,
         items: folderFiles
       });
     }
@@ -143,9 +140,10 @@ function generateKBSidebar(productName) {
       const fallbackName = file.name.replace('.md', '');
 
       // Handle index.md files specially - they should link to parent directory
+      // Use relative paths from site root (routeBasePath already includes /docs/kb)
       const href = file.name === 'index.md'
-        ? `/docs/kb/${productName}`
-        : `/docs/kb/${productName}/${encodeURIComponent(file.name.replace('.md', ''))}`;
+        ? `/kb/${productName}`
+        : `/kb/${productName}/${file.name.replace('.md', '')}`;
 
       return {
         type: 'link',
@@ -154,12 +152,12 @@ function generateKBSidebar(productName) {
       };
     })
     .sort((a, b) => a.label.localeCompare(b.label));
-    
+
   if (rootFiles.length > 0) {
     items.push({
       type: 'category',
       label: 'General',
-      collapsed: false,
+      collapsed: true,
       items: rootFiles
     });
   }
