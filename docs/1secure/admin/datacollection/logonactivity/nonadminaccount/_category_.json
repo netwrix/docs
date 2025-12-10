@@ -1,0 +1,10 @@
+{
+  "label": "Configure Non-Administrative Account to Collect Logon Activity",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "nondomainadmin"
+  }
+}

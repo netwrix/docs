@@ -21,7 +21,7 @@ Do the following:
 
 - Back up files and directories.
   [Configure the Back up Files and Directories Policy](/docs/1secure/admin/datacollection/computer/backupfilesdirectories.md)
-- Log on as a batch job. [Define Log On As a Batch Job Policy](/docs/1secure/admin/datacollection/activedirectoryauditing/logonasbatch.md)
+- Access this computer from the network$. See the. [Configure Access this computer from the network Policy](/docs/1secure/admin/datacollection/logonactivity/nonadminaccount/networkaccess/networkaccess.md)
 - Manage auditing and security log.
   [Configure the Manage Auditing and Security Log Policy](/docs/1secure/admin/datacollection/activedirectoryauditing/manageauditingsecuritylog.md)
 
