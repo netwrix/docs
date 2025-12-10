@@ -9,11 +9,11 @@ function extractTitle(filePath, fallbackName) {
       const parts = content.split('---', 3);
       if (parts.length >= 3) {
         const frontmatter = parts[1];
-        
+
         // Look for sidebar_label first (Docusaurus best practice)
         const label = extractYamlField(frontmatter, 'sidebar_label');
         if (label) return label;
-        
+
         // Fall back to title
         const title = extractYamlField(frontmatter, 'title');
         if (title) return title;
@@ -50,32 +50,70 @@ function extractYamlField(frontmatter, fieldName) {
       }
     }
   }
-  
+
   // Try simple single-line format: field: value (but exclude folded blocks)
   const simpleMatch = frontmatter.match(new RegExp(`^\\s*${fieldName}:\\s*['"]?([^'"\\n\\r>]+?)['"]?\\s*$`, 'm'));
   if (simpleMatch && !simpleMatch[1].trim().startsWith('>')) {
     return simpleMatch[1].trim();
   }
-  
+
   return null;
 }
 
-function cleanSlug(filename, productName) {
-  let slug = filename.replace('.md', '');
-  
-  // Remove product name variations from beginning only
-  const productVariations = [
-    'access-analyzer',
-    'accessanalyzer', 
-    productName
-  ];
-  
-  for (const variation of productVariations) {
-    const regex = new RegExp(`^${variation.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}-`, 'i');
-    slug = slug.replace(regex, '');
-  }
-  
-  return slug;
+// Recursively process a folder and its subfolders to build sidebar items
+function processFolderRecursive(folderPath, productName, relativePath = '') {
+  const items = [];
+  const entries = fs.readdirSync(folderPath, { withFileTypes: true });
+
+  // Get all markdown files in this folder
+  const markdownFiles = entries
+    .filter(entry => entry.isFile() && entry.name.endsWith('.md'))
+    .map(file => {
+      const filePath = path.join(folderPath, file.name);
+      const fallbackName = file.name.replace('.md', '');
+      const fileRelativePath = relativePath ? `${relativePath}/${file.name.replace('.md', '')}` : file.name.replace('.md', '');
+
+      // Build the href path
+      const href = `/kb/${productName}/${fileRelativePath}`;
+
+      return {
+        type: 'link',
+        label: extractTitle(filePath, fallbackName),
+        href: href
+      };
+    })
+    .sort((a, b) => a.label.localeCompare(b.label));
+
+  // Get all subdirectories
+  const subfolders = entries
+    .filter(entry => entry.isDirectory() && !entry.name.startsWith('.') && !entry.name.startsWith('_'))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  // Process each subfolder recursively
+  subfolders.forEach(subfolder => {
+    const subfolderPath = path.join(folderPath, subfolder.name);
+    const subfolderRelativePath = relativePath ? `${relativePath}/${subfolder.name}` : subfolder.name;
+    const subfolderItems = processFolderRecursive(subfolderPath, productName, subfolderRelativePath);
+
+    if (subfolderItems.length > 0) {
+      const categoryLabel = subfolder.name
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+
+      items.push({
+        type: 'category',
+        label: categoryLabel,
+        collapsed: true,
+        items: subfolderItems
+      });
+    }
+  });
+
+  // Add markdown files after subfolders (subfolders first, then files)
+  items.push(...markdownFiles);
+
+  return items;
 }
 
 function generateKBSidebar(productName) {
@@ -85,39 +123,26 @@ function generateKBSidebar(productName) {
     currentDir = path.dirname(currentDir);
   }
   const kbPath = path.join(currentDir, 'docs', 'kb', productName);
-  
+
   if (!fs.existsSync(kbPath)) {
     return [];
   }
-  
+
+  // Process the KB directory recursively, starting from the top level
+  // Skip root-level files (they should be organized into folders)
   const items = [];
   const entries = fs.readdirSync(kbPath, { withFileTypes: true });
-  
-  // Process folders (future KB categories)
-  const folders = entries.filter(entry => entry.isDirectory()).sort();
-  folders.forEach(folder => {
+
+  // Only process directories at the top level
+  const topLevelFolders = entries
+    .filter(entry => entry.isDirectory() && !entry.name.startsWith('.') && !entry.name.startsWith('_'))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  topLevelFolders.forEach(folder => {
     const folderPath = path.join(kbPath, folder.name);
-    const folderFiles = fs.readdirSync(folderPath)
-      .filter(file => file.endsWith('.md'))
-      .map(file => {
-        const filePath = path.join(folderPath, file);
-        const fallbackName = file.replace('.md', '');
+    const folderItems = processFolderRecursive(folderPath, productName, folder.name);
 
-        // Handle index.md files specially - they should link to parent directory
-        // Use relative paths from site root (routeBasePath already includes /docs/kb)
-        const href = file === 'index.md'
-          ? `/kb/${productName}/${folder.name}`
-          : `/kb/${productName}/${folder.name}/${file.replace('.md', '')}`;
-
-        return {
-          type: 'link',
-          label: extractTitle(filePath, fallbackName),
-          href: href
-        };
-      })
-      .sort((a, b) => a.label.localeCompare(b.label));
-
-    if (folderFiles.length > 0) {
+    if (folderItems.length > 0) {
       const categoryLabel = folder.name
         .split('-')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -127,14 +152,10 @@ function generateKBSidebar(productName) {
         type: 'category',
         label: categoryLabel,
         collapsed: true,
-        items: folderFiles
+        items: folderItems
       });
     }
   });
-
-  // Skip root-level files entirely (except index.md which should have a custom slug)
-  // Root-level files should be organized into categorized folders
-  // If they're not organized, they won't appear in the sidebar, signaling they need categorization
 
   return items;
 }
