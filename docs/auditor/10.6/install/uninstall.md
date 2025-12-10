@@ -3,7 +3,6 @@ title: "Uninstall Netwrix Auditor"
 description: "Uninstall Netwrix Auditor"
 sidebar_position: 90
 ---
-
 # Uninstall Netwrix Auditor
 
 This topic provides instructions to uninstall Netwrix Auditor.
@@ -116,6 +115,8 @@ Remove the Netwrix Auditor User Activity Core Service manually on each audited c
 **Step 1 –** Navigate to **Start > Control Panel > Programs and Features**.
 
 **Step 2 –** Select the **Netwrix Auditor User Activity** **Core Service** and click **Uninstall**.
+
+**NOTE:** You may also use the attached PowerShell script in order to remove the User Activity Core Service from multiple systems: [Uninstall-NetwrixProduct.ps1](/files/auditor/Uninstall-NetwrixProduct.ps1)
 
 ### Delete the Netwrix Auditor Application Deployment Service
 
