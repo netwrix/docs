@@ -131,37 +131,11 @@ function generateKBSidebar(productName) {
       });
     }
   });
-  
-  // Process root-level files
-  const rootFiles = entries
-    .filter(entry => entry.isFile() && entry.name.endsWith('.md'))
-    .map(file => {
-      const filePath = path.join(kbPath, file.name);
-      const fallbackName = file.name.replace('.md', '');
 
-      // Handle index.md files specially - they should link to parent directory
-      // Use relative paths from site root (routeBasePath already includes /docs/kb)
-      const href = file.name === 'index.md'
-        ? `/kb/${productName}`
-        : `/kb/${productName}/${file.name.replace('.md', '')}`;
+  // Skip root-level files entirely (except index.md which should have a custom slug)
+  // Root-level files should be organized into categorized folders
+  // If they're not organized, they won't appear in the sidebar, signaling they need categorization
 
-      return {
-        type: 'link',
-        label: extractTitle(filePath, fallbackName),
-        href: href
-      };
-    })
-    .sort((a, b) => a.label.localeCompare(b.label));
-
-  if (rootFiles.length > 0) {
-    items.push({
-      type: 'category',
-      label: 'General',
-      collapsed: true,
-      items: rootFiles
-    });
-  }
-  
   return items;
 }
 
