@@ -1,6 +1,6 @@
 ---
-title: "Approvals Dashboard"
-description: "Approvals Dashboard"
+title: "Approvals Dashboard: Approver"
+description: "Approvals Dashboard: Approver"
 sidebar_position: 30
 ---
 
@@ -10,7 +10,7 @@ The Approvals Dashboard displays requested sessions that require approval. Users
 designated as approvers will see the pending sessions queued here. The session must be approved
 before the requestor can log in to the session.
 
-![Approvals Dashboard](/images/privilegesecure/25.12/accessmanagement/enduser/dashboard/approvalsdashboarduser.webp)
+![Approvals Dashboard](/images/privilegesecure/25.12/accessmanagement/enduser/dashboard/approvalsdashboarduser.png)
 
 The Approvals Dashboard has the following features:
 

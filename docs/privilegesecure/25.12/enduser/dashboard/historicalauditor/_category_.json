@@ -1,0 +1,10 @@
+{
+  "label": "Historical Dashboard: Auditor",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "historical"
+  }
+}

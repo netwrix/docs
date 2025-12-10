@@ -1,10 +1,10 @@
 {
-  "label": "Administrator Role",
-  "position": 70,
+  "label": "Custom Roles",
+  "position": 30,
   "collapsed": true,
   "collapsible": true,
   "link": {
     "type": "doc",
-    "id": "overview"
+    "id": "rolemanagementcustom"
   }
 }

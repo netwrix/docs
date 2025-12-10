@@ -1,7 +1,7 @@
 ---
 title: "First Launch"
 description: "First Launch"
-sidebar_position: 20
+sidebar_position: 40
 ---
 
 # First Launch

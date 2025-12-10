@@ -1,7 +1,7 @@
 ---
 title: "Upgrade Procedure"
 description: "Upgrade Procedure"
-sidebar_position: 50
+sidebar_position: 70
 ---
 
 # Upgrade Procedure

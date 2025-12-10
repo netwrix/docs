@@ -1,7 +1,7 @@
 ---
 title: "Browser Extension App"
 description: "Browser Extension App"
-sidebar_position: 50
+sidebar_position: 60
 ---
 
 # Browser Extension App

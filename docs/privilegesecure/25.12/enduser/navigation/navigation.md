@@ -21,9 +21,8 @@ The buttons have these functions:
     - Dashboard — View summaries of recent activity logs and user sessions. See the
       [Dashboard Interface](/docs/privilegesecure/25.12/enduser/dashboard/overview.md) topic for additional information.
 
-- Help — Opens the
-  [Netwrix Privilege Secure Documentation](https://helpcenter.netwrix.com/category/sbpam) in the in
-  another browser tab
+- Help — Opens the Netwrix Privilege Secure Documentation in the in another browser tab
+
 - User Name — Click to open the drop-down menu:
 
     - Dark Mode — Toggle “Dark Mode” for the console. Hover over the toggle switch to see a preview

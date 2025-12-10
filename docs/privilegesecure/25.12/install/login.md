@@ -1,7 +1,7 @@
 ---
 title: "Log Into the Privilege Secure Console"
 description: "Log Into the Privilege Secure Console"
-sidebar_position: 30
+sidebar_position: 50
 ---
 
 # Log Into the Privilege Secure Console

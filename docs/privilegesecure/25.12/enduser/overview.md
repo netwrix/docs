@@ -7,7 +7,10 @@ sidebar_position: 60
 # Privilege Secure End User Overview
 
 This topic and its subtopics are written for users who have been assigned as a Privilege Secure
-User.
+User.  All NPS-AM users are assigned this role when they are onboarded. Accordingly, the Auditor, Approver, and Reviewer roles are mostly covered here because they are also Users. The specific differences are in these three locations:
+ - Approvers at [Approvers Dashboard: Approvers](/docs/privilegesecure/25.12/enduser/dashboard/approvals.md)
+ - Auditors at [Historical Dashboard: Auditors](/docs/privilegesecure/25.12/enduser/dashboard/historicalauditor/historical.md)
+ - Reviewers at [Audit and Reporting: Reviewer](/docs/privilegesecure/25.12/enduser/auditreviewer.md)
 
 New users added to the Console will need to go through the MFA registration process before they can
 log in. Privilege Secure requires a multi-factor authentication (MFA) solution (Authenticator, DUO,
