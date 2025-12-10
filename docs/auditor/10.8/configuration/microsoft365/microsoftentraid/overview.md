@@ -58,6 +58,10 @@ refreshTokensValidFromDateTime,signInSessionsValidFromDateTime,id
 
 ```
 
+**NOTE:** Additional user data is collected (requires optional permissions):
+- **Risk state** - Collected from Microsoft Entra ID Protection to identify users flagged as at-risk
+- **Authentication methods** - Registered authentication method types for each user
+
 Groups properties:
 
 ```
