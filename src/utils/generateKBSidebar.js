@@ -73,8 +73,8 @@ function processFolderRecursive(folderPath, productName, relativePath = '') {
       const fallbackName = file.name.replace('.md', '');
       const fileRelativePath = relativePath ? `${relativePath}/${file.name.replace('.md', '')}` : file.name.replace('.md', '');
 
-      // Build the href path
-      const href = `/kb/${productName}/${fileRelativePath}`;
+      // Build the href path - use /docs/kb since routeBasePath is 'docs/kb'
+      const href = `/docs/kb/${productName}/${fileRelativePath}`;
 
       return {
         type: 'link',
