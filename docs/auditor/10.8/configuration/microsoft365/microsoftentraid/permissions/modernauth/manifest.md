@@ -48,26 +48,26 @@ To add the required permissions, do one of the following:
 
 ```json
 {
-    "resourceAppId": "00000003-0000-0000-c000-000000000000",
-    "resourceAccess": [
-        {
-            "id": "b0afded3-3588-46d8-8b3d-9842eff778da",
-            "type": "Role"
-        },
-        {
-            "id": "7ab1d382-f21e-4acd-a863-ba3e13f7da61",
-            "type": "Role"
-        }
-    ]
+    "resourceAppId": "00000003-0000-0000-c000-000000000000",
+    "resourceAccess": [
+        {
+            "id": "b0afded3-3588-46d8-8b3d-9842eff778da",
+            "type": "Role"
+        },
+        {
+            "id": "7ab1d382-f21e-4acd-a863-ba3e13f7da61",
+            "type": "Role"
+        }
+    ]
 },
 {
-    "resourceAppId": "c5393580-f805-4401-95e8-94b7a6ef2fc2",
-    "resourceAccess": [
-        {
-            "id": "594c1fb6-4f81-4475-ae41-0c394909246c",
-            "type": "Role"
-        }
-    ]
+    "resourceAppId": "c5393580-f805-4401-95e8-94b7a6ef2fc2",
+    "resourceAccess": [
+        {
+            "id": "594c1fb6-4f81-4475-ae41-0c394909246c",
+            "type": "Role"
+        }
+    ]
 }
 ```
 
