@@ -66,6 +66,17 @@ Doing so will disable the IPV4 option and vice versa.
 For appliances hosted on the following types of images, IP change options will not be available in the UI, but only in the command line: AWS AZURE, GCP. If you are hosting EPP on one of these image types, please use command line option to enter the Setup wizard and change the IP address from there.
 :::
 
+:::note
+When transitioning from IPv4 to IPv6 or vice versa, changes to the Nginx configuration may be necessary:
+- If you are using IPv4 and transitioning to IPv6, ensure that the Nginx configuration is updated to listen on the IPv6 address.
+- If you are using IPv6 and transitioning to IPv4, ensure that the Nginx configuration is updated to listen on the IPv4 address.
+For customers using the standard Nginx configuration (most users), adjustments are made automatically.
+
+For customers with custom Nginx configurations (such as those using a different port for client communication), these changes might impact the communication between the agent and server.
+
+In such scenarios, please note that we do not provide official support for custom configurations as part of our documentation. However, our support team is available to assist and manually adjust configurations.
+:::
+
 ### DNS Conﬁguration
 
 In this section you can modify or add a DNS server address and then Save your changes.
