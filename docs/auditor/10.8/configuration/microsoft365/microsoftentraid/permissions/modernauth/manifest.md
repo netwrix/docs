@@ -46,7 +46,7 @@ To add the required permissions, do one of the following:
 - If you upgraded Auditor from the version 10.0, replace all existing content under the
   **requiredResourceAccess** property.
 
-```json
+```jsonc
 {
     "resourceAppId": "00000003-0000-0000-c000-000000000000",
     "resourceAccess": [
@@ -75,7 +75,7 @@ To add the required permissions, do one of the following:
 
 To add both required and optional permissions, use the following manifest configuration:
 
-```json
+```jsonc
 {
     "resourceAppId": "00000003-0000-0000-c000-000000000000",
     "resourceAccess": [
