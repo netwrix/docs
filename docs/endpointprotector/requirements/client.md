@@ -57,7 +57,7 @@ Before escalating any Endpoint Client performance issue, please ensure that the 
 
 ### Recommended Exclusions for Windows
 
-**Folder Level Exclusions**
+**Service Level Exclusions**
 
 ```
 cssguard
@@ -74,6 +74,8 @@ C:\Program Files\CoSoSys\Endpoint Protector\*
   C:\Program Files\CoSoSys\Endpoint Protector\sslsplit.exe
   C:\Program Files\CoSoSys\Endpoint Protector\cssguard.exe
   C:\Program Files\CoSoSys\Endpoint Protector\EPPNotifier.exe
+  C:\Program Files\CoSoSys\Endpoint Protector\BrowserBroker.exe <- EPP versions before 2601
+  C:\Program Files\CoSoSys\Endpoint Protector\EppExtensionHost.exe <- EPP Versions starting 2601
 C:\Windows\System32\config\systemprofile\AppData\Local\CoSoSys\EPP*
 ```
 
@@ -84,6 +86,8 @@ C:\Program Files\CoSoSys\Endpoint Protector\EPPservice.exe
 C:\Program Files\CoSoSys\Endpoint Protector\sslsplit.exe
 C:\Program Files\CoSoSys\Endpoint Protector\cssguard.exe
 C:\Program Files\CoSoSys\Endpoint Protector\EPPNotifier.exe
+C:\Program Files\CoSoSys\Endpoint Protector\BrowserBroker.exe <- EPP versions before 2601
+C:\Program Files\CoSoSys\Endpoint Protector\EppExtensionHost.exe <- EPP Versions starting 2601
   Alternative (for the above 4 files):
   C:\Program Files\CoSoSys\Endpoint Protector\*
 C:\Windows\System32\drivers\cssdlp20.sys
@@ -100,6 +104,8 @@ C:\eppsslsplit.log
 cssguard.exe
 EPPNotifier.exe
 EPPservice.exe
+BrowserBroker.exe <- EPP versions before 2601
+EppExtensionHost.exe <-- EPP Versions starting 2601
 ```
 
 **Registry level exclusions**

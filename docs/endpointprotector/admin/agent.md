@@ -140,6 +140,8 @@ then provide the following information:
 
 ## Agent Installation
 
+To see which distributions are supported for EPP, please check the [supportability article](/docs/endpointprotector/supportability/client-supportability.md).
+
 For Windows and Mac, your input in installing the Endpoint Protector Agent is minimal. The
 Installation folder and Server information are already pre-conﬁgured, and downloadable from the
 Endpoint Protector Server.
@@ -150,19 +152,19 @@ this before installing link.
 :::
 
 
-:::note
-You can also install the Agent from a repository for Endpoint Protector Linux Agents
-starting with version 1.4.0.4., as described in the topic below.
-:::
+The main supported Linux distributions are listed below:
 
+- Ubuntu
+- RedHat
 
-The following are several examples of supported distributions:
-
-- Ubuntu 14.04+
-- Mint 18.X
-- CentOS 7.x
-- Fedora 29
-- OpenSUSE 42.2 and 42.3
+Optional distributions will be provided on the product portal and are available upon request after validation by the Netwrix Product Team. Below are examples of on-demand distributions:
+- Debian
+- Fedora
+- Pardus OS
+- AWS Linux
+- OpenSUSE
+- SUSE
+- SLED Linux Enterprise Server
 
 ![The Agent enforces the Rights and Settings received from the Endpoint Protector Server on the protected endpoints (Windows, Mac, and Linux)](setupagent.webp)
 
@@ -266,16 +268,7 @@ particularities.
 
 The following are several examples of supported distributions:
 
-- Ubuntu 14.04
-- Ubuntu 15.04
-- Ubuntu 16.04
-- Ubuntu 17.04
-- Ubuntu 18.04
-- Ubuntu 19.04
-- Ubuntu 20.04
-- Ubuntu 21.04
-- Ubuntu 21.10
-- Ubuntu 22.04
+- Ubuntu
 - LinuxMint
 - Debian
 
@@ -288,18 +281,16 @@ particularities.
 
 The following are several examples of supported distributions:
 
-- CentOS 7.x
-- RedHat 8.x
-- Fedora 32, 33, 34, 35
+- CentOS
+- RedHat
+- Fedora
 - AWS Linux 2
 
 ![RedHat based distributions](redhatbaseddistributions.webp)
 
-- OpenSuse 15.2
-- SUSE 15+
-- SLED Linux Enterprise Server 15 SP1
-- SLED Linux Enterprise Server 15 SP2
-- SLED Linux Enterprise Server 15 SP3
+- OpenSuse
+- SUSE
+- SLED Linux Enterprise Server
 
 ![RedHat based distributions](redhatbaseddistributionstwo.webp)
 
