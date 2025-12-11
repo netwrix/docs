@@ -54,7 +54,7 @@ onPremisesSyncEnabled,onPremisesDomainName,onPremisesSamAccountName,onPremisesUs
 otherMails,passwordPolicies,officeLocation,postalCode,preferredLanguage,provisionedPlans,proxyAddresses,
 showInAddressList,state,streetAddress,surname,usageLocation,userType,lastPasswordChangeDateTime,
 createdDateTime,externalUserState,externalUserStateChangeDateTime,isResourceAccount,licenseAssignmentStates,
-refreshTokensValidFromDateTime,signInSessionsValidFromDateTime,id
+refreshTokensValidFromDateTime,signInSessionsValidFromDateTime,`id`
 
 ```
 
@@ -68,43 +68,43 @@ Groups properties:
 members,classification,createdDateTime,description,displayName,groupTypes,
 mail,mailEnabled,mailNickname,onPremisesLastSyncDateTime,
 onPremisesSecurityIdentifier,onPremisesSyncEnabled,proxyAddresses,
-renewedDateTime,securityEnabled,visibility,resourceProvisioningOptions,id            
+renewedDateTime,securityEnabled,visibility,resourceProvisioningOptions,`id`
 ```
 
 Devices properties:
 
 ```
 displayName,deviceId,deviceMetadata,deviceVersion,manufacturer,model,operatingSystem,
-operatingSystemVersion,profileType,trustType,accountEnabled,isCompliant,isManaged,id
+operatingSystemVersion,profileType,trustType,accountEnabled,isCompliant,isManaged,`id`
             
 ```
 
 DirectoryRoles properties:
 
 ```
-description,displayName,roleTemplateId,id,members
+description,displayName,roleTemplateId,`id`,members
             
 ```
 
 DirectoryRoleTemplates properties:
 
 ```
-displayName,description,id
+displayName,description,`id`
             
 ```
 
 SubscribedSkus properties:
 
 ```
-capabilityStatus,consumedUnits,prepaidUnits,servicePlans,skuId,skuPartNumber,appliesTo,id
+capabilityStatus,consumedUnits,prepaidUnits,servicePlans,skuId,skuPartNumber,appliesTo,`id`
             
 ```
 
 ServicePrincipals properties:
 
 ```
- accountEnabled,appId,appRoles,displayName,homepage,oauth2PermissionScopes,
- servicePrincipalNames,servicePrincipalType,tags,id
+accountEnabled,appId,appRoles,displayName,homepage,oauth2PermissionScopes,
+servicePrincipalNames,servicePrincipalType,tags,`id`
             
 ```
 
