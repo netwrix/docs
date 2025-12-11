@@ -66,84 +66,71 @@ complete the installation.
 :::
 
 
-## Create a Service Principal Account using PowerShell
-
-Follow the steps to create a service principal account with a symmetric key to connect to AIP:
-
-:::note
-All PowerShell commands should be run in order through PowerShell as an Admin.
-:::
+## Create a Service Principal Account
 
 
-**Step 1 –** Open up PowerShell (Administrator).
+**Step 1 -**. Open the Azure Portal and sign in with an administrator account
 
-**Step 2 –** Install and import MsOnline module:
+   
+   1. <https://portal.azure.com/>
+**Step 2 -** Create a new app registration
 
-```
-Install-Module MsOnline
-Import-Module MsOnline
-```
+   
+   1. Navigate to Microsoft Entra ID → App registrations → New registration
+   2. Give the new application a distinguishable name
+**Step 3 -** Create a client secret
 
-**Step 3 –** Connect to Azure with the `Connect-MsolService` command. Enter the Azure credentials in
-the **Sign in to your account** window that displays from Microsoft.
+   
+   1. Open **Certificates & secrets** → Client secrets
+   2. Click **New client secret**
+   3. Provide a brief description & expiration date
+   4. Click **Add**
+   5. Record the **Secret Value** immediately
 
-**Step 4 –** Once successfully connected to Azure, create a service principal with the following
-command:
-
-```
-New-MsolServicePrincipal
-```
-
-> Enter the **DisplayName** of the new service principal name. (For example, AIP_EnterpriseAuditor)
-
-**Step 5 –** Take note and save the **Symmetric Key** and **AppPrincipalID** to be used in later
-steps.
-
+      
 :::warning
-Do not lose the symmetric key. It is not retrievable again once the PowerShell window
-is closed.
+This will disappear once you leave the page!
 :::
 
+**Step 4 -** Add API permissions
 
-The service principal account with the proper key has been created.
+   
+   1. Open **API Permissions**
+   2. Click “Add a permission”
+   3. Select the **Microsoft Graph API** permission set > Application permissions
+   4. Add the “InformationProtectionPolicy.Read.All” permission
 
-## Enable the Account as an AIP Super User using PowerShell
+**Step 5 -** After adding the required API permission, select “Grant admin consent”
+
+**Step 6 -** Record the AppID (from the Overview Page) and the tenantID with the secret value
+
+## **Enable the Account as an AIP Super User using PowerShell**
 
 Follow the steps to enable the Service Principal Account in AIP as a Super User:
 
-:::note
+
+:::info
+**NOTE**
 All PowerShell commands should be run in order through PowerShell as an Admin.
 :::
 
+**Step 1 -** In PowerShell, install Microsoft Azure Active Directory Rights Manager (AIPService) module:
 
-**Step 1 –** In PowerShell, install Microsoft Azure Active Directory Rights Manager (AIPService)
-module:
+`Install-Module AIPService`
+`Import-Module AIPService`
 
-```
-Install-Module AIPService
-Import-Module AIPService
-```
 
-**Step 2 –** Connect to Azure using the `Connect-AIPService` command and supply Azure credentials in
-the **Sign in to your account** window that displays from Microsoft.
+**Step 2 -** Connect to Azure using the `Connect-AIPService` command and supply Azure credentials in the **Sign in to your account** window that displays from Microsoft.
+**Step 3 -** Add the service principal to the Azure AD Rights Management service super users, using the AppID saved from the steps in the [Create a Service Principal Account](https://github.com/netwrix/docs/edit/main/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/azureinformationprotection.md#create-a-service-principal-account) section:
 
-**Step 3 –** Add the service principal to the Azure AD Rights Management service super users, using
-the AppPrincipalID saved from the steps in the
-[Create a Service Principal Account using PowerShell](#create-a-service-principal-account-using-powershell)
-section:
+`Add-AipServiceSuperUser-ServicePrincipalID <AppID>`
 
-```
-Add-AipServiceSuperUser-ServicePrincipalID <AppPrincipalID>
-```
 
-**Step 4 –** Enable the DisplayName account using the following command:
+**Step 4 -** Enable the DisplayName account using the following command:
 
-```
-Enable-AIPServiceSuperUserFeature
-```
+`Enable-AIPServiceSuperUserFeature`
 
-The Service Principal Account is now added to the Rights Management service as a Super User, and the
-Super User feature is enabled.
+The Service Principal Account is now added to the Rights Management service as a Super User, and the Super User feature is enabled.
 
 ## Add User to the AIP Role in Microsoft® Azure
 
@@ -170,24 +157,14 @@ scan.
 - [Azure Connection Profile ](#azure-connection-profile)
 - [Configure FSAA Data Collector](#configure-fsaa-data-collector)
 
-### Azure Connection Profile
+### **Azure Connection Profile**
 
-To collect tags for files protected with Azure Information Protection, an Azure connection profile
-must be configured in Access Analyzer before an FSAA scan runs. See the
-[Global Settings](/docs/accessanalyzer/12.0/admin/settings/overview.md) topic for additional information on how to
-set up a connection profile at the global level.
+To collect tags for files protected with Azure Information Protection, an Azure connection profile must be configured in Access Analyzer before an FSAA scan runs. See the [Global Settings](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/overview) topic for additional information on how to set up a connection profile at the global level.
 
-**Step 1 –** In Access Analyzer, add a credential for an Azure Active Directory account type to the
-existing Connection Profile used for File System scanning. Supply the Client ID field with the
-**AppPrincipalID** and the Key field with the **Symmetric key** created upon creation of the new
-service principal.
 
-**Step 2 –** At the job level, apply the connection profile that contains both the Microsoft Entra
-ID credential and credentials required for File System scanning under the **Jobs** > [__Job__] >
-**Settings** > **Connection** node.
-
-**Step 3 –** Ensure that the job is configured correctly before running a scan. See the
-[Configure FSAA Data Collector](#configure-fsaa-data-collector) topic for additional information.
+**Step 1 -** In Access Analyzer, add a credential for an Azure Active Directory account type to the existing Connection Profile used for File System scanning. Supply the Client ID field with the **AppID** and the Key field with the **Secret Value** created upon creation of the new service principal.
+**Step 2 -** At the job level, apply the connection profile that contains both the Microsoft Entra ID credential and credentials required for File System scanning under the **Jobs** > \[**Job**\] > **Settings** > **Connection** node.
+**Step 3 -** Ensure that the job is configured correctly before running a scan. See the [Configure FSAA Data Collector](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/filesystem/filesystems/azureinformationprotection#configure-fsaa-data-collector) topic for additional information.
 
 An Azure Connection Profile has now been successfully created for an FSAA scan.
 
