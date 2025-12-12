@@ -11,6 +11,11 @@ the company’s Active Directories.
 
 ![Import and synchronize the entities (Users, Computers, and Groups) from the company’s Active Directories](directoryservices.webp)
 
+
+:::note
+This section of the documentation is provided as a best-effort guideline to support deployment. Since third-party products can change frequently, the screenshots and images may not always reflect the latest interfaces or features. For the most up-to-date information, please refer to the official resources from the product vendor.
+:::
+
 ## Microsoft Active Directory
 
 You can create and manage connections from the Directory Services, Microsoft Active Directory

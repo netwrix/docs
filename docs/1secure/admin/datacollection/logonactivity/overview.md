@@ -17,5 +17,5 @@ required:
   group;
 - If network traffic compression is disabled, then you can choose between account which belongs to
   the Domain Admins group or non-administrative account. See
-  [Configure Non-Administrative Account to Collect Logon Activity ](/docs/1secure/admin/datacollection/logonactivity/nondomainadmin.md)for more
+  [Configure Non-Administrative Account to Collect Logon Activity ](/docs/1secure/admin/datacollection/logonactivity/nonadminaccount/nondomainadmin.md)for more
   information;
