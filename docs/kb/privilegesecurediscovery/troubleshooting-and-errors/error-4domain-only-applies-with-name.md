@@ -48,7 +48,7 @@ Checking this can be done via PowerShell command below:
 Get-LocalGroupMember -SID S-1-5-32-544 | ConvertTo-JSON
 ```
 
-![GetLocalGroupMember.png](./images/ka04u00000116da_0EM4u000008LVoZ.png)
+![GetLocalGroupMember.png](../0-images/ka04u00000116da_0EM4u000008LVoZ.png)
 
 The **AccountDomainSid** value showing incomplete. The example shows the **Name** value as `CSTEST\` when the complete value should have an account associated with is such as `CSTEST\s1protect`.
 

@@ -55,7 +55,7 @@ When you sign in, you will have access to:
 
 The change from 2.16 implemented a cache called **MySystems** which is created upon login*.
 
-![main_document.png](./images/ka04u00000116aS_0EM4u000008LUrh.png)
+![main_document.png](../0-images/ka04u00000116aS_0EM4u000008LUrh.png)
 
 ### JITA / Persistent Access
 If you have a **User role**, searches for computers in **Grant Access**, **Insights** or **Systems Management**, or queries via the API, will be restricted to systems where you have JITA access or where you are Persistent.
@@ -84,4 +84,4 @@ When a User role searches for computers in **Grant Access**, **Insights** or **S
 
 > * This has changed in versions 2.17.2 and onward, where it's generated after login when a user interacts with the Grant Access search or the Management > Systems. There is a toast notification that pops up when the mySystems cache is being generated indicating it's not yet complete.
 
-![please_wait.png](./images/ka04u00000116aS_0EM4u000008LUrm.png)
+![please_wait.png](../0-images/ka04u00000116aS_0EM4u000008LUrm.png)
