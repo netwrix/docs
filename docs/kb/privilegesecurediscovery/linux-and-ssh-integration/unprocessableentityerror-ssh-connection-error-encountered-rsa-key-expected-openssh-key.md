@@ -1,6 +1,5 @@
 ---
 description: 'Describes causes and resolutions for the UnprocessableEntityError: "SSH connection error: encountered RSA key, expected OPENSSH key" that can occur during registration in Netwrix Privilege Secure Discovery.'
-id: '8650'
 keywords: ['UnprocessableEntityError', 'SSH connection error', 'RSA key', 'OPENSSH key', 'sshd_config', 'PubkeyAcceptedKeyTypes', 'AllowUsers', 'Netwrix Privilege Secure Discovery']
 products:
 - privilege-secure-discovery

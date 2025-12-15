@@ -1,6 +1,5 @@
 ---
 description: 'Explains how to resolve the UnprocessableEntityError: Missing Result for Task checkAdminPrivilege (code 9999) when registering a rebuilt system. Provides the exact database removal steps and service restarts required to clear the issue.'
-id: '8649'
 keywords:
 - UnprocessableEntityError
 - checkAdminPrivilege

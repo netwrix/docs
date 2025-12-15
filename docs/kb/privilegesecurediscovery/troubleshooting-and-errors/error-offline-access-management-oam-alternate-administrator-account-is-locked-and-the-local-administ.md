@@ -1,6 +1,5 @@
 ---
 description: 'Explains the Offline Access Management (OAM) alternate administrator account locked error and how to resolve it by using Windows Safe Mode to access the local Administrator (RID 500) account.'
-id: '8660'
 keywords:
 - OAM
 - Offline Access Management

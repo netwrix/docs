@@ -1,6 +1,5 @@
 ---
 description: 'When you scan an endpoint, you may see the error "9999 Mismatch in service account username when attempting to rotate service password". This article explains the cause and steps to resolve it by setting Local Admin Password TTL Days to 0 and restarting the service.'
-id: '8661'
 keywords: ['9999 mismatch', 'service account', 'service password rotation', 'Local Admin Password TTL Days', 'scan error', 'endpoint scan', 'password rotation']
 products:
 - privilege-secure-discovery

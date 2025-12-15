@@ -1,6 +1,5 @@
 ---
 description: 'Access the MongoDB shell on the Netwrix Privilege Secure Discovery appliance via SSH to run queries directly against the SecureONE database. Use this method only for small query results because it displays results in the terminal rather than exporting them.'
-id: '8640'
 keywords:
 - MongoDB
 - mongo shell

@@ -1,6 +1,5 @@
 ---
 description: 'When you try to sign in to Netwrix Privilege Secure Discovery using Active Directory Federation Services (ADFS), you may see the error "SAML assertion not yet valid". Add the NotBeforeSkew value to the relying party in ADFS to resolve the issue.'
-id: '8643'
 keywords:
 - SAML
 - ADFS

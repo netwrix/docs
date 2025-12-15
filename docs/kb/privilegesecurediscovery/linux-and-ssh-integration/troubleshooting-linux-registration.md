@@ -1,6 +1,5 @@
 ---
 description: 'This article lists common error messages encountered during Linux registration with Netwrix Privilege Secure Discovery and links to detailed KB articles for each error.'
-id: '8656'
 keywords:
 - linux registration
 - SSH

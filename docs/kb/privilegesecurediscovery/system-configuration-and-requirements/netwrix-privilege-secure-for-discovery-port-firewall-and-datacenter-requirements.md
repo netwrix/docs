@@ -1,6 +1,5 @@
 ---
 description: 'Hardware, network, port, and datacenter requirements for Netwrix Privilege Secure Discovery physical appliances, including cabling, IP addressing, load balancer, SSL, and firewall rules.'
-id: '8638'
 keywords:
 - Netwrix Privilege Secure Discovery
 - firewall

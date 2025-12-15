@@ -1,6 +1,5 @@
 ---
 description: 'This article explains how to resolve the "Invalid SSH Credentials Authentication Failed" error when registering Linux endpoints into Netwrix Privilege Secure Discovery. It describes causes and provides step-by-step instructions to verify the registration account and sudoers configuration.'
-id: '8645'
 keywords:
 - SSH
 - authentication

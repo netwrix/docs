@@ -1,6 +1,5 @@
 ---
 description: 'Explains causes and resolutions for the "Unhandled error: MODULE FAILURE" (Code 1779) encountered when scanning or manually registering Linux systems with Netwrix Privilege Secure Discovery.'
-id: '8648'
 keywords:
 - linux
 - module failure

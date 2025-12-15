@@ -1,6 +1,5 @@
 ---
 description: 'You see the error ''module'' object has no attribute ''MODE_CCM'' in Access History or when you run a rescan from the Grant Access page. This article explains the cause (SMB encryption enabled) and provides PowerShell steps to resolve the issue.'
-id: '8635'
 keywords:
 - SMB
 - SMB encryption

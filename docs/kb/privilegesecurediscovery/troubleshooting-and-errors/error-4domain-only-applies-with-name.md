@@ -1,6 +1,5 @@
 ---
 description: 'Shows the cause and resolution for the "4Domain only applies with name" UI error on the Grant Access page and how to verify and remove the offending local group member using PowerShell.'
-id: '8659'
 keywords:
 - 4Domain
 - Grant Access

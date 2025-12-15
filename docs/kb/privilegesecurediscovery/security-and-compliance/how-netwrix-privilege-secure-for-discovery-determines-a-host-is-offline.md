@@ -1,6 +1,5 @@
 ---
 description: 'Explains how Netwrix Privilege Secure for Discovery determines a host is offline, including the use of FQDN or the last known IP, ping retries, and the resulting Host Offline error.'
-id: '8654'
 keywords: [privilege-secure-discovery, host offline, FQDN, fping, ping timeout, last known IP, CN, IPv4, scanner, worker]
 products:
 - privilege-secure-discovery

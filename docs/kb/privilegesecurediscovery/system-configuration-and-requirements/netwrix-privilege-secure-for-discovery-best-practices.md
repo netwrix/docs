@@ -1,6 +1,5 @@
 ---
 description: 'Best practices for deploying and managing Netwrix Privilege Secure for Discovery, including account management, AD cleanup, GPO changes, firewall and VPN considerations, DR, and load balancing.'
-id: '8641'
 keywords:
 - Netwrix Privilege Secure for Discovery
 - JITA
