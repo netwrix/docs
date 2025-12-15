@@ -167,7 +167,7 @@ account, depending on what purpose a gMSA account will be used for.
 
     - [Permissions for Active Directory Auditing](/docs/auditor/10.8/configuration/activedirectory/permissions.md)
     - [Permissions for Group Policy Auditing ](/docs/auditor/10.8/configuration/grouppolicy/permissions.md)
-    - [Permissions for Logon Activity Auditing ](/docs/auditor/10.8/configuration/logonactivity/permissions.md)
+    - [Permissions for Logon Activity Auditing ](/docs/auditor/10.8/configuration/logonactivity/permissions/permissions.md)
     - [Permissions for Windows File Server Auditing](/docs/auditor/10.8/configuration/fileservers/windows/permissions.md)
     - [Permissions for SharePoint Auditing](/docs/auditor/10.8/configuration/sharepoint/permissions.md)
     - [Permissions for SQL Server Auditing ](/docs/auditor/10.8/configuration/sqlserver/permissions.md)

@@ -24,9 +24,9 @@ Depending on your installation type, do one of the following:
 
 - For the clear installation, add roles as described below.
 - If you upgraded Auditor from previous version, replace all existing content under the
-  requiredResourcdAccess property.
+  requiredResourceAccess property.
 
-```
+```jsonc
 {
     "resourceAppId": "00000003-0000-0000-c000-000000000000",
     "resourceAccess": [

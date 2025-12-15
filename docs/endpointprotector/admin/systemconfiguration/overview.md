@@ -136,7 +136,7 @@ copy the following details from this screen using the Copy button:
 - Deprtment Code
 
 
-![Download and install the Endpoint Protector Client corresponding to your operating system](ClientSoftwarePage.png)
+![Download and install the Endpoint Protector Client corresponding to your operating system](ClientSoftwarePage.webp)
 
 :::note
 Starting with the current release - 2509.0.1.0 - Endpoint Protector Client versions are displayed in the format XXXX.X.X.X on endpoints.
@@ -162,7 +162,7 @@ The feature is not compatible for Endpoint Protector instances that are running 
 :::
 
 
-![Client Software Upgrade](ClientSoftwareUpdatePage.png)
+![Client Software Upgrade](ClientSoftwareUpdatePage.webp)
 
 :::note
 Starting with release 2509.0.1.0 - Endpoint Protector Client versions are displayed in the format XXXX.X.X.X on endpoints.
