@@ -162,7 +162,7 @@ The feature is not compatible for Endpoint Protector instances that are running 
 :::
 
 
-![Client Software Upgrade](ClientSoftwareUpdatePage.webp)
+![Client Software Upgrade](ClientSoftwareUpdatePage.png)
 
 :::note
 Starting with release 2509.0.1.0 - Endpoint Protector Client versions are displayed in the format XXXX.X.X.X on endpoints.
