@@ -10,7 +10,7 @@ This product was formerly named Netwrix StealthINTERCEPT.
 
 :::
 
-* What's New in <NTP /> v7.5
+* What's New in <NTP /> v8.0
 * Cyber Security Boot Camp: Set Up Blocking Policies to Protect Your Active Directory
 * Top 5 Issues for ​ <NTP />
 * <NTP /> Enterprise Password Enforce
