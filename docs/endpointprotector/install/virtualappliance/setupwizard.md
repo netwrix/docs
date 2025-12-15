@@ -26,18 +26,20 @@ Follow the steps to conﬁgure the Endpoint Protector Appliance for the ﬁrst t
 ![Selecting Networking](networking.webp)
 
 **Step 4 –** The conﬁguration methods are now available.
+Starting with version 2509, only the manual configuration option is available. Also, starting with version 2512, the options available for networking configuration include an option to use IPV4 and and option for IPV6. One one option must be selected.
+
+![Networking configuration options](networkingconfig.png)
 
 :::warning
-Starting with version 2509, only the manual configuration option is available. Also for older versions, we recommend a manual conﬁguration of the network settings.
+Modifying network configuration creates certificate a regeneration operation which temporarily stops communication between server and clinet
 :::
 
 
 ## Manual Conﬁguration
 
-For precise control, use manual configuration to set the IP address and default gateway, ensuring
-the appliance is correctly set up and accessible.
+As mentioned before, starting with version 2509, only the manual configuration option is available. But even for older versions, for precise control, use manual configuration to set the IP address and default gateway, ensuring the appliance is correctly set up and accessible.
 
-**Step 1 –** Select **Conﬁgure Network manually** (recommended).
+**Step 1 –** Select **Conﬁgure Network manually** (IPV4 example).
 
 ![Manual Network configuration for Endpoint Protector Appliance](manualnetworkconfig.png)
 

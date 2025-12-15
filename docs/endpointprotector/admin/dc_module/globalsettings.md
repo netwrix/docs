@@ -284,6 +284,9 @@ In this section, you can manage the following settings:
     Learn more from the [Intercept VPN Traﬃc](#intercept-vpn-traﬃc) topic.
     :::
 
+- Linux proxy loopback address –  aims to facilitate seamless integration with custom VPN and proxy solutions, particularly those like Cisco ANYConnect. When activated, you can specify a custom loopback address, tipically within the 127.0.0.0/8 range. This features is applicable for Linux Clients with version 2509.x.x.x or later
+
+- Enable Http/2 - this feature is designed to enhance network protocol management and allows administrators to enable support for HTTP/2 within DPI protocols. If negotiation fails, the protocol will revert to HTTP. It aims to provide greater flexibility and control over HTTP/2 protocol usage.
 
 - Endpoint Protector Behavior with Network Extension Off – select a behavior type from the available
   entries

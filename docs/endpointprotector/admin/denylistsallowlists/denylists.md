@@ -204,6 +204,13 @@ This enables matching regardless of the case of letters in the input text.
 **Pattern:** `(?i)test@example\\.com`<br />
 **Matches:** `test@example.com`, `TEST@EXAMPLE.COM`, `Test@Example.Com`
 
+In the following example, the pattern '(?i)test' will match “test,” “Test,” “TEST,” and other variations, regardless of letter case, as follows:
+
+1. The Regex pattern is defined, added to the dictionary, and saved. Ensure that it is also included in the CAP Policy for proper application.<br />
+   ![](Regexcaseinsensitivity1.png)
+2. The Content Aware Report confirms that the test has completed successfully and that case-insensitive matching is functioning as expected.<br />
+   ![](Regexcaseinsensitivity2.png)
+
 **3. Partial Case-Insensitive Matching**
 Regex also allows you to apply case-insensitive matching only to specific parts of your pattern.
  You can enable and disable this mode using the following flags:
@@ -304,46 +311,6 @@ and **description**, add the items separated by a new line, comma, or semicolon 
 
 ![E-mail Domain New Denylists](e-maildomainnewdenylists.webp)
 
-## Microsoft Information Protection
-
-This section covers the use of Microsoft Purview Information Protection (MPIP) (formerly known as
-Microsoft Information Protection (MIP) and Azure Information protection (AIP)), including
-classification within Endpoint Protector 5.9.4+ Content Aware Protection and eDiscovery policies.
-
-MPIP is a Microsoft toolset enabling organizations to enforce data classification, file encryption,
-and Rights Management Services (RMS) on user data.
-
-Since the 5.9.4 release, Endpoint Protector allows direct label definition for Content Aware
-Protection and eDiscovery policies via the Endpoint Protector Server interface.
-
-The Endpoint Protector Server offers three options for defining MIP labels:
-
-- MIP Label Name – Specify the human-redable name of the MIP label.
-- MIP GUID – Utilize the unique identifier associated with the MIP label.
-- Both – Combine both the label name and GUID for maximum accuracy.
-
-This flexibility allows administrators to avoid creating custom dictionaries to recognize
-MIP-labeled files.
-
-MIP labels can be used along other CAP conditions, including content-aware and label-aware data
-scanning. This enable granular control over data protection based on MPIP classifications.
-
-:::note
-While Endpoint Protector can currently recognize MIP-encrypted files by their GUID (if
-they follow the latest MIP format used by office web tools labeling), content-aware scanning for
-these files is not yet supported.
-:::
-
-
-:::note
-Endpoint Protector Server in Microsoft Entra (formerly Azure AD) applications is
-unnecessary. Endpoint Protector relies on information with labeled files. This might change in
-future releases.
-:::
-
-
-![Confguration for Microsoft Information Protection (MIP) ](mipclassification.webp)
-
 ## Applications
 
 This section introduces the documentation related to CLI (Command Line Interface) commands denylists
@@ -393,3 +360,67 @@ with default parameters, use the wildcard character "\*" at the end of the Appli
 (e.g, `notepad.exe *`.
 
 :::
+
+## Microsoft Information Protection
+
+This section covers the use of Microsoft Purview Information Protection (MPIP) (formerly known as
+Microsoft Information Protection (MIP) and Azure Information protection (AIP)), including
+classification within Endpoint Protector 5.9.4+ Content Aware Protection and eDiscovery policies.
+
+MPIP is a Microsoft toolset enabling organizations to enforce data classification, file encryption,
+and Rights Management Services (RMS) on user data.
+
+Since the 5.9.4 release, Endpoint Protector allows direct label definition for Content Aware
+Protection and eDiscovery policies via the Endpoint Protector Server interface.
+
+The Endpoint Protector Server offers three options for defining MIP labels:
+
+- MIP Label Name – Specify the human-redable name of the MIP label.
+- MIP GUID – Utilize the unique identifier associated with the MIP label.
+- Both – Combine both the label name and GUID for maximum accuracy.
+
+This flexibility allows administrators to avoid creating custom dictionaries to recognize
+MIP-labeled files.
+
+MIP labels can be used along other CAP conditions, including content-aware and label-aware data
+scanning. This enable granular control over data protection based on MPIP classifications.
+
+:::note
+While Endpoint Protector can currently recognize MIP-encrypted files by their GUID (if
+they follow the latest MIP format used by office web tools labeling), content-aware scanning for
+these files is not yet supported.
+:::
+
+
+:::note
+Endpoint Protector Server in Microsoft Entra (formerly Azure AD) applications is
+unnecessary. Endpoint Protector relies on information with labeled files. This might change in
+future releases.
+:::
+
+
+![Confguration for Microsoft Information Protection (MIP) ](mipclassification.webp)
+
+## NDC Classification
+
+This section covers the use of and integration with Netwrix Data Classification, including classification within Content Aware Protection and eDiscovery policies.
+
+Netwrix Data Classification is a tool designed to help organizations manage and protect their data more effectively by identifying, categorizing, and tagging data based on predefined policies. It assists in understanding where sensitive and valuable data resides, how it is being used, and who has access to it. The primary goals of data classification include enhancing data security, optimizing data management, ensuring compliance with regulations, and facilitating informed decision-making.
+
+Starting with the 25.12 release, Endpoint Protector allows direct label definition for Content Aware
+Protection and eDiscovery policies via the Endpoint Protector Server interface.
+
+The Endpoint Protector Server offers the option to define custom labels for policy use like for ex. "ex. Confidential" in:
+- keywords field
+- document label custom field
+- both
+
+This flexibility allows administrators to avoid creating custom dictionaries to recognize labeled files.
+
+NDC labels can be used along other CAP conditions, including content-aware and label-aware data scanning. This enables granular control over data protection based on NDC data classifications.
+
+:::note
+Label names can be obtained from the NDC administrator. Consider using the exact label definition, such as 'Confidential|Internal' to narrow detection.
+:::
+
+![Confguration for Netwrix Data Classification](NDCClassification.png)
