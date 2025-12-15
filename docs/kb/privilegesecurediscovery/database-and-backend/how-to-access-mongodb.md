@@ -1,6 +1,5 @@
 ---
 description: 'Access the MongoDB shell on the Netwrix Privilege Secure Discovery appliance via SSH to run queries directly against the SecureONE database. Use this method only for small query results because it displays results in the terminal rather than exporting them.'
-id: '8640'
 keywords:
 - MongoDB
 - mongo shell
@@ -55,7 +54,7 @@ mongo SecureONE
 ### Cluster:
 
 ```bash
-sudo docker exec -it $(sudo docker ps | grep mongo | cut -d’ ‘ -f1) 
+sudo docker exec -it $(sudo docker ps | grep mongo | cut -d’ ‘ -f1)
 mongo mongodb://mongo1,mongo2,mongo3/SecureONE?replicaSet=secureone
 ```
 
@@ -69,13 +68,13 @@ history | grep mongo
 
 This will return a list of numbered results. Locate the line above, and either copy and paste it into the terminal window or enter an `‘!’` followed by the number located next to the history line. Executing the command this way will execute the command located on the specified line number from the `‘history’` output.
 
-![mongo1.png](./images/ka04u00000116Xm_0EM4u000008LTeI.png)
+![mongo1.png](../0-images/ka04u00000116Xm_0EM4u000008LTeI.png)
 
 Once a successful MongoDB shell connection has been established, the following screen will appear indicating a successful establishment of a MongoDB shell. The '>' character at the bottom indicates a fresh line waiting for commands.
 
 Example:
 
-![mongo2.png](./images/ka04u00000116Xm_0EM4u000008LTeN.png)
+![mongo2.png](../0-images/ka04u00000116Xm_0EM4u000008LTeN.png)
 
 Now, the shell is ready to run the queries that follow.
 

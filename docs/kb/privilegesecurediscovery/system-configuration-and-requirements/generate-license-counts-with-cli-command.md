@@ -1,6 +1,5 @@
 ---
 description: 'Use CLI MongoDB queries to calculate the number of systems scanned in the last 90 days for Netwrix Privilege Secure Discovery (formerly SecureONE) versions older than 2.16.1. Run the appropriate command for your deployment (cluster or single-node) and sum the counts.'
-id: '8644'
 keywords:
 - license count
 - CLI

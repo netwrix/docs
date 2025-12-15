@@ -1,6 +1,5 @@
 ---
 description: 'When the web UI or API shows "Password Expired", the Active Directory account that Netwrix Privilege Secure Discovery uses to bind to the domain controller has an expired password. This article explains how to verify the account status and update the password.'
-id: '8639'
 keywords:
 - password expired
 - Active Directory

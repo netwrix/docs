@@ -1,6 +1,5 @@
 ---
 description: 'Netwrix Privilege Secure Discovery may freeze file copies at the start of copy and prevent web UI login with specific errors. This article lists the symptoms, possible causes, and recommended resolutions.'
-id: '8657'
 keywords: [file copies, DR Copies Freeze, SCP, MTU, SSO, SAML, unicode password, EVP_EncryptFinal_ex, Netwrix Privilege Secure Discovery]
 products:
 - privilege-secure-discovery

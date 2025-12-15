@@ -1,6 +1,5 @@
 ---
 description: 'This article lists common error messages encountered during Linux registration with Netwrix Privilege Secure Discovery and links to detailed KB articles for each error.'
-id: '8656'
 keywords:
 - linux registration
 - SSH
@@ -36,8 +35,8 @@ Netwrix Privilege Secure Discovery (formerly SecureONE)
 
 ## Common Error Messages
 
-- [Error: Invalid SSH Credentials Authentication Failed](/docs/kb/privilegesecurediscovery/error-invalid-ssh-credentials-authentication-failed.md)
+- [Error: Invalid SSH Credentials Authentication Failed](/docs/kb/privilegesecurediscovery/linux-and-ssh-integration/error-invalid-ssh-credentials-authentication-failed.md)
 - UnprocessableEntityError: SSH Connection Error: Encountered RSA Key, Expected OPENSSH Key
 - UnprocessableEntityError: Missing Result for Task checkAdminPrivilege. Code:9999
 - Unhandled Error: there has been an Error Processing the Registration Request: 'ascii' Codec can't Encode Character u
-- [Unhandled Error: Module Failure](/docs/kb/privilegesecurediscovery/unhandled-error-module-failure.md)
+- [Unhandled Error: Module Failure](/docs/kb/privilegesecurediscovery/linux-and-ssh-integration/unhandled-error-module-failure.md)

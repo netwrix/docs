@@ -1,6 +1,5 @@
 ---
 description: "When attempting to sign in to the Netwrix Privilege Secure Discovery web interface, you may see 'Invalid Token' if the Google Authenticator TOTP token is incorrect or out of sync; this article explains troubleshooting steps and how to reset the token."
-id: '8646'
 keywords: [invalid token, TOTP, Google Authenticator, MFA, time sync, Privilege Secure Discovery, SecureONE, Administrator, reset MFA]
 products:
 - privilege-secure-discovery
