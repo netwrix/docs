@@ -8,6 +8,11 @@ sidebar_position: 60
 
 This section provides a complete overview of the EPP Clients Migration settings. From this page you will be able to set new global migration settings by specifying the details of the new EPP Server FQDN/IP and port. Migration can then be triggered for individual computers from the computer management page, where individual computers or groups of computers can be assigned to the new server. Once initiated, EPP Clients will initiate the migration process to the target server. If the migration attempt fails, the existing failover procedure will be activated. All transactions will be logged for tracking and auditing purposes.
 
+:::note
+!IMPORTANT
+Currently only the EPP Client is available for the migration operation, the feature will accomomdate migration for the Enforced Encryption Client in a future release soon.
+:::
+
 ## Configuring the **EPP Clients Migration** page
 
 ![](EPPClientMigration.png)
