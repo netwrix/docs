@@ -10,7 +10,7 @@ tags: []
 title: "Retrieving a List of Expiring SSL/TLS Certificates and Their Expiration Dates"
 knowledge_article_id: kA0Qk0000001sBFKAY
 products:
-  - auditor
+  - accessanalyzer
 ---
 
 # Retrieving a List of Expiring SSL/TLS Certificates and Their Expiration Dates

@@ -10,7 +10,7 @@ tags: []
 title: "Migrating Netwrix Access Analyzer Database to a New SQL Server"
 knowledge_article_id: kA0Qk0000002xgjKAA
 products:
-  - auditor
+  - accessanalyzer
 ---
 
 # Migrating Netwrix Access Analyzer Database to a New SQL Server

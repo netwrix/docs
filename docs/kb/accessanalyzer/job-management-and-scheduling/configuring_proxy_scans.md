@@ -10,7 +10,7 @@ tags: []
 title: "Configuring Proxy Scans in Netwrix Access Analyzer"
 knowledge_article_id: kA0Qk0000002L6nKAE
 products:
-  - auditor
+  - accessanalyzer
 ---
 
 # Configuring Proxy Scans in Netwrix Access Analyzer

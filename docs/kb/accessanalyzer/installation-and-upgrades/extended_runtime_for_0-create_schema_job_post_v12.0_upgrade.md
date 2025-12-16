@@ -12,7 +12,7 @@ tags: []
 title: "Extended Runtime for 0-Create Schema Job Post v12.0 Upgrade"
 knowledge_article_id: kA0Qk0000002TQvKAM
 products:
-  - auditor
+  - accessanalyzer
 ---
 
 # Extended Runtime for 0-Create Schema Job Post v12.0 Upgrade

@@ -10,7 +10,7 @@ tags: []
 title: "Determining Which Access Analyzer Collectors Support gMSA"
 knowledge_article_id: kA0Qk00000033UPKAY
 products:
-  - auditor
+  - accessanalyzer
 ---
 
 # Determining Which Access Analyzer Collectors Support gMSA

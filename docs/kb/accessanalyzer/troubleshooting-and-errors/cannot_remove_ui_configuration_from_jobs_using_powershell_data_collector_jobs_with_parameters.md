@@ -5,12 +5,12 @@ keywords:
   - Netwrix Access Analyzer
   - PowerShell Data Collector
   - job configuration
-sidebar_label: Remove UI Configuration from Jobs
+sidebar_label: Can't Remove UI Config from Jobs
 tags: []
 title: "Cannot Remove UI Configuration from Jobs Using PowerShell Data Collector Jobs with Parameters"
 knowledge_article_id: kA0Qk0000002dmrKAA
 products:
-  - auditor
+  - accessanalyzer
 ---
 
 # Cannot Remove UI Configuration from Jobs Using PowerShell Data Collector Jobs with Parameters

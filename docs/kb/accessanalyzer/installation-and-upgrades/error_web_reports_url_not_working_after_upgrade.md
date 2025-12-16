@@ -10,7 +10,7 @@ tags: []
 title: "Error: Web Reports URL Not Working After Upgrade"
 knowledge_article_id: kA0Qk0000002nMPKAY
 products:
-  - auditor
+  - accessanalyzer
 ---
 
 # Error: Web Reports URL Not Working After Upgrade

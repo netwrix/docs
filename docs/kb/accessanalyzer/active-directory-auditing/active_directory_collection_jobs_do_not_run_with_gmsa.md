@@ -7,12 +7,12 @@ keywords:
   - Netwrix Access Analyzer
   - collection jobs
   - authentication
-sidebar_label: Active Directory Collection Jobs with gMSA
+sidebar_label: AD Collection Jobs Don't Support gMSA
 tags: []
 title: "Active Directory Collection Jobs Do Not Run with gMSA"
 knowledge_article_id: kA0Qk0000002vi9KAA
 products:
-  - auditor
+  - accessanalyzer
 ---
 
 # Active Directory Collection Jobs Do Not Run with gMSA
