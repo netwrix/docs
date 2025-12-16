@@ -27,7 +27,7 @@ One of more errors occurred.
 - Invalid credentials. The Client ID/Secret combo may be incorrect or expired.
 ```
 
-![Error message indicating invalid credentials](./images/servlet_image_4ca84d0f3bd4.png)
+![Error message indicating invalid credentials](../0-images/servlet_image_4ca84d0f3bd4.png)
 
 ## Cause
 
@@ -42,4 +42,4 @@ These errors may be caused by any one of the following:
 
 If the Client ID/Secret combo is new and not expired, make sure the API Configuration window and **Agent Properties** windows are closed.
 
-![API Configuration window](./images/servlet_image_a445105a92a3.png)
+![API Configuration window](../0-images/servlet_image_a445105a92a3.png)

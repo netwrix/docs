@@ -28,27 +28,27 @@ When using **Netwrix Directory Manager** (formerly GroupID) Synchronize jobs to 
 5. On the **Select Fields** page, choose the necessary attributes.
 6. On the **Field Map(s)** page, click **Edit Global Script**.
 
-   ![Edit Global Script in Field Map page](./images/servlet_image_d62b956ff5b7.png)
+   ![Edit Global Script in Field Map page](../0-images/servlet_image_d62b956ff5b7.png)
 
 7. In the **Global Script Editor**, click **Tools > Add/Remove Reference**.
 
-   ![Add/Remove Reference dialog](./images/servlet_image_730b8cce535b.png)
+   ![Add/Remove Reference dialog](../0-images/servlet_image_730b8cce535b.png)
 
 8. Select **Imanami.Synchronize.ActiveDirectoryTool.dll** and click **Apply**.
 
-   ![Build and Compile Script](./images/servlet_image_da0c28343998.png)
+   ![Build and Compile Script](../0-images/servlet_image_da0c28343998.png)
 
 9. Click **Build > Compile Script** to ensure the reference is added successfully.
 
-   ![Global Script Editor in Directory Manager](./images/servlet_image_11b4f3368d5c.png)
+   ![Global Script Editor in Directory Manager](../0-images/servlet_image_11b4f3368d5c.png)
 
 10. On the **Field Map(s)** page, click the **Transform** button next to **cn**.
 
-    ![Transform button for CN field](./images/servlet_image_a42fc80dbf09.png)
+    ![Transform button for CN field](../0-images/servlet_image_a42fc80dbf09.png)
 
 11. In the **Transform** dialog, select **Script** from the drop-down.
 
-    ![Script option in Transform dialog](./images/servlet_image_2b47dbe887ad.png)
+    ![Script option in Transform dialog](../0-images/servlet_image_2b47dbe887ad.png)
 
 12. Paste the following script, adjusting `DTM.Source("First")` and `DTM.Source("Last")` if your source attribute names differ:
 
@@ -85,7 +85,7 @@ When using **Netwrix Directory Manager** (formerly GroupID) Synchronize jobs to 
     DTM.Result = cn
     ```
 
-    ![Script editor with CN transformation script](./images/servlet_image_ed256235324f.png)
+    ![Script editor with CN transformation script](../0-images/servlet_image_ed256235324f.png)
 
 13. Click the **Build** button and **Test Script**. Use test data with a duplicate first and last name to confirm the CN is generated with a number appended. If it shows `<empty>`, you can ignore it as the job will run correctly.
 14. Click **OK** to save and close the editor.

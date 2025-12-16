@@ -43,11 +43,11 @@ Netwrix Directory Manager (formerly GroupID) allows managers and users to reques
    - **Join/Leave on Behalf of Peer** for peers.
    - **Join/Leave on Behalf of Any User** for any user.
 
-![Permissions tab in Security Roles for Directory Manager](./images/servlet_image_b62fd3354d8a.png)
+![Permissions tab in Security Roles for Directory Manager](../0-images/servlet_image_b62fd3354d8a.png)
 
-![Join/Leave on Behalf of Peer permission in Directory Manager](./images/servlet_image_61debddfaf87.png)
+![Join/Leave on Behalf of Peer permission in Directory Manager](../0-images/servlet_image_61debddfaf87.png)
 
-![Join/Leave on Behalf of Any User permission in Directory Manager](./images/servlet_image_b8e8af049732.png)
+![Join/Leave on Behalf of Any User permission in Directory Manager](../0-images/servlet_image_b8e8af049732.png)
 
 ### Request to Join or Leave a Group on Behalf of Direct Reports
 
@@ -57,7 +57,7 @@ Netwrix Directory Manager (formerly GroupID) allows managers and users to reques
 4. Search for and select the desired direct report, then click **Join**.
 5. An email notification is sent to both the group owner and the user. Once the request is approved, all parties are notified of the decision.
 
-![Join group on behalf of direct report in Directory Manager portal](./images/servlet_image_4096a3e75194.png)
+![Join group on behalf of direct report in Directory Manager portal](../0-images/servlet_image_4096a3e75194.png)
 
 ### Request to Join or Leave a Group on Behalf of Peers
 
@@ -67,7 +67,7 @@ Netwrix Directory Manager (formerly GroupID) allows managers and users to reques
 4. Search for and select the desired peer, then click **Join**.
 5. An email notification is sent to both the group owner and the peer. Once the request is approved, all parties are notified of the decision.
 
-![Join group on behalf of peer in Directory Manager portal](./images/servlet_image_e7fbcc9e2490.png)
+![Join group on behalf of peer in Directory Manager portal](../0-images/servlet_image_e7fbcc9e2490.png)
 
 ### Request to Join or Leave a Group on Behalf of Any User
 
@@ -77,4 +77,4 @@ Netwrix Directory Manager (formerly GroupID) allows managers and users to reques
 4. Search for and select the desired user, then click **Join**.
 5. An email notification is sent to both the group owner and the user. Once the request is approved, all parties are notified of the decision.
 
-![Join group on behalf of any user in Directory Manager portal](./images/servlet_image_ecf758bc861e.png)
+![Join group on behalf of any user in Directory Manager portal](../0-images/servlet_image_ecf758bc861e.png)

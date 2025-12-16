@@ -66,7 +66,7 @@ By default, Netwrix Directory Manager (formerly GroupID) generates user identifi
    }
    ```
 
-   ![Editing addNamingRules function in CreateWizard.js](./images/servlet_image_996040ecbfe0.png)
+   ![Editing addNamingRules function in CreateWizard.js](../0-images/servlet_image_996040ecbfe0.png)
 
 7. Save the file.
 
@@ -79,4 +79,4 @@ By default, Netwrix Directory Manager (formerly GroupID) generates user identifi
 
 10. After IIS is restarted, log in to the portal and create a new user. The **samAccountName**, **alias**, and **user logon name** will now be generated in the **First.Last** format.
 
-![User logon name in First.Last format in Directory Manager portal](./images/servlet_image_62cb2d77bb75.png)
+![User logon name in First.Last format in Directory Manager portal](../0-images/servlet_image_62cb2d77bb75.png)

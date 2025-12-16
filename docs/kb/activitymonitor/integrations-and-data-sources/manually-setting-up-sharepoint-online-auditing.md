@@ -39,14 +39,14 @@ However, the process can be completed manually if necessary, such as if MFA cann
 1. Open the Microsoft Entra admin center: https://entra.microsoft.com/#home.
 2. Navigate to **Identity > Applications > App registrations**.
 3. Select **+ New registration**.  
-   ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl72w.png)
+   ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl72w.png)
 4. On the Register an application page, set the following:
    - **Name:** Enter a meaningful name, such as `NetwrixAccessAnalyzer_SharePoint`.
    - **Supported account types:** Choose **Accounts in this organizational directory only**.
 5. From the Application Overview page, navigate to **Manage > API Permissions** and select **Add a permission**.  
-   ![](./images/ka0Qk000000D6nZ_0EMQk00000Bm95v.png)
+   ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bm95v.png)
 6. From the Request API permissions page, select **Microsoft Graph** and add the following permissions:  
-   ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl5XQ.png)
+   ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl5XQ.png)
 
    - Delegated Permissions:
      - `Group.Read.All` – Read all groups
@@ -66,7 +66,7 @@ However, the process can be completed manually if necessary, such as if MFA cann
    - `TermStore.Read.All` – Read managed metadata
    - `User.Read.All` – Read user profiles
 9. After adding the permissions, grant admin consent by selecting **Grant admin consent for \{TENANT NAME\}**.  
-   ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl7UO.png)
+   ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl7UO.png)
 10. On the Netwrix Access Analyzer server, import a certificate and PFX file to the ` %SAInstallDir%PrivateAssemblies` location:
 
     - If necessary, create a self-signed certificate with the following PowerShell commands:
@@ -92,7 +92,7 @@ However, the process can be completed manually if necessary, such as if MFA cann
       - Replace `PasswordGoesHere` with a secure password.
 
 11. Navigate back to the SharePoint App registrations page, and on the **Certificates & Secrets** page, click **↑ Upload certificate** to upload the `spaa_cert_domain.cert` file.  
-    ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl8rp.png)
+    ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl8rp.png)
 12. Navigate to the **Overview** tab and copy the **Application (client) ID**. This will be used for the Access Analyzer connection profile.
 13. In Netwrix Access Analyzer, navigate to **Global Options > Connection** and create a connection profile with the same name as the SharePoint app registration, using the following:
     - **Account Type:** Azure Active Directory
@@ -113,9 +113,9 @@ However, the process can be completed manually if necessary, such as if MFA cann
 The SPAC scan can utilize the same app registration as SPAA/SPSEEK. Follow steps 1–4 from the instructions above if an app has not already been created.
 
 1. From the Application Overview page, navigate to **Manage > API Permissions** and select **Add a permission**.  
-   ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl91V.png)
+   ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl91V.png)
 2. From the Request API permissions page, select **Microsoft Graph**.  
-   ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl5XQ.png)  
+   ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl5XQ.png)  
    Add the following Application Permissions:
    - `Directory.Read.All` – Read directory data
    - `Sites.Read.All` – Read items in all site collections
@@ -125,16 +125,16 @@ The SPAC scan can utilize the same app registration as SPAA/SPSEEK. Follow steps
    - `ActivityFeed.Read` – Read activity data for your organization
    - `ActivityFeed.ReadDlp` – Read DLP policy events, including detected sensitive data
 4. After adding these permissions, grant admin consent by selecting **Grant admin consent for \{TENANT NAME\}**.  
-   ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl9MT.png)
+   ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl9MT.png)
 5. Navigate to **Manage > Certificates & Secrets** and select **+ New client secret**.  
-   ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl5HG.png)
+   ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl5HG.png)
 6. On the Add a client secret page, set the following:
    - **Description:** Enter something meaningful, for example: `NAM SharePoint.`
    - **Expires:** Set this to the longest option or per your organization's internal policy.
 7. After creating the client secret, copy the **Secret Value** to a secure location.
 
    > **NOTE:** This value will obfuscate. Make sure you copy it immediately or you will need to create a new client secret.  
-   > ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl5Fe.png)
+   > ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl5Fe.png)
 
 8. In Netwrix Activity Monitor, navigate to the **Monitored Hosts** tab and select **Add Host**.
    - **Choose Agent:** Specify the agent you would like to use for collecting SharePoint activity logs.
@@ -151,15 +151,15 @@ The SPAC scan can utilize the same app registration as SPAA/SPSEEK. Follow steps
    - **File Output:** Select a log file path, set the retention period for activity logs, and ensure the box for **This log file is for Netwrix Access Analyzer** is checked.
 9. After completing the above steps, you should see the SharePoint Online host added to the Monitored Hosts tab with green checkmarks, indicating successful connection and setup.
 10. In Netwrix Access Analyzer, navigate to **SharePoint > 0.Collection > 3-SPAC_SystemScans > Configure > Queries > Query Properties > Configure**.  
-    ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl7e3.png)
+    ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl7e3.png)
 11. On the **Activity Date Scope**, set how long to retain the SharePoint activity in the Access Analyzer database.
 12. On the **Activity Log Locations**, select **Add** and configure the following:  
-    ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl9hR.png)
+    ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl9hR.png)
 
     - **Host name:** This should match the monitored host name in Activity Monitor, e.g., `YourOrganization.SharePoint.com`.
     - **Activity log UNC path:** This is the file output path in UNC format, e.g., `\AgentHost\C$\ProgramData\Netwrix\Activity Monitor\Agent\ActivityLogs`.
 
       - This value can be found by converting the file output path from the SharePoint monitored host in Activity Monitor to UNC format.  
-        ![](./images/ka0Qk000000D6nZ_0EMQk00000Bl54M.png)
+        ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl54M.png)
 
     - **Activity archive UNC path:** UNC Path of agent's archive (on the Agents tab), if applicable.

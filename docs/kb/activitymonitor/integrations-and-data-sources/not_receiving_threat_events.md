@@ -36,12 +36,12 @@ To resolve this issue, you must generate a new App Token in Threat Manager and u
    - **Netwrix Activity Monitor** (formerly Stealthbits Activity Monitor) v7.1:
      1. Go to the **Administration** > **Output Types** > **Threat Manager** tab.
      2. Enter the new **App Token** as described in the [Threat Manager Tab](https://docs.netwrix.com/docs/activitymonitor/8_0/admin/outputs/threatmanager) documentation.
-     ![Threat Manager tab in Netwrix Activity Monitor Output Types](./images/servlet_image_07420143fdc8.png)
+     ![Threat Manager tab in Netwrix Activity Monitor Output Types](../0-images/servlet_image_07420143fdc8.png)
 
    - **Netwrix Activity Monitor File System (UDP)**:
      - No App Token is needed for UDP output. For configuration, see [Syslog output](https://docs.netwrix.com/docs/activitymonitor/8_0).
 
-     ![Syslog output configuration in Netwrix Activity Monitor](./images/servlet_image_07420143fdc8.png)
+     ![Syslog output configuration in Netwrix Activity Monitor](../0-images/servlet_image_07420143fdc8.png)
 
    - **Netwrix Threat Prevention** (formerly StealthINTERCEPT) v7.4:
      1. Go to the **Administration** > **Netwrix Threat Manager Configuration Window** > **Event Sink** tab.

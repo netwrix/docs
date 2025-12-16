@@ -32,7 +32,7 @@ Netwrix Directory Manager (formerly GroupID) allows you to restrict individual a
 3. Click the **Owner** tab. You will see a check box next to each **Additional Owner** in the grid.
 4. Select the check box to set **Do Not Notify** for the required additional owners and click **Save**.
 
-![Do Not Notify option for additional owners in Directory Manager Portal](./images/servlet_image_99952a342a08.png)
+![Do Not Notify option for additional owners in Directory Manager Portal](../0-images/servlet_image_99952a342a08.png)
 
 ### Set Do Not Notify for Additional Owners Using the Management Shell
 

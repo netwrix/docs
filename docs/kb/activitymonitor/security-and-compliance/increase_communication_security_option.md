@@ -33,7 +33,7 @@ This article explains how to use the **Increase Communication Security** option 
 
 1. In the **Endpoint Protector** console, navigate to **Appliance > Server Maintenance**.
 2. Turn on the **Enable custom certificate** setting then click **Browse...** to upload the certificate chain, Root CA, and Intermediate CA certificates.  
-   ![Increase Communication Security option in Endpoint Protector](./images/servlet_image_51407d87971c.png)
+   ![Increase Communication Security option in Endpoint Protector](../0-images/servlet_image_51407d87971c.png)
 3. Once uploaded, enable the **Test Certificate** setting and upload a certificate signed by the root CA for testing the signature.
 4. Click **Save**. Allow two minutes for the certificate to be validated. A success message will appear when the custom certificate has been added and the test certificate is valid.
 

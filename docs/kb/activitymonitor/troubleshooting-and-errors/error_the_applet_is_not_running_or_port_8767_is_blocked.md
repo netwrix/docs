@@ -33,7 +33,7 @@ The Proxy and File Action Module are using the same port.
 
 You must adjust the ports for the FSAA scan. Set the **port of the Applet** plus 1 as the **port for the certificate exchange**.
 
-![FSAA scan configuration showing Applet port and certificate exchange port settings](./images/servlet_image_d0e555d9fde1.png)
+![FSAA scan configuration showing Applet port and certificate exchange port settings](../0-images/servlet_image_d0e555d9fde1.png)
 
 1. Stop the **Netwrix Access Analyzer FSAA Proxy scanner** service.
 2. Update the **Applet port** on the proxy. Run the following command to change the port based on the updated Applet port (the path may vary depending on your installation):

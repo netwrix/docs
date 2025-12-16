@@ -28,10 +28,10 @@ Security questions are supported as an authentication method for multifactor and
 1. Log in to the Admin Portal of the identity store with an account that has permissions to manage the identity store.
 2. In the Admin Portal, click **Settings**.
 
-   ![Settings option in the Admin Portal](./images/servlet_image_b4cc511f5745.png)
+   ![Settings option in the Admin Portal](../0-images/servlet_image_b4cc511f5745.png)
 
 3. In **Settings**, click **Question Pool**.
 
-   ![Question Pool section in Settings](./images/servlet_image_eb6ac1dac410.png)
+   ![Question Pool section in Settings](../0-images/servlet_image_eb6ac1dac410.png)
 
 4. From the **Question Pool** section, you can modify existing questions, add new questions, or remove questions as needed.

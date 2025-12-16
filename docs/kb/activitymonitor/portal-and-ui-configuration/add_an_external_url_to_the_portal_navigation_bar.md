@@ -35,9 +35,9 @@ This article explains how to add an external or internal URL, such as an intrane
    ![Navigation Bar Categories tab with Add Category option highlighted](https://nwxcorp.file.force.com/sfc/servlet.shepherd/version/download/068Qk00000O6Rvq?asPdf=false&operationContext=CHATTER)
 6. Return to the **Navigation Bar** tab.
 7. From the drop-down menu, select the newly created category.  
-   ![Drop-down menu for selecting navigation bar category](./images/servlet_image_8261932e8e81.png)
+   ![Drop-down menu for selecting navigation bar category](../0-images/servlet_image_8261932e8e81.png)
 8. Add the new external or internal link as needed.  
-   ![Form for adding a new link to the navigation bar](./images/servlet_image_19807e63605b.png)
+   ![Form for adding a new link to the navigation bar](../0-images/servlet_image_19807e63605b.png)
 9. Scroll down and click **Save** to apply your changes.
 
 > **NOTE:** You can add multiple links under the same category if required. Be sure to review your navigation bar after saving to confirm the new link appears as expected.
