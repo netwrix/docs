@@ -10,7 +10,7 @@ tags: []
 title: "Error: The Custom Attribute {'{'}x{'}'} Was Requested, but Not Set in Domain 1 for the {'{'}y{'}'} Object Class"
 knowledge_article_id: kA0Qk000000306jKAA
 products:
-  - auditor
+  - accessanalyzer
 ---
 
 # Error: The Custom Attribute {'{'}x{'}'} Was Requested, but Not Set in Domain 1 for the {'{'}y{'}'} Object Class

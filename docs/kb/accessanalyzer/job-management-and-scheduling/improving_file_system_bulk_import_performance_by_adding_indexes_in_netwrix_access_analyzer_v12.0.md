@@ -10,7 +10,7 @@ tags: []
 title: "Improving File System Bulk Import Performance by Adding Indexes in Netwrix Access Analyzer v12.0"
 knowledge_article_id: kA0Qk0000002u69KAA
 products:
-  - auditor
+  - accessanalyzer
 ---
 
 # Improving File System Bulk Import Performance by Adding Indexes in Netwrix Access Analyzer v12.0
