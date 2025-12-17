@@ -10,7 +10,7 @@ tags: []
 title: "Capture Client Logs Using the Support Tool-v2 on a Windows Machine"
 knowledge_article_id: kA0Qk0000002B72KAE
 products:
-  - activitymonitor
+  - endpointprotector
 ---
 
 # Capture Client Logs Using the Support Tool-v2 on a Windows Machine

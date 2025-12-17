@@ -10,7 +10,7 @@ tags: []
 title: "Add an External URL to the Portal Navigation Bar"
 knowledge_article_id: kA0Qk0000002QT3KAM
 products:
-  - activitymonitor
+  - directorymanager
 ---
 
 # Add an External URL to the Portal Navigation Bar

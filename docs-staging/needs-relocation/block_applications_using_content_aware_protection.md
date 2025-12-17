@@ -10,7 +10,7 @@ tags: []
 title: "Block Applications Using Content Aware Protection"
 knowledge_article_id: kA0Qk0000002B2xKAE
 products:
-  - activitymonitor
+  - endpointprotector
 ---
 
 # Block Applications Using Content Aware Protection

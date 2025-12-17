@@ -10,7 +10,7 @@ tags: []
 title: "Not Receiving Threat Events"
 knowledge_article_id: kA0Qk0000001ZYPKA2
 products:
-  - activitymonitor
+  - threat-manager
 ---
 
 # Not Receiving Threat Events

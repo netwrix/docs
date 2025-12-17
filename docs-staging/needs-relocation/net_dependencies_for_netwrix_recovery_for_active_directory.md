@@ -6,7 +6,7 @@ keywords:
   - Netwrix Recovery for Active Directory
   - ASP.NET Core
 products:
-  - activitymonitor
+  - recoveryad
 sidebar_label: .NET Dependencies for Recovery
 tags: []
 title: ".NET Dependencies for Netwrix Recovery for Active Directory"
@@ -42,7 +42,7 @@ Example:
 ## Related Articles
 
 - [Recovery for Active Directory](https://docs.netwrix.com/docs/recoveryforactivedirectory/2_6)
-- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/activitymonitor/net_dependencies_for_netwrix_access_analyzer.md)
-- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_prevention.md)
-- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_manager.md)
-- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/net_dependencies_for_netwrix_activity_monitor.md)
+- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_access_analyzer.md)
+- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_threat_prevention.md)
+- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_threat_manager.md)
+- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_activity_monitor.md)

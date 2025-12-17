@@ -12,7 +12,7 @@ tags: []
 title: "How to Change the samAccountName, Alias, and User Logon Name Format to First.Last in the Portal"
 knowledge_article_id: kA0Qk0000002QMbKAM
 products:
-  - activitymonitor
+  - directorymanager
 ---
 
 # How to Change the samAccountName, Alias, and User Logon Name Format to First.Last in the Portal

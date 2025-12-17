@@ -12,7 +12,7 @@ tags: []
 title: "How to Reapply SmartGroup Queries and Identify Groups With Disabled Users in Bulk"
 knowledge_article_id: kA0Qk0000002o7BKAQ
 products:
-  - activitymonitor
+  - directorymanager
 ---
 
 # How to Reapply SmartGroup Queries and Identify Groups With Disabled Users in Bulk

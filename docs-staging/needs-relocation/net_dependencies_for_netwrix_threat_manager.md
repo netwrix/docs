@@ -6,7 +6,7 @@ keywords:
   - Netwrix Threat Manager
   - ASP.NET Core
 products:
-  - activitymonitor
+  - threat-manager
 sidebar_label: .NET Dependencies for Threat Manager
 tags: []
 title: ".NET Dependencies for Netwrix Threat Manager"
@@ -42,7 +42,7 @@ Example:
 ## Related Articles
 
 - [Netwrix Threat Manager](https://docs.netwrix.com/docs/threatmanager/3_0)
-- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/activitymonitor/net_dependencies_for_netwrix_access_analyzer.md)
-- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/activitymonitor/net_dependencies_for_netwrix_recovery_for_active_directory.md)
-- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_prevention.md)
-- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/net_dependencies_for_netwrix_activity_monitor.md)
+- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_access_analyzer.md)
+- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_recovery_for_active_directory.md)
+- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_threat_prevention.md)
+- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_activity_monitor.md)

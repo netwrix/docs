@@ -10,7 +10,7 @@ tags: []
 title: "Error: The Process Cannot Access sadictionary_hashed_sorted.dat Because It Is Being Used By Another Process"
 knowledge_article_id: kA0Qk000000336DKAQ
 products:
-  - activitymonitor
+  - accessanalyzer
 ---
 
 # Error: The Process Cannot Access sadictionary_hashed_sorted.dat Because It Is Being Used By Another Process

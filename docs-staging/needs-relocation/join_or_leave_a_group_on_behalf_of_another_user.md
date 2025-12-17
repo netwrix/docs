@@ -10,7 +10,7 @@ tags: []
 title: "Join or Leave a Group on Behalf of Another User"
 knowledge_article_id: kA0Qk0000002OkbKAE
 products:
-  - activitymonitor
+  - directorymanager
 ---
 
 # Join or Leave a Group on Behalf of Another User

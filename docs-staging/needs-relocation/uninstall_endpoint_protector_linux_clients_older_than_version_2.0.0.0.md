@@ -10,7 +10,7 @@ tags: []
 title: "Uninstall Endpoint Protector Linux Clients Older Than Version 2.0.0.0"
 knowledge_article_id: kA0Qk0000002B6pKAE
 products:
-  - activitymonitor
+  - endpointprotector
 ---
 
 # Uninstall Endpoint Protector Linux Clients Older Than Version 2.0.0.0

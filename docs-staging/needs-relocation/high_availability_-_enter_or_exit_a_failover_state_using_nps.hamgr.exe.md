@@ -10,7 +10,7 @@ tags: []
 title: "High Availability − Enter or Exit a Failover State Using NPS.HaMgr.exe"
 knowledge_article_id: kA04u000000HDhCCAW
 products:
-  - activitymonitor
+  - privilege-secure-access-management
 ---
 
 # High Availability − Enter or Exit a Failover State Using NPS.HaMgr.exe

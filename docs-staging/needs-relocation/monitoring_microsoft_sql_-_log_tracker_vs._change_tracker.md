@@ -10,7 +10,7 @@ tags: []
 title: "Monitoring Microsoft SQL - Log Tracker vs. Change Tracker"
 knowledge_article_id: kA04u0000000JWACA2
 products:
-  - activitymonitor
+  - logtracker
 ---
 
 # Monitoring Microsoft SQL - Log Tracker vs. Change Tracker

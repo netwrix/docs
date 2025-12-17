@@ -12,7 +12,7 @@ tags: []
 title: "Configuring the Entra ID Sync Integration"
 knowledge_article_id: kA0Qk0000001kVRKAY
 products:
-  - activitymonitor
+  - threat-manager
 ---
 
 # Configuring the Entra ID Sync Integration

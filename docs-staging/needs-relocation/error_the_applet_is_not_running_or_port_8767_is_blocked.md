@@ -10,7 +10,7 @@ tags: []
 title: "Error: The Applet Is Not Running or Port 8767 Is Blocked"
 knowledge_article_id: kA0Qk0000001o9FKAQ
 products:
-  - activitymonitor
+  - accessanalyzer
 ---
 
 # Error: The Applet Is Not Running or Port 8767 Is Blocked

@@ -10,7 +10,7 @@ tags: []
 title: "Set the Do Not Notify Feature for Additional Owners in the Portal"
 knowledge_article_id: kA0Qk0000002R2XKAU
 products:
-  - activitymonitor
+  - directorymanager
 ---
 
 # Set the Do Not Notify Feature for Additional Owners in the Portal

@@ -16,7 +16,6 @@ keywords:
   - NAS device
   - scan
 products:
-  - activitymonitor
   - access-analyzer
 sidebar_label: 'Error: FSAC System Scan Job Targets Incorrect Host'
 tags: []
