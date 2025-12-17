@@ -42,7 +42,10 @@ Select PSChildName, version
 ## Related Articles
 
 - [Netwrix Activity Monitor](https://docs.netwrix.com/docs/activitymonitor/8_0)
-- Netwrix Access Analyzer
-- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_prevention.md)
-- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/activitymonitor/net_dependencies_for_netwrix_recovery_for_active_directory.md)
-- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/activitymonitor/net_dependencies_for_netwrix_threat_manager.md)
+
+<!-- TODO: Uncomment and update these links when the files are relocated to their correct product folders:
+- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/accessanalyzer/net_dependencies_for_netwrix_access_analyzer)
+- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/net_dependencies_for_netwrix_threat_prevention)
+- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/recoveryad/net_dependencies_for_netwrix_recovery_for_active_directory)
+- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/threatmanager/net_dependencies_for_netwrix_threat_manager)
+-->

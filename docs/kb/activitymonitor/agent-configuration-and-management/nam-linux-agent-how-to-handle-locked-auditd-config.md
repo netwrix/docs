@@ -25,8 +25,7 @@ knowledge_article_id: kA04u000000HDi0CAG
 
 ### Your auditd configuration is locked. Netwrix Activity Monitor needs to modify audit rules. Please, unlock auditd configuration.
 
-<!-- Image not available: ka04u000000HdDY_0EM4u0000084fAY.png -->
-*Figure 1: Auditd configuration lock error message*
+![Figure 1: Auditd configuration lock error message](../0-images/ka04u000000HdDY_0EM4u0000084fAY.png)
 
 This KB article explains why the user can receive such error message and how to handle it.
 
