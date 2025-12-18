@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Historical Dashboard: Auditor
 
-Users with the Auditor role can view selected recordings of historical sessions. Administrators determine what user and resource historical sessios the Auditor role can see 
+Users with the Auditor role can view selected recordings of historical sessions involing other users. Administrators determine what user and resource historical sessions each Auditor can see.
 
 ![historical](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/historical.webp)
 
