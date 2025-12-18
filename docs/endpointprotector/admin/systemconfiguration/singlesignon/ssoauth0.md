@@ -78,7 +78,7 @@ To obtain them, after enabling the add-on go to the Usage tab to copy these deta
 
 Click **Save** in Endpoint Protector at the end to save the configuration.
 
-![Obtain SAML Values from Auth0](2IDPDatatoEPP.png)
+![Obtain SAML Values from Auth0](2IDPDataToEPP.png)
 
 **Step 6 –** Enable the Connection for the Endpoint Protector Application
 
