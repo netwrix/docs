@@ -65,10 +65,10 @@ Integration**.
 
 **Step 10 –** Edit the following ﬁelds:
 
-- Signature Algorithm, select **RSA-SHA1**
-- Digest Algorithm, select **SHA1**
+- Signature Algorithm, select **RSA-SHA256**
+- Digest Algorithm, select **SHA256**
 
-![Edit Signature Algorithm](oktaeditsignaturealgorithm.webp)
+![Edit Signature Algorithm](oktaeditsignaturealgorithmnew.png)
 
 **Step 11 –** Hide Advanced Settings and click **Next**.
 

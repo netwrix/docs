@@ -8,14 +8,12 @@ sidebar_position: 40
 
 From this section, you can apply settings globally to all Endpoint Protector entities.
 
+Any setting that appears in Global Settings offers additional functionality, as these settings can be customized per group, user, or computer. This allows administrators to configure precise, granular policies across the organization using the options available in this tab. Because of this, Global Settings may include options that are also available in other components, such as [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md), [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket.md) or [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md).
+
 - If there are no settings deﬁned granularly for a computer, and it does not belong to a group,
   these are the settings it will inherit.
 - If the computer belongs to a group, then it will inherit that group’s settings.
 
-:::note
-Several settings from this section also relate to other modules apart from the Device
-Control module (Content Aware Protection, eDiscovery, etc.).
-:::
 
 
 ![Apply settings globally to all Netwrix Endpoint Protector entities](globalsettings.webp)
@@ -286,6 +284,9 @@ In this section, you can manage the following settings:
     Learn more from the [Intercept VPN Traﬃc](#intercept-vpn-traﬃc) topic.
     :::
 
+- Linux proxy loopback address –  aims to facilitate seamless integration with custom VPN and proxy solutions, particularly those like Cisco ANYConnect. When activated, you can specify a custom loopback address, tipically within the 127.0.0.0/8 range. This features is applicable for Linux Clients with version 2509.x.x.x or later
+
+- Enable Http/2 - this feature is designed to enhance network protocol management and allows administrators to enable support for HTTP/2 within DPI protocols. If negotiation fails, the protocol will revert to HTTP. It aims to provide greater flexibility and control over HTTP/2 protocol usage.
 
 - Endpoint Protector Behavior with Network Extension Off – select a behavior type from the available
   entries

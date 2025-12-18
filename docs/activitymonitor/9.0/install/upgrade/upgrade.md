@@ -18,14 +18,14 @@ agents will be limited in monitoring capability until upgraded.
 
 The installation and configuration paths for Netwrix Activity Monitor have been updated from
 Activity Monitor 7.1. See the
-[Netwrix Activity Monitor Paths](/docs/kb/activitymonitor/netwrix_activity_monitor_(nam)_7.0_paths) knowledge base article
+[Netwrix Activity Monitor Paths](/docs/kb/activitymonitor/agent-configuration-and-management/netwrix_activity_monitor_7.0_paths) knowledge base article
 for additional information.
 
 ## Activity Monitor Upgrade Procedure
 
 Follow the steps to upgrade from an older version of Netwrix Activity Monitor to Netwrix Activity Monitor 9.0.
 
-:::info 
+:::info
 Uninstall of the existing Activity Monitor Console is not required.
 :::
 

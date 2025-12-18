@@ -83,7 +83,7 @@ To prevent this interference, add the following exclusions to your antivirus con
 - `NwxEventCollectorAgent.exe`
 - `NwxSaclTunerAgent.exe`
 
-For a complete list of antivirus exclusions, see [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor).
+For a complete list of antivirus exclusions, see [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor).
 
 ### 4. Insufficient Disk Space on the Target Audited Server
 
@@ -109,4 +109,4 @@ Recommended actions:
 
 ## Related Links
 
-- [Error: 0x800706BA - RPC Server Is Unavailable](/docs/kb/auditor/error-0x800706ba-rpc-server-is-unavailable)
+- [Error: 0x800706BA - RPC Server Is Unavailable](/docs/kb/auditor/troubleshooting-and-errors/data-collection-errors/error-0x800706ba-rpc-server-is-unavailable)

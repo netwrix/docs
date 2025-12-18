@@ -301,5 +301,5 @@ to **SQL Server Logins**, expand the **Security** > **Logins** node, right-click
 **Properties** from the pop-up menu, and edit its roles.
 
 If you need to migrate the Audit Database, see the
-[How to Migrate Netwrix Auditor Databases to Another SQL Server Instance](/docs/kb/auditor/how-to-migrate-netwrix-auditor-databases-to-another-sql-server-instance)
+[How to Migrate Netwrix Auditor Databases to Another SQL Server Instance](/docs/kb/auditor/configuration-and-setup/sql-server-auditing/how-to-migrate-netwrix-auditor-databases-to-another-sql-server-instance)
 knowledge base article.

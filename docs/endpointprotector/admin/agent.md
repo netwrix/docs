@@ -140,6 +140,8 @@ then provide the following information:
 
 ## Agent Installation
 
+To see which distributions are supported for EPP, please check the [supportability article](/docs/endpointprotector/supportability/client-supportability.md).
+
 For Windows and Mac, your input in installing the Endpoint Protector Agent is minimal. The
 Installation folder and Server information are already pre-conﬁgured, and downloadable from the
 Endpoint Protector Server.
@@ -150,19 +152,19 @@ this before installing link.
 :::
 
 
-:::note
-You can also install the Agent from a repository for Endpoint Protector Linux Agents
-starting with version 1.4.0.4., as described in the topic below.
-:::
+The main supported Linux distributions are listed below:
 
+- Ubuntu
+- RedHat
 
-The following are several examples of supported distributions:
-
-- Ubuntu 14.04+
-- Mint 18.X
-- CentOS 7.x
-- Fedora 29
-- OpenSUSE 42.2 and 42.3
+Optional distributions will be provided on the product portal and are available upon request after validation by the Netwrix Product Team. Below are examples of on-demand distributions:
+- Debian
+- Fedora
+- Pardus OS
+- AWS Linux
+- OpenSUSE
+- SUSE
+- SLED Linux Enterprise Server
 
 ![The Agent enforces the Rights and Settings received from the Endpoint Protector Server on the protected endpoints (Windows, Mac, and Linux)](setupagent.webp)
 
@@ -179,7 +181,7 @@ the macOS Endpoint Protector Agent.
 
 **Step 3 –** Decompress the downloaded ﬁle.
 
-![Installation on macOS with Deep Packet Inspection and VPN Traﬃc Intercept Active](clientinstallationios.webp)
+![Installation on macOS with Deep Packet Inspection and VPN Traﬃc Intercept Active](./systemconfiguration/ClientSoftwarePage.webp)
 
 **Step 4 –** Open the **.pkg** ﬁle and follow the installation steps and give the requested
 permissions.
@@ -194,7 +196,11 @@ checkbox, and then **save** the changes.
 **Device Control** > **Users/Computer/Group/Global Settings** > **Manage Settings** > **Endpoint
 Protector Client** > **Deep Packet Inspection**.
 
-![Activating Deep Packet Inspection](dpion.webp)
+![Activating Deep Packet Inspection](./systemconfiguration/dpion.webp)
+
+:::note
+For more information about Deep Packet Inspection and configurable options, please visit the dedicated [documentation section for DPI](/docs/endpointprotector/admin/cap_module/deeppacket.md).
+:::
 
 **Step 7 –** Go to the **System Conﬁguration** section, then **System Settings** > **Deep Packet
 Inspection Certiﬁcate**, and download the **CA Certiﬁcate**.
@@ -227,7 +233,7 @@ Inspection Certiﬁcate**, and download the **CA Certiﬁcate**.
 - Block Internet Access – this option will end the Internet connection until the end-user approves
   the Endpoint Protector Proxy Conﬁguration once the computer is rebooted.
 
-![Activate Intercept VPN Traﬃc](interceptvpntraffic.webp)
+![Activate Intercept VPN Traﬃc](./systemconfiguration/interceptvpntraffic.webp)
 
 **Step 15 –** **Save** the changes.
 
@@ -255,8 +261,6 @@ macOS, you may still see EPPNotiﬁer in the Notiﬁcation settings. To remove i
 right-click and select "Reset notiﬁcations."
 :::
 
-For more information about Deep Packet Inspection and configurable options, please visit the dedicated [documentation section for DPI](/docs/endpointprotector/admin/cap_module/deeppacket.md).
-
 ### Debian Based Distributions
 
 While the installation process is similar, each distribution and version have their own
@@ -264,16 +268,7 @@ particularities.
 
 The following are several examples of supported distributions:
 
-- Ubuntu 14.04
-- Ubuntu 15.04
-- Ubuntu 16.04
-- Ubuntu 17.04
-- Ubuntu 18.04
-- Ubuntu 19.04
-- Ubuntu 20.04
-- Ubuntu 21.04
-- Ubuntu 21.10
-- Ubuntu 22.04
+- Ubuntu
 - LinuxMint
 - Debian
 
@@ -286,22 +281,20 @@ particularities.
 
 The following are several examples of supported distributions:
 
-- CentOS 7.x
-- RedHat 8.x
-- Fedora 32, 33, 34, 35
+- CentOS
+- RedHat
+- Fedora
 - AWS Linux 2
 
 ![RedHat based distributions](redhatbaseddistributions.webp)
 
-- OpenSuse 15.2
-- SUSE 15+
-- SLED Linux Enterprise Server 15 SP1
-- SLED Linux Enterprise Server 15 SP2
-- SLED Linux Enterprise Server 15 SP3
+- OpenSuse
+- SUSE
+- SLED Linux Enterprise Server
 
 ![RedHat based distributions](redhatbaseddistributionstwo.webp)
 
-### Setting the Server IP
+#### Setting the Server IP
 
 For all RedHat-based distributions, you need to follow an additional step after executing the above
 commands in order to set the Endpoint Protector Server IP.
@@ -312,7 +305,7 @@ Based on each distribution, follow the corresponding method:
 
 ![Setting the Endpoint Protector Server IP](setserveriptwo.webp)
 
-### The Windows Subsystem for Linux
+## The Windows Subsystem for Linux
 
 The Windows Subsystem for Linux (WSL) allows you to run native Linux distributions directly within
 your Windows environment. However, due to its nature, the Endpoint Protector Client cannot be

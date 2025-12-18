@@ -22,14 +22,22 @@ it to your application.
 
 The following Application permissions will be added:
 
-- Microsoft Graph
+**Required permissions:**
 
+- Microsoft Graph
     - Directory.Read.All
     - AuditLog.Read.All
 
 - Office 365 Management APIs
-
     - ActivityFeed.Read
+
+**Optional permissions:**
+
+- Microsoft Graph
+    - UserAuthenticationMethod.Read.All
+    - IdentityRiskyUser.Read.All
+
+## Required Permissions Only
 
 To add the required permissions, do one of the following:
 
@@ -38,28 +46,64 @@ To add the required permissions, do one of the following:
 - If you upgraded Auditor from the version 10.0, replace all existing content under the
   **requiredResourceAccess** property.
 
-```
+```jsonc
 {
-    "resourceAppId": "00000003-0000-0000-c000-000000000000",
-    "resourceAccess": [
-        {
-            "id": "b0afded3-3588-46d8-8b3d-9842eff778da",
-            "type": "Role"
-        },
-        {
-            "id": "7ab1d382-f21e-4acd-a863-ba3e13f7da61",
-            "type": "Role"
-        }
-    ]
+    "resourceAppId": "00000003-0000-0000-c000-000000000000",
+    "resourceAccess": [
+        {
+            "id": "b0afded3-3588-46d8-8b3d-9842eff778da",
+            "type": "Role"
+        },
+        {
+            "id": "7ab1d382-f21e-4acd-a863-ba3e13f7da61",
+            "type": "Role"
+        }
+    ]
 },
 {
-    "resourceAppId": "c5393580-f805-4401-95e8-94b7a6ef2fc2",
-    "resourceAccess": [
-        {
-            "id": "594c1fb6-4f81-4475-ae41-0c394909246c",
-            "type": "Role"
-        }
-    ]
+    "resourceAppId": "c5393580-f805-4401-95e8-94b7a6ef2fc2",
+    "resourceAccess": [
+        {
+            "id": "594c1fb6-4f81-4475-ae41-0c394909246c",
+            "type": "Role"
+        }
+    ]
 }
+```
 
+## Required + Optional Permissions
+
+To add both required and optional permissions, use the following manifest configuration:
+
+```jsonc
+{
+    "resourceAppId": "00000003-0000-0000-c000-000000000000",
+    "resourceAccess": [
+        {
+            "id": "b0afded3-3588-46d8-8b3d-9842eff778da",
+            "type": "Role"
+        },
+        {
+            "id": "7ab1d382-f21e-4acd-a863-ba3e13f7da61",
+            "type": "Role"
+        },
+        {
+            "id": "dc5007c0-2d7d-4c42-879c-2dab87571379",
+            "type": "Role"
+        },
+        {
+            "id": "38d9df27-64da-44fd-b7c5-a6fbac20248f",
+            "type": "Role"
+        }
+    ]
+},
+{
+    "resourceAppId": "c5393580-f805-4401-95e8-94b7a6ef2fc2",
+    "resourceAccess": [
+        {
+            "id": "594c1fb6-4f81-4475-ae41-0c394909246c",
+            "type": "Role"
+        }
+    ]
+}
 ```

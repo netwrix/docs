@@ -63,15 +63,13 @@ your changes to add an extra layer of security, for a more secure and controlled
 
 ![Backend Console Setup Password](backendconsolesetuppassword.webp)
 
-:::warning
-This feature is designed for Ubuntu 22. With backend password settings enabled and
-applied:
+If a backend console password is configured, you will need to enter the password when accessing the backend console view.
+
+![Provide Backend Console Setup Password](backendconsolepassword.webp)
+
+:::note
+On Ubuntu 22 base image, pressing 'Exit' prompts for the password again.
 :::
-
-
-- On Ubuntu 14 and Ubuntu 18, pressing 'Exit' refreshes the menu without requiring the password
-  again.
-- On Ubuntu 22, pressing 'Exit' prompts for the password again.
 
 :::note
 To enforce password protection, a reboot of the Endpoint Protector Server appliance is

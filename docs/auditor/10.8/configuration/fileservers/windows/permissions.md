@@ -15,7 +15,7 @@ Data Collection Accounts should meet the following policies and permissions:
 - Data collecting account on the target server must be a member of the local Administrators group.
 - The **Manage auditing and security log** and Backup files and directories policies must be defined
   for this account. See the
-  [Permissions for Active Directory Auditing](/docs/auditor/10.8/configuration/activedirectory/permissions.md) and topics for
+  [Permissions for Active Directory Auditing](/docs/auditor/10_8/configuration/activedirectory/permissions#configure-the-manage-auditing-and-security-log-policy) and topics for
   additional more information.
 - The **Read** share permission on the audited shared folders.
 - The Read NTFS permission on all objects in the audited folders.

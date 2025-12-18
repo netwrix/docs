@@ -136,7 +136,7 @@ copy the following details from this screen using the Copy button:
 - Deprtment Code
 
 
-![Download and install the Endpoint Protector Client corresponding to your operating system](ClientSoftwarePage.png)
+![Download and install the Endpoint Protector Client corresponding to your operating system](ClientSoftwarePage.webp)
 
 :::note
 Starting with the current release - 2509.0.1.0 - Endpoint Protector Client versions are displayed in the format XXXX.X.X.X on endpoints.
@@ -147,8 +147,8 @@ For more client install options, please refer to the dedicated article on [Agent
 ## Client Software Upgrade
 
 From this section, you can upload the latest clients previously downloaded from the **Client Software** section in order to upgrade
-the Endpoint Protector Client and manage the upgraded jobs. The Client Software Upgrade feature is only available
-for Windows and macOS Clients.To upgrade your Linux Clients, submit a request using the[online form](https://www.endpointprotector.com/linux).
+the Endpoint Protector & Enforced Encryption Client and manage the upgraded jobs. The Client Software Upgrade feature is only available
+for Windows and macOS Clients.To upgrade your Linux Clients, submit a request using the [online form](https://www.endpointprotector.com/linux).
 
 :::note
 When updating your operating system to the latest macOS Ventura, eppclient.log and
@@ -165,7 +165,7 @@ The feature is not compatible for Endpoint Protector instances that are running 
 ![Client Software Upgrade](ClientSoftwareUpdatePage.png)
 
 :::note
-Starting with the current release - 2509.0.1.0 - Endpoint Protector Client versions are displayed in the format XXXX.X.X.X on endpoints.
+Starting with release 2509.0.1.0 - Endpoint Protector Client versions are displayed in the format XXXX.X.X.X on endpoints.
 :::
 
 

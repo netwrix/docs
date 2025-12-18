@@ -21,9 +21,7 @@ for additional information.
 
 Follow the steps to download the add-on.
 
-**Step 1 –** Download the distribution package Netwrix_Auditor_Add-on_for_Splunk.zip from the
-following web page:
-[https://www.netwrix.com/add-on_for_splunk.html](https://www.netwrix.com/add-on_for_splunk.html)
+**Step 1 –** Download the distribution package.
 
 **Step 2 –** Unpack it to a folder on the computer from which you can access Splunk Web.
 

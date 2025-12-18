@@ -14,7 +14,7 @@ integrity, otherwise your change reports may contain warnings, errors or incompl
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
-[Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)
+[Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
 You can configure your IT Infrastructure for monitoring in one of the following ways:
@@ -57,6 +57,10 @@ createdDateTime,externalUserState,externalUserStateChangeDateTime,isResourceAcco
 refreshTokensValidFromDateTime,signInSessionsValidFromDateTime,id
 
 ```
+
+**NOTE:** Additional user data is collected (requires optional permissions):
+- **Risk state** - Collected from Microsoft Entra ID Protection to identify users flagged as at-risk
+- **Authentication methods** - Registered authentication method types for each user
 
 Groups properties:
 
@@ -117,3 +121,5 @@ ServicePrincipals properties:
 | All service principals Collected via MS Graph on endpoint _/servicePrincipals_                                                                                           | Snapshot for service principals.                                                                                                                            |
 | All directory role templates Collected via MS Graph on endpoint _/directoryRoleTemplates_ All directory roles Collected via MS Graph on endpoint _/directoryRoles/delta_ | Snapshot for Entra ID directory roles Used in SSRS (SQL Server Reporting Services) report "Entra ID roles and their members"                                |
 | All SKUs Collected via MS Graph on endpoint _/subscribedSkus_                                                                                                            | Snapshot for SKUs Used in SSRS report "Entra ID roles and their members"                                                                                    |
+| User authentication methods Collected via MS Graph on endpoint _/users/\{id\}/authentication/methods_                                                                      | Snapshot for user authentication methods. Collects registered authentication method types for each user.                                                   |
+| Risky users Collected via MS Graph on endpoint _/identityProtection/riskyUsers_                                                                                          | Snapshot for risky users. Collects risk state attribute to identify users flagged as risky by Microsoft Entra ID Protection.                               |

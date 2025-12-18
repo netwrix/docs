@@ -47,8 +47,8 @@ An antivirus or EDR/XDR solution in your environment affects the operation of yo
 
 ## Resolution
 
-Add antivirus exclusions to both your Netwrix Auditor monitoring plan and to targets by referring to the following article: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor).
+Add antivirus exclusions to both your Netwrix Auditor monitoring plan and to targets by referring to the following article: [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor).
 
 ## Related Articles
 
-- [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/antivirus-exclusions-for-netwrix-auditor)
+- [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)

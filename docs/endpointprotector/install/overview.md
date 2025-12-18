@@ -20,6 +20,10 @@ We cover a range of deployment methods, including:
 - Active Directory Integration: Leveraging Group Policy Objects for efficient client deployment.
 - Third-party Management Tools: Utilizing JAMF and Microsoft Intune for streamlined deployment.
 
+:::warning Important
+This section of the documentation is provided as a best-effort guideline to support deployment. It is optional and may not always reflect the latest interface or features, as third-party products can change frequently. For the most up-to-date information, please refer to the official resources from the product vendor.
+:::
+
 ## Staging the Server
 
 To start using Endpoint Protector, a server instance needs to be made available. The server is where
