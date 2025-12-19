@@ -1,0 +1,10 @@
+{
+  "label": "File System Changes Event Type",
+  "position": 110,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "filesystemchanges"
+  }
+}

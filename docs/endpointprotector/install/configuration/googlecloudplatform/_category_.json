@@ -1,0 +1,10 @@
+{
+  "label": "Google Cloud Platform",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "googlecloudplatform"
+  }
+}

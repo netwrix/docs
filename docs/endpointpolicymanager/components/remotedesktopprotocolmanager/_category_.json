@@ -1,0 +1,11 @@
+{
+  "label": "Remote Desktop Protocol Manager",
+  "position": 11,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}
+

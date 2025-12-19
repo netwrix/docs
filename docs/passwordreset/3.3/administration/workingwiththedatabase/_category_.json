@@ -1,0 +1,10 @@
+{
+  "label": "Working with the Database",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "working_with_the_database"
+  }
+}

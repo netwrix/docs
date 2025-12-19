@@ -1,0 +1,10 @@
+{
+  "label": "Management Console",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "management_console"
+  }
+}

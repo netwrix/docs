@@ -1,0 +1,10 @@
+{
+  "label": "WMICollector Data Collector",
+  "position": 410,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

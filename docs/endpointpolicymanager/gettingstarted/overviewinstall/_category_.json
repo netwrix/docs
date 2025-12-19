@@ -1,0 +1,10 @@
+{
+  "label": "Installation Quick Start",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overviewinstall"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "File Data Collector",
+  "position": 210,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

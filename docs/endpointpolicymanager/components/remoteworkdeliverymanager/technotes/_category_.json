@@ -1,0 +1,11 @@
+{
+  "label": "Tech Notes",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc", 
+    "id": "knowledgebase"
+  }
+}
+

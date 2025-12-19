@@ -1,0 +1,10 @@
+{
+  "label": "Step 3: Prepare a management station to create Endpoint Policy Manager policies",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "preparemanagementstation"
+  }
+}

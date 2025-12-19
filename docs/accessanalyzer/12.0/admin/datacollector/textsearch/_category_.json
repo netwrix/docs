@@ -1,0 +1,10 @@
+{
+  "label": "TextSearch Data Collector",
+  "position": 380,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "CyberArk Privileged Access Security",
+  "position": 70,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "NIS Data Collector",
+  "position": 270,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

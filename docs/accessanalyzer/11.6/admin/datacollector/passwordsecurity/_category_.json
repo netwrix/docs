@@ -1,0 +1,10 @@
+{
+  "label": "PasswordSecurity Data Collector",
+  "position": 280,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

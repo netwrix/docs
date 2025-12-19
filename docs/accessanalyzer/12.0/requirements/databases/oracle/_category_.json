@@ -1,0 +1,10 @@
+{
+  "label": "Target Oracle Requirements, Permissions, and Ports",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "oracle"
+  }
+}

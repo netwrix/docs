@@ -1,0 +1,10 @@
+{
+  "label": "Automated Search Clean Up",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "automated_search_cleanup"
+  }
+}

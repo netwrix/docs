@@ -1,0 +1,8 @@
+{
+  "label": "Policy Rules and Configuration",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Knowledge base articles related to configuring password policies, rules, and policy-related settings in Netwrix Password Policy Enforcer."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Mailer",
+  "position": 120,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "mailer"
+  }
+}

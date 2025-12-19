@@ -1,0 +1,10 @@
+{
+  "label": "Learning the applications",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "learning_the_applications"
+  }
+}

@@ -1,0 +1,12 @@
+export { default as NPGNValue } from './1440.md';
+export { default as NPGNIntro } from './3440.md';
+export { default as NPGNChangeManagment } from './3441.md';
+export { default as NPGNEnvironmentComparison } from './3442.md';
+export { default as NPGNJira } from './3443.md';
+export { default as NPGNUserProvisioning } from './3444.md';
+export { default as NPGNServiceNow } from './3445.md';
+export { default as NPGNZenDesk } from './3446.md';
+export { default as NPGNSegregationDuties } from './3447.md';
+export { default as NPGNAgent } from './3448.md';
+export { default as NPGNUserAccessReview } from './3449.md';
+export { default as NPGNAdditional } from './additional.md';

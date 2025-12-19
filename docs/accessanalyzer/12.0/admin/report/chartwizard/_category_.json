@@ -1,0 +1,10 @@
+{
+  "label": "Chart Configuration Wizard",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

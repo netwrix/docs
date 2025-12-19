@@ -1,0 +1,10 @@
+{
+  "label": "File System Action: Parameters",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "parameters"
+  }
+}

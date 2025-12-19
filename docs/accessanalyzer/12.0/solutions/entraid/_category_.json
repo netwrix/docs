@@ -1,0 +1,10 @@
+{
+  "label": "Entra ID Solution",
+  "position": 110,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

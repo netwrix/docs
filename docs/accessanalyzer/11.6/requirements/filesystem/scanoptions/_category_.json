@@ -1,0 +1,10 @@
+{
+  "label": "File System Scan Options",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "scanoptions"
+  }
+}

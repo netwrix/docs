@@ -1,0 +1,40 @@
+---
+title: "Update a Smart Group"
+description: "Update a Smart Group"
+sidebar_position: 180
+---
+
+# Update a Smart Group
+
+This API updates a Smart Group, identity of which is provided in the endpoint URL.
+
+## Endpoint
+
+https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}/Groups/SmartGroups/{GroupIdentity}/Update
+
+## HTTP Method
+
+POST
+
+#### Sample Response Syntax
+
+```
+{
+    "currentDirectoryServer": null,
+    "exceptionMessagesAttributeWise": null,
+    "data": 4,
+    "identityStoreObject": null,
+    "name": "b3529c0e-e62e-44d7-ba1e-b89f610bd186",
+    "errorCode": null,
+    "details": [
+    ],
+    "type": 8,
+    "message": null,
+    "status": 0
+}
+```
+
+See Also
+
+- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

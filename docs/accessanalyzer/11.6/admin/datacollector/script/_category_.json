@@ -1,0 +1,10 @@
+{
+  "label": "Script Data Collector",
+  "position": 310,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

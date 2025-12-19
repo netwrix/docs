@@ -1,0 +1,10 @@
+{
+  "label": "Elasticsearch and Replication",
+  "position": 130,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

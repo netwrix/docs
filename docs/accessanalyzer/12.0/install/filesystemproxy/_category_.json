@@ -1,0 +1,10 @@
+{
+  "label": "File System Proxy as a Service Overview",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

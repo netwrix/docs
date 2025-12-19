@@ -1,0 +1,10 @@
+{
+  "label": "Ad Hoc Audits Job Group",
+  "position": 100,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

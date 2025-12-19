@@ -1,0 +1,10 @@
+{
+  "label": "Target SQL Server Requirements, Permissions, and Ports",
+  "position": 70,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "sql"
+  }
+}

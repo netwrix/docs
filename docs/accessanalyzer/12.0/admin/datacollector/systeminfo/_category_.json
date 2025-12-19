@@ -1,0 +1,10 @@
+{
+  "label": "SystemInfo Data Collector",
+  "position": 370,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

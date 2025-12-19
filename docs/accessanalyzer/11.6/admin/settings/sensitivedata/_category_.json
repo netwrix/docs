@@ -1,0 +1,10 @@
+{
+  "label": "Sensitive Data",
+  "position": 110,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

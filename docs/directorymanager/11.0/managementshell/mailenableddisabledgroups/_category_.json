@@ -1,0 +1,10 @@
+{
+  "label": "Mail-Enable/Disable Groups Commands",
+  "position": 110,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

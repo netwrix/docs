@@ -1,0 +1,10 @@
+{
+  "label": "GP Compliance Reporter",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

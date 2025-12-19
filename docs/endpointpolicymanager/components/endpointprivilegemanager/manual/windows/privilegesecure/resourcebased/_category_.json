@@ -1,0 +1,10 @@
+{
+  "label": "Resource Based Policy Match",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "policymatch_1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "SAML Configuration for GroupID using Microsoft Entra ID SSO",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

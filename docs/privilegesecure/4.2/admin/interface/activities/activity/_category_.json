@@ -1,0 +1,10 @@
+{
+  "label": "Add Activity",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "activity"
+  }
+}

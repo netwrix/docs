@@ -1,0 +1,10 @@
+{
+  "label": "Discovery, Auditing, and Events",
+  "position": 110,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

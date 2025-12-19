@@ -1,0 +1,10 @@
+{
+  "label": "Solarwinds Log and Event Manager",
+  "position": 230,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

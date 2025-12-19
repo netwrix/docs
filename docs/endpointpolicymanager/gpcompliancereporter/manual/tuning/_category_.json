@@ -1,0 +1,10 @@
+{
+  "label": "Tuning Group Policy Compliance Reporter",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Offline Add-on",
+  "position": 90,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "offline_client"
+  }
+}

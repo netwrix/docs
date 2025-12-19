@@ -1,0 +1,11 @@
+{
+  "label": "Device Manager",
+  "position": 4,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}
+

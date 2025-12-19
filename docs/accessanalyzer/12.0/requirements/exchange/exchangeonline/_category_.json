@@ -1,0 +1,10 @@
+{
+  "label": "Target Exchange Online Requirements, Permissions, and Ports",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "exchangeonline"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "FSAA Applet Certificate Management Overview",
+  "position": 160,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "certificatemanagement"
+  }
+}

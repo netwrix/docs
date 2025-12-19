@@ -1,0 +1,10 @@
+{
+  "label": "Quick Start - Using SecureRun™ to Block Threats and Unknown Software",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Using the Data Console",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "using_the_data_console"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "label": "Scripts and Triggers Manager",
+  "position": 13,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}
+

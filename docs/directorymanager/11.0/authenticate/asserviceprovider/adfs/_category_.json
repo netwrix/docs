@@ -1,0 +1,10 @@
+{
+  "label": "SAML Configuration for GroupID using AD FS",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

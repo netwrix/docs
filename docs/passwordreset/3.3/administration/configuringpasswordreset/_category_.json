@@ -1,0 +1,10 @@
+{
+  "label": "Configuring Password Reset",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "configuring_password_reset"
+  }
+}

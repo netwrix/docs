@@ -1,0 +1,10 @@
+{
+  "label": "Endpoint Policy Manager Cloud Quick Start",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

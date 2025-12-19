@@ -1,0 +1,10 @@
+{
+  "label": "Cleanup Job Group",
+  "position": 110,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Owners & Resource Reviews",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "pendingreviews"
+  }
+}

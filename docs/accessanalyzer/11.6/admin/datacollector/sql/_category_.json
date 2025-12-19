@@ -1,0 +1,10 @@
+{
+  "label": "SQL Data Collector",
+  "position": 350,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Navigate the Threat Hunting App for Splunk",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "navigate"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Configuring Elements Using the Configuration Wizard",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

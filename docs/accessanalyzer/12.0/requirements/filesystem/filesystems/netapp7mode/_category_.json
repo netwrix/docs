@@ -1,0 +1,10 @@
+{
+  "label": "NetApp Data ONTAP 7-Mode Target Requirements",
+  "position": 80,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

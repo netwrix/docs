@@ -1,0 +1,10 @@
+{
+  "label": "Db2 Solution",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

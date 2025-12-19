@@ -1,0 +1,10 @@
+{
+  "label": "Dell Celerra & Dell VNX Target Requirements",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

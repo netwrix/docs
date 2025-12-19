@@ -1,0 +1,10 @@
+{
+  "label": "Financial Controls",
+  "position": 130,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "agent_overview"
+  }
+}

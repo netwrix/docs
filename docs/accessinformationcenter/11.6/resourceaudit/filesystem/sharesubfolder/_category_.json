@@ -1,0 +1,10 @@
+{
+  "label": "Share & Subfolder Levels Reports",
+  "position": 110,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "ServiceNow",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "servicenow_integration"
+  }
+}

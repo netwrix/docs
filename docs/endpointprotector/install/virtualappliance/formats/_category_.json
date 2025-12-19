@@ -1,0 +1,10 @@
+{
+  "label": "Virtual Appliance Formats",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "formats"
+  }
+}

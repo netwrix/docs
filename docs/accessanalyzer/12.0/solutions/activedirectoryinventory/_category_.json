@@ -1,0 +1,10 @@
+{
+  "label": ".Active Directory Inventory Solution",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "PowerShell Data Collector",
+  "position": 290,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

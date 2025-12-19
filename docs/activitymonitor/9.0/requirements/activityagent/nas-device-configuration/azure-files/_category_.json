@@ -1,0 +1,10 @@
+{
+  "label": "Azure Files Activity Auditing Configuration",
+  "position": 5,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "azurefiles-activity"
+  }
+}

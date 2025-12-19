@@ -1,0 +1,10 @@
+{
+  "label": "Exchange2K Data Collector",
+  "position": 170,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

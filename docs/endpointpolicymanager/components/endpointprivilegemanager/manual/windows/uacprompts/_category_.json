@@ -1,0 +1,10 @@
+{
+  "label": "Overcoming Common UAC Prompts with Helper Tools",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "uacprompts"
+  }
+}

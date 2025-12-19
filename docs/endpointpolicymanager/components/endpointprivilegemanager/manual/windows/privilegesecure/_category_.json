@@ -1,0 +1,10 @@
+{
+  "label": "Endpoint Policy Manager & Netwrix Privilege Secure",
+  "position": 90,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "User Lifecycle Commands",
+  "position": 160,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

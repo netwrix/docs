@@ -1,0 +1,10 @@
+{
+  "label": "Customizations",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "customization_overview"
+  }
+}

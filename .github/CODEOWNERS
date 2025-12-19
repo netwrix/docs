@@ -1,0 +1,157 @@
+# CODEOWNERS file for product team ownership
+# Teams have ownership over their product's documentation areas
+# Last matching pattern takes precedence
+
+# Global fallback - all files require review from a default team if no specific owner
+# Uncomment and specify a default team if desired
+# * @netwrix/docs-admin
+
+# Product-specific ownership
+# Each team owns their docs directory, sidebar files, static files, and images
+
+# 1Secure team
+/docs/1secure/ @netwrix/1secure-docs
+/sidebars/1secure.js @netwrix/1secure-docs
+/static/files/1secure/ @netwrix/1secure-docs
+/static/images/1secure/ @netwrix/1secure-docs
+
+# Access Analyzer team
+/docs/accessanalyzer/ @netwrix/accessanalyzer-docs
+/sidebars/accessanalyzer/ @netwrix/accessanalyzer-docs
+/static/files/accessanalyzer/ @netwrix/accessanalyzer-docs
+/static/images/accessanalyzer/ @netwrix/accessanalyzer-docs
+
+# Access Information Center team
+/docs/accessinformationcenter/ @netwrix/accessinformationcenter-docs
+/sidebars/accessinformationcenter/ @netwrix/accessinformationcenter-docs
+/static/files/accessinformationcenter/ @netwrix/accessinformationcenter-docs
+/static/images/accessinformationcenter/ @netwrix/accessinformationcenter-docs
+
+# Activity Monitor team
+/docs/activitymonitor/ @netwrix/activitymonitor-docs
+/sidebars/activitymonitor/ @netwrix/activitymonitor-docs
+/static/files/activitymonitor/ @netwrix/activitymonitor-docs
+/static/images/activitymonitor/ @netwrix/activitymonitor-docs
+
+# Auditor team
+/docs/auditor/ @netwrix/auditor-docs
+/sidebars/auditor/ @netwrix/auditor-docs
+/static/files/auditor/ @netwrix/auditor-docs
+/static/images/auditor/ @netwrix/auditor-docs
+
+# Change Tracker team
+/docs/changetracker/ @netwrix/changetracker-docs
+/sidebars/changetracker/ @netwrix/changetracker-docs
+/static/files/changetracker/ @netwrix/changetracker-docs
+/static/images/changetracker/ @netwrix/changetracker-docs
+
+# Data Classification team
+/docs/dataclassification/ @netwrix/dataclassification-docs
+/sidebars/dataclassification/ @netwrix/dataclassification-docs
+/static/files/dataclassification/ @netwrix/dataclassification-docs
+/static/images/dataclassification/ @netwrix/dataclassification-docs
+
+# Directory Manager team
+/docs/directorymanager/ @netwrix/directorymanager-docs
+/sidebars/directorymanager/ @netwrix/directorymanager-docs
+/static/files/directorymanager/ @netwrix/directorymanager-docs
+/static/images/directorymanager/ @netwrix/directorymanager-docs
+
+# Endpoint Policy Manager team
+/docs/endpointpolicymanager/ @netwrix/endpointpolicymanager-docs
+/sidebars/endpointpolicymanager.js @netwrix/endpointpolicymanager-docs
+/static/files/endpointpolicymanager/ @netwrix/endpointpolicymanager-docs
+/static/images/endpointpolicymanager/ @netwrix/endpointpolicymanager-docs
+
+# Endpoint Protector team
+/docs/endpointprotector/ @netwrix/endpointprotector-docs
+/sidebars/endpointprotector/ @netwrix/endpointprotector-docs
+/static/files/endpointprotector/ @netwrix/endpointprotector-docs
+/static/images/endpointprotector/ @netwrix/endpointprotector-docs
+
+# Identity Manager team
+/docs/identitymanager/ @netwrix/identitymanager-docs
+/sidebars/identitymanager/ @netwrix/identitymanager-docs
+/static/files/identitymanager/ @netwrix/identitymanager-docs
+/static/images/identitymanager/ @netwrix/identitymanager-docs
+
+# Password Policy Enforcer team
+/docs/passwordpolicyenforcer/ @netwrix/passwordpolicyenforcer-docs
+/sidebars/passwordpolicyenforcer/ @netwrix/passwordpolicyenforcer-docs
+/static/files/passwordpolicyenforcer/ @netwrix/passwordpolicyenforcer-docs
+/static/images/passwordpolicyenforcer/ @netwrix/passwordpolicyenforcer-docs
+
+# Password Reset team
+/docs/passwordreset/ @netwrix/passwordreset-docs
+/sidebars/passwordreset/ @netwrix/passwordreset-docs
+/static/files/passwordreset/ @netwrix/passwordreset-docs
+/static/images/passwordreset/ @netwrix/passwordreset-docs
+
+# Password Secure team
+/docs/passwordsecure/ @netwrix/passwordsecure-docs
+/sidebars/passwordsecure/ @netwrix/passwordsecure-docs
+/static/files/passwordsecure/ @netwrix/passwordsecure-docs
+/static/images/passwordsecure/ @netwrix/passwordsecure-docs
+
+# PingCastle team
+/docs/pingcastle/ @netwrix/pingcastle-docs
+/sidebars/pingcastle/ @netwrix/pingcastle-docs
+/static/files/pingcastle/ @netwrix/pingcastle-docs
+/static/images/pingcastle/ @netwrix/pingcastle-docs
+
+# Platform Governor NetSuite team
+/docs/platgovnetsuite/ @netwrix/platgovnetsuite-docs
+/sidebars/platgovnetsuite.js @netwrix/platgovnetsuite-docs
+/static/files/platgovnetsuite/ @netwrix/platgovnetsuite-docs
+/static/images/platgovnetsuite/ @netwrix/platgovnetsuite-docs
+
+# Platform Governor NetSuite Flashlight team
+/docs/platgovnetsuiteflashlight/ @netwrix/platgovnetsuiteflashlight-docs
+/sidebars/platgovnetsuiteflashlight.js @netwrix/platgovnetsuiteflashlight-docs
+/static/files/platgovnetsuiteflashlight/ @netwrix/platgovnetsuiteflashlight-docs
+/static/images/platgovnetsuiteflashlight/ @netwrix/platgovnetsuiteflashlight-docs
+
+# Platform Governor Salesforce team
+/docs/platgovsalesforce/ @netwrix/platgovsalesforce-docs
+/sidebars/platgovsalesforce.js @netwrix/platgovsalesforce-docs
+/static/files/platgovsalesforce/ @netwrix/platgovsalesforce-docs
+/static/images/platgovsalesforce/ @netwrix/platgovsalesforce-docs
+
+# Platform Governor Salesforce Flashlight team
+/docs/platgovsalesforceflashlight/ @netwrix/platgovsalesforceflashlight-docs
+/sidebars/platgovsalesforceflashlight.js @netwrix/platgovsalesforceflashlight-docs
+/static/files/platgovsalesforceflashlight/ @netwrix/platgovsalesforceflashlight-docs
+/static/images/platgovsalesforceflashlight/ @netwrix/platgovsalesforceflashlight-docs
+
+# Privilege Secure team
+/docs/privilegesecure/ @netwrix/privilegesecure-docs
+/sidebars/privilegesecure/ @netwrix/privilegesecure-docs
+/static/files/privilegesecure/ @netwrix/privilegesecure-docs
+/static/images/privilegesecure/ @netwrix/privilegesecure-docs
+
+# Privilege Secure Discovery team
+/docs/privilegesecurediscovery/ @netwrix/privilegesecurediscovery-docs
+/sidebars/privilegesecurediscovery.js @netwrix/privilegesecurediscovery-docs
+/static/files/privilegesecurediscovery/ @netwrix/privilegesecurediscovery-docs
+/static/images/privilegesecurediscovery/ @netwrix/privilegesecurediscovery-docs
+
+# Recovery for Active Directory team
+/docs/recoveryforactivedirectory/ @netwrix/recoveryforactivedirectory-docs
+/sidebars/recoveryforactivedirectory/ @netwrix/recoveryforactivedirectory-docs
+/static/files/recoveryforactivedirectory/ @netwrix/recoveryforactivedirectory-docs
+/static/images/recoveryforactivedirectory/ @netwrix/recoveryforactivedirectory-docs
+
+# Threat Manager team
+/docs/threatmanager/ @netwrix/threatmanager-docs
+/sidebars/threatmanager/ @netwrix/threatmanager-docs
+/static/files/threatmanager/ @netwrix/threatmanager-docs
+/static/images/threatmanager/ @netwrix/threatmanager-docs
+
+# Threat Prevention team
+/docs/threatprevention/ @netwrix/threatprevention-docs
+/sidebars/threatprevention/ @netwrix/threatprevention-docs
+/static/files/threatprevention/ @netwrix/threatprevention-docs
+/static/images/threatprevention/ @netwrix/threatprevention-docs
+
+# Knowledge base team
+/docs/kb/ @netwrix/kb-docs

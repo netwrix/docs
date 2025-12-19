@@ -1,0 +1,10 @@
+{
+  "label": "File System Supported Platforms",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "filesystems"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Password Policy Client",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "password_policy_client"
+  }
+}

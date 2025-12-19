@@ -1,0 +1,10 @@
+{
+  "label": "UAR Admin",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "admin_overview"
+  }
+}

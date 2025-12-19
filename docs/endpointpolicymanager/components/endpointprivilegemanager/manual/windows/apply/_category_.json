@@ -1,0 +1,10 @@
+{
+  "label": "Apply on Demand Rules and Self-Elevation Rules",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

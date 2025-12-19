@@ -1,0 +1,10 @@
+{
+  "label": "Request History Page",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "requesthistory"
+  }
+}

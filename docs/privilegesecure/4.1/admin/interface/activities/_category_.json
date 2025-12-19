@@ -1,0 +1,10 @@
+{
+  "label": "Activities Page",
+  "position": 80,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "activities"
+  }
+}

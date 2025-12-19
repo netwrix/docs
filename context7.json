@@ -1,0 +1,10 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "Netwrix",
+  "description": "Documentation for Netwrix products",
+  "folders": ["docs"],
+  "excludeFolders": [],
+  "excludeFiles": [],
+  "rules": [],
+  "previousVersions": []
+}

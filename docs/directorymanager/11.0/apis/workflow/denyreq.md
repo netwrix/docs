@@ -1,0 +1,49 @@
+---
+title: "Deny a Request"
+description: "Deny a Request"
+sidebar_position: 80
+---
+
+# Deny a Request
+
+If you want to deny a workflow request in a specified identity store, you can use this API.
+
+## Endpoint
+
+https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}/Workflows/Deny
+
+## HTTP Methods
+
+POST
+
+#### Sample Request Syntax
+
+```
+{
+    "workflowRequestID": 4,
+    "reason": "Denied From API"
+}
+```
+
+#### Sample Response Syntax
+
+```
+{
+    "name": null,
+    "type": 0,
+    "status": 0,
+    "message": null,
+    "data": "",
+    "identityStoreObject": null,
+    "details": [],
+    "currentDirectoryServer": null,
+    "errorCode": null,
+    "exceptionMessagesAttributeWise": null,
+    "isResyncAble": true
+}
+```
+
+See Also
+
+- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
