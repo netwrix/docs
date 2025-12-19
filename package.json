@@ -17,20 +17,20 @@
   },
   "dependencies": {
     "@docusaurus/babel": "^3.8.1",
-    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/core": "^3.9.2",
     "@docusaurus/faster": "^3.8.1",
-    "@docusaurus/plugin-google-gtag": "^3.8.1",
-    "@docusaurus/plugin-google-tag-manager": "^3.8.1",
-    "@docusaurus/plugin-rsdoctor": "^3.8.1",
-    "@docusaurus/preset-classic": "^3.8.1",
-    "@docusaurus/theme-mermaid": "^3.8.1",
+    "@docusaurus/plugin-google-gtag": "^3.9.2",
+    "@docusaurus/plugin-google-tag-manager": "^3.9.2",
+    "@docusaurus/plugin-rsdoctor": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
+    "@docusaurus/theme-mermaid": "^3.9.2",
     "@mdx-js/react": "^3.0.0",
     "prism-react-renderer": "^2.3.0",
     "cross-env": "^7.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-typed": "^2.0.12",
-    "serve": "^10.0.2"
+    "serve": "^14.2.5"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.8.1",
