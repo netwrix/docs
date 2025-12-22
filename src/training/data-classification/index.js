@@ -7,6 +7,6 @@ export { default as NDCUsersReporting } from './3123.md';
 export { default as NDCAdministering } from './3124.md';
 export { default as NDCIntegrationNA } from './3130.md';
 export { default as NDCTroubleshooting } from './4120.md';
-export { default as NDCDemoLab } from './6120.md';
+export { default as NDCDemo } from './5120.md';
 export { default as NDCImplementLab } from './6121.md';
 export { default as NDCAdditional } from './additional.md';

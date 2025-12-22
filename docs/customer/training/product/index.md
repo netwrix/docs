@@ -23,6 +23,7 @@ You will be automatically enrolled in the product learning path for the products
 * [Netwrix Directory Manager Learning Path](./directory-manager.md)
 * [Netwrix Endpoint Policy Manager Learning Path](./endpoint-policy-manager.md)
 * [Netwrix Endpoint Protector Learning Path](./endpoint-protector.md)
+* [Netwrix Identity Manager Learning Path](identity-manager.md)
 * [Netwrix Password Policy Enforcer Learning Path](./password-policy-enforcer.md)
 * [Netwrix Password Reset Learning Path](./password-reset.md)
 * [Netwrix Password Secure Learning Path](./password-secure.md)
