@@ -10,6 +10,7 @@ export { default as NDM } from './directory-manager.md';
 export { default as NEPM } from './endpoint-policy-manager.md';
 export { default as NEP } from './endpoint-protector.md';
 export { default as NIM } from './identity-manager.md';
+export { default as NIR } from './identity-recovery.md';
 export { default as NPPE } from './password-policy-enforcer.md';
 export { default as NPR } from './password-reset.md';
 export { default as NPWS } from './password-secure.md';
