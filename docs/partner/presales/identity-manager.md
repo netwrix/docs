@@ -11,7 +11,7 @@ import { NIMValue, NIMArchitecture, NIMStandard, NIMDataModel, NIMConnectors, NI
 import { Company, NIM } from '@site/src/training/products';
 
 
-Estimated length: 4 hours + Recording of demo
+Estimated length: 3.5 hours + Recording of demo
 
 Prerequisite: <NIM /> Sales Professional learning path
 
