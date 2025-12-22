@@ -1,0 +1,10 @@
+{
+  "label": "Schedule Policies Page",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "schedulepolicies"
+  }
+}

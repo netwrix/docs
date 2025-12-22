@@ -1,0 +1,10 @@
+{
+  "label": "Shared Folders Node Report",
+  "position": 100,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

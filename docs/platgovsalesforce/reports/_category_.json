@@ -1,0 +1,10 @@
+{
+  "label": "Reports",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "reports_overview"
+  }
+}

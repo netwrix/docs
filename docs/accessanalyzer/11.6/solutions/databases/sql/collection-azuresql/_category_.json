@@ -1,0 +1,10 @@
+{
+  "label": "0.Collection > AzureSQL Job Group",
+  "position": 15,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

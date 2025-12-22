@@ -1,0 +1,10 @@
+{
+  "label": "Amazon Web Services (AWS) Solution",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "aws"
+  }
+}

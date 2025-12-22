@@ -1,0 +1,10 @@
+{
+  "label": "4. Delete Job Group",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

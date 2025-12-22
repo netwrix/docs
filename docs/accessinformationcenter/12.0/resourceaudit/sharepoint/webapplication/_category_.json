@@ -1,0 +1,10 @@
+{
+  "label": "Web Application & Web Application URL Levels Reports",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

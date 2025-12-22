@@ -1,0 +1,10 @@
+{
+  "label": "Using Endpoint Policy Manager with MDM and UEM Tools",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "uemtools"
+  }
+}

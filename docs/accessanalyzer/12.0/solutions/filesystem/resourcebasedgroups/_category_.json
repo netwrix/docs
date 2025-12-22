@@ -1,0 +1,10 @@
+{
+  "label": "Resource Based Groups Job Group",
+  "position": 120,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

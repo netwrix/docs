@@ -1,0 +1,414 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+/* Hubot Sans Family */
+@font-face {
+    font-family: "Hubot Sans";
+    src: url("/fonts/HubotSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Hubot Sans";
+    src: url("/fonts/HubotSans-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Hubot Sans";
+    src: url("/fonts/HubotSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Hubot Sans";
+    src: url("/fonts/HubotSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Syne (variable font) */
+@font-face {
+    font-family: "Syne";
+    src: url("/fonts/Syne-VariableFont_wght.ttf") format("truetype-variations");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --ifm-color-primary: #5851DB;
+    --ifm-color-primary-dark: #232058;
+    --ifm-color-primary-darker: #1A1536;
+    --ifm-color-primary-darkest: #12102C;
+    --ifm-color-primary-light: #5851DB;
+    --ifm-color-primary-lighter: #7974E2;
+    --ifm-color-primary-lightest: #9B97E9;
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    --ifm-font-family-base: Syne, Syne-fallback, Trebuchet MS, Verdana, sans-serif;
+    --ifm-color-emphasis-600: #767386;
+    --ifm-color-success: #34C263;
+    --ifm-color-success-dark: #27914A;
+    --ifm-button-background-color: #5851DB;
+}
+
+.table-of-contents {
+    font-size: 0.9rem;
+}
+
+.breadcrumbs {
+    --ifm-breadcrumb-size-multiplier: 0.9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Hubot Sans, HubotSans-fallback, Courier New, monospace;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+    --ifm-color-primary: #5851DB;
+    --ifm-color-primary-dark: #4641AF;
+    --ifm-color-primary-darker: #353183;
+    --ifm-color-primary-darkest: #232058;
+    --ifm-color-primary-light: #7974E2;
+    --ifm-color-primary-lighter: #9B97E9;
+    --ifm-color-primary-lightest: #BCB9F1;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Additional custom styles */
+html {
+    scroll-behavior: smooth;
+}
+
+.button--primary {
+    font-weight: 600;
+}
+
+.button--secondary {
+    font-weight: 600;
+}
+
+.button--outline {
+  font-weight: 600;
+  background: rgba(88, 81, 219, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(88, 81, 219, 0.3);
+}
+
+.button--outline:hover {
+  background: rgba(88, 81, 219, 0.2);
+  border-color: rgba(88, 81, 219, 0.5);
+}
+
+/* Navbar responsive improvements */
+@media screen and (max-width: 1200px) {
+    .navbar__item {
+        font-size: 0.9rem;
+    }
+
+    .navbar__link {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media screen and (max-width: 996px) {
+    .navbar__item {
+        font-size: 0.85rem;
+    }
+
+    .navbar__link {
+        padding: 0.5rem 0.5rem;
+    }
+
+    /* Shorter labels for smaller screens */
+    .navbar__link[aria-expanded] {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Better mobile navbar handling */
+    .navbar__items--right {
+        margin-left: auto;
+    }
+
+    .navbar__toggle {
+        display: block;
+    }
+}
+
+/* Option 2: Smart Version Selector with Latest Emphasis */
+.navbar-item-latest {
+  font-weight: 600 !important;
+  color: var(--ifm-color-primary-darkest) !important;
+  background: linear-gradient(90deg, rgba(88, 81, 219, 0.08), rgba(88, 81, 219, 0.03));
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: 12px !important;
+  margin: 2px 0;
+  border-radius: 0 4px 4px 0;
+  position: relative;
+}
+
+.navbar-item-latest::after {
+    content: '✨';
+    position: absolute;
+    right: 8px;
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+.navbar-item-legacy {
+    color: var(--ifm-color-emphasis-600) !important;
+    font-weight: 400 !important;
+    opacity: 0.85;
+    padding-left: 20px !important;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+
+.navbar-item-legacy:hover {
+  color: var(--ifm-color-primary) !important;
+  opacity: 1;
+  background: rgba(88, 81, 219, 0.05);
+  border-radius: 4px;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .navbar-item-latest {
+  color: var(--ifm-color-primary-lightest) !important;
+  background: linear-gradient(90deg, rgba(139, 81, 219, 0.1), rgba(139, 81, 219, 0.04));
+  border-left-color: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .navbar-item-legacy {
+    color: var(--ifm-color-emphasis-500) !important;
+}
+
+[data-theme='dark'] .navbar-item-legacy:hover {
+  color: var(--ifm-color-primary-light) !important;
+  background: rgba(139, 81, 219, 0.08);
+}
+
+/* Product grouping visual separation */
+.dropdown__menu .dropdown__link:first-child {
+    margin-top: 8px;
+}
+
+/* Add subtle dividers between product groups */
+.dropdown__menu .dropdown__link[class*='navbar-item-latest'] {
+    margin-top: 12px;
+    border-top: 1px solid var(--ifm-color-emphasis-200);
+    padding-top: 8px;
+}
+
+.dropdown__menu .dropdown__link[class*='navbar-item-latest']:first-child {
+    border-top: none;
+    margin-top: 8px;
+    padding-top: 4px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 996px) {
+    .navbar-item-latest::after {
+        display: none;
+    }
+
+    .navbar-item-legacy {
+        font-size: 0.85em;
+    }
+
+    .dropdown__menu .dropdown__link[class*='navbar-item-latest'] {
+        margin-top: 8px;
+        padding-top: 6px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-item-latest,
+    .navbar-item-legacy {
+        padding-left: 16px !important;
+    }
+
+    .dropdown__menu .dropdown__link[class*='navbar-item-latest'] {
+        margin-top: 6px;
+        padding-top: 4px;
+    }
+}
+
+/* Image borders */
+/* Start of Selection */
+/* Apply borders only to images within docs pages */
+.theme-doc-markdown img {
+  border: 1px solid #E2E1DC;
+  border-radius: 4px;
+}
+
+/* End of Selection */
+
+/* Dark mode image borders */
+[data-theme='dark'] img {
+  border-color: #48445F;
+}
+
+/* Add this to your /src/css/custom.css file */
+
+/* Algolia DocSearch Custom Styling */
+/* Using CSS variables for better theme integration */
+
+[data-theme='light'] .DocSearch {
+    --docsearch-primary-color: var(--ifm-color-primary);
+    --docsearch-text-color: var(--ifm-font-color-base);
+    --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+    --docsearch-container-background: rgba(94, 100, 112, 0.7);
+
+    /* Modal */
+    --docsearch-modal-background: var(--ifm-color-secondary-lighter);
+
+    /* Search box */
+    --docsearch-searchbox-background: var(--ifm-color-secondary);
+    --docsearch-searchbox-focus-background: var(--ifm-color-white);
+
+    /* Hit */
+    --docsearch-hit-color: var(--ifm-font-color-base);
+    --docsearch-hit-active-color: var(--ifm-color-white);
+    --docsearch-hit-background: var(--ifm-color-white);
+
+    /* Footer */
+    --docsearch-footer-background: var(--ifm-color-white);
+}
+
+[data-theme='dark'] .DocSearch {
+    --docsearch-text-color: var(--ifm-font-color-base);
+    --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+    --docsearch-container-background: rgba(47, 55, 69, 0.7);
+
+    /* Modal */
+    --docsearch-modal-background: var(--ifm-background-color);
+
+    /* Search box */
+    --docsearch-searchbox-background: var(--ifm-background-color);
+    --docsearch-searchbox-focus-background: var(--ifm-color-black);
+
+    /* Hit */
+    --docsearch-hit-color: var(--ifm-font-color-base);
+    --docsearch-hit-active-color: var(--ifm-color-white);
+    --docsearch-hit-background: var(--ifm-color-emphasis-100);
+
+    /* Footer */
+    --docsearch-footer-background: var(--ifm-background-surface-color);
+    --docsearch-key-gradient: linear-gradient(-26.5deg, var(--ifm-color-emphasis-200) 0%, var(--ifm-color-emphasis-100) 100%);
+}
+
+/* Custom enhancements for better UX */
+.DocSearch-Button {
+    /* Make the search button more prominent */
+    margin: 0 12px;
+    padding: 0 16px;
+    font-weight: 500;
+}
+
+/* Highlight product and version info in search results */
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-hierarchy {
+    font-weight: 600;
+}
+
+/* Style the product > version breadcrumb in results */
+.DocSearch-Hit-hierarchy .DocSearch-Hit-lvl0 {
+    color: var(--docsearch-primary-color);
+    font-weight: 600;
+}
+
+/* Add visual separation for different product sections */
+.DocSearch-Hits ul {
+    margin: 0;
+}
+
+/* Improve readability of search snippets */
+.DocSearch-Hit-content {
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+
+/* Highlight search terms more prominently */
+.DocSearch-Hit-content mark {
+  background-color: #FDF0CC;
+  color: var(--ifm-font-color-base);
+  font-weight: 600;
+  padding: 0 2px;
+}
+
+[data-theme='dark'] .DocSearch-Hit-content mark {
+  background-color: #624800;
+  color: var(--ifm-color-white);
+}
+
+/* Add product/version badges if needed */
+.DocSearch-Hit-content-wrapper {
+    position: relative;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .DocSearch-Button-Keys {
+        display: none;
+    }
+
+    .DocSearch-Button {
+        padding: 0 12px;
+    }
+}
+
+/* Optional: Add custom icons for different content types */
+.DocSearch-Hit-icon {
+    color: var(--docsearch-muted-color);
+}
+
+/* Style the search page if you're using searchPagePath */
+.search-page {
+    min-height: 70vh;
+    padding: 2rem;
+}
+
+.search-page .DocSearch-Container {
+    position: relative;
+    background: transparent;
+}
+
+/* Add smooth transitions */
+.DocSearch-Hit {
+    transition: background-color 0.2s ease;
+}
+
+/* Custom scrollbar for search results */
+.DocSearch-Dropdown::-webkit-scrollbar {
+    width: 12px;
+}
+
+.DocSearch-Dropdown::-webkit-scrollbar-track {
+    background: var(--docsearch-modal-background);
+}
+
+.DocSearch-Dropdown::-webkit-scrollbar-thumb {
+    background: var(--docsearch-muted-color);
+    border-radius: 6px;
+}
+
+.DocSearch-Dropdown::-webkit-scrollbar-thumb:hover {
+    background: var(--docsearch-primary-color);
+}

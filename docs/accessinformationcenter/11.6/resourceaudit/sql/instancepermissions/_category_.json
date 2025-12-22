@@ -1,0 +1,10 @@
+{
+  "label": "Instance Permissions Node Report",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

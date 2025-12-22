@@ -1,0 +1,10 @@
+{
+  "label": "7.Containers Job Group",
+  "position": 90,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Additional Reviewer Overview",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "add_reviewer_overview"
+  }
+}

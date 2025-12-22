@@ -1,0 +1,10 @@
+{
+  "label": "LDAP Monitoring Event Type",
+  "position": 160,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "ldapmonitoring"
+  }
+}

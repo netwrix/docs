@@ -1,0 +1,10 @@
+{
+  "label": "Domain Object Level Reports",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

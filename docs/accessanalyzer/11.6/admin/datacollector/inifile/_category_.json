@@ -1,0 +1,10 @@
+{
+  "label": "INIFile Data Collector",
+  "position": 240,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

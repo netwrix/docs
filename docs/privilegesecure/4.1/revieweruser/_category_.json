@@ -1,0 +1,10 @@
+{
+  "label": "Privilege Secure Reviewer User Overview",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "UsersGroups Data Collector",
+  "position": 390,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

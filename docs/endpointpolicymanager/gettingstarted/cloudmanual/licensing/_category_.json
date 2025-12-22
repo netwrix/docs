@@ -1,0 +1,10 @@
+{
+  "label": "Licensing with Endpoint Policy Manager Cloud Components",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

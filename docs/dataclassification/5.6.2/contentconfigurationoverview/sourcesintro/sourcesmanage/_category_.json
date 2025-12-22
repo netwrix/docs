@@ -1,0 +1,10 @@
+{
+  "label": "Manage Sources and Control Data Processing",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "sources_manage"
+  }
+}

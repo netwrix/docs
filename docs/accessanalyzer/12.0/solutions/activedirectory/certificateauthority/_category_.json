@@ -1,0 +1,10 @@
+{
+  "label": "7.Certificate Authority Job Group",
+  "position": 70,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

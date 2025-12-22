@@ -1,0 +1,8 @@
+{
+  "label": "Authentication and Integration",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Knowledge base articles related to integrating Netwrix Password Policy Enforcer with third-party authentication systems."
+  }
+}

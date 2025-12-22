@@ -1,0 +1,10 @@
+{
+  "label": "System Settings",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "systemsettings"
+  }
+}

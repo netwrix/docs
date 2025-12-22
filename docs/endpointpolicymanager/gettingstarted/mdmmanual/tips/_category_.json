@@ -1,0 +1,10 @@
+{
+  "label": "Endpoint Policy Manager Exporter Tips, Tricks, and Notes",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

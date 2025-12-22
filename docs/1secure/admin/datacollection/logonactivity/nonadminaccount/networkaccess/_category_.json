@@ -1,0 +1,10 @@
+{
+  "label": "Configure Access this computer from the network Policy",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "networkaccess"
+  }
+}

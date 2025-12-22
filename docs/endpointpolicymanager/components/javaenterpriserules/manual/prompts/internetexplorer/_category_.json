@@ -1,0 +1,10 @@
+{
+  "label": "Type 3: Java Messages for Internet Explorer",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

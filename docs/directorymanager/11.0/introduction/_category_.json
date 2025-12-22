@@ -1,0 +1,10 @@
+{
+  "label": "Netwrix GroupID v11.0 Documentation",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "introduction"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Enterprise Auditor Console Upgrade",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

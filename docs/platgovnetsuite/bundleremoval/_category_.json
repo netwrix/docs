@@ -1,0 +1,10 @@
+{
+  "label": "Bundle Removal",
+  "position": 80,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "bundle_removal_overview"
+  }
+}

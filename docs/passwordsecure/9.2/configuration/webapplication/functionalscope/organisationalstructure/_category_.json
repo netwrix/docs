@@ -1,0 +1,10 @@
+{
+  "label": "Organisational structure module",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "organisational_structure"
+  }
+}

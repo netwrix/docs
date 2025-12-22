@@ -1,0 +1,10 @@
+{
+  "label": "Active Directory Permissions Analyzer Solution",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "activedirectorypermissionsanalyzer"
+  }
+}

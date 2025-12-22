@@ -1,0 +1,10 @@
+{
+  "label": "URLs Tab for Website",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "urlswebsite"
+  }
+}

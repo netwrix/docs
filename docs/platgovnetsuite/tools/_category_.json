@@ -1,0 +1,10 @@
+{
+  "label": "Tools",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "tools_overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Java Enterprise Rules Manager",
+  "position": 8,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

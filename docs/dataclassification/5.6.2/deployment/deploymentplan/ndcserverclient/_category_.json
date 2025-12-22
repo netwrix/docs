@@ -1,0 +1,10 @@
+{
+  "label": "NDC Server",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "ndc_server_client"
+  }
+}

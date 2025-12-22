@@ -1,0 +1,10 @@
+{
+  "label": "Content Aware Protection",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "capmodule"
+  }
+}

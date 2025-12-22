@@ -1,0 +1,10 @@
+{
+  "label": "Creating a Password Policy",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "creating_a_password_policy"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "DropboxAccess Data Collector",
+  "position": 120,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

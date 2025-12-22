@@ -1,0 +1,10 @@
+{
+  "label": "Troubleshooting",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

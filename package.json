@@ -1,0 +1,49 @@
+{
+  "name": "netwrix-docs",
+  "version": "0.1",
+  "private": true,
+  "main": "docusaurus.config.js",
+  "scripts": {
+    "docusaurus": "npx docusaurus",
+    "start": "cross-env NODE_OPTIONS=--max-old-space-size=16384 CHOKIDAR_USEPOLLING=false npx docusaurus start --port=4500 --no-open",
+    "start-chok": "cross-env NODE_OPTIONS=--max-old-space-size=16384 CHOKIDAR_USEPOLLING=true npx docusaurus start --port=4500 --no-open",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=16384 npx docusaurus build",
+    "ci": "npx docusaurus build",
+    "swizzle": "npx docusaurus swizzle",
+    "clear": "npx docusaurus clear",
+    "serve": "npx serve -s build -l 8080",
+    "write-translations": "npx docusaurus write-translations",
+    "write-heading-ids": "npx docusaurus write-heading-ids"
+  },
+  "dependencies": {
+    "@docusaurus/babel": "^3.8.1",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/faster": "^3.8.1",
+    "@docusaurus/plugin-google-gtag": "^3.8.1",
+    "@docusaurus/plugin-google-tag-manager": "^3.8.1",
+    "@docusaurus/plugin-rsdoctor": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
+    "@docusaurus/theme-mermaid": "^3.8.1",
+    "@mdx-js/react": "^3.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "cross-env": "^7.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-typed": "^2.0.12",
+    "serve": "^10.0.2"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/types": "^3.8.1",
+    "@mdx-js/mdx": "^3.1.0",
+    "husky": "^9.1.7",
+    "ora": "^8.2.0",
+    "table": "^6.9.0",
+    "to-vfile": "^8.0.0",
+    "vfile-reporter": "^8.1.1",
+    "watchman": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=22.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "ServiceNow Incident Management",
+  "position": 190,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

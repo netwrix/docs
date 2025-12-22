@@ -1,0 +1,10 @@
+{
+  "label": "Netwrix Endpoint Policy Manager Quick Start",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

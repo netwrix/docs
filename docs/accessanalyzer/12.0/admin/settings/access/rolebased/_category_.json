@@ -1,0 +1,10 @@
+{
+  "label": "Role Based Access",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

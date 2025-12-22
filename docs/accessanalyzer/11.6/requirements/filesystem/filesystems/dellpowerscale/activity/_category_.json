@@ -1,0 +1,10 @@
+{
+  "label": "Dell Isilon/PowerScale Activity Auditing Configuration",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "activity"
+  }
+}

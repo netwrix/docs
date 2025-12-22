@@ -1,0 +1,10 @@
+{
+  "label": "Business Rules Analysis Module",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

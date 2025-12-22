@@ -1,0 +1,10 @@
+{
+  "label": "Admin Center",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "signin"
+  }
+}

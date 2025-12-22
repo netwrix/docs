@@ -1,0 +1,10 @@
+{
+  "label": "Netwrix Auditor Operations and Health",
+  "position": 110,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

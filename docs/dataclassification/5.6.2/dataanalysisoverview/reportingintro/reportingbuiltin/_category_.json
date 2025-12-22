@@ -1,0 +1,10 @@
+{
+  "label": "Built-in Reports",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "reporting_built-in"
+  }
+}

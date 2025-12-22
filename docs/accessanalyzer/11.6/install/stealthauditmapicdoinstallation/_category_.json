@@ -1,0 +1,10 @@
+{
+  "label": "StealthAUDIT MAPI CDO Installation",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "stealthaudit_mapi_cdo_installation"
+  }
+}

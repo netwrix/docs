@@ -1,0 +1,10 @@
+{
+  "label": "SIEM",
+  "position": 200,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Advanced Actions for File System",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "advanced_actions_files"
+  }
+}

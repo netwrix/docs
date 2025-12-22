@@ -1,0 +1,10 @@
+{
+  "label": "Notification Analysis Module",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

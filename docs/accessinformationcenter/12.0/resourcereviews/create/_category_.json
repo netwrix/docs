@@ -1,0 +1,10 @@
+{
+  "label": "Create Review Wizard",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "create"
+  }
+}

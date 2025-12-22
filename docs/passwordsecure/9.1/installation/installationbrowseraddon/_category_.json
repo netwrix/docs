@@ -1,0 +1,10 @@
+{
+  "label": "Installation Browser Extension",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "installation_browser_add-on"
+  }
+}

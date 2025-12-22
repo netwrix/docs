@@ -1,0 +1,10 @@
+{
+  "label": "RDP and SSH Applications",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "rdp_and_ssh_applications"
+  }
+}

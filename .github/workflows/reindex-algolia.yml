@@ -1,0 +1,146 @@
+name: Reindex Algolia
+
+on:
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to reindex'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - development
+  
+  # Triggered after successful deployment workflow
+  workflow_run:
+    workflows: ["Deploy to Render"]
+    types:
+      - completed
+    branches:
+      - main
+
+# Add permissions for the workflow
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  reindex-algolia:
+    name: Reindex Algolia Search
+    runs-on: ubuntu-latest
+    environment: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || 'production' }}
+    # Only run if the deployment workflow succeeded on main branch or manual trigger
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' && 
+       github.event.workflow_run.head_branch == 'main')
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set environment
+        id: set-env
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "environment=${{ inputs.environment }}" >> $GITHUB_OUTPUT
+          else
+            # Workflow run trigger - always production
+            echo "environment=production" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Validate site is accessible
+        run: |
+          echo "🔍 Checking if site is accessible at ${{ secrets.SITE_URL }}..."
+          response=$(curl -s -o /dev/null -w "%{http_code}" "${{ secrets.SITE_URL }}")
+          if [ "$response" -eq 200 ]; then
+            echo "✅ Site is accessible (HTTP $response)"
+          else
+            echo "❌ Site returned HTTP $response"
+            exit 1
+          fi
+      
+      - name: Algolia crawler creation and crawl
+        uses: algolia/algoliasearch-crawler-github-actions@v1
+        id: algolia_crawler
+        with:
+          crawler-user-id: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
+          crawler-api-key: ${{ secrets.ALGOLIA_CRAWLER_API_KEY }}
+          algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
+          algolia-api-key: ${{ secrets.ALGOLIA_API_KEY }}
+          crawler-name: ${{ secrets.ALGOLIA_CRAWLER_NAME }}
+          site-url: ${{ secrets.SITE_URL }}
+          override-config: true
+      
+      - name: Get workflow run details
+        if: github.event_name == 'workflow_run'
+        id: get-pr
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // Get the workflow run details
+            const workflowRun = context.payload.workflow_run;
+            
+            // Find associated pull requests
+            const { data: pullRequests } = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: workflowRun.head_sha
+            });
+            
+            if (pullRequests.length > 0) {
+              const pr = pullRequests[0];
+              core.setOutput('pr_number', pr.number);
+              core.setOutput('pr_found', 'true');
+            } else {
+              core.setOutput('pr_found', 'false');
+            }
+      
+      - name: Comment on PR about reindexing
+        if: |
+          github.event_name == 'workflow_run' && 
+          steps.get-pr.outputs.pr_found == 'true' &&
+          steps.algolia_crawler.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = ${{ steps.get-pr.outputs.pr_number }};
+            const commentIdentifier = '<!-- algolia-reindex-bot -->';
+            
+            const comment = `${commentIdentifier}
+            ### 🔍 Search Index Updated!
+            
+            The Algolia search index has been successfully updated with your changes.
+            
+            | Status | Index | Environment | Time |
+            |--------|-------|-------------|------|
+            | ✅ Success | ${{ secrets.ALGOLIA_INDEX_NAME }} | ${{ steps.set-env.outputs.environment }} | ${new Date().toISOString()} |
+            
+            Your documentation changes are now searchable in production.
+            
+            ---
+            <sub>🤖 This comment was automatically generated after deployment and reindexing.</sub>`;
+            
+            await github.rest.issues.createComment({
+              issue_number: prNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+      
+      - name: Report crawler status
+        if: always()
+        run: |
+          if [ "${{ steps.algolia_crawler.outcome }}" == "success" ]; then
+            echo "✅ Algolia reindexing completed successfully for ${{ steps.set-env.outputs.environment }} environment"
+            echo "📍 Index: ${{ secrets.ALGOLIA_INDEX_NAME }}"
+            echo "🌐 Site URL: ${{ secrets.SITE_URL }}"
+          else
+            echo "❌ Algolia reindexing failed"
+            exit 1
+          fi

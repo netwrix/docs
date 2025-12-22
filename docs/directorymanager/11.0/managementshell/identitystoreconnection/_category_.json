@@ -1,0 +1,10 @@
+{
+  "label": "Identity Store Connection Commands",
+  "position": 90,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

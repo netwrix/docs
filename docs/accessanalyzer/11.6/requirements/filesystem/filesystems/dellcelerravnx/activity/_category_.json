@@ -1,0 +1,10 @@
+{
+  "label": "Dell Celerra & Dell VNX Activity Auditing Configuration",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "activity"
+  }
+}

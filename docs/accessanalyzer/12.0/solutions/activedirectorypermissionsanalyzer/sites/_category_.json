@@ -1,0 +1,10 @@
+{
+  "label": "9.Sites Job Group",
+  "position": 110,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

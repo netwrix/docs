@@ -1,0 +1,10 @@
+{
+  "label": "8.S3 Sensitive Data Job Group",
+  "position": 100,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

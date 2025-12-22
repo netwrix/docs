@@ -1,0 +1,10 @@
+{
+  "label": "Discovery Service",
+  "position": 100,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "discovery_service"
+  }
+}

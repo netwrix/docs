@@ -1,0 +1,10 @@
+{
+  "label": "6.S3 Permissions Job Group",
+  "position": 80,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Single Sign On",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "singlesignon"
+  }
+}

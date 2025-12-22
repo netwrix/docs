@@ -1,0 +1,10 @@
+{
+  "label": "PPS Properties Page",
+  "position": 80,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "properties"
+  }
+}

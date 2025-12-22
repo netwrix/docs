@@ -1,0 +1,10 @@
+{
+  "label": "3.Permissions Job Group",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

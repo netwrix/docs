@@ -1,0 +1,10 @@
+{
+  "label": "Enrollment and Authentication",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "authpolicy"
+  }
+}

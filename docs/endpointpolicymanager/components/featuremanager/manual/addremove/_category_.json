@@ -1,0 +1,10 @@
+{
+  "label": "Quick Start - Adding and Removing Features",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

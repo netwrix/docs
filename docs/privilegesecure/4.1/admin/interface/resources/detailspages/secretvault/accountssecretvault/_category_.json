@@ -1,0 +1,10 @@
+{
+  "label": "Accounts Tab for Secret Vault",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "accountssecretvault"
+  }
+}

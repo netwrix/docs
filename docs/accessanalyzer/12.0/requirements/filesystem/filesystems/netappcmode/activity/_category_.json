@@ -1,0 +1,10 @@
+{
+  "label": "NetApp Data ONTAP Cluster-Mode Activity Auditing Configuration",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "activity"
+  }
+}

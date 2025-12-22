@@ -1,0 +1,10 @@
+{
+  "label": "NetApp Data ONTAP 7-Mode Access & Sensitive Data Auditing Configuration",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "access"
+  }
+}

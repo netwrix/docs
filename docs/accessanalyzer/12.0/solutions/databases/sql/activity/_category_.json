@@ -1,0 +1,10 @@
+{
+  "label": "2.Activity Job Group",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

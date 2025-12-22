@@ -1,0 +1,10 @@
+{
+  "label": "Exchange Support and Permissions Explained",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "support"
+  }
+}

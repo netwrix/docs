@@ -1,0 +1,10 @@
+{
+  "label": "Database settings",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "database_settings"
+  }
+}

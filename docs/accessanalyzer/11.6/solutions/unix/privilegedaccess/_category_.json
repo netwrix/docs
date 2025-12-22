@@ -1,0 +1,10 @@
+{
+  "label": "2.Privileged Access Job Group",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

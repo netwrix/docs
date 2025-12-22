@@ -1,0 +1,10 @@
+{
+  "label": "Sensitive Data Discovery Add-On Installation",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

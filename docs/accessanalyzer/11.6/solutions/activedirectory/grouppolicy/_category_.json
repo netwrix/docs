@@ -1,0 +1,10 @@
+{
+  "label": "4.Group Policy Job Group",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

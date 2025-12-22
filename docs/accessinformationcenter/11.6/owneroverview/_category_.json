@@ -1,0 +1,10 @@
+{
+  "label": "Resource Ownership with the Access Information Center",
+  "position": 80,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "owneroverview"
+  }
+}

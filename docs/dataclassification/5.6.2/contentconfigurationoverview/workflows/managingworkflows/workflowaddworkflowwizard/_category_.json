@@ -1,0 +1,10 @@
+{
+  "label": "Create a Workflow using Add Workflow Wizard",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "workflow_add_workflow_wizard"
+  }
+}

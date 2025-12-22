@@ -1,0 +1,10 @@
+{
+  "label": "FSAA: Default Scoping Options",
+  "position": 80,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "defaultscopingoptions"
+  }
+}
