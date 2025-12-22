@@ -7,7 +7,7 @@ description: "Become a certified Presales Engineer for Netwrix Identity Manager"
 ---
 
 
-import { NIMValue, NIMArchitecture, NIMStandard, NIMDataModel, NIMConnectors, NIMProfilesFundamentals, NIMIdentityWorkflow, NIMRoleModel, NIMReconciliation, NIMIntro, NIMDemoLab, NIMAdditional } from '@site/src/training/identity-manager';
+import { NIMValue, NIMLifeCycle, NIMArchitecture, NIMStandard, NIMDataModel, NIMConnectors, NIMProfilesFundamentals, NIMIdentityWorkflow, NIMRoleModel, NIMReconciliation, NIMIntro, NIMDemoLab, NIMAdditional } from '@site/src/training/identity-manager';
 import { Company, NIM } from '@site/src/training/products';
 
 
@@ -18,6 +18,7 @@ Prerequisite: <NIM /> Sales Professional learning path
 This learning path grants <Company /> certification as a Presales Engineer for this product. This application was formerly Netwrix Usercube. It contains the following courses:
 
 * 1720 <NIM /> – Valuable Features
+* 1721 <NIM /> – Identity & Identity Life Cycle
 * 2721 <NIM /> – Architecture
 * 2722 <NIM /> – Standard Deployment Project
 * 2723 <NIM /> – Data Model
@@ -30,6 +31,8 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 * 6720 <NIM /> – Presales Lab Experience
 
 <NIMValue />
+
+<NIMLifeCycle />
 
 <NIMArchitecture />
 
