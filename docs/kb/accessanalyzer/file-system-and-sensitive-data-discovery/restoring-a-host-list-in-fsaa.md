@@ -1,7 +1,7 @@
 ---
 description: >-
   Shows how to restore a File System host list after accidental deletion in
-  Netwrix Auditor by using the FSAA job output file or Task Stats, and how to
+  Netwrix Access Analyzer by using the FSAA job output file or Task Stats, and how to
   reapply the host list to job settings.
 keywords:
   - host list
@@ -10,7 +10,7 @@ keywords:
   - Add Hosts
   - Task Stats
   - restore hosts
-  - Netwrix Auditor
+  - Netwrix Access Analyzer
   - File System
   - host import
 products:
@@ -26,7 +26,7 @@ knowledge_article_id: kA0Qk0000001ODBKA2
 
 ## Question
 
-Is it possible to restore a File System host list upon an accidental deletion in Netwrix Auditor?
+Is it possible to restore a File System host list upon an accidental deletion in Netwrix Access Analyzer?
 
 ## Answer
 
@@ -38,7 +38,7 @@ Refer to the following options to restore a host list in your environment:
 %SAINSTALLDIR%Jobs\GROUP_FileSystem\GROUP_0.Collection\JOB_1-FSAA System Scans\OUTPUT
 ```
 
-Import a list of audited hosts via **Add Hosts**. Refer to the following articles for additional information: https://docs.netwrix.com/docs/auditor/10_8 (Host Management Activities — Add Hosts · v11.6); https://docs.netwrix.com/docs/auditor/10_8 (Import Hosts Option).
+Import a list of audited hosts via **Add Hosts**. Refer to the following articles for additional information: https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/hostmanagement/actions/add (Host Management Activities — Add Hosts · v12.0); https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/hostmanagement/actions/importhost (Import Hosts Option).
 
 - Review the **Task Stats** of the affected job to collect the list of servers and import the list via **Add Hosts**.
 
@@ -46,5 +46,5 @@ Import a list of audited hosts via **Add Hosts**. Refer to the following article
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/auditor/10_8 (Host Management Activities — Add Hosts · v11.6)
-- https://docs.netwrix.com/docs/auditor/10_8 (Import Hosts Option)
+- (https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/hostmanagement/actions/add) (Host Management Activities — Add Hosts · v12.0)
+- https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/hostmanagement/actions/importhost (Import Hosts Option)
