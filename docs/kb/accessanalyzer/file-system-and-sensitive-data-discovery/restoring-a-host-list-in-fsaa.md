@@ -26,7 +26,7 @@ knowledge_article_id: kA0Qk0000001ODBKA2
 
 ## Question
 
-Is it possible to restore a File System host list upon an accidental deletion in Netwrix Access Analyzer?
+Is it possible to restore a File System host list upon an accidental deletion in Netwrix Access Analyzer (formerly Enterprise Auditor)?
 
 ## Answer
 
@@ -44,7 +44,7 @@ Import a list of audited hosts via **Add Hosts**. Refer to the following article
 
 > **IMPORTANT:** Once you recreate the host list, reapply it in the job settings.
 
-## Related Articles
+## Related Links
 
-- (https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/hostmanagement/actions/add) (Host Management Activities — Add Hosts · v12.0)
-- https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/hostmanagement/actions/importhost (Import Hosts Option)
+- [Host Management Activities — Add Hosts ⸱ v12.0](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/hostmanagement/actions/add)
+- [Import Hosts Option](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/hostmanagement/actions/importhost)
