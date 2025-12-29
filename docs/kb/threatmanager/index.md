@@ -1,14 +1,21 @@
 ---
 title: "Threat Manager Knowledge Base"
-description: "Threat Manager knowledge base articles and troubleshooting guides"
+description: "Knowledge base articles for Netwrix Threat Manager"
 slug: threatmanager
 ---
 
 # Threat Manager Knowledge Base
 
-Welcome to the Threat Manager knowledge base. Browse our collection of troubleshooting guides, configuration instructions, and best practices.
+Welcome to the Netwrix Threat Manager knowledge base. This section contains troubleshooting guides, configuration instructions, best practices, and reference materials for Threat Manager.
 
-Use the search function above to find specific articles or browse through all Threat Manager KB articles in this section.
+## Browse by Category
+
+- **Configuration and Administration** - System configuration, permissions, logging, playbooks, and administrative tasks
+- **Installation and Upgrade** - Installation troubleshooting, upgrade procedures, and deployment issues
+- **Integration and Event Collection** - External system integrations, event collection, syslog configuration, and Active Directory sync
+- **Troubleshooting and Diagnostics** - Agent diagnostics, threat detection troubleshooting, and log file analysis
+- **Licensing and System Issues** - License activation, console crashes, and system-level problems
+- **Threat Management and Operations** - Ransomware protection, quarantine management, and operational procedures
 
 ## Need Help?
 
