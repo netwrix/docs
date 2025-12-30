@@ -125,7 +125,7 @@ In the Certificate Exchange Options section, configure the following options:
 
 
     - Provide Certificate Authority – Enables the **Select** button, which allows you to upload an
-      existing certificate
+      existing certificate. See the [FSAA Provide Certificate Authority Configuration](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/certificatemanagement/certificateauthority.md) topic for additional information.
 
 - Port – Select the checkbox to specify the port number for certificate exchange. The Default port
   number is 8767.
