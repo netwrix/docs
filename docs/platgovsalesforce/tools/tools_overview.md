@@ -24,3 +24,6 @@ The **Tools** tab accesses:
 - [User Activity](/docs/platgovsalesforce/tools/user_activity.md) displays all activity for a specific user or all users. This tool is used before you can deactivate a user.
 - [Automated Report Clean Up](/docs/platgovsalesforce/tools/automated_report_clean_up.md) runs automatically or on demand using custom rules to find and manage reports.
 - [Change Logs Clean Up](/docs/platgovsalesforce/tools/change_logs_clean_up.md) sets the schedule to run the tool.
+- [DLU Configuration](/docs/platgovsalesforce/tools/dlu_configuration.md) provides comprehensive support for the Date Last Use (DLU) Scheduler.
+- [Scanner Inactivity Alert](/docs/platgovsalesforce/tools/scanner_inactivity_alert.md) provides automated email notifications when the Auto Scanner fails to run according to schedule.
+- [System Permission Tracking](/docs/platgovsalesforce/tools/system_permission_tracking.md) monitors and detects changes in System Permissions across Permission Sets and Profiles.
