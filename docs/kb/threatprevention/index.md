@@ -30,12 +30,12 @@ Articles addressing license-related issues including premature expiration and se
 
 ## Quick Links
 
-- [Threat Prevention Documentation](../../threatprevention/) - Main product documentation
-- [Release Notes](../../threatprevention/release-notes/) - Latest updates and changes
+- [Threat Prevention Documentation](https://docs.netwrix.com/docs/threatprevention/7_5) - Main product documentation
+- [News & Security Advisories](https://community.netwrix.com/lists/itdr) - Latest updates and changes
 
 ## Need Help?
 
 If you can't find what you're looking for:
 1. Use the search function above
-2. Check the main [Threat Prevention documentation](../../threatprevention/)
+2. Check the main [Threat Prevention documentation](https://docs.netwrix.com/docs/threatprevention/7_5)
 3. Contact [Netwrix support](https://www.netwrix.com/support.html)
