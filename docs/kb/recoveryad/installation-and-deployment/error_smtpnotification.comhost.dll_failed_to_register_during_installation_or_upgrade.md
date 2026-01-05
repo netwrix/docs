@@ -23,7 +23,7 @@ You receive the following error message when installing or upgrading Netwrix Rec
 SmtpNotification.comhost.dll failed to register. HRESULT -2147450749. Contact your support personnel.
 ```
 
-![Error message dialog showing SmtpNotification.comhost.dll failed to register](./images/servlet_image_89acf0e7ac0c.png)
+![Error message dialog showing SmtpNotification.comhost.dll failed to register](../0-images/servlet_image_89acf0e7ac0c.png)
 
 ## Cause
 

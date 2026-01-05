@@ -31,7 +31,7 @@ Recovery for Active Directory was installed in HTTP mode with no SSL enabled.
 
 1. Open the **`appsettings.json`** file. By default, the configuration appears as shown below. You need to change the **Scheme** and **CertName** values.
 
-   ![Default appsettings.json configuration for Netwrix Recovery for Active Directory web console](./images/servlet_image_76800672d835.png)
+   ![Default appsettings.json configuration for Netwrix Recovery for Active Directory web console](../0-images/servlet_image_76800672d835.png)
 
 2. Ensure the certificate you select has an associated private key. This is indicated by the key icon in the Certificates Manager.
 
