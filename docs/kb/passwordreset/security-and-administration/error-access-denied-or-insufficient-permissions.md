@@ -25,7 +25,7 @@ knowledge_article_id: kA00g000000H9akCAC
 
 When a user tries to reset the password via Self-Service portal they receive  "Access Denied" error or "Insufficient permissions"
 
-![User-added image](./images/ka04u00000116eU_0EM700000005OEF.png)
+![User-added image](../0-images/ka04u00000116eU_0EM700000005OEF.png)
 
 ---
 
@@ -59,4 +59,4 @@ To resolve the issue:
    1. Start **Server Manager a**nd find the user account in **Active Directory Users and Computers**, right-click the user and select **Properties**.
    2. On the **Account** tab in the **Account options** list, make sure that **User cannot change password** is NOT selected.
 
-   ![User-added image](./images/ka04u00000116eU_0EM700000004xbM.png)
+   ![User-added image](../0-images/ka04u00000116eU_0EM700000004xbM.png)

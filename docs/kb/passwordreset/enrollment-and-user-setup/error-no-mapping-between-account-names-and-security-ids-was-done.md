@@ -47,10 +47,10 @@ Verify all possible reasons mentioned above:
 - Click **Advanced** and go to **Effective Permissions** tab
 - Specify the name of the service account and check effective permissions
 
-![User-added image](./images/ka04u00000116eK_0EM700000004y5b.png)
+![User-added image](../0-images/ka04u00000116eK_0EM700000004y5b.png)
 
 3. In Active Directory Users and Computers, open the required account`s **Properties** dialog, switch to the **Delegation** tab and select the **Trust this computer for delegation to any service (Kerberos only)** option.
 
-![User-added image](./images/ka04u00000116eK_0EM700000004y5W.png)
+![User-added image](../0-images/ka04u00000116eK_0EM700000004y5W.png)
 
 4. Try to delete the computer from your domain and then add it back.

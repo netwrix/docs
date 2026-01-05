@@ -40,11 +40,11 @@ If you are using single server installation, make sure that the `gina_set_answer
 4. Select `gina_set_answers.asp` (or `gina_set_answers_anonymous.asp` respectively) from the list
 5. Right-click it and select **Switch to Features view**
 
-![User-added image](./images/ka04u00000116eO_0EM700000004xJ3.png)
+![User-added image](../0-images/ka04u00000116eO_0EM700000004xJ3.png)
 
 6. Select **Authentication** under IIS group
 7. Make sure **Windows authentication** is **Enabled** and all other are Disabled
 
-![User-added image](./images/ka04u00000116eO_0EM700000004xJI.png)
+![User-added image](../0-images/ka04u00000116eO_0EM700000004xJI.png)
 
 NOTE. For DMZ setup, `gina_set_answers.asp` should have **all** authentication types set to **Disabled**. `gina_set_answers_anonymous.asp` should only have **Windows authentication** set to **Enabled** and all other types of authentication set to **Disabled**.

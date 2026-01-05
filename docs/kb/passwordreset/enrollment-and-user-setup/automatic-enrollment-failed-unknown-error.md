@@ -25,7 +25,7 @@ knowledge_article_id: kA00g000000H9XwCAK
 # Automatic enrollment failed: Unknown error
 
 I get the following error in **Enrollment wizard**.  
-![User-added image](./images/ka04u00000116c4_0EM700000004yFv.png)
+![User-added image](../0-images/ka04u00000116c4_0EM700000004yFv.png)
 
 ---
 
@@ -48,9 +48,9 @@ It can happen due to several reasons but the most common reasons for this error 
    The key 1 is determined by Group policy. If there is no PRM_Serer value in the key 1, then the value from the key 2 is used.
 
    Make sure that the specified value has correct URL.  
-   ![User-added image](./images/ka04u00000116c4_0EM700000004yGF.png)
+   ![User-added image](../0-images/ka04u00000116c4_0EM700000004yGF.png)
 
 2. Verify SSL settings.
    - Make sure you are able to browse to the Netwrix Password Reset Self-service portal without any warnings. Please refer to [this article](https://kb.netwrix.com/610) if there are warnings.
    - Make sure that SSL settings for PM virtual directory are set to **Ignore client certificates**  
-   ![User-added image](./images/ka04u00000116c4_0EM7000000050oO.png)
+   ![User-added image](../0-images/ka04u00000116c4_0EM7000000050oO.png)

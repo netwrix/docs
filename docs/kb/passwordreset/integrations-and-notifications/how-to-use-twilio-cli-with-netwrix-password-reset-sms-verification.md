@@ -40,7 +40,7 @@ The Twilio CLI allows to manage phone numbers, call Twilio APIs, and test webhoo
    1. **Account SID**
    2. **Auth Token**
 
-   ![Group 115 (1).png](./images/ka04u00000116uq_0EM4u000008LdZI.png)
+   ![Group 115 (1).png](../0-images/ka04u00000116uq_0EM4u000008LdZI.png)
 
 8. In Netwrix Password Reset SMS Verification Settings, setup **Command** and **Parameter**
 

@@ -44,9 +44,9 @@ All values are string values (`REG_SZ`):
 - `LogonCaption` — this value replaces the header of the Logon Prompt Extension password reset wizard
 - `MainCaption` — this value replaces the header of the Enrollment wizard
 
-![User-added image](./images/ka04u00000116Nm_0EM700000004xhy.png)
+![User-added image](../0-images/ka04u00000116Nm_0EM700000004xhy.png)
 
-![User-added image](./images/ka04u00000116Nm_0EM700000004xi3.png)
+![User-added image](../0-images/ka04u00000116Nm_0EM700000004xi3.png)
 
 ---
 
@@ -65,9 +65,9 @@ String values (`REG_SZ`):
 - `LPE_AccountRemark` — replaces the example text under the field used to enter the account name
 - `Predefine_Domain` — this value sets a predefined domain name that will be used
 
-![User-added image](./images/ka04u00000116Nm_0EM700000004xiD.png)
+![User-added image](../0-images/ka04u00000116Nm_0EM700000004xiD.png)
 
-![User-added image](./images/ka04u00000116Nm_0EM700000004xiI.png)
+![User-added image](../0-images/ka04u00000116Nm_0EM700000004xiI.png)
 
 ### DWORD values
 
@@ -99,4 +99,4 @@ Set `PRM_CurrentUserLanguage` to one of the following values:
 | sk    | Slovak               |
 | zh    | Traditional Chinese  |
 
-![User-added image](./images/ka04u00000116Nm_0EM700000004xhe.png)
+![User-added image](../0-images/ka04u00000116Nm_0EM700000004xhe.png)

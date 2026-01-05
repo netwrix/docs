@@ -39,23 +39,23 @@ How to setup a load balancing cluster for Netwrix Password Reset
    2. In the **Host** field specify a name of a machine that is to be part of the new cluster, click **Connect**
    3. Select the network Interface that will be used to build a cluster, click **Next**
 
-![User-added image](./images/ka04u00000116bU_0EM70000000554p.png)
+![User-added image](../0-images/ka04u00000116bU_0EM70000000554p.png)
 
 4. In the **New Cluster: Cluster IP addresses** window click **Add** and specify the IP address and subnet mask that will be used to access the cluster. Click **OK**, then **Next**.
 
-![User-added image](./images/ka04u00000116bU_0EM70000000554u.png)
+![User-added image](../0-images/ka04u00000116bU_0EM70000000554u.png)
 
 5. In the **New cluster: Cluster Parameters** window verify cluster IP, specify cluster internet name and cluster operational mode. Click **Next.**
 
    **Note:** For servers with only one network interface set **Multicast.**
 
-![User-added image](./images/ka04u00000116bU_0EM70000000554z.png)
+![User-added image](../0-images/ka04u00000116bU_0EM70000000554z.png)
 
 6. In the **New cluster: Port rules** window click **Finish**.
 
    **Note:** By default all traffic (on all protocols and ports) is equally divided between all cluster nodes. If you want to load-balance requests on a specific protocol or port, in the **New cluster: Port rules** window highlight the rule and click **Modify**.
 
-![User-added image](./images/ka04u00000116bU_0EM700000005554.png)
+![User-added image](../0-images/ka04u00000116bU_0EM700000005554.png)
 
 7. Right-click the newly created cluster in the left pane and select **Add host to cluster** and add more nodes if needed.
 

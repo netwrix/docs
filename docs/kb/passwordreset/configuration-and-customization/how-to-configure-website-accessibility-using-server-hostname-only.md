@@ -35,4 +35,4 @@ Follow the steps below to configure Netwrix Password Reset to redirect a site to
 
 2. Select **Default web site** and click **Advanced Settings...** in the right pane.
 
-   ![User-added image](./images/ka0Qk0000002mmv_0EMQk000003xxC1.png)
+   ![User-added image](../0-images/ka0Qk0000002mmv_0EMQk000003xxC1.png)

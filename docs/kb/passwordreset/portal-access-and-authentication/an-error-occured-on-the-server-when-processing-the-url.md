@@ -26,7 +26,7 @@ knowledge_article_id: kA00g000000H9aXCAS
 
 When a user tries to browse to the self-service portal they receive an error message that an error occurred on the server when processing the URL.
 
-![User-added image](./images/ka04u00000116cx_0EM700000005ODC.png)
+![User-added image](../0-images/ka04u00000116cx_0EM700000005ODC.png)
 
 ---
 
@@ -46,13 +46,13 @@ The most common reason is access permission issues. For example, if some files a
 
 1. Run IIS, and select the web site that Netwrix Password Reset is installed to.
 
-   ![User-added image](./images/ka04u00000116cx_0EM700000005ODW.png)
+   ![User-added image](../0-images/ka04u00000116cx_0EM700000005ODW.png)
 
 2. Select the **ASP** feature in the central pane.
 
 3. Expand **Debugging Properties** and set **Send errors to browser** to **True**.
 
-   ![User-added image](./images/ka04u00000116cx_0EM700000005ODb.png)
+   ![User-added image](../0-images/ka04u00000116cx_0EM700000005ODb.png)
 
 ## Disable user-friendly errors in Internet Explorer
 

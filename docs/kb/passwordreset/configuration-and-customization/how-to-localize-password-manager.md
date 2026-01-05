@@ -28,7 +28,7 @@ Each language has a separate localization file.
 
 Localization files are stored in the **Web_SSLocals** folder in the program installation directory (by default - `C:\Program Files (x86)\Netwrix Password Manager\Web_SSLocals`)
 
-![User-added image](./images/ka04u00000116S9_0EM700000005OBk.png)
+![User-added image](../0-images/ka04u00000116S9_0EM700000005OBk.png)
 
 To add a language, create a copy of `en.asp`, then rename it to `%language code%.asp` and edit.
 
@@ -39,7 +39,7 @@ To add a language, create a copy of `en.asp`, then rename it to `%language code%
    - `strLangID=`%language code%`  (NOTE: Must correspond with the asp file name)`
    - `strLangDispName=`%language name%``
 
-![User-added image](./images/ka04u00000116S9_0EM700000005OBp.png)
+![User-added image](../0-images/ka04u00000116S9_0EM700000005OBp.png)
 
 3. Then substitute all English phrases with their equivalents in the desired language.
 4. After you finish, save changes and execute `iisreset` from the command line.

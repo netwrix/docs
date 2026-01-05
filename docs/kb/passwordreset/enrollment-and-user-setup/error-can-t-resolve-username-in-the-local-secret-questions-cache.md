@@ -27,7 +27,7 @@ knowledge_article_id: kA00g000000H9bfCAC
 
 You see the following error in the client (logon prompt extension) after entering username and clicking **Next**:
 
-![User-added image](./images/ka04u00000116bh_0EM7000000052Jh.png)
+![User-added image](../0-images/ka04u00000116bh_0EM7000000052Jh.png)
 
 ---
 
@@ -48,7 +48,7 @@ First, make sure that the client is pointed to the correct Password Manager Self
 1. `HKLMSoftware[Wow6432Node]PoliciesNetWrixPassword Manager`
 2. `HKLMSoftware[Wow6432Node]NetWrixPassword Manager Self-Service client (is used if there is no value in the 1st key)`
 
-![User-added image](./images/ka04u00000116bh_0EM7000000052KG.png)
+![User-added image](../0-images/ka04u00000116bh_0EM7000000052KG.png)
 
 - If the server URL value is correct, but the server is temporarily unavailable, the error is expected for users who enrolled via web.
 - If you need an option to reset the password in disconnected mode, enroll through the Enrollment wizard locally from the machine.

@@ -23,7 +23,7 @@ knowledge_article_id: kA00g000000H9anCAC
 
 A user receives a Session expired message when trying to reset their password using the Self-Service portal.
 
-![User-added image](./images/ka04u00000116eY_0EM700000005OD2.png)
+![User-added image](../0-images/ka04u00000116eY_0EM700000005OD2.png)
 
 ## Cause
 

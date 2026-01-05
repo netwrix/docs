@@ -29,7 +29,7 @@ To change the language used on the portal by default please do the following:
 2. Edit the **locale.asp** file
 3. Change line 112 to `var langsDict, defLang = "%langcode%"` (substitute `en` with the desired language code)
 
-![User-added image](./images/ka04u00000116cJ_0EM70000000ts5W.png)
+![User-added image](../0-images/ka04u00000116cJ_0EM70000000ts5W.png)
 
 4. Save the changes and execute an IIS reset in a command prompt with the following command: `iisreset`
 

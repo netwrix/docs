@@ -25,11 +25,11 @@ knowledge_article_id: kA00g000000H9aUCAS
 
 While downloading a report from the Netwrix Password Reset Helpdesk portal, no error messages are displayed but the report can not be downloaded.
 
-![User-added image](./images/ka04u00000116ed_0EM700000005b6x.png)
+![User-added image](../0-images/ka04u00000116ed_0EM700000005b6x.png)
 
 Reports are actually generated as html files. To make them available for download, Password Manager saves them in .csv format in the Helpdesk physical path folder (by default `C:\Program Files (x86)\Netwrix Password Manager\Web`)
 
-![User-added image](./images/ka04u00000116ed_0EM700000005b7b.png)
+![User-added image](../0-images/ka04u00000116ed_0EM700000005b7b.png)
 
 If the time period (for the Activity Report) or Number of users in monitored domains are large, then report files might be several megabytes in size.
 
@@ -46,6 +46,6 @@ In order to do it:
 5. Change **Response Buffering Limit** to `10485760` (10 MB) or more
 6. Click **Apply** under **Actions** at the top of the right pane
 
-![User-added image](./images/ka04u00000116ed_0EM700000005b7g.png)
+![User-added image](../0-images/ka04u00000116ed_0EM700000005b7g.png)
 
 If the above does not help, try restarting IIS with the `iisreset` command after making the changes.
