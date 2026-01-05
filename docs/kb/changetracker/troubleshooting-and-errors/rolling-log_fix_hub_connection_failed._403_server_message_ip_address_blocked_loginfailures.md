@@ -5,7 +5,7 @@ keywords:
   - Hub connection failed
   - IP address blocked
   - Login failures
-sidebar_label: Rolling-Log Fix
+sidebar_label: 403 IP Address Blocked
 tags: [troubleshooting-and-errors]
 title: "Rolling-Log Fix: Hub Connection Failed. 403 Server Message: IP Address Blocked: Login Failures"
 knowledge_article_id: kA04u0000000JXgCAM

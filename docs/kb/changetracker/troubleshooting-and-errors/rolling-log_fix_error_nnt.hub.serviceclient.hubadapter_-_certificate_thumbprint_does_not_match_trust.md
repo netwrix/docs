@@ -5,7 +5,7 @@ keywords:
   - Netwrix Agent
   - certificate thumbprint
   - Hub Server
-sidebar_label: Rolling-Log Fix
+sidebar_label: Certificate Thumbprint Mismatch
 tags: [troubleshooting-and-errors]
 title: 'Rolling-Log Fix: "ERROR NNT.Hub.ServiceClient.HubAdapter - Certificate Thumbprint Does Not Match Trusted"'
 knowledge_article_id: kA04u0000000JaGCAU
@@ -17,7 +17,7 @@ products:
 
 ## Symptoms
 
-The following may occur when the Agent password being sent to the Hub Server is incorrect:
+The following error occurs when using a custom or unrecognized IIS Certificate:
 
 ```
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -50,7 +50,6 @@ If you are receiving this error, the Netwrix Agent is NOT reporting to your hub.
 <HubDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <Url>https://myserver.mydomain.local/api</Url>
     <Username>agent</Username>
-    <E1>EncryptedPasswordWillAppearHere</E1>
     <Proxy />
     <ProxyDomain />
     <ProxyUsername />
