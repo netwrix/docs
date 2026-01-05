@@ -45,4 +45,4 @@ knowledge_article_id: kA04u0000000Hw5CAE
 ## Related articles
 
 - Reporting Module ⸱ v7.3
-- [Threat Manager Reporting Console Crashes](/docs/kb/threatmanager/threat-manager-reporting-console-crashes.md)
+- [Threat Manager Reporting Console Crashes](/docs/kb/threatmanager/licensing-and-system-issues/threat-manager-reporting-console-crashes.md)

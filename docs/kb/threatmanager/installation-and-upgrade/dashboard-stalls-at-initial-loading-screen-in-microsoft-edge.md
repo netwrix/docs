@@ -22,9 +22,9 @@ knowledge_article_id: kA0Qk0000001xvhKAA
 - The Netwrix Threat Manager Dashboard in Microsoft Edge stalls at the loading screen and does not proceed to the login screen.
 - The following error is present in the Developer Tools **Console** panel. To access the panel, navigate to **Settings (...) > More tools > Developer tools** (or press `CTRL + SHIFT + I`) > **Console** tab:
 
-![Screenshot 1](./images/ka0Qk000000E7Cv_0EMQk00000C80X1.png)
+![Screenshot 1](../0-images/ka0Qk000000E7Cv_0EMQk00000C80X1.png)
 
-![Screenshot 2](./images/ka0Qk000000E7Cv_0EMQk00000AzSUg.png)
+![Screenshot 2](../0-images/ka0Qk000000E7Cv_0EMQk00000AzSUg.png)
 
 ## Cause
 

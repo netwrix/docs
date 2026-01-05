@@ -64,4 +64,4 @@ Edit the Active Directory Service configuration to implement the HTTPS protocol.
 
 Refer to the following example of the `appsettings.json` file:
 
-![appsettings.json example](./images/ka0Qk0000005sxR_0EMQk000007sh3x.png)
+![appsettings.json example](../0-images/ka0Qk0000005sxR_0EMQk000007sh3x.png)

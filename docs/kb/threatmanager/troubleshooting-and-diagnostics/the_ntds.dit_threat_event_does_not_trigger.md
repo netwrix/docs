@@ -30,4 +30,4 @@ To resolve the issue, add all domains and systems to be tracked:
 1. Navigate to the policy settings in **Threat Prevention**.
 2. Select **Event Type** > **Additional Agents** > **Add All Agents and Domains**.
 
-![Screenshot showing the policy settings in Netwrix Threat Prevention with the Add All Agents and Domains option highlighted](./images/servlet_image_6a2f3ac990a0.png)
+![Screenshot showing the policy settings in Netwrix Threat Prevention with the Add All Agents and Domains option highlighted](../0-images/servlet_image_6a2f3ac990a0.png)

@@ -45,7 +45,7 @@ To resolve this issue, follow the steps provided in the first resolution. If the
 
   1. To verify this setting, review the **AD Agent** column in the interface:
 
-     ![AD](./images/servlet_image_6a2f3ac990a0.png)<br /><br />
+     ![AD](../0-images/servlet_image_6a2f3ac990a0.png)<br /><br />
 
   2. Enable or disable this setting using the **Agent Update Settings** option. Navigate to: https://docs.netwrix.com/docs/threatprevention/7_5 (Set Options Window).
   3. Access the settings via the following path: **Netwrix Threat Manager v7.3 > Administration > Policy Center > Agents Interface > Agents Interface Right-Click Menu > Update Agent Settings**. For details, see: https://docs.netwrix.com/docs/threatprevention/7_5 (Update Agent Settings).

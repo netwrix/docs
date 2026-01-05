@@ -17,7 +17,7 @@ After navigating to the **Licensing** page when attempting to update the license
 License activation error 2.
 ```
 
-![Licensing error screenshot](./images/ka0Qk000000CDMT_0EMQk00000Asaf3.png)
+![Licensing error screenshot](../0-images/ka0Qk000000CDMT_0EMQk00000Asaf3.png)
 
 ## Cause
 

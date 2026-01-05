@@ -38,7 +38,7 @@ Alter the default Netwrix Threat Prevention Event Service listening port(s) via 
 ```
 
 For example, change the FS port to `514` and click **OK**:  
-![port512.png](./images/ka0Qk000000DkZh_0EM4u000008LC2a.png)
+![port512.png](../0-images/ka0Qk000000DkZh_0EM4u000008LC2a.png)
 
 6. In the window below click the **Save Data Changes** icon.
 7. Restart the Netwrix Threat Prevention Event Service.

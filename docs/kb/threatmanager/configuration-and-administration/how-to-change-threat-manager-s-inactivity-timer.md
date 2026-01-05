@@ -27,4 +27,4 @@ It can be annoying for users when their Netwrix Threat Manager console times out
 4. Click into **User Access** then select the **Token Expiration** tab
 5. Adjust timer from the drop down
 
-![Graphical user interface, text, application  Description automatically generated](./images/ka0Qk000000DmBh_0EM4u000004d64Y.png)
+![Graphical user interface, text, application  Description automatically generated](../0-images/ka0Qk000000DmBh_0EM4u000004d64Y.png)
