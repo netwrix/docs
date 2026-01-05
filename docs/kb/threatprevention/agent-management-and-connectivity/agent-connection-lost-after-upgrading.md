@@ -41,7 +41,7 @@ In the `NVMonitorConfig` database, the host may appear multiple times within the
 > SELECT * FROM [NVMonitorConfig].[dbo].[Server] WHERE name LIKE '%<Host Name>%'
 > ```
 >
-> ![Query results in SSMS showing duplicate host entries in the Server table](./images/ka0Qk000000FNHF_0EMQk00000E8sBH.png)
+> ![Query results in SSMS showing duplicate host entries in the Server table](../0-images/ka0Qk000000FNHF_0EMQk00000E8sBH.png)
 
 ## Resolution
 

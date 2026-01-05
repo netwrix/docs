@@ -47,7 +47,7 @@ knowledge_article_id: kA04u000000HDkaCAG
 dotnet tool install --global haveibeenpwned-downloader
 ```
 
-![User-added image](./images/ka0Qk000000DZHh_0EM4u0000084oo1.png)
+![User-added image](../0-images/ka0Qk000000DZHh_0EM4u0000084oo1.png)
 
 ### Step 3. Update an already installed Pwnd Passwords Downloader
 
@@ -58,7 +58,7 @@ dotnet tool install --global haveibeenpwned-downloader
 dotnet tool update --global haveibeenpwned-downloader
 ```
 
-![User-added image](./images/ka0Qk000000DZHh_0EM4u0000084oo6.png)
+![User-added image](../0-images/ka0Qk000000DZHh_0EM4u0000084oo6.png)
 
 ### Usage of Pwnd Passwords Downloader
 
@@ -71,7 +71,7 @@ To download NTLM hashes:
 haveibeenpwned-downloader.exe -n pwnedpasswords
 ```
 
-![User-added image](./images/ka0Qk000000DZHh_0EM4u0000084ooB.png)
+![User-added image](../0-images/ka0Qk000000DZHh_0EM4u0000084ooB.png)
 
 ### Step 4. Prepare Pwned DB for SI
 
@@ -81,4 +81,4 @@ haveibeenpwned-downloader.exe -n pwnedpasswords
 4. Click **Select File** and choose downloaded txt file.
 5. Click the **Update** button.
 
-![User-added image](./images/ka0Qk000000DZHh_0EM4u0000084ooG.png)
+![User-added image](../0-images/ka0Qk000000DZHh_0EM4u0000084ooG.png)

@@ -26,7 +26,7 @@ knowledge_article_id: kA04u00000110ffCAA
 # Updating the Have I Been Pwnd NTML Hash List
 
 ## Overview
-The Pwnd Passwords Downloader is a dotnet tool to download all Pwned Passwords hash ranges and save them offline so they can be used without a dependency on the k-anonymity API. For Netwrix Password Policy Enforcer Netwrix Password Policy Enforcer v.10.1 and up, you will need to download NTLM hashes using the Pwnd Passwords Downloader.
+The Pwnd Passwords Downloader is a dotnet tool to download all Pwned Passwords hash ranges and save them offline so they can be used without a dependency on the k-anonymity API. For Netwrix Password Policy Enforcer v.10.1 and up, you will need to download NTLM hashes using the Pwnd Passwords Downloader.
 
 ## Prerequisites
 You will need to install .NET 6 first to be able to install [Pwnd Passwords Downloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader). Only then can you use that tool to get the latest breached hashes from Have I Been Pwned (HIBP). You can download and install .NET 6 from: https://dotnet.microsoft.com/en-us/download/dotnet/6.0
@@ -47,7 +47,7 @@ Follow the steps to install the Pwnd Passwords Downloader.
 dotnet tool install --global haveibeenpwned-downloader
 ```
 
-![A screenshot of a computer  Description automatically generated with medium confidence](./images/ka0Qk000000Dk3S_0EM4u000008L8RW.png)
+![A screenshot of a computer  Description automatically generated with medium confidence](../0-images/ka0Qk000000Dk3S_0EM4u000008L8RW.png)
 
 3. Close the command prompt.
 
@@ -61,7 +61,7 @@ Follow the steps to update an installed Pwnd Passwords Downloader.
 dotnet tool update --global haveibeenpwned-downloader
 ```
 
-![A picture containing text, screenshot, font  Description automatically generated](./images/ka0Qk000000Dk3S_0EM4u000008L8RX.png)
+![A picture containing text, screenshot, font  Description automatically generated](../0-images/ka0Qk000000Dk3S_0EM4u000008L8RX.png)
 
 ### Download NTML Hashes with the Pwnd Passwords Downloader
 Follow the steps to download NTLM hashes (for Netwrix Password Policy Enforcer v10.1 and up):
@@ -75,7 +75,7 @@ Run:
 haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm
 ```
 
-![A picture containing text, screenshot, font  Description automatically generated](./images/ka0Qk000000Dk3S_0EM4u000008L8RY.png)
+![A picture containing text, screenshot, font  Description automatically generated](../0-images/ka0Qk000000Dk3S_0EM4u000008L8RY.png)
 
 This screenshot shows the completed download.
 

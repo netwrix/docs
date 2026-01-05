@@ -43,4 +43,4 @@ The account running the SQL Server Service on the SQL server does not have acces
 4. Click **Apply** to save the change and then click **Restart**.
 5. Repeat steps 1–4 for **SQL Server Agent (Instance name)**.
 
-![SQL Server Configuration Manager showing Log On tab settings for Network Service](./images/ka0Qk000000E6NJ_0EMQk000009RgNm.png)
+![SQL Server Configuration Manager showing Log On tab settings for Network Service](../0-images/ka0Qk000000E6NJ_0EMQk000009RgNm.png)
