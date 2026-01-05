@@ -45,7 +45,7 @@ This problem can occur when the Agent password being sent to the Hub Server is i
 <HubDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <Url>https://myserver.mydomain.local/api</Url>
     <Username>agent</Username>
-    <Password><YourAgentPassword></Password>
+    <Password>YourAgentPassword</Password>
     <Proxy />
     <ProxyDomain />
     <ProxyUsername />

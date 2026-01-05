@@ -18,12 +18,12 @@ products:
 
 ## Questions
 
-The `opt/nnt/gen7agent/bin/` directory in Gen 7 Agent servers contains multiple `core.*` files.
+The `/opt/nnt/gen7agentcore/bin/` directory (see [Linux Agent Installation](https://docs.netwrix.com/docs/changetracker/8_1/install/agent/linuxos)) in Gen 7 Agent servers (Linux) contains multiple `core.*` files.
 
 1. What are these files?
 2. Is it safe to delete these files?
 
 ## Answers
 
-1. The `core.*` files located in the `opt/nnt/gen7agent/bin/` directory are core dumps. These core dumps are generated upon a process crash or a fatal error—they contain a snapshot of the process memory at the time of the crash or error.
+1. The `core.*` files located in the `/opt/nnt/gen7agentcore/bin/` directory are core dumps. These core dumps are generated upon a process crash or a fatal error—they contain a snapshot of the process memory at the time of the crash or error.
 2. These core files can be safely deleted to free up disk space.

@@ -28,7 +28,9 @@ knowledge_article_id: kA0Qk0000000ahpKAA
 ## Symptoms
 
 - The events report in Netwrix Change Tracker contains one or more `ErrorEvent` events. Their description states `Corrupt`.
-- Agent logs located in `C:\ProgramData\NNT\gen7agent.service\rolling-log.txt` contain the following line:
+- Agent logs (see [Rolling-Log File Location](https://docs.netwrix.com/docs/changetracker/8_1/install/agent/rollinglogfile)) contain the following line:
+  - **Windows:** `C:\ProgramData\NNT\gen7agent.app.netcore\rolling-log.txt`
+  - **Linux:** `/var/nnt/gen7agent.app.netcore/rolling-log.txt`
 
 ```text
 [timestamp] ERROR AgentTaskRunner - task execution failed for task %#% - %task_name% [timestamp]
@@ -42,26 +44,36 @@ The agent directory on affected devices contains multiple conflicting `Config-*.
 
 > **NOTE:** You can establish the affected agents via the events report—review the **DeviceName** and **AgentID** column values.
 
-Perform an agent reset to reconfigure affected agents. Refer to the following steps:
+Perform an agent reset to reconfigure affected agents:
 
-1. Stop the Netwrix Change Tracker Agent Service. Refer to the following Linux command:
+### Windows
 
-```bash
-# service nntgen7agent stop
-```
+1. Stop the Netwrix Change Tracker Agent Service.
 
-2. Navigate to the agent directory containing the Rolling-Log files. Refer to the following default path:
-
-```text
-C:\ProgramData\NNT\gen7agent.service\
-```
+2. Navigate to the agent directory (see [Rolling-Log File Location](https://docs.netwrix.com/docs/changetracker/8_1/install/agent/rollinglogfile)): `C:\ProgramData\NNT\gen7agent.app.netcore\`
 
 3. Right-click the `Hubdetails.xml` file and select **Edit**.
 
 4. Replace the `<E1>` tag pair with the `<Password>` tag pair. Replace the contents with the current agent account password, as defined on your Netwrix Change Tracker Hub Server. Save the changes.
 
-5. Start the Agent Service. Refer to the following Linux command:
+5. Start the Agent Service.
+
+### Linux
+
+1. Stop the Netwrix Change Tracker Agent Service:
 
 ```bash
-# service nntgen7agent start
+service nntgen7agent stop
+```
+
+2. Navigate to the agent directory (see [Rolling-Log File Location](https://docs.netwrix.com/docs/changetracker/8_1/install/agent/rollinglogfile)): `/var/nnt/gen7agent.app.netcore/`
+
+3. Edit the `Hubdetails.xml` file.
+
+4. Replace the `<E1>` tag pair with the `<Password>` tag pair. Replace the contents with the current agent account password, as defined on your Netwrix Change Tracker Hub Server. Save the changes.
+
+5. Start the Agent Service:
+
+```bash
+service nntgen7agent start
 ```
