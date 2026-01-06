@@ -81,6 +81,6 @@ credentials.
 
 **Step 7 –** Click MFA Login. Privilege Secure opens on the Dashboard Interface.
 
-![Dashboard Interface](/images/privilegesecure/25.12/accessmanagement/enduser/activedashboarduser.webp)
+![Dashboard Interface](/images/privilegesecure/25.12/accessmanagement/enduser/active.png)
 
 Privilege Secure is ready to use.

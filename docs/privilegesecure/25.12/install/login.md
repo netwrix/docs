@@ -70,7 +70,7 @@ enter the user credentials.
 
 **Step 6 –** Click MFA Login. The Privilege Secure Console opens on the Dashboard Interface.
 
-![Dashboard Interface](/images/privilegesecure/25.12/accessmanagement/enduser/activedashboarduser.webp)
+![Dashboard Interface](/images/privilegesecure/25.12/accessmanagement/enduser/active.png)
 
 :::note
 After five incorrect login attempts, the user will be locked out of the account for five

@@ -177,8 +177,8 @@ Complete the onboarding process misses on the Step 4 and Step 5 pages.
 **Exit From Step 5 Page – Onboard First Resource and Create Access Policy**
 
 Navigate to the Resources page and add a new server. See the
-[Add Resources Window](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/addresourcesonboard/addresourcesonboard.md) topic for additional
+[Add Resources Window](/docs/privilegesecure/25.12/admin/interface/resources/addserver/addsourcesonboard.md) topic for additional
 information.
 
 Navigate to the Access Policies page and create a new access policy. See the
-[Add Access Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/accesspolicy_1.md) topic for additional information.
+[Add Access Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/addaccesspolicy.md) topic for additional information.

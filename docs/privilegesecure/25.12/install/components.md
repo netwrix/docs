@@ -41,6 +41,7 @@ The `NPS.zip` file that can be downloaded from the Netwrix Customer portal conta
 
         - NPS Action Service
         - NPS Email Service
+        - NPS Host Scan Service
         - NPS License Service
         - NPS Proxy Service
         - NPS Scheduler Service

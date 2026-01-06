@@ -10,14 +10,14 @@ The Access Policies page is accessible from the Navigation pane underPolicyPolic
 configured access policies, which are used to control which users can complete which activities on
 which resources.
 
-![Access Policy Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/page.webp)
+![Access Policy Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/page.png)
 
 The pane on the left side of the page displays a list of the configured access policies. This pane
 has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
   table or list is filtered to the matching results.
-- Green + button — Create a new access policy. See the [Add Access Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/accesspolicy_1.md)
+- Blue + button — Create a new access policy. See the [Add Access Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/addaccesspolicy.md)
   topic for additional information.
 - Trashcan icon — Deletes the access policy. Icon appears when policy is hovered over. A
   confirmation window will display.
@@ -32,7 +32,7 @@ The selected access policy details display at the top of the main pane:
   connection profiles.
 - User icon — Shows extra group of users who can manage this access policy. The icon appears only if
   a custom role has been assigned to a policy. See the
-  [Custom Role Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/rolemanagement/rolemanagementcustom/rolemanagementcustom.md) for additional information.
+  [Custom Access Role Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/rolemanagement/customroles/customaccessrole.md) for additional information.
 
 If any of these settings are modified, Save and Cancel buttons are displayed. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
@@ -47,8 +47,4 @@ See the following topics for additional information:
     - [Activities Tab for Resource Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/resourcebasedpolicyt/activities/activities.md)
     - [Resources Tab for Resource Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/resourcebasedpolicyt/resources/resources.md)
 
-- Credential Based Policy:
-
-    - [Users Tab for Credential Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/credentialbasedpolic/users.md)
-    - [Activities Tab for Credential Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/credentialbasedpolic/activities.md)
-    - [Credentials Tab for Credential Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/credentialbasedpolic/credentials/credentials.md)
+- Credential Based Policy: [Credential Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/credentials.md)

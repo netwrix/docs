@@ -10,15 +10,16 @@ The Policy interface provides users with options for creating access policies, i
 activity sessions, onboarding and managing users, groups, resources, and credentials. This topic
 explains the interface features and how to use them.
 
-![Admin Policy Interface](/images/privilegesecure/25.12/accessmanagement/admin/policy/interface.webp)
+![Admin Policy Interface](/images/privilegesecure/25.12/accessmanagement/admin/policy/interface.png)
 
 Select the Policy interface for related pages:
 
 - [Access Policy Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/accesspolicy.md) — Add or modify user and group access to resources
 
     - [Connection Profiles Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/connectionprofiles/connectionprofiles.md) — Add or modify connection profiles
-    - [Activity Token Complexity Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/activitytokencomplex/activitytokencomplexity.md) — Add or modify the
+    - [Activity Token Complexity Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/activitytokencomp) — Add or modify the
       complexity of activity tokens
+    - [Command Restriction Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/sshcommands.md) - Define SSH command restrictions
 
 - [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) — Add or modify the platforms used
 

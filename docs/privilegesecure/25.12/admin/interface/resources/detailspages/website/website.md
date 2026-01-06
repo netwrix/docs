@@ -26,12 +26,8 @@ The details page shows the following information:
   management. This ensures that AD account operations are performed on a domain controller the
   website will reference for authentication.
 - Service Account — Displays the service account associated with the resource
-- Blue arrow button — Opens the Service Account details page. See the
-  [Service Accounts Page](/docs/privilegesecure/25.12/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional
-  information.
-- Green plus button — Opens the Add New Service Account window. See the
-  [Add New Service Account Window](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/addnewserviceaccount.md) topic for
-  additional information.
+- Blue arrow button — Opens the Service Account details page. 
+- Green plus button — Opens the Add New Service Account window. 
 
 If any of these settings are modified, Save and Cancel buttons are displayed. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.

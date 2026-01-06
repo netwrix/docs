@@ -91,7 +91,7 @@ Client Secret. See the [Service Accounts Page](/docs/privilegesecure/25.12/admin
 information.
 
 Add the Microsoft Entra ID Tenant resource to Privilege Secure using the Tenant ID. See the
-[Add New Microsoft Entra ID Tenant](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/entraidtenant.md) topic for additional
+[Add New Microsoft Entra ID Tenant](/docs/privilegesecure/25.12/admin/interface/resources/entraidtenant.md) topic for additional
 information.
 
 ## Rotate a Microsoft Entra ID Account Password in a Hybrid Tenant

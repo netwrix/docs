@@ -18,31 +18,28 @@ The Resources table has the following features:
 - Add — Opens a list of available resources to add. The Add list contains the following options:
 
     - New Server — Opens the Add Resources window to onboard new servers. See the
-      [Add Resources Window](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/addresourcesonboard/addresourcesonboard.md) topic for additional
+      [Add Resources Window](/docs/privilegesecure/25.12/admin/interface/resources/addserver/addsourcesonboard.md) topic for additional
       information.
     - New Domain — Opens the Domain Details page for a new domain. See the
-      [Add New Domain](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/domain.md) topic for additional information.
+      [Add New Domain](/docs/privilegesecure/25.12/admin/interface/resources/domain.md) topic for additional information.
     - New Website — Opens the Website Details page for a new website. See the
-      [Add New Website](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/website.md) topic for additional information.
+      [Add New Website](/docs/privilegesecure/25.12/admin/interface/resources/website.md) topic for additional information.
     - New Microsoft Entra ID Tenant — Opens the Microsoft Entra ID Tenant Details page for a new
-      tenant. See the [Add New Microsoft Entra ID Tenant](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/entraidtenant.md) topic for
+      tenant. See the [Add New Microsoft Entra ID Tenant](/docs/privilegesecure/25.12/admin/interface/resources/entraidtenant.md) topic for
       additional information.
     - New Secret Vault — Opens the Secret Vault Details page for a new vault. See the
-      [Add Secret Vault](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/secretvault/secretvault.md) topic for additional information.
+      [Add Secret Vault](/docs/privilegesecure/25.12/admin/interface/resources/secretvault.md) topic for additional information.
     - New Database — Opens the Databse Details page for a new database. See the
-      [Add New Database](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/database.md)topic for additional information.
+      [Add New Database](/docs/privilegesecure/25.12/admin/interface/resources/database.md)topic for additional information.
 
 - Remove — Removes the selected resource from being managed by the application. A confirmation
   window will display. See the
   [Remove Resource Window](/docs/privilegesecure/25.12/admin/interface/resources/removeresource.md) topic for additional
   information.
 - Change Platform — Opens the Change Platform window to modify the type of platform for the selected
-  host resource. See the [Change Platform Window](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/changeplatform.md)
-  topic for additional information.
+  host resource. 
 - Change Service Account — Opens the Change Service Account window to modify the service account
-  associated with the selected host resource. See the
-  [Change Service Account Window](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/changeserviceaccount.md) topic for
-  additional information.
+  associated with the selected host resource. 
 - Scan Resource — Scans a host resource for local users, groups, windows services, and scheduled
   tasks. A confirmation window will display.
 - Search — Searches the table or list for matches to the search string. When matches are found, the
@@ -65,7 +62,7 @@ The table has the following columns:
     - [Domain Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/domain/domain.md)
     - [Website Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/website/website.md)
     - [Microsoft Entra ID Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/entraid/entraid.md)
-    - [Secret Vault Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/secretvault/secretvault.md)
+    - [Secret Vault Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/secretvault.md)
     - [Database Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/databases/databases.md)
 
 - Operating System — Displays the operating system of the resource

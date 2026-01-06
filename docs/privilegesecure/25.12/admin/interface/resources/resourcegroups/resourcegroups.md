@@ -10,7 +10,7 @@ The Resources Groups page is accessible from the Navigation pane under Resources
 configured all configured resource groups and their details. Resources can be organized into groups
 to make it easier to manage common settings across them.
 
-![Resource Groups Details Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/resourcegroupspage.webp)
+![Resource Groups Details Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/resourcegroupspage.png)
 
 The pane on the left side of the page displays a list of the configured resource groups. This pane
 has the following features:
@@ -68,12 +68,9 @@ The table has the following features:
   will display.. Password rotation can be set to automatic or manual for managed accounts.
 - Unmanage — Remove the account from being managed by Privilege Secure
 - Change Platform — Opens the Change Platform window to modify the type of platform for the selected
-  host resource. See the [Change Platform Window](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/changeplatform.md) topic for
-  additional information.
+  host resource. 
 - Change Service Account — Opens the Change Service Account window to modify the service account
-  associated with the selected host resource. See the
-  [Change Service Account Window](/docs/privilegesecure/25.12/admin/interface/resources/addandchange/changeserviceaccount.md) topic for additional
-  information.
+  associated with the selected host resource. 
 - Schedule Rotation — Add the credential rotation task to the queue. This button is only available
   when the Method is Automatic managed.
 - Refresh — Reload the information displayed

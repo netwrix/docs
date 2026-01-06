@@ -30,9 +30,7 @@ The Users tab has the following features:
   Privilege Secure
 - View History — Opens the Password History window to displays the password history for the account
 - Password Reset Options — Customize password rotation options. This option is only available for
-  managed accounts. See the
-  [Password Reset Options Window](/docs/privilegesecure/25.12/admin/interface/resources/passwordresetoptions.md) topic for
-  additional information.
+  managed accounts. 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
   table or list is filtered to the matching results.
 - Refresh — Reload the information displayed

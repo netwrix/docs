@@ -1,7 +1,7 @@
 ---
 title: "SIEM Service"
 description: "SIEM Service"
-sidebar_position: 50
+sidebar_position: 60
 ---
 
 # SIEM Service

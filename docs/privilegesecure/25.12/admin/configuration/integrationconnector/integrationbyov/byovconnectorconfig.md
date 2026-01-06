@@ -284,7 +284,7 @@ Follow the steps to create a Policy.
 ![Create a new policy for the BYOV Connector](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/byovconnectorpolicy.webp)
 
 **Step 2 –** Click the **Plus** icon and create a new Policy. See the
-[Add Access Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/accesspolicy_1.md) topic for additional information.
+[Add Access Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/addaccesspolicy.md) topic for additional information.
 
 - Set the Type as **Resource Based** and select a Connection Profile, with **Default** being
   sufficient for most setups.
@@ -303,7 +303,7 @@ Follow the steps to create a Policy.
   [Resources Tab for Resource Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/resourcebasedpolicyt/resources/resources.md)
   topic for additional information.
 
-See the [Add Access Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/accesspolicy_1.md) topic for additional information on
+See the [Add Access Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/addaccesspolicy.md) topic for additional information on
 creating an Access Policy.
 
 After completing these steps, you can use the specified manually-managed user on the resources

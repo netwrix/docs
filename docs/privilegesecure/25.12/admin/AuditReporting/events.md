@@ -8,7 +8,7 @@ sidebar_position: 40
 
 The Events page shows event logs for the Privilege Secure Console.
 
-![Audit and Reporting Events Page](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/page/eventspage.webp)
+![Audit and Reporting Events Page](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/page/eventspage.png)
 
 The Events page has the following features:
 
@@ -24,5 +24,5 @@ The Events page has the following features:
     - Time – Timestamp of the event
     - User – User associated with the event
     - Access Policy – Name of the Access Policy
-    - Event Message – Description of the event
+    - Event Message – Description of the event. Includes any changes to Activities
     - Session ID – Unique identifier for the session

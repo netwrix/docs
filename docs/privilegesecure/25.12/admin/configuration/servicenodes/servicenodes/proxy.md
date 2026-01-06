@@ -1,7 +1,7 @@
 ---
 title: "Proxy Service"
 description: "Proxy Service"
-sidebar_position: 30
+sidebar_position: 40
 ---
 
 # Proxy Service

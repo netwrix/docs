@@ -11,7 +11,7 @@ Policy** > **Connection Profiles**. It shows the configuration options for manag
 the selected access policy. An approval workflow can be configured so that the session must be
 approved before the requester of the session can log in.
 
-![Connection Profiles Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/page_2.webp)
+![Connection Profiles Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/connection.png)
 
 The pane on the left side of the page displays a list of the configured connection profiles. This
 pane has the following features:
@@ -42,6 +42,7 @@ The selected profile details display in the main pane:
       with the admin role to watch a remote session live, or review it later. See the
       [Replay Viewer Window](/docs/privilegesecure/25.12/admin/dashboard/historical/replayviewer.md) topic for additional
       information.
+    - Record Keystrokes and Metadata - Default is to collect keystroke and metadata for sessions, but it can be disabled here.
 
 - Session Control settings:
 

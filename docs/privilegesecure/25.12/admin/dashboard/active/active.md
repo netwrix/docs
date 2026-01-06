@@ -11,7 +11,7 @@ grant temporary privileges and gain access to the resources defined by a previou
 Policy. See the [Access Policy Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/accesspolicy.md) topic for additional
 information.
 
-![Active Dashboard page](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/active.webp)
+![Active Dashboard page](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/active.png)
 
 The dashboard has the following features:
 
@@ -79,7 +79,7 @@ The table has the following columns:
     - [Domain Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/domain/domain.md)
     - [Website Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/website/website.md)
     - [Microsoft Entra ID Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/entraid/entraid.md)
-    - [Secret Vault Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/secretvault/secretvault.md)
+    - [Secret Vault Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/secretvault.md)
     - [Database Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/databases/databases.md)
 
 - Login Account — Displays the account used to log onto the resource
@@ -89,5 +89,5 @@ The table has the following columns:
   executed and not when the user was logged on to the resource.
 - End — Indicates when the session is scheduled to end the activity, which is determined by the
   start time plus the maximum session duration set by the access policy Connection Profile
-
-The table columns can be resized and sorted in ascending or descending order.
+- Notes - Any notes added by the session requestor
+- Ticket Number - Ticket number added by the session requestor

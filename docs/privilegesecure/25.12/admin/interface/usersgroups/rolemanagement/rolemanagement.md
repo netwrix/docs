@@ -17,7 +17,7 @@ following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
   table or list is filtered to the matching results.
-- Blue + button — Create a new role. See the [Add Custom Role](/docs/privilegesecure/25.12/admin/interface/usersgroups/rolemanagement/customrole.md) for additional
+- Blue + button — Create a new role. See the [Add Custom Role](/docs/privilegesecure/25.12/admin/interface/usersgroups/rolemanagement/customroles/rolemanagementcustom.md) for additional
   information.
 - Copy icon — Clones a role and adds a new entry to the Role list
 - Trashcan icon — Deletes the access policy. Icon appears when policy is hovered over. A

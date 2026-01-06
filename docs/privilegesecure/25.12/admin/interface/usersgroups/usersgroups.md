@@ -10,10 +10,11 @@ The Users & Groups page shows session information for onboarded users and groups
 and can log into the application to manage policies or run sessions. The Users & Groups page
 displays the same information as the [Users Dashboard](/docs/privilegesecure/25.12/admin/dashboard/users.md).
 
-![Users and Groups Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/usersgroupspage.webp)
+![Users and Groups Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/usersgroupspage.png)
 
 The Users table has the following features:
 
+- License count (used/total)
 - Search — Searches the table or list for matches to the search string. When matches are found, the
   table or list is filtered to the matching results.
 - Filter — Provides options to filter results based on a chosen criterion: User, Group, Application,
@@ -37,7 +38,7 @@ The table has the following columns:
   information.
 - User Name — Displays the sAMAccountName for the account
 - User Principal Name — Displays the UPN value for the account
-- Email — Displays the associated email address, if available
+- Licensed - indicates if this user takes a license
 - Last Login — Date timestamp for the last time the user logged into the application
 - Locked – This is a snippet
 - Active Sessions — Displays the number of active sessions for the user or group

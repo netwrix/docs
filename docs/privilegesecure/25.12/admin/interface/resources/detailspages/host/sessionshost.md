@@ -1,7 +1,7 @@
 ---
 title: "Sessions Tab for Host"
 description: "Sessions Tab for Host"
-sidebar_position: 10
+sidebar_position: 30
 ---
 
 # Sessions Tab for Host

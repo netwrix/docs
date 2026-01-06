@@ -9,7 +9,7 @@ sidebar_position: 60
 The Credential Groups page is accessible from the Navigation pane under Credentials. It shows the
 configured credential groups, which are used to control account assignments in Credential Based
 access policies. See the
-[Credentials Tab for Credential Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/credentialbasedpolic/credentials/credentials.md)
+[Credentials Tab for Credential Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/credentials.md)
 topic for additional information.
 
 ![Administrative Credential Group Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/credentialgroupspage.webp)
@@ -38,9 +38,7 @@ The table has the following features:
   table or list is filtered to the matching results.
 - Type — Provides options to filter results based on a chosen criterion: Internal, Standard, and
   Service
-- Add Credentials — Opens the Add Credentials window. See the
-  [Add Credentials to a Credential Group](/docs/privilegesecure/25.12/admin/interface/credentials/credentialgroups/addcredentials.md#add-credentials-to-a-credential-group)
-  topic for additional information.
+- Add Credentials — Opens the Add Credentials window. 
 - Remove — Removes the selected item
 - Refresh — Reload the information displayed
 

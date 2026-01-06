@@ -1,7 +1,7 @@
 ---
 title: "Access Policies Tab for Host"
 description: "Access Policies Tab for Host"
-sidebar_position: 20
+sidebar_position: 40
 ---
 
 # Access Policies Tab for Host

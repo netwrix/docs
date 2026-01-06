@@ -16,8 +16,13 @@ The Users tab has the following features:
   [Add Users & Groups Window](/docs/privilegesecure/25.12/admin/interface/usersgroups/add/addusersandgroups.md) topic for additional
   information.
 - Remove — Removes the selected item from being associated with the policy
-- Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- Search — Searches the table or list for matches to the search string. 
+
+:::note
+If a seach finds a match for a user (or users) that is not already listed in the policy, an "Add User" box appears. Clicking on this box will open the Add User modal with the search results for quickly adding users.
+:::
+
+ ![Quick Add](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/policyresource/quickadd.png)
 - Type — Provides options to filter results based on a chosen criterion:
 
     - All — Displays all individual and group types

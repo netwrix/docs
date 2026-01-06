@@ -8,7 +8,7 @@ sidebar_position: 10
 
 On the Service Nodes page, configure the services for each installed service node.
 
-![Service Nodes Page](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/servicenodespage.webp)
+![Service Nodes Page](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/servicenodespage.png)
 
 The left of the page lists the Service Nodes and the services running on them:
 
@@ -27,6 +27,7 @@ The right of the page shows details of the selected service:
 
 - [Action Service](/docs/privilegesecure/25.12/admin/configuration/servicenodes/servicenodes/action.md)
 - [Email Service](/docs/privilegesecure/25.12/admin/configuration/servicenodes/servicenodes/email.md)
+- [Host Scan Service](/docs/privilegesecure/25.12/admin/configuration/servicenodes/servicenodes/hostscan.md)
 - [Proxy Service](/docs/privilegesecure/25.12/admin/configuration/servicenodes/servicenodes/proxy.md)
 - [Scheduler Service](/docs/privilegesecure/25.12/admin/configuration/servicenodes/servicenodes/scheduler.md)
 - [SIEM Service](/docs/privilegesecure/25.12/admin/configuration/servicenodes/servicenodes/siem.md)

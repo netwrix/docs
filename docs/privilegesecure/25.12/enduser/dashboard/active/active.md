@@ -10,7 +10,7 @@ The Active sessions dashboard shows all currently active sessions. Create an Act
 grant temporary privileges and gain access to the resources defined by a previously created Access
 Policy.
 
-![End User Active Dashboard](/images/privilegesecure/25.12/accessmanagement/enduser/activedashboarduser.webp)
+![End User Active Dashboard](/images/privilegesecure/25.12/accessmanagement/enduser/active.png)
 
 The Active Sessions table has the following features:
 
@@ -52,5 +52,5 @@ The table has the following columns:
   executed and not when the user was logged on to the resource.
 - End — Indicates when the session is scheduled to end the activity, which is determined by the
   start time plus the maximum session duration set by the access policy Connection Profile
-
-The table columns can be resized and sorted in ascending or descending order.
+- Notes - Any notes added by the session requestor
+- Ticket Number - Ticket number added by the session requestor

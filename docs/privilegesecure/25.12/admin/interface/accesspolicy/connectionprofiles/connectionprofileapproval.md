@@ -16,15 +16,13 @@ Follow the steps to add an approval workflow to the console.
 
 **Step 1 –** Navigate to the **Policy** > **Access Policies** > **Connection Profiles** page.
 
-**Step 2 –** Select the **Connection Profile** and click any field to edit.
+**Step 2 –** Select the connection profile to edit
 
-![addapprovalworkflow](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/addapprovalworkflow.webp)
-
-**Step 3 –** In the Approval Workflow section, select **Tiered** and click **Save**.
+**Step 3 –** Scroll down to the Approval Workflow section, select **Tiered** and click **Save**.
 
 ![Add approval teir to workflow](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/addapprovalteirtoworkflow.webp)
 
-**Step 4 –** Once the policy has been created, click the **Add Tier** icon to add an Approval Tier.
+**Step 4 –** Once the policy has been created, click the **Add Tier** icon (green + in a circle) to add an Approval Tier.
 
 ![Tier 1 Escalation Options](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/tier1escalationoptions.webp)
 

@@ -8,7 +8,7 @@ sidebar_position: 40
 
 The Users tab shows information about the local users on the selected resource.
 
-![Host Users Tab](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/resources/usershost.webp)
+![Host Users Tab](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/resources/usershost.png)
 
 The Users tab has the following features:
 
@@ -24,14 +24,10 @@ The Users tab has the following features:
 - Verify — Checks that the credentials for the selected account match the credentials set by
   Privilege Secure
 - View History — Opens the Password History window to displays the password history for the account
-- Password Reset Options — Customize password rotation options. This option is only available for
-  managed accounts. See
-  [Password Reset Options Window](/docs/privilegesecure/25.12/admin/interface/resources/passwordresetoptions.md) topic for
-  additional information.
+- Password Reset Options — Customize password rotation options including rotation before and/or after a session. Additionally, when managed account credentials are relased via a credential-based access policy, the default is to disable the managed account.  However, there is an option here to keep the account enabled. This option is only available for managed accounts. 
 - Refresh — Reload the information displayed
 
 The table has the following columns:
-
 - Checkbox — Check to select one or more items
 - Name — Displays the name of the account
 - User Name — Displays the sAMAccountName for the account
@@ -44,11 +40,11 @@ The table has the following columns:
   [Credentials Page](/docs/privilegesecure/25.12/admin/interface/credentials/credentials.md) topic for additional information.
 - Rotate Start | End — Indicates if the account will have a password rotation on session start, end,
   both, or neither
+- Keep Enabled - No means if the credentials are released via a credential-based Access Policy, then the account is disabled. Yes means the account stays enabled. No is the default.
 - Dependents — Number of scheduled tasks or Windows services using this account.
 - Status — Indicates if the account credentials have been verified by Privilege Secure. See the
   [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) topic for additional information on configuring
   a verification schedule.
-
     - Unspecified — Verification check has not run
     - Verified — Confirmed the credentials match the value stored in Privilege Secure
     - Mismatch — Credentials do not match the value stored in Privilege Secure. This status only
@@ -66,4 +62,3 @@ The table has the following columns:
 - Complexity — Indicates the password complexity policy used for the account. See the
   [Password Complexity Page](/docs/privilegesecure/25.12/admin/interface/platforms/passwordcomplexity/passwordcomplexity.md) topic for additional information.
 
-The table columns can be resized and sorted in ascending or descending order.

@@ -6,8 +6,7 @@ sidebar_position: 40
 
 # Custom Access Role Details Page
 
-The Role Management page is accessible from the Navigation pane under Users & Group. It provides
-details on all available roles for Privilege Secure users. Here we discuss the custom access role.
+The Role Management page is accessible from the Navigation pane under Users & Groups. Here we discuss the custom access role. Users assigned this role are allowed to modify aspects of Access Policies that normally only Administrators are allowed to do.
 
 ![Custome Role Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/details/customaccessrole.png)
 

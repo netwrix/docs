@@ -14,7 +14,7 @@ fields.
 
 **Step 2 –** In the Connection Profiles list, click the **Plus** icon.
 
-![Add Connection Profile](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/addconnectionprofile.webp)
+![Add Connection Profile](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/connection.png)
 
 **Step 3 –** Enter the desired information to configure a new connection profile.
 

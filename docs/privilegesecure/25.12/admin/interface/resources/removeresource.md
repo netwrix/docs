@@ -1,7 +1,7 @@
 ---
 title: "Remove Resource Window"
 description: "Remove Resource Window"
-sidebar_position: 50
+sidebar_position: 70
 ---
 
 # Remove Resource Window
@@ -16,27 +16,13 @@ Follow the steps to remove a resource.
 
 **Step 3 –** Click **Remove** to open the Remove Resource window.
 
-![Remove Resource Window](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/removeresource.webp)
+![Remove Resource Window](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/removeresource.png)
 
-**Step 4 –** Select the **Remove from Database** checkbox to remove the selected resource(s) from
-the database.
+**Step 4 –** Click **Remove ** to confirm that you want to remove the selected resource(s).
 
 :::note
-Selecting this checkbox will remove all records of the resource(s) from the database. It
+This action will remove all records of the resource(s) from the database. It
 will not prevent the resource from being synced or added again.
 :::
 
 
-**Step 5 –** Click **Remove** to confirm that you want to remove the selected resource(s).
-
-- The Remove from Database checkbox does not change the behavior for Database, Website, Entra ID,
-  Domain, and secret vault resources. These resource types will be deleted from the database when
-  you click Remove even if the Remove from Database checkbox is not selected.
-- The Remove from Database checkbox must be selected and confirmed by clicking **Remove** to remove
-  any Active Directory-related resources.
-- Any non-Acitve Directory related resource whether **Remove from Database** option is selected or
-  not, will be removed from the Database.
-
-**Step 6 –** Click **Okay** to remove the selected resource(s).
-
-The resource has been removed from the Resource page.
