@@ -153,9 +153,10 @@ function main() {
       }
 
       const versionUrl = versionToUrl(version);
-      const destination = config.destinationPattern.replace('{version}', versionUrl);
+      // Use the actual version (with dots) for file system path, not the URL version
+      const destination = config.destinationPattern.replace('{version}', version);
 
-      console.log(`\n  📖 Version: ${version} (${versionUrl})`);
+      console.log(`\n  📖 Version: ${version} (URL: ${versionUrl})`);
       console.log(`     Source: ${config.source}`);
       console.log(`     Dest:   ${destination}`);
 
