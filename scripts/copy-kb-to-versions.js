@@ -4,6 +4,12 @@
  * Copy KB content into versioned product docs folders
  * Solution 2 - Approach C: Build Script
  *
+ * Features:
+ * - Copies KB articles from central location to versioned docs folders
+ * - Rewrites absolute KB links to relative paths during copy
+ * - Removes .md extensions from links (Docusaurus best practice)
+ * - Preserves external links and images unchanged
+ *
  * Usage:
  *   node scripts/copy-kb-to-versions.js          # Copy all configured products/versions
  *   node scripts/copy-kb-to-versions.js --dry    # Preview without copying
@@ -41,9 +47,53 @@ function versionToUrl(version) {
 }
 
 /**
+ * Rewrite KB links from absolute to relative paths
+ * Converts: /docs/kb/accessanalyzer/category/article.md
+ * To: ../category/article (relative, no .md extension)
+ */
+function rewriteKbLinks(content, sourceFilePath, kbSourceRoot) {
+  const kbLinkRegex = /\[([^\]]+)\]\(\/docs\/kb\/accessanalyzer\/([^)]+\.md)\)/g;
+
+  return content.replace(kbLinkRegex, (match, linkText, targetPath) => {
+    // Calculate relative path from source file to target file
+    const sourceDir = path.dirname(sourceFilePath);
+    const absoluteTargetPath = path.join(kbSourceRoot, targetPath);
+    let relativePath = path.relative(sourceDir, absoluteTargetPath);
+
+    // Remove .md extension (Docusaurus best practice)
+    relativePath = relativePath.replace(/\.md$/, '');
+
+    // Normalize path separators (Windows compatibility)
+    relativePath = relativePath.replace(/\\/g, '/');
+
+    // Add ./ prefix for same-directory links
+    if (!relativePath.startsWith('../') && !relativePath.startsWith('./')) {
+      relativePath = './' + relativePath;
+    }
+
+    // Reconstruct markdown link with relative path
+    return `[${linkText}](${relativePath})`;
+  });
+}
+
+/**
+ * Read markdown file, rewrite KB links, and write to destination
+ */
+function rewriteAndCopyMarkdownFile(srcPath, destPath, kbSourceRoot) {
+  // Read source file
+  const content = fs.readFileSync(srcPath, 'utf8');
+
+  // Rewrite KB links to relative paths
+  const transformedContent = rewriteKbLinks(content, srcPath, kbSourceRoot);
+
+  // Write to destination
+  fs.writeFileSync(destPath, transformedContent, 'utf8');
+}
+
+/**
  * Recursively copy directory
  */
-function copyDirectorySync(src, dest) {
+function copyDirectorySync(src, dest, kbSourceRoot) {
   // Create destination directory
   if (!fs.existsSync(dest)) {
     fs.mkdirSync(dest, { recursive: true });
@@ -58,10 +108,15 @@ function copyDirectorySync(src, dest) {
 
     if (entry.isDirectory()) {
       // Recursively copy subdirectory
-      copyDirectorySync(srcPath, destPath);
+      copyDirectorySync(srcPath, destPath, kbSourceRoot);
     } else {
-      // Copy file
-      fs.copyFileSync(srcPath, destPath);
+      // Process markdown files with link rewriting
+      if (entry.name.endsWith('.md')) {
+        rewriteAndCopyMarkdownFile(srcPath, destPath, kbSourceRoot);
+      } else {
+        // Copy non-markdown files as-is (images, JSON, etc.)
+        fs.copyFileSync(srcPath, destPath);
+      }
     }
   }
 }
@@ -187,7 +242,7 @@ function main() {
 
         // Copy source to destination
         if (!isDryRun) {
-          copyDirectorySync(config.source, destination);
+          copyDirectorySync(config.source, destination, config.source);
 
           // Count copied files
           const countFiles = (dir) => {
