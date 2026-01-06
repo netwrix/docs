@@ -8,6 +8,7 @@
  * - Copies KB articles from central location to versioned docs folders
  * - Rewrites absolute KB links to relative paths during copy
  * - Removes .md extensions from links (Docusaurus best practice)
+ * - Generates _category_.json files for proper category labeling
  * - Preserves external links and images unchanged
  *
  * Usage:
@@ -33,6 +34,22 @@ const CONFIG = {
     source: 'docs/kb/accessanalyzer',
     destinationPattern: 'docs/accessanalyzer/{version}/kb'
   }
+};
+
+// Category folder name to display label mapping
+const CATEGORY_LABELS = {
+  'active-directory-auditing': 'Active Directory Auditing',
+  'connection-profiles-and-credentials': 'Connection Profiles and Credentials',
+  'database-auditing-and-configuration': 'Database Auditing and Configuration',
+  'entra-id-and-azure-integration': 'Entra ID and Azure Integration',
+  'exchange-online-integration': 'Exchange Online Integration',
+  'file-system-and-sensitive-data-discovery': 'File System and Sensitive Data Discovery',
+  'installation-and-upgrades': 'Installation and Upgrades',
+  'job-management-and-scheduling': 'Job Management and Scheduling',
+  'reference-and-technical-specifications': 'Reference and Technical Specifications',
+  'reports-and-web-console': 'Reports and Web Console',
+  'sharepoint-online-integration': 'SharePoint Online Integration',
+  'troubleshooting-and-errors': 'Troubleshooting and Errors'
 };
 
 // ============================================================================
@@ -91,6 +108,26 @@ function rewriteAndCopyMarkdownFile(srcPath, destPath, kbSourceRoot) {
 }
 
 /**
+ * Generate _category_.json file for a category folder
+ */
+function generateCategoryFile(destPath, folderName) {
+  const label = CATEGORY_LABELS[folderName];
+
+  if (!label) {
+    return; // Skip if no label mapping exists
+  }
+
+  const categoryConfig = {
+    label: label,
+    collapsed: true,
+    collapsible: true
+  };
+
+  const categoryFilePath = path.join(destPath, '_category_.json');
+  fs.writeFileSync(categoryFilePath, JSON.stringify(categoryConfig, null, 2) + '\n', 'utf8');
+}
+
+/**
  * Recursively copy directory
  */
 function copyDirectorySync(src, dest, kbSourceRoot) {
@@ -109,6 +146,11 @@ function copyDirectorySync(src, dest, kbSourceRoot) {
     if (entry.isDirectory()) {
       // Recursively copy subdirectory
       copyDirectorySync(srcPath, destPath, kbSourceRoot);
+
+      // Generate _category_.json for category folders (skip root and 0-images)
+      if (entry.name !== '0-images') {
+        generateCategoryFile(destPath, entry.name);
+      }
     } else {
       // Process markdown files with link rewriting
       if (entry.name.endsWith('.md')) {
