@@ -81,8 +81,25 @@ function acquireLock(isDryRun) {
     }
   }
 
-  // Create lock file
-  fs.writeFileSync(LOCKFILE, JSON.stringify({ timestamp: Date.now() }), 'utf8');
+  // Create lock file atomically (prevents TOCTOU race conditions)
+  try {
+    const fd = fs.openSync(
+      LOCKFILE,
+      fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_WRONLY,
+      0o600
+    );
+
+    try {
+      fs.writeFileSync(fd, JSON.stringify({ timestamp: Date.now() }), 'utf8');
+    } finally {
+      fs.closeSync(fd);
+    }
+  } catch (err) {
+    if (err.code === 'EEXIST') {
+      throw new Error('KB copy script is already running. If this is incorrect, delete .kb-copy.lock');
+    }
+    throw new Error(`Cannot create lock file: ${err.message}`);
+  }
 }
 
 function releaseLock(isDryRun) {
@@ -117,7 +134,7 @@ function validateDestinationPath(destPath) {
   const abs = path.resolve(PROJECT_ROOT, destPath);
   const rel = path.relative(PROJECT_ROOT, abs);
 
-  // Reject if resolves to project root itself
+  // Defensive: block destPath that resolves exactly to the repo root
   if (rel === '') {
     throw new Error(`Destination cannot be project root: ${destPath}`);
   }
@@ -168,8 +185,15 @@ function rewriteKbLinks(content, sourceFilePath, kbSourceRoot, productName) {
 
   return content.replace(kbLinkRegex, (match, linkText, targetPath) => {
     // Use absolute paths anchored to PROJECT_ROOT
-    const absoluteSourcePath = path.resolve(PROJECT_ROOT, sourceFilePath);
-    const absoluteTargetPath = path.resolve(PROJECT_ROOT, kbSourceRoot, targetPath);
+    const absoluteSourcePath = path.isAbsolute(sourceFilePath)
+      ? sourceFilePath
+      : path.resolve(PROJECT_ROOT, sourceFilePath);
+
+    const absoluteKbRoot = path.isAbsolute(kbSourceRoot)
+      ? kbSourceRoot
+      : path.resolve(PROJECT_ROOT, kbSourceRoot);
+
+    const absoluteTargetPath = path.resolve(absoluteKbRoot, targetPath);
 
     const sourceDir = path.dirname(absoluteSourcePath);
     let relativePath = path.relative(sourceDir, absoluteTargetPath);
