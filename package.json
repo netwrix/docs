@@ -10,6 +10,7 @@
     "start-chok": "cross-env NODE_OPTIONS=--max-old-space-size=16384 CHOKIDAR_USEPOLLING=true npx docusaurus start --port=4500 --no-open",
     "prebuild": "node scripts/copy-kb-to-versions.js",
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=16384 npx docusaurus build",
+    "preci": "node scripts/copy-kb-to-versions.js",
     "ci": "npx docusaurus build",
     "swizzle": "npx docusaurus swizzle",
     "clear": "npx docusaurus clear",
