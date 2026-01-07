@@ -6,11 +6,11 @@ keywords: [training, course, certification, partners, presales, data classificat
 description: "Become a certified Presales Engineer for Netwrix Data Classification"
 ---
 
-import { NDCValue, NDCConcepts, NDCIntro, NDCTaxonomies, NDCWorkflows, NDCUsersReporting, NDCAdministering, NDCIntegrationNA, NDCTroubleshooting, NDCDemoLab, NDCAdditional } from '@site/src/training/data-classification';
+import { NDCValue, NDCConcepts, NDCIntro, NDCTaxonomies, NDCWorkflows, NDCUsersReporting, NDCAdministering, NDCIntegrationNA, NDCTroubleshooting, NDCDemo, NDCAdditional } from '@site/src/training/data-classification';
 import { Company, NA, NDC } from '@site/src/training/products';
 
 
-Estimated length:  5 hours + Recording of Demo
+Estimated length:  5.75 hours
 
 This learning path grants <Company /> certification as a Presales Engineer for this product. It contains the following courses:
 
@@ -23,7 +23,7 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 * 3124 <NDC /> – Administering
 * 3130 <NDC /> – Integration with <NA />
 * 4120 <NDC /> – Basic Troubleshooting
-* 6120 <NDC /> – Presales Lab Experience
+* 5120 <NDC /> – Demo Basic Use Cases
 
 <NDCValue />
 
@@ -43,6 +43,6 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 
 <NDCTroubleshooting />
 
-<NDCDemoLab />
+<NDCDemo />
 
 <NDCAdditional />
