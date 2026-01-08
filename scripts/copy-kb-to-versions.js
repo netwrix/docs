@@ -201,9 +201,14 @@ function validateEnvironment(filterProducts, filterVersions, CONFIG) {
 // Link Rewriting (Dynamic Product)
 // ============================================================================
 
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function rewriteKbLinks(content, sourceFilePath, kbSourceRoot, productName) {
   // Dynamic regex based on product name
-  const kbLinkRegex = new RegExp(`\\[([^\\]]+)\\]\\(\\/docs\\/kb\\/${productName}\\/([^)]+\\.md)\\)`, 'g');
+  const escapedProduct = escapeRegExp(productName);
+  const kbLinkRegex = new RegExp(`\\[([^\\]]+)\\]\\(\\/docs\\/kb\\/${escapedProduct}\\/([^)]+\\.md)\\)`, 'g');
 
   return content.replace(kbLinkRegex, (match, linkText, targetPath) => {
     // Use absolute paths anchored to PROJECT_ROOT
