@@ -19,6 +19,6 @@ To use the scheduler tool:
     ![scheduler](/images/platgovsalesforce/clean_up/scheduler.webp)
 
 2. Select the category to automate by clicking on **Disabled** to enable it. There is no save
-   button, automation is turned on and saved by toggling **Disabled**/**Enabled**.
+   button, automation is turned on and saved by toggling **Enabled**/**Disabled**.
 3. Select the **Frequency** , **Day** and **Time**. Your selections are automatically saved.
 4. Click any menu item to close the **Scheduler**.

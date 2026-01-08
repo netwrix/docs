@@ -25,6 +25,7 @@ The report is divided into multiple tabs:
     - Scanner Logs
     - Scanner Additional Information
     - Change Log Creation (sandbox option)
+- Scanner Inactivity Alert
 - Jira Configuration
     - Credentials
     - Status Mapping
@@ -78,6 +79,62 @@ limits on different
 you may want to disable change logs to save space.
 
 ![Control Change Log Creation in Sandbox](/images/platgovsalesforce/installing_strongpoint/config_stats_enable_change_log.webp)
+
+## Scanner Inactivity Alert
+
+The Scanner Inactivity Alert feature provides automated email notifications to designated administrators when the Auto Scanner fails to run according to its configured schedule. This proactive monitoring ensures that your Salesforce environment remains continuously protected.
+
+![Scanner Inactivity Alert Section](/images/platgovsalesforce/scanner_inactivity_alert/Scanner_Inactivity_Alert.webp)
+
+### Configuration Steps
+
+#### Step 1: Enable Scanner Inactivity Alert
+
+1. **Locate the Enable Checkbox**
+   - Find the checkbox labeled "Enable Scanner Inactivity Alert"
+
+2. **Enable the Feature**
+   - Select the checkbox to enable scanner inactivity alerts
+   - Once enabled, the Admin Users Selection panel appears below
+
+#### Step 2: Select Admin Users
+
+After enabling the alert, configure the recipients.
+
+##### Admin Users Selection Panel
+
+A multi-select list displays available administrator users.
+
+##### Select Recipients
+
+The system lists all Salesforce users with the System Administrator profile.
+
+![Admin Users Selection](/images/platgovsalesforce/scanner_inactivity_alert/Scanner_Inactivity_Alert_Select.webp)
+
+Use the multi-select panel to manage recipients:
+
+- **Search**: Type to filter admin users by name
+- **Select**: Click a user to add them to the recipient list
+- **Remove**: Click a selected user again to remove them
+- Multiple users can be selected
+
+##### Review Selection
+
+- Confirm all intended recipients are selected
+- For redundancy, consider selecting more than one admin
+
+#### Step 3: Save Configuration
+
+##### Save Settings
+
+1. Click **Save Configuration** at the bottom of the page
+2. A loading spinner appears while the configuration is saved
+3. Wait for the confirmation message
+
+
+#### Alert Trigger Conditions
+
+The system continuously monitors the Auto Scanner and sends email alerts when it detects that the scanner is not running as configured in the scheduler.
 
 ## Jira Configuration
 

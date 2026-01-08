@@ -44,4 +44,4 @@ To validate data with the Customization Quick Search:
 2. Scroll, **Search** or add **Filter(s)** to locate the customization.
 3. Click on the **Customization** and validate the data.
 
-![custquicksearch](/images/platgovnetsuite/customizations/custquicksearch.webp)
+![custquicksearch](/images/platgovsalesforce/customizations/custquicksearch.webp)
