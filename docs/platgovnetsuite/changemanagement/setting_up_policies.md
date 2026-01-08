@@ -122,7 +122,7 @@ To add new change levels, select **New** or use the **+** next to a field when e
 - **User Roles**: Changes to role assignments on the Change Control. Default: Log Changes Only
 - **User Role Assignment**: Changes to user role assignments on the Change Control. Default: Log
   Changes Only
-- **User Role Related Objects**: Changes related to user role changes on the Change Control.
+- **User Role Related Objects**: Changes related to user role changes on the Change Control. These are the preferred forms listed under the role’s Forms tab and the saved searches under the Searches tab.
   Default: Log Changes Only
 - **NetSuite SetUp and Preferences**: Changes to NetSuite setup objects including accounting lists,
   segments, enabled features and preferences. Default: Log Changes Only
