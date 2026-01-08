@@ -65,69 +65,63 @@ function acquireLock(isDryRun) {
 
   const tenMinutes = 10 * 60 * 1000;
 
-  // Try to create lock atomically first. If it exists, decide stale vs active.
-  try {
-    const fd = fs.openSync(
-      LOCKFILE,
-      fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_WRONLY,
-      0o600
-    );
+  // Try at most twice: initial attempt + one retry after stale deletion
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const now = Date.now();
 
+    // 1) Attempt atomic create (no pre-checks)
     try {
-      fs.writeFileSync(fd, JSON.stringify({ timestamp: Date.now() }), 'utf8');
-    } finally {
-      fs.closeSync(fd);
+      const fd = fs.openSync(
+        LOCKFILE,
+        fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_WRONLY,
+        0o600
+      );
+
+      try {
+        fs.writeFileSync(fd, JSON.stringify({ timestamp: now }), 'utf8');
+      } finally {
+        fs.closeSync(fd);
+      }
+
+      return; // Lock acquired
+    } catch (err) {
+      if (err.code !== 'EEXIST') {
+        throw new Error(`Cannot create lock file: ${err.message}`);
+      }
     }
 
-    return; // Lock acquired successfully
-  } catch (err) {
-    if (err.code !== 'EEXIST') {
-      throw new Error(`Cannot create lock file: ${err.message}`);
-    }
-  }
-
-  // Lock exists: check if it is stale
-  let stats;
-  try {
-    stats = fs.statSync(LOCKFILE);
-  } catch (err) {
-    // Race: lock disappeared between EEXIST and stat; retry once
-    return acquireLock(isDryRun);
-  }
-
-  const lockAge = Date.now() - stats.mtimeMs;
-
-  if (lockAge <= tenMinutes) {
-    throw new Error('KB copy script is already running. If this is incorrect, delete .kb-copy.lock');
-  }
-
-  // Stale: remove and retry atomic create
-  console.log('⚠️  Removing stale lock file');
-  try {
-    fs.unlinkSync(LOCKFILE);
-  } catch (err) {
-    throw new Error(`Cannot remove stale lock file: ${err.message}`);
-  }
-
-  // Retry once after stale removal
-  try {
-    const fd = fs.openSync(
-      LOCKFILE,
-      fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_WRONLY,
-      0o600
-    );
-
+    // 2) Lock exists: determine staleness using a file descriptor (avoid statSync(path))
+    let readFd;
     try {
-      fs.writeFileSync(fd, JSON.stringify({ timestamp: Date.now() }), 'utf8');
-    } finally {
-      fs.closeSync(fd);
+      readFd = fs.openSync(LOCKFILE, fs.constants.O_RDONLY);
+    } catch (err) {
+      // Race: lock disappeared between EEXIST and open; retry loop
+      continue;
     }
-  } catch (err) {
-    if (err.code === 'EEXIST') {
+
+    let lockAge;
+    try {
+      const stats = fs.fstatSync(readFd);
+      lockAge = now - stats.mtimeMs;
+    } finally {
+      fs.closeSync(readFd);
+    }
+
+    if (lockAge <= tenMinutes) {
       throw new Error('KB copy script is already running. If this is incorrect, delete .kb-copy.lock');
     }
-    throw new Error(`Cannot create lock file: ${err.message}`);
+
+    // 3) Stale lock: remove and retry once
+    console.log('⚠️  Removing stale lock file');
+    try {
+      fs.unlinkSync(LOCKFILE);
+    } catch (err) {
+      throw new Error(`Cannot remove stale lock file: ${err.message}`);
+    }
   }
+
+  // If we get here, another process is racing us
+  throw new Error('KB copy script is already running. If this is incorrect, delete .kb-copy.lock');
 }
 
 function releaseLock(isDryRun) {
