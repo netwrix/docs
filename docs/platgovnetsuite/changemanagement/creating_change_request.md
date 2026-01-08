@@ -65,6 +65,13 @@ request in your sandbox account.
           toggle **Selecting** or **Deselecting All**.- Click **Add Selected Customizations**. If
           the Customization (based on Script ID) exists in the current account it is added to the
           **Customizations**. If it does not exist, it is added to the **Proposed Customizations**.
+          After the action completes, all checkboxes are cleared and a green confirmation message appears 
+          indicating that the customizations were added successfully.
+          To add other customization types, update the filters and repeat the process.
+          Click **Close** to exit **Lookup Customization**.
+
+        ![change_request_lookup_customization](/images/platgovnetsuite/change_management/change_request_lookup_customization.webp)
+
     - **Customizations**: Use this field if you are changing objects that already exist in your
       account. Can be used in conjunction with proposed customizations. Start typing in the entry
       box for a single value, click the **Select Multiple** icon or click **Lookup Customization**
