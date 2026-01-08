@@ -41,9 +41,10 @@ Configuration section.
 4.  Enter a name such as EndpointProtector or MyEPPApp.
 5.  Select **Regular Web Application**.
 6.  Click **Create**.
-7.  Go to **Login Experience** tab and make sure that for the Types of Users, there is Business Users checked, with either “prompt for Credentials” or “Prompt for Organization” as options.
+7.  Go to **Login Experience** tab and make sure that for the Types of Users, there is "Both" checked (Individuals or Business Users), with either “Prompt for Credentials” or “Prompt for Organization” as options. 
 
-Note: “Prompt for Organization” will require you to have an organization created with your connections enabled for it.
+**Note:** “Prompt for Organization” will require you to have an organization created with your connections enabled for it. It will prompt for an organizational email, then redirect you to the password field.
+“Prompt for Credentials” will prompt for a email and password and then redirect you to the application.
 
 This application will represent Endpoint Protector on the Auth0 side.
 
@@ -97,7 +98,17 @@ For further restriction, use Endpoint Protector’s own user and role management
 ![Enter DB Connections](3DatabaseConnection.png)
 ![Enable DB Connection for the app](4EnableDatabaseConnection.png)
 
-**Step 7 –** (Optional) Create a SAML Connection under Authentication → Enterprise
+**Step 7 –** Add the individual users you need access for to Users
+
+1.  In the Auth0 Dashboard, navigate to **User Management → Users**
+2.  Add the individual users you need to give access to (make sure the have access to the connection created at Step 6, **Username-Password-Authentication**).
+
+Note
+This is a way to grant direct user access to the application, for enterprise level access based on organizational context please see the next step.
+
+![Add Users](4AddUsersIndividually.png)
+
+**Step 8 –** (Optional) Create a SAML Connection under Authentication → Enterprise
 
 If you want Auth0 to act as a broker IdP and authenticate users through an external SAML Identity Provider (for example, Azure AD, Okta, ADFS, Ping, Shibboleth, etc.), you must create an Enterprise SAML Connection.
 
