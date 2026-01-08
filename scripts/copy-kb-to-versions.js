@@ -63,25 +63,53 @@ const CATEGORY_LABELS = {
 function acquireLock(isDryRun) {
   if (isDryRun) return; // Skip locking in dry-run mode
 
-  // Check for stale locks (>10 minutes)
-  if (fs.existsSync(LOCKFILE)) {
-    const stats = fs.statSync(LOCKFILE);
-    const lockAge = Date.now() - stats.mtimeMs;
-    const tenMinutes = 10 * 60 * 1000;
+  const tenMinutes = 10 * 60 * 1000;
 
-    if (lockAge > tenMinutes) {
-      console.log('⚠️  Removing stale lock file');
-      try {
-        fs.unlinkSync(LOCKFILE);
-      } catch (err) {
-        throw new Error(`Cannot remove stale lock file: ${err.message}`);
-      }
-    } else {
-      throw new Error('KB copy script is already running. If this is incorrect, delete .kb-copy.lock');
+  // Try to create lock atomically first. If it exists, decide stale vs active.
+  try {
+    const fd = fs.openSync(
+      LOCKFILE,
+      fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_WRONLY,
+      0o600
+    );
+
+    try {
+      fs.writeFileSync(fd, JSON.stringify({ timestamp: Date.now() }), 'utf8');
+    } finally {
+      fs.closeSync(fd);
+    }
+
+    return; // Lock acquired successfully
+  } catch (err) {
+    if (err.code !== 'EEXIST') {
+      throw new Error(`Cannot create lock file: ${err.message}`);
     }
   }
 
-  // Create lock file atomically (prevents TOCTOU race conditions)
+  // Lock exists: check if it is stale
+  let stats;
+  try {
+    stats = fs.statSync(LOCKFILE);
+  } catch (err) {
+    // Race: lock disappeared between EEXIST and stat; retry once
+    return acquireLock(isDryRun);
+  }
+
+  const lockAge = Date.now() - stats.mtimeMs;
+
+  if (lockAge <= tenMinutes) {
+    throw new Error('KB copy script is already running. If this is incorrect, delete .kb-copy.lock');
+  }
+
+  // Stale: remove and retry atomic create
+  console.log('⚠️  Removing stale lock file');
+  try {
+    fs.unlinkSync(LOCKFILE);
+  } catch (err) {
+    throw new Error(`Cannot remove stale lock file: ${err.message}`);
+  }
+
+  // Retry once after stale removal
   try {
     const fd = fs.openSync(
       LOCKFILE,
