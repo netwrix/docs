@@ -64,8 +64,9 @@ The AutoSpider Portlet is set up as part of the installation process:
 
 The **AutoSpider Portlet** is required to update certain object types in NetSuite. Once triggered
 through the dashboard portlet, it picks up all changes on custom objects and triggers the scheduled
-scripts to reflect them in the Customization records, going back two days. The AutoSpider portlet is
-required in order to update these object types:
+scripts to reflect them in the Customization records, going back two days. 
+
+The AutoSpider portlet is required in order to update these object types:
 
 - Bundle
 - Custom Report
@@ -74,7 +75,19 @@ required in order to update these object types:
 - Online Customer Form
 - Record
 - Transaction Form
+- Address Form
 - Custom Advanced PDF/HTML Template
+- Group
+- Access Token
+- Integration
+- SuiteApp
+
+Autospider portlet is also required in order to capture the changes that are recorded only in audit trail for the following obect types:
+
+- Bundle
+- SuiteApp
+- Custom Reports
+- Saved Searches
 
 ## ReSpider Now
 
