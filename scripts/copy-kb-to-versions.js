@@ -235,9 +235,12 @@ function escapeRegExp(str) {
 function rewriteKbLinks(content, sourceFilePath, kbSourceRoot, productName) {
   // Dynamic regex based on product name
   const escapedProduct = escapeRegExp(productName);
-  const kbLinkRegex = new RegExp(`\\[([^\\]]+)\\]\\(\\/docs\\/kb\\/${escapedProduct}\\/([^)]+\\.md)\\)`, 'g');
+  const kbLinkRegex = new RegExp(
+    `\\[([^\\]]+)\\]\\(\\/docs\\/kb\\/${escapedProduct}\\/([^)#?]+?)(?:\\.md)?([#?][^)]*)?\\)`,
+    'g'
+  );
 
-  return content.replace(kbLinkRegex, (match, linkText, targetPath) => {
+  return content.replace(kbLinkRegex, (match, linkText, targetPath, suffix = '') => {
     // Use absolute paths anchored to PROJECT_ROOT
     const absoluteSourcePath = path.isAbsolute(sourceFilePath)
       ? sourceFilePath
@@ -263,7 +266,7 @@ function rewriteKbLinks(content, sourceFilePath, kbSourceRoot, productName) {
       relativePath = './' + relativePath;
     }
 
-    return `[${linkText}](${relativePath})`;
+    return `[${linkText}](${relativePath}${suffix})`;
   });
 }
 
@@ -428,11 +431,11 @@ function main() {
 
     // Read environment filters
     const filterProducts = process.env.COPY_KB_PRODUCTS
-      ? process.env.COPY_KB_PRODUCTS.split(',').map(p => p.trim())
+      ? process.env.COPY_KB_PRODUCTS.split(',').map(p => p.trim()).filter(Boolean)
       : null;
 
     const filterVersions = process.env.COPY_KB_VERSIONS
-      ? process.env.COPY_KB_VERSIONS.split(',').map(v => v.trim())
+      ? process.env.COPY_KB_VERSIONS.split(',').map(v => v.trim()).filter(Boolean)
       : null;
 
     // Validate environment
