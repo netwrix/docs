@@ -197,6 +197,33 @@ function validateEnvironment(filterProducts, filterVersions, CONFIG) {
   }
 }
 
+function validateConfig(CONFIG) {
+  for (const [product, productConfig] of Object.entries(CONFIG)) {
+    if (!productConfig || typeof productConfig !== 'object') {
+      throw new Error(`Invalid config for product ${product}: expected object`);
+    }
+
+    if (!Array.isArray(productConfig.versions)) {
+      throw new Error(`Invalid config for product ${product}: versions must be an array`);
+    }
+
+    if (typeof productConfig.source !== 'string') {
+      throw new Error(`Invalid config for product ${product}: source must be a string`);
+    }
+
+    if (typeof productConfig.destinationPattern !== 'string') {
+      throw new Error(`Invalid config for product ${product}: destinationPattern must be a string`);
+    }
+
+    // Validate source path stays under repo root
+    validateDestinationPath(productConfig.source);
+
+    // Validate destination pattern stays under repo root (sample substitution)
+    const testDest = productConfig.destinationPattern.replace('{version}', '1.0');
+    validateDestinationPath(testDest);
+  }
+}
+
 // ============================================================================
 // Link Rewriting (Dynamic Product)
 // ============================================================================
@@ -410,6 +437,7 @@ function main() {
 
     // Validate environment
     validateEnvironment(filterProducts, filterVersions, CONFIG);
+    validateConfig(CONFIG);
 
     console.log('='.repeat(60));
     console.log('KB Copy Script - Solution 2 (Approach C)');
