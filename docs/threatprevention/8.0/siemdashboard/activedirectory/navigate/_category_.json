@@ -1,0 +1,10 @@
+{
+  "label": "Navigate the App",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "navigate"
+  }
+}
