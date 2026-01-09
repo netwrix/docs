@@ -25,7 +25,7 @@ The report is divided into multiple tabs:
     - Scanner Logs
     - Scanner Additional Information
     - Change Log Creation (sandbox option)
-- Scanner Inactivity Alert ***TEST***
+- Scanner Inactivity Alert
 - Jira Configuration
     - Credentials
     - Status Mapping
