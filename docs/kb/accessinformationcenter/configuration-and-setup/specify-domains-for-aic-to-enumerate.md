@@ -37,4 +37,4 @@ This list is useful because customers often have domains with trust relationship
 ## Instructions:
 **Instructions:**
 
-In the web.config file (by default `C:\inetpub\wwwroot\StealthAudit Compliance`), enter the DNS names of the domains you'd like in this tag.
+In the AccessInformationCenter.Service.exe.config file (by default `C:\Program Files\STEALTHbits\Access Information Center\`), enter the DNS names of the domains you'd like in the `AuthSearchDomains` tag, between the quotations of `value=""`.
