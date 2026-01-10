@@ -7,7 +7,7 @@ sidebar_position: 40
 # Reports via the Web Console
 
 The Web Console is where any reports which have been published can be viewed outside of the Access
-Analyzer Console.
+Analyzer Console. This is also known as the Published Reports site.
 
 - Web Console – This console uses an embedded website for published reports. It provides a
   consolidated logon feature for viewing published reports, and accessing the Netwrix Access
@@ -42,18 +42,14 @@ information on configuring security polices to allow Kerberos encryption.
 
 In order for a user to log into the Web Console, the user’s account must have the User Principal
 Name (UPN) attribute populated within Active Directory. Then the user can login using domain
-credentials. If multiple domains are being managed by the Netwrix Access Information Center, then
-the username needs to be in the `domain\username` format.
+credentials. If multiple domains are being utilized, then
+the username needs to be in the `domain\username` format when logging into the Published Reports site.
 
 Access to reports in the Web Console can be managed through the Role Based Access feature of Access
 Analyzer (**Settings** > **Access**). The Web Administrator role and the Report Viewer role grant
 access to the published reports. See the
 [Role Based Access](/docs/accessanalyzer/12.0/admin/settings/access/rolebased/overview.md) topic for addition
 information.
-
-:::note
-Access to the AIC and other Netwrix products is controlled from within those products.
-:::
 
 
 The address to the Web Console can be configured within the Access Analyzer Console (**Settings** >
