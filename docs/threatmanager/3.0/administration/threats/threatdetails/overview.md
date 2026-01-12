@@ -83,8 +83,6 @@ The information displayed on this page is dependent upon the type of threat sele
 In the Threat Activity Diagram, click the user to view the [User Details Page](/docs/threatmanager/3.0/administration/threats/activedirectoryobjects/user.md) page. Click
 the host to view the [Host Details Page](/docs/threatmanager/3.0/administration/threats/activedirectoryobjects/host.md) page.
 
-**hhhhh**
-
 ## Threat Response Window
 
 The Threat Response window contains the following configuration options:
