@@ -349,7 +349,7 @@ get the latest breached hashes from the Have I Been Pwnd (HIBP) database.
 
 :::note
 The
-[](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)[Pwnd Passwords Downloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)
+[Pwnd Passwords Downloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)
 is a third party, open source tool, created by the HaveIBeenPwned team and distributed under a BSD
 3-Clause License. You might experience issues during the hash download process, depending on your
 threading settings or the load on the CloudFlare backend. The Pwnd Passwords Downloader tool will
@@ -363,7 +363,7 @@ process.
 The Pwnd Passwords Downloader has the following prerequisite:
 
 - Install .NET 6 before installing the
-  [Pwnd Passwords Downloader ](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)tool. You
+  [Pwnd Passwords Downloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader) tool. You
   can download .NET 6 from Microsoft:
   [https://dotnet.microsoft.com/en-us/download/dotnet/6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
@@ -401,7 +401,7 @@ dotnet tool update --global haveibeenpwned-downloader
 
 ![hibp_installation_1](/images/threatprevention/8.0/admin/configuration/hibp_installation_1.webp)
 
-**Download NTML Hashes with the Pwnd Passwords Downloader**
+**Download NTLM Hashes with the Pwnd Passwords Downloader**
 
 Follow the steps to download NTLM hashes.
 
