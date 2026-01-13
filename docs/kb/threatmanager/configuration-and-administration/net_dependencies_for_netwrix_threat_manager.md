@@ -41,8 +41,8 @@ Example:
 
 ## Related Articles
 
-- [Netwrix Threat Manager](https://docs.netwrix.com/docs/threatmanager/3_0)
-- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_access_analyzer.md)
-- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_recovery_for_active_directory.md)
-- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_threat_prevention.md)
-- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_activity_monitor.md)
+- [Netwrix Threat Manager Requirements](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server)
+- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/accessanalyzer/reference-and-technical-specifications/net_dependencies_for_netwrix_access_analyzer)
+- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/recoveryad/configuration-and-administration/net_dependencies_for_netwrix_recovery_for_active_directory)
+- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/configuration-and-administration/net_dependencies_for_netwrix_threat_prevention)
+- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_activity_monitor)
