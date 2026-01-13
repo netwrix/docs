@@ -21,7 +21,7 @@ knowledge_article_id: kA0Qk0000001hxNKAQ
 
 ## Question
 
-Which version of .NET is required for Netwrix Access Analyzer and Netwrix Activity Monitor?
+Which version of .NET is required for Netwrix Access Analyzer?
 
 ## Answer
 
@@ -58,13 +58,8 @@ Example:
 
 ## Related Articles
 
-<!-- TODO: Add link to Netwrix Access Analyzer landing page. The old Salesforce link (https://helpcenter.netwrix.com/category/enterpriseauditor) redirects to https://docs.netwrix.com/docs/accessanalyzer/12_0/solutions/overview/ but the correct landing page URL needs SME review due to doc structure changes. -->
-- Netwrix Access Analyzer
-
-- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_activity_monitor.md)
-
-<!-- TODO: Uncomment and update these links when the files are relocated to their correct product folders:
-- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/net_dependencies_for_netwrix_threat_prevention)
-- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/recoveryad/net_dependencies_for_netwrix_recovery_for_active_directory)
-- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/threatmanager/net_dependencies_for_netwrix_threat_manager)
--->
+- [Netwrix Access Analyzer Requirements](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/overview)
+- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_activity_monitor)
+- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/configuration-and-administration/net_dependencies_for_netwrix_threat_prevention)
+- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/recoveryad/configuration-and-administration/net_dependencies_for_netwrix_recovery_for_active_directory)
+- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/threatmanager/configuration-and-administration/net_dependencies_for_netwrix_threat_manager)
