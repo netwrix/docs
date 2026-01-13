@@ -41,11 +41,8 @@ Select PSChildName, version
 
 ## Related Articles
 
-- [Netwrix Activity Monitor](https://docs.netwrix.com/docs/activitymonitor/8_0)
-
-<!-- TODO: Uncomment and update these links when the files are relocated to their correct product folders:
-- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/accessanalyzer/net_dependencies_for_netwrix_access_analyzer)
-- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/net_dependencies_for_netwrix_threat_prevention)
-- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/recoveryad/net_dependencies_for_netwrix_recovery_for_active_directory)
-- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/threatmanager/net_dependencies_for_netwrix_threat_manager)
--->
+- [Netwrix Activity Monitor Requirements](https://docs.netwrix.com/docs/activitymonitor/8_0/requirements/overview)
+- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/accessanalyzer/reference-and-technical-specifications/net_dependencies_for_netwrix_access_analyzer)
+- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/configuration-and-administration/net_dependencies_for_netwrix_threat_prevention)
+- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/recoveryad/configuration-and-administration/net_dependencies_for_netwrix_recovery_for_active_directory)
+- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/threatmanager/configuration-and-administration/net_dependencies_for_netwrix_threat_manager)
