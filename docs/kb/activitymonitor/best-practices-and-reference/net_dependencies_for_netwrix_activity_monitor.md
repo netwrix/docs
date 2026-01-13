@@ -25,7 +25,7 @@ Which version of .NET is required for Netwrix Activity Monitor?
 
 ## Answer
 
-.NET Framework 4.7.2 or newer is required. You can also navigate to the [Netwrix Activity Monitor](https://docs.netwrix.com/docs/activitymonitor/8_0) landing page for the product **Requirements** located under **Getting Started**.
+.NET Framework 4.7.2 or newer is required. You can also navigate to the [Netwrix Activity Monitor Requirements](https://docs.netwrix.com/docs/activitymonitor/8_0/requirements/overview) located under **Getting Started**.
 
 > **NOTE:** .NET Framework is not the same as ASP.NET Core, and having one does not mean you have the other. ASP.NET Core and .NET Desktop Runtime should appear on the list of installed Apps & Features. However, .NET Framework does not appear on that list.
 
