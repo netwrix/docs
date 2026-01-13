@@ -47,7 +47,7 @@ The Rights Management Service Client must be installed on the applet servers whe
 
 * To install the Rights Management Service Client 2.1 on the server where the scan is taking place, go to the Microsoft download center:
 
-  <https://www.microsoft.com/en-us/download/details.aspx?id=38396>
+  [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=38396)
 
 
 :::info
@@ -62,8 +62,8 @@ Read the System Requirements and Install Instructions provided by Microsoft to c
 
 1. Open the Azure Portal and sign in with an administrator account
 
-   
-   1. <https://portal.azure.com/>
+
+   1. [https://portal.azure.com/](https://portal.azure.com/)
 2. Create a new app registration
 
    
