@@ -25,7 +25,7 @@ Which version of .NET is required for Netwrix Threat Prevention?
 
 ## Answer
 
-.NET Framework 4.7.2 or newer is required. You can also navigate to the [Netwrix Threat Prevention](https://docs.netwrix.com/docs/threatprevention/7_5) landing page for the product **Requirements** located under **Getting Started**.
+.NET Framework 4.7.2 or newer is required. You can also navigate to the [Netwrix Threat Prevention Requirements](https://docs.netwrix.com/docs/threatprevention/7_5/requirements/overview) located under **Getting Started**.
 
 > **NOTE:** .NET Framework is not the same as ASP .NET Core, and having one does not mean you have the other. ASP.NET Core and .NET Desktop Runtime should show on the list of installed Apps & features; however, .NET Framework does not appear on that list. You can check which versions of .NET Framework you have installed by running the following command in PowerShell:
 
