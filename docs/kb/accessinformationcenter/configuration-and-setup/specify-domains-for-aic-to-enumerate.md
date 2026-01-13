@@ -44,7 +44,7 @@ This list is useful because customers often have domains with trust relationship
    ```xml
    <add key="AuthSearchDomains" value="domain1.com,domain2.com,domain3.com" />
    ```
-5. Save the file and restart the Access Information Center service.
+5. Save the file and restart the **Netwrix Access Information Center** service.
 
 ## Result
 The Access Information Center will only enumerate the specified domains on startup, significantly reducing application startup time when unavailable trusted domains exist.
