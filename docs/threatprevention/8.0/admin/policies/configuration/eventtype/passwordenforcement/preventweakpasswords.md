@@ -32,11 +32,11 @@ environment.
 
 - Click **Configuration** > **EPE Settings** on the menu to open the EPE Settings window.
 - Download the latest copy of the HaveIBeenPwned dictionary file. See the
-  [Download and Configure the Have I Been Pwnd Hash List](/docs/threatprevention/8.0/admin/configuration/epesettings.md#Passwords-Hash-Database)
+  [Passwords Hash Database](/docs/threatprevention/8.0/admin/configuration/epesettings.md#Passwords-Hash-Database)
   topic for additional information.
 - Determine whether you want to deploy the dictionary to each domain controller or keep it locally
   on the Enterprise Manager server. See the
-  [Considerations When Deploying the HIBP Database](/docs/threatprevention/8.0/admin/configuration/epesettings.md#Passwords-Hash-Database)
+  [Considerations When Deploying the HIBP Database](/docs/threatprevention/8.0/admin/configuration/epesettings.md#Considerations-When-Deploying-the-HIBP-Database)
   topic for additional information.
 - Modify the global password rules to customize the password dictionary, word list dictionary and
   character substitution map. See the [Rules](/docs/threatprevention/8.0/admin/configuration/epesettings.md#rules) topic for
