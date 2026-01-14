@@ -25,7 +25,7 @@ environment.
 
 - Click **Configuration** > **EPE Settings** on the menu to open the EPE Settings window.
 - Download the latest copy of the HaveIBeenPwned dictionary file. See the
-  [Download and Configure the Have I Been Pwnd Hash List](/docs/threatprevention/8.0/admin/configuration/epesettings.md#download-and-configure-the-have-i-been-pwnd-hash-list)
+  [Download and Configure the Have I Been Pwned Hash List](/docs/threatprevention/8_0/admin/configuration/epesettings#download-and-configure-the-have-i-been-pwned-hash-list)
   topic for additional information.
 - Determine whether you want to deploy the dictionary to each domain controller or keep it locally
   on the Enterprise Manager server. See the
