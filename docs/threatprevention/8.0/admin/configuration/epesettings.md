@@ -343,9 +343,7 @@ discard any changes made.
 If the Administration Console does not have internet access, you can manually download the HIBP
 database.
 
-The Pwned Passwords Downloader is a Dotnet tool used to download all Pwned Passwords hash ranges and
-save them offline so they can be used without a dependency on the k-anonymity API. Use this tool to
-get the latest breached hashes from the Have I Been Pwned (HIBP) database.
+The Pwned Passwords Downloader is a .NET tool you can use to download all Pwned Passwords hash ranges and save them offline so they can be used without a dependency on the k-anonymity API. Use this tool toget the latest breached hashes from the Have I Been Pwned (HIBP) database.
 
 :::note
 The
@@ -420,7 +418,7 @@ This screenshot shows the completed download.
 
 
 
-**Step 3 –** To overwrite an existing hash list, run:
+**Step 3 –** To overwrite an existing hash list, run the following command:
 
 ```
 haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm -o
