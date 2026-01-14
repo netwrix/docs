@@ -9,7 +9,7 @@ sidebar_position: 30
 To launch the Recovery Console, either:
 
 - Click the desktop icon
-- Type `http:/localhost:3005` in a web browser and press Enter
+- Type `http://localhost:3005` in a web browser and press Enter
 
 ## First Login
 
