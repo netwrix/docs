@@ -82,7 +82,8 @@ jobs:
             echo "2. Create a fresh branch from current dev: git checkout -b my-branch origin/dev"
             echo "3. Apply your patch: git apply my-changes.patch"
             echo "4. Commit and push the clean branch"
-            echo "5. Delete this branch: git push origin --delete ${{ github.ref_name }}"
+            echo "5. Delete the invalid branch (replace BRANCH_NAME with your branch name):"
+            echo "   git push origin --delete BRANCH_NAME"
             echo ""
             echo "Contact @${{ env.SECURITY_CONTACT }} if you need assistance."
 
