@@ -139,6 +139,6 @@ to finish the wizard.
 
 ![Object Restore Complete message](/images/recoveryforactivedirectory/3.1/product/active_directory/recovery/active_directory_recovery_finished.png)
 
-**Step 13 –** A completed message is displayed when the restore is successful. Click **OK**.d
+**Step 13 –** A completed message is displayed when the restore is successful. Click **OK**.
 
 The deleted object has now been restored.
