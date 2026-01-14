@@ -522,8 +522,8 @@ export const PRODUCTS = [
   },
   {
     id: 'recoveryforactivedirectory',
-    name: 'Recovery for Active Directory',
-    description: 'Active Directory backup and recovery',
+    name: 'Identity Recovery',
+    description: 'Identity backup and recovery',
     path: 'docs/recoveryforactivedirectory',
     categories: ['Identity Threat Detection & Response (ITDR)'],
     icon: '',
@@ -534,8 +534,14 @@ export const PRODUCTS = [
         isLatest: true,
         sidebarFile: './sidebars/recoveryforactivedirectory/2.6.js',
       },
+      {
+        version: '3.1',
+        label: '3.1',
+        isLatest: true,
+        sidebarFile: './sidebars/recoveryforactivedirectory/3.1.js',
+      },
     ],
-    defaultVersion: '2.6',
+    defaultVersion: '3.1',
   },
   {
     id: 'threatmanager',
