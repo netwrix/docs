@@ -410,7 +410,7 @@ Follow the steps to download NTLM hashes.
 **Step 2 –** Download all NTLM hashes to a single txt file, called for example
 `pwnedpasswords_ntlm.txt`.
 
-Run:
+Run the following command:
 
 ```
 haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm
