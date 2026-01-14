@@ -508,7 +508,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/privilegesecure/4.1.js',
       },
     ],
-    defaultVersion: '25.12,
+    defaultVersion: '25.12',
   },
   {
     id: 'privilegesecurediscovery',
