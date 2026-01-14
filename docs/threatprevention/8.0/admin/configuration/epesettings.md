@@ -7,7 +7,7 @@ sidebar_position: 30
 # EPE Settings Window
 
 Threat Prevention can be configured with Enterprise Password Enforcer (EPE) to use the Have I Been
-Pwnd (HIBP) database. A copy of this database is hosted on the Netwrix website. The HIBP database
+Pwned (HIBP) database. A copy of this database is hosted on the Netwrix website. The HIBP database
 contains a list of the hashes of known compromised passwords. During password change operations, the
 application can be configured to reject passwords with a hash that matches a hash in the HIBP
 database. The EPE Settings window displays current HIBP database information and configuration
@@ -131,7 +131,7 @@ Threat Prevention utilizes the Passwords Hash database to check if users’ new 
 :::note
 First-time configuration of this window requires downloading the HIBP database from the
 Netwrix website. If the Administration Console does not have internet access, see the Download and
-Configure the Have I Been Pwnd Hash List topic for instructions.
+Configure the Have I Been Pwned Hash List topic for instructions.
 :::
 
 
@@ -338,13 +338,93 @@ The Substitutions Editor has the following options:
 Click **OK** to save the changes and close the window. Click **Cancel** to close the window to
 discard any changes made.
 
-### Download and Configure the Have I Been Pwnd Hash List
+### Download and Configure the Have I Been Pwned Hash List
 
 If the Administration Console does not have internet access, you can manually download the HIBP
 database.
 
-The Pwned Passwords Downloader is a Dotnet tool used to download all Pwned Passwords hash ranges and
-save them offline so they can be used without a dependency on the k-anonymity API. Use this tool to
-get the latest breached hashes from the Have I Been Pwned (HIBP) database.
+The Pwned Passwords Downloader is a .NET tool you can use to download all Pwned Passwords hash ranges and save them offline so they can be used without a dependency on the k-anonymity API. Use this tool to get the latest breached hashes from the Have I Been Pwned (HIBP) database.
 
 See the [Have I Been Pwned](https://haveibeenpwned.com/) website for more information about the HIBP database.
+
+:::note
+The
+[Pwned Passwords Downloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)
+is a third party, open source tool, created by the HaveIBeenPwned team and distributed under a BSD
+3-Clause License. You might experience issues during the hash download process, depending on your
+threading settings or the load on the CloudFlare backend. The Pwned Passwords Downloader tool will
+automatically retry to continue downloading the hashes until it fully completes the download
+process.
+:::
+
+
+**Prerequisites**
+
+The Pwned Passwords Downloader has the following prerequisite:
+
+- Install .NET 6 before installing the
+  [Pwned Passwords Downloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader) tool. You
+  can download .NET 6 from Microsoft:
+  [https://dotnet.microsoft.com/en-us/download/dotnet/6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+
+The Have I Been Pwned database (HIBP) hashes can take up to 30 GB. Make sure that you have enough
+free space on your disk.
+
+**Install the Pwned Passwords Downloader**
+
+Follow the steps to install the Pwned Passwords Downloader.
+
+**Step 1 –** Open command prompt, and navigate to your .NET install folder (for example,
+`C:\Program Files (x86)\dotnet`).
+
+**Step 2 –** Run the following command:
+
+```
+dotnet tool install --global haveibeenpwned-downloader
+```
+
+![hibp_installation_0](/images/threatprevention/8.0/admin/configuration/hibp_installation_0.webp)
+
+**Step 3 –** Close the command prompt.
+
+**Update an Installed Pwned Passwords Downloader**
+
+Follow the steps to update an installed Pwned Passwords Downloader.
+
+**Step 1 –** Open the command prompt.
+
+**Step 2 –** Run the following command:
+
+```
+dotnet tool update --global haveibeenpwned-downloader
+```
+
+![hibp_installation_1](/images/threatprevention/8.0/admin/configuration/hibp_installation_1.webp)
+
+**Download NTLM Hashes with the Pwned Passwords Downloader**
+
+Follow the steps to download NTLM hashes.
+
+**Step 1 –** Navigate to the folder where you want to download the hashes.
+
+**Step 2 –** Download all NTLM hashes to a single txt file, called for example
+`pwnedpasswords_ntlm.txt`.
+
+Run the following command:
+
+```
+haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm
+```
+
+![hibp_installation_3](/images/threatprevention/8.0/admin/configuration/hibp_installation_3.webp)
+This screenshot shows the completed download.
+
+
+**Step 3 –** To overwrite an existing hash list, run the following command:
+
+```
+haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm -o
+```
+
+For a complete list of available parameters, please check the
+[Pwned Passwords Downloader GitHub page](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader).
