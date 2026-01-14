@@ -498,7 +498,7 @@ export const PRODUCTS = [
       {
         version: '4.2',
         label: '4.2',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/privilegesecure/4.2.js',
       },
       {
