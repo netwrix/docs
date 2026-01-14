@@ -7,14 +7,14 @@ description: "Become a certified Sales Professional for Netwrix Identity Threat 
 ---
 
 import { ITDRIntro } from '@site/src/training/identity-threat-detection-response';
-import { Company, NAA, NPC, NRAD, NTM, NTP } from '@site/src/training/products';
+import { Company, NAA, NIR, NPC, NTM, NTP } from '@site/src/training/products';
 
 
 This learning path grants <Company /> certification as a Sales Professional for this solution. The following products comprise this solution:
 
 * <NAA />
+* <NIR />
 * <NPC />
-* <NRAD />
 * <NTM />
 * <NTP />
 
