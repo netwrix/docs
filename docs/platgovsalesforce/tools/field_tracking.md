@@ -49,7 +49,7 @@ Additionally, an Export Attachment record is created for each report. This tab i
 To save all configuration changes, click Save Settings.
 
 ## Monitoring Rules
-This screen displays all existing monitoring rules. You can create, edit, or delete rules, and you can also search for rules by name or status.
+This screen displays all existing monitoring rules. You can create, edit, or deactivate rules, and you can also search for rules by name or status.
 
 ![Monitoring Rules](/images/platgovsalesforce/tools/field_tracking_6.webp)
 
@@ -109,12 +109,12 @@ After creation, a confirmation message appears, and the list of rules updates au
 ![New Rule Step 2 Summary](/images/platgovsalesforce/tools/field_tracking_14.webp)
 
 ### Rule Management
-- Edit or delete rules directly from the list
+- Edit or deactivate rules directly from the list
 - Deleting a rule sets it to Inactive
 
-![Delete Rule 1](/images/platgovsalesforce/tools/field_tracking_15.webp)
+![Deactivate Rule 1](/images/platgovsalesforce/tools/field_tracking_15.webp)
 
-![Delete Rule 2](/images/platgovsalesforce/tools/field_tracking_16.webp)
+![Deactivate Rule 2](/images/platgovsalesforce/tools/field_tracking_16.webp)
 
 ## Monitored Fields
 After running the batch process, view:
