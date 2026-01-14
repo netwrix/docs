@@ -7,10 +7,18 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+env:
+  SECURITY_CONTACT: 'jake-mahon-netwrix'
+
 jobs:
   validate-history:
     name: Validate Clean History
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -73,7 +81,7 @@ jobs:
             echo "4. Commit and push the clean branch"
             echo "5. Delete this branch: git push origin --delete ${{ github.ref_name }}"
             echo ""
-            echo "Contact Jake Mahon if you need assistance."
+            echo "Contact @${{ env.SECURITY_CONTACT }} if you need assistance."
 
             # Save invalid roots for issue creation
             echo "invalid_roots=${INVALID_ROOTS[*]}" >> $GITHUB_OUTPUT
@@ -87,17 +95,20 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const branch = context.ref.replace('refs/heads/', '');
+            const branch = context.eventName === 'pull_request'
+              ? context.payload.pull_request.head.ref
+              : context.ref.replace('refs/heads/', '');
             const pusher = context.actor;
             const invalidRoots = '${{ steps.check_ancestry.outputs.invalid_roots }}';
 
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `⚠️ Branch ${branch} contains invalid git history`,
-              assignees: [pusher],
-              labels: ['security', 'urgent'],
-              body: `## ⚠️ URGENT: Invalid Git History Detected
+            try {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `⚠️ Branch ${branch} contains invalid git history`,
+                assignees: [pusher],
+                labels: ['security', 'urgent'],
+                body: `## ⚠️ URGENT: Invalid Git History Detected
 
 **Branch:** \`${branch}\`
 **Pushed by:** @${pusher}
@@ -128,16 +139,39 @@ This branch contains git history from before the repository re-initialization an
 
 **This branch will be blocked from merging to dev/main.**
 
-Contact @jake-mahon-netwrix if you need assistance.
+Contact @${{ env.SECURITY_CONTACT }} if you need assistance.
 
 ---
 *Automated alert from [Validate Branch History workflow](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})*`
-            });
+              });
 
-            console.log('Issue created for invalid branch');
+              console.log('Issue created successfully');
+            } catch (error) {
+              console.error('Failed to create issue:', error.message);
 
+              // Fallback: Create without assignee or labels if they fail
+              try {
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: `⚠️ Branch ${branch} contains invalid git history`,
+                  body: `## ⚠️ URGENT: Invalid Git History Detected
 
-permissions:
-  contents: read
-  pull-requests: write
-  issues: write
+**Branch:** \`${branch}\`
+**Pushed by:** @${pusher}
+**Invalid root commit(s):** \`${invalidRoots}\`
+
+This branch contains git history from before the repository re-initialization and must be deleted immediately to prevent exposure of sensitive data.
+
+Contact @${{ env.SECURITY_CONTACT }} for assistance.
+
+---
+*Automated alert from [Validate Branch History workflow](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})*
+
+_Note: Failed to assign or add labels due to: ${error.message}_`
+                });
+                console.log('Fallback issue created without assignee/labels');
+              } catch (fallbackError) {
+                console.error('Fallback issue creation also failed:', fallbackError.message);
+              }
+            }
