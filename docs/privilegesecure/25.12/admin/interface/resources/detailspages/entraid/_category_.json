@@ -1,0 +1,10 @@
+{
+  "label": "Microsoft Entra ID Details Page",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "entraid"
+  }
+}
