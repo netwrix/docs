@@ -345,6 +345,8 @@ database.
 
 The Pwned Passwords Downloader is a .NET tool you can use to download all Pwned Passwords hash ranges and save them offline so they can be used without a dependency on the k-anonymity API. Use this tool toget the latest breached hashes from the Have I Been Pwned (HIBP) database.
 
+See the [Have I Been Pwned](https://haveibeenpwned.com/) website for more information about the HIBP database.
+
 :::note
 The
 [Pwned Passwords Downloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)
