@@ -14,8 +14,6 @@ Estimated length: 35 minutes
 
 In this learning path, you will learn how to use <NIR />. This product was formerly Netwrix Recovery for Active Directory. It contains the following courses:
 
-It contains the following courses:
-
 * 1400 <NIR /> – Valuable Features
 * 3400 Introduction to <NIR />
 
