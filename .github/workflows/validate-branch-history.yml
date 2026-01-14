@@ -17,8 +17,7 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: read
-      pull-requests: write
-      issues: write
+      pull-requests: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -86,114 +85,7 @@ jobs:
             echo "   git push origin --delete BRANCH_NAME"
             echo ""
             echo "Contact @${{ env.SECURITY_CONTACT }} if you need assistance."
-
-            # Save invalid roots for issue creation
-            echo "invalid_roots=${INVALID_ROOTS[*]}" >> $GITHUB_OUTPUT
             exit 1
           fi
 
           echo "✅ Branch ancestry validation passed"
-
-      - name: Create issue for invalid branch
-        if: failure() && steps.check_ancestry.outcome == 'failure' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const branch = context.eventName === 'pull_request'
-              ? context.payload.pull_request.head.ref
-              : context.ref.replace('refs/heads/', '');
-            const pusher = context.actor;
-            const invalidRoots = '${{ steps.check_ancestry.outputs.invalid_roots }}';
-
-            // Check for existing open issues about this branch
-            const existingIssues = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              labels: 'security',
-              per_page: 100
-            });
-
-            const branchIssueExists = existingIssues.data.some(issue =>
-              issue.title.includes(`Branch ${branch} contains invalid git history`)
-            );
-
-            if (branchIssueExists) {
-              console.log(`Issue already exists for branch ${branch}, skipping creation`);
-              return;
-            }
-
-            try {
-              await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title: `⚠️ Branch ${branch} contains invalid git history`,
-                assignees: [pusher],
-                labels: ['security', 'urgent'],
-                body: `## ⚠️ URGENT: Invalid Git History Detected
-
-**Branch:** \`${branch}\`
-**Pushed by:** @${pusher}
-**Invalid root commit(s):** \`${invalidRoots}\`
-
-This branch contains git history from before the repository re-initialization and must be deleted immediately to prevent exposure of sensitive data.
-
-### Required Actions:
-
-1. **Save your work:**
-   \`\`\`bash
-   git diff origin/dev > my-changes.patch
-   \`\`\`
-
-2. **Delete this branch:**
-   \`\`\`bash
-   git push origin --delete ${branch}
-   \`\`\`
-
-3. **Create a clean branch:**
-   \`\`\`bash
-   git checkout -b ${branch} origin/dev
-   git apply my-changes.patch
-   git add .
-   git commit -m "Re-apply changes on clean branch"
-   git push -u origin ${branch}
-   \`\`\`
-
-**This branch will be blocked from merging to dev/main.**
-
-Contact @${{ env.SECURITY_CONTACT }} if you need assistance.
-
----
-*Automated alert from [Validate Branch History workflow](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})*`
-              });
-
-              console.log('Issue created successfully');
-            } catch (error) {
-              console.error('Failed to create issue:', error.message);
-
-              // Fallback: Create without assignee or labels if they fail
-              try {
-                await github.rest.issues.create({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  title: `⚠️ Branch ${branch} contains invalid git history`,
-                  body: `## ⚠️ URGENT: Invalid Git History Detected
-
-**Branch:** \`${branch}\`
-**Pushed by:** @${pusher}
-**Invalid root commit(s):** \`${invalidRoots}\`
-
-This branch contains git history from before the repository re-initialization and must be deleted immediately to prevent exposure of sensitive data.
-
-Contact @${{ env.SECURITY_CONTACT }} for assistance.
-
----
-*Automated alert from [Validate Branch History workflow](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})*
-
-_Note: Failed to assign or add labels due to: ${error.message}_`
-                });
-                console.log('Fallback issue created without assignee/labels');
-              } catch (fallbackError) {
-                console.error('Fallback issue creation also failed:', fallbackError.message);
-              }
-            }
