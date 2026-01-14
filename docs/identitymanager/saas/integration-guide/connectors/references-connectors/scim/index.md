@@ -26,7 +26,7 @@ This page is about:
 
 ## Overview
 
-Simple Cloud Identity Management (SCIM) is a Request for Comments (RFC) standard. It describes a
+System for Cross-domain Identity Management (SCIM) is a Request for Comments (RFC) standard. It describes a
 REST API with specific endpoints to get and set data in a web application for IGA purposes. It
 allows an identity provider to manage the web application's accounts. For more details about SCIM
 and RFC, see the [IETF document](https://tools.ietf.org/html/rfc7644).

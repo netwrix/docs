@@ -23,7 +23,7 @@ How to set up connections between the internal environment and Microsoft (Office
 
 ### Option 1: For Up-to-Date Environments
 
-For up-to-date environments, refer to the following KB article for additional information: [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/troubleshooting-and-errors/data-collection-errors/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm). You can also use this registry key to achieve the same results: [TLS Registry Key](https://netwrix.com/download/products/KnowledgeBase/TLSRegkey.reg).
+For up-to-date environments, refer to the following KB article for additional information: [Client and Server Cannot Communicate, Because They Do Not Possess a Common Algorithm](/docs/kb/auditor/troubleshooting-and-errors/data-collection-errors/client-and-server-cannot-communicate-because-they-do-not-possess-a-common-algorithm). You can also use this registry key to achieve the same results: [TLS Registry Key](https://cdn.sanity.io/files/r09655ln/production/1e4e49af41d9969e7c17fcd528f1e963beec084d.reg).
 
 ### Option 2: For Pre-Windows Server 2019 Environments and Earlier
 
@@ -104,7 +104,7 @@ For 32-bit applications that are running on 64-bit OSs, update the following sub
 
 ### Attached Files
 
-- [TLS Registry Key](https://netwrix.com/download/products/KnowledgeBase/TLSRegkey.reg)
+- [TLS Registry Key](https://cdn.sanity.io/files/r09655ln/production/1e4e49af41d9969e7c17fcd528f1e963beec084d.reg)
 
 ### Related Articles
 
