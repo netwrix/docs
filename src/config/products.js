@@ -531,7 +531,7 @@ export const PRODUCTS = [
       {
         version: '2.6',
         label: '2.6',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/recoveryforactivedirectory/2.6.js',
       },
       {
