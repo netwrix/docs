@@ -31,9 +31,4 @@ following format:
 
 **Step 3 –** Click **Log in**.
 
-Once logged in, the first step is to configure a domain. See the
-[Domain Backup Configuration Page](/docs/recoveryforactivedirectory/3.1/admin/domainbackupconfig.md) topic for
-additional information.
-
-The administrator must also add users who can access the application. Once these users have access,
-see the [Log into the Recovery Console](/docs/recoveryforactivedirectory/3.1/install/login.md) topic for information on accessing and signing into the Recovery Console.
+Once logged in, the product is ready to be configured for use.
