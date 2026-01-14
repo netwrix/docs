@@ -1,4 +1,4 @@
-import { NIR, NRAD } from '@site/src/training/products';
+import { NIR } from '@site/src/training/products';
 
 ## Additional <NIR /> Courses for Partners
 
