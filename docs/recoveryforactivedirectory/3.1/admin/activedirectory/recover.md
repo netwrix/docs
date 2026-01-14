@@ -118,7 +118,7 @@ boxes to configure the necessary options for the user.
 
 ![Object Restore wizard - Credentials page](/images/recoveryforactivedirectory/3.1/product/active_directory/recovery/active_directory_recovery_page5.png)
 
-**Step 11 –** The account preforming the operation must have Domain Admin privileges to access the
+**Step 11 –** The account performing the operation must have Domain Admin privileges to access the
 domain tree area where the object resides. On the Credentials page:
 
 - If the account specified during domain configuration has Domain Admin privileges, click **Next**.
