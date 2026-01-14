@@ -337,3 +337,14 @@ The Substitutions Editor has the following options:
 
 Click **OK** to save the changes and close the window. Click **Cancel** to close the window to
 discard any changes made.
+
+### Download and Configure the Have I Been Pwnd Hash List
+
+If the Administration Console does not have internet access, you can manually download the HIBP
+database.
+
+The Pwned Passwords Downloader is a Dotnet tool used to download all Pwned Passwords hash ranges and
+save them offline so they can be used without a dependency on the k-anonymity API. Use this tool to
+get the latest breached hashes from the Have I Been Pwned (HIBP) database.
+
+See the [Have I Been Pwned](https://haveibeenpwned.com/) website for more information about the HIBP database.
