@@ -18,6 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Check branch ancestry
+        id: check_ancestry
         run: |
           # Valid root commits
           VALID_ROOTS=(
@@ -26,29 +27,41 @@ jobs:
 
           echo "🔍 Validating branch ancestry..."
 
-          # Get the root commit of the current branch
-          BRANCH_ROOT=$(git rev-list --max-parents=0 HEAD)
+          # Get ALL root commits (handles merged branches with multiple roots)
+          BRANCH_ROOTS=$(git rev-list --max-parents=0 HEAD)
 
-          echo "Branch root commit: $BRANCH_ROOT"
+          echo "Found root commit(s):"
+          echo "$BRANCH_ROOTS"
 
-          # Check if branch root is one of the valid roots
-          VALID=false
-          for root in "${VALID_ROOTS[@]}"; do
-            if [ "$BRANCH_ROOT" = "$root" ]; then
-              VALID=true
-              break
+          # Check each root commit
+          INVALID_ROOTS=()
+          while IFS= read -r branch_root; do
+            VALID=false
+            for valid_root in "${VALID_ROOTS[@]}"; do
+              if [ "$branch_root" = "$valid_root" ]; then
+                VALID=true
+                break
+              fi
+            done
+
+            if [ "$VALID" = false ]; then
+              INVALID_ROOTS+=("$branch_root")
             fi
-          done
+          done <<< "$BRANCH_ROOTS"
 
-          if [ "$VALID" = false ]; then
-            echo "❌ ERROR: This branch does not descend from a valid repository initialization"
+          # If any invalid roots found, fail
+          if [ ${#INVALID_ROOTS[@]} -gt 0 ]; then
+            echo "❌ ERROR: This branch contains invalid root commits"
             echo ""
-            echo "Expected root commit to be one of:"
+            echo "Expected all root commits to be one of:"
             for root in "${VALID_ROOTS[@]}"; do
               echo "  - $root"
             done
             echo ""
-            echo "Found root commit: $BRANCH_ROOT"
+            echo "Found invalid root commit(s):"
+            for invalid in "${INVALID_ROOTS[@]}"; do
+              echo "  - $invalid"
+            done
             echo ""
             echo "This repository was re-initialized to remove sensitive data from git history."
             echo "Branches must be created from the current dev/main branches."
@@ -58,13 +71,73 @@ jobs:
             echo "2. Create a fresh branch from current dev: git checkout -b my-branch origin/dev"
             echo "3. Apply your patch: git apply my-changes.patch"
             echo "4. Commit and push the clean branch"
+            echo "5. Delete this branch: git push origin --delete ${{ github.ref_name }}"
             echo ""
             echo "Contact Jake Mahon if you need assistance."
+
+            # Save invalid roots for issue creation
+            echo "invalid_roots=${INVALID_ROOTS[*]}" >> $GITHUB_OUTPUT
             exit 1
           fi
 
           echo "✅ Branch ancestry validation passed"
 
+      - name: Create issue for invalid branch
+        if: failure() && steps.check_ancestry.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branch = context.ref.replace('refs/heads/', '');
+            const pusher = context.actor;
+            const invalidRoots = '${{ steps.check_ancestry.outputs.invalid_roots }}';
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `⚠️ Branch ${branch} contains invalid git history`,
+              assignees: [pusher],
+              labels: ['security', 'urgent'],
+              body: `## ⚠️ URGENT: Invalid Git History Detected
+
+**Branch:** \`${branch}\`
+**Pushed by:** @${pusher}
+**Invalid root commit(s):** \`${invalidRoots}\`
+
+This branch contains git history from before the repository re-initialization and must be deleted immediately to prevent exposure of sensitive data.
+
+### Required Actions:
+
+1. **Save your work:**
+   \`\`\`bash
+   git diff origin/dev > my-changes.patch
+   \`\`\`
+
+2. **Delete this branch:**
+   \`\`\`bash
+   git push origin --delete ${branch}
+   \`\`\`
+
+3. **Create a clean branch:**
+   \`\`\`bash
+   git checkout -b ${branch} origin/dev
+   git apply my-changes.patch
+   git add .
+   git commit -m "Re-apply changes on clean branch"
+   git push -u origin ${branch}
+   \`\`\`
+
+**This branch will be blocked from merging to dev/main.**
+
+Contact @jake-mahon-netwrix if you need assistance.
+
+---
+*Automated alert from [Validate Branch History workflow](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})*`
+            });
+
+            console.log('Issue created for invalid branch');
+
+
 permissions:
   contents: read
   pull-requests: write
+  issues: write
