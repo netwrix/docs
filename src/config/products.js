@@ -490,6 +490,12 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '25.12',
+        label: '25.12',
+        isLatest: true,
+        sidebarFile: './sidebars/privilegesecure/25.12.js',
+      },
+      {
         version: '4.2',
         label: '4.2',
         isLatest: true,
@@ -502,7 +508,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/privilegesecure/4.1.js',
       },
     ],
-    defaultVersion: '4.2',
+    defaultVersion: '25.12,
   },
   {
     id: 'privilegesecurediscovery',
