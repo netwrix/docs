@@ -26,7 +26,7 @@ The page displays the following information:
 - Deleted On – The time and date when the object was deleted
 - Time Left – The time remaining until the object is no longer recoverable
 
-Search for an Object
+## Search for an Object
 
 There are several ways to find an object:
 
