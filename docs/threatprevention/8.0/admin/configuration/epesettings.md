@@ -338,7 +338,7 @@ The Substitutions Editor has the following options:
 Click **OK** to save the changes and close the window. Click **Cancel** to close the window to
 discard any changes made.
 
-### Download and Configure the Have I Been Pwned Hash List
+### Download and Configure the Have I Been Pwnd Hash List
 
 If the Administration Console does not have internet access, you can manually download the HIBP
 database.
