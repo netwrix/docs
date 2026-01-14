@@ -563,19 +563,19 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '7.5',
-        label: '7.5',
+        version: '8.0',
+        label: '8.0',
         isLatest: true,
-        sidebarFile: './sidebars/threatprevention/7.5.js',
+        sidebarFile: './sidebars/threatprevention/8.0.js',
       },
       {
-        version: '7.4',
-        label: '7.4',
+        version: '7.5',
+        label: '7.5',
         isLatest: false,
-        sidebarFile: './sidebars/threatprevention/7.4.js',
-      },
+        sidebarFile: './sidebars/threatprevention/7.5.js',
+      }
     ],
-    defaultVersion: '7.5',
+    defaultVersion: '8.0',
   },
 ];
 

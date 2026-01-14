@@ -5,15 +5,22 @@
   "main": "docusaurus.config.js",
   "scripts": {
     "docusaurus": "npx docusaurus",
+    "prestart": "node scripts/copy-kb-to-versions.js",
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=16384 CHOKIDAR_USEPOLLING=false npx docusaurus start --port=4500 --no-open",
     "start-chok": "cross-env NODE_OPTIONS=--max-old-space-size=16384 CHOKIDAR_USEPOLLING=true npx docusaurus start --port=4500 --no-open",
+    "prebuild": "node scripts/copy-kb-to-versions.js",
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=16384 npx docusaurus build",
+    "preci": "node scripts/copy-kb-to-versions.js",
     "ci": "npx docusaurus build",
     "swizzle": "npx docusaurus swizzle",
     "clear": "npx docusaurus clear",
     "serve": "npx serve -s build -l 8080",
     "write-translations": "npx docusaurus write-translations",
-    "write-heading-ids": "npx docusaurus write-heading-ids"
+    "write-heading-ids": "npx docusaurus write-heading-ids",
+    "kb:clean": "node scripts/copy-kb-to-versions.js --clean",
+    "kb:dry": "node scripts/copy-kb-to-versions.js --dry",
+    "kb:test:aa": "npm run kb:clean && npm run prestart && npm run start",
+    "kb:prodtest:aa": "npm run kb:clean && npm run prebuild && npm run build && npm run serve"
   },
   "dependencies": {
     "@docusaurus/babel": "^3.8.1",
