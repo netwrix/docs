@@ -14,8 +14,6 @@ Estimated length: 45 minutes
 
 This learning path grants <Company /> certification as a Presales Engineer for this product. It contains the following courses:
 
-It contains the following courses:
-
 * 1400 <NIR /> – Valuable Features
 * 3400 Introduction to <NIR />
 * 5400 <NIR /> – Demo the Basic Use Cases

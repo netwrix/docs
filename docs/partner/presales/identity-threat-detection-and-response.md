@@ -12,7 +12,7 @@ import { NIRDemo } from '@site/src/training/identity-recovery';
 import { NPCDemo } from '@site/src/training/pingcastle';
 import { NTMDemo } from '@site/src/training/threat-manager';
 import { NTPDemo } from '@site/src/training/threat-prevention';
-import { Company, NAA, NPC, NRAD, NTM, NTP } from '@site/src/training/products';
+import { Company, NAA, NIR, NPC, NTM, NTP } from '@site/src/training/products';
 
 
 Estimated length: 2 hours
