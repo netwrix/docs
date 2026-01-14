@@ -1,0 +1,70 @@
+name: Validate Branch History
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate-history:
+    name: Validate Clean History
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check branch ancestry
+        run: |
+          # Valid root commits
+          VALID_ROOTS=(
+            "97e73c5cc4a29296024f23499ef5e60bc7db755b"
+          )
+
+          echo "🔍 Validating branch ancestry..."
+
+          # Get the root commit of the current branch
+          BRANCH_ROOT=$(git rev-list --max-parents=0 HEAD)
+
+          echo "Branch root commit: $BRANCH_ROOT"
+
+          # Check if branch root is one of the valid roots
+          VALID=false
+          for root in "${VALID_ROOTS[@]}"; do
+            if [ "$BRANCH_ROOT" = "$root" ]; then
+              VALID=true
+              break
+            fi
+          done
+
+          if [ "$VALID" = false ]; then
+            echo "❌ ERROR: This branch does not descend from a valid repository initialization"
+            echo ""
+            echo "Expected root commit to be one of:"
+            for root in "${VALID_ROOTS[@]}"; do
+              echo "  - $root"
+            done
+            echo ""
+            echo "Found root commit: $BRANCH_ROOT"
+            echo ""
+            echo "This repository was re-initialized to remove sensitive data from git history."
+            echo "Branches must be created from the current dev/main branches."
+            echo ""
+            echo "To fix this:"
+            echo "1. Save your changes as a patch: git diff origin/dev > my-changes.patch"
+            echo "2. Create a fresh branch from current dev: git checkout -b my-branch origin/dev"
+            echo "3. Apply your patch: git apply my-changes.patch"
+            echo "4. Commit and push the clean branch"
+            echo ""
+            echo "Contact Jake Mahon if you need assistance."
+            exit 1
+          fi
+
+          echo "✅ Branch ancestry validation passed"
+
+permissions:
+  contents: read
+  pull-requests: write
