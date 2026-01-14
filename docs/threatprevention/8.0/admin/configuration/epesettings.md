@@ -415,10 +415,10 @@ Run:
 ```
 haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm
 ```
-
+This screenshot shows the completed download.
 ![hibp_installation_3](/images/threatprevention/8.0/admin/configuration/hibp_installation_3.webp)
 
-This screenshot shows the completed download.
+
 
 **Step 3 –** To overwrite an existing hash list, run:
 
