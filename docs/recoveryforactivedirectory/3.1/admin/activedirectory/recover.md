@@ -58,7 +58,7 @@ The Object Restore wizard opens.
 
 ![Object Restore wizard - Domain Controller page](/images/recoveryforactivedirectory/3.1/product/active_directory/recovery/active_directory_recovery_page2.png)
 
-**Step 5 –** Select a domain controller where the restore operation will get affected. Options are:
+**Step 5 –** Select a domain controller where the restore operation will take effect. Options are:
 
 - Use any writable domain controller – The system picks any writable domain controller in the domain
   for the restore operation
