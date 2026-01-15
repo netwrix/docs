@@ -37,12 +37,8 @@ Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP' -Recurse |
 
 Example:
 
-![Dialog box for selecting monitoring plan settings with the Schedule tab active](https://nwxcorp.file.force.com/servlet/rtaImage?eid=ka0Qk000000DMqk&feoid=00N0g000004CA0p&refid=0EMQk00000Bs0kh)
+![PowerShell Example Output](../0-images/ka0Qk000000DG8bIAG.png)
 
 ## Related Articles
 
 - [Recovery for Active Directory Requirements](https://docs.netwrix.com/docs/recoveryforactivedirectory/2_6/requirements/server)
-- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/accessanalyzer/reference-and-technical-specifications/net_dependencies_for_netwrix_access_analyzer)
-- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/configuration-and-administration/net_dependencies_for_netwrix_threat_prevention)
-- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/threatmanager/configuration-and-administration/net_dependencies_for_netwrix_threat_manager)
-- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_activity_monitor)
