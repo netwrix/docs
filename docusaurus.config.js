@@ -22,21 +22,14 @@ const config = {
 
   // throw on anything that is not configured correctly
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
   onBrokenAnchors: 'throw',
 
   // Set Mermaid
   markdown: {
     mermaid: true,
     hooks: {
-      onBrokenMarkdownLinks: (brokenLink) => {
-        // Ignore broken links for POC
-        return;
-      },
-      onBrokenMarkdownImages: (brokenImage) => {
-        // Ignore broken images for POC
-        return;
-      },
+      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownImages: 'warn',
     },
   },
   themes: ['@docusaurus/theme-mermaid'],
