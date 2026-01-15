@@ -7,7 +7,7 @@ sidebar_position: 41
 # Entra ID Page
 
 On the Entra ID page, you can access all the Entra tenants that you have configured through the
-[Entra ID Page](/docs/recoveryforactivedirectory/3.1/admin/configuration/entra.png).
+[Entra ID Page](/docs/recoveryforactivedirectory/3.1/admin/configuration/entraid.md).
 
 Click **Entra ID** in the left pane to open the Entra ID page.
 
