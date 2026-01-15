@@ -44,7 +44,7 @@ to finish the wizard.
 
 The storage container is now added to the system.
 
-### Edit Storage Container Configuration
+### Edit a Storage Container Configuration
 
 Follow the steps to edit a storage container configuration.  Editing a storage container follows the same steps as adding a storage container configuration.
 
