@@ -26,8 +26,8 @@ The following learning paths provide Partner certification for Presales Engineer
     * [Netwrix Platform Governance for Salesforce Presales Engineer](./platform-governance-for-salesforce.md)
 * Identity Threat Detection & Response Solution
     * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
+    * [Netwrix Identity Recovery Presales Engineer](identity-recovery.md)
     * [Netwrix PingCastle Presales Engineer](./pingcastle.md)
-    * [Netwrix Recovery for Active Directory Presales Engineer](./recovery-for-ad.md)
     * [Netwrix Threat Prevention Presales Engineer](./threat-prevention.md)
     * [Netwrix Threat Manager Presales Engineer](./threat-manager.md)
     * [Netwrix Identity Threat Detection & Response Solution Presales Engineer](identity-threat-detection-and-response.md)
