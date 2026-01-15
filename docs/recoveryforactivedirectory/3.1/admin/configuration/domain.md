@@ -117,7 +117,7 @@ If notifications are not desired, skip this step.
 ![Add Domain Configuration wizard - Confirm page](/images/recoveryforactivedirectory/3.1/product/configuration/active_directory/active_directory_configuration_page5.png)
 
 **Step 14 –** The Confirm page displays a summary of the settings you provided on the pages of the
-wizard. Use the Back button to return to a previous page and change any setting. Click **Complete**
+wizard. Use the Back button to return to a previous page and change any setting. Click **Done**
 to finish the wizard.
 
 A new domain backup configuration is added and displayed on the Domains page.
@@ -133,6 +133,6 @@ Domain Configuration wizard opens.
 
 **Step 2 –** Modify the desired settings for the domain backup configuration
 
-**Step 3 –** The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use the Back button to return to a previous page and change any setting. Click **Complete** to finish the wizard.
+**Step 3 –** The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use the Back button to return to a previous page and change any setting. Click **Done** to finish the wizard.
 
 The domain configuration is updated and backups will resume as scheduled.

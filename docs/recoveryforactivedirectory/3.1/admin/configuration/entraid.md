@@ -100,7 +100,7 @@ If notifications are not desired, skip this step.
 ![Add Tenant Configuration wizard - Confirm page](/images/recoveryforactivedirectory/3.1/product/configuration/entra_id/entra_id_configuration_page4.png)
 
 **Step 11 –** The Confirm page displays a summary of the settings you provided on the pages of the
-wizard. Use the Back button to return to a previous page and change any setting. Click **Complete**
+wizard. Use the Back button to return to a previous page and change any setting. Click **Done**
 to finish the wizard.
 
 A new tenant is added and displayed on the Entra Id page.
@@ -118,6 +118,6 @@ Tenant Configuration wizard opens.
 
 **Step 2 –** Modify the desired settings for the tenant configuration
 
-**Step 3 –** The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use the Back button to return to a previous page and change any setting. Click **Complete** to finish the wizard.
+**Step 3 –** The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use the Back button to return to a previous page and change any setting. Click **Done** to finish the wizard.
 
 The tenant configuration is updated and backups will resume as scheduled.

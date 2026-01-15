@@ -10,13 +10,11 @@ This topic provides information on installing and configuring Netwrix Identity R
 which enables organizations to quickly and easily roll back and recover unintended directory
 changes.
 
-Installation Requirements
+## Installation Requirements
 
-Before installing Identity Recovery, review the recommended configuration of the servers
-needed to install this product in a production environment. See the
-[Requirements ](/docs/recoveryforactivedirectory/3.1/requirements/overview.md)topic for additional information.
+Before installing Identity Recovery, review the recommended configuration of the servers needed to install this product in a production environment. See the [Requirements ](/docs/recoveryforactivedirectory/3.1/requirements/overview.md)topic for additional information.
 
-Installation
+## Installation
 
 Install and configure Identity Recovery. See the
 [Install the Application](/docs/recoveryforactivedirectory/3.1/install/application.md) topic for additional information.
@@ -25,13 +23,12 @@ Install and configure Identity Recovery. See the
 Installing the server automatically installs the RSAT Extension locally.
 :::
 
-
-First Launch
+## First Launch
 
 Launch Identity Recovery using the desktop icon and sign in with the administrator role
 account that was configured during installation. See the [First Launch](/docs/recoveryforactivedirectory/3.1/install/firstlaunch.md) topic for additional information on signing in for the first time.
 
-Initial Configuration
+## Initial Configuration
 
 Several Identity Recovery components require configuration after the first launch of the product.
 
@@ -50,7 +47,7 @@ Several Identity Recovery components require configuration after the first launc
 - _(Optional)_ Configure Notifications – Email notifications require configuration before they can
   be enabled. See the [Notifications Page](/docs/recoveryforactivedirectory/3.1/admin/configuration/notifications.md) topic for additional information on configuring email notifications.
 
-Rollback and Restore Operations
+## Rollback and Restore Operations
 
 Now that the initial configuration of Identity Recovery is complete and backups have
 been created, you can rollback and recover Active Directory objects, as well as restore domain
