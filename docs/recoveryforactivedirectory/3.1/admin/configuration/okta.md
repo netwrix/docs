@@ -42,7 +42,7 @@ Follow the steps to add a tenant.
 **Step 1 –** Click the **Add tenant configuration** button on the Okta page to launch the Add
 Tenant Configuration wizard.
 
-![Add Tenant Configuration wizard - Okta page](/images/recoveryforactivedirectory/3.1/product/configuration/Okta/Okta_configuration_page1.png)
+![Add Tenant Configuration wizard - Okta page](/images/recoveryforactivedirectory/3.1/product/configuration/okta/okta_configuration_page1.png)
 
 **Step 2 –** Enter a tenant [example.tenant.com] in the Tenant field.
 
