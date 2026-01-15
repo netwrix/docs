@@ -42,7 +42,7 @@ This includes:
 - StealthAUDIT Sensitive Data Discovery Add-on version 11.5
 - StealthAUDIT File System Scanning Proxy (FSAA Proxy) 11.5
 
-You can also navigate to the Netwrix Access Analyzer landing page for the product **Requirements** located under **Getting Started**.
+You can also navigate to the [Netwrix Access Analyzer Requirements](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/overview) located under **Getting Started**.
 
 > **NOTE:** .NET Framework is not the same as ASP.NET Core, and having one does not mean you have the other. ASP.NET Core and .NET Desktop Runtime should appear on the list of installed Apps & Features; however, .NET Framework does not appear on that list. You can check which versions of .NET Framework you have installed by running the following command in PowerShell:
 
