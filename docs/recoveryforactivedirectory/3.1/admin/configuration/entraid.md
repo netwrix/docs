@@ -57,12 +57,12 @@ The application registration must have the following Microsoft Graph access:
 
 |API / Permissions name|Type|Description|Admin consent required|Status|
 |----------------------|----|-----------|----------------------|------|
-|AdministrativeUnit.ReadWrite.All|Application|Read and write all administrative units|Yes|Granted for gobias|
-|Application.ReadWrite.All|Application|Read and write all applications|Yes|Granted for gobias|
-|Application.ReadWrite.OwnedBy|Application|Manage apps that this app creates or owns|Yes|Granted for gobias|
-|Directory.ReadWrite.All|Application|Read and write directory data|Yes|Granted for gobias|
-|Group.ReadWrite.All|Application|Read and write all groups|Yes|Granted for gobias|
-|User.DeleteRestore.All|Application|Delete and restore all users|Yes|Granted for gobias|
+|AdministrativeUnit.ReadWrite.All|Application|Read and write all administrative units|Yes|Granted|
+|Application.ReadWrite.All|Application|Read and write all applications|Yes|Granted|
+|Application.ReadWrite.OwnedBy|Application|Manage apps that this app creates or owns|Yes|Granted|
+|Directory.ReadWrite.All|Application|Read and write directory data|Yes|Granted|
+|Group.ReadWrite.All|Application|Read and write all groups|Yes|Granted|
+|User.DeleteRestore.All|Application|Delete and restore all users|Yes|Granted|
 
 :::
 

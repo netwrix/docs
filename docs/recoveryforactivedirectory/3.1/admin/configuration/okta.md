@@ -68,18 +68,18 @@ time.
 
 ![Add Tenant Configuration wizard - Notifications page](/images/recoveryforactivedirectory/3.1/product/configuration/okta/okta_configuration_page3.png)
 
-**Step 9 –** To set notifications, select the Send email notifications check box and enter the
+**Step 8 –** To set notifications, select the Send email notifications check box and enter the
 email address of one or more users and/or groups to receive the job start and end notifications. Use
 a semicolon (;) to separate multiple recipients. See the [Notifications Page](/docs/recoveryforactivedirectory/3.1/admin/configuration/notifications.md)
 topic for additional information.
 
 If notifications are not desired, skip this step.
 
-**Step 10 –** Click **Next**.
+**Step 9 –** Click **Next**.
 
 ![Add Tenant Configuration wizard - Confirm page](/images/recoveryforactivedirectory/3.1/product/configuration/okta/okta_configuration_page4.png)
 
-**Step 11 –** The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use the Back button to return to a previous page and change any setting. Click 
+**Step 10 –** The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use the Back button to return to a previous page and change any setting. Click 
 **Done**
 to finish the wizard.
 
@@ -97,6 +97,6 @@ Tenant Configuration wizard opens.
 
 **Step 2 –** Modify the desired settings for the tenant configuration
 
-**Step 3 –** The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use the Back button to return to a previous page and change any setting. Click **Complete** to finish the wizard.
+**Step 3 –** The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use the Back button to return to a previous page and change any setting. Click **Done** to finish the wizard.
 
 The tenant configuration is updated and backups will resume as scheduled.
