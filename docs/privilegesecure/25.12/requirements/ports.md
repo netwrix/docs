@@ -31,7 +31,7 @@ The requirements for the (Privilege Secure) application server are:
 
 - Make sure that you have configured the Antivirus exclusions according to the following Netwrix
   knowledge base article:
-  [SbPAM: Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/exclusions-for-antivirus-av-endpoint-software)
+  [SbPAM: Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
 - The following ports must be open for communication between Privilege Secure and Active Directory
   domain controllers:
 

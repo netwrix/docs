@@ -57,7 +57,7 @@ The `NPS.zip` file that can be downloaded from the Netwrix Customer portal conta
 
     - NPS.HaMgr.exe – Installs the High Availability Management tool. If high availability setup is
       desired, please coordinate with [Netwrix Support](https://www.netwrix.com/support.html) and
-      consult the [How to Configure High Availability (HA) Using SbPAM.HaMgr.exe (now NPS.HaMgr.exe)](/docs/kb/privilegesecure/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations) knowledge base article.
+      consult the [How to Configure High Availability (HA) Using SbPAM.HaMgr.exe (now NPS.HaMgr.exe)](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations) knowledge base article.
     - NPS.ProxyService – Installs the NPS Proxy Service nodes. It is available as both an EXE and
       MSI format. By default, this service is installed on the application server. This executable
       can be copied to other servers to install the service. The MSI can be used with a software
@@ -88,7 +88,7 @@ The `NPS.zip` file that can be downloaded from the Netwrix Customer portal conta
 
     - sbpam-url.exe – Installs the sbpam-url URL handler. This will automatically launch SSH
       sessions from the browser in your preferred SSH client program. See the
-      [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/invoking-desktop-ssh-client-automatically)
+      [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically)
       Knowledge Base Article for additional information.
     - SbPostgreSQL16.exe – Installs the PostgreSQL v16 database. By default, this installer is run
       as part of the Netwrix Setup Launcher. It installs the following components:

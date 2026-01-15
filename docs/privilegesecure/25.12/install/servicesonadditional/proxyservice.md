@@ -24,19 +24,17 @@ information.
 Follow the steps to install the NPS Proxy Service on another server that will run services for the
 application.
 
-:::tip
-Remember, You must configure the Antivirus exclusions according to the [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/exclusions-for-antivirus-av-endpoint-software)
-knowledge base article.
-:::
+**Step 1 –** Make sure that you have configured the Antivirus exclusions according to the following
+Netwrix knowledge base article: [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
 
-**Step 1 –** Copy the `NPS.ProxyService.exe` file to the desktop of the remote server.
+**Step 2 –** Copy the `NPS.ProxyService.exe` file to the desktop of the remote server.
 
-**Step 2 –** Right-click on the installer and select Run as administrator. The Netwrix Privilege
+**Step 3 –** Right-click on the installer and select Run as administrator. The Netwrix Privilege
 Secure Proxy Service Setup wizard opens.
 
 ![Netwrix Privileged Secure Proxy Service Setup wizard on the EULA page](/images/privilegesecure/25.12/accessmanagement/install/licenseagreement_2.webp)
 
-**Step 3 –** On the End User License Agreement page, check the I agree to the license terms and
+**Step 4 –** On the End User License Agreement page, check the I agree to the license terms and
 conditions box and click Options.
 
 :::tip
@@ -46,14 +44,14 @@ Remember, it is a best practice to read the agreement before accepting it.
 
 ![Netwrix Privileged Secure Proxy Service Setup wizard on the Setup Options page](/images/privilegesecure/25.12/accessmanagement/install/setupoptions.webp)
 
-**Step 4 –** The default installation location for Install Folder is:
+**Step 5 –** The default installation location for Install Folder is:
 
 `C:\Program Files\Netwrix\Netwrix Privilege Secure Proxy Service`
 
 - To change the default location, click Browse and set a new location.
 - When the location is set, click OK.
 
-**Step 5 –** You will return to the End User License Agreement page. Click Install.
+**Step 6 –** You will return to the End User License Agreement page. Click Install.
 
 :::note
 The installation process begins and the wizard displays the its Progress. This may take a
@@ -63,7 +61,7 @@ few moments.
 
 ![Netwrix Privileged Secure Proxy Service Setup wizard on the Successfully Completed page](/images/privilegesecure/25.12/accessmanagement/install/completed_2.webp)
 
-**Step 6 –** When installation is complete, click Close.
+**Step 7 –** When installation is complete, click Close.
 
 The NPS Proxy Service is now installed on a remote server. You can verify that it is started and set
 to run automatically in the Services app (`services.msc`).

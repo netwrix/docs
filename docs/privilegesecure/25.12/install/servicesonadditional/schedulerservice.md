@@ -23,7 +23,7 @@ Follow the steps to install the Scheduler Service.
 
 **Step 1 –** Make sure that you have configured the Antivirus exclusions according to the following
 Netwrix knowledge base article:
-[Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/exclusions-for-antivirus-av-endpoint-software)
+[Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
 
 **Step 2 –** Move the NPS.SchedulerService.exe installation package to the desktop of the remote
 server.

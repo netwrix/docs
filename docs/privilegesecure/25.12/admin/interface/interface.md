@@ -17,7 +17,7 @@ Select the Policy interface for related pages:
 - [Access Policy Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/accesspolicy.md) — Add or modify user and group access to resources
 
     - [Connection Profiles Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/connectionprofiles/connectionprofiles.md) — Add or modify connection profiles
-    - [Activity Token Complexity Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/activitytokencomp) — Add or modify the
+    - [Activity Token Complexity Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/activitytokencomplex/activitytokencomplexity.md) — Add or modify the
       complexity of activity tokens
     - [Command Restriction Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/sshcommands.md) - Define SSH command restrictions
 
