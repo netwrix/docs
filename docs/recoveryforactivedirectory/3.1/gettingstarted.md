@@ -35,7 +35,7 @@ Initial Configuration
 
 Several Identity Recovery components require configuration after the first launch of the product.
 
-- Configure Domain Backup – Configure a domain and backup settings. It is recommended a start a backup of the domain after
+- Configure Domain Backup – Configure a domain and backup settings. It is recommended to start a backup of the domain after
   configuring it. See the [Domains Page](/docs/recoveryforactivedirectory/3.1/admin/configuration/domain.md) topic for additional information on configuring a domain to backup.
 - Configure Forest Backup – Configure a forest and then configure backup settings for domain
   controllers in the forest. It is recommended a start a backup of the domain controllers after
