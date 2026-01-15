@@ -28,7 +28,7 @@ The page displays the following information:
 
 You can perform the rollback and recover operations for objects.
 
-Search for an Object
+## Search for an Object
 
 There are several ways to find an object:
 
@@ -38,7 +38,7 @@ There are several ways to find an object:
 - Search box – Enter a text string in the search box to filter the table for results that contain
   the text.
 
-Rollback an Object
+## Rollback an Object
 
 Select and expand a domain in the left pane and locate the object you want to rollback. Right-click
 this object and select **Rollback** on the menu. See the [Rollback Objects](/docs/recoveryforactivedirectory/3.1/admin/activedirectory/rollback.md) topic for

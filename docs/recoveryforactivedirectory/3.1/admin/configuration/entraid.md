@@ -6,9 +6,7 @@ sidebar_position: 12
 
 # Entra ID Page
 
-The Entra ID page provides a list of the Entra tenants backed up by Identity Recovery. It
-displays the backup schedule settings for each added Entra tenant. You can also add and configure new
-Entra tenant.
+The Entra ID page provides a list of the Entra tenants backed up by Identity Recovery. It displays the backup schedule settings for each added Entra tenant. You can also add and configure a new Entra tenant.
 
 Click **Configuration** in the left pane. Then click the **Entra ID** tab on the Configuration page
 to open the Entra tenants page.
