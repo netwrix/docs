@@ -22,7 +22,7 @@ The table displays the following information:
 - Duration – The time the collection took to complete
 - Status – Collection state as idle, waiting, error, or success
 - Details – Information about any errors that occurred when the last backup was performed
-- Actions – Displays the icons used to collect, edit, and delete the respective domain
+- Actions – Displays the icons used to collect, edit, and delete the respective tenant configuration
 
     - Run backup – Click the **Play** icon to start a new collection (backup) on the respective
       tenant if collection is needed outside of the configured schedule
@@ -36,8 +36,7 @@ additional information.
 
 ### Add a Tenant
 
-To add a tenant, provide tenant details and configure the backup schedule. For a list of the
-supported Windows Servers, see the [Target Domains](/docs/recoveryforactivedirectory/3.1/requirements/targetdomain.md) topic.
+To add a tenant, provide tenant details and configure the backup schedule.
 
 Follow the steps to add a tenant.
 
@@ -49,24 +48,23 @@ Tenant Configuration wizard.
 **Step 2 –** Enter a tenant [example.tenant.com] in the Tenant field.
 
 **Step 3 –** Enter the Client Id [CLIENTID] to be used for backups, rollbacks, and
-recoveries in the Account field.
+recoveries in the Client ID field.
 
-**Step 4 –** Enter the password for the account in the Secret field.
+**Step 4 –** Enter the secret for the application registration in the Secret field.
 
 :::note
-The account must have Domain Admin privileged access to read and write object data in
-order to back up, rollback, and restore objects in Active Directory. If the account has read rights
-only, it will be able to back up the tenant but unable to rollback and restore objects. In this
-case, alternate credentials with read and write access to objects will have to be provided on the
-Credentials page of the Object Rollback and Object Restore wizards. See the
-[Rollback Objects](/docs/recoveryforactivedirectory/3.1/admin/activedirectory/rollback.md) and
-[Recover an Object](/docs/recoveryforactivedirectory/3.1/admin/activedirectory/recover.md#recover-an-object) topics for information on the wizards.
-:::
+The application registration must have the following Microsoft Graph access:
 
-For a Least Privilege Access Model to provision an Active Directory security group with the
-permissions that are necessary to perform backups, rollbacks and recovery, see the
-[Least Privilege Access Model](/docs/recoveryforactivedirectory/3.1/requirements/targetdomain.md#least-privilege-access-model)
-topic.
+|API / Permissions name|Type|Description|Admin consent required|Status|
+|----------------------|----|-----------|----------------------|------|
+|AdministrativeUnit.ReadWrite.All|Application|Read and write all administrative units|Yes|Granted for gobias|
+|Application.ReadWrite.All|Application|Read and write all applications|Yes|Granted for gobias|
+|Application.ReadWrite.OwnedBy|Application|Manage apps that this app creates or owns|Yes|Granted for gobias|
+|Directory.ReadWrite.All|Application|Read and write directory data|Yes|Granted for gobias|
+|Group.ReadWrite.All|Application|Read and write all groups|Yes|Granted for gobias|
+|User.DeleteRestore.All|Application|Delete and restore all users|Yes|Granted for gobias|
+
+:::
 
 **Step 5 –** Click **Next**.
 
