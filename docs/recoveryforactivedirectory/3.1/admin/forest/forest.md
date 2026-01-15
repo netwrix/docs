@@ -12,7 +12,7 @@ The Forest page allows administrators to:
 - Carry out a forest recovery
 
 >
-> You must add a forest first. See the [Add a Forest](#add-a-forest) topic for additional
+> You must add a forest first. See the [Add a Forest](/docs/recoveryforactivedirectory/3.1/admin/configuration/forest.md) topic for additional
 > information.
 
 You can view the domain controllers in the forest and verify whether backups are
