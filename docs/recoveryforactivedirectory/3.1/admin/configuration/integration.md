@@ -15,7 +15,7 @@ Threat Prevention for objects on the [Active Directory Page](/docs/recoveryforac
 Click **Configuration** in the left pane. Then click the **Netwrix Integrations** tab on the
 Configuration page to open the Netwrix Integrations page.
 
-![Netwrix Integrations page](/images/recoveryforactivedirectory/3.1/product/Configuration/Integrations/integrations_configuration.png)
+![Netwrix Integrations page](/images/recoveryforactivedirectory/3.1/product/configuration/integrations/integrations_configuration.png)
 
 Follow the steps to configure access to the data of a Netwrix product.
 
@@ -44,13 +44,13 @@ that have access to Threat Prevention. Only the users that log into Identity Rec
 
 - Click the Add account access button to add an account. The Add Account Access wizard is displayed.
 
-    ![Add Account Access wizard - Account page](/images/recoveryforactivedirectory/3.1/product/Configuration/Integrations/integrations_configuration_page1.png)
+    ![Add Account Access wizard - Account page](/images/recoveryforactivedirectory/3.1/product/configuration/integrations/integrations_configuration_page1.png)
 
 - Enter a user's first or last name, display name, sAMAccountName, or group name in the **Search**
   field. As you type, the system will find matches in Active Directory and display the results.
   Select the desired user and click **Next**.
 
-    ![Add Account Access wizard - Confirm page](/images/recoveryforactivedirectory/3.1/product/Configuration/Integrations/integrations_configuration_page2.png)
+    ![Add Account Access wizard - Confirm page](/images/recoveryforactivedirectory/3.1/product/configuration/integrations/integrations_configuration_page2.png)
 
 - The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use
   the Back button to return to a previous page and change any setting. Click **Done** to finish
