@@ -38,7 +38,7 @@ Ensure the following prerequisites are met before configuring AIP scanning:
 * Microsoft Entra ID Admin credentials
 * The PowerShell `Install-Module` command requires:
   * PowerShell 5.0 (Run as Administrator)
-  * Windows Server 2016and later
+  * Windows Server 2016 and later
 * Active Directory Rights Management Services Client 2.1 installed on the server where the FSAA applet or proxy is being run
 
 ### Rights Management Service Client Installation
@@ -47,7 +47,7 @@ The Rights Management Service Client must be installed on the applet servers whe
 
 * To install the Rights Management Service Client 2.1 on the server where the scan is taking place, go to the Microsoft download center:
 
-  <https://www.microsoft.com/en-us/download/details.aspx?id=38396>
+  [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=38396)
 
 
 :::info
@@ -62,8 +62,8 @@ Read the System Requirements and Install Instructions provided by Microsoft to c
 
 1. Open the Azure Portal and sign in with an administrator account
 
-   
-   1. <https://portal.azure.com/>
+
+   1. [Azure Portal](https://portal.azure.com/)
 2. Create a new app registration
 
    
@@ -129,7 +129,7 @@ The Service Principal Account is now added to the Rights Management service as a
 In Microsoft Azure, add the Account to the Azure Information Protection Administrator Role.
 
 
-1. Log into **[http://portal.azure.com](http://portal.azure.com/)** with Azure credentials and select **Microsoft Entra ID** from the list of resources on the left-hand pane.
+1. Log into the **[Azure Portal](https://portal.azure.com/)** with Azure credentials and select **Microsoft Entra ID** from the list of resources on the left-hand pane.
 2. Navigate to **Roles and Administrators**. On the Administrative Roles page, select the **Azure Information Protection Administrator** role.
 3. Use the **Add Assignment** button to display the Add assignments pane. Search for the name of the new service principal account (the **DisplayName** entered in PowerShell) and add it to the list of assignments.
 
