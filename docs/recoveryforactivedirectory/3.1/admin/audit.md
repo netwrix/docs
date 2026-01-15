@@ -17,6 +17,6 @@ The following information is displayed for an event:
 - Action – The action perpetrated by the account
 - Object – The name of the object affected by the change
 - Account – The account that made the change
-- Event Time – The time the action was perpetrated
+- Event Time – The time the action was performed
 
 To view the details of an event, click the arrow next to it to expand it.
