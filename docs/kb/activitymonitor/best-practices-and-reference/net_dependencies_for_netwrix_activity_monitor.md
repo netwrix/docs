@@ -37,12 +37,9 @@ Get-ItemProperty -Name version -EA 0 | Where { $_.PSChildName -Match '^(?!S)\p{L
 Select PSChildName, version
 ```
 
-![PowerShell Example Output](https://nwxcorp.file.force.com/servlet/rtaImage?eid=ka0Qk000000E7Hl&feoid=00N0g000004CA0p&refid=0EMQk00000BprDf)
+![PowerShell Example Output](../0-images/ka0Qk000000DG8bIAG.png)
 
 ## Related Articles
 
 - [Netwrix Activity Monitor Requirements](https://docs.netwrix.com/docs/activitymonitor/8_0/requirements/overview)
-- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/accessanalyzer/reference-and-technical-specifications/net_dependencies_for_netwrix_access_analyzer)
-- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/configuration-and-administration/net_dependencies_for_netwrix_threat_prevention)
-- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/recoveryad/configuration-and-administration/net_dependencies_for_netwrix_recovery_for_active_directory)
-- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/threatmanager/configuration-and-administration/net_dependencies_for_netwrix_threat_manager)
+- [Netwrix Access Analyzer Requirements](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/overview)
