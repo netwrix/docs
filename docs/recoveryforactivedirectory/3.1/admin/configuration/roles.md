@@ -62,7 +62,7 @@ menu.
 ![Add Account Role wizard – Confirm page](/images/recoveryforactivedirectory/3.1/product/configuration/users_and_roles/users_and_roles_configuration_page3.png)
 
 **Step 6 –** The Confirm page displays a summary of the settings you provided on the pages of the
-wizard. Use the Back button to return to a previous page and change any setting. Click **Complete**
+wizard. Use the Back button to return to a previous page and change any setting. Click **Done**
 to finish the wizard.
 
 The selected user or group is now added to the table with the specified role.
