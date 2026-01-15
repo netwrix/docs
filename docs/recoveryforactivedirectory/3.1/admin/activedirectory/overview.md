@@ -44,7 +44,7 @@ Select and expand a domain in the left pane and locate the object you want to ro
 this object and select **Rollback** on the menu. See the [Rollback Objects](/docs/recoveryforactivedirectory/3.1/admin/activedirectory/rollback.md) topic for
 additional information.
 
-Recover Deleted Objects
+## Recover Deleted Objects
 
 On expanding a domain in the left pane, you will notice that Recycle Bin is in blue, indicating that
 this is a virtual container specific to Identity Recovery. Use the Recycle Bin to

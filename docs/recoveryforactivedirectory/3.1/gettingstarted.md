@@ -12,7 +12,7 @@ changes.
 
 ## Installation Requirements
 
-Before installing Identity Recovery, review the recommended configuration of the servers needed to install this product in a production environment. See the [Requirements ](/docs/recoveryforactivedirectory/3.1/requirements/overview.md)topic for additional information.
+Before installing Identity Recovery, review the recommended configuration of the servers needed to install this product in a production environment. See the [Requirements](/docs/recoveryforactivedirectory/3.1/requirements/overview.md) topic for additional information.
 
 ## Installation
 

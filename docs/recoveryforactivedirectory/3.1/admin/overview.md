@@ -29,7 +29,7 @@ Identity Recovery enables administrators to manage Active Directory in the follo
 - Integrate with Netwrix products – Fetch specific data from other Netwrix products, such as Threat
   Prevention, to display in Identity Recovery
 
-DNS Records
+## DNS Records
 
 DNS records must be stored in Active Directory in order to backup, restore, and view DNS objects in
 Identity Recovery. See the Microsoft
