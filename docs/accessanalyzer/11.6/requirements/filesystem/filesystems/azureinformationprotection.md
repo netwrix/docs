@@ -90,6 +90,9 @@ Read the System Requirements and Install Instructions provided by Microsoft to c
    2. Click “Add a permission”
    3. Select the **Microsoft Graph API** permission set > Application permissions
    4. Add the “InformationProtectionPolicy.Read.All” permission
+       
+      <img width="875" height="98" alt="image" src="https://github.com/user-attachments/assets/e0af32c2-c402-4c25-9017-8852b61fc7f4" />
+      
 5. After adding the required API permission, select “Grant admin consent”
 6. Record the AppID (from the Overview Page) and the tenantID with the secret value
 
