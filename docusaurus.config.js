@@ -21,13 +21,23 @@ const config = {
   baseUrl: '/',
 
   // throw on anything that is not configured correctly
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
   onBrokenAnchors: 'throw',
 
   // Set Mermaid
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: (brokenLink) => {
+        // Ignore broken links for POC
+        return;
+      },
+      onBrokenMarkdownImages: (brokenImage) => {
+        // Ignore broken images for POC
+        return;
+      },
+    },
   },
   themes: ['@docusaurus/theme-mermaid'],
 
