@@ -83,7 +83,7 @@ start of each domain backup. Keep in mind the size of the environment when confi
 Click **Next**.
 
 :::note
-If the start time is changed from the default and a frequency is selected (in minutes),the backups
+If the start time is changed from the default and a frequency is selected (in minutes), the backups
 will run at the desired frequency but will skip from midnight until the selected start time.
 :::
 

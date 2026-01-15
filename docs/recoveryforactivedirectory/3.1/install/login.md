@@ -15,7 +15,7 @@ When Identity Recovery is installed, the following icon is displayed on the desk
 Administrator and non-administrator users can access the Recovery Console on the Identity Recovery server using either of the following methods:
 
 - Click the desktop icon
-- Type `http:/localhost:3005` in a web browser and press Enter
+- Type `http://localhost:3005` in a web browser and press Enter
 
 :::note
 If the port number and web protocol was changed from default during the installation

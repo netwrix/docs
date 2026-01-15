@@ -26,7 +26,7 @@ The page displays the following information:
 - Deleted On – The time and date when the object was deleted
 - Time Left – The time remaining until the object is no longer recoverable
 
-Search for an Object
+## Search for an Object
 
 There are several ways to find an object:
 
@@ -58,7 +58,7 @@ The Object Restore wizard opens.
 
 ![Object Restore wizard - Domain Controller page](/images/recoveryforactivedirectory/3.1/product/active_directory/recovery/active_directory_recovery_page2.png)
 
-**Step 5 –** Select a domain controller where the restore operation will get affected. Options are:
+**Step 5 –** Select a domain controller where the restore operation will take effect. Options are:
 
 - Use any writable domain controller – The system picks any writable domain controller in the domain
   for the restore operation
@@ -118,7 +118,7 @@ boxes to configure the necessary options for the user.
 
 ![Object Restore wizard - Credentials page](/images/recoveryforactivedirectory/3.1/product/active_directory/recovery/active_directory_recovery_page5.png)
 
-**Step 11 –** The account preforming the operation must have Domain Admin privileges to access the
+**Step 11 –** The account performing the operation must have Domain Admin privileges to access the
 domain tree area where the object resides. On the Credentials page:
 
 - If the account specified during domain configuration has Domain Admin privileges, click **Next**.
@@ -139,6 +139,6 @@ to finish the wizard.
 
 ![Object Restore Complete message](/images/recoveryforactivedirectory/3.1/product/active_directory/recovery/active_directory_recovery_finished.png)
 
-**Step 13 –** A completed message is displayed when the restore is successful. Click **OK**.d
+**Step 13 –** A completed message is displayed when the restore is successful. Click **OK**.
 
 The deleted object has now been restored.
