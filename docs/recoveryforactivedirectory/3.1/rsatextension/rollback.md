@@ -56,7 +56,7 @@ However, only one backup date can be selected in order to select attributes for 
 
 Click **Next**.
 
-![Object Rollback wizard - Domian Controller Page](/images/recoveryforactivedirectory/3.1/rsatextension/domiancontroller.webp)
+![Object Rollback wizard - Domain Controller Page](/images/recoveryforactivedirectory/3.1/rsatextension/domiancontroller.webp)
 
 **Step 3 –** On the Domain Controller page, select the Domain Controller to run the rollback action.
 This page consists of two sections:
@@ -73,7 +73,7 @@ Click **Next**.
 
 ![Object Rollback wizard - Alternate Credentials Page](/images/recoveryforactivedirectory/3.1/rsatextension/alternatecredentials.webp)
 
-**Step 4 –** The account preforming the operation must have Domain Admin privileges to access the
+**Step 4 –** The account performing the operation must have Domain Admin privileges to access the
 domain tree area where the object resides. On the Alternate Credentials page:
 
 - If the account specified during domain configuration has Domain Admin privileges, click **Next**.

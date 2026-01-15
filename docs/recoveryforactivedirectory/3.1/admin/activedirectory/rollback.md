@@ -41,7 +41,7 @@ select the checkbox(es) for the attributes you want to roll back. Click **Next**
 
 ![Object Rollback wizard - Credentials page](/images/recoveryforactivedirectory/3.1/product/active_directory/rollback/active_directory_rollback_page3.png)
 
-**Step 7 –** The account preforming the operation must have Domain Admin privileges to access the
+**Step 7 –** The account performing the operation must have Domain Admin privileges to access the
 domain tree area where the object resides. On the Credentials page:
 
 - If the account specified during domain configuration has Domain Admin privileges, click **Next**.
