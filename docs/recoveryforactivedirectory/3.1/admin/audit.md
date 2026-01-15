@@ -10,7 +10,7 @@ The Audit Logs page provides an audit trail of the actions performed by users in
 
 Click **Audit Logs** in the left pane to open the Audit Logs page.
 
-![Audit Logs Page](/images/recoveryforactivedirectory/3.1/product/Auditing.png)
+![Audit Logs Page](/images/recoveryforactivedirectory/3.1/product/auditing.png)
 
 The following information is displayed for an event:
 
