@@ -91,7 +91,7 @@ will run at the desired frequency but will skip from midnight until the selected
 
 **Step 9 –** (_Optional_) Select the **Collect GPOs** checkbox to enable GPO rollback and recovery.
 This setting requires Group Policy Management Console (GMPC). If GPO collection is not desired, skip
-to Step 9.
+to Step 10.
 
 **Step 10 –** If the Collect GPOs checkbox is selected, the Store the Group Policy Object backups in
 the following location field is enabled. Specify the save location for the GPO backup here.
