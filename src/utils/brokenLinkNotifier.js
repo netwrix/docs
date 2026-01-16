@@ -1,20 +1,10 @@
 /**
  * Collects broken links and images found during Docusaurus build.
- * Uses file-based persistence to guarantee cross-module communication.
+ * Uses in-memory array to store items during build.
  * The actual Teams notification is sent by the broken-link-summary-plugin
  * after the build completes via the postBuild lifecycle hook.
  * @module brokenLinkNotifier
  */
-
-import fs from 'fs';
-import path from 'path';
-import os from 'os';
-
-// Temp file location for cross-module communication
-// File system is shared across all Node.js contexts, solving module scope isolation issues
-// CRITICAL: Use FIXED filename so all module instances use the same file
-// DO NOT use tmp.fileSync() as it creates different files per module load
-const TEMP_FILE = path.join(os.tmpdir(), 'docusaurus-broken-links.json');
 
 /**
  * @typedef {Object} BrokenItem
@@ -23,53 +13,12 @@ const TEMP_FILE = path.join(os.tmpdir(), 'docusaurus-broken-links.json');
  * @property {string} url - The broken URL or image path
  */
 
-/**
- * Read broken items from temporary file.
- * @returns {BrokenItem[]} Array of broken items from file, empty array if file doesn't exist
- * @private
- */
-function readItemsFromFile() {
-  try {
-    if (fs.existsSync(TEMP_FILE)) {
-      const data = fs.readFileSync(TEMP_FILE, 'utf8');
-      if (!data.trim()) {
-        return [];
-      }
-      return JSON.parse(data);
-    }
-  } catch (error) {
-    console.warn('⚠️ Error reading broken items file:', error.message);
-  }
-  return [];
-}
-
-/**
- * Write broken items to temporary file.
- * @param {BrokenItem[]} items - Items to write
- * @private
- */
-function writeItemsToFile(items) {
-  try {
-    fs.writeFileSync(TEMP_FILE, JSON.stringify(items, null, 2), 'utf8');
-  } catch (error) {
-    console.warn('⚠️ Error writing broken items file:', error.message);
-  }
-}
-
-/**
- * Append a broken item to the file.
- * @param {BrokenItem} item - Item to append
- * @private
- */
-function appendItem(item) {
-  const items = readItemsFromFile();
-  items.push(item);
-  writeItemsToFile(items);
-}
+// In-memory storage for broken items during build
+let brokenItems = [];
 
 /**
  * Handle broken markdown link found during build.
- * Appends the item to the temp file for batch notification.
+ * Appends the item to the in-memory array for batch notification.
  * @param {Object} params - Parameters from Docusaurus markdown hook
  * @param {string} params.sourceFilePath - Source file containing the broken link
  * @param {string} params.url - The broken link URL
@@ -79,12 +28,12 @@ function appendItem(item) {
  */
 export function handleBrokenMarkdownLink({ sourceFilePath, url }) {
   console.warn(`Broken link in ${sourceFilePath}: ${url}`);
-  appendItem({ type: 'Link', sourceFilePath, url });
+  brokenItems.push({ type: 'Link', sourceFilePath, url });
 }
 
 /**
  * Handle broken markdown image found during build.
- * Appends the item to the temp file for batch notification.
+ * Appends the item to the in-memory array for batch notification.
  * @param {Object} params - Parameters from Docusaurus markdown hook
  * @param {string} params.sourceFilePath - Source file containing the broken image
  * @param {string} params.url - The broken image URL
@@ -94,30 +43,23 @@ export function handleBrokenMarkdownLink({ sourceFilePath, url }) {
  */
 export function handleBrokenMarkdownImage({ sourceFilePath, url }) {
   console.warn(`Broken image in ${sourceFilePath}: ${url}`);
-  appendItem({ type: 'Image', sourceFilePath, url });
+  brokenItems.push({ type: 'Image', sourceFilePath, url });
 }
 
 /**
  * Get all collected broken items for batch notification.
- * Reads from temp file to guarantee cross-module access.
  * Called by the broken-link-summary-plugin during postBuild.
  * @returns {BrokenItem[]} - Array of all broken links and images found during build
  */
 export function getBrokenItems() {
-  return readItemsFromFile();
+  return brokenItems;
 }
 
 /**
- * Clear collected items and delete temp file.
+ * Clear collected items.
  * Called by the broken-link-summary-plugin after sending summary and at build start.
  * @returns {void}
  */
 export function clearBrokenItems() {
-  try {
-    if (fs.existsSync(TEMP_FILE)) {
-      fs.unlinkSync(TEMP_FILE);
-    }
-  } catch (error) {
-    console.warn('⚠️ Error deleting broken items file:', error.message);
-  }
+  brokenItems = [];
 }
