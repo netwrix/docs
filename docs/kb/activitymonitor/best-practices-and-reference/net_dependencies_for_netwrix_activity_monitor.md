@@ -25,7 +25,7 @@ Which version of .NET is required for Netwrix Activity Monitor?
 
 ## Answer
 
-.NET Framework 4.7.2 or newer is required. You can also navigate to the [Netwrix Activity Monitor](https://docs.netwrix.com/docs/activitymonitor/8_0) landing page for the product **Requirements** located under **Getting Started**.
+.NET Framework 4.7.2 or newer is required. You can also navigate to the [Netwrix Activity Monitor Requirements](https://docs.netwrix.com/docs/activitymonitor/8_0/requirements/overview) located under **Getting Started**.
 
 > **NOTE:** .NET Framework is not the same as ASP.NET Core, and having one does not mean you have the other. ASP.NET Core and .NET Desktop Runtime should appear on the list of installed Apps & Features. However, .NET Framework does not appear on that list.
 
@@ -37,15 +37,9 @@ Get-ItemProperty -Name version -EA 0 | Where { $_.PSChildName -Match '^(?!S)\p{L
 Select PSChildName, version
 ```
 
-![PowerShell Example Output](https://nwxcorp.file.force.com/servlet/rtaImage?eid=ka0Qk000000E7Hl&feoid=00N0g000004CA0p&refid=0EMQk00000BprDf)
+![PowerShell Example Output](../0-images/ka0Qk000000DG8bIAG.png)
 
 ## Related Articles
 
-- [Netwrix Activity Monitor](https://docs.netwrix.com/docs/activitymonitor/8_0)
-
-<!-- TODO: Uncomment and update these links when the files are relocated to their correct product folders:
-- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/accessanalyzer/net_dependencies_for_netwrix_access_analyzer)
-- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/net_dependencies_for_netwrix_threat_prevention)
-- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/recoveryad/net_dependencies_for_netwrix_recovery_for_active_directory)
-- [.NET Dependencies for Netwrix Threat Manager](/docs/kb/threatmanager/net_dependencies_for_netwrix_threat_manager)
--->
+- [Netwrix Activity Monitor Requirements](https://docs.netwrix.com/docs/activitymonitor/8_0/requirements/overview)
+- [Netwrix Access Analyzer Requirements](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/overview)
