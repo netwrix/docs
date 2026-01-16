@@ -37,10 +37,6 @@ This includes:
 - Netwrix Access Information Center version 11.6
 - Netwrix Sensitive Data Discovery Add-on version 11.6
 - Netwrix Enterprise Auditor File System Scanning Proxy (FSAA Proxy) 11.6
-- StealthAUDIT 11.5
-- StealthAUDIT Access Information Center version 11.5
-- StealthAUDIT Sensitive Data Discovery Add-on version 11.5
-- StealthAUDIT File System Scanning Proxy (FSAA Proxy) 11.5
 
 You can also navigate to the [Netwrix Access Analyzer Requirements](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/overview) located under **Getting Started**.
 
