@@ -31,7 +31,7 @@ When using a proxy host list in Netwrix Access Analyzer (formerly Enterprise Aud
    - This is the number of file systems being targeted by the scan.
    - To find this, open the host list assigned to the job and note the total number of rows in the top-right corner.
 
-   ![Host list showing total number of target hosts in Access Analyzer]./../0-images/servlet_image_5badb1d5b327.png)
+   ![Host list showing total number of target hosts in Access Analyzer](./../0-images/servlet_image_5badb1d5b327.webp)
 
 ### Step 2: Configure Applet Settings
 
@@ -40,7 +40,7 @@ When using a proxy host list in Netwrix Access Analyzer (formerly Enterprise Aud
 
    > **NOTE:** The default value is 10 hosts per proxy.
 
-   ![Applet Settings page showing Maximum Concurrent Scans option]./../0-images/servlet_image_ea6adfe5aae7.png)
+   ![Applet Settings page showing Maximum Concurrent Scans option](./../0-images/servlet_image_ea6adfe5aae7.webp)
 
 ### Step 3: Select Proxy Hosts for Scanning
 
@@ -48,7 +48,7 @@ When using a proxy host list in Netwrix Access Analyzer (formerly Enterprise Aud
 2. Select **Specific Remote Servers by Host List**.
 3. Check the box for your **Proxy Host List** to assign it to the scan job.
 
-   ![Scan Server Selection page with Proxy Host List selected]./../0-images/servlet_image_b60fe6913b2e.png)
+   ![Scan Server Selection page with Proxy Host List selected](./../0-images/servlet_image_b60fe6913b2e.webp)
 
 ### Step 4: Set Job Properties
 
@@ -58,7 +58,7 @@ When using a proxy host list in Netwrix Access Analyzer (formerly Enterprise Aud
 
    > **NOTE:** This ensures all proxies are actively scanning and no capacity is wasted.
 
-   ![Job Properties Performance tab showing Worker Threads setting]./../0-images/servlet_image_61a97e6d04cc.png)
+   ![Job Properties Performance tab showing Worker Threads setting](./../0-images/servlet_image_61a97e6d04cc.webp)
 
 ## Configuration Examples
 
@@ -69,7 +69,7 @@ When using a proxy host list in Netwrix Access Analyzer (formerly Enterprise Aud
 - **Max Concurrent Scans:** 10
 - **Worker Threads:** 5 × 10 = 50
 
-![Configuration example for large deployment]./../0-images/servlet_image_1166f08ea416.png)
+![Configuration example for large deployment](./../0-images/servlet_image_1166f08ea416.webp)
 
 ### Example 2: Small Deployment
 
@@ -78,7 +78,7 @@ When using a proxy host list in Netwrix Access Analyzer (formerly Enterprise Aud
 - **Max Concurrent Scans:** 2
 - **Worker Threads:** 3 × 2 = 6
 
-![Configuration example for small deployment]./../0-images/servlet_image_a2750b9c5910.png)
+![Configuration example for small deployment](./../0-images/servlet_image_a2750b9c5910.webp)
 
 ## Related Link
 
