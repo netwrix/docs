@@ -122,6 +122,17 @@ export default function brokenLinkSummaryPlugin(context, options) {
     name: 'broken-link-summary-plugin',
 
     /**
+     * loadContent runs at the START of the build.
+     * Clean up any stale data from previous builds to ensure a clean slate.
+     * @returns {Promise<void>}
+     */
+    async loadContent() {
+      // Clear any stale data from previous builds
+      clearBrokenItems();
+      return null; // This plugin doesn't load content
+    },
+
+    /**
      * postBuild runs AFTER all markdown files are processed and the build is complete.
      * This is the perfect lifecycle hook to send our aggregated summary notification.
      * @param {Object} props - Build properties
