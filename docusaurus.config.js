@@ -6,6 +6,7 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns } from './src/config/products.js';
+import { handleBrokenMarkdownLink, handleBrokenMarkdownImage } from './src/utils/brokenLinkNotifier.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -28,8 +29,8 @@ const config = {
   markdown: {
     mermaid: true,
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
-      onBrokenMarkdownImages: 'warn',
+      onBrokenMarkdownLinks: handleBrokenMarkdownLink,
+      onBrokenMarkdownImages: handleBrokenMarkdownImage,
     },
   },
   themes: ['@docusaurus/theme-mermaid'],
