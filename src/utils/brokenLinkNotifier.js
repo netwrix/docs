@@ -35,6 +35,9 @@ function readItemsFromFile() {
   try {
     if (fs.existsSync(TEMP_FILE)) {
       const data = fs.readFileSync(TEMP_FILE, 'utf8');
+      if (!data.trim()) {
+        return [];
+      }
       return JSON.parse(data);
     }
   } catch (error) {
