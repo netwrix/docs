@@ -9,10 +9,15 @@
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
+import tmp from 'tmp';
 
 // Temp file location for cross-module communication
 // File system is shared across all Node.js contexts, solving module scope isolation issues
-const TEMP_FILE = path.join(os.tmpdir(), 'docusaurus-broken-links.json');
+// Use a securely created temporary file to avoid predictable names and permission issues
+const TEMP_FILE = tmp.fileSync({
+  prefix: 'docusaurus-broken-links-',
+  postfix: '.json',
+}).name;
 
 /**
  * @typedef {Object} BrokenItem
