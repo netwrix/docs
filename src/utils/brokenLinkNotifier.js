@@ -1,70 +1,63 @@
 /**
- * Utility to send broken link/image notifications to Microsoft Teams
+ * Collects broken links and images found during Docusaurus build.
+ * The actual Teams notification is sent by the broken-link-summary-plugin
+ * after the build completes via the postBuild lifecycle hook.
+ * @module brokenLinkNotifier
  */
 
-const brokenItems = new Set();
+const brokenItems = [];
 
-async function sendTeamsNotification(type, sourceFilePath, url) {
-  const webhookUrl = process.env.TEAMS_WEBHOOK_URL;
+/**
+ * @typedef {Object} BrokenItem
+ * @property {'Link'|'Image'} type - Type of broken reference
+ * @property {string} sourceFilePath - Path to the markdown file containing the broken reference
+ * @property {string} url - The broken URL or image path
+ */
 
-  // Skip if no webhook configured or if we've already reported this exact item
-  const itemKey = `${type}:${sourceFilePath}:${url}`;
-  if (!webhookUrl || brokenItems.has(itemKey)) {
-    return;
-  }
-
-  brokenItems.add(itemKey);
-
-  const message = {
-    "@type": "MessageCard",
-    "@context": "https://schema.org/extensions",
-    "summary": `Broken ${type} detected`,
-    "themeColor": "FF6B00", // Orange for warnings
-    "title": `⚠️ Broken ${type} Detected`,
-    "sections": [{
-      "activityTitle": "Documentation Build Warning",
-      "facts": [
-        {
-          "name": "Type:",
-          "value": type
-        },
-        {
-          "name": "File:",
-          "value": sourceFilePath
-        },
-        {
-          "name": "URL:",
-          "value": url
-        }
-      ]
-    }]
-  };
-
-  try {
-    const response = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(message),
-    });
-
-    if (!response.ok) {
-      console.warn(`Failed to send Teams notification: ${response.status}`);
-    }
-  } catch (error) {
-    console.warn('Error sending Teams notification:', error.message);
-  }
-}
-
+/**
+ * Handle broken markdown link found during build.
+ * Collects the item for batch notification.
+ * @param {Object} params - Parameters from Docusaurus markdown hook
+ * @param {string} params.sourceFilePath - Source file containing the broken link
+ * @param {string} params.url - The broken link URL
+ * @param {Object} [params.node] - The mdast node (not currently used)
+ * @returns {void} - Returns nothing to let Docusaurus use default warning behavior
+ * @see https://docusaurus.io/docs/api/docusaurus-config#markdown
+ */
 export function handleBrokenMarkdownLink({ sourceFilePath, url }) {
   console.warn(`Broken link in ${sourceFilePath}: ${url}`);
-  sendTeamsNotification('Link', sourceFilePath, url);
-  // Return nothing - let Docusaurus handle with default warning behavior
+  brokenItems.push({ type: 'Link', sourceFilePath, url });
 }
 
+/**
+ * Handle broken markdown image found during build.
+ * Collects the item for batch notification.
+ * @param {Object} params - Parameters from Docusaurus markdown hook
+ * @param {string} params.sourceFilePath - Source file containing the broken image
+ * @param {string} params.url - The broken image URL
+ * @param {Object} [params.node] - The mdast node (not currently used)
+ * @returns {void} - Returns nothing to keep the broken image reference visible
+ * @see https://docusaurus.io/docs/api/docusaurus-config#markdown
+ */
 export function handleBrokenMarkdownImage({ sourceFilePath, url }) {
   console.warn(`Broken image in ${sourceFilePath}: ${url}`);
-  sendTeamsNotification('Image', sourceFilePath, url);
-  // Return nothing - keep the broken image path visible
+  brokenItems.push({ type: 'Image', sourceFilePath, url });
+}
+
+/**
+ * Get all collected broken items for batch notification.
+ * Called by the broken-link-summary-plugin during postBuild.
+ * @returns {BrokenItem[]} - Array of all broken links and images found during build
+ */
+export function getBrokenItems() {
+  return [...brokenItems];
+}
+
+/**
+ * Clear collected items after notification.
+ * Called by the broken-link-summary-plugin after sending summary.
+ * @returns {void}
+ */
+export function clearBrokenItems() {
+  brokenItems.length = 0;
 }

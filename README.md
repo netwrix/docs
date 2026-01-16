@@ -43,6 +43,39 @@ npm install
 npm run start
 ```
 
+## 🔧 Environment Variables
+
+### `TEAMS_WEBHOOK_URL` (Optional)
+
+Enables Microsoft Teams notifications for broken links and images detected during documentation builds.
+
+**Setup Instructions:**
+
+1. **Create a Teams Incoming Webhook:**
+   - Open your Microsoft Teams channel
+   - Click the "..." menu → Connectors → Incoming Webhook
+   - Click "Configure" and give it a name (e.g., "Docs Build Notifications")
+   - Copy the webhook URL
+
+2. **Configure the Environment Variable:**
+
+   **For Local Development:**
+   ```bash
+   export TEAMS_WEBHOOK_URL="https://your-org.webhook.office.com/webhookb2/..."
+   ```
+
+   **For GitHub Actions:**
+   - Go to repository Settings → Secrets and variables → Actions
+   - Add new repository secret named `TEAMS_WEBHOOK_URL`
+   - Paste your webhook URL
+
+3. **Behavior:**
+   - If configured: Sends a summary notification after each build with broken link counts and details
+   - If not configured: Broken link detection still works, but no Teams notifications are sent
+   - Build never fails due to notification issues (graceful degradation)
+
+**Required Format:** Must be an HTTPS URL (validated at runtime)
+
 ## 📁 Project Structure
 
 ```

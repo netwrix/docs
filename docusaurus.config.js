@@ -83,6 +83,8 @@ const config = {
         anonymizeIP: true,
       },
     ],
+    // Broken link summary notification plugin
+    './src/plugins/broken-link-summary-plugin.js',
     // Generate all product documentation plugins from centralized configuration
     ...generateDocusaurusPlugins().map(([pluginName, config]) => [
       pluginName,
