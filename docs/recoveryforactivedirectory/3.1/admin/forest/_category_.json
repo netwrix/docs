@@ -1,0 +1,10 @@
+{
+  "label": "Forest Page",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "forest"
+  }
+}

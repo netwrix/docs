@@ -26,6 +26,9 @@ For FSAA, remote scans using gMSA credentials need to use the Windows Service la
 mechanism in the query configuration.
 :::
 
+:::note Action Modules
+Using action modules with gMSAs is not currently supported.
+:::
 
 See the Microsoft
 [Group Managed Service Accounts](https://learn.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)
