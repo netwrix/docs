@@ -1,6 +1,6 @@
 /**
  * Collects broken links and images found during Docusaurus build.
- * Uses in-memory array to store items during build.
+ * Uses Node.js global object to guarantee single instance across all module loads.
  * The actual Teams notification is sent by the broken-link-summary-plugin
  * after the build completes via the postBuild lifecycle hook.
  * @module brokenLinkNotifier
@@ -13,12 +13,15 @@
  * @property {string} url - The broken URL or image path
  */
 
-// In-memory storage for broken items during build
-let brokenItems = [];
+// Initialize global storage if not already present
+// This guarantees a single instance across all module imports
+if (!global.__brokenLinksItems) {
+  global.__brokenLinksItems = [];
+}
 
 /**
  * Handle broken markdown link found during build.
- * Appends the item to the in-memory array for batch notification.
+ * Appends the item to the global array for batch notification.
  * @param {Object} params - Parameters from Docusaurus markdown hook
  * @param {string} params.sourceFilePath - Source file containing the broken link
  * @param {string} params.url - The broken link URL
@@ -28,12 +31,12 @@ let brokenItems = [];
  */
 export function handleBrokenMarkdownLink({ sourceFilePath, url }) {
   console.warn(`Broken link in ${sourceFilePath}: ${url}`);
-  brokenItems.push({ type: 'Link', sourceFilePath, url });
+  global.__brokenLinksItems.push({ type: 'Link', sourceFilePath, url });
 }
 
 /**
  * Handle broken markdown image found during build.
- * Appends the item to the in-memory array for batch notification.
+ * Appends the item to the global array for batch notification.
  * @param {Object} params - Parameters from Docusaurus markdown hook
  * @param {string} params.sourceFilePath - Source file containing the broken image
  * @param {string} params.url - The broken image URL
@@ -43,7 +46,7 @@ export function handleBrokenMarkdownLink({ sourceFilePath, url }) {
  */
 export function handleBrokenMarkdownImage({ sourceFilePath, url }) {
   console.warn(`Broken image in ${sourceFilePath}: ${url}`);
-  brokenItems.push({ type: 'Image', sourceFilePath, url });
+  global.__brokenLinksItems.push({ type: 'Image', sourceFilePath, url });
 }
 
 /**
@@ -52,7 +55,7 @@ export function handleBrokenMarkdownImage({ sourceFilePath, url }) {
  * @returns {BrokenItem[]} - Array of all broken links and images found during build
  */
 export function getBrokenItems() {
-  return brokenItems;
+  return global.__brokenLinksItems;
 }
 
 /**
@@ -61,5 +64,5 @@ export function getBrokenItems() {
  * @returns {void}
  */
 export function clearBrokenItems() {
-  brokenItems = [];
+  global.__brokenLinksItems = [];
 }
