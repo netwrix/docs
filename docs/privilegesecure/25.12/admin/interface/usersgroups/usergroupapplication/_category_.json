@@ -1,0 +1,10 @@
+{
+  "label": "User, Group, & Application Details Page",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "usergroupapplication"
+  }
+}

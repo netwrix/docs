@@ -1,0 +1,10 @@
+{
+  "label": "Resources Tab for Resource Based Access Policies",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "resources"
+  }
+}
