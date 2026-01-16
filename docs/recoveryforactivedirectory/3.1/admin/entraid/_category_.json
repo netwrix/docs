@@ -1,0 +1,10 @@
+{
+  "label": "Entra ID Page",
+  "position": 41,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}
