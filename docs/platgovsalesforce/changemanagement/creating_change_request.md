@@ -119,7 +119,7 @@ Use the **Edit** button to return to the change request and make any required mo
 Open the **DRD** tab to review the dependency diagram. Use the **Edit** button to return to the
 change request and make any required modifications.
 
-![Open the DRD tab to view the dependency diagram](/images/platgovsalesforce/change_management/change_request_drd.webp)
+![Open the DRD tab to view the dependency diagram](/images/platgovsalesforce/change_management/drd.webp)
 
 ### Send the Change Request for Approval
 
