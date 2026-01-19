@@ -5,6 +5,8 @@ Field Tracking is a specialized configuration tool designed to monitor and detec
 
 Monitoring Rules are a specialized configuration tool designed to track and detect changes in field permissions across Permission Sets and Profiles in your Salesforce environment.
 
+Changes in field access for Profiles and Permission Sets will no longer be documented by the autoscanner. This new tool replaces the previous feature for Fields, so it is crucial to add all sensitive fields to the Monitored Rules.
+
 ## Accessing Field Tracking
 Navigate to the Netwrix Dashboard:
 - Tools > Access > Field Tracking
@@ -129,6 +131,8 @@ After running the batch process, view:
 - Use compliance categories for better organization
 - Regularly review monitoring rules
 - Set up notifications to stay informed about field changes
+- Every time you create a new field, evaluate if the new field needs to be added to any existing Monitored Rule or if you need to create a new one.
+- Make sure the Field Tracking scanner is scheduled on a regular basis.
 
 ## Limitations
 - Object selection limited to 5 per criterion
@@ -139,3 +143,4 @@ After running the batch process, view:
 - Check notification settings if reports are not received
 - Verify object and field selection criteria
 - Ensure proper permissions for tracking
+- Missing field access change log: Review if the field is part of a monitoring rule and/or if the rule is active.
