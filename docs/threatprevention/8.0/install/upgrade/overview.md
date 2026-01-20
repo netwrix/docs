@@ -101,6 +101,11 @@ If you are running a previous version of the Agent, you must first upgrade it to
 then to 8.0.
 :::
 
+**Step 4 -** Use the [EPE Settings](/docs/threatprevention/8.0/admin/configuration/epesettings.md) in v8.0 to update the HIBP database.
+
+:::note
+This is a requirement when upgrading to 8.0 as the HIBP password database format has changed for performance optimizations.
+:::
 
 ## Infrastructure Upgrade Procedure for 7.5.x to 7.5.y
 
