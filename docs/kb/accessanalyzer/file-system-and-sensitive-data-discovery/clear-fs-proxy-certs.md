@@ -1,3 +1,22 @@
+---
+description: >-
+  Explains how to clear naa fsaa proxy certificates.
+keywords:
+  - FSAA
+  - certificates
+  - NAS
+  - Windows File Server
+  - FSAA Data Collector Wizard
+  - Access Analyzer
+  - Netwrix Access Analyzer
+products:
+  - access-analyzer
+sidebar_label: "Clearing FSAA Proxy Certificates"
+tags:
+  - file-system-and-sensitive-data-discovery
+title: >-
+  Clearing FSAA Certificates for the Netwrix Enterprise Auditor FSAA Proxy Scanner Service
+---
 # Clearing FSAA Certificates for the Netwrix Enterprise Auditor FSAA Proxy Scanner Service
 
 ## Overview
@@ -11,7 +30,6 @@ You may need to perform this cleanup for one or more of the following reasons:
 * **Replacing or rotating certificates** due to **trust relationship changes**
 * **Troubleshooting connectivity or authentication issues** related to certificate usage
 * Using NAA v11.6.0.65 or earlier | NAA File System Proxy v11.6.0.19 or earlier
-  * A bug was addressed in versions after this 
 
 Before beginning, determine which account the FSAA Proxy Scanner service is running as by looking for the _Log On As_ account in Windows Services for the **Netwrix Enterprise Auditor FSAA Proxy Scanner** service. If running as **LocalSystem**, elevated access methods are required to remove certificates from the user profile for that account.
 
@@ -39,7 +57,8 @@ cd {folder location of FSAACertificateManager.exe}
 
 
 1. Move `FSAACertificateManager.exe` to the FSAA Proxy Server.
-2. Run:
+2. Install PSTools (PSExec) onto the FSAA Proxy Server from [Microsoft | PSTools](https://learn.microsoft.com/en-us/sysinternals/downloads/pstools)
+3. Run:
 
 ```cmd
 psexec -s -i cmd.exe
@@ -88,7 +107,7 @@ Unregister-ScheduledTask -TaskName "CleanFSAACerts" -Confirm:$false
 ### Option 4 – LocalSystem Without PsExec or Scheduled Tasks (Registry Deletion)
 
 
-1. Open **PowerShell** as Administrator.
+1. Open **PowerShell** as Administrator on the FSAA Proxy Server.
 2. Run the following to delete certificates directly from the registry:
 
 ```powershell
@@ -127,9 +146,9 @@ foreach ($storeName in $fsaaStores) {
 2. In **Command Prompt**, run:
 
 ```powershell
-sc.exe create FSAACertCleanup binPath= "cmd.exe /c \"cd /d {folder location of FSAACertificateManager.exe} && FSAACertificateManager.exe -clearCertificatesFromStore -store Server -location CurrentUser\"" type= own start= demand
+sc.exe create FSAACertCleanup binPath= "cmd.exe /c \"cd /d C:\Path\To\FSAACertificateManager && FSAACertificateManager.exe -clearCertificatesFromStore -store Server -location CurrentUser\"" type= own start= demand
 sc.exe start FSAACertCleanup
-Start-Sleep -Seconds 3
+timeout /t 3 /nobreak >nul
 sc.exe delete FSAACertCleanup
 ```
 
