@@ -30,6 +30,12 @@ If the **Actual Change Date** is empty or **Change By** is set to **Could Not Be
 The button is only available for Object types where the **Actual Change Date** and **Change By**
 fields can be retrieved.
 
+:::info
+
+Some Object types do not produce Sytem Notes or History Notes for changes.  In this case the **Actual Change Date** is empty and the **Change By** is set to **Could Not Be Determined**.
+
+:::
+
 ![Refresh Changed By](/images/platgovnetsuite/change_management/change_log_refresh.webp)
 
 ## Change Log Header
