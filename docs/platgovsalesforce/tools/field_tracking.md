@@ -163,7 +163,7 @@ This report can be accessed through:
 - Regularly review monitoring rules
 - Set up notifications to stay informed about field changes
 - Every time you create a new field, evaluate if the new field needs to be added to any existing Monitored Rule or if you need to create a new one.
-- Make sure the Field Tracking scanner is scheduled on a regular basis.
+- Make sure the Field Tracking [scanner is scheduled](/docs/platgovsalesforce/scanner/scheduler.md) on a regular basis.
 
 ## Limitations
 - Object selection limited to 5 per criterion
