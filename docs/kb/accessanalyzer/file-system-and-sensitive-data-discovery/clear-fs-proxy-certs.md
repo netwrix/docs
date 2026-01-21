@@ -65,14 +65,14 @@ psexec -s -i cmd.exe
 ```
 
 
-3. In the new console window, navigate to the tool's location:
+4. In the new console window, navigate to the tool's location:
 
 ```cmd
 cd "{folder location of FSAACertificateManager.exe}"
 ```
 
 
-4. Run the following:
+5. Run the following:
 
 ```cmd
 .\FSAACertificateManager.exe -clearCertificatesFromStore -store Server -location CurrentUser
@@ -145,8 +145,8 @@ foreach ($storeName in $fsaaStores) {
 1. Move `FSAACertificateManager.exe` to the FSAA Proxy Server.
 2. In **Command Prompt**, run:
 
-```powershell
-sc.exe create FSAACertCleanup binPath= "cmd.exe /c \"cd /d C:\Path\To\FSAACertificateManager && FSAACertificateManager.exe -clearCertificatesFromStore -store Server -location CurrentUser\"" type= own start= demand
+```cmd
+sc.exe create FSAACertCleanup binPath= "cmd.exe /c \"cd /d \"{folder location of FSAACertificateManager.exe}\" && FSAACertificateManager.exe -clearCertificatesFromStore -store Server -location CurrentUser\"" type= own start= demand
 sc.exe start FSAACertCleanup
 timeout /t 3 /nobreak >nul
 sc.exe delete FSAACertCleanup
