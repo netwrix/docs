@@ -21,14 +21,15 @@ Before beginning, determine which account the FSAA Proxy Scanner service is runn
 ### Option 1 – Service Is Running as a Service Account
 
 
-1. Move `FSAACertificateManager.exe` from\n`%SAInstallDir%\PrivateAssemblies\FILESYSTEMACCESS\Applet`\nto the FSAA Proxy Server.
+1. Move `FSAACertificateManager.exe` from `%SAInstallDir%\PrivateAssemblies\FILESYSTEMACCESS\Applet` to the FSAA Proxy Server.
 2. Open **Command Prompt** as the service account used by FSAA Proxy.
 3. Run the following commands one by one:
 
-```bash
-.\FSAACertificateManager.exe -clearCertificatesFromStore -store Server -storeLocation LocalMachine
-.\FSAACertificateManager.exe -clearCertificatesFromStore -store Client -storeLocation LocalMachine
-.\FSAACertificateManager.exe -clearCertificatesFromStore -store CertificateAuthority -storeLocation LocalMachine
+```cmd
+cd {folder location of FSAACertificateManager.exe}
+.\FSAACertificateManager.exe -clearCertificatesFromStore -store Server -Location LocalMachine
+.\FSAACertificateManager.exe -clearCertificatesFromStore -store Client -Location LocalMachine
+.\FSAACertificateManager.exe -clearCertificatesFromStore -store CertificateAuthority -Location LocalMachine
 ```
 
 
@@ -40,21 +41,21 @@ Before beginning, determine which account the FSAA Proxy Scanner service is runn
 1. Move `FSAACertificateManager.exe` to the FSAA Proxy Server.
 2. Run:
 
-```bash
+```cmd
 psexec -s -i cmd.exe
 ```
 
 
 3. In the new console window, navigate to the tool's location:
 
-```bash
-cd "{location of FSAACertificateManager.exe}"
+```cmd
+cd "{folder location of FSAACertificateManager.exe}"
 ```
 
 
 4. Run the following:
 
-```bash
+```cmd
 .\FSAACertificateManager.exe -clearCertificatesFromStore -store Server -location CurrentUser
 .\FSAACertificateManager.exe -clearCertificatesFromStore -store Client -location CurrentUser
 .\FSAACertificateManager.exe -clearCertificatesFromStore -store CertificateAuthority -location CurrentUser
@@ -70,7 +71,7 @@ cd "{location of FSAACertificateManager.exe}"
 2. In **PowerShell**, run:
 
 ```powershell
-$action = New-ScheduledTaskAction -Execute "FSAACertificateManager.exe" -Argument "-clearCertificatesFromStore -store Server -location CurrentUser" -WorkingDirectory "{folder where FSAACertificateManager.exe is installed}"
+$action = New-ScheduledTaskAction -Execute "FSAACertificateManager.exe" -Argument "-clearCertificatesFromStore -store Server -location CurrentUser" -WorkingDirectory "{folder location of FSAACertificateManager.exe}"
 $principal = New-ScheduledTaskPrincipal -UserId "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 Register-ScheduledTask -TaskName "CleanFSAACerts" -Action $action -Principal $principal
 Start-ScheduledTask -TaskName "CleanFSAACerts"
@@ -125,8 +126,8 @@ foreach ($storeName in $fsaaStores) {
 1. Move `FSAACertificateManager.exe` to the FSAA Proxy Server.
 2. In **Command Prompt**, run:
 
-```bash
-sc.exe create FSAACertCleanup binPath= "cmd.exe /c \"cd /d {folder where FSAACertificateManager.exe was moved to} && FSAACertificateManager.exe -clearCertificatesFromStore -store Server -location CurrentUser\"" type= own start= demand
+```powershell
+sc.exe create FSAACertCleanup binPath= "cmd.exe /c \"cd /d {folder location of FSAACertificateManager.exe} && FSAACertificateManager.exe -clearCertificatesFromStore -store Server -location CurrentUser\"" type= own start= demand
 sc.exe start FSAACertCleanup
 Start-Sleep -Seconds 3
 sc.exe delete FSAACertCleanup
