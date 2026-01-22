@@ -1,6 +1,6 @@
 ---
 title: Learn About Netwrix Password Policy Enforcer Learning Path
-sidebar_position: 420
+sidebar_position: 425
 tags: [training, password-policy-enforcer]
 keywords: [training, course, password policy enforcer]
 description: "Learn about Netwrix Password Policy Enforcer through introductory courses"
