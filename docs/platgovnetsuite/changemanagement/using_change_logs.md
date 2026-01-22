@@ -18,7 +18,7 @@ the change log being associated with the oldest of the approved change requests.
 
 To open a Change Log:
 
-1. Open **Strongpoint** > **Change Management Reports** and select a report.
+1. Open **Netwrix** > **Change Management Reports** and select a report.
 2. Click **View** beside the Change Log to open.
 
 ![changelog-1](/images/platgovnetsuite/change_management/changelog-1.webp)
