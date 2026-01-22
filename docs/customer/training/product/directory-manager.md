@@ -3,7 +3,7 @@ title: Netwrix Directory Manager Learning Path
 sidebar_position: 160
 tags: [getting-started, training, directory-manager]
 keywords: [training, course, directory manager]
-description: "Learn tjo use Netwrix Directory Manager through courses"
+description: "Learn to use Netwrix Directory Manager through courses"
 ---
 
 import { NDMValue, NDMConcepts, NDMIntro, NDMIdentityStores, NDMPortalDesign, NDMTroubleshooting } from '@site/src/training/directory-manager';
