@@ -490,9 +490,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '25.12',
+        label: '25.12',
+        isLatest: true,
+        sidebarFile: './sidebars/privilegesecure/25.12.js',
+      },
+      {
         version: '4.2',
         label: '4.2',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/privilegesecure/4.2.js',
       },
       {
@@ -502,7 +508,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/privilegesecure/4.1.js',
       },
     ],
-    defaultVersion: '4.2',
+    defaultVersion: '25.12',
   },
   {
     id: 'privilegesecurediscovery',
@@ -522,8 +528,8 @@ export const PRODUCTS = [
   },
   {
     id: 'recoveryforactivedirectory',
-    name: 'Recovery for Active Directory',
-    description: 'Active Directory backup and recovery',
+    name: 'Identity Recovery',
+    description: 'Identity backup and recovery',
     path: 'docs/recoveryforactivedirectory',
     categories: ['Identity Threat Detection & Response (ITDR)'],
     icon: '',
@@ -531,11 +537,17 @@ export const PRODUCTS = [
       {
         version: '2.6',
         label: '2.6',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/recoveryforactivedirectory/2.6.js',
       },
+      {
+        version: '3.1',
+        label: '3.1',
+        isLatest: true,
+        sidebarFile: './sidebars/recoveryforactivedirectory/3.1.js',
+      },
     ],
-    defaultVersion: '2.6',
+    defaultVersion: '3.1',
   },
   {
     id: 'threatmanager',
@@ -563,19 +575,19 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '7.5',
-        label: '7.5',
+        version: '8.0',
+        label: '8.0',
         isLatest: true,
-        sidebarFile: './sidebars/threatprevention/7.5.js',
+        sidebarFile: './sidebars/threatprevention/8.0.js',
       },
       {
-        version: '7.4',
-        label: '7.4',
+        version: '7.5',
+        label: '7.5',
         isLatest: false,
-        sidebarFile: './sidebars/threatprevention/7.4.js',
-      },
+        sidebarFile: './sidebars/threatprevention/7.5.js',
+      }
     ],
-    defaultVersion: '7.5',
+    defaultVersion: '8.0',
   },
 ];
 

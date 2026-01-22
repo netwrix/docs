@@ -50,3 +50,44 @@ Manager will assign a license that can be installed within the Endpoint Protecto
 
 The following sections will delve deeper into the different methods used to deploy Endpoint
 Protector, offering step-by-step instructions and best practices.
+
+## Communication Between Endpoint Protector Server and Netwrix Servers
+
+Communication between Endpoint Protector Server (apliance used by your company) and Netwrix servers is possible only when your server is connected to the internet.
+
+When connected, Netwrix may access the following metadata information:
+
+- **Server metrics:**  
+  - RAM  
+  - Database version  
+  - Web server version  
+  - CPU type / number / frequency  
+  - HDD size / partition / free space  
+  - Operating system version  
+  - Purchased product version  
+  - Server serial number  
+  - IP address  
+  - MAC address of the server
+
+- **Admin details:** 
+  - Name  
+  - Email address  
+  - Phone number
+
+- **Licensing information:**  
+  - Number of licenses  
+  - Validity  
+  - Operating system platforms  
+  - License utilization
+  - Module Activation Status
+
+The above metadata is collected strictly for licensing and statistical purposes. It does not include any customer-sensitive information or content stored or processed by your company.
+
+Additionally, internet connectivity allows your company to:
+
+- Download product updates
+- Activate modules by communicating with Netwrix servers
+
+:::note 
+All communication with Netwrix servers is governed by the applicable privacy and security policies.
+:::

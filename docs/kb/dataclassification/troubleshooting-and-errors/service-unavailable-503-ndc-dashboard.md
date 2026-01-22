@@ -36,7 +36,7 @@ If the error persists after the application pool has been restarted, then the is
 
 For example:
 
-![NDC Dashboard Identity Settings](https://kb.netwrix.com/wp-content/uploads/2020/04/503-3-1024x541.png)
+![NDC Dashboard Identity Settings](../0-images/503-service-unavailable-identity-settings.png)
 
 To assign granularly:
 

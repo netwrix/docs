@@ -1,18 +1,28 @@
 ---
 title: "Recovery for Active Directory Knowledge Base"
-description: "Recovery for Active Directory knowledge base articles and troubleshooting guides"
+description: "Knowledge base articles for Netwrix Recovery for Active Directory (version 2.6)"
 slug: recoveryad
 ---
 
 # Recovery for Active Directory Knowledge Base
 
-Welcome to the Recovery for Active Directory knowledge base. Browse our collection of troubleshooting guides, configuration instructions, and best practices.
+Welcome to the Netwrix Recovery for Active Directory knowledge base. This section contains troubleshooting guides, configuration instructions, best practices, and reference materials for Recovery for Active Directory version 2.6.
 
-Use the search function above to find specific articles or browse through all Recovery for Active Directory KB articles in this section.
+## Browse by Category
+
+- **Installation and Deployment** - Installation troubleshooting, server migration, and deployment tasks
+- **Configuration and Administration** - Web console configuration, security settings, and user management
+- **Operations and Troubleshooting** - Backup functionality, operational issues, and system troubleshooting
+
+## Quick Links
+
+- [Recovery for Active Directory Documentation](https://docs.netwrix.com/docs/recoveryforactivedirectory/)
+- [Netwrix Support](https://www.netwrix.com/support.html)
+- [Product Downloads](https://www.netwrix.com/downloads.html)
 
 ## Need Help?
 
 If you can't find what you're looking for:
 1. Use the search function above
 2. Check the main Recovery for Active Directory documentation
-3. Contact [Netwrix support](https://www.netwrix.com/support.html)
+3. Contact [Netwrix Support](https://www.netwrix.com/support.html)
