@@ -67,7 +67,7 @@ and verify you are a member of a group or role
 [authorized to access the app](/docs/platgovnetsuite/ticketingintegrations/zendeskintegration/zendesk_integration.md).
 :::
 
-![The Platform Governance app is available after you create the ticket.](/images/platgovnetsuite/integrations/zendesk_strongpoint_app_ticket.webp)
+![The Platform Governance app is available after you create the ticket.](/images/platgovnetsuite/integrations/zendesk_platform_governance_app_ticket.webp)
 
 ### Use Bundles for the Scope of Change
 

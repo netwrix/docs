@@ -16,7 +16,7 @@ User benefits include:
 
 - Avoid duplicate effort of creating tickets in two different systems.
 - Pull Customizations into Zendesk for scope of changes.
-- Specify Bundle ID as
+- Specify Bundle ID
 - Perform impact analysis assessment.
 - Approve requests in either Zendesk or NetSuite.
 - Automatic ticket reconciliation between Zendesk and NetSuite.
@@ -69,7 +69,7 @@ app.
 
     - **Title**: the name associated with the app. The default is **Platform Governance For NetSuite**.
     - Account ID: enter the NetSuite account ID. The **Account ID** must be a lowercase string. For
-      example, **TSTDRV12345678**.
+      example, **tstdrv12345678**.
 
         Account ID must be entered in lower case.
 
