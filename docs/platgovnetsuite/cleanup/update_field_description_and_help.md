@@ -24,6 +24,6 @@ changed_. The Change Log is closed.
     ![field_column_sort](/images/platgovnetsuite/clean_up/field_column_sort.png)
 
 2.  Add or edit **Description** and **Help** text.
-    The edited text will be **highlighted in blue** to show fields with changes.
+    The edited text will be **highlighted in blue** to indicate which fields have been modified.
     ![cust_ui_help_update](/images/platgovnetsuite/clean_up/cust_ui_help_update.webp)
 3.  Click **Update** to submit the changes. The page will refresh and display the updated Descriptions and Help.
