@@ -32,44 +32,44 @@ To set up the Zendesk integration:
 
 1. Open **Customization** > **SuiteBundler** > **Search & Install Bundles**
 2. Search for bundle **402177**
-3. Click on **Strongpoint Zendesk Integration** in the search results.
+3. Click on **Netwrix Platform Governance Zendesk** in the search results.
 4. Click **Install** when the Bundle Details opens.
 5. Click **Install Bundle** on the **Preview Bundle** Install page.
 
 ## Install the App
 
 Here are the steps to install the Zendesk app. You must have **Admin** privileges to install the
-app.
+app. 
 
 1. Open your Zendesk dashboard.
-2. Click the **Admin** icon in the left panel.
-3. Navigate to **Apps** > **Marketplace**.
+2. Click the **Admin** icon in the left panel. It should open a new window to Admin Center.
+3. Navigate to **Apps and integrations** > **Zendesk Support apps** > **Marketplace**.
 
     ![Open the Zendesk Marketplace](/images/platgovnetsuite/integrations/zendesk_admin_marketplace.webp)
 
-4. Search for **Strongpoint**.
-5. Click **Strongpoint for NetSuite** when it is displayed.
+4. Search for **Platform Governance For NetSuite**.
+5. Click **Platform Governance For NetSuite** when it is displayed.
 
-    ![Strongpoint for NetSuite app in the Marketplace](/images/platgovnetsuite/integrations/zendesk_strongpoint.webp)
+    ![Platform Governance For NetSuite app in the Marketplace](/images/platgovnetsuite/integrations/zendesk_strongpoint.webp)
 
 6. Click **Install**. When installation is complete, you are prompted to sign in to your Zendesk
    dashboard to continue.
-7. Click the **Admin** icon in the left panel.
-8. Navigate to **Apps** > **Manage**.
+7. Click the **Admin** icon in the left panel. It should open a new window to Admin Center.
+8. Navigate to **Apps and integrations** > **Zendesk Support apps**.
 
-    ![Configure the Strongpoint Zendesk app](/images/platgovnetsuite/integrations/zendesk_configure_app.webp)
+    ![Configure the Platform Governance Zendesk app](/images/platgovnetsuite/integrations/zendesk_configure_app.webp)
 
-9. Hover on the **Strongpoint for NetSuite** tile to access the **Settings** menu.
+9. Hover on the **Platform Governance For NetSuite** tile to access the **Settings** menu.
 
     ![Hover to access the Settings](/images/platgovnetsuite/integrations/zendesk_configure_app_menu.webp)
 
 10. Click **Change settings**.
 
-    ![Set up the Strongpoint for NetSuite Zendesk app](/images/platgovnetsuite/integrations/zendesk_change_settings.webp)
+    ![Set up the Platform Governance For NetSuite Zendesk app](/images/platgovnetsuite/integrations/zendesk_change_settings.webp)
 
-    - **Title**: the name associated with the app. The default is **Strongpoint for NetSuite**.
+    - **Title**: the name associated with the app. The default is **Platform Governance For NetSuite**.
     - Account ID: enter the NetSuite account ID. The **Account ID** must be a lowercase string. For
-      example, **tstdrv1724328**.
+      example, **td2971579**.
 
         Account ID must be entered in lower case.
 
@@ -101,7 +101,7 @@ app.
 
 After you install the Zendesk app, set up the approvals.
 
-1. Click the new **Strongpoint for NetSuite** icon in the left panel. The **Group Configurations**
+1. Click the new **Platform Governance For NetSuite** icon in the left panel. The **Group Configurations**
    page opens.
 2. Enter the group and approval information:
 
@@ -109,7 +109,7 @@ After you install the Zendesk app, set up the approvals.
       for a change request. Select a group from the drop down list. Click **+**. Repeat as needed.
     - **Allow these Zendesk groups to approve** one or more groups who can approve a change request.
       Select a group from the drop down list. Click **+**. Repeat as needed.
-    - **Approval process** select the approval process to use. **Strongpoint Approval in Zendesk**,
-      **Strongpoint Approval in NetSuite**, **No Approval Needed**, or **Not set**.
+    - **Approval process** select the approval process to use. **Platform Governance Approval in Zendesk**,
+      **Platform Governance Approval in NetSuite**, **No Approval Needed**, or **Not set**.
 
 **Next Step:** [ Zendesk Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/zendeskintegration/zendesk_walkthrough_example.md)
