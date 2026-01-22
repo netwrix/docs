@@ -1,4 +1,4 @@
----
+--- 
 description: >-
   Explains how Netwrix Access Analyzer selects which credentials from a
   Connection Profile to use for a target host, including domain matching rules
