@@ -23,7 +23,7 @@ request in your sandbox account.
 
 ## Create the Change Request
 
-1. Open **Strongpoint** > **Change Management Tools** > **ITGC Change Request**
+1. Open **Netwrix** > **Change Management Tools** > **ITGC Change Request**
    The status bar displays the stage of the Change Request. A new change request displays _Not
    Started_.
 2. Enter information in the **Main** and **Scope** sections:
@@ -62,13 +62,13 @@ request in your sandbox account.
           the customizations are displayed:
         - Hover over **Details** to see specifics of the customization.
         - Click the box(es) to select one or more customizations. Check in the **Name** header to
-          toggle **Selecting** or **Deselecting All**.- Click **Add Selected Customizations**. If
-          the Customization (based on Script ID) exists in the current account it is added to the
+          toggle **Selecting** or **Deselecting All**.
+        - Click **Add Selected Customizations**. If the Customization (based on Script ID) exists in the current account it is added to the
           **Customizations**. If it does not exist, it is added to the **Proposed Customizations**.
           After the action completes, all checkboxes are cleared and a green confirmation message appears 
           indicating that the customizations were added successfully.
-          To add other customization types, update the filters and repeat the process.
-          Click **Close** to exit **Lookup Customization**.
+        - To add other customization types, update the filters and repeat the process.
+        - Click **Close** to exit **Lookup Customization**.
 
         ![change_request_lookup_customization](/images/platgovnetsuite/change_management/change_request_lookup_customization.webp)
 

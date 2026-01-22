@@ -30,9 +30,9 @@ If the **Actual Change Date** is empty or **Change By** is set to **Could Not Be
 The button is only available for Object types where the **Actual Change Date** and **Change By**
 fields can be retrieved.
 
-:::info
+:::note
 
-Some Object types do not produce Sytem Notes or History Notes for changes.  In this case the **Actual Change Date** is empty and the **Change By** is set to **Could Not Be Determined**.
+Some Object types do not produce System Notes or History Notes for changes.  In this case the **Actual Change Date** is empty and the **Change By** is set to **Could Not Be Determined**.
 
 :::
 

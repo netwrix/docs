@@ -68,26 +68,20 @@ scripts to reflect them in the Customization records, going back two days.
 
 The AutoSpider portlet is required in order to update these object types:
 
+- Access Token
+- Address Form
 - Bundle
+- Custom Advanced PDF/HTML Template
 - Custom Report
 - Entry Form
+- Group
+- Integration
 - Mass Update
 - Online Customer Form
 - Record
-- Transaction Form
-- Address Form
-- Custom Advanced PDF/HTML Template
-- Group
-- Access Token
-- Integration
-- SuiteApp
-
-Autospider portlet is also required in order to capture the changes that are recorded only in audit trail for the following obect types:
-
-- Bundle
-- SuiteApp
-- Custom Reports
 - Saved Searches
+- SuiteApp
+- Transaction Form
 
 ## ReSpider Now
 
