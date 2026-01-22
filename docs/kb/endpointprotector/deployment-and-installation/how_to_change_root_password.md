@@ -1,7 +1,5 @@
 ---
-description: >-
-  This article describes how to boot the Endpoint Protector On-Prem appliance into recovery mode
-  to change the epproot user password. These steps apply only to on-premises deployments.
+description: This article describes how to boot the Endpoint Protector On-Prem appliance into recovery mode to change the epproot user password and optimize the appliance configuration for Nginx, MySQL, and PHP-FPM. These steps apply only to on-premises deployments.
 keywords:
   - Endpoint Protector
   - epproot password
@@ -11,12 +9,10 @@ keywords:
   - Nginx
   - MySQL
   - PHP-FPM
-sidebar_label: How to change epproot Password and Optimize Endpoint Protector On-Prem Appliance"
-tags:
-  - deployment-and-installation
-  - maintenance
-title: "How to change epproot Password and Optimize Endpoint Protector On-Prem Appliance"
-knowledge_article_id: 
+  - Ubuntu
+sidebar_label: How to Change epproot Password and Optimize Endpoint Protector On-Prem Appliance
+title: How to Change epproot Password and Optimize Endpoint Protector On-Prem Appliance
+knowledge_article_id: kA0Qk000000XXXXKAA
 products:
   - endpoint-protector
 ---
@@ -24,150 +20,193 @@ products:
 | The procedures and instructions provided in this document are intended for use by experienced administrators. Proceeding with these steps is done entirely at your own risk. Netwrix is not responsible for any data loss, system instability, or other issues that may arise from following these instructions. Ensure that you have a complete backup of your system before making any changes. |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-This document outlines the steps to boot into single-user (recovery) mode, change the elevated user password and optimise the EPP appliance hosted On-Prem. The steps will not work if the appliance is hosted in a cloud environment.
+## Overview
 
-1.  Go to your VM manager and reboot the EPP appliance.  
-    While it reboots, press the \`Esc\` button on your keyboard to go into the GRUB boot menu, and select \`Advanced options for Ubuntu\`
+This article outlines the steps to boot the Endpoint Protector (EPP) On-Prem appliance into single-user (recovery) mode to change the `epproot` user password and optimize appliance performance. These steps apply only to **on-premises** deployments.  
+They do **not** work for appliances hosted in cloud environments.
 
-    ![](./../0-images/43258ddd17f53d209349a9757595552d.png)
+---
 
-2.  Choose the first entry labeled (recovery mode)
+## Instructions
 
-    ![](./../0-images/cb6a560ea7bc3e35cd3c0a30978e4dc7.png)
+1. Go to your VM manager and **reboot** the EPP appliance.  
+   While it reboots, press the `Esc` key on your keyboard to access the **GRUB** boot menu, and select **Advanced options for Ubuntu**.
 
-3.  Press \`Enter\` when prompted.
+   ![GRUB boot menu screenshot](./../0-images/43258ddd17f53d209349a9757595552d.png)
 
-    ![](./../0-images/221e2f00e49f44fffcf64957a74adf46.png)
+2. Choose the first entry labeled **(recovery mode)**.
 
-4.  The first thing you need to do is change the password for the user \`epproot\` using the command:
+   ![Recovery mode selection screenshot](./../0-images/cb6a560ea7bc3e35cd3c0a30978e4dc7.png)
 
-    passwd epproot
+3. Press **Enter** when prompted.
 
-    :::note
-    When requested, input the new password
-    :::
+   ![Boot confirmation screenshot](./../0-images/221e2f00e49f44fffcf64957a74adf46.png)
 
-5.  Next, reboot the appliance with the command:
+4. Change the password for the `epproot` user using the command:
 
-    reboot
+   ```bash
+   passwd epproot
+   ```
 
-6.  At this point, using the preferred application, you can SSH into the appliance.
-7.  To reduce the number of times you need to input the password, elevate to root using:
+   > **NOTE:** When requested, input the new password.
 
-    sudo su
+5. Reboot the appliance with the command:
 
-    :::note
-    When requested, use the password for the epproot user.
-    :::
+   ```bash
+   reboot
+   ```
 
-8.  Backup the Nginx, MySQL, and PHP-fpm configuration files using the following commands:
+6. Once the system restarts, connect to the appliance via **SSH** using your preferred application.
 
-    ```cp -p /etc/nginx/nginx.conf{,.bkp}  
-    cp -p /etc/mysql/mysql.conf.d/mysqld.cnf{,.bkp}
+7. To reduce the number of password prompts, elevate privileges to root using:
 
-    cp -p /opt/alt/php56/etc/php-fpm.conf{,.bkp}
+   ```bash
+   sudo su
+   ```
+
+   > **NOTE:** When requested, use the password for the `epproot` user.
+
+8. Backup the **Nginx**, **MySQL**, and **PHP-FPM** configuration files:
+
+   ```bash
+   cp -p /etc/nginx/nginx.conf{,.bkp}
+   cp -p /etc/mysql/mysql.conf.d/mysqld.cnf{,.bkp}
+   cp -p /opt/alt/php56/etc/php-fpm.conf{,.bkp}
+   ```
+
+   > **NOTE:** The `{,.bkp}` syntax creates a copy of each file in the same location with `.bkp` appended, preserving metadata (permissions, ownership, and timestamps).
+
+9. Run the following command and note down the number of CPU cores and the memory assigned to the VM:
+
+   ```bash
+   htop
+   ```
+
+10. Edit the Nginx configuration file:
+
+    ```bash
+    vim /etc/nginx/nginx.conf
     ```
 
-    :::note
-    The extension `{,.bkp}` is going to copy the file to the same location, appending .bkp to the file name, basically creating a copy preserving the metadata (permissions, ownership, timestamps).
-    :::
+    - Press **Insert** to edit.  
+    - Set `worker_processes` to the number of CPU cores.  
+    - Change the values of `error_log` and `access_log` from `off` to `/dev/null`.  
+    - To save and quit, press **Esc**, type `:wq`, and press **Enter**.
 
-9.  Use the command:  
-    htop  
-    and note down the number of CPU cores and the Memory assigned to the VM.
-10. Edit the Nginx config file using the command:
+11. Edit the MySQL configuration file:
 
-    vim /etc/nginx/nginx.conf
-
--   To edit, press the \`insert\` key on the keyboard
--   Set worker_processes to the number of CPU cores
--   Change the values of error_log and access_log from off to /dev/null;
--   To save and quit, press the \`esc\` button, type :wq and press \`Enter\`
-11. Edit the MySQL config file using the command:  
+    ```bash
     vim /etc/mysql/mysql.conf.d/mysqld.cnf
--   To edit, press the \`insert\` key on the keyboard
--   Check the following lines and change the values accordingly, or add them if there are some missing:  
-    max_allowed_packet = 8M  
-    thread_stack = 256K  
-    read_buffer_size = 128K  
-    read_rnd_buffer_size = 256K  
-    join_buffer_size = 128K  
-    key_buffer_size = 16M  
-    tmp_table_size = 256M  
-    sort_buffer_size = 2M  
-    thread_cache_size = 64M  
-    query_cache_type = 0  
-    query_cache_limit = 1M  
-    query_cache_size = 0  
-    transaction_isolation = READ-COMMITTED  
-    expire_logs_days = 5  
-    max_binlog_size = 128M
--   Change the value of max_connections based on the Memory assigned, as follows:
+    ```
 
-    75 for ≤4 GB RAM
+    - Press **Insert** to edit.  
+    - Ensure or update the following parameters:
 
-    100 for 8 GB RAM
+      ```text
+      max_allowed_packet = 8M
+      thread_stack = 256K
+      read_buffer_size = 128K
+      read_rnd_buffer_size = 256K
+      join_buffer_size = 128K
+      key_buffer_size = 16M
+      tmp_table_size = 256M
+      sort_buffer_size = 2M
+      thread_cache_size = 64M
+      query_cache_type = 0
+      query_cache_limit = 1M
+      query_cache_size = 0
+      transaction_isolation = READ-COMMITTED
+      expire_logs_days = 5
+      max_binlog_size = 128M
+      ```
 
-    150 for 16 GB RAM
+    - Adjust `max_connections` based on system memory:
 
-    250 for 32 GB RAM
+      | **RAM** | **max_connections** |
+      |----------|---------------------|
+      | ≤4 GB    | 75                  |
+      | 8 GB     | 100                 |
+      | 16 GB    | 150                 |
+      | 32 GB    | 250                 |
+      | 64 GB    | 500                 |
+      | 128 GB   | 1000                |
 
-    500 for 64 GB RAM
+    - Set `innodb_buffer_pool_size` to ~60% of total memory.  
+      Example (72 GB RAM):
 
-    1000 for 128 GB RAM
+      ```text
+      innodb_buffer_pool_size = 44236M
+      ```
 
--   Set innodb_buffer_pool_size to \~60% of the memory assigned  
-    *Example: For 72 GB RAM, put 44236M, which results from: (60/100)\*(72\*1024)*  
-    innodb_buffer_pool_size = 44236M
--   Set innodb_log_file_size to \~12.5% of the innodb_buffer_pool_size value.  
-    *Example: For 72 GB RAM, put 5G, which results from rounding: (12.5/100)\*(44236/1024)*  
-    innodb_log_file_size= 5G
--   Set innodb_buffer_pool_instances to the number of Gs at innodb_buffer_pool_size.  
-    *Example: For 44236M (which is approximately 43 GB, obtained by dividing 44236 by 1024) set the value to 43 here*  
-    innodb_buffer_pool_instances = 43
--   Set innodb_thread_concurrency to the number of CPU cores  
-    Example: For 8 CPU cores, use the value 8  
-    innodb_thread_concurrency = 8
--   Set innodb_file_per_table = 1
--   Check the following lines and add them if there are some missing:  
-    innodb_file_per_table = 1  
-    innodb_buffer_pool_size = 2G  
-    innodb_log_file_size = 256M  
-    innodb_buffer_pool_instances = 2  
-    innodb_flush_log_at_trx_commit = 0  
-    innodb_log_buffer_size = 16M  
-    innodb_lock_wait_timeout = 300  
-    innodb_flush_method = O_DIRECT  
-    innodb_thread_concurrency = 4  
-    innodb_autoinc_lock_mode = 1  
-    innodb_fast_shutdown = 1  
-    innodb_max_purge_lag = 0  
-    innodb_max_dirty_pages_pct = 60
--   To save and quit, press the \`esc\` button, type :wq and press \`Enter\`
-12. Edit the PHP config file using the command:  
+    - Set `innodb_log_file_size` to ~12.5% of the buffer pool size.  
+      Example (72 GB RAM):
+
+      ```text
+      innodb_log_file_size = 5G
+      ```
+
+    - Set `innodb_buffer_pool_instances` to the approximate number of gigabytes of buffer pool size.  
+      Example:
+
+      ```text
+      innodb_buffer_pool_instances = 43
+      ```
+
+    - Set `innodb_thread_concurrency` to the number of CPU cores.  
+      Example (8 cores):
+
+      ```text
+      innodb_thread_concurrency = 8
+      ```
+
+    - Ensure the following parameters exist or add them if missing:
+
+      ```text
+      innodb_file_per_table = 1
+      innodb_flush_log_at_trx_commit = 0
+      innodb_log_buffer_size = 16M
+      innodb_lock_wait_timeout = 300
+      innodb_flush_method = O_DIRECT
+      innodb_autoinc_lock_mode = 1
+      innodb_fast_shutdown = 1
+      innodb_max_purge_lag = 0
+      innodb_max_dirty_pages_pct = 60
+      ```
+
+    - To save and quit, press **Esc**, type `:wq`, and press **Enter**.
+
+12. Edit the PHP-FPM configuration file:
+
+    ```bash
     vim /opt/alt/php56/etc/php-fpm.conf
--   To edit, press the \`insert\` key on the keyboard
--   Change the attribute values as follows:
+    ```
 
-| **Total RAM** | **pm.max_children**                          | **pm.start_servers** | **pm.min_spare_servers** | **pm.max_spare_servers** |
-|---------------|----------------------------------------------|----------------------|--------------------------|--------------------------|
-| ≤2 GB         | **10** (kept)                                | 5                    | 1                        | 5                        |
-| ≤4 GB         | **50**                                       | 6                    | 3                        | 8                        |
-| ≤8 GB         | **100**                                      | 8                    | 5                        | 12                       |
-| ≤16 GB        | **200**                                      | 12                   | 8                        | 20                       |
-| ≤32 GB        | **400**                                      | 20                   | 12                       | 40                       |
-| ≤64 GB        | **800**                                      | 28                   | 18                       | 70                       |
-| ≤128 GB       | **1600**                                     | 40                   | 28                       | 100                      |
-| \>128 GB      | scale with formula, then round down \~10–15% |                      |                          |                          |
+    - Press **Insert** to edit.
+    - Update the following parameters based on total RAM:
 
--   To save and quit, press the \`esc\` button, type :wq and press \`Enter\`
-13. The last step requires the services to be restarted:
+      | **Total RAM** | **pm.max_children** | **pm.start_servers** | **pm.min_spare_servers** | **pm.max_spare_servers** |
+      |---------------|--------------------|----------------------|--------------------------|--------------------------|
+      | ≤2 GB         | 10                 | 5                    | 1                        | 5                        |
+      | ≤4 GB         | 50                 | 6                    | 3                        | 8                        |
+      | ≤8 GB         | 100                | 8                    | 5                        | 12                       |
+      | ≤16 GB        | 200                | 12                   | 8                        | 20                       |
+      | ≤32 GB        | 400                | 20                   | 12                       | 40                       |
+      | ≤64 GB        | 800                | 28                   | 18                       | 70                       |
+      | ≤128 GB       | 1600               | 40                   | 28                       | 100                      |
+      | >128 GB       | Scale using the formula, then round down ~10–15% | — | — | — |
 
-    systemctl restart nginx  
-    systemctl restart mysql  
+    - To save and quit, press **Esc**, type `:wq`, and press **Enter**.
+
+13. Restart the services:
+
+    ```bash
+    systemctl restart nginx
+    systemctl restart mysql
     systemctl restart alt-php56-fpm
+    ```
 
-14. If any of the commands mentioned do not work, return to the relevant configuration section for the service and check for any errors that might have occurred while changing the values.  
-    :::note
-    For assistance, the backup files previously created in step 8 can be used.
-    ::::
+14. If any of the services fail to start, review the relevant configuration files for errors.  
+
+    > **NOTE:** You can restore the backup files created in Step 8 if necessary.
+
+---
