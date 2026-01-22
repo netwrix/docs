@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Zendesk
 
-Platform Governance for NetSuite's Change Management capabilities are integrated with Zendesk, one
+Platform Governance For NetSuite's Change Management capabilities are integrated with Zendesk, one
 of the most popular customer service and issue ticketing systems. Customers are able to look for and
 include NetSuite Customizations, assess impacts for requested changes, and push Zendesk change
 tickets into a Change Request. This enables easy management of changes, seamless tracking of
@@ -39,7 +39,7 @@ To set up the Zendesk integration:
 ## Install the App
 
 Here are the steps to install the Zendesk app. You must have **Admin** privileges to install the
-app. 
+app.
 
 1. Open your Zendesk dashboard.
 2. Click the **Admin** icon in the left panel. It should open a new window to Admin Center.
@@ -50,7 +50,7 @@ app.
 4. Search for **Platform Governance For NetSuite**.
 5. Click **Platform Governance For NetSuite** when it is displayed.
 
-    ![Platform Governance For NetSuite app in the Marketplace](/images/platgovnetsuite/integrations/zendesk_strongpoint.webp)
+    ![Platform Governance For NetSuite app in the Marketplace](/images/platgovnetsuite/integrations/zendesk_platform_governance.webp)
 
 6. Click **Install**. When installation is complete, you are prompted to sign in to your Zendesk
    dashboard to continue.
@@ -69,7 +69,7 @@ app.
 
     - **Title**: the name associated with the app. The default is **Platform Governance For NetSuite**.
     - Account ID: enter the NetSuite account ID. The **Account ID** must be a lowercase string. For
-      example, **td2971579**.
+      example, **TSTDRV12345678**.
 
         Account ID must be entered in lower case.
 

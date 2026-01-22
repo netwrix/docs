@@ -122,4 +122,3 @@ There is an options menu available for each added customization. Options include
 There is an options menu available for each added proposed customization. Click options to **Remove** 
 the customization.
 
-- **Impact Analysis** and **View ERD** are tools to Zendesk Walkthrough Example.
