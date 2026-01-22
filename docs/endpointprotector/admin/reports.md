@@ -156,6 +156,30 @@ Action column, you can view additional information.
 
 ![ An overview of every important action performed in the interface](adminactions.webp)
 
+## SCIM Provisioning Logs
+
+The logs display detailed information for each SCIM request, including:
+
+-   Request ID
+-   Timestamp
+-   HTTP Method
+-   Endpoint
+-   Status Code
+-   Operation type (POST, PATCH, DELETE, BULK)
+-   Resource type (User, Group)
+-   Actor
+-   Request and response bodies
+
+These logs help administrators:
+
+-   Verify successful provisioning
+-   Troubleshoot synchronization issues
+-   Support audit and compliance requirements
+
+![Provisioning reports list](SCIMProvisioningLogs.png)
+
+![Provisioning reports list expanded](SCIMProvisioningLogsExpanded.png)
+
 ## Online Computers
 
 This section offers an overview of computers registered on the system which have an established
