@@ -16,7 +16,7 @@ User benefits include:
 
 - Avoid duplicate effort of creating tickets in two different systems.
 - Pull Customizations into Zendesk for scope of changes.
-- Specify Bundle ID
+- Specify Bundle ID as needed.
 - Perform impact analysis assessment.
 - Approve requests in either Zendesk or NetSuite.
 - Automatic ticket reconciliation between Zendesk and NetSuite.

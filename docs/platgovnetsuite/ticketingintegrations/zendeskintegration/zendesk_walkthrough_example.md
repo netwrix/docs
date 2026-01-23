@@ -123,7 +123,6 @@ There is an options menu available for each added proposed customization. Click 
 the customization.
 
 ### Need Help?
-If you encounter any issues or need assistance:
-- Contact support at this [link](https://www.netwrix.com/support.html)
-- Review our troubleshooting guide
-- Check the FAQ section
+
+If you encounter any issues or need assistance, contact 
+support at this [link](https://www.netwrix.com/support.html).
