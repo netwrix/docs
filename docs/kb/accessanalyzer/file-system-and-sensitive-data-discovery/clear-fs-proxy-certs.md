@@ -19,6 +19,13 @@ title: >-
 ---
 # Clearing FSAA Certificates for the Netwrix Enterprise Auditor FSAA Proxy Scanner Service
 
+## Related Queries
+
+* "How do I clean up FSAA certificates if the proxy is running as LocalSystem?"
+* "Uninstalling Netwrix FSAA Proxy Scanner – what should I do with certificates?"
+* "FSAA troubleshooting – trust issues and certificates"
+* "Need to remove old FSAA service account certificates"
+
 ## Overview
 
 This article explains how to clear certificates used by the **Netwrix Enterprise Auditor FSAA Proxy Scanner Service** (FSAA Proxy Service). These certificates may reside in the local machine or user certificate stores, depending on the account the service is running under.
@@ -57,7 +64,7 @@ cd C:\Path\to\FSAACertificateManager
 
 
 1. Move `FSAACertificateManager.exe` to the FSAA Proxy Server.
-2. Install PSTools (PSExec) onto the FSAA Proxy Server from [Microsoft | PSTools](https://learn.microsoft.com/en-us/sysinternals/downloads/pstools)
+2. Install PSTools (PSExec) onto the FSAA Proxy Server from [Microsoft | PSTools](https://learn.microsoft.com/en-us/sysinternals/downloads/pstools).
 3. Run:
 
 ```cmd
@@ -154,11 +161,3 @@ sc.exe delete FSAACertCleanup
 
 
 3. Repeat for `Client` and `CertificateAuthority` stores as needed.
-
-
-## Related Queries
-
-* "How do I clean up FSAA certificates if the proxy is running as LocalSystem?"
-* "Uninstalling Netwrix FSAA Proxy Scanner – what should I do with certificates?"
-* "FSAA troubleshooting – trust issues and certificates"
-* "Need to remove old FSAA service account certificates"
