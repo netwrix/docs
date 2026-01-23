@@ -44,7 +44,7 @@ Before beginning, determine which account the FSAA Proxy Scanner service is runn
 3. Run the following commands one by one:
 
 ```cmd
-cd {folder location of FSAACertificateManager.exe}
+cd C:\Path\to\FSAACertificateManager
 .\FSAACertificateManager.exe -clearCertificatesFromStore -store Server -Location LocalMachine
 .\FSAACertificateManager.exe -clearCertificatesFromStore -store Client -Location LocalMachine
 .\FSAACertificateManager.exe -clearCertificatesFromStore -store CertificateAuthority -Location LocalMachine
@@ -68,7 +68,7 @@ psexec -s -i cmd.exe
 4. In the new console window, navigate to the tool's location:
 
 ```cmd
-cd "{folder location of FSAACertificateManager.exe}"
+cd "C:\Path\to\FSAACertificateManager"
 ```
 
 
@@ -90,7 +90,7 @@ cd "{folder location of FSAACertificateManager.exe}"
 2. In **PowerShell**, run:
 
 ```powershell
-$action = New-ScheduledTaskAction -Execute "FSAACertificateManager.exe" -Argument "-clearCertificatesFromStore -store Server -location CurrentUser" -WorkingDirectory "{folder location of FSAACertificateManager.exe}"
+$action = New-ScheduledTaskAction -Execute "FSAACertificateManager.exe" -Argument "-clearCertificatesFromStore -store Server -location CurrentUser" -WorkingDirectory "C:\Path\to\FSAACertificateManager"
 $principal = New-ScheduledTaskPrincipal -UserId "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 Register-ScheduledTask -TaskName "CleanFSAACerts" -Action $action -Principal $principal
 Start-ScheduledTask -TaskName "CleanFSAACerts"
@@ -146,7 +146,7 @@ foreach ($storeName in $fsaaStores) {
 2. In **Command Prompt**, run:
 
 ```cmd
-sc.exe create FSAACertCleanup binPath= "cmd.exe /c \"cd /d \"{folder location of FSAACertificateManager.exe}\" && FSAACertificateManager.exe -clearCertificatesFromStore -store Server -location CurrentUser\"" type= own start= demand
+sc.exe create FSAACertCleanup binPath= "cmd.exe /c \"cd /d \"C:\Path\to\FSAACertificateManager\" && FSAACertificateManager.exe -clearCertificatesFromStore -store Server -location CurrentUser\"" type= own start= demand
 sc.exe start FSAACertCleanup
 timeout /t 3 /nobreak >nul
 sc.exe delete FSAACertCleanup
