@@ -119,6 +119,11 @@ There is an options menu available for each added customization. Options include
 
     ![Proposed Customizations](/images/platgovnetsuite/integrations/zendesk_proposed_custs_sample.webp)
 
-There is an options menu available for each added proposed customization. Click options to **Remove** 
+There is an options menu available for each added proposed customization. Click options to **Remove**
 the customization.
 
+### Need Help?
+If you encounter any issues or need assistance:
+- Contact support at this [link](https://www.netwrix.com/support.html)
+- Review our troubleshooting guide
+- Check the FAQ section
