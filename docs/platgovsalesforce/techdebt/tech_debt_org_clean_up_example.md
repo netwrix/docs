@@ -108,33 +108,60 @@ a problem. Some things to consider:
 
 ## Step 4: Group Customizations for Approval and Clean Up
 
-Now that you have identified what you can clean up, you can proceed with the Approval process. Some
-Customizations may require different levels of approval or different approvers. If you are using
-Intelligent Change Enablement, you can group related Customizations for approval and assign them to
-a Change Request directly from the List View:
+Now that you have identified the Customizations that can be cleaned up, you can proceed with the
+approval process. Related Customizations can be grouped and managed using a **Change Request**.
 
 1. Click the **Change Request** tab and click **New**.
 2. Enter the name and a brief description of the clean up project. Set the **Change Type** to
    **Clean Up**. If you are using an external change approval system such as Jira or ServiceNow, you
    can enter the **External Change Request Number**.
 
-    ![Edit Change Request](/images/platgovsalesforce/tech_debt/tech_debt_3.webp)
+    ![Clean Up Unused Fields - Change Request](/images/platgovsalesforce/tech_debt/clean_up_unused_fields_change_request.webp)
 
-3. On your List View, set the **Add To Change Request** field for the Customizations you are
-   planning to clean up with this Change Request.
+3. Open the Change Request and navigate to the **Customizations** tab.
+4. Click **Add/Remove** to add Customizations to the Change Request.
 
-    ![Default Clean Up List View](/images/platgovsalesforce/tech_debt/tech_debt_12.webp)
+    ![Add Customizations to Change Request](/images/platgovsalesforce/tech_debt/add_customizations_to_change_request.webp)
 
-4. Open your Change Request and view the Impact Analysis for the Customizations you want to clean
-   up. You are warned if there are SOQL, code, workflow, role, profile filter report or List View
-   dependencies or if the field affects actively used Reports.
+5. In the **Add Customizations to Change Request** window:
+   - Use **Customization Name** to search for Customizations.
+   - Use **Salesforce Type** to filter by metadata type (for example, **CustomField**).
+   - Optionally filter by **Namespace** or **Last Modified By**.
+   - Select one or more Customizations using the checkboxes.
+   - Click **Confirm Selection** to add them to the Change Request.
 
-    ![Clean Up Unused Fields](/images/platgovsalesforce/tech_debt/tech_debt_4.webp)
+    ![Add Customizations to Change Request](/images/platgovsalesforce/tech_debt/add_customizations_to_change_request_2.webp)
 
-5. If you need to make changes to the Customizations, **Edit** the Change Request and select **View
-   All** in the Customizations field. You can **Add** or **Remove** Customizations to the **Selected
-   Customizations** list. **Save** when you are finished.
-6. When you are ready, Submit your Change Request for Approval.
+6. The selected Customizations appear in the **Customizations** tab of the Change Request. From this
+   view, you can:
+   - Review the list of Customizations included in the clean up.
+   - Remove Customizations if needed.
+   - Export the list using **Export to CSV**.
+
+    ![Selected Customizations](/images/platgovsalesforce/tech_debt/selected_customizations.webp)
+
+7. Navigate to the **Impact Analysis** tab to review the potential impact of cleaning up the selected
+   Customizations.
+
+    ![Impact Analysis](/images/platgovsalesforce/tech_debt/impact_analysis_tabs_1.webp)
+
+    ![Impact Analysis](/images/platgovsalesforce/tech_debt/impact_analysis_tabs_2.webp)
+
+   The Impact Analysis categorizes Customizations into the following sections:
+   - **Can Be Safely Deleted or Modified**
+   - **Cannot Be Safely Deleted or Modified**
+   - **Inactive Customizations**
+
+   This analysis identifies dependencies such as references in reports, scripts, workflows, or other
+   metadata that could be affected by the clean up.
+
+8. Review the Impact Analysis results carefully. If Customizations appear under
+   **Cannot Be Safely Deleted or Modified**, further investigation or remediation may be required
+   before proceeding.
+
+9. When you are satisfied with the scope and impact of the clean up, submit the Change Request for
+   approval.
+
 
 :::tip
 You can add additional approvers (beyond what is required for the policy) to the Change Request. Initially, only the approvers from your default policy are required. There are two methods to add additional approvers:
