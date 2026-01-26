@@ -4,35 +4,34 @@
 
 **"For CISO, by CISO"**
 
-PingCastle was born based on a finding: security based only on
-technology does not work. That\'s why the company focuses on process and
-people rather than just technology. PingCastle does not sell products !
+PingCastle is a security assessment and auditing tool for CISOs, Security Auditors, and IT Professionals working with Active Directory and Entra ID.
 
-The company does not provide solutions to protect your infrastructure.
-Instead, it provides tools to discover what you have to protect,
-evaluate its security level and provide insights on if the budget you
-have provided has been successfully used.
+Netwrix offers various products to help protect your network infrastructure. PingCastle is specifically designed for assessment—not protection. It collects comprehensive information from your Active Directory and Entra ID environments, analyzes this data for security risks and misconfigurations, and generates detailed reports with actionable findings.
 
-PingCastle\'s objective is not to reach a perfect security but to
-impulse changes using the management. And with low effort, I think
-you\'ll get support to change the situation !
-
-**Vincent LE TOUX**
+These reports help you identify and prioritize security issues that need remediation, giving you clear visibility into your security posture and enabling data-driven decisions to improve your environment's security.
 
 ## License
 
-The source code of the program is licensed to the Non-Profit Open
-Software License ("Non-Profit OSL") 3.0.
+The source code of the program is licensed to the Non-Profit Open Software License ("Non-Profit OSL") 3.0.
 
-1.  Regarding the binary code, Being part of a commercial package is
-    forbidden except if a license is purchased. Check the \"our
-    services\" section on https://www.pingcastle.com for more
-    information.
+**Binary License and Usage**
 
-The program is allowed to run only during its support date. Support can
-be extended by purchasing additional support.
+The binary code may not be included as part of a commercial package unless a license is purchased. Visit the "our services" section on https://www.pingcastle.com for more information.
 
-**Methodology**
+**License Expiration**
+
+PingCastle will only run until the built-in license expiration date. After this date, the program will cease to function.
+
+This date is surfaced as the End of Support date in the tool.
+
+**Licensing Options**
+
+To continue using PingCastle after the built-in license expires, you must purchase one of the following:
+
+- **PingCastle Standard**: Traditional licensing model for ongoing use
+- **PingCastle For Service Providers**: Per-assessment licensing where each license is valid for 2 weeks for specific Active Directory domains and forests. Forest-level assessments can be performed using wildcard notation (e.g., `*.domain.local` to scan all subdomains within a forest)
+
+## Methodology
 
 The PingCastle tool is just one part of a global methodology aiming at
 securing Active Directories.
@@ -50,136 +49,110 @@ The following sections describe how to use PingCastle.
 
 ## Requirements
 
-**Active Directory Account**
+### Active Directory Account
 
-The PingCastle program needs an Active Directory account to connect to
-the AD to audit. No requirements is needed for this account. It can be
-an account without any privileges or even an account from a trusted
-domain. This account doesn't require to be part of the local
-administrators group.
+PingCastle requires an Active Directory account to connect and perform audits. In most cases, a standard user account with no special privileges is sufficient—the account can even be from a trusted domain and does not need to be part of the local administrators group.
 
-**Server Side**
+### Privileged Mode
 
-There is no requirement on the server side.
+PingCastle offers a privileged mode that enhances the reliability and accuracy of specific security checks. While non-privileged mode works for basic operations and many checks, privileged mode provides higher confidence results for certain assessments.
 
-However it is strongly recommended (but not mandatory) for performance
-reasons to install on the server side a component named "Active
-Directory Web service" aka ADWS. It is installed by default on any
-domain where at least one domain controller has the OS Windows 2008 R2
-or later. Having this component installed can divide the time required
-to compute the report by a factor of 10.
+**Running as Administrator**: Running PingCastle as an administrator is not required for most operations, though certain checks (such as DNS-related checks) may have limited functionality without administrator privileges.
 
-ADWS can be installed manually on [Windows 2003 and Windows 2008](http://www.microsoft.com/fr-fr/download/details.aspx?id=2852) [require .NET Framework 3.5SP1](https://www.microsoft.com/en-us/download/details.aspx?id=25150).
-The hot fix that may be needed for these OS is located [here](http://hotfixv4.microsoft.com/.NET%20Framework%203.5%20-%20Windows%202000,%20Windows%20Server%202003,%20Windows%20XP,%20Windows%20Vista,%20Windows%20Server%202008%20%28MSI%29/sp1/DevDiv758402/30729.4174/free/392858_intl_x64_zip.exe).
+**Privileged Mode Command**:
+```
+PingCastle.exe --healthcheck --privileged --server domain.local
+```
 
-**Client side**
+**Privileged Mode Checks**:
 
-1.  PingCastle requires .Net 4, available on all modern OS. However it
-    can be compiled to run manually on .Net2. It fulfill then the
-    following requiement:
+The following table shows which rules benefit from privileged mode and the permissions they require:
 
-The program is supported on every Operating System supported by
-Microsoft without the installation of any component nor any local
-privilege.\
-From Windows Vista to Windows 10 and Windows 2008 to Windows 2016 in
-both 32 and 64 bits.\
-In addition, the program is known to be working on Windows 2000 with the
-.net framework 2, Windows XP and Windows 2003.
+| Rule | Description | Permission Required |
+|------|-------------|---------------------|
+| A-CertTempCustomSubject (ESC1) | Certificate template vulnerability check | Gets and checks CA Enrollment ACL |
+| A-CertTempAnyPurpose (ESC2) | Certificate template any purpose check | Gets and checks CA Enrollment ACL |
+| S-Vuln-MS14-068 | Kerberos vulnerability check | Checks installed hotfixes on the domain controller |
+| S-Vuln-MS17_010 | EternalBlue/SMB vulnerability check | Checks installed hotfixes on the domain controller |
 
-The analysis tool (PingCastle.exe) requires DotNet 3.0 (or next
-versions) which is available by default since Windows Vista. It can be
-run under DotNet 2.0 but with fewer functionalities.
+### Server Side
 
-Starting from PingCastle 2.7, PingCastle.exe can be run without the
-.config file next to the program. But in this case, the program will be
-run under the .Net framework where it has been compiled (and not the
-other .Net framework). Windows does show a popup to suggest the
-installation of the missing framework.
+PingCastle has no specific server-side requirements.
 
-![](/images/pingcastle/basicuser/image3.webp)
+For optimal performance, we recommend having Active Directory Web Services (ADWS) installed on your domain controllers. ADWS is installed by default on Windows Server 2008 R2 and later. When available, ADWS can significantly reduce scan times—often by a factor of 10 or more.
+
+### Client Side
+
+Starting with PingCastle 3.5, the .NET runtime is bundled directly with the application, eliminating the need for any prerequisites or manual .NET framework installation.
+
+**System Requirements**:
+- PingCastle runs on any system that supports .NET 8
+- No local administrator privileges required
+- No additional components or frameworks need to be installed
+
+**Previous Versions**: PingCastle versions prior to 3.5 required .NET Framework 4.7.2 to be installed separately.
 
 ## How it works
 
-PingCastle is a standalone program (not requiring installation) which
-produces reports for human or machine.
+PingCastle is a standalone executable that runs on .NET 8. It analyzes Active Directory and Entra ID environments and produces HTML healthcheck reports with detailed security findings.
 
-![](/images/pingcastle/basicuser/image4.webp)
+PingCastle can also read its own machine-readable report files to build consolidated analysis and dashboard views.
 
-PingCastle reads its own machine readable reports to build analysis or
-dashboard.
+### Getting Started
 
-**Installation**
+PingCastle is provided as a zip file. Simply extract the zip file and run `PingCastle.exe`—no installation required.
 
-PingCastle Basic Edition is provided in a zip file. You need a program
-such as 7zip or the native unzip program to decompress the file.
+## Running PingCastle
 
-![A screenshot of a computer Description automatically
-generated](/images/pingcastle/basicuser/image5.webp)
+### Interactive Mode
 
-For the most operating systems, PingCastle does not need any more
-actions.
+Double-click `PingCastle.exe` to launch the program in interactive mode, which provides a menu-driven interface for selecting scan options.
 
-For Windows 2000, the dotnet framework 2.0, which is the last supported
-version, need to be installed.
+### Command Line Mode
 
-The two files required to run scans are PingCastle.exe and
-PingCastle.exe.config
-
-## Run the program
-
-1.  The best way is just to double click on PingCastle.exe
-
-![https://www.pingcastle.com/wp/wp-content/uploads/2018/09/quickstart.webp](/images/pingcastle/basicuser/image6.webp)
-
-This run the program in a mode called the "interactive mode.
-
-The program can be run using a command line. A command line can be run
-by searching for "cmd" or "command line" in the start menu.
-
-Then a drag and drop of the file "PingCastle.exe" automatically
-populates the command line with the binary. The same can be done with
-other files ending with ".exe"
-
-## Getting help
-
-PingCastle can display its help on a command line.
-
-![https://www.pingcastle.com/wp/wp-content/uploads/2018/09/cmd-pingcastle-help.webp](/images/pingcastle/basicuser/image7.webp)
-
-Indeed PingCastle has a lot of switches which can be displayed using the
-command line:
+For automation or advanced usage, PingCastle supports command line options. To view all available options:
 
 ```
 PingCastle.exe --help
 ```
 
-Do not forget also to check the website https://www.pingcastle.com or on
-twitter \@mysmartlogon
+### Quick Start Commands
 
-## Generating log file for support requests
+**Basic scan of a domain**:
+```
+PingCastle.exe --healthcheck --server domain.local
+```
 
-**PingCastle can collect logs with the \--log switch**
+**Detailed scan with full findings** (includes each finding in each risk):
+```
+PingCastle.exe --healthcheck --server domain.local --level Full
+```
 
-However when a command line argument is submitted, the interactive mode
-is disabled and the module has to be launched manually. To avoid that,
-the "interactive mode" can be activated manually using the command:
+**Privileged scan of a domain**:
+```
+PingCastle.exe --healthcheck --server domain.local --privileged
+```
+
+## Generating Logs for Support
+
+To enable detailed logging for troubleshooting or support requests, use the `--log` switch.
+
+When using command line arguments, interactive mode is automatically disabled. To enable logging while keeping interactive mode active:
 
 ```
 PingCastle.exe --log --interactive
 ```
 
-## Performing an Active Directory health check
+## Performing an Active Directory Healthcheck
 
-The report can be generated in the interactive mode by choosing
-"healthcheck" or just by pressing Enter. Indeed it is the default
-analysis mode.
+### Using Interactive Mode
 
-![](/images/pingcastle/basicuser/image8.webp)
+Launch PingCastle and select "healthcheck" from the menu.
 
-It can be run using the command:
+### Using Command Line
 
 ```
-PingCastle --healthcheck --server mydomain.com
+PingCastle.exe --healthcheck --server mydomain.com
 ```
 
 **Active Directory risk level analysis**
