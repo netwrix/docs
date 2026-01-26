@@ -39,7 +39,7 @@ This guide describes the steps to set up Netwrix Privilege Secure for Access Man
 3. If the Netwrix Privilege Secure for Access Management server certificate is untrusted on the Netwrix Auditor host, select the **I want Auditor to trust this certificate when connecting to this server** checkbox and click **Next**.
 4. Take note of the application name. You can keep the default name or change it. This article uses the default **NetwrixAuditor** name.
 
-   > **NOTE:** It is not recommended to use a space in the application name, as this may lead to incorrect operation when using Microsoft Extra ID.
+   > **NOTE:** It is not recommended to use a space in the application name, as this may lead to incorrect operation when using Microsoft Entra ID.
 
 5. In the **Specify the client certificate** section, select **Generate new certificate** and click **Next**.
 6. Export the Netwrix Auditor Privilege Secure for Access Management client certificate to the Netwrix Privilege Secure for Access Management server. Refer to the steps in the **Export the Certificate to Privilege Secure for Access Management Server** section.
@@ -70,7 +70,7 @@ This guide describes the steps to set up Netwrix Privilege Secure for Access Man
 > **NOTE:** Both credential-based and resource-based integrations require a connection profile. The steps to set up a connection profile are the same for both types of integration.
 
 1. In Netwrix Privilege Secure for Access Management, select the **Policy** tab and go to **Access Policy** > **Connection Profiles** in the left pane.
-2. Click the plus icon to add a new connection profile. For the generic workflow, refer to the following article: https://docs.netwrix.com/docs/privilegesecure/4_2
+2. Click the plus icon to add a new connection profile. For the generic workflow, refer to the following article: [Connection Profiles Page](https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/accesspolicy/connectionprofiles/)
 3. Name the connection profile to distinguish it from other non-integration-related connection profiles.
 4. Refer to the required connection profile settings:
    - Allow Proxy Auto-connect = True
@@ -112,7 +112,7 @@ Refer to the following subsections for information on required steps.
 #### Create an Activity
 
 1. In Netwrix Privilege Secure for Access Management, select the **Policy** tab and go to **Activities** in the left pane.
-2. Click the plus icon to add a new activity. For the generic workflow, refer to the following article: https://docs.netwrix.com/docs/privilegesecure/4_2
+2. Click the plus icon to add a new activity. For the generic workflow, refer to the following article: [My Activities Page](https://docs.netwrix.com/docs/privilegesecure/4_2/revieweruser/myactivities/)
 3. Specify the activity name. This article uses the **Netwrix Auditor Domain Admin** name. Refer to the required activity settings:
    - Platform = Active Directory
    - Login Account = Activity Token
@@ -141,7 +141,7 @@ Refer to the following subsections for information on required steps.
 #### Create a Resource-based Access Policy
 
 1. In Netwrix Privilege Secure for Access Management, select the **Policy** tab and go to **Access Policy** in the left pane.
-2. Click the plus icon to add a new access policy. For the generic workflow, refer to the following article: https://docs.netwrix.com/docs/privilegesecure/4_2
+2. Click the plus icon to add a new access policy. For the generic workflow, refer to the following article: [Access Policy Page](https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/accesspolicy/)
 3. Introduce a policy name.
 4. Verify the **Type** value is **Resource Based**. Select the dedicated connection profile and click **Save**.
 5. Select the **Users** tab and click **Add** to add a user. Select the application user (**NetwrixAuditor** by default) and click **Add**.
@@ -172,6 +172,6 @@ Refer to the following subsections for information on required steps.
 
 ## Related Links
 
-- https://docs.netwrix.com/docs/privilegesecure/4_2
-- https://docs.netwrix.com/docs/privilegesecure/4_2
-- https://docs.netwrix.com/docs/privilegesecure/4_2
+- [My Activities Page](https://docs.netwrix.com/docs/privilegesecure/4_2/revieweruser/myactivities/)
+- [Connection Profiles Page](https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/accesspolicy/connectionprofiles/)
+- [Access Policy Page](https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/accesspolicy/)
