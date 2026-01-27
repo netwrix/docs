@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: netwrix-eng/internal-agents
-          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          token: ${{ secrets.PRIVATE_AGENTS_REPO }}
           path: system-prompt-repo
           ref: main
           sparse-checkout: |
