@@ -3,32 +3,38 @@ name: Documentation Reviewer
 on:
   pull_request:
     types: [opened, edited, reopened, synchronize]
+  # Allows Claude to trigger on PR or Issue comments
+  issue_comment:
+    types: [created]
+  # Allows Claude to trigger on specific line-level review comments
+  pull_request_review_comment:
+    types: [created]
 
 jobs:
   claude:
+    # Updated logic to detect your custom "/docs" trigger across all events
     if: |
-      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
-      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
-      (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude')) ||
-      (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '/docs')) ||
+      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '/docs')) ||
+      (github.event_name == 'pull_request' && contains(github.event.pull_request.body, '/docs'))
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
-      issues: write
+      contents: write # Required to modify repository files
+      pull-requests: write # Required to create/modify PRs
+      issues: write # Required to respond to issues
       id-token: write
-      actions: read # Required for Claude to read CI results on PRs
+      actions: read 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4 # Updated to v4 for stability
         with:
           fetch-depth: 1
 
       - name: Checkout system prompt repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
           repository: netwrix-eng/internal-agents
-          token: ${{ secrets.PRIVATE_REPO_TOKEN }}  # PAT with repo access
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
           path: system-prompt-repo
           ref: main
           sparse-checkout: |
@@ -46,18 +52,16 @@ jobs:
 
       - name: Run Claude Code
         id: claude
-        uses: anthropics/claude-code-action@v1
+        uses: anthropics/claude-code-action@v1 # GA version
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-
-          # Optional: Customize the trigger phrase (default: @claude)
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }} # Required secret
+          
+          # Claude will now only respond to "/docs"
           trigger_phrase: "/docs"
 
-          # Optional: Trigger when specific user is assigned to an issue
-          # assignee_trigger: "claude-bot"
-
-          # Optional: Configure Claude's behavior with CLI arguments
+          # CLI arguments passed directly to the Claude engine
           claude_args: |
             --model claude-sonnet-4-5-20250929
+            --max-turns 10
+            --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
             --allowedTools "Bash(npm install),Bash(npm run build),Bash(npm run test:*),Bash(npm run lint:*),Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*)"
-            --system-prompt "${{ steps.read-prompt.outputs.prompt }}"
