@@ -40,13 +40,11 @@ To exclude users from an untrusted domain, use their **Security Identifier (SID)
 
 1. **Get the SID of the Domain2 user** from a system that can query Domain2:
    ```powershell
-   
    Get-ADUser -Identity username -Server domain2 -Properties SID
 
    # Example
-   # Get-ADUser -Identity Michael.Scott - Server contoso2.com -Properties SID
+   # Get-ADUser -Identity Michael.Scott -Server contoso2.com -Properties SID
    # This will output just the SID, example: S-1-5-21-3693812452-4124425045-3432912480-1163
-   
    ```
 2. On the agent server for the monitored host, open the following file: `C:\ProgramData\Netwrix\Activity Monitor\Agent\SbtFileMon.ini`
 3. Find the [FILE_MONITOR] section corresponding to the monitored host (*e.g., HOST=FILE-SERVER01*).
