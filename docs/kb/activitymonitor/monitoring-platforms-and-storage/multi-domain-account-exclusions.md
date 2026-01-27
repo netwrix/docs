@@ -52,7 +52,7 @@ To exclude users from an untrusted domain, use their **Security Identifier (SID)
 
 :::warning
 **IMPORTANT**: If you mix commas and semicolons, the system may fail to load the exclusion or treat part of it as an invalid string.
-:::warning 
+:::
 
 5. Save the file.
 6. Restart the Activity Monitor Agent service:
@@ -65,5 +65,5 @@ To exclude users from an untrusted domain, use their **Security Identifier (SID)
 The Activity Monitor filtering engine compares user SIDs directly. No name resolution is required once the SID is loaded, which is why this method works even without domain trust.
 :::
 
-Related Links
+## Related Links
 [Security Identifiers (SIDs) · Microsoft Learn](https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/security-identifiers) 
