@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The Active Directory Sync page within the Integrations interface lists the domains that are synced
 to the Threat Manager database. The sync operation gets all information about an Active Directory
-environment (users, groups, hosts, etc).See the
+environment (users, groups, hosts, etc). See the
 [Permissions for Active Directory Sync ](/docs/threatmanager/3.1/requirements/permissions/adsync.md) topic for
 additional information about the permissions required for Active Directory syncing.
 

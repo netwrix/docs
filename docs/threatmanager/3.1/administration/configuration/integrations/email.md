@@ -24,7 +24,7 @@ The page has the following information:
 - Password – The password for the credentials that will be used when TLS is enabled
 - Send From Address – The email address that will be listed as the sender of notifications
 - Send Alerts To – The email address(es) that will receive alert notifications, use a semicolon as a
-  seperator
+  separator
 - Subject – The subject line of the alert notification, which can contain data variables. For
   example, [Threat Type] detected by Threat Manager, which would replace the [Threat Type] variable
   with the type of threat detected.
