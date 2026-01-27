@@ -12,13 +12,12 @@ products:
 sidebar_label: Account Exclusions Cannot Add User from Untrusted Domain
 tags: []
 title: "Netwrix Activity Monitor Account Exclusions Cannot Add User from Untrusted Domain"
-knowledge_article_id: kA04u000000LLQXCA4
 ---
 
 
 # Netwrix Activity Monitor Account Exclusions Cannot Add User from Untrusted Domain
 
-## Related Query
+## Related Queries
 
 - "I cannot select Domain2 when I need to specify account in Netwrix Activity Monitor."
 - "Trying to exclude a user from Domain2 but cannot browse the account in Activity Monitor."
@@ -41,10 +40,16 @@ To exclude users from an untrusted domain, use their **Security Identifier (SID)
 
 1. **Get the SID of the Domain2 user** from a system that can query Domain2:
    ```powershell
-   Get-ADUser -Identity username -Server domain2.local -Properties SID
+   
+   Get-ADUser -Identity username -Server domain2 -Properties SID
+
+   # Example
+   # Get-ADUser -Identity Michael.Scott - Server contoso2.com -Properties SID
+   # This will output just the SID, example: S-1-5-21-3693812452-4124425045-3432912480-1163
+   
    ```
 2. On the agent server for the monitored host, open the following file: `C:\ProgramData\Netwrix\Activity Monitor\Agent\SbtFileMon.ini`
-3. Find the [FILE_MONITOR] section corresponding to the monitored host (_e.g., HOST=FILE-SERVER01_).
+3. Find the [FILE_MONITOR] section corresponding to the monitored host (*e.g., HOST=FILE-SERVER01*).
 4. Edit the EXCSIDS line:
 	- Use semicolon delimiters only. Mixed separators (e.g., comma + semicolon) will break parsing.
 	- Example (**correct** format): `EXCSIDS=S-1-5-17;S-1-5-18;S-1-5-21-3693812452-4124425045-3432912480-1163`
@@ -56,7 +61,7 @@ To exclude users from an untrusted domain, use their **Security Identifier (SID)
 
 5. Save the file.
 6. Restart the Activity Monitor Agent service:
-	1. Open Services
+	1. Open Services (services.msc)
 	2. Restart **Netwrix Activity Monitor Agent** service
 7. Open the Account Exclusions UI again.
 	- You may not see the friendly name for the SID (due to the trust issue), but it will still function correctly at runtime.
@@ -66,4 +71,4 @@ The Activity Monitor filtering engine compares user SIDs directly. No name resol
 :::
 
 ## Related Links
-[Security Identifiers (SIDs) · Microsoft Learn](https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/security-identifiers) 
+[Security Identifiers (SIDs) · Microsoft Learn](https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/security-identifiers)
