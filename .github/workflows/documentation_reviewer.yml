@@ -1,14 +1,8 @@
 name: Documentation Reviewer
 
 on:
-  issue_comment:
-    types: [created]
-  pull_request_review_comment:
-    types: [created]
-  issues:
-    types: [opened, assigned]
-  pull_request_review:
-    types: [submitted]
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
 
 jobs:
   claude:
@@ -57,7 +51,7 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
 
           # Optional: Customize the trigger phrase (default: @claude)
-          # trigger_phrase: "/docs"
+          trigger_phrase: "/docs"
 
           # Optional: Trigger when specific user is assigned to an issue
           # assignee_trigger: "claude-bot"
