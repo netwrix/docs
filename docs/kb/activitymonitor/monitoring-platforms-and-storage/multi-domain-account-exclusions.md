@@ -24,7 +24,7 @@ title: "Netwrix Activity Monitor Account Exclusions Cannot Add User from Untrust
 
 ## Symptom
 
-When attempting to add an account exclusion in **Netwrix Activity Monitor**, users from Domain2 cannot be browsed or selected in the **Account Exclusions** tab. The monitored host is joined to Domain1, and Domain2 users do not appear in the account picker.
+When you attempt to add an account exclusion in **Netwrix Activity Monitor**, you cannot browse or select Domain2 users in the **Account Exclusions** tab. Domain1 and the monitored host are joined, and Domain2 users do not appear in the account picker.
 
 ## Cause
 
