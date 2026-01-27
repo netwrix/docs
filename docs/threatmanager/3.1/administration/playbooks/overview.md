@@ -111,8 +111,8 @@ The step is added to the playbook.
 ### Follow-Up Tab
 
 Follow-Up Playbooks can be configured on the Follow-Up tab. Follow-Up playbooks allow additional
-playbooks to run once the playbook has completed. This allows a (Undefined variable: SD.Product
-Short Name) administrator to sequence a series of playbooks together as part of a threat response.
+playbooks to run once the playbook has completed. This allows a Threat Manager administrator to 
+sequence a series of playbooks together as part of a threat response.
 
 ![followuptab](/images/threatmanager/3.0/administration/playbooks/followuptab.webp)
 
