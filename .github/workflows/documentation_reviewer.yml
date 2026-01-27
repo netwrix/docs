@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: netwrix-eng/internal-agents
-          token: ${{ secrets.PRIVATE_REPO_TOKEN }} # Ensure this secret is in Settings > Secrets
+          token: ${{ secrets.PRIVATE_AGENTS_REPO }} # Ensure this secret is in Settings > Secrets
           path: system-prompt-repo
           ref: main
           sparse-checkout: |
