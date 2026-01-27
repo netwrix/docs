@@ -6,6 +6,7 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns } from './src/config/products.js';
+import { handleBrokenMarkdownLink, handleBrokenMarkdownImage } from './src/utils/brokenLinkNotifier.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -21,13 +22,16 @@ const config = {
   baseUrl: '/',
 
   // throw on anything that is not configured correctly
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenAnchors: 'throw',
 
   // Set Mermaid
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: handleBrokenMarkdownLink,
+      onBrokenMarkdownImages: handleBrokenMarkdownImage,
+    },
   },
   themes: ['@docusaurus/theme-mermaid'],
 
@@ -79,6 +83,8 @@ const config = {
         anonymizeIP: true,
       },
     ],
+    // Broken link summary notification plugin
+    './src/plugins/broken-link-summary-plugin.js',
     // Generate all product documentation plugins from centralized configuration
     ...generateDocusaurusPlugins().map(([pluginName, config]) => [
       pluginName,

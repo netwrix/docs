@@ -100,6 +100,7 @@ jobs:
           env:
             NODE_OPTIONS: "--max-old-space-size=16384"
             NODE_ENV: ${{ needs.determine-environment.outputs.environment }}
+            TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
   
         - name: Upload artifact for deployment
           uses: actions/upload-artifact@v4

@@ -126,7 +126,7 @@ It requires:
   https://dotnet.microsoft.com/en-us/download/dotnet/8.0
 ```
 
-![A screenshot of a computer Description automatically generated](/images/pingcastle/enterpriseinstall/image4.webp)
+![A screenshot of a computer Description automatically generated](/images/pingcastle/enterpriseinstall/image4.webp1111)
 
 1.  IIS should be installed before the ASP.NET 8.0 Hosting Bundle. If
     not, then the Hosting Bundle installation may be required to be
