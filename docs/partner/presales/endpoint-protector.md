@@ -54,5 +54,3 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 <NEPDemo />
 
 <NEPAdditional />
-
-* 4641 <NEP /> – Enforced Encryption Module

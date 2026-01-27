@@ -11,6 +11,7 @@ import { Company, NPPE } from '@site/src/training/products';
 
 
 Estimated length: 35 minutes
+
 In this learning path, you will learn how to use <NPPE />. It contains the following courses:
 
 * 1240 <NPPE /> – Valuable Features
