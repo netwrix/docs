@@ -2,33 +2,27 @@ name: Documentation Reviewer
 
 on:
   pull_request:
-    types: [opened, edited, reopened, synchronize]
-  # CRITICAL: Allows Claude to trigger on PR comments made days later
+    types: [opened, synchronize]
+  # Basic example triggers for "live" comments
   issue_comment:
     types: [created]
-  # Allows Claude to trigger on specific code-line comments
   pull_request_review_comment:
     types: [created]
 
 jobs:
   claude:
-    # Bulletproof IF logic: Checks every possible text body for "/docs"
-    if: |
-      (github.event_name == 'pull_request' && contains(github.event.pull_request.body, '/docs')) ||
-      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '/docs')) ||
-      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '/docs'))
     runs-on: ubuntu-latest
     permissions:
-      contents: write # To modify repository files
-      pull-requests: write # To create/modify PRs
-      issues: write # To respond to comments
+      contents: write
+      pull-requests: write
+      issues: write
       id-token: write
       actions: read 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # FIX: Ensures the action checks out the PR code, not 'main', during comments
+          # Still necessary to ensure Claude sees the PR code, not main
           ref: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
           fetch-depth: 1
 
@@ -53,13 +47,12 @@ jobs:
           } >> $GITHUB_OUTPUT
 
       - name: Run Claude Code
-        id: claude
         uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }} #
-          # Explicitly provide the token to ensure Claude can write back to the PR
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          trigger_phrase: "/docs" # Custom trigger
+          # The action will ONLY trigger its logic if it sees this phrase
+          trigger_phrase: "/docs" 
           claude_args: |
             --model claude-sonnet-4-5-20250929
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
