@@ -6,9 +6,7 @@ sidebar_position: 50
 
 # Service Accounts
 
-In Threat Manager v3.1 is a dashboard for organizations to understand the Service Accounts in their environment. It includes accounts that have a defined servicePrincipalName, account type reflective of a service account, or repeated authentication patterns.
-
-The dashboard identifies service accounts with machine learning to identify pattern-based authentication.
+The Service Accounts dashboard provides visibility into service account usage across the environment, enabling organizations to identify, classify, and assess non-human accounts that operate outside typical user authentication behavior. It includes accounts that have a defined servicePrincipalName, account type reflective of a service account, or repeated authentication patterns. The dashboard identifies service accounts with machine learning to identify pattern-based authentication.
 
 ![Netwrix Threat Manager Service Accounts Dashboard](/images/threatmanager/3.1/administration/serviceaccounts/dashboard.webp)
 
