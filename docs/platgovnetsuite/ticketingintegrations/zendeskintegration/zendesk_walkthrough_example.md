@@ -67,7 +67,7 @@ and verify you are a member of a group or role
 [authorized to access the app](/docs/platgovnetsuite/ticketingintegrations/zendeskintegration/zendesk_integration.md).
 :::
 
-![The Strongpoint app is available after you create the ticket.](/images/platgovnetsuite/integrations/zendesk_strongpoint_app_ticket.webp)
+![The Platform Governance app is available after you create the ticket.](/images/platgovnetsuite/integrations/zendesk_platform_governance_app_ticket.webp)
 
 ### Use Bundles for the Scope of Change
 
@@ -110,27 +110,19 @@ There is an options menu available for each added customization. Options include
 
 ### Add Proposed Customizations
 
-1. Enter all or part of a Name in **Add Customizations**. For this example, enter **new**.
-2. Click **+** to search for matching Customizations. **View** displays the **Type** and **Script
-   ID** for a Customization.
+1. Click **Add Proposed Customization**.
 
-    ![Add a Customization by Name](/images/platgovnetsuite/integrations/jira_example_add_name.webp)
+    ![Add a Proposed Customization](/images/platgovnetsuite/integrations/zendesk_proposed_customization.webp)
 
-3. Select one or more Customizations. For this example, select **New Opportunities Created
-   (Search)**.
-4. Click **Add Selected Customizations**. The selected Customization is added to the **Existing
-   Customizations** list.
+2. Select a **Type** and input your proposed customization's script ID.
+3. Click **Add Proposed Customization**.
 
-    ![New Opportunities Created (Search) added to Existing Customizations](/images/platgovnetsuite/integrations/jira_example_new_opp.webp)
+    ![Proposed Customizations](/images/platgovnetsuite/integrations/zendesk_proposed_custs_sample.webp)
 
-5. Enter the Script ID **custentity_fmt_cust_credit_on_hold** in **Add Customizations** and click
-   **+**.
-6. The **Set Customer Credit on Hold (Entity Field)** is displayed. Select it, and click **Add
-   Selected Customizations**. The selected Customization is added to the **Existing Customizations**
-   list. Notice that the **Change Level Required** has changed from **Log Changes Only** to **Full
-   Software Development Lifecycle**, which is the policy for the **Set Customer Credit on Hold**
-   field.
+There is an options menu available for each added proposed customization. Click options to **Remove**
+the customization.
 
-    ![Add a Customization by Script ID](/images/platgovnetsuite/integrations/jira_example_scriptid.webp)
+### Need Help?
 
-- **Impact Analysis** and **View ERD** are tools to Zendesk Walkthrough Example.
+If you encounter any issues or need assistance, contact 
+support at this [link](https://www.netwrix.com/support.html).
