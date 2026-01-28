@@ -38,7 +38,7 @@ Ensure the following prerequisites are met before configuring AIP scanning:
 * Microsoft Entra ID Admin credentials
 * The PowerShell `Install-Module` command requires:
   * PowerShell 5.0 (Run as Administrator)
-  * Windows Server 2016 and later
+  * Windows Server 2016and later
 * Active Directory Rights Management Services Client 2.1 installed on the server where the FSAA applet or proxy is being run
 
 ### Rights Management Service Client Installation
@@ -47,8 +47,7 @@ The Rights Management Service Client must be installed on the applet servers whe
 
 * To install the Rights Management Service Client 2.1 on the server where the scan is taking place, go to the Microsoft download center:
 
-  [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=38396)
-
+  <https://www.microsoft.com/en-us/download/details.aspx?id=38396>
 
 :::info
 **info**
@@ -62,8 +61,8 @@ Read the System Requirements and Install Instructions provided by Microsoft to c
 
 1. Open the Azure Portal and sign in with an administrator account
 
-
-   1. [Azure Portal](https://portal.azure.com/)
+   
+   1. <https://portal.azure.com/>
 2. Create a new app registration
 
    
@@ -90,6 +89,9 @@ Read the System Requirements and Install Instructions provided by Microsoft to c
    2. Click “Add a permission”
    3. Select the **Microsoft Graph API** permission set > Application permissions
    4. Add the “InformationProtectionPolicy.Read.All” permission
+
+![Azure App Permissions](/static/images/accessanalyzer/11.6/requirements/target/config/AIP_APP_Permissions.webp)
+
 5. After adding the required API permission, select “Grant admin consent”
 6. Record the AppID (from the Overview Page) and the tenantID with the secret value
 
