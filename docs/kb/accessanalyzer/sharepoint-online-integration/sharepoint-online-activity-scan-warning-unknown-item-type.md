@@ -50,5 +50,5 @@ To address this issue, you can do one of the following:
 - Disable the collection of **Other event types** in **Netwrix Activity Monitor**:
 
   1. Open **Netwrix Activity Monitor** and navigate to the SharePoint Online file output in the **Monitored Hosts** tab.
-  2. On the **Other** tab, uncheck the **Other events** option:  
-     ![SharePoint Online Other events option screenshot](../0-images/ka0Qk000000CnwD_0EMQk00000BF8bi.png)
+  2. On the **Other** tab, uncheck the **Other events** option:
+     ![SharePoint Online Other events option screenshot](../../activitymonitor/0-images/ka0Qk000000CnwD_0EMQk00000BF8bi.png)
