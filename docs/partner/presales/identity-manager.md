@@ -7,7 +7,7 @@ description: "Become a certified Presales Engineer for Netwrix Identity Manager"
 ---
 
 
-import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlanning, NIMAdditional } from '@site/src/training/identity-manager';
+import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlanning, NIMDemo, NIMAdditional } from '@site/src/training/identity-manager';
 import { Company, NIM } from '@site/src/training/products';
 
 
@@ -22,6 +22,7 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 * 2720 <NIM /> – Concepts
 * 2721 <NIM /> – Architecture
 * 2722 <NIM /> – IGA Project Planning
+* 5720 <NIM /> – Demo the Basic Use Cases
 
 
 <NIMValue />
@@ -33,5 +34,7 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 <NIMArchitecture />
 
 <NIMProjectPlanning />
+
+<NIMDemo />
 
 <NIMAdditional />
