@@ -1,12 +1,14 @@
 ---
-description: 'Shows how to change Event Service listening ports for Netwrix Threat Prevention using pgAdmin by editing the defend_config table and restarting the service.'
+description: 'Shows how to change Event Service listening ports for Netwrix Threat Manager using pgAdmin by editing the defend_config table and restarting the service.'
 keywords:
 - Event Service
 - listening port
 - pgAdmin
 - defend_config
-- Netwrix Threat Prevention
 - Threat Manager
+- Threat Prevention
+- Netwrix Threat Prevention
+- Netwrix Threat Manager
 - port configuration
 - FS port
 - AD port
@@ -22,10 +24,10 @@ knowledge_article_id: kA04u00000110h7CAA
 You need to customize Threat Manager listening ports for the Event Service due to customer or environmental requirements.
 
 ## Cause
-Customer or environmental requirements dictate that the default Netwrix Threat Prevention Event Service listening port(s) must be changed.
+Customer or environmental requirements dictate that the default Netwrix Threat Manager Event Service listening port(s) must be changed.
 
 ## Resolution
-Alter the default Netwrix Threat Prevention Event Service listening port(s) via PGAdmin:
+Alter the default Netwrix Threat Manager Event Service listening port(s) via PGAdmin:
 
 1. Install the latest PGAdmin Console: https://www.pgadmin.org/download/
 2. Reach out to Netwrix support to gain access to the Netwrix Threat Manager database.
@@ -41,4 +43,4 @@ For example, change the FS port to `514` and click **OK**:
 ![port512.png](../0-images/ka0Qk000000DkZh_0EM4u000008LC2a.png)
 
 6. In the window below click the **Save Data Changes** icon.
-7. Restart the Netwrix Threat Prevention Event Service.
+7. Restart the Netwrix Threat Manager Event Service.
