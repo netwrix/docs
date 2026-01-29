@@ -1,6 +1,6 @@
 ---
 description: >-
-This article explains how to manually exclude a user from an untrusted domain in Netwrix Activity Monitor by adding their SID to the agent's configuration file. It addresses the limitation of the UI when no domain trust exists and highlights the importance of using correct delimiters.
+  This article explains how to manually exclude a user from an untrusted domain in Netwrix Activity Monitor by adding their SID to the agent's configuration file. It addresses the limitation of the UI when no domain trust exists and highlights the importance of using correct delimiters.
 keywords:
   - Netwrix Activity Monitor
   - Account
