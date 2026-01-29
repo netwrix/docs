@@ -97,7 +97,7 @@ After staging is complete:
 1. Deploy a custom-managed agent certificate to the host
 2. Start the **SIWindowsAgent** service
 
-Certificate issuance is not covered in this article.
+> **NOTE:** Certificate issuance is not covered in this article.
 
 ## Troubleshooting
 
