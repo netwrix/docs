@@ -28,7 +28,7 @@ Customer or environmental requirements dictate that the default Netwrix Threat P
 Alter the default Netwrix Threat Prevention Event Service listening port(s) via PGAdmin:
 
 1. Install the latest PGAdmin Console: https://www.pgadmin.org/download/
-2. Connect to the Netwrix Threat Prevention database. You will have to create a “Master” password for PGAdmin as well as enter the Netwrix Threat Prevention database password: `DEFEND124!!`
+2. Reach out to Netwrix support to gain access to the Netwrix Threat Manager database.
 3. Select **Tables** > **defend_config table**
 4. Right click and select **View/Edit Data** > **First 100 Rows**
 5. Change the Value for the port in question on line 2 (`10000` is the Default FS Port and `10001` is the Default AD Port):
