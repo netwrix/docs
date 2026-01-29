@@ -26,6 +26,8 @@ This API key enables NPS to connect to the Password Secure vault.
 
 **Step 1** - Log in to Password Secure as an administrator.
 
+**Step 2** - Navigate to Tools → API Keys.
+
 ![Password Secure API Key Step 1](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/ps-api-step1.webp)
 
 ![Password Secure API Key Step 2](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/ps-api-step2.webp)
@@ -45,7 +47,7 @@ This API key enables NPS to connect to the Password Secure vault.
 
 **Step 5** - Click **Next** to generate the API token and copy it to a safe location (you'll use this in the NPS configuration).
 
-:::note
+:::info
 Once you create the token, you cannot see it again. If you lose the token, you will need to generate a new one without deleting the old one. A newly generated token without deleting the old one will be valid.
 :::
 
@@ -55,7 +57,7 @@ If you already have users created with the **AD User** template, you can skip th
 
 The **AD User** template is the standard/default form required for NPS ↔ Password Secure integration.
 
-:::note
+:::info
 In production environments, you will typically use existing users.
 :::
 
@@ -176,14 +178,14 @@ When a vault login-type activity is initiated and the selected vault is of type 
 
 ![Password Secure Vault Diagram](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/ps-vault-diagram.webp)
 
-## Important Notes
-
+:::warning
 Always verify configurations and permissions, especially when integrating with systems like AD and using specific user accounts for critical operations.
+:::
 
 ## SDK Compatibility and Updates
 
-- The integration uses a Password Secure SDK DLL files and the Password Secure API for communication.
-- The DLLs shipped with NPS is compatible with Password Secure versions 9.2.0 and above
+- The integration uses Password Secure SDK DLL files and the Password Secure API for communication.
+- The DLLs shipped with NPS are compatible with Password Secure versions 9.2.0 and above
 - If you need to use a newer version of Password Secure, manually replace (“hot-swap”) the DLLs in:
 `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\PsrApi`
 - Updated DLLs will be included in new NPS product releases, but for immediate compatibility with the latest Password Secure releases, manual updates may be required. The SDK can be downloaded from the Password Secure Customer Information System.
