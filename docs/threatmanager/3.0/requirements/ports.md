@@ -24,7 +24,7 @@ flowchart LR
   end
 
   subgraph Z2[Administration]
-    EU[Administrators and Analysts]
+    EU[End-users]
   end
 
   subgraph Z3[Netwrix Threat Manager]
@@ -41,9 +41,8 @@ flowchart LR
   end
 
   subgraph LEGEND[Deployment Notes]
-    L1[Action Service is deployed locally by default]
-    L2[PostgreSQL is deployed locally by default]
-    L3[Optional Remote components are alternatives,\nnot additional dependencies]
+    L1[Action Service is local by default]
+    L2[PostgreSQL is local by default]
   end
 
   %% inbound to NTM
