@@ -12,6 +12,10 @@ means the report displays both direct and inherited permissions unless modified 
 Information Center user. See the [Results Pane](/docs/accessinformationcenter/12.0/resourceaudit/navigate/overview.md#results-pane) topic for
 information on filter options.
 
+:::note
+Users must be assigned permissions directly to an object to appear in this report. users who receive access as part of a group membership will only be reflected in the ![Effective Access Report](docs\accessinformationcenter\12.0\resourceaudit\user\effectiveaccess.md)
+:::
+
 ![Permissions report](/images/accessinformationcenter/12.0/resourceaudit/user/permissions.webp)
 
 This report is comprised of the following columns:
