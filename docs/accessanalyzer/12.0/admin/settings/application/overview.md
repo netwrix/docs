@@ -47,7 +47,7 @@ available in the Application log level drop-down menu include:
     - Records job completion time
 
 :::info
-Set the log level to **Warning**.
+Set the log level to **Warning**. The log level set at the global level determines what messages are written to the SA_Messages table. If a job has a higher log level than the global setting, those messages will be written to the job log, but will not be written to the database or visible in the NAA Console.
 :::
 
 
