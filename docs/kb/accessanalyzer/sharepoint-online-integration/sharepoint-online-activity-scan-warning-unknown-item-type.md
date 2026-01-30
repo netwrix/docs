@@ -27,7 +27,7 @@ knowledge_article_id: kA0Qk00000020K5KAI
 
 ## Symptom
 
-When you run SPAC System Scans for SharePoint Online in **Netwrix Access Analyzer** (NEA), the system generates the following error message:
+When you run SPAC System Scans for SharePoint Online in **Netwrix Access Analyzer** (NAA), the system generates the following error message:
 
 ```
 [8] Unknown item type
@@ -35,7 +35,7 @@ When you run SPAC System Scans for SharePoint Online in **Netwrix Access Analyze
 
 ## Cause
 
-This issue occurs because these are newer event types being collected by **Netwrix Activity Monitor** for which NEA does not have mappings.
+This issue occurs because these are newer event types being collected by **Netwrix Activity Monitor** for which NAA does not have mappings.
 
 ## Resolutions
 
@@ -43,12 +43,12 @@ To address this issue, you can do one of the following:
 
 - Ignore the warnings, as they do not inhibit data collection.
 
-- Upgrade to the latest version of **Netwrix Access Analyzer (NEA)**, which should include all SharePoint Online activity types known up until the most recent release date.
+- Upgrade to the latest version of **Netwrix Access Analyzer (NAA)**, which should include all SharePoint Online activity types known up until the most recent release date.
 
-  > **NOTE:** If you are on the latest released version of NEA and are still encountering this issue, please submit an escalation to have new event types added to a future release.
+  > **NOTE:** If you are on the latest released version of NAA and are still encountering this issue, please submit an escalation to have new event types added to a future release.
 
 - Disable the collection of **Other event types** in **Netwrix Activity Monitor**:
 
   1. Open **Netwrix Activity Monitor** and navigate to the SharePoint Online file output in the **Monitored Hosts** tab.
-  2. On the **Other** tab, uncheck the **Other events** option:  
+  2. On the **Other** tab, uncheck the **Other events** option:
      ![SharePoint Online Other events option screenshot](../0-images/ka0Qk000000CnwD_0EMQk00000BF8bi.png)

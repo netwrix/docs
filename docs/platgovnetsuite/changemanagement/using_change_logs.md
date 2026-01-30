@@ -18,7 +18,7 @@ the change log being associated with the oldest of the approved change requests.
 
 To open a Change Log:
 
-1. Open **Strongpoint** > **Change Management Reports** and select a report.
+1. Open **Netwrix** > **Change Management Reports** and select a report.
 2. Click **View** beside the Change Log to open.
 
 ![changelog-1](/images/platgovnetsuite/change_management/changelog-1.webp)
@@ -29,6 +29,12 @@ If the **Actual Change Date** is empty or **Change By** is set to **Could Not Be
 
 The button is only available for Object types where the **Actual Change Date** and **Change By**
 fields can be retrieved.
+
+:::note
+
+Some Object types do not produce System Notes or History Notes for changes.  In this case the **Actual Change Date** is empty and the **Change By** is set to **Could Not Be Determined**.
+
+:::
 
 ![Refresh Changed By](/images/platgovnetsuite/change_management/change_log_refresh.webp)
 
