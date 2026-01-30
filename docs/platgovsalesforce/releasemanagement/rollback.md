@@ -29,8 +29,7 @@ The Deployment Record status must be **Completed** to be eligible for Rollback.
 
     ![Rollback selected customizations](/images/platgovsalesforce/release_management/rollback_selected.webp)
 
-4. By default, all of the customizations are selected for rollback. Deselect any customizations to
-   keep. The **Rollback Type** specifies the effect of the rollback:
+4. By default, all of the customizations are selected for rollback. The **Rollback Type** specifies the effect of the rollback:
 
     - **Delete**: If a customization was created during the deployment, it is deleted during the
       rollback.

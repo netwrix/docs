@@ -62,7 +62,6 @@ These steps can be completed after the deployment record is approved.
 
     This creates a package to:
 
-    - **Check Dependencies**: Use to check what has been referenced.
     - **Validate Customizations**: Use to check the deployment is going to work. It simulates your
       deployment.
     - **Deploy Retrieved Customizations**: Use to deploy your customizations when you are ready to
