@@ -647,25 +647,21 @@ foreach ($computer in $targets) {
                 BackupAndRemove-AgentCertFilesRemote -Session $session -CertsDir $agent.CertsDir
             }
 
-            $localHostDir = Join-Path $WorkDir $computer
-            if (-not $WhatIfPreference) { New-DirectoryIfMissing -Path $localHostDir }
-
-            Write-Log "Running SIAgentCert.exe to generate CSR..." -Level INFO
-            $csr = Invoke-SIAgentCertGenerateCsrRemote -Session $session `
-                    -ExePath $agent.SIAgentCertExe -AgentDir $agent.AgentDir -CertsDir $agent.CertsDir -TimeoutSeconds 90
-
-            $row.CSR_RemotePath = $csr.Path
-
-            $localCsrPath = Join-Path $localHostDir 'agent-csr.pem'
-            if (-not $WhatIfPreference) {
-            [System.IO.File]::WriteAllText($localCsrPath, $csr.Content, [System.Text.Encoding]::ASCII)
-            }
-
-            $localHostDir = Join-Path $WorkDir $computer
-            New-DirectoryIfMissing -Path $localHostDir
-
-            $localCsrPath = Join-Path $localHostDir 'agent-csr.pem'
-            [System.IO.File]::WriteAllText($localCsrPath, $csr.Content, [System.Text.Encoding]::ASCII)
+            $localHostDir = Join-Path $WorkDir $computer                                                                                                 
+              New-DirectoryIfMissing -Path $localHostDir                                                                                                   
+                                                                                                                                                           
+              Write-Log "Running SIAgentCert.exe to generate CSR..." -Level INFO                                                                           
+              $csr = Invoke-SIAgentCertGenerateCsrRemote -Session $session `                                                                               
+                      -ExePath $agent.SIAgentCertExe -AgentDir $agent.AgentDir -CertsDir $agent.CertsDir -TimeoutSeconds 90                                
+                                                                                                                                                           
+              $row.CSR_RemotePath = $csr.Path                                                                                                              
+                                                                                                                                                           
+              $localCsrPath = Join-Path $localHostDir 'agent-csr.pem'                                                                                      
+              if ($PSCmdlet.ShouldProcess($localCsrPath, "Write CSR to disk")) {                                                                           
+                  [System.IO.File]::WriteAllText($localCsrPath, $csr.Content, [System.Text.Encoding]::ASCII)                                               
+              }                                                                                                                                            
+                                                                                                                                                           
+              Write-Log "Submitting CSR to AD CS..." -Level INFO        
 
             Write-Log "Submitting CSR to AD CS..." -Level INFO
             $issued = Submit-CsrToAdcs -CsrPath $localCsrPath -CAConfig $CAConfig -TemplateName $TemplateName `
