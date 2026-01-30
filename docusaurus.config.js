@@ -5,7 +5,7 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { themes as prismThemes } from 'prism-react-renderer';
-import { generateDocusaurusPlugins, generateNavbarDropdowns } from './src/config/products.js';
+import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion } from './src/config/products.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -77,6 +77,24 @@ const config = {
       {
         trackingID: 'G-FZPWSDMTEX',
         anonymizeIP: true,
+      },
+    ],
+    // Client-side redirects - redirect base product URLs to latest version
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: PRODUCTS.filter(product => {
+          // Only create redirects for products with multiple versions (not just 'current')
+          return !(product.versions.length === 1 && product.versions[0].version === 'current');
+        }).map(product => {
+          const latestVersion = getDefaultVersion(product);
+          const latestVersionUrl = versionToUrl(latestVersion.version);
+
+          return {
+            from: `/${product.path}`,
+            to: `/${product.path}/${latestVersionUrl}`,
+          };
+        }),
       },
     ],
     // Generate all product documentation plugins from centralized configuration

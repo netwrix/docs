@@ -8,7 +8,7 @@ sidebar_position: 1
 
 ## Users depend on passwords
 
-Now more than ever in their day-to-day business worldwide. They are used constantly and everywhere,
+Passwords are used constantly and everywhere,
 and they need to be professionally managed. Passwords should be safe, have at least 12 characters,
 including uppercase and lowercase as well as special characters. In the best case, a separate access
 password should be used for each account. It should be changed regularly. It is hard enough to meet
