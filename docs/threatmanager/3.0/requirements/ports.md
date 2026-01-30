@@ -8,7 +8,76 @@ sidebar_position: 50
 
 Netwrix Threat Manager architecture and components interactions are shown in the figure below.
 
-![threatmanagerserver](/images/threatmanager/3.0/requirements/threatmanagerserver.webp)
+```mermaid
+flowchart LR
+
+  %% Netwrix Brand Styles (Light Theme)
+  classDef zone fill:#FCFAF5,stroke:#231A40,color:#231A40,stroke-width:1.5px;
+  classDef core fill:#5C33FF,stroke:#231A40,color:#FCFAF5,stroke-width:2px;
+  classDef endpoint fill:#FCFAF5,stroke:#231A40,color:#231A40;
+  classDef optional fill:#FCFAF5,stroke:#41F27C,color:#231A40,stroke-dasharray:5 5;
+  classDef note fill:#FCFAF5,stroke:#FFC61A,color:#231A40,stroke-dasharray:4 4;
+
+  subgraph Z1[Data Sources]
+    AM[Activity Monitor Agents]
+    TP[Threat Prevention Agents]
+  end
+
+  subgraph Z2[Administration]
+    EU[Administrators and Analysts]
+  end
+
+  subgraph Z3[Netwrix Threat Manager]
+    NTM[Threat Manager Server]
+  end
+
+  subgraph Z4[Identity]
+    DC[Active Directory Domain Controllers]
+  end
+
+  subgraph Z5[Optional Remote]
+    AS_R[Remote Action Service]
+    PG_R[Remote PostgreSQL]
+  end
+
+  subgraph LEGEND[Deployment Notes]
+    L1[Action Service is deployed locally by default]
+    L2[PostgreSQL is deployed locally by default]
+    L3[Optional Remote components are alternatives,\nnot additional dependencies]
+  end
+
+  %% inbound to NTM
+  AM -->|UDP 10000 Syslog| NTM
+  AM -->|TCP 10001 AMQP| NTM
+  TP -->|TCP 10001 AMQP| NTM
+
+  %% admin access
+  EU -->|TCP 8080 HTTPS| NTM
+
+  %% outbound dependencies
+  NTM -->|TCP 88 Kerberos| DC
+  NTM -->|TCP 135 RPC| DC
+  NTM -->|TCP 389 LDAP| DC
+  NTM -->|TCP 636 LDAPS| DC
+  NTM -->|TCP 9389 ADWS| DC
+  NTM -->|TCP RPC Dynamic Ports| DC
+
+  %% optional remote placements
+  NTM -.->|TCP 8080| AS_R
+  NTM -.->|TCP 5432| PG_R
+
+  %% legend association only
+  LEGEND -.-> NTM
+
+  %% Apply branding
+  class Z1,Z2,Z3,Z4,Z5 zone
+  class NTM core
+  class AM,TP,EU,DC endpoint
+  class AS_R,PG_R optional
+  class LEGEND note
+```
+
+<!--![threatmanagerserver](/images/threatmanager/3.0/requirements/threatmanagerserver.webp) -->
 
 Configure appropriate firewall rules to allow these connections.
 
