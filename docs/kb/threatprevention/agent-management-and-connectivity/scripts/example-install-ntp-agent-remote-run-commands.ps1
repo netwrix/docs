@@ -16,7 +16,7 @@ and change management requirements.
 $cred = Get-Credential
 
 # 2) Run the script
-.\Install-NtpAgentRemote.ps1 `
+.\example-install-ntp-agent-remote.ps1 `
     -ComputerName 'Target Host Names' `
     -LocalInstallerPath 'C:\Installers\SI Agent.exe' `
     -EnterpriseManagerHostFqdn 'Enterprise Manager FQDN' `
@@ -26,7 +26,7 @@ $cred = Get-Credential
 
 	$cred = Get-Credential
     $targets = Get-Content .\targets.txt
-.\Install-NtpAgentRemote.ps1 `
+.\example-install-ntp-agent-remote.ps1 `
   -ComputerName $targets `
   -LocalInstallerPath 'C:\Installers\SI Agent.exe' `
   -EnterpriseManagerHostFqdn 'tp-em01.contoso.com' `
