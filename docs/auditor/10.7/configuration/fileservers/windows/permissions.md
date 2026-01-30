@@ -30,6 +30,7 @@ Data Collection Accounts should meet the following policies and permissions:
       **Step 5 –** Click the **Add User orGroup** button and select **DCA** account.
 
       **Step 6 –** Do steps 4-5 for the **Back up files and directories** policy.
+      
 - The **Read** share permission on the audited shared folders.
 - The Read NTFS permission on all objects in the audited folders.
 
