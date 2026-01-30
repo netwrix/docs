@@ -94,7 +94,7 @@ For each target endpoint, the automation:
 10. Optionally restarts the agent service
 11. Writes logs and a results CSV
 
-Private keys are never copied off the endpoint.
+> **Note:** Private keys are never copied off the endpoint.
 
 ## Output Locations
 
