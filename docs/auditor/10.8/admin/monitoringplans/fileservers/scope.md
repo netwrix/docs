@@ -21,7 +21,7 @@ configured in the \*.txt files.
 
 **Follow the steps to exclude data from file server monitoring scope:**
 
-**Step 1 –** Navigate to the _%Netwrix Auditor installation folder%\File Server Auditing_ folder.
+**Step 1 –** Navigate to the "_%Netwrix Auditor installation folder%\File Server Auditing_" folder.
 
 **Step 2 –** Edit the \*.txt files, based on the following guidelines:
 
@@ -68,7 +68,7 @@ to the specified shared folder, its subfolders and files.
 | Option            | Description                                                                                                                                                                                                                                                       | Example                                                                                                                                                                                |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **All Data**      | Select if you want to completely exclude the specified file share from being audited. The product will not collect any user activity or state-in-time data. **NOTE:** In this case,Auditor does not adjust audit settings automatically for the selected folders. | A Security Officer wants to monitor a file share but s/he does not have access to a certain folder on this share. Thus, s/he configures the product not to monitor this folder at all. |
-| State-in-Time     | Select to configure Auditor to exclude data for the state-in-time reports from the monitoring scope.                                                                                                                                                              | A Security Officer wants to monitor a file share, but it contains a folder with a huge amount of objects, so s/he does not want Auditor to collect state-in-time data for this folder. |
+| **State-in-Time**     | Select to configure Auditor to exclude data for the state-in-time reports from the monitoring scope.                                                                                                                                                              | A Security Officer wants to monitor a file share, but it contains a folder with a huge amount of objects, so s/he does not want Auditor to collect state-in-time data for this folder. |
 | **User Activity** | Select to exclude actions performed by specific users on the selected file share. See the procedure below for details. **NOTE:** In this case, the product still collects stat-in-time data for this share.                                                       | A Security Officer wants to monitor a file share that contains a public folder for which s/he does not want to collect _Read_ operations.                                              |
 
 **Follow the steps to exclude specific user activity.**
