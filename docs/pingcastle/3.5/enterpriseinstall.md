@@ -3309,7 +3309,7 @@ Configure the IIS application pool to run as an Active Directory user that has d
 
 **Solution 2: Use SQL Server Authentication**
 
-Add SQL Server credentials to the connection string in [appsettings.json](appsettings.json):
+Add SQL Server credentials to the connection string in appsettings.json:
 
 ```
 ;User ID=sa;Password=pass123
