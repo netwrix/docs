@@ -139,7 +139,7 @@ graph LR
 - Requires SQL Server database for data storage
 - Accessible via HTTP/HTTPS (ports 80/443)
 - Provides web interface for administrators and users
-- Built-in scheduler for automated scanning of local and trusted domains
+- Built-in scheduler that utilized Windows Task Scheduler for automated scanning of local and trusted domains
 
 #### PingCastle.exe Scanner
 
@@ -147,7 +147,7 @@ graph LR
 - Performs Active Directory security assessments
 - Generates reports in XML and HTML formats
 - Can run on any Windows system
-- Requires standard Active Directory ports (389, 636, 88, 3268, 3269)
+- Requires standard Active Directory ports (389, 636, 88, 9389, 53)
 
 #### Report Upload Methods
 
@@ -176,12 +176,12 @@ graph LR
 
 | Service | Port(s) | Protocol | Notes |
 |---------|---------|----------|-------|
-| LDAP | 389 | TCP/UDP | |
-| LDAPS | 636 | TCP | |
+| LDAP | 389 | TCP/UDP | LDAP - Fallback when ADWS is not present. Less performant |
+| LDAPS | 636 | TCP | Checks for LDAPS <br /> Also you can run the entire scan with LDAPS using `-port 636` in the command line|
 | Kerberos | 88 | TCP/UDP | |
-| Global Catalog | 3268, 3269 | TCP | |
 | DNS | 53 | TCP/UDP | |
 | SMB | 445 | TCP | |
+| ADWS | 9389 | TCP | Active Directory Web Services for performant scans |
 
 
 ## Quick Installation
@@ -257,7 +257,7 @@ If you're configuring a remote SQL Server (not on the local machine), see the [R
   </TabItem>
   <TabItem value="testpoc" label="Test/POC Installation">
 
-For testing and proof-of-concept environments, you can streamline the installation process using automation tools.
+For testing and proof-of-concept environments, you can streamline the installation process using automation tools such as chocolatey to automate certain installations for you.
 
 :::warning
 This simplified setup is recommended for **testing only**. For production environments, use the Production Installation tab for proper configuration and upgrade support.
@@ -317,26 +317,6 @@ If you're configuring a remote SQL Server instead of using the local instance, s
 
   </TabItem>
 </Tabs>
-
-# Various options
-
-**Custom login message**
-
-You can define a custom message at the login page. You have to use the
-custom option "customLoginMessage".
-
-For example:
-
-![](/images/pingcastle/enterpriseinstall/image12.webp)
-
-The login page becomes:
-
-![](/images/pingcastle/enterpriseinstall/image13.webp)
-
-Please note that the setting push RAW html without escaping. The
-expected html is using the [bootstrap](https://getbootstrap.com/) css
-styles. Also due to the CSP protection, you cannot inject custom CSS or
-JAVASCRIPT.
 
 ## Post Installation - Common Steps
 
@@ -426,7 +406,7 @@ To use the scheduler, the application pool identity must have **local administra
 By default, PingCastle runs as a limited user (ApplicationPoolIdentity), which cannot access the network or modify system settings. Choose one of the following configuration options:
 
 <Tabs>
-<TabItem value="localsystem" label="LocalSystem Identity" default>
+<TabItem value="localsystem" label="LocalSystem Identity" >
 
 The easiest approach is to change the application pool identity from ApplicationPoolIdentity to LocalSystem:
 
@@ -501,6 +481,10 @@ Add the account to the local **Administrators** group on the PingCastle Enterpri
 Add-LocalGroupMember -Group "Administrators" -Member "DOMAIN\PingCastleSvc"
 ```
 
+:::note
+If you prefer not to grant local administrator privileges to the application pool account, use the **Least Privilege Setup** tab instead. That approach creates scheduled tasks manually and grants only start/stop permissions to the application pool identity.
+:::
+
 #### Step 3: Configure the Application Pool in IIS
 
 1. Open the IIS console and navigate to **Application Pools**
@@ -536,25 +520,8 @@ Server=sqlserver.domain.local;Database=PingCastle;Trusted_Connection=True;Multip
 Restart-WebAppPool -Name "PingCastleEnterprise"
 ```
 
-#### Hybrid Approach: Custom Identity + Least Privilege
-
-You can combine a custom identity with the Least Privilege Setup (Option 3) for enhanced security:
-
-1. **Use a custom identity without local administrator rights** for the application pool
-2. **Create scheduled tasks manually** using an administrator account (or separate privileged account)
-3. **Grant the custom identity only start/stop permissions** on the scheduled tasks using the PowerShell script from Option 3
-4. The custom identity can run PingCastle Enterprise and manage tasks without full administrator privileges
-
-This hybrid approach provides:
-- Remote database access via Windows Authentication
-- Minimal permissions for Task Scheduler operations
-- Centralized service account management with gMSA
-- Enhanced security posture
-
-See **Least Privilege Setup** tab for the PowerShell scripts to grant task permissions.
-
 </TabItem>
-<TabItem value="leastprivilege" label="Least Privilege Setup">
+<TabItem value="leastprivilege" label="Least Privilege Setup" default>
 
 If you want to minimize the permissions granted to the application pool identity, you can create scheduled tasks manually or through scripts, then grant the application pool identity only **start and stop** permissions (not edit permissions).
 
@@ -1431,6 +1398,11 @@ PingCastle Enterprise can run on any infrastructure that supports ASP.NET Core 8
 - [Host ASP.NET Core on Linux with Apache](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache)
 - Installation procedures are not fully documented by Netwrix
 
+**Azure (Limited Support - Manual Installation)**
+- See [Azure Hosting](#azure-hosting) section below for detailed guidance on deploying to Azure App Service
+- Requires Azure CLI and manual configuration
+- Not officially supported or tested by Netwrix
+
 :::tip IIS Configuration
 For IIS deployments, if the "Default Web Site" conflicts with PingCastle Enterprise, stop the default website and configure it to not start automatically.
 :::
@@ -1624,354 +1596,569 @@ Set the `License` parameter with your license key.
 "DefaultConnection": "Server=localhost;Username=pingcastle;Password=pingcastle;Database=pingcastle"
 ```
 
-## Authentication when accessing PingCastle Enterprise
+### Azure hosting
 
-PingCastle supports:
+PingCastle Enterprise can be deployed on Microsoft Azure, though this configuration is not officially supported or tested by Netwrix. The instructions provided in this section are for guidance only.
 
-- stand alone authentication (default)
+:::warning Important Notes
+- **Netwrix does not test PingCastle Enterprise on Azure hosting platforms**
+- Support is limited to application bug fixes only
+- Installation, configuration, and troubleshooting are the customer's responsibility
+- Customers must provide their own Azure architecture and deployment blueprint
+- **Always test upgrades and updates in a non-production environment before deploying to production**
+- An Azure architect or Azure expert is recommended for deployment and maintenance
+:::
 
-- Active Directory Authentication
+#### Deployment overview
 
-- OpenID
+To deploy PingCastle Enterprise on Azure, you need to:
 
-- Header authentication
+1. Create a managed application in Azure
+2. Create and configure a database
+3. Replicate the application configuration into the Azure Configuration page
 
-- SAML2 authentication
+The minimum required configuration fields are:
+- Database connection
+- License information
+- Connection string (must be named "DefaultConnection")
 
-**Configure active directory authentication**
+![Azure Configuration page showing required configuration fields](/images/pingcastle/enterpriseinstall/image69.webp)
 
-The asp.net core middleware requires IIS to provide the authentication
-layer. As a consequence, the application do not access directly the
-Active Directory and is not able to query the authentication system.
+#### Deploying with Azure CLI
 
-PingCastle relies only on Security Identifier (SID) to verify if the
-user is granted access or not. The list of group SID that a user is
-granted access is displayed with the command \"whoami /all\". A SID
-match the form S-1-XXXXX.
+To deploy files to the web server, install the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli).
 
-![](/images/pingcastle/enterpriseinstall/image32.webp)
+Use the following command to deploy:
 
-First, be sure that the Windows authentication package is installed. It
-is not part of the default installation of IIS.
-
-![](/images/pingcastle/enterpriseinstall/image33.webp)
-
-Close and reopen the IIS console: you should see an authentication
-option.
-
-![A screenshot of a computer Description automatically generated](/images/pingcastle/enterpriseinstall/image34.webp)
-
-![](/images/pingcastle/enterpriseinstall/image35.webp)
-
-Keep enabled the anonymous authentication and enable the Windows
-authentication.
-
-Edit the appsettings.json file in the PingCastle Directory and add a
-WindowsGroup and WindowsGroupAdmin parameter containing the SID of the
-group mapping the membership. Do not forget to add a comma at the end of
-the previous line to have a valid json file.
-
-![](/images/pingcastle/enterpriseinstall/image36.webp)
-
-If you want to remove a user if it does not belong to the WindowsGroup
-at its next connection, you can set the parameter
-RemoveUserIfNotInWindowsGroupAnymore to true. Please note that the
-solution cannot proactively know if the user has been removed from this
-group. If notifications have been enabled, they will continue unless the
-account is removed despite the fact the account may have been disabled
-in the Active Directory.
-
-Also Windows does not provide an email address when creating the
-account. As a consequence, it is set to a known value disabling it.
-
-![](/images/pingcastle/enterpriseinstall/image37.webp)
-
-If you want to hide the internal accounts, you can set the following
-property ("disablePasswordLogon") in the appsettings.json file.
-
-![](/images/pingcastle/enterpriseinstall/image38.webp)
-
-![](/images/pingcastle/enterpriseinstall/image39.webp)
-
-This setup affect all the pages for authentication, which implies that
-API calls will need in addition to their API key a Windows account.
-
-8.  In this case, the web.config file should be edit to restrict this
-    NTLM authentication to the page WindowsAuth using the \<location\>
-    directive, as incidated on
-    https://docs.microsoft.com/en-us/iis/manage/configuring-security/understanding-iis-url-authorization
-
-**Configure OpenID Authentication**
-
-PingCastle Enterprise supports natively OpenID authentication. It is using the asp.net core API whose configuration file is [defined here](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.openidconnectoptions?view=aspnetcore-1.1&viewFallbackFrom=aspnetcore-8.0).
-The proxy settings rely on the current user proxy configuration (which
-can be defined [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide)). Here is how to configure OpenID in practice.
-
-The following section needs to be added to the appsettings.json files.
-
-Except the PostLogoutRedirecUrl which is set to the PingCastle
-Enterprise website url, all parameters are dependent of the OpenID
-provider.
-
-![](/images/pingcastle/enterpriseinstall/image40.webp)
-
-![](/images/pingcastle/enterpriseinstall/image41.webp)
-
-If you need to specify a scope, you can enter it with the form
-
-```json
-"Scope":["openid", "myotherscope"],
+```bash
+az webapp deploy --resource-group <group-name> --name <app-name> --src-path <zip-package-path>
 ```
 
-If you want to hide the internal accounts, you can set the following
-property in the appsettings.json file.
+Use the `az webapp` command to view your created application. For more information, see the [Azure App Service deployment documentation](https://docs.microsoft.com/en-us/azure/app-service/deploy-zip?tabs=cli).
 
-![](/images/pingcastle/enterpriseinstall/image42.webp)
+:::note
+Additional steps may be required depending on your Azure configuration.
+:::
 
-**Configure AzureAD authentication as OpenID**
+#### Creating the App Service
 
-Connect to https://portal.azure.com to go to "App registrations". Then register an application.
+Below are the steps to create a running application in Azure.
 
-Select redirectUri as Web and set the URL that the browser will go to.
+First, create an App Service:
 
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image43.webp)
+![Azure App Service creation interface](/images/pingcastle/enterpriseinstall/image70.webp)
 
-Be sure the URL ends with `: signin-oidc`
+You can use an Azure template to create both the web app and database simultaneously:
 
-Then go to the permissions page:
+![Azure template selection for web app and database](/images/pingcastle/enterpriseinstall/image71.webp)
 
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image44.webp)
+![Azure template configuration details](/images/pingcastle/enterpriseinstall/image72.webp)
 
-Clic on "Grant admin consent for " the application
+:::warning Docker configuration
+When Azure automatically creates a Docker file, the configuration settings (normally provided via appsettings and displayed as Environment variables) are not embedded into the image. You will need to edit these manually on the server side.
+:::
 
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image45.webp)
+![Docker environment variables configuration](/images/pingcastle/enterpriseinstall/image73.webp)
 
-**After the action, the Status is changed**
+![Additional Azure configuration settings](/images/pingcastle/enterpriseinstall/image74.webp)
 
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image46.webp)
+#### Debugging startup issues
 
-Once this is created, you have to note the ClientID and the Tenant Id as
-below:
+To debug application startup issues, enable App Service Logs:
 
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image47.webp)
+![Enabling App Service Logs in Azure](/images/pingcastle/enterpriseinstall/image75.webp)
 
-Last step: You have to go to the Authentication tab and enable ID
-tokens:
+You can then view the log stream:
 
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image48.webp)
+![App Service log stream view](/images/pingcastle/enterpriseinstall/image76.webp)
 
-You have to adjust the OpenID configuration located in appsettings.json
-to the following one:
+In the example below, the connectionString was not found because Docker does not forward it. This must be corrected before the application can start:
+
+![Connection string error displayed in log stream](/images/pingcastle/enterpriseinstall/image77.webp)
+
+#### Azure Active Directory integration
+
+Since the May 2024 release of PingCastle Enterprise, the application can read user tokens, allowing Azure Active Directory (AAD) configuration:
+
+![Azure Active Directory authentication configuration](/images/pingcastle/enterpriseinstall/image78.webp)
+
+
+## Authentication
+
+PingCastle Enterprise supports multiple authentication methods that can work simultaneously. You can configure any combination of Local Authentication, Windows Authentication, OpenID Connect, Azure AD, Header Authentication, SAML2, and Client Certificate authentication, allowing users to choose their preferred login method.
+
+<Tabs>
+  <TabItem value="local" label="Local Authentication" default>
+
+Local authentication is enabled by default and uses username and password stored in the PingCastle Enterprise database. No additional configuration is required.
+
+To hide the local authentication option when other authentication methods are configured, add this to `appsettings.json`:
+
+```json
+"disablePasswordLogon": true
+```
+
+:::warning
+When `disablePasswordLogon` is set to `true` and Windows Authentication is enabled, any account calling the API will need to be a member of the `WindowsGroup` that is configured for authentication.
+:::
+
+  </TabItem>
+  <TabItem value="windows" label="Windows Authentication">
+
+<details>
+<summary>If you haven't already, enable Windows Authentication</summary>
+
+**Step 1: Install Windows Authentication Package**
+
+Ensure the Windows Authentication package is installed. It may not be part of the default IIS installation on older Windows Server versions.
+
+Open **Server Manager** > **Manage** > **Add Roles and Features** > **Server Roles** > **Web Server (IIS)** > **Web Server** > **Security** and select **Windows Authentication**.
+
+**Step 2: Enable Windows Authentication in IIS**
+
+1. Close and reopen the **IIS Manager** console to refresh the available options.
+2. Select the PingCastleEnterprise website in the left-hand tree view.
+3. Double-click the **Authentication** icon in the center panel.
+
+![IIS Authentication Option](/images/pingcastle/enterpriseinstall/Authentication/iis-auth-option.webp)
+
+4. In the Authentication settings, ensure the following:
+   - **Anonymous Authentication**: Enabled (should already be enabled)
+   - **Windows Authentication**: Right-click and select **Enable**
+
+![IIS Authentication Methods](/images/pingcastle/enterpriseinstall/Authentication/iis-auth-methods.webp)
+
+</details>
+
+Windows Authentication uses Active Directory groups to provision access to PingCastle Enterprise. Create two security groups in Active Directory, these can be called whatever you like but we will use the below as examples:
+- **PingCastle_Users**: Members of this group can log in and access PingCastle Enterprise
+- **PingCastle_Admins**: Members of this group have administrator privileges
+
+Add users to the appropriate groups based on the level of access they require.
+
+
+**Getting AD Group SIDs**
+
+PingCastle Enterprise needs the Security Identifiers (SIDs) of the groups for setup. Use the tabs to select a way to help you get these.
+
+<Tabs>
+  <TabItem value="ad-powershell" label="Active Directory PowerShell" default>
+
+This method uses the ActiveDirectory PowerShell module to retrieve the group SIDs
+
+```powershell
+Get-ADGroup "PingCastle_Users" | Select-Object Name, SID
+Get-ADGroup "PingCastle_Admins" | Select-Object Name, SID
+```
+
+  </TabItem>
+  <TabItem value="adsi" label="ADSI Search">
+
+This method uses PowerShell with the native ADSI Searcher class to get the group SIDs
+
+```powershell
+$searcher = [ADSISearcher]"(&(objectClass=group)(name=PingCastle_Users))"
+$group = $searcher.FindOne()
+$sid = New-Object System.Security.Principal.SecurityIdentifier($group.Properties["objectsid"][0], 0)
+$sid.Value
+
+$searcher = [ADSISearcher]"(&(objectClass=group)(name=PingCastle_Admins))"
+$group = $searcher.FindOne()
+$sid = New-Object System.Security.Principal.SecurityIdentifier($group.Properties["objectsid"][0], 0)
+$sid.Value
+```
+
+  </TabItem>
+  <TabItem value="whoami" label="whoami (Current User)">
+
+If you are already a member of the groups and have rebooted since being added you can run 
+`whoami /all` to get your group memberships and find the SID in the output
+
+![Viewing SIDs with whoami](/images/pingcastle/enterpriseinstall/Authentication/whoami-sid.webp)
+
+  </TabItem>
+</Tabs>
+
+
+
+**Configuration**
+
+Add the following to `appsettings.json` replacing the SIDs with your Active Directory Group SIDs:
+
+```json
+"WindowsGroup": "S-1-5-21-XXXXXXXXXX-XXXXXXXXXX-XXXXXXXXXX-XXXX",
+"WindowsGroupAdmin": "S-1-5-21-XXXXXXXXXX-XXXXXXXXXX-XXXXXXXXXX-XXXX",
+"RemoveUserIfNotInWindowsGroupAnymore": true
+```
+
+| Setting | Description |
+|---------|-------------|
+| `WindowsGroup` | SID of the group that grants login access (e.g., PingCastle_Users) |
+| `WindowsGroupAdmin` | SID of the group that grants administrator access (e.g., PingCastle_Admins) |
+| `RemoveUserIfNotInWindowsGroupAnymore` | When `true`, users are removed if they no longer belong to `WindowsGroup` at their next login |
+
+:::note
+Windows Authentication does not provide an email address when creating accounts. Email addresses are set to a default value that disables notifications.
+:::
+
+![Windows accounts have no email](/images/pingcastle/enterpriseinstall/Authentication/windows-no-email.webp)
+
+<details>
+<summary>Want to hide the local authentication prompt?</summary>
+
+To hide the internal username/password login option, add this to `appsettings.json`:
+
+```json
+"disablePasswordLogon": true
+```
+
+![Login page without password option](/images/pingcastle/enterpriseinstall/Authentication/login-page-no-password.webp)
+
+:::warning API Access
+This setup affects all pages for authentication. When `disablePasswordLogon` is enabled with Windows Authentication, API calls will require both an API key and the calling account to be in the `WindowsGroup` SID group.
+
+To restrict NTLM authentication to specific pages, edit the `web.config` file using the `<location>` directive to restrict authentication to the WindowsAuth page. See [IIS URL Authorization documentation](https://docs.microsoft.com/en-us/iis/manage/configuring-security/understanding-iis-url-authorization).
+:::
+
+</details>
+
+  </TabItem>
+  <TabItem value="openid" label="OpenID Connect">
+
+PingCastle Enterprise supports OpenID Connect authentication using the ASP.NET Core API. Configuration options are [documented here](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.openidconnectoptions?view=aspnetcore-1.1&viewFallbackFrom=aspnetcore-8.0).
+
+Proxy settings rely on the current user proxy configuration, which can be defined [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
+
+<details>
+<summary>Configuring Entra ID for OpenIDConnect Authentication</summary>
+
+Entra ID can be configured as an OpenID Connect provider.
+
+**Entra ID Portal Configuration**
+
+1. Navigate to [Entra ID Portal](https://portal.azure.com) and go to "App registrations"
+2. Register a new application
+3. Set the Redirect URI as **Web** with the URL: `https://your-pingcastle-server.com/signin-oidc`
+
+   ![Azure App Registration](/images/pingcastle/enterpriseinstall/Authentication/azure-app-registration.webp)
+
+   :::warning
+   The URL must end with `/signin-oidc`
+   :::
+
+4. Go to the **API permissions** page
+
+   ![Azure API Permissions](/images/pingcastle/enterpriseinstall/Authentication/azure-api-permissions.webp)
+
+5. Click "Grant admin consent" for the application
+
+   ![Grant Admin Consent](/images/pingcastle/enterpriseinstall/Authentication/azure-grant-consent.webp)
+
+6. Verify the Status shows as granted
+
+   ![Consent Granted](/images/pingcastle/enterpriseinstall/Authentication/azure-consent-granted.webp)
+
+7. Note the **Application (client) ID** and **Directory (tenant) ID**
+
+   ![Client and Tenant IDs](/images/pingcastle/enterpriseinstall/Authentication/azure-client-tenant-id.webp)
+
+8. Go to the **Authentication** tab and enable **ID tokens**
+
+   ![Enable ID Tokens](/images/pingcastle/enterpriseinstall/Authentication/azure-enable-id-tokens.webp)
+
+
+</details>
+
+**Configuration**
+
+Add the following to `appsettings.json`:
 
 ```json
 "OpenIdConnect": {
-
-"DisplayName": "AzureAD",
-
-"ClientId": "<ClientID>",
-
-"Authority": "https://login.microsoftonline.com/<tenant-id>/",
-
+  "DisplayName": "Entra ID",
+  "ClientSecret": "your-client-secret",
+  "ClientId": "your-client-id",
+  "Authority": "https://your-identity-provider.com/oauth2/default",
+  "PostLogoutRedirectUrl": "https://your-pingcastle-server.com",
+  "CallbackPath": "/authorization-code/callback",
+  "ResponseType": "code"
 }
 ```
 
-**Configure header authentication**
+All parameters except `PostLogoutRedirectUrl` (which should point to your PingCastle Enterprise URL) are dependent on your OpenID provider.
 
-You need to edit the appsettings.json file.
+**Adding Scopes**
 
-Add a setting named authenticationHeader which will define is a user is
-already authenticated.
+If you need to specify additional scopes, add them as an array:
 
-If it is the case, when the login page is browsed, the application look
-if this header is set. If it is set, it considers the user as
-authaticated. Example using the header named PingCastleAuth.
+```json
+"Scope": ["openid", "profile", "email"]
+```
 
-![](/images/pingcastle/enterpriseinstall/image49.webp)
+**Hiding Local Authentication**
 
-Please note that the PingCastle application must be isolated by a
-reverse proxy that will prohibit non authenticated user to set their own
-header and thus bypass the authentication mechanism.
+To hide the internal username/password login option:
 
-If you want to hide the internal accounts, you can set the following
-property in the appsettings.json file.
+```json
+"disablePasswordLogon": true
+```
 
-![](/images/pingcastle/enterpriseinstall/image38.webp)
+  </TabItem>
+  <TabItem value="header" label="Header Authentication">
 
-**Configure SAML2 authentication**
+Header authentication delegates authentication to a reverse proxy, which sets a header indicating the authenticated user.
 
-If you want to hide the internal accounts, you can set the following
-property in the appsettings.json file.
+**Configuration**
 
-![](/images/pingcastle/enterpriseinstall/image38.webp)
+Add the following to `appsettings.json`:
 
-PingCastle Enterprise supports natively SAML2 authentication.
+```json
+"authenticationHeader": "PingCastleAuth"
+```
 
-PingCastle is using behind the scenes the component [ITfoxtec Identity SAML 2.0](https://www.itfoxtec.com/IdentitySaml2). The advanced and explicit configuration settings documentation can be [found here](https://github.com/ITfoxtec/ITfoxtec.Identity.Saml2/blob/master/src/ITfoxtec.Identity.Saml2/Configuration/Saml2Configuration.cs). The proxy settings rely on the current user proxy configuration (which can be defined [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide)).
+When the login page is accessed, PingCastle checks for the specified header. If present, the user is considered authenticated and the header value is used as the username.
 
-**Easy configuration**
+:::danger Security Requirement
+The PingCastle application **must** be isolated by a reverse proxy that prevents unauthenticated users from setting their own authentication header. Failure to properly secure this configuration allows authentication bypass.
+:::
 
-This option requires that the IdP can be accessed directly by the
-server. This may conflict with one premise deployment where the server
-is isolated by a proxy or a firewall.
+**Hiding Local Authentication**
 
-The following section needs to be added to the appsettings.json files.
+To hide the internal username/password login option:
 
-![](/images/pingcastle/enterpriseinstall/image50.webp)
+```json
+"disablePasswordLogon": true
+```
 
-You need to gather the IdPMetataUrl of your provider and setup the
-Issuer which is the audience defined.\
-You may set other options such as SignatureAlgorithm,
-AudienceRestricted, or RevocationMode to tune the Identity Provider
-behavior.
+  </TabItem>
+  <TabItem value="saml2" label="SAML2 Authentication">
 
-![](/images/pingcastle/enterpriseinstall/image51.webp)
+PingCastle Enterprise supports SAML2 authentication using the [ITfoxtec Identity SAML 2.0](https://www.itfoxtec.com/IdentitySaml2) package. Advanced configuration settings are [documented here](https://github.com/ITfoxtec/ITfoxtec.Identity.Saml2/blob/master/src/ITfoxtec.Identity.Saml2/Configuration/Saml2Configuration.cs).
 
-Here an example of configuration with Okta:
+Proxy settings rely on the current user proxy configuration, which can be defined [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
 
-Log in to your Okta tenant, switch to the admin portal, and switch to
-the classic UI if you are in the developer UI.
+<details>
+<summary>Configuring SAML2 with Okta</summary>
 
-![Admin Portal](/images/pingcastle/enterpriseinstall/image52.webp)
+Follow these steps to configure PingCastle Enterprise with Okta as your SAML2 identity provider.
 
-Click Applications, Add Application, Create New App, and select the SAML
-2.0 radio button before clicking Create.
+#### Step 1: Access Okta Admin Portal
 
-![Create New App](/images/pingcastle/enterpriseinstall/image53.webp)
+Log in to your Okta tenant and switch to the admin portal.
 
-Give your app a name and click Next.
+![Okta Admin Portal](/images/pingcastle/enterpriseinstall/Authentication/okta-admin-portal.webp)
 
-![Name App](/images/pingcastle/enterpriseinstall/image54.webp)
+#### Step 2: Create New Application
 
-![Config App](/images/pingcastle/enterpriseinstall/image55.webp)
+1. Click **Applications** > **Add Application** > **Create New App**
+2. Select **SAML 2.0** and click **Create**
 
-**In Single Sign on URL, enter https://yourPingCastleServer/Saml2/AssertionConsumerService**
+![Create New App](/images/pingcastle/enterpriseinstall/Authentication/okta-create-app.webp)
 
-In Audience URI, enter PingCastle or the value that will be used in the "Issuer" setting.
+#### Step 3: Name Your Application
 
-Once the configuration is set, locate the IdP metadata url.
+Give your app a name and click **Next**.
 
-This is the link pointed in the image below.
+![Name App](/images/pingcastle/enterpriseinstall/Authentication/okta-app-name.webp)
 
-![Metadata](/images/pingcastle/enterpriseinstall/image56.webp)
+#### Step 4: Configure SAML Settings
 
-Last, you'll need to make sure that your user is allowed to use this app
-in Okta. Click on the Assignments tab, click the Assign button, and
-click Assign to People.
+Configure the following SAML settings:
 
-Click the Assign button next to your user, and then click Save and Go
-Back.
+| Setting | Value |
+|---------|-------|
+| **Single Sign on URL** | `https://your-pingcastle-server.com/Saml2/AssertionConsumerService` |
+| **Audience URI** | `PingCastle` (or match your `Issuer` setting) |
 
-![Metadata](/images/pingcastle/enterpriseinstall/image57.webp)
+![Configure SAML](/images/pingcastle/enterpriseinstall/Authentication/okta-saml-config.webp)
 
-Once these values have been saved and the application restarted, a new
-SAML2 option will be available on the login screen.
+#### Step 5: Get IdP Metadata URL
 
-You are now ready to use SAML2 as authentication.
+Locate the IdP metadata URL for use in your PingCastle configuration.
 
-![](/images/pingcastle/enterpriseinstall/image58.webp)
+![Metadata URL](/images/pingcastle/enterpriseinstall/Authentication/okta-metadata-url.webp)
 
-**Advanced configuration**
+#### Step 6: Assign Users
 
-To remove the need for the IdP metadata query to the remote server, the
-saml configuration can be set manually. For this procedure, we follow
-the same set of steps to configure the Idp, with the example of Okta
-above.
+Assign users to the application: **Assignments** > **Assign** > **Assign to People**
 
-The following configuration need to be set.
+![Assign Users](/images/pingcastle/enterpriseinstall/Authentication/okta-assign-users.webp)
 
-![](/images/pingcastle/enterpriseinstall/image59.webp)
+#### Step 7: Restart and Test
 
-First, the IdPMetadata attribute is not used anymore.
+Restart the application. A SAML2 login option will appear on the login screen.
 
-The AllowedIssuer is the issuer ID set by the remote Idp. It is the top
-value set in the Idp Metadata manually downloaded:
+![SAML2 Login Screen](/images/pingcastle/enterpriseinstall/Authentication/saml-login-screen.webp)
 
-![](/images/pingcastle/enterpriseinstall/image60.webp)
+</details>
 
-Then the SingleSignOnDestination need to be set. it can be found in the
-IdP Metadata
 
-![](/images/pingcastle/enterpriseinstall/image61.webp)
+<Tabs>
+  <TabItem value="simple" label="Simple (Metadata URL)" default>
 
-Then the certificate need to be set. It is the base64 encoding of a real
-certificate. It can be seen also in the metadata:
-
-![](/images/pingcastle/enterpriseinstall/image62.webp)
-
-The configuration relies on the ITFoxTec SAML2 provider and thus, advanced settings can be seen [here](https://github.com/ITfoxtec/ITfoxtec.Identity.Saml2/blob/ede215bda2fd163367d475ca6104ec8ccb7642d3/src/ITfoxtec.Identity.Saml2/Configuration/Saml2Configuration.cs)
-
-**ADFS**
-
-When using ADFS, the well known configuration is:
+This configuration fetches IdP metadata automatically from a URL:
 
 ```json
 "Saml2": {
-
-"Issuer": "https://xxx/Saml2/Login",
-
-"IdPMetadata":
-"https://xxx/FederationMetadata/2007-06/FederationMetadata.xml"
-
-},
+  "DisplayName": "SAML2",
+  "IdPMetadata": "https://your-idp.com/saml/metadata",
+  "Issuer": "PingCastle"
+}
 ```
 
-:::note
-You can customize the "SAML2" name in the login page by setting
-the field DisplayName in the Saml2 section in the configuration file to
-the value you want.
+:::warning Availability Requirement
+When using `IdPMetadata`, the metadata URL is accessed at application startup. If the URL is unavailable, PingCastle Enterprise will be unavailable until you run `IISRESET` and the metadata becomes accessible. For production environments, consider using the full configuration.
 :::
 
-**Configure Client certificate authentication**
+You may set additional options:
 
-The first step is to configure the webserver to require a client
-certificate when establishing the SSL connection. It requires SSL (aka a
-https access).
+| Parameter | Description |
+|-----------|-------------|
+| `SignatureAlgorithm` | Signature algorithm for SAML assertions |
+| `AudienceRestricted` | Restrict audience validation |
+| `RevocationMode` | Certificate revocation checking mode |
+  </TabItem>
+  <TabItem value="advanced" label="Advanced (Full Configuration)">
 
-![](/images/pingcastle/enterpriseinstall/image63.webp)
+To avoid startup dependency on the IdP metadata URL, configure SAML2 manually:
 
-The server server will then request a certificate each time the website
-is accessed.
+```json
+"Saml2": {
+  "DisplayName": "SAML2",
+  "Issuer": "PingCastle",
+  "AllowedIssuer": "http://www.okta.com/exkwq0c471pYC5s5T0h7",
+  "SingleSignOnDestination": "https://your-idp.com/app/sso/saml",
+  "certificate": "MIIDpDCCAoygAwIBAgIGAWkXo8vjMA0GCSqGSIb3DQEBC..."
+}
+```
 
-![](/images/pingcastle/enterpriseinstall/image64.webp)
+Configuration parameters:
 
-9.  The PingCastle recommendation is to either set to accept to allow
-    the API access, or to setup another virtual host in order to have an
-    API access without a certificate request.
+| Parameter | Description |
+|-----------|-------------|
+| `AllowedIssuer` | The issuer ID from your IdP metadata |
+| `SingleSignOnDestination` | The SSO endpoint from your IdP metadata |
+| `certificate` | Base64-encoded certificate from your IdP metadata (without BEGIN/END markers) |
 
-Please note that if a setting is changed, the browser should be closed
-and opened again to avoid the connection cache reuse.
+**Finding values in IdP metadata:**
 
-To be enabled for authentication in PingCastle, the setting
-CertificateAuth must be set to true. In this case, each time the page
-/Account/Login is visited, the application will evaluate if the
-webserver sent a certificate. Then the certificate will be evaluated to
-verify it is trusted (chain building, online verification) and map it to
-a user account.
+![IdP Metadata Issuer](/images/pingcastle/enterpriseinstall/Authentication/saml-metadata-issuer.webp)
 
-:::note
-If no CRL or OCSP endpoint is available on all certificate, or if
-they cannot be joined, the verification will have to be turned OFF using
-the setting CertificateAuthNoRevocation.
+![SSO Destination](/images/pingcastle/enterpriseinstall/Authentication/saml-sso-destination.webp)
+
+![Certificate from Metadata](/images/pingcastle/enterpriseinstall/Authentication/saml-certificate.webp)
+  </TabItem>
+  <TabItem value="adfs" label="ADFS">
+
+For ADFS, use this configuration:
+
+```json
+"Saml2": {
+  "Issuer": "https://your-adfs-server/Saml2/Login",
+  "IdPMetadata": "https://your-adfs-server/FederationMetadata/2007-06/FederationMetadata.xml"
+}
+```
+  </TabItem>
+</Tabs>
+
+
+**Customizing Display Name**
+
+Customize the button text on the login page:
+
+```json
+"Saml2": {
+  "DisplayName": "Login with Okta",
+  ...
+}
+```
+
+**Hiding Local Authentication**
+
+To hide the internal username/password login option:
+
+```json
+"disablePasswordLogon": true
+```
+
+  </TabItem>
+  <TabItem value="certificate" label="Client Certificate">
+
+Client certificate authentication requires users to present a valid SSL client certificate when accessing PingCastle Enterprise.
+
+**IIS Configuration**
+
+Configure IIS to require or accept client certificates. This requires HTTPS access.
+
+![IIS Require SSL Certificate](/images/pingcastle/enterpriseinstall/Authentication/iis-require-ssl-cert.webp)
+
+The server will request a certificate when the website is accessed.
+
+![SSL Certificate Request](/images/pingcastle/enterpriseinstall/Authentication/ssl-cert-request.webp)
+
+:::tip API Access
+Set the certificate requirement to **Accept** (not **Require**) to allow API access without certificates, or configure a separate virtual host for API access.
 :::
 
-![](/images/pingcastle/enterpriseinstall/image65.webp)
+:::note Browser Cache
+If certificate settings are changed, close and reopen the browser to avoid connection cache reuse.
+:::
 
-To map a user account, the program will extract the Dns Name of the
-certificate (the first CN= part without the CN=), then the UPN which can
-be found in the SubjectAlternateName section. If no match is available,
-the program tries to extract the RFC email found in the SAN area. It
-tries then to find a user whose email address is the one found in the
-certificate.
+**PingCastle Configuration**
 
-If the certificate cannot be recognized, an error message will be shown:
+Add the following to `appsettings.json`:
 
-![](/images/pingcastle/enterpriseinstall/image66.webp)
+```json
+"CertificateAuth": true,
+"CertificateAuthNoRevocation": false
+```
 
-To be able to login into the application, a user account must be created
-using the attribute explained above (login matching the subject in the
-dns form). Please note that no password needs to be submitted.
+- `CertificateAuth`: Enables client certificate authentication
+- `CertificateAuthNoRevocation`: Set to `true` to disable certificate revocation checking if CRL or OCSP endpoints are unavailable
 
-![](/images/pingcastle/enterpriseinstall/image67.webp)
+When a user visits `/Account/Login`, PingCastle evaluates the certificate for trust (chain building, online verification) and maps it to a user account.
+
+**Certificate Mapping**
+
+PingCastle maps certificates to user accounts using these identifiers (in order):
+1. DNS Name (CN from subject)
+2. UPN from SubjectAlternateName
+3. RFC email from SubjectAlternateName
+
+**User Account Setup**
+
+Create a user account with a login matching the certificate subject (DNS form). No password is required.
+
+![Certificate User Account](/images/pingcastle/enterpriseinstall/Authentication/cert-user-account.webp)
+
+**Troubleshooting**
+
+If the certificate cannot be recognized, an error is displayed:
+
+![Certificate Not Recognized](/images/pingcastle/enterpriseinstall/Authentication/cert-not-recognized.webp)
+
+Ensure the user account login matches one of the certificate identifiers listed above.
+
+  </TabItem>
+</Tabs>
+
+### Custom Login Message
+
+You can display a custom message on the login page by adding the `customLoginMessage` setting to your `appsettings.production.json` configuration file.
+
+**Example Configuration:**
+
+```json
+"customLoginMessage": "<p>The PingCastle UK Instance for consto</p>"
+```
+
+After performing an `iisreset`, the custom message will appear on the login page:
+
+![The login screen showing the custom login message](/images/pingcastle/enterpriseinstall/Configuration/CustomLoginMessage.webp)
+
+:::warning Security Note
+The `customLoginMessage` setting renders raw HTML without escaping. While this allows formatting flexibility using [Bootstrap](https://getbootstrap.com/) CSS styles, Content Security Policy (CSP) protections prevent injection of custom CSS or JavaScript.
+:::
 
 ## Email
 
@@ -2726,80 +2913,7 @@ After completing either the manual or PowerShell configuration, update your Ping
 }
 ```
 
-## Azure hosting
-
-PingCastle Enterprise is known to work with Azure. But the Ping Castle
-company does not provide support for installation using Azure Hosting.
-The company supports only application bug fixes. This is up to the
-customer to provide the Blueprint and an Azure architect or Azure
-experts to perform the installation. The instructions below are only
-indicative.
-
-In that case a manage application must be created and a database. Then
-the configuration of the application needs to be replicated into the
-Azure Configuration page.
-
-The minimal required fields to be configured are: database, license and
-the connection string, named as "DefaultConnection".
-
-![](/images/pingcastle/enterpriseinstall/image69.webp)
-
-To deploy the files on the webserver you'll need the [azure cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
-
-You can use the following command line to do it.
-
-```bash
-az webapp deploy --resource-group <group-name> --name <app-name> --src-path <zip-package-path>
-```
-
-Do not forget to use the command az webapp to see the application that you create. Although see https://docs.microsoft.com/en-us/azure/app-service/deploy-zip?tabs=cli for more information.
-
-3.  Beware that depending on the Azure configuration, additional steps
-    may be required.
-
-Here is the review of actions to build a running app. First create an
-App Service.
-
-![Une image contenant texte, capture d'écran, logiciel, Page web Description générée automatiquement](/images/pingcastle/enterpriseinstall/image70.webp)
-
-A template can be used to build both at same time web app and database
-
-![Une image contenant texte, capture d'écran, logiciel, Police Description générée automatiquement](/images/pingcastle/enterpriseinstall/image71.webp)
-
-![Une image contenant texte, capture d'écran, nombre, Police Description générée automatiquement](/images/pingcastle/enterpriseinstall/image72.webp)
-
-Beware that on this case, Azure built automatically a docker file. That
-means that Configuration (usually provided using appsettings and
-displayed here as Environment variables, are not embedded into the
-image)
-
-![Une image contenant texte, capture d'écran, Police, nombre Description générée automatiquement](/images/pingcastle/enterpriseinstall/image73.webp)
-
-![Une image contenant texte, capture d'écran, Police, ligne Description générée automatiquement](/images/pingcastle/enterpriseinstall/image74.webp)
-
-You will need to edit this manually on the server side.
-
-To debug the application startup, you have to enable the App Service
-Logs.
-
-![Une image contenant texte, capture d'écran, logiciel, nombre Description générée automatiquement](/images/pingcastle/enterpriseinstall/image75.webp)
-
-You can then see the log stream:
-
-![Une image contenant texte, logiciel, Page web, Site web Description générée automatiquement](/images/pingcastle/enterpriseinstall/image76.webp)
-
-In the example below, the connectionString has not been found (because
-docker does not forward it). It will need to be fixed before the
-application can start.
-
-![Une image contenant texte, capture d'écran, Police Description générée automatiquement](/images/pingcastle/enterpriseinstall/image77.webp)
-
-Also since the May 2024 release of PingCastle Enterprise, the
-application can read the user token, allowing to configure AAD that way:
-
-![Une image contenant texte, logiciel, nombre, Police Description générée automatiquement](/images/pingcastle/enterpriseinstall/image78.webp)
-
-# Initial startup
+## Initial startup
 
 At the first run of the application, the database is created. If there
 is an error with the database (missing right, invalid connection string)
@@ -2810,109 +2924,82 @@ For security reasons, there is no default account or password.
 When there is no user configured in the application, a special screen is
 shown to create the first user. This user is given the \"Admin\" role.
 
-![](/images/pingcastle/enterpriseinstall/image79.webp)
+![First user creation screen](/images/pingcastle/enterpriseinstall/image79.webp)
 
-# Initial configuration
+## Initial configuration
 
 For more details please see the user documentation.
 
-**Entities**
+### Entities
 
-PingCastle configures by default an entity named \"Default\". It is the
-entity where Auto Created domains are assigned.
+Entities are created at Configuration -> Entities and implement Role-Based Access Control (RBAC) by assigning permissions to users for groups of domains. This controls access for email notifications and enables targeted dashboards.
 
 ![](/images/pingcastle/enterpriseinstall/image80.webp)
 
-You can created other entities and by setting a parent, built a
-hierarchy.
+PingCastle configures a default entity named "Default" where auto-created domains are assigned. You can create additional entities and build a hierarchy by setting parent relationships.
 
-To start quickly, you can use the Advanced -\> Interoperability feature
-to edit a base hierarchy using an Excel file.
+For bulk configuration, use Configuration -> Interoperability to edit the entity hierarchy using an Excel file (compatible with the PingCastleReporting tool format).
 
-This Excel file is the same used in the PingCastleReporting tool.
+### Encryption
 
-**Encryption**
+The default PingCastle decryption key is marked as insecure. Note that the default encryption key is no longer provided in newer versions of PingCastle as this was a security risk. You must generate your own key in the Enterprise UI at Configuration -> Decryption and use that in your PingCastle.exe's appsettings.console.json file.
 
-PingCastle Enterprise comes by default with the PingCastle default
-encryption key.
+### Bulk Import of existing reports
 
-If you decided to add a custom ciphering key, you can add it in Advanced
--\> Decryption.
+You can import existing reports using the bulk import functionality in Configuration -> Interoperability.
 
-**Bulk Import of existing reports**
-
-You can import existing report using the bulk import functionality of
-the Advanced -\> Interoperability menu.
+You can also use `PingCastle.exe --upload-all-reports --api-endpoint https://your.pingcastle.server --api-key XXXXXX` to upload reports via the command line.
 
 **Agents**
 
-You can configure PingCastle program to send their report to the
-program.
+An "agent" in PingCastle Enterprise refers to the PingCastle.exe program running on a remote system that uploads scan reports to the central server via API.
 
-You need to setup an API key for an agent using the Advanced -\> Agent
-feature.
+To configure an agent:
 
-Then use the command `switches --api-endpoint <endpoint>` and
-`--api-key <key>` in the health check mode.
+1. Create an API key with upload permissions in Configuration -> Agents
+2. Configure Windows Task Scheduler on the remote system to run PingCastle.exe with the appropriate parameters
 
-You can upload existing reports stored in the current directory with the
-command:
+Upload existing reports stored in the current directory:
 
-```bash
-pingcastle.exe --upload-all-reports --api-endpoint https://endpoint.com --api-key abdsnhvdsklLksf
+```powershell
+.\pingcastle.exe --healthcheck --server your.domain --api-endpoint https://endpoint.com --api-key abdsnhvdsklLksf
 ```
 
-# PingCastle "agent" deployment
+# PingCastle agent deployment
 
-To avoid any hole in security architecture, it was chosen to not run
-PingCastle scans from the web application. That means that the local
-domains have to push their information into PingCastle Enterprise.
+For security reasons, PingCastle scans are not executed from the web application. Instead, remote systems must push their scan results to PingCastle Enterprise using the agent configuration.
 
-**Program**
+**Program version**
 
-It is recommended to run the latest official version of PingCastle. The
-PingCastle.exe program delivered in the same directory than the
-PingCastleEnterprise is suitable for use.
+Use the latest official version of PingCastle.exe (included in the PingCastleEnterprise directory). The application supports reports from different PingCastle versions - newer features will only display after upgrading PingCastle Enterprise, but no data is lost.
 
-Please note that PingCastle Enterprise support to run the PingCastle
-audit program at a higher or lower version. If new features have been
-added, they will not be visible unless the PingCastle Enterprise program
-is updated, but no data will be lost in the mean time.
+**Scheduling**
 
-**Schedule**
+Configure Windows Task Scheduler (or your organization's batch scheduler) to run scans weekly using a normal user account (non-privileged) from a batch server (not a Domain Controller).
 
-The best way to schedule it is to run your own scheduler. Indeed, you
-may have purchase a batch product which is looking for failure or
-dependencies.
+**Command line**
 
-As an alternative, there is the documentation at the last page of
-PingCastle documentation (the audit program) to run it using the Windows
-scheduler.
+Create an API key with upload permissions (Advanced -> Agent as admin) and test the command before scheduling:
 
-The recommended frequency is every week, using a normal user account
-(not privileged) running on a batch server (not a DC).
-
-**Command**
-
-You need to create an API key with the upload right (the \"Agent\" page
-as admin).
-
-You need to test the command line before scheduling it.
-
-The typical command line is:
-
-```bash
-PingCastle --healthcheck (optional --server <other domain>) --level Full --api-endpoint https://youservername --api-key yourapikey
+```powershell
+.\PingCastle --healthcheck --level Full --api-endpoint https://yourservername --api-key yourapikey
 ```
 
-The typical pitfalls are enabling TLS1.2 for the server but not
-installing the TLS1.2 client package on the server running the audit.
+Optionally specify a different domain:
 
-# Synchronization feature
+```powershell
+.\PingCastle --healthcheck --server <other domain> --level Full --api-endpoint https://yourservername --api-key yourapikey
+```
+
+**Common issues**
+
+If TLS 1.2 is enabled on the server, ensure the TLS 1.2 client package is installed on the system running the audit.
+
+## Synchronization feature
 
 PingCastle Enterprise supports a synchronization mode to implement a
-security zone model (used within the Defense). Ony domains are
-synchronized (no AzureAD).
+security zone model (commonly used within Defense sectors). Only domains are
+synchronized (Azure AD is not supported).
 
 **PingCastle Enterprise high trust**
 
@@ -2922,120 +3009,162 @@ PingCastle Enterprise high trust
 
 PingCastle audits
 
-This enable to have consolidations of reports while the reports details
-are kept limited.
+This enables report consolidation while keeping report details limited to appropriate security zones.
 
-The data synchronized between High trust and low trust instances are:
+The data synchronized between high trust and low trust instances includes:
 
-- the status of the domain (active, removed, ...)
+- The status of the domain (active, removed, etc.)
 
-- the content of the report, based on a level filter (Full = no filter ;
-  Normal = recomputed for Full report, as is for normal report, Light =
-  stripped from Normal and Full, etc)
+- The content of the report, based on a level filter (Full = no filter;
+  Normal = recomputed for Full report, as-is for normal report; Light =
+  stripped from Normal and Full, etc.)
 
 The following data is not synchronized: exceptions, action plans,
 maturity changes, etc.
 
-## Configuration
+### Configuration
 
-You need to configure server side an API key with the synchronization
-right.
+You need to configure an API key with synchronization rights on the server side.
 
-Please note that you need to assign the Agent to an entity. It is not
-allowed to assign it to a domain as the entity will be used as a root to
-assign the new forwarded domains.
+Note that you must assign the Agent to an entity. You cannot assign it to a domain, as the entity will be used as the root to
+assign the newly forwarded domains.
 
-![Une image contenant texte, capture d'écran, nombre, Police Description générée automatiquement](/images/pingcastle/enterpriseinstall/image81.webp)
+![API key configuration showing Agent assignment to entity with synchronization rights](/images/pingcastle/enterpriseinstall/image81.webp)
 
-On the client side, you need to edit the appsettings file to indicate
-this credential and also other information.
+On the client side, edit the appsettings file to specify
+the credentials and other required information.
 
-You need to add a "Sync" section at the root of the file (do not forget
-to add the comma for a previous or a next section as this is a json
-file).
+Add a "Sync" section at the root of the file (remember
+to add a comma before or after this section as required for valid JSON formatting).
 
-Specify the Uri as the FQDN of the recipient and the API key.
+Specify the Uri as the FQDN of the recipient server and the API key.
 
-![Une image contenant texte, capture d'écran, Police, ligne Description générée automatiquement](/images/pingcastle/enterpriseinstall/image82.webp)
+```json
+{
+  "Sync": {
+    "Uri": "https://syncrecipient.pingcastle.com/",
+    "ApiKey": "aaaaaaaa",
+    "ExportLevel": "Normal"
+  }
+}
+```
 
-The export level is the one defined with the classic PingCastle Agent.
-If information has to be removed, the data will be recomputed (this can
-lead to a loss of information in case the instance is processing a more
+The export level is the one defined in the classic PingCastle Agent configuration.
+If information needs to be removed, the data will be recomputed (this can
+result in information loss if the instance is processing a more
 recent report). If the level does not need to be restricted, the
-information will be forwarded as is. If the version of the report is
+information will be forwarded as-is. If the report version is
 more recent, no information will be lost.
 
-![Une image contenant texte, capture d'écran, Police, ligne Description générée automatiquement](/images/pingcastle/enterpriseinstall/image83.webp)
+Available export levels:
+- `Full` - No filter applied, all data included
+- `Normal` - Standard level with moderate filtering
+- `Light` - Stripped down data from Normal and Full
+- `Paranoid` - Most restrictive level
 
-## Synchronization patterns
+### Synchronization patterns
 
-Ping Castle Enterprise will try to receive from the higher instance the
-license at startup. If it cannot be retrieved, it will use the local
+PingCastle Enterprise will attempt to retrieve the
+license from the higher instance at startup. If it cannot be retrieved, it will use the locally
 configured license.
 
-Ping Castle Enterprise will Sync a domain if the domain is edited, or if
+PingCastle Enterprise will sync a domain when the domain is edited or when
 the sync button is pressed.
 
-![Une image contenant texte, capture d'écran, Police, ligne Description générée automatiquement](/images/pingcastle/enterpriseinstall/image84.webp)
+![Domain sync button interface](/images/pingcastle/enterpriseinstall/image84.webp)
 
-The Sync will is shown if the sync link is configured AND if the user
-has the ability to edit the domain.When a Sync is done, the domain
-properties (Status, ...) will be sync but also the past reports.
+The Sync button is shown if the sync link is configured AND if the user
+has permission to edit the domain. When a sync is performed, the domain
+properties (status, etc.) will be synchronized along with past reports.
 
-To avoid loading the older reports at each change, the information about
-the latest audit is shared with the lower instance. This instances can
+To avoid loading older reports with each change, information about
+the latest audit is shared with the lower instance. The lower instance can
 choose to upload only missing reports.
 
 If a domain is created by a user locally, it will be synchronized.
-However, if it is removed locally -- and this is allowed because no
-reports are present - , the application will try to remove it on the
-higher instance. Please note that it cannot be removed if reports
-already exist, so this remove request may be denied silently.
+However, if it is removed locally (which is allowed when no
+reports are present), the application will attempt to remove it from the
+higher instance. Note that removal cannot be completed if reports
+already exist, so the remove request may be denied silently.
 
-You can also force the synchronization of all domains in the
+You can also force synchronization of all domains from the
 Interoperability page.
 
-![Une image contenant texte, capture d'écran, Police, conception Description générée automatiquement](/images/pingcastle/enterpriseinstall/image85.webp)
+![Interoperability page with option to force synchronization of all domains](/images/pingcastle/enterpriseinstall/image85.webp)
 
-## Synchronization patterns at import time
+### Synchronization patterns at import time
 
-To ensure that the license is enforced, before importing a new report in
-the lower instance, this instance will contact the higher instance to
-make sure that the report does not create domains above the license
+To ensure license enforcement, before importing a new report in
+the lower instance, the instance will contact the higher instance to
+verify that the report does not create domains beyond the license
 limit. If there is a temporary network issue, this check will not be
 performed. If the check denies the import, the report will not be
-imported, and the error will be notified.
+imported and the error will be logged.
 
-Once this check is done, the import is done on the lower instance. Then
-the report is sync at the higher instance. If there is any network issue
-at this moment, the error will be ignored (but report in the logs if
-they are enabled).
+Once this check completes, the import is performed on the lower instance. Then
+the report is synchronized to the higher instance. If there is any network issue
+during this step, the error will be ignored (but logged if
+logging is enabled).
 
-## Connection tests
+### Connection tests
 
-To ensure the connection is well configured, you can Sync a domain using
+To verify the connection is properly configured, you can sync a domain using
 the button described above.
 
 If there is an error, it will be displayed as an exception.
 
 ![](/images/pingcastle/enterpriseinstall/image86.webp)
 
-Beware: the detail of the error may be described in an inner exception
-described below. In this case, this is a DNS issue as the host cannot be
+Note: The error details may be contained in an inner exception
+shown below. In this example, this is a DNS issue where the host cannot be
 found.
 
 ![](/images/pingcastle/enterpriseinstall/image87.webp)
 
-# Troubleshooting
+## Troubleshooting
 
-We recommend starting the application manually to view any problem such
-as:
+### Viewing Application Logs and Errors
 
-- TCP port already used
+When troubleshooting issues with PingCastle Enterprise, you need to view error messages and logs to diagnose problems.
 
-- connection string invalid
+<Tabs>
+<TabItem value="debug" label="Debug Logging" default>
 
-The method to run the application manually is to run the command:
+Enable persistent debug logging to capture detailed application behavior:
+
+1. Log in to the PingCastle Enterprise Server.
+
+2. Locate the appsettings.json file (usually at C:\\PingCastleEnterprise).
+
+3. Edit the **appsettings.json** file so the Logging section looks like this:
+
+```json
+"Logging": {
+  "IncludeScopes": false,
+  "LogLevel": {
+    "Default": "Debug",
+    "System": "Information",
+    "Microsoft": "Information"
+  }
+}
+```
+
+4. From the same directory, open the **web.config** file and edit the **aspNetCore** tag to enable stdout logging:
+
+```xml
+<aspNetCore processPath="dotnet"
+  arguments=".\PingCastleEnterprise.dll" stdoutLogEnabled="true"
+  stdoutLogFile=".\logs\stdout" hostingModel="InProcess" />
+```
+
+5. Open PowerShell as Administrator and run **IISRESET** to restart the web services.
+
+6. Log in and perform actions in the PingCastle Enterprise web portal. Check C:\\PingCastleEnterprise\\logs\\ to review the logs.
+
+</TabItem>
+<TabItem value="manual" label="Run Application Manually">
+
+Run the application manually from the command line to view immediate error output:
 
 ```bash
 dotnet.exe PingCastleEnterprise.dll
@@ -3043,213 +3172,179 @@ dotnet.exe PingCastleEnterprise.dll
 
 **(dotnet.exe is stored by default on c:\\program files\\dotnet)**
 
-Additionnally, you can choose to open the application on the network by
-specifying the \--server.urls parameter:
+To open the application on the network, use the `--server.urls` parameter:
 
 ```bash
 dotnet.exe PingCastleEnterprise.dll --server.urls=http://*:8080
 ```
 
-However, if there is a permission problem in the database, this method
-won\'t display an error because the database will be connected under the
-user context and not the system context. Typically on Windows, the IIS
-service connect under IIS APPPool\\AppName. We recommend to look at the
-following page to grant right to the application pool account on Sql
-Server:
+:::note
+Running manually has limitations. Database permission errors may not appear because the application runs under your user context rather than the IIS application pool identity (typically IIS APPPool\\AppName). For database permission issues, see [this guide](https://blogs.msdn.microsoft.com/ericparvin/2015/04/14/how-to-add-the-applicationpoolidentity-to-a-sql-server-login) on granting rights to the application pool account.
+:::
 
-**https://blogs.msdn.microsoft.com/ericparvin/2015/04/14/how-to-add-the-applicationpoolidentity-to-a-sql-server-login**
+</TabItem>
+</Tabs>
 
-Then depending on the platform additional logs can be stored.
+#### Platform-Specific Logs
 
-On Windows, the web.config file at the root can be edited to generate
-debug logs. The event viewer is also a place where debugging data can be
-stored.
+<Tabs>
+<TabItem value="windows" label="Windows" default>
 
-On Linux, the command `service <name-of-service> status` can indicate if
-the service is running or not. If an error prohibit the start of the
-service, the log is shown.
+- **Event Viewer** stores application errors and warnings
+- **Debug logs** are written to the logs directory when enabled (C:\\PingCastleEnterprise\\logs\\)
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+- Check service status: `service <name-of-service> status`
+- Service logs show startup errors if the service fails to start
 
 ![](/images/pingcastle/enterpriseinstall/image88.webp)
 
-When no log is available, the program can be run manually outside of the
-service scope to have a more detailed error message.
+</TabItem>
+</Tabs>
 
-Example:
+### Common Errors and Solutions
 
-![](/images/pingcastle/enterpriseinstall/image89.webp)
+Here are common errors, their causes, and how to fix them.
 
-Here are a couple of well-known errors, their description and their
-solution
+<details>
+<summary>Incorrect ASP.NET Core Middleware Version</summary>
 
-## Incorrect version of the asp.net core middleware
+These error messages appear when the wrong version of ASP.NET Core is installed:
 
-Here are the messages displayed when running under a service:
+![ASP.NET Core error - HTTP 502.5](/images/pingcastle/enterpriseinstall/image90.webp)
 
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image90.webp)
+![ASP.NET Core error in browser](/images/pingcastle/enterpriseinstall/image91.webp)
 
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image91.webp)
+![ASP.NET Core error details](/images/pingcastle/enterpriseinstall/image92.webp)
 
-![](/images/pingcastle/enterpriseinstall/image92.webp)
+![Event log ASP.NET Core error](/images/pingcastle/enterpriseinstall/image93.webp)
 
-![](/images/pingcastle/enterpriseinstall/image93.webp)
+![Event viewer error message](/images/pingcastle/enterpriseinstall/image94.webp)
 
-![C:\Users\Adiant\AppData\Local\Temp\event_error.webp](/images/pingcastle/enterpriseinstall/image94.webp)
+Command line error messages:
 
-And the message when running on the command line:
+![Command line ASP.NET Core error](/images/pingcastle/enterpriseinstall/image95.webp)
 
-![C:\Users\Adiant\AppData\Local\Temp\dotnet_pingastleenterprise.dll.webp](/images/pingcastle/enterpriseinstall/image95.webp)
+![Missing KB error message](/images/pingcastle/enterpriseinstall/image96.webp)
 
-![](/images/pingcastle/enterpriseinstall/image96.webp)
+**Solution:**
 
-Solution:
-
-identify the correct version of the framework and install it. Do not
-forget to install the IIS middleware is you are installing on IIS.
+Identify the correct version of the ASP.NET Core framework and install it. If deploying to IIS, install the ASP.NET Core Hosting Bundle.
 
 :::note
 The last error was related to the missing KB KB2533623
 :::
 
-## Missing web.config
+</details>
 
-If the web.config is missing or if it does not load the .net module,
-like in this example,
+<details>
+<summary>Missing web.config</summary>
 
-![](/images/pingcastle/enterpriseinstall/image97.webp)
+If the web.config file is missing or doesn't load the .NET module correctly, the web server will treat the application as a static file and return a 404 error.
 
-The webserver will process the program as normal file. The url to login
-will be displayed as a 404 error.
+![Missing web.config error in IIS](/images/pingcastle/enterpriseinstall/image97.webp)
 
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image98.webp)
+![404 error from missing web.config](/images/pingcastle/enterpriseinstall/image98.webp)
 
-The solution is to copy the web.config from our download website and to
-replace the existing one.
+**Solution:**
 
-## Error at the application startup
+Download the correct web.config file from the PingCastle website and replace the existing one.
 
-When the application is unable to start, the following message are
-shown:
+</details>
 
-![C:\Users\Adiant\AppData\Local\Temp\brower_error.webp](/images/pingcastle/enterpriseinstall/image99.webp)
+<details>
+<summary>Application Startup Errors</summary>
 
-![C:\Users\Adiant\AppData\Local\Temp\event1000.webp](/images/pingcastle/enterpriseinstall/image100.webp)
+When the application fails to start, generic error messages appear in the browser and event logs:
 
-A more detailed message are shown in the event log or directly on the
-command line:
+![HTTP Error 500.0 in browser](/images/pingcastle/enterpriseinstall/image99.webp)
 
-![C:\Users\Adiant\AppData\Local\Temp\event1026.webp](/images/pingcastle/enterpriseinstall/image101.webp)
+![Event log error 1000](/images/pingcastle/enterpriseinstall/image100.webp)
 
-In this case, the license was invalid and need to be replaced in the
-file appsettings.json.
+More detailed error messages can be found in the event log or by running the application manually:
 
-## Accurate permissions on the database
+![Event log error 1026 - license invalid](/images/pingcastle/enterpriseinstall/image101.webp)
 
-When the database doesn\'t contain the table needed, the application
-tries to create them. If the permissions are not granted, a message will
-be generated and the application will not be able to start.
+**Common causes:**
 
-![C:\Users\Adiant\AppData\Local\Temp\sql_auth_error.webp](/images/pingcastle/enterpriseinstall/image102.webp)
+- Invalid license key in appsettings.json
+- Missing or misconfigured application settings
+- Runtime dependencies not installed
 
-Solution:
+**Solution:**
 
-Grant the right to create tables in the database or run a SQL script to
-create this table. This script is available on demand.
+Check the detailed error message and correct the issue. For license errors, verify and update the license key in [appsettings.json](appsettings.json).
 
-Do not forget that the inability to create table can be seen of a
-symptom of a lack of permissions. The inability to add or remove records
-in the database will prohibit the use of the application.
+</details>
 
-If you are running PingCastle from another SQL Server, the default
-identity used by the application pool will not be granted access.
+<details>
+<summary>Database Permissions</summary>
 
-Be sure you are able to connect from another computer than your SQL
-database server. Indeed, by default you have a firewall preventing
-remote connection and that the database may not be exposed. Be sure that
-it is available through TCP. (in the following case, remote access is
-forbidden because TCP/IP is disabled)
+The application requires database permissions to create tables and modify data. If these permissions aren't granted, the application will fail to start.
 
-![](/images/pingcastle/enterpriseinstall/image103.webp)
+![SQL Server authentication error](/images/pingcastle/enterpriseinstall/image102.webp)
 
-You have 2 solutions to grant PingCastle an identity allowed on SQL
-Server:
+**Requirements:**
 
-changing the application pool identity to match an active directory user
-which are granted permissions to the database
+- Permission to create tables (required on first run)
+- Permission to insert, update, and delete records
+- TCP/IP connectivity enabled on SQL Server
+- Firewall configured to allow remote connections (if SQL Server is on a different machine)
 
-![](/images/pingcastle/enterpriseinstall/image104.webp)
+**Important:** The application pool identity needs these permissions, not your user account. When running under IIS, the identity is typically `IIS APPPool\AppName`.
 
-![](/images/pingcastle/enterpriseinstall/image105.webp)
+![SQL Server TCP/IP disabled in configuration](/images/pingcastle/enterpriseinstall/image103.webp)
 
-![](/images/pingcastle/enterpriseinstall/image106.webp)
+**Solution 1: Change Application Pool Identity**
 
-You can use a SQL Server local account and specify its login password in
-the connection string
+Configure the IIS application pool to run as an Active Directory user that has database permissions:
 
-Edit the application.setting file and locate the connection string. Then
-add `;User ID=sa;Password=pass123`
+![IIS Application Pool Advanced Settings](/images/pingcastle/enterpriseinstall/image104.webp)
 
-![](/images/pingcastle/enterpriseinstall/image107.webp)
+![Application Pool Identity dialog](/images/pingcastle/enterpriseinstall/image105.webp)
 
-![](/images/pingcastle/enterpriseinstall/image108.webp)
+![Custom account credentials dialog](/images/pingcastle/enterpriseinstall/image106.webp)
 
-## Enable Debug Logging
+**Solution 2: Use SQL Server Authentication**
 
-Follow the steps to enable debug logging.
+Add SQL Server credentials to the connection string in [appsettings.json](appsettings.json):
 
-1.  Log in to the PingCastle Enterprise Server.
-
-2.  Locate the appsettings.json file.
-
-3.  This is usually located at: C:\\PingCastleEnterprise
-
-4.  Edit the **Appsettings.json** file so the Logging Section looks like
-    the example below:
-
-```json
-"Logging": {
-"IncludeScopes": false,
-"LogLevel": {
-"Default": "Debug",
-"System": "Information",
-"Microsoft": "Information"
-}
-}
+```
+;User ID=sa;Password=pass123
 ```
 
-5.  From the same directory, open the **web.config** file and edit the
-    **aspNetCore** tag so **stdoutLogEnabled=true**.
+![Connection string in appsettings.json](/images/pingcastle/enterpriseinstall/image107.webp)
 
-**Example**
+![SQL Server connection with authentication](/images/pingcastle/enterpriseinstall/image108.webp)
 
-```xml
-<aspNetCore processPath="dotnet"
-arguments=".\PingCastleEnterprise.dll" stdoutLogEnabled="true"
-stdoutLogFile=".\logs\stdout" hostingModel="InProcess" />
-```
+**Alternative:** If you prefer not to grant table creation permissions, contact support to obtain a SQL script that creates the required tables manually.
 
-6.  Open PowerShell as Administrator and type in **IISRESET** to restart
-    the web services.
+</details>
 
-7.  Log in and perform actions in the PingCastle Enterprise web portal.
-    Check C:\\PingCastleEnterprise\\logs\\ to ensure logs are being
-    written.
+# Emergency Procedures
 
-# Emergency procedures
+### Reset Administrator Password
 
-If there are no more administrator available (password forgotten or
-having left the company), PingCastle can be set in the Initialization
-mode again to set a new administrator password.
+If no administrators are available (password forgotten or the administrator has left the company), you can reset PingCastle to Initialization mode to create a new administrator account.
 
-Open the database and open the table `AspNetUsers`. Locate the
-account, for example using its email, and delete the associated line.
+**Steps:**
+
+1. Open your database management tool and navigate to the `AspNetUsers` table.
+
+2. Locate the administrator account (use the email address to find it) and delete that row.
 
 ![](/images/pingcastle/enterpriseinstall/image109.webp)
 
 ![](/images/pingcastle/enterpriseinstall/image110.webp)
 
-At the next login, the application will detect that there is no more
-administrator configured in the application and will switch to the
-initialization view to create one.
+3. Restart the PingCastle Enterprise application.
 
-All other data such as users, domains or reports will not be deleted
-from the database.
+4. On the next visit to the web portal, the application will detect that no administrator exists and automatically switch to initialization mode.
+
+5. Follow the prompts to create a new administrator account.
+
+:::note
+This procedure only removes the administrator account. All other data (users, domains, reports) remains intact in the database.
+:::
