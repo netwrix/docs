@@ -691,16 +691,25 @@ The list of components used by PingCastle, but not limited to, is:
 - [Bootstrap](https://getbootstrap.com/) licensed under the [MIT
   license](https://tldrlegal.com/license/mit-license)
 
-- [DataTables](https://datatables.net/) licensed under the [MIT
+- [Bootstrap Table](https://bootstrap-table.com/) licensed under the [MIT
+  license](https://tldrlegal.com/license/mit-license)
+
+- [Bootstrap Table Export](https://bootstrap-table.com/) licensed under the [MIT
+  license](https://tldrlegal.com/license/mit-license)
+
+- [Table Export](https://github.com/hhurz/tableExport.jquery.plugin/) licensed under the [MIT
   license](https://tldrlegal.com/license/mit-license)
 
 - [Popper.js](https://popper.js.org/) licensed under the [MIT
   license](https://tldrlegal.com/license/mit-license)
 
-- [JQuery](https://jquery.org) licensed under the [MIT
+- [Vis.js](http://visjs.org//) licensed under the [MIT
   license](https://tldrlegal.com/license/mit-license)
 
-- [vis.js](http://visjs.org/) licensed under the [MIT
+- [jQuery](https://jquery.org/) licensed under the [MIT
+  license](https://tldrlegal.com/license/mit-license)
+
+- [Font-Awesome](https://fontawesome.com/) licensed under the [MIT
   license](https://tldrlegal.com/license/mit-license)
 
 ## Scheduling PingCastle Scans
