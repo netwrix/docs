@@ -2856,7 +2856,7 @@ Save the output, especially the Client Secret if using secret-based authenticati
 
 #### Updating appsettings.json
 
-After completing either the manual or PowerShell configuration, update your PingCastle Enterprise [appsettings.json](enterpriseinstall.md#L1980) file:
+After completing either the manual or PowerShell configuration, update your PingCastle Enterprise appsettings.json file:
 
 **Example configuration with Client Secret:**
 
