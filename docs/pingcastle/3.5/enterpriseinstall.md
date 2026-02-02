@@ -3275,7 +3275,7 @@ More detailed error messages can be found in the event log or by running the app
 
 **Solution:**
 
-Check the detailed error message and correct the issue. For license errors, verify and update the license key in [appsettings.json](appsettings.json).
+Check the detailed error message and correct the issue. For license errors, verify and update the license key in appsettings.json.
 
 </details>
 
