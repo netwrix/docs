@@ -1,177 +1,322 @@
 # PingCastle Enterprise Installation and Configuration
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Description
 
 PingCastle Enterprise is a tool designed to improve and follow the
 Active Directory overall security level. This software has been
 developed to be compatible with most of the possible existing
-configurations. The goal (when the tool was created) was not to aim for
-perfection, but to provide reliable data to present the situation to the
-management, thus improving over time.
-
-# Requirements
-
-**System Specifications**
-
-The Operating systems supported are:
-
-- For PingCastle scanning functions:
-
-  - All operating systems starting from Windows 2000 or subsequent
-
-- For PingCastle Enterprise:
-
-  - All operating systems starting from Windows 10 22H2 / Windows 2012
-    (with extended security updates) or subsequent, where the asp.net
-    8.0 is supported
-
-  - On demand, it is possible to include any operating systems,
-    including Linux, if it is supported by asp.net core 8.0
-
-See the [Windows Lifecycle Fact Sheet](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)
-for details regarding each Windows release lifecycle.
-
-See the .NET 8.0 Supported Operating System documentation [here](https://learn.microsoft.com/en-us/dotnet/core/install/windows#supported-versions).
-
-## Database
-
-PingCastle Enterprise is using a database to store its data.
-
-The current supported databases are:
-
-- Any supported editions of SQL Server (including SQL Server Express)
-
-1.  Any database supported by \"Entity Framework Core 2\" (SQLite,
-    MySQL, \...) may be supported on demand. Please contact us for more
-    information.
-
-## External System Dependencies
-
-PingCastle Basic and PingCastle Professional require \"dotnet framework
-2.0\" or subsequent versions.
-
-PingCastle Enterprise is using the \"asp.net core 8.0 framework\" still
-relying on \"dotnet standard 2.0\".
-
-1.  It is recommended to not expose web application but to use reverse
-    proxy like IIS, Apache2 or Nginx.
-
-## Third party authentication system
-
-PingCastle Basic and PingCastle Professional relies on the Windows
-account to perform scans and do not use third party authentication
-system.
-
-PingCastle Enterprise supports authentication with third party systems
-on demand. OpenID is supported and provides authentication with services
-like Azure AD, Okta, \...
-
-## License
-
-PingCastle Enterprise is licensed based on the number of domains managed
-and has licenses available up to unlimited. The number of domains
-include subdomains of a forest.
-
-2.  The number of Domain Controllers are not used for licensing, only
-    domains.
-
-Enterprise licenses are bundled in packs of 10 domains, up to 60, with
-an unlimited license thereafter.
-
-**Example**
-
-If you have consto.com with two subdomains called uk.consto.com and
-us.consto.com, then you would require the 10-domain licensing pack.
-
-# Architecture
-
-PingCastle is using a distributed architecture.
-
-The PingCastle Basic / Pro can be considered as a stand alone agent. The
-program executes an assessment of the Active Directory and produces a
-report. This report is in two forms: a xml file and a html file. These
-two files provide two representations of the same data. By default the
-.xml file is being filtered to remove potential private data such as
-account name from this collected data. This filter can be deactivated by
-running the program with the flag \--level Full.
-
-Then the data contained in the xml file is pushed into PingCastle
-Enterprise directly via the API, or indirectly via an indirect import
-such as email. In this case the data may be encrypted to ensure the
-confidentiality of the data.
-
-![](/images/pingcastle/enterpriseinstall/image3.webp)
-
-Then the PingCastle Enterprise provide the services around the data and
-store it in the database.
-
-# Quick Installation
-
-PingCastle Enterprise supports a setup where the requirements and
-manipulations have been minimized. This scenario is recommended for
-tests but not in production because all IIS and SQL Server upgrade
-mechanisms are not supported.
+configurations. The goal is to provide reliable data to present the situation to the
+management, enabling continuous improvement over time.
 
 ## Requirements
 
-It requires:
+**System Specifications**
 
-- IIS being installed (it is a Windows component)
+PingCastle Enterprise requires:
 
-- An SQL database such as SQL Express being installed
+- Windows Server operating systems that support ASP.NET 8.0
+  - Windows Server 2012 R2
+  - Windows Server 2016
+  - Windows Server 2019
+  - Windows Server 2022 (recommended)
+  - Windows Server 2025 (recommended)
 
-- The asp.net core 8.0 \"Hosting Bundle\" available at:
+For more information on Windows Server support lifecycles, refer to the [Windows Lifecycle Fact Sheet](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
+
+For ASP.NET 8.0 operating system compatibility, refer to the [.NET 8.0 supported OS documentation](https://learn.microsoft.com/en-us/dotnet/core/install/windows#supported-versions).
+
+**PingCastle.exe**
+
+The PingCastle.exe scanner has an embedded ASP.NET package and can run on any Windows operating system without additional dependencies.
+
+### Database
+
+PingCastle Enterprise requires a Microsoft SQL Server database to store its data.
+
+Supported database editions:
+
+- **SQL Server Express**: Suitable for testing and lite user environments
+- **SQL Server Standard**: Recommended for production environments as needed
+- **SQL Server Enterprise**: Supported for high-availability production environments
+
+PingCastle Enterprise uses Entity Framework Core 2 for database operations. Partial support for PostgreSQL is provided on a best effort basis at this stage. Other database engines are not specifically supported.
+
+### External System Dependencies
+
+PingCastle Enterprise requires:
+
+- **ASP.NET 8.0 Hosting Bundle**: Required for hosting the web application
+- **IIS (Internet Information Services)**: Used as the web server with Windows Authentication enabled by default
+
+:::info
+The ASP.NET 8.0 Hosting Bundle should be installed before configuring IIS to ensure proper module registration. If installed in the wrong order, run a repair on the ASP.NET 8.0 Hosting Bundle to resolve any issues.
+:::
+
+### Logon Providers
+
+PingCastle Enterprise supports multiple authentication methods:
+
+- **Local Authentication**: Built-in username and password authentication
+- **Windows Authentication**: Integrated Windows authentication using Active Directory credentials
+- **OpenID Connect**: Standards-based authentication with identity providers such as Entra ID, Okta, and others
+- **SAML2**: SAML 2.0 federation for enterprise single sign-on solutions
+
+## License
+
+<Tabs>
+  <TabItem value="current" label="Current (3.5+)" default>
+
+Licenses are issued per user with soft limits on domain and user counts. Contact your sales representative for details on the licensing structure.
+
+  </TabItem>
+  <TabItem value="legacy" label="Legacy (Versions prior to 3.5)">
+
+Licenses are based on the number of domains managed, with licenses available up to unlimited. The number of domains includes subdomains of a forest.
+
+- Domain Controllers are not counted for licensing purposes, only domains
+- Licenses are bundled in packs of 10 domains, up to 60, with an unlimited license thereafter
+
+**Example**: If you have contoso.com with two subdomains called uk.contoso.com and us.contoso.com, this would require a 10-domain licensing pack.
+
+  </TabItem>
+</Tabs>
+
+## Architecture
+
+PingCastle Enterprise uses a distributed architecture where the scanner (PingCastle.exe) performs Active Directory assessments and sends reports to the central Enterprise server for analysis, storage, and visualization.
+
+### Architecture Overview
+
+```mermaid
+graph LR
+    subgraph Core["Active Directory Domain"]
+        direction TB
+        Enterprise["🏢 PingCastle Enterprise<br/>IIS + SQL Server<br/>HTTPS: 443"]
+        DB[("💾 SQL Server<br/>Database")]
+        Scheduler["⚙️ Scheduler<br/>PingCastle.exe"]
+        LocalAD{{"🌐 Local<br/>Active Directory"}}
+        
+        Users["👥 Users"] -->|HTTPS| Enterprise
+        Enterprise -->|Stores| DB
+        Scheduler -->|Scans| LocalAD
+        Scheduler -->|Uploads| Enterprise
+    end
+    
+    subgraph Trusted["Trusted Domains"]
+        TrustedAD{{"🔗 External Domains<br/>via AD Trusts"}}
+    end
+    
+    subgraph Disconnected["Disconnected/Air-Gapped Domain"]
+        direction TB
+        IsolatedAD{{"🔒 Isolated<br/>Active Directory"}}
+        RemoteScanner["⚙️ PingCastle.exe<br/>Scheduled Scan"]
+        
+        RemoteScanner -->|Scans| IsolatedAD
+    end
+    
+    Scheduler -.->|Scans via<br/>Trust| TrustedAD
+    RemoteScanner -.->|🔌 API Upload<br/>HTTPS Port 443| Enterprise
+    RemoteScanner -.->|💾 Manual Transfer<br/>USB/Email/XML| Enterprise
+    
+    style Enterprise fill:#2196F3,color:#fff,stroke:#1976D2,stroke-width:3px
+    style DB fill:#4CAF50,color:#fff,stroke:#388E3C,stroke-width:2px
+    style Scheduler fill:#FF9800,color:#fff,stroke:#F57C00,stroke-width:2px
+    style RemoteScanner fill:#FF9800,color:#fff,stroke:#F57C00,stroke-width:2px
+    style LocalAD fill:#9C27B0,color:#fff,stroke:#7B1FA2,stroke-width:2px
+    style TrustedAD fill:#9C27B0,color:#fff,stroke:#7B1FA2,stroke-width:2px
+    style IsolatedAD fill:#E91E63,color:#fff,stroke:#C2185B,stroke-width:2px
 
 ```
-  https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+
+### Key Components
+
+#### PingCastle Enterprise Server
+
+- Hosted on IIS with Windows Authentication
+- Requires SQL Server database for data storage
+- Accessible via HTTP/HTTPS (ports 80/443)
+- Provides web interface for administrators and users
+- Built-in scheduler for automated scanning of local and trusted domains
+
+#### PingCastle.exe Scanner
+
+- Standalone executable with embedded .NET runtime
+- Performs Active Directory security assessments
+- Generates reports in XML and HTML formats
+- Can run on any Windows system
+- Requires standard Active Directory ports (389, 636, 88, 3268, 3269)
+
+#### Report Upload Methods
+
+**API Upload (Connected Domains)**
+- PingCastle.exe connects directly to Enterprise server via HTTPS (port 443)
+- Automated upload after scan completion
+- Requires API key configuration
+- Real-time data synchronization
+
+**Manual Transfer (Disconnected Domains)**
+- Export XML reports from isolated environments
+- Transfer via USB drive, email, or secure file transfer
+- Import through Enterprise web interface
+- Suitable for air-gapped or highly secure networks
+
+#### Network Ports
+
+##### PingCastle Enterprise Server
+
+| Service | Port | Protocol | Notes |
+|---------|------|----------|-------|
+| HTTP | 80 | TCP | Optional, typically redirected to HTTPS |
+| HTTPS | 443 | TCP | Recommended |
+
+##### Active Directory Scanning
+
+| Service | Port(s) | Protocol | Notes |
+|---------|---------|----------|-------|
+| LDAP | 389 | TCP/UDP | |
+| LDAPS | 636 | TCP | |
+| Kerberos | 88 | TCP/UDP | |
+| Global Catalog | 3268, 3269 | TCP | |
+| DNS | 53 | TCP/UDP | |
+| SMB | 445 | TCP | |
+
+
+## Quick Installation
+
+
+<Tabs>
+  <TabItem value="production" label="Production Installation" default>
+
+Follow these steps for a production-ready installation of PingCastle Enterprise.
+
+#### Prerequisites
+
+1. Download the PingCastle Enterprise MSI Installer
+2. Windows Server (see [Requirements](#requirements) section)
+3. SQL Server (Express, Standard, or Enterprise)
+
+#### Installation Steps
+
+#### Step 1: Install IIS with Windows Authentication
+
+Install the IIS Web Server Role with Windows Authentication feature:
+
+```powershell
+dism /online /enable-feature /featurename:IIS-WebServerRole /featurename:IIS-WebServerManagementTools /featurename:IIS-ManagementConsole /featurename:IIS-WindowsAuthentication
 ```
 
-![A screenshot of a computer Description automatically generated](/images/pingcastle/enterpriseinstall/image4.webp)
+#### Step 2: Install ASP.NET 8 Hosting Bundle
 
-1.  IIS should be installed before the ASP.NET 8.0 Hosting Bundle. If
-    not, then the Hosting Bundle installation may be required to be
-    repaired.
+Download and install the [ASP.NET 8 Hosting Bundle](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
 
-![A screenshot of a computer Description automatically generated](/images/pingcastle/enterpriseinstall/image5.webp)
+:::warning
+IIS must be installed **before** the ASP.NET 8.0 Hosting Bundle. If installed in the wrong order, repair the Hosting Bundle installation to ensure proper module registration.
+:::
 
-## Procedure
+#### Step 3: Install SQL Server
 
-The MSI file guides the installation of the software:
+Install SQL Server (Express, Standard, or Enterprise edition) based on your needs. See the [Database](#database) section for guidance on which edition to choose.
 
-![](/images/pingcastle/enterpriseinstall/image6.webp)
+For SQL Express, visit [SQL Server Express Downloads](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver16).
 
-![](/images/pingcastle/enterpriseinstall/image7.webp)
+#### Step 4: Run the MSI Installer
 
-Once the license terms are accepted, the software requires a license key
-which should have been distributed alongside the MSI files.
+1. Launch the PingCastle Enterprise MSI installer
+2. Accept the license terms
+3. Enter your license key (provided by PingCastle support or licensing teams)
 
-![](/images/pingcastle/enterpriseinstall/image8.webp)
+:::info
+If the license key is missing, contact PingCastle support or your account manager.
+:::
 
-3.  If the license key is missing, reach out PingCastle support
+#### Step 5: Configure Database Connection
 
-There are two options to configure the database:
+During installation, choose one of two database configuration options:
 
-- Using a connection string provided directly by the user
+**Option A: Let the installer create the database**
+- Provide SQL Server connection details
+- Installer creates the database and grants permissions automatically
 
-- Using a connection to a database: it implies the software will create
-  the database on behalf of the user
+**Option B: Provide a custom connection string**
+- Use an existing database
+- Provide the complete connection string
 
-![](/images/pingcastle/enterpriseinstall/image9.webp)
+The installer will automatically configure IIS, create the application pool, and set up database permissions.
 
-Option which creates the database:
+:::note
+When the software is uninstalled, the database is **not** automatically removed.
+:::
 
-Option with the direct connection string:
+:::tip Remote SQL Server Setup
+If you're configuring a remote SQL Server (not on the local machine), see the [Remote Database Configuration](#remote-database-configuration-manual-installation) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
+:::
 
-![](/images/pingcastle/enterpriseinstall/image10.webp)
+  </TabItem>
+  <TabItem value="testpoc" label="Test/POC Installation">
 
-![](/images/pingcastle/enterpriseinstall/image11.webp)
+For testing and proof-of-concept environments, you can streamline the installation process using automation tools.
 
-The setup configures automatically the website, the database, the
-application and if the database is being created, grant the permission
-to the database to IIS (application pool)
+:::warning
+This simplified setup is recommended for **testing only**. For production environments, use the Production Installation tab for proper configuration and upgrade support.
+:::
 
-2.  When the software is removed, the setup DOES NOT remove the
-    database.
+#### Prerequisites
+
+1. Download the PingCastle Enterprise MSI Installer
+2. Windows Server or Windows 10/11
+3. Administrative PowerShell access
+
+#### Installation Steps
+
+#### Step 1: Install IIS with Windows Authentication
+
+```powershell
+dism /online /enable-feature /featurename:IIS-WebServerRole /featurename:IIS-WebServerManagementTools /featurename:IIS-ManagementConsole /featurename:IIS-WindowsAuthentication
+```
+
+#### Step 2: Install ASP.NET 8 Hosting Bundle
+
+```powershell
+# Direct Download Link 8.0.23
+$Uri = "https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-8.0.23-windows-hosting-bundle-installer"
+$DownloadDirectory = "C:\Tools"
+$Executable = "$DownloadDirectory\aspnet8.exe"
+if(-Not (Test-Path $DownloadDirectory)){ mkdir $DownloadDirectory }
+# Download
+Invoke-WebRequest -Uri $Uri -OutFile "$Executable"
+# Install
+& $Executable /install /quiet
+```
+
+#### Step 3: Install SQL Server Express with Chocolatey
+
+For test and POC systems, you can use [Chocolatey](https://chocolatey.org/) to automate SQL Server Express installation:
+
+```powershell
+# REQUIRES Administrative PowerShell
+# Install Chocolatey (https://chocolatey.org/install)
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+# Install SQL Server Express (https://community.chocolatey.org/packages/sql-server-express)
+choco install sql-server-express
+```
+
+#### Step 4: Run the MSI Installer
+
+1. Launch the PingCastle Enterprise MSI installer
+2. Follow the installation wizard
+3. Enter your license key
+4. Configure the database connection (typically using the local SQL Express instance)
+
+:::tip Remote SQL Server Setup
+If you're configuring a remote SQL Server instead of using the local instance, see the [Remote Database Configuration](#remote-database-configuration-manual-installation) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
+:::
+
+  </TabItem>
+</Tabs>
 
 # Various options
 
@@ -193,342 +338,1290 @@ expected html is using the [bootstrap](https://getbootstrap.com/) css
 styles. Also due to the CSP protection, you cannot inject custom CSS or
 JAVASCRIPT.
 
-# Post Installation - Scheduler
+## Post Installation - Common Steps
 
-**Quick installation**
+### IIS Maximum Upload Configuration
 
-PingCastle allows the possibility to the administrator of the
-application to schedule scans. It is useful when the solution is
-installed in a central forest and the need is to scan all child domains.
-
-By default, PingCastle is running as a limited user. It cannot access
-the network nor modify system settings. To use the scheduler,
-permissions need to be changed.
-
-The easiest way is to change the user from Application to LocalSystem.
-
-Open the IIS console and go to the application pools settings. Go to
-advanced settings.
-
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image14.webp)
-
-Find the Identity setting and change ApplicationPoolIdentity to
-LocalSystem.
-
-![](/images/pingcastle/enterpriseinstall/image15.webp)
-
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image16.webp)
-
-Then restart the application pool.
-
-If you are using a custom identity for the application pool (to access a
-database hosted in another server), you have to promote this user as
-local admin. This is a Windows restriction of the permission model and
-the access to the task scheduler cannot be delegated.
-
-## Custom installation
-
-:::note
-PingCastle is using behing the hood a folder named "PingCastle" in
-the task scheduler. We will use the COM api as it exposes the security
-descriptor -- which is not the case of the native PowerShell APIL
-:::
-
-If you want PingCastle to be able to start or stop tasks but not being
-able to edit them (it requires that the account is local admin), you
-need to delegate the permission to start and run tasks. You can perform
-the following actions as admin in powershell:
+The default IIS upload limit may need to be increased to accommodate large report files. While there are multiple methods to configure this setting (web.config, IIS Manager), the simplest approach is using PowerShell:
 
 ```powershell
-# connect to the task scheduler service
+Import-Module WebAdministration
 
-$scheduleObject = New-Object -ComObject schedule.service
+$siteName   = "PingCastleEnterprise"
+$newLimit   = 1GB   # Byte value - PowerShell converts this automatically
 
-$scheduleObject.connect()
+Set-WebConfigurationProperty `
+  -PSPath "IIS:\Sites\$siteName" `
+  -Filter "system.webServer/security/requestFiltering/requestLimits" `
+  -Name "maxAllowedContentLength" `
+  -Value $newLimit
+```
 
-$rootFolder = $scheduleObject.GetFolder("")
+:::info
+For more information on alternative configuration methods, search for "maxAllowedContentLength" in IIS documentation.
+:::
 
-$PingCastleFolder = $rootFolder.GetFolder("PingCastle")
+### Manual Report Import Size Limit
 
-$PingCastleFolder.GetTasks(1) | Foreach-Object {
+If you need to import reports larger than 200MB manually, you'll need to adjust the client-side file size limit:
 
-$sddl = $_.GetSecurityDescriptor(1+2+4+8)
+1. Open the JavaScript configuration file at:
+   ```
+   C:\Program Files\Netwrix\PingCastleEnterprise\wwwroot\js\Reports\import.js
+   ```
 
-# add full control to the task
+2. Locate the `maxFilesize` parameter and change it from `200` to `1024` (or your desired limit in MB):
+   ```javascript
+   maxFilesize: 1024  // Changed from 200 to 1024 MB
+   ```
 
-$sddl += "(A;S-1-XXX-XXX-XXX;FA;;;SY)"
+:::warning
+This setting only affects the client-side validation. Ensure your IIS upload limit (configured above) is set appropriately to handle files of this size.
+:::
 
-$_.SetSecurityDescriptor($sddl, 0)
+:::note
+This setting is only for the UI-Based imports.
+:::
 
+### Automatic Forest Exploration Setup
+
+For large environments, you can simplify scan configuration by using automatic forest exploration. This allows PingCastle to discover and scan all domains within a forest automatically using a wildcard in the `--server` parameter.
+
+#### Manual Execution
+
+To manually scan all domains in a forest:
+
+```powershell
+PingCastle.exe --healthcheck --server *.domain.fqdn --Level Full
+```
+
+Replace `domain.fqdn` with your actual forest root domain name.
+
+#### Automated Execution (Agent Setup)
+
+For scheduled scans with automatic upload to PingCastle Enterprise:
+
+```powershell
+PingCastle.exe --healthcheck --server *.domain.fqdn --Level Full --api-endpoint https://pingcastle.yourdomain.fqdn --api-key <Key from Configuration -> Agents with upload permission> --out "SchedulerLogs\<fqdn>.txt"
+```
+
+**Parameters:**
+- `*.domain.fqdn` - Wildcard pattern to scan all domains in the forest
+- `--api-endpoint` - URL of your PingCastle Enterprise server
+- `--api-key` - API key created in Configuration → Agents with upload permission
+- `--out` - Log file path for the scan output
+
+:::tip
+The wildcard pattern `*.domain.fqdn` will automatically discover and scan all child domains within the specified forest, eliminating the need to configure individual domain scans.
+:::
+
+### Scheduler Configuration
+
+PingCastle Enterprise includes a built-in scheduler to automate scans. This is particularly useful when the solution is installed in a central forest and needs to scan all child domains automatically.
+
+#### Permission Requirements
+
+To use the scheduler, the application pool identity must have **local administrator permissions** on the server. This is a Windows requirement for creating and managing tasks in the Microsoft Windows Task Scheduler.
+
+By default, PingCastle runs as a limited user (ApplicationPoolIdentity), which cannot access the network or modify system settings. Choose one of the following configuration options:
+
+<Tabs>
+<TabItem value="localsystem" label="LocalSystem Identity" default>
+
+The easiest approach is to change the application pool identity from ApplicationPoolIdentity to LocalSystem:
+
+1. Open the IIS console and navigate to **Application Pools**
+2. Select the PingCastle Enterprise application pool
+3. Click **Advanced Settings**
+
+   ![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image14.webp)
+
+4. Find the **Identity** setting and change it to **LocalSystem**
+
+   ![](/images/pingcastle/enterpriseinstall/image15.webp)
+
+   ![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseinstall/image16.webp)
+
+5. Restart the application pool
+
+</TabItem>
+<TabItem value="custom" label="Custom Application Pool Identity">
+
+If you prefer to use a custom application pool identity such as a Group Managed Service Account (gMSA), Managed Service Account (MSA), or a domain user, this approach provides a middle ground between using LocalSystem (Option 1) and the Least Privilege Setup (Option 3).
+
+#### When to Use a Custom Identity
+
+A custom identity is particularly useful when:
+
+- **Accessing a remote SQL Server database**: The custom account can use Windows Authentication to connect to SQL Server on another server
+- **Implementing specific security policies**: Your organization requires domain accounts instead of built-in system accounts
+- **Centralizing service account management**: Using gMSAs provides automatic password management and enhanced security
+- **Using with Least Privilege Option**: This account can be combined with the least privilege option to set up tasks with specific permissions
+
+#### Understanding Application Pool Identity
+
+The application pool identity is the Windows account that PingCastle Enterprise runs as. This account determines what network resources (like remote databases) and local resources (like the Task Scheduler) PingCastle can access.
+
+#### Account Types
+
+You can use any of the following account types as a custom identity:
+
+- **Domain User Account**: Standard Active Directory user account
+- **Managed Service Account (MSA)**: Single-server service account with automatic password management
+- **Group Managed Service Account (gMSA)**: Multi-server service account with automatic password management (recommended for production)
+
+:::tip
+gMSAs are recommended for production environments as they provide automatic password management and enhanced security without manual password rotation.
+:::
+
+#### Configuration Steps
+
+#### Step 1: Create or Identify the Service Account
+
+**For Group Managed Service Account (gMSA):**
+```powershell
+# Create a gMSA in Active Directory
+New-ADServiceAccount -Name PingCastleSvc `
+    -DNSHostName server.domain.local `
+    -PrincipalsAllowedToRetrieveManagedPassword "PingCastleServers"
+
+# Install the gMSA on the server
+Install-ADServiceAccount -Identity PingCastleSvc
+```
+
+**For standard domain account:**
+Create a regular user account in Active Directory with a strong password and set it to never expire.
+
+#### Step 2: Grant Local Administrator Permissions
+
+Add the account to the local **Administrators** group on the PingCastle Enterprise server. This is required for the Task Scheduler to create and manage scheduled tasks (this is a Windows restriction due to the Task Scheduler permission model).
+
+```powershell
+# Add domain account to local Administrators group
+Add-LocalGroupMember -Group "Administrators" -Member "DOMAIN\PingCastleSvc"
+```
+
+#### Step 3: Configure the Application Pool in IIS
+
+1. Open the IIS console and navigate to **Application Pools**
+2. Select the PingCastle Enterprise application pool
+3. Click **Advanced Settings**
+4. Find the **Identity** setting and change it to **Custom account**
+5. Enter the credentials:
+   - **For domain users**: `DOMAIN\username` and password
+   - **For gMSA/MSA**: `DOMAIN\accountname$` (note the `$` suffix, leave password blank)
+6. Click **OK**
+
+#### Step 4: Configure SQL Server Access (Optional)
+
+If using a remote SQL Server database, grant the custom identity permissions:
+
+```sql
+-- Create login for the service account
+CREATE LOGIN [DOMAIN\PingCastleSvc] FROM WINDOWS;
+
+-- Grant database access
+USE PingCastleEnterprise;
+EXEC sp_addrolemember 'db_owner', 'DOMAIN\PingCastleSvc';
+```
+
+Update your connection string to use Windows Authentication:
+```
+Server=sqlserver.domain.local;Database=PingCastle;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=True;TrustServerCertificate=True
+```
+
+#### Step 5: Restart the Application Pool
+
+```powershell
+Restart-WebAppPool -Name "PingCastleEnterprise"
+```
+
+#### Hybrid Approach: Custom Identity + Least Privilege
+
+You can combine a custom identity with the Least Privilege Setup (Option 3) for enhanced security:
+
+1. **Use a custom identity without local administrator rights** for the application pool
+2. **Create scheduled tasks manually** using an administrator account (or separate privileged account)
+3. **Grant the custom identity only start/stop permissions** on the scheduled tasks using the PowerShell script from Option 3
+4. The custom identity can run PingCastle Enterprise and manage tasks without full administrator privileges
+
+This hybrid approach provides:
+- Remote database access via Windows Authentication
+- Minimal permissions for Task Scheduler operations
+- Centralized service account management with gMSA
+- Enhanced security posture
+
+See **Least Privilege Setup** tab for the PowerShell scripts to grant task permissions.
+
+</TabItem>
+<TabItem value="leastprivilege" label="Least Privilege Setup">
+
+If you want to minimize the permissions granted to the application pool identity, you can create scheduled tasks manually or through scripts, then grant the application pool identity only **start and stop** permissions (not edit permissions).
+
+PingCastle uses a folder named "PingCastle" in the Windows Task Scheduler. The scripts below use the COM API to manage security descriptors, which is not available through the native PowerShell API.
+
+#### Function: New-PingCastleHealthCheckScheduledTask
+
+This function creates a new scheduled task for PingCastle health checks.
+
+```powershell
+<#
+.SYNOPSIS
+Creates or updates a PingCastle HealthCheck scheduled task.
+
+.DESCRIPTION
+Creates (or updates) a scheduled task named:
+
+  PingCastle HealthCheck <DomainFqdn>
+
+in the \PingCastle Task Scheduler folder.
+
+The task:
+- Runs PingCastle.exe with healthcheck parameters
+- Uploads results to PingCastle Enterprise using API endpoint and key
+- Runs weekly on a configurable day and time
+- Runs as SYSTEM by default (or a specified service account)
+- Runs whether the user is logged on or not
+- Runs with highest privileges
+- Is configured for Windows Server 2019 or later
+
+The function is idempotent and safe to re-run.
+
+.PARAMETER DomainFqdn
+The domain FQDN being assessed.
+
+Example:
+corp.example.com
+
+.PARAMETER PingCastleEnterpriseUrl
+The PingCastle Enterprise API endpoint used for result upload.
+
+Example:
+https://pingcastle.domain.local
+
+.PARAMETER AgentApiKey
+The PingCastle Enterprise agent API key used for authentication.
+
+.PARAMETER FolderPath
+The Task Scheduler folder in which to create the task.
+
+Defaults to:
+\PingCastle
+
+The folder is created automatically if it does not exist.
+
+.PARAMETER ProgramPath
+Full path to PingCastle.exe.
+
+Default:
+C:\Program Files\Netwrix\PingCastleEnterprise\PingCastle.exe
+
+.PARAMETER DayOfWeek
+Day of the week the task runs.
+
+Default:
+Sunday
+
+.PARAMETER Time24h
+Start time in 24-hour format (HH:mm).
+
+Default:
+21:00
+
+.PARAMETER RunAsUser
+Optional user account to run the task under.
+
+If omitted, the task runs as:
+SYSTEM
+
+If specified, RunAsPassword must also be provided.
+
+.PARAMETER RunAsPassword
+SecureString password for the RunAsUser account.
+
+Required when RunAsUser is specified.
+
+.PARAMETER OutputFolder
+Relative folder (from the PingCastle.exe directory) used to store output files.
+
+Default:
+SchedulerLogs
+
+.PARAMETER OutputFileName
+Optional override for the output file name.
+
+Default:
+<DomainFqdn>.txt
+
+.EXAMPLE
+New-PingCastleHealthCheckScheduledTask `
+  -DomainFqdn "domain.local" `
+  -PingCastleEnterpriseUrl "https://pc.domain.local" `
+  -AgentApiKey "APIKEY"
+
+Creates a weekly PingCastle health check task running as SYSTEM
+every Sunday at 21:00.
+
+.EXAMPLE
+New-PingCastleHealthCheckScheduledTask `
+  -DomainFqdn "corp.example.com" `
+  -PingCastleEnterpriseUrl "https://pc.corp.example.com" `
+  -AgentApiKey "APIKEY" `
+  -DayOfWeek Wednesday `
+  -Time24h 02:30
+
+Creates a task with a custom weekly schedule.
+
+.EXAMPLE
+$pw = Read-Host "Password" -AsSecureString
+New-PingCastleHealthCheckScheduledTask `
+  -DomainFqdn "corp.example.com" `
+  -PingCastleEnterpriseUrl "https://pc.corp.example.com" `
+  -AgentApiKey "APIKEY" `
+  -RunAsUser "CORP\svc_pingcastle" `
+  -RunAsPassword $pw
+
+Creates a task that runs under a service account instead of SYSTEM.
+
+.EXAMPLE
+New-PingCastleHealthCheckScheduledTask -WhatIf
+
+Shows what would be created or updated without making changes.
+
+.OUTPUTS
+PSCustomObject
+
+Returns a summary including:
+- Task name and folder
+- RunAs account
+- Schedule
+- Program and arguments
+- Output file path
+
+.NOTES
+Requires administrative privileges.
+
+Uses the Task Scheduler COM API (Schedule.Service).
+
+Task compatibility is set to Windows Server 2019+ (Win10 scheduler compatibility).
+#>
+
+function New-PingCastleHealthCheckScheduledTask {
+    [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = 'High')]
+    param(
+        # Domain FQDN used in task name and --server (e.g. corp.example.com)
+        [Parameter(Mandatory)]
+        [ValidateNotNullOrEmpty()]
+        [string]$DomainFqdn,
+
+        # PingCastle Enterprise API endpoint (e.g. https://pc.domain.local)
+        [Parameter(Mandatory)]
+        [ValidateNotNullOrEmpty()]
+        [string]$PingCastleEnterpriseUrl,
+
+        # Agent API key used for --api-key
+        [Parameter(Mandatory)]
+        [ValidateNotNullOrEmpty()]
+        [string]$AgentApiKey,
+
+        # Task Scheduler folder (defaults to \PingCastle)
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]$FolderPath = '\PingCastle',
+
+        # PingCastle.exe path
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]$ProgramPath = 'C:\Program Files\Netwrix\PingCastleEnterprise\PingCastle.exe',
+
+        # Weekly schedule options (defaults: Sunday 21:00)
+        [Parameter()]
+        [ValidateSet('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday')]
+        [string]$DayOfWeek = 'Sunday',
+
+        [Parameter()]
+        [ValidatePattern('^\d{2}:\d{2}$')]
+        [string]$Time24h = '21:00',
+
+        # Run as SYSTEM by default. If provided, task will run as this account (prompt/secure string required).
+        [Parameter()]
+        [string]$RunAsUser,
+
+        [Parameter()]
+        [System.Security.SecureString]$RunAsPassword,
+
+        # Optional: override output folder (relative to working dir), and filename
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]$OutputFolder = 'SchedulerLogs',
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]$OutputFileName
+    )
+
+    begin {
+        function Ensure-FolderExists {
+            param([Parameter(Mandatory)][string]$Path)
+            if (-not (Test-Path -LiteralPath $Path)) {
+                New-Item -ItemType Directory -Path $Path -Force | Out-Null
+            }
+        }
+
+        function Get-TaskFolder {
+            param(
+                [Parameter(Mandatory)]$Service,
+                [Parameter(Mandatory)][string]$Path
+            )
+
+            # Normalize: must start with "\" and not end with "\" unless root
+            if ($Path -notmatch '^\\') { $Path = "\" + $Path }
+            if ($Path.Length -gt 1) { $Path = $Path.TrimEnd('\') }
+
+            try {
+                return $Service.GetFolder($Path)
+            } catch {
+                # Create missing folders recursively
+                $parts = $Path.Trim('\').Split('\')
+                $currentPath = '\'
+                $folder = $Service.GetFolder('\')
+
+                foreach ($p in $parts) {
+                    $nextPath = if ($currentPath -eq '\') { "\$p" } else { "$currentPath\$p" }
+                    try {
+                        $folder = $Service.GetFolder($nextPath)
+                    } catch {
+                        $folder.CreateFolder($p, $null) | Out-Null
+                        $folder = $Service.GetFolder($nextPath)
+                    }
+                    $currentPath = $nextPath
+                }
+                return $Service.GetFolder($Path)
+            }
+        }
+
+        function Build-WeeklyTriggerBoundary {
+            param(
+                [Parameter(Mandatory)][string]$Time24h
+            )
+            # Create an ISO boundary like 2026-01-29T21:00:00 (today) - scheduler will align by Repetition/DaysOfWeek
+            $dt = [DateTime]::Today.Add([TimeSpan]::Parse($Time24h))
+            return $dt.ToString("yyyy-MM-dd'T'HH:mm:ss")
+        }
+
+        function DayOfWeek-ToTaskSchedulerBitmask {
+            param([Parameter(Mandatory)][string]$Day)
+            # Task Scheduler days bitmask:
+            # Sunday=0x1, Monday=0x2, Tuesday=0x4, Wednesday=0x8, Thursday=0x10, Friday=0x20, Saturday=0x40
+            switch ($Day) {
+                'Sunday'    { 0x1 }
+                'Monday'    { 0x2 }
+                'Tuesday'   { 0x4 }
+                'Wednesday' { 0x8 }
+                'Thursday'  { 0x10 }
+                'Friday'    { 0x20 }
+                'Saturday'  { 0x40 }
+                default     { throw "Invalid DayOfWeek: $Day" }
+            }
+        }
+    }
+
+    process {
+        $taskName = "PingCastle HealthCheck $DomainFqdn"
+
+        # Output file naming default
+        if (-not $OutputFileName) {
+            $OutputFileName = "$DomainFqdn.txt"
+        }
+
+        # Ensure output folder exists next to PingCastle.exe by default
+        $programDir = Split-Path -Parent $ProgramPath
+        $outDirFull = Join-Path $programDir $OutputFolder
+        Ensure-FolderExists -Path $outDirFull
+
+        $outFileFull = Join-Path $outDirFull $OutputFileName
+
+        # Build arguments EXACTLY as desired (quotes only where needed)
+        $arguments = @(
+            '--healthcheck'
+            '--server', $DomainFqdn
+            '--api-endpoint', $PingCastleEnterpriseUrl
+            '--api-key', $AgentApiKey
+            '--out', ('"' + $outFileFull + '"')
+        ) -join ' '
+
+        # ---- Task Scheduler COM API ----
+        $svc = $null
+        try {
+            $svc = New-Object -ComObject 'Schedule.Service'
+            $svc.Connect()
+
+            $folder = Get-TaskFolder -Service $svc -Path $FolderPath
+
+            $task = $svc.NewTask(0)
+
+            # Registration info
+            $task.RegistrationInfo.Description = "PingCastle weekly healthcheck upload for $DomainFqdn"
+            $task.RegistrationInfo.Author      = $env:COMPUTERNAME
+
+            # Principal / Run level
+            $TASK_RUNLEVEL_HIGHEST = 1
+            $task.Principal.RunLevel = $TASK_RUNLEVEL_HIGHEST
+
+            # Settings: run whether user is logged on or not, start when available, etc.
+            $task.Settings.Enabled = $true
+            $task.Settings.StartWhenAvailable = $true
+            $task.Settings.Hidden = $false
+            $task.Settings.AllowHardTerminate = $true
+            $task.Settings.DisallowStartIfOnBatteries = $false
+            $task.Settings.StopIfGoingOnBatteries = $false
+            $task.Settings.MultipleInstances = 0 # IgnoreNew
+
+            # Configure for: Windows Server 2019 or later
+            # Task Scheduler uses "Compatibility" via Settings.Compatibility.
+            # 4 == Win8.1, 5 == Win10. Server 2019 maps well to Win10 compatibility.
+            $task.Settings.Compatibility = 5
+
+            # Trigger: weekly Sunday 21:00 by default
+            $TASK_TRIGGER_WEEKLY = 3
+            $trigger = $task.Triggers.Create($TASK_TRIGGER_WEEKLY)
+            $trigger.StartBoundary = Build-WeeklyTriggerBoundary -Time24h $Time24h
+            $trigger.Enabled = $true
+            $trigger.WeeksInterval = 1
+            $trigger.DaysOfWeek = DayOfWeek-ToTaskSchedulerBitmask -Day $DayOfWeek
+
+            # Action: Start a program
+            $TASK_ACTION_EXEC = 0
+            $action = $task.Actions.Create($TASK_ACTION_EXEC)
+            $action.Path = $ProgramPath
+            $action.Arguments = $arguments
+            $action.WorkingDirectory = $programDir
+
+            # Logon types:
+            # 5 = SERVICE_ACCOUNT (SYSTEM)
+            # 1 = PASSWORD (run whether user is logged on or not, with stored password)
+            $TASK_LOGON_SERVICE_ACCOUNT = 5
+            $TASK_LOGON_PASSWORD = 1
+
+            $userId = $null
+            $password = $null
+            $logonType = $TASK_LOGON_SERVICE_ACCOUNT
+
+            if ($RunAsUser) {
+                if (-not $RunAsPassword) {
+                    throw "RunAsPassword is required when RunAsUser is specified."
+                }
+
+                # Convert SecureString -> plain for COM registration (unavoidable for RegisterTaskDefinition)
+                $bstr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($RunAsPassword)
+                try { $password = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($bstr) }
+                finally { [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($bstr) }
+
+                $userId = $RunAsUser
+                $logonType = $TASK_LOGON_PASSWORD
+            }
+            else {
+                # SYSTEM
+                $task.Principal.UserId = 'SYSTEM'
+                $logonType = $TASK_LOGON_SERVICE_ACCOUNT
+            }
+
+            # Register / update task
+            $TASK_CREATE_OR_UPDATE = 6
+
+            if ($PSCmdlet.ShouldProcess("$FolderPath\$taskName", "Create/Update weekly PingCastle healthcheck task")) {
+                $registered = $folder.RegisterTaskDefinition(
+                    $taskName,
+                    $task,
+                    $TASK_CREATE_OR_UPDATE,
+                    $userId,
+                    $password,
+                    $logonType,
+                    $null
+                )
+
+                # Return a useful object
+                [pscustomobject]@{
+                    TaskName          = $taskName
+                    Folder            = $FolderPath
+                    RunAs             = $(if ($RunAsUser) { $RunAsUser } else { 'SYSTEM' })
+                    HighestPrivileges = $true
+                    Compatibility     = 'Windows Server 2019+ (Win10)'
+                    Trigger           = "Weekly $DayOfWeek $Time24h"
+                    Program           = $ProgramPath
+                    Arguments         = $arguments
+                    WorkingDirectory  = $programDir
+                    OutputFile        = $outFileFull
+                }
+            }
+        }
+        finally {
+            if ($svc) { try { [void][System.Runtime.InteropServices.Marshal]::ReleaseComObject($svc) } catch {} }
+            [GC]::Collect()
+            [GC]::WaitForPendingFinalizers()
+        }
+    }
 }
 ```
 
-4.  ;S-1-XXX-XXX-XXX need to be replaced by the SID of the account
-    running the PingCastle web application.
+#### Function: Grant-PingCastleTaskSchedulerAccess
 
-## Task edition
+This function grants the application pool identity permission to start and stop tasks without editing them.
 
-Tasks can be modified outside of the PingCastle application. To be
-listed here, the application checks that this is a weekly schedule on
-one selected day and that the action is matching classical command line
-options. That means that \--server can be modified, or additional
-parameters added (for example \--log-console). The identity running the
-scheduled task can also be modified (default is system)
+```powershell
+<#
+.SYNOPSIS
+Grants a security principal access to the PingCastle Task Scheduler folder and tasks.
 
-However if the task is edited within the web application, customization
-will be overwritten.
+.DESCRIPTION
+Adds an Access Control Entry (ACE) to the Task Scheduler security descriptor
+for the \PingCastle folder and optionally all tasks within it.
 
-# Custom installation
+The function:
+- Resolves the provided identity (user or group) to a SID using NTAccount.Translate()
+- Safely inserts the ACE into the DACL section of the SDDL
+- Avoids duplicate ACEs (idempotent)
+- Supports -WhatIf and -Confirm
+- Can be run repeatedly without breaking ACLs
 
-PingCastle Enterprise can be installed like a classic asp.net core
-application.
+By default, the function targets the \PingCastle Task Scheduler folder and is
+intended to grant access to the PingCastle Enterprise IIS application pool
+identity.
 
-That means copy all the files in a directory, configure the proxy (IIS,
-apache, Nginx), prepare a database and configure the application.
+.PARAMETER Identity
+The user or group to grant access to.
 
-## Hosting
+Defaults to: IIS APPPOOL\PingCastleEnterprise
 
-The application does work on any infrastructure supported by the asp.net
-core 8.0 middleware.
+Examples:
+- IIS APPPOOL\PingCastleEnterprise
+- DOMAIN\User
+- DOMAIN\Group
+- BUILTIN\Administrators
 
-Microsoft has procedures to install the dotnet core 2 framework:
+.PARAMETER FolderPath
+The Task Scheduler folder to update.
 
-**Linux installation**
+Defaults to:
+\PingCastle
 
-- https://docs.microsoft.com/en-us/dotnet/core/linux-prerequisites?tabs=netcore2x
+.PARAMETER Rights
+The SDDL rights string to grant.
 
-**Windows installation**
+Default is:
+FA  (Full Access)
 
-- https://docs.microsoft.com/en-us/dotnet/core/windows-prerequisites?tabs=netcore2x
+Advanced usage may replace this with more granular rights if required.
 
-Microsoft has procedures to setup the hosting of the application that
-are referenced bellow:
+.PARAMETER IncludeTasks
+If specified (default), the ACE is also applied to all tasks contained
+within the target folder. This is required for PingCastle Enterprise to read the tasks.
 
-- Host ASP.NET Core on Windows with IIS
+If omitted, only the folder ACL is updated.
 
-  - https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?tabs=aspnetcore2x
+.EXAMPLE
+Grant-PingCastleTaskSchedulerAccess
 
-- Host ASP.NET Core on Linux with Nginx
+Grants access to the default identity on the \PingCastle folder and all tasks.
 
-  - https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?tabs=aspnetcore2x
+.EXAMPLE
+Grant-PingCastleTaskSchedulerAccess -WhatIf
 
-- Host ASP.NET Core on Linux with Apache
+Shows what ACL changes would be made without applying them.
 
-  - https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache
+.EXAMPLE
+Grant-PingCastleTaskSchedulerAccess -Identity "DOMAIN\svc_pingcastle" -Confirm:$false
 
-5.  Upload quota may be changed to allow large file upload in the
-    Interoperability mode
+Grants access to a custom service account without confirmation prompts.
 
-For IIS, please note that by default a \"Default Web Site\" is installed
-and may conflict with the PingCastle Enterprise application.
+.OUTPUTS
+PSCustomObject
 
-The solution is to stop the default website and configure it to not
-start automatically.
+Returns one object per folder or task indicating:
+- Target type (Folder or Task)
+- Name
+- Whether it was changed
+- Identity and SID used
+- Any error encountered
 
-![](/images/pingcastle/enterpriseinstall/image17.webp)
+.NOTES
+Requires administrative privileges.
 
-## Database
+Uses the Task Scheduler COM API (Schedule.Service).
 
-Configuring the backup of the database is under the responsibility of
-the customer.
+Safe to run multiple times.
+#>
+function Grant-PingCastleTaskSchedulerAccess {
+    [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = 'High')]
+    param(
+        # DOMAIN\User, DOMAIN\Group, .\LocalUser, BUILTIN\Administrators, etc.
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]$Identity = "IIS APPPOOL\PingCastleEnterprise",
 
-PingCastle Enterprise requires a user account on this database. By
-default, PingCastle Enterprise creates the tables at the initial run and
-can add or modify existing tables when a software update is designed. If
-this default pattern is used, the database user MUST be owner of the
-database.
+        # Task Scheduler folder path (defaults to \PingCastle as requested)
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]$FolderPath = '\PingCastle',
 
-PingCastle Enterprise supports limited privileges on the database (only
-read / modify / delete data is required) on demand. In this case, a Sql
-script is provided to apply database change before a software update is
-applied.
+        # You can change to e.g. "GRGXGW" if you want narrower rights, but keep "FA" if unsure.
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]$Rights = 'FA',
 
-When run on IIS, PingCastle run in an application pool which needs to be
-granted privileges on the database. Note that the application pool is
-using a special Windows account which needs to be created manually.
+        # Apply to tasks inside the folder too
+        [Parameter()]
+        [switch]$IncludeTasks = $true
+    )
 
-The following SQL can grant these permissions:
+    begin {
+        # Constants from TASK_SECURITY_INFORMATION enum:
+        #   OWNER = 1, GROUP = 2, DACL = 4, SACL = 8, ALL = 15
+        $DACL_ONLY = 4
 
-```sql
-If not Exists (select loginname from master.dbo.syslogins
+        function Resolve-ToSid {
+            param([Parameter(Mandatory)][string]$Name)
 
-where loginname = 'IIS APPPOOL\PingCastleEnterprise')
+            try {
+                $nt  = [System.Security.Principal.NTAccount]::new($Name)
+                $sid = $nt.Translate([System.Security.Principal.SecurityIdentifier])
+                return $sid.Value
+            }
+            catch {
+                throw "Failed to resolve identity '$Name' to a SID. Ensure it exists and is spelled correctly. Error: $($_.Exception.Message)"
+            }
+        }
 
-Begin
+        function Add-AceToDaclSddl {
+            param(
+                [Parameter(Mandatory)][string]$Sddl,
+                [Parameter(Mandatory)][string]$Ace
+            )
 
-CREATE LOGIN [IIS APPPOOL\PingCastleEnterprise] FROM WINDOWS;
+            # No-op if already present
+            if ($Sddl -like "*$Ace*") { return $Sddl }
 
-End
+            # Insert the ACE immediately after D: and any DACL control flags (e.g. D:P, D:PAI, etc.)
+            # Example:
+            #   O:...G:...D:P(A;;...)(A;;...)  -> O:...G:...D:P$Ace(A;;...)(A;;...)
+            $pattern = 'D:([^()]*)'
+            $match = [regex]::Match($Sddl, $pattern)
+            if (-not $match.Success) {
+                throw "Unexpected SDDL format (no D: section found). SDDL: $Sddl"
+            }
 
-use PingCastleEnterprise;
+            return [regex]::Replace(
+                $Sddl,
+                $pattern,
+                { param($m) "D:$($m.Groups[1].Value)$Ace" },
+                1
+            )
+        }
+    }
 
-exec sp_addrolemember 'db_owner', 'IIS
-APPPOOL\PingCastleEnterprise';
+    process {
+        $sid = Resolve-ToSid -Name $Identity
+        $ace = "(A;;$Rights;;;$sid)"
+
+        $svc = $null
+        try {
+            $svc = New-Object -ComObject Schedule.Service
+            $svc.Connect()
+
+            try {
+                $folder = $svc.GetFolder($FolderPath)
+            }
+            catch {
+                throw "Task Scheduler folder '$FolderPath' was not found. Error: $($_.Exception.Message)"
+            }
+
+            $results = New-Object System.Collections.Generic.List[object]
+
+            # ---- Folder permissions ----
+            try {
+                $folderSddl    = $folder.GetSecurityDescriptor($DACL_ONLY)
+                $newFolderSddl = Add-AceToDaclSddl -Sddl $folderSddl -Ace $ace
+
+                if ($newFolderSddl -ne $folderSddl) {
+                    if ($PSCmdlet.ShouldProcess("Task Scheduler folder $FolderPath", "Add ACE for $Identity ($sid) rights '$Rights'")) {
+                        $folder.SetSecurityDescriptor($newFolderSddl, $null)
+                    }
+                    $results.Add([pscustomobject]@{
+                        Type      = 'Folder'
+                        Name      = $FolderPath
+                        Changed   = $true
+                        Identity  = $Identity
+                        Sid       = $sid
+                        Rights    = $Rights
+                        Error     = $null
+                    })
+                }
+                else {
+                    $results.Add([pscustomobject]@{
+                        Type      = 'Folder'
+                        Name      = $FolderPath
+                        Changed   = $false
+                        Identity  = $Identity
+                        Sid       = $sid
+                        Rights    = $Rights
+                        Error     = $null
+                    })
+                }
+            }
+            catch {
+                $results.Add([pscustomobject]@{
+                    Type      = 'Folder'
+                    Name      = $FolderPath
+                    Changed   = $false
+                    Identity  = $Identity
+                    Sid       = $sid
+                    Rights    = $Rights
+                    Error     = $_.Exception.Message
+                })
+            }
+
+            # ---- Task permissions ----
+            if ($IncludeTasks) {
+                $tasks = $folder.GetTasks(1)
+                foreach ($task in $tasks) {
+                    $taskName = $task.Name
+                    try {
+                        $taskSddl    = $task.GetSecurityDescriptor($DACL_ONLY)
+                        $newTaskSddl = Add-AceToDaclSddl -Sddl $taskSddl -Ace $ace
+
+                        if ($newTaskSddl -ne $taskSddl) {
+                            if ($PSCmdlet.ShouldProcess("Task '$FolderPath\$taskName'", "Add ACE for $Identity ($sid) rights '$Rights'")) {
+                                $task.SetSecurityDescriptor($newTaskSddl, $null)
+                            }
+                            $results.Add([pscustomobject]@{
+                                Type      = 'Task'
+                                Name      = "$FolderPath\$taskName"
+                                Changed   = $true
+                                Identity  = $Identity
+                                Sid       = $sid
+                                Rights    = $Rights
+                                Error     = $null
+                            })
+                        }
+                        else {
+                            $results.Add([pscustomobject]@{
+                                Type      = 'Task'
+                                Name      = "$FolderPath\$taskName"
+                                Changed   = $false
+                                Identity  = $Identity
+                                Sid       = $sid
+                                Rights    = $Rights
+                                Error     = $null
+                            })
+                        }
+                    }
+                    catch {
+                        $results.Add([pscustomobject]@{
+                            Type      = 'Task'
+                            Name      = "$FolderPath\$taskName"
+                            Changed   = $false
+                            Identity  = $Identity
+                            Sid       = $sid
+                            Rights    = $Rights
+                            Error     = $_.Exception.Message
+                        })
+                    }
+                }
+            }
+
+            # Emit results
+            $results
+        }
+        finally {
+            # Best-effort COM cleanup
+            if ($svc) {
+                try { [void][System.Runtime.InteropServices.Marshal]::ReleaseComObject($svc) } catch {}
+            }
+            [GC]::Collect()
+            [GC]::WaitForPendingFinalizers()
+        }
+    }
+}
 ```
 
-Here is for example some commands for PostGres on Ubuntu
-17:
+#### Usage Examples
 
-```bash
-sudo apt-get install postgresql postgresql-contrib
+**Example 1: Standalone Task Creation for Custom Deployment**
 
-sudo /etc/init.d/postgresql start
+This example creates a scheduled task on a remote server (not the PingCastle Enterprise server). You need to copy PingCastle.exe to the target server first, then create the scheduled task to scan and upload results.
+
+```powershell
+# Prerequisites:
+# 1. Copy PingCastle.exe to the remote server (e.g., C:\Tools\PingCastle\PingCastle.exe)
+# 2. Run this script on the remote server with administrative privileges
+
+# Create a scheduled task on a standalone server
+New-PingCastleHealthCheckScheduledTask `
+    -DomainFqdn "corp.contoso.com" `
+    -PingCastleEnterpriseUrl "https://pingcastle.contoso.com" `
+    -AgentApiKey "your-api-key-here" `
+    -ProgramPath "C:\Tools\PingCastle\PingCastle.exe" `
+    -DayOfWeek Wednesday `
+    -Time24h "02:00"
+
+# The task will run as SYSTEM by default and upload results to PingCastle Enterprise
+```
+
+:::tip
+This approach is useful for distributed scanning where you have dedicated scanning servers in different locations or security zones. Each server can independently scan its local domain and upload results to the central PingCastle Enterprise instance.
+:::
+
+**Example 2: PingCastle Enterprise Least Privilege Task Setup**
+
+This example creates scheduled tasks on the PingCastle Enterprise server itself, then grants the application pool minimal permissions (start/stop only) to manage those tasks.
+
+```powershell
+# Step 1: Create scheduled task(s) using default paths
+# (Assumes PingCastle.exe is in the default location)
+
+New-PingCastleHealthCheckScheduledTask `
+    -DomainFqdn "corp.contoso.com" `
+    -PingCastleEnterpriseUrl "https://pingcastle.contoso.com" `
+    -AgentApiKey "your-api-key-here"
+
+# If you have multiple domains, create additional tasks:
+New-PingCastleHealthCheckScheduledTask `
+    -DomainFqdn "emea.contoso.com" `
+    -PingCastleEnterpriseUrl "https://pingcastle.contoso.com" `
+    -AgentApiKey "your-api-key-here" `
+    -DayOfWeek Monday `
+    -Time24h "03:00"
+
+New-PingCastleHealthCheckScheduledTask `
+    -DomainFqdn "apac.contoso.com" `
+    -PingCastleEnterpriseUrl "https://pingcastle.contoso.com" `
+    -AgentApiKey "your-api-key-here" `
+    -DayOfWeek Tuesday `
+    -Time24h "04:00"
+
+# Step 2: Grant the application pool least-privileged access
+# This allows the PingCastle Enterprise web application to start/stop tasks
+# without being a local administrator
+
+Grant-PingCastleTaskSchedulerAccess -Identity "IIS APPPOOL\PingCastleEnterprise"
+
+Write-Host "`nSetup complete! The PingCastle Enterprise application can now start and stop these scheduled tasks." -ForegroundColor Green
 ```
 
 :::note
-By default no password for the user postgres
+The `Grant-PingCastleTaskSchedulerAccess` function grants **full access (FA)** by default, which allows the application pool to read, start, stop, and manage the tasks. This is required for PingCastle Enterprise to display and control the tasks in the web interface. If you created the tasks with an administrator account, the application pool needs these permissions to interact with them.
 :::
 
-```bash
-sudo -u postgres createuser pingcastle
+**Example 3: Bulk Setup with Least Privilege Using CSV Import**
 
-sudo -u postgres psql
-alter user pingcastle with password 'pingcastle';
+This example demonstrates bulk task creation using a CSV file to define multiple domains with custom schedules, followed by granting least-privileged access to the application pool.
 
-sudo -u postgres createdb -O pingcastle pingcastle
+First, create a CSV file named `PingCastleDomains.csv` with the following format:
+
+```csv
+DomainFqdn,DayOfWeek,Time24h
+corp.contoso.com,Sunday,21:00
+emea.contoso.com,Monday,21:00
+apac.contoso.com,Tuesday,21:00
+dev.contoso.com,Wednesday,21:00
+test.contoso.com,Thursday,21:00
 ```
 
-6.  On PostGres the collation (sort) does not take some special
-    characters in account, which puts the _\[Default\]_ container at
-    different position that the start of the list of entities
+Then run this PowerShell script:
 
-## Using a Database Hosted on Anther Server
+```powershell
+# Import the CSV file
+$domains = Import-Csv -Path "C:\PingCastleDomains.csv"
 
-**Configure SQL Server with a local DB account**
+# Configuration
+$pingCastleUrl = "https://pingcastle.contoso.com"
+$apiKey = "your-api-key-here"
+
+# Create scheduled tasks for each domain
+foreach ($domain in $domains) {
+    Write-Host "Creating task for $($domain.DomainFqdn)..." -ForegroundColor Cyan
+
+    try {
+        New-PingCastleHealthCheckScheduledTask `
+            -DomainFqdn $domain.DomainFqdn `
+            -PingCastleEnterpriseUrl $pingCastleUrl `
+            -AgentApiKey $apiKey `
+            -DayOfWeek $domain.DayOfWeek `
+            -Time24h $domain.Time24h `
+            -Confirm:$false
+
+        Write-Host "  Successfully created task for $($domain.DomainFqdn)" -ForegroundColor Green
+    }
+    catch {
+        Write-Host "  Failed to create task for $($domain.DomainFqdn): $_" -ForegroundColor Red
+    }
+}
+
+# Grant the application pool least-privileged access to all created tasks
+Write-Host "`nGranting permissions to IIS application pool..." -ForegroundColor Cyan
+Grant-PingCastleTaskSchedulerAccess -Identity "IIS APPPOOL\PingCastleEnterprise" -Confirm:$false
+
+Write-Host "`nBulk setup complete! Created $($domains.Count) tasks." -ForegroundColor Green
+Write-Host "The PingCastle Enterprise application can now manage these scheduled tasks." -ForegroundColor Green
+```
+
+:::tip
+You can also use wildcards in the CSV to scan entire forests:
+
+```csv
+DomainFqdn,DayOfWeek,Time24h
+*.corp.contoso.com,Sunday,21:00
+*.emea.contoso.com,Monday,21:00
+```
+
+This will automatically discover and scan all child domains within each forest.
+:::
+
+</TabItem>
+</Tabs>
+
+## Manual Installation (Without MSI Installer)
+
+:::info When to Use Manual Installation
+This section is for advanced users who cannot use or prefer not to use the MSI Installer. Manual installation is typically required for:
+- **Linux deployments** with Nginx or Apache
+- **Azure App Service** deployments using `az webapp deploy`
+- **Custom Windows configurations** requiring non-standard setup
+- Environments where the MSI Installer is not available or cannot be used
+
+For standard Windows Server deployments, the MSI Installer (described earlier in this document) is the recommended and supported installation method.
+:::
+
+PingCastle Enterprise can be manually installed as a standard ASP.NET Core 8.0 application. Manual installation involves:
+
+**Windows Manual Installation:**
+1. Extract the application ZIP file to a target directory
+2. Create an IIS website and application pool
+3. Disable the Default Web Site if it conflicts with PingCastle Enterprise
+4. Configure the application pool identity
+5. Grant SQL Server permissions to the application pool account
+
+**Linux Manual Installation:**
+- Installation procedures for Linux are not fully documented
+- Requires configuration of Nginx or Apache as a reverse proxy
+- Requires PostgreSQL database setup
+- See [Hosting](#hosting) section for Microsoft's official ASP.NET Core hosting documentation
+
+**Azure App Service Deployment:**
+- Use `az webapp deploy` command to deploy the application package
+- Configure Azure Database for PostgreSQL as the backend
+- Use the same deployment method for initial installation and subsequent updates
+
+:::warning Limited Support for Alternative Configurations
+While PingCastle Enterprise can run on Linux with PostgreSQL or in Azure App Service environments, **Netwrix does not fully support these configurations**. These setups are possible but not guaranteed for future releases. Customer support for non-Windows/non-SQL Server configurations will be provided on a **best-effort basis only**.
+
+The fully supported configuration is Windows Server with IIS and Microsoft SQL Server, installed via the MSI Installer.
+:::
+
+### Hosting
+
+PingCastle Enterprise can run on any infrastructure that supports ASP.NET Core 8.0. When performing a manual installation, refer to Microsoft's documentation for hosting procedures:
+
+**Windows with IIS (Manual Installation)**
+- [Host ASP.NET Core on Windows with IIS](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/)
+- Follow the steps outlined above: extract ZIP, create IIS website, disable Default Web Site, configure app pool, and set SQL permissions
+
+**Linux (Limited Support - Manual Installation)**
+- [Host ASP.NET Core on Linux with Nginx](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx)
+- [Host ASP.NET Core on Linux with Apache](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache)
+- Installation procedures are not fully documented by Netwrix
+
+:::tip IIS Configuration
+For IIS deployments, if the "Default Web Site" conflicts with PingCastle Enterprise, stop the default website and configure it to not start automatically.
+:::
+
+### Database Configuration (Manual Installation)
+
+#### General Database Requirements
+
+Database backups are the customer's responsibility.
+
+PingCastle Enterprise requires a database user account with database owner permissions. The application automatically creates and updates database tables during initial setup and software updates.
+
+:::note MSI Installer Handles This Automatically
+If using the MSI Installer, database setup is handled automatically. This section is only relevant for manual installations.
+:::
+
+<Tabs>
+<TabItem value="sqlserver" label="SQL Server" default>
+
+#### SQL Server Permissions for IIS
+
+When manually installing on Windows with IIS, the application pool requires database access. The application pool uses a special Windows account for which permissions must be granted manually.
+
+Grant permissions with the following SQL:
+
+```sql
+IF NOT EXISTS (SELECT loginname FROM master.dbo.syslogins
+WHERE loginname = 'IIS APPPOOL\PingCastleEnterprise')
+BEGIN
+    CREATE LOGIN [IIS APPPOOL\PingCastleEnterprise] FROM WINDOWS;
+END
+
+USE PingCastleEnterprise;
+EXEC sp_addrolemember 'db_owner', 'IIS APPPOOL\PingCastleEnterprise';
+```
+
+</TabItem>
+<TabItem value="postgresql" label="PostgreSQL (Limited Support)">
+
+#### PostgreSQL Configuration
+
+:::warning
+PostgreSQL support is limited and provided on a best-effort basis only. This is primarily used for Linux and Azure App Service deployments.
+:::
+
+Example PostgreSQL setup on Ubuntu (for Linux manual installation):
+
+```bash
+sudo apt-get install postgresql postgresql-contrib
+sudo /etc/init.d/postgresql start
+
+# Create user and database
+sudo -u postgres createuser pingcastle
+sudo -u postgres psql
+```
+
+In the PostgreSQL prompt:
+
+```sql
+ALTER USER pingcastle WITH PASSWORD 'pingcastle';
+CREATE DATABASE pingcastle OWNER pingcastle;
+```
+
+:::note
+By default, the postgres user has no password. PostgreSQL collation may not handle special characters as expected, which can affect sorting of container names like [Default].
+:::
+
+</TabItem>
+</Tabs>
+
+### Remote Database Configuration (Manual Installation)
+
+<Tabs>
+<TabItem value="local" label="SQL Authentication" default>
+
+1. Create a local SQL Server account:
+   - Use SQL Server authentication
+   - Uncheck "User must change password at next login" (PingCastle Enterprise does not support automatic password rotation)
+   - You can manually update the password later in the `appsettings.production.json` file
 
 ![](/images/pingcastle/enterpriseinstall/image18.webp)
-
-You first need to create a local account inside Sql Server.
-
-Select SQL Server authentication.
-
-Be sure to uncheck "user must change password at the next login" as
-PingCastleEnterprise does not support password rotation. (you can change
-later the password inside the application.Production.json file)
-
 ![](/images/pingcastle/enterpriseinstall/image19.webp)
-
 ![](/images/pingcastle/enterpriseinstall/image20.webp)
 
-**Then create a database**
+2. Create a database and set the user you created as the owner.
 
-Do not forget to set the owner as the user you created before.
-
-You should verify that the credentials and that the server is available
-before going further.
+3. Verify the credentials and server connectivity before proceeding.
 
 ![](/images/pingcastle/enterpriseinstall/image21.webp)
+![](/images/pingcastle/enterpriseinstall/image22.webp)
 
-![Une image contenant texte, capture d'écran, nombre, affichage Description générée automatiquement](/images/pingcastle/enterpriseinstall/image22.webp)
+:::tip TCP/IP Configuration
+A common configuration issue is TCP/IP connectivity. TCP/IP is disabled by default in SQL Server and must be enabled manually in SQL Server Configuration Manager.
+:::
 
-In SQL Server configuration, a typical mistake is to use tcp connection.
-TCP/IP needs to be enabled manually in SQL Server as it is disabled by
-default.
-
-![Une image contenant texte, capture d'écran, Police, logiciel Description générée automatiquement](/images/pingcastle/enterpriseinstall/image23.webp)
-
+![](/images/pingcastle/enterpriseinstall/image23.webp)
 ![](/images/pingcastle/enterpriseinstall/image24.webp)
 
-At the installation step, indicate that you want to use an ad-hoc
-connection string.
-
-Specify the following:
+4. During installation, specify a custom connection string:
 
 ```
-Server=tcp:server.fqdn.com;Database=PingCastle;User Id=pingcastle;password=pingcastle;Trusted_Connection=True;MultipleActiveResultSets=true
+Server=tcp:server.fqdn.com;Database=PingCastle;User Id=pingcastle;Password=pingcastle;Trusted_Connection=True;MultipleActiveResultSets=true
 ```
 
-Unfortunately, the server will not create the database at the
-installation time. You will discover any issue at the first run. Dont
-forget to check the event log to have the full error message. You can
-change the connection string after the installation by editing the file
-appsettings.production.json. Do not forget that special characters may
-need to be escaped as they are located inside a json string.
+:::note
+The database schema is not created during installation. Any connection issues will appear on first run. Check the Windows Event Log for detailed error messages. You can update the connection string after installation by editing `appsettings.production.json`. Remember to escape special characters in JSON strings (e.g., `\` becomes `\\`).
+:::
 
-![Une image contenant texte, capture d'écran, Police Description générée automatiquement](/images/pingcastle/enterpriseinstall/image25.webp)
+![](/images/pingcastle/enterpriseinstall/image25.webp)
+![](/images/pingcastle/enterpriseinstall/image26.webp)
 
-![Une image contenant texte, Police, nombre, logiciel Description générée automatiquement](/images/pingcastle/enterpriseinstall/image26.webp)
+</TabItem>
+<TabItem value="windows" label="Windows Authentication">
 
-**Configure SQL Server with an Active Directory user**
+1. Create a Windows user in your Active Directory.
 
-You need to first create this Windows user.
-
-You have to create a new Windows login. Go to create a new login.
+2. In SQL Server, create a new Windows login for this user.
 
 ![](/images/pingcastle/enterpriseinstall/image18.webp)
+![](/images/pingcastle/enterpriseinstall/image27.webp)
 
-Then select the Windows user you created.
+3. Create a database with the Windows user as the owner.
 
-![Une image contenant texte, capture d'écran, logiciel, nombre Description générée automatiquement](/images/pingcastle/enterpriseinstall/image27.webp)
+![](/images/pingcastle/enterpriseinstall/image28.webp)
 
-You can then create a database with the Windows user as the owner of the
-database:
-
-![Une image contenant texte, logiciel, capture d'écran, nombre Description générée automatiquement](/images/pingcastle/enterpriseinstall/image28.webp)
-
-At the installation step, indicate that you want to use an ad-hoc
-connection string.
+4. During installation, specify a custom connection string:
 
 ![](/images/pingcastle/enterpriseinstall/image24.webp)
-
-Specify the following:
 
 ```
 Server=tcp:server.fqdn.com;Database=PingCastle;Trusted_Connection=True;MultipleActiveResultSets=true
 ```
 
-The installation will continue.
+5. After installation, configure the IIS Application Pool to use the Windows user identity:
+   - In IIS, select the PingCastle Enterprise application pool
+   - Go to Advanced Settings
+   - Under Identity, select "Custom account" and specify the Windows user credentials
+   - Restart IIS
 
-After the installation, another steep need to be done: you need to
-change the Application Pool identity.\
-Go to IIS and select the application pool. Go to the advanced settings
+![](/images/pingcastle/enterpriseinstall/image29.webp)
+![](/images/pingcastle/enterpriseinstall/image30.webp)
 
-![A screenshot of a computer Description automatically generated](/images/pingcastle/enterpriseinstall/image29.webp)
+</TabItem>
+</Tabs>
 
-Go to Identity and select the custom user account:
+### Application Configuration (Manual Installation)
 
-![Une image contenant texte, capture d'écran, affichage, logiciel Description générée automatiquement](/images/pingcastle/enterpriseinstall/image30.webp)
+For manual installations, configure the `appsettings.json` file in the application root directory.
 
-Restart IIS.
-
-## Configuration of PingCastle Enterprise
-
-The settings are located in the appsettings.json located at the root of
-the application folder.
+:::note MSI Installer Handles This Automatically
+The MSI Installer configures these settings automatically. This section is only for manual installations.
+:::
 
 ![](/images/pingcastle/enterpriseinstall/image31.webp)
 
-Two settings are needed for the application: the database and the
-license information.
+#### Required Settings
 
-To change the database type, change the \"database\" settings. Currently
-the following values are supported:
+Configure these three settings in `appsettings.json`:
 
-- sqlserver
+**1. Database Type**
 
-- postgres
+Set the `database` parameter:
+- `sqlserver` (recommended)
+- `postgres` (limited support)
 
-To connect to the database a \"connection string\" must be used and
-provided in the \"DefaultConnection\" parameter.
+**2. Connection String**
 
-7.  The connection string are stored in json and must be properly
-    escaped like \"\\\" into \"\\\\\". Same for double quotes.
+Set the `DefaultConnection` parameter with your database connection string.
 
-For the license, the parameter is stored in the \"License\" setting.
+:::important
+Escape special characters in JSON strings:
+- Backslash: `\` becomes `\\`
+- Double quotes: `"` becomes `\"`
+:::
 
-Here are some connection string examples:
+**3. License Key**
 
-**Sql Local DB**
+Set the `License` parameter with your license key.
+
+#### Connection String Examples
+
+**SQL Server Local DB**
 
 ```json
-"Server=(localdb)\\mssqllocaldb;Database=aspnet-PingCastleEnterprise-9521AD04-BA3A-41DC-A454-F2BD464E9391;Trusted_Connection=True;MultipleActiveResultSets=true"
+"DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=aspnet-PingCastleEnterprise-9521AD04-BA3A-41DC-A454-F2BD464E9391;Trusted_Connection=True;MultipleActiveResultSets=true"
 ```
 
-**PostGres**
+**PostgreSQL**
 
 ```json
-"DefaultConnection":
-"Server=localhost;username=pingcastle;password=pingcastle;database=pingcastle"
+"DefaultConnection": "Server=localhost;Username=pingcastle;Password=pingcastle;Database=pingcastle"
 ```
 
 ## Authentication when accessing PingCastle Enterprise
@@ -880,23 +1973,758 @@ dns form). Please note that no password needs to be submitted.
 
 ![](/images/pingcastle/enterpriseinstall/image67.webp)
 
-**Email**
+## Email
 
 PingCastle requires a configuration to be able to send emails.
 
 It is located in the appsettings.json file.
 
-![](/images/pingcastle/enterpriseinstall/image68.webp)
+PingCastle Enterprise now supports two email providers:
+- **SMTP**: Traditional SMTP server configuration
+- **Graph**: Modern authentication using Microsoft Graph API for Office 365
 
-The Email is the address used to send email,.
+The Email configuration section in appsettings.json supports both providers:
 
-The login and password is the credential use to connect to the smtp
-server. This is not mandatory.
+```json
+"Email": {
+  "Provider": "SMTP",
+  "Email": "pingcastle@your.domain.com",
 
-The host and port is the address of the smtp server.
+  // SMTP Configuration (used when Provider is "SMTP")
+  "Login": "",
+  "Password": "",
+  "Host": "localhost",
+  "Port": "25",
+
+  // Graph Configuration (used when Provider is "Graph")
+  "TenantId": "",
+  "ClientId": "",
+  "AuthenticationMethod": "",
+  "ClientSecret": "",
+  "FromDisplayName": "PingCastle",
+  "CertificateAuth": {
+    "Mode": "",
+    "File": {
+      "Path": "",
+      "Password": ""
+    },
+    "Store": {
+      "Thumbprint": "",
+      "StoreLocation": "",
+      "StoreName": ""
+    }
+  }
+}
+```
+
+**Configuration Parameters:**
+
+- **Provider**: Email provider type - `SMTP` or `Graph`
+- **Email**: The From address of the emails sent by the application (optional for SMTP, mandatory for Graph)
+- **FromDisplayName**: Display name for the email sender
+
+**SMTP Provider Parameters:**
+- **Login**: Login credentials for the SMTP server (leave empty if not required)
+- **Password**: Password for the SMTP server (leave empty if not required)
+- **Host**: FQDN or IP address of the SMTP server
+- **Port**: Port of the SMTP server (25 is default, 465 and 587 for TLS/SSL. Encryption will be enabled unless port is 25)
+
+**Graph Provider Parameters:**
+- **TenantId**: Azure AD tenant ID (mandatory for Graph)
+- **ClientId**: Application (client) ID from Azure AD app registration (mandatory for Graph)
+- **AuthenticationMethod**: `ClientSecret` or `Certificate`
+- **ClientSecret**: Client secret value (mandatory if using ClientSecret authentication)
+- **CertificateAuth.Mode**: `File` or `Store` (certificate location mode)
+- **CertificateAuth.File.Path**: Path to certificate file (e.g., `path/to/certificate.pfx`)
+- **CertificateAuth.File.Password**: Certificate file password
+- **CertificateAuth.Store.Thumbprint**: Certificate thumbprint
+- **CertificateAuth.Store.StoreLocation**: `LocalMachine` or `CurrentUser`
+- **CertificateAuth.Store.StoreName**: Store name (e.g., `My`, `Root`)
 
 The email functionality is used to send password reset request and send
 notification such as weekly reports.
+
+For detailed instructions on configuring Modern Authentication with Office 365, see the section below.
+
+### Modern Authentication with Office 365 (Graph API)
+
+PingCastle Enterprise supports sending emails using Microsoft Graph API with modern authentication. This method is recommended for Office 365 environments as it provides enhanced security through OAuth 2.0 authentication.
+
+This configuration uses **RBAC for Applications** (Role-Based Access Control for Applications) in Exchange Online, which allows the application to send emails from a specific shared mailbox without requiring a user account with mailbox access permissions.
+
+**Prerequisites:**
+
+Before starting this configuration, ensure you have:
+
+- **Global Administrator** or **Exchange Administrator** permissions
+- **Application Developer** permissions in Azure AD
+- **Exchange Online PowerShell** module installed or use the Cloud Management Shell
+- **Microsoft Graph PowerShell** module installed (optional, for PowerShell automation)
+
+:::note
+"PingCastle-Email" is used throughout this configuration as an example name. This can be substituted with any name that fits your organization's naming conventions.
+:::
+
+<details>
+<summary>Create and Export Certificate (For Entra ID Certificate Authentication)</summary>
+
+If you prefer certificate-based authentication instead of client secrets, use this PowerShell script to create and export a self-signed certificate:
+
+```powershell
+# Create Self-Signed Certificate for use with Entra App Registration for dev environments.
+$Name = "PingCastle-Email"
+$password = "ENTER PASSWORD"
+
+# Create a self-signed certificate
+$cert = New-SelfSignedCertificate -Subject "CN=PingCastle-Email" -CertStoreLocation "Cert:\LocalMachine\My" -KeyExportPolicy Exportable
+
+# Create a password for the PFX
+$pwd = ConvertTo-SecureString -String $password -Force -AsPlainText
+
+# Export the certificate as PFX
+Export-PfxCertificate -Cert $cert -FilePath "$env:USERPROFILE\$Name.pfx" -Password $pwd
+
+# Export the certificate as CER for Entra
+Export-Certificate -Cert $cert -FilePath "$env:USERPROFILE\PingCastle-Email.cer" -Type CERT
+
+Write-Output "Certificate exported to: $env:USERPROFILE\$Name.pfx"
+```
+
+:::warning
+For production environments, use certificates issued by your organization's Certificate Authority (CA) instead of self-signed certificates.
+:::
+
+</details>
+
+<Tabs>
+<TabItem value="manual" label="Manual Configuration" default>
+
+#### Part 1: Create Azure AD App Registration
+
+##### Step 1: Access Microsoft Entra Admin Center
+
+1. Open a web browser and navigate to https://entra.microsoft.com
+2. Sign in with your administrator account
+3. If you have access to multiple tenants, use the **Settings** gear icon in the top menu to switch to the correct tenant
+
+![Entra admin center homepage with Settings menu](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-1.png)
+
+##### Step 2: Navigate to App Registrations
+
+1. In the left navigation pane, expand **Identity**
+2. Click on **Applications**
+3. Select **App registrations**
+4. Click **+ New registration** at the top of the page
+
+![App registrations page with New registration button](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-2.png)
+
+##### Step 3: Configure Application Registration
+
+1. In the **Name** field, enter: `PingCastle-Email`
+2. Under **Supported account types**, select **Accounts in this organizational directory only**
+3. Leave **Redirect URI (optional)** blank for now
+4. Click **Register**
+
+![Register an application form](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-3.png)
+
+##### Step 4: Create Client Secret
+
+1. In the left menu under **Manage**, click **Certificates & secrets**
+2. Click **+ New client secret**
+3. Add a description: `PingCastle-Email Secret`
+4. Set expiration to **12 months** (or as per your policy)
+5. Click **Add**
+6. **Important**: Copy the secret **Value** immediately - it won't be shown again
+7. Paste it in Notepad or a password manager for later use
+
+:::warning
+If you misplace your secret, you can return to this screen and generate a new one.
+:::
+
+![Client secrets page](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-4.png)
+
+#### Part 2: Create Shared Mailbox
+
+##### Step 5: Access Exchange Admin Center
+
+1. Navigate to https://admin.exchange.microsoft.com
+2. Sign in with your Exchange administrator account
+3. In the left navigation, expand **Recipients**
+4. Click **Mailboxes**
+
+![Exchange Admin Center navigation](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-5.png)
+
+##### Step 6: Create Shared Mailbox
+
+1. Click **+ Add a shared mailbox**
+2. Fill in the following details:
+   - **Display Name**: PingCastle
+   - **Email Address**: pingcastle (the domain should auto-populate with your domain)
+   - **Alias**: pingcastle (optional)
+3. Click **Create**
+
+![Add a shared mailbox form](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-6.png)
+
+##### Step 7: Verify Shared Mailbox Creation
+
+1. Wait for the mailbox creation process to complete
+2. Verify the mailbox appears in the mailboxes list
+3. Note the full email address (e.g., `pingcastle@yourdomain.com`)
+
+![Mailboxes list showing the new shared mailbox](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-7.png)
+
+##### Step 8: Block Shared Mailbox Sign-in
+
+This should be automatically configured, but verify it:
+
+1. Navigate to https://entra.microsoft.com/
+2. Go to **Users** > **All Users**
+3. Search for and select the user account corresponding to the shared mailbox
+4. Click **Edit Properties**
+5. Click on the **Settings** tab
+6. Ensure the **Account Enabled** checkbox is **unchecked**
+7. Click **Save**
+
+![User properties page with Account Enabled disabled](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-8.png)
+
+#### Part 3: Configure RBAC for Applications
+
+##### Step 9: Connect to Exchange Online PowerShell
+
+Open Windows PowerShell as Administrator and run the following commands:
+
+```powershell
+# Install Exchange Online Management module if not already installed
+Install-Module -Name ExchangeOnlineManagement -Force -AllowClobber
+
+# Import the module
+Import-Module ExchangeOnlineManagement
+
+# Connect to Exchange Online
+Connect-ExchangeOnline
+```
+
+##### Step 10: Create Service Principal
+
+Using the values from your app registration, create the service principal:
+
+```powershell
+# Define variables (replace with your actual values)
+$AppId = "YOUR_APPLICATION_CLIENT_ID"
+$ObjectId = "YOUR_APPS_SERVICE_PRINCIPAL_OBJECT_ID" # Get this from the Enterprise Applications screen in Entra ID
+
+# Create Service Principal
+New-ServicePrincipal -AppId $AppId -ObjectId $ObjectId -DisplayName "PingCastle-Email"
+```
+
+:::note
+The `$ObjectId` is the Service Principal Object ID from Enterprise Applications, **not** the Object ID from App Registrations.
+:::
+
+##### Step 11: Create Management Scope
+
+Create a management scope that restricts access to only the PingCastle shared mailbox:
+
+```powershell
+# Create Management Scope
+$EmailAddress = "pingcastle@yourdomain.com" # The email address of the shared mailbox
+New-ManagementScope -Name "PingCastle-Email-Scope" -RecipientRestrictionFilter "EmailAddresses -eq '$EmailAddress'"
+```
+
+##### Step 12: Assign Application Role
+
+Assign the Application Mail.Send role to the service principal with the custom scope:
+
+```powershell
+# Create Role Assignment
+$ObjectId = "" # The Exchange Service Principal Object Id (This is output in Step 10)
+New-ManagementRoleAssignment -Role "Application Mail.Send" -App $ObjectId -CustomResourceScope "PingCastle-Email-Scope"
+```
+
+#### Part 4: Test Configuration
+
+##### Step 13: Test Service Principal Authorization
+
+Verify the configuration works correctly:
+
+```powershell
+# Test Service Principal Authorization
+$EmailAddress = "pingcastle@yourdomain.com" # The email address of the shared mailbox
+$ObjectId = "" # The Exchange Service Principal Object Id (This is output in Step 10)
+
+Test-ServicePrincipalAuthorization -Identity $ObjectId -Resource $EmailAddress
+```
+
+Expected Output:
+- **RoleName**: Application Mail.Send
+- **InScope**: True
+
+##### Step 14: Verify Scope Restriction
+
+Test that the service principal cannot access other mailboxes:
+
+```powershell
+# Test with a different email address
+$EmailAddress = "otheruser@yourdomain.com" # A random email that the application should not be able to send as
+$ObjectId = "" # The Exchange Service Principal Object Id (This is output in Step 10)
+
+Test-ServicePrincipalAuthorization -Identity $ObjectId -Resource $EmailAddress
+```
+
+Expected Output:
+- **InScope**: False
+
+This confirms the application can only send from the designated shared mailbox.
+
+</TabItem>
+<TabItem value="powershell" label="PowerShell Automation">
+
+#### Automated Configuration with PowerShell
+
+This PowerShell function automates the complete process of creating an Azure AD app registration, shared mailbox, and configuring RBAC for Applications in Exchange Online.
+
+```powershell
+<#
+.SYNOPSIS
+    Advanced PowerShell function to automate RBAC for Applications setup in Exchange Online
+
+.DESCRIPTION
+    This function automates the complete process of creating an Azure AD app registration,
+    shared mailbox, and configuring RBAC for Applications in Exchange Online.
+
+    Specifically designed for PingCastle-Email configuration.
+
+.PARAMETER TenantId
+    The Azure AD tenant identifier (GUID) where the application and service principal will be created.
+
+.PARAMETER ClientSecretExpiration
+    The lifetime of the client secret in months. Defaults to 12.
+
+.PARAMETER SharedMailboxDomain
+    The SMTP domain portion for the new shared mailbox (e.g. "contoso.com").
+
+.PARAMETER CertificateAuth
+    Switch to enable certificate-based authentication instead of client secret.
+
+.PARAMETER CertificatePath
+    File system path to the certificate (PFX) to use when CertificateAuth is enabled.
+
+.PARAMETER AppName
+    The display name of the Azure AD application to create. Defaults to "PingCastle-Email".
+
+.PARAMETER ServicePrincipalName
+    The name of the service principal for the application. Defaults to "PingCastle-Email".
+
+.PARAMETER ManagementScopeName
+    The name of the custom role scope to assign to the service principal. Defaults to "PingCastle-Email".
+
+.PARAMETER SharedMailboxName
+    The local part of the shared mailbox alias. Defaults to "pingcastle-email".
+
+.PARAMETER SharedMailboxDisplayName
+    The display name for the shared mailbox. Defaults to "PingCastle-Email".
+
+.EXAMPLE
+    Set-PingCastleEmailRBAC -TenantId "your-tenant-id" -SharedMailboxDomain "contoso.com"
+
+.EXAMPLE
+    Set-PingCastleEmailRBAC -TenantId "your-tenant-id" -SharedMailboxDomain "contoso.com" -CertificateAuth -CertificatePath "C:\Certs\pingcastle.pfx"
+
+.NOTES
+    Author: Joe Dibley
+    Version: 1.0
+    Requires: Exchange Online Management Module, Microsoft Graph PowerShell Module
+#>
+
+function Set-PingCastleEmailRBAC {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)]
+        [string] $TenantId,
+
+        [Parameter(Mandatory = $false)]
+        [int]    $ClientSecretExpiration = 12,
+
+        [Parameter(Mandatory = $true)]
+        [string] $SharedMailboxDomain,
+
+        [Parameter(Mandatory = $false)]
+        [switch] $CertificateAuth,
+
+        [Parameter(Mandatory = $false)]
+        [string] $CertificatePath,
+
+        [Parameter(Mandatory = $false)]
+        [string] $AppName                  = "PingCastle-Email",
+
+        [Parameter(Mandatory = $false)]
+        [string] $ServicePrincipalName     = "PingCastle-Email",
+
+        [Parameter(Mandatory = $false)]
+        [string] $ManagementScopeName      = "PingCastle-Email-Scope",
+
+        [Parameter(Mandatory = $false)]
+        [string] $SharedMailboxName        = "pingcastle-Email",
+
+        [Parameter(Mandatory = $false)]
+        [string] $SharedMailboxDisplayName = "PingCastle-Email"
+    )
+
+    $SharedMailboxAddress = "$SharedMailboxName@$SharedMailboxDomain"
+
+    # Results object to store all configuration details
+    $Results = @{
+        Success = $false
+        AppRegistration = @{}
+        SharedMailbox = @{}
+        ServicePrincipal = @{}
+        ManagementScope = @{}
+        RoleAssignment = @{}
+        TestResults = @{}
+        Errors = @()
+    }
+
+    Write-Host "Starting PingCastle-Email RBAC Configuration..." -ForegroundColor Cyan
+    Write-Host "=============================================" -ForegroundColor Cyan
+
+    try {
+        # Step 1: Check and install required modules
+        Write-Host "Step 1: Checking required PowerShell modules..." -ForegroundColor Yellow
+
+        $RequiredModules = @("Microsoft.Graph.Applications", "Microsoft.Graph.Users", "ExchangeOnlineManagement")
+
+        foreach ($Module in $RequiredModules) {
+            if (!(Get-Module -ListAvailable -Name $Module)) {
+                Write-Host "Installing module: $Module" -ForegroundColor Green
+                Install-Module -Name $Module -Force -AllowClobber -Scope CurrentUser
+            }
+            Import-Module -Name $Module -Force
+        }
+
+        # Step 2: Connect to Microsoft Graph
+        Write-Host "Step 2: Connecting to Microsoft Graph..." -ForegroundColor Yellow
+
+        $GraphScopes = @(
+            "Application.ReadWrite.All",
+            "Directory.ReadWrite.All",
+            "User.ReadWrite.All"
+        )
+
+        Connect-MgGraph -TenantId $TenantId -Scopes $GraphScopes
+
+        # Step 3: Create Azure AD App Registration
+        Write-Host "Step 3: Creating Azure AD App Registration..." -ForegroundColor Yellow
+
+        $AppRegistration = New-MgApplication -DisplayName $AppName -SignInAudience "AzureADMyOrg"
+
+        if ($AppRegistration) {
+            Write-Host "App Registration created successfully" -ForegroundColor Green
+            $Results.AppRegistration = @{
+                ApplicationId = $AppRegistration.AppId
+                ObjectId = $AppRegistration.Id
+                DisplayName = $AppRegistration.DisplayName
+            }
+        }
+
+        # Step 4: Create Service Principal
+        Write-Host "Step 4: Creating Service Principal..." -ForegroundColor Yellow
+
+        $ServicePrincipal = New-MgServicePrincipal -AppId $AppRegistration.AppId
+
+        if ($ServicePrincipal) {
+            Write-Host "Service Principal created successfully" -ForegroundColor Green
+            $Results.ServicePrincipal = @{
+                ObjectId = $ServicePrincipal.Id
+                AppId = $ServicePrincipal.AppId
+                DisplayName = $ServicePrincipal.DisplayName
+            }
+        }
+
+        # Step 5: Create Authentication Credential
+        Write-Host "Step 5: Creating Authentication Credential..." -ForegroundColor Yellow
+
+        if ($CertificateAuth -and $CertificatePath) {
+            # Certificate-based authentication
+            if (Test-Path $CertificatePath) {
+                $Certificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($CertificatePath)
+                $KeyCredential = @{
+                    Type = "AsymmetricX509Cert"
+                    Usage = "Verify"
+                    Key = $Certificate.RawData
+                }
+
+                Update-MgApplication -ApplicationId $AppRegistration.Id -KeyCredentials $KeyCredential
+                Write-Host "Certificate credential added" -ForegroundColor Green
+
+                $Results.AppRegistration.AuthenticationType = "Certificate"
+                $Results.AppRegistration.CertificateThumbprint = $Certificate.Thumbprint
+            } else {
+                throw "Certificate file not found at: $CertificatePath"
+            }
+        } else {
+            # Client secret authentication
+            $ClientSecret = Add-MgApplicationPassword -ApplicationId $AppRegistration.Id -PasswordCredential @{
+                DisplayName = "PingCastle-Email Secret"
+                EndDateTime = (Get-Date).AddMonths($ClientSecretExpiration)
+            }
+
+            Write-Host "Client secret created (expires in $ClientSecretExpiration months)" -ForegroundColor Green
+            $Results.AppRegistration.ClientSecret = $ClientSecret.SecretText
+            $Results.AppRegistration.SecretId = $ClientSecret.KeyId
+            $Results.AppRegistration.AuthenticationType = "ClientSecret"
+        }
+
+        # Step 6: Connect to Exchange Online
+        Write-Host "Step 6: Connecting to Exchange Online..." -ForegroundColor Yellow
+
+        Connect-ExchangeOnline -ShowBanner:$false
+
+        # Step 7: Create Shared Mailbox
+        Write-Host "Step 7: Creating Shared Mailbox..." -ForegroundColor Yellow
+
+        # Check if mailbox already exists
+        $ExistingMailbox = Get-Mailbox -Identity $SharedMailboxAddress -ErrorAction SilentlyContinue
+
+        if (!$ExistingMailbox) {
+            $SharedMailbox = New-Mailbox -Shared -Name $SharedMailboxDisplayName -PrimarySmtpAddress $SharedMailboxAddress -Alias $SharedMailboxName
+
+            if ($SharedMailbox) {
+                Write-Host "Shared mailbox created successfully" -ForegroundColor Green
+                $Results.SharedMailbox = @{
+                    DisplayName = $SharedMailbox.DisplayName
+                    PrimarySmtpAddress = $SharedMailbox.PrimarySmtpAddress
+                    Alias = $SharedMailbox.Alias
+                    Created = $true
+                }
+            }
+        } else {
+            Write-Host "! Shared mailbox already exists" -ForegroundColor Yellow
+            $Results.SharedMailbox = @{
+                DisplayName = $ExistingMailbox.DisplayName
+                PrimarySmtpAddress = $ExistingMailbox.PrimarySmtpAddress
+                Alias = $ExistingMailbox.Alias
+                Created = $false
+            }
+        }
+
+        # Step 8: Block shared mailbox sign-in
+        Write-Host "Step 8: Blocking shared mailbox sign-in..." -ForegroundColor Yellow
+
+        $MailboxUser = Get-Mailbox -Identity $SharedMailboxAddress
+        if ($MailboxUser.ExternalDirectoryObjectId) {
+            Update-MgUser -UserId $MailboxUser.ExternalDirectoryObjectId -AccountEnabled:$false
+            Write-Host "Shared mailbox sign-in blocked" -ForegroundColor Green
+        }
+
+        # Step 9: Create Service Principal in Exchange Online
+        Write-Host "Step 9: Creating Service Principal in Exchange Online..." -ForegroundColor Yellow
+
+        $ExoServicePrincipal = New-ServicePrincipal -AppId $AppRegistration.AppId -ObjectId $ServicePrincipal.Id -DisplayName $ServicePrincipalName
+
+        if ($ExoServicePrincipal) {
+            Write-Host "Exchange Online Service Principal created" -ForegroundColor Green
+        }
+
+        # Step 10: Create Management Scope
+        Write-Host "Step 10: Creating Management Scope..." -ForegroundColor Yellow
+
+        $ManagementScope = New-ManagementScope -Name $ManagementScopeName -RecipientRestrictionFilter "EmailAddresses -eq '$SharedMailboxAddress'"
+
+        if ($ManagementScope) {
+            Write-Host "Management Scope created" -ForegroundColor Green
+            $Results.ManagementScope = @{
+                Name = $ManagementScope.Name
+                RecipientFilter = $ManagementScope.RecipientFilter
+            }
+        }
+
+        # Step 11: Create Role Assignment
+        Write-Host "Step 11: Creating Role Assignment..." -ForegroundColor Yellow
+
+        $RoleAssignment = New-ManagementRoleAssignment -Role "Application Mail.Send" -App $ServicePrincipal.Id -CustomResourceScope $ManagementScopeName
+
+        if ($RoleAssignment) {
+            Write-Host "Role Assignment created" -ForegroundColor Green
+            $Results.RoleAssignment = @{
+                Name = $RoleAssignment.Name
+                Role = $RoleAssignment.Role
+                RoleAssignee = $RoleAssignment.RoleAssignee
+                CustomResourceScope = $RoleAssignment.CustomResourceScope
+            }
+        }
+
+        # Step 12: Test Configuration
+        Write-Host "Step 12: Testing Configuration..." -ForegroundColor Yellow
+
+        Start-Sleep -Seconds 30  # Wait for replication
+
+        $TestResult = Test-ServicePrincipalAuthorization -Identity $ServicePrincipal.Id -Resource $SharedMailboxAddress
+
+        if ($TestResult) {
+            $Results.TestResults = @{
+                RoleName = $TestResult.RoleName
+                GrantedPermissions = $TestResult.GrantedPermissions
+                InScope = $TestResult.InScope
+                AllowedResourceScope = $TestResult.AllowedResourceScope
+            }
+
+            if ($TestResult.InScope -eq $true) {
+                Write-Host "Configuration test passed - Service Principal has access to shared mailbox" -ForegroundColor Green
+                $Results.Success = $true
+            } else {
+                Write-Host "✗ Configuration test failed - Service Principal does not have access to shared mailbox" -ForegroundColor Red
+                $Results.Errors += "Test failed: Service Principal not in scope for shared mailbox"
+            }
+        }
+
+        # Step 13: Display Summary
+        Write-Host "`n" -NoNewline
+        Write-Host "Configuration Summary" -ForegroundColor Cyan
+        Write-Host "=====================" -ForegroundColor Cyan
+        Write-Host "App Name: $AppName" -ForegroundColor White
+        Write-Host "Application ID: $($AppRegistration.AppId)" -ForegroundColor White
+        Write-Host "Object ID: $($ServicePrincipal.Id)" -ForegroundColor White
+        Write-Host "Shared Mailbox: $SharedMailboxAddress" -ForegroundColor White
+        Write-Host "Management Scope: $ManagementScopeName" -ForegroundColor White
+        Write-Host "Authentication Type: $($Results.AppRegistration.AuthenticationType)" -ForegroundColor White
+
+        if ($Results.AppRegistration.AuthenticationType -eq "ClientSecret") {
+            Write-Host "Client Secret: $($Results.AppRegistration.ClientSecret)" -ForegroundColor Yellow
+            Write-Host "WARNING: Save the client secret securely - it cannot be retrieved again!" -ForegroundColor Red
+        }
+
+        if ($Results.AppRegistration.AuthenticationType -eq "Certificate") {
+            Write-Host "Certificate Thumbprint: $($Results.AppRegistration.CertificateThumbprint)" -ForegroundColor White
+        }
+
+        Write-Host "`nConfiguration completed successfully!" -ForegroundColor Green
+
+    } catch {
+        $Results.Success = $false
+        $Results.Errors += $_.Exception.Message
+        Write-Host "Error: $($_.Exception.Message)" -ForegroundColor Red
+        throw
+    } finally {
+        # Disconnect from services
+        Disconnect-ExchangeOnline -Confirm:$false -ErrorAction SilentlyContinue
+        Disconnect-MgGraph -ErrorAction SilentlyContinue
+    }
+
+    return $Results
+}
+```
+
+#### Usage Examples
+
+**Basic usage with client secret authentication:**
+
+```powershell
+Set-PingCastleEmailRBAC -TenantId "your-tenant-id-guid" -SharedMailboxDomain "contoso.com"
+```
+
+**With certificate authentication:**
+
+```powershell
+Set-PingCastleEmailRBAC -TenantId "your-tenant-id-guid" `
+                        -SharedMailboxDomain "contoso.com" `
+                        -CertificateAuth `
+                        -CertificatePath "C:\Certs\pingcastle.pfx"
+```
+
+**Custom configuration:**
+
+```powershell
+Set-PingCastleEmailRBAC -TenantId "your-tenant-id-guid" `
+                        -SharedMailboxDomain "contoso.com" `
+                        -AppName "MyCustomPingCastle" `
+                        -SharedMailboxName "security-reports" `
+                        -SharedMailboxDisplayName "Security Reports" `
+                        -ClientSecretExpiration 24
+```
+
+#### What the Function Does
+
+The function performs the following steps automatically:
+
+1. Checks and installs required PowerShell modules
+2. Connects to Microsoft Graph
+3. Creates the Azure AD App Registration
+4. Creates the Service Principal
+5. Creates authentication credentials (client secret or certificate)
+6. Connects to Exchange Online
+7. Creates the shared mailbox
+8. Blocks sign-in for the shared mailbox user account
+9. Creates the Service Principal in Exchange Online
+10. Creates the Management Scope to restrict access
+11. Assigns the Application Mail.Send role
+12. Tests the configuration
+13. Displays a summary with all configuration details
+
+:::tip
+Save the output, especially the Client Secret if using secret-based authentication. The secret cannot be retrieved again after the function completes.
+:::
+
+</TabItem>
+</Tabs>
+
+#### Updating appsettings.json
+
+After completing either the manual or PowerShell configuration, update your PingCastle Enterprise [appsettings.json](enterpriseinstall.md#L1980) file:
+
+**Example configuration with Client Secret:**
+
+```json
+"Email": {
+  "Provider": "Graph",
+  "Email": "pingcastle@yourdomain.com",
+  "TenantId": "your-tenant-id-guid",
+  "ClientId": "your-application-client-id",
+  "AuthenticationMethod": "ClientSecret",
+  "ClientSecret": "your-client-secret-value",
+  "FromDisplayName": "PingCastle"
+}
+```
+
+**Example configuration with Certificate (File mode):**
+
+```json
+"Email": {
+  "Provider": "Graph",
+  "Email": "pingcastle@yourdomain.com",
+  "TenantId": "your-tenant-id-guid",
+  "ClientId": "your-application-client-id",
+  "AuthenticationMethod": "Certificate",
+  "FromDisplayName": "PingCastle",
+  "CertificateAuth": {
+    "Mode": "File",
+    "File": {
+      "Path": "C:\\Certificates\\pingcastle.pfx",
+      "Password": "your-certificate-password"
+    }
+  }
+}
+```
+
+**Example configuration with Certificate (Store mode):**
+
+```json
+"Email": {
+  "Provider": "Graph",
+  "Email": "pingcastle@yourdomain.com",
+  "TenantId": "your-tenant-id-guid",
+  "ClientId": "your-application-client-id",
+  "AuthenticationMethod": "Certificate",
+  "FromDisplayName": "PingCastle",
+  "CertificateAuth": {
+    "Mode": "Store",
+    "Store": {
+      "Thumbprint": "your-certificate-thumbprint",
+      "StoreLocation": "LocalMachine",
+      "StoreName": "My"
+    }
+  }
+}
+```
 
 ## Azure hosting
 
