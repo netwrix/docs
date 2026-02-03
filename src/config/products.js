@@ -710,8 +710,8 @@ export function getDefaultVersion(product) {
  */
 export function createProductMap() {
   const map = {};
+  const injectSubDir = ['kb'];
   PRODUCTS.forEach((product) => {
-    const injectSubDir = ['kb'];
     map[`/${product.path}`] = product.name;
     injectSubDir.forEach((subDir) => {
       const injectedPath = product.path.replace('docs/', `docs/${subDir}/`);
