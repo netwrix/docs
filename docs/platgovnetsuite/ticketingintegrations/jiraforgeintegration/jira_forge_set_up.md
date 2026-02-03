@@ -23,7 +23,7 @@ The steps below show detailed instructions and prerequisites on how to set up Pl
 
 Netwrix Platform Governance(Strongpoint) bundle is a key prerequisite for Jira Forge to work. It is required that your NetSuite account is installed with the latest version or at least **7.7.5** or above. 
 
-For installation details you may refer to the installation guide found in [Installing Platform Governance for NetSuite](/docs/platgovNetSuite/installation/installing_strongpoint).
+For installation details you may refer to the installation guide found in [Installing Platform Governance for NetSuite](/docs/platgovnetsuite/installation/installing_strongpoint).
 
 #### NOTE: 
 If the latest version of the bundle is already installed, you may skip this part.
@@ -40,7 +40,7 @@ If the latest version of the bundle is already installed, you may skip this part
 2. In the KEYWORDS field, search for **311231**. This is the bundle ID for Netwrix Platform Governance Jira bundle
 
 
-![Jira Forge Bundle Search](/images/platgovNetSuite/integrations/jira_forge_jira_bundle_search.webp)
+![Jira Forge Bundle Search](/static/images/platgovnetsuite/integrations/jira_forge_jira_bundle_search.webp)
 
 3. Click on Netwrix Platform Governance Jira bundle in the search results.
 4. Click Install when the Bundle Details opens.
@@ -55,24 +55,24 @@ This process will require a user to access to Atlassian Marketplace and an Admin
 3. You should see a number of products displayed, select **Netwrix NS Platform Governance (formerly Strongpoint)-Forge**.
 
 
-![Jira Forge Marketplace Search](/images/platgovNetSuite/integrations/jira_forge_marketplace_search_results.webp)
+![Jira Forge Marketplace Search](/static/images/platgovnetsuite/integrations/jira_forge_marketplace_search_results.webp)
 
 4. After selecting, you should be redirected to the product's overview page.
 
 
-![Jira Forge Marketplace Overview](/images/platgovNetSuite/integrations/jira_forge_marketplace_overview.webp)
+![Jira Forge Marketplace Overview](/static/images/platgovnetsuite/integrations/jira_forge_marketplace_overview.webp)
 
 5. Click the **Get it now** button found at the upper-right part of the page.
 6. You will now be redirected to the installation process. Select the Jira instance where you want to install Netwrix Platform Governance Forge
 
 
-![Jira Forge Marketplace Select Site](/images/platgovNetSuite/integrations/jira_forge_marketplace_select_site.webp)
+![Jira Forge Marketplace Select Site](/static/images/platgovnetsuite/integrations/jira_forge_marketplace_select_site.webp)
 
 7. Click **Review**
 8. You are now in the last step where you can review the app's Permissions and Data management. All of these have been strictly reviewed by the Atlassian team and adhere to their security policies. When ready, click **Get it now** button.
 
 
-![Jira Forge Marketplace Review](/images/platgovNetSuite/integrations/jira_forge_marketplace_review_install.webp)
+![Jira Forge Marketplace Review](/static/images/platgovnetsuite/integrations/jira_forge_marketplace_review_install.webp)
 
 ### Set up NetSuite Token-based Authentication Credentials
 
@@ -93,7 +93,7 @@ Token Based Authentication is set up through NetSuite. Here is the basic process
     - Role: STRONGPOINT DEVELOPER ROLE
     - Token Name: ***Token name of your choice***
     - Skip checking Inactive checkbox
-5. Click 'Save'
+5. Click 'Save'.
 
     #### NOTE: 
     You can also create a Token Based Authentication for you NetSuite Administration role. Follow the steps below:
@@ -101,7 +101,7 @@ Token Based Authentication is set up through NetSuite. Here is the basic process
     2. In your NetSuite account dashboard, navigate to the bottom left part of the page. Under **Settings**, you should see **Manage Access Tokens** and be able to click the link.
 
 
-    ![Jira Forge NetSuite Admin TBA](/images/platgovNetSuite/integrations/jira_forge_NetSuite_tba_admin.webp)
+    ![Jira Forge NetSuite Admin TBA](/static/images/platgovnetsuite/integrations/jira_forge_netsuite_tba_admin.webp)
 
     3. You should be redirected to **My Access Tokens** page. Click the **New My Access Token** button, this allows you to create a TBA record for your Administrator role.
     4. Select an Application Name(Integration record) for this token.
@@ -164,18 +164,18 @@ This step will require a user to have Jira instance access where Netwrix Platfor
 2. In the left part of the page, there is a sidebar that lists shortcuts and apps that are installed in this Jira instance. Under 'Your Apps', there should be an app that is titled 'Netwrix NetSuite Settings'. Click it and it should display the Netwrix NetSuite Settings page.
 
 
-![Jira Forge Netwrix NetSuite Settings Menu](/images/platgovNetSuite/integrations/jira_forge_netwrix_NetSuite_settings_menu.webp)
+![Jira Forge Netwrix NetSuite Settings Menu](/static/images/platgovnetsuite/integrations/jira_forge_netwrix_netsuite_settings_menu.webp)
 
 3. The page has 2 tabs, Netwrix NetSuite TBA Credentials and Netwrix NetSuite Project Keys. Let's focus on 'Netwrix NetSuite Project Keys' tab. Click the tab.
 
 
-![Jira Forge Netwrix NetSuite Settings Project Keys](/images/platgovNetSuite/integrations/jira_forge_netwrix_NetSuite_project_keys_menu.webp)
+![Jira Forge Netwrix NetSuite Settings Project Keys](/static/images/platgovnetsuite/integrations/jira_forge_netwrix_netsuite_project_keys_menu.webp)
 
 4. 'New Project Key' button should be displayed. Click the button and a modal should pop-out for you to add a Project Key in the field.
     - By defining a Project Key, the Platform Governance app can only be displayed and used within the project.
 
 
-![Jira Forge Netwrix NetSuite Settings Project Keys Modal](/images/platgovNetSuite/integrations/jira_forge_project_key_modal.webp)
+![Jira Forge Netwrix NetSuite Settings Project Keys Modal](/static/images/platgovnetsuite/integrations/jira_forge_project_key_modal.webp)
 
 5. Click 'Create' and the newly added/created project key should be listed in the page.
 
@@ -187,33 +187,33 @@ This step will require a user to have Jira instance access where Netwrix Platfor
 2. In the left part of the page, there is a sidebar that lists shortcuts and apps that are installed in this Jira instance. Under 'Your Apps', there should be an app that is titled 'Netwrix NetSuite Settings'. Click it and it should display the Netwrix NetSuite Settings page.
 
 
-![Jira Forge Netwrix NetSuite Settings Menu](/images/platgovNetSuite/integrations/jira_forge_netwrix_NetSuite_settings_menu.webp)
+![Jira Forge Netwrix NetSuite Settings Menu](/static/images/platgovnetsuite/integrations/jira_forge_netwrix_netsuite_settings_menu.webp)
 
 3. The page has 2 tabs, Netwrix NetSuite TBA Credentials and Netwrix NetSuite Project Keys. Let's focus on 'Netwrix NetSuite TBA Credentials' tab. Click the tab.
 
 
-![Jira Forge Netwrix NetSuite Settings Menu TBA](/images/platgovNetSuite/integrations/jira_forge_netwrix_NetSuite_settings_tba.webp)
+![Jira Forge Netwrix NetSuite Settings Menu TBA](/static/images/platgovnetsuite/integrations/jira_forge_netwrix_netsuite_settings_tba.webp)
 
 4. 'New Token Based Authentication' button should be displayed. Click the button and a modal should pop-out for you to add a new TBA record to be used to connect to a NetSuite account.
 
 
-![Jira Forge Netwrix NetSuite Settings Menu TBA Modal](/images/platgovNetSuite/integrations/jira_forge_netwrix_NetSuite_settings_tba_modal.webp)
+![Jira Forge Netwrix NetSuite Settings Menu TBA Modal](/static/images/platgovnetsuite/integrations/jira_forge_netwrix_netsuite_settings_tba_modal.webp)
 
     - Populate the fields.
     - A 'Test Connection' button(yellow) can be found in the button inside the modal, this button is used to test or check if the credentials and account you have are valid.
 
 
-![Jira Forge Netwrix NetSuite Settings TBA Test Connection](/images/platgovNetSuite/integrations/jira_forge_tba_test_connection_successful.webp)
+![Jira Forge Netwrix NetSuite Settings TBA Test Connection](/static/images/platgovnetsuite/integrations/jira_forge_tba_test_connection_successful.webp)
 
 5. Click 'Create' and the newly added/created TBA record should be listed in the page.
 
 Additionally, 'Update' and 'Delete' buttons are found at the right part of your record. These buttons allow you to update or delete the record, respectively.
 
 
-![Jira Forge Netwrix NetSuite Settings TBA List](/images/platgovNetSuite/integrations/jira_forge_tba_list.webp)
+![Jira Forge Netwrix NetSuite Settings TBA List](/static/images/platgovnetsuite/integrations/jira_forge_tba_list.webp)
 
 If you have followed the step by step guide in this page, you are good to go and is ready to use the integration app. 
 
 The next page, Jira Forge Walkthrough will show you how the app works!
 
-**Next Step:** [ Jira Forge Walkthrough Example](/docs/platgovNetSuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough)
+**Next Step:** [ Jira Forge Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough)

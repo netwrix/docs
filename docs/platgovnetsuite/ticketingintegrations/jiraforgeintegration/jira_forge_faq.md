@@ -23,4 +23,4 @@ This section will discuss frequently asked questions and basic troubleshooting f
 5. Is there impact to existing connect tickets if forge is being used?
     - **No**. Since the change request information is being pulled from the NetSuite account that Jira Forge is currently connected to, there should be no impact when switching to the Forge app.
 
-**Back To:** [ Jira Forge Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough)
+**Back to:** [Jira Forge Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough)
