@@ -168,7 +168,7 @@ To use import feature follow the steps below:
 
 4. Once the importing is successful, all valid objects will populate the Customization and Proposed Customization tables accordingly. You will also see a flag message indicating the importing process is successful.
 
-If you have reach this section, you were able to execute the following:
+If you have reached this section, you were able to execute the following:
 - Use the Import Customization feature and add customizations in bulk.
 
 ### Perform Risk Assessment
@@ -191,7 +191,7 @@ To use Impact Analysis follow the steps below:
 
 ![Jira Forge Impact Analysis Data](/images/platgovnetsuite/integrations/jira_forge_impact_analysis.webp) 
 
-If you have reach this section, you were able to execute the following:
+If you have reached this section, you were able to execute the following:
 - Perform an impact analysis on the customization that are add/attached to the Jira ticket change request.
 
 ### View Entity Relation Diagram
@@ -220,7 +220,7 @@ To use ERD follow the steps below:
 
 ![Jira Forge ERD Data NetSuite](/images/platgovnetsuite/integrations/jira_forge_sample_erd.webp) 
 
-If you have reach this section, you were able to execute the following:
+If you have reached this section, you were able to execute the following:
 - View the entity relation diagram of the customization that is add/attached to the Jira ticket change request.
 
 ### Ready for Development
@@ -251,7 +251,7 @@ Once you have resolved any risk or conflicts, your changes are ready for develop
 
 ![Jira Forge Change Request Pending Approval](/images/platgovnetsuite/integrations/jira_forge_change_request_pending_approval_status.webp) 
 
-If you have reach this section, you were able to execute the following:
+If you have reached this section, you were able to execute the following:
 - Push a change request from a Jira ticket.
 - See the change request status from Jira.
 
@@ -279,7 +279,7 @@ When development is done, and the Change Request is approved according to your p
 
 4. If you used Ready for Deployment, update your Jira status to Done once your deployment and verification activities are complete.
 
-If you have reach this section, you were able to execute the following:
+If you have reached this section, you were able to execute the following:
 - Push a change request from a Jira ticket.
 - See the Approved change request status from Jira.
 
