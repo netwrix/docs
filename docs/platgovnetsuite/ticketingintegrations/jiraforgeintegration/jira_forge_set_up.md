@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Jira Forge Set Up
 
-The steps below show detailed instructions and prerequisites on how to set up Platform Governance Jira Integation.
+The steps below show detailed instructions and prerequisites on how to set up Platform Governance Jira Integration.
 
 ## Prerequisite
 
@@ -82,7 +82,8 @@ Token Based Authentication is set up through NetSuite. Here is the basic process
 
 1. NetSuite Administrator creates an Integration Record for the Platform Governance for NetSuite application. This only needs to be performed once per account. Open **Setup > Integration > Integration Management > Manage Integrations > New**. For more information, refer to the NetSuite help article Create Integration Records for Applications to Use TBA. To view a list of integration records in this account, open **Setup > Integration > Integration Management > Manage Integrations**.
 
-    **NOTE:** Please take note and keep these values to yourself.
+    #### NOTE: 
+        Please take note and keep these values to yourself.
 
 2. Each user creates their token in NetSuite. Refer to the NetSuite help Manage TBA Tokens in the NetSuite UI for details. Once you have created your tokens, add them to Jira.
 3. Create an Access Token by navigating to main menu, **Setup > Users/Roles > Access Tokens > New**.
@@ -94,7 +95,8 @@ Token Based Authentication is set up through NetSuite. Here is the basic process
     - Skip checking Inactive checkbox
 Click, 'Save'
 
-    **NOTE:** You can also create a Token Based Authentication for you Netsuite Administration role. Follow the steps below:
+    #### NOTE: 
+        You can also create a Token Based Authentication for you Netsuite Administration role. Follow the steps below:
     1. Login as an **Administrator** role in Netsuite.
     2. In your Netsuite account dashboard, navigate to the bottom left part of the page. Under **Settings**, you should see **Manage Access Tokens** and be able to click the link.
 
@@ -215,4 +217,3 @@ If you have followed the step by step guide in this page, you are good to go and
 The next page, Jira Forge Walkthrough will show you how the app works!
 
 **Next Step:** [ Jira Forge Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough.md)
-

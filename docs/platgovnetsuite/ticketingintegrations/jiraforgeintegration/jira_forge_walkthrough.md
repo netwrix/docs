@@ -144,7 +144,7 @@ If you have reached this section, you were able to execute the following:
 
 This feature is similar to the add customization process, the key difference is that the user can add customizations in bulk. Import customization only allows the user to upload files in XML and a SDF project in ZIP formats. 
 
-You may contact your company's Netsuite Aadministrator for a sample of this files.
+You may contact your company's Netsuite Administrator for a sample of this files.
 
 To use import feature follow the steps below:
 
