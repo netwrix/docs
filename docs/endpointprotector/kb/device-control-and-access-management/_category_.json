@@ -1,5 +1,9 @@
 {
   "label": "Device Control And Access Management",
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Knowledge base articles related to device control and access management."
+  }
 }

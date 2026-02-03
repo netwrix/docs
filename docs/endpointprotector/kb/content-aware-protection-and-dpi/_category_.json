@@ -1,5 +1,9 @@
 {
   "label": "Content Aware Protection And DPI",
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Knowledge base articles related to content aware protection and dpi."
+  }
 }

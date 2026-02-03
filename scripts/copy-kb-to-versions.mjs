@@ -399,7 +399,11 @@ function generateCategoryFile(destPath, folderName) {
     const categoryConfig = {
       label: label,
       collapsed: true,
-      collapsible: true
+      collapsible: true,
+      link: {
+        type: 'generated-index',
+        description: `Knowledge base articles related to ${label.toLowerCase()}.`
+      }
     };
 
     fs.writeFileSync(categoryPath, JSON.stringify(categoryConfig, null, 2) + '\n', 'utf8');

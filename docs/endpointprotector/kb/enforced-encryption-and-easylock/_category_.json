@@ -1,5 +1,9 @@
 {
   "label": "Enforced Encryption And Easylock",
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Knowledge base articles related to enforced encryption and easylock."
+  }
 }
