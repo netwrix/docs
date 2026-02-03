@@ -48,7 +48,7 @@ If the latest version of the bundle is already installed, you may skip this part
 
 ### Install the latest version of the Netwrix Platform Governance Jira Forge app
 
-This process will require a user to access to Atlassian Marketplace and an Administrator role to the Jira instance where the app will be installed.
+This process requires access to the Atlassian Marketplace and Administrator permissions on the Jira instance where the app will be installed.
 
 1. Go to the [Atlassian Marketplace](https://marketplace.atlassian.com/).
 2. In the search bar, type in either of the keywords: **Netwrix Platform Governance** or **Strongpoint**(this is the product's previous name).
@@ -96,7 +96,7 @@ Token Based Authentication is set up through NetSuite. Here is the basic process
 5. Click 'Save'.
 
     #### NOTE: 
-    You can also create a Token Based Authentication for you NetSuite Administrator role. Follow the steps below:
+    You can also create a Token Based Authentication for your NetSuite Administrator role. Follow the steps below:
     1. Login as an **Administrator** role in NetSuite.
     2. In your NetSuite account dashboard, navigate to the bottom left part of the page. Under **Settings**, you should see **Manage Access Tokens** and be able to click the link.
 
@@ -114,7 +114,7 @@ Token Based Authentication is set up through NetSuite. Here is the basic process
 This step will require a user to have Jira instance access and a user to have NetSuite account access.
 
 1. Create a Jira token via this URL: https://id.atlassian.com/manage-profile/security/api-tokens
-    - Take note of the token value as this will be associated with you email address that is used to login to the Atlassian/Jira ecosystem. Refer to the Atlassian documentation to obtain a Token.
+    - Take note of the token value as this will be associated with your email address that is used to login to the Atlassian/Jira ecosystem. Refer to the Atlassian documentation to obtain a Token.
 2. In this step, you should have the following credentials on hand
     - Jira user email address
     - Jira token generated above.

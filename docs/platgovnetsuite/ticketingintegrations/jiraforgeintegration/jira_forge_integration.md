@@ -39,7 +39,7 @@ Change Managers and System Administrators quickly realize the integration benefi
 
 Review these considerations prior to deploying the Jira integration:
 
-1. Platform Governance for NetSuite's integration is a client script that can be enabled or disabled by form, user, or role. It has high order value to ensure it is the last thing to run and does not interrupt any other process.
+1. Platform Governance for NetSuite integration is implemented as a Forge app. It can be enabled or disabled based on configuration and runs independently of other scripts, ensuring it does not interfere with existing processes.
 2. All functions are self-executing, complying with Atlassian Jira Forge's best practices.
 3. No DOM manipulation or global scripts are deployed.
 4. No external libraries are needed. It is plain JavaScript.
