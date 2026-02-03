@@ -20,11 +20,11 @@ With Platform Governance for NetSuite's integration of NetSuite and Jira (Cloud)
 
 Jira Integration uses the latest Atlassian Forge implementation which provides enhanced security, ensuring data does not leave the ecosystem and adheres to strict security standards (SOC2, ISO/IEC 27001).
 
-The Jira Forge integration automatically syncs Jira tickets with NetSuite a change request:
+The Jira Forge integration automatically syncs Jira tickets with a NetSuite change request:
 
 - Creates a corresponding Change Request when a Jira ticket is generated.
 - Updates NetSuite with the corresponding customizations.
-- Sets the Change Request status to according to its corresponding Jira ticket status.
+- Sets the Change Request status according to its corresponding Jira ticket status.
 
 Change Managers and System Administrators quickly realize the integration benefits:
 

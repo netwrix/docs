@@ -12,7 +12,7 @@ This section will discuss frequently asked questions and basic troubleshooting f
     - **Yes**, it is perfectly okay to install the Forge app even though you currently have the Connect app. They should not cause any conflicts during installation and during using either one of them or both of them at the same time.
 
 2. What will happen to the data in Netwrix Settings page in Connect app once I have installed the Forge app?
-    - **Data in the Netwrix Settings page in Connect app does not get migrated to the Netwrix Netsuite Settings page in the Forge app. Since these are 2 different implementation/apps, you will have to manually migrate the Connect app data to Forge app.
+    - Data in the Netwrix Settings page in Connect app does not get migrated to the Netwrix Netsuite Settings page in the Forge app. Since these are 2 different implementation/apps, you will have to manually migrate the Connect app data to Forge app.
 
 3. Is it normal that I see two(2), Netwrix Netsuite tabs in my issues panel if my instance has both Connect and Forge apps?
     - **Yes**, it is normal. Two(2) separate and different apps would mean that they have separate file descriptors that shows separate tabs in the issue panel.
