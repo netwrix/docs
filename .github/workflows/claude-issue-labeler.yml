@@ -30,9 +30,10 @@ jobs:
 
             A new issue has been created. Your task is to:
             1. Read the issue using `gh issue view`
-            2. Get the list of available labels in this repository using `gh label list`
-            3. Assign the ONE most relevant label to this issue using `gh issue edit`
+            2. Get the list of available labels that start with "AI:" using `gh label list --search "AI:"`
+            3. Assign the ONE most relevant "AI:" label to this issue using `gh issue edit`
 
-            Choose only the single most appropriate label based on the issue content.
+            Choose only the single most appropriate label from the "AI:" labels based on the issue content.
+            If no "AI:" labels are a good fit, do not assign any label.
 
           claude_args: '--allowed-tools "Bash(gh issue view:*),Bash(gh issue edit:*),Bash(gh label list:*)"'
