@@ -23,8 +23,13 @@
  *   COPY_KB_VERSIONS=12.0,11.6                   # Filter by versions
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { PRODUCTS } from '../src/config/products.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // ============================================================================
 // Global Constants
@@ -32,29 +37,50 @@ const path = require('path');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const LOCKFILE = path.join(PROJECT_ROOT, '.kb-copy.lock');
+const ASSET_DIRS = ['0-images', 'images', 'assets', 'media'];
 
-const CONFIG = {
-  accessanalyzer: {
-    versions: ['12.0', '11.6'],
-    source: 'docs/kb/accessanalyzer',
-    destinationPattern: 'docs/accessanalyzer/{version}/kb'
-  }
-};
+// Build CONFIG dynamically from PRODUCTS
+function buildConfig() {
+  const config = {};
 
-const CATEGORY_LABELS = {
-  'active-directory-auditing': 'Active Directory Auditing',
-  'connection-profiles-and-credentials': 'Connection Profiles and Credentials',
-  'database-auditing-and-configuration': 'Database Auditing and Configuration',
-  'entra-id-and-azure-integration': 'Entra ID and Azure Integration',
-  'exchange-online-integration': 'Exchange Online Integration',
-  'file-system-and-sensitive-data-discovery': 'File System and Sensitive Data Discovery',
-  'installation-and-upgrades': 'Installation and Upgrades',
-  'job-management-and-scheduling': 'Job Management and Scheduling',
-  'reference-and-technical-specifications': 'Reference and Technical Specifications',
-  'reports-and-web-console': 'Reports and Web Console',
-  'sharepoint-online-integration': 'SharePoint Online Integration',
-  'troubleshooting-and-errors': 'Troubleshooting and Errors'
-};
+  PRODUCTS.forEach(product => {
+    // Validate required fields
+    if (!product.id || typeof product.id !== 'string') {
+      throw new Error(`Product missing required field 'id' or id is not a string: ${JSON.stringify(product)}`);
+    }
+    if (!Array.isArray(product.versions)) {
+      throw new Error(`Product '${product.id}' missing required array field 'versions'`);
+    }
+
+    const productId = product.id;
+    const versions = product.versions.map(v => {
+      if (!v.version || typeof v.version !== 'string') {
+        throw new Error(`Product '${productId}' has version entry missing 'version' field: ${JSON.stringify(v)}`);
+      }
+      return v.version;
+    });
+
+    // Special handling: KB folder name mapping (for legacy naming)
+    const kbFolderName = productId === 'recoveryforactivedirectory' ? 'recoveryad' : productId;
+
+    // Special handling: Unversioned products (version: 'current')
+    // For these products, copy KB to root level instead of /current/ folder
+    const hasCurrentVersion = versions.includes('current');
+    const destinationPattern = hasCurrentVersion
+      ? `docs/${productId}/kb`
+      : `docs/${productId}/{version}/kb`;
+
+    config[productId] = {
+      versions: versions,
+      source: `docs/kb/${kbFolderName}`,
+      destinationPattern: destinationPattern
+    };
+  });
+
+  return config;
+}
+
+const CONFIG = buildConfig();
 
 // ============================================================================
 // Lockfile Management
@@ -140,9 +166,15 @@ function releaseLock(isDryRun) {
 // ============================================================================
 
 function validateVersionFormat(version) {
-  const versionRegex = /^\d+\.\d+(\.\d+)?$/; // X.Y or X.Y.Z
-  if (!versionRegex.test(version)) {
-    throw new Error(`Invalid version format: ${version}. Expected X.Y or X.Y.Z`);
+  // Allow common version formats: X.Y, X.Y.Z, "current", "saas", etc.
+  // Just ensure it's a non-empty string with valid path characters
+  if (!version || typeof version !== 'string' || version.trim() === '') {
+    throw new Error(`Invalid version: empty or not a string`);
+  }
+
+  // Check for path traversal attempts
+  if (version.includes('..') || version.includes('/') || version.includes('\\')) {
+    throw new Error(`Invalid version format: ${version}. Contains path traversal characters`);
   }
 }
 
@@ -284,15 +316,84 @@ function rewriteAndCopyMarkdownFile(srcPath, destPath, kbSourceRoot, productName
 }
 
 // ============================================================================
-// Category File Generation (Whitelist)
+// Category File Generation (Title Case with Acronym Support)
 // ============================================================================
 
-function generateCategoryFile(destPath, folderName) {
-  const label = CATEGORY_LABELS[folderName];
+// Memoization cache for markdown file detection
+const markdownCache = new Map();
 
-  if (!label) {
-    return null; // Not in whitelist
+function hasMarkdownFiles(dirPath) {
+  if (markdownCache.has(dirPath)) {
+    return markdownCache.get(dirPath);
   }
+
+  let result = false;
+
+  try {
+    const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+
+    for (const entry of entries) {
+      if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.mdx'))) {
+        result = true;
+        break;
+      }
+
+      // Recursively check subdirectories
+      if (entry.isDirectory() && !entry.name.startsWith('.')) {
+        const subPath = path.join(dirPath, entry.name);
+        if (hasMarkdownFiles(subPath)) {
+          result = true;
+          break;
+        }
+      }
+    }
+  } catch (error) {
+    result = false;
+  }
+
+  markdownCache.set(dirPath, result);
+  return result;
+}
+
+function toTitleCase(str) {
+  const acronyms = ['AD', 'API', 'ID', 'SQL', 'SSL', 'TLS', 'MFA', 'SSO', 'RDS', 'UX', 'DPI'];
+
+  return str
+    .split('-')
+    .map(word => {
+      const upper = word.toUpperCase();
+      if (acronyms.includes(upper)) {
+        return upper;
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(' ');
+}
+
+function generateCategoryFile(destPath, folderName) {
+  // Skip hidden and underscore directories
+  if (folderName.startsWith('.') || folderName.startsWith('_')) {
+    return null;
+  }
+
+  // Skip asset directories
+  if (ASSET_DIRS.includes(folderName.toLowerCase())) {
+    return null;
+  }
+
+  const categoryPath = path.join(destPath, '_category_.json');
+
+  // Don't overwrite existing _category_.json
+  if (fs.existsSync(categoryPath)) {
+    return null;
+  }
+
+  // Only generate if directory contains markdown files (recursive check)
+  if (!hasMarkdownFiles(destPath)) {
+    return null;
+  }
+
+  const label = toTitleCase(folderName);
 
   try {
     const categoryConfig = {
@@ -301,8 +402,7 @@ function generateCategoryFile(destPath, folderName) {
       collapsible: true
     };
 
-    const categoryFilePath = path.join(destPath, '_category_.json');
-    fs.writeFileSync(categoryFilePath, JSON.stringify(categoryConfig, null, 2) + '\n', 'utf8');
+    fs.writeFileSync(categoryPath, JSON.stringify(categoryConfig, null, 2) + '\n', 'utf8');
     return true; // Created successfully
   } catch (err) {
     console.log(`     ⚠️  Failed to generate category file for ${folderName}: ${err.message}`);
@@ -340,19 +440,24 @@ function copyDirectorySync(src, dest, kbSourceRoot, productName, errorCount) {
     const destPath = path.join(dest, entry.name);
 
     if (entry.isDirectory()) {
+      // Skip hidden directories only (not underscore)
+      if (entry.name.startsWith('.')) {
+        continue;
+      }
+
       // Recursively copy subdirectory (fatal errors throw up to per-version handler)
       const subCounts = copyDirectorySync(srcPath, destPath, kbSourceRoot, productName, errorCount);
       filesCount += subCounts.filesCount;
       categoriesCount += subCounts.categoriesCount;
 
-      // Generate category file (always call, whitelist inside)
+      // Generate category file (rules applied inside function)
       const categoryResult = generateCategoryFile(destPath, entry.name);
       if (categoryResult === true) {
         categoriesCount++;
       } else if (categoryResult === false) {
         errorCount.count++;
       }
-      // null = not whitelisted, ignore
+      // null = skipped, ignore
     } else {
       // Copy files (non-fatal failures, log and continue)
       if (entry.name.endsWith('.md')) {
@@ -429,14 +534,23 @@ function main() {
     // Acquire lock
     acquireLock(isDryRun);
 
-    // Read environment filters
-    const filterProducts = process.env.COPY_KB_PRODUCTS
+    // Read environment filters (CLI flags override env vars)
+    let filterProducts = process.env.COPY_KB_PRODUCTS
       ? process.env.COPY_KB_PRODUCTS.split(',').map(p => p.trim()).filter(Boolean)
       : null;
 
-    const filterVersions = process.env.COPY_KB_VERSIONS
+    let filterVersions = process.env.COPY_KB_VERSIONS
       ? process.env.COPY_KB_VERSIONS.split(',').map(v => v.trim()).filter(Boolean)
       : null;
+
+    // CLI flags override environment variables
+    args.forEach(arg => {
+      if (arg.startsWith('--products=')) {
+        filterProducts = arg.split('=')[1].split(',').map(p => p.trim()).filter(Boolean);
+      } else if (arg.startsWith('--versions=')) {
+        filterVersions = arg.split('=')[1].split(',').map(v => v.trim()).filter(Boolean);
+      }
+    });
 
     // Validate environment
     validateEnvironment(filterProducts, filterVersions, CONFIG);
@@ -451,7 +565,7 @@ function main() {
     }
 
     if (isClean) {
-      console.log('🧹 CLEAN MODE - Removing copied KB folders');
+      console.log('🧹 CLEAN MODE - Will remove destinations before copy');
     }
 
     if (filterProducts) {
@@ -501,59 +615,36 @@ function main() {
           console.log(`     Source: ${config.source}`);
           console.log(`     Dest:   ${destination}`);
 
-          if (isClean) {
-            // Remove copied KB folder
-            if (fs.existsSync(destination)) {
-              if (!isDryRun) {
-                const success = removeDirectorySync(destination);
-                if (success) {
-                  console.log(`     ✅ Removed`);
-                  totalSuccess++;
-                } else {
-                  totalVersionErrors++;
-                }
+          // If --clean is set, remove destination first
+          if (isClean && fs.existsSync(destination)) {
+            if (!isDryRun) {
+              const removeSuccess = removeDirectorySync(destination);
+              if (removeSuccess) {
+                console.log(`     🗑️  Removed old KB folder`);
               } else {
-                console.log(`     🔍 Would remove`);
-                totalSuccess++;
+                throw new Error('Failed to remove old KB folder');
               }
             } else {
-              console.log(`     ℹ️  Does not exist (nothing to remove)`);
+              console.log(`     🔍 [dry-run] Would remove old KB folder`);
+            }
+          }
+
+          // Copy KB content (always happens, regardless of --clean)
+          if (!isDryRun) {
+            const errorCount = { count: 0 };
+            const result = copyDirectorySync(config.source, destination, config.source, product, errorCount);
+
+            if (errorCount.count > 0) {
+              console.log(`     ⚠️  Copied with ${errorCount.count} file errors`);
+              totalFileErrors += errorCount.count;
+              totalSuccess++; // Version partially succeeded
+            } else {
+              console.log(`     ✅ Copied ${result.filesCount} files, ${result.categoriesCount} categories`);
               totalSuccess++;
             }
           } else {
-            // Copy KB content
-
-            // Remove existing destination first
-            if (fs.existsSync(destination)) {
-              if (!isDryRun) {
-                const removeSuccess = removeDirectorySync(destination);
-                if (removeSuccess) {
-                  console.log(`     🗑️  Removed old KB folder`);
-                } else {
-                  throw new Error('Failed to remove old KB folder');
-                }
-              } else {
-                console.log(`     🔍 Would remove old KB folder`);
-              }
-            }
-
-            // Copy source to destination
-            if (!isDryRun) {
-              const errorCount = { count: 0 };
-              const result = copyDirectorySync(config.source, destination, config.source, product, errorCount);
-
-              if (errorCount.count > 0) {
-                console.log(`     ⚠️  Copied with ${errorCount.count} file errors`);
-                totalFileErrors += errorCount.count;
-                totalSuccess++; // Version partially succeeded
-              } else {
-                console.log(`     ✅ Copied ${result.filesCount} files, ${result.categoriesCount} categories`);
-                totalSuccess++;
-              }
-            } else {
-              console.log(`     🔍 Would copy KB content`);
-              totalSuccess++;
-            }
+            console.log(`     🔍 [dry-run] Would copy KB content`);
+            // Don't count dry-run as success
           }
         } catch (err) {
           // Per-version error isolation
@@ -564,9 +655,64 @@ function main() {
       }
     }
 
+    // Generate allowlist
+    const allowlist = {};
+    const productsToProcess = filterProducts || Object.keys(CONFIG);
+
+    for (const productKey of productsToProcess) {
+      const productConfig = CONFIG[productKey];
+      if (!productConfig) continue;
+
+      const versionsToProcess = filterVersions
+        ? filterVersions.filter(v => productConfig.versions.includes(v))
+        : productConfig.versions;
+
+      for (const version of versionsToProcess) {
+        const destination = productConfig.destinationPattern.replace('{version}', version);
+        const kbDestination = path.resolve(PROJECT_ROOT, destination);
+
+        // Only include if destination exists AND contains markdown files
+        if (fs.existsSync(kbDestination) && hasMarkdownFiles(kbDestination)) {
+          if (!allowlist[productKey]) {
+            allowlist[productKey] = [];
+          }
+          if (!allowlist[productKey].includes(version)) {
+            allowlist[productKey].push(version);
+          }
+        }
+      }
+    }
+
+    // Sort products and versions for deterministic output
+    const sortedAllowlist = {};
+    Object.keys(allowlist).sort().forEach(key => {
+      sortedAllowlist[key] = allowlist[key].sort();
+    });
+
+    const allowlistPath = path.join(PROJECT_ROOT, 'kb_allowlist.json');
+    const allowlistContent = JSON.stringify(sortedAllowlist, null, 2) + '\n';
+
+    if (isDryRun) {
+      console.log('\n' + '='.repeat(60));
+      console.log('🔍 [dry-run] Would generate kb_allowlist.json');
+      console.log('Note: In dry-run mode, allowlist is computed from current filesystem state.');
+      console.log('='.repeat(60));
+      console.log(allowlistContent);
+    } else {
+      fs.writeFileSync(allowlistPath, allowlistContent, 'utf8');
+      console.log('\n' + '='.repeat(60));
+      console.log(`✅ Generated: ${allowlistPath}`);
+      console.log('='.repeat(60));
+    }
+
     console.log('\n' + '='.repeat(60));
-    console.log(isClean ? '🧹 Clean complete' : '✅ Copy complete');
-    console.log(`Total: ${totalSuccess} successful, ${totalFileErrors} file errors, ${totalVersionErrors} version errors`);
+    if (isDryRun) {
+      console.log('🔍 Dry-run complete');
+      console.log('Note: No files were modified. Re-run without --dry to apply changes.');
+    } else {
+      console.log('✅ Copy complete');
+      console.log(`Total: ${totalSuccess} successful, ${totalFileErrors} file errors, ${totalVersionErrors} version errors`);
+    }
     console.log('='.repeat(60));
 
   } catch (err) {
@@ -578,8 +724,12 @@ function main() {
   }
 
   // Single exit point
-  const totalErrors = totalFileErrors + totalVersionErrors;
-  process.exit(totalErrors > 0 ? 1 : 0);
+  // Exit with success if ANY products copied successfully
+  // Only fail if there were no successes at all
+  if (totalSuccess === 0 && (totalFileErrors > 0 || totalVersionErrors > 0)) {
+    process.exit(1);
+  }
+  process.exit(0);
 }
 
 // Run

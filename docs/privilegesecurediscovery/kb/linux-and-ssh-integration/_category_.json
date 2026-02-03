@@ -1,0 +1,8 @@
+{
+  "label": "Linux and SSH Integration",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Knowledge base articles related to Linux endpoint registration, SSH connectivity, and integration issues in Privilege Secure Discovery."
+  }
+}
