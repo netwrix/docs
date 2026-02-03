@@ -28,7 +28,7 @@ The Jira Forge integration automatically syncs Jira tickets with a NetSuite chan
 
 Change Managers and System Administrators quickly realize the integration benefits:
 
-- Uses Jira to organize their development process.
+- Uses Jira to organize and track the development process.
 - Maintains data integrity within Jira and NetSuite.
 - Streamlines processes for updating daily activities and tasks.
 - Reduces turnaround time for change deployments.
