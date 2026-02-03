@@ -16,7 +16,7 @@ Welcome to the Netwrix Recovery for Active Directory knowledge base. This sectio
 
 ## Quick Links
 
-- [Recovery for Active Directory Documentation](https://docs.netwrix.com/docs/recoveryforactivedirectory/)
+- [Recovery for Active Directory Documentation](https://docs.netwrix.com/docs/identityrecovery/)
 - [Netwrix Support](https://www.netwrix.com/support.html)
 - [Product Downloads](https://www.netwrix.com/downloads.html)
 

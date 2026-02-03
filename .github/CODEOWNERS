@@ -136,10 +136,10 @@
 /static/images/privilegesecurediscovery/ @netwrix/privilegesecurediscovery-docs
 
 # Recovery for Active Directory team
-/docs/recoveryforactivedirectory/ @netwrix/recoveryforactivedirectory-docs
-/sidebars/recoveryforactivedirectory/ @netwrix/recoveryforactivedirectory-docs
-/static/files/recoveryforactivedirectory/ @netwrix/recoveryforactivedirectory-docs
-/static/images/recoveryforactivedirectory/ @netwrix/recoveryforactivedirectory-docs
+/docs/identityrecovery/ @netwrix/identityrecovery-docs
+/sidebars/identityrecovery/ @netwrix/identityrecovery-docs
+/static/files/identityrecovery/ @netwrix/identityrecovery-docs
+/static/images/identityrecovery/ @netwrix/identityrecovery-docs
 
 # Threat Manager team
 /docs/threatmanager/ @netwrix/threatmanager-docs

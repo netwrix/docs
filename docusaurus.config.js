@@ -95,6 +95,15 @@ const config = {
             to: `/${product.path}/${latestVersionUrl}`,
           };
         }),
+        createRedirects(existingPath) {
+          // Redirect old recoveryforactivedirectory URLs to identityrecovery
+          if (existingPath.includes('/docs/identityrecovery')) {
+            return [
+              existingPath.replace('/docs/identityrecovery', '/docs/recoveryforactivedirectory'),
+            ];
+          }
+          return undefined; // Return undefined when no redirect is needed
+        },
       },
     ],
     // Generate all product documentation plugins from centralized configuration
