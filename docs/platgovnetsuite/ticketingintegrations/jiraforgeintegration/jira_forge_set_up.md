@@ -51,7 +51,7 @@ If the latest version of the bundle is already installed, you may skip this part
 This process will require a user to access to Atlassian Marketplace and an Administrator role to the Jira instance where the app will be installed.
 
 1. Go to the [Atlassian Marketplace](https://marketplace.atlassian.com/).
-2. In the search bar, type in either of the keywords: **Netwrix Platform Governance** or **Strongpoint**(this is the products previous name).
+2. In the search bar, type in either of the keywords: **Netwrix Platform Governance** or **Strongpoint**(this is the product's previous name).
 3. You should see a number of products displayed, select **Netwrix NS Platform Governance (formerly Strongpoint)-Forge**.
 
 
@@ -89,7 +89,7 @@ Token Based Authentication is set up through NetSuite. Here is the basic process
 3. Create an Access Token by navigating to main menu, **Setup > Users/Roles > Access Tokens > New**.
 4. Fill the fields with the following values:
     - Application Name: The Integration Record that was created in Step 1.
-    - User: Select yourself(Employee Record).
+    - User: Select yourself (Employee Record).
     - Role: STRONGPOINT DEVELOPER ROLE
     - Token Name: ***Token name of your choice***
     - Skip checking Inactive checkbox
@@ -118,12 +118,12 @@ This step will require a user to have Jira instance access and a user to have Ne
 2. In this step, you should have the following credentials on hand
     - Jira user email address
     - Jira token generated above.
-3. In NetSuite, go to Netwrix Configration and Stats by navigating in the main menu, **Netwrix > Netwrix Support > Installation Settings**. There should only be **ONE(1)** record displayed. Click 'Edit' and it should open the Configuration and Stats page.
+3. In NetSuite, go to Netwrix Configuration and Stats by navigating in the main menu, **Netwrix > Netwrix Support > Installation Settings**. There should only be **ONE(1)** record displayed. Click 'Edit' and it should open the Configuration and Stats page.
 4. Click 'Jira Integration' tab. You should be able to see a number of fields. Turn your attention to Jira User and Jira Token fields.
 5. Populate these fields with the following values:
     - Jira User - Jira user email address in step 2.
     - Jira token - Jira token generated in step 1.
-Click 'Save'
+Click 'Save'.
 
 ### Set up Jira Status Mapping
 
@@ -200,7 +200,7 @@ This step will require a user to have Jira instance access where Netwrix Platfor
 ![Jira Forge Netwrix NetSuite Settings Menu TBA Modal](/images/platgovnetsuite/integrations/jira_forge_netwrix_netsuite_settings_tba_modal.webp)
 
     - Populate the fields.
-    - A 'Test Connection' button(yellow) can be found in the button inside the modal, this button is used to test or check if the credentials and account you have are valid.
+    - A 'Test Connection' button (yellow) can be found inside the modal, this button is used to test or check if the credentials and account you have are valid.
 
 
 ![Jira Forge Netwrix NetSuite Settings TBA Test Connection](/images/platgovnetsuite/integrations/jira_forge_tba_test_connection_successful.webp)
