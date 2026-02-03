@@ -216,4 +216,4 @@ If you have followed the step by step guide in this page, you are good to go and
 
 The next page, Jira Forge Walkthrough will show you how the app works!
 
-**Next Step:** [ Jira Forge Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough.md)
+**Next Step:** [ Jira Forge Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough)

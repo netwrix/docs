@@ -327,4 +327,4 @@ These are the other features whose actions are not that commonly used but are of
 
 You have successfully finished the step by step Jira Forge Walkthrough!
 
-**Next Step:** [ Jira Forge FAQs](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_faq.md)
+**Next Step:** [ Jira Forge FAQs](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_faq)

@@ -47,4 +47,4 @@ Review these considerations prior to deploying the Jira integration:
 6. NetSuite connections use the REST Atlassian Jira Forge's interface, executing on the client side to prevent server load.
 
 
-**Next Step:** [ Jira Forge Set Up](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up.md)
+**Next Step:** [ Jira Forge Set Up](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up)
