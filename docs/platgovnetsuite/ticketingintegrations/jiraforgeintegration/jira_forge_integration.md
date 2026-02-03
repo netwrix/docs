@@ -1,7 +1,7 @@
 ---
 title: "Jira Forge"
 description: "Jira Forge"
-sidebar_position: 10
+sidebar_position: 1
 ---
 
 # Jira Forge
@@ -43,8 +43,8 @@ Review these considerations prior to deploying the Jira integration:
 2. All functions are self-executing, complying with Atlassian Jira Forge's best practices.
 3. No DOM manipulation or global scripts are deployed.
 4. No external libraries are needed. It is plain JavaScript.
-5. No direct or custom database access is required. Data resides either in the Atlassian instance or the connected Netsuite account.
+5. No direct or custom database access is required. Data resides either in the Atlassian instance or the connected NetSuite account.
 6. NetSuite connections use the REST Atlassian Jira Forge's interface, executing on the client side to prevent server load.
 
 
-**Next Step:** [ Jira Forge Set Up](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up)
+**Next Step:** [ Jira Forge Set Up](/docs/platgovNetSuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up)
