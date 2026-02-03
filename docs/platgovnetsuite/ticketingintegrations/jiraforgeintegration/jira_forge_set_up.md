@@ -30,7 +30,7 @@ If the latest version of the bundle is already installed, you may skip this part
 
 ### Install the latest Netwrix Platform Governance Jira bundle
 
-This step will require a user to have NetSuite account access and an Administrator role to that account. This bundle must be version **2.0** or higher to work properly. The Netwrix Platform Governance Jira bundle is a non-managed bundle, please check the [Community](https://community.netwrix.com/c/products/platform-governance-netsuite/181) regularly for latest updates and announcements. 
+This step will require a user to have NetSuite account access and an Administrator role for that account. This bundle must be version **2.0** or higher to work properly. The Netwrix Platform Governance Jira bundle is a non-managed bundle, please check the [Community](https://community.netwrix.com/c/products/platform-governance-netsuite/181) regularly for the latest updates and announcements. 
 
 #### NOTE:
 If the latest version of the bundle is already installed, you may skip this part.
@@ -207,7 +207,7 @@ This step will require a user to have Jira instance access where Netwrix Platfor
 
 5. Click 'Create' and the newly added/created TBA record should be listed in the page.
 
-Additionally, 'Update' and 'Delete' buttons are found at the right part of your record. These buttons allow you to update or delete the record, respectively.
+Additionally, 'Update' and 'Delete' buttons are found on the right part of your record. These buttons allow you to update or delete the record, respectively.
 
 
 ![Jira Forge Netwrix NetSuite Settings TBA List](/images/platgovnetsuite/integrations/jira_forge_tba_list.webp)
