@@ -711,7 +711,12 @@ export function getDefaultVersion(product) {
 export function createProductMap() {
   const map = {};
   PRODUCTS.forEach((product) => {
+    const injectSubDir = ['kb'];
     map[`/${product.path}`] = product.name;
+    injectSubDir.forEach((subDir) => {
+      const injectedPath = product.path.replace('docs/', `docs/${subDir}/`);
+      map[`/${injectedPath}`] = product.name;
+    })
   });
   return map;
 }
