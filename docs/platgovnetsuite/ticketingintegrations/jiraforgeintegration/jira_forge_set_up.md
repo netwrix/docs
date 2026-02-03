@@ -30,7 +30,7 @@ If the latest version of the bundle is already installed, you may skip this part
 
 ### Install the latest Netwrix Platform Governance Jira bundle
 
-This step will require a user to have NetSuite account access and an Administrator role to that account. This bundle must be version **2.0** or higher to work properly. The Netwrix Platform Governance Jira bundle is a non-managed bundle, please check for community update regularly for announcements. 
+This step will require a user to have NetSuite account access and an Administrator role to that account. This bundle must be version **2.0** or higher to work properly. The Netwrix Platform Governance Jira bundle is a non-managed bundle, please check the [Community](https://community.netwrix.com/c/products/platform-governance-netsuite/181) regularly for latest updates and announcements. 
 
 #### NOTE:
 If the latest version of the bundle is already installed, you may skip this part.
@@ -96,7 +96,7 @@ Token Based Authentication is set up through NetSuite. Here is the basic process
 5. Click 'Save'.
 
     #### NOTE: 
-    You can also create a Token Based Authentication for you NetSuite Administration role. Follow the steps below:
+    You can also create a Token Based Authentication for you NetSuite Administrator role. Follow the steps below:
     1. Login as an **Administrator** role in NetSuite.
     2. In your NetSuite account dashboard, navigate to the bottom left part of the page. Under **Settings**, you should see **Manage Access Tokens** and be able to click the link.
 
@@ -212,8 +212,8 @@ Additionally, 'Update' and 'Delete' buttons are found at the right part of your 
 
 ![Jira Forge Netwrix NetSuite Settings TBA List](/images/platgovnetsuite/integrations/jira_forge_tba_list.webp)
 
-If you have followed the step by step guide in this page, you are good to go and is ready to use the integration app. 
+If you have followed the step by step guide in this page, you are good to go and are ready to use the integration app. 
 
 The next page, Jira Forge Walkthrough will show you how the app works!
 
-**Next Step:** [ Jira Forge Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough)
+**Next Step:** [Jira Forge Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough)

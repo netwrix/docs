@@ -29,7 +29,7 @@ This walkthrough is one example based on our test account. You must install and 
 4. Fill the necessary fields and Click 'Create'
 
 ### Logging In and Connecting to a NetSuite Account
-Before proceeding to this step, make sure you already have create a TBA record. If not please see [Set up Jira TBA Credentials](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-tba-credentials) in Setup page.
+Before proceeding to this step, make sure you already have created a TBA record. If not please see [Set up Jira TBA Credentials](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-tba-credentials) in Setup page.
 
 1. In your issue ticket, you should see the 'Netwrix NetSuite Forge' tab in the issues tab. Click the tab.
     Two possible displays:
@@ -62,7 +62,7 @@ Now that you are ready to attach customizations to your Jira ticket. This sectio
 
 To start adding or removing customizations, follow the steps below:
 
-1. In the form, there should be a button named "Lookup Customization". This allows the user to add existing customization to the Jira ticket. Click the button. A modal should appear. This allows the user to filter an select a customization to attach to the change request.
+1. In the form, there should be a button named "Lookup Customization". This allows the user to add existing customization to the Jira ticket. Click the button. A modal should appear. This allows the user to filter and select a customization to attach to the change request.
 
 
 Available filters:
@@ -82,7 +82,7 @@ Available filters:
 
 ![Jira Forge Lookup Customization Modal Name Filter](/images/platgovnetsuite/integrations/jira_forge_lookup_name_filter.webp)
 
-3. Select a customization to attach by ticking the checkbox beside the name. Once ticked, click the "Add Customizations" button at the botton part of the modal.
+3. Select a customization to attach by ticking the checkbox beside the name. Once ticked, click the "Add Customizations" button at the bottom part of the modal.
     - Below shows a flag with a message that the action is in progress.
 
 
@@ -115,12 +115,12 @@ Available filters:
 
     ![Jira Forge Proposed Customization Flag Successful](/images/platgovnetsuite/integrations/jira_forge_add_proposed_successful.webp) 
 
-Below shows the existing and proposed customiations that were added in steps 1 through 6.
+Below shows the existing and proposed customizations that were added in steps 1 through 6.
 
 
 ![Jira Forge Existing and Proposed Customizations](/images/platgovnetsuite/integrations/jira_forge_existing_and_proposed_customizations_added.webp)       
 
-7. Just as you can add existing and/or proposed customizations, you can also remove them from the Jira ticket change request. Simple click the "trash" icon located at the right side of the customization's name and will trigger the remove process.
+7. Just as you can add existing and/or proposed customizations, you can also remove them from the Jira ticket change request. Simply click the "trash" icon located at the right side of the customization's name and will trigger the remove process.
 
 
 ![Jira Forge Remove Customizations Icon](/images/platgovnetsuite/integrations/jira_forge_remove_trash_icon.webp)   
@@ -311,7 +311,7 @@ These are the other features whose actions are not that commonly used but are of
 
 ![Jira Forge Add Bundle Modal](/images/platgovnetsuite/integrations/jira_forge_add_bundle_modal.webp) 
 
-2. **Push External** - This feature allows the user to "push" the Jira ticket change request and it's objects to an external NetSuite account. Pushing to an external NetSuite account save the user's time in creating an change request with the same objects in another NetSuite account. Push external can be executed by clicking the "Push External" button, a modal will appear prompting the user to select a NetSuite account that he/she wishes to push the Jira ticket change request. NetSuite accounts in the modal selection are the same accounts defined by the user in Netwrix NetSuite TBA Credentials page.
+2. **Push External** - This feature allows the user to "push" the Jira ticket change request and its objects to an external NetSuite account. Pushing to an external NetSuite account save the user's time in creating a change request with the same objects in another NetSuite account. Push external can be executed by clicking the "Push External" button, a modal will appear prompting the user to select a NetSuite account that he/she wishes to push the Jira ticket change request. NetSuite accounts in the modal selection are the same accounts defined by the user in Netwrix NetSuite TBA Credentials page.
 
 
 ![Jira Forge Push External Button](/images/platgovnetsuite/integrations/jira_forge_push_external_button.webp) 
@@ -320,11 +320,11 @@ These are the other features whose actions are not that commonly used but are of
 
 ![Jira Forge Push External Modal](/images/platgovnetsuite/integrations/jira_forge_push_external_modal.webp) 
 
-3. **Settings** - The Settings is a drop-down button, allows the user to switch NetSuite accounts to connect to. When "Settings" button is clicked, a "Change Account" option is shown. When the user clicks "Change Account", the session is disconnected and the connection to a NetSuite account has been stops. The connection form is then shown to allow the user to connect to another NetSuite account.
+3. **Settings** - The Settings is a drop-down button, allows the user to switch NetSuite accounts to connect to. When "Settings" button is clicked, a "Change Account" option is shown. When the user clicks "Change Account", the session is disconnected and the connection to a NetSuite account stopped. The connection form is then shown to allow the user to connect to another NetSuite account.
 
 
 ![Jira Forge Settings Button](/images/platgovnetsuite/integrations/jira_forge_settings_change_account.webp) 
 
 You have successfully finished the step by step Jira Forge Walkthrough!
 
-**Next Step:** [ Jira Forge FAQs](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_faq)
+**Next Step:** [Jira Forge FAQs](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_faq)
