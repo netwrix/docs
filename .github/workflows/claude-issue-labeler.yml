@@ -1,0 +1,38 @@
+name: Claude Issue Labeler
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  label-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Issue Labeler
+        id: claude-labeler
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            ISSUE NUMBER: ${{ github.event.issue.number }}
+
+            A new issue has been created. Your task is to:
+            1. Read the issue using `gh issue view`
+            2. Get the list of available labels in this repository using `gh label list`
+            3. Assign the ONE most relevant label to this issue using `gh issue edit`
+
+            Choose only the single most appropriate label based on the issue content.
+
+          claude_args: '--allowed-tools "Bash(gh issue view:*),Bash(gh issue edit:*),Bash(gh label list:*)"'
