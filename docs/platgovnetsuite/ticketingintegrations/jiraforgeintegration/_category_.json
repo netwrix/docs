@@ -1,0 +1,10 @@
+{
+    "label": "Jira Forge",
+    "position": 10,
+    "collapsed": true,
+    "collapsible": true,
+    "link": {
+      "type": "doc",
+      "id": "jira_forge_integration"
+    }
+  }
