@@ -13,6 +13,12 @@ jobs:
       id-token: write
 
     steps:
+      - name: Checkout repository (Metadata only)
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github
+          sparse-checkout-cone-mode: false
       - name: Run Claude Issue Labeler
         id: claude-labeler
         uses: anthropics/claude-code-action@v1
