@@ -21,9 +21,7 @@ In the <NAA /> – File System learning path, you will learn how to use the File
 * 3000 Introduction to <NAA />
 * 3001 Introduction to the <AIC />
 * 3002 Introduction to <NAM />
-* 3003.1 <NAA /> – File System
-* 3003.2 <AIC /> – File System Reports
-* 3003.3 <NAM /> – File System Activity
+* 3003 <NAA /> – File System
 * 3030 <NAA /> – Sensitive Data Discovery Add-On
 * 4000 <NAA /> – Basic Troubleshooting
 

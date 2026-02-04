@@ -15,7 +15,7 @@ Estimated length: 1.75 hours
 In the <NAM /> learning path, you will learn how to use this application. It contains the following courses:
 
 * 3002 Introduction to <NAM />
-* 3003.3 <NAM /> – File System Activity
+* 3003.3 <NAM /> – File System
 
 <NAMIntro />
 
