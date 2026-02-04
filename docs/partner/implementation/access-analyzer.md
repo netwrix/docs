@@ -28,12 +28,9 @@ It contains the following courses:
 * 3000 Introduction to <NAA />
 * 3001 Introduction to the <AIC />
 * 3002 Introduction to <NAM />
-* 3003.1 <NAA /> – File System
-* 3003.2 <AIC /> – File System Reports
-* 3003.3 <NAM /> – File System Activity
+* 3003 <NAA /> – File System
 * 3004 <NAA /> – Active Directory
-* 3005.1 <NAA /> – Active Directory Permissions Analyzer
-* 3005.2 <AIC /> – Active Directory Reports
+* 3005 <NAA /> – Active Directory Permissions Analyzer
 * 3007.1 <NAA /> – SharePoint
 * 3007.2 <AIC /> – SharePoint Reports
 * 3008 <NAA /> – Exchange

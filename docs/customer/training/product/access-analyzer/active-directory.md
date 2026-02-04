@@ -22,8 +22,7 @@ In the <NAA /> – Active Directory learning path, you will learn how to use the
 * 3001 Introduction to the <AIC />
 * 3002 Introduction to <NAM />
 * 3004 <NAA /> – Active Directory
-* 3005.1 <NAA /> – Active Directory Permissions Analyzer
-* 3005.2 <AIC /> – Active Directory Reports
+* 3005 <NAA /> – Active Directory Permissions Analyzer
 * 4000 <NAA /> – Basic Troubleshooting
 
 <NAAValue />
