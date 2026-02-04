@@ -1,7 +1,7 @@
 ---
 title: "Set Up the Jira Integration Forge"
 description: "Set Up the Jira Integration Forge"
-sidebar_position: 10
+sidebar_position: 3
 ---
 
 # Set Up the Jira Integration

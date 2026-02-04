@@ -1,7 +1,7 @@
 ---
 title: "Find Change Requests from Jira"
 description: "Find Change Requests from Jira"
-sidebar_position: 30
+sidebar_position: 4
 ---
 
 # Find Change Requests from Jira

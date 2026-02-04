@@ -1,14 +1,14 @@
 ---
 title: "Jira Walkthrough Example"
 description: "Jira Walkthrough Example"
-sidebar_position: 20
+sidebar_position: 2
 ---
 
 # Jira Walkthrough Example
 
 This walkthrough is one example based on our test account. You must
-[install and configure](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) the Platform Governance for Salesforce Salesforce Jira
-integration, including setting up the **[Jira Statuses](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md)** prior to using this
+[install and configure](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_walkthrough_example.md) the Platform Governance for Salesforce Salesforce Jira
+integration, including setting up the **[Jira Statuses](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_integration_forge.md)** prior to using this
 walkthrough.
 
 The walkthrough demonstrates these steps:
@@ -123,7 +123,7 @@ Once you have logged in, the form is displayed.
   ![delete](/images/platgovsalesforce/integrations/jiraForge/trashIcon.webp) icon.
 - **View DRD** and **Impact Analysis** are tools to Perform Risk Assessment.
 - **Push** creates the Change Request in Salesforce. **Push** is also used to manually update your
-  Change Request if you are not using the [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) feature.
+  Change Request if you are not using the [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_integration_forge.md) feature.
 
 ### Add Existing Customizations by Name or API Name
 
