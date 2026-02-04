@@ -13,11 +13,6 @@ jobs:
       id-token: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-
       - name: Run Claude Issue Labeler
         id: claude-labeler
         uses: anthropics/claude-code-action@v1
