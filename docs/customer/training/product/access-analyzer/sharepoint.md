@@ -19,10 +19,8 @@ In the <NAA /> – SharePoint learning path, you will learn how to use the Share
 * 2000 <NAA /> – Concepts
 * 2001 <NAA /> – Architecture
 * 3000 Introduction to <NAA />
-* 3001.1 Introduction to the <AIC />
-* 3001.2 <AIC /> – Resource Audits
-* 3002.1 <NAM /> – Core Component Definitions
-* 3002.2 Introduction to <NAM />
+* 3001 Introduction to the <AIC />
+* 3002 Introduction to <NAM />
 * 3007.1 <NAA /> – SharePoint
 * 3007.2 <AIC /> – SharePoint Reports
 * 3030 <NAA /> – Sensitive Data Discovery Add-On

@@ -18,8 +18,7 @@ In this learning path, you will be introduced to <NAA />, formerly Netwrix Enter
 * 2000 <NAA /> – Concepts
 * 2001 <NAA /> – Architecture
 * 3000 Introduction to <NAA />
-* 3001.1 Introduction to the <AIC />
-* 3001.2 <AIC /> – Resource Audits
+* 3001 Introduction to the <AIC />
 
 <NAAValue />
 

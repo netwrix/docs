@@ -18,8 +18,7 @@ In the <NAA /> – Core learning path, you will learn how to use this applicatio
 * 2000 <NAA /> – Concepts
 * 2001 <NAA /> – Architecture
 * 3000 Introduction to <NAA />
-* 3001.1 Introduction to the <AIC />
-* 3001.2 <AIC /> – Resource Audits
+* 3001 Introduction to the <AIC />
 * 3030 <NAA /> – Sensitive Data Discovery Add-On
 * 4000 <NAA /> – Basic Troubleshooting
 
