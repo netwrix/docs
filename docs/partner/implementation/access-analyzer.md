@@ -31,8 +31,7 @@ It contains the following courses:
 * 3003 <NAA /> – File System
 * 3004 <NAA /> – Active Directory
 * 3005 <NAA /> – Active Directory Permissions Analyzer
-* 3007.1 <NAA /> – SharePoint
-* 3007.2 <AIC /> – SharePoint Reports
+* 3007 <NAA /> – SharePoint
 * 3008 <NAA /> – Exchange
 * 3009 <NAA /> – Windows
 * 3030 <NAA /> – Sensitive Data Discovery Add-On
