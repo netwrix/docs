@@ -136,6 +136,12 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '10.9',
+        label: '10.9',
+        isLatest: true,
+        sidebarFile: './sidebars/auditor/10.9.js',
+      },
+      {
         version: '10.8',
         label: '10.8',
         isLatest: true,
