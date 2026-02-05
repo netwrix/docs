@@ -281,7 +281,7 @@ dism /online /enable-feature /featurename:IIS-WebServerRole /featurename:IIS-Web
 
 ```powershell
 # Direct Download Link 8.0.23
-$Uri = "https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-8.0.23-windows-hosting-bundle-installer"
+$Uri = "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/8.0.23/dotnet-hosting-8.0.23-win.exe"
 $DownloadDirectory = "C:\Tools"
 $Executable = "$DownloadDirectory\aspnet8.exe"
 if(-Not (Test-Path $DownloadDirectory)){ mkdir $DownloadDirectory }
