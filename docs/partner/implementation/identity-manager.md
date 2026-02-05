@@ -10,7 +10,7 @@ import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlannin
 import { Company, NIM } from '@site/src/training/products';
 
 
-Estimated length: 1 hours
+Estimated length: 1 hour
 
 This learning path offers training to <Company /> partner Professional Services engineers on <NIM />, formerly Netwrix Usercube. However, certification is not currently available at this time. When the final courses are available to grant certification, they will be added to this learning path. You will be able to pick up where you left off. It contains the following courses:
 
