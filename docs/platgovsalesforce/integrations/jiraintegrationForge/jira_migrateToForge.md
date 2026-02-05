@@ -21,6 +21,29 @@ The migration primarily affects **authentication and configuration**, not the ov
 
 ## Key Differences
 
+
+## Forge App vs Jira Connect App (Visualforce hosted in Salesforce)
+
+| Aspect | Forge App (New) | Jira Connect App (Visualforce hosted in Salesforce – Legacy) |
+| ------ | --------------- | ------------------------------------------------------------ |
+| Application Type | Modern app built on **Atlassian Forge** | **Jira Connect** app rendering **Visualforce pages** |
+| Hosting | **Managed by Atlassian (Forge)** | **Hosted in Salesforce** (Visualforce) |
+| Infrastructure | No customer-managed infrastructure required | Requires Salesforce-hosted components and exposed endpoints |
+| Security Model | Built-in Forge security and isolation | Security depends on Salesforce and Jira configuration |
+| Authentication | Simplified OAuth flow handled by Forge | OAuth configured and managed in Salesforce |
+| Secrets Management | Secure, centralized secret storage in Forge | Secrets managed manually in Salesforce |
+| Deployment | Simple deployment using Forge CLI | Deployment of Visualforce pages and Jira Connect configuration |
+| Maintenance Effort | Low maintenance overhead | Higher maintenance due to dual-platform dependencies |
+| Scalability | Automatically scales with Atlassian infrastructure | Limited by Salesforce governor limits |
+| Performance | Faster UI and reduced latency | Additional latency between Jira and Salesforce |
+| User Experience (UX) | Modern, native Jira experience | Legacy UI based on Visualforce |
+| Configuration Complexity | Minimal configuration required | Complex configuration and setup |
+| Future Compatibility | Aligned with Atlassian’s long-term roadmap | Jira Connect is being phased out |
+| Compliance & Auditing | Easier compliance with built-in isolation | Relies on Salesforce logging and auditing |
+| Operational Cost | Lower operational and support cost | Higher operational cost |
+| Customer Impact | Reduced setup effort and fewer errors | Higher risk of misconfiguration |
+
+
 ### Application Type
 
 - **Legacy Integration**: Previous Jira integration app.
