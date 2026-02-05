@@ -347,6 +347,16 @@ Ensure the certificate Subject and Subject Alternative Name (SAN) DNS entries ma
    - Select your SSL certificate from the dropdown
    - Click OK to save
 
+5. **Update Application Configuration**: Edit the `appsettings.json` file and update the `webhost` setting to your HTTPS URL:
+   ```json
+   {
+     "webhost": "https://pingcastle.yourdomain.com"
+   }
+   ```
+
+:::important
+The `webhost` configuration is used for links sent to users via email and other notifications. Ensure this matches your HTTPS URL to avoid mixed content warnings and ensure users receive secure links.
+:::
 
 ### IIS Maximum Upload Configuration
 
