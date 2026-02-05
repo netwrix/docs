@@ -406,11 +406,6 @@ function generateCategoryFile(destPath, folderName) {
 
   const categoryPath = path.join(destPath, '_category_.json');
 
-  // Don't overwrite existing _category_.json
-  if (fs.existsSync(categoryPath)) {
-    return null;
-  }
-
   // Only generate if directory contains markdown files (recursive check)
   if (!hasMarkdownFiles(destPath)) {
     return null;
@@ -429,9 +424,19 @@ function generateCategoryFile(destPath, folderName) {
       }
     };
 
-    fs.writeFileSync(categoryPath, JSON.stringify(categoryConfig, null, 2) + '\n', 'utf8');
+    // Use 'wx' flag to write only if file doesn't exist (atomic operation)
+    // This prevents race conditions between checking and writing
+    fs.writeFileSync(categoryPath, JSON.stringify(categoryConfig, null, 2) + '\n', {
+      encoding: 'utf8',
+      flag: 'wx'
+    });
     return true; // Created successfully
   } catch (err) {
+    // File already exists (EEXIST) - skip without warning
+    if (err.code === 'EEXIST') {
+      return null;
+    }
+    // Other errors - log and report failure
     console.log(`     ⚠️  Failed to generate category file for ${folderName}: ${err.message}`);
     return false; // Failed
   }
