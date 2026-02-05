@@ -3,6 +3,9 @@
     "11.6",
     "12.0"
   ],
+  "privilegesecurediscovery": [
+    "current"
+  ],
   "recoveryforactivedirectory": [
     "2.6",
     "3.1"
