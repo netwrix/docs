@@ -1,3 +1,9 @@
+---
+sidebar_label: Scripts
+title: Threat Prevention Automation Scripts
+sidebar_position: 1
+---
+
 # Threat Prevention Automation Scripts
 
 Automation scripts for Threat Prevention agent management are provided in the following Knowledge Base articles as **example reference implementations only**.
@@ -14,5 +20,5 @@ You are responsible for reviewing, testing, and adapting any script to meet your
 
 The following KB articles contain scripts and detailed instructions for agent deployment and management:
 
-- [Automating Custom Managed Cert Signing and Deployment](../automating-custom-managed-cert-signing-and-deployment) - Script for automating certificate signing and deployment in custom managed mode
-- [Remote Deployment of Threat Prevention Agent in Custom Managed Mode](../remote-deployment-of-threat-prevention-agent-in-custom-managed-mode) - Script for remote agent deployment
+- [Automating Custom Managed Cert Signing and Deployment](automating-custom-managed-cert-signing-and-deployment) - Script for automating certificate signing and deployment in custom managed mode
+- [Remote Deployment of Threat Prevention Agent in Custom Managed Mode](remote-deployment-of-threat-prevention-agent-in-custom-managed-mode) - Script for remote agent deployment
