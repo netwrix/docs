@@ -11,7 +11,7 @@ import { NAMIntro } from '@site/src/training/activity-monitor';
 import { NAA, AIC, NAM } from '@site/src/training/products';
 
 
-Estimated length: 5.5 hours
+Estimated length: 6.5 hours
 
 In the <NAA /> – Active Directory learning path, you will learn how to use the Active Directory and Active Directory Permissions Analyzer solutions in this application, formerly Netwrix Enterprise Auditor / StealthAUDIT. It includes content for <AIC /> and <NAM />. It contains the following courses:
 
