@@ -2,5 +2,9 @@
   "accessanalyzer": [
     "11.6",
     "12.0"
+  ],
+  "threatmanager": [
+    "3.0",
+    "3.1"
   ]
 }
