@@ -280,6 +280,7 @@ dism /online /enable-feature /featurename:IIS-WebServerRole /featurename:IIS-Web
 #### Step 2: Install ASP.NET 8 Hosting Bundle
 
 ```powershell
+$ProgressPreference = "SilentlyContinue" # Quicker download
 # Direct Download Link 8.0.23
 $Uri = "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/8.0.23/dotnet-hosting-8.0.23-win.exe"
 $DownloadDirectory = "C:\Tools"
