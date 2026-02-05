@@ -20,7 +20,6 @@ In this learning path, you will learn how to use <NIM />. This product was forme
 * 2721 <NIM /> – Architecture
 * 2722 <NIM /> – IGA Project Planning
 
-
 <NIMValue />
 
 <NIMLifeCycle />
