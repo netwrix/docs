@@ -1,3 +1,9 @@
+---
+sidebar_label: Scripts
+title: Threat Prevention Automation Scripts
+sidebar_position: 1
+---
+
 # Threat Prevention Automation Scripts
 
 Automation scripts for Threat Prevention agent management are provided in the following Knowledge Base articles as **example reference implementations only**.
