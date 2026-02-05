@@ -2,5 +2,9 @@
   "accessanalyzer": [
     "11.6",
     "12.0"
+  ],
+  "threatprevention": [
+    "7.5",
+    "8.0"
   ]
 }
