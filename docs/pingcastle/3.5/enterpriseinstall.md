@@ -337,7 +337,7 @@ Ensure the certificate Subject and Subject Alternative Name (SAN) DNS entries ma
    - Navigate to Personal > Certificates
    - Import your certificate with the private key
 
-3. **Configure IIS Binding**:
+4. **Configure IIS Binding**:
    - Open Internet Information Services (IIS) Manager
    - Locate the **PingCastleEnterprise** website
    - Right-click and select "Edit Bindings..."
