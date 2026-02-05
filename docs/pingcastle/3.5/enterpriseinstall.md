@@ -2988,22 +2988,83 @@ You can import existing reports using the bulk import functionality in Configura
 
 You can also use `PingCastle.exe --upload-all-reports --api-endpoint https://your.pingcastle.server --api-key XXXXXX` to upload reports via the command line.
 
-**Agents**
+### Report Archiving Configuration
 
-An "agent" in PingCastle Enterprise refers to the PingCastle.exe program running on a remote system that uploads scan reports to the central server via API.
+PingCastle Enterprise can automatically archive old reports to reduce database size while maintaining compliance history. Archiving converts "Full" detail level reports to "Normal" detail level, removing personal data while preserving summary statistics and scores.
 
-To configure an agent:
+#### Configuration Methods
 
-1. Create an API key with upload permissions in Configuration -> Agents
-2. Configure Windows Task Scheduler on the remote system to run PingCastle.exe with the appropriate parameters
+<Tabs>
+<TabItem value="ui" label="Via Admin UI" default>
 
-Upload existing reports stored in the current directory:
+1. Navigate to Configuration -> Settings in the PingCastle Enterprise admin area
+2. Set the ArchivingDelay value (minimum 90 days)
+3. Click Save
 
-```powershell
-.\pingcastle.exe --healthcheck --server your.domain --api-endpoint https://endpoint.com --api-key abdsnhvdsklLksf
+:::warning
+The UI updates the `appsettings.json` file. If the IIS application pool identity lacks write permissions to this file, the update will fail. In this case, use the Manual Configuration option.
+:::
+
+</TabItem>
+<TabItem value="manual" label="Manual Configuration">
+
+Edit the `appsettings.json` file in your PingCastle Enterprise installation directory and add the following at the root level:
+
+```json
+{
+  "Logging": { ... },
+  "ArchivingDelay": 365,
+  "ConnectionStrings": { ... }
+}
 ```
 
-# PingCastle agent deployment
+| Property | Description |
+|----------|-------------|
+| Setting name | `ArchivingDelay` |
+| Value | Number of days (integer) |
+| Minimum | 90 days (enforced by the application) |
+| To disable | Omit the setting |
+
+</TabItem>
+</Tabs>
+
+#### How Archiving Works
+
+<Tabs>
+<TabItem value="automatic" label="Automatic Execution" default>
+
+The archiving process runs automatically every day at 8:00 AM:
+
+- All "Full" detail level reports older than the configured delay are processed
+- Personal data is removed while maintaining domain scores and summary statistics
+- The process runs in the background without user intervention
+
+</TabItem>
+<TabItem value="manual" label="Manual Execution">
+
+You can manually trigger archiving on-demand:
+
+1. Navigate to Database Management in the admin area
+2. Access the Archive Reports action (URL: `/Database/ArchiveReports`)
+3. Specify the number of days (minimum 90)
+4. Confirm the action on the confirmation page
+5. Monitor the progress bar during execution
+
+**Note**: Manual archiving requires admin role or roles with "ManageDecryptionKey" or "ManageInteroperability" permissions.
+
+</TabItem>
+</Tabs>
+
+#### What Gets Archived
+
+- Reports with `ReportDetailLevel = "Full"` older than the configured delay
+- Personal data is stripped from the reports
+- Reports are converted to "Normal" detail level
+- Domain scores, statistics, and summary data are preserved
+- This is a one-way transformation and cannot be reversed
+
+
+## PingCastle agent deployment
 
 For security reasons, PingCastle scans are not executed from the web application. Instead, remote systems must push their scan results to PingCastle Enterprise using the agent configuration.
 
