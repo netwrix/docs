@@ -16,7 +16,7 @@ You will be automatically enrolled in the product learning path for the products
     * [Netwrix Access Analyzer – File System Learning Path](./access-analyzer/file-system.md)
     * [Netwrix Access Analyzer – SharePoint Learning Path](./access-analyzer/sharepoint.md)
     * [Netwrix Access Analyzer – Windows Learning Path](./access-analyzer/windows.md)
-    * [Netwrix Activity Monitor Learning Path](./access-analyzer/acitivity-monitor.md)
+    * [Netwrix Activity Monitor Learning Path](./access-analyzer/activity-monitor.md)
 * [Netwrix Auditor Learning Path](./auditor.md)
 * [Netwrix Change Tracker Learning Path ](./change-tracker.md)
 * [Netwrix Data Classification Learning Path](./data-classification.md)
