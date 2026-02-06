@@ -12,6 +12,10 @@
   "endpointprotector": [
     "current"
   ],
+  "passwordreset": [
+    "3.23",
+    "3.3"
+  ],
   "privilegesecure": [
     "25.12",
     "4.1",
