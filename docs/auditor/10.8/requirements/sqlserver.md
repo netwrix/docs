@@ -246,7 +246,7 @@ Follow the steps to change database retention after the product deployment.
 
 **Step 1 –** In the Auditor main screen, select Settings > Audit Database.
 
-![audit_db_settings](/images/auditor/10.7/requirements/audit_db_settings.webp)
+![audit_db_settings](/images/auditor/10.8/requirements/audit_db_settings.webp)
 
 **Step 2 –** In the dialog displayed, make sure the Clear stale data when a database retention
 period is exceeded: is set to ON, then click Modify to specify the required retention period (in

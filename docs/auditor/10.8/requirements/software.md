@@ -117,7 +117,7 @@ small infrastructures, producing only several thousands of activity records per 
 scenario, you only deploy Auditor Server and default client, selecting Full installation option
 during the product setup.
 
-![na_setup_select_type_thumb_0_0](/images/auditor/10.7/requirements/na_setup_select_type_thumb_0_0.webp)
+![na_setup_select_type_thumb_0_0](/images/auditor/10.8/requirements/na_setup_select_type_thumb_0_0.webp)
 
 If you plan to implement this scenario in bigger environments, consider hardware requirements listed
 in the Auditor documentation.
