@@ -1,7 +1,13 @@
 {
+  "1secure": [
+    "current"
+  ],
   "accessanalyzer": [
     "11.6",
     "12.0"
+  ],
+  "endpointpolicymanager": [
+    "current"
   ],
   "privilegesecure": [
     "25.12",
