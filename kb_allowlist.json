@@ -9,6 +9,9 @@
   "endpointpolicymanager": [
     "current"
   ],
+  "identityrecovery": [
+    "3.1"
+  ],
   "privilegesecure": [
     "25.12",
     "4.1",
@@ -18,8 +21,7 @@
     "current"
   ],
   "recoveryforactivedirectory": [
-    "2.6",
-    "3.1"
+    "2.6"
   ],
   "threatmanager": [
     "3.0",
