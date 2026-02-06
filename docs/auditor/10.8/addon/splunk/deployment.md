@@ -99,6 +99,31 @@ Follow the steps to configure data input.
 
 4. Click the **Add** button.
 
+## Cloud deployment
+
+This deployment model uses a Splunk Heavy Forwarder to collect data from Netwrix Auditor and forward it to Splunk Cloud.
+
+### How it works
+
+- Netwrix Auditor Add-on for Splunk is installed and configured on a Splunk Heavy Forwarder, where a data input is created.
+- The Heavy Forwarder connects to the Netwrix Auditor Integration API and forwards collected data to Splunk Cloud.
+- Splunk Cloud is used for indexing, search, and CIM-based analytics.
+
+### Index configuration in Splunk Cloud
+
+Splunk Cloud indexes must be created manually.
+
+**Step 1 –** Create an index in Splunk Cloud that will store Netwrix Auditor data.  
+**Step 2 –** Note the index name.  
+**Step 3 –** Specify this index name when creating the data input on the Heavy Forwarder.
+
+The index name must exactly match the index created in Splunk Cloud.
+
+### CIM data model support
+
+To use CIM data models in Splunk Cloud, install the Netwrix Auditor Add-on for Splunk in Splunk Cloud. No input or account configuration is required. The add-on is installed only to provide CIM field extractions and data model mappings.
+> For additional information on configuring Splunk Cloud and forwarders, refer to the official Splunk documentation.
+
 ## Migrating from the legacy Event Log add-on
 
 If you were using the older (Windows event log-based) version of Netwrix Auditor add-on for Splunk
