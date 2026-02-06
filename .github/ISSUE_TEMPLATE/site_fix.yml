@@ -1,7 +1,7 @@
 name: Fix site
 description: Report an issue with the documentation site functionality.
 title: "Fix: "
-labels: ["fix", "site", "docusaurus"]
+labels: ["docusaurus", "fix", "site"]
 body:
   - type: markdown
     attributes:
@@ -86,9 +86,13 @@ body:
       description: What operating system are you using?
       multiple: true
       options:
-        - Windows
-        - MacOS
+        - Windows Server 2016
+        - Windows Server 2019
+        - Windows Server 2022
+        - Windows 10
+        - Windows 11
         - Linux
+        - MacOS
         - Other
     validations:
       required: false
