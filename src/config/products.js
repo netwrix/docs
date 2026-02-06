@@ -409,13 +409,13 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '3.3',
-        label: '3.3',
+        version: '3.5',
+        label: '3.5',
         isLatest: true,
-        sidebarFile: './sidebars/pingcastle/3.3.js',
+        sidebarFile: './sidebars/pingcastle/3.5.js',
       },
     ],
-    defaultVersion: '3.3',
+    defaultVersion: '3.5',
   },
   {
     id: 'platgovnetsuite',
@@ -560,11 +560,17 @@ export const PRODUCTS = [
       {
         version: '3.0',
         label: '3.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/threatmanager/3.0.js',
       },
+      {
+        version: '3.1',
+        label: '3.1',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.1.js',
+      },
     ],
-    defaultVersion: '3.0',
+    defaultVersion: '3.1',
   },
   {
     id: 'threatprevention',
@@ -710,8 +716,13 @@ export function getDefaultVersion(product) {
  */
 export function createProductMap() {
   const map = {};
+  const injectSubDir = ['kb'];
   PRODUCTS.forEach((product) => {
     map[`/${product.path}`] = product.name;
+    injectSubDir.forEach((subDir) => {
+      const injectedPath = product.path.replace('docs/', `docs/${subDir}/`);
+      map[`/${injectedPath}`] = product.name;
+    })
   });
   return map;
 }

@@ -1,0 +1,70 @@
+name: Docusaurus Developer
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  docusaurus-developer:
+    if: github.event.label.name == 'AI:docusaurus'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine branch type and name
+        id: branch-info
+        run: |
+          # Get issue title and sanitize it for branch name
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          SANITIZED_TITLE=$(echo "$ISSUE_TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//' | cut -c1-50)
+
+          # Determine if it's a feature or fix based on issue labels or title
+          ISSUE_LABELS="${{ join(github.event.issue.labels.*.name, ' ') }}"
+          if echo "$ISSUE_LABELS $ISSUE_TITLE" | grep -iq "bug\|fix\|error\|issue"; then
+            BRANCH_TYPE="fix"
+          else
+            BRANCH_TYPE="feature"
+          fi
+
+          BRANCH_NAME="${BRANCH_TYPE}/${SANITIZED_TITLE}"
+          echo "branch_name=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+          echo "branch_type=$BRANCH_TYPE" >> "$GITHUB_OUTPUT"
+
+      - name: Run Claude Docusaurus Developer
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            ISSUE NUMBER: ${{ github.event.issue.number }}
+            BRANCH NAME: ${{ steps.branch-info.outputs.branch_name }}
+            BASE BRANCH: dev
+
+            You are a Docusaurus and JavaScript/TypeScript developer. Your only job is to implement fixes or features for the Docusaurus site based on the issue content.
+
+            Your task:
+            1. Read the issue using `gh issue view ${{ github.event.issue.number }}`
+            2. Create a new branch named "${{ steps.branch-info.outputs.branch_name }}" from the dev branch
+            3. Implement the necessary changes to the Docusaurus codebase (JavaScript/TypeScript/json files only)
+            4. Commit your changes with a descriptive message
+            5. Push the branch to the repository
+            6. Create a pull request to the dev branch using `gh pr create` with the `--body` containing a brief summary of changes. The summary should be a simple, human-like comment (2-4 plain sentences, no emojis, boldings, headings, or lists)
+            7. Link the issue to the PR using `gh issue develop ${{ github.event.issue.number }} --branch ${{ steps.branch-info.outputs.branch_name }}`
+            8. Add a simple, human-like comment to the issue (2-4 plain sentences, no emojis, boldings, headings, or lists) summarizing what you did
+
+            IMPORTANT: You must NOT edit any markdown (.md) files. Your work is strictly limited to Docusaurus configuration and code files (JavaScript, TypeScript, CSS, etc.).
+
+          claude_args: |
+            --model claude-sonnet-4-5-20250929
+            --disallowed-tools "Edit(*.md),Write(*.md)"
+            --allowed-tools "Read,Edit(*.js),Edit(*.jsx),Edit(*.ts),Edit(*.tsx),Edit(*.css),Edit(*.json),Write(*.js),Write(*.jsx),Write(*.ts),Write(*.tsx),Write(*.css),Write(*.json),Bash(git *),Bash(gh issue *),Bash(gh pr *),Bash(npm *),Glob,Grep"

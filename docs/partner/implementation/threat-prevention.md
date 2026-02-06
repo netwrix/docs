@@ -21,8 +21,7 @@ This learning path offers training to <Company /> partner Professional Services 
 * 3501 <NTP /> – Policies
 * 3502 <NTP /> – Analytics
 * 3503 <NTP /> – Reporting
-* 3002.1 <NAM /> – Core Component Definitions
-* 3002.2 Introduction to <NAM />
+* 3002 Introduction to <NAM />
 * 3003.3 <NAM /> – File System Activity
 * 4500 <NTP /> – Basic Troubleshooting
 
