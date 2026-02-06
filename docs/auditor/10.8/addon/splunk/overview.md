@@ -108,6 +108,29 @@ See the [Role-Based Access and Delegation](/docs/auditor/10.8/admin/monitoringpl
 3. Splunk Administrator or any other account with permissions to add add-ons, create indexes and data inputs.
 4. The TCP 9699 port must be open on firewalls between Splunk and the Netwrix Auditor server.
 
+### HTTPS certificate requirements
+
+Starting with version **1.7.0**, the Netwrix Auditor add-on for Splunk requires the HTTPS certificate used by the Netwrix Auditor Integration API to be trusted by the Splunk add-on. If the certificate is not trusted, the add-on will not be able to retrieve data from the Integration API.
+
+You can satisfy this requirement using one of the following options:
+
+**Option 1 — Use a certificate issued by a trusted Certificate Authority**
+
+Configure the Netwrix Auditor Integration API to use an HTTPS certificate issued by a trusted public Certificate Authority (CA). This is the recommended approach.
+See the [Security](/docs/auditor/10.8/api/security.md) topic for additional information.
+
+**Option 2 — Add the Netwrix Auditor certificate to the add-on trust store**
+
+If the Integration API uses a self-signed certificate or a certificate issued by a private CA, add the certificate to the add-on trust store before configuring the add-on and creating data inputs.
+To do this, append the Netwrix Auditor certificate contents (Base-64-encoded X.509 certificate) to the following file on the Splunk system:
+
+```
+$SPLUNK_HOME\etc\apps\TA-netwrix-auditor-add-on-for-splunk\bin\ta_netwrix_auditor_add_on_for_splunk\aob_py3\certifi\cacert.pem
+```
+
+After updating the trust store, proceed with add-on configuration.
+
+
 ## Considerations and limitations
 
 - If the information is not available in the activity record received from Auditor, it will also not

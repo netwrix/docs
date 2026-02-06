@@ -29,6 +29,8 @@ The installed add-on should appear in the Apps list. Splunk might not display ad
 
 ## Configure the add-on
 
+Follow the steps to configure the add-on.
+
 **Step 1 –** Open **Netwrix Auditor Add-on for Splunk** from the drop-down list at the top panel and navigate to the **Configuration** page.
 
 **Step 2 –** Configure the account:
@@ -45,6 +47,8 @@ The installed add-on should appear in the Apps list. Splunk might not display ad
     - In the Password field insert the account password
 
 3. Click the **Add** button. The added account should appear in the list.
+
+> When upgrading the add-on from version 1.5 or later, previously configured credentials may be removed during the upgrade. After the upgrade, verify the account configuration used to access the Netwrix Auditor Integration API and re-enter the credentials if required.
 
 **Step 3 –** Configure the Netwrix Auditor Integration API location:
 
