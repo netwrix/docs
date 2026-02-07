@@ -1,6 +1,39 @@
 {
+  "1secure": [
+    "current"
+  ],
   "accessanalyzer": [
     "11.6",
     "12.0"
+  ],
+  "endpointpolicymanager": [
+    "current"
+  ],
+  "endpointprotector": [
+    "current"
+  ],
+  "passwordreset": [
+    "3.23",
+    "3.3"
+  ],
+  "privilegesecure": [
+    "25.12",
+    "4.1",
+    "4.2"
+  ],
+  "privilegesecurediscovery": [
+    "current"
+  ],
+  "recoveryforactivedirectory": [
+    "2.6",
+    "3.1"
+  ],
+  "threatmanager": [
+    "3.0",
+    "3.1"
+  ],
+  "threatprevention": [
+    "7.5",
+    "8.0"
   ]
 }
