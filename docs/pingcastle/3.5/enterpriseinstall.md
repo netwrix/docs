@@ -280,8 +280,9 @@ dism /online /enable-feature /featurename:IIS-WebServerRole /featurename:IIS-Web
 #### Step 2: Install ASP.NET 8 Hosting Bundle
 
 ```powershell
+$ProgressPreference = "SilentlyContinue" # Quicker download
 # Direct Download Link 8.0.23
-$Uri = "https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-8.0.23-windows-hosting-bundle-installer"
+$Uri = "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/8.0.23/dotnet-hosting-8.0.23-win.exe"
 $DownloadDirectory = "C:\Tools"
 $Executable = "$DownloadDirectory\aspnet8.exe"
 if(-Not (Test-Path $DownloadDirectory)){ mkdir $DownloadDirectory }
@@ -319,6 +320,44 @@ If you're configuring a remote SQL Server instead of using the local instance, s
 </Tabs>
 
 ## Post Installation - Common Steps
+
+### Configuring HTTPS
+
+To secure your PingCastle Enterprise installation with HTTPS, follow these standard IIS configuration steps:
+
+1. **Configure DNS**: Add a DNS entry for the PingCastle Enterprise URL you want to use (e.g., pingcastle.yourdomain.com) pointing to your server's IP address
+
+2. **Obtain a Certificate**: Request an SSL/TLS certificate from your Certificate Authority (CA)
+
+:::tip
+Ensure the certificate Subject and Subject Alternative Name (SAN) DNS entries match the PingCastle Enterprise URL you configured in DNS (e.g., pingcastle.yourdomain.com). Without this, browsers will show certificate warnings.
+:::
+
+3. **Import the Certificate**: Add the certificate to the machines Personal certificate store:
+   - Open the Certificates snap-in (certlm.msc for Local Machine)
+   - Navigate to Personal > Certificates
+   - Import your certificate with the private key
+
+4. **Configure IIS Binding**:
+   - Open Internet Information Services (IIS) Manager
+   - Locate the **PingCastleEnterprise** website
+   - Right-click and select "Edit Bindings..."
+   - Click "Add..." to create a new binding
+   - Select "https" as the type
+   - Choose port 443 (or your preferred port)
+   - Select your SSL certificate from the dropdown
+   - Click OK to save
+
+5. **Update Application Configuration**: Edit the `appsettings.json` file and update the `webhost` setting to your HTTPS URL:
+   ```json
+   {
+     "webhost": "https://pingcastle.yourdomain.com"
+   }
+   ```
+
+:::important
+The `webhost` configuration is used for links sent to users via email and other notifications. Ensure this matches your HTTPS URL to avoid mixed content warnings and ensure users receive secure links.
+:::
 
 ### IIS Maximum Upload Configuration
 
@@ -2950,22 +2989,83 @@ You can import existing reports using the bulk import functionality in Configura
 
 You can also use `PingCastle.exe --upload-all-reports --api-endpoint https://your.pingcastle.server --api-key XXXXXX` to upload reports via the command line.
 
-**Agents**
+### Report Archiving Configuration
 
-An "agent" in PingCastle Enterprise refers to the PingCastle.exe program running on a remote system that uploads scan reports to the central server via API.
+PingCastle Enterprise can automatically archive old reports to reduce database size while maintaining compliance history. Archiving converts "Full" detail level reports to "Normal" detail level, removing personal data while preserving summary statistics and scores.
 
-To configure an agent:
+#### Configuration Methods
 
-1. Create an API key with upload permissions in Configuration -> Agents
-2. Configure Windows Task Scheduler on the remote system to run PingCastle.exe with the appropriate parameters
+<Tabs>
+<TabItem value="ui" label="Via Admin UI" default>
 
-Upload existing reports stored in the current directory:
+1. Navigate to Configuration -> Settings in the PingCastle Enterprise admin area
+2. Set the ArchivingDelay value (minimum 90 days)
+3. Click Save
 
-```powershell
-.\pingcastle.exe --healthcheck --server your.domain --api-endpoint https://endpoint.com --api-key abdsnhvdsklLksf
+:::warning
+The UI updates the `appsettings.json` file. If the IIS application pool identity lacks write permissions to this file, the update will fail. In this case, use the Manual Configuration option.
+:::
+
+</TabItem>
+<TabItem value="manual" label="Manual Configuration">
+
+Edit the `appsettings.json` file in your PingCastle Enterprise installation directory and add the following at the root level:
+
+```json
+{
+  "Logging": { ... },
+  "ArchivingDelay": 365,
+  "ConnectionStrings": { ... }
+}
 ```
 
-# PingCastle agent deployment
+| Property | Description |
+|----------|-------------|
+| Setting name | `ArchivingDelay` |
+| Value | Number of days (integer) |
+| Minimum | 90 days (enforced by the application) |
+| To disable | Omit the setting |
+
+</TabItem>
+</Tabs>
+
+#### How Archiving Works
+
+<Tabs>
+<TabItem value="automatic" label="Automatic Execution" default>
+
+The archiving process runs automatically every day at 8:00 AM:
+
+- All "Full" detail level reports older than the configured delay are processed
+- Personal data is removed while maintaining domain scores and summary statistics
+- The process runs in the background without user intervention
+
+</TabItem>
+<TabItem value="manual" label="Manual Execution">
+
+You can manually trigger archiving on-demand:
+
+1. Navigate to Database Management in the admin area
+2. Access the Archive Reports action (URL: `/Database/ArchiveReports`)
+3. Specify the number of days (minimum 90)
+4. Confirm the action on the confirmation page
+5. Monitor the progress bar during execution
+
+**Note**: Manual archiving requires admin role or roles with "ManageDecryptionKey" or "ManageInteroperability" permissions.
+
+</TabItem>
+</Tabs>
+
+#### What Gets Archived
+
+- Reports with `ReportDetailLevel = "Full"` older than the configured delay
+- Personal data is stripped from the reports
+- Reports are converted to "Normal" detail level
+- Domain scores, statistics, and summary data are preserved
+- This is a one-way transformation and cannot be reversed
+
+
+## PingCastle agent deployment
 
 For security reasons, PingCastle scans are not executed from the web application. Instead, remote systems must push their scan results to PingCastle Enterprise using the agent configuration.
 
@@ -3336,8 +3436,6 @@ If no administrators are available (password forgotten or the administrator has 
 2. Locate the administrator account (use the email address to find it) and delete that row.
 
 ![](/images/pingcastle/enterpriseinstall/image109.webp)
-
-![](/images/pingcastle/enterpriseinstall/image110.webp)
 
 3. Restart the PingCastle Enterprise application.
 
