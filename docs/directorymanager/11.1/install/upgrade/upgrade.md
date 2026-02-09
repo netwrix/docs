@@ -21,6 +21,12 @@ Click **Start** > **Imanami** > **GroupID Upgrade Tool 11.0**.
 
 Step 2 – Read the welcome message and click **Next**.
 
+:::note
+**Verify SSL Certificates:** Before proceeding, ensure all self-signed certificates used for
+LDAP/authentication are installed in the Trusted Root CA store on the Directory Manager server.
+Connections using self-signed certificates not in the trusted store will fail after upgrade.
+:::
+
 ![2-select_source_version](/images/directorymanager/11.1/install/upgrade/2-select_source_version.webp)
 
 Step 3 – From the Select the previous version to upgrade list, select the Directory Manager version
