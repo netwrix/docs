@@ -26,6 +26,9 @@
   "endpointpolicymanager": [
     "current"
   ],
+  "endpointprotector": [
+    "current"
+  ],
   "passwordpolicyenforcer": [
     "10.2",
     "11.0",
