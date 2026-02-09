@@ -32,7 +32,7 @@ This article lists the steps to perform the **Access Analyzer** upgrade.
 
 Follow these steps to upgrade the Access Analyzer Console:
 
-1. Download the latest version of **Netwrix Access Analyzer Management Platform** from the [My Products ⸱ Netwrix 🡥](https://www.netwrix.com/my_products_int.html).
+1. Download the latest version of **Netwrix Access Analyzer Management Platform** from the [My Products ⸱ Netwrix 🡥](https://www.netwrix.com/my_products.html).
 
    > **IMPORTANT:** Unblock the installer. In **Properties**, select the **Unblock** checkbox and save the changes.
 
@@ -57,6 +57,10 @@ Follow these steps to upgrade the Access Analyzer Console:
 
 Follow these steps to upgrade the **Sensitive Data Discovery Add-on (SDD):**
 
-1. Download the latest SDD version from the [My Products ⸱ Netwrix 🡥](https://www.netwrix.com/my_products_int.html) and transfer the installer to the Access Analyzer Console server.
+1. Download the latest SDD version from the [My Products ⸱ Netwrix 🡥](https://www.netwrix.com/my_products.html) and transfer the installer to the Access Analyzer Console server.
 
-   > **IMPORTANT:** Unblock the installer. In **Properties**, select the **Un**
+   > **IMPORTANT:** Unblock the installer. In **Properties**, select the **Unblock**
+
+:::note
+For Netwrix Access Analyzer v12.0+, the SDD module is no longer a separate installer. This is now bundled in with both the Netwrix Access Analyzer Management Platform and Netwrix Access Analyzer FSAA Proxy Service installers as long as the current license includes the Sensitive Data module.
+:::

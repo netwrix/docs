@@ -31,7 +31,7 @@ This article lists the steps to perform the **Access Information Center (AIC)** 
 
 Follow these steps:
 
-1. Download the latest version of **Netwrix AIC** from the [My Products ⸱ Netwrix 🡥](https://www.netwrix.com/my_products_int.html).
+1. Download the latest version of **Netwrix AIC** from the [My Products ⸱ Netwrix 🡥](https://www.netwrix.com/my_products.html).
 
    > **IMPORTANT:** Unblock the installer. In **Properties**, select the **Unblock** checkbox and save the changes.
 
@@ -48,10 +48,15 @@ Follow these steps to complete the AIC upgrade:
 1. If SSL is implemented, update the `BindingUrl` node of the AIC configuration file to use HTTPS. Example:
 
    ```registry
-   <add key="BindingUrl" value="http://+:82" />
+   <add key="BindingUrl" value="https://+:481" />
    ```
+  - Default configuration file path:
 
-   - If SSO is implemented, update the `AuthAllowWindowsAuthentication` node of the configuration file. Example:
+  ```registry
+  C:\Program Files\STEALTHbits\Access Information Center
+  ```
+
+1. If SSO is implemented, update the `AuthAllowWindowsAuthentication` node of the configuration file. Example:
 
      ```registry
      <add key="AuthAllowWindowsAuthentication" value="True" />
