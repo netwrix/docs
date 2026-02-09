@@ -9,7 +9,7 @@ keywords:
   - failed to initialize task
   - task format error
   - StealthAUDIT.exe
-  - Netwrix Auditor
+  - Netwrix Access Analyzer
   - Schedules
   - Job error
 products:
