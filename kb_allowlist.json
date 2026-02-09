@@ -6,11 +6,22 @@
     "11.6",
     "12.0"
   ],
-  "endpointpolicymanager": [
-    "current"
+  "changetracker": [
+    "8.0",
+    "8.1"
   ],
   "identityrecovery": [
     "3.1"
+  "dataclassification": [
+    "5.6.2",
+    "5.7"
+  ],
+  "endpointpolicymanager": [
+    "current"
+  ],
+  "passwordreset": [
+    "3.23",
+    "3.3"
   ],
   "privilegesecure": [
     "25.12",
