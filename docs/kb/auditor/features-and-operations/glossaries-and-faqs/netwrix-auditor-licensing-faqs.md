@@ -144,7 +144,7 @@ You may choose to no longer audit a data source, and thus not renew the license 
 - [How to Use Omit Lists](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-use-omit-lists)
 - [How to count the number of your network devices in your configuration?](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-count-the-number-of-your-network-devices-in-your-configuration)
 - [Oracle Processor Core Factor Table](http://www.oracle.com/us/corporate/contracts/processor-core-factor-table-070634.pdf)
-- [How to Count Number of CPU Cores on Your Oracle Database Deployment](https://docs.netwrix.com/docs/kb/auditor/system-administration/database-management/how-to-count-number-of-cpu-cores-on-your-oracle-database-deployment)
-- [How to Determine the Count of Enabled Microsoft Entra ID Accounts](https://docs.netwrix.com/docs/kb/auditor/determining-the-number-of-enabled-microsoft-entra-id-accounts#instructions)
+- [How to Count Number of CPU Cores on Your Oracle Database Deployment](/docs/kb/auditor/system-administration/database-management/how-to-count-number-of-cpu-cores-on-your-oracle-database-deployment)
+- [How to Determine the Count of Enabled Microsoft Entra ID Accounts](../../configuration-and-setup/microsoft-365-integration/determining-the-number-of-enabled-microsoft-entra-id-accounts#instructions)
 - [How to count number of licenses required for auditing a Microsoft Office 365 tenant?](/docs/kb/auditor/configuration-and-setup/microsoft-365-integration/how-to-count-number-of-licenses-required-for-auditing-a-microsoft-office-365-tenant)
 
