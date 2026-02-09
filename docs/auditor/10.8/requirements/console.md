@@ -94,7 +94,7 @@ this information is displayed in the Environment Stats located on the Home Scree
 
 If you have not already started using Netwrix Auditor, you can download the Resource Estimation Tool
 by clicking
-[the download link](https://releases.netwrix.com/products/auditor/10.7/auditor-resource-estimation-tool-1.2.39.zip).
+[the download link](https://releases.netwrix.com/products/auditor/10.8/auditor-resource-estimation-tool-1.2.46.zip).
 
 ## Client Installation
 
