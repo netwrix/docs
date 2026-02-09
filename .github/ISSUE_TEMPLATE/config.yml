@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report product bug
+    url: https://netwrix.com/en/support/
+    about: Report a bug or issue you encountered while using a Netwrix product. Our support team will help diagnose and resolve product issues.
+  - name: Propose product feature
+    url: https://community.netwrix.com/tag/ideas
+    about: Suggest a new feature or enhancement for a Netwrix product. Share your ideas with the Netwrix Community, and relevant stakeholders will review and discuss them. They will then accept the proposal, reject it, or reach out to you for more information.
+  - name: Report security flaw
+    url: https://netwrix.com/en/support/
+    about: Report a security vulnerability in a Netwrix product. Please do not disclose security issues publicly.
