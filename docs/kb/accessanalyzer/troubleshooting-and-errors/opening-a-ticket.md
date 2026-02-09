@@ -1,11 +1,11 @@
 ---
 description: >-
   Instructions for collecting logs and environment details when opening a
-  support ticket for Netwrix Auditor. Includes paths to console, published
+  support ticket for Netwrix Access Analyzer. Includes paths to console, published
   reports, and job logs, plus how to find the product build number.
 keywords:
   - netwrix
-  - netwrix auditor
+  - netwrix access analyzer
   - logs
   - support ticket
   - job logs
@@ -26,31 +26,24 @@ knowledge_article_id: kA0Qk0000001TMXKA2
 
 ## Overview
 
-This article provides guidance on collecting logs and other relevant information when submitting a support ticket for Netwrix Auditor (NEA).
+This article provides guidance on collecting logs and other relevant information when submitting a support ticket for Netwrix Access Analyzer (NAA).
 
 ## Instructions
 
-Follow the steps below to gather the necessary logs and details required for troubleshooting your NEA instance.
+Follow the steps below to gather the necessary logs and details required for troubleshooting your NaA instance.
 
 ### Logs
 
 Follow these steps to gather logs:
 
-- Depending on your current **AIC** version, refer to one of the following default paths:
-
-  - AIC v11.5:
-
-    ```text
-    C:\inetpub\wwwroot\StealthAUDIT Compliance\
-    ```
-
-  - AIC v11.6:
-
     ```text
     C:\Program Files\STEALTHbits\Access Information Center
     ```
+    :::note
+    This location could be custom set. If you are unsure where the installation directory is, open services.msc and open the properties for the **Netwrix Access Information Center** service. The "Path to executable" field will be in the AIC installation directory.
+    :::
 
-- Navigate to the following path to collect the **NEA Console logs**:
+- Navigate to the following path to collect the **NAA Console logs**:
 
   ```text
   %SAInstallDir%SADatabase\Logs\Application
@@ -90,13 +83,6 @@ To export job errors and warnings from the **Messages table**, proceed to the **
 
 ## Product Build Number
 
-> **IMPORTANT:** Identifying your current NEA build helps determine whether the issue has already been addressed in a newer version. Follow the steps below to establish the build number in your NEA instance.
-
-- In NEA v11.5:
-
-  - In **Control Panel**, open the **Programs and Features** menu. Locate the NEA line and review the **Version** column value.
-  - In the **Apps & Features** menu, highlight the NEA entry and review the version.
-
-- In NEA v11.6:
+> **IMPORTANT:** Identifying your current NAA build helps determine whether the issue has already been addressed in a newer version. Follow the steps below to establish the build number in your NAA instance.
 
   - Navigate to **Help** > **About** in the top toolbar.
