@@ -43,9 +43,3 @@ Step 5 – Click **OK**.
 
 Copy the certificate on Directory Manager server and install it by adding it to the Trusted Root
 Certification Authorities and Local machine and current user certificate stores.
-
-## LDAP/Authentication Certificate Requirements
-
-SSL/TLS certificate validation is enforced for LDAP and authentication connections. Self-signed
-certificates must be installed in the **Trusted Root Certification Authorities** store, must be
-valid (not expired), and the certificate chain must be complete and trusted.
