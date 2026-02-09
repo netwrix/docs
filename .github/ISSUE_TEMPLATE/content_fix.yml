@@ -1,0 +1,160 @@
+name: Fix content
+description: Report an issue with the documentation.
+title: "Fix: "
+labels: ["documentation", "fix"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this documentation fix request!
+        Please provide as much information as possible to help us understand and reproduce the issue.
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue type
+      description: Select the issue type that most closely applies to the issue (you can select multiple).
+      multiple: true
+      options:
+        - The documentation is inaccurate.
+        - The documentation is incomplete.
+        - The documentation is written unclearly.
+        - The documentation is outdated.
+        - The documentation has errors in grammar, punctuation, or spelling.
+        - The documentation has broken links.
+        - The documentation has missing images.
+    validations:
+      required: false
+  - type: dropdown
+    id: product
+    attributes:
+      label: Affected product and version
+      description: Select the products affected by the issue (you can select multiple).
+      multiple: true
+      options:
+        - 1Secure
+        - Access Analyzer 11.6
+        - Access Analyzer 12.0
+        - Access Information Center 11.6
+        - Access Information Center 12.0
+        - Activity Monitor 7.1
+        - Activity Monitor 8.0
+        - Activity Monitor 9.0
+        - Auditor 10.6
+        - Auditor 10.7
+        - Auditor 10.8
+        - Change Tracker 8.0
+        - Change Tracker 8.1
+        - Customer Portal & Training Guide
+        - Data Classification 5.6.2
+        - Data Classification 5.7
+        - Directory Manager 11.0
+        - Directory Manager 11.1
+        - Endpoint Policy Manager
+        - Endpoint Protector
+        - Identity Manager 6.1
+        - Identity Manager 6.2
+        - Identity Recovery 3.1
+        - Partner Certification Training Courses
+        - Password Policy Enforcer 10.2
+        - Password Policy Enforcer 11.0
+        - Password Policy Enforcer 11.1
+        - Password Reset 3.23
+        - Password Reset 3.3
+        - Password Secure 9.1
+        - Password Secure 9.2
+        - Password Secure 9.3
+        - PingCastle
+        - Platform Governance for NetSuite
+        - Platform Governance Flashlight for NetSuite
+        - Platform Governance Flashlight for Salesforce
+        - Privilege Secure 4.1
+        - Privilege Secure 4.2
+        - Privilege Secure 25.12
+        - Privilege Secure for Discovery
+        - Recovery for Active Directory 2.6
+        - Threat Manager
+        - Threat Prevention 7.4
+        - Threat Prevention 7.5
+        - Threat Prevention 8.0
+    validations:
+      required: false
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue
+      description: |
+        Please provide a detailed description of the issue.
+        Please include the relevant URLs where you encountered the issue.
+        If the issue caused you to encounter errors when you were using a specific product, please specify the product name and version, as well as any relevant error messages.
+        Include any useful screenshots or recordings.
+      placeholder: |
+        Example: "The installation guide for Netwrix Auditor 12.0 has broken images on page X"
+        URL: https://docs.netwrix.com/...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Reproduction steps
+      description: |
+        Please provide the steps we need to take to reproduce the issue.
+        This is especially helpful if the issue is an inaccuracy in the documentation. 
+        This well help us identify whether the issue is a documentation issue and not a product bug or setup error.
+        If you're unable to reproduce the issue, please describe the situation you encountered the issue in with as much detail as possible.
+        Include any useful screenshots or recordings.
+      placeholder: |
+        Example: "1. Go to '...' 2. Click on '....' 3. Scroll down to '....' 4. See error"
+    validations:
+      required: false
+  - type: textarea
+    id: solution-description
+    attributes:
+      label: Solution
+      description: |
+        If you already know what needs to be done, please tell us what you think needs to be done to fix the issue.
+        The more information you provide, the faster we can address your request.
+      placeholder: |
+        Example: "The image file is missing. Please upload the image file to the correct location."
+    validations:
+      required: false
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Browsers
+      description: What browser are you using (you can select multiple)?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - Brave
+        - Opera
+        - Other
+    validations:
+      required: false
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      description: What operating system are you using (you can select multiple?
+      multiple: true
+      options:
+        - Windows Server 2016
+        - Windows Server 2019
+        - Windows Server 2022
+        - Windows 10
+        - Windows 11
+        - Linux
+        - MacOS
+        - Other
+    validations:
+      required: false
+  - type: input
+    id: contact
+    attributes:
+      label: Contact details
+      description: Please provide us with your contact details so we can follow up with you if we need more information.
+      placeholder: ex. email@example.com
+    validations:
+      required: false
