@@ -1,0 +1,126 @@
+name: Product proposal
+description: Propose a new feature or enhancement for a Netwrix product.
+title: "Proposal: "
+labels: ["enhancement", "product"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to submit a product proposal!
+
+        > [!TIP]
+        > The more specific you are about your needs and use case, the faster we can evaluate and address your proposal.
+        > However, if you just have a general idea without all the details, that's perfectly okay too! Share what you have in mind.
+  - type: dropdown
+    id: product
+    attributes:
+      label: Affected product and version
+      description: Select the product(s) this proposal applies to (you can select multiple).
+      multiple: true
+      options:
+        - 1Secure
+        - Access Analyzer 11.6
+        - Access Analyzer 12.0
+        - Access Information Center 11.6
+        - Access Information Center 12.0
+        - Activity Monitor 7.1
+        - Activity Monitor 8.0
+        - Activity Monitor 9.0
+        - Auditor 10.6
+        - Auditor 10.7
+        - Auditor 10.8
+        - Change Tracker 8.0
+        - Change Tracker 8.1
+        - Customer Portal & Training Guide
+        - Data Classification 5.6.2
+        - Data Classification 5.7
+        - Directory Manager 11.0
+        - Directory Manager 11.1
+        - Endpoint Policy Manager
+        - Endpoint Protector
+        - Identity Manager 6.1
+        - Identity Manager 6.2
+        - Identity Recovery 3.1
+        - Partner Certification Training Courses
+        - Password Policy Enforcer 10.2
+        - Password Policy Enforcer 11.0
+        - Password Policy Enforcer 11.1
+        - Password Reset 3.23
+        - Password Reset 3.3
+        - Password Secure 9.1
+        - Password Secure 9.2
+        - Password Secure 9.3
+        - PingCastle
+        - Platform Governance for NetSuite
+        - Platform Governance Flashlight for NetSuite
+        - Platform Governance Flashlight for Salesforce
+        - Privilege Secure 4.1
+        - Privilege Secure 4.2
+        - Privilege Secure 25.12
+        - Privilege Secure for Discovery
+        - Recovery for Active Directory 2.6
+        - Threat Manager
+        - Threat Prevention 7.4
+        - Threat Prevention 7.5
+        - Threat Prevention 8.0
+        - New product idea
+    validations:
+      required: false
+  - type: dropdown
+    id: proposal-type
+    attributes:
+      label: Proposal type
+      description: What type of proposal is this?
+      options:
+        - New feature
+        - Enhancement to existing feature
+        - Performance improvement
+        - Usability improvement
+        - Integration with another system
+        - Other
+    validations:
+      required: false
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Problem or use case
+      description: |
+        What problem are you trying to solve? What's your use case?
+        Help us understand the context and why this proposal is important to you.
+      placeholder: |
+        Example: "As a compliance officer, I need to generate quarterly reports that combine data from multiple Netwrix products, but currently I have to manually export and merge data from each product separately, which takes several hours."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed solution
+      description: |
+        Describe your proposed solution or feature.
+        Include any useful resources like links to similar features in other products, existing documentation, blog posts, mockups, diagrams, videos, GitHub repositories, or other tools and design ideas we can use. 
+        The more information you provide, the faster we can address your request.
+        Be as specific as you can, but don't worry if you don't have all the details figured out.
+        Your idea can still serve as a starting point for our solution. 
+      placeholder: |
+        Example: "Add a cross-product reporting feature that allows me to select data sources from multiple Netwrix products and create unified reports. The feature could be available in the web console with options to schedule automated reports."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: |
+        Have you considered any alternative solutions or workarounds?
+        Are there other ways to solve this problem?
+      placeholder: |
+        Example: "I've tried using PowerShell scripts to combine the data, but it's complex to maintain and doesn't provide the visualization I need."
+    validations:
+      required: false
+  - type: input
+    id: contact
+    attributes:
+      label: Contact details
+      description: Please provide us with your contact details so we can follow up with you if we need more information.
+      placeholder: ex. email@example.com
+    validations:
+      required: false
