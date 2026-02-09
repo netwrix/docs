@@ -28,6 +28,11 @@
   "endpointprotector": [
     "current"
   ],
+  "passwordpolicyenforcer": [
+    "10.2",
+    "11.0",
+    "11.1"
+  ],
   "passwordreset": [
     "3.23",
     "3.3"
