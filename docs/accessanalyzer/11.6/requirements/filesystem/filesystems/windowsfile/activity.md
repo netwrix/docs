@@ -65,14 +65,14 @@ Host Mapping is only required for multi-role cluster setups. See topic [Windows 
    1. **3 Columns:** LogLocation, HostName, Host
    2. **Data Type:** nvarchar(MAX)
 
-![Host Mapping Table Design](/images/accessanalyzer/11.6/requirements/target/config/HostMapping1.webp)
+![Host Mapping Table Design](/images/accessanalyzer/12.0/requirements/target/config/HostMapping1.webp)
 
 2. Configure the new host mapping table to such:
    1. **LogLocation:** Name of the host/node where activity logs reside.
    2. **HostName:** Name of the configured Report hostname as value in the Activity Monitor.
    3. **Host:** Name of the host being targeted in the FSAC scan and Bulk Import which the activity events will be mapped to (Role Server).
 
-![Host Mapping Table Example](/images/accessanalyzer/11.6/requirements/target/config/HostMapping2.webp)
+![Host Mapping Table Example](/images/accessanalyzer/12.0/requirements/target/config/HostMapping2.webp)
 
 3. Enable host mapping on the *Activity Settings* tab of the FSAC System Scan query configuraton. See topic [FSAA: Activity Settings](https://docs.netwrix.com/docs/accessanalyzer/11_6/admin/datacollector/fsaa/activitysettings) for additional information.
 
