@@ -25,7 +25,7 @@ The local policy, “Network access: Do not allow storage of passwords and crede
 for network authentication” must be disabled in order for the applet to start.
 :::
 
-See the [Applet Mode Port Requirements](/docs/accessanalyzer/11.6/requirements/filesystem/scanoptions/applet-mode-scans/appletmodeports.md) topic for firewall rule information.
+See the [Applet Mode Port Requirements](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/filesystem/scanoptions/applet-mode-scans/appletmodeports) topic for firewall rule information.
 
 ## Accounts Used
 - **Job Execution:** Scheduled Task or Console User (launches the job)
