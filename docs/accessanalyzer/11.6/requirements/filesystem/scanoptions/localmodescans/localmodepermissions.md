@@ -24,8 +24,6 @@ If running Sensitive Data Discovery (SDD) scans, it will be necessary to increas
 
 Firewall rules must be configured to allow for communication between the applicable servers. See the [Local Mode Port Requirements](https://docs.netwrix.com/docs/accessanalyzer/11_6/requirements/filesystem/scanoptions/local-mode-scans/localmodeports) topic for firewall rule information.
 
-See the [Local Mode Port Requirements](/docs/accessanalyzer/11.6/requirements/filesystem/scanoptions/local-mode-scans/localmodeports.md) topic for firewall rule information.
-
 ## Accounts Used
 - **Job Execution:** Scheduled Task Account or Console User (launches the job)
 - **Target Access:** Connection Profile Account (always used for scanning)
