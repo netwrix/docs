@@ -50,8 +50,8 @@ sidebars/accessinformationcenter/11.6.js:1:const generateKBSidebar = require('..
 sidebars/accessinformationcenter/11.6.js:13:      items: generateKBSidebar('accessinformationcenter')
 sidebars/recoveryforactivedirectory/2.6.js:1:const generateKBSidebar = require('../../src/utils/generateKBSidebar');
 sidebars/recoveryforactivedirectory/2.6.js:13:      items: generateKBSidebar('recoveryad')
-sidebars/recoveryforactivedirectory/3.1.js:1:const generateKBSidebar = require('../../src/utils/generateKBSidebar');
-sidebars/recoveryforactivedirectory/3.1.js:13:      items: generateKBSidebar('recoveryad')
+sidebars/identityrecovery/3.1.js:1:const generateKBSidebar = require('../../src/utils/generateKBSidebar');
+sidebars/identityrecovery/3.1.js:13:      items: generateKBSidebar('recoveryad')
 sidebars/auditor/10.8.js:1:const generateKBSidebar = require('../../src/utils/generateKBSidebar');
 sidebars/auditor/10.8.js:13:      items: generateKBSidebar('auditor')
 sidebars/auditor/10.6.js:1:const generateKBSidebar = require('../../src/utils/generateKBSidebar');

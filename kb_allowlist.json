@@ -24,6 +24,8 @@
     "8.0",
     "8.1"
   ],
+  "identityrecovery": [
+    "3.1"
   "dataclassification": [
     "5.6.2",
     "5.7"
@@ -52,8 +54,7 @@
     "current"
   ],
   "recoveryforactivedirectory": [
-    "2.6",
-    "3.1"
+    "2.6"
   ],
   "threatmanager": [
     "3.0",
