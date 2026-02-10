@@ -6,6 +6,15 @@
     "11.6",
     "12.0"
   ],
+  "accessinformationcenter": [
+    "11.6",
+    "12.0"
+  ],
+  "activitymonitor": [
+    "7.1",
+    "8.0",
+    "9.0"
+  ],
   "changetracker": [
     "8.0",
     "8.1"
@@ -16,6 +25,14 @@
   ],
   "endpointpolicymanager": [
     "current"
+  ],
+  "endpointprotector": [
+    "current"
+  ],
+  "passwordpolicyenforcer": [
+    "10.2",
+    "11.0",
+    "11.1"
   ],
   "passwordreset": [
     "3.23",

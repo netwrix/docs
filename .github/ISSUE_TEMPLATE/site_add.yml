@@ -8,6 +8,27 @@ body:
       value: |
         Thanks for taking the time to suggest a new feature for the documentation site!
         Please provide as much information as possible about what functionality you'd like to see.
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature type (optional)
+      description: Select the type of feature you'd like to add (you can select multiple).
+      multiple: true
+      options:
+        - Search functionality
+        - Navigation (sidebar, menu, breadcrumbs)
+        - Theme or styling customization
+        - Interactive components or widgets
+        - Blog features
+        - SEO enhancements
+        - Accessibility improvements
+        - Analytics or tracking
+        - Performance optimization
+        - Content organization
+        - Custom plugin
+        - Other
+    validations:
+      required: false
   - type: textarea
     id: feature-request
     attributes:
@@ -35,11 +56,19 @@ body:
         Example: "Users frequently request a way to view the site in dark mode for better readability in low-light environments."
     validations:
       required: true
-  - type: input
-    id: contact
+  - type: dropdown
+    id: browsers
     attributes:
-      label: Contact details
-      description: Please provide us with your contact details so we can follow up with you if we need more information.
-      placeholder: ex. email@example.com
+      label: Browsers (optional)
+      description: What browser are you using?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - Brave
+        - Opera
+        - Other
     validations:
       required: false

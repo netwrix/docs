@@ -11,7 +11,7 @@ body:
   - type: dropdown
     id: issue-type
     attributes:
-      label: Issue type
+      label: Issue type (optional)
       description: Select the issue type that most closely applies to the issue (you can select multiple).
       multiple: true
       options:
@@ -22,12 +22,13 @@ body:
         - The documentation has errors in grammar, punctuation, or spelling.
         - The documentation has broken links.
         - The documentation has missing images.
+        - Other
     validations:
       required: false
   - type: dropdown
     id: product
     attributes:
-      label: Affected product and version
+      label: Affected product and version (optional)
       description: Select the products affected by the issue (you can select multiple).
       multiple: true
       options:
@@ -95,7 +96,7 @@ body:
   - type: textarea
     id: reproduction-steps
     attributes:
-      label: Reproduction steps
+      label: Reproduction steps (optional)
       description: |
         Please provide the steps we need to take to reproduce the issue.
         This is especially helpful if the issue is an inaccuracy in the documentation. 
@@ -109,7 +110,7 @@ body:
   - type: textarea
     id: solution-description
     attributes:
-      label: Solution
+      label: Solution (optional)
       description: |
         If you already know what needs to be done, please tell us what you think needs to be done to fix the issue.
         The more information you provide, the faster we can address your request.
@@ -117,44 +118,4 @@ body:
         Example: "The image file is missing. Please upload the image file to the correct location."
     validations:
       required: false
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: Browsers
-      description: What browser are you using (you can select multiple)?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
-        - Brave
-        - Opera
-        - Other
-    validations:
-      required: false
-  - type: dropdown
-    id: os
-    attributes:
-      label: Operating system
-      description: What operating system are you using (you can select multiple?
-      multiple: true
-      options:
-        - Windows Server 2016
-        - Windows Server 2019
-        - Windows Server 2022
-        - Windows 10
-        - Windows 11
-        - Linux
-        - MacOS
-        - Other
-    validations:
-      required: false
-  - type: input
-    id: contact
-    attributes:
-      label: Contact details
-      description: Please provide us with your contact details so we can follow up with you if we need more information.
-      placeholder: ex. email@example.com
-    validations:
-      required: false
+
