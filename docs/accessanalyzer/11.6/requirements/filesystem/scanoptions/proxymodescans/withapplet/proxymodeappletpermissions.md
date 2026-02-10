@@ -34,7 +34,7 @@ server where the applet is to be deployed in order for Sensitive Data Discovery 
 successfully occur.
 
 
-See the [Proxy Mode with Applet Port Requirements](/docs/accessanalyzer/11.6/requirements/filesystem/scanoptions/proxy-mode-scans/with-applet/proxymodeappletports.md) topic for firewall rule
+See the [Proxy Mode with Applet Port Requirements](https://docs.netwrix.com/docs/accessanalyzer/11_6/requirements/filesystem/scanoptions/proxy-mode-scans/with-applet/proxymodeappletports) topic for firewall rule
 information.
 
 **Secure Proxy Communication Considerations**
