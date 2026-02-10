@@ -72,5 +72,5 @@ settings are required for communication between the agent server and the Access 
 
 | Communication Direction         | Protocol | Ports      | Description                    |
 | ------------------------------- | -------- | ---------- | ------------------------------ |
-| Access Analyzer to Agent Server | TCP      | 445        | SMB, used for Agent Deployment |
-| Access Analyzer to Agent Server | TCP      | Predefined | WMI, used for Agent Deployment |
+| Access Analyzer to Agent Server | TCP      | 445        | SMB |
+| Access Analyzer to Agent Server | TCP      | Predefined | WMI |
