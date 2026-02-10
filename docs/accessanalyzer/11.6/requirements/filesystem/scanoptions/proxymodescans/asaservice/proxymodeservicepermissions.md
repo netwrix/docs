@@ -44,7 +44,7 @@ scan. See the
 [FSAA Applet Certificate Management Overview](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md)
 topic for additional information.
 
-See the [Proxy Mode as a Service Port Requirements](/docs/accessanalyzer/11.6/requirements/filesystem/scanoptions/proxy-mode-scans/as-a-service/proxymodeserviceports.md) topic for firewall
+See the [Proxy Mode as a Service Port Requirements](https://docs.netwrix.com/docs/accessanalyzer/11_6/requirements/filesystem/scanoptions/proxy-mode-scans/as-a-service/proxymodeserviceports) topic for firewall
 rule information.
 
 ## Accounts Used
