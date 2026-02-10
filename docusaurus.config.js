@@ -71,6 +71,8 @@ const config = {
   ],
 
   plugins: [
+    // llms.txt generator - https://llmstxt.org/
+    './plugins/llms-txt-generator',
     // Google Analytics
     [
       '@docusaurus/plugin-google-gtag',
