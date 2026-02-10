@@ -15,13 +15,24 @@
     "8.0",
     "9.0"
   ],
+  "auditor": [
+    "10.6",
+    "10.7",
+    "10.8"
+  ],
   "changetracker": [
     "8.0",
     "8.1"
   ],
+  "identityrecovery": [
+    "3.1"
   "dataclassification": [
     "5.6.2",
     "5.7"
+  ],
+  "directorymanager": [
+    "11.0",
+    "11.1"
   ],
   "endpointpolicymanager": [
     "current"
@@ -47,8 +58,7 @@
     "current"
   ],
   "recoveryforactivedirectory": [
-    "2.6",
-    "3.1"
+    "2.6"
   ],
   "threatmanager": [
     "3.0",
