@@ -14,11 +14,10 @@ The following pre-requisites are required before configuring the Access Informat
 gMSA:
 
 - The gMSA must be added to the Local Administrator Group on the host where the AIC is installed
-- In SQL Server Management Studio, the gMSA needs to be added to the **Security** > **Logins** node
-  for the SQL server where the AIC Database resides with the following settings:
+- In SQL Server Management Studio, the gMSA needs the following rights on the Access Analyzer Database:
 
-    - On the General page, the **Login name** should be the `Domain\Name` of the gMSA
-    - On the Server Roles page, the **public** and **sysadmin** checkboxes must be selected
+    - **Database Role:** db_owner
+    - **Default Schema:** Set to dbo
 
 - Netwrix Access Information Center has been installed using one of the regular authentication
   methods, and not using the gMSA. See the
