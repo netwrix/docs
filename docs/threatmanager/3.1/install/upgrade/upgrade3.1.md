@@ -90,7 +90,7 @@ it can be modified as desired.
 
 **Step 8 –** By default, the installer will Create Inbound Windows Firewall Rules. Deselect the
 checkbox if you do not want the installer to automatically create these rules, because you have
-already created them. The installer will also by default install AD and Extra PowerShell modules. Click **Next**.
+already created them. The installer will also by default install AD and Entra PowerShell modules. Click **Next**.
 
 ![Threat Manager Installation Progress page](/images/threatmanager/3.1/intsall/upgrade/ntm-progress.webp)
 
