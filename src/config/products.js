@@ -533,11 +533,19 @@ export const PRODUCTS = [
     path: 'docs/recoveryforactivedirectory',
     categories: ['Identity Threat Detection & Response (ITDR)'],
     icon: '',
+    hideFromNavbar: true, // Old product name, superseded by Identity Recovery
     versions: [
+      {
+        version: '3.1',
+        label: '3.1',
+        isLatest: true,
+        sidebarFile: './sidebars/identityrecovery/3.1.js',
+        customLink: '/docs/identityrecovery/3_1', // Points to Identity Recovery
+      },
       {
         version: '2.6',
         label: '2.6',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/recoveryforactivedirectory/2.6.js',
       },
     ],
@@ -556,6 +564,13 @@ export const PRODUCTS = [
         label: '3.1',
         isLatest: true,
         sidebarFile: './sidebars/identityrecovery/3.1.js',
+      },
+      {
+        version: '2.6',
+        label: '2.6',
+        isLatest: false,
+        sidebarFile: './sidebars/recoveryforactivedirectory/2.6.js',
+        customLink: '/docs/recoveryforactivedirectory/2_6', // Points to Recovery for AD
       },
     ],
     defaultVersion: '3.1',
@@ -827,7 +842,8 @@ export function generateDocusaurusPlugins() {
  */
 export function generateProductCategories() {
   return PRODUCT_CATEGORIES.map((category) => {
-    const categoryProducts = getProductsByCategory(category.title);
+    const categoryProducts = getProductsByCategory(category.title)
+      .filter(product => !product.hideFromNavbar); // Exclude products hidden from navbar/landing page
 
     const products = categoryProducts.map((product) => {
       const defaultVersion = getDefaultVersion(product);
@@ -876,7 +892,8 @@ export function generateNavbarDropdowns() {
 
   return PRODUCT_CATEGORIES.filter((category) => category.title !== 'Other') // Exclude 'Other' category from navbar
     .map((category) => {
-      const categoryProducts = getProductsByCategory(category.title);
+      const categoryProducts = getProductsByCategory(category.title)
+        .filter(product => !product.hideFromNavbar); // Exclude products hidden from navbar
 
       const items = categoryProducts.map((product) => {
         const defaultVersion = getDefaultVersion(product);
