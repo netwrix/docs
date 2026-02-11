@@ -17,12 +17,15 @@ parameters listed in the following section enable you to adapt the type of clien
 
 Run the installation via the command line: **MSI-FILE.msi [PARAMETER]**
 
-**Parameter**
+**Parameter list**
 
-- **AUTOFILL_ADDON_AUTOSTART=“0”**: Deactivates launching the Autofill Add-on in Windows autostart
-- **INSTALL_AUTOFILL_ADDON=“0**”: Deactivates the installation of the Autofill Add-on. In the list
-  of the components to be installed in the setup, a check mark has not been set but this can be set
-  again by the user
-- **INSTALL_OFFLINE_ADDON=“0”**: Deactivates the installation of the Offline Add-on. In the list of
+- **INSTALL_WIN_APP="0"**: Deactivates the installation of the Windows app. In the list of
   the components to be installed in the setup, a check mark has not been set but this can be set
-  again by the user
+  again by the user.
+- **INSTALL_AUTOFILL_ADDON="0"**”: Deactivates the installation of the Autofill Add-on. In the list
+  of the components to be installed in the setup, a check mark has not been set but this can be set
+  again by the user.
+- **AUTOFILL_ADDON_AUTOSTART="0"**: Deactivates launching the Autofill Add-on in Windows autostart
+- **INSTALL_OFFLINE_ADDON="0"**: Deactivates the installation of the Offline Add-on. In the list of
+  the components to be installed in the setup, a check mark has not been set but this can be set
+  again by the user.
