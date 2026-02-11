@@ -90,6 +90,9 @@ Read the System Requirements and Install Instructions provided by Microsoft to c
    2. Click “Add a permission”
    3. Select the **Microsoft Graph API** permission set > Application permissions
    4. Add the “InformationProtectionPolicy.Read.All” permission
+
+![Azure App Permissions](/static/images/accessanalyzer/12.0/requirements/target/config/AIP_APP_Permissions.webp)
+
 5. After adding the required API permission, select “Grant admin consent”
 6. Record the AppID (from the Overview Page) and the tenantID with the secret value
 
