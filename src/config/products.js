@@ -859,7 +859,7 @@ export function generateProductCategories() {
       if (product.versions.length > 1) {
         productInfo.versions = product.versions.map((version) => ({
           version: version.label,
-          link: `/${generateRouteBasePath(product.path, version.version)}`,
+          link: version.customLink || `/${generateRouteBasePath(product.path, version.version)}`,
           isLatest: version.isLatest,
         }));
       }
