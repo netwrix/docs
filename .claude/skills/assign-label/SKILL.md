@@ -2,7 +2,6 @@
 name: assign-label
 description: "Analyze a GitHub issue's content and assign the most appropriate label(s) based on the issue's nature, using labels available in the repository."
 argument-hint: "[repo] [issue-number] [issue-title] [issue-body] [issue-labels]"
-disable-model-invocation: true
 allowed-tools: Bash(gh *)
 ---
 
