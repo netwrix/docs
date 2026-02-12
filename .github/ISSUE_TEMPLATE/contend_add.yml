@@ -101,10 +101,10 @@ body:
   - type: textarea
     id: use-case
     attributes:
-      label: Use case or justification
+      label: Use case or justification (false)
       description: |
         Why is this content needed? What problem does it solve or what scenario does it address?
       placeholder: |
         Example: "Many customers are using Source ABC with 1Secure and need guidance on the integration process."
     validations:
-      required: true
+      required: false
