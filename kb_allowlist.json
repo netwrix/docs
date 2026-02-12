@@ -39,6 +39,7 @@
     "current"
   ],
   "identityrecovery": [
+    "2.6",
     "3.1"
   ],
   "passwordpolicyenforcer": [
@@ -59,7 +60,8 @@
     "current"
   ],
   "recoveryforactivedirectory": [
-    "2.6"
+    "2.6",
+    "3.1"
   ],
   "threatmanager": [
     "3.0",

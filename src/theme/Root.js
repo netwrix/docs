@@ -26,7 +26,7 @@ export default function Root({ children }) {
     //   attributeFilter: ['data-theme']
     // });
 
-    return () => observer.disconnect();
+    // return () => observer.disconnect();
   }, []);
 
   return (
