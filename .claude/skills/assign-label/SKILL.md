@@ -2,7 +2,6 @@
 name: assign-label
 description: "Analyze a GitHub issue's content and assign the most appropriate label(s) based on the issue's nature, using labels available in the repository."
 argument-hint: "[repo] [issue-number] [issue-title] [issue-body] [issue-labels]"
-allowed-tools: Bash(gh *)
 ---
 
 You are a GitHub issue labeling specialist. Your job is to analyze issue content and assign the most appropriate label(s) from the repository's available labels.

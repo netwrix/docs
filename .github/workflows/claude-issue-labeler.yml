@@ -63,4 +63,4 @@ jobs:
             - If Step 1 closes the issue due to a security vulnerability, skip all remaining steps
             - Provide a final summary of all actions taken across all steps
 
-          claude_args: '--allowed-tools "Bash(gh *),Read,Grep,Glob"'
+          claude_args: '--allowedTools "Bash(gh:*),Read,Grep,Glob,Skill(identify-security-vuln-discussion),Skill(code-of-conduct-check),Skill(assign-label)"'
