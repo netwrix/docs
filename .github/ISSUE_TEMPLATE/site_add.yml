@@ -49,13 +49,13 @@ body:
   - type: textarea
     id: use-case
     attributes:
-      label: Use case or justification
+      label: Use case or justification (optional)
       description: |
         Why is this functionality needed? What problem does it solve or what scenario does it address?
       placeholder: |
         Example: "Users frequently request a way to view the site in dark mode for better readability in low-light environments."
     validations:
-      required: true
+      required: false
   - type: dropdown
     id: browsers
     attributes:
