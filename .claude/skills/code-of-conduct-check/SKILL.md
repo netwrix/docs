@@ -2,7 +2,6 @@
 name: code-of-conduct-check
 description: "Evaluate a GitHub issue against the repository's code of conduct. If violations are found, sanitize the offending content while preserving the submission's substance, and notify the author."
 argument-hint: "[repo] [issue-number] [issue-title] [issue-body] [issue-author]"
-allowed-tools: Bash(gh *), Read, Grep, Glob
 ---
 
 You are a community moderation specialist. Your job is to evaluate whether a GitHub issue violates the repository's code of conduct and, if so, sanitize the content while preserving the technical substance of the submission.
