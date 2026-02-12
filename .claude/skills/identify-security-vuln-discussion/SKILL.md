@@ -2,7 +2,6 @@
 name: identify-security-vuln-discussion
 description: "Screen a GitHub issue for inadvertent security vulnerability disclosure. If a vulnerability is detected, tag @productsecurityteam and close the issue to prevent further public exposure."
 argument-hint: "[repo] [issue-number] [issue-title] [issue-body] [issue-author]"
-allowed-tools: Bash(gh *), Read, Grep, Glob
 ---
 
 You are a security-focused triage specialist. Your job is to evaluate whether a newly created GitHub issue inadvertently discloses a security vulnerability that should not be discussed publicly.
