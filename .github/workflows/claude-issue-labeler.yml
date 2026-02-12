@@ -1,11 +1,11 @@
-name: Claude Issue Labeler
+name: Claude Issue Processor
 
 on:
   issues:
-    types: []  # Disabled - replaced by claude-issue-processor.yml
+    types: [opened]
 
 jobs:
-  label-issue:
+  process-issue:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -13,28 +13,54 @@ jobs:
       id-token: write
 
     steps:
-      - name: Checkout repository (Metadata only)
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           sparse-checkout: |
             .github
+            .claude
+            CODE_OF_CONDUCT.md
           sparse-checkout-cone-mode: false
-      - name: Run Claude Issue Labeler
-        id: claude-labeler
+
+      - name: Process issue with Claude
+        id: claude-processor
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
+            A new GitHub issue has been created and needs to be processed through the full issue intake pipeline using the github-issue-manager agent.
+
+            Here are the issue details:
+
             REPO: ${{ github.repository }}
-            ISSUE NUMBER: ${{ github.event.issue.number }}
+            ISSUE_NUMBER: ${{ github.event.issue.number }}
+            ISSUE_TITLE: ${{ github.event.issue.title }}
+            ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+            ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ', ') }}
+            ISSUE_TEMPLATE_USED:
 
-            A new issue has been created. Your task is to:
-            1. Read the issue using `gh issue view`
-            2. Get the list of available labels that start with "AI:" using `gh label list --search "AI:"`
-            3. Assign the ONE most relevant "AI:" label to this issue using `gh issue edit`
+            First, read the full issue body using:
+            gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq .body
 
-            Choose only the single most appropriate label from the "AI:" labels based on the issue content.
-            If no "AI:" labels are a good fit, do not assign any label.
+            Then process this issue through the github-issue-manager pipeline by calling these four skills sequentially, passing the required variables to each:
 
-          claude_args: '--allowed-tools "Bash(gh issue view:*),Bash(gh issue edit:*),Bash(gh label list:*)"'
+            1. /identify-security-vuln-discussion — Pass: REPO, ISSUE_NUMBER, ISSUE_TITLE, ISSUE_BODY, ISSUE_AUTHOR
+               Screen for inadvertent security vulnerability disclosure. If found, tag @productsecurityteam and close the issue.
+
+            2. /code-of-conduct-check — Pass: REPO, ISSUE_NUMBER, ISSUE_TITLE, ISSUE_BODY, ISSUE_AUTHOR
+               Evaluate against the repository's code of conduct. Sanitize violations while preserving technical content.
+
+            3. /issue-template-validation — Pass: REPO, ISSUE_NUMBER, ISSUE_TITLE, ISSUE_BODY, ISSUE_AUTHOR, ISSUE_TEMPLATE_USED
+               Verify correct template usage. Reformat to the appropriate template if needed.
+
+            4. /assign-label — Pass: REPO, ISSUE_NUMBER, ISSUE_TITLE, ISSUE_BODY, ISSUE_LABELS
+               Assign the most appropriate label(s) from the repository's available labels.
+
+            Important:
+            - Execute each step sequentially in the exact order above
+            - If any step modifies the issue body, use the updated body for all subsequent steps
+            - If Step 1 closes the issue due to a security vulnerability, skip all remaining steps
+            - Provide a final summary of all actions taken across all steps
+
+          claude_args: '--allowed-tools "Bash(gh *),Read,Grep,Glob"'
