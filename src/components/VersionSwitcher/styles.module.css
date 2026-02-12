@@ -1,0 +1,108 @@
+/* Version Switcher Container */
+.versionSwitcherContainer {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  margin-bottom: 12px;
+}
+
+[data-theme='dark'] .versionSwitcherContainer {
+  border-bottom-color: var(--ifm-color-emphasis-300);
+}
+
+/* Version Badges */
+.versionBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Base Version Badge */
+.versionBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  background: var(--ifm-color-primary-light);
+  color: white !important;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.versionBadge:hover {
+  background: var(--ifm-color-primary);
+  color: white !important;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+/* Latest Version Badge (Green) */
+.latestBadge {
+  background: var(--ifm-color-success);
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
+}
+
+.latestBadge:hover {
+  background: var(--ifm-color-success-dark);
+  color: white !important;
+}
+
+/* Active Badge (currently viewing this version) */
+.activeBadge {
+  box-shadow: 0 0 0 2px var(--ifm-background-color), 0 0 0 4px var(--ifm-color-primary);
+}
+
+.latestBadge.activeBadge {
+  box-shadow: 0 0 0 2px var(--ifm-background-color), 0 0 0 4px var(--ifm-color-success);
+}
+
+/* Dark Mode */
+[data-theme='dark'] .versionBadge {
+  background: var(--ifm-color-primary-darker);
+  color: var(--ifm-color-primary-lightest) !important;
+}
+
+[data-theme='dark'] .versionBadge:hover {
+  background: var(--ifm-color-primary);
+  color: white !important;
+}
+
+[data-theme='dark'] .latestBadge {
+  background: var(--ifm-color-success-darker);
+  color: var(--ifm-color-success-lightest) !important;
+}
+
+[data-theme='dark'] .latestBadge:hover {
+  background: var(--ifm-color-success);
+  color: white !important;
+}
+
+[data-theme='dark'] .activeBadge {
+  box-shadow: 0 0 0 2px var(--ifm-background-surface-color), 0 0 0 4px var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .latestBadge.activeBadge {
+  box-shadow: 0 0 0 2px var(--ifm-background-surface-color), 0 0 0 4px var(--ifm-color-success);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .versionSwitcherContainer {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+
+  .versionBadges {
+    gap: 6px;
+  }
+
+  .versionBadge {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+}

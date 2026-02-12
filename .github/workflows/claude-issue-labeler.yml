@@ -2,7 +2,7 @@ name: Claude Issue Labeler
 
 on:
   issues:
-    types: [opened]
+    types: []  # Disabled - replaced by claude-issue-processor.yml
 
 jobs:
   label-issue:
