@@ -2,7 +2,6 @@
 name: identify-security-vuln-discussion
 description: "Screen a GitHub issue for inadvertent security vulnerability disclosure. If a vulnerability is detected, tag @productsecurityteam and close the issue to prevent further public exposure."
 argument-hint: "[repo] [issue-number] [issue-title] [issue-body] [issue-author]"
-disable-model-invocation: true
 allowed-tools: Bash(gh *), Read, Grep, Glob
 ---
 
