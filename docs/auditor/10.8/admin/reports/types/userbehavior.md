@@ -20,7 +20,7 @@ identify vulnerabilities and easily answer questions such as:
 Analytics reports can be found in the User Behavior and Blind Spot Analysis folder under the
 Predefined node.
 
-![userbehaviorblindspotanalysis_thumb_0_0](/images/auditor/10.7/admin/reports/types/userbehaviorblindspotanalysis_thumb_0_0.webp)
+![userbehaviorblindspotanalysis_thumb_0_0](/images/auditor/10.8/admin/reports/types/userbehaviorblindspotanalysis_thumb_0_0.webp)
 
 If you are sure that some audit data is missing (e.g., you do not see information on your file
 servers in reports and search results), verify that the Audit Database settings are configured and

@@ -16,7 +16,7 @@ Supported object types and attributes are listed in the
 To instruct Netwrix Auditor to collect data needed for this report, make sure that **Collect data
 for state-in-time reports** option is selected in the monitoring plan properties.
 
-![sqlservermeansgranted](/images/auditor/10.7/admin/reports/types/stateintime/sqlservermeansgranted.webp)
+![sqlservermeansgranted](/images/auditor/10.8/admin/reports/types/stateintime/sqlservermeansgranted.webp)
 
 ## Reported data
 
