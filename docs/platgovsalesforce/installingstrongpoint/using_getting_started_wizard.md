@@ -60,8 +60,8 @@ If your organization has Multi-Factor Authentication (MFA) enabled, you **cannot
     - **Salesforce Username**
     - **Salesforce Password**
     - **Salesforce Security Token**
-    - **Salesforce Consumer Key** (Not required for Session ID method - can be left blank)
-    - **Salesforce Consumer Secret** (Not required for Session ID method - can be left blank)
+    - **Salesforce Consumer Key** (Not required can be left blank)
+    - **Salesforce Consumer Secret** (Not required can be left blank)
 
 2. Click **Next**
 
