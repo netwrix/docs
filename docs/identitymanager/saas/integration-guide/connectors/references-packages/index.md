@@ -95,6 +95,10 @@ If you are looking for the dll of a given package, be aware that you can often f
 
     Export data from a MySQL database.
 
+- [NIM Profile](/docs/identitymanager/saas/integration-guide/connectors/references-packages/nimprofile/index.md)
+
+    Manages Netwrix Identity Manager profiles in the local or a remote instance.
+
 - [OData](/docs/identitymanager/saas/integration-guide/connectors/references-packages/odata/index.md)
 
     Manages OData entities.

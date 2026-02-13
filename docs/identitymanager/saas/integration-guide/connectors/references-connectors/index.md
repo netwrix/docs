@@ -69,6 +69,10 @@ organization's systems. Here is a list of reference connectors:
 
     Exports mailboxes from a Microsoft Exchange instance.
 
+- [NIM Profile](/docs/identitymanager/saas/integration-guide/connectors/references-connectors/nimprofile/index.md)
+
+    Exports and fulfills NIM Profiles from/to a Netwrix Identity Manager instance
+
 - [OData](/docs/identitymanager/saas/integration-guide/connectors/references-connectors/odata/index.md)
 
     Exports and fulfills entries from/to an OData instance.
