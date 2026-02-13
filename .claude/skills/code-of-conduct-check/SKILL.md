@@ -1,6 +1,6 @@
 ---
 name: code-of-conduct-check
-description: "Evaluate GitHub issues against the repository's code of conduct. Use when: (1) A new issue is created and needs conduct review, (2) Part of issue intake pipeline, (3) Evaluating whether issue content violates community guidelines. If violations are found, sanitizes offending content while preserving technical substance and notifies the author."
+description: "Evaluate GitHub issues against the repository's code of conduct. Use when: (1) A new issue is created and needs conduct review, (2) Part of issue intake pipeline, (3) Evaluating whether issue content violates community guidelines. If violations are found, sanitizes offending content (including title, body, and comments) while preserving technical substance and notifies the author. Intelligently replaces titles when sanitization renders them meaningless."
 argument-hint: "[repo] [issue-number] [issue-title] [issue-body] [issue-author]"
 ---
 
@@ -48,6 +48,58 @@ No violations detected in issue #{issue-number} or its comments.
 ```
 
 Continue pipeline with original issue body.
+
+### If VIOLATION in Issue Title
+
+**1. Sanitize the issue title:**
+- Replace offending content with `[content removed — code of conduct violation]`
+- Preserve technical terms and meaningful content
+- Only remove language that genuinely violates the code of conduct
+
+**2. Check if sanitization resulted in an empty or meaningless title:**
+- If the title is empty, contains only the redaction text, or is otherwise meaningless after sanitization:
+  - Analyze the issue body to identify the core technical issue
+  - Generate a new professional title that accurately reflects the issue
+  - Keep it concise (under 60 characters when possible)
+  - Use the user's technical description from the body
+
+**Example:**
+- Original: "The export feature sucks"
+- Body: "The export feature is incorrectly exporting files..."
+- After check: Title would be entirely redacted or meaningless
+- New title: "Export feature incorrectly exporting files"
+
+**3. Update the issue title:**
+```bash
+gh issue edit $1 --repo $0 --title "NEW_SANITIZED_OR_REPLACED_TITLE"
+```
+
+**4. Post this exact comment on the issue:**
+
+```markdown
+Thank you for your report. Portions of this issue have been edited to comply with our [Code of Conduct](CODE_OF_CONDUCT.md). The technical content of your submission has been preserved in full.
+
+Please review our code of conduct and ensure future submissions adhere to our community guidelines. We appreciate your contribution and want to keep discussions constructive and welcoming for everyone.
+
+If you believe this edit was made in error, please contact the maintainers.
+```
+
+**Implementation:**
+```bash
+gh issue comment $1 --repo $0 --body "Thank you for your report. Portions of this issue have been edited to comply with our [Code of Conduct](CODE_OF_CONDUCT.md). The technical content of your submission has been preserved in full.
+
+Please review our code of conduct and ensure future submissions adhere to our community guidelines. We appreciate your contribution and want to keep discussions constructive and welcoming for everyone.
+
+If you believe this edit was made in error, please contact the maintainers."
+```
+
+**5. Report:**
+```
+Code of conduct check: VIOLATION FOUND — ISSUE TITLE SANITIZED
+Issue #{issue-number} title has been updated.
+New title: [new sanitized or replaced title]
+Author notified via comment.
+```
 
 ### If VIOLATION in Issue Body
 
@@ -137,6 +189,7 @@ Author notified via comment reply.
 After checking all content, provide a summary:
 ```
 Code of conduct check: COMPLETE
+- Issue title: [PASS/SANITIZED/REPLACED]
 - Issue body: [PASS/SANITIZED]
 - Comments checked: {count}
 - Comments sanitized: {count}
@@ -146,7 +199,11 @@ Code of conduct check: COMPLETE
 
 - **Preserve technical substance**: Every piece of technical information must remain intact
 - **Use exact comment**: Always post the identical notice—no variations or customization. This ensures consistent, professional communication.
-- **Be proportionate**: Minor infractions warrant lighter handling than severe violations
+- **Smart title replacement**: When a title becomes meaningless after sanitization, generate a new one that:
+  - Is concise (under 60 characters when possible)
+  - Accurately reflects the technical issue from the body
+  - Uses professional, neutral language
+  - Captures the core problem being reported
 - **Be professional**: Comments should be firm but empathetic, not punitive
 - **When uncertain**: If borderline, note in report but don't edit—let maintainers decide
 
@@ -155,7 +212,9 @@ Code of conduct check: COMPLETE
 - The exact notice wording is intentional—always use it verbatim for both issues and comment replies
 - No additional explanation or personalization should be added to the notice
 - The sanitized body must be included in the report so subsequent pipeline steps receive the updated content
-- If sanitization occurs, pass the UPDATED body to later steps, not the original
+- If sanitization occurs, pass the UPDATED body and title to later steps, not the original
 - Comments are sanitized in place—the original comment content is replaced
 - The notice is posted as a reply to sanitized comments, not as a separate issue comment
 - Check all comments on every run to catch violations in older comments
+- **Title replacement logic**: If sanitization removes the entire title or leaves it meaningless (e.g., only contains redaction text), analyze the issue body to generate a new title. The new title should be a concise, professional summary of the technical issue.
+- **Title violations trigger the same notice**: Whether the title is sanitized, replaced, or left as-is, use the same code of conduct notice as body violations
