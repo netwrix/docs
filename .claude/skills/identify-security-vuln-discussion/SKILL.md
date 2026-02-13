@@ -1,6 +1,6 @@
 ---
 name: identify-security-vuln-discussion
-description: "Screen GitHub issues and comments for inadvertent security vulnerability disclosure. Use when: (1) A new issue is created, (2) An issue body is edited, (3) A comment is added or edited, (4) Part of issue intake pipeline. Prevents bypass by editing clean issues to add vulnerabilities later. If a vulnerability is detected, tags @netwrix/security and closes the issue to prevent further public exposure."
+description: "Screen GitHub issues and comments for inadvertent security vulnerability disclosure. Use when: (1) A new issue is created, (2) An issue body is edited, (3) A comment is added or edited, (4) Part of issue intake pipeline. Prevents bypass by editing clean issues to add vulnerabilities later. If a vulnerability is detected in title/body, closes the issue and tags @netwrix/security. If detected in a comment, deletes the comment and posts a security notice."
 argument-hint: "[repo] [issue-number] [issue-title] [issue-body] [issue-author]"
 ---
 
@@ -44,12 +44,12 @@ Examine title, body, and all comments for:
 Report:
 ```
 Security screening: PASS
-No security vulnerability disclosure detected in issue #{issue-number} or its comments.
+No security vulnerability disclosure detected in issue #{issue-number} title, body, or comments.
 ```
 
 Pipeline continues normally.
 
-### If SECURITY CONCERN
+### If SECURITY CONCERN in Title or Body
 
 **1. Post this exact comment on the issue:**
 
@@ -79,8 +79,45 @@ gh issue close $1 --repo $0 --reason "not planned"
 **3. Report:**
 ```
 Security screening: FAIL — ISSUE CLOSED
-Issue #{issue-number} closed due to potential security vulnerability disclosure.
+Issue #{issue-number} closed due to potential security vulnerability disclosure in title/body.
 Security team (@netwrix/security) tagged for review.
+```
+
+### If SECURITY CONCERN in Comment
+
+**1. Delete the comment:**
+
+First, get the comment ID from the comments you fetched in step 1, then delete it:
+
+```bash
+gh api --method DELETE repos/$0/issues/comments/{comment-id}
+```
+
+**2. Post this exact reply comment:**
+
+```markdown
+A comment on this issue contained security-sensitive information and has been removed to limit public exposure.
+
+@netwrix/security Please review the deleted comment for potential security vulnerabilities.
+
+If you have security concerns to report, please use the appropriate private security reporting channels. The security team will follow up as needed.
+```
+
+**Implementation:**
+```bash
+gh issue comment $1 --repo $0 --body "A comment on this issue contained security-sensitive information and has been removed to limit public exposure.
+
+@netwrix/security Please review the deleted comment for potential security vulnerabilities.
+
+If you have security concerns to report, please use the appropriate private security reporting channels. The security team will follow up as needed."
+```
+
+**3. Report:**
+```
+Security screening: FAIL — COMMENT DELETED
+Comment on issue #{issue-number} deleted due to potential security vulnerability disclosure.
+Security team (@netwrix/security) tagged for review.
+Issue remains open.
 ```
 
 ## Important Principles
@@ -90,17 +127,21 @@ Security team (@netwrix/security) tagged for review.
 - **Don't reproduce vulnerability details**: Never include vulnerability details in your report. The security team will review the issue directly.
 - **Be respectful**: Authors may not realize they're disclosing sensitive information.
 - **Trust the security team**: Your role is screening, not determining if something is truly a vulnerability.
-- **Check everything**: Always check the issue body AND all comments—vulnerabilities can be added via edits or new comments.
+- **Check everything**: Always check the issue title, body, AND all comments—vulnerabilities can be added via edits or new comments.
 
 ## Notes
 
 - The security team `@netwrix/security` must exist in the repository with issue triage permissions
+- The GitHub Actions token must have permission to delete comments (included in default GITHUB_TOKEN permissions)
 - The exact comment wording is intentional—always use it verbatim
-- No additional explanation or personalization should be added to the security notice
-- After closing, do not proceed with remaining pipeline steps
+- No additional explanation or personalization should be added to the security notices
+- After closing an issue (title/body vulnerability), do not proceed with remaining pipeline steps
+- After deleting a comment (comment vulnerability), the pipeline can continue normally—the issue itself is safe
 - **Check ALL comments every time** to catch vulnerabilities added via edits or new comments
 - This prevents bypass where someone creates a clean issue and edits it later to add vulnerability info
-- If a vulnerability is found in a comment (not the issue body), still close the entire issue—vulnerabilities in comments are just as serious
+- **Vulnerabilities in title/body**: Close the entire issue—the issue itself is compromised
+- **Vulnerabilities in comments**: Delete only the problematic comment—the issue can remain open with the vulnerability removed
+- **Issue titles are particularly sensitive** because they're displayed in issue lists, search results, and notifications—vulnerabilities in titles can be widely visible before being addressed
 
 ## Workflow Configuration
 
