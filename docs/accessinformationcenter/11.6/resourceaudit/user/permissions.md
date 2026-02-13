@@ -17,7 +17,7 @@ topic for information on filter options.
 Users must be assigned permissions directly to an object to appear in this report. Users who receive access as part of an AD group membership will only be reflected in the ![Effective Access Report](/docs/accessinformationcenter/11.6/resourceaudit/user/effectiveaccess.md)
 :::
 
-![Permissions report](/images/accessinformationcenter/11.6/resourceaudit/user/permissions.webp)
+![Permissions report](/static/images/accessinformationcenter/11.6/resourceaudit/user/permissions.webp)
 
 This report is comprised of the following columns:
 
