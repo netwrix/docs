@@ -1,6 +1,6 @@
 ---
 name: identify-security-vuln-discussion
-description: "Screen GitHub issues and comments for inadvertent security vulnerability disclosure. Use when: (1) A new issue is created, (2) An issue body is edited, (3) A comment is added or edited, (4) Part of issue intake pipeline. Prevents bypass by editing clean issues to add vulnerabilities later. If a vulnerability is detected, tags @netwrix/security and closes the issue to prevent further public exposure."
+description: "Screen GitHub issues and comments for inadvertent security vulnerability disclosure. Use when: (1) A new issue is created, (2) An issue body is edited, (3) A comment is added or edited, (4) Part of issue intake pipeline. Prevents bypass by editing clean issues to add vulnerabilities later. If a vulnerability is detected, tags @jth-nw and closes the issue to prevent further public exposure."
 argument-hint: "[repo] [issue-number] [issue-title] [issue-body] [issue-author]"
 ---
 
@@ -56,7 +56,7 @@ Pipeline continues normally.
 ```markdown
 Thank you for reporting this. This issue appears to contain security-sensitive information that should not be discussed in a public issue tracker.
 
-@netwrix/security Please review this issue for potential security vulnerabilities.
+@jth-nw Please review this issue for potential security vulnerabilities.
 
 This issue is now closed to limit public exposure. The security team will follow up through appropriate channels.
 ```
@@ -65,7 +65,7 @@ This issue is now closed to limit public exposure. The security team will follow
 ```bash
 gh issue comment $1 --repo $0 --body "Thank you for reporting this. This issue appears to contain security-sensitive information that should not be discussed in a public issue tracker.
 
-@netwrix/security Please review this issue for potential security vulnerabilities.
+@jth-nw Please review this issue for potential security vulnerabilities.
 
 This issue is now closed to limit public exposure. The security team will follow up through appropriate channels."
 ```
@@ -80,7 +80,7 @@ gh issue close $1 --repo $0 --reason "not planned"
 ```
 Security screening: FAIL — ISSUE CLOSED
 Issue #{issue-number} closed due to potential security vulnerability disclosure.
-Security team (@netwrix/security) tagged for review.
+Security team (@jth-nw) tagged for review.
 ```
 
 ## Important Principles
@@ -94,7 +94,7 @@ Security team (@netwrix/security) tagged for review.
 
 ## Notes
 
-- The security team `@netwrix/security` must exist in the repository with issue triage permissions
+- The security team `@jth-nw` must exist in the repository with issue triage permissions
 - The exact comment wording is intentional—always use it verbatim
 - No additional explanation or personalization should be added to the security notice
 - After closing, do not proceed with remaining pipeline steps
