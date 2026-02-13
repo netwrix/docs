@@ -10,7 +10,7 @@ Details the effective permissions that the specified account has on the SQL Serv
 selected type. Use this report to review the permissions granted to users through your SQL Server
 objects.
 
-![accountpermissionssqlserver_thumb_0_0](/images/auditor/10.7/admin/reports/types/stateintime/accountpermissionssqlserver_thumb_0_0.webp)
+![accountpermissionssqlserver_thumb_0_0](/images/auditor/10.8/admin/reports/types/stateintime/accountpermissionssqlserver_thumb_0_0.webp)
 
 ## Reported data
 

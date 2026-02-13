@@ -72,7 +72,7 @@ options are available:
 - New/Generate certificate – Create a new certificate.
 - Select an existing certificate – Select an available certificate from the drop-down list.
 
-![npsclientcertificate](/images/auditor/10.7/admin/settings/npsclientcertificate.webp)
+![npsclientcertificate](/images/auditor/10.8/admin/settings/npsclientcertificate.webp)
 
 **Step 6 –** Click **Next**.
 
@@ -108,11 +108,11 @@ documentation for additional instructions.
 
 **Step 10 –** Provide the security key you got in Netwrix Privilege Secure.
 
-![npsintegrationparameters](/images/auditor/10.7/admin/settings/npsintegrationparameters.webp)
+![npsintegrationparameters](/images/auditor/10.8/admin/settings/npsintegrationparameters.webp)
 
 **Step 11 –** Click **Next**.
 
-![npsintegrationfinished](/images/auditor/10.7/admin/settings/npsintegrationfinished.webp)
+![npsintegrationfinished](/images/auditor/10.8/admin/settings/npsintegrationfinished.webp)
 
 **Step 12 –** After the validation, click **Finish**.
 
