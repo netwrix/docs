@@ -7,12 +7,24 @@ sidebar_position: 20
 # Run the Getting Started Wizard
 
 The Getting Started Wizard helps you set up Platform Governance for Salesforce after you have done
-the [basic installation](/docs/platgovsalesforce/installingstrongpoint/installing_strongpoint.md) and configuration.
+the [basic installation](installing_strongpoint.md) and configuration.
+
+## Prerequisites
+
+Before running the Getting Started Wizard, ensure you have completed:
+
+- ✅ [Installed the Platform Governance package](installing_strongpoint.md)
+- ✅ [Assigned the Netwrix Grant Permissions permission set](installing_strongpoint.md#assign-permission-set-to-users) to users
+- ✅ Configured authentication using **one** of these methods:
+  - **Recommended:** [Named Credentials](named_credential.md) (for MFA-enabled orgs)
+  - **Legacy:** Session ID authentication (username/password/token)
+
+## Access the Wizard
 
 To use the Getting Started Wizard:
 
-1. Open **Netwrix Dashboard**.
-2. Open **Settings**> **Getting Started Wizard**
+1. Open **Netwrix Dashboard** from the Salesforce App Launcher
+2. Navigate to **Settings** > **Getting Started Wizard**
 
 The **Getting Started Wizard** opens to help you finish the configuration and set up.
 
@@ -59,19 +71,33 @@ If you configured Named Credentials, the authentication is handled automatically
 
 ## Test Your Connection
 
-Once you have set up your credentials, you need to configure the remote site settings.
+This step applies to **both** Named Credentials and Session ID authentication methods. You need to configure the remote site settings to allow Platform Governance to communicate with external services.
 
 ![Testing the connection](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard10.webp)
 
-1. Open Salesforce **Setup** > **Security** > **Remote Site Settings**.
-2. Click **New Remote Site**.
+### Configure Remote Site Settings
+
+1. Open Salesforce **Setup** > **Security** > **Remote Site Settings**
+2. Click **New Remote Site**
 
     ![New Remote Site](/images/platgovsalesforce/installing_strongpoint/getting_started_new_rss.webp)
 
-3. Copy/paste the information from the wizard to create the remote sites.
-4. Click on **Test Connection**. **Test connection was Successful** is displayed if the connection
-   succeeds. If the connection fails, the wizard suggests troubleshooting steps to resolve the
-   issue.
-5. Click **Next**.
+3. Copy/paste the information from the wizard to create the remote sites
+4. Repeat for each remote site URL shown in the wizard
 
-**Next Step:** [Set Up the Initial Scan](/docs/platgovsalesforce/installingstrongpoint/setting_up_initial_scan.md)
+:::tip Multiple Remote Sites
+You may need to create multiple remote site settings. The wizard will display all required URLs. Create a separate remote site entry for each URL shown.
+:::
+
+### Test the Connection
+
+1. Return to the Getting Started Wizard
+2. Click **Test Connection**
+3. **Test connection was Successful** is displayed if the connection succeeds
+4. Once the test is successful, click **Next**
+
+## Next Steps
+
+After completing the Getting Started Wizard:
+
+- [Set Up the Initial Scan](setting_up_initial_scan.md)
