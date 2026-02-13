@@ -45,9 +45,8 @@ Ensure the following prerequisites are met before configuring AIP scanning:
 
 The Rights Management Service Client must be installed on the applet servers where FSAA is running. This may be the local Access Analyzer server, a Proxy server, or a File Server running in applet mode.
 
-* To install the Rights Management Service Client 2.1 on the server where the scan is taking place, go to the Microsoft download center:
+* To install the Rights Management Service Client 2.1 on the server where the scan is taking place, go to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=38396):
 
-  <https://www.microsoft.com/en-us/download/details.aspx?id=38396>
 
 :::info
 **info**
@@ -59,10 +58,8 @@ Read the System Requirements and Install Instructions provided by Microsoft to c
 ## Create a Service Principal Account
 
 
-1. Open the Azure Portal and sign in with an administrator account
+1. Open the [Azure Portal](https://portal.azure.com/) and sign in with an administrator account
 
-   
-   1. <https://portal.azure.com/>
 2. Create a new app registration
 
    
