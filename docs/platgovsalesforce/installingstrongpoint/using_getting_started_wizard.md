@@ -26,22 +26,36 @@ Token** sent to you. Click **Next**.
 
 ## Add your Credentials
 
+:::info Authentication Method
+This step is **only required if you are using Session ID authentication** (legacy method). If you configured [Named Credentials](named_credential.md), you can skip this step and proceed directly to [Test Your Connection](#test-your-connection).
+:::
+
 Once you have chosen your license type, you need to add your credentials. If your credentials
 change, an alert is sent to update the saved credentials. Expired credentials can cause auto
-scanners to fail. Use **Netwrix Dashboard** > **Settings**> **SP Credentials** to update your
+scanners to fail. Use **Netwrix Dashboard** > **Settings**> **SP Credentials** to update your
 credentials.
 
+:::warning MFA Users
+If your organization has Multi-Factor Authentication (MFA) enabled, you **cannot** use this credential method. You must use [Named Credentials](named_credential.md) instead.
+:::
+
 ![getting_started_wizard3](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard3.webp)
+
+**For Session ID Authentication only:**
 
 1. On the Credentials page, add the following values:
 
     - **Salesforce Username**
     - **Salesforce Password**
     - **Salesforce Security Token**
-    - **Salesforce Consumer Key** Extracted when you created the Strongpoint Connected App
-    - **Salesforce Consumer Secret** Extracted when you created the Strongpoint Connected App
+    - **Salesforce Consumer Key** (Not required for Session ID method - can be left blank)
+    - **Salesforce Consumer Secret** (Not required for Session ID method - can be left blank)
 
 2. Click **Next**
+
+:::note Named Credentials Users
+If you configured Named Credentials, the authentication is handled automatically through the External Client App and you do not need to enter credentials here.
+:::
 
 ## Test Your Connection
 
