@@ -13,7 +13,7 @@ Information Center user. See the [Results Pane](/docs/accessinformationcenter/12
 information on filter options.
 
 :::note
-Users must be assigned permissions directly to an object to appear in this report. Users who receive access as part of an AD group membership will only be reflected in the ![Effective Access Report](/docs/accessinformationcenter/12.0/resourceaudit/user/effectiveaccess.md)
+Users must be assigned permissions directly to an object to appear in this report. Users who receive access as part of an AD group membership will only be reflected in the [Effective Access Report](/docs/accessinformationcenter/12.0/resourceaudit/user/effectiveaccess.md)
 :::
 
 ![Permissions report](/static/images/accessinformationcenter/12.0/resourceaudit/user/permissions.webp)
