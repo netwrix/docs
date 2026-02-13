@@ -17,5 +17,8 @@ to the newer version of the product. See the [Install the Application](/docs/ide
 The database will be updated to the new version. Do not uninstall or remove the existing database.
 :::
 
+:::note
+A change has been made to the connection string requirements when upgrading to v3.1.  After the upgrade has completed, run the Configuration Utility as an administrator and check the Trust Server Certificate box and press Save to update the configuration.  You will need to restart the Netwrix Recovery Server service for this change to take effect.
+:::
 
 Identity Recovery has now been upgraded to v3.1.

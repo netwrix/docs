@@ -18,10 +18,10 @@ access them instantly. See the [Navigation](/docs/auditor/10.8/admin/navigation/
 To review the Behavior Anomalies dashboard:
 
 On the main Auditor page, click
-![ba_tile](/images/auditor/10.7/admin/behavioranomalies/ba_tile.webp)
+![ba_tile](/images/auditor/10.8/admin/behavioranomalies/ba_tile.webp)
 on the left.
 
-![dashboard_thumb_0_0](/images/auditor/10.7/admin/behavioranomalies/dashboard_thumb_0_0.webp)
+![dashboard_thumb_0_0](/images/auditor/10.8/admin/behavioranomalies/dashboard_thumb_0_0.webp)
 
 The dashboards includes the following sections:
 
