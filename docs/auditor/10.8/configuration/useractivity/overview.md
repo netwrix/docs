@@ -21,12 +21,14 @@ You can use group Managed Service Accounts (gMSA) as data collecting accounts.
 
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
-- Automatically through a monitoring plan – This is a recommended method. If you select to
+- **Automatically through a monitoring plan** – This is a recommended method. If you select to
   automatically configure audit in the target environment, your current audit settings will be
   checked on each data collection and adjusted if necessary.
-- Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
+- **Manually** – Native audit settings must be adjusted manually to ensure collecting comprehensive and
   reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
-  configure them manually:
+  configure them manually.
+
+  **IMPORTANT:** Even if automatic configuration is selected, the following prerequisites must be configured manually.
 
     - On the audited system(s):
 
@@ -34,11 +36,12 @@ You can configure your IT Infrastructure for monitoring in one of the following
           running and their **Startup Type** must be set to "Automatic".
         - The **File and Printer Sharing** and the **Windows Management Instrumentation** features
           must be allowed to communicate through the Windows Firewall.
-        - Local TCP Port 9003 must be opened for inbound connections.
-        - Remote TCP Port 9004 must be opened for outbound connections.
-        - The User Activity Core Service is installed on the monitored computers. See the Install
-          Netwrix Auditor Agent to Audit User Activity topic for additional information.
-        - .NET 4.8 must be installed.
+        - Local **TCP Port 9003** must be opened for inbound connections.
+        - Remote **TCP Port 9004** must be opened for outbound connections.
+        - The **User Activity Core Service** must be installed on the monitored computers.
+          It is deployed automatically by Netwrix Auditor, provided that all required prerequisites are met. If necessary, you can install it manually.
+          For manual installation instructions, see the _Install Netwrix Auditor Agent to Audit User Activity_ topic below.
+        - **.NET Framework 4.8** must be installed.
 
     - On the Netwrix Auditor host system/server:
 
@@ -46,8 +49,8 @@ You can configure your IT Infrastructure for monitoring in one of the following
           running and their **Startup Type** must be set to "Automatic".
         - The **File and Printer Sharing** and the **Windows Management Instrumentation** features
           must be allowed to communicate through Windows Firewall.
-        - Local TCP Port 9004 must be opened for inbound connections.
-        - .NET 4.8 must be installed.
+        - Local **TCP Port 9004** must be opened for inbound connections.
+        - **.NET Framework 4.8** must be installed.
 
 See the following topics for additional information:
 
