@@ -54,16 +54,16 @@ jobs:
         if: steps.changed-files.outputs.count > 0
         id: read-prompt
         run: |
-          # Read from public repo's agents directory (synced from private repo)
-          if [ ! -f "agents/engineering/technical_writing/technical_writer/system.md" ]; then
-            echo "::warning::System prompt file not found at agents/engineering/technical_writing/technical_writer/system.md, proceeding without it"
+          # Read from public repo's .claude/agents directory (synced from private repo)
+          if [ ! -f ".claude/agents/engineering/technical_writing/technical_writer/system.md" ]; then
+            echo "::warning::System prompt file not found at .claude/agents/engineering/technical_writing/technical_writer/system.md, proceeding without it"
             echo "prompt=" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
           {
             echo "prompt<<EOF"
-            cat agents/engineering/technical_writing/technical_writer/system.md
+            cat .claude/agents/engineering/technical_writing/technical_writer/system.md
             echo "" # Forces a newline to prevent EOF delimiter errors
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
