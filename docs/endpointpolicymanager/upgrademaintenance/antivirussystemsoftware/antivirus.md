@@ -14,7 +14,7 @@ conflict with some Antivirus programs. (McAfee, Sophos, etc.)
 
 Additionally, you can tell Endpoint Policy Manager to avoid conflict with Antivirus and security
 engines if you know what processes are getting entangled. If you wish to do that, please see
-[PolicyPak: Exclude Processes via ADMX](https://helpcenter.netwrix.com/bundle/endpointpolicymanager/page/Content/endpointpolicymanager/Video/GettingStarted/ADMX.htm)
+[Endpoint Policy Manager: Exclude Processes via ADMX](/docs/endpointpolicymanager/gettingstarted/misc/videos/troubleshooting/admx.md)
 for general how-to directions.
 
 We suggest proactively excluding the two processes below which could be blocked and prevented from

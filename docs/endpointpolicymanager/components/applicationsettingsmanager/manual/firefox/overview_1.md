@@ -59,7 +59,7 @@ following
 
 :::note
 
-[https://www.policypak.com/knowledge-base/preconfigured-paks/firefox-how-can-i-deliver-certificates-to-certificate-authority-store-and-select-websites-mail-users-and-software-makers.html](http://www.policypak.com/knowledge-base/preconfigured-paks/firefox-how-can-i-deliver-certificates-to-certificate-authority-store-and-select-websites-mail-users-and-software-makers.html).
+[Firefox: How do I troubleshoot adding Certificates with Endpoint Policy Manager and Firefox?](/docs/endpointpolicymanager/components/applicationsettingsmanager/technotes/preconfiguredappsets/certificates_1.md).
 :::
 
 
