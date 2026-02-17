@@ -10,6 +10,7 @@ sidebar_position: 1
 
 Passwords are used constantly and everywhere,
 and they need to be professionally managed. Passwords must be safe, have at least 12 characters,
+and they must be professionally managed. Passwords should be safe, have at least 12 characters,
 including uppercase and lowercase as well as special characters. In the best case, a separate access
 password should be used for each account. It should be changed regularly. It is hard enough to meet
 this challenge in private settings. In a large corporate environment, you wouldn’t be able to
