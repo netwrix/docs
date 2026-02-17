@@ -50,23 +50,20 @@ jobs:
             echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Checkout system prompt repository
-        uses: actions/checkout@v4
-        with:
-          repository: netwrix-eng/internal-agents
-          token: ${{ secrets.PRIVATE_AGENTS_REPO }}
-          path: system-prompt-repo
-          ref: main
-          sparse-checkout: |
-            agents/engineering/technical_writing/system.md
-          sparse-checkout-cone-mode: false
-
       - name: Read system prompt
+        if: steps.changed-files.outputs.count > 0
         id: read-prompt
         run: |
+          # Read from public repo's agents directory (synced from private repo)
+          if [ ! -f "agents/engineering/technical_writing/technical_writer/system.md" ]; then
+            echo "::warning::System prompt file not found at agents/engineering/technical_writing/technical_writer/system.md, proceeding without it"
+            echo "prompt=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           {
             echo "prompt<<EOF"
-            cat system-prompt-repo/agents/engineering/technical_writing/system.md
+            cat agents/engineering/technical_writing/technical_writer/system.md
             echo "" # Forces a newline to prevent EOF delimiter errors
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
@@ -84,5 +81,5 @@ jobs:
 
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
+            ${{ steps.read-prompt.outputs.prompt != '' && format('--append-system-prompt "{0}"', steps.read-prompt.outputs.prompt) || '' }}
             --allowedTools "Bash(npm install),Bash(npm run build),Bash(npm run test:*),Bash(npm run lint:*),Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*)"
