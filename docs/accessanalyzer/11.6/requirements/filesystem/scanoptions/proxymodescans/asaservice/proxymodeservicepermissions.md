@@ -52,8 +52,17 @@ rule information.
 - **Job Execution:** Scheduled Task or Console User (launches the job)
 - Console ↔ Proxy: **NAA** **Computer Account (Kerberos)**
 - Target Access (Proxy ↔ Targets): Connection Profile Account
+  
 :::note
-If the service is deployed by the File System Scan job (as opposed to manually installed), the account used by the connection profile will be used to run the FSAA Proxy Service unless **Run service as Local System** is checked on the Applet Settings page of the job query. Alternatively, a credential added to the connection profile using either **Task (Local)** or **Task (Domain)** can be used to run the service.
+If the service is deployed by the File System Scan job (as opposed to manually installed), the account used by the connection profile will be used to run the FSAA Proxy Service unless Run service as Local System is checked on the Applet Settings page of the job query. Alternatively, a credential added to the connection profile using either Task (Local) or Task (Domain) can be used to run the service.
+
+If the target host resides in a different domain than the proxy server and there is no trust relationship between the two domains, a task credential for the proxy domain is required to be stacked with the credential for scanning the target file system.
+
+For example: Scanning Configuration: NAA Console [Domain A] → Proxy Server [Domain A] → File Server [Domain B] Connection Profile:
+
+Active Directory Account | Domain B\Credentials
+Task (Domain) | Domain A\Credentials
+:::
 
 ## How do I determine if I’m using Proxy Mode with Service scanning?
 
