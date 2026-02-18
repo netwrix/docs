@@ -49,6 +49,13 @@ jobs:
             echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Fetch system prompt from base repo
+        if: steps.changed-files.outputs.count > 0
+        run: |
+          # Fetch the system prompt from the base repo (dev branch), not from the PR
+          git fetch origin dev
+          git checkout origin/dev -- .claude/agents/engineering/technical_writing/technical_writer/system.md
+
       - name: Read system prompt
         if: steps.changed-files.outputs.count > 0
         id: read-prompt
