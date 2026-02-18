@@ -409,13 +409,13 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '3.3',
-        label: '3.3',
+        version: '3.5',
+        label: '3.5',
         isLatest: true,
-        sidebarFile: './sidebars/pingcastle/3.3.js',
+        sidebarFile: './sidebars/pingcastle/3.5.js',
       },
     ],
-    defaultVersion: '3.3',
+    defaultVersion: '3.5',
   },
   {
     id: 'platgovnetsuite',
@@ -528,23 +528,49 @@ export const PRODUCTS = [
   },
   {
     id: 'recoveryforactivedirectory',
-    name: 'Identity Recovery',
+    name: 'Recovery for Active Directory',
     description: 'Identity backup and recovery',
     path: 'docs/recoveryforactivedirectory',
     categories: ['Identity Threat Detection & Response (ITDR)'],
     icon: '',
+    hideFromNavbar: true, // Old product name, superseded by Identity Recovery
     versions: [
+      {
+        version: '3.1',
+        label: '3.1',
+        isLatest: true,
+        sidebarFile: './sidebars/identityrecovery/3.1.js',
+        customLink: '/docs/identityrecovery/3_1', // Points to Identity Recovery
+      },
       {
         version: '2.6',
         label: '2.6',
         isLatest: false,
         sidebarFile: './sidebars/recoveryforactivedirectory/2.6.js',
       },
+    ],
+    defaultVersion: '2.6',
+  },
+  {
+    id: 'identityrecovery',
+    name: 'Identity Recovery',
+    description: 'Identity backup and recovery',
+    path: 'docs/identityrecovery',
+    categories: ['Identity Threat Detection & Response (ITDR)'],
+    icon: '',
+    versions: [
       {
         version: '3.1',
         label: '3.1',
         isLatest: true,
-        sidebarFile: './sidebars/recoveryforactivedirectory/3.1.js',
+        sidebarFile: './sidebars/identityrecovery/3.1.js',
+      },
+      {
+        version: '2.6',
+        label: '2.6',
+        isLatest: false,
+        sidebarFile: './sidebars/recoveryforactivedirectory/2.6.js',
+        customLink: '/docs/recoveryforactivedirectory/2_6', // Points to Recovery for AD
       },
     ],
     defaultVersion: '3.1',
@@ -560,11 +586,17 @@ export const PRODUCTS = [
       {
         version: '3.0',
         label: '3.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/threatmanager/3.0.js',
       },
+      {
+        version: '3.1',
+        label: '3.1',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.1.js',
+      },
     ],
-    defaultVersion: '3.0',
+    defaultVersion: '3.1',
   },
   {
     id: 'threatprevention',
@@ -710,8 +742,13 @@ export function getDefaultVersion(product) {
  */
 export function createProductMap() {
   const map = {};
+  const injectSubDir = ['kb'];
   PRODUCTS.forEach((product) => {
     map[`/${product.path}`] = product.name;
+    injectSubDir.forEach((subDir) => {
+      const injectedPath = product.path.replace('docs/', `docs/${subDir}/`);
+      map[`/${injectedPath}`] = product.name;
+    })
   });
   return map;
 }
@@ -805,7 +842,8 @@ export function generateDocusaurusPlugins() {
  */
 export function generateProductCategories() {
   return PRODUCT_CATEGORIES.map((category) => {
-    const categoryProducts = getProductsByCategory(category.title);
+    const categoryProducts = getProductsByCategory(category.title)
+      .filter(product => !product.hideFromNavbar); // Exclude products hidden from navbar/landing page
 
     const products = categoryProducts.map((product) => {
       const defaultVersion = getDefaultVersion(product);
@@ -821,7 +859,7 @@ export function generateProductCategories() {
       if (product.versions.length > 1) {
         productInfo.versions = product.versions.map((version) => ({
           version: version.label,
-          link: `/${generateRouteBasePath(product.path, version.version)}`,
+          link: version.customLink || `/${generateRouteBasePath(product.path, version.version)}`,
           isLatest: version.isLatest,
         }));
       }
@@ -854,7 +892,8 @@ export function generateNavbarDropdowns() {
 
   return PRODUCT_CATEGORIES.filter((category) => category.title !== 'Other') // Exclude 'Other' category from navbar
     .map((category) => {
-      const categoryProducts = getProductsByCategory(category.title);
+      const categoryProducts = getProductsByCategory(category.title)
+        .filter(product => !product.hideFromNavbar); // Exclude products hidden from navbar
 
       const items = categoryProducts.map((product) => {
         const defaultVersion = getDefaultVersion(product);

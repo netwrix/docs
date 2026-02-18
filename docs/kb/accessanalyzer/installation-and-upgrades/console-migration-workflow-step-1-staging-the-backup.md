@@ -51,7 +51,7 @@ Within the `NAA_Migration` folder, create a folder named **NAA**, and add the fo
 | File/Folder | Purpose |
 |---|---|
 | `...\STEALTHbits\StealthAUDIT\Jobs` | Contains the jobs from the SA jobs tree. |
-| `...\STEALTHbits\StealthAUDIT\StealthAUDIT.lic` | The license key for the Netwrix Auditor product |
+| `...\STEALTHbits\StealthAUDIT\StealthAUDIT.lic` | The license key for the Netwrix Access Analyzer product |
 | `…\STEALTHbits\StealthAUDIT\Reports` | This will ensure that you do not have to go and republish all reports |
 | `…\STEALTHbits\StealthAUDIT\CLU` | Contains any Command Line Utility parameters. |
 | `…\STEALTHbits\StealthAUDIT\ODBCProfiles\Custom` | Contains any custom ODBC connect strings for SQL. |

@@ -1,0 +1,110 @@
+name: Add content to documentation
+description: Request new content to be added to the documentation.
+title: "Add: "
+labels: ["enhancement", "documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest new content for the documentation!
+        Please provide as much information as possible about what you'd like to add.
+  - type: dropdown
+    id: product
+    attributes:
+      label: Affected product and version (optional)
+      description: Select the relevant product and version for this content (you can select multiple).
+      multiple: true
+      options:
+        - 1Secure
+        - Access Analyzer 11.6
+        - Access Analyzer 12.0
+        - Access Information Center 11.6
+        - Access Information Center 12.0
+        - Activity Monitor 7.1
+        - Activity Monitor 8.0
+        - Activity Monitor 9.0
+        - Auditor 10.6
+        - Auditor 10.7
+        - Auditor 10.8
+        - Change Tracker 8.0
+        - Change Tracker 8.1
+        - Customer Portal & Training Guide
+        - Data Classification 5.6.2
+        - Data Classification 5.7
+        - Directory Manager 11.0
+        - Directory Manager 11.1
+        - Endpoint Policy Manager
+        - Endpoint Protector
+        - Identity Manager 6.1
+        - Identity Manager 6.2
+        - Identity Recovery 3.1
+        - Partner Certification Training Courses
+        - Password Policy Enforcer 10.2
+        - Password Policy Enforcer 11.0
+        - Password Policy Enforcer 11.1
+        - Password Reset 3.23
+        - Password Reset 3.3
+        - Password Secure 9.1
+        - Password Secure 9.2
+        - Password Secure 9.3
+        - PingCastle
+        - Platform Governance for NetSuite
+        - Platform Governance Flashlight for NetSuite
+        - Platform Governance Flashlight for Salesforce
+        - Privilege Secure 4.1
+        - Privilege Secure 4.2
+        - Privilege Secure 25.12
+        - Privilege Secure for Discovery
+        - Recovery for Active Directory 2.6
+        - Threat Manager
+        - Threat Prevention 7.4
+        - Threat Prevention 7.5
+        - Threat Prevention 8.0
+    validations:
+      required: false
+  - type: dropdown
+    id: content-type
+    attributes:
+      label: Content type (optional)
+      description: Select the type of documentation content you'd like to add (you can select multiple).
+      multiple: true
+      options:
+        - Installation guide
+        - Configuration guide
+        - Troubleshooting guide
+        - How-to guide or tutorial
+        - Reference documentation
+        - Conceptual overview
+        - Best practices
+        - Migration guide
+        - Integration guide
+        - Quick start guide
+        - Security documentation
+        - Architecture documentation
+        - Other
+    validations:
+      required: false
+  - type: textarea
+    id: feature-request
+    attributes:
+      label: Content to add
+      description: |
+        Please describe the content to add, where it should be located, and any additional context for your request.
+        Include any useful resources like existing documentation, blog posts, diagrams, videos, or other materials we can use.
+        The more information you provide, the faster we can address your request.
+      placeholder: |
+        Content request example: "Add documentation for integrating 1Secure with Source ABC. 
+        This should include setup steps, configuration requirements, and troubleshooting tips. 
+        Add it to the 1Secure documentation. Here's a blog post that covers the integration: https://www.abc.com/blog/..."
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case or justification (false)
+      description: |
+        Why is this content needed? What problem does it solve or what scenario does it address?
+      placeholder: |
+        Example: "Many customers are using Source ABC with 1Secure and need guidance on the integration process."
+    validations:
+      required: false
