@@ -76,11 +76,14 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
 
           prompt: |
             Review ONLY the following markdown files that were changed in this PR: ${{ steps.changed-files.outputs.files }}
 
             Do not review or comment on any other files (e.g., .js, .ts, .json, etc.). Focus exclusively on the documentation changes in the markdown files listed above.
+
+            When you have completed your review, post your findings as a comment on PR #${{ github.event.pull_request.number }} using the gh pr comment tool. Do not ask for confirmation — post the comment directly.
 
           claude_args: |
             --model claude-sonnet-4-5-20250929
