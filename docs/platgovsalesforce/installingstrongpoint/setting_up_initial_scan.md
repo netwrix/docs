@@ -43,6 +43,12 @@ You can schedule the scanners to auto-scan your environment:
 
     ![getting_started_wizard6](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard6.webp)
 
+:::warning Scanner Timing
+Please change the day or time of your Scanner run to prevent overlap which may cause failures and/or execution delays. **Times need to be set 2 hours apart at a minimum.**
+
+![scheduler_error_msg](/images/platgovsalesforce/installing_strongpoint/scheduler_error_msg.webp)
+:::
+
 :::note
     Netwrix recommends you schedule at least the following items:
 
@@ -59,7 +65,7 @@ The final screen is displayed. Click **Done** to close the wizard.
 
 ![getting_started_wizard8](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard8.webp)
 
-If you open the home page, you see the **Scanner Status** is **In Progress**.
+Open the Home page and verify that the **Scanner Status** shows **In Progress**.
 
 ![Scanner status on home page](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard11.webp)
 
