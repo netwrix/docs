@@ -10,8 +10,8 @@ sidebar_position: 1
 
 Organizations and individuals use passwords constantly and everywhere,
 and with so many passwords, they must professionally manage them. Passwords must be safe, have at least 12 characters,
-including uppercase and lowercase as well as special characters. In the best case, a separate access
-password should be used for each account. It should be changed regularly. It is hard enough to meet
+including uppercase and lowercase as well as special characters. In the best case, users should have a separate access
+password for each account. It should be changed regularly. It is hard enough to meet
 this challenge in private settings. In a large corporate environment, you wouldn’t be able to
 adequately manage this task without the use of a professional password management tool.
 
