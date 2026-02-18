@@ -79,7 +79,8 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          
+          show_full_output: true  # Enable full output to debug
+
           prompt: |
             Review ONLY the following markdown files that were changed in this PR: ${{ steps.changed-files.outputs.files }}
             
