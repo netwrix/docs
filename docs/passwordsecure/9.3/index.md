@@ -9,7 +9,7 @@ sidebar_position: 1
 ## Users depend on passwords
 
 Organizations and individuals use passwords constantly and everywhere,
-and with so many passwords, they must professionally manage them. Passwords must be safe, have at least 12 characters,
+and with so many passwords, they must professionally manage them. Passwords must often have at least 12 characters,
 including uppercase and lowercase as well as special characters. In the best case, users should have a separate access
 password for each account. The password should be changed regularly. It is hard enough to meet
 this challenge in private settings. In a large corporate environment, you wouldn’t be able to
