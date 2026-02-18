@@ -32,22 +32,22 @@ const config = {
   themes: ['@docusaurus/theme-mermaid'],
 
   // Performance optimizations with Docusaurus Faster
- future: {
- experimental_faster: {
-   swcJsLoader: true,
-  swcJsMinimizer: true,
-  swcHtmlMinimizer: true,
-  lightningCssMinimizer: true,
-  // Disable Rspack to avoid the lazyBarrel schema error
-  // rspackBundler: true,
-  // rspackPersistentCache: true,
-  mdxCrossCompilerCache: true,
-  ssgWorkerThreads: true,
+  future: {
+    experimental_faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      rspackBundler: true,
+      rspackPersistentCache: true, // 2-5x faster rebuilds
+      mdxCrossCompilerCache: true,
+      ssgWorkerThreads: true, // 2x faster static generation
+    },
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true, // Required for worker threads
+      // useCssCascadeLayers: true, // Temporarily disabled - may cause style conflicts
+    },
   },
-  v4: {
- removeLegacyPostBuildHeadAttribute: true,
-  },
-},
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
