@@ -23,8 +23,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Ensures the action checks out the PR branch instead of main
-          ref: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
+          # Use SHA to support both fork and branch PRs
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0 # Need full history to compare with base branch
 
       - name: Get changed markdown files
