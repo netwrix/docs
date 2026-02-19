@@ -12,6 +12,7 @@ title: "Out-of-Scope Resources Still Appear in the AIC or Reporting Console Afte
 knowledge_article_id: kA0Qk0000002mDRKAY
 products:
   - access-analyzer
+  - access-information-center
 ---
 
 # Out-of-Scope Resources Still Appear in the AIC or Reporting Console After Scoping Changes
