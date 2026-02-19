@@ -11,6 +11,7 @@ title: "Error: Ini Section Does Not Exist in SBTFileMon.ini"
 knowledge_article_id: kA0Qk0000001M05KAE
 products:
   - activitymonitor
+  - access-analyzer
 ---
 
 # Error: Ini Section Does Not Exist in SBTFileMon.ini
