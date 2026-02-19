@@ -8,7 +8,7 @@ sidebar_position: 90
 
 Netwrix Auditor is a visibility platform for user behavior analysis and risk mitigation that enables
 control over changes, configurations and access in hybrid IT environments to protect data regardless
-of its location. The platform provides security analytic to detect anomalies in user behavior and
+of its location. The platform provides security analytics to detect anomalies in user behavior and
 investigate threat patterns before a data breach occurs.
 
 Microsoft System Center Virtual Machine Manager (SCVMM) is a solution for configuring and managing

@@ -149,12 +149,12 @@ To create a new gMSA in the root domain using PowerShell:
     - _PrincipalsAllowedToRetrieveManagedPassword_ — your Netwrix Auditor Server NETBIOS name ended
       with $, here __NASrv$\_\_
 
-- If you want to specify a security group that comprises multiple Auditor  servers, run the command
+- If you want to specify a security group that comprises multiple Auditor servers, run the command
   as follows:
 
     `New-ADServiceAccount -Name gmsagroup -DNSHostName gmsagroup.mydomain.local -PrincipalsAllowedToRetrieveManagedPassword NAServers`
 
-    here **NAServers** — a security group with your Auditor  servers.
+    here **NAServers** — a security group with your Auditor servers.
 
 ## Assign Required Roles and Permissions to a gMSA
 

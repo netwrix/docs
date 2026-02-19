@@ -87,7 +87,7 @@ automatically** check box.
 
 **Step 3 –** Save the settings.
 
-Auditor  will automatically configure audit settings on all servers in the AD FS farm and adjust the
+Auditor will automatically configure audit settings on all servers in the AD FS farm and adjust the
 necessary log settings on these servers.
 
 ## Configure AD FS farm manually
