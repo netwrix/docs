@@ -449,11 +449,19 @@ export default function SearchBar() {
             filters.push(productFilters); // Array within array = OR logic
         }
 
-        // Add version filters (OR logic - any of the selected versions)
-        if (selectedVersions.length > 0) {
-            const versionFilters = selectedVersions.map(v => `version:${v}`);
-            filters.push(versionFilters); // Array within array = OR logic
-        }
+        // TODO: Version filtering disabled - 'version' facet not yet configured in Algolia
+        // The version dropdown UI is visible (preserving coworker's work) but doesn't filter yet.
+        //
+        // To enable version filtering, have your coworker (web team with Algolia access):
+        // 1. Add 'version' field to document frontmatter in all docs
+        // 2. Configure attributesForFaceting: ['version'] in Algolia dashboard
+        // 3. Re-index the documentation
+        // 4. Then uncomment the code below:
+        //
+        // if (selectedVersions.length > 0) {
+        //     const versionFilters = selectedVersions.map(v => `version:${v}`);
+        //     filters.push(versionFilters); // Array within array = OR logic
+        // }
 
         return filters;
     }, [selectedProducts, selectedVersions]);
@@ -472,26 +480,40 @@ export default function SearchBar() {
         return () => clearInterval(interval);
     }, []);
 
-    // Helper to refresh search - simplified to just update ref
+    // Helper to refresh search - preserve query and wait for user action
     const refreshSearch = useCallback(() => {
         const input =
             document.querySelector('.DocSearch-Input') ||
             document.querySelector('input[type="search"]');
 
-        if (input) {
+        if (input && input.value) {
             searchQueryRef.current = input.value;
+
+            // Try multiple approaches to trigger search
+            const query = input.value;
+
+            // Approach 1: Simulate typing by adding/removing character
+            setTimeout(() => {
+                if (input) {
+                    input.value = query + ' ';
+                    input.dispatchEvent(new Event('input', {bubbles: true}));
+
+                    setTimeout(() => {
+                        input.value = query;
+                        input.dispatchEvent(new Event('input', {bubbles: true}));
+                        input.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+                    }, 50);
+                }
+            }, 50);
         }
     }, []);
-
-    // Track if filters have changed and need to be applied
-    const [filtersChanged, setFiltersChanged] = useState(false);
 
     const onChangeProducts = useCallback((newProducts) => {
         setSelectedProducts(newProducts);
         if (typeof window !== 'undefined') {
             localStorage.setItem('docs_product_filter', JSON.stringify(newProducts));
         }
-        setFiltersChanged(true);
+        // Don't auto-refresh - let user retype or press enter
     }, []);
 
     const onChangeVersions = useCallback((newVersions) => {
@@ -499,22 +521,7 @@ export default function SearchBar() {
         if (typeof window !== 'undefined') {
             localStorage.setItem('docs_version_filter', JSON.stringify(newVersions));
         }
-        setFiltersChanged(true);
-    }, []);
-
-    const applyFilters = useCallback(() => {
-        const input = document.querySelector('.DocSearch-Input');
-        if (input) {
-            const query = input.value;
-            // Force refresh by adding and removing a space
-            input.value = query + ' ';
-            input.dispatchEvent(new Event('input', {bubbles: true}));
-            setTimeout(() => {
-                input.value = query;
-                input.dispatchEvent(new Event('input', {bubbles: true}));
-                setFiltersChanged(false);
-            }, 50);
-        }
+        // Don't auto-refresh - let user retype or press enter
     }, []);
 
 
@@ -583,6 +590,8 @@ export default function SearchBar() {
                             onChange={onChangeProducts}
                             placeholder="All products"
                         />
+                        {/* NOTE: Version filtering UI preserved (coworker's work)
+                            Backend filtering disabled until 'version' field is added to Algolia index */}
                         <MultiSelectDropdown
                             label="Versions"
                             options={availableVersions}
@@ -590,26 +599,6 @@ export default function SearchBar() {
                             onChange={onChangeVersions}
                             placeholder="All versions"
                         />
-                        {filtersChanged && (
-                            <button
-                                type="button"
-                                onClick={applyFilters}
-                                style={{
-                                    height: 36,
-                                    padding: '0 12px',
-                                    border: 'none',
-                                    borderRadius: 4,
-                                    background: 'var(--docsearch-primary-color)',
-                                    color: 'white',
-                                    cursor: 'pointer',
-                                    fontSize: '14px',
-                                    fontWeight: '500',
-                                    whiteSpace: 'nowrap',
-                                }}
-                            >
-                                Apply Filters
-                            </button>
-                        )}
                     </div>,
                     portalTarget,
                 )}

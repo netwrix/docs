@@ -1,0 +1,41 @@
+/* Custom styles for search page */
+
+.searchQueryColumn {
+  flex-grow: 1;
+}
+
+.searchResultsColumn {
+  margin-top: 1rem;
+}
+
+.searchResultItem {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.searchResultItemHeading {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.searchResultItemPath {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.searchResultItemSummary {
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+.loadingSpinner {
+  text-align: center;
+  padding: 2rem;
+}
+
+.loader {
+  text-align: center;
+  padding: 1rem;
+  color: var(--ifm-color-emphasis-600);
+}
