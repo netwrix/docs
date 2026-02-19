@@ -103,6 +103,11 @@ After you install the Zendesk app, set up the approvals.
 
 1. Click the new **Platform Governance For NetSuite** icon in the left panel. The **Group Configurations**
    page opens.
+
+   ![Group Configuration Icon](/images/platgovnetsuite/integrations/zendesk_group_config_icon.webp)
+
+   ![Group Configuration Page](/images/platgovnetsuite/integrations/zendesk_group_config_page.webp)
+
 2. Enter the group and approval information:
 
     - **Allow these Zendesk groups to request approval** one or more groups who can request approval
