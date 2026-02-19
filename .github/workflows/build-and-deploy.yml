@@ -21,7 +21,7 @@ on:
 
 jobs:
   determine-environment:
-    runs-on: gh-runner-large
+    runs-on: ubuntu-latest
     outputs:
       environment: ${{ steps.set-env.outputs.environment }}
     steps:
@@ -47,68 +47,66 @@ jobs:
       steps:
         - name: Check out source code
           uses: actions/checkout@v4
-  
+
         - name: Set up Node.js
-          uses: actions/setup-node@v3
+          uses: actions/setup-node@v4
           with:
             node-version: '22.x'
-  
+
         - name: Get npm cache directory
           id: npm-cache-dir
           run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
-  
+
         - name: Cache Node.js dependencies
-          uses: actions/cache@v3
+          uses: actions/cache@v4
           with:
             path: ${{ steps.npm-cache-dir.outputs.dir }}
-            # ✅ KEY UPDATED
             key: v2-${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
             restore-keys: |
               v2-${{ runner.os }}-node-
-  
+
         - name: Cache Docusaurus build
-          uses: actions/cache@v3
+          uses: actions/cache@v4
           id: cache-build
           with:
             path: |
               .docusaurus
-            # ✅ KEY UPDATED
             key: v2-${{ runner.os }}-docusaurus-${{ hashFiles('src/**', 'docs/**', 'blog/**', 'docusaurus.config.js', 'sidebars.js') }}
             restore-keys: |
               v2-${{ runner.os }}-docusaurus-
-  
+
         - name: Cache webpack
-          uses: actions/cache@v3
+          uses: actions/cache@v4
           with:
             path: node_modules/.cache
-            # ✅ KEY UPDATED
             key: v2-${{ runner.os }}-webpack-${{ hashFiles('**/package-lock.json') }}
             restore-keys: |
               v2-${{ runner.os }}-webpack-
-  
+
         - name: Install dependencies and build site
           run: |
             npm ci
-  
+
             if [[ "${{ steps.cache-build.outputs.cache-hit }}" == "true" ]]; then
               echo "Build cache found, checking if rebuild needed..."
             else
               echo "No build cache found, performing full build..."
             fi
-  
+
             npm run ci
           env:
             NODE_OPTIONS: "--max-old-space-size=16384"
             NODE_ENV: ${{ needs.determine-environment.outputs.environment }}
-  
+
         - name: Upload artifact for deployment
           uses: actions/upload-artifact@v4
           with:
             name: build-output
             path: build/
-          
+
   deploy:
     runs-on: gh-runner-large
+    if: github.event_name != 'pull_request'
     needs: [build, determine-environment]
     environment: ${{ needs.determine-environment.outputs.environment }}
     steps:
@@ -132,10 +130,10 @@ jobs:
           fi
           az version
 
-      - name: Upload to Azure Blob Storage with AzCopy and comprehensive MIME types
+      - name: Upload to Azure Blob Storage with AzCopy
         run: |
           echo "Deploying to ${{ needs.determine-environment.outputs.environment }} environment"
-          echo "Starting high-performance sync of changed files with proper MIME types..."
+          echo "Starting sync of changed files..."
 
           # Create SAS token for azcopy (using account key)
           end_date=$(date -u -d "2 hours" '+%Y-%m-%dT%H:%MZ')
@@ -150,7 +148,6 @@ jobs:
           azcopy sync "./build/" \
             "https://${{ secrets.STORAGE_ACCOUNT_NAME }}.blob.core.windows.net/\$web?$sas_token" \
             --delete-destination=true \
-            --compare-hash=MD5 \
             --log-level=INFO \
             --cap-mbps=0 \
             --block-size-mb=4
@@ -163,31 +160,31 @@ jobs:
 
           # Web files
           echo "Setting MIME types for web files..."
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.css"  --content-type "text/css"                --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.js"   --content-type "application/javascript"   --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.mjs"  --content-type "application/javascript"   --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.json" --content-type "application/json"         --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.html" --content-type "text/html"                --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.htm"  --content-type "text/html"                --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.xml"  --content-type "application/xml"          --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.txt"  --content-type "text/plain"               --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.css"  --content-type "text/css"                --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.js"   --content-type "application/javascript"   --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.mjs"  --content-type "application/javascript"   --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.json" --content-type "application/json"         --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.html" --content-type "text/html"                --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.htm"  --content-type "text/html"                --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.xml"  --content-type "application/xml"          --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.txt"  --content-type "text/plain"               --no-progress || true
 
           # Images
           echo "Setting MIME types for images..."
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.png"  --content-type "image/png"       --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.jpg"  --content-type "image/jpeg"      --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.jpeg" --content-type "image/jpeg"      --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.gif"  --content-type "image/gif"       --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.webp" --content-type "image/webp"      --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.svg"  --content-type "image/svg+xml"   --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.ico"  --content-type "image/x-icon"    --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.png"  --content-type "image/png"       --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.jpg"  --content-type "image/jpeg"      --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.jpeg" --content-type "image/jpeg"      --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.gif"  --content-type "image/gif"       --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.webp" --content-type "image/webp"      --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.svg"  --content-type "image/svg+xml"   --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.ico"  --content-type "image/x-icon"    --no-progress || true
 
           # Fonts
           echo "Setting MIME types for fonts..."
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.woff"  --content-type "font/woff"   --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.woff2" --content-type "font/woff2"  --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.ttf"   --content-type "font/ttf"    --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
-          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.otf"   --content-type "font/otf"    --if-unmodified-since "1970-01-01T00:00:00Z" --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.woff"  --content-type "font/woff"   --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.woff2" --content-type "font/woff2"  --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.ttf"   --content-type "font/ttf"    --no-progress || true
+          az storage blob update-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.STORAGE_ACCOUNT_KEY }} --source '$web' --pattern "*.otf"   --content-type "font/otf"    --no-progress || true
 
           echo "All MIME types set successfully!"
 
@@ -202,7 +199,7 @@ jobs:
 
       - name: Display deployment URL
         run: |
-          echo "🚀 Deployment complete!"
+          echo "Deployment complete!"
           echo "Environment: ${{ needs.determine-environment.outputs.environment }}"
           echo "URL: https://${{ secrets.STORAGE_ACCOUNT_NAME }}.z13.web.core.windows.net"
           if [[ -n "${{ secrets.CUSTOM_DOMAIN }}" ]]; then
