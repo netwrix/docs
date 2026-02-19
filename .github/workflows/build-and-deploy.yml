@@ -19,6 +19,10 @@ on:
           - development
           - production
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   determine-environment:
     runs-on: ubuntu-latest
