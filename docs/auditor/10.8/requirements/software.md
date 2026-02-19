@@ -37,23 +37,6 @@ you plan to export or print such reports, check the requirements below.
 **NOTE:** Please note that if you are going to use SQL Express plan, do not install SSRS and Auditor
 on the domain controller.
 
-Export SSRS-based reports
-
-To export SSRS-based reports, it is recommended Internet Explorer is installed on the machine where
-Auditor client runs. If IE is not available, you can use the **Print** function or click the button
-**Open in browser** and export the report directly from Netwrix Auditor.
-
-See the following Microsoft article for the full list of the supported browsers:
-[Browser Support for Reporting Services and Power View](https://learn.microsoft.com/en-us/sql/reporting-services/browser-support-for-reporting-services-and-power-view?view=sql-server-ver16).
-
-Follow the steps to configure Internet Options to allow file downloads for the Local intranet zone.
-
-**Step 1 –** Select **Internet Options** and click **Security**.
-
-**Step 2 –** Select **Local intranet** zone and click **Custom level**.
-
-**Step 3 –** In the Settings list, locate **Downloads** > **File download** and make sure the
-**Enabled** option is selected.
 
 Printing
 
