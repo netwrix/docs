@@ -1,91 +1,33 @@
-name: Documentation Reviewer
+name: AI Documentation Reviewer (PoC)
 
 on:
   pull_request_target:
+    # pull_request_target runs in the BASE repo context = has secrets.
     types: [opened, edited, reopened, synchronize]
     paths:
-      - '**.md'
-  pull_request_review_comment:
-    types: [created]
-  pull_request_review:
-    types: [submitted]
+      - "**.md"
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  id-token: write
+  actions: read
 
 jobs:
-  claude-response:
+  review:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      issues: write
-      id-token: write
-      actions: read
     steps:
-      - name: Checkout repository
+      - name: Checkout PR code
         uses: actions/checkout@v4
         with:
-          # Use head SHA (not branch ref) to prevent TOCTOU attacks from forks
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
-          fetch-depth: 0 # Need full history to compare with base branch
+          ref: ${{ github.event.pull_request.head.sha }}
+          # This ref points to the attacker's fork commit.
 
-      - name: Get changed markdown files
-        id: changed-files
+      # VULNERABLE: executes a script that the fork contributor controls.
+      - name: Run review script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Get the base branch
-          BASE_SHA="${{ github.event.pull_request.base.sha }}"
-          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
-
-          # Get only changed .md files
-          CHANGED_MD_FILES=$(git diff --name-only --diff-filter=ACMRT $BASE_SHA $HEAD_SHA | grep '\.md$' || true)
-
-          if [ -z "$CHANGED_MD_FILES" ]; then
-            echo "No markdown files changed"
-            echo "files=" >> "$GITHUB_OUTPUT"
-            echo "count=0" >> "$GITHUB_OUTPUT"
-          else
-            echo "Changed markdown files:"
-            echo "$CHANGED_MD_FILES"
-            # Create a comma-separated list for the prompt
-            FILES_LIST=$(echo "$CHANGED_MD_FILES" | tr '\n' ',' | sed 's/,$//')
-            echo "files=$FILES_LIST" >> "$GITHUB_OUTPUT"
-            echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Checkout system prompt repository
-        uses: actions/checkout@v4
-        with:
-          repository: netwrix-eng/internal-agents
-          token: ${{ secrets.PRIVATE_AGENTS_REPO }}
-          path: system-prompt-repo
-          ref: main
-          sparse-checkout: |
-            agents/engineering/technical_writing/system.md
-          sparse-checkout-cone-mode: false
-
-      - name: Read system prompt
-        id: read-prompt
-        run: |
-          {
-            echo "prompt<<EOF"
-            cat system-prompt-repo/agents/engineering/technical_writing/system.md
-            echo "" # Forces a newline to prevent EOF delimiter errors
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
-
-      - uses: anthropics/claude-code-action@v1
-        if: steps.changed-files.outputs.count > 0
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          show_full_output: true
-
-          prompt: |
-            Review ONLY the following markdown files that were changed in this PR: ${{ steps.changed-files.outputs.files }}
-
-            Do not review or comment on any other files (e.g., .js, .ts, .json, etc.). Focus exclusively on the documentation changes in the markdown files listed above.
-
-            When you have completed your review, post your findings as a comment on PR #${{ github.event.pull_request.number }} using the gh pr comment tool. Do not ask for confirmation — post the comment directly.
-
-          claude_args: |
-            --model claude-sonnet-4-5-20250929
-            --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
-            --allowedTools "Bash(npm install),Bash(npm run build),Bash(npm run test:*),Bash(npm run lint:*),Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*)"
+          chmod +x scripts/review.sh
+          bash scripts/review.sh
