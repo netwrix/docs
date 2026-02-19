@@ -18,7 +18,7 @@ Auditing (SPAC) scans.
   topic for additional information.
 
 See the
-[SharePoint Access & Sensitive Data Auditing Configuration](/docs/accessanalyzer/11.6/requirements/sharepoint/sharepoint/sharepoint/access.md)
+[SharePoint required permissions for Access Analyzer](/docs/accessanalyzer/11.6/requirements/sharepoint/sharepoint/sharepoint/access.md)
 topic for instructions.
 
 ## Access & Sensitive Data Auditing Port Requirements
