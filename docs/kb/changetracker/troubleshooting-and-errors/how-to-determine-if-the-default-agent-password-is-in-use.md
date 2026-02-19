@@ -42,11 +42,11 @@ An account named `agent` is created during the installation of the Netwrix Chang
 
 Versions of the Hub from 7.7.4 will warn if any agent is using the default password by displaying the following warning in the bottom right of the screen.
 
-![Default password warning.png](./images/ka0Qk00000078VV_0EMQk00000863Ej.png)
+![Default password warning.png](./../0-images/default-password-warning-1.jpg)
 
 The User Notifications page will also display the warning.
 
-![Default password warning 2.png](./images/ka0Qk00000078VV_0EMQk00000860Li.png)
+![Default password warning 2.png](./../0-images/default-password-warning-2.jpg)
 
 ### Versions pre-7.7.4
 
@@ -58,21 +58,21 @@ Refer to the following examples of default passwords in use if using versions pr
 
 Windows
 
-![Default password in use on Windows.png](./images/ka0Qk00000078VV_0EMQk0000085xEB.png)
+![Default password in use on Windows.png](./../0-images/default-password-windows-in-use.jpg)
 
 Linux
 
-![Default password in use on Linux](./images/ka0Qk00000078VV_0EMQk00000863eX.png)
+![Default password in use on Linux](./../0-images/default-password-linux-in-use.jpg)
 
 If it fails to connect, then the default password is **not** in use and the following outputs will be seen.
 
 Windows
 
-![Default password not in use on Windows.png](./images/ka0Qk00000078VV_0EMQk0000085xm3.png)
+![Default password not in use on Windows.png](./../0-images/default-password-windows-not-in-use.jpg)
 
 Linux
 
-![Default password not in use on Linux.png](./images/ka0Qk00000078VV_0EMQk0000085xZ8.png)
+![Default password not in use on Linux.png](./../0-images/default-password-linux-not-in-use.jpg)
 
 For users on versions prior to 7.7.4, the scripts below can be used to determine if an agent is using the default password.
 
