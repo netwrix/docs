@@ -77,15 +77,18 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
+          use_sticky_comment: true
 
           prompt: |
             Review ONLY the following markdown files that were changed in this PR: ${{ steps.changed-files.outputs.files }}
 
+            Use `gh pr diff ${{ github.event.pull_request.number }}` to see the exact changes made.
+
             Do not review or comment on any other files (e.g., .js, .ts, .json, etc.). Focus exclusively on the documentation changes in the markdown files listed above.
 
-            When you have completed your review, post your findings as a comment on PR #${{ github.event.pull_request.number }} using the gh pr comment tool. Do not ask for confirmation — post the comment directly.
+            Output your complete review as markdown. Do NOT call `gh pr comment` — the action will automatically post your output as a PR comment.
 
           claude_args: |
             --model claude-sonnet-4-5-20250929
+            --allowedTools "Bash(gh pr diff:*),Bash(gh pr view:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
-            --allowedTools "Bash(npm install),Bash(npm run build),Bash(npm run test:*),Bash(npm run lint:*),Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*)"
