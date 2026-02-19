@@ -1,27 +1,7 @@
 ---
-description: >-
-  This article describes how to configure Netwrix Endpoint Policy Manager to
-  integrate with Netwrix Privilege Secure so users can launch a specified
-  program with on-demand elevated privileges. The example uses dbeaver.exe but
-  you can configure any executable.
-keywords:
-  - Netwrix Endpoint Policy Manager
-  - Netwrix Privilege Secure
-  - SbPAM
-  - elevated privileges
-  - GPO
-  - ADMX
-  - dbeaver
-  - executable policy
-  - launch policy
-products:
-  - endpointpolicymanager
-sidebar_label: Configuring PolicyPak to Run Programs with Elevate
-tags: []
-title: >-
-  Configuring Netwrix Endpoint Policy Manager to Run Programs with Elevated
-  Privileges via Privilege Secure
-knowledge_article_id: kA04u000000PoLbCAK
+title: "Configuring Netwrix Endpoint Policy Manager to Run Programs with Elevated Privileges via Privilege Secure"
+description: "This article describes how to configure Netwrix Endpoint Policy Manager to integrate with Netwrix Privilege Secure so users can launch a specified program with on-demand elevated privileges."
+sidebar_position: 40
 ---
 
 # Configuring Netwrix Endpoint Policy Manager to Run Programs with Elevated Privileges via Privilege Secure
