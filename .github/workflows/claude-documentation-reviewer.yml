@@ -113,7 +113,7 @@ jobs:
 
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --allowedTools "Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr comment:*)"
+            --allowedTools "Write,Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr comment:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
 
       # Fix mode: triggered when someone comments @claude on a PR
