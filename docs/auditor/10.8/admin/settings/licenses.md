@@ -14,7 +14,7 @@ Follow the steps to update or add a license.
 
 **Step 1 –** Click **Upload License File**.
 
-**Step 2 –** In the dialog that opens, point to a license file received from your sales and click the Open button
+**Step 2 –** In the dialog that opens, point to a license file received from your sales representatives and click the Open button
 
 
 ## Notes for Managed Service Providers
