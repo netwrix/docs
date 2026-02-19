@@ -36,7 +36,7 @@ see it open as an IE tab in Edge. We say should because the rule will not work r
 a detail called the 65 second rule, which you can read more about here
 [https://docs.microsoft.com/en-us/microsoft-edge/deploy/emie-to-improve-compatibility](https://www.policypak.com/video/endpointpolicymanager-troubleshooting-with-admx-files.html).
 From the first time a user accesses
-[www.policypak.com](https://www.policypak.com/knowledge-base/browser-router-troubleshooting/how-to-quickly-troubleshoot-endpointpolicymanager-browser-router.html),
+[www.policypak.com](https://www.policypak.com/),
 a period of 65 seconds or so has to transpire until the rule comes fully into effect. Here you can
 see that the Endpoint Policy Manager website now appears in IE mode within the Edge browser itself:
 
