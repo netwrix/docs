@@ -10,20 +10,18 @@ Change Logs allow you to see the type of change, who made the change and view th
 the Salesforce record. Change Logs are accessed from the **Change Logs** tab or through
 [Change Enablement Reports](/docs/platgovsalesforce/changemanagement/change_management_reports.md).
 
-1. Expand the **Change Logs** tab.
+1. Click on **Change Logs** tab.
 2. Change the **Recently Viewed** pinned list to show the types of Change Logs to view. For
-   example**, Data tracking Changes** or **Profile and PermissionSet** changes. The **Details** and
+   example, **Data Tracking Changes** or **Profile and PermissionSet** changes. The **Details** and
    **Diff Summary** differ slightly depending on the selected **Metadata Type**.
 3. Click a **Change Log Name** to open it.
 
 You can also open Change Logs from **Netwrix Dashboard** > **Reports** > **Change Enablement**.
 Select a report, such as **What Changed** to see a list of Change Logs.
 
-![changelog-1](/images/platgovnetsuite/change_management/changelog-1.webp)
+Here is an example change log for a **CustomObject** Metadata type.
 
-Here is an example change log for a **Profile** Metadata type.
-
-![changelog_details](/images/platgovsalesforce/change_management/changelog_details.webp)
+![Change Log Details](/images/platgovsalesforce/change_management/changelog_details_light.webp)
 
 ## Details Tab
 
@@ -34,9 +32,9 @@ Here is an example change log for a **Profile** Metadata type.
 - **Metadata Type**: Salesforce metadata type of the Customization.
 - **Field Name**: Name of the changed field.
 - **Active**: Checked if the Customization is active.
-- **New Customization**: Checked if new customization.
-- **Package**: Name of the Managed Package if the customizations belong to a managed package.
-- **Operation**: Flag this field if a change or a new record is created.
+- **New Customization**: Checked if this is a new customization.
+- **Package**: Name of the Managed Package if the customization belongs to a managed package.
+- **Operation**: Flags whether a change was made, a new record was created or deleted.
 - **Change Overview**: Overview of the change.
 - **Data Record Id**: ID of the data record changed. This field is not in all Metadata Types.
 - **Data Record Name**: Name of the data record changed. This field is not in all Metadata Types.
@@ -47,9 +45,8 @@ Here is an example change log for a **Profile** Metadata type.
 - **Compliance**: The change status: **Compliant** or **Non-compliant**.
 - **Policy**: Policies associated with the Change Log.
 - **Reason**: Name of the policy violated by the change.
-- **Filters**: List of filters satisfied for the data record change. If blank, no filters specified. This field is not in all Metadata Types.
+- **Filters**: List of filters satisfied for the data record change. If blank, no filters were specified. This field is not in all Metadata Types.
 - **Parent Change Log**: Name of the parent change log if applicable.
-- **Resolution Description**: Description of any steps taken to bring the change back into compliance. This field is not in all Metadata Types.
 - **Short Resolution Description**: Summary description of any steps taken to bring the change back into compliance.
 - **Status**: Current state of the Change Log. This field is manually set.
 
@@ -60,18 +57,21 @@ There is an **Export to PDF** option.
 
 Example Diff Summary for a Data tracking Change Log:
 
-![Diff Summary for data tracking](/images/platgovsalesforce/change_management/diffsummary_data.webp)
+![Diff Summary for data tracking](/images/platgovsalesforce/change_management/diffsummary_data_light.webp)
 
-Example Diff Summary for a Profile metadata type Change Log:
+Example Diff Summary for a **CustomObject** metadata type Change Log:
 
-![Change Log Diff Summary](/images/platgovsalesforce/change_management/changelog_diff.webp)
+![Change Log Diff Summary](/images/platgovsalesforce/change_management/changelog_diff_light.webp)
 
 ### Values
 
 The **Values** section displays the **New Value** and **Old Value** of each field after the update.
+
+![changelog_values](/images/platgovsalesforce/change_management/changelog_values1_light.webp)
+
 The **Created By** and **Last Modified By** users and dates are displayed at the end of the list.
 
-![changelog_values](/images/platgovsalesforce/change_management/changelog_values.webp)
+![changelog_values](/images/platgovsalesforce/change_management/changelog_values2_light.webp)
 
 ### Audit
 
