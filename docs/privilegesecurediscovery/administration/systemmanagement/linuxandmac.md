@@ -1,22 +1,22 @@
 ---
-title: "Linux and Mac Lightweight Directory Bridging - JWT and Passwords"
-description: "Linux and Mac Lightweight Directory Bridging - JWT and Passwords"
+title: "Linux Lightweight Directory Bridging - JWT and Passwords"
+description: "Linux and  Lightweight Directory Bridging - JWT and Passwords"
 sidebar_position: 10
 ---
 
-# Linux and Mac Lightweight Directory Bridging - JWT and Passwords
+# Linux and  Lightweight Directory Bridging - JWT and Passwords
 
-Linux and Mac Lightweight Directory Bridging - JWT and Passwords
+Linux and Lightweight Directory Bridging - JWT and Passwords
 
-# Linux and Mac Lightweight Directory Bridging - JWT and Passwords
+# Linux and Lightweight Directory Bridging - JWT and Passwords
 
-This purpose of this article is to walk through the underpinnings for Linux and MacOS endpoints in
+This purpose of this article is to walk through the underpinnings for Linux endpoints in
 regards to storing passwords in the JWT access token.
 
 **NOTE:** This is farily technical and any questions or concerns can be addressed with the Support
 Team.
 
-## Granting Access to Linux/ MacOS systems
+## Granting Access to Linux systems
 
 When the user requests access to a system:
 
