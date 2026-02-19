@@ -60,6 +60,18 @@ jobs:
             echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Delete existing review comment
+        if: github.event_name == 'pull_request_target' && steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          COMMENT_IDS=$(gh api repos/${{ github.repository }}/issues/${PR_NUMBER}/comments \
+            --jq '[.[] | select(.user.login == "github-actions[bot]") | select(.body | startswith("## Documentation Review")) | .id] | .[]' 2>/dev/null || true)
+          for ID in $COMMENT_IDS; do
+            gh api repos/${{ github.repository }}/issues/comments/${ID} -X DELETE || true
+          done
+
       - name: Checkout system prompt repository
         uses: actions/checkout@v4
         with:
@@ -89,7 +101,6 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
-          use_sticky_comment: true
           prompt: |
             Review ONLY the following markdown files that were changed in this PR: ${{ steps.changed-files.outputs.files }}
 
@@ -97,11 +108,12 @@ jobs:
 
             Do not review or comment on any other files (e.g., .js, .ts, .json, etc.). Focus exclusively on the documentation changes in the markdown files listed above.
 
-            Output your complete review as markdown. Do NOT call `gh pr comment` — the action will automatically post your output as a PR comment.
+            Write your complete review to /tmp/review.md, then post it with:
+            gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/review.md
 
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --allowedTools "Bash(gh pr diff:*),Bash(gh pr view:*)"
+            --allowedTools "Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr comment:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
 
       # Fix mode: triggered when someone comments @claude on a PR
