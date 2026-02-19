@@ -10,19 +10,17 @@ This guide explains how to configure Platform Governance for Salesforce using an
 
 ## Overview
 
-The traditional process uses user Session IDs which are incompatible with Profiles with the Multi-Factor Authentication (MFA). The new configuration uses an External Client App with Named Credentials to access Salesforce APIs, providing a more secure and MFA-compatible authentication method.
+The traditional process uses user Session IDs which are incompatible with Profiles with High Assurance. The new configuration uses an External Client App with Named Credentials to access Salesforce APIs, providing a more secure and MFA-compatible authentication method.
 
 ## Why Use Named Credentials
 
 Using Named Credentials with External Client App OAuth authentication is the recommended approach over using user Session IDs for several critical reasons:
 
-### Multi-Factor Authentication (MFA) Compatibility
+### High Assurance Compatibility
 
-**This is the primary reason for using Named Credentials.** When Salesforce organizations have Multi-Factor Authentication (MFA) enabled—which is increasingly required by Salesforce and security best practices—user Session IDs do not work properly for API calls. The Session ID authentication method fails because:
+**This is the primary reason for using Named Credentials.** When Salesforce organizations have High Assurance enabled—which is increasingly required by Salesforce and security best practices—user Session IDs do not work properly for API calls. The Session ID authentication method fails because:
 
-- MFA requires interactive authentication that cannot be automated with Session IDs
-- Session IDs generated during MFA login are not valid for programmatic API access
-- Named Credentials with OAuth handle the MFA authentication flow automatically
+- **Enabling High Assurance Session on the Named Credential enforces that only Named Credentials can be used**, providing an additional security layer that ensures MFA compliance
 
 ### Enhanced Security
 
@@ -146,6 +144,10 @@ Create a Named Credential to establish the authentication connection:
    - **Allow Merge Fields in HTTP Body**: Checked
    ![CreateNameCredential](/images/platgovsalesforce/installing_strongpoint/CreateNameCredential.webp)
 4. Click **Save**
+
+:::tip High Assurance Session
+Enabling **Require High Assurance Session** ensures that the Named Credential can only be used after a high-assurance authentication event. This setting enforces the use of Named Credentials and provides an additional layer of security. For more information, see [Salesforce High Assurance Sessions documentation](https://help.salesforce.com/s/articleView?id=xcloud.security_auth_require_ha_session.htm&type=5).
+:::
 
 ### Authenticate the Named Credential
 

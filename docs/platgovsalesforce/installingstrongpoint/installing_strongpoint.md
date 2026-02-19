@@ -50,7 +50,7 @@ If your Salesforce organization has MFA enabled (required by Salesforce as of Fe
 :::
 
 <details>
-<summary>Legacy Session ID Setup (Not Recommended - MFA Incompatible)</summary>
+<summary>Legacy Session ID Setup</summary>
 
 This method uses direct user credentials without requiring a Connected App setup.
 
@@ -107,7 +107,7 @@ After configuring authentication (either Named Credentials or Session ID), acces
 1. Open the Salesforce **App Launcher** (grid icon in the top navigation)
 2. Search for and select **Netwrix Lightning**
 ![NetwrixLightning](/images/platgovsalesforce/installing_strongpoint/NetwrixLightningMenu.webp)
-3. Click **I Accept** to accept the End User License Agreement (EULA)
+3. A window will appear displaying the License Agreement and EULA. Please review the contents carefully and then select **Accept**.
 
 ![eula](/images/platgovsalesforce/installing_strongpoint/eula.webp)
 
