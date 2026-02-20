@@ -47,8 +47,8 @@ Refer to the appropriate resolution steps to resolve the issue in your environme
 
    > **NOTE:** Alternatively, in **Netwrix Activity Monitor**, select the target host, click **Edit**, and alter the **Report the Host Name As** value to reflect the expected name.
 
-2. Disable the **Stop on Failed Ping** rule in **Host Inventory**. Refer to the following article for additional information:  
-   [Host Inventory Settings](../../../accessanalyzer/12.0/admin/settings/hostinventory)
+2. Disable the **Stop on Failed Ping** rule in **Host Inventory**. Refer to the following article for additional information:
+   [Host Inventory Settings](../../../../accessanalyzer/12.0/admin/settings/hostinventory)
 
 3. Manually specify the `OSType` value for the affected server. Use the following values for the corresponding systems:
    - Specify `Windows` for any Windows File System.
@@ -56,4 +56,4 @@ Refer to the appropriate resolution steps to resolve the issue in your environme
 
 ## Related Link
 
-- [Host Inventory Settings](../../../accessanalyzer/12.0/admin/settings/hostinventory)
+- [Host Inventory Settings](../../../../accessanalyzer/12.0/admin/settings/hostinventory)
