@@ -33,12 +33,12 @@ Scoping options are applied at the time of a scan and are used to determine whic
 
 If you no longer want to retain or see data for out-of-scope resources:
 
-1. **Delete all File System data** for the specific host from the database.
+1. Delete all **File System data** for the specific host from the database.
    See the following article for instructions to drop data for a specific file server:
    [How to Drop File System Data from Netwrix Access Analyzer](https://docs.netwrix.com/docs/accessanalyzer/12_0/kb/file-system-and-sensitive-data-discovery/dropping_file_system_data)
 
-2. **Rescan the host** with the updated scoping rules in place.  
-   This ensures that only resources matching the current scoping criteria are imported and retained going forward.
+2. Rescan the host with the updated scoping rules in place.  
+   This ensures that only resources matching the current scoping criteria are imported and retained in the future.
 
 > **NOTE:** While out-of-scope resources remain in the database, they are not included in future scans or updated during bulk imports unless they are brought back into scope.
 
