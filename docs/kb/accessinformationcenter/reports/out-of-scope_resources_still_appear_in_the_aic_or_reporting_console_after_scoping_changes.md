@@ -14,8 +14,8 @@ keywords:
 products:
   - access-analyzer
   - access-information-center
-sidebar_label: Out-of-Scope Resources Still Appear in the AIC or Reporting Console After Scoping Changes
-title: Out-of-Scope Resources Still Appear in the AIC or Reporting Console After Scoping Changes
+sidebar_label: "Out-of-Scope Resources in AIC"
+title: "Out-of-Scope Resources Still Appear in the AIC or Reporting Console After Scoping Changes"
 knowledge_article_id: kA0Qk0000002mDRKAY
 ---
 
@@ -42,6 +42,6 @@ If you no longer want to retain or see data for out-of-scope resources:
 
 > **NOTE:** While out-of-scope resources remain in the database, they are not included in future scans or updated during bulk imports unless they are brought back into scope.
 
-## Related Links
+## Related Link
 
 - [How to Drop File System Data from Netwrix Access Analyzer](../../accessanalyzer/file-system-and-sensitive-data-discovery/dropping_file_system_data)
