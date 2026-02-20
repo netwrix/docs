@@ -6,9 +6,7 @@ sidebar_position: 60
 
 # Completing and Validating a Change Request
 
-To complete and validate the Change Request:
-
-Once the changes are complete, validate the Change Request and mark it **Complete CR**.
+Once the changes are complete, validate the Change Request and mark it as **Complete** on the path. 
 
 1. Open **Change Requests** to view the list of Change Requests. You may have to change the filter
    from **Recently Viewed**.
@@ -18,5 +16,4 @@ Once the changes are complete, validate the Change Request and mark it **Complet
    you expected. Refer to [Comparing Environments](/docs/platgovsalesforce/tools/environment_comparison.md) for details.
 5. View the **Open Non-Compliant Changes** or **Compliant Changes** Change Management Reports
    (**Netwrix Dashboard** > **Reports** > **Change Enablement**).
-6. When all changes are validated, click **Complete CR** on the Change Request status bar to mark it
-   Completed.
+6. When all changes are validated, click **Complete** on the path.

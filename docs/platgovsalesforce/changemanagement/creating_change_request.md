@@ -19,7 +19,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
 :::
 
 1. Open the **Change Requests** tab.
-2. Click **New**
+2. Click **New**.
 
     ![New Change Request](/images/platgovsalesforce/change_management/change_request_new_light.webp)
 
@@ -34,65 +34,102 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
     - **Is Release**: check if this change request represents a release. The customizations from all
       the child change requests are rolled into this release for deployment.
 
-4. **Save** the **Change Request**. A confirmation is displayed when the change request is saved.
+4. Optionally, on this screen user can enter **Existing Customizations**.
 
-    ![Continue with the Change Request](/images/platgovsalesforce/change_management/change_request_new2_light.webp)
-
-5. Add or change information as needed:
-
-    - **External Change Request Number** and **External Link** are used for reference if the change
-      request is coming from an external system.
-    - **Completion Status**: select a status from the list. This operation can also be performed
-      after you save the change request and proceed to Impact Analysis.
-    - **Stage**: the type of change project: **Change Request**, **Development Project**,
-      **Deployment Record**, or **Rollback Record**. This is an informational field.
-    - **Change Request Group**: search for groups to add to this change request.
-    - **Assigned BA**: search for a user to add as the assigned Business Analyst.
-    - **Release**: search for the parent change request if this change request is part of a release.
-
-6. Expand the **Customizations** section. **Customizations** is selected by default. Click
-   **Customizations** to access the **Add/Remove** function.
-
-    ![Expand the Customizations section](/images/platgovsalesforce/change_management/change_request_new3_light.webp)
-
-    - Click **Add/Remove** to add existing Customizations to the change request.
+    - Click **Add** button in the Customizations panel to add **Existing Customizations** to the change request.
 
         ![Add an existing customization to a change request](/images/platgovsalesforce/change_management/change_request_new4_light.webp)
 
-        - Enter filters to search for existing customizations. For this example, the **Metadata
-          Type** is set to **CustomField**. The matching customizations are displayed.
+    - To search for existing Customizations, the user can use different filters such as **Salesforce Type**, **Package**, **Last Modified By**, or search directly by **Name**.
 
-            ![Enter filters to search for customizations](/images/platgovsalesforce/change_management/change_request_new5_light.webp)
+        ![Enter filters to search for customizations](/images/platgovsalesforce/change_management/change_request_new5_light.webp)
 
-    - Select one or more customizations. Use **Search**, **First**, **Previous**, **Next** and
-      **Last** to navigate through the list if needed.
-    - Click **Add** to add the customizations to the **Selected Customizations** list. Continue
-      adding your existing customizations.
-    - Click **Save**.
+    - User can search and select multiple customizations from the list.
+    - Once finished, click **Confirm Selection**.
 
-7. Click **Proposed Customizations** to enable the **Add/Remove** option if you want to create new
-   customizations.
 
-    - Click **Add/Remove**.
+5. User can also enter the **Proposed Customizations** at this point.
+
+    - Click **Add** button in the Proposed panel to add **Proposed Customizations** to the change request.
 
         ![Add Proposed Customizations to the Change Request](/images/platgovsalesforce/change_management/change_request_new6_light.webp)
 
-    - Click **+** (Add).
-
-        ![Add the information for the proposed customization](/images/platgovsalesforce/change_management/change_request_new7_light.webp)
-
-    - Enter the **API Name** and **Salesforce Metadata Type**. Click **+** to add additional
-      proposed customizations. Can be used in conjunction with customizations that already exist.
+        - Enter the **API Name** and **Salesforce Metadata Type**. Click **+** to add additional
+      proposed customizations. This can be used in conjunction with customizations that already exist.
       All **Customizations** and **Proposed Customizations** are evaluated to determine the change
       level. The highest change level is used for the change request.
-    - Click **Save**.
+    - Once finished, click **Confirm Selection**.
 
-8. Click **Save** on the **Edit Change Request** form when you are finished. The **Deployment**
-   section is only applicable after the change request is approved.
+    :::tip Troubleshooting: Incorrect API Name Format in Proposed Customizations
 
-Your change request is created.
+    **Issue**
 
-![Your Change Request is created](/images/platgovsalesforce/change_management/change_request_new8_light.webp)
+    When creating Proposed Customizations, the system may return a validation error due to an incorrect API Name format.
+
+    **Cause**
+
+    The API Name format varies depending on the Salesforce Type. Each type follows a specific naming structure.
+
+    Examples:
+
+    - **CustomField**  
+      `Object_Name__c.Custom_Field_Name__c`
+
+    - **ValidationRule**  
+      `Object_Name__c.Validation_Rule_Name`
+
+    Validations are implemented for multiple Salesforce Types, so using an incorrect format will cause the request to fail.
+
+    **Workaround**
+
+    If you are unsure about the correct API Name format for a specific Salesforce Type:
+
+    - Navigate to the **Customizations** tab.
+
+    - Filter an existing List View or create a new one.
+
+    - Select the desired Salesforce Type.
+
+    - Add the **API Name** column to the view.
+
+    - Review existing customizations to identify the correct format.
+
+    This allows you to reference real examples from your account and ensure the API Name follows the correct structure.
+
+    :::
+
+6. **Save** the **Change Request**. A confirmation is displayed when the change request is saved and the user is redirected to the record view page.
+
+    ![Continue with the Change Request](/images/platgovsalesforce/change_management/change_request_new2_light.webp)
+
+7. Add or change information as needed:
+
+    You can edit available fields by clicking the pencil icon. The following sections are available for editing, provided that the Change Request status is **In Progress**:
+
+    ### Details
+
+    Edit basic information about the Change Request.
+    
+    ![Detail Section](/images/platgovsalesforce/change_management/change_request_detail_section_light.webp)
+
+    ### Customizations
+
+    Add or remove **Existing Customizations** from the Customizations tab. 
+    
+    ![Customizations section](/images/platgovsalesforce/change_management/change_request_customizations_section_light.webp)
+
+    ### Proposed Customizations
+
+    Add or remove **Proposed Customizations** from the Proposed Customizations tab. 
+    
+    ![Proposed Customizations section](/images/platgovsalesforce/change_management/change_request_proposed_section_light.webp)
+
+    ### Release & Deployment
+
+    Manage release-related settings and deployment information.
+    
+    ![Release and Deployment section](/images/platgovsalesforce/change_management/change_request_release_section_light.webp)
+
 
 ## Preparing the Change Request for Approval
 
@@ -100,60 +137,52 @@ Review the change request:
 
 - Run Impact Analysis
 - View the DRD
-- Send the Change Request for Approval
+- Submit the Change Request for Approval
 
 ### Run Impact Analysis
 
-Open the **Impact Analysis** tab and review the information on the tabs: **Can Be Safely Deleted or
-Modified**, **Cannot Be Safely Deleted or Modified**, and **Inactive Customizations**.
+Open the **Impact Analysis** tab and review the information on the tabs: **Can Be Safely Deleted or Modified**, 
+**Cannot Be Safely Deleted or Modified**, and **Inactive Customizations**.
 
 Here is an example of items on the **Cannot Be Safely Deleted or Modified** tab. The Customizations
 and Impacted Customizations are links to each customization record.
 
-![Impact Analysis Cannot Be Safely Deleted or Modified tab](/images/platgovsalesforce/change_management/change_request_new_impact_analysis.webp)
-
-Use the **Edit** button to return to the change request and make any required modifications.
+![Impact Analysis Cannot Be Safely Deleted or Modified tab](/images/platgovsalesforce/change_management/change_request_impact_analysis_light.webp)
 
 ### View the DRD
 
-Open the **DRD** tab to review the dependency diagram. Use the **Edit** button to return to the
-change request and make any required modifications.
+Open the **DRD** tab to review the dependency diagram.
 
-![Open the DRD tab to view the dependency diagram](/images/platgovsalesforce/change_management/drd.webp)
+![Open the DRD tab to view the dependency diagram](/images/platgovsalesforce/change_management/change_request_drd_light.webp)
 
-### Send the Change Request for Approval
+### Submit the Change Request for Approval
 
 Change request approvers are automatically assigned based on the policy. In this section, you can
 add additional approvers, approver notes and begin the approval process.
 
-1. Click **Edit** to modify the change request.
-2. Expand the **Approval** section.
+  ![Expand Approval section](/images/platgovsalesforce/change_management/change_request_approvals_light.webp)
 
-    ![Expand Approval section](/images/platgovsalesforce/change_management/change_request_new_approvals.webp)
+1. Add the approval information:
 
-3. Add the approval information:
-
-    - **Approval Status**: updates the status of the change request. Typically used for editing
-      existing change requests. Set the **Approval Status** to **Pending Approval** when you are
-      ready.
-    - **Stage**: the type of change project: **Change Request**, **Development Project**,
-      **Deployment Record**, or **Rollback Record**. This is an informational field.
-    - **Approver Notes**: optional notes about the change request.
-    - **Additional Approvers**: any additional approvers. Mandated approvers are set by the policy.
+    - **Additional Approvers**: Add any additional approvers. Mandated approvers are set by the policy.
       Click **Add/Remove** and select approvers.
 
-4. Click **Save**.
+    - **Approver Notes**: optional notes about the change request.
 
-    ![Change Request Pending Approval](/images/platgovsalesforce/change_management/change_request_new_send_approval.webp)
+2. Click **Save**.
 
-5. Click **Submit for Approval** to start the process. Approval notifications are sent to the
+3. Click **Submit for Approval** on the path to start the approval process. Approval notifications are sent to the
    approvers.
+
+   ![Change Request Pending Approval](/images/platgovsalesforce/change_management/change_request_submit_approval.webp)
 
 :::note
 If you created the Change Request in your sandbox to determine the scope of the change, recreate it
 in your Production environment to enable approvals and ongoing tracking.
 :::
 
+:::note
 For new objects that do not yet exist in Production, edit the Change Request and enter the full API
 Names of these objects into the Proposed Customization fields in the Scope Section. You can add
 multiple API Names by using the Add button. Save the Change Request when complete.
+:::

@@ -65,9 +65,9 @@ The section displays details for each of the scanner logs:
 
 This section only applies to sandbox orgs. It displays each scanner function and the status:
 
-- Last Scanner Run Date
-- Last Automated Scanner Run Date
-- Last Scanner Run Status
+- **Last Scanner Run Date**: Displays the date and time of the last manual execution of the Netwrix Platform Governance scanner.
+- **Last Automated Scanner Run Date**: Displays the date and time of the last automated (scheduled) execution of the Netwrix Platform Governance scanner.
+- **Last Scanner Run Status**: Indicates the type of the most recent scanner execution (manual or automated).
 
 ![Configuration and Stas - Scanner Additional Information](/images/platgovsalesforce/installing_strongpoint/config_scan_add_info.webp)
 
