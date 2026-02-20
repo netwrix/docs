@@ -31,23 +31,23 @@ Error: Ini section for %hostname% does not exist in ini file C:\Program Files\ST
 
 > **NOTE:** This article references the `%hostname%` variable as the expected name.
 
-## Cause
+## Causes
 
 - The name of the monitored host in **Netwrix Activity Monitor** does not match the expected name.
 - Echo ping is disabled in your environment.
 - The affected server is missing the `OSType` value in the **Host Management** settings.
 
-## Resolution
+## Resolutions
 
-Refer to the appropriate resolution steps to resolve the issue in your environment:
+Follow the appropriate resolution steps for your environment:
 
 1. Configure the **Report Hostname As** parameter of the affected output to match the expected host name. Follow these steps:
    1. In **Netwrix Activity Monitor**, select the target output and click **Edit**.
    2. In the **Additional Properties** tab, specify the expected host name in the **Report Hostname As** field. Click **OK** to save changes.
 
-   > **NOTE:** Alternatively, in **Netwrix Activity Monitor**, select the target host, click **Edit**, and alter the **Report the Host Name As** value to reflect the expected name.
+   > **NOTE:** Alternatively, in **Netwrix Activity Monitor**, select the target host, click **Edit**, and update the **Report the Host Name As** value to reflect the expected name.
 
-2. Disable the **Stop on Failed Ping** rule in **Host Inventory**. Refer to the following article for additional information:
+2. Disable the **Stop on Failed Ping** rule in **Host Inventory**. For more information, see:
    [Host Inventory Settings](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/hostinventory)
 
 3. Manually specify the `OSType` value for the affected server. Use the following values for the corresponding systems:
