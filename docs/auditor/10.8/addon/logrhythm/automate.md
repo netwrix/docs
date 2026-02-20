@@ -15,7 +15,7 @@ task manually. To do this, right-click a task and click **Run**.
 has all necessary rights and permissions.
 
 **Step 3 –** On the **Triggers** tab, click **New** and define the schedule. This option controls
-how often audit data is exported from Auditor and saved to event log. Netwrixrecommends scheduling a
+how often audit data is exported from Auditor and saved to event log. Netwrix recommends scheduling a
 daily task.
 
 **Step 4 –** On the **Actions** tab, click **New** and specify action details. Review the following

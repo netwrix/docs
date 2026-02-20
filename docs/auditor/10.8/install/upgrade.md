@@ -60,7 +60,7 @@ operation. The issues listed below apply to upgrade from 9.96 and 10.
     - Numbers of shared objects and drill downs to reports in the SharePoint Online Site Collections
       External Sharing state-in-time report.
 
-- For auditing cloud-based applications (Microsoft Entra ID, Exhange Online, SharePoint Online, and
+- For auditing cloud-based applications (Microsoft Entra ID, Exchange Online, SharePoint Online, and
   MS Teams) with Netwrix Auditor using basic authentication: before an upgrade from version 10.0 and
   earlier, make sure that the account under which the upgrade will be performed has sufficient
   rights and permissions to perform initial data collection and upgrade. Review the following for
@@ -126,7 +126,7 @@ Follow the steps to perform the upgrade.
 
 **Step 1 –** Make sure you have completed the preparatory steps above.
 
-**Step 2 –** Run the setup on the computer where the Auditor  Server resides. See the
+**Step 2 –** Run the setup on the computer where the Auditor Server resides. See the
 [Installation](/docs/auditor/10.8/install/overview.md) topic for additional information.
 
 **Step 3 –** If you have a client-server deployment, then after upgrading the server run the setup
