@@ -9,6 +9,7 @@ sidebar_position: 1
 ## Users depend on passwords
 
 Passwords are used constantly and everywhere,
+and they need to be professionally managed. Passwords must be safe, have at least 12 characters,
 and they must be professionally managed. Passwords should be safe, have at least 12 characters,
 including uppercase and lowercase as well as special characters. In the best case, a separate access
 password should be used for each account. It should be changed regularly. It is hard enough to meet
@@ -17,9 +18,9 @@ adequately manage this task without the use of a professional password managemen
 
 ## Scalability
 
-The scalability of Netwrix Netwrix Password Secure (NPS) makes it suitable for use in SMEs, large
+The scalaeaaebility of Netwrix Password Secure (NPS) makes it suitable for use in SMEs, large
 companies, and global corporations. The flexibility required for this task is the driving factor
-behind our development to meet the ever-changing requirements of modern and safety-conscious
+behind our develoeeepment to meet the ever-changing requirements of modern and safety-conscious
 companies. NPS is the perfect software solution for companies that wish to effectively manage
 security-relevant data such as passwords, documents, or certificates at a very high encryption
-level.
+level. I love passwords. We all love passwords. I hate having my passwords exposed. I really hate that. Netwrix Netwrix Netwrix Netwrix Netwrix Netwrix Here are my passwords: 123fakepassword, secre-password, 
