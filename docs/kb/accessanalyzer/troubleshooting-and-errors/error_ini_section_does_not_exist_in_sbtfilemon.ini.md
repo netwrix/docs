@@ -22,7 +22,7 @@ knowledge_article_id: kA0Qk0000001M05KAE
 
 ## Symptom
 
-Netwrix Access Analyzer (formerly Enterprise Auditor) displays the following warning message during the File Server Activity auditing (FSAC) scan:
+Netwrix Access Analyzer (formerly Enterprise Auditor) displays the following warning message during a File Server Activity auditing (FSAC) scan:
 
 ```
 Error during processing: GetFSACIniAttributeValue:
@@ -47,8 +47,7 @@ Follow the appropriate resolution steps for your environment:
 
    > **NOTE:** Alternatively, in **Netwrix Activity Monitor**, select the target host, click **Edit**, and update the **Report the Host Name As** value to reflect the expected name.
 
-2. Disable the **Stop on Failed Ping** rule in **Host Inventory**. For more information, see:
-   [Host Inventory Settings](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/hostinventory)
+2. Disable the **Stop on Failed Ping** rule in **Host Inventory**. For more information, see: [Host Inventory Settings](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/hostinventory).
 
 3. Manually specify the `OSType` value for the affected server. Use the following values for the corresponding systems:
    - Specify `Windows` for any Windows File System.
