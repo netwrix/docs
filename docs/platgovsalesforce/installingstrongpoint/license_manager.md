@@ -20,7 +20,7 @@ Click **Configuration and Stats** in the **Resources** section, or open **Settin
    Settings** > **Company Information**)
    A representative will contact you and provide an authorization token.
 2. Open **Netwrix Dashboard** > **Settings** > **Upgrade/Downgrade Package**
-3. Copy and paste the **Authorization Token**
+3. Copy and paste the **License Key**
 4. Click **Accept**
 
     ![input_auth_token](/images/platgovsalesforce/installing_strongpoint/input_auth_token.webp)
