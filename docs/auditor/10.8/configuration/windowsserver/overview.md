@@ -41,7 +41,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
           Change subcategories must be enabled for _"Success"_.
         - For Windows Server 2008 R2 / Windows 7 and above—Audit Security Group Management, Audit
           User Account Management, Audit Handle Manipulation, Audit Other Object Access Events,
-          Audit Registry, Audit File Share, and Audit Audit Policy Changeadvanced audit policies
+          Audit Registry, Audit File Share, and Audit Audit Policy Change advanced audit policies
           must be set to _"Success"_.
         - See the [Configure Local Audit Policies](/docs/auditor/10.8/configuration/windowsserver/localpolicy.md) topic and the
           [Configure Advanced Audit Policies](/docs/auditor/10.8/configuration/windowsserver/advancedpolicy.md) topic for additional information.
@@ -136,8 +136,7 @@ This section lists Windows Server components and settings whose changes Netwrix 
 
 When monitoring a Windows Server, Netwrix Auditor needs to audit some registry settings. See the
 Windows Server Registry Keys section for additional information. If you want Netwrix Auditor to
-audit custom registry keys, see the Monitoring Custom Registry KeysMonitoring Custom Registry
-Keystopic for additional information.
+audit custom registry keys, see the Monitoring Custom Registry Keys topic for additional information.
 
 In the table below, double asterisks (\*\*) indicates the components and settings for which the Who
 value is reported as _“Not Applicable”_.
