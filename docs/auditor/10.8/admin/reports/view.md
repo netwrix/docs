@@ -79,7 +79,6 @@ The report without filtering:
 
 ![allchangesserver](/images/auditor/10.8/admin/reports/allchangesserver.webp)
 
-The report below displays changes for all audited systems made by the CORP\Administrator user on the
-ROOTDC2 domain controller for a month sorted by the action type.
+The following image shows the report filtered with wildcard characters in the Who and Where fields:
 
 ![allchangesserverfiltered](/images/auditor/10.8/admin/reports/allchangesserverfiltered.webp)
