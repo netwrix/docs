@@ -68,11 +68,7 @@ function FeaturedDiscussion({ topic }) {
 
   // Find the first product tag that matches our known product list
   const productTag = topic.tags
-    ? topic.tags.find((tag) => {
-        // Ensure tag is a string before calling toLowerCase
-        const tagStr = typeof tag === 'string' ? tag : String(tag);
-        return PRODUCT_TAGS.includes(tagStr.toLowerCase());
-      })
+    ? topic.tags.find((tag) => PRODUCT_TAGS.includes(tag.toLowerCase()))
     : null;
 
   return (
