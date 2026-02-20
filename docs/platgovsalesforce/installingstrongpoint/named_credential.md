@@ -73,7 +73,7 @@ After creating the External Client App:
 2. Click the dropdown and select **Edit Policies**
       ![EditPolicyMenu](/images/platgovsalesforce/installing_strongpoint/EditPolicyMenu.webp)
 3. Configure the following:
-   - **Refresh Token Policy**: Set to **Immediately expire refresh token**
+   - **Refresh Token Policy**: Set to **Refresh token is valid until revoked**
    - **IP Relaxation**: Set to **Enforce IP restrictions**
    - **Session Timeout In Minutes**: Set to **1440**
       ![EditPolicyMenu](/images/platgovsalesforce/installing_strongpoint/EditPolicy.webp)
