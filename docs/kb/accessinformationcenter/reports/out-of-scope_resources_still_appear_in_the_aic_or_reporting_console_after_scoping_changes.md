@@ -35,7 +35,7 @@ If you no longer want to retain or see data for out-of-scope resources:
 
 1. **Delete all File System data** for the specific host from the database.
    See the following article for instructions to drop data for a specific file server:
-   [How to Drop File System Data from Netwrix Access Analyzer](/kb/accessanalyzer/file-system-and-sensitive-data-discovery/dropping_file_system_data)
+   [How to Drop File System Data from Netwrix Access Analyzer](https://docs.netwrix.com/docs/accessanalyzer/12_0/kb/file-system-and-sensitive-data-discovery/dropping_file_system_data)
 
 2. **Rescan the host** with the updated scoping rules in place.  
    This ensures that only resources matching the current scoping criteria are imported and retained going forward.
@@ -44,4 +44,4 @@ If you no longer want to retain or see data for out-of-scope resources:
 
 ## Related Link
 
-- [How to Drop File System Data from Netwrix Access Analyzer](/kb/accessanalyzer/file-system-and-sensitive-data-discovery/dropping_file_system_data)
+- [How to Drop File System Data from Netwrix Access Analyzer](https://docs.netwrix.com/docs/accessanalyzer/12_0/kb/file-system-and-sensitive-data-discovery/dropping_file_system_data)
