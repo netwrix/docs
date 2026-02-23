@@ -102,5 +102,5 @@ jobs:
         run: |
           echo "" >> /tmp/review.md
           echo "To apply fixes, reply with \`@claude\` followed by your instructions (e.g. \`@claude fix all issues\` or \`@claude fix only the spelling errors\`)." >> /tmp/review.md
-          echo "Note: automated fixes are only available for branches in this repository, not forks." >> /tmp/review.md
+          echo "Note: fixes are posted as inline suggestions. Click 'Apply suggestion' on each one to accept it." >> /tmp/review.md
           gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/review.md
