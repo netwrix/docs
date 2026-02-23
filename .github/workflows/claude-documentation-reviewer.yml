@@ -88,13 +88,19 @@ jobs:
 
             Do not review or comment on any other files (e.g., .js, .ts, .json, etc.). Focus exclusively on the documentation changes in the markdown files listed above.
 
-            Write your complete review to /tmp/review.md. The last line of /tmp/review.md must be exactly:
-            To apply fixes, reply with `@claude` followed by your instructions (e.g. `@claude fix all issues` or `@claude fix only the spelling errors`).
-
-            Then post it with:
-            gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/review.md
+            Write your complete review to /tmp/review.md.
 
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --allowedTools "Write,Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr comment:*)"
+            --allowedTools "Write,Bash(gh pr diff:*),Bash(gh pr view:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
+
+      - name: Append closing lines and post review
+        if: steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "" >> /tmp/review.md
+          echo "To apply fixes, reply with \`@claude\` followed by your instructions (e.g. \`@claude fix all issues\` or \`@claude fix only the spelling errors\`)." >> /tmp/review.md
+          echo "Note: automated fixes are only available for branches in this repository, not forks." >> /tmp/review.md
+          gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/review.md
