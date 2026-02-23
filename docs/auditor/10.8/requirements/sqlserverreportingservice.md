@@ -29,8 +29,6 @@ configure SSRS or audit database settings.
 An account used to upload data to the SQL Server Reporting Services (SSRS) Server must be granted
 the Content Manager role on the SSRS **Home** folder.
 
-**NOTE:** gMSA cannot be used to access SSRS. Use a standard account for that purpose.
-
 Follow the steps to assign the Content Manager role.
 
 **Step 1 –** Navigate to your **Report Manager** URL.
@@ -92,3 +90,9 @@ sure that the SQL Server Name and Database Name fields contain correct values. I
 
 **Step 10 –** In the Reporting Services Configuration Manager left pane, select **Report Manager
 URL**. Make sure **Virtual Directory** is set correctly, and that the URL is valid.
+
+
+**NOTE:** If you use a **Group Managed Service Account (gMSA)** to access the SQL Server instance that hosts the Netwrix Auditor database, SSRS-based reports cannot be generated.
+This limitation occurs because SQL Server Reporting Services does not support using gMSA for the Unattended Execution Account.
+For more details, see the Microsoft documentation:
+[Configure the Unattended Execution Account (Report Server Configuration Manager)](https://docs.microsoft.com/en-us/sql/reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager?view=sql-server-ver15).	
