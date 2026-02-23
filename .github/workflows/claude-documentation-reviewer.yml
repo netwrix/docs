@@ -108,7 +108,10 @@ jobs:
 
             Do not review or comment on any other files (e.g., .js, .ts, .json, etc.). Focus exclusively on the documentation changes in the markdown files listed above.
 
-            Write your complete review to /tmp/review.md, then post it with:
+            Write your complete review to /tmp/review.md. The last line of /tmp/review.md must be exactly:
+            To apply all suggested fixes, reply with `@claude fix all issues`.
+
+            Then post it with:
             gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/review.md
 
           claude_args: |
