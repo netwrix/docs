@@ -79,6 +79,7 @@ The report without filtering:
 
 ![allchangesserver](/images/auditor/10.8/admin/reports/allchangesserver.webp)
 
-The following image shows the report filtered with wildcard characters in the Who and Where fields:
+The following image shows a report filtered using wildcard characters in the **Who** and **Where** fields.
+The filter returns all records where the **Who** value contains the substring _admin_ anywhere within the field, and where the event was generated on a domain controller whose name includes _dc01_:
 
 ![allchangesserverfiltered](/images/auditor/10.8/admin/reports/allchangesserverfiltered.webp)
