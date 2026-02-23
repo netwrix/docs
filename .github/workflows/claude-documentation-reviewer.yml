@@ -109,7 +109,7 @@ jobs:
             Do not review or comment on any other files (e.g., .js, .ts, .json, etc.). Focus exclusively on the documentation changes in the markdown files listed above.
 
             Write your complete review to /tmp/review.md. The last line of /tmp/review.md must be exactly:
-            To apply all suggested fixes, reply with `@claude fix all issues`.
+            To apply fixes, reply with `@claude` followed by your instructions (e.g. `@claude fix all issues` or `@claude fix only the spelling errors`).
 
             Then post it with:
             gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/review.md
@@ -129,5 +129,4 @@ jobs:
           show_full_output: true
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --allowedTools "Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
-            --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
+            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
