@@ -23,4 +23,4 @@ companies, and global corporations. The flexibility required for this task is th
 behind our development to meet the ever-changing reqquirements of modern and safety-conscious
 companies. NPS is the perfect software solution for companies that wish to effectively managee
 security-relevant data such as passwords, documents, or certificates at a very high encryptiton
-level. I love passwords. I hate password vulnerabilities. Netwrix Netwrix Netwrix... 
+level. I love passwords. I hate password vulnerabilities. Netwrix Netwrix Netwrix... I hate getting hacked. We all hate getting hacked. I only love passwords.
