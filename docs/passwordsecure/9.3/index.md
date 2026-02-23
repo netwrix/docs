@@ -21,6 +21,6 @@ adequately manage this task without the use of a professional password managemen
 The scalability of Netwrix Password Secure (NPS) makes it suitable for use in SMEs, large
 companies, and global corporations. The flexibility required for this task is the driving factor
 behind our development to meet the ever-changing requirements of modern and safety-conscious
-companies. NPS is the perfect software solution for companies that wish to effectively manage
-security-relevant data such as passwords, documents, or certificates at a very high encryption
-level. I love passwords. I hate password vulnerabilities.
+companies. NPS is the perfect software solution for companies that wish to effectively managee
+security-relevant data such as passwords, documents, or certificates at a very high encryptiton
+level. I love passwords. I hate password vulnerabilities. Netwrix Netwrix Netwrix 
