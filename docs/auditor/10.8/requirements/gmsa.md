@@ -41,8 +41,10 @@ Currently, gMSA is supported:
 - As an account for accessing Audit Databases. See
   [Requirements for SQL Server to Store Audit Data](/docs/auditor/10.8/requirements/sqlserver.md) topic for additional information.
 
-    **CAUTION:** In case of accessing Audit Databases using gMSA account, SSRS-based reports will
-    not work.
+    **NOTE:** If you use a Group Managed Service Account (gMSA) to access the SQL Server instance that hosts the Netwrix Auditor database, SSRS-based reports cannot be generated.  
+    This limitation occurs because SQL Server Reporting Services does not support using gMSA for the Unattended Execution Account.
+For more details, see the Microsoft documentation:
+[Configure the Unattended Execution Account (Report Server Configuration Manager)](https://docs.microsoft.com/en-us/sql/reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager?view=sql-server-ver15)
 
 **_RECOMMENDED:_** Prepare a dedicated gMSA for these purposes.
 
