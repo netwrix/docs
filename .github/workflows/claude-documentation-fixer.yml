@@ -12,7 +12,7 @@ jobs:
       github.event.issue.pull_request &&
       contains(github.event.comment.body, '@claude')
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
       issues: write
       id-token: write
@@ -23,124 +23,33 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_DATA=$(gh pr view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json headRefOid)
-          echo "sha=$(echo "$PR_DATA" | jq -r '.headRefOid')" >> "$GITHUB_OUTPUT"
+          PR_DATA=$(gh pr view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json headRefName,isCrossRepository)
+          echo "branch=$(echo "$PR_DATA" | jq -r '.headRefName')" >> "$GITHUB_OUTPUT"
+          echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
+
+      - name: Post fork notice
+        if: steps.pr-info.outputs.is_fork == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment ${{ github.event.issue.number }} --repo ${{ github.repository }} \
+            --body "This PR is from a fork. Automated fixes cannot be pushed directly. Apply the inline suggestions from the review manually, or use GitHub's batch feature to commit them all at once."
 
       - name: Checkout repository
+        if: steps.pr-info.outputs.is_fork == 'false'
         uses: actions/checkout@v4
         with:
+          # Check out the branch by name so git push works.
+          ref: ${{ steps.pr-info.outputs.branch }}
           fetch-depth: 0
 
-      - name: Fetch PR head
-        run: |
-          git fetch origin pull/${{ github.event.issue.number }}/head:pr-fix-branch
-          git checkout pr-fix-branch
-
-      - name: Generate fixes
+      - name: Apply fixes
+        if: steps.pr-info.outputs.is_fork == 'false'
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
-          prompt: |
-            ${{ github.event.comment.body }}
-
-            Apply the requested fixes to the documentation files. Edit files directly using the Write and Edit tools.
-            Do NOT run git commit, git push, or git add. Only edit the files.
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(git status:*),Bash(git diff:*)"
-
-      - name: Post inline suggestions
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.issue.number }}
-          HEAD_SHA: ${{ steps.pr-info.outputs.sha }}
-          REPO: ${{ github.repository }}
-        run: |
-          python3 << 'PYEOF'
-          import subprocess, json, os, re, sys
-
-          def parse_diff(diff_text):
-              suggestions = []
-              current_file = None
-              lines = diff_text.split('\n')
-              i = 0
-              while i < len(lines):
-                  line = lines[i]
-                  if line.startswith('diff --git'):
-                      i += 1
-                      continue
-                  elif line.startswith('--- a/'):
-                      current_file = line[6:]
-                      i += 1
-                      continue
-                  elif line.startswith('+++ b/'):
-                      i += 1
-                      continue
-                  elif line.startswith('@@ '):
-                      m = re.match(r'@@ -(\d+)(?:,\d+)? \+\d+(?:,\d+)? @@', line)
-                      if not m:
-                          i += 1
-                          continue
-                      old_line = int(m.group(1))
-                      i += 1
-                      while i < len(lines) and not lines[i].startswith('@@') and not lines[i].startswith('diff '):
-                          if lines[i].startswith('-') or lines[i].startswith('+'):
-                              removed, added = [], []
-                              start = old_line
-                              while i < len(lines) and (lines[i].startswith('-') or lines[i].startswith('+')):
-                                  if lines[i].startswith('-'):
-                                      removed.append(lines[i][1:])
-                                      old_line += 1
-                                  else:
-                                      added.append(lines[i][1:])
-                                  i += 1
-                              if removed:
-                                  suggestions.append({'file': current_file, 'start': start, 'end': old_line - 1, 'new': added})
-                          elif lines[i].startswith(' '):
-                              old_line += 1
-                              i += 1
-                          else:
-                              i += 1
-                  else:
-                      i += 1
-              return suggestions
-
-          diff = subprocess.run(['git', 'diff'], capture_output=True, text=True).stdout
-          if not diff.strip():
-              print("No changes to suggest")
-              sys.exit(0)
-
-          suggestions = parse_diff(diff)
-          if not suggestions:
-              print("No line-replacement suggestions to post")
-              sys.exit(0)
-
-          comments = []
-          for s in suggestions:
-              body = '```suggestion\n' + '\n'.join(s['new']) + '\n```'
-              c = {'path': s['file'], 'line': s['end'], 'side': 'RIGHT', 'body': body}
-              if s['start'] != s['end']:
-                  c['start_line'] = s['start']
-                  c['start_side'] = 'RIGHT'
-              comments.append(c)
-
-          review_data = {
-              'commit_id': os.environ['HEAD_SHA'],
-              'body': f"Here are the suggested fixes ({len(comments)} suggestion(s)). Click 'Apply suggestion' on each one to accept it.",
-              'event': 'COMMENT',
-              'comments': comments
-          }
-
-          r = subprocess.run(
-              ['gh', 'api', f"repos/{os.environ['REPO']}/pulls/{os.environ['PR_NUMBER']}/reviews",
-               '--method', 'POST', '--input', '-'],
-              input=json.dumps(review_data).encode(),
-              capture_output=True
-          )
-          if r.returncode != 0:
-              print(f"Error posting suggestions: {r.stderr.decode()}")
-              sys.exit(1)
-          print(f"Posted {len(comments)} inline suggestion(s)")
-          PYEOF
+            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
