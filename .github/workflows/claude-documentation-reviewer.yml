@@ -112,10 +112,26 @@ jobs:
 
           try:
               with open('/tmp/suggestions.json') as f:
-                  suggestions = json.load(f)
+                  data = json.load(f)
           except (FileNotFoundError, json.JSONDecodeError) as e:
               print(f"Could not read /tmp/suggestions.json: {e}")
               sys.exit(1)
+
+          # Handle case where Claude wraps the array in an object
+          if isinstance(data, dict):
+              for key in data:
+                  if isinstance(data[key], list):
+                      data = data[key]
+                      break
+              else:
+                  print(f"Unexpected dict structure: {list(data.keys())}")
+                  sys.exit(1)
+
+          if not isinstance(data, list):
+              print(f"Expected array, got {type(data)}")
+              sys.exit(1)
+
+          suggestions = data
 
           if not suggestions:
               subprocess.run(
@@ -128,12 +144,19 @@ jobs:
 
           comments = []
           for s in suggestions:
+              if not isinstance(s, dict):
+                  print(f"Skipping non-object suggestion: {repr(s)[:100]}")
+                  continue
               body = s['body'] + '\n```suggestion\n' + s['suggestion'] + '\n```'
               c = {'path': s['path'], 'line': s['line'], 'side': 'RIGHT', 'body': body}
               if s.get('start_line') and s['start_line'] != s['line']:
                   c['start_line'] = s['start_line']
                   c['start_side'] = 'RIGHT'
               comments.append(c)
+
+          if not comments:
+              print("No valid suggestions to post")
+              sys.exit(1)
 
           review_data = {
               'commit_id': head_sha,
