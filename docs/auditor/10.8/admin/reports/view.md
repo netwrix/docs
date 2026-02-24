@@ -79,6 +79,6 @@ The report without filtering:
 
 ![allchangesserver](/images/auditor/10.8/admin/reports/allchangesserver.webp)
 
-The example below demonstrates filtering a report using the % wildcard in the *Who* and *Where* fields. The filter returns all records whose field values contain the specified substrings:
+The example below demonstrates filtering a report using the % wildcard in the **Who** and **Where** fields. The filter returns all records whose field values contain the specified substrings:
 
 ![allchangesserverfiltered](/images/auditor/10.8/admin/reports/allchangesserverfiltered.webp)
