@@ -111,6 +111,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           REPO: ${{ github.repository }}
         run: |
@@ -220,6 +221,33 @@ jobs:
                   comment['start_side'] = 'RIGHT'
               return comment
 
+          def get_pr_diff_valid_lines(base_sha, head_sha):
+              """Return the set of (file, line_number) in HEAD visible in the PR diff."""
+              result = subprocess.run(
+                  ['git', 'diff', '--unified=10', base_sha, head_sha],
+                  capture_output=True, text=True,
+              )
+              valid = set()
+              current_file = None
+              new_line_num = 0
+              for line in result.stdout.split('\n'):
+                  if line.startswith('+++ b/'):
+                      current_file = line[6:]
+                  elif line.startswith('@@'):
+                      match = re.match(r'@@ -\d+(?:,\d+)? \+(\d+)(?:,\d+)? @@', line)
+                      if match:
+                          new_line_num = int(match.group(1))
+                  elif line.startswith('+') and not line.startswith('+++'):
+                      if current_file:
+                          valid.add((current_file, new_line_num))
+                      new_line_num += 1
+                  elif line.startswith(' '):
+                      if current_file:
+                          valid.add((current_file, new_line_num))
+                      new_line_num += 1
+                  # '-' lines don't exist in HEAD, skip
+              return valid
+
           # Read the review summary Claude wrote
           summary_path = '/tmp/review-summary.md'
           if os.path.exists(summary_path):
@@ -230,14 +258,28 @@ jobs:
 
           review_body += FOOTER
 
+          pr_number = os.environ['PR_NUMBER']
+          head_sha = os.environ['HEAD_SHA']
+          base_sha = os.environ['BASE_SHA']
+          repo = os.environ['REPO']
+
           # Get diff of Claude's local edits vs HEAD
           result = subprocess.run(['git', 'diff', 'HEAD'], capture_output=True, text=True)
           diff_text = result.stdout
-          suggestions = parse_diff_to_suggestions(diff_text) if diff_text.strip() else []
+          all_suggestions = parse_diff_to_suggestions(diff_text) if diff_text.strip() else []
 
-          pr_number = os.environ['PR_NUMBER']
-          head_sha = os.environ['HEAD_SHA']
-          repo = os.environ['REPO']
+          # Filter to only lines visible in the PR diff — GitHub rejects suggestions
+          # on lines outside the diff context with HTTP 422.
+          pr_valid_lines = get_pr_diff_valid_lines(base_sha, head_sha)
+          suggestions = []
+          for s in all_suggestions:
+              start = s.get('start_line', s['line'])
+              end = s['line']
+              if all((s['path'], ln) in pr_valid_lines for ln in range(start, end + 1)):
+                  suggestions.append(s)
+              else:
+                  print(f"Skipping out-of-diff suggestion: {s['path']} line {s['line']}")
+          print(f"{len(suggestions)}/{len(all_suggestions)} suggestions are within the PR diff.")
 
           review_payload = {
               'commit_id': head_sha,
