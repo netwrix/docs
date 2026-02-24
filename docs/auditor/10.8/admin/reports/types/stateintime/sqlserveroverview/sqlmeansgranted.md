@@ -93,6 +93,6 @@ This report has the following filters:
 
 ## Usage example
 
-During the review of the **Object Permissions in SQL Server** report, database administrators identified that an account with the _Contractor_ job title has access to the _CompanyServer03_ instance. To analyze the source of these permissions, they navigated to the **SQL Server Means Granted** report using the hyperlink in the **Means Granted** field.
+During the review of the **Object Permissions in SQL Server** report, database administrators identified that an account with the _Contractor_ job title has access to a specific SQL Server instance. To analyze the source of these permissions, they navigated to the **SQL Server Means Granted** report using the hyperlink in the **Means Granted** field.
 
 ![sqlservermeansgranteddetails](/images/auditor/10.8/admin/reports/types/stateintime/sqlservermeansgranteddetails.webp)
