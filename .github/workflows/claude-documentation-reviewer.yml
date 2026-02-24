@@ -92,7 +92,7 @@ jobs:
             - Issues in PR changes: the issue is on a line that was added or modified in this PR
             - Preexisting issues: the issue exists on a line that was not changed by this PR
 
-            Write your complete review to `/tmp/review-summary.md` using this exact structure — two sections, each containing a flat list of issues in the format from your instructions, with no subheadings, groupings, or extra nesting:
+            You MUST write your complete review to `/tmp/review-summary.md` — always, even if there are no issues. Use this exact structure — two sections, each containing a flat list of issues in the format from your instructions, with no subheadings, groupings, or extra nesting:
 
             ## Issues in PR changes
             <flat list of issues in the format from your instructions, or "None." if there are none>
@@ -112,6 +112,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           REPO: ${{ github.repository }}
         run: |
@@ -221,10 +222,14 @@ jobs:
                   comment['start_side'] = 'RIGHT'
               return comment
 
-          def get_pr_diff_valid_lines(pr_number):
-              """Return the set of (file, line_number) visible in GitHub's PR diff."""
+          def get_pr_diff_valid_lines(base_sha, head_sha):
+              """Return the set of (file, line_number) visible in the PR diff.
+
+              Uses local git diff with the same SHAs as commit_id so line numbers
+              are always consistent with what GitHub resolves against.
+              """
               result = subprocess.run(
-                  ['gh', 'pr', 'diff', pr_number, '--patch'],
+                  ['git', 'diff', base_sha, head_sha, '--unified=3'],
                   capture_output=True, text=True,
               )
               valid = set()
@@ -259,6 +264,7 @@ jobs:
           review_body += FOOTER
 
           pr_number = os.environ['PR_NUMBER']
+          base_sha = os.environ['BASE_SHA']
           head_sha = os.environ['HEAD_SHA']
           repo = os.environ['REPO']
 
@@ -269,7 +275,9 @@ jobs:
 
           # Filter to only lines visible in the PR diff — GitHub rejects suggestions
           # on lines outside the diff context with HTTP 422.
-          pr_valid_lines = get_pr_diff_valid_lines(pr_number)
+          # Use local git diff with the same SHAs as commit_id to avoid line: null
+          # when new commits are pushed to the PR between checkout and review posting.
+          pr_valid_lines = get_pr_diff_valid_lines(base_sha, head_sha)
           suggestions = []
           for s in all_suggestions:
               start = s.get('start_line', s['line'])
