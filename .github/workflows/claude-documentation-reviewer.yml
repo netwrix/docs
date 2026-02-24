@@ -88,19 +88,68 @@ jobs:
 
             Do not review or comment on any other files (e.g., .js, .ts, .json, etc.). Focus exclusively on the documentation changes in the markdown files listed above.
 
-            Write your complete review to /tmp/review.md.
+            Write your findings to /tmp/suggestions.json following the format in your instructions.
 
           claude_args: |
             --model claude-sonnet-4-5-20250929
             --allowedTools "Write,Bash(gh pr diff:*),Bash(gh pr view:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
 
-      - name: Append closing lines and post review
+      - name: Post inline suggestions
         if: steps.changed-files.outputs.count > 0
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          REPO: ${{ github.repository }}
         run: |
-          echo "" >> /tmp/review.md
-          echo "To apply fixes, reply with \`@claude\` followed by your instructions (e.g. \`@claude fix all issues\` or \`@claude fix only the spelling errors\`)." >> /tmp/review.md
-          echo "Note: fixes are posted as inline suggestions. Click 'Apply suggestion' on each one to accept it." >> /tmp/review.md
-          gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/review.md
+          python3 << 'PYEOF'
+          import subprocess, json, os, sys
+
+          pr_number = os.environ['PR_NUMBER']
+          head_sha = os.environ['HEAD_SHA']
+          repo = os.environ['REPO']
+
+          try:
+              with open('/tmp/suggestions.json') as f:
+                  suggestions = json.load(f)
+          except (FileNotFoundError, json.JSONDecodeError) as e:
+              print(f"Could not read /tmp/suggestions.json: {e}")
+              sys.exit(1)
+
+          if not suggestions:
+              subprocess.run(
+                  ['gh', 'pr', 'comment', pr_number, '--repo', repo,
+                   '--body', 'No issues found in the changed files.'],
+                  check=True
+              )
+              print("No issues found")
+              sys.exit(0)
+
+          comments = []
+          for s in suggestions:
+              body = s['body'] + '\n```suggestion\n' + s['suggestion'] + '\n```'
+              c = {'path': s['path'], 'line': s['line'], 'side': 'RIGHT', 'body': body}
+              if s.get('start_line') and s['start_line'] != s['line']:
+                  c['start_line'] = s['start_line']
+                  c['start_side'] = 'RIGHT'
+              comments.append(c)
+
+          review_data = {
+              'commit_id': head_sha,
+              'body': f'Found {len(comments)} issue(s). To apply all fixes at once, reply with `@claude` followed by your instructions (e.g. `@claude fix all issues`).',
+              'event': 'COMMENT',
+              'comments': comments
+          }
+
+          r = subprocess.run(
+              ['gh', 'api', f'repos/{repo}/pulls/{pr_number}/reviews',
+               '--method', 'POST', '--input', '-'],
+              input=json.dumps(review_data).encode(),
+              capture_output=True
+          )
+          if r.returncode != 0:
+              print(f"Error posting suggestions: {r.stderr.decode()}")
+              sys.exit(1)
+          print(f"Posted {len(comments)} inline suggestion(s)")
+          PYEOF
