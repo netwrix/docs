@@ -23,3 +23,5 @@ behind our development to meet the ever-changing requirements of modern and safe
 companies. NPS is the perfect software solution for companies that wish to effectively manage
 security-relevant data such as passwords, documents, or certificates at a very high encryption
 level.
+
+Proper password security is essential to managing passwords for organizations of any size.
