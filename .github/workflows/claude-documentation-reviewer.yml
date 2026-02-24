@@ -10,13 +10,30 @@ jobs:
   claude-response:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
       issues: write
       id-token: write
       actions: read
     steps:
-      - name: Checkout repository
+      - name: Detect fork
+        id: pr-info
+        run: |
+          if [ "${{ github.event.pull_request.head.repo.full_name }}" != "${{ github.repository }}" ]; then
+            echo "is_fork=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "is_fork=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout repository (non-fork)
+        if: steps.pr-info.outputs.is_fork == 'false'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: Checkout repository (fork)
+        if: steps.pr-info.outputs.is_fork == 'true'
         uses: actions/checkout@v4
         with:
           # Check out by SHA to prevent TOCTOU attacks from forks.
@@ -74,8 +91,8 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Run documentation review
-        if: steps.changed-files.outputs.count > 0
+      - name: Review and fix (non-fork)
+        if: steps.changed-files.outputs.count > 0 && steps.pr-info.outputs.is_fork == 'false'
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -86,102 +103,36 @@ jobs:
 
             Use `gh pr diff ${{ github.event.pull_request.number }}` to see the exact changes made.
 
-            Do not review or comment on any other files (e.g., .js, .ts, .json, etc.). Focus exclusively on the documentation changes in the markdown files listed above.
+            Do not review or comment on any other files. Focus exclusively on the documentation changes in the markdown files listed above.
 
-            Write your findings to /tmp/suggestions.json following the format in your instructions.
+            1. Fix all issues directly in the files using the Write and Edit tools.
+            2. Commit and push the fixes using git.
+            3. Post a PR comment starting with "## Documentation Review" that lists each issue that was fixed, following the format in your instructions.
 
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --allowedTools "Write,Bash(gh pr diff:*),Bash(gh pr view:*)"
+            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
 
-      - name: Post inline suggestions
-        if: steps.changed-files.outputs.count > 0
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-          REPO: ${{ github.repository }}
-        run: |
-          python3 << 'PYEOF'
-          import subprocess, json, os, sys
+      - name: Review only (fork)
+        if: steps.changed-files.outputs.count > 0 && steps.pr-info.outputs.is_fork == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            Review ONLY the following markdown files that were changed in this PR: ${{ steps.changed-files.outputs.files }}
 
-          pr_number = os.environ['PR_NUMBER']
-          head_sha = os.environ['HEAD_SHA']
-          repo = os.environ['REPO']
+            Use `gh pr diff ${{ github.event.pull_request.number }}` to see the exact changes made.
 
-          try:
-              with open('/tmp/suggestions.json') as f:
-                  data = json.load(f)
-          except (FileNotFoundError, json.JSONDecodeError) as e:
-              print(f"Could not read /tmp/suggestions.json: {e}")
-              sys.exit(1)
+            Do not review or comment on any other files. Focus exclusively on the documentation changes in the markdown files listed above.
 
-          # Handle case where Claude wraps the array in an object
-          if isinstance(data, dict):
-              for key in data:
-                  if isinstance(data[key], list):
-                      data = data[key]
-                      break
-              else:
-                  print(f"Unexpected dict structure: {list(data.keys())}")
-                  sys.exit(1)
+            Post a PR comment starting with "## Documentation Review" that lists all issues found, following the format in your instructions.
 
-          if not isinstance(data, list):
-              print(f"Expected array, got {type(data)}")
-              sys.exit(1)
+            This PR is from a fork. Do not attempt to edit files or push changes. The author must address the issues manually.
 
-          suggestions = data
-
-          if not suggestions:
-              subprocess.run(
-                  ['gh', 'pr', 'comment', pr_number, '--repo', repo,
-                   '--body', 'No issues found in the changed files.'],
-                  check=True
-              )
-              print("No issues found")
-              sys.exit(0)
-
-          comments = []
-          for s in suggestions:
-              if not isinstance(s, dict):
-                  print(f"Skipping non-object suggestion: {repr(s)[:100]}")
-                  continue
-              # Accept alternate field names Claude may use
-              path = s.get('path') or s.get('file')
-              line = s.get('line') or s.get('line_number')
-              body_text = s.get('body') or s.get('issue') or s.get('description') or ''
-              suggestion_text = s.get('suggestion') or s.get('replacement') or s.get('fix') or ''
-              start_line = s.get('start_line') or s.get('start') or line
-              if not path or not line or not suggestion_text:
-                  print(f"Skipping incomplete suggestion: {repr(s)[:100]}")
-                  continue
-              body = body_text + '\n```suggestion\n' + suggestion_text + '\n```'
-              c = {'path': path, 'line': line, 'side': 'RIGHT', 'body': body}
-              if start_line and start_line != line:
-                  c['start_line'] = start_line
-                  c['start_side'] = 'RIGHT'
-              comments.append(c)
-
-          if not comments:
-              print("No valid suggestions to post")
-              sys.exit(1)
-
-          review_data = {
-              'commit_id': head_sha,
-              'body': f'Found {len(comments)} issue(s). To apply all fixes at once, reply with `@claude` followed by your instructions (e.g. `@claude fix all issues`).',
-              'event': 'COMMENT',
-              'comments': comments
-          }
-
-          r = subprocess.run(
-              ['gh', 'api', f'repos/{repo}/pulls/{pr_number}/reviews',
-               '--method', 'POST', '--input', '-'],
-              input=json.dumps(review_data).encode(),
-              capture_output=True
-          )
-          if r.returncode != 0:
-              print(f"Error posting suggestions: {r.stderr.decode()}")
-              sys.exit(1)
-          print(f"Posted {len(comments)} inline suggestion(s)")
-          PYEOF
+          claude_args: |
+            --model claude-sonnet-4-5-20250929
+            --allowedTools "Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*)"
+            --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
