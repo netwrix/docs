@@ -281,24 +281,41 @@ jobs:
                   print(f"Skipping out-of-diff suggestion: {s['path']} line {s['line']}")
           print(f"{len(suggestions)}/{len(all_suggestions)} suggestions are within the PR diff.")
 
-          review_payload = {
-              'commit_id': head_sha,
-              'body': review_body,
-              'event': 'COMMENT',
-              'comments': suggestions,
-          }
+          def post_review(body, comments):
+              payload = {
+                  'commit_id': head_sha,
+                  'body': body,
+                  'event': 'COMMENT',
+                  'comments': comments,
+              }
+              return subprocess.run(
+                  ['gh', 'api', f'repos/{repo}/pulls/{pr_number}/reviews',
+                   '-X', 'POST', '--input', '-'],
+                  input=json.dumps(payload),
+                  capture_output=True,
+                  text=True,
+              )
 
-          result = subprocess.run(
-              ['gh', 'api', f'repos/{repo}/pulls/{pr_number}/reviews',
-               '-X', 'POST', '--input', '-'],
-              input=json.dumps(review_payload),
-              capture_output=True,
-              text=True,
-          )
+          # Try posting review with all inline suggestions.
+          print(f"Attempting to post review with {len(suggestions)} inline suggestion(s)...")
+          for i, s in enumerate(suggestions):
+              print(f"  [{i+1}] {s['path']} line {s.get('start_line', s['line'])}-{s['line']}")
 
-          if result.returncode != 0:
-              print(f"Error posting review: {result.stderr}", file=sys.stderr)
-              sys.exit(1)
+          result = post_review(review_body, suggestions)
 
-          print(f"Successfully posted review with {len(suggestions)} inline suggestion(s).")
+          if result.returncode == 0:
+              print(f"Successfully posted review with {len(suggestions)} inline suggestion(s).")
+          else:
+              # Log the full GitHub error response for debugging.
+              print(f"Batch review failed (HTTP 422 or other). Falling back to body-only review.", file=sys.stderr)
+              print(f"gh stderr: {result.stderr}", file=sys.stderr)
+              print(f"gh stdout: {result.stdout}", file=sys.stderr)
+
+              # Post the review body without inline suggestions so the summary is always visible.
+              fallback = post_review(review_body, [])
+              if fallback.returncode != 0:
+                  print(f"Fallback review also failed: {fallback.stderr}", file=sys.stderr)
+                  sys.exit(1)
+              print("Posted review body only. Inline suggestions could not be posted.")
+              print("See the stderr above for the GitHub API error details.")
           PYTHON_EOF
