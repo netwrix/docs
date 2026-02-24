@@ -147,10 +147,19 @@ jobs:
               if not isinstance(s, dict):
                   print(f"Skipping non-object suggestion: {repr(s)[:100]}")
                   continue
-              body = s['body'] + '\n```suggestion\n' + s['suggestion'] + '\n```'
-              c = {'path': s['path'], 'line': s['line'], 'side': 'RIGHT', 'body': body}
-              if s.get('start_line') and s['start_line'] != s['line']:
-                  c['start_line'] = s['start_line']
+              # Accept alternate field names Claude may use
+              path = s.get('path') or s.get('file')
+              line = s.get('line') or s.get('line_number')
+              body_text = s.get('body') or s.get('issue') or s.get('description') or ''
+              suggestion_text = s.get('suggestion') or s.get('replacement') or s.get('fix') or ''
+              start_line = s.get('start_line') or s.get('start') or line
+              if not path or not line or not suggestion_text:
+                  print(f"Skipping incomplete suggestion: {repr(s)[:100]}")
+                  continue
+              body = body_text + '\n```suggestion\n' + suggestion_text + '\n```'
+              c = {'path': path, 'line': line, 'side': 'RIGHT', 'body': body}
+              if start_line and start_line != line:
+                  c['start_line'] = start_line
                   c['start_side'] = 'RIGHT'
               comments.append(c)
 
