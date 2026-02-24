@@ -41,21 +41,12 @@ jobs:
             echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Delete existing review comments
+      - name: Dismiss existing reviews
         if: steps.changed-files.outputs.count > 0
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
-
-          # Delete existing prose summary comments
-          COMMENT_IDS=$(gh api repos/${{ github.repository }}/issues/${PR_NUMBER}/comments \
-            --jq '[.[] | select(.user.login == "github-actions[bot]") | select(.body | startswith("## Documentation Review")) | .id] | .[]' 2>/dev/null || true)
-          for ID in $COMMENT_IDS; do
-            gh api repos/${{ github.repository }}/issues/comments/${ID} -X DELETE || true
-          done
-
-          # Dismiss existing inline suggestion reviews
           REVIEW_IDS=$(gh api repos/${{ github.repository }}/pulls/${PR_NUMBER}/reviews \
             --jq '[.[] | select(.user.login == "github-actions[bot]") | .id] | .[]' 2>/dev/null || true)
           for ID in $REVIEW_IDS; do
@@ -84,7 +75,7 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Review and post issues
+      - name: Review documents
         if: steps.changed-files.outputs.count > 0
         uses: anthropics/claude-code-action@v1
         with:
@@ -92,21 +83,30 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
           prompt: |
-            Review ONLY the following markdown files that were changed in this PR: ${{ steps.changed-files.outputs.files }}
+            Review the following markdown files that were modified in this PR: ${{ steps.changed-files.outputs.files }}
 
-            Use `gh pr diff ${{ github.event.pull_request.number }}` to see the exact changes made.
+            Use `gh pr diff ${{ github.event.pull_request.number }}` to identify which lines were added or modified by this PR.
+            Use the Read tool to read each file in full.
 
-            Do not review or comment on any other files. Focus exclusively on the documentation changes in the markdown files listed above.
+            Identify ALL issues in each file. Categorize each issue as either:
+            - Issues in PR changes: the issue is on a line that was added or modified in this PR
+            - Preexisting issues: the issue exists on a line that was not changed by this PR
 
-            1. Fix all issues directly in the files using the Write and Edit tools. Do not commit or push.
-            2. Post a PR comment starting with "## Documentation Review" that lists each issue found and fixed, following the format in your instructions. End the comment with a blank line followed by: "To apply all fixes at once, reply with `@claude apply all fixes`."
+            Write your complete review to `/tmp/review-summary.md` using this exact structure:
+            ## Issues in PR changes
+            <list each issue using the format from your instructions, or "None." if there are none>
+
+            ## Preexisting issues
+            <list each issue using the format from your instructions, or "None." if there are none>
+
+            Then fix ALL issues directly in the files using the Write and Edit tools. Do not post a PR comment. Do not commit or push.
 
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*)"
+            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
 
-      - name: Post inline suggestions
+      - name: Post review with inline suggestions
         if: steps.changed-files.outputs.count > 0
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -120,6 +120,15 @@ jobs:
           import re
           import os
           import sys
+
+          FOOTER = """
+---
+
+There are two ways to apply fixes:
+- View them in the comments and apply them individually or in a batch. This only applies to changes made to the file.
+- Reply with `@claude` here, followed by your instructions (e.g. `@claude fix all issues` or `@claude fix only the spelling errors` or `@claude fix all other existing issues`). You can use this option to fix preexisting issues.
+
+Note: Automated fixes are only available for branches in this repository, not forks."""
 
           def parse_diff_to_suggestions(diff_text):
               suggestions = []
@@ -208,21 +217,20 @@ jobs:
                   comment['start_side'] = 'RIGHT'
               return comment
 
+          # Read the review summary Claude wrote
+          summary_path = '/tmp/review-summary.md'
+          if os.path.exists(summary_path):
+              with open(summary_path) as f:
+                  review_body = f.read().strip()
+          else:
+              review_body = '## Documentation Review\n\nNo summary was generated.'
+
+          review_body += FOOTER
+
           # Get diff of Claude's local edits vs HEAD
           result = subprocess.run(['git', 'diff', 'HEAD'], capture_output=True, text=True)
           diff_text = result.stdout
-
-          if not diff_text.strip():
-              print("No changes detected. Skipping inline suggestions.")
-              sys.exit(0)
-
-          suggestions = parse_diff_to_suggestions(diff_text)
-
-          if not suggestions:
-              print("No inline suggestions to post (changes may be pure insertions or deletions).")
-              sys.exit(0)
-
-          print(f"Posting {len(suggestions)} inline suggestion(s)...")
+          suggestions = parse_diff_to_suggestions(diff_text) if diff_text.strip() else []
 
           pr_number = os.environ['PR_NUMBER']
           head_sha = os.environ['HEAD_SHA']
@@ -230,7 +238,7 @@ jobs:
 
           review_payload = {
               'commit_id': head_sha,
-              'body': '',
+              'body': review_body,
               'event': 'COMMENT',
               'comments': suggestions,
           }
@@ -244,8 +252,8 @@ jobs:
           )
 
           if result.returncode != 0:
-              print(f"Error posting inline suggestions: {result.stderr}", file=sys.stderr)
+              print(f"Error posting review: {result.stderr}", file=sys.stderr)
               sys.exit(1)
 
-          print("Successfully posted inline suggestions.")
+          print(f"Successfully posted review with {len(suggestions)} inline suggestion(s).")
           PYTHON_EOF
