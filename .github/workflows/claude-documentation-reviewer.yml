@@ -121,14 +121,17 @@ jobs:
           import os
           import sys
 
-          FOOTER = """
----
-
-There are two ways to apply fixes:
-- View them in the comments and apply them individually or in a batch. This only applies to changes made to the file.
-- Reply with `@claude` here, followed by your instructions (e.g. `@claude fix all issues` or `@claude fix only the spelling errors` or `@claude fix all other existing issues`). You can use this option to fix preexisting issues.
-
-Note: Automated fixes are only available for branches in this repository, not forks."""
+          FOOTER = (
+              "\n---\n\n"
+              "There are two ways to apply fixes:\n"
+              "- View them in the comments and apply them individually or in a batch."
+              " This only applies to changes made to the file.\n"
+              "- Reply with `@claude` here, followed by your instructions"
+              " (e.g. `@claude fix all issues` or `@claude fix only the spelling errors`"
+              " or `@claude fix all other existing issues`)."
+              " You can use this option to fix preexisting issues.\n\n"
+              "Note: Automated fixes are only available for branches in this repository, not forks."
+          )
 
           def parse_diff_to_suggestions(diff_text):
               suggestions = []
