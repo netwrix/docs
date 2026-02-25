@@ -12,7 +12,7 @@ instance.
 
 This page is about [Microsoft Exchange](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/microsoft-exchange/index.md).
 
-![Package: Server/Microsoft Exchange](/images/identitymanager/saas/integration-guide/connectors/references-connectors/microsoftexchange/packages_exchange_v603.webp)
+![Package: Server/Microsoft Exchange](/images/identitymanager/integration-guide/connectors/references-connectors/microsoftexchange/packages_exchange_v603.webp)
 
 ## Overview
 

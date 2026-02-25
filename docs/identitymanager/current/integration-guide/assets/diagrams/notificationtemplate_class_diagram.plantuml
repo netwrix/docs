@@ -1,0 +1,10 @@
+@startuml component
+package "NotificationTemplate" {
+	class NotificationTemplate {
+		BodyTemplate_L1 : String
+		Identifier : String
+		SubjectTemplate_L1 : String
+	}
+}
+hide empty members
+@enduml

@@ -1,0 +1,114 @@
+﻿---
+title: "WorkflowAccessControlRules"
+description: "Generates the permissions to access the task page and visualize the workflows to be executed for a given entity type and profile."
+sidebar_position: 3
+---
+
+Generates the rights to access the task page and visualize the different workflows to be executed for a given entity type and profile.
+
+Gives access to a shortcut on the dashboard and on the top bar to access this page.
+
+Top bar shortcut: ![Tasks in Top Bar](/images/identitymanager/buttons/Home_topBar_V601.webp)
+
+DashBoard shortcut: ![](/images/identitymanager/user-guide/set-up/configure-workflows/home_topbar_v601.webp)
+
+
+
+## Examples
+
+
+```xml
+  <WorkflowAccessControlRules Profile="Administrator" EntityType="Workflow_Directory_User"/>
+```
+
+
+## Properties
+
+|Property|Details|
+|---|---|
+| EntityType required | **Type:** String **Description:** Identifier of the entity type involved in the scaffolding. |
+| Profile required | **Type:** String **Description:** Identifier of the profile involved in the scaffolding. |
+
+
+
+## Generated XML
+
+Our example generates the following configuration:
+
+```xml
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/ReviewWorkflowDelegate_AccessControlRules_Workflow_Directory_User" DisplayName_L1="Workforce/Self/Update My Permissions (review) - WorkflowDelegate_AccessControl - Workflow for User" DisplayName_L2="Administrator - Droit_Transfert_WorkflowsWorkflow_Directory_User" EntityType="Workflow_Directory_User" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_Guest_AdvancedStart/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_Guest_AdvancedStart/Review/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_ComputerRequest/Execution/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_ComputerRequest/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_ComputerRequest/Review/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_ManageContracts/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_ManagePositions/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_MobileRequest/Execution/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_MobileRequest/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_MobileRequest/Review/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_NewExternal/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_NewInternal/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_NewInternal/Review/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_Reactivate/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_Suspend/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_UpdatePersonalData/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_UpdateResources/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_VehiculeRequest/Execution/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_VehiculeRequest/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Directory_User_VehiculeRequest/Review/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Helpdesk_Directory_User_Delete/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Helpdesk_Directory_User_FixRecord/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Helpdesk_Directory_User_New/Request/RefinePending" />
+  <Entry CanExecute="true" Permission="/Custom/Workflows/Self_ResourcesUpdate/Review/RefinePending" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/ReviewWorkflow_AccessControlRules_Workflow_Directory_User" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Workflow_AccessControl - Workflow for User" DisplayName_L2="Administrator - Droit_Global_WorkflowsWorkflow_Directory_User" EntityType="Workflow_Directory_User" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+  <Entry CanExecute="true" Permission="/Workflows/WorkflowInstance/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_ActivityTemplateState" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Workflow Supervision" DisplayName_L2="Administrator - Supervision des Workflows" EntityType="ActivityTemplateState" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/ActivityTemplateState/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_Directory_Application_Workflow_AccessControlRules" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Review Provisioning" DisplayName_L2="Administrator - Revue du Provisioning" EntityType="Directory_Application" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+  <Entry CanExecute="true" Permission="/Workflows/WorkflowInstance/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_Directory_Bot_Workflow_AccessControlRules" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Review Provisioning" DisplayName_L2="Administrator - Revue du Provisioning" EntityType="Directory_Bot" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+  <Entry CanExecute="true" Permission="/Workflows/WorkflowInstance/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_Directory_Guest_Workflow_AccessControlRules" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Review Provisioning" DisplayName_L2="Administrator - Revue du Provisioning" EntityType="Directory_Guest" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+  <Entry CanExecute="true" Permission="/Workflows/WorkflowInstance/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_Directory_Organization_Workflow_AccessControlRules" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Review Provisioning" DisplayName_L2="Administrator - Revue du Provisioning" EntityType="Directory_Organization" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+  <Entry CanExecute="true" Permission="/Workflows/WorkflowInstance/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_Directory_PresenceState_Workflow_AccessControlRules" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Review Provisioning" DisplayName_L2="Administrator - Revue du Provisioning" EntityType="Directory_PresenceState" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+  <Entry CanExecute="true" Permission="/Workflows/WorkflowInstance/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_Directory_UserRecord_Workflow_AccessControlRules" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Review Provisioning" DisplayName_L2="Administrator - Revue du Provisioning" EntityType="Directory_UserRecord" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+  <Entry CanExecute="true" Permission="/Workflows/WorkflowInstance/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_Directory_User_Workflow_AccessControlRules" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Review Provisioning" DisplayName_L2="Administrator - Revue du Provisioning" EntityType="Directory_User" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+  <Entry CanExecute="true" Permission="/Workflows/WorkflowInstance/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_UserActivityInstance_ActivityInstance" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Workflow_AccessControl - " DisplayName_L2="Administrator - Droit_Global_Workflows" EntityType="ActivityInstance" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_UserActivityInstance_Resource" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Workflow_AccessControl - " DisplayName_L2="Administrator - Droit_Global_Workflows" EntityType="Resource" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_UserActivityInstance_WorkflowInstance" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Workflow_AccessControl - " DisplayName_L2="Administrator - Droit_Global_Workflows" EntityType="WorkflowInstance" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+</AccessControlRule>
+<AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/Review_Workflow_Directory_User_Workflow_AccessControlRules" DisplayName_L1="Workforce/Self/Update My Permissions (review) - Review Provisioning" DisplayName_L2="Administrator - Revue du Provisioning" EntityType="Workflow_Directory_User" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Workflows/UserActivityInstance/Query" />
+  <Entry CanExecute="true" Permission="/Workflows/WorkflowInstance/Query" />
+</AccessControlRule>
+
+```

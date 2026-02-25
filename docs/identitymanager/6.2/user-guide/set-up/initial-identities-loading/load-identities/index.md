@@ -21,7 +21,7 @@ lifecycle management features and managing assignments of entitlements.
 Identity Manager contains a template model, downloadable as an Excel file. Below is an example of a
 part of the `UserRecord` tab, used in Identity Manager's demo:
 
-![Template Example](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/initialload_templateexample_v602.webp)
+![Template Example](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/initialload_templateexample_v602.webp)
 
 ### Useful data
 
@@ -66,11 +66,11 @@ Load identities for the first time by proceeding as follows:
 
 1. On the home page, click on **Settings** in the **Configuration** section.
 
-    ![Home Page - Configuration](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
+    ![Home Page - Configuration](/images/identitymanager/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
 
 2. On the **Workforce** > **Data Upload** page, download the empty Excel template.
 
-    ![Upload Icon](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/icondownload_v602.svg)
+    ![Upload Icon](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/icondownload_v602.svg)
 
 3. Collect identity and organizational data.
 
@@ -110,7 +110,7 @@ Load identities for the first time by proceeding as follows:
     [Template Description](/docs/identitymanager/6.2/user-guide/set-up/initial-identities-loading/template-description/index.md)**. Below are the minimum recommended
     attributes (mandatory in orange):
 
-    ![Template Recommendations](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/initialload_templatereco_v600.webp)
+    ![Template Recommendations](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/initialload_templatereco_v600.webp)
 
     [**Click here to download a template example**](/files/identitymanager/user-guide/set-up/initial-identities-loading/Directory_example_V602.xlsx).
 
@@ -152,18 +152,18 @@ Load identities for the first time by proceeding as follows:
 5. Back on the **Workforce** > **Data Upload** page, upload the filled Excel file to the server in
    order to feed the data back to Identity Manager.
 
-    ![Upload Icon](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/iconupload_v602.svg)
+    ![Upload Icon](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/iconupload_v602.svg)
 
     The latest uploaded file overwrites the previous one.
 
 6. Click on **Verify and Synchronize** to check the file's consistency and import its data into
    Identity Manager.
 
-    ![Verify and Synchronize](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/initialload_dataupload-synchronize_v602.webp)
+    ![Verify and Synchronize](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/initialload_dataupload-synchronize_v602.webp)
 
     Now you are able to view users' pages in the directory.
 
-    ![Directory - Users](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/initialload_directoryusers_v602.webp)
+    ![Directory - Users](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/initialload_directoryusers_v602.webp)
 
 ## Verify Identities Loading
 
@@ -172,14 +172,14 @@ In order to validate the process:
 - Check manually a sample in the user directory accessible from the home page. You should verify at
   least your own sheet and the sheets for your hierarchy.
 
-    ![Home - Directory User](/images/identitymanager/saas/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
+    ![Home - Directory User](/images/identitymanager/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
 
 - Check that every organization includes a manager. Organizations are accessible from the department
   directory on the home page.
 
-    ![Home - Directory Department](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/home_directorydepartment_v523.webp)
+    ![Home - Directory Department](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/home_directorydepartment_v523.webp)
 
-    ![List of Departments](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/initialload_departments_v602.webp)
+    ![List of Departments](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/initialload_departments_v602.webp)
 
     If the system contains many organizations, then it is also possible to list each organization
     with its manager through the Query module.

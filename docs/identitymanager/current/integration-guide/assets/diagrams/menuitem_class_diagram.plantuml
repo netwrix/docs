@@ -1,0 +1,48 @@
+@startuml component
+package "MenuItem" {
+	class MenuItem {
+		DisplayName_L1 : String
+		DisplayOrder : Int32
+		IconCode : String
+		Identifier : String
+		IsExpandedByDefault : Boolean
+		IsSelfForm : Boolean
+		URI : String
+		--
+		EntityType : EntityType
+		MenuForms : Form[]
+		MenuSearchBars : SearchBar[]
+		ParentMenuItem : MenuItem
+		ParentMenuItemMenuItems : MenuItem[]
+		ReportQuery : ReportQuery
+		Workflow : Workflow
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Form" {
+	class Form {
+	}
+}
+package "SearchBar" {
+	class SearchBar {
+	}
+}
+package "ReportQuery" {
+	class ReportQuery {
+	}
+}
+package "Workflow" {
+	class Workflow {
+	}
+}
+MenuItem "0..*" --  "0..1"EntityType
+MenuItem "0..1" --  "0..*"Form
+MenuItem "0..1" --  "0..*"SearchBar
+MenuItem "0..*" --  "0..1"MenuItem
+MenuItem "0..*" --  "0..1"ReportQuery
+MenuItem "0..*" --  "0..1"Workflow
+hide empty members
+@enduml

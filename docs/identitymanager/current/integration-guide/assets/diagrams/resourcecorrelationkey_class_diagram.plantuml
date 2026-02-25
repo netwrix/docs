@@ -1,0 +1,17 @@
+@startuml component
+package "ResourceCorrelationKey" {
+	class ResourceCorrelationKey {
+		BindingExpressionHash : Int32
+		EntityType : Int64
+		Value : String
+		--
+		Resource : Resource
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+ResourceCorrelationKey "0..*" --  "1"Resource
+hide empty members
+@enduml

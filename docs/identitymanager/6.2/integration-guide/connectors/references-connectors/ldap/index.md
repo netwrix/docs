@@ -15,13 +15,13 @@ This page is about:
 - [Apache Directory](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/apache-directory/index.md);
 - [Red Hat Directory Server](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/red-hat-directory-server/index.md).
 
-![Package: Directory/Generic LDAP](/images/identitymanager/saas/integration-guide/connectors/references-connectors/ldap/packages_ldapgeneric_v603.webp)
+![Package: Directory/Generic LDAP](/images/identitymanager/integration-guide/connectors/references-connectors/ldap/packages_ldapgeneric_v603.webp)
 
-![Package: Directory/Oracle LDAP](/images/identitymanager/saas/integration-guide/connectors/references-connectors/ldap/packages_ldaporacle_v603.webp)
+![Package: Directory/Oracle LDAP](/images/identitymanager/integration-guide/connectors/references-connectors/ldap/packages_ldaporacle_v603.webp)
 
-![Package: Directory/Apache Directory](/images/identitymanager/saas/integration-guide/connectors/references-connectors/ldap/packages_ldapapache_v603.webp)
+![Package: Directory/Apache Directory](/images/identitymanager/integration-guide/connectors/references-connectors/ldap/packages_ldapapache_v603.webp)
 
-![Package: Directory/Red Hat Directory Server](/images/identitymanager/saas/integration-guide/connectors/references-connectors/ldap/packages_ldapredhat_v603.webp)
+![Package: Directory/Red Hat Directory Server](/images/identitymanager/integration-guide/connectors/references-connectors/ldap/packages_ldapredhat_v603.webp)
 
 ## Overview
 

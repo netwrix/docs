@@ -34,64 +34,64 @@ The display settings allow you to adjust the display.
 
 When `HideRoles` is set to `true`, then the **Access Permissions** tab is not accessible.
 
-![Access Permissions](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/form_hideroles_v603.webp)
+![Access Permissions](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/form_hideroles_v603.webp)
 
 **Adjust the request type**
 
 When `WorkflowRequestType` is set to `Self`, then the finalization step looks like:
 
-![WorkflowRequestType = Self](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/form_requesttypeself_v603.webp)
+![WorkflowRequestType = Self](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/form_requesttypeself_v603.webp)
 
 When `WorkflowRequestType` is set to `Helpdesk`, then the finalization step looks like:
 
-![WorkflowRequestType = Helpdesk](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/form_requesttypehelpdesk_v603.webp)
+![WorkflowRequestType = Helpdesk](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/form_requesttypehelpdesk_v603.webp)
 
 **Display records in a table**
 
-![RecordTable Example](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/form_recordtable_v603.webp)
+![RecordTable Example](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/form_recordtable_v603.webp)
 
 **InputType display**
 
 The InputType represents the type of research property, attribute which supports only a predefined
 set of values listed below:
 
-![inputtypeattachment](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypeattachment.webp)
+![inputtypeattachment](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypeattachment.webp)
 
 - Attachment — represents a control for adding an attachment
 - Auto — takes by default the type of the EntityType property
 
-    ![inputtypecheckbox](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypecheckbox.webp)
+    ![inputtypecheckbox](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypecheckbox.webp)
 
 - Checkbox — a boolean control which supports one of the two states
 
-    ![inputtypecombobox](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypecombobox.webp)
+    ![inputtypecombobox](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypecombobox.webp)
 
 - Combobox — a dropdown which supports single selection
 
-    ![inputtypecomboboxmultiselection](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypecomboboxmultiselection.webp)
+    ![inputtypecomboboxmultiselection](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypecomboboxmultiselection.webp)
 
 - ComboboxMultiSelection — a dropdown which supports multiple selection
 
-    ![inputtypedate](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypedate.webp)
+    ![inputtypedate](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypedate.webp)
 
 - Date — Date control
 - Hidden — Hides the input
 
-    ![inputtypeimage](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypeimage.webp)
+    ![inputtypeimage](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypeimage.webp)
 
 - Image - Control to show / upload image
 - Inherited —Control to get the InputType of the associated display entity property (when nothing is
   specified in a Control of a Form, it's the default value).
 
-    ![inputtypepicker](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypepicker.webp)
+    ![inputtypepicker](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypepicker.webp)
 
 - Picker — Opens a grid to select a resource
 
-    ![inputtypetext](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypetext.webp)
+    ![inputtypetext](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypetext.webp)
 
 - Text — Displays a single-line of text
 
-    ![inputtypetextarea](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypetextarea.webp)
+    ![inputtypetextarea](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/inputtypetextarea.webp)
 
 - TextArea — A textbox which supports carriage return character.
 
