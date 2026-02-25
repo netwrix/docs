@@ -79,9 +79,9 @@ the data you need.
     ![search_filter](/images/auditor/10.8/admin/search/search_filter.webp)
 
 - Regardless of the selected filtering mode, the combination of conditions occurs as follows:
-    - filters of the same type with positive operators are combined using 'OR' logical operator.
-    - filters of different types are combined using 'AND' logical operator.
-    - All filters with negative operators, regardless of whether they are of the same type or not, are combined using the logical operator 'AND'. Negative operators include: Not equal to; Does not contain; Not in group.
+    - filters of the same type with positive operators are combined using OR logical operator.
+    - filters of different types are combined using AND logical operator.
+    - All filters with negative operators, regardless of type, are combined using the logical operator AND. Negative operators include: not equal to; does not contain; not in group.
 
 - By default, search results are open in the same window, so the subsequent search results will
   overwrite the previous search results. To view them in different windows, click Open in new
