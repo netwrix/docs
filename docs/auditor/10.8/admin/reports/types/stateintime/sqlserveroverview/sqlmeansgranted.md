@@ -67,7 +67,7 @@ This report has the following filters:
   documentation.
 - **Item** — name of the SQL Server instance monitored with selected monitoring plan.
 - **Object path** — path to the monitored object, as formatted by Netwrix Auditor in the activity
-  records (see '_What_' field in the reports, search results and activity summaries). Wildcard (\*)
+  records (see '_What_' field in the reports, search results and activity summaries). Wildcard (*)
   is supported. For example, to report on the database hosted on selected SQL Server, specify the
   path as follows: _Databases\database_name_.
 - **User account** — name or SID of the account that has permissions on the selected object. Default

@@ -69,9 +69,9 @@ Wildcards are supported. For example, type _%companydomain\admin2%_ in the Who d
 Do not use % in the exclusive filters (e.g., Who (Exclude domain\user)). Otherwise, you will receive
 an empty report.
 
-_escape_characters_ are not supported.
+`escape_characters` are not supported.
 
-The filters may vary slightly depending on the audited system and report type.  
+The filters may vary slightly depending on the audited system and report type.
 Below is the All Active Directory Changes report with the default filter:
 
 ![allchangesserver](/images/auditor/10.8/admin/reports/allchangesserver.webp)
