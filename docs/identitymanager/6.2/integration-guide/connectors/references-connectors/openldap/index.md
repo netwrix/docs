@@ -11,7 +11,7 @@ directory.
 
 This page is about [OData](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/odata/index.md).
 
-![Package: Directory/Open LDAP](/images/identitymanager/saas/integration-guide/connectors/references-connectors/openldap/packages_ldapopen_v603.webp)
+![Package: Directory/Open LDAP](/images/identitymanager/integration-guide/connectors/references-connectors/openldap/packages_ldapopen_v603.webp)
 
 ## Overview
 

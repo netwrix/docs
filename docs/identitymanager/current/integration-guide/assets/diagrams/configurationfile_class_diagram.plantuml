@@ -1,0 +1,15 @@
+@startuml component
+package "ConfigurationFile" {
+	class ConfigurationFile {
+		FilePath : String
+		--
+		FileConfigurationFileItems : ConfigurationFileItem[]
+	}
+}
+package "ConfigurationFileItem" {
+	class ConfigurationFileItem {
+	}
+}
+ConfigurationFile "1" --  "0..*"ConfigurationFileItem
+hide empty members
+@enduml

@@ -51,11 +51,11 @@ As roles and navigation properties are technically bonded together, their review
 > each role on the **Role Reconciliation** screen, and one item for all changes in the AD account on
 > the **Resource Reconciliation** screen:
 >
-> ![Example - Role Reconciliation](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_examplerole_v602.webp)
+> ![Example - Role Reconciliation](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_examplerole_v602.webp)
 >
-> ![Example - Resource Reconciliation](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_exampleresource_v602.webp)
+> ![Example - Resource Reconciliation](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_exampleresource_v602.webp)
 >
-> ![Example - Resource Reconciliation - Properties](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_exampleresourceprop_v602.webp)
+> ![Example - Resource Reconciliation - Properties](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_exampleresourceprop_v602.webp)
 
 ## Participants and Artifacts
 
@@ -73,20 +73,20 @@ Review an unreconciled property by proceeding as follows:
 1. Ensure that the task for the computation of the role model was launched recently, through the
    complete job on the **Job Execution** page
 
-    ![Home Page - Job Execution](/images/identitymanager/saas/user-guide/set-up/synchronization/home_jobexecution_v602.webp)
+    ![Home Page - Job Execution](/images/identitymanager/user-guide/set-up/synchronization/home_jobexecution_v602.webp)
 
     Or through the connector's overview page, **Jobs** > **Compute Role Model**.
 
-    ![Resource Type Jobs](/images/identitymanager/saas/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+    ![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
 
 2. Get to the **Resource Reconciliation** page, accessible from the corresponding section on the
    home page.
 
-    ![Home Page - Resource Reconciliation](/images/identitymanager/saas/user-guide/administrate/orphan-unused-account-review/home_resourcereconciliation_v523.webp)
+    ![Home Page - Resource Reconciliation](/images/identitymanager/user-guide/administrate/orphan-unused-account-review/home_resourcereconciliation_v523.webp)
 
 3. Select `Unreconciled properties` as a `Workflow State`.
 
-    ![Unreconciled Property](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewprop_unreconciled_v522.webp)
+    ![Unreconciled Property](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewprop_unreconciled_v522.webp)
 
 4. Choose the default resource view or the property view with the top right toggle. See the
    Reconcile a Property topic for additional information.
@@ -96,7 +96,7 @@ Review an unreconciled property by proceeding as follows:
     > nominative SAB account associated with his email address. In the **Resource Properties to be
     > Verified** frame, there is one unreconciled property that happens to be `Group`.
     >
-    > ![Unreconciled Property Example](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewprop_example_v602.webp)
+    > ![Unreconciled Property Example](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewprop_example_v602.webp)
 
     - `Name`: unreconciled property name.
     - `Proposed Value`: value proposed by Identity Manager.
@@ -115,11 +115,11 @@ Review an unreconciled property by proceeding as follows:
     - Either click on the approval icon to update the property with the proposed value. It discards
       the whole property history.
 
-        ![Addition Icon](/images/identitymanager/saas/user-guide/administrate/provisioning/provisioning-review/provmanual_iconapprove_v602.svg)
+        ![Addition Icon](/images/identitymanager/user-guide/administrate/provisioning/provisioning-review/provmanual_iconapprove_v602.svg)
 
-        ![Edition Icon](/images/identitymanager/saas/user-guide/administrate/provisioning/provisioning-review/provmanual_iconedit_v602.svg)
+        ![Edition Icon](/images/identitymanager/user-guide/administrate/provisioning/provisioning-review/provmanual_iconedit_v602.svg)
 
-        ![Deletion Icon](/images/identitymanager/saas/user-guide/administrate/provisioning/provisioning-review/reviewrole_icondelete_v602.svg)
+        ![Deletion Icon](/images/identitymanager/user-guide/administrate/provisioning/provisioning-review/reviewrole_icondelete_v602.svg)
 
         Automatic changes are essential for frequently-changing attributes. However, saving history
         information can sometimes be important for some attributes such as logins and emails.
@@ -127,7 +127,7 @@ Review an unreconciled property by proceeding as follows:
     - Or click on the decline icon to not update the property and keep the resource value. In the
       future, this property will no longer be changed automatically.
 
-        ![Decline Icon](/images/identitymanager/saas/user-guide/administrate/provisioning/provisioning-review/provmanual_icondecline_v522.svg)
+        ![Decline Icon](/images/identitymanager/user-guide/administrate/provisioning/provisioning-review/provmanual_icondecline_v522.svg)
 
         Retaining manual control of changes for sensitive data (i.e. `SAMAccountName`) can be of
         interest. Identity Manager won't be able to change this data and the service account manager
@@ -138,20 +138,20 @@ Review an unreconciled property by proceeding as follows:
     - Or click on the postponement icon to delay the decision. An unreconciled property is ignored
       by Identity Manager, and therefore cannot be modified.
 
-        ![Postponement Icon](/images/identitymanager/saas/user-guide/administrate/provisioning/provisioning-review/provmanual_iconpostpone_v522.svg)
+        ![Postponement Icon](/images/identitymanager/user-guide/administrate/provisioning/provisioning-review/provmanual_iconpostpone_v522.svg)
 
 7. Click on **Confirm Property Values**.
 8. Trigger provisioning by launching, on the appropriate connector's overview page, **Jobs** >
    **Generate Provisioning Orders**, then, after this first task is done, **Jobs** > **Fulfill**.
 
-    ![Resource Type Jobs](/images/identitymanager/saas/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+    ![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
 
 ### Use property view
 
 By default, non-conforming assignments are listed by resource. It is possible to click on a resource
 and then access the list of all unreconciled properties for said resource.
 
-![Resource View](/images/identitymanager/saas/user-guide/administrate/orphan-unused-account-review/orphan_resourceview_v523.webp)
+![Resource View](/images/identitymanager/user-guide/administrate/orphan-unused-account-review/orphan_resourceview_v523.webp)
 
 It can be helpful to have the non-conforming assignments regrouped by property, as some of the
 changes can be similar, so very likely to be validated by the same user. This is why a property view
@@ -161,7 +161,7 @@ Once enabled, select a resource type to display all unreconciled properties link
 type. In addition, select a property to display only the unreconciled properties linked to said
 resource type and property.
 
-![Property View](/images/identitymanager/saas/user-guide/administrate/orphan-unused-account-review/orphan_propertyview_v603.webp)
+![Property View](/images/identitymanager/user-guide/administrate/orphan-unused-account-review/orphan_propertyview_v603.webp)
 
 The review process is the same with both views. However with property view, reviewers don't click on
 a given line, but choose a decision directly on the left of the property line.
@@ -169,7 +169,7 @@ a given line, but choose a decision directly on the left of the property line.
 In addition, using property view enables bulk reconciliation to approve the proposed values or keep
 the current values for several resources simultaneously.
 
-![Bulk Reconcile](/images/identitymanager/saas/user-guide/administrate/orphan-unused-account-review/orphan_bulkreconcile_v603.webp)
+![Bulk Reconcile](/images/identitymanager/user-guide/administrate/orphan-unused-account-review/orphan_bulkreconcile_v603.webp)
 
 ## Verify Property Reconciliation
 

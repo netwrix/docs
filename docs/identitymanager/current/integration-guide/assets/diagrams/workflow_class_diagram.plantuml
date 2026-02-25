@@ -1,0 +1,43 @@
+@startuml component
+package "Workflow" {
+	class Workflow {
+		DisplayName_L1 : String
+		Identifier : String
+		IdentifierPrefix : String
+		--
+		Activities : Activity[]
+		ArgumentCalledWorkflowActivities : Activity[]
+		Instances : WorkflowInstance[]
+		VariablesType : EntityType
+		WorkflowMenuItems : MenuItem[]
+		WorkflowScaffoldings : Scaffolding[]
+	}
+}
+package "Activity" {
+	class Activity {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "MenuItem" {
+	class MenuItem {
+	}
+}
+package "Scaffolding" {
+	class Scaffolding {
+	}
+}
+Workflow "1" --  "0..*"Activity
+Workflow "0..1" --  "0..*"Activity
+Workflow "1" --  "0..*"WorkflowInstance
+Workflow "0..*" --  "1"EntityType
+Workflow "0..1" --  "0..*"MenuItem
+Workflow "0..1" --  "0..*"Scaffolding
+hide empty members
+@enduml

@@ -54,11 +54,11 @@ As roles and navigation properties are technically bonded together, their review
 > each role on the **Role Reconciliation** screen, and one item for all changes in the AD account on
 > the **Resource Reconciliation** screen:
 >
-> ![Example - Role Reconciliation](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_examplerole_v602.webp)
+> ![Example - Role Reconciliation](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_examplerole_v602.webp)
 >
-> ![Example - Resource Reconciliation](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_exampleresource_v602.webp)
+> ![Example - Resource Reconciliation](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_exampleresource_v602.webp)
 >
-> ![Example - Resource Reconciliation - Properties](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_exampleresourceprop_v602.webp)
+> ![Example - Resource Reconciliation - Properties](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/reviewrole_exampleresourceprop_v602.webp)
 
 ## Participants and Artifacts
 
@@ -77,22 +77,22 @@ Review a non-conforming permission by proceeding as follows:
    [Compute Role Model Task](/docs/identitymanager/6.2/integration-guide/toolkit/xml-configuration/jobs/tasks/server/computerolemodeltask/index.md)
    was launched recently, through the complete job on the **Job Execution** page
 
-    ![Home Page - Job Execution](/images/identitymanager/saas/user-guide/set-up/synchronization/home_jobexecution_v602.webp)
+    ![Home Page - Job Execution](/images/identitymanager/user-guide/set-up/synchronization/home_jobexecution_v602.webp)
 
     Or through the connector's overview page, **Jobs** > **Compute Role Model**.
 
-    ![Resource Type Jobs](/images/identitymanager/saas/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+    ![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
 
 2. On the home page, click on the entity type that you want to manage in the **Role Reconciliation**
    section, to get to the non-conforming permissions page.
 
-    ![Home Page - Role Reconciliation](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/home_rolereconciliation_v523.webp)
+    ![Home Page - Role Reconciliation](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/home_rolereconciliation_v523.webp)
 
-    ![Role Reconciliation Page](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/reviewrole_rolereconciliation_v603.webp)
+    ![Role Reconciliation Page](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/reviewrole_rolereconciliation_v603.webp)
 
     Each non-conforming permission can be commented by clicking on the corresponding icon.
 
-    ![Comment Icon](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_iconcomment_v522.svg)
+    ![Comment Icon](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_iconcomment_v522.svg)
 
 3. Choose one of the two possibilities to verify the permission:
 
@@ -101,27 +101,27 @@ Review a non-conforming permission by proceeding as follows:
 
     - Either click on the approval icon to keep the non-conforming permission.
 
-    ![Approval Icon](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/orphan_iconapprove_v602.svg)
+    ![Approval Icon](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/orphan_iconapprove_v602.svg)
 
     - Or click on the decline icon to delete the non-conforming permission.
 
-    ![Decline Icon](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/orphan_icondecline_v522.svg)
+    ![Decline Icon](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/orphan_icondecline_v522.svg)
 
 4. Trigger provisioning by launching, on the appropriate connector's overview page, **Jobs** >
    **Generate Provisioning Orders**, then, after this first task is done, **Jobs** > **Fulfill**.
    See the [Provision](/docs/identitymanager/6.2/user-guide/administrate/provisioning/index.md) topic for additional information.
 
-    ![Resource Type Jobs](/images/identitymanager/saas/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+    ![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
 
 ### Use bulk provisioning
 
 Several roles can be reconciled simultaneously by clicking on **Bulk Reconcile Roles**.
 
-![Bulk Reconcile Roles](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/reviewrole_rolereconciliationbulk_v603.webp)
+![Bulk Reconcile Roles](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/reviewrole_rolereconciliationbulk_v603.webp)
 
 ## Verify Role Reconciliation
 
 In order to verify the process, check that the changes you ordered appear on the corresponding
 user's **View Permissions** tab.
 
-![View Permissions Tab](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)
+![View Permissions Tab](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)

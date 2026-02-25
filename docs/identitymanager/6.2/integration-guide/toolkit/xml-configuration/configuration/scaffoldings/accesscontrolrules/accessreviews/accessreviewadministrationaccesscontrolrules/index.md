@@ -10,7 +10,7 @@ Scaffolding to generate the rights to administrate campaign creation.
 
 Gives access to a shortcut on the dashboard to access this page.
 
-![Access Certification Campaigns](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-scheduling/home_accesscertificationcampaigns_v602.webp)
+![Access Certification Campaigns](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-scheduling/home_accesscertificationcampaigns_v602.webp)
 
 ## Examples
 

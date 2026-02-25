@@ -19,13 +19,13 @@ entitlement assignments.
 > For example, a user can be represented by an identifier and linked to their position which
 > includes the user's employee id, last name and first name, email, user type, organization, etc.
 >
-> ![Identity Repository Example](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/identityrepository-example.webp)
+> ![Identity Repository Example](/images/identitymanager/user-guide/set-up/initial-identities-loading/identityrepository-example.webp)
 
 > In Identity Manager, the identity repository can look like the following:
 >
-> ![Identity Repository Result](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/identityrepository_v602.webp)
+> ![Identity Repository Result](/images/identitymanager/user-guide/set-up/initial-identities-loading/identityrepository_v602.webp)
 >
-> ![Identity Example](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/identityrepository-person_v602.webp)
+> ![Identity Example](/images/identitymanager/user-guide/set-up/initial-identities-loading/identityrepository-person_v602.webp)
 
 The identity repository can be created and updated by:
 

@@ -1,0 +1,58 @@
+@startuml component
+package "ActivityTemplateState" {
+	class ActivityTemplateState {
+		DisplayName_L1 : String
+		Identifier : String
+		Interactive : Boolean
+		ShortIdentifier : String
+		--
+		ActivityStateActivityInstances : ActivityInstance[]
+		ActivityStateForms : Form[]
+		ActivityStateRecipients : Recipient[]
+		ActivityTemplate : ActivityTemplate
+		CurrentStateWorkflowInstances : WorkflowInstance[]
+		FirstStateActivityTemplates : ActivityTemplate[]
+		FromStateActivityTemplateTransitions : ActivityTemplateTransition[]
+		PointCuts : PointCut[]
+		ToStateActivityTemplateTransitions : ActivityTemplateTransition[]
+	}
+}
+package "ActivityInstance" {
+	class ActivityInstance {
+	}
+}
+package "Form" {
+	class Form {
+	}
+}
+package "Recipient" {
+	class Recipient {
+	}
+}
+package "ActivityTemplate" {
+	class ActivityTemplate {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+package "ActivityTemplateTransition" {
+	class ActivityTemplateTransition {
+	}
+}
+package "PointCut" {
+	class PointCut {
+	}
+}
+ActivityTemplateState "1" --  "0..*"ActivityInstance
+ActivityTemplateState "0..1" --  "0..*"Form
+ActivityTemplateState "0..1" --  "0..*"Recipient
+ActivityTemplateState "0..*" --  "1"ActivityTemplate
+ActivityTemplateState "1" --  "0..*"WorkflowInstance
+ActivityTemplateState "0..1" --  "0..*"ActivityTemplate
+ActivityTemplateState "1" --  "0..*"ActivityTemplateTransition
+ActivityTemplateState "1" --  "0..*"PointCut
+ActivityTemplateState "1" --  "0..*"ActivityTemplateTransition
+hide empty members
+@enduml

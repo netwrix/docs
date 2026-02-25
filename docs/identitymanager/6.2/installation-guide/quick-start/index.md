@@ -27,7 +27,7 @@ The installation of Identity Manager requires:
 [portal](https://www.netwrix.com/sign_in.html?rf=my_products.html) and download the artifacts of the
 expected version.
 
-![Extranet Artifacts](/images/identitymanager/saas/installation-guide/quick-start/extranet_v601.webp)
+![Extranet Artifacts](/images/identitymanager/installation-guide/quick-start/extranet_v601.webp)
 
 **Step 2 –** Extract from SDK the folder Identity Manager Bootstrap anywhere on the computer.
 
@@ -35,7 +35,7 @@ expected version.
 
 When extracting Identity Manager Bootstrap to the root of the computer, it looks like:
 
-![Project Directory](/images/identitymanager/saas/installation-guide/quick-start/directory_v602.webp)
+![Project Directory](/images/identitymanager/installation-guide/quick-start/directory_v602.webp)
 
 **Step 4 –** Move or copy your certificate inside the Runtime folder.
 
@@ -87,7 +87,7 @@ In our example, the command would be, still in the Runtime folder:
 as a username and the password specified in the Runtime/appsettings.json file, in the Authentication
 section.
 
-![Authentication Dialog](/images/identitymanager/saas/installation-guide/quick-start/authentication_v601.webp)
+![Authentication Dialog](/images/identitymanager/installation-guide/quick-start/authentication_v601.webp)
 
 Now you can start using the application.
 
@@ -96,7 +96,7 @@ Now you can start using the application.
 From there, you can start setting up Identity Manager via the **Settings** page which is accessible
 from the **Configuration** section of the home page.
 
-![Home Page - Settings](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
+![Home Page - Settings](/images/identitymanager/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
 
 Then, Netwrix Identity Manager (formerly Usercube) recommends following the user guide to start the
 configuration of your IGA project from scratch. See the [User Guide](/docs/identitymanager/6.2/user-guide/index.md)

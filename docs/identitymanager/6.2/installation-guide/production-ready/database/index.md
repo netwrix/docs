@@ -49,7 +49,7 @@ and
 - Locate the database name dropdown, next to the **Execute** button in the top left section of the
   screen.
 
-![Execute Query](/images/identitymanager/saas/installation-guide/production-ready/database/execute_query.webp)
+![Execute Query](/images/identitymanager/installation-guide/production-ready/database/execute_query.webp)
 
 - From the dropdown, select the newly created database.
 - Click **Execute**.

@@ -54,8 +54,8 @@ export default function VersionSwitcher() {
     <div className={styles.versionSwitcherContainer}>
       <div className={styles.versionBadges}>
         {sortedVersions.map((version) => {
-          // Use customLink if provided, otherwise generate the link
-          const versionLink = version.customLink || `/${generateRouteBasePath(matchedProduct.path, version.version)}`;
+          // Use customLink or customRoutePath override if provided, otherwise generate the link
+          const versionLink = version.customLink || (version.customRoutePath ? `/${version.customRoutePath}` : `/${generateRouteBasePath(matchedProduct.path, version.version)}`);
           const isActive = currentVersion === version.version;
           const badgeClass = version.isLatest
             ? `${styles.versionBadge} ${styles.latestBadge}`
