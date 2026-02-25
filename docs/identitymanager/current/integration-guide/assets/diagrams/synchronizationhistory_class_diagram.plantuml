@@ -1,0 +1,23 @@
+@startuml component
+package "SynchronizationHistory" {
+	class SynchronizationHistory {
+		ExecutionDate : DateTime
+		HistorizationDate : DateTime
+		State : Byte
+		--
+		Connector : Connector
+		TaskInstance : TaskInstance
+	}
+}
+package "Connector" {
+	class Connector {
+	}
+}
+package "TaskInstance" {
+	class TaskInstance {
+	}
+}
+SynchronizationHistory "0..*" --  "1"Connector
+SynchronizationHistory "0..*" --  "1"TaskInstance
+hide empty members
+@enduml

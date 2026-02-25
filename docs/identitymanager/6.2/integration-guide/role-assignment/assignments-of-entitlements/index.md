@@ -81,7 +81,7 @@ only about the assignments that need provisioning.
 For example, roles exist only in Identity Manager and not in the managed systems, so assigned roles
 do not have a provisioning state, unlike assigned resource types, scalars and navigation, etc.
 
-![Provisioning State Schema](/images/identitymanager/saas/user-guide/administrate/provisioning/prov_stateschema_v523.webp)
+![Provisioning State Schema](/images/identitymanager/user-guide/administrate/provisioning/prov_stateschema_v523.webp)
 
 The schema sums up the usual progress of an assignment's provisioning state.
 
@@ -117,7 +117,7 @@ entitlements found in the systems.
 A simple comparison between these two lists defines the non-conforming assignments, i.e. the list of
 all assignments that do not comply with the policy.
 
-![Non-Conforming Assignments](/images/identitymanager/saas/integration-guide/role-assignment/assignments-of-entitlements/governance_nonconforming.webp)
+![Non-Conforming Assignments](/images/identitymanager/integration-guide/role-assignment/assignments-of-entitlements/governance_nonconforming.webp)
 
 A non-conforming assignment must be reviewed in Identity Manager by a knowledgeable user, and is
 therefore:

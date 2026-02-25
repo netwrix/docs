@@ -1,0 +1,19 @@
+@startuml component
+package "EntityPropertyMapping" {
+	class EntityPropertyMapping {
+		ConnectionColumn : String
+		Format : String
+		IsPrimaryKey : Boolean
+		IsUniqueKey : Boolean
+		UniqueKeyOrder : Int32
+		--
+		EntityTypeMapping : EntityTypeMapping
+	}
+}
+package "EntityTypeMapping" {
+	class EntityTypeMapping {
+	}
+}
+EntityPropertyMapping "0..*" --  "1"EntityTypeMapping
+hide empty members
+@enduml

@@ -1,0 +1,18 @@
+@startuml component
+package "IndicatorItem" {
+	class IndicatorItem {
+		Color : String
+		DisplayName_L1 : String
+		Priority : Int32
+		Value : String
+		--
+		Indicator : Indicator
+	}
+}
+package "Indicator" {
+	class Indicator {
+	}
+}
+IndicatorItem "0..*" --  "0..1"Indicator
+hide empty members
+@enduml

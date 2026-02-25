@@ -1,0 +1,38 @@
+---
+title: "RunJobAdministrationAccessControlRules"
+description: "Generates the permissions to launch jobs from UI for a given profile."
+sidebar_position: 8
+---
+
+Generates the rights to launch from UI jobs that are in state blocked after a Provisioning or a synchronization for a given profile.
+
+
+## Examples
+
+
+```xml
+    <RunJobAdministrationAccessControlRules Profile="Administrator"/>
+```
+
+
+## Properties
+
+|Property|Details|
+|---|---|
+| Profile required | **Type:** String **Description:** Identifier of the profile involved in the scaffolding. |
+
+
+
+## Generated XML
+
+Our example generates the following configuration:
+
+```xml
+<AccessControlRule Identifier="Administrator_JobInstance_RunJobLaunch" DisplayName_L1="Administrator - Management for JobInstance" DisplayName_L2="Administrator - Gestion des JobInstance" EntityType="JobInstance" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Jobs/JobInstance/Create" />
+</AccessControlRule>
+<AccessControlRule Identifier="Administrator_Job_RunJobLaunch" DisplayName_L1="Administrator - Management for Task" DisplayName_L2="Administrator - Gestion des Task" EntityType="Task" Profile="Administrator">
+  <Entry CanExecute="true" Permission="/Jobs/RunJob/Launch" />
+</AccessControlRule>
+
+```

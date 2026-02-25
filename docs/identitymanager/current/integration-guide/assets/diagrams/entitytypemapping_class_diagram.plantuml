@@ -1,0 +1,29 @@
+@startuml component
+package "EntityTypeMapping" {
+	class EntityTypeMapping {
+		C0 : String
+		ConnectionTable : String
+		MaxPercentageDeletedLines : Int32
+		MaxPercentageInsertedLines : Int32
+		MaxPercentageUpdatedLines : Int32
+		MaximumDeletedLines : Int32
+		MaximumInsertedLines : Int32
+		MaximumUpdatedLines : Int32
+		ResourceCount : Int32
+		--
+		Connector : Connector
+		Properties : EntityPropertyMapping[]
+	}
+}
+package "Connector" {
+	class Connector {
+	}
+}
+package "EntityPropertyMapping" {
+	class EntityPropertyMapping {
+	}
+}
+EntityTypeMapping "0..*" --  "0..1"Connector
+EntityTypeMapping "1" --  "0..*"EntityPropertyMapping
+hide empty members
+@enduml

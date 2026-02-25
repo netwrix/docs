@@ -1,0 +1,33 @@
+@startuml component
+package "Notification" {
+	class Notification {
+		CssTemplate : String
+		Identifier : String
+		QueryFilterExpression : String
+		RazorTemplate : String
+		ReminderInterval : Int32
+		TitleExpression : String
+		Type : Byte
+		--
+		NotificationNotificationInstances : NotificationInstance[]
+		OwnerEntityType : EntityType
+		RecipientMailBinding : Binding
+	}
+}
+package "NotificationInstance" {
+	class NotificationInstance {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+Notification "1" --  "0..*"NotificationInstance
+Notification "0..*" --  "1"EntityType
+Notification "0..*" --  "0..1"Binding
+hide empty members
+@enduml

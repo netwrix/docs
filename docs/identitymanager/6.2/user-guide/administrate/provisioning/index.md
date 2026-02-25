@@ -100,19 +100,19 @@ In order to perform the provisioning you have to:
 
 In order to verify the process:
 
-![Home Page - Directory User](/images/identitymanager/saas/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
+![Home Page - Directory User](/images/identitymanager/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
 
 **Step 1 –** Select a test user in the directory, accessible from the home page.
 
 **Step 2 –** Follow the manual assignment workflow to make a change in one of their entitlements,
 which involves the type of provisioning that you want to test.
 
-![View Permissions Tab](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)
+![View Permissions Tab](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)
 
 **Step 3 –** Check the provisioning state of the requested entitlement at every step, in the user's
 **View Permissions** tab.
 
-![Provisioning State Schema](/images/identitymanager/saas/user-guide/administrate/provisioning/prov_stateschema_v523.webp)
+![Provisioning State Schema](/images/identitymanager/user-guide/administrate/provisioning/prov_stateschema_v523.webp)
 
 Whether your provisioning workflows trigger provisioning review, or whether they trigger manual or
 automated provisioning, below is the global state schema.

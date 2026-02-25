@@ -1,0 +1,84 @@
+@startuml component
+package "CompositeRole" {
+	class CompositeRole {
+		ApprovalWorkflowType : Int32
+		BaseRole : Int64
+		CommentActivationOnApproveInReview : Byte
+		CommentActivationOnDeclineInReview : Byte
+		CommentActivationOnDeleteGapInReconciliation : Byte
+		CommentActivationOnKeepGapInReconciliation : Byte
+		CommentActivationOnRequest : Byte
+		Description_L1 : String
+		DisplayName_L1 : String
+		FullName_L1 : String
+		GracePeriod : Int32
+		HideOnSimplifiedView : Boolean
+		Identifier : String
+		ImplicitApproval : Byte
+		ManualAssignmentEndDateLockedToContextMode : Byte
+		MaxDuration : Int32
+		P0 : Boolean
+		ProlongationWithoutApproval : Byte
+		R0 : Boolean
+		Tags : String
+		--
+		AssignedCompositeRoles : AssignedCompositeRole[]
+		AutomationRules : AutomationRule[]
+		Category : Category
+		CompositeRoleCompositeRolesCategories : CompositeRolesCategory[]
+		CompositeRoleParentRules : CompositeRoleRule[]
+		CompositeRoleRules : CompositeRoleRule[]
+		EntityType : EntityType
+		Policy : Policy
+		ProfileContexts : ProfileContext[]
+		SingleRoleRules : SingleRoleRule[]
+	}
+}
+package "AssignedCompositeRole" {
+	class AssignedCompositeRole {
+	}
+}
+package "AutomationRule" {
+	class AutomationRule {
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "CompositeRolesCategory" {
+	class CompositeRolesCategory {
+	}
+}
+package "CompositeRoleRule" {
+	class CompositeRoleRule {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "ProfileContext" {
+	class ProfileContext {
+	}
+}
+package "SingleRoleRule" {
+	class SingleRoleRule {
+	}
+}
+CompositeRole "1" --  "0..*"AssignedCompositeRole
+CompositeRole "0..1" --  "0..*"AutomationRule
+CompositeRole "0..*" --  "0..1"Category
+CompositeRole "1" --  "0..*"CompositeRolesCategory
+CompositeRole "0..1" --  "0..*"CompositeRoleRule
+CompositeRole "1" --  "0..*"CompositeRoleRule
+CompositeRole "0..*" --  "1"EntityType
+CompositeRole "0..*" --  "1"Policy
+CompositeRole "0..1" --  "0..*"ProfileContext
+CompositeRole "0..1" --  "0..*"SingleRoleRule
+hide empty members
+@enduml
