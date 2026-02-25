@@ -1,0 +1,20 @@
+@startuml component
+package "ActivityInstanceCC" {
+	class ActivityInstanceCC {
+		--
+		ActivityInstance : ActivityInstance
+		Resource : Resource
+	}
+}
+package "ActivityInstance" {
+	class ActivityInstance {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+ActivityInstanceCC "0..*" --  "1"ActivityInstance
+ActivityInstanceCC "0..*" --  "1"Resource
+hide empty members
+@enduml

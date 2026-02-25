@@ -1,0 +1,38 @@
+@startuml component
+package "RecordSection" {
+	class RecordSection {
+		BoundaryKind : Int32
+		DisplayName_L1 : String
+		ExtendedSortKey : String
+		ExtensionKind : Int32
+		Identifier : String
+		InstanceKeyExpression : String
+		IsDefaultBoundariesSection : Boolean
+		SortKeyExpression : String
+		--
+		EndProperty : EntityProperty
+		ResourceEntityType : EntityType
+		SectionRecordProperties : RecordProperty[]
+		SourceEntityType : EntityType
+		StartProperty : EntityProperty
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "RecordProperty" {
+	class RecordProperty {
+	}
+}
+RecordSection "0..*" --  "0..1"EntityProperty
+RecordSection "0..*" --  "1"EntityType
+RecordSection "1" --  "0..*"RecordProperty
+RecordSection "0..*" --  "1"EntityType
+RecordSection "0..*" --  "0..1"EntityProperty
+hide empty members
+@enduml

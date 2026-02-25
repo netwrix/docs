@@ -19,7 +19,7 @@ they can help organize the role catalog. See the
 [Composite Role](/docs/identitymanager/6.2/integration-guide/toolkit/xml-configuration/provisioning/compositerole/index.md)
 topic for additional information.
 
-![Schema](/images/identitymanager/saas/user-guide/optimize/composite-role-creation/compositeroles_applicativeroles.webp)
+![Schema](/images/identitymanager/user-guide/optimize/composite-role-creation/compositeroles_applicativeroles.webp)
 
 A composite role is a business role comprehensible by managers. It provides an additional layer of
 abstraction above existing entitlements and single roles. We can say that if a single role allows a
@@ -38,7 +38,7 @@ composite roles. Here, we clearly have one role for R&D-developer, one for R&D-w
 Project-contractor and Project-project manager. Thus, it is clear here that composite roles add an
 abstraction layer.
 
-![Example](/images/identitymanager/saas/user-guide/optimize/composite-role-creation/compositeroles_schema.webp)
+![Example](/images/identitymanager/user-guide/optimize/composite-role-creation/compositeroles_schema.webp)
 
 Single role rules link composite roles to single roles: a single role rule states that specific
 single roles are assigned according to specific criteria, particularly composite roles. See the
@@ -66,14 +66,14 @@ Create a composite role by proceeding as follows:
 **Step 1 –** On the home page in the **Configuration** section, click on **Access Roles** to access
 the roles page.
 
-![Home Page - Access Roles](/images/identitymanager/saas/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
+![Home Page - Access Roles](/images/identitymanager/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
 
 **Step 2 –** On the roles page, click on the adequate category and create a role by clicking on **+
 New** at the top right corner.
 
 **Step 3 –** Fill in the fields.
 
-![singlerolescatalog_createcompositerole_v62](/images/identitymanager/saas/user-guide/optimize/composite-role-creation/singlerolescatalog_createcompositerole_v62.webp)
+![singlerolescatalog_createcompositerole_v62](/images/identitymanager/user-guide/optimize/composite-role-creation/singlerolescatalog_createcompositerole_v62.webp)
 
 - **Identifier**: must be unique among roles and without any whitespace.
 - **Name**: will be displayed in the UI to identify the single role.
@@ -124,12 +124,12 @@ In order to verify the process, check that the role and rule are created with th
 
 For roles, click on **Access Roles** on the home page in the **Configuration** section.
 
-![Home Page - Access Roles](/images/identitymanager/saas/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
+![Home Page - Access Roles](/images/identitymanager/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
 
 Select composite roles and find the role you created inside the right category and with the right
 parameters.
 
-![Access Composite Roles](/images/identitymanager/saas/user-guide/optimize/composite-role-creation/compositeroles_testroles_v602.webp)
+![Access Composite Roles](/images/identitymanager/user-guide/optimize/composite-role-creation/compositeroles_testroles_v602.webp)
 
 For rules, follow the instructions about assignment rules. See the
 [Automate Role Assignments](/docs/identitymanager/6.2/user-guide/optimize/assignment-automation/automate-role-assignment/index.md)

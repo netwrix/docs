@@ -22,7 +22,7 @@ Knowing that we have the following properties:
 
 ```
 
-![Display Property Group - Example](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/displaypropertygroup/displaypropertygroup_example_v603.webp)
+![Display Property Group - Example](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/displaypropertygroup/displaypropertygroup_example_v603.webp)
 
 Any property without a value is not displayed.
 

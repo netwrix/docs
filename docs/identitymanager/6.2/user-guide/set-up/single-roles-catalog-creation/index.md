@@ -23,7 +23,7 @@ The aim here is to establish and create the exhaustive list of
 a way to represent entitlements which are assigned to identities, so that said identities are able
 to work with the managed systems.
 
-![Schema - Single Role](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemarole.webp)
+![Schema - Single Role](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemarole.webp)
 
 In other words, establishing the role catalog aims to list exhaustively and explicitly all the roles
 in the organization, hiding the technical complexity of entitlements behind the business vision of
@@ -69,7 +69,7 @@ Identity Manager's roles are all built the same way. Technically speaking:
 
 - a role is created with a given approval workflow according to the entitlement's sensitivity;
 
-    ![Schema - Approval Workflow](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemaapprovals.webp)
+    ![Schema - Approval Workflow](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemaapprovals.webp)
 
     > We choose to require one manual validation from a knowledgeable user before the Internet role
     > is assigned to a user.
@@ -80,7 +80,7 @@ Identity Manager's roles are all built the same way. Technically speaking:
   type. See the [Categorize Resources](/docs/identitymanager/6.2/user-guide/set-up/categorization/index.md) topic for additional
   information.
 
-    ![Schema - Single Role with Navigation Rule](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemarolerule.webp)
+    ![Schema - Single Role with Navigation Rule](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemarolerule.webp)
 
     > We link the role to the entitlement named `SG_APP_DL-INTERNET-ALL` in the AD, via a navigation
     > rule that assigns this entitlement to the `memberOf` property of AD nominative accounts, for
@@ -89,7 +89,7 @@ Identity Manager's roles are all built the same way. Technically speaking:
     This part is about single roles, dealing with entitlements one-to-one. The idea is to associate
     one single role with one fine-grained entitlement.
 
-    ![Schema - Roles and Identities](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemarolesidentities.webp)
+    ![Schema - Roles and Identities](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemarolesidentities.webp)
 
     > For example, an accountant needs read access to the accounting software, a project manager to
     > their billable hours for their projects on SAP, etc.
@@ -123,7 +123,7 @@ one role per entitlement in said application, and one category for the applicati
 > The SAP application is about entitlements only for itself. Then, we create a single role per
 > entitlement in SAP inside a category called `SAP`:
 >
-> ![Roles Example](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_strategymono_v602.webp)
+> ![Roles Example](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_strategymono_v602.webp)
 
 One system hosting several applications with existing naming conventions
 
@@ -133,7 +133,7 @@ becomes more complicated.
 > For example, the Active Directory usually hosts many groups used to manage entitlements in several
 > distinct applications.
 >
-> ![AD Groups](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_strategymulti_v522.webp)
+> ![AD Groups](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_strategymulti_v522.webp)
 
 The goal here is to find a way to clarify the link between each entitlement and the corresponding
 application.
@@ -160,7 +160,7 @@ filling an empty field.
 > For example in the Active Directory, integrators can modify the field called `description` to
 > specify the application name (such as Outlook in this example).
 >
-> ![Appropriated Field](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_strategymultinoname_v522.webp)
+> ![Appropriated Field](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_strategymultinoname_v522.webp)
 
 Thus, the needed information is added to the managed system. After the execution of synchronization,
 said data is accessible inside Identity Manager database and can be used as a naming convention.
@@ -176,7 +176,7 @@ to the technical aspects (navigation rule and technical entitlement). Most proje
 single roles, which makes role creation a long, tedious and repetitive process. See the
 [Create a Role Manually](/docs/identitymanager/6.2/user-guide/set-up/single-roles-catalog-creation/role-manual-creation/index.md) topic for additional information.
 
-![Schema - Role Creation Top-Down](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schematopdown.webp)
+![Schema - Role Creation Top-Down](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schematopdown.webp)
 
 Roles can also be created bottom-up via role naming rules. Instead of the previous process, you can
 use the name of said entitlement in your managed system to create automatically the corresponding
@@ -184,7 +184,7 @@ single role and rule (and category if it does not already exist). In other words
 naming rules are to be based on your existing naming conventions for entitlements. See the
 [Create Roles in Bulk](/docs/identitymanager/6.2/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/index.md) topic for additional information.
 
-![Schema - Role Creation Top-Down](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemabottomup.webp)
+![Schema - Role Creation Top-Down](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemabottomup.webp)
 
 One naming rule can generate many roles, so a few automatic rules can easily and faster create the
 single role catalog. Naming rules prove particularly useful when you need to add multiple new

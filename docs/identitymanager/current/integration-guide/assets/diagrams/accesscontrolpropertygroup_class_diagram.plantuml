@@ -1,0 +1,22 @@
+@startuml component
+package "AccessControlPropertyGroup" {
+	class AccessControlPropertyGroup {
+		DisplayName_L1 : String
+		Identifier : String
+		--
+		PropertyGroupAccessControlEntries : AccessControlEntry[]
+		VisibilityGroupAccessControlEntityProperties : AccessControlEntityProperty[]
+	}
+}
+package "AccessControlEntry" {
+	class AccessControlEntry {
+	}
+}
+package "AccessControlEntityProperty" {
+	class AccessControlEntityProperty {
+	}
+}
+AccessControlPropertyGroup "0..1" --  "0..*"AccessControlEntry
+AccessControlPropertyGroup "0..1" --  "0..*"AccessControlEntityProperty
+hide empty members
+@enduml

@@ -100,7 +100,7 @@ To enable the OAuth authentication do the following:
 
 **Step 2 –** Go to **Advanced Setup**.
 
-![oauthauthentication](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/oauthauthentication.webp)
+![oauthauthentication](/images/identitymanager/integration-guide/connectors/references-connectors/scim/oauthauthentication.webp)
 
 **Step 3 –** Go to **OAuth** and **OpenID Connect Settings** in the **Identity** drop-down menu,
 enable the option to **Allow OAuth Username-Password Flows**.

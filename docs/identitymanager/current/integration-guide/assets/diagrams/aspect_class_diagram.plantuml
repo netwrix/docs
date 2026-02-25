@@ -1,0 +1,41 @@
+@startuml component
+package "Aspect" {
+	class Aspect {
+		Identifier : String
+		IfExpression : String
+		P0 : String
+		Priority : Int32
+		Type : Int32
+		--
+		AspectRecipients : Recipient[]
+		AspectUnicityCheckRules : UnicityCheckRule[]
+		Binding : Binding
+		ExpressionBinding : Binding
+		HistorizeBinding : Binding
+		PointCuts : PointCut[]
+	}
+}
+package "Recipient" {
+	class Recipient {
+	}
+}
+package "UnicityCheckRule" {
+	class UnicityCheckRule {
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "PointCut" {
+	class PointCut {
+	}
+}
+Aspect "1" --  "0..*"Recipient
+Aspect "1" --  "0..*"UnicityCheckRule
+Aspect "0..*" --  "0..1"Binding
+Aspect "0..*" --  "0..1"Binding
+Aspect "0..*" --  "0..1"Binding
+Aspect "1" --  "0..*"PointCut
+hide empty members
+@enduml

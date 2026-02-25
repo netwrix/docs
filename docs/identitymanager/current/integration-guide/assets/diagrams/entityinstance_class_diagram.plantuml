@@ -1,0 +1,48 @@
+@startuml component
+package "EntityInstance" {
+	class EntityInstance {
+		DisplayName_L1 : String
+		FilterValue : String
+		Identifier : String
+		IsHidden : Boolean
+		--
+		Associations1 : AssociationInstance[]
+		Associations2 : AssociationInstance[]
+		EntityType : EntityType
+		FilterEntityProperty : EntityProperty
+		FilterEntityType : EntityType
+		FilterProperty : EntityProperty
+		FilterResourceType : ResourceType
+		Universe : Universe
+	}
+}
+package "AssociationInstance" {
+	class AssociationInstance {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "Universe" {
+	class Universe {
+	}
+}
+EntityInstance "1" --  "0..*"AssociationInstance
+EntityInstance "1" --  "0..*"AssociationInstance
+EntityInstance "0..*" --  "1"EntityType
+EntityInstance "0..*" --  "0..1"EntityProperty
+EntityInstance "0..*" --  "0..1"EntityType
+EntityInstance "0..*" --  "0..1"EntityProperty
+EntityInstance "0..*" --  "0..1"ResourceType
+EntityInstance "0..*" --  "1"Universe
+hide empty members
+@enduml

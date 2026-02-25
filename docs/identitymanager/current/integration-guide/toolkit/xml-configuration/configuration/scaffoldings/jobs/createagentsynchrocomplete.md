@@ -1,0 +1,275 @@
+---
+title: "CreateAgentSynchroComplete"
+description: "Creates for the given agent the synchronization job of all connectors present in the agent in Complete mode."
+sidebar_position: 3
+---
+
+This Scaffolding generates a synchronization job (in complete mode) for all connectors.
+
+The tasks created in the Scaffoldings are sorted by level. The levels are visible via the tools: Usercube-Get-JobSteps.exe
+
+
+## Examples
+
+
+```xml
+  <CreateAgentSynchroComplete DisplayName_L1="94: Complete Job" JobIdentifier="Job_Daily"/>
+```
+
+
+## Properties
+
+|Property|Details|
+|---|---|
+| Agent optional | **Type:** String **Description:** For job scaffoldings, identifier of the agent on which the job to be generated will be launched. |
+| DisplayName_L1 optional | **Type:** String **Description:** Display name of the scaffolding in language 1 (up to 16). |
+| JobIdentifier optional | **Type:** String **Description:** For job scaffoldings, identifier of the job to be generated. If not defined, the job identifier is calculated. |
+| OldAlgorithm optional | **Type:** Boolean **Description:** Internal use. |
+
+
+
+## Child Elements
+* [AddTask](#addtask) (optional) Add a task before or after another in the job
+* [CronTabExpression](#crontabexpression) (optional) Schedule the job
+* [DoNotCreateJob](#donotcreatejob) (optional) Create only the tasks without the job
+* [FulfillInternalWorkflowsPath](#fulfillinternalworkflowspath) (optional) Add the path of the json configuration for a connector with IsWorkflowProvisioning set to true
+* [LinkDependTask](#linkdependtask) (optional) Link a child Task with a parent to not launch the child if the parent has finish with state warning
+* [OpenIdIdentifier](#openididentifier) (optional) Add a Open Id to the job and the tasks
+
+### AddTask
+
+
+|Property|Details|
+|---|---|
+| Task required | **Type:** String **Description:** Identifier of the task to add |
+| TaskToCompareWith required | **Type:** String **Description:** The identifier of the task before or after which the new task will be inserted |
+| After <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** For the Argument AddTask the property after define the place of the task to add with the TaskCompareWith. |
+| Before <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** For the Argument AddTask the property before define the place of the task to add with the TaskCompareWith. |
+| CopyOccurence <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** For Argument AddTask, Specify the Occurence to copy and add the Task in a specify Job. |
+| Occurence <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Occurence of the TaskToCompare after or before which the task will be added |
+
+
+
+### CronTabExpression
+
+
+|Property|Details|
+|---|---|
+| CronTab required | **Type:** String **Description:** Represents the argument value. |
+| CronTimeZone optional | **Type:** CronTimeZone **Description:** For Argument AddTask, Occurence of the TaskToCompare after or before which the task will be added. |
+
+
+
+### DoNotCreateJob
+
+
+### FulfillInternalWorkflowsPath
+
+
+|Property|Details|
+|---|---|
+| ConnectorIdentifier required | **Type:** String **Description:** Identifier of the connector involved in the following arguments: `NoConnectorSynchronization`; `NoConnectorProvisioning`; `NotUsed`; `FulfillInternalWorkflowsPath`; `PrincipalDataConnector`. |
+| Path required | **Type:** String **Description:** Represents the argument value. |
+
+
+
+### LinkDependTask
+
+
+|Property|Details|
+|---|---|
+| DependOn required | **Type:** String **Description:** identifier of parent Task |
+| Task required | **Type:** String **Description:** Identifier of child Task |
+| ChildOccurence <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** search the occurence x to link with the parent. |
+| ParentOccurence <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Occurence of the parentTask which the task will be linked |
+
+
+
+### OpenIdIdentifier
+
+
+|Property|Details|
+|---|---|
+| Identifier required | **Type:** String **Description:** Identifier of the OpenId |
+
+
+
+
+## Generated XML
+
+Our example generates the following configuration:
+
+```xml
+<Job Identifier="Job_Daily" DisplayName_L1="94: Complete Job" DisplayName_L2="94: Job quotidien" Agent="Local">
+  <ExportTask Identifier="Job_Daily_Export_AD_Complete_ADExportFulfillment" DisplayName_L1="AD - Extract Changes" DisplayName_L2="AD - Extraction des modifications" Agent="Local" Connector="AD" Level="0" OpenIdClient="Job" Connection="ADExportFulfillment" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_MicrosoftEntraID_Complete_MicrosoftEntraIDExportFulfillment" DisplayName_L1="Microsoft Entra ID - Extract Changes" DisplayName_L2="Microsoft Entra ID - Extraction des modifications" Agent="Local" Connector="MicrosoftEntraID" Level="0" OpenIdClient="Job" Connection="MicrosoftEntraIDExportFulfillment" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_HR_Complete_HRCountries" DisplayName_L1="HR - Extract Changes" DisplayName_L2="HR - Extraction des modifications" Agent="Local" Connector="HR" Level="0" OpenIdClient="Job" Connection="HRCountries" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_HR_Complete_HREmployeetypes" DisplayName_L1="HR - Extract Changes" DisplayName_L2="HR - Extraction des modifications" Agent="Local" Connector="HR" Level="0" OpenIdClient="Job" Connection="HREmployeetypes" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_HR_Complete_HRExternalCompanies" DisplayName_L1="HR - Extract Changes" DisplayName_L2="HR - Extraction des modifications" Agent="Local" Connector="HR" Level="0" OpenIdClient="Job" Connection="HRExternalCompanies" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_HR_Complete_HRLocations" DisplayName_L1="HR - Extract Changes" DisplayName_L2="HR - Extraction des modifications" Agent="Local" Connector="HR" Level="0" OpenIdClient="Job" Connection="HRLocations" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_HR_Complete_HROrganizations" DisplayName_L1="HR - Extract Changes" DisplayName_L2="HR - Extraction des modifications" Agent="Local" Connector="HR" Level="0" OpenIdClient="Job" Connection="HROrganizations" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_HR_Complete_HRPeople" DisplayName_L1="HR - Extract Changes" DisplayName_L2="HR - Extraction des modifications" Agent="Local" Connector="HR" Level="0" OpenIdClient="Job" Connection="HRPeople" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_HR_Complete_HRStates" DisplayName_L1="HR - Extract Changes" DisplayName_L2="HR - Extraction des modifications" Agent="Local" Connector="HR" Level="0" OpenIdClient="Job" Connection="HRStates" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_HR_Complete_HRTitles" DisplayName_L1="HR - Extract Changes" DisplayName_L2="HR - Extraction des modifications" Agent="Local" Connector="HR" Level="0" OpenIdClient="Job" Connection="HRTitles" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_LDAP_Complete_LDAPExportFulfillment" DisplayName_L1="LDAP - Extract Changes" DisplayName_L2="LDAP - Extraction des modifications" Agent="Local" Connector="LDAP" Level="0" OpenIdClient="Job" Connection="LDAPExportFulfillment" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_SAB_Complete_SABGroups" DisplayName_L1="SAB - Extract Changes" DisplayName_L2="SAB - Extraction des modifications" Agent="Local" Connector="SAB" Level="0" OpenIdClient="Job" Connection="SABGroups" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_SAB_Complete_SABUsers" DisplayName_L1="SAB - Extract Changes" DisplayName_L2="SAB - Extraction des modifications" Agent="Local" Connector="SAB" Level="0" OpenIdClient="Job" Connection="SABUsers" ContinueOnError="true" IgnoreCookieFile="true" />
+  <ExportTask Identifier="Job_Daily_Export_SAB_Complete_SABUsersGroups" DisplayName_L1="SAB - Extract Changes" DisplayName_L2="SAB - Extraction des modifications" Agent="Local" Connector="SAB" Level="0" OpenIdClient="Job" Connection="SABUsersGroups" ContinueOnError="true" IgnoreCookieFile="true" />
+  <PrepareSynchronizationTask Identifier="Job_Daily_PrepareSynchronizationActiveDirectory_AD_Complete" DisplayName_L1="AD - Synchronization (agent side)" DisplayName_L2="AD - Synchronisation (côté agent)" Agent="Local" Connector="AD" Level="1" OpenIdClient="Job" SynchronizationMode="Complete" Type="ActiveDirectory">
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_AD_Complete_ADExportFulfillment" />
+  </PrepareSynchronizationTask>
+  <PrepareSynchronizationTask Identifier="Job_Daily_PrepareSynchronization_MicrosoftEntraID_Complete" DisplayName_L1="Microsoft Entra ID - Synchronization (agent side)" DisplayName_L2="Microsoft Entra ID - Synchronisation (côté agent)" Agent="Local" Connector="MicrosoftEntraID" Level="1" OpenIdClient="Job" SynchronizationMode="Complete">
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_MicrosoftEntraID_Complete_MicrosoftEntraIDExportFulfillment" />
+  </PrepareSynchronizationTask>
+  <PrepareSynchronizationTask Identifier="Job_Daily_PrepareSynchronization_HR_Complete" DisplayName_L1="HR - Synchronization (agent side)" DisplayName_L2="HR - Synchronisation (côté agent)" Agent="Local" Connector="HR" Level="1" OpenIdClient="Job" SynchronizationMode="Complete">
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_HR_Complete_HRCountries" />
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_HR_Complete_HREmployeetypes" />
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_HR_Complete_HRExternalCompanies" />
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_HR_Complete_HRLocations" />
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_HR_Complete_HROrganizations" />
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_HR_Complete_HRPeople" />
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_HR_Complete_HRStates" />
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_HR_Complete_HRTitles" />
+  </PrepareSynchronizationTask>
+  <PrepareSynchronizationTask Identifier="Job_Daily_PrepareSynchronization_LDAP_Complete" DisplayName_L1="LDAP - Synchronization (agent side)" DisplayName_L2="LDAP - Synchronisation (côté agent)" Agent="Local" Connector="LDAP" Level="1" OpenIdClient="Job" SynchronizationMode="Complete">
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_LDAP_Complete_LDAPExportFulfillment" />
+  </PrepareSynchronizationTask>
+  <PrepareSynchronizationTask Identifier="Job_Daily_PrepareSynchronization_SAB_Complete" DisplayName_L1="SAB - Synchronization (agent side)" DisplayName_L2="SAB - Synchronisation (côté agent)" Agent="Local" Connector="SAB" Level="1" OpenIdClient="Job" SynchronizationMode="Complete">
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_SAB_Complete_SABGroups" />
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_SAB_Complete_SABUsers" />
+    <TaskDependsOnTask ParentTask="Job_Daily_Export_SAB_Complete_SABUsersGroups" />
+  </PrepareSynchronizationTask>
+  <SynchronizeTask Identifier="Job_Daily_SynchronizeActiveDirectory_AD" DisplayName_L1="AD - Synchronization (server side)" DisplayName_L2="AD - Synchronisation (côté serveur)" Connector="AD" Level="2" Type="ActiveDirectory">
+    <TaskDependsOnTask ParentTask="Job_Daily_PrepareSynchronizationActiveDirectory_AD_Complete" />
+  </SynchronizeTask>
+  <SynchronizeTask Identifier="Job_Daily_Synchronize_MicrosoftEntraID" DisplayName_L1="Microsoft Entra ID - Synchronization (server side)" DisplayName_L2="Microsoft Entra ID - Synchronisation (côté serveur)" Connector="MicrosoftEntraID" Level="2">
+    <TaskDependsOnTask ParentTask="Job_Daily_PrepareSynchronization_MicrosoftEntraID_Complete" />
+  </SynchronizeTask>
+  <SynchronizeTask Identifier="Job_Daily_Synchronize_HR" DisplayName_L1="HR - Synchronization (server side)" DisplayName_L2="HR - Synchronisation (côté serveur)" Connector="HR" Level="2">
+    <TaskDependsOnTask ParentTask="Job_Daily_PrepareSynchronization_HR_Complete" />
+  </SynchronizeTask>
+  <SynchronizeTask Identifier="Job_Daily_Synchronize_LDAP" DisplayName_L1="LDAP - Synchronization (server side)" DisplayName_L2="LDAP - Synchronisation (côté serveur)" Connector="LDAP" Level="2">
+    <TaskDependsOnTask ParentTask="Job_Daily_PrepareSynchronization_LDAP_Complete" />
+  </SynchronizeTask>
+  <SynchronizeTask Identifier="Job_Daily_Synchronize_SAB" DisplayName_L1="SAB - Synchronization (server side)" DisplayName_L2="SAB - Synchronisation (côté serveur)" Connector="SAB" Level="2">
+    <TaskDependsOnTask ParentTask="Job_Daily_PrepareSynchronization_SAB_Complete" />
+  </SynchronizeTask>
+  <UpdateEntityPropertyExpressionsTask Identifier="Job_Daily_UpdateEntityPropertyExpressions1" DisplayName_L1="Update Computed Properties" DisplayName_L2="Mise à jour des propriétés calculées" Level="3">
+    <TaskEntityType EntityType="AD_Category" />
+    <TaskEntityType EntityType="AD_Entry" />
+    <TaskEntityType EntityType="Access_AccessAuthorization" />
+    <TaskEntityType EntityType="Access_Area" />
+    <TaskEntityType EntityType="Access_Badge" />
+    <TaskEntityType EntityType="Access_TimeSlot" />
+    <TaskEntityType EntityType="SharePoint_Role" />
+    <TaskEntityType EntityType="SharePoint_RoleAssignment" />
+    <TaskEntityType EntityType="ServiceNow_Department" />
+    <TaskEntityType EntityType="ServiceNow_Group" />
+    <TaskEntityType EntityType="ServiceNow_Role" />
+    <TaskEntityType EntityType="ServiceNow_User" />
+    <TaskEntityType EntityType="SharePoint_Entity" />
+    <TaskEntityType EntityType="SharePoint_Object" />
+    <TaskEntityType EntityType="SAP_Role" />
+    <TaskEntityType EntityType="SAP_User" />
+    <TaskEntityType EntityType="SF_ACE" />
+    <TaskEntityType EntityType="SF_PI" />
+    <TaskEntityType EntityType="ServiceNow_Company" />
+    <TaskEntityType EntityType="ServiceNow_CostCenter" />
+    <TaskEntityType EntityType="HR_State" />
+    <TaskEntityType EntityType="HR_Title" />
+    <TaskEntityType EntityType="LDAP_Entry" />
+    <TaskEntityType EntityType="SAB_Group" />
+    <TaskEntityType EntityType="SAB_User" />
+    <TaskEntityType EntityType="SAP_Group" />
+    <TaskEntityType EntityType="HR_Country" />
+    <TaskEntityType EntityType="HR_Employee_type" />
+    <TaskEntityType EntityType="HR_External_company" />
+    <TaskEntityType EntityType="HR_Location" />
+    <TaskEntityType EntityType="HR_Organization" />
+    <TaskEntityType EntityType="HR_Person" />
+    <TaskEntityType EntityType="Directory_PersonalTitle" />
+    <TaskEntityType EntityType="Directory_PresenceState" />
+    <TaskEntityType EntityType="Directory_State" />
+    <TaskEntityType EntityType="Directory_Title" />
+    <TaskEntityType EntityType="Directory_User" />
+    <TaskEntityType EntityType="Directory_UserRecord" />
+    <TaskEntityType EntityType="Directory_EmployeeCategory" />
+    <TaskEntityType EntityType="Directory_EmployeeType" />
+    <TaskEntityType EntityType="Directory_Guest" />
+    <TaskEntityType EntityType="Directory_Location" />
+    <TaskEntityType EntityType="Directory_Organization" />
+    <TaskEntityType EntityType="Directory_OrganizationType" />
+    <TaskEntityType EntityType="MicrosoftEntraID_DirectoryObject" />
+    <TaskEntityType EntityType="Directory_Application" />
+    <TaskEntityType EntityType="Directory_Bot" />
+    <TaskEntityType EntityType="Directory_BusinessCategory" />
+    <TaskEntityType EntityType="Directory_Company" />
+    <TaskEntityType EntityType="Directory_Country" />
+  </UpdateEntityPropertyExpressionsTask>
+  <ComputeCorrelationKeysTask Identifier="Job_Daily_ComputeCorrelationKeys1_AllEntities" DisplayName_L1="Compute all Correlations" DisplayName_L2="Calcul des corrélations" Level="4">
+    <TaskEntityType EntityType="AD_Entry" />
+    <TaskEntityType EntityType="Access_AccessAuthorization" />
+    <TaskEntityType EntityType="Access_Badge" />
+    <TaskEntityType EntityType="MicrosoftEntraID_DirectoryObject" />
+    <TaskEntityType EntityType="Directory_Bot" />
+    <TaskEntityType EntityType="Directory_Guest" />
+    <TaskEntityType EntityType="Directory_User" />
+    <TaskEntityType EntityType="LDAP_Entry" />
+    <TaskEntityType EntityType="SAB_User" />
+  </ComputeCorrelationKeysTask>
+  <ComputeRoleModelTask Identifier="Job_Daily_ComputeRoleModel1" DisplayName_L1="Apply the Role Model" DisplayName_L2="Evaluation du modèle de rôles" Level="5">
+    <TaskEntityType EntityType="Directory_Bot" />
+    <TaskEntityType EntityType="Directory_Guest" />
+    <TaskEntityType EntityType="Directory_User" />
+  </ComputeRoleModelTask>
+  <ComputeRiskScoresTask Identifier="Job_Daily_ComputeRiskScores1" DisplayName_L1="Compute Risk Scores" DisplayName_L2="Calcul des scores de risques" Level="6">
+    <TaskEntityType EntityType="Directory_Bot" />
+    <TaskEntityType EntityType="Directory_Guest" />
+    <TaskEntityType EntityType="Directory_User" />
+  </ComputeRiskScoresTask>
+  <GenerateProvisioningOrdersTask Identifier="Job_Daily_GenerateProvisioningOrders1" DisplayName_L1="Generate Provisioning Orders - AD, Access, Microsoft Entra ID, LDAP, SAB" DisplayName_L2="Génération des ordres de provisioning - AD, Access, Microsoft Entra ID, LDAP, SAB" Level="7">
+    <TaskResourceType ResourceType="AD_Entry_AdministrationUser" />
+    <TaskResourceType ResourceType="AD_Entry_Bot" />
+    <TaskResourceType ResourceType="AD_Entry_Guest" />
+    <TaskResourceType ResourceType="AD_Entry_NominativeUser" />
+    <TaskResourceType ResourceType="Access_AccessAuthorization_Nominative" />
+    <TaskResourceType ResourceType="Access_Badge_Nominative" />
+    <TaskResourceType ResourceType="MicrosoftEntraID_DirectoryObject_Guest" />
+    <TaskResourceType ResourceType="MicrosoftEntraID_DirectoryObject_NominativeUser" />
+    <TaskResourceType ResourceType="LDAP_Entry_Guest" />
+    <TaskResourceType ResourceType="LDAP_Entry_NominativeUser" />
+    <TaskResourceType ResourceType="SAB_User_NominativeUser" />
+  </GenerateProvisioningOrdersTask>
+  <FulfillTask Identifier="Job_Daily_Fulfill1" DisplayName_L1="Fulfillment - AD, Access, Microsoft Entra ID, LDAP, SAB" DisplayName_L2="Alimentation - AD, Access, Microsoft Entra ID, LDAP, SAB" Agent="Local" Level="8" OpenIdClient="Job" Dirty="false" ContinueOnError="true">
+    <TaskDependsOnTask ParentTask="Job_Daily_GenerateProvisioningOrders1" />
+    <TaskResourceType ResourceType="AD_Entry_AdministrationUser" />
+    <TaskResourceType ResourceType="AD_Entry_Bot" />
+    <TaskResourceType ResourceType="AD_Entry_Guest" />
+    <TaskResourceType ResourceType="AD_Entry_NominativeUser" />
+    <TaskResourceType ResourceType="Access_AccessAuthorization_Nominative" />
+    <TaskResourceType ResourceType="Access_Badge_Nominative" />
+    <TaskResourceType ResourceType="MicrosoftEntraID_DirectoryObject_Guest" />
+    <TaskResourceType ResourceType="MicrosoftEntraID_DirectoryObject_NominativeUser" />
+    <TaskResourceType ResourceType="LDAP_Entry_Guest" />
+    <TaskResourceType ResourceType="LDAP_Entry_NominativeUser" />
+    <TaskResourceType ResourceType="SAB_User_NominativeUser" />
+  </FulfillTask>
+  <UpdateClassificationTask Identifier="Job_Daily_UpdateClassification" DisplayName_L1="Resources Classification" DisplayName_L2="Classification des ressources" Level="9">
+    <TaskEntityType EntityType="AD_Entry" />
+    <TaskEntityType EntityType="LDAP_Entry" />
+  </UpdateClassificationTask>
+  <SetInternalUserProfilesTask Identifier="Job_Daily_SetInternalUserProfiles1" DisplayName_L1="Assign Usercube Profiles" DisplayName_L2="Affectation des profils Usercube" Level="10">
+    <TaskEntityType EntityType="AD_Entry" />
+    <TaskResourceType ResourceType="AD_Entry_NominativeUser" />
+  </SetInternalUserProfilesTask>
+  <UpdateParametersContextDisplayNamesTask Identifier="Job_Daily_UpdateParametersContextDisplayNames" DisplayName_L1="Update of Parameters Context Display Names" DisplayName_L2="Mise à jour des noms des contextes de paramètres" Level="11" />
+  <SendNotificationsTask Identifier="Job_Daily_SendNotifications" DisplayName_L1="Send Notifications" DisplayName_L2="Envoi des notifications" Level="12">
+    <TaskEntityType EntityType="Directory_Bot" />
+    <TaskEntityType EntityType="Directory_Guest" />
+    <TaskEntityType EntityType="Directory_User" />
+  </SendNotificationsTask>
+  <ManageConfigurationIndexesTask Identifier="Job_Daily_ManageConfigurationIndexes" DisplayName_L1="Manage Configuration Specific SQL Indexes" DisplayName_L2="Gestion des index SQL liés à la configuration" Level="13" />
+  <MaintainIndexesTask Identifier="Job_Daily_MaintainIndexes" DisplayName_L1="SQL Index and Statistics Maintenance" DisplayName_L2="Maintenance des index SQL et des statistiques" Level="14" />
+</Job>
+
+```

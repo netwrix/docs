@@ -1,0 +1,36 @@
+@startuml component
+package "Job" {
+	class Job {
+		CronTabExpression : String
+		CronTimeZone : Int32
+		DisplayName_L1 : String
+		Identifier : String
+		IsConnectorJob : Boolean
+		IsIncremental : Boolean
+		IsInitializationJob : Boolean
+		LastJobInstance : Int64
+		LogLevel : Int32
+		UserStartDenied : Boolean
+		--
+		Agent : Agent
+		JobInstance : JobInstance[]
+		JobStep : JobStep[]
+	}
+}
+package "Agent" {
+	class Agent {
+	}
+}
+package "JobInstance" {
+	class JobInstance {
+	}
+}
+package "JobStep" {
+	class JobStep {
+	}
+}
+Job "0..*" --  "0..1"Agent
+Job "1" --  "0..*"JobInstance
+Job "1" --  "0..*"JobStep
+hide empty members
+@enduml

@@ -1,0 +1,9 @@
+@startuml component
+package "WorkflowState" {
+	class WorkflowState {
+		DisplayName_L1 : String
+		Identifier : String
+	}
+}
+hide empty members
+@enduml

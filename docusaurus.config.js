@@ -90,9 +90,15 @@ const config = {
           const latestVersion = getDefaultVersion(product);
           const latestVersionUrl = versionToUrl(latestVersion.version);
 
+          // Use explicit customRoutePath if specified (e.g., for multi-versioned products with 'current')
+          // Otherwise use standard path generation
+          const targetPath = latestVersion.customRoutePath
+            ? latestVersion.customRoutePath
+            : `${product.path}/${latestVersionUrl}`;
+
           return {
             from: `/${product.path}`,
-            to: `/${product.path}/${latestVersionUrl}`,
+            to: `/${targetPath}`,
           };
         }),
       },

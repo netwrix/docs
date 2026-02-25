@@ -82,7 +82,7 @@ not involved in the changes of this workflow.
 
 ```
 
-![UI Form](/images/identitymanager/saas/integration-guide/workflows/how-to/workflow-update-mono/howto_resourceupdatemono_form_v603.webp)
+![UI Form](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-mono/howto_resourceupdatemono_form_v603.webp)
 
 `End of transition` sets the date for the change of records scheduled by this form.
 
@@ -109,7 +109,7 @@ to make the workflow accessible in the UI.
 Updating an existing resource, this workflow manages one given resource at a time. Hence an
 interesting location for this workflow could be the individual view page of users.
 
-![Workflow Menu Items - User's Page](/images/identitymanager/saas/integration-guide/workflows/how-to/workflow-update-mono/menuitems_userview_v603.webp)
+![Workflow Menu Items - User's Page](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-mono/menuitems_userview_v603.webp)
 
 To create a menu item here for the new workflow, you can add the following XML configuration to the
 existing menu items list:

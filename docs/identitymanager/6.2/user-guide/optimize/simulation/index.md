@@ -71,47 +71,47 @@ Launch a simulation by proceeding as follows:
 1. Access the simulation list by clicking on **Simulations** on the home page, in the
    **Configuration** section.
 
-    ![Home - Simulations](/images/identitymanager/saas/user-guide/optimize/simulation/home_simulations_v600.webp)
+    ![Home - Simulations](/images/identitymanager/user-guide/optimize/simulation/home_simulations_v600.webp)
 
-    ![Simulation List](/images/identitymanager/saas/user-guide/optimize/simulation/simulation_list_v602.webp)
+    ![Simulation List](/images/identitymanager/user-guide/optimize/simulation/simulation_list_v602.webp)
 
 2. Create a new simulation by clicking on the addition button at the top right corner.
 
-    ![Addition Icon](/images/identitymanager/saas/user-guide/set-up/categorization/classification/iconadd_v602.svg)
+    ![Addition Icon](/images/identitymanager/user-guide/set-up/categorization/classification/iconadd_v602.svg)
 
 3. Fill in the fields.
 
-    ![Simulation List](/images/identitymanager/saas/user-guide/optimize/simulation/simulation_new_v602.webp)
+    ![Simulation List](/images/identitymanager/user-guide/optimize/simulation/simulation_new_v602.webp)
 
 4. Click on **+ Create**.
 5. Perform changes through the **Roles Changes** and **Rules Changes** tabs and the following icons,
    respectively for addition, modification and deletion:
 
-    ![Edition - Approval Icon](/images/identitymanager/saas/user-guide/set-up/categorization/classification/iconadd_v602.svg)
+    ![Edition - Approval Icon](/images/identitymanager/user-guide/set-up/categorization/classification/iconadd_v602.svg)
 
-    ![Recommendation Icon](/images/identitymanager/saas/user-guide/optimize/simulation/simulation_iconedit_v600.svg)
+    ![Recommendation Icon](/images/identitymanager/user-guide/optimize/simulation/simulation_iconedit_v600.svg)
 
-    ![Discouragement Icon](/images/identitymanager/saas/user-guide/optimize/simulation/simulation_icondelete_v600.svg)
+    ![Discouragement Icon](/images/identitymanager/user-guide/optimize/simulation/simulation_icondelete_v600.svg)
 
     At any time, you can click on the line of a previously made change to access its description,
     even click on **Cancel** to erase it.
 
-    ![Cancel Change](/images/identitymanager/saas/user-guide/optimize/simulation/simulation_cancel_v602.webp)
+    ![Cancel Change](/images/identitymanager/user-guide/optimize/simulation/simulation_cancel_v602.webp)
 
 6. Click on **Start** to launch the simulation.
 
-    ![Start Simulation](/images/identitymanager/saas/user-guide/optimize/simulation/simulation_start_v602.webp)
+    ![Start Simulation](/images/identitymanager/user-guide/optimize/simulation/simulation_start_v602.webp)
 
 7. After a few seconds, click on **Refresh** to display the simulation results.
 8. Observe the results in the overview and in the Excel report available via the Download button.
 
-    ![Download Icon](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/icondownload_v602.svg)
+    ![Download Icon](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/icondownload_v602.svg)
 
 ## Shift from Simulation to Production
 
 After all needed changes have been simulated, you can decide to apply or cancel them.
 
-![Apply or Cancel Changes](/images/identitymanager/saas/user-guide/optimize/simulation/simulation_decision_v600.webp)
+![Apply or Cancel Changes](/images/identitymanager/user-guide/optimize/simulation/simulation_decision_v600.webp)
 
 Then, the simulation is no longer active.
 
@@ -134,16 +134,16 @@ parameters.
 
 For roles, click on **Access Roles** on the home page in the **Configuration** section.
 
-![Home Page - Access Roles](/images/identitymanager/saas/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
+![Home Page - Access Roles](/images/identitymanager/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
 
 Select the type of role that you want to check, and find the roles you created inside the right
 category and with the right parameters.
 
-![Select Roles](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/category-creation/categorycreation_test_v602.webp)
+![Select Roles](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/category-creation/categorycreation_test_v602.webp)
 
 For rules, click on **Access Rules** on the home page in the **Configuration** section.
 
-![Home Page - Access Rules](/images/identitymanager/saas/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+![Home Page - Access Rules](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
 
 Select the type of rule that you want to check, and find the rules you created with the right
 parameters.

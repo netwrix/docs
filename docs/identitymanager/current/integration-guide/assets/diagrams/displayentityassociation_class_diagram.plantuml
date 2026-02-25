@@ -1,0 +1,8 @@
+@startuml component
+package "DisplayEntityAssociation" {
+	class DisplayEntityAssociation {
+		IsHierarchical : Boolean
+	}
+}
+hide empty members
+@enduml

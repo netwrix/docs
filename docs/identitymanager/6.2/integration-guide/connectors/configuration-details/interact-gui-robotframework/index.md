@@ -51,13 +51,13 @@ through the elements. However, the easiest way is to use the Hover Mode, which i
 tool bar by clicking on **Mode** > **Hover Mode (use Ctrl)**. To see the XPath, click on **Mode** >
 **Show XPath**.
 
-![Show XPath](/images/identitymanager/saas/integration-guide/connectors/how-tos/interact-gui-robotframework/robotframeworkflaui_flauishowxpath.webp)
+![Show XPath](/images/identitymanager/integration-guide/connectors/how-tos/interact-gui-robotframework/robotframeworkflaui_flauishowxpath.webp)
 
 To see the XPath of an element, hover over the element, and press control. A red box should appear
 around the element, and the FlaUI inspection tool should show the element's information. The XPath
 should be at the bottom left of the FlaUI element.
 
-![Highlight Element](/images/identitymanager/saas/integration-guide/connectors/how-tos/interact-gui-robotframework/robotframeworkflaui_flauixpathexample.webp)
+![Highlight Element](/images/identitymanager/integration-guide/connectors/how-tos/interact-gui-robotframework/robotframeworkflaui_flauixpathexample.webp)
 
 As an example, imagine an application showing a list of files and folders. Targeting a specific file
 would produce an XPath in the shape of `/Window/Pane[3]/Pane/Pane[2]/List/Group[1]/ListItem[1]`. The

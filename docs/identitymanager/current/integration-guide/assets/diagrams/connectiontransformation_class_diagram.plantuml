@@ -1,0 +1,30 @@
+@startuml component
+package "ConnectionTransformation" {
+	class ConnectionTransformation {
+		AddedDays : Float
+		Column : String
+		ConcatSeparator : String
+		DatePattern : String
+		InputColumn : String
+		InputColumn2 : String
+		MaxYear : Int32
+		MinYear : Int32
+		RemoveDuplicates : Boolean
+		RemoveEmpty : Boolean
+		SortValues : Boolean
+		Table : String
+		TransformationOrder : Int32
+		Type : Int32
+		WhereOperator : Int32
+		WhereValue : String
+		--
+		Connection : Connection
+	}
+}
+package "Connection" {
+	class Connection {
+	}
+}
+ConnectionTransformation "0..*" --  "1"Connection
+hide empty members
+@enduml

@@ -1,0 +1,32 @@
+@startuml component
+package "EntityAssociation" {
+	class EntityAssociation {
+		DisplayName_L1 : String
+		Identifier : String
+		IsProperty1Collection : Boolean
+		IsProperty2Collection : Boolean
+		--
+		AssociationInstances : AssociationInstance[]
+		Property1 : EntityProperty
+		Property2 : EntityProperty
+		TypeResourceLinks : ResourceLink[]
+	}
+}
+package "AssociationInstance" {
+	class AssociationInstance {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "ResourceLink" {
+	class ResourceLink {
+	}
+}
+EntityAssociation "1" --  "0..*"AssociationInstance
+EntityAssociation "0..*" --  "1"EntityProperty
+EntityAssociation "0..*" --  "1"EntityProperty
+EntityAssociation "1" --  "0..*"ResourceLink
+hide empty members
+@enduml

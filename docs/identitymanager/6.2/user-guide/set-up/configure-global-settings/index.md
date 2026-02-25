@@ -12,7 +12,7 @@ This topic covers the customization in the application **Settings**.
 
 The Settings interface provides information and management options for the application.
 
-![accesscertificationonlyapprovedenysettings](/images/identitymanager/saas/user-guide/set-up/configure-global-settings/accesscertificationonlyapprovedenysettings.webp)
+![accesscertificationonlyapprovedenysettings](/images/identitymanager/user-guide/set-up/configure-global-settings/accesscertificationonlyapprovedenysettings.webp)
 
 ### Look and Feel
 
@@ -39,16 +39,16 @@ The feature **Only allow approving and refusing on access certifications items**
 administrator the option to limit the user's option to either **Approve** or **Deny** the Access
 Certification items while making the **More** button unavailable.
 
-![allowapprovingdenyingaccesscertificationitems](/images/identitymanager/saas/user-guide/set-up/configure-global-settings/allowapprovingdenyingaccesscertificationitems.webp)
+![allowapprovingdenyingaccesscertificationitems](/images/identitymanager/user-guide/set-up/configure-global-settings/allowapprovingdenyingaccesscertificationitems.webp)
 
 If the feature **Only allow approving and denying on access certification items** is set to **No**
 the following will be visible on the certification screen:
 
-![accesscertificationonlyapprovedeny](/images/identitymanager/saas/user-guide/set-up/configure-global-settings/accesscertificationonlyapprovedeny.webp)
+![accesscertificationonlyapprovedeny](/images/identitymanager/user-guide/set-up/configure-global-settings/accesscertificationonlyapprovedeny.webp)
 
 If the feature **Only allow approving and denying on access certification items** is set to **Yes**
 the following will be visible on the certification screen:
 
-![accesscertificationonlyapprovedeny-disabled](/images/identitymanager/saas/user-guide/set-up/configure-global-settings/accesscertificationonlyapprovedeny-disabled.webp)
+![accesscertificationonlyapprovedeny-disabled](/images/identitymanager/user-guide/set-up/configure-global-settings/accesscertificationonlyapprovedeny-disabled.webp)
 
 This is how the user's experience can be customized directly from the UI.

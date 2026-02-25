@@ -11,7 +11,7 @@ This connector exports and fulfills any data, including users and roles, from/to
 
 This page is about [ServiceNow](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/servicenow/index.md).
 
-![Package: ITSM/ServiceNow](/images/identitymanager/saas/integration-guide/connectors/references-connectors/servicenowentitymanagement/packages_servicenow_v603.webp)
+![Package: ITSM/ServiceNow](/images/identitymanager/integration-guide/connectors/references-connectors/servicenowentitymanagement/packages_servicenow_v603.webp)
 
 ## Overview
 

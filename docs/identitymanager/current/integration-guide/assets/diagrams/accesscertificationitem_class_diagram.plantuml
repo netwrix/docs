@@ -1,0 +1,72 @@
+@startuml component
+package "AccessCertificationItem" {
+	class AccessCertificationItem {
+		AdministratorComment : String
+		AdministratorDate : DateTime
+		AdministratorDecision : Byte
+		CertificationState : Byte
+		IsDenied : Boolean
+		IsTransferred : Boolean
+		OwnerType : Int64
+		ReviewComment : String
+		ReviewDate : DateTime
+		ReviewDecision : Byte
+		SetReviewerDate : DateTime
+		WorkflowState : Byte
+		--
+		Administrator : Resource
+		AssignedCompositeRole : AssignedCompositeRole
+		AssignedResourceNavigation : AssignedResourceNavigation
+		AssignedResourceScalar : AssignedResourceScalar
+		AssignedResourceType : AssignedResourceType
+		AssignedSingleRole : AssignedSingleRole
+		Campaign : AccessCertificationCampaign
+		ItemForwardedAccessCertificationItems : ForwardedAccessCertificationItem[]
+		Owner : Resource
+		Reviewer : Resource
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "AssignedCompositeRole" {
+	class AssignedCompositeRole {
+	}
+}
+package "AssignedResourceNavigation" {
+	class AssignedResourceNavigation {
+	}
+}
+package "AssignedResourceScalar" {
+	class AssignedResourceScalar {
+	}
+}
+package "AssignedResourceType" {
+	class AssignedResourceType {
+	}
+}
+package "AssignedSingleRole" {
+	class AssignedSingleRole {
+	}
+}
+package "AccessCertificationCampaign" {
+	class AccessCertificationCampaign {
+	}
+}
+package "ForwardedAccessCertificationItem" {
+	class ForwardedAccessCertificationItem {
+	}
+}
+AccessCertificationItem "0..*" --  "0..1"Resource
+AccessCertificationItem "0..*" --  "0..1"AssignedCompositeRole
+AccessCertificationItem "0..*" --  "0..1"AssignedResourceNavigation
+AccessCertificationItem "0..*" --  "0..1"AssignedResourceScalar
+AccessCertificationItem "0..*" --  "0..1"AssignedResourceType
+AccessCertificationItem "0..*" --  "0..1"AssignedSingleRole
+AccessCertificationItem "0..*" --  "1"AccessCertificationCampaign
+AccessCertificationItem "1" --  "0..*"ForwardedAccessCertificationItem
+AccessCertificationItem "0..*" --  "1"Resource
+AccessCertificationItem "0..*" --  "0..1"Resource
+hide empty members
+@enduml

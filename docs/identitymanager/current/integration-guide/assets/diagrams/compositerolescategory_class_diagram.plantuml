@@ -1,0 +1,20 @@
+@startuml component
+package "CompositeRolesCategory" {
+	class CompositeRolesCategory {
+		--
+		Category : Category
+		CompositeRole : CompositeRole
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "CompositeRole" {
+	class CompositeRole {
+	}
+}
+CompositeRolesCategory "0..*" --  "1"Category
+CompositeRolesCategory "0..*" --  "1"CompositeRole
+hide empty members
+@enduml

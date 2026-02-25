@@ -1,0 +1,24 @@
+@startuml component
+package "ResourceFile" {
+	class ResourceFile {
+		Data : Bytes
+		DataHash : Int32
+		FileName : String
+		MimeType : String
+		--
+		Property : EntityProperty
+		Resource : Resource
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+ResourceFile "0..*" --  "1"EntityProperty
+ResourceFile "0..*" --  "1"Resource
+hide empty members
+@enduml

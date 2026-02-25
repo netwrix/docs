@@ -10,7 +10,7 @@ How to keep the workforce directory up to date.
 
 ## Overview
 
-![Process Schema - How to Implement a New System](/images/identitymanager/saas/user-guide/global-process/howto-maintaindirectory/globalprocess_schemamaintain.webp)
+![Process Schema - How to Implement a New System](/images/identitymanager/user-guide/global-process/howto-maintaindirectory/globalprocess_schemamaintain.webp)
 
 ## Process Details
 

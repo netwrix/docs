@@ -1,0 +1,18 @@
+@startuml component
+package "ResourceChange" {
+	class ResourceChange {
+		C0 : String
+		ChangeOperation : Int32
+		JobInstance : Int64
+		Resource : Int64
+		--
+		Type : EntityType
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+ResourceChange "0..*" --  "1"EntityType
+hide empty members
+@enduml

@@ -1,0 +1,32 @@
+@startuml component
+package "IndirectResourceRule" {
+	class IndirectResourceRule {
+		--
+		Correspondence : EntityProperty
+		CorrespondenceMembershipProperty : EntityProperty
+		Entitlement : EntityProperty
+		EntityType : EntityType
+		Property : EntityProperty
+		ResourceType : ResourceType
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+IndirectResourceRule "0..*" --  "0..1"EntityProperty
+IndirectResourceRule "0..*" --  "0..1"EntityProperty
+IndirectResourceRule "0..*" --  "0..1"EntityProperty
+IndirectResourceRule "0..*" --  "1"EntityType
+IndirectResourceRule "0..*" --  "1"EntityProperty
+IndirectResourceRule "0..*" --  "1"ResourceType
+hide empty members
+@enduml

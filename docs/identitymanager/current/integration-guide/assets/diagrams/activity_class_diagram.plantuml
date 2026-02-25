@@ -1,0 +1,57 @@
+@startuml component
+package "Activity" {
+	class Activity {
+		ArgumentBlockProvisioning : Boolean
+		DisplayName_L1 : String
+		Identifier : String
+		Order : Int32
+		WorkflowOverviewDisable : Boolean
+		--
+		ActivityRecipients : Recipient[]
+		ArgumentCalledWorkflow : Workflow
+		CurrentWorkflowInstances : WorkflowInstance[]
+		Forms : Form[]
+		Instances : ActivityInstance[]
+		PointCuts : PointCut[]
+		Template : ActivityTemplate
+		Workflow : Workflow
+	}
+}
+package "Recipient" {
+	class Recipient {
+	}
+}
+package "Workflow" {
+	class Workflow {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+package "Form" {
+	class Form {
+	}
+}
+package "ActivityInstance" {
+	class ActivityInstance {
+	}
+}
+package "PointCut" {
+	class PointCut {
+	}
+}
+package "ActivityTemplate" {
+	class ActivityTemplate {
+	}
+}
+Activity "0..1" --  "0..*"Recipient
+Activity "0..*" --  "0..1"Workflow
+Activity "1" --  "0..*"WorkflowInstance
+Activity "0..1" --  "0..*"Form
+Activity "1" --  "0..*"ActivityInstance
+Activity "1" --  "0..*"PointCut
+Activity "0..*" --  "1"ActivityTemplate
+Activity "0..*" --  "1"Workflow
+hide empty members
+@enduml

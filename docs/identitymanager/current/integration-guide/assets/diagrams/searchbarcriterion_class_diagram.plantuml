@@ -1,0 +1,34 @@
+@startuml component
+package "SearchBarCriterion" {
+	class SearchBarCriterion {
+		ColumnSize : Int32
+		DefaultValue : String
+		DisplayName_L1 : String
+		DisplayOrder : Int32
+		IsVisibleInAdvancedView : Boolean
+		Operator : Byte
+		PlaceHolderText_L1 : String
+		ToolTipText_L1 : String
+		--
+		InputType : InputType
+		OptimizedBinding1 : Binding
+		SearchBar : SearchBar
+	}
+}
+package "InputType" {
+	class InputType {
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "SearchBar" {
+	class SearchBar {
+	}
+}
+SearchBarCriterion "0..*" --  "1"InputType
+SearchBarCriterion "0..*" --  "0..1"Binding
+SearchBarCriterion "0..*" --  "1"SearchBar
+hide empty members
+@enduml

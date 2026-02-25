@@ -42,7 +42,7 @@ Netwrix Identity Manager (formerly Usercube) recommends the option 1 to be able 
 waiting for the installation of an agent in your network, and go through the option 2
 simultaneously.
 
-![Process Schema - How to Start with Usercube](/images/identitymanager/saas/user-guide/global-process/howto-start/globalprocess_schemastart.webp)
+![Process Schema - How to Start with Usercube](/images/identitymanager/user-guide/global-process/howto-start/globalprocess_schemastart.webp)
 
 ## Process Details
 

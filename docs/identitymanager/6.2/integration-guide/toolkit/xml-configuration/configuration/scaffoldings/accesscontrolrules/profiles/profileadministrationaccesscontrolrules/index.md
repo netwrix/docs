@@ -10,9 +10,9 @@ Gives to a given profile the rights to create, update and delete profiles.
 
 Profiles are listed on the **Profiles** screen, from **Settings** in the **Configuration** section.
 
-![Settings](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
+![Settings](/images/identitymanager/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
 
-![Profiles](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/accesscontrolrules/profiles/profileadministrationaccesscontrolrules/accesscontrol_profiles_v603.webp)
+![Profiles](/images/identitymanager/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/accesscontrolrules/profiles/profileadministrationaccesscontrolrules/accesscontrol_profiles_v603.webp)
 
 See more details on profiles' APIs.
 

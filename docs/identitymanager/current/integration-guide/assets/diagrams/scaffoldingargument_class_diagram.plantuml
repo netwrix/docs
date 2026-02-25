@@ -1,0 +1,34 @@
+@startuml component
+package "ScaffoldingArgument" {
+	class ScaffoldingArgument {
+		After : Boolean
+		Before : Boolean
+		Binding : String
+		ConnectorIdentifier : String
+		CopyOccurence : Int32
+		Count : Int32
+		EmailDomain : String
+		ForcedCount : Int32
+		Identifier : String
+		IsIncremental : Boolean
+		LoginPrefix : String
+		NameSeparator : String
+		Order : Int32
+		ScaffoldingArgumentType : Int32
+		SearchBarPage : Int32
+		TaskIdentifier : String
+		UniqueIdentifierMax : Int32
+		UniqueIdentifierMin : Int32
+		UniqueIdentifierPrefix : String
+		Value : String
+		--
+		Scaffolding : Scaffolding
+	}
+}
+package "Scaffolding" {
+	class Scaffolding {
+	}
+}
+ScaffoldingArgument "0..*" --  "1"Scaffolding
+hide empty members
+@enduml

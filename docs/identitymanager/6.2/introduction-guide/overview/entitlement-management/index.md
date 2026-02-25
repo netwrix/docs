@@ -21,7 +21,7 @@ data on a given system, or a physical location.
 Identity Manager is designed to help establish an exhaustive and reliable catalog of the
 entitlements available in the managed systems, and assign the right entitlements to the right users.
 
-![Role Catalog and Users](/images/identitymanager/saas/introduction-guide/overview/entitlement-management/entitlements_rolecatalogusers.webp)
+![Role Catalog and Users](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_rolecatalogusers.webp)
 
 Thus, the role model contains:
 
@@ -31,7 +31,7 @@ Thus, the role model contains:
   accounts and permissions. Some of them are linked to, and thus apply only to, specific resource
   types.
 
-![Role Model](/images/identitymanager/saas/introduction-guide/overview/entitlement-management/entitlements_rolemodel.webp)
+![Role Model](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_rolemodel.webp)
 
 The role model is a subset of a policy that also includes [Governance](/docs/identitymanager/6.2/introduction-guide/overview/governance/index.md) data
 such as risk definition. So, at a higher level, distinct policies can be used to implement distinct
@@ -47,12 +47,12 @@ Entitlements from the managed systems are modeled by roles. For each entitlement
 creating a single role, with an easily understandable name, more functional than technical, so that
 everyone knows what the role is for.
 
-![Single Roles](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemarole.webp)
+![Single Roles](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemarole.webp)
 
 Each individual entitlement should usually be modeled by a single role, and single roles can be
 grouped together into composite roles to be closer to real job positions.
 
-![Composite Roles](/images/identitymanager/saas/introduction-guide/overview/entitlement-management/entitlements_compositeroles.webp)
+![Composite Roles](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_compositeroles.webp)
 
 ## A Rule Set
 
@@ -77,7 +77,7 @@ roles.
 > Thus, we should have a rule that, when a user is assigned a specific role, adds the user to the
 > member list of a specific AD group.
 
-![Provisioning Rules](/images/identitymanager/saas/introduction-guide/overview/entitlement-management/entitlements_provisioningrules.webp)
+![Provisioning Rules](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_provisioningrules.webp)
 
 Even when a role is manually assigned, provisioning rules will determine which account (and
 permission groups) are given as entitlements.
@@ -97,7 +97,7 @@ automatically assign roles to identities based on specific criteria.
 > For example, we can choose to assign the role `Benefits Manager - FR` to any user whose job title
 > is benefits manager and whose location is in France.
 
-![Assignment Rules](/images/identitymanager/saas/introduction-guide/overview/entitlement-management/entitlements_assignmentrules.webp)
+![Assignment Rules](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_assignmentrules.webp)
 
 Once all assignment rules are created, Identity Manager is able to spot existing assignments that
 are not supported by any rule, marking them as non-conforming.
@@ -120,7 +120,7 @@ they own.
 > steps in the workflows related to privileged accounts, for more security than for standard
 > accounts.
 
-![Categorization Rules](/images/identitymanager/saas/introduction-guide/overview/entitlement-management/entitlements_categorizationrules.webp)
+![Categorization Rules](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_categorizationrules.webp)
 
 Identity Manager's categorization rules are:
 
@@ -158,15 +158,15 @@ governed by users' attributes defined as dimensions. Let's schematize users arou
 - The schema with two dimensions would be a table, a square.
 - The schema with three dimensions would be a 3D cube. And you can imagine 4D or 5D hypercubes, etc.
 
-![Dimensions - 1D](/images/identitymanager/saas/introduction-guide/overview/entitlement-management/entitlements_dimension1.webp)
+![Dimensions - 1D](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_dimension1.webp)
 
 #### 1D
 
-![Dimensions - 2D](/images/identitymanager/saas/introduction-guide/overview/entitlement-management/entitlements_dimension2.webp)
+![Dimensions - 2D](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_dimension2.webp)
 
 #### 2D
 
-![Dimensions - 3D](/images/identitymanager/saas/introduction-guide/overview/entitlement-management/entitlements_dimension3.webp)
+![Dimensions - 3D](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_dimension3.webp)
 
 ## Next Steps
 

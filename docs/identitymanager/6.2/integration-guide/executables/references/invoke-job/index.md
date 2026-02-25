@@ -12,7 +12,7 @@ This tool launches a job on the agent side.
 
 The Usercube-Invoke-Job.exe tool is a state machine.
 
-![Schematization](/images/identitymanager/saas/integration-guide/executables/references/invoke-job/job_operation.webp)
+![Schematization](/images/identitymanager/integration-guide/executables/references/invoke-job/job_operation.webp)
 
 When a job is launched, the state machine starts by computing all the tasks that must be launched in
 the job.

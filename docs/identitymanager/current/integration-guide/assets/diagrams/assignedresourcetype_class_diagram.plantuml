@@ -1,0 +1,91 @@
+@startuml component
+package "AssignedResourceType" {
+	class AssignedResourceType {
+		Arguments : String
+		ConsolidatedAssignedResourceTypeCountError : Int16
+		ConsolidatedProvisioningState : Byte
+		ConsolidatedWorkflowBlockedCount : Int16
+		ConsolidatedWorkflowBlockedState : Byte
+		ConsolidatedWorkflowFoundCount : Int16
+		ConsolidatedWorkflowFoundState : Byte
+		ConsolidatedWorkflowReviewCount : Int16
+		ConsolidatedWorkflowReviewState : Byte
+		EndDate : DateTime
+		HasPendingOrders : Boolean
+		IsDenied : Boolean
+		IsInferred : Boolean
+		ManualAssignmentEndDateLockedToContext : Boolean
+		ManualProvisioningState : Byte
+		NeedsPolicyApplication : Boolean
+		OwnerType : Int64
+		Performer : Int64
+		ProvisioningReviewFilter : Byte
+		ProvisioningState : Byte
+		ReconciliationComment : String
+		RedundantAssignment : Boolean
+		RequestComment : String
+		Requester : Int64
+		ResourceTypeIdentificationConfidenceLevel : Byte
+		ReviewComment1 : String
+		ReviewComment2 : String
+		ReviewComment3 : String
+		Reviewer1 : Int64
+		Reviewer2 : Int64
+		Reviewer3 : Int64
+		SourceMatchedConfidenceLevel : Byte
+		StartDate : DateTime
+		WhenPerformed : DateTime
+		WhenReviewed1 : DateTime
+		WhenReviewed2 : DateTime
+		WhenReviewed3 : DateTime
+		WhenTransmitted : DateTime
+		WorkflowState : Byte
+		--
+		AccessCertificationItems : AccessCertificationItem[]
+		AssignedResourceNavigations : AssignedResourceNavigation[]
+		AssignedResourceScalars : AssignedResourceScalar[]
+		Owner : Resource
+		ParametersContext : Context
+		Resource : Resource
+		ResourceType : ResourceType
+		WorkflowInstance : WorkflowInstance
+	}
+}
+package "AccessCertificationItem" {
+	class AccessCertificationItem {
+	}
+}
+package "AssignedResourceNavigation" {
+	class AssignedResourceNavigation {
+	}
+}
+package "AssignedResourceScalar" {
+	class AssignedResourceScalar {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "Context" {
+	class Context {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+AssignedResourceType "0..1" --  "0..*"AccessCertificationItem
+AssignedResourceType "1" --  "0..*"AssignedResourceNavigation
+AssignedResourceType "1" --  "0..*"AssignedResourceScalar
+AssignedResourceType "0..*" --  "0..1"Resource
+AssignedResourceType "0..*" --  "1"Context
+AssignedResourceType "0..*" --  "0..1"Resource
+AssignedResourceType "0..*" --  "1"ResourceType
+AssignedResourceType "0..*" --  "0..1"WorkflowInstance
+hide empty members
+@enduml

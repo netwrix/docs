@@ -11,7 +11,7 @@ This connector exports sites, folders, groups and permissions from a
 
 This page is about Storage/SharePoint.
 
-![Package: Storage/SharePoint](/images/identitymanager/saas/integration-guide/connectors/references-connectors/sharepoint/packages_sharepoint_v603.webp)
+![Package: Storage/SharePoint](/images/identitymanager/integration-guide/connectors/references-connectors/sharepoint/packages_sharepoint_v603.webp)
 
 ## Overview
 

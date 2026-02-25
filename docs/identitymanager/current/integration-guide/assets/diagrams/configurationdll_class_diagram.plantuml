@@ -1,0 +1,10 @@
+@startuml component
+package "ConfigurationDLL" {
+	class ConfigurationDLL {
+		Data : Bytes
+		Identifier : String
+		Type : Int32
+	}
+}
+hide empty members
+@enduml

@@ -1,0 +1,39 @@
+@startuml component
+package "CompositeRoleRule" {
+	class CompositeRoleRule {
+		BaseRule : Int64
+		IsDenied : Boolean
+		L0 : Boolean
+		Priority : Int32
+		Type : Int32
+		--
+		D0 : Resource
+		EntityType : EntityType
+		ParentRole : CompositeRole
+		Policy : Policy
+		Role : CompositeRole
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "CompositeRole" {
+	class CompositeRole {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+CompositeRoleRule "0..*" --  "0..1"Resource
+CompositeRoleRule "0..*" --  "1"EntityType
+CompositeRoleRule "0..*" --  "0..1"CompositeRole
+CompositeRoleRule "0..*" --  "1"Policy
+CompositeRoleRule "0..*" --  "1"CompositeRole
+hide empty members
+@enduml

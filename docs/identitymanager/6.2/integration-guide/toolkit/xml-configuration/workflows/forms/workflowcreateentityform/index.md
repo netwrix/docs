@@ -59,11 +59,11 @@ And with the following form for the workflow's summary:
 
 The content of `MainControl` is visible during the workflow's execution:
 
-![Form Example - Site Creation](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/workflows/forms/workflowcreateentityform/formexample_workflowcreateentityform_v603.webp)
+![Form Example - Site Creation](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/forms/workflowcreateentityform/formexample_workflowcreateentityform_v603.webp)
 
 The content of `SummaryControl` is visible after the workflow's execution:
 
-![Summary Form Example - Site Creation](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/workflows/forms/workflowcreateentityform/formexample_workflowcreateentityform_summary_v603.webp)
+![Summary Form Example - Site Creation](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/forms/workflowcreateentityform/formexample_workflowcreateentityform_summary_v603.webp)
 
 ## Properties
 

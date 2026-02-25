@@ -10,7 +10,7 @@ This connector exports and fulfills data from/to an [OData](https://www.odata.or
 
 This page is about [OData](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/odata/index.md).
 
-![Package: Custom/OData](/images/identitymanager/saas/integration-guide/connectors/references-connectors/odata/packages_odata_v603.webp)
+![Package: Custom/OData](/images/identitymanager/integration-guide/connectors/references-connectors/odata/packages_odata_v603.webp)
 
 ## Overview
 

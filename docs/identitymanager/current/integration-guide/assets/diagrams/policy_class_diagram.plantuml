@@ -1,0 +1,155 @@
+@startuml component
+package "Policy" {
+	class Policy {
+		CommentActivationOnApproveInReview : Byte
+		CommentActivationOnDeclineInReview : Byte
+		CommentActivationOnDeleteGapInReconciliation : Byte
+		CommentActivationOnKeepGapInReconciliation : Byte
+		CommentActivationOnRequest : Byte
+		DisplayName_L1 : String
+		GracePeriod : Int32
+		HasImplicitApproval : Boolean
+		Identifier : String
+		IsExternal : Boolean
+		IsProvisioningEnabled : Boolean
+		IsSimulationEnabled : Boolean
+		ManualAssignmentEndDateLockedToContextMode : Byte
+		MaxDuration : Int32
+		PolicyProvisioning : Int64
+		PolicySimulation : Int64
+		ProlongationWithoutApproval : Boolean
+		--
+		AutomationRules : AutomationRule[]
+		Categories : Category[]
+		CompositeRoleRules : CompositeRoleRule[]
+		CompositeRoles : CompositeRole[]
+		ContextRules : ContextRule[]
+		D0 : Resource
+		MiningRuleRules : MiningRule[]
+		MiningRules : MiningRule[]
+		PolicyPolicySimulations : PolicySimulation[]
+		ResourceBinaryRules : ResourceBinaryRule[]
+		ResourceClassificationRules : ResourceClassificationRule[]
+		ResourceCorrelationRules : ResourceCorrelationRule[]
+		ResourceNavigationRules : ResourceNavigationRule[]
+		ResourceQueryRules : ResourceQueryRule[]
+		ResourceScalarRules : ResourceScalarRule[]
+		ResourceTypeRules : ResourceTypeRule[]
+		ResourceTypes : ResourceType[]
+		RiskRules : RiskRule[]
+		Risks : Risk[]
+		RoleMappings : RoleMapping[]
+		RoleRoleMappings : RoleMapping[]
+		SingleRoleRules : SingleRoleRule[]
+		SingleRoles : SingleRole[]
+	}
+}
+package "AutomationRule" {
+	class AutomationRule {
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "CompositeRoleRule" {
+	class CompositeRoleRule {
+	}
+}
+package "CompositeRole" {
+	class CompositeRole {
+	}
+}
+package "ContextRule" {
+	class ContextRule {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "MiningRule" {
+	class MiningRule {
+	}
+}
+package "PolicySimulation" {
+	class PolicySimulation {
+	}
+}
+package "ResourceBinaryRule" {
+	class ResourceBinaryRule {
+	}
+}
+package "ResourceClassificationRule" {
+	class ResourceClassificationRule {
+	}
+}
+package "ResourceCorrelationRule" {
+	class ResourceCorrelationRule {
+	}
+}
+package "ResourceNavigationRule" {
+	class ResourceNavigationRule {
+	}
+}
+package "ResourceQueryRule" {
+	class ResourceQueryRule {
+	}
+}
+package "ResourceScalarRule" {
+	class ResourceScalarRule {
+	}
+}
+package "ResourceTypeRule" {
+	class ResourceTypeRule {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "RiskRule" {
+	class RiskRule {
+	}
+}
+package "Risk" {
+	class Risk {
+	}
+}
+package "RoleMapping" {
+	class RoleMapping {
+	}
+}
+package "SingleRoleRule" {
+	class SingleRoleRule {
+	}
+}
+package "SingleRole" {
+	class SingleRole {
+	}
+}
+Policy "0..1" --  "0..*"AutomationRule
+Policy "1" --  "0..*"Category
+Policy "1" --  "0..*"CompositeRoleRule
+Policy "1" --  "0..*"CompositeRole
+Policy "1" --  "0..*"ContextRule
+Policy "0..*" --  "0..1"Resource
+Policy "0..1" --  "0..*"MiningRule
+Policy "1" --  "0..*"MiningRule
+Policy "0..1" --  "0..*"PolicySimulation
+Policy "1" --  "0..*"ResourceBinaryRule
+Policy "1" --  "0..*"ResourceClassificationRule
+Policy "1" --  "0..*"ResourceCorrelationRule
+Policy "1" --  "0..*"ResourceNavigationRule
+Policy "1" --  "0..*"ResourceQueryRule
+Policy "1" --  "0..*"ResourceScalarRule
+Policy "1" --  "0..*"ResourceTypeRule
+Policy "1" --  "0..*"ResourceType
+Policy "1" --  "0..*"RiskRule
+Policy "1" --  "0..*"Risk
+Policy "1" --  "0..*"RoleMapping
+Policy "0..1" --  "0..*"RoleMapping
+Policy "1" --  "0..*"SingleRoleRule
+Policy "1" --  "0..*"SingleRole
+hide empty members
+@enduml

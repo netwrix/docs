@@ -11,7 +11,7 @@ This connector triggers workflows in Identity Manager for a system's provisioni
 This page is about Identity Manager Internal Workflow. See the
 [Workflow](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/workflow/index.md) topic for additional information.
 
-![Package: Usercube/Workflow](/images/identitymanager/saas/integration-guide/connectors/references-connectors/internalworkflow/packages_workflow_v603.webp)
+![Package: Usercube/Workflow](/images/identitymanager/integration-guide/connectors/references-connectors/internalworkflow/packages_workflow_v603.webp)
 
 ## Overview
 

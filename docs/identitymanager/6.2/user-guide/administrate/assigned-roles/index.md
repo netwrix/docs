@@ -51,11 +51,11 @@ script in the command line.
 
 Review the Assigned Roles by proceeding as follows:
 
-![assignedroles](/images/identitymanager/saas/user-guide/administrate/assigned-roles/assignedroles.webp)
+![assignedroles](/images/identitymanager/user-guide/administrate/assigned-roles/assignedroles.webp)
 
 **Step 1 –** On the home page, in the Administration section of the UI click on Assigned Roles.
 
-![assignedrolesscreen](/images/identitymanager/saas/user-guide/administrate/assigned-roles/assignedrolesscreen.webp)
+![assignedrolesscreen](/images/identitymanager/user-guide/administrate/assigned-roles/assignedrolesscreen.webp)
 
 **Step 2 –** View the list of users with different assigned roles and filter them by **Entity
 Type**, **Workflow State**, **Policy**, **Role**or by using a custom filter.

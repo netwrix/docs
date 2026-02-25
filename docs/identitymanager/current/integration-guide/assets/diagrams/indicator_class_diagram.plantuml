@@ -1,0 +1,30 @@
+@startuml component
+package "Indicator" {
+	class Indicator {
+		ComparisonOperator : Byte
+		Order : Int32
+		--
+		Binding : Binding
+		EntityType : EntityType
+		Items : IndicatorItem[]
+		OptimizedBinding : Binding
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "IndicatorItem" {
+	class IndicatorItem {
+	}
+}
+Indicator "0..*" --  "0..1"Binding
+Indicator "0..*" --  "1"EntityType
+Indicator "0..1" --  "0..*"IndicatorItem
+Indicator "0..*" --  "0..1"Binding
+hide empty members
+@enduml

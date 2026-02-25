@@ -66,7 +66,7 @@ of the workflow's form and calls the form created previously:
 
 ```
 
-![UI Form](/images/identitymanager/saas/integration-guide/workflows/how-to/workflow-update-resource/howto_resourceupdateno_form_v603.webp)
+![UI Form](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-resource/howto_resourceupdateno_form_v603.webp)
 
 ### Add a summary (Optional)
 
@@ -83,7 +83,7 @@ displays the `IsDraft` attribute that the user just changed:
 
 ```
 
-![UI Summary](/images/identitymanager/saas/integration-guide/workflows/how-to/workflow-update-resource/howto_resourceupdateno_summary_v603.webp)
+![UI Summary](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-resource/howto_resourceupdateno_summary_v603.webp)
 
 ## Assign the Right Permissions
 
@@ -108,7 +108,7 @@ to make the workflow accessible in the UI.
 Updating an existing resource, this workflow manages one given resource at a time. Hence an
 interesting location for this workflow could be the individual view page of users.
 
-![Workflow Menu Items - User's Page](/images/identitymanager/saas/integration-guide/workflows/how-to/workflow-update-mono/menuitems_userview_v603.webp)
+![Workflow Menu Items - User's Page](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-mono/menuitems_userview_v603.webp)
 
 To create a menu item here for the new workflow, you can add the following XML configuration to the
 existing menu items list:

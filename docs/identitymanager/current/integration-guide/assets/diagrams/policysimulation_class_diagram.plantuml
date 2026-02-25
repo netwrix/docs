@@ -1,0 +1,53 @@
+@startuml component
+package "PolicySimulation" {
+	class PolicySimulation {
+		BlockProvisioning : Boolean
+		CompositeRoleAddedAutomaticCount : Int32
+		CompositeRoleAddedBlockedCount : Int32
+		CompositeRoleAddedFoundOrHistoryCount : Int32
+		CompositeRoleDeletedCount : Int32
+		CompositeRoleUpdatedCount : Int32
+		Identifier : String
+		ResourceNavigationAddedAutomaticCount : Int32
+		ResourceNavigationAddedBlockedCount : Int32
+		ResourceNavigationAddedFoundOrHistoryCount : Int32
+		ResourceNavigationDeletedCount : Int32
+		ResourceNavigationUpdatedCount : Int32
+		ResourceScalarAddedAutomaticCount : Int32
+		ResourceScalarAddedBlockedCount : Int32
+		ResourceScalarAddedFoundOrHistoryCount : Int32
+		ResourceScalarDeletedCount : Int32
+		ResourceScalarUpdatedCount : Int32
+		ResourceTypeAddedAutomaticCount : Int32
+		ResourceTypeAddedBlockedCount : Int32
+		ResourceTypeAddedFoundOrHistoryCount : Int32
+		ResourceTypeDeletedCount : Int32
+		ResourceTypeUpdatedCount : Int32
+		RiskAddedCount : Int32
+		RiskDeletedCount : Int32
+		SingleRoleAddedAutomaticCount : Int32
+		SingleRoleAddedBlockedCount : Int32
+		SingleRoleAddedFoundOrHistoryCount : Int32
+		SingleRoleDeletedCount : Int32
+		SingleRoleUpdatedCount : Int32
+		StartedBy : Int64
+		State : Byte
+		WhenCompleted : DateTime
+		WhenStarted : DateTime
+		--
+		EntityType : EntityType
+		Policy : Policy
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+PolicySimulation "0..*" --  "1"EntityType
+PolicySimulation "0..*" --  "0..1"Policy
+hide empty members
+@enduml

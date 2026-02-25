@@ -192,7 +192,7 @@ script in the command line.
 
 It automatically appears on the campaign creation screen, and binds itself to the created campaign:
 
-![Campaign creation screen with policies](/images/identitymanager/saas/integration-guide/governance/accesscertification/creation_5.1.6.webp)
+![Campaign creation screen with policies](/images/identitymanager/integration-guide/governance/accesscertification/creation_5.1.6.webp)
 
 To use it, modify the access control rules by adding a filter on the campaign policy. See the
 [Access Control Rule](/docs/identitymanager/6.2/integration-guide/toolkit/xml-configuration/access-control/accesscontrolrule/index.md)

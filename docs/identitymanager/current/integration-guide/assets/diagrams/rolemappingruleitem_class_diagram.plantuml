@@ -1,0 +1,22 @@
+@startuml component
+package "RoleMappingRuleItem" {
+	class RoleMappingRuleItem {
+		Operator : Byte
+		Value : String
+		--
+		Property : EntityProperty
+		RoleMappingRule : RoleMappingRule
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "RoleMappingRule" {
+	class RoleMappingRule {
+	}
+}
+RoleMappingRuleItem "0..*" --  "1"EntityProperty
+RoleMappingRuleItem "0..*" --  "1"RoleMappingRule
+hide empty members
+@enduml

@@ -1,0 +1,20 @@
+@startuml component
+package "ResourceTypesCategory" {
+	class ResourceTypesCategory {
+		--
+		Category : Category
+		ResourceType : ResourceType
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+ResourceTypesCategory "0..*" --  "1"Category
+ResourceTypesCategory "0..*" --  "1"ResourceType
+hide empty members
+@enduml

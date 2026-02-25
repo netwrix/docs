@@ -1,0 +1,20 @@
+@startuml component
+package "TaskEntityType" {
+	class TaskEntityType {
+		--
+		EntityType : EntityType
+		Task : Task
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Task" {
+	class Task {
+	}
+}
+TaskEntityType "0..*" --  "1"EntityType
+TaskEntityType "0..*" --  "1"Task
+hide empty members
+@enduml

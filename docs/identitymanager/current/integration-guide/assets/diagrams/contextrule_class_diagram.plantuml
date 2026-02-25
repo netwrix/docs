@@ -1,0 +1,45 @@
+@startuml component
+package "ContextRule" {
+	class ContextRule {
+		DisplayName_L1 : String
+		ExcludeExpression : String
+		Identifier : String
+		MinIdentitiesCount : Int32
+		ReductionOutlierPercentage : Float
+		ResourceCertificationComparisonOperator : Byte
+		ResourceCertificationComparisonValue : String
+		ResourcesEndExpression : String
+		ResourcesExpression : String
+		ResourcesStartExpression : String
+		RiskFactorType : Byte
+		--
+		B0 : Binding
+		Policy : Policy
+		ResourceCertificationComparisonBinding : Binding
+		ResourcesBinding : Binding
+		ResourcesEndBinding : Binding
+		ResourcesStartBinding : Binding
+		SourceEntityType : EntityType
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+ContextRule "0..*" --  "0..1"Binding
+ContextRule "0..*" --  "1"Policy
+ContextRule "0..*" --  "0..1"Binding
+ContextRule "0..*" --  "0..1"Binding
+ContextRule "0..*" --  "0..1"Binding
+ContextRule "0..*" --  "0..1"Binding
+ContextRule "0..*" --  "1"EntityType
+hide empty members
+@enduml

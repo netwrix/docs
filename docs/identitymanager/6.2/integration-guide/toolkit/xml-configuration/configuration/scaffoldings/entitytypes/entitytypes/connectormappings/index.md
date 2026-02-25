@@ -66,7 +66,7 @@ When getting Identity Manager
 [Connect Power BI to Identity Manager](/docs/identitymanager/6.2/integration-guide/governance/reporting/how-tos/connect-powerbi/index.md),
 we see the following:
 
-![Universe (ExcludedProperty)](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/queries/universedatamodel/universe_excluded.webp)
+![Universe (ExcludedProperty)](/images/identitymanager/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/queries/universedatamodel/universe_excluded.webp)
 
 ### Mapping Path
 

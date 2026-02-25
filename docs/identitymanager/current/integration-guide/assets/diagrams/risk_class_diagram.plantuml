@@ -1,0 +1,45 @@
+@startuml component
+package "Risk" {
+	class Risk {
+		Description_L1 : String
+		DisplayName_L1 : String
+		ExemptionPolicy : Byte
+		Identifier : String
+		Level : Byte
+		Remediation_L1 : String
+		RiskType : Byte
+		--
+		EntityType : EntityType
+		IdentifiedRisks : IdentifiedRisk[]
+		Policy : Policy
+		RuleItems : RiskRuleItem[]
+		Rules : RiskRule[]
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "IdentifiedRisk" {
+	class IdentifiedRisk {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "RiskRuleItem" {
+	class RiskRuleItem {
+	}
+}
+package "RiskRule" {
+	class RiskRule {
+	}
+}
+Risk "0..*" --  "1"EntityType
+Risk "1" --  "0..*"IdentifiedRisk
+Risk "0..*" --  "1"Policy
+Risk "1" --  "0..*"RiskRuleItem
+Risk "1" --  "0..*"RiskRule
+hide empty members
+@enduml

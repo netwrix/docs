@@ -1,0 +1,72 @@
+@startuml component
+package "AssignedSingleRole" {
+	class AssignedSingleRole {
+		EndDate : DateTime
+		IsDenied : Boolean
+		IsIndirect : Boolean
+		IsInferred : Boolean
+		ManualAssignmentEndDateLockedToContext : Boolean
+		OwnerType : Int64
+		Performer : Int64
+		ReconciliationComment : String
+		RedundantAssignment : Boolean
+		RequestComment : String
+		Requester : Int64
+		ReviewComment1 : String
+		ReviewComment2 : String
+		ReviewComment3 : String
+		Reviewer1 : Int64
+		Reviewer2 : Int64
+		Reviewer3 : Int64
+		RiskReviewComment : String
+		RiskReviewer : Int64
+		StartDate : DateTime
+		WhenPerformed : DateTime
+		WhenReviewed1 : DateTime
+		WhenReviewed2 : DateTime
+		WhenReviewed3 : DateTime
+		WhenRiskReviewed : DateTime
+		WorkflowState : Byte
+		--
+		AccessCertificationItems : AccessCertificationItem[]
+		AssignedSingleRole1IdentifiedRisks : IdentifiedRisk[]
+		AssignedSingleRole2IdentifiedRisks : IdentifiedRisk[]
+		Owner : Resource
+		ParametersContext : Context
+		Role : SingleRole
+		WorkflowInstance : WorkflowInstance
+	}
+}
+package "AccessCertificationItem" {
+	class AccessCertificationItem {
+	}
+}
+package "IdentifiedRisk" {
+	class IdentifiedRisk {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "Context" {
+	class Context {
+	}
+}
+package "SingleRole" {
+	class SingleRole {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+AssignedSingleRole "0..1" --  "0..*"AccessCertificationItem
+AssignedSingleRole "0..1" --  "0..*"IdentifiedRisk
+AssignedSingleRole "0..1" --  "0..*"IdentifiedRisk
+AssignedSingleRole "0..*" --  "1"Resource
+AssignedSingleRole "0..*" --  "1"Context
+AssignedSingleRole "0..*" --  "1"SingleRole
+AssignedSingleRole "0..*" --  "0..1"WorkflowInstance
+hide empty members
+@enduml

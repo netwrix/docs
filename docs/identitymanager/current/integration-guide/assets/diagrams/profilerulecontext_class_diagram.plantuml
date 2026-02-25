@@ -1,0 +1,35 @@
+@startuml component
+package "ProfileRuleContext" {
+	class ProfileRuleContext {
+		IsAppliedToRoot : Boolean
+		--
+		ContextProfileRules : ProfileRule[]
+		EntityType : EntityType
+		ResourceType : ResourceType
+		RootBinding : Binding
+		SubBinding : Binding
+	}
+}
+package "ProfileRule" {
+	class ProfileRule {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+ProfileRuleContext "1" --  "0..*"ProfileRule
+ProfileRuleContext "0..*" --  "0..1"EntityType
+ProfileRuleContext "0..*" --  "0..1"ResourceType
+ProfileRuleContext "0..*" --  "0..1"Binding
+ProfileRuleContext "0..*" --  "0..1"Binding
+hide empty members
+@enduml

@@ -1,0 +1,221 @@
+@startuml component
+package "Binding" {
+	class Binding {
+		Path : String
+		--
+		AccessCertificationOwnerFilter : AccessCertificationOwnerFilter[]
+		AccessControlFilters : AccessControlFilter[]
+		AllowedNavigationBindings : AllowedNavigationBinding[]
+		Aspects : Aspect[]
+		AutocompleteBindingDisplayEntityProperties : DisplayEntityProperty[]
+		AutocompleteBindingDisplayEntityTypes : DisplayEntityType[]
+		B0ContextRules : ContextRule[]
+		B0ProfileRules : ProfileRule[]
+		BeneficiaryEmailBindingPasswordResetSettings : PasswordResetSettings[]
+		BeneficiaryFullNameBindingPasswordResetSettings : PasswordResetSettings[]
+		BindingBindingExpressions : BindingExpression[]
+		BindingRecipients : Recipient[]
+		Controls : FormControl[]
+		Controls2 : FormControl[]
+		Controls3 : FormControl[]
+		DefaultValueFormControls : FormControl[]
+		DisplayedDisplayTableColumns : DisplayTableColumn[]
+		EntityPropertyExpressions : EntityPropertyExpression[]
+		ExpressionAspects : Aspect[]
+		FilterFormControls1 : FormControl[]
+		FilterFormControls2 : FormControl[]
+		HistorizeBindingAspects : Aspect[]
+		Indicators : Indicator[]
+		LinkedFormControls1 : FormControl[]
+		LinkedFormControls2 : FormControl[]
+		NavigationDisplayEntityProperties : DisplayEntityProperty[]
+		NavigationFormControls : FormControl[]
+		NotifiedEmailBindingPasswordResetSettings : PasswordResetSettings[]
+		NotifiedFullNameBindingPasswordResetSettings : PasswordResetSettings[]
+		OptimizedDisplayedDisplayTableColumns : DisplayTableColumn[]
+		OptimizedIndicators : Indicator[]
+		OptimizedSearchCriteria1 : SearchBarCriterion[]
+		OptimizedSortedDisplayTableColumns : DisplayTableColumn[]
+		OptimizedTileItems : TileItem[]
+		RecipientMailBindingNotifications : Notification[]
+		ResourceBinaryRules : ResourceBinaryRule[]
+		ResourceCertificationComparisonBindingContextRules : ContextRule[]
+		ResourceCorrelationRules : ResourceCorrelationRule[]
+		ResourceQueryRules : ResourceQueryRule[]
+		ResourceScalarRules : ResourceScalarRule[]
+		ResourcesContextRules : ContextRule[]
+		ResourcesEndContextRules : ContextRule[]
+		ResourcesStartContextRules : ContextRule[]
+		RoleMappingDisplayNames : RoleMapping[]
+		RoleMappingIdentifiers : RoleMapping[]
+		RootBindingProfileRuleContexts : ProfileRuleContext[]
+		SearchBarsFromSearchedBinding : SearchBar[]
+		SortedDisplayTableColumns : DisplayTableColumn[]
+		SourceBindingUnicityCheckRules : UnicityCheckRule[]
+		SubBindingProfileRuleContexts : ProfileRuleContext[]
+		TargetBindingUnicityCheckRules : UnicityCheckRule[]
+		TargetResourceCorrelationRules : ResourceCorrelationRule[]
+		TargetResourceQueryRules : ResourceQueryRule[]
+		TileItems : TileItem[]
+	}
+}
+package "AccessCertificationOwnerFilter" {
+	class AccessCertificationOwnerFilter {
+	}
+}
+package "AccessControlFilter" {
+	class AccessControlFilter {
+	}
+}
+package "AllowedNavigationBinding" {
+	class AllowedNavigationBinding {
+	}
+}
+package "Aspect" {
+	class Aspect {
+	}
+}
+package "DisplayEntityProperty" {
+	class DisplayEntityProperty {
+	}
+}
+package "DisplayEntityType" {
+	class DisplayEntityType {
+	}
+}
+package "ContextRule" {
+	class ContextRule {
+	}
+}
+package "ProfileRule" {
+	class ProfileRule {
+	}
+}
+package "PasswordResetSettings" {
+	class PasswordResetSettings {
+	}
+}
+package "BindingExpression" {
+	class BindingExpression {
+	}
+}
+package "Recipient" {
+	class Recipient {
+	}
+}
+package "FormControl" {
+	class FormControl {
+	}
+}
+package "DisplayTableColumn" {
+	class DisplayTableColumn {
+	}
+}
+package "EntityPropertyExpression" {
+	class EntityPropertyExpression {
+	}
+}
+package "Indicator" {
+	class Indicator {
+	}
+}
+package "SearchBarCriterion" {
+	class SearchBarCriterion {
+	}
+}
+package "TileItem" {
+	class TileItem {
+	}
+}
+package "Notification" {
+	class Notification {
+	}
+}
+package "ResourceBinaryRule" {
+	class ResourceBinaryRule {
+	}
+}
+package "ResourceCorrelationRule" {
+	class ResourceCorrelationRule {
+	}
+}
+package "ResourceQueryRule" {
+	class ResourceQueryRule {
+	}
+}
+package "ResourceScalarRule" {
+	class ResourceScalarRule {
+	}
+}
+package "RoleMapping" {
+	class RoleMapping {
+	}
+}
+package "ProfileRuleContext" {
+	class ProfileRuleContext {
+	}
+}
+package "SearchBar" {
+	class SearchBar {
+	}
+}
+package "UnicityCheckRule" {
+	class UnicityCheckRule {
+	}
+}
+Binding "0..1" --  "0..*"AccessCertificationOwnerFilter
+Binding "1" --  "0..*"AccessControlFilter
+Binding "1" --  "0..*"AllowedNavigationBinding
+Binding "0..1" --  "0..*"Aspect
+Binding "0..1" --  "0..*"DisplayEntityProperty
+Binding "0..1" --  "0..*"DisplayEntityType
+Binding "0..1" --  "0..*"ContextRule
+Binding "0..1" --  "0..*"ProfileRule
+Binding "0..1" --  "0..*"PasswordResetSettings
+Binding "0..1" --  "0..*"PasswordResetSettings
+Binding "0..1" --  "0..*"BindingExpression
+Binding "0..1" --  "0..*"Recipient
+Binding "0..1" --  "0..*"FormControl
+Binding "0..1" --  "0..*"FormControl
+Binding "0..1" --  "0..*"FormControl
+Binding "0..1" --  "0..*"FormControl
+Binding "0..1" --  "0..*"DisplayTableColumn
+Binding "0..1" --  "0..*"EntityPropertyExpression
+Binding "0..1" --  "0..*"Aspect
+Binding "0..1" --  "0..*"FormControl
+Binding "0..1" --  "0..*"FormControl
+Binding "0..1" --  "0..*"Aspect
+Binding "0..1" --  "0..*"Indicator
+Binding "0..1" --  "0..*"FormControl
+Binding "0..1" --  "0..*"FormControl
+Binding "0..1" --  "0..*"DisplayEntityProperty
+Binding "0..1" --  "0..*"FormControl
+Binding "0..1" --  "0..*"PasswordResetSettings
+Binding "0..1" --  "0..*"PasswordResetSettings
+Binding "0..1" --  "0..*"DisplayTableColumn
+Binding "0..1" --  "0..*"Indicator
+Binding "0..1" --  "0..*"SearchBarCriterion
+Binding "0..1" --  "0..*"DisplayTableColumn
+Binding "0..1" --  "0..*"TileItem
+Binding "0..1" --  "0..*"Notification
+Binding "0..1" --  "0..*"ResourceBinaryRule
+Binding "0..1" --  "0..*"ContextRule
+Binding "0..1" --  "0..*"ResourceCorrelationRule
+Binding "0..1" --  "0..*"ResourceQueryRule
+Binding "0..1" --  "0..*"ResourceScalarRule
+Binding "0..1" --  "0..*"ContextRule
+Binding "0..1" --  "0..*"ContextRule
+Binding "0..1" --  "0..*"ContextRule
+Binding "0..1" --  "0..*"RoleMapping
+Binding "0..1" --  "0..*"RoleMapping
+Binding "0..1" --  "0..*"ProfileRuleContext
+Binding "0..1" --  "0..*"SearchBar
+Binding "0..1" --  "0..*"DisplayTableColumn
+Binding "0..1" --  "0..*"UnicityCheckRule
+Binding "0..1" --  "0..*"ProfileRuleContext
+Binding "0..1" --  "0..*"UnicityCheckRule
+Binding "0..1" --  "0..*"ResourceCorrelationRule
+Binding "0..1" --  "0..*"ResourceQueryRule
+Binding "1" --  "0..*"TileItem
+hide empty members
+@enduml

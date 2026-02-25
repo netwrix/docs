@@ -1,0 +1,30 @@
+@startuml component
+package "ResourceClassificationRule" {
+	class ResourceClassificationRule {
+		BaseRule : Int64
+		ResourceTypeIdentificationConfidenceLevel : Int32
+		SourceMatchedConfidenceLevel : Boolean
+		TargetExpression : String
+		--
+		EntityType : EntityType
+		Policy : Policy
+		ResourceType : ResourceType
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+ResourceClassificationRule "0..*" --  "1"EntityType
+ResourceClassificationRule "0..*" --  "1"Policy
+ResourceClassificationRule "0..*" --  "1"ResourceType
+hide empty members
+@enduml

@@ -1,0 +1,29 @@
+@startuml component
+package "AssociationInstance" {
+	class AssociationInstance {
+		Direction : Byte
+		--
+		Association : EntityAssociation
+		Instance1 : EntityInstance
+		Instance2 : EntityInstance
+		Universe : Universe
+	}
+}
+package "EntityAssociation" {
+	class EntityAssociation {
+	}
+}
+package "EntityInstance" {
+	class EntityInstance {
+	}
+}
+package "Universe" {
+	class Universe {
+	}
+}
+AssociationInstance "0..*" --  "1"EntityAssociation
+AssociationInstance "0..*" --  "1"EntityInstance
+AssociationInstance "0..*" --  "1"EntityInstance
+AssociationInstance "0..*" --  "1"Universe
+hide empty members
+@enduml

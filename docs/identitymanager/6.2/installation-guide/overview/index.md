@@ -12,7 +12,7 @@ choose the installation setup that fits best your organization's needs.
 
 ## Components and Data Flow
 
-![Components & Data Flow](/images/identitymanager/saas/installation-guide/overview/components_data_flow.webp)
+![Components & Data Flow](/images/identitymanager/installation-guide/overview/components_data_flow.webp)
 
 ### Components
 
@@ -95,7 +95,7 @@ Two scenarios unfold:
 
 This approach is useful when managed systems need to run on separate and isolated networks.
 
-![Server & Agents isolated](/images/identitymanager/saas/installation-guide/overview/distribution_1.webp)
+![Server & Agents isolated](/images/identitymanager/installation-guide/overview/distribution_1.webp)
 
 **2.** The Server and one Agent are installed on the same workstation
 
@@ -104,7 +104,7 @@ process. The hosting workstation would **only host a Identity Manager Server pr
 integrated agent) and no separate agent needs to be installed. The database could be installed on
 the same workstation or on a separate one.
 
-![Server & Agent together](/images/identitymanager/saas/installation-guide/overview/distribution_2.webp)
+![Server & Agent together](/images/identitymanager/installation-guide/overview/distribution_2.webp)
 
 ## Authentication
 

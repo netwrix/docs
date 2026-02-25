@@ -17,14 +17,14 @@ Banking application contains:
 - A list of users, accessible by clicking on **Users** at the top of the page. It is possible to add
   a user by clicking on **Create New User**
 
-    ![Users list](/images/identitymanager/saas/integration-guide/connectors/how-tos/demoapp-banking/demoapps_banking_userslist.webp)
+    ![Users list](/images/identitymanager/integration-guide/connectors/how-tos/demoapp-banking/demoapps_banking_userslist.webp)
 
 - A list of groups, accessible by clicking on **Groups** at the top of the page. Clicking on
   **Details** on a group shows the users belonging to that group
 - A user's details page for each user, accessible by clicking on **Details** on a user in the users
   list
 
-    ![User details](/images/identitymanager/saas/integration-guide/connectors/how-tos/demoapp-banking/demoapps_banking_userdetails.webp)
+    ![User details](/images/identitymanager/integration-guide/connectors/how-tos/demoapp-banking/demoapps_banking_userdetails.webp)
 
 The most interesting part of the Banking application is a user's page. On a user's page, it is
 possible to:

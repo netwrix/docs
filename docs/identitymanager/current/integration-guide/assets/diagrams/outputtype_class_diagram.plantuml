@@ -1,0 +1,21 @@
+@startuml component
+package "OutputType" {
+	class OutputType {
+		Identifier : String
+		--
+		OutputTypeDisplayEntityProperties : DisplayEntityProperty[]
+		OutputTypeFormControls : FormControl[]
+	}
+}
+package "DisplayEntityProperty" {
+	class DisplayEntityProperty {
+	}
+}
+package "FormControl" {
+	class FormControl {
+	}
+}
+OutputType "1" --  "0..*"DisplayEntityProperty
+OutputType "1" --  "0..*"FormControl
+hide empty members
+@enduml

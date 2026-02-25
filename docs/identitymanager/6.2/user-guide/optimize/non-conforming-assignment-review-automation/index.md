@@ -49,20 +49,20 @@ information.
 
 Create an automation rule by proceeding as follows:
 
-![Home Page - Access Rules](/images/identitymanager/saas/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+![Home Page - Access Rules](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
 
 **Step 1 –** On the home page in the **Configuration** section, click on **Access Rules**.
 
-![Entity Type Choice](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
+![Entity Type Choice](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
 
 **Step 2 –** In the dropdown menu at the top left, choose the entity type to which the future rule
 will be applied.
 
-![Addition Icon](/images/identitymanager/saas/user-guide/set-up/user-profile-assignment/iconadd_v602.webp)
+![Addition Icon](/images/identitymanager/user-guide/set-up/user-profile-assignment/iconadd_v602.webp)
 
 **Step 3 –** Click on the **Automations** tab and on the addition button at the top right corner.
 
-![New Automation Rule](/images/identitymanager/saas/user-guide/optimize/non-conforming-assignment-review-automation/reviewautomation_newrulefields_v602.webp)
+![New Automation Rule](/images/identitymanager/user-guide/optimize/non-conforming-assignment-review-automation/reviewautomation_newrulefields_v602.webp)
 
 **Step 4 –** Fill in the fields.
 
@@ -100,13 +100,13 @@ assignment.
 
 **Step 2 –** Create an automation rule matching said assignment.
 
-![Home Page - Job Execution](/images/identitymanager/saas/user-guide/set-up/synchronization/home_jobexecution_v602.webp)
+![Home Page - Job Execution](/images/identitymanager/user-guide/set-up/synchronization/home_jobexecution_v602.webp)
 
 **Step 3 –** Compute the role model through the complete job on the **Job Execution** page.
 
 **Step 4 –** Check on the **Role Review** page that the assignment's workflow state changed
 according to the rule's settings.
 
-![New Automation Rule](/images/identitymanager/saas/user-guide/optimize/non-conforming-assignment-review-automation/reviewautomation_rulemessage_v522.webp)
+![New Automation Rule](/images/identitymanager/user-guide/optimize/non-conforming-assignment-review-automation/reviewautomation_rulemessage_v522.webp)
 
 Any role affected by an automation rule shows a specific message on the **Role Review** page.
