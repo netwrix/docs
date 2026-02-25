@@ -42,7 +42,7 @@ The summary section shows:
 
 The detailed information under summary includes:
 
-- **Means Granted** — how access permissions were granted to this account, e.g., _Direct permissions_
+- **Means granted** — how access permissions were granted to this account, e.g., _Direct permissions_
   or _Server role permissions_.
 - **Granted to** — the security principal to which the access permissions were granted, e.g.
   _sysadmin_.
