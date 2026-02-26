@@ -1,20 +1,16 @@
 name: Documentation Reviewer
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, edited, reopened, synchronize]
     paths:
       - '**.md'
-  pull_request_review_comment:
-    types: [created]
-  pull_request_review:
-    types: [submitted]
 
 jobs:
   claude-response:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       pull-requests: write
       issues: write
       id-token: write
@@ -23,20 +19,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Ensures the action checks out the PR branch instead of main
-          ref: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
-          fetch-depth: 0 # Need full history to compare with base branch
+          # Check out by SHA to prevent TOCTOU attacks from forks.
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
 
       - name: Get changed markdown files
         id: changed-files
         run: |
-          # Get the base branch
           BASE_SHA="${{ github.event.pull_request.base.sha }}"
           HEAD_SHA="${{ github.event.pull_request.head.sha }}"
-          
-          # Get only changed .md files
           CHANGED_MD_FILES=$(git diff --name-only --diff-filter=ACMRT $BASE_SHA $HEAD_SHA | grep '\.md$' || true)
-          
           if [ -z "$CHANGED_MD_FILES" ]; then
             echo "No markdown files changed"
             echo "files=" >> "$GITHUB_OUTPUT"
@@ -44,42 +36,293 @@ jobs:
           else
             echo "Changed markdown files:"
             echo "$CHANGED_MD_FILES"
-            # Create a comma-separated list for the prompt
             FILES_LIST=$(echo "$CHANGED_MD_FILES" | tr '\n' ',' | sed 's/,$//')
             echo "files=$FILES_LIST" >> "$GITHUB_OUTPUT"
             echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Read system prompt
+      - name: Dismiss existing reviews
         if: steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          REVIEW_IDS=$(gh api repos/${{ github.repository }}/pulls/${PR_NUMBER}/reviews \
+            --jq '[.[] | select(.user.login == "github-actions[bot]") | .id] | .[]' 2>/dev/null || true)
+          for ID in $REVIEW_IDS; do
+            gh api repos/${{ github.repository }}/pulls/${PR_NUMBER}/reviews/${ID}/dismissals \
+              -X PUT -f message="Superseded by new review" 2>/dev/null || true
+          done
+
+      - name: Checkout system prompt repository
+        uses: actions/checkout@v4
+        with:
+          repository: netwrix-eng/internal-agents
+          token: ${{ secrets.PRIVATE_AGENTS_REPO }}
+          path: system-prompt-repo
+          ref: builds
+          sparse-checkout: |
+            engineering/technical_writing/system-prompt.md
+          sparse-checkout-cone-mode: false
+
+      - name: Read system prompt
         id: read-prompt
         run: |
-          # Read from public repo's .claude/agents directory (synced from private repo)
-          if [ ! -f ".claude/agents/engineering/technical_writing/technical_writer/system.md" ]; then
-            echo "::warning::System prompt file not found at .claude/agents/engineering/technical_writing/technical_writer/system.md, proceeding without it"
-            echo "prompt=" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
           {
             echo "prompt<<EOF"
-            cat .claude/agents/engineering/technical_writing/technical_writer/system.md
+            cat system-prompt-repo/engineering/technical_writing/system-prompt.md
             echo "" # Forces a newline to prevent EOF delimiter errors
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
-      - uses: anthropics/claude-code-action@v1
+      - name: Review documents
         if: steps.changed-files.outputs.count > 0
+        uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          
+          show_full_output: true
           prompt: |
-            Review ONLY the following markdown files that were changed in this PR: ${{ steps.changed-files.outputs.files }}
-            
-            Do not review or comment on any other files (e.g., .js, .ts, .json, etc.). Focus exclusively on the documentation changes in the markdown files listed above.
+            Review the following markdown files that were modified in this PR: ${{ steps.changed-files.outputs.files }}
+
+            Use `gh pr diff ${{ github.event.pull_request.number }}` to identify which lines were added or modified by this PR.
+            Use the Read tool to read each file in full.
+
+            Identify ALL issues in each file. Categorize each issue as either:
+            - Issues in PR changes: the issue is on a line that was added or modified in this PR
+            - Preexisting issues: the issue exists on a line that was not changed by this PR
+
+            You MUST write your complete review to `/tmp/review-summary.md` — always, even if there are no issues. Use this exact structure — two sections, each containing a flat list of issues in the format from your instructions, with no subheadings, groupings, or extra nesting:
+
+            ## Issues in PR changes
+            <flat list of issues in the format from your instructions, or "None." if there are none>
+
+            ## Preexisting issues
+            <flat list of issues in the format from your instructions, or "None." if there are none>
+
+            Then fix ALL issues directly in the files using the Write and Edit tools. Do not post a PR comment. Do not commit or push.
 
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            ${{ steps.read-prompt.outputs.prompt != '' && format('--append-system-prompt "{0}"', steps.read-prompt.outputs.prompt) || '' }}
-            --allowedTools "Bash(npm install),Bash(npm run build),Bash(npm run test:*),Bash(npm run lint:*),Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*)"
+            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*)"
+            --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
+
+      - name: Post review with inline suggestions
+        if: steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          REPO: ${{ github.repository }}
+        run: |
+          python3 << 'PYTHON_EOF'
+          import subprocess
+          import json
+          import re
+          import os
+          import sys
+
+          FOOTER = (
+              "\n---\n\n"
+              "There are two ways to apply fixes:\n"
+              "- View them in the comments and apply them individually or in a batch."
+              " This only applies to changes made to the file.\n"
+              "- Reply with `@claude` here, followed by your instructions"
+              " (e.g. `@claude fix all issues` or `@claude fix only the spelling errors`"
+              " or `@claude fix all other existing issues`)."
+              " You can use this option to fix preexisting issues.\n\n"
+              "Note: Automated fixes are only available for branches in this repository, not forks."
+          )
+
+          def parse_diff_to_suggestions(diff_text):
+              suggestions = []
+              current_file = None
+              old_line_num = 0
+              new_line_num = 0
+              in_change = False
+              old_chunk = []
+              new_chunk = []
+              change_old_start = 0
+
+              for line in diff_text.split('\n'):
+                  if line.startswith('diff --git'):
+                      if in_change and current_file and old_chunk:
+                          s = make_suggestion(current_file, change_old_start, old_chunk, new_chunk)
+                          if s:
+                              suggestions.append(s)
+                      in_change = False
+                      old_chunk = []
+                      new_chunk = []
+                      current_file = None
+                  elif line.startswith('+++ b/'):
+                      current_file = line[6:]
+                  elif line.startswith('@@'):
+                      if in_change and current_file and old_chunk:
+                          s = make_suggestion(current_file, change_old_start, old_chunk, new_chunk)
+                          if s:
+                              suggestions.append(s)
+                      in_change = False
+                      old_chunk = []
+                      new_chunk = []
+                      match = re.match(r'@@ -(\d+)(?:,\d+)? \+(\d+)(?:,\d+)? @@', line)
+                      if match:
+                          old_line_num = int(match.group(1))
+                          new_line_num = int(match.group(2))
+                  elif line.startswith('-') and not line.startswith('---'):
+                      if not in_change:
+                          in_change = True
+                          change_old_start = old_line_num
+                          old_chunk = []
+                          new_chunk = []
+                      old_chunk.append(line[1:])
+                      old_line_num += 1
+                  elif line.startswith('+') and not line.startswith('+++'):
+                      if not in_change:
+                          in_change = True
+                          change_old_start = old_line_num
+                          old_chunk = []
+                          new_chunk = []
+                      new_chunk.append(line[1:])
+                      new_line_num += 1
+                  else:
+                      # Context line or blank
+                      if in_change and current_file and old_chunk:
+                          s = make_suggestion(current_file, change_old_start, old_chunk, new_chunk)
+                          if s:
+                              suggestions.append(s)
+                      in_change = False
+                      old_chunk = []
+                      new_chunk = []
+                      if line.startswith(' '):
+                          old_line_num += 1
+                          new_line_num += 1
+
+              # Flush final change
+              if in_change and current_file and old_chunk:
+                  s = make_suggestion(current_file, change_old_start, old_chunk, new_chunk)
+                  if s:
+                      suggestions.append(s)
+
+              return suggestions
+
+          def make_suggestion(path, old_start, old_chunk, new_chunk):
+              if not old_chunk:
+                  return None  # Pure insertions cannot be placed as inline suggestions
+              end_line = old_start + len(old_chunk) - 1
+              suggestion_body = '```suggestion\n' + '\n'.join(new_chunk) + '\n```'
+              comment = {
+                  'path': path,
+                  'line': end_line,
+                  'side': 'RIGHT',
+                  'body': suggestion_body,
+              }
+              if len(old_chunk) > 1:
+                  comment['start_line'] = old_start
+                  comment['start_side'] = 'RIGHT'
+              return comment
+
+          def get_pr_diff_valid_lines(base_sha, head_sha):
+              """Return the set of (file, line_number) visible in the PR diff.
+
+              Uses local git diff with the same SHAs as commit_id so line numbers
+              are always consistent with what GitHub resolves against.
+              """
+              result = subprocess.run(
+                  ['git', 'diff', base_sha, head_sha, '--unified=3'],
+                  capture_output=True, text=True,
+              )
+              valid = set()
+              current_file = None
+              new_line_num = 0
+              for line in result.stdout.split('\n'):
+                  if line.startswith('+++ b/'):
+                      current_file = line[6:]
+                  elif line.startswith('@@'):
+                      match = re.match(r'@@ -\d+(?:,\d+)? \+(\d+)(?:,\d+)? @@', line)
+                      if match:
+                          new_line_num = int(match.group(1))
+                  elif line.startswith('+') and not line.startswith('+++'):
+                      if current_file:
+                          valid.add((current_file, new_line_num))
+                      new_line_num += 1
+                  elif line.startswith(' '):
+                      if current_file:
+                          valid.add((current_file, new_line_num))
+                      new_line_num += 1
+                  # '-' lines don't exist in HEAD, skip
+              return valid
+
+          # Read the review summary Claude wrote
+          summary_path = '/tmp/review-summary.md'
+          if os.path.exists(summary_path):
+              with open(summary_path) as f:
+                  review_body = f.read().strip()
+          else:
+              review_body = '## Documentation Review\n\nNo summary was generated.'
+
+          review_body += FOOTER
+
+          pr_number = os.environ['PR_NUMBER']
+          base_sha = os.environ['BASE_SHA']
+          head_sha = os.environ['HEAD_SHA']
+          repo = os.environ['REPO']
+
+          # Get diff of Claude's local edits vs HEAD
+          result = subprocess.run(['git', 'diff', 'HEAD'], capture_output=True, text=True)
+          diff_text = result.stdout
+          all_suggestions = parse_diff_to_suggestions(diff_text) if diff_text.strip() else []
+
+          # Filter to only lines visible in the PR diff — GitHub rejects suggestions
+          # on lines outside the diff context with HTTP 422.
+          # Use local git diff with the same SHAs as commit_id to avoid line: null
+          # when new commits are pushed to the PR between checkout and review posting.
+          pr_valid_lines = get_pr_diff_valid_lines(base_sha, head_sha)
+          suggestions = []
+          for s in all_suggestions:
+              start = s.get('start_line', s['line'])
+              end = s['line']
+              if all((s['path'], ln) in pr_valid_lines for ln in range(start, end + 1)):
+                  suggestions.append(s)
+              else:
+                  print(f"Skipping out-of-diff suggestion: {s['path']} line {s['line']}")
+          print(f"{len(suggestions)}/{len(all_suggestions)} suggestions are within the PR diff.")
+
+          def post_review(body, comments):
+              payload = {
+                  'commit_id': head_sha,
+                  'body': body,
+                  'event': 'COMMENT',
+                  'comments': comments,
+              }
+              return subprocess.run(
+                  ['gh', 'api', f'repos/{repo}/pulls/{pr_number}/reviews',
+                   '-X', 'POST', '--input', '-'],
+                  input=json.dumps(payload),
+                  capture_output=True,
+                  text=True,
+              )
+
+          # Try posting review with all inline suggestions.
+          print(f"Attempting to post review with {len(suggestions)} inline suggestion(s)...")
+          for i, s in enumerate(suggestions):
+              print(f"  [{i+1}] {s['path']} line {s.get('start_line', s['line'])}-{s['line']}")
+
+          result = post_review(review_body, suggestions)
+
+          if result.returncode == 0:
+              print(f"Successfully posted review with {len(suggestions)} inline suggestion(s).")
+          else:
+              # Log the full GitHub error response for debugging.
+              print(f"Batch review failed (HTTP 422 or other). Falling back to body-only review.", file=sys.stderr)
+              print(f"gh stderr: {result.stderr}", file=sys.stderr)
+              print(f"gh stdout: {result.stdout}", file=sys.stderr)
+
+              # Post the review body without inline suggestions so the summary is always visible.
+              fallback = post_review(review_body, [])
+              if fallback.returncode != 0:
+                  print(f"Fallback review also failed: {fallback.stderr}", file=sys.stderr)
+                  sys.exit(1)
+              print("Posted review body only. Inline suggestions could not be posted.")
+              print("See the stderr above for the GitHub API error details.")
+          PYTHON_EOF

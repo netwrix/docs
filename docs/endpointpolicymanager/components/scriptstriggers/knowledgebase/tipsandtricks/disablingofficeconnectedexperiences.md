@@ -1,18 +1,7 @@
 ---
-description: >-
-  This article explains how to disable the Optional Connected Experiences feature in Office 365 apps such as Word and Excel using registry settings or PowerShell scripts.
-keywords:
-  - Office 365
-  - Optional Connected Experiences
-  - registry settings
-  - PowerShell
-  - Endpoint Policy Manager
-sidebar_label: Disabling Optional Connected Experiences
-tags: []
 title: "Disabling Optional Connected Experiences in Office 365 Apps"
-knowledge_article_id: kA0Qk0000002WyHKAU
-products:
-  - endpointpolicymanager
+description: "This article explains how to disable the Optional Connected Experiences feature in Office 365 apps such as Word and Excel using registry settings or PowerShell scripts."
+sidebar_position: 20
 ---
 
 # Disabling Optional Connected Experiences in Office 365 Apps

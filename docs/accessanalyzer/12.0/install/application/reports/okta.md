@@ -82,7 +82,7 @@ Access Analyzer Okta application.
   Analyzer server and port into the **Webserver.exe.config** file as:
 
     ```
-    <add key="WsFederationMetadata" value="INSERT URL HERE" />
+    <add key="WsFederationReply" value="INSERT URL HERE" />
     ```
 
 **Step 4 –** Restart the Access Analyzer Web Server.

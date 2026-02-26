@@ -18,7 +18,7 @@ Enterprise Edition.
 
 | Version                                                                      | Edition                                                                                                                                                                                                                                                       |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SQl Server 2022                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/download/details.aspx?id=104781) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=104502) (for evaluation, PoC and small environments) |
+| SQL Server 2022                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/download/details.aspx?id=104781) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=104502) (for evaluation, PoC and small environments) |
 | SQL Server 2019 (on-premises Windows version) cumulative update 10 and above | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC and small environments)                  |
 | SQL Server 2017                                                              | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC and small environments)                  |
 | SQL Server 2016                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services (SP2)](https://www.microsoft.com/en-us/download/details.aspx?id=56840) (for evaluation, PoC and small environments)                                                                |
@@ -257,10 +257,6 @@ This setting also applies to the `Netwrix_Auditor_API` database.
 ## Configure Audit Database Account
 
 This is the account that Auditor uses to write the collected audit data to the audit databases.
-Starting with version 9.96, you can use Group Managed Service Account (gMSA) for that purpose.
-
-_Remember,_ gMSA cannot be used to access SSRS. Use a standard account for that. See the
-[SQL Server Reporting Services](/docs/auditor/10.8/requirements/sqlserverreportingservice.md) topic for additional information.
 
 This account must be granted the **Database owner (`db_owner`)** role and the **dbcreator** server
 role on the SQL Server instance hosting your audit databases.
@@ -290,6 +286,14 @@ data in the upper pane and check **`db_owner`** in the lower pane.
 **Step 9 –** If the account that you want to assign the **`db_owner`** role to has been already
 added to **SQL Server Logins**, expand the **Security** > **Logins** node, right-click the account,
 select **Properties** from the pop-up menu, and edit its roles.
+
+Starting with version 9.96, you can use Group Managed Service Account (gMSA) for that purpose.
+
+**NOTE:** If you use a Group Managed Service Account (gMSA) to access the SQL Server instance that hosts the Netwrix Auditor database, SSRS-based reports cannot be generated.
+This limitation occurs because SQL Server Reporting Services does not support using gMSA for the Unattended Execution Account.
+For more details, see the Microsoft documentation:
+[Configure the Unattended Execution Account (Report Server Configuration Manager)](https://docs.microsoft.com/en-us/sql/reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager?view=sql-server-ver15).
+
 
 If you need to migrate the Audit Database, see the
 [How to Migrate Netwrix Auditor Databases to Another SQL Server Instance](/docs/kb/auditor/configuration-and-setup/sql-server-auditing/how-to-migrate-netwrix-auditor-databases-to-another-sql-server-instance)

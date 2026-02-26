@@ -1,0 +1,56 @@
+name: Documentation Fixer
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  claude-response:
+    runs-on: ubuntu-latest
+    # Only run on PR comments that mention @claude, and not on bot comments
+    if: |
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, '@claude') &&
+      github.event.comment.user.login != 'github-actions[bot]'
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - name: Get PR info
+        id: pr-info
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_DATA=$(gh pr view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json headRefName,isCrossRepository)
+          echo "branch=$(echo "$PR_DATA" | jq -r '.headRefName')" >> "$GITHUB_OUTPUT"
+          echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
+
+      - name: Post fork notice
+        if: steps.pr-info.outputs.is_fork == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment ${{ github.event.issue.number }} --repo ${{ github.repository }} \
+            --body "This PR is from a fork. Automated fixes cannot be pushed directly. Apply the inline suggestions from the review manually, or use GitHub's batch feature to commit them all at once."
+
+      - name: Checkout repository
+        if: steps.pr-info.outputs.is_fork == 'false'
+        uses: actions/checkout@v4
+        with:
+          # Check out the branch by name so git push works.
+          ref: ${{ steps.pr-info.outputs.branch }}
+          fetch-depth: 0
+
+      - name: Apply fixes
+        if: steps.pr-info.outputs.is_fork == 'false'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          claude_args: |
+            --model claude-sonnet-4-5-20250929
+            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
