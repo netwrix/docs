@@ -85,10 +85,15 @@ jobs:
           prompt: |
             Review the following markdown files that were modified in this PR: ${{ steps.changed-files.outputs.files }}
 
-            Use `gh pr diff ${{ github.event.pull_request.number }}` to identify which lines were added or modified by this PR.
-            Use the Read tool to read each file in full.
+            Follow these steps in order:
 
-            Identify ALL issues in each file. Categorize each issue as either:
+            1. Use the Read tool to read each file in full. Do not look at the PR diff yet.
+
+            2. Identify ALL issues throughout the entire document — every sentence, every paragraph, every section. Do not stop after finding a few issues. Do not limit yourself to areas that look like they were recently changed.
+
+            3. Use `gh pr diff ${{ github.event.pull_request.number }}` to get the list of lines that were added or modified in this PR.
+
+            4. Categorize each issue you found in step 2 as either:
             - Issues in PR changes: the issue is on a line that was added or modified in this PR
             - Preexisting issues: the issue exists on a line that was not changed by this PR
 
