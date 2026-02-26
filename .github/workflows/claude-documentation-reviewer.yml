@@ -3,6 +3,8 @@ name: Documentation Reviewer
 on:
   pull_request_target:
     types: [opened, edited, reopened, synchronize]
+    branches-ignore:
+      - main
     paths:
       - '**.md'
 
