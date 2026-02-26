@@ -16,39 +16,18 @@ This guide helps you troubleshoot the Strongpoint scanner system in your Salesfo
 
 ## 1. Verifying Complete Metadata Documentation
 
-You can track which components have been scanned by checking the **Processed__c**, **To_Be_Processed__c**, and **Processing_Failed__c** fields on the **FLO_Customization__c** object.
+To confirm that all metadata has been successfully documented, verify the scanner completion status in the [Scanner Status](/docs/platgovsalesforce/installingstrongpoint/config_and_stats.md#scanner-status) section of **Configuration and Stats**:
 
-**Understanding the Fields:**
-- **Processed__c = false** AND **To_Be_Processed__c = false** AND **Processing_Failed__c = false**: Component has been fully scanned and processed successfully
-- **Processed__c = true**: Component is currently being processed or queued for processing
-- **To_Be_Processed__c = true**: Component needs to be processed
-- **Processing_Failed__c = true**: Component processing failed when reading metadata from Salesforce API
+1. Navigate to **Netwrix Dashboard** > **Settings** > **Configuration and Stats**
+2. Open the **Scanner Status** tab
+3. Review the **Scanner Logs** section
 
-**Important Note About Active Scans:**
+For each Salesforce Type listed, verify the following:
 
-If the scanner is currently running, you may see discrepancies in the field values. The `StrongpointUpdateProcessedBatch` batch runs near the end of the scan process and sets both **Processed__c** and **To_Be_Processed__c** to `false` for successfully processed components.
+- **Retrieved Stage**: Must show **Verified** for all metadata types
+- **Total Customization**: Must match the **Scanner Count** value exactly
 
-### Scan Progress Report
-
-To monitor scan progress in real-time, use the **Scanner Progress - By Metadata Type**. This report displays:
-
-- Total components by metadata type
-- Processing status (Processed/To Be Processed)
-- Last scan date for each component
-- Visual progress indicators
-
-**To access the report:**
-
-1. Go to the **Reports** tab in Salesforce
-2. Navigate to the **Strongpoint Reports** folder
-3. Open **Scanner Progress - By Metadata Type**
-4. Click **Run Report** to view current progress
-
-**Interpreting the Results:**
-- **Total Components**: All active components of this type
-- **Scanned Components**: Components that have been fully scanned (Processed = False AND To Be Processed = False AND Processing Failed = False)
-- **Failed Components**: Components where metadata reading failed (Processing Failed = True)
-- **Progress**: Percentage of components successfully scanned
+When the **Retrieved Stage** shows **Verified** and both count values match, it confirms that the scanner has successfully processed all metadata for that type. If any type shows a different status or mismatched counts, the scan is still in progress.
 
 
 ## 2. Scanner Limits
@@ -70,54 +49,9 @@ The scanner operates within standard Salesforce governor limits:
 
 ### 2.2 Scanner-Specific Limits
 
-To optimize performance and prevent governor limit issues, the scanner applies processing limits to certain metadata types. These limits control how many records are processed per batch run, ensuring the scanner operates within Salesforce API call limits and governor thresholds.
+Due to Salesforce governor limit constraints, the scanner processes metadata in batches with configurable size limits. Each batch run has a processing limit that typically ranges between 7,000 and 10,000 records per batch, depending on the metadata type and complexity. These limits ensure the scanner operates within Salesforce API call limits and governor thresholds while optimizing performance.
 
-The following metadata types have configured processing limits:
-
-#### Report Scanner
-- **Batch Size**: 10,000 reports per batch
-
-#### Flow Scanners
-- **Batch Size**: 10,000 flows per batch
-- **Version Handling**: Only active versions processed
-
-#### List View Scanner
-- **Batch Size**: 10,000 list views per batch
-
-#### Workflow Scanner
-- **Batch Size**: 10,000 workflow components per batch
-
-#### Formula Field Scanner
-- **Batch Size**: 10,000 formula fields per batch
-
-#### Custom Object Scanner
-- **Batch Size**: 10,000 objects per batch
-
-#### Standard Field Scanner
-- **Batch Size**: 10,000 objects per batch
-- **Processes**: Standard fields on custom and standard objects
-
-#### Record Type Scanner
-- **Batch Size**: 10,000 record types per batch
-- **Processes**: RecordType metadata including picklist values
-
-#### User Interface Settings Scanner
-- **Batch Size**: 7,000 customizations per batch
-
-#### Permission Set Group Scanner
-- **Batch Size**: 20 permission set groups per batch (configurable), if the configuration is turned off process all the PSG in the account
-
-#### Profile Scanners
-- **Batch Size**: 20 profiles per batch (configurable), if the configuration is turned off process all the PSG in the account
-
-#### Permission Set Scanners
-- **Batch Size**: 20 permission sets per batch (configurable), if the configuration is turned off process all the PSG in the account
-
-#### General Metadata Scanner
-- **Batch Size**: 7,000 customizations per batch
-- **Threshold Check**: Stops if governor limits approach 80%
-
-## 3. Estimating Scan Duration
+## 3. Estimating Scan Duration lo ponemos como punto uno
 
 | Org Size | Metadata Count | Estimated Duration | Characteristics |
 |----------|----------------|-------------------|-----------------|
@@ -144,6 +78,7 @@ The following metadata types have configured processing limits:
 
 You can monitor the scanner execution status in real-time through the Strongpoint UI. For detailed instructions on how to view scanner progress, check the status of running batches, and interpret the Scanner Status page, see the [Scanner Status documentation](../navigate_strongpoint#scanner-status).
 
+You can also create your own Salesforce view to monitor scanner jobs directly in Salesforce. For step-by-step instructions on creating a custom view for the scanners, see the [Running Scanner documentation](/docs/platgovsalesforce/installingstrongpoint/running_scanner.md#creating-a-custom-view-for-scanners).
 
 ## 5. Initial Scan Recommendations
 
