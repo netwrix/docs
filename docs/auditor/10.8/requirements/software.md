@@ -30,7 +30,7 @@ Server, in the monitored environment, or in both locations.
 
 ## Using SSRS-based Reports
 
-SQL Server Reporting Services are needed for this kind of reports. See the
+SQL Server Reporting Services are needed for these kinds of reports. See the
 [Requirements for SQL Server to Store Audit Data](/docs/auditor/10.8/requirements/sqlserver.md) topic for additional information.
 
 **NOTE:** It is not recommended to install SQL Server (including Express edition), SQL Server Reporting Services (SSRS), or Netwrix Auditor on a domain controller.
