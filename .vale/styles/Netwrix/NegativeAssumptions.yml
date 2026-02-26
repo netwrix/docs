@@ -1,0 +1,14 @@
+extends: existence
+message: "Avoid negative assumptions about what users can or cannot do ('%s'). Describe the benefit positively instead."
+level: warning
+ignorecase: true
+tokens:
+  - '\byou wouldn''t be able to\b'
+  - '\byou would not be able to\b'
+  - '\byou won''t be able to\b'
+  - '\byou will not be able to\b'
+  - '\byou are unable to\b'
+  - '\byou aren''t able to\b'
+  - '\byou are not able to\b'
+  - '\byou could not\b'
+  - '\byou couldn''t\b'
