@@ -33,13 +33,13 @@ Server, in the monitored environment, or in both locations.
 SQL Server Reporting Services are needed for this kind of reports. See the
 [Requirements for SQL Server to Store Audit Data](/docs/auditor/10.8/requirements/sqlserver.md) topic for additional information.
 
-**NOTE:** It is strongly not recommended to install SQL Server (including Express edition), SQL Server Reporting Services (SSRS) or Netwrix Auditor on a domain controller.
+**NOTE:** It is not recommended to install SQL Server (including Express edition), SQL Server Reporting Services (SSRS), or Netwrix Auditor on a domain controller.
 
 **Microsoft Edge WebView2**
 
 To view SSRS-based reports in Netwrix Auditor, the WebView2 runtime component must be installed.  
 If the component is not detected on the system, it will be automatically installed during the Netwrix Auditor setup process.  
-See the following Microsoft article for additional information about WebView2 runtime component: [Microsoft Edge WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2).
+See the following Microsoft article for additional information about the WebView2 runtime component: [Microsoft Edge WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2).
 
 ## Server and Client
 
