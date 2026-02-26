@@ -108,7 +108,7 @@ jobs:
             Then fix ALL issues directly in the files using the Write and Edit tools. Do not post a PR comment. Do not commit or push.
 
           claude_args: |
-            --model claude-sonnet-4-5-20250929
+            --model claude-opus-4-6
             --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
 
