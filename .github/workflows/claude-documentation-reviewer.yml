@@ -3,6 +3,8 @@ name: Documentation Reviewer
 on:
   pull_request_target:
     types: [opened, edited, reopened, synchronize]
+    branches-ignore:
+      - main
     paths:
       - '**.md'
 
@@ -89,11 +91,11 @@ jobs:
 
             1. Use the Read tool to read each file in full. Do not look at the PR diff yet.
 
-            2. Identify ALL issues throughout the entire document — every sentence, every paragraph, every section. Do not stop after finding a few issues. Do not limit yourself to areas that look like they were recently changed.
+            2. Identify ALL issues in the document per your instructions.
 
             3. Use `gh pr diff ${{ github.event.pull_request.number }}` to get the list of lines that were added or modified in this PR.
 
-            4. Categorize each issue you found in step 2 as either:
+            4. Categorize each issue from step 2 as either:
             - Issues in PR changes: the issue is on a line that was added or modified in this PR
             - Preexisting issues: the issue exists on a line that was not changed by this PR
 
@@ -108,7 +110,7 @@ jobs:
             Then fix ALL issues directly in the files using the Write and Edit tools. Do not post a PR comment. Do not commit or push.
 
           claude_args: |
-            --model claude-opus-4-6
+            --model claude-sonnet-4-5-20250929
             --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
 
