@@ -80,6 +80,8 @@ You can schedule the FastScan to run automatically:
 5. Choose the time of day to run
 6. Click **Enable** to activate
 
+For more information about the scheduler, see the [Scheduler documentation](/docs/platgovsalesforce/scanner/scheduler.md).
+
 **Best Practice**: Schedule the FastScan to run daily during off-peak hours to ensure timely change detection without impacting users.
 
 ### Manual Execution
