@@ -1,0 +1,7 @@
+extends: substitution
+message: "Use 'drop-down' (hyphenated) instead of '%s'."
+level: warning
+ignorecase: true
+swap:
+  '\bdrop down\b': 'drop-down'
+  '\bdropdown\b': 'drop-down'

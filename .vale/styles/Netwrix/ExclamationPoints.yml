@@ -1,0 +1,5 @@
+extends: existence
+message: "Avoid exclamation points in technical documentation."
+level: warning
+tokens:
+  - '!'

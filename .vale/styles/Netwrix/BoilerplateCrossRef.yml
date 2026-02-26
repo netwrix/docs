@@ -1,0 +1,7 @@
+extends: existence
+message: "Avoid '%s'. Write specific cross-reference text that describes what the reader will find."
+level: suggestion
+ignorecase: true
+tokens:
+  - '\bfor additional information\b'
+  - '\bfor more information\b'

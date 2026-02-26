@@ -1,0 +1,7 @@
+extends: existence
+message: "Avoid '%s'. Use a proper admonition block (Note, Warning, or Tip) for supplementary information."
+level: warning
+ignorecase: true
+tokens:
+  - '\bnote that\b'
+  - '\bplease note\b'
