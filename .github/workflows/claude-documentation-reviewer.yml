@@ -89,11 +89,19 @@ jobs:
 
             1. Use the Read tool to read each file in full. Do not look at the PR diff yet.
 
-            2. Identify ALL issues throughout the entire document — every sentence, every paragraph, every section. Do not stop after finding a few issues. Do not limit yourself to areas that look like they were recently changed.
+            2. Review the document in three focused passes. In each pass, go through every sentence and paragraph in the document:
+
+               Pass 1 — Grammar: Check every sentence for sentence fragments, run-on sentences, ambiguous pronoun references, subject-verb agreement errors, misplaced or dangling modifiers, and any other grammatical errors.
+
+               Pass 2 — Style: Check every sentence for active vs. passive voice, present vs. other tenses, use of second person ("you"), informal or unprofessional language, anthropomorphism, use of first person plural ("we"), nominalizations, redundancy, and any other style issues from your instructions.
+
+               Pass 3 — Netwrix standards: Check every sentence for incorrect product names, undefined acronyms on first use, incorrect or non-standard terminology, and any other Netwrix-specific conventions from your instructions.
+
+               Compile a single list of all issues found across all three passes before moving to the next step.
 
             3. Use `gh pr diff ${{ github.event.pull_request.number }}` to get the list of lines that were added or modified in this PR.
 
-            4. Categorize each issue you found in step 2 as either:
+            4. Categorize each issue from step 2 as either:
             - Issues in PR changes: the issue is on a line that was added or modified in this PR
             - Preexisting issues: the issue exists on a line that was not changed by this PR
 
@@ -108,7 +116,7 @@ jobs:
             Then fix ALL issues directly in the files using the Write and Edit tools. Do not post a PR comment. Do not commit or push.
 
           claude_args: |
-            --model claude-opus-4-6
+            --model claude-sonnet-4-5-20250929
             --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
 
