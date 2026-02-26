@@ -26,10 +26,11 @@ After installing the package, you need to configure authentication credentials. 
 
 ### Recommended: Named Credential Authentication (OAuth)
 
-**This is the recommended approach**, especially for organizations with Multi-Factor Authentication (MFA) enabled.
+**This is the recommended approach** for all organizations, and is **required** when High Assurance is enabled on user profiles.
 
 Named Credentials provide:
-- **MFA compatibility** - Works seamlessly with Salesforce MFA requirements
+- **High Assurance compatibility** - Required when Salesforce profiles have High Assurance enabled
+- **Independent authentication** - Does not rely on specific user credentials, improving security and reliability
 - **Automatic token refresh** - No session expiration issues
 - **Enhanced security** - Limited OAuth scopes instead of full user permissions
 
@@ -41,12 +42,11 @@ For detailed step-by-step instructions on configuring Named Credentials with Ext
 
 The traditional method uses direct user credentials (username, password, and security token) to authenticate API calls. **This method does not require a Connected App**, but has significant limitations:
 
-- **Does not work with MFA** - Fails when Multi-Factor Authentication is enabled
-- **Session expiration** - Requires manual re-authentication when sessions expire
-- **Less secure** - Uses full user permissions for all API calls
+- **Does not work with High Assurance** - Fails when High Assurance is enabled on user profiles
+- **User-dependent** - Relies on specific user credentials; if using this method, we recommend creating a dedicated Integration User for this purpose
 
-:::warning MFA Incompatibility
-If your Salesforce organization has MFA enabled (required by Salesforce as of February 2022), you **must** use the Named Credential authentication method. Session ID authentication will not work with MFA.
+:::warning High Assurance Incompatibility
+If your Salesforce organization has **High Assurance enabled on user profiles**, you **must** use the Named Credential authentication method. Session ID authentication will not work with High Assurance. While High Assurance is often associated with MFA requirements, it is the High Assurance setting itself that makes Named Credentials mandatory.
 :::
 
 <details>
@@ -55,18 +55,20 @@ If your Salesforce organization has MFA enabled (required by Salesforce as of Fe
 This method uses direct user credentials without requiring a Connected App setup.
 
 **Requirements:**
-- Salesforce **username**
+- Salesforce **username** (we recommend using a dedicated Integration User)
 - Salesforce **password**
 - Salesforce **security token** (obtained from user settings)
 
 **Configuration:**
 The credentials are entered directly in the Platform Governance application during the Getting Started Wizard. No Connected App or OAuth configuration is needed.
 
+**Best Practice:**
+When using Session ID authentication, create a dedicated Integration User specifically for Platform Governance. This approach provides better control and reduces dependencies on individual user accounts.
+
 **Limitations:**
-- Cannot be used if MFA is enabled
-- Session expires based on org security policies
-- Requires user to remain active in Salesforce
-- Not suitable for production environments
+- Cannot be used if High Assurance is enabled on user profiles
+- Depends on specific user credentials, creating maintenance overhead
+- Not suitable for organizations with High Assurance requirements
 
 </details>
 
@@ -118,8 +120,8 @@ You are now ready to begin using Platform Governance for Salesforce.
 After completing the installation and authentication setup:
 
 1. **Configure Authentication:**
-   - **Recommended:** [Named Credential Setup](named_credential.md) - For MFA-enabled organizations
-   - **Legacy:** Session ID setup
+   - **Recommended:** [Named Credential Setup](named_credential.md) - Required for High Assurance profiles, recommended for all organizations
+   - **Legacy:** Session ID setup - Only for organizations without High Assurance
 
 2. **Initial Configuration:**
    - [Run the Getting Started Wizard](using_getting_started_wizard.md)
