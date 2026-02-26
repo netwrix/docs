@@ -161,3 +161,10 @@
 
 # Knowledge base team
 /docs/kb/ @netwrix/kb-docs
+
+# Training team
+/docs/customer/ @netwrix/training-docs
+/docs/partner/ @netwrix/training-docs
+/src/training/ @netwrix/training-docs
+/static/images/customer-portal @netwrix/training-docs
+/static/images/training @netwrix/training-docs
