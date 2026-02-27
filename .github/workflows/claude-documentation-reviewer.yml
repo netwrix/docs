@@ -123,9 +123,11 @@ jobs:
 
           FOOTER = (
               "\n---\n\n"
-              "To fix issues in bulk, comment `@claude` on this PR followed by your instructions"
-              " (e.g. `@claude fix all issues` or `@claude fix only the spelling errors`"
-              " or `@claude fix all linting issues`).\n\n"
+              "To review other preexisting issues in the updated documentation, comment `@claude` on this PR"
+              " followed by your instructions (`@claude review preexisting issues`).\n"
+              "To apply suggested fixes to the updated documentation, individually or in bulk, comment `@claude`"
+              " on this PR followed by your instructions (`@claude fix all issues`"
+              " or `@claude fix all linting issues` or `@claude fix only the spelling errors`).\n\n"
               "Note: Automated fixes are only available for branches in this repository, not forks."
           )
 
