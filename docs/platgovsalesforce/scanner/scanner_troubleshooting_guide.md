@@ -6,33 +6,40 @@ This guide helps you troubleshoot the Strongpoint scanner system in your Salesfo
 ---
 
 ## Table of Contents
-1. [Verifying Complete Metadata Documentation](#1-verifying-complete-metadata-documentation)
-2. [Scanner Limits and Constraints](#2-scanner-limits-and-constraints)
-3. [Estimating Scan Duration](#3-estimating-scan-duration)
-4. [Scanner Status](#4-scanner-status)
-5. [Initial Scan Recommendations](#5-initial-scan-recommendations)
+1. [Understanding Scanner Performance](#1-understanding-scanner-performance)
+2. [Scanner Status](#2-scanner-status)
+3. [Initial Scan Recommendations](#3-initial-scan-recommendations)
 
 ---
 
-## 1. Verifying Complete Metadata Documentation
+## 1. Understanding Scanner Performance
 
-To confirm that all metadata has been successfully documented, verify the scanner completion status in the [Scanner Status](/docs/platgovsalesforce/installingstrongpoint/config_and_stats.md#scanner-status) section of **Configuration and Stats**:
+### 1.1 Estimating Scan Duration
 
-1. Navigate to **Netwrix Dashboard** > **Settings** > **Configuration and Stats**
-2. Open the **Scanner Status** tab
-3. Review the **Scanner Logs** section
+Understanding how long a scan will take helps you plan accordingly:
 
-For each Salesforce Type listed, verify the following:
+| Org Size | Metadata Count | Estimated Duration | Characteristics |
+|----------|----------------|-------------------|-----------------|
+| **Small** | < 20,000 | 1 - 3 days | Standard objects, minimal customization |
+| **Medium** | 20,000 - 70,000 | 4 - 6 days | Multiple custom objects, moderate automation |
+| **Large** | 70,000 - 100,000 | 7 - 10 days | Extensive customization, complex integrations |
 
-- **Retrieved Stage**: Must show **Verified** for all metadata types
-- **Total Customization**: Must match the **Scanner Count** value exactly
+**Factors Affecting Duration:**
 
-When the **Retrieved Stage** shows **Verified** and both count values match, it confirms that the scanner has successfully processed all metadata for that type. If any type shows a different status or mismatched counts, the scan is still in progress.
+*Accelerating Factors:*
+- Fewer dependencies between components
+- Standard objects vs. custom objects
+- Inactive metadata excluded
 
+*Slowing Factors:*
+- Complex Flow conditions requiring separate processing
+- Deep folder hierarchies (Reports/Dashboards)
+- Large number of picklist values
+- API rate limiting during peak hours
 
-## 2. Scanner Limits
+### 1.2 Scanner Limits
 
-### 2.1 Salesforce Governor Limits
+**Salesforce Governor Limits:**
 
 The scanner operates within standard Salesforce governor limits:
 
@@ -47,42 +54,36 @@ The scanner operates within standard Salesforce governor limits:
 | **Callouts** | 100 | API calls per transaction |
 | **Batch Job Timeout** | 24 hours | Maximum execution time |
 
-### 2.2 Scanner-Specific Limits
+**Scanner-Specific Limits:**
 
-Due to Salesforce governor limit constraints, the scanner processes metadata in batches with configurable size limits. Each batch run has a processing limit that typically ranges between 7,000 and 10,000 records per batch, depending on the metadata type and complexity. These limits ensure the scanner operates within Salesforce API call limits and governor thresholds while optimizing performance.
+Due to Salesforce governor limit constraints, the scanner processes metadata in batches with configurable size limits. Each batch run has a processing limit that typically ranges between 1,000 and 7,000 records per batch, depending on the metadata type and complexity. These limits ensure the scanner operates within Salesforce API call limits and governor thresholds while optimizing performance.
 
-## 3. Estimating Scan Duration lo ponemos como punto uno
+### 1.3 Verifying Complete Metadata Documentation
 
-| Org Size | Metadata Count | Estimated Duration | Characteristics |
-|----------|----------------|-------------------|-----------------|
-| **Small** | < 20,000 | 1 - 3 days | Standard objects, minimal customization |
-| **Medium** | 20,000 - 70,000 | 4 - 6 days | Multiple custom objects, moderate automation |
-| **Large** | 70,000 - 100,000 | 7 - 10 days | Extensive customization, complex integrations |
+To confirm that all metadata has been successfully documented, verify the scanner completion status in the [Scanner Status](/docs/platgovsalesforce/installingstrongpoint/config_and_stats.md#scanner-status) section of **Configuration and Stats**:
 
-### Factors Affecting Duration
+1. Navigate to **Netwrix Dashboard** > **Settings** > **Configuration and Stats**
+2. Open the **Scanner Status** tab
+3. Review the **Scanner Logs** section
 
-**Accelerating Factors:**
-- Fewer dependencies between components
-- Standard objects vs. custom objects
-- Inactive metadata excluded
+For each Salesforce Type listed, verify the following:
 
-**Slowing Factors:**
-- Complex Flow conditions requiring separate processing
-- Deep folder hierarchies (Reports/Dashboards)
-- Large number of picklist values
-- API rate limiting during peak hours
+- **Retrieved Stage**: Must show **Verified** for all metadata types
+- **Total Customization**: Must match the **Scanner Count** value exactly
+
+When the **Retrieved Stage** shows **Verified** and both count values match, it confirms that the scanner has successfully processed all metadata for that type. If any type shows a different status or mismatched counts, the scan is still in progress.
 
 ---
 
-## 4. Scanner Status
+## 2. Scanner Status
 
 You can monitor the scanner execution status in real-time through the Strongpoint UI. For detailed instructions on how to view scanner progress, check the status of running batches, and interpret the Scanner Status page, see the [Scanner Status documentation](../navigate_strongpoint#scanner-status).
 
 You can also create your own Salesforce view to monitor scanner jobs directly in Salesforce. For step-by-step instructions on creating a custom view for the scanners, see the [Running Scanner documentation](/docs/platgovsalesforce/installingstrongpoint/running_scanner.md#creating-a-custom-view-for-scanners).
 
-## 5. Initial Scan Recommendations
+## 3. Initial Scan Recommendations
 
-### 5.1 Running the Full Scan
+### 3.1 Running the Full Scan
 
 Before setting up incremental or scheduled scans, you must complete an initial full scan of your Salesforce org. This full scan documents all existing metadata and establishes the baseline for future change detection.
 
@@ -92,9 +93,9 @@ Before setting up incremental or scheduled scans, you must complete an initial f
 2. Configure the automated scan settings following the [Scanner Scheduler documentation](./scheduler)
 3. Start the full scan and monitor its progress using the [Scanner Status page](../navigate_strongpoint#scanner-status)
 
-**Important:** Wait for the full scan to complete before configuring incremental scans. You can verify completion by checking the report shared in [section 1](#1-verifying-complete-metadata-documentation).
+**Important:** Wait for the full scan to complete before configuring incremental scans. You can verify completion by checking the information in [section 1.3](#13-verifying-complete-metadata-documentation).
 
-### 5.2 Configuring Metadata Types to Document
+### 3.2 Configuring Metadata Types to Document
 
 You can configure which Salesforce metadata types you want to document based on your organization's needs. This allows you to focus on the most relevant components and optimize scan performance.
 
@@ -112,7 +113,7 @@ Follow the instructions in the [Daily Scan Configuration documentation](./daily_
 - **Report-heavy orgs**: Include Reports, Dashboards, and List Views
 - **Compliance-focused orgs**: Document all metadata types for complete audit trails
 
-### 5.3 Best Practices
+### 3.3 Best Practices
 
 **Timing Recommendations:**
 - ✅ **DO**: Run initial scan during off-peak hours (evenings/weekends)
