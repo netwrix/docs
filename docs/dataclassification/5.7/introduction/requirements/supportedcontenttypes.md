@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Supported Content Types
 
-The table below lists types of content and their default extensions supported out of the box.
+The table below lists the content types NDC supports out of the box, and their default extensions.
 
 :::note
 To review the full list of available content types, navigate to Config → Text Processing →

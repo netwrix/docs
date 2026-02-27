@@ -20,7 +20,8 @@ Follow the steps to add a content source.
 the sources:
 
 - [Box](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addbox.md)
-- [Add Single Database](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsingledatabase/addsingledatabase.md) (Microsoft SQL Server or Oracle database)
+- [Add Single Database](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsingledatabase/addsingledatabase.md) (Microsoft SQL Server, MySQL, PostgreSQL or Oracle database)
+- [Add Database Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md) (Microsoft SQL Server, MySQL, PostgreSQL or Oracle databases on a server)
 - [Dropbox](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/adddropbox.md)
 - [Exchange Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeserver.md) or
   [Exchange Mailbox](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailbox.md)
@@ -34,8 +35,7 @@ All your content sources will be listed in the **Sources** section.
 :::note
 When adding a source or managing source configuration, the most commonly used source
 settings are displayed by default. However, some source types have additional configuration options
-that can be displayed by clicking the Advanced Settings ("wrench" icon). You can allow these
-advanced settings to be always shown to authorized users.
+that can be displayed by clicking the Advanced Settings ("wrench" icon) in the bottom left. You can
+set the Advanced Settings to display by default in User Preferences.
 [Users and Security Settings](/docs/dataclassification/5.7/systemconfigurationoverview/users/users.md)
-
 :::

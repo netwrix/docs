@@ -16,7 +16,7 @@ By default, post installation, all users will be considered Superusers with acce
 the product. To begin the process of securing the product please follow the below steps:
 
 1. Access the Administration Console.
-2. Select Users from the top navigation bar.
+2. Select Settings > Users from the top navigation bar.
 3. Select Add.
 4. Your username will be pre-filled and must first be added to ensure that you do not lose access to
    the system.
@@ -64,11 +64,11 @@ the full text at rest. You can enable this mode by:
 
 1. Access the Administration Console;
 2. Select Config from the top navigation bar;
-3. Enable the Encrypt Text (Text.cse) option (under advanced settings - select the screwdriver
-   spanner to show);
+3. On the Collector tab, enable the Encrypt Text (Text.cse) option (this is an advanced setting - 
+select the spanner icon in the bottom left to display it);
 4. Select Save.
 
-The remaining files cannot be reverse engineered to retrieve the full document text - however, do
+The other index files cannot be reverse engineered to retrieve the full document text - however, do
 contain the weightings and terms within the text. We recommend restricting access to all files at
 the file system level as well as considering file system encryption.
 

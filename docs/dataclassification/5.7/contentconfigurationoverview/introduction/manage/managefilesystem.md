@@ -60,12 +60,12 @@ classifications attributes to the classified documents:
 
 **To configure tagging on a source level**
 
-1. Go to **Sources** → **General**, highlight the source you need and click the "pencil" symbol on
-   the right.
-2. The list of global taxonomy configurations will be displayed. To apply these global settings,
-   select **Use Global Configuration** checkbox on top. To configure source-specific settings, clear
-   this checkbox.
-3. Select the taxonomy you need and click **Edit**.
+1. Go to the **Sources** view, select the source you wish to enable classifications for and click the "pencil" symbol on
+   the right side of the table.
+2. The list of global taxonomy configurations will be displayed. To apply these settings globally,
+   select the **Use Global Configuration** checkbox at the top of the page. To configure settings for the selected source specifically, make sure
+   this checkbox is unchecked.
+3. Select the taxonomy you wish to write back and click **Edit**.
 4. In the taxonomy properties, select the **Enabled** checkbox and specify the settings described in
    the table above.
 
@@ -86,8 +86,13 @@ To specify inclusions, do the following:
 3. To modify an extension (for example, add a wildcard), click **Edit**. To add a new one, click
    **Add**.
 
+Two wildcards are supported:
+- \* - matches to one or more instances of any character
+- . - explicitly includes files with no extension
+
+
 :::note
-Inclusions are case-insensitive. A wildcard (\*) is supported.
+Inclusions are case-insensitive.
 :::
 
 
@@ -102,7 +107,7 @@ You can also configure the list of file locations to exclude from processing.
 2. In the **Details** window on the **Filter** tab specify the objects (files or folders) to
    exclude.
 
-    To exclude a certain file, enter its full path. For example: _C:\Test Folder\Test Document.docx_
+    To exclude a specific file, enter its full path. For example: _C:\Test Folder\Test Document.docx_
 
     Wildcards can be used anywhere in the exclusion pattern definition as follows:
 
