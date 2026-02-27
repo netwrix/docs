@@ -22,7 +22,7 @@ notifications are sent when the Change Request owner advances the status to **Pe
 Once the Change Request is approved, you cannot change the customizations associated with it or make any other modifications to the record.
 
 You can add the **Netwrix CR Approval Override** Permission Set to specific users. Users with
-this Permission Set can approve a Change Request independent of the governing policy. 
+this Permission Set can approve a Change Request independently of the governing policy. 
 
 :::note
 The default approve permission is no longer included with the System Administrator role. If you have a System
