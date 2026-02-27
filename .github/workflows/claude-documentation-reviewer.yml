@@ -221,12 +221,35 @@ jobs:
 
               return suggestions
 
+          issue_descriptions = {}
+
+          def parse_issue_descriptions(review_text):
+              """Return {(path, line): description} parsed from the review summary."""
+              descriptions = {}
+              pattern = re.compile(r'-\s+(.+?),\s+[Ll]ine\s+(\d+):\s+(.+)')
+              for line_text in review_text.split('\n'):
+                  m = pattern.match(line_text.strip())
+                  if m:
+                      path = m.group(1).strip()
+                      lineno = int(m.group(2))
+                      full_desc = m.group(3).strip()
+                      if 'Suggested change:' in full_desc:
+                          desc = full_desc[:full_desc.index('Suggested change:')].rstrip('. ')
+                      else:
+                          desc = full_desc.rstrip('.')
+                      descriptions[(path, lineno)] = desc
+              return descriptions
+
           def make_suggestion(path, old_start, old_chunk, new_chunk):
               if not old_chunk:
                   return None  # Pure insertions cannot be placed as inline comments
               end_line = old_start + len(old_chunk) - 1
               new_text = '\n'.join(new_chunk)
-              comment_body = f"Suggested change:\n```\n{new_text}\n```{INLINE_FOOTER}"
+              description = issue_descriptions.get((path, old_start))
+              if description:
+                  comment_body = f"{description}\n\nSuggested change:\n```\n{new_text}\n```{INLINE_FOOTER}"
+              else:
+                  comment_body = f"Suggested change:\n```\n{new_text}\n```{INLINE_FOOTER}"
               comment = {
                   'path': path,
                   'line': end_line,
@@ -276,6 +299,8 @@ jobs:
                   review_body = f.read().strip()
           else:
               review_body = '## Documentation Review\n\nNo summary was generated.'
+
+          issue_descriptions.update(parse_issue_descriptions(review_body))
 
           review_body += FOOTER
 
