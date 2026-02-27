@@ -85,3 +85,55 @@ jobs:
             --model claude-sonnet-4-5-20250929
             --allowedTools "Read,Write,Edit,Bash(vale:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
+
+      - name: Post preexisting issues comment
+        if: steps.pr-info.outputs.is_fork == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.pr-info.outputs.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          python3 << 'PYTHON_EOF'
+          import os
+          import json
+          import subprocess
+
+          pr_number = os.environ['PR_NUMBER']
+          repo = os.environ['REPO']
+
+          FOOTER = (
+              "\n\n---\n\n"
+              "To apply the suggested fixes to preexisting issues, comment `@claude` on this PR followed by your instructions\n"
+              "(`@claude fix all issues` or `@claude fix only the first issue`).\n"
+              "Note: Automated fixes are only available for branches in this repository, not forks."
+          )
+
+          FOOTER_MARKER = "Automated fixes are only available"
+
+          summary_path = '/tmp/preexisting-issues.md'
+          if os.path.exists(summary_path):
+              # Claude wrote to the file as instructed — post a new comment with footer
+              with open(summary_path) as f:
+                  body = f.read().strip()
+              subprocess.run(
+                  ['gh', 'pr', 'comment', pr_number, '--repo', repo, '--body', body + FOOTER],
+                  check=True,
+              )
+          else:
+              # Claude posted directly — find that comment and edit it to add the footer
+              result = subprocess.run(
+                  ['gh', 'api', f'repos/{repo}/issues/{pr_number}/comments',
+                   '--jq', '[.[] | select(.user.login == "github-actions[bot]")]'],
+                  capture_output=True, text=True, check=True,
+              )
+              comments = json.loads(result.stdout)
+              for comment in reversed(comments):
+                  body = comment['body']
+                  if '## Preexisting issues' in body and FOOTER_MARKER not in body:
+                      subprocess.run(
+                          ['gh', 'api', f'repos/{repo}/issues/comments/{comment["id"]}',
+                           '-X', 'PATCH', '-f', f'body={body.rstrip()}{FOOTER}'],
+                          check=True,
+                      )
+                      break
+          PYTHON_EOF

@@ -93,10 +93,10 @@ jobs:
 
             2. Review ONLY the added or modified lines from the diff for issues per your instructions. Do not report issues on lines that were not changed.
 
-            3. You MUST write your complete review to `/tmp/review-summary.md` — always, even if there are no issues. Use this exact structure — a flat list of issues in the format from your instructions, with no subheadings, groupings, or extra nesting:
+            3. You MUST write your complete review to `/tmp/review-summary.md` — always, even if there are no issues. Use this exact structure — issues organized by file with a subheading for each file, in the format from your instructions:
 
             ## Issues in PR changes
-            <flat list of issues in the format from your instructions, or "None." if there are none>
+            <issues organized by file with subheadings, in the format from your instructions, or "None." if there are none>
 
             4. Fix ALL issues directly in the files using the Write and Edit tools. Do not post a PR comment. Do not commit or push.
 
