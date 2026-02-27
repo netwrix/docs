@@ -24,15 +24,15 @@ for data discovery, data security governance and compliance use cases.
 ## Keyword
 
 In this mode the search index will be created; however, disk space required for the core search
-index will be of medium size. Both **Browse** and **Search** by keyword will be supported. Overall
+index will be of medium size. Both **Browse** and **Search** by keyword are supported. Overall
 throughput is capable of supporting large number of documents (> 1M). Recommended for compliance,
 data discovery and classification rules tuning.
 
 ## Compound Term
 
-In this mode you will get a fully featured index, supporting **Search** by compound term. Consider
-that data storage will require more space, and overall throughput may decrease (compared to the
-Keyword mode). Recommended for knowledge management, data storage optimization, legal search, other
-content services.
+In this mode you will get a fully featured index, supporting **Search** by compound term. Bear in mind
+that data storage for compound term processing will require significantly more space, and overall throughput 
+may decrease (compared to the Keyword mode). Recommended for knowledge management, data storage optimization, 
+legal search, other content services.
 
 Proceed with configuring processing settings. See [Processing Settings](/docs/dataclassification/5.7/introduction/initialconfiguration/processingsettings.md) next.

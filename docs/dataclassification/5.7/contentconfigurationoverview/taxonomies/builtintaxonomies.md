@@ -174,8 +174,8 @@ consumers and businesses.
 
 ## Sensitive and Non-Sensitive Taxonomies
 
-While creating your own reports, you can specify whether a taxonomy is sensitive (finance,
-сredentials) or non-sensitive (file size, language).
+While creating your own reports, you can specify whether a taxonomy is sensitive (e.g. financial details,
+сredentials) or non-sensitive (e.g. file size, language).
 
 :::note
 This applies only to customized taxonomies, which you add by yourself. You cannot change

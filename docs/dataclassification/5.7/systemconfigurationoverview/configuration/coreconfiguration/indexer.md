@@ -6,8 +6,7 @@ sidebar_position: 20
 
 # Indexer
 
-This configuration tab contains the indexing engine settings. Each configuration option has an
-associated “**i**” which describes the nature of the setting. To view advanced options, click the
+This configuration tab contains the indexing engine settings. Each option has an associated information popup (the “**i**” symbol next to the option name) which describes what the setting does and how it works. To view advanced options, click the
 screwdriver icon at **Settings** on the right.
 
 ![core_indexer_thumb_0_0](/images/dataclassification/5.7/configuration/core/core_indexer_thumb_0_0.webp)

@@ -32,7 +32,7 @@ Major benefits:
 # How It Works
 
 Netwrix Data Classification identifies and classifies sensitive and business-critical content across
-your organization. This way it mitigates the risk of data breaches. The program also meets
+your organization, mitigating the risk of data breaches. The program also helps you meet
 compliance requirements with less effort and expense.
 
 You can view the app architecture and components in the figure below.
@@ -44,16 +44,16 @@ You can view the app architecture and components in the figure below.
 
 ![addsource](/images/dataclassification/5.7/admin/addsource.webp)
 
-2. The configured data sources are saved in the NDC SQL database (SQL Server Collector Database).
-3. The NDC Collector service crawls data files in each data source, converts documents into plain
-   text and populates file metadata in the NDC SQL database.
+2. The configured data sources are saved to the NDC SQL database.
+3. The NDC Collector service crawls the data files in each data source, converting documents into plain
+   text and populating file metadata in the NDC SQL database.
 4. The NDC Indexer service builds and maintains a full-text search index (NDC Index) based on the
    content and metadata of the collected files.
 5. The NDC Classifier service performs data classification by matching collected files against
-   installed taxonomies (e.g., Netwrix compliance taxonomies).
-6. If Data Tagging is enabled, the assigned classification labels are written to the custom metadata
+   pre-built taxonomies (the Netwrix compliance taxonomies) and/or customer-created taxonomies.
+6. If Classification Writing is enabled, the assigned classification labels are written to the custom metadata
    columns for supported document types.
-7. If Remediation Workflows are enabled, the configured workflows are run on documents that meet the
+7. If any Workflows have been defined and are enabled, they are run on documents that meet the
    workflow conditions.
 
 ## QueryServer
@@ -81,14 +81,13 @@ The NDC Collector is implemented as a Microsoft Windows Service.
 
 ## Indexer
 
-The Indexer takes each new document collected by the conceptCollector and inserts the appropriate
-information in the NDC Index Database.
+The Indexer takes each new document collected by the conceptCollector and indexes terms from 
+the extracted text within the NDC Index.
 
-This activity can proceed concurrently with retrieval activity. However, heavy-duty indexing
-activity can significantly impair retrieval performance and so, if on-going indexing is very
-significant, then the conceptIndexer should either be run during quiet periods (perhaps overnight)
-or alternatively new information should be constructed off-line with a batch process updating the
-live index periodically.
+The index can be read from concurrently with the indexing process. However, significant indexing
+activity can lead to a corresponding drop in index performance, in which case the Indexer should
+either be run during quiet periods (e.g. overnight) or the indexing should be performed separately
+with a batch process updating the live index periodically.
 
 If the Indexer is to update the live index as a background task then it is vital that this process
 runs on the same server where the NDC Index Database is located.
@@ -121,24 +120,23 @@ Database such as: the document title, body text, etc. However, this information 
 using a primary key and so is very efficient. The hitlist itself is always constructed and ranked
 using information contained in the proprietary conceptDatabase.
 
-The current release of Netwrix Data Classification supports SQL Server 2008 R2 or later.
+The current release of Netwrix Data Classification supports SQL Server 2008 R2 or later version.
 
-## NDC Index Database
+## NDC Index
 
-The NDC Index Database contains the probabilistic index to all documents in the system. All files
-use the extension “.cse” but will use the extension “.tmp” when merging changes into the index.
+The NDC Index contains a probabilistic index for all documents that have been indexed by the system. The index files
+use the extension “.cse”, but temporary files (extension “.tmp”) are used when merging changes into the index.
 
-The NDC Index Database files should normally be located on the same server as the Netwrix Data
-Classification server due to the fact that the query and indexing processes can be disk intensive.
+The NDC Index Database files should be located on the same server as the Netwrix Data
+Classification server due to the fact that the query and indexing processes can be highly disk-intensive.
 Note that “text.cse” is not supplied since it will be created automatically when the first documents
 are collected.
 
 ## Classifier
 
-Classifier can be used to classify documents post index time. When this option is being used then an
-application can map documents to any external classification system such as a corporate taxonomy or
-user profiles.
-
-Classification can be used as a method browsing the document collection or to filter ad hoc queries.
+The Classifier is used to classify documents after they have been indexed. It can make use of the built-in
+taxonomies and any custom taxonomies created by the user, and can be linked to SharePoint termsets to classify
+against them as well. It also runs user-configured workflows against any documents that meet the conditions
+of the workflow, and is used to perform Data Subject Access Requests.
 
 The Classifier is implemented as a Microsoft Windows Service.

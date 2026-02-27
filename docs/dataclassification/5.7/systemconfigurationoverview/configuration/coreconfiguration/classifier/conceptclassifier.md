@@ -10,7 +10,7 @@ This section contains the settings related to conceptClassifier application. As 
 options, you should click the screwdriver icon at **Settings** in the bottom-right corner to view
 them.
 
-Each option has an associated “**i**” which describes the nature of the setting.
+Each option has an associated information popup (the “**i**” symbol next to the option name) which describes what the setting does and how it works.
 
 ![core_thumb_0_0](/images/dataclassification/5.7/configuration/core_thumb_0_0.webp)
 

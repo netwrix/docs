@@ -6,8 +6,7 @@ sidebar_position: 30
 
 # Collector
 
-This configuration tab contains the classification engine settings. Each configuration option has an
-associated “i” which describes the nature of the setting.
+This configuration tab contains the classification engine settings. Each option has an associated information popup (the “**i**” symbol next to the option name) which describes what the setting does and how it works.
 
 ![core_collector](/images/dataclassification/5.7/configuration/core/core_collector.webp)
 

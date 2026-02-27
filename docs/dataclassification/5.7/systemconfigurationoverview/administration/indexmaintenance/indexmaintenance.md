@@ -10,10 +10,10 @@ This feature is only available for ‘Superusers’.
 
 You may need to reprocess content or even clean the environment on a large scale — for example,
 after a large amount of content has been deleted, or after configuring a DQS environment. In such
-scenarios, index should also be maintained — to ensure data consistency. To automate maintenance
-operations, you can use a built-in tool named Cleaner.
+scenarios, the index should also be maintained — to ensure data consistency. To automate maintenance
+operations, you can use the built-in Index Cleaner tool.
 
-Follow the steps to launch the Cleaner tool.
+Follow these steps to launch the Index Cleaner tool.
 
 1. Open NDC Management Web Console.
 2. Navigate to **Settings** > **Config** and click **Run Cleaner**.

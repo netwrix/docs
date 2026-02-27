@@ -51,7 +51,7 @@ If these lines are present then users will be required to login using their Wind
 
 ## Configure Microsoft Entra ID Authentication
 
-To configure Microsoft Entra ID you need to create aclient application and add two new appSettings
+To configure Microsoft Entra ID you need to create a client application and add two new appSettings
 to the "`<appsettings>`" section of the web.config file in the QS directory:
 
 - `<add key="ida:AzureClientId" value="NewAzureADClientID (GUID)" />`
@@ -76,8 +76,7 @@ Classification via Microsoft Entra ID authentication:
 
 ## Add or Remove Users
 
-More users can be added at any time from the default Users screen, as well as allowing for users to
-be removed.
+Users can be added and removed via the Users screen at any time.
 
 ![adduser](/images/dataclassification/5.7/security/adduser.webp)
 
@@ -94,11 +93,9 @@ be found at: /conceptQS/\_api
 
 ## Permission Management
 
-In order to allocate granular permissions to a user (non-Super Users), simply select their username
-from the main grid.
-
-Each tab contains a top level checkbox (“Allow Access”) which defines whether or not a user has
-access to each of the top level administrative areas.
+In order to allocate granular permissions to a user (non-Super Users), click Edit on their row in the Users table. The
+permissions for each section of the administrative web interface will be displayed as tabs. Each tab contains a top level
+checkbox ("Access [Section Name]”) which defines whether or not a user has access to each of the top level administrative areas.
 
 When an area is enabled there are typically more granular permissions that can be enabled, such as:
 
@@ -110,9 +107,9 @@ When an area is enabled there are typically more granular permissions that can b
 
 ![userpermissions_thumb_0_0](/images/dataclassification/5.7/security/userpermissions_thumb_0_0.webp)
 
-### Taxonomy Permissions Summary
+### Permissions Summary
 
-The Permissions window lets you restruct permissions for a user.
+The Permissions window lets you set permissions for the selected user.
 
 ![viewtaxonomypermissionssummary_thumb_0_0](/images/dataclassification/5.7/security/viewtaxonomypermissionssummary_thumb_0_0.webp)
 
@@ -131,7 +128,7 @@ You can restrict permissions for a user to the following areas:
 
 ## Super Users
 
-Super Users always have access to all Query Server administrative functions.
+Super Users have access to all Query Server administrative functions.
 
 Non-Super Users must have their access rights specifically configured and all rights are disabled by
 default. See User Management section for details about configuring the access rights for non-Super

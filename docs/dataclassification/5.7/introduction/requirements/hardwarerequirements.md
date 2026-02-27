@@ -34,19 +34,18 @@ See [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/o
 | Cores              | 8 Cores                        |
 | RAM                | 32 GB                          |
 | Hard disk          | UP TO 35% of all data in scope |
-| Hard drive type    | SSD storage (recommended)      |
+| Hard drive type    | SSD storage      |
 
 ## SQL Server
 
-Review the hardware requirements for the computer where Netwrix Data Classification SQL Database
-will be deployed.
+The requirements in this section are for an SQL database supporting up to 4 linked NDC instances. The NDC database server should only be deployed on a dedicated machine, as sharing resources with additional databases on the same server will degrade performance.
 
 | Hardware Component | Up to 16 M objects                                                                                                                                                                                                                                                                | Up to 32 M objects and up to 8 M objects for SharePoint | Up to 64 M objects and up to 16 M objects for SharePoint |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------- |
 | Processor          | 8 cores                                                                                                                                                                                                                                                                           | 8 cores                                                 | 8 cores                                                  |
 | RAM                | 32 GB                                                                                                                                                                                                                                                                             | 64 GB                                                   | 128 GB                                                   |
-| Hard disk          | Estimate required disk space assuming _1012 KB_ per indexed object. For example, for _5, 000, 000_ objects, the database size will be approximately _50 GB_. See also [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/overview.md). |                                                         |                                                          |
-| Hard disk type     | SSD storage (recommended)                                                                                                                                                                                                                                                         |                                                         |                                                          |
+| Hard disk          | Estimate required disk space assuming _1012KB_ per indexed object. For example, for _5,000,000_ objects, the database size will be approximately _50GB_. See also [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/overview.md). |                                                         |                                                          |
+| Hard disk type     | SSD storage                                                                                                                                                                                                                                                        |                                                         |                                                          |
 
 
 ## Network Access
@@ -65,12 +64,11 @@ scope. Supported file shares types:
 
 Administration Dashboards for most Network Attached Storages include storage usage such as the
 amount of data and files count. In case you need a tool to calculate file count and size, you can
-use NDC script-based
-[file scanning tool](https://www.netwrix.com/download/products/DDC/ScanDirs.zip).
+use the NDC script-based [file scanning tool](https://www.netwrix.com/download/products/DDC/ScanDirs.zip).
 
 **Exchange Mailboxes**
 
-In case you have Exchange on-prem you would need to know the additional information:
+If you plan on using NDC to crawl an on-premise Exchange server, you need to know the following:
 
 - Number of Mailboxes
 - Mailbox retention policy (for how long users keep their emails before they are archived)
@@ -78,18 +76,15 @@ In case you have Exchange on-prem you would need to know the additional informat
 
 The number of emails in all mailboxes can be obtained with the PowerShell script for the Exchange
 Management Shell bellow. The script will return email stats for every mailbox. Use the script
-results calculate the average number of emails per mailbox or provide the total number.
+results to calculate the average number of emails per mailbox or provide the total number.
 
 ```
 Get-Mailbox -ResultSize Unlimited | Get-MailboxStatistics SelectItemCount | ForEach {$totalItems+=$_.ItemCount}
 ```
 
-Office 365: Exchange Online, SharePoint Online and One Drive
+**Office 365: Exchange Online, SharePoint Online and One Drive**
 
-Provide the total amount of data and total file stored on Office 365. You can use the usage
-statistics numbers for 180 days period from the O365 Admin Center dashboard. Refer to the following
-Microsoft article for additional information:
-[Microsoft 365 Reports in the admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports?view=o365-worldwide)
+Provide the total amount of data and total number of files stored on Office 365. You can use the usage statistics numbers for 180 days period from the O365 Admin Center dashboard. Refer to the following Microsoft article for additional information: [Microsoft 365 Reports in the admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports?view=o365-worldwide)
 
 **Databases**
 
@@ -97,7 +92,7 @@ In case your scope includes databases, the following details are required:
 
 - Database type (MS SQL, Oracle, MySQL)
 - What applications and systems those databases support
-- How many databases the data need to be classified in
+- How many databases the data needs to be classified in
 
 Netwrix Data Classification will need to be pointed at certain tables in the specified databases,
 the customer is expected to know which tables within a database may potentially contain sensitive
