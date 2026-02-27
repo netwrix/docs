@@ -48,7 +48,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
     - Once finished, click **Confirm Selection**.
 
 
-5. User can also enter the **Proposed Customizations** at this point.
+5. You can also enter the **Proposed Customizations** at this point.
 
     - Click **Add** button in the Proposed panel to add **Proposed Customizations** to the change request.
 
