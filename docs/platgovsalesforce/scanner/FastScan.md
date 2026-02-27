@@ -74,7 +74,7 @@ After Change Logs are created, the FastScan triggers a rescan process that:
 You can schedule the FastScan to run automatically:
 
 1. Go to the **Netwrix Dashboard** page
-2. Navigate to the **Scanner** -> **Scheduler** menu
+2. Navigate to the **Scanner** > **Scheduler** menu
 3. Locate the **FastScan Profile/Permission Set** scheduler
 4. Select your desired frequency (e.g., Daily, Weekly)
 5. Choose the time of day to run
