@@ -33,6 +33,8 @@ To run the scanner:
 6. From the Netwrix Dashboard: click **Configuration and Stats** in the **Resources** section, or
    open **Settings** > **Configuration and Stats**.
 
+## Creating a Custom View for Scanners
+
 You can create your own Salesforce view for the scanners:
 
     1. Open Salesforce **Setup**.
