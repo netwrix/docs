@@ -9,6 +9,8 @@ If you want to know which GROUPS your Users or Computers are in within Azure AD,
 Endpoint Policy Manager (formerly PolicyPak) and these scripts. Then after that, you can use Item
 Level Targeting to check group membership and trigger actions and policies.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UOImq3pFxvI" title="Determine the Azure AAD Group Membership for User or Computers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Hi. This is Jeremy Moskowitz. In this video, I'm going to show you how to use a couple of scripts in
 order to figure out which Azure AD groups the user or computer is a member of.  
 Now I'm going to stress a couple of things right at the front of this video. These scripts are

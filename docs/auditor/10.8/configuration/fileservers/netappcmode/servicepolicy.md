@@ -63,7 +63,7 @@ of the configuration:
 
     _Remember,_ The command prompt should be changed to “`cluster1::*>`”
 
-5. Clone the existing '`default-data-files`' LIF policy to be able using shares with a new
+5. Clone the existing '`default-data-files`' LIF policy to be able to use shares with a new
    service-policy. Run the following command:
 
     cluster1::\*> network interface service-policy clone -vserver svm1 -policy default-data-files

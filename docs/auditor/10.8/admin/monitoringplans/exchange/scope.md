@@ -36,7 +36,7 @@ folder.
 
 To exclude users or mailboxes from the Mailbox Access monitoring scope
 
-Auditor  allows specifying users and mailboxes that you do not want to monitor for non-owner mailbox
+Auditor allows specifying users and mailboxes that you do not want to monitor for non-owner mailbox
 access events. To do this, edit the mailboxestoexclude.txt, userstoexclude.txt, and
 agentomitusers.txt files.
 

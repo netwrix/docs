@@ -7,7 +7,7 @@ keywords:
   - ADPA
   - Active Directory
   - permissions
-  - Netwrix Auditor
+  - Netwrix Access Analyzer
   - ADInventory
   - ADPERMISSIONS
   - SQL
@@ -33,14 +33,14 @@ Example of the incorrect data:
 ## Cause
 
 ADPA Data is not cleared when running only the ADInventory (ADI): Category >> Drop Domain – Remove host domain related data from SQL server option seen under the following:  
-https://docs.netwrix.com/docs/auditor/10_8
+[Remove Domain Audit Data from Reports − Drop Domains](https://docs.netwrix.com/docs/accessanalyzer/12_0/kb/active-directory-auditing/remove-domain-audit-data-from-reports-drop-domains)
 
 ## Resolution
 
 We will need to create a new Job to work with the APDA data in question.  
 To do so you can follow the steps below.
 
-1. Create a new Job in the Netwrix Auditor console: right click the **Jobs Node** in the left-hand window and select **Create Job**:
+1. Create a new Job in the Netwrix Access Analyzer console: right click the **Jobs Node** in the left-hand window and select **Create Job**:
 
    ![Graphical user interface, application  Description automatically generated](./../0-images/ka04u000000HdDV_0EM4u0000084aiz.png)
 

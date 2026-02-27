@@ -1,0 +1,13 @@
+extends: existence
+message: "Avoid '%s'. Rewrite with an active subject or a direct imperative."
+level: warning
+ignorecase: true
+tokens:
+  - '\bit is recommended\b'
+  - '\bit is necessary\b'
+  - '\bit is possible\b'
+  - '\bit is required\b'
+  - '\bit is advised\b'
+  - '\bit is suggested\b'
+  - '\bit is important\b'
+  - '\bit should be noted\b'

@@ -32,7 +32,7 @@ Follow the steps to review and update global Audit Database settings:
 
 **Step 2 –** Click **Modify** to edit the settings.
 
-![audit_db_settings_thumb_0_0](/images/auditor/10.7/admin/settings/audit_db_settings_thumb_0_0.webp)
+![audit_db_settings_thumb_0_0](/images/auditor/10.8/admin/settings/audit_db_settings_thumb_0_0.webp)
 
 **Step 3 –** Specify the following database storage settings:
 
@@ -49,7 +49,7 @@ Server settings section.
 
 | Option              | Description                                                                                                                                                                                                                                                                                                  |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| SQL Server instance | Specify the name of the SQL Server instance to store audit data. If you have more than one Auditor Server running in your network, make sure to configure them to use different SQL Server instances. The same SQL Server instance cannot be used to store audit data collected by several Auditor  Servers. |
+| SQL Server instance | Specify the name of the SQL Server instance to store audit data. If you have more than one Auditor Server running in your network, make sure to configure them to use different SQL Server instances. The same SQL Server instance cannot be used to store audit data collected by several Auditor Servers. |
 | Authentication      | Select the authentication type you want to use to connect to the SQL Server instance: - Windows authentication - SQL Server authentication                                                                                                                                                                   |
 | User name           | Specify the account to be used to connect to the SQL Server instance. This account must be granted the **database owner (db_owner)** role and the dbcreator server role.                                                                                                                                     |
 | Password            | Enter a password.                                                                                                                                                                                                                                                                                            |

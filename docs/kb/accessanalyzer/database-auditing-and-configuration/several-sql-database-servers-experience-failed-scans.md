@@ -11,7 +11,7 @@ keywords:
   - service account
   - permissions
   - collection jobs
-  - Netwrix Auditor
+  - Netwrix Access Analyzer
   - database servers
 products:
   - access-analyzer
@@ -43,10 +43,10 @@ Refer to the possible causes:
 
 Ensure that the service account has the necessary privileges, including **VIEW ANY DEFINITION** on the master database. This permission allows the account to view the definition of any object in the SQL server instance.
 
-While permissions requirements are outlined in existing documentation, for further guidance and troubleshooting, please refer to the following article: https://docs.netwrix.com/docs/auditor/10_8/accessreviews Analyzer/Solutions/SQL_Solution.htm#permissions
+While permissions requirements are outlined in existing documentation, for further guidance and troubleshooting, please refer to the following article: [Target SQL Server Requirements, Permissions, and Ports](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/databases/sql/)
 
-(Reference: Netwrix Auditor documentation linked above.)
+(Reference: Netwrix Access Analyzer documentation linked above.)
 
 ## Related articles
 
-- https://docs.netwrix.com/docs/auditor/10_8/accessreviews Analyzer/Solutions/SQL_Solution.htm#permissions
+- [Target SQL Server Requirements, Permissions, and Ports](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/databases/sql/)

@@ -54,7 +54,7 @@ inclusive filter.
 
 **Step 12 –** Click Save to save your changes.
 
-![emailhealthstatusevent](/images/auditor/10.7/admin/alertsettings/emailhealthstatusevent.webp)
+![emailhealthstatusevent](/images/auditor/10.8/admin/alertsettings/emailhealthstatusevent.webp)
 
 If an event occurs that triggers an alert, an email notification will be sent immediately to the
 specified recipients.

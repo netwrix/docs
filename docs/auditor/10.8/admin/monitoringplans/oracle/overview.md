@@ -51,7 +51,7 @@ Complete the following fields:
 
 On a high level, data collection process for Oracle databases works as follows:
 
-![hiw_diagram_oracle](/images/auditor/10.7/admin/monitoringplans/oracle/hiw_diagram_oracle.webp)
+![hiw_diagram_oracle](/images/auditor/10.8/admin/monitoringplans/oracle/hiw_diagram_oracle.webp)
 
 1. Oracle administrator prepares a dedicated service account with sufficient permissions to collect
    data from Oracle Database. See the

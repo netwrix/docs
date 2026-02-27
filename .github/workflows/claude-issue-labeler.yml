@@ -1,0 +1,99 @@
+name: Claude Issue Processor
+
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  process-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github
+            .claude
+            CODE_OF_CONDUCT.md
+          sparse-checkout-cone-mode: false
+
+      - name: Step 1 — Security vulnerability screening
+        id: security-screen
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Call the security screening skill:
+            /identify-security-vuln-discussion
+
+            Context:
+            - REPO: ${{ github.repository }}
+            - ISSUE_NUMBER: ${{ github.event.issue.number }}
+            - ISSUE_TITLE: ${{ github.event.issue.title }}
+            - ISSUE_BODY: Fetch the latest body with: gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq .body
+            - ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+
+            Note: This skill checks both the issue body AND all comments for security vulnerabilities.
+            This protects against bypass attempts where someone edits a clean issue to add vulnerability info.
+          claude_args: '--allowedTools "Bash(gh:*),Read,Grep,Glob,Skill(identify-security-vuln-discussion)"'
+
+      - name: Check if issue is still open
+        id: check-state
+        run: |
+          STATE=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json state --jq .state)
+          echo "issue_state=$STATE" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Step 2 — Code of conduct check
+        if: steps.check-state.outputs.issue_state == 'OPEN'
+        id: conduct-check
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Call the code of conduct check skill:
+            /code-of-conduct-check
+
+            Context:
+            - REPO: ${{ github.repository }}
+            - ISSUE_NUMBER: ${{ github.event.issue.number }}
+            - ISSUE_TITLE: ${{ github.event.issue.title }}
+            - ISSUE_BODY: Fetch the latest body with: gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq .body
+            - ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+
+            Note: This skill checks both the issue body AND all comments for code of conduct violations.
+            This ensures community guidelines are enforced across all issue content.
+          claude_args: '--allowedTools "Bash(gh:*),Read,Grep,Glob,Skill(code-of-conduct-check)"'
+
+      - name: Step 3 — Assign label
+        # Only run label assignment for issue events (not comments) and only if issue is still open
+        if: steps.check-state.outputs.issue_state == 'OPEN' && github.event_name == 'issues'
+        id: assign-label
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Call the label assignment skill:
+            /assign-label
+
+            Context:
+            - REPO: ${{ github.repository }}
+            - ISSUE_NUMBER: ${{ github.event.issue.number }}
+            - ISSUE_TITLE: ${{ github.event.issue.title }}
+            - ISSUE_BODY: Fetch the latest body with: gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq .body
+            - ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ', ') }}
+
+            Note: The skill should preserve template-assigned labels and add complementary labels.
+            Issue body may have been modified by previous steps.
+          claude_args: '--allowedTools "Bash(gh:*),Skill(assign-label)"'

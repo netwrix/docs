@@ -39,7 +39,7 @@ Follow the steps to remove a tile from the Home Screen.
 
 **Step 3 –** Click **close (x)**:
 
-![remove_tile](/images/auditor/10.7/admin/navigation/remove_tile.webp)
+![remove_tile](/images/auditor/10.8/admin/navigation/remove_tile.webp)
 
 **Step 4 –** Click Apply.
 

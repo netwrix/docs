@@ -13,7 +13,7 @@ generation intensity in your IT infrastructure, and product load.
 
 After you click View details, the Activity Records Statistics window will be displayed.
 
-![activityrecordsdetails_thumb_0_0](/images/auditor/10.7/admin/healthstatus/dashboard/activityrecordsdetails_thumb_0_0.webp)
+![activityrecordsdetails_thumb_0_0](/images/auditor/10.8/admin/healthstatus/dashboard/activityrecordsdetails_thumb_0_0.webp)
 
 By default, statistics on activity records processing is grouped by Monitoring plan and presented
 for the Last 7 days. To modify the timeframe, use the drop-down list in the upper right corner.

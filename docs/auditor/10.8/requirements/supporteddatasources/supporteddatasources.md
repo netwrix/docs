@@ -81,7 +81,7 @@ additional information.
 
 Auditor supports monitoring the following device versions:
 
-- Dell Isilon/PowerScale versions 7.2 – 9.10
+- Dell Isilon/PowerScale versions 7.2 – 9.12
 
 > **NOTE:** Only CIFS configuration is supported.
 
@@ -96,7 +96,7 @@ additional information.
 Auditor supports monitoring the following device versions:
 
 - Clustered-Mode
-    - 9.0 – 9.16
+    - 9.0 – 9.17
     - 8.3
 
 > **NOTE:** Only CIFS configuration is supported.
