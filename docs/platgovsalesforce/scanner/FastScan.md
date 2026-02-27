@@ -90,7 +90,7 @@ To run the FastScan feature manually:
 
 1. Navigate to the **Netwrix Dashboard** page
 2. Locate the **Fast Scan Profile / PermissionSets** section
-3. Click **Starth**
+3. Click **Start**
 4. Monitor the progress in the **Running Jobs** section
 
 ---
