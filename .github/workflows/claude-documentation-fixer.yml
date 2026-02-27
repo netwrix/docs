@@ -74,6 +74,16 @@ jobs:
           curl -sfL "https://github.com/errata-ai/vale/releases/download/${VERSION}/vale_${VERSION#v}_Linux_64-bit.tar.gz" \
             | sudo tar -xz -C /usr/local/bin vale
 
+      - name: Record last comment ID
+        id: pre-claude
+        if: steps.pr-info.outputs.is_fork == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          LAST_ID=$(gh api repos/${{ github.repository }}/issues/${{ steps.pr-info.outputs.number }}/comments \
+            --jq 'if length > 0 then .[-1].id else 0 end' 2>/dev/null || echo "0")
+          echo "last_comment_id=$LAST_ID" >> "$GITHUB_OUTPUT"
+
       - name: Apply fixes
         if: steps.pr-info.outputs.is_fork == 'false'
         uses: anthropics/claude-code-action@v1
@@ -92,6 +102,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ steps.pr-info.outputs.number }}
           REPO: ${{ github.repository }}
+          LAST_COMMENT_ID: ${{ steps.pre-claude.outputs.last_comment_id }}
         run: |
           python3 << 'PYTHON_EOF'
           import os
@@ -100,6 +111,7 @@ jobs:
 
           pr_number = os.environ['PR_NUMBER']
           repo = os.environ['REPO']
+          last_comment_id = int(os.environ.get('LAST_COMMENT_ID', '0'))
 
           FOOTER = (
               "\n\n---\n\n"
@@ -107,8 +119,6 @@ jobs:
               "(`@claude fix all issues` or `@claude fix only the first issue`).\n"
               "Note: Automated fixes are only available for branches in this repository, not forks."
           )
-
-          FOOTER_MARKER = "Automated fixes are only available"
 
           def normalize_body(body):
               """Keep only the expected structured content from the preexisting issues output."""
@@ -129,38 +139,38 @@ jobs:
                   clean_lines.pop()
               return '\n'.join(clean_lines)
 
-          def patch_comment(comment_id, new_body):
-              payload = {'body': new_body}
+          # Only run for @claude detect preexisting issues
+          summary_path = '/tmp/preexisting-issues.md'
+          if not os.path.exists(summary_path):
+              exit(0)
+
+          with open(summary_path) as f:
+              clean_body = normalize_body(f.read()) + FOOTER
+
+          # Find all comments posted during this workflow run (ID > last recorded ID)
+          result = subprocess.run(
+              ['gh', 'api', f'repos/{repo}/issues/{pr_number}/comments'],
+              capture_output=True, text=True, check=True,
+          )
+          comments = json.loads(result.stdout)
+          new_comments = [c for c in comments
+                          if c['id'] > last_comment_id
+                          and c['user']['login'] == 'github-actions[bot]']
+
+          if new_comments:
+              # Replace the most recent new comment (the action's auto-posted output)
+              target_id = new_comments[-1]['id']
+              payload = {'body': clean_body}
               subprocess.run(
-                  ['gh', 'api', f'repos/{repo}/issues/comments/{comment_id}',
+                  ['gh', 'api', f'repos/{repo}/issues/comments/{target_id}',
                    '-X', 'PATCH', '--input', '-'],
                   input=json.dumps(payload),
                   capture_output=True, text=True, check=True,
               )
-
-          summary_path = '/tmp/preexisting-issues.md'
-          if os.path.exists(summary_path):
-              # Claude wrote to the file as instructed — post a new comment with footer
-              with open(summary_path) as f:
-                  body = normalize_body(f.read())
+          else:
+              # No new comment found — post one directly
               subprocess.run(
-                  ['gh', 'pr', 'comment', pr_number, '--repo', repo, '--body', body + FOOTER],
+                  ['gh', 'pr', 'comment', pr_number, '--repo', repo, '--body', clean_body],
                   check=True,
               )
-          else:
-              # Claude posted directly — find that comment, strip any intro and notes,
-              # and add this exact footer:
-              # To apply the suggested fixes to preexisting issues, comment `@claude` on this PR followed by your instructions
-              # (`@claude fix all issues` or `@claude fix only the first issue`).
-              # Note: Automated fixes are only available for branches in this repository, not forks.
-              result = subprocess.run(
-                  ['gh', 'api', f'repos/{repo}/issues/{pr_number}/comments'],
-                  capture_output=True, text=True, check=True,
-              )
-              comments = json.loads(result.stdout)
-              for comment in reversed(comments):
-                  body = comment['body']
-                  if '## Preexisting issues' in body and FOOTER_MARKER not in body:
-                      patch_comment(comment['id'], normalize_body(body) + FOOTER)
-                      break
           PYTHON_EOF
