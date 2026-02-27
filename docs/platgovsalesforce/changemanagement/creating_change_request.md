@@ -34,7 +34,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
     - **Is Release**: check if this change request represents a release. The customizations from all
       the child change requests are rolled into this release for deployment.
 
-4. Optionally, on this screen user can enter **Existing Customizations**.
+4. Optionally, on this screen you can enter **Existing Customizations**.
 
     - Click **Add** button in the Customizations panel to add **Existing Customizations** to the change request.
 
