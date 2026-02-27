@@ -40,6 +40,10 @@ following meanings:
 - Deleted Automatically—Items that have been detected as removed from the source system
 - Deleted Manually—Items removed manually by an end-user via the administration console
 
+:::note
+A deleted document is not immediately removed from NDC in case it was incorrectly deleted. Users must click the Expunge option on Deleted Automatically and Deleted Manually to fully remove those documents from the system. Automatic expunging can be enabled via the [Administration configuration settings](/docs/dataclassification/5.7/systemconfigurationoverview/users/usermanagement.md).
+:::
+
     ![dashboard_thumb_0_0](/images/dataclassification/5.7/admin/reporting/dashboard_thumb_0_0.webp)
 
 ## System Health
