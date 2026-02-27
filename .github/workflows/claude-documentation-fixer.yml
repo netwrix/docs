@@ -97,6 +97,16 @@ jobs:
             --allowedTools "Read,Write,Edit,Bash(vale:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
 
+      - name: Record last comment ID
+        id: pre-claude
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.cmd-type.outputs.is_preexisting == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          LAST_ID=$(gh api repos/${{ github.repository }}/issues/${{ steps.pr-info.outputs.number }}/comments \
+            --jq 'if length > 0 then .[-1].id else 0 end' 2>/dev/null || echo "0")
+          echo "last_comment_id=$LAST_ID" >> "$GITHUB_OUTPUT"
+
       - name: Detect preexisting issues
         if: steps.pr-info.outputs.is_fork == 'false' && steps.cmd-type.outputs.is_preexisting == 'true'
         uses: anthropics/claude-code-action@v1
@@ -115,6 +125,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ steps.pr-info.outputs.number }}
           REPO: ${{ github.repository }}
+          LAST_COMMENT_ID: ${{ steps.pre-claude.outputs.last_comment_id }}
         run: |
           python3 << 'PYTHON_EOF'
           import os
@@ -123,6 +134,7 @@ jobs:
 
           pr_number = os.environ['PR_NUMBER']
           repo = os.environ['REPO']
+          last_comment_id = int(os.environ.get('LAST_COMMENT_ID', '0'))
 
           FOOTER = (
               "\n\n---\n\n"
@@ -157,8 +169,28 @@ jobs:
           else:
               clean_body = '## Preexisting issues\nNone.' + FOOTER
 
-          subprocess.run(
-              ['gh', 'pr', 'comment', pr_number, '--repo', repo, '--body', clean_body],
-              check=True,
+          # Find the action's auto-posted comment (ID > last recorded, posted by a bot)
+          result = subprocess.run(
+              ['gh', 'api', f'repos/{repo}/issues/{pr_number}/comments'],
+              capture_output=True, text=True, check=True,
           )
+          comments = json.loads(result.stdout)
+          new_bot_comments = [c for c in comments
+                              if c['id'] > last_comment_id
+                              and c['user']['login'].endswith('[bot]')]
+
+          if new_bot_comments:
+              # Replace the action's auto-comment in-place with our formatted output
+              target_id = new_bot_comments[-1]['id']
+              subprocess.run(
+                  ['gh', 'api', f'repos/{repo}/issues/comments/{target_id}',
+                   '-X', 'PATCH', '--input', '-'],
+                  input=json.dumps({'body': clean_body}),
+                  capture_output=True, text=True, check=True,
+              )
+          else:
+              subprocess.run(
+                  ['gh', 'pr', 'comment', pr_number, '--repo', repo, '--body', clean_body],
+                  check=True,
+              )
           PYTHON_EOF
