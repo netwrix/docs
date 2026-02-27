@@ -137,7 +137,8 @@ jobs:
               " This only applies to changes made to the file.\n"
               "- Reply with `@claude` here, followed by your instructions"
               " (e.g. `@claude fix all issues` or `@claude fix only the spelling errors`"
-              " or `@claude fix all other existing issues`)."
+              " or `@claude fix all other existing issues`"
+              " or `@claude fix all linting issues`)."
               " You can use this option to fix preexisting issues.\n\n"
               "Note: Automated fixes are only available for branches in this repository, not forks."
           )
