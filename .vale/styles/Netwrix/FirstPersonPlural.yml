@@ -1,0 +1,9 @@
+extends: existence
+message: "Avoid first person plural '%s'. Rewrite without 'we', 'our', 'us', or 'ours'."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - '\bwe\b'
+  - '\bour\b'
+  - '\bours\b'

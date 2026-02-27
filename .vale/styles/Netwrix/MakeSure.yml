@@ -1,0 +1,6 @@
+extends: substitution
+message: "Use 'ensure' instead of '%s'."
+level: warning
+ignorecase: true
+swap:
+  '\bmake sure\b': 'ensure'

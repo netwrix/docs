@@ -1,0 +1,7 @@
+extends: existence
+message: "Avoid '%s'. Use a direct heading and numbered list instead."
+level: warning
+ignorecase: true
+tokens:
+  - '\bfollow the steps to\b'
+  - '\bfollow these steps to\b'
