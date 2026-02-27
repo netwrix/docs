@@ -30,7 +30,7 @@ The **Getting Started Wizard** opens to help you finish the configuration and se
 
 ## Choose Your License Type
 
-On the Initial Setup Wizard page, choose the package type you have purchased and enter the **Input Authorization Token** sent to you. Click **Next**.
+On the Initial Setup Wizard page, choose the package type you have purchased and enter the **License Key** sent to you. Click **Next**.
 
 ![getting_started_wizard2](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard2.webp)
 
