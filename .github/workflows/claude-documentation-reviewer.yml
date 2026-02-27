@@ -250,11 +250,23 @@ jobs:
                   # '-' lines don't exist in HEAD, skip
               return valid
 
+          def normalize_review_body(body):
+              """Convert any heading-formatted issue lines to bullet points."""
+              lines = []
+              for line in body.split('\n'):
+                  # Convert "### Line N: ..." or "#### Line N: ..." etc. to "- Line N: ..."
+                  m = re.match(r'^#{1,6}\s+(Line \d+:.+)$', line)
+                  if m:
+                      lines.append(f'- {m.group(1)}')
+                  else:
+                      lines.append(line)
+              return '\n'.join(lines)
+
           # Read the review summary Claude wrote
           summary_path = '/tmp/review-summary.md'
           if os.path.exists(summary_path):
               with open(summary_path) as f:
-                  review_body = f.read().strip()
+                  review_body = normalize_review_body(f.read().strip())
           else:
               review_body = '## Documentation Review\n\nNo summary was generated.'
 
