@@ -57,6 +57,28 @@ Enhanced support for Public Groups with improved documentation and change tracki
 
 Change Log List Views have been expanded to support all new tracking capabilities, including System Permissions, Field Tracking, and Report/Dashboard Folder access. This provides a unified view of all changes across your Salesforce environment.
 
+### Note - Required Manual Configuration for Package Upgrades
+
+In this package version, a new version of the Change / Approval Policy layout was created: **Strongpoint Change/Approval Policy Layout v11**.
+ 
+This new layout includes updates to the fields displayed for **Policy** records.
+ 
+For package upgrades, the new layout must be **manually assigned** after pushing the updates in order to take effect.
+ 
+**Steps to Assign the New Layout:**
+ 
+  1. Go to **Setup**
+  2. Open **Object Manager**
+  3. Select **Change/Approval Policy**
+  4. Go to **Page Layouts**
+  5. Click **Page Layout Assignment**
+  6. Click **Edit Assignment**
+  7. Select the profile(s) that have access to the Policy record. In most cases, this will be the System Administrator profile. However, some customers may use a custom profile instead of the standard one.
+  8. Change the current layout to **Strongpoint Change/Approval Policy Layout v11**
+  9. Click **Save**
+ 
+For new installations, the latest layout will be assigned automatically by default.
+
 ---
 
 ## Getting Started
