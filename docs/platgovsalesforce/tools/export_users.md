@@ -21,7 +21,7 @@ Open the **Users** tab.
 
 **Users**
 
-Search for a User by entering all or part of its name in **Search Users**.
+Search for a user by entering all or part of the name in **Search Users**.
 
 Select one or more users from the Available list and use the arrow buttons to move them to Selected.
 To remove users, select them in the Selected list and use the left arrow to move them back to Available.
