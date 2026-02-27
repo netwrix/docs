@@ -10,7 +10,7 @@ This guide explains how to configure Platform Governance for Salesforce using an
 
 ## Overview
 
-The traditional process uses user Session IDs which are incompatible with Profiles with High Assurance. The new configuration uses an External Client App with Named Credentials to access Salesforce APIs, providing a more secure and MFA-compatible authentication method.
+The legacy method uses user Session IDs which are incompatible with Profiles with High Assurance. The new configuration uses an External Client App with Named Credentials to access Salesforce APIs, providing a more secure and MFA-compatible authentication method.
 
 ## Why Use Named Credentials
 
