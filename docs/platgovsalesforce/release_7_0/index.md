@@ -59,8 +59,8 @@ Change Log List Views have been expanded to support all new tracking capabilitie
 
 ### Note - Required Manual Configuration for Package Upgrades
 
-In this package version, a new version of the Change / Approval Policy layout was created: **Strongpoint Change/Approval Policy Layout v11**.
- 
+This package version introduces a new version of the Change / Approval Policy layout: **Strongpoint Change/Approval Policy Layout v11**.
+
 This new layout includes updates to the fields displayed for **Policy** records.
  
 For package upgrades, the new layout must be **manually assigned** after pushing the updates in order to take effect.
