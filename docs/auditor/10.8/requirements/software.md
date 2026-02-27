@@ -30,7 +30,7 @@ Server, in the monitored environment, or in both locations.
 
 ## Using SSRS-based Reports
 
-SQL Server Reporting Services are needed for these kinds of reports. See the
+SQL Server Reporting Services are needed for these types of reports. See the
 [Requirements for SQL Server to Store Audit Data](/docs/auditor/10.8/requirements/sqlserver.md) topic for additional information.
 
 **NOTE:** It is not recommended to install SQL Server (including Express edition), SQL Server Reporting Services (SSRS), or Netwrix Auditor on a domain controller.
@@ -44,7 +44,7 @@ See the following Microsoft article for additional information about the WebView
 ## Server and Client
 
 It is recommended to deploy Auditor Server on the virtualized server – to simplify backup, provide
-scalability for future growth, and facilitate hardware configuration updates. Auditor client can be
+scalability for future growth, and facilitate hardware configuration updates. Auditor Сlient can be
 deployed on a physical or virtual workstation, as it only provides the UI.
 
 You can deploy Netwrix Auditor on the VM running on any of the following hypervisors:
@@ -103,7 +103,7 @@ In this scenario, multiple Auditor clients are installed on different machines.
 
 Follow the steps to perform distributed deployment.
 
-**Step 1 –** Install Auditor Server and default client, selecting Full installation during the
+**Step 1 –** Install Auditor Server and default Сlient, selecting Full installation during the
 product setup.
 
 **Step 2 –** Then install as many clients as you need, running the setup on the remote machines and
