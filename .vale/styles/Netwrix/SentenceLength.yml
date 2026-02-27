@@ -1,7 +1,0 @@
-extends: metric
-message: "Sentences should be 25 words or fewer. This sentence has %d words."
-level: suggestion
-scope: sentence
-metric: words
-condition: '>'
-limit: 25
