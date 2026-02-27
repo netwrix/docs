@@ -83,7 +83,7 @@ jobs:
           show_full_output: true
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --allowedTools "Read,Write,Edit,Bash(vale:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
+            --allowedTools "Read,Write,Edit,Bash(vale:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
 
       - name: Post preexisting issues comment
@@ -148,7 +148,11 @@ jobs:
                   check=True,
               )
           else:
-              # Claude posted directly — find that comment, clean it up, and add the footer
+              # Claude posted directly — find that comment, strip any intro and notes,
+              # and add this exact footer:
+              # To apply the suggested fixes to preexisting issues, comment `@claude` on this PR followed by your instructions
+              # (`@claude fix all issues` or `@claude fix only the first issue`).
+              # Note: Automated fixes are only available for branches in this repository, not forks.
               result = subprocess.run(
                   ['gh', 'api', f'repos/{repo}/issues/{pr_number}/comments'],
                   capture_output=True, text=True, check=True,
