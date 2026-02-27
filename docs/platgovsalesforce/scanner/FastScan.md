@@ -41,7 +41,7 @@ When changes are made to these settings, it automatically creates Change Log rec
 
 ### 1. Scheduled Execution
 
-The FastScan runs automatically based on the schedule you configure in the **Scheduling** section of the Platform Governace Scheduler section. You can set it to run daily, weekly, or at custom intervals to continuously monitor permission changes in your org.
+The FastScan runs automatically based on the schedule you configure in the **Scheduling** section of the Platform Governance Scheduler. You can set it to run daily, weekly, or at custom intervals to continuously monitor permission changes in your org.
 
 ### 2. Change Detection
 
