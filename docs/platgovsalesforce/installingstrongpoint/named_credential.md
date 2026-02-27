@@ -42,6 +42,14 @@ Using Named Credentials with External Client App OAuth authentication is the rec
 
 ## Step 1: Create an External Client App
 
+:::important
+If this is not a new installation and your org already has an existing Connected App named **Netwrix** or **Strongpoint**, you do not need to create a new one.
+
+You can use the existing app and continue to [Step 2: Create an Auth Provider](#step-2-create-an-auth-provider).
+
+If you do not have the Consumer Key and Consumer Secret saved, go to [Retrieve Consumer Key and Secret](#retrieve-consumer-key-and-secret), obtain the credentials, and then continue with [Step 2: Create an Auth Provider](#step-2-create-an-auth-provider).
+:::
+
 Create a new External Client App to enable OAuth authentication:
 
 1. Navigate to **Setup** > **Apps** > **App Manager**
