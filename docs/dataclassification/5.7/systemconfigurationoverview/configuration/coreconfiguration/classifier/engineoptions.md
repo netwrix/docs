@@ -9,7 +9,7 @@ sidebar_position: 40
 By default, only basic options are displayed. To view advanced options, click the "wrench" icon at
 **Settings** in the bottom-right corner.
 
-Each option has an associated “**i**” which describes the nature of the setting.
+Each option has an associated information popup (the “**i**” symbol next to the option name) which describes what the setting does and how it works.
 
 ![core_thumb_0_0](/images/dataclassification/5.7/configuration/core_thumb_0_0.webp)
 
