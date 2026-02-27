@@ -1,5 +1,5 @@
 extends: existence
-message: "Avoid 'aforementioned'. Refer to the subject directly or use 'described above'."
+message: "Avoid 'aforementioned'. Refer to the subject directly or use 'described earlier'."
 level: warning
 ignorecase: true
 nonword: true
