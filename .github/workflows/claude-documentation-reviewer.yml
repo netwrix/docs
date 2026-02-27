@@ -126,9 +126,8 @@ jobs:
               "To apply suggested fixes to the updated documentation, individually or in bulk, comment `@claude`"
               " on this PR followed by your instructions (`@claude fix all issues`"
               " or `@claude fix all linting issues` or `@claude fix only the spelling errors`).\n\n"
-              "To review and fix other preexisting issues in the updated documentation, comment `@claude` on this PR"
-              " followed by your instructions (`@claude review preexisting issues`"
-              " or `@claude fix preexisting issues`).\n\n"
+              "To review the updated documentation for preexisting issues, comment `@claude` on this PR"
+              " followed by your instructions (`@claude detect preexisting issues`).\n\n"
               "Note: Automated fixes are only available for branches in this repository, not forks."
           )
 
