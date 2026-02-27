@@ -103,6 +103,7 @@ jobs:
           PR_NUMBER: ${{ steps.pr-info.outputs.number }}
           REPO: ${{ github.repository }}
           LAST_COMMENT_ID: ${{ steps.pre-claude.outputs.last_comment_id }}
+          TRIGGER_COMMENT: ${{ github.event.comment.body }}
         run: |
           python3 << 'PYTHON_EOF'
           import os
@@ -112,6 +113,8 @@ jobs:
           pr_number = os.environ['PR_NUMBER']
           repo = os.environ['REPO']
           last_comment_id = int(os.environ.get('LAST_COMMENT_ID', '0'))
+          trigger_comment = os.environ.get('TRIGGER_COMMENT', '').lower()
+          is_preexisting_run = 'preexisting' in trigger_comment
 
           FOOTER = (
               "\n\n---\n\n"
@@ -139,38 +142,41 @@ jobs:
                   clean_lines.pop()
               return '\n'.join(clean_lines)
 
-          # Only run for @claude detect preexisting issues
           summary_path = '/tmp/preexisting-issues.md'
-          if not os.path.exists(summary_path):
+          file_content = None
+          if os.path.exists(summary_path):
+              with open(summary_path) as f:
+                  file_content = normalize_body(f.read())
+
+          # Exit early if this is neither a preexisting issues command nor did Claude write the file
+          if not is_preexisting_run and file_content is None:
               exit(0)
 
-          with open(summary_path) as f:
-              clean_body = normalize_body(f.read()) + FOOTER
-
-          # Find all comments posted during this workflow run (ID > last recorded ID)
+          # Find comments posted during this run by any bot (catches any action identity)
           result = subprocess.run(
               ['gh', 'api', f'repos/{repo}/issues/{pr_number}/comments'],
               capture_output=True, text=True, check=True,
           )
           comments = json.loads(result.stdout)
-          new_comments = [c for c in comments
-                          if c['id'] > last_comment_id
-                          and c['user']['login'] == 'github-actions[bot]']
+          new_bot_comments = [c for c in comments
+                              if c['id'] > last_comment_id
+                              and c['user']['login'].endswith('[bot]')]
 
-          if new_comments:
-              # Replace the most recent new comment (the action's auto-posted output)
-              target_id = new_comments[-1]['id']
-              payload = {'body': clean_body}
+          if new_bot_comments:
+              target = new_bot_comments[-1]
+              # Use file content if available, otherwise normalize the action's comment
+              clean_content = file_content if file_content is not None else normalize_body(target['body'])
+              payload = {'body': clean_content + FOOTER}
               subprocess.run(
-                  ['gh', 'api', f'repos/{repo}/issues/comments/{target_id}',
+                  ['gh', 'api', f'repos/{repo}/issues/comments/{target["id"]}',
                    '-X', 'PATCH', '--input', '-'],
                   input=json.dumps(payload),
                   capture_output=True, text=True, check=True,
               )
-          else:
-              # No new comment found — post one directly
+          elif file_content is not None:
+              # No new bot comment found — post a new one using the file content
               subprocess.run(
-                  ['gh', 'pr', 'comment', pr_number, '--repo', repo, '--body', clean_body],
+                  ['gh', 'pr', 'comment', pr_number, '--repo', repo, '--body', file_content + FOOTER],
                   check=True,
               )
           PYTHON_EOF
