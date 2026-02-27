@@ -27,7 +27,7 @@ Here is an example change log for a **CustomObject** Metadata type.
 
 - **Actual Change Date**: Date the Customization was last modified.
 - **Customization Created By**: User who created the customization.
-- **Customization Modified By**: User who last modified the component.
+- **Customization Modified By**: User who last modified the customization.
 - **Customization**: Linked Customization(s) that have changed.
 - **Metadata Type**: Salesforce metadata type of the Customization.
 - **Field Name**: Name of the changed field.
