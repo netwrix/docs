@@ -85,3 +85,39 @@ jobs:
             --model claude-sonnet-4-5-20250929
             --allowedTools "Read,Write,Edit,Bash(vale:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
+
+      - name: Post preexisting issues comment
+        if: steps.pr-info.outputs.is_fork == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.pr-info.outputs.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          python3 << 'PYTHON_EOF'
+          import os
+          import subprocess
+
+          summary_path = '/tmp/preexisting-issues.md'
+          if not os.path.exists(summary_path):
+              exit(0)
+
+          with open(summary_path) as f:
+              body = f.read().strip()
+
+          FOOTER = (
+              "\n\n---\n\n"
+              "To apply the suggested fixes to preexisting issues, comment `@claude` on this PR followed by your instructions\n"
+              "(`@claude fix all issues` or `@claude fix only the first issue`).\n"
+              "Note: Automated fixes are only available for branches in this repository, not forks."
+          )
+
+          body += FOOTER
+
+          pr_number = os.environ['PR_NUMBER']
+          repo = os.environ['REPO']
+
+          subprocess.run(
+              ['gh', 'pr', 'comment', pr_number, '--repo', repo, '--body', body],
+              check=True,
+          )
+          PYTHON_EOF
