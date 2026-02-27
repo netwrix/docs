@@ -40,7 +40,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
 
         ![Add an existing customization to a change request](/images/platgovsalesforce/change_management/change_request_new4_light.webp)
 
-    - To search for existing Customizations, the user can use different filters such as **Salesforce Type**, **Package**, **Last Modified By**, or search directly by **Name**.
+    - To search for existing Customizations, you can use different filters such as **Salesforce Type**, **Package**, **Last Modified By**, or search directly by **Name**.
 
         ![Enter filters to search for customizations](/images/platgovsalesforce/change_management/change_request_new5_light.webp)
 
