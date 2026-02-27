@@ -30,29 +30,21 @@ Server, in the monitored environment, or in both locations.
 
 ## Using SSRS-based Reports
 
-SQL Server Reporting Services are needed for this kind of reports. See the
-[Requirements for SQL Server to Store Audit Data](/docs/auditor/10.8/requirements/sqlserver.md) topic for additional information. If
-you plan to export or print such reports, check the requirements below.
+SQL Server Reporting Services are needed for these types of reports. See the
+[Requirements for SQL Server to Store Audit Data](/docs/auditor/10.8/requirements/sqlserver.md) topic for additional information.
 
-**NOTE:** Please note that if you are going to use SQL Express plan, do not install SSRS and Auditor
-on the domain controller.
+**NOTE:** It is not recommended to install SQL Server (including Express edition), SQL Server Reporting Services (SSRS), or Netwrix Auditor on a domain controller.
 
+**Microsoft Edge WebView2**
 
-Printing
-
-To print SSRS-based reports, SSRS Report Viewer and Auditor Client require ActiveX Control to be
-installed and enabled on the local machine. See the
-[Impossible to Export a Report ](/docs/kb/auditor/reports-alerts-and-notifications/report-generation/impossible-to-export-a-report)
-Netwrix knowledge base article for additional information.
-
-You can, for example, open any SSRS-based report using your default web browser and click **Print**.
-The browser will prompt for installation of the additional components it needs for printing. Having
-them installed, you will be able to print the reports from Auditor UI as well.
+To view SSRS-based reports in Netwrix Auditor, the WebView2 runtime component must be installed.  
+If the component is not detected on the system, it will be automatically installed during the Netwrix Auditor setup process.  
+See the following Microsoft article for additional information about the WebView2 runtime component: [Microsoft Edge WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2).
 
 ## Server and Client
 
-It is recommended to deploy Auditor server on the virtualized server – to simplify backup, provide
-scalability for future growth, and facilitate hardware configuration updates. Auditor client can be
+It is recommended to deploy Auditor Server on the virtualized server – to simplify backup, provide
+scalability for future growth, and facilitate hardware configuration updates. Auditor Client can be
 deployed on a physical or virtual workstation, as it only provides the UI.
 
 You can deploy Netwrix Auditor on the VM running on any of the following hypervisors:
@@ -111,7 +103,7 @@ In this scenario, multiple Auditor clients are installed on different machines.
 
 Follow the steps to perform distributed deployment.
 
-**Step 1 –** Install Auditor server and default client, selecting Full installation during the
+**Step 1 –** Install Auditor Server and default Client, selecting Full installation during the
 product setup.
 
 **Step 2 –** Then install as many clients as you need, running the setup on the remote machines and
