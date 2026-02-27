@@ -1,0 +1,8 @@
+extends: substitution
+message: "Use 'lets you' or 'can' instead of '%s'."
+level: warning
+ignorecase: true
+swap:
+  '\bprovides the ability to\b': 'lets you'
+  '\bprovide the ability to\b': 'let you'
+  '\bprovided the ability to\b': 'let you'

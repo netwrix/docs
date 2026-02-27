@@ -1,0 +1,9 @@
+extends: substitution
+message: "Use 'can' instead of '%s'."
+level: warning
+ignorecase: true
+swap:
+  '\bis able to\b': 'can'
+  '\bare able to\b': 'can'
+  '\bwas able to\b': 'could'
+  '\bwere able to\b': 'could'
