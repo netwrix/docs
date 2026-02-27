@@ -39,7 +39,7 @@ This functionality is currently available for the following data sources:
   Integration API
 - Netwrix Auditor Self-Audit
 - Netwrix Data Classification. See
-  [Sensitive Data Discovery ](/docs/auditor/10.8/admin/settings/sensitivedatadiscovery.md)for more information.
+  [Sensitive Data Discovery ](/docs/auditor/10.8/admin/settings/sensitivedatadiscovery.md) for more information.
 
 Netwrix Auditor executes interactive search queries against data stored in the audit databases, that
 is, on data collected in the last 180 days (default retention period). If you want to investigate
@@ -56,14 +56,14 @@ You can add any elements (a dashboard, report, alert, risk, etc.) to the Auditor
 access them instantly. See the [Navigation](/docs/auditor/10.8/admin/navigation/overview.md) and
 [Customize Home Screen](/docs/auditor/10.8/admin/navigation/customizehome.md) topics for additional information.
 
-There you can use the UI controls to run the variety of search queries that will fecth you exactly
+There you can use the UI controls to run the variety of search queries that will fetch you exactly
 the data you need.
 
 - To view all audit data stored in all Audit Databases by all monitoring plans, click **Search**
   button in the center.
 
     Be aware that this type of search query may take time due to a large amount of data. Thus, it is
-    recommended that instead of retrieveing a massive data set, you pre-configure your search query
+    recommended that instead of retrieving a massive data set, you pre-configure your search query
     using filters.
 
     By default, Netwrix Auditor shows only the top 2,000 entries in the search results.
@@ -78,10 +78,10 @@ the data you need.
 
     ![search_filter](/images/auditor/10.8/admin/search/search_filter.webp)
 
-- Regardless of the selected filtering mode, the combination of conditions occurs as follows:
-    - filters of the same type with positive operators are combined using OR logical operator.
-    - filters of different types are combined using AND logical operator.
-    - All filters with negative operators, regardless of type, are combined using the logical operator AND. Negative operators include: not equal to; does not contain; not in group.
+- Regardless of the selected filtering mode, Netwrix Auditor combines conditions as follows:
+    - Filters of the same type with positive operators are combined using the OR logical operator.
+    - Filters of different types are combined using the AND logical operator.
+    - All filters with negative operators, regardless of type, are combined using the logical operator AND. Negative operators include: not equal to, does not contain, not in group.
 
 - By default, search results are open in the same window, so the subsequent search results will
   overwrite the previous search results. To view them in different windows, click Open in new
@@ -89,13 +89,13 @@ the data you need.
 - In addition, you can customize your view by selecting columns to display.
 
 Use search results for your own needs: save, share, create search-based alerts, subscribe to
-periodic delivery of search query results, etc. See Make Search Results Actionnable for more
+periodic delivery of search query results, etc. See Make Search Results Actionable for more
 information.
 
 ![search_nofilter_1](/images/auditor/10.8/admin/search/search_nofilter_1.webp)
 
 You can also use the **Search** window to examine details for the selected activity record, or watch
-a video recording (for User Ativity data).
+a video recording (for User Activity data).
 
 ### Examining Activity Record in Detail
 
@@ -145,7 +145,7 @@ To include or exclude data
 Your exclusions and inclusions will automatically be added to the search filters, limiting the
 amount of data shown in the results pane.
 
-## Make Search Results Actionnable
+## Make Search Results Actionable
 
 You can export your search query results, save them as a custom report, subscribe to periodic
 delivery of this search results, create a search-based alert.
