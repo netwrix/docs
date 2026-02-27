@@ -36,7 +36,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
 
 4. Optionally, on this screen you can enter **Existing Customizations**.
 
-    - Click **Add** button in the Customizations panel to add **Existing Customizations** to the change request.
+    - Click **Add** button in the Customizations panel to add **Existing Customizations** to the Change Request.
 
         ![Add an existing customization to a change request](/images/platgovsalesforce/change_management/change_request_new4_light.webp)
 
