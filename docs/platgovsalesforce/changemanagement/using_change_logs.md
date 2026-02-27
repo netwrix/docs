@@ -27,7 +27,7 @@ Here is an example change log for a **CustomObject** Metadata type.
 
 - **Actual Change Date**: Date the Customization was last modified.
 - **Customization Created By**: User who created the customization.
-- **Customization Modified By**: User who last modified the customization.
+- **Customization Modified By**: User who last modified the component.
 - **Customization**: Linked Customization(s) that have changed.
 - **Metadata Type**: Salesforce metadata type of the Customization.
 - **Field Name**: Name of the changed field.
@@ -36,19 +36,14 @@ Here is an example change log for a **CustomObject** Metadata type.
 - **Package**: Name of the Managed Package if the customization belongs to a managed package.
 - **Operation**: Flags whether a change was made, a new record was created or deleted.
 - **Change Overview**: Overview of the change.
-- **Data Record Id**: ID of the data record changed. This field is not in all Metadata Types.
-- **Data Record Name**: Name of the data record changed. This field is not in all Metadata Types.
-- **Data Record SObject API**: API name of the parent SObject of the data record changed. This field is not in all Metadata Types.
-- **Related Change Request**: Change request related to the change or used to perform regression analysis of a non-compliant change.
+- **Related Change Request**: Change request related to the change or used to perform regression analysis of a non-compliant change.This field is editable.
 - **Compliant Indicator**: Green flag indicates compliant, red flag indicates non-compliant.
 - **Non-Compliant**: Checked if the change is non-compliant.
 - **Compliance**: The change status: **Compliant** or **Non-compliant**.
 - **Policy**: Policies associated with the Change Log.
 - **Reason**: Name of the policy violated by the change.
-- **Filters**: List of filters satisfied for the data record change. If blank, no filters were specified. This field is not in all Metadata Types.
-- **Parent Change Log**: Name of the parent change log if applicable.
-- **Short Resolution Description**: Summary description of any steps taken to bring the change back into compliance.
-- **Status**: Current state of the Change Log. This field is manually set.
+- **Short Resolution Description**: Summary description of any steps taken to bring the change back into compliance. This field is editable.
+- **Status**: Current state of the Change Log. This field is editable.
 
 ### Diff Summary
 
