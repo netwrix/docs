@@ -111,11 +111,23 @@ jobs:
           FOOTER_MARKER = "Automated fixes are only available"
 
           def normalize_body(body):
-              """Strip any intro text before the ## Preexisting issues header."""
+              """Keep only the expected structured content from the preexisting issues output."""
               idx = body.find('## Preexisting issues')
-              if idx > 0:
-                  body = body[idx:]
-              return body.strip()
+              if idx == -1:
+                  return '## Preexisting issues\nNone.'
+              body = body[idx:]
+              clean_lines = []
+              for line in body.split('\n'):
+                  s = line.strip()
+                  if (s == '## Preexisting issues' or
+                          s.startswith('### ') or
+                          s.startswith('- Line ') or
+                          s == 'None.' or
+                          s == ''):
+                      clean_lines.append(line)
+              while clean_lines and not clean_lines[-1].strip():
+                  clean_lines.pop()
+              return '\n'.join(clean_lines)
 
           def patch_comment(comment_id, new_body):
               payload = {'body': new_body}
@@ -136,10 +148,9 @@ jobs:
                   check=True,
               )
           else:
-              # Claude posted directly — find that comment, strip any intro, and add the footer
+              # Claude posted directly — find that comment, clean it up, and add the footer
               result = subprocess.run(
-                  ['gh', 'api', f'repos/{repo}/issues/{pr_number}/comments',
-                   '--jq', '[.[] | select(.user.login == "github-actions[bot]")]'],
+                  ['gh', 'api', f'repos/{repo}/issues/{pr_number}/comments'],
                   capture_output=True, text=True, check=True,
               )
               comments = json.loads(result.stdout)
