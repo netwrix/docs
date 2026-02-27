@@ -89,7 +89,7 @@ the data you need.
 - In addition, you can customize your view by selecting columns to display.
 
 Use search results for your own needs: save, share, create search-based alerts, subscribe to
-periodic delivery of search query results, etc. See [Make Search Results Actionable](/docs/auditor/10_8/admin/search/overview#make-search-results-actionnable) for more
+periodic delivery of search query results, etc. See [Make Search Results Actionable](/docs/auditor/10_8/admin/search/overview#make-search-results-actionable) for more
 information.
 
 ![search_nofilter_1](/images/auditor/10.8/admin/search/search_nofilter_1.webp)
@@ -150,7 +150,7 @@ amount of data shown in the results pane.
 You can export your search query results, save them as a custom report, subscribe to periodic
 delivery of these search results, create a search-based alert.
 
-Navigate to Tools in the top right corner of the Search window and select the required action.
+Navigate to **Tools** in the top right corner of the Search window and select the required action.
 
 | Use...         | To...                                                                                                                                                                                                                                                                                                                                               |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
