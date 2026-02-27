@@ -3,15 +3,23 @@ name: Documentation Fixer
 on:
   issue_comment:
     types: [created]
+  pull_request_review_comment:
+    types: [created]
 
 jobs:
   claude-response:
     runs-on: ubuntu-latest
-    # Only run on PR comments that mention @claude, and not on bot comments
     if: |
-      github.event.issue.pull_request &&
-      contains(github.event.comment.body, '@claude') &&
-      github.event.comment.user.login != 'github-actions[bot]'
+      (
+        github.event_name == 'issue_comment' &&
+        github.event.issue.pull_request &&
+        contains(github.event.comment.body, '@claude') &&
+        github.event.comment.user.login != 'github-actions[bot]'
+      ) || (
+        github.event_name == 'pull_request_review_comment' &&
+        contains(github.event.comment.body, '@claude') &&
+        github.event.comment.user.login != 'github-actions[bot]'
+      )
     permissions:
       contents: write
       pull-requests: write
@@ -24,7 +32,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_DATA=$(gh pr view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json headRefName,isCrossRepository)
+          if [ "${{ github.event_name }}" = "issue_comment" ]; then
+            PR_NUMBER="${{ github.event.issue.number }}"
+          else
+            PR_NUMBER="${{ github.event.pull_request.number }}"
+          fi
+          PR_DATA=$(gh pr view $PR_NUMBER --repo ${{ github.repository }} --json headRefName,isCrossRepository)
+          echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
           echo "branch=$(echo "$PR_DATA" | jq -r '.headRefName')" >> "$GITHUB_OUTPUT"
           echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
 
@@ -33,19 +47,62 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr comment ${{ github.event.issue.number }} --repo ${{ github.repository }} \
-            --body "This PR is from a fork. Automated fixes cannot be pushed directly. Apply the inline suggestions from the review manually, or use GitHub's batch feature to commit them all at once."
+          gh pr comment ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} \
+            --body "This PR is from a fork. Automated fixes cannot be pushed directly. Apply the suggested changes from the inline comments manually."
 
       - name: Checkout repository
         if: steps.pr-info.outputs.is_fork == 'false'
         uses: actions/checkout@v4
         with:
-          # Check out the branch by name so git push works.
           ref: ${{ steps.pr-info.outputs.branch }}
           fetch-depth: 0
 
-      - name: Apply fixes
-        if: steps.pr-info.outputs.is_fork == 'false'
+      - name: Build prompt for review comment reply
+        id: build-prompt
+        if: steps.pr-info.outputs.is_fork == 'false' && github.event_name == 'pull_request_review_comment'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          FILE_PATH: ${{ github.event.comment.path }}
+          LINE: ${{ github.event.comment.line }}
+          IN_REPLY_TO: ${{ github.event.comment.in_reply_to_id }}
+        run: |
+          if [ -n "$IN_REPLY_TO" ] && [ "$IN_REPLY_TO" != "0" ]; then
+            PARENT_BODY=$(gh api repos/${{ github.repository }}/pulls/comments/$IN_REPLY_TO --jq '.body')
+          else
+            PARENT_BODY="$COMMENT_BODY"
+          fi
+
+          {
+            echo "prompt<<EOF"
+            echo "The user replied to an inline review comment on PR #${{ steps.pr-info.outputs.number }}."
+            echo ""
+            echo "User's reply: $COMMENT_BODY"
+            echo ""
+            echo "Parent inline comment:"
+            echo "$PARENT_BODY"
+            echo ""
+            echo "File: \`$FILE_PATH\`, line: $LINE."
+            echo ""
+            echo "Based on the user's reply:"
+            echo "- If they asked to apply the suggestion: extract the text from the 'Suggested change:' code block in the parent comment. Open \`$FILE_PATH\`, replace the content at line $LINE with that text, then stage, commit, and push the change."
+            echo "- If they asked to add the suggestion to a batch: find or create a PR comment from github-actions[bot] that starts with '<!-- CLAUDE-BATCH-TRACKER -->'. Add this suggestion to the list and rewrite the comment using exactly this format (replacing N with the updated count and updating the list):"
+            echo ""
+            echo "  <!-- CLAUDE-BATCH-TRACKER -->"
+            echo "  **Batched suggestions: N**"
+            echo "  Comment \`@claude apply batch\` on this PR to apply all of them."
+            echo ""
+            echo "  | # | File | Line | Suggested change |"
+            echo "  |---|------|------|------------------|"
+            echo "  | 1 | \`path/to/file.md\` | 12 | suggested text |"
+            echo "  | 2 | \`path/to/file.md\` | 34 | suggested text |"
+            echo ""
+            echo "  Then post a reply to the inline comment thread: 'Added to batch (N total). Comment \`@claude apply batch\` on this PR to apply all batched suggestions.'"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Apply fixes (PR comment)
+        if: steps.pr-info.outputs.is_fork == 'false' && github.event_name == 'issue_comment'
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -53,4 +110,16 @@ jobs:
           show_full_output: true
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
+            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(gh api:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
+
+      - name: Apply fixes (review comment reply)
+        if: steps.pr-info.outputs.is_fork == 'false' && github.event_name == 'pull_request_review_comment'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: ${{ steps.build-prompt.outputs.prompt }}
+          claude_args: |
+            --model claude-sonnet-4-5-20250929
+            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(gh api:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"

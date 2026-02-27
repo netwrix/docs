@@ -132,15 +132,22 @@ jobs:
 
           FOOTER = (
               "\n---\n\n"
-              "There are two ways to apply fixes:\n"
-              "- View them in the comments and apply them individually or in a batch."
-              " This only applies to changes made to the file.\n"
-              "- Reply with `@claude` here, followed by your instructions"
+              "To apply individual fixes, reply to the inline comments on this review"
+              " with `@claude apply suggestion`.\n"
+              "To batch fixes, reply with `@claude add suggestion to batch` on each inline comment,"
+              " then comment `@claude apply batch` on this PR when ready.\n"
+              "To fix issues in bulk, reply with `@claude` here, followed by your instructions"
               " (e.g. `@claude fix all issues` or `@claude fix only the spelling errors`"
               " or `@claude fix all other existing issues`"
               " or `@claude fix all linting issues`)."
               " You can use this option to fix preexisting issues.\n\n"
               "Note: Automated fixes are only available for branches in this repository, not forks."
+          )
+
+          INLINE_FOOTER = (
+              "\n\n---\n\n"
+              "Reply with `@claude`, followed by your instructions"
+              " (e.g. `@claude apply suggestion` or `@claude add suggestion to batch`)."
           )
 
           def parse_diff_to_suggestions(diff_text):
@@ -216,14 +223,15 @@ jobs:
 
           def make_suggestion(path, old_start, old_chunk, new_chunk):
               if not old_chunk:
-                  return None  # Pure insertions cannot be placed as inline suggestions
+                  return None  # Pure insertions cannot be placed as inline comments
               end_line = old_start + len(old_chunk) - 1
-              suggestion_body = '```suggestion\n' + '\n'.join(new_chunk) + '\n```'
+              new_text = '\n'.join(new_chunk)
+              comment_body = f"Suggested change:\n```\n{new_text}\n```{INLINE_FOOTER}"
               comment = {
                   'path': path,
                   'line': end_line,
                   'side': 'RIGHT',
-                  'body': suggestion_body,
+                  'body': comment_body,
               }
               if len(old_chunk) > 1:
                   comment['start_line'] = old_start
