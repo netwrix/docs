@@ -62,18 +62,16 @@ jobs:
         if: steps.pr-info.outputs.is_fork == 'false' && github.event_name == 'pull_request_review_comment'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          FILE_PATH: ${{ github.event.comment.path }}
+          LINE: ${{ github.event.comment.line }}
+          IN_REPLY_TO: ${{ github.event.comment.in_reply_to_id }}
         run: |
-          IN_REPLY_TO="${{ github.event.comment.in_reply_to_id }}"
-
           if [ -n "$IN_REPLY_TO" ] && [ "$IN_REPLY_TO" != "0" ]; then
             PARENT_BODY=$(gh api repos/${{ github.repository }}/pulls/comments/$IN_REPLY_TO --jq '.body')
           else
-            PARENT_BODY="${{ github.event.comment.body }}"
+            PARENT_BODY="$COMMENT_BODY"
           fi
-
-          FILE_PATH="${{ github.event.comment.path }}"
-          LINE="${{ github.event.comment.line }}"
-          COMMENT_BODY="${{ github.event.comment.body }}"
 
           {
             echo "prompt<<EOF"
