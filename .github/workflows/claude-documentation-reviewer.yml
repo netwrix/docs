@@ -89,25 +89,16 @@ jobs:
 
             Follow these steps in order:
 
-            1. Use the Read tool to read each file in full. Do not look at the PR diff yet.
+            1. Use `gh pr diff ${{ github.event.pull_request.number }}` to get the lines that were added or modified in this PR.
 
-            2. Identify ALL issues in the document per your instructions.
+            2. Review ONLY the added or modified lines from the diff for issues per your instructions. Do not report issues on lines that were not changed.
 
-            3. Use `gh pr diff ${{ github.event.pull_request.number }}` to get the list of lines that were added or modified in this PR.
-
-            4. Categorize each issue from step 2 as either:
-            - Issues in PR changes: the issue is on a line that was added or modified in this PR
-            - Preexisting issues: the issue exists on a line that was not changed by this PR
-
-            You MUST write your complete review to `/tmp/review-summary.md` — always, even if there are no issues. Use this exact structure — two sections, each containing a flat list of issues in the format from your instructions, with no subheadings, groupings, or extra nesting:
+            3. You MUST write your complete review to `/tmp/review-summary.md` — always, even if there are no issues. Use this exact structure — a flat list of issues in the format from your instructions, with no subheadings, groupings, or extra nesting:
 
             ## Issues in PR changes
             <flat list of issues in the format from your instructions, or "None." if there are none>
 
-            ## Preexisting issues
-            <flat list of issues in the format from your instructions, or "None." if there are none>
-
-            Then fix ALL issues directly in the files using the Write and Edit tools. Do not post a PR comment. Do not commit or push.
+            4. Fix ALL issues directly in the files using the Write and Edit tools. Do not post a PR comment. Do not commit or push.
 
           claude_args: |
             --model claude-sonnet-4-5-20250929
@@ -132,22 +123,10 @@ jobs:
 
           FOOTER = (
               "\n---\n\n"
-              "To apply individual fixes, reply to the inline comments on this review"
-              " with `@claude apply suggestion`.\n"
-              "To batch fixes, reply with `@claude add suggestion to batch` on each inline comment,"
-              " then comment `@claude apply batch` on this PR when ready.\n"
-              "To fix issues in bulk, reply with `@claude` here, followed by your instructions"
+              "To fix issues in bulk, comment `@claude` on this PR followed by your instructions"
               " (e.g. `@claude fix all issues` or `@claude fix only the spelling errors`"
-              " or `@claude fix all other existing issues`"
-              " or `@claude fix all linting issues`)."
-              " You can use this option to fix preexisting issues.\n\n"
+              " or `@claude fix all linting issues`).\n\n"
               "Note: Automated fixes are only available for branches in this repository, not forks."
-          )
-
-          INLINE_FOOTER = (
-              "\n\n---\n\n"
-              "Reply with `@claude`, followed by your instructions"
-              " (e.g. `@claude apply suggestion` or `@claude add suggestion to batch`)."
           )
 
           def parse_diff_to_suggestions(diff_text):
@@ -221,35 +200,12 @@ jobs:
 
               return suggestions
 
-          issue_descriptions = {}
-
-          def parse_issue_descriptions(review_text):
-              """Return {(path, line): description} parsed from the review summary."""
-              descriptions = {}
-              pattern = re.compile(r'-\s+(.+?),\s+[Ll]ine\s+(\d+):\s+(.+)')
-              for line_text in review_text.split('\n'):
-                  m = pattern.match(line_text.strip())
-                  if m:
-                      path = m.group(1).strip()
-                      lineno = int(m.group(2))
-                      full_desc = m.group(3).strip()
-                      if 'Suggested change:' in full_desc:
-                          desc = full_desc[:full_desc.index('Suggested change:')].rstrip('. ')
-                      else:
-                          desc = full_desc.rstrip('.')
-                      descriptions[(path, lineno)] = desc
-              return descriptions
-
           def make_suggestion(path, old_start, old_chunk, new_chunk):
               if not old_chunk:
                   return None  # Pure insertions cannot be placed as inline comments
               end_line = old_start + len(old_chunk) - 1
               new_text = '\n'.join(new_chunk)
-              description = issue_descriptions.get((path, old_start))
-              if description:
-                  comment_body = f"{description}\n\nSuggested change:\n```\n{new_text}\n```{INLINE_FOOTER}"
-              else:
-                  comment_body = f"Suggested change:\n```\n{new_text}\n```{INLINE_FOOTER}"
+              comment_body = f"```suggestion\n{new_text}\n```"
               comment = {
                   'path': path,
                   'line': end_line,
@@ -299,8 +255,6 @@ jobs:
                   review_body = f.read().strip()
           else:
               review_body = '## Documentation Review\n\nNo summary was generated.'
-
-          issue_descriptions.update(parse_issue_descriptions(review_body))
 
           review_body += FOOTER
 
