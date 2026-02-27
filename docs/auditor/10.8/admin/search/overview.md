@@ -89,7 +89,7 @@ the data you need.
 - In addition, you can customize your view by selecting columns to display.
 
 Use search results for your own needs: save, share, create search-based alerts, subscribe to
-periodic delivery of search query results, etc. See [Make Search Results Actionable](/docs/auditor/10_8/admin/search/overview#make-search-results-actionable) for more
+periodic delivery of search query results, etc. See [Make Search Results Actionable](#make-search-results-actionable) for more
 information.
 
 ![search_nofilter_1](/images/auditor/10.8/admin/search/search_nofilter_1.webp)
