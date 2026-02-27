@@ -20,7 +20,7 @@ Using Named Credentials with External Client App OAuth authentication is the rec
 
 **This is the primary reason for using Named Credentials.** When Salesforce organizations have High Assurance enabled—which is increasingly required by Salesforce and security best practices—user Session IDs do not work properly for API calls. The Session ID authentication method fails because:
 
-- **Enabling High Assurance Session on the Named Credential enforces that only Named Credentials can be used**, providing an additional security layer that ensures MFA compliance
+- **Enabling High Assurance Session on the Named Credential ensures that only Named Credentials work for authentication**, providing an additional security layer that ensures MFA compliance
 
 ### Enhanced Security
 
