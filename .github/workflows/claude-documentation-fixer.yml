@@ -153,7 +153,9 @@ jobs:
               capture_output=True, text=True, check=True,
           )
           comments = json.loads(result.stdout)
-          new_comments = [c for c in comments if c['id'] > last_comment_id]
+          new_comments = [c for c in comments
+                          if c['id'] > last_comment_id
+                          and c['user']['login'] == 'github-actions[bot]']
 
           if new_comments:
               # Replace the most recent new comment (the action's auto-posted output)
