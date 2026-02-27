@@ -56,10 +56,10 @@ You can add any elements (a dashboard, report, alert, risk, etc.) to the Auditor
 access them instantly. See the [Navigation](/docs/auditor/10.8/admin/navigation/overview.md) and
 [Customize Home Screen](/docs/auditor/10.8/admin/navigation/customizehome.md) topics for additional information.
 
-There you can use the UI controls to run the variety of search queries that will fetch you exactly
+There you can use the UI controls to run a variety of search queries that will fetch you exactly
 the data you need.
 
-- To view all audit data stored in all Audit Databases by all monitoring plans, click **Search**
+- To view all audit data stored in all Audit Databases by all monitoring plans, click the **Search**
   button in the center.
 
     Be aware that this type of search query may take time due to a large amount of data. Thus, it is
@@ -81,7 +81,7 @@ the data you need.
 - Regardless of the selected filtering mode, Netwrix Auditor combines conditions as follows:
     - Filters of the same type with positive operators are combined using the OR logical operator.
     - Filters of different types are combined using the AND logical operator.
-    - All filters with negative operators, regardless of type, are combined using the logical operator AND. Negative operators include: not equal to, does not contain, not in group.
+    - All filters with negative operators, regardless of type, are combined using the AND logical operator. Negative operators include: not equal to, does not contain, not in group.
 
 - By default, search results are open in the same window, so the subsequent search results will
   overwrite the previous search results. To view them in different windows, click Open in new
@@ -89,7 +89,7 @@ the data you need.
 - In addition, you can customize your view by selecting columns to display.
 
 Use search results for your own needs: save, share, create search-based alerts, subscribe to
-periodic delivery of search query results, etc. See Make Search Results Actionable for more
+periodic delivery of search query results, etc. See [Make Search Results Actionable](/docs/auditor/10_8/admin/search/overview#make-search-results-actionnable) for more
 information.
 
 ![search_nofilter_1](/images/auditor/10.8/admin/search/search_nofilter_1.webp)
@@ -148,7 +148,7 @@ amount of data shown in the results pane.
 ## Make Search Results Actionable
 
 You can export your search query results, save them as a custom report, subscribe to periodic
-delivery of this search results, create a search-based alert.
+delivery of these search results, create a search-based alert.
 
 Navigate to Tools in the top right corner of the Search window and select the required action.
 
