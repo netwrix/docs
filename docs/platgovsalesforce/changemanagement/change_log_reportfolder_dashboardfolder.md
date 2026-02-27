@@ -1,7 +1,7 @@
 # Change Log for ReportFolder and DashboardFolder
 
 ## Overview
-This document describes the Change Log structure for Salesforce types "ReportFolder" and "DashboardFolder", following Netwrix documentation styles.
+This document describes the Change Log structure for Salesforce types "ReportFolder" and "DashboardFolder", following the Netwrix Style Guide.
 
 ## Change Log Layout
 

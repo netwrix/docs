@@ -1,0 +1,6 @@
+extends: substitution
+message: "Use 'click' instead of 'hit' for UI elements."
+level: suggestion
+ignorecase: true
+swap:
+  '\bhit\b': 'click'

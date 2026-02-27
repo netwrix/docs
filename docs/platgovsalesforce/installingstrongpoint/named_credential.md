@@ -10,7 +10,7 @@ This guide explains how to configure Platform Governance for Salesforce using an
 
 ## Overview
 
-The traditional process uses user Session IDs which are incompatible with Profiles with High Assurance. The new configuration uses an External Client App with Named Credentials to access Salesforce APIs, providing a more secure and MFA-compatible authentication method.
+The legacy method uses user Session IDs which are incompatible with Profiles with High Assurance. The new configuration uses an External Client App with Named Credentials to access Salesforce APIs, providing a more secure and MFA-compatible authentication method.
 
 ## Why Use Named Credentials
 
@@ -20,7 +20,7 @@ Using Named Credentials with External Client App OAuth authentication is the rec
 
 **This is the primary reason for using Named Credentials.** When Salesforce organizations have High Assurance enabled—which is increasingly required by Salesforce and security best practices—user Session IDs do not work properly for API calls. The Session ID authentication method fails because:
 
-- **Enabling High Assurance Session on the Named Credential enforces that only Named Credentials can be used**, providing an additional security layer that ensures MFA compliance
+- **Enabling High Assurance Session on the Named Credential ensures that only Named Credentials work for authentication**, providing an additional security layer that ensures MFA compliance
 
 ### Enhanced Security
 
@@ -43,11 +43,11 @@ Using Named Credentials with External Client App OAuth authentication is the rec
 ## Step 1: Create an External Client App
 
 :::important
-If this is not a new installation and your org already has an existing Connected App named **Netwrix** or **Strongpoint**, you do not need to create a new one.
+If this is not a new installation and your org already has an existing Connected App named **Netwrix** or **Strongpoint**, you don't need to create a new one.
 
 You can use the existing app and continue to [Step 2: Create an Auth Provider](#step-2-create-an-auth-provider).
 
-If you do not have the Consumer Key and Consumer Secret saved, go to [Retrieve Consumer Key and Secret](#retrieve-consumer-key-and-secret), obtain the credentials, and then continue with [Step 2: Create an Auth Provider](#step-2-create-an-auth-provider).
+If you don't have the Consumer Key and Consumer Secret saved, go to [Retrieve Consumer Key and Secret](#retrieve-consumer-key-and-secret), obtain the credentials, and then continue with [Step 2: Create an Auth Provider](#step-2-create-an-auth-provider).
 :::
 
 Create a new External Client App to enable OAuth authentication:

@@ -34,13 +34,13 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
     - **Is Release**: check if this change request represents a release. The customizations from all
       the child change requests are rolled into this release for deployment.
 
-4. Optionally, on this screen user can enter **Existing Customizations**.
+4. Optionally, on this screen you can enter **Existing Customizations**.
 
-    - Click **Add** button in the Customizations panel to add **Existing Customizations** to the change request.
+    - Click **Add** button in the Customizations panel to add **Existing Customizations** to the Change Request.
 
         ![Add an existing customization to a change request](/images/platgovsalesforce/change_management/change_request_new4_light.webp)
 
-    - To search for existing Customizations, the user can use different filters such as **Salesforce Type**, **Package**, **Last Modified By**, or search directly by **Name**.
+    - To search for existing Customizations, you can use different filters such as **Salesforce Type**, **Package**, **Last Modified By**, or search directly by **Name**.
 
         ![Enter filters to search for customizations](/images/platgovsalesforce/change_management/change_request_new5_light.webp)
 
@@ -48,7 +48,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
     - Once finished, click **Confirm Selection**.
 
 
-5. User can also enter the **Proposed Customizations** at this point.
+5. You can also enter the **Proposed Customizations** at this point.
 
     - Click **Add** button in the Proposed panel to add **Proposed Customizations** to the change request.
 
@@ -176,13 +176,7 @@ add additional approvers, approver notes and begin the approval process.
 
    ![Change Request Pending Approval](/images/platgovsalesforce/change_management/change_request_submit_approval.webp)
 
-:::note
-If you created the Change Request in your sandbox to determine the scope of the change, recreate it
-in your Production environment to enable approvals and ongoing tracking.
-:::
 
 :::note
 For new objects that do not yet exist in Production, edit the Change Request and enter the full API
 Names of these objects into the Proposed Customization fields in the Scope Section. You can add
-multiple API Names by using the Add button. Save the Change Request when complete.
-:::

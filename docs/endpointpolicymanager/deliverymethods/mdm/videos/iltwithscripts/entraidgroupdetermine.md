@@ -10,6 +10,8 @@ Endpoint Policy Manager (formerly PolicyPak) and these scripts with your MDM ser
 Workspace ONE or MobileIron.. Then after that, you can use Item Level Targeting to check group
 membership and trigger actions and policies.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w5HXpv4F4DY" title="Use PP MDM to determine the Azure AAD Group Membership for User or Computers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Hi. This is Jeremy Moskowitz. This is part three of how to use Endpoint Policy Manager Scripts to
 query Azure AD to then do interesting things like apply Group Policy Preferences or Endpoint Policy
 Manager items depending on if a user or a computer is a member of an Azure AD group.

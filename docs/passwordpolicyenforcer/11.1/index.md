@@ -44,6 +44,8 @@ Here are the requirements for both the full and evaluation Password Policy Enfor
 - 10
 - 11
 
+- PowerShell 7.4 or higher
+
 ## Password Policy Enforcer Client
 
 Here are the requirements for both the full and evaluation Password Policy Enforcer installations.

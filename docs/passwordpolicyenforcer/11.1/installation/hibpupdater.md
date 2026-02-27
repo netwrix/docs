@@ -23,10 +23,21 @@ against the HIBP database.
 Prior to deploying the HIBP database, consider the pros and cons when choosing its deployment
 location.
 
-- The HIBP database takes up additional space on the machine where it is copied (approximately 13
-  GB, but subject to change)
-- A network connection to the application server is not required to check passwords against the HIBP
-  database
+If the HIBP database is copied to and stored local on the Domain Controllers:
+
+- The HIBP database takes up additional space on the machine where it is copied. (Aproximetly 13GB but subject to change)
+- If doing local the database needs to be on every Domain Controller in the same location as specified in the Rule.
+- A network connection does not come into play and possibly affect performance of checking the password against the HIBP database
+- The pending password candidate is checked against the archived hash file at the local level. If a password hash is matched, the pending password change is rejected.
+
+
+If the HIBP database is kept on a Network Share:
+
+- The database takes up space only on the Network Share, not on each Domain Controller. 
+- Requires a working network connection from the Domain Controllers to the Network Share with Read permissions to check:
+- The pending password candidate from Domain Controller against the HIBP Database stored on the Network Share, this could affect LSASS/Password Change performance depending on the environment.
+- HIBP database space is not required on the domain controllers but on one Network Location.
+- At the time of a password change, if the Network Share is not available, the Domain Controller must assume the hash is okay and the possibility of a known compromised password being accepted.
 
 ## Installation and Configuration
 

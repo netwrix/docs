@@ -66,4 +66,3 @@ Once enabled, the scheduler will execute the DLU Scanner according to the config
 
 :::note
 If the scheduler is disabled, no DLU scans will run, even if the DLU Configuration is correctly defined.
-:::

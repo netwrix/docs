@@ -7,11 +7,11 @@ description: "Become a certified Presales Engineer for Netwrix Identity Manager"
 ---
 
 
-import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMStandard, NIMDataModel, NIMConnectors, NIMProfilesFundamentals, NIMIdentityWorkflow, NIMRoleModel, NIMReconciliation, NIMIntro, NIMDemoLab, NIMAdditional } from '@site/src/training/identity-manager';
+import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlanning, NIMDemo, NIMAdditional } from '@site/src/training/identity-manager';
 import { Company, NIM } from '@site/src/training/products';
 
 
-Estimated length: 3.75 hours + Recording of demo
+Estimated length: 2.5 hours
 
 Prerequisite: <NIM /> Sales Professional learning path
 
@@ -21,15 +21,9 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 * 1721 <NIM /> – Identity & Identity Life Cycle
 * 2720 <NIM /> – Concepts
 * 2721 <NIM /> – Architecture
-* 2722 <NIM /> – Standard Deployment Project
-* 2723 <NIM /> – Data Model
-* 2724 <NIM /> – Connectors
-* 2725 <NIM /> – Profiles Fundamentals
-* 2726 <NIM /> – Identity Workflow Fundamentals
-* 2727 <NIM /> – Designing Role Model
-* 2728 <NIM /> – Reconciliation
-* 3720 Introduction to <NIM />
-* 6720 <NIM /> – Presales Lab Experience
+* 2722 <NIM /> – IGA Project Planning
+* 5720 <NIM /> – Demo the Basic Use Cases
+
 
 <NIMValue />
 
@@ -39,22 +33,8 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 
 <NIMArchitecture />
 
-<NIMStandard />
+<NIMProjectPlanning />
 
-<NIMDataModel />
-
-<NIMConnectors />
-
-<NIMProfilesFundamentals />
-
-<NIMIdentityWorkflow />
-
-<NIMRoleModel />
-
-<NIMReconciliation />
-
-<NIMIntro />
-
-<NIMDemoLab />
+<NIMDemo />
 
 <NIMAdditional />

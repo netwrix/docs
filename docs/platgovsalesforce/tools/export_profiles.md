@@ -28,10 +28,10 @@ To remove profiles, select them in the Selected list and use the left arrow to m
 
 **Permission Sets**
 
-Search for an Permission Set by entering all or part of its name in **Search PermissionSet**.
+Search for a Permission Set by entering all or part of its name in **Search PermissionSet**.
 
 Select one or more permission sets from the Available list and use the arrow buttons to move them to Selected.
-To remove permissions set, select them in the Selected list and use the left arrow to move them back to Available.
+To remove permission sets, select them in the Selected list and use the left arrow to move them back to Available.
 
 ![export_object_permissions](/images/platgovsalesforce/tools/export_profile_sel_ps.webp)
 

@@ -54,8 +54,8 @@ If your organization has High Assurance enabled, you **cannot** use this credent
     - **Salesforce Username**
     - **Salesforce Password**
     - **Salesforce Security Token**
-    - **Salesforce Consumer Key** (Not required can be left blank)
-    - **Salesforce Consumer Secret** (Not required can be left blank)
+    - **Salesforce Consumer Key** (optional)
+    - **Salesforce Consumer Secret** (optional)
 
 2. Click **Next**
 

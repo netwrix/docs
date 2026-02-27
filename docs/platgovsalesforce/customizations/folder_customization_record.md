@@ -1,7 +1,7 @@
 # Report and Dashboard Folder Customization
 
 ## Overview
-This document describes the Strongpoint customizations for Salesforce types ReportFolder and DashboardFolder.
+This document describes the Netwrix customizations for Salesforce types ReportFolder and DashboardFolder.
 
 ## Detailed Customization Description
 

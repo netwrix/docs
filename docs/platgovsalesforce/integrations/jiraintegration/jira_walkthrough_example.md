@@ -133,7 +133,7 @@ Once you have logged in, the form is displayed.
 
     ![Add an existing customization](/images/platgovsalesforce/integrations/jiraRebrandAddCustomizations.webp)
 
-3. Select one or more Customizations (Wiht Add or Remove buttons). 
+3. Select one or more Customizations (With Add or Remove buttons). 
 4. Click **Add Selected Customizations**. The selected Customization is added to the **Existing
    Customizations** list.
 

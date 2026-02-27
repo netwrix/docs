@@ -31,7 +31,7 @@ The left-hand panel contains three main sections:
 ### Notification Settings
 You can enable Email Notifications to subscribe to reports showing field changes. Select the notification frequency — daily, weekly, or monthly — and define the list of recipients.
 As a user, you don’t need to manually subscribe to the report — the system automatically handles that for you. Simply enable notifications and add the users who should receive the emails.
-Please note that any user receiving email notifications must have the "Netwrix Grant Permissions" PermissionSet assigned, as this permission set grants access to the related objects and features within the application.
+Any user receiving email notifications must have the "Netwrix Grant Permissions" PermissionSet assigned, as this permission set grants access to the related objects and features within the application.
 
 - Enable Email Notifications
   - Choose notification frequency: daily, weekly, or monthly

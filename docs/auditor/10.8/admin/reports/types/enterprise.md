@@ -55,7 +55,7 @@ Follow the steps to review a diagram:
 
 The example below applies to Enterprise.
 
-![dashboard](/images/auditor/10.7/admin/reports/types/dashboard.webp)
+![dashboard](/images/auditor/10.8/admin/reports/types/dashboard.webp)
 
 Each report has a set of filters which help organize audit data in the most convenient way. See the
 [View Reports](/docs/auditor/10.8/admin/reports/view.md) topic for additional information. You can also create a subscription to

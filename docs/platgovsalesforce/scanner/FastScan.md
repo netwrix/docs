@@ -41,7 +41,7 @@ When changes are made to these settings, it automatically creates Change Log rec
 
 ### 1. Scheduled Execution
 
-The FastScan runs automatically based on the schedule you configure in the **Scheduling** section of the Platform Governace Scheduler section. You can set it to run daily, weekly, or at custom intervals to continuously monitor permission changes in your org.
+The FastScan runs automatically based on the schedule you configure in the **Scheduling** section of the Platform Governance Scheduler. You can set it to run daily, weekly, or at custom intervals to continuously monitor permission changes in your org.
 
 ### 2. Change Detection
 
@@ -74,7 +74,7 @@ After Change Logs are created, the FastScan triggers a rescan process that:
 You can schedule the FastScan to run automatically:
 
 1. Go to the **Netwrix Dashboard** page
-2. Navigate to the **Scanner** -> **Scheduler** menu
+2. Navigate to the **Scanner** > **Scheduler** menu
 3. Locate the **FastScan Profile/Permission Set** scheduler
 4. Select your desired frequency (e.g., Daily, Weekly)
 5. Choose the time of day to run
@@ -90,7 +90,7 @@ To run the FastScan feature manually:
 
 1. Navigate to the **Netwrix Dashboard** page
 2. Locate the **Fast Scan Profile / PermissionSets** section
-3. Click **Starth**
+3. Click **Start**
 4. Monitor the progress in the **Running Jobs** section
 
 ---

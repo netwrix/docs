@@ -29,7 +29,7 @@ Open **Netwrix Dashboard** > **Tools** > **Export Objects**
 
 **Objects**
 
-Search for an Object by entering all or part of its name in **Search Objects**.
+Search for an object by entering all or part of its name in **Search Objects**.
 
 Select one or more profiles from the Available list and use the arrow buttons to move them to Selected.
 To remove profiles, select them in the Selected list and use the left arrow to move them back to Available.
@@ -44,16 +44,16 @@ Click the toggles to activate or inactivate the settings you want to export.
 
 **Profiles: Object and Field Level Security (Optional)**
 
-Search for an Profile by entering all or part of its name in **Search Profile**.
+Search for a Profile by entering all or part of its name in **Search Profile**.
 
-Select one or more profiles from the Available list and use the arrow buttons to move them to Selected.
+Select one or more profiles from the Available list and use the arrow buttons to move them to the Selected list.
 To remove profiles, select them in the Selected list and use the left arrow to move them back to Available.
 
 ![export_object_profiles](/images/platgovsalesforce/tools/export_object_profiles.webp)
 
 **Permission Sets: Object and Field Level Security (Optional)**
 
-Search for an Permission Set by entering all or part of its name in **Search PermissionSet**.
+Search for a permission set by entering all or part of its name in **Search PermissionSet**.
 
 Select one or more permissions set from the Available list and use the arrow buttons to move them to Selected.
 To remove permissions set, select them in the Selected list and use the left arrow to move them back to Available.
