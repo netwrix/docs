@@ -36,7 +36,7 @@ Here is an example change log for a **CustomObject** Metadata type.
 - **Package**: Name of the Managed Package if the customization belongs to a managed package.
 - **Operation**: Flags whether a change was made, a new record was created or deleted.
 - **Change Overview**: Overview of the change.
-- **Related Change Request**: Change request related to the change or used to perform regression analysis of a non-compliant change.This field is editable.
+- **Related Change Request**: Change request related to the change or used to perform regression analysis of a non-compliant change. This field is editable.
 - **Compliant Indicator**: Green flag indicates compliant, red flag indicates non-compliant.
 - **Non-Compliant**: Checked if the change is non-compliant.
 - **Compliance**: The change status: **Compliant** or **Non-compliant**.
