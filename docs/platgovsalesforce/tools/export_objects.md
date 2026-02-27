@@ -44,7 +44,7 @@ Click the toggles to activate or inactivate the settings you want to export.
 
 **Profiles: Object and Field Level Security (Optional)**
 
-Search for an Profile by entering all or part of its name in **Search Profile**.
+Search for a Profile by entering all or part of its name in **Search Profile**.
 
 Select one or more profiles from the Available list and use the arrow buttons to move them to the Selected list.
 To remove profiles, select them in the Selected list and use the left arrow to move them back to Available.
