@@ -29,7 +29,7 @@ Open **Netwrix Dashboard** > **Tools** > **Export Objects**
 
 **Objects**
 
-Search for an Object by entering all or part of its name in **Search Objects**.
+Search for an object by entering all or part of its name in **Search Objects**.
 
 Select one or more profiles from the Available list and use the arrow buttons to move them to Selected.
 To remove profiles, select them in the Selected list and use the left arrow to move them back to Available.
