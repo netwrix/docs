@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Completing and Validating a Change Request
 
-Once the changes are complete, validate the Change Request and mark it as **Complete** on the path. 
+Once the changes are complete, validate the Change Request and mark it as **Completed** on the path. 
 
 1. Open **Change Requests** to view the list of Change Requests. You may have to change the filter
    from **Recently Viewed**.
