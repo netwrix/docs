@@ -44,6 +44,29 @@ jobs:
           ref: ${{ steps.pr-info.outputs.branch }}
           fetch-depth: 0
 
+      - name: Checkout system prompt repository
+        if: steps.pr-info.outputs.is_fork == 'false'
+        uses: actions/checkout@v4
+        with:
+          repository: netwrix-eng/internal-agents
+          token: ${{ secrets.PRIVATE_AGENTS_REPO }}
+          path: system-prompt-repo
+          ref: builds
+          sparse-checkout: |
+            engineering/technical_writing/system-prompt.md
+          sparse-checkout-cone-mode: false
+
+      - name: Read system prompt
+        id: read-prompt
+        if: steps.pr-info.outputs.is_fork == 'false'
+        run: |
+          {
+            echo "prompt<<EOF"
+            cat system-prompt-repo/engineering/technical_writing/system-prompt.md
+            echo "" # Forces a newline to prevent EOF delimiter errors
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Apply fixes
         if: steps.pr-info.outputs.is_fork == 'false'
         uses: anthropics/claude-code-action@v1
@@ -54,3 +77,4 @@ jobs:
           claude_args: |
             --model claude-sonnet-4-5-20250929
             --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
+            --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
