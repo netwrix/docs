@@ -26,5 +26,5 @@ this Permission Set can approve a Change Request independently of the governing 
 
 :::note
 The default approve permission is no longer included with the System Administrator role. If you have a System
-Administrator or other user you want to be able to approve, assign the **Netwrix CR Approval Override** Permission Set.
+Administrator or other users you want to be able to approve, assign the **Netwrix CR Approval Override** Permission Set.
 :::
