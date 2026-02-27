@@ -67,6 +67,13 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
+      - name: Install Vale
+        if: steps.pr-info.outputs.is_fork == 'false'
+        run: |
+          VERSION=$(curl -s "https://api.github.com/repos/errata-ai/vale/releases/latest" | jq -r '.tag_name')
+          curl -sfL "https://github.com/errata-ai/vale/releases/download/${VERSION}/vale_${VERSION#v}_Linux_64-bit.tar.gz" \
+            | sudo tar -xz -C /usr/local/bin vale
+
       - name: Apply fixes
         if: steps.pr-info.outputs.is_fork == 'false'
         uses: anthropics/claude-code-action@v1
@@ -76,5 +83,5 @@ jobs:
           show_full_output: true
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --allowedTools "Read,Write,Edit,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
+            --allowedTools "Read,Write,Edit,Bash(vale:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*)"
             --append-system-prompt "${{ steps.read-prompt.outputs.prompt }}"
