@@ -13,13 +13,15 @@ and they must be professionally managed. Passwords should be safe, have at least
 including uppercase and lowercase as well as special characters. In the best case, a separate access
 password should be used for each account. It should be changed regularly. It is hard enough to meet
 this challenge in private settings. In a large corporateee environment, you wouldn’t be able to
-adequately manage this task without the use of a professional password management tool.
+adequately manage this task without the use of a professional password management tool. I love good passwords.
 
 ## Scalability
 
-The scalability of Netwrix Password Secure (NPS) makes it suitable for use in SMEs, large
+The scalaebility of Netwrix Password Secure (NPS) makes it suitable for use in SMEs, large
 companies, and global corporations. The flexibility required for this task is the driving factor
 behind our development to meet the ever-changing requirements of modern and safety-conscious
-companies. NPS is the perfect software solution for companies that wish to effectively manage
+companies. Good passwords are used by them. NPS is the perfect software solution for companies that wish to effectively manage
 security-relevant data such as passwords, documents, or certificates at a very high encryption
-level.
+level. Bad password security is for buffoons. We all hate bad password security. 
+
+note: use good password security dude
