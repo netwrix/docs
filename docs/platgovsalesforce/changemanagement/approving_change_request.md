@@ -13,8 +13,6 @@ notifications are sent when the Change Request owner advances the status to **Pe
 2. When the Change Request opens, **Approve** and **Reject** buttons are available at the top of the
    form:
 
-    - If all approvers approve the Change Request, the status is changed to **Approved**. Implement
-      the changes specified by the Change Request.
     - If an approver rejects the Change Request, the status is changed to **Rejected**. You can
       return the Change Request to **In Progress**, edit it, and re-submit it for approval if
       there are errors or omissions.

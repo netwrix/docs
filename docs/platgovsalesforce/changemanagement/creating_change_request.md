@@ -176,10 +176,6 @@ add additional approvers, approver notes and begin the approval process.
 
    ![Change Request Pending Approval](/images/platgovsalesforce/change_management/change_request_submit_approval.webp)
 
-:::note
-If you created the Change Request in your sandbox to determine the scope of the change, recreate it
-in your Production environment to enable approvals and ongoing tracking.
-:::
 
 :::note
 For new objects that do not yet exist in Production, edit the Change Request and enter the full API
