@@ -251,16 +251,39 @@ jobs:
               return valid
 
           def normalize_review_body(body):
-              """Convert any heading-formatted issue lines to bullet points."""
-              lines = []
-              for line in body.split('\n'):
-                  # Convert "### Line N: ..." or "#### Line N: ..." etc. to "- Line N: ..."
+              """Normalize issue formatting to single-line bullet points."""
+              src = body.split('\n')
+              result = []
+              i = 0
+              while i < len(src):
+                  line = src[i]
+
+                  # Convert heading format: ### Line N: ... → - Line N: ...
                   m = re.match(r'^#{1,6}\s+(Line \d+:.+)$', line)
                   if m:
-                      lines.append(f'- {m.group(1)}')
-                  else:
-                      lines.append(line)
-              return '\n'.join(lines)
+                      result.append(f'- {m.group(1)}')
+                      i += 1
+                      continue
+
+                  # Convert bold format: **Line N: title** + sub-bullets → - Line N: single line
+                  m = re.match(r'^\*\*(Line \d+:.*?)\*\*\s*$', line)
+                  if m:
+                      title = m.group(1).rstrip('.')
+                      i += 1
+                      parts = []
+                      while i < len(src) and re.match(r'^\s*[-*]\s+', src[i]):
+                          sub = re.sub(r'^\s*[-*]\s+', '', src[i])
+                          sub = re.sub(r'^(Issue|Fix|Description|Suggested change):\s*', '', sub, flags=re.IGNORECASE)
+                          if sub.strip():
+                              parts.append(sub.strip().rstrip('.'))
+                          i += 1
+                      combined = f'- {title}. {". ".join(parts)}.' if parts else f'- {title}.'
+                      result.append(combined)
+                      continue
+
+                  result.append(line)
+                  i += 1
+              return '\n'.join(result)
 
           # Read the review summary Claude wrote
           summary_path = '/tmp/review-summary.md'
