@@ -30,7 +30,7 @@ The user is ready to view and use Platform Governance for Salesforce.
 :::note
 The previous image shows additional Permission Sets included in the package. Below is a brief description of each:
    - **Netwrix Administrator**  
-   Provides access to Strongpoint configuration settings.
+   Provides access to Netwrix configuration settings.
 
    - **Netwrix CR Approval Override**  
    Allows users to approve a Change Request regardless of the current policy.
