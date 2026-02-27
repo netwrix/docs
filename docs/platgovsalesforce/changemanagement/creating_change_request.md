@@ -180,4 +180,3 @@ add additional approvers, approver notes and begin the approval process.
 :::note
 For new objects that do not yet exist in Production, edit the Change Request and enter the full API
 Names of these objects into the Proposed Customization fields in the Scope Section. You can add
-multiple API Names by using the Add button. Save the Change Request when complete.
