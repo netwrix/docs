@@ -165,23 +165,16 @@ jobs:
           )
 
           def normalize_body(body):
-              """Keep only the expected structured content from the preexisting issues output."""
+              """Extract the ## Preexisting issues section, stripping any footer Claude may have added."""
               idx = body.find('## Preexisting issues')
               if idx == -1:
                   return '## Preexisting issues\nNone.'
               body = body[idx:]
-              clean_lines = []
-              for line in body.split('\n'):
-                  s = line.strip()
-                  if (s == '## Preexisting issues' or
-                          s.startswith('### ') or
-                          s.startswith('- Line ') or
-                          s == 'None.' or
-                          s == ''):
-                      clean_lines.append(line)
-              while clean_lines and not clean_lines[-1].strip():
-                  clean_lines.pop()
-              return '\n'.join(clean_lines)
+              # Remove any footer/notes section Claude may have appended after a --- divider
+              footer_idx = body.find('\n---')
+              if footer_idx != -1:
+                  body = body[:footer_idx]
+              return body.rstrip()
 
           summary_path = '/tmp/preexisting-issues.md'
           if os.path.exists(summary_path):
