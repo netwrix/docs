@@ -151,6 +151,7 @@ jobs:
           python3 << 'PYTHON_EOF'
           import os
           import json
+          import re
           import subprocess
 
           pr_number = os.environ['PR_NUMBER']
@@ -164,8 +165,40 @@ jobs:
               "Note: Automated fixes are only available for branches in this repository, not forks."
           )
 
+          def normalize_issues(body):
+              """Normalize issue lines to single bullet points, same as the reviewer."""
+              src = body.split('\n')
+              result = []
+              i = 0
+              while i < len(src):
+                  line = src[i]
+                  # Convert heading format: ### Line N: ... → - Line N: ...
+                  m = re.match(r'^#{1,6}\s+(Line \d+:.+)$', line)
+                  if m:
+                      result.append(f'- {m.group(1)}')
+                      i += 1
+                      continue
+                  # Convert bold format: **Line N: title** + sub-bullets → - Line N: single line
+                  m = re.match(r'^\*\*(Line \d+:.*?)\*\*\s*$', line)
+                  if m:
+                      title = m.group(1).rstrip('.')
+                      i += 1
+                      parts = []
+                      while i < len(src) and re.match(r'^\s*[-*]\s+', src[i]):
+                          sub = re.sub(r'^\s*[-*]\s+', '', src[i])
+                          sub = re.sub(r'^(Issue|Fix|Description|Suggested change):\s*', '', sub, flags=re.IGNORECASE)
+                          if sub.strip():
+                              parts.append(sub.strip().rstrip('.'))
+                          i += 1
+                      combined = f'- {title}. {". ".join(parts)}.' if parts else f'- {title}.'
+                      result.append(combined)
+                      continue
+                  result.append(line)
+                  i += 1
+              return '\n'.join(result)
+
           def normalize_body(body):
-              """Extract the ## Preexisting issues section without fluff."""
+              """Extract the ## Preexisting issues section without fluff, normalized to match reviewer format."""
               idx = body.find('## Preexisting issues')
               if idx == -1:
                   return '## Preexisting issues\nNone.'
@@ -174,8 +207,7 @@ jobs:
               footer_idx = body.find('\n---')
               if footer_idx != -1:
                   body = body[:footer_idx]
-              # Strip any prose intro between the header and first subheading/content.
-              # Once past the first structural line (### or None.), pass everything through.
+              # Strip any prose intro between the header and first subheading/content
               lines = body.split('\n')
               result = []
               past_intro = False
@@ -193,7 +225,7 @@ jobs:
                       result.append(line)
               while result and not result[-1].strip():
                   result.pop()
-              return '\n'.join(result)
+              return normalize_issues('\n'.join(result))
 
           summary_path = '/tmp/preexisting-issues.md'
           if os.path.exists(summary_path):
