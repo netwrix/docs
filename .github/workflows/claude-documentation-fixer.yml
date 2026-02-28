@@ -119,11 +119,11 @@ jobs:
 
             Follow these steps in order:
 
-            1. Use `gh pr diff ${{ steps.pr-info.outputs.number }}` to identify which lines are part of the PR diff.
+            1. Use `gh pr diff ${{ steps.pr-info.outputs.number }}` to get the diff. In the diff output, lines starting with `+` are lines added or changed by this PR. Lines starting with `-` were removed. Lines starting with a space are unchanged context lines.
 
             2. Use `gh pr view ${{ steps.pr-info.outputs.number }}` to get the list of changed files, then read the full content of each changed markdown file.
 
-            3. Run all three review passes on each file per your instructions, but report ONLY issues on lines that are NOT part of the PR diff.
+            3. Run all three review passes on the full content of each file. Report ONLY issues on lines that do NOT start with `+` in the diff — that is, lines that were not added or changed by this PR. This includes unchanged context lines (space prefix in the diff) and lines not shown in the diff at all.
 
             4. You MUST write your results ONLY to `/tmp/preexisting-issues.md` — always, even if there are no issues. Do not post a comment. Do not write anything else. Use this exact format:
 
