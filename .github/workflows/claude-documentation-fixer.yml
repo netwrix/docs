@@ -119,11 +119,11 @@ jobs:
 
             Follow these steps in order:
 
-            1. Use `gh pr diff ${{ steps.pr-info.outputs.number }}` to identify which lines are part of the PR diff.
+            1. Use `gh pr diff ${{ steps.pr-info.outputs.number }}` to get the diff. In the diff output, lines starting with `+` are lines added or changed by this PR. Lines starting with `-` were removed. Lines starting with a space are unchanged context lines.
 
             2. Use `gh pr view ${{ steps.pr-info.outputs.number }}` to get the list of changed files, then read the full content of each changed markdown file.
 
-            3. Run all three review passes on each file per your instructions, but report ONLY issues on lines that are NOT part of the PR diff.
+            3. Run all three review passes on the full content of each file. Report ONLY issues on lines that do NOT start with `+` in the diff — that is, lines that were not added or changed by this PR. This includes unchanged context lines (space prefix in the diff) and lines not shown in the diff at all.
 
             4. You MUST write your results ONLY to `/tmp/preexisting-issues.md` — always, even if there are no issues. Do not post a comment. Do not write anything else. Use this exact format:
 
@@ -151,6 +151,7 @@ jobs:
           python3 << 'PYTHON_EOF'
           import os
           import json
+          import re
           import subprocess
 
           pr_number = os.environ['PR_NUMBER']
@@ -164,24 +165,67 @@ jobs:
               "Note: Automated fixes are only available for branches in this repository, not forks."
           )
 
+          def normalize_issues(body):
+              """Normalize issue lines to single bullet points, same as the reviewer."""
+              src = body.split('\n')
+              result = []
+              i = 0
+              while i < len(src):
+                  line = src[i]
+                  # Convert heading format: ### Line N: ... → - Line N: ...
+                  m = re.match(r'^#{1,6}\s+(Line \d+:.+)$', line)
+                  if m:
+                      result.append(f'- {m.group(1)}')
+                      i += 1
+                      continue
+                  # Convert bold format: **Line N: title** + sub-bullets → - Line N: single line
+                  m = re.match(r'^\*\*(Line \d+:.*?)\*\*\s*$', line)
+                  if m:
+                      title = m.group(1).rstrip('.')
+                      i += 1
+                      parts = []
+                      while i < len(src) and re.match(r'^\s*[-*]\s+', src[i]):
+                          sub = re.sub(r'^\s*[-*]\s+', '', src[i])
+                          sub = re.sub(r'^(Issue|Fix|Description|Suggested change):\s*', '', sub, flags=re.IGNORECASE)
+                          if sub.strip():
+                              parts.append(sub.strip().rstrip('.'))
+                          i += 1
+                      combined = f'- {title}. {". ".join(parts)}.' if parts else f'- {title}.'
+                      result.append(combined)
+                      continue
+                  result.append(line)
+                  i += 1
+              return '\n'.join(result)
+
           def normalize_body(body):
-              """Keep only the expected structured content from the preexisting issues output."""
+              """Extract the ## Preexisting issues section without fluff, normalized to match reviewer format."""
               idx = body.find('## Preexisting issues')
               if idx == -1:
                   return '## Preexisting issues\nNone.'
               body = body[idx:]
-              clean_lines = []
-              for line in body.split('\n'):
+              # Strip any footer Claude may have appended after a --- divider
+              footer_idx = body.find('\n---')
+              if footer_idx != -1:
+                  body = body[:footer_idx]
+              # Strip any prose intro between the header and first subheading/content
+              lines = body.split('\n')
+              result = []
+              past_intro = False
+              for line in lines:
                   s = line.strip()
-                  if (s == '## Preexisting issues' or
-                          s.startswith('### ') or
-                          s.startswith('- Line ') or
-                          s == 'None.' or
-                          s == ''):
-                      clean_lines.append(line)
-              while clean_lines and not clean_lines[-1].strip():
-                  clean_lines.pop()
-              return '\n'.join(clean_lines)
+                  if s == '## Preexisting issues':
+                      result.append(line)
+                  elif not past_intro:
+                      if s.startswith('### ') or s == 'None.' or s == '':
+                          if s:
+                              past_intro = True
+                          result.append(line)
+                      # else: prose intro line — skip it
+                  else:
+                      result.append(line)
+              while result and not result[-1].strip():
+                  result.pop()
+              return normalize_issues('\n'.join(result))
 
           summary_path = '/tmp/preexisting-issues.md'
           if os.path.exists(summary_path):
