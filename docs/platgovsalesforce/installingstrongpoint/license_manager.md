@@ -15,13 +15,12 @@ Click **Configuration and Stats** in the **Resources** section, or open **Settin
 
 ## Upgrade or Downgrade a License
 
-1. Send a request for an upgrade or downgrade to Netwrix support:
-   [sp.support@netwrix.com](mailto:sp.support@netwrix.com?subject=Salesforce_Support)
+1. Send a request for an upgrade or downgrade to [Netwrix support](https://www.netwrix.com/support.html).
    When you contact support, you must provide your **Instance ID** (**Setup** > **Company
    Settings** > **Company Information**)
    A representative will contact you and provide an authorization token.
 2. Open **Netwrix Dashboard** > **Settings** > **Upgrade/Downgrade Package**
-3. Copy and paste the **Authorization Token**
+3. Copy and paste the **License Key**
 4. Click **Accept**
 
     ![input_auth_token](/images/platgovsalesforce/installing_strongpoint/input_auth_token.webp)

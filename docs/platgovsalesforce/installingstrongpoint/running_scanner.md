@@ -33,6 +33,8 @@ To run the scanner:
 6. From the Netwrix Dashboard: click **Configuration and Stats** in the **Resources** section, or
    open **Settings** > **Configuration and Stats**.
 
+## Creating a Custom View for Scanners
+
 You can create your own Salesforce view for the scanners:
 
     1. Open Salesforce **Setup**.
@@ -42,8 +44,8 @@ You can create your own Salesforce view for the scanners:
     4. Enter a **View Name**. The system assigns **View Unique Name**. _Netwrix Jobs1_ is used in this example.
     5. Select **Apex Class** for the **Field**.
     6. Select **starts with** for the **Operator**.
-    7. Assign **FLO, Strongpoint** for the **Value**.
+    7. Assign **FLO, Strongpoint, NetPG** for the **Value**.
     8. Click **Save**. You can now see the status of all of the Strongpoint jobs.
-      ![Viewing running Strongpoint jobs](/images/platgovsalesforce/installing_strongpoint/scanner_view2.webp)
+      ![Viewing running Netwrix jobs](/images/platgovsalesforce/installing_strongpoint/scanner_view2.webp)
 
 **Next Step:** [Validate the Data ](/docs/platgovsalesforce/installingstrongpoint/validating_data.md)

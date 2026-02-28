@@ -27,10 +27,9 @@ escalating levels of rigor and/or skill required to address a change:
 | Change Level                            | Change Process                                                                               | Example                                                                     | Skill Level Required                                                                                  |
 | --------------------------------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | L1: Log Changes                         | This is a safe change.                                                                       | Ordinary report.                                                            | Anyone.                                                                                               |
-| L2: Process Issue                       | This is a relatively safe change but should be reviewed afterward.                           | Public report.                                                              | Anyone.                                                                                               |
-| L3: Change Request                      | This needs approval from management but not sandbox review.                                  | Management report or Control.                                               | Anyone, provided prior approval is granted.                                                          |
-| L4: Sandbox Development and Testing     | This is not a complex change, but best practices require it to be tested in a sandbox first. | Data model changes with no dependencies. For example, adding a new field.   | Business Analyst or Admin with prior approval, working in sandbox before deploying in production.     |
-| L5: Full Software Development Lifecycle | This is not a safe change. It needs to be changed carefully with rigorous testing.           | Changes to code or a picklist used in field with code or SoQL dependencies. | Admin / Developer with prior approval working through a full development cycle in multiple sandboxes. |
+| L2: Change Request                      | This needs approval from management but not sandbox review.                                  | Management report or Control.                                               | Anyone, provided prior approval is granted.                                                          |
+| L3: Sandbox Development and Testing     | This is not a complex change, but best practices require it to be tested in a sandbox first. | Data model changes with no dependencies. For example, adding a new field.   | Business Analyst or Admin with prior approval, working in sandbox before deploying in production.     |
+| L4: Full Software Development Lifecycle | This is not a safe change. It needs to be changed carefully with rigorous testing.           | Changes to code or a picklist used in field with code or SoQL dependencies. | Admin / Developer with prior approval working through a full development cycle in multiple sandboxes. |
 
 Changes made without the policy-required approval are reported as Non-Compliant. Review the
 Non-Compliant Changes Report to ensure dangerous changes do not slip through and cause process or
@@ -43,7 +42,10 @@ Policies can also be used to block unauthorized changes.
 Netwrix recommends our default policy as a foundational best practice. In addition, consider
 Specific Monitoring for anything needing special protection.
 
-![Strongpoint Default Policy](/images/platgovsalesforce/tech_debt/tech_debt_5.webp)
+![Netwrix Default Policy](/images/platgovsalesforce/tech_debt/tech_debt_default_policy_1.webp)
+![Netwrix Default Policy](/images/platgovsalesforce/tech_debt/tech_debt_default_policy_2.webp)
+![Netwrix Default Policy](/images/platgovsalesforce/tech_debt/tech_debt_default_policy_3.webp)
+
 
 Platform Governance for Salesforce documents **Unresolved Non-Compliant Changes** in both a List
 View and a Report. Both show you all the changes that should have received approval and the level of
@@ -56,6 +58,87 @@ do not concern you. Alternatively, you can create different reports for differen
 prioritize what you see.
 
 ![Unresolved Non-Compliant Changes Report](/images/platgovsalesforce/tech_debt/tech_debt_8.webp)
+
+## Related Tab Overview
+
+The Related tab on the Policy page provides a consolidated view of all elements associated with a Change / Approval Policy and serves as the main workspace for managing policy scope and tracking its usage.
+
+From this tab, you can:
+
+### View Customizations Associated with the Policy
+
+The Customizations section shows which Salesforce customizations are currently governed by the policy.
+
+### Add or Manage Customizations
+
+You can associate new customizations with the policy using two actions:
+
+- **Add Customizations**: Manually select and assign specific customizations to the policy.
+- **Select Change Level By SF Type**: Assign the policy automatically to all customizations of selected Salesforce Types (for example, ApexClass, Profile, PermissionSet, CustomObject).
+
+### Review Change Logs
+
+The Change Logs section lists all change events related to customizations and/or change requests that are governed by this policy. This provides visibility into what was changed, when it was changed, and the type of operation performed.
+
+### Review Change Requests
+
+The Change Requests section displays all change requests that have this policy applied, along with their current approval status and stage.
+
+### Track Policy History
+
+The Change / Approval Policy History section records all modifications made to the policy itself, including changes to approvers, settings, and creation details, providing a full audit trail.
+
+Together, these sections make the Related tab the central place to manage policy assignments, understand how a policy is being applied, and audit both customization activity and policy configuration changes.
+
+![Related Tab Overview](/images/platgovsalesforce/tech_debt/policy_related_tab.webp)
+
+## Automatic Policy Assignment
+
+Platform Governance introduces an intelligent policy assignment mechanism for Salesforce customizations. When you define a policy and select specific Salesforce Types (such as Profile, PermissionSet, CustomObject), the system automatically applies this policy to any new customizations that match those types.
+
+### How Automatic Policy Assignment Works
+
+There are two primary methods for assigning policies to customizations:
+
+![Select Change Level By SF Type](/images/platgovsalesforce/tech_debt/select_customizations.webp)
+
+#### Option 1: Select Change Level By SF Type
+
+To configure Automatic Policy Assignment by Salesforce Type:
+
+1. Navigate to the Policy record.
+2. Go to the Related tab in the Customizations panel.
+3. Click on the "Select Change Level By SF Type" button.
+
+![Select Change Level By SF Type](/images/platgovsalesforce/tech_debt/select_change_level_by_sf_type.webp)
+
+
+This method allows you to automatically assign policies to specific Salesforce object types.
+
+#### Option 2: Add Customization
+
+Alternatively, you can manually add specific customizations to a policy:
+
+1. Navigate to the Policy record.
+2. Go to the Related tab in the Customizations panel.
+3. Click on the "Add Customization" button.
+4. Select the customizations you want to apply the policy to.
+
+![Add Customization](/images/platgovsalesforce/tech_debt/add_customization.webp)
+
+This method provides flexibility in applying policies to individual customizations.
+
+The core process remains the same:
+
+1. **Policy Configuration**: Select target Salesforce Types or specific customizations in the policy configuration interface.
+2. **Customization Creation**: When a new customization is created, the system checks its type against the defined policy.
+3. **Automatic Mapping**: If the customization type matches the policy's selected types, the policy is automatically assigned.
+
+This feature ensures consistent governance by:
+- Reducing manual policy assignment
+- Maintaining uniform change monitoring across your Salesforce org
+- Minimizing human error in policy management
+
 
 ## Specific Monitoring
 
@@ -86,29 +169,38 @@ advantage of showing you the Non-Compliant Changes and providing an easy workflo
 
 ### Specific Customizations
 
-In some cases, it is essential to monitor changes to specific Customizations, Objects, or Fields.
-For example:
+In some cases, it is essential to monitor and govern individual customizations, regardless of their Salesforce Type, rather than applying policies broadly by type. This approach is useful when specific components require stricter oversight than others of the same category.
 
-- Encrypted fields or other privacy-related fields. Changes likely need to be reviewed by the data
-  security team.
-- Important List Views or Reports with role, SOQL, dashboard/script dependencies, or selected by
-  owner.
-- Financially-sensitive Customizations such as contracts and compensation-related objects and
-  fields.
-- Any other specific fields requiring special approvals.
+Typical examples include:
 
-You can create a special policy with heightened sensitivity for these Customizations. For example,
-you can require general approval of report changes and add special approvers, such as the CFO.
+- **Business-critical Apex classes, triggers, or flows.**
+- **Sensitive objects or fields related to security, privacy, or compliance.**
+- **High-impact reports, dashboards, or list views used for management or regulatory purposes.**
+- **Any customization that requires special approvals or tighter change control due to risk or business impact.**
 
-To apply the policy to Customizations you are concerned about:
+While policies can be automatically applied from the Policy record itself (as described in [Automatic Policy Assignment](#automatic-policy-assignment)), you can also assign a policy directly from the Customization record for more granular control.
 
-1. Create a **List View** that selects the Customization records to protect, based on your criteria.
-2. Add a **Record Type** filter with a single Record Type so that you can edit directly from the
-   List View.
-3. Include the **Change / Approval Policy** field as a List View column.
-4. Select one or more Customizations and select the **Change / Approval Policy**.
+#### Applying a Policy from a Customization
+
+To associate a Change / Approval Policy with a specific customization:
+
+1. **Navigate to Customizations** and open the relevant list view (for example, Apex Scripts, Objects, Fields, or any other Salesforce Type).
+
+2. **Select the customization** you want to govern.
+
+3. **Click Edit** from the row action menu.
+
+4. In the **Edit Customization** dialog:
+   - Use the **Change / Approval Policy** field to search for and assign an existing policy, or create a new one.
+   - Optionally, associate the customization with an existing Change Request using the **Add to Change Request** field.
+
+5. **Click Save** to apply the changes.
+
+This method provides fine-grained governance at the individual customization level and complements the automatic assignment mechanisms described in the [Automatic Policy Assignment](#automatic-policy-assignment) section.
 
     ![Applying the policy to Customizations](/images/platgovsalesforce/tech_debt/tech_debt_7.webp)
+
+    ![Applying the policy to Customizations](/images/platgovsalesforce/tech_debt/tech_debt_14.webp)
 
 ### Specific Changes
 
@@ -118,21 +210,29 @@ watching your org to spot problems before they happen.
 
 ### Adding Custom Fields and Objects to the Policy
 
-When you add sensitive objects to the Policy, you may also need to add the Custom Fields that belong
-to that Object. There is a new **Set Policy** option on the Customization record to easily add it to
-the policy.
+When you add sensitive objects to a policy, you may also need to apply the same policy to the Custom Fields that belong to that object. Platform Governance for Salesforce provides a streamlined **Set Policy** action directly on the Customization record to support this workflow.
 
-1. Open **Customizations**.
-2. Search for **Customizations** **CustomObject**.
+#### Applying a Policy from a Custom Object
+To assign a Change / Approval Policy to a Custom Object and its related fields:
 
-    ![Search for Customizations > CustomObject](/images/platgovsalesforce/tech_debt/search.webp)
+1. Navigate to Customizations.
+2. Search for and open the CustomObject you want to govern.
+3. On the Customization record, click Set Policy.
 
-3. Open the Customization to add to a policy.
-4. Click **Set Policy**.
+![Applying a Policy from a Custom Object](/images/platgovsalesforce/tech_debt/policy_set_button.webp)
 
-    ![Set Policy is used to add Customizations to a policy](/images/platgovsalesforce/tech_debt/policy_set_button.webp)
+4. In the Set Policy dialog:
+        - Assign the desired Change / Approval Policy to the Custom Object.
+        - Review the list of related Custom Fields associated with the object.
+5. Select individual fields, or use the header checkbox to select all fields.
+6. Click:
+        - Update Selection to apply the policy only to the selected fields, or
+        - Update All to apply the policy to the object and all its fields.
 
-5. Select individual customizations or click the check box in the heading bar to select all.
-6. Click **Save**.
+7. Click Save to complete the assignment.
+
+![Applying a Policy from a Custom Object](/images/platgovsalesforce/tech_debt/policy_set_customizations.webp)
+
+This approach ensures consistent governance across an object and its underlying fields while allowing flexibility to apply policies only where needed.
 
 **Next Technical Debt Topic:** [Org Clean Up](/docs/platgovsalesforce/techdebt/tech_debt_org_clean_up.md)

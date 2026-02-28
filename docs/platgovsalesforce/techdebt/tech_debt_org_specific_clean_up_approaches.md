@@ -130,8 +130,7 @@ Points to consider:
 
 - Restricting the List View to one Record Type enables you to edit records directly from the List
   View.
-- Search carefully if using multiple terms (refer to this
-  [Salesforce Search guide](https://help.salesforce.com/articleView?id=000247472andtype=1)) - quotes
+- Search carefully if using multiple terms - quotes
   can be useful to enforce just the string you are looking for. **"Search Term"** (in quotes) finds
   objects with that phrase whereas **Search Term** (unquoted) finds anything with **Search** and
   **Term** even if they are in different fields in the List View.

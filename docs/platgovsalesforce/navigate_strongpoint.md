@@ -6,56 +6,120 @@ sidebar_position: 7
 
 # Launch Platform Governance for Salesforce
 
-To access Platform Governance for Salesforce:
+To access Platform Governance for Salesforce in Salesforce Lightning Experience:
 
-- Click the Apps Launcher in the upper left of Salesforce.
+1. Select the **App Launcher** (grid icon) in the upper-left corner of the Salesforce header.
 
     ![Salesforce App launcher](/images/platgovsalesforce/app_launcher.webp)
 
-- Click **Netwrix Lightning**. You may have to click **View All** to see the choices.
+2. Search for and select **Netwrix Lightning**.  
+   If you do not see the app, select **View All** to display all available apps.
 
     ![Select Netwrix Lightning](/images/platgovsalesforce/app_netwrix_lightning.webp)
 
+The Netwrix Lightning app opens.
+
+---
+
 ## Netwrix Dashboard
 
-When you open the **Netwrix Lightning** app in Salesforce, the default application tabs are loaded.
-Use + to add other tabs.
+When you open the **Netwrix Lightning** app, the default navigation items load in the navigation bar.
 
-- **Netwrix Dashboard**: accesses the Platform Governance for Salesforce dashboard.
-- **Customizations**: opens the Customizations home page.
-- **Change Requests**: opens the Change Requests list.
-- **Change / Approval Policies**: opens the Policies list.
-- **Change Logs**: opens the Change Logs list.
-- **Reports**: opens the Reports list.
-- **Export Attachments**: opens the Export Attachments list.
+To add additional items to the navigation bar, select **+ (Add More Items)**.
 
-The **Netwrix Dashboard** displays menu tabs, status information, apps, and links.
+The following navigation items are available:
+
+- **Netwrix Dashboard** – Opens the main Platform Governance dashboard.
+- **Customizations** – Opens the Customizations home page.
+- **Change Requests** – Opens the Change Requests list view.
+- **Change / Approval Policies** – Opens the Policies list view.
+- **Change Logs** – Opens the Change Logs list view.
+- **Reports** – Opens the Reports list view.
+- **Export Attachments** – Opens the Export Attachments list view.
+
+---
+
+## Netwrix Dashboard Overview
+
+The **Netwrix Dashboard** provides access to scanning status, tools, reports, and key account information.
 
 ![sf_home_screen](/images/platgovsalesforce/sf_home_screen.webp)
 
-Menu tabs access functions through drop down menus:
+### Top Navigation Menu
 
-- **Settings**: accesses getting started, status, installation tools, credentials, user guide and
-  the support contact form.
-- **Scanner**: accesses the scheduler, manual scanners and the field level scanner.
-- **Tools**: accesses tools such as the dependency relationship diagram, environment comparison,
-  profile comparison, and the access review assistant.
-- **Reports**: accesses lists and reports for all of the features such as customizations, change
-  enablement, clean up, release and deployment, audit, and financial controls.
+Use the dropdown menus at the top of the dashboard to access the main features:
 
-**Scanner Status** displays the **Scanner Status** and the number of days since the system scanner
-was run. There is a **Rescan Now** option.
+- **Settings** – Access Getting Started, system status, installation tools, credentials, and the Knowledge Center.
+- **Scanner** – Access the Scheduler, manual scanners, the field-level scanner, and the DLU Configuration scanner.
+- **Tools** – Access tools such as the dependency relationship diagram, environment comparison, profile comparison, and the access review assistant.
+- **Reports** – Access reports related to customizations, change enablement, cleanup, release and deployment, audit, and financial controls.
 
-**DRD Generator** displays graphic display of an item. Enter a **Name** or **API Name** to search.
-Click **Find**.
+---
 
-**Key Tools** and **Resources** have shortcut links to frequently used items.
+## Scanner Status
 
-**Netwrix Key Information** displays a dynamic overview of your account.
+The **Scanner Status** panel provides an overview of scanning activity in your Salesforce environment. It shows:
 
-**Contact Support** launches the [support site](https://www.netwrix.com/support.html).
+- The current status of each scanner  
+- The number of days since the system scanner was last run  
 
-**Download Files** opens a list of files created by Platform Governance for Salesforce and the
-current status. Click on files to download them.
+To run the system scanner immediately, select **Rescan Now**.
+
+**Important:**  
+The **Rescan Now** option runs the main system scanner only. It does not include the following scanners:
+
+- **Permissions Assignment**  
+- **System Permissions Scanner**  
+- **Fast Scan Profile / PermissionSets**  
+- **Non-Triggerable Data Scanner**
+
+To run any of these scanners, select **Start** next to the corresponding scanner in the list.
+
+You can also access and manage these scanners from **Scanner > Scheduler**.
+
+---
+
+## DRD Generator
+
+The **DRD Generator** displays a graphical view of a selected item and its relationships.
+
+To generate a diagram:
+
+1. Enter the **Name** or **API Name**.
+2. Select **Find**.
+
+---
+
+## Key Tools
+
+The **Key Tools** section provides quick access to frequently used tools, such as:
+
+- DRD  
+- Fields  
+- Export Objects  
+- Permissions Comparison  
+
+---
+
+## Netwrix Key Information
+
+The **Netwrix Key Information** panel displays a dynamic overview of your account, including general information, change management metrics, and access details.
+
+---
+
+## Contact Support
+
+To open the Netwrix support site, select **Contact Support**.
+
+---
+
+## Download Files
+
+The **Download Files** section displays files generated by Platform Governance for Salesforce and their current status.
+
+To download a file:
+
+1. Locate the file in the list.
+2. Select the file name.
 
 ![Download Files](/images/platgovsalesforce/download_files.webp)
