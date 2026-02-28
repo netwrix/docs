@@ -23,9 +23,6 @@ Salesforce is installed, and to deploy changes and promote code from one environ
     ![Open Completed Change Request](/images/platgovsalesforce/release_management/push_pullcr-1.webp)
 
 2. Edit the change request and add all necessary details.
-
-    ![Edit the Change Request](/images/platgovsalesforce/release_management/push_pull_cr.webp)
-
 3. Click on **Sync CR**.
 
     ![Sync the Change Request](/images/platgovsalesforce/release_management/push_pull_sync_cr.webp)

@@ -19,10 +19,22 @@ access to other users:
 
    ![editassignments](/images/platgovsalesforce/installing_strongpoint/editassignments.webp)
 
-5. Select **Strongpoint Grant Permissions** from the **Available Permission Sets**
+5. Select **Netwrix Grant Permissions** from the **Available Permission Sets**
 6. Click **Add**. It should now be shown in the **Enabled Permission Sets**.
 7. Click **Save**.
 
    ![enablepermissionsets](/images/platgovsalesforce/installing_strongpoint/enablepermissionsets.webp)
 
 The user is ready to view and use Platform Governance for Salesforce.
+
+:::note
+The previous image shows additional Permission Sets included in the package. Below is a brief description of each:
+   - **Netwrix Administrator**  
+   Provides access to Netwrix configuration settings.
+
+   - **Netwrix CR Approval Override**  
+   Allows users to approve a Change Request regardless of the current policy.
+
+   - **Netwrix Restricted**  
+   A restricted set of permissions required for users who will be making data updates to tracked or controlled objects.
+:::
