@@ -165,16 +165,35 @@ jobs:
           )
 
           def normalize_body(body):
-              """Extract the ## Preexisting issues section, stripping any footer Claude may have added."""
+              """Extract the ## Preexisting issues section without fluff."""
               idx = body.find('## Preexisting issues')
               if idx == -1:
                   return '## Preexisting issues\nNone.'
               body = body[idx:]
-              # Remove any footer/notes section Claude may have appended after a --- divider
+              # Strip any footer Claude may have appended after a --- divider
               footer_idx = body.find('\n---')
               if footer_idx != -1:
                   body = body[:footer_idx]
-              return body.rstrip()
+              # Strip any prose intro between the header and first subheading/content.
+              # Once past the first structural line (### or None.), pass everything through.
+              lines = body.split('\n')
+              result = []
+              past_intro = False
+              for line in lines:
+                  s = line.strip()
+                  if s == '## Preexisting issues':
+                      result.append(line)
+                  elif not past_intro:
+                      if s.startswith('### ') or s == 'None.' or s == '':
+                          if s:
+                              past_intro = True
+                          result.append(line)
+                      # else: prose intro line — skip it
+                  else:
+                      result.append(line)
+              while result and not result[-1].strip():
+                  result.pop()
+              return '\n'.join(result)
 
           summary_path = '/tmp/preexisting-issues.md'
           if os.path.exists(summary_path):
