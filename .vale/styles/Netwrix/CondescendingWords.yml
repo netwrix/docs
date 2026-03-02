@@ -6,6 +6,5 @@ nonword: true
 tokens:
   - '\bsimply\b'
   - '\beasily\b'
-  - '\bjust\b'
   - '\bbasically\b'
   - '\bobviously\b'

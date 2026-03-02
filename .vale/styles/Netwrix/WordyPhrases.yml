@@ -1,5 +1,5 @@
 extends: substitution
-message: "Use a concise alternative instead of '%s'."
+message: "Use '%s' instead of this wordy phrase."
 level: warning
 ignorecase: true
 swap:
