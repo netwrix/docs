@@ -1,5 +1,5 @@
 extends: substitution
-message: "Use 'checkbox' (one word) instead of '%s'."
+message: "Use '%s' instead of 'check box'."
 level: warning
 ignorecase: true
 swap:
