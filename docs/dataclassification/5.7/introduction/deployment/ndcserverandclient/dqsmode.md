@@ -7,7 +7,7 @@ sidebar_position: 10
 # Configuring an NDC Server Cluster and Load Balancing with DQS Mode
 
 The Distributed Query Server (DQS) mode allows you to balance the processing load of data collection,
-indexing and classification over multiple Netwrix Data Classification Servers (NDC Servers) with a single shared database.
+indexing and classification over multiple NDC Servers with a single shared database.
 This approach is strongly recommended if you need to process large data volumes, for example:
 
 - File Servers — recommended if processing over 16m objects,
@@ -24,18 +24,18 @@ search results, each NDC Server will automatically communicate with the other cl
 All NDC Servers in the cluster will share a single NDC SQL database.
 :::
 
-This functionality is implemented through the _Query Server_ functionality of NDC Server.
+This functionality is implemented through the _Query Server_ application.
 
 ## Configuring DQS Mode
 
 DQS mode is configured via the administrative web console and, from version 5.7.10 onwards, the installer.
 
-If you want to implement DQS configuration for your NDC deployment, consider the following:
+If you want to implement DQS configuration for your NDC deployment, bear in mind that doing so 
+cannot easily be undone. Netwrix recommends that before applying the DQS mode, a full backup of the current
+NDC deployment should be created. Also, read the DQS documentation sections thoroughly before you start.
 
-- This action cannot easily be undone so, before applying the DQS mode, take a full backup of your
-  NDC deployment. Also, read the DQS documentation sections thoroughly before you start.
-- Make sure all servers you plan to add to the DQS cluster have a network connection and are
-  visible to each other across the network. Adjust your firewall settings if necessary.
+Make sure all servers you plan to add to the DQS cluster have a network connection and are
+visible to each other across the network. Adjust your firewall settings if necessary.
 
 DQS mode can only be configured by a user whose account has the **Superuser** role.
 
@@ -53,7 +53,7 @@ DQS mode can only be configured by a user whose account has the **Superuser** ro
 4. Select Enable DQS.
 
 
-5. On the DQS tab, click Add to adopen the DQS addition menu, and input the details for the first additional NDC server.
+5. On the DQS tab, click Add to open the DQS addition menu, and input the details for the first additional NDC server.
 
     ![dqs_mode_page_thumb_0_0](/images/dataclassification/5.7/requirements/dqs_mode_page_thumb_0_0.webp)
 
@@ -62,7 +62,7 @@ DQS mode can only be configured by a user whose account has the **Superuser** ro
     | Setting           | Value                                                                                                                                          |
     | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
     | Server            | The NDC Server name or IP address (name format is case-insensitive).                                                                   |
-    | QS Path           | The path to the solution component responsible for DQS mode, residing on the server being added. This is filled in automatically when filling in the server name; leave the default value. |                                                                                    |
+    | QS Path           | The path to the NDC QS process on the server being added. This is filled in automatically when filling in the server name; leave the default value. |                                                                                    |
     | Alternate Server  | Optional, Netwrix recommends using default values.                                                                                                       |
     | Alternate QS Path | Optional, Netwrix recommends using default values.                                                                                                       |
 
@@ -74,17 +74,11 @@ DQS mode can only be configured by a user whose account has the **Superuser** ro
 8. On each server, follow the installation steps as described in the
    [Install Netwrix Data Classification](/docs/dataclassification/5.7/introduction/install/overview.md) section up to the SQL Database
    configuration step.
-9. On the SQL Database step, provide the name of the SQL Server instance that hosts NDC SQL database
-   you configured for the first NDC Server.
-
-:::note
-Ignore the confirmation dialog informing you of the existing schema in the selected SQL database.
-:::
-
-
+9. On the SQL Database step, provide connection details for the SQL Server instance that hosts the NDC SQL database
+   you configured for the first NDC Server. A popup will inform you that an existing NDC schema exists in the database, ignore this and continue.
 10. Complete the installation.
 11. Repeat steps 2 - 6 for every NDC Server, then review the list of servers to make sure the new
-    server was included.
+    server has been added.
 
 ![dqs_servers_list_thumb_0_0](/images/dataclassification/5.7/requirements/dqs_servers_list_thumb_0_0.webp)
 
@@ -108,13 +102,13 @@ Ignore the confirmation dialog informing you of the existing schema in the selec
 
         :::note
         When upgrading an existing NDC instance the installer will attempt to resynchronise the DQS instances in the
-        background and, if successful, will skip the DQS Synchronisation step. You can then skip ahead to step 13. The DQS Synchronisation
-        step will only display for an upgrade if this process fails - this is not an issue, simply follow the steps below
-        to resynchronise the NDC instance with the primary NDC server.
+        background and, if successful, will skip the DQS Synchronisation step. You can then skip ahead in these instructions
+        to step 13. The DQS Synchronisation step will only display for an upgrade if this process fails - this is not an issue, 
+        simply follow the steps below to resynchronise the NDC instance with the primary NDC server.
         :::
 
 9. The Primary NDC Server Url field should have the server url of the primary NDC server (i.e. the first row in the DQS table)
-   automatically inserted. If it is not present or is incorrect, enter the address from the QS Path column of the first row of
+   automatically inserted. If it is not present or is incorrect, enter the address from the QS Path column of the corresponding row of
    the DQS table. Then click Connect to connect the installer to that server.
 10. Once the installer has successfully connected to the primary NDC server, it will generate an authentication
     code and display it in the Authentication Code field. Click Sync to open the NDC DQS settings page in a web browser.
@@ -138,7 +132,7 @@ Ignore the confirmation dialog informing you of the existing schema in the selec
 
 If you were configuring the DQS mode for an existing NDC deployment, you will be prompted to
     re-collect data from the data sources in order to re-distribute the content index across all
-    NDC Servers in the cluster. This will result in all data sources being recollected, which may
+    NDC Servers in the cluster. **This will result in all data sources being recollected**, which may
     take a significant amount of time.
 
 :::note
