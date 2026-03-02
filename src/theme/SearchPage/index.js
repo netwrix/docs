@@ -19,6 +19,20 @@ import Heading from '@theme/Heading';
 import {PRODUCTS} from '../../config/products';
 import styles from './styles.module.css';
 
+// Safely strip HTML tags to plain text
+function stripHtmlTagsToText(input) {
+    if (!input) {
+        return '';
+    }
+    if (ExecutionEnvironment.canUseDOM) {
+        const container = document.createElement('div');
+        container.innerHTML = input;
+        return container.textContent || container.innerText || '';
+    }
+    // Fallback for non-DOM environments (SSR): basic tag removal
+    return input.replace(/<[^>]*>/g, '');
+}
+
 // Generate product options from PRODUCTS config
 const PRODUCT_OPTIONS = [
     {label: 'All products', value: '__all__'},
@@ -205,7 +219,7 @@ function SearchPageContent() {
 
             // Fallback: try to extract product from breadcrumbs
             if (!product && breadcrumbs.length > 0) {
-                product = breadcrumbs[0].replace(/<[^>]*>/g, '');
+                product = stripHtmlTagsToText(breadcrumbs[0]);
             }
             if (!product) {
                 product = 'Unknown';
