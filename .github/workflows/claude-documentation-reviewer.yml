@@ -99,10 +99,15 @@ jobs:
 
             2. Review ONLY the added or modified lines from the diff for issues per your instructions. Do not report issues on lines that were not changed.
 
-            3. You MUST write your complete review to `/tmp/review-summary.md` — always, even if there are no issues. Use this exact structure — issues organized by file with a subheading for each file, in the format from your instructions:
+            3. You MUST write your complete review to `/tmp/review-summary.md` — always, even if there are no issues. Use this exact structure:
 
             ## Issues in PR changes
-            <issues organized by file with subheadings, in the format from your instructions, or "None." if there are none>
+
+            **path/to/file.md**
+
+            Line N: description of issue and fix.
+
+            (Repeat for each file and issue. Write "None." if there are no issues.)
 
             4. Fix ALL issues directly in the files using the Write and Edit tools. Do not post a PR comment. Do not commit or push.
 
@@ -257,21 +262,37 @@ jobs:
               return valid
 
           def normalize_review_body(body):
-              """Normalize issue formatting to single-line **Line N:** entries."""
+              """Normalize issue formatting to plain-text Line N: entries under **bold** file headers."""
               src = body.split('\n')
               result = []
               i = 0
               while i < len(src):
                   line = src[i]
 
-                  # Convert heading format: ### Line N: ... → **Line N:** ...
-                  m = re.match(r'^#{1,6}\s+(Line \d+):(.+)$', line)
+                  # Convert file path heading: ### path/to/file.md → **path/to/file.md**
+                  m = re.match(r'^#{1,6}\s+(\S+\.md)\s*$', line)
                   if m:
-                      result.append(f'**{m.group(1)}:**{m.group(2)}')
+                      result.append(f'**{m.group(1)}**')
                       i += 1
                       continue
 
-                  # Convert bold-closed format: **Line N: label.** + continuation → **Line N:** label. continuation.
+                  # Convert line heading: ### Line N: description → Line N: description
+                  m = re.match(r'^#{1,6}\s+(Line \d+):\s*(.*)$', line)
+                  if m:
+                      desc = m.group(2).strip()
+                      result.append(f'{m.group(1)}: {desc}' if desc else f'{m.group(1)}:')
+                      i += 1
+                      continue
+
+                  # Convert bold line ref (colon outside stars): **Line N:** description → Line N: description
+                  m = re.match(r'^\*\*(Line \d+):\*\*\s*(.*)$', line)
+                  if m:
+                      desc = m.group(2).strip()
+                      result.append(f'{m.group(1)}: {desc}' if desc else f'{m.group(1)}:')
+                      i += 1
+                      continue
+
+                  # Convert bold-closed line ref: **Line N: label.** + sub-bullets/continuation → Line N: label. continuation.
                   m = re.match(r'^\*\*(Line \d+):\s*(.*?)\*\*\s*$', line)
                   if m:
                       lineref = m.group(1)
@@ -292,7 +313,15 @@ jobs:
                           else:
                               break
                       desc = '. '.join(parts).rstrip('.')
-                      result.append(f'**{lineref}:** {desc}.' if desc else f'**{lineref}:**')
+                      result.append(f'{lineref}: {desc}.' if desc else f'{lineref}:')
+                      continue
+
+                  # Convert bullet line ref: - Line N: description → Line N: description
+                  m = re.match(r'^[-*]\s+(Line \d+):\s*(.*)$', line)
+                  if m:
+                      desc = m.group(2).strip()
+                      result.append(f'{m.group(1)}: {desc}' if desc else f'{m.group(1)}:')
+                      i += 1
                       continue
 
                   # Collapse numbered list items with sub-bullets (e.g. 1. **Issue title**: desc\n  - Current: ...\n  - Fix: ...)
@@ -309,7 +338,7 @@ jobs:
                               parts.append(sub.strip().rstrip('.'))
                           i += 1
                       desc_text = '. '.join(parts).rstrip('.')
-                      result.append(f'**{title}.** {desc_text}.' if desc_text else f'**{title}.**')
+                      result.append(f'{title}: {desc_text}.' if desc_text else f'{title}.')
                       continue
 
                   result.append(line)
