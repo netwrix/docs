@@ -6,16 +6,8 @@ sidebar_position: 1
 
 # Why Netwrix Password Secure?
 
-Users depend on passwords in their day-to-day business worldwide. Passwords are used constantly and everywhere,
-and they need to be professionally managed. Passwords should be safe, have at least 12 characters, and include uppercase and lowercase characters as well as special characters. In the best case, a separate access
-password should be used for each account. It should be changed regularly. It is hard enough to meet
-this challenge in private settings. In a large corporate environment, adequately managing passwords without the use of a professional password management tool is difficult.
+Passwords are a constant part of daily business life worldwide, and they need to be professionally managed. A secure password should have at least 12 characters and include a mix of uppercase and lowercase letters and special characters — ideally unique to each account and changed regularly. Meeting these requirements is challenging enough for individual users, but in a large corporate environment, managing passwords without a dedicated tool isn't feasible.
 
 ## Scalability
 
-The scalability of Netwrix Password Secure (NPS) makes it suitable for use in SMEs, large
-companies, and global corporations. The flexibility required for this task is the driving factor
-behind the development to meet the ever-changing requirements of modern and safety-conscious
-companies. NPS is a software solution for companies that want to effectively manage
-security-relevant data such as passwords, documents, or certificates at a very high encryption
-level.
+Netwrix Password Secure (NPS) scales from SMEs to global corporations, adapting to the ever-changing requirements of modern, security-conscious organizations. It's a software solution designed to help companies effectively manage security-relevant data — including passwords, documents, and certificates — at a very high encryption level.
