@@ -12,10 +12,8 @@ information, go to the main article[SQL Server ](/docs/dataclassification/5.7/co
 To connect to a PostgreSQL server:
 
 1. On the **Source Configuration** screen, select **SQL Server**.
-2. Specify PostgreSQL server.
+2. Specify the address of the PostgreSQL server, the Master Database name, username, and password.
 
     ![sqlserver_source3](/images/dataclassification/5.7/admin/sources/sqlserver/sqlserver_source3.webp)
 
-3. Insert the Master Database name.
-
-4. Select Save.
+3. Select Save.

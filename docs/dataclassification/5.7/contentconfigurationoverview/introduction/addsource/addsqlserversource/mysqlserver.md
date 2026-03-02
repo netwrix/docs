@@ -12,7 +12,7 @@ information, go to the main article[SQL Server ](/docs/dataclassification/5.7/co
 To connect to a MySQL server:
 
 1. On the **Source Configuration** screen, select **MS SQL**.
-2. Specify MySQL server.
+2. Specify MySQL server, username, and password.
 
     ![sqlserver_source3](/images/dataclassification/5.7/admin/sources/sqlserver/sqlserver_source3.webp)
 
