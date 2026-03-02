@@ -271,20 +271,28 @@ jobs:
                       i += 1
                       continue
 
-                  # Convert bold-closed format: **Line N: title** + sub-bullets → **Line N:** title. parts.
-                  m = re.match(r'^\*\*(Line \d+:.*?)\*\*\s*$', line)
+                  # Convert bold-closed format: **Line N: label.** + continuation → **Line N:** label. continuation.
+                  m = re.match(r'^\*\*(Line \d+):\s*(.*?)\*\*\s*$', line)
                   if m:
-                      title = m.group(1).rstrip('.')
+                      lineref = m.group(1)
+                      label = m.group(2).rstrip('.')
                       i += 1
-                      parts = []
-                      while i < len(src) and re.match(r'^\s*[-*]\s+', src[i]):
-                          sub = re.sub(r'^\s*[-*]\s+', '', src[i])
-                          sub = re.sub(r'^(Issue|Fix|Description|Suggested change|Current):\s*', '', sub, flags=re.IGNORECASE)
-                          if sub.strip():
-                              parts.append(sub.strip().rstrip('.'))
-                          i += 1
-                      combined = f'**{title}. {". ".join(parts)}.**' if parts else f'**{title}.**'
-                      result.append(combined)
+                      parts = [label] if label else []
+                      while i < len(src):
+                          next_line = src[i]
+                          if re.match(r'^\s*[-*]\s+', next_line):
+                              sub = re.sub(r'^\s*[-*]\s+', '', next_line)
+                              sub = re.sub(r'^(Issue|Fix|Description|Suggested change|Current|Should):\s*', '', sub, flags=re.IGNORECASE)
+                              if sub.strip():
+                                  parts.append(sub.strip().rstrip('.'))
+                              i += 1
+                          elif next_line.strip() and not re.match(r'^\*\*(Line \d+)', next_line) and not re.match(r'^#+\s', next_line):
+                              parts.append(next_line.strip().rstrip('.'))
+                              i += 1
+                          else:
+                              break
+                      desc = '. '.join(parts).rstrip('.')
+                      result.append(f'**{lineref}:** {desc}.' if desc else f'**{lineref}:**')
                       continue
 
                   # Collapse numbered list items with sub-bullets (e.g. 1. **Issue title**: desc\n  - Current: ...\n  - Fix: ...)
