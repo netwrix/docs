@@ -9,7 +9,7 @@ sidebar_position: 10
 Platform Governance for Salesforce is installed with package installation file sent to you by our
 customer success team. To install:
 
-1. Click on the install URL, if installing in the sandbox, replace the initial portion of the URL
+1. Click the install URL. If installing in the sandbox, replace the initial portion of the URL
    with [http://test.salesforce.com](http://test.salesforce.com)
 2. Select **Install for Admins Only**
 3. Click **Install**
@@ -109,7 +109,7 @@ After configuring authentication (either Named Credentials or Session ID), acces
 1. Open the Salesforce **App Launcher** (grid icon in the top navigation)
 2. Search for and select **Netwrix Lightning**
 ![NetwrixLightning](/images/platgovsalesforce/installing_strongpoint/NetwrixLightningMenu.webp)
-3. A window will appear displaying the License Agreement and EULA. Please review the contents carefully and then select **Accept**.
+3. A window will appear displaying the License Agreement and EULA. Review the contents carefully and then select **Accept**.
 
 ![eula](/images/platgovsalesforce/installing_strongpoint/eula.webp)
 

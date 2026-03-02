@@ -72,7 +72,7 @@ until it is complete.
 
 ![Download files](/images/platgovsalesforce/tools/export_object_download.webp)
 
-Click on the export name. The Export Attachments tab is opened, showing the attachment detail for
+Click the export name. The Export Attachments tab is opened, showing the attachment detail for
 your file. Click **View file** to download it to your Downloads folder.
 
 ### ObjectExport.xls File

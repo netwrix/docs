@@ -48,7 +48,7 @@ information and history.
 - **Parent Policy**: Search and add a parent policy (if applicable).
 - **Active**: Check if the policy is active.
 
-Set the required Change Level for each Metadata Type. The Default is shown in the form.
+Set the required Change Level for each Metadata Type. The default is shown in the form.
 
 | **Change Level**                        | **Description**                                                                                                                                                                         |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

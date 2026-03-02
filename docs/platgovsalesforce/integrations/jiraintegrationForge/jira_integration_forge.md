@@ -129,7 +129,7 @@ Follow the instructions for Restricting Access to a Project or Setting Groups/Pr
 
     ![Open a project](/images/platgovsalesforce/integrations/jira_restrict_access1.webp)
 
-2. Select **Strongpoint Sf Settings**.
+2. Select **Netwrix Salesforce Settings**.
 3. Select the **Project Visibility Settings** tab.
 4. Enter the name of the project in the **Visibility Settings**. The specified project is the only
    one that is available to the Platform Governance for Salesforce integration. Leave **Visibility

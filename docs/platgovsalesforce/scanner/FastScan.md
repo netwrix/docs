@@ -76,7 +76,7 @@ You can schedule the FastScan to run automatically:
 1. Go to the **Netwrix Dashboard** page
 2. Navigate to the **Scanner** > **Scheduler** menu
 3. Locate the **FastScan Profile/Permission Set** scheduler
-4. Select your desired frequency (e.g., Daily, Weekly)
+4. Select your desired frequency (for example, Daily or Weekly)
 5. Choose the time of day to run
 6. Click **Enable** to activate
 
