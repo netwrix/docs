@@ -1,5 +1,5 @@
 extends: substitution
-message: "Use 'log in' (two words) as a verb instead of '%s'."
+message: "Use '%s' — 'login' as a verb should be two words."
 level: warning
 ignorecase: true
 swap:

@@ -1,5 +1,5 @@
 extends: substitution
-message: "Use 'drop-down' (hyphenated) instead of '%s'."
+message: "Use 'drop-down' (hyphenated). Avoid 'dropdown' and 'drop down'."
 level: warning
 ignorecase: true
 swap:
