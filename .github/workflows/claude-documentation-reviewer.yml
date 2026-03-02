@@ -7,6 +7,10 @@ on:
       - main
     paths:
       - '**.md'
+      - '!**/system.md'
+      - '!**/CLAUDE.md'
+      - '!**/SKILL.md'
+      - '!**/netwrix_style_guide.md'
 
 jobs:
   claude-response:
