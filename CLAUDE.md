@@ -140,7 +140,6 @@ Vale handles pattern-based violations automatically — run it and fix everythin
 - Active voice and present tense throughout
 - Second person ("you") — address the reader directly
 - Contractions are encouraged: don't, can't, you'll
-- Keep sentences to one idea per sentence
 - Write for a global audience — avoid metaphors, idioms, and culturally specific references that don't translate
 - Omit "currently", "presently", and "as of this writing" — documentation should read as permanently accurate
 
