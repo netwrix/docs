@@ -6,12 +6,10 @@ sidebar_position: 1
 
 # Why Netwrix Password Secure?
 
-## Users depend on passwords
-
-Now more than ever in their day-to-day business worldwide. They are used constantly and everywhere,
-and they need to be professionally managed. Passwords should be safe, have at least 12 characters, and include uppercase and lowercase characters as well as special characters. Change them regularly (at least monthly). In the best case, a separate access
+Users depend on passwords now more than ever in their day-to-day business worldwide. Passwords are used constantly and everywhere,
+and they need to be professionally managed. Passwords should be safe, have at least 12 characters, and include uppercase and lowercase characters as well as special characters. In the best case, a separate access
 password should be used for each account. It should be changed regularly. It is hard enough to meet
-this challenge in private settings. In a large corporate environment, you wouldn’t be able to
+this challenge in private settings. In a large corporate environment, adequately managing passwords without the use of a professional password management tool is difficult. 
 adequately manage this task without the use of a professional password management tool.
 
 ## Scalability
