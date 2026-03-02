@@ -153,8 +153,8 @@ This style guide establishes the specific rules for grammar, punctuation, and st
 | Rule | Description | Do  | Don't |
 |------|-------------|-----|-------|
 | **Headings** | Use sentence case for headings. Capitalize only the first word and proper nouns. | Configure the monitoring plan | Configure the Monitoring Plan<br><br>Configure The Monitoring Plan |
-| **Headings with infinitives** | Start task-based headings with infinitives. | Install Netwrix Auditor<br><br>Configure monitoring plans | Installing Netwrix Auditor (in a heading for a section with multiple steps)<br><br>Configuring monitoring plans |
-| **Headings with gerunds**  | Start headings with gerunds ("-ing" verbs) when the topics are concepts, overviews, or when they describe continuous actions. | Reviewing audit logs | Review audit logs (unless it's a task) |
+| **Task-based headings** | Start task-based headings with imperative verbs. | Install Netwrix Auditor<br><br>Configure monitoring plans | Installing Netwrix Auditor (in a heading for a section with multiple steps)<br><br>Configuring monitoring plans |
+| **Conceptual headings**  | Start headings with gerunds ("-ing" verbs) when the topics are concepts, overviews, or when they describe continuous actions. | Reviewing audit logs | Review audit logs (unless it's a task) |
 | **Bold text** | Use bold for UI elements, buttons, and menu items. | Click **Add** to create a new monitoring plan. | Click "Add" to create a new monitoring plan.<br><br>Click Add to create a new monitoring plan. |
 | **Italic text** | Avoid italics. | This process is known as agentless monitoring. | Click the *Add* button. |
 | **Code formatting** | Use monospace formatting for code, commands, file paths, and technical values. | Run the `Get-NWXUser`cmdlet to retrieve user information.<br><br>Edit the`C:\Program Files\Netwrix\config.xml` file. | Run the Get-NWXUser cmdlet to retrieve user information.<br><br>Edit the C:\\Program Files\\Netwrix\\config.xml file. |
