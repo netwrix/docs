@@ -90,6 +90,9 @@ function SearchPageContent() {
     const location = useLocation();
     const history = useHistory();
 
+    // Back to top button visibility
+    const [showBackToTop, setShowBackToTop] = useState(false);
+
     // Parse URL parameters
     const urlParams = new URLSearchParams(location.search);
     const queryFromUrl = urlParams.get('q') || '';
@@ -320,6 +323,23 @@ function SearchPageContent() {
         makeSearch(searchResultState.lastPage);
     }, [makeSearch, searchResultState.lastPage]);
 
+    // Show/hide back to top button based on scroll position
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowBackToTop(window.scrollY > 300);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     const pageTitle = searchQuery
         ? `Search results for "${searchQuery}"`
         : 'Search the documentation';
@@ -492,6 +512,44 @@ function SearchPageContent() {
                     </div>
                 )}
             </div>
+
+            {/* Back to top button */}
+            {showBackToTop && (
+                <button
+                    onClick={scrollToTop}
+                    aria-label="Back to top"
+                    style={{
+                        position: 'fixed',
+                        bottom: '30px',
+                        right: '30px',
+                        width: '50px',
+                        height: '50px',
+                        borderRadius: '50%',
+                        backgroundColor: 'var(--ifm-color-primary)',
+                        color: 'white',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '48px',
+                        fontWeight: 'bold',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                        zIndex: 1000,
+                        transition: 'all 0.3s ease',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'scale(1.1)';
+                        e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.2)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'scale(1)';
+                        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                    }}
+                >
+                    ↑
+                </button>
+            )}
         </Layout>
     );
 }
