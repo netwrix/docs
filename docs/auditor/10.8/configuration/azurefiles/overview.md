@@ -127,7 +127,7 @@ Click **Grant admin consent for TenantName**
 
 **IAM Roles:**
 
-You mshould assign Azure IAM roles so that Netwrix Auditor can:
+You should assign Azure IAM roles so that Netwrix Auditor can:
 - Discover file shares in your resource group
 - Read metadata from your data storage account
 - Access audit logs from your log storage account
