@@ -1,5 +1,5 @@
 extends: substitution
-message: "Use 'want to' instead of '%s', or rewrite as a direct imperative."
+message: "Use '%s' instead of 'wish to', or rewrite as a direct imperative."
 level: suggestion
 ignorecase: true
 swap:

@@ -3,5 +3,4 @@ message: "Avoid '%s'. Write specific cross-reference text that describes what th
 level: suggestion
 ignorecase: true
 tokens:
-  - '\bfor additional information\b'
   - '\bfor more information\b'
