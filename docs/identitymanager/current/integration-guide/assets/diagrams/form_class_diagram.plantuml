@@ -1,0 +1,80 @@
+@startuml component
+package "Form" {
+	class Form {
+		AddRowLabel_L1 : String
+		FormTitle_L1 : String
+		HideRecordAddButton : Boolean
+		HideRecordRemoveButton : Boolean
+		HideRoles : Boolean
+		Identifier : String
+		IsDefaultSelfForm : Boolean
+		IsDefaultViewForm : Boolean
+		IsDeleteForm : Boolean
+		MainPropertyLabel_L1 : String
+		RecordFilter : Int32
+		RemoveRowLabel_L1 : String
+		TableTitle_L1 : String
+		WorkflowRequestType : Int32
+		--
+		Activity : Activity
+		ActivityState : ActivityTemplateState
+		Controls : FormControl[]
+		EmbeddedFormFormControls : FormControl[]
+		EntityType : EntityType
+		FormType : FormType
+		MainProperty : EntityProperty
+		Menu : MenuItem
+		RecordEndProperty : EntityProperty
+		RecordProperty : EntityProperty
+		RecordSortProperty : EntityProperty
+		RecordStartProperty : EntityProperty
+		RecordTable : DisplayTable
+	}
+}
+package "Activity" {
+	class Activity {
+	}
+}
+package "ActivityTemplateState" {
+	class ActivityTemplateState {
+	}
+}
+package "FormControl" {
+	class FormControl {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "FormType" {
+	class FormType {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "MenuItem" {
+	class MenuItem {
+	}
+}
+package "DisplayTable" {
+	class DisplayTable {
+	}
+}
+Form "0..*" --  "0..1"Activity
+Form "0..*" --  "0..1"ActivityTemplateState
+Form "1" --  "0..*"FormControl
+Form "0..1" --  "0..*"FormControl
+Form "0..*" --  "1"EntityType
+Form "0..*" --  "1"FormType
+Form "0..*" --  "0..1"EntityProperty
+Form "0..*" --  "0..1"MenuItem
+Form "0..*" --  "0..1"EntityProperty
+Form "0..*" --  "0..1"EntityProperty
+Form "0..*" --  "0..1"EntityProperty
+Form "0..*" --  "0..1"EntityProperty
+Form "0..*" --  "0..1"DisplayTable
+hide empty members
+@enduml

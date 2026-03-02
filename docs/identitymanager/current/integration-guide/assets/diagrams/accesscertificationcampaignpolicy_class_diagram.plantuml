@@ -1,0 +1,16 @@
+@startuml component
+package "AccessCertificationCampaignPolicy" {
+	class AccessCertificationCampaignPolicy {
+		DisplayName_L1 : String
+		Identifier : String
+		--
+		Campaigns : AccessCertificationCampaign[]
+	}
+}
+package "AccessCertificationCampaign" {
+	class AccessCertificationCampaign {
+	}
+}
+AccessCertificationCampaignPolicy "1" --  "0..*"AccessCertificationCampaign
+hide empty members
+@enduml

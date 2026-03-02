@@ -11,7 +11,7 @@ This connector exports users and profiles from a
 
 This page is about [RACF](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/racf/index.md).
 
-![Package: MainFrame/RACF](/images/identitymanager/saas/integration-guide/connectors/references-connectors/racf/packages_racf_v603.webp)
+![Package: MainFrame/RACF](/images/identitymanager/integration-guide/connectors/references-connectors/racf/packages_racf_v603.webp)
 
 ## Overview
 

@@ -1,0 +1,15 @@
+@startuml component
+package "ActivityInstancesActor" {
+	class ActivityInstancesActor {
+		Actor : Int64
+		--
+		ActivityInstance : ActivityInstance
+	}
+}
+package "ActivityInstance" {
+	class ActivityInstance {
+	}
+}
+ActivityInstancesActor "0..*" --  "1"ActivityInstance
+hide empty members
+@enduml

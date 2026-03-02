@@ -11,7 +11,7 @@ This connector writes to an external system via a
 
 This page is about [PowerShellProv](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/powershellprov/index.md).
 
-![Package: Custom/PowerShellProv](/images/identitymanager/saas/integration-guide/connectors/references-connectors/powershellprov/packages_powershellprov_v603.webp)
+![Package: Custom/PowerShellProv](/images/identitymanager/integration-guide/connectors/references-connectors/powershellprov/packages_powershellprov_v603.webp)
 
 ## Overview
 

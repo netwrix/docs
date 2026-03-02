@@ -41,7 +41,7 @@ After adding this rule to the Configuration, do not forget to deploy the configu
 
 The aim of this section is to give you a step-by-step guide for setting up a test user. It will also cover what is displayed in Identity Manager. In this example, we will assign a ```Test Group A``` directly to the test user and the ```Test Group A``` will also be a member of the ```Test Group B```. This way, the test user will also have an indirect assignment to the ```Test Group B```. We will also create the corresponding roles.
 
-![Group Membership Schema](/images/identitymanager/saas/integration-guide/role-assignment/how-tos/configureindirectpermissions/indirectpermissionsadexample.webp)
+![Group Membership Schema](/images/identitymanager/integration-guide/role-assignment/how-tos/configureindirectpermissions/indirectpermissionsadexample.webp)
 
 A running Active Directory instance is required to reproduce these steps yourself.
 
@@ -54,19 +54,19 @@ Create two groups in your Active Directory, ```TestGroupA``` and ```TestGroupB``
 Since we have manually edited the Active Directory, we first need to run an AD synchronization job.
 Then we create one Single Role for each group in the Active Directory. We will name them ```TestRoleA``` and ```TestRoleB``` for ```Directory > User```, :
 
-![Single Role Configuration Example](/images/identitymanager/saas/integration-guide/role-assignment/how-tos/configureindirectpermissions/srconf_5.2.1.webp)
+![Single Role Configuration Example](/images/identitymanager/integration-guide/role-assignment/how-tos/configureindirectpermissions/srconf_5.2.1.webp)
 
 We will also create a test Composite Role to showcase indirect Composite Roles. We will name it ```TestCRoleAB```:
 
-![Composite Role Configuration](/images/identitymanager/saas/integration-guide/role-assignment/how-tos/configureindirectpermissions/crconf_5.2.1.webp)
+![Composite Role Configuration](/images/identitymanager/integration-guide/role-assignment/how-tos/configureindirectpermissions/crconf_5.2.1.webp)
 
 Then we will also need to add some rules. We first need to add one Navigation Rule for each group to link them with their respective Single Role:
 
-![Navigation Rule Example](/images/identitymanager/saas/integration-guide/role-assignment/how-tos/configureindirectpermissions/navrule_5.2.1.webp)
+![Navigation Rule Example](/images/identitymanager/integration-guide/role-assignment/how-tos/configureindirectpermissions/navrule_5.2.1.webp)
 
 And finally, we need to add Single Role Rules to link our two previously created Single Roles to the new Composite Role:
 
-![Single Role Rule Example](/images/identitymanager/saas/integration-guide/role-assignment/how-tos/configureindirectpermissions/srrule_5.2.1.webp)
+![Single Role Rule Example](/images/identitymanager/integration-guide/role-assignment/how-tos/configureindirectpermissions/srrule_5.2.1.webp)
 
 Even if two rules of a kind are needed, only one is pictured. Do not forget the other one.
 
@@ -78,15 +78,15 @@ The next screenshots were taken after adding the direct assignment directly insi
 
 If you first go on the ```View permissions``` tab of your test user, the only new role that appears in the ```Simplified view``` is the indirect Composite Role ```TestCRoleAB```:
 
-![View Permissions Simplified](/images/identitymanager/saas/integration-guide/role-assignment/how-tos/configureindirectpermissions/viewpermissionssimplified_5.2.1.webp)
+![View Permissions Simplified](/images/identitymanager/integration-guide/role-assignment/how-tos/configureindirectpermissions/viewpermissionssimplified_5.2.1.webp)
 
 To display Indirect Permissions, you need to switch over to the ```Advanced view```. ```TestRoleA``` and ```TestRoleB``` should then appear:
 
-![View Permissions Advanced](/images/identitymanager/saas/integration-guide/role-assignment/how-tos/configureindirectpermissions/viewpermissionsadvanced_5.2.1.webp)
+![View Permissions Advanced](/images/identitymanager/integration-guide/role-assignment/how-tos/configureindirectpermissions/viewpermissionsadvanced_5.2.1.webp)
 
 You can also directly display the Assigned Resource Navigations by clicking on ```AD User (nominative)```. The ```memberOf``` properties will appear in the list:
 
-![AD Assigned Resource Navigations](/images/identitymanager/saas/integration-guide/role-assignment/how-tos/configureindirectpermissions/adassignednavigations_5.2.1.webp)
+![AD Assigned Resource Navigations](/images/identitymanager/integration-guide/role-assignment/how-tos/configureindirectpermissions/adassignednavigations_5.2.1.webp)
 
 ## Configure Indirect Permissions in an Microsoft Entra ID
 

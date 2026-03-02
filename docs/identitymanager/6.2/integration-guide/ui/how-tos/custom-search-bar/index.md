@@ -18,7 +18,7 @@ To search on a resource list for an entity, you must enter a SearchBar tag for t
 
 Here is the visualization of this searchbar on the interface:
 
-![SearchBarWithoutFilters](/images/identitymanager/saas/integration-guide/ui/how-tos/custom-search-bar/searchbarwithoutfilter.webp)
+![SearchBarWithoutFilters](/images/identitymanager/integration-guide/ui/how-tos/custom-search-bar/searchbarwithoutfilter.webp)
 
 Ergonomically, it is recommended to hide the search symbol in a column header (in a list displayed
 like a table) if a criterion linked to this column is already displayed in a searchbar. This avoids
@@ -41,7 +41,7 @@ To add a default filter, you must add both of the following properties to a
 
 Here is the visualization of this criterion on the interface:
 
-![SearchBarFilter](/images/identitymanager/saas/integration-guide/ui/how-tos/custom-search-bar/searchbarfilters.webp)
+![SearchBarFilter](/images/identitymanager/integration-guide/ui/how-tos/custom-search-bar/searchbarfilters.webp)
 
 ## Search Bar Menu
 

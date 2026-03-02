@@ -1,0 +1,37 @@
+@startuml component
+package "MiningRule" {
+	class MiningRule {
+		ExcludeRole : Boolean
+		FalsePositiveMaxPercentage : Float
+		IncludeDoubleValidation : Boolean
+		IncludeNoValidation : Boolean
+		IncludeSimpleValidation : Boolean
+		IncludeTripleValidation : Boolean
+		PrecisionMinPercentage : Float
+		Priority : Int32
+		RuleType : Int32
+		--
+		Category : Category
+		EntityType : EntityType
+		Policy : Policy
+		RulePolicy : Policy
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+MiningRule "0..*" --  "0..1"Category
+MiningRule "0..*" --  "1"EntityType
+MiningRule "0..*" --  "1"Policy
+MiningRule "0..*" --  "0..1"Policy
+hide empty members
+@enduml

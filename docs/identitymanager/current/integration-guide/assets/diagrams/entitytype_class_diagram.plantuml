@@ -1,0 +1,314 @@
+@startuml component
+package "EntityType" {
+	class EntityType {
+		DisplayName_L1 : String
+		Identifier : String
+		IsRelatedToAccessCertificationCampaign : Boolean
+		IsRelatedToAssignedRoles : Boolean
+		IsRelatedToIdentifiedRisks : Boolean
+		IsRelatedToManualProvisioning : Boolean
+		IsRelatedToResourceReconciliation : Boolean
+		IsRelatedToResourceReview : Boolean
+		IsRelatedToRoleReconciliation : Boolean
+		IsRelatedToRoleReview : Boolean
+		IsRelatedToRules : Boolean
+		IsRelatedToWorkflowReview : Boolean
+		IsRelatedToWorkflowSupervision : Boolean
+		LicenseTag : String
+		TableName : String
+		UnclassifiedCount : Int32
+		--
+		AccessControlRules : AccessControlRule[]
+		AllowedNavigationBindings : AllowedNavigationBinding[]
+		CompositeRoles : CompositeRole[]
+		ContextRules : ContextRule[]
+		Dimensions : Dimension[]
+		DisplayTables : DisplayTable[]
+		EntityInstances : EntityInstance[]
+		EntityPropertyExpressions : EntityPropertyExpression[]
+		EntityTypeAutomationRules : AutomationRule[]
+		EntityTypeBindingExpressions : BindingExpression[]
+		EntityTypeCompositeRoleRules : CompositeRoleRule[]
+		EntityTypeFormControls : FormControl[]
+		EntityTypeIndirectResourceRules : IndirectResourceRule[]
+		EntityTypeMenuItems : MenuItem[]
+		EntityTypeResourceBinaryRules : ResourceBinaryRule[]
+		EntityTypeResourceClassificationRules : ResourceClassificationRule[]
+		EntityTypeResourceCorrelationRules : ResourceCorrelationRule[]
+		EntityTypeResourceNavigationRules : ResourceNavigationRule[]
+		EntityTypeResourceQueryRules : ResourceQueryRule[]
+		EntityTypeResourceScalarRules : ResourceScalarRule[]
+		EntityTypeResourceTypeRules : ResourceTypeRule[]
+		EntityTypeRiskRuleItems : RiskRuleItem[]
+		EntityTypeScaffoldings : Scaffolding[]
+		EntityTypeSingleRoleRules : SingleRoleRule[]
+		FilterEntityTypeEntityInstances : EntityInstance[]
+		FormEntityTypeHomonymEntityLinks : HomonymEntityLink[]
+		Forms : Form[]
+		Indicators : Indicator[]
+		MiningRules : MiningRule[]
+		OwnerAccessCertificationCampaigns : AccessCertificationCampaign[]
+		OwnerEntityTypeNotifications : Notification[]
+		PolicySimulations : PolicySimulation[]
+		ProfileRuleContexts : ProfileRuleContext[]
+		Properties : EntityProperty[]
+		ResourceEntityTypeRecordSections : RecordSection[]
+		ResourceTypes : ResourceType[]
+		ReturnedEntityTypeReportQueries : ReportQuery[]
+		Risks : Risk[]
+		RoleMappings : RoleMapping[]
+		SearchBars : SearchBar[]
+		SearchBarsFromSearchedEntityType : SearchBar[]
+		SingleRoles : SingleRole[]
+		SourceEntityTypeRecordSections : RecordSection[]
+		TargetEntityTypeUnicityCheckRules : UnicityCheckRule[]
+		TargetResourceTypes : ResourceType[]
+		TaskEntityType : TaskEntityType[]
+		Tiles : Tile[]
+		TypeResourceChanges : ResourceChange[]
+		TypeResources : Resource[]
+		TypeWorkflowInstances : WorkflowInstance[]
+		Workflows : Workflow[]
+	}
+}
+package "AccessControlRule" {
+	class AccessControlRule {
+	}
+}
+package "AllowedNavigationBinding" {
+	class AllowedNavigationBinding {
+	}
+}
+package "CompositeRole" {
+	class CompositeRole {
+	}
+}
+package "ContextRule" {
+	class ContextRule {
+	}
+}
+package "Dimension" {
+	class Dimension {
+	}
+}
+package "DisplayTable" {
+	class DisplayTable {
+	}
+}
+package "EntityInstance" {
+	class EntityInstance {
+	}
+}
+package "EntityPropertyExpression" {
+	class EntityPropertyExpression {
+	}
+}
+package "AutomationRule" {
+	class AutomationRule {
+	}
+}
+package "BindingExpression" {
+	class BindingExpression {
+	}
+}
+package "CompositeRoleRule" {
+	class CompositeRoleRule {
+	}
+}
+package "FormControl" {
+	class FormControl {
+	}
+}
+package "IndirectResourceRule" {
+	class IndirectResourceRule {
+	}
+}
+package "MenuItem" {
+	class MenuItem {
+	}
+}
+package "ResourceBinaryRule" {
+	class ResourceBinaryRule {
+	}
+}
+package "ResourceClassificationRule" {
+	class ResourceClassificationRule {
+	}
+}
+package "ResourceCorrelationRule" {
+	class ResourceCorrelationRule {
+	}
+}
+package "ResourceNavigationRule" {
+	class ResourceNavigationRule {
+	}
+}
+package "ResourceQueryRule" {
+	class ResourceQueryRule {
+	}
+}
+package "ResourceScalarRule" {
+	class ResourceScalarRule {
+	}
+}
+package "ResourceTypeRule" {
+	class ResourceTypeRule {
+	}
+}
+package "RiskRuleItem" {
+	class RiskRuleItem {
+	}
+}
+package "Scaffolding" {
+	class Scaffolding {
+	}
+}
+package "SingleRoleRule" {
+	class SingleRoleRule {
+	}
+}
+package "HomonymEntityLink" {
+	class HomonymEntityLink {
+	}
+}
+package "Form" {
+	class Form {
+	}
+}
+package "Indicator" {
+	class Indicator {
+	}
+}
+package "MiningRule" {
+	class MiningRule {
+	}
+}
+package "AccessCertificationCampaign" {
+	class AccessCertificationCampaign {
+	}
+}
+package "Notification" {
+	class Notification {
+	}
+}
+package "PolicySimulation" {
+	class PolicySimulation {
+	}
+}
+package "ProfileRuleContext" {
+	class ProfileRuleContext {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "RecordSection" {
+	class RecordSection {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "ReportQuery" {
+	class ReportQuery {
+	}
+}
+package "Risk" {
+	class Risk {
+	}
+}
+package "RoleMapping" {
+	class RoleMapping {
+	}
+}
+package "SearchBar" {
+	class SearchBar {
+	}
+}
+package "SingleRole" {
+	class SingleRole {
+	}
+}
+package "UnicityCheckRule" {
+	class UnicityCheckRule {
+	}
+}
+package "TaskEntityType" {
+	class TaskEntityType {
+	}
+}
+package "Tile" {
+	class Tile {
+	}
+}
+package "ResourceChange" {
+	class ResourceChange {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+package "Workflow" {
+	class Workflow {
+	}
+}
+EntityType "1" --  "0..*"AccessControlRule
+EntityType "1" --  "0..*"AllowedNavigationBinding
+EntityType "1" --  "0..*"CompositeRole
+EntityType "1" --  "0..*"ContextRule
+EntityType "1" --  "0..*"Dimension
+EntityType "1" --  "0..*"DisplayTable
+EntityType "1" --  "0..*"EntityInstance
+EntityType "1" --  "0..*"EntityPropertyExpression
+EntityType "1" --  "0..*"AutomationRule
+EntityType "1" --  "0..*"BindingExpression
+EntityType "1" --  "0..*"CompositeRoleRule
+EntityType "0..1" --  "0..*"FormControl
+EntityType "1" --  "0..*"IndirectResourceRule
+EntityType "0..1" --  "0..*"MenuItem
+EntityType "1" --  "0..*"ResourceBinaryRule
+EntityType "1" --  "0..*"ResourceClassificationRule
+EntityType "1" --  "0..*"ResourceCorrelationRule
+EntityType "1" --  "0..*"ResourceNavigationRule
+EntityType "1" --  "0..*"ResourceQueryRule
+EntityType "1" --  "0..*"ResourceScalarRule
+EntityType "1" --  "0..*"ResourceTypeRule
+EntityType "1" --  "0..*"RiskRuleItem
+EntityType "0..1" --  "0..*"Scaffolding
+EntityType "1" --  "0..*"SingleRoleRule
+EntityType "0..1" --  "0..*"EntityInstance
+EntityType "1" --  "0..*"HomonymEntityLink
+EntityType "1" --  "0..*"Form
+EntityType "1" --  "0..*"Indicator
+EntityType "1" --  "0..*"MiningRule
+EntityType "1" --  "0..*"AccessCertificationCampaign
+EntityType "1" --  "0..*"Notification
+EntityType "1" --  "0..*"PolicySimulation
+EntityType "0..1" --  "0..*"ProfileRuleContext
+EntityType "1" --  "0..*"EntityProperty
+EntityType "1" --  "0..*"RecordSection
+EntityType "1" --  "0..*"ResourceType
+EntityType "1" --  "0..*"ReportQuery
+EntityType "1" --  "0..*"Risk
+EntityType "1" --  "0..*"RoleMapping
+EntityType "1" --  "0..*"SearchBar
+EntityType "1" --  "0..*"SearchBar
+EntityType "1" --  "0..*"SingleRole
+EntityType "1" --  "0..*"RecordSection
+EntityType "1" --  "0..*"UnicityCheckRule
+EntityType "1" --  "0..*"ResourceType
+EntityType "1" --  "0..*"TaskEntityType
+EntityType "1" --  "0..*"Tile
+EntityType "1" --  "0..*"ResourceChange
+EntityType "1" --  "0..*"Resource
+EntityType "1" --  "0..*"WorkflowInstance
+EntityType "1" --  "0..*"Workflow
+hide empty members
+@enduml

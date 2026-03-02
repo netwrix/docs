@@ -1,0 +1,23 @@
+---
+title: "ManualProvisioningResourceTypeMapping"
+description: " "
+sidebar_position: 5
+---
+
+import ResourcetypemappingIdentifier from '@site/docs/identitymanager/current/_partials/resourcetypemapping-identifier.mdx';
+
+<ResourcetypemappingIdentifier />
+
+## Examples
+```xml
+<ManualProvisioningResourceTypeMapping Identifier="Access_Badge_Nominative" Connection="AccessManual" TicketSynchroIsNotAvailable="true"/>
+```
+
+
+## Properties
+
+|Property|Details|
+|---|---|
+| Connection required | **Type:** String **Description:** Identifier of the corresponding connection. |
+| TicketSynchroIsNotAvailable optional | **Type:** Boolean **Description:** `true` to set synchronization as unavailable for this resource type. Once the ticket is closed and the resource is created, updated or deleted, then the assignment's status is directly set to `Verified`.**Note:** only used with the [package for tickets](/docs/identitymanager/current/integration-guide/connectors/references-packages/ServiceNow Ticket). |
+

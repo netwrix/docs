@@ -1,0 +1,47 @@
+@startuml component
+package "AccessCertificationCampaign" {
+	class AccessCertificationCampaign {
+		CertificationEndDate : DateTime
+		CompletedItemsCount : Int32
+		DisplayName_L1 : String
+		Identifier : String
+		ItemsCount : Int32
+		LastNotificationDate : DateTime
+		NotificationNeeded : Boolean
+		StartDate : DateTime
+		State : Byte
+		--
+		DataFilters : AccessCertificationDataFilter[]
+		Items : AccessCertificationItem[]
+		OwnerEntityType : EntityType
+		OwnerFilters : AccessCertificationOwnerFilter[]
+		Policy : AccessCertificationCampaignPolicy
+	}
+}
+package "AccessCertificationDataFilter" {
+	class AccessCertificationDataFilter {
+	}
+}
+package "AccessCertificationItem" {
+	class AccessCertificationItem {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "AccessCertificationOwnerFilter" {
+	class AccessCertificationOwnerFilter {
+	}
+}
+package "AccessCertificationCampaignPolicy" {
+	class AccessCertificationCampaignPolicy {
+	}
+}
+AccessCertificationCampaign "1" --  "0..*"AccessCertificationDataFilter
+AccessCertificationCampaign "1" --  "0..*"AccessCertificationItem
+AccessCertificationCampaign "0..*" --  "1"EntityType
+AccessCertificationCampaign "1" --  "0..*"AccessCertificationOwnerFilter
+AccessCertificationCampaign "0..*" --  "1"AccessCertificationCampaignPolicy
+hide empty members
+@enduml

@@ -1,0 +1,107 @@
+@startuml component
+package "SingleRole" {
+	class SingleRole {
+		ApprovalWorkflowType : Int32
+		BaseRole : Int64
+		CommentActivationOnApproveInReview : Byte
+		CommentActivationOnDeclineInReview : Byte
+		CommentActivationOnDeleteGapInReconciliation : Byte
+		CommentActivationOnKeepGapInReconciliation : Byte
+		CommentActivationOnRequest : Byte
+		Description_L1 : String
+		DisplayName_L1 : String
+		FullName_L1 : String
+		GracePeriod : Int32
+		HideOnSimplifiedView : Boolean
+		Identifier : String
+		ImplicitApproval : Byte
+		ManualAssignmentEndDateLockedToContextMode : Byte
+		MaxDuration : Int32
+		P0 : Boolean
+		ProlongationWithoutApproval : Byte
+		R0 : Boolean
+		State : Byte
+		Tags : String
+		--
+		AssignedSingleRoles : AssignedSingleRole[]
+		AutomationRules : AutomationRule[]
+		Category : Category
+		D0 : Resource
+		EntityType : EntityType
+		Policy : Policy
+		ProfileContexts : ProfileContext[]
+		ResourceBinaryRules : ResourceBinaryRule[]
+		ResourceNavigationRules : ResourceNavigationRule[]
+		ResourceScalarRules : ResourceScalarRule[]
+		ResourceTypeRules : ResourceTypeRule[]
+		SingleRoleRules : SingleRoleRule[]
+		SingleRoleSingleRolesCategories : SingleRolesCategory[]
+	}
+}
+package "AssignedSingleRole" {
+	class AssignedSingleRole {
+	}
+}
+package "AutomationRule" {
+	class AutomationRule {
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "ProfileContext" {
+	class ProfileContext {
+	}
+}
+package "ResourceBinaryRule" {
+	class ResourceBinaryRule {
+	}
+}
+package "ResourceNavigationRule" {
+	class ResourceNavigationRule {
+	}
+}
+package "ResourceScalarRule" {
+	class ResourceScalarRule {
+	}
+}
+package "ResourceTypeRule" {
+	class ResourceTypeRule {
+	}
+}
+package "SingleRoleRule" {
+	class SingleRoleRule {
+	}
+}
+package "SingleRolesCategory" {
+	class SingleRolesCategory {
+	}
+}
+SingleRole "1" --  "0..*"AssignedSingleRole
+SingleRole "0..1" --  "0..*"AutomationRule
+SingleRole "0..*" --  "0..1"Category
+SingleRole "0..*" --  "0..1"Resource
+SingleRole "0..*" --  "1"EntityType
+SingleRole "0..*" --  "1"Policy
+SingleRole "0..1" --  "0..*"ProfileContext
+SingleRole "0..1" --  "0..*"ResourceBinaryRule
+SingleRole "0..1" --  "0..*"ResourceNavigationRule
+SingleRole "0..1" --  "0..*"ResourceScalarRule
+SingleRole "0..1" --  "0..*"ResourceTypeRule
+SingleRole "1" --  "0..*"SingleRoleRule
+SingleRole "1" --  "0..*"SingleRolesCategory
+hide empty members
+@enduml

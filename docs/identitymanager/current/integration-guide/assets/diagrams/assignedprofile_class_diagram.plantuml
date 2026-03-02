@@ -1,0 +1,31 @@
+@startuml component
+package "AssignedProfile" {
+	class AssignedProfile {
+		AccessState : Int32
+		Email : String
+		EndDate : DateTime
+		IsDenied : Boolean
+		StartDate : DateTime
+		--
+		Context : ProfileContext
+		Profile : Profile
+		User : Resource
+	}
+}
+package "ProfileContext" {
+	class ProfileContext {
+	}
+}
+package "Profile" {
+	class Profile {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+AssignedProfile "0..*" --  "1"ProfileContext
+AssignedProfile "0..*" --  "1"Profile
+AssignedProfile "0..*" --  "1"Resource
+hide empty members
+@enduml

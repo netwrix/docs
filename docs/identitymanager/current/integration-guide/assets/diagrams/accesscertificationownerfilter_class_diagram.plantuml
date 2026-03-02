@@ -1,0 +1,26 @@
+@startuml component
+package "AccessCertificationOwnerFilter" {
+	class AccessCertificationOwnerFilter {
+		D0 : Int64
+		IndividualOwner : Int64
+		L0 : Boolean
+		MinimalRiskScore : Int32
+		OwnerLastModificationDate : DateTime
+		TargetedRisk : Int64
+		--
+		Campaign : AccessCertificationCampaign
+		OwnerLastModificationDateBinding : Binding
+	}
+}
+package "AccessCertificationCampaign" {
+	class AccessCertificationCampaign {
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+AccessCertificationOwnerFilter "0..*" --  "1"AccessCertificationCampaign
+AccessCertificationOwnerFilter "0..*" --  "0..1"Binding
+hide empty members
+@enduml
