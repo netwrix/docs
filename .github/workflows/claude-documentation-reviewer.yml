@@ -258,21 +258,21 @@ jobs:
               return valid
 
           def normalize_review_body(body):
-              """Normalize issue formatting to single-line bullet points."""
+              """Normalize issue formatting to single-line **Line N:** entries."""
               src = body.split('\n')
               result = []
               i = 0
               while i < len(src):
                   line = src[i]
 
-                  # Convert heading format: ### Line N: ... → - Line N: ...
-                  m = re.match(r'^#{1,6}\s+(Line \d+:.+)$', line)
+                  # Convert heading format: ### Line N: ... → **Line N:** ...
+                  m = re.match(r'^#{1,6}\s+(Line \d+):(.+)$', line)
                   if m:
-                      result.append(f'- {m.group(1)}')
+                      result.append(f'**{m.group(1)}:**{m.group(2)}')
                       i += 1
                       continue
 
-                  # Convert bold format: **Line N: title** + sub-bullets → - Line N: single line
+                  # Convert bold-closed format: **Line N: title** + sub-bullets → **Line N:** title. parts.
                   m = re.match(r'^\*\*(Line \d+:.*?)\*\*\s*$', line)
                   if m:
                       title = m.group(1).rstrip('.')
@@ -280,12 +280,29 @@ jobs:
                       parts = []
                       while i < len(src) and re.match(r'^\s*[-*]\s+', src[i]):
                           sub = re.sub(r'^\s*[-*]\s+', '', src[i])
-                          sub = re.sub(r'^(Issue|Fix|Description|Suggested change):\s*', '', sub, flags=re.IGNORECASE)
+                          sub = re.sub(r'^(Issue|Fix|Description|Suggested change|Current):\s*', '', sub, flags=re.IGNORECASE)
                           if sub.strip():
                               parts.append(sub.strip().rstrip('.'))
                           i += 1
-                      combined = f'- {title}. {". ".join(parts)}.' if parts else f'- {title}.'
+                      combined = f'**{title}. {". ".join(parts)}.**' if parts else f'**{title}.**'
                       result.append(combined)
+                      continue
+
+                  # Collapse numbered list items with sub-bullets (e.g. 1. **Issue title**: desc\n  - Current: ...\n  - Fix: ...)
+                  m = re.match(r'^\d+\.\s+\*\*(.+?)\*\*:?\s*(.*)', line)
+                  if m:
+                      title = m.group(1).rstrip('.')
+                      desc = m.group(2).strip().rstrip('.')
+                      i += 1
+                      parts = [desc] if desc else []
+                      while i < len(src) and re.match(r'^\s+[-*]', src[i]):
+                          sub = re.sub(r'^\s+[-*]\s+', '', src[i])
+                          sub = re.sub(r'^(Issue|Fix|Description|Suggested change|Current|Should):\s*', '', sub, flags=re.IGNORECASE)
+                          if sub.strip():
+                              parts.append(sub.strip().rstrip('.'))
+                          i += 1
+                      desc_text = '. '.join(parts).rstrip('.')
+                      result.append(f'**{title}.** {desc_text}.' if desc_text else f'**{title}.**')
                       continue
 
                   result.append(line)
