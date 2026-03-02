@@ -138,7 +138,7 @@ Vale handles pattern-based violations automatically — run it and fix everythin
 
 **Voice and structure**
 - Active voice and present tense throughout
-- Second person ("you") — address the reader directly
+- Second person ("you") or imperative mood for procedures and instructions — third person ("users") is acceptable in overviews and conceptual descriptions
 - Contractions are encouraged: don't, can't, you'll
 - Write for a global audience — avoid metaphors, idioms, and culturally specific references that don't translate
 - Omit "currently", "presently", and "as of this writing" — documentation should read as permanently accurate
