@@ -15,6 +15,7 @@ import {
 import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import translations from '@theme/SearchTranslations';
+import {PRODUCTS} from '../../config/products';
 
 let DocSearchModal = null;
 
@@ -31,19 +32,40 @@ function importDocSearchModalIfNeeded() {
     });
 }
 
-function useNavigator({externalUrlRegex}) {
+function useNavigator({externalUrlRegex, selectedProducts}) {
     const history = useHistory();
-    const [navigator] = useState(() => {
+    const createSearchLink = useSearchLinkCreator();
+
+    // Use useMemo instead of useState to ensure we get fresh values
+    const navigator = useMemo(() => {
         return {
             navigate(params) {
-                if (isRegexpStringMatch(externalUrlRegex, params.itemUrl)) {
+                // Get the current search query directly from the DOM at navigation time
+                const input =
+                    document.querySelector('.DocSearch-Input') ||
+                    document.querySelector('input[type="search"]');
+                const currentQuery = input ? input.value : '';
+
+                // If we have a search query, redirect to full search results page instead
+                if (currentQuery) {
+                    const baseLink = createSearchLink(currentQuery);
+                    const urlParams = new URLSearchParams();
+                    if (selectedProducts && selectedProducts.length > 0) {
+                        urlParams.set('products', selectedProducts.join(','));
+                    }
+                    const searchPageUrl = urlParams.toString()
+                        ? `${baseLink}&${urlParams.toString()}`
+                        : baseLink;
+                    history.push(searchPageUrl);
+                } else if (isRegexpStringMatch(externalUrlRegex, params.itemUrl)) {
                     window.location.href = params.itemUrl;
                 } else {
                     history.push(params.itemUrl);
                 }
             },
         };
-    });
+    }, [externalUrlRegex, history, createSearchLink, selectedProducts]);
+
     return navigator;
 }
 
@@ -74,12 +96,16 @@ function useTransformItems(props) {
     return transformItems;
 }
 
-function useResultsFooterComponent({closeModal}) {
+function useResultsFooterComponent({closeModal, selectedProducts}) {
     return useMemo(
         () =>
             ({state}) =>
-                <ResultsFooter state={state} onClose={closeModal}/>,
-        [closeModal],
+                <ResultsFooter
+                    state={state}
+                    onClose={closeModal}
+                    selectedProducts={selectedProducts}
+                />,
+        [closeModal, selectedProducts],
     );
 }
 
@@ -87,10 +113,22 @@ function Hit({hit, children}) {
     return <Link to={hit.url}>{children}</Link>;
 }
 
-function ResultsFooter({state, onClose}) {
+function ResultsFooter({state, onClose, selectedProducts = []}) {
     const createSearchLink = useSearchLinkCreator();
+    const baseLink = createSearchLink(state.query);
+
+    // Add product filters as URL parameters
+    const params = new URLSearchParams();
+    if (selectedProducts.length > 0) {
+        params.set('products', selectedProducts.join(','));
+    }
+
+    const linkWithFilters = params.toString()
+        ? `${baseLink}&${params.toString()}`
+        : baseLink;
+
     return (
-        <Link to={createSearchLink(state.query)} onClick={onClose}>
+        <Link to={linkWithFilters} onClick={onClose}>
             <Translate
                 id="theme.SearchBar.seeAll"
                 values={{count: state.context.nbHits}}>
@@ -114,9 +152,21 @@ function useSearchParameters({contextualSearch, productFacetFilters = [], ...pro
             ? mergeFacetFilters(configFacetFilters, productFacetFilters)
             : configFacetFilters;
 
-    const facetFilters = contextualSearch
-        ? mergeFacetFilters(contextualSearchFacetFilters, combinedConfigFacetFilters)
-        : combinedConfigFacetFilters;
+    let facetFilters;
+    if (contextualSearch) {
+        // Use contextual filters (includes language and doc tags)
+        facetFilters = mergeFacetFilters(contextualSearchFacetFilters, combinedConfigFacetFilters);
+    } else {
+        // When contextualSearch is disabled, still include language filter but not doc tags
+        const languageFilter = contextualSearchFacetFilters.find(f => typeof f === 'string' && f.startsWith('language:'));
+        if (languageFilter && productFacetFilters.length > 0) {
+            // IMPORTANT: Don't spread productFacetFilters - it's already an array of arrays
+            // We want: ['language:en', ['product1', 'product2']] not ['language:en', 'product1', 'product2']
+            facetFilters = [languageFilter].concat(productFacetFilters);
+        } else {
+            facetFilters = combinedConfigFacetFilters;
+        }
+    }
 
     return {
         ...props.searchParameters,
@@ -124,52 +174,142 @@ function useSearchParameters({contextualSearch, productFacetFilters = [], ...pro
     };
 }
 
+// Generate product options dynamically from PRODUCTS constant
 // Values MUST match Algolia facet values exactly
 const PRODUCT_OPTIONS = [
     {label: 'All products', value: '__all__'},
-    {label: 'Netwrix Auditor', value: 'Auditor'},
-    {label: 'Netwrix Privilege Secure', value: 'Privilege Secure'},
-    {label: 'Netwrix Password Secure', value: 'Password Secure'},
-    {label: 'Netwrix Change Tracker', value: 'Change Tracker'},
-    {label: 'Netwrix Endpoint Policy Manager', value: 'Endpoint Policy Manager'},
-    {label: 'Netwrix Endpoint Protector', value: 'Endpoint Protector'},
-    {label: 'Netwrix Access Analyzer', value: 'Access Analyzer'},
-    {label: 'Netwrix Data Classification', value: 'Data Classification'},
-    {label: 'Netwrix 1Secure', value: '1Secure'},
-    {label: 'Netwrix Threat Manager', value: 'Threat Manager'},
-    {label: 'Netwrix Threat Prevention', value: 'Threat Prevention'},
-    {label: 'Recovery for Active Directory', value: 'Recovery for Active Directory'},
-    {label: 'PingCastle', value: 'PingCastle'},
-    {label: 'Access Information Center', value: 'Access Information Center'},
-    {label: 'Activity Monitor', value: 'Activity Monitor'},
-    {label: 'Password Policy Enforcer', value: 'Password Policy Enforcer'},
-    {label: 'Password Reset', value: 'Password Reset'},
-];
+    ...PRODUCTS.map(product => ({
+        label: product.name,
+        value: product.name,
+    }))
+].sort((a, b) => {
+    // Keep "All products" first
+    if (a.value === '__all__') return -1;
+    if (b.value === '__all__') return 1;
+    return a.label.localeCompare(b.label);
+});
 
-function ProductSelect({value, onChange}) {
+// Helper to get versions for selected products
+// Multi-select dropdown component with checkboxes
+function MultiSelectDropdown({label, options, selectedValues, onChange, placeholder}) {
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const handleToggle = (value) => {
+        let newSelection;
+        if (value === '__all__') {
+            newSelection = [];
+        } else {
+            if (selectedValues.includes(value)) {
+                newSelection = selectedValues.filter(v => v !== value);
+            } else {
+                newSelection = [...selectedValues, value];
+            }
+        }
+        onChange(newSelection);
+    };
+
+    const displayText = selectedValues.length === 0
+        ? placeholder
+        : `${selectedValues.length} selected`;
+
     return (
-        <select
-            aria-label="Filter search by product"
-            value={value}
-            onChange={onChange}
-            className="DocSearch-ProductSelect"
-            style={{
-                height: 36,
-                padding: '0 8px',
-                border: 'none',
-            }}
-        >
-            {PRODUCT_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                    {opt.label}
-                </option>
-            ))}
-        </select>
+        <div className="DocSearch-MultiSelect" ref={dropdownRef} style={{position: 'relative'}}>
+            <button
+                type="button"
+                onClick={() => setIsOpen(!isOpen)}
+                className="DocSearch-MultiSelect-Button"
+                style={{
+                    height: 36,
+                    padding: '0 8px',
+                    border: '1px solid var(--docsearch-muted-color)',
+                    borderRadius: 4,
+                    background: 'var(--docsearch-modal-background)',
+                    color: 'var(--docsearch-text-color)',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 4,
+                    minWidth: 150,
+                }}
+            >
+                <span style={{flex: 1, textAlign: 'left', fontSize: '14px'}}>{displayText}</span>
+                <span style={{fontSize: '10px'}}>▼</span>
+            </button>
+            {isOpen && (
+                <div
+                    className="DocSearch-MultiSelect-Dropdown"
+                    style={{
+                        position: 'absolute',
+                        top: '100%',
+                        left: 0,
+                        marginTop: 4,
+                        background: 'var(--docsearch-modal-background)',
+                        border: '1px solid var(--docsearch-muted-color)',
+                        borderRadius: 4,
+                        boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                        zIndex: 1000,
+                        maxHeight: 300,
+                        overflowY: 'auto',
+                        minWidth: 200,
+                    }}
+                >
+                    {options.map((opt) => {
+                        const isSelected = opt.value === '__all__'
+                            ? selectedValues.length === 0
+                            : selectedValues.includes(opt.value);
+
+                        return (
+                            <label
+                                key={opt.value}
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    padding: '8px 12px',
+                                    cursor: 'pointer',
+                                    fontSize: '14px',
+                                    background: isSelected ? 'var(--docsearch-hit-active-color)' : 'transparent',
+                                }}
+                                onMouseEnter={(e) => {
+                                    if (!isSelected) {
+                                        e.currentTarget.style.background = 'var(--docsearch-hit-background)';
+                                    }
+                                }}
+                                onMouseLeave={(e) => {
+                                    if (!isSelected) {
+                                        e.currentTarget.style.background = 'transparent';
+                                    }
+                                }}
+                            >
+                                <input
+                                    type="checkbox"
+                                    checked={isSelected}
+                                    onChange={() => handleToggle(opt.value)}
+                                    style={{marginRight: 8, cursor: 'pointer'}}
+                                />
+                                {opt.label}
+                            </label>
+                        );
+                    })}
+                </div>
+            )}
+        </div>
     );
 }
 
-function DocSearch({externalUrlRegex, onModalOpen, ...props}) {
-    const navigator = useNavigator({externalUrlRegex});
+function DocSearch({externalUrlRegex, onModalOpen, selectedProducts, ...props}) {
+    const navigator = useNavigator({externalUrlRegex, selectedProducts});
     const searchParameters = useSearchParameters({...props});
     const transformItems = useTransformItems(props);
     const transformSearchClient = useTransformSearchClient();
@@ -213,7 +353,10 @@ function DocSearch({externalUrlRegex, onModalOpen, ...props}) {
         [openModal],
     );
 
-    const resultsFooterComponent = useResultsFooterComponent({closeModal});
+    const resultsFooterComponent = useResultsFooterComponent({
+        closeModal,
+        selectedProducts,
+    });
 
     useDocSearchKeyboardEvents({
         isOpen,
@@ -269,42 +412,84 @@ function DocSearch({externalUrlRegex, onModalOpen, ...props}) {
 export default function SearchBar() {
     const {siteConfig} = useDocusaurusContext();
 
-    const [product, setProduct] = useState(() => {
-        if (typeof window === 'undefined') return '__all__';
-        return localStorage.getItem('docs_product_filter') || '__all__';
+    // Store the current search query to preserve it across filter changes
+    const searchQueryRef = useRef('');
+
+    // Multi-select state for products
+    const [selectedProducts, setSelectedProducts] = useState(() => {
+        if (typeof window === 'undefined') return [];
+        const saved = localStorage.getItem('docs_product_filter');
+        try {
+            return saved ? JSON.parse(saved) : [];
+        } catch {
+            return [];
+        }
     });
 
+    // Generate facetFilters for products
     const productFacetFilters = useMemo(() => {
-        if (!product || product === '__all__') return [];
-        return [`product_name:${product}`];
-    }, [product]);
+        const filters = [];
 
-    const onChangeProduct = (e) => {
-        const next = e.target.value;
-        setProduct(next);
-
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('docs_product_filter', next);
+        // Add product filters (OR logic - any of the selected products)
+        if (selectedProducts.length > 0) {
+            const productFilters = selectedProducts.map(p => `product_name:${p}`);
+            filters.push(productFilters); // Array within array = OR logic
         }
 
-        // Trigger DocSearch to refresh results without closing the modal:
-        // Find the modal's input and dispatch an input event with the same value.
-        setTimeout(() => {
+        return filters;
+    }, [selectedProducts]);
+
+    // Keep track of the search input value
+    useEffect(() => {
+        const interval = setInterval(() => {
             const input =
                 document.querySelector('.DocSearch-Input') ||
                 document.querySelector('input[type="search"]');
-
             if (input) {
-                const value = input.value;
-                // Re-set same value and dispatch input event to retrigger search
-                input.value = value;
-                input.dispatchEvent(new Event('input', {bubbles: true}));
+                searchQueryRef.current = input.value;
             }
-        }, 0);
-    };
+        }, 100);
 
+        return () => clearInterval(interval);
+    }, []);
 
-    // This is where we will portal the <select> into the modal DOM.
+    // Helper to refresh search - preserve query and wait for user action
+    const refreshSearch = useCallback(() => {
+        const input =
+            document.querySelector('.DocSearch-Input') ||
+            document.querySelector('input[type="search"]');
+
+        if (input && input.value) {
+            searchQueryRef.current = input.value;
+
+            // Try multiple approaches to trigger search
+            const query = input.value;
+
+            // Approach 1: Simulate typing by adding/removing character
+            setTimeout(() => {
+                if (input) {
+                    input.value = query + ' ';
+                    input.dispatchEvent(new Event('input', {bubbles: true}));
+
+                    setTimeout(() => {
+                        input.value = query;
+                        input.dispatchEvent(new Event('input', {bubbles: true}));
+                        input.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+                    }, 50);
+                }
+            }, 50);
+        }
+    }, []);
+
+    const onChangeProducts = useCallback((newProducts) => {
+        setSelectedProducts(newProducts);
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('docs_product_filter', JSON.stringify(newProducts));
+        }
+        // Don't auto-refresh - let user retype or press enter
+    }, []);
+
+    // This is where we will portal the filters into the modal DOM.
     const [modalHeaderEl, setModalHeaderEl] = useState(null);
 
     const onModalOpen = useCallback(() => {
@@ -318,7 +503,7 @@ export default function SearchBar() {
         setModalHeaderEl(el || null);
     }, []);
 
-    // When modalHeaderEl exists, insert select BEFORE the form input if possible.
+    // When modalHeaderEl exists, insert filters BEFORE the form input if possible.
     // We target .DocSearch-Form when present, otherwise the container itself.
     const portalTarget = useMemo(() => {
         if (!modalHeaderEl) return null;
@@ -328,11 +513,16 @@ export default function SearchBar() {
         );
     }, [modalHeaderEl]);
 
+    // Disable contextualSearch when products are selected to allow cross-product searching
+    const contextualSearch = selectedProducts.length === 0;
+
     return (
         <>
             <DocSearch
                 {...siteConfig.themeConfig.algolia}
+                contextualSearch={contextualSearch}
                 productFacetFilters={productFacetFilters}
+                selectedProducts={selectedProducts}
                 onModalOpen={onModalOpen}
             />
 
@@ -347,7 +537,13 @@ export default function SearchBar() {
                             marginRight: 8,
                         }}
                     >
-                        <ProductSelect value={product} onChange={onChangeProduct}/>
+                        <MultiSelectDropdown
+                            label="Products"
+                            options={PRODUCT_OPTIONS}
+                            selectedValues={selectedProducts}
+                            onChange={onChangeProducts}
+                            placeholder="All products"
+                        />
                     </div>,
                     portalTarget,
                 )}
