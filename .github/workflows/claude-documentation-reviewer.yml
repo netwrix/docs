@@ -133,7 +133,7 @@ jobs:
           import sys
 
           FOOTER = (
-              "\n---\n\n"
+              "\n\n---\n\n"
               "To apply suggested fixes to the updated documentation, individually or in bulk, comment `@claude`"
               " on this PR followed by your instructions (`@claude fix all issues`"
               " or `@claude fix all linting issues` or `@claude fix only the spelling errors`).\n\n"
