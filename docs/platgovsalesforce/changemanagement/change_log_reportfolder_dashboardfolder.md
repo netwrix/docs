@@ -17,7 +17,7 @@ The Change Log is organized into two main panels:
 | Customization Created By / Modified By | Users who created/last modified the customization record |
 | Customization | Link to the specific folder customization record |
 | Metadata Type | Indicates "ReportFolder" or "DashboardFolder" |
-| Reason | Explanation for the change (e.g., "Manual Update on Package") |
+| Reason | Explanation for the change (for example, "Manual Update on Package") |
 | Package | The package where the change was logged |
 | Related Change Request | Reference to the associated Change Request (if any) |
 | Compliant Indicator | Compliance status according to the active policy |
@@ -30,7 +30,7 @@ The Change Log is organized into two main panels:
 | Field | Description |
 |-------|-------------|
 | Change Type | Type of operation (Added, Removed, Access Changed) |
-| Old Access Level / New Access Level | Previous and new access levels (e.g., View, Edit, Manage) |
+| Old Access Level / New Access Level | Previous and new access levels (for example, View, Edit, or Manage) |
 | Folder Access User | Target user who was granted or revoked access |
 | Parent Group | Public Group through which access was granted (if applicable) |
 | Parent Role | Role through which access was granted (if applicable) |

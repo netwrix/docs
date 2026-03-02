@@ -13,7 +13,7 @@ Clean up involves some or all of the following steps:
     - Completely unused
     - Useless or inefficient
 
-2. Identify and fix improperly set-up customizations (eg. no help text, inactive owner).
+2. Identify and fix improperly set-up customizations (for example, no help text, inactive owner).
 3. Describe each object and its clean up task (under the improvements tab.)
 4. Assign change/approval policy.
 
@@ -66,7 +66,7 @@ years or that are not used by any other customization.
 ### Analyze and Organize the Results
 
 Once you have selected the customizations that you want to clean up and have created a New View, you
-can analyze the results. The results can then be sorted and filtered and are required to group and
+can analyze the results. You can then sort and filter the results and are required to group and
 manage the output for subsequent steps. You may chose to clean up based on Salesforce type and
 record type (among other options).
 
@@ -110,5 +110,5 @@ edited like any other Salesforce data directly in a Platform Governance for Sale
 ### Run the Scanner
 
 At the end of the process of updating the customization record(s), the account should be scanned to
-update the documentation for the customization changes. It can be re-scanned for just the specific
+update the documentation for the customization changes. It can be re-scanned for the specific
 record type that was changed.
