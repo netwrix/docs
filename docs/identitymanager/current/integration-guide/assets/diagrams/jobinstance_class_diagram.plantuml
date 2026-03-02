@@ -1,0 +1,34 @@
+@startuml component
+package "JobInstance" {
+	class JobInstance {
+		CancelRequested : Boolean
+		CurrentLaunch : Int32
+		EndDate : DateTime
+		LastProgressUpdate : DateTime
+		Retry : Boolean
+		StartDate : DateTime
+		State : Int16
+		TotalLaunch : Int32
+		--
+		Job : Job
+		TaskInstance : TaskInstance[]
+		User : Resource
+	}
+}
+package "Job" {
+	class Job {
+	}
+}
+package "TaskInstance" {
+	class TaskInstance {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+JobInstance "0..*" --  "1"Job
+JobInstance "0..1" --  "0..*"TaskInstance
+JobInstance "0..*" --  "0..1"Resource
+hide empty members
+@enduml

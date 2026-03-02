@@ -68,7 +68,7 @@ window opens. Enter a valid email address and click **OK**.
 ![Testing your settings window](/images/accessinformationcenter/12.0/admin/configuration/notificationstestconfirm.webp)
 
 **Step 6 –** If the SMTP settings are configured correctly, you receive a successful message. Click
-**OK** to close the Testing your settings window. The test recipient should have recieved a test
+**OK** to close the Testing your settings window. The test recipient should have received a test
 email.
 
 **Step 7 –** Click **Save**. Then click **OK** to confirm.

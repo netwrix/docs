@@ -9,7 +9,7 @@ sidebar_position: 90
 The Enable Persistent Time Stamp policy must be enabled on the target servers to track the
 shutdowns.
 
-## Manual Configuation
+## Manual Configuration
 
 This section explains how to configure policies locally with the Local Group Policy Editor snap-in.
 

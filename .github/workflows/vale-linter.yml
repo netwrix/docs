@@ -1,0 +1,50 @@
+name: Vale Linter
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+    branches-ignore:
+      - main
+    paths:
+      - '**.md'
+
+jobs:
+  vale:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Get changed markdown files
+        id: changed-files
+        run: |
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          CHANGED_MD_FILES=$(git diff --name-only --diff-filter=ACMRT $BASE_SHA $HEAD_SHA | grep '\.md$' || true)
+          if [ -z "$CHANGED_MD_FILES" ]; then
+            echo "No markdown files changed."
+            echo "files=" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changed markdown files:"
+            echo "$CHANGED_MD_FILES"
+            FILES_JSON=$(echo "$CHANGED_MD_FILES" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+            echo "files=$FILES_JSON" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run Vale
+        if: steps.changed-files.outputs.files != ''
+        uses: errata-ai/vale-action@v2
+        with:
+          files: ${{ steps.changed-files.outputs.files }}
+          reporter: github-pr-review
+          fail_on_error: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

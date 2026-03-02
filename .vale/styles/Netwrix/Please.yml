@@ -1,0 +1,7 @@
+extends: existence
+message: "Avoid 'please' in instructions. Be direct."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - '\bplease\b'

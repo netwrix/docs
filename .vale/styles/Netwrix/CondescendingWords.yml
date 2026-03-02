@@ -1,0 +1,11 @@
+extends: existence
+message: "Avoid '%s'. Remove it or rewrite without language that minimizes task difficulty."
+level: suggestion
+ignorecase: true
+nonword: true
+tokens:
+  - '\bsimply\b'
+  - '\beasily\b'
+  - '\bjust\b'
+  - '\bbasically\b'
+  - '\bobviously\b'

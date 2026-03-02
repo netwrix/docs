@@ -1,0 +1,142 @@
+---
+title: "OptimizeDisplayTable"
+description: "Optimizes all elements found in the given displayTable."
+sidebar_position: 1
+---
+
+This scaffolding optimizes the given display table by replacing its tiles navigation properties by scalar (pre-computed, via expressions) properties. This ultimately improves the performances of the SQL queries used to fetch the data displayed in the corresponding table.
+
+In order to optimize the display table, this scaffolding will create the following elements if they don't exist.
+
+- An [Entity Property](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype#child-element-property) for each tile item that uses a navigation binding. This will be used to hold the computed expression.
+- An [Entity Property Expression](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitypropertyexpression) to evaluate the binding expression used by the optimizable tile item.
+
+Then, the scaffolding will link the display table tile elements to the newly created scalar properties.
+
+This scaffolding has a downside which is that the displayed data is less dynamic than a normal display table, since it requires computing the expression (via jobs) ahead of time.
+
+
+
+## Examples
+The following example optimized the DisplayTable `Directory_User`
+
+```xml
+  <OptimizeDisplayTable DisplayTableIdentifier="Directory_User" />
+```
+
+
+## Properties
+
+|Property|Details|
+|---|---|
+| DisplayTableIdentifier required | **Type:** String **Description:** The identifier of the display table to optimize |
+
+
+
+## Generated XML
+
+Our example generates the following configuration:
+
+```xml
+<EntityType Identifier="Directory_Organization" DisplayName_L1="Department" DisplayName_L2="Département">
+  <Property Identifier="Op_Directory_Users" DisplayName_L1="Op_Directory_Users" Type="ForeignKey" />
+</EntityType>
+<EntityType Identifier="Directory_Site" DisplayName_L1="Site" DisplayName_L2="Site">
+  <Property Identifier="Op_Directory_Users" DisplayName_L1="Op_Directory_Users" Type="ForeignKey" />
+</EntityType>
+<EntityType Identifier="Directory_Subsidiary" DisplayName_L1="Subsidiary" DisplayName_L2="Filiale">
+  <Property Identifier="Op_Directory_Users" DisplayName_L1="Op_Directory_Users" Type="ForeignKey" />
+</EntityType>
+<EntityType Identifier="Directory_Title" DisplayName_L1="Title" DisplayName_L2="Fonction">
+  <Property Identifier="Op_Directory_Users" DisplayName_L1="Op_Directory_Users" Type="ForeignKey" />
+</EntityType>
+<EntityType Identifier="Directory_User" DisplayName_L1="User" DisplayName_L2="Collaborateur">
+  <Property Identifier="Op_MainRecord_FirstName" DisplayName_L1="Op_MainRecord_FirstName" TargetColumnIndex="90" Type="String" />
+  <Property Identifier="Op_MainRecord_LastName" DisplayName_L1="Op_MainRecord_LastName" TargetColumnIndex="96" Type="String" />
+  <Property Identifier="Op_MainRecord_MobileNumber" DisplayName_L1="Op_MainRecord_MobileNumber" TargetColumnIndex="92" Type="String" />
+  <Property Identifier="Op_MainRecord_Organization" DisplayName_L1="Op_MainRecord_Organization" TargetColumnIndex="130" Type="ForeignKey" />
+  <Property Identifier="Op_MainRecord_Organization_DisplayName" DisplayName_L1="Op_MainRecord_Organization_DisplayName" Type="String" />
+  <Property Identifier="Op_MainRecord_Organization_DisplayName_enUS" DisplayName_L1="Op_MainRecord_Organization_DisplayName_enUS" Language="1" NeutralProperty="Op_MainRecord_Organization_DisplayName" TargetColumnIndex="86" Type="String" />
+  <Property Identifier="Op_MainRecord_Organization_DisplayName_frFR" DisplayName_L1="Op_MainRecord_Organization_DisplayName_frFR" Language="2" NeutralProperty="Op_MainRecord_Organization_DisplayName" TargetColumnIndex="87" Type="String" />
+  <Property Identifier="Op_MainRecord_PhoneNumber" DisplayName_L1="Op_MainRecord_PhoneNumber" TargetColumnIndex="91" Type="String" />
+  <Property Identifier="Op_MainRecord_Site" DisplayName_L1="Op_MainRecord_Site" TargetColumnIndex="131" Type="ForeignKey" />
+  <Property Identifier="Op_MainRecord_Site_DisplayName" DisplayName_L1="Op_MainRecord_Site_DisplayName" Type="String" />
+  <Property Identifier="Op_MainRecord_Site_DisplayName_enUS" DisplayName_L1="Op_MainRecord_Site_DisplayName_enUS" Language="1" NeutralProperty="Op_MainRecord_Site_DisplayName" TargetColumnIndex="88" Type="String" />
+  <Property Identifier="Op_MainRecord_Site_DisplayName_frFR" DisplayName_L1="Op_MainRecord_Site_DisplayName_frFR" Language="2" NeutralProperty="Op_MainRecord_Site_DisplayName" TargetColumnIndex="89" Type="String" />
+  <Property Identifier="Op_MainRecord_Subsidiary" DisplayName_L1="Op_MainRecord_Subsidiary" TargetColumnIndex="132" Type="ForeignKey" />
+  <Property Identifier="Op_MainRecord_Suspended" DisplayName_L1="Op_MainRecord_Suspended" TargetColumnIndex="93" Type="Bool" />
+  <Property Identifier="Op_MainRecord_Title" DisplayName_L1="Op_MainRecord_Title" TargetColumnIndex="133" Type="ForeignKey" />
+  <Property Identifier="Op_MainRecord_Title_DisplayName" DisplayName_L1="Op_MainRecord_Title_DisplayName" Type="String" />
+  <Property Identifier="Op_MainRecord_Title_DisplayName_enUS" DisplayName_L1="Op_MainRecord_Title_DisplayName_enUS" Language="1" NeutralProperty="Op_MainRecord_Title_DisplayName" TargetColumnIndex="83" Type="String" />
+  <Property Identifier="Op_MainRecord_Title_DisplayName_frFR" DisplayName_L1="Op_MainRecord_Title_DisplayName_frFR" Language="2" NeutralProperty="Op_MainRecord_Title_DisplayName" TargetColumnIndex="84" Type="String" />
+  <Property Identifier="Op_MainRecord_UserType" DisplayName_L1="Op_MainRecord_UserType" TargetColumnIndex="134" Type="ForeignKey" />
+  <Property Identifier="Op_MainRecord_UserType_Category_Id" DisplayName_L1="Op_MainRecord_UserType_Category_Id" TargetColumnIndex="94" Type="Int64" />
+  <Property Identifier="Op_MainRecord_VIP" DisplayName_L1="Op_MainRecord_VIP" TargetColumnIndex="95" Type="Bool" />
+</EntityType>
+<EntityType Identifier="Directory_UserType" DisplayName_L1="User Type" DisplayName_L2="Type de collaborateur">
+  <Property Identifier="Op_Directory_Users" DisplayName_L1="Op_Directory_Users" Type="ForeignKey" />
+</EntityType>
+<EntityAssociation Identifier="Directory_User_Op_MainRecord_Organization" IsProperty2Collection="true" Property1="Directory_User:Op_MainRecord_Organization" Property2="Directory_Organization:Op_Directory_Users" />
+<EntityAssociation Identifier="Directory_User_Op_MainRecord_Site" IsProperty2Collection="true" Property1="Directory_User:Op_MainRecord_Site" Property2="Directory_Site:Op_Directory_Users" />
+<EntityAssociation Identifier="Directory_User_Op_MainRecord_Subsidiary" IsProperty2Collection="true" Property1="Directory_User:Op_MainRecord_Subsidiary" Property2="Directory_Subsidiary:Op_Directory_Users" />
+<EntityAssociation Identifier="Directory_User_Op_MainRecord_Title" IsProperty2Collection="true" Property1="Directory_User:Op_MainRecord_Title" Property2="Directory_Title:Op_Directory_Users" />
+<EntityAssociation Identifier="Directory_User_Op_MainRecord_UserType" IsProperty2Collection="true" Property1="Directory_User:Op_MainRecord_UserType" Property2="Directory_UserType:Op_Directory_Users" />
+<EntityPropertyExpression Identifier="Op_MainRecord_FirstName_Expr" Binding="Directory_User:MainRecord.FirstName" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_FirstName" />
+<EntityPropertyExpression Identifier="Op_MainRecord_LastName_Expr" Binding="Directory_User:MainRecord.LastName" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_LastName" />
+<EntityPropertyExpression Identifier="Op_MainRecord_MobileNumber_Expr" Binding="Directory_User:MainRecord.MobileNumber" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_MobileNumber" />
+<EntityPropertyExpression Identifier="Op_MainRecord_Organization_DisplayName_enUS_Expr" Binding="Directory_User:MainRecord.Organization.DisplayName_enUS" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_Organization_DisplayName_enUS" />
+<EntityPropertyExpression Identifier="Op_MainRecord_Organization_DisplayName_frFR_Expr" Binding="Directory_User:MainRecord.Organization.DisplayName_frFR" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_Organization_DisplayName_frFR" />
+<EntityPropertyExpression Identifier="Op_MainRecord_Organization_Expr" Binding="Directory_User:MainRecord.Organization.Id" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_Organization" />
+<EntityPropertyExpression Identifier="Op_MainRecord_PhoneNumber_Expr" Binding="Directory_User:MainRecord.PhoneNumber" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_PhoneNumber" />
+<EntityPropertyExpression Identifier="Op_MainRecord_Site_DisplayName_enUS_Expr" Binding="Directory_User:MainRecord.Site.DisplayName_enUS" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_Site_DisplayName_enUS" />
+<EntityPropertyExpression Identifier="Op_MainRecord_Site_DisplayName_frFR_Expr" Binding="Directory_User:MainRecord.Site.DisplayName_frFR" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_Site_DisplayName_frFR" />
+<EntityPropertyExpression Identifier="Op_MainRecord_Site_Expr" Binding="Directory_User:MainRecord.Site.Id" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_Site" />
+<EntityPropertyExpression Identifier="Op_MainRecord_Subsidiary_Expr" Binding="Directory_User:MainRecord.Subsidiary.Id" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_Subsidiary" />
+<EntityPropertyExpression Identifier="Op_MainRecord_Suspended_Expr" Binding="Directory_User:MainRecord.Suspended" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_Suspended" />
+<EntityPropertyExpression Identifier="Op_MainRecord_Title_DisplayName_enUS_Expr" Binding="Directory_User:MainRecord.Title.DisplayName_enUS" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_Title_DisplayName_enUS" />
+<EntityPropertyExpression Identifier="Op_MainRecord_Title_DisplayName_frFR_Expr" Binding="Directory_User:MainRecord.Title.DisplayName_frFR" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_Title_DisplayName_frFR" />
+<EntityPropertyExpression Identifier="Op_MainRecord_Title_Expr" Binding="Directory_User:MainRecord.Title.Id" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_Title" />
+<EntityPropertyExpression Identifier="Op_MainRecord_UserType_Category_Id_Expr" Binding="Directory_User:MainRecord.UserType.Category.Id" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_UserType_Category_Id" />
+<EntityPropertyExpression Identifier="Op_MainRecord_UserType_Expr" Binding="Directory_User:MainRecord.UserType.Id" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_UserType" />
+<EntityPropertyExpression Identifier="Op_MainRecord_VIP_Expr" Binding="Directory_User:MainRecord.VIP" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_VIP" />
+<DisplayEntityType Identifier="Directory_Organization" Color="#95c18b" IconCode="Suitcase" PluralDisplayName_L1="Departments" PluralDisplayName_L2="Départements">
+  <Property Identifier="Op_Directory_Users" IsHidden="true" />
+</DisplayEntityType>
+<DisplayEntityType Identifier="Directory_Site" AutocompleteBinding="Directory_Site:DisplayName" Color="#95c18b" IconCode="MapPin" PluralDisplayName_L1="Sites" PluralDisplayName_L2="Sites">
+  <Property Identifier="Op_Directory_Users" IsHidden="true" />
+</DisplayEntityType>
+<DisplayEntityType Identifier="Directory_Subsidiary" Color="#95c18b" IconCode="Suitcase" PluralDisplayName_L1="Subsidiaries" PluralDisplayName_L2="Filiales">
+  <Property Identifier="Op_Directory_Users" IsHidden="true" />
+</DisplayEntityType>
+<DisplayEntityType Identifier="Directory_Title" AutocompleteBinding="Directory_Title:Identifier" Color="#95c18b" IconCode="Suitcase" MinSearchLength="5" PluralDisplayName_L1="Titles" PluralDisplayName_L2="Fonctions">
+  <Property Identifier="Op_Directory_Users" IsHidden="true" />
+</DisplayEntityType>
+<DisplayEntityType Identifier="Directory_User" Color="#79C3D2" D0IsActive="true" D1IsActive="true" D2IsActive="true" D3IsActive="true" D4IsActive="true" D5IsActive="true" D6IsActive="true" D7IsActive="true" IconCode="People" PluralDisplayName_L1="Users" PluralDisplayName_L2="Collaborateurs" Priority="0">
+  <Property Identifier="Op_MainRecord_FirstName" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_LastName" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_MobileNumber" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Organization" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Organization_DisplayName" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Organization_DisplayName_enUS" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Organization_DisplayName_frFR" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_PhoneNumber" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Site" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Site_DisplayName" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Site_DisplayName_enUS" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Site_DisplayName_frFR" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Subsidiary" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Suspended" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Title" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Title_DisplayName" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Title_DisplayName_enUS" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_Title_DisplayName_frFR" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_UserType" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_UserType_Category_Id" IsHidden="true" />
+  <Property Identifier="Op_MainRecord_VIP" IsHidden="true" />
+</DisplayEntityType>
+<DisplayEntityType Identifier="Directory_UserType" Color="#95c18b" PluralDisplayName_L1="User Types" PluralDisplayName_L2="Types de collaborateurs">
+  <Property Identifier="Op_Directory_Users" IsHidden="true" />
+</DisplayEntityType>
+<Indicator Binding="MainRecord.Suspended" ComparisonOperator="Equal" EntityType="Directory_User" Order="3" />
+
+```

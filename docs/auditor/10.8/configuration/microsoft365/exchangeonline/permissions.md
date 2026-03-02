@@ -145,7 +145,7 @@ Finally, run the following command to end the session:
 Disconnect-ExchangeOnline -Confirm:$false
 ```
 
-To automate the process described above, you can create a a script comprising the corresponding
+To automate the process described above, you can create a script comprising the corresponding
 commands and schedule its launch.
 
 ## Non-owner Mailbox Access Audit: Manual Configuration

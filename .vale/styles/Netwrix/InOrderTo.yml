@@ -1,0 +1,6 @@
+extends: substitution
+message: "Use 'to' instead of '%s'."
+level: warning
+ignorecase: true
+swap:
+  'in order to': 'to'

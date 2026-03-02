@@ -54,15 +54,15 @@ Create a risk by proceeding as follows:
 
 1. On the home page in the **Configuration** section, click on **Risks**.
 
-    ![Home Page - Risks](/images/identitymanager/saas/user-guide/optimize/risk-management/home_risks_v602.webp)
+    ![Home Page - Risks](/images/identitymanager/user-guide/optimize/risk-management/home_risks_v602.webp)
 
 2. On the risks page, click on the addition button at the top right corner.
 
-    ![Addition Icon](/images/identitymanager/saas/user-guide/set-up/categorization/classification/iconadd_v602.svg)
+    ![Addition Icon](/images/identitymanager/user-guide/set-up/categorization/classification/iconadd_v602.svg)
 
 3. Fill in the fields.
 
-    ![New Risk](/images/identitymanager/saas/user-guide/optimize/risk-management/riskmanagement_newrisk_v602.webp)
+    ![New Risk](/images/identitymanager/user-guide/optimize/risk-management/riskmanagement_newrisk_v602.webp)
 
     - `Identifier`: must be unique among risks and without any whitespace.
     - `Name`: will be displayed in the UI to identify the risk.
@@ -90,7 +90,7 @@ Create a risk by proceeding as follows:
     [Reconcile a Role](/docs/identitymanager/6.2/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/index.md)
     topic for additional information.
 
-    ![Risk Icon](/images/identitymanager/saas/user-guide/optimize/risk-management/riskmanagement_workflowstate_v523.webp)
+    ![Risk Icon](/images/identitymanager/user-guide/optimize/risk-management/riskmanagement_workflowstate_v523.webp)
 
     ### Write risk rules
 
@@ -125,7 +125,7 @@ Create a risk by proceeding as follows:
 
     > The group `DL-INTERNET-Restricted` in our example.
 
-    ![Risk Item Example](/images/identitymanager/saas/user-guide/optimize/risk-management/riskmanagement_newriskitem_v602.webp)
+    ![Risk Item Example](/images/identitymanager/user-guide/optimize/risk-management/riskmanagement_newriskitem_v602.webp)
 
     This final value is an entitlement, linked to the owner identity through the navigation property
     and the ownership relationship.
@@ -149,9 +149,9 @@ Create a risk by proceeding as follows:
 After creating at least one risk and computing risk scores, identified risks are listed on the
 **Identified Risks** screen, accessible from the home page in the **Administration** section.
 
-![Home Page - Identified Risks](/images/identitymanager/saas/user-guide/optimize/risk-management/home_identifiedrisks_v602.webp)
+![Home Page - Identified Risks](/images/identitymanager/user-guide/optimize/risk-management/home_identifiedrisks_v602.webp)
 
-![Identified Risks](/images/identitymanager/saas/user-guide/optimize/risk-management/riskmanagement_identifiedrisks_v522.webp)
+![Identified Risks](/images/identitymanager/user-guide/optimize/risk-management/riskmanagement_identifiedrisks_v522.webp)
 
 For a given identity in the list, user information can be viewed and accessed by clicking
 respectively on the eye and arrow buttons on the right-hand side.

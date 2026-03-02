@@ -1,37 +1,39 @@
 ---
-title: "Export Object Attachment Records"
-description: "Export Object Attachment Records"
+title: "Export Attachment Records"
+description: "Export Attachment Records"
 sidebar_position: 60
 ---
 
-# Export Object Attachment Records
+# Export Attachment Records
 
 When an [Environment Comparison](/docs/platgovsalesforce/tools/environment_comparison.md) is run, or [Object](/docs/platgovsalesforce/tools/export_objects.md),
 [Profile](/docs/platgovsalesforce/tools/export_profiles.md) or [User](/docs/platgovsalesforce/tools/export_profiles.md) information is exported, an **Export
-Object Attachment** Record is created for the export. When an export request is completed, you
+Attachment** Record is created for the export. When an export request is completed, you
 receive an email notification your export file is ready. The link in the notification opens the
-**Export Object Attachment** Record in Salesforce. Your download file is available under **Notes &
+**Export Attachment** Record in Salesforce. Your download file is available under **Notes &
 Attachments**.
 
-![Example Export Object Attachment detail](/images/platgovsalesforce/tools/export_object_attach_record.webp)
+![Example Export Attachment detail](/images/platgovsalesforce/tools/export_object_attach_record.webp)
 
-The export history is saved in Salesforce. You can view the list, or add the Export Object
-Attachments tabs to your menu bar. The steps are different depending on if you are using the Lightning app or the Classic view.
+![Example Export Attachment detail](/images/platgovsalesforce/tools/export_object_attach_record_2.webp)
+
+The export history is saved in Salesforce. The **Export Attachments** tab appears by default in both Salesforce Lightning and Classic views. If the tab is not visible, you can add it using the following methods:
 
 ## Salesforce Lightning
 
 ### View the List
 
-Enter **Export Object Attachments** in the **Search Salesforce** entry box on the top of your page.
+Enter **Export Attachments** in the **Search Salesforce** entry box on the top of your page.
 
-### Add the **Export Object Attachments** Tab
+### Add the **Export Attachments** Tab (if not visible)
 
-1. Open **Setup** > **Apps** > **App Manager**
-2. Locate **Strongpoint** in the list. From the pull down menu on the right, select **Edit**.
-3. Select **Export Object Attachments** from the **Available Tabs** and add it to the **Selected
-   Tabs**.
+1. Click the pencil icon (⚙️) next to the navigation bar to **Personalize your Nav Bar**.
+2. Click **Add More Items**.
+3. Find **Export Attachments** in the list and add it to your navigation bar.
 
-    ![Add Export Object Attachments tab to your menu bar in Lightning](/images/platgovsalesforce/tools/export_object_attach_record_tab_lightning.webp)
+    ![Personalize Navigation Bar in Lightning](/images/platgovsalesforce/tools/export_object_attach_record_tab_lightning_personalize.webp)
+    
+    ![Add Export Attachments to Navigation Bar](/images/platgovsalesforce/tools/export_object_attach_record_tab_lightning_add_items.webp)
 
 4. Click **Save**.
 
@@ -40,17 +42,17 @@ Enter **Export Object Attachments** in the **Search Salesforce** entry box on th
 ### View the List
 
 1. Click the **+** in the menu bar to open the **All Tabs** list (Salesforce Classic).
-2. Select **Export Object Attachments**.
+2. Select **Export Attachments**.
 
-![Export Object Attachments list](/images/platgovsalesforce/tools/export_object_attach_record_list.webp)
+![Export Attachments list](/images/platgovsalesforce/tools/export_object_attach_record_list.webp)
 
-### Add the **Export Object Attachments** Tab
+### Add the **Export Attachments** Tab (if not visible)
 
 1. Click the **+** in the menu bar to open the **All Tabs** list.
 2. Click **Customize My Tabs**
-3. Select **Export Object Attachments** from the **Available Tabs** and add it to the **Selected
+3. Select **Export Attachments** from the **Available Tabs** and add it to the **Selected
    Tabs**.
 
-    ![Add Export Object Attachments to your menu bar in Classic view](/images/platgovsalesforce/tools/export_object_attach_record_tab_classic.webp)
+    ![Add Export Attachments to your menu bar in Classic view](/images/platgovsalesforce/tools/export_object_attach_record_tab_classic.webp)
 
 4. Click **Save**.

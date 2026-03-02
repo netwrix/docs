@@ -1,0 +1,73 @@
+@startuml component
+package "RoleMapping" {
+	class RoleMapping {
+		ApprovalRequired : Boolean
+		ApprovalWorkflowType : Int32
+		CategoryDisplayNameBinding : Int64
+		CategoryDisplayNameExpression : String
+		CategoryIdentifierBinding : Int64
+		CategoryIdentifierExpression : String
+		CommentActivationOnApproveInReview : Byte
+		CommentActivationOnDeclineInReview : Byte
+		CommentActivationOnDeleteGapInReconciliation : Byte
+		CommentActivationOnKeepGapInReconciliation : Byte
+		CommentActivationOnRequest : Byte
+		DisplayNameExpression : String
+		HideOnSimplifiedView : Boolean
+		Identifier : String
+		IdentifierExpression : String
+		ImplicitApproval : Byte
+		ParentCategoryIdentifierBinding : Int64
+		ParentCategoryIdentifierExpression : String
+		WhereExpression : String
+		--
+		Category : Category
+		DisplayNameBinding : Binding
+		EntityType : EntityType
+		IdentifierBinding : Binding
+		Policy : Policy
+		Property : EntityProperty
+		ResourceType : ResourceType
+		RolePolicy : Policy
+		Rules : RoleMappingRule[]
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "RoleMappingRule" {
+	class RoleMappingRule {
+	}
+}
+RoleMapping "0..*" --  "0..1"Category
+RoleMapping "0..*" --  "0..1"Binding
+RoleMapping "0..*" --  "1"EntityType
+RoleMapping "0..*" --  "0..1"Binding
+RoleMapping "0..*" --  "1"Policy
+RoleMapping "0..*" --  "1"EntityProperty
+RoleMapping "0..*" --  "1"ResourceType
+RoleMapping "0..*" --  "0..1"Policy
+RoleMapping "1" --  "0..*"RoleMappingRule
+hide empty members
+@enduml

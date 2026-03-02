@@ -31,17 +31,4 @@ To validate data with the DRD:
 2. Select an **Object(s) Type** from the pull-down menu.
 3. Click on a field and validate the data.
 
-![entity_diagram](/images/platgovsalesforce/tools/entity_diagram.webp)
-
-## Customization Quick Search
-
-The Customization Quick Search opens a report with all customizations. From this report, you can add
-filters to find specific customizations that you need to validate the data.
-
-To validate data with the Customization Quick Search:
-
-1. Open **Netwrix Dashboard** > **Reports** > **Customizations** > **All Customizations**
-2. Scroll, **Search** or add **Filter(s)** to locate the customization.
-3. Click on the **Customization** and validate the data.
-
-![custquicksearch](/images/platgovnetsuite/customizations/custquicksearch.webp)
+![entity_diagram](/images/platgovsalesforce/tools/entity_diagram_light.webp)

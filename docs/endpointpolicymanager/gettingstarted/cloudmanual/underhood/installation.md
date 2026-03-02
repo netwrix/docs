@@ -28,7 +28,7 @@ Cloud.
 :::note
 If you always use a proxy, and the Endpoint Policy Manager Cloud client cannot seem to
 contact the Endpoint Policy Manager services, please read this Endpoint Policy Manager KB article:
-[https://www.policypak.com/knowledge-base/client-installation-troubleshooting/i-always-use-a-proxy-and-the-cloud-client-cannot-seem-to-make-contact-with-the-services-see-faq-item-3-above-first-what-else-can-i-try.html](http://www.policypak.com/knowledge-base/client-installation-troubleshooting/i-always-use-a-proxy-and-the-cloud-client-cannot-seem-to-make-contact-with-the-services-see-faq-item-3-above-first-what-else-can-i-try.html).
+[I always use a proxy and the cloud client cannot seem to make contact with the services (see FAQ Item #3 above first.) What else can I try?](/docs/endpointpolicymanager/deliverymethods/cloud/knowledgebase/clienttroubleshooting/proxyservices.md).
 :::
 
 

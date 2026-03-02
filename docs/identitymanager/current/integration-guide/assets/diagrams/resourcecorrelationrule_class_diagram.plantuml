@@ -1,0 +1,38 @@
+@startuml component
+package "ResourceCorrelationRule" {
+	class ResourceCorrelationRule {
+		BaseRule : Int64
+		SourceExpression : String
+		SourceMatchedConfidenceLevel : Int32
+		TargetExpression : String
+		--
+		EntityType : EntityType
+		Policy : Policy
+		ResourceType : ResourceType
+		SourceBinding : Binding
+		TargetBinding : Binding
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+ResourceCorrelationRule "0..*" --  "1"EntityType
+ResourceCorrelationRule "0..*" --  "1"Policy
+ResourceCorrelationRule "0..*" --  "1"ResourceType
+ResourceCorrelationRule "0..*" --  "0..1"Binding
+ResourceCorrelationRule "0..*" --  "0..1"Binding
+hide empty members
+@enduml

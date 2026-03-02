@@ -1,0 +1,7 @@
+extends: existence
+message: "Avoid 'may'. Use 'might' for possibility or 'can' for capability."
+level: suggestion
+ignorecase: false
+nonword: true
+tokens:
+  - '\bmay\b'

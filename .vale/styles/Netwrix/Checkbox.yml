@@ -1,0 +1,6 @@
+extends: substitution
+message: "Use 'checkbox' (one word) instead of '%s'."
+level: warning
+ignorecase: true
+swap:
+  '\bcheck box\b': 'checkbox'

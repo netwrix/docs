@@ -14,22 +14,41 @@ Governor Limits. You receive an email with a link to the
 [Export Object Attachment](/docs/platgovsalesforce/tools/export_object_attachment_records.md) record, where you can download your
 file.
 
-1. Open **Netwrix Dashboard** > **Tools** > **Export Objects**
-2. Open the **Users** tab.
+Open **Netwrix Dashboard** > **Tools** > **Export Objects**
+Open the **Users** tab.
 
     ![export_users](/images/platgovsalesforce/tools/export_users.webp)
 
-3. Scroll through the **Select User to be Exported** or enter all of part .of a user name in the
-   **Filter** field.
-4. Select one or more objects in the scroll box. Use **Shift** or **Ctrl** to select multiple
-   objects.
-5. Click the right arrow to move the items to the **Selected Users** list. To remove an item from
-   the **Selected Users** list, select it and click the left arrow.
-6. Select the **Settings to be exported**.
+**Users**
+
+Search for a user by entering all or part of the name in **Search Users**.
+
+Select one or more users from the Available list and use the arrow buttons to move them to Selected.
+To remove users, select them in the Selected list and use the left arrow to move them back to Available.
+
+![export_users_selection](/images/platgovsalesforce/tools/export_users_selection.webp)
+
+
+**Settings to be Exported**
+
+Click the toggles to activate or inactivate the settings you want to export.
 
     ![export_users_settings](/images/platgovsalesforce/tools/export_users_settings.webp)
 
-7. Click **Download XLS**. The file _UserExport.xls_ is created.
+**Download XLS**
+
+Click **Download XLS** to export your selections. An email is sent with a link to the file
+_User_Export.xls_.
+
+**Download Files**
+
+Click **Download Files** to see a list of generated files. The file does not appear in the list
+until it is complete.
+
+![Download files](/images/platgovsalesforce/tools/export_users_download.webp)
+
+Click on the export name. The Export Attachments tab is opened, showing the attachment detail for
+your file. Click **View file** to download it to your Downloads folder.
 
 #### UserExport.xls File
 

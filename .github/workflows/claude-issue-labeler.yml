@@ -2,7 +2,9 @@ name: Claude Issue Processor
 
 on:
   issues:
-    types: [opened]
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
 
 jobs:
   process-issue:
@@ -29,15 +31,18 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
-            Fetch the full issue body:
-            gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq .body
+            Call the security screening skill:
+            /identify-security-vuln-discussion
 
-            Then call /identify-security-vuln-discussion passing these variables:
+            Context:
             - REPO: ${{ github.repository }}
             - ISSUE_NUMBER: ${{ github.event.issue.number }}
             - ISSUE_TITLE: ${{ github.event.issue.title }}
-            - ISSUE_BODY: the body you fetched above
+            - ISSUE_BODY: Fetch the latest body with: gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq .body
             - ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+
+            Note: This skill checks both the issue body AND all comments for security vulnerabilities.
+            This protects against bypass attempts where someone edits a clean issue to add vulnerability info.
           claude_args: '--allowedTools "Bash(gh:*),Read,Grep,Glob,Skill(identify-security-vuln-discussion)"'
 
       - name: Check if issue is still open
@@ -56,32 +61,39 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
-            Fetch the full issue body (it may have been updated by a previous step):
-            gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq .body
+            Call the code of conduct check skill:
+            /code-of-conduct-check
 
-            Then call /code-of-conduct-check passing these variables:
+            Context:
             - REPO: ${{ github.repository }}
             - ISSUE_NUMBER: ${{ github.event.issue.number }}
             - ISSUE_TITLE: ${{ github.event.issue.title }}
-            - ISSUE_BODY: the body you fetched above
+            - ISSUE_BODY: Fetch the latest body with: gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq .body
             - ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+
+            Note: This skill checks both the issue body AND all comments for code of conduct violations.
+            This ensures community guidelines are enforced across all issue content.
           claude_args: '--allowedTools "Bash(gh:*),Read,Grep,Glob,Skill(code-of-conduct-check)"'
 
       - name: Step 3 — Assign label
-        if: steps.check-state.outputs.issue_state == 'OPEN'
+        # Only run label assignment for issue events (not comments) and only if issue is still open
+        if: steps.check-state.outputs.issue_state == 'OPEN' && github.event_name == 'issues'
         id: assign-label
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
-            Fetch the full issue body (it may have been updated by a previous step):
-            gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq .body
+            Call the label assignment skill:
+            /assign-label
 
-            Then call /assign-label passing these variables:
+            Context:
             - REPO: ${{ github.repository }}
             - ISSUE_NUMBER: ${{ github.event.issue.number }}
             - ISSUE_TITLE: ${{ github.event.issue.title }}
-            - ISSUE_BODY: the body you fetched above
+            - ISSUE_BODY: Fetch the latest body with: gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq .body
             - ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ', ') }}
+
+            Note: The skill should preserve template-assigned labels and add complementary labels.
+            Issue body may have been modified by previous steps.
           claude_args: '--allowedTools "Bash(gh:*),Skill(assign-label)"'

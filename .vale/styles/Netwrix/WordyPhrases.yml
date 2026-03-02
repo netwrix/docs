@@ -1,0 +1,9 @@
+extends: substitution
+message: "Use a concise alternative instead of '%s'."
+level: warning
+ignorecase: true
+swap:
+  '\bprior to\b': 'before'
+  '\bsubsequent to\b': 'after'
+  '\bin the event that\b': 'if'
+  '\bdue to the fact that\b': 'because'

@@ -32,7 +32,7 @@ where you added the custom fields to get the field names. This example maps the 
 Version** and **Salesforce Version Number** fields, using the fields from the **Details** section in
 Jira.
 
-![Identify fields to map](/images/platgovsalesforce/integrations/field_map_id_fields.webp)
+![Identify fields to map](/images/platgovsalesforce/integrations/jiraRebrandFieldsCompleted.webp)
 
 ### Verify Field Creation
 
@@ -76,7 +76,7 @@ Add the fields to the Page Layouts.
 In Jira, update the details for the fields. This example sets the **Strongpoint Version** field to
 **2.2800** and the **Salesforce Version** to **6.1**.
 
-![Update the values](/images/platgovsalesforce/integrations/field_map_set_values.webp)
+![Update the values](/images/platgovsalesforce/integrations/jiraRebrandFieldsCompleted.webp)
 
 ### Access Mapping Configuration
 

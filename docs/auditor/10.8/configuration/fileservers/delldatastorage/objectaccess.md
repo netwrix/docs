@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Configure Audit Object Access Policy
 
-Netwrixrecommends you to avoid linking a GPO to the top level of the domain due to the potential
+Netwrix recommends you to avoid linking a GPO to the top level of the domain due to the potential
 impact. Instead, create a new organization unit for your file servers within your domain and assign
 GPO there. For detailed instructions on how to create a new OU, refer to the following Microsoft
 article:

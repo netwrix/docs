@@ -1,0 +1,25 @@
+@startuml component
+package "TileItem" {
+	class TileItem {
+		AddedMinutes : Int32
+		LineDisplayOrderIndicator : Int32
+		LineNumber : Int32
+		--
+		Binding : Binding
+		OptimizedBinding : Binding
+		Tile : Tile
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "Tile" {
+	class Tile {
+	}
+}
+TileItem "0..*" --  "1"Binding
+TileItem "0..*" --  "0..1"Binding
+TileItem "0..*" --  "1"Tile
+hide empty members
+@enduml

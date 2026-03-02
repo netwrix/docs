@@ -129,7 +129,7 @@ not involved in the changes of this workflow.
 The `RecordSlaveControl` attribute calls here the same form as `RecordUniqueControl`, because it
 copies part of the main record to pre-fill the fields of `RecordUniqueControl`.
 
-![UI Form](/images/identitymanager/saas/integration-guide/workflows/how-to/workflow-update-multi/howto_resourceupdatemulti_form_v603.webp)
+![UI Form](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-multi/howto_resourceupdatemulti_form_v603.webp)
 
 ## Assign the Right Permissions
 
@@ -154,7 +154,7 @@ to make the workflow accessible in the UI.
 Updating an existing resource, this workflow manages one given resource at a time. Hence an
 interesting location for this workflow could be the individual view page of users.
 
-![Workflow Menu Items - User's Page](/images/identitymanager/saas/integration-guide/workflows/how-to/workflow-update-mono/menuitems_userview_v603.webp)
+![Workflow Menu Items - User's Page](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-mono/menuitems_userview_v603.webp)
 
 To create a menu item here for the new workflow, you can add the following XML configuration to the
 existing menu items list:

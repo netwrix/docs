@@ -81,7 +81,7 @@ Oracle Database administration documents:
 - `[CREATE AUDIT POLICY](https://docs.oracle.com/database/121/SQLRF/statements_5001.htm#create-audit-policy)`
 - `[AUDIT POLICY](http://docs.oracle.com/database/121/SQLRF/statements_4008.htm#audit-policy)`
 
-Currently, Netwrix Auditor checks audit settings for Unified Auditing when accomptability is enabled
+Currently, Netwrix Auditor checks audit settings for Unified Auditing when compatibility is enabled
 for `ACTIONS`. If any of your current settings conflict with the audit configuration required for
 Netwrix Auditor, these conflicts will be listed in the Netwrix Auditor System Health event log.
 

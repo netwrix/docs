@@ -36,7 +36,7 @@ button.
 ## Customizing Metrics for Your Organization
 
 Default threshold values for risk levels are set in accordance with recommendations of
-Netwrixindustry experts, as described in the [How Risk Levels Are Estimated ](/docs/auditor/10.8/admin/riskassessment/levels.md) topic. They
+Netwrix industry experts, as described in the [How Risk Levels Are Estimated ](/docs/auditor/10.8/admin/riskassessment/levels.md) topic. They
 can be, however, easily customized to reflect your organization's internal security policies and
 standards. Follow the steps to customize the metrics.
 

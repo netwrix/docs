@@ -60,7 +60,7 @@ performed in any of the following ways:
 
 Remember that in both cases (automatic or manual configuration) you will need to complete the steps
 above to ensure that the user account for accessing REST API is created and the listening port on
-Netwrix Auditor  Server is open for inbound connections.
+Netwrix Auditor Server is open for inbound connections.
 
 ### Nutanix Files
 

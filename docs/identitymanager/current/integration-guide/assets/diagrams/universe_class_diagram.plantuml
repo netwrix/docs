@@ -1,0 +1,29 @@
+@startuml component
+package "Universe" {
+	class Universe {
+		ColumnNamesMode : Byte
+		DisplayName_L1 : String
+		Identifier : String
+		--
+		AssociationInstances : AssociationInstance[]
+		EntityInstances : EntityInstance[]
+		UniverseScaffoldings : Scaffolding[]
+	}
+}
+package "AssociationInstance" {
+	class AssociationInstance {
+	}
+}
+package "EntityInstance" {
+	class EntityInstance {
+	}
+}
+package "Scaffolding" {
+	class Scaffolding {
+	}
+}
+Universe "1" --  "0..*"AssociationInstance
+Universe "1" --  "0..*"EntityInstance
+Universe "0..1" --  "0..*"Scaffolding
+hide empty members
+@enduml
