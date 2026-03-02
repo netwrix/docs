@@ -6,16 +6,8 @@ sidebar_position: 1
 
 # Why Netwrix Password Secure?
 
-Users depend on passwords in their day-to-day business worldwide. Passwords are used constantly and everywhere,
-and they need to be professionally managed. Passwords should be safe, have at least 12 characters, and include uppercase and lowercase characters as well as special characters. In the best case, a separate access
-password should be used for each account. It should be changed regularly. It is hard enough to meet
-this challenge in private settings. In a large corporate environment, adequately managing passwords without the use of a professional password management tool is difficult.
+Passwords are a constant part of daily business worldwide, and they require professional management. A secure password should be at least 12 characters long and include uppercase letters, lowercase letters, and special characters. Ideally, each account uses a unique password that's changed regularly. Meeting these requirements is challenging enough in personal settings — in a large corporate environment, managing passwords adequately without a dedicated tool becomes even harder.
 
 ## Scalability
 
-The scalability of Netwrix Password Secure (NPS) makes it suitable for use in SMEs, large
-companies, and global corporations. The flexibility required for this task is the driving factor
-behind the development to meet the ever-changing requirements of modern and safety-conscious
-companies. NPS is a software solution for companies that want to effectively manage
-security-relevant data such as passwords, documents, or certificates at a very high encryption
-level.
+Netwrix Password Secure (NPS) scales to fit small and medium-sized businesses, large enterprises, and global corporations. This flexibility drives its development, allowing it to meet the ever-changing requirements of modern, security-conscious organizations. NPS is a software solution that lets companies effectively manage security-relevant data — including passwords, documents, and certificates — at a very high level of encryption.
