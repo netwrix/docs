@@ -436,40 +436,60 @@ function SearchPageContent() {
                             // Sort products alphabetically
                             const sortedProducts = Object.keys(groupedByProduct).sort();
 
-                            return sortedProducts.map((product) => (
-                                <section key={product} style={{marginBottom: '32px'}}>
-                                    <Heading
-                                        as="h2"
-                                        style={{
-                                            fontSize: '22px',
-                                            marginBottom: '16px',
-                                            paddingBottom: '8px',
-                                            borderBottom: '2px solid var(--ifm-color-primary)',
-                                            color: 'var(--ifm-color-primary)',
-                                        }}
-                                    >
-                                        {product} ({groupedByProduct[product].length} results)
-                                    </Heading>
+                            // Global counter for numbering results across all products
+                            let resultNumber = 0;
 
-                                    {groupedByProduct[product].map(({title, url, summary, breadcrumbs}, i) => (
-                                        <article
-                                            key={i}
+                            return sortedProducts.map((product) => {
+                                const productResults = groupedByProduct[product];
+                                const startNum = resultNumber + 1;
+                                const endNum = resultNumber + productResults.length;
+                                const totalForProduct = productResults.length;
+
+                                return (
+                                    <section key={product} style={{marginBottom: '32px'}}>
+                                        <Heading
+                                            as="h2"
                                             style={{
+                                                fontSize: '22px',
                                                 marginBottom: '16px',
-                                                paddingBottom: '12px',
-                                                borderBottom: '1px solid var(--ifm-color-emphasis-200)',
+                                                paddingBottom: '8px',
+                                                borderBottom: '2px solid var(--ifm-color-primary)',
+                                                color: 'var(--ifm-color-primary)',
                                             }}
                                         >
-                                            <Heading
-                                                as="h3"
+                                            {product} (showing {startNum}-{endNum} of {totalForProduct} results)
+                                        </Heading>
+
+                                    {productResults.map(({title, url, summary, breadcrumbs}, i) => {
+                                        resultNumber++;
+                                        return (
+                                            <article
+                                                key={i}
                                                 style={{
-                                                    fontSize: '18px',
-                                                    marginBottom: '8px',
-                                                    fontWeight: '600',
+                                                    marginBottom: '16px',
+                                                    paddingBottom: '12px',
+                                                    borderBottom: '1px solid var(--ifm-color-emphasis-200)',
                                                 }}
                                             >
-                                                <Link to={url} dangerouslySetInnerHTML={{__html: title}} />
-                                            </Heading>
+                                                <Heading
+                                                    as="h3"
+                                                    style={{
+                                                        fontSize: '18px',
+                                                        marginBottom: '8px',
+                                                        fontWeight: '600',
+                                                        display: 'flex',
+                                                        gap: '8px',
+                                                    }}
+                                                >
+                                                    <span style={{
+                                                        color: 'var(--ifm-color-emphasis-600)',
+                                                        minWidth: '40px',
+                                                        flexShrink: 0,
+                                                    }}>
+                                                        {resultNumber}.
+                                                    </span>
+                                                    <Link to={url} dangerouslySetInnerHTML={{__html: title}} />
+                                                </Heading>
 
                                             {breadcrumbs.length > 0 && (
                                                 <nav aria-label="breadcrumbs">
@@ -500,9 +520,11 @@ function SearchPageContent() {
                                                 />
                                             )}
                                         </article>
-                                    ))}
+                                        );
+                                    })}
                                 </section>
-                            ));
+                                );
+                            });
                         })()}
                     </main>
                 ) : (
