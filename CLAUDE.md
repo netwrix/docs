@@ -1,3 +1,7 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 # Netwrix Product Documentation — Claude Code Guide
 
 A Docusaurus v3.8.1 site serving documentation for 27+ Netwrix security products across 6 categories, with multi-version support and a centralized configuration system.
@@ -13,9 +17,22 @@ npm run serve          # Serve production build after build
 # Build/run a single product for faster iteration:
 export DOCS_PRODUCT="pingcastle"
 npm run start
+
+# WSL or Docker (polling-based file watcher):
+npm run start-chok
 ```
 
 Available product IDs are defined in `src/config/products.js`.
+
+### KB script commands
+
+```bash
+npm run kb:dry         # Preview KB distribution without writing files
+npm run kb:clean       # Remove all copied KB folders
+
+# Filter to specific products or versions during local dev:
+COPY_KB_PRODUCTS=accessanalyzer COPY_KB_VERSIONS=12.0 npm run start
+```
 
 ## Architecture
 
@@ -23,11 +40,27 @@ Available product IDs are defined in `src/config/products.js`.
 
 All product and version configuration lives here. Never manually edit `docusaurus.config.js` to add products, routes, or plugins — `products.js` auto-generates all of that. Changing a product means changing this file.
 
+Each product entry follows this structure:
+
+```js
+{
+  id: "accessanalyzer",           // URL-safe identifier, matches docs/<id>/ folder
+  name: "Access Analyzer",        // Display name
+  description: "...",
+  path: "docs/accessanalyzer",
+  versions: [
+    { version: "12.0", label: "12.0", isLatest: true },
+    { version: "11.6", label: "11.6", isLatest: false },
+  ],
+  categories: ["Data Security"],  // Must match a title in PRODUCT_CATEGORIES
+}
+```
+
+Single-version (SaaS) products use `version: "current"` and `docs/<product>/` without a version subfolder.
+
 ### Versioned Documentation
 
 Docs live at `docs/<product>/<version>/` (for example, `docs/accessanalyzer/12.0/`). Edits to one version do not propagate to others — update each version that needs the change explicitly.
-
-Single-version (SaaS) products use `docs/<product>/` without a version subfolder.
 
 ### Sidebars
 
@@ -35,7 +68,7 @@ Each product version has a sidebar config in `sidebars/<product>/<version>.js` (
 
 ### KB (Knowledge Base) System
 
-`docs/kb/` is the canonical source for KB articles. The script `scripts/copy-kb-to-versions.mjs` distributes articles into versioned product folders at build time (runs automatically as a pre-build step).
+`docs/kb/` is the canonical source for KB articles. The script `scripts/copy-kb-to-versions.mjs` distributes articles into versioned product folders at build time (runs automatically as a pre-build step). The script uses a lockfile to prevent concurrent runs — if the build hangs after a crash, delete `.kb-copy.lock`.
 
 **Never manually copy KB articles into versioned product folders.** Edit the source in `docs/kb/` and control distribution via `kb_allowlist.json`.
 
@@ -128,9 +161,13 @@ Vale handles pattern-based violations automatically — run it and fix everythin
 
 **Vale linter** — runs on every PR touching `.md` files, posts inline review comments. Does not block merges but issues are visible.
 
-**Doc reviewer** (Claude Opus 4.6) — runs on every PR, reads full files, categorizes issues as "in PR changes" vs "preexisting", and posts inline suggestions reviewers can apply with one click.
+**Doc reviewer** (Claude Sonnet 4.5) — runs on every PR, reads this CLAUDE.md first, then categorizes issues as "in PR changes" vs "preexisting" and posts inline suggestions reviewers can apply with one click.
 
 **Doc fixer** — triggered by an `@claude` comment on a PR. Claude applies fixes and pushes. Fork PRs cannot be pushed to and receive a notice instead.
+
+**Docusaurus developer** — triggered when an issue receives the `AI:docusaurus` label. Claude implements the requested change (JS/TS/CSS/JSON only — not markdown), creates a branch from `dev`, and opens a PR linked to the issue.
+
+**Auto-sync** — `dev` merges to `main` automatically each day at 8 AM PST if the build passes. Production deployment follows automatically.
 
 **Branch workflow** — PRs target `dev`. Merges to `main` trigger production deployment.
 
@@ -139,4 +176,5 @@ Vale handles pattern-based violations automatically — run it and fix everythin
 - Don't add products or routes by editing `docusaurus.config.js` — use `src/config/products.js`
 - Don't copy KB content manually into versioned product folders — it's managed by the KB script
 - Don't skip Vale before submitting — it will catch issues in CI anyway
+- Don't commit directly to `dev` or `main` — if not already on a feature branch, create one from `dev` first
 - Don't target `main` in PRs — use `dev`
