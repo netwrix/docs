@@ -60,6 +60,74 @@ jobs:
           with:
             node-version: '22.x'
 
+        - name: Detect changed products
+          id: detect-changes
+          run: |
+            # Non-PR events always need a full build
+            if [[ "${{ github.event_name }}" != "pull_request" ]]; then
+              echo "build_mode=full" >> $GITHUB_OUTPUT
+              echo "changed_products=" >> $GITHUB_OUTPUT
+              echo "Non-PR event: full build"
+              exit 0
+            fi
+
+            echo "PR #${{ github.event.pull_request.number }}: analysing changed files..."
+
+            # Use the GitHub API -- more reliable than git diff on shallow clones
+            CHANGED_FILES=$(gh api \
+              "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files" \
+              --paginate \
+              --jq '.[].filename' 2>/dev/null) || CHANGED_FILES="API_FAILED"
+
+            if [[ "$CHANGED_FILES" == "API_FAILED" || -z "$CHANGED_FILES" ]]; then
+              echo "Could not determine changed files -- falling back to full build"
+              echo "build_mode=full" >> $GITHUB_OUTPUT
+              echo "changed_products=" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+
+            echo "Changed files:"
+            echo "$CHANGED_FILES"
+
+            # Any of these patterns -> full build required
+            FULL_BUILD_TRIGGERS=(
+              "^docs/kb/"
+              "^docusaurus\.config\.js$"
+              "^src/"
+              "^sidebars/"
+              "^scripts/"
+              "^static/"
+              "^package\.json$"
+              "^package-lock\.json$"
+            )
+
+            for pattern in "${FULL_BUILD_TRIGGERS[@]}"; do
+              if echo "$CHANGED_FILES" | grep -qE "$pattern"; then
+                echo "Full-build trigger matched: $pattern"
+                echo "build_mode=full" >> $GITHUB_OUTPUT
+                echo "changed_products=" >> $GITHUB_OUTPUT
+                exit 0
+              fi
+            done
+
+            # Extract product IDs from docs/<product-id>/... paths
+            CHANGED_PRODUCTS=$(echo "$CHANGED_FILES" \
+              | grep -oE '^docs/([^/]+)/' \
+              | sed 's|^docs/||; s|/$||' \
+              | sort -u \
+              | tr '\n' ',' \
+              | sed 's/,$//')
+
+            if [[ -z "$CHANGED_PRODUCTS" ]]; then
+              echo "No docs or config changes -- skipping build"
+              echo "build_mode=skip" >> $GITHUB_OUTPUT
+              echo "changed_products=" >> $GITHUB_OUTPUT
+            else
+              echo "Selective build for: $CHANGED_PRODUCTS"
+              echo "build_mode=selective" >> $GITHUB_OUTPUT
+              echo "changed_products=$CHANGED_PRODUCTS" >> $GITHUB_OUTPUT
+            fi
+
         - name: Get npm cache directory
           id: npm-cache-dir
           run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
