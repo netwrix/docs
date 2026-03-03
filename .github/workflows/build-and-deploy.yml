@@ -71,16 +71,10 @@ jobs:
 
             echo "Found artifact ID $ARTIFACT_ID -- downloading to skip rebuild"
 
-            # Get the signed download URL from the redirect
-            DOWNLOAD_URL=$(curl -sI               -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}"               "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID/zip"               | grep -i "^location:" | tr -d '' | cut -d' ' -f2)
-
-            if [[ -z "$DOWNLOAD_URL" ]]; then
-              echo "Could not get download URL -- falling back to full build"
-              echo "skip_build=false" >> $GITHUB_OUTPUT
-              exit 0
-            fi
-
-            curl -fsSL "$DOWNLOAD_URL" -o /tmp/build-sha.zip
+            curl -fsSL \
+              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID/zip" \
+              -o /tmp/build-sha.zip
             mkdir -p build
             unzip -q /tmp/build-sha.zip -d build/
             echo "Reused build artifact from dev run -- skipping rebuild"
