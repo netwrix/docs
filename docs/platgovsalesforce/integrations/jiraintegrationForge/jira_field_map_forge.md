@@ -104,8 +104,8 @@ The Jira API names are required to create the mapping record.
 ### Create Mapping Record
 
 1. Open the App Launcher.
-2. Navigate to **CR CustomFields Mapping**. It is added as a tab on the navigation bar. You can
-   click on the down arrow on the tab and add it to your navigation bar.
+2. Navigate to **CR CustomFields Mapping**. It is added as a tab on the navigation bar. You can
+   click the down arrow on the tab and add it to your navigation bar.
 
     ![Launch CR CustomFields Mapping](/images/platgovsalesforce/integrations/field_map_launcher.webp)
 

@@ -108,7 +108,7 @@ To configure Automatic Policy Assignment by Salesforce Type:
 
 1. Navigate to the Policy record.
 2. Go to the Related tab in the Customizations panel.
-3. Click on the "Select Change Level By SF Type" button.
+3. Click the "Select Change Level By SF Type" button.
 
 ![Select Change Level By SF Type](/images/platgovsalesforce/tech_debt/select_change_level_by_sf_type.webp)
 
@@ -121,7 +121,7 @@ Alternatively, you can manually add specific customizations to a policy:
 
 1. Navigate to the Policy record.
 2. Go to the Related tab in the Customizations panel.
-3. Click on the "Add Customization" button.
+3. Click the "Add Customization" button.
 4. Select the customizations you want to apply the policy to.
 
 ![Add Customization](/images/platgovsalesforce/tech_debt/add_customization.webp)

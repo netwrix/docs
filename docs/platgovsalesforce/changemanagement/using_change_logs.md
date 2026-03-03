@@ -10,7 +10,7 @@ Change Logs allow you to see the type of change, who made the change and view th
 the Salesforce record. Change Logs are accessed from the **Change Logs** tab or through
 [Change Enablement Reports](/docs/platgovsalesforce/changemanagement/change_management_reports.md).
 
-1. Click on **Change Logs** tab.
+1. Click **Change Logs** tab.
 2. Change the **Recently Viewed** pinned list to show the types of Change Logs to view. For
    example, **Data Tracking Changes** or **Profile and PermissionSet** changes. The **Details** and
    **Diff Summary** differ slightly depending on the selected **Metadata Type**.
@@ -92,6 +92,6 @@ sign by the number in **Change Log History** header, click **View All** to see t
 
 ### Notes & Attachments
 
-**Notes & Attachments** contains uploaded files. Click on a file name to open it. Click **Upload
+**Notes & Attachments** contains uploaded files. Click a file name to open it. Click **Upload
 Files** to add additional files. If there is a **+** sign by the number in the **Notes &
 Attachments** header, click **View All** to see the complete file list.

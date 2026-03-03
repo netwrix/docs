@@ -44,13 +44,13 @@ and select **New Rule** or **Report Clean Up Rules**.
 
 - **Name** is the assigned name for the **Report Clean Up Rule**.
 - **Description** is the purpose of the rule record. An informative description helps administrators
-  easily maintain and identify rules.
+  maintain and identify rules.
 - **Notify Report Owners Prior to Archive** check to send email to report owners prior to archive.
   Default is checked.
 - **Automatic** check to include the rule in the automated report clean up.
 - **Inactive** check to disable this Report Clean Up Rule.
 
-**Please Note:** The following reports are excluded from clean up:
+The following reports are excluded from clean up:
 
 - Reports in private folders
 - Reports with Change/Approval Policy that requires a Change Record

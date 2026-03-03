@@ -120,7 +120,7 @@ Configure the External Client Apps (new version of connected apps):
 
 1. Log in to your Salesforce org.
 2. Open the Connected App:
-   **Setup** > **Apps** > **External Client Apps** > **Netwrix Pg Jira** (Netwrix Pg Jira is just an example; it doesn't need to have that exact name.)
+   **Setup** > **Apps** > **External Client Apps** > **Netwrix Pg Jira** (Netwrix Pg Jira is an example; it doesn't need to have that exact name.)
 
     ![Open the Strongpoint Connected App](/images/platgovsalesforce/integrations/externalClientAppSearch.webp)
 
@@ -178,7 +178,7 @@ Follow the instructions for Restricting Access to a Project or Setting Groups/Pr
 
     ![Open a project](/images/platgovsalesforce/integrations/jira_restrict_access1.webp)
 
-2. Select **Strongpoint Sf Settings**.
+2. Select **Netwrix Salesforce Settings**.
 3. Select the **Project Visibility Settings** tab.
 4. Enter the name of the project in the **Visibility Settings**. The specified project is the only
    one that is available to the Platform Governance for Salesforce integration. Leave **Visibility
@@ -201,7 +201,7 @@ and a link to this topic.
 Follow the instructions for Restricting Access to a Project or Setting Groups/Profiles Visibility to grant the user appropriate access.
 
 1. Open a Jira project.
-2. Select **Strongpoint Sf Settings**.
+2. Select **Netwrix Salesforce Settings**.
 3. Select the **Profile Visibility Settings** tab. There are two lists:
    **Existing Groups** are all of the current groups in Jira
    **Selected Groups** are groups that can see the Platform Governance for Salesforce Jira
