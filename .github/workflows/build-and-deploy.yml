@@ -158,18 +158,48 @@ jobs:
             key: v1-${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
 
         - name: Install dependencies and build site
+          id: build-site
           run: |
+            BUILD_MODE="${{ steps.detect-changes.outputs.build_mode }}"
+            CHANGED_PRODUCTS="${{ steps.detect-changes.outputs.changed_products }}"
+
+            echo "Build mode:       $BUILD_MODE"
+            echo "Changed products: $CHANGED_PRODUCTS"
+
+            # Install node dependencies (skip if node_modules cache hit)
             if [[ "${{ steps.node-modules-cache.outputs.cache-hit }}" != "true" ]]; then
               npm ci
             else
-              echo "node_modules cache hit — skipping npm ci"
+              echo "node_modules cache hit -- skipping npm ci"
             fi
-            npm run ci
+
+            if [[ "$BUILD_MODE" == "skip" ]]; then
+              echo "No docs or config changes detected. Skipping Docusaurus build."
+              echo "built=false" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+
+            # Run the KB copy pre-build step manually (normally run by npm's preci hook,
+            # but we call npx docusaurus directly for selective builds)
+            node scripts/copy-kb-to-versions.mjs
+
+            if [[ "$BUILD_MODE" == "full" ]]; then
+              echo "Running full build..."
+              NODE_OPTIONS="--max-old-space-size=16384" npx docusaurus build
+            elif [[ "$BUILD_MODE" == "selective" ]]; then
+              IFS=',' read -ra PRODUCTS <<< "$CHANGED_PRODUCTS"
+              for PRODUCT in "${PRODUCTS[@]}"; do
+                echo "Building product: $PRODUCT"
+                DOCS_PRODUCT="$PRODUCT" NODE_OPTIONS="--max-old-space-size=16384" npx docusaurus build
+              done
+            fi
+
+            echo "built=true" >> $GITHUB_OUTPUT
           env:
-            NODE_OPTIONS: "--max-old-space-size=16384"
             NODE_ENV: ${{ needs.determine-environment.outputs.environment }}
 
         - name: Upload artifact for deployment
+          if: steps.build-site.outputs.built == 'true'
           uses: actions/upload-artifact@v4
           with:
             name: build-output
