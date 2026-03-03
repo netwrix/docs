@@ -286,6 +286,10 @@ jobs:
             --expiry $end_date \
             --output tsv)
 
+          # --delete-destination=true is safe here because selective builds
+          # (which produce only a partial build/) are exclusively used for PR validation.
+          # The deploy job never runs on pull_request events, so every deployment
+          # that reaches this step always contains the full site output.
           azcopy sync "./build/" \
             "https://${{ secrets.STORAGE_ACCOUNT_NAME }}.blob.core.windows.net/\$web?$sas_token" \
             --delete-destination=true \
