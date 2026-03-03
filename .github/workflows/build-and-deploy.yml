@@ -75,9 +75,9 @@ jobs:
           with:
             path: |
               .docusaurus
-            key: v2-${{ runner.os }}-docusaurus-${{ hashFiles('src/**', 'docs/**', 'blog/**', 'docusaurus.config.js', 'sidebars.js') }}
+            key: v3-${{ runner.os }}-docusaurus-${{ hashFiles('src/**', 'docusaurus.config.js', 'sidebars/**') }}
             restore-keys: |
-              v2-${{ runner.os }}-docusaurus-
+              v3-${{ runner.os }}-docusaurus-
 
         - name: Cache webpack
           uses: actions/cache@v4
@@ -87,16 +87,20 @@ jobs:
             restore-keys: |
               v2-${{ runner.os }}-webpack-
 
+        - name: Cache node_modules
+          id: node-modules-cache
+          uses: actions/cache@v4
+          with:
+            path: node_modules
+            key: v1-${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
+
         - name: Install dependencies and build site
           run: |
-            npm ci
-
-            if [[ "${{ steps.cache-build.outputs.cache-hit }}" == "true" ]]; then
-              echo "Build cache found, checking if rebuild needed..."
+            if [[ "${{ steps.node-modules-cache.outputs.cache-hit }}" != "true" ]]; then
+              npm ci
             else
-              echo "No build cache found, performing full build..."
+              echo "node_modules cache hit — skipping npm ci"
             fi
-
             npm run ci
           env:
             NODE_OPTIONS: "--max-old-space-size=16384"
