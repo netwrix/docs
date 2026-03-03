@@ -29,8 +29,16 @@ function stripHtmlTagsToText(input) {
         container.innerHTML = input;
         return container.textContent || container.innerText || '';
     }
-    // Fallback for non-DOM environments (SSR): basic tag removal
-    return input.replace(/<[^>]*>/g, '');
+    // Fallback for non-DOM environments (SSR): robust iterative tag removal
+    let previous = input;
+    let current = input.replace(/<[^>]*>/g, '');
+    // Repeat until no further tag-like patterns are found
+    while (current !== previous) {
+        previous = current;
+        current = current.replace(/<[^>]*>/g, '');
+    }
+    // Remove any remaining angle brackets to prevent partial tag injection
+    return current.replace(/[<>]/g, '');
 }
 
 // Generate product options from PRODUCTS config
