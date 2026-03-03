@@ -79,14 +79,6 @@ jobs:
             restore-keys: |
               v3-${{ runner.os }}-docusaurus-
 
-        - name: Cache webpack
-          uses: actions/cache@v4
-          with:
-            path: node_modules/.cache
-            key: v2-${{ runner.os }}-webpack-${{ hashFiles('**/package-lock.json') }}
-            restore-keys: |
-              v2-${{ runner.os }}-webpack-
-
         - name: Cache node_modules
           id: node-modules-cache
           uses: actions/cache@v4
