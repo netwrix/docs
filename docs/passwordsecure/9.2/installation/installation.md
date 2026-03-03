@@ -41,7 +41,7 @@ Netwrix recommends at least three servers:
 
 :::warning
 For production databases, use a fail-safe cluster. Microsoft SQL Server can replicate data to a
-different data center — for example, via WAN. Also dedicate a separate Windows server to each role. Separating roles makes it easier to expand and scale the system later. For smaller
+different data center—for example, via WAN. Also dedicate a separate Windows server to each role. Separating roles makes it easier to expand and scale the system later. For smaller
 installations or test environments, you can install all components on a single server.
 :::
 
@@ -49,25 +49,25 @@ installations or test environments, you can install all components on a single s
 
 #### MSSQL Server
 
-- Port 1433 TCP — incoming communication from the application server
+- Port 1433 TCP—incoming communication from the application server
 
 #### Application server
 
-- Port 443 HTTPS — outgoing connection to the Netwrix Password Secure license server
-- Port 11011 TCP — incoming connections from clients or the IIS web server
-- Port 11014 TCP — backup service (typically doesn't need to be opened)
-- Port 11016 TCP — incoming web services (required only when using the Web Application)
-- Port 11018 TCP — incoming real-time updates
-- Port 1433 TCP — outgoing communication to SQL Server
+- Port 443 HTTPS—outgoing connection to the Netwrix Password Secure license server
+- Port 11011 TCP—incoming connections from clients or the IIS web server
+- Port 11014 TCP—backup service (typically doesn't need to be opened)
+- Port 11016 TCP—incoming web services (required only when using the Web Application)
+- Port 11018 TCP—incoming real-time updates
+- Port 1433 TCP—outgoing communication to SQL Server
 
 #### Web server (Web Application)
 
-- Port 443 HTTPS — incoming access from clients
-- Port 11016 — outgoing communication to the application server
-- Port 11018 — outgoing real-time updates
+- Port 443 HTTPS—incoming access from clients
+- Port 11016—outgoing communication to the application server
+- Port 11018—outgoing real-time updates
 
 #### Client
 
-- Port 11011 TCP — outgoing communication to the application server
-- Port 11018 TCP — outgoing
-- Port 52120 TCP — outgoing communication with the add-on
+- Port 11011 TCP—outgoing communication to the application server
+- Port 11018 TCP—outgoing
+- Port 52120 TCP—outgoing communication with the add-on
