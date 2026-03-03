@@ -81,7 +81,7 @@ On a high level, data collection process for Oracle databases works as follows:
     - To get ‘_Who_’ (initiator) and ‘_When_’ (date and time) information for the detected changes,
       the product uses Oracle events data.
 
-    Netwrix Auditor Server then writes the Activity Records to the audit database (default retention
+    Netwrix Auditor Server then writes the Activity Records to the Audit Database (default retention
     – 180 days) and long-term archive (default retention – 120 months).
 
 5. Users can work with collected data in Netwrix Auditor client UI: run search, view reports, and so
