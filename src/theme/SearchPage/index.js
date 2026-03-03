@@ -29,19 +29,9 @@ function stripHtmlTagsToText(input) {
         container.innerHTML = input;
         return container.textContent || container.innerText || '';
     }
-    // Fallback for non-DOM environments (SSR): robust iterative tag removal
-    // CodeQL: Safe - implements both recommended mitigation strategies:
-    // 1. Iterative replacement loop until no changes occur (see while loop below)
-    // 2. Final removal of ALL angle brackets to prevent any tag fragments (see return statement)
-    let previous = input;
-    let current = input.replace(/<[^>]*>/g, ''); // lgtm[js/incomplete-multi-character-sanitization]
-    // Repeat until no further tag-like patterns are found
-    while (current !== previous) {
-        previous = current;
-        current = current.replace(/<[^>]*>/g, '');
-    }
-    // Remove any remaining angle brackets to prevent partial tag injection
-    return current.replace(/[<>]/g, '');
+    // Fallback for non-DOM environments (SSR): remove all angle brackets to prevent tags
+    // This avoids multi-character tag patterns and ensures no HTML elements can be formed.
+    return input.replace(/[<>]/g, '');
 }
 
 // Generate product options from PRODUCTS config
