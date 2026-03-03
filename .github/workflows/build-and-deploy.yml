@@ -1,4 +1,4 @@
-﻿name: Build and deploy Docusaurus site to Azure Blob Storage
+name: Build and deploy Docusaurus site to Azure Blob Storage
 
 on:
   push:
@@ -54,6 +54,37 @@ jobs:
       steps:
         - name: Check out source code
           uses: actions/checkout@v4
+
+        - name: Check for reusable SHA build artifact
+          id: check-sha-artifact
+          if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+          run: |
+            echo "Looking for build-sha-${{ github.sha }}..."
+
+            ARTIFACT_ID=$(gh api               "repos/${{ github.repository }}/actions/artifacts?name=build-sha-${{ github.sha }}&per_page=1"               --jq '.artifacts[0] | select(.expired == false) | .id' 2>/dev/null || true)
+
+            if [[ -z "$ARTIFACT_ID" || "$ARTIFACT_ID" == "null" ]]; then
+              echo "No reusable artifact found -- will run full build"
+              echo "skip_build=false" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+
+            echo "Found artifact ID $ARTIFACT_ID -- downloading to skip rebuild"
+
+            # Get the signed download URL from the redirect
+            DOWNLOAD_URL=$(curl -sI               -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}"               "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID/zip"               | grep -i "^location:" | tr -d '' | cut -d' ' -f2)
+
+            if [[ -z "$DOWNLOAD_URL" ]]; then
+              echo "Could not get download URL -- falling back to full build"
+              echo "skip_build=false" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+
+            curl -fsSL "$DOWNLOAD_URL" -o /tmp/build-sha.zip
+            mkdir -p build
+            unzip -q /tmp/build-sha.zip -d build/
+            echo "Reused build artifact from dev run -- skipping rebuild"
+            echo "skip_build=true" >> $GITHUB_OUTPUT
 
         - name: Set up Node.js
           uses: actions/setup-node@v4
@@ -160,6 +191,13 @@ jobs:
         - name: Install dependencies and build site
           id: build-site
           run: |
+            # If a reusable SHA artifact was found and extracted, skip the build entirely
+            if [[ "${{ steps.check-sha-artifact.outputs.skip_build }}" == "true" ]]; then
+              echo "Build skipped -- reusing artifact from SHA ${{ github.sha }}"
+              echo "built=true" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+
             BUILD_MODE="${{ steps.detect-changes.outputs.build_mode }}"
             CHANGED_PRODUCTS="${{ steps.detect-changes.outputs.changed_products }}"
 
@@ -206,7 +244,7 @@ jobs:
             path: build/
 
         - name: Upload SHA-tagged build artifact for reuse
-          if: github.event_name != 'pull_request' && steps.build-site.outputs.built == 'true' && steps.detect-changes.outputs.build_mode == 'full'
+          if: github.event_name != 'pull_request' && steps.build-site.outputs.built == 'true' && steps.detect-changes.outputs.build_mode == 'full' && steps.check-sha-artifact.outputs.skip_build != 'true'
           uses: actions/upload-artifact@v4
           with:
             name: build-sha-${{ github.sha }}
