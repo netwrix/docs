@@ -803,6 +803,7 @@ function SearchPageContent() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        overflow: 'hidden',
                     }}
                     onMouseEnter={(e) => {
                         e.currentTarget.style.transform = 'scale(1.1)';
@@ -841,17 +842,18 @@ function SearchPageContent() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        overflow: 'hidden',
                     }}
                     onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.1) translateY(-6px)';
+                        e.currentTarget.style.transform = 'scale(1.1) translateY(-10px)';
                         e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.2)';
                     }}
                     onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-6px)';
+                        e.currentTarget.style.transform = 'translateY(-10px)';
                         e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
                     }}
                 >
-                    <span style={{transform: 'translateY(-6px)', display: 'block'}}>↓</span>
+                    <span style={{transform: 'translateY(-10px)', display: 'block'}}>↓</span>
                 </button>
             )}
         </Layout>
