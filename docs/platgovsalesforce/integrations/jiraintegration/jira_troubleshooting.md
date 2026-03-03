@@ -36,12 +36,12 @@ information on mapping your statuses.
 
 Error message:
 
-Please verify Your User Credentials: It may be an Invalid username, wrong password, or invalid
+Verify Your User Credentials: It may be an Invalid username, wrong password, or invalid
 security token.
 
-If you are using Salesforce Authenticator, please update it to the most recent Six-digit code.
+If you are using Salesforce Authenticator, update it to the most recent Six-digit code.
 
-Or please verify that the user is not locked.
+Or verify that the user is not locked.
 
 Solution:
 
@@ -60,7 +60,7 @@ more information on setting up the connected app.
 
 Error message:
 
-Please verify the Consumers Secret from the Connected App.
+Verify the Consumers Secret from the Connected App.
 
 Solution:
 

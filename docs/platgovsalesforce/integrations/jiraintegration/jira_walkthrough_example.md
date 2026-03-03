@@ -71,7 +71,7 @@ If the configuration fails, an error message is displayed. For example,
 
 > **error=redirect_uri_mismatch**
 >
-> - The 10 minutes timing slot from Salesforce is not completed yet. Please wait
+> - The 10 minutes timing slot from Salesforce is not completed yet. Wait for completion.
 > - If the error persists, check the [Callback URL](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md).
 >
 >     - You may have left a space between the two Callback URLs
@@ -185,7 +185,7 @@ Safely Deleted or Modified** tab:
 ![Impact analysis report](/images/platgovnetsuite/integrations/jira_example_impact_analysis.webp)
 
 Before proceeding with your changes, review each warning to ensure your change does not break
-something. Dependencies can easily be reviewed with the DRD tool.
+something. Dependencies can be reviewed with the DRD tool.
 
 ### View DRD
 

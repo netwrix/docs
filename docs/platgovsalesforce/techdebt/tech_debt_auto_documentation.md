@@ -67,7 +67,7 @@ Click **Show/Hide Standard Fields** to toggle displaying Standard Fields in the 
 
 The Customization record is the central element of Platform Governance for Salesforce documentation. It consolidates technical, operational, and governance-related metadata into a single, structured view that helps administrators, architects, and change agents fully understand a customization, its context, and its impact.
 
-Each Customization record is organized into sections and tabs, allowing users to easily navigate between metadata, dependencies, change controls, and historical activity.
+Each Customization record is organized into sections and tabs, allowing users to navigate between metadata, dependencies, change controls, and historical activity.
 
 - **Main Customization Record Sections**
 
