@@ -44,7 +44,7 @@ You can schedule the scanners to auto-scan your environment:
     ![getting_started_wizard6](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard6.webp)
 
 :::warning Scanner Timing
-Please change the day or time of your Scanner run to prevent overlap which may cause failures and/or execution delays. **Times need to be set 2 hours apart at a minimum.**
+Change the day or time of your Scanner run to prevent overlap which may cause failures and/or execution delays. **Times need to be set 2 hours apart at a minimum.**
 
 ![scheduler_error_msg](/images/platgovsalesforce/installing_strongpoint/scheduler_error_msg.webp)
 :::

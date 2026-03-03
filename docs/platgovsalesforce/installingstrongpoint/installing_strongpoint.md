@@ -9,7 +9,7 @@ sidebar_position: 10
 Platform Governance for Salesforce is installed with package installation file sent to you by our
 customer success team. To install:
 
-1. Click on the install URL, if installing in the sandbox, replace the initial portion of the URL
+1. Click the install URL. If installing in the sandbox, replace the initial portion of the URL
    with [http://test.salesforce.com](http://test.salesforce.com)
 2. Select **Install for Admins Only**
 3. Click **Install**
@@ -79,7 +79,7 @@ After configuring authentication, you must assign the required Permission Set to
 ### Assign Netwrix Grant Permissions
 
 1. Navigate to **Setup** > **Users** > **Permission Sets**
-2. Search for and click on **Netwrix Grant Permissions**
+2. Search for and click **Netwrix Grant Permissions**
 ![NetwrixPermissionSet](/images/platgovsalesforce/installing_strongpoint/NetwrixPermissionSet.webp)
 3. Click **Manage Assignments**
 ![ManageAssignment](/images/platgovsalesforce/installing_strongpoint/ManageAssignment.webp)
@@ -98,7 +98,7 @@ The **Netwrix Grant Permissions** permission set is required for all users who w
 To verify that the permission set has been assigned correctly:
 
 1. Navigate to **Setup** > **Users** > **Users**
-2. Click on a user who should have access
+2. Click a user who should have access
 3. Scroll to the **Permission Set Assignments** section
 4. Verify that **Netwrix Grant Permissions** appears in the list
 
@@ -109,7 +109,7 @@ After configuring authentication (either Named Credentials or Session ID), acces
 1. Open the Salesforce **App Launcher** (grid icon in the top navigation)
 2. Search for and select **Netwrix Lightning**
 ![NetwrixLightning](/images/platgovsalesforce/installing_strongpoint/NetwrixLightningMenu.webp)
-3. A window will appear displaying the License Agreement and EULA. Please review the contents carefully and then select **Accept**.
+3. A window will appear displaying the License Agreement and EULA. Review the contents carefully and then select **Accept**.
 
 ![eula](/images/platgovsalesforce/installing_strongpoint/eula.webp)
 

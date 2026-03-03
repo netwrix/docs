@@ -102,7 +102,7 @@ complete.
    **All** if necessary to see your report. Refer to
    [Export Object Attachment](/docs/platgovsalesforce/tools/export_object_attachment_records.md) for details on adding the tab to
    your tool bar if needed.
-2. Click on the **Environment Comparison** report in the list. The Export Attachment **Details** are
+2. Click the **Environment Comparison** report in the list. The Export Attachment **Details** are
    displayed, and your Excel report is downloaded by your browser.
 3. Open the _Environment_Compare_export.xls_ file. When you open an exported file, this message may
    be displayed, as the exported file is in XML instead of the Excel format. Click **Yes** to load

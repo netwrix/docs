@@ -80,7 +80,7 @@ Compliant.
 
 - **Changes to Users**: Displays the changes to tracked user data fields. Refer to
 [Enhanced CPQ Support](/docs/platgovsalesforce/changemanagement/enhanced_cpq_support.md) for more information on
-setting up tracking.<br /><br />If you see the message: _--String too long - Skipped lines due to CPU limit reached--_ it simply
+setting up tracking.<br /><br />If you see the message: _--String too long - Skipped lines due to CPU limit reached--_ it
 means the governor limits have been reached. Profiles and PermissionSets are very data heavy.
 Platform Governance for Salesforce skips the record and continues the scan the next day to ensure
 there is no impact to your org.
