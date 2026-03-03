@@ -46,8 +46,11 @@ jobs:
       environment: ${{ needs.determine-environment.outputs.environment }}
       permissions:
         contents: read
+        actions: read       # needed to list/download artifacts via API
+        pull-requests: read # needed to list PR changed files via API
       env:
         APP_EXTERNAL_URL: ${{ secrets.APP_EXTERNAL_URL || vars.APP_EXTERNAL_URL }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       steps:
         - name: Check out source code
           uses: actions/checkout@v4
