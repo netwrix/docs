@@ -120,7 +120,7 @@ Configure the External Client Apps (new version of connected apps):
 
 1. Log in to your Salesforce org.
 2. Open the Connected App:
-   **Setup** > **Apps** > **External Client Apps** > **Netwrix Pg Jira** (Netwrix Pg Jira is just an example; it doesn't need to have that exact name.)
+   **Setup** > **Apps** > **External Client Apps** > **Netwrix Pg Jira** (Netwrix Pg Jira is an example; it doesn't need to have that exact name.)
 
     ![Open the Strongpoint Connected App](/images/platgovsalesforce/integrations/externalClientAppSearch.webp)
 
