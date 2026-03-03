@@ -114,23 +114,55 @@ function SearchPageContent() {
 
     // Back to top button visibility
     const [showBackToTop, setShowBackToTop] = useState(false);
+    const [showJumpToBottom, setShowJumpToBottom] = useState(false);
+
+    // Page jump input state
+    const [pageInputValue, setPageInputValue] = useState('');
+    const [pageInputFocused, setPageInputFocused] = useState(false);
 
     // Parse URL parameters
     const urlParams = new URLSearchParams(location.search);
     const queryFromUrl = urlParams.get('q') || '';
     const productsFromUrl = urlParams.get('products')?.split(',').filter(Boolean) || [];
+    const resultsPerPageFromUrl = parseInt(urlParams.get('resultsPerPage'), 10) || 25;
+    const pageFromUrl = parseInt(urlParams.get('page'), 10) || 1;
 
     const [searchQuery, setSearchQuery] = useState(queryFromUrl);
     const [selectedProducts, setSelectedProducts] = useState(productsFromUrl);
+    const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
 
-    // Update state when URL changes (e.g., when navigating from search modal)
+    // Track if we're restoring from URL (e.g., browser back button)
+    const restoringFromUrl = useRef(false);
+    const targetPageRef = useRef(null);
+    const isInternalNavigation = useRef(false);
+
+    // Update state when URL changes (e.g., when navigating from search modal or browser back)
     useEffect(() => {
+        // Skip if this was an internal navigation (we triggered the URL change ourselves)
+        if (isInternalNavigation.current) {
+            isInternalNavigation.current = false;
+            return;
+        }
+
+        // External navigation (browser back/forward, or coming from search modal)
         const urlParams = new URLSearchParams(location.search);
         const newQuery = urlParams.get('q') || '';
         const newProducts = urlParams.get('products')?.split(',').filter(Boolean) || [];
+        const newResultsPerPage = parseInt(urlParams.get('resultsPerPage'), 10) || 25;
+        const newPage = parseInt(urlParams.get('page'), 10) || 1;
 
         setSearchQuery(newQuery);
         setSelectedProducts(newProducts);
+        setResultsPerPage(newResultsPerPage);
+
+        // Store target page for restoration
+        if (newPage > 1) {
+            restoringFromUrl.current = true;
+            targetPageRef.current = newPage - 1;
+        } else {
+            restoringFromUrl.current = false;
+            targetPageRef.current = null;
+        }
     }, [location.search]);
 
     const initialSearchResultState = {
@@ -156,17 +188,25 @@ function SearchPageContent() {
                     }
                     return {
                         ...data.value,
-                        items:
-                            data.value.lastPage === 0
-                                ? data.value.items
-                                : prevState.items.concat(data.value.items),
+                        items: data.value.items, // Show only current page
                     };
-                case 'advance':
-                    const hasMore = prevState.totalPages > prevState.lastPage + 1;
+                case 'nextPage':
+                    if (!prevState.hasMore || prevState.loading) {
+                        return prevState;
+                    }
                     return {
                         ...prevState,
-                        lastPage: hasMore ? prevState.lastPage + 1 : prevState.lastPage,
-                        hasMore,
+                        lastPage: prevState.lastPage + 1,
+                        loading: true,
+                    };
+                case 'prevPage':
+                    if (prevState.lastPage === 0 || prevState.loading) {
+                        return prevState;
+                    }
+                    return {
+                        ...prevState,
+                        lastPage: prevState.lastPage - 1,
+                        loading: true,
                     };
                 default:
                     return prevState;
@@ -179,11 +219,11 @@ function SearchPageContent() {
     const algoliaHelper = useMemo(
         () =>
             algoliaSearchHelper(algoliaClient, indexName, {
-                hitsPerPage: 15,
+                hitsPerPage: resultsPerPage,
                 advancedSyntax: true,
                 disjunctiveFacets: ['language'], // Only language facet exists in index
             }),
-        [algoliaClient, indexName],
+        [algoliaClient, indexName, resultsPerPage],
     );
 
     algoliaHelper.on('result', ({results: {query, hits, page, nbHits, nbPages, facets}}) => {
@@ -262,21 +302,7 @@ function SearchPageContent() {
         });
     });
 
-    const [loaderRef, setLoaderRef] = useState(null);
-    const prevY = useRef(0);
-    const observer = useRef(
-        ExecutionEnvironment.canUseIntersectionObserver &&
-            new IntersectionObserver(
-                (entries) => {
-                    const {isIntersecting, boundingClientRect: {y: currentY}} = entries[0];
-                    if (isIntersecting && prevY.current > currentY) {
-                        searchResultStateDispatcher({type: 'advance'});
-                    }
-                    prevY.current = currentY;
-                },
-                {threshold: 1},
-            ),
-    );
+    // Pagination is now controlled by Previous/Next buttons instead of infinite scroll
 
     const makeSearch = useCallback(
         (page = 0) => {
@@ -299,65 +325,105 @@ function SearchPageContent() {
         [searchQuery, algoliaHelper, currentLocale, selectedProducts],
     );
 
-    // Update URL when filters change
-    const prevFiltersRef = useRef({searchQuery: '', selectedProducts: []});
+    // Update URL when filters or pagination change
+    const prevFiltersRef = useRef({searchQuery: '', selectedProducts: [], resultsPerPage: 25, page: 1});
 
     useEffect(() => {
-        // Only update URL if filters actually changed
+        // Only update URL if values actually changed
         const prev = prevFiltersRef.current;
+        const currentPage = (searchResultState.lastPage || 0) + 1;
+
         if (
             prev.searchQuery !== searchQuery ||
-            JSON.stringify(prev.selectedProducts) !== JSON.stringify(selectedProducts)
+            JSON.stringify(prev.selectedProducts) !== JSON.stringify(selectedProducts) ||
+            prev.resultsPerPage !== resultsPerPage ||
+            prev.page !== currentPage
         ) {
             const params = new URLSearchParams();
             if (searchQuery) params.set('q', searchQuery);
             if (selectedProducts.length > 0) params.set('products', selectedProducts.join(','));
+            if (resultsPerPage !== 25) params.set('resultsPerPage', String(resultsPerPage));
+            if (currentPage > 1) params.set('page', String(currentPage));
 
+            // Mark this as an internal navigation so location.search effect ignores it
+            isInternalNavigation.current = true;
             history.replace({search: params.toString()});
 
-            prevFiltersRef.current = {searchQuery, selectedProducts};
+            prevFiltersRef.current = {searchQuery, selectedProducts, resultsPerPage, page: currentPage};
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchQuery, selectedProducts]);
+    }, [searchQuery, selectedProducts, resultsPerPage, searchResultState.lastPage]);
 
-    useEffect(() => {
-        if (!loaderRef) return undefined;
-        const currentObserver = observer.current;
-        if (currentObserver) {
-            currentObserver.observe(loaderRef);
-            return () => currentObserver.unobserve(loaderRef);
-        }
-        return () => true;
-    }, [loaderRef]);
+    // IntersectionObserver removed - using pagination buttons instead
 
     useEffect(() => {
         searchResultStateDispatcher({type: 'reset'});
         if (searchQuery) {
             searchResultStateDispatcher({type: 'loading'});
-            setTimeout(() => makeSearch(), 300);
+            // If restoring from URL, use the target page; otherwise start at page 0
+            const startPage = (restoringFromUrl.current && targetPageRef.current !== null)
+                ? targetPageRef.current
+                : 0;
+            setTimeout(() => {
+                makeSearch(startPage);
+                // Clear restoration flags after search
+                restoringFromUrl.current = false;
+                targetPageRef.current = null;
+            }, 300);
         }
-    }, [searchQuery, selectedProducts, makeSearch]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchQuery, selectedProducts, resultsPerPage]);
 
     useEffect(() => {
-        if (!searchResultState.lastPage || searchResultState.lastPage === 0) {
+        // Only trigger pagination search if lastPage has been set by nextPage/prevPage actions
+        // (not during initial render where lastPage is null)
+        if (searchResultState.lastPage === null) {
             return;
         }
         makeSearch(searchResultState.lastPage);
-    }, [makeSearch, searchResultState.lastPage]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchResultState.lastPage]);
 
-    // Show/hide back to top button based on scroll position
+    // Scroll to top when page changes (except initial load)
+    const isInitialLoad = useRef(true);
+    useEffect(() => {
+        if (isInitialLoad.current) {
+            isInitialLoad.current = false;
+            return;
+        }
+        if (searchResultState.items.length > 0 && !searchResultState.loading) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    }, [searchResultState.lastPage, searchResultState.items.length, searchResultState.loading]);
+
+    // Show/hide back to top and jump to bottom buttons based on scroll position
     useEffect(() => {
         const handleScroll = () => {
-            setShowBackToTop(window.scrollY > 300);
+            const scrolledDown = window.scrollY > 300;
+            const nearBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 300;
+
+            setShowBackToTop(scrolledDown);
+            setShowJumpToBottom(!scrolledDown && !nearBottom && searchResultState.items.length > 0);
         };
 
+        handleScroll(); // Check initial state
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [searchResultState.items.length]);
 
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    const scrollToBottom = () => {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
             behavior: 'smooth'
         });
     };
@@ -376,42 +442,68 @@ function SearchPageContent() {
             <div className="container margin-vert--md">
                 <Heading as="h1" style={{marginBottom: '16px'}}>{pageTitle}</Heading>
 
-                <div className="row" style={{marginBottom: '16px'}}>
-                    <div className="col col--9">
-                        <input
-                            type="search"
-                            name="q"
-                            placeholder="Type your search here"
-                            aria-label="Search"
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            value={searchQuery}
-                            autoComplete="off"
-                            autoFocus
-                            style={{
-                                width: '100%',
-                                padding: '14px 16px',
-                                fontSize: '16px',
-                                borderRadius: '8px',
-                                border: '2px solid var(--ifm-color-emphasis-300)',
-                                marginBottom: '0',
-                                transition: 'border-color 0.2s',
-                            }}
-                            onFocus={(e) => {
-                                e.target.style.borderColor = 'var(--ifm-color-primary)';
-                                e.target.style.outline = 'none';
-                            }}
-                            onBlur={(e) => {
-                                e.target.style.borderColor = 'var(--ifm-color-emphasis-300)';
-                            }}
-                        />
+                <div style={{marginBottom: '16px'}}>
+                    <div className="row" style={{marginBottom: '12px'}}>
+                        <div className="col col--9">
+                            <input
+                                type="search"
+                                name="q"
+                                placeholder="Type your search here"
+                                aria-label="Search"
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                value={searchQuery}
+                                autoComplete="off"
+                                autoFocus
+                                style={{
+                                    width: '100%',
+                                    padding: '14px 16px',
+                                    fontSize: '16px',
+                                    borderRadius: '8px',
+                                    border: '2px solid var(--ifm-color-emphasis-300)',
+                                    marginBottom: '0',
+                                    transition: 'border-color 0.2s',
+                                }}
+                                onFocus={(e) => {
+                                    e.target.style.borderColor = 'var(--ifm-color-primary)';
+                                    e.target.style.outline = 'none';
+                                }}
+                                onBlur={(e) => {
+                                    e.target.style.borderColor = 'var(--ifm-color-emphasis-300)';
+                                }}
+                            />
+                        </div>
+                        <div className="col col--3">
+                            <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>
+                                Results per page
+                            </label>
+                            <select
+                                value={resultsPerPage}
+                                onChange={(e) => setResultsPerPage(Number(e.target.value))}
+                                style={{
+                                    width: '100%',
+                                    padding: '8px',
+                                    borderRadius: '4px',
+                                    border: '1px solid var(--ifm-color-emphasis-300)',
+                                    fontSize: '14px',
+                                }}
+                            >
+                                <option value={25}>25</option>
+                                <option value={50}>50</option>
+                                <option value={100}>100</option>
+                                <option value={150}>150</option>
+                                <option value={200}>200</option>
+                            </select>
+                        </div>
                     </div>
-                    <div className="col col--3">
-                        <MultiSelect
-                            label="Products"
-                            options={PRODUCT_OPTIONS}
-                            selectedValues={selectedProducts}
-                            onChange={setSelectedProducts}
-                        />
+                    <div className="row">
+                        <div className="col col--12">
+                            <MultiSelect
+                                label="Products"
+                                options={PRODUCT_OPTIONS}
+                                selectedValues={selectedProducts}
+                                onChange={setSelectedProducts}
+                            />
+                        </div>
                     </div>
                 </div>
 
@@ -444,8 +536,9 @@ function SearchPageContent() {
                             // Sort products alphabetically
                             const sortedProducts = Object.keys(groupedByProduct).sort();
 
-                            // Global counter for numbering results across all products
-                            let resultNumber = 0;
+                            // Global counter for numbering results across all products on this page
+                            // Start from (page * resultsPerPage) + 1
+                            let resultNumber = (searchResultState.lastPage || 0) * resultsPerPage;
 
                             return sortedProducts.map((product) => {
                                 const productResults = groupedByProduct[product];
@@ -465,7 +558,7 @@ function SearchPageContent() {
                                                 color: 'var(--ifm-color-primary)',
                                             }}
                                         >
-                                            {product} (showing {startNum}-{endNum} of {totalForProduct} results)
+                                            {product} ({productResults.length} {productResults.length === 1 ? 'result' : 'results'} on this page)
                                         </Heading>
 
                                     {productResults.map(({title, url, summary, breadcrumbs}, i) => {
@@ -550,9 +643,135 @@ function SearchPageContent() {
                     ]
                 )}
 
-                {searchResultState.hasMore && (
-                    <div ref={setLoaderRef} style={{textAlign: 'center', padding: '20px'}}>
-                        <Translate>Fetching new results...</Translate>
+                {/* Pagination controls */}
+                {searchResultState.items.length > 0 && (
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: '20px',
+                        padding: '40px 20px',
+                        borderTop: '1px solid var(--ifm-color-emphasis-200)',
+                        marginTop: '20px'
+                    }}>
+                        <button
+                            onClick={() => searchResultStateDispatcher({type: 'prevPage'})}
+                            disabled={searchResultState.lastPage === 0 || searchResultState.loading}
+                            style={{
+                                padding: '10px 20px',
+                                fontSize: '16px',
+                                fontWeight: '500',
+                                border: '1px solid var(--ifm-color-primary)',
+                                borderRadius: '6px',
+                                backgroundColor: searchResultState.lastPage === 0 || searchResultState.loading
+                                    ? 'var(--ifm-color-emphasis-200)'
+                                    : 'var(--ifm-color-primary)',
+                                color: searchResultState.lastPage === 0 || searchResultState.loading
+                                    ? 'var(--ifm-color-emphasis-600)'
+                                    : 'white',
+                                cursor: searchResultState.lastPage === 0 || searchResultState.loading
+                                    ? 'not-allowed'
+                                    : 'pointer',
+                                transition: 'all 0.2s ease',
+                            }}
+                        >
+                            ← Previous
+                        </button>
+
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px'
+                        }}>
+                            <span style={{
+                                fontSize: '16px',
+                                fontWeight: '500',
+                                color: 'var(--ifm-color-emphasis-800)'
+                            }}>
+                                Page
+                            </span>
+                            <input
+                                type="text"
+                                inputMode="numeric"
+                                pattern="[0-9]*"
+                                value={pageInputFocused ? pageInputValue : (searchResultState.lastPage + 1)}
+                                onChange={(e) => {
+                                    const value = e.target.value.replace(/\D/g, '');
+                                    setPageInputValue(value);
+                                }}
+                                onFocus={(e) => {
+                                    setPageInputFocused(true);
+                                    setPageInputValue(String(searchResultState.lastPage + 1));
+                                    setTimeout(() => e.target.select(), 0);
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                        const pageNum = parseInt(pageInputValue, 10);
+                                        if (pageNum >= 1 && pageNum <= searchResultState.totalPages) {
+                                            searchResultStateDispatcher({
+                                                type: 'update',
+                                                value: {
+                                                    ...searchResultState,
+                                                    lastPage: pageNum - 1,
+                                                    loading: true,
+                                                }
+                                            });
+                                        }
+                                        setPageInputValue('');
+                                        setPageInputFocused(false);
+                                        e.target.blur();
+                                    } else if (e.key === 'Escape') {
+                                        setPageInputValue('');
+                                        setPageInputFocused(false);
+                                        e.target.blur();
+                                    }
+                                }}
+                                onBlur={() => {
+                                    setPageInputValue('');
+                                    setPageInputFocused(false);
+                                }}
+                                style={{
+                                    width: '60px',
+                                    padding: '6px 8px',
+                                    fontSize: '16px',
+                                    fontWeight: '500',
+                                    border: '1px solid var(--ifm-color-emphasis-300)',
+                                    borderRadius: '4px',
+                                    textAlign: 'center',
+                                }}
+                            />
+                            <span style={{
+                                fontSize: '16px',
+                                fontWeight: '500',
+                                color: 'var(--ifm-color-emphasis-800)'
+                            }}>
+                                of {searchResultState.totalPages}
+                            </span>
+                        </div>
+
+                        <button
+                            onClick={() => searchResultStateDispatcher({type: 'nextPage'})}
+                            disabled={!searchResultState.hasMore || searchResultState.loading}
+                            style={{
+                                padding: '10px 20px',
+                                fontSize: '16px',
+                                fontWeight: '500',
+                                border: '1px solid var(--ifm-color-primary)',
+                                borderRadius: '6px',
+                                backgroundColor: !searchResultState.hasMore || searchResultState.loading
+                                    ? 'var(--ifm-color-emphasis-200)'
+                                    : 'var(--ifm-color-primary)',
+                                color: !searchResultState.hasMore || searchResultState.loading
+                                    ? 'var(--ifm-color-emphasis-600)'
+                                    : 'white',
+                                cursor: !searchResultState.hasMore || searchResultState.loading
+                                    ? 'not-allowed'
+                                    : 'pointer',
+                                transition: 'all 0.2s ease',
+                            }}
+                        >
+                            Next →
+                        </button>
                     </div>
                 )}
             </div>
@@ -592,6 +811,44 @@ function SearchPageContent() {
                     }}
                 >
                     ↑
+                </button>
+            )}
+
+            {/* Jump to bottom button */}
+            {showJumpToBottom && (
+                <button
+                    onClick={scrollToBottom}
+                    aria-label="Jump to bottom"
+                    style={{
+                        position: 'fixed',
+                        top: '490px',
+                        right: '30px',
+                        width: '50px',
+                        height: '50px',
+                        borderRadius: '50%',
+                        backgroundColor: 'var(--ifm-color-primary)',
+                        color: 'white',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '48px',
+                        fontWeight: 'bold',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                        zIndex: 1000,
+                        transition: 'all 0.3s ease',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'scale(1.1) translateY(-6px)';
+                        e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.2)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-6px)';
+                        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                    }}
+                >
+                    <span style={{transform: 'translateY(-6px)', display: 'block'}}>↓</span>
                 </button>
             )}
         </Layout>
