@@ -1,4 +1,4 @@
-name: Build and deploy Docusaurus site to Azure Blob Storage
+﻿name: Build and deploy Docusaurus site to Azure Blob Storage
 
 on:
   push:
@@ -204,6 +204,14 @@ jobs:
           with:
             name: build-output
             path: build/
+
+        - name: Upload SHA-tagged build artifact for reuse
+          if: github.event_name != 'pull_request' && steps.build-site.outputs.built == 'true' && steps.detect-changes.outputs.build_mode == 'full'
+          uses: actions/upload-artifact@v4
+          with:
+            name: build-sha-${{ github.sha }}
+            path: build/
+            retention-days: 3
 
   deploy:
     runs-on: gh-runner-large
