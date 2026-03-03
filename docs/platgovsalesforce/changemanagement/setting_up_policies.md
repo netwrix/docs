@@ -194,7 +194,7 @@ the CustomObject Policy when added.
 
 ### Select Change Level by Salesforce Type
 
-This feature enables you to easily add customizations to the policy based on Salesforce type. It is
+This feature enables you to add customizations to the policy based on Salesforce type. It is
 available on the **Related** tab on the policy.
 
 1. Open the policy and click the **Related** tab.

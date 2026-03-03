@@ -13,7 +13,7 @@ access to other users:
 
    ![manageusers](/images/platgovsalesforce/installing_strongpoint/manageusers.webp)
 
-2. Click on an existing **User** name.
+2. Click an existing **User** name.
 3. Click **Permission Set Assignments**
 4. Click **Edit Assignments**.
 

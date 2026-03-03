@@ -111,7 +111,7 @@ The Change Log provides a detailed record of each detected change. Key fields in
    - User
    - Permission type
    - Customization (Profile/Permission Set)
-4. Click on individual entries to view detailed information
+4. Click individual entries to view detailed information
 
 ### Exporting Change Logs
 

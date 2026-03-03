@@ -23,7 +23,7 @@ Salesforce is installed, and to deploy changes and promote code from one environ
     ![Open Completed Change Request](/images/platgovsalesforce/release_management/push_pullcr-1.webp)
 
 2. Edit the change request and add all necessary details.
-3. Click on **Sync CR**.
+3. Click **Sync CR**.
 
     ![Sync the Change Request](/images/platgovsalesforce/release_management/push_pull_sync_cr.webp)
 
@@ -32,8 +32,8 @@ Salesforce is installed, and to deploy changes and promote code from one environ
 
     ![Enter Credentials](/images/platgovsalesforce/release_management/push_pull_popup.webp)
 
-6. Click on **Test Connection** to make sure your credentials are correct. If your credentials are
-   not correct, you can click on **Save Credentials** and edit.
+6. Click **Test Connection** to make sure your credentials are correct. If your credentials are
+   not correct, you can click **Save Credentials** and edit.
 
 ### Push the Change Request
 
@@ -51,7 +51,7 @@ Your Change Request is pushed to your selected environment.
 To pull a change request from the selected environment:
 
 1. Select **Pull**
-2. Click on **Get Change Requests**
+2. Click **Get Change Requests**
 
     ![pullcr](/images/platgovsalesforce/release_management/pullcr.webp)
 

@@ -79,7 +79,7 @@ After configuring authentication, you must assign the required Permission Set to
 ### Assign Netwrix Grant Permissions
 
 1. Navigate to **Setup** > **Users** > **Permission Sets**
-2. Search for and click on **Netwrix Grant Permissions**
+2. Search for and click **Netwrix Grant Permissions**
 ![NetwrixPermissionSet](/images/platgovsalesforce/installing_strongpoint/NetwrixPermissionSet.webp)
 3. Click **Manage Assignments**
 ![ManageAssignment](/images/platgovsalesforce/installing_strongpoint/ManageAssignment.webp)
@@ -98,7 +98,7 @@ The **Netwrix Grant Permissions** permission set is required for all users who w
 To verify that the permission set has been assigned correctly:
 
 1. Navigate to **Setup** > **Users** > **Users**
-2. Click on a user who should have access
+2. Click a user who should have access
 3. Scroll to the **Permission Set Assignments** section
 4. Verify that **Netwrix Grant Permissions** appears in the list
 

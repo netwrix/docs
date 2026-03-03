@@ -39,7 +39,7 @@ These steps can be completed after the change request is approved.
     ![Deployment Tool](/images/platgovsalesforce/release_management/deployment_tool.webp)
 
 5. Click **Test Connection** for both environments to ensure your credentials are correct. If your
-   credentials are not correct, you can click on **Save Credentials** and edit.
+   credentials are not correct, you can click **Save Credentials** and edit.
 6. Click **Run Scan** on both environments to ensure the customizations on the change request are up
    to date.
 7. **Save** the Deployment Record.
