@@ -47,6 +47,6 @@ To resolve the issue, you need to install cumulative update for your SQL Server.
 
 Download and install https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2017/cumulativeupdate31 (Cumulative Update 31 for SQL Server 2017 ⸱ Microsoft &#129125;)
 
-> **NOTE:** The State-in-Time snapshot for SharePoint Online occurs every 24 hours, usually at 03:00 or 04:00. So, once the above Cummulative Update is applied, you will need to wait until the following day to see the results.
+> **NOTE:** The State-in-Time snapshot for SharePoint Online occurs every 24 hours, usually at 03:00 or 04:00. So, once the above Cumulative Update is applied, you will need to wait until the following day to see the results.
 
 To check the the issue has been resolved, run one of the **SharePoint Online State-in-Time Reports**. Make sure to provide it with a well-known object so that there is the greatest possibility of there being data returned, such as the **SharePoint Online Site Collections Access by User** Report.

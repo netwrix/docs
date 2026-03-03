@@ -7,7 +7,7 @@ keywords:
   - SSRS
   - SQL Server Reporting Services
   - rsProcessingAborted
-  - rsErroropeningConnection
+  - rsErrorOpeningConnection
   - DS_Common
   - Netwrix Auditor
   - report server
@@ -31,7 +31,7 @@ When you attempt to generate reports in Netwrix Auditor, the following error app
 
 ```text
 An error has occurred during report processing. (rsProcessingAborted)
-Cannot create a connection to data source 'DS'. (rsErroropeningConnection)
+Cannot create a connection to data source 'DS'. (rsErrorOpeningConnection)
 For more information about this error navigate to the report server on the local server machine, or enable remote errors
 ```
 

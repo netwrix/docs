@@ -15,13 +15,13 @@ keywords:
   - display name
 products:
   - auditor
-sidebar_label: Incorrecty Display Names in the "What Changed" col
+sidebar_label: Incorrectly Display Names in the "What Changed" col
 tags: []
-title: Incorrecty Display Names in the "What Changed" column
+title: Incorrectly Display Names in the "What Changed" column
 knowledge_article_id: kA00g000000H9dOCAS
 ---
 
-# Incorrecty Display Names in the "What Changed" column
+# Incorrectly Display Names in the "What Changed" column
 
 ## Details
 
