@@ -24,7 +24,7 @@ reports as scheduled automated controls. These controls create situation-specifi
 control violation logs that can be reviewed and cleared.
 
 It is easy to build a comprehensive dashboard on the **Control Logs** object in a single
-**Unresolved Control Violations** List View to monitor dangerous or simply irritating changes in
+**Unresolved Control Violations** List View to monitor dangerous or irritating changes in
 configuration or data. You can designate who receives alerts without needing to build new workflows
 or triggers.
 
