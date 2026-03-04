@@ -37,3 +37,9 @@ With the Netwrix Auditor, the following Data Sources can be monitored:
 - [User Activity](/docs/auditor/10.8/configuration/useractivity/overview.md)
 - [VMware](/docs/auditor/10.8/configuration/vmware/overview.md)
 - [Windows Server](/docs/auditor/10.8/configuration/windowsserver/overview.md)
+
+
+### Share your idea:
+
+If you haven't found a suitable data source or have questions or comments about existing 
+ones, please open a new topic in [Auditor Adeas](https://community.netwrix.com/c/products/auditor/ideas/93) and let’s discuss!
