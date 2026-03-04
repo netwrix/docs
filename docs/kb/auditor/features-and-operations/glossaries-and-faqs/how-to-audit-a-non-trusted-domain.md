@@ -34,7 +34,7 @@ Refer to the following steps to audit a remote domain that does not have any tru
 1. In any of domain controllers of your primary domain, open **DNS Manager** console.
 2. In the left pane under the domain controller, right-click **Forward Lookup Zones**, and select **New zone**.
 3. In the New Zone Wizard window, click next, select **Stub zone** and check the **Store the zone in Active Directory** checkbox. Click **Next**.
-4. Select the **To all DNS servers running on domainc controllers in this domain** option for replication, and click **Next**.
+4. Select the **To all DNS servers running on domain controllers in this domain** option for replication, and click **Next**.
 5. Enter the remote domain FQDN in the **Zone name** field. Click **Next**.
 6. Add IP addresses for all domain controllers of the remote domain.
 
@@ -61,4 +61,4 @@ nslookup
    4. Click **Advanced**.
    5. Select the **WINS** tab, and select **Enable NetBIOS over TCP/IP**. Click **OK** to save changes.
 
-> **NOTE:** If the domain still fails to get audited after completing all the steps provided, you can also specify the domainc controller name as `domain.tld\user` or `user@domain.tld` in Netwrix Auditor.
+> **NOTE:** If the domain still fails to get audited after completing all the steps provided, you can also specify the domain controller name as `domain.tld\user` or `user@domain.tld` in Netwrix Auditor.

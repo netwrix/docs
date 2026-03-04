@@ -55,7 +55,7 @@ prerequisites and configuration settings. Generic steps are described below.
 Follow the steps to use the add-on.
 
 **Step 1 –** Check prerequisites. Since the add-ons work only in combination with Netwrix Auditor,
-make sure that Netwrix Auidtor and its Audit Database are configured, and roles are assigned
+make sure that Netwrix Auditor and its Audit Database are configured, and roles are assigned
 properly.
 
 **Step 2 –** Specify parameters required for add-on operation. Before running or scheduling the

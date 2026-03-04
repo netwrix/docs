@@ -175,7 +175,7 @@ health events, you need to create a dedicated monitoring plan for this log with 
 Event Log Manager standalone tool.
 
 You can also review and filter Netwrix Auditor health events right in the product. See
-[Netwrix Auditor Health Log](/docs/auditor/10.8/admin/healthstatus/dashboard/healthlog.md) for addditional
+[Netwrix Auditor Health Log](/docs/auditor/10.8/admin/healthstatus/dashboard/healthlog.md) for additional
 information
 
 Follow the steps to configure the Netwrix Auditor System Health log monitoring.
