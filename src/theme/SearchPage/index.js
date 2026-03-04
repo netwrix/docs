@@ -91,18 +91,20 @@ function MultiSelect({label, options, selectedValues, onChange}) {
         width: '100%',
         border: '2px solid var(--ifm-color-emphasis-300)',
         borderRadius: '8px',
-        maxHeight: '220px',
         overflowY: 'auto',
         background: 'var(--ifm-background-color)',
+        flex: 1,
+        minHeight: 0,
     };
 
     const rowStyle = {
         display: 'flex',
         alignItems: 'center',
-        gap: '10px',
-        padding: '8px 14px',
+        gap: '8px',
+        padding: '4px 10px',
         cursor: 'pointer',
-        fontSize: '15px',
+        fontSize: '13px',
+        lineHeight: '1.3',
         userSelect: 'none',
     };
 
@@ -121,8 +123,8 @@ function MultiSelect({label, options, selectedValues, onChange}) {
     };
 
     return (
-        <div style={{marginBottom: '16px'}}>
-            <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>
+        <div style={{display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0}}>
+            <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold', flexShrink: 0}}>
                 {label}
             </label>
             <div style={containerStyle}>
@@ -185,6 +187,7 @@ function SearchPageContent() {
     // Back to top button visibility
     const [showBackToTop, setShowBackToTop] = useState(false);
     const [showJumpToBottom, setShowJumpToBottom] = useState(false);
+    const resultsScrollRef = useRef(null);
 
     // Page jump input state
     const [pageInputValue, setPageInputValue] = useState('');
@@ -462,40 +465,35 @@ function SearchPageContent() {
             return;
         }
         if (searchResultState.items.length > 0 && !searchResultState.loading) {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            resultsScrollRef.current?.scrollTo({top: 0, behavior: 'smooth'});
         }
     }, [searchResultState.lastPage, searchResultState.items.length, searchResultState.loading]);
 
-    // Show/hide back to top and jump to bottom buttons based on scroll position
+    // Show/hide back to top and jump to bottom buttons based on results scroll position
     useEffect(() => {
+        const el = resultsScrollRef.current;
+        if (!el) return;
+
         const handleScroll = () => {
-            const scrolledDown = window.scrollY > 300;
-            const nearBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 300;
+            const scrolledDown = el.scrollTop > 300;
+            const nearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 300;
 
             setShowBackToTop(scrolledDown);
             setShowJumpToBottom(!scrolledDown && !nearBottom && searchResultState.items.length > 0);
         };
 
-        handleScroll(); // Check initial state
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        handleScroll();
+        el.addEventListener('scroll', handleScroll);
+        return () => el.removeEventListener('scroll', handleScroll);
     }, [searchResultState.items.length]);
 
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        resultsScrollRef.current?.scrollTo({top: 0, behavior: 'smooth'});
     };
 
     const scrollToBottom = () => {
-        window.scrollTo({
-            top: document.documentElement.scrollHeight,
-            behavior: 'smooth'
-        });
+        const el = resultsScrollRef.current;
+        if (el) el.scrollTo({top: el.scrollHeight, behavior: 'smooth'});
     };
 
     const pageTitle = searchQuery
@@ -509,96 +507,114 @@ function SearchPageContent() {
                 <meta property="robots" content="noindex, follow" />
             </Head>
 
-            <div className="container margin-vert--md">
-                <Heading as="h1" style={{marginBottom: '16px'}}>{pageTitle}</Heading>
+            <div className="container" style={{
+                height: 'calc(100vh - var(--ifm-navbar-height))',
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden',
+                paddingTop: '16px',
+                paddingBottom: '16px',
+            }}>
+                <Heading as="h1" style={{fontSize: '20px', lineHeight: '1.3', marginBottom: '12px', flexShrink: 0}}>{pageTitle}</Heading>
 
-                <div style={{marginBottom: '16px'}}>
-                    <div className="row" style={{marginBottom: '12px'}}>
-                        <div className="col col--9">
-                            <label style={{display: 'block', marginBottom: '8px', visibility: 'hidden'}}>
-                                &nbsp;
-                            </label>
-                            <input
-                                type="search"
-                                name="q"
-                                placeholder="Type your search here"
-                                aria-label="Search"
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                value={searchQuery}
-                                autoComplete="off"
-                                autoFocus
-                                style={{
-                                    width: '100%',
-                                    padding: '14px 16px',
-                                    fontSize: '16px',
-                                    borderRadius: '8px',
-                                    border: '2px solid var(--ifm-color-emphasis-300)',
-                                    marginBottom: '0',
-                                    transition: 'border-color 0.2s',
-                                }}
-                                onFocus={(e) => {
-                                    e.target.style.borderColor = 'var(--ifm-color-primary)';
-                                    e.target.style.outline = 'none';
-                                }}
-                                onBlur={(e) => {
-                                    e.target.style.borderColor = 'var(--ifm-color-emphasis-300)';
-                                }}
-                            />
+                <div style={{display: 'flex', gap: '24px', flex: 1, minHeight: 0}}>
+                    {/* Left sidebar — product filters */}
+                    <div style={{
+                        width: '20%',
+                        flexShrink: 0,
+                        maxHeight: 'calc(100% - 48px)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignSelf: 'flex-start',
+                    }}>
+                        <MultiSelect
+                            label="Products"
+                            options={PRODUCT_OPTIONS}
+                            selectedValues={selectedProducts}
+                            onChange={setSelectedProducts}
+                        />
+                    </div>
+
+                    {/* Right content — search box + results */}
+                    <div style={{flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden'}}>
+                        {/* Static controls — never scrolls */}
+                        <div style={{flexShrink: 0}}>
+                        <div style={{display: 'flex', gap: '16px', marginBottom: '12px', alignItems: 'flex-end'}}>
+                            <div style={{flex: 1}}>
+                                <input
+                                    type="search"
+                                    name="q"
+                                    placeholder="Type your search here"
+                                    aria-label="Search"
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    value={searchQuery}
+                                    autoComplete="off"
+                                    autoFocus
+                                    style={{
+                                        width: '100%',
+                                        padding: '14px 16px',
+                                        fontSize: '16px',
+                                        borderRadius: '8px',
+                                        border: '2px solid var(--ifm-color-emphasis-300)',
+                                        marginBottom: '0',
+                                        transition: 'border-color 0.2s',
+                                    }}
+                                    onFocus={(e) => {
+                                        e.target.style.borderColor = 'var(--ifm-color-primary)';
+                                        e.target.style.outline = 'none';
+                                    }}
+                                    onBlur={(e) => {
+                                        e.target.style.borderColor = 'var(--ifm-color-emphasis-300)';
+                                    }}
+                                />
+                            </div>
+                            <div style={{flexShrink: 0}}>
+                                <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>
+                                    Results per page
+                                </label>
+                                <select
+                                    value={resultsPerPage}
+                                    onChange={(e) => setResultsPerPage(Number(e.target.value))}
+                                    style={{
+                                        width: '160px',
+                                        padding: '14px 44px 14px 16px',
+                                        fontSize: '16px',
+                                        borderRadius: '8px',
+                                        border: '2px solid var(--ifm-color-emphasis-300)',
+                                        transition: 'border-color 0.2s',
+                                        appearance: 'none',
+                                        backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\' viewBox=\'0 0 12 8\'%3E%3Cpath d=\'M1 1l5 5 5-5\' stroke=\'%23666\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\'/%3E%3C/svg%3E")',
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundPosition: 'right 14px center',
+                                    }}
+                                >
+                                    <option value={25}>25</option>
+                                    <option value={50}>50</option>
+                                    <option value={100}>100</option>
+                                    <option value={150}>150</option>
+                                    <option value={200}>200</option>
+                                </select>
+                            </div>
                         </div>
-                        <div className="col col--3">
-                            <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>
-                                Results per page
-                            </label>
-                            <select
-                                value={resultsPerPage}
-                                onChange={(e) => setResultsPerPage(Number(e.target.value))}
+
+                        {!!searchResultState.totalResults && (
+                            <div
                                 style={{
-                                    width: '100%',
-                                    padding: '14px 44px 14px 16px',
-                                    fontSize: '16px',
-                                    borderRadius: '8px',
-                                    border: '2px solid var(--ifm-color-emphasis-300)',
-                                    transition: 'border-color 0.2s',
-                                    appearance: 'none',
-                                    backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\' viewBox=\'0 0 12 8\'%3E%3Cpath d=\'M1 1l5 5 5-5\' stroke=\'%23666\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\'/%3E%3C/svg%3E")',
-                                    backgroundRepeat: 'no-repeat',
-                                    backgroundPosition: 'right 14px center',
+                                    marginBottom: '12px',
+                                    padding: '8px 12px',
+                                    background: 'var(--ifm-color-emphasis-100)',
+                                    borderRadius: '6px',
+                                    fontSize: '15px',
+                                    fontWeight: '500',
                                 }}
                             >
-                                <option value={25}>25</option>
-                                <option value={50}>50</option>
-                                <option value={100}>100</option>
-                                <option value={150}>150</option>
-                                <option value={200}>200</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col col--12">
-                            <MultiSelect
-                                label="Products"
-                                options={PRODUCT_OPTIONS}
-                                selectedValues={selectedProducts}
-                                onChange={setSelectedProducts}
-                            />
-                        </div>
-                    </div>
-                </div>
+                                {documentsFoundPlural(searchResultState.totalResults)}
+                            </div>
+                        )}
+                        </div>{/* closes static controls div */}
 
-                {!!searchResultState.totalResults && (
-                    <div
-                        style={{
-                            marginBottom: '16px',
-                            padding: '8px 12px',
-                            background: 'var(--ifm-color-emphasis-100)',
-                            borderRadius: '6px',
-                            fontSize: '15px',
-                            fontWeight: '500',
-                        }}
-                    >
-                        {documentsFoundPlural(searchResultState.totalResults)}
-                    </div>
-                )}
+                        {/* Scrollable results area */}
+                        <div ref={resultsScrollRef} style={{flex: 1, overflowY: 'auto', minHeight: 0, paddingRight: '4px'}}>
 
                 {searchResultState.items.length > 0 ? (
                     <main>
@@ -722,7 +738,9 @@ function SearchPageContent() {
                                 padding: '10px 20px',
                                 fontSize: '16px',
                                 fontWeight: '500',
-                                border: '1px solid var(--ifm-color-primary)',
+                                border: searchResultState.lastPage === 0 || searchResultState.loading
+                                    ? '1px solid var(--ifm-color-emphasis-300)'
+                                    : '1px solid var(--ifm-color-primary)',
                                 borderRadius: '6px',
                                 backgroundColor: searchResultState.lastPage === 0 || searchResultState.loading
                                     ? 'var(--ifm-color-emphasis-200)'
@@ -817,7 +835,9 @@ function SearchPageContent() {
                                 padding: '10px 20px',
                                 fontSize: '16px',
                                 fontWeight: '500',
-                                border: '1px solid var(--ifm-color-primary)',
+                                border: !searchResultState.hasMore || searchResultState.loading
+                                    ? '1px solid var(--ifm-color-emphasis-300)'
+                                    : '1px solid var(--ifm-color-primary)',
                                 borderRadius: '6px',
                                 backgroundColor: !searchResultState.hasMore || searchResultState.loading
                                     ? 'var(--ifm-color-emphasis-200)'
@@ -835,6 +855,9 @@ function SearchPageContent() {
                         </button>
                     </div>
                 )}
+                        </div>{/* closes scrollable results div */}
+                    </div>{/* closes right content div */}
+                </div>{/* closes outer flex container */}
             </div>
 
             {/* Back to top / jump to bottom buttons — mutually exclusive, same position */}
