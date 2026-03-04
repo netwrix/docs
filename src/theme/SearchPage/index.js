@@ -438,6 +438,9 @@ function SearchPageContent() {
                 <div style={{marginBottom: '16px'}}>
                     <div className="row" style={{marginBottom: '12px'}}>
                         <div className="col col--9">
+                            <label style={{display: 'block', marginBottom: '8px', visibility: 'hidden'}}>
+                                &nbsp;
+                            </label>
                             <input
                                 type="search"
                                 name="q"
@@ -474,10 +477,15 @@ function SearchPageContent() {
                                 onChange={(e) => setResultsPerPage(Number(e.target.value))}
                                 style={{
                                     width: '100%',
-                                    padding: '8px',
-                                    borderRadius: '4px',
-                                    border: '1px solid var(--ifm-color-emphasis-300)',
-                                    fontSize: '14px',
+                                    padding: '14px 44px 14px 16px',
+                                    fontSize: '16px',
+                                    borderRadius: '8px',
+                                    border: '2px solid var(--ifm-color-emphasis-300)',
+                                    transition: 'border-color 0.2s',
+                                    appearance: 'none',
+                                    backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\' viewBox=\'0 0 12 8\'%3E%3Cpath d=\'M1 1l5 5 5-5\' stroke=\'%23666\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\'/%3E%3C/svg%3E")',
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundPosition: 'right 14px center',
                                 }}
                             >
                                 <option value={25}>25</option>
