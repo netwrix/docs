@@ -61,7 +61,7 @@ Follow the steps to create a group.
 
 **Step 1 –** Log in to the Exchange admin center with your administrator account.
 
-**Step 2 –** Under Groupsclick on the **Mail-enabled security** tab.
+**Step 2 –** Under Groups click on the **Mail-enabled security** tab.
 
 **Step 3 –** Click **Add a group**.
 
@@ -80,7 +80,7 @@ the group.
 
 Follow the steps to add emails to group.
 
-**Step 1 –** In the Exchange admin cente go to Groupsand click on the [Mail-enabled security] tab.
+**Step 1 –** In the Exchange admin center go to Groups and click on the [Mail-enabled security] tab.
 
 **Step 2 –** Click on the group you have created and add emails you want to allow APIs to access.
 

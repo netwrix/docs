@@ -45,7 +45,11 @@ topic for additional information.
 
 Please consider that if you are going to export the report in .csv format or want to subscribe to
 the .csv report, the file will contain the full list of available attributes regardless of which
-filters you specified. Note that unseleted attributes have no values.
+filters you specified.
+
+:::note
+Unselected attributes have no values.
+:::
 
 ### Filters
 

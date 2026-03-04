@@ -14,13 +14,13 @@ keywords:
   - daily summary report
 products:
   - auditor
-sidebar_label: Remote service control manager connection timout
+sidebar_label: Remote service control manager connection timeout
 tags: []
-title: "Remote service control manager connection timout"
+title: "Remote service control manager connection timeout"
 knowledge_article_id: kA00g000000H9WPCA0
 ---
 
-# Remote service control manager connection timout
+# Remote service control manager connection timeout
 
 In the daily summary report sometimes you may see the following error:
 

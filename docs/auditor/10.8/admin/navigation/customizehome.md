@@ -53,7 +53,7 @@ resulting in a better visual representation of data. Additionally, tiles with le
 small and wide sizes. They are designed to open separate windows, providing easy access to features
 such as search, reports, and live news updates.
 
-Follow the steps to resizea tile.
+Follow the steps to resize a tile.
 
 **Step 1 –** Click Customize in the upper right corner of the home screen.
 

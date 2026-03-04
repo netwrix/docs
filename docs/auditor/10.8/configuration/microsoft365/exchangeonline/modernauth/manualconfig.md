@@ -26,7 +26,7 @@ General Requirements
   [Download .NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
 
 **NOTE:** If you have the FIPS option enabled you should proceed to Manual Exchange Online
-pre-configuration. See the Configure Exchange Online Modern Authentication Manuallysection for
+pre-configuration. See the Configure Exchange Online Modern Authentication Manually section for
 additional information.
 
 Follow the steps to enable Exchange Online Auto Audit for mailboxes with Modern Authentication
