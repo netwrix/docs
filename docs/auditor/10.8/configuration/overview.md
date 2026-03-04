@@ -42,4 +42,4 @@ With the Netwrix Auditor, the following Data Sources can be monitored:
 ### Share your idea:
 
 If you haven't found a suitable data source or have questions or comments about existing 
-ones, please open a new topic in [Auditor Ideas](https://community.netwrix.com/c/products/auditor/ideas/93) and let’s discuss!
+ones, open a new topic in [Auditor Ideas](https://community.netwrix.com/c/products/auditor/ideas/93) and let’s discuss!
