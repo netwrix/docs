@@ -189,6 +189,20 @@ function SearchPageContent() {
     const [showJumpToBottom, setShowJumpToBottom] = useState(false);
     const resultsScrollRef = useRef(null);
 
+    // Results per page dropdown state
+    const [rppOpen, setRppOpen] = useState(false);
+    const rppRef = useRef(null);
+
+    // Close results-per-page dropdown when clicking outside
+    useEffect(() => {
+        if (!rppOpen) return;
+        const handler = (e) => {
+            if (rppRef.current && !rppRef.current.contains(e.target)) setRppOpen(false);
+        };
+        document.addEventListener('mousedown', handler);
+        return () => document.removeEventListener('mousedown', handler);
+    }, [rppOpen]);
+
     // Page jump input state
     const [pageInputValue, setPageInputValue] = useState('');
     const [pageInputFocused, setPageInputFocused] = useState(false);
@@ -522,7 +536,7 @@ function SearchPageContent() {
                     <div style={{
                         width: '20%',
                         flexShrink: 0,
-                        maxHeight: 'calc(100% - 48px)',
+                        maxHeight: 'calc(100% - 14px)',
                         display: 'flex',
                         flexDirection: 'column',
                         alignSelf: 'flex-start',
@@ -568,32 +582,79 @@ function SearchPageContent() {
                                     }}
                                 />
                             </div>
-                            <div style={{flexShrink: 0}}>
+                            <div ref={rppRef} style={{flexShrink: 0, position: 'relative'}}>
                                 <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>
                                     Results per page
                                 </label>
-                                <select
-                                    value={resultsPerPage}
-                                    onChange={(e) => setResultsPerPage(Number(e.target.value))}
+                                <button
+                                    onClick={() => setRppOpen(o => !o)}
                                     style={{
                                         width: '160px',
                                         padding: '14px 44px 14px 16px',
                                         fontSize: '16px',
-                                        borderRadius: '8px',
+                                        borderRadius: rppOpen ? '8px 8px 0 0' : '8px',
                                         border: '2px solid var(--ifm-color-emphasis-300)',
+                                        background: 'var(--ifm-background-color)',
+                                        color: 'var(--ifm-font-color-base)',
+                                        cursor: 'pointer',
+                                        textAlign: 'left',
                                         transition: 'border-color 0.2s',
-                                        appearance: 'none',
-                                        backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\' viewBox=\'0 0 12 8\'%3E%3Cpath d=\'M1 1l5 5 5-5\' stroke=\'%23666\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\'/%3E%3C/svg%3E")',
-                                        backgroundRepeat: 'no-repeat',
-                                        backgroundPosition: 'right 14px center',
+                                        position: 'relative',
                                     }}
                                 >
-                                    <option value={25}>25</option>
-                                    <option value={50}>50</option>
-                                    <option value={100}>100</option>
-                                    <option value={150}>150</option>
-                                    <option value={200}>200</option>
-                                </select>
+                                    {resultsPerPage}
+                                    <svg
+                                        width="12" height="8" viewBox="0 0 12 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style={{
+                                            position: 'absolute',
+                                            right: '14px',
+                                            top: '50%',
+                                            transform: `translateY(-50%) ${rppOpen ? 'rotate(180deg)' : 'rotate(0deg)'}`,
+                                            transition: 'transform 0.2s',
+                                            pointerEvents: 'none',
+                                        }}
+                                    >
+                                        <path d="M1 1l5 5 5-5" stroke="var(--ifm-color-emphasis-600)" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                                    </svg>
+                                </button>
+                                {rppOpen && (
+                                    <div style={{
+                                        position: 'absolute',
+                                        top: '100%',
+                                        left: 0,
+                                        width: '160px',
+                                        background: 'var(--ifm-background-surface-color)',
+                                        border: '2px solid var(--ifm-color-emphasis-300)',
+                                        borderTop: 'none',
+                                        borderRadius: '0 0 8px 8px',
+                                        overflow: 'hidden',
+                                        zIndex: 100,
+                                        boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                                    }}>
+                                        {[25, 50, 100, 150, 200].map(n => (
+                                            <div
+                                                key={n}
+                                                onClick={() => { setResultsPerPage(n); setRppOpen(false); }}
+                                                style={{
+                                                    padding: '8px 16px',
+                                                    fontSize: '15px',
+                                                    cursor: 'pointer',
+                                                    background: n === resultsPerPage ? 'var(--ifm-color-primary)' : 'transparent',
+                                                    color: n === resultsPerPage ? 'white' : 'var(--ifm-font-color-base)',
+                                                }}
+                                                onMouseEnter={(e) => {
+                                                    if (n !== resultsPerPage) e.currentTarget.style.background = 'var(--ifm-color-emphasis-100)';
+                                                }}
+                                                onMouseLeave={(e) => {
+                                                    if (n !== resultsPerPage) e.currentTarget.style.background = 'transparent';
+                                                }}
+                                            >
+                                                {n}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
 
