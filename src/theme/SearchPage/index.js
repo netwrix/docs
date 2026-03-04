@@ -47,37 +47,114 @@ const PRODUCT_OPTIONS = [
     return a.label.localeCompare(b.label);
 });
 
-// Simple multi-select component
+// Checkbox-based multi-select component
 function MultiSelect({label, options, selectedValues, onChange}) {
+    // options[0] is the "All products" sentinel — skip it for the checkbox list
+    const productOptions = options.filter(o => o.value !== '__all__');
+    const noneSelected = selectedValues.length === 1 && selectedValues[0] === '__none__';
+    const allSelected = selectedValues.length === 0 || selectedValues.includes('__all__');
+    const someSelected = !allSelected && !noneSelected && selectedValues.length > 0;
+
+    const selectAllRef = useRef(null);
+
+    useEffect(() => {
+        if (selectAllRef.current) {
+            selectAllRef.current.indeterminate = someSelected;
+            if (!someSelected) selectAllRef.current.indeterminate = false;
+        }
+    }, [someSelected]);
+
+    function handleSelectAll() {
+        if (allSelected && !someSelected) {
+            onChange(['__none__']); // All checked → uncheck all
+        } else {
+            onChange([]);           // Indeterminate or none → check all
+        }
+    }
+
+    function handleOption(value, checked) {
+        // Resolve current explicit selection
+        const current = allSelected
+            ? productOptions.map(o => o.value)   // [] means all
+            : noneSelected
+                ? []                              // __none__ means none
+                : selectedValues.filter(v => v !== '__all__');
+        if (checked) {
+            const next = current.concat(value);
+            onChange(next.length === productOptions.length ? [] : next);
+        } else {
+            onChange(current.filter(v => v !== value));
+        }
+    }
+
+    const containerStyle = {
+        width: '100%',
+        border: '2px solid var(--ifm-color-emphasis-300)',
+        borderRadius: '8px',
+        maxHeight: '220px',
+        overflowY: 'auto',
+        background: 'var(--ifm-background-color)',
+    };
+
+    const rowStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
+        padding: '8px 14px',
+        cursor: 'pointer',
+        fontSize: '15px',
+        userSelect: 'none',
+    };
+
+    const checkboxStyle = {
+        width: '16px',
+        height: '16px',
+        flexShrink: 0,
+        cursor: 'pointer',
+        accentColor: 'var(--ifm-color-primary)',
+    };
+
+    const dividerStyle = {
+        height: '1px',
+        background: 'var(--ifm-color-emphasis-200)',
+        margin: '0',
+    };
+
     return (
         <div style={{marginBottom: '16px'}}>
             <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>
                 {label}
             </label>
-            <select
-                multiple
-                value={selectedValues}
-                onChange={(e) => {
-                    const values = Array.from(e.target.selectedOptions, option => option.value);
-                    onChange(values);
-                }}
-                style={{
-                    width: '100%',
-                    minHeight: '120px',
-                    padding: '8px',
-                    borderRadius: '4px',
-                    border: '1px solid var(--ifm-color-emphasis-300)',
-                }}
-            >
-                {options.map((opt) => (
-                    <option key={opt.value} value={opt.value}>
-                        {opt.label}
-                    </option>
-                ))}
-            </select>
-            <small style={{display: 'block', marginTop: '4px', color: 'var(--ifm-color-emphasis-600)'}}>
-                Hold Ctrl/Cmd to select multiple
-            </small>
+            <div style={containerStyle}>
+                {/* Select-all row */}
+                <label style={{...rowStyle, fontWeight: '500', background: 'var(--ifm-color-emphasis-100)', justifyContent: 'space-between'}}>
+                    <input
+                        ref={selectAllRef}
+                        type="checkbox"
+                        style={checkboxStyle}
+                        checked={allSelected && !noneSelected}
+                        onChange={handleSelectAll}
+                    />
+                    <span style={{fontSize: '13px', color: 'var(--ifm-color-emphasis-600)', marginLeft: 'auto'}}>
+                        {noneSelected ? 0 : allSelected ? productOptions.length : selectedValues.length} of {productOptions.length}
+                    </span>
+                </label>
+                <div style={dividerStyle} />
+                {productOptions.map((opt) => {
+                    const checked = !noneSelected && (allSelected || selectedValues.includes(opt.value));
+                    return (
+                        <label key={opt.value} style={rowStyle}>
+                            <input
+                                type="checkbox"
+                                style={checkboxStyle}
+                                checked={checked}
+                                onChange={(e) => handleOption(opt.value, e.target.checked)}
+                            />
+                            {opt.label}
+                        </label>
+                    );
+                })}
+            </div>
         </div>
     );
 }
@@ -537,15 +614,8 @@ function SearchPageContent() {
                             // Sort products alphabetically
                             const sortedProducts = Object.keys(groupedByProduct).sort();
 
-                            // Global counter for numbering results across all products on this page
-                            // Start from (page * resultsPerPage) + 1
-                            let resultNumber = (searchResultState.lastPage || 0) * resultsPerPage;
-
                             return sortedProducts.map((product) => {
                                 const productResults = groupedByProduct[product];
-                                const startNum = resultNumber + 1;
-                                const endNum = resultNumber + productResults.length;
-                                const totalForProduct = productResults.length;
 
                                 return (
                                     <section key={product} style={{marginBottom: '32px'}}>
@@ -563,7 +633,6 @@ function SearchPageContent() {
                                         </Heading>
 
                                     {productResults.map(({title, url, summary, breadcrumbs}, i) => {
-                                        resultNumber++;
                                         return (
                                             <article
                                                 key={i}
@@ -579,17 +648,8 @@ function SearchPageContent() {
                                                         fontSize: '18px',
                                                         marginBottom: '8px',
                                                         fontWeight: '600',
-                                                        display: 'flex',
-                                                        gap: '8px',
                                                     }}
                                                 >
-                                                    <span style={{
-                                                        color: 'var(--ifm-color-emphasis-600)',
-                                                        minWidth: '40px',
-                                                        flexShrink: 0,
-                                                    }}>
-                                                        {resultNumber}.
-                                                    </span>
                                                     <Link to={url} dangerouslySetInnerHTML={{__html: title}} />
                                                 </Heading>
 
@@ -777,81 +837,43 @@ function SearchPageContent() {
                 )}
             </div>
 
-            {/* Back to top button */}
-            {showBackToTop && (
+            {/* Back to top / jump to bottom buttons — mutually exclusive, same position */}
+            {(showBackToTop || showJumpToBottom) && (
                 <button
-                    onClick={scrollToTop}
-                    aria-label="Back to top"
+                    onClick={showBackToTop ? scrollToTop : scrollToBottom}
+                    aria-label={showBackToTop ? 'Back to top' : 'Jump to bottom'}
                     style={{
                         position: 'fixed',
                         bottom: '30px',
-                        right: '30px',
-                        width: '50px',
-                        height: '50px',
+                        right: '24px',
+                        width: '36px',
+                        height: '36px',
                         borderRadius: '50%',
                         backgroundColor: 'var(--ifm-color-primary)',
-                        color: 'white',
                         border: 'none',
                         cursor: 'pointer',
-                        fontSize: '48px',
-                        fontWeight: 'bold',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.18)',
                         zIndex: 1000,
-                        transition: 'all 0.3s ease',
+                        transition: 'opacity 0.2s ease, box-shadow 0.2s ease',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        overflow: 'hidden',
+                        opacity: 0.85,
+                        padding: 0,
                     }}
                     onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.1)';
-                        e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.2)';
+                        e.currentTarget.style.opacity = '1';
+                        e.currentTarget.style.boxShadow = '0 4px 14px rgba(0,0,0,0.25)';
                     }}
                     onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'scale(1)';
-                        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                        e.currentTarget.style.opacity = '0.85';
+                        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.18)';
                     }}
                 >
-                    ↑
-                </button>
-            )}
-
-            {/* Jump to bottom button */}
-            {showJumpToBottom && (
-                <button
-                    onClick={scrollToBottom}
-                    aria-label="Jump to bottom"
-                    style={{
-                        position: 'fixed',
-                        top: '490px',
-                        right: '30px',
-                        width: '50px',
-                        height: '50px',
-                        borderRadius: '50%',
-                        backgroundColor: 'var(--ifm-color-primary)',
-                        color: 'white',
-                        border: 'none',
-                        cursor: 'pointer',
-                        fontSize: '48px',
-                        fontWeight: 'bold',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                        zIndex: 1000,
-                        transition: 'all 0.3s ease',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        overflow: 'hidden',
-                    }}
-                    onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.1) translateY(-10px)';
-                        e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.2)';
-                    }}
-                    onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-10px)';
-                        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-                    }}
-                >
-                    <span style={{transform: 'translateY(-10px)', display: 'block'}}>↓</span>
+                    <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style={{transform: showBackToTop ? 'none' : 'rotate(180deg)'}}>
+                        <polyline points="1,8 7,2 13,8" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                 </button>
             )}
         </Layout>
