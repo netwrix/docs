@@ -9,7 +9,7 @@ sidebar_position: 1
 Netwrix Auditor can monitor for operations with files and folders on file shares within Azure Files storage accounts.
 It supports two types of monitored items for Azure Files:
  - **Storage account**: monitoring [actions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/monitoredobjects) on all shares of one specefied **storage account**
- - **Azure Subscription**: monitoring [actions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/monitoredobjects) on all shars of all **storage accounts** of the specified **Azure Files subscription**
+ - **Azure Subscription**: monitoring [actions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/monitoredobjects) on all shares of all **storage accounts** of the specified **Azure Files subscription**
 
 
 **Note:** For all **"data storage accounts"** used in the points above, you must configure [Diaggnostic settings](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
