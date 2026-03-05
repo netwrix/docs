@@ -1,0 +1,30 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Rule
+description: A single linting rule definition.
+type: object
+
+required:
+  - message
+  - level
+  - tokens
+
+properties:
+  message:
+    type: string
+    description: The message displayed when this rule is triggered.
+    minLength: 1
+
+  level:
+    type: string
+    description: Severity level of the rule violation.
+    enum:
+      - suggestion
+      - warning
+      - error
+
+  reason:
+    type: string
+    description: A string explaining the rationale behind this rule.
+    minLength: 1
+
+additionalProperties: false
