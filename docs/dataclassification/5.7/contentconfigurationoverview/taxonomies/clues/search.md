@@ -35,7 +35,7 @@ tab and configure search settings.
 
 
 3. To view how recent changes to the term will affect the document classifications, select Show
-   document movements. As a result, the “movement” of the document since the last classification
+   document movements. When selected, any change in scoring of each document since the last time that document was classified
    will be shown. Possible scenarios are:
 
 ![movementskey](/images/dataclassification/5.7/admin/taxonomies/movementskey.webp)
