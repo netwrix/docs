@@ -187,7 +187,6 @@ function SearchPageContent() {
     // Back to top button visibility
     const [showBackToTop, setShowBackToTop] = useState(false);
     const [showJumpToBottom, setShowJumpToBottom] = useState(false);
-    const resultsScrollRef = useRef(null);
 
     // Results per page dropdown state
     const [rppOpen, setRppOpen] = useState(false);
@@ -479,35 +478,31 @@ function SearchPageContent() {
             return;
         }
         if (searchResultState.items.length > 0 && !searchResultState.loading) {
-            resultsScrollRef.current?.scrollTo({top: 0, behavior: 'smooth'});
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     }, [searchResultState.lastPage, searchResultState.items.length, searchResultState.loading]);
 
-    // Show/hide back to top and jump to bottom buttons based on results scroll position
+    // Show/hide back to top and jump to bottom buttons based on window scroll
     useEffect(() => {
-        const el = resultsScrollRef.current;
-        if (!el) return;
-
         const handleScroll = () => {
-            const scrolledDown = el.scrollTop > 300;
-            const nearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 300;
+            const scrolledDown = window.scrollY > 300;
+            const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 300;
 
             setShowBackToTop(scrolledDown);
             setShowJumpToBottom(!scrolledDown && !nearBottom && searchResultState.items.length > 0);
         };
 
         handleScroll();
-        el.addEventListener('scroll', handleScroll);
-        return () => el.removeEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, [searchResultState.items.length]);
 
     const scrollToTop = () => {
-        resultsScrollRef.current?.scrollTo({top: 0, behavior: 'smooth'});
+        window.scrollTo({top: 0, behavior: 'smooth'});
     };
 
     const scrollToBottom = () => {
-        const el = resultsScrollRef.current;
-        if (el) el.scrollTo({top: el.scrollHeight, behavior: 'smooth'});
+        window.scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'});
     };
 
     const pageTitle = searchQuery
@@ -522,24 +517,21 @@ function SearchPageContent() {
             </Head>
 
             <div className="container" style={{
-                height: 'calc(100vh - var(--ifm-navbar-height))',
-                display: 'flex',
-                flexDirection: 'column',
-                overflow: 'hidden',
-                paddingTop: '16px',
-                paddingBottom: '16px',
+                paddingBottom: '48px',
             }}>
-                <Heading as="h1" style={{fontSize: '20px', lineHeight: '1.3', marginBottom: '12px', flexShrink: 0}}>{pageTitle}</Heading>
-
-                <div style={{display: 'flex', gap: '24px', flex: 1, minHeight: 0}}>
+                <div style={{display: 'flex', gap: '24px', alignItems: 'flex-start'}}>
                     {/* Left sidebar — product filters */}
                     <div style={{
                         width: '20%',
                         flexShrink: 0,
-                        maxHeight: 'calc(100% - 14px)',
+                        position: 'sticky',
+                        top: 'var(--ifm-navbar-height)',
+                        maxHeight: 'calc(100vh - var(--ifm-navbar-height))',
                         display: 'flex',
                         flexDirection: 'column',
-                        alignSelf: 'flex-start',
+                        paddingTop: '16px',
+                        paddingBottom: '16px',
+                        backgroundColor: 'var(--ifm-navbar-background-color)',
                     }}>
                         <MultiSelect
                             label="Products"
@@ -550,9 +542,17 @@ function SearchPageContent() {
                     </div>
 
                     {/* Right content — search box + results */}
-                    <div style={{flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden'}}>
-                        {/* Static controls — never scrolls */}
-                        <div style={{flexShrink: 0}}>
+                    <div style={{flex: 1, minWidth: 0}}>
+                        {/* Sticky controls — heading + search + results-per-page + doc count */}
+                        <div style={{
+                            position: 'sticky',
+                            top: 'var(--ifm-navbar-height)',
+                            zIndex: 10,
+                            backgroundColor: 'var(--ifm-navbar-background-color)',
+                            paddingTop: '16px',
+                            paddingBottom: '12px',
+                        }}>
+                        <Heading as="h1" style={{fontSize: '20px', lineHeight: '1.3', marginBottom: '12px'}}>{pageTitle}</Heading>
                         <div style={{display: 'flex', gap: '16px', marginBottom: '12px', alignItems: 'flex-end'}}>
                             <div style={{flex: 1}}>
                                 <input
@@ -672,10 +672,10 @@ function SearchPageContent() {
                                 {documentsFoundPlural(searchResultState.totalResults)}
                             </div>
                         )}
-                        </div>{/* closes static controls div */}
+                        </div>{/* closes sticky controls div */}
 
-                        {/* Scrollable results area */}
-                        <div ref={resultsScrollRef} style={{flex: 1, overflowY: 'auto', minHeight: 0, paddingRight: '4px'}}>
+                        {/* Results area — scrolls with page */}
+                        <div>
 
                 {searchResultState.items.length > 0 ? (
                     <main>
