@@ -12,7 +12,11 @@ documents achieving the minimum score set for classification in the term.
 
 :::note
 This list will include the current classification status of each document and any changes
-made to the class, since the last classification, are not taken into account.
+made to the class since the last time each document was classified are not taken into account.
+
+To see how the classification of each document would change based on the current configuration 
+of the class, tick the Show Movements checkbox. When selected, any change in scoring of each 
+document since the last time that document was classified will be shown.
 :::
 
 
@@ -37,6 +41,12 @@ You can use the Browse function to:
   will find any documents that scored between 50 and 60.
 
 ![browsetab_thumb_0_0](/images/dataclassification/5.7/admin/reporting/browsetab_thumb_0_0.webp)
+
+:::note
+By default, results from sources that have not been indexed are not included in the Browse results. 
+To include these results, tick the Show Unindexed Documents checkbox.
+:::
+
 
 To restrict the browsing scope, you can either add a URL filter, or add a custom filter, as well as
 select to show document movements. These options are configured in the same way as for
