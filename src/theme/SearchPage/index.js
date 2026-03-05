@@ -206,6 +206,25 @@ function SearchPageContent() {
     const [pageInputValue, setPageInputValue] = useState('');
     const [pageInputFocused, setPageInputFocused] = useState(false);
 
+    // Mobile breakpoint
+    const [isMobile, setIsMobile] = useState(false);
+    const [isSmall, setIsSmall] = useState(false);
+    useEffect(() => {
+        if (!ExecutionEnvironment.canUseDOM) return;
+        const mqMobile = window.matchMedia('(max-width: 768px)');
+        const mqSmall = window.matchMedia('(max-width: 480px)');
+        setIsMobile(mqMobile.matches);
+        setIsSmall(mqSmall.matches);
+        const mobileHandler = (e) => setIsMobile(e.matches);
+        const smallHandler = (e) => setIsSmall(e.matches);
+        mqMobile.addEventListener('change', mobileHandler);
+        mqSmall.addEventListener('change', smallHandler);
+        return () => {
+            mqMobile.removeEventListener('change', mobileHandler);
+            mqSmall.removeEventListener('change', smallHandler);
+        };
+    }, []);
+
     // Parse URL parameters
     const urlParams = new URLSearchParams(location.search);
     const queryFromUrl = urlParams.get('q') || '';
@@ -519,42 +538,35 @@ function SearchPageContent() {
             <div className="container" style={{
                 paddingBottom: '48px',
             }}>
-                <div style={{display: 'flex', gap: '24px', alignItems: 'flex-start'}}>
-                    {/* Left sidebar — product filters */}
-                    <div style={{
-                        width: '20%',
-                        flexShrink: 0,
+                <div style={isMobile ? {
+                    display: 'flex',
+                    flexDirection: 'column',
+                } : {
+                    display: 'grid',
+                    gridTemplateColumns: '20% 1fr',
+                    gridTemplateAreas: '"filters controls" "filters results"',
+                    columnGap: '24px',
+                    alignItems: 'start',
+                }}>
+                    {/* Controls — heading + search + results-per-page + doc count */}
+                    <div style={isMobile ? {
+                        paddingTop: '16px',
+                        paddingBottom: '12px',
+                    } : {
+                        gridArea: 'controls',
                         position: 'sticky',
                         top: 'var(--ifm-navbar-height)',
-                        maxHeight: 'calc(100vh - var(--ifm-navbar-height))',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        paddingTop: '16px',
-                        paddingBottom: '16px',
+                        zIndex: 10,
                         backgroundColor: 'var(--ifm-navbar-background-color)',
+                        paddingTop: '16px',
+                        paddingBottom: '12px',
                     }}>
-                        <MultiSelect
-                            label="Products"
-                            options={PRODUCT_OPTIONS}
-                            selectedValues={selectedProducts}
-                            onChange={setSelectedProducts}
-                        />
-                    </div>
-
-                    {/* Right content — search box + results */}
-                    <div style={{flex: 1, minWidth: 0}}>
-                        {/* Sticky controls — heading + search + results-per-page + doc count */}
-                        <div style={{
-                            position: 'sticky',
-                            top: 'var(--ifm-navbar-height)',
-                            zIndex: 10,
-                            backgroundColor: 'var(--ifm-navbar-background-color)',
-                            paddingTop: '16px',
-                            paddingBottom: '12px',
-                        }}>
                         <Heading as="h1" style={{fontSize: '20px', lineHeight: '1.3', marginBottom: '12px'}}>{pageTitle}</Heading>
-                        <div style={{display: 'flex', gap: '16px', marginBottom: '12px', alignItems: 'flex-end'}}>
+                        <div style={{display: 'flex', flexDirection: isSmall ? 'column' : 'row', gap: '16px', marginBottom: '12px', alignItems: isSmall ? 'stretch' : 'flex-end'}}>
                             <div style={{flex: 1}}>
+                                <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>
+                                    Search
+                                </label>
                                 <input
                                     type="search"
                                     name="q"
@@ -672,10 +684,35 @@ function SearchPageContent() {
                                 {documentsFoundPlural(searchResultState.totalResults)}
                             </div>
                         )}
-                        </div>{/* closes sticky controls div */}
+                    </div>{/* closes controls div */}
 
-                        {/* Results area — scrolls with page */}
-                        <div>
+                    {/* Filters sidebar — product filters */}
+                    <div style={isMobile ? {
+                        maxHeight: '220px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        paddingBottom: '8px',
+                    } : {
+                        gridArea: 'filters',
+                        position: 'sticky',
+                        top: 'var(--ifm-navbar-height)',
+                        maxHeight: 'calc(100vh - var(--ifm-navbar-height))',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        paddingTop: '16px',
+                        paddingBottom: '16px',
+                        backgroundColor: 'var(--ifm-navbar-background-color)',
+                    }}>
+                        <MultiSelect
+                            label="Products"
+                            options={PRODUCT_OPTIONS}
+                            selectedValues={selectedProducts}
+                            onChange={setSelectedProducts}
+                        />
+                    </div>{/* closes filters div */}
+
+                    {/* Results area */}
+                    <div style={isMobile ? {} : {gridArea: 'results'}}>
 
                 {searchResultState.items.length > 0 ? (
                     <main>
@@ -916,9 +953,8 @@ function SearchPageContent() {
                         </button>
                     </div>
                 )}
-                        </div>{/* closes scrollable results div */}
-                    </div>{/* closes right content div */}
-                </div>{/* closes outer flex container */}
+                    </div>{/* closes results div */}
+                </div>{/* closes outer grid/flex container */}
             </div>
 
             {/* Back to top / jump to bottom buttons — mutually exclusive, same position */}
