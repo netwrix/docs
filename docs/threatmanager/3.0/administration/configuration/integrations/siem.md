@@ -45,7 +45,7 @@ Follow the instructions to enable SIEM notifications.
 - Template Format – Selecting Custom template from the Template drop-down list enables this box. It
   displays the variables in Threat Manager that can be used to create a custom SIEM template:
 
-  All template variables are case-insensitive and wrapped in `%` delimiters (e.g., `%VARIABLE_NAME%`). Variables that cannot be resolved are replaced with an empty string.
+  All template variables are case-insensitive and wrapped in `%` delimiters (e.g., `%VARIABLE_NAME%`). The template replaces unresolved variables with an empty string.
 
   **System Variables**
 
@@ -112,10 +112,10 @@ Follow the instructions to enable SIEM notifications.
   |---|---|---|---|
   | `%PRIMARYEVENTCLIENT%` | Client name from the primary event (prefers Client.Name, falls back to Process.Name) | `string` | `DOMAIN\WORKSTATION01` |
   | `%PRIMARYEVENTCLIENTID%` | ID of the client on the primary event | `long` | `1234` |
-  | `%PRIMARYEVENTCLIENTIP%` | IP address of the client on the primary event (resolved via DNS if necessary) | `string` | `192.168.1.100` |
+  | `%PRIMARYEVENTCLIENTIP%` | IP address of the client on the primary event (uses DNS resolution if necessary) | `string` | `192.168.1.100` |
   | `%PRIMARYEVENTFROMIP%` | IP address of the originating client (alias for client IP) | `string` | `192.168.1.100` |
   | `%PRIMARYEVENTFROMMAC%` | MAC address of the originating client | `string` | `00:1A:2B:3C:4D:5E` |
-  | `%PRIMARYEVENTTOIP%` | IP address of the target/source host (resolved via DNS if necessary) | `string` | `10.0.0.50` |
+  | `%PRIMARYEVENTTOIP%` | IP address of the target/source host (uses DNS resolution if necessary) | `string` | `10.0.0.50` |
   | `%PRIMARYEVENTHOST%` | Source host name from the primary event | `string` | `DOMAIN\SERVER01` |
   | `%PRIMARYEVENTDOMAIN%` | Domain name of the primary event source host | `string` | `DOMAIN` |
   | `%PRIMARYEVENTOPERATION%` | Category/type of operation for the primary event | `string` | `File Modified` |
@@ -161,11 +161,11 @@ Follow the instructions to enable SIEM notifications.
 
   | Sequence | Replacement | Description |
   |---|---|---|
-  | `\t` (literal) | Tab character | Tab characters in templates are converted to actual tabs |
-  | `\r` | `\\r` | Carriage returns in the output are escaped |
-  | `\n` | `\\n` | Newlines in the output are escaped |
+  | `\t` (literal) | Tab character | The template converts tab characters to actual tabs |
+  | `\r` | `\\r` | The template escapes carriage returns in the output |
+  | `\n` | `\\n` | The template escapes newlines in the output |
 
-  A `\r\n` is appended to the end of every built message.
+  The template appends `\r\n` to the end of every built message.
 
 
 **Step 3 –** Click Send Test Message to send a test email to the configured email address.
