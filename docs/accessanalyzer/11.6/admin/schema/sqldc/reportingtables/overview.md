@@ -1,6 +1,6 @@
 # Reporting Tables
 
-The following 56 tables are **denormalized reporting tables** populated by NAA analysis jobs. They use human-readable column names with spaces (e.g., `"Database Type"`, `"Instance"`) and are designed for direct consumption by the NAA console and reports. They do not participate in foreign key relationships with the core tables.
+The following 59 tables are **denormalized reporting tables** populated by NAA analysis jobs. They use human-readable column names with spaces (e.g., `"Database Type"`, `"Instance"`) and are designed for direct consumption by the NAA console and reports. They do not participate in foreign key relationships with the core tables.
 
 :::note
 All reporting tables share a common `Database Type` column (varchar/nvarchar) that identifies the SQL Server platform variant (e.g., `"SQL Server"`, `"Azure SQL Database"`, `"Azure SQL Managed Instance"`). None of these tables have primary keys or foreign keys — they are heap tables optimized for bulk INSERT/TRUNCATE patterns.
