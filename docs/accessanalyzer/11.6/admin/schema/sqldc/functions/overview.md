@@ -33,7 +33,7 @@
 
 ## SA_SQLServer_CreateOrUpdateSDDResource (Stored Procedure)
 
-**Description:** Upserts a Sensitive Data Discovery resource record. Looks up an existing resource by its composite key (`type`, `instance_id`, `database_id`, `object_id`, `column_id`). If no match is found, inserts a new row and returns the new `id`. If a match exists, updates the `last_scanned` reference and returns the existing `id`. Handles NULL-safe comparison for optional columns (`database_id`, `object_id`, `column_id`).
+**Description:** Inserts or updates a Sensitive Data Discovery resource record. Looks up an existing resource by its composite key (`type`, `instance_id`, `database_id`, `object_id`, `column_id`). If no match is found, inserts a new row and returns the new `id`. If a match exists, updates the `last_scanned` reference and returns the existing `id`. Handles NULL-safe comparison for optional columns (`database_id`, `object_id`, `column_id`).
 
 **Signature:**
 ```sql
