@@ -17,7 +17,7 @@ products:
   - access-analyzer
 sidebar_label: What Does "Licensed Host Count Exceeded" Mean in t
 tags:
-  - reference-and-technical-specifications
+  - installation-and-upgrades
 title: What Does "Licensed Host Count Exceeded" Mean in the Access Analyzer Banner?
 knowledge_article_id: kA04u0000000IvdCAE
 ---
