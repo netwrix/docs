@@ -28,7 +28,7 @@ Additionally, the Sensitive Data Discovery Add-On enables the solution to search
 sensitive data, or Sensitive Data Discovery Auditing (SEEK).
 
 :::warning
-There is currently a limit of 100 maximum file system hosts that can be scanned simultaneously.
+There is a limit of 100 file system hosts that can be scanned simultaneously.
 :::
 
 **Supported Platforms**
