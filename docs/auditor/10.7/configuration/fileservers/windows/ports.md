@@ -21,7 +21,7 @@ Tip for reading the table: For example, on the computer where Netwrix Auditor Se
 | Port                       | Protocol | Source                 | Target             | Purpose                                                                                                     |
 | -------------------------- | -------- | ---------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------- |
 | Windows File Servers       |          |                        |                    |                                                                                                             |
-| 389                        | TCP/UDP  | Netwrix Auditor Server | Domain controllers | LDAP DC query Account resolve                                                                               |
+| 389                        | TCP/UDP  | Netwrix Auditor Server | Domain controllers | LDAP DC query Account resolve (enabled LDAP packet encryption)                                              |
 | 135 + Dynamic: 1024 -65535 | TCP      | Netwrix Auditor Server | Monitored computer | Windows Management Instrumentation Firewall configuration Network Traffic Compression Service communication |
 | 135                        | TCP      | Netwrix Auditor Server | Monitored computer | Service Control Manager Remote Protocol (Network Traffic Compression Service) installation                  |
 | 137                        | UDP      | Netwrix Auditor Server | Monitored computer | File and Printer Sharing (NetBIOS Name Resolution)                                                          |
