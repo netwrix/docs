@@ -27,6 +27,10 @@ be enhanced with the Netwrix Activity Monitor to also conduct Activity Auditing 
 Additionally, the Sensitive Data Discovery Add-On enables the solution to search file content for
 sensitive data, or Sensitive Data Discovery Auditing (SEEK).
 
+:::warning
+There is currently a limit of 100 maximum file system hosts that can be scanned simultaneously.
+:::
+
 **Supported Platforms**
 
 - See the [File System Supported Platforms](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/filesystems.md) topic for a
