@@ -45,55 +45,128 @@ Follow the instructions to enable SIEM notifications.
 - Template Format – Selecting Custom template from the Template drop-down list enables this box. It
   displays the variables in Threat Manager that can be used to create a custom SIEM template:
 
-    - %SYSLOG_DATE% – UTC timestamp of the SIEM message
-    - %SYSLOG_DATE_ISO% – ISO-formatted UTC timestamp of the SIEM message
-    - %HOST% – Threat Manager server hostname
-    - %COMPANY% – Netwrix
-    - %PRODUCT% – Threat Manager
-    - %PRODUCT_VERSION% – Threat Manager version
-    - %THREAT_TIME% – The date and time of the primary event associated with the threat
-    - %THREATTYPE% – Threat type
-    - %USERS% – Threat perpetrator(s)
-    - %COMPUTERS% – Threat host (typically domain controller or file server)
-    - %FILENAME% – File or share name for file events
-    - %NEW_FILENAME% – New file name (for rename events)
-    - %PROCESS% – Process name
-    - %THREATID% – Threat ID
-    - %THREATSUMMARY% – Summary of the threat
-    - %THREATDEFINITION% – Definition of the threat
-    - %THREATLEVEL% – Threat level of severity
-    - %THREATPROPERTIES% – Threat properties JSON string
-    - %THREATTIMEGENERATED% – Date and time the threat was generated (UTC)
-    - %THREATTIMEGENERATEDTIME% – Time the threat was generated (UTC)
-    - %THREATTIMEGENERATEDDATE% – Date the threat was generated (UTC)
-    - %TARGETHOSTDOMAIN% – Active Directory domain of the target host
-    - %TARGETHOSTTAGS% – Comma-delimited list of target host tags
-    - %CLIENTDOMAIN% – Active Directory domain of the client host
-    - %CLIENTTAGS% – Comma-delimited list of client host tags
-    - %THREATPROCESSNAME% – Name of process running (e.g., for Unusal Process threat)
-    - %THREATEVENTCOUNT% – The number of events related to the threat
-    - %THREATEVIDENCE% – Threat evidence JSON string
-    - %PERPETRATORSAMACCOUNTNAME% – SAMAccountName of the perpetrator
-    - %PERPETRATORDISTINGUISHEDNAME% – Distinguished name of the perpetrator
-    - %THREATUSERDISPLAYNAME% – Display name of the perpetrator
-    - %THREATUSEREMAIL% – Email address of the perpetrator
-    - %PERPETRATORDOMAIN% – Active Directory domain of the perpetrator
-    - %PERPETRATORTAGS% – Comma-delimited list of perpetrator tags
-    - %THREATUSERMANAGERDISPLAYNAME% –Display name of the manager of the perpetrator
-    - %THREATUSERMANAGEREMAIL% – Email address of the manager of the perpetrator
-    - %AFFECTEDUSERSAMACCOUNTNAME% – Comma-delimited list of affected User SAMAccount names
-    - %AFFECTEDUSERDISPLAYNAME% – Comma-delimited list of display names of the affected user
-    - %AFFECTEDUSERDOMAIN% – Active Directory domain of affected users
-    - %AFFECTEDUSERTAGS% – Comma-delimted list of tags for affected users
-    - %PRIMARYEVENTPATH% – Primary event path
-    - %PRIMARYEVENTHOST% – Primary event host
-    - %PRIMARYEVENTCLIENT% – Primary event client
-    - %PRIMARYEVENTCLIENTID% – ID of the client of the primary event
-    - %PRIMARYEVENTFROMIP% – IP address of the client of the primary event
-    - %PRIMARYEVENTOPERATION% – Type of event that occurred for the primary event
-    - %PRIMARYEVENTDOMAIN% – Active Directory domain of the primary event host
-    - %PRIMARYEVENTTOIP% – IP address of the primary event target host
-    - %PRIMARYEVENTTOMAC% – MAC address of the primary event target host
+  All template variables are case-insensitive and wrapped in `%` delimiters (e.g., `%VARIABLE_NAME%`). The template replaces unresolved variables with an empty string.
+
+  **System Variables**
+
+  | Variable | Description | Data Type | Example Value |
+  |---|---|---|---|
+  | `%SYSLOG_DATE%` | Current UTC date/time in universal sortable format | `string` (DateTime format `u`) | `2026-03-03 14:30:00Z` |
+  | `%SYSLOG_DATE_ISO%` | Current UTC date/time in ISO 8601 format with milliseconds | `string` (DateTime format `yyyy-MM-ddTHH:mm:ss.fffZ`) | `2026-03-03T14:30:00.123Z` |
+  | `%SYSLOG_DATE_ISO_D%` | Current UTC date/time in compact ISO 8601 format with milliseconds | `string` (DateTime format `yyyyMMddTHH:mm:ss.fffZ`) | `20260303T14:30:00.123Z` |
+  | `%HOST%` | Machine name of the StealthDEFEND server | `string` | `SD-SERVER01` |
+  | `%COMPANY%` | Company name from application info | `string` | `Stealthbits Technologies` |
+  | `%PRODUCT%` | Product name from application info | `string` | `StealthDEFEND` |
+  | `%PRODUCT_VERSION%` | Product version from application info | `string` | `4.5.0.0` |
+  | `%THREAT_TYPE_ID%` | Job ID of the threat definition | `string` (from `long`) | `42` |
+  | `%THREAT_TIME%` | UTC time of the primary event in universal sortable format | `string` (DateTime format `u`) | `2026-03-03 14:25:00Z` |
+  | `%THREAT_TYPE%` | Job type / threat category name | `string` | `Abnormal Authentication` |
+  | `%THREAT_LEVEL%` | Numeric threat severity level ID (-1 if null) | `string` (from `long`) | `3` |
+  | `%PERMISSION_DIFF%` | Formatted permission difference for the primary event (syslog format) | `string` | *(Structured permission change details)* |
+  | `%USERS%` | SAM account name of the perpetrating user | `string` | `DOMAIN\jsmith` |
+  | `%COMPUTERS%` | Semicolon-delimited list of computers involved in the threat | `string` | `SERVER01; WORKSTATION02` |
+  | `%FILENAME%` | File or share name from the primary event (prefers share name over file name) | `string` | `\\SERVER01\SharedDocs` |
+  | `%NEW_FILENAME%` | New attribute value from the primary event (e.g., renamed file) | `string` | `\\SERVER01\NewFolder` |
+  | `%PROCESS%` | Process name from the primary event | `string` | `explorer.exe` |
+
+
+  **Perpetrator (Threat User)**
+
+  | Variable | Description | Data Type | Example Value |
+  |---|---|---|---|
+  | `%PERPETRATORSAMACCOUNTNAME%` | SAM account name of the perpetrator | `string` | `DOMAIN\jsmith` |
+  | `%PERPETRATORDISTINGUISHEDNAME%` | Distinguished name of the perpetrator | `string` | `CN=John Smith,OU=Users,DC=domain,DC=com` |
+  | `%PERPETRATORDOMAIN%` | Domain of the perpetrator (parsed from SAM account name or AD domain) | `string` | `DOMAIN` |
+  | `%PERPETRATORTAGS%` | Comma-delimited list of tags assigned to the perpetrator | `string` | `VIP, Executive, Service Account` |
+  | `%THREATUSERDISPLAYNAME%` | Display name of the threat user (falls back to SAM account name) | `string` | `John Smith` |
+  | `%THREATUSEREMAIL%` | Email address of the threat user | `string` | `jsmith@domain.com` |
+  | `%THREATUSERMANAGERDISPLAYNAME%` | Display name of the threat user's manager (falls back to manager SAM account name) | `string` | `Jane Doe` |
+  | `%THREATUSERMANAGEREMAIL%` | Email address of the threat user's manager | `string` | `jdoe@domain.com` |
+
+  **Client**
+
+  | Variable | Description | Data Type | Example Value |
+  |---|---|---|---|
+  | `%CLIENTDOMAIN%` | Domain name of the client host (parsed from `DOMAIN\hostname` format) | `string` | `DOMAIN` |
+  | `%CLIENTTAGS%` | Comma-delimited list of tags assigned to the client host | `string` | `Workstation, Finance` |
+
+  **Target Host**
+
+  | Variable | Description | Data Type | Example Value |
+  |---|---|---|---|
+  | `%TARGETHOSTDOMAIN%` | Domain name of the target host | `string` | `DOMAIN` |
+  | `%TARGETHOSTTAGS%` | Comma-delimited list of tags assigned to the target host | `string` | `Domain Controller, Critical` |
+
+  **Affected User**
+
+  | Variable | Description | Data Type | Example Value |
+  |---|---|---|---|
+  | `%AFFECTEDUSERSAMACCOUNTNAME%` | Comma-delimited list of affected user SAM account names | `string` | `DOMAIN\user1, DOMAIN\user2` |
+  | `%AFFECTEDUSERDISPLAYNAME%` | Comma-delimited list of affected user display names (falls back to SAM account name) | `string` | `User One, User Two` |
+  | `%AFFECTEDUSERDOMAIN%` | Domain of the first affected user (parsed from SAM account name or AD domain) | `string` | `DOMAIN` |
+  | `%AFFECTEDUSERTAGS%` | Comma-delimited, deduplicated list of tags across all affected users (includes group tags) | `string` | `VIP, Admins` |
+
+  **Primary Event**
+
+  | Variable | Description | Data Type | Example Value |
+  |---|---|---|---|
+  | `%PRIMARYEVENTCLIENT%` | Client name from the primary event (prefers Client.Name, falls back to Process.Name) | `string` | `DOMAIN\WORKSTATION01` |
+  | `%PRIMARYEVENTCLIENTID%` | ID of the client on the primary event | `long` | `1234` |
+  | `%PRIMARYEVENTCLIENTIP%` | IP address of the client on the primary event (uses DNS resolution if necessary) | `string` | `192.168.1.100` |
+  | `%PRIMARYEVENTFROMIP%` | IP address of the originating client (alias for client IP) | `string` | `192.168.1.100` |
+  | `%PRIMARYEVENTFROMMAC%` | MAC address of the originating client | `string` | `00:1A:2B:3C:4D:5E` |
+  | `%PRIMARYEVENTTOIP%` | IP address of the target/source host (uses DNS resolution if necessary) | `string` | `10.0.0.50` |
+  | `%PRIMARYEVENTHOST%` | Source host name from the primary event | `string` | `DOMAIN\SERVER01` |
+  | `%PRIMARYEVENTDOMAIN%` | Domain name of the primary event source host | `string` | `DOMAIN` |
+  | `%PRIMARYEVENTOPERATION%` | Category/type of operation for the primary event | `string` | `File Modified` |
+  | `%PRIMARYEVENTPATH%` | File path from the primary event (falls back to share name) | `string` | `\\SERVER01\Share\Documents\file.docx` |
+
+  **Primary Event Affected Object**
+
+  | Variable | Description | Data Type | Example Value |
+  |---|---|---|---|
+  | `%PRIMARYEVENTAFFECTEDOBJECTSAMACCOUNTNAME%` | SAM account name of the affected object on the primary event | `string` | `svc-backup` |
+  | `%PRIMARYEVENTAFFECTEDOBJECTDISTINGUISHEDNAME%` | Distinguished name of the affected object on the primary event | `string` | `CN=svc-backup,OU=Service Accounts,DC=domain,DC=com` |
+  | `%PRIMARYEVENTAFFECTEDOBJECTSID%` | SID of the affected object on the primary event | `string` | `S-1-5-21-123456789-987654321-111111111-1234` |
+  | `%PRIMARYEVENTAFFECTEDOBJECTGUID%` | GUID of the affected object on the primary event | `string` | `a1b2c3d4-e5f6-7890-abcd-ef1234567890` |
+  | `%PRIMARYEVENTAFFECTEDOBJECTCLASS%` | Object class of the affected object on the primary event | `string` | `user` |
+  | `%PRIMARYEVENTAFFECTEDOBJECTDOMAIN%` | Domain of the affected object on the primary event | `string` | `domain.com` |
+
+  **Threat Metadata**
+
+  | Variable | Description | Data Type | Example Value |
+  |---|---|---|---|
+  | `%THREATID%` | Unique ID of the threat | `long` | `98765` |
+  | `%THREATTYPE%` | Type/category of the threat (from Job.JobType) | `string` | `Abnormal Authentication` |
+  | `%THREATLEVEL%` | Severity level name of the threat | `string` | `High` |
+  | `%THREATDEFINITION%` | Description of the threat definition (from Job.ThreatDescription) | `string` | `Detects abnormal authentication patterns` |
+  | `%THREATSUMMARY%` | Formatted summary/description of the threat | `string` | `User jsmith authenticated from an unusual location` |
+  | `%THREATPROPERTIES%` | Raw JSON string of the threat properties | `string` (JSON) | `{"key":"value"}` |
+  | `%THREATEVENTCOUNT%` | Number of events associated with the threat | `int` | `15` |
+  | `%THREATPROCESSNAME%` | Name of the process from the primary event | `string` | `powershell.exe` |
+  | `%THREATTIMEGENERATED%` | Full date/time when the threat was detected | `DateTime` | `03/03/2026 2:30:00 PM` |
+  | `%THREATTIMEGENERATEDDATE%` | Date when the threat was detected (long date format) | `string` (DateTime format `D`) | `Tuesday, March 3, 2026` |
+  | `%THREATTIMEGENERATEDTIME%` | Time when the threat was detected in UTC (short time format) | `string` (DateTime format `t`) | `2:30 PM` |
+
+  **Evidence**
+
+  | Variable | Description | Data Type | Example Value |
+  |---|---|---|---|
+  | `%THREATEVIDENCE%` | JSON-serialized array of visible evidence items | `string` (JSON) | `[{"Description":"Logon from unusual IP","Show":true}]` |
+  | `%EVIDENCE%` | Semicolon-delimited string of evidence descriptions | `string` | `Logon from unusual IP; Account used outside business hours` |
+
+  **Special Characters**
+
+  The template also processes special characters:
+
+  | Sequence | Replacement | Description |
+  |---|---|---|
+  | `\t` (literal) | Tab character | The template converts tab characters to actual tabs |
+  | `\r` | `\\r` | The template escapes carriage returns in the output |
+  | `\n` | `\\n` | The template escapes newlines in the output |
+
+  The template appends `\r\n` to the end of every built message.
+
 
 **Step 3 –** Click Send Test Message to send a test email to the configured email address.
 
