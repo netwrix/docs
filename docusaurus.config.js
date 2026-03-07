@@ -41,7 +41,7 @@ const config = {
       rspackBundler: true,
       rspackPersistentCache: true, // 2-5x faster rebuilds
       mdxCrossCompilerCache: true,
-      ssgWorkerThreads: true, // 2x faster static generation
+      ssgWorkerThreads: false, // 2x faster static generation
     },
     v4: {
       removeLegacyPostBuildHeadAttribute: true, // Required for worker threads
@@ -71,9 +71,22 @@ const config = {
   ],
 
   plugins: [
-    // Google Analytics
-    [
-      '@docusaurus/plugin-google-gtag',
+      // Disable scope hoisting to prevent O(n²) hang on large module graphs
+      function customRspackPlugin() {
+        return {
+          name: 'custom-rspack-config',
+          configureWebpack(_config, isServer) {
+            if (!isServer) {
+              return { optimization: { concatenateModules: false } };
+            }
+            return {};
+          },
+        };
+      },
+
+      // Google Analytics
+      [
+        '@docusaurus/plugin-google-gtag',
       {
         trackingID: 'G-FZPWSDMTEX',
         anonymizeIP: true,
