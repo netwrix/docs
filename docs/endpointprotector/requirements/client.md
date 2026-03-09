@@ -77,6 +77,8 @@ C:\Program Files\CoSoSys\Endpoint Protector\*
   C:\Program Files\CoSoSys\Endpoint Protector\BrowserBroker.exe <- EPP versions before 2601
   C:\Program Files\CoSoSys\Endpoint Protector\EppExtensionHost.exe <- EPP Versions starting 2601
 C:\Windows\System32\config\systemprofile\AppData\Local\CoSoSys\EPP*
+C:\Program Files\CoSoSys\Endpoint Protector\winocr.exe
+C:\Program Files\CoSoSys\Endpoint Protector\i386\Wow64ProcHelper.exe
 ```
 
 **File Level Exclusions**
@@ -96,6 +98,8 @@ C:\Windows\System32\drivers\cssdcflt.sys
 C:\Windows\System32\drivers\cssnwtap.sys
 C:\eppclient.log
 C:\eppsslsplit.log
+C:\Program Files\CoSoSys\Endpoint Protector\winocr.exe
+C:\Program Files\CoSoSys\Endpoint Protector\i386\Wow64ProcHelper.exe
 ```
 
 **Process Level Exclusions**
@@ -106,6 +110,8 @@ EPPNotifier.exe
 EPPservice.exe
 BrowserBroker.exe <- EPP versions before 2601
 EppExtensionHost.exe <-- EPP Versions starting 2601
+winocr.exe
+Wow64ProcHelper.exe
 ```
 
 **Registry level exclusions**
