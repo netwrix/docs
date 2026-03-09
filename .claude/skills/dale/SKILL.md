@@ -2,8 +2,6 @@
 name: dale
 description: Any time a markdown file is edited in the docs/ directory, this skill should be run.
 argument-hint: "[docs/path/to/doc.md]"
-model: opus
-agent: dale
 ---
 
 # Overview
@@ -21,7 +19,7 @@ Your current working directory should always be the root of the project. Docs ar
 
 # Rules Engine
 
-Use Todo and create a Todo for each rule that you need to check. Mark each Todo as complete ones you've checked the given file for that rule. For each Todo:
+Use Todo and create a Todo for each rule that you need to check. Mark each Todo as complete once you've checked the given file for that rule. For each Todo:
 
 1. Read the `reason` for the rule.
 > You say "Reading $rule_name.", where $rule is the name of the file before the extension.

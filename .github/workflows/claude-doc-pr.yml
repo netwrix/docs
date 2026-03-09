@@ -1,7 +1,7 @@
 name: Doc PR Review
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, synchronize]
     branches:
       - dev
@@ -18,7 +18,7 @@ jobs:
   # Job 1: Automated review on PR open or new push
   # ──────────────────────────────────────────────
   doc-review:
-    if: github.event_name == 'pull_request_target'
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       contents: read
