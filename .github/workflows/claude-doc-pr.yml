@@ -6,7 +6,7 @@ on:
     branches:
       - dev
     paths:
-      - 'docs/**.md'
+      - 'docs/**/*.md'
       - '!docs/**/CLAUDE.md'
       - '!docs/**/SKILL.md'
 
@@ -122,11 +122,11 @@ jobs:
   # Job 2: @claude follow-up on PR comments
   # ──────────────────────────────────────────────
   doc-followup:
-    if: |
+    if: >-
       github.event_name == 'issue_comment' &&
       github.event.issue.pull_request &&
       contains(github.event.comment.body, '@claude') &&
-      github.event.comment.user.login != 'github-actions[bot]'
+      !startsWith(github.event.comment.user.login, 'github-actions')
     runs-on: ubuntu-latest
     permissions:
       contents: write
