@@ -179,12 +179,14 @@ jobs:
       - name: Handle @claude request
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         uses: anthropics/claude-code-action@v1
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
           prompt: |
-            /doc-pr-fix ${{ steps.pr-info.outputs.number }} ${{ github.event.comment.body }}
+            /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
           claude_args: |
             --model claude-sonnet-4-5-20250929
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(vale:*),Bash(gh api:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*),Skill(doc-pr-fix),Skill(dale)"
