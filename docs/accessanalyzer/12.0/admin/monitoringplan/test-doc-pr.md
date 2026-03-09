@@ -43,3 +43,5 @@ I recommend checking the service status first. Our team has found that most issu
 Currently, the monitoring plan does not support real-time monitoring. As of this writing, this feature is planned for a future release.
 
 The aforementioned steps should help you resolve common issues. If the problem persists, please contact support for further assistance.
+
+For additional help, please don't hesitate to reach out to our support team.
