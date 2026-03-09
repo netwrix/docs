@@ -97,14 +97,14 @@ jobs:
         run: |
           REVIEW_FILE="/tmp/doc-pr-review.md"
           FOOTER=$'\n\n---\n\n'
-          FOOTER+='**What to do next:**\n\n'
-          FOOTER+='Comment `@claude` on this PR followed by your instructions to get help:\n\n'
-          FOOTER+='- `@claude fix all issues` — fix all Vale, Dale, and editorial issues\n'
-          FOOTER+='- `@claude fix only the Vale issues` — fix just the linting problems\n'
-          FOOTER+='- `@claude help improve the flow of this document` — get writing assistance\n'
-          FOOTER+='- `@claude explain the voice issues` — understand why something was flagged\n\n'
-          FOOTER+='You can ask Claude anything about the review or about Netwrix writing standards.\n\n'
-          FOOTER+='> Automated fixes are only available for branches in this repository, not forks.'
+          FOOTER+=$'**What to do next:**\n\n'
+          FOOTER+=$'Comment `@claude` on this PR followed by your instructions to get help:\n\n'
+          FOOTER+=$'- `@claude fix all issues` — fix all Vale, Dale, and editorial issues\n'
+          FOOTER+=$'- `@claude fix only the Vale issues` — fix just the linting problems\n'
+          FOOTER+=$'- `@claude help improve the flow of this document` — get writing assistance\n'
+          FOOTER+=$'- `@claude explain the voice issues` — understand why something was flagged\n\n'
+          FOOTER+=$'You can ask Claude anything about the review or about Netwrix writing standards.\n\n'
+          FOOTER+=$'> Automated fixes are only available for branches in this repository, not forks.'
 
           if [ -f "$REVIEW_FILE" ]; then
             BODY=$(cat "$REVIEW_FILE")
@@ -147,7 +147,7 @@ jobs:
           echo "base_branch=$BASE_BRANCH" >> "$GITHUB_OUTPUT"
           echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
           # Check target branch here using the shell variable to avoid
-          # re-interpolating the output via ${{ }} (code injection risk).
+          # re-interpolating the output via expressions (code injection risk).
           if [ "$BASE_BRANCH" = "dev" ]; then
             echo "targets_dev=true" >> "$GITHUB_OUTPUT"
           else
