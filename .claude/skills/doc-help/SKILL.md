@@ -84,7 +84,7 @@ Continue iterating until they are satisfied, then move to the next section.
 - Anticipate the question the reader is about to ask and answer it inline
 - Write for the newer user without condescending to the experienced one
 
-### Step 4: Vale check
+### Step 4: Vale and Dale check
 
 When all sections are drafted, run Vale on the file:
 
@@ -92,7 +92,15 @@ When all sections are drafted, run Vale on the file:
 vale <file>
 ```
 
-Fix all reported errors. Re-run until zero errors remain. Report what was fixed.
+Fix all reported errors. Re-run until zero errors remain.
+
+Then run the Dale linter:
+
+```
+/dale <file>
+```
+
+Fix any Dale violations. Report what was fixed across both linters.
 
 ### Step 5: Final review
 
@@ -148,7 +156,7 @@ Apply one category of edits at a time. After each round:
 
 Do not reprint the full document after each edit — describe what changed and where.
 
-### Step 5: Vale check
+### Step 5: Vale and Dale check
 
 When edits are complete, run Vale:
 
@@ -156,7 +164,15 @@ When edits are complete, run Vale:
 vale <file>
 ```
 
-Fix all reported errors. Re-run until zero errors remain. Report what was fixed.
+Fix all reported errors. Re-run until zero errors remain.
+
+Then run the Dale linter:
+
+```
+/dale <file>
+```
+
+Fix any Dale violations. Report what was fixed across both linters.
 
 ---
 
