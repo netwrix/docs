@@ -1,0 +1,192 @@
+name: Doc PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - dev
+    paths:
+      - 'docs/**.md'
+      - '!docs/**/CLAUDE.md'
+      - '!docs/**/SKILL.md'
+
+  issue_comment:
+    types: [created]
+
+jobs:
+  # ──────────────────────────────────────────────
+  # Job 1: Automated review on PR open or new push
+  # ──────────────────────────────────────────────
+  doc-review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+
+      - name: Fetch base commit for diff
+        run: git fetch --depth=1 origin ${{ github.event.pull_request.base.sha }}
+
+      - name: Get changed markdown files
+        id: changed-files
+        run: |
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          CHANGED_MD_FILES=$(git diff --name-only --diff-filter=ACMRT $BASE_SHA $HEAD_SHA -- 'docs/*.md' 'docs/**/*.md' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' || true)
+          if [ -z "$CHANGED_MD_FILES" ]; then
+            echo "No docs markdown files changed"
+            echo "files=" >> "$GITHUB_OUTPUT"
+            echo "count=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changed markdown files:"
+            echo "$CHANGED_MD_FILES"
+            FILES_LIST=$(echo "$CHANGED_MD_FILES" | tr '\n' ',' | sed 's/,$//')
+            echo "files=$FILES_LIST" >> "$GITHUB_OUTPUT"
+            echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Delete previous bot review comments
+        if: steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          # Find and delete previous doc-pr review comments from the bot
+          COMMENT_IDS=$(gh api repos/${{ github.repository }}/issues/${PR_NUMBER}/comments \
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("Documentation PR Review"))) | .id] | .[]' 2>/dev/null || true)
+          for ID in $COMMENT_IDS; do
+            gh api repos/${{ github.repository }}/issues/comments/${ID} -X DELETE 2>/dev/null || true
+          done
+
+      - name: Install Vale
+        if: steps.changed-files.outputs.count > 0
+        run: |
+          VERSION=$(curl -s "https://api.github.com/repos/errata-ai/vale/releases/latest" | jq -r '.tag_name')
+          curl -sfL "https://github.com/errata-ai/vale/releases/download/${VERSION}/vale_${VERSION#v}_Linux_64-bit.tar.gz" \
+            | sudo tar -xz -C /usr/local/bin vale
+
+      - name: Run doc-pr review
+        if: steps.changed-files.outputs.count > 0
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            Run the doc-pr review skill on this pull request.
+
+            /doc-pr ${{ steps.changed-files.outputs.files }} ${{ github.event.pull_request.number }}
+          claude_args: |
+            --model claude-sonnet-4-5-20250929
+            --allowedTools "Read,Glob,Grep,Bash(vale:*),Bash(gh pr view:*),Bash(gh pr diff:*),Skill(doc-pr),Skill(dale)"
+
+      - name: Post review comment
+        if: steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          REVIEW_FILE="/tmp/doc-pr-review.md"
+          FOOTER=$'\n\n---\n\n'
+          FOOTER+='**What to do next:**\n\n'
+          FOOTER+='Comment `@claude` on this PR followed by your instructions to get help:\n\n'
+          FOOTER+='- `@claude fix all issues` — fix all Vale, Dale, and editorial issues\n'
+          FOOTER+='- `@claude fix only the Vale issues` — fix just the linting problems\n'
+          FOOTER+='- `@claude help improve the flow of this document` — get writing assistance\n'
+          FOOTER+='- `@claude explain the voice issues` — understand why something was flagged\n\n'
+          FOOTER+='You can ask Claude anything about the review or about Netwrix writing standards.\n\n'
+          FOOTER+='> Automated fixes are only available for branches in this repository, not forks.'
+
+          if [ -f "$REVIEW_FILE" ]; then
+            BODY=$(cat "$REVIEW_FILE")
+          else
+            BODY="## Documentation PR Review"$'\n\n'"No review was generated. Check the workflow logs for details."
+          fi
+
+          # Append footer
+          FULL_BODY="${BODY}${FOOTER}"
+
+          # Post as PR comment
+          gh pr comment "$PR_NUMBER" --repo "$REPO" --body "$FULL_BODY"
+
+  # ──────────────────────────────────────────────
+  # Job 2: @claude follow-up on PR comments
+  # ──────────────────────────────────────────────
+  doc-followup:
+    if: |
+      github.event_name == 'issue_comment' &&
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, '@claude') &&
+      github.event.comment.user.login != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - name: Get PR info
+        id: pr-info
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER="${{ github.event.issue.number }}"
+          PR_DATA=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json headRefName,baseRefName,isCrossRepository)
+          BASE_BRANCH=$(echo "$PR_DATA" | jq -r '.baseRefName')
+          echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "branch=$(echo "$PR_DATA" | jq -r '.headRefName')" >> "$GITHUB_OUTPUT"
+          echo "base_branch=$BASE_BRANCH" >> "$GITHUB_OUTPUT"
+          echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
+          # Check target branch here using the shell variable to avoid
+          # re-interpolating the output via ${{ }} (code injection risk).
+          if [ "$BASE_BRANCH" = "dev" ]; then
+            echo "targets_dev=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "targets_dev=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Post fork notice
+        if: steps.pr-info.outputs.is_fork == 'true' && steps.pr-info.outputs.targets_dev == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} \
+            --body "This PR is from a fork. Automated fixes cannot be pushed directly. I can still review and suggest changes — apply them manually from the comments."
+
+      - name: Checkout repository
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.pr-info.outputs.branch }}
+          fetch-depth: 0
+
+      - name: Install Vale
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        run: |
+          VERSION=$(curl -s "https://api.github.com/repos/errata-ai/vale/releases/latest" | jq -r '.tag_name')
+          curl -sfL "https://github.com/errata-ai/vale/releases/download/${VERSION}/vale_${VERSION#v}_Linux_64-bit.tar.gz" \
+            | sudo tar -xz -C /usr/local/bin vale
+
+      - name: Handle @claude request
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        uses: anthropics/claude-code-action@v1
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
+          claude_args: |
+            --model claude-sonnet-4-5-20250929
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(vale:*),Bash(gh api:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*),Skill(doc-pr-fix),Skill(dale)"
