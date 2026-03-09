@@ -147,7 +147,7 @@ jobs:
           echo "base_branch=$BASE_BRANCH" >> "$GITHUB_OUTPUT"
           echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
           # Check target branch here using the shell variable to avoid
-          # re-interpolating the output via ${{ }} (code injection risk).
+          # re-interpolating the output via expressions (code injection risk).
           if [ "$BASE_BRANCH" = "dev" ]; then
             echo "targets_dev=true" >> "$GITHUB_OUTPUT"
           else
