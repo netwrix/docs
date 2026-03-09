@@ -140,24 +140,22 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER="${{ github.event.issue.number }}"
-          PR_DATA=$(gh pr view $PR_NUMBER --repo ${{ github.repository }} --json headRefName,baseRefName,isCrossRepository)
+          PR_DATA=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json headRefName,baseRefName,isCrossRepository)
           BASE_BRANCH=$(echo "$PR_DATA" | jq -r '.baseRefName')
           echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
           echo "branch=$(echo "$PR_DATA" | jq -r '.headRefName')" >> "$GITHUB_OUTPUT"
           echo "base_branch=$BASE_BRANCH" >> "$GITHUB_OUTPUT"
           echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
-
-      - name: Check if PR targets dev
-        id: check-target
-        run: |
-          if [ "${{ steps.pr-info.outputs.base_branch }}" = "dev" ]; then
+          # Check target branch here using the shell variable to avoid
+          # re-interpolating the output via ${{ }} (code injection risk).
+          if [ "$BASE_BRANCH" = "dev" ]; then
             echo "targets_dev=true" >> "$GITHUB_OUTPUT"
           else
             echo "targets_dev=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Post fork notice
-        if: steps.pr-info.outputs.is_fork == 'true' && steps.check-target.outputs.targets_dev == 'true'
+        if: steps.pr-info.outputs.is_fork == 'true' && steps.pr-info.outputs.targets_dev == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -165,21 +163,21 @@ jobs:
             --body "This PR is from a fork. Automated fixes cannot be pushed directly. I can still review and suggest changes — apply them manually from the comments."
 
       - name: Checkout repository
-        if: steps.pr-info.outputs.is_fork == 'false' && steps.check-target.outputs.targets_dev == 'true'
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         uses: actions/checkout@v4
         with:
           ref: ${{ steps.pr-info.outputs.branch }}
           fetch-depth: 0
 
       - name: Install Vale
-        if: steps.pr-info.outputs.is_fork == 'false' && steps.check-target.outputs.targets_dev == 'true'
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         run: |
           VERSION=$(curl -s "https://api.github.com/repos/errata-ai/vale/releases/latest" | jq -r '.tag_name')
           curl -sfL "https://github.com/errata-ai/vale/releases/download/${VERSION}/vale_${VERSION#v}_Linux_64-bit.tar.gz" \
             | sudo tar -xz -C /usr/local/bin vale
 
       - name: Handle @claude request
-        if: steps.pr-info.outputs.is_fork == 'false' && steps.check-target.outputs.targets_dev == 'true'
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
