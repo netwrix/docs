@@ -6,7 +6,7 @@ on:
     branches:
       - dev
     paths:
-      - 'docs/**.md'
+      - 'docs/**/*.md'
       - '!docs/**/CLAUDE.md'
       - '!docs/**/SKILL.md'
 
