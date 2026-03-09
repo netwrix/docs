@@ -233,13 +233,47 @@ function SearchPageContent() {
     const pageFromUrl = parseInt(urlParams.get('page'), 10) || 1;
 
     const [searchQuery, setSearchQuery] = useState(queryFromUrl);
-    const [selectedProducts, setSelectedProducts] = useState(productsFromUrl);
+    // Initialize from URL if present, otherwise from localStorage
+    const [selectedProducts, setSelectedProducts] = useState(() => {
+        if (productsFromUrl.length > 0) return productsFromUrl;
+        if (typeof window === 'undefined') return [];
+        const saved = localStorage.getItem('docs_product_filter');
+        try {
+            return saved ? JSON.parse(saved) : [];
+        } catch {
+            return [];
+        }
+    });
     const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
 
     // Track if we're restoring from URL (e.g., browser back button)
     const restoringFromUrl = useRef(false);
     const targetPageRef = useRef(null);
     const isInternalNavigation = useRef(false);
+
+    // Sync selectedProducts to localStorage and dispatch custom event for same-tab sync
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
+            // Dispatch custom event for same-tab synchronization
+            window.dispatchEvent(new CustomEvent('productFilterChange', {
+                detail: {products: selectedProducts}
+            }));
+        }
+    }, [selectedProducts]);
+
+    // Listen for filter changes from SearchBar modal (same-tab sync)
+    useEffect(() => {
+        const handleFilterChange = (e) => {
+            const newProducts = e.detail.products;
+            // Avoid infinite loop by checking if products actually changed
+            if (JSON.stringify(newProducts) !== JSON.stringify(selectedProducts)) {
+                setSelectedProducts(newProducts);
+            }
+        };
+        window.addEventListener('productFilterChange', handleFilterChange);
+        return () => window.removeEventListener('productFilterChange', handleFilterChange);
+    }, [selectedProducts]);
 
     // Update state when URL changes (e.g., when navigating from search modal or browser back)
     useEffect(() => {
