@@ -86,7 +86,7 @@ jobs:
             /doc-pr ${{ steps.changed-files.outputs.files }} ${{ github.event.pull_request.number }}
           claude_args: |
             --model claude-sonnet-4-5-20250929
-            --allowedTools "Read,Glob,Grep,Bash(vale:*),Bash(gh pr view:*),Bash(gh pr diff:*),Skill(doc-pr),Skill(dale)"
+            --allowedTools "Read,Write,Glob,Grep,Bash(vale:*),Bash(gh pr view:*),Bash(gh pr diff:*),Skill(doc-pr),Skill(dale)"
 
       - name: Post review comment
         if: steps.changed-files.outputs.count > 0
