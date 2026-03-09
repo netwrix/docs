@@ -194,10 +194,8 @@ function ResultsFooter({state, onClose, selectedProductsRef}) {
 
     return (
         <Link to={linkWithFilters} onClick={onClose}>
-            <Translate
-                id="theme.SearchBar.seeAll"
-                values={{count: state.context.nbHits}}>
-                {'See all {count} results'}
+            <Translate id="theme.SearchBar.seeAll">
+                {'See all results'}
             </Translate>
         </Link>
     );
