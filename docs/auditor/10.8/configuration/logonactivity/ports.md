@@ -19,7 +19,7 @@ Tip for reading the table: For example, on the computer where Netwrix Auditor Se
 
 | Port                       | Protocol | Source                 | Target             | Purpose                                                                 |
 | -------------------------- | -------- | ---------------------- | ------------------ | ----------------------------------------------------------------------- |
-| 389                        | TCP      | Netwrix Auditor Server | Domain controllers | LDAP DC query Account resolve                                           |
+| 389                        | TCP      | Netwrix Auditor Server | Domain controllers | LDAP DC query Account resolve (with LDAP packet encryption enabled)     |
 | 53                         | TCP      | Netwrix Auditor Server | DNS Server         | DNS Client                                                              |
 | 135 + Dynamic: 1024 -65535 | TCP      | Netwrix Auditor Server | Domain controllers | Windows Management Instrumentation Firewall configuration               |
 | 135                        | TCP      | Netwrix Auditor Server | Domain controllers | Service Control Manager Remote Protocol (RPC) Core Service installation |
