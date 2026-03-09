@@ -1,6 +1,7 @@
 ---
 title: Configure the Test Monitoring Plan
 sidebar_position: 99
+sidebar_class_name: hidden
 ---
 
 # Configure the Test Monitoring Plan
