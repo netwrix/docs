@@ -32,11 +32,12 @@ function importDocSearchModalIfNeeded() {
     });
 }
 
-function useNavigator({externalUrlRegex, selectedProducts}) {
+function useNavigator({externalUrlRegex, selectedProductsRef}) {
     const history = useHistory();
     const createSearchLink = useSearchLinkCreator();
 
-    // Use useMemo instead of useState to ensure we get fresh values
+    // Create navigator ONCE and read selectedProducts from ref at navigation time
+    // This prevents navigator identity from changing when filters change
     const navigator = useMemo(() => {
         return {
             navigate(params) {
@@ -46,11 +47,14 @@ function useNavigator({externalUrlRegex, selectedProducts}) {
                     document.querySelector('input[type="search"]');
                 const currentQuery = input ? input.value : '';
 
+                // Read selected products from ref at navigation time
+                const selectedProducts = selectedProductsRef?.current || [];
+
                 // If we have a search query, redirect to full search results page instead
                 if (currentQuery) {
                     const baseLink = createSearchLink(currentQuery);
                     const urlParams = new URLSearchParams();
-                    if (selectedProducts && selectedProducts.length > 0) {
+                    if (selectedProducts.length > 0) {
                         urlParams.set('products', selectedProducts.join(','));
                     }
                     const searchPageUrl = urlParams.toString()
@@ -64,21 +68,77 @@ function useNavigator({externalUrlRegex, selectedProducts}) {
                 }
             },
         };
-    }, [externalUrlRegex, history, createSearchLink, selectedProducts]);
+    }, [externalUrlRegex, history, createSearchLink, selectedProductsRef]);
 
     return navigator;
 }
 
-function useTransformSearchClient() {
+function useTransformSearchClient(selectedProductsRef, currentLocale) {
     const {
         siteMetadata: {docusaurusVersion},
     } = useDocusaurusContext();
     return useCallback(
         (searchClient) => {
             searchClient.addAlgoliaAgent('docusaurus', docusaurusVersion);
+
+            const originalSearch = searchClient.search.bind(searchClient);
+
+            // Override search to inject product filters at request time
+            // This keeps searchParameters prop stable, preventing query reset
+            searchClient.search = function(searchMethodParams, requestOptions) {
+                const products = selectedProductsRef.current || [];
+
+                // Build product filter (OR logic - any of selected products)
+                const productFilter = products.length > 0
+                    ? products.map(p => `product_name:${p}`)
+                    : null;
+
+                // Language filter for internationalization
+                const languageFilter = `language:${currentLocale}`;
+
+                // v5 API structure: { requests: [...] }
+                if (searchMethodParams && Array.isArray(searchMethodParams.requests)) {
+                    const modifiedParams = {
+                        ...searchMethodParams,
+                        requests: searchMethodParams.requests.map(req => {
+                            // Get existing facetFilters from the request
+                            const existingFilters = Array.isArray(req.facetFilters)
+                                ? req.facetFilters
+                                : (req.facetFilters ? [req.facetFilters] : []);
+
+                            // Build new filters array
+                            const newFilters = [...existingFilters];
+
+                            // Add language filter if not already present
+                            const hasLanguageFilter = newFilters.some(f =>
+                                (typeof f === 'string' && f.startsWith('language:')) ||
+                                (Array.isArray(f) && f.some(ff => ff.startsWith('language:')))
+                            );
+                            if (!hasLanguageFilter) {
+                                newFilters.push(languageFilter);
+                            }
+
+                            // Add product filter if we have selected products
+                            if (productFilter) {
+                                newFilters.push(productFilter);
+                            }
+
+                            return {
+                                ...req,
+                                facetFilters: newFilters.length > 0 ? newFilters : undefined
+                            };
+                        })
+                    };
+                    return originalSearch(modifiedParams, requestOptions);
+                }
+
+                // Fallback for other structures - pass through unchanged
+                return originalSearch(searchMethodParams, requestOptions);
+            };
+
             return searchClient;
         },
-        [docusaurusVersion],
+        [docusaurusVersion, currentLocale],
     );
 }
 
@@ -96,16 +156,18 @@ function useTransformItems(props) {
     return transformItems;
 }
 
-function useResultsFooterComponent({closeModal, selectedProducts}) {
+function useResultsFooterComponent({closeModal, selectedProductsRef}) {
+    // Create footer component ONCE - read selectedProducts from ref at render time
+    // This prevents resultsFooterComponent identity from changing when filters change
     return useMemo(
         () =>
             ({state}) =>
                 <ResultsFooter
                     state={state}
                     onClose={closeModal}
-                    selectedProducts={selectedProducts}
+                    selectedProductsRef={selectedProductsRef}
                 />,
-        [closeModal, selectedProducts],
+        [closeModal, selectedProductsRef],
     );
 }
 
@@ -113,9 +175,12 @@ function Hit({hit, children}) {
     return <Link to={hit.url}>{children}</Link>;
 }
 
-function ResultsFooter({state, onClose, selectedProducts = []}) {
+function ResultsFooter({state, onClose, selectedProductsRef}) {
     const createSearchLink = useSearchLinkCreator();
     const baseLink = createSearchLink(state.query);
+
+    // Read selected products from ref at render time
+    const selectedProducts = selectedProductsRef?.current || [];
 
     // Add product filters as URL parameters
     const params = new URLSearchParams();
@@ -168,10 +233,17 @@ function useSearchParameters({contextualSearch, productFacetFilters = [], ...pro
         }
     }
 
-    return {
+    // Memoize the result to maintain stable object reference
+    // This prevents DocSearch from resetting query state on re-renders
+    // Using JSON.stringify for comparison - can be refined if hypothesis is confirmed
+    return useMemo(() => ({
         ...props.searchParameters,
         facetFilters,
-    };
+    }), [
+        contextualSearch,
+        JSON.stringify(facetFilters),
+        JSON.stringify(props.searchParameters),
+    ]);
 }
 
 // Generate product options dynamically from PRODUCTS constant
@@ -308,11 +380,15 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
     );
 }
 
-function DocSearch({externalUrlRegex, onModalOpen, selectedProducts, ...props}) {
-    const navigator = useNavigator({externalUrlRegex, selectedProducts});
-    const searchParameters = useSearchParameters({...props});
+function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, ...props}) {
+    const {i18n: {currentLocale}} = useDocusaurusContext();
+    // Use ref for navigator to prevent identity change when filters change
+    const navigator = useNavigator({externalUrlRegex, selectedProductsRef});
+    // Keep searchParameters stable - don't include product filters here
+    // Product filters are injected at request time via transformSearchClient
+    const searchParameters = useSearchParameters({...props, productFacetFilters: []});
     const transformItems = useTransformItems(props);
-    const transformSearchClient = useTransformSearchClient();
+    const transformSearchClient = useTransformSearchClient(selectedProductsRef, currentLocale);
     const searchContainer = useRef(null);
     const searchButtonRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -355,7 +431,7 @@ function DocSearch({externalUrlRegex, onModalOpen, selectedProducts, ...props}) 
 
     const resultsFooterComponent = useResultsFooterComponent({
         closeModal,
-        selectedProducts,
+        selectedProductsRef,
     });
 
     useDocSearchKeyboardEvents({
@@ -426,6 +502,37 @@ export default function SearchBar() {
         }
     });
 
+    // Ref to access selectedProducts without causing re-renders
+    // This is used by transformSearchClient to inject filters at request time
+    const selectedProductsRef = useRef(selectedProducts);
+    useEffect(() => {
+        selectedProductsRef.current = selectedProducts;
+    }, [selectedProducts]);
+
+    // Sync selectedProducts to localStorage and dispatch custom event for same-tab sync
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
+            // Dispatch custom event for same-tab synchronization
+            window.dispatchEvent(new CustomEvent('productFilterChange', {
+                detail: {products: selectedProducts}
+            }));
+        }
+    }, [selectedProducts]);
+
+    // Listen for filter changes from SearchPage (same-tab sync)
+    useEffect(() => {
+        const handleFilterChange = (e) => {
+            const newProducts = e.detail.products;
+            // Avoid infinite loop by checking if products actually changed
+            if (JSON.stringify(newProducts) !== JSON.stringify(selectedProducts)) {
+                setSelectedProducts(newProducts);
+            }
+        };
+        window.addEventListener('productFilterChange', handleFilterChange);
+        return () => window.removeEventListener('productFilterChange', handleFilterChange);
+    }, [selectedProducts]);
+
     // Generate facetFilters for products
     const productFacetFilters = useMemo(() => {
         const filters = [];
@@ -483,10 +590,7 @@ export default function SearchBar() {
 
     const onChangeProducts = useCallback((newProducts) => {
         setSelectedProducts(newProducts);
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('docs_product_filter', JSON.stringify(newProducts));
-        }
-        // Don't auto-refresh - let user retype or press enter
+        // localStorage and event dispatch handled by useEffect
     }, []);
 
     // This is where we will portal the filters into the modal DOM.
@@ -513,16 +617,16 @@ export default function SearchBar() {
         );
     }, [modalHeaderEl]);
 
-    // Disable contextualSearch when products are selected to allow cross-product searching
-    const contextualSearch = selectedProducts.length === 0;
+    // Keep contextualSearch stable to prevent query reset
+    // Product filters are handled via transformSearchClient instead
+    const contextualSearch = false;
 
     return (
         <>
             <DocSearch
                 {...siteConfig.themeConfig.algolia}
                 contextualSearch={contextualSearch}
-                productFacetFilters={productFacetFilters}
-                selectedProducts={selectedProducts}
+                selectedProductsRef={selectedProductsRef}
                 onModalOpen={onModalOpen}
             />
 
