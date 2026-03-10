@@ -27,17 +27,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 1
-
-      - name: Fetch base commit for diff
-        run: git fetch --depth=1 origin ${{ github.event.pull_request.base.sha }}
 
       - name: Get changed markdown files
         id: changed-files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          BASE_SHA="${{ github.event.pull_request.base.sha }}"
-          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
-          CHANGED_MD_FILES=$(git diff --name-only --diff-filter=ACMRT $BASE_SHA $HEAD_SHA -- 'docs/*.md' 'docs/**/*.md' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' || true)
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          CHANGED_MD_FILES=$(gh pr diff "$PR_NUMBER" --name-only | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' || true)
           if [ -z "$CHANGED_MD_FILES" ]; then
             echo "No docs markdown files changed"
             echo "files=" >> "$GITHUB_OUTPUT"
