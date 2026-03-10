@@ -12,11 +12,17 @@ Read `docs/CLAUDE.md` before starting — it contains the writing standards and 
 
 ## Input
 
-You receive two arguments:
-- `$1`: A comma-separated list of changed markdown file paths (e.g., `docs/accessanalyzer/12.0/install.md,docs/auditor/10.0/overview.md`)
-- `$2`: The PR number
+Get the file list, PR number, and repo from environment variables:
 
-If arguments are missing, use `gh pr view` and `gh pr diff` to determine the changed files and PR number from the current branch context.
+```bash
+echo "Files: $DOC_PR_FILES"
+echo "PR: $DOC_PR_NUMBER"
+echo "Repo: $DOC_PR_REPO"
+```
+
+If the environment variables are empty, check for positional arguments (`$1` = files CSV, `$2` = PR number). If those are also missing, use `gh pr view` and `gh pr diff` to determine the changed files and PR number from the current branch context.
+
+Split the comma-separated file list into individual file paths for processing.
 
 ## Stage 1: Vale Linting
 
@@ -42,7 +48,7 @@ Dale returns a table of rule violations or a clean report. Collect all Dale outp
 
 This stage applies the doc-help editing analysis to the PR changes — but non-interactively. You are producing a written review, not having a conversation.
 
-1. Run `gh pr diff $PR_NUMBER` to get the diff
+1. Run `gh pr diff $DOC_PR_NUMBER` to get the diff
 2. For each changed file, read the full file content
 3. Analyze ONLY the added or modified lines (lines starting with `+` in the diff) against these four priorities:
 
@@ -62,9 +68,13 @@ For each issue found, note:
 
 Only report issues on lines that were added or modified in this PR. Do not flag preexisting issues.
 
-## Output
+## Output — MANDATORY: Post as PR Comment
 
-After completing all three stages, post the review as a PR comment using `gh pr comment`. Build the comment body following this structure:
+After completing all three stages, you MUST write the review to a file and post it as a PR comment. This is the most important step — the review is useless if it is not posted.
+
+**Step 1: Write the review to a temporary file.**
+
+Write the full review body to `/tmp/doc-pr-review.md` using the Write tool. Follow this structure:
 
 ```markdown
 ## Documentation PR Review
@@ -119,17 +129,13 @@ You can ask Claude anything about the review or about Netwrix writing standards.
 > Automated fixes are only available for branches in this repository, not forks.
 ```
 
-Post the comment with:
+**Step 2: Post the comment.**
 
 ```bash
-gh pr comment $PR_NUMBER --repo $REPO --body "$REVIEW_BODY"
+gh pr comment $DOC_PR_NUMBER --repo $DOC_PR_REPO --body-file /tmp/doc-pr-review.md
 ```
 
-Use a heredoc or temporary file to avoid shell escaping issues with the multi-line body. For example:
-
-```bash
-gh pr comment $PR_NUMBER --repo $REPO --body-file /tmp/doc-pr-review.md
-```
+If the `gh pr comment` command fails, report the error. Do NOT end your turn without attempting to post.
 
 ## Behavioral Notes
 
