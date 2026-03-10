@@ -87,9 +87,12 @@ jobs:
       - name: Run doc-pr review
         if: steps.changed-files.outputs.count > 0
         uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
           prompt: |
             Call the doc-pr review skill:
             /doc-pr ${{ steps.changed-files.outputs.files }} ${{ github.event.pull_request.number }}
