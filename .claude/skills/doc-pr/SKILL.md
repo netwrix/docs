@@ -64,7 +64,7 @@ Only report issues on lines that were added or modified in this PR. Do not flag 
 
 ## Output
 
-Write the complete review to `/tmp/doc-pr-review.md` using this exact structure:
+Write the complete review to `.doc-pr-review.md` in the repository root using this exact structure:
 
 ```markdown
 ## Documentation PR Review
