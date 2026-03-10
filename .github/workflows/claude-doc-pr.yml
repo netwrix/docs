@@ -50,6 +50,24 @@ jobs:
             echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Debug environment
+        if: steps.changed-files.outputs.count > 0
+        run: |
+          echo "=== Working directory ==="
+          pwd
+          echo "=== .claude directory ==="
+          ls -la .claude/ 2>/dev/null || echo ".claude/ not found"
+          echo "=== Skills ==="
+          ls -la .claude/skills/ 2>/dev/null || echo ".claude/skills/ not found"
+          ls -la .claude/skills/doc-pr/ 2>/dev/null || echo ".claude/skills/doc-pr/ not found"
+          ls -la .claude/skills/dale/ 2>/dev/null || echo ".claude/skills/dale/ not found"
+          echo "=== doc-pr SKILL.md ==="
+          cat .claude/skills/doc-pr/SKILL.md 2>/dev/null | head -5 || echo "SKILL.md not found"
+          echo "=== Changed files ==="
+          echo "${{ steps.changed-files.outputs.files }}"
+          echo "=== PR number ==="
+          echo "${{ github.event.pull_request.number }}"
+
       - name: Delete previous bot review comments
         if: steps.changed-files.outputs.count > 0
         env:
@@ -84,6 +102,19 @@ jobs:
             - PR_NUMBER: ${{ github.event.pull_request.number }}
             - CHANGED_FILES: ${{ steps.changed-files.outputs.files }}
           claude_args: '--allowedTools "Bash,Read,Write,Glob,Grep,Skill(doc-pr),Skill(dale)"'
+
+      - name: Debug post-review
+        if: steps.changed-files.outputs.count > 0
+        run: |
+          echo "=== Files in working directory after Claude ==="
+          ls -la *.md 2>/dev/null || echo "No .md files in root"
+          ls -la /tmp/*.md 2>/dev/null || echo "No .md files in /tmp"
+          echo "=== Check if review comment was posted ==="
+          COMMENTS=$(gh api repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
+            --jq '[.[] | select(.body | contains("Documentation PR Review"))] | length' 2>/dev/null || echo "0")
+          echo "Review comments found: $COMMENTS"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   doc-followup:
     if: >-
