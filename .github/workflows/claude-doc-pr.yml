@@ -83,7 +83,7 @@ jobs:
             - REPO: ${{ github.repository }}
             - PR_NUMBER: ${{ github.event.pull_request.number }}
             - CHANGED_FILES: ${{ steps.changed-files.outputs.files }}
-          claude_args: '--allowedTools "Bash(vale:*),Bash(gh:*),Read,Glob,Grep,Skill(doc-pr),Skill(dale)"'
+          claude_args: '--allowedTools "Bash,Read,Write,Glob,Grep,Skill(doc-pr),Skill(dale)"'
 
   doc-followup:
     if: >-
