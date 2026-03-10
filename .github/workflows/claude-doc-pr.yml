@@ -14,9 +14,6 @@ on:
     types: [created]
 
 jobs:
-  # ──────────────────────────────────────────────
-  # Job 1: Automated review on PR open or new push
-  # ──────────────────────────────────────────────
   doc-review:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
@@ -59,7 +56,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
-          # Find and delete previous doc-pr review comments from the bot
           COMMENT_IDS=$(gh api repos/${{ github.repository }}/issues/${PR_NUMBER}/comments \
             --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("Documentation PR Review"))) | .id] | .[]' 2>/dev/null || true)
           for ID in $COMMENT_IDS; do
@@ -79,48 +75,16 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          show_full_output: true
           prompt: |
-            Run the doc-pr review skill on this pull request.
-
+            Call the doc-pr review skill:
             /doc-pr ${{ steps.changed-files.outputs.files }} ${{ github.event.pull_request.number }}
-          claude_args: |
-            --model claude-sonnet-4-5-20250929
-            --allowedTools "Read,Write,Glob,Grep,Bash(vale:*),Bash(gh pr view:*),Bash(gh pr diff:*),Skill(doc-pr),Skill(dale)"
 
-      - name: Post review comment
-        if: steps.changed-files.outputs.count > 0
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          REPO: ${{ github.repository }}
-        run: |
-          REVIEW_FILE=".doc-pr-review.md"
-          FOOTER=$'\n\n---\n\n'
-          FOOTER+=$'**What to do next:**\n\n'
-          FOOTER+=$'Comment `@claude` on this PR followed by your instructions to get help:\n\n'
-          FOOTER+=$'- `@claude fix all issues` — fix all Vale, Dale, and editorial issues\n'
-          FOOTER+=$'- `@claude fix only the Vale issues` — fix just the linting problems\n'
-          FOOTER+=$'- `@claude help improve the flow of this document` — get writing assistance\n'
-          FOOTER+=$'- `@claude explain the voice issues` — understand why something was flagged\n\n'
-          FOOTER+=$'You can ask Claude anything about the review or about Netwrix writing standards.\n\n'
-          FOOTER+=$'> Automated fixes are only available for branches in this repository, not forks.'
+            Context:
+            - REPO: ${{ github.repository }}
+            - PR_NUMBER: ${{ github.event.pull_request.number }}
+            - CHANGED_FILES: ${{ steps.changed-files.outputs.files }}
+          claude_args: '--allowedTools "Bash(vale:*),Bash(gh:*),Read,Glob,Grep,Skill(doc-pr),Skill(dale)"'
 
-          if [ -f "$REVIEW_FILE" ]; then
-            BODY=$(cat "$REVIEW_FILE")
-          else
-            BODY="## Documentation PR Review"$'\n\n'"No review was generated. Check the workflow logs for details."
-          fi
-
-          # Append footer
-          FULL_BODY="${BODY}${FOOTER}"
-
-          # Post as PR comment
-          gh pr comment "$PR_NUMBER" --repo "$REPO" --body "$FULL_BODY"
-
-  # ──────────────────────────────────────────────
-  # Job 2: @claude follow-up on PR comments
-  # ──────────────────────────────────────────────
   doc-followup:
     if: >-
       github.event_name == 'issue_comment' &&
@@ -144,9 +108,8 @@ jobs:
           BASE_BRANCH=$(echo "$PR_DATA" | jq -r '.baseRefName')
           echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
           echo "branch=$(echo "$PR_DATA" | jq -r '.headRefName')" >> "$GITHUB_OUTPUT"
-          echo "base_branch=$BASE_BRANCH" >> "$GITHUB_OUTPUT"
           echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
-          # Check target branch here using the shell variable to avoid
+          # Check target branch using the shell variable to avoid
           # re-interpolating the output via expressions (code injection risk).
           if [ "$BASE_BRANCH" = "dev" ]; then
             echo "targets_dev=true" >> "$GITHUB_OUTPUT"
@@ -184,9 +147,6 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          show_full_output: true
           prompt: |
             /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
-          claude_args: |
-            --model claude-sonnet-4-5-20250929
-            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(vale:*),Bash(gh api:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git config:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git status:*),Bash(git diff:*),Skill(doc-pr-fix),Skill(dale)"
+          claude_args: '--allowedTools "Bash(vale:*),Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(dale)"'
