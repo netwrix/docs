@@ -48,24 +48,6 @@ jobs:
             echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Debug environment
-        if: steps.changed-files.outputs.count > 0
-        run: |
-          echo "=== Working directory ==="
-          pwd
-          echo "=== .claude directory ==="
-          ls -la .claude/ 2>/dev/null || echo ".claude/ not found"
-          echo "=== Skills ==="
-          ls -la .claude/skills/ 2>/dev/null || echo ".claude/skills/ not found"
-          ls -la .claude/skills/doc-pr/ 2>/dev/null || echo ".claude/skills/doc-pr/ not found"
-          ls -la .claude/skills/dale/ 2>/dev/null || echo ".claude/skills/dale/ not found"
-          echo "=== doc-pr SKILL.md ==="
-          cat .claude/skills/doc-pr/SKILL.md 2>/dev/null | head -5 || echo "SKILL.md not found"
-          echo "=== Changed files ==="
-          echo "${{ steps.changed-files.outputs.files }}"
-          echo "=== PR number ==="
-          echo "${{ github.event.pull_request.number }}"
-
       - name: Delete previous bot review comments
         if: steps.changed-files.outputs.count > 0
         env:
@@ -85,47 +67,106 @@ jobs:
           curl -sfL "https://github.com/errata-ai/vale/releases/download/${VERSION}/vale_${VERSION#v}_Linux_64-bit.tar.gz" \
             | sudo tar -xz -C /usr/local/bin vale
 
+      - name: Run Vale on changed files
+        id: vale
+        if: steps.changed-files.outputs.count > 0
+        run: |
+          IFS=',' read -ra FILES <<< "${{ steps.changed-files.outputs.files }}"
+          VALE_OUTPUT=""
+          for FILE in "${FILES[@]}"; do
+            if [ -f "$FILE" ]; then
+              RESULT=$(vale --output=line "$FILE" 2>&1 || true)
+              if [ -n "$RESULT" ]; then
+                VALE_OUTPUT+="**${FILE}**"$'\n\n'"${RESULT}"$'\n\n'
+              else
+                VALE_OUTPUT+="**${FILE}** — No issues found."$'\n\n'
+              fi
+            fi
+          done
+          # Save to file for Claude to read
+          echo "$VALE_OUTPUT" > /tmp/vale-results.txt
+          echo "Vale results saved to /tmp/vale-results.txt"
+          cat /tmp/vale-results.txt
+
+      - name: Get PR diff
+        id: diff
+        if: steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr diff ${{ github.event.pull_request.number }} > /tmp/pr-diff.txt 2>&1 || true
+          echo "Diff saved to /tmp/pr-diff.txt"
+          wc -l /tmp/pr-diff.txt
+
       - name: Run doc-pr review
         if: steps.changed-files.outputs.count > 0
         uses: anthropics/claude-code-action@v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DOC_PR_REPO: ${{ github.repository }}
-          DOC_PR_NUMBER: ${{ github.event.pull_request.number }}
-          DOC_PR_FILES: ${{ steps.changed-files.outputs.files }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
           prompt: |
-            You are a documentation reviewer. Run /doc-pr to review this PR, then post the results as a PR comment.
+            You are a documentation reviewer. Your ONLY job is to:
+            1. Read pre-computed Vale results and PR diff
+            2. Do a brief editorial review
+            3. Post a formatted review comment to the PR
 
-            Environment variables are set:
-            - DOC_PR_REPO=${{ github.repository }}
-            - DOC_PR_NUMBER=${{ github.event.pull_request.number }}
-            - DOC_PR_FILES=${{ steps.changed-files.outputs.files }}
+            CONTEXT:
+            - Repository: ${{ github.repository }}
+            - PR number: ${{ github.event.pull_request.number }}
+            - Changed files: ${{ steps.changed-files.outputs.files }}
+            - Vale results are at: /tmp/vale-results.txt
+            - PR diff is at: /tmp/pr-diff.txt
 
-            Steps:
-            1. Invoke the doc-pr skill: /doc-pr
-            2. Follow the skill instructions to run Vale, Dale, and editorial review
-            3. CRITICAL: You MUST post the review as a PR comment by running:
-               gh pr comment $DOC_PR_NUMBER --repo $DOC_PR_REPO --body-file /tmp/doc-pr-review.md
+            INSTRUCTIONS:
 
-            Your task is NOT complete until the gh pr comment command has been executed successfully.
-          claude_args: '--allowedTools "Bash,Read,Write,Glob,Grep,Skill(doc-pr),Skill(dale)"'
+            Step 1: Read /tmp/vale-results.txt to get the Vale linting results.
 
-      - name: Debug post-review
+            Step 2: Read /tmp/pr-diff.txt to see what changed. Then read each changed file to understand context. Do a brief editorial review focusing on:
+            - Voice: passive voice, first person, impersonal phrases
+            - Clarity: hard-to-parse sentences, ambiguous references
+            - Surface: wordiness, redundancy
+
+            Step 3: Write the review to /tmp/doc-pr-review.md with this EXACT structure:
+
+            ## Documentation PR Review
+
+            ### Vale Linting
+            (paste Vale results formatted as a table with columns: Line, Rule, Message, Offending Text)
+
+            ### Editorial Review
+            (list editorial issues as bullet points: **Category** — Line N: description. Suggested fix: "...")
+
+            ### Summary
+            N Vale issues, N editorial suggestions across N files.
+
+            ---
+            **What to do next:**
+            Comment `@claude` on this PR followed by your instructions to get help:
+            - `@claude fix all issues` — fix all Vale and editorial issues
+            - `@claude fix only the Vale issues` — fix just the linting problems
+            - `@claude help improve the flow of this document` — get writing assistance
+            > Automated fixes are only available for branches in this repository, not forks.
+
+            Step 4: Post the comment by running this exact command:
+            gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body-file /tmp/doc-pr-review.md
+
+            IMPORTANT: You MUST complete all 4 steps. Your task is NOT done until step 4 succeeds.
+          claude_args: '--allowedTools "Bash,Read,Write"'
+
+      - name: Verify review was posted
         if: steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "=== Files in working directory after Claude ==="
-          ls -la *.md 2>/dev/null || echo "No .md files in root"
-          ls -la /tmp/*.md 2>/dev/null || echo "No .md files in /tmp"
-          echo "=== Check if review comment was posted ==="
           COMMENTS=$(gh api repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
             --jq '[.[] | select(.body | contains("Documentation PR Review"))] | length' 2>/dev/null || echo "0")
           echo "Review comments found: $COMMENTS"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          if [ "$COMMENTS" = "0" ]; then
+            echo "::warning::No review comment was posted by Claude"
+          fi
 
   doc-followup:
     if: >-
