@@ -64,7 +64,7 @@ Only report issues on lines that were added or modified in this PR. Do not flag 
 
 ## Output
 
-Write the complete review to `.doc-pr-review.md` in the repository root using this exact structure:
+After completing all three stages, post the review as a PR comment using `gh pr comment`. Build the comment body following this structure:
 
 ```markdown
 ## Documentation PR Review
@@ -102,9 +102,34 @@ Write the complete review to `.doc-pr-review.md` in the repository root using th
 ### Summary
 
 N Vale issues, N Dale issues, N editorial suggestions across N files.
+
+---
+
+**What to do next:**
+
+Comment `@claude` on this PR followed by your instructions to get help:
+
+- `@claude fix all issues` — fix all Vale, Dale, and editorial issues
+- `@claude fix only the Vale issues` — fix just the linting problems
+- `@claude help improve the flow of this document` — get writing assistance
+- `@claude explain the voice issues` — understand why something was flagged
+
+You can ask Claude anything about the review or about Netwrix writing standards.
+
+> Automated fixes are only available for branches in this repository, not forks.
 ```
 
-After writing the review file, do NOT post a PR comment yourself. The workflow handles that.
+Post the comment with:
+
+```bash
+gh pr comment $PR_NUMBER --repo $REPO --body "$REVIEW_BODY"
+```
+
+Use a heredoc or temporary file to avoid shell escaping issues with the multi-line body. For example:
+
+```bash
+gh pr comment $PR_NUMBER --repo $REPO --body-file /tmp/doc-pr-review.md
+```
 
 ## Behavioral Notes
 
