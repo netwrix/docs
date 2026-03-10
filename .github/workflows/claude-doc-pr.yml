@@ -95,7 +95,7 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           REPO: ${{ github.repository }}
         run: |
-          REVIEW_FILE="/tmp/doc-pr-review.md"
+          REVIEW_FILE=".doc-pr-review.md"
           FOOTER=$'\n\n---\n\n'
           FOOTER+=$'**What to do next:**\n\n'
           FOOTER+=$'Comment `@claude` on this PR followed by your instructions to get help:\n\n'
