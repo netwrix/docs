@@ -492,7 +492,7 @@ export default function SearchBar() {
     // Multi-select state for products
     const [selectedProducts, setSelectedProducts] = useState(() => {
         if (typeof window === 'undefined') return [];
-        const saved = localStorage.getItem('docs_product_filter');
+        const saved = sessionStorage.getItem('docs_product_filter');
         try {
             return saved ? JSON.parse(saved) : [];
         } catch {
@@ -507,10 +507,10 @@ export default function SearchBar() {
         selectedProductsRef.current = selectedProducts;
     }, [selectedProducts]);
 
-    // Sync selectedProducts to localStorage and dispatch custom event for same-tab sync
+    // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            localStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
             // Dispatch custom event for same-tab synchronization
             window.dispatchEvent(new CustomEvent('productFilterChange', {
                 detail: {products: selectedProducts}
@@ -558,38 +558,44 @@ export default function SearchBar() {
         return () => clearInterval(interval);
     }, []);
 
-    // Helper to refresh search - preserve query and wait for user action
+    // Helper to refresh search results with current filters.
+    // DocSearch uses React-controlled inputs, so plain native input events don't trigger
+    // its onChange handler. We use React's native HTMLInputElement value setter to bypass
+    // React's change-tracking wrapper, then dispatch an input event so React processes it.
     const refreshSearch = useCallback(() => {
         const input =
             document.querySelector('.DocSearch-Input') ||
             document.querySelector('input[type="search"]');
 
-        if (input && input.value) {
-            searchQueryRef.current = input.value;
+        if (!input || !input.value) return;
 
-            // Try multiple approaches to trigger search
-            const query = input.value;
+        const query = input.value;
+        searchQueryRef.current = query;
 
-            // Approach 1: Simulate typing by adding/removing character
-            setTimeout(() => {
-                if (input) {
-                    input.value = query + ' ';
-                    input.dispatchEvent(new Event('input', {bubbles: true}));
+        // Grab the native setter before React wraps it
+        const nativeSetter = Object.getOwnPropertyDescriptor(
+            window.HTMLInputElement.prototype,
+            'value',
+        ).set;
 
-                    setTimeout(() => {
-                        input.value = query;
-                        input.dispatchEvent(new Event('input', {bubbles: true}));
-                        input.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
-                    }, 50);
-                }
-            }, 50);
-        }
+        // Simulate typing a trailing space and removing it.
+        // This causes DocSearch/Autocomplete to run a new search with the updated filters.
+        // Both events fire in the same JS task so DocSearch batches them — only the final
+        // value (query) triggers a visible search, preventing an intermediate result flash.
+        setTimeout(() => {
+            nativeSetter.call(input, query + ' ');
+            input.dispatchEvent(new Event('input', {bubbles: true}));
+
+            nativeSetter.call(input, query);
+            input.dispatchEvent(new Event('input', {bubbles: true}));
+        }, 50);
     }, []);
 
     const onChangeProducts = useCallback((newProducts) => {
+        selectedProductsRef.current = newProducts; // Sync ref immediately so search uses new filters
         setSelectedProducts(newProducts);
-        // localStorage and event dispatch handled by useEffect
-    }, []);
+        refreshSearch(); // Re-run current query with updated filters
+    }, [refreshSearch]);
 
     // This is where we will portal the filters into the modal DOM.
     const [modalHeaderEl, setModalHeaderEl] = useState(null);
