@@ -142,14 +142,33 @@ html {
     }
 }
 
-@media screen and (max-width: 768px) {
-    /* Better mobile navbar handling */
-    .navbar__items--right {
-        margin-left: auto;
+/* Override mobile drawer breakpoint to 1310px (Docusaurus default is 996px).
+   The JS side is handled by the swizzled src/theme/Navbar/MobileSidebar/index.js.
+   Match infima's pattern: hide individual .navbar__item elements, not the container
+   (the container must stay visible so the logo and toggle button remain visible). */
+@media screen and (max-width: 1310px) {
+    .navbar__toggle {
+        display: flex !important;
     }
 
+    .navbar__item {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 1311px) {
     .navbar__toggle {
-        display: block;
+        display: none !important;
+    }
+
+    .navbar__item {
+        display: inline-block !important;
+    }
+
+    /* The swizzled MobileSidebar always renders so it's in the DOM at all widths.
+       Hide it above 1310px so it can never appear on true desktop. */
+    .navbar-sidebar {
+        display: none !important;
     }
 }
 

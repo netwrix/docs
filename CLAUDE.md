@@ -21,6 +21,16 @@ npm run clear            # Clear Docusaurus cache (fixes stale build issues)
 vale <file>              # Run Vale style checker on a markdown file
 /dale <file>             # Run Dale linter (Claude skill) on a markdown file
 
+# Install Vale (if not already installed)
+# macOS:
+brew install vale
+# Linux:
+sudo snap install vale
+# Windows:
+choco install vale
+# Manual (any platform) — download binary from GitHub releases:
+# https://github.com/errata-ai/vale/releases
+
 # KB management
 npm run kb:clean         # Remove copied KB files from versioned folders
 npm run kb:dry           # Dry run of KB copy script
