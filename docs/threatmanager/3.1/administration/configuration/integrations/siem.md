@@ -74,7 +74,7 @@ Follow the instructions to enable SIEM notifications.
 
   | Variable | Description | Data Type | Example Value |
   |---|---|---|---|
-  | `%PERPETRATORSAMACCOUNTNAME%` | SAM account name of the perpetrator | `string` | `DOMAIN\jsmith` |
+  | `%PERPETRATORSAMACCOUNTNAME%` | NT Account Name of the perpetrator | `string` | `DOMAIN\jsmith` |
   | `%PERPETRATORDISTINGUISHEDNAME%` | Distinguished name of the perpetrator | `string` | `CN=John Smith,OU=Users,DC=domain,DC=com` |
   | `%PERPETRATORDOMAIN%` | Domain of the perpetrator | `string` | `DOMAIN` |
   | `%PERPETRATORTAGS%` | Comma-delimited list of tags assigned to the perpetrator | `string` | `VIP, Executive, Service Account` |
@@ -97,7 +97,8 @@ Follow the instructions to enable SIEM notifications.
   | `%TARGETHOSTDOMAIN%` | Domain name of the target host | `string` | `DOMAIN` |
   | `%TARGETHOSTTAGS%` | Comma-delimited list of tags assigned to the target host | `string` | `Domain Controller, Critical` |
 
-  **Affected User**
+  **Affected User**  
+  This is a unique list of users from all events associated with the threat. The object types are always users.
 
   | Variable | Description | Data Type | Example Value |
   |---|---|---|---|
@@ -106,7 +107,8 @@ Follow the instructions to enable SIEM notifications.
   | `%AFFECTEDUSERDOMAIN%` | Domain of the first affected user (parsed from SAM account name or AD domain) | `string` | `DOMAIN` |
   | `%AFFECTEDUSERTAGS%` | Comma-delimited, deduplicated list of tags across all affected users (includes group tags) | `string` | `VIP, Admins` |
 
-  **Primary Event**
+  **Primary Event**  
+  The primary event is the event which initially triggered the threat.
 
   | Variable | Description | Data Type | Example Value |
   |---|---|---|---|
