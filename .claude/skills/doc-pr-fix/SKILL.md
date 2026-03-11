@@ -52,7 +52,7 @@ When editing:
 
 ## Step 4: Verify
 
-After all edits, run both linters on every file you changed:
+After all edits, run Vale on every file you changed:
 
 ```bash
 vale <file>
@@ -60,15 +60,7 @@ vale <file>
 
 Fix any new Vale errors. Re-run until zero errors remain.
 
-Then run Dale:
-
-```
-/dale <file>
-```
-
-Fix any Dale violations.
-
-Repeat the vale-then-dale cycle until both are clean.
+Do NOT run Dale or any other skills during verification — just Vale.
 
 ## Step 5: Commit and push
 
