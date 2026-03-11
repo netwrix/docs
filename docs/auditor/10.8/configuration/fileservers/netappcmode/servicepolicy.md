@@ -7,6 +7,7 @@ sidebar_position: 30
 # Configure Service Policy
 
 **NOTE:** This paragraph only applies to NetApp ONTAP version 9.10.1 and higher.
+For older NetApp ONTAP versions use [System Service Firewall Policies](https://github.com/netwrix/docs/blob/update-docs-na-fsa-netapp/docs/auditor/10.8/configuration/fileservers/netappcmode/servicepolicy.md#configure-system-service-firewall-policies) instead.
 
 By default, the 'default-data-files' policy is applied to the SVM CIFS/SMB interface and HTTP/HTTPS
 options are not available. To make the ONTAPI available through HTTP/HTTPS ports on your SVM
@@ -115,8 +116,7 @@ of the configuration:
 
 **NOTE:** This paragraph only applies to NetApp ONTAP version 9.10.1 and lower.
 For higher ONTAP versions the command context **"system services firewall policy"** is deprecated.
-Use [network interface service-policy](https://docs.netwrix.com/docs/auditor/10_8/configuration/fileservers/netappcmode/servicepolicy#:~:text=Configure%20Service%20Policy,-NOTE) instead. Review the
-[NetApp ONTAP 9.10.1 cli documetation](https://docs.netapp.com/us-en/ontap-cli-9101/system-services-firewall-policy-show.html#description)
+Review the [NetApp ONTAP 9.10.1 cli documetation](https://docs.netapp.com/us-en/ontap-cli-9101/system-services-firewall-policy-show.html#description)
 article for additional information.
 
 Configure firewall to make file shares and Clustered Data ONTAP HTTP/HTTPS ports accessible from the
