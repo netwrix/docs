@@ -580,14 +580,14 @@ export default function SearchBar() {
 
         // Simulate typing a trailing space and removing it.
         // This causes DocSearch/Autocomplete to run a new search with the updated filters.
+        // Both events fire in the same JS task so DocSearch batches them — only the final
+        // value (query) triggers a visible search, preventing an intermediate result flash.
         setTimeout(() => {
             nativeSetter.call(input, query + ' ');
             input.dispatchEvent(new Event('input', {bubbles: true}));
 
-            setTimeout(() => {
-                nativeSetter.call(input, query);
-                input.dispatchEvent(new Event('input', {bubbles: true}));
-            }, 50);
+            nativeSetter.call(input, query);
+            input.dispatchEvent(new Event('input', {bubbles: true}));
         }, 50);
     }, []);
 
