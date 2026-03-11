@@ -268,3 +268,65 @@ jobs:
           prompt: |
             /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
           claude_args: '--allowedTools "Bash(vale:*),Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(dale)"'
+
+      - name: Re-run Vale and update inline comments
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ steps.pr-info.outputs.number }}
+          REPO=${{ github.repository }}
+
+          # Dismiss all previous Vale reviews
+          REVIEW_IDS=$(gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews \
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("Vale found"))) | .id] | .[]' 2>/dev/null || true)
+          for ID in $REVIEW_IDS; do
+            gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews/${ID}/dismissals \
+              -f message="Superseded after fixes applied" -f event="DISMISS" 2>/dev/null || true
+          done
+
+          # Pull latest changes from Claude's push
+          git pull origin ${{ steps.pr-info.outputs.branch }} 2>/dev/null || true
+
+          # Get changed files
+          CHANGED_MD_FILES=$(gh pr diff "$PR_NUMBER" --name-only | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' || true)
+          if [ -z "$CHANGED_MD_FILES" ]; then
+            echo "No docs markdown files to re-check"
+            exit 0
+          fi
+
+          # Re-run Vale and collect results
+          VALE_COUNT=0
+          COMMENTS_JSON="[]"
+          while IFS= read -r FILE; do
+            if [ -f "$FILE" ]; then
+              RESULT=$(vale --output=line "$FILE" 2>&1 || true)
+              if [ -n "$RESULT" ]; then
+                while IFS= read -r LINE; do
+                  LINE_NUM=$(echo "$LINE" | cut -d: -f2)
+                  RULE=$(echo "$LINE" | cut -d: -f4)
+                  MESSAGE=$(echo "$LINE" | cut -d: -f5-)
+                  if [ -n "$LINE_NUM" ] && [ -n "$MESSAGE" ]; then
+                    BODY="**Vale** (\`${RULE}\`): ${MESSAGE}"
+                    COMMENTS_JSON=$(echo "$COMMENTS_JSON" | jq \
+                      --arg path "$FILE" \
+                      --argjson line "$LINE_NUM" \
+                      --arg body "$BODY" \
+                      '. += [{"path": $path, "line": $line, "body": $body}]')
+                    VALE_COUNT=$((VALE_COUNT + 1))
+                  fi
+                done <<< "$RESULT"
+              fi
+            fi
+          done <<< "$CHANGED_MD_FILES"
+
+          if [ "$VALE_COUNT" -gt 0 ]; then
+            echo "Vale still found $VALE_COUNT issue(s) after fixes"
+            jq -n \
+              --arg body "**Vale found ${VALE_COUNT} remaining issue(s) after fixes.** See inline comments below." \
+              --argjson comments "$COMMENTS_JSON" \
+              '{"body": $body, "event": "COMMENT", "comments": $comments}' \
+              | gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews --input - 2>&1
+          else
+            echo "All Vale issues resolved"
+          fi
