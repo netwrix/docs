@@ -492,7 +492,7 @@ export default function SearchBar() {
     // Multi-select state for products
     const [selectedProducts, setSelectedProducts] = useState(() => {
         if (typeof window === 'undefined') return [];
-        const saved = localStorage.getItem('docs_product_filter');
+        const saved = sessionStorage.getItem('docs_product_filter');
         try {
             return saved ? JSON.parse(saved) : [];
         } catch {
@@ -507,10 +507,10 @@ export default function SearchBar() {
         selectedProductsRef.current = selectedProducts;
     }, [selectedProducts]);
 
-    // Sync selectedProducts to localStorage and dispatch custom event for same-tab sync
+    // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            localStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
             // Dispatch custom event for same-tab synchronization
             window.dispatchEvent(new CustomEvent('productFilterChange', {
                 detail: {products: selectedProducts}

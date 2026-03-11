@@ -237,7 +237,7 @@ function SearchPageContent() {
     const [selectedProducts, setSelectedProducts] = useState(() => {
         if (productsFromUrl.length > 0) return productsFromUrl;
         if (typeof window === 'undefined') return [];
-        const saved = localStorage.getItem('docs_product_filter');
+        const saved = sessionStorage.getItem('docs_product_filter');
         try {
             return saved ? JSON.parse(saved) : [];
         } catch {
@@ -251,10 +251,10 @@ function SearchPageContent() {
     const targetPageRef = useRef(null);
     const isInternalNavigation = useRef(false);
 
-    // Sync selectedProducts to localStorage and dispatch custom event for same-tab sync
+    // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            localStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
             // Dispatch custom event for same-tab synchronization
             window.dispatchEvent(new CustomEvent('productFilterChange', {
                 detail: {products: selectedProducts}
