@@ -109,3 +109,49 @@ of the configuration:
     svm1 lif_svm1_126 netwrix-policy
 
     svm1 lif_svm1_349 netwrix-policy
+
+
+## Configure System Service Firewall Policies
+
+**NOTE:** This paragraph only applies to NetApp ONTAP version 9.10.1 and lower.
+For higher ONTAP versions the command context **"system services firewall policy"** is deprecated.
+Use [network interface service-policy](https://docs.netwrix.com/docs/auditor/10_7/configuration/fileservers/netappcmode/servicepolicy#:~:text=Configure%20Service%20Policy,-NOTE) instead. Review the
+[NetApp ONTAP 9.10.1 cli documetation](https://docs.netapp.com/us-en/ontap-cli-9101/system-services-firewall-policy-show.html#description)
+article for additional information.
+
+Configure firewall to make file shares and Clustered Data ONTAP HTTP/HTTPS ports accessible from the
+computer where Netwrix Auditor Server is installed. Your firewall configuration depends on network
+settings and security policies in your organization. Below is an example of configuration:
+
+1. Navigate to your cluster command prompt through the SSH/Telnet connection.
+2. Log in as a cluster administrator and review your current firewall configuration. For example:
+
+    |                                           |              |         |
+    | ----------------------------------------- | ------------ | ------- |
+    | cluster1::> system services firewall show |              |         |
+    | Node                                      | Enabled      | Logging |
+    | ------------                              | ------------ | ------- |
+    | cluster1-01                               | true         | false   |
+
+3. Create firewall policy or edit existing policy to allow HTTP/HTTPS (note that modifying a policy
+   you may overwrite some settings). For example:
+
+    | To...                                             | Execute...                                                                                                                                                                                                                                                                                   |
+    | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | NetApp Clustered Data ONTAP 8.2                   |                                                                                                                                                                                                                                                                                              |
+    | Create a policy                                   | `cluster1::> system services firewall policy create -policy netwrix_policy -service http -vserver svm1 -action allow -ip-list 192.168.1.0/24` `cluster1::> system services firewall policy create -policy netwrix_policy -service https -vserver svm1 -action allow -ip-list 192.168.1.0/24` |
+    | Modify existing policy                            | `cluster1::> system services firewall policy modify -policy netwrix_policy -service http -vserver svm1 -action allow -ip-list 192.168.1.0/24` `cluster1::> system services firewall policy modify -policy netwrix_policy -service https -vserver svm1 -action allow -ip-list 192.168.1.0/24` |
+    | NetApp Clustered Data ONTAP 8.3, ONTAP 9.0 - 9.10 |                                                                                                                                                                                                                                                                                              |
+    | Create a policy                                   | `cluster1::> system services firewall policy create -policy netwrix_policy -service http -vserver svm1 -allow-list 192.168.1.0/24` `cluster1::> system services firewall policy create -policy netwrix_policy -service https -vserver svm1 -allow-list 192.168.1.0/24`                       |
+    | Modify existing policy                            | `cluster1::> system services firewall policy modify -policy netwrix_policy -service http -vserver svm1 -allow-list 192.168.1.0/24` `cluster1::> system services firewall policy modify -policy netwrix_policy -service https -vserver svm1 -allow-list 192.168.1.0/24`                       |
+
+    where `pol1` is your Firewall policy name and `192.168.1.0/24` is your subnet where Netwrix
+    Auditor Server resides.
+
+4. Apply the firewall policy to a LIF.
+
+    `cluster1::>network interface modify -vserver svm -lif vs1-cifs-lif1 -firewall-policy netwrix_policy`
+
+    To verify the policy was applied correctly, execute the following:
+
+    `cluster1::>network interface show -fields firewall-policy`
