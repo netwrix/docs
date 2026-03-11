@@ -47,16 +47,16 @@ Follow the instructions to enable SIEM notifications.
 
   All template variables are case-insensitive and wrapped in `%` delimiters (e.g., `%VARIABLE_NAME%`). The template replaces unresolved variables with an empty string.
 
-  **System Variables**
+  **General Variables**
 
   | Variable | Description | Data Type | Example Value |
   |---|---|---|---|
   | `%SYSLOG_DATE%` | Current UTC date/time in universal sortable format | `string` (DateTime format `u`) | `2026-03-03 14:30:00Z` |
   | `%SYSLOG_DATE_ISO%` | Current UTC date/time in ISO 8601 format with milliseconds | `string` (DateTime format `yyyy-MM-ddTHH:mm:ss.fffZ`) | `2026-03-03T14:30:00.123Z` |
   | `%SYSLOG_DATE_ISO_D%` | Current UTC date/time in compact ISO 8601 format with milliseconds | `string` (DateTime format `yyyyMMddTHH:mm:ss.fffZ`) | `20260303T14:30:00.123Z` |
-  | `%HOST%` | Machine name of the StealthDEFEND server | `string` | `SD-SERVER01` |
-  | `%COMPANY%` | Company name from application info | `string` | `Stealthbits Technologies` |
-  | `%PRODUCT%` | Product name from application info | `string` | `StealthDEFEND` |
+  | `%HOST%` | Machine name of the Netwrix Threat Manager server | `string` | `NTM-SERVER01` |
+  | `%COMPANY%` | Company name from application info | `string` | `Netwrix Corporation` |
+  | `%PRODUCT%` | Product name from application info | `string` | `Netwrix Threat Manager` |
   | `%PRODUCT_VERSION%` | Product version from application info | `string` | `4.5.0.0` |
   | `%THREAT_TYPE_ID%` | Job ID of the threat definition | `string` (from `long`) | `42` |
   | `%THREAT_TIME%` | UTC time of the primary event in universal sortable format | `string` (DateTime format `u`) | `2026-03-03 14:25:00Z` |
@@ -70,24 +70,24 @@ Follow the instructions to enable SIEM notifications.
   | `%PROCESS%` | Process name from the primary event | `string` | `explorer.exe` |
 
 
-  **Perpetrator (Threat User)**
+  **Perpetrator**
 
   | Variable | Description | Data Type | Example Value |
   |---|---|---|---|
   | `%PERPETRATORSAMACCOUNTNAME%` | SAM account name of the perpetrator | `string` | `DOMAIN\jsmith` |
   | `%PERPETRATORDISTINGUISHEDNAME%` | Distinguished name of the perpetrator | `string` | `CN=John Smith,OU=Users,DC=domain,DC=com` |
-  | `%PERPETRATORDOMAIN%` | Domain of the perpetrator (parsed from SAM account name or AD domain) | `string` | `DOMAIN` |
+  | `%PERPETRATORDOMAIN%` | Domain of the perpetrator | `string` | `DOMAIN` |
   | `%PERPETRATORTAGS%` | Comma-delimited list of tags assigned to the perpetrator | `string` | `VIP, Executive, Service Account` |
-  | `%THREATUSERDISPLAYNAME%` | Display name of the threat user (falls back to SAM account name) | `string` | `John Smith` |
+  | `%THREATUSERDISPLAYNAME%` | Display name of the threat user (falls back to NT Account Name) | `string` | `John Smith` |
   | `%THREATUSEREMAIL%` | Email address of the threat user | `string` | `jsmith@domain.com` |
-  | `%THREATUSERMANAGERDISPLAYNAME%` | Display name of the threat user's manager (falls back to manager SAM account name) | `string` | `Jane Doe` |
+  | `%THREATUSERMANAGERDISPLAYNAME%` | Display name of the threat user's manager (falls back to manager NT Account Name) | `string` | `Jane Doe` |
   | `%THREATUSERMANAGEREMAIL%` | Email address of the threat user's manager | `string` | `jdoe@domain.com` |
 
   **Client**
 
   | Variable | Description | Data Type | Example Value |
   |---|---|---|---|
-  | `%CLIENTDOMAIN%` | Domain name of the client host (parsed from `DOMAIN\hostname` format) | `string` | `DOMAIN` |
+  | `%CLIENTDOMAIN%` | Domain name of the client host | `string` | `DOMAIN` |
   | `%CLIENTTAGS%` | Comma-delimited list of tags assigned to the client host | `string` | `Workstation, Finance` |
 
   **Target Host**
@@ -101,7 +101,7 @@ Follow the instructions to enable SIEM notifications.
 
   | Variable | Description | Data Type | Example Value |
   |---|---|---|---|
-  | `%AFFECTEDUSERSAMACCOUNTNAME%` | Comma-delimited list of affected user SAM account names | `string` | `DOMAIN\user1, DOMAIN\user2` |
+  | `%AFFECTEDUSERSAMACCOUNTNAME%` | Comma-delimited list of affected user NT Account Names | `string` | `DOMAIN\user1, DOMAIN\user2` |
   | `%AFFECTEDUSERDISPLAYNAME%` | Comma-delimited list of affected user display names (falls back to SAM account name) | `string` | `User One, User Two` |
   | `%AFFECTEDUSERDOMAIN%` | Domain of the first affected user (parsed from SAM account name or AD domain) | `string` | `DOMAIN` |
   | `%AFFECTEDUSERTAGS%` | Comma-delimited, deduplicated list of tags across all affected users (includes group tags) | `string` | `VIP, Admins` |
@@ -110,12 +110,12 @@ Follow the instructions to enable SIEM notifications.
 
   | Variable | Description | Data Type | Example Value |
   |---|---|---|---|
-  | `%PRIMARYEVENTCLIENT%` | Client name from the primary event (prefers Client.Name, falls back to Process.Name) | `string` | `DOMAIN\WORKSTATION01` |
-  | `%PRIMARYEVENTCLIENTID%` | ID of the client on the primary event | `long` | `1234` |
-  | `%PRIMARYEVENTCLIENTIP%` | IP address of the client on the primary event (uses DNS resolution if necessary) | `string` | `192.168.1.100` |
+  | `%PRIMARYEVENTCLIENT%` | Client name from the primary event (could be Domain\Computer, FQDN, or (unknown) IPAddress) | `string` | `DOMAIN\WORKSTATION01` |
+  | `%PRIMARYEVENTCLIENTID%` | NTM ID of the client on the primary event, this is internal to Threat Manager | `long` | `1234` |
+  | `%PRIMARYEVENTCLIENTIP%` | IP address of the client on the primary event | `string` | `192.168.1.100` |
   | `%PRIMARYEVENTFROMIP%` | IP address of the originating client (alias for client IP) | `string` | `192.168.1.100` |
   | `%PRIMARYEVENTFROMMAC%` | MAC address of the originating client | `string` | `00:1A:2B:3C:4D:5E` |
-  | `%PRIMARYEVENTTOIP%` | IP address of the target/source host (uses DNS resolution if necessary) | `string` | `10.0.0.50` |
+  | `%PRIMARYEVENTTOIP%` | IP address of the target/source host | `string` | `10.0.0.50` |
   | `%PRIMARYEVENTHOST%` | Source host name from the primary event | `string` | `DOMAIN\SERVER01` |
   | `%PRIMARYEVENTDOMAIN%` | Domain name of the primary event source host | `string` | `DOMAIN` |
   | `%PRIMARYEVENTOPERATION%` | Category/type of operation for the primary event | `string` | `File Modified` |
