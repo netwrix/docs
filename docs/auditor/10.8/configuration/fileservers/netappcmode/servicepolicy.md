@@ -7,7 +7,7 @@ sidebar_position: 30
 # Configure Service Policy
 
 **NOTE:** This paragraph only applies to NetApp ONTAP version 9.10.1 and higher.
-For older NetApp ONTAP versions use [System Service Firewall Policies](https://github.com/netwrix/docs/blob/update-docs-na-fsa-netapp/docs/auditor/10.8/configuration/fileservers/netappcmode/servicepolicy.md#configure-system-service-firewall-policies) instead.
+For older NetApp ONTAP versions use [System Service Firewall Policies](#configure-system-service-firewall-policies) instead.
 
 By default, the 'default-data-files' policy is applied to the SVM CIFS/SMB interface and HTTP/HTTPS
 options are not available. To make the ONTAPI available through HTTP/HTTPS ports on your SVM
@@ -114,10 +114,9 @@ of the configuration:
 
 ## Configure System Service Firewall Policies
 
-**NOTE:** This paragraph only applies to NetApp ONTAP version 9.10.1 and lower.
-For higher ONTAP versions the command context **"system services firewall policy"** is deprecated.
-Review the [NetApp ONTAP 9.10.1 cli documetation](https://docs.netapp.com/us-en/ontap-cli-9101/system-services-firewall-policy-show.html#description)
-article for additional information.
+**NOTE:**
+This section applies to NetApp ONTAP 9.10.1 and lower. For ONTAP versions higher than 9.10.1, the `system services firewall policy` command context is deprecated.
+See the [NetApp ONTAP 9.10.1 CLI documentation](https://docs.netapp.com/us-en/ontap-cli-9101/system-services-firewall-policy-show.html#description) for details.
 
 Configure firewall to make file shares and Clustered Data ONTAP HTTP/HTTPS ports accessible from the
 computer where Netwrix Auditor Server is installed. Your firewall configuration depends on network
@@ -133,7 +132,7 @@ settings and security policies in your organization. Below is an example of conf
     | ------------                              | ------------ | ------- |
     | cluster1-01                               | true         | false   |
 
-3. Create firewall policy or edit existing policy to allow HTTP/HTTPS (note that modifying a policy
+3. Create a firewall policy or edit an existing policy to allow HTTP/HTTPS (note that modifying a policy
    you may overwrite some settings). For example:
 
     | To...                                             | Execute...                                                                                                                                                                                                                                                                                   |
@@ -145,7 +144,7 @@ settings and security policies in your organization. Below is an example of conf
     | Create a policy                                   | `cluster1::> system services firewall policy create -policy netwrix_policy -service http -vserver svm1 -allow-list 192.168.1.0/24` `cluster1::> system services firewall policy create -policy netwrix_policy -service https -vserver svm1 -allow-list 192.168.1.0/24`                       |
     | Modify existing policy                            | `cluster1::> system services firewall policy modify -policy netwrix_policy -service http -vserver svm1 -allow-list 192.168.1.0/24` `cluster1::> system services firewall policy modify -policy netwrix_policy -service https -vserver svm1 -allow-list 192.168.1.0/24`                       |
 
-    where `pol1` is your Firewall policy name and `192.168.1.0/24` is your subnet where Netwrix
+    where `netwrix_policy` is your Firewall policy name and `192.168.1.0/24` is your subnet where Netwrix
     Auditor Server resides.
 
 4. Apply the firewall policy to a LIF.
