@@ -18,7 +18,6 @@ Currently, add-ons are available for the following browsers:
 - Microsoft Edge
 - Google Chrome
 - Mozilla Firefox
-- Safari
 
 ![Add-on Browser](/images/passwordsecure/9.2/configuration/browseradd-ons/addon-connections-en.webp)
 
