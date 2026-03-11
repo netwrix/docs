@@ -134,7 +134,7 @@ jobs:
             ## Documentation PR Review
 
             ### Vale Linting
-            (paste Vale results formatted as a table with columns: Line, Rule, Message, Offending Text)
+            (list Vale issues as bullet points: **Line N**: Message. Suggested fix: "...")
 
             ### Editorial Review
             (list editorial issues as bullet points: **Category** — Line N: description. Suggested fix: "...")
