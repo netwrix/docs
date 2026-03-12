@@ -23,6 +23,41 @@ Step 2 – Read the welcome message and click **Next**.
 
 ![2-select_source_version](/images/directorymanager/11.1/install/upgrade/2-select_source_version.webp)
 
+Step 2.1: Verify SSL/TLS Certificates
+
+**CRITICAL PRE-UPGRADE STEP**
+
+Before proceeding with the upgrade, verify that all SSL/TLS certificates used for LDAP connections and authentication services are properly configured:
+
+**Verification Steps:**
+
+1. **Verify certificate installation:**
+   - Open Certificate Manager: `certlm.msc`
+   - Navigate to: **Trusted Root Certification Authorities** → **Certificates**
+   - Confirm all required certificates are present in this store
+
+2. **Check certificate validity:**
+   - Double-click each certificate
+   - Verify "Valid from" and "Valid to" dates
+   - Ensure certificates are not expired
+![2-1-check_certificate_validity](/images/directorymanager/11.1/install/upgrade/2-1-check_certificate_validity.webp)
+
+3. **Verify certificate chain:**
+   - In certificate details, go to **Certification Path** tab
+   - Ensure all certificates in the chain show "This certificate is OK"
+   - Verify no revocation errors
+![2-1-verify_certificate_chain](/images/directorymanager/11.1/install/upgrade/2-1-verify_certificate_chain.webp)
+
+:::warning
+- Connections using self-signed certificates NOT in the Trusted Root CA store will FAIL after upgrade
+- Authentication and LDAP operations will be blocked if certificates are invalid
+:::
+
+**If any certificates are missing or invalid:**
+- STOP the upgrade process
+- Install/update certificates
+- Re-verify all certificates before continuing
+
 Step 3 – From the Select the previous version to upgrade list, select the Directory Manager version
 to upgrade from.
 
