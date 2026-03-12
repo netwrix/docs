@@ -886,7 +886,10 @@ function SearchPageContent() {
                                 transition: 'all 0.2s ease',
                             }}
                         >
-                            ← Previous
+                            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '6px', display: 'inline'}}>
+                                <polyline points="7,1 1,6 7,11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                            Previous
                         </button>
 
                         <div style={{
@@ -983,7 +986,10 @@ function SearchPageContent() {
                                 transition: 'all 0.2s ease',
                             }}
                         >
-                            Next →
+                            Next
+                            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginLeft: '6px', display: 'inline'}}>
+                                <polyline points="1,1 7,6 1,11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
                         </button>
                     </div>
                 )}
