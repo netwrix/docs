@@ -25,9 +25,38 @@ This documentation site serves all Netwrix product documentation.
 
 ### Prerequisites
 
-- **Node.js 18+**
+- **Node.js 22+**
 - **npm**
 - **Git**
+- **Vale** (style linter — required for pushing documentation changes)
+
+### Install Vale
+
+Vale is required to push changes to documentation files. The pre-push hook runs Vale automatically and blocks pushes that have linting errors.
+
+**macOS:**
+```bash
+brew install vale
+```
+
+**Linux:**
+```bash
+sudo snap install vale
+```
+
+**Windows:**
+```bash
+choco install vale
+```
+
+**Manual install (any platform):**
+
+Download the latest release from [github.com/errata-ai/vale/releases](https://github.com/errata-ai/vale/releases), extract the binary, and add it to your PATH.
+
+Verify the installation:
+```bash
+vale --version
+```
 
 ### Installation
 
@@ -36,11 +65,25 @@ This documentation site serves all Netwrix product documentation.
 git clone https://github.com/netwrix/docs.git
 cd docs
 
-# Install dependencies
+# Install dependencies (also sets up the pre-push hook via Husky)
 npm install
 
 # Start development server
 npm run start
+```
+
+### Run Vale Locally
+
+Run Vale on a file before pushing to catch issues early:
+
+```bash
+vale docs/path/to/file.md
+```
+
+Run Vale on all changed docs files:
+
+```bash
+git diff --name-only dev | grep '^docs/.*\.md$' | xargs vale
 ```
 
 ## 📁 Project Structure
