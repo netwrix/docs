@@ -251,6 +251,9 @@ function SearchPageContent() {
     const targetPageRef = useRef(null);
     const isInternalNavigation = useRef(false);
 
+    // All sorted results for client-side pagination
+    const allItemsRef = useRef([]);
+
     // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -308,6 +311,7 @@ function SearchPageContent() {
         items: [],
         query: null,
         totalResults: null,
+        totalMatches: null,
         totalPages: null,
         lastPage: null,
         hasMore: null,
@@ -329,23 +333,14 @@ function SearchPageContent() {
                         ...data.value,
                         items: data.value.items, // Show only current page
                     };
-                case 'nextPage':
-                    if (!prevState.hasMore || prevState.loading) {
-                        return prevState;
-                    }
+                case 'setPage':
                     return {
                         ...prevState,
-                        lastPage: prevState.lastPage + 1,
-                        loading: true,
-                    };
-                case 'prevPage':
-                    if (prevState.lastPage === 0 || prevState.loading) {
-                        return prevState;
-                    }
-                    return {
-                        ...prevState,
-                        lastPage: prevState.lastPage - 1,
-                        loading: true,
+                        items: data.value.items,
+                        lastPage: data.value.lastPage,
+                        totalPages: data.value.totalPages,
+                        hasMore: data.value.hasMore,
+                        loading: false,
                     };
                 default:
                     return prevState;
@@ -358,11 +353,11 @@ function SearchPageContent() {
     const algoliaHelper = useMemo(
         () =>
             algoliaSearchHelper(algoliaClient, indexName, {
-                hitsPerPage: resultsPerPage,
+                hitsPerPage: 1000, // Fetch all results at once for client-side sorting/pagination
                 advancedSyntax: true,
                 disjunctiveFacets: ['language'], // Only language facet exists in index
             }),
-        [algoliaClient, indexName, resultsPerPage],
+        [algoliaClient, indexName],
     );
 
     algoliaHelper.on('result', ({results: {query, hits, page, nbHits, nbPages, facets}}) => {
@@ -424,18 +419,33 @@ function SearchPageContent() {
             };
         });
 
-        // Algolia handles filtering via facetFilters, so no client-side filtering needed
-        const items = allItems;
+        // Sort all results by product name alphabetically so products don't split across pages
+        allItems.sort((a, b) => (a.product || '').localeCompare(b.product || ''));
+
+        // Store all sorted results for client-side pagination
+        allItemsRef.current = allItems;
+
+        // Determine which page to display (URL restore or start at 0)
+        const displayPage = (restoringFromUrl.current && targetPageRef.current !== null)
+            ? targetPageRef.current
+            : 0;
+        restoringFromUrl.current = false;
+        targetPageRef.current = null;
+
+        const totalPages = Math.ceil(allItems.length / resultsPerPage);
+        const start = displayPage * resultsPerPage;
+        const items = allItems.slice(start, start + resultsPerPage);
 
         searchResultStateDispatcher({
             type: 'update',
             value: {
                 items,
                 query,
-                totalResults: nbHits,
-                totalPages: nbPages,
-                lastPage: page,
-                hasMore: nbPages > page + 1,
+                totalResults: allItems.length,
+                totalMatches: nbHits,
+                totalPages,
+                lastPage: displayPage,
+                hasMore: displayPage + 1 < totalPages,
                 loading: false,
             },
         });
@@ -444,7 +454,7 @@ function SearchPageContent() {
     // Pagination is now controlled by Previous/Next buttons instead of infinite scroll
 
     const makeSearch = useCallback(
-        (page = 0) => {
+        () => {
             // Build facetFilters with product filters (matching SearchBar logic)
             const facetFilters = [`language:${currentLocale}`];
 
@@ -455,13 +465,33 @@ function SearchPageContent() {
                 facetFilters.push(productFilters); // Array within array = OR logic
             }
 
+            // Always fetch page 0 — all results come back at once for client-side pagination
             algoliaHelper
                 .setQuery(searchQuery)
                 .setQueryParameter('facetFilters', facetFilters)
-                .setPage(page)
+                .setPage(0)
                 .search();
         },
         [searchQuery, algoliaHelper, currentLocale, selectedProducts],
+    );
+
+    // Navigate to a page client-side using already-fetched sorted results
+    const goToPage = useCallback(
+        (pageNum) => {
+            const totalPages = Math.ceil(allItemsRef.current.length / resultsPerPage);
+            const clampedPage = Math.max(0, Math.min(pageNum, totalPages - 1));
+            const start = clampedPage * resultsPerPage;
+            searchResultStateDispatcher({
+                type: 'setPage',
+                value: {
+                    items: allItemsRef.current.slice(start, start + resultsPerPage),
+                    lastPage: clampedPage,
+                    totalPages,
+                    hasMore: clampedPage + 1 < totalPages,
+                },
+            });
+        },
+        [resultsPerPage],
     );
 
     // Update URL when filters or pagination change
@@ -497,31 +527,15 @@ function SearchPageContent() {
 
     useEffect(() => {
         searchResultStateDispatcher({type: 'reset'});
+        allItemsRef.current = [];
         if (searchQuery) {
             searchResultStateDispatcher({type: 'loading'});
-            // If restoring from URL, use the target page; otherwise start at page 0
-            const startPage = (restoringFromUrl.current && targetPageRef.current !== null)
-                ? targetPageRef.current
-                : 0;
             setTimeout(() => {
-                makeSearch(startPage);
-                // Clear restoration flags after search
-                restoringFromUrl.current = false;
-                targetPageRef.current = null;
+                makeSearch();
             }, 300);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchQuery, selectedProducts, resultsPerPage]);
-
-    useEffect(() => {
-        // Only trigger pagination search if lastPage has been set by nextPage/prevPage actions
-        // (not during initial render where lastPage is null)
-        if (searchResultState.lastPage === null) {
-            return;
-        }
-        makeSearch(searchResultState.lastPage);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchResultState.lastPage]);
 
     // Scroll to top when page changes (except initial load)
     const isInitialLoad = useRef(true);
@@ -715,7 +729,10 @@ function SearchPageContent() {
                                     fontWeight: '500',
                                 }}
                             >
-                                {documentsFoundPlural(searchResultState.totalResults)}
+                                {searchResultState.totalMatches > searchResultState.totalResults
+                                    ? `Showing top ${searchResultState.totalResults.toLocaleString()} of ${searchResultState.totalMatches.toLocaleString()} documents found — refine your search to see more relevant results`
+                                    : documentsFoundPlural(searchResultState.totalResults)
+                                }
                             </div>
                         )}
                     </div>{/* closes controls div */}
@@ -860,11 +877,10 @@ function SearchPageContent() {
                         alignItems: 'center',
                         gap: '20px',
                         padding: '40px 20px',
-                        borderTop: '1px solid var(--ifm-color-emphasis-200)',
                         marginTop: '20px'
                     }}>
                         <button
-                            onClick={() => searchResultStateDispatcher({type: 'prevPage'})}
+                            onClick={() => goToPage(searchResultState.lastPage - 1)}
                             disabled={searchResultState.lastPage === 0 || searchResultState.loading}
                             style={{
                                 padding: '10px 20px',
@@ -922,14 +938,7 @@ function SearchPageContent() {
                                     if (e.key === 'Enter') {
                                         const pageNum = parseInt(pageInputValue, 10);
                                         if (pageNum >= 1 && pageNum <= searchResultState.totalPages) {
-                                            searchResultStateDispatcher({
-                                                type: 'update',
-                                                value: {
-                                                    ...searchResultState,
-                                                    lastPage: pageNum - 1,
-                                                    loading: true,
-                                                }
-                                            });
+                                            goToPage(pageNum - 1);
                                         }
                                         setPageInputValue('');
                                         setPageInputFocused(false);
@@ -964,7 +973,7 @@ function SearchPageContent() {
                         </div>
 
                         <button
-                            onClick={() => searchResultStateDispatcher({type: 'nextPage'})}
+                            onClick={() => goToPage(searchResultState.lastPage + 1)}
                             disabled={!searchResultState.hasMore || searchResultState.loading}
                             style={{
                                 padding: '10px 20px',
