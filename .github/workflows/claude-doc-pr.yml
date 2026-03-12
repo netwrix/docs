@@ -111,11 +111,24 @@ jobs:
           echo "vale_count=$VALE_COUNT" >> "$GITHUB_OUTPUT"
 
           if [ "$VALE_COUNT" -gt 0 ]; then
-            echo "Posting $VALE_COUNT Vale inline comments"
-            # Post as a PR review with inline comments
+            MAX_INLINE=25
+            INLINE_COMMENTS=$(echo "$COMMENTS_JSON" | jq ".[:$MAX_INLINE]")
+            OVERFLOW=$((VALE_COUNT - MAX_INLINE))
+            if [ "$OVERFLOW" -lt 0 ]; then OVERFLOW=0; fi
+
+            if [ "$OVERFLOW" -gt 0 ]; then
+              # Build overflow summary as markdown list
+              OVERFLOW_MD=$(echo "$COMMENTS_JSON" | jq -r ".[$MAX_INLINE:][] | \"- **\(.path)** line \(.line): \(.body)\"")
+              REVIEW_BODY=$(printf "**Vale found %d issue(s).** First %d shown as inline comments.\n\n<details>\n<summary>%d more issue(s)</summary>\n\n%s\n\n</details>" \
+                "$VALE_COUNT" "$MAX_INLINE" "$OVERFLOW" "$OVERFLOW_MD")
+            else
+              REVIEW_BODY="**Vale found ${VALE_COUNT} issue(s).** See inline comments below."
+            fi
+
+            echo "Posting $VALE_COUNT Vale issues ($MAX_INLINE inline, $OVERFLOW overflow)"
             jq -n \
-              --arg body "**Vale found ${VALE_COUNT} issue(s).** See inline comments below." \
-              --argjson comments "$COMMENTS_JSON" \
+              --arg body "$REVIEW_BODY" \
+              --argjson comments "$INLINE_COMMENTS" \
               '{"body": $body, "event": "COMMENT", "comments": $comments}' \
               | gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/reviews \
                   --input - 2>&1
@@ -411,10 +424,23 @@ jobs:
           done <<< "$CHANGED_MD_FILES"
 
           if [ "$VALE_COUNT" -gt 0 ]; then
-            echo "Vale still found $VALE_COUNT issue(s) after fixes"
+            MAX_INLINE=25
+            INLINE_COMMENTS=$(echo "$COMMENTS_JSON" | jq ".[:$MAX_INLINE]")
+            OVERFLOW=$((VALE_COUNT - MAX_INLINE))
+            if [ "$OVERFLOW" -lt 0 ]; then OVERFLOW=0; fi
+
+            if [ "$OVERFLOW" -gt 0 ]; then
+              OVERFLOW_MD=$(echo "$COMMENTS_JSON" | jq -r ".[$MAX_INLINE:][] | \"- **\(.path)** line \(.line): \(.body)\"")
+              REVIEW_BODY=$(printf "**Vale found %d remaining issue(s) after fixes.** First %d shown as inline comments.\n\n<details>\n<summary>%d more issue(s)</summary>\n\n%s\n\n</details>" \
+                "$VALE_COUNT" "$MAX_INLINE" "$OVERFLOW" "$OVERFLOW_MD")
+            else
+              REVIEW_BODY="**Vale found ${VALE_COUNT} remaining issue(s) after fixes.** See inline comments below."
+            fi
+
+            echo "Vale still found $VALE_COUNT issue(s) after fixes ($MAX_INLINE inline, $OVERFLOW overflow)"
             jq -n \
-              --arg body "**Vale found ${VALE_COUNT} remaining issue(s) after fixes.** See inline comments below." \
-              --argjson comments "$COMMENTS_JSON" \
+              --arg body "$REVIEW_BODY" \
+              --argjson comments "$INLINE_COMMENTS" \
               '{"body": $body, "event": "COMMENT", "comments": $comments}' \
               | gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews --input - 2>&1
           else
