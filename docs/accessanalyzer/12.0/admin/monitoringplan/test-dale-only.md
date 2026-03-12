@@ -4,13 +4,13 @@ The monitoring plan defines what Access Analyzer tracks across your environment.
 
 ## Overview
 
-With Access Analyzer, you can easily set up monitoring in minutes. The intuitive interface makes configuration effortless, even for complex environments.
+With Access Analyzer, you can set up monitoring in minutes. The interface guides you through configuration, even for complex environments.
 
 Without a monitoring plan, administrators have no way to track changes in their environment. Organizations that lack this feature cannot detect unauthorized access or respond to threats effectively.
 
 ## How Monitoring Works
 
-A monitoring plan is not a report, a monitoring plan is a live tracking configuration that runs continuously. Think of it not as a snapshot but as an ongoing process.
+Unlike a report, a monitoring plan runs continuously rather than capturing a single point in time.
 
 ## Configure the Plan
 
