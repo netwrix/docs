@@ -1,24 +1,26 @@
-# Configuring the monitoring Plan
+# Configuring the monitoring plan
 
-This document is designed to help users in the process of configuring their monitoring plan. It was written by the team to provide assistance.
+The monitoring plan lets you monitor aspects of your system, configure alerts, set thresholds, and manage notifications.
 
 ## Overview
 
-The monitoring plan can be configured by the user to simply monitor various aspects of the system. Basically, you just need to follow the steps below to get started with the configuration process.
+You can configure the monitoring plan to monitor various aspects of the system. Follow the steps below to complete the configuration.
 
-In order to utilize the monitoring plan feature, you should ensure that your system meets the necessary prerequisites and requirements that are needed.
+Ensure your system meets the prerequisites before starting.
 
 ## Steps to Configure
 
-1. First of all, click on the **Settings** button in the navigation bar
-2. It is recommended that the user should select the appropriate monitoring template
-3. The configuration can be saved by clicking the **Save** button
-4. Please be advised that changes will take effect after the service is restarted
+1. Click **Settings** in the navigation bar.
+2. Select the appropriate monitoring template.
+3. Click **Save**.
+4. Restart the service to apply your changes.
 
 ## Important Information
 
-We believe that this feature is very useful for administrators who need to monitor their systems. If you have any questions, don't hesitate to reach out to our support team.
+This feature helps administrators monitor their systems. For questions, contact the Netwrix support team.
 
-The monitoring plan allows you to configure alerts, set thresholds, and manage notifications. It is important to note that all changes should be tested in a non-production environment first before deploying to production.
+The monitoring plan lets you configure alerts, set thresholds, and manage notifications. Test all changes in a non-production environment before deploying to production.
 
-> **NOTE**: The user must have administrative privileges to access this feature. Contact your system administrator if you do not have the necessary permissions.
+:::note
+You must have administrative privileges to access this feature. Contact your system administrator if you don't have the necessary permissions.
+:::
