@@ -1,6 +1,6 @@
 ---
 name: doc-pr-fix
-description: "Autonomous fixer for documentation PRs. Triggered by @claude comments on PRs targeting dev. Reads the writer's request and the existing doc-pr review, then applies fixes, runs Vale and Dale until clean, and commits. Use this skill whenever a writer tags @claude on a documentation PR — not for interactive help (use doc-help for that), but for autonomous, single-shot fixes in CI."
+description: "Autonomous fixer for documentation PRs. Triggered by @claude comments on PRs targeting dev. Reads the writer's request and the existing doc-pr review, then applies fixes and commits. Vale is enforced pre-push so only Dale and editorial issues appear in PR reviews. Use this skill whenever a writer tags @claude on a documentation PR — not for interactive help (use doc-help for that), but for autonomous, single-shot fixes in CI."
 argument-hint: "[pr-number] [writer-comment]"
 ---
 
@@ -41,7 +41,7 @@ Parse the writer's comment to determine what they want. Common patterns:
 
 Work through the requested fixes methodically:
 
-- For **linting fixes** (Vale/Dale): fix each flagged issue in order, file by file
+- For **linting fixes** (Dale): fix each flagged issue in order, file by file
 - For **editorial fixes**: apply the suggested changes from the review, or if the writer asked for something broader ("improve the flow"), read the full document and apply edits that address the request while following Netwrix style
 - For **explanations**: post a PR comment explaining the issue and how to fix it, then stop — don't edit files
 
@@ -52,15 +52,7 @@ When editing:
 
 ## Step 4: Verify
 
-After all edits, run Vale on every file you changed:
-
-```bash
-vale <file>
-```
-
-Fix any new Vale errors. Re-run until zero errors remain.
-
-Do NOT run Dale or any other skills during verification — just Vale.
+Review your edits to ensure they don't introduce new issues. Do NOT run Dale or any other skills during verification.
 
 ## Step 5: Commit and push
 

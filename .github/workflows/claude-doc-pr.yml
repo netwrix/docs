@@ -68,73 +68,6 @@ jobs:
               -f message="Superseded by new review" -f event="DISMISS" 2>/dev/null || true
           done
 
-      - name: Install Vale
-        if: steps.changed-files.outputs.count > 0
-        run: |
-          VERSION=$(curl -s "https://api.github.com/repos/errata-ai/vale/releases/latest" | jq -r '.tag_name')
-          curl -sfL "https://github.com/errata-ai/vale/releases/download/${VERSION}/vale_${VERSION#v}_Linux_64-bit.tar.gz" \
-            | sudo tar -xz -C /usr/local/bin vale
-
-      - name: Run Vale and post inline comments
-        id: vale
-        if: steps.changed-files.outputs.count > 0
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          IFS=',' read -ra FILES <<< "${{ steps.changed-files.outputs.files }}"
-          VALE_COUNT=0
-          COMMENTS_JSON="[]"
-
-          for FILE in "${FILES[@]}"; do
-            if [ -f "$FILE" ]; then
-              RESULT=$(vale --output=line "$FILE" 2>&1 || true)
-              if [ -n "$RESULT" ]; then
-                while IFS= read -r LINE; do
-                  # Format: file:line:col:rule:message
-                  LINE_NUM=$(echo "$LINE" | cut -d: -f2)
-                  RULE=$(echo "$LINE" | cut -d: -f4)
-                  MESSAGE=$(echo "$LINE" | cut -d: -f5-)
-                  if [ -n "$LINE_NUM" ] && [ -n "$MESSAGE" ]; then
-                    BODY="**Vale** (\`${RULE}\`): ${MESSAGE}"
-                    COMMENTS_JSON=$(echo "$COMMENTS_JSON" | jq \
-                      --arg path "$FILE" \
-                      --argjson line "$LINE_NUM" \
-                      --arg body "$BODY" \
-                      '. += [{"path": $path, "line": $line, "body": $body}]')
-                    VALE_COUNT=$((VALE_COUNT + 1))
-                  fi
-                done <<< "$RESULT"
-              fi
-            fi
-          done
-
-          echo "vale_count=$VALE_COUNT" >> "$GITHUB_OUTPUT"
-
-          if [ "$VALE_COUNT" -gt 0 ]; then
-            MAX_INLINE=25
-            INLINE_COMMENTS=$(echo "$COMMENTS_JSON" | jq ".[:$MAX_INLINE]")
-            OVERFLOW=$((VALE_COUNT - MAX_INLINE))
-            if [ "$OVERFLOW" -lt 0 ]; then OVERFLOW=0; fi
-
-            if [ "$OVERFLOW" -gt 0 ]; then
-              OVERFLOW_MD=$(echo "$COMMENTS_JSON" | jq -r ".[$MAX_INLINE:][] | \"- **\(.path)** line \(.line): \(.body)\"")
-              REVIEW_BODY=$(printf "**Vale found %d issue(s).** First %d shown as inline comments.\n\n<details>\n<summary>%d more issue(s)</summary>\n\n%s\n\n</details>" \
-                "$VALE_COUNT" "$MAX_INLINE" "$OVERFLOW" "$OVERFLOW_MD")
-            else
-              REVIEW_BODY="**Vale found ${VALE_COUNT} issue(s).** See inline comments below."
-            fi
-
-            echo "Posting $VALE_COUNT Vale issues ($MAX_INLINE inline, $OVERFLOW overflow)"
-            jq -n \
-              --arg body "$REVIEW_BODY" \
-              --argjson comments "$INLINE_COMMENTS" \
-              '{"body": $body, "event": "COMMENT", "comments": $comments}' \
-              | gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/reviews \
-                  --input - 2>&1
-          else
-            echo "No Vale issues found"
-          fi
-
       - name: Run Dale linting
         id: dale
         if: steps.changed-files.outputs.count > 0
@@ -231,9 +164,10 @@ jobs:
             - Repository: ${{ github.repository }}
             - PR number: ${{ github.event.pull_request.number }}
             - Changed files: ${{ steps.changed-files.outputs.files }}
-            - Vale issues: ${{ steps.vale.outputs.vale_count }} (already posted as inline comments)
             - Dale issues: ${{ steps.dale-post.outputs.dale_count }} (already posted as inline comments)
             - PR diff is at: /tmp/pr-diff.txt
+
+            NOTE: Vale linting is enforced by a pre-push hook. Writers resolve Vale issues locally before pushing. Do not flag or mention Vale issues in the review.
 
             INSTRUCTIONS:
 
@@ -243,7 +177,7 @@ jobs:
             - Voice: passive voice, first person, impersonal phrases
             - Clarity: hard-to-parse sentences, ambiguous references
             - Surface: wordiness, redundancy
-            Do NOT duplicate issues already caught by Vale or Dale — focus on what linters miss.
+            Do NOT duplicate issues already caught by Dale — focus on what linters miss.
 
             Step 3: Write the review to /tmp/doc-pr-review.md with this EXACT structure:
 
@@ -254,13 +188,12 @@ jobs:
             (if no issues found, write "No editorial issues found.")
 
             ### Summary
-            N Vale issues, N Dale issues (see inline comments), N editorial suggestions across N files.
+            N Dale issues (see inline comments), N editorial suggestions across N files.
 
             ---
             **What to do next:**
             Comment `@claude` on this PR followed by your instructions to get help:
-            - `@claude fix all issues` — fix all Vale, Dale, and editorial issues
-            - `@claude fix only the Vale issues` — fix just the linting problems
+            - `@claude fix all issues` — fix all Dale and editorial issues
             - `@claude help improve the flow of this document` — get writing assistance
             > Automated fixes are only available for branches in this repository, not forks.
 
@@ -329,13 +262,6 @@ jobs:
           ref: ${{ steps.pr-info.outputs.branch }}
           fetch-depth: 0
 
-      - name: Install Vale
-        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
-        run: |
-          VERSION=$(curl -s "https://api.github.com/repos/errata-ai/vale/releases/latest" | jq -r '.tag_name')
-          curl -sfL "https://github.com/errata-ai/vale/releases/download/${VERSION}/vale_${VERSION#v}_Linux_64-bit.tar.gz" \
-            | sudo tar -xz -C /usr/local/bin vale
-
       - name: Handle @claude request
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         uses: anthropics/claude-code-action@v1
@@ -348,19 +274,19 @@ jobs:
           show_full_output: true
           prompt: |
             /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
-          claude_args: '--allowedTools "Bash(vale:*),Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(dale)"'
+          claude_args: '--allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(dale)"'
 
-      - name: Re-run Vale and update inline comments
+      - name: Resolve Dale inline comments
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER=${{ steps.pr-info.outputs.number }}
           REPO=${{ github.repository }}
-
-          # Resolve all Vale inline comment threads so they don't block merge
           OWNER="${REPO%%/*}"
           NAME="${REPO##*/}"
+
+          # Resolve all Dale inline comment threads
           THREAD_IDS=$(gh api graphql -f query='
             query($owner:String!,$name:String!,$pr:Int!) {
               repository(owner:$owner,name:$name) {
@@ -371,7 +297,7 @@ jobs:
                 }
               }
             }' -f owner="$OWNER" -f name="$NAME" -F pr="$PR_NUMBER" \
-            --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false and ((.comments.nodes[0].body | contains("**Vale**")) or (.comments.nodes[0].body | contains("**Dale**")))) | .id' 2>/dev/null || true)
+            --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false and (.comments.nodes[0].body | contains("**Dale**"))) | .id' 2>/dev/null || true)
           for TID in $THREAD_IDS; do
             gh api graphql -f query='
               mutation($tid:ID!) {
@@ -379,69 +305,10 @@ jobs:
               }' -f tid="$TID" 2>/dev/null || true
           done
 
-          # Dismiss all previous Vale and Dale reviews
+          # Dismiss all previous Dale reviews
           REVIEW_IDS=$(gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews \
-            --jq '[.[] | select(.user.login == "github-actions[bot]" and ((.body | contains("Vale found")) or (.body | contains("Dale found")))) | .id] | .[]' 2>/dev/null || true)
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("Dale found"))) | .id] | .[]' 2>/dev/null || true)
           for ID in $REVIEW_IDS; do
             gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews/${ID}/dismissals \
               -f message="Superseded after fixes applied" -f event="DISMISS" 2>/dev/null || true
           done
-
-          # Pull latest changes from Claude's push
-          git pull origin ${{ steps.pr-info.outputs.branch }} 2>/dev/null || true
-
-          # Get changed files
-          CHANGED_MD_FILES=$(gh pr diff "$PR_NUMBER" --name-only | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' || true)
-          if [ -z "$CHANGED_MD_FILES" ]; then
-            echo "No docs markdown files to re-check"
-            exit 0
-          fi
-
-          # Re-run Vale and collect results
-          VALE_COUNT=0
-          COMMENTS_JSON="[]"
-          while IFS= read -r FILE; do
-            if [ -f "$FILE" ]; then
-              RESULT=$(vale --output=line "$FILE" 2>&1 || true)
-              if [ -n "$RESULT" ]; then
-                while IFS= read -r LINE; do
-                  LINE_NUM=$(echo "$LINE" | cut -d: -f2)
-                  RULE=$(echo "$LINE" | cut -d: -f4)
-                  MESSAGE=$(echo "$LINE" | cut -d: -f5-)
-                  if [ -n "$LINE_NUM" ] && [ -n "$MESSAGE" ]; then
-                    BODY="**Vale** (\`${RULE}\`): ${MESSAGE}"
-                    COMMENTS_JSON=$(echo "$COMMENTS_JSON" | jq \
-                      --arg path "$FILE" \
-                      --argjson line "$LINE_NUM" \
-                      --arg body "$BODY" \
-                      '. += [{"path": $path, "line": $line, "body": $body}]')
-                    VALE_COUNT=$((VALE_COUNT + 1))
-                  fi
-                done <<< "$RESULT"
-              fi
-            fi
-          done <<< "$CHANGED_MD_FILES"
-
-          if [ "$VALE_COUNT" -gt 0 ]; then
-            MAX_INLINE=25
-            INLINE_COMMENTS=$(echo "$COMMENTS_JSON" | jq ".[:$MAX_INLINE]")
-            OVERFLOW=$((VALE_COUNT - MAX_INLINE))
-            if [ "$OVERFLOW" -lt 0 ]; then OVERFLOW=0; fi
-
-            if [ "$OVERFLOW" -gt 0 ]; then
-              OVERFLOW_MD=$(echo "$COMMENTS_JSON" | jq -r ".[$MAX_INLINE:][] | \"- **\(.path)** line \(.line): \(.body)\"")
-              REVIEW_BODY=$(printf "**Vale found %d remaining issue(s) after fixes.** First %d shown as inline comments.\n\n<details>\n<summary>%d more issue(s)</summary>\n\n%s\n\n</details>" \
-                "$VALE_COUNT" "$MAX_INLINE" "$OVERFLOW" "$OVERFLOW_MD")
-            else
-              REVIEW_BODY="**Vale found ${VALE_COUNT} remaining issue(s) after fixes.** See inline comments below."
-            fi
-
-            echo "Vale still found $VALE_COUNT issue(s) after fixes ($MAX_INLINE inline, $OVERFLOW overflow)"
-            jq -n \
-              --arg body "$REVIEW_BODY" \
-              --argjson comments "$INLINE_COMMENTS" \
-              '{"body": $body, "event": "COMMENT", "comments": $comments}' \
-              | gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews --input - 2>&1
-          else
-            echo "All Vale issues resolved"
-          fi
