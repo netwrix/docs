@@ -1,6 +1,6 @@
 ---
 name: doc-pr-fix
-description: "Autonomous fixer for documentation PRs. Triggered by @claude comments on PRs targeting dev. Reads the writer's request and the existing doc-pr review, then applies fixes and commits. Vale is enforced pre-push so only Dale and editorial issues appear in PR reviews. Use this skill whenever a writer tags @claude on a documentation PR — not for interactive help (use doc-help for that), but for autonomous, single-shot fixes in CI."
+description: "Autonomous fixer for documentation PRs. Triggered by @claude comments on PRs targeting dev. Reads the writer's request and the existing doc-pr review, then applies fixes and commits. Only Dale and editorial issues appear in PR reviews. Use this skill whenever a writer tags @claude on a documentation PR — not for interactive help (use doc-help for that), but for autonomous, single-shot fixes in CI."
 argument-hint: "[pr-number] [writer-comment]"
 ---
 
@@ -21,7 +21,7 @@ You receive:
 Parse the writer's comment to determine what they want. Common patterns:
 
 - **Fix all issues** — apply every fix from the doc-pr review comment
-- **Fix only Vale/Dale issues** — apply only linting fixes
+- **Fix only Dale issues** — apply only linting fixes
 - **Fix a specific issue** — apply one targeted fix
 - **Improve flow/clarity/structure** — editorial rewrite of specific content
 - **Explain something** — answer a question about a flagged issue (respond in a PR comment, don't edit files)
@@ -35,7 +35,7 @@ Parse the writer's comment to determine what they want. Common patterns:
    ```bash
    gh api repos/{owner}/{repo}/issues/$PR_NUMBER/comments --jq '.[] | select(.body | contains("Documentation PR Review")) | .body' | tail -1
    ```
-   This tells you what Vale, Dale, and the editorial review already flagged.
+   This tells you what Dale and the editorial review flagged.
 
 ## Step 3: Apply fixes
 
@@ -78,7 +78,7 @@ Post a PR comment summarizing what you did:
 - `path/to/file.md`: <what was fixed>
 - `path/to/other.md`: <what was fixed>
 
-Vale and Dale checks pass on all edited files.
+Dale checks pass on all edited files.
 ```
 
 If you were asked to explain something rather than fix it, your comment IS the deliverable — no summary needed.
@@ -86,7 +86,7 @@ If you were asked to explain something rather than fix it, your comment IS the d
 ## Behavioral Notes
 
 - **Fix what's clear, ask about what isn't.** If a request has both obvious parts and ambiguous parts, apply the obvious fixes, commit and push those, then post a comment that summarizes what you did AND asks clarifying questions about the rest. The writer can reply with another `@claude` comment to continue.
-- **Never fix issues the writer didn't ask about.** If they said "fix the Vale issues," don't also rewrite sentences for clarity.
+- **Never fix issues the writer didn't ask about.** If they said "fix the Dale issues," don't also rewrite sentences for clarity.
 - **If a fix would substantially change the author's meaning**, skip it and explain why in your summary comment. Ask the writer how they'd like to handle it.
 - **If the entire request is unclear**, don't edit anything — post a comment asking for clarification. It's better to ask one good question than to guess wrong and push unwanted changes.
 - **Each `@claude` comment is a fresh invocation.** You won't remember previous runs, so always re-read the PR diff and review comment for context.
