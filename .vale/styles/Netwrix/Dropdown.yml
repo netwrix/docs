@@ -1,7 +1,7 @@
 extends: substitution
-message: "Use 'drop-down' (hyphenated). Avoid 'dropdown' and 'drop down'."
+message: "Use 'dropdown' (one word). Avoid 'drop-down' and 'drop down'."
 level: warning
 ignorecase: true
 swap:
-  '\bdrop down\b': 'drop-down'
-  '\bdropdown\b': 'drop-down'
+  '\bdrop down\b': 'dropdown'
+  '\bdrop-down\b': 'dropdown'
