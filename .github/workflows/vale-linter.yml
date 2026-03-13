@@ -163,6 +163,27 @@ jobs:
           PR_NUMBER=${{ github.event.pull_request.number }}
           REPO=${{ github.repository }}
 
+          # Resolve previous Vale inline comment threads
+          OWNER="${REPO%%/*}"
+          NAME="${REPO##*/}"
+          THREAD_IDS=$(gh api graphql -f query='
+            query($owner:String!,$name:String!,$pr:Int!) {
+              repository(owner:$owner,name:$name) {
+                pullRequest(number:$pr) {
+                  reviewThreads(first:100) {
+                    nodes { id isResolved comments(first:1) { nodes { body } } }
+                  }
+                }
+              }
+            }' -f owner="$OWNER" -f name="$NAME" -F pr="$PR_NUMBER" \
+            --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false and (.comments.nodes[0].body | contains("**Vale**"))) | .id' 2>/dev/null || true)
+          for TID in $THREAD_IDS; do
+            gh api graphql -f query='
+              mutation($tid:ID!) {
+                resolveReviewThread(input:{threadId:$tid}) { thread { isResolved } }
+              }' -f tid="$TID" 2>/dev/null || true
+          done
+
           # Delete previous Vale PR comments
           COMMENT_IDS=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("## Vale Linting"))) | .id] | .[]' 2>/dev/null || true)
           for ID in $COMMENT_IDS; do
