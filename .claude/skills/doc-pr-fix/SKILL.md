@@ -56,7 +56,7 @@ Work through the requested fixes methodically:
 When editing:
 - Use the Edit tool for targeted changes, Write for larger rewrites
 - Preserve the author's meaning and intent — fix the style, don't rewrite the content
-- Only change what was requested; don't fix unreported issues unless they're in a line you're already editing
+- Only change what was requested; don't fix other categories of issues even if they're on the same line (e.g., if asked to fix Vale issues, don't also fix Dale or editorial issues)
 
 ## Step 4: Verify
 
@@ -94,7 +94,7 @@ If you were asked to explain something rather than fix it, your comment IS the d
 ## Behavioral Notes
 
 - **Fix what's clear, ask about what isn't.** If a request has both obvious parts and ambiguous parts, apply the obvious fixes, commit and push those, then post a comment that summarizes what you did AND asks clarifying questions about the rest. The writer can reply with another `@claude` comment to continue.
-- **Never fix issues the writer didn't ask about.** If they said "fix the Dale issues," don't also rewrite sentences for clarity.
+- **Never fix issues the writer didn't ask about.** If they said "fix the Vale issues," only fix Vale issues — don't also fix Dale issues, editorial issues, or rewrite sentences for clarity, even if the fix is on the same line.
 - **If a fix would substantially change the author's meaning**, skip it and explain why in your summary comment. Ask the writer how they'd like to handle it.
 - **If the entire request is unclear**, don't edit anything — post a comment asking for clarification. It's better to ask one good question than to guess wrong and push unwanted changes.
 - **Each `@claude` comment is a fresh invocation.** You won't remember previous runs, so always re-read the PR diff and review comment for context.
