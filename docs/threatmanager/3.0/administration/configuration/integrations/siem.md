@@ -7,7 +7,7 @@ sidebar_position: 80
 # SIEM Page
 
 The SIEM page provides configuration settings for forwarding threat information to a SIEM service
-such as QRadar or Splunk. Prior to configuring this page, determine the IP address and Port for the
+such as QRadar or Splunk. Before configuring this page, determine the IP address and Port for the
 SIEM server.
 
 Follow the instructions to enable SIEM notifications.
@@ -108,16 +108,16 @@ Follow the instructions to enable SIEM notifications.
   | `%AFFECTEDUSERTAGS%` | Comma-delimited, deduplicated list of tags across all affected users (includes group tags) | `string` | `VIP, Admins` |
 
   **Primary Event**  
-  The primary event is the event which initially triggered the threat.
+  The primary event is the event that initially triggered the threat.
 
   | Variable | Description | Data Type | Example Value |
   |---|---|---|---|
   | `%PRIMARYEVENTCLIENT%` | Client name from the primary event (could be Domain\Computer, FQDN, or (unknown) IPAddress) | `string` | `DOMAIN\WORKSTATION01` |
-  | `%PRIMARYEVENTCLIENTID%` | NTM ID of the client on the primary event, this is internal to Threat Manager | `long` | `1234` |
+  | `%PRIMARYEVENTCLIENTID%` | NTM ID of the client on the primary event. This value is internal to Threat Manager | `long` | `1234` |
   | `%PRIMARYEVENTCLIENTIP%` | IP address of the client on the primary event | `string` | `192.168.1.100` |
   | `%PRIMARYEVENTFROMIP%` | IP address of the originating client (alias for client IP) | `string` | `192.168.1.100` |
   | `%PRIMARYEVENTFROMMAC%` | MAC address of the originating client | `string` | `00:1A:2B:3C:4D:5E` |
-  | `%PRIMARYEVENTTOIP%` | IP address of the target/source host | `string` | `10.0.0.50` |
+  | `%PRIMARYEVENTTOIP%` | IP address of the target host for the primary event | `string` | `10.0.0.50` |
   | `%PRIMARYEVENTHOST%` | Source host name from the primary event | `string` | `DOMAIN\SERVER01` |
   | `%PRIMARYEVENTDOMAIN%` | Domain name of the primary event source host | `string` | `DOMAIN` |
   | `%PRIMARYEVENTOPERATION%` | Category/type of operation for the primary event | `string` | `File Modified` |
@@ -167,7 +167,7 @@ Follow the instructions to enable SIEM notifications.
   | `\r` | `\\r` | The template escapes carriage returns in the output |
   | `\n` | `\\n` | The template escapes newlines in the output |
 
-  The template appends `\r\n` to the end of every built message.
+  The template appends `\r\n` to every message.
 
 
 **Step 3 –** Click Send Test Message to send a test email to the configured email address.
