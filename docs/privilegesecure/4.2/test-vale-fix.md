@@ -18,7 +18,7 @@ After you click **Save**, you can use activity sessions across your environment.
 You must have administrative privileges before proceeding.
 :::
 
-Only administrators can configure activity sessions. This feature is designed to be straightforward.
+Only administrators can configure activity sessions.
 
 ## Configure an Activity Session
 
