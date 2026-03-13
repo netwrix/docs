@@ -51,9 +51,9 @@ const PRODUCT_OPTIONS = [
 function MultiSelect({label, options, selectedValues, onChange}) {
     // options[0] is the "All products" sentinel — skip it for the checkbox list
     const productOptions = options.filter(o => o.value !== '__all__');
-    const noneSelected = selectedValues.length === 1 && selectedValues[0] === '__none__';
-    const allSelected = selectedValues.length === 0 || selectedValues.includes('__all__');
-    const someSelected = !allSelected && !noneSelected && selectedValues.length > 0;
+    const allSelected = selectedValues.includes('__all__');
+    const noneSelected = selectedValues.length === 0;
+    const someSelected = !allSelected && !noneSelected;
 
     const selectAllRef = useRef(null);
 
@@ -66,22 +66,22 @@ function MultiSelect({label, options, selectedValues, onChange}) {
 
     function handleSelectAll() {
         if (allSelected && !someSelected) {
-            onChange(['__none__']); // All checked → uncheck all
+            onChange([]); // All checked → uncheck all
         } else {
-            onChange([]);           // Indeterminate or none → check all
+            onChange(['__all__']); // Indeterminate or none → check all
         }
     }
 
     function handleOption(value, checked) {
         // Resolve current explicit selection
         const current = allSelected
-            ? productOptions.map(o => o.value)   // [] means all
+            ? productOptions.map(o => o.value)   // __all__ means all
             : noneSelected
-                ? []                              // __none__ means none
+                ? []                              // [] means none
                 : selectedValues.filter(v => v !== '__all__');
         if (checked) {
             const next = current.concat(value);
-            onChange(next.length === productOptions.length ? [] : next);
+            onChange(next.length === productOptions.length ? ['__all__'] : next);
         } else {
             onChange(current.filter(v => v !== value));
         }
@@ -137,9 +137,11 @@ function MultiSelect({label, options, selectedValues, onChange}) {
                         checked={allSelected && !noneSelected}
                         onChange={handleSelectAll}
                     />
-                    <span style={{fontSize: '13px', color: 'var(--ifm-color-emphasis-600)', marginLeft: 'auto'}}>
-                        {noneSelected ? 0 : allSelected ? productOptions.length : selectedValues.length} of {productOptions.length}
-                    </span>
+                    {!noneSelected && (
+                        <span style={{fontSize: '13px', color: 'var(--ifm-color-emphasis-600)', marginLeft: 'auto'}}>
+                            {allSelected ? productOptions.length : selectedValues.length} of {productOptions.length}
+                        </span>
+                    )}
                 </label>
                 <div style={dividerStyle} />
                 {productOptions.map((opt) => {
@@ -459,10 +461,9 @@ function SearchPageContent() {
             const facetFilters = [`language:${currentLocale}`];
 
             // Add product filters (OR logic - any of the selected products)
-            const hasProductFilter = selectedProducts.length > 0 && !selectedProducts.includes('__all__');
-            if (hasProductFilter) {
-                const productFilters = selectedProducts.map(p => `product_name:${p}`);
-                facetFilters.push(productFilters); // Array within array = OR logic
+            const realProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
+            if (realProducts.length > 0) {
+                facetFilters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
             }
 
             // Always fetch page 0 — all results come back at once for client-side pagination
@@ -510,7 +511,8 @@ function SearchPageContent() {
         ) {
             const params = new URLSearchParams();
             if (searchQuery) params.set('q', searchQuery);
-            if (selectedProducts.length > 0) params.set('products', selectedProducts.join(','));
+            const urlProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
+            if (urlProducts.length > 0) params.set('products', urlProducts.join(','));
             if (resultsPerPage !== 25) params.set('resultsPerPage', String(resultsPerPage));
             if (currentPage > 1) params.set('page', String(currentPage));
 
