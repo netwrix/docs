@@ -1,16 +1,16 @@
-# Delegate User
+# Delegate User Tracking
 
 ## Overview
-Delegate User allows you to identify when configuration changes are performed by a delegated user rather than the original administrator.
+Delegate User Tracking allows you to identify when configuration changes are performed by a delegated user rather than the original administrator.
 
-When a configuration change is detected, the system checks the corresponding Audit Trail entry and automatically associates the **Delegate User** with the generated Change Log. This helps you understand who actually executed the change when delegated access is used.
+When a configuration change is detected, the system checks the corresponding Setup Audit Trail entry and automatically associates the **Delegate User** with the generated Change Log. This helps you understand who actually executed the change when delegated access is used.
 
 This feature improves traceability and accountability by providing visibility into delegated administrative activity.
 
-## How Delegate User Works
+## How Delegate User Tracking Works
 When the scanner detects a configuration change:
 
-1. The system reads the corresponding **Audit Trail** entry.
+1. The system reads the corresponding **Setup Audit Trail** entry.
 2. It identifies whether the action was performed using delegated access.
 3. If a delegated user is detected, the system records that user in the **Delegate User** field of the Change Log.
 
@@ -63,9 +63,9 @@ This allows you to audit delegated administrative actions across the system.
 - Ensure delegated administration is granted only to trusted users.
 - Periodically audit delegated users to maintain proper governance.
 
-## Limitations
+## Considerations
 - Delegate User information is available only when the change is recorded in the Salesforce Setup Audit Trail.
-- If the Audit Trail entry does not include delegated user information, the Delegate User field remains empty.
+- If the Setup Audit Trail entry does not include delegated user information, the Delegate User field remains empty.
 
 ## Troubleshooting
 - If Delegate User information is missing, verify that the change appears in the Salesforce **Setup Audit Trail**.
