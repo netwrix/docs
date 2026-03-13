@@ -546,7 +546,7 @@ function SearchPageContent() {
                 .setQuery(searchQuery)
                 .setQueryParameter('facetFilters', facetFilters)
                 .setQueryParameter('typoTolerance', typoTolerance)
-                .setPage(page)
+                .setPage(0)
                 .search();
         },
         [searchQuery, algoliaHelper, currentLocale, selectedProducts, typoTolerance],
