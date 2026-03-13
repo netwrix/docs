@@ -276,7 +276,7 @@ jobs:
             /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
           claude_args: '--allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(dale),Skill(doc-help)"'
 
-      - name: Resolve Dale inline comments
+      - name: Resolve inline comments and dismiss old reviews
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -286,7 +286,7 @@ jobs:
           OWNER="${REPO%%/*}"
           NAME="${REPO##*/}"
 
-          # Resolve all Dale inline comment threads
+          # Resolve all Dale and Vale inline comment threads
           THREAD_IDS=$(gh api graphql -f query='
             query($owner:String!,$name:String!,$pr:Int!) {
               repository(owner:$owner,name:$name) {
@@ -297,7 +297,7 @@ jobs:
                 }
               }
             }' -f owner="$OWNER" -f name="$NAME" -F pr="$PR_NUMBER" \
-            --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false and (.comments.nodes[0].body | contains("**Dale**"))) | .id' 2>/dev/null || true)
+            --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false and ((.comments.nodes[0].body | contains("**Dale**")) or (.comments.nodes[0].body | contains("**Vale**")))) | .id' 2>/dev/null || true)
           for TID in $THREAD_IDS; do
             gh api graphql -f query='
               mutation($tid:ID!) {
@@ -305,9 +305,9 @@ jobs:
               }' -f tid="$TID" 2>/dev/null || true
           done
 
-          # Dismiss all previous Dale reviews
+          # Dismiss all previous Dale and Vale reviews
           REVIEW_IDS=$(gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews \
-            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("Dale found"))) | .id] | .[]' 2>/dev/null || true)
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and ((.body | contains("Dale found")) or (.body | contains("Vale found")))) | .id] | .[]' 2>/dev/null || true)
           for ID in $REVIEW_IDS; do
             gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews/${ID}/dismissals \
               -f message="Superseded after fixes applied" -f event="DISMISS" 2>/dev/null || true
