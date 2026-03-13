@@ -1,13 +1,13 @@
-# Delegate User Tracking
+# Delegated User Tracking
 
 ## Overview
-Delegate User Tracking allows you to identify when configuration changes are performed by a delegated user rather than the original administrator.
+Delegated User Tracking allows you to identify when configuration changes are performed by a delegated user rather than the original administrator.
 
 When a configuration change is detected, the system checks the corresponding Setup Audit Trail entry and automatically associates the **Delegate User** with the generated Change Log. This helps you understand who actually executed the change when delegated access is used.
 
 This feature improves traceability and accountability by providing visibility into delegated administrative activity.
 
-## How Delegate User Tracking Works
+## How Delegated User Tracking Works
 When the scanner detects a configuration change:
 
 1. The system reads the corresponding **Setup Audit Trail** entry.
