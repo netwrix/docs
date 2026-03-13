@@ -4,4 +4,4 @@ level: warning
 ignorecase: true
 nonword: true
 tokens:
-  - '\bplease\b'
+  - '\bplease(?!\s+note)\b'
