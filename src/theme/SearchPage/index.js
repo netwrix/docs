@@ -161,6 +161,48 @@ function MultiSelect({label, options, selectedValues, onChange}) {
     );
 }
 
+function ToggleSwitch({checked, onChange, small}) {
+    const width = small ? 32 : 48;
+    const height = small ? 18 : 26;
+    const thumbSize = small ? 12 : 18;
+    const thumbOffset = small ? 3 : 4;
+    const thumbOn = width - thumbSize - thumbOffset;
+    return (
+        <button
+            type="button"
+            role="switch"
+            aria-checked={checked}
+            onClick={(e) => { e.preventDefault(); onChange(!checked); }}
+            style={{
+                position: 'relative',
+                display: 'inline-flex',
+                alignItems: 'center',
+                width: `${width}px`,
+                height: `${height}px`,
+                borderRadius: `${height / 2}px`,
+                background: checked ? 'var(--ifm-color-primary)' : 'var(--ifm-color-emphasis-400)',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 0,
+                flexShrink: 0,
+                transition: 'background 0.2s ease',
+            }}
+        >
+            <span style={{
+                position: 'absolute',
+                top: `${thumbOffset}px`,
+                left: checked ? `${thumbOn}px` : `${thumbOffset}px`,
+                width: `${thumbSize}px`,
+                height: `${thumbSize}px`,
+                borderRadius: '50%',
+                background: 'white',
+                transition: 'left 0.2s ease',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
+            }} />
+        </button>
+    );
+}
+
 function useDocumentsFoundPlural() {
     const {selectMessage} = usePluralForm();
     return (count) =>
@@ -246,6 +288,17 @@ function SearchPageContent() {
     });
     const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
 
+    // Typo tolerance — off by default, shared with SearchBar via sessionStorage + events
+    const [typoTolerance, setTypoTolerance] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        const saved = sessionStorage.getItem('docs_typo_tolerance');
+        try {
+            return saved ? JSON.parse(saved) : false;
+        } catch {
+            return false;
+        }
+    });
+
     // Track if we're restoring from URL (e.g., browser back button)
     const restoringFromUrl = useRef(false);
     const targetPageRef = useRef(null);
@@ -274,6 +327,28 @@ function SearchPageContent() {
         window.addEventListener('productFilterChange', handleFilterChange);
         return () => window.removeEventListener('productFilterChange', handleFilterChange);
     }, [selectedProducts]);
+
+    // Sync typoTolerance to sessionStorage and dispatch event for same-tab sync
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_typo_tolerance', JSON.stringify(typoTolerance));
+            window.dispatchEvent(new CustomEvent('typoToleranceChange', {
+                detail: {typoTolerance},
+            }));
+        }
+    }, [typoTolerance]);
+
+    // Listen for typo tolerance changes from SearchBar modal (same-tab sync)
+    useEffect(() => {
+        const handler = (e) => {
+            const newVal = e.detail.typoTolerance;
+            if (newVal !== typoTolerance) {
+                setTypoTolerance(newVal);
+            }
+        };
+        window.addEventListener('typoToleranceChange', handler);
+        return () => window.removeEventListener('typoToleranceChange', handler);
+    }, [typoTolerance]);
 
     // Update state when URL changes (e.g., when navigating from search modal or browser back)
     useEffect(() => {
@@ -458,10 +533,11 @@ function SearchPageContent() {
             algoliaHelper
                 .setQuery(searchQuery)
                 .setQueryParameter('facetFilters', facetFilters)
+                .setQueryParameter('typoTolerance', typoTolerance)
                 .setPage(page)
                 .search();
         },
-        [searchQuery, algoliaHelper, currentLocale, selectedProducts],
+        [searchQuery, algoliaHelper, currentLocale, selectedProducts, typoTolerance],
     );
 
     // Update URL when filters or pagination change
@@ -511,7 +587,7 @@ function SearchPageContent() {
             }, 300);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchQuery, selectedProducts, resultsPerPage]);
+    }, [searchQuery, selectedProducts, resultsPerPage, typoTolerance]);
 
     useEffect(() => {
         // Only trigger pagination search if lastPage has been set by nextPage/prevPage actions
@@ -702,6 +778,28 @@ function SearchPageContent() {
                                     </div>
                                 )}
                             </div>
+                        </div>
+
+                        <div style={{display: 'flex', justifyContent: 'flex-start', marginBottom: '12px'}}>
+                            <label
+                                title="When enabled, search results include near-matches for typos and spelling variations."
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '7px',
+                                    cursor: 'pointer',
+                                    userSelect: 'none',
+                                    fontSize: '12px',
+                                    color: 'var(--ifm-color-emphasis-600)',
+                                }}
+                            >
+                                <ToggleSwitch
+                                    checked={typoTolerance}
+                                    onChange={setTypoTolerance}
+                                    small
+                                />
+                                Typo Tolerance
+                            </label>
                         </div>
 
                         {!!searchResultState.totalResults && (
