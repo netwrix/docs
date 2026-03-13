@@ -4,16 +4,16 @@ sidebar_label: 'Test Vale Linting'
 description: 'This page is used to test the Vale linting process.'
 ---
 
-# Test Vale Linting.
+# Test Vale Linting
 
-We recommend that you simply click on the Setup button to configure this feature.
-Please note that once you have hit Save, the system allows you to use the feature.
-It is important to note that this is a straightforward process.
+Click **Setup** to configure this feature.
 
-I think this is a great product. Our team has worked hard on it.
+:::note
+After you click **Save**, you can use the feature. The process is straightforward.
+:::
 
-Currently, the system may or may not work as expected. We wish to improve it in the future.
+The system behavior in some configurations may not work as expected. Future releases will address this.
 
-If you want to type a value into the field  you should be able to do so.
+If you want to type a value into the field you should be able to do so.
 
-The feature allows you to configure settings, manage users and monitor activity.
+Use this feature to configure settings, manage users, and monitor activity.
