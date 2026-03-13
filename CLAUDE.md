@@ -52,9 +52,9 @@ The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set aut
 - Sidebars: `sidebars/<product>/<version>.js` — auto-generated, rarely need manual editing
 - Edits to one version do not propagate to others
 
-### Knowledge base
+### Knowledge Base
 
-`docs/kb/` is the canonical source for KB articles. The `scripts/copy-kb-to-versions.mjs` script copies KB content into versioned product folders at build time (runs as `prestart`/`prebuild`). Never manually copy KB files — they're gitignored in versioned folders. Use `kb_allowlist.json` to control which products get KB content.
+`docs/kb/` is the canonical source for Knowledge Base (KB) articles. The `scripts/copy-kb-to-versions.mjs` script copies KB content into versioned product folders at build time (runs as `prestart`/`prebuild`). Never manually copy KB files — they're gitignored in versioned folders. Use `kb_allowlist.json` to control which products get KB content.
 
 ### Static assets
 
@@ -69,8 +69,8 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 | Workflow | Trigger | Purpose |
 |---|---|---|
 | `build-and-deploy.yml` | Push to main/dev, PRs to dev | Build and deploy to Azure |
-| `vale-linter.yml` | PRs with `.md` changes | Vale style checks as PR review comments |
-| `claude-doc-pr.yml` | PRs to dev with `docs/` changes | Vale + Dale + editorial review; `@claude` follow-up |
+| `vale-linter.yml` | PRs with `.md` changes | Vale inline review comments (up to 25) + summary PR comment |
+| `claude-doc-pr.yml` | PRs to dev with `docs/` changes | Dale + editorial review; `@claude` follow-up |
 | `claude-documentation-reviewer.yml` | PRs with `.md` changes | AI review with inline suggestions |
 | `claude-documentation-fixer.yml` | `@claude` comment on PR | Apply fixes and push |
 | `claude-issue-labeler.yml` | Issues opened/edited | Security screening, CoC check, auto-labeling |
@@ -81,11 +81,15 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 
 Skills (`.claude/skills/`) are invoked with `/skill-name`. Agents (`.claude/agents/`) are autonomous workers launched via the Agent tool.
 
+When a user asks for help with documentation, always use the appropriate tool:
+- **`/doc-help` skill** — Interactive tasks: reviewing content, suggesting improvements, discussing structure or flow, brainstorming, explaining style rules, or any back-and-forth conversation about writing.
+- **`tech-writer` agent** — Autonomous end-to-end tasks: drafting new documents, rewriting files, fixing all Vale errors, or editing for style and clarity.
+
 | Component | Type | Purpose |
 |---|---|---|
 | `/dale` | Skill | Custom linter for Netwrix-specific writing patterns |
 | `/doc-help` | Skill | Interactive writing assistant (terminal sessions) |
-| `/doc-pr` | Skill | Automated PR review (Vale + Dale + editorial) |
+| `/doc-pr` | Skill | Automated PR review (Dale + editorial) |
 | `/doc-pr-fix` | Skill | Autonomous PR fixer triggered by `@claude` |
 | `tech-writer` | Agent | Autonomous end-to-end doc writing/editing |
 | `vale-rule-writer` | Agent | Creates new Vale rules |

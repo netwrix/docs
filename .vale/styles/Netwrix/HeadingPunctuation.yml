@@ -1,0 +1,11 @@
+extends: existence
+message: "Don't end headings with terminal punctuation ('%s'). Remove the trailing character."
+level: warning
+scope: heading
+nonword: true
+tokens:
+  - '\.$'
+  - ':$'
+  - ';$'
+  - '\?$'
+  - '!$'
