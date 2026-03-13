@@ -1,24 +1,24 @@
 #!/bin/sh
 
 # Vale pre-push hook
-# Runs Vale on changed docs/*.md files before allowing a push.
-# Blocks the push if Vale is not installed or if errors are found.
+# Runs Vale on changed docs/*.md files before pushing.
+# Currently in warning mode — shows errors but does not block the push.
 
 # Check if Vale is installed
 if ! command -v vale >/dev/null 2>&1; then
   echo ""
-  echo "ERROR: Vale is not installed."
+  echo "WARNING: Vale is not installed."
   echo ""
-  echo "Vale is required to push documentation changes. Install it using one of these methods:"
+  echo "Vale checks your writing against Netwrix style rules. Install it using one of these methods:"
   echo ""
   echo "  macOS:    brew install vale"
   echo "  Linux:    sudo snap install vale"
   echo "  Windows:  choco install vale"
   echo "  Manual:   Download from https://github.com/errata-ai/vale/releases"
   echo ""
-  echo "After installing, run 'vale --version' to verify, then try your push again."
+  echo "After installing, run 'vale --version' to verify."
   echo ""
-  exit 1
+  exit 0
 fi
 
 # Pre-push hook receives: <remote name> <remote url> as args
@@ -71,10 +71,12 @@ while IFS= read -r FILE; do
 done <<< "$CHANGED_MD_FILES"
 
 if [ "$VALE_FAILED" -eq 1 ]; then
-  echo "Push blocked: Vale found errors in the files above."
-  echo "Fix the issues and try again."
+  echo "Vale found errors in the files above."
+  echo "Please fix these issues before or after pushing."
   echo ""
-  exit 1
+  # Warning mode: don't block the push
+  # TODO: Change to 'exit 1' once the team is comfortable with Vale
+  exit 0
 fi
 
 echo "Vale passed on all changed documentation files."

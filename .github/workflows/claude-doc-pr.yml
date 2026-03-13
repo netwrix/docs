@@ -60,9 +60,9 @@ jobs:
           for ID in $COMMENT_IDS; do
             gh api repos/${{ github.repository }}/issues/comments/${ID} -X DELETE 2>/dev/null || true
           done
-          # Dismiss previous Vale reviews so they don't pile up
+          # Dismiss previous bot reviews (Dale) so they don't pile up
           REVIEW_IDS=$(gh api repos/${{ github.repository }}/pulls/${PR_NUMBER}/reviews \
-            --jq '[.[] | select(.user.login == "github-actions[bot]" and .state == "COMMENTED") | .id] | .[]' 2>/dev/null || true)
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and .state == "COMMENTED" and (.body | contains("Dale found"))) | .id] | .[]' 2>/dev/null || true)
           for ID in $REVIEW_IDS; do
             gh api repos/${{ github.repository }}/pulls/${PR_NUMBER}/reviews/${ID}/dismissals \
               -f message="Superseded by new review" -f event="DISMISS" 2>/dev/null || true
@@ -167,7 +167,7 @@ jobs:
             - Dale issues: ${{ steps.dale-post.outputs.dale_count }} (already posted as inline comments)
             - PR diff is at: /tmp/pr-diff.txt
 
-            NOTE: Vale linting is enforced by a pre-push hook. Writers resolve Vale issues locally before pushing. Do not flag or mention Vale issues in the review.
+            NOTE: Vale linting runs separately (vale-linter workflow) and posts inline review comments plus a summary PR comment. Do not run Vale or include Vale issues in this review.
 
             INSTRUCTIONS:
 
@@ -274,7 +274,7 @@ jobs:
           show_full_output: true
           prompt: |
             /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
-          claude_args: '--allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(dale)"'
+          claude_args: '--allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(dale),Skill(doc-help)"'
 
       - name: Resolve Dale inline comments
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'

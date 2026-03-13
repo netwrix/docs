@@ -1,6 +1,6 @@
 ---
 name: doc-pr-fix
-description: "Autonomous fixer for documentation PRs. Triggered by @claude comments on PRs targeting dev. Reads the writer's request and the existing doc-pr review, then applies fixes and commits. Only Dale and editorial issues appear in PR reviews. Use this skill whenever a writer tags @claude on a documentation PR — not for interactive help (use doc-help for that), but for autonomous, single-shot fixes in CI."
+description: "Autonomous fixer for documentation PRs. Triggered by @claude comments on PRs targeting dev. Reads the writer's request, the doc-pr review comment, and the Vale linting comment, then applies fixes and commits. Use this skill whenever a writer tags @claude on a documentation PR — not for interactive help (use doc-help for that), but for autonomous, single-shot fixes in CI."
 argument-hint: "[pr-number] [writer-comment]"
 ---
 
@@ -20,8 +20,9 @@ You receive:
 
 Parse the writer's comment to determine what they want. Common patterns:
 
-- **Fix all issues** — apply every fix from the doc-pr review comment
-- **Fix only Dale issues** — apply only linting fixes
+- **Fix all issues** — apply every fix from the doc-pr review comment and the Vale linting comment
+- **Fix only Vale issues** — apply only fixes from the Vale linting comment
+- **Fix only Dale issues** — apply only Dale linting fixes
 - **Fix a specific issue** — apply one targeted fix
 - **Improve flow/clarity/structure** — editorial rewrite of specific content
 - **Explain something** — answer a question about a flagged issue (respond in a PR comment, don't edit files)
@@ -36,13 +37,20 @@ Parse the writer's comment to determine what they want. Common patterns:
    gh api repos/{owner}/{repo}/issues/$PR_NUMBER/comments --jq '.[] | select(.body | contains("Documentation PR Review")) | .body' | tail -1
    ```
    This tells you what Dale and the editorial review flagged.
+4. If the writer asks to fix Vale issues (or "all issues"), also find the Vale linting comment:
+   ```bash
+   gh api repos/{owner}/{repo}/issues/$PR_NUMBER/comments --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("## Vale Linting"))) | .body' | tail -1
+   ```
+   This gives you the Vale results table with file paths, line numbers, and rule violations.
 
 ## Step 3: Apply fixes
 
 Work through the requested fixes methodically:
 
-- For **linting fixes** (Dale): fix each flagged issue in order, file by file
-- For **editorial fixes**: apply the suggested changes from the review, or if the writer asked for something broader ("improve the flow"), read the full document and apply edits that address the request while following Netwrix style
+- For **Vale fixes**: read `docs/CLAUDE.md` for Vale guidance (especially the two rules requiring extra care), then fix each flagged issue in order, file by file
+- For **Dale fixes**: fix each flagged issue in order, file by file
+- For **editorial fixes from the review**: apply the suggested changes from the review comment
+- For **broader editorial requests** ("improve the flow", "make this clearer", "help with structure"): invoke `/doc-help` with the file path and the writer's request. Doc-help will analyze the document using its structured editing framework (structure, clarity, voice, surface). Since this is running in CI without an interactive writer, apply all of doc-help's suggestions autonomously rather than waiting for feedback
 - For **explanations**: post a PR comment explaining the issue and how to fix it, then stop — don't edit files
 
 When editing:
