@@ -90,8 +90,9 @@ function useTransformSearchClient(selectedProductsRef, currentLocale, typoTolera
                 const typoTolerance = typoToleranceRef?.current ?? false;
 
                 // Build product filter (OR logic - any of selected products)
-                const productFilter = products.length > 0
-                    ? products.map(p => `product_name:${p}`)
+                const realProducts = products.filter(p => p !== '__all__' && p !== '__none__');
+                const productFilter = realProducts.length > 0
+                    ? realProducts.map(p => `product_name:${p}`)
                     : null;
 
                 // Language filter for internationalization
@@ -329,9 +330,10 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
         onChange(newSelection);
     };
 
-    const displayText = selectedValues.length === 0
+    const realSelected = selectedValues.filter(v => v !== '__all__' && v !== '__none__');
+    const displayText = selectedValues.length === 0 || selectedValues.includes('__all__')
         ? placeholder
-        : `${selectedValues.length} selected`;
+        : `${realSelected.length} selected`;
 
     return (
         <div className="DocSearch-MultiSelect" ref={dropdownRef} style={{position: 'relative'}}>
@@ -376,7 +378,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
                 >
                     {options.map((opt) => {
                         const isSelected = opt.value === '__all__'
-                            ? selectedValues.length === 0
+                            ? selectedValues.length === 0 || selectedValues.includes('__all__')
                             : selectedValues.includes(opt.value);
 
                         return (
@@ -613,9 +615,9 @@ export default function SearchBar() {
         const filters = [];
 
         // Add product filters (OR logic - any of the selected products)
-        if (selectedProducts.length > 0) {
-            const productFilters = selectedProducts.map(p => `product_name:${p}`);
-            filters.push(productFilters); // Array within array = OR logic
+        const realProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
+        if (realProducts.length > 0) {
+            filters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
         }
 
         return filters;

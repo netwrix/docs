@@ -64,9 +64,8 @@ echo "$CHANGED_MD_FILES" > "$TMPFILE"
 
 while IFS= read -r FILE; do
   if [ -f "$FILE" ]; then
-    OUTPUT=$(vale --minAlertLevel=warning "$FILE" 2>&1)
-    EXIT_CODE=$?
-    if [ $EXIT_CODE -ne 0 ]; then
+    OUTPUT=$(vale "$FILE" 2>&1)
+    if echo "$OUTPUT" | grep -q "warning\|error"; then
       echo "$OUTPUT"
       echo ""
       VALE_FAILED=1
