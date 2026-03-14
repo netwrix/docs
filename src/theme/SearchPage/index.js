@@ -51,9 +51,9 @@ const PRODUCT_OPTIONS = [
 function MultiSelect({label, options, selectedValues, onChange}) {
     // options[0] is the "All products" sentinel — skip it for the checkbox list
     const productOptions = options.filter(o => o.value !== '__all__');
-    const noneSelected = selectedValues.length === 1 && selectedValues[0] === '__none__';
-    const allSelected = selectedValues.length === 0 || selectedValues.includes('__all__');
-    const someSelected = !allSelected && !noneSelected && selectedValues.length > 0;
+    const allSelected = selectedValues.includes('__all__');
+    const noneSelected = selectedValues.length === 0;
+    const someSelected = !allSelected && !noneSelected;
 
     const selectAllRef = useRef(null);
 
@@ -66,22 +66,22 @@ function MultiSelect({label, options, selectedValues, onChange}) {
 
     function handleSelectAll() {
         if (allSelected && !someSelected) {
-            onChange(['__none__']); // All checked → uncheck all
+            onChange([]); // All checked → uncheck all
         } else {
-            onChange([]);           // Indeterminate or none → check all
+            onChange(['__all__']); // Indeterminate or none → check all
         }
     }
 
     function handleOption(value, checked) {
         // Resolve current explicit selection
         const current = allSelected
-            ? productOptions.map(o => o.value)   // [] means all
+            ? productOptions.map(o => o.value)   // __all__ means all
             : noneSelected
-                ? []                              // __none__ means none
+                ? []                              // [] means none
                 : selectedValues.filter(v => v !== '__all__');
         if (checked) {
             const next = current.concat(value);
-            onChange(next.length === productOptions.length ? [] : next);
+            onChange(next.length === productOptions.length ? ['__all__'] : next);
         } else {
             onChange(current.filter(v => v !== value));
         }
@@ -137,9 +137,11 @@ function MultiSelect({label, options, selectedValues, onChange}) {
                         checked={allSelected && !noneSelected}
                         onChange={handleSelectAll}
                     />
-                    <span style={{fontSize: '13px', color: 'var(--ifm-color-emphasis-600)', marginLeft: 'auto'}}>
-                        {noneSelected ? 0 : allSelected ? productOptions.length : selectedValues.length} of {productOptions.length}
-                    </span>
+                    {!noneSelected && (
+                        <span style={{fontSize: '13px', color: 'var(--ifm-color-emphasis-600)', marginLeft: 'auto'}}>
+                            {allSelected ? productOptions.length : selectedValues.length} of {productOptions.length}
+                        </span>
+                    )}
                 </label>
                 <div style={dividerStyle} />
                 {productOptions.map((opt) => {
@@ -158,6 +160,48 @@ function MultiSelect({label, options, selectedValues, onChange}) {
                 })}
             </div>
         </div>
+    );
+}
+
+function ToggleSwitch({checked, onChange, small}) {
+    const width = small ? 32 : 48;
+    const height = small ? 18 : 26;
+    const thumbSize = small ? 12 : 18;
+    const thumbOffset = small ? 3 : 4;
+    const thumbOn = width - thumbSize - thumbOffset;
+    return (
+        <button
+            type="button"
+            role="switch"
+            aria-checked={checked}
+            onClick={(e) => { e.preventDefault(); onChange(!checked); }}
+            style={{
+                position: 'relative',
+                display: 'inline-flex',
+                alignItems: 'center',
+                width: `${width}px`,
+                height: `${height}px`,
+                borderRadius: `${height / 2}px`,
+                background: checked ? 'var(--ifm-color-primary)' : 'var(--ifm-color-emphasis-400)',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 0,
+                flexShrink: 0,
+                transition: 'background 0.2s ease',
+            }}
+        >
+            <span style={{
+                position: 'absolute',
+                top: `${thumbOffset}px`,
+                left: checked ? `${thumbOn}px` : `${thumbOffset}px`,
+                width: `${thumbSize}px`,
+                height: `${thumbSize}px`,
+                borderRadius: '50%',
+                background: 'white',
+                transition: 'left 0.2s ease',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
+            }} />
+        </button>
     );
 }
 
@@ -246,10 +290,24 @@ function SearchPageContent() {
     });
     const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
 
+    // Typo tolerance — off by default, shared with SearchBar via sessionStorage + events
+    const [typoTolerance, setTypoTolerance] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        const saved = sessionStorage.getItem('docs_typo_tolerance');
+        try {
+            return saved ? JSON.parse(saved) : false;
+        } catch {
+            return false;
+        }
+    });
+
     // Track if we're restoring from URL (e.g., browser back button)
     const restoringFromUrl = useRef(false);
     const targetPageRef = useRef(null);
     const isInternalNavigation = useRef(false);
+
+    // All sorted results for client-side pagination
+    const allItemsRef = useRef([]);
 
     // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
     useEffect(() => {
@@ -274,6 +332,28 @@ function SearchPageContent() {
         window.addEventListener('productFilterChange', handleFilterChange);
         return () => window.removeEventListener('productFilterChange', handleFilterChange);
     }, [selectedProducts]);
+
+    // Sync typoTolerance to sessionStorage and dispatch event for same-tab sync
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_typo_tolerance', JSON.stringify(typoTolerance));
+            window.dispatchEvent(new CustomEvent('typoToleranceChange', {
+                detail: {typoTolerance},
+            }));
+        }
+    }, [typoTolerance]);
+
+    // Listen for typo tolerance changes from SearchBar modal (same-tab sync)
+    useEffect(() => {
+        const handler = (e) => {
+            const newVal = e.detail.typoTolerance;
+            if (newVal !== typoTolerance) {
+                setTypoTolerance(newVal);
+            }
+        };
+        window.addEventListener('typoToleranceChange', handler);
+        return () => window.removeEventListener('typoToleranceChange', handler);
+    }, [typoTolerance]);
 
     // Update state when URL changes (e.g., when navigating from search modal or browser back)
     useEffect(() => {
@@ -308,6 +388,7 @@ function SearchPageContent() {
         items: [],
         query: null,
         totalResults: null,
+        totalMatches: null,
         totalPages: null,
         lastPage: null,
         hasMore: null,
@@ -329,23 +410,14 @@ function SearchPageContent() {
                         ...data.value,
                         items: data.value.items, // Show only current page
                     };
-                case 'nextPage':
-                    if (!prevState.hasMore || prevState.loading) {
-                        return prevState;
-                    }
+                case 'setPage':
                     return {
                         ...prevState,
-                        lastPage: prevState.lastPage + 1,
-                        loading: true,
-                    };
-                case 'prevPage':
-                    if (prevState.lastPage === 0 || prevState.loading) {
-                        return prevState;
-                    }
-                    return {
-                        ...prevState,
-                        lastPage: prevState.lastPage - 1,
-                        loading: true,
+                        items: data.value.items,
+                        lastPage: data.value.lastPage,
+                        totalPages: data.value.totalPages,
+                        hasMore: data.value.hasMore,
+                        loading: false,
                     };
                 default:
                     return prevState;
@@ -358,11 +430,11 @@ function SearchPageContent() {
     const algoliaHelper = useMemo(
         () =>
             algoliaSearchHelper(algoliaClient, indexName, {
-                hitsPerPage: resultsPerPage,
+                hitsPerPage: 1000, // Fetch all results at once for client-side sorting/pagination
                 advancedSyntax: true,
                 disjunctiveFacets: ['language'], // Only language facet exists in index
             }),
-        [algoliaClient, indexName, resultsPerPage],
+        [algoliaClient, indexName],
     );
 
     algoliaHelper.on('result', ({results: {query, hits, page, nbHits, nbPages, facets}}) => {
@@ -424,18 +496,33 @@ function SearchPageContent() {
             };
         });
 
-        // Algolia handles filtering via facetFilters, so no client-side filtering needed
-        const items = allItems;
+        // Sort all results by product name alphabetically so products don't split across pages
+        allItems.sort((a, b) => (a.product || '').localeCompare(b.product || ''));
+
+        // Store all sorted results for client-side pagination
+        allItemsRef.current = allItems;
+
+        // Determine which page to display (URL restore or start at 0)
+        const displayPage = (restoringFromUrl.current && targetPageRef.current !== null)
+            ? targetPageRef.current
+            : 0;
+        restoringFromUrl.current = false;
+        targetPageRef.current = null;
+
+        const totalPages = Math.ceil(allItems.length / resultsPerPage);
+        const start = displayPage * resultsPerPage;
+        const items = allItems.slice(start, start + resultsPerPage);
 
         searchResultStateDispatcher({
             type: 'update',
             value: {
                 items,
                 query,
-                totalResults: nbHits,
-                totalPages: nbPages,
-                lastPage: page,
-                hasMore: nbPages > page + 1,
+                totalResults: allItems.length,
+                totalMatches: nbHits,
+                totalPages,
+                lastPage: displayPage,
+                hasMore: displayPage + 1 < totalPages,
                 loading: false,
             },
         });
@@ -444,24 +531,44 @@ function SearchPageContent() {
     // Pagination is now controlled by Previous/Next buttons instead of infinite scroll
 
     const makeSearch = useCallback(
-        (page = 0) => {
+        () => {
             // Build facetFilters with product filters (matching SearchBar logic)
             const facetFilters = [`language:${currentLocale}`];
 
             // Add product filters (OR logic - any of the selected products)
-            const hasProductFilter = selectedProducts.length > 0 && !selectedProducts.includes('__all__');
-            if (hasProductFilter) {
-                const productFilters = selectedProducts.map(p => `product_name:${p}`);
-                facetFilters.push(productFilters); // Array within array = OR logic
+            const realProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
+            if (realProducts.length > 0) {
+                facetFilters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
             }
 
+            // Always fetch page 0 — all results come back at once for client-side pagination
             algoliaHelper
                 .setQuery(searchQuery)
                 .setQueryParameter('facetFilters', facetFilters)
-                .setPage(page)
+                .setQueryParameter('typoTolerance', typoTolerance)
+                .setPage(0)
                 .search();
         },
-        [searchQuery, algoliaHelper, currentLocale, selectedProducts],
+        [searchQuery, algoliaHelper, currentLocale, selectedProducts, typoTolerance],
+    );
+
+    // Navigate to a page client-side using already-fetched sorted results
+    const goToPage = useCallback(
+        (pageNum) => {
+            const totalPages = Math.ceil(allItemsRef.current.length / resultsPerPage);
+            const clampedPage = Math.max(0, Math.min(pageNum, totalPages - 1));
+            const start = clampedPage * resultsPerPage;
+            searchResultStateDispatcher({
+                type: 'setPage',
+                value: {
+                    items: allItemsRef.current.slice(start, start + resultsPerPage),
+                    lastPage: clampedPage,
+                    totalPages,
+                    hasMore: clampedPage + 1 < totalPages,
+                },
+            });
+        },
+        [resultsPerPage],
     );
 
     // Update URL when filters or pagination change
@@ -480,7 +587,8 @@ function SearchPageContent() {
         ) {
             const params = new URLSearchParams();
             if (searchQuery) params.set('q', searchQuery);
-            if (selectedProducts.length > 0) params.set('products', selectedProducts.join(','));
+            const urlProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
+            if (urlProducts.length > 0) params.set('products', urlProducts.join(','));
             if (resultsPerPage !== 25) params.set('resultsPerPage', String(resultsPerPage));
             if (currentPage > 1) params.set('page', String(currentPage));
 
@@ -497,31 +605,15 @@ function SearchPageContent() {
 
     useEffect(() => {
         searchResultStateDispatcher({type: 'reset'});
+        allItemsRef.current = [];
         if (searchQuery) {
             searchResultStateDispatcher({type: 'loading'});
-            // If restoring from URL, use the target page; otherwise start at page 0
-            const startPage = (restoringFromUrl.current && targetPageRef.current !== null)
-                ? targetPageRef.current
-                : 0;
             setTimeout(() => {
-                makeSearch(startPage);
-                // Clear restoration flags after search
-                restoringFromUrl.current = false;
-                targetPageRef.current = null;
+                makeSearch();
             }, 300);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchQuery, selectedProducts, resultsPerPage]);
-
-    useEffect(() => {
-        // Only trigger pagination search if lastPage has been set by nextPage/prevPage actions
-        // (not during initial render where lastPage is null)
-        if (searchResultState.lastPage === null) {
-            return;
-        }
-        makeSearch(searchResultState.lastPage);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchResultState.lastPage]);
+    }, [searchQuery, selectedProducts, resultsPerPage, typoTolerance]);
 
     // Scroll to top when page changes (except initial load)
     const isInitialLoad = useRef(true);
@@ -704,6 +796,28 @@ function SearchPageContent() {
                             </div>
                         </div>
 
+                        <div style={{display: 'flex', justifyContent: 'flex-start', marginBottom: '12px'}}>
+                            <label
+                                title="When enabled, search results include near-matches for typos and spelling variations."
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '7px',
+                                    cursor: 'pointer',
+                                    userSelect: 'none',
+                                    fontSize: '12px',
+                                    color: 'var(--ifm-color-emphasis-600)',
+                                }}
+                            >
+                                <ToggleSwitch
+                                    checked={typoTolerance}
+                                    onChange={setTypoTolerance}
+                                    small
+                                />
+                                Typo Tolerance
+                            </label>
+                        </div>
+
                         {!!searchResultState.totalResults && (
                             <div
                                 style={{
@@ -715,7 +829,10 @@ function SearchPageContent() {
                                     fontWeight: '500',
                                 }}
                             >
-                                {documentsFoundPlural(searchResultState.totalResults)}
+                                {searchResultState.totalMatches > searchResultState.totalResults
+                                    ? `Showing top ${searchResultState.totalResults.toLocaleString()} of ${searchResultState.totalMatches.toLocaleString()} documents found — refine your search to see more relevant results`
+                                    : documentsFoundPlural(searchResultState.totalResults)
+                                }
                             </div>
                         )}
                     </div>{/* closes controls div */}
@@ -860,11 +977,10 @@ function SearchPageContent() {
                         alignItems: 'center',
                         gap: '20px',
                         padding: '40px 20px',
-                        borderTop: '1px solid var(--ifm-color-emphasis-200)',
                         marginTop: '20px'
                     }}>
                         <button
-                            onClick={() => searchResultStateDispatcher({type: 'prevPage'})}
+                            onClick={() => goToPage(searchResultState.lastPage - 1)}
                             disabled={searchResultState.lastPage === 0 || searchResultState.loading}
                             style={{
                                 padding: '10px 20px',
@@ -922,14 +1038,7 @@ function SearchPageContent() {
                                     if (e.key === 'Enter') {
                                         const pageNum = parseInt(pageInputValue, 10);
                                         if (pageNum >= 1 && pageNum <= searchResultState.totalPages) {
-                                            searchResultStateDispatcher({
-                                                type: 'update',
-                                                value: {
-                                                    ...searchResultState,
-                                                    lastPage: pageNum - 1,
-                                                    loading: true,
-                                                }
-                                            });
+                                            goToPage(pageNum - 1);
                                         }
                                         setPageInputValue('');
                                         setPageInputFocused(false);
@@ -964,7 +1073,7 @@ function SearchPageContent() {
                         </div>
 
                         <button
-                            onClick={() => searchResultStateDispatcher({type: 'nextPage'})}
+                            onClick={() => goToPage(searchResultState.lastPage + 1)}
                             disabled={!searchResultState.hasMore || searchResultState.loading}
                             style={{
                                 padding: '10px 20px',
