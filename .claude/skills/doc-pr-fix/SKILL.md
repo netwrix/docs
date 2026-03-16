@@ -95,6 +95,19 @@ When editing:
 - Preserve the author's meaning and intent — fix the style, don't rewrite the content
 - Only change what was requested; don't fix other categories of issues even if they're on the same line (e.g., if asked to fix Vale issues, don't also fix Dale or editorial issues)
 
+## Step 4b: Update the Vale Idioms rule
+
+After applying fixes, check whether any Dale `idioms` violations or editorial items tagged `[idiom]` contained phrases not already in `.vale/styles/Netwrix/Idioms.yml`. For each new idiom:
+
+1. Read `.vale/styles/Netwrix/Idioms.yml` to confirm the phrase isn't already covered (check for both exact matches and regex patterns that would match it).
+2. Add a new token entry under the most appropriate category comment. Follow existing conventions:
+   - Use `\b` word boundaries for multi-word phrases.
+   - Add optional inflection suffixes where the idiom can be conjugated (e.g., `\bgets? the ball rolling\b`).
+   - Use single quotes around each token.
+3. Include the Idioms.yml file in your commit so the Vale rule grows over time.
+
+If no new idioms were found, skip this step.
+
 ## Step 5: Verify
 
 Review your edits to ensure they don't introduce new issues. Do NOT run Dale or any other skills during verification.
