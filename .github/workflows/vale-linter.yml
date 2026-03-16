@@ -9,6 +9,7 @@ on:
       - 'docs/**/*.md'
       - '!docs/**/CLAUDE.md'
       - '!docs/**/SKILL.md'
+      - '!docs/kb/**'
 
 jobs:
   vale-lint:
@@ -29,7 +30,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
-          CHANGED_MD_FILES=$(gh pr diff "$PR_NUMBER" --name-only | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' || true)
+          CHANGED_MD_FILES=$(gh pr diff "$PR_NUMBER" --name-only | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' | grep -v '^docs/kb/' || true)
           if [ -z "$CHANGED_MD_FILES" ]; then
             echo "No docs markdown files changed"
             echo "count=0" >> "$GITHUB_OUTPUT"

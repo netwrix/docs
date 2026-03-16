@@ -29,6 +29,11 @@ if [ "$BASENAME" = "CLAUDE.md" ] || [ "$BASENAME" = "SKILL.md" ] || [ "$BASENAME
   exit 0
 fi
 
+# Skip KB articles — they have their own style conventions
+if [[ "$FILE_PATH" == */docs/kb/* ]] || [[ "$FILE_PATH" == docs/kb/* ]]; then
+  exit 0
+fi
+
 # Output a context message that Claude will see
 jq -n --arg file "$FILE_PATH" '{
   hookSpecificOutput: {
