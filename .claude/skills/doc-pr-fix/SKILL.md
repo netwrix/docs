@@ -61,7 +61,7 @@ Then post a PR comment mirroring your task list so the writer can see what you'r
 
 ```bash
 PROGRESS_COMMENT_ID=$(gh pr comment "$PR_NUMBER" --body "$(cat <<'EOF'
-**Working on it...** ✏️
+**Fix in progress:**
 
 - [ ] Fix Vale issues in `path/to/file.md` (N issues)
 - [ ] Fix Vale issues in `path/to/other.md` (N issues)
@@ -120,9 +120,8 @@ Replace the progress comment with a completion summary. Don't post a separate co
 ```bash
 gh api repos/{owner}/{repo}/issues/comments/$PROGRESS_COMMENT_ID \
   -X PATCH -f body="$(cat <<'EOF'
-**Fixes applied** ✅
+**Fix complete:**
 
-- [x] Read PR diff and review comments
 - [x] Fix Vale issues in `path/to/file.md` (N issues)
 - [x] Fix Vale issues in `path/to/other.md` (N issues)
 - [x] Verify changes
