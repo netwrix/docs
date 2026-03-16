@@ -1,0 +1,90 @@
+extends: existence
+message: "Avoid the idiom '%s'. Write what you mean directly and literally."
+level: warning
+ignorecase: true
+tokens:
+  # Overarching / scope idioms
+  - 'tip of the iceberg'
+  - 'at the end of the day'
+  - '\bout of the box\b'
+  - '\bout-of-the-box\b'
+  - '\bin-the-box\b'
+  - '\bunder the hood\b'
+  - '\bin a nutshell\b'
+  - '\bon the same page\b'
+  - '\bfrom the ground up\b'
+  - '\bbehind the scenes\b'
+  - '\bout of the gate\b'
+  - '\boff the beaten path\b'
+  - '\bthe big picture\b'
+  - '\bthe bottom line\b'
+
+  # Status / momentum idioms
+  - '\bup and running\b'
+  - '\bhit the ground running\b'
+  - '\bramp(?:s|ed|ing)? up\b'
+  - '\bspin(?:s|ning)? up\b'
+  - '\bstand(?:s|ing)? up\b'
+  - '\btear(?:s|ing)? down\b'
+  - '\btore? down\b'
+
+  # Business/strategy jargon
+  - '\blow.hanging fruit\b'
+  - '\bmoves? the needle\b'
+  - '\bboil(?:s|ed|ing)? the ocean\b'
+  - '\blevels? the playing field\b'
+  - '\braises? the bar\b'
+  - '\bsets? the stage\b'
+  - '\bpaves? the way\b'
+  - '\bbridges? the gap\b'
+  - '\bfills? the gap\b'
+  - '\bcut(?:s|ting)? corners\b'
+  - '\brule of thumb\b'
+  - '\bacross the board\b'
+  - '\bin the long run\b'
+  - '\bin the same boat\b'
+
+  # Attention/awareness idioms
+  - '\bkeep in mind\b'
+  - '\bbear in mind\b'
+  - '\bat your fingertips\b'
+  - '\bon the radar\b'
+  - '\bin the weeds\b'
+  - '\bat first glance\b'
+  - '\bby the same token\b'
+  - '\bon the fly\b'
+
+  # Collaboration/process jargon
+  - '\btouch(?:es|ing|ed)? base\b'
+  - '\bcircle(?:s|d|ing)? back\b'
+  - '\bloop(?:s|ed|ing)? in\b'
+  - '\bflesh(?:es|ed|ing)? out\b'
+  - '\biron(?:s|ed|ing)? out\b'
+  - '\bhammer(?:s|ed|ing)? out\b'
+  - '\bdrill(?:s|ed|ing)? down\b'
+  - '\bzero(?:s|ed|ing)? in on\b'
+  - '\bhone(?:s|d|ing)? in on\b'
+
+  # Deep dive variants
+  - '\ba deep dive\b'
+  - '\bdeep dive\b'
+  - '\btake a deep dive\b'
+
+  # Work idioms
+  - '\bfrom scratch\b'
+  - '\bheavy lifting\b'
+  - '\bpain points?\b'
+
+  # Tech marketing buzzwords
+  - '\bgame.changer\b'
+  - '\bsilver bullet\b'
+  - '\bmagic bullet\b'
+  - '\bone.stop.shop\b'
+  - '\bbest of breed\b'
+  - '\bbleeding.?edge\b'
+  - '\bcutting.?edge\b'
+  - '\bmission.critical\b'
+  - '\bworld.class\b'
+  - '\bturnkey\b'
+  - '\bsynergy\b'
+  - '\bleverage(?:s|d|ing)?\b'
