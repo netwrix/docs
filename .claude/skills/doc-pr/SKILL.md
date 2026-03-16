@@ -60,6 +60,10 @@ For each issue found, note:
 
 Only report issues on lines that were added or modified in this PR. Do not flag preexisting issues.
 
+**Idiom tagging:** When the editorial review catches an idiom or figurative expression, tag it with `[idiom]` at the start of the bullet so the fixer can identify it and add it to the Vale `Idioms.yml` rule. Example:
+
+- **Surface** — [idiom] Line 42: "get the ball rolling" is an idiom. Suggested fix: "begin the process"
+
 ## Output — MANDATORY: Post as PR Comment
 
 After completing both stages, you MUST write the review to a file and post it as a PR comment. This is the most important step — the review is useless if it is not posted.
