@@ -32,3 +32,10 @@ Follow these steps to get started:
 ## Monitor Activity
 
 After you configure activity sessions, monitor them from the dashboard. Use the dashboard to view active sessions, review logs, and manage session settings.
+
+## Next Steps
+
+- [Dashboard Interface](/docs/privilegesecure/4.2/admin/dashboard/overview.md) — View an overview of activity sessions, users, and resources
+- [Active Dashboard](/docs/privilegesecure/4.2/admin/dashboard/active/active.md) — Monitor currently active sessions and create new sessions
+- [Historical Dashboard](/docs/privilegesecure/4.2/admin/dashboard/historical/historical.md) — Review completed sessions and their status
+- [Session Logs Window](/docs/privilegesecure/4.2/admin/dashboard/historical/sessionlogs.md) — View detailed log entries for individual sessions
