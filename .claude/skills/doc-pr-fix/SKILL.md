@@ -43,7 +43,44 @@ Parse the writer's comment to determine what they want. Common patterns:
    ```
    This gives you the Vale results table with file paths, line numbers, and rule violations.
 
-## Step 3: Apply fixes
+## Step 3: Plan your work and post a progress comment
+
+Use Todo to create a task for each discrete piece of work you need to do. Build the task list from what you learned in Steps 1–2. Each task should be concrete and trackable. Mark each task as complete as you finish it.
+
+Example tasks for a "fix all issues" request:
+- Fix Vale issues in `path/to/file.md` (N issues)
+- Fix Vale issues in `path/to/other.md` (N issues)
+- Fix Dale issues in `path/to/file.md` (N issues)
+- Apply editorial suggestions
+- Verify changes
+- Commit and push
+
+Only include tasks for what the writer actually asked for. If they said "fix only the Dale issues," your task list should contain Dale fixes, verify, and commit — no Vale tasks, no editorial tasks. The task list must reflect the writer's request exactly.
+
+Then post a PR comment mirroring your task list so the writer can see what you're doing:
+
+```bash
+PROGRESS_COMMENT_ID=$(gh pr comment "$PR_NUMBER" --body "$(cat <<'EOF'
+**Working on it...** ✏️
+
+- [ ] Fix Vale issues in `path/to/file.md` (N issues)
+- [ ] Fix Vale issues in `path/to/other.md` (N issues)
+- [ ] Verify changes
+- [ ] Commit and push
+EOF
+)" --format json | jq -r '.id' 2>/dev/null || echo "")
+```
+
+As you complete each Todo task, also update the PR comment to check off the corresponding item:
+
+```bash
+gh api repos/{owner}/{repo}/issues/comments/$PROGRESS_COMMENT_ID \
+  -X PATCH -f body="<updated checklist>"
+```
+
+Update the PR comment at natural milestones (after finishing each file, after committing, etc.) — not after every single edit.
+
+## Step 4: Apply fixes
 
 Work through the requested fixes methodically:
 
@@ -58,11 +95,11 @@ When editing:
 - Preserve the author's meaning and intent — fix the style, don't rewrite the content
 - Only change what was requested; don't fix other categories of issues even if they're on the same line (e.g., if asked to fix Vale issues, don't also fix Dale or editorial issues)
 
-## Step 4: Verify
+## Step 5: Verify
 
 Review your edits to ensure they don't introduce new issues. Do NOT run Dale or any other skills during verification.
 
-## Step 5: Commit and push
+## Step 6: Commit and push
 
 Stage only the files you changed:
 
@@ -76,20 +113,29 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 git push
 ```
 
-## Step 6: Report
+## Step 7: Final update
 
-Post a PR comment summarizing what you did:
+Replace the progress comment with a completion summary. Don't post a separate comment — update the same one:
 
-```markdown
-**Fixes applied:**
+```bash
+gh api repos/{owner}/{repo}/issues/comments/$PROGRESS_COMMENT_ID \
+  -X PATCH -f body="$(cat <<'EOF'
+**Fixes applied** ✅
 
+- [x] Read PR diff and review comments
+- [x] Fix Vale issues in `path/to/file.md` (N issues)
+- [x] Fix Vale issues in `path/to/other.md` (N issues)
+- [x] Verify changes
+- [x] Commit and push
+
+**Summary:**
 - `path/to/file.md`: <what was fixed>
 - `path/to/other.md`: <what was fixed>
-
-Dale checks pass on all edited files.
+EOF
+)"
 ```
 
-If you were asked to explain something rather than fix it, your comment IS the deliverable — no summary needed.
+Skip progress tracking only for pure explanations (e.g., "why is this flagged?") where your PR comment IS the deliverable and no files are edited. All other requests — including editorial rewrites like "improve the flow" — should use progress tracking.
 
 ## Behavioral Notes
 

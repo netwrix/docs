@@ -192,9 +192,11 @@ jobs:
 
             ---
             **What to do next:**
-            Comment `@claude` on this PR followed by your instructions to get help:
-            - `@claude fix all issues` — fix all Dale and editorial issues
-            - `@claude help improve the flow of this document` — get writing assistance
+            Comment `@claude` on this PR followed by your instructions. For example:
+            - `@claude fix all issues`
+            - `@claude fix only the Dale issues`
+            - `@claude reorganize the prerequisites section`
+            - `@claude help improve the flow of this document`
             > Automated fixes are only available for branches in this repository, not forks.
 
             Step 4: Post the comment by running this exact command:
