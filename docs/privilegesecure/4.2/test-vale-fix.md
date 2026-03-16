@@ -10,11 +10,11 @@ We recommend that you click on **Settings** to begin configuring activity sessio
 
 ## Prerequisites
 
-It is important to note that you must have administrative privileges before proceeding. Currently, only administrators can configure activity sessions. Our team has designed this feature to be straightforward.
+It is important to note that you must have administrative privileges before proceeding. Currently, only administrators can configure activity sessions.
 
 ## Configure an Activity Session
 
-I think the easiest way to get started is to follow these steps:
+Follow these steps:
 
 1. Navigate to **Admin > Activity Sessions**.
 2. Click on **New Session** to create a new activity session.
@@ -26,3 +26,9 @@ I think the easiest way to get started is to follow these steps:
 ## Monitor Activity
 
 Once you have configured activity sessions, you can monitor them from the dashboard. The dashboard allows you to view active sessions, review logs and manage session settings.
+
+## Next Steps
+
+- [Create My Activity Session](/docs/privilegesecure/4_2/admin/myactivities/createsession.md) — Start a new activity session from the My Activities page.
+- [Access > My Activities Page](/docs/privilegesecure/4_2/admin/myactivities/myactivities.md) — Manage your active and scheduled sessions.
+- [Dashboard Interface](/docs/privilegesecure/4_2/admin/dashboard/overview.md) — Monitor all active sessions, review audit logs, and manage session settings.
