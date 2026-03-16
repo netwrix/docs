@@ -153,6 +153,8 @@ jobs:
             echo "---"
             echo ""
             echo 'Fix these issues locally with `vale <file>` and push again. Comment `@claude fix only the Vale issues` to have them fixed automatically.'
+            echo ""
+            echo '> Automated fixes are only available for branches in this repository, not forks.'
           } > /tmp/vale-comment.md
 
       - name: Delete previous Vale comments and reviews
