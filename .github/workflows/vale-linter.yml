@@ -152,7 +152,7 @@ jobs:
             cat /tmp/vale-body.md
             echo "---"
             echo ""
-            echo 'Fix these issues locally with `vale <file>` and push again. Comment `@claude fix only the Vale issues` to have them fixed automatically.'
+            echo 'Fix these issues locally with `vale <file>` and push again, or comment `@claude` followed by your instructions (e.g., `@claude fix only the Vale issues`).'
             echo ""
             echo '> Automated fixes are only available for branches in this repository, not forks.'
           } > /tmp/vale-comment.md
