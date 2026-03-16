@@ -26,6 +26,8 @@ If the environment variables are empty, check for positional arguments (`$1` = f
 
 Split the comma-separated file list into individual file paths for processing.
 
+**Exclude KB files:** Skip any file under `docs/kb/`. KB articles have their own style conventions and are not subject to Dale linting or editorial review. If the file list contains only KB files, post a comment noting that no reviewable files were found and exit.
+
 ## Stage 1: Dale Linting
 
 For each changed file, invoke the Dale linter skill:
