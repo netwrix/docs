@@ -73,7 +73,7 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 | `claude-doc-pr.yml` | PRs to dev with `docs/` changes | Dale + editorial review; `@claude` follow-up |
 | `claude-documentation-reviewer.yml` | PRs with `.md` changes | AI review with inline suggestions |
 | `claude-documentation-fixer.yml` | `@claude` comment on PR | Apply fixes and push |
-| `claude-issue-labeler.yml` | Issues opened/edited | Security screening, CoC check, auto-labeling |
+| `claude-issue-labeler.yml` | Issues opened/edited | Security screening, CoC check, auto-labeling, content fix automation |
 | `sync-dev-to-main.yml` | Daily 8 AM PST | Auto-merge dev to main |
 | `reindex-algolia.yml` | After main deploy | Refresh search index |
 
@@ -90,6 +90,7 @@ When a user asks for help with documentation, always use the appropriate tool:
 | `/dale` | Skill | Custom linter for Netwrix-specific writing patterns |
 | `/doc-help` | Skill | Interactive writing assistant (terminal sessions) |
 | `/doc-pr` | Skill | Automated PR review (Dale + editorial) |
+| `/content-fix` | Skill | Autonomous issue-to-PR fixer for content_fix issues |
 | `/doc-pr-fix` | Skill | Autonomous PR fixer triggered by `@claude` |
 | `tech-writer` | Agent | Autonomous end-to-end doc writing/editing |
 | `vale-rule-writer` | Agent | Creates new Vale rules |
