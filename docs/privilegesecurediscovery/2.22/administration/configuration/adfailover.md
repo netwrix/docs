@@ -80,7 +80,7 @@ domain
 **CAUTION:** This is not a `full_sync`!
 
 - `init_sync` will do a group flattening process, but **will not move stale objects**
-- `full_sync`**will not do a group flattening process,** but _will_ move stale objects
+- `full_sync` moves stale objects and does not perform a group flattening process
 - We have decided to do an `init_sync` as this mimics what Customer Success currently does to
   recover from an AD failure. This feature “automates” this approach within the product.
 

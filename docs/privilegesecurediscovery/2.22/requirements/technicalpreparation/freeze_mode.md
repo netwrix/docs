@@ -18,8 +18,8 @@ There are two main methods of rolling out Privilege Secure, by machine or by gro
 
 Rolling out by machine can be done by individual machines through the UI or en mass using
 Quickstart. The challenge with this can be that all people needing administrative access to the
-machine must be familiar with Privilege Secure and how to gain access. Given the simplicity of
-Privilege Secure, this is not a major issue, but it can add to the logistical challenge of rollout.
+machine must be familiar with Privilege Secure and how to gain access. This can add to the
+logistical challenge of rollout.
 
 ### By Group
 

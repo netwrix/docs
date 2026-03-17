@@ -61,7 +61,7 @@ Once the bulk action has been selected the specific configurations for that bulk
 
 ## Bulk Actions
 
-Please note this is not an exhaustive representation of bulk actions, but a few examples that are relevant
+Please note this section provides only a few relevant examples of bulk actions
 for getting setup and started. You can also use bulk actions for Linux endpoints, bulk expire and
 extend, and bulk archive and bulk restore.
 
