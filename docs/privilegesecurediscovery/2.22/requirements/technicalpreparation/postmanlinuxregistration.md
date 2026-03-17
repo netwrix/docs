@@ -58,7 +58,7 @@ Bridging solution other than Privilege Secure.  Valid entries are:  centrify, 
 ## Locating a Linux System in the UI
 
 In the Privilege Secure browser, navigate to the "Grant Access" page and search for the system that
-was just added to confirm that is has been registered with Privilege Secure successfully. The Domain
+was added to confirm that is has been registered with Privilege Secure successfully. The Domain
 will be: `NONE\<system_name>`
 
 Once it has been verified that this account was added successfully, the template that was created

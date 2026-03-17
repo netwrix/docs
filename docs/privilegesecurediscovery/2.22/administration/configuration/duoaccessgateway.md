@@ -57,7 +57,7 @@ file’ to get the file in JSON format.
 
 **Step 7 –** Add application, select choose file.
 
-**Step 8 –** Locate the file you just downloaded and click ‘open’, then upload.
+**Step 8 –** Locate the downloaded file and click ‘open’, then upload.
 
 **Step 9 –** Return to the **Duo Admin Panel.**
 

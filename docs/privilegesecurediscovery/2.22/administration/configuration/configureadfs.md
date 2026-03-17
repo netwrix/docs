@@ -35,8 +35,8 @@ as see in the example below.  It should be entered as a lower case d.
 
 **Step 1 –** Navigate to **Configure** > **Server**.
 
-**Step 2 –** As Privilege Secure is unable to perform Service Provider initiated (SP-initiated)
-logon, you must specified an Identity Provider initiated (IdP-intiatied) URL.
+**Step 2 –** Privilege Secure uses an Identity Provider initiated (IdP-intiatied) URL for this
+configuration, so specify the IdP-initiated URL here.
 
 - Entrypoint: `https://<ADFS_URL>/adfs/ls/idpinitiatedsignon.aspx?LoginToRP=https://SecureONE_URL`
 - Issuer: `http://ADFS_URL/adfs/services/trust`

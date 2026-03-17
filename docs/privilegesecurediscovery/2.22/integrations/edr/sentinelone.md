@@ -46,8 +46,8 @@ menu:
 
 ![Screen_Shot_2022-10-10_at_10.15.L37_AM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.15.37_am_420x358.webp)
 
-The API key will only be displayed while it is visible on the screen. It cannot be recovered,
-instead it would need to be revoked and recreated:
+The API key will only be displayed while it is visible on the screen. After the UI is closed, revoke
+the key and create a new one if you need another copy:
 
 ![Screen_Shot_2022-10-10_at_10.16.L00_AM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.16.00_am_392x224.webp)
 

@@ -34,7 +34,7 @@ This article covers the proper sequence to remove Privilege Secure OAM and prote
 
 Privilege Secure now has no access to change local Administrators group.
 
-**NOTE:** If you just remove the Privilege Secure service account from the system, one or more of
+**NOTE:** If you remove only the Privilege Secure service account from the system, one or more of
 the following can result:
 
 - OAM alternate administrator account remains in the system

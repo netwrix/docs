@@ -55,7 +55,7 @@ In either case, Privilege Secure does not store this password after issuing / up
 
 ## JWT access tokens in Privilege Secure
 
-**CAUTION:** This is just a brief overview. For more information on how the JWT works, see
+**CAUTION:** This is a brief overview. For more information on how the JWT works, see
 [jwt.io](https://jwt.io/).
 
 - A obtains an access token by calling an API endpoint on the Privilege Secure API:

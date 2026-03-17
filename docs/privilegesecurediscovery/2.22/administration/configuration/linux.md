@@ -65,7 +65,7 @@ Linux JITA Session Behavior
 
     - Example entry into /etc/passwd for user ‘s1_user’:
       `s1_user:x:1005:1005:PrivilegeSecure AD Bridged Account:/home/s1_user:/bin/sh`
-    - User can then SSH to the linux box with just username (case sensitive), no domain required.
+    - User can then SSH to the linux box with the username only (case sensitive), with no domain required.
 
 - Privilege Secure also create an entry for that account in the `/etc/sudoers/` providing sudo
   capabilities.

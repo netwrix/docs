@@ -31,7 +31,7 @@ machines, possibly by OU.
 
 ![screen_shot_2022-06-01_at_8](/images/privilegesecure/4.2/discovery/admin/systemmanagement/screen_shot_2022-06-01_at_8.22.45_am.webp)
 
-When filtered, all of the machines can be selected, or just a few as desired.
+When filtered, all of the machines can be selected, or a subset as desired.
 
 ![screen_shot_2022-06-01_at_8](/images/privilegesecure/4.2/discovery/admin/systemmanagement/screen_shot_2022-06-01_at_8.24.07_am.webp)
 
@@ -61,7 +61,7 @@ Once the bulk action has been selected the specific configurations for that bulk
 
 ## Bulk Actions
 
-Please note this is not an exhaustive representation of bulk actions, just a few that are relevant
+Please note this is not an exhaustive representation of bulk actions, but a few examples that are relevant
 for getting setup and started. You can also use bulk actions for Linux endpoints, bulk expire and
 extend, and bulk archive and bulk restore.
 
