@@ -49,5 +49,5 @@ especially helpful to ensure changes are made to the correct environment.
 
 ![Screen_Shot_2022-06-03_at_9.34.L07_AM.webp](/images/privilegesecure/4.2/discovery/admin/configuration/6472930856855_screen_shot_2022-06-03_at_9.34.07_am.webp)
 
-The defaults are easily updated as needed. No services need to be restarted or changed for this to
+The default settings can be updated as needed. No services need to be restarted or changed for this to
 take effect. Once you hit the save icon it will take immediate effect.

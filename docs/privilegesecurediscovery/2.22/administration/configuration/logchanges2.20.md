@@ -22,9 +22,9 @@ organization is using for reporting or in their SIEM.
   message
 - all other log fields that had a string value starting with "Exception: " now have subfields with
   error type and message
-- change the log message that was simply "Exception: " to "Exception in Windows scan."
+- change the log message that was only "Exception: " to "Exception in Windows scan."
 
-**NOTE:** There may still be log messages that are simply "Exception: " in other places, where the
+**NOTE:** There may still be log messages that are only "Exception: " in other places, where the
 exception does not have a message.
 
 Example 1:

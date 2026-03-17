@@ -70,7 +70,7 @@ The Privilege Secure Advanced API:
 - A user may not select private fields (schema has select:false, or when we select certain fields in
   the schema hooks)
 
-**NOTE:** Select could be enhanced, relatively easily, to allow for dropping fields from the default
+**NOTE:** Select could be enhanced to allow for dropping fields from the default
 selection. ex. `?select=-foo,-bar`
 
 ## Queries

@@ -24,7 +24,7 @@ Summary
   when the user is logged out or the system reboots. Cached credentials are generally valid until
   the user password is changed.
 - This behavior can create confusion because with respect to remote connections, the session must be
-  explicitly logged out and not simply disconnected in order for the session with the privilege to
+  explicitly logged out and not disconnected in order for the session with the privilege to
   truly be terminated, **regardless** of the method used to interface with the Windows endpoint.
 
 Problem Statement

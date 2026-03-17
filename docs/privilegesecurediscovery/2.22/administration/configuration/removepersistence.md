@@ -67,7 +67,7 @@ continue to run.
 
 Applying these service accounts directly to the machines that they exist on as part of the
 interactive
-group can easily be done by Quickstart. The method for carrying this out is detailed in the
+group can be done by using Quickstart. The method for carrying this out is detailed in the
 “Applying a
 Service Account Directly to a Machine” article
 ([](https://remediant.zendesk.com/hc/en-us/articles/4995338773655-Applying-a-Service-Account-from-an-existing-AD-group-Directly-to-a-Machine)[Apply a Service Account from an existing AD group Directly to a Machine](./applyserviceaccount.md)).
@@ -94,7 +94,7 @@ This produces an Excel file with two tabs, Computer Data and Admin List.
 
 ### Update Quickstart File
 
-Updating the excel file to remove persistence is easy. Using the Admin List tab, filter for the
+Updating the excel file to remove persistence is straightforward. Using the Admin List tab, filter for the
 group that
 needs persistence to be reverted, in this case Domain Admins.
 

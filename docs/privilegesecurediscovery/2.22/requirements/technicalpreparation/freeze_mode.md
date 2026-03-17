@@ -178,7 +178,7 @@ We can update to remove persistence on a single machine through the UI by using 
 
 ![LScreenshot_2022-03-30_211436.webp](/images/privilegesecure/4.2/discovery/4412001676439_screenshot_2022-03-30_211436_199x110.webp)
 
-This only forces the users of the DBA group to go through Privilege Secure on this ONE server. This would leave this group (the DBA administrators) in a mix of using Privilege Secure for some server and not others. It is better to remove persistence for ALL machines that have the DBA_Admins group. This can easily be achieved using Quickstart. Once this is done all the DBA Administrators will go through Privilege Secure for the servers that they need access to. Optionally a review and approval of the users who exist in the targeted group can also be carried out in conjunction with the owner of the group (machines that this group applies to can be shared with group and machine owners as required)
+This only forces the users of the DBA group to go through Privilege Secure on this ONE server. This would leave this group (the DBA administrators) in a mix of using Privilege Secure for some server and not others. It is better to remove persistence for ALL machines that have the DBA_Admins group. This can be achieved using Quickstart. Once this is done all the DBA Administrators will go through Privilege Secure for the servers that they need access to. Optionally a review and approval of the users who exist in the targeted group can also be carried out in conjunction with the owner of the group (machines that this group applies to can be shared with group and machine owners as required)
 
 The updates to the Quickstart spreadsheet would be as follows:
 

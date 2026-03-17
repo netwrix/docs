@@ -36,4 +36,4 @@ system to update the configuration and inventory of the system as required.
 
 ![Screen_Shot_2021-11-16_at_7.22.L02_PM.webp](/images/privilegesecure/4.2/discovery/admin/reporting/4413252324887_screen_shot_2021-11-16_at_7.22.02_pm.webp)
 
-These shortcuts can also be bookmarked for easy access to the system required.
+These shortcuts can also be bookmarked for quicker access to the required system.

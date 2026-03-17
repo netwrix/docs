@@ -53,7 +53,7 @@ instead it would need to be revoked and recreated:
 
 ### Account ID
 
-Next the Account ID would be required this is easily accessible by selecting the Accounts option at
+Next the Account ID is required. It is available by selecting the Accounts option at
 the  top from the Settings menu.
 
 ![Screen_Shot_2022-10-10_at_10.18.L06_AM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.18.06_am.webp)

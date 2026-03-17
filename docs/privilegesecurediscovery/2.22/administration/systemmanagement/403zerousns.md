@@ -14,7 +14,7 @@ Privilege Secure must point to a single Domain Controller (DC). This is because 
 uses the USN values from Active Directory to determine when a group has been changed. These do no
 propagate between DCs.
 
-When a DC is unavailable a new one can easily be connected to using the Privilege Secure UI.
+When a DC is unavailable, a new one can be connected to by using the Privilege Secure UI.
 However, when this occurs, if the USN number is lower, Privilege Secure will not be aware of changes
 to groups. This will impact access from changed groups.
 

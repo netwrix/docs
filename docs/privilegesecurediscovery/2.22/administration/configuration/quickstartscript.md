@@ -54,7 +54,7 @@ Notes:
 At this point you will need to generate an API Key within the UI. When you run the QuickStart script
 for the first time it will ask you input the API Key. We recommend storing this securely given the
 level of access it grants. **_Note: You will not be able to see the key again after closing the
-dialogue box. If you did not save it, simply revoke the key in the UI and create a new one._**
+dialogue box. If you did not save it, revoke the key in the UI and create a new one._**
 
 Next edit the reports\*.py and update the config block values to suite the environment and user.
 

@@ -63,7 +63,7 @@ Test (suggested minimum yearly)
 ## Run Quickstart to Review Protect Mode and Persistence (suggested weekly)
 
 - Quickstart should be run frequently to ensure that all machines remain in protect mode. The output
-  from Quickstart can easily be filtered for any machines that do not show in protect mode. This
+  from Quickstart can be filtered for any machines that do not show in protect mode. This
   ensures that the build process and addition or protect mode is being executed as expected.
 - Quickstart can also be used for a review of persistent access. This should be minimized to service
   accounts. A review to look for user accounts set to persistent should be carried out. If these are

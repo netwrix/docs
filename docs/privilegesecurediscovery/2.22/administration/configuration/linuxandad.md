@@ -18,7 +18,7 @@ acquired from those sources.ux and Active Directory
 
 ## Approach to Linux
 
-Netwrix believes that Just-In-Time privileged access should be easy to deliver and work well with
+Netwrix believes that Just-In-Time privileged access should work well with
 modern IT practices.
 
 We've designed our Linux privileged access solution to fit into common on-prem, hybrid and
@@ -44,7 +44,7 @@ local accounts or AD Directory accounts, we have you covered.
 - Lightweight & Powerful
     - Scans, parses and stores privileged access permissions centrally
     - Simple reporting on every account with privileged access
-    - View the specific privileged access of a user of group simply - no need to understand Sudo
+    - View the specific privileged access of a user or group without needing to understand Sudo
       syntax
         - Skilled Linux admins can use the full capability of Sudo without interference
 

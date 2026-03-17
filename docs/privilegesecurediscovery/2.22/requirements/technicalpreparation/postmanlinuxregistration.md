@@ -28,7 +28,7 @@ Use Postman to craft the following GET:
 https://<IP_add_of_SecureONE_box>/api/v1/ping
 ```
 
-The response coming back should simply be “pong” if the API connection is intact. Modify the POST
+The response coming back should be “pong” if the API connection is intact. Modify the POST
 string in the URL field to read the following:
 
 ![LRegister_device_URL.webp](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360022103414_register_device_url_632x71.webp)

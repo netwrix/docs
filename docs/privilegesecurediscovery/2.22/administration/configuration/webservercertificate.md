@@ -13,7 +13,7 @@ Create Web Server Certificate with SANs
 ## SSL Installation
 
 Most of our customers will wish to install a proper web server certificate on their Privilege Secure
-application. This ensures a safe and easy user experience for users and admins of Privilege Secure,
+application. This helps provide a safe user experience for users and admins of Privilege Secure,
 by eliminating any SSL handshake errors received when they try to connect via a web browser to the
 Privilege Secure UI.
 
@@ -134,7 +134,7 @@ of SSL on a server.
 What are PFX and PEM Files?
 
 PEM or Privacy Enhanced Mail is a Base64 encoded DER certificate. PEM certificates are frequently
-used for web servers as they can easily be translated into readable data using a simple text editor.
+used for web servers because they can be translated into readable data using a simple text editor.
 Generally when a PEM encoded file is opened in a text editor, it contains very distinct headers and
 footers. Process:
 

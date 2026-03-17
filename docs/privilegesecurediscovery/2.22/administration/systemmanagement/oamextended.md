@@ -37,8 +37,8 @@ It automates the coordination of:
 - Disabling the built-in administrator account.
 - Rotation and management of passwords of those accounts.
 
-It provides a range of configuration settings which can be as simple as just enabling a single “Best
-Practices” configuration, or simply “Manage the Built-in Account”, or configure fine grained
+It provides a range of configuration settings which can start with enabling a single “Best
+Practices” configuration, or “Manage the Built-in Account”, or configure fine grained
 settings as desired with a “Custom” strategy.
 
 These settings may be set:
@@ -219,7 +219,7 @@ The screenshot below shows access using Postman to test access to the API end-po
 
 ## Querying the database by OAM policy settings
 
-When the OAM policy is set, even though it may be possible to simply set a `Strategy` option of say
+When the OAM policy is set, even though it may be possible to set a `Strategy` option of say
 `'os-best-practice'` or `'managed-built-in'`, the default fine-grained policy options will be
 persisted to the database so that querying the data is simple.
 
@@ -238,7 +238,7 @@ option `true`.
   db.getCollection("ldap_store").find( { "config.policies.offline_access_management.enabled": true, "config.policies.offline_access_management.disable_built_in_admin": true })
   ```
 
-It is important to note that while an OAM policy can simply be set to just
+It is important to note that while an OAM policy can be set to
 s`trategy:"os-best-practice"`, it is also possible to set `strategy:"custom"` with ALL of the same
 best practice options. So, querying by options is preferable to querying by strategy alone. The
 following correctly retrieves the systems which follow best practices.

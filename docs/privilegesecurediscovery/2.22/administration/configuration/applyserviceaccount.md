@@ -13,7 +13,7 @@ Apply a Service Account from an existing AD group Directly to a Machine
 ## Overview
 
 All interactive accounts should not have standing privilege, instead these should be using Privilege
-Secure to elevate access when required. This is easy to arrange with Privilege Secure. These
+Secure to elevate access when required. This can be arranged with Privilege Secure. These
 interactive groups should be set as non-persistent. However, sometimes interactive and
 non-interactive (service) accounts exist in the same group. In this case removing the persistence of
 the group would break any process or application that is using the service account. The purpose of
