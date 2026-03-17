@@ -143,8 +143,8 @@ Notes:
 
 - a Week starts on Sunday. “Start of X”, “End of X” see
   [https://momentjs.com/docs/#/manipulating/start-of/](https://momentjs.com/docs/#httpsmomentjscomdocsmanipulatingstart-of)
-- `-1M` is not 30 days, it will try to keep the same date for the previous month, clamping if can
-  not
+- `-1M` does not represent a fixed 30-day interval. It tries to keep the same date in the previous
+  month and clamps when needed.
 
 - `2019-03-15``````-1M` → `2019-02-15`
 - `2019-03-31``````-1M` → `2019-02-28` (clamped)
