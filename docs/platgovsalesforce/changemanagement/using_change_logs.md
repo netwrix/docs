@@ -12,7 +12,7 @@ the Salesforce record. Change Logs are accessed from the **Change Logs** tab or 
 
 1. Click **Change Logs** tab.
 2. Change the **Recently Viewed** pinned list to show the types of Change Logs to view. For
-   example, **Data Tracking Changes** or **Profile and PermissionSet** changes. The **Details** and
+   example, **Data Tracking Changes** or **Fast Scan Permission Changes** changes. The **Details** and
    **Diff Summary** differ slightly depending on the selected **Metadata Type**.
 3. Click a **Change Log Name** to open it.
 
