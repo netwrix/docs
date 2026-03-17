@@ -44,7 +44,7 @@ local accounts or AD Directory accounts, we have you covered.
 - Lightweight & Powerful
     - Scans, parses and stores privileged access permissions centrally
     - Detailed reporting on every account with privileged access
-    - View the specific privileged access of a user or group without needing to understand Sudo
+    - View the specific privileged access of a user or group without parsing Sudo
       syntax
         - Skilled Linux admins can use the full capability of Sudo without interference
 

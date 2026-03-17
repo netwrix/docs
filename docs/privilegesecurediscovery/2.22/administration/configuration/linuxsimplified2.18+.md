@@ -17,8 +17,8 @@ files locate in /etc/sudoers.d) into the /etc/sudoers file, and disable sudo per
 acquired from those sources.
 
 The domain configuration can be used to configure an existing account on Linux machines to be
-utilized as the protect account for managing the endpoint. This saves the need to register an
-account on each endpoint and provides for a simplified rollout.
+utilized as the protect account for managing the endpoint. This avoids the need to register an
+account on each endpoint and supports a more consistent rollout process.
 
 **Step 1 –** Ensure that the domain Linux service account has sudo permission on the systems
 Privilege Secure is to manage sudo privileges on.

@@ -50,7 +50,7 @@ These settings may be set:
 
 ## Strategies
 
-To simplify getting setup, several preset bundles of configuration settings have been grouped into
+To support setup, several preset bundles of configuration settings have been grouped into
 what we are calling a “Strategy”. There are 3 strategies available:  Best Practices, Managed
 Built-In, and Custom.  These strategies are detailed below.
 
