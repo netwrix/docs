@@ -27,7 +27,7 @@ accounts) and GPO, using Restricted Groups, is removing them again.
   build) use the GPO option for "Apply once and do not reapply".
 - Do not rely on "Restricted Groups" to tightly control the Local Administrators group. That is what
   Privilege Secure is for. Instead use "Preferences" to _add_ Persistent accounts to the Local
-  Administrators group (but not remove any). See an example of this type of GPO below under "More
+  Administrators group without removing any existing entries. See an example of this type of GPO below under "More
   Information".
 
 ## More Information

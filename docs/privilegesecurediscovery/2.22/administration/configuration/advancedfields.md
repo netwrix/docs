@@ -145,7 +145,7 @@ The Strategy may be entered with any of following values: OS-BEST-PRACTICE, MANA
 
 The OAM Name Template accepts a string with wildcards expressed by question marks (?). If left blank it will default to the currentvalue, or to "S1_ALT_??????".
 
-The remaining options may be included, but must not conflict with the defined strategy.
+The remaining options may be included when they do not conflict with the defined strategy.
 
 ## Default Settings by Strategy
 

@@ -115,7 +115,7 @@ protect mode JITA. This can be done from the Access/Grant Access page.
 ![blobid3.webp](/images/privilegesecure/4.2/discovery/360048268793_blobid3.webp)
 
 Placing the server into protect mode removes the accounts, that are not persistent, from the server
-and adds them to Privilege Secure. These remain available for use, but they are now available for
+and adds them to Privilege Secure. These remain available for use, and they are now available for
 use on a Just In Time Access (JITA) approach. This means that a user of Privilege Secure can access
 the system provided that they also a member of an AD group that has access to the system. Privilege
 Secure does not manipulate Active Directory.

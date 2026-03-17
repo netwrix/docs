@@ -118,9 +118,9 @@ reports_2.9.py –insecure
 
 Adjust the command to suit the specific version of quickstart used.
 
-The resultant spreadsheet should be filtered to show the machines that are not in protect mode but
+The resultant spreadsheet should be filtered to show the machines that are not in protect mode and
 have a scan date. These are the machines to be targeted for protect mode (this would be further
-restricted if just looking for workstations or servers).
+restricted when looking only for workstations or servers).
 
 ![LScreenshot_2022-03-30_211054.webp](/images/privilegesecure/4.2/discovery/4412001676439_screenshot_2022-03-30_211054_255x145.webp)
 

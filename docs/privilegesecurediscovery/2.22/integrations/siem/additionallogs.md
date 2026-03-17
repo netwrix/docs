@@ -14,7 +14,7 @@ Additional Logs
 
 - Critical – Service is going down
 - Eerror – a problem
-- Warning – Something concerning, but may not actually be a problem
+- Warning – Something concerning that may not indicate a problem
 
     - Example:  Most network-related issues are only a problem if they happen frequently
 

@@ -41,11 +41,11 @@ Example
 
 ### Log Levels
 
-**NOTE:** Older log messages may not follow this format, but are being migrated over.
+**NOTE:** Older log messages may not follow this format and are being migrated over.
 
 - Critical – Service is going down (people should be woken up)
 - Error – Definitely a problem (should be reported to someone, tests should fail)
-- Warning – Something concerning, but may not actually be a problem
+- Warning – Something concerning that may not indicate a problem
 
     - Example – Most network-related issues are only a problem if they happen frequently
 

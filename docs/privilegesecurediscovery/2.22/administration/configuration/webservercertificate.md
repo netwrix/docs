@@ -134,7 +134,7 @@ of SSL on a server.
 What are PFX and PEM Files?
 
 PEM or Privacy Enhanced Mail is a Base64 encoded DER certificate. PEM certificates are frequently
-used for web servers because they can be translated into readable data using a simple text editor.
+used for web servers because they can be translated into readable data using a text editor.
 Generally when a PEM encoded file is opened in a text editor, it contains very distinct headers and
 footers. Process:
 

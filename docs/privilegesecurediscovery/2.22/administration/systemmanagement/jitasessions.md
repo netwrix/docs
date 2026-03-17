@@ -13,7 +13,7 @@ Starting and Managing JITA Sessions for Another User
 The Privilege Secure Administrator role can start, extend and expire JITA sessions on behalf of
 another user. This can be especially useful for vendors and contractors to avoid having to provide
 them access to Privilege Secure. It can also be very useful in conjunction with an EDR solution to
-elevate access for a user who is not connected to the corporate network or VPN, but has internet
+elevate access for a user who is not connected to the corporate network or VPN and has internet
 access.
 
 To delegate access to another user the following steps should be taken:

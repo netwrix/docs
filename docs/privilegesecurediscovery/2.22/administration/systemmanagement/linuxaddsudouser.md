@@ -28,7 +28,7 @@ example user: `sudo adduser example_user`
 **Step 7 –** Test sudo for user:
 
 - Switch to user: `sudo su - example_user`
-- Test with simple command:  `sudo date`
+- Test with a basic command:  `sudo date`
 - Enter password
 
 ### Optional:  Turn off Password Check

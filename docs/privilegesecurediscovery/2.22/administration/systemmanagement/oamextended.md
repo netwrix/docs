@@ -63,7 +63,7 @@ Built-In, and Custom.  These strategies are detailed below.
 - The rotation and management of the alternate administrator account’s password.
 - The rotation and management of the built-in Administrator account’s password.
 - The disabling of the built-in Administrator account.
-- Revealing OAM account passwords to S1 admins, but not to JITA or persistent non-admin users.
+- Revealing OAM account passwords to S1 admins while withholding them from JITA or persistent non-admin users.
 
 - Note that the name of the alternate administrator account is not strictly part of the “Best
   Practices”. The default setting is more for convenience. If the name has previously been set by
@@ -106,7 +106,7 @@ Below is a screenshot when the policy has not yet been applied, or has been set 
 ![LOAM-UI-test-Unmanaged-default.webp](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_oam-ui-test-unmanaged-default.webp)
 
 As an example of seeing most of the options in action, the screenshot below show a custom strategy
-setting by selecting “Advanced...”. In the case shown, this is just “Best Practice” plus the added
+setting by selecting “Advanced...”. In the case shown, this is “Best Practice” with the added
 feature of randomizing the Alt-Admin name.
 
 ![LOAM-grant-access-overview2.webp](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_oam-grant-access-overview2.webp)
@@ -184,7 +184,7 @@ if no previous policy was set.
 The OAM Name Template accepts a string with wildcards expressed by question marks (?). If left blank
 it will default to the current value, or to S1_ALT_ADMIN.
 
-The remaining options may be included, but must not conflict with the defined strategy.
+The remaining options may be included when they do not conflict with the defined strategy.
 Default Settings by Strategy
 
 | Option \ Strategy       | OS-BEST-PRACTICE | MANAGED-BUILT-IN | CUSTOM   |
@@ -221,7 +221,7 @@ The screenshot below shows access using Postman to test access to the API end-po
 
 When the OAM policy is set, even though it may be possible to set a `Strategy` option of say
 `'os-best-practice'` or `'managed-built-in'`, the default fine-grained policy options will be
-persisted to the database so that querying the data is simple.
+persisted to the database so that querying the data is more direct.
 
 All of the fine-grained functionality across both the ‘Built-in Admin’ and the ‘Alternate Admin’
 (which may not even exist at the time of setting the policy) are consolidated into options under
@@ -294,7 +294,7 @@ The second step is to ensure that the built-in administrator account is enabled 
 configured.
 If the Alternate administrator account name setting has been changed, the scanner will remove any
 previous alternate administrator account that is not longer in us. This will **fully** remove that
-user from the system, not just remove them from the administrators group.
+user from the system, rather than only removing them from the administrators group.
 Passwords of the alternate and built-in Administrator accounts will then be rotated as needed.
 
 ## Password Rotation Configuration

@@ -40,4 +40,4 @@ specific IDP configuration:
   encryption/decryption processess.
 - SSO Enabled – Enabled or disabled flag.  Enabling this will force SSO authentication, and the
   local login view of Privilege Secure will subsequently be disabled.  In this mode, local login is
-  still available for services management but not for Domain User or Group authentication.
+  still available for services management and unavailable for Domain User or Group authentication.

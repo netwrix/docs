@@ -43,7 +43,7 @@ local accounts or AD Directory accounts, we have you covered.
           PowerBroker Open and SSSD.
 - Lightweight & Powerful
     - Scans, parses and stores privileged access permissions centrally
-    - Simple reporting on every account with privileged access
+    - Detailed reporting on every account with privileged access
     - View the specific privileged access of a user or group without needing to understand Sudo
       syntax
         - Skilled Linux admins can use the full capability of Sudo without interference
@@ -54,14 +54,14 @@ local accounts or AD Directory accounts, we have you covered.
   step to establish a local service account with SSH access and Sudo permissions.
     - [Privilege Secure and Linux](./linux.md)
     - AD-joined Linux systems (Using Centrify, PB Open, SSSD/RealmD) will be discovered in AD by
-      Privilege Secure before "registration" occurs but can not be Scanned or protected until a
+      Privilege Secure before "registration" occurs and cannot be Scanned or protected until a
       Privilege Secure service account is established on the system.
 - Privilege Secure scans, inventories and changes local and domain account's Sudo access to ensure
   authorized JITA or persistent Sudo access is enforced and reportable. Privilege Secure uses its
   service account to do this over SSH.
 - When Linux systems use Privilege Secure Lightweight Directory-Bridging Privilege Secure controls
-  Sudo authorizations and creates a local accounts corresponding to domain users. On systems that
-  are not AD-joined, domain users cannot sign into the system. To enable domain users to have JITA
+  Sudo authorizations and creates local accounts corresponding to domain users. On systems that
+  are not AD-joined, domain sign-in is unavailable. To enable domain users to have JITA
   access, Privilege Secure creates a local account with the same username and password as the domain
   user.  When JITA expires, the local account password is scrambled to block the user from signing
   until the next JITA session.

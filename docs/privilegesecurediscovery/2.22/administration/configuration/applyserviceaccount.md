@@ -108,7 +108,7 @@ within the file name. Use the --dry-run flag to check that file will make the in
 
 Tips
 
-If Excel is unwieldly slow rows can be deleted for machines that have not been scanned. But, instead
+If Excel is unwieldly slow rows can be deleted for machines that have not been scanned. Instead
 of filtering and deleting, sort based on the last_scanned column and then delete the unwanted rows.
 Sorting and deleting is many times faster for Excel. This can also resolve issues with Excel
 crashing. Another benefit is the upload back to Privilege Secure will be faster with fewer rows.

@@ -23,7 +23,7 @@ The "Create API Key" button will open the New API Key screen:
 
 ![Screen_Shot_2022-02-03_at_2.05.L52_PM.webp](/images/privilegesecure/4.2/discovery/integrations/api/4421422443287_screen_shot_2022-02-03_at_2.05.52_pm.webp)
 
-The permissions can be restricted to "just registration" or all APIs. The linked users will be the
+The permissions can be restricted to "registration only" or all APIs. The linked users will be the
 Privilege Secure user(s) that can utilize the key. Upon saving the "New API Key Secret" screen will
 be displayed.
 

@@ -132,7 +132,7 @@ the status for. Example to check the running status of the API service, the comm
 
 Due to the process of the failback being intentionally manual, you will need to run the
 [failback_restore.sh](https://remediant.quip.com/RAD4AZfebK9M#failback_restoresh) script on PROD,
-which will restore the database that was just backed up and SCP’d over to PROD in the above step #3.
+which will restore the database that was backed up and SCP’d over to PROD in the above step #3.
 First confirm the backup created on -DR has been SCP'd over to PROD, in the
 /secureone/data/db/failback directory. The top file will be the newest file created with the below
 command.

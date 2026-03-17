@@ -58,7 +58,7 @@ Additional Python version downloads can be accessed here:
 Of these 3 items, the only one which tends to cause confusion is the requirement that Python 2.7 be
 installed, due to Python 3 being more widely utilized, particularly as newer Linux operating
 systems/kernels either a) do not come with Python pre-installed, or b) DO come with Python 3
-installed, but not 2.7.  When this happens, certain path variables can cause the Ansible backend to
+installed instead of 2.7.  When this happens, certain path variables can cause the Ansible backend to
 fail, because it is looking for the 'python' variable, which may be assigned to Python3 by default.
 
 One way to resolve this issue is to create a symbolic link to the Python 2.7 binaries - though

@@ -119,7 +119,7 @@ no availability to review the logs historically with this method, which is why t
 logging files mentioned above.
 
 These logs are in JSON format and are color coded. This command/tool is best used for
-troubleshooting of Fluentd service or API, if API local logging is not configured yet, but has other
+troubleshooting of Fluentd service or API, when API local logging is not configured yet. It also has other
 uses.
 
 `s1 logs`

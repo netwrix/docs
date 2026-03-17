@@ -58,7 +58,7 @@ out:
 
 The group(s) should now be reviewed for any service accounts that are exist within the group(s).
 These
-do not need to be removed from the group, but should be applied directly to the same machines that
+do not need to be removed from the group and should be applied directly to the same machines that
 the group exists on. This will ensure that the software or process that utilizes that service
 account will
 continue to run.
@@ -123,7 +123,7 @@ group must now use Privilege Secure.
 
 Tips
 
-- If Excel is unwieldly slow rows can be deleted for machines that have not been scanned. But,
+- If Excel is unwieldly slow rows can be deleted for machines that have not been scanned. Instead
   instead of filtering and deleting, sort based on the last_scanned column and then delete the
   unwanted rows. Sorting and deleting is many times faster for Excel. This can also resolve issues
   with Excel crashing. Another benefit is the upload back to Privilege Secure will be faster with
