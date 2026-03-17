@@ -14,8 +14,8 @@ The purpose of this document is to outline the relevant features of the Access R
 will provide key insights and reporting as it relates to standing privilege and assessing attack
 surface. This feature was added to Privilege Secure in 2.12.0.
 
-The access risk capability is not enabled by default. It is designed to capture data from the last
-90 days giving a number of key value items:
+The access risk capability is disabled by default and captures data from the last 90 days, giving a
+number of key value items:
 
 - Concise summary of the standing privileged access attack surface across Windows, Mac and Linux
   systems.
