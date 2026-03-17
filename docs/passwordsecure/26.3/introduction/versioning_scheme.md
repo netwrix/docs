@@ -24,7 +24,7 @@ Inside the product, you may notice a longer version string with an additional bu
 
 ---
 
-## Understanding the release indicator (VVV)
+## Understanding the release indicator "VVV"
 
 The three-digit release indicator encodes the release history within a given month. Each digit position represents a release type:
 
