@@ -242,10 +242,10 @@ export const PRODUCTS = [
     defaultVersion: '11.1',
   },
   {
-    id: 'endpointpolicymanager',
-    name: 'Endpoint Policy Manager',
+    id: 'policypak',
+    name: 'PolicyPak',
     description: 'Group Policy management and enforcement',
-    path: 'docs/endpointpolicymanager',
+    path: 'docs/policypak',
     categories: ['Endpoint Management'],
     icon: '',
     versions: [
@@ -253,7 +253,7 @@ export const PRODUCTS = [
         version: 'current',
         label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/sidebar.js',
+        sidebarFile: './sidebars/policypak.js',
       },
     ],
   },
@@ -775,7 +775,7 @@ export function hasKBContent(productId) {
   const kbProducts = [
     '1secure', 'accessanalyzer', 'accessinformationcenter', 'activitymonitor',
     'auditor', 'changetracker', 'dataclassification', 'directorymanager',
-    'endpointpolicymanager', 'endpointprotector', 'passwordpolicyenforcer',
+    'policypak', 'endpointprotector', 'passwordpolicyenforcer',
     'passwordreset', 'privilegesecure', 'privilegesecurediscovery',
     'threatmanager', 'threatprevention'
   ];
