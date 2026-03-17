@@ -378,7 +378,7 @@ export const PRODUCTS = [
     name: 'Password Secure',
     description: 'Secure password management',
     path: 'docs/passwordsecure',
-    categories: ['Privileged Access Management (PAM)'],
+    categories: ['Identity Management'],
     icon: '',
     versions: [
       {
