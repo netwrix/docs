@@ -29,7 +29,7 @@ disable the built-in administrator account.
 
 ## Main Document
 
-Privilege Secures OAM feature provides a simple solution to manage offline access to local computer
+Privilege Secures OAM feature provides a way to manage offline access to local computer
 administrator/root accounts on Windows.
 It automates the coordination of:
 

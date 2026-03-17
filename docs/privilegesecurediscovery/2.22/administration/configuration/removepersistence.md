@@ -94,7 +94,7 @@ This produces an Excel file with two tabs, Computer Data and Admin List.
 
 ### Update Quickstart File
 
-Updating the excel file to remove persistence is straightforward. Using the Admin List tab, filter for the
+To update the excel file for removing persistence, use the Admin List tab and filter for the
 group that
 needs persistence to be reverted, in this case Domain Admins.
 
