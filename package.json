@@ -21,7 +21,7 @@
     "kb:dry": "node scripts/copy-kb-to-versions.mjs --dry",
     "kb:test:aa": "npm run kb:clean && npm run prestart && npm run start",
     "kb:prodtest:aa": "npm run kb:clean && npm run prebuild && npm run build && npm run serve",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@docusaurus/babel": "^3.9.2",
