@@ -1,0 +1,224 @@
+name: Vale Linter
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - dev
+    paths:
+      - 'docs/**/*.md'
+      - '!docs/**/CLAUDE.md'
+      - '!docs/**/SKILL.md'
+      - '!docs/kb/**'
+
+jobs:
+  vale-lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+
+      - name: Get changed markdown files
+        id: changed-files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          CHANGED_MD_FILES=$(gh pr diff "$PR_NUMBER" --name-only | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' | grep -v '^docs/kb/' || true)
+          if [ -z "$CHANGED_MD_FILES" ]; then
+            echo "No docs markdown files changed"
+            echo "count=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changed markdown files:"
+            echo "$CHANGED_MD_FILES"
+            echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
+            echo "$CHANGED_MD_FILES" > /tmp/changed-files.txt
+          fi
+
+      - name: Install Vale
+        if: steps.changed-files.outputs.count > 0
+        run: |
+          wget -q https://github.com/errata-ai/vale/releases/download/v3.9.5/vale_3.9.5_Linux_64-bit.tar.gz -O /tmp/vale.tar.gz
+          tar -xzf /tmp/vale.tar.gz -C /tmp
+          chmod +x /tmp/vale
+          /tmp/vale --version
+
+      - name: Run Vale on changed files
+        id: vale
+        if: steps.changed-files.outputs.count > 0
+        run: |
+          # Collect all Vale violations into a single JSON array
+          jq -n '[]' > /tmp/vale-all.json
+
+          while IFS= read -r file; do
+            if [ -f "$file" ]; then
+              RESULT=$(/tmp/vale --output JSON "$file" 2>/dev/null || true)
+              if [ -n "$RESULT" ] && [ "$RESULT" != "{}" ]; then
+                echo "$RESULT" | jq --arg f "$file" '
+                  [to_entries[] | .value[] | {path: $f, line: .Line, check: .Check, message: .Message}]
+                ' > /tmp/vale-file.json
+                jq -s '.[0] + .[1]' /tmp/vale-all.json /tmp/vale-file.json > /tmp/vale-tmp.json
+                mv /tmp/vale-tmp.json /tmp/vale-all.json
+              fi
+            fi
+          done < /tmp/changed-files.txt
+
+          TOTAL=$(jq 'length' /tmp/vale-all.json)
+          echo "total_issues=$TOTAL" >> "$GITHUB_OUTPUT"
+          echo "Vale found $TOTAL issue(s)"
+
+      - name: Parse diff for inline comment eligibility
+        id: diff-lines
+        if: steps.vale.outputs.total_issues > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          gh pr diff "$PR_NUMBER" > /tmp/pr-diff.txt
+
+          # Extract lines visible in the diff per file (file:line format)
+          awk '
+            /^\+\+\+ b\// { file = substr($0, 7) }
+            /^@@ / {
+              for (i = 1; i <= NF; i++) {
+                if ($i ~ /^\+[0-9]/) {
+                  sub(/^\+/, "", $i)
+                  split($i, range, ",")
+                  start = range[1] + 0
+                  count = (range[2] != "" ? range[2] + 0 : 1)
+                  for (j = start; j < start + count; j++) {
+                    print file ":" j
+                  }
+                  break
+                }
+              }
+            }
+          ' /tmp/pr-diff.txt | sort -u > /tmp/diff-lines.txt
+
+          echo "Diff lines extracted: $(wc -l < /tmp/diff-lines.txt)"
+
+      - name: Build inline comments
+        id: inline
+        if: steps.vale.outputs.total_issues > 0
+        run: |
+          # Filter violations to those on diff lines, take first 25
+          jq -c '.[]' /tmp/vale-all.json | while read -r violation; do
+            KEY=$(echo "$violation" | jq -r '"\(.path):\(.line)"')
+            if grep -qxF "$KEY" /tmp/diff-lines.txt 2>/dev/null; then
+              echo "$violation" | jq '{
+                path: .path,
+                line: .line,
+                side: "RIGHT",
+                body: ("**Vale** (`" + .check + "`): " + .message)
+              }'
+            fi
+          done | jq -s '.[0:25]' > /tmp/inline-comments.json
+
+          INLINE_COUNT=$(jq 'length' /tmp/inline-comments.json)
+          echo "inline_count=$INLINE_COUNT" >> "$GITHUB_OUTPUT"
+          echo "Eligible inline comments: $INLINE_COUNT"
+
+      - name: Build summary comment
+        if: steps.vale.outputs.total_issues > 0
+        run: |
+          TOTAL=${{ steps.vale.outputs.total_issues }}
+
+          # Build per-file tables
+          : > /tmp/vale-body.md
+          jq -r '[.[] | .path] | unique | .[]' /tmp/vale-all.json | while read -r filepath; do
+            {
+              echo "**${filepath}**"
+              echo ""
+              echo "| Line | Rule | Message |"
+              echo "|------|------|---------|"
+              jq -r --arg f "$filepath" '
+                .[] | select(.path == $f)
+                | "| \(.line) | `\(.check)` | \(.message | gsub("\\|"; "\\\\|")) |"
+              ' /tmp/vale-all.json
+              echo ""
+            } >> /tmp/vale-body.md
+          done
+
+          {
+            echo "## Vale Linting"
+            echo ""
+            echo "**Vale found ${TOTAL} issue(s)** across the changed files."
+            echo ""
+            cat /tmp/vale-body.md
+            echo "---"
+            echo ""
+            echo 'Fix these issues locally with `vale <file>` and push again, or comment `@claude` followed by your instructions (e.g., `@claude fix only the Vale issues`).'
+            echo ""
+            echo '> Automated fixes are only available for branches in this repository, not forks.'
+          } > /tmp/vale-comment.md
+
+      - name: Delete previous Vale comments and reviews
+        if: steps.vale.outputs.total_issues > 0 || steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          REPO=${{ github.repository }}
+
+          # Resolve previous Vale inline comment threads
+          OWNER="${REPO%%/*}"
+          NAME="${REPO##*/}"
+          THREAD_IDS=$(gh api graphql -f query='
+            query($owner:String!,$name:String!,$pr:Int!) {
+              repository(owner:$owner,name:$name) {
+                pullRequest(number:$pr) {
+                  reviewThreads(first:100) {
+                    nodes { id isResolved comments(first:1) { nodes { body } } }
+                  }
+                }
+              }
+            }' -f owner="$OWNER" -f name="$NAME" -F pr="$PR_NUMBER" \
+            --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false and (.comments.nodes[0].body | contains("**Vale**"))) | .id' 2>/dev/null || true)
+          for TID in $THREAD_IDS; do
+            gh api graphql -f query='
+              mutation($tid:ID!) {
+                resolveReviewThread(input:{threadId:$tid}) { thread { isResolved } }
+              }' -f tid="$TID" 2>/dev/null || true
+          done
+
+          # Delete previous Vale PR comments
+          COMMENT_IDS=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("## Vale Linting"))) | .id] | .[]' 2>/dev/null || true)
+          for ID in $COMMENT_IDS; do
+            gh api "repos/${REPO}/issues/comments/${ID}" -X DELETE 2>/dev/null || true
+          done
+
+          # Dismiss previous Vale reviews
+          REVIEW_IDS=$(gh api "repos/${REPO}/pulls/${PR_NUMBER}/reviews" --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("Vale found"))) | .id] | .[]' 2>/dev/null || true)
+          for ID in $REVIEW_IDS; do
+            gh api "repos/${REPO}/pulls/${PR_NUMBER}/reviews/${ID}/dismissals" -f message="Superseded by new review" -f event="DISMISS" 2>/dev/null || true
+          done
+
+      - name: Post inline review
+        if: steps.inline.outputs.inline_count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          REPO=${{ github.repository }}
+          TOTAL=${{ steps.vale.outputs.total_issues }}
+
+          jq -n \
+            --arg body "**Vale found ${TOTAL} issue(s).** See inline comments below. Full summary in the PR comment." \
+            --argjson comments "$(cat /tmp/inline-comments.json)" \
+            '{"body": $body, "event": "COMMENT", "comments": $comments}' \
+            | gh api "repos/${REPO}/pulls/${PR_NUMBER}/reviews" --input - 2>&1
+
+      - name: Post summary comment
+        if: steps.vale.outputs.total_issues > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          REPO=${{ github.repository }}
+          gh pr comment "$PR_NUMBER" --repo "$REPO" --body-file /tmp/vale-comment.md

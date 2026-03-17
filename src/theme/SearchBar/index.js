@@ -73,7 +73,7 @@ function useNavigator({externalUrlRegex, selectedProductsRef}) {
     return navigator;
 }
 
-function useTransformSearchClient(selectedProductsRef, currentLocale) {
+function useTransformSearchClient(selectedProductsRef, currentLocale, typoToleranceRef) {
     const {
         siteMetadata: {docusaurusVersion},
     } = useDocusaurusContext();
@@ -83,14 +83,16 @@ function useTransformSearchClient(selectedProductsRef, currentLocale) {
 
             const originalSearch = searchClient.search.bind(searchClient);
 
-            // Override search to inject product filters at request time
+            // Override search to inject product filters and typo tolerance at request time
             // This keeps searchParameters prop stable, preventing query reset
             searchClient.search = function(searchMethodParams, requestOptions) {
                 const products = selectedProductsRef.current || [];
+                const typoTolerance = typoToleranceRef?.current ?? false;
 
                 // Build product filter (OR logic - any of selected products)
-                const productFilter = products.length > 0
-                    ? products.map(p => `product_name:${p}`)
+                const realProducts = products.filter(p => p !== '__all__' && p !== '__none__');
+                const productFilter = realProducts.length > 0
+                    ? realProducts.map(p => `product_name:${p}`)
                     : null;
 
                 // Language filter for internationalization
@@ -125,7 +127,8 @@ function useTransformSearchClient(selectedProductsRef, currentLocale) {
 
                             return {
                                 ...req,
-                                facetFilters: newFilters.length > 0 ? newFilters : undefined
+                                facetFilters: newFilters.length > 0 ? newFilters : undefined,
+                                typoTolerance,
                             };
                         })
                     };
@@ -244,6 +247,43 @@ function useSearchParameters({contextualSearch, productFacetFilters = [], ...pro
     ]);
 }
 
+function ToggleSwitch({checked, onChange}) {
+    return (
+        <button
+            type="button"
+            role="switch"
+            aria-checked={checked}
+            onClick={() => onChange(!checked)}
+            style={{
+                position: 'relative',
+                display: 'inline-flex',
+                alignItems: 'center',
+                width: '32px',
+                height: '18px',
+                borderRadius: '9px',
+                background: checked ? 'var(--docsearch-primary-color, #5468ff)' : 'var(--docsearch-muted-color)',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 0,
+                flexShrink: 0,
+                transition: 'background 0.2s ease',
+            }}
+        >
+            <span style={{
+                position: 'absolute',
+                top: '3px',
+                left: checked ? '17px' : '3px',
+                width: '12px',
+                height: '12px',
+                borderRadius: '50%',
+                background: 'white',
+                transition: 'left 0.2s ease',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
+            }} />
+        </button>
+    );
+}
+
 // Generate product options dynamically from PRODUCTS constant
 // Values MUST match Algolia facet values exactly
 const PRODUCT_OPTIONS = [
@@ -290,9 +330,10 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
         onChange(newSelection);
     };
 
-    const displayText = selectedValues.length === 0
+    const realSelected = selectedValues.filter(v => v !== '__all__' && v !== '__none__');
+    const displayText = selectedValues.length === 0 || selectedValues.includes('__all__')
         ? placeholder
-        : `${selectedValues.length} selected`;
+        : `${realSelected.length} selected`;
 
     return (
         <div className="DocSearch-MultiSelect" ref={dropdownRef} style={{position: 'relative'}}>
@@ -337,7 +378,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
                 >
                     {options.map((opt) => {
                         const isSelected = opt.value === '__all__'
-                            ? selectedValues.length === 0
+                            ? selectedValues.length === 0 || selectedValues.includes('__all__')
                             : selectedValues.includes(opt.value);
 
                         return (
@@ -378,7 +419,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
     );
 }
 
-function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, ...props}) {
+function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, typoToleranceRef, ...props}) {
     const {i18n: {currentLocale}} = useDocusaurusContext();
     // Use ref for navigator to prevent identity change when filters change
     const navigator = useNavigator({externalUrlRegex, selectedProductsRef});
@@ -386,7 +427,7 @@ function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, ...props
     // Product filters are injected at request time via transformSearchClient
     const searchParameters = useSearchParameters({...props, productFacetFilters: []});
     const transformItems = useTransformItems(props);
-    const transformSearchClient = useTransformSearchClient(selectedProductsRef, currentLocale);
+    const transformSearchClient = useTransformSearchClient(selectedProductsRef, currentLocale, typoToleranceRef);
     const searchContainer = useRef(null);
     const searchButtonRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -492,7 +533,7 @@ export default function SearchBar() {
     // Multi-select state for products
     const [selectedProducts, setSelectedProducts] = useState(() => {
         if (typeof window === 'undefined') return [];
-        const saved = localStorage.getItem('docs_product_filter');
+        const saved = sessionStorage.getItem('docs_product_filter');
         try {
             return saved ? JSON.parse(saved) : [];
         } catch {
@@ -507,10 +548,25 @@ export default function SearchBar() {
         selectedProductsRef.current = selectedProducts;
     }, [selectedProducts]);
 
-    // Sync selectedProducts to localStorage and dispatch custom event for same-tab sync
+    // Typo tolerance state — off by default, shared with SearchPage via sessionStorage + events
+    const [typoTolerance, setTypoTolerance] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        const saved = sessionStorage.getItem('docs_typo_tolerance');
+        try {
+            return saved ? JSON.parse(saved) : false;
+        } catch {
+            return false;
+        }
+    });
+    const typoToleranceRef = useRef(typoTolerance);
+    useEffect(() => {
+        typoToleranceRef.current = typoTolerance;
+    }, [typoTolerance]);
+
+    // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            localStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
             // Dispatch custom event for same-tab synchronization
             window.dispatchEvent(new CustomEvent('productFilterChange', {
                 detail: {products: selectedProducts}
@@ -531,14 +587,37 @@ export default function SearchBar() {
         return () => window.removeEventListener('productFilterChange', handleFilterChange);
     }, [selectedProducts]);
 
+    // Sync typoTolerance to sessionStorage and dispatch event for same-tab sync
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_typo_tolerance', JSON.stringify(typoTolerance));
+            window.dispatchEvent(new CustomEvent('typoToleranceChange', {
+                detail: {typoTolerance},
+            }));
+        }
+    }, [typoTolerance]);
+
+    // Listen for typo tolerance changes from SearchPage (same-tab sync)
+    useEffect(() => {
+        const handler = (e) => {
+            const newVal = e.detail.typoTolerance;
+            if (newVal !== typoTolerance) {
+                typoToleranceRef.current = newVal;
+                setTypoTolerance(newVal);
+            }
+        };
+        window.addEventListener('typoToleranceChange', handler);
+        return () => window.removeEventListener('typoToleranceChange', handler);
+    }, [typoTolerance]);
+
     // Generate facetFilters for products
     const productFacetFilters = useMemo(() => {
         const filters = [];
 
         // Add product filters (OR logic - any of the selected products)
-        if (selectedProducts.length > 0) {
-            const productFilters = selectedProducts.map(p => `product_name:${p}`);
-            filters.push(productFilters); // Array within array = OR logic
+        const realProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
+        if (realProducts.length > 0) {
+            filters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
         }
 
         return filters;
@@ -558,38 +637,50 @@ export default function SearchBar() {
         return () => clearInterval(interval);
     }, []);
 
-    // Helper to refresh search - preserve query and wait for user action
+    // Helper to refresh search results with current filters.
+    // DocSearch uses React-controlled inputs, so plain native input events don't trigger
+    // its onChange handler. We use React's native HTMLInputElement value setter to bypass
+    // React's change-tracking wrapper, then dispatch an input event so React processes it.
     const refreshSearch = useCallback(() => {
         const input =
             document.querySelector('.DocSearch-Input') ||
             document.querySelector('input[type="search"]');
 
-        if (input && input.value) {
-            searchQueryRef.current = input.value;
+        if (!input || !input.value) return;
 
-            // Try multiple approaches to trigger search
-            const query = input.value;
+        const query = input.value;
+        searchQueryRef.current = query;
 
-            // Approach 1: Simulate typing by adding/removing character
-            setTimeout(() => {
-                if (input) {
-                    input.value = query + ' ';
-                    input.dispatchEvent(new Event('input', {bubbles: true}));
+        // Grab the native setter before React wraps it
+        const nativeSetter = Object.getOwnPropertyDescriptor(
+            window.HTMLInputElement.prototype,
+            'value',
+        ).set;
 
-                    setTimeout(() => {
-                        input.value = query;
-                        input.dispatchEvent(new Event('input', {bubbles: true}));
-                        input.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
-                    }, 50);
-                }
-            }, 50);
-        }
+        // Simulate typing a trailing space and removing it.
+        // This causes DocSearch/Autocomplete to run a new search with the updated filters.
+        // Both events fire in the same JS task so DocSearch batches them — only the final
+        // value (query) triggers a visible search, preventing an intermediate result flash.
+        setTimeout(() => {
+            nativeSetter.call(input, query + ' ');
+            input.dispatchEvent(new Event('input', {bubbles: true}));
+
+            nativeSetter.call(input, query);
+            input.dispatchEvent(new Event('input', {bubbles: true}));
+        }, 50);
     }, []);
 
     const onChangeProducts = useCallback((newProducts) => {
+        selectedProductsRef.current = newProducts; // Sync ref immediately so search uses new filters
         setSelectedProducts(newProducts);
-        // localStorage and event dispatch handled by useEffect
-    }, []);
+        refreshSearch(); // Re-run current query with updated filters
+    }, [refreshSearch]);
+
+    const onChangeTypoTolerance = useCallback((newVal) => {
+        typoToleranceRef.current = newVal; // Sync ref immediately so search uses new setting
+        setTypoTolerance(newVal);
+        refreshSearch();
+    }, [refreshSearch]);
 
     // This is where we will portal the filters into the modal DOM.
     const [modalHeaderEl, setModalHeaderEl] = useState(null);
@@ -625,6 +716,7 @@ export default function SearchBar() {
                 {...siteConfig.themeConfig.algolia}
                 contextualSearch={contextualSearch}
                 selectedProductsRef={selectedProductsRef}
+                typoToleranceRef={typoToleranceRef}
                 onModalOpen={onModalOpen}
             />
 
@@ -646,6 +738,24 @@ export default function SearchBar() {
                             onChange={onChangeProducts}
                             placeholder="All products"
                         />
+                        <div
+                            title="When enabled, search results include near-matches for typos and spelling variations."
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 6,
+                                userSelect: 'none',
+                                whiteSpace: 'nowrap',
+                            }}
+                        >
+                            <ToggleSwitch
+                                checked={typoTolerance}
+                                onChange={onChangeTypoTolerance}
+                            />
+                            <span style={{fontSize: '13px', color: 'var(--docsearch-text-color)'}}>
+                                Typo Tolerance
+                            </span>
+                        </div>
                     </div>,
                     portalTarget,
                 )}
