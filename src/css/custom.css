@@ -392,6 +392,15 @@ html {
     align-items: center;
 }
 
+/* Fix .DocSearch-Title — the library sets line-height: 0.5em which causes
+   wrapped lines to overlap, and no word-break so long queries overflow horizontally. */
+.DocSearch-Title {
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
 /* Hide the "close the query" text label — keep only the × icon.
    !important is needed because DocSearch styles are dynamically imported
    after our CSS, so they would otherwise win the cascade. */
@@ -424,15 +433,7 @@ html {
         border-bottom: 1px solid var(--docsearch-subtle-color);
     }
 
-    /* Fix .DocSearch-Title — the library sets line-height: 0.5em which causes
-       wrapped lines to overlap, and there is no word-break so long query strings
-       overflow the viewport horizontally. */
-    .DocSearch-Title {
-        line-height: 1.4 !important;
-        white-space: normal !important;
-        word-break: break-word;
-        overflow-wrap: break-word;
-    }
+
 }
 
 /* Responsive improvements */
