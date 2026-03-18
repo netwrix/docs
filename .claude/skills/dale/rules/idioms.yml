@@ -1,0 +1,3 @@
+message: "Don't use idioms. Write what you mean more directly and literally."
+level: warning
+reason: "This rule should trigger when the user or agent uses an idiom or other culturally specific expression."
