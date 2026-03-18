@@ -9,7 +9,7 @@ sidebar_position: 30
 The previously released versions and the corresponding changelogs can be found in the following
 sections.
 
-- [Version 26.3.100.TODO](/docs/passwordsecure/26.3/introduction/versionhistory/version_26.3.100.TODO.md)
+- [Version 26.3.100.34058](/docs/passwordsecure/26.3/introduction/versionhistory/version_26.3.100.34058.md)
 
 - [Version 9.3.1.33994](/docs/passwordsecure/26.3/introduction/versionhistory/version_9.3.1.33994.md)
 
