@@ -277,7 +277,7 @@ jobs:
           show_full_output: true
           prompt: |
             /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
-          claude_args: '--allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(dale),Skill(doc-help)"'
+          claude_args: '--max-turns 50 --allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(dale),Skill(doc-help)"'
 
       - name: Resolve inline comments and dismiss old reviews
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
