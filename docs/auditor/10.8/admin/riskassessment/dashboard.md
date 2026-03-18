@@ -59,6 +59,10 @@ Also, for several metrics the Customize risk indicators command is available.
 | Servers with unauthorized antivirus software    | Edit the whitelist of permitted antivirus tools. Any other antivirus will be considered a risk factor.                                               |
 | Administrative group membership sprawl          | Edit the whitelist of permitted accounts that can be the members of local administrative groups. Any other account will be considered a risk factor. |
 
+**Note:** Special characters such as %, *, and ? are not interpreted as wildcards in risk indicator customization and are treated as literal characters. The only exception is the domain portion of
+domain\account entries in Administrative group membership sprawl, where % can be used to represent any domain. In all other cases (for example, account names, file names, operating system names, and antivirus names),
+values must be entered explicitly and are not matched using wildcard patterns.
+
 New settings will be applied/risk level thresholds will be refreshed after the next data collection
 session.
 
