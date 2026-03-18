@@ -6,6 +6,8 @@ sidebar_position: 10
 
 # Managing users
 
+User management in Netwrix Password Secure depends on whether the system operates independently or is connected to a directory service such as **Active Directory** or **Microsoft Entra ID**. When a directory service is integrated, users are managed in that directory and synchronized with Password Secure, and customers can choose between two security models: **Master Key Mode** (MKM) or **End-to-End Encryption** (E2EE). In MKM, the directory remains the authoritative source and users can sign in with their existing credentials (for example, their Entra ID or Active Directory account); however, because the encryption key must be available on the server, additional security measures — such as storing keys in a [**Hardware Security Module** (HSM)](docs/passwordsecure/26_3/configuration/servermanger/managingdatabases/databasesettings/hsm_connection) — should be considered. In contrast, the E2EE model ensures that encryption keys aren't accessible on the server, offering a higher level of security. If no directory service is connected, users are managed directly within Password Secure (via the organisational structures module), and only the E2EE model is available.
+
 ## How are users managed in Netwrix Password Secure?
 
 The way in which users are managed is highly dependent on whether Active Directory is connected or
@@ -79,8 +81,14 @@ Our sales team will be happy to answer any questions you may have about licensin
 Display data to which the user is authorized In order to display the data to which a user is
 authorized, you must right-click on the corresponding user in the organisational structure. In the
 context menu that opens, you will find the following options under **displaying data records**:
-
-Password -Documents -Forms -Rolls -Uses -Password Reset -System Tasks -Seal templates
+- Passwords
+- Documents
+- Forms
+- Roles
+- Users
+- Password Resets
+- System Tasks
+- Seal templates
 
 NOTE: All authorizations for a data record are taken into account, regardless of whether you are
 authorized by a role or the user.

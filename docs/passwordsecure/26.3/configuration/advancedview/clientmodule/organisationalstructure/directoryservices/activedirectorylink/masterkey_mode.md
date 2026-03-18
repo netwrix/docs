@@ -8,11 +8,7 @@ sidebar_position: 20
 
 ## Maximum convenience
 
-In contrast to [End-to-end encryption](/docs/passwordsecure/26.3/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/end-to-end_encryption.md), which places the main focus on
-security, Masterkey mode provides the maximum level of convenience. It not only imports users,
-organisational units and roles but also their links and affiliations. It can be synchronized to
-update the information and affiliations. **In this scenario, Active Directory is used as a leading
-system**.
+Master Key Mode (MKM) is designed to provide a high level of convenience by using a directory service such as **Active Directory** as the authoritative system, allowing not only users, organisational units, and roles to be imported but also maintaining their relationships and affiliations through regular synchronization. At the same time, MKM is a security-sensitive mode of operation, as the encryption key must be available on the Password Secure server. For this reason, access to the server should be strictly controlled, and additional safeguards — such as the use of a [**Hardware Security Module** (HSM)](docs/passwordsecure/26_3/configuration/servermanger/managingdatabases/databasesettings/hsm_connection) for protecting the master key — are strongly recommended to reduce risk.
 
 ## Relevant rights
 
