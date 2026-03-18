@@ -686,24 +686,18 @@ export default function SearchBar() {
     const [modalHeaderEl, setModalHeaderEl] = useState(null);
 
     const onModalOpen = useCallback(() => {
-        // Try to locate the header/searchbar area in the DocSearch modal.
-        // DocSearch v3 uses these classnames.
+        // Target .DocSearch-SearchBar so our controls are a sibling of .DocSearch-Form.
+        // This lets us move them below the search row on mobile via flex-wrap.
         const el =
             document.querySelector('.DocSearch-SearchBar') ||
-            document.querySelector('.DocSearch-Form') ||
             document.querySelector('.DocSearch-Modal');
 
         setModalHeaderEl(el || null);
     }, []);
 
-    // When modalHeaderEl exists, insert filters BEFORE the form input if possible.
-    // We target .DocSearch-Form when present, otherwise the container itself.
     const portalTarget = useMemo(() => {
         if (!modalHeaderEl) return null;
-        return (
-            modalHeaderEl.querySelector('.DocSearch-Form') ||
-            modalHeaderEl
-        );
+        return modalHeaderEl;
     }, [modalHeaderEl]);
 
     // Keep contextualSearch stable to prevent query reset
@@ -724,6 +718,7 @@ export default function SearchBar() {
                 createPortal(
                     // Wrapper to align with DocSearch input
                     <div
+                        className="search-custom-controls"
                         style={{
                             display: 'flex',
                             alignItems: 'center',

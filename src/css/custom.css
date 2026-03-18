@@ -382,6 +382,59 @@ html {
     position: relative;
 }
 
+/* Transfer the search-area visual chrome (background, bottom border, top radius)
+   from .DocSearch-Form to .DocSearch-SearchBar now that our custom controls are
+   siblings of the form rather than children of it. */
+.DocSearch-SearchBar {
+    background: var(--docsearch-searchbox-focus-background);
+    border-bottom: 1px solid var(--docsearch-subtle-color);
+    border-radius: 4px 4px 0 0;
+    align-items: center;
+}
+
+/* Hide the "close the query" text label — keep only the × icon.
+   !important is needed because DocSearch styles are dynamically imported
+   after our CSS, so they would otherwise win the cascade. */
+.DocSearch-Clear {
+    font-size: 0 !important;
+}
+.DocSearch-Clear span {
+    display: none;
+}
+
+/* Strip the duplicate chrome from the form itself. */
+.DocSearch-Form {
+    flex: 1 1 auto;
+    width: auto;
+    background: transparent;
+    border-block-end: none !important;
+    border-radius: 0;
+}
+
+/* On mobile, wrap the custom controls onto their own row below the search input. */
+@media (max-width: 768px) {
+    .DocSearch-SearchBar {
+        flex-wrap: wrap;
+    }
+
+    .search-custom-controls {
+        flex: 0 0 100%;
+        margin-right: 0 !important;
+        padding: 6px 16px 8px;
+        border-bottom: 1px solid var(--docsearch-subtle-color);
+    }
+
+    /* Fix .DocSearch-Title — the library sets line-height: 0.5em which causes
+       wrapped lines to overlap, and there is no word-break so long query strings
+       overflow the viewport horizontally. */
+    .DocSearch-Title {
+        line-height: 1.4 !important;
+        white-space: normal !important;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
 /* Responsive improvements */
 @media (max-width: 768px) {
     .DocSearch-Button-Keys {
