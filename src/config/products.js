@@ -523,12 +523,13 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: 'current',
-        label: 'current',
+        version: '2.22',
+        label: '2.22',
         isLatest: true,
-        sidebarFile: './sidebars/privilegesecurediscovery.js',
+        sidebarFile: './sidebars/privilegesecurediscovery/2.22.js',
       },
     ],
+    defaultVersion: '2.22',
   },
   {
     id: 'recoveryforactivedirectory',
