@@ -144,7 +144,7 @@ jobs:
             - REPO: ${{ github.repository }}
             - ISSUE_NUMBER: ${{ github.event.issue.number }}
             - ISSUE_TITLE: ${{ github.event.issue.title }}
-          claude_args: '--allowedTools "Bash(gh:*),Bash(git:*),Bash(vale:*),Read,Write,Edit,Glob,Grep,Skill(content-fix),Skill(dale)"'
+          claude_args: '--max-turns 50 --allowedTools "Bash(gh:*),Bash(git:*),Bash(vale:*),Read,Write,Edit,Glob,Grep,Skill(content-fix),Skill(dale)"'
 
   content-fix-followup:
     needs: process-issue
@@ -199,4 +199,4 @@ jobs:
 
             This is a follow-up invocation. A user replied with @claude on a content_fix issue.
             Read the full issue body AND all comments to understand the complete context.
-          claude_args: '--allowedTools "Bash(gh:*),Bash(git:*),Bash(vale:*),Read,Write,Edit,Glob,Grep,Skill(content-fix),Skill(dale)"'
+          claude_args: '--max-turns 50 --allowedTools "Bash(gh:*),Bash(git:*),Bash(vale:*),Read,Write,Edit,Glob,Grep,Skill(content-fix),Skill(dale)"'
