@@ -102,9 +102,7 @@ jobs:
     needs: process-issue
     if: >-
       github.event_name == 'issues' &&
-      github.event.action == 'opened' &&
-      contains(join(github.event.issue.labels.*.name, ','), 'documentation') &&
-      contains(join(github.event.issue.labels.*.name, ','), 'fix')
+      github.event.action == 'opened'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -113,22 +111,25 @@ jobs:
       id-token: write
 
     steps:
-      - name: Check if issue is still open
-        id: check-state
+      - name: Check issue state and labels
+        id: check-issue
         run: |
-          STATE=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json state --jq .state)
+          ISSUE_DATA=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json state,labels)
+          STATE=$(echo "$ISSUE_DATA" | jq -r '.state')
+          HAS_CONTENT_FIX=$(echo "$ISSUE_DATA" | jq '[.labels[].name] | any(. == "content:fix")')
           echo "issue_state=$STATE" >> "$GITHUB_OUTPUT"
+          echo "has_content_fix=$HAS_CONTENT_FIX" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout repository
-        if: steps.check-state.outputs.issue_state == 'OPEN'
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Run content-fix skill
-        if: steps.check-state.outputs.issue_state == 'OPEN'
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
         uses: anthropics/claude-code-action@v1
         env:
           REPO: ${{ github.repository }}
@@ -151,9 +152,7 @@ jobs:
       github.event_name == 'issue_comment' &&
       !github.event.issue.pull_request &&
       contains(github.event.comment.body, '@claude') &&
-      !startsWith(github.event.comment.user.login, 'github-actions') &&
-      contains(join(github.event.issue.labels.*.name, ','), 'documentation') &&
-      contains(join(github.event.issue.labels.*.name, ','), 'fix')
+      !startsWith(github.event.comment.user.login, 'github-actions')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -162,22 +161,25 @@ jobs:
       id-token: write
 
     steps:
-      - name: Check if issue is still open
-        id: check-state
+      - name: Check issue state and labels
+        id: check-issue
         run: |
-          STATE=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json state --jq .state)
+          ISSUE_DATA=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json state,labels)
+          STATE=$(echo "$ISSUE_DATA" | jq -r '.state')
+          HAS_CONTENT_FIX=$(echo "$ISSUE_DATA" | jq '[.labels[].name] | any(. == "content:fix")')
           echo "issue_state=$STATE" >> "$GITHUB_OUTPUT"
+          echo "has_content_fix=$HAS_CONTENT_FIX" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout repository
-        if: steps.check-state.outputs.issue_state == 'OPEN'
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Run content-fix skill
-        if: steps.check-state.outputs.issue_state == 'OPEN'
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
         uses: anthropics/claude-code-action@v1
         env:
           REPO: ${{ github.repository }}
