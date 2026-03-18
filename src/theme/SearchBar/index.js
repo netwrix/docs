@@ -390,7 +390,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
                                     padding: '8px 12px',
                                     cursor: 'pointer',
                                     fontSize: '14px',
-                                    background: isSelected ? 'var(--docsearch-hit-active-color)' : 'transparent',
+                                    background: 'transparent',
                                 }}
                                 onMouseEnter={(e) => {
                                     if (!isSelected) {
