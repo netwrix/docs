@@ -82,7 +82,7 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 Skills (`.claude/skills/`) are invoked with `/skill-name`. Agents (`.claude/agents/`) are autonomous workers launched via the Agent tool.
 
 When a user asks for help with documentation, always use the appropriate tool:
-- **`/doc-help` skill** — Interactive tasks: reviewing content, suggesting improvements, discussing structure or flow, brainstorming, explaining style rules, or any back-and-forth conversation about writing.
+- **`/doc-help` skill** — Interactive tasks: reviewing content, suggesting improvements, discussing structure or flow, brainstorming, explaining style rules, incorporating external documents (e.g., `.docx` files) into existing markdown files, or any back-and-forth conversation about writing.
 - **`tech-writer` agent** — Autonomous end-to-end tasks: drafting new documents, rewriting files, fixing all Vale errors, or editing for style and clarity.
 
 | Component | Type | Purpose |
