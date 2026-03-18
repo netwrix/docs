@@ -1,0 +1,3 @@
+message: "Avoid misplaced modifiers. Move the modifier, or descriptive phrase, so that it accurately describes the right thing."
+level: warning
+reason: "This rule should trigger when the documentation has a misplaced or dangling modifier. This includes participial phrases that attach to the wrong subject (e.g., '[participle phrase], [wrong subject] [verb]') and modifying clauses placed too far from the word they describe (e.g., '[noun A] [preposition] [noun B] [modifier that actually describes noun A]')."
