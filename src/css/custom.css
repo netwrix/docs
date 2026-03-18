@@ -407,37 +407,77 @@ html {
 .DocSearch-Clear {
     font-size: 0 !important;
 }
-.DocSearch-Clear span {
-    display: none;
-}
 
-/* Strip the duplicate chrome from the form itself. */
+/* Strip the duplicate chrome from the form itself.
+   width: auto !important overrides DocSearch's dynamically-loaded width: 100%,
+   which would otherwise force the form to consume the entire first flex row and
+   push the × button onto its own line on mobile. */
 .DocSearch-Form {
     flex: 1 1 auto;
-    width: auto;
+    width: auto !important;
     background: transparent;
     border-block-end: none !important;
     border-radius: 0;
 }
 
-/* On mobile, wrap the custom controls onto their own row below the search input. */
+/* Hide the DocSearch-owned close button — we render our own in the portal so
+   we never mutate React-owned DOM nodes (which causes reconciliation crashes). */
+.DocSearch-Close {
+    display: none !important;
+}
+
+/* Custom controls (Typo Tolerance toggle + product filter) portaled into the search bar. */
+.search-custom-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 8px;
+}
+
+/* Our replacement close button rendered inside the portal. */
+.search-modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--docsearch-muted-color);
+    padding: 0;
+    margin: 0 16px 0 8px;
+}
+.search-modal-close:hover {
+    color: var(--docsearch-text-color);
+}
+[data-theme='dark'] .search-modal-close {
+    color: white;
+}
+
+/* On mobile, wrap the custom controls onto their own row below the search input,
+   but keep the × button on the first row (upper-right corner). */
 @media (max-width: 768px) {
     .DocSearch-SearchBar {
         flex-wrap: wrap;
     }
 
+    .DocSearch-Form {
+        order: 1;
+    }
+
+    .search-modal-close {
+        order: 2;
+        margin: 0 16px 0 8px;
+    }
+
     .search-custom-controls {
+        order: 3;
         flex: 0 0 100%;
-        margin-right: 0 !important;
+        margin-right: 0;
         padding: 6px 16px 8px;
         border-bottom: 1px solid var(--docsearch-subtle-color);
     }
 
-
-}
-
-/* Responsive improvements */
-@media (max-width: 768px) {
     .DocSearch-Button-Keys {
         display: none;
     }

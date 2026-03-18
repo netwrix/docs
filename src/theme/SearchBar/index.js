@@ -441,20 +441,20 @@ function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, typoTole
         }
     }, []);
 
-    const openModal = useCallback(() => {
-        prepareSearchContainer();
-        importDocSearchModalIfNeeded().then(() => {
-            setIsOpen(true);
-            // Let React render the modal, then caller can locate DOM nodes
-            setTimeout(() => onModalOpen?.(), 0);
-        });
-    }, [prepareSearchContainer, onModalOpen]);
-
     const closeModal = useCallback(() => {
         setIsOpen(false);
         searchButtonRef.current?.focus();
         setInitialQuery(undefined);
     }, []);
+
+    const openModal = useCallback(() => {
+        prepareSearchContainer();
+        importDocSearchModalIfNeeded().then(() => {
+            setIsOpen(true);
+            // Let React render the modal, then caller can locate DOM nodes
+            setTimeout(() => onModalOpen?.(closeModal), 0);
+        });
+    }, [prepareSearchContainer, onModalOpen, closeModal]);
 
     const handleInput = useCallback(
         (event) => {
@@ -684,21 +684,19 @@ export default function SearchBar() {
 
     // This is where we will portal the filters into the modal DOM.
     const [modalHeaderEl, setModalHeaderEl] = useState(null);
+    // Holds the closeModal function passed up from the inner DocSearch component.
+    const closeModalRef = useRef(null);
 
-    const onModalOpen = useCallback(() => {
+    const onModalOpen = useCallback((closeModal) => {
         // Target .DocSearch-SearchBar so our controls are a sibling of .DocSearch-Form.
         // This lets us move them below the search row on mobile via flex-wrap.
         const el =
             document.querySelector('.DocSearch-SearchBar') ||
             document.querySelector('.DocSearch-Modal');
 
+        closeModalRef.current = closeModal ?? null;
         setModalHeaderEl(el || null);
     }, []);
-
-    const portalTarget = useMemo(() => {
-        if (!modalHeaderEl) return null;
-        return modalHeaderEl;
-    }, [modalHeaderEl]);
 
     // Keep contextualSearch stable to prevent query reset
     // Product filters are handled via transformSearchClient instead
@@ -714,45 +712,52 @@ export default function SearchBar() {
                 onModalOpen={onModalOpen}
             />
 
-            {portalTarget &&
+            {modalHeaderEl &&
                 createPortal(
-                    // Wrapper to align with DocSearch input
-                    <div
-                        className="search-custom-controls"
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 8,
-                            marginRight: 8,
-                        }}
-                    >
-                        <MultiSelectDropdown
-                            label="Products"
-                            options={PRODUCT_OPTIONS}
-                            selectedValues={selectedProducts}
-                            onChange={onChangeProducts}
-                            placeholder="All products"
-                        />
-                        <div
-                            title="When enabled, search results include near-matches for typos and spelling variations."
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: 6,
-                                userSelect: 'none',
-                                whiteSpace: 'nowrap',
-                            }}
-                        >
-                            <ToggleSwitch
-                                checked={typoTolerance}
-                                onChange={onChangeTypoTolerance}
+                    <>
+                        {/* Custom controls: Typo Tolerance + product filter */}
+                        <div className="search-custom-controls">
+                            <div
+                                title="When enabled, search results include near-matches for typos and spelling variations."
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: 6,
+                                    userSelect: 'none',
+                                    whiteSpace: 'nowrap',
+                                }}
+                            >
+                                <ToggleSwitch
+                                    checked={typoTolerance}
+                                    onChange={onChangeTypoTolerance}
+                                />
+                                <span style={{fontSize: '13px', color: 'var(--docsearch-text-color)'}}>
+                                    Typo Tolerance
+                                </span>
+                            </div>
+                            <MultiSelectDropdown
+                                label="Products"
+                                options={PRODUCT_OPTIONS}
+                                selectedValues={selectedProducts}
+                                onChange={onChangeProducts}
+                                placeholder="All products"
                             />
-                            <span style={{fontSize: '13px', color: 'var(--docsearch-text-color)'}}>
-                                Typo Tolerance
-                            </span>
                         </div>
-                    </div>,
-                    portalTarget,
+                        {/* Our own close button — replaces the DocSearch-Close button
+                            (which is hidden via CSS) so we avoid mutating React-owned
+                            DOM nodes, which causes reconciliation errors. */}
+                        <button
+                            type="button"
+                            className="search-modal-close"
+                            aria-label="Close"
+                            onClick={() => closeModalRef.current?.()}
+                        >
+                            <svg width="10" height="10" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill="currentColor" d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/>
+                            </svg>
+                        </button>
+                    </>,
+                    modalHeaderEl,
                 )}
         </>
     );
