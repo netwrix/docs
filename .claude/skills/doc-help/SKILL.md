@@ -1,6 +1,6 @@
 ---
 name: doc-help
-description: "Interactive writing assistant for Netwrix documentation. Use when a writer wants hands-on, conversational help: brainstorming structure, drafting a section, editing existing content, or understanding a style or Vale rule. For fully autonomous tasks (write this entire doc, fix all Vale errors end-to-end), use the tech-writer agent instead."
+description: "Interactive writing assistant for Netwrix documentation. Use when a writer wants hands-on, conversational help: brainstorming structure, drafting a section, editing existing content, incorporating external documents (e.g., .docx files) into existing markdown files, or understanding a style or Vale rule. For fully autonomous tasks (write this entire doc, fix all Vale errors end-to-end), use the tech-writer agent instead."
 argument-hint: "[topic, file path, content to edit, or question]"
 ---
 
@@ -14,6 +14,7 @@ Read `docs/CLAUDE.md` before starting any session. It contains the Netwrix style
 
 - User invokes `/doc-help` with or without arguments
 - User asks for help writing, editing, or reviewing Netwrix documentation
+- User asks to incorporate, merge, or integrate content from an external document (e.g., `.docx`) into an existing markdown file
 - User has a question about a style rule, Vale error, or Netwrix writing convention
 
 ## Stage 1: Intake
