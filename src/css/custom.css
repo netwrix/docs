@@ -62,6 +62,10 @@
     --ifm-color-success: #34C263;
     --ifm-color-success-dark: #27914A;
     --ifm-button-background-color: #5851DB;
+    /* Infima defaults this to `transparent` (relying on the browser's white
+       canvas).  An explicit opaque value is needed so that sticky elements
+       like search-page controls can hide content scrolling behind them. */
+    --ifm-background-color: #fff;
 }
 
 .table-of-contents {
