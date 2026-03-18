@@ -97,3 +97,104 @@ jobs:
             Note: The skill should preserve template-assigned labels and add complementary labels.
             Issue body may have been modified by previous steps.
           claude_args: '--allowedTools "Bash(gh:*),Skill(assign-label)"'
+
+  content-fix:
+    needs: process-issue
+    if: >-
+      github.event_name == 'issues' &&
+      github.event.action == 'opened' &&
+      contains(join(github.event.issue.labels.*.name, ','), 'documentation') &&
+      contains(join(github.event.issue.labels.*.name, ','), 'fix')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+
+    steps:
+      - name: Check if issue is still open
+        id: check-state
+        run: |
+          STATE=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json state --jq .state)
+          echo "issue_state=$STATE" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout repository
+        if: steps.check-state.outputs.issue_state == 'OPEN'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run content-fix skill
+        if: steps.check-state.outputs.issue_state == 'OPEN'
+        uses: anthropics/claude-code-action@v1
+        env:
+          REPO: ${{ github.repository }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            /content-fix ${{ github.event.issue.number }}
+
+            Context:
+            - REPO: ${{ github.repository }}
+            - ISSUE_NUMBER: ${{ github.event.issue.number }}
+            - ISSUE_TITLE: ${{ github.event.issue.title }}
+          claude_args: '--allowedTools "Bash(gh:*),Bash(git:*),Bash(vale:*),Read,Write,Edit,Glob,Grep,Skill(content-fix),Skill(dale)"'
+
+  content-fix-followup:
+    needs: process-issue
+    if: >-
+      github.event_name == 'issue_comment' &&
+      !github.event.issue.pull_request &&
+      contains(github.event.comment.body, '@claude') &&
+      !startsWith(github.event.comment.user.login, 'github-actions') &&
+      contains(join(github.event.issue.labels.*.name, ','), 'documentation') &&
+      contains(join(github.event.issue.labels.*.name, ','), 'fix')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+
+    steps:
+      - name: Check if issue is still open
+        id: check-state
+        run: |
+          STATE=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json state --jq .state)
+          echo "issue_state=$STATE" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout repository
+        if: steps.check-state.outputs.issue_state == 'OPEN'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run content-fix skill
+        if: steps.check-state.outputs.issue_state == 'OPEN'
+        uses: anthropics/claude-code-action@v1
+        env:
+          REPO: ${{ github.repository }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            /content-fix ${{ github.event.issue.number }}
+
+            Context:
+            - REPO: ${{ github.repository }}
+            - ISSUE_NUMBER: ${{ github.event.issue.number }}
+            - ISSUE_TITLE: ${{ github.event.issue.title }}
+            - TRIGGERING_COMMENT: $COMMENT_BODY
+
+            This is a follow-up invocation. A user replied with @claude on a content_fix issue.
+            Read the full issue body AND all comments to understand the complete context.
+          claude_args: '--allowedTools "Bash(gh:*),Bash(git:*),Bash(vale:*),Read,Write,Edit,Glob,Grep,Skill(content-fix),Skill(dale)"'
