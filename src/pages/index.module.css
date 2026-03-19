@@ -234,6 +234,10 @@
   background: var(--ifm-background-color);
 }
 
+[data-theme='dark'] .stats {
+  background: linear-gradient(135deg, #003c6c 0%, #005a9e 100%);
+}
+
 /* Responsive */
 @media screen and (max-width: 996px) {
   .heroBanner {
