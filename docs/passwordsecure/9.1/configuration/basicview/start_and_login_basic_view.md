@@ -26,7 +26,7 @@ There are 2 possibilities here:
 
 1. username like the local user (e.g. administrator)
 
-2. domain and username (e.g. nps\administrator)
+2. domain and username (e.g. npws\administrator)
 
 ![image4](/images/passwordsecure/9.1/configuration/basic_view/start_and_login/image4.webp)
 
