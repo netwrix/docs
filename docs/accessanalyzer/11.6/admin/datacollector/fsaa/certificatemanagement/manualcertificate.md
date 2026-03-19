@@ -23,22 +23,33 @@ the Proxy host. In the provided example commands:
   console are placed in the
   `%SAInstallDir%\PrivateAssemblies\FILESYSTEMACCESS\Applet\My Certificates` directory. This folder
   is created by the tool if it does not already exist.
-- When operating on the proxy host, files are placed into the root of the **FSAA** folder
+- When operating on the proxy host, files are placed into the root of the **FSAA** folder
 
 :::tip
 Remember, all commands in the `FSAACertificateManager.exe` tool are case-sensitive.
 :::
 
+| Steps | Server |
+| ----- | ------ |
+| 1–5 | Enterprise Auditor Console |
+| 6 | Console – copy files to Proxy |
+| 7–8 | Proxy Host |
+| 9 | Enterprise Auditor Console |
+| 10 | Proxy Host |
+| 11 | Repeat steps 6–10 for each proxy |
+| 12 | Both – delete files from both locations |
 
-**Step 1 –** Create a Certificate Authority (CA). The CA is a self signed certificate that will be
-used to sign the client and server certificates. On the Enterprise Auditor console, run the
+<span class="server-badge server-console">Enterprise Auditor Console</span>
+
+**Step 1 –** Create a Certificate Authority (CA). The CA is a self signed certificate that will be
+used to sign the client and server certificates. On the Enterprise Auditor console, run the
 following command:
 
 ```
 .\FSAACertificateManager.exe -createCertificate -subjectDN CN=FSAA CA NEAConsole.my.domain.com -purpose CertificateAuthority -friendlyName FSAA_CA -outputPath ".\My Certificates" -name MyFSAACA
 ```
 
-- Replace the Common Name (CN) in this example command (`FSAA CA NEAConsole.my.domain.com`) with a
+- Replace the Common Name (CN) in this example command (`FSAA CA NEAConsole.my.domain.com`) with a
   unique and descriptive name
 - The output file is stored at the specified output path `.\My Certificates`
 
@@ -47,6 +58,8 @@ The following message is returned when the command completes successfully:
 ```
 Successfully wrote certificate to .\My Certificates\MyFSAACA.pfx
 ```
+
+<span class="server-badge server-console">Enterprise Auditor Console</span>
 
 **Step 2 –** Create a client certificate using the CA from the previous step. On the Enterprise
 Auditor console, run the following command:
@@ -67,7 +80,9 @@ The following message is returned when the command completes successfully:
 Successfully wrote certificate to .\My Certificates\MyFSAAClientCert.pfx
 ```
 
-**Step 3 –** Store the CA in an FSAA managed certificate store. As the user that runs the Enterprise
+<span class="server-badge server-console">Enterprise Auditor Console</span>
+
+**Step 3 –** Store the CA in an FSAA managed certificate store. As the user that runs the Enterprise
 Auditor console, run the following command on the Enterprise Auditor console:
 
 ```
@@ -79,6 +94,8 @@ The following message is returned when the command completes successfully:
 ```
 Successfully added FSAA_CA to CertificateAuthority
 ```
+
+<span class="server-badge server-console">Enterprise Auditor Console</span>
 
 **Step 4 –** Store the client certificate in an FSAA managed certificates store. As the user that
 runs the Enterprise Auditor console, run the following command on the Enterprise Auditor console:
@@ -93,11 +110,13 @@ The following message is returned when the command completes successfully:
 Successfully added FSAA_Client_Auth to Client
 ```
 
+<span class="server-badge server-console">Enterprise Auditor Console</span>
+
 **Step 5 –** Convert the CA from a PFX file to a CER file. On the Enterprise Auditor console, run
 the following command:
 
 :::note
-This conversion to a CER file is necessary so that the private key of the CA is not
+This conversion to a CER file is necessary so that the private key of the CA is not
 shared.
 :::
 
@@ -112,7 +131,9 @@ The following message is returned when the command completes successfully:
 Successfully wrote CER certificate to .\My Certificates\MyFSAACA.cer
 ```
 
-**Step 6 –** Copy `FSAACertficateManager.exe` and the CA CER file (`.\My Certificates\MyFSAACA.cer`)
+<span class="server-badge server-both">Console – copy files to Proxy</span>
+
+**Step 6 –** Copy `FSAACertficateManager.exe` and the CA CER file (`.\My Certificates\MyFSAACA.cer`)
 to the proxy host that will be running `FSAAAppletServer.exe`. These files must be copied to the
 same directory.
 
@@ -121,15 +142,17 @@ These copied files will be deleted from the destination directory later in Step 
 :::
 
 
+<span class="server-badge server-proxy">Proxy Host</span>
+
 **Step 7 –** Generate the server certificate signing request and key on the Proxy host. On the proxy
-host, run the following command out of the FSAA folder where the `FSAACertificateManager.exe` was
+host, run the following command out of the FSAA folder where the `FSAACertificateManager.exe` was
 copied to:
 
 ```
 .\FSAACertificateManager.exe -createCertificateSigningRequest -subjectDN CN=proxy01.my.domain.com -subjectAlternativeNames Proxy01 -outputPath . -name Proxy01
 ```
 
-- Replace the CN (`proxy01.my.domain.com`) with the FQDN of the proxy host
+- Replace the CN (`proxy01.my.domain.com`) with the FQDN of the proxy host
 - Replace the alternate subject name (`proxy01`) with the short name for the proxy host
 - The generated certificate signing request and key are stored in the same directory as
   `FSAACertificateManager.exe` on the proxy host
@@ -140,6 +163,8 @@ The following message is returned when the command completes successfully:
 Successfully wrote certificate signing request to .\Proxy01.csr
 Successfully wrote certificate key to .\Proxy01.key
 ```
+
+<span class="server-badge server-proxy">Proxy Host</span>
 
 **Step 8 –** Store the CA on the proxy host in an FSAA managed certificate store. As the user that
 runs the proxy scanner (`FSAAAppletServer.exe`), run the following command on the proxy host:
@@ -154,9 +179,11 @@ The following message is returned when the command completes successfully:
 Successfully added FSAA_CA to CertificateAuthority
 ```
 
+<span class="server-badge server-console">Enterprise Auditor Console</span>
+
 **Step 9 –** Complete the server certificate signing request on the Enterprise Auditor console. Copy
-the CSR file from the proxy host to the **My Certificates** directory on the Enterprise Auditor
-console (where the original CA PFX file is located), then run the following command on the
+the CSR file from the proxy host to the **My Certificates** directory on the Enterprise Auditor
+console (where the original CA PFX file is located), then run the following command on the
 Enterprise Auditor console:
 
 ```
@@ -168,6 +195,8 @@ The following message is returned when the command completes successfully:
 ```
 Successfully completed certificate signing request to .\My Certificates\Proxy01.cer
 ```
+
+<span class="server-badge server-proxy">Proxy Host</span>
 
 **Step 10 –** Store the server certificate on the proxy host in an FSAA managed certificate store.
 Copy the Proxy CER file back to the proxy host from the Enterprise Auditor console. Then, as the
@@ -186,13 +215,15 @@ Successfully added FSAA_Server_Auth to Server
 
 **Step 11 –** Repeat Steps 6-10 for each proxy host.
 
-**Step 12 –** Delete all the PFX, CER, and Key files that were generated or copied in the above
+<span class="server-badge server-both">Both – delete from both locations</span>
+
+**Step 12 –** Delete all the PFX, CER, and Key files that were generated or copied in the above
 steps from the output locations.
 
 All of the required FSAA certificates have been stored in the FSAA managed certificate stores. The
 FSAA queries need to be configured to use the **Manual** certificate exchange option. This option
 can be found under Applet Settings in the FSAA Data Collector Wizard. See the
-[FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings.md)
+[FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings.md)
 topic for additional information.
 
 For additional information on how to use the `FSAACertificateManager.exe` tool, run the

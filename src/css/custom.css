@@ -412,3 +412,20 @@ html {
 .DocSearch-Dropdown::-webkit-scrollbar-thumb:hover {
     background: var(--docsearch-primary-color);
 }
+
+/* Server indicator badges (FSAA manual certificate page) */
+.server-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.server-console { background-color: #D6EAF8; }
+.server-proxy   { background-color: #FFF9C4; }
+.server-both    { background-color: #F2F2F2; }
+
+[data-theme='dark'] .server-console { background-color: #1b3a5c; color: #cce0f5; }
+[data-theme='dark'] .server-proxy   { background-color: #3d3500; color: #f5eeaa; }
+[data-theme='dark'] .server-both    { background-color: #2d2d2d; color: #cccccc; }
