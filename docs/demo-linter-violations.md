@@ -1,6 +1,6 @@
-# How to Setup Your First Scan:
+# How to Set Up Your First Scan
 
-Once you have installed the product, please follow the steps below to configure your first scan. We are going to walk you through the entire process. I think you will find it is not hard at all. In order to get started, you will need to login to the console and make sure your credentials are configured.
+After installing the product, follow the steps below to configure your first scan. To get started, log in to the console and ensure your credentials are configured.
 
 ## Getting Started
 
