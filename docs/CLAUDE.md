@@ -70,7 +70,7 @@ Vale enforces 30 Netwrix-specific rules in `.vale/styles/Netwrix/` covering word
 vale <file>
 ```
 
-Vale enforces 30 Netwrix-specific rules in `.vale/styles/Netwrix/` covering word choice, punctuation, formatting, and common writing issues. Two rules require extra care:
+Two rules require extra care:
 
 - **`NoteThat`** — Replace "Note that..." or "Please note..." with an admonition block:
   ```md
