@@ -28,11 +28,11 @@ This documentation site serves all Netwrix product documentation.
 - **Node.js 22+**
 - **npm**
 - **Git**
-- **Vale** (style linter — required for pushing documentation changes)
+- **Vale** (style linter — optional for local use; issues are auto-fixed on PRs)
 
 ### Install Vale
 
-[Vale](https://vale.sh/) is a command-line linter for prose. A linter checks your writing against a set of style rules — like a spell checker, but for grammar, word choice, and tone. Vale is required to push changes to documentation files. The pre-push hook runs Vale automatically and blocks pushes that have linting errors.
+[Vale](https://vale.sh/) is a command-line linter for prose. A linter checks your writing against a set of style rules — like a spell checker, but for grammar, word choice, and tone. Vale issues are auto-fixed on PRs, but you can install it locally to preview issues before pushing.
 
 **macOS:**
 ```bash
@@ -65,7 +65,7 @@ vale --version
 git clone https://github.com/netwrix/docs.git
 cd docs
 
-# Install dependencies (also sets up the pre-push hook via Husky)
+# Install dependencies
 npm install
 
 # Start development server
@@ -74,7 +74,7 @@ npm run start
 
 ### Run Vale Locally
 
-Run Vale on a file before pushing to catch issues early:
+Vale issues are auto-fixed on PRs, but you can run Vale locally to preview:
 
 ```bash
 vale docs/path/to/file.md
@@ -97,8 +97,7 @@ git diff --name-only dev | grep '^docs/.*\.md$' | xargs vale
 │   │   ├── doc-pr-fix/          # Autonomous PR fixer (@claude)
 │   │   └── doc-help/            # Interactive writing assistant
 │   └── agents/                  # Autonomous worker agents
-├── .husky/
-│   └── pre-push                 # Vale pre-push hook (blocks on lint errors)
+├── .husky/                        # Git hooks (managed by Husky)
 ├── .vale/
 │   └── styles/
 │       └── Netwrix/             # 30 Vale linting rules (YAML)
