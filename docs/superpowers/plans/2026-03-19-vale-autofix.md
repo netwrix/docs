@@ -210,10 +210,8 @@ for FILE in $FILES; do
       esac
 
       if [ "$NEW_CONTENT" != "$LINE_CONTENT" ]; then
-        # Escape sed special characters in both old and new content for safe replacement
-        ESCAPED_OLD=$(printf '%s\n' "$LINE_CONTENT" | sed 's/[&/\]/\\&/g')
-        ESCAPED_NEW=$(printf '%s\n' "$NEW_CONTENT" | sed 's/[&/\]/\\&/g')
-        sed -i "${LINE_NUM}s|.*|${ESCAPED_NEW}|" "$FILE"
+        # Use awk for safe line replacement (avoids sed delimiter issues with | in markdown tables)
+        awk -v n="$LINE_NUM" -v new="$NEW_CONTENT" 'NR==n{print new;next}1' "$FILE" > "$FILE.tmp" && mv "$FILE.tmp" "$FILE"
         FIXED=$((FIXED + 1))
       fi
     done
@@ -1029,7 +1027,7 @@ bash -n scripts/vale-autofix.sh             # Syntax check
 ```bash
 echo '[]' > /tmp/empty-violations.json
 ./scripts/vale-autofix.sh /tmp/empty-violations.json
-# Should output: {"total": 0, "by_rule": {}}
+# Should output: {"total": 0, "by_category": {}}
 ```
 
 - [ ] **Step 5: Spot-check updated files for consistency**
