@@ -109,6 +109,8 @@ Jobs:
 - Uses a PAT or GitHub App token (not `GITHUB_TOKEN`) so pushes trigger other workflows
 - Bot identity commits with messages like `fix(vale): auto-fix substitutions` and `fix(vale): auto-fix rewrites`
 - Replaces any previous Vale Auto-Fix comment on the same PR
+- **Phase 2 is best-effort** — if the Claude Code action fails (timeout, API error), the workflow still posts a summary of Phase 1 fixes and does not fail the job
+- **Concurrency:** Uses a `concurrency` group keyed on the PR number with `cancel-in-progress: true` so rapid pushes don't cause racing workflow runs
 
 ### Summary Comment Format
 
