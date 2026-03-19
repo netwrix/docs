@@ -16,15 +16,14 @@ TOTAL_FIXES=0
 declare -A FIX_COUNTS
 
 # Get unique files from violations
-FILES=$(jq -r '[.[].path] | unique | .[]' "$VIOLATIONS_FILE")
+mapfile -t FILES_ARRAY < <(jq -r '[.[].path] | unique | .[]' "$VIOLATIONS_FILE")
 
-for FILE in $FILES; do
+for FILE in "${FILES_ARRAY[@]}"; do
+  unset CODE_BLOCK_LINES
+  declare -A CODE_BLOCK_LINES
   if [ ! -f "$FILE" ]; then
     continue
   fi
-
-  # Build a set of line numbers inside fenced code blocks (``` or ~~~)
-  declare -A CODE_BLOCK_LINES
   IN_FENCE=0
   LINENUM=0
   while IFS= read -r fline || [ -n "$fline" ]; do
@@ -61,7 +60,7 @@ for FILE in $FILES; do
 
       case "$RULE" in
         Netwrix.Checkbox)
-          NEW_CONTENT=$(echo "$LINE_CONTENT" | sed -E 's/[Cc]heck [Bb]ox/checkbox/g')
+          NEW_CONTENT=$(echo "$LINE_CONTENT" | sed -E 's/\b[Cc]heck [Bb]ox\b/checkbox/g')
           ;;
         Netwrix.ClickOn)
           NEW_CONTENT=$(echo "$LINE_CONTENT" | sed -E 's/\b([Dd]ouble-[Cc]lick|[Rr]ight-[Cc]lick|[Ll]eft-[Cc]lick|[Ll]eft [Cc]lick|[Cc]lick) [Oo]n\b/\1/g')
@@ -140,7 +139,12 @@ for FILE in $FILES; do
             | sed -E 's/\betc\./and so on/g')
           ;;
         Netwrix.Please)
-          NEW_CONTENT=$(echo "$LINE_CONTENT" | sed -E 's/\b[Pp]lease ([^n])/\1/g; s/\b[Pp]lease$//g' | sed -E 's/  +/ /g')
+          # Skip lines containing "please note" (case-insensitive) — handled by NoteThat rule
+          if ! echo "$LINE_CONTENT" | grep -qiE '\bplease\s+note\b'; then
+            NEW_CONTENT=$(echo "$LINE_CONTENT" \
+              | sed -E 's/\b[Pp]lease +//g' \
+              | sed -E 's/  +/ /g')
+          fi
           ;;
         Netwrix.Spacing)
           NEW_CONTENT=$(echo "$LINE_CONTENT" | sed -E 's/([.!?])  +/\1 /g')
@@ -161,7 +165,12 @@ for FILE in $FILES; do
       esac
 
       if [ "$NEW_CONTENT" != "$LINE_CONTENT" ]; then
-        awk -v n="$LINE_NUM" -v new="$NEW_CONTENT" 'NR==n{print new;next}1' "$FILE" > "$FILE.tmp" && mv "$FILE.tmp" "$FILE"
+        TMPNEW=$(mktemp)
+        printf '%s' "$NEW_CONTENT" > "$TMPNEW"
+        awk -v n="$LINE_NUM" -v newfile="$TMPNEW" \
+          'NR==n{while((getline line < newfile)>0) print line; close(newfile); next}1' \
+          "$FILE" > "$FILE.tmp" && mv "$FILE.tmp" "$FILE"
+        rm -f "$TMPNEW"
         FIXED=$((FIXED + 1))
       fi
     done
@@ -172,7 +181,6 @@ for FILE in $FILES; do
       TOTAL_FIXES=$((TOTAL_FIXES + FIXED))
     fi
   done
-  unset CODE_BLOCK_LINES
 done
 
 # Map rules to human-readable categories for the summary comment
