@@ -8,7 +8,6 @@ sidebar_label: SSL Certificate Issue
 tags:
   - troubleshooting-and-errors
 title: "SSL Certificate Connection Failures"
-knowledge_article_id: ???
 products:
   - directorymanager
 ---
