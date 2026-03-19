@@ -12,27 +12,27 @@ This page is for testing the Vale auto-fix workflow. It contains intentional vio
 
 ### Substitutions
 
-Make sure you select the correct check box in the drop-down menu before proceeding.
+ensure you select the correct checkbox in the dropdown menu before proceeding.
 
-Click on the **Save** button to apply your changes. Then right-click on the item to see options.
+Click the **Save** button to apply your changes. Then right-click the item to see options.
 
-You do not need to configure this setting. The system does not require it and cannot process it without authorization.
+You don't need to configure this setting. The system doesn't require it and can't process it without authorization.
 
-In order to utilize the feature, you will need to setup the configuration. The system provides the ability to export data.
+to use the feature, you will need to set up the configuration. The system lets you export data.
 
-If you wish to login to the portal, the system is able to handle authentication.
+If you want to log in to the portal, the system can handle authentication.
 
 ### Removals
 
-Please configure the connection string before continuing.
+configure the connection string before continuing.
 
-The aforementioned feature is currently available in the latest release.
+The feature is available in the latest release.
 
 Configure the database connection, e.g. SQL Server or PostgreSQL. Set the timeout, i.e. the maximum wait, to 30 seconds. Add plugins, etc.
 
-The user(s) can select multiple item(s) from the list.
+The users can select multiple items from the list.
 
-This sentence has  extra spaces  after punctuation.  Like this one.
+This sentence has  extra spaces  after punctuation. Like this one.
 
 ## Phase 2 Violations (AI Fixes)
 
@@ -46,7 +46,7 @@ Note that you must restart the service after making changes.
 
 The system allows you to configure multiple connections.
 
-## Code Block (Should Not Be Modified)
+## Code Block (Shouldn't Be Modified)
 
 ```bash
 # This should NOT be touched by the script
@@ -55,4 +55,4 @@ drop-down menus are configured in setup
 please do not modify etc.
 ```
 
-The text after the code block should still be fixed: please make sure to setup the configuration.
+The text after the code block should still be fixed: ensure to set up the configuration.
