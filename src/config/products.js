@@ -378,13 +378,21 @@ export const PRODUCTS = [
     name: 'Password Secure',
     description: 'Secure password management',
     path: 'docs/passwordsecure',
-    categories: ['Privileged Access Management (PAM)'],
+    categories: ['Identity Management'],
     icon: '',
     versions: [
       {
+        version: 'current',
+        label: 'Current',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordsecure/current.js',
+        customRoutePath: 'docs/passwordsecure/current',
+        customDocPath: 'docs/passwordsecure/current'
+      },
+      {
         version: '9.3',
         label: '9.3',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/passwordsecure/9.3.js',
       },
       {
@@ -392,15 +400,9 @@ export const PRODUCTS = [
         label: '9.2',
         isLatest: false,
         sidebarFile: './sidebars/passwordsecure/9.2.js',
-      },
-      {
-        version: '9.1',
-        label: '9.1',
-        isLatest: false,
-        sidebarFile: './sidebars/passwordsecure/9.1.js',
-      },
+      }
     ],
-    defaultVersion: '9.3',
+    defaultVersion: 'current',
   },
   {
     id: 'pingcastle',

@@ -12,7 +12,7 @@ All logos and icons are managed in the image management. They can then be linked
 corresponding data records. The images are then displayed in the Basic view as well as in the list
 view of the client.
 
-![Icon/logos in NPS](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/image_management/installation_with_parameters_106-en.webp)
+![Icon/logos in NPWS](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/image_management/installation_with_parameters_106-en.webp)
 
 ## Relevant rights
 
