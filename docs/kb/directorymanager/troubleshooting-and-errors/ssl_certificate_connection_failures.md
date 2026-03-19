@@ -28,7 +28,7 @@ The upgraded version implements strict SSL/TLS certificate validation that enfor
 - Root certificate must exist in Trusted Root CA store
 - Online revocation checking
 
-Self-signed certificates or certificates with incomplete chains that were previously accepted may now fail validation.
+Self-signed certificates or certificates with incomplete chains that were previously accepted might now fail validation.
 
 #### Diagnostic Steps
 
