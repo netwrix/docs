@@ -65,7 +65,7 @@ vale --version
 git clone https://github.com/netwrix/docs.git
 cd docs
 
-# Install dependencies (also sets up the pre-push hook via Husky)
+# Install dependencies
 npm install
 
 # Start development server
