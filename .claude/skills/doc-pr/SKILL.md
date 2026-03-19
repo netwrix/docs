@@ -1,6 +1,6 @@
 ---
 name: doc-pr
-description: "Orchestrate a documentation review for pull requests targeting dev. Runs Dale linting and editorial review on changed markdown files, then posts a structured comment to the PR. Vale linting runs separately via the vale-linter workflow (inline review comments + summary PR comment). Use this skill whenever a PR involves markdown files in docs/ and targets the dev branch — triggered automatically by the doc-pr GitHub Actions workflow on PR open, sync, or when invoked manually via /doc-pr."
+description: "Orchestrate a documentation review for pull requests targeting dev. Runs Dale linting and editorial review on changed markdown files, then posts a structured comment to the PR. Vale issues are auto-fixed separately by the vale-autofix workflow. Use this skill whenever a PR involves markdown files in docs/ and targets the dev branch — triggered automatically by the doc-pr GitHub Actions workflow on PR open, sync, or when invoked manually via /doc-pr."
 argument-hint: "[changed-files-csv] [pr-number]"
 ---
 
@@ -8,7 +8,7 @@ argument-hint: "[changed-files-csv] [pr-number]"
 
 You orchestrate a two-stage documentation review pipeline for pull requests. Your job is to run each stage, collect the results, and post a single comprehensive review comment to the PR.
 
-Vale linting runs separately (via the vale-linter workflow) and posts inline review comments plus a summary PR comment. Do not run Vale or include Vale results in your review.
+Vale issues are auto-fixed separately by the vale-autofix workflow. Do not run Vale or include Vale results in your review.
 
 Read `docs/CLAUDE.md` before starting — it contains the writing standards and Vale guidance you need for the editorial review stage.
 
@@ -99,7 +99,7 @@ Write the full review body to `/tmp/doc-pr-review.md` using the Write tool. Foll
 
 ### Summary
 
-N Dale issues, N editorial suggestions across N files. Vale issues are posted in a separate comment by the vale-linter workflow.
+N Dale issues, N editorial suggestions across N files. Vale issues are auto-fixed separately.
 
 ---
 
@@ -107,8 +107,7 @@ N Dale issues, N editorial suggestions across N files. Vale issues are posted in
 
 Comment `@claude` on this PR followed by your instructions to get help:
 
-- `@claude fix all issues` — fix all Vale, Dale, and editorial issues
-- `@claude fix only the Vale issues` — fix just the Vale issues
+- `@claude fix all issues` — fix all Dale and editorial issues
 - `@claude help improve the flow of this document` — get writing assistance
 - `@claude explain the voice issues` — understand why something was flagged
 

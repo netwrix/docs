@@ -7,11 +7,11 @@ Thank you for contributing to Netwrix product documentation. This guide covers e
 - **Node.js 22+**
 - **npm**
 - **Git**
-- **Vale** (style linter — required for pushing documentation changes)
+- **Vale** (style linter — optional for local use; issues are auto-fixed on PRs)
 
 ### Install Vale
 
-[Vale](https://vale.sh/) is a command-line linter for prose. It checks your writing against a set of style rules — like a spell checker, but for grammar, word choice, and tone. Vale is required to push changes to documentation files. The pre-push hook runs Vale automatically and blocks pushes that have linting errors.
+[Vale](https://vale.sh/) is a command-line linter for prose. It checks your writing against a set of style rules — like a spell checker, but for grammar, word choice, and tone. Vale issues are auto-fixed on PRs, but you can install it locally to preview issues before pushing.
 
 **macOS:**
 ```bash
@@ -44,7 +44,7 @@ vale --version
 git clone https://github.com/netwrix/docs.git
 cd docs
 
-# Install dependencies (also sets up the pre-push hook via Husky)
+# Install dependencies
 npm install
 
 # Start development server
@@ -57,12 +57,12 @@ The dev server runs on port 4500 with hot reload — changes you make to documen
 
 1. Create a branch from `dev` (never commit directly to `dev` or `main`).
 2. Make your changes to documentation files in `docs/`.
-3. Run Vale on your changed files to catch linting errors.
+3. Optionally run Vale on your changed files to preview issues (they'll be auto-fixed on the PR).
 4. Test the build with `npm run build`.
-5. Push your branch (the pre-push hook runs Vale automatically and warns about any errors).
+5. Push your branch.
 6. Create a pull request (PR) targeting `dev`.
 
-After you open a PR, an automated review runs Vale linting, Dale linting (AI-powered), and an editorial review, then posts the results as PR comments. If you want help applying the suggested fixes, comment `@claude` on the PR followed by your request and Claude will apply fixes and push a commit. If Claude needs clarification, it will ask in the PR comments.
+After you open a PR, Vale issues are auto-fixed and a summary is posted. Dale linting (AI-powered) and an editorial review also run and post results as PR comments. To get help with Dale or editorial suggestions, comment `@claude` on the PR followed by your request.
 
 ## Writing standards
 
@@ -92,9 +92,7 @@ description: 'SEO description'
 
 ## Linting with Vale
 
-Vale enforces 30 Netwrix-specific rules covering word choice, punctuation, formatting, and common writing issues. The pre-push hook runs Vale automatically and warns about errors in changed `docs/*.md` files.
-
-Run Vale on a file before pushing to catch issues early:
+Vale enforces 30 Netwrix-specific rules covering word choice, punctuation, formatting, and common writing issues. Vale issues are auto-fixed on PRs, but you can run it locally to preview:
 
 ```bash
 vale docs/path/to/file.md
@@ -187,7 +185,7 @@ For tasks that need design decisions first — like writing a new guide from scr
 ## Common Mistakes
 
 - Don't manually copy KB content into versioned product folders — it's managed by the KB script.
-- Don't ignore Vale warnings before pushing — fix errors to keep documentation clean.
+- Vale issues are auto-fixed on PRs, but running Vale locally helps catch issues early.
 - Don't commit directly to `dev` or `main` — create a branch from `dev` first.
 - Don't target `main` in PRs — always use `dev`.
 - Don't use first person anywhere in documentation content.
