@@ -62,9 +62,9 @@ The four core qualities:
 
 ## Linting
 
-### Vale (pre-push)
+### Vale
 
-Vale runs via a pre-push hook that checks changed `docs/*.md` files and reports errors. The hook currently runs in warning mode — it shows errors but does not block the push. Always run Vale locally and fix all errors before pushing.
+Vale enforces 30 Netwrix-specific rules in `.vale/styles/Netwrix/` covering word choice, punctuation, formatting, and common writing issues. Vale issues are auto-fixed on PRs by the `vale-autofix` workflow — you don't need to fix them manually before pushing. You can still run Vale locally to preview issues:
 
 ```bash
 vale <file>
@@ -124,9 +124,7 @@ Each step is a single action. Lead with the UI element or command:
 
 ## CI/CD Context
 
-**Vale (pre-push hook)** — Runs automatically before every push. Currently in warning mode — shows errors but does not block the push. Writers should fix all Vale errors locally before pushing.
-
-**Vale (PR review)** — Runs on PRs to `dev` with docs changes. Posts up to 25 inline review comments on changed lines plus a summary PR comment.
+**Vale (auto-fix)** — Runs on PRs to `dev` with docs changes. Automatically fixes Vale issues in two phases (script for mechanical rules, Claude for judgment-based rules) and posts a summary comment. No inline comments.
 
 **Doc PR review** — Runs on PRs to `dev` with docs changes. Posts Dale inline comments and an editorial review summary. Does not block merges.
 
@@ -139,7 +137,6 @@ Each step is a single action. Lead with the UI element or command:
 ## Common Mistakes
 
 - Don't manually copy KB content into versioned product folders — it's managed by the KB script
-- Don't ignore Vale warnings before pushing — fix errors to keep documentation clean
 - Don't commit directly to `dev` or `main` — create a branch from `dev` first
 - Don't target `main` in PRs — use `dev`
 - Don't use first person anywhere in documentation content
