@@ -34,6 +34,6 @@ Due to the fact that the service requires elevated permissions, it is necessary 
 
 ## Positional References
 
-See the screenshot below for more information on configuring the connection.
+See the screenshot below for the connection configuration settings.
 
 As described above, the agent communicates with the server over HTTPS.
