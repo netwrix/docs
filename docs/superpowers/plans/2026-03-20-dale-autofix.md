@@ -94,10 +94,10 @@ if: steps.bot-check.outputs.skip != 'true' && steps.vale-initial.outputs.total >
 ```
 to:
 ```
-if: steps.bot-check.outputs.skip != 'true' && (steps.vale-initial.outputs.total > 0 || steps.changed-files.outputs.count > 0)
+if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
 ```
 
-This ensures the summary posts even if Vale found 0 issues but Dale found some.
+This ensures the summary posts when Dale found issues even if Vale found 0. The step already handles the case where all counts are 0 — it would post "0 issues fixed" which is harmless, and the `TOTAL_FIXED > 0` check inside the step controls whether the table is shown.
 
 - [ ] **Step 3: Add Dale stats collection to the summary step**
 
@@ -264,7 +264,12 @@ to:
             N editorial suggestions across N files. Vale and Dale issues are auto-fixed separately.
 ```
 
-Remove `@claude fix only the Dale issues` from the "What to do next" section. Change `@claude fix all issues` to just reference editorial issues.
+Replace the "What to do next" command examples with:
+```
+            - `@claude fix all issues` — fix all editorial issues
+            - `@claude reorganize the prerequisites section`
+            - `@claude help improve the flow of this document`
+```
 
 - [ ] **Step 5: Remove Dale from the doc-followup cleanup step**
 
