@@ -8,12 +8,14 @@ sidebar_position: 993
 
 This file has only Phase 2 violations. Phase 1 should report zero fixes.
 
-We recommend that our team configures the monitoring plan before deployment begins.
+Netwrix recommends configuring the monitoring plan before deployment begins.
 
-For more information, click [here](./index.md).
+See [Netwrix Access Analyzer v12.0 Documentation](./index.md) for details.
 
-Once the installation is complete, verify the service is running.
+After the installation is complete, verify the service is running.
 
-Note that you must restart the service after making changes.
+:::note
+You must restart the service after making changes.
+:::
 
-The system allows you to configure multiple connections simultaneously.
+Use the system to configure multiple connections simultaneously.
