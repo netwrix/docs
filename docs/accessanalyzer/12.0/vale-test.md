@@ -8,7 +8,7 @@ sidebar_position: 999
 
 This page is for testing the Vale auto-fix workflow. It contains intentional violations.
 
-## Phase 1 Violations (Script Fixes)
+## Phase 1 Violations: Script Fixes
 
 ### Substitutions
 
@@ -34,19 +34,21 @@ The users can select multiple items from the list.
 
 This sentence has  extra spaces  after punctuation. Like this one.
 
-## Phase 2 Violations (AI Fixes)
+## Phase 2 Violations: AI Fixes
 
-We recommend that our users configure the monitoring plan before deployment.
+Configure the monitoring plan before deployment.
 
-For more information, click [here](./index.md).
+See the [Vale Auto-Fix Test Page overview](./index.md).
 
-Once the installation is complete, verify the service is running.
+After the installation is complete, verify the service is running.
 
-Note that you must restart the service after making changes.
+:::note
+You must restart the service after making changes.
+:::
 
-The system allows you to configure multiple connections.
+Use the system to configure multiple connections.
 
-## Code Block (Shouldn't Be Modified)
+## Code Block: Not Modified by Script
 
 ```bash
 # This should NOT be touched by the script
