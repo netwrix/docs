@@ -59,26 +59,6 @@ jobs:
           chmod +x /tmp/vale
           /tmp/vale --version
 
-      - name: Verify Vale styles
-        if: steps.changed-files.outputs.count > 0
-        run: |
-          echo "=== .vale.ini ==="
-          cat .vale.ini
-          echo ""
-          echo "=== Styles directory ==="
-          ls -la .vale/styles/Netwrix/ | head -20
-          echo ""
-          echo "=== Rule count ==="
-          ls .vale/styles/Netwrix/*.yml | wc -l
-          echo ""
-          echo "=== Test Vale on first changed file ==="
-          FIRST_FILE=$(head -1 /tmp/changed-files.txt)
-          echo "Running: /tmp/vale --output JSON $FIRST_FILE"
-          /tmp/vale --output JSON "$FIRST_FILE" 2>&1 | head -100 || true
-          echo ""
-          echo "=== Vale stderr test ==="
-          /tmp/vale "$FIRST_FILE" 2>&1 || true
-
       - name: Run Vale on changed files
         id: vale-initial
         if: steps.changed-files.outputs.count > 0
@@ -87,7 +67,7 @@ jobs:
 
           while IFS= read -r file; do
             if [ -f "$file" ]; then
-              RESULT=$(/tmp/vale --output JSON "$file" 2>&1 || true)
+              RESULT=$(/tmp/vale --output JSON "$file" 2>>/tmp/vale-stderr.log || true)
               if [ -n "$RESULT" ] && [ "$RESULT" != "{}" ]; then
                 echo "$RESULT" | jq --arg f "$file" '
                   [to_entries[] | .value[] | {path: $f, line: .Line, check: .Check, message: .Message}]
@@ -134,7 +114,7 @@ jobs:
 
           while IFS= read -r file; do
             if [ -f "$file" ]; then
-              RESULT=$(/tmp/vale --output JSON "$file" 2>&1 || true)
+              RESULT=$(/tmp/vale --output JSON "$file" 2>>/tmp/vale-stderr.log || true)
               if [ -n "$RESULT" ] && [ "$RESULT" != "{}" ]; then
                 echo "$RESULT" | jq --arg f "$file" '
                   [to_entries[] | .value[] | {path: $f, line: .Line, check: .Check, message: .Message}]
