@@ -69,7 +69,7 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 | Workflow | Trigger | Purpose |
 |---|---|---|
 | `build-and-deploy.yml` | Push to main/dev, PRs to dev | Build and deploy to Azure |
-| `vale-linter.yml` | PRs with `.md` changes | Vale inline review comments (up to 25) + summary PR comment |
+| `vale-autofix.yml` | PRs with `.md` changes | Auto-fix Vale issues (script + AI), post summary comment |
 | `claude-doc-pr.yml` | PRs to dev with `docs/` changes | Dale + editorial review; `@claude` follow-up |
 | `claude-documentation-reviewer.yml` | PRs with `.md` changes | AI review with inline suggestions |
 | `claude-documentation-fixer.yml` | `@claude` comment on PR | Apply fixes and push |

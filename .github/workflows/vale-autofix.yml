@@ -1,0 +1,268 @@
+name: Vale Auto-Fix
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - dev
+    paths:
+      - 'docs/**/*.md'
+      - '!docs/**/CLAUDE.md'
+      - '!docs/**/SKILL.md'
+      - '!docs/kb/**'
+
+concurrency:
+  group: vale-autofix-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  vale-autofix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.VALE_TOKEN }}
+          fetch-depth: 0
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Get changed markdown files
+        id: changed-files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          CHANGED_MD_FILES=$(gh pr diff "$PR_NUMBER" --name-only | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' | grep -v '^docs/kb/' || true)
+          if [ -z "$CHANGED_MD_FILES" ]; then
+            echo "No docs markdown files changed"
+            echo "count=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changed markdown files:"
+            echo "$CHANGED_MD_FILES"
+            echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
+            echo "$CHANGED_MD_FILES" > /tmp/changed-files.txt
+          fi
+
+      - name: Install Vale
+        if: steps.changed-files.outputs.count > 0
+        run: |
+          wget -q https://github.com/errata-ai/vale/releases/download/v3.9.5/vale_3.9.5_Linux_64-bit.tar.gz -O /tmp/vale.tar.gz
+          tar -xzf /tmp/vale.tar.gz -C /tmp
+          chmod +x /tmp/vale
+          /tmp/vale --version
+
+      - name: Run Vale on changed files
+        id: vale-initial
+        if: steps.changed-files.outputs.count > 0
+        run: |
+          jq -n '[]' > /tmp/violations.json
+
+          while IFS= read -r file; do
+            if [ -f "$file" ]; then
+              RESULT=$(/tmp/vale --output JSON "$file" 2>/dev/null || true)
+              if [ -n "$RESULT" ] && [ "$RESULT" != "{}" ]; then
+                echo "$RESULT" | jq --arg f "$file" '
+                  [to_entries[] | .value[] | {path: $f, line: .Line, check: .Check, message: .Message}]
+                ' > /tmp/vale-file.json
+                jq -s '.[0] + .[1]' /tmp/violations.json /tmp/vale-file.json > /tmp/vale-tmp.json
+                mv /tmp/vale-tmp.json /tmp/violations.json
+              fi
+            fi
+          done < /tmp/changed-files.txt
+
+          TOTAL=$(jq 'length' /tmp/violations.json)
+          echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
+          echo "Vale found $TOTAL issue(s)"
+
+      - name: Phase 1 — Script fixes
+        id: phase1
+        if: steps.vale-initial.outputs.total > 0
+        run: |
+          chmod +x scripts/vale-autofix.sh
+          SUMMARY=$(./scripts/vale-autofix.sh /tmp/violations.json)
+          echo "$SUMMARY" > /tmp/phase1-summary.json
+          PHASE1_TOTAL=$(echo "$SUMMARY" | jq '.total')
+          echo "fixed=$PHASE1_TOTAL" >> "$GITHUB_OUTPUT"
+          echo "Phase 1 fixed $PHASE1_TOTAL issue(s)"
+
+      - name: Commit Phase 1 fixes
+        id: phase1-commit
+        if: steps.phase1.outputs.fixed > 0
+        run: |
+          if git diff --quiet; then
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          else
+            git add -A docs/
+            git commit -m "fix(vale): auto-fix substitutions and removals"
+            git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Re-run Vale for remaining violations
+        id: vale-remaining
+        if: steps.vale-initial.outputs.total > 0
+        run: |
+          jq -n '[]' > /tmp/remaining-violations.json
+
+          while IFS= read -r file; do
+            if [ -f "$file" ]; then
+              RESULT=$(/tmp/vale --output JSON "$file" 2>/dev/null || true)
+              if [ -n "$RESULT" ] && [ "$RESULT" != "{}" ]; then
+                echo "$RESULT" | jq --arg f "$file" '
+                  [to_entries[] | .value[] | {path: $f, line: .Line, check: .Check, message: .Message}]
+                ' > /tmp/vale-file.json
+                jq -s '.[0] + .[1]' /tmp/remaining-violations.json /tmp/vale-file.json > /tmp/vale-tmp.json
+                mv /tmp/vale-tmp.json /tmp/remaining-violations.json
+              fi
+            fi
+          done < /tmp/changed-files.txt
+
+          REMAINING=$(jq 'length' /tmp/remaining-violations.json)
+          echo "remaining=$REMAINING" >> "$GITHUB_OUTPUT"
+          echo "$REMAINING remaining violation(s) for Phase 2"
+
+      - name: Phase 2 — Claude fixes
+        id: phase2
+        if: steps.vale-remaining.outputs.remaining > 0
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            You are a documentation fixer. Your job is to fix Vale linting violations in markdown files.
+
+            Read docs/CLAUDE.md for Netwrix writing standards before making any changes.
+
+            Here are the remaining Vale violations after mechanical fixes were applied:
+
+            ```json
+            $(cat /tmp/remaining-violations.json)
+            ```
+
+            For each violation:
+            1. Read the file and understand the context around the flagged line
+            2. Apply a fix that resolves the Vale rule while preserving the author's meaning
+            3. If you are NOT confident in a fix (ambiguous context, multiple valid interpretations, fix would change meaning) SKIP it
+
+            After fixing, write a JSON summary to /tmp/phase2-summary.json with this structure:
+            ```json
+            {
+              "fixed": [
+                {"path": "file.md", "line": 1, "check": "Netwrix.RuleName", "action": "brief description of fix"}
+              ],
+              "skipped": [
+                {"path": "file.md", "line": 1, "check": "Netwrix.RuleName", "reason": "why it was skipped"}
+              ]
+            }
+            ```
+
+            After writing the summary, stage and commit your changes:
+            ```bash
+            git add -A docs/
+            git commit -m "fix(vale): auto-fix rewrites (AI-assisted)"
+            git push
+            ```
+
+            IMPORTANT: Write the summary JSON file BEFORE committing. Do not post any PR comments.
+          claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
+
+      - name: Build and post summary comment
+        if: steps.vale-initial.outputs.total > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          REPO=${{ github.repository }}
+
+          # Collect Phase 1 stats
+          PHASE1_TOTAL=0
+          PHASE1_BODY=""
+          if [ -f /tmp/phase1-summary.json ]; then
+            PHASE1_TOTAL=$(jq '.total' /tmp/phase1-summary.json)
+            # Build category rows from Phase 1
+            PHASE1_BODY=$(jq -r '
+              .by_category | to_entries | sort_by(.key) | .[] |
+              "| \(.key) | \(.value) |"
+            ' /tmp/phase1-summary.json)
+          fi
+
+          # Collect Phase 2 stats
+          PHASE2_FIXED=0
+          PHASE2_SKIPPED=0
+          PHASE2_BODY=""
+          SKIPPED_BODY=""
+          if [ -f /tmp/phase2-summary.json ]; then
+            PHASE2_FIXED=$(jq '.fixed | length' /tmp/phase2-summary.json)
+            PHASE2_SKIPPED=$(jq '.skipped | length' /tmp/phase2-summary.json)
+
+            if [ "$PHASE2_FIXED" -gt 0 ]; then
+              PHASE2_BODY=$(jq -r '
+                [.fixed[] | .check] | group_by(.) | .[] |
+                "| \(.[0] | sub("Netwrix\\."; "")) (rewrite) | \(length) |"
+              ' /tmp/phase2-summary.json)
+            fi
+
+            if [ "$PHASE2_SKIPPED" -gt 0 ]; then
+              SKIPPED_BODY=$(jq -r '
+                .skipped[] |
+                "| `\(.path):\(.line)` — \(.check) | \(.reason) |"
+              ' /tmp/phase2-summary.json)
+            fi
+          fi
+
+          TOTAL_FIXED=$((PHASE1_TOTAL + PHASE2_FIXED))
+          TOTAL_SKIPPED=$PHASE2_SKIPPED
+
+          # Count affected files
+          FILE_COUNT=$(wc -l < /tmp/changed-files.txt | tr -d ' ')
+
+          # Build the summary comment
+          {
+            echo "## Vale Auto-Fix Summary"
+            echo ""
+            echo "**${TOTAL_FIXED} issues fixed, ${TOTAL_SKIPPED} skipped across ${FILE_COUNT} files**"
+            echo ""
+
+            if [ "$TOTAL_FIXED" -gt 0 ]; then
+              echo "| Category | Fixes |"
+              echo "|----------|-------|"
+              if [ -n "$PHASE1_BODY" ]; then
+                echo "$PHASE1_BODY"
+              fi
+              if [ -n "$PHASE2_BODY" ]; then
+                echo "$PHASE2_BODY"
+              fi
+              echo ""
+            fi
+
+            if [ "$TOTAL_SKIPPED" -gt 0 ]; then
+              echo "| Skipped (needs manual review) | Reason |"
+              echo "|-------------------------------|--------|"
+              echo "$SKIPPED_BODY"
+              echo ""
+            fi
+
+            echo 'Ask `@claude` on this PR if you'\''d like an explanation of any fix.'
+          } > /tmp/vale-summary.md
+
+          # Delete previous Vale Auto-Fix comments
+          COMMENT_IDS=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" \
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("## Vale Auto-Fix Summary"))) | .id] | .[]' 2>/dev/null || true)
+          for ID in $COMMENT_IDS; do
+            gh api "repos/${REPO}/issues/comments/${ID}" -X DELETE 2>/dev/null || true
+          done
+
+          # Post new summary
+          gh pr comment "$PR_NUMBER" --repo "$REPO" --body-file /tmp/vale-summary.md

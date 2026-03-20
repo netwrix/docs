@@ -14,6 +14,10 @@ on:
   issue_comment:
     types: [created]
 
+concurrency:
+  group: doc-pr-${{ github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: true
+
 jobs:
   doc-review:
     if: github.event_name == 'pull_request'
@@ -168,7 +172,7 @@ jobs:
             - Dale issues: ${{ steps.dale-post.outputs.dale_count }} (already posted as inline comments)
             - PR diff is at: /tmp/pr-diff.txt
 
-            NOTE: Vale linting runs separately (vale-linter workflow) and posts inline review comments plus a summary PR comment. Do not run Vale or include Vale issues in this review.
+            NOTE: Vale issues are auto-fixed separately by the vale-autofix workflow. Do not run Vale or include Vale issues in this review.
 
             INSTRUCTIONS:
 
@@ -289,7 +293,7 @@ jobs:
           OWNER="${REPO%%/*}"
           NAME="${REPO##*/}"
 
-          # Resolve all Dale and Vale inline comment threads
+          # Resolve all Dale inline comment threads
           THREAD_IDS=$(gh api graphql -f query='
             query($owner:String!,$name:String!,$pr:Int!) {
               repository(owner:$owner,name:$name) {
@@ -300,7 +304,7 @@ jobs:
                 }
               }
             }' -f owner="$OWNER" -f name="$NAME" -F pr="$PR_NUMBER" \
-            --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false and ((.comments.nodes[0].body | contains("**Dale**")) or (.comments.nodes[0].body | contains("**Vale**")))) | .id' 2>/dev/null || true)
+            --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false and (.comments.nodes[0].body | contains("**Dale**"))) | .id' 2>/dev/null || true)
           for TID in $THREAD_IDS; do
             gh api graphql -f query='
               mutation($tid:ID!) {
@@ -308,9 +312,9 @@ jobs:
               }' -f tid="$TID" 2>/dev/null || true
           done
 
-          # Dismiss all previous Dale and Vale reviews
+          # Dismiss all previous Dale reviews
           REVIEW_IDS=$(gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews \
-            --jq '[.[] | select(.user.login == "github-actions[bot]" and ((.body | contains("Dale found")) or (.body | contains("Vale found")))) | .id] | .[]' 2>/dev/null || true)
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("Dale found"))) | .id] | .[]' 2>/dev/null || true)
           for ID in $REVIEW_IDS; do
             gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews/${ID}/dismissals \
               -f message="Superseded after fixes applied" -f event="DISMISS" 2>/dev/null || true
