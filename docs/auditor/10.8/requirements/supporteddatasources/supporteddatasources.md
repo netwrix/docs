@@ -22,7 +22,7 @@ Auditor supports monitoring the following domain controller operating system ver
 See the [Active Directory](/docs/auditor/10.8/configuration/activedirectory/overview.md) topic for additional
 information.
 
-## Active Directory Federation Services
+## Active Directory Federation Services (AD FS)
 
 Auditor supports monitoring the following AD FS operating system versions:
 
