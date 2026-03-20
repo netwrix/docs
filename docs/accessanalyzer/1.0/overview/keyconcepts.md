@@ -1,7 +1,7 @@
 ---
 title: "Key Concepts"
 description: "Sources, scans, patterns, identities, and entitlements"
-sidebar_position: 30
+sidebar_position: 20
 ---
 
 # Key Concepts
@@ -56,7 +56,7 @@ A **scan** defines what to analyze and how. Access Analyzer supports several sca
 - **Identity sync scans** — Synchronize users, groups, and roles from IAM sources (Active Directory Inventory, Entra ID Users/Groups/Roles)
 - **Local Users and Groups scans** — Collect local account data from file servers (auto-created when an access scan is enabled)
 
-Scans are configured during the [Connect Source wizard](/docs/accessanalyzer/1_0/gettingstarted/firstscan/configuringscan) and can be run on demand or scheduled with a cron expression. Each scan run produces a **scan execution** record with status, duration, and results.
+Scans can be run on demand or scheduled with a cron expression. Each scan run produces a **scan execution** record with status, duration, and results.
 
 ## Identities and Entitlements
 
