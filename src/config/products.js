@@ -61,6 +61,12 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '1.0',
+        label: '1.0',
+        isLatest: false,
+        sidebarFile: './sidebars/accessanalyzer/1.0.js',
+      },
+      {
         version: '12.0',
         label: '12.0',
         isLatest: true,

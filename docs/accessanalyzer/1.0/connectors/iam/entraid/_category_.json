@@ -1,0 +1,10 @@
+{
+  "label": "Entra ID",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "appregistration"
+  }
+}
