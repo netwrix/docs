@@ -22,7 +22,7 @@ The FS_SDD_DELETE instant job provides a controlled method for removing Sensitiv
 
 To view a list of the analysis tasks associated with this job, navigate to **Jobs > Instant Job Library > File System > FS_SDD_DELETE** and select the **Analysis Tasks** tab.
 
-> **WARNING**: This job permanently deletes data from the database. This action cannot be undone. All analysis tasks are disabled by default to prevent accidental data loss. Carefully review the data to be deleted before enabling and running any analysis task.
+> **WARNING**: This job permanently deletes data from the database. This action can't be undone. All analysis tasks are disabled by default to prevent accidental data loss. Carefully review the data to be deleted before enabling and running any analysis task.
 
 The following analysis tasks are available for the FS_SDD_DELETE job:
 
@@ -36,7 +36,7 @@ Each analysis task requires manually populating temporary database tables before
 
 1. Open SQL Server Management Studio and connect to your Tier 1 database.
 2. Determine which analysis task you need to run based on the data you want to delete.
-3. Populate the required temporary table(s):
+3. Populate the required temporary tables:
    - For **Delete Criteria**: Populate the `#Criteria` temporary table with the criteria names you want to delete
    - For **Delete Host**: Populate the `#hosts` temporary table with the host names you want to delete
    - For **Remove Host & Criteria**: Populate both the `#hosts` and `#Criteria` temporary tables with the specific host and criteria combinations
