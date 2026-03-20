@@ -7,7 +7,7 @@ sidebar_position: 30
 # Permissions for Group Policy Auditing
 
 Before you start creating a monitoring plan to audit the group policy in the domain, plan for the
-account that will be used for data collection – it should meet the requirements listed below. Then
+account that will be used for data collection – it should meet the requirements listed in this topic. Then
 you will provide this account in the monitoring plan wizard (or in the monitored item settings).
 
 You can use group Managed Service Accounts (gMSA) as data collecting accounts.
@@ -19,33 +19,27 @@ for additional information about gMSA.
 
 ## Account Requirements
 
-**NOTE:** These group Managed Service Accounts should also meet the related requirements. See the
-[Use Group Managed Service Account (gMSA)](/docs/auditor/10.8/requirements/gmsa.md) topic and the following
-Microsoft article:
-[Group Managed Service Accounts Overview](https://docs.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)
-for additional information about gMSA.
-
 The account used for data collection must meet the following requirements:
 
-- Member of the local Administrators group on the target server.
-- Member of the Domain Admins group on the target server.
-
-    **NOTE:** This covers all the required permissions below and is a mandatory setting if you want
-    to use network traffic compression for data collection.
+- **Manage auditing and security log** policy must be defined for this account.
+  See the [Permissions for Active Directory Auditing](/docs/auditor/10.8/configuration/activedirectory/permissions.md) topic
+  for additional information.
+- If you plan to process Active Directory **Deleted Objects** container, **Read** permission on
+  this container is required. See the
+  [Permissions for Active Directory Auditing](/docs/auditor/10.8/configuration/activedirectory/permissions.md) topic for
+  additional information.
 
     OR
 
-- The combination of the following rights and permissions if you plan to disable network traffic
-  compression for your monitoring plan or, for some reasons, do not want to add this account to the
-  **Domain Admins** group:
+- Member of the **Domain Admins** group on the target server.
 
-    - **Manage auditing and security log** policy must be defined for this account.
-      See the [Permissions for Active Directory Auditing](/docs/auditor/10.8/configuration/activedirectory/permissions.md) topic
-      for additional information.
-    - If you plan to process Active Directory **Deleted Objects** container, **Read** permission on
-      this container is required. See the
-      [Permissions for Active Directory Auditing](/docs/auditor/10.8/configuration/activedirectory/permissions.md) topic for
-      additional information.
+    **NOTE:** This covers all the required permissions above and is a mandatory setting if you want
+    to use network traffic compression for data collection.
+
+If you use a group Managed Service Account (gMSA) for data collection, the account must also be a
+member of the local Administrators group on the target server. See the
+[Use Group Managed Service Account (gMSA)](/docs/auditor/10.8/requirements/gmsa.md) topic for
+additional information.
 
 ## Additional Configuration for Domain Controller's Event Logs Auto-backup
 
