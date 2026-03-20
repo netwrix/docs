@@ -28,7 +28,7 @@ Simply install the agent and it automatically configures itself with minimal eff
 
 ## Wordiness
 
-In the event that you need to modify the configuration settings, you should navigate to the administration page in order to make changes.
+In the event that you need to modify the configuration settings, you should navigate to the administration page to make changes.
 
 Due to the fact that the service requires elevated permissions, it is necessary to ensure that the account has the appropriate access.
 
