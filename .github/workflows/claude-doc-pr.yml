@@ -90,10 +90,7 @@ jobs:
 
             INSTRUCTIONS:
 
-            Step 1: Read each Dale rule file:
-            - .claude/skills/dale/rules/minimizing-difficulty.yml
-            - .claude/skills/dale/rules/negative-assumptions.yml
-            - .claude/skills/dale/rules/xy-slop.yml
+            Step 1: Read every .yml rule file in .claude/skills/dale/rules/
 
             Step 2: Read each changed file listed above (split on commas).
 
@@ -111,7 +108,7 @@ jobs:
             [{"path":"docs/foo/bar.md","line":7,"rule":"minimizing-difficulty","message":"Do not minimize the difficulty of tasks users are performing."}]
 
             IMPORTANT: Write ONLY the JSON file. Do not post comments, do not run any other tools. Your task is done when /tmp/dale-results.json exists.
-          claude_args: '--allowedTools "Read,Write"'
+          claude_args: '--allowedTools "Read,Write,Glob"'
 
       - name: Post Dale inline comments
         id: dale-post
