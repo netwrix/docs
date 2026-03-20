@@ -8,7 +8,7 @@ sidebar_position: 1
 
 Netwrix Access Analyzer (formerly Enterprise Auditor) automates the collection and analysis of the
 data you need to answer the most difficult questions you face in the management and security of
-dozens of critical IT assets, including data, directories, and systems.
+dozens of critical IT assets, including data, directories, and systems. Access Analyzer is designed to help organizations maintain compliance and strengthen their security posture across hybrid environments.
 
 The platform framework contains the following key components:
 
