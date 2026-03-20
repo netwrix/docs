@@ -6,7 +6,7 @@ sidebar_position: 998
 
 # Vale Edge Case Tests
 
-## Test 1: Markdown Tables with Violations
+## Test 1 — Markdown Tables with Violations
 
 Verify that fixes inside table cells don't corrupt the pipe characters.
 
@@ -27,7 +27,7 @@ Verify that fixes inside table cells don't corrupt the pipe characters.
 | Retry | 3 | The system can retry, set to 3 attempts |
 | Auth | Windows | configure the dropdown to select authentication |
 
-## Test 2: Lines with Windows Paths and Backslashes
+## Test 2 — Lines with Windows Paths and Backslashes
 
 ensure the file is located at C:\Users\Admin\config.ini before proceeding.
 
@@ -39,7 +39,7 @@ use the configuration file at D:\Data\Exports\config.json to configure the conne
 
 The path C:\Windows\System32\drivers\etc\hosts is used by the system.
 
-## Test 3: Both Together (Table with Paths)
+## Test 3 — Both Together, Table with Paths
 
 | Component | Path | Action |
 |-----------|------|--------|
@@ -47,7 +47,7 @@ The path C:\Windows\System32\drivers\etc\hosts is used by the system.
 | Config | D:\Data\config.ini | use the dropdown to configure |
 | Logs | C:\Users\Admin\AppData\Logs | You don't need to click the log path |
 
-## Code Block (Shouldn't Be Modified)
+## Code Block — Shouldn't Be Modified
 
 ```powershell
 # These should NOT be touched
