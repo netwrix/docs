@@ -131,14 +131,14 @@ reports that provide visibility into various aspects of supported databases.
 - Instance Discovery – The Instance Discovery Solution discovers instances on supported database
   servers.
 - MongoDB Solution – The MongoDB Solution automates the process of understanding where MongDB
-  databases exist and provides an overview of the MongoDB environment in order to answer questions
+  databases exist and provides an overview of the MongoDB environment to answer questions
   around data access. With visibility into every corner of MongoDB and the operating system it
   relies upon, organizations can proactively highlight and prioritize risks to sensitive data.
   Additionally, organizations can automate manual, time-consuming, and expensive processes
   associated with compliance, security, and operations to easily adhere to best practices that keep
   MongoDB Server safe and operational.
 - MySQL Solution – The MySQL Solution automates the process of understanding where SQL databases
-  exist and provides an overview of the MySQL environment in order to answer questions around data
+  exist and provides an overview of the MySQL environment to answer questions around data
   access. With visibility into every corner of Microsoft SQL Server and the Windows operating system
   it relies upon, organizations can proactively highlight and prioritize risks to sensitive data.
   Additionally, organizations can automate manual, time-consuming, and expensive processes
