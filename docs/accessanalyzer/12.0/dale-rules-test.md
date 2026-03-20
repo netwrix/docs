@@ -32,7 +32,7 @@ If you don't use this feature, you won't be able to detect unauthorized access t
 
 ## Wordiness
 
-In the event that you need to modify the configuration settings, you should navigate to the administration page in order to make the necessary changes to the system.
+In the event that you need to modify the configuration settings, you should navigate to the administration page to make the necessary changes to the system.
 
 Due to the fact that the service requires elevated permissions, it is necessary to ensure that the account has been granted the appropriate level of access.
 
@@ -60,6 +60,6 @@ Once you get the hang of the configuration wizard, deploying agents is straightf
 
 ## XY Slop
 
-Access Analyzer is not a vulnerability scanner, it is a permissions auditing tool.
+Access Analyzer isn't a vulnerability scanner, it is a permissions auditing tool.
 
-The monitoring plan is not a backup solution, it is a change detection system.
+The monitoring plan isn't a backup solution, it is a change detection system.
