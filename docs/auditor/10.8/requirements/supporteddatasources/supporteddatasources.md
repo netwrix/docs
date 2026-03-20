@@ -72,7 +72,7 @@ versions:
 - Dell VNX/VNXe/Celerra families
 - Dell PowerStore family
 
-> **NOTE:** Only CIFS configuration is supported.
+> **NOTE:** Auditor supports only CIFS configuration.
 
 See the [Dell Data Storage](/docs/auditor/10.8/configuration/fileservers/delldatastorage/overview.md) topic for
 additional information.
@@ -83,10 +83,10 @@ Auditor supports monitoring the following device versions:
 
 - Dell Isilon/PowerScale versions 7.2 – 9.12
 
-> **NOTE:** Only CIFS configuration is supported.
+> **NOTE:** Auditor supports only CIFS configuration.
 
-> **IMPORTANT:** Auditing of _System_ zone isn't supported. As stated by Dell, this zone should be reserved for
-configuration access only. Current data should be stored in other access zones. See the
+> **IMPORTANT:** Auditor doesn't support auditing of the _System_ zone. Dell recommends reserving this zone for
+configuration access only. Store current data in other access zones. See the
 
 See the [Dell Isilon/PowerScale](/docs/auditor/10.8/configuration/fileservers/dellisilon/overview.md) topic for
 additional information.
@@ -99,7 +99,7 @@ Auditor supports monitoring the following device versions:
     - 9.0 – 9.17
     - 8.3
 
-> **NOTE:** Only CIFS configuration is supported.
+> **NOTE:** Auditor supports only CIFS configuration.
 
 See the [NetApp Data ONTAP](/docs/auditor/10.8/configuration/fileservers/netappcmode/overview.md) topic for
 additional information.
@@ -206,11 +206,11 @@ See the
 [Microsoft Entra ID (formerly Azure AD)](/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/overview.md)
 topic for additional information.
 
-Microsoft Teams (MS Teams)
+Microsoft Teams (MS Teams)
 
 Auditor supports monitoring the following versions:
 
-- Microsoft Entra ID version provided within Microsoft Office 365
+- Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
 > **NOTE:** Auditor doesn't support DoD tenant types.
@@ -222,7 +222,7 @@ SharePoint Online
 
 Auditor supports monitoring the following versions:
 
-- SharePoint Online version provided within Microsoft Office 365
+- SharePoint Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
 > **NOTE:** Auditor doesn't support DoD tenant types.
@@ -362,7 +362,7 @@ Auditor supports monitoring the following versions:
 - Microsoft SQL Server 2017
 - Microsoft SQL Server 2016
 - Microsoft SQL Server 2014
-- Microsoft SQL Server 2012
+- Microsoft SQL Server 2012
 
 > **NOTE:** Auditor doesn't support Linux-based versions.
 
@@ -442,7 +442,7 @@ Auditor supports monitoring the following operating system versions:
 
 > **NOTE:** DNS support is limited on Windows Server 2008 to Windows Server 2008 SP2 (32 and 64-bit).
 
-> **NOTE:** DHCP isn't supported on Windows Server 2008.
+> **NOTE:** Auditor doesn't support DHCP on Windows Server 2008.
 
 Internet Information Services (IIS)
 
