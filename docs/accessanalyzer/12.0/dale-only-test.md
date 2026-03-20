@@ -10,30 +10,30 @@ This file has zero Vale violations but several Dale violations. Phase 1 and Phas
 
 ## Passive Voice
 
-The configuration file was updated by the administrator after the changes were approved by management.
+The administrator updated the configuration file after management approved the changes.
 
-The monitoring agent was installed on the server by the IT team.
+The IT team installed the monitoring agent on the server.
 
 ## Misplaced Modifiers
 
-Using the configuration wizard, the monitoring plan is created automatically by the system.
+The configuration wizard creates the monitoring plan automatically.
 
-Running as a background service, administrators can configure the agent to collect data.
+Administrators can configure the agent, which runs as a background service, to collect data.
 
 ## Minimizing Difficulty
 
-You can easily configure the entire monitoring infrastructure in just a few minutes.
+You can configure the entire monitoring infrastructure in a few minutes.
 
-Simply install the agent and it automatically configures itself with minimal effort.
+Install the agent and it automatically configures itself.
 
 ## Wordiness
 
-In the event that you need to modify the configuration settings, you should navigate to the administration page to make changes.
+If you need to modify the configuration settings, navigate to the administration page.
 
-Due to the fact that the service requires elevated permissions, it is necessary to ensure that the account has the appropriate access.
+Because the service requires elevated permissions, ensure the account has the appropriate access.
 
 ## Positional References
 
-See the screenshot below for the connection configuration settings.
+See the following screenshot for the connection configuration settings.
 
-As described above, the agent communicates with the server over HTTPS.
+As described previously, the agent communicates with the server over HTTPS.
