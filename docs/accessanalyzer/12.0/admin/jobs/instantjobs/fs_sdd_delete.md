@@ -1,0 +1,49 @@
+
+# FS_SDD_DELETE Instant Job
+
+The FS_SDD_DELETE instant job deletes Sensitive Data Discovery (SDD) data from the Tier 1 database for specified criteria, hosts, or combinations thereof. This job is available in the Instant Job Library under the File System library.
+
+The 0.Collection Job Group must be successfully run before running this job.
+
+![FS_SDD_DELETE Job](/images/accessanalyzer/12.0/admin/jobs/instantjobs/fs-sdd-delete.png)
+
+## Runtime Details
+
+- **Dependencies**: The 0.Collection Job Group must be successfully run before running this job
+- **Target Hosts**: None (select Local host)
+- **Scheduling**: Can be run as desired, typically on an ad-hoc basis
+- **History Retention**: Not supported and must be turned off
+- **Multi-console Support**: Not supported
+- **Additional Notes**: This job performs permanent data deletion with no undo capability. All analysis tasks are disabled by default to prevent accidental data loss.
+
+The FS_SDD_DELETE instant job provides a controlled method for removing Sensitive Data Discovery data from your Tier 1 database. This job is designed for scenarios where you need to clean up SDD data for specific criteria, remove data associated with decommissioned hosts, or delete specific combinations of host and criteria data. Because this job permanently deletes data with no recovery option, all analysis tasks are disabled by default as a safety measure.
+
+## Analysis Tasks for the FS_SDD_DELETE Job
+
+To view a list of the analysis tasks associated with this job, navigate to **Jobs > Instant Job Library > File System > FS_SDD_DELETE** and select the **Analysis Tasks** tab.
+
+> **WARNING**: This job permanently deletes data from the database. This action cannot be undone. All analysis tasks are disabled by default to prevent accidental data loss. Carefully review the data to be deleted before enabling and running any analysis task.
+
+The following analysis tasks are available for the FS_SDD_DELETE job:
+
+- **Delete Criteria** – Deletes all SDD data for specified criteria from all hosts. Use this task when you want to remove all occurrences of specific criteria across your entire environment.
+- **Delete Host** – Deletes all SDD data related to a specific host. Use this task when decommissioning a host or removing all SDD data associated with a particular system.
+- **Remove Host & Criteria** – Deletes all SDD data for a specific host and criteria combination. Use this task for targeted removal of SDD data for a specific criteria on a specific host.
+
+### Configuring the Analysis Tasks
+
+Each analysis task requires manually populating temporary database tables before execution. Follow these steps to configure and run an analysis task:
+
+1. Open SQL Server Management Studio and connect to your Tier 1 database.
+2. Determine which analysis task you need to run based on the data you want to delete.
+3. Populate the required temporary table(s):
+   - For **Delete Criteria**: Populate the `#Criteria` temporary table with the criteria names you want to delete
+   - For **Delete Host**: Populate the `#hosts` temporary table with the host names you want to delete
+   - For **Remove Host & Criteria**: Populate both the `#hosts` and `#Criteria` temporary tables with the specific host and criteria combinations
+4. In the Access Analyzer console, navigate to **Jobs > Instant Job Library > File System > FS_SDD_DELETE**.
+5. Select the **Analysis Tasks** tab.
+6. Right-click the appropriate analysis task and select **Enable**.
+7. Review the enabled task to verify it will delete the correct data.
+8. Run the job by clicking **Run Job** and selecting **Local** as the target host.
+9. After the job completes, verify the data has been deleted as expected.
+10. Disable the analysis task to prevent accidental future deletions.
