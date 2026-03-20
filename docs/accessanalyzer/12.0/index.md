@@ -19,7 +19,7 @@ The platform framework contains the following key components:
 
 Access Analyzer contains over 40 built-in data collection modules covering both on-premises and
 cloud-based platforms from Operating Systems to Office 365. Leveraging an agentless architectural
-approach, our proprietary AnyData collector provides an easy, wizard-driven interface for
+approach, the proprietary AnyData collector provides an easy, wizard-driven interface for
 configuring the application to collect exactly the data needed, enabling fast, flawless,
 lightest-weight possible data collection from dozens of data sources.
 
@@ -178,8 +178,8 @@ Sensitive data auditing requires the Sensitive Data Discovery Add-on.
 
 The Exchange Solution provides auditing and reporting on multiple aspects of the Exchange
 environment to assist with identifying risk, understanding usage, and decreasing bloat. Areas of
-focus include Audit and Compliance, Maintenance and Cleanup, Metrics and Capacity, Operations and
-Health, Public Folders and Configuration Baseline.
+focus include Audit and Compliance; Maintenance and Cleanup; Metrics and Capacity; Operations and
+Health; and Public Folders and Configuration Baseline.
 
 See the [Exchange Solution](/docs/accessanalyzer/12.0/solutions/exchange/overview.md) topic for additional information.
 
