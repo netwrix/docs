@@ -14,25 +14,25 @@ you will provide this account in the monitoring plan wizard (or in the monitored
 
 The account used for data collection must meet the following requirements:
 
-- Member of the Domain Admins group on the target server.
+- The "Manage auditing and security log" policy must be defined for this account.
+  See the [Configure the Manage Auditing and Security Log Policy](#configure-the-manage-auditing-and-security-log-policy) topic for additional
+  information.
+- If you plan to process the Active Directory Deleted Objects container, Read permission on this
+  container is required. See the [Grant Permissions for the Deleted Objects Container](#grant-permissions-for-the-deleted-objects-container) topic for
+  additional information.
+- [Assign Permission To Read the Registry Key](/docs/auditor/10.8/configuration/windowsserver/permissions.md).
 
-    **NOTE:** This covers all the required permissions below and is a mandatory setting if you want
+    OR
+
+- Member of the **Domain Admins** group on the target server.
+
+    **NOTE:** This covers all the required permissions above and is a mandatory setting if you want
     to use network traffic compression for data collection.
 
-- Local Admin on the Netwrix Auditor server.
-- The combination of the following rights and permissions if you plan to disable network traffic
-  compression for your monitoring plan or, for some reasons, do not want to add this account to the
-  Domain Admins group:
-
-    - The "Manage auditing and security log" policy must be defined for this account.
-      See the Configure the Manage Auditing and Security Log Policy topic for additional
-      information.
-    - If you plan to process the Active Directory Deleted Objects container, Read permission on this
-      container are required. See the Grant Permissions for the Deleted Objects Container topic for
-      additional information.
-
-If the account selected for data collection is not a member of the Domain Admins group, see the
-[Assign Permission To Read the Registry Key](/docs/auditor/10.8/configuration/windowsserver/permissions.md) topic.
+- If you use a group Managed Service Account (gMSA) for data collection, the account must also be a
+  local admin on the Netwrix Auditor server. See the
+  [Use Group Managed Service Account (gMSA)](/docs/auditor/10.8/requirements/gmsa.md) topic for
+  additional information.
 
 ## Additional Configuration to Review Changes Made via Exchange Server
 
