@@ -82,9 +82,9 @@ Two rules require extra care:
 
 - **`BoilerplateCrossRef`** and **`WeakLinkText`** — Read the surrounding context and the link destination before rewriting. The fix must reflect what the reader will actually find at the destination.
 
-### Dale (PR review)
+### Dale
 
-Dale is an AI linter that runs during PR review. It catches issues that regex-based Vale rules can't — passive voice, misplaced modifiers, idioms, wordiness, and other context-dependent patterns. Dale rules are in `.claude/skills/dale/rules/`.
+Dale is an AI linter that catches issues regex-based Vale rules can't — passive voice, misplaced modifiers, idioms, wordiness, and other context-dependent patterns. Dale rules are in `.claude/skills/dale/rules/`. Dale issues are auto-fixed on PRs alongside Vale by the `vale-autofix` workflow.
 
 Run Dale locally with `/dale <file>`.
 
@@ -124,9 +124,9 @@ Each step is a single action. Lead with the UI element or command:
 
 ## CI/CD Context
 
-**Vale (auto-fix)** — Runs on PRs to `dev` with docs changes. Automatically fixes Vale issues in two phases (script for mechanical rules, Claude for judgment-based rules) and posts a summary comment. No inline comments.
+**Auto-fix (Vale + Dale)** — Runs on PRs to `dev` with docs changes. Automatically fixes Vale issues (script for mechanical rules, Claude for judgment-based rules) and Dale issues (Claude), then posts a summary comment. No inline comments.
 
-**Doc PR review** — Runs on PRs to `dev` with docs changes. Posts Dale inline comments and an editorial review summary. Does not block merges.
+**Doc PR review** — Runs on PRs to `dev` with docs changes. Posts an editorial review summary. Does not block merges.
 
 **Doc fixer** — Triggered by an `@claude` comment on a PR. Applies fixes and pushes. Fork PRs cannot be pushed to.
 
