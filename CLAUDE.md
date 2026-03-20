@@ -69,8 +69,8 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 | Workflow | Trigger | Purpose |
 |---|---|---|
 | `build-and-deploy.yml` | Push to main/dev, PRs to dev | Build and deploy to Azure |
-| `vale-autofix.yml` | PRs with `.md` changes | Auto-fix Vale issues (script + AI), post summary comment |
-| `claude-doc-pr.yml` | PRs to dev with `docs/` changes | Dale + editorial review; `@claude` follow-up |
+| `vale-autofix.yml` | PRs with `.md` changes | Auto-fix Vale + Dale issues (script + AI), post summary comment |
+| `claude-doc-pr.yml` | PRs to dev with `docs/` changes | Editorial review; `@claude` follow-up |
 | `claude-documentation-reviewer.yml` | PRs with `.md` changes | AI review with inline suggestions |
 | `claude-documentation-fixer.yml` | `@claude` comment on PR | Apply fixes and push |
 | `claude-issue-labeler.yml` | Issues opened/edited | Security screening, CoC check, auto-labeling, content fix automation |
@@ -89,7 +89,7 @@ When a user asks for help with documentation, always use the appropriate tool:
 |---|---|---|
 | `/dale` | Skill | Custom linter for Netwrix-specific writing patterns |
 | `/doc-help` | Skill | Interactive writing assistant (terminal sessions) |
-| `/doc-pr` | Skill | Automated PR review (Dale + editorial) |
+| `/doc-pr` | Skill | Automated PR editorial review |
 | `/content-fix` | Skill | Autonomous issue-to-PR fixer for content_fix issues |
 | `/doc-pr-fix` | Skill | Autonomous PR fixer triggered by `@claude` |
 | `tech-writer` | Agent | Autonomous end-to-end doc writing/editing |
