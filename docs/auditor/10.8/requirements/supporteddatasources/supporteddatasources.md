@@ -188,7 +188,7 @@ Auditor supports monitoring the following versions:
 - Exchange Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** DoD tenant types aren't supported.
+> **NOTE:** Auditor doesn't support DoD tenant types.
 
 See the [Exchange Online](/docs/auditor/10.8/configuration/microsoft365/exchangeonline/overview.md) topic for
 additional information.
@@ -200,7 +200,7 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** DoD tenant types aren't supported.
+> **NOTE:** Auditor doesn't support DoD tenant types.
 
 See the
 [Microsoft Entra ID (formerly Azure AD)](/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/overview.md)
@@ -213,7 +213,7 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** DoD tenant types aren't supported.
+> **NOTE:** Auditor doesn't support DoD tenant types.
 
 See the [MS Teams](/docs/auditor/10.8/configuration/microsoft365/teams/overview.md) topic for additional
 information.
@@ -225,7 +225,7 @@ Auditor supports monitoring the following versions:
 - SharePoint Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** DoD tenant types aren't supported.
+> **NOTE:** Auditor doesn't support DoD tenant types.
 
 See the [SharePoint Online](/docs/auditor/10.8/configuration/microsoft365/sharepointonline/overview.md) topic for
 additional information.
@@ -364,7 +364,7 @@ Auditor supports monitoring the following versions:
 - Microsoft SQL Server 2014
 - Microsoft SQL Server 2012
 
-> **NOTE:** Linux-based versions aren't supported.
+> **NOTE:** Auditor doesn't support Linux-based versions.
 
 See the [SQL Server](/docs/auditor/10.8/configuration/sqlserver/overview.md) topic for additional information.
 
@@ -460,7 +460,7 @@ leveraging its API. Download free add-ons from
 [Netwrix Auditor Add-on Store](https://www.netwrix.com/netwrix_addons.html) to enrich your audit
 trails with activity from the following systems and applications.
 
-Also, there are even add-ons that can export data collected by Auditor to other systems (e.g.,
+Some add-ons can also export data collected by Auditor to other systems (e.g.,
 ArcSight and ServiceNow).
 
 See the [Integration API](/docs/auditor/10.8/api/overview.md) topic for additional information.
