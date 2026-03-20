@@ -14,6 +14,10 @@ on:
   issue_comment:
     types: [created]
 
+concurrency:
+  group: doc-pr-${{ github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: true
+
 jobs:
   doc-review:
     if: github.event_name == 'pull_request'
