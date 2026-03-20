@@ -18,7 +18,7 @@ The system supports three authentication methods.
 
 The settings are required for initial configuration.
 
-## Capitalization in Tables (Should Stay Lowercase)
+## Capitalization in Tables
 
 | Setting | Instructions |
 |---------|-------------|
@@ -40,12 +40,14 @@ In the event that you need to modify settings, you should navigate to the config
 
 See the screenshot below for additional details on configuring the connection.
 
-This new integration is a game changer for compliance teams!
+This new integration substantially improves compliance workflows.
 
 ## Mixed Vale and Dale
 
 Ensure that the configuration file was updated by the administrator before deployment.
 
-Please note that the system doesn't support this feature.
+:::note
+The system doesn't support this feature.
+:::
 
 To use the export tool, your security metrics are displayed by clicking on the button below.
