@@ -20,8 +20,7 @@ You receive:
 
 Parse the writer's comment to determine what they want. Common patterns:
 
-- **Fix all issues** — apply every fix from the doc-pr review comment (Dale + editorial)
-- **Fix only Dale issues** — apply only Dale linting fixes
+- **Fix all issues** — apply every fix from the doc-pr review comment (editorial)
 - **Fix a specific issue** — apply one targeted fix
 - **Improve flow/clarity/structure** — editorial rewrite of specific content
 - **Explain something** — answer a question about a flagged issue (respond in a PR comment, don't edit files)
@@ -35,19 +34,18 @@ Parse the writer's comment to determine what they want. Common patterns:
    ```bash
    gh api repos/{owner}/{repo}/issues/$PR_NUMBER/comments --jq '.[] | select(.body | contains("Documentation PR Review")) | .body' | tail -1
    ```
-   This tells you what Dale and the editorial review flagged.
+   This tells you what the editorial review flagged.
 
 ## Step 3: Plan your work and post a progress comment
 
 Use Todo to create a task for each discrete piece of work you need to do. Build the task list from what you learned in Steps 1–2. Each task should be concrete and trackable. Mark each task as complete as you finish it.
 
 Example tasks for a "fix all issues" request:
-- Fix Dale issues in `path/to/file.md` (N issues)
-- Apply editorial suggestions
+- Apply editorial suggestions in `path/to/file.md`
 - Verify changes
 - Commit and push
 
-Only include tasks for what the writer actually asked for. If they said "fix only the Dale issues," your task list should contain Dale fixes, verify, and commit — no editorial tasks. The task list must reflect the writer's request exactly.
+Only include tasks for what the writer actually asked for. The task list must reflect the writer's request exactly.
 
 Then post a PR comment mirroring your task list so the writer can see what you're doing:
 
@@ -55,8 +53,7 @@ Then post a PR comment mirroring your task list so the writer can see what you'r
 PROGRESS_COMMENT_ID=$(gh pr comment "$PR_NUMBER" --body "$(cat <<'EOF'
 **Fix in progress:**
 
-- [ ] Fix Dale issues in `path/to/file.md` (N issues)
-- [ ] Apply editorial suggestions
+- [ ] Apply editorial suggestions in `path/to/file.md`
 - [ ] Verify changes
 - [ ] Commit and push
 EOF
@@ -76,7 +73,6 @@ Update the PR comment at natural milestones (after finishing each file, after co
 
 Work through the requested fixes methodically:
 
-- For **Dale fixes**: fix each flagged issue in order, file by file
 - For **editorial fixes from the review**: apply the suggested changes from the review comment
 - For **broader editorial requests** ("improve the flow", "make this clearer", "help with structure"): invoke `/doc-help` with the file path and the writer's request. Doc-help will analyze the document using its structured editing framework (structure, clarity, voice, surface). Since this is running in CI without an interactive writer, apply all of doc-help's suggestions autonomously rather than waiting for feedback
 - For **explanations**: post a PR comment explaining the issue and how to fix it, then stop — don't edit files
@@ -84,7 +80,7 @@ Work through the requested fixes methodically:
 When editing:
 - Use the Edit tool for targeted changes, Write for larger rewrites
 - Preserve the author's meaning and intent — fix the style, don't rewrite the content
-- Only change what was requested; don't fix other categories of issues even if they're on the same line (e.g., if asked to fix Dale issues, don't also fix editorial issues)
+- Only change what was requested; don't fix unrelated issues even if they're on the same line
 
 ## Step 5: Verify
 
@@ -113,8 +109,7 @@ gh api repos/{owner}/{repo}/issues/comments/$PROGRESS_COMMENT_ID \
   -X PATCH -f body="$(cat <<'EOF'
 **Fix complete:**
 
-- [x] Fix Dale issues in `path/to/file.md` (N issues)
-- [x] Apply editorial suggestions
+- [x] Apply editorial suggestions in `path/to/file.md`
 - [x] Verify changes
 - [x] Commit and push
 
@@ -130,7 +125,7 @@ Skip progress tracking only for pure explanations (e.g., "why is this flagged?")
 ## Behavioral Notes
 
 - **Fix what's clear, ask about what isn't.** If a request has both obvious parts and ambiguous parts, apply the obvious fixes, commit and push those, then post a comment that summarizes what you did AND asks clarifying questions about the rest. The writer can reply with another `@claude` comment to continue.
-- **Never fix issues the writer didn't ask about.** If they said "fix the Dale issues," only fix Dale issues — don't also fix editorial issues or rewrite sentences for clarity, even if the fix is on the same line.
+- **Never fix issues the writer didn't ask about.** Only fix what was requested — don't rewrite sentences for clarity or fix unrelated issues, even if they're on the same line.
 - **If a fix would substantially change the author's meaning**, skip it and explain why in your summary comment. Ask the writer how they'd like to handle it.
 - **If the entire request is unclear**, don't edit anything — post a comment asking for clarification. It's better to ask one good question than to guess wrong and push unwanted changes.
 - **Each `@claude` comment is a fresh invocation.** You won't remember previous runs, so always re-read the PR diff and review comment for context.

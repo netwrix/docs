@@ -194,8 +194,57 @@ jobs:
             IMPORTANT: Write the summary JSON file BEFORE committing. Do not post any PR comments.
           claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
 
+      - name: Phase 3 — Dale fixes
+        id: phase3
+        if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            You are Dale, a documentation fixer. Your job is to find and fix documentation style issues using Dale rules.
+
+            Read docs/CLAUDE.md for Netwrix writing standards before making any changes.
+
+            INSTRUCTIONS:
+
+            Step 1: Read every .yml rule file in .claude/skills/dale/rules/
+
+            Step 2: Read the list of changed files from /tmp/changed-files.txt (one file path per line).
+
+            Step 3: Read each changed file. For each file, check every line against each rule's "reason" field.
+
+            Step 4: Fix each violation in-place, preserving the author's meaning. If you are NOT confident in a fix (ambiguous context, multiple valid interpretations, fix would change meaning), SKIP it.
+
+            Step 5: Write a JSON summary to /tmp/dale-summary.json with this structure:
+            ```json
+            {
+              "fixed": [
+                {"path": "file.md", "line": 1, "rule": "passive-voice", "action": "brief description of fix"}
+              ],
+              "skipped": [
+                {"path": "file.md", "line": 1, "rule": "idioms", "reason": "why it was skipped"}
+              ]
+            }
+            ```
+            If no issues found, write: {"fixed": [], "skipped": []}
+
+            Step 6: Stage and commit your changes:
+            ```bash
+            git add -A docs/
+            git commit -m "fix(dale): auto-fix documentation issues (AI-assisted)"
+            git push
+            ```
+
+            IMPORTANT: Write the summary JSON file BEFORE committing. Do not post any PR comments.
+          claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
+
       - name: Build and post summary comment
-        if: steps.bot-check.outputs.skip != 'true' && steps.vale-initial.outputs.total > 0
+        if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -238,15 +287,39 @@ jobs:
             fi
           fi
 
-          TOTAL_FIXED=$((PHASE1_TOTAL + PHASE2_FIXED))
-          TOTAL_SKIPPED=$PHASE2_SKIPPED
+          # Collect Phase 3 (Dale) stats
+          DALE_FIXED=0
+          DALE_SKIPPED=0
+          DALE_BODY=""
+          DALE_SKIPPED_BODY=""
+          if [ -f /tmp/dale-summary.json ]; then
+            DALE_FIXED=$(jq '.fixed | length' /tmp/dale-summary.json)
+            DALE_SKIPPED=$(jq '.skipped | length' /tmp/dale-summary.json)
+
+            if [ "$DALE_FIXED" -gt 0 ]; then
+              DALE_BODY=$(jq -r '
+                [.fixed[] | .rule] | group_by(.) | .[] |
+                "| Dale: \(.[0]) | \(length) |"
+              ' /tmp/dale-summary.json)
+            fi
+
+            if [ "$DALE_SKIPPED" -gt 0 ]; then
+              DALE_SKIPPED_BODY=$(jq -r '
+                .skipped[] |
+                "| `\(.path):\(.line)` — Dale: \(.rule) | \(.reason) |"
+              ' /tmp/dale-summary.json)
+            fi
+          fi
+
+          TOTAL_FIXED=$((PHASE1_TOTAL + PHASE2_FIXED + DALE_FIXED))
+          TOTAL_SKIPPED=$((PHASE2_SKIPPED + DALE_SKIPPED))
 
           # Count affected files
           FILE_COUNT=$(wc -l < /tmp/changed-files.txt | tr -d ' ')
 
           # Build the summary comment
           {
-            echo "## Vale Auto-Fix Summary"
+            echo "## Auto-Fix Summary"
             echo ""
             echo "**${TOTAL_FIXED} issues fixed, ${TOTAL_SKIPPED} skipped across ${FILE_COUNT} files**"
             echo ""
@@ -260,6 +333,9 @@ jobs:
               if [ -n "$PHASE2_BODY" ]; then
                 echo "$PHASE2_BODY"
               fi
+              if [ -n "$DALE_BODY" ]; then
+                echo "$DALE_BODY"
+              fi
               echo ""
             fi
 
@@ -267,6 +343,9 @@ jobs:
               echo "| Skipped (needs manual review) | Reason |"
               echo "|-------------------------------|--------|"
               echo "$SKIPPED_BODY"
+              if [ -n "$DALE_SKIPPED_BODY" ]; then
+                echo "$DALE_SKIPPED_BODY"
+              fi
               echo ""
             fi
 
@@ -275,7 +354,7 @@ jobs:
 
           # Delete previous Vale Auto-Fix comments
           COMMENT_IDS=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" \
-            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("## Vale Auto-Fix Summary"))) | .id] | .[]' 2>/dev/null || true)
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("## Auto-Fix Summary"))) | .id] | .[]' 2>/dev/null || true)
           for ID in $COMMENT_IDS; do
             gh api "repos/${REPO}/issues/comments/${ID}" -X DELETE 2>/dev/null || true
           done

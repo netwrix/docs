@@ -62,7 +62,7 @@ The dev server runs on port 4500 with hot reload — changes you make to documen
 5. Push your branch.
 6. Create a pull request (PR) targeting `dev`.
 
-After you open a PR, Vale issues are auto-fixed and a summary is posted. Dale linting (AI-powered) and an editorial review also run and post results as PR comments. To get help with Dale or editorial suggestions, comment `@claude` on the PR followed by your request.
+After you open a PR, Vale and Dale issues are auto-fixed and a summary is posted. An editorial review also runs and posts results as a PR comment. To get help with editorial suggestions, comment `@claude` on the PR followed by your request.
 
 ## Writing standards
 
@@ -148,9 +148,9 @@ If you have [Claude Code](https://claude.ai/code) installed, this repository inc
 
 ### Linting with Dale
 
-Dale is an AI linter that runs automatically during PR review. It catches context-dependent issues that regex-based Vale can't — passive voice, misplaced modifiers, idioms, wordiness, and other patterns. Dale results are posted as PR comments alongside the editorial review.
+Dale is an AI linter that catches context-dependent issues that regex-based Vale can't — passive voice, misplaced modifiers, idioms, wordiness, and other patterns. Dale issues are auto-fixed on PRs alongside Vale.
 
-Run Dale locally on any markdown file to catch context-dependent writing issues before pushing:
+Run Dale locally on any markdown file to preview context-dependent issues:
 
 ```
 /dale docs/path/to/file.md
