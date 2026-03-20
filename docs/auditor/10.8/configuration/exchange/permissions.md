@@ -12,6 +12,8 @@ will specify this account in the monitoring plan wizard (or in the monitored ite
 
 ## Account Requirements
 
+### Directory Permissions
+
 The account used for data collection must meet the following requirements:
 
 - The Manage auditing and security log policy must be defined for this account. See the
@@ -21,8 +23,9 @@ The account used for data collection must meet the following requirements:
   container is required. See the
   [Permissions for Active Directory Auditing](/docs/auditor/10.8/configuration/activedirectory/permissions.md) topic for
   additional information.
-- Additional configuration if auto-backup is _enabled_ for the domain controller event logs (see
-  the following section).
+- Additional configuration if auto-backup is _enabled_ for the domain controller event logs. See
+  the [Additional Configuration for Domain Controller's Event Logs Auto-backup](#additional-configuration-for-domain-controllers-event-logs-auto-backup)
+  section.
 
     OR
 
@@ -31,13 +34,17 @@ The account used for data collection must meet the following requirements:
     **NOTE:** This covers all the required permissions above and is a mandatory setting if you want
     to use network traffic compression for data collection.
 
-- The account must have the following management roles assigned: Audit Logs role, View-only
+### Exchange Permissions
+
+The account must also have one of the following:
+
+- The following management roles assigned: Audit Logs role, View-only
   Configuration role, Mail Recipients role, and Monitoring role. See the
   [Assign Management Roles](#assign-management-roles) topic for additional information.
 
     OR
 
-- The account must belong to the **Organization Management** or **Records Management** group. See
+- Membership in the **Organization Management** or **Records Management** group. See
   the
   [Add Account to the Organization Management Group](#add-account-to-the-organization-management-group)
   topic for additional information.
