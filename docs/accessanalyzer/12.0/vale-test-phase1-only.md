@@ -8,16 +8,16 @@ sidebar_position: 994
 
 This file has only Phase 1 violations. Phase 2 should have nothing to do.
 
-Make sure you select the correct check box in the drop-down menu.
+ensure you select the correct checkbox in the dropdown menu.
 
-You do not need to click on the button. The system does not require it.
+You don't need to click the button. The system doesn't require it.
 
-In order to utilize the feature, you will need to setup the configuration.
+to use the feature, you will need to set up the configuration.
 
-If you wish to login to the portal, the system is able to handle authentication.
+If you want to log in to the portal, the system can handle authentication.
 
-Please configure the connection string before continuing.
+configure the connection string before continuing.
 
-The aforementioned feature is currently available in the latest release.
+The feature is available in the latest release.
 
-The user(s) can select multiple item(s) from the list.
+The users can select multiple items from the list.
