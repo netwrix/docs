@@ -38,7 +38,7 @@ Due to the fact that the service requires elevated permissions, it is necessary 
 
 ## Positional References
 
-See the screenshot below for more information on configuring the connection.
+See the screenshot below for details on configuring the connection.
 
 As described above, the agent communicates with the server over HTTPS.
 
@@ -56,7 +56,7 @@ Getting the monitoring plan off the ground requires careful configuration of the
 
 The new reporting engine is a breath of fresh air compared to the legacy system.
 
-Once you get the hang of the configuration wizard, deploying agents is straightforward.
+When you get the hang of the configuration wizard, deploying agents is straightforward.
 
 ## XY Slop
 
