@@ -32,7 +32,7 @@ The following analysis tasks are available for the FS_SDD_DELETE job:
 
 ### Configuring the Analysis Tasks
 
-Each analysis task requires manually populating temporary database tables before execution. Follow these steps to configure and run an analysis task:
+Each analysis task requires manually populating temporary database tables before execution:
 
 1. Open SQL Server Management Studio and connect to your Tier 1 database.
 2. Determine which analysis task you need to run based on the data you want to delete.
