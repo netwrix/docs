@@ -164,6 +164,16 @@ for FILE in "${FILES_ARRAY[@]}"; do
           ;;
       esac
 
+      # Capitalize first letter if the line starts with lowercase after fix
+      # Skip table rows (start with |) and list continuations (indented)
+      if [ "$NEW_CONTENT" != "$LINE_CONTENT" ]; then
+        FIRST_CHAR=$(echo "$NEW_CONTENT" | sed -E 's/^(#+\s+)?//' | head -c1)
+        if [[ "$FIRST_CHAR" =~ [a-z] ]] && ! echo "$NEW_CONTENT" | grep -qE '^\s*\||^\s{2,}'; then
+          # Capitalize the first letter after optional heading markers
+          NEW_CONTENT=$(echo "$NEW_CONTENT" | sed -E 's/^(#+\s+)?([a-z])/\1\U\2/')
+        fi
+      fi
+
       if [ "$NEW_CONTENT" != "$LINE_CONTENT" ]; then
         TMPNEW=$(mktemp)
         printf '%s' "$NEW_CONTENT" > "$TMPNEW"
