@@ -18,3 +18,4 @@ Netwrix Access Analyzer is an on-premises Data Security Posture Management (DSPM
 ## Documentation Sections
 
 - [Overview](overview/overview) — Introduction to the product, key concepts, requirements, and installation
+- [Getting Started](gettingstarted/overview) — Step-by-step guides for your first scans and syncs
