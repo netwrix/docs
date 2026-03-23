@@ -28,6 +28,7 @@ You will be automatically enrolled in the product learning path for the products
 * [Netwrix Password Policy Enforcer Learning Path](./password-policy-enforcer.md)
 * [Netwrix Password Reset Learning Path](./password-reset.md)
 * [Netwrix Password Secure Learning Path](./password-secure.md)
+* [Netwrix PingCastle Learning Path](./pingcastle.md)
 * [Netwrix Platform Governance for NetSuite Learning Paths](./platform-governance-for-netsuite/index.md)
     * [Netwrix Platform Governance for NetSuite Learning Path](./platform-governance-for-netsuite/core.md)
     * [Netwrix Platform Governance for NetSuite – Onboard New NetSuite Admins Learning Path](./platform-governance-for-netsuite/new-admin.md)
