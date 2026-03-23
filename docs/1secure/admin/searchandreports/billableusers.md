@@ -50,7 +50,7 @@ one filter. To review the Operator filter options, see the
 
 :::note
 You can also export a report to your email by clicking **Export** in the upper right
-corner of the page. You shall receive a report in XLSX to your login email.
+corner of the page. You will receive a report in XLSX to your login email.
 :::
 
 
