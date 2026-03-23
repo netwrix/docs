@@ -126,7 +126,7 @@ jobs:
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.VALE_TOKEN }}
+          token: ${{ secrets.ISSUE_TOKEN }}
           fetch-depth: 0
 
       - name: Configure git identity
@@ -157,7 +157,7 @@ jobs:
       - name: Create PR and comment on issue
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
         env:
-          GH_TOKEN: ${{ secrets.VALE_TOKEN }}
+          GH_TOKEN: ${{ secrets.ISSUE_TOKEN }}
         run: |
           OUTPUT_FILE="/home/runner/work/_temp/claude-execution-output.json"
 
@@ -199,7 +199,7 @@ jobs:
           ISSUE_NUM=${{ github.event.issue.number }}
           PR_TITLE="docs: fix #${ISSUE_NUM} — $(echo "$BRANCH_NAME" | sed 's|fix/issue-[0-9]*-||' | tr '-' ' ')"
 
-          # Create PR using VALE_TOKEN so it triggers downstream workflows
+          # Create PR using ISSUE_TOKEN so it triggers downstream workflows
           PR_URL=$(gh pr create \
             --repo ${{ github.repository }} \
             --base dev \
@@ -248,7 +248,7 @@ jobs:
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.VALE_TOKEN }}
+          token: ${{ secrets.ISSUE_TOKEN }}
           fetch-depth: 0
 
       - name: Configure git identity
@@ -284,7 +284,7 @@ jobs:
       - name: Create PR and comment on issue
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
         env:
-          GH_TOKEN: ${{ secrets.VALE_TOKEN }}
+          GH_TOKEN: ${{ secrets.ISSUE_TOKEN }}
         run: |
           OUTPUT_FILE="/home/runner/work/_temp/claude-execution-output.json"
 
@@ -326,7 +326,7 @@ jobs:
           ISSUE_NUM=${{ github.event.issue.number }}
           PR_TITLE="docs: fix #${ISSUE_NUM} — $(echo "$BRANCH_NAME" | sed 's|fix/issue-[0-9]*-||' | tr '-' ' ')"
 
-          # Create PR using VALE_TOKEN so it triggers downstream workflows
+          # Create PR using ISSUE_TOKEN so it triggers downstream workflows
           PR_URL=$(gh pr create \
             --repo ${{ github.repository }} \
             --base dev \
