@@ -14,13 +14,13 @@ the Users: User Administration topic for additional information.
 ![InstallAgent](/images/changetracker/8.1/install/agent/installagent.webp)
 
 By default the Agent will register using the Name of the server but there is an opportunity to
-customize this during installation or post-installation via an edit of the Hub Details file. See the
+customize this during installation or post-installation by editing the Hub Details file. See the
 [First Run – HubDetails.xml File](/docs/changetracker/8.1/admin/settingstab/devicegroups.md) topic for additional
 information.
 
 :::info
-During installation, this can also be performed on the **Advanced Configuration**
-step of the installation, and there is also an option to test agent connectivity.
+During installation, you can also do this on the **Advanced Configuration**
+step and test agent connectivity.
 :::
 
 
@@ -29,10 +29,9 @@ step of the installation, and there is also an option to test agent connectivity
 ![InstallAgentTestConnectivity](/images/changetracker/8.1/install/agent/installagenttestconnectivity.webp)
 
 :::note
-to maximize performance, Gen 7 Agent operational files are located in
-_%PROGRAMDATA%\NNT\gen7agent.service_, similarly if you are ever required to provide the
-**rolling-log.txt** file to [Netwrix Support](https://www.netwrix.com/support.html) this is where it
-is located. See the [First Run – HubDetails.xml File](/docs/changetracker/8.1/admin/settingstab/devicegroups.md) topic
+To maximize performance, Gen 7 Agent stores operational files in
+_%PROGRAMDATA%\NNT\gen7agent.service_. If you ever need to provide the
+**rolling-log.txt** file to [Netwrix Support](https://www.netwrix.com/support.html), it is in the same location. See the [First Run – HubDetails.xml File](/docs/changetracker/8.1/admin/settingstab/devicegroups.md) topic
 for additional information on downloading the .xml file for agents.
 :::
 
