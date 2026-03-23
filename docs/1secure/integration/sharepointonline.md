@@ -17,8 +17,6 @@ SharePoint Online.
 
 ## Add a SharePoint Online Integration in a System
 
-Follow the steps to add the SharePoint Online integration in Netwrix 1Secure.
-
 **Step 1 –** Go to Configuration > **Integrations** and click the **Add** icon to add the SharePoint
 integration.
 
