@@ -159,13 +159,27 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.VALE_TOKEN }}
         run: |
-          # The output file is JSONL — find the result object (last object with .result)
-          CLAUDE_OUTPUT=$(tac /home/runner/work/_temp/claude-execution-output.json 2>/dev/null | jq -r 'select(.result != null) | .result' 2>/dev/null | head -1 || echo "")
+          OUTPUT_FILE="/home/runner/work/_temp/claude-execution-output.json"
 
-          echo "Claude output: $CLAUDE_OUTPUT"
+          # Extract the result text from the JSONL output file
+          # The file has multi-line JSON objects, so use jq --slurp to handle them
+          CLAUDE_OUTPUT=$(jq -rs '[.[] | select(.result != null)] | last | .result // empty' "$OUTPUT_FILE" 2>/dev/null || echo "")
 
-          # Extract branch name
-          BRANCH_NAME=$(echo "$CLAUDE_OUTPUT" | grep -oP 'BRANCH_NAME=\K\S+' | head -1)
+          # Fallback: grep the raw file for BRANCH_NAME if jq extraction failed
+          if [ -z "$CLAUDE_OUTPUT" ]; then
+            echo "jq extraction failed, falling back to grep"
+            CLAUDE_OUTPUT=$(grep -oP 'BRANCH_NAME=\K[^\s"\\]+' "$OUTPUT_FILE" 2>/dev/null | tail -1 || echo "")
+            if [ -n "$CLAUDE_OUTPUT" ]; then
+              BRANCH_NAME="$CLAUDE_OUTPUT"
+            fi
+          fi
+
+          echo "Claude output (first 200 chars): ${CLAUDE_OUTPUT:0:200}"
+
+          # Extract branch name from the result text
+          if [ -z "${BRANCH_NAME:-}" ]; then
+            BRANCH_NAME=$(echo "$CLAUDE_OUTPUT" | grep -oP 'BRANCH_NAME=\K\S+' | head -1)
+          fi
 
           if [ -z "$BRANCH_NAME" ]; then
             echo "No branch name found in Claude output — skill likely asked a clarifying question"
@@ -272,13 +286,27 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.VALE_TOKEN }}
         run: |
-          # The output file is JSONL — find the result object (last object with .result)
-          CLAUDE_OUTPUT=$(tac /home/runner/work/_temp/claude-execution-output.json 2>/dev/null | jq -r 'select(.result != null) | .result' 2>/dev/null | head -1 || echo "")
+          OUTPUT_FILE="/home/runner/work/_temp/claude-execution-output.json"
 
-          echo "Claude output: $CLAUDE_OUTPUT"
+          # Extract the result text from the JSONL output file
+          # The file has multi-line JSON objects, so use jq --slurp to handle them
+          CLAUDE_OUTPUT=$(jq -rs '[.[] | select(.result != null)] | last | .result // empty' "$OUTPUT_FILE" 2>/dev/null || echo "")
 
-          # Extract branch name
-          BRANCH_NAME=$(echo "$CLAUDE_OUTPUT" | grep -oP 'BRANCH_NAME=\K\S+' | head -1)
+          # Fallback: grep the raw file for BRANCH_NAME if jq extraction failed
+          if [ -z "$CLAUDE_OUTPUT" ]; then
+            echo "jq extraction failed, falling back to grep"
+            CLAUDE_OUTPUT=$(grep -oP 'BRANCH_NAME=\K[^\s"\\]+' "$OUTPUT_FILE" 2>/dev/null | tail -1 || echo "")
+            if [ -n "$CLAUDE_OUTPUT" ]; then
+              BRANCH_NAME="$CLAUDE_OUTPUT"
+            fi
+          fi
+
+          echo "Claude output (first 200 chars): ${CLAUDE_OUTPUT:0:200}"
+
+          # Extract branch name from the result text
+          if [ -z "${BRANCH_NAME:-}" ]; then
+            BRANCH_NAME=$(echo "$CLAUDE_OUTPUT" | grep -oP 'BRANCH_NAME=\K\S+' | head -1)
+          fi
 
           if [ -z "$BRANCH_NAME" ]; then
             echo "No branch name found in Claude output — skill likely asked a clarifying question"
