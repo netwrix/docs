@@ -13,7 +13,7 @@ import { Company, NCT } from '@site/src/training/products';
 
 Estimated length: 2.5 hours
 
-This learning path offers training to <Company /> partner Professional Services engineers on the <NCT /> product. However, certification isn't available yet. When the final courses are available to grant certification, they will be added to this learning path. You will be able to resume where you stopped. It contains the following courses:
+This learning path offers training to <Company /> partner Professional Services engineers on the <NCT /> product. However, certification isn't available yet. Once the certification courses are complete, this learning path will include them. You will be able to resume where you stopped. It contains the following courses:
 
 * 1900 <NCT /> – Valuable Features
 * 2902 <NCT /> – Architecture
