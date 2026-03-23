@@ -19,7 +19,7 @@ schedule jobs in the Schedule Wizard. See the [Schedules](/docs/accessanalyzer/1
 additional information.
 
 :::warning
-On Windows 2016 servers, the Schedule Service Account cannot be signed into an active
+On Windows 2016 servers, the Schedule Service Account can't be signed into an active
 session when the time comes for a scheduled task to start. Windows blocks the starting or running of
 scheduled tasks using an account that is logged into the server.
 :::
@@ -83,7 +83,7 @@ Use one of the following options for the Schedule Service Account:
 
     - Credentials must have privileges sufficient for scheduling tasks on the Access Analyzer
       Console server. If not, scheduled tasks fail to start.
-    - This option cannot be edited or deleted
+    - This option can't be edited or deleted
 
 - User-supplied credentials – Provide credentials for a specific account with sufficient rights to
   schedule tasks on the Access Analyzer Console server
@@ -92,7 +92,7 @@ Use one of the following options for the Schedule Service Account:
     - A local Windows account is a specific account and not the default local system account
 
 :::tip
-Remember, the Schedule Service Account cannot be signed into an active session on the Access
+Remember, the Schedule Service Account can't be signed into an active session on the Access
 Analyzer Console server when the time comes for a scheduled task to start when it has a Windows 2016
 operating system.
 :::
@@ -103,7 +103,7 @@ operating system.
 Follow the steps to create a Schedule Service Account.
 
 :::tip
-Remember, the Schedule Service Account cannot be signed into an active session on the Access
+Remember, the Schedule Service Account can't be signed into an active session on the Access
 Analyzer Console server when the time comes for a scheduled task to start when it has a Windows 2016
 operating system.
 :::
@@ -130,7 +130,7 @@ types are:
         - Application – Uses Access Analyzer’s configured Profile Security setting as selected at
           the **Settings** > **Application** node
         - Managed Service Account – Use previously configured MSA and gMSAs for authentication. The
-          password fields are not applicable when this option is selected. See the
+          password fields aren't applicable when this option is selected. See the
           [Group Managed Service Accounts (gMSA) Configuration](/docs/accessanalyzer/12.0/admin/settings/connection/gmsa.md) topic for
           additional information.
 
@@ -152,25 +152,25 @@ types are:
 provided credentials, the User Credentials window closes. Otherwise, one of the following error
 messages might appear:
 
-- Passwords Do Not Match Error
+- Passwords Don't Match Error
 
-    ![Passwords Do Not Match Error](/images/accessanalyzer/12.0/admin/settings/passwordsdontmatch.webp)
+    ![Passwords Don't Match Error](/images/accessanalyzer/12.0/admin/settings/passwordsdontmatch.webp)
 
-    - This error indicates the two password entries do not match. Click **OK** and reenter the
+    - This error indicates the two password entries don't match. Click **OK** and reenter the
       passwords.
 
 - Bad User Name or Password Error
 
     ![Bad User Name or Password Error](/images/accessanalyzer/12.0/admin/settings/incorrectlogondetails.webp)
 
-    - This error indicates either the user account does not exist or the username and password do
+    - This error indicates either the user account doesn't exist or the username and password do
       not match. Click **OK** and reenter the information.
 
 - Insufficient Rights Error
 
     ![Insufficient Rights Error](/images/accessanalyzer/12.0/admin/settings/insufficientrights.webp)
 
-    - This error indicates the account supplied does not have sufficient rights to create and run
+    - This error indicates the account supplied doesn't have sufficient rights to create and run
       scheduled tasks. Click **OK** and provide credentials with sufficient rights.
 
 - GPO Network Security Error
@@ -195,7 +195,7 @@ Access Analyzer can now schedule tasks with this Scheduled Service Account.
 Follow the steps to edit a Schedule Service Account credentials.
 
 :::tip
-Remember, the Schedule Service Account cannot be signed into an active session on the Access
+Remember, the Schedule Service Account can't be signed into an active session on the Access
 Analyzer Console server when the time comes for a scheduled task to start when it has a Windows 2016
 operating system.
 :::
@@ -203,7 +203,7 @@ operating system.
 
 ![Edit option in the Schedule view](/images/accessanalyzer/12.0/admin/settings/edit.webp)
 
-**Step 1 –** Select a credential from the User Credentials list and click on **Edit**. The User
+**Step 1 –** Select a credential from the User Credentials list and click **Edit**. The User
 Credentials window opens.
 
 **Step 2 –** Modify the credential information as needed. See Step 2 of the
@@ -233,5 +233,5 @@ Account. Click **Save** and then **OK** to confirm the changes. To ensure these 
 exit and restart the Access Analyzer application.
 
 If all Schedule Service Accounts are removed and only the local System account remains, Access
-Analyzer cannot create or run scheduled tasks unless the local system account has adequate
+Analyzer can't create or run scheduled tasks unless the local system account has adequate
 permissions.
