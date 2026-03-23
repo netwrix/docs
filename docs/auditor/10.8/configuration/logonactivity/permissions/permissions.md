@@ -7,12 +7,12 @@ sidebar_position: 10
 # Permissions for Logon Activity Auditing
 
 Before you start creating a monitoring plan to audit the Logon Activity in your domain, determine
-the domain account that will be used for data collection.
+the domain account for data collection.
 
 ## Configure Account to Collect Logon Activity
 
-This section contains instructions on how to configure an account to collect Logon Activity with
-minimum rights assignment. The instructions below apply only if you are going create a monitoring
+This section explains how to configure an account to collect Logon Activity with
+minimum rights assignment. The following instructions apply only if you are going create a monitoring
 plan with disabled network traffic compression and don't want to adjust audit settings
 automatically.
 
@@ -41,7 +41,7 @@ Policy.
 
 See the
 [Assign Permission To Read the Registry Key](/docs/auditor/10.8/configuration/windowsserver/permissions.md#assign-permission-to-read-the-registry-key)
-topic for additional information on how to do it using Registry Editor.
+topic for instructions on using Registry Editor to assign permissions.
 
 consider the following:
 
@@ -49,6 +49,6 @@ consider the following:
   group.
 - For the data collecting account, you should use a different account than the one Auditor is using
   to access the database.
-- If gMSA is being used, data collecting account should be a member of the local Administrators
+- If you use gMSA, the data collecting account should be a member of the local Administrators
   group on the Netwrix Auditor host.
   
