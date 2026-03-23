@@ -22,8 +22,6 @@ Before creating an account, grant the _Read_ permission on the SECURITY registry
 `(HKEY_LOCAL_MACHINE\SECURITY)` for an admin account under which you will make changes in Group
 Policy.
 
-Follow the steps to configure non-administrative account to collect logon activity:
-
 **Step 1 –** Create a domain user with the following privileges:
 
 - Back up files and directories. See the
