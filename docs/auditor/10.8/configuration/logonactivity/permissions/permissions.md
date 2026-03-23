@@ -9,7 +9,7 @@ sidebar_position: 10
 Before you start creating a monitoring plan to audit the Logon Activity in your domain, determine
 the domain account for data collection.
 
-Please consider the following:
+consider the following:
 
 - If network traffic compression is enabled, then the account must belong to the Domain Admins
   group.
