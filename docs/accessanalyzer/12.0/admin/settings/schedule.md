@@ -6,16 +6,15 @@ sidebar_position: 100
 
 # Schedule
 
-The Schedule node contains objects referred to as Schedule Service Accounts. A Schedule Service
-Account is used to run scheduled tasks on the Access Analyzer Console server. You can configure multiple Schedule Service Accounts to support different security contexts for scheduled jobs.
+The Schedule node contains objects called Schedule Service Accounts. A Schedule Service
+Account runs scheduled tasks on the Access Analyzer Console server. You can configure multiple Schedule Service Accounts to support different security contexts for scheduled jobs.
 
 ![Schedule node](/images/accessanalyzer/12.0/admin/settings/schedule.webp)
 
-Jobs can be executed manually as desired or scheduled to execute at designated times. For example,
+Run jobs manually or schedule them to execute at designated times. For example,
 you could schedule a job to run during hours when the office is closed and network traffic is low.
 Windows uses the Schedule Service Account to access the task folders when launching scheduled tasks.
-Schedule Service Accounts are configured at the global level, and this account can be used to
-schedule jobs in the Schedule Wizard. See the [Schedules](/docs/accessanalyzer/12.0/admin/schedule/overview.md) topic for
+Configure Schedule Service Accounts at the global level and use this account to schedule jobs in the Schedule Wizard. See the [Schedules](/docs/accessanalyzer/12.0/admin/schedule/overview.md) topic for
 additional information.
 
 :::warning
@@ -27,11 +26,11 @@ scheduled tasks using an account that is logged into the server.
 
 **Password Storage Options**
 
-The password for the credential provided can be stored in the Access Analyzer application or the
+You can store the password for the credential in the Access Analyzer application or the
 Access Analyzer Vault.
 
 Choosing between the Access Analyzer application and Access Analyzer Vault is a global setting
-configured in the **Settings** > **Application** node. See the
+in the **Settings** > **Application** node. See the
 [Application](/docs/accessanalyzer/12.0/admin/settings/application/overview.md) topic for additional information.
 
 **Permissions**
@@ -62,8 +61,8 @@ least the following to meet Least Privileged specifications:
   [Storage](/docs/accessanalyzer/12.0/admin/settings/storage/overview.md) topic for additional information.
 
 The **Cancel** and **Save** buttons are in the lower-right corner of the Schedule view. These
-buttons become enabled when modifications are made to the Schedule global settings. Whenever changes
-are made at the global level, click **Save** and then **OK** to confirm the changes. Otherwise,
+buttons become enabled when you modify the Schedule global settings. When you make changes
+at the global level, click **Save** and then **OK** to confirm the changes. Otherwise,
 click **Cancel** if no changes were intended.
 
 The Access Analyzer vault provides enhanced security through enhanced encryption to various
@@ -92,18 +91,16 @@ Use one of the following options for the Schedule Service Account:
     - A local Windows account is a specific account and not the default local system account
 
 :::tip
-Remember, the Schedule Service Account can't be signed into an active session on the Access
-Analyzer Console server when the time comes for a scheduled task to start when it has a Windows 2016
-operating system.
+Remember, on Windows 2016 servers, the Schedule Service Account can't be signed into an active
+session on the Access Analyzer Console server when a scheduled task starts.
 :::
 
 
 ## Create a Schedule Service Account
 
 :::tip
-Remember, the Schedule Service Account can't be signed into an active session on the Access
-Analyzer Console server when the time comes for a scheduled task to start when it has a Windows 2016
-operating system.
+Remember, on Windows 2016 servers, the Schedule Service Account can't be signed into an active
+session on the Access Analyzer Console server when a scheduled task starts.
 :::
 
 
@@ -146,9 +143,8 @@ types are:
     - Password – Type the password
     - Confirm – Re-type the password
 
-**Step 3 –** Click **OK** and the credentials are verified. If there are no problems with the
-provided credentials, the User Credentials window closes. Otherwise, one of the following error
-messages might appear:
+**Step 3 –** Click **OK** to verify the credentials. If the credentials are valid, the User
+Credentials window closes. Otherwise, one of the following error messages might appear:
 
 - Passwords Don't Match Error
 
@@ -191,9 +187,8 @@ Access Analyzer can now schedule tasks with this Scheduled Service Account.
 ## Edit a Schedule Service Account
 
 :::tip
-Remember, the Schedule Service Account can't be signed into an active session on the Access
-Analyzer Console server when the time comes for a scheduled task to start when it has a Windows 2016
-operating system.
+Remember, on Windows 2016 servers, the Schedule Service Account can't be signed into an active
+session on the Access Analyzer Console server when a scheduled task starts.
 :::
 
 
@@ -206,8 +201,8 @@ Credentials window opens.
 [Create a Schedule Service Account](#create-a-schedule-service-account) topic for additional
 information.
 
-**Step 3 –** Click **OK** and the credentials will be verified. If there are no problems with the
-provided credentials, the User Credentials window closes.
+**Step 3 –** Click **OK** to verify the credentials. If the credentials are valid, the User
+Credentials window closes.
 
 Access Analyzer can now schedule tasks with this Scheduled Service Account.
 
