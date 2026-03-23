@@ -16,8 +16,6 @@ Directory/Microsoft Entra ID (formerly Azure AD) accounts for your organization
 
 ## Review a Report
 
-Follow the steps to review a billable users report.
-
 **Step 1 –** On the Home page, click the **Users** of your organization. The **System** > **Billable
 Users** page opens. By default, it populates the data with the Users of your organization.
 
