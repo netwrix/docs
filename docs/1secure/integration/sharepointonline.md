@@ -7,7 +7,7 @@ sidebar_position: 30
 # SharePoint Online
 
 You can use the SharePoint Online integration for the report (Activity and Risk Assessment
-Dashboard) subscriptions. This way, the required reports shall be delivered to a specific folder in
+Dashboard) subscriptions. This way, the integration delivers the required reports to a specific folder in
 SharePoint Online.
 
 | Icon                                                                                          | Description                                                                  |
@@ -46,13 +46,13 @@ topic for additional information.
 **Step 4 –** Click **Finish**.
 
 :::note
-You must firstly add a Sites.ReadWrite.All permission in your Microsoft Entra admin
+You must first add a Sites.ReadWrite.All permission in your Microsoft Entra admin
 center. See the [Microsoft 365 Permissions](/docs/1secure/configuration/registerconfig/permissions.md) topic for
 additional information.
 :::
 
 
-The SharePoint Online integration is added now. The status displays "Ok" in green.
+You have added the SharePoint Online integration. The status displays "Ok" in green.
 
 ![Integrations list](/images/1secure/integration/integrationssharepointonline.webp)
 
