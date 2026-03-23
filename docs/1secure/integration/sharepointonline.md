@@ -49,7 +49,7 @@ topic for additional information.
 
 :::note
 You must firstly add a Sites.ReadWrite.All permission in your Microsoft Entra admin
-center. See the [ Microsoft 365 Permissions](/docs/1secure/configuration/registerconfig/permissions.md) topic for
+center. See the [Microsoft 365 Permissions](/docs/1secure/configuration/registerconfig/permissions.md) topic for
 additional information.
 :::
 
