@@ -6,39 +6,28 @@ sidebar_position: 10
 
 # Permissions for Logon Activity Auditing
 
-Before you start creating a monitoring plan to audit the logon activity in your domain, determine
-the domain account that will be used for data collection.
+Before creating a monitoring plan to audit the Logon Activity in your domain, determine
+the domain account for data collection.
 
-Depending on the network traffic compression setting you need to use, one of the following is
-required:
+When selecting the domain account, consider the following:
 
-- If network traffic compression is enabled, then the account must belong to the Domain Admins
-  group;
-- If network traffic compression is disabled, then you can choose between account which belongs to
-  the Domain Admins group or non-administrative account. See the Configure Non-Administrative
-  Account to Collect Logon Activity topic below for additional information.
+- If network traffic compression is enabled, the account must belong to the Domain Admins group.
+- If network traffic compression is disabled, the account can belong to the Domain Admins group or be a non-administrative account configured with minimum rights (see below).
+- For the data collection account, use a different account than the one Auditor uses to access the database.
+- If you use a group Managed Service Account (gMSA), the data collection account must be a member of the local Administrators group on the Netwrix Auditor host.
 
-Afterward, include this account in the monitoring plan wizard.
+## Configure Account to Collect Logon Activity
 
-Please consider the following:
-
-- For the data collecting account, you should use a different account than the one Auditor is using
-  to access the database.
-- If gMSA is being used, data collecting account should be a member of the local Administrators
-  group on the Netwrix Auditor host.
-
-## Configure Non-Administrative Account to Collect Logon Activity
-
-This section contains instructions on how to configure an account to collect Logon Activity with
-minimum rights assignment. The instructions below apply only if you are going create a monitoring
-plan with disabled network traffic compression and do not want to adjust audit settings
+This section explains how to configure an account to collect Logon Activity with
+minimum rights assignment. The following instructions apply only if you plan to create a monitoring
+plan with network traffic compression disabled and don't want to adjust audit settings
 automatically.
+
+**NOTE:** If the account is a member of the Domain Admins group, you can skip these steps.
 
 Before creating an account, grant the _Read_ permission on the SECURITY registry key
 `(HKEY_LOCAL_MACHINE\SECURITY)` for an admin account under which you will make changes in Group
 Policy.
-
-Follow the steps to configure non-administrative account to collect logon activity:
 
 **Step 1 –** Create a domain user with the following privileges:
 
@@ -59,4 +48,6 @@ Follow the steps to configure non-administrative account to collect logon activi
 
 See the
 [Assign Permission To Read the Registry Key](/docs/auditor/10.8/configuration/windowsserver/permissions.md#assign-permission-to-read-the-registry-key)
-topic for additional information on how to do it using Registry Editor.
+topic for instructions on using Registry Editor to assign permissions.
+
+  
