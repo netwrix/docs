@@ -54,7 +54,7 @@ corner of the page. You will receive a report in XLSX to your login email.
 
 ## Filter Descriptions
 
-This table provides a list of filters and descriptions.
+This table lists filters and descriptions.
 
 | Filter      | Description                                                                                                                                                                             |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
