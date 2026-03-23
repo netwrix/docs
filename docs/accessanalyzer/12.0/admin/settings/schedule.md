@@ -7,7 +7,7 @@ sidebar_position: 100
 # Schedule
 
 The Schedule node contains objects referred to as Schedule Service Accounts. A Schedule Service
-Account is used to run scheduled tasks on the Access Analyzer Console server.
+Account is used to run scheduled tasks on the Access Analyzer Console server. You can configure multiple Schedule Service Accounts to support different security contexts for scheduled jobs.
 
 ![Schedule node](/images/accessanalyzer/12.0/admin/settings/schedule.webp)
 
