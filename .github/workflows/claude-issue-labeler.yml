@@ -126,16 +126,24 @@ jobs:
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.VALE_TOKEN }}
           fetch-depth: 0
+
+      - name: Configure git identity
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Run content-fix skill
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
         uses: anthropics/claude-code-action@v1
         env:
           REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ secrets.VALE_TOKEN }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.VALE_TOKEN }}
           show_full_output: true
           prompt: |
             /content-fix ${{ github.event.issue.number }}
@@ -176,7 +184,14 @@ jobs:
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.VALE_TOKEN }}
           fetch-depth: 0
+
+      - name: Configure git identity
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Run content-fix skill
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
@@ -184,9 +199,10 @@ jobs:
         env:
           REPO: ${{ github.repository }}
           COMMENT_BODY: ${{ github.event.comment.body }}
+          GH_TOKEN: ${{ secrets.VALE_TOKEN }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.VALE_TOKEN }}
           show_full_output: true
           prompt: |
             /content-fix ${{ github.event.issue.number }}
