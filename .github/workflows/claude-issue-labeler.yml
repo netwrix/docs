@@ -159,14 +159,20 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.VALE_TOKEN }}
         run: |
-          # Extract branch name from Claude's output
-          CLAUDE_OUTPUT=$(cat /home/runner/work/_temp/claude-execution-output.json 2>/dev/null | jq -r '.result // empty' 2>/dev/null || echo "")
-          BRANCH_NAME=$(echo "$CLAUDE_OUTPUT" | grep -oP 'BRANCH_NAME=\K.*' | head -1)
+          # The output file is JSONL — find the result object (last object with .result)
+          CLAUDE_OUTPUT=$(tac /home/runner/work/_temp/claude-execution-output.json 2>/dev/null | jq -r 'select(.result != null) | .result' 2>/dev/null | head -1 || echo "")
+
+          echo "Claude output: $CLAUDE_OUTPUT"
+
+          # Extract branch name
+          BRANCH_NAME=$(echo "$CLAUDE_OUTPUT" | grep -oP 'BRANCH_NAME=\K\S+' | head -1)
 
           if [ -z "$BRANCH_NAME" ]; then
             echo "No branch name found in Claude output — skill likely asked a clarifying question"
             exit 0
           fi
+
+          echo "Found branch: $BRANCH_NAME"
 
           # Check if branch exists on remote
           if ! git ls-remote --exit-code origin "$BRANCH_NAME" > /dev/null 2>&1; then
@@ -177,20 +183,18 @@ jobs:
           # Extract description from Claude's output (everything before BRANCH_NAME line)
           DESCRIPTION=$(echo "$CLAUDE_OUTPUT" | sed '/BRANCH_NAME=/d' | sed '/^$/d')
           ISSUE_NUM=${{ github.event.issue.number }}
+          PR_TITLE="docs: fix #${ISSUE_NUM} — $(echo "$BRANCH_NAME" | sed 's|fix/issue-[0-9]*-||' | tr '-' ' ')"
 
           # Create PR using VALE_TOKEN so it triggers downstream workflows
           PR_URL=$(gh pr create \
             --repo ${{ github.repository }} \
             --base dev \
             --head "$BRANCH_NAME" \
-            --title "docs: fix #${ISSUE_NUM} — $(echo "$BRANCH_NAME" | sed 's|fix/issue-[0-9]*-||' | tr '-' ' ')" \
-            --body "$(cat <<EOF
-          Closes #${ISSUE_NUM}
+            --title "$PR_TITLE" \
+            --body "Closes #${ISSUE_NUM}
 
           ## What changed
-          ${DESCRIPTION}
-          EOF
-          )")
+          ${DESCRIPTION}")
 
           echo "Created PR: $PR_URL"
 
@@ -268,14 +272,20 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.VALE_TOKEN }}
         run: |
-          # Extract branch name from Claude's output
-          CLAUDE_OUTPUT=$(cat /home/runner/work/_temp/claude-execution-output.json 2>/dev/null | jq -r '.result // empty' 2>/dev/null || echo "")
-          BRANCH_NAME=$(echo "$CLAUDE_OUTPUT" | grep -oP 'BRANCH_NAME=\K.*' | head -1)
+          # The output file is JSONL — find the result object (last object with .result)
+          CLAUDE_OUTPUT=$(tac /home/runner/work/_temp/claude-execution-output.json 2>/dev/null | jq -r 'select(.result != null) | .result' 2>/dev/null | head -1 || echo "")
+
+          echo "Claude output: $CLAUDE_OUTPUT"
+
+          # Extract branch name
+          BRANCH_NAME=$(echo "$CLAUDE_OUTPUT" | grep -oP 'BRANCH_NAME=\K\S+' | head -1)
 
           if [ -z "$BRANCH_NAME" ]; then
             echo "No branch name found in Claude output — skill likely asked a clarifying question"
             exit 0
           fi
+
+          echo "Found branch: $BRANCH_NAME"
 
           # Check if branch exists on remote
           if ! git ls-remote --exit-code origin "$BRANCH_NAME" > /dev/null 2>&1; then
@@ -286,20 +296,18 @@ jobs:
           # Extract description from Claude's output (everything before BRANCH_NAME line)
           DESCRIPTION=$(echo "$CLAUDE_OUTPUT" | sed '/BRANCH_NAME=/d' | sed '/^$/d')
           ISSUE_NUM=${{ github.event.issue.number }}
+          PR_TITLE="docs: fix #${ISSUE_NUM} — $(echo "$BRANCH_NAME" | sed 's|fix/issue-[0-9]*-||' | tr '-' ' ')"
 
           # Create PR using VALE_TOKEN so it triggers downstream workflows
           PR_URL=$(gh pr create \
             --repo ${{ github.repository }} \
             --base dev \
             --head "$BRANCH_NAME" \
-            --title "docs: fix #${ISSUE_NUM} — $(echo "$BRANCH_NAME" | sed 's|fix/issue-[0-9]*-||' | tr '-' ' ')" \
-            --body "$(cat <<EOF
-          Closes #${ISSUE_NUM}
+            --title "$PR_TITLE" \
+            --body "Closes #${ISSUE_NUM}
 
           ## What changed
-          ${DESCRIPTION}
-          EOF
-          )")
+          ${DESCRIPTION}")
 
           echo "Created PR: $PR_URL"
 
