@@ -9,14 +9,12 @@ sidebar_position: 10
 Before creating a monitoring plan to audit the Logon Activity in your domain, determine
 the domain account for data collection.
 
-consider the following:
+When selecting the domain account, consider the following:
 
-- If network traffic compression is enabled, then the account must belong to the Domain Admins
-  group.
-- For the data collecting account, you should use a different account than the one Auditor uses
-  to access the database.
-- If you use gMSA, the data collecting account should be a member of the local Administrators
-  group on the Netwrix Auditor host.
+- If network traffic compression is enabled, the account must belong to the Domain Admins group.
+- If network traffic compression is disabled, the account can belong to the Domain Admins group or be a non-administrative account configured with minimum rights (see below).
+- For the data collection account, use a different account than the one Auditor uses to access the database.
+- If you use a group Managed Service Account (gMSA), the data collection account must be a member of the local Administrators group on the Netwrix Auditor host.
 
 ## Configure Account to Collect Logon Activity
 
