@@ -357,7 +357,7 @@ See the [SharePoint](/docs/auditor/10.8/configuration/sharepoint/overview.md) to
 Auditor supports monitoring the following versions:
 
 - Microsoft SQL Server 2025
-- Microsoft SQL Server 2012
+- Microsoft SQL Server 2022
 - Microsoft SQL Server 2019
 - Microsoft SQL Server 2017
 - Microsoft SQL Server 2016
