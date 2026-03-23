@@ -140,10 +140,10 @@ jobs:
         uses: anthropics/claude-code-action@v1
         env:
           REPO: ${{ github.repository }}
-          GH_TOKEN: ${{ secrets.VALE_TOKEN }}
+          PUSH_TOKEN: ${{ secrets.VALE_TOKEN }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.VALE_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
           prompt: |
             /content-fix ${{ github.event.issue.number }}
@@ -152,6 +152,9 @@ jobs:
             - REPO: ${{ github.repository }}
             - ISSUE_NUMBER: ${{ github.event.issue.number }}
             - ISSUE_TITLE: ${{ github.event.issue.title }}
+
+            IMPORTANT: Before running any `gh` command that creates or modifies resources (gh pr create, gh issue comment), first run: export GH_TOKEN=$PUSH_TOKEN
+            This ensures PRs trigger downstream workflows.
           claude_args: '--model claude-opus-4-6 --max-turns 50 --allowedTools "Bash,Read,Write,Edit,Glob,Grep,Skill(content-fix)"'
 
   content-fix-followup:
@@ -199,10 +202,10 @@ jobs:
         env:
           REPO: ${{ github.repository }}
           COMMENT_BODY: ${{ github.event.comment.body }}
-          GH_TOKEN: ${{ secrets.VALE_TOKEN }}
+          PUSH_TOKEN: ${{ secrets.VALE_TOKEN }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.VALE_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
           prompt: |
             /content-fix ${{ github.event.issue.number }}
@@ -215,4 +218,7 @@ jobs:
 
             This is a follow-up invocation. A user replied with @claude on a content_fix issue.
             Read the full issue body AND all comments to understand the complete context.
+
+            IMPORTANT: Before running any `gh` command that creates or modifies resources (gh pr create, gh issue comment), first run: export GH_TOKEN=$PUSH_TOKEN
+            This ensures PRs trigger downstream workflows.
           claude_args: '--model claude-opus-4-6 --max-turns 50 --allowedTools "Bash,Read,Write,Edit,Glob,Grep,Skill(content-fix)"'
