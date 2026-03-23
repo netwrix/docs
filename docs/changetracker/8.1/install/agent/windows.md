@@ -39,4 +39,4 @@ for additional information on downloading the .xml file for agents.
 
 ![InstallAgentOperationFiles](/images/changetracker/8.1/install/agent/installagentoperationfiles.webp)
 
-Run the Agent UI. See the [ Agent First Run](/docs/changetracker/8.1/install/agent/firstrun.md) topic for additional information.
+Run the Agent UI. See the [Agent First Run](/docs/changetracker/8.1/install/agent/firstrun.md) topic for additional information.
