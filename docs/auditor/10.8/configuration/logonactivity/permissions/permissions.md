@@ -13,7 +13,7 @@ the domain account that will be used for data collection.
 
 This section contains instructions on how to configure an account to collect Logon Activity with
 minimum rights assignment. The instructions below apply only if you are going create a monitoring
-plan with disabled network traffic compression and do not want to adjust audit settings
+plan with disabled network traffic compression and don't want to adjust audit settings
 automatically.
 
 **NOTE:** If the account is a member of the Domain Admins group, you can skip these steps.
@@ -45,7 +45,7 @@ See the
 [Assign Permission To Read the Registry Key](/docs/auditor/10.8/configuration/windowsserver/permissions.md#assign-permission-to-read-the-registry-key)
 topic for additional information on how to do it using Registry Editor.
 
-Please consider the following:
+consider the following:
 
 - If network traffic compression is enabled, then the account must belong to the Domain Admins
   group.
