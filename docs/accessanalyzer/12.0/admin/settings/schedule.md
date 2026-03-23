@@ -100,8 +100,6 @@ operating system.
 
 ## Create a Schedule Service Account
 
-Follow the steps to create a Schedule Service Account.
-
 :::tip
 Remember, the Schedule Service Account can't be signed into an active session on the Access
 Analyzer Console server when the time comes for a scheduled task to start when it has a Windows 2016
@@ -192,8 +190,6 @@ Access Analyzer can now schedule tasks with this Scheduled Service Account.
 
 ## Edit a Schedule Service Account
 
-Follow the steps to edit a Schedule Service Account credentials.
-
 :::tip
 Remember, the Schedule Service Account can't be signed into an active session on the Access
 Analyzer Console server when the time comes for a scheduled task to start when it has a Windows 2016
@@ -216,8 +212,6 @@ provided credentials, the User Credentials window closes.
 Access Analyzer can now schedule tasks with this Scheduled Service Account.
 
 ## Delete a Schedule Service Account
-
-Follow the steps to delete a Schedule Service Account.
 
 ![Delete option in the Schedule view](/images/accessanalyzer/12.0/admin/settings/delete.webp)
 
