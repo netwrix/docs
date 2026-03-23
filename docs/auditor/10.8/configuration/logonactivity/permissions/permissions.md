@@ -9,7 +9,7 @@ sidebar_position: 10
 Before you start creating a monitoring plan to audit the Logon Activity in your domain, determine
 the domain account that will be used for data collection.
 
-## Configure Non-Administrative Account to Collect Logon Activity
+## Configure Account to Collect Logon Activity
 
 This section contains instructions on how to configure an account to collect Logon Activity with
 minimum rights assignment. The instructions below apply only if you are going create a monitoring
