@@ -29,7 +29,7 @@ step of the installation, and there is also an option to test agent connectivity
 ![InstallAgentTestConnectivity](/images/changetracker/8.1/install/agent/installagenttestconnectivity.webp)
 
 :::note
-In order to maximize performance, Gen 7 Agent operational files are located in
+to maximize performance, Gen 7 Agent operational files are located in
 _%PROGRAMDATA%\NNT\gen7agent.service_, similarly if you are ever required to provide the
 **rolling-log.txt** file to [Netwrix Support](https://www.netwrix.com/support.html) this is where it
 is located. See the [First Run – HubDetails.xml File](/docs/changetracker/8.1/admin/settingstab/devicegroups.md) topic
