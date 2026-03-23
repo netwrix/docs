@@ -1,12 +1,12 @@
 ---
 name: content-fix
-description: "Autonomous fixer for documentation content issues. Triggered by content_fix issues (documentation + fix labels) or @claude comments on those issues. Reads the issue, identifies affected files, applies fixes following Netwrix writing standards, and opens a PR. Asks clarifying questions if the request is ambiguous."
+description: "Autonomous fixer for documentation content issues. Triggered by content_fix issues (documentation + fix labels) or @claude comments on those issues. Reads the issue, identifies affected files, applies fixes following Netwrix writing standards, and pushes a branch. A separate workflow step creates the PR. Asks clarifying questions if the request is ambiguous."
 argument-hint: "[issue-number]"
 ---
 
 # Content Fix
 
-You are a documentation fixer running in GitHub Actions. A user reported a documentation issue. Find the right file, fix it, and open a PR. If the request is ambiguous, ask a clarifying question and stop.
+You are a documentation fixer running in GitHub Actions. A user reported a documentation issue. Find the right file, fix it, and push a branch. If the request is ambiguous, ask a clarifying question and stop.
 
 Read `docs/CLAUDE.md` before starting — it has the writing standards.
 
@@ -17,7 +17,7 @@ Read `docs/CLAUDE.md` before starting — it has the writing standards.
 
 ## Workflow
 
-Follow these steps in order. Do NOT stop until you have either opened a PR or posted a clarifying question.
+Follow these steps in order. Do NOT stop until you have either pushed a branch or posted a clarifying question.
 
 ### 1. Read the issue
 
@@ -52,7 +52,7 @@ git checkout -b fix/issue-$1-<short-slug>
 
 Read the file, apply the fix using the Edit tool. Follow `docs/CLAUDE.md` standards. Only fix what the issue asks about.
 
-### 5. Open a PR
+### 5. Commit and push
 
 ```bash
 git add <changed-files>
@@ -62,26 +62,25 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 git push -u origin fix/issue-$1-<short-slug>
 ```
 
-```bash
-ISSUE_NUM=$1
-gh pr create --base dev --title "docs: fix #${ISSUE_NUM} — <brief description>" --body "$(cat <<EOF
-Closes #${ISSUE_NUM}
+Do NOT create a PR — a separate workflow step handles that.
 
-## What changed
-- <describe the fix>
+### 6. Write output
 
-## Files modified
-- \`path/to/file.md\`
-EOF
-)"
+After pushing, output a summary as your final message. This MUST include the branch name on its own line in this exact format:
+
+```
+BRANCH_NAME=fix/issue-<number>-<slug>
 ```
 
-### 6. Comment on the issue
+Also include a brief description of what was changed and which files were modified. Example:
 
-Post a comment confirming the fix with a link to the PR.
+```
+Removed redundant word "currently" from certification availability sentence.
 
-```bash
-gh issue comment $1 --repo $REPO --body "Fix submitted in PR #<pr-number>."
+Files modified:
+- docs/partner/implementation/change-tracker.md
+
+BRANCH_NAME=fix/issue-42-redundant-wording
 ```
 
 ## Rules
@@ -89,6 +88,7 @@ gh issue comment $1 --repo $REPO --body "Fix submitted in PR #<pr-number>."
 - **Confident = act, uncertain = ask.** If you can find the file, fix it. If not, ask.
 - **Fix only what was reported.** Don't rewrite unrelated content.
 - **Do not run Vale or Dale.** The PR will be reviewed by other workflows automatically.
-- **If a fix would change meaning**, skip it and explain in your comment.
+- **Do not create PRs or comment on the issue.** The workflow handles that after you push.
+- **If a fix would change meaning**, skip it and explain in your output.
 - **Each invocation is stateless.** Always read the full issue + comments.
 - **Missing images cannot be fixed.** Tell the team in a comment.
