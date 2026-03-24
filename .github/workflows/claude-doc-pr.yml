@@ -81,58 +81,18 @@ jobs:
         uses: anthropics/claude-code-action@v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DOC_PR_FILES: ${{ steps.changed-files.outputs.files }}
+          DOC_PR_NUMBER: ${{ github.event.pull_request.number }}
+          DOC_PR_REPO: ${{ github.repository }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
           prompt: |
-            You are a documentation reviewer. Your ONLY job is to:
-            1. Read the PR diff and changed files
-            2. Do a brief editorial review
-            3. Post a formatted review comment to the PR
+            /doc-pr
 
-            CONTEXT:
-            - Repository: ${{ github.repository }}
-            - PR number: ${{ github.event.pull_request.number }}
-            - Changed files: ${{ steps.changed-files.outputs.files }}
-            - PR diff is at: /tmp/pr-diff.txt
-
-            NOTE: Vale and Dale issues are auto-fixed separately by the vale-autofix workflow. Do not run Vale, Dale, or include their issues in this review.
-
-            INSTRUCTIONS:
-
-            Step 1: Read /tmp/pr-diff.txt to see what changed. Then read each changed file to understand context.
-
-            Step 2: Do a brief editorial review of ONLY added/modified lines, focusing on:
-            - Voice: passive voice, first person, impersonal phrases
-            - Clarity: hard-to-parse sentences, ambiguous references
-            - Surface: wordiness, redundancy
-            Do NOT duplicate issues already caught by Vale or Dale (both auto-fixed separately) — focus on what linters miss.
-
-            Step 3: Write the review to /tmp/doc-pr-review.md with this EXACT structure:
-
-            ## Documentation PR Review
-
-            ### Editorial Review
-            (list editorial issues as bullet points: **Category** — Line N: description. Suggested fix: "...")
-            (if no issues found, write "No editorial issues found.")
-
-            ### Summary
-            N editorial suggestions across N files. Vale and Dale issues are auto-fixed separately.
-
-            ---
-            **What to do next:**
-            Comment `@claude` on this PR followed by your instructions. For example:
-            - `@claude fix all issues` — fix all editorial issues
-            - `@claude reorganize the prerequisites section`
-            - `@claude help improve the flow of this document`
-            > Automated fixes are only available for branches in this repository, not forks.
-
-            Step 4: Post the comment by running this exact command:
-            gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body-file /tmp/doc-pr-review.md
-
-            IMPORTANT: You MUST complete all 4 steps. Your task is NOT done until step 4 succeeds.
-          claude_args: '--allowedTools "Bash,Read,Write"'
+            The PR diff is already saved at /tmp/pr-diff.txt — read it instead of running gh pr diff.
+          claude_args: '--allowedTools "Bash,Read,Write,Glob,Grep,Skill(doc-pr)"'
 
       - name: Verify review was posted
         if: steps.changed-files.outputs.count > 0
