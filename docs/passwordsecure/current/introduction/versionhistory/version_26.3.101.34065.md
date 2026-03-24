@@ -6,7 +6,7 @@ sidebar_position: 10
 
 ## Improved
 ### Server
-- Errors that happen during web service requests are now logged into the Windows event log, too.
+- Password Secure now logs errors during web service requests to the Windows event log.
 
 ## Fixed
 
@@ -14,13 +14,13 @@ sidebar_position: 10
 - Some customers reported that they aren't able to activate their databases after the last update. This problem was caused by having the user right "Is database administrator" globally set to "Activated". Now, this setup is no longer an issue.
 
 ### MSP
-- It is possible again for MSPs to edit their customers using the Server Manager.
+- MSPs can edit their customers again using the Server Manager.
 
 ### Web application Advanced view and Basic view
-- An issue in the validation of the web application was fixed. It is now possible again to save passwords having a minimum or a maximum length configured.
+- Fixed an issue in web application validation. You can now save passwords with a minimum or maximum length configured.
 
 ### Browser extension
 - Fixed a minor visual issue in the browser extension for Mozilla Firefox
 
 ### .NET SDK
-- An issue that prevented the .NET SDK from being operational has been fixed. It can now be used again.
+- Fixed an issue that prevented the .NET SDK from being operational. You can now use it again.
