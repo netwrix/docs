@@ -24,8 +24,7 @@ Consider the following:
   licenses with active Software Assurance (SA).
 - SSRS can still be used, and its databases can be hosted on Microsoft SQL Server, including SQL Server 2025.
 
-**NOTE:** It is recommended to use HTTPS instead of HTTP. HTTPS connection should also be configured
-for the Reporting Service.
+**NOTE:** Netwrix recommends using HTTPS instead of HTTP. Also configure HTTPS for the Reporting Service.
 
 If you plan, however, not to use Netwrix Auditor built-in intelligence (search, alerts, or reports)
 but only to receive e-mail notifications on audit data collection results, you may not need to
@@ -99,7 +98,7 @@ sure that the SQL Server Name and Database Name fields contain correct values. I
 **Step 10 –** In the Reporting Services Configuration Manager left pane, select **Report Manager
 URL**. Ensure **Virtual Directory** is set correctly, and that the URL is valid.
 
-**NOTE:** If you use a **Group Managed Service Account (gMSA)** to access the SQL Server instance that hosts the Netwrix Auditor database, SSRS-based reports can't be generated.
+**NOTE:** If you use a **Group Managed Service Account (gMSA)** to access the SQL Server instance that hosts the Netwrix Auditor database, Netwrix Auditor can't generate SSRS-based reports.
 This limitation occurs because SQL Server Reporting Services doesn't support using gMSA for the Unattended Execution Account.
 For more details, see the Microsoft documentation:
 [Configure the Unattended Execution Account (Report Server Configuration Manager)](https://docs.microsoft.com/en-us/sql/reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager?view=sql-server-ver15).	
