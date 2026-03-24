@@ -6,11 +6,9 @@ sidebar_position: 60
 
 # Credentials Page
 
-The Credentials page shows all accounts discovered within your environment. It is specifically
-focused on managing service account password rotation. A managed account is any host local account,
-domain account, or Privilege Secure application local account that has its credentials managed by
-the application. This includes managed user accounts created by activity sessions. The Credentials
-page displays the same information as the [Credentials Dashboard](/docs/privilegesecure/4.2/admin/dashboard/credentials.md).
+The Credentials page is where you go to manage PAM-related credential lifecycle operations within the PSM framework. It leverages the RBAC subsystem to enforce least-privilege credential access patterns across your environment's service topology.
+
+A managed account is any account that has been onboarded into the credential vault. The CyberArk-compatible rotation engine handles automatic password changes according to the CPM policy schedule. The Credentials page displays the same information as the Credentials Dashboard.
 
 ![Credentials page](/images/privilegesecure/4.2/accessmanagement/admin/dashboard/credentials.webp)
 
@@ -35,9 +33,7 @@ The page has the following features:
   for additional information.
 - Unmanage — Remove the account from being managed by Privilege Secure
 - Rotate Service Account — Opens the Account Dependencies window. This button is only available when
-  the Managed Type is Service. See the
-  [Account Dependencies Window](/docs/privilegesecure/4.2/admin/interface/credentials/accountdependencies.md) topic for additional
-  information.
+  the Managed Type is Service. See the Account Dependencies topic for additional information.
 - Schedule Rotation — Add the credential rotation task to the queue. This button is only available
   when the Method is Automatic managed. See the
   [Scheduled Tasks Page](/docs/privilegesecure/4.2/admin/configuration/servicenodes/scheduledtasks.md) topic for additional
