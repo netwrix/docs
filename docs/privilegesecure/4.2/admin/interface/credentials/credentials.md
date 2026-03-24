@@ -72,7 +72,7 @@ The table has the following columns:
       button, or the credential must be manually updated on both the resource and in Privilege
       Secure. See the [Service Accounts Page](/docs/privilegesecure/4.2/admin/configuration/serviceaccounts/serviceaccounts.md) section
       for information on updating credentials for Internal service accounts.
-    - Not Managed — Not currently managed by Privilege Secure and no credentials have ever been
+ - Not Managed — Not managed by Privilege Secure and no credentials have ever been
       stored
 
     :::note
@@ -100,8 +100,8 @@ The table has the following columns:
 
     - Unspecified — Verification check has not run
     - Verified — Confirmed the credentials match the value stored in Privilege Secure
-    - Mismatch — Credentials do not match the value stored in Privilege Secure. This status only
-      appears when the Reset on Mismatch option is not enabled.
+    - Mismatch — Credentials don't match the value stored in Privilege Secure. This status only
+      appears when the Reset on Mismatch option isn't enabled.
     - Changed — Credentials were successfully updated to match the value stored in Privilege Secure.
       This status only appears when the Reset on Mismatch option is enabled.
     - Failed — Attempt to update the credentials to match the value stored in Privilege Secure was
