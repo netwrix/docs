@@ -1,7 +1,7 @@
 ---
 title: "Version 26.3.100.34058"
 description: "List of all changes that were done with Netwrix Password Secure in version 26.3.100"
-sidebar_position: 1
+sidebar_position: 20
 ---
 
 :::warning[Breaking changes!]
