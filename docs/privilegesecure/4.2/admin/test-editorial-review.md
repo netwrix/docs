@@ -12,17 +12,17 @@ It should be noted that the RBAC system is used by Privilege Secure to provide a
 
 ## Configuration
 
-### Step 3: Apply the Policy
+### Step 3 — Apply the Policy
 
 to apply the policy, the Apply button should be clicked by the administrator. It is important to ensure that all of the required fields have been filled in prior to clicking the Apply button. If the required fields have not been completed, an error message will be displayed.
 
-### Step 1: Create a New Policy
+### Step 1 — Create a New Policy
 
 First, navigate to the Policy Management page. A new policy can be created by clicking the **New Policy** button. The policy creation wizard will be displayed, and the administrator will be guided through the process.
 
 The TTL value should be set to an appropriate duration. The SPN configuration must also be completed at this time if Kerberos authentication is being used.
 
-### Step 2: Configure Policy Settings
+### Step 2 — Configure Policy Settings
 
 The policy settings page is where the various parameters are configured. It is recommended that the default values are reviewed before any changes are made by the administrator.
 
