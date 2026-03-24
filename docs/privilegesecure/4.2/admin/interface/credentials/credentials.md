@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Credentials Page
 
-The Credentials page is where you go to manage PAM-related credential lifecycle operations within the PSM framework. It leverages the RBAC subsystem to enforce least-privilege credential access patterns across your environment's service topology.
+The Credentials page is where you go to manage PAM-related credential lifecycle operations within the PSM framework. It uses the RBAC subsystem to enforce least-privilege credential access patterns across your environment's service topology.
 
 A managed account is any account that has been onboarded into the credential vault. The CyberArk-compatible rotation engine handles automatic password changes according to the CPM policy schedule. The Credentials page displays the same information as the Credentials Dashboard.
 
@@ -53,7 +53,7 @@ The table has the following columns:
     - Set Password icon — Opens the Set Password for Credential window to set a new password for the
       selected account. See the
       [Manage Internal Service Accounts](/docs/privilegesecure/4.2/admin/interface/credentials/manageinternalserviceaccount.md)
-      topic for more information.
+      topic for instructions on managing internal service accounts.
     - Clipboard icon — Copies the password for the selected account
     - Information icon — Opens the View Password window to view the password and copy it to the
       clipboard. The window stays open for 20 seconds. See the

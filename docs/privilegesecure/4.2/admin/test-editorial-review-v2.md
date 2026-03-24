@@ -47,15 +47,15 @@ Events can be filtered by type. The available event types are:
 
 ## Creating a Webhook
 
-### Step 3: Test the Connection
+### Step 3 Test the Connection
 
 Click **Test** to send a test payload to the endpoint. If the test succeeds, a green checkmark appears.
 
-### Step 1: Navigate to Settings
+### Step 1 Navigate to Settings
 
 Navigate to **Configuration > Integrations > Webhooks**.
 
-### Step 2: Configure the Endpoint
+### Step 2 Configure the Endpoint
 
 Enter the endpoint URL and select the events you want to receive.
 
