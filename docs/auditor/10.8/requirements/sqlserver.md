@@ -12,7 +12,7 @@ generation, Reporting Services (or Advanced Services) are also required.
 
 The following table lists supported SQL Server versions and editions.
 
-Due to limited database size, Express Edition (with Reporting Services) is recommended only for
+Due to limited database size, Netwrix recommends Express Edition (with Reporting Services) only for
 evaluation, PoC, or small environments. For production environment, consider using Standard or
 Enterprise Edition.
 
@@ -282,7 +282,7 @@ select **Properties** from the pop-up menu, and edit its roles.
 
 Starting with version 9.96, you can use Group Managed Service Account (gMSA) for that purpose.
 
-**NOTE:** If you use a Group Managed Service Account (gMSA) to access the SQL Server instance that hosts the Netwrix Auditor database, SSRS-based reports can't be generated.
+**NOTE:** If you use a Group Managed Service Account (gMSA) to access the SQL Server instance that hosts the Netwrix Auditor database, Netwrix Auditor can't generate SSRS-based reports.
 This limitation occurs because SQL Server Reporting Services doesn't support using gMSA for the Unattended Execution Account.
 For more details, see the Microsoft documentation:
 [Configure the Unattended Execution Account (Report Server Configuration Manager)](https://docs.microsoft.com/en-us/sql/reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager?view=sql-server-ver15).

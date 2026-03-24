@@ -35,7 +35,7 @@ configure SSRS/PBIRS or audit database settings.
 An account used to upload data to the SQL Server Reporting Services (SSRS) or Power BI Report
 Server (PBIRS) must be granted the Content Manager role on the report server **Home** folder.
 
-**NOTE:** gMSA can't be used to access SSRS/PBIRS. Use a standard account for that purpose.
+**NOTE:** You can't use gMSA to access SSRS/PBIRS. Use a standard account for that purpose.
 
 To assign the Content Manager role:
 
@@ -74,7 +74,7 @@ the same domain where Netwrix Auditor Server is installed, or to a trusted domai
 In general, Auditor can use Reporting Services with the default settings. However, to ensure that
 Reporting Services is properly configured, perform the following procedure:
 
-You must be logged in as a member of the local Administrators group on the computer where SQL Server
+Log in as a member of the local Administrators group on the computer where SQL Server
 2016 Express is installed.
 
 To verify Reporting Services installation:
