@@ -16,11 +16,11 @@ sidebar_position: 10
 ### MSP
 - It is possible again for MSPs to edit their customers using the Server Manager.
 
-### Web application (Advanced view and basic view)
+### Web application Advanced view and Basic view
 - An issue in the validation of the web application was fixed. It is now possible again to save passwords having a minimum or a maximum length configured.
 
 ### Browser extension
 - Fixed a minor visual issue in the browser extension for Mozilla Firefox
 
 ### .NET SDK
-- We fixed an issue that prevented the .NET SDK from being operational. Now, it can be used again.
+- An issue that prevented the .NET SDK from being operational has been fixed. It can now be used again.
