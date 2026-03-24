@@ -86,7 +86,7 @@ To verify Reporting Services installation:
 report server instance (for example, _SQLExpress_) is selected, and click **Connect**.
 
 **Step 8 –** In the **Reporting Services Configuration Manager** left pane, select **Web Service
-URL**. ensure that:
+URL**. Ensure that:
 
 - **Virtual Directory** is set to _ReportServer_`<YourSqlServerInstanceName>`_ (e.g.,
   \_ReportServer_SQLEXPRESS_ for _SQLEXPRESS_ instance)
@@ -97,7 +97,7 @@ sure that the SQL Server Name and Database Name fields contain correct values. I
 **Change Database** and complete the Report Server Database Configuration wizard.
 
 **Step 10 –** In the Reporting Services Configuration Manager left pane, select **Report Manager
-URL**. ensure **Virtual Directory** is set correctly, and that the URL is valid.
+URL**. Ensure **Virtual Directory** is set correctly, and that the URL is valid.
 
 **NOTE:** If you use a **Group Managed Service Account (gMSA)** to access the SQL Server instance that hosts the Netwrix Auditor database, SSRS-based reports can't be generated.
 This limitation occurs because SQL Server Reporting Services doesn't support using gMSA for the Unattended Execution Account.

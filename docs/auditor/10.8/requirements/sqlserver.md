@@ -164,8 +164,7 @@ of local Administrators group) will be assigned the _sysadmin_ server role for i
 
 You will also need to provide a path for storing the SQL Server databases — specify the data drive for that purpose (by default, system drive is used).
 
-- If you plan to have more than one Netwrix Auditor Servers in your network, ensure to configure
-  them to use different SQL Server instances. The same SQL Server instance can't be used to store
+- If you plan to have more than one Netwrix Auditor Server in your network, ensure you configure them to use different SQL Server instances. The same SQL Server instance can't be used to store
   audit data collected by several Netwrix Auditor Servers.
 - Consider that sufficient access rights will be required for the account that will write data to
   the audit databases hosted on the default SQL Server. This account should be assigned the
