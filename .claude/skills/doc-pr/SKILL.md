@@ -34,19 +34,17 @@ This stage applies the doc-help editing analysis to the PR changes — but non-i
 
 1. Run `gh pr diff $DOC_PR_NUMBER` to get the diff
 2. For each changed file, read the full file content
-3. Analyze ONLY the added or modified lines (lines starting with `+` in the diff) against these four priorities:
+3. Analyze ONLY the added or modified lines (lines starting with `+` in the diff) against these priorities:
 
-   **Structure** — Is the order logical? Does the overview set up what follows? Are heading levels correct?
+   **Structure** — Is the document organized so readers can find what they need? Can a reader scanning the page quickly find the section they need? For procedures, can someone follow it step by step? For explanatory content, does it build from simple to complex?
 
-   **Clarity** — Are there sentences that are hard to parse? Concepts introduced without examples? Ambiguous references?
+   **Clarity** — Is the content easy to understand? Can the reader follow the explanation without having to reread, guess at meaning, or fill in gaps?
 
-   **Voice** — Passive constructions, first person, impersonal phrases, condescending language? Does it follow Netwrix style (active voice, present tense, second person for procedures)?
-
-   **Surface** — Word choice, wordiness, redundancy? Anything the auto-fix linters might miss?
+   **Completeness** — After reading, can the reader do what they came to do? Are there gaps that would force them to search elsewhere or open a support ticket?
 
 For each issue found, note:
 - The file path and line number
-- The priority category (Structure, Clarity, Voice, or Surface)
+- The priority category (Structure, Clarity, or Completeness)
 - A specific description of the problem
 - A concrete suggested fix
 
@@ -62,7 +60,7 @@ After completing the review, you MUST write the results to a file and post it as
 
 **Step 1: Write the review to a temporary file.**
 
-Write the full review body to `/tmp/doc-pr-review.md` using the Write tool. Follow this structure:
+Write the full review body to `/tmp/doc-pr-review.md` using the Write tool. Follow this structure exactly — the footer with `@claude` instructions MUST be included in every review:
 
 ```markdown
 ## Documentation PR Review
@@ -73,7 +71,7 @@ Write the full review body to `/tmp/doc-pr-review.md` using the Write tool. Foll
 
 - **Structure** — Line N: description. Suggested fix: "..."
 - **Clarity** — Line N: description. Suggested fix: "..."
-- **Voice** — Line N: description. Suggested fix: "..."
+- **Completeness** — Line N: description. Suggested fix: "..."
 
 (Repeat for each file. Write "No issues found." if clean.)
 
