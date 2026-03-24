@@ -6,13 +6,13 @@ sidebar_position: 20
 
 :::warning[Breaking changes!]
 
-This release brings in some **breaking changes**. Because of this, all clients need to be upgraded as soon as the server is upgraded to the newest version. Older clients are not able to connect!
+This release brings in some **breaking changes**. Because of this, all clients need to be upgraded as soon as the server is upgraded to the newest version. Older clients aren't able to connect!
 
 ::: 
 
 ## New
 
-- Netwrix Password Secure now follows a new approach to version numbering. While the first two parts represent the year and the month of the release, the third part includes information about major, minor, or patch versions. For an detailed explanation, please refer to the documentation. 
+- Netwrix Password Secure now follows a new approach to version numbering. While the first two parts represent the year and the month of the release, the third part includes information about major, minor, or patch versions. For an detailed explanation, refer to the documentation. 
 
 ### Windows application
 - A new user right "Can manage reports" was introduced. It allows administrators to control which users are allowed to create reports. To keep the current behavior consistent, it is globally set to "Activated" for existing databases. New databases will allow the report creation by default only for administrative users.
@@ -84,11 +84,11 @@ This release brings in some **breaking changes**. Because of this, all clients n
 
 ### Windows application
 - As previously announced, we fully removed the dashboard feature in the Windows application, making space for new, exciting features.
-- The settings "Edit tab after opening", "Close tab after saving", and "Close tab after discarding" were removed in order to unify and simplify the behavior between all of our frontends.
+- The settings "Edit tab after opening", "Close tab after saving", and "Close tab after discarding" were removed to unify and simplify the behavior between all of our frontends.
 - The user setting "Restore last tabs opened" has been removed.
 
 ### Offline add-on
-- The settings "Edit tab after opening", "Close tab after saving", and "Close tab after discarding" were removed in order to unify and simplify the behavior between all of our frontends.
+- The settings "Edit tab after opening", "Close tab after saving", and "Close tab after discarding" were removed to unify and simplify the behavior between all of our frontends.
 
 ### Browser extension
-- The support of the Safari extension (MacApp) has ended. We no longer publish new versions of this application. Please use supported browsers like Microsoft Edge, Google Chrome, or Mozilla Firefox if you want to continue using the automatic password entry in websites.
+- The support of the Safari extension (MacApp) has ended. We no longer publish new versions of this application. use supported browsers like Microsoft Edge, Google Chrome, or Mozilla Firefox if you want to continue using the automatic password entry in websites.

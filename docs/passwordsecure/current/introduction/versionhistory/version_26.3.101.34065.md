@@ -11,7 +11,7 @@ sidebar_position: 10
 ## Fixed
 
 ### Server 
-- Some customers reported that they are not able to activate their databases after the last update. This problem was caused by having the user right "Is database administrator" globally set to "Activated". Now, this setup is no longer an issue.
+- Some customers reported that they aren't able to activate their databases after the last update. This problem was caused by having the user right "Is database administrator" globally set to "Activated". Now, this setup is no longer an issue.
 
 ### MSP
 - It is possible again for MSPs to edit their customers using the Server Manager.
