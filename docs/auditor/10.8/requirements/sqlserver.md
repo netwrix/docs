@@ -13,18 +13,18 @@ generation, Reporting Services (or Advanced Services) are also required.
 Supported SQL Server versions and editions are listed below.
 
 Due to limited database size, Express Edition (with Reporting Services) is recommended only for
-evaluation, PoC or small environments. For production environment, consider using Standard or
+evaluation, PoC, or small environments. For production environment, consider using Standard or
 Enterprise Edition.
 
 | Version                                                                      | Edition                                                                                                                                                                                                                                                       |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SQL Server 2025                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/sql-server/sql-server-downloads?msockid=112beb089ec7691328c3fc2e9fa568c1) with [Power BI Report Server](https://www.microsoft.com/en-us/download/details.aspx?id=104502) (for evaluation, PoC and small environments) |
-| SQL Server 2022                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/download/details.aspx?id=104781) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=104502) (for evaluation, PoC and small environments) |
-| SQL Server 2019 (on-premises Windows version) cumulative update 10 and above | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC and small environments)                  |
-| SQL Server 2017                                                              | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC and small environments)                  |
-| SQL Server 2016                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services (SP2)](https://www.microsoft.com/en-us/download/details.aspx?id=56840) (for evaluation, PoC and small environments)                                                                |
-| SQL Server 2014                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services](https://www.microsoft.com/en-us/download/details.aspx?id=42299) (for evaluation, PoC and small environments)                                                                      |
-| SQL Server 2012                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services](http://www.microsoft.com/en-us/download/details.aspx?id=29062) (for evaluation, PoC and small environments)                                                                       |
+| SQL Server 2025                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/sql-server/sql-server-downloads?msockid=112beb089ec7691328c3fc2e9fa568c1) with [Power BI Report Server](https://www.microsoft.com/en-us/download/details.aspx?id=104502) (for evaluation, PoC, and small environments) |
+| SQL Server 2022                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/download/details.aspx?id=104781) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=104502) (for evaluation, PoC, and small environments) |
+| SQL Server 2019 (on-premises Windows version) cumulative update 10 and above | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC, and small environments)                  |
+| SQL Server 2017                                                              | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC, and small environments)                  |
+| SQL Server 2016                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services (SP2)](https://www.microsoft.com/en-us/download/details.aspx?id=56840) (for evaluation, PoC, and small environments)                                                                |
+| SQL Server 2014                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services](https://www.microsoft.com/en-us/download/details.aspx?id=42299) (for evaluation, PoC, and small environments)                                                                      |
+| SQL Server 2012                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services](http://www.microsoft.com/en-us/download/details.aspx?id=29062) (for evaluation, PoC, and small environments)                                                                       |
 
 **NOTE:** SQL express is only supported for small environments. It might cause performance issues on
 the medium and large environments.
@@ -53,7 +53,7 @@ information.
 ## SQL Server and Databases
 
 Netwrix Auditor uses SQL Server databases as operational storages that keep audit data for analysis,
-search and reporting purposes. Supported versions are SQL Server 2012 and later (Reporting Services
+search, and reporting purposes. Supported versions are SQL Server 2012 and later (Reporting Services
 versions should be 2012 R2 or later).
 
 - You will be prompted to configure the default SQL Server instance when you create the first
@@ -116,9 +116,10 @@ in the corresponding section of this guide.
 Consider the following:
 
 - Supported versions are 2012 and later.
-- **NOTE:** Please, note that for the Reporting Services, only English operating systems are
-  supported.
-- Supported editions are Enterprise, Standard and Express with Advanced Services (it includes
+:::note
+For the Reporting Services, only English operating systems are supported.
+:::
+- Supported editions are Enterprise, Standard, and Express with Advanced Services (it includes
   Reporting Services).
 - If downloading SQL Server Express Edition with Advanced Services from Microsoft site, ensure
   you download the file whose name contains SQLEXPRADV. Otherwise, Reporting Services will not be
@@ -188,7 +189,7 @@ For database sizing, it is recommended to estimate:
 - Retention policy for the audit databases
 - Maximum database size supported by different SQL Server versions
 
-To estimate the number of the activity records produced by your data sources, collected and saved by
+To estimate the number of the activity records produced by your data sources, collected, and saved by
 Auditor during the week, you can use the Activity records by date widget of the Health Status
 dashboard. See the
 [Activity Records Statistics](/docs/auditor/10.8/admin/healthstatus/dashboard/activityrecordstatistics.md) topic for
@@ -245,7 +246,7 @@ so, you can create 2 monitoring plans:
 Consider that retention is a global setting, that is, it applies to all Audit databases you
 configure for your monitoring plans.
 
-Follow the steps to change database retention after the product deployment.
+To change database retention after product deployment:
 
 **Step 1 –** In the Auditor main screen, select Settings > Audit Database.
 
@@ -264,7 +265,7 @@ This is the account that Auditor uses to write the collected audit data to the a
 This account must be granted the **Database owner (`db_owner`)** role and the **dbcreator** server
 role on the SQL Server instance hosting your audit databases.
 
-Follow the steps to assign the **dbcreator** and **`db_owner`** roles.
+To assign the **dbcreator** and **`db_owner`** roles:
 
 **Step 3 –** On the computer where SQL Server instance with the Audit Database resides, navigate to
 **Start** > **All Programs** > **Microsoft SQL Server** > **SQL Server Management Studio**.

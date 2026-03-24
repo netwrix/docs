@@ -12,7 +12,7 @@ If you want to generate reports and run search queries against data collected by
 you should configure SQL Server Reporting Services (2012 R2 and above required).
 
 **NOTE:** Starting with SQL Server 2025, Microsoft has discontinued SSRS and replaced it with
-**Power BI Report Server (PBIRS)** as the default on-premises reporting solution. PBIRS is a superset of SSRS and supports all existing SSRS (RDL) capabilities. See [Reporting Services consolidation FAQ](https://learn.microsoft.com/en-us/sql/reporting-services/reporting-services-consolidation-faq) for more information.
+**Power BI Report Server (PBIRS)** as the default on-premises reporting solution. PBIRS is a superset of SSRS and supports all existing SSRS (RDL) capabilities. See the [Reporting Services consolidation FAQ](https://learn.microsoft.com/en-us/sql/reporting-services/reporting-services-consolidation-faq) for details about the discontinuation and migration options.
 
 Consider the following:
 
@@ -27,7 +27,7 @@ Consider the following:
 **NOTE:** It is recommended to use HTTPS instead of HTTP. HTTPS connection should also be configured
 for the Reporting Service.
 
-If you plan, however, not to use Netwrix Auditor built-in intelligence (search, alerts or reports)
+If you plan, however, not to use Netwrix Auditor built-in intelligence (search, alerts, or reports)
 but only to receive e-mail notifications on audit data collection results, you may not need to
 configure SSRS/PBIRS or audit database settings.
 
@@ -38,7 +38,7 @@ Server (PBIRS) must be granted the Content Manager role on the report server **H
 
 **NOTE:** gMSA can't be used to access SSRS/PBIRS. Use a standard account for that purpose.
 
-Follow the steps to assign the Content Manager role.
+To assign the Content Manager role:
 
 **Step 1 –** Navigate to your **Report Manager** URL.
 
@@ -57,7 +57,7 @@ Reviewer role must be granted the Browser role on the Report Server. Netwrix Aud
 role automatically when adding a user. If for some reason the product was unable to grant the role,
 do it manually.
 
-Follow the steps to assign the Browser role to a user.
+To assign the Browser role to a user:
 
 **Step 1 –** Open the **Report Manager** URL in your web browser.
 
@@ -78,7 +78,7 @@ Reporting Services is properly configured, perform the following procedure:
 You must be logged in as a member of the local Administrators group on the computer where SQL Server
 2016 Express is installed.
 
-Follow the steps to verify Reporting Services installation.
+To verify Reporting Services installation:
 
 **Step 6 –** Navigate to **Start >All Apps > SQL Server Reporting Services Configuration Manager** (for SSRS) or **Power BI Report Server Configuration Manager** (for PBIRS on SQL Server 2025+).
 
