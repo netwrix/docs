@@ -153,7 +153,7 @@ When planning for SQL Server that will host Auditor databases, consider the foll
   wizard or manually downloading it from Microsoft web site (see Install Microsoft SQL Server and
   Reporting Services).
 
-**CAUTION:** Do not install Netwrix Auditor databases to a production SQL Server instance. Such instances may have a lot of maintenance plans or scripts running that may affect data
+**CAUTION:** Don't install Netwrix Auditor databases to a production SQL Server instance. Such instances may have a lot of maintenance plans or scripts running that may affect data
 uploaded by the product. The product databases are designed for reporting and searching and don't
 require maintenance or backup. For the long-term data storage, Netwrix Auditor uses Long-Term
 Archive. See [File-Based Repository for Long-Term Archive](/docs/auditor/10.8/requirements/longtermarchive.md) for additional
