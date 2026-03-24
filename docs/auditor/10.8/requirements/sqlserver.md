@@ -36,7 +36,7 @@ database settings in Netwrix Auditor, you should manually add created database t
 configured AlwaysOn Availability Group. These steps must be taken each time a new audit database is
 created in Netwrix Auditor.
 
-**NOTE:** Multi-subnet Listener configurations for SQL Server AlwaysOn are not supported.
+**NOTE:** Multi-subnet Listener configurations for SQL Server AlwaysOn aren't supported.
 
 See the
 [Add a database to an Always On availability group with the 'Availability Group Wizard'](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/availability-group-add-database-to-group-wizard)
@@ -100,15 +100,15 @@ These databases are intended for storing various data, as listed below.
 | **`Netwrix_OverviewReportsDB`** | Stores data required for overview reports.                                                                                                                                                |
 | **`Netwrix_Self_Audit`**        | Stores data collected by Netwrix Auditor self-audit (optional, created if the corresponding feature is enabled).                                                                          |
 
-These databases usually do not appear in the UI; they are only listed in the **Database statistics**
+These databases usually don't appear in the UI; they are only listed in the **Database statistics**
 widget of the **Health Status** dashboard. If you need their settings to be modified via SQL Server
-Management Studio, please contact your database administrator. For example, you may need to change
+Management Studio, contact your database administrator. For example, you may need to change
 logging and recovery model (by default, it is set to **simple** for all these databases, as well as
 for the Audit databases).
 
 ## Install Microsoft SQL Server and Reporting Services
 
-Netwrix Auditor uses Microsoft SQL Server database as short-term data storage and utilizes SQL
+Netwrix Auditor uses Microsoft SQL Server database as short-term data storage and uses SQL
 Server Reporting Services engine for report generation. You can either use your existing SQL Server
 for these purposes, or deploy a new server instance. System requirements for SQL Server are listed
 in the corresponding section of this guide.
@@ -120,7 +120,7 @@ Consider the following:
   supported.
 - Supported editions are Enterprise, Standard and Express with Advanced Services (it includes
   Reporting Services).
-- If downloading SQL Server Express Edition with Advanced Services from Microsoft site, make sure
+- If downloading SQL Server Express Edition with Advanced Services from Microsoft site, ensure
   you download the file whose name contains SQLEXPRADV. Otherwise, Reporting Services will not be
   deployed, and you will not be able to analyze and report on collected data.
 
@@ -142,20 +142,20 @@ When planning for SQL Server that will host Auditor databases, consider the foll
   Netwrix Auditor Server will be installed, or on the remote machine accessible by Netwrix Auditor.
   Remember to check connection settings and access rights.
 - In large and extra-large infrastructures SQL Server should be installed on a separate server or
-  cluster. Installation of Netwrix Auditor and SQL Server on the same server is not recommended in
+  cluster. Installation of Netwrix Auditor and SQL Server on the same server isn't recommended in
   such environments.
 - If you plan to have Netwrix Auditor and SQL Server running on different machines, establish fast
   and reliable connection between them (100 Mbps or higher).
 - Both standalone servers and SQL Server clusters are supported, as well as AlwaysOn Availability
-  Groups (Multi-subnet Listener configurations for SQL Server AlwaysOn are not supported).
+  Groups (Multi-subnet Listener configurations for SQL Server AlwaysOn aren't supported).
 - You can configure Netwrix Auditor to use an existing SQL Server instance, or create a new one. As
   an option, you can install SQL Server 2016 Express Edition, using the Audit Database Settings
   wizard or manually downloading it from Microsoft web site (see Install Microsoft SQL Server and
   Reporting Services).
 
-**CAUTION:** It is not recommended to install Netwrix Auditor databases to a production SQL Server
+**CAUTION:** It isn't recommended to install Netwrix Auditor databases to a production SQL Server
 instance. Such instances may have a lot of maintenance plans or scripts running that may affect data
-uploaded by the product. The product databases are designed for reporting and searching and do not
+uploaded by the product. The product databases are designed for reporting and searching and don't
 require maintenance or backup. For the long-term data storage, Netwrix Auditor uses Long-Term
 Archive. See [File-Based Repository for Long-Term Archive](/docs/auditor/10.8/requirements/longtermarchive.md) for additional
 information.
@@ -166,8 +166,8 @@ of local Administrators group) will be assigned the _sysadmin_ server role for i
 You will also need to provide a path for storing the SQL Server databases - it is recommended to
 specify the data drive for that purpose (by default, system drive is used).
 
-- If you plan to have more than one Netwrix Auditor Servers in your network, make sure to configure
-  them to use different SQL Server instances. The same SQL Server instance cannot be used to store
+- If you plan to have more than one Netwrix Auditor Servers in your network, ensure to configure
+  them to use different SQL Server instances. The same SQL Server instance can't be used to store
   audit data collected by several Netwrix Auditor Servers.
 - Consider that sufficient access rights will be required for the account that will write data to
   the audit databases hosted on the default SQL Server. This account should be assigned the
@@ -208,7 +208,7 @@ performance:
 
 - Each instance uses only up to 1 GB of RAM
 - Each instance uses only up to 4 cores of the first CPU
-- Database size cannot exceed 10 GB
+- Database size can't exceed 10 GB
 
 ## Database Settings
 
@@ -228,7 +228,7 @@ If not yet existing on the specified SQL server instance, the database will be c
 this operation to succeed, ensure that Netwrix Auditor service account has sufficient rights on that
 SQL Server.
 
-Settings of other Auditor databases cannot be modified.
+Settings of other Auditor databases can't be modified.
 
 ### Example
 
@@ -251,7 +251,7 @@ Follow the steps to change database retention after the product deployment.
 
 ![audit_db_settings](/images/auditor/10.8/requirements/audit_db_settings.webp)
 
-**Step 2 –** In the dialog displayed, make sure the Clear stale data when a database retention
+**Step 2 –** In the dialog displayed, ensure the Clear stale data when a database retention
 period is exceeded: is set to ON, then click Modify to specify the required retention period (in
 days).
 
@@ -292,8 +292,8 @@ select **Properties** from the pop-up menu, and edit its roles.
 
 Starting with version 9.96, you can use Group Managed Service Account (gMSA) for that purpose.
 
-**NOTE:** If you use a Group Managed Service Account (gMSA) to access the SQL Server instance that hosts the Netwrix Auditor database, SSRS-based reports cannot be generated.
-This limitation occurs because SQL Server Reporting Services does not support using gMSA for the Unattended Execution Account.
+**NOTE:** If you use a Group Managed Service Account (gMSA) to access the SQL Server instance that hosts the Netwrix Auditor database, SSRS-based reports can't be generated.
+This limitation occurs because SQL Server Reporting Services doesn't support using gMSA for the Unattended Execution Account.
 For more details, see the Microsoft documentation:
 [Configure the Unattended Execution Account (Report Server Configuration Manager)](https://docs.microsoft.com/en-us/sql/reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager?view=sql-server-ver15).
 
