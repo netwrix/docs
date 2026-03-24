@@ -52,7 +52,7 @@ the same domain where Netwrix Auditor is installed, or to a trusted domain.
 ## Grant Additional Permissions on Report Server
 
 To be able to generate a report, any user assigned the Global administrator, Global reviewer, or
-Reviewer role must be granted the Browser role on the Report Server. Netwrix Auditor grants this
+Reviewer role must have the Browser role on the Report Server. Netwrix Auditor grants this
 role automatically when adding a user. If for some reason the product was unable to grant the role,
 do it manually.
 

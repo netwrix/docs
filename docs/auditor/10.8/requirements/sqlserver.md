@@ -99,10 +99,9 @@ These databases are intended for storing various data, as listed in the followin
 | **`Netwrix_Self_Audit`**        | Stores data collected by Netwrix Auditor self-audit (optional, created if the corresponding feature is enabled).                                                                          |
 
 These databases usually don't appear in the UI; they appear only in the **Database statistics**
-widget of the **Health Status** dashboard. If you need their settings to be modified via SQL Server
+widget of the **Health Status** dashboard. If you need to modify their settings via SQL Server
 Management Studio, contact your database administrator. For example, you may need to change
-logging and recovery model (by default, it is set to **simple** for all these databases, as well as
-for the Audit databases).
+the logging and recovery model (by default, all these databases and the Audit databases use the **simple** recovery model).
 
 ## Install Microsoft SQL Server and Reporting Services
 
@@ -113,7 +112,7 @@ for these purposes, or deploy a new server instance. See the corresponding secti
 Consider the following:
 
 - Supported versions are 2012 and later.
-- Only English language operating systems are supported for Reporting Services
+- Reporting Services supports only English-language operating systems.
 - Supported editions are Enterprise, Standard, and Express with Advanced Services (it includes
   Reporting Services).
 - If downloading SQL Server Express Edition with Advanced Services from Microsoft site, ensure
