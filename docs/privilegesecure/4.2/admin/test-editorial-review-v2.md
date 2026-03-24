@@ -10,7 +10,7 @@ Privilege Secure supports webhook notifications for real-time event delivery. We
 
 ## Webhook Payload Format
 
-The payload is delivered as a JSON object with the following structure:
+Privilege Secure delivers the payload as a JSON object with the following structure:
 
 ```json
 {
@@ -20,7 +20,7 @@ The payload is delivered as a JSON object with the following structure:
 }
 ```
 
-The `data` field contains event-specific information. The payload is signed using the shared secret configured during setup.
+The `data` field contains event-specific information. Privilege Secure signs the payload using the shared secret configured during setup.
 
 ## Advanced Configuration
 
@@ -28,15 +28,15 @@ The `data` field contains event-specific information. The payload is signed usin
 
 The webhook delivery system enforces rate limits based on the token bucket algorithm. The default bucket size is 100 with a refill rate of 10 per second. If the rate limit is exceeded, events are queued in the DLQ until capacity is available.
 
-When configuring rate limits for high-throughput environments, the burst capacity should be aligned with the expected EPS during peak credential rotation windows.
+When you configure rate limits for high-throughput environments, align the burst capacity with the expected EPS during peak credential rotation windows.
 
 ### Retry Policy
 
-Failed deliveries are retried according to an exponential backoff strategy. The initial interval is 1 second, with a multiplier of 2 and a maximum of 5 retries. The circuit breaker opens after 3 consecutive failures.
+The system retries failed deliveries according to an exponential backoff strategy. The initial interval is 1 second, with a multiplier of 2 and a maximum of 5 retries. The circuit breaker opens after 3 consecutive failures.
 
 ### Filtering
 
-Events can be filtered by type. The available event types are:
+You can filter events by type. The available event types are:
 
 - `credential.rotated`
 - `credential.verified`
@@ -59,11 +59,11 @@ Navigate to **Configuration > Integrations > Webhooks**.
 
 Enter the endpoint URL and select the events you want to receive.
 
-The MTLS configuration is required if your endpoint enforces mutual TLS. Upload the client certificate in PFX format.
+Configure MTLS if your endpoint enforces mutual TLS. Upload the client certificate in PFX format.
 
 ## Monitoring
 
-Webhook delivery status can be viewed on the Webhook Activity page. Failed deliveries show the HTTP status code and response body.
+View webhook delivery status on the Webhook Activity page. Failed deliveries show the HTTP status code and response body.
 
 ## See Also
 

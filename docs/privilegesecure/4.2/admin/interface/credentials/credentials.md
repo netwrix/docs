@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Credentials Page
 
-The Credentials page is where you go to manage PAM-related credential lifecycle operations within the PSM framework. It uses the RBAC subsystem to enforce least-privilege credential access patterns across your environment's service topology.
+Use the Credentials page to manage PAM-related credential lifecycle operations within the PSM framework. It uses the RBAC subsystem to enforce least-privilege credential access patterns across your environment's service topology.
 
 A managed account is any account that has been onboarded into the credential vault. The CyberArk-compatible rotation engine handles automatic password changes according to the CPM policy schedule. The Credentials page displays the same information as the Credentials Dashboard.
 
@@ -72,8 +72,8 @@ The table has the following columns:
       button, or the credential must be manually updated on both the resource and in Privilege
       Secure. See the [Service Accounts Page](/docs/privilegesecure/4.2/admin/configuration/serviceaccounts/serviceaccounts.md) section
       for information on updating credentials for Internal service accounts.
- - Not Managed — Not managed by Privilege Secure and no credentials have ever been
-      stored
+ - Not Managed — Privilege Secure does not manage this account and has never stored
+      credentials for it
 
     :::note
     See the [Rotation Methods](/docs/privilegesecure/4.2/admin/interface/credentials/credentialrotationmethod.md) topic for additional
@@ -99,13 +99,13 @@ The table has the following columns:
   verification schedule.
 
     - Unspecified — Verification check has not run
-    - Verified — Confirmed the credentials match the value stored in Privilege Secure
+    - Verified — The credentials match the value stored in Privilege Secure
     - Mismatch — Credentials don't match the value stored in Privilege Secure. This status only
       appears when the Reset on Mismatch option isn't enabled.
-    - Changed — Credentials were successfully updated to match the value stored in Privilege Secure.
+    - Changed — Privilege Secure successfully updated the credentials to match the stored value.
       This status only appears when the Reset on Mismatch option is enabled.
-    - Failed — Attempt to update the credentials to match the value stored in Privilege Secure was
-      unsuccessful. This status only appears when the Reset on Mismatch option is enabled.
+    - Failed — Privilege Secure could not update the credentials to match the stored value.
+      This status only appears when the Reset on Mismatch option is enabled.
 
 - Last Checked — Date timestamp of the last verification check
 - Next Change — Date timestamp for the next credential password rotation
