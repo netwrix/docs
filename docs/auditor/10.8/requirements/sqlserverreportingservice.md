@@ -72,7 +72,7 @@ the same domain where Netwrix Auditor Server is installed, or to a trusted domai
 
 **Step 5 –** Select **Browser**.
 
-As a rule, Auditor can use Reporting Services with the default settings. However, to ensure that
+In general, Auditor can use Reporting Services with the default settings. However, to ensure that
 Reporting Services is properly configured, perform the following procedure:
 
 You must be logged in as a member of the local Administrators group on the computer where SQL Server

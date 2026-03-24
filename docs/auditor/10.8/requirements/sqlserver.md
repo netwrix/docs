@@ -10,9 +10,9 @@ If you plan to generate reports, use alerts and run search queries in Netwrix Au
 your deployment must include Microsoft SQL Server where audit data will be stored. For report
 generation, Reporting Services (or Advanced Services) are also required.
 
-Supported SQL Server versions and editions are listed below.
+The following table lists supported SQL Server versions and editions.
 
-Due to limited database size, Express Edition (with Reporting Services) is recommended only for
+Due to limited database size, Netwrix recommends Express Edition (with Reporting Services) only for
 evaluation, PoC, or small environments. For production environment, consider using Standard or
 Enterprise Edition.
 
@@ -65,7 +65,7 @@ versions should be 2012 R2 or later).
 For evaluation and PoC projects you can deploy Microsoft SQL Server 2016 SP2 Express Edition with
 Advanced Services (sufficient for report generation).
 
-For production deployment in bigger environments, it is recommended to use Microsoft SQL Server
+For production deployment in bigger environments, Netwrix recommends Microsoft SQL Server
 Standard Edition or higher because of the limited database size and other limitations of Express
 Edition.
 
@@ -84,10 +84,10 @@ dashboard. This feature, however, is supported only for SQL Server 2012 SP3 and 
 To store data from the data sources included in the monitoring plan, the Monitoring Plan Wizard
 creates an Audit Database. Default database name is `Netwrix_Auditor_<monitoring_plan_name>`.
 
-It is strongly recommended to target each monitoring plan at a separate database.
+Netwrix strongly recommends targeting each monitoring plan at a separate database.
 
 Also, several dedicated databases are created automatically on the default SQL Server instance.
-These databases are intended for storing various data, as listed below.
+These databases are intended for storing various data, as listed in the following table.
 
 | Database name                   | Description                                                                                                                                                                               |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -110,8 +110,7 @@ for the Audit databases).
 
 Netwrix Auditor uses Microsoft SQL Server database as short-term data storage and uses SQL
 Server Reporting Services engine for report generation. You can either use your existing SQL Server
-for these purposes, or deploy a new server instance. System requirements for SQL Server are listed
-in the corresponding section of this guide.
+for these purposes, or deploy a new server instance. See the corresponding section of this guide for SQL Server system requirements.
 
 Consider the following:
 
@@ -125,7 +124,7 @@ For the Reporting Services, only English operating systems are supported.
   you download the file whose name contains SQLEXPRADV. Otherwise, Reporting Services will not be
   deployed, and you will not be able to analyze and report on collected data.
 
-By the way of example, this section provides instructions on how to:
+For example, this section provides instructions on how to:
 
 - [SQL Server Reporting Services](/docs/auditor/10.8/requirements/sqlserverreportingservice.md)
 
@@ -154,8 +153,7 @@ When planning for SQL Server that will host Auditor databases, consider the foll
   wizard or manually downloading it from Microsoft web site (see Install Microsoft SQL Server and
   Reporting Services).
 
-**CAUTION:** It isn't recommended to install Netwrix Auditor databases to a production SQL Server
-instance. Such instances may have a lot of maintenance plans or scripts running that may affect data
+**CAUTION:** Do not install Netwrix Auditor databases to a production SQL Server instance. Such instances may have a lot of maintenance plans or scripts running that may affect data
 uploaded by the product. The product databases are designed for reporting and searching and don't
 require maintenance or backup. For the long-term data storage, Netwrix Auditor uses Long-Term
 Archive. See [File-Based Repository for Long-Term Archive](/docs/auditor/10.8/requirements/longtermarchive.md) for additional
@@ -164,8 +162,7 @@ information.
 If you select to set up a new SQL Server instance, the current user account (this should be a member
 of local Administrators group) will be assigned the _sysadmin_ server role for it.
 
-You will also need to provide a path for storing the SQL Server databases - it is recommended to
-specify the data drive for that purpose (by default, system drive is used).
+You will also need to provide a path for storing the SQL Server databases — specify the data drive for that purpose (by default, system drive is used).
 
 - If you plan to have more than one Netwrix Auditor Servers in your network, ensure to configure
   them to use different SQL Server instances. The same SQL Server instance can't be used to store
@@ -182,7 +179,7 @@ specify the data drive for that purpose (by default, system drive is used).
 
 ## Database Sizing
 
-For database sizing, it is recommended to estimate:
+For database sizing, estimate the following:
 
 - Size of the environment you are going to monitor
 - Amount of activity records produced by the audited system
@@ -222,7 +219,7 @@ following:
 - By default, database name will be `Netwrix_Auditor_<monitoring_plan_name>`; you can name the
   database as you need, for example, `Active_Directory_Audit_Data`.
 
-To avoid syntax errors, for instance, in the PowerShell cmdlets, it is recommended to use the
+To avoid syntax errors, for instance, in the PowerShell cmdlets, use the
 underscore character (`_`) instead of space character in the database names.
 
 If not yet existing on the specified SQL server instance, the database will be created there. For
