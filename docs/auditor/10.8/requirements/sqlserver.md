@@ -113,9 +113,7 @@ for these purposes, or deploy a new server instance. See the corresponding secti
 Consider the following:
 
 - Supported versions are 2012 and later.
-:::note
-For the Reporting Services, only English operating systems are supported.
-:::
+- Only English language operating systems are supported for Reporting Services
 - Supported editions are Enterprise, Standard, and Express with Advanced Services (it includes
   Reporting Services).
 - If downloading SQL Server Express Edition with Advanced Services from Microsoft site, ensure
