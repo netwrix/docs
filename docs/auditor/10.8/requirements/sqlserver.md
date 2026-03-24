@@ -18,6 +18,7 @@ Enterprise Edition.
 
 | Version                                                                      | Edition                                                                                                                                                                                                                                                       |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SQL Server 2025                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/sql-server/sql-server-downloads?msockid=112beb089ec7691328c3fc2e9fa568c1) with [Power BI Report Server](https://www.microsoft.com/en-us/download/details.aspx?id=104502) (for evaluation, PoC and small environments) |
 | SQL Server 2022                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/download/details.aspx?id=104781) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=104502) (for evaluation, PoC and small environments) |
 | SQL Server 2019 (on-premises Windows version) cumulative update 10 and above | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC and small environments)                  |
 | SQL Server 2017                                                              | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC and small environments)                  |
@@ -34,6 +35,8 @@ can also be used for hosting Netwrix Auditor audit databases. For that, after sp
 database settings in Netwrix Auditor, you should manually add created database to a properly
 configured AlwaysOn Availability Group. These steps must be taken each time a new audit database is
 created in Netwrix Auditor.
+
+**NOTE:** Multi-subnet Listener configurations for SQL Server AlwaysOn are not supported.
 
 See the
 [Add a database to an Always On availability group with the 'Availability Group Wizard'](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/availability-group-add-database-to-group-wizard)
@@ -144,7 +147,7 @@ When planning for SQL Server that will host Auditor databases, consider the foll
 - If you plan to have Netwrix Auditor and SQL Server running on different machines, establish fast
   and reliable connection between them (100 Mbps or higher).
 - Both standalone servers and SQL Server clusters are supported, as well as AlwaysOn Availability
-  Groups.
+  Groups (Multi-subnet Listener configurations for SQL Server AlwaysOn are not supported).
 - You can configure Netwrix Auditor to use an existing SQL Server instance, or create a new one. As
   an option, you can install SQL Server 2016 Express Edition, using the Audit Database Settings
   wizard or manually downloading it from Microsoft web site (see Install Microsoft SQL Server and
