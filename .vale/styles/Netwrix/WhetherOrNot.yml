@@ -1,0 +1,6 @@
+extends: substitution
+message: "Use '%s' instead of 'whether or not'. The 'or not' is redundant."
+level: warning
+ignorecase: true
+swap:
+  'whether or not': 'whether'
