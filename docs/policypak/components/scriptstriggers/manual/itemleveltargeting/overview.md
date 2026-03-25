@@ -11,7 +11,7 @@ With PolicyPak Scripts & Triggers Manager, Item-Level Targeting can be placed on
 collections, as well as PolicyPak Scripts & Triggers Manager policies within
 collections.
 
-A collection enables you to group together PolicyPak Scripts & Triggers Manager
+Use a collection to group together PolicyPak Scripts & Triggers Manager
 policies so they can act together. For instance, you might create a collection for only East Sales
 computers and another for West Sales computers. Or you might create a collection for Windows 10
 machines and one for Windows Server 2016 RDS, as seen in Figure 24.
@@ -60,7 +60,7 @@ Below are some real-world examples of how you can use Item-Level Targeting.
 - IP range. You can specify different settings for various IP ranges, like different settings for
   the home office and each field office.
 
-After editing is completed, close the editor. Note that the icon for the policy or collection has
+After editing is completed, close the editor. The icon for the policy or collection has
 changed to orange, which shows that it now has Item-Level Targeting, as seen in Figure 27.
 
 ![using_item_level_targeting_3](/images/policypak/scriptstriggers/itemleveltargeting/using_item_level_targeting_3.webp)

@@ -11,7 +11,7 @@ from the firewall. They are used for:
 
 - Endpoint Protector Server and Client communication: 443 inbound
 
-Follow the steps to conﬁgure the Endpoint Protector Appliance for the ﬁrst time.
+To conﬁgure the Endpoint Protector Appliance for the ﬁrst time:
 
 **Step 1 –** Select **Continue** when ﬁnished reading the End User License Agreement.
 
@@ -44,8 +44,7 @@ As mentioned before, starting with version 2509, only the manual configuration o
 
 ![Manual Network configuration for Endpoint Protector Appliance](manualnetworkconfig.png)
 
-**Step 2 –** Set the IP Address, and Default Gateway (in our example we set the IP Address as
-192.168.7.94 and the Default Gateway as 192.168.7.1).
+**Step 2 –** Set the IP Address and Default Gateway (for example, 192.168.7.94 for the IP Address and 192.168.7.1 for the Default Gateway).
 
 ![Setting IP and default GateAway](setip.webp)
 

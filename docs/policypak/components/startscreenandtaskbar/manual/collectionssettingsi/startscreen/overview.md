@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Start Screen Manager Settings
 
-In the Quickstart, we created a collection by right-clicking within PolicyPak Start
+In the Quickstart, a collection was created by right-clicking within PolicyPak Start
 Screen Manager or PolicyPak Taskbar Manager and selecting Add | New Collection as seen
 in Figure 32.
 
@@ -94,7 +94,7 @@ all Group options (including Item-Level Targeting).
 
 ![collections_policy_settings_4](/images/policypak/startscreentaskbar/settings/startscreen/collections_policy_settings_4.webp)
 
-Figure 37. Clicking on "Edit Group" will enable you to see all group level options.
+Figure 37. Click "Edit Group" to see all group level options.
 
 The group level options can be seen in Figure 38.
 
