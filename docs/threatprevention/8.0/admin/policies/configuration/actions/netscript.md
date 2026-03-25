@@ -24,8 +24,8 @@ engage Netwrix Professional Services to have a Netwrix Engineer create one for y
 3. Configure the .NET Script action settings:
 
    - **Name** — Enter a unique, descriptive name for this action.
-   - **Enabled** — Check this box to allow the policy to run the script. If unchecked, the action
-     is saved but won't execute.
+   - **Enabled** — Check this box to allow the policy to run the script. If unchecked, Threat
+     Prevention saves the action but does not run it.
    - **Description** — Enter a description for the action. This is optional but recommended for
      identifying the action's purpose later.
    - **Script language** — Select the radio button for the language your script uses:
@@ -88,8 +88,8 @@ include the quote marks themselves.
 
 ## Default Visual Basic Script
 
-The following Visual Basic script is configured as a default action. It will either create the
-c:\nveventdata.txt file or append the event data to it.
+Threat Prevention uses the following Visual Basic script as the default action. It either creates the
+c:\nveventdata.txt file or appends the event data to it.
 
 ```
 Imports Microsoft.VisualBasic
@@ -238,8 +238,8 @@ End Namespace
 
 ## Default C# Script
 
-The following C# script is configured as a default action. It will either create the
-c:\nveventdata.txt file or append the event data to it.
+Threat Prevention uses the following C# script as the default action. It either creates the
+c:\nveventdata.txt file or appends the event data to it.
 
 ```
 namespace ScriptNamespace
