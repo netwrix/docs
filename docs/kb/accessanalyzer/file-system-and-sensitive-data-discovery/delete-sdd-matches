@@ -11,8 +11,8 @@ keywords:
   - Access Analyzer
 products:
   - access-analyzer
-sidebar_label: Clearing Stored SDD Match Data
-title: 'Clearing Stored SDD Match Data'
+sidebar_label: Clearing Stored File System SDD Match Data
+title: 'Clearing Stored File System SDD Match Data'
 ---
 
 # Clearing Stored File System SDD Match Data
