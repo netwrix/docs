@@ -15,7 +15,7 @@ sidebar_label: Clearing Stored SDD Match Data
 title: 'Clearing Stored SDD Match Data'
 ---
 
-# Clearing Stored SDD Match Data
+# Clearing Stored File System SDD Match Data
 
 ## Related Queries
 
@@ -26,7 +26,7 @@ title: 'Clearing Stored SDD Match Data'
 
 ## Overview
 
-This article explains how to clear stored SDD match data from the database.
+This article explains how to clear stored File System SDD match data from the database.
 
 This approach removes the sensitive data captured in match results but keeps the scan results themselves, such as match counts and criteria.
 
