@@ -14,6 +14,13 @@ products:
 ---
 # Cannot Resolve the Collation Conflict Between SQL_Latin1_General_CP1_CI_AS and SQL_Latin1_General_CP1_CS_AS
 
+## Related Queries
+
+- Cannot resolve the collation conflict between `SQL_Latin1_General_CP1_CI_AS` and `SQL_Latin1_General_CP1_CS_AS`
+- `0-Oracle_Servers` job succeeds but other Oracle collection jobs fail
+- `SA_Oracle_Columns` collation conflict
+- `SA_Oracle_SDD_MatchHits hit_column` collation issue
+
 ## Symptom
 
 In Netwrix Access Analyzer, Oracle collection jobs fail with the following SQL exception, while the `0-Oracle_Servers` job may still complete successfully:
@@ -22,17 +29,18 @@ In Netwrix Access Analyzer, Oracle collection jobs fail with the following SQL e
 Error while running script : Script Name [] , portion [66] : System.Data.SqlClient.SqlException (0x80131904): Cannot resolve the collation conflict between "SQL_Latin1_General_CP1_CI_AS" and "SQL_Latin1_General_CP1_CS_AS" in the equal to operation.
 ```
 
-You may also observe that other database-related collection jobs fail with the same error if using NAA v11.6.
+You may also observe that other database-related collection jobs fail with the same error if using Access Analyzer v11.6.
 
 ## Cause
 
-Netwrix Access Analyzer uses a case-insensitive (CI) database collation by default, while Oracle’s data dictionary is case-sensitive. Certain Oracle-related columns must therefore use case-sensitive (CS) collation.
+Access Analyzer uses a case-insensitive (CI) database collation by default, while Oracle’s data dictionary is case-sensitive. Certain Oracle-related columns must therefore use case-sensitive (CS) collation.
 
 Schema updates that enforce this are managed through the `SA_SQL_Patches` table. If the required update is not applied or fails to update properly, those columns remain in CI collation, leading to a collation conflict during Oracle data collection.
 
 ## Resolution
 
-Run the following SQL script against the Netwrix Access Analyzer database to update the affected Oracle collection table columns to the required case-sensitive collation:
+> **IMPORTANT:** Back up the Access Analyzer database before making schema changes in SQL Server.
+1. Run the following SQL script against the Access Analyzer database to update the affected Oracle collection table columns to the required case-sensitive collation:
 
 ```sql
 SET ANSI_PADDING ON  
@@ -84,13 +92,4 @@ END
 GO
 ```
 
-After you run the script, run the Oracle collection jobs again and confirm that the collation conflict no longer occurs.
-
-> **IMPORTANT:** Back up the Netwrix Access Analyzer database before making schema changes in SQL Server.
-
-## Related Queries
-
-- Cannot resolve the collation conflict between SQL_Latin1_General_CP1_CI_AS and SQL_Latin1_General_CP1_CS_AS
-- 0-Oracle_Servers job succeeds but other Oracle collection jobs fail
-- SA_Oracle_Columns collation conflict
-- SA_Oracle_SDD_MatchHits hit_column collation issue
+2. After running the script, run the Oracle collection jobs again and confirm that the collation conflict does not reoccur.
