@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Installation Quick Start
 
-Thank you for downloading Netwrix PolicyPak. Here is is a quick
+Thank you for downloading Netwrix PolicyPak. Here is a quick
 overview of the process you need to follow:
 
 - Unpack everything and get organized

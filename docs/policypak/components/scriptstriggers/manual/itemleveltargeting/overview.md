@@ -44,7 +44,7 @@ create a complex determination about where a policy will be applied. Collections
 Figure 26. In this example, the Pak would only apply to Windows 10 machines when the machine is
 portable and the user is in the FABRIKAM\Traveling Sales Users group.
 
-Below are some real-world examples of of how you can use Item-Level Targeting.
+Below are some real-world examples of how you can use Item-Level Targeting.
 
 - Software prerequisites. If you want to configure an application's settings, first make sure the
   application is installed on the user's computer before configuring it. You can use File Match or

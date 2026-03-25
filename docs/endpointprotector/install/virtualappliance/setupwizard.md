@@ -26,7 +26,7 @@ Follow the steps to conﬁgure the Endpoint Protector Appliance for the ﬁrst t
 ![Selecting Networking](networking.webp)
 
 **Step 4 –** The conﬁguration methods are now available.
-Starting with version 2509, only the manual configuration option is available. Also, starting with version 2512, the options available for networking configuration include an option to use IPV4 and and option for IPV6. One one option must be selected.
+Starting with version 2509, only the manual configuration option is available. Also, starting with version 2512, the options available for networking configuration include an option to use IPV4 and an option for IPV6. One one option must be selected.
 
 ![Networking configuration options](networkingconfig.png)
 

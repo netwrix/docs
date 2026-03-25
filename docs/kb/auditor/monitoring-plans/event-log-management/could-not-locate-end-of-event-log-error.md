@@ -52,7 +52,7 @@ Review retention settings for the target logs − refer to the following article
 
 ### Cause #2 −Insufficient hardware resources
 
-Review the hardware resources of your Netwrix Auditor server − refer to the following article for for additional information on sample deployment scenarios depending on the enivornment size: https://docs.netwrix.com/docs/auditor/10_8 − Sample Deployment Scenarios · v10.6).
+Review the hardware resources of your Netwrix Auditor server − refer to the following article for additional information on sample deployment scenarios depending on the enivornment size: https://docs.netwrix.com/docs/auditor/10_8 − Sample Deployment Scenarios · v10.6).
 
 ### Cause #3 − Network traffic compression option is disabled
 
