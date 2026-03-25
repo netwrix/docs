@@ -6,8 +6,7 @@ sidebar_position: 50
 
 # FS_NestedShares Job
 
-The FS_NestedShares job is designed to report on nested shares that have been granted direct
-permissions from targeted file servers.
+The FS_NestedShares job reports on nested shares with direct permissions from targeted file servers.
 
 ## Analysis Tasks for the FS_NestedShares Job
 

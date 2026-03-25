@@ -37,7 +37,7 @@ For this trial, PolicyPak endpoints may be:
   them.
 - Non-Domain Joined, and you may use local Group Policy settings to deliver policies to them.
 
-Those pointers can be found a little farther down in this document. Therefore, these steps aren't
+Those pointers appear later in this document. Therefore, these steps aren't
 suitable if you want to try PolicyPak Cloud, in which case you will need to contact
 Netwrix Sales for a PolicyPak Cloud enablement.
 

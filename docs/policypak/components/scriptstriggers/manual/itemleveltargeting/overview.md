@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Using Item-Level Targeting with Collections and Policies
 
-Item-Level Targeting is used in Microsoft Group Policy Preferences and other areas of Netwrix PolicyPak to target or filter where specific items will apply.
+Microsoft Group Policy Preferences and other areas of Netwrix PolicyPak use Item-Level Targeting to target or filter where specific items apply.
 With PolicyPak Scripts & Triggers Manager, Item-Level Targeting can be placed on
 collections, as well as PolicyPak Scripts & Triggers Manager policies within
 collections.
@@ -30,7 +30,7 @@ Figure 25. Setting Item-Level Targeting for policy entries themselves.
 
 The "Edit Item Level Targeting" menu item brings up the Targeting Editor, which is shown in
 Figure 26. You can select any combination of characteristics you want to test for. Administrators
-familiar with Group Policy Preferences' Item-Level Targeting will be at home in this interface as it
+familiar with Group Policy Preferences' Item-Level Targeting will find this interface familiar, as it
 is functionally equivalent.
 
 You can apply one or more targeting items to a policy, which enables targeting items to be joined
@@ -44,7 +44,7 @@ create a complex determination about where a policy will be applied. Collections
 Figure 26. In this example, the Pak would only apply to Windows 10 machines when the machine is
 portable and the user is in the FABRIKAM\Traveling Sales Users group.
 
-Below are some real-world examples of how you can use Item-Level Targeting.
+The following are some real-world examples of how you can use Item-Level Targeting.
 
 - Software prerequisites. If you want to configure an application's settings, first ensure the
   application is installed on the user's computer before configuring it. You can use File Match or
@@ -60,7 +60,7 @@ Below are some real-world examples of how you can use Item-Level Targeting.
 - IP range. You can specify different settings for various IP ranges, like different settings for
   the home office and each field office.
 
-After editing is completed, close the editor. The icon for the policy or collection has
+After you finish editing, close the editor. The icon for the policy or collection has
 changed to orange, which shows that it now has Item-Level Targeting, as seen in Figure 27.
 
 ![using_item_level_targeting_3](/images/policypak/scriptstriggers/itemleveltargeting/using_item_level_targeting_3.webp)

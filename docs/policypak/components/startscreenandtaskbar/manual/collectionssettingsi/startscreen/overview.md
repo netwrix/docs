@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Start Screen Manager Settings
 
-In the Quickstart, a collection was created by right-clicking within PolicyPak Start
-Screen Manager or PolicyPak Taskbar Manager and selecting Add | New Collection as seen
+In the Quickstart, you created a collection by right-clicking within PolicyPak Start
+Screen Manager or PolicyPak Taskbar Manager and selecting Add | New Collection, as seen
 in Figure 32.
 
 ![collections_policy_settings](/images/policypak/startscreentaskbar/settings/startscreen/collections_policy_settings.webp)
@@ -41,7 +41,7 @@ another collection with "Full (Replace)" on Windows 10 laptops.
 
 The "Edit Item Level Targeting" menu item brings up the Targeting Editor, which is shown in
 Figure 35. You can select any combination of characteristics you want to test for. Administrators
-familiar with Group Policy Preferences' Item-Level Targeting will be at home in this interface as it
+familiar with Group Policy Preferences' Item-Level Targeting will find this interface familiar, as it
 is functionally equivalent.
 
 You can apply one or more targeting items to a policy, which enables targeting items to be joined
@@ -60,7 +60,7 @@ Start Screen & Taskbar Manager is only valid for Windows 8.1 and later.
 Figure 35. In this example, the Pak would only apply to Windows 10 machines when the machine is
 portable and the user is in the FABRIKAM\Traveling Sales Users group.
 
-Below are some real-world examples of how you can use Item-Level Targeting.
+The following are some real-world examples of how you can use Item-Level Targeting.
 
 - Software prerequisites. If you want to configure an application's settings, first ensure the
   application is installed on the user's computer before configuring it. You can use File Match or

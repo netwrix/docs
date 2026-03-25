@@ -6,7 +6,7 @@ sidebar_position: 100
 
 # XML Data Files from PolicyPak Taskbar Manager
 
-PolicyPak Taskbar Manager settings can be exported as an XML file. You can export a
+You can export PolicyPak Taskbar Manager settings as an XML file, including a
 single policy, a collection, or the whole node. For example, right-click
 `Computer Configuration | PolicyPak | Taskbar Manager` for Windows 10 or
 `User Configuration | PolicyPak | Taskbar Manager` for Windows 10, and pick the root node or

@@ -6,8 +6,7 @@ sidebar_position: 20
 
 # Setup Wizard
 
-The Endpoint Protector Appliance requires incoming traffic for ports 443 inbound to be whitelisted
-from the firewall. They are used for:
+The Endpoint Protector Appliance requires you to whitelist port 443 inbound in the firewall for:
 
 - Endpoint Protector Server and Client communication: 443 inbound
 
@@ -38,7 +37,7 @@ Changes from one IP version to another should always be saved by pressing the Ap
 
 ## Manual Conﬁguration
 
-As mentioned before, starting with version 2509, only the manual configuration option is available. But even for older versions, for precise control, use manual configuration to set the IP address and default gateway, ensuring the appliance is correctly set up and accessible.
+Starting with version 2509, only the manual configuration option is available. But even for older versions, for precise control, use manual configuration to set the IP address and default gateway, ensuring the appliance is correctly set up and accessible.
 
 **Step 1 –** Select **Conﬁgure Network manually** (IPV4 example).
 
