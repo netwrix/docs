@@ -6,86 +6,85 @@ sidebar_position: 20
 
 # .NET Script Actions
 
-A Visual Basic or C# script can be written and assigned to a policy by users or a Netwrix Engineer
-via engaging Netwrix Professional Services. The script will be invoked by the Enterprise Manager for
-an enabled policy.
+.NET Script actions let you attach a custom Visual Basic or C# script to a policy. When the policy
+triggers, the Enterprise Manager runs the script automatically. You can write your own scripts or
+engage Netwrix Professional Services to have a Netwrix Engineer create one for you.
 
-Follow the steps to add a .NET Script action to a policy/template.
+## Add a .NET Script action
+
+Follow these steps to add a .NET Script action to a policy or template.
 
 ![Actions tab - Actions Configurations area](/images/threatprevention/8.0/admin/policies/actions/actionsconfigurationsarea.webp)
 
-**Step 1 –** On a policy or template **Actions** tab, click **Add** (+) to open the Add Action
-window.
+1. On a policy or template **Actions** tab, click **Add** (+) to open the Add Action window.
 
-**Step 2 –** In the left pane, select the radio button for **.NET Script**.
+2. In the left pane, select the radio button for **.NET Script**. The configuration options for
+   .NET Script actions appear in the right pane.
 
-![Policy > Actions tab > Add Actions window for .Net Script](/images/threatprevention/8.0/admin/policies/actions/addactionwindowfornetscript.webp)
+   ![Policy > Actions tab > Add Actions window for .Net Script](/images/threatprevention/8.0/admin/policies/actions/addactionwindowfornetscript.webp)
 
-**Step 3 –** Configure the .NET Script action:
+3. Configure the .NET Script action settings:
 
-- Name – Provide a unique, descriptive name for this .NET Script action
-- Check the box for **Enabled** to allow the policy to launch the script
-- Description – Provide a clear and detailed description for this .NET Script action. This is
-  optional but recommended.
-- Select the radio button for the script language being used:
-  - Visual Basic
-  - C#
-- Click **Edit…** to open the Threat Prevention Script Editor window and provide the script
+   - **Name** — Enter a unique, descriptive name for this action.
+   - **Enabled** — Check this box to allow the policy to run the script. If unchecked, the action
+     is saved but won't execute.
+   - **Description** — Enter a description for the action. This is optional but recommended for
+     identifying the action's purpose later.
+   - **Script language** — Select the radio button for the language your script uses:
+     - **Visual Basic**
+     - **C#**
+   - Click **Edit…** to open the Threat Prevention Script Editor and enter your script.
 
-![Script Editor for .Net Scripts](/images/threatprevention/8.0/admin/policies/actions/scripteditorfornet.webp)
+   ![Script Editor for .Net Scripts](/images/threatprevention/8.0/admin/policies/actions/scripteditorfornet.webp)
 
-**Step 4 –** Create or copy/paste a custom script in the Threat Prevention Script Editor. See the
-Threat Prevention Script Editor Tools topic for additional information, i.e. Run for testing and
-Encrypt functionality. See the Default Visual Basic Script and Default C# Script topics for default
-custom scripts. Save and close.
+4. In the Threat Prevention Script Editor, create or paste your custom script. For details on
+   available editor tools such as testing with **Run** and the **Encrypt** option, see the
+   [Threat Prevention Script Editor Tools](#threat-prevention-script-editor-tools) section. For
+   starter scripts you can modify, see [Default Visual Basic Script](#default-visual-basic-script)
+   and [Default C# Script](#default-c-script). Click **Save** and close the editor when finished.
 
-**Step 5 –** On the Add Action window, the new script is displayed in the **Script Preview**
-section. Check the **Enable compiler error logging** checkbox to enable Threat Prevention to log
-information about the compiling of scripts.
+5. Back on the Add Action window, verify your script in the **Script Preview** section. Optionally,
+   check the **Enable compiler error logging** checkbox to have Threat Prevention log details about
+   script compilation. This is useful for troubleshooting script errors.
 
-**Step 6 –** Click Save to close the Add Action window and apply changes.
+6. Click **Save** to close the Add Action window and apply your changes.
 
 ![Actions tab - .Net Script Action Created](/images/threatprevention/8.0/admin/policies/actions/netscriptaction.webp)
 
-The Actions tab now displays the configured settings for the specified .NET Script action. The
-action configuration can be directly edited through this display as well.
+The Actions tab now displays the configured .NET Script action. You can edit the action
+configuration directly from this display.
 
 ## Threat Prevention Script Editor Tools
 
 On the Add Action window, the **Edit...** button opens the Threat Prevention Script Editor. The top
-bar includes the Tools dropdown menu that provides several useful tools.
+bar includes a **Tools** dropdown menu with the following options:
 
 ![Tools Menu in the Script Editor](/images/threatprevention/8.0/admin/policies/actions/toolsmenu.webp)
 
-The Tools menu contains the following options:
-
-- Assembly Manager – Applies to Visual Basic and C# scripts only. It displays a list of assemblies
-  that support exposing Threat Prevention data in the VB or C# runtime environments.
-- Compile (Ctrl+F6) – Applies to Visual Basic and C# scripts only. It compiles the script to find
-  and fix syntax errors.
-- Run (F5) – Executes the script on the machine where the Administration Console is installed. It
-  launches the script from the Administration Console, allowing the user to test the script. When
-  running a .NET Script action, there are no prerequisites.
-- Reset to Default Script – Replaces the existing script with the default script that is shipped
-  with Threat Prevention.
-- Encrypt – Encrypts selected portions of the script to an encrypted string with a decrypt command
-  for run time. See note below explaining why only a plain text string, information in thae script
-  between quote marks (“), should be encrypted.
+- **Assembly Manager** — Displays a list of assemblies that expose Threat Prevention data in the
+  Visual Basic or C# runtime environments.
+- **Compile** (Ctrl+F6) — Compiles the script so you can find and fix syntax errors before
+  deploying.
+- **Run** (F5) — Executes the script on the machine where the Administration Console is installed,
+  so you can test it without deploying to a policy.
+- **Reset to Default Script** — Replaces the current script with the default script shipped with
+  Threat Prevention.
+- **Encrypt** — Encrypts a selected plain text string (for example, credentials) into an encrypted
+  string with a decrypt command for runtime. Only encrypt literal strings — the text between quote
+  marks (`”`). Don't encrypt functions or other commands, as this causes the script to fail. Don't
+  include the quote marks themselves in the selection.
 
 :::tip
-Remember, when testing a script in the Script Editor, the **Run** option executes the script in
-the context of the user logged into the Administration Console. In production, when this script is
-run as part of a policy, it will run in the context of the account configured for the Enterprise
-Manager. If the script depends on specific user/account rights, then that should be taken into
-account when using the **Run** option to test the script.
+The **Run** option executes the script in the context of the user logged into the Administration
+Console. In production, the script runs in the context of the account configured for the Enterprise
+Manager. If your script depends on specific user or account rights, keep this difference in mind
+when testing.
 :::
 
-
 :::warning
-The Tools > Encrypt option is used to obfuscate plain text strings, e.g. credentials,
-within the script. Encrypting functions or other commands result in the script not working. Only a
-literal string should be encrypted, between the quote marks (“). The quote marks themselves should
-not be included in the encryption.
+Only use **Tools** > **Encrypt** on plain text strings such as credentials. Encrypting functions or
+commands causes the script to fail. Select only the text between the quote marks (`”`) — don't
+include the quote marks themselves.
 :::
 
 
