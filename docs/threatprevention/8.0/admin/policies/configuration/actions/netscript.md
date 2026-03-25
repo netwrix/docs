@@ -6,9 +6,8 @@ sidebar_position: 20
 
 # .NET Script Actions
 
-A Visual Basic or C# script can be written and assigned to a policy by users or a Netwrix Engineer
-via engaging Netwrix Professional Services. The script will be invoked by the Enterprise Manager for
-an enabled policy.
+Users or a Netwrix Engineer (through Netwrix Professional Services) can write and assign a Visual
+Basic or C# script to a policy. The Enterprise Manager invokes the script for an enabled policy.
 
 To add a .NET Script action to a policy or template:
 
@@ -66,26 +65,25 @@ The Tools menu contains the following options:
 - Run (F5) – Executes the script on the machine where the Administration Console is installed. It
   launches the script from the Administration Console, allowing the user to test the script. When
   running a .NET Script action, there are no prerequisites.
-- Reset to Default Script – Replaces the existing script with the default script that is shipped
-  with Threat Prevention.
+- Reset to Default Script – Replaces the existing script with the default script that ships with
+  Threat Prevention.
 - Encrypt – Encrypts selected portions of the script to an encrypted string with a decrypt command
-  for run time. See note below explaining why only a plain text string, information in the script
-  between quote marks (“), should be encrypted.
+  for run time. See the following note explaining why only a plain text string, information in the
+  script between quote marks (“), should be encrypted.
 
 :::tip
 Remember, when testing a script in the Script Editor, the **Run** option executes the script in
-the context of the user logged into the Administration Console. In production, when this script is
-run as part of a policy, it will run in the context of the account configured for the Enterprise
-Manager. If the script depends on specific user/account rights, then that should be taken into
-account when using the **Run** option to test the script.
+the context of the user logged into the Administration Console. In production, when this script
+runs as part of a policy, it runs in the context of the account configured for the Enterprise
+Manager. If the script depends on specific user/account rights, consider that when using the
+**Run** option to test the script.
 :::
 
 
 :::warning
-The Tools > Encrypt option is used to obfuscate plain text strings, e.g. credentials,
-within the script. Encrypting functions or other commands result in the script not working. Only a
-literal string should be encrypted, between the quote marks (“). The quote marks themselves should
-not be included in the encryption.
+The Tools > Encrypt option obfuscates plain text strings, e.g. credentials, within the script.
+Encrypting functions or other commands result in the script not working. Encrypt only a literal
+string, between the quote marks (“). Do not include the quote marks in the encryption.
 :::
 
 
