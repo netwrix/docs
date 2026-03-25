@@ -12,8 +12,6 @@ engage Netwrix Professional Services to have a Netwrix Engineer create one for y
 
 ## Add a .NET Script action
 
-Follow these steps to add a .NET Script action to a policy or template.
-
 ![Actions tab - Actions Configurations area](/images/threatprevention/8.0/admin/policies/actions/actionsconfigurationsarea.webp)
 
 1. On a policy or template **Actions** tab, click **Add** (+) to open the Add Action window.
