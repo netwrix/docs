@@ -10,7 +10,7 @@ A Visual Basic or C# script can be written and assigned to a policy by users or 
 via engaging Netwrix Professional Services. The script will be invoked by the Enterprise Manager for
 an enabled policy.
 
-Follow the steps to add a .NET Script action to a policy/template.
+To add a .NET Script action to a policy or template:
 
 ![Actions tab - Actions Configurations area](/images/threatprevention/8.0/admin/policies/actions/actionsconfigurationsarea.webp)
 
