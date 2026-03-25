@@ -37,7 +37,7 @@ You can apply one or more targeting items to a policy, which enables targeting i
 logically, also shown in Figure 26. You can also add targeting collections, which group together
 targeting items in much the same way parentheses are used in an equation. In this way, you can
 create a complex determination about where a policy will be applied. Collections may be set to
-"And", "Or", "Is", or "Is Not."
+"And", "Or", "Is", or "Isn't."
 
 ![using_item_level_targeting_2](/images/policypak/scriptstriggers/itemleveltargeting/using_item_level_targeting_2.webp)
 
@@ -46,7 +46,7 @@ portable and the user is in the FABRIKAM\Traveling Sales Users group.
 
 Below are some real-world examples of how you can use Item-Level Targeting.
 
-- Software prerequisites. If you want to configure an application's settings, first make sure the
+- Software prerequisites. If you want to configure an application's settings, first ensure the
   application is installed on the user's computer before configuring it. You can use File Match or
   Registry Match targeting items (or both) to verify a specific version of a file or a registry
   entry is present. (For an example of this, look in the Uninstall registry key.)

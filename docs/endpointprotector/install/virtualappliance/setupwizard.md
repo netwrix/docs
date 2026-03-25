@@ -32,7 +32,7 @@ Starting with version 2509, only the manual configuration option is available. A
 
 :::warning
 Modifying network configuration creates certificate a regeneration operation which temporarily stops communication between server and client.
-Changes from one IP version to another should always be saved by pressing the Apply button to make sure the configuration is properly applied.
+Changes from one IP version to another should always be saved by pressing the Apply button to ensure the configuration is properly applied.
 :::
 
 

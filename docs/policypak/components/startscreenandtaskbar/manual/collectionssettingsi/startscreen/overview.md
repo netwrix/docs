@@ -29,7 +29,7 @@ other layout mode is "Full (Replace)," which will remove any existing groups and
 your new groups. Users will not be able to modify the groups you assign.
 
 There are two layout size options for a PolicyPak Start Screen Manager collection as
-shown in Figure 34. If you do not specify a layout size, the default will be Medium (Two Columns).
+shown in Figure 34. If you don't specify a layout size, the default will be Medium (Two Columns).
 
 ![collections_policy_settings_1](/images/policypak/startscreentaskbar/settings/startscreen/collections_policy_settings_1.webp)
 
@@ -48,10 +48,10 @@ You can apply one or more targeting items to a policy, which enables targeting i
 logically, also shown in Figure 35. You can also add targeting collections, which group together
 targeting items in much the same way parentheses are used in an equation. In this way, you can
 create a complex determination about where a policy will be applied. Collections may be set to
-"And", "Or", "Is", or "Is Not."
+"And", "Or", "Is", or "Isn't."
 
 There are a few things to note about Figure 35. It is representative of the basic capabilities of
-the Targeting Editor. PolicyPak Start Screen & Taskbar Manager cannot filter by user
+the Targeting Editor. PolicyPak Start Screen & Taskbar Manager can't filter by user
 group since the node is only available on the Computer side. In addition, PolicyPak
 Start Screen & Taskbar Manager is only valid for Windows 8.1 and later.
 
@@ -62,7 +62,7 @@ portable and the user is in the FABRIKAM\Traveling Sales Users group.
 
 Below are some real-world examples of how you can use Item-Level Targeting.
 
-- Software prerequisites. If you want to configure an application's settings, first make sure the
+- Software prerequisites. If you want to configure an application's settings, first ensure the
   application is installed on the user's computer before configuring it. You can use File Match or
   Registry Match targeting items (or both) to verify a specific version of a file or a registry
   entry is present. (For an example of this, look in the Uninstall registry key.)
