@@ -69,7 +69,7 @@ The Tools menu contains the following options:
 - Reset to Default Script – Replaces the existing script with the default script that is shipped
   with Threat Prevention.
 - Encrypt – Encrypts selected portions of the script to an encrypted string with a decrypt command
-  for run time. See note below explaining why only a plain text string, information in thae script
+  for run time. See note below explaining why only a plain text string, information in the script
   between quote marks (“), should be encrypted.
 
 :::tip
