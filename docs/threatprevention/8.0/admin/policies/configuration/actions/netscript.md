@@ -6,9 +6,7 @@ sidebar_position: 20
 
 # .NET Script Actions
 
-A Visual Basic or C# script can be written and assigned to a policy by users or a Netwrix Engineer
-via engaging Netwrix Professional Services. The script will be invoked by the Enterprise Manager for
-an enabled policy.
+Users, or a Netwrix Engineer through Netwrix Professional Services, can write a Visual Basic or C# script and assign it to a policy. The Enterprise Manager invokes the script for an enabled policy.
 
 To add a .NET Script action to a policy or template:
 
@@ -47,8 +45,7 @@ information about the compiling of scripts.
 
 ![Actions tab - .Net Script Action Created](/images/threatprevention/8.0/admin/policies/actions/netscriptaction.webp)
 
-The Actions tab now displays the configured settings for the specified .NET Script action. The
-action configuration can be directly edited through this display as well.
+The Actions tab now displays the configured settings for the specified .NET Script action. You can also edit the action configuration directly through this display.
 
 ## Threat Prevention Script Editor Tools
 
@@ -66,18 +63,14 @@ The Tools menu contains the following options:
 - Run (F5) – Executes the script on the machine where the Administration Console is installed. It
   launches the script from the Administration Console, allowing the user to test the script. When
   running a .NET Script action, there are no prerequisites.
-- Reset to Default Script – Replaces the existing script with the default script that is shipped
-  with Threat Prevention.
+- Reset to Default Script – Replaces the existing script with the default script shipped with Threat Prevention.
 - Encrypt – Encrypts selected portions of the script to an encrypted string with a decrypt command
-  for run time. See note below explaining why only a plain text string, information in the script
-  between quote marks (“), should be encrypted.
+  for run time. See the following note explaining why you should encrypt only plain text strings (information in the script between quote marks (“)).
 
 :::tip
 Remember, when testing a script in the Script Editor, the **Run** option executes the script in
-the context of the user logged into the Administration Console. In production, when this script is
-run as part of a policy, it will run in the context of the account configured for the Enterprise
-Manager. If the script depends on specific user/account rights, then that should be taken into
-account when using the **Run** option to test the script.
+the context of the user logged into the Administration Console. In production, when a policy runs this script, it runs in the context of the account configured for the Enterprise
+Manager. If the script depends on specific user/account rights, consider this when using the **Run** option to test the script.
 :::
 
 
@@ -91,8 +84,8 @@ not be included in the encryption.
 
 ## Default Visual Basic Script
 
-The following Visual Basic script is configured as a default action. It will either create the
-c:\nveventdata.txt file or append the event data to it.
+The following Visual Basic script serves as the default action. It either creates the
+c:\nveventdata.txt file or appends the event data to it.
 
 ```
 Imports Microsoft.VisualBasic
@@ -241,8 +234,8 @@ End Namespace
 
 ## Default C# Script
 
-The following C# script is configured as a default action. It will either create the
-c:\nveventdata.txt file or append the event data to it.
+The following C# script serves as the default action. It either creates the
+c:\nveventdata.txt file or appends the event data to it.
 
 ```
 namespace ScriptNamespace
