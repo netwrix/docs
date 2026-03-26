@@ -63,7 +63,7 @@ The information displayed in the table includes:
 The table data grid functions the same way as other table grids. See the
 [Data Grid Features](/docs/auditor/10.8/accessreviews/admin/navigate/datagrid.md) topic for additional information.
 
-The buttons at the bottom enable you to conduct the following actions:
+Use the buttons at the bottom to conduct the following actions:
 
 | Button         | Description                                                                                                                                                                                                                                         |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -94,7 +94,7 @@ The information displayed in the table includes:
   such as the UNC path for a file system resource, the URL for SharePoint resource, or Group name
   (e.g., [Domain]\[Group]).
 - Reviewer Name — Primary owner assigned to the resource
-- Review Status — Indicates whether or not the assigned owner has submitted the review. Tool-tips
+- Review Status — Indicates whether the assigned owner has submitted the review. Tool-tips
   display when hovering over the icons.
 - Review Changes — Displays a count of items that have recommended changes for the resource
 - Review Time — Date timestamp for when the owner submitted the review
@@ -119,7 +119,7 @@ The information displayed in the table includes:
 The table data grid functions the same way as other table grids. See the
 [Data Grid Features](/docs/auditor/10.8/accessreviews/admin/navigate/datagrid.md) topic for additional information.
 
-The buttons at the top and bottom enable you to conduct the following actions:
+Use the buttons at the top and bottom to conduct the following actions:
 
 | Button          | Description                                                                                                                                                                                                                                                                                                                                                                              |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

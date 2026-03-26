@@ -65,7 +65,7 @@ features:
 - Tabs — This page has two tabs:
 
     - 1 Make changes — Displays current access for the resource.
-    - 2 Review changes — Displays changes you recommend making for your review prior to submission
+    - 2 Review changes — Displays changes you recommend making for your review before submission
 
 - You are reviewing — Indicates the type of review, the resource being reviewed, and the date
   timestamp for when the review instance was started
