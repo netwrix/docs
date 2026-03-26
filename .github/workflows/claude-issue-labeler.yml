@@ -98,6 +98,49 @@ jobs:
             Issue body may have been modified by previous steps.
           claude_args: '--allowedTools "Bash(gh:*),Skill(assign-label)"'
 
+      - name: Step 4 — Notify codeowners
+        if: steps.check-state.outputs.issue_state == 'OPEN' && github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch current labels from the issue (post-Step 3)
+          LABELS=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json labels --jq '.labels[].name')
+
+          if [ -z "$LABELS" ]; then
+            echo "No labels found — skipping codeowner notification"
+            exit 0
+          fi
+
+          # Read the mapping file
+          MAPPING=$(cat .github/label-codeowners.json)
+
+          # Collect matched teams (deduplicated)
+          TEAMS=""
+          while IFS= read -r label; do
+            team=$(echo "$MAPPING" | jq -r --arg l "$label" '.[$l] // empty')
+            if [ -n "$team" ]; then
+              # Deduplicate (identity-recovery and another label could map to same team)
+              if ! echo "$TEAMS" | grep -qF "$team"; then
+                TEAMS="${TEAMS:+$TEAMS }$team"
+              fi
+            fi
+          done <<< "$LABELS"
+
+          if [ -z "$TEAMS" ]; then
+            echo "No product labels matched — skipping codeowner notification"
+            exit 0
+          fi
+
+          echo "Notifying teams: $TEAMS"
+
+          # Post a single comment tagging all matched teams
+          COMMENT="Notifying codeowners: ${TEAMS}"
+          COMMENT="${COMMENT}"$'\n\n'"Please review this issue when you have a chance."
+
+          gh issue comment ${{ github.event.issue.number }} \
+            --repo ${{ github.repository }} \
+            --body "$COMMENT"
+
   content-fix:
     needs: process-issue
     if: >-
