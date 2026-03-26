@@ -52,7 +52,7 @@ make recommendations for changes. Consider the following examples:
 - In an Access review, you can recommend changes to the type of access granted to the resource.
 - In a Membership Review, you can recommend removing group membership from specific users.
 
-_Remember,_ any proposed changes are not committed until the Review Administrator approves the
+_Remember,_ any proposed changes aren't committed until the Review Administrator approves the
 recommendation and processes those changes.
 
 ## Resource Review Page
@@ -75,7 +75,7 @@ features:
 - Save Changes — Saves all recommended changes, enabling you to leave the review in progress and
   return at a later time to complete it. It opens the Saving review window, which displays a status
   for the action.
-- Remove Access — On the 1 Make changes tab, removes access from the selected trustee(s). Ctrl-click
+- Remove Access — On the 1 Make changes tab, removes access from the selected trustees. Ctrl-click
   can be used for multi-select. Current access blue icon with a checkmark will turn to an empty
   yellow icon.
 - Only show changes since last review — Scopes the table to only display those items that have been
