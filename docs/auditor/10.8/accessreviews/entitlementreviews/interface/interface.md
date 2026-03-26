@@ -84,8 +84,7 @@ and clicking **View Details**.
 
 ![Entitlement Reviews interface showing the Review Details page](/images/auditor/10.7/access/reviews/entitlementreviews/reviewdetailspage.webp)
 
-Instances are selected from the dropdown menu. By default the most current instance will be
-displayed. Instances are named with date timestamps indicating the start and end times for the
+Instances are selected from the dropdown menu. By default, the most current instance displays. Instances are named with date timestamps indicating the start and end times for the
 review instance.
 
 The information displayed in the table includes:

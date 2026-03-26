@@ -17,7 +17,7 @@ reviews.
 Use the **Sign in** link at the bottom to open the My Reviews interface in the Access Reviews
 Console.
 
-_Remember,_ your company domain credentials are used to log in.
+_Remember,_ log in with your company domain credentials.
 
 The My Reviews interface has two pages: Pending Reviews and Review History. See the
 [Review History Page](/docs/auditor/10.6/accessreviews/owneroverview/reviewhistory.md)
@@ -52,8 +52,8 @@ make recommendations for changes. Consider the following examples:
 - In an Access review, you can recommend changes to the type of access granted to the resource.
 - In a Membership Review, you can recommend removing group membership from specific users.
 
-_Remember,_ any proposed changes aren't committed until the Review Administrator approves the
-recommendation and processes those changes.
+_Remember,_ proposed changes don't take effect until the Review Administrator approves the
+recommendation and processes them.
 
 ## Resource Review Page
 
