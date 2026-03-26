@@ -55,7 +55,7 @@ The information displayed in the table includes:
       with the Mark Completed button.
 
 - Created By — Name of the Review Administrator who create the review
-- Created On — Date timestamp for when the review was creation. If it has been run multiple times,
+- Created On — Date timestamp for when the review was created. If it has been run multiple times,
   this is the date timestamp of the last instance.
 - Finished On — Date timestamp when the review is marked complete by the Review Administrator. If it
   has been run multiple times, this is the date timestamp of the last instance.

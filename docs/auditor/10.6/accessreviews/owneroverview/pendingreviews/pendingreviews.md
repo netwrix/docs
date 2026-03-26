@@ -31,7 +31,7 @@ The Pending Reviews page lists all of your resources included in pending reviews
 
 The information displayed in the table includes:
 
-- Created — Date timestamp for when the review was creation. If it has been run multiple times, this
+- Created — Date timestamp for when the review was created. If it has been run multiple times, this
   is the date timestamp of the last instance.
 - Review Type – Type of review:
     - Access – Review user access rights to resources
