@@ -133,13 +133,20 @@ jobs:
 
           echo "Notifying teams: $TEAMS"
 
-          # Post a single comment tagging all matched teams
-          COMMENT="Notifying codeowners: ${TEAMS}"
-          COMMENT="${COMMENT}"$'\n\n'"Please review this issue when you have a chance."
-
-          gh issue comment ${{ github.event.issue.number }} \
+          # Post a minimal comment tagging matched teams
+          COMMENT_URL=$(gh issue comment ${{ github.event.issue.number }} \
             --repo ${{ github.repository }} \
-            --body "$COMMENT"
+            --body "cc ${TEAMS}" \
+            --json url --jq .url)
+
+          # Minimize the comment to reduce noise
+          COMMENT_ID=$(echo "$COMMENT_URL" | grep -oP '\d+$')
+          gh api graphql -f query='
+            mutation {
+              minimizeComment(input: {subjectId: "'"$(gh api repos/${{ github.repository }}/issues/comments/${COMMENT_ID} --jq .node_id)"'", classifier: OFF_TOPIC}) {
+                minimizedComment { isMinimized }
+              }
+            }'
 
   content-fix:
     needs: process-issue
