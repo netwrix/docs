@@ -28,7 +28,7 @@ title: Updating Agents From the Change Tracker Console
 
 When a new Netwrix Change Tracker agent version is released, you can deploy it automatically from the Change Tracker Hub console. This article provides a comprehensive guide for downloading, uploading, and deploying agent updates, along with best practices for phased rollouts and troubleshooting common issues.
 
-> **Note:** For the most current agent update procedures and screenshots, refer to the official documentation: [Agent Updates](/docs/changetracker/8.0/admin/settingstab/agentsanddevices/agentupdates.html)
+> **Note:** For the most current agent update procedures and screenshots, refer to the official documentation: [Agent Updates](/docs/changetracker/8_0/admin/settingstab/agentsanddevices/agentupdates)
 
 > **END OF SUPPORT NOTICE**
 >
@@ -77,8 +77,6 @@ Before updating agents, ensure you have:
 
 6. Verify that both files appear in the Agent Updates list.
 
-![Agent update files](https://nwxcorp--c.na147.content.force.com/sfc/dist/version/download/?oid=00D7000000091pB&ids=0684u00000LdJrz&d=%2Fa%2F4u000000Lzsd%2FBurJF_bIoNw3JzJwCGWLeAlup_tkmAgHLN1IPXnwX_M&asPdf=false)
-
 ### Step 2: Create or Select a Device Group
 
 For organized deployments, use device groups to control which agents receive updates and when.
@@ -104,8 +102,6 @@ For organized deployments, use device groups to control which agents receive upd
      - **Scheduled:** Specify a date and time for deployment.
 
 5. Click **Update** to save the schedule.
-
-![Agent update schedule](https://nwxcorp--c.na147.content.force.com/sfc/dist/version/download/?oid=00D7000000091pB&ids=0684u00000LdKHv&d=%2Fa%2F4u000000Lzn9%2F_1yH60.vjIMuX2cZFJxnW1pRRGEU2sHysN74dlIt6kY&asPdf=false)
 
 ### Step 4: Assign Agents to the Update Group
 
@@ -313,8 +309,8 @@ A: Navigate to Settings > Agents & Devices. The version is displayed in the Devi
 
 ## Related Links
 
-- [Agent Updates (Official Documentation)](/docs/changetracker/8.0/admin/settingstab/agentsanddevices/agentupdates)
-- [Device Groups](/docs/changetracker/8.0/admin/settingstab/devicegroups)
+- [Agent Updates (Official Documentation)](/docs/changetracker/8_0/admin/settingstab/agentsanddevices/agentupdates)
+- [Device Groups](/docs/changetracker/8_0/admin/settingstab/devicegroups)
 - [Gen 7 Agent Deployment Options](/docs/changetracker/kb/gen-7-agent-deployment-options)
-- [Agent and Device Ports](/docs/changetracker/8.0/requirements/agentdeviceports)
-- [Component Release History](/docs/changetracker/8.0/componentreleases)
+- [Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
+- [Component Release History](/docs/changetracker/8_0/componentreleases)

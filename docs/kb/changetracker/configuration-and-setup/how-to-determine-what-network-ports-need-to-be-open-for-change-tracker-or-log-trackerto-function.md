@@ -25,11 +25,9 @@ title: Determining which network ports should be open for Change Tracker to func
 
 This article describes the network ports required for Netwrix Change Tracker to function properly. Use this information when configuring firewall rules for new deployments or troubleshooting connectivity issues.
 
-> **Note:** For the most current port requirements and network architecture details, refer to the official documentation: [Change Tracker 8.0 - Agent and Device Ports](/docs/changetracker/8.0/requirements/agentdeviceports.html)
+> **Note:** For the most current port requirements and network architecture details, refer to the official documentation: [Change Tracker 8.0 - Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
 
 Although custom ports can be set in the agent's configuration files, the following are the default and recommended ports for Change Tracker.
-
-![Change Tracker network ports diagram](https://nwxcorp--c.na147.content.force.com/sfc/dist/version/download/?oid=00D7000000091pB&ids=0684u00000LdKFX&d=%2Fa%2F4u000000Lzny%2FZeSqAiVi0zhk87SB7gy6ozAik49vfOFITCzm__LZ4Fk&asPdf=false)
 
 ## Instructions
 
@@ -101,6 +99,6 @@ For a typical Change Tracker deployment, ensure the following firewall rules are
 ## Related Links
 
 - [Gen 7 Agent Deployment Options](/docs/changetracker/kb/gen-7-agent-deployment-options)
-- [Agent and Device Ports](/docs/changetracker/8.0/requirements/agentdeviceports)
-- [Gen 7 Agent Requirements - Windows](/docs/changetracker/8.0/requirements/gen7agentwindows)
-- [Gen 7 Agent Requirements - Linux](/docs/changetracker/8.0/requirements/gen7agentlinux)
+- [Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
+- [Gen 7 Agent Requirements - Windows](/docs/changetracker/8_0/requirements/gen7agentwindows)
+- [Gen 7 Agent Requirements - Linux](/docs/changetracker/8_0/requirements/gen7agentlinux)
