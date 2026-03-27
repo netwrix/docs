@@ -242,10 +242,10 @@ export const PRODUCTS = [
     defaultVersion: '11.1',
   },
   {
-    id: 'endpointpolicymanager',
-    name: 'Endpoint Policy Manager',
+    id: 'policypak',
+    name: 'PolicyPak',
     description: 'Group Policy management and enforcement',
-    path: 'docs/endpointpolicymanager',
+    path: 'docs/policypak',
     categories: ['Endpoint Management'],
     icon: '',
     versions: [
@@ -253,7 +253,7 @@ export const PRODUCTS = [
         version: 'current',
         label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/sidebar.js',
+        sidebarFile: './sidebars/policypak.js',
       },
     ],
   },
@@ -285,7 +285,7 @@ export const PRODUCTS = [
       {
         version: '6.2',
         label: '6.2',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/identitymanager/6.2.js',
       },
       {
@@ -295,13 +295,15 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/identitymanager/6.1.js',
       },
       {
-        version: 'saas',
-        label: 'SaaS',
-        isLatest: false,
-        sidebarFile: './sidebars/identitymanager/saas.js',
+        version: 'current',
+        label: '6.3',
+        isLatest: true,
+        sidebarFile: './sidebars/identitymanager/current.js',
+        customRoutePath: 'docs/identitymanager/current',
+        customDocPath: 'docs/identitymanager/current',
       },
     ],
-    defaultVersion: '6.2',
+    defaultVersion: 'current',
   },
   {
     id: 'partner',
@@ -376,13 +378,21 @@ export const PRODUCTS = [
     name: 'Password Secure',
     description: 'Secure password management',
     path: 'docs/passwordsecure',
-    categories: ['Privileged Access Management (PAM)'],
+    categories: ['Identity Management'],
     icon: '',
     versions: [
       {
+        version: 'current',
+        label: 'Current',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordsecure/current.js',
+        customRoutePath: 'docs/passwordsecure/current',
+        customDocPath: 'docs/passwordsecure/current'
+      },
+      {
         version: '9.3',
         label: '9.3',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/passwordsecure/9.3.js',
       },
       {
@@ -390,15 +400,9 @@ export const PRODUCTS = [
         label: '9.2',
         isLatest: false,
         sidebarFile: './sidebars/passwordsecure/9.2.js',
-      },
-      {
-        version: '9.1',
-        label: '9.1',
-        isLatest: false,
-        sidebarFile: './sidebars/passwordsecure/9.1.js',
-      },
+      }
     ],
-    defaultVersion: '9.3',
+    defaultVersion: 'current',
   },
   {
     id: 'pingcastle',
@@ -519,12 +523,13 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: 'current',
-        label: 'current',
+        version: '2.22',
+        label: '2.22',
         isLatest: true,
-        sidebarFile: './sidebars/privilegesecurediscovery.js',
+        sidebarFile: './sidebars/privilegesecurediscovery/2.22.js',
       },
     ],
+    defaultVersion: '2.22',
   },
   {
     id: 'recoveryforactivedirectory',
@@ -584,16 +589,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '3.0',
-        label: '3.0',
-        isLatest: false,
-        sidebarFile: './sidebars/threatmanager/3.0.js',
-      },
-      {
         version: '3.1',
         label: '3.1',
         isLatest: true,
         sidebarFile: './sidebars/threatmanager/3.1.js',
+      },
+      {
+        version: '3.0',
+        label: '3.0',
+        isLatest: false,
+        sidebarFile: './sidebars/threatmanager/3.0.js',
       },
     ],
     defaultVersion: '3.1',
@@ -767,7 +772,7 @@ export function hasKBContent(productId) {
   const kbProducts = [
     '1secure', 'accessanalyzer', 'accessinformationcenter', 'activitymonitor',
     'auditor', 'changetracker', 'dataclassification', 'directorymanager',
-    'endpointpolicymanager', 'endpointprotector', 'passwordpolicyenforcer',
+    'policypak', 'endpointprotector', 'passwordpolicyenforcer',
     'passwordreset', 'privilegesecure', 'privilegesecurediscovery',
     'threatmanager', 'threatprevention'
   ];
@@ -789,8 +794,10 @@ export function generateDocusaurusPlugins() {
   productsToProcess.forEach((product) => {
     product.versions.forEach((version) => {
       const pluginId = generatePluginId(product.id, version.version);
-      const routeBasePath = generateRouteBasePath(product.path, version.version);
-      const docPath = generateDocPath(product.path, version.version);
+      // Use explicit paths if specified (e.g., for multi-versioned products with 'current')
+      // Otherwise use standard path generation
+      const routeBasePath = version.customRoutePath || generateRouteBasePath(product.path, version.version);
+      const docPath = version.customDocPath || generateDocPath(product.path, version.version);
 
       // Build plugin configuration
       const pluginConfig = {
@@ -799,7 +806,25 @@ export function generateDocusaurusPlugins() {
         routeBasePath: routeBasePath,
         sidebarPath: version.sidebarFile,
         editUrl: 'https://github.com/netwrix/docs/tree/main/',
-        exclude: ['**/CLAUDE.md', '**/docs-staging/**'],
+        exclude: ['**/CLAUDE.md', '**/docs-staging/**', '**/_partials/**'],
+        sidebarItemsGenerator: async function({ defaultSidebarItemsGenerator, ...args }) {
+          const sidebarItems = await defaultSidebarItemsGenerator(args);
+          // Recursively filter out items from _partials folder
+          function filterPartials(items) {
+            return items.filter(item => {
+              // Filter out if label or id contains _partials
+              if (item.label?.includes('_partials') || item.id?.includes('_partials')) {
+                return false;
+              }
+              // Recursively filter nested items
+              if (item.items) {
+                item.items = filterPartials(item.items);
+              }
+              return true;
+            });
+          }
+          return filterPartials(sidebarItems);
+        },
         versions: {
           current: {
             label: version.label,
@@ -824,7 +849,7 @@ export function generateDocusaurusPlugins() {
         routeBasePath: 'docs/kb',
         sidebarPath: false, // KB uses individual sidebars in product plugins
         editUrl: 'https://github.com/netwrix/docs/tree/main/',
-        exclude: ['**/CLAUDE.md', '**/docs-staging/**'],
+        exclude: ['**/CLAUDE.md', '**/docs-staging/**', '**/_partials/**'],
         versions: {
           current: {
             label: 'Knowledge Base',
@@ -847,7 +872,10 @@ export function generateProductCategories() {
 
     const products = categoryProducts.map((product) => {
       const defaultVersion = getDefaultVersion(product);
-      const defaultLink = `/${generateRouteBasePath(product.path, defaultVersion.version)}`;
+      // Use override customRoutePath if present, otherwise generate it
+      const defaultLink = defaultVersion.customRoutePath
+        ? `/${defaultVersion.customRoutePath}`
+        : `/${generateRouteBasePath(product.path, defaultVersion.version)}`;
 
       const productInfo = {
         name: product.name,
@@ -859,7 +887,7 @@ export function generateProductCategories() {
       if (product.versions.length > 1) {
         productInfo.versions = product.versions.map((version) => ({
           version: version.label,
-          link: version.customLink || `/${generateRouteBasePath(product.path, version.version)}`,
+          link: version.customLink || (version.customRoutePath ? `/${version.customRoutePath}` : `/${generateRouteBasePath(product.path, version.version)}`),
           isLatest: version.isLatest,
         }));
       }
@@ -897,7 +925,10 @@ export function generateNavbarDropdowns() {
 
       const items = categoryProducts.map((product) => {
         const defaultVersion = getDefaultVersion(product);
-        const link = `/${generateRouteBasePath(product.path, defaultVersion.version)}`;
+        // Use override customRoutePath if present, otherwise generate it
+        const link = defaultVersion.customRoutePath
+          ? `/${defaultVersion.customRoutePath}/`
+          : `/${generateRouteBasePath(product.path, defaultVersion.version)}`;
 
         return {
           label: product.name,

@@ -8,7 +8,7 @@ sidebar_position: 10
 
 Follow the steps to deploy the Add-On:
 
-**Step 1 –** Prepare Auditorfor data processing.
+**Step 1 –** Prepare Auditor for data processing.
 
 **Step 2 –** Configure message forwarding for Nutanix Prism.
 

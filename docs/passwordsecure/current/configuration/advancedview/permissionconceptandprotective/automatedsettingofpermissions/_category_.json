@@ -1,0 +1,10 @@
+{
+  "label": "Automated setting of permissions",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "automated_setting_of_permissions"
+  }
+}

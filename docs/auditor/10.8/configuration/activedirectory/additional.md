@@ -63,8 +63,7 @@ Policies.**
 
 **Step 5 –** Locate the **Manage auditing and security log** policy and double-click it.
 
-**Step 6 –** In the Manage auditing and security log Properties**anage auditing and security log
-Properties** dialog, click **Add User or Group**, specify the user that you want to define this
+**Step 6 –** In the **Manage auditing and security log Properties** dialog, click **Add User or Group**, specify the user that you want to define this
 policy for.
 
 **Step 7 –** Run the following command to update group policy: `gpupdate /force`

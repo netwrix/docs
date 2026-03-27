@@ -107,7 +107,7 @@ Start-Service -Displayname Netwrix*
 5. Netwrix Auditor requires a reference to the new SQL Server instance. Refer to the following steps to find the instance name:
    1. Launch SQL Server Management Studio.
    2. Click **Properties** for the instance name.
-   3. In Netwrix Auditor **Settings** menu, select **Audit Databse** in the left pane and click **Modify** under **Audit database settings**.
+   3. In Netwrix Auditor **Settings** menu, select **Audit Database** in the left pane and click **Modify** under **Audit database settings**.
    4. Specify the SQL Server instance name and credentials of the account used to write data to SQL databases. Refer to the following articles for additional information on SQL permissions and report server database deployment:
       - [Requirements for SQL Server to Store Audit Data](https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserver)
       - [Deploying the Report Server Database](/docs/kb/auditor/system-administration/database-management/deploying-the-report-server-database)

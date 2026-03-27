@@ -19,7 +19,7 @@ Companies often use about one system for each identity type. Identity Manager ca
 information from several source systems in order to build a central repository meant to contain all
 the data necessary to manage all identities throughout their whole lifecycle.
 
-![Usercube's Repository](/images/identitymanager/saas/introduction-guide/overview/identity-management/identities_repository.webp)
+![Usercube's Repository](/images/identitymanager/introduction-guide/overview/identity-management/identities_repository.webp)
 
 Identity Manager's central repository acts as an intermediary between the systems that provide data, for example the HR system, and those that receive data, for example the Active Directory. This greatly reduces the complexity in the links between all systems.
 
@@ -28,7 +28,7 @@ Without an intermediary, adding one system to a set of n systems requires up to 
 Now with the central repository as an intermediary, implementing a new system requires only one more
 set of rules. The complexity becomes linear.
 
-![quadratic-linear-complexity](/images/identitymanager/saas/introduction-guide/overview/identity-management/quadratic-linear-complexity.webp)
+![quadratic-linear-complexity](/images/identitymanager/introduction-guide/overview/identity-management/quadratic-linear-complexity.webp)
 
 ## An Entity Relationship Model
 
@@ -48,7 +48,7 @@ properties which make links between entities, quite like foreign keys in a datab
 > Another entity could be `SAB_User` to model SAB accounts owned by users from `Directory_User`. The
 > accounts from `SAB_User` could be related to groups from another entity `SAB_Group`.
 
-![Entity Type - Schema](/images/identitymanager/saas/user-guide/set-up/connect-system/entity-type-creation/entitytypecreation_schema.webp)
+![Entity Type - Schema](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/entitytypecreation_schema.webp)
 
 These entities' instances are called resources in Identity Manager. A resource can be the digital
 identity of a user (human or bot), or an AD account or any other account, or an entry from the HR
@@ -70,7 +70,7 @@ Each entity is related to a managed system, for example the Active Directory or 
 etc. The reading/writing data between the system and Identity Manager are ensured by connectors. So
 Identity Manager can be configured with one connector for each managed system.
 
-![Connector Schema](/images/identitymanager/saas/user-guide/set-up/connect-system/connectorcreation_connectorschema.webp)
+![Connector Schema](/images/identitymanager/user-guide/set-up/connect-system/connectorcreation_connectorschema.webp)
 
 For a given system, a connector contains:
 
@@ -82,13 +82,13 @@ For a given system, a connector contains:
 Thus, a connector enables synchronization, i.e. Identity Manager reading from a managed system via
 an [extract, transform, load](https://en.wikipedia.org/wiki/Extract,_transform,_load) process.
 
-![Synchronization](/images/identitymanager/saas/introduction-guide/overview/overview_synchronization.webp)
+![Synchronization](/images/identitymanager/introduction-guide/overview/overview_synchronization.webp)
 
 > A typical example is the synchronization of the HR system's data to retrieve employees' personal > information.
 
 It also enables provisioning, i.e. Identity Manager writing to a managed system, but that is something we will dig into later.
 
-![Provisioning](/images/identitymanager/saas/introduction-guide/overview/overview_provisioning.webp)
+![Provisioning](/images/identitymanager/introduction-guide/overview/overview_provisioning.webp)
 
 ## Repository Updates
 

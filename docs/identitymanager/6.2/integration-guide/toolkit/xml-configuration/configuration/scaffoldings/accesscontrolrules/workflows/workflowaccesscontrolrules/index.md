@@ -13,11 +13,11 @@ Gives access to a shortcut on the dashboard and on the top bar to access this pa
 
 Top bar shortcut:
 
-![Tasks in Top Bar](/images/identitymanager/saas/user-guide/set-up/configure-workflows/home_topbar_v601.webp)
+![Tasks in Top Bar](/images/identitymanager/user-guide/set-up/configure-workflows/home_topbar_v601.webp)
 
 DashBoard shortcut:
 
-![Task in Dashboard](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/accesscontrolrules/workflows/workflowaccesscontrolrules/home_mytasks_v523.webp)
+![Task in Dashboard](/images/identitymanager/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/accesscontrolrules/workflows/workflowaccesscontrolrules/home_mytasks_v523.webp)
 
 ## Examples
 

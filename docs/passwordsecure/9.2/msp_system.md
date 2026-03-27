@@ -1,58 +1,59 @@
 ---
-title: "MSP System"
-description: "MSP System"
+title: "MSP system"
+description: "Minimum hardware requirements for MSP system deployments"
 sidebar_position: 30
 ---
 
-# MSP System
+# MSP system
 
-To ensure optimal operation, we recommend that the following hardware resources are made available:
+Ensure the following hardware resources are available for optimal MSP system operation.
 
 ## Microsoft SQL Server
 
-The following system requirements are the minimum system requirements and should manage around 10
-customers with less than 20 users each.
+These are the minimum system requirements for supporting approximately 10 customers with fewer than 20 users each.
 
-- Windows Server 2016 (or newer)
-- MSSQL Server 2014 (or newer)
-- 4 CPU’s
+- Windows Server 2016 or later
+- MSSQL Server 2014 or later
+- 4 CPUs
 - 16 GB RAM
-- min. 100 GB HDD
+- 100 GB HDD
 
-**CAUTION:** Please note, that using a SQL Server with Express edition is not recommended because of
-diverse limitations there.
+:::warning
+Using SQL Server Express edition isn't recommended because of its limitations.
+:::
 
-If your customer's count is growing over time, you should add every 200 users a minimum of at least:
+Add the following resources for every additional 200 users:
 
-- 2 CPU’s
+- 2 CPUs
 - 8 GB RAM
 
-## Application Server
+## Application server
 
-The following system requirements are the minimum system requirements and should manage around 10
-customers with 20 users each.
+These are the minimum system requirements for supporting approximately 10 customers with 20 users each.
 
-- Windows Server 2016 (or newer)
-- 4 CPU’s
+- Windows Server 2016 or later
+- 4 CPUs
 - 16 GB RAM
-- min. 50 GB HDD
+- 50 GB HDD
 - .NET Framework 4.8
 
-If your customer's count is growing over time, you should add every 200 users a minimum of at least:
+Add the following resources for every additional 200 users:
 
 - 1 CPU
 - 4 GB RAM
 
-RECOMMENDED: Currently, we suggest you use an application server to handle a max of about 100
-customers. So if you reach 100 customers, you should set up a second Application Server or use some
-sort of load balancing between the application servers.
+:::tip
+Netwrix recommends limiting each application server to a maximum of approximately 100 customers. If you reach 100 customers, set up a second application server or configure load balancing between your application servers.
+:::
 
-**CAUTION:** Every additional 1000 users an additional Web-Endpoint - incl. loadbalancing - is
-recommended
+:::warning
+For every additional 1,000 users, add an additional web endpoint with load balancing.
+:::
 
-**CAUTION:** Every additional 100 customers/1000 users an additional Application Server - incl.
-loadbalancing - is recommended.
+:::warning
+For every additional 100 customers or 1,000 users, add an additional application server with load balancing.
+:::
 
-NOTE: Please note that individual variables - like the number of passwords per user - will affect
-performance. Especially for MSP-Systems it is required to monitor performance continuously, and add
-additional resources on demand.
+:::note
+Individual variables—such as the number of passwords per user—affect performance. For MSP systems, monitor performance continuously and add resources as needed.
+:::

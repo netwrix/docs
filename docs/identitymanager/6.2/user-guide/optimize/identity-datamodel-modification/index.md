@@ -75,20 +75,20 @@ Add or modify properties within the identity data model by proceeding as follows
 
 1. On the home page, click on **Settings** in the **Configuration** section.
 
-    ![Home Page - Configuration](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
+    ![Home Page - Configuration](/images/identitymanager/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
 
 2. Access the data model on the **Workforce** > **Data Model** page.
 3. Change the display option to show or hide properties in the identity repository.
 
-    ![Scan Data Model - Display Option](/images/identitymanager/saas/user-guide/optimize/identity-datamodel-modification/datamodelmodif_scan_v600.webp)
+    ![Scan Data Model - Display Option](/images/identitymanager/user-guide/optimize/identity-datamodel-modification/datamodelmodif_scan_v600.webp)
 
 4. After your changes are complete, click on the Save icon at the top.
 
-    ![Save Icon](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/iconsave_v602.svg)
+    ![Save Icon](/images/identitymanager/user-guide/set-up/user-profile-configuration/iconsave_v602.svg)
 
 5. Click on the **Reload** button to apply the recent changes to the application.
 
-    ![Reload Button](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/generate-unique-properties/reload_v603.webp)
+    ![Reload Button](/images/identitymanager/user-guide/set-up/initial-identities-loading/generate-unique-properties/reload_v603.webp)
 
 ## Delete Properties
 
@@ -105,14 +105,14 @@ In order to verify the process:
 - Check manually a sample in the user directory accessible from the home page. You should verify at
   least your own sheet and the sheets assigned to your hierarchy.
 
-    ![Home - Directory User](/images/identitymanager/saas/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
+    ![Home - Directory User](/images/identitymanager/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
 
 - Check that every organization still has a manager. Organizations are accessible in the department
   directory accessible from the home page.
 
-    ![Home - Directory Department](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/home_directorydepartment_v523.webp)
+    ![Home - Directory Department](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/home_directorydepartment_v523.webp)
 
-    ![List of Departments](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/initialload_departments_v602.webp)
+    ![List of Departments](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/initialload_departments_v602.webp)
 
     If the system contains numerous organizations, it is also possible to list them with their
     managers through the Query module. See

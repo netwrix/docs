@@ -32,7 +32,7 @@ See the [Licenses](/docs/auditor/10.8/admin/settings/licenses.md) topic for addi
 _Remember,_ there is one single Access Review license for all data sources that can send data to the
 application.
 
-Follow the steps to use Netwrix Auditor Access Reviews in conjuction with Auditor.
+Follow the steps to use Netwrix Auditor Access Reviews in conjunction with Auditor.
 
 **Step 1 –** Install Access Reviews on the same computer where Netwrix Auditor is installed. See the
 [Installation Overview](/docs/auditor/10.8/accessreviews/installation/overview.md) topic for prerequisites and
@@ -142,7 +142,7 @@ Review the following considerations:
 
     ## Access Reviews Workflow
 
-    The Access Reviews applicaton runs attestations on resources and groups with the assigned
+    The Access Reviews application runs attestations on resources and groups with the assigned
     owners. The workflow consists of:
 
     - Reviews — Configure reviews for resource Access or group Membership .

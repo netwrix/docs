@@ -32,7 +32,7 @@ User Password Changes are not appearing in Search or Report results.
 
 By default User Password Change auditing is disabled via omitlist.
 
-## Reolution
+## Resolution
 
 This functionality can be easily enabled by navigating to the following file location:
 

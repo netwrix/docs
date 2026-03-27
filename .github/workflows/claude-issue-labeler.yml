@@ -97,3 +97,301 @@ jobs:
             Note: The skill should preserve template-assigned labels and add complementary labels.
             Issue body may have been modified by previous steps.
           claude_args: '--allowedTools "Bash(gh:*),Skill(assign-label)"'
+
+      - name: Step 4 — Notify codeowners
+        if: steps.check-state.outputs.issue_state == 'OPEN' && github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch current labels from the issue (post-Step 3)
+          LABELS=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json labels --jq '.labels[].name')
+
+          if [ -z "$LABELS" ]; then
+            echo "No labels found — skipping codeowner notification"
+            exit 0
+          fi
+
+          # Read the mapping file
+          MAPPING=$(cat .github/label-codeowners.json)
+
+          # Collect matched teams (deduplicated)
+          TEAMS=""
+          while IFS= read -r label; do
+            team=$(echo "$MAPPING" | jq -r --arg l "$label" '.[$l] // empty')
+            if [ -n "$team" ]; then
+              # Deduplicate (identity-recovery and another label could map to same team)
+              if ! echo "$TEAMS" | grep -qF "$team"; then
+                TEAMS="${TEAMS:+$TEAMS }$team"
+              fi
+            fi
+          done <<< "$LABELS"
+
+          if [ -z "$TEAMS" ]; then
+            echo "No product labels matched — skipping codeowner notification"
+            exit 0
+          fi
+
+          echo "Notifying teams: $TEAMS"
+
+          # Post a single comment tagging all matched teams
+          COMMENT="Notifying codeowners: ${TEAMS}"
+          COMMENT="${COMMENT}"$'\n\n'"Please review this issue when you have a chance."
+
+          gh issue comment ${{ github.event.issue.number }} \
+            --repo ${{ github.repository }} \
+            --body "$COMMENT"
+
+  content-fix:
+    needs: process-issue
+    if: >-
+      github.event_name == 'issues' &&
+      github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+
+    steps:
+      - name: Check issue state and labels
+        id: check-issue
+        run: |
+          ISSUE_DATA=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json state,labels)
+          STATE=$(echo "$ISSUE_DATA" | jq -r '.state')
+          HAS_CONTENT_FIX=$(echo "$ISSUE_DATA" | jq '[.labels[].name] | any(. == "content:fix")')
+          echo "issue_state=$STATE" >> "$GITHUB_OUTPUT"
+          echo "has_content_fix=$HAS_CONTENT_FIX" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout repository
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ISSUE_TOKEN }}
+          fetch-depth: 0
+
+      - name: Configure git identity
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run content-fix skill
+        id: content-fix
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
+        uses: anthropics/claude-code-action@v1
+        env:
+          REPO: ${{ github.repository }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            /content-fix ${{ github.event.issue.number }}
+
+            Context:
+            - REPO: ${{ github.repository }}
+            - ISSUE_NUMBER: ${{ github.event.issue.number }}
+            - ISSUE_TITLE: ${{ github.event.issue.title }}
+          claude_args: '--model claude-opus-4-6 --max-turns 50 --allowedTools "Bash,Read,Write,Edit,Glob,Grep,Skill(content-fix)"'
+
+      - name: Create PR and comment on issue
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.ISSUE_TOKEN }}
+        run: |
+          OUTPUT_FILE="/home/runner/work/_temp/claude-execution-output.json"
+
+          # Extract the result text from the JSONL output file
+          # The file has multi-line JSON objects, so use jq --slurp to handle them
+          CLAUDE_OUTPUT=$(jq -rs '[.[] | select(.result != null)] | last | .result // empty' "$OUTPUT_FILE" 2>/dev/null || echo "")
+
+          # Fallback: grep the raw file for BRANCH_NAME if jq extraction failed
+          if [ -z "$CLAUDE_OUTPUT" ]; then
+            echo "jq extraction failed, falling back to grep"
+            CLAUDE_OUTPUT=$(grep -oP 'BRANCH_NAME=\K[^\s"\\]+' "$OUTPUT_FILE" 2>/dev/null | tail -1 || echo "")
+            if [ -n "$CLAUDE_OUTPUT" ]; then
+              BRANCH_NAME="$CLAUDE_OUTPUT"
+            fi
+          fi
+
+          echo "Claude output (first 200 chars): ${CLAUDE_OUTPUT:0:200}"
+
+          # Extract branch name from the result text
+          if [ -z "${BRANCH_NAME:-}" ]; then
+            BRANCH_NAME=$(echo "$CLAUDE_OUTPUT" | grep -oP 'BRANCH_NAME=\K\S+' | head -1)
+          fi
+
+          if [ -z "$BRANCH_NAME" ]; then
+            echo "No branch name found in Claude output — skill likely asked a clarifying question"
+            exit 0
+          fi
+
+          echo "Found branch: $BRANCH_NAME"
+
+          # Check if branch exists on remote
+          if ! git ls-remote --exit-code origin "$BRANCH_NAME" > /dev/null 2>&1; then
+            echo "Branch $BRANCH_NAME not found on remote — skipping PR creation"
+            exit 0
+          fi
+
+          # Extract description from Claude's output (everything before BRANCH_NAME line)
+          DESCRIPTION=$(echo "$CLAUDE_OUTPUT" | sed '/BRANCH_NAME=/d' | sed '/^$/d')
+          ISSUE_NUM=${{ github.event.issue.number }}
+          PR_TITLE="docs: fix #${ISSUE_NUM} — $(echo "$BRANCH_NAME" | sed 's|fix/issue-[0-9]*-||' | tr '-' ' ')"
+
+          # Create PR using ISSUE_TOKEN so it triggers downstream workflows
+          PR_URL=$(gh pr create \
+            --repo ${{ github.repository }} \
+            --base dev \
+            --head "$BRANCH_NAME" \
+            --title "$PR_TITLE" \
+            --body "Closes #${ISSUE_NUM}
+
+          ## What changed
+          ${DESCRIPTION}")
+
+          echo "Created PR: $PR_URL"
+
+          # Comment on the issue
+          PR_NUMBER=$(echo "$PR_URL" | grep -oP '\d+$')
+          gh issue comment "$ISSUE_NUM" \
+            --repo ${{ github.repository }} \
+            --body "Fix submitted in PR #${PR_NUMBER}."
+
+  content-fix-followup:
+    needs: process-issue
+    if: >-
+      github.event_name == 'issue_comment' &&
+      !github.event.issue.pull_request &&
+      contains(github.event.comment.body, '@claude') &&
+      !startsWith(github.event.comment.user.login, 'github-actions')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+
+    steps:
+      - name: Check issue state and labels
+        id: check-issue
+        run: |
+          ISSUE_DATA=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json state,labels)
+          STATE=$(echo "$ISSUE_DATA" | jq -r '.state')
+          HAS_CONTENT_FIX=$(echo "$ISSUE_DATA" | jq '[.labels[].name] | any(. == "content:fix")')
+          echo "issue_state=$STATE" >> "$GITHUB_OUTPUT"
+          echo "has_content_fix=$HAS_CONTENT_FIX" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: React to comment
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions \
+            -f content="eyes"
+
+      - name: Checkout repository
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ISSUE_TOKEN }}
+          fetch-depth: 0
+
+      - name: Configure git identity
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run content-fix skill
+        id: content-fix-followup
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
+        uses: anthropics/claude-code-action@v1
+        env:
+          REPO: ${{ github.repository }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            /content-fix ${{ github.event.issue.number }}
+
+            Context:
+            - REPO: ${{ github.repository }}
+            - ISSUE_NUMBER: ${{ github.event.issue.number }}
+            - ISSUE_TITLE: ${{ github.event.issue.title }}
+            - TRIGGERING_COMMENT: $COMMENT_BODY
+
+            This is a follow-up invocation. A user replied with @claude on a content_fix issue.
+            Read the full issue body AND all comments to understand the complete context.
+          claude_args: '--model claude-opus-4-6 --max-turns 50 --allowedTools "Bash,Read,Write,Edit,Glob,Grep,Skill(content-fix)"'
+
+      - name: Create PR and comment on issue
+        if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.ISSUE_TOKEN }}
+        run: |
+          OUTPUT_FILE="/home/runner/work/_temp/claude-execution-output.json"
+
+          # Extract the result text from the JSONL output file
+          # The file has multi-line JSON objects, so use jq --slurp to handle them
+          CLAUDE_OUTPUT=$(jq -rs '[.[] | select(.result != null)] | last | .result // empty' "$OUTPUT_FILE" 2>/dev/null || echo "")
+
+          # Fallback: grep the raw file for BRANCH_NAME if jq extraction failed
+          if [ -z "$CLAUDE_OUTPUT" ]; then
+            echo "jq extraction failed, falling back to grep"
+            CLAUDE_OUTPUT=$(grep -oP 'BRANCH_NAME=\K[^\s"\\]+' "$OUTPUT_FILE" 2>/dev/null | tail -1 || echo "")
+            if [ -n "$CLAUDE_OUTPUT" ]; then
+              BRANCH_NAME="$CLAUDE_OUTPUT"
+            fi
+          fi
+
+          echo "Claude output (first 200 chars): ${CLAUDE_OUTPUT:0:200}"
+
+          # Extract branch name from the result text
+          if [ -z "${BRANCH_NAME:-}" ]; then
+            BRANCH_NAME=$(echo "$CLAUDE_OUTPUT" | grep -oP 'BRANCH_NAME=\K\S+' | head -1)
+          fi
+
+          if [ -z "$BRANCH_NAME" ]; then
+            echo "No branch name found in Claude output — skill likely asked a clarifying question"
+            exit 0
+          fi
+
+          echo "Found branch: $BRANCH_NAME"
+
+          # Check if branch exists on remote
+          if ! git ls-remote --exit-code origin "$BRANCH_NAME" > /dev/null 2>&1; then
+            echo "Branch $BRANCH_NAME not found on remote — skipping PR creation"
+            exit 0
+          fi
+
+          # Extract description from Claude's output (everything before BRANCH_NAME line)
+          DESCRIPTION=$(echo "$CLAUDE_OUTPUT" | sed '/BRANCH_NAME=/d' | sed '/^$/d')
+          ISSUE_NUM=${{ github.event.issue.number }}
+          PR_TITLE="docs: fix #${ISSUE_NUM} — $(echo "$BRANCH_NAME" | sed 's|fix/issue-[0-9]*-||' | tr '-' ' ')"
+
+          # Create PR using ISSUE_TOKEN so it triggers downstream workflows
+          PR_URL=$(gh pr create \
+            --repo ${{ github.repository }} \
+            --base dev \
+            --head "$BRANCH_NAME" \
+            --title "$PR_TITLE" \
+            --body "Closes #${ISSUE_NUM}
+
+          ## What changed
+          ${DESCRIPTION}")
+
+          echo "Created PR: $PR_URL"
+
+          # Comment on the issue
+          PR_NUMBER=$(echo "$PR_URL" | grep -oP '\d+$')
+          gh issue comment "$ISSUE_NUM" \
+            --repo ${{ github.repository }} \
+            --body "Fix submitted in PR #${PR_NUMBER}."

@@ -1,0 +1,10 @@
+{
+  "label": "Managing users",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "managing_users"
+  }
+}

@@ -121,7 +121,6 @@ To configure Clustered Data ONTAP 8 and ONTAP 9 for monitoring, perform the foll
 
 - Prerequisites
 - [Configure ONTAPI\RESTAPI Web Access](/docs/auditor/10.7/configuration/fileservers/netappcmode/webaccess.md)
-- [Configure System Service Firewall Policies](/docs/auditor/10.7/configuration/fileservers/netappcmode/ports.md)
 - [Configure Service Policy](/docs/auditor/10.7/configuration/fileservers/netappcmode/servicepolicy.md)
 - [Configure Event Categories and Log](/docs/auditor/10.7/configuration/fileservers/netappcmode/eventcategories.md)
 

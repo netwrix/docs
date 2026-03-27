@@ -1,0 +1,16 @@
+@startuml component
+package "SearchBarDesignElement" {
+	class SearchBarDesignElement {
+		DisplayName_L1 : String
+		Identifier : String
+		--
+		SearchBarDesignElementSearchBars : SearchBar[]
+	}
+}
+package "SearchBar" {
+	class SearchBar {
+	}
+}
+SearchBarDesignElement "1" --  "0..*"SearchBar
+hide empty members
+@enduml

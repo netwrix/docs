@@ -93,7 +93,7 @@ Failed to update the agent on the following server: %server%
 
   Learn more in: Windows Server Troubleshooting: RPC server is unavailable ⸱ Microsoft
 
-- Enable TLS 1.2. For additional information, refer to: Сonnection Issue when TLS 1.2 Is Required.
+- Enable TLS 1.2. For additional information, refer to: Connection Issue when TLS 1.2 Is Required.
 
 - RPC connections might be affected due to insufficient hardware resources. Review the hardware resources of the affected server to possibly increase the resource pool. Learn more in: Server Hardware Performance Considerations ⸱ Microsoft
 
@@ -103,6 +103,6 @@ Failed to update the agent on the following server: %server%
 - [0x80004027 error when you try to remotely access COM+ object after you upgrade to Windows Server 2016 or later versions ⸱ Microsoft](https://learn.microsoft.com/en-us/troubleshoot/windows-server/application-management/0x80004027-remotely-access-com-plus-object)
 - Logon Activity Ports — Configure Windows Firewall Inbound Connection Rules · v10.6
 - [Windows Server Troubleshooting: RPC server is unavailable ⸱ Microsoft](https://social.technet.microsoft.com/wiki/contents/articles/4494.windows-server-troubleshooting-rpc-server-is-unavailable.aspx)
-- Сonnection Issue when TLS 1.2 Is Required
+- Connection Issue when TLS 1.2 Is Required
 - [Server Hardware Performance Considerations ⸱ Microsoft](https://learn.microsoft.com/en-us/windows-server/administration/performance-tuning/hardware/)
 

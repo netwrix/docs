@@ -63,34 +63,6 @@ Some are critical to ongoing business processes, others are quick solutions to d
 These one-time quick reports accumulate in your orgs, causing confusion and inefficiency. Refer to
 [Automated Report Clean Up](/docs/platgovsalesforce/tools/automated_report_clean_up.md) for more details.
 
-Automated Report Clean Up safely archives Reports following the rules and criteria you set up. The
-process is simple:
-
-1. Set up default rules. For example,
-
-    - Reports not used within the past year
-    - Reports owned by people who no longer have access to Salesforce and have not used in 6 months
-
-2. Run the analysis on an ad hoc basis and review your results.
-3. Exclude any Reports to be retained, either manually by changing the rule settings to exclude
-   Reports based on:
-
-    - Report Owners
-    - Related Roles
-    - Scheduled
-    - Private Reports
-    - Date Last Used
-
-4. Excludes Reports covered by a special policy or with any downstream dependencies to ensure you do not delete something important.
-
-    - Emails Report owners (if desired) that the Report is being archived. The owner can retain the
-      Report with a simple mouse click. The Date Last Used is updated to the current date.
-    - Deletes the Reports that were not retained, but keeps the Report definition.
-
-   When you run the Clean Up, Archived Reports can be easily be restored if needed.
-
-5. Schedule your rules to run on a regular basis to keep your orgs cleaned up and efficient.
-
 ## Employees Related to a Customization
 
 Knowing who is using a customization is useful. This is tackled in steps, by Users and Owners.

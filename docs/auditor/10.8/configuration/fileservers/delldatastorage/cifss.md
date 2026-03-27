@@ -8,7 +8,7 @@ sidebar_position: 40
 
 Dell VNX, VNXe, Celerra, and Unity NAS devices are collectively referred to as Dell Data Storage.
 
-Auditor  can be configured to audit all access types, review the table below and select options that
+Auditor can be configured to audit all access types, review the table below and select options that
 you want to track:
 
 | Option      |                                                                                                                                                                                                                                                                                                     | Description                                                                                                                                                                                                                                                                                                                                    |

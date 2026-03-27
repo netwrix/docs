@@ -19,7 +19,7 @@ change and get the necessary approvals for the change to be compliant.
 1. Create a New [Change Request](/docs/platgovsalesforce/changemanagement/creating_change_request.md) or open an existing one.
 2. Set it to Pending Approval.
 3. Once it is approved and complete, set the **Status** of the Change Request to **Complete**.
-4. Click on the Change Log namet to open it.
+4. Click the Change Log name to open it.
 5. Enter the **Related Change Request**.
 6. Enter the **Resolution Description**.
 7. Once all changes are made, select **Closed** for the Status.

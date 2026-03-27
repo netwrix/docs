@@ -71,7 +71,7 @@ OK.
 **Step 11 –** Navigate to Start > Run and type `cmd`. Input the `gpupdate /force` command and press
 Enter. The group policy will be updated.
 
-**Step 12 –** Type `repadmin/syncall` command and press Enter for replicate GPO changes to other
+**Step 12 –** Type `repadmin /syncall` command and press Enter for replicate GPO changes to other
 domain controllers.
 
 **Step 13 –** Ensure that new GPO settings were applied to the domain controllers.

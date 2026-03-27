@@ -1,0 +1,11 @@
+@startuml component
+package "ResourceRiskScore" {
+	class ResourceRiskScore {
+		Owner : Int64
+		OwnerType : Int64
+		Rating : Int32
+		Score : Int32
+	}
+}
+hide empty members
+@enduml

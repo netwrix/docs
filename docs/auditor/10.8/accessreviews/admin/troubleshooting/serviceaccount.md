@@ -43,6 +43,6 @@ the account. Enter the account's password in both the **Password** and **Confirm
 Then click **OK**. The Properties window closes.
 
 **Step 4 –** The selected account is displayed in the Log On As column for the service. Either
-Restart or Stop and Start the service for this change to take affect.
+Restart or Stop and Start the service for this change to take effect.
 
 The Netwrix Auditor Access Reviews service is now running with the supplied Windows account.

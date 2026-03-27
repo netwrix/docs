@@ -18,9 +18,9 @@ This topic lists the hardware requirements and software requirements for Netwrix
 
 ## Software Requirements
 
-- Operating System – Windows Server 2022
-- MongoDB – v8.0
-- IIS – v10.0
+- Operating System – Windows Server 2019 - 2025
+- MongoDB – v5.x - 8.x
+- IIS – v10
 
     - Server roles:
 
