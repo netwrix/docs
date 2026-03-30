@@ -67,7 +67,7 @@ provide this account in the monitoring plan wizard.
 
 | Version                  | Privileges Required                                                                                                               |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| Oracle Database 12c, 18c, 19c | Grant SELECT privilege on the following objects:                                                                               |
+| Oracle Database 12.2, 18c, 19c | Grant SELECT privilege on the following objects:                                                                               |
 |                          | - aud$                                                                                                                            |
 |                          | - gv_$xml_audit_trail                                                                                                              |
 |                          | - dba_stmt_audit_opts                                                                                                              |
@@ -81,15 +81,4 @@ provide this account in the monitoring plan wizard.
 |                          | - all_unified_audit_actions                                                                                                        |
 |                          | - audit_unified_policies                                                                                                           |
 |                          | - audit_unified_enabled_policies                                                                                                   |
-|                          | - audsys.aud$unified (for Oracle Database 12c Release 2 and higher)                                                                |
-| Oracle Database 11g      | Starting with version 10.5, Netwrix Auditor provides limited support of Oracle Database 11g.                                       |
-|                          | Grant SELECT privilege on the following objects:                                                                                   |
-|                          | - aud$                                                                                                                            |
-|                          | - gv_$xml_audit_trail                                                                                                              |
-|                          | - dba_stmt_audit_opts                                                                                                              |
-|                          | - v_$parameter                                                                                                                     |
-|                          | - dba_obj_audit_opts                                                                                                               |
-|                          | - dba_audit_policies                                                                                                               |
-|                          | - dba_audit_mgmt_clean_events                                                                                                      |
-|                          | - gv_$instance                                                                                                                     |
-|                          | - fga_log$                                                                                                                         |
+|                          | - audsys.aud$unified                                                                                                               |
