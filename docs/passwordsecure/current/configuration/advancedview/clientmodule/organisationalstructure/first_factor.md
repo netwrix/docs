@@ -44,7 +44,7 @@ In addition, the smartcard certificate must of course also be valid on the serve
 ## Requirement
 
 For Fido2 it is mandatory that
-SMTP ([Advanced settings](/docs/passwordsecure/current/configuration/servermanger/mainmenu/advanced_settings.md)) is configured.
+SMTP ([Advanced settings](/docs/passwordsecure/current/configuration/servermanager/mainmenu/advanced_settings.md)) is configured.
 In addition, an e-mail address must be stored for the AD users.
 
 Furthermore, the URL of the Web Application must be stored in the Server Manager:

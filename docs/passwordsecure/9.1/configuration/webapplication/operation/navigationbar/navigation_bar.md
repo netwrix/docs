@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The navigation bar provides the following functions.
 
-![navigation bar](/images/passwordsecure/9.1/configuration/web_applicaiton/operation/navigation_bar/installation_with_parameters_172-en_643x142.webp)
+![navigation bar](/images/passwordsecure/9.1/configuration/web_application/operation/navigation_bar/installation_with_parameters_172-en_643x142.webp)
 
 1. Filter
 
@@ -22,4 +22,4 @@ will do a new tab will be opend.
 
 **Example**
 
-![tab system](/images/passwordsecure/9.1/configuration/web_applicaiton/operation/navigation_bar/installation_with_parameters_173-en.webp)
+![tab system](/images/passwordsecure/9.1/configuration/web_application/operation/navigation_bar/installation_with_parameters_173-en.webp)

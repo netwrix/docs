@@ -18,7 +18,7 @@ depending on which view is currently being used.
 The menu can take on two forms. In general, the **menu bar** containing the **most important
 functions** is displayed. It will be described here using the example of the password module.
 
-![menu bar](/images/passwordsecure/9.1/configuration/web_applicaiton/operation/menu_bar/installation_with_parameters_174-en.webp)
+![menu bar](/images/passwordsecure/9.1/configuration/web_application/operation/menu_bar/installation_with_parameters_174-en.webp)
 
 1. Expand menu
 
@@ -50,7 +50,7 @@ If the menu – as described above – is maximised, **all functions** are then 
 on the menu bar are repeated here. The menu is divided into a number of sections. These correspond 1
 to 1 to the sections of the ribbon on the client.
 
-![Menu](/images/passwordsecure/9.1/configuration/web_applicaiton/operation/menu_bar/installation_with_parameters_175-en.webp)
+![Menu](/images/passwordsecure/9.1/configuration/web_application/operation/menu_bar/installation_with_parameters_175-en.webp)
 
 In our example, the menu looks like this:
 

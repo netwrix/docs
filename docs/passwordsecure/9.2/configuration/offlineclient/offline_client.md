@@ -31,7 +31,7 @@ together with the creation of the offline database.
 #### Operation
 
 Operation of the Offline Add-on is generally based on the
-[Operation and setup](/docs/passwordsecure/9.2/configuration/servermanger/operation_and_setup_admin_client.md).
+[Operation and setup](/docs/passwordsecure/9.2/configuration/servermanager/operation_and_setup_admin_client.md).
 Since the Offline Add-on only has a limited range of functions, the following must be taken into
 account with regards to its operation:
 

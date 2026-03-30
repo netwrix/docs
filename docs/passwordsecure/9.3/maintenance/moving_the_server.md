@@ -26,14 +26,14 @@ is described under
 #### 3. Basic configuration
 
 After the server has been installed, the
-[Basic configuration](/docs/passwordsecure/9.3/configuration/servermanger/basic_configuration.md) is
+[Basic configuration](/docs/passwordsecure/9.3/configuration/servermanager/basic_configuration.md) is
 completed. A new configuration database will be created on the SQL server as a result. If you want
 to retain the old SQL server, it is necessary to give the configuration database a new name.
 
 #### 4. Deactivating the old server
 
 The license first needs to be deactivated before it can be activated on the new server (see options
-under [License settings](/docs/passwordsecure/9.3/configuration/servermanger/mainmenu/license_settings.md). Now stop
+under [License settings](/docs/passwordsecure/9.3/configuration/servermanager/mainmenu/license_settings.md). Now stop
 the server so that nothing more can be changed in the database.
 
 ## Backing up the data
@@ -57,7 +57,7 @@ selected in the following window.
 #### 3. Backing up the server certificate
 
 It is essential that the all available
-[Certificates](/docs/passwordsecure/9.3/configuration/servermanger/certificates/certificates.md) are backed up.
+[Certificates](/docs/passwordsecure/9.3/configuration/servermanager/certificates/certificates.md) are backed up.
 Depending on the installation, a different number of certificates are required here.
 
 ## Configuring the new server
@@ -85,7 +85,7 @@ Manager.
 #### 2. Setting up the server
 
 After the backup has been installed on the new database, you can be start the Server Manager and run
-the setup wizard. The [Setup wizard](/docs/passwordsecure/9.3/configuration/servermanger/setup_wizard.md) is
+the setup wizard. The [Setup wizard](/docs/passwordsecure/9.3/configuration/servermanager/setup_wizard.md) is
 used for (amongst other things) reactivating the license. It is now possible to enter all of the
 desired configurations for the server.
 

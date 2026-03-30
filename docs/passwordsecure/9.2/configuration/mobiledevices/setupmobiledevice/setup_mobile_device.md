@@ -11,7 +11,7 @@ sidebar_position: 20
 Netwrix Password Secure Mobile Apps automatically synchronize with an existing Netwrix Password
 Secure database. The [Web Application](/docs/passwordsecure/9.2/configuration/webapplication/web_application.md) is used as the
 interface for this. This must therefore be installed. In addition, the database must be enabled for
-use with mobile devices on the [Server Manager](/docs/passwordsecure/9.2/configuration/servermanger/server_manger.md).
+use with mobile devices on the [Server Manager](/docs/passwordsecure/9.2/configuration/servermanager/server_manager.md).
 
 #### Setup and configuration
 

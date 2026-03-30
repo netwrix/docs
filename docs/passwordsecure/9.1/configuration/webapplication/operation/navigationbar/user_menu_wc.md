@@ -11,7 +11,7 @@ logged in user opens it.
 
 #### Options in the user menu
 
-![bin_1](/images/passwordsecure/9.1/configuration/web_applicaiton/operation/navigation_bar/user_menu/bin_1.webp)
+![bin_1](/images/passwordsecure/9.1/configuration/web_application/operation/navigation_bar/user_menu/bin_1.webp)
 
 **Settings**
 
