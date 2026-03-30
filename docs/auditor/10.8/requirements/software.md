@@ -97,11 +97,11 @@ during the product setup.
 If you plan to implement this scenario in bigger environments, consider hardware requirements listed
 in the Auditor documentation.
 
-### Distributed Deployment (Client-Server)
+### Distributed Deployment: Client-Server
 
 In this scenario, multiple Auditor clients are installed on different machines.
 
-Follow the steps to perform distributed deployment.
+Complete the following steps to perform distributed deployment.
 
 **Step 1 –** Install Auditor Server and default Client, selecting Full installation during the
 product setup.

@@ -8,7 +8,7 @@ sidebar_position: 20
 
 This topic explains how to configure Oracle Database 12.2, 18c, 19c for Auditing.
 
-## Configure Oracle Database 12.2, 18c, 19c for Auditing
+## Configure Oracle Database Auditing
 
 The following auditing modes are available for Oracle Database 12.2, 18c, 19c:
 
@@ -23,7 +23,7 @@ The following auditing modes are available for Oracle Database 12.2, 18c, 19c:
         After an audit policy has been enabled or disabled, Netwrix Auditor starts collecting data
         after a successful logon session.
 
-    2. If needed, create and enable specific audit policies to audit successful data access and
+    2. Create and enable specific audit policies as needed to audit successful data access and
        changes, user actions, component actions, etc.
 
 - Mixed Mode—Default auditing in a newly installed database. It enables both traditional and the new
@@ -90,4 +90,4 @@ Also, remember to do the following:
 **NOTE:** Traditional auditing is deprecated in Oracle Database 21c. Oracle recommends using Unified
 Auditing, which enables selective and more effective auditing within Oracle Database. See the
 [Oracle website](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/AUDIT-Traditional-Auditing.html#oracle-website)
-for more information.
+for details on the deprecation of traditional auditing.
