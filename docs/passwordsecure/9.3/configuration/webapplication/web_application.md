@@ -15,7 +15,7 @@ full functional scope of the client in the Web Application. The **Web Applicatio
 constantly enhanced. All of the currently available functions can be viewed in the
 [Functional scope](/docs/passwordsecure/9.3/configuration/webapplication/functionalscope/functional_scope.md) section.
 
-![WebClient](/images/passwordsecure/9.2/configuration/web_applicaiton/installation_with_parameters_159.webp)
+![WebClient](/images/passwordsecure/9.2/configuration/web_application/installation_with_parameters_159.webp)
 
 **Netwrix Password Secure Web Application** enables platform-independent access to the database via
 a browser. It is irrelevant whether you are using Microsoft Windows, macOS or Linux, it is only

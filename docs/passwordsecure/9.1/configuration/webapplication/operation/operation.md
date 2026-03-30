@@ -24,7 +24,7 @@ User name
 
 **Password**
 
-![Login WebClient](/images/passwordsecure/9.1/configuration/web_applicaiton/operation/installation_with_parameters_167-en.webp)
+![Login WebClient](/images/passwordsecure/9.1/configuration/web_application/operation/installation_with_parameters_167-en.webp)
 
 After successfully logging in, the last database name used and the last registered user will be
 saved. You thus only need to enter the password for the next login.
@@ -53,7 +53,7 @@ NOTE: It is possible to only transfer the database. The user name is not absolut
 
 The Web Application is split into a number of sections that are described below.
 
-![Operation](/images/passwordsecure/9.1/configuration/web_applicaiton/operation/installation_with_parameters_168-en.webp)
+![Operation](/images/passwordsecure/9.1/configuration/web_application/operation/installation_with_parameters_168-en.webp)
 
 1. [Header](/docs/passwordsecure/9.1/configuration/webapplication/operation/header.md)
 

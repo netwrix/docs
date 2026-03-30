@@ -13,7 +13,7 @@ the filtered elements. As list view in the Web Application provides the same fun
 in the client, we refer you at this point to the
 [List view](/docs/passwordsecure/9.2/configuration/advancedview/operationandsetup/list_view.md) section.
 
-![installation_with_parameters_176](/images/passwordsecure/9.2/configuration/web_applicaiton/operation/list_view/installation_with_parameters_176.webp)
+![installation_with_parameters_176](/images/passwordsecure/9.2/configuration/web_application/operation/list_view/installation_with_parameters_176.webp)
 
 #### Special features
 

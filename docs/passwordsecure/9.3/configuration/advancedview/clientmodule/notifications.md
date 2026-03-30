@@ -75,4 +75,4 @@ which will result in notifications.
 
 If desired, notifications can be automatically cleaned up. This option can be configured on the
 **Server Manager**. Further information can be found in the section
-[Managing databases](/docs/passwordsecure/9.3/configuration/servermanger/managingdatabases/managing_databases.md).
+[Managing databases](/docs/passwordsecure/9.3/configuration/servermanager/managingdatabases/managing_databases.md).

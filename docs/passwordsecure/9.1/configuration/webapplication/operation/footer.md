@@ -10,7 +10,7 @@ The footer displays various different information about the currently selected r
 tabs. It can be activated or deactivated using the small arrow on the far right. The footer is
 hidden by default.
 
-![installation_with_parameters_178](/images/passwordsecure/9.1/configuration/web_applicaiton/operation/footer/installation_with_parameters_178.webp)
+![installation_with_parameters_178](/images/passwordsecure/9.1/configuration/web_application/operation/footer/installation_with_parameters_178.webp)
 
 1. Notification area
 

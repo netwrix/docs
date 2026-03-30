@@ -9,7 +9,7 @@ sidebar_position: 10
 ## What is an Emergency WebViewer export?
 
 Safeguarding data is essential and this should be carried out using
-[Backup management](/docs/passwordsecure/9.1/configuration/servermanger/mainmenu/backupsettings/backup_management.md).
+[Backup management](/docs/passwordsecure/9.1/configuration/servermanager/mainmenu/backupsettings/backup_management.md).
 However, a backup is not sufficient in some cases e.g. if a backup cannot be directly restored due
 to a hardware problem. In these cases, **Netwrix Password Secure** offers the backup feature
 **Emergency WebViewer Export**.
