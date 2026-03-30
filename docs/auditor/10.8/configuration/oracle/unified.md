@@ -6,10 +6,6 @@ sidebar_position: 30
 
 # Migrate to Unified Audit
 
-Starting with 10.5 version, Netwrix Auditor provides limited support of Oracle Database 11g and
-trail auditing mode accordingly. See
-[Considerations for Oracle Database Auditing for more information.](overview.md#considerations-for-oracle-database-11g)
-
 When planning your migration, consider that you can select the following scenario:
 
 - Migration to pure unified auditing. See the corresponding Oracle documentation article:
