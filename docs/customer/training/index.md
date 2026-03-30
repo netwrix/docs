@@ -17,7 +17,7 @@ Courses are organized by learning paths aligned to what you have purchased. You 
 
 You can choose to self-enroll in "Learn About" learning paths available within the Learning Library. You will also be enrolled in:
 
-* 0001 <Company /> Customer Resources – This course provides a brief overview of how to access and the various resources available to customers. Estimated length: 30 minutes.
+* 0003 <Company /> Customer Resources – This course provides a brief overview of how to access and the various resources available to customers. Estimated length: 30 minutes.
 
 See the following topics for details on all learning paths:
 
