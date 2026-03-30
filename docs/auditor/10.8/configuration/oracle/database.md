@@ -79,7 +79,7 @@ Oracle Database administration documents:
 
 Netwrix Auditor checks audit settings for Unified Auditing when compatibility is enabled
 for `ACTIONS`. If any of your current settings conflict with the audit configuration required for
-Netwrix Auditor, these conflicts will be listed in the Netwrix Auditor System Health event log.
+Netwrix Auditor, Netwrix Auditor lists these conflicts in the System Health event log.
 
 Also, remember to do the following:
 

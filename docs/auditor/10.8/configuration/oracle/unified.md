@@ -40,7 +40,7 @@ detailed upgrade scenario.
     to the following Oracle documentation article:
     [Managing Earlier Audit Records After You Migrate to Unified Auditing](https://docs.oracle.com/database/121/UPGRD/afterup.htm#managing-earlier-audit-records-after-you-migrate-to-unified-auditing).
 
-    If the `value` is `false`, proceed with the steps below.
+    If the `value` is `false`, proceed with the following steps.
 
 4. Stop the database. Do the following, depending on your environment:
 

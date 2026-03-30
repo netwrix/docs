@@ -16,7 +16,7 @@ required:
 Alternatively, you can assign the default administrator role to that account.
 
 You can grant the required privileges to the existing account, or create a new one. Follow the
-procedure described below.
+procedure in this topic.
 
 Complete the following steps to grant CREATE SESSION and SELECT privileges to the account.
 
@@ -49,7 +49,7 @@ Database Auditing topic for the detailed object list. For that, execute:
 For example:  
 `GRANT SELECT ON aud$ TO OracleUser;`
 
-CREATE SESSION and SELECT privileges now granted to the account.
+The account now has CREATE SESSION and SELECT privileges.
 
 Alternatively, you can grant the default administrator role to that account. For that, execute:  
 `GRANT DBA TO <account_name>; `

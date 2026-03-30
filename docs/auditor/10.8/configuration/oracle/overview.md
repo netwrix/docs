@@ -9,8 +9,8 @@ sidebar_position: 90
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
+certain built-in Windows services, etc. Proper audit configuration ensures audit data integrity;
+otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -20,13 +20,13 @@ knowledge base article for additional information.
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
 - Automatically through a monitoring plan – This is a recommended method. If you select to
-  automatically configure audit in the target environment, your current audit settings will be
-  checked on each data collection and adjusted if necessary.
+  automatically configure audit in the target environment, Netwrix Auditor checks your current audit
+  settings on each data collection and adjusts them if necessary.
 - Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
   reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
   configure them manually:
 
-    - On the Oracle server, configure the required settings described below.
+    - On the Oracle server, configure the required settings described in this topic.
     - On the Auditor console computer, verify that Oracle Data Provider for .NET and Oracle Instant
       Client are installed and properly configured. See the
       [Permissions for Oracle Database Auditing](/docs/auditor/10.8/configuration/oracle/permissions.md) topic of system requirements.
@@ -70,8 +70,8 @@ If you are unsure of your audit settings, refer to the [Verify Your Oracle Datab
 ## Oracle Database objects
 
 Review a full list of object types Netwrix Auditor can collect on Oracle Database. If you deployed
-your Oracle Database in a cluster mode (Oracle Real Application Cluster), a host name also will be
-reported.
+your Oracle Database in a cluster mode (Oracle Real Application Cluster), Netwrix Auditor also
+reports a host name.
 
 Details marked with asterisk (\*\*) are reported for Oracle Database 12.2 only.
 
