@@ -48,7 +48,7 @@ the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-If you are using Oracle Database 12.2 or later, make sure you have Unified auditing mode enabled.
+If you are using Oracle Database 12.2 or later, ensure you have Unified auditing mode enabled.
 Otherwise, Netwrix Auditor may not operate properly. See the [Migrate to Unified Audit](/docs/auditor/10.8/configuration/oracle/unified.md)
 topic for additional information.
 

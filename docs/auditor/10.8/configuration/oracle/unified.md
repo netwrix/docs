@@ -50,7 +50,7 @@ detailed upgrade scenario.
     | Windows systems              | Stop the Oracle service: net stop OracleService%ORACLE_SID%                       |
     | Oracle RAC installations     | Shut down each database instance as follows: srvctl stop database -db db_name     |
 
-5. Stop the listener. Stopping the listener is not necessary for Oracle RAC and Grid Infrastructure
+5. Stop the listener. Stopping the listener isn't necessary for Oracle RAC and Grid Infrastructure
    listeners.
 
     lsnrctl stop listener_name

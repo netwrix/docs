@@ -33,12 +33,12 @@ Server, in the monitored environment, or in both locations.
 SQL Server Reporting Services are needed for these types of reports. See the
 [Requirements for SQL Server to Store Audit Data](/docs/auditor/10.8/requirements/sqlserver.md) topic for additional information.
 
-**NOTE:** It is not recommended to install SQL Server (including Express edition), SQL Server Reporting Services (SSRS), or Netwrix Auditor on a domain controller.
+**NOTE:** It isn't recommended to install SQL Server (including Express edition), SQL Server Reporting Services (SSRS), or Netwrix Auditor on a domain controller.
 
 **Microsoft Edge WebView2**
 
 To view SSRS-based reports in Netwrix Auditor, the WebView2 runtime component must be installed.  
-If the component is not detected on the system, it will be automatically installed during the Netwrix Auditor setup process.  
+If the component isn't detected on the system, it will be automatically installed during the Netwrix Auditor setup process.  
 See the following Microsoft article for additional information about the WebView2 runtime component: [Microsoft Edge WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2).
 
 ## Server and Client
@@ -65,10 +65,10 @@ information.
 You can deploy Auditor on servers or workstations running supported Windows OS version. See system
 requirements for details.
 
-Installation on the domain controller is not supported.
+Installation on the domain controller isn't supported.
 
 If you plan to have the audited system and Auditor Server residing in the workgroups, consider that
-in such scenario the product cannot be installed on the machine running Windows 7.
+in such scenario the product can't be installed on the machine running Windows 7.
 
 Domain trusts, however, may affect data collection from different data sources. To prevent this,
 consider the recommendations and restrictions listed below.
