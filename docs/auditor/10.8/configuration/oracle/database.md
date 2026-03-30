@@ -6,15 +6,11 @@ sidebar_position: 20
 
 # Configure Oracle Database for Auditing
 
-This topic explains how to configure Oracle Database for the following versions of the Oracle
-Database Software:
+This topic explains how to configure Oracle Database 12.2, 18c, 19c for Auditing.
 
-- Configure Oracle Database 12c, 18c, 19c for Auditing
-- Configure Oracle Database 11g for Auditing
+## Configure Oracle Database 12.2, 18c, 19c for Auditing
 
-## Configure Oracle Database 12c, 18c, 19c for Auditing
-
-The following auditing modes are available for Oracle Database 12c, 18c, 19c:
+The following auditing modes are available for Oracle Database 12.2, 18c, 19c:
 
 - Unified Auditing—Recommended. See the following Oracle technical article for detailed instructions
   on how to enable Unified Auditing:
@@ -36,7 +32,7 @@ The following auditing modes are available for Oracle Database 12c, 18c, 19c:
 
     The product does not log any errors on these events to the Netwrix Auditor System Health log.
 
-To configure Oracle Database 12c, 18c, 19c Unified Auditing
+To configure Oracle Database 12.2, 18c, 19c Unified Auditing
 
 1. On the computer where your database is deployed, run the sqlplus tool.
 2. Connect to your Oracle Database—use Oracle account with the `SYSDBA` privilege. For example:
@@ -95,102 +91,3 @@ Also, remember to do the following:
 Auditing, which enables selective and more effective auditing within Oracle Database. See the
 [Oracle website](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/AUDIT-Traditional-Auditing.html#oracle-website)
 for more information.
-
-## Configure Oracle Database 11g for Auditing
-
-This section explains how to configure **Standard Auditing** on your Oracle Database 11g, preparing
-for monitoring with the product.
-
-Starting with version 10.5, Auditor provides limited support of Oracle Database 11g. See the
-[Considerations for Oracle Database 11g](overview.md#considerations-for-oracle-database-11g) topic
-for additional information.
-
-Verify that Oracle Data Provider for .NET and Oracle Instant Client are installed and properly
-configured on the computer where Auditor Server is installed. The product does not provide any
-special notification for that.
-
-Follow the steps to configure **Standard Auditing** on your Oracle Database 11g:
-
-**Step 1 –** Select the audit trail to store audit records. Oracle Database has the following
-options:
-
-- **Database audit trail**— Set by default.
-- **XML audit trail**— Recommended.
-- **OS files**—Not supported by current version of Netwrix Auditor.
-
-**Step 2 –** Enable auditing of Oracle Database changes, using the corresponding command.
-
-### Store Oracle Audit Records
-
-Follow the steps to select Audit Trail to store Oracle Audit Records:
-
-**Step 1 –** On the computer where your database is deployed, run the sqlplus tool.
-
-**Step 2 –** Connect to your Oracle Database using Oracle account with the `SYSDBA` privilege. For
-example:
-
-`OracleUser as sysdba`
-
-**Step 3 –** Enter your password.
-
-Depending on where you want to store audit records, execute the required command.
-
-| Store to...                                                                                                                                                                                                                      | Execute...                                                                                                                                                                                                                                       |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Store audit records to XML audit trail (recommended). Use this audit trail if you want Netwrix Auditor to report on actions performed by users with SYSDBA and SYSOPER privileges. Otherwise, these actions will not be audited. | `ALTER SYSTEM SET audit_trail=XML SCOPE=SPFILE;` If you want to enable auditing of actions performed by SYS user and by users connecting with SYSDBA and SYSOPER privileges, execute: `ALTER SYSTEM SET audit_sys_operations=TRUE SCOPE=SPFILE;` |
-| Database audit trail (default setting) In this case, actions performed by user SYS and users connecting with SYSDBA and SYSOPER privileges will not be audited.                                                                  | `ALTER SYSTEM SET audit_trail=DB SCOPE=SPFILE;`                                                                                                                                                                                                  |
-| Store audit records to XML or database audit trail and keep full text of SQL-specific query in audit records. Only ALTER actions will be reported.                                                                               | For database audit trail: `ALTER SYSTEM SET audit_trail=DB, EXTENDED SCOPE=SPFILE;` For XML audit trail: ` ALTER SYSTEM SET audit_trail=XML, EXTENDED SCOPE=SPFILE;`                                                                             |
-
-**Step 4 –** If you turned auditing on or off, you will need to restart the database. For that, run
-the following:
-
-`SHUTDOWN IMMEDIATE`
-
-`STARTUP`
-
-If you only changed auditing settings, database restart is not required.
-
-If you are using Oracle Real Application Clusters (RAC), see the
-[Starting and Stopping Instances and Oracle RAC Databases](https://docs.oracle.com/cd/E11882_01/rac.112/e41960/admin.htm#starting-and-stopping-instances-and-oracle-rac-databases)
-section in Real Application Clusters Administration and Deployment Guide for additional information
-on restarting your instances.
-
-### Enable Auditing of Oracle Database Changes
-
-Follow the steps to enable auditing of Oracle Database changes:
-
-**Step 1 –** On the computer where your database is deployed, run the sqlplus tool.
-
-**Step 2 –** Connect to your Oracle Database—use Oracle account with the `SYSDBA` privilege. For
-example:
-
-`OracleUser as sysdba`
-
-**Step 3 –** Enter your password.
-
-**Step 4 –** Depending on your monitoring requirements, enable auditing of the database parameters
-with the related command.
-
-| To monitor for...                                                                                                                             | Execute...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Configuration changes                                                                                                                         | - For any user: `AUDIT ALTER SYSTEM,SYSTEM AUDIT,SESSION,TABLE,USER,   VIEW,ROLE,PROCEDURE,TRIGGER,PROFILE,DIRECTORY,   MATERIALIZED VIEW,SYSTEM GRANT,NOT EXISTS,   ALTER TABLE,GRANT DIRECTORY,GRANT PROCEDURE,   GRANT TABLE;` `AUDIT ALTER DATABASE, FLASHBACK ARCHIVE ADMINISTER;` If you want to disable configuration auditing, use the following commands: `NOAUDIT ALTER SYSTEM,SYSTEM AUDIT,SESSION,   TABLE,USER,VIEW,ROLE,PROCEDURE,TRIGGER,PROFILE,   DIRECTORY,MATERIALIZED VIEW,SYSTEM GRANT,   NOT EXISTS,ALTER TABLE,GRANT DIRECTORY,   GRANT PROCEDURE,GRANT TABLE;` `NOAUDIT ALTER DATABASE,   FLASHBACK ARCHIVE ADMINISTER;` |
-| - For specific user: `AUDIT SYSTEM GRANT, SESSION, TABLE, PROCEDURE BY <USER_NAME>``````;` You can specify several users separated by commas. |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Successful data access and changes                                                                                                            | `AUDIT SELECT,INSERT,DELETE,UPDATE,RENAME,    FLASHBACK ON <TABLE_NAME> BY ACCESS WHENEVER SUCCESSFUL;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Failed data access and change                                                                                                                 | `AUDIT SELECT,INSERT,DELETE,UPDATE,RENAME,    FLASHBACK ON <TABLE_NAME>    BY ACCESS WHENEVER NOT SUCCESSFUL;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Successful and failed data access and changes                                                                                                 | `AUDIT SELECT,INSERT,DELETE,UPDATE,RENAME,   FLASHBACK ON <TABLE_NAME>;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-
-For additional information on `ALTER SYSTEM` and `AUDIT` parameters, see the following Oracle
-database administration documents:
-
-- `[AUDIT_TRAIL](https://docs.oracle.com/cd/E11882_01/server.112/e40402/initparams017.htm#audit_trail)`
-- `[AUDIT](http://docs.oracle.com/cd/E11882_01/server.112/e41084/statements_4007.htm#audit)`
-
-After an audit parameter has been enabled or disabled, Auditor will start collecting data after
-successful logon session.
-
-Also, remember to do the following:
-
-- Configure Data Collecting Account. See the
-  [Permissions for Oracle Database Auditing](/docs/auditor/10.8/configuration/oracle/permissions.md) topic for additional information.
-- Configure ports. See the [Oracle Database Ports](/docs/auditor/10.8/configuration/oracle/ports.md) topic for additional information about
-  ports and protocols required for auditing.
