@@ -49,10 +49,10 @@ completed in a traceable and audit-proof manner to prevent falsification.
 
 NOTE: If desired, the logbook can be automatically cleaned up. This option can be configured on the
 Server Manager. Further information can be found in the section
-[Managing databases](/docs/passwordsecure/9.1/configuration/servermanger/managingdatabases/managing_databases.md).
+[Managing databases](/docs/passwordsecure/9.1/configuration/servermanager/managingdatabases/managing_databases.md).
 
 ## Transferring to a Syslog server
 
 The logbook can also be completely transferred to a
-[Syslog](/docs/passwordsecure/9.1/configuration/servermanger/databaseproperties/syslog.md)
+[Syslog](/docs/passwordsecure/9.1/configuration/servermanager/databaseproperties/syslog.md)
 server. Further information on this subject can be found in the section Syslog.

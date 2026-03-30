@@ -37,12 +37,12 @@ still active. If the software maintenance package has expired, you are only perm
 versions that were released during the term of the software maintenance package. Therefore, you
 should check whether the software maintenance package is still active before an update. This can be
 easily checked on the Server Manager under
-[License settings](/docs/passwordsecure/9.2/configuration/servermanger/mainmenu/license_settings.md).
+[License settings](/docs/passwordsecure/9.2/configuration/servermanager/mainmenu/license_settings.md).
 
 ### Creating a backup
 
 An update always involves making a profound change to the existing software. A corresponding
-[Backup management](/docs/passwordsecure/9.2/configuration/servermanger/mainmenu/backupsettings/backup_management.md)
+[Backup management](/docs/passwordsecure/9.2/configuration/servermanager/mainmenu/backupsettings/backup_management.md)
 should thus be created directly before the update to ensure that no data is lost if a serious
 problem arises.
 
