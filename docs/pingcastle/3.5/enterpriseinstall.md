@@ -246,7 +246,7 @@ If you're configuring a remote SQL Server (not on the local machine), see the [R
   </TabItem>
   <TabItem value="testpoc" label="Test/POC Installation">
 
-For testing and proof-of-concept environments, you can streamline the installation process using automation tools such as chocolatey to automate certain installations for you.
+For testing and proof-of-concept environments, you can streamline the installation process using automation tools such as Chocolatey.
 
 :::warning
 This simplified setup is recommended for **testing only**. For production environments, use the Production Installation tab for proper configuration and upgrade support.
@@ -1397,7 +1397,7 @@ PingCastle Enterprise can be manually installed as a standard ASP.NET Core 8.0 a
 5. Grant SQL Server permissions to the application pool account
 
 **Linux Manual Installation:**
-- Installation procedures for Linux aren't fully documented
+- Netwrix hasn't fully documented Linux installation procedures
 - Requires configuration of Nginx or Apache as a reverse proxy
 - Requires PostgreSQL database setup
 - See [Hosting](#hosting) section for Microsoft's official ASP.NET Core hosting documentation
@@ -1424,7 +1424,7 @@ PingCastle Enterprise can run on any infrastructure that supports ASP.NET Core 8
 **Linux (Limited Support - Manual Installation)**
 - [Host ASP.NET Core on Linux with Nginx](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx)
 - [Host ASP.NET Core on Linux with Apache](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache)
-- Installation procedures aren't fully documented by Netwrix
+- Netwrix hasn't fully documented these installation procedures
 
 **Azure (Limited Support - Manual Installation)**
 - See [Azure Hosting](#azure-hosting) section below for detailed guidance on deploying to Azure App Service
@@ -1670,7 +1670,7 @@ Additional steps may be required depending on your Azure configuration.
 
 #### Creating the App Service
 
-Below are the steps to create a running application in Azure.
+To create a running application in Azure, follow these steps.
 
 First, create an App Service:
 
@@ -2190,9 +2190,7 @@ The `customLoginMessage` setting renders raw HTML without escaping. While this a
 
 ## Email
 
-PingCastle requires a configuration to be able to send emails.
-
-It is located in the appsettings.json file.
+PingCastle requires email configuration in the appsettings.json file.
 
 PingCastle Enterprise now supports two email providers:
 - **SMTP**: Traditional SMTP server configuration
@@ -2256,8 +2254,7 @@ The Email configuration section in appsettings.json supports both providers:
 - **CertificateAuth.Store.StoreLocation**: `LocalMachine` or `CurrentUser`
 - **CertificateAuth.Store.StoreName**: Store name (e.g., `My`, `Root`)
 
-The email functionality is used to send password reset request and send
-notification such as weekly reports.
+The email functionality sends password reset requests and notifications such as weekly reports.
 
 For detailed instructions on configuring Modern Authentication with Office 365, see the section below.
 
@@ -2943,14 +2940,14 @@ After completing either the manual or PowerShell configuration, update your Ping
 
 ## Initial startup
 
-At the first run of the application, the database is created. If there
+At the first run of the application, the application creates the database. If there
 is an error with the database (missing right, invalid connection string)
-or hosting, the next screen will not be displayed.
+or hosting, the application won't display the next screen.
 
 For security reasons, there is no default account or password.
 
-When there is no user configured in the application, a special screen is
-shown to create the first user. This user is given the \"Admin\" role.
+When there is no user configured in the application, a special screen appears
+to create the first user. This user receives the \"Admin\" role.
 
 ![First user creation screen](/images/pingcastle/enterpriseinstall/image79.webp)
 
@@ -3056,7 +3053,7 @@ You can manually trigger archiving on-demand:
 
 ## PingCastle agent deployment
 
-For security reasons, PingCastle scans aren't executed from the web application. Instead, remote systems must push their scan results to PingCastle Enterprise using the agent configuration.
+For security reasons, the web application doesn't execute PingCastle scans. Instead, remote systems must push their scan results to PingCastle Enterprise using the agent configuration.
 
 **Program version**
 
@@ -3186,13 +3183,12 @@ Interoperability page.
 To ensure license enforcement, before importing a new report in
 the lower instance, the instance will contact the higher instance to
 verify that the report doesn't create domains beyond the license
-limit. If there is a temporary network issue, this check will not be
-performed. If the check denies the import, the report will not be
-imported and the error will be logged.
+limit. If there is a temporary network issue, the instance skips this check.
+If the check denies the import, the lower instance doesn't import the report and logs the error.
 
-After this check completes, the import is performed on the lower instance. Then
-the report is synchronized to the higher instance. If there is any network issue
-during this step, the error will be ignored (but logged if
+After this check completes, the lower instance performs the import and then
+synchronizes the report to the higher instance. If there is any network issue
+during this step, the instance ignores the error (but logs it if
 logging is enabled).
 
 ### Connection tests
@@ -3205,7 +3201,7 @@ If there is an error, it will be displayed as an exception.
 ![](/images/pingcastle/enterpriseinstall/image86.webp)
 
 Note: The error details may be contained in an inner exception
-shown below. In this example, this is a DNS issue where the host can't be
+shown in the following screenshot. In this example, this is a DNS issue where the host can't be
 found.
 
 ![](/images/pingcastle/enterpriseinstall/image87.webp)
@@ -3371,7 +3367,7 @@ Check the detailed error message and correct the issue. For license errors, veri
 <details>
 <summary>Database Permissions</summary>
 
-The application requires database permissions to create tables and modify data. If these permissions aren't granted, the application will fail to start.
+The application requires database permissions to create tables and modify data. If you don't grant these permissions, the application will fail to start.
 
 ![SQL Server authentication error](/images/pingcastle/enterpriseinstall/image102.webp)
 
