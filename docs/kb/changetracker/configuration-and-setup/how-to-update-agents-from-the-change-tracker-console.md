@@ -52,6 +52,10 @@ Before updating agents, ensure you have:
 
 4. **Permissions:** Administrator access to the Change Tracker console and IIS (for troubleshooting)
 
+5. **Linux agents only:** The `at` command must be installed on Linux devices for automatic agent updates to function.
+   - To install: `sudo yum install at` or `sudo apt-get install at`
+   - See [at Command ⸱ Red Hat 🡥](https://www.redhat.com/en/blog/linux-at-command) for more information.
+
 ## Security Considerations
 
 - **Update Integrity:** The `.upd` control file cryptographically signs the update to prevent tampering.
@@ -117,6 +121,8 @@ For organized deployments, use device groups to control which agents receive upd
 5. Click **Update** to save the changes.
 
 6. The assigned agents will receive the update according to the defined schedule.
+
+> **NOTE:** Linux devices require the `at` command to be installed for automatic updates to function. See [at Command ⸱ Red Hat 🡥](https://www.redhat.com/en/blog/linux-at-command) for installation instructions.
 
 ### Step 5: Verify Update Deployment
 
@@ -314,3 +320,4 @@ A: Navigate to Settings > Agents & Devices. The version is displayed in the Devi
 - [Device Groups](/docs/changetracker/8_0/admin/settingstab/devicegroups)
 - [Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
 - [Component Release History](/docs/changetracker/8_0/componentreleases)
+- [at Command ⸱ Red Hat 🡥](https://www.redhat.com/en/blog/linux-at-command)
