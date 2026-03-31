@@ -18,6 +18,7 @@ products:
 sidebar_label: 'How to Determine If the Default Agent Password Is '
 tags: []
 title: How to Determine If the Default Agent Password Is in Use
+knowledge_article_id: ka0Qk00000078VVIAY
 ---
 
 # How to Determine If the Default Agent Password Is in Use
@@ -42,11 +43,11 @@ An account named `agent` is created during the installation of the Netwrix Chang
 
 Versions of the Hub from 7.7.4 will warn if any agent is using the default password by displaying the following warning in the bottom right of the screen.
 
-![Default password warning.png](./../0-images/default-password-warning-1.jpg)
+![Default password warning.png](../0-images/default-password-warning-1.jpg)
 
 The User Notifications page will also display the warning.
 
-![Default password warning 2.png](./../0-images/default-password-warning-2.jpg)
+![Default password warning 2.png](../0-images/default-password-warning-2.jpg)
 
 ### Versions pre-7.7.4
 
@@ -58,21 +59,21 @@ Refer to the following examples of default passwords in use if using versions pr
 
 Windows
 
-![Default password in use on Windows.png](./../0-images/default-password-windows-in-use.jpg)
+![Default password in use on Windows.png](../0-images/default-password-windows-in-use.jpg)
 
 Linux
 
-![Default password in use on Linux](./../0-images/default-password-linux-in-use.jpg)
+![Default password in use on Linux](../0-images/default-password-linux-in-use.jpg)
 
 If it fails to connect, then the default password is **not** in use and the following outputs will be seen.
 
 Windows
 
-![Default password not in use on Windows.png](./../0-images/default-password-windows-not-in-use.jpg)
+![Default password not in use on Windows.png](../0-images/default-password-windows-not-in-use.jpg)
 
 Linux
 
-![Default password not in use on Linux.png](./../0-images/default-password-linux-not-in-use.jpg)
+![Default password not in use on Linux.png](../0-images/default-password-linux-not-in-use.jpg)
 
 For users on versions prior to 7.7.4, the scripts below can be used to determine if an agent is using the default password.
 

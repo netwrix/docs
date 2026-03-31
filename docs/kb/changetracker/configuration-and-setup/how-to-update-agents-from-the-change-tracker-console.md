@@ -20,6 +20,7 @@ products:
 sidebar_label: Updating Agents From the Console
 tags: []
 title: Updating Agents From the Change Tracker Console
+knowledge_article_id: ka0Qk000000DkufIAC
 ---
 
 # Updating Agents From the Change Tracker Console
@@ -28,7 +29,7 @@ title: Updating Agents From the Change Tracker Console
 
 When a new Netwrix Change Tracker agent version is released, you can deploy it automatically from the Change Tracker Hub console. This article provides a comprehensive guide for downloading, uploading, and deploying agent updates, along with best practices for phased rollouts and troubleshooting common issues.
 
-> **Note:** For the most current agent update procedures and screenshots, refer to the official documentation: [Agent Updates](/docs/changetracker/8_0/admin/settingstab/agentsanddevices/agentupdates)
+> **NOTE:** For the most current agent update procedures and screenshots, refer to the official documentation: [Agent Updates](/docs/changetracker/8_0/admin/settingstab/agentsanddevices/agentupdates)
 
 > **END OF SUPPORT NOTICE**
 >

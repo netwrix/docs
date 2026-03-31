@@ -17,6 +17,7 @@ products:
 sidebar_label: Network Ports for Change Tracker
 tags: []
 title: Determining which network ports should be open for Change Tracker to function
+knowledge_article_id: ka04u000000Hd8zAAC
 ---
 
 # Determining which network ports should be open for Change Tracker to function
@@ -25,7 +26,7 @@ title: Determining which network ports should be open for Change Tracker to func
 
 This article describes the network ports required for Netwrix Change Tracker to function properly. Use this information when configuring firewall rules for new deployments or troubleshooting connectivity issues.
 
-> **Note:** For the most current port requirements and network architecture details, refer to the official documentation: [Change Tracker 8.0 - Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
+> **NOTE:** For the most current port requirements and network architecture details, refer to the official documentation: [Change Tracker 8.0 - Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
 
 Although custom ports can be set in the agent's configuration files, the following are the default and recommended ports for Change Tracker.
 
@@ -79,7 +80,7 @@ One-way communication is initiated from the Change Tracker Proxy Agent to the Re
 - **Direction:** Outbound from Change Tracker Proxy Agent to network devices
 - **Protocol:** TCP/Telnet
 
-> **Note:** SSH (port 22) is recommended over Telnet (port 23) for security reasons.
+> **NOTE:** SSH (port 22) is recommended over Telnet (port 23) for security reasons.
 
 ### Firewall Configuration Summary
 
