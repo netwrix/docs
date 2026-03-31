@@ -105,6 +105,7 @@ Accesses change management features:
     - **Financial Controls** (Agent)
     - **SoD Approval**
     - **SoD Rule Change**
+    - **Admin AutoSpider Reminder Email Alert**
 - **CR Email Template**: if you customize your **SoD Exemption Approval** or **SoD Rule Change
   Approval** CR Templates, add them here so they are not overwritten when the next bundle is
   installed. Refer to [Advanced PDF / HTML Templates](/docs/platgovnetsuite/customization/pdf_html_templates.md).

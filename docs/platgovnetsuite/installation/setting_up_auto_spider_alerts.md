@@ -59,4 +59,27 @@ workflows identify when the Customization Records have not been updated. To ensu
 your account are updating, set up the Customizations to ReSpider search to provide alerts to the
 appropriate people in your company.
 
+## Set Up Admin AutoSpider Reminder Email Alert
+
+This email alert with the subject **Netwrix Platform Governance Netsuite Spider Alert** reminds
+administrators if the AutoSpider Portlet isn't triggered for more than four days. To trigger the
+AutoSpider, navigate to your **Home** page and wait until you see **Spider Triggered** in the
+AutoSpider Portlet.
+
+To enable the Admin AutoSpider Reminder Email Alert:
+
+1. Log in to NetSuite with an Administrator role.
+2. Navigate to **Netwrix** > **Netwrix Support** > **Installation Settings**.
+3. In the results, click **Edit**.
+4. Select the **Spider Status** subtab.
+5. Check the **AUTO-SPIDER ADMIN NOTIFICATION** checkbox.
+6. Select the email recipient(s) in the **ADMINS** field.
+7. Click **Save**.
+
+:::note
+The email sender is the value set in the **NOTIFICATION SENDER** field on the **Change Management**
+subtab. If **NOTIFICATION SENDER** is empty, the system uses the first administrator in the account
+(lowest internal ID) as the sender.
+:::
+
 **Next Step:** [Managing Users](/docs/platgovnetsuite/installation/managing_users.md)
