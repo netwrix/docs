@@ -74,4 +74,4 @@ When are indicators set?
 
 If desired, recordings can be automatically cleaned up. This option can be configured on the
 **Server Manager**. Further information can be found in the section
-[Managing databases](/docs/passwordsecure/current/configuration/servermanger/managingdatabases/managing_databases.md)s.
+[Managing databases](/docs/passwordsecure/current/configuration/servermanager/managingdatabases/managing_databases.md)s.

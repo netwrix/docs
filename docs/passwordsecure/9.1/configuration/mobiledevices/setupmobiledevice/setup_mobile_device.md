@@ -13,7 +13,7 @@ Secure database. The
 [Web Application](/docs/passwordsecure/9.1/configuration/webapplication/web_application.md)
 is used as the interface for this. This must therefore be installed. In addition, the database must
 be enabled for use with mobile devices on the
-[Server Manager](/docs/passwordsecure/9.1/configuration/servermanger/server_manger.md).
+[Server Manager](/docs/passwordsecure/9.1/configuration/servermanager/server_manager.md).
 
 #### Setup and configuration
 

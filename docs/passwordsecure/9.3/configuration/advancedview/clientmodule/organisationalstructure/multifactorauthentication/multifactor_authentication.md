@@ -76,7 +76,7 @@ Now just select the desired certificate from the list to confirm the process.
 ## Yubico One Time Password
 
 The configuration of multifactor authentication using Yubico One Time Password is described
-in[Multifactor Authentication](/docs/passwordsecure/9.3/configuration/servermanger/managingdatabases/databasesettings/multifactor_authentication_ac.md).
+in[Multifactor Authentication](/docs/passwordsecure/9.3/configuration/servermanager/managingdatabases/databasesettings/multifactor_authentication_ac.md).
 
 ## Delete Multifactor Authentication (MFA)
 

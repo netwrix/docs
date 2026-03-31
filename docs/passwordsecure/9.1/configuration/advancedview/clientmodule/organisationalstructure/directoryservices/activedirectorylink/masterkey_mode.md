@@ -81,7 +81,7 @@ connection is not possible, deactivate SecureSocketsLayer and try again.
 The master key is added in form of a certificate. It is **essential to back up** the
 generated certificate! If the database is being moved to another server, the certificate also needs
 to be transferred! Further information can be found in the section
-[Certificates](/docs/passwordsecure/9.1/configuration/servermanger/certificates/certificates.md).
+[Certificates](/docs/passwordsecure/9.1/configuration/servermanager/certificates/certificates.md).
 :::
 
 
@@ -187,7 +187,7 @@ roles already exist in Netwrix Password Secure or have also been imported.
 Users who are imported using this mode can log in with the domain password. Please note that no
 domain needs to be specified when logging in. Of course, the login process can also be supplemented
 with
-[Multifactor Authentication](/docs/passwordsecure/9.1/configuration/servermanger/managingdatabases/databasesettings/multifactor_authentication_ac.md).
+[Multifactor Authentication](/docs/passwordsecure/9.1/configuration/servermanager/managingdatabases/databasesettings/multifactor_authentication_ac.md).
 
 NOTE: Logging on using Kerberos works "automatically". As long as the corresponding Kerberos server
 is accessible, the users in the domain authenticate themselves via Kerberos using their domain
