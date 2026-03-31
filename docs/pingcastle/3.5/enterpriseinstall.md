@@ -24,7 +24,7 @@ PingCastle Enterprise requires:
   - Windows Server 2022 (recommended)
   - Windows Server 2025 (recommended)
 
-For more information on Windows Server support lifecycles, refer to the [Windows Lifecycle Fact Sheet](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
+To check Windows Server support lifecycle details, refer to the [Windows Lifecycle Fact Sheet](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
 
 For ASP.NET 8.0 operating system compatibility, refer to the [.NET 8.0 supported OS documentation](https://learn.microsoft.com/en-us/dotnet/core/install/windows#supported-versions).
 
@@ -189,7 +189,7 @@ Follow these steps for a production-ready installation of PingCastle Enterprise.
 
 #### Installation Steps
 
-#### Step 1: Install IIS with Windows Authentication
+#### Step 1 Install IIS with Windows Authentication
 
 Install the IIS Web Server Role with Windows Authentication feature:
 
@@ -197,7 +197,7 @@ Install the IIS Web Server Role with Windows Authentication feature:
 dism /online /enable-feature /featurename:IIS-WebServerRole /featurename:IIS-WebServerManagementTools /featurename:IIS-ManagementConsole /featurename:IIS-WindowsAuthentication
 ```
 
-#### Step 2: Install ASP.NET 8 Hosting Bundle
+#### Step 2 Install ASP.NET 8 Hosting Bundle
 
 Download and install the [ASP.NET 8 Hosting Bundle](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
 
@@ -205,13 +205,13 @@ Download and install the [ASP.NET 8 Hosting Bundle](https://dotnet.microsoft.com
 IIS must be installed **before** the ASP.NET 8.0 Hosting Bundle. If installed in the wrong order, repair the Hosting Bundle installation to ensure proper module registration.
 :::
 
-#### Step 3: Install SQL Server
+#### Step 3 Install SQL Server
 
 Install SQL Server (Express, Standard, or Enterprise edition) based on your needs. See the [Database](#database) section for guidance on which edition to choose.
 
 For SQL Express, visit [SQL Server Express Downloads](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver16).
 
-#### Step 4: Run the MSI Installer
+#### Step 4 Run the MSI Installer
 
 1. Launch the PingCastle Enterprise MSI installer
 2. Accept the license terms
@@ -221,7 +221,7 @@ For SQL Express, visit [SQL Server Express Downloads](https://learn.microsoft.co
 If the license key is missing, contact PingCastle support or your account manager.
 :::
 
-#### Step 5: Configure Database Connection
+#### Step 5 Configure Database Connection
 
 During installation, choose one of two database configuration options:
 
@@ -260,13 +260,13 @@ This simplified setup is recommended for **testing only**. For production enviro
 
 #### Installation Steps
 
-#### Step 1: Install IIS with Windows Authentication
+#### Step 1 Install IIS with Windows Authentication
 
 ```powershell
 dism /online /enable-feature /featurename:IIS-WebServerRole /featurename:IIS-WebServerManagementTools /featurename:IIS-ManagementConsole /featurename:IIS-WindowsAuthentication
 ```
 
-#### Step 2: Install ASP.NET 8 Hosting Bundle
+#### Step 2 Install ASP.NET 8 Hosting Bundle
 
 ```powershell
 $ProgressPreference = "SilentlyContinue" # Quicker download
@@ -281,7 +281,7 @@ Invoke-WebRequest -Uri $Uri -OutFile "$Executable"
 & $Executable /install /quiet
 ```
 
-#### Step 3: Install SQL Server Express with Chocolatey
+#### Step 3 Install SQL Server Express with Chocolatey
 
 For test and POC systems, you can use [Chocolatey](https://chocolatey.org/) to automate SQL Server Express installation:
 
@@ -294,7 +294,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco install sql-server-express
 ```
 
-#### Step 4: Run the MSI Installer
+#### Step 4 Run the MSI Installer
 
 1. Launch the PingCastle Enterprise MSI installer
 2. Follow the installation wizard
@@ -366,7 +366,7 @@ Set-WebConfigurationProperty `
 ```
 
 :::info
-For more information on alternative configuration methods, search for "maxAllowedContentLength" in IIS documentation.
+To find alternative configuration methods, search for "maxAllowedContentLength" in IIS documentation.
 :::
 
 ### Manual Report Import Size Limit
@@ -405,7 +405,7 @@ PingCastle.exe --healthcheck --server *.domain.fqdn --Level Full
 
 Replace `domain.fqdn` with your actual forest root domain name.
 
-#### Automated Execution (Agent Setup)
+#### Automated Execution for Agent Setup
 
 For scheduled scans with automatic upload to PingCastle Enterprise:
 
@@ -484,7 +484,7 @@ gMSAs are recommended for production environments as they provide automatic pass
 
 #### Configuration Steps
 
-#### Step 1: Create or Identify the Service Account
+#### Step 1 Create or Identify the Service Account
 
 **For Group Managed Service Account (gMSA):**
 ```powershell
@@ -500,7 +500,7 @@ Install-ADServiceAccount -Identity PingCastleSvc
 **For standard domain account:**
 Create a regular user account in Active Directory with a strong password and set it to never expire.
 
-#### Step 2: Grant Local Administrator Permissions
+#### Step 2 Grant Local Administrator Permissions
 
 Add the account to the local **Administrators** group on the PingCastle Enterprise server. This is required for the Task Scheduler to create and manage scheduled tasks (this is a Windows restriction due to the Task Scheduler permission model).
 
@@ -513,7 +513,7 @@ Add-LocalGroupMember -Group "Administrators" -Member "DOMAIN\PingCastleSvc"
 If you prefer not to grant local administrator privileges to the application pool account, use the **Least Privilege Setup** tab instead. That approach creates scheduled tasks manually and grants only start/stop permissions to the application pool identity.
 :::
 
-#### Step 3: Configure the Application Pool in IIS
+#### Step 3 Configure the Application Pool in IIS
 
 1. Open the IIS console and navigate to **Application Pools**
 2. Select the PingCastle Enterprise application pool
@@ -524,7 +524,7 @@ If you prefer not to grant local administrator privileges to the application poo
    - **For gMSA/MSA**: `DOMAIN\accountname$` (note the `$` suffix, leave password blank)
 6. Click **OK**
 
-#### Step 4: Configure SQL Server Access (Optional)
+#### Step 4 Configure SQL Server Access
 
 If using a remote SQL Server database, grant the custom identity permissions:
 
@@ -542,7 +542,7 @@ Update your connection string to use Windows Authentication:
 Server=sqlserver.domain.local;Database=PingCastle;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=True;TrustServerCertificate=True
 ```
 
-#### Step 5: Restart the Application Pool
+#### Step 5 Restart the Application Pool
 
 ```powershell
 Restart-WebAppPool -Name "PingCastleEnterprise"
@@ -555,7 +555,7 @@ If you want to minimize the permissions granted to the application pool identity
 
 PingCastle uses a folder named "PingCastle" in the Windows Task Scheduler. The scripts below use the COM API to manage security descriptors, which isn't available through the native PowerShell API.
 
-#### Function: New-PingCastleHealthCheckScheduledTask
+#### New-PingCastleHealthCheckScheduledTask Function
 
 This function creates a new scheduled task for PingCastle health checks.
 
@@ -959,7 +959,7 @@ function New-PingCastleHealthCheckScheduledTask {
 }
 ```
 
-#### Function: Grant-PingCastleTaskSchedulerAccess
+#### Grant-PingCastleTaskSchedulerAccess Function
 
 This function grants the application pool identity permission to start and stop tasks without editing them.
 
@@ -1375,7 +1375,7 @@ This will automatically discover and scan all child domains within each forest.
 </TabItem>
 </Tabs>
 
-## Manual Installation (Without MSI Installer)
+## Manual Installation Without MSI Installer
 
 :::info When to Use Manual Installation
 This section is for advanced users who can't use or prefer not to use the MSI Installer. Manual installation is typically required for:
@@ -1435,7 +1435,7 @@ PingCastle Enterprise can run on any infrastructure that supports ASP.NET Core 8
 For IIS deployments, if the "Default Web Site" conflicts with PingCastle Enterprise, stop the default website and configure it to not start automatically.
 :::
 
-### Database Configuration (Manual Installation)
+### Database Configuration for Manual Installation
 
 #### General Database Requirements
 
@@ -1501,7 +1501,7 @@ By default, the postgres user has no password. PostgreSQL collation may not hand
 </TabItem>
 </Tabs>
 
-### Remote Database Configuration (Manual Installation)
+### Remote Database Configuration for Manual Installation
 
 <Tabs>
 <TabItem value="local" label="SQL Authentication" default>
@@ -1576,7 +1576,7 @@ Server=tcp:server.fqdn.com;Database=PingCastle;Trusted_Connection=True;MultipleA
 </TabItem>
 </Tabs>
 
-### Application Configuration (Manual Installation)
+### Application Configuration for Manual Installation
 
 For manual installations, configure the `appsettings.json` file in the application root directory.
 
@@ -1662,7 +1662,7 @@ Use the following command to deploy:
 az webapp deploy --resource-group <group-name> --name <app-name> --src-path <zip-package-path>
 ```
 
-Use the `az webapp` command to view your created application. For more information, see the [Azure App Service deployment documentation](https://docs.microsoft.com/en-us/azure/app-service/deploy-zip?tabs=cli).
+Use the `az webapp` command to view your created application. See the [Azure App Service deployment documentation](https://docs.microsoft.com/en-us/azure/app-service/deploy-zip?tabs=cli) for deployment configuration options.
 
 :::note
 Additional steps may be required depending on your Azure configuration.
@@ -1758,7 +1758,7 @@ Open **Server Manager** > **Manage** > **Add Roles and Features** > **Server Rol
 
 </details>
 
-Windows Authentication uses Active Directory groups to provision access to PingCastle Enterprise. Create two security groups in Active Directory, these can be called whatever you like but we will use the below as examples:
+Windows Authentication uses Active Directory groups to provision access to PingCastle Enterprise. Create two security groups in Active Directory. These can be called whatever you like. The following names are used as examples in this document:
 - **PingCastle_Users**: Members of this group can log in and access PingCastle Enterprise
 - **PingCastle_Admins**: Members of this group have administrator privileges
 
@@ -1968,28 +1968,28 @@ Proxy settings rely on the current user proxy configuration, which can be define
 <details>
 <summary>Configuring SAML2 with Okta</summary>
 
-Follow these steps to configure PingCastle Enterprise with Okta as your SAML2 identity provider.
+Configure PingCastle Enterprise with Okta as your SAML2 identity provider using the steps below.
 
-#### Step 1: Access Okta Admin Portal
+#### Step 1 Access Okta Admin Portal
 
 Log in to your Okta tenant and switch to the admin portal.
 
 ![Okta Admin Portal](/images/pingcastle/enterpriseinstall/Authentication/okta-admin-portal.webp)
 
-#### Step 2: Create New Application
+#### Step 2 Create New Application
 
 1. Click **Applications** > **Add Application** > **Create New App**
 2. Select **SAML 2.0** and click **Create**
 
 ![Create New App](/images/pingcastle/enterpriseinstall/Authentication/okta-create-app.webp)
 
-#### Step 3: Name Your Application
+#### Step 3 Name Your Application
 
 Give your app a name and click **Next**.
 
 ![Name App](/images/pingcastle/enterpriseinstall/Authentication/okta-app-name.webp)
 
-#### Step 4: Configure SAML Settings
+#### Step 4 Configure SAML Settings
 
 Configure the following SAML settings:
 
@@ -2000,19 +2000,19 @@ Configure the following SAML settings:
 
 ![Configure SAML](/images/pingcastle/enterpriseinstall/Authentication/okta-saml-config.webp)
 
-#### Step 5: Get IdP Metadata URL
+#### Step 5 Get IdP Metadata URL
 
 Locate the IdP metadata URL for use in your PingCastle configuration.
 
 ![Metadata URL](/images/pingcastle/enterpriseinstall/Authentication/okta-metadata-url.webp)
 
-#### Step 6: Assign Users
+#### Step 6 Assign Users
 
 Assign users to the application: **Assignments** > **Assign** > **Assign to People**
 
 ![Assign Users](/images/pingcastle/enterpriseinstall/Authentication/okta-assign-users.webp)
 
-#### Step 7: Restart and Test
+#### Step 7 Restart and Test
 
 Restart the application. A SAML2 login option will appear on the login screen.
 
@@ -2242,7 +2242,7 @@ The Email configuration section in appsettings.json supports both providers:
 - **Login**: Login credentials for the SMTP server (leave empty if not required)
 - **Password**: Password for the SMTP server (leave empty if not required)
 - **Host**: FQDN or IP address of the SMTP server
-- **Port**: Port of the SMTP server (25 is default, 465 and 587 for TLS/SSL. Encryption will be enabled unless port is 25)
+- **Port**: Port of the SMTP server (25 is default, 465, and 587 for TLS/SSL. Encryption will be enabled unless port is 25)
 
 **Graph Provider Parameters:**
 - **TenantId**: Azure AD tenant ID (mandatory for Graph)
@@ -2261,7 +2261,7 @@ notification such as weekly reports.
 
 For detailed instructions on configuring Modern Authentication with Office 365, see the section below.
 
-### Modern Authentication with Office 365 (Graph API)
+### Modern Authentication with Office 365 Using Graph API
 
 PingCastle Enterprise supports sending emails using Microsoft Graph API with modern authentication. This method is recommended for Office 365 environments as it provides enhanced security through OAuth 2.0 authentication.
 
@@ -2314,9 +2314,9 @@ For production environments, use certificates issued by your organization's Cert
 <Tabs>
 <TabItem value="manual" label="Manual Configuration" default>
 
-#### Part 1: Create Azure AD App Registration
+#### Part 1 Create Azure AD App Registration
 
-##### Step 1: Access Microsoft Entra Admin Center
+##### Step 1 Access Microsoft Entra Admin Center
 
 1. Open a web browser and navigate to https://entra.microsoft.com
 2. Sign in with your administrator account
@@ -2402,9 +2402,9 @@ This should be automatically configured, but verify it:
 
 ![User properties page with Account Enabled disabled](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-8.png)
 
-#### Part 3: Configure RBAC for Applications
+#### Part 3 Configure RBAC for Applications
 
-##### Step 9: Connect to Exchange Online PowerShell
+##### Step 9 Connect to Exchange Online PowerShell
 
 Open Windows PowerShell as Administrator and run the following commands:
 
@@ -2419,7 +2419,7 @@ Import-Module ExchangeOnlineManagement
 Connect-ExchangeOnline
 ```
 
-##### Step 10: Create Service Principal
+##### Step 10 Create Service Principal
 
 Using the values from your app registration, create the service principal:
 
@@ -2436,7 +2436,7 @@ New-ServicePrincipal -AppId $AppId -ObjectId $ObjectId -DisplayName "PingCastle-
 The `$ObjectId` is the Service Principal Object ID from Enterprise Applications, **not** the Object ID from App Registrations.
 :::
 
-##### Step 11: Create Management Scope
+##### Step 11 Create Management Scope
 
 Create a management scope that restricts access to only the PingCastle shared mailbox:
 
@@ -2446,7 +2446,7 @@ $EmailAddress = "pingcastle@yourdomain.com" # The email address of the shared ma
 New-ManagementScope -Name "PingCastle-Email-Scope" -RecipientRestrictionFilter "EmailAddresses -eq '$EmailAddress'"
 ```
 
-##### Step 12: Assign Application Role
+##### Step 12 Assign Application Role
 
 Assign the Application Mail.Send role to the service principal with the custom scope:
 
@@ -2456,9 +2456,9 @@ $ObjectId = "" # The Exchange Service Principal Object Id (This is output in Ste
 New-ManagementRoleAssignment -Role "Application Mail.Send" -App $ObjectId -CustomResourceScope "PingCastle-Email-Scope"
 ```
 
-#### Part 4: Test Configuration
+#### Part 4 Test Configuration
 
-##### Step 13: Test Service Principal Authorization
+##### Step 13 Test Service Principal Authorization
 
 Verify the configuration works correctly:
 
@@ -2474,7 +2474,7 @@ Expected Output:
 - **RoleName**: Application Mail.Send
 - **InScope**: True
 
-##### Step 14: Verify Scope Restriction
+##### Step 14 Verify Scope Restriction
 
 Test that the service principal can't access other mailboxes:
 
@@ -2970,7 +2970,7 @@ For bulk configuration, use Configuration -> Interoperability to edit the entity
 
 ### Encryption
 
-The default PingCastle decryption key is marked as insecure. Note that the default encryption key is no longer provided in newer versions of PingCastle as this was a security risk. You must generate your own key in the Enterprise UI at Configuration -> Decryption and use that in your PingCastle.exe's appsettings.console.json file.
+The default PingCastle decryption key is marked as insecure. The default encryption key is no longer provided in newer versions of PingCastle as this was a security risk. You must generate your own key in the Enterprise UI at Configuration -> Decryption and use that in your PingCastle.exe's appsettings.console.json file.
 
 ### Bulk Import of existing reports
 
@@ -3115,7 +3115,7 @@ maturity changes, etc.
 
 You need to configure an API key with synchronization rights on the server side.
 
-Note that you must assign the Agent to an entity. You can't assign it to a domain, as the entity will be used as the root to
+You must assign the Agent to an entity. You can't assign it to a domain, as the entity will be used as the root to
 assign the newly forwarded domains.
 
 ![API key configuration showing Agent assignment to entity with synchronization rights](/images/pingcastle/enterpriseinstall/image81.webp)
@@ -3173,7 +3173,7 @@ choose to upload only missing reports.
 If a domain is created by a user locally, it will be synchronized.
 However, if it is removed locally (which is allowed when no
 reports are present), the application will attempt to remove it from the
-higher instance. Note that removal can't be completed if reports
+higher instance. Removal can't be completed if reports
 already exist, so the remove request may be denied silently.
 
 You can also force synchronization of all domains from the
@@ -3190,7 +3190,7 @@ limit. If there is a temporary network issue, this check will not be
 performed. If the check denies the import, the report will not be
 imported and the error will be logged.
 
-Once this check completes, the import is performed on the lower instance. Then
+After this check completes, the import is performed on the lower instance. Then
 the report is synchronized to the higher instance. If there is any network issue
 during this step, the error will be ignored (but logged if
 logging is enabled).
