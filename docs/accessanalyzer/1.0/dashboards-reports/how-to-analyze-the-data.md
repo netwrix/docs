@@ -1,6 +1,6 @@
 ---
 title: "How to Analyze the Data"
-description: "Learn how to analyze data presented in reports"
+description: "Guide to analyzing data using dashboards in Access Analyzer"
 sidebar_position: 10
 ---
 
