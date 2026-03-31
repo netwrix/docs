@@ -1,0 +1,13 @@
+extends: existence
+message: "Don't use punctuation in headings ('%s'). Rewrite the heading to remove it."
+level: warning
+scope: heading
+nonword: true
+tokens:
+  - '\.'
+  - ':'
+  - ';'
+  - '\?'
+  - '!'
+  - '\('
+  - '\)'

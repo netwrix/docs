@@ -14,25 +14,25 @@ you will provide this account in the monitoring plan wizard (or in the monitored
 
 The account used for data collection must meet the following requirements:
 
-- Member of the Domain Admins group on the target server.
+- The "Manage auditing and security log" policy must be defined for this account.
+  See the [Configure the Manage Auditing and Security Log Policy](#configure-the-manage-auditing-and-security-log-policy) topic for additional
+  information.
+- If you plan to process the Active Directory Deleted Objects container, Read permission on this
+  container is required. See the [Grant Permissions for the Deleted Objects Container](#grant-permissions-for-the-deleted-objects-container) topic for
+  additional information.
+- [Assign Permission To Read the Registry Key](/docs/auditor/10.8/configuration/windowsserver/permissions.md).
 
-    **NOTE:** This covers all the required permissions below and is a mandatory setting if you want
+    OR
+
+- Member of the **Domain Admins** group on the target server.
+
+    **NOTE:** This covers all the required permissions above and is a mandatory setting if you want
     to use network traffic compression for data collection.
 
-- Local Admin on the Netwrix Auditor server.
-- The combination of the following rights and permissions if you plan to disable network traffic
-  compression for your monitoring plan or, for some reasons, do not want to add this account to the
-  Domain Admins group:
-
-    - The "Manage auditing and security log" policy must be defined for this account.
-      See the Configure the Manage Auditing and Security Log Policy topic for additional
-      information.
-    - If you plan to process the Active Directory Deleted Objects container, Read permission on this
-      container are required. See the Grant Permissions for the Deleted Objects Container topic for
-      additional information.
-
-If the account selected for data collection is not a member of the Domain Admins group, see the
-[Assign Permission To Read the Registry Key](/docs/auditor/10.8/configuration/windowsserver/permissions.md) topic.
+If you use a group Managed Service Account (gMSA) for data collection, the account must also be a
+local admin on the Netwrix Auditor server. See the
+[Use Group Managed Service Account (gMSA)](/docs/auditor/10.8/requirements/gmsa.md) topic for
+additional information.
 
 ## Additional Configuration to Review Changes Made via Exchange Server
 
@@ -63,56 +63,6 @@ The following is required if auto-backup is enabled for the domain controller ev
 - Read/Write share permission and Full control security permission on the logs backup folder.
 
 ## Considerations for gMSA Account
-
-If you are using gMSA for data collection, consider that AAL event data collection from your
-on-premise Exchange server will not be possible.
-
-Thus, changes made to your Active Directory domain via that Exchange server will be reported with
-_`domain\Exchange_server_name$`_ instead of the initiator (user) name in the "_Who_" field of
-reports, search results and activity summaries.
-
-### Target Domain
-
-If you plan to use network traffic compression for data processing, consider the following:
-
-- If network traffic compression will be _enabled_, then the account must belong to the Domain
-  Admins group.
-- If network traffic compression will be _disabled_, and the account you plan to use for data
-  collection is not a member of the Domain Admins group, then the **Manage auditing and security
-  log** policy must be defined for this account.
-  See the Configure the Manage Auditing and Security Log Policy topic for more information.
-
-If you need to process Active Directory **Deleted Objects** container, consider the following:
-
-- Read permission on this container is required. See the Grant Permissions for the Deleted Objects
-  Container topic for additional information.
-- Grant this permission only if the account you plan to use for data collection is not a member of
-  the Domain Admins group.
-
-If auto-backup is _enabled_ for the domain controller event logs:
-
-- Permissions to access the _HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\EventLog\Security_
-  registry key on the domain controllers in the target domain. See the
-  [Assign Permission To Read the Registry Key](/docs/auditor/10.8/configuration/windowsserver/permissions.md) topic for additional
-  information.
-- Membership in any of the following groups: Administrators, Print Operators, Server Operators
-- Read/Write share permission and Full control security permission on the logs backup folder.
-
-**NOTE:** Grant these permissions only if the account you plan to use for data collection is not a
-member of the **Domain Admins** group.
-
-If you have an on-premises Exchange server in your Active Directory domain, consider that some
-changes can be made via that Exchange server. To be able to audit and report who made those changes,
-you should make sure that the account used for data collection has any of the following:
-
-- Membership in the **Organization Management** or **Records Management** group.
-- The **Audit Logs** management role (see the
-  [Assigning Management Roles](/docs/auditor/10.8/configuration/exchange/permissions.md#assign-management-roles) topic for
-  additional information).
-
-You will also need to configure Exchange Administrator Audit Logging (AAL) settings. See the
-[Exchange Administrator Audit Logging Settings](/docs/auditor/10.8/configuration/exchange/auditlog.md) topic for additional
-information.
 
 If you are using gMSA for data collection, consider that AAL event data collection from your
 on-premise Exchange server will not be possible.

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Describes how to troubleshoot a failed job execution in Netwrix Auditor,
+  Describes how to troubleshoot a failed job execution in Netwrix Access Analyzer,
   including checks of job stats, task stats, runstats files, logs, uptime, and
   applet/agent log locations.
 keywords:
@@ -10,7 +10,7 @@ keywords:
   - runstats.ini
   - Task Scheduler
   - SQL Server
-  - Netwrix Auditor
+  - Netwrix Access Analyzer
   - SADebug
   - applet logs
 products:
@@ -26,7 +26,7 @@ knowledge_article_id: kA04u0000000ISGCA2
 
 ## Overview
 
-This article describes how to troubleshoot a failed job execution in Netwrix Auditor.
+This article describes how to troubleshoot a failed job execution in Netwrix Access Analyzer.
 
 ## Instructions
 
@@ -63,7 +63,7 @@ This article describes how to troubleshoot a failed job execution in Netwrix Aud
 
 - Check Task Scheduler history (Task Scheduler Event Log).
 
-- Check Netwrix Auditor Event Log (`%sainstalldir%logs`).
+- Check Netwrix Access Analyzer Event Log (`%sainstalldir%logs`).
 
 - Check SADebug Logs:
   - Application

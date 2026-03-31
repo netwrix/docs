@@ -1,0 +1,22 @@
+@startuml component
+package "BindingExpression" {
+	class BindingExpression {
+		Expression : String
+		Hash : Int32
+		--
+		Binding : Binding
+		EntityType : EntityType
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+BindingExpression "0..*" --  "0..1"Binding
+BindingExpression "0..*" --  "1"EntityType
+hide empty members
+@enduml

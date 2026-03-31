@@ -145,8 +145,8 @@ Date: Fri, 08 Apr 2017 13:56:22 GMT
 
 **Step 4 –** Check that posted data is now available in the Audit Database. Run a search request to [/netwrix/api/v1/activity_records/search](/docs/auditor/10.8/api/searchactivityrecords.md) endpoint or use interactive search in the Netwrix Auditor client. For example:
 
-![apiactivity_thumb_0_0](/images/auditor/10.7/api/apiactivity_thumb_0_0.webp)
+![apiactivity_thumb_0_0](/images/auditor/10.8/api/apiactivity_thumb_0_0.webp)
 
 **Step 5 –** For input Activity Records, the data source is set to Netwrix API.
 
-![apiactivitydetails](/images/auditor/10.7/api/apiactivitydetails.webp)
+![apiactivitydetails](/images/auditor/10.8/api/apiactivitydetails.webp)

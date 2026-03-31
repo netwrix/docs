@@ -11,7 +11,7 @@ sidebar_position: 10
 Before you execute the migration, you must ensure that the following preparations have been made:
 
 - Installation of the latest Netwrix Password Secure-Server, Native Client and Web Client
-- Check in the [Database properties](/docs/passwordsecure/9.3/configuration/servermanger/databaseproperties/database_properties.md) if the **offline
+- Check in the [Database properties](/docs/passwordsecure/9.3/configuration/servermanager/databaseproperties/database_properties.md) if the **offline
   access** and the **mobile synchronization** are allowed
   If that should be the case, **contact your users and make sure that they have to synchronize the
   Offline Add-on and the mobile app**.

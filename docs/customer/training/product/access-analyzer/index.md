@@ -27,6 +27,6 @@ These learning paths cover training on <NAA />, <AIC />, and <NAM />.
 
 :::
 
-While <NAM /> is included in the above learning paths, there is also a learning path just for this applicaiton:
+While <NAM /> is included in the above learning paths, there is also a learning path just for this application:
 
-* [Netwirx Activity Monitor Learning Path](./acitivity-monitor.md)
+* [Netwrix Activity Monitor Learning Path](./activity-monitor.md)

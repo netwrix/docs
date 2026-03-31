@@ -19,6 +19,8 @@ Namespaces.
 
 Configure the credential(s) with the following rights on the Windows host(s):
 
+- Granted the "Network access: Restrict clients allowed to make remote calls to SAM" Local Policies > Security Options privilege
+- Granted the “Backup files and directories” local policy privilege
 - For **Local** or **Proxy as a Service Mode** Scans: 
   - Group membership in both of the following local groups:
     - Power Users
@@ -30,8 +32,6 @@ Configure the credential(s) with the following rights on the Windows host(s):
   - Remote Registry service must be enabled on the host where the applet is deployed (Applet or Proxy w/ Applet scans) to determine the system platform and where to deploy the applet.
   - The local policy, “Network access: Do not allow storage of passwords and credentials for network authentication” must be disabled in order for the applet to start.
   - Sensitive Data Discovery Auditing scans require .NET Framework 4.7.2 or later to be installed on the server where the applet is to be deployed in order for Sensitive Data Discovery collections to successfully occur.
-- Granted the "Network access: Restrict clients allowed to make remote calls to SAM" Local Policies > Security Options privilege
-- Granted the “Backup files and directories” local policy privilege
 
 :::note
 In order to collect data on administrative shares and local policies (logon policies) for a Windows target, the credential must have group membership in the local Administrators group.

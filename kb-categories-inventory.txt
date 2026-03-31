@@ -1,0 +1,192 @@
+==== 1secure ====
+0-images
+permissions-and-access
+troubleshooting
+
+==== accessanalyzer ====
+0-images
+active-directory-auditing
+connection-profiles-and-credentials
+database-auditing-and-configuration
+entra-id-and-azure-integration
+exchange-online-integration
+file-system-and-sensitive-data-discovery
+installation-and-upgrades
+job-management-and-scheduling
+reference-and-technical-specifications
+reports-and-web-console
+sharepoint-online-integration
+troubleshooting-and-errors
+
+==== accessinformationcenter ====
+configuration-and-setup
+entitlement-reviews
+
+==== activitymonitor ====
+0-images
+agent-configuration-and-management
+best-practices-and-reference
+integrations-and-data-sources
+monitoring-platforms-and-storage
+security-and-compliance
+troubleshooting-and-errors
+
+==== auditor ====
+0-images
+configuration-and-setup
+configuration-and-setup/active-directory-auditing
+configuration-and-setup/exchange-auditing
+configuration-and-setup/file-server-auditing
+configuration-and-setup/general-configuration
+configuration-and-setup/microsoft-365-integration
+configuration-and-setup/sharepoint-and-teams-auditing
+configuration-and-setup/sql-server-auditing
+configuration-and-setup/windows-server-monitoring
+event-id-reference
+event-id-reference/health-log-events
+features-and-operations
+features-and-operations/glossaries-and-faqs
+monitoring-plans
+monitoring-plans/account-lockout-examiner
+monitoring-plans/event-log-management
+monitoring-plans/password-expiration-notifier
+monitoring-plans/user-activity-monitoring
+reports-alerts-and-notifications
+reports-alerts-and-notifications/alerts-and-rules
+reports-alerts-and-notifications/email-notifications
+reports-alerts-and-notifications/report-generation
+reports-alerts-and-notifications/subscriptions-and-distribution
+system-administration
+system-administration/backup-and-recovery
+system-administration/database-management
+system-administration/licensing-and-compliance
+system-administration/migration-and-upgrade
+system-administration/security-hardening
+troubleshooting-and-errors
+troubleshooting-and-errors/connection-errors
+troubleshooting-and-errors/data-collection-errors
+troubleshooting-and-errors/permission-and-authentication-errors
+troubleshooting-and-errors/ssl-tls-certificate-issues
+
+==== changetracker ====
+audit-and-logging
+database-and-diagnostics
+troubleshooting-and-errors
+
+==== dataclassification ====
+0-images
+authentication-and-security
+features-and-operations
+migration-and-maintenance
+system-administration
+term-set-operations
+troubleshooting-and-errors
+
+==== directorymanager ====
+0-images
+configuration-and-integration
+group-management-and-operations
+portal-customization-and-ux
+reporting-export-and-data-management
+security-permissions-and-access-control
+system-administration-and-maintenance
+troubleshooting-and-errors
+workflows-automation-and-lifecycle-management
+
+==== endpointpolicymanager ====
+images
+
+==== endpointprotector ====
+0-images
+administration-security-and-monitoring
+content-aware-protection-and-dpi
+deployment-and-installation
+device-control-and-access-management
+enforced-encryption-and-easylock
+features-and-operations
+troubleshooting-and-errors
+
+==== general ====
+0-images
+administration-and-maintenance
+audit-and-logging
+authentication-and-security
+client-installation-and-deployment
+cloud-and-permissions
+configuration-and-customization
+database-and-diagnostics
+documentation-and-reference
+infrastructure-and-network
+security-and-compliance
+setup-and-deployment
+troubleshooting-and-errors
+
+==== passwordpolicyenforcer ====
+0-images
+authentication-and-integration
+email-and-mailer-configuration
+installation-and-configuration
+policy-rules-and-configuration
+troubleshooting-and-errors
+
+==== passwordreset ====
+0-images
+configuration-and-customization
+deployment-and-infrastructure
+enrollment-and-user-setup
+integrations-and-notifications
+portal-access-and-authentication
+reporting-and-monitoring
+security-and-administration
+
+==== privilegesecure ====
+0-images
+active-directory-configuration
+authentication-and-mfa
+certificates-and-security
+client-tools-and-integrations
+database-and-backend
+high-availability-and-clustering
+installation-configuration-and-licensing
+network-and-platform-integration
+remote-desktop-and-rds
+resource-management
+session-management-and-recording
+third-party-integrations
+troubleshooting-and-errors
+user-and-service-accounts
+workflows-and-automation
+
+==== privilegesecurediscovery ====
+0-images
+authentication-and-access
+database-and-backend
+linux-and-ssh-integration
+security-and-compliance
+system-configuration-and-requirements
+troubleshooting-and-errors
+
+==== recoveryad ====
+0-images
+configuration-and-administration
+installation-and-deployment
+operations-and-troubleshooting
+
+==== threatmanager ====
+0-images
+configuration-and-administration
+installation-and-upgrade
+integration-and-event-collection
+licensing-and-system-issues
+threat-management-and-operations
+troubleshooting-and-diagnostics
+
+==== threatprevention ====
+0-images
+agent-installation-and-deployment
+agent-management-and-connectivity
+configuration-and-administration
+database-and-maintenance
+licensing
+troubleshooting-and-diagnostics
+

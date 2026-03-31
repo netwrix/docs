@@ -44,7 +44,7 @@ To understand the folder / file structure of Netwrix Auditor or to better commun
 
 **WSA:** Windows Server Auditing - In reference to the Windows Server Monitoring Plan
 
-**PEN:** Password Expitation Notifier - Netwrix Password Reset, a standalone Netwrix tool that checks which domain accounts or passwords are about to expire in the specified number of days and sends notifications to users
+**PEN:** Password Expiration Notifier - Netwrix Password Reset, a standalone Netwrix tool that checks which domain accounts or passwords are about to expire in the specified number of days and sends notifications to users
 
 **IUT:** Inactive User Tracker - a standalone Netwrix tool that discovers inactive user and computer accounts
 

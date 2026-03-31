@@ -1,0 +1,45 @@
+@startuml component
+package "RiskRuleItem" {
+	class RiskRuleItem {
+		Value : String
+		--
+		EntityType : EntityType
+		Property : EntityProperty
+		Resource : Resource
+		ResourceType : ResourceType
+		Risk : Risk
+		Rule : RiskRule
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "Risk" {
+	class Risk {
+	}
+}
+package "RiskRule" {
+	class RiskRule {
+	}
+}
+RiskRuleItem "0..*" --  "1"EntityType
+RiskRuleItem "0..*" --  "1"EntityProperty
+RiskRuleItem "0..*" --  "0..1"Resource
+RiskRuleItem "0..*" --  "1"ResourceType
+RiskRuleItem "0..*" --  "1"Risk
+RiskRuleItem "0..*" --  "1"RiskRule
+hide empty members
+@enduml

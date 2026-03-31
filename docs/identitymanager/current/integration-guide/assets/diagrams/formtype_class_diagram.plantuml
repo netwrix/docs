@@ -1,0 +1,15 @@
+@startuml component
+package "FormType" {
+	class FormType {
+		Identifier : String
+		--
+		FormTypeForms : Form[]
+	}
+}
+package "Form" {
+	class Form {
+	}
+}
+FormType "1" --  "0..*"Form
+hide empty members
+@enduml

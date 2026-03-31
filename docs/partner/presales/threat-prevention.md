@@ -6,11 +6,11 @@ keywords: [training, course, certification, partners, presales, threat preventio
 description: "Become a certified Presales Engineer for Netwrix Threat Prevention"
 ---
 
-import { NTPValue, NTPConcepts, NTPIntro, NTPPolicies, NTPAnalytics, NTPReporting, NTPDemo, NTPAdditional } from '@site/src/training/threat-prevention';
+import { NTPValue, NTPConcepts, NTPIntro, NTPPolicies, NTPAnalytics, NTPReporting, NTPTroubleshooting, NTPDemo, NTPAdditional } from '@site/src/training/threat-prevention';
 import { Company, NAM, NTP } from '@site/src/training/products';
 
 
-Estimated length: 3.75 hours
+Estimated length: 4 hours
 
 This learning path grants <Company /> certification as a Presales Engineer for this product. It contains the following courses:
 
@@ -20,6 +20,7 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 * 3501 <NTP /> – Policies
 * 3502 <NTP /> – Analytics
 * 3503 <NTP /> – Reporting
+* 4500 <NTP /> – Basic Troubleshooting
 * 5500 <NTP /> – Demo the Basic Use Cases
 
 <NTPValue />
@@ -33,6 +34,8 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 <NTPAnalytics />
 
 <NTPReporting />
+
+<NTPTroubleshooting />
 
 <NTPDemo />
 

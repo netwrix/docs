@@ -1,0 +1,43 @@
+@startuml component
+package "DisplayTableColumn" {
+	class DisplayTableColumn {
+		AddedMinutes : Int32
+		CanBeFiltered : Boolean
+		ColumnSize : Int32
+		DefaultSortPriority : Int32
+		DisplayName_L1 : String
+		DisplayOrder : Int32
+		IsDisplayInDropDownList : Boolean
+		IsDisplayInSummaryView : Boolean
+		IsResizable : Boolean
+		IsSortable : Boolean
+		SearchOperator : Byte
+		--
+		DisplayBinding : Binding
+		DisplayTable : DisplayTable
+		OptimizedDisplayBinding : Binding
+		OptimizedSortBinding : Binding
+		SortBinding : Binding
+		Tile : Tile
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "DisplayTable" {
+	class DisplayTable {
+	}
+}
+package "Tile" {
+	class Tile {
+	}
+}
+DisplayTableColumn "0..*" --  "0..1"Binding
+DisplayTableColumn "0..*" --  "1"DisplayTable
+DisplayTableColumn "0..*" --  "0..1"Binding
+DisplayTableColumn "0..*" --  "0..1"Binding
+DisplayTableColumn "0..*" --  "0..1"Binding
+DisplayTableColumn "0..*" --  "0..1"Tile
+hide empty members
+@enduml

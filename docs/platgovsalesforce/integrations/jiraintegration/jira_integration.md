@@ -59,17 +59,17 @@ Cloud Integration Credentials after installing the app.
 ### Jira Cloud Installation
 
 :::note
-You must be a Jira system administrator to install the **Strongpoint for Salesforce** app. Contact
+You must be a Jira system administrator to install the **Netwrix for Salesforce** app. Contact
 your Jira system administrator if you do not have administrative permissions.
 :::
 
 1. Open your **Jira Software Dashboard**.
 2. Select **Apps** > **Explore more Apps >**
-3. Search for **Strongpoint**.
+3. Search for **Netwrix**.
 
-    ![Strongpoint apps in the Jira Marketplace](/images/platgovsalesforce/integrations/jira_marketplace.webp)
+    ![Strongpoint apps in the Jira Marketplace](/images/platgovsalesforce/integrations/jiraForge/jira_marketplace_forge.webp)
 
-4. Click **Strongpoint for Salesforce** to install the app.
+4. Click **Netwrix for Salesforce** to install the app.
 
 #### Access Data with API Integration
 
@@ -111,6 +111,37 @@ Configure the connected app:
 If you do not use a connected app, you can set up Jira Cloud Integration Credentials as an
 alternative.
 
+:::note
+You can use either Connected Apps or External Client Apps.
+The option you use depends on whether the app already exists or if you are creating a new version.
+:::
+
+Configure the External Client Apps (new version of connected apps):
+
+1. Log in to your Salesforce org.
+2. Open the Connected App:
+   **Setup** > **Apps** > **External Client Apps** > **Netwrix Pg Jira** (Netwrix Pg Jira is an example; it doesn't need to have that exact name.)
+
+    ![Open the Strongpoint Connected App](/images/platgovsalesforce/integrations/externalClientAppSearch.webp)
+
+3. Click the drop down arrow on the right side and select **Edit Settings**.
+4. Set the **Callback URL** to **https://spjira.my.salesforce-sites.com/SpHandleJiraAuth** under the Oauth Settings Section
+5. These **Oauth Scopes** must be selected:
+   **Full access (full)**
+   **Perform requests at any time (refresh_token, offline_access)**
+6. Click **Save**.
+
+    :::note
+    Your connected app requires 2-10 minutes after you save before it is available.
+    :::
+
+7. Click **Consumer Key and Secret**.
+
+    ![Click Manage Consumer Details](/images/platgovsalesforce/integrations/consumerKeyAndSecretExternalClientApp.webp)
+
+8. Copy the Consumer Key and the Consumer Secret codes to a clipboard. You are prompted for this
+   information when you use the app.
+
 #### Set Up Jira Cloud Integration Credentials
 
 1. From the Netwrix Dashboard: click **Configuration and Stats** in the **Resources** section, or
@@ -147,7 +178,7 @@ Follow the instructions for Restricting Access to a Project or Setting Groups/Pr
 
     ![Open a project](/images/platgovsalesforce/integrations/jira_restrict_access1.webp)
 
-2. Select **Strongpoint Sf Settings**.
+2. Select **Netwrix Salesforce Settings**.
 3. Select the **Project Visibility Settings** tab.
 4. Enter the name of the project in the **Visibility Settings**. The specified project is the only
    one that is available to the Platform Governance for Salesforce integration. Leave **Visibility
@@ -170,7 +201,7 @@ and a link to this topic.
 Follow the instructions for Restricting Access to a Project or Setting Groups/Profiles Visibility to grant the user appropriate access.
 
 1. Open a Jira project.
-2. Select **Strongpoint Sf Settings**.
+2. Select **Netwrix Salesforce Settings**.
 3. Select the **Profile Visibility Settings** tab. There are two lists:
    **Existing Groups** are all of the current groups in Jira
    **Selected Groups** are groups that can see the Platform Governance for Salesforce Jira

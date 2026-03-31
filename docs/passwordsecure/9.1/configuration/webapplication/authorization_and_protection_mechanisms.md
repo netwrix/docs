@@ -28,13 +28,13 @@ should be made to the chapter of
 There are marginal differences in the operation. The privacy protection is fixed or edited via a
 button in the extended menu..
 
-![installation_with_parameters_183](/images/passwordsecure/9.1/configuration/web_applicaiton/authorization_and_protection/installation_with_parameters_183.webp)
+![installation_with_parameters_183](/images/passwordsecure/9.1/configuration/web_application/authorization_and_protection/installation_with_parameters_183.webp)
 
 The corresponding button is only displayed if the logged in user has the sufficient rights.
 
 If a record is provided with a privacy protection, this is shown in the header of the password.
 
-![installation_with_parameters_184](/images/passwordsecure/9.1/configuration/web_applicaiton/authorization_and_protection/installation_with_parameters_184.webp)
+![installation_with_parameters_184](/images/passwordsecure/9.1/configuration/web_application/authorization_and_protection/installation_with_parameters_184.webp)
 
 **Seal**
 
@@ -43,9 +43,9 @@ explanations can be found. The
 [Seals](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/seals/seals.md)
 are configured in the extended menu via a button.
 
-![installation_with_parameters_185](/images/passwordsecure/9.1/configuration/web_applicaiton/authorization_and_protection/installation_with_parameters_185.webp)
+![installation_with_parameters_185](/images/passwordsecure/9.1/configuration/web_application/authorization_and_protection/installation_with_parameters_185.webp)
 
 The button is only displayed for the users who have the rights to edit seals. If a record is sealed,
 this will be shown in the password field.
 
-![seal_wc](/images/passwordsecure/9.1/configuration/web_applicaiton/authorization_and_protection/seal_wc.webp)
+![seal_wc](/images/passwordsecure/9.1/configuration/web_application/authorization_and_protection/seal_wc.webp)

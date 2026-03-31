@@ -27,7 +27,7 @@ SharePoint sites. It includes the following substeps:
 - Click on the **Add members** button.
 - Enter the name of the Identity Manager service account or its email address.
 
-![SharePoint Export Add Member](/images/identitymanager/saas/integration-guide/connectors/how-tos/sharepoint-export/sharepoint_export_add_member.webp)
+![SharePoint Export Add Member](/images/identitymanager/integration-guide/connectors/how-tos/sharepoint-export/sharepoint_export_add_member.webp)
 
 The service account is now a member of the site. However, to scan the site, the service account
 needs to be owner of the site.
@@ -36,7 +36,7 @@ needs to be owner of the site.
 - Under the name of the Identity Manager service account, click on the arrow.
 - Choose **Owner**.
 
-![SharePoint Export Role Owner](/images/identitymanager/saas/integration-guide/connectors/how-tos/sharepoint-export/sharepoint_export_role_owner.webp)
+![SharePoint Export Role Owner](/images/identitymanager/integration-guide/connectors/how-tos/sharepoint-export/sharepoint_export_role_owner.webp)
 
 ### Configuration
 

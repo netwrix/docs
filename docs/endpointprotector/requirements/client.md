@@ -77,6 +77,8 @@ C:\Program Files\CoSoSys\Endpoint Protector\*
   C:\Program Files\CoSoSys\Endpoint Protector\BrowserBroker.exe <- EPP versions before 2601
   C:\Program Files\CoSoSys\Endpoint Protector\EppExtensionHost.exe <- EPP Versions starting 2601
 C:\Windows\System32\config\systemprofile\AppData\Local\CoSoSys\EPP*
+C:\Program Files\CoSoSys\Endpoint Protector\winocr.exe
+C:\Program Files\CoSoSys\Endpoint Protector\i386\Wow64ProcHelper.exe
 ```
 
 **File Level Exclusions**
@@ -96,6 +98,8 @@ C:\Windows\System32\drivers\cssdcflt.sys
 C:\Windows\System32\drivers\cssnwtap.sys
 C:\eppclient.log
 C:\eppsslsplit.log
+C:\Program Files\CoSoSys\Endpoint Protector\winocr.exe
+C:\Program Files\CoSoSys\Endpoint Protector\i386\Wow64ProcHelper.exe
 ```
 
 **Process Level Exclusions**
@@ -106,6 +110,8 @@ EPPNotifier.exe
 EPPservice.exe
 BrowserBroker.exe <- EPP versions before 2601
 EppExtensionHost.exe <-- EPP Versions starting 2601
+winocr.exe
+Wow64ProcHelper.exe
 ```
 
 **Registry level exclusions**
@@ -144,6 +150,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DIFx\DriverStore\si
 /MacOS/EppNotifier
 /var/log/eppclient.log
 /var/log/eppsslsplit.log
+/Applications/EndpointProtectorClient.app/Contents/MacOS/EndpointProtectorClient
 ```
 
 **Process Level Exclusions**
@@ -153,6 +160,7 @@ EppClient
 sslsplit
 netdlp_setup
 EppNotifier
+EndpointProtectorClient
 ```
 
 ### Recommended Exclusions for Linux
@@ -174,6 +182,7 @@ EppNotifier
 /opt/cososys/bin/epp-client
 /var/log/epp-client/epp_client_daemon.log
 /var/log/epp-client/eppsslsplit.log
+/opt/cososys/sbin/epp_collect_dpi_info_linux.sh
 ```
 
 **Process Level Exclusions**
@@ -184,6 +193,7 @@ epp-client
 epp_sslsplit
 epp_netdlp_setup
 linux_install_certicates.sh
+epp_collect_dpi_info_linux.sh
 ```
 
 By applying these exclusions, you will allow the Endpoint Protector Client to operate smoothly alongside other security products, ensuring both functionality and protection across endpoints.

@@ -6,7 +6,7 @@
 
 A centralized documentation site for all Netwrix security products, built with [Docusaurus v3.8.1](https://docusaurus.io/) and a simple prouct configuration for easy maintenance.
 
-## 🎯 Overview
+## Overview
 
 This documentation site serves all Netwrix product documentation.
 
@@ -21,13 +21,42 @@ This documentation site serves all Netwrix product documentation.
 - **Centralized Configuration** - single source of truth for all product docs
 - **Search** capabilities with Algolia
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
-- **Node.js 18+**
+- **Node.js 22+**
 - **npm**
 - **Git**
+- **Vale** (style linter — optional for local use; issues are auto-fixed on PRs)
+
+### Install Vale
+
+[Vale](https://vale.sh/) is a command-line linter for prose. A linter checks your writing against a set of style rules — like a spell checker, but for grammar, word choice, and tone. Vale issues are auto-fixed on PRs, but you can install it locally to preview issues before pushing.
+
+**macOS:**
+```bash
+brew install vale
+```
+
+**Linux:**
+```bash
+sudo snap install vale
+```
+
+**Windows:**
+```bash
+choco install vale
+```
+
+**Manual install (any platform):**
+
+Download the latest release from [github.com/errata-ai/vale/releases](https://github.com/errata-ai/vale/releases), extract the binary, and add it to your PATH.
+
+Verify the installation:
+```bash
+vale --version
+```
 
 ### Installation
 
@@ -43,17 +72,43 @@ npm install
 npm run start
 ```
 
-## 📁 Project Structure
+### Run Vale Locally
+
+Vale issues are auto-fixed on PRs, but you can run Vale locally to preview:
+
+```bash
+vale docs/path/to/file.md
+```
+
+Run Vale on all changed docs files:
+
+```bash
+git diff --name-only dev | grep '^docs/.*\.md$' | xargs vale
+```
+
+## Project Structure
 
 ```
+├── .claude/                     # Claude Code configuration
+│   ├── skills/                  # Skills (invoked with /skill-name)
+│   │   ├── dale/                # AI linter for docs
+│   │   │   └── rules/           # Dale rule definitions (YAML)
+│   │   ├── doc-pr/              # Automated PR review
+│   │   ├── doc-pr-fix/          # Autonomous PR fixer (@claude)
+│   │   └── doc-help/            # Interactive writing assistant
+│   └── agents/                  # Autonomous worker agents
+├── .husky/                        # Git hooks (managed by Husky)
+├── .vale/
+│   └── styles/
+│       └── Netwrix/             # 30 Vale linting rules (YAML)
 ├── src/
 │   ├── config/
-│   │   └── products.js           # CENTRALIZED CONFIGURATION
+│   │   └── products.js          # CENTRALIZED CONFIGURATION
 │   ├── components/
-│   │   ├── HomepageFeatures/     # Dynamic product grid homepage (auto-generated)
-│   │   ├── ProductMetaTags/      # Search meta tags (auto-generated)
-│   │   ├── CommunityHighlights/  # Community section
-│   │   └── CommunityShowcase/    # Community section
+│   │   ├── HomepageFeatures/    # Dynamic product grid homepage (auto-generated)
+│   │   ├── ProductMetaTags/     # Search meta tags (auto-generated)
+│   │   ├── CommunityHighlights/ # Community section
+│   │   └── CommunityShowcase/   # Community section
 │   ├── css/
 │   │   └── custom.css           # Theme customization
 │   └── pages/
@@ -75,16 +130,16 @@ npm run start
 │   │   └── 12.0.js
 │   └── [other product sidebars]/
 ├── scripts/                     # Development utilities
-
 ├── static/                      # Static assets
 │   └── img/
 │       ├── branding/            # Logos and brand assets
 │       └── product_docs/        # Product images
+├── .vale.ini                    # Vale configuration
 ├── docusaurus.config.js         # Main config
 └── package.json
 ```
 
-## 🛠️ Development
+## Development
 
 ### Available Commands
 
@@ -119,8 +174,6 @@ npm run start
 
 This works with any command (`start`, `start-chok`, `build`) and speeds up development when working on a single product. Available product IDs can be found in `src/config/products.js`.
 
-*Note: you may get a warning when you first run this. This warning doesn't seem to appear again and the site worked as expected*
-
 ### Development Workflow
 
 The centralized system makes development simple:
@@ -130,11 +183,11 @@ The centralized system makes development simple:
 3. **Hot reload** automatically updates the site
 4. **All products and versions** work seamlessly
 
-## ⚙️ Centralized Configuration System
+## Centralized Configuration System
 
 ### Global Product Config: `src/config/products.js`
 
-All product configuration for _building the site_ (e.g. naming) is managed in a single file. Here's how it works:
+All product configuration for building the site, such as naming, is managed in a single file. Here's how it works:
 
 ```javascript
 // Define a product once
@@ -164,11 +217,11 @@ All product configuration for _building the site_ (e.g. naming) is managed in a 
 
 **Automatically generates**:
 
-- ✅ Docusaurus plugin configurations
-- ✅ Homepage product grid
-- ✅ SEO meta tags
-- ✅ URL routing
-- ✅ Version management
+- Docusaurus plugin configurations
+- Homepage product grid
+- SEO meta tags
+- URL routing
+- Version management
 
 ### Configuration Schema
 
@@ -202,9 +255,9 @@ Key CSS variables in `src/css/custom.css`:
 --ifm-font-family-base: 'Inter'; /* Primary font */
 ```
 
-## 📊 Adding New Products & Versions
+## Adding New Products & Versions
 
-### 🆕 Adding a New Product
+### Adding a New Product
 
 The centralized system makes adding products incredibly simple:
 
@@ -256,7 +309,7 @@ export default sidebars;
 
 **That's it!** The new product automatically appears on the homepage with proper routing.
 
-### 📈 Adding a New Version
+### Adding a New Version
 
 **1. Update the product in `src/config/products.js`:**
 
@@ -303,7 +356,7 @@ export default sidebars;
 " > sidebars/[newproduct].js
 ```
 
-### 🏷️ Adding Product Categories
+### Adding Product Categories
 
 Add to the `PRODUCT_CATEGORIES` in `src/config/products.js` for the product category it belongs to:
 
@@ -316,86 +369,15 @@ Add to the `PRODUCT_CATEGORIES` in `src/config/products.js` for the product cate
 }
 ```
 
-## 📝 Content Guidelines
-
-### Example Documentation Structure
-
-```
-docs/productname/
-├── index.md              # Product overview
-├── getting-started/      # Quick start guides
-├── user-guide/          # End user documentation
-├── administration/      # Admin guides
-├── api-reference/       # API documentation
-└── troubleshooting/     # Common issues
-```
-
-### Frontmatter Template
-
-```yaml
----
-title: 'Page Title'
-sidebar_label: 'Sidebar Label'
-description: 'SEO description'
----
-```
-
-### Image Guidelines
-
-- **Location**: `/static/img/product_docs/productname/`
-- **Format**: Use `.webp` for performance
-- **Paths**: Always absolute from project root
-
-```markdown
-![Description](/img/product_docs/productname/image.webp)
-```
-
-## 🚀 Deployment
-
-### Automatic Deployment
+## Deployment
 
 - **Production**: Auto-deploys from `main` branch
 - **Development**: Auto-deploys from `dev` branch
 
-## 🤝 Contributing
+## Contributing
 
-### Simplified Development Workflow
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide — writing standards, linting, workflow, and available tools.
 
-Contributing is easy:
-
-1. **Start development server**:
-
-```bash
-npm run start
-```
-
-2. **Make your changes** to documentation or configuration
-
-3. **Test builds**:
-
-```bash
-npm run build
-```
-
-4. **Submit pull request**
-
-Create a PR to the dev branch, and then main when ready for production.
-
-## 🔍 Testing & Quality Assurance
-
-### Common Testing Scenarios
-
-- ✅ **Homepage loads** with all product categories
-- ✅ **Product pages accessible** from homepage links
-- ✅ **Version badges work** for multi-version products
-
-## 📚 Resources
-
-- **Docusaurus Documentation**: [docusaurus.io](https://docusaurus.io/)
-- **MDX Guide**: [mdxjs.com](https://mdxjs.com/)
-- **React Documentation**: [react.dev](https://react.dev/)
-- **Algolia Documentation**: [algolia.com](https://www.algolia.com/doc/)
-
-## 📄 License
+## License
 
 This documentation site is MIT licensed and open source, and is maintained by Netwrix Corporation.

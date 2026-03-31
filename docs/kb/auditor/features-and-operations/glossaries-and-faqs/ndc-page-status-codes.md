@@ -187,5 +187,5 @@ Below is a list of all page statuses that can be found within Netwrix Data Class
 - Document not found (-404)
 - conceptSQL – Content Filename is an HTTP source (-814)
 - conceptSQL – Missing Configuration Settings (-815)
-- Licencing – Source Type Unlicenced (-998)
+- Licensing – Source Type Unlicensed (-998)
 - Unknown (-999)

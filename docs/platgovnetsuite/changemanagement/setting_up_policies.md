@@ -44,7 +44,7 @@ sidebar_position: 20
 
 ## Set Up a Default Policy
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change/Approval Policy**
+1. Open **Netwrix** > **Change Management Tools** > **Change/Approval Policy**
 2. Edit the **Default Policy** so that it has the following settings:
 
     - **Header**: Everything in the Header should remain the same including the name Default.
@@ -122,7 +122,7 @@ To add new change levels, select **New** or use the **+** next to a field when e
 - **User Roles**: Changes to role assignments on the Change Control. Default: Log Changes Only
 - **User Role Assignment**: Changes to user role assignments on the Change Control. Default: Log
   Changes Only
-- **User Role Related Objects**: Changes related to user role changes on the Change Control.
+- **User Role Related Objects**: Changes related to user role changes on the Change Control. These are the preferred forms listed under the role’s Forms tab and the saved searches under the Searches tab.
   Default: Log Changes Only
 - **NetSuite SetUp and Preferences**: Changes to NetSuite setup objects including accounting lists,
   segments, enabled features and preferences. Default: Log Changes Only
@@ -238,7 +238,7 @@ you can attach the Customization Record to the policy.
 
 To set up additional policies:
 
-1. Open **Strongpoint** > **Change Management Tools** > **Change/Approval Policy** > **New**
+1. Open **Netwrix** > **Change Management Tools** > **Change/Approval Policy** > **New**
 2. Enter the policy information.
 3. Assign the **Change Levels** on the **Change Controls** tab.
 4. Assign the **Approvers** on the **IT Policies** tab.

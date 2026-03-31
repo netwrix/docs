@@ -1,0 +1,43 @@
+@startuml component
+package "Dimension" {
+	class Dimension {
+		ColumnMapping : Int32
+		DisplayName_L1 : String
+		Identifier : String
+		IsExcludedFromRoleMining : Boolean
+		IsHierarchical : Boolean
+		--
+		AccessControlFilters : AccessControlFilter[]
+		EntityType : EntityType
+		ParentProperty : EntityProperty
+		TaskDimension : TaskDimension[]
+		ToResourceNavigationRules : ResourceNavigationRule[]
+	}
+}
+package "AccessControlFilter" {
+	class AccessControlFilter {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "TaskDimension" {
+	class TaskDimension {
+	}
+}
+package "ResourceNavigationRule" {
+	class ResourceNavigationRule {
+	}
+}
+Dimension "0..1" --  "0..*"AccessControlFilter
+Dimension "0..*" --  "1"EntityType
+Dimension "0..*" --  "0..1"EntityProperty
+Dimension "1" --  "0..*"TaskDimension
+Dimension "0..1" --  "0..*"ResourceNavigationRule
+hide empty members
+@enduml

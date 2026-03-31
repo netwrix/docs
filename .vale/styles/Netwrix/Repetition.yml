@@ -1,0 +1,6 @@
+extends: repetition
+message: "Repeated word '%s' detected."
+level: warning
+alpha: true
+tokens:
+  - '[^\s]+'

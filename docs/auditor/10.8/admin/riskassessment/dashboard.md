@@ -27,7 +27,7 @@ displayed with the color indicators in accordance with the level:
 - Medium — yellow
 - Low — green
 
-![dashboard_thumb_0_0](/images/auditor/10.7/admin/riskassessment/dashboard_thumb_0_0.webp)
+![dashboard_thumb_0_0](/images/auditor/10.8/admin/riskassessment/dashboard_thumb_0_0.webp)
 
 After reviewing general risks assessment results in each category, you can drill-down to details
 covered in the underlying report. To do so, double-click the selected metric or use the View Report
@@ -36,7 +36,7 @@ button.
 ## Customizing Metrics for Your Organization
 
 Default threshold values for risk levels are set in accordance with recommendations of
-Netwrixindustry experts, as described in the [How Risk Levels Are Estimated ](/docs/auditor/10.8/admin/riskassessment/levels.md) topic. They
+Netwrix industry experts, as described in the [How Risk Levels Are Estimated ](/docs/auditor/10.8/admin/riskassessment/levels.md) topic. They
 can be, however, easily customized to reflect your organization's internal security policies and
 standards. Follow the steps to customize the metrics.
 
@@ -47,7 +47,7 @@ right click Modify thresholds.
 
 **Step 3 –** Click OK to save the settings and close the dialog.
 
-![modify_thresholds_thumb_0_0](/images/auditor/10.7/admin/riskassessment/modify_thresholds_thumb_0_0.webp)
+![modify_thresholds_thumb_0_0](/images/auditor/10.8/admin/riskassessment/modify_thresholds_thumb_0_0.webp)
 
 Also, for several metrics the Customize risk indicators command is available.
 
@@ -58,6 +58,10 @@ Also, for several metrics the Customize risk indicators command is available.
 | Servers with inappropriate operating systems    | Edit the whitelist of permitted OS versions. Any other OS version will be considered a risk factor.                                                  |
 | Servers with unauthorized antivirus software    | Edit the whitelist of permitted antivirus tools. Any other antivirus will be considered a risk factor.                                               |
 | Administrative group membership sprawl          | Edit the whitelist of permitted accounts that can be the members of local administrative groups. Any other account will be considered a risk factor. |
+
+**Note:** Special characters such as %, *, and ? are not interpreted as wildcards in risk indicator customization and are treated as literal characters. The only exception is the domain portion of
+domain\account entries in Administrative group membership sprawl, where % can be used to represent any domain. In all other cases (for example, account names, file names, operating system names, and antivirus names),
+values must be entered explicitly and are not matched using wildcard patterns.
 
 New settings will be applied/risk level thresholds will be refreshed after the next data collection
 session.

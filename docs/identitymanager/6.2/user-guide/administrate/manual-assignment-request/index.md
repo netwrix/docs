@@ -36,15 +36,15 @@ View the identity's entitlements by proceeding as follows:
 
 1. Access the user directory from the home page.
 
-    ![Home Page - Directory User](/images/identitymanager/saas/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
+    ![Home Page - Directory User](/images/identitymanager/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
 
 2. Click on the user to be checked.
 
-    ![Workflow - User](/images/identitymanager/saas/user-guide/administrate/manual-assignment-request/datamodif_user_v602.webp)
+    ![Workflow - User](/images/identitymanager/user-guide/administrate/manual-assignment-request/datamodif_user_v602.webp)
 
 3. Click on **View Permissions** to access the entitlement list.
 
-    ![View Permissions Tab](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)
+    ![View Permissions Tab](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)
 
 ## Modify Identity's Entitlements
 
@@ -52,16 +52,16 @@ Act on an existing identity by proceeding as follows:
 
 1. Access the user directory from the home page.
 
-    ![Home Page - Directory User](/images/identitymanager/saas/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
+    ![Home Page - Directory User](/images/identitymanager/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
 
 2. Click on the user to be modified.
 
-    ![Workflow - User](/images/identitymanager/saas/user-guide/administrate/manual-assignment-request/datamodif_user_v602.webp)
+    ![Workflow - User](/images/identitymanager/user-guide/administrate/manual-assignment-request/datamodif_user_v602.webp)
 
 3. Click on **Actions** > **Modify Permissions** to launch the workflow for a manual entitlement
    request.
 
-    ![Workflow - Modify Permissions](/images/identitymanager/saas/user-guide/administrate/manual-assignment-request/datamodif_changeuser_v602.webp)
+    ![Workflow - Modify Permissions](/images/identitymanager/user-guide/administrate/manual-assignment-request/datamodif_changeuser_v602.webp)
 
 4. Follow the workflow's instructions to select entitlements and the action to be performed. You
    can:
@@ -88,6 +88,6 @@ Act on an existing identity by proceeding as follows:
 In order to verify the process, check that the change you made in the user's entitlements is
 displayed in their **View Permissions** tab in the directory.
 
-![Home Page - Directory User](/images/identitymanager/saas/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
+![Home Page - Directory User](/images/identitymanager/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
 
-![View Permissions Tab](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)
+![View Permissions Tab](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)

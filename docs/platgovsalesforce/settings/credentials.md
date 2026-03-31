@@ -7,7 +7,7 @@ sidebar_position: 40
 # Credentials
 
 Credentials organizes your user credentials across all environments It is available from **Netwrix
-Dashboard** > **Settings** > **SP Credentials**
+Dashboard** > **Settings** > **App Credentials/Test Connection**
 
 ![credentials_handler](/images/platgovsalesforce/settings/credentials_handler.webp)
 

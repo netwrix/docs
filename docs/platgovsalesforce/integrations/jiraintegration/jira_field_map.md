@@ -32,7 +32,7 @@ where you added the custom fields to get the field names. This example maps the 
 Version** and **Salesforce Version Number** fields, using the fields from the **Details** section in
 Jira.
 
-![Identify fields to map](/images/platgovsalesforce/integrations/field_map_id_fields.webp)
+![Identify fields to map](/images/platgovsalesforce/integrations/jiraRebrandFieldsCompleted.webp)
 
 ### Verify Field Creation
 
@@ -76,7 +76,7 @@ Add the fields to the Page Layouts.
 In Jira, update the details for the fields. This example sets the **Strongpoint Version** field to
 **2.2800** and the **Salesforce Version** to **6.1**.
 
-![Update the values](/images/platgovsalesforce/integrations/field_map_set_values.webp)
+![Update the values](/images/platgovsalesforce/integrations/jiraRebrandFieldsCompleted.webp)
 
 ### Access Mapping Configuration
 
@@ -105,8 +105,8 @@ The Jira API names are required to create the mapping record.
 ### Create Mapping Record
 
 1. Open the App Launcher.
-2. Navigate to **CR CustomFields Mapping**. It is added as a tab on the navigation bar. You can
-   click on the down arrow on the tab and add it to your navigation bar.
+2. Navigate to **CR CustomFields Mapping**. It is added as a tab on the navigation bar. You can
+   click the down arrow on the tab and add it to your navigation bar.
 
     ![Launch CR CustomFields Mapping](/images/platgovsalesforce/integrations/field_map_launcher.webp)
 

@@ -13,7 +13,7 @@ To view a user profile
 - On the Behavior Anomalies assessment dashboard, locate a user and click View Profile next to his
   or her name.
 
-![userprofile_thumb_0_0](/images/auditor/10.7/admin/behavioranomalies/userprofile_thumb_0_0.webp)
+![userprofile_thumb_0_0](/images/auditor/10.8/admin/behavioranomalies/userprofile_thumb_0_0.webp)
 
 The user profile page contains the following sections:
 
@@ -48,7 +48,7 @@ To change an anomaly status
     You can add comments without changing a status. This might be helpful if the anomaly remains
     active for a long period of time and you need even more time to examine it closely.
 
-![changestatus_thumb_0_0](/images/auditor/10.7/admin/behavioranomalies/changestatus_thumb_0_0.webp)
+![changestatus_thumb_0_0](/images/auditor/10.8/admin/behavioranomalies/changestatus_thumb_0_0.webp)
 
 Once the anomaly is reviewed, it disappears from the timeline and chart, and its associated risk
 score is taken from user's total score. The reviewed anomalies supplement the status with the

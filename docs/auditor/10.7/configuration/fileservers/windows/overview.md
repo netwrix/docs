@@ -138,7 +138,7 @@ requirements.
       hidden shares (both default and user-defined). If you want to monitor user-defined hidden
       shares, select the related option in the monitored item settings.
     - Administrative hidden shares like default system root or Windows directory (_ADMIN$_), default
-      drive shares (_D$, E$_), etc. will not be monitored.
+      drive shares (_D$, E$_), etc. will not be monitored, unless explicitly added as a share Item.
 
 **Step 3 –** Review considerations and limitations:
 
@@ -241,8 +241,9 @@ Remember that replication of namespace roots is not supported.
 
 ## File Servers and Antivirus
 
-It is strongly recommended that you add the following executables to the list of exclusions for your
-antivirus:
+It is strongly recommended that you add the following executables to the list of exclusions for 
+your antivirus on the audited targets when 'Enable network traffic compression' is checked 
+in the MP UI configuration:
 
 - C:\Windows\SysWOW64\NwxExeSvc\NwxExeSvc.exe
 - C:\Windows\SysWOW64\NwxExeSvc\NwxEventCollectorAgent.exe

@@ -31,7 +31,7 @@ To get notified about mass objects modification with one Netwrix Alert, configur
 
 For additional information on alerts thresholds, refer to the following article: Alerts — Create Alerts — v10.6.
 
-1. On the Netwrix Auditor home page, click the **Alerts setings** link.
+1. On the Netwrix Auditor home page, click the **Alerts settings** link.
 2. Select the alert you want to be triggered by mass objects removal and click **Edit**.
 3. Navigate to **Thresholds**. When enabled, a single alert will be sent instead of many alerts. This can be helpful when Netwrix Auditor detects many activity records matching the filters you specified.
 4. Configure threshold parameters as needed.

@@ -18,10 +18,9 @@ entire deployment process is maintained.The process is:
 
 ## Create a Change Request
 
-1. Open **Change Requests** > **New Change Request**
-2. Enter a meaningful **Name** and **Change Overview**
-3. Modify the **Change Type** as needed. Add any other supporting information, change sets, package
-   manifests, or customizations.
+1. Open **Change Requests** > **New**
+2. Enter a meaningful **Change Request Name**, select the **Change Request Type** (Between Record Type and customization) and **Change Overview**
+3. Modify the **Change Type** as needed. Add any other supporting information, such as Parent Change Request, customizations or data records.
 4. **Save** the change request.
 5. Click **Submit for Approval**
 
@@ -40,7 +39,7 @@ These steps can be completed after the change request is approved.
     ![Deployment Tool](/images/platgovsalesforce/release_management/deployment_tool.webp)
 
 5. Click **Test Connection** for both environments to ensure your credentials are correct. If your
-   credentials are not correct, you can click on **Save Credentials** and edit.
+   credentials are not correct, you can click **Save Credentials** and edit.
 6. Click **Run Scan** on both environments to ensure the customizations on the change request are up
    to date.
 7. **Save** the Deployment Record.
@@ -63,7 +62,6 @@ These steps can be completed after the deployment record is approved.
 
     This creates a package to:
 
-    - **Check Dependencies**: Use to check what has been referenced.
     - **Validate Customizations**: Use to check the deployment is going to work. It simulates your
       deployment.
     - **Deploy Retrieved Customizations**: Use to deploy your customizations when you are ready to

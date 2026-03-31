@@ -11,7 +11,7 @@ import { NAMIntro, NAMFileSystem } from '@site/src/training/activity-monitor';
 import { NAM, NTP } from '@site/src/training/products';
 
 
-Estimated length: 5.25 hoursS
+Estimated length: 5.25 hours
 
 In this learning path, you will learn how to use  <NTP />.  There are additional courses related to integrating with <NAM /> for NAS devices. It contains the following courses:
 

@@ -1,0 +1,10 @@
+{
+  "label": "Multifactor authentication",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "multifactor_authentication"
+  }
+}

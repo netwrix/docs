@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The header provides the following functions:
 
-![Header](/images/passwordsecure/9.2/configuration/web_applicaiton/operation/header/installation_with_parameters_171-en_679x38.webp)
+![Header](/images/passwordsecure/9.2/configuration/web_application/operation/header/installation_with_parameters_171-en_679x38.webp)
 
 1. Logo
 

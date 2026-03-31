@@ -31,7 +31,7 @@ Follow the steps to add a filter to your search.
 
 **Step 1 –** Click a filter type icon. Enter a value you want to search for.
 
-![Account specification](/images/auditor/10.7/admin/search/add.webp)
+![Account specification](/images/auditor/10.8/admin/search/add.webp)
 
 Alternatively, you can type a value directly into the Search field.
 
@@ -40,7 +40,7 @@ Alternatively, you can type a value directly into the Search field.
   To search across all columns in the results view (everywhere—Who, What, Where, Action, etc.),
   leave it as is.
 
-![Filter](/images/auditor/10.7/admin/search/addsuggestions.webp)
+![Filter](/images/auditor/10.8/admin/search/addsuggestions.webp)
 
 **Step 2 –** Click Search to apply your filters. By default, all entries that contain the filter
 value are shown.
@@ -49,7 +49,7 @@ value are shown.
 
 | To...         | Do...                                                                                                                                                                                                                                                                                                                    |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Modify filter | Double-click the filter and type a new value. ![Filter new value](/images/auditor/10.7/admin/search/search_modify_filter.webp) If you need to modify the When filter, delete it and add a new value, or navigate to the Advanced mode (Simple mode does not support its modification). |
+| Modify filter | Double-click the filter and type a new value. ![Filter new value](/images/auditor/10.8/admin/search/search_modify_filter.webp) If you need to modify the When filter, delete it and add a new value, or navigate to the Advanced mode (Simple mode does not support its modification). |
 | Remove filter | Click the **Close** icon next to it.                                                                                                                                                                                                                                                                                     |
 
 ## Exporting and Importing Filters

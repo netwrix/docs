@@ -1,0 +1,10 @@
+{
+  "label": "Least Privilege Manager",
+  "position": 5,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

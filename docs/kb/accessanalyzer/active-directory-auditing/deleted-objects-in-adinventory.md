@@ -14,6 +14,7 @@ keywords:
   - Active Directory
   - tombstone
   - USNChanged
+  - Access Analyzer
 products:
   - access-analyzer
 sidebar_label: Deleted Objects in ADInventory
@@ -77,7 +78,7 @@ By default, builtin\administrator has access to this container. So, by default, 
 ## Displaying the Deleted Objects container
 When Active Directory objects are deleted, they are placed in the Deleted Objects container. By default, the `CN=Deleted Objects` container is not displayed. You can use the `Ldp.exe` administration tool in Active Directory Domain Services (AD DS) to display the Deleted Objects container.
 
-**Product:** Netwrix Auditor
+**Product:** Netwrix Access Analyzer
 **Module:** SA - DC - ADInventory
 **Versions:** all
 **Legacy Article ID:** 1193

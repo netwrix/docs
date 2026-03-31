@@ -1,14 +1,14 @@
 ---
 description: >-
   Explains how to remove audit data for a decommissioned or excluded domain by
-  using the Drop Domain task in Netwrix Auditor to delete the related data from
+  using the Drop Domain task in Netwrix Access Analyzer to delete the related data from
   your SQL Server.
 keywords:
   - drop domain
   - domain audit
   - AD inventory
   - ADINVENTORY
-  - Netwrix Auditor
+  - Netwrix Access Analyzer
   - SQL Server
   - remove domain data
   - create job
@@ -29,7 +29,7 @@ knowledge_article_id: kA0Qk0000000R3RKAU
 
 ## Overview
 
-In case a domain was decommissioned or excluded from the monitoring scope, the Netwrix Auditor reports may still contain audit data for the domain. This article lists the steps to implement the **Drop Domain** task to remove the related domain data from your SQL Server.
+In case a domain was decommissioned or excluded from the monitoring scope, the Netwrix Access Analyzer reports may still contain audit data for the domain. This article lists the steps to implement the **Drop Domain** task to remove the related domain data from your SQL Server.
 
 ## Instructions
 

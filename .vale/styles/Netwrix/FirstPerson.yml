@@ -1,0 +1,12 @@
+extends: existence
+message: "Avoid first person singular '%s'. Rewrite without 'I', 'me', 'my', 'mine', or contractions of 'I'."
+level: warning
+ignorecase: false
+tokens:
+  - '\bI\b'
+  - '\bme\b'
+  - '\bmy\b'
+  - '\bI''m\b'
+  - '\bI''ve\b'
+  - '\bI''ll\b'
+  - '\bI''d\b'

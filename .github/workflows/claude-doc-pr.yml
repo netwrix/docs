@@ -1,0 +1,168 @@
+name: Doc PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - dev
+    paths:
+      - 'docs/**/*.md'
+      - '!docs/**/CLAUDE.md'
+      - '!docs/**/SKILL.md'
+      - '!docs/kb/**'
+
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: doc-pr-${{ github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  doc-review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+
+      - name: Get changed markdown files
+        id: changed-files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          CHANGED_MD_FILES=$(gh pr diff "$PR_NUMBER" --name-only | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' | grep -v '^docs/kb/' || true)
+          if [ -z "$CHANGED_MD_FILES" ]; then
+            echo "No docs markdown files changed"
+            echo "files=" >> "$GITHUB_OUTPUT"
+            echo "count=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changed markdown files:"
+            echo "$CHANGED_MD_FILES"
+            FILES_LIST=$(echo "$CHANGED_MD_FILES" | tr '\n' ',' | sed 's/,$//')
+            echo "files=$FILES_LIST" >> "$GITHUB_OUTPUT"
+            echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Delete previous bot comments
+        if: steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          # Delete previous review comments
+          COMMENT_IDS=$(gh api repos/${{ github.repository }}/issues/${PR_NUMBER}/comments \
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("Documentation PR Review"))) | .id] | .[]' 2>/dev/null || true)
+          for ID in $COMMENT_IDS; do
+            gh api repos/${{ github.repository }}/issues/comments/${ID} -X DELETE 2>/dev/null || true
+          done
+
+      - name: Get PR diff
+        id: diff
+        if: steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr diff ${{ github.event.pull_request.number }} > /tmp/pr-diff.txt 2>&1 || true
+          echo "Diff saved to /tmp/pr-diff.txt"
+          wc -l /tmp/pr-diff.txt
+
+      - name: Run editorial review
+        if: steps.changed-files.outputs.count > 0
+        uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DOC_PR_FILES: ${{ steps.changed-files.outputs.files }}
+          DOC_PR_NUMBER: ${{ github.event.pull_request.number }}
+          DOC_PR_REPO: ${{ github.repository }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            /doc-pr
+
+            The PR diff is already saved at /tmp/pr-diff.txt — read it instead of running gh pr diff.
+          claude_args: '--allowedTools "Bash,Read,Write,Glob,Grep,Skill(doc-pr)"'
+
+      - name: Verify review was posted
+        if: steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          COMMENTS=$(gh api repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
+            --jq '[.[] | select(.body | contains("Documentation PR Review"))] | length' 2>/dev/null || echo "0")
+          echo "Review comments found: $COMMENTS"
+          if [ "$COMMENTS" = "0" ]; then
+            echo "::warning::No review comment was posted by Claude"
+          fi
+
+  doc-followup:
+    if: >-
+      github.event_name == 'issue_comment' &&
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, '@claude') &&
+      !startsWith(github.event.comment.user.login, 'github-actions')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - name: Get PR info
+        id: pr-info
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER="${{ github.event.issue.number }}"
+          PR_DATA=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json headRefName,baseRefName,isCrossRepository)
+          BASE_BRANCH=$(echo "$PR_DATA" | jq -r '.baseRefName')
+          echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "branch=$(echo "$PR_DATA" | jq -r '.headRefName')" >> "$GITHUB_OUTPUT"
+          echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
+          # Check target branch using the shell variable to avoid
+          # re-interpolating the output via expressions (code injection risk).
+          if [ "$BASE_BRANCH" = "dev" ]; then
+            echo "targets_dev=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "targets_dev=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Post fork notice
+        if: steps.pr-info.outputs.is_fork == 'true' && steps.pr-info.outputs.targets_dev == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} \
+            --body "This PR is from a fork. Automated fixes cannot be pushed directly. I can still review and suggest changes — apply them manually from the comments."
+
+      - name: Checkout repository
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.pr-info.outputs.branch }}
+          fetch-depth: 0
+
+      - name: Handle @claude request
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
+          claude_args: '--max-turns 50 --allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(doc-help)"'

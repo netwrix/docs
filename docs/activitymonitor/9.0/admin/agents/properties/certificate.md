@@ -104,6 +104,10 @@ If your deployment includes multiple Console instances, each instance must be up
 For automated deployments, the agent executable provides a Command-Line Interface offering equivalent functionality to the Console. 
 All CLI commands return a non-zero exit code upon failure and output error details in JSON format. 
 
+Before running any commands, open Command Prompt and change to the agent installation directory (by default _C:\Program Files\Netwrix\Activity Monitor\Agent_). Commands must be executed using the agent executable **ConfigurationAgent.Grpc.Host.exe**. 
+
+For example: `.\ConfigurationAgent.Grpc.Host.exe <command>`
+
 ### **Get current certificate**
 
 Command: `certificate-get` - Prints the current agent’s certificate.

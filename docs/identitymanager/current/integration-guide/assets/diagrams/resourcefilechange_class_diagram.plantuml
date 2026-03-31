@@ -1,0 +1,13 @@
+@startuml component
+package "ResourceFileChange" {
+	class ResourceFileChange {
+		ChangeOperation : Int32
+		Data : Bytes
+		JobInstance : Int64
+		Property : Int64
+		Resource : Int64
+		ResourceFile : Int64
+	}
+}
+hide empty members
+@enduml

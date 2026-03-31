@@ -44,7 +44,7 @@ The affected domain controller name cannot be resolved. Refer to the following l
 - Misconfigured ports for the Logon Activity monitoring.
 - Misconfigured audit policies.
 - Misconfigured data collecting account permissions.
-- The name of the affected domain contoller has been changed.
+- The name of the affected domain controller has been changed.
 
 ## Resolutions
 

@@ -96,7 +96,7 @@ additional information.
 Auditor supports monitoring the following device versions:
 
 - Clustered-Mode
-    - 9.0 – 9.16
+    - 9.0 – 9.17
     - 8.3
 
 > **NOTE:** Only CIFS configuration is supported.
@@ -356,6 +356,7 @@ See the [SharePoint](/docs/auditor/10.8/configuration/sharepoint/overview.md) to
 
 Auditor supports monitoring the following versions:
 
+- Microsoft SQL Server 2025
 - Microsoft SQL Server 2022
 - Microsoft SQL Server 2019
 - Microsoft SQL Server 2017

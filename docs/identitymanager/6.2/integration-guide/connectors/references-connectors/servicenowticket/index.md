@@ -10,7 +10,7 @@ This connector opens tickets in [ServiceNow](https://www.servicenow.com/) for ma
 
 This page is about [ServiceNow Ticket](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/servicenow-ticket/index.md).
 
-![Package: Ticket/ServiceNow](/images/identitymanager/saas/integration-guide/connectors/references-connectors/servicenowticket/packages_servicenowticket_v603.webp)
+![Package: Ticket/ServiceNow](/images/identitymanager/integration-guide/connectors/references-connectors/servicenowticket/packages_servicenowticket_v603.webp)
 
 ## Overview
 

@@ -48,7 +48,6 @@ A product version in its **limited support** phase is eligible to receive suppor
 
 - Does not receive new feature updates
 - May, at Netwrix’s discretion, receive bug fixes for critical defects, such as those that cause an outage
-- Receives security updates for high and critical severity vulnerabilities
 - Receives best-effort support from the Netwrix technical support team
 - Is eligible to receive assistance from the Netwrix professional services team, including support for existing customizations
 - May remain available for download in the Netwrix Customer Portal, but is ineligible to receive support for new installations

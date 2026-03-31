@@ -1,0 +1,8 @@
+extends: existence
+message: "Avoid Latin abbreviation '%s'. Use the English equivalent instead: 'for example', 'that is', or 'and so on'."
+level: warning
+ignorecase: false
+tokens:
+  - '\be\.g\.'
+  - '\bi\.e\.'
+  - '\betc\.'

@@ -16,13 +16,13 @@ This page is about:
 - Messaging/Slack
 - PAM/CyberArk
 
-![Package: Custom/SCIM](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/packages_scim_v603.webp)
+![Package: Custom/SCIM](/images/identitymanager/integration-guide/connectors/references-connectors/scim/packages_scim_v603.webp)
 
-![Package: CRM/Salesforce](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/packages_salesforce_v603.webp)
+![Package: CRM/Salesforce](/images/identitymanager/integration-guide/connectors/references-connectors/scim/packages_salesforce_v603.webp)
 
-![Package: Messaging/Slack](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/packages_slack_v603.webp)
+![Package: Messaging/Slack](/images/identitymanager/integration-guide/connectors/references-connectors/scim/packages_slack_v603.webp)
 
-![Package: PAM/CyberArk](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/packages_cyberark_v603.webp)
+![Package: PAM/CyberArk](/images/identitymanager/integration-guide/connectors/references-connectors/scim/packages_cyberark_v603.webp)
 
 ## Overview
 
@@ -62,15 +62,15 @@ To connect to the Salesforce application do the following:
 
 **Step 1 –** Log into Salesforce using an admin account.
 
-![salesforce-advancesetup](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-advancesetup.webp)
+![salesforce-advancesetup](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-advancesetup.webp)
 
 **Step 2 –** Go to **Advanced Setup**.
 
-![salesforce-newconnectedapp](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-newconnectedapp.webp)
+![salesforce-newconnectedapp](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-newconnectedapp.webp)
 
 **Step 3 –** Go to **App Manager** and **Create a Connected App**.
 
-![salesforce-enableoauth](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-enableoauth.webp)
+![salesforce-enableoauth](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-enableoauth.webp)
 
 **Step 4 –** Fill in the details of the application: Application Name, API Name, Contact Email,
 select **Enable OAuth Settings**, and complete the mandatory information as callback URL and OAuth
@@ -78,15 +78,15 @@ Scopes.
 
 **Step 5 –** Save the Application.
 
-![salesforce-manageconnectedapps](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-manageconnectedapps.webp)
+![salesforce-manageconnectedapps](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-manageconnectedapps.webp)
 
 **Step 6 –** Go to **Manage Connected Apps** and click on the newly created application.
 
-![salesforce-manageconsumerdetails](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-manageconsumerdetails.webp)
+![salesforce-manageconsumerdetails](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-manageconsumerdetails.webp)
 
 **Step 7 –** Click on **Manage Consumer Details**.
 
-![salesforce-consumerkey](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-consumerkey.webp)
+![salesforce-consumerkey](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-consumerkey.webp)
 
 **Step 8 –** Copy the Consumer Key and Consumer Secret in your Keypass.
 
@@ -96,11 +96,11 @@ To enable the OAuth authentication do the following:
 
 **Step 1 –** Log into Salesforce using an admin account.
 
-![salesforce-advancesetup](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-advancesetup.webp)
+![salesforce-advancesetup](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-advancesetup.webp)
 
 **Step 2 –** Go to **Advanced Setup**.
 
-![oauthauthentication](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/oauthauthentication.webp)
+![oauthauthentication](/images/identitymanager/integration-guide/connectors/references-connectors/scim/oauthauthentication.webp)
 
 **Step 3 –** Go to **OAuth** and **OpenID Connect Settings** in the **Identity** drop-down menu,
 enable the option to **Allow OAuth Username-Password Flows**.
@@ -111,15 +111,15 @@ To reset the user token do the following:
 
 **Step 1 –** Log into Salesforce using an admin account.
 
-![salesforce-usertoken-settings](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-usertoken-settings.webp)
+![salesforce-usertoken-settings](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-usertoken-settings.webp)
 
 **Step 2 –** Click on **Settings** under the profile details.
 
-![salesforce-resetseuritytoken](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-resetseuritytoken.webp)
+![salesforce-resetseuritytoken](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-resetseuritytoken.webp)
 
 **Step 3 –** Click on **Reset My Security Token**.
 
-![salesforce-checkemail](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-checkemail.webp)
+![salesforce-checkemail](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-checkemail.webp)
 
 **Step 4 –** An email containing the new token will be sent.
 
@@ -129,15 +129,15 @@ To configure the Salesforce connection do the following:
 
 **Step 1 –** Log into Identity Manager using an admin account.
 
-![salesforce-connector](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-connector.webp)
+![salesforce-connector](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-connector.webp)
 
 **Step 2 –** Create a new Salesforce connector.
 
-![salesforce-connection](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-connection.webp)
+![salesforce-connection](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-connection.webp)
 
 **Step 3 –** Add a new Salesforce connection.
 
-![salesforce-agent-settings](/images/identitymanager/saas/integration-guide/connectors/references-connectors/scim/salesforce-agent-settings.webp)
+![salesforce-agent-settings](/images/identitymanager/integration-guide/connectors/references-connectors/scim/salesforce-agent-settings.webp)
 
 **Step 4 –** Fill the fields in the **Connection Settings** and choose the **Filter**.
 

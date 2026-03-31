@@ -58,7 +58,7 @@ This dashboard can assist with troubleshooting in instances where data may not b
 
 ### Long Term Archive
 
-This simple, yet effective, tile gives administrators insight on Long Term Archive storage usage. You may hear Technical Support refer to this as the "LTA". If you notice rapid growth and you have not placed the Long Term Archive on a drive independent of the System Drive, please follow the steps [here](https://docs.netwrix.com/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-move-long-term-archive-to-a-new-location) to migrate your Long Term Archive.
+This simple, yet effective, tile gives administrators insight on Long Term Archive storage usage. You may hear Technical Support refer to this as the "LTA". If you notice rapid growth and you have not placed the Long Term Archive on a drive independent of the System Drive, please follow the steps [here](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-move-long-term-archive-to-a-new-location) to migrate your Long Term Archive.
 
 ### Working Folder
 

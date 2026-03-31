@@ -1,0 +1,15 @@
+extends: existence
+message: "Avoid '%s'. Rewrite with a direct imperative or active construction, e.g. 'Use X to ...' or 'With X, you can ...'."
+level: warning
+ignorecase: true
+tokens:
+  - '\ballows you to\b'
+  - '\ballow you to\b'
+  - '\ballows users to\b'
+  - '\ballow users to\b'
+  - '\benables you to\b'
+  - '\benable you to\b'
+  - '\bpermits you to\b'
+  - '\benables users to\b'
+  - '\benable users to\b'
+  - '\bpermits users to\b'

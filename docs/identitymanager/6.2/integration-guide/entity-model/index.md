@@ -214,7 +214,7 @@ We need to transform the input data, from the export, into something readable by
 Manager and, when writing to the external system, transform Identity Manager's data back into
 something readable by the external system.
 
-![Export and Fulfill Data transformation](/images/identitymanager/saas/integration-guide/connectors/entitypropertymapping-format/entitypropertymapping-format-flowchart.webp)
+![Export and Fulfill Data transformation](/images/identitymanager/integration-guide/connectors/entitypropertymapping-format/entitypropertymapping-format-flowchart.webp)
 
 The format used in the external system can be provided through the
 [Entity Type Mapping](/docs/identitymanager/6.2/integration-guide/toolkit/xml-configuration/connectors/entitytypemapping/index.md) using

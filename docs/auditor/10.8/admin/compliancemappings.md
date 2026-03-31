@@ -13,4 +13,4 @@ opens the page on the Netwrix website. Here you can review a brief description o
 standard supported by the product and download E book containing detailed requirements for the
 standards.
 
-![compliance_mappings](/images/auditor/10.7/admin/compliance_mappings.webp)
+![compliance_mappings](/images/auditor/10.8/admin/compliance_mappings.webp)

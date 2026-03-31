@@ -40,7 +40,7 @@ Exception has been thrown by the target of an invocation.
 
 ## Resolution
 
-1. Review the TLS protocol versions enabled in your environment − refer to the following article for additional information: Сonnection Issue when TLS 1.2 Is Required.
+1. Review the TLS protocol versions enabled in your environment − refer to the following article for additional information: Connection Issue when TLS 1.2 Is Required.
 2. Uncheck the **Use the Implicit SSL connection mode** checkbox in the **Notifications** tab in Netwrix Password Reset (PEN), and verify the SMTP settings.
 3. Verify the SMTP settings − make sure the specified port corresponds to the server port. Learn more in [How to set up a multifunction device or application to send email using Microsoft 365 or Office 365 ⸱ Microsoft 🫝](https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365).
 4. Review the list of ports and protocols required for Netwrix Password Reset (PEN) to operate − refer to the following article for additional information: Tools − Netwrix Password Reset ⸱ v10.6.
@@ -48,6 +48,6 @@ Exception has been thrown by the target of an invocation.
 
 ## Related articles
 
-- Сonnection Issue when TLS 1.2 Is Required
+- Connection Issue when TLS 1.2 Is Required
 - [How to set up a multifunction device or application to send email using Microsoft 365 or Office 365 ⸱ Microsoft 🫝](https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
 - Tools − Netwrix Password Reset ⸱ v10.6

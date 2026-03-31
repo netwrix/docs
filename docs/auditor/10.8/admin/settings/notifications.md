@@ -61,7 +61,7 @@ Follow the steps to create a group.
 
 **Step 1 –** Log in to the Exchange admin center with your administrator account.
 
-**Step 2 –** Under Groupsclick on the **Mail-enabled security** tab.
+**Step 2 –** Under Groups click on the **Mail-enabled security** tab.
 
 **Step 3 –** Click **Add a group**.
 
@@ -80,7 +80,7 @@ the group.
 
 Follow the steps to add emails to group.
 
-**Step 1 –** In the Exchange admin cente go to Groupsand click on the [Mail-enabled security] tab.
+**Step 1 –** In the Exchange admin center go to Groups and click on the [Mail-enabled security] tab.
 
 **Step 2 –** Click on the group you have created and add emails you want to allow APIs to access.
 
@@ -128,7 +128,7 @@ and click Modify to adjust them if necessary.
 | User name                                               | Enter a user name for the SMTP authentication.                                                                                                                                                                                                                                                |
 | Password                                                | Enter a password for SMTP authentication.                                                                                                                                                                                                                                                     |
 | Use Secure Sockets Layer encrypted connection (SSL/TLS) | Select this checkbox if your SMTP server requires SSL to be enabled.                                                                                                                                                                                                                          |
-| Use implicit SSL anthentification                       | Select this checkbox if the implicit SSL mode is used, which means that an SSL connection is established before any meaningful data is sent.                                                                                                                                                  |
+| Use implicit SSL authentication                       | Select this checkbox if the implicit SSL mode is used, which means that an SSL connection is established before any meaningful data is sent.                                                                                                                                                  |
 | Enforce certificate validation to ensure security       | Select this checkbox if you want to verify security certificate on every email transmission. The option is not available for auditing User Activity as well Netwrix Auditor tools.                                                                                                            |
 
 You can configure Activity Summary frequency, format and delivery time for each monitoring plan

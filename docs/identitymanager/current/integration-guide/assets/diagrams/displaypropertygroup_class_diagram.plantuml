@@ -1,0 +1,16 @@
+@startuml component
+package "DisplayPropertyGroup" {
+	class DisplayPropertyGroup {
+		DisplayName_L1 : String
+		Identifier : String
+		--
+		Properties : DisplayEntityProperty[]
+	}
+}
+package "DisplayEntityProperty" {
+	class DisplayEntityProperty {
+	}
+}
+DisplayPropertyGroup "0..1" --  "0..*"DisplayEntityProperty
+hide empty members
+@enduml

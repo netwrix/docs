@@ -1,0 +1,30 @@
+@startuml component
+package "EntityAssociationMapping" {
+	class EntityAssociationMapping {
+		C0 : String
+		Column1 : String
+		Column2 : String
+		ConnectionTable : String
+		MaxPercentageDeletedLines : Int32
+		MaxPercentageInsertedLines : Int32
+		MaximumDeletedLines : Int32
+		MaximumInsertedLines : Int32
+		--
+		Connector : Connector
+		EntityPropertyMapping1 : EntityProperty
+		EntityPropertyMapping2 : EntityProperty
+	}
+}
+package "Connector" {
+	class Connector {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+EntityAssociationMapping "0..*" --  "1"Connector
+EntityAssociationMapping "0..*" --  "1"EntityProperty
+EntityAssociationMapping "0..*" --  "1"EntityProperty
+hide empty members
+@enduml

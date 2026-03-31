@@ -12,7 +12,6 @@ keywords:
   - default apps
   - Windows Server
   - Netwrix Access Analyzer
-  - Netwrix Auditor
   - AllData
   - file association
 products:
@@ -55,7 +54,7 @@ To resolve the issue, associate the `.csv` file extension with Notepad (or anoth
 - Files may be associated with your choice of program, not just Notepad.
 
 ## Product
-- Product: AIC/Netwrix Auditor  
+- Product: Netwrix Access Analyzer  
 - Module: Netwrix Access Analyzer - Reporting  
 - Versions: All  
 - Legacy Article ID: 2394

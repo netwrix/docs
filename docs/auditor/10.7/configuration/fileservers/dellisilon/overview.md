@@ -26,7 +26,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
   reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
   configure them manually:
 
-    - CIFS Network Protocol support is required.
+    - SMB Network Protocol support is required.
     - Create a shared directory _/ifs/.ifsvar/audit/_ on your cluster.
 
         Use SMB (CIFS) protocol for sharing.
