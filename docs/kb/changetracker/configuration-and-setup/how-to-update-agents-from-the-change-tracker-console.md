@@ -311,6 +311,5 @@ A: Navigate to Settings > Agents & Devices. The version is displayed in the Devi
 
 - [Agent Updates (Official Documentation)](/docs/changetracker/8_0/admin/settingstab/agentsanddevices/agentupdates)
 - [Device Groups](/docs/changetracker/8_0/admin/settingstab/devicegroups)
-- [Gen 7 Agent Deployment Options](/docs/changetracker/kb/gen-7-agent-deployment-options)
 - [Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
 - [Component Release History](/docs/changetracker/8_0/componentreleases)

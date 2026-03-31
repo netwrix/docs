@@ -98,7 +98,6 @@ For a typical Change Tracker deployment, ensure the following firewall rules are
 
 ## Related Links
 
-- [Gen 7 Agent Deployment Options](/docs/changetracker/kb/gen-7-agent-deployment-options)
 - [Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
 - [Gen 7 Agent Requirements - Windows](/docs/changetracker/8_0/requirements/gen7agentwindows)
 - [Gen 7 Agent Requirements - Linux](/docs/changetracker/8_0/requirements/gen7agentlinux)
