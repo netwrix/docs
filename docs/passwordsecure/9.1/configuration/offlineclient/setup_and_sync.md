@@ -22,9 +22,9 @@ initially created.
 ![Properties](/images/passwordsecure/9.1/configuration/offlineclient/setup/installation_with_parameters_265-en.webp)
 
 You will find further information on this subject in the
-sections:[ Creating databases](/docs/passwordsecure/9.1/configuration/servermanger/creating_databases.md)
+sections:[ Creating databases](/docs/passwordsecure/9.1/configuration/servermanager/creating_databases.md)
 and
-[Managing databases](/docs/passwordsecure/9.1/configuration/servermanger/managingdatabases/managing_databases.md)
+[Managing databases](/docs/passwordsecure/9.1/configuration/servermanager/managingdatabases/managing_databases.md)
 
 **User rights**
 

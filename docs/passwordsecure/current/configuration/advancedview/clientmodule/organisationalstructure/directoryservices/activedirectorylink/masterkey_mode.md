@@ -8,7 +8,7 @@ sidebar_position: 20
 
 ## Maximum convenience
 
-Master Key Mode (MKM) is designed to provide a high level of convenience by using a directory service such as **Active Directory** as the authoritative system, allowing not only users, organisational units, and roles to be imported but also maintaining their relationships and affiliations through regular synchronization. At the same time, MKM is a security-sensitive mode of operation, as the encryption key must be available on the Password Secure server. For this reason, access to the server should be strictly controlled, and additional safeguards — such as the use of a [**Hardware Security Module** (HSM)](/docs/passwordsecure/current/configuration/servermanger/managingdatabases/databasesettings/hsm_connection) for protecting the master key — are strongly recommended to reduce risk.
+Master Key Mode (MKM) is designed to provide a high level of convenience by using a directory service such as **Active Directory** as the authoritative system, allowing not only users, organisational units, and roles to be imported but also maintaining their relationships and affiliations through regular synchronization. At the same time, MKM is a security-sensitive mode of operation, as the encryption key must be available on the Password Secure server. For this reason, access to the server should be strictly controlled, and additional safeguards — such as the use of a [**Hardware Security Module** (HSM)](/docs/passwordsecure/current/configuration/servermanager/managingdatabases/databasesettings/hsm_connection) for protecting the master key — are strongly recommended to reduce risk.
 
 ## Relevant rights
 
@@ -75,7 +75,7 @@ connection is not possible, deactivate SecureSocketsLayer and try again.
 **CAUTION:** The master key is added in form of a certificate. It is **essential to back up** the
 generated certificate! If the database is being moved to another server, the certificate also needs
 to be transferred! Further information can be found in the section
-[Certificates](/docs/passwordsecure/current/configuration/servermanger/certificates/certificates.md).
+[Certificates](/docs/passwordsecure/current/configuration/servermanager/certificates/certificates.md).
 
 NOTE: You can now use the option to integrate a RADIUS server. Read more in
 [RADIUS authentication](/docs/passwordsecure/current/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/radius_authentication.md).
@@ -179,7 +179,7 @@ roles already exist in Netwrix Password Secure or have also been imported.
 Users who are imported using this mode can log in with the domain password. Please note that no
 domain needs to be specified when logging in. Of course, the login process can also be supplemented
 with
-[Multifactor Authentication](/docs/passwordsecure/current/configuration/servermanger/managingdatabases/databasesettings/multifactor_authentication_ac.md).
+[Multifactor Authentication](/docs/passwordsecure/current/configuration/servermanager/managingdatabases/databasesettings/multifactor_authentication_ac.md).
 
 NOTE: Logging on using Kerberos works "automatically". As long as the corresponding Kerberos server
 is accessible, the users in the domain authenticate themselves via Kerberos using their domain
