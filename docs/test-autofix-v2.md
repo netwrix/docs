@@ -4,11 +4,14 @@
 
 Use the monitoring system to configure alert policies for your network. This feature requires proper credentials. To log in to your account, ensure you have administrator privileges.
 
-See the admin guide for details on configuring alert policies.
+See [Netwrix Auditor Administration Guide](link) for details on configuring alert policies.
 
 ## Prerequisites
 
-check the checkbox next to each item. Whether you have completed the initial setup, you can proceed. Before configuring the agent, use the dropdown menu to select your environment.
+Before you begin, verify that you have:
+
+- Completed the initial setup
+- Administrator credentials for the target environment
 
 :::note
 The configuration files must be saved before proceeding. This feature is only available for on-premises deployments.
@@ -20,32 +23,34 @@ Install the monitoring agent on your server.
 
 1. Click **Download** to retrieve the installer.
 
-2. After you download the installer, navigate to the setup directory and set up the agent.
+2. After you download the installer, navigate to `C:\Netwrix\Setup\` and run `setup.exe`.
 
-3. The installer lets you deploy across multiple servers.
+3. Select the servers to deploy the agent to.
 
 4. If you want to customize the installation, select the options from the dropdown list, and click **Advanced**.
 
-This is a critical step. Don't skip it.
+   :::warning
+   Complete step 4 before proceeding to configuration. Skipping this step may result in an incomplete installation.
+   :::
 
 ## Configuration
 
-Configure the agent before deploying to production. The agent lets you monitor file changes, registry modifications and network connections.
+Use the dropdown menu to select your environment. Configure the agent before deploying to production. The agent lets you monitor file changes, registry modifications, and network connections.
 
-The agent uses a lightweight service that can scan endpoints without impacting performance. To ensure accurate results, configure exclusions.
+The agent uses a lightweight service that can scan endpoints without impacting performance. To ensure accurate results, configure exclusions. See [Configure exclusions](link) for instructions.
 
-Use this tool to detect unauthorized changes to critical systems.
+Use Netwrix Auditor to detect unauthorized changes to critical systems.
 
 ### Setting Up Alerts
 
-After you configure the alert thresholds, the system will automatically begin monitoring. You can set up notifications by following these instructions.
+After you configure the alert thresholds, the system will automatically begin monitoring. To set up notifications, see [Configure notifications](link).
 
-The administrator completed the configuration before the deployment. See the following instructions for details on alert routing.
+Complete the configuration before deploying to production. See [Configure alert routing](link) for details on alert routing.
 
 This is a comprehensive alerting framework. See [alert configuration details](alerts.md).
 
 ## Troubleshooting
 
-If you encounter issues, review the log files. This solution does not resolve every problem, but it addresses most common problems.
+If you encounter issues, review the log files at `C:\ProgramData\Netwrix\Logs\`. This solution does not resolve every problem, but it addresses most common problems. For additional support, contact [Netwrix Support](link).
 
-The product uses advanced technology to deliver significant improvements in security operations. The logs are in the directory shown above.
+Netwrix Auditor captures and correlates event data across file systems, Active Directory, and network devices.
