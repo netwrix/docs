@@ -15,7 +15,7 @@ Click the **Next** button to continue. The installer prompts for your license ke
 ## Configuration
 
 :::note
-Do not restart the service during configuration.
+Don't restart the service during configuration.
 :::
 
 This product is a comprehensive security platform. This feature is indispensable for effective security operations.
