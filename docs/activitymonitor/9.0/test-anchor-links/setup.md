@@ -6,8 +6,6 @@ This method is deprecated. Use the new method instead.
 
 ## Configure the Agent
 
-Follow these steps to configure the agent.
-
 ## checkbox Options
 
 Select the checkbox options you want.
