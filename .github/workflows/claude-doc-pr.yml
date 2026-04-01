@@ -168,17 +168,27 @@ jobs:
             /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
           claude_args: '--max-turns 50 --allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(doc-help)"'
 
-      - name: Push with VALE_TOKEN to trigger workflows
+      - name: Trigger workflows via VALE_TOKEN push
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         env:
           VALE_TOKEN: ${{ secrets.VALE_TOKEN }}
         run: |
-          # Re-configure git credentials with VALE_TOKEN (claude-code-action
-          # overrides credentials with GITHUB_TOKEN, which doesn't trigger workflows)
+          # claude-code-action already pushed with GITHUB_TOKEN, which doesn't
+          # trigger workflows. If Claude made commits, push an empty commit
+          # with VALE_TOKEN to produce a new SHA that triggers build-and-deploy.
+          BRANCH="${{ steps.pr-info.outputs.branch }}"
           git remote set-url origin "https://x-access-token:${VALE_TOKEN}@github.com/${{ github.repository }}.git"
-          if [ "$(git rev-list @{u}..HEAD --count 2>/dev/null)" -gt 0 ]; then
-            echo "Pushing $(git rev-list @{u}..HEAD --count) commit(s) with VALE_TOKEN..."
-            git push
+          git fetch origin "$BRANCH"
+          git reset --hard "origin/$BRANCH"
+
+          # Check if Claude actually pushed new commits
+          LATEST_AUTHOR=$(git log -1 --format='%an')
+          if [ "$LATEST_AUTHOR" = "claude[bot]" ]; then
+            echo "Claude pushed editorial fixes — triggering build..."
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit --allow-empty -m "ci: trigger build after editorial fixes"
+            git push origin "HEAD:$BRANCH"
           else
-            echo "No new commits to push"
+            echo "No Claude commits found — skipping"
           fi
