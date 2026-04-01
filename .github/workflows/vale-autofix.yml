@@ -242,7 +242,12 @@ jobs:
 
       - name: Push all fixes
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
+        env:
+          VALE_TOKEN: ${{ secrets.VALE_TOKEN }}
         run: |
+          # Re-configure git credentials with VALE_TOKEN (claude-code-action
+          # overrides credentials with GITHUB_TOKEN, which doesn't trigger workflows)
+          git remote set-url origin "https://x-access-token:${VALE_TOKEN}@github.com/${{ github.repository }}.git"
           if [ "$(git rev-list @{u}..HEAD --count 2>/dev/null)" -gt 0 ]; then
             echo "Pushing $(git rev-list @{u}..HEAD --count) commit(s)..."
             git push
