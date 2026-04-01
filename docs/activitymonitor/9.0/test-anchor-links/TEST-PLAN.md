@@ -44,3 +44,14 @@ Push these files to a PR targeting dev. The vale-autofix workflow should:
 - **But:** The heading text may change but the anchor is `{#tuning}`, so the slug stays `tuning`
 - **Links to check:** `guide.md` and `admin/reference.md` links to `#tuning`
 - **Expected:** Links unchanged — custom ID means slug doesn't change regardless of heading text fix
+
+## Scenario 7: Dale passive-voice/wordiness heading rewrite (Phase 3)
+
+- **Heading:** `## Settings That Are Configured by the Administrator`
+- **Dale trigger:** Passive voice ("are configured by") and wordiness — Dale should rewrite to something like `## Administrator Settings` or `## Configure Administrator Settings`
+- **Slug change:** `#settings-that-are-configured-by-the-administrator` → depends on Dale's rewrite
+- **Links to check:**
+  - `setup.md` same-file link
+  - `guide.md` cross-file link
+  - `admin/reference.md` cross-directory link
+- **Expected:** All three links updated to match Dale's new heading slug
