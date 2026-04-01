@@ -121,6 +121,16 @@ jobs:
             echo "committed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Update heading anchors (Phase 1)
+        if: steps.phase1-commit.outputs.committed == 'true'
+        run: |
+          RESULT=$(bash scripts/vale-autofix.sh --anchors-only 2>&1 || true)
+          echo "$RESULT"
+          if ! git diff --quiet; then
+            git add -A docs/
+            git commit -m "fix(vale): update anchor links for changed headings"
+          fi
+
       - name: Re-run Vale for remaining violations
         id: vale-remaining
         if: steps.vale-initial.outputs.total > 0
