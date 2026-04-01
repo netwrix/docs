@@ -436,7 +436,7 @@ By default, PingCastle runs as a limited user (ApplicationPoolIdentity), which c
 <Tabs>
 <TabItem value="localsystem" label="LocalSystem Identity" >
 
-The easiest approach is to change the application pool identity from ApplicationPoolIdentity to LocalSystem:
+Change the application pool identity from ApplicationPoolIdentity to LocalSystem:
 
 1. Open the IIS console and navigate to **Application Pools**
 2. Select the PingCastle Enterprise application pool
@@ -1427,7 +1427,7 @@ PingCastle Enterprise can run on any infrastructure that supports ASP.NET Core 8
 - Netwrix hasn't fully documented these installation procedures
 
 **Azure (Limited Support - Manual Installation)**
-- See [Azure Hosting](#azure-hosting) section below for detailed guidance on deploying to Azure App Service
+- See the [Azure Hosting](#azure-hosting) section for detailed guidance on deploying to Azure App Service
 - Requires Azure CLI and manual configuration
 - Not officially supported or tested by Netwrix
 
@@ -1944,7 +1944,7 @@ Add the following to `appsettings.json`:
 "authenticationHeader": "PingCastleAuth"
 ```
 
-When the login page is accessed, PingCastle checks for the specified header. If present, the user is considered authenticated and the header value is used as the username.
+When the login page is accessed, PingCastle checks for the specified header. If present, PingCastle considers the user authenticated and uses the header value as the username.
 
 :::danger Security Requirement
 The PingCastle application **must** be isolated by a reverse proxy that prevents unauthenticated users from setting their own authentication header. Failure to properly secure this configuration allows authentication bypass.
@@ -2035,7 +2035,7 @@ This configuration fetches IdP metadata automatically from a URL:
 ```
 
 :::warning Availability Requirement
-When using `IdPMetadata`, the metadata URL is accessed at application startup. If the URL is unavailable, PingCastle Enterprise will be unavailable until you run `IISRESET` and the metadata becomes accessible. For production environments, consider using the full configuration.
+When using `IdPMetadata`, PingCastle Enterprise accesses the metadata URL at application startup. If the URL is unavailable, PingCastle Enterprise will be unavailable until you run `IISRESET` and the metadata becomes accessible. For production environments, consider using the full configuration.
 :::
 
 You may set additional options:
