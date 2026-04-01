@@ -8,4 +8,4 @@ For agent config, see [configure the agent](../setup.md#configure-the-agent).
 
 For tuning, see [advanced tuning](../setup.md#tuning).
 
-For admin settings, see [administrator settings](../setup.md#settings-that-are-configured-by-the-administrator).
+For admin settings, see [administrator settings](../setup.md#administrator-settings).

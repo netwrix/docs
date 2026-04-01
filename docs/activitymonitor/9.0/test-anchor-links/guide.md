@@ -10,4 +10,4 @@ The [checkbox options](setup.md#checkbox-options) section covers selection.
 
 For performance, see [advanced tuning](setup.md#tuning).
 
-For admin settings, see [administrator settings](setup.md#settings-that-are-configured-by-the-administrator).
+For admin settings, see [administrator settings](setup.md#administrator-settings).
