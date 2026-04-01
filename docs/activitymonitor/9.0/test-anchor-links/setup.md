@@ -16,6 +16,6 @@ Select the checkbox options you want.
 
 Don't skip this section if you need advanced tuning.
 
-See also [same-file link to legacy method](#do-not-use-the-legacy-method).
+See also [same-file link to legacy method](#dont-use-the-legacy-method).
 
-See also [same-file link to configure](#please-configure-the-agent).
+See also [same-file link to configure](#configure-the-agent).

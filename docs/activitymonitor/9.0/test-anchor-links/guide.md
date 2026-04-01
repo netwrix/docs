@@ -2,10 +2,10 @@
 
 ## Overview
 
-Before you begin, review the [legacy method](setup.md#do-not-use-the-legacy-method) section.
+Before you begin, review the [legacy method](setup.md#dont-use-the-legacy-method) section.
 
-Then follow the [agent configuration](setup.md#please-configure-the-agent) steps.
+Then follow the [agent configuration](setup.md#configure-the-agent) steps.
 
-The [checkbox options](setup.md#check-box-options) section covers selection.
+The [checkbox options](setup.md#checkbox-options) section covers selection.
 
 For performance, see [advanced tuning](setup.md#tuning).
