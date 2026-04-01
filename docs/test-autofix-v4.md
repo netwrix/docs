@@ -12,7 +12,7 @@ For configuration details, see the *Netwrix Administration Guide*.
 
 ## Prerequisites
 
-Check the checkbox next to each item. Complete the initial setup described in the *Netwrix Installation Guide* before proceeding. Before configuring the agent, use the dropdown menu to select your environment.
+Select each item. Complete the initial setup described in the *Netwrix Installation Guide* before proceeding. Before configuring the agent, use the dropdown menu to select your environment.
 
 :::note
 Save the configuration files before proceeding. This feature is only available for on-premises deployments.
@@ -54,6 +54,6 @@ For step-by-step alert routing instructions, see [Alert Configuration](alerts.md
 
 ## Troubleshooting
 
-If you encounter issues, review the log files. This solution isn't a guaranteed fix for all problems, but it addresses most common problems.
+If you encounter issues, review the log files. This solution addresses most common problems.
 
 Ultimately, the product uses leading technology to deliver significant advancements in the security space. Find the logs in the directory configured during installation.
