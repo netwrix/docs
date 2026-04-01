@@ -8,7 +8,7 @@ The agent integrates with the existing platform. ensure the service account has 
 
 ## Deployment
 
-Verify network connectivity before proceeding. Once installed, the agent is an active monitoring component. This workflow runs as seamlessly as possible.
+Verify network connectivity before proceeding. After you install the agent, it becomes an active monitoring component. This workflow runs as seamlessly as possible.
 
 Click the **Deploy** button to begin. The deployment wizard validates your environment before proceeding. The internal CA issues the certificate; install it on the target server.
 
