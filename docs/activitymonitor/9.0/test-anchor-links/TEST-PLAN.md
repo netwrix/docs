@@ -32,7 +32,7 @@ Push these files to a PR targeting dev. The vale-autofix workflow should:
 
 ## Scenario 5: Slug unchanged (no-op)
 
-- **Heading:** `## Check Box Options` — body text has "check box" which triggers Netwrix.Checkbox
+- **Heading:** `## checkbox Options` — body text has "checkbox" which triggers Netwrix.Checkbox
 - **But:** The heading itself becomes `## Checkbox Options` → slug changes from `#check-box-options` to `#checkbox-options`
 - **Links to check:** `guide.md` link to `#check-box-options` (line 9)
 - **Expected:** Link updated to `#checkbox-options`
@@ -40,7 +40,7 @@ Push these files to a PR targeting dev. The vale-autofix workflow should:
 
 ## Scenario 6: Custom anchor ID (no-op)
 
-- **Heading:** `## Advanced Tuning {#tuning}` — body has "Do not" which triggers contractions
+- **Heading:** `## Advanced Tuning {#tuning}` — body has "Don't" which triggers contractions
 - **But:** The heading text may change but the anchor is `{#tuning}`, so the slug stays `tuning`
 - **Links to check:** `guide.md` and `admin/reference.md` links to `#tuning`
 - **Expected:** Links unchanged — custom ID means slug doesn't change regardless of heading text fix
