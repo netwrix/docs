@@ -22,4 +22,4 @@ Use the system to detect suspicious activity across your network. don't modify t
 
 If the agent doesn't start, you can find the log files in the installation directory. The troubleshooting process is clear when you check the right resources. Start by checking the most common issues listed in the table.
 
-The diagnostic tool generates reports; review them carefully. The log files help identify the root cause of most issues. Do not restart the service while diagnostics are running.
+The diagnostic tool generates reports; review them carefully. The log files help identify the root cause of most issues. Don't restart the service while diagnostics are running.
