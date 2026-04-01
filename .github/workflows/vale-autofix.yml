@@ -181,6 +181,26 @@ jobs:
             2. Apply a fix that resolves the Vale rule while preserving the author's meaning
             3. If you are NOT confident in a fix (ambiguous context, multiple valid interpretations, fix would change meaning) SKIP it
 
+            HEADING ANCHOR UPDATES:
+            When you modify a heading line (any line starting with #), you MUST update all anchor links that reference the old heading.
+
+            1. Before editing a heading, record the original heading text
+            2. Compute the old anchor slug:
+               - If the heading has a {#custom-id} suffix, use custom-id as the slug
+               - Otherwise: strip the # prefix and whitespace, lowercase, remove everything except [a-z0-9 -], replace spaces with hyphens, collapse consecutive hyphens, trim leading/trailing hyphens
+               - Examples: "## Do Not Click" → do-not-click, "## Step 1: Install" → step-1-install, "## Setup {#setup}" → setup
+            3. After editing, compute the new anchor slug the same way
+            4. If the slug changed, determine the product/version folder from the file path:
+               - Multi-version: docs/<product>/<version>/ (e.g., docs/accessanalyzer/12.0/)
+               - Single-version: docs/<product>/ (e.g., docs/threatprevention/)
+               - The folder is the first 2 or 3 segments of the path after docs/. If the second segment is a version number (digits/dots), include it.
+            5. Search ALL .md files in that folder (not just PR-changed files) for link patterns containing #old-slug:
+               - ](#old-slug) — same-page links
+               - ](filename#old-slug) — relative links
+               - ](path/to/filename#old-slug) — deeper relative links
+            6. Replace #old-slug with #new-slug in every match
+            7. Include each anchor update in the fixed array of your summary JSON, using the same check value as the heading fix that caused it, with action like "updated anchor link from #old-slug to #new-slug"
+
             After fixing, write a JSON summary to /tmp/phase2-summary.json with this structure:
             ```json
             {
