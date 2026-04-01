@@ -2,17 +2,17 @@
 
 ## Overview
 
-Use the monitoring system to configure alert policies for your network.
+The monitoring agent lets you configure alert policies and track security events across your network.
 
 :::note
 This feature requires proper credentials. To log in to your account, ensure you have administrator privileges.
 :::
 
-See the admin guide for configuration details.
+For configuration details, see the *Netwrix Administration Guide*.
 
 ## Prerequisites
 
-check the checkbox next to each item. Whether you have completed the initial setup, you can proceed. Before configuring the agent, use the dropdown menu to select your environment.
+Check the checkbox next to each item. Complete the initial setup described in the *Netwrix Installation Guide* before proceeding. Before configuring the agent, use the dropdown menu to select your environment.
 
 :::note
 Save the configuration files before proceeding. This feature is only available for on-premises deployments.
@@ -26,11 +26,13 @@ Install the monitoring agent on your server.
 
 2. After you download the installer, navigate to the setup directory and set up the agent.
 
-3. The installer lets you deploy across multiple servers.
+3. Select the target servers when prompted, then click **Next**.
 
 4. If you want to customize the installation, select the options from the dropdown list, and click **Advanced**.
 
-This is a critical step. Don't skip it.
+:::warning
+Complete all installation steps before proceeding. Skipping steps may cause configuration errors.
+:::
 
 ## Configuration
 
@@ -42,11 +44,13 @@ This agent detects unauthorized changes to critical systems.
 
 ### Setting Up Alerts
 
-After you configure the alert thresholds, the system will automatically begin monitoring. Set up notifications using the following steps.
+After you configure the alert thresholds, the system automatically begins monitoring.
 
-The administrator completed the configuration before the deployment. See the following instructions for details on alert routing.
+An administrator must complete the configuration before deployment.
 
-This is a comprehensive alerting framework. See [Alert Configuration](alerts.md) for details.
+:::note
+For step-by-step alert routing instructions, see [Alert Configuration](alerts.md).
+:::
 
 ## Troubleshooting
 
