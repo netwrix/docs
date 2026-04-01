@@ -5,6 +5,39 @@
 
 set -euo pipefail
 
+# --- Shared functions ---
+
+slugify() {
+  local heading="$1"
+
+  # Check for custom anchor ID: {#custom-id}
+  if [[ "$heading" =~ \{#([a-zA-Z0-9_-]+)\} ]]; then
+    echo "${BASH_REMATCH[1]}"
+    return
+  fi
+
+  echo "$heading" \
+    | sed -E 's/^#+ +//' \
+    | tr '[:upper:]' '[:lower:]' \
+    | sed -E "s/[^a-z0-9 -]//g" \
+    | sed -E 's/ +/-/g' \
+    | sed -E 's/-+/-/g' \
+    | sed -E 's/^-+//;s/-+$//'
+}
+
+# Allow sourcing for tests or running anchor-update only
+case "${1:-}" in
+  --test)
+    # Sourced for testing — define functions but skip main script logic
+    return 0 2>/dev/null || exit 0
+    ;;
+  --anchors-only)
+    # Will be handled after update_heading_anchors is defined (Task 2)
+    ;;
+esac
+
+# --- Main autofix logic ---
+
 VIOLATIONS_FILE="${1:?Usage: vale-autofix.sh <violations.json>}"
 
 if [ ! -f "$VIOLATIONS_FILE" ]; then
