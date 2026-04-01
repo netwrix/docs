@@ -34,18 +34,18 @@ Configure the agent before deploying to production. The agent lets you monitor f
 
 The agent uses a lightweight service that can scan endpoints without impacting performance. To ensure accurate results, configure exclusions.
 
-Without this tool, you would be unable to detect unauthorized changes to critical systems!
+Use this tool to detect unauthorized changes to critical systems.
 
 ### Setting Up Alerts
 
-The alert thresholds being configured, the system will automatically begin monitoring. You can easily set up notifications in just a few minutes by following the below instructions.
+After you configure the alert thresholds, the system will automatically begin monitoring. You can set up notifications by following these instructions.
 
-The configuration was completed by the administrator before the deployment. See the instructions below for details on alert routing.
+The administrator completed the configuration before the deployment. See the following instructions for details on alert routing.
 
-This isn't a simple notification system, it is a comprehensive alerting framework. See [alert configuration details](alerts.md).
+This is a comprehensive alerting framework. See [alert configuration details](alerts.md).
 
 ## Troubleshooting
 
-If you encounter issues, review the log files. This solution does not resolve every problem, but it addresses the lion's share of common problems.
+If you encounter issues, review the log files. This solution does not resolve every problem, but it addresses most common problems.
 
-The product uses advanced technology to deliver significant improvements in security operations. The logs can be found in the directory shown above.
+The product uses advanced technology to deliver significant improvements in security operations. The logs are in the directory shown above.
