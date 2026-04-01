@@ -118,7 +118,6 @@ jobs:
           else
             git add -A docs/
             git commit -m "fix(vale): auto-fix substitutions and removals"
-            git push
             echo "committed=true" >> "$GITHUB_OUTPUT"
           fi
 
@@ -188,10 +187,9 @@ jobs:
             ```bash
             git add -A docs/
             git commit -m "fix(vale): auto-fix rewrites (AI-assisted)"
-            git push
             ```
 
-            IMPORTANT: Write the summary JSON file BEFORE committing. Do not post any PR comments.
+            IMPORTANT: Write the summary JSON file BEFORE committing. Do NOT run git push — the workflow handles pushing. Do not post any PR comments.
           claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
 
       - name: Phase 3 — Dale fixes
@@ -237,11 +235,20 @@ jobs:
             ```bash
             git add -A docs/
             git commit -m "fix(dale): auto-fix documentation issues (AI-assisted)"
-            git push
             ```
 
-            IMPORTANT: Write the summary JSON file BEFORE committing. Do not post any PR comments.
+            IMPORTANT: Write the summary JSON file BEFORE committing. Do NOT run git push — the workflow handles pushing. Do not post any PR comments.
           claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
+
+      - name: Push all fixes
+        if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
+        run: |
+          if [ "$(git rev-list @{u}..HEAD --count 2>/dev/null)" -gt 0 ]; then
+            echo "Pushing $(git rev-list @{u}..HEAD --count) commit(s)..."
+            git push
+          else
+            echo "No new commits to push"
+          fi
 
       - name: Build and post summary comment
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
