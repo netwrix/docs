@@ -2,15 +2,30 @@
 
 ## Overview
 
-Follow the steps to configure the product. Use this feature to manage your security policies. This is a great tool that uses advanced algorithms to protect your data.
+Use this feature to manage your security policies. This is a great tool that uses advanced algorithms to protect your data. The system actively monitors and prevents threats.
 
-The system actively monitors and prevents threats. ensure you have the necessary permissions before proceeding, e.g. administrator access. You shouldn't click the **Settings** button unless you aren't able to do so without proper authorization.
+ensure you have the necessary permissions before proceeding, e.g. administrator access. Click **Settings** only if you have administrator access.
+
+## Prerequisites
+
+Meet the following prerequisites before you proceed with the installation:
+
+- Administrator access on the host server
 
 ## Getting Started
 
-Don't forget to install the prerequisites. Once configured, the system can't fail to provide comprehensive reporting. This product is a complete security solution.
+### Install the prerequisites
 
-The configuration wizard will guide you through the setup process. The system generates the report, which you can export by clicking **Export**. Whether you choose to enable this feature, review the settings.
+1. Install the prerequisites.
+
+Once configured, the system provides comprehensive reporting. This product is a complete security solution.
+
+### Configure the product
+
+1. Open the configuration wizard to complete the setup process.
+2. Click **Export** to export the report.
+
+If you choose to enable the reporting feature, review the settings before proceeding.
 
 After you complete the installation, the dashboard displays your security status. Users should use this feature to access the product's full capabilities. Review application server logs that contain errors regularly.
 
@@ -22,8 +37,6 @@ You don't need to restart the server.
 
 You can start immediately with the default configuration. Users can set up their environment i.e. without additional setup steps.
 
-Meet the following prerequisites before you proceed with the installation. You can find the settings in the configuration panel.
+You can find the settings in the configuration panel.
 
-## Conclusion
-
-This product secures your organization. Users who weren't previously able to monitor threats can now do so. Contact support if you need assistance.
+This product secures your organization. Users who weren't previously able to monitor threats can now do so. For assistance, see [Netwrix Support](https://www.netwrix.com/support.html).
