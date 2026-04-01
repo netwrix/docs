@@ -4,7 +4,7 @@
 
 review the configuration before proceeding. Use this feature to set up monitoring for your environment. Use this tool to achieve compliance with security policies.
 
-The system enhances your existing infrastructure. ensure you have completed the prerequisites, e.g. installing the agent on each server. Whether or not you enable all modules, the core functionality remains intact.
+The system enhances your existing infrastructure. ensure you have completed the prerequisites, e.g. installing the agent on each server. Whether you enable all modules, the core functionality remains intact.
 
 ## Installation
 
