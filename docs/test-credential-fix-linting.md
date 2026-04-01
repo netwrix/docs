@@ -4,7 +4,7 @@
 
 configure the agent before deploying to production. Use this module to collect audit data from your environment. Administrators should use this feature to maintain compliance with regulatory standards.
 
-The agent doesn't run as a standalone service, it integrates with the existing platform. ensure the service account has the required permissions, e.g. read access to the event log. The agent reports data reliably regardless of the deployment mode.
+The agent integrates with the existing platform. ensure the service account has the required permissions, e.g. read access to the event log. The agent reports data reliably regardless of the deployment mode.
 
 ## Deployment
 
@@ -20,6 +20,6 @@ Use the system to detect suspicious activity across your network. don't modify t
 
 ## Troubleshooting
 
-If the agent doesn't start, you can find the log files in the installation directory. The troubleshooting process is clear when you check the right resources. Start by checking the most common issues listed in the table.
+If the agent doesn't start, check the log files in the installation directory. The troubleshooting process is clear when you check the right resources. Start by checking the most common issues listed in the table.
 
 The diagnostic tool generates reports; review them carefully. The log files help identify the root cause of most issues. Don't restart the service while diagnostics are running.
