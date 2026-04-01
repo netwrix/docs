@@ -29,6 +29,12 @@ knowledge_article_id: kA04u000000PdKUCA0
 
 Recently created Active Directory (AD) users, groups, or computers may not be immediately available to be added to the Netwrix Privilege Secure console, due to the last time Active Directory was synced with Netwrix Privilege Secure.
 
+## About domain synchronization
+
+Domain synchronization is the process by which Netwrix Privilege Secure reads Active Directory to discover and import users, groups, and computers. When you add a domain as a resource in Privilege Secure, the product connects to that domain's AD and pulls in the current set of objects. Privilege Secure doesn't monitor AD for changes in real time — it relies on periodic synchronization to stay up to date.
+
+This means that any AD objects created or modified after the last sync won't appear in the Privilege Secure console until the next synchronization runs. If you recently created a user, group, or computer in AD and can't find it in Privilege Secure, a stale sync is the most likely cause. Running a manual sync resolves the issue immediately.
+
 ## Instructions
 
 1. Log in to Netwrix Privilege Secure as an admin user, and navigate to **Resources**.
