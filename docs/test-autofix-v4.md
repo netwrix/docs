@@ -2,25 +2,31 @@
 
 ## Overview
 
-The monitoring system allows you to configure alert policies for your network. It is important to note that this feature can't be used without proper credentials. to log in to your account, ensure you have administrator privileges.
+Use the monitoring system to configure alert policies for your network.
 
-For more information, see the admin guide.
+:::note
+This feature requires proper credentials. To log in to your account, ensure you have administrator privileges.
+:::
+
+See the admin guide for configuration details.
 
 ## Prerequisites
 
-check the checkbox next to each item. Whether or not you have completed the initial setup, you can proceed. Prior to configuring the agent, we recommend that you use the dropdown menu to select your environment.
+check the checkbox next to each item. Whether you have completed the initial setup, you can proceed. Before configuring the agent, use the dropdown menu to select your environment.
 
-Note that the configuration files must be saved before proceeding. this feature is only available for on-premises deployments.
+:::note
+The configuration files must be saved before proceeding. This feature is only available for on-premises deployments.
+:::
 
 ## Installation
 
-Follow the steps to install the monitoring agent on your server.
+Install the monitoring agent on your server.
 
 1. Click **Download** to retrieve the installer.
 
-2. Once you download the installer, navigate to the setup directory and set up the agent.
+2. After you download the installer, navigate to the setup directory and set up the agent.
 
-3. The installer was designed by our engineering team to let you deploy across multiple servers.
+3. The installer lets you deploy across multiple servers.
 
 4. If you want to customize the installation, select the options from the dropdown list, and click **Advanced**.
 
@@ -28,9 +34,9 @@ This is a critical step. Don't skip it.
 
 ## Configuration
 
-I recommend configuring the agent before deploying to production. The agent lets you monitor file changes, registry modifications and network connections.
+Configure the agent before deploying to production. The agent lets you monitor file changes, registry modifications and network connections.
 
-Under the hood, the agent uses a lightweight service that can scan endpoints without impacting performance. For the purpose of ensuring accurate results, it is necessary to configure exclusions.
+Internally, the agent uses a lightweight service that can scan endpoints without impacting performance. To ensure accurate results, configure exclusions.
 
 Without this tool, you would be unable to detect unauthorized changes to critical systems!
 
@@ -40,10 +46,10 @@ The alert thresholds being configured, the system will automatically begin monit
 
 The configuration was completed by the administrator before the deployment. See the instructions below for details on alert routing.
 
-This isn't a simple notification system, it is a comprehensive alerting framework. For more details, [click here](alerts.md).
+This isn't a simple notification system, it is a comprehensive alerting framework. See [Alert Configuration](alerts.md) for details.
 
 ## Troubleshooting
 
-In the event that you encounter issues, it is necessary to review the log files. This solution isn't a silver bullet, but it addresses the lion's share of common problems.
+If you encounter issues, review the log files. This solution isn't a guaranteed fix for all problems, but it addresses the lion's share of common problems.
 
-At the end of the day, our product leverages best of breed technology to deliver a game changer in the security space. The logs can be found in the directory shown above.
+Ultimately, the product uses leading technology to deliver significant advancements in the security space. The logs can be found in the directory shown above.
