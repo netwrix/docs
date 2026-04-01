@@ -151,6 +151,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ steps.pr-info.outputs.branch }}
+          token: ${{ secrets.VALE_TOKEN }}
           fetch-depth: 0
 
       - name: Handle @claude request
@@ -166,3 +167,18 @@ jobs:
           prompt: |
             /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
           claude_args: '--max-turns 50 --allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(doc-help)"'
+
+      - name: Push with VALE_TOKEN to trigger workflows
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        env:
+          VALE_TOKEN: ${{ secrets.VALE_TOKEN }}
+        run: |
+          # Re-configure git credentials with VALE_TOKEN (claude-code-action
+          # overrides credentials with GITHUB_TOKEN, which doesn't trigger workflows)
+          git remote set-url origin "https://x-access-token:${VALE_TOKEN}@github.com/${{ github.repository }}.git"
+          if [ "$(git rev-list @{u}..HEAD --count 2>/dev/null)" -gt 0 ]; then
+            echo "Pushing $(git rev-list @{u}..HEAD --count) commit(s) with VALE_TOKEN..."
+            git push
+          else
+            echo "No new commits to push"
+          fi
