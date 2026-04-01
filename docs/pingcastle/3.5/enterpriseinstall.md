@@ -240,7 +240,7 @@ When the software is uninstalled, the database is **not** automatically removed.
 :::
 
 :::tip Remote SQL Server Setup
-If you're configuring a remote SQL Server (not on the local machine), see the [Remote Database Configuration](#remote-database-configuration-manual-installation) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
+If you're configuring a remote SQL Server (not on the local machine), see the [Remote Database Configuration](#remote-database-configuration-for-manual-installation) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
 :::
 
   </TabItem>
@@ -302,7 +302,7 @@ choco install sql-server-express
 4. Configure the database connection (typically using the local SQL Express instance)
 
 :::tip Remote SQL Server Setup
-If you're configuring a remote SQL Server instead of using the local instance, see the [Remote Database Configuration](#remote-database-configuration-manual-installation) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
+If you're configuring a remote SQL Server instead of using the local instance, see the [Remote Database Configuration](#remote-database-configuration-for-manual-installation) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
 :::
 
   </TabItem>
