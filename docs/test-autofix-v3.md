@@ -16,7 +16,7 @@ Before you begin, verify that you have met the following requirements:
 - In the **Environment** dropdown on the Settings page, select your deployment environment.
 
 :::note
-The configuration files must be saved before proceeding.
+Save the configuration files before proceeding.
 :::
 
 ## Installation
