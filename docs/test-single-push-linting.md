@@ -24,6 +24,6 @@ Use the dashboard to monitor threats across your entire network. You can now det
 
 ## Reporting
 
-The system generates reports on a schedule. The default templates are intended to be customized. Begin with the pre-built compliance reports listed in the template library.
+The system generates reports on a schedule. You can customize the default templates. Begin with the pre-built compliance reports listed in the template library.
 
 Administrators should review reports weekly. The export functionality saves reports in multiple formats. The reporting module is the core component of the product.
