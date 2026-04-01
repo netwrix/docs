@@ -4,11 +4,11 @@
 
 configure the agent before deploying to production. Use this module to collect audit data from your environment. Administrators should use this feature to maintain compliance with regulatory standards.
 
-The agent doesn't run as a standalone service, it integrates with the existing platform. ensure the service account has the required permissions, e.g. read access to the event log. Regardless of whether you deploy in high-availability mode, the agent reports data reliably.
+The agent doesn't run as a standalone service, it integrates with the existing platform. ensure the service account has the required permissions, e.g. read access to the event log. The agent reports data reliably regardless of the deployment mode.
 
 ## Deployment
 
-Don't proceed without verifying network connectivity first. Once installed, the agent is an active monitoring component. This workflow is designed to be as seamless as possible.
+Verify network connectivity before proceeding. Once installed, the agent is an active monitoring component. This workflow runs as seamlessly as possible.
 
 Click the **Deploy** button to begin. The deployment wizard validates your environment before proceeding. The internal CA issues the certificate; install it on the target server.
 
@@ -20,6 +20,6 @@ Use the system to detect suspicious activity across your network. don't modify t
 
 ## Troubleshooting
 
-If the agent doesn't start, you can find the log files in the installation directory. The troubleshooting process is straightforward when you know where to look. Start by checking the most common issues listed in the table.
+If the agent doesn't start, you can find the log files in the installation directory. The troubleshooting process is clear when you check the right resources. Start by checking the most common issues listed in the table.
 
-The diagnostic tool generates reports; review them carefully. The log files help identify the root cause of most issues. ensure that you don't restart the service while diagnostics are running.
+The diagnostic tool generates reports; review them carefully. The log files help identify the root cause of most issues. Do not restart the service while diagnostics are running.
