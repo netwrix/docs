@@ -5,6 +5,167 @@
 
 set -euo pipefail
 
+# --- Shared functions ---
+
+slugify() {
+  local heading="$1"
+
+  # Check for custom anchor ID: {#custom-id}
+  if [[ "$heading" =~ \{#([a-zA-Z0-9_-]+)\} ]]; then
+    echo "${BASH_REMATCH[1]}"
+    return
+  fi
+
+  echo "$heading" \
+    | sed -E 's/^#+ +//' \
+    | tr '[:upper:]' '[:lower:]' \
+    | sed -E "s/[^a-z0-9 -]//g" \
+    | sed -E 's/ +/-/g' \
+    | sed -E 's/-+/-/g' \
+    | sed -E 's/^-+//;s/-+$//'
+}
+
+_get_product_version_folder() {
+  local filepath="$1"
+  local rest="${filepath#docs/}"
+  local product="${rest%%/*}"
+  rest="${rest#*/}"
+  local version="${rest%%/*}"
+  if [[ "$version" =~ ^[0-9][0-9._]*$ ]]; then
+    echo "docs/${product}/${version}/"
+  else
+    echo "docs/${product}/"
+  fi
+}
+
+_process_heading_pairs() {
+  local file="$1"
+  local -n _old="$2"
+  local -n _new="$3"
+  local updates=0
+
+  if [ -z "$file" ] || [ ${#_old[@]} -eq 0 ] || [ ${#_new[@]} -eq 0 ]; then
+    echo 0
+    return 0
+  fi
+
+  local count=${#_old[@]}
+  if [ ${#_new[@]} -lt "$count" ]; then
+    count=${#_new[@]}
+  fi
+
+  local folder
+  folder=$(_get_product_version_folder "$file")
+
+  if [ ! -d "$folder" ]; then
+    echo 0
+    return 0
+  fi
+
+  for ((i = 0; i < count; i++)); do
+    local old_slug new_slug
+    old_slug=$(slugify "${_old[$i]}")
+    new_slug=$(slugify "${_new[$i]}")
+
+    if [ "$old_slug" = "$new_slug" ] || [ -z "$old_slug" ] || [ -z "$new_slug" ]; then
+      continue
+    fi
+
+    # Replace #old-slug with #new-slug in all .md files in the folder
+    find "$folder" -name '*.md' -exec \
+      sed -i "s|#${old_slug}\([) ]\)|#${new_slug}\1|g" {} +
+
+    updates=$((updates + 1))
+  done
+
+  echo "$updates"
+  return 0
+}
+
+update_heading_anchors() {
+  local diff_output
+  diff_output=$(git diff HEAD~1 HEAD -- '*.md' 2>/dev/null || true)
+
+  if [ -z "$diff_output" ]; then
+    return 0
+  fi
+
+  local current_file=""
+  local old_headings=()
+  local new_headings=()
+  local in_hunk=0
+  local anchor_updates=0
+
+  while IFS= read -r line; do
+    if [[ "$line" =~ ^diff\ --git\ a/(.*\.md)\ b/ ]]; then
+      # Process pending heading pairs from previous file
+      if [ -n "$current_file" ] && [ ${#old_headings[@]} -gt 0 ] && [ ${#new_headings[@]} -gt 0 ]; then
+        local _pair_result
+        _pair_result=$(_process_heading_pairs "$current_file" old_headings new_headings)
+        anchor_updates=$((anchor_updates + _pair_result))
+      fi
+      current_file="${BASH_REMATCH[1]}"
+      old_headings=()
+      new_headings=()
+      in_hunk=0
+      continue
+    fi
+
+    if [[ "$line" =~ ^@@ ]]; then
+      if [ -n "$current_file" ] && [ ${#old_headings[@]} -gt 0 ] && [ ${#new_headings[@]} -gt 0 ]; then
+        local _pair_result
+        _pair_result=$(_process_heading_pairs "$current_file" old_headings new_headings)
+        anchor_updates=$((anchor_updates + _pair_result))
+      fi
+      old_headings=()
+      new_headings=()
+      in_hunk=1
+      continue
+    fi
+
+    if [ "$in_hunk" -eq 0 ]; then
+      continue
+    fi
+
+    # Collect removed headings (lines starting with - then #)
+    if [[ "$line" =~ ^-#{1,6}\ + ]]; then
+      old_headings+=("${line:1}")
+    fi
+
+    # Collect added headings (lines starting with + then #)
+    if [[ "$line" =~ ^\+#{1,6}\ + ]]; then
+      new_headings+=("${line:1}")
+    fi
+  done <<< "$diff_output"
+
+  # Process final file
+  if [ -n "$current_file" ] && [ ${#old_headings[@]} -gt 0 ] && [ ${#new_headings[@]} -gt 0 ]; then
+    local _pair_result
+    _pair_result=$(_process_heading_pairs "$current_file" old_headings new_headings)
+    anchor_updates=$((anchor_updates + _pair_result))
+  fi
+
+  if [ "$anchor_updates" -gt 0 ]; then
+    echo "Updated $anchor_updates anchor link(s)"
+  fi
+
+  return 0
+}
+
+# Allow sourcing for tests or running anchor-update only
+case "${1:-}" in
+  --test)
+    # Sourced for testing — define functions but skip main script logic
+    return 0 2>/dev/null || exit 0
+    ;;
+  --anchors-only)
+    update_heading_anchors
+    exit 0
+    ;;
+esac
+
+# --- Main autofix logic ---
+
 VIOLATIONS_FILE="${1:?Usage: vale-autofix.sh <violations.json>}"
 
 if [ ! -f "$VIOLATIONS_FILE" ]; then
