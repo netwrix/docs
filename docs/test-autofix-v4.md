@@ -15,7 +15,7 @@ See the admin guide for configuration details.
 check the checkbox next to each item. Whether you have completed the initial setup, you can proceed. Before configuring the agent, use the dropdown menu to select your environment.
 
 :::note
-The configuration files must be saved before proceeding. This feature is only available for on-premises deployments.
+Save the configuration files before proceeding. This feature is only available for on-premises deployments.
 :::
 
 ## Installation
@@ -38,18 +38,18 @@ Configure the agent before deploying to production. The agent lets you monitor f
 
 Internally, the agent uses a lightweight service that can scan endpoints without impacting performance. To ensure accurate results, configure exclusions.
 
-Without this tool, you would be unable to detect unauthorized changes to critical systems!
+This agent detects unauthorized changes to critical systems.
 
 ### Setting Up Alerts
 
-The alert thresholds being configured, the system will automatically begin monitoring. You can easily set up notifications in just a few minutes by following the below instructions.
+After you configure the alert thresholds, the system will automatically begin monitoring. Set up notifications using the following steps.
 
-The configuration was completed by the administrator before the deployment. See the instructions below for details on alert routing.
+The administrator completed the configuration before the deployment. See the following instructions for details on alert routing.
 
-This isn't a simple notification system, it is a comprehensive alerting framework. See [Alert Configuration](alerts.md) for details.
+This is a comprehensive alerting framework. See [Alert Configuration](alerts.md) for details.
 
 ## Troubleshooting
 
-If you encounter issues, review the log files. This solution isn't a guaranteed fix for all problems, but it addresses the lion's share of common problems.
+If you encounter issues, review the log files. This solution isn't a guaranteed fix for all problems, but it addresses most common problems.
 
-Ultimately, the product uses leading technology to deliver significant advancements in the security space. The logs can be found in the directory shown above.
+Ultimately, the product uses leading technology to deliver significant advancements in the security space. Find the logs in the directory configured during installation.
