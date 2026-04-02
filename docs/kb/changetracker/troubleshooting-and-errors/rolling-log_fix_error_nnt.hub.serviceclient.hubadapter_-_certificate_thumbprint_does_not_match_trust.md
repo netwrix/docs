@@ -36,7 +36,7 @@ This means that you are using a custom or unrecognized IIS Certificate. You need
 If you are receiving this error, the Netwrix Agent is NOT reporting to your hub. This is a critical error, and for monitoring to continue, it must be resolved. To resolve this error:
 
 1. Stop the **Netwrix Agent Service**.
-2. Navigate to your Netwrix Agent Directory, which contains the Rolling-Log Files (see [Agent Rolling-Log File Location](https://docs.netwrix.com/docs/changetracker/8_1/install/agent/rollinglogfile) for more details):
+2. Navigate to your Netwrix Agent Directory, which contains the Rolling-Log Files (see [Agent Rolling-Log File Location](/docs/changetracker/8_1/install/agent/rollinglogfile) for more details):
    - **Windows:** `C:\ProgramData\NNT\gen7agent.app.netcore\`
    - **Linux:** `/var/nnt/gen7agent.app.netcore/`
 3. Edit the **HubDetails.xml** file.
