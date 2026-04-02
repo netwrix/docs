@@ -22,7 +22,7 @@ title: "Active Directory Permissions Analyzer reports are outdated"
 knowledge_article_id: kA04u000000HDhRCAW
 ---
 
-# Active Directory Permissions Analyzer reports are outdated
+# Active Directory Permissions Analyzer reports are outdated 
 
 ## Symptoms
 
