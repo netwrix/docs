@@ -22,7 +22,6 @@ For its correct installation Netwrix Cloud Agent needs the following software re
     - Windows Server 2022
     - Windows Server 2019
     - Windows Server 2016
-    - Windows Server 2012 R2
 
 - Windows Desktop OS (64-bit):
 
