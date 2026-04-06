@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Widgets Page
 
-The Widgets page of the Report Configuration wizard allows you to configure the tables, charts, and
+Use the Widgets page of the Report Configuration wizard to configure the tables, charts, and
 text that form the report.
 
 ![Widgets page](/images/accessanalyzer/12.0/admin/report/wizard/widgets.webp)
@@ -38,13 +38,13 @@ following actions by selecting a row and clicking the relevant button:
 
 ## Grid
 
-The Grid widget type allows you to configure a table to be displayed on generated reports.
+Use the Grid widget type to configure a table to be displayed on generated reports.
 
 ![Grid configuration window](/images/accessanalyzer/12.0/admin/report/wizard/widgetgrid.webp)
 
 ### Options
 
-The Options section allows you to configure the title and data source for the Grid element.
+Use the Options section to configure the title and data source for the Grid element.
 
 ![Options section](/images/accessanalyzer/12.0/admin/report/wizard/widgetgridoptions.webp)
 
@@ -81,7 +81,7 @@ You can configure the table to allow the data to be exported as a CSV file.
   as a CSV file from the generated report
     - When it is configured, you can click the **All Data** button on the table section of the
       report to save the report as a CSV file. See the
-      [Interactive Grids](/docs/accessanalyzer/12.0/admin/report/interactivegrids/overview.md) topic for more information.
+      [Interactive Grids](/docs/accessanalyzer/12.0/admin/report/interactivegrids/overview.md) topic for details about interactive grids.
       :::warning
       Only interactive grids can be exported. Non-interactive grids display an "EOIeError" pop-up when you attempt to export a non-interactive grid as CSV.
       :::
@@ -96,7 +96,7 @@ You can configure the table to allow the data to be exported as a CSV file.
 
 ### Table Properties
 
-The Table Properties section allows you to configure the display features of the grid.
+Use the Table Properties section to configure the display features of the grid.
 
 ![Table Properties section](/images/accessanalyzer/12.0/admin/report/wizard/widgetgridtableproperties.webp)
 
@@ -119,7 +119,7 @@ The following settings are available when Interactive grid is selected:
 
 - Treat interactive grid contents as plain text (not HTML) – Enables interactive grid functionality.
   This option is selected by default.
-- Enable Paging – Enables Paging in reports. Paging allows users to interact with large sets of data
+- Enable Paging – Enables Paging in reports. With Paging, users can interact with large sets of data
   more efficiently when viewing, filtering, and sorting generated report tables by limiting the
   amount of data being displayed at a given time. Paging is enabled by default. See the
   [Paging](/docs/accessanalyzer/12.0/admin/report/interactivegrids/paging.md) topic for additional information.
@@ -141,8 +141,8 @@ The following settings are available when Interactive grid is selected:
 
 ### Data
 
-The selected data for the table is shown in the section at the bottom of the window. This section
-allows you to configure the data to be displayed in the table.
+The selected data for the table is shown in the section at the bottom of the window. Use this section
+to configure the data to be displayed in the table.
 
 ![Data display](/images/accessanalyzer/12.0/admin/report/wizard/widgetgriddata.webp)
 
@@ -150,20 +150,20 @@ The buttons above the column names provide you options for configuring the table
 
 - Clear Sorting – Restores columns to the default placement
 - Column Chooser – Opens a pane where you can remove unwanted columns or add hidden columns
-- Filter Editor – Opens the Filter Editor which allows you to add custom filters with conditional
+- Filter Editor – Opens the Filter Editor, where you can add custom filters with conditional
   statements and logical connectives
 - Best Fit (all columns) –  Adjusts the width of the columns to display all the data within the
   cells
 
 ## Chart
 
-Chart widgets allow you to create various chart types to represent data. A Chart Section can only
+Use Chart widgets to create various chart types to represent data. A Chart Section can only
 display one chart type at a time. Charts are configured using the Chart Configuration wizard. See
 the [Chart Configuration Wizard](/docs/accessanalyzer/12.0/admin/report/chartwizard/overview.md) topic for additional information.
 
 ## Text
 
-There are two types of text editor that allow you to configure a text element on a report.
+Two text editor types are available for configuring a text element on a report.
 
 - Basic Text Editor – Provides basic functionality like font size and style. Works with HTML script.
 - Advanced Text Editor – Provides advanced functionality like document formatting, inserting tables,
