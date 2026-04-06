@@ -33,7 +33,7 @@ well as the
 are displayed.
 
 :::warning
-The details area can't be used for editing records! Although
+The details area can't be used for editing records. Although
 it displays all of the data, editing is only possible if the record has been opened.
 :::
 

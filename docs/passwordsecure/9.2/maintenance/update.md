@@ -18,9 +18,9 @@ From the documentation (e.g. In appearance or also its functional scope), it mak
 Update to the latest version.
 
 :::note
-The update check on the server or the client lets you easily install the latest version.
+The update check on the server or the client lets you install the latest version.
 The update check on the client must be activated in the settings for users beforehand. Netwrix recommends
-Leaving the update check deactivated for normal users! Otherwise these users could independently
+Leaving the update check deactivated for normal users. Otherwise these users could independently
 Attempt to install updates. Since a new client can't connect to an old server, this results in the
 User not being able to log in.
 :::
@@ -30,7 +30,7 @@ User not being able to log in.
 The requirements should be checked or established before an update.
 
 :::warning
-Always check the Changelog for requirements or breaking changes before updating!
+Always check the Changelog for requirements or breaking changes before updating.
 :::
 
 ### Check the software maintenance package
@@ -58,20 +58,20 @@ Will provide this information.
 
 :::warning
 If the password for logging in to the Server Manager on the database has been saved, it
-Is essential that it is noted down or temporarily saved elsewhere before an update!
+Is essential that it is noted down or temporarily saved elsewhere before an update.
 :::
 
 ### Latest installation files
 
 The installation files can be downloaded from the
-[customer information system](https://license.passwordsafe.de/kis). Simply use the access
+[customer information system](https://license.passwordsafe.de/kis). use the access
 Data sent to you by email to log in.
 
 ## Perform update
 
 ### Updating the Server Manager
 
-The Server Manager is simply installed on top of the existing installation. The password from the
+The Server Manager is installed on top of the existing installation. The password from the
 Server Manager should be made available at this point in any case. After the installation of the
 Server Manager, the database is only accessible when it is activated. If the password is only in the
 Netwrix Password Secure, it should be temporarily stored at this point.
@@ -96,7 +96,7 @@ Updated during this process.
 
 ### Updating the client
 
-The updates for the client are also simply installed over the existing installation. Further
+The updates for the client are also installed over the existing installation. Further
 Information can be found in the section Installation of the client. The update can also
 Be performed using the installation parameters.
 

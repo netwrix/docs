@@ -27,7 +27,7 @@ The following user right is required for adding new passwords:
 The ribbon offers access to all possible actions relevant to the situation at all times. Especially
 within the "Passwords" module, the ribbon plays a key role due to the numerous module-specific
 functions. General information on the subject of the ribbon is available in the relevant section.
-The module-specific ribbon functions will be explained below.
+The following sections explain the module-specific ribbon functions.
 
 ![ribbon functions](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwords/passwords_2-en.webp)
 

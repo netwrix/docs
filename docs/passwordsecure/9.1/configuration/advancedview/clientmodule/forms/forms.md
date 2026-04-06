@@ -12,7 +12,7 @@ When creating a new data record, it's always indispensable to query all relevant
 intended application. In this context, **Forms** represent templates for the information which have
 to be stored. The manageability of existing forms primarily ensures the completeness of the data
 which have to be stored. Nevertheless, their use as an effective filter criterion isn't to be
-ignored! Forms have a lasting impact on working withNetwrix Password Secure v8 and must be managed
+ignored. Forms have a lasting impact on working withNetwrix Password Secure v8 and must be managed
 and maintained with the necessary care by the administration.
 
 ![form module](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/forms/forms_1-en.webp)

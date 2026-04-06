@@ -122,7 +122,7 @@ again by entering a PIN.
 ![security warning](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/manual_settings/multiple_editing_of_permissions/multiple-editing-of-permissions-9-en.webp)
 
 :::warning
-The removal of seals and password masking can't be reversed!
+The removal of seals and password masking can't be reversed.
 :::
 
 :::note

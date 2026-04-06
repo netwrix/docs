@@ -27,7 +27,7 @@ enclosed in quotation marks: **“Cook Daniel”**. The search isn't case sensit
 made between upper and lower case.
 
 :::note
-You can access quick search directly via \* Ctrl + Q\*!
+You can access quick search directly via \* Ctrl + Q\*.
 :::
 
 Negations in the quick search

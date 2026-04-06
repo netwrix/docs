@@ -48,7 +48,7 @@ notification IIS page created.
 ![IIS-creating page](/images/passwordsecure/9.2/installation/installation_web_application/installation-webclient-4-en.webp)
 
 :::warning
-Following a successful installation, it is imperative that config.bat is deleted! The
+Following a successful installation, it is imperative that config.bat is deleted. The
 config.bat file should also not be used for an "update"
 :::
 

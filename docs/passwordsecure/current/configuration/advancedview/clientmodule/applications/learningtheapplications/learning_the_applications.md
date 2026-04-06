@@ -42,7 +42,7 @@ title**, **Application** and **Application path** aren't manually filled. This i
 ![new sso application](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/learning_the_applications/learning_the_applications_2-en.webp)
 
 A crosshair cursor now appears. It enables the actual "mapping" or assignment of the target fields.
-You can see the field assignment for the user name below using a log in to an SQL server as an
+You can see the field assignment for the user name in the following example using a log in to an SQL server as an
 example. All of the other fields that should be automatically entered are assigned in the same way.
 The process is always the same. You select the field that needs to be automatically filled and then
 decide which information should be used to fill it.

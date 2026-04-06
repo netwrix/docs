@@ -63,7 +63,7 @@ The server mode offers the following advantages:
 
 :::warning
 SSO applications only work via Autofill Add-on. If you are in server
-mode and the Autofill Add-on has not been started, SSO applications don't work!
+mode and the Autofill Add-on has not been started, SSO applications don't work.
 :::
 
 After successful connection, the number of data records available for the current Internet page is

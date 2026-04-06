@@ -14,7 +14,7 @@ Discover how to …
 - Separately authorize the disclosure of passwords
 - View the password quality and monitor all actions in your team
 - View the reasons given by your team members for revealing passwords in plain text
-- And much more!
+- And more
 
-Simply contact your IT department for further information on the advanced view of Netwrix Password
+Contact your IT department for further information on the advanced view of Netwrix Password
 Secure.

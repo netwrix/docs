@@ -26,7 +26,7 @@ records, documents, organisational structures, roles, or forms: it is always pos
 whether a user or a role possesses a read permission to the object or not. The permissions for each
 of these objects can be defined separately via the ribbon in the permissions dialogue. This approach
 enables the creation of independently existing departments within a database. The permissions
-structure for the SAP form can be seen below. It shows that only the sales manager and the
+structure for the SAP form can be seen in the following example. It shows that only the sales manager and the
 administrators are permitted to create new records of type SAP.
 
 ![example permissions on a form](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/visibility/visibility-en.webp)
@@ -38,5 +38,5 @@ often required and also desired.
 :::note
 An alternative also supported by Netwrix Password Secure is for each department to set up
 their own MSSQL database. However, this physical separation requires considerably more
-administration work than the above-mentioned separation of data based on permissions and visibility.
+administration work than the previously mentioned separation of data based on permissions and visibility.
 :::

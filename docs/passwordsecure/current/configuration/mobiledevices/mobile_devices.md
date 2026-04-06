@@ -6,13 +6,12 @@ sidebar_position: 70
 
 # Mobile devices
 
-## The new Netwrix Password Secure Mobile App – mobile and simple!
+## The new Netwrix Password Secure Mobile App – mobile and simple.
 
 With version 8.10 Password Secure has created the perfect complement to the client: **The Netwrix Password
-Secure Mobile App!**
+Secure Mobile App.**
 
-With its **convenient** interface, the Netwrix Password Secure Mobile App offers the perfect
-prerequisite for every user to find their way around **quickly** and **easily**.
+The Netwrix Password Secure Mobile App provides an intuitive interface that helps users find their way around **quickly**.
 
 For detailed documentation of the **Netwrix Password Secure Mobile App**
 

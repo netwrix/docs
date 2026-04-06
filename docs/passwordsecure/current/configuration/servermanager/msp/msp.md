@@ -12,4 +12,4 @@ software.
 
 Password Secure are pleased that you have chosen Netwrix Password Secure for your password protection needs.
 
-Password Secure hope you enjoy discovering your new password manager!
+Password Secure hope you enjoy discovering your new password manager.

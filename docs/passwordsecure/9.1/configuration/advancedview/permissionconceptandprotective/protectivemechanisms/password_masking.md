@@ -32,7 +32,7 @@ without limitations after applying password masking. Password masking only appli
 the "can apply password masking" right.
 
 :::note
-Password masking can only be applied to records with an existing password!
+Password masking can only be applied to records with an existing password.
 :::
 
 ## Applying password masking

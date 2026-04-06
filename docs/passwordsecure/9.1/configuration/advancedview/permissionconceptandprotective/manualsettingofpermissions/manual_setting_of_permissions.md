@@ -31,7 +31,7 @@ there are three different ways to access the permissions in the list view:
 ![different ways to access the permissions](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/manual_settings/manual-setting-of-permissions-1-en.webp)
 
 :::note
-The icon on the right of the reading pane shows the information whether the record is personal or public. In case of personal data records, the user that's logged on is the only one who has permissions!
+The icon on the right of the reading pane shows the information whether the record is personal or public. In case of personal data records, the user that's logged on is the only one who has permissions.
 :::
 
 The author is created with all permissions for the record. As described in the
@@ -94,7 +94,7 @@ with the owner permission from the record.
 
 :::warning
 The owner permission doesn't protect a record from being deleted. Any user who has
-deletion permission can delete the record!
+deletion permission can delete the record.
 
 :::
 

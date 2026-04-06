@@ -16,7 +16,7 @@ secured via access permissions, this process enables the **maximum possible work
 methods**. Revealing passwords describes the mechanism by which a password is made visible to the
 user in the client. This process for dealing with passwords very precisely reflects the importance
 of data security in Netwrix Password Secure – and this process will thus be described in detail
-below.
+in the following sections.
 
 ### Example case
 
@@ -32,7 +32,7 @@ means the user can view the value of the password using the "reveal" function.
 In this context, "reveal" doesn't really accurately describe
 this process. It creates the **incorrect** impression that the client already has the password and
 only needs to reveal it. However, the processes running in the background until the password are
-revealed are much more complex and will thus be described below.
+revealed are much more complex and will thus be described in the following sections.
 
 ![revealing password diagram](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwords/revealing_passwords_2-en.webp)
 

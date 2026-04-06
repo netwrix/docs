@@ -55,7 +55,7 @@ is, of course, a good idea to manage these roles in accordance with your company
 role “Administrators” can therefore be provided with more extensive authorizations than, for
 example, the role “Sales Assistance”. This role-based inheritance allows the organization to
 maintain the overview in a larger corporate structure as well as a simple procedure when adding new
-employees. Instead of having to entitle him individually, this is simply added to his role.
+employees. Instead of having to entitle them individually, they are added to their role.
 
 ![Permission only for users or roles](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/permission_concept_2-en.webp)
 
@@ -69,7 +69,7 @@ significantly.
 
 
 ```
-Permissions are always granted to only one user or role!
+Permissions are always granted to only one user or role.
 
 ```
 
@@ -116,7 +116,7 @@ However, it can't see any data that is assigned to sales. It lacks membership in
 
 
 ```
-As a member of a role, it must have at least the “read” right for the role!
+As a member of a role, it must have at least the “read” right for the role.
 
 ```
 
@@ -132,8 +132,8 @@ configuration of a role will be illustrated using two users. The configuration i
 - The user “Holste” is a member of the role and can, therefore, access those records for which the
   role has permissions. He has the obligatory read right for the role, which is the basic
   requirement to be a member of the role. Which exact rights it has to the data record is
-  not defined within the role! This is set out in the following section.
-- The user “Administrator” has all rights to the role, but isn't a member! Thus, it can't see any
+  not defined within the role. This is set out in the following section.
+- The user “Administrator” has all rights to the role, but isn't a member. Thus, it can't see any
   records that are authorized for the role. However, it has all rights to the role and can therefore
   print, assign other users to the role, and delete them.
 
@@ -141,5 +141,5 @@ configuration of a role will be illustrated using two users. The configuration i
 
 This example clearly shows the advantages of the concept. The complete separation of administrative
 users from regular users brings significant advantages. Of course, one doesn't necessarily exclude
-the other. An administrator can, of course, have full access to the role and also be a member in it!
+the other. An administrator can, of course, have full access to the role and also be a member in it.
 The boundaries between the two often overlap, and can be freely defined in Netwrix Password Secure.

@@ -12,7 +12,7 @@ When creating a new data record, it is always indispensable to query all relevan
 Intended application. In this context, **Forms** represent templates for the information which have
 To be stored. The manageability of existing forms primarily ensures the completeness of the data
 Which have to be stored. Nevertheless, their use as an effective filter criterion isn't to be
-Ignored! Forms have a lasting impact on working withNetwrix Password Secure v8 and must be managed
+Ignored. Forms have a lasting impact on working withNetwrix Password Secure v8 and must be managed
 And maintained with the necessary care by the administration.
 
 ![form module](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/forms/forms_1-en.webp)
@@ -44,7 +44,7 @@ The field type are visible.
 The wizard for creating new forms can be started via the ribbon, the keyboard shortcut "Ctrl + N" or
 Also the context menu that is accessed using the right mouse button. The same mechanisms can now be
 Used to create new form fields within the wizard. Depending on the selected field type, other
-Options are available in the **field settings** section. This will be clearly explained below using
+Options are available in the **field settings** section. The following example explains this using
 The example of the field type "Password". The sequence in which form fields are requested when
 Creating new records corresponds to the sequence within the form. This can be adapted using the
 Relevant buttons in the ribbon.

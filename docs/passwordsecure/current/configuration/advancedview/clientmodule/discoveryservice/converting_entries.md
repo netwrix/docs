@@ -65,7 +65,7 @@ The **Password Reset** is configured in the **Settings Ribbon**.
 
 ![reset setting](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_4-en.webp)
 
-The **settings** will be described in more detail below:
+The **settings** will be described in more detail in the following sections:
 
 1. The organisational unit in which the **Password Reset** should be created is entered here. In
    addition, a template for the rights inheritance can be entered here.
@@ -157,7 +157,7 @@ note. The user can then still decide to **Cancel** the process. If you click **O
 **Security level 2:**
 
 Another **confirmation prompt** highlights that you must understand what you are about to
-do. It will no longer be possible to reverse the actions afterwards!
+do. It will no longer be possible to reverse the actions afterwards.
 
 **CAUTION:** **Last chance to cancel the execution!**
 

@@ -26,7 +26,7 @@ can use a domain administrator.
 
 :::warning
 A corresponding **password** with **rights** for the **domains** must exist before
-adding a **Network Scan**!
+adding a **Network Scan**.
 :::
 
 ### Password

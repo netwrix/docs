@@ -54,7 +54,7 @@ The **scriptblock** can be used when the script should run in the context of ano
 actual change is then performed in the **scriptblock**.
 
 It is important in this case that you provide Netwrix Password Secure with feedback about what has
-been changed via a **Write-Output**. The following example simply uses the outputs **true** or
+been changed via a **Write-Output**. The following example uses the outputs **true** or
 **false**. However, it is also conceivable that an error message or similar is output.
 
 

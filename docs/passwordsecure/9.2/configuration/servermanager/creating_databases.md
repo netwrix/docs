@@ -20,7 +20,7 @@ Database management system is used in Netwrix Password Secure version 9.
 ## Creating databases
 
 The creation of databases is supported by the database wizard, which is started directly from the
-Ribbon. The individual tabs of the wizard are explained below:
+Ribbon. The individual tabs of the wizard are explained in the following sections:
 
 ![database wizard](/images/passwordsecure/9.2/configuration/server_manager/creatingdatabase/installation_with_parameters_217-en.webp)
 

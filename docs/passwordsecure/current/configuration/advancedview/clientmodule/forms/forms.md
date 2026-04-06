@@ -44,7 +44,7 @@ the field type are visible.
 The wizard for creating new forms can be started via the ribbon, the keyboard shortcut "Ctrl + N" or
 also the context menu that is accessed using the right mouse button. The same mechanisms can now be
 used to create new form fields within the wizard. Depending on the selected field type, other
-options are available in the **field settings** section. This will be clearly explained below using
+options are available in the **field settings** section. This will be clearly explained in the following sections using
 the example of the field type "Password". The sequence in which form fields are requested when
 creating new records corresponds to the sequence within the form. This can be adapted using the
 relevant buttons in the ribbon.

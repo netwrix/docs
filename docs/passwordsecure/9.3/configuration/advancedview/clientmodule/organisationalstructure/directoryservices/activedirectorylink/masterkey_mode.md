@@ -263,7 +263,7 @@ next synchronization. For this purpose, it is necessary for the user to be impor
 If the user is only deleted from Netwrix Password Secure but retained in Active Directory, a
 synchronization needs to be performed to delete it from the database. For this purpose, the wizard
 is opened via **import**. The first step is to select an organisational unit. This has no effect
-when simply deleting a user. The second step is to search for the user. Both ticks are removed.
+when deleting a user. The second step is to search for the user. Both ticks are removed.
 
 After checking the summary, the process is concluded. The synchronization is completed and the user
 is deleted from the database.

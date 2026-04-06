@@ -21,7 +21,7 @@ sidebar_position: 7
 - During login, the field for entering the user name is no longer emptied when the database name is changed.
 
 #### Server Manager
-- The old version of the Web App, displayed in the Server Manager as “Web app (Legacy)”, can no longer be created. Use the new web app with immediate effect!
+- The old version of the Web App, displayed in the Server Manager as “Web app (Legacy)”, can no longer be created. Use the new web app with immediate effect.
 
 # Improvements
 

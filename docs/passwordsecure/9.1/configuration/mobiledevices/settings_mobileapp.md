@@ -47,7 +47,7 @@ How to synchronize with the main database is configured here. The following opti
 - **Disabled:** It isn't synchronized
 
 :::note
-Costs may be incurred for synchronization via the mobile network!
+Costs may be incurred for synchronization via the mobile network.
 :::
 
 **Synchronize now**

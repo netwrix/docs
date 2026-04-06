@@ -65,7 +65,7 @@ The actions can be used, for example, to mark the password as a Favourite or als
 
 3. Permissions
 
-This section doesn't offer any additional functions than simply opening the permissions.
+This section doesn't offer any additional functions beyond opening the permissions.
 
 4. Clipboard
 

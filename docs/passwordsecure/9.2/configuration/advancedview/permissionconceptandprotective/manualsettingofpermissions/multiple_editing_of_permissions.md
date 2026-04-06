@@ -11,7 +11,7 @@ sidebar_position: 20
 As part of the manual modification of permissions, it is also possible to edit multiple records at
 the same time. Various mechanisms lets you select the records to be edited. You can
 select the records in [List view](/docs/passwordsecure/9.2/configuration/advancedview/operationandsetup/list_view.md) or you can use
-the filter as part of the multiple editing function. Both scenarios are described below.
+the filter as part of the multiple editing function. Both scenarios are described in the following sections.
 
 ### User permissions for batch processing
 
@@ -123,7 +123,7 @@ again by entering a PIN.
 ![security warning](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/manual_settings/multiple_editing_of_permissions/multiple-editing-of-permissions-9-en.webp)
 
 :::warning
-The removal of seals and password masking can't be reversed!
+The removal of seals and password masking can't be reversed.
 :::
 
 :::note

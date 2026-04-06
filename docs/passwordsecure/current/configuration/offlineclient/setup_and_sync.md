@@ -78,7 +78,7 @@ Offline mode can be configured and personalized using the four settings mentione
 - **Offline synchronization after saving a record**: The synchronization of the offline database is
   completed directly after saving a record. Applies to those
   records that are saved by the user who is logged in. Changes made by another user don't trigger
-  any synchronization!
+  any synchronization.
 - **Offline synchronization after login:** If this option is active, the offline database is
   synchronized after each restart of the client.
 - **Automatic synchronization after an interval**: This setting is used to define the interval at

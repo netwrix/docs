@@ -106,7 +106,7 @@ It's possible to leave the **IP address** field empty in the application. If an 
 :::
 
 Alternatively, it's possible to connect several records with one RDP connection. In this way, you
-can combine different users with an RDP connection and register them straightforward.
+can combine different users with an RDP connection and register them.
 
 ![connect RDP sessions](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/applications/applications_9-en.webp)
 

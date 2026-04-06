@@ -57,7 +57,7 @@ then enter it in the appropriate field. Finally, click **Create** in the ribbon.
 
 ## RSA SecurID Token
 
-To set up multifactor authentication using RSA SecurID, simply enter the RSA user name, and click
+To set up multifactor authentication using RSA SecurID, enter the RSA user name, and click
 **Create** directly in the ribbon.
 
 ![RSA SecurID Token](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/multifactor_authentication_5-en.webp)

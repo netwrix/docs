@@ -82,8 +82,8 @@ connection isn't possible, deactivate SecureSocketsLayer and try again.
 
 :::warning
 The master key is added in form of a certificate. It is **essential to back up** the
-generated certificate! If the database is being moved to another server, the certificate also needs
-to be transferred! Further information can be found in the section
+generated certificate. If the database is being moved to another server, the certificate also needs
+to be transferred. Further information can be found in the section
 [Certificates](/docs/passwordsecure/9.2/configuration/servermanager/certificates/certificates.md).
 :::
 
@@ -263,7 +263,7 @@ next synchronization. For this purpose, it is necessary for the user to be impor
 If the user is only deleted from Netwrix Password Secure but retained in Active Directory, a
 synchronization needs to run to delete it from the database. For this purpose, the wizard
 is opened via **import**. The first step is to select an organisational unit. This has no effect
-when simply deleting a user. The second step is to search for the user. Both ticks are removed.
+when deleting a user. The second step is to search for the user. Both ticks are removed.
 
 After checking the summary, the process is concluded. The synchronization is completed and the user
 is deleted from the database.

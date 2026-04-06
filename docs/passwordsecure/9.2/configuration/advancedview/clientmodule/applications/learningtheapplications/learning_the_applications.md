@@ -42,7 +42,7 @@ title**, **Application** and **Application path** aren't manually filled. This i
 ![new sso application](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/learning_the_applications/learning_the_applications_2-en.webp)
 
 A crosshair cursor now appears. It enables the actual "mapping" or assignment of the target fields.
-You can see the field assignment for the user name below using a log in to an SQL server as an
+The following example shows the field assignment for the user name using a log in to an SQL server as an
 example. All of the other fields that should be automatically entered are assigned in the same way.
 The process is always the same. You select the field that needs to be automatically filled and then
 decide which information should be used to fill it.
@@ -59,7 +59,7 @@ user name, password, and clicking the button to subsequently confirm the login.
 "Graphical recognition:" The graphical recognition function provides additional protection. It
 lets you define other factors for the SSO. An area is defined that then serves as the output
 for the comparison (e.g. for login masks with an image). To activate the graphical
-recognition function, click the eye at the top right after assigning the fields! The area that
+recognition function, click the eye at the top right after assigning the fields. The area that
 will serve as the output point is then marked.
 :::
 

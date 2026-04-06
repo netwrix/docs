@@ -41,7 +41,7 @@ compatible with these two regex queries, you must set a custom regex query in th
 regex query. If the domain must be explicitly specified, it must be written in capital letters.
 :::
 
-In addition, the smartcard certificate must of course also be valid on the server!
+In addition, the smartcard certificate must also be valid on the server.
 
 ## Fido2 (only at the Web Application)
 

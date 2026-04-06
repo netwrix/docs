@@ -29,7 +29,7 @@ The expiry date for the database certificate isn't checked. The certificate thus
 
 :::warning
 If the database is being moved to another server, it's essential that the certificate
-is also transferred!
+is also transferred.
 :::
 
 #### Exporting and importing the certificate

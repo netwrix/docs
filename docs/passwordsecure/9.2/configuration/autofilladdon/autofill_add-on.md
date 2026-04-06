@@ -47,10 +47,10 @@ Detail in the corresponding section.
 Automatically starting all other types of connection is the task of the **Autofill Add-on**. The
 Following types of connections exist:
 
-- Entering login data in Windows applications: Alongside the above-mentioned RDP and SSH sessions,
-  Other Windows applications can also be automated
+- Entering login data in Windows applications: Alongside the RDP and SSH sessions listed earlier,
+  other Windows applications can also be automated
   (![2](/images/passwordsecure/9.2/configuration/autofill_add-on/2.webp)).
-  A major difference is that the two above-mentioned connections are set up and “embedded” in a
+  A major difference is that the two previously listed connections are set up and “embedded” in a
   Separate tab. Other applications, such as e.g. VMware, are directly started as usual. In these
   Cases, the Autofill Add-on takes over the communication between the application server and the
   Windows applications.

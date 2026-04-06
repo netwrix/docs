@@ -44,7 +44,7 @@ protected by a seal.
 :::
 
 :::warning
-Be Aware" Only records that are protected with a password can be sealed!
+Be Aware" Only records that are protected with a password can be sealed.
 :::
 
 ## Seal wizard
@@ -125,7 +125,7 @@ the **Read**, **Write**, **Delete**, and **Authorize** permission.
 
 :::warning
 All the roles that were once added to the seal can no longer be removed via the seal
-logic. This is only possible directly via the authorizations of the data record!
+logic. This is only possible directly via the authorizations of the data record.
 :::
 
 :::note

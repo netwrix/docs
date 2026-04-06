@@ -31,7 +31,7 @@ There are 2 possibilities here:
 ![image4](/images/passwordsecure/9.1/configuration/basic_view/start_and_login/image4.webp)
 
 :::warning
-ask your administrator if you aren't sure which login details apply to you!
+ask your administrator if you aren't sure which login details apply to you.
 :::
 
 

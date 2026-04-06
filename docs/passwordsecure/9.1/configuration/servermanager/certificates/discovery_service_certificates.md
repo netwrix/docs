@@ -22,7 +22,7 @@ The certificates for the discovery service have an expiry date. However, this is
 
 :::warning
 If the database is being moved to another server, it's **essential that the discovery
-service certificate is also transferred!**
+service certificate is also transferred.**
 :::
 
 #### Exporting and importing the certificate

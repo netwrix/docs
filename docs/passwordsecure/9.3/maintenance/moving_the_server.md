@@ -68,7 +68,7 @@ needs to be integrated.
 #### 1. Integrating the database at the SQL level
 
 Firstly, a new database is created on the SQL server. This option can be found in the SQL Management
-Studio after right clicking on Databases. It is usually sufficient to simply enter the database
+Studio after right clicking on Databases. It is usually sufficient to enter the database
 names.
 
 ![integrate the database](/images/passwordsecure/9.2/maintenance/sql-new-db-en.webp)

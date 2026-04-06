@@ -32,14 +32,14 @@ the permissions in the list view:
 :::note
 The icon on the right of the reading pane shows the information whether the record is personal
 or public. In case of personal data records, the user that is logged on is the only one who has
-permissions!
+permissions.
 :::
 
 The author is created with all permissions for the record. As described in the
 [Permission concept and protective mechanisms](/docs/passwordsecure/9.2/configuration/advancedview/permissionconceptandprotective/permission_concept_and_protective.md), you can now
 add roles and users. 'Right click - Add' inside the userlist or use the ribbon "User and roles" to
 add a user. The filter helps you to quickly find those users who should be granted permissions for
-the record in just a few steps.
+the record.
 
 ![add user and role](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/manual_settings/manual-setting-of-permissions-2-en.webp)
 
@@ -94,5 +94,5 @@ with the owner permission from the record.
 
 :::warning
 The owner permission doesn't protect a record from being deleted. Any user who has
-deletion permission can delete the record!
+deletion permission can delete the record.
 :::

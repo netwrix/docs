@@ -39,8 +39,7 @@ find the corresponding QR code in the Backstage under Account:
 
 ![QR-code](/images/passwordsecure/9.2/configuration/mobiledevices/setup/linking_database/link-via-qr-code-en.webp)
 
-Then click the button for the QR code in the app. In the following dialog, the QR code is simply
-photographed from the monitor. The mobile database is now created directly in the background and
+Then click the button for the QR code in the app. In the following dialog, photograph the QR code from the monitor. The mobile database is now created directly in the background and
 linked to the database on the server. In the next step, you can give the database profile a
 meaningful name and log in directly:
 

@@ -15,7 +15,7 @@ often ignored for reasons of convenience.
 
 The result is that the same outdated passwords are often used for many **security-critical access
 points**. This represents a **severe security risk** and leaves the door wide open for any
-attacker who gains access to just one of the passwords!
+attacker who gains access to even one of the passwords.
 
 ## The solution
 

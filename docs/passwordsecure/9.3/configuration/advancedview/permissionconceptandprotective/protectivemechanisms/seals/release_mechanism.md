@@ -20,7 +20,7 @@ password. Even if the configuration is usually done at the level of the role, ea
 technically separate seals are created for each individual member of the role.
 
 :::note
-Requests or releases are only valid for the respective user!
+Requests or releases are only valid for the respective user.
 :::
 
 :::warning

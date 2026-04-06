@@ -6,9 +6,9 @@ sidebar_position: 70
 
 # Getting Started for End Users
 
-It's time to set up your new password management solution Netwrix Password Secure! The process
+It's time to set up your new password management solution, Netwrix Password Secure. The process
 won't take too long, but you should allow yourself a little time to get to know the product. As when
-it comes to your IT security, it's important to ensure you get it right. Below is a step-by-step
+it comes to your IT security, it's important to ensure you get it right. The following is a step-by-step
 guide to setting up a password manager and leading you through the first few steps.
 
 ## How to Log In

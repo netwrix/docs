@@ -9,7 +9,7 @@ sidebar_position: 10
 ## Migrating from LDAP to Entra ID
 
 an automated migration from LDAP users (E2E as well as MasterKey) to Entra ID users is
-not possible!
+not possible.
 
 ## SCIM endpoint port for Entra ID provisioning
 

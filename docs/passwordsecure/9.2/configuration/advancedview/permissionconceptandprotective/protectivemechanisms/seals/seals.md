@@ -39,12 +39,12 @@ group can use the password without restrictions, but the same password is sealed
 The wizard assists users in applying seals, as well as in future maintenance.
 
 :::warning
-The complete data set is never sealed! Only the permission to view a password is
+The complete data set is never sealed. Only the permission to view a password is
 protected by a seal.
 :::
 
 :::warning
-Be Aware" Only records that are protected with a password can be sealed!
+Be Aware" Only records that are protected with a password can be sealed.
 :::
 
 ## Seal wizard
@@ -112,7 +112,7 @@ must grant at least one release.
 ![edit seal](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/seals/seals_6-en.webp)
 
 To be not only dependent on existing authorizations on the data set, other users can also
-be added to the seal. The role accounting under "sealed for" has been added below.
+be added to the seal. The role accounting under "sealed for" has been added in the following screenshot.
 
 ![define permission for the seal](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/seals/seals_7-en.webp)
 
@@ -125,7 +125,7 @@ the **Read**, **Write**, **Delete**, and **Authorize** permission.
 
 :::warning
 All the roles that were once added to the seal can no longer be removed via the seal
-logic. This is only possible directly via the authorizations of the data record!
+logic. This is only possible directly via the authorizations of the data record.
 :::
 
 :::note

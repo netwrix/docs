@@ -15,7 +15,7 @@ determine the aesthetics of Netwrix Password Secure, and are optically a great h
 loose the overview even in case of large amounts of data.
 
 :::note
-Tags have no permissions. Any user can use any tag!
+Tags have no permissions. Any user can use any tag.
 :::
 
 ## Relevant rights

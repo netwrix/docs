@@ -9,7 +9,7 @@ sidebar_position: 20
 ## User rights for predefined rights
 
 The user rights section provides all of the basic information required for handling user rights .
-Nevertheless, the four user rights related to “predefining rights” are explained below.
+Nevertheless, the four user rights related to “predefining rights” are explained in the following sections.
 
 ![global user rights](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/relevant_user_rights/relevant_user_rights_1-en.webp)
 

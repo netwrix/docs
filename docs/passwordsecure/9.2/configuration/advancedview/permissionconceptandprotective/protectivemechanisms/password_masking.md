@@ -30,7 +30,7 @@ permission** for a record can continue to use the record without limitations aft
 masking. Password masking only applies to users without the "can apply password masking" right.
 
 :::note
-Password masking can only be applied to records with an existing password!
+Password masking can only be applied to records with an existing password.
 :::
 
 ## Applying password masking

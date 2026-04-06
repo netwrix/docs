@@ -39,7 +39,7 @@ parameters are used here:
 - **database** for transferring the database nam
 - **username** for transferring the user name
 
-The parameters are simply attached to the URL for the Web Application and separated from one another
+The parameters are attached to the URL for the Web Application and separated from one another
 with a **&**.
 
 Example

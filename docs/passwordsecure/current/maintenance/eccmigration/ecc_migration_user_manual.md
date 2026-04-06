@@ -12,7 +12,7 @@ If you use the Offline Add-on and the Mobile app you must synchronize them befor
 admin starts the migration.
 
 **CAUTION:** If you don't synchronize your data, it is lost and no more accessible after the
-migration!
+migration.
 
 ## Migration
 

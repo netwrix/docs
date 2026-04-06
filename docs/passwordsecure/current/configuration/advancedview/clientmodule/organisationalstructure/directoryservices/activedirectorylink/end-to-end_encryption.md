@@ -41,7 +41,7 @@ The process for creating a new profile is started via the icon "manage profiles"
 A **user** is required to access the AD. The user should be formatted as follows: Domain\user. It
 must have access to the AD.
 
-- The relevant **user password** (domain password) is required for the user mentioned above
+- The relevant **user password** (domain password) is required for the user previously mentioned
 - **Direct search** is recommended for very large domain trees. The representation of the tree
   structure is omitted, elements can only be found and selected via the search.
 - Use the **filter** to directly specify an AD path as an entry point via an LDAP query.

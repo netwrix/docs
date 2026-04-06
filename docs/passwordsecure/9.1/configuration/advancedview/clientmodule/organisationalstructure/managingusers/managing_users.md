@@ -73,7 +73,7 @@ Basic view.
 
 :::warning
 For licensing reasons, it isn't intended to switch from a Advanced view user to a
-Basic view user!
+Basic view user.
 :::
 
 The sales team will be happy to answer any questions you may have about licensing.

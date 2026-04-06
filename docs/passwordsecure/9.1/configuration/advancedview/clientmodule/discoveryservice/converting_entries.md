@@ -24,7 +24,7 @@ following types:
 3. Discovered type: User account
 
 !! hint Only those **services are recorded** to which at least one **AD user** or **user account**
-can be assigned! Only **AD users** and **user accounts** to which **at least one service** can be
+can be assigned. Only **AD users** and **user accounts** to which **at least one service** can be
 assigned are recorded.
 
 ## Execution
@@ -79,7 +79,7 @@ The **settings** will be described in more detail below:
 
 :::warning
 After clicking on **Finish**, the **Password Resets** will be **immediately executed**
-and the **passwords changed!**. This also applies to **Windows passwords!**
+and the **passwords changed.**. This also applies to **Windows passwords.**
 :::
 
 If option 1: **Do you also want to add a Password Reset?** isn't selected, \*steps 4, 5, and 6 are
@@ -88,7 +88,7 @@ not displayed for configuration.
 ![password reset option](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_5-en.webp)
 
 :::note
-After clicking on **Finish**, one, or more **passwords will be created** but **no corresponding Password Resets will be created!**
+After clicking on **Finish**, one, or more **passwords will be created** but **no corresponding Password Resets will be created.**
 :::
 
 ## Assignment (Active Directory user)
@@ -149,7 +149,7 @@ clicking on **Finish**.
 **Finish**.
 
 :::warning
-**observe the note and read it through carefully!**
+**observe the note and read it through carefully.**
 :::
 
 An **Overview** of which actions will be performed is displayed for the user together with this
@@ -161,10 +161,10 @@ note. The user can then still decide to **Cancel** the process. If you click **O
 **Security level 2:**
 
 Another **confirmation prompt** highlights that it's important to understand what you're about to
-do. It will no longer be possible to reverse the actions afterwards!
+do. It will no longer be possible to reverse the actions afterwards.
 
 :::warning
-**Last chance to cancel the execution!**
+**Last chance to cancel the execution.**
 :::
 
 ![securtiy warning](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_11-en.webp)

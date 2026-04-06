@@ -63,7 +63,7 @@ structures is explained in
 It is also possible to configure several different right templates within one department. This may
 be necessary e.g. if there are several areas of competency within one department which should each
 receive different permissions. Alongside the **IT general** area, the template groups **Exchange**
-and **Firewall** have also been defined below.
+and **Firewall** have also been defined in the following example.
 
 ![Standard template](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/predefined-rights-4-en.webp)
 

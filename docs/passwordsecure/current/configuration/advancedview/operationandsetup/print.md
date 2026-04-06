@@ -81,7 +81,7 @@ thus printed out.
 
 ![filtered password](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/print/installation_with_parameters_48-en.webp)
 
-They are printed out – as described above – in table form.
+They are printed out – as described previously – in table form.
 
 #### Detailed view (current selection)
 
@@ -92,7 +92,7 @@ in this case.
 
 #### Detailed view (current filter)
 
-Use this function to print out all filtered records in detailed view as described above.
+Use this function to print out all filtered records in detailed view as described previously.
 
 :::note
 The amount of data generated via this function can quickly become very

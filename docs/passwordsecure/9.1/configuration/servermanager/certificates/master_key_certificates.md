@@ -26,7 +26,7 @@ The certificates for Master Key mode have an expiry date. However, this isn't ch
 
 :::warning
 If the database is being moved to another server, it's essential that the Master Key
-certificate is also transferred!
+certificate is also transferred.
 :::
 
 #### Exporting and importing the certificate

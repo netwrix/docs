@@ -15,7 +15,7 @@ Password Secure and also on the target system.**
 
 ![Password reset diagram](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwordreset/password_reset_1-en.webp)
 
-This process will be explained below using a specific example. The password for the MSSQL user has
+This process will be explained in the following sections using a specific example. The password for the MSSQL user has
 expired. The Password Reset changes the password in Netwrix Password Secure and also in the target
 system to a new value.
 
@@ -28,4 +28,4 @@ with all associated passwords. This is noted in the logbook with an entry "block
 
 **CAUTION:** Due to the complexity of the process, it is strongly recommended that Password Reset is
 configured **in combination with certified partners**. The desired simplification of work processes
-using the above-mentioned automated functions is accompanied by numerous risks.
+using the previously mentioned automated functions is accompanied by numerous risks.

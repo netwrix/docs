@@ -17,7 +17,7 @@ Customizable info area, which visually prepares important events or facts
 Dashboards are available in almost all [Client Module](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/client_module.md)s. A
 Separate dashboard can be set for each individual module. **Widgets** correspond to the individual
 Modules of the dashboard. There are various widgets, which can be individually defined and can be
-Configured separately. In the above example, three widgets are enabled and provide information about
+Configured separately. In the previous example, three widgets are enabled and provide information about
 Current notifications, password quality, and user activity. The **maximum number of possible
 Widgets** is managed in the[User settings](/docs/passwordsecure/9.2/configuration/advancedview/mainmenufc/usersettings/user_settings.md).
 

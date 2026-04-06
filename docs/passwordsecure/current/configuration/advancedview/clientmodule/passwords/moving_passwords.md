@@ -10,7 +10,7 @@ sidebar_position: 30
 
 Data can be moved within Netwrix Password Secure to another organisational structure. This doesn't
 necessarily have to be linked to a change in permissions (the effects are described separately
-below). Moving records without changing the permissions mainly has effects on the filtering or
+the following section). Moving records without changing the permissions mainly has effects on the filtering or
 search functions for records.
 
 ## Move a record

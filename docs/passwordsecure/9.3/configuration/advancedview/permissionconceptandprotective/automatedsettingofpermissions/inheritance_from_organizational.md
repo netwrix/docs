@@ -79,7 +79,7 @@ record just created are now shown.
 
 ## Conclusion
 
-The permissions for the “storage location” are simply used when creating new objects. Two conditions
+The permissions for the “storage location” are used when creating new objects. Two conditions
 apply here:
 
 The value “organisational unit” must be selected in the settings for the inheritance of permissions

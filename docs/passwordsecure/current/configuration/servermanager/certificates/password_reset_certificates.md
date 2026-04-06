@@ -24,7 +24,7 @@ certificate thus doesn't need to be renewed.
 :::
 
 **CAUTION:** If the database is being moved to another server, it is essential that all Password
-Reset certificate is also transferred!
+Reset certificate is also transferred.
 
 #### Exporting and importing the certificate
 

@@ -16,7 +16,7 @@ secured via access permissions, this process enables the **maximum possible work
 methods**. Revealing passwords describes the mechanism by which a password is made visible to the
 user in the client. This process for dealing with passwords very precisely reflects the importance
 of data security in Netwrix Password Secure – and this process will thus be described in detail
-below.
+in the following sections.
 
 ### Example case
 
@@ -32,14 +32,14 @@ means the user can view the value of the password using the "reveal" function.
 In this context, the word "reveal" doesn't really accurately describe
 this process. It creates the **incorrect** impression that the client already has the password and
 only needs to reveal it. However, the processes running in the background until the password are
-revealed are much more complex and will thus be described below.
+revealed are much more complex and are described in the following diagram.
 
 ![revealing password diagram](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwords/revealing_passwords_2-en.webp)
 
 ### Saving the password on the server
 
 Even though you would assume the opposite, at the start a masked password (\*) is neither available
-on the client nor the server in plain text! The password is stored as part of the MSSQL database in
+on the client nor the server in plain text. The password is stored as part of the MSSQL database in
 a hybrid encrypted state via the two methods **AES 256** and **RSA**. Accordingly, it isn't
  possible either on the server or the client to view the password. If you mark a record,
 the password isn't available at all on the client and is encrypted on the server before it is

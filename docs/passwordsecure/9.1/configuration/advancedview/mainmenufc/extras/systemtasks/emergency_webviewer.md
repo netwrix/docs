@@ -31,7 +31,7 @@ using this **key**.
 
 :::warning
 The key (PrivateKey.prvkey) and the file (Emergency WebViewer.html) must be saved onto
-a secure medium (USB stick, HDD, CD/DVD, …) and kept in a secure location!
+a secure medium (USB stick, HDD, CD/DVD, …) and kept in a secure location.
 :::
 
 ## Data security
@@ -44,7 +44,7 @@ a secure medium (USB stick, HDD, CD/DVD, …) and kept in a secure location!
 • The file can only be encrypted using the **PrivateKey.prvkey** file
 
 :::warning
-The export right for the passwords isn't required for the Emergency WebViewer Export!
+The export right for the passwords isn't required for the Emergency WebViewer Export.
 :::
 
 ## Required rights
@@ -96,7 +96,7 @@ in accordance with the requirements.
 
 :::warning
 The private key for the Emergency WebViewer must be saved before the system task can be
-saved!
+saved.
 :::
 
 ## Displaying the Emergency WebViewer Export tasks

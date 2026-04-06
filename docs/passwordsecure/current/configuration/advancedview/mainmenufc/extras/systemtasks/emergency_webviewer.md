@@ -29,7 +29,7 @@ associated key is only created once at the beginning and needs to be saved. The 
 the **HTML file** can only be decrypted using this **key**.
 
 **CAUTION:** The key (PrivateKey.prvkey) and the file (Emergency WebViewer.html) must be saved onto
-a secure medium (USB stick, HDD, CD/DVD, …) and kept in a secure location!
+a secure medium (USB stick, HDD, CD/DVD, …) and kept in a secure location.
 
 ## Data security
 
@@ -40,7 +40,7 @@ a secure medium (USB stick, HDD, CD/DVD, …) and kept in a secure location!
 
 • The file can only be encrypted using the **PrivateKey.prvkey** file
 
-**CAUTION:** The export right for the passwords isn't required for the Emergency WebViewer Export!
+**CAUTION:** The export right for the passwords isn't required for the Emergency WebViewer Export.
 
 ## Required rights
 
@@ -90,7 +90,7 @@ in accordance with the requirements.
 6. **Tags** Freely definable characteristics of records
 
 **CAUTION:** The private key for the Emergency WebViewer must be saved before the system task can be
-saved!
+saved.
 
 ## Displaying the Emergency WebViewer Export tasks
 
@@ -165,5 +165,5 @@ is displayed with additional information.
 You have been logged out due to inactivity
 :::
 
-The user can log in again using the **password** and **key** as described above. After successfully
+The user can log in again using the **password** and **key** as described previously. After successfully
 logging in, the **Emergency WebViewer Export overview** is displayed again.

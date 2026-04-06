@@ -46,7 +46,7 @@ Copies the password to the clipboard.
 
 ###### Advanced menu
 
-If the menu – as described above – is maximised, **all functions** are then available. The functions
+If the menu – as described previously – is maximised, **all functions** are then available. The functions
 on the menu bar are repeated here. The menu is divided into a number of sections. These correspond 1
 to 1 to the sections of the ribbon on the client.
 
@@ -65,7 +65,7 @@ The actions can be used, for example, to mark the password as a Favourite or als
 
 3. Permissions
 
-This section doesn't offer any additional functions than simply opening the permissions.
+This section opens the permissions.
 
 4. Clipboard
 

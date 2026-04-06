@@ -8,7 +8,7 @@ sidebar_position: 50
 
 ## Tab system overview
 
-The tab system helps to structure the passwords to manage and find them more easily. For
+The tab system helps to structure the passwords to manage and find them more efficiently. For
 this purpose, several tabs can be created and switched between them with a click.
 
 ![tabs LightClient](/images/passwordsecure/9.2/configuration/basic_view/tab_system/tabs-lc-en.webp)

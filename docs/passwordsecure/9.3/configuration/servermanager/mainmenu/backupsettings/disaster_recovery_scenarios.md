@@ -93,7 +93,7 @@ it may be that the licence can only be released again by Netwrix. The basic conf
 completed to restore the connection to the database server. If the server name changes, the database
 profile on the client needs to be amended.
 
-Any existing offline databases need to be recreated!
+Any existing offline databases need to be recreated.
 
 Scenario 4
 
@@ -108,7 +108,7 @@ Restore the database from the backup. The basic configuration must be completed 
 connection to the database server. If the licence has already been activated multiple times, it may
 be that it can only be released again by Netwrix.
 
-Any existing offline databases need to be recreated!
+Any existing offline databases need to be recreated.
 
 Scenario 5
 

@@ -73,7 +73,7 @@ domains will be saved as a result. Requests received via the Web Application can
 against this list. The request will only be successfully performed if the origin header for a
 request is available in the permitted domains.
 
-To add a domain, simply enter it at the bottom of the dialogue. Clicking on
+To add a domain, enter it at the bottom of the dialogue. Clicking on
 :material-plus-circle-outline: will add the entry to the list at the top.
 
 ![cors-en-new](/images/passwordsecure/9.2/installation/installation_web_application/cors-en-new.webp)

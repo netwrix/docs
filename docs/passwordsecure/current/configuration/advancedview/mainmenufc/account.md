@@ -67,7 +67,7 @@ See also in
 
 #### Configure autologin
 
-Use this option to automate the log in to Netwrix Password Secure. For setup, just enter the
+Use this option to automate the log in to Netwrix Password Secure. For setup, enter the
 password twice and save it.
 
 The autologin is linked to the hardware and thus will not work on a different computer. If you

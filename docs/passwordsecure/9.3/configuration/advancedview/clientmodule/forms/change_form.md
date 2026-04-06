@@ -58,7 +58,7 @@ be directly shown and adopted after it is saved.
 
 The setting "Apply form changes to passwords" makes it possible to force the change to the form to
 be adopted. This becomes effective when editing the record! It is immaterial here whether changes
-are being made to the record. Simply re-editing and saving the record will cause the adjustment to
+are being made to the record. Re-editing and saving the record will cause the adjustment to
 the form.
 
 ### The following permissions/configuration must exist
@@ -72,4 +72,4 @@ the form.
 A common feature of both variants is that adjustments to forms can't be automatically triggered.
 Already existing records are thus not automatically adjusted. The adjustment thus needs to be
 performed manually. In the first case, the manual step is to use the function "Change form". In
-the second case, it is sufficient to simply edit and save the record.
+the second case, it is sufficient to edit and save the record.

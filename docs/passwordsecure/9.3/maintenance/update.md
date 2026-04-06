@@ -17,9 +17,9 @@ from the documentation (e.g. in appearance or also its functional scope), it mak
 update to the latest version.
 
 :::note
-The update check on the server or the client lets you easily install the latest version.
+The update check on the server or the client lets you install the latest version.
 The update check on the client must be activated in the settings for users beforehand. Netwrix recommends
-leaving the update check deactivated for normal users! Otherwise these users could independently
+leaving the update check deactivated for normal users. Otherwise these users could independently
 attempt to install updates. Since a new client can't connect to an old server, this results in the
 user not being able to log in.
 :::
@@ -29,7 +29,7 @@ user not being able to log in.
 The requirements should be checked or established before an update.
 
 :::warning
-always check the Changelog for requirements or breaking changes before updating!
+Always check the Changelog for requirements or breaking changes before updating.
 :::
 
 ### Check the software maintenance package
@@ -38,7 +38,7 @@ The right to install updates is acquired with the software maintenance package. 
 still active. If the software maintenance package has expired, you are only permitted to use those
 versions that were released during the term of the software maintenance package. Therefore, you
 should check whether the software maintenance package is still active before an update. This can be
-easily checked on the Server Manager under
+checked on the Server Manager under
 [License settings](/docs/passwordsecure/9.3/configuration/servermanager/mainmenu/license_settings.md).
 
 ### Creating a backup
@@ -57,20 +57,20 @@ will provide this information.
 
 :::warning
 If the password for logging in to the Server Manager on the database has been saved, it
-is essential that it is noted down or temporarily saved elsewhere before an update!
+is essential that it is noted down or temporarily saved elsewhere before an update.
 :::
 
 ### Latest installation files
 
 The installation files can be downloaded from the
-[customer information system](https://license.passwordsafe.de/kis). simply use the access
+[customer information system](https://license.passwordsafe.de/kis). Use the access
 data sent to you by email to log in.
 
 ## Perform update
 
 ### Updating the Server Manager
 
-The Server Manager is simply installed on top of the existing installation. The password from the
+The Server Manager is installed on top of the existing installation. The password from the
 Server Manager should be made available at this point in any case. After the installation of the
 Server Manager, the database is only accessible when it is activated. If the password is only in the
 Netwrix Password Secure, it should be temporarily stored at this point.
@@ -95,7 +95,7 @@ updated during this process.
 
 ### Updating the client
 
-The updates for the client are also simply installed over the existing installation. Further
+The updates for the client are also installed over the existing installation. Further
 information can be found in the section Installation of the client. the update can also
 be performed using the installation parameters.
 

@@ -22,7 +22,7 @@ The following options are required:
 - Can manage password images
 
 :::note
-It's important that the setting “Ask for Favicon-Download “ is only considered, if the right “Can upload new password images “ has been activated!
+It's important that the setting “Ask for Favicon-Download “ is only considered, if the right “Can upload new password images “ has been activated.
 :::
 
 #### Managing Icons/Logos

@@ -163,10 +163,10 @@ note. The user can then still decide to **Cancel** the process. If you click **O
 **Security level 2:**
 
 Another **confirmation prompt** highlights that understand what you are about to
-do. It will no longer be possible to reverse the actions afterwards!
+do. It will no longer be possible to reverse the actions afterwards.
 
 :::warning
-**Last chance to cancel the execution!**
+**Last chance to cancel the execution.**
 :::
 
 ![securtiy warning](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_11-en.webp)

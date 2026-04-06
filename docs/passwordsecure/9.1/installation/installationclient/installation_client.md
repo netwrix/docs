@@ -22,7 +22,7 @@ can also define whether additional components should be installed.
 
 :::warning
 only install the Terminal Server Service (for Autofill Add-on) if terminal
-server operation is intended!
+server operation is intended.
 :::
 
 ![installation wizard page 2](/images/passwordsecure/9.1/installation/installation_client/installation-client-3-en.webp)

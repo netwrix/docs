@@ -28,7 +28,7 @@ account, the search term must be enclosed in quotation marks: **â€œCook Danielâ€
 case sensitive. No distinction is made between upper and lower case.
 
 :::note
-You can access quick search directly via \* Ctrl + Q\*!
+You can access quick search directly via \* Ctrl + Q\*.
 :::
 
 **Negations in the quick search**

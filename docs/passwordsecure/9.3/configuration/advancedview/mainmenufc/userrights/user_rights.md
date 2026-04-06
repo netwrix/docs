@@ -43,7 +43,7 @@ user rights to roles and, if necessary, supplement them with global user rights.
 
 :::warning
 In addition to personal and global user rights (as opposed to settings), user rights
-are assigned via roles and not via organisational units!
+are assigned via roles and not via organisational units.
 :::
 
 :::note

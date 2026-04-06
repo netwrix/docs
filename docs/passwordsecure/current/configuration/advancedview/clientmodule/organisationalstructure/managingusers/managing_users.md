@@ -27,7 +27,7 @@ Can add new users -Display organisational structure module
 ## Adding local users
 
 In general, new users are added in the same way as creating a local organisational unit. Therefore,
-only the differences will be covered below.
+only the differences will be covered in the following sections.
 
 ### Creating users
 
@@ -76,7 +76,7 @@ users aren't able to use the Advanced view. However, Advanced view Users can als
 Basic view.
 
 **CAUTION:** For licensing reasons, it isn't intended to switch from a Advanced view user to a
-Basic view user!
+Basic view user.
 
 The sales team will be happy to answer any questions you may have about licensing.
 

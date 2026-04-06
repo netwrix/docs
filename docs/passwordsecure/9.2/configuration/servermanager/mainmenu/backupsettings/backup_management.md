@@ -81,7 +81,7 @@ existing databases. Firstly, select the required database. You can now select In
 
 If necessary, firstly enter login data for the user that logs in to the SQL server – although the
 service user is generally used here. Now select the backup file. All the backups contained in the
-file will then be displayed. Now simply click Restore to restore the backup to the existing
+file will then be displayed. Click **Restore** to restore the backup to the existing
 database.
 
 ![Database restore](/images/passwordsecure/9.2/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_261-en.webp)

@@ -8,7 +8,7 @@ sidebar_position: 10
 
 ## Conditions for using the Basic view
 
-The Basic view allows end users to easily manage their passwords in Netwrix Password Secure without
+The Basic view allows end users to manage their passwords in Netwrix Password Secure without
 any training or prior knowledge. To ensure proper operation, the administration has to make
 a few preparations first. This will be further discussed in the following.
 
@@ -52,7 +52,7 @@ obtain the right to read a record to use the password.
 #### Creating passwords via applications
 
 To use applications on the Basic view, the administration must first create them on the
-FullClient. By clicking on the application, the end user can easily generate secure passwords. To be
+FullClient. By clicking on the application, the end user can generate secure passwords. To be
 able to use the application, the user needs at least the authorization to **read**.
 
 Further information on this topic can be found in the chapter

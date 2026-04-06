@@ -21,7 +21,7 @@ responsible for his own request when carrying out the release. Even if a seal is
 technically separate seals are created for each individual member of the role.
 
 :::note
-Requests or releases are only valid for the respective user!
+Requests or releases are only valid for the respective user.
 :::
 
 :::warning

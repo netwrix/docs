@@ -81,7 +81,7 @@ finished, the **Network Scan** scans the **network** according to these guidelin
    user of services or _Local user_.
 
 **CAUTION:** The system executing the scan – on which the Server Manager is installed – isn't
-scanned!
+scanned.
 
 ## Interval / Executing server / Tags
 
@@ -108,4 +108,4 @@ Depending on the message, the **Discovery Service Task** may need to be amended.
 
 **CAUTION:** The **default setting** for the **Discovery Service Task** after it has been saved is
 **Activated!** It will **immediately actively** scan the network for data. This data is **read** but
-not amended!
+not amended.

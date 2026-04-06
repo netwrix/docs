@@ -34,7 +34,7 @@ one of the following three ways:
    client settings.
 
 **CAUTION:** In addition to personal and global settings (as opposed to authorizations), settings
-aren't assigned via roles, but via organisational units!
+aren't assigned via roles, but via organisational units.
 
 ![installation_with_parameters_112](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/user_rights/installation_with_parameters_112.webp)
 
@@ -65,7 +65,7 @@ by the organisational unit “IT”. The top two options have no value in the co
 this parameter has been defined at user level.
 
 :::note
-The inheritance for individual settings can be deactivated in the ribbon!
+The inheritance for individual settings can be deactivated in the ribbon.
 :::
 
 ## Security levels

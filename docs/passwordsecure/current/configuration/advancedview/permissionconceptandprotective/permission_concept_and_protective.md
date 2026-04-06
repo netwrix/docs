@@ -55,7 +55,7 @@ is, of course, a good idea to manage these roles in accordance with your company
 role “Administrators” can therefore be provided with more extensive authorizations than, for
 example, the role “Sales Assistance”. This role-based inheritance allows the organization to
 maintain the overview in a larger corporate structure as well as a simple procedure when adding new
-employees. Instead of having to entitle him individually, this is simply added to his role.
+employees. Instead of having to entitle him individually, the new employee is added to the role.
 
 ![Permission only for users or roles](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/permission_concept_2-en.webp)
 
@@ -65,13 +65,8 @@ personnel must also be taken into account in such concepts. Working with roles d
 significantly.
 
 :::note
+Permissions are always granted to only one user or role.
 :::
-
-
-```
-Permissions are always granted to only one user or role!
-
-```
 
 ### 2. Membership in roles
 
@@ -112,13 +107,8 @@ administrators. This user has extensive rights for the role. It can edit it, and
 However, it can't see any data that is assigned to sales. It lacks membership in the role.
 
 :::note
+As a member of a role, it must have at least the “read” right for the role.
 :::
-
-
-```
-As a member of a role, it must have at least the “read” right for the role!
-
-```
 
 ## Specific example and configuration
 
@@ -141,5 +131,5 @@ configuration of a role will be illustrated using two users. The configuration i
 
 This example clearly shows the advantages of the concept. The complete separation of administrative
 users from regular users brings significant advantages. Of course, one doesn't necessarily exclude
-the other. An administrator can, of course, have full access to the role and also be a member in it!
+the other. An administrator can, of course, have full access to the role and also be a member in it.
 The boundaries between the two often overlap, and can be freely defined in Netwrix Password Secure.

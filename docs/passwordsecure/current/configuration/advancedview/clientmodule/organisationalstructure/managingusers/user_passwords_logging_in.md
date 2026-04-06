@@ -70,7 +70,7 @@ The process for logging into the database differs depending on the type of user.
 
 ### Local user
 
-Local users simply log in using their user name and the assigned password.
+Local users log in using their user name and the assigned password.
 
 ![login username](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/managingusers/user_passwords_4-en_415x238.webp)
 

@@ -14,4 +14,4 @@ be added automatically.
 This certificate is important if you will activate an offline license. In future there will be more
 features for which this certificate is relevant.
 
-RECOMMENDED: **export this certificate separately!!!**
+RECOMMENDED: **export this certificate separately.**

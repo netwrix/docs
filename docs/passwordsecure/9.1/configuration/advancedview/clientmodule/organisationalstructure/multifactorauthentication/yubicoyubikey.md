@@ -53,7 +53,7 @@ The HTTPS endpoint [Yubico Verify](https://api.yubico.com/wsapi/2.0/verify) is u
 Multifactor authentication can be configured in the Netwrix Password Secure client. It can be done
 by the user themselves in **Backstage** in the
 [Account](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/account.md)
-menu. To configure the Yubikey, simply select **Yubico OTP**.
+menu. To configure the Yubikey, select **Yubico OTP**.
 
 ![setup second factor](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/yubico/yubico_yubikey_6-en.webp)
 

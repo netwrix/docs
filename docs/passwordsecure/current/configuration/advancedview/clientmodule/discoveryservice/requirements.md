@@ -25,7 +25,7 @@ data. This user should be a member of admin for the corresponding group of domai
 can use a domain administrator.
 
 **CAUTION:** A corresponding **password** with **rights** for the **domains** must exist before
-adding a **Network Scan**!
+adding a **Network Scan**.
 
 ### Password
 

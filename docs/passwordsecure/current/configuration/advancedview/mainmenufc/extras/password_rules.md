@@ -46,7 +46,7 @@ configuration for this rule:
 - **Forbidden passwords:** Some passwords and the user name can also be added to the list of
   forbidden passwords
 - **Preview rules:** When new rules are created, an example password is generated that conforms to
-  the configured rules. This is only the case for passwords with a minimum length of 3 characters!
+  the configured rules. This is only the case for passwords with a minimum length of 3 characters.
 
 ## Using password rules
 

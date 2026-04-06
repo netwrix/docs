@@ -10,7 +10,7 @@ sidebar_position: 30
 
 ## Basic view overview
 
-The Basic view is a lean tool for every end user. It guarantees quick and easy access to the daily
+The Basic view is a lean tool for every end user. It provides quick access to the daily
 needed passwords. Although the Basic view has a limited range of functions, it can be operated
 intuitively and without previous knowledge or training by any user. The Basic view is designed for
 up to 50 passwords. The Basic view introduces to professional password management. It is also the

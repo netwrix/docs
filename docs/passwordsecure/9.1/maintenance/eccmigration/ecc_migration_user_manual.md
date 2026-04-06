@@ -13,7 +13,7 @@ admin starts the migration.
 
 :::warning
 If you don't synchronize your data, it's lost and no more accessible after the
-migration!
+migration.
 :::
 
 ## Migration

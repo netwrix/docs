@@ -39,7 +39,7 @@ revealed are much more complex and will thus be described below.
 ### Saving the password on the server
 
 Even though you would assume the opposite, at the start a masked password (\*) is neither available
-on the client nor the server in plain text! The password is stored as part of the MSSQL database in
+on the client nor the server in plain text. The password is stored as part of the MSSQL database in
 a hybrid encrypted state via the two methods **AES 256** and **RSA**. Accordingly, it isn't
 possible either on the server or the client to view the password. If you mark a record,
 the password isn't available at all on the client and is encrypted on the server before it's

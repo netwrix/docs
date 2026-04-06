@@ -55,7 +55,7 @@ the following start parameters are transferred:
 ## Placeholder for fields⚓︎
 
 Fields can be added via certain placeholders based on their type or their name. The easiest way to
-do this is using the configuration window described above.
+do this is using the configuration window described in the previous section.
 
 | Field type              | Placeholder       |
 | ----------------------- | ----------------- |

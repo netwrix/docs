@@ -38,7 +38,7 @@ requested. The authentication is handled via the
 
 ### Linking Entra ID
 
-Below you will find instructions on how to connect Entra ID to Netwrix Password Secure. In the Azure
+The following instructions describe how to connect Entra ID to Netwrix Password Secure. In the Azure
 portal, go to the management page of your Microsoft Entra ID. Use an account with administrative
 permissions for this. During this, log in to Netwrix Password Secure with an account that has the
 user right "Display organisational structure module", "Can manage Entra ID profiles", and "Can
@@ -80,7 +80,7 @@ available in the Azure Gallery.
 
 :::warning
 The import of Azure groups as Netwrix Password Secure roles is only possible if you
-have booked the Azure package Entra ID Premium P1!
+have booked the Azure package Entra ID Premium P1.
 :::
 
 - Navigate to the "Provisioning" page
@@ -124,7 +124,7 @@ roles are shown in Netwrix Password Secure.
 :::warning
 Azure establishes the connection to Netwrix Password Secure. For this,
 the client URL must be accessible from an external network / provisioning agent and any used SSL
-certificate must be valid! If the users aren't created in Netwrix Password Secure, consult the
+certificate must be valid. If the users aren't created in Netwrix Password Secure, consult the
 Azure Enterprise Application Provisioning log for troubleshooting details.
 :::
 

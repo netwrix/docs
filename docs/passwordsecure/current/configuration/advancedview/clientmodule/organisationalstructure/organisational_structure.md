@@ -65,7 +65,7 @@ remaining actions have already be explained for the password module.
 To reset a user password, membership for the user is a prerequisite.
 :::
 
-The example below shows the configuration of a user where only the user themselves is a member.
+The following example shows the configuration of a user where only the user themselves is a member.
 
 ![permission for user](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/organizational_structures_3-en.webp)
 
@@ -80,7 +80,7 @@ membership. No other interventions can be made if the password is then lost.
 
 Both users and also organisational units themselves can be added as usual via the ribbon
 (alternatively via Ctrl + N or via the context menu). These processes are supported by various
-wizards. The example below shows the creation of a new organisational unit:
+wizards. The following example shows the creation of a new organisational unit:
 
 ### Create organisational unit
 

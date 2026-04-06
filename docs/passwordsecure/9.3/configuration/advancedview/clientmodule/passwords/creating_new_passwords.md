@@ -69,7 +69,7 @@ and the permissions for a record are important aspects.
 - **Manual setting of permissions**: If you want to manually set permissions for the record, select
   the organisational structure in which the record should be saved. After saving the record, the
   permissions can be manually amended via the permissions tab in the ribbon. If you only want to
-  create a personal record for which no other user will receive permissions, simply select your own
+  create a personal record for which no other user will receive permissions, select your own
   organisational structure and conclude the process with "save" via the ribbon.
 
 :::note

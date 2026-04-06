@@ -54,7 +54,7 @@ this endpoint.
 
 Multifactor authentication can be configured in the Netwrix Password Secure client. It can be done
 by the user themselves in **Backstage** in the [Account](/docs/passwordsecure/9.2/configuration/advancedview/mainmenufc/account.md)
-menu. To configure the Yubikey, simply select **Yubico OTP**.
+menu. To configure the Yubikey, select **Yubico OTP**.
 
 ![setup second factor](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/yubico/yubico_yubikey_6-en.webp)
 

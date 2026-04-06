@@ -21,7 +21,7 @@ differ significantly and are explained in separate sections.
 - End-to-end encryption
 - Master Key mode
 
-In principle, the two variants differ by the presence of the encryption mentioned above. In the
+In principle, the two variants differ by the presence of the encryption described in the previous section. In the
 solution with active end-to-end encryption (**E2EE**), the process may be less convenient (see
 table) but there is a huge benefit in terms of security. In Master Key mode, a master key is created
 on the server that has full permissions for all users, organisational units and roles. This

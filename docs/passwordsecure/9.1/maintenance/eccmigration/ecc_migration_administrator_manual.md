@@ -19,13 +19,13 @@ Before you execute the migration, you must ensure that the following preparation
 
 :::warning
 If the OfflineClient or App does haven't yet synchronized items, they're lost after
-the migration mode is enabled!
+the migration mode is enabled.
 :::
 
 - Backup all certificates using the Netwrix Password Secure Server Manager
 
 :::warning
-Only certificate backups made through the Server Manager are valid!
+Only certificate backups made through the Server Manager are valid.
 :::
 
 ![Certificates](/images/passwordsecure/9.1/configuration/server_manager/ecc_migration/certificates-ac-1-en.webp)
@@ -57,7 +57,7 @@ Clicking on the icon **“Start migration”** in the databases' module to start
 Select the database you want to migrate and enter the code-word.
 
 Remember, The code word is “Start”. ensure that you have read the whole documentation.
-Otherwise, data loss might occur!
+Otherwise, data loss might occur.
 
 ![select database](/images/passwordsecure/9.1/configuration/server_manager/ecc_migration/start-migration-2-en.webp)
 

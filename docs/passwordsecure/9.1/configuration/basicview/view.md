@@ -47,7 +47,7 @@ When you click the button, the following options become visible:
 - Move to bin (the selected record can be deleted.)
 - -Copy username (the username of the selected record will be copied to the clipboard).
 - -Copy password (the password of the selected record will be copied to the clipboard).
-- Typing assistance (Use this view to easily type out passwords)
+- Typing assistance (Use this view to type out passwords)
 - -Refresh (The record will be updated.)
 
 You can only perform the above operations if you're sufficiently authorized. point this out

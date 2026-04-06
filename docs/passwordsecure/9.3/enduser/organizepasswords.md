@@ -32,7 +32,7 @@ assign any number of tags to your passwords to categorize and find them again qu
 
 ![assigntags](/images/passwordsecure/9.2/enduser/assigntags.webp)
 
-To find a password, just use the search field and enter a tag like the department or position you
+To find a password, use the search field and enter a tag like the department or position you
 are in (i.e., "Marketing"). Netwrix Password Secure now not only is searching for tags, but also for
 “Marketing” in all Netwrix Password Secure fields (i.e., Content Marketing).
 
@@ -47,17 +47,17 @@ outside of marketing = "-social media marketing").
 ## Choose Your View
 
 Netwrix Password Secure offers two different views - the list and tile view. Just **switch the
-button** on the upper right to change views!
+button** on the upper right to change views.
 
 List View
 
-The screenshot below shows the list view.
+The following screenshot shows the list view.
 
 ![listview](/images/passwordsecure/9.2/enduser/listview.webp)
 
 Tile View
 
-The screenshot below shows the title view.
+The following screenshot shows the tile view.
 
 ![switchbutton](/images/passwordsecure/9.2/enduser/switchbutton.webp)
 

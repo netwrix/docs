@@ -8,7 +8,7 @@ sidebar_position: 30
 
 The entries for the **Discovery Service** are discovered using a **Discovery Service Task**. It can
 take some time for all the data on the systems for the entered IP network to be collected. This can
-be easily recognized by the **blue arrow** symbol on the **Discovery Service Task** and a
+be recognized by the **blue arrow** symbol on the **Discovery Service Task** and a
 corresponding message is also shown in the General display. After the **Discovery Service Task** has
 been completed, the data will be shown in the **Discovery Service module**.
 
@@ -29,7 +29,7 @@ described below.
 
 :::note
 The **data** is **not kept up-to-date while the task is being executed** and doesn't always
-show the latest status. Therefore, the data should be regularly **updated** using the **F5 button**!
+show the latest status. Therefore, the data should be regularly **updated** using the **F5 button**.
 :::
 
 ## Using the Discovery Service entries

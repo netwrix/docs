@@ -27,7 +27,7 @@ certificate thus doesn't need to be renewed.
 
 :::warning
 If the database is being moved to another server, it is essential that the Master Key
-certificate is also transferred!
+certificate is also transferred.
 :::
 
 #### Exporting and importing the certificate

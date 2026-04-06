@@ -35,7 +35,7 @@ permissions:
 
 :::note
 Temporary permissions can also be assigned to multiple roles and users at the same time. You
-can select multiple users and roles as usual with Ctrl/Shift + left mouse button!
+can select multiple users and roles as usual with Ctrl/Shift + left mouse button.
 :::
 
 ## Special features of the authorization system

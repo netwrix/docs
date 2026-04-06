@@ -82,8 +82,8 @@ The first two options are already activated by default when configuring a new pr
 
 :::warning
 The master key is added in form of a certificate. It's **essential to back up** the
-generated certificate! If the database is being moved to another server, the certificate also needs
-to be transferred! Further information can be found in the section
+generated certificate. If the database is being moved to another server, the certificate also needs
+to be transferred. Further information can be found in the section
 [Certificates](/docs/passwordsecure/9.1/configuration/servermanager/certificates/certificates.md).
 :::
 

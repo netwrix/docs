@@ -54,7 +54,7 @@ information.
 The overview will initially only display those certificates that are being used and are thus
 required. Clicking on **All** will also display the no longer required certificates. For example, it
 is possible that outdated certificates exist on the machine due to a test installation. These
-certificates can be easily deleted via the corresponding button in the ribbon.
+certificates can be deleted via the corresponding button in the ribbon.
 
 ![certificates-ac-4-en](/images/passwordsecure/9.2/configuration/server_manager/certificates/certificates-ac-4-en.webp)
 

@@ -39,7 +39,7 @@ compatible with these two regex queries, you must set a custom regex query in th
 `{username}` for username and `{domain}` for the AD domain SHOULD be present in the
 regex query. If the domain must be explicitly specified, it must be written in capital letters.
 
-In addition, the smartcard certificate must of course also be valid on the server!
+In addition, the smartcard certificate must of course also be valid on the server.
 
 ## Fido2 (only at the Web Application)
 

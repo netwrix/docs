@@ -64,7 +64,7 @@ Example case This example shows the creation of a new record in the organisation
 “marketing”. It is defined in the settings for the stated organisational structure that permissions
 should be inherited by new objects in accordance with the organisational structure.
 
-The permissions for the organisational unit “marketing” are shown below:
+The permissions for the organisational unit “marketing” are shown in the following example:
 
 ![example of permissions](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/automated_settings/inheritance_from_organisational_structures/inheritance-4-en.webp)
 
@@ -79,7 +79,7 @@ record just created are now shown.
 
 ## Conclusion
 
-The permissions for the “storage location” are simply used when creating new objects. Two conditions
+The permissions for the “storage location” are used when creating new objects. Two conditions
 apply here:
 
 The value “organisational unit” must be selected in the settings for the inheritance of permissions

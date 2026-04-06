@@ -8,7 +8,7 @@ sidebar_position: 20
 
 This chapter describes how to store passwords via add-on.
 
-**CAUTION:** You can only save passwords in server mode!
+**CAUTION:** You can only save passwords in server mode.
 
 ## New access data
 

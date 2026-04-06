@@ -42,7 +42,7 @@ for this example.
 The filter management can also be found in the
 [Ribbon](/docs/passwordsecure/9.1/configuration/advancedview/operationandsetup/ribbon.md).
 Here, it's possible e.g. to expand the configured filter criteria, save the filter, or
-simply clear all applied filters.
+clear all applied filters.
 
 ![installation_with_parameters_20](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/filter/advancedfiltersettings/installation_with_parameters_20.webp)
 
@@ -107,7 +107,7 @@ is still unmanageable despite the fact that filters has been appropriately defin
 Negations are defined directly in the checkbox of an element within a filter group. Without
 negations, you can only search e.g. for a tag. Negations make the following queries possible:
 
-”Deliver all records that have the tag “Development” but aren't tagged with “Important”!
+“Deliver all records that have the tag “Development” but aren't tagged with “Important”.
 
 :::warning
 To effectively use negations, it's important that “and links” are always

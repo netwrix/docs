@@ -39,7 +39,7 @@ parameters are used here:
 - **database** for transferring the database nam
 - **username** for transferring the user name
 
-The parameters are simply attached to the URL for the Web Application and separated from one another
+The parameters are attached to the URL for the Web Application and separated from one another
 with a **&**.
 
 Example
@@ -55,7 +55,7 @@ You can only transfer the database. The user name isn't absolutely necessary.
 
 #### Structure
 
-The Web Application is split into a number of sections that are described below.
+The Web Application is split into a number of sections that are described in the following sections.
 
 ![Operation](/images/passwordsecure/9.2/configuration/web_application/operation/installation_with_parameters_168-en.webp)
 

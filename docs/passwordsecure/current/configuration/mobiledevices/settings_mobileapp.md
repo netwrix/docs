@@ -47,12 +47,12 @@ How to synchronize with the main database is configured here. The following opti
 - **Disabled:** It isn't synchronized
 
 :::note
-Costs may be incurred for synchronization via the mobile network!
+Costs may be incurred for synchronization via the mobile network.
 :::
 
 Synchronize now
 
-Starts the synchronization. This can also be started outside the settings at any time by simply
+Starts the synchronization. This can also be started outside the settings at any time by
 swiping down. More information can also be found in the chapter
 [Synchronization](/docs/passwordsecure/current/configuration/mobiledevices/synchronization.md).
 

@@ -52,7 +52,7 @@ mechanisms
 
 ## Combining multiple protective mechanisms
 
-In principle, there are a diverse range of possibilities for combining the above-mentioned
+In principle, there are a diverse range of possibilities for combining the listed
 protective mechanisms. Temporary access to a “masked” record is possible just as having a “masked”
 record which is additionally secured by a double-check principle is also possible. **Nevertheless,
 Temporary permissions in combination with seals always pose a risk.** If

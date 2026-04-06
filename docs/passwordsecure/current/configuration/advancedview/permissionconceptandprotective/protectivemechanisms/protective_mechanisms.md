@@ -37,7 +37,7 @@ In the interplay of the
 almost all conceivable scenarios can be depicted. It is worth mentioning again that the
 authorization concept is already a very effective tool, with limited visibility of passwords and
 data records. This concept is present everywhere in Netwrix Password Secure, and will be explained
-in more detail below.
+in more detail in the following sections.
 
 ## Visibility as a basic requirement
 
@@ -52,7 +52,7 @@ mechanisms
 
 ## Combining multiple protective mechanisms
 
-In principle, there are a diverse range of possibilities for combining the above-mentioned
+In principle, there are a diverse range of possibilities for combining the previously mentioned
 protective mechanisms. Temporary access to a “masked” record is possible just as having a “masked”
 record which is additionally secured by a double-check principle is also possible. **Nevertheless,
 temporary permissions in combination with seals always pose a risk.** If

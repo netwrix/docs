@@ -29,7 +29,7 @@ need to be renewed.
 :::
 
 **CAUTION:** If the database is being moved to another server, it is essential that the certificate
-is also transferred!
+is also transferred.
 
 #### Exporting and importing the certificate
 

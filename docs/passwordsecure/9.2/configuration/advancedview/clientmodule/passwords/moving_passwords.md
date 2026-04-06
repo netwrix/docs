@@ -9,8 +9,7 @@ sidebar_position: 30
 ## Record movement behavior
 
 Data can be moved within Netwrix Password Secure to another organisational structure. This doesn't
-necessarily have to be linked to a change in permissions (the effects are described separately
-below). Moving records without changing the permissions mainly has effects on the filtering or
+necessarily have to be linked to a change in permissions (the effects are described in the following section). Moving records without changing the permissions mainly has effects on the filtering or
 search functions for records.
 
 ## Move a record
@@ -44,7 +43,7 @@ record is the only deciding factor.
 From a technical perspective, all rights will be removed from the record when
 overwriting the permissions. The permissions will then be applied to the record in accordance with
 the rights template or inheritance from organisational structures. Note here that
-it is theoretically possible to remove your own rights to the record! The rights change will only be
+it is theoretically possible to remove your own rights to the record. The rights change will only be
 performed if at least one user retains the right to issue permissions as a result. Otherwise, the
 rights change will be cancelled with a corresponding message.
 :::

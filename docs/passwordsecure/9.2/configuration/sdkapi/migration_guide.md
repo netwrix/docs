@@ -47,7 +47,7 @@ authentication method and access the services. Update your integration with the 
 incorporate the revised login interface and maintain uninterrupted service access.
 :::
 
-Below are code examples for the previous and updated authentication methods.
+The following code examples show the previous and updated authentication methods.
 
 #### C#
 

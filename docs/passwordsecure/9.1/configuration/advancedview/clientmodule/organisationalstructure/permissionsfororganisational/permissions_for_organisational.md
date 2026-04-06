@@ -45,7 +45,7 @@ The basic mechanisms for setting permissions is described in detail in the Autho
 :::
 
 :::warning
-It's important that the permissions displayed here are interpreted correctly! The
+It's important that the permissions displayed here are interpreted correctly. The
 example above shows the permissions for the "organisational structure IT".
 :::
 

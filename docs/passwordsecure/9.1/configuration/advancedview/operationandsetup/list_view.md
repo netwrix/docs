@@ -52,7 +52,7 @@ A record marked as a favourite is indicated with a star in list view.
 
 ![Favourite](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/listview/installation_with_parameters_29-en.webp)
 
-You can filter for favourites directly in the list view. For this purpose, simply switch to the
+You can filter for favourites directly in the list view. For this purpose, switch to the
 “Favourites” tab
 
 ![installation_with_parameters_30](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/listview/installation_with_parameters_30.webp)
@@ -75,7 +75,7 @@ The information visible underneath the password name is taken from the info fiel
 All records that correspond to the filter criteria are now displayed in list view. These can now be
 opened, edited, or deleted via the ribbon. Many functions are also available directly from the
 context menu. You can do this by right-clicking the record. Multiple selection is also possible. To
-do this, simply highlight the desired objects by holding down the Ctrl key.
+do this, highlight the desired objects by holding down the Ctrl key.
 
 ![installation_with_parameters_32](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/listview/installation_with_parameters_32.webp)
 

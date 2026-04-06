@@ -12,11 +12,11 @@ Service Task** that was executed and can be found and displayed using the filter
 
 ## Deletion process
 
-The discovered data in the **Discovery Service** can't simply be deleted and removed from the
-**Discovery Service entries**. As the entries have a **link to the Discovery Service Task**, it is
-necessary to delete the discovered entries via the **Discovery Service Task** that was created. If
-entries were discovered using a joint **Discovery Service Task**, it isn't possible to simply
-delete them. This is the case if two different users have performed a scan on the same area. If
+The discovered data in the **Discovery Service** can't be deleted directly from the
+**Discovery Service entries**. As the entries have a **link to the Discovery Service Task**, you must
+delete the discovered entries via the **Discovery Service Task** that was created. If
+entries were discovered using a joint **Discovery Service Task**, you can't
+delete them individually. This is the case if two different users have performed a scan on the same area. If
 you delete one of the two **Discovery Service Task**, only the entries that had a single link to
 this **Discovery Service Task** will be deleted. The entries for the other **Discovery Service
 Task** will be retained and must be deleted via the associated **Discovery Service Task**. You can

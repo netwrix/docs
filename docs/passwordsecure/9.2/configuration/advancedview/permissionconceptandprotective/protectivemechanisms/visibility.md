@@ -38,5 +38,5 @@ often required and also desired.
 :::note
 An alternative also supported by Netwrix Password Secure is for each department to set up
 their own MSSQL database. However, this physical separation requires considerably more
-administration work than the above-mentioned separation of data based on permissions and visibility.
+administration work than the permission-based and visibility-based separation of data based on permissions and visibility.
 :::

@@ -13,7 +13,7 @@ Step 1 – First, click _Create new password_ on the upper left in Netwrix Passw
 ![createnewpassword](/images/passwordsecure/9.1/enduser/createnewpassword.webp)
 
 Step 2 – A form will open. Now choose the form you need, such as "Website," on the upper right. See
-the form dropdown list in the screenshot below.
+the form dropdown list in the following screenshot.
 
 ![selectform](/images/passwordsecure/9.1/enduser/selectform.webp)
 
@@ -56,5 +56,5 @@ By clicking on the **lock icon** right to the password generator, you can mask, 
 
 ![tags](/images/passwordsecure/9.1/enduser/tags.webp)
 
-Step 4 – Click **Save**, and you're done!
+Step 4 – Click **Save**, and you're done.
 

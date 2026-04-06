@@ -38,11 +38,11 @@ one of the following three ways:
    it in the client settings.
 
 How a user receives a user right is irrelevant. The only important thing is that the user actually
-receives a required right in one of the three ways mentioned above. Netwrix recommends that you link
+receives a required right in one of the three ways previously mentioned. Netwrix recommends that you link
 user rights to roles and, if necessary, supplement them with global user rights.
 
 **CAUTION:** In addition to personal and global user rights (as opposed to settings), user rights
-are assigned via roles and not via organisational units!
+are assigned via roles and not via organisational units.
 
 :::note
 Only those user rights that the current user possesses themselves can be issued. However, all

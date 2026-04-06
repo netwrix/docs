@@ -79,7 +79,7 @@ available in the Azure Gallery.
 - Add the Users and groups that should be available to Netwrix Password Secure
 
 **CAUTION:** The import of Azure groups as Netwrix Password Secure roles is only possible if you
-have booked the Azure package Entra ID Premium P1!
+have booked the Azure package Entra ID Premium P1.
 
 - Navigate to the "Provisioning" page
 - Configure the Provisioning Mode to "Automatic"

@@ -8,19 +8,15 @@ sidebar_position: 20
 
 For a clean relocation of passwords, you must clean up all your passwords beforehand. This
 means to check which secrets are still up-to-date or if there are any duplicates you can remove
-first!
+first.
 
 ## Transer Data from Your Browser
 
-With Netwrix Password Secure, you now have the right tool to save and manage all your secrets handy
-at one place and above all a safe alternative to browser-saved passwords! But how can you now
-securely import them to your new solution?
-
-Simply do this:
+Netwrix Password Secure saves and manages all your secrets in one place and provides a safe alternative to browser-saved passwords. To securely import them to your new solution, follow these steps:
 
 Step 1 – Every time you log in to a website now and your browser wants to autofill, this Password
 Secure Pop-up will appear, asking you if you would like to save your secret in Netwrix Password
-Secure. Just click **Create new**. See the screenshot below.
+Secure. Just click **Create new**. See the following screenshot.
 
 ![createnew](/images/passwordsecure/9.2/enduser/createnew.webp)
 
@@ -31,8 +27,7 @@ including URL to a new data set.
 
 Step 3 – Choose an organizational unit in which you want to save it and give your new data set a
 meaningful name to find it again quickly. (You now also have the option to add further information
-and tags.) Now click **Save**. See the box to the right of Organizational unit in the screenshot
-above.
+and tags.) Now click **Save**. See the box to the right of Organizational unit in the previous screenshot.
 
 ## Check for Weak Passwords
 
@@ -42,13 +37,13 @@ they don't need access to the password manager to use it. This is why the soluti
 checks the strength of your password and much more.
 
 Step 1 – Paste your password in the password field. See the box to the right of the Password field
-in the screenshot below.
+in the following screenshot.
 
 ![passwordfield](/images/passwordsecure/9.2/enduser/passwordfield.webp)
 
 Step 2 – If it isn't classified as "strong" (green), Password Secure strongly recommend using the integrated
 password generator to assign a new, secure password: Therefore, just click the white password
-generator icon to the right of the password field. See the Strong button in the screenshot above.
+generator icon to the right of the password field. See the Strong button in the previous screenshot.
 
 Step 3 – The password generator will open. A secure password is created automatically just click
 “Apply”. (See the next chapter for additional password manager features.)
@@ -81,6 +76,6 @@ machines without an internet connection.
 :::
 
 Step 3 – Create a password according to a set password rule in your company: If your IT has already
-stored password guidelines for you, you can select them here and simply click apply.
+stored password guidelines for you, you can select them here and click apply.
 
 ![rule](/images/passwordsecure/9.2/enduser/rule.webp)

@@ -42,7 +42,7 @@ There are four different work processes that can be automated using system tasks
 
 System tasks can be initiated as usual via the ribbon or also the context menu that is accessed
 using the right mouse button. The desired process to be automated using system tasks is then
-selected from the four above-mentioned work processes.
+selected from the four listed work processes.
 
 ![installation_with_parameters_86](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/system_tasks/installation_with_parameters_86.webp)
 
@@ -57,7 +57,7 @@ The four work processes also share some similarities in their configuration.
   increments between every minute and once only are possible. It is also possible to enter an end
   date.
 
-The differences between the four work processes to be automated are described below. These
+The following sections describe the differences between the four work processes. These
 differences are always part of the task settings within the system task form – the example here
 shows an HTML WebViewer export to be configured.
 

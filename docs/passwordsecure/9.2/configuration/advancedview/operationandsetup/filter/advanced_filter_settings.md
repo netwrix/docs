@@ -39,7 +39,7 @@ for this example.
 ## Filter tab in the ribbon
 
 The filter management can also be found in the [Ribbon](/docs/passwordsecure/9.2/configuration/advancedview/operationandsetup/ribbon.md). Here, it is
-possible e.g. to expand the configured filter criteria, save the filter, or simply clear
+possible e.g. to expand the configured filter criteria, save the filter, or clear
 all applied filters.
 
 ![installation_with_parameters_20](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/filter/advancedfiltersettings/installation_with_parameters_20.webp)
@@ -83,7 +83,7 @@ following example, a content filter was added and all other filter groups remove
 
 ![Filter](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/filter/advancedfiltersettings/advanced-filter-settings-3-en_923x441.webp)
 
-In this example, only the content filter is used – in two instances! \* The “And” link will now
+In this example, only the content filter is used – in two instances. \* The “And” link will now
 display all records that contain both the word “password” and the phrase “important”. \*
 
 #### Negation of filters
@@ -105,7 +105,7 @@ is still unmanageable despite the fact that filters has been appropriately defin
 Negations are defined directly in the checkbox of an element within a filter group. Without
 negations, you can only search e.g. for a tag. Negations make the following queries possible:
 
-”Deliver all records that have the tag “Development” but aren't tagged with “Important”!
+”Deliver all records that have the tag “Development” but aren't tagged with “Important”.
 
 :::warning
 To effectively use negations, it is important that “and links” are always

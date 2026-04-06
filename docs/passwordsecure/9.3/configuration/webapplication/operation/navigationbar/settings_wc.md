@@ -11,7 +11,7 @@ available:
 
 #### Language
 
-You can select German or English here by simply clicking on them. The change is made immediately and
+You can select German or English here by clicking on them. The change is made immediately and
 doesn't require you to restart the browser.
 
 #### Extras
@@ -26,7 +26,7 @@ The tag management lets you manage the tags.
 
 Image management
 
-With the image management, you can manage your icons and logos easily and quickly.
+With the image management, you can manage your icons and logos.
 
 ![image management](/images/passwordsecure/9.2/configuration/web_application/operation/navigation_bar/settings/installation_with_parameters_179-en.webp)
 
