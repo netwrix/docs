@@ -12,20 +12,20 @@ The FS_SDD_DELETE instant job deletes Sensitive Data Discovery (SDD) data from t
 
 ## Runtime Details
 
-- **Dependencies**: The 0.Collection Job Group must be successfully run before running this job
+- **Dependencies**: Run the 0.Collection Job Group successfully before running this job
 - **Target Hosts**: None (select Local host)
 - **Scheduling**: Can be run as desired, typically on an ad-hoc basis
 - **History Retention**: Not supported and must be turned off
 - **Multi-console Support**: Not supported
-- **Additional Notes**: This job performs permanent data deletion with no undo capability. All analysis tasks are disabled by default to prevent accidental data loss.
+- **Additional Notes**: This job performs permanent data deletion with no undo capability. Access Analyzer disables all analysis tasks by default to prevent accidental data loss.
 
-The FS_SDD_DELETE instant job provides a controlled method for removing Sensitive Data Discovery data from your Tier 1 database. Use this job to clean up SDD data for specific criteria, remove data associated with decommissioned hosts, or delete specific host-and-criteria combinations. Because this job permanently deletes data with no recovery option, all analysis tasks are disabled by default as a safety measure.
+The FS_SDD_DELETE instant job provides a controlled method for removing Sensitive Data Discovery data from your Tier 1 database. Use this job to clean up SDD data for specific criteria, remove data associated with decommissioned hosts, or delete specific host-and-criteria combinations. Because this job permanently deletes data with no recovery option, Access Analyzer disables all analysis tasks by default as a safety measure.
 
 ## Analysis Tasks for the FS_SDD_DELETE Job
 
 To see the analysis tasks for this job, navigate to **Jobs > Instant Job Library > File System > FS_SDD_DELETE** and select the **Analysis Tasks** tab.
 
-> **WARNING**: This job permanently deletes data from the database. You can't undo this action. All analysis tasks are disabled by default to prevent accidental data loss. Carefully review the data to be deleted before enabling and running any analysis task.
+> **WARNING**: This job permanently deletes data from the database. You can't undo this action. Access Analyzer disables all analysis tasks by default to prevent accidental data loss. Carefully review the data to be deleted before enabling and running any analysis task.
 
 The following analysis tasks are available for the FS_SDD_DELETE job:
 
