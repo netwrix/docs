@@ -70,10 +70,10 @@ following Microsoft article:
 troubleshooting such cases, refer to the [Sample Deployment Scenarios](/docs/auditor/10.8/requirements/deploymentscenarios.md)
 topic.
 
-Additional Sizing Information for File Data Source
+Additional Sizing Information for File Data and SharePoint Online Sources
 
-Use this table to determine the requirements for file servers monitoring based on the number of
-files in the system. These requirements will add up to the requirements for other monitoring plans.
+Use this table to determine the requirements for file servers and SharePoint Online monitoring based on the number of
+files or objects in the system. These requirements will add up to the requirements for other monitoring plans.
 
 | Netwrix Auditor                          | Per 1 Million Files | Per 5 Million Files |
 | ---------------------------------------- | ------------------- | ------------------- |
@@ -81,7 +81,7 @@ files in the system. These requirements will add up to the requirements for othe
 | RAM (Activity Records only)              | 0.125 GB RAM        | 0.625 GB RAM        |
 | RAM (Activity Records and State-in-Time) | 0.5 GB RAM          | 2.5 GB RAM          |
 
-If you are monitoring both Active Directory and Windows File Servers data sources, you calculate
+If you are monitoring both Active Directory and File Servers data sources, you calculate
 using the requirements for AD, and then add the requirements for your File Servers.
 
 For example, you have a large Active Directory environment which requires 8 cores and 16 GB RAM. Add
