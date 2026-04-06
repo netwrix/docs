@@ -36,7 +36,7 @@ jobs:
         if: steps.bot-check.outputs.skip != 'true'
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.event.pull_request.base.ref }}
           fetch-depth: 0
 
 
