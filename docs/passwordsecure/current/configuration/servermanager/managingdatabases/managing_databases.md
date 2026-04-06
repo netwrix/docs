@@ -16,12 +16,12 @@ button or also via the ribbon.
 ## Database settings
 
 All database settings are saved in the database. You must log in to the database before
-editing the settings. Any user that exists in the database can be used for this purpose. You can
+editing the settings. Any user that exists in the database works for this purpose. You can
 always restore Global settings via the ribbon.
 
 Multifactor authentication
 
-This area can be used to configure which services will be used for multi-factor authentication. The
+Use this area to configure which services will be used for multi-factor authentication. The
 available services are: RSA Secure ID, SafeNet, YubiKey NEO, and YubiKey Nano. After selecting the
 required service, specify the respective access data. You must also configure various services. In
 this case, you can specify on the client which methods will be used by the individual users.
@@ -80,8 +80,8 @@ Management of the certificates is very important. This is described in the secti
 
 Display database users
 
-This button can be used to call up statistics about the users in the respective databases. It shows
-you which users are active in which database. Naturally, this list can also be exported.
+Use this button to view statistics about the users in the respective databases. It shows
+you which users are active in which database. This list can also be exported.
 
 #### Data backup
 

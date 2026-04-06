@@ -14,7 +14,7 @@ accounts. Manually changing these passwords is extremely time consuming. Therefo
 often ignored for reasons of convenience.
 
 The result is that the same outdated passwords are often used for many **security-critical access
-points**. This naturally represents a **severe security risk** and leaves the door wide open for any
+points**. This represents a **severe security risk** and leaves the door wide open for any
 attacker who gains access to just one of the passwords!
 
 ## The solution

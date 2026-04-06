@@ -9,7 +9,7 @@ sidebar_position: 40
 ## Protective mechanisms overview
 
 The primary goal of Netwrix Password Secure is to ensure data security at all times. The
-authorization concept is naturally the most important component when it comes to granting users the
+authorization concept is the most important component when it comes to granting users the
 intended level of permissions for accessing data. Specifically, this makes it possible to make
 certain information only available to selected employees. Nevertheless, it is still necessary to
 have protective mechanisms above and beyond the authorization concept to handle complex
@@ -43,10 +43,12 @@ in more detail below.
 
 It should always be noted that **visibility** is always a basic requirement for applying further
 protective mechanisms. A record that is completely hidden from a user (= no read permission) can
-naturally not be given any further protective mechanisms.
+not be given any further protective mechanisms.
 
-NOTE: The visibility of a record is always the basic requirement for applying further protective
+:::note
+The visibility of a record is always the basic requirement for applying further protective
 mechanisms
+:::
 
 ## Combining multiple protective mechanisms
 
@@ -55,8 +57,10 @@ protective mechanisms. Temporary access to a “masked” record is possible jus
 record which is additionally secured by a double-check principle is also possible. **Nevertheless,
 Temporary permissions in combination with seals always pose a risk.** If
 releasing a seal requires approval from a person who only possesses or possessed temporary
-permissions or will only possess them in future, this could naturally conflict with the configured
+permissions or will only possess them in future, this could conflict with the configured
 release criteria.
 
-**CAUTION:** The combination of seals and temporary permissions isn't recommended if the user with
+:::warning
+The combination of seals and temporary permissions isn't recommended if the user with
 permissions to issue a release has only been given temporary permissions.
+:::

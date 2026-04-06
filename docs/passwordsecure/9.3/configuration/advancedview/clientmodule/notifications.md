@@ -18,8 +18,10 @@ is explained in a similar way to the other modules in one place
 
 ![Notifications modul](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/rdp_and_ssh_applications/recording_a_session/notifications_1-en.webp)
 
-NOTE: The reading pane is deactivated in this module by default. It can be activated in the
+:::note
+The reading pane is deactivated in this module by default. It can be activated in the
 "Display" tab in the ribbon.
+:::
 
 ## Module-specific ribbon functions
 

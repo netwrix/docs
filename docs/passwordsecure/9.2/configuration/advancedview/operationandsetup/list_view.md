@@ -23,10 +23,12 @@ the two tabs “All” and “Favourites, the filter results can be further rest
 At the bottom of the list view, the number of loaded records and the time required for this are
 shown.
 
-NOTE: For more than 100 list elements, only the first 100 records are displayed by default. This is
+:::note
+For more than 100 list elements, only the first 100 records are displayed by default. This is
 to prevent excessive database queries where the results are unmanageable. In this case, it makes
 sense to further refine the filter criteria. By pressing the “All” button in the header of the list
 view, you can still manually switch to the complete list.
+:::
 
 ## Searching in list view
 
@@ -47,7 +49,7 @@ the detailed list view, similar to the procedure in Microsoft Outlook. All form 
 
 ## Favourites
 
-Regularly used records can be marked as favourites. This process is carried out directly in the
+Regularly used records can be marked as favourites. This process is performed directly in the
 [Ribbon](/docs/passwordsecure/9.2/configuration/advancedview/operationandsetup/ribbon.md). A record marked as a favourite is indicated with a star in list view.
 
 ![Favourite](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/listview/installation_with_parameters_29-en.webp)
@@ -65,8 +67,10 @@ more precise details.
 
 ![installation_with_parameters_31](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/listview/installation_with_parameters_31.webp)
 
-NOTE: The information visible underneath the password name is taken from the info field for the
+:::note
+The information visible underneath the password name is taken from the info field for the
 associated form and will be explained separately
+:::
 
 ## Workingwith records
 
@@ -85,6 +89,8 @@ separate tab, the list view is completely hidden
 
 ![editing dataset](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/listview/installation_with_parameters_33-en.webp)
 
-NOTE: Working with data records depends of course on the type of the data record. Whether passwords,
+:::note
+Working with data records depends of course on the type of the data record. Whether passwords,
 documents, or organisational structures: The handling is partly very different. See the respective sections in the
 [Client Module](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/client_module.md)
+:::

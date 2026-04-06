@@ -19,4 +19,7 @@ Various information is displayed on the header – as is the case with the clien
 tags for the records or information on whether the record is public or private. Password masking is
 also symbolised here.
 
-NOTE: There are – as is usual in a browser – no context menus
+:::note
+There are – as is usual in a browser – no context menus
+:::
+

@@ -15,9 +15,9 @@ the basis of the organisational structure. Although this type of filtering is al
 standard filter view, you're able to directly see the complete organisational structure in
 structure view.
 
-NOTE: As there are no longer any folders in Netwrix Password Secure version 8, the structure view
-can't mirror all of the functionalities of the folder view in version 7. However, the structure
-view has been modelled on the folder view to make the changeover from the previous version easier.
+:::note
+As there are no longer any folders in Netwrix Password Secure version 8, the structure view can't mirror all of the functionalities of the folder view in version 7. However, the structure view has been modelled on the folder view to make the changeover from the previous version easier.
+:::
 
 ![installation_with_parameters_15](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/filter/displaymode/installation_with_parameters_15.webp)
 
@@ -39,3 +39,4 @@ associated with the display mode:
   (top right in the client)
 - **Display mode status when starting the program:** This setting defines which display mode is
   displayed as default when starting the program.
+

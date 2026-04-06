@@ -24,8 +24,10 @@ data. Before configuring the **Network Scan**, a password needs to be issued tha
 data. This user should be a member of admin for the corresponding group of domains. Otherwise, you
 can use a domain administrator.
 
-**CAUTION:** A corresponding **password** with **rights** for the **domains** must exist before
+:::warning
+A corresponding **password** with **rights** for the **domains** must exist before
 adding a **Network Scan**!
+:::
 
 ### Password
 
@@ -37,14 +39,16 @@ adding a **Network Scan**!
 
 - The computer to be scanned and AD controller must be accessible via the network.
 - The service: “Windows Management Instrumentation” must have been started on the computer to be
-  scanned (carried out by Windows as standard).
+  scanned (performed by Windows as standard).
 - Help section for starting the service:
   [Microsoft Website](https://msdn.microsoft.com/de-de/library/aa826517(v=vs.85).aspx)
 - The firewall must not block WMI requests (not blocked as standard).
 - Help section for configuring the firewall:
   [Microsoft Website](https://msdn.microsoft.com/de-de/library/aa822854(v=vs.85).aspx)
 
-NOTE: Only **IPv4 addresses** can be scanned.
+:::note
+Only **IPv4 addresses** can be scanned.
+:::
 
 ### Open ports for the scan (necessary)
 

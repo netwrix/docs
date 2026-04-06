@@ -55,7 +55,6 @@ your Microsoft Entra ID.
 
 - Write down your "Tenant ID" shown in the Azure console or by using PowerShell:
 
-
 ```
 Connect-AzureAD
 
@@ -65,9 +64,9 @@ Connect-AzureAD
 - Add an own application, that isn't listed in the Azure Gallery – in this example, the application is named
   "Netwrix Password Secure"
 
-NOTE: A key feature of Netwrix Password Secure is, that it's self-hosted by customers. However,
-to be listed in Azure Gallery, a SaaS model is required. Therefore, Netwrix Password Secure isn't
-available in the Azure Gallery.
+:::note
+A key feature of Netwrix Password Secure is, that it's self-hosted by customers. However, to be listed in Azure Gallery, a SaaS model is required. Therefore, Netwrix Password Secure isn't available in the Azure Gallery.
+:::
 
 - When the application was created successfully, you're redirected to it automatically
 - Write down the "Application ID"
@@ -79,14 +78,14 @@ The import of Azure groups as Netwrix Password Secure roles is only possible if 
 have booked the Azure package Entra ID Premium P1!
 :::
 
-
 - Navigate to the "Provisioning" page
 - Configure the Provisioning Mode to "Automatic"
 
 ### Netwrix Password Secure Entra ID configuration
 
-NOTE: Your Netwrix Password Secure user need the following permissions:
-
+:::note
+Your Netwrix Password Secure user need the following permissions:
+:::
 
 ```
 - Display organisational structure module
@@ -111,8 +110,9 @@ page Back on the "Provisioning" page, click "Start provisioning" In the settings
 provisioning, check if "Provisioning Status" is set to "On" All allocated users and groups are
 created in Netwrix Password Secure now
 
-NOTE: Azure´s default provisioning interval is 40 Minutes. So it may some time until the users and
-roles are shown in Netwrix Password Secure.
+:::note
+Azure´s default provisioning interval is 40 Minutes. So it may some time until the users and roles are shown in Netwrix Password Secure.
+:::
 
 :::warning
 Azure establishes the connection to Netwrix Password Secure. For this,
@@ -120,7 +120,6 @@ the client URL must be accessible from an external network / provisioning agent 
 certificate must be valid! If the users aren't created in Netwrix Password Secure, consult the
 Azure Enterprise Application Provisioning log for details.
 :::
-
 
 ### Azure login configuration
 
@@ -174,3 +173,4 @@ successfully.
 3. Set the checkboxes for "openid" and "profile" just under "OpenId permissions"
 4. Click "Add permissions"
 5. Click "Grant admin consent for YOUR_AD_NAME"
+

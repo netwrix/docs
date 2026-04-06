@@ -19,7 +19,9 @@ the creation of a report. This process can also be automated via
 
 ![reports](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/reports/installation_with_parameters_78-en.webp)
 
-NOTE: Reports only ever contain information for which the user has the required permissions.
+:::note
+Reports only ever contain information for which the user has the required permissions.
+:::
 
 A separate tab for managing existing reports and creating new reports can be opened in the current
 module via the Main menu/Extras/Reports. The module in which the report is opened is irrelevant, the
@@ -41,7 +43,7 @@ dropdown list. There are dozens of report types available.
 
 ![installation_with_parameters_80](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/reports/installation_with_parameters_80.webp)
 
-The filter can be used to define the scope of the report e.g. to focus on a certain OU or simply a
+Use the filter to define the scope of the report e.g. to focus on a certain OU or simply a
 selection of tags. Once saved, the report will now be shown in the list of report requests.
 
 ###### Manually create reports

@@ -18,7 +18,9 @@ and very fast.
 
 ![Seal templates](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/seal_templates/installation_with_parameters_101-en.webp)
 
-NOTE: A separate tab opens in the active module to edit the default templates
+:::note
+A separate tab opens in the active module to edit the default templates
+:::
 
 ## Creating templates
 

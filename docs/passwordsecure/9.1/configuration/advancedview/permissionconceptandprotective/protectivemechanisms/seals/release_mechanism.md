@@ -16,17 +16,18 @@ release request to the final grant of the release and the breaking of the seal.
 ## Users and roles in the release mechanism
 
 As noted in the previous sections, seals always restrict the right of a user to view a specific
-password. Even if the configuration is usually done at the level of the role, each user is naturally
+password. Even if the configuration is usually done at the level of the role, each user is
 responsible for his own request when carrying out the release. Even if a seal is defined for a role,
 technically separate seals are created for each individual member of the role.
 
-NOTE: Requests or releases are only valid for the respective user!
+:::note
+Requests or releases are only valid for the respective user!
+:::
 
 :::warning
 If a user is a member of several roles of a seal, the "stronger" right is always
 applied. Release rights have a priority over read rights
 :::
-
 
 ## 1. Requesting a release
 
@@ -37,7 +38,7 @@ password field** of the data record in the reading pane.
 
 ![seal protection](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/seals/release_mechanism/release_mechanism_1-en.webp)
 
-A modal window opens, which can be used to request the seal. The reason for the entry will be
+A modal window opens, which lets you request the seal. The reason for the entry will be
 displayed to the users with the required permissions to issue the release.
 
 ![start seal process](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/seals/release_mechanism/release_mechanism_2-en.webp)
@@ -69,3 +70,4 @@ via the notifications as usual. The seal can now be broken. From this point on, 
 able to see the password.
 
 ![broken seal](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/seals/release_mechanism/release_mechanism_5-en.webp)
+

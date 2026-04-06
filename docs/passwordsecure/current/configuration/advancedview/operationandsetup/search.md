@@ -26,7 +26,9 @@ The sequence is irrelevant. If the ordering needs to be taken into account, the 
 enclosed in quotation marks: **“Cook Daniel”**. The search isn't case sensitive. No distinction is
 made between upper and lower case.
 
-NOTE: You can access quick search directly via \* Ctrl + Q\*!
+:::note
+You can access quick search directly via \* Ctrl + Q\*!
+:::
 
 Negations in the quick search
 
@@ -49,4 +51,6 @@ place in yellow colour.
 A direct database query is performed when the filter is executed. The list search only searches
 within the query already made.
 
-NOTE: The list search is hidden by default and can be activated with “Ctrl + F”
+:::note
+The list search is hidden by default and can be activated with “Ctrl + F”
+:::

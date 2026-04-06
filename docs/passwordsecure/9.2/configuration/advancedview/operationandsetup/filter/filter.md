@@ -34,10 +34,12 @@ individual employees can be restricted by means of
 For example, an employee can only filter for the [Forms](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/forms/forms.md) password
 if he has the read permission for that form.
 
-**CAUTION:** There are no permissions for [Tags](/docs/passwordsecure/9.2/configuration/advancedview/operationandsetup/tags.md). This means that any employee can
+:::warning
+There are no permissions for [Tags](/docs/passwordsecure/9.2/configuration/advancedview/operationandsetup/tags.md). This means that any employee can
 use any tags. The display order in the filter is determined by the frequency of use. This process is
 not critical to security, since tags don't grant any permissions. They are merely a supportive
 measure for filtering.
+:::
 
 ## Application example
 
@@ -68,9 +70,11 @@ and the tag **Administrator**.
 As can be seen, the filter delivers the desired results. The extent to which the filter criteria
 match the three remaining data sets is assigned in colour.
 
-**CAUTION:** When filtering with several criteria, such as forms, content, and tags, all filter
+:::warning
+When filtering with several criteria, such as forms, content, and tags, all filter
 criteria must be complied with. It is therefore a logical “AND operation”. Other possible methods
 for linking criteria are described in detail in the Advanced Filter Settings.
+:::
 
 **Content filter**
 
@@ -91,8 +95,10 @@ It is very easy to abstract, because of the present example, that the filter can
 personal requirements. It is thus the most important tool to be able to retrieve data once stored in
 the database.
 
-**CAUTION:** The effectiveness of the filter is closely linked to data integrity. Only when data is
+:::warning
+The effectiveness of the filter is closely linked to data integrity. Only when data is
 kept clean, efficient operation with the filter is ensured. It is important that employees are
 trained in the correct handling of the filter tool as well as when creating the records. Workshops
 show the best success rate in this context. If you require further information, contact Netwrix under
 mail to: sales@passwordsafe.de.
+:::

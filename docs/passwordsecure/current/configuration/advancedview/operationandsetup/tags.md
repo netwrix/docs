@@ -8,13 +8,15 @@ sidebar_position: 50
 
 ## Tags overview
 
-The tag system is ubiquitous in Netwrix Password Secure. It can be used to classify and describe
+The tag system is ubiquitous in Netwrix Password Secure. Use it to classify and describe
 almost every object. An object can have several such tags. These are always displayed in the header
 area of the data record. Optionally, tags can be provided with colours or a description. They
 determine the aesthetics of Netwrix Password Secure, and are optically a great help, in order not to
 loose the overview even in case of large amounts of data.
 
-NOTE: Tags have no permissions. Any user can use any tag!
+:::note
+Tags have no permissions. Any user can use any tag!
+:::
 
 ## Relevant rights
 

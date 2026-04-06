@@ -16,7 +16,7 @@ is thus an indispensable component of every security concept.
 
 ## The history in the reading pane
 
-The optional footer area can be used to already display the history when in the reading pane. All of
+The optional footer area lets you already display the history when in the reading pane. All of
 the historical entries are listed and sorted in chronological order.
 
 ![history in footer](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/passwords/history_1-en.webp)
@@ -29,7 +29,7 @@ in the ribbon or via a double click.
 
 ## Detailed history in the Extras
 
-The detailed history for the record marked in list view can be called up in the Start/Extras tab.
+The detailed history for the record marked in list view can be opened in the Start/Extras tab.
 
 ![History](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/passwords/history_3-en.webp)
 

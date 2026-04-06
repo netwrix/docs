@@ -20,7 +20,7 @@ The individual certificates are described in the following sections:
 - [Discovery service certificates](/docs/passwordsecure/9.1/configuration/servermanager/certificates/discovery_service_certificates.md)s
 - [Password Reset certificates](/docs/passwordsecure/9.1/configuration/servermanager/certificates/password_reset_certificates.md)
 
-## Calling up the certificate manager
+## Opening the certificate manager
 
 There are two ways to open the certificate manager. The certificates for each specific database can
 be managed via the ribbon:
@@ -32,8 +32,9 @@ In the **Main menu**, it's also possible to start the certificate manager for al
 
 ![base configuration](/images/passwordsecure/9.1/configuration/server_manager/certificates/installation_with_parameters_197-en.webp)
 
-NOTE: Operation of the certificate manager is always the same. The only difference is whether the
-certificates are displayed for each database or for all databases.
+:::note
+Operation of the certificate manager is always the same. The only difference is whether the certificates are displayed for each database or for all databases.
+:::
 
 #### Checking existing certificates
 
@@ -67,8 +68,9 @@ The relevant certificates will be backed up by clicking on export. A password fi
 issued here. If a storage location hasn't yet been entered via the settings, you're firstly asked
 to enter it.
 
-NOTE: SSL connection certificates aren't included in this process and are also not backed up. These
-certificates can be recreated if necessary.
+:::note
+SSL connection certificates aren't included in this process and are also not backed up. These certificates can be recreated if necessary.
+:::
 
 #### Settings
 
@@ -82,3 +84,4 @@ addition, the storage location is defined in the settings.
 
 If you want to automatically back up the certificates on a cyclical basis, this can be done via the
 backup system. Further information can be found in the section Backup management.
+

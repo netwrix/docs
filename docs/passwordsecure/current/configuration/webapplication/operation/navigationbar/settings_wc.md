@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Settings
 
-The settings are called up via the [Navigation bar](/docs/passwordsecure/current/configuration/webapplication/operation/navigationbar/navigation_bar.md). The following options are
+The settings are opened via the [Navigation bar](/docs/passwordsecure/current/configuration/webapplication/operation/navigationbar/navigation_bar.md). The following options are
 available:
 
 #### Language

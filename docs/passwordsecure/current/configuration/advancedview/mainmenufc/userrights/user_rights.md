@@ -44,8 +44,10 @@ user rights to roles and, if necessary, supplement them with global user rights.
 **CAUTION:** In addition to personal and global user rights (as opposed to settings), user rights
 are assigned via roles and not via organisational units!
 
-NOTE: Only those user rights that the current user possesses themselves can be issued. However, all
+:::note
+Only those user rights that the current user possesses themselves can be issued. However, all
 rights can be removed.
+:::
 
 ![installation_with_parameters_112](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/user_rights/installation_with_parameters_112.webp)
 

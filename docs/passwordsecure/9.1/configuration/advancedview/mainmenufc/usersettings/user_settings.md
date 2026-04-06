@@ -39,7 +39,6 @@ In addition to personal and global settings (as opposed to authorizations), sett
 aren't assigned via roles, but via organisational units!
 :::
 
-
 ![installation_with_parameters_112](/images/passwordsecure/9.1/configuration/advanced_view/mainmenu/user_rights/installation_with_parameters_112.webp)
 
 ### Inheritance of user settings
@@ -70,7 +69,9 @@ The diagram shows the settings for the user “Jones”. The search has been fil
 by the organisational unit “IT”. The top two options have no value in the column. This is because
 this parameter has been defined at user level.
 
-NOTE: The inheritance for individual settings can be deactivated in the ribbon!
+:::note
+The inheritance for individual settings can be deactivated in the ribbon!
+:::
 
 ## Security levels
 
@@ -84,3 +85,4 @@ The
 [User rights](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/userrights/user_rights.md)
 define who has the required permissions to change which security levels. As with all rights, this is
 achieved either through global inheritance, the role, or as a right granted directly to the user.
+

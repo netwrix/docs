@@ -25,7 +25,9 @@ The configuration is done via the user setting **First factor**.
 
 ![Smartcard 1st factor](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/firstfactor/first_factor_2-en.webp)
 
-NOTE: This option is only valid for users in master key mode
+:::note
+This option is only valid for users in master key mode
+:::
 
 :::warning
 Be Aware" The smartcard logon tries to determine whether the certificate belongs to the
@@ -38,7 +40,6 @@ compatible with these two regex queries, you must set a custom regex query in th
 `{username}` for username and `{domain}` for the AD domain SHOULD be present in the
 regex query. If the domain must be explicitly specified, it must be written in capital letters.
 :::
-
 
 In addition, the smartcard certificate must of course also be valid on the server!
 
@@ -65,3 +66,4 @@ As soon as an AD user logs on to the Web Application, he gets the following prom
 ![prompt](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/firstfactor/first_factor_5-en.webp)
 
 After clicking on **Setup Fido2 access** in the mail, Fido2 is configured.
+

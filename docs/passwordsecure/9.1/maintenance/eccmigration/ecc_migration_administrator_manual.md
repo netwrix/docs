@@ -22,13 +22,11 @@ If the OfflineClient or App does haven't yet synchronized items, they're lost af
 the migration mode is enabled!
 :::
 
-
 - Backup all certificates using the Netwrix Password Secure Server Manager
 
 :::warning
 Only certificate backups made through the Server Manager are valid!
 :::
-
 
 ![Certificates](/images/passwordsecure/9.1/configuration/server_manager/ecc_migration/certificates-ac-1-en.webp)
 
@@ -46,8 +44,9 @@ Only certificate backups made through the Server Manager are valid!
 
 ## Migration
 
-NOTE: During the migration, the database is in read-only mode. So it's possible to read all records
-from the database, but it isn't possible to add new or edit existing records.
+:::note
+During the migration, the database is in read-only mode. So it's possible to read all records from the database, but it isn't possible to add new or edit existing records.
+:::
 
 #### Start migration
 
@@ -74,7 +73,6 @@ end of the migration process.
 If certificates are missing the migration can't be continued.
 :::
 
-
 #### Watch the migration process
 
 In the migration process you find all information about the current process, what's already
@@ -86,3 +84,4 @@ After each user has logged into the database and has been successfully migrated,
 complete.
 
 ![migration finished](/images/passwordsecure/9.1/configuration/server_manager/ecc_migration/migration-finished-en.webp)
+

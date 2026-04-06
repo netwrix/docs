@@ -11,7 +11,7 @@ sidebar_position: 10
 In contrast to the
 [Automated setting of permissions](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/automatedsettingofpermissions/automated_setting_of_permissions.md),
 the manual approach doesn't use any automatic processes. This method of setting permissions is
-thus carried out separately for every record – this process isn't as recommended for newly created
+thus performed separately for every record – this process isn't as recommended for newly created
 data. If you want to work effectively in the long term, the automatic setting of permissions should
 be used. However, the manual setting of permissions is generally used when editing already existing
 records.
@@ -30,9 +30,9 @@ there are three different ways to access the permissions in the list view:
 
 ![different ways to access the permissions](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/manual_settings/manual-setting-of-permissions-1-en.webp)
 
-NOTE: The icon on the right of the reading pane shows the information whether the record is personal
-or public. In case of personal data records, the user that's logged on is the only one who has
-permissions!
+:::note
+The icon on the right of the reading pane shows the information whether the record is personal or public. In case of personal data records, the user that's logged on is the only one who has permissions!
+:::
 
 The author is created with all permissions for the record. As described in the
 [Permission concept and protective mechanisms](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/permission_concept_and_protective.md),
@@ -63,7 +63,7 @@ necessary to authorize other users to the record**. This is also a requirement f
 
 ## Transferring permissions
 
-A simple right-click a user can be used to copy and transfer permission configurations of users
+A simple right-click a user lets you copy and transfer permission configurations of users
 or roles to others in the context menu. In this context, the use of permission templates is also
 very practical. In the “Template” area of ​​the ribbon, you can save configured permissions,
 including all users, and reuse them for other records.
@@ -97,3 +97,4 @@ The owner permission doesn't protect a record from being deleted. Any user who h
 deletion permission can delete the record!
 
 :::
+

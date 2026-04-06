@@ -26,5 +26,7 @@ The following functions are available in the **Document module:**
 - Print
 - History
 
-NOTE: The Web Application module **Documents** is based on the client module of the same name
-“Documents”. Both modules differ in scope and design, but the operation is almost identical.
+:::note
+The Web Application module **Documents** is based on the client module of the same name “Documents”. Both modules differ in scope and design, but the operation is almost identical.
+:::
+

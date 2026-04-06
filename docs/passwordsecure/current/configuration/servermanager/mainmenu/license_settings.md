@@ -36,10 +36,12 @@ After purchase, you will receive the required license information in the form of
 Activate button to establish a connection to the license server. You can select the acquired
 licenses from a list. The license can be now used.
 
-NOTE: Optionally, you may specify a proxy. By default, the proxy stored in the operating system is
+:::note
+Optionally, you may specify a proxy. By default, the proxy stored in the operating system is
 used.
+:::
 
-**CAUTION:** The licence is called up in the context of the service user. If you experience
+**CAUTION:** The licence is opened in the context of the service user. If you experience
 connection problems, the firewall and, if relevant, the proxy should be checked.
 
 #### How to activate the license via license file

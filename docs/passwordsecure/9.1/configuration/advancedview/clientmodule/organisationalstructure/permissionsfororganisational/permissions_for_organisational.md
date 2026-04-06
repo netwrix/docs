@@ -16,7 +16,7 @@ permissions for organisational structures.
    [Visibility](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/visibility.md)
    that selectively withholding information is a very effective
    [Protective mechanisms](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/protective_mechanisms.md).
-   Configuration of the visibility is carried out directly when issuing permissions to
+   Configuration of the visibility is performed directly when issuing permissions to
    organisational structures.
 2. **Inheriting permissions for records**:
    [Inheritance from organisational structures](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/automatedsettingofpermissions/inheritance_from_organizational.md)
@@ -40,14 +40,14 @@ mouse button. A permissions tab appears:
 
 ![Permissions for OU](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/permissionsous/permissions_for_organizational_structures_2-en.webp)
 
-NOTE: The basic mechanisms for setting permissions is described in detail in the Authorization
-concept.
+:::note
+The basic mechanisms for setting permissions is described in detail in the Authorization concept.
+:::
 
 :::warning
 It's important that the permissions displayed here are interpreted correctly! The
 example above shows the permissions for the "organisational structure IT".
 :::
-
 
 The user Max Muster possesses all rights to the organisational structure IT and can thus edit,
 delete, and also grant permissions for this structure.
@@ -66,3 +66,4 @@ right to add records.
 The add right merely describes the right to create objects in an organisational unit.
 
 :::
+

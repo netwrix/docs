@@ -18,11 +18,15 @@ and very fast.
 
 ![Seal templates](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/seal_templates/installation_with_parameters_101-en.webp)
 
-NOTE: A separate tab opens in the active module to edit the default templates
+:::note
+A separate tab opens in the active module to edit the default templates
+:::
 
 ## Creating templates
 
-**CAUTION:** The right Can manage seal templates is required
+:::warning
+The right Can manage seal templates is required
+:::
 
 When creating seals, the seal can be saved as a template using the wizard. All templates saved in
 this way are listed in the overview of the seal templates. Furthermore, you can edit

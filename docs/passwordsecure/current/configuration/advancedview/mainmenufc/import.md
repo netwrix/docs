@@ -47,16 +47,18 @@ Settings
    be configured separately via the context menu that is accessed using the right mouse button. It
    is also possible to ignore folders.
 
-NOTE: No folders exist in Netwrix Password Secure. For this reason, you must define
+:::note
+No folders exist in Netwrix Password Secure. For this reason, you must define
 whether a folder is saved as an organisational structure or as a tag during the import. The same
 process is also used for the migration.
+:::
 
 Assignment of the form fields
 
 ![installation_with_parameters_61](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/import/installation_with_parameters_61.webp)
 
 The third step is to assign the forms from the file to be imported to already existing forms. As
-form fields may also have different names, the assignment process must be carried out manually via
+form fields may also have different names, the assignment process must be performed manually via
 drag & drop. Depending on which form was selected on the top line, form fields from the list on the
 right can now be assigned to the form fields to be imported via drag & drop. It is also possible to
 create new forms.

@@ -95,6 +95,8 @@ HKEY_CURRENT_USER\SOFTWARE\MATESO\Password Safe and Repository 8\DatabaseProfile
 
 ```
 
-NOTE: When the corresponding registry entry is set and no related database profile exists, the
+:::note
+When the corresponding registry entry is set and no related database profile exists, the
 profile will be created at the next start-up. Profiles created like this can't be
 edited or deleted in the client.
+:::

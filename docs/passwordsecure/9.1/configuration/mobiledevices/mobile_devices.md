@@ -16,7 +16,9 @@ prerequisite for every user to find their way around **quickly** and **easily**.
 
 For detailed documentation of the **Netwrix Password Secure Mobile App**
 
-NOTE: As of version 8.10.0, the previous version 7 App is no longer compatible.
+:::note
+As of version 8.10.0, the previous version 7 App is no longer compatible.
+:::
 
 #### Security as a priority
 
@@ -52,3 +54,4 @@ background, there's no need to worry about the actuality of the data.
 With the new and simplified tab system, the handling for the individual user has been made
 uncomplicated and clear. The affiliation of the passwords is visible at a glance. The exact handling
 of the tab system can be read in the chapter **Tabs**.
+

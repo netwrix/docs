@@ -21,8 +21,10 @@ The connection to the server isn't considered secure.
 
 ![not_trusted_certificates](/images/passwordsecure/9.2/configuration/server_manager/certificates/not_trusted_certificates.webp)
 
-NOTE: Windows Server 2012 R2 requires the latest patch level, since it has been delivered with SSL3,
+:::note
+Windows Server 2012 R2 requires the latest patch level, since it has been delivered with SSL3,
 and has been extended to include TLS 1.2
+:::
 
 **CAUTION:** The service user creates the databases. A separate certificate is also generated for
 each database. Therefore, the service user must be a local administrator or a domain administrator,
@@ -40,7 +42,9 @@ certificate with the alternative applicant. Therefore, the Netwrix Password Secu
 stores all IP addresses for the server, as well as the hostname. When creating your own certificate,
 this information should also be saved under the alternative applicant.
 
-NOTE: All information (including the IP address) are stored as DNS name.
+:::note
+All information (including the IP address) are stored as DNS name.
+:::
 
 #### Using the Netwrix Password Secure certificate
 
@@ -50,8 +54,10 @@ certificate is saved locally under:
 
 Local computer -> own certificates -> certificates
 
-NOTE: The certificate is valid from its creation up to the year 9999 – and is thus valid almost
+:::note
+The certificate is valid from its creation up to the year 9999 – and is thus valid almost
 indefinitely. For this reason, it isn't necessary to note any expiry date.
+:::
 
 Distributing the Netwrix Password Secure certificate
 
@@ -82,7 +88,9 @@ selected.
 
 Finally, the installation needs to be confirmed once again.
 
-NOTE: The user logged in to the operating system requires rights to create certificates
+:::note
+The user logged in to the operating system requires rights to create certificates
+:::
 
 #### Using your own certificate
 

@@ -27,7 +27,9 @@ occur in the data record. The sequence is irrelevant. If the ordering needs to b
 account, the search term must be enclosed in quotation marks: **“Cook Daniel”**. The search isn't
 case sensitive. No distinction is made between upper and lower case.
 
-NOTE: You can access quick search directly via \* Ctrl + Q\*!
+:::note
+You can access quick search directly via \* Ctrl + Q\*!
+:::
 
 **Negations in the quick search**
 
@@ -51,4 +53,7 @@ live, so the result is further refined with every additional character that's en
 A direct database query is performed when the filter is executed. The list search only searches
 within the query already made.
 
-NOTE: The list search is hidden by default and can be activated with “Ctrl + F”
+:::note
+The list search is hidden by default and can be activated with “Ctrl + F”
+:::
+

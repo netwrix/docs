@@ -13,9 +13,11 @@ view. This alternative view lets you filter solely on the basis of the organisat
 structure. Although this type of filtering is also possible in standard filter view, you can
 directly see the complete organisational structure in structure view.
 
-NOTE: As there are no longer any folders in Netwrix Password Secure version 9, the structure view
+:::note
+As there are no longer any folders in Netwrix Password Secure version 9, the structure view
 can't mirror all of the functionalities of the folder view in version 7. However, the structure
 view has been modelled on the folder view to make the changeover from the previous version easier.
+:::
 
 ![installation_with_parameters_15](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/filter/displaymode/installation_with_parameters_15.webp)
 

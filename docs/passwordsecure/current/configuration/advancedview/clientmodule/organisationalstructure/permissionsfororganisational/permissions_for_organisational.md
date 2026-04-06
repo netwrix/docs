@@ -16,7 +16,7 @@ permissions for organisational structures.
    [Visibility](/docs/passwordsecure/current/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/visibility.md)
    that selectively withholding information is a very effective
    [Protective mechanisms](/docs/passwordsecure/current/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/protective_mechanisms.md).
-   Configuration of the visibility is carried out directly when issuing permissions to
+   Configuration of the visibility is performed directly when issuing permissions to
    organisational structures.
 2. **Inheriting permissions for records**:
    [Inheritance from organisational structures](/docs/passwordsecure/current/configuration/advancedview/permissionconceptandprotective/automatedsettingofpermissions/inheritance_from_organizational.md)
@@ -40,8 +40,10 @@ mouse button. A permissions tab appears:
 
 ![Permissions for OU](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/permissionsous/permissions_for_organizational_structures_2-en.webp)
 
-NOTE: The basic mechanisms for setting permissions is described in detail in the Authorization
+:::note
+The basic mechanisms for setting permissions is described in detail in the Authorization
 concept.
+:::
 
 **CAUTION:** It is important that the permissions displayed here are interpreted correctly! The
 example above shows the permissions for the "organisational structure IT".

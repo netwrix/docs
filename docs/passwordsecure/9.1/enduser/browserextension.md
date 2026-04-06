@@ -21,9 +21,9 @@ Step 1 – Is your browser extension already installed? You can find out by:
 
 ![downloadextension](/images/passwordsecure/9.1/enduser/downloadextension.webp)
 
-NOTE: If you need more information about installing the browser extension, visit the
-following topic in the documentation:
-[Installation Browser Extension](https://helpcenter.netwrix.com/bundle/PasswordSecure_9.0/page/Content/PasswordSecure/Installation/Browser/Installation_Browser_Add-on.htm)
+:::note
+If you need more information about installing the browser extension, visit the following topic in the documentation: [Installation Browser Extension](https://helpcenter.netwrix.com/bundle/PasswordSecure_9.0/page/Content/PasswordSecure/Installation/Browser/Installation_Browser_Add-on.htm)
+:::
 
 Step 2 – After downloading, the browser extension is simply dragged, and dropped into the browser.
 See the Get button in the upper-right section of the screenshot below.
@@ -47,3 +47,4 @@ Step 5 – Now click this icon in your browser to open the browser extension. Se
 ![nodatabaseprofile](/images/passwordsecure/9.1/enduser/nodatabaseprofile.webp)
 
 RECOMMENDED: If not done yet, bookmark this page to have it quickly at hand!
+

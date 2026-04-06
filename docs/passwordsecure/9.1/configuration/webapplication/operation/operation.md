@@ -10,8 +10,9 @@ Operation of the Web Application has been based as far as possible on the operat
 Password Secure client. Nevertheless, there are some differences that need to be noted, and they're
 described here.
 
-NOTE: There's also a Basic view in the Web Application. Everything worth knowing can be found at
-the following link: web view Basic view
+:::note
+There's also a Basic view in the Web Application. Everything worth knowing can be found at the following link: web view Basic view
+:::
 
 #### Login
 
@@ -42,12 +43,14 @@ with a **&**.
 
 **Example**
 
-You want to call up the Web Application under **https://psr_Web Application.firma.com.** In the
+You want to open the Web Application under **https://psr_Web Application.firma.com.** In the
 process, you want the login mask to be directly filled with the database **Passwords** and the user
 name **Anderson**. The following URL is then used: **https://psr_Web
 Application.firma.com/authentication/ login?database=Passwords&username=Anderson**
 
-NOTE: It's possible to only transfer the database. The user name isn't absolutely necessary.
+:::note
+It's possible to only transfer the database. The user name isn't absolutely necessary.
+:::
 
 #### Structure
 
@@ -83,3 +86,4 @@ The reading pane shows you details about the relevantly selected element.
 
 Various information about the record is displayed in the footer. For example, logbook entries, or the
 history.
+

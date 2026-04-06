@@ -27,7 +27,7 @@ The rules already set are displayed in the section on the right. The icons
 ![+](/images/passwordsecure/9.1/configuration/server_manager/database_properties/+.webp)
 and
 ![-](/images/passwordsecure/9.1/configuration/server_manager/database_properties/-.webp)
-can be used to add or also delete rules. Rules can be edited by double clicking on them.
+lets you add or also delete rules. Rules can be edited by double clicking on them.
 
 ![firewall rule](/images/passwordsecure/9.1/configuration/server_manager/database_properties/installation_with_parameters_230-en.webp)
 
@@ -41,10 +41,12 @@ The following possibilities exist:
 - The setting Grant access defines whether access is allowed or blocked. This is symbolised by a
   corresponding icon.
 
-Naturally, the rules can also be combined. It's thus possible e.g that only one defined user can
+The rules can also be combined. It's thus possible e.g that only one defined user can
 access one database from a certain IP address.
 
-NOTE: The conditions are always combined using AND operators
+:::note
+The conditions are always combined using AND operators
+:::
 
 If two or more rules overlap, the rule with the least rights will always be applied. For example, if
 a rule allows access from a range of IP addresses but another rule blocks a specific computer within
@@ -75,3 +77,4 @@ also possible.
 
 This rule grants access to the administrator. It's irrelevant which computer the administrator uses
 to log in to the database.
+

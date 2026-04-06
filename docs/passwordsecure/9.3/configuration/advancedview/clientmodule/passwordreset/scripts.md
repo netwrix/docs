@@ -48,7 +48,7 @@ The access data in the associated password can be saved as follows:
 
 ## Windows user
 
-This script can be used to reset the passwords for local Windows users. Only the **host name** needs
+This script lets you reset the passwords for local Windows users. Only the **host name** needs
 to be saved here.
 
 ![Windows user script](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_5-en.webp)

@@ -25,7 +25,9 @@ individually within the user rights.
 
 ![user settings](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/client_modules_2-en.webp)
 
-NOTE: The visibility of modules can always be adapted to the needs of individual user groups
+:::note
+The visibility of modules can always be adapted to the needs of individual user groups
+:::
 
 ## Sorting modules
 
@@ -42,5 +44,7 @@ are sorted.
 
 ![sorting modules](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/client_modules_4-en.webp)
 
-NOTE: The previously described visibility of the modules is a basic requirement for viewing and
+:::note
+The previously described visibility of the modules is a basic requirement for viewing and
 sorting them in the navigation options
+:::

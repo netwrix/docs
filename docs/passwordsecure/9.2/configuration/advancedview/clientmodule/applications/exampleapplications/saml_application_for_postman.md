@@ -38,5 +38,7 @@ Then you come to the actual configuration.
 
 ![postman service provider details](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/examples/saml_examples/saml_postman_5-en.webp)
 
-NOTE: A **Relay State** is required. This value can be created in the **Configure
+:::note
+A **Relay State** is required. This value can be created in the **Configure
 Identity Provider Details View**.
+:::

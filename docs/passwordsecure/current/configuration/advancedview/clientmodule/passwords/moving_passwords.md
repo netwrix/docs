@@ -44,5 +44,5 @@ record is the only deciding factor.
 overwriting the permissions. The permissions will then be applied to the record in accordance with
 the rights template or inheritance from organisational structures. You must note here that
 it is theoretically possible to remove your own rights to the record! The rights change will only be
-carried out if at least one user retains the right to issue permissions as a result. Otherwise, the
+performed if at least one user retains the right to issue permissions as a result. Otherwise, the
 rights change will be cancelled with a corresponding message.

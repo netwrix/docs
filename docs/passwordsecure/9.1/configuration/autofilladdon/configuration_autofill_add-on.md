@@ -18,8 +18,9 @@ makes all of the databases configured on the client available. It's also possibl
 profiles as usual so that the connection data for certain databases can be used efficiently in the
 future.
 
-NOTE: The agent accesses the same configuration file as the client. All changes to profiles will
-thus also affect the client. New profiles can thus also be created via the Autofill.
+:::note
+The agent accesses the same configuration file as the client. All changes to profiles will thus also affect the client. New profiles can thus also be created via the Autofill.
+:::
 
 #### Context menu functionality
 
@@ -41,3 +42,4 @@ the icon in the system tray to open the context menu.
 
 - The desktop notifications display various information, such as when data is entered
 - Start with Windows includes the Autofill Add-on in the autostart menu
+

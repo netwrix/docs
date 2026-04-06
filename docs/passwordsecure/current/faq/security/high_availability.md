@@ -31,7 +31,7 @@ Load balancer
 - To reduce the load on the server, a load balancer can be installed upstream of the application
   server
 - If no load balancer is used, the distribution of the database profiles for the users is generally
-  carried out via the registry
+  performed via the registry
 
 If a database is set up at ”location A” including an AD profile, the certificate needs to exported
 there and then imported onto the server at “location B”. The database is replicated using MSSQL
@@ -39,5 +39,7 @@ technology and can be integrated as an existing database into Netwrix Password S
 B”. If the application server at “location A” fails, the server in the registry needs to be replaced
 (location B) and rolled out again to users using group rules (GPO).
 
-NOTE: Only peer-to-peer transaction replication is tested. If a different type of replication is
+:::note
+Only peer-to-peer transaction replication is tested. If a different type of replication is
 used, it should be tested in advance.
+:::

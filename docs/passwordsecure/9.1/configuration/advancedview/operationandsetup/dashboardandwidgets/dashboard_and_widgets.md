@@ -23,11 +23,13 @@ current notifications, password quality, and user activity. The **maximum number
 widgets** is managed in
 the[User settings](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/usersettings/user_settings.md).
 
-NOTE: You can close the dashboard using the button in the tab. You can open it again via **View** >
-**Show dashboard** in the ribbon.
+:::note
+You can close the dashboard using the button in the tab. You can open it again via **View** > **Show dashboard** in the ribbon.
+:::
 
-NOTE: The display of the dashboard is basically uncritical since the user can only see the data on
-which he is also entitled.
+:::note
+The display of the dashboard is basically uncritical since the user can only see the data on which he is also entitled.
+:::
 
 #### Relevant settings
 
@@ -62,7 +64,7 @@ In the editing mode, you can customize each widget separately. To do this, selec
 ![Customizing widgets](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/dashboard_and_widgets/installation_with_parameters_53-en.webp)
 
 Separate variables can be customized for each widget. This example shows how often users have had
-passwords displayed. Naturally, the variables are distinct for each widget since other information
+passwords displayed. the variables are distinct for each widget since other information
 could be relevant.
 
 **Widget event**
@@ -81,3 +83,4 @@ In the edit mode, the layout of the widgets is user-defined. Drag & drop lets yo
 widget in the corresponding position on the dashboard (left, right, top, or bottom).
 
 ![Arranging widgets](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/dashboard_and_widgets/installation_with_parameters_55-en.webp)
+

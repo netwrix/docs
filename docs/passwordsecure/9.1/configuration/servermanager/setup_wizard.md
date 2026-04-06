@@ -20,12 +20,14 @@ and properly documented. It can be subsequently changed in the
 
 ![setup-wizard-ac-en](/images/passwordsecure/9.1/configuration/server_manager/setupwizard/setup-wizard-ac-en.webp)
 
-NOTE: The initial password is “admin”.
+:::note
+The initial password is “admin”.
+:::
 
 #### License settings
 
 The second step is to complete the configuration for successively connecting to the licence server.
-This step can also be carried out later “in the
+This step can also be performed later “in the
 [License settings](/docs/passwordsecure/9.1/configuration/servermanager/mainmenu/license_settings.md)
 
 ![setup-wizard-ac-2-en](/images/passwordsecure/9.1/configuration/server_manager/setupwizard/setup-wizard-ac-2-en.webp)
@@ -73,10 +75,11 @@ module that need to be confirmed.
 
 :::warning
 It's recommended that you only confirm the security notes when the corresponding point
-has actually been carried out. It's absolutely essential to ensure that regular
+has actually been performed. It's absolutely essential to ensure that regular
 [Backup management](/docs/passwordsecure/9.1/configuration/servermanager/mainmenu/backupsettings/backup_management.md)
 are created and the
 [Certificates](/docs/passwordsecure/9.1/configuration/servermanager/certificates/certificates.md)
 are backed up.
 
 :::
+

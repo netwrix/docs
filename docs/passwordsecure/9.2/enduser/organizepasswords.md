@@ -38,9 +38,11 @@ are in (i.e., "Marketing"). Netwrix Password Secure now not only is searching fo
 
 ![searchresults](/images/passwordsecure/9.2/enduser/searchresults.webp)
 
-NOTE: Optimize your search results by using the **minus sign (-)** to exclude terms: Only results in
+:::note
+Optimize your search results by using the **minus sign (-)** to exclude terms: Only results in
 which this word doesn't appear will be displayed (i.e., all social media accounts that are used
 outside of marketing = "-social media marketing").
+:::
 
 ## Choose Your View
 
@@ -65,7 +67,9 @@ click.
 
 ![titleview](/images/passwordsecure/9.2/enduser/titleview.webp)
 
-NOTE: The **list view** is suitable for many data sets while the tile view is particularly favorable
+:::note
+The **list view** is suitable for many data sets while the tile view is particularly favorable
 for the most frequently used secrets.
+:::
 
 RECOMMENDED: Use the list view for all shared secrets and the tile view for personal accounts.

@@ -29,7 +29,6 @@ A corresponding **password** with **rights** for the **domains** must exist befo
 adding a **Network Scan**!
 :::
 
-
 ### Password
 
 - Required for the **authentication** process with the **Active Directory computer**.
@@ -40,14 +39,16 @@ adding a **Network Scan**!
 
 - The computer to be scanned and AD controller must be accessible via the network.
 - The service: “Windows Management Instrumentation” must have been started on the computer to be
-  scanned (carried out by Windows as standard).
+  scanned (performed by Windows as standard).
 - Help section for starting the service:
   [Microsoft Website](https://msdn.microsoft.com/de-de/library/aa826517(v=vs.85).aspx)
 - The firewall mustn't block WMI requests (not blocked as standard).
 - Help section for configuring the firewall:
   [Microsoft Website](https://msdn.microsoft.com/de-de/library/aa822854(v=vs.85).aspx)
 
-NOTE: Only **IPv4 addresses** can be scanned.
+:::note
+Only **IPv4 addresses** can be scanned.
+:::
 
 ### Open ports for the scan (necessary)
 
@@ -66,3 +67,4 @@ Server 2003) – port 1025-5000 (TCP) or a static WMI port
    the computer (e.g. Client01). In Netwrix Password Secure V8, the **DNS request** is the preferred
    function for determining the computer name. If no result is delivered, a request via **NetBIOS**
    is made.
+

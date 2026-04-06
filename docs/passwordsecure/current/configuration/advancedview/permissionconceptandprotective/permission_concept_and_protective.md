@@ -22,11 +22,15 @@ The interrelationships between all of these elements are illustrated in the foll
 
 ![Authorisation concept](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/permission_concept_1-en.webp)
 
-NOTE: Applying some form of permissions is **obligatory**. Applying a protective mechanism is
+:::note
+Applying some form of permissions is **obligatory**. Applying a protective mechanism is
 **optional**.
+:::
 
-NOTE: The configuration of visibility is a technical part of the permissions process. However, this
+:::note
+The configuration of visibility is a technical part of the permissions process. However, this
 mechanism has a “protective character” and is thus listed under protective mechanisms.
+:::
 
 ## Basic mechanics of the permission concept
 
@@ -60,7 +64,8 @@ only to grant rights individually to employees in exceptional cases. The unplann
 personnel must also be taken into account in such concepts. Working with roles defuses such risks
 significantly.
 
-NOTE:
+:::note
+:::
 
 
 ```
@@ -76,7 +81,8 @@ been authorized for the role.
 
 ![Membership in roles](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/permission_concept_3-en.webp)
 
-NOTE:
+:::note
+:::
 
 
 ```
@@ -105,7 +111,8 @@ by the administrators, and can view the records accordingly. The second user cou
 administrators. This user has extensive rights for the role. It can edit it, and add users to it.
 However, it can't see any data that is assigned to sales. It lacks membership in the role.
 
-NOTE:
+:::note
+:::
 
 
 ```

@@ -75,8 +75,10 @@ Step 2 – Create a phonetic password that is easier to pronounce, but still com
 
 ![phonetic](/images/passwordsecure/9.2/enduser/phonetic.webp)
 
-NOTE: This option is best suited for passwords that must be read and typed in, such as operating
+:::note
+This option is best suited for passwords that must be read and typed in, such as operating
 machines without an internet connection.
+:::
 
 Step 3 – Create a password according to a set password rule in your company: If your IT has already
 stored password guidelines for you, you can select them here and simply click apply.

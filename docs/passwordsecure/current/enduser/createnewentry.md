@@ -38,13 +38,17 @@ Step 3 – Let`s fill out the website form in this example.
 - Enter the password manually or use the password generator by clicking on the button in the middle
   (high number). The password generator will open.
 
-NOTE: For details about generating passwords, see
+:::note
+For details about generating passwords, see
 [Clean up Your Passwords](/docs/passwordsecure/current/enduser/cleanuppasswords.md).
+:::
 
 ![password](/images/passwordsecure/9.2/enduser/password.webp)
 
-NOTE: By clicking on the **lock icon** right to the password generator, you can mask and unmask your
+:::note
+By clicking on the **lock icon** right to the password generator, you can mask and unmask your
 password.
+:::
 
 - Enter the website URL that leads to the login.
 

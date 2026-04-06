@@ -18,8 +18,10 @@ makes all of the databases configured on the client available. It is also possib
 profiles as usual so that the connection data for certain databases can be used efficiently in the
 future.
 
-NOTE: The agent accesses the same configuration file as the client. All changes to profiles will
+:::note
+The agent accesses the same configuration file as the client. All changes to profiles will
 thus also affect the client. New profiles can thus also be created via the Autofill.
+:::
 
 #### Context menu functionality
 

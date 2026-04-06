@@ -19,7 +19,6 @@ current license details are displayed in the window provided for this purpose.
 Version 7 licenses can't be used for Netwrix Password Secure Version 8. Visit http://www.passwordsafe.de to obtain a version 8 license.
 :::
 
-
 Licenses are linked via the Netwrix license server. Here are the details:
 
 - license.passwordsafe.de
@@ -38,14 +37,14 @@ After purchase, you'll receive the required license information in the form of â
 Activate button to establish a connection to the license server. You can select the acquired
 licenses from a list. The license can be now used.
 
-NOTE: Optionally, you may specify a proxy. By default, the proxy stored in the operating system is
-used.
-
-:::warning
-The licence is called up in the context of the service user. If you experience
-connection problems, the firewall and, if relevant, the proxy should be checked.
+:::note
+Optionally, you may specify a proxy. By default, the proxy stored in the operating system is used.
 :::
 
+:::warning
+The licence opens in the context of the service user. If you experience
+connection problems, the firewall and, if relevant, the proxy should be checked.
+:::
 
 #### How to activate the license via license file
 
@@ -60,3 +59,4 @@ connection problems, the firewall and, if relevant, the proxy should be checked.
 6. Select the file from this email and then click Open.
 
     ![activated_license](/images/passwordsecure/9.1/configuration/server_manager/main_menu/activated_license.webp)
+

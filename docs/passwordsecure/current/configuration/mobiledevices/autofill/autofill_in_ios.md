@@ -43,7 +43,7 @@ selected.
 
 Exact password found
 
-If there is a data record that contains exactly the URL that is called up, the corresponding
+If there is a data record that contains exactly the URL that is opened, the corresponding
 password can be suggested. A simple click the password is then sufficient to pass the data to the
 website or app.
 
@@ -51,6 +51,8 @@ Several passwords found
 
 If several matching passwords are found in the database, the desired one must be selected.
 
-NOTE: Depending on the current state, it may be necessary to authenticate to the app before
+:::note
+Depending on the current state, it may be necessary to authenticate to the app before
 selecting or confirming of the password to be entered. The database then has to be unlocked via the
 password, Touch ID or Face ID.
+:::

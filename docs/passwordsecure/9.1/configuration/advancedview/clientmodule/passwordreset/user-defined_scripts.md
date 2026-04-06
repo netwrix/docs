@@ -28,7 +28,6 @@ The PowerShell scripts must have the following structure:
 
 Netwrix Password Secure always calls the RunScript function.
 
-
 ```
 function RunScript
 param (
@@ -51,12 +50,11 @@ The following standard parameters can be used here:
 ### Scriptblock
 
 The **scriptblock** can be used when the script should run in the context of another user. The
-actual change is then carried out in the **scriptblock**.
+actual change is then performed in the **scriptblock**.
 
 It's important in this case that you provide Netwrix Password Secure with feedback about what has
 been changed via a **Write-Output**. The following example simply uses the outputs **true** or
 **false**. However, it's also conceivable that an error message or similar is output.
-
 
 ```
     $scriptBlock = {param ($UserName, $Password)
@@ -68,7 +66,7 @@ been changed via a **Write-Output**. The following example simply uses the outpu
     }
 ```
 
-Naturally, CredentialsUserName, and CredentialsPassword can also be directly used in the script (i.e.
+CredentialsUserName, and CredentialsPassword can also be directly used in the script (i.e.
 without the **scriptblock**). You can view the supplied MSSQL script as an example.
 
 ### Invoke

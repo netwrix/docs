@@ -14,10 +14,14 @@ form.
 
 ![password-reset](/images/passwordsecure/9.2/configuration/server_manager/certificates/password-reset.webp)
 
-NOTE: The Password Reset certificate can't be replaced by your own certificate.
+:::note
+The Password Reset certificate can't be replaced by your own certificate.
+:::
 
-NOTE: The certificates for the Password Reset have an expiry date. However, this isn't checked. The
+:::note
+The certificates for the Password Reset have an expiry date. However, this isn't checked. The
 certificate thus doesn't need to be renewed.
+:::
 
 **CAUTION:** If the database is being moved to another server, it is essential that all Password
 Reset certificate is also transferred!

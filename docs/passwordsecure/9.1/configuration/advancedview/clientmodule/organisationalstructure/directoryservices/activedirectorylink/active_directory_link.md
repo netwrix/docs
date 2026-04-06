@@ -11,7 +11,7 @@ sidebar_position: 10
 The connection to Active Directory (AD) is established via so-called AD profiles. These profiles
 contain all of the information relevant for establishing a connection to AD and enable
 imports/synchronization of users, organisational units, or roles. To connect to various different
-ADs, it's naturally also possible to create multiple AD profiles.
+ADs, it's also possible to create multiple AD profiles.
 
 ## Two import modes in comparison
 
@@ -28,10 +28,11 @@ on the server that has full permissions for all users, organisational units, and
 represents an additional attack vector, which doesn't exist in end-to-end mode. In return, however,
 in Master Key mode, users can be updated via synchronization with the Active Directory. Memberships
 of organisational units and roles are also imported. In the more secure end-to-end mode, this
-synchronization of the changes must be carried out manually.
+synchronization of the changes must be performed manually.
 
-NOTE: It's technically possible to create several profiles with different modes. However, this is
-not recommended for the sake of clarity.
+:::note
+It's technically possible to create several profiles with different modes. However, this isn't recommended for the sake of clarity.
+:::
 
 | Comparison of the modes                                    | End-to-end mode | Master key mode |
 | ---------------------------------------------------------- | --------------- | --------------- |
@@ -66,9 +67,9 @@ In order for Netwrix Password Secure to be quickly integrated into the given inf
 can also be directly imported from the Active Directory. Namely Active Directory Groups are used to
 password-safe roles.
 
-NOTE: Groups in groups Memberships, which may be present in the Active Directory, won't be
-displayed within Netwrix Password Secure. Both groups are imported as roles, but independent, and not
-linked in any way.
+:::note
+Groups in groups Memberships, which may be present in the Active Directory, won't be displayed within Netwrix Password Secure. Both groups are imported as roles, but independent, and not linked in any way.
+:::
 
 :::warning
 If Master Key mode has been selected for the Active Directory profile, the AD is the
@@ -76,3 +77,4 @@ leading system. In this mode, roles that have been imported can't be changed loc
 Password Secure.
 
 :::
+

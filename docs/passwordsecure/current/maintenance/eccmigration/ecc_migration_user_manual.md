@@ -21,5 +21,7 @@ the message **„Userdata migration finished”** appears.
 
 ![userdata_migration_finished_en](/images/passwordsecure/9.2/configuration/server_manager/ecc_migration/userdata_migration_finished_en.webp)
 
-NOTE: The migration can only be carried out with the Web Application and NativeClient. A migration
+:::note
+The migration can only be performed with the Web Application and NativeClient. A migration
 just using the Extension, Autofill Add-on or the Mobile App isn't possible.
+:::

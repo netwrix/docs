@@ -52,7 +52,7 @@ separated and whether to use LeetSpeak.
 
 Password rule
 
-Already defined[Password rules](/docs/passwordsecure/9.2/configuration/advancedview/mainmenufc/extras/password_rules.md) can be used for the
+Already defined[Password rules](/docs/passwordsecure/9.2/configuration/advancedview/mainmenufc/extras/password_rules.md) supports the
 automatic generation of new passwords
 
 ## Multigenerator

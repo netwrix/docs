@@ -29,9 +29,11 @@ the database.
 In the user settings, it is also possible to define the "Length of validity of a multifactor
 authentication token" in minutes.
 
-NOTE: In order for a user (administrator) to be able to **configure** multifactor authentication for
+:::note
+In order for a user (administrator) to be able to **configure** multifactor authentication for
 other users, the user must have the rights **read**, **write**, **delete** and **authorize**. It is
 important that these rights exist before Multifactor Authentication is set up.
+:::
 
 ## Configuration of multifactor authentication
 
@@ -61,8 +63,10 @@ To set up multifactor authentication using RSA SecurID, simply enter the RSA use
 
 ![RSA SecurID Token](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/multifactor_authentication_5-en.webp)
 
-NOTE: The prerequisite for the use of RSA SecurID token is that the access data has been stored in
+:::note
+The prerequisite for the use of RSA SecurID token is that the access data has been stored in
 the Database settings on the Server Manager.
+:::
 
 ## Public key infrastructure
 

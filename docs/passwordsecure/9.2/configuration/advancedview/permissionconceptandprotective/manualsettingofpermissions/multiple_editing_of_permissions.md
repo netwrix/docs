@@ -9,7 +9,7 @@ sidebar_position: 20
 ## Edit multiple permissions
 
 As part of the manual modification of permissions, it is also possible to edit multiple records at
-the same time. Various mechanisms can be used to select the records to be edited. You can
+the same time. Various mechanisms lets you select the records to be edited. You can
 select the records in [List view](/docs/passwordsecure/9.2/configuration/advancedview/operationandsetup/list_view.md) or you can use
 the filter as part of the multiple editing function. Both scenarios are described below.
 
@@ -26,7 +26,7 @@ existing permissions will **not be overwritten**.
 
 ## Selecting the records
 
-In list view, Shift, or Ctrl + mouse click can be used to select multiple records. Permissions can
+In list view, Shift, or Ctrl + mouse click lets you select multiple records. Permissions can
 also be granted for these records via the selection. The marked records are displayed in a different
 color. 6 records are marked in the following image.
 
@@ -40,8 +40,10 @@ changes.
 
 ![rights for selected passwords](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/manual_settings/multiple_editing_of_permissions/multiple-editing-of-permissions-2-en.webp)
 
-NOTE: As the already granted permissions for the selected records may differ, it isn't possible to
+:::note
+As the already granted permissions for the selected records may differ, it isn't possible to
 display the permissions here.
+:::
 
 ## Adding permissions
 
@@ -57,8 +59,10 @@ If you want to remove permissions, it is also necessary to add the user or the d
 edited. Clicking on **Reduce permissions** now means that permissions will be removed. This is
 indicated by the :material-minus-circle-outline: symbol. The selected permissions will be removed.
 
-NOTE: If the **read** permission is to be removed for a user or role, the user will be completely
+:::note
+If the **read** permission is to be removed for a user or role, the user will be completely
 removed from the permissions.
+:::
 
 ## Examples
 
@@ -90,8 +94,10 @@ existing permissions. If you select **expand or reduce** at this stage, the same
 In the option **overwrite permissions**, the existing permissions are removed and then replaced by
 the newly defined permissions.
 
-**CAUTION:** Proceed with great caution when overwriting permissions because this
+:::warning
+Proceed with great caution when overwriting permissions because this
 function can quickly lead to a large number of records becoming unusable.
+:::
 
 ![permissions adapted on a filter](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/manual_settings/multiple_editing_of_permissions/multiple-editing-of-permissions-6-en.webp)
 
@@ -116,8 +122,12 @@ again by entering a PIN.
 
 ![security warning](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/manual_settings/multiple_editing_of_permissions/multiple-editing-of-permissions-9-en.webp)
 
-**CAUTION:** The removal of seals and password masking can't be reversed!
+:::warning
+The removal of seals and password masking can't be reversed!
+:::
 
-NOTE: Depending on the number of records, editing records may take a long time. This process is
-carried out in the background for this reason. A hint will indicate that the permissions process has
+:::note
+Depending on the number of records, editing records may take a long time. This process is
+performed in the background for this reason. A hint will indicate that the permissions process has
 been completed.
+:::

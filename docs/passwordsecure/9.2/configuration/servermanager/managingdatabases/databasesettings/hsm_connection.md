@@ -20,8 +20,10 @@ To be able to connect an HSM, the following conditions have to be met:
 - The PKCS # 11 drivers have to be installed on the application server.
 - The device is set up via the Administrator database on the Server Manager.
 
-**CAUTION:** If an HSM is to be used, the database also has to be set up thoroughly. It
+:::warning
+If an HSM is to be used, the database also has to be set up thoroughly. It
 isn't possible to transfer an existing database to an HSM.
+:::
 
 #### Hardware compatibility
 

@@ -75,7 +75,7 @@ Solution:
 Install the database server on new hardware. If the server name changes as a result, the licence
 needs to be reactivated. If the licence has already been activated multiple times, it may be that it
 can only be released again by Netwrix. If the SQL instance name changes, the connection to the
-database server needs to be reconfigured on the application server. This is carried out via the
+database server needs to be reconfigured on the application server. This is performed via the
 basic configuration.
 
 Any existing offline databases will continue to function properly.

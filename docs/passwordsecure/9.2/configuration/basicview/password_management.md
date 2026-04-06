@@ -11,8 +11,10 @@ sidebar_position: 60
 This chapter deals with the main functionality of Basic view, namely the secure storage and
 management of passwords. a password can be stored in different ways.
 
-NOTE: The required settings and rights are given by the in-house administration. Further information
+:::note
+The required settings and rights are given by the in-house administration. Further information
 can be found here: To do for the administration
+:::
 
 #### Create with application
 
@@ -21,8 +23,10 @@ web, RDP, or SSH application.
 
 ![create password](/images/passwordsecure/9.2/configuration/basic_view/password_management/create-password-en.webp)
 
-NOTE: Managing and creating the corresponding applications is the responsibility of the in-house
+:::note
+Managing and creating the corresponding applications is the responsibility of the in-house
 administration. How to create an application can be read here and in the following chapters.
+:::
 
 Clicking on the existing application opens a window that asks for the user name and password.
 

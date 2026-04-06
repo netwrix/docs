@@ -20,7 +20,9 @@ following encryption techniques and algorithms are in use:
 - PBKDF2 with 610,005 SHA256 iterations for the encryption of the user keys
 - ECC (with the "NIST P-521" curve) for the private-public key procedure
 
-NOTE: All encryption algorithms used by Netwrix Password Secure are FIPS compliant.
+:::note
+All encryption algorithms used by Netwrix Password Secure are FIPS compliant.
+:::
 
 ## Applied cryptographic procedures
 
@@ -38,5 +40,7 @@ own certificate authority (CA) as an option. Latest version of the Secure Socket
 Passwords are only encrypted and transported to the client when they have been explicitly requested
 in advance. More…
 
-**CAUTION:** Only secrets are encrypted. Metadata isn't encrypted to ensure search speed. Secrets
+:::warning
+Only secrets are encrypted. Metadata isn't encrypted to ensure search speed. Secrets
 are usually passwords. However, the customer can decide what kind of data they are. Secrets can't be searched for.
+:::

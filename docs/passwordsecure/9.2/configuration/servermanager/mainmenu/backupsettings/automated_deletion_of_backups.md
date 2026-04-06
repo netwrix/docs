@@ -13,8 +13,10 @@ you append date and time to the backups and thus generate new files daily.
 
 ###### Requirement
 
-**CAUTION:** It must be ensured that the user who sets up the automated deletion has sysadmin
+:::warning
+It must be ensured that the user who sets up the automated deletion has sysadmin
 privileges on the SQL server.
+:::
 
 ###### Furnishing
 

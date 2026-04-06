@@ -34,5 +34,7 @@ The two highlighted options are now available on the ribbon.
 Both mechanisms are protected by a confirmation prompt. If both "inherit" and also "overwrite" are
 selected, "overwrite" is considered the overriding function.
 
-**CAUTION:** Both mechanisms aren't protected by user rights. The **authorize** right for the
+:::warning
+Both mechanisms aren't protected by user rights. The **authorize** right for the
 organisational structure is required to activate the inheritance or overwrite functions.
+:::

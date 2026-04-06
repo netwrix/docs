@@ -36,7 +36,7 @@ After the general terms and conditions have been approved, the API Key can be re
 
 ### Configuring the Yubikey API
 
-The actual setting up of the multifactor authentication is carried out on the Server Manager in the
+The actual setting up of the multifactor authentication is performed on the Server Manager in the
 **Database** module. First select the required data base; then open the "Features" in the ribbon.
 The **Yubico Client ID** and the **Yubico Secret Key** must then be entered and saved.
 
@@ -44,9 +44,9 @@ The **Yubico Client ID** and the **Yubico Secret Key** must then be entered and 
 
 The interface is now ready and can be used.
 
-NOTE: The HTTPS endpoint [Yubico Verify](https://api.yubico.com/wsapi/2.0/verify) is used for
-communication with Yubico. ensure that the Netwrix Password Secure Server can connect to
-this endpoint.
+:::note
+The HTTPS endpoint [Yubico Verify](https://api.yubico.com/wsapi/2.0/verify) is used for communication with Yubico. ensure that the Netwrix Password Secure Server can connect to this endpoint.
+:::
 
 ## Configuring multifactor authentication for users
 
@@ -81,3 +81,4 @@ Click the field to highlight it, and enter the **Yubico Key** by touching the Yu
 ![yubico stick](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/yubico/yubico_yubikey_2-en.webp)
 
 The user is now logged on.
+

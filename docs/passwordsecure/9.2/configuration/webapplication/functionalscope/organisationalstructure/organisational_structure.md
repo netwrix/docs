@@ -18,8 +18,10 @@ The following functions are available in the **organisational structure module**
 - Changing passwords
 - Print
 
-NOTE: The Web Application module organisational structure is based on the client module of the same
+:::note
+The Web Application module organisational structure is based on the client module of the same
 name. Both modules have a different scope and design but are almost identical to use.
+:::
 
 ## AD connection in the Web Application
 

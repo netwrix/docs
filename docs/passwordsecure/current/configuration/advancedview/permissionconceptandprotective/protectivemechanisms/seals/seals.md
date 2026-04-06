@@ -71,8 +71,10 @@ release are displayed in blue.
 
 ![example permissions](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/seals/seals_3-en.webp)
 
-NOTE: All users and roles for which the data set isn't sealed and which aren't authorized for
+:::note
+All users and roles for which the data set isn't sealed and which aren't authorized for
 release are displayed in green. These can use the data record independently of the seal.
+:::
 
 To avoid having to perform any configuration manually, roles, and users are copied directly from the
 authorizations of the data record. Compare with the "permissions" for the record (can be viewed via
@@ -83,9 +85,11 @@ the ribbon).
 Supervisors should issue the releases for their employees. Therefore, the checkbox also follows the
 existing authorizations. The following **scheme** is used:
 
-NOTE: All users and roles that have the **authorize permission** to the record are "authorized to
+:::note
+All users and roles that have the **authorize permission** to the record are "authorized to
 issue a release" for the seal by default. All users and roles that don't have the **authorize
 permissions** to the record are copied directly into the "Sealed for" column.
+:::
 
 Here is a closer look at the permissions of the role **Administrators** on the record:
 
@@ -108,17 +112,21 @@ be added to the seal. The role accounting under "sealed for" has been added belo
 
 ![define permission for the seal](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/seals/seals_7-en.webp)
 
-NOTE: When a role or a user is added to a seal, these users also receive permissions on the record
+:::note
+When a role or a user is added to a seal, these users also receive permissions on the record
 according to the authorization granted in the seal. A role that is added under "Sealed for" receives
 the **Read permission** on the record. When you add authorization permissions, these will include
 the **Read**, **Write**, **Delete**, and **Authorize** permission.
+:::
 
 **CAUTION:** All the roles that were once added to the seal can no longer be removed via the seal
 logic. This is only possible directly via the authorizations of the data record!
 
-NOTE: You can seal records for a user who is also authorized to issue a release. In this
+:::note
+You can seal records for a user who is also authorized to issue a release. In this
 constellation, at least one other user is authorized to issue a
 release. In principle, you should never be able to issue a release for yourself.
+:::
 
 #### 3. Advanced settings
 

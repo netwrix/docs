@@ -54,7 +54,7 @@ separated and whether to use LeetSpeak.
 
 Already
 defined[Password rules](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/extras/password_rules.md)
-can be used for the automatic generation of new passwords
+supports the automatic generation of new passwords
 
 ## Multigenerator
 

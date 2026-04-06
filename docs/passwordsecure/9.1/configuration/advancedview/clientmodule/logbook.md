@@ -36,7 +36,7 @@ short: The entries are being filtered based on changes to passwords.
 
 This list can also be grouped together by dragging and dropping column headers – see the following
 grouping of the columns for **computer user**. The filtered results now show all changes to
-passwords carried out by the computer user "administrator".
+passwords performed by the computer user "administrator".
 
 ![Logbook entries](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/logbook/logbook_3-en.webp)
 
@@ -47,12 +47,13 @@ of state is recorded and saved in the MSSQL database. There are no plans to allo
 logbook entries to be selectively defined. It's only by using this process that changes are
 completed in a traceable and audit-proof manner to prevent falsification.
 
-NOTE: If desired, the logbook can be automatically cleaned up. This option can be configured on the
-Server Manager. Further information can be found in the section
-[Managing databases](/docs/passwordsecure/9.1/configuration/servermanager/managingdatabases/managing_databases.md).
+:::note
+If desired, the logbook can be automatically cleaned up. This option can be configured on the Server Manager. Further information can be found in the section [Managing databases](/docs/passwordsecure/9.1/configuration/servermanager/managingdatabases/managing_databases.md).
+:::
 
 ## Transferring to a Syslog server
 
 The logbook can also be completely transferred to a
 [Syslog](/docs/passwordsecure/9.1/configuration/servermanager/databaseproperties/syslog.md)
 server. Further information on this subject can be found in the section Syslog.
+

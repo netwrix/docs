@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # SDK / API
 
-API: This interface can be used to "address Netwrix Password Secure externally" to, for
+API: Use this interface to "address Netwrix Password Secure externally" to, for
 example, read data for other programs. The API can only be accessed via the wrappers (SDK) using C#
 and JavaScript.
 

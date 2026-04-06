@@ -39,8 +39,10 @@ Name the folder where the ZIP archive with the Web Application should be placed.
 
 **CAUTION:** Don't use the Server Manager installation directory
 
-NOTE: If the web server is created on IIS, execute config.bat to handle integration of the web
+:::note
+If the web server is created on IIS, execute config.bat to handle integration of the web
 server.
+:::
 
 ### Server IP
 
@@ -68,9 +70,9 @@ You can personalize the Web App with your company’s branding by navigating to 
 ## CORS configuration
 
 A button for the so-called CORS configuration can be found on the ribbon. It is essential that this
-configuration is carried out before the Web Application can be used. A list of the permitted CORS
+configuration is performed before the Web Application can be used. A list of the permitted CORS
 domains will be saved as a result. Requests received via the Web Application can then be checked
-against this list. The request will only be successfully carried out if the origin header for a
+against this list. The request will only be successfully performed if the origin header for a
 request is available in the permitted domains.
 
 To add a domain, simply enter it at the bottom of the dialogue. Clicking on
@@ -78,16 +80,20 @@ To add a domain, simply enter it at the bottom of the dialogue. Clicking on
 
 ![cors-en-new](/images/passwordsecure/9.2/installation/installation_web_application/cors-en-new.webp)
 
-NOTE: In general, it is sufficient to add the IP address which was also saved as the Web server host
+:::note
+In general, it is sufficient to add the IP address which was also saved as the Web server host
 address.
+:::
 
-## Calling up the Web Application
+## Accessing the Web Application
 
-The process for calling up the Web Application is dependent on the configuration of the web server:
+The process for accessing the Web Application depends on the configuration of the web server:
 
 - Web Application in root directory -> `https://hostname`
 - Web Application in a subdirectory -> `https://hostname/path-to-subdirectory`
 - Port isn't set to 443 -> `https://hostname:port/path-to-subdirectory`
 
-NOTE: In order for the redirect to be used, you must ensure on apache and nginx web
+:::note
+In order for the redirect to be used, you must ensure on apache and nginx web
 servers that no other host listens to port 80.
+:::

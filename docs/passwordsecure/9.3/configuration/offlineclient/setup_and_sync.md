@@ -15,7 +15,7 @@ rights/user settings.
 Requirements
 
 To set up offline databases, this option must be activated in the Server Manager first. This process
-is carried out separately for each database in the database view in the Server Manager in the
+is performed separately for each database in the database view in the Server Manager in the
 “General settings” (right click the database). This is also possible to do when the database is
 initially created.
 
@@ -34,14 +34,16 @@ server connection can be defined in the user rights.
 
 Creating an offline database
 
-The synchronization with the offline database can generally be carried out automatically. However,
-**the first synchronization must be carried out manually**. The synchronization is started via the
+The synchronization with the offline database can generally be performed automatically. However,
+**the first synchronization must be performed manually**. The synchronization is started via the
 Main menu/Account.
 
 ![account-en](/images/passwordsecure/9.2/configuration/offlineclient/setup/account-en.webp)
 
-NOTE: The offline databases are stored locally under the following path: %appdata%\MATESO\Password
+:::note
+The offline databases are stored locally under the following path: %appdata%\MATESO\Password
 Safe and Repository Client\OfflineDB
+:::
 
 An offline database must be created per user and client for each online database. This makes it
 possible to use several offline databases with an Offline Add-on.
@@ -80,7 +82,7 @@ Offline mode can be configured and personalized using the four settings mentione
 - **Offline synchronization after login:** If this option is active, the offline database is
   synchronized after each restart of the client.
 - **Automatic synchronization after an interval**: This setting is used to define the interval at
-  which a synchronization of the offline database will be periodically carried out. The default
+  which a synchronization of the offline database will be periodically performed. The default
   value is 30 minutes.
 - **Path where the offline database should be saved**: If this field is left empty, the system
   default is used. Otherwise, the storage location for the offline database can be entered directly.

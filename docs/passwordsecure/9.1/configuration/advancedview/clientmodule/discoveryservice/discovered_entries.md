@@ -25,10 +25,11 @@ described below.
 3. **Overview**: Current data for the **Discovery Service Task** about its progress and subsequent
    executions are shown here.
 4. **Logbook**: The **logbook** can be found in the **footer** of the **Discovery Service Task**.
-   The latest activities carried out by the **Discovery Service Task** are shown here.
+   The latest activities performed by the **Discovery Service Task** are shown here.
 
-NOTE: The **data** is **not kept up-to-date while the task is being executed** and doesn't always
-show the latest status. Therefore, the data should be regularly **updated** using the **F5 button**!
+:::note
+The **data** is **not kept up-to-date while the task is being executed** and doesn't always show the latest status. Therefore, the data should be regularly **updated** using the **F5 button**!
+:::
 
 ## Using the Discovery Service entries
 
@@ -57,8 +58,9 @@ an assignment process in the **Conversion Wizard** for every entry.
 
 For **Active Directory users**, it's possible to assign an existing **password**.
 
-NOTE: The subsequent process is carried out in the same way as when only one **Discovery Service
-entry** is selected.
+:::note
+The subsequent process is performed in the same way as when only one **Discovery Service entry** is selected.
+:::
 
 ## Filter settings
 
@@ -83,3 +85,4 @@ Description of the **filter with the special options for the Discovery Service e
 5. **Transferred as Password Reset**: Indicates whether a Password Reset can be created via the
    Conversion Wizard
 6. **Discovery service system tasks**: The entries are filtered here based on the System Task.
+

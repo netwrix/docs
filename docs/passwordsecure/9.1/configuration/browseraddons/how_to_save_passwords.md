@@ -12,7 +12,6 @@ This chapter describes how to store passwords via add-on.
 You can only save passwords in server mode!
 :::
 
-
 ## New access data
 
 With the setup and login via server mode, the access data can now be added automatically. When
@@ -38,7 +37,7 @@ already known dataset.
 
 - **Save password**: The password will be exchanged without opening the Web Application.
 - **check changes**: The Web Application is opened and you are logged in. The previous password has
-  been replaced by the new one. However, the storage must be carried out manually.
+  been replaced by the new one. However, the storage must be performed manually.
 
 ![data was recognized](/images/passwordsecure/9.1/configuration/browseradd-ons/how_to_save_passwords/installation_with_parameters_152-en.webp)
 

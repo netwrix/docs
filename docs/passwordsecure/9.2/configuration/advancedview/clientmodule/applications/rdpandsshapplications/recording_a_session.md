@@ -8,7 +8,7 @@ sidebar_position: 10
 
 ## Session recording overview
 
-Session recording can be used to make a visual recording of RDP and SSH sessions. These recordings
+Session recording lets you make a visual recording of RDP and SSH sessions. These recordings
 can then be subsequently viewed and evaluated. In this context, it is also possible to limit this
 functionality so that only the user themselves or an assigned person e.g. security officer can view
 and evaluate these recordings.
@@ -23,10 +23,12 @@ The following options are required to manage sessions for an application.
 
 - Can manage recordings for an application
 
-NOTE: Session recording uses disk space in the database. Although the way the
+:::note
+Session recording uses disk space in the database. Although the way the
 recordings are saved is efficient in terms of resources, the required amount of disk space varies
 greatly depending on the content. The more that is done during the recorded session, the higher the
 disk space usage.
+:::
 
 Session recording firstly needs to be activated for the relevant RDP or SSH application before it
 can take place.
@@ -42,13 +44,15 @@ SSH
 If the setting has been activated, the recording will start automatically the next time a connection
 is established.
 
-NOTE: The recordings are already streamed to the server and saved into the database during the
+:::note
+The recordings are already streamed to the server and saved into the database during the
 recording process. Therefore, no recordings are lost even if the connection is terminated. They are
 immediately saved until the connection is terminated or until the end of the session.
+:::
 
 ## Viewing the session recordings
 
-If recordings exist for an application, these can be called up and viewed in the Applications
+If recordings exist for an application, these can be opened and viewed in the Applications
 module.
 
 ![viewing session recording](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/rdp_and_ssh_applications/recording_a_session/recording_a_session_4-en.webp)

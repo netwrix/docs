@@ -51,7 +51,7 @@ account with regards to its operation:
 [Seals](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/seals/seals.md)
 enhance the security concept in Netwrix Password Secure to include a double-check principle that can
 be defined in fine detail. This means that releases for protected information are linked to the
-positive authentication of one or more users. Naturally, it isn't possible to issue these releases
+positive authentication of one or more users. it isn't possible to issue these releases
 when the server isn't connected. For this reason, sealed records aren't synchronized and thus do
 not form part of offline databases.
 

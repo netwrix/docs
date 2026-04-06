@@ -15,7 +15,7 @@ the **System Tasks**.
 ![ribbon](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_1-en.webp)
 
 After the **Discovery Service Task** has been successfully executed, the entries are available in
-the **Discovery Service**. Further processing of the entries is then carried out using the
+the **Discovery Service**. Further processing of the entries is then performed using the
 **Conversion Wizard**. For processing in the **Conversion Wizard**, the network is scanned for the
 following types:
 
@@ -48,8 +48,10 @@ In the **Discovery Service** table, the user selects the entries for which he wa
    be used when creating a **Password Reset** (it is then used as the only password linked to the
    Password Reset). Alternatively, these passwords can also be newly created.
 
-NOTE: Logically, **every root node** corresponds to **one user** and all of its associated data
+:::note
+Logically, **every root node** corresponds to **one user** and all of its associated data
 (e.g. services). A **Password Reset** is created later for **every user** and its associated data.
+:::
 
 The following image shows the options **add new password** or retain **existing password**.
 
@@ -76,16 +78,20 @@ The **settings** will be described in more detail below:
 5. The **responsible user for the Password Reset** is entered here.
 6. Various **triggers for the Password Reset** can be selected here.
 
-**CAUTION:** After clicking on **Finish**, the **Password Resets** will be **immediately executed**
+:::warning
+After clicking on **Finish**, the **Password Resets** will be **immediately executed**
 and the **passwords changed!**. This also applies to **Windows passwords!**
+:::
 
 If option 1: **Do you also want to add a Password Reset?** isn't selected, \*steps 4, 5, and 6 are
 not displayed for configuration.
 
 ![password reset option](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_5-en.webp)
 
-NOTE: After clicking on **Finish**, one or more **passwords will be created** but **no corresponding
+:::note
+After clicking on **Finish**, one or more **passwords will be created** but **no corresponding
 Password Resets will be created!**
+:::
 
 ## Assignment (Active Directory user)
 
@@ -109,8 +115,8 @@ The following images shows the **Assignment (Active Directory user)** Ribbon
 ### Procedure
 
 1. An **Existing form** is selected here
-2. The **assignment** to the fields is carried out here Important assignments are **Type: General**
-   and **Type: Password Reset**. An amendment can be carried out here
+2. The **assignment** to the fields is performed here. Important assignments are **Type: General**
+   and **Type: Password Reset**. You can amend these here
 
 ### "New form" selected
 
@@ -120,12 +126,12 @@ The following images shows the **Assignment (Active Directory user)** Ribbon
 
 1. A name for the **New form** needs to be entered here
 2. The discovered entries are **automatically** assigned as standard Important assignments are
-   **Type: General** and **Type: Password Reset**. An amendment can be carried out here
+   **Type: General** and **Type: Password Reset**. You can amend these here
 
 ### Summary
 
-A brief overview of the actions that will be carried out with the added configuration is displayed
-in the **Summary** Ribbon. These actions will then be carried out if you click **Finish**.
+A brief overview of the actions that will be performed with the added configuration is displayed
+in the **Summary** Ribbon. These actions will then be executed if you click **Finish**.
 
 ![summary](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_9-en.webp)
 
@@ -137,14 +143,18 @@ creating **Password Resets**. If the option **Execute Password Resets immediatel
 created** is used in the configuration, the **selected passwords** are immediately changed after
 clicking on **Finish**.
 
-**CAUTION:** **If you aren't paying careful attention, this could have inconvenient consequences.**
+:::warning
+**If you aren't paying careful attention, this could have inconvenient consequences.**
+:::
 
 **Security level 1:** An **Important note** is displayed in the **Summary** after clicking on
 **Finish**.
 
-**CAUTION:** **observe the note and read it through carefully!**
+:::warning
+**observe the note and read it through carefully!**
+:::
 
-An **Overview** of which actions will be carried out is displayed for the user together with this
+An **Overview** of which actions will be performed is displayed for the user together with this
 note. The user can then still decide to **Cancel** the process. If you click **OK**, an
 **additional confirmation warning** will be displayed.
 
@@ -155,9 +165,11 @@ note. The user can then still decide to **Cancel** the process. If you click **O
 Another **confirmation prompt** highlights that understand what you are about to
 do. It will no longer be possible to reverse the actions afterwards!
 
-**CAUTION:** **Last chance to cancel the execution!**
+:::warning
+**Last chance to cancel the execution!**
+:::
 
 ![securtiy warning](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_11-en.webp)
 
 After **entering the displayed number** and **confirming with OK**, the process is **executed
-immediately** and the **Password Resets** are carried out and the **associated passwords changed**.
+immediately** and the **Password Resets** are executed and the **associated passwords changed**.

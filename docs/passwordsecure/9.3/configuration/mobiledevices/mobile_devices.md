@@ -16,7 +16,9 @@ prerequisite for every user to find their way around **quickly** and **easily**.
 
 For detailed documentation of the **Netwrix Password Secure Mobile App**
 
-NOTE: that as of version 8.10.0, the previous version 7 App is no longer compatible.
+:::note
+that as of version 8.10.0, the previous version 7 App is no longer compatible.
+:::
 
 #### Security is the ambition
 

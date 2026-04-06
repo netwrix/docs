@@ -13,8 +13,10 @@ The control elements such as the ribbon and the info and detail areas can be der
 section dealing with the
 client([Operation and Setup](/docs/passwordsecure/9.2/configuration/advancedview/operationandsetup/operation_and_setup.md)).
 
-NOTE: An initial password is required for the first login on Server Manager. The password is
+:::note
+An initial password is required for the first login on Server Manager. The password is
 “admin”. This password should be changed directly after login and carefully documented.
+:::
 
 #### Status module
 
@@ -58,7 +60,7 @@ column headings. The period shown can be limited using .
 # Databases module
 
 Databases are managed in a dedicated module. All relevant information on the existing databases can
-also be called up – completely without accessing the SQL server.
+also be opened – completely without accessing the SQL server.
 
 ![Databases Admin Client](/images/passwordsecure/9.2/configuration/server_manager/operation_and_setup/installation_with_parameters_252-en.webp)
 
@@ -84,7 +86,7 @@ List of recent backups. Can be sorted by date
 
 The database log is used to monitor and control the specific databases. All relevant actions for the
 selected database are displayed in a comprehensible manner in one list. The categorisation is
-carried out in the same way as the server log according to the colours applied.
+performed in the same way as the server log according to the colours applied.
 
 #### Backups module
 

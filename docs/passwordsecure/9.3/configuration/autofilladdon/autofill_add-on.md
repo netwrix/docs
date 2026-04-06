@@ -28,7 +28,9 @@ User rights
 
 The right **Can create web applications** is required for creating new web applications\*
 
-NOTE: The agent can control multiple databases at the same time
+:::note
+The agent can control multiple databases at the same time
+:::
 
 #### Functionality
 
@@ -53,13 +55,15 @@ following types of connections exist:
   cases, the Autofill Add-on takes over the communication between the application server and the
   Windows applications.
 
-NOTE: For entering data on websites, the record must contain at least the following fields: User
+:::note
+For entering data on websites, the record must contain at least the following fields: User
 name, password, URL.
+:::
 
 #### Conclusion
 
 As the Autofill Add-on is directly connected to the application server, login data can also be
 entered without the main client. Exceptions are the RDP and SSH connections. These are forced to
 remain part of the client. The Autofill Add-on thus acts as a lean alternative for the use of the
-client with the two limitations mentioned. Naturally, all of the steps completed are still entered
+client with the two limitations mentioned. all of the steps completed are still entered
 in the logbook and are always traceable.

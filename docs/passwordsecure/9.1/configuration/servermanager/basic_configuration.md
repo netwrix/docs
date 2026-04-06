@@ -9,7 +9,7 @@ sidebar_position: 10
 ## Basic configuration overview
 
 Within the basic configuration, the connection to the SQL server, or to the databases is defined. The
-basic configuration appears the first time the Server Manager is started and can be called up at any
+basic configuration appears the first time the Server Manager is started and can be opened at any
 time in the basic configuration.
 
 ![base configuration](/images/passwordsecure/9.1/configuration/server_manager/baseconfiguration/installation_with_parameters_188-en.webp)
@@ -38,7 +38,6 @@ The defined service user **needs local administrator** rights to properly config
 server and create databases.
 :::
 
-
 #### SQL configuration instance
 
 Under “SQL Server instance” the database server must be specified, including the SQL instance. For
@@ -51,7 +50,9 @@ that “dbCreator” rights are necessary to create a configuration database. �
 sufficient if the database is created manually on the SQL server and is only accessed here. Enter
 the name of the configuration database under “Database”.
 
-NOTE: Refer to the system requirements for server section for details about the users.
+:::note
+Refer to the system requirements for server section for details about the users.
+:::
 
 #### Expert mode
 
@@ -76,7 +77,6 @@ Exchanging or overwriting an existing certificate may cause warnings to the clie
 the certificate isn't trusted by each client.
 :::
 
-
 **Allow host mode**
 
 Host mode is no longer supported since version 8.13.
@@ -90,5 +90,7 @@ the database on the SQL server here. The following is cached:
 - The structure of the organisational units
 - All settings
 
-NOTE: If this option is changed, the server needs to be restarted so that the change can take
-effect.
+:::note
+If this option is changed, the server needs to be restarted so that the change can take effect.
+:::
+

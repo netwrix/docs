@@ -36,8 +36,9 @@ Manager.
 The configuration can be selected using CTRL+A and copied. It's then directly integrated onto the
 Apache server.
 
-NOTE: The configuration of the Apache server is always individual. Therefore, it's only possible to
-roughly describe the process for a standard installation.
+:::note
+The configuration of the Apache server is always individual. Therefore, it's only possible to roughly describe the process for a standard installation.
+:::
 
 ## Standard configuration
 
@@ -47,3 +48,4 @@ configuration from the server. Apache is subsequently restarted via systemctl re
 
 The Web Application is now ready to use and can be directly started. Further information can be
 found at the end of this section under "SCalling up the Web Application".
+

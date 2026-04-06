@@ -79,8 +79,10 @@ is also essential to check whether the correct database has been selected in the
 
 ![restore db](/images/passwordsecure/9.2/maintenance/sql-restore-en.webp)
 
-NOTE: This method can be also used to import backups that were directly created from the Server
+:::note
+This method can be also used to import backups that were directly created from the Server
 Manager.
+:::
 
 #### 2. Setting up the server
 

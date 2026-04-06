@@ -9,7 +9,7 @@ sidebar_position: 30
 ## Predefined rights overview
 
 [Permissions for organisational structures](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/organisationalstructure/permissionsfororganisational/permissions_for_organisational.md)
-can be carried out separately for every record. Although this method lets you very closely
+can be performed separately for every record. Although this method lets you very closely
 control every intended permission structure, it isn't really efficient. On the one hand, there's
 too much configuration work involved, while on the other hand, there's a danger that people who
 should also receive permissions to access data are forgotten. In addition, many users shouldn't
@@ -75,7 +75,7 @@ records.
 ## Issuing tags for predefining rights
 
 In the same way that permissions are defined within right templates, it's also possible to
-automatically set **tags**. Their configuration is carried out in the same way as issuing
+automatically set **tags**. Their configuration is performed in the same way as issuing
 [Tags](/docs/passwordsecure/9.1/configuration/advancedview/operationandsetup/tags.md)
 for records.
 

@@ -10,13 +10,13 @@ sidebar_position: 10
 
 The use of a [Filter](/docs/passwordsecure/current/configuration/advancedview/operationandsetup/filter/filter.md) is generally the gateway to
 displaying existing records. Nevertheless, this aspect of the visibility of the records is closely
-interwoven with the existing permissions structure. Naturally, a user can always only see those
+interwoven with the existing permissions structure. A user can always only see those
 records for which they have at least a read Permission. This doctrine should always be taken into
 consideration when handling records. [Tags](/docs/passwordsecure/current/configuration/advancedview/operationandsetup/tags.md) aren't
 subject to any permissions and can thus always be used as filter criteria. Nevertheless, the
 delivered results will only contain those records for which the user themselves actually has
 permissions. A good example here is the tag “personal record”. Every user can mark their own record
-as personal – yet each user will naturally only be able to find their own personal records.
+as personal – yet each user will only be able to find their own personal records.
 
 ## Creating independently working environments
 
@@ -35,6 +35,8 @@ In general, each department can independently use forms, create passwords and ma
 this way. Especially in very sensitive areas of a company, this type of compartmentalization is
 often required and also desired.
 
-NOTE: An alternative also supported by Netwrix Password Secure is for each department to set up
+:::note
+An alternative also supported by Netwrix Password Secure is for each department to set up
 their own MSSQL database. However, this physical separation requires considerably more
 administration work than the above-mentioned separation of data based on permissions and visibility.
+:::

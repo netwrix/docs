@@ -36,8 +36,10 @@ Manager.
 The configuration can be selected using CTRL+A and copied. It is then directly integrated onto the
 Apache server.
 
-NOTE: The configuration of the Apache server is always individual. Therefore, it is only possible to
+:::note
+The configuration of the Apache server is always individual. Therefore, it is only possible to
 roughly describe the process for a standard installation.
+:::
 
 ## Standard configuration
 

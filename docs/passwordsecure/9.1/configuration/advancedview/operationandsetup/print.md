@@ -37,7 +37,7 @@ The print function is available in the following modules:
 
 #### Using the print function
 
-The print function can be called up via the ribbon.
+The print function can be opened via the ribbon.
 
 ![installation_with_parameters_44](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/print/installation_with_parameters_44.webp)
 
@@ -48,9 +48,9 @@ amount of data, this may take a few minutes. The print preview is then opened.
 
 ![print password](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/print/installation_with_parameters_45-en.webp)
 
-NOTE: The print preview accesses the functions of the printer driver. Depending on the printer or
-driver being used, the appearance, and functions offered by the print preview may vary. The
-individual functions will thus not be described in detail here.
+:::note
+The print preview accesses the functions of the printer driver. Depending on the printer or driver being used, the appearance, and functions offered by the print preview may vary. The individual functions will thus not be described in detail here.
+:::
 
 The printing process is ultimately started via the **print preview**. It's also possible to save
 the view or adjust the layout before printing.
@@ -90,7 +90,9 @@ in this case.
 
 #### Detailed view (current filter)
 
-This function can be used to print out all filtered records in detailed view as described above.
+This function lets you print out all filtered records in detailed view as described above.
 
-NOTE: The amount of data generated via this function can quickly become very
-large.
+:::note
+The amount of data generated via this function can quickly become very large.
+:::
+

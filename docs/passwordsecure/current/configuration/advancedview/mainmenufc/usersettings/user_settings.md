@@ -64,7 +64,9 @@ The diagram shows the settings for the user “Jones”. The search has been fil
 by the organisational unit “IT”. The top two options have no value in the column. This is because
 this parameter has been defined at user level.
 
-NOTE: The inheritance for individual settings can be deactivated in the ribbon!
+:::note
+The inheritance for individual settings can be deactivated in the ribbon!
+:::
 
 ## Security levels
 

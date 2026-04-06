@@ -59,9 +59,11 @@ The interplay between the document-specific event logbook and the history provid
 of all information that's relevant to the handling of sensitive data. Version management can be
 used to restore any historical versions of a document.
 
-NOTE: The file size for a **linked document** can only be updated if the document was opened using
-Netwrix Password Secure.
+:::note
+The file size for a **linked document** can only be updated if the document was opened using Netwrix Password Secure.
+:::
 
-NOTE: If desired, the document history can be automatically cleaned up. This option can be
-configured on the **Server Manager**. Further information can be found in the section Managing
-databases.
+:::note
+If desired, the document history can be automatically cleaned up. This option can be configured on the **Server Manager**. Further information can be found in the section Managing databases.
+:::
+

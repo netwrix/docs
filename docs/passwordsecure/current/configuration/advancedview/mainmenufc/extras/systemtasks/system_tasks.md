@@ -9,7 +9,7 @@ sidebar_position: 40
 ## System tasks overview
 
 Netwrix Password Secure supports administrators and users by automating repetitive tasks. These are
-represented as system tasks. Predefined tasks can thus be carried out at freely defined intervals.
+represented as system tasks. Predefined tasks can thus be performed at freely defined intervals.
 
 ![System Tasks](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/system_tasks/installation_with_parameters_85-en.webp)
 
@@ -46,7 +46,7 @@ selected from the four above-mentioned work processes.
 
 ![installation_with_parameters_86](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/system_tasks/installation_with_parameters_86.webp)
 
-Naturally, the four work processes also share some similarities in their configuration.
+the four work processes also share some similarities in their configuration.
 
 - **Status:** The system task is normally activated and then starts immediately after it has been
   saved according to the defined intervals. If the system task is deactivated here, it is still
@@ -88,8 +88,10 @@ Emergency WebViewer export
 - The Emergency WebViewer export creates an encrypted HTML file that contains all passwords. In an
   emergency, the data required to get the system operational again can be accessed in this file.
 
-NOTE: Tags could be defined for individual tasks – yet they have no relevance and can also not be
+:::note
+Tags could be defined for individual tasks – yet they have no relevance and can also not be
 used as filter criteria in the system tasks.
+:::
 
 Status
 

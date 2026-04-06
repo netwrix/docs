@@ -55,11 +55,9 @@ user name, password, and clicking the button to subsequently confirm the login.
 
 ![connected fields](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/applications/learning_the_applications/learning_the_applications_4-en.webp)
 
-NOTE: "Graphical recognition:" The graphical recognition function provides additional protection. It
-can be used to define other factors for the SSO. An area is defined that then serves as the output
-for the comparison (e.g. for login masks with an image). To activate the graphical
-recognition function, click the eye at the top right after assigning the fields! The area that
-will serve as the output point is then marked.
+:::note
+"Graphical recognition:" The graphical recognition function provides additional protection. It lets you define other factors for the SSO. An area is defined that then serves as the output for the comparison (e.g. for login masks with an image). To activate the graphical recognition function, click the eye at the top right after assigning the fields! The area that will serve as the output point is then marked.
+:::
 
 After you have assigned all of the fields, you can exit the application process using the enter
 button. The fields "Window title", "Application" and "Application path" mentioned at the beginning
@@ -92,3 +90,4 @@ passwords, roles, or documents. It's possible to separately define which group o
 to use each application.
 
 :::
+

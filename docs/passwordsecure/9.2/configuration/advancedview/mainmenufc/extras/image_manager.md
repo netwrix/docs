@@ -21,8 +21,10 @@ The following options are required:
 - Can upload new password images
 - Can manage password images
 
-NOTE: It is important that the setting “Ask for Favicon-Download “ is only considered, if the right
+:::note
+It is important that the setting “Ask for Favicon-Download “ is only considered, if the right
 “Can upload new password images “ has been activated!
+:::
 
 #### Managing Icons/Logos
 
@@ -40,7 +42,9 @@ If these preconditions are met, the stored URL is checked for the favicon when s
 record. If a favicon is found, it will be imported into the database and displayed in the data
 record in future.
 
-NOTE: If there are several deposited, always use the first one.
+:::note
+If there are several deposited, always use the first one.
+:::
 
 2. Manual filing
 
@@ -62,9 +66,11 @@ Click the + symbol to open the mask for creating images.
     - **Applications**: URL stored in the application -> attached tags -> application name
 
 - ![icon_open_folder](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/image_management/icon_open_folder.webp)
-  This symbol can be used to upload locally saved icons and logos.
+  Use this symbol to upload locally saved icons and logos.
 
-NOTE: The icons and logos aren't stored locally, but in the database.
+:::note
+The icons and logos aren't stored locally, but in the database.
+:::
 
 ## Conditions
 

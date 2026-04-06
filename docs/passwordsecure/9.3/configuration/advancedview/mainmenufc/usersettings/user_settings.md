@@ -33,8 +33,10 @@ one of the following three ways:
 3. Global settings apply to all users of a database without exception. You can configure them in the
    client settings.
 
-**CAUTION:** In addition to personal and global settings (as opposed to authorizations), settings
+:::warning
+In addition to personal and global settings (as opposed to authorizations), settings
 aren't assigned via roles, but via organisational units!
+:::
 
 ![installation_with_parameters_112](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/user_rights/installation_with_parameters_112.webp)
 
@@ -64,7 +66,9 @@ The diagram shows the settings for the user “Jones”. The search has been fil
 by the organisational unit “IT”. The top two options have no value in the column. This is because
 this parameter has been defined at user level.
 
-NOTE: The inheritance for individual settings can be deactivated in the ribbon!
+:::note
+The inheritance for individual settings can be deactivated in the ribbon!
+:::
 
 ## Security levels
 

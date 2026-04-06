@@ -16,12 +16,12 @@ button or also via the ribbon.
 ## Database settings
 
 All database settings are saved in the database. It's necessary to log in to the database before
-editing the settings. Any user that exists in the database can be used for this purpose. You can
+editing the settings. Any user that exists in the database supports this purpose. You can
 always restore Global settings via the ribbon.
 
 **Multifactor authentication**
 
-This area can be used to configure which services will be used for multi-factor authentication. The
+This area lets you configure which services will be used for multi-factor authentication. The
 available services are: RSA Secure ID, SafeNet, YubiKey NEO, and YubiKey Nano. After selecting the
 required service, specify the respective access data. You must also configure various services. In
 this case, you can specify on the client which methods will be used by the individual users.
@@ -45,7 +45,6 @@ The logbook is also used for the filter functions. If the
 logbook is regularly cleaned up, it's possible that the full functions of the filter will no longer
 be available.
 :::
-
 
 #### Database actions
 
@@ -79,15 +78,14 @@ will be sent a corresponding message. The sessions will, however, remain open so
 continue working as soon as the migration is complete.
 :::
 
-
 **Certificates**
 
 Management of the certificates is very important. This is described in the section certificates.
 
 **Display database users**
 
-This button can be used to call up statistics about the users in the respective databases. It shows
-you which users are active in which database. Naturally, this list can also be exported.
+This button lets you view statistics about the users in the respective databases. It shows
+you which users are active in which database. this list can also be exported.
 
 #### Data backup
 

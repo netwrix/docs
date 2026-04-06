@@ -30,7 +30,7 @@ and "Linked passwords".
 
 ### Trigger
 
-Triggers describe the conditions that need to be fulfilled so that a Password Reset is carried out.
+Triggers describe the conditions that need to be fulfilled so that a Password Reset is performed.
 There are a total of three possible triggers available:
 
 - Reset the password x minutes after the password has been viewed
@@ -42,8 +42,10 @@ triggers is equivalent to deactivating the Password Reset. All three triggers ca
 deactivated independently of one another. Only one selection can be made in each of the three
 categories.
 
-NOTE: A separate system task within Netwrix Password Secure checks every minute whether a trigger
+:::note
+A separate system task within Netwrix Password Secure checks every minute whether a trigger
 applies.
+:::
 
 ### Scripts
 
@@ -58,7 +60,9 @@ A new dialogue appears after the selection in which the type of system "to be re
 
 The functions and configuration process are described in detail in the section Scripts.
 
-NOTE: It isn't possible to create a Password Reset without an associated script.
+:::note
+It isn't possible to create a Password Reset without an associated script.
+:::
 
 ### Linked passwords
 

@@ -29,7 +29,7 @@ The following options are required to add new forms.
 ## Standard forms
 
 Netwrix Password Secure is supplied with a series of standard forms – these should generally cover
-all standard requirements. Naturally, it is still possible to adapt the standard forms to your
+all standard requirements. It is still possible to adapt the standard forms to your
 individual requirements.
 
 ![forms](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/forms/forms_2-em.webp)
@@ -99,9 +99,11 @@ the RDP session.
 
 ![updated form](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/forms/forms_7-en.webp)
 
-NOTE: The **forms module** is based on the
+:::note
+The **forms module** is based on the
 [Web Application](/docs/passwordsecure/current/configuration/webapplication/web_application.md) module of the same name. Both modules
 have a different scope and design but are almost identical to use.
+:::
 
 ## Standard form
 

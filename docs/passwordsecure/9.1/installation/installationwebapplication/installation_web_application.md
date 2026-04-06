@@ -11,7 +11,6 @@ This guide focuses on the initial installation of the Web Application and isn't
 relevant for further updates.
 :::
 
-
 ## Preparations for installation
 
 ### System requirements
@@ -46,9 +45,9 @@ Name the folder where the ZIP archive with the Web Application should be placed.
 If t Don't use the Server Manager installation directory
 :::
 
-
-NOTE: If the web server is created on IIS, execute config.bat to handle integration of the web
-server.
+:::note
+If the web server is created on IIS, execute config.bat to handle integration of the web server.
+:::
 
 ### Server IP
 
@@ -70,9 +69,9 @@ each specific web server.
 ## CORS configuration
 
 A button for the so-called CORS configuration can be found on the ribbon. It's essential that this
-configuration is carried out before the Web Application can be used. A list of the permitted CORS
+configuration is performed before the Web Application can be used. A list of the permitted CORS
 domains will be saved as a result. Requests received via the Web Application can then be checked
-against this list. The request will only be successfully carried out if the origin header for a
+against this list. The request will only be successfully performed if the origin header for a
 request is available in the permitted domains.
 
 To add a domain, simply enter it at the bottom of the dialogue. Clicking on
@@ -80,16 +79,19 @@ To add a domain, simply enter it at the bottom of the dialogue. Clicking on
 
 ![cors-en-new](/images/passwordsecure/9.1/installation/installation_web_application/cors-en-new.webp)
 
-NOTE: In general, it's sufficient to add the IP address which was also saved as the Web server host
-address.
+:::note
+In general, it's sufficient to add the IP address which was also saved as the Web server host address.
+:::
 
-## Calling up the Web Application
+## Opening the Web Application
 
-The process for calling up the Web Application is dependent on the configuration of the web server:
+The process for opening the Web Application is dependent on the configuration of the web server:
 
 - Web Application in root directory -> `https://hostname`
 - Web Application in a subdirectory -> `https://hostname/path-to-subdirectory`
 - Port isn't set to 443 -> `https://hostname:port/path-to-subdirectory`
 
-NOTE: In order for the redirect to be used, it's important to ensure on apache and nginx web
-servers that no other host listens to port 80.
+:::note
+In order for the redirect to be used, it's important to ensure on apache and nginx web servers that no other host listens to port 80.
+:::
+

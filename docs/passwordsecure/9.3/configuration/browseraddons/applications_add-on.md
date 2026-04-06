@@ -33,7 +33,7 @@ websites that would fit the page. It is only necessary for the hostname includin
 such as .de or .com, to match. The data are then entered. In this case, the user name is transmitted
 to the first user name field that can be found on the page. The password is also entered into the
 first password field found on the page. If automatic login has been activated in the settings, this
-is also carried out by clicking the login button.
+is also performed by clicking the login button.
 
 #### Data entry with application
 
@@ -43,7 +43,7 @@ is also necessary to create an application. In this context, “application” m
 are used to enter information into the fields. It thus assigns fields in the record to the
 associated fields on the website. This mapping process only needs to be configured once. The
 applications is responsible for entering data in the fields on the website from then on. In the
-following example, the data entry process is carried out from the client. Naturally, this is also
+following example, the data entry process is performed from the client. this is also
 possible via [Browser Add-ons](/docs/passwordsecure/9.3/configuration/browseraddons/browser_add-ons.md). The procedure remains the same.
 
 ![installation_with_parameters_143](/images/passwordsecure/9.2/configuration/browseradd-ons/applications/installation_with_parameters_143.webp)
@@ -53,10 +53,12 @@ hostname including the domain suffix (“.de” or “.com”) to match.
 
 ## Creating applications
 
-**CAUTION:** The user right Can add new web applications is required to create applications
+:::warning
+The user right Can add new web applications is required to create applications
+:::
 
 If the login mask on a website can't be automatically completed, you must manually create
-an application. To create an application, the desired website is first called up. The add-on is then
+an application. To create an application, the desired website is first opened. The add-on is then
 started via the relevant icon. The menu item “Create application\* can be found here
 
 ![create application](/images/passwordsecure/9.2/configuration/browseradd-ons/applications/installation_with_parameters_144-en.webp)
@@ -70,7 +72,7 @@ The following options are available:
 - **Advanced options** lets you define a delay separately for each field when entering the
   data. This is sensible when the process of entering the data would otherwise not run smoothly on
   sluggish websites.
-- The **Move** setting can be used to change the position of the modal window if it covers the login
+- The **Move** setting lets you change the position of the modal window if it covers the login
   window
 
 To capture, click the first field to be filled on the website. It will be directly added to the
@@ -80,8 +82,7 @@ colour.
 ![choosed application field](/images/passwordsecure/9.2/configuration/browseradd-ons/applications/installation_with_parameters_146-en.webp)
 
 The field type (e.g. INPUT) and the field label are displayed in the field itself. In addition, an
-action is proposed which fits the field type, such as e.g. entering the user name. The action can
-naturally be adjusted if required. Once all fields have been captured, the system checks whether the
+action is proposed which fits the field type, such as e.g. entering the user name. The action can be adjusted if required. Once all fields have been captured, the system checks whether the
 actions are correct. Finally, the application can be saved.
 
 ![example for a application](/images/passwordsecure/9.2/configuration/browseradd-ons/applications/installation_with_parameters_147-en.webp)

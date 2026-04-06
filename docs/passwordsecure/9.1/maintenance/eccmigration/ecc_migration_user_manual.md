@@ -16,7 +16,6 @@ If you don't synchronize your data, it's lost and no more accessible after the
 migration!
 :::
 
-
 ## Migration
 
 During the migration every E2EE-User of the database has to log in. Keep the client running until
@@ -24,5 +23,7 @@ the message **„Userdata migration finished”** appears.
 
 ![userdata_migration_finished_en](/images/passwordsecure/9.1/configuration/server_manager/ecc_migration/userdata_migration_finished_en.webp)
 
-NOTE: The migration can only be carried out with the Web Application and NativeClient. A migration
-just using the Extension, Autofill Add-on or the Mobile App isn't possible.
+:::note
+The migration can only be performed with the Web Application and NativeClient. A migration just using the Extension, Autofill Add-on or the Mobile App isn't possible.
+:::
+

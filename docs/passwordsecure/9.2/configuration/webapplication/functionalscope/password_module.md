@@ -50,6 +50,8 @@ The **Password Module** provides the following functions:
 - Export
 - WebViewer Export
 
-NOTE: The Web Application module Password module is based on the module of the same name that is
+:::note
+The Web Application module Password module is based on the module of the same name that is
 located in the client. Both modules differ in scope and design, but are nevertheless almost
 identical in terms of operation.
+:::

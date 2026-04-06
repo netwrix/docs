@@ -10,7 +10,7 @@ sidebar_position: 10
 
 Regular backups of the data should always be part of every security concept. If you want to create
 backups directly on the SQL server, you should also include the Netwrix Password Secure databases.
-If no central backups are carried out at the SQL level, you can create backup profiles using the
+If no central backups are performed at the SQL level, you can create backup profiles using the
 Server Manager. The backups themselves will then be generated on the SQL Server.
 
 #### Difference between an incremental and full backup
@@ -36,7 +36,9 @@ the directory for the backups.
 
 ![new backup profile - base settings](/images/passwordsecure/9.2/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_257-en.webp)
 
-NOTE: It must be a directory on the SQL server.
+:::note
+It must be a directory on the SQL server.
+:::
 
 Now set the time interval for creating the backups. A preview on the right will show when the
 backups will be created in future. An end date can be optionally entered.
@@ -46,7 +48,7 @@ backups will be created in future. An end date can be optionally entered.
 In the advanced settings, you can configure whether the backup should be activated directly. It is
 also possible to specify whether to create incremental backups. If the date and time are added to
 the file name, a new backup is created with each run. If this isn't done, the last backup is always
-overwritten. The service user can be used to create the backup or a service user can be specified
+overwritten. Use the service user to create the backup, or specify a service user
 with a corresponding name and password.
 
 In addition, you can enter here whether the required certificates should be saved using a backup
@@ -65,7 +67,7 @@ open it and amend it.
 
 Other backup actions
 
-A selected schedule can be deleted via the ribbon. The wizard for a schedule can be called up by
+A selected schedule can be deleted via the ribbon. The wizard for a schedule can be opened by
 double-clicking on it to make any changes. In addition, a backup can be started directly via the
 ribbon at any time. The backup service must be running for this purpose. You can also display this
 in the history.

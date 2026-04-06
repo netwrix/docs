@@ -14,7 +14,7 @@ There are two ways to create a link.
 
 #### Manual linking
 
-If the database is to be linked manually, the dialog for creating the link is first called up via
+If the database is to be linked manually, the dialog for creating the link is first opened via
 the + in the top right-hand corner. Here the address of the Web Application is entered and confirmed
 with a click Connect.
 

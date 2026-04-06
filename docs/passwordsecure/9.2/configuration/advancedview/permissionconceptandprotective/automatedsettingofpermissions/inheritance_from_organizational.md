@@ -25,8 +25,10 @@ organisational unit.
 Whether this form of inheritance should be applied is defined via the settings in the ribbon. It can
 be configured in more detail using two settings.
 
-**CAUTION:** If a predefined rights exists, this will always overwrite inherited permissions from
+:::warning
+If a predefined rights exists, this will always overwrite inherited permissions from
 organisational structures
+:::
 
 Inherit permissions for new objects (without rights template) This setting is relevant for newly
 created records.

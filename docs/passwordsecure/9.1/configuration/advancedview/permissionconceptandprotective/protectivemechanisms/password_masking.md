@@ -31,7 +31,9 @@ masking. Users who have the **authorize permission** for a record can continue t
 without limitations after applying password masking. Password masking only applies to users without
 the "can apply password masking" right.
 
-NOTE: Password masking can only be applied to records with an existing password!
+:::note
+Password masking can only be applied to records with an existing password!
+:::
 
 ## Applying password masking
 
@@ -58,13 +60,13 @@ that visa protection applies to trainees.
 
 ![example password masking](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/password_masking/password_masking_3-en.webp)
 
-NOTE: Use the icon in the ribbon to apply password masking to all users who have read permission on
-the record, but not the **authorize permission**. If you want to specify more precisely for which
-users the password masking should be applied, this is also possible via the form field permissions.
+:::note
+Use the icon in the ribbon to apply password masking to all users who have read permission on the record, but not the **authorize permission**. If you want to specify more precisely for which users the password masking should be applied, this is also possible via the form field permissions.
+:::
 
-NOTE: The login mask for records with password masking will be "sent
-automatically", even if the setting **Browser Extensions: Automatically send login masks** has been
-deactivated.
+:::note
+The login mask for records with password masking will be "sent automatically", even if the setting **Browser Extensions: Automatically send login masks** has been deactivated.
+:::
 
 :::warning
 The password masking only applies to those users who are authorized at the time of
@@ -72,3 +74,4 @@ attachment to the record. If a record has the password masking and a user get´s
 record is **not protected** for this user. The password masking should then be removed and reset.
 
 :::
+

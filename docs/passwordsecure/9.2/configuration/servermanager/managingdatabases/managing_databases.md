@@ -16,12 +16,12 @@ button or also via the ribbon.
 ## Database settings
 
 All database settings are saved in the database. you must log in to the database before
-editing the settings. Any user that exists in the database can be used for this purpose. You can
+editing the settings. Any user that exists in the database can log in for this purpose. You can
 always restore Global settings via the ribbon.
 
 Multifactor authentication
 
-This area can be used to configure which services will be used for multi-factor authentication. The
+Use this area to configure which services will be used for multi-factor authentication. The
 available services are: RSA Secure ID, SafeNet, YubiKey NEO, and YubiKey Nano. After selecting the
 required service, specify the respective access data. You must also configure various services. In
 this case, you can specify on the client which methods will be used by the individual users.
@@ -40,9 +40,11 @@ If desired, the logbook, **notifications, session recordings** and also the **hi
 can be automatically cleaned up here. You merely have to enter how old the data needs to be before
 it is deleted. Logbook entries can be exported before the deletion process.
 
-**CAUTION:** The logbook is also used for the filter functions. If the
+:::warning
+The logbook is also used for the filter functions. If the
 logbook is regularly cleaned up, it is possible that the full functions of the filter will no longer
 be available.
+:::
 
 #### Database actions
 
@@ -69,10 +71,12 @@ Migration
 Once a database has been selected, the can be started via the ribbon. This also allows multiple
 version 7 databases to be merged into one.
 
-**CAUTION:** When the migration is started, the database is set to migration mode. For the duration
+:::warning
+When the migration is started, the database is set to migration mode. For the duration
 of the migration, it isn't possible to log in to the database – users who are already logged in
 will be sent a corresponding message. The sessions will, however, remain open so that users can
 continue working as soon as the migration is complete.
+:::
 
 Certificates
 
@@ -80,8 +84,8 @@ Management of the certificates is very important. This is described in the secti
 
 Display database users
 
-This button can be used to call up statistics about the users in the respective databases. It shows
-you which users are active in which database. Naturally, this list can also be exported.
+Use this button to open statistics about the users in the respective databases. It shows
+you which users are active in which database. This list can also be exported.
 
 #### Data backup
 

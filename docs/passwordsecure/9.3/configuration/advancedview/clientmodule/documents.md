@@ -56,12 +56,16 @@ versions can be restored if necessary. Netwrix Password Secure provides this fun
 history in the ribbon, as well as in the footer area for ​​the detailed view of a document. This can
 be used in the same way as the [History](/docs/passwordsecure/9.3/configuration/advancedview/clientmodule/passwords/history.md). The interplay between the
 document-specific event logbook and the history provides a complete list of all information that is
-relevant to the handling of sensitive data. Version management can be used to restore any historical
+relevant to the handling of sensitive data. Version management lets you restore any historical
 versions of a document.
 
-NOTE: The file size for a **linked document** can only be updated if the document was opened using
+:::note
+The file size for a **linked document** can only be updated if the document was opened using
 Netwrix Password Secure.
+:::
 
-NOTE: If desired, the document history can be automatically cleaned up. This option can be
+:::note
+If desired, the document history can be automatically cleaned up. This option can be
 configured on the **Server Manager**. Further information can be found in the section Managing
 databases.
+:::

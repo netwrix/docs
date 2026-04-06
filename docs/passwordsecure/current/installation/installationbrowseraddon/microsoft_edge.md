@@ -14,5 +14,7 @@ downloaded from the following link:
 
 ![Add-on Edge](/images/passwordsecure/9.2/installation/browser/addon-edge-en.webp)
 
-NOTE: It is also possible to find the Add-on link in the Web Application page footer, if it isn't
+:::note
+It is also possible to find the Add-on link in the Web Application page footer, if it isn't
 installed yet
+:::

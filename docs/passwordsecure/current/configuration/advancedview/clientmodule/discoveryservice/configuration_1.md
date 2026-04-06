@@ -19,7 +19,9 @@ table:
 
 ![discovery service entries](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/configuration/configuration_ds-2-en.webp)
 
-NOTE: The information can be grouped together using the column editor.
+:::note
+The information can be grouped together using the column editor.
+:::
 
 ## Network Scan
 

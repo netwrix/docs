@@ -29,12 +29,12 @@ There are two possible scenarios.
 
 No password found
 
-If no password is found that matches the app or the website called up, the desired password must
+If no password is found that matches the app or the website opened, the desired password must
 first be selected.
 
 Exactly one password found
 
-If there is a data set that contains exactly the URL that is called up, the corresponding password
+If there is a data set that contains exactly the URL that is opened, the corresponding password
 can be suggested. A simple click the password is then sufficient to pass the data to the website
 or app.
 
@@ -42,6 +42,8 @@ Multiple passwords found
 
 If several matching passwords are found in the database, the desired one must be selected.
 
-NOTE: Depending on the current state, it may be necessary to authenticate on the app before
+:::note
+Depending on the current state, it may be necessary to authenticate on the app before
 selecting or confirming the password to be entered. The database then has to be unlocked via the
 password or Touch ID first.
+:::

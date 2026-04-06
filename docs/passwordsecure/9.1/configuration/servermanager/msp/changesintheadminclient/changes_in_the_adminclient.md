@@ -18,8 +18,9 @@ In the new MSP version these have been replaced by the modules Customers (1) and
 
 In the MSP version, you'll find the individual customer databases under the Customers module.
 
-NOTE: The Backup module has been removed, because Netwrix Password Secure's own backup isn't
-suitable for environments with multiple customer databases. As a Managed Service Provider, you must
-back up your customer databases yourself using appropriate measures.
+:::note
+The Backup module has been removed, because Netwrix Password Secure's own backup isn't suitable for environments with multiple customer databases. As a Managed Service Provider, you must back up your customer databases yourself using appropriate measures.
+:::
 
 The Status and Web Application modules are identical in both versions.
+

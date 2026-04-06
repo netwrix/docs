@@ -26,7 +26,7 @@ The size of the menu can be maximised using this button.
 
 2. New
 
-This option can be selected to call up the wizard for adding a new record.
+This option can be selected to open the wizard for adding a new record.
 
 3. Open
 
@@ -69,15 +69,15 @@ This section doesn't offer any additional functions than simply opening the perm
 
 4. Clipboard
 
-This section can be used to copy all available fields to the clipboard.
+This section lets you copy all available fields to the clipboard.
 
 5. Start
 
-A website can be called up here.
+A website can be opened here.
 
-NOTE: As already described, the menu is dynamic, and thus appears in a variety of different forms.
-However, the basic function is always the same: The menu bar contains the basis functions, while the
-advanced menu contains all functions.
+:::note
+As already described, the menu is dynamic, and thus appears in a variety of different forms. However, the basic function is always the same: The menu bar contains the basis functions, while the advanced menu contains all functions.
+:::
 
 6. Extras
 
@@ -91,3 +91,4 @@ will be described in the next section:
 The functions of the
 [Password Reset](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/passwordreset/password_reset.md)
 can be found here.
+

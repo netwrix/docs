@@ -16,7 +16,7 @@ has the corresponding permissions are exported. They are displayed in a current 
 
 ## Data security
 
-- Naturally, the HTML WebViewer file is **encrypted**
+- The HTML WebViewer file is **encrypted**
 - The export of the file is protected using a corresponding
   [User rights](/docs/passwordsecure/current/configuration/advancedview/mainmenufc/userrights/user_rights.md)
 - The user requires the **export right** for the passwords
@@ -110,7 +110,9 @@ name** are predefined. The user \*password is used for the login.
 After logging in to Netwrix Password Secure, the overview page for the \*HTML- WebViewer \* with the
 passwords is displayed.
 
-NOTE: Use the password search function if there is more than 20 passwords!
+:::note
+Use the password search function if there is more than 20 passwords!
+:::
 
 1. Displayoftherecords(max.20)
 2. Detailedinformationontheselectedrecord
@@ -125,7 +127,9 @@ NOTE: Use the password search function if there is more than 20 passwords!
 You can log out by clicking on **Logout**. If there is a longer period of inactivity, the user
 will be **automatically logged out after a set period of time has expired (time until logout).**
 
-NOTE: You have been logged out due to inactivity.
+:::note
+You have been logged out due to inactivity.
+:::
 
 The browser will then show the **Netwrix Password Secure– HTML WebViewer / Login** again and also
 the reason for being logged out. You can log in again.

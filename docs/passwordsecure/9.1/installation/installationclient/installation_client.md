@@ -25,7 +25,6 @@ only install the Terminal Server Service (for Autofill Add-on) if terminal
 server operation is intended!
 :::
 
-
 ![installation wizard page 2](/images/passwordsecure/9.1/installation/installation_client/installation-client-3-en.webp)
 
 The actual installation starts in the next step.
@@ -67,7 +66,6 @@ There's also an option to distribute database profiles. The profiles are specifi
 corresponding registry entry. The next time Netwrix Password Secure is started, the profiles will be
 saved in the local configuration file. The database connection can be made with the following keys:
 
-
 ```
 HKEY_CURRENT_USER\SOFTWARE\MATESO\Password Safe and Repository 8\DatabaseProfiles
 HKEY_LOCAL_MACHINE\SOFTWARE\MATESO\Password Safe and Repository 8\DatabaseProfiles
@@ -83,7 +81,6 @@ These keys are structured like this:
 
 **Is the profile set with the following entries?**
 
-
 ```
 HKEY_LOCAL_MACHINE\SOFTWARE\MATESO\Password Safe and Repository 8\DatabaseProfiles
 ```
@@ -91,11 +88,11 @@ HKEY_LOCAL_MACHINE\SOFTWARE\MATESO\Password Safe and Repository 8\DatabaseProfil
 Then the last used date base as well as the last registered user are created with the following ID,
 when you log in for the first time:
 
-
 ```
 HKEY_CURRENT_USER\SOFTWARE\MATESO\Password Safe and Repository 8\DatabaseProfiles
 ```
 
-NOTE: When the corresponding registry entry is set and no related database profile exists, the
-profile will be created at the next start-up. Profiles created like this can't be
-edited or deleted in the client.
+:::note
+When the corresponding registry entry is set and no related database profile exists, the profile will be created at the next start-up. Profiles created like this can't be edited or deleted in the client.
+:::
+

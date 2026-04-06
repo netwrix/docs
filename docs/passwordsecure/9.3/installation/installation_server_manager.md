@@ -36,5 +36,7 @@ After the installation, you can login directly to the Server Manager.
 
 ![Server Authentication](/images/passwordsecure/9.2/installation/installation_server_manager/server-auth-en.webp)
 
-NOTE: The initial password for the first login is “admin”. It should be changed directly after the
+:::note
+The initial password for the first login is “admin”. It should be changed directly after the
 logon.
+:::

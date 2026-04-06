@@ -10,9 +10,11 @@ Overview: The login authentication process was enhanced to offer a more dynamic 
 experience. This update introduces a new method of authentication, effective for servers from
 version 8.12 onward.
 
-**CAUTION:** Important Update: Starting from server version 9.0, the previous login method will no
+:::warning
+Important Update: Starting from server version 9.0, the previous login method will no
 longer be functional. Users must adopt the new authentication approach provided in the API to
 continue accessing the services.
+:::
 
 #### Why the change was done
 
@@ -39,9 +41,11 @@ Transition details:
   older than 8.12 are no longer operational with the API. If you're using such an old version,
   use the old API.
 
-**CAUTION:** Action Required: Ensure that your server version is 8.12 or later to implement the new
+:::warning
+Action Required: Ensure that your server version is 8.12 or later to implement the new
 authentication method and access the services. Update your integration with the API to
 incorporate the revised login interface and maintain uninterrupted service access.
+:::
 
 Below are code examples for the previous and updated authentication methods.
 

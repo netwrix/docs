@@ -8,7 +8,7 @@ sidebar_position: 80
 
 ## Applications overview
 
-Applications can be used to configure automated logins to various systems. Especially when combined
+Applications lets you configure automated logins to various systems. Especially when combined
 with various protective mechanisms, the company benefits in terms of security because complex
 passwords are automated and entered in the login masks in concealed form. Various types are
 available, such as Remote Desktop (**RDP**), Secure Shell (**SSH**), general applications (**SSO**)
@@ -101,12 +101,12 @@ This is generally a very common scenario. Nevertheless, accessing multiple
 servers with one single password is questionable from a security standpoint. It's generally
 recommended that a unique password is issued for every server/access point.
 
-NOTE: It's possible to leave the **IP address** field empty in the application. If an **IP
-address** field exists in the linked record then this address will be used. If there's also no IP
-address in the record, a popup window will appear in which the desired IP address can be entered
-manually.
+:::note
+It's possible to leave the **IP address** field empty in the application. If an **IP address** field exists in the linked record then this address will be used. If there's also no IP address in the record, a popup window will appear in which the desired IP address can be entered manually.
+:::
 
 Alternatively, it's possible to connect several records with one RDP connection. In this way, you
 can combine different users with an RDP connection and register them straightforward.
 
 ![connect RDP sessions](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/applications/applications_9-en.webp)
+

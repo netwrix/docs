@@ -19,5 +19,7 @@ The following functions are available in the **forms module**:
 - Print
 - Export
 
-NOTE: The Web Application module **forms** is based on the client module of the same name. Both
-modules have a different scope and design but are almost identical to use.
+:::note
+The Web Application module **forms** is based on the client module of the same name. Both modules have a different scope and design but are almost identical to use.
+:::
+

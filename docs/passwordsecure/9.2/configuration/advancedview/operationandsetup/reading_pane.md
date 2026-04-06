@@ -32,8 +32,10 @@ well as the
 [Organisational structure](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/organisationalstructure/organisational_structure.md)
 are displayed.
 
-**CAUTION:** The details area can't be used for editing records! Although
+:::warning
+The details area can't be used for editing records! Although
 it displays all of the data, editing is only possible if the record has been opened.
+:::
 
 2. Footer area
 

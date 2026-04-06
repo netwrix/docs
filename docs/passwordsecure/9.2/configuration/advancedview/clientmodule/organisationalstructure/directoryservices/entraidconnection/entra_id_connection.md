@@ -51,7 +51,9 @@ create new Entra ID profiles" enabled.
 Log in to the [Azure portal](https://portal.azure.com/#azure-portal) and go to the management page of
 your Microsoft Entra ID.
 
-NOTE: You need an account with administrative permissions
+:::note
+You need an account with administrative permissions
+:::
 
 - Write down your "Tenant ID" shown in the Azure console or by using PowerShell:
 
@@ -65,24 +67,30 @@ Connect-AzureAD
 - Add an own application, that isn't listed in the Azure Gallery – in this example, it is named
   "Netwrix Password Secure"
 
-NOTE: A key feature of Netwrix Password Secure is, that it is self-hosted by the customers. However,
+:::note
+A key feature of Netwrix Password Secure is, that it is self-hosted by the customers. However,
 to be listed in Azure Gallery, a SaaS model is required. Therefore, Netwrix Password Secure isn't
 available in the Azure Gallery.
+:::
 
 - When the application was created successfully, you are redirected to it automatically
 - Write down the "Application ID"
 - In the navigation, click "Users and groups"
 - Add the Users and groups that should be available to Netwrix Password Secure
 
-**CAUTION:** The import of Azure groups as Netwrix Password Secure roles is only possible if you
+:::warning
+The import of Azure groups as Netwrix Password Secure roles is only possible if you
 have booked the Azure package Entra ID Premium P1!
+:::
 
 - Navigate to the "Provisioning" page
 - Configure the Provisioning Mode to "Automatic"
 
 ### Netwrix Password Secure Entra ID configuration
 
-NOTE: Your Netwrix Password Secure user need the following permissions:
+:::note
+Your Netwrix Password Secure user need the following permissions:
+:::
 
 
 ```
@@ -108,13 +116,17 @@ page Back on the "Provisioning" page, click "Start provisioning" In the settings
 provisioning, check if "Provisioning Status" is set to "On" All allocated users and groups are
 created in Netwrix Password Secure now
 
-NOTE: Azure´s default provisioning interval is 40 Minutes. So it may some time until the users and
+:::note
+Azure´s default provisioning interval is 40 Minutes. So it may some time until the users and
 roles are shown in Netwrix Password Secure.
+:::
 
-**CAUTION:** Azure establishes the connection to Netwrix Password Secure. For this,
+:::warning
+Azure establishes the connection to Netwrix Password Secure. For this,
 the client URL must be accessible from an external network / provisioning agent and any used SSL
 certificate must be valid! If the users aren't created in Netwrix Password Secure, consult the
 Azure Enterprise Application Provisioning log for troubleshooting details.
+:::
 
 ### Azure login configuration
 

@@ -65,7 +65,9 @@ performance as well as increased overview promotes efficiency and effectiveness.
 interplay of organisational structures, roles, and granular filter options can cover all
 customer-specific scenarios.
 
-NOTE: This architecture makes nesting of roles obsolete.
+:::note
+This architecture makes nesting of roles obsolete.
+:::
 
 ## Overview of members for a role
 
@@ -77,7 +79,7 @@ account.
 
 ![role overview](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/roles/roles_4-en.webp)
 
-NOTE: The roles module is based on the
-[Roles module](/docs/passwordsecure/9.1/configuration/webapplication/functionalscope/roles_module.md)
-of the Web Application. Both modules have a different scope and design but are almost identical to
-use.
+:::note
+The roles module is based on the [Roles module](/docs/passwordsecure/9.1/configuration/webapplication/functionalscope/roles_module.md) of the Web Application. Both modules have a different scope and design but are almost identical to use.
+:::
+

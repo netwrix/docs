@@ -36,7 +36,9 @@ The following information must be provided in the profile:
 - An optional **description**
 - Masterkey mode is selected for the **encryption**
 
-NOTE: In the case of already created profiles, the encryption can no longer be changed.
+:::note
+In the case of already created profiles, the encryption can no longer be changed.
+:::
 
 - The **domain** field is used to define which domain is to be read. The value entered here will
   also be used for authentication if no alternative spellings have been saved under **Other domain
@@ -56,7 +58,7 @@ NOTE: In the case of already created profiles, the encryption can no longer be c
   updated on the next synchronization, regardless of whether the record has changed in the Active
   Directory or not. (This checkbox is automatically activated when you have edited the other
   responsible users and is deactivated again after the next synchronization).
-- The **LDAP filter** can be used to directly specify an AD path as an entry point via an LDAP
+- Use the **LDAP filter** to directly specify an AD path as an entry point via an LDAP
   query.
 - Various security options – so-called AuthenticationTypes Enumeration (**Flags**) – can be selected
   for the connection of the AD to Netwrix Password Secure:
@@ -66,23 +68,29 @@ NOTE: In the case of already created profiles, the encryption can no longer be c
     - Signing
     - Sealing
 
-NOTE: The first two options are already activated by default when configuring a new profile. If a
+:::note
+The first two options are already activated by default when configuring a new profile. If a
 connection isn't possible, deactivate SecureSocketsLayer and try again.
+:::
 
-- **Other responsible users or roles** can be used to define who is permitted to carry out the
+- **Other responsible users or roles** defines who is permitted to perform the
   synchronization with the AD.
-- The option **Other domain names** can be used to save alternative spellings of the login domain.
+- Use the option **Other domain names** to save alternative spellings of the login domain.
   These must correspond to the spelling entered in the login window. For example, if a connection is
   being established to the domain **jupiter.local** or an IP address, the login can only be carried
   out with **jupiter\user** if **jupiter** has been saved here.
 
-**CAUTION:** The master key is added in form of a certificate. It is **essential to back up** the
+:::warning
+The master key is added in form of a certificate. It is **essential to back up** the
 generated certificate! If the database is being moved to another server, the certificate also needs
 to be transferred! Further information can be found in the section
 [Certificates](/docs/passwordsecure/9.2/configuration/servermanager/certificates/certificates.md).
+:::
 
-NOTE: You can now use the option to integrate a RADIUS server. See
+:::note
+You can now use the option to integrate a RADIUS server. See
 [RADIUS authentication](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/radius_authentication.md).
+:::
 
 ## Import
 
@@ -122,8 +130,10 @@ selection of the individual elements.
 
 ![select subjects](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/directoryservices/activedirectorylink/end_to_end_encryption_5-en.webp)
 
-NOTE: If individual users can't be selected for import, they have already been imported via an
+:::note
+If individual users can't be selected for import, they have already been imported via an
 end-to-end encrypted profile.
+:::
 
 In the lower area you can specify whether the users just selected for import should be created as
 **Light** or **Advanced User (View)**s.
@@ -175,8 +185,10 @@ The rights will be issued as follows during the import or synchronization.
 | Is the "add" right issued?        | No                             | No     | No                             |
 | Who receives the rights key?      | All with the "authorize" right | None   | All with the "authorize" right |
 
-NOTE: If a user is imported, he will be given those roles that he also had in AD insofar as these
+:::note
+If a user is imported, he will be given those roles that he also had in AD insofar as these
 roles already exist in Netwrix Password Secure or have also been imported.
+:::
 
 ## Logging into Netwrix Password Secure
 
@@ -185,13 +197,17 @@ domain needs to be specified when logging in. Of course, the login process can a
 with
 [Multifactor Authentication](/docs/passwordsecure/9.2/configuration/servermanager/managingdatabases/databasesettings/multifactor_authentication_ac.md).
 
-NOTE: Logging on using Kerberos works "automatically". As long as the corresponding Kerberos server
+:::note
+Logging on using Kerberos works "automatically". As long as the corresponding Kerberos server
 is accessible, the users in the domain authenticate themselves via Kerberos using their domain
 password. If the logon via Kerberos doesn't work – e.g. due to incorrect configuration of the
 domain controller – the logon via the NTLM protocol is attempted. However, these are all settings
 that have to be made on the domain controller and have nothing to do with Netwrix Password Secure.
+:::
 
-**CAUTION:** Logging on to Netwrix Password Secure using SSO via Kerberos isn't possible.
+:::warning
+Logging on to Netwrix Password Secure using SSO via Kerberos isn't possible.
+:::
 
 ## Permissions to imported objects
 
@@ -207,7 +223,9 @@ The rights to be issued to imported users are explained in the following example
    keys as it will be used for the synchronization
 5. Finally, users will be issued with the rights for themselves
 
-NOTE: All users and roles issued with **rights** to the imported object also receive its rights key.
+:::note
+All users and roles issued with **rights** to the imported object also receive its rights key.
+:::
 
 ## Synchronization
 
@@ -217,8 +235,10 @@ or deactivated according to the settings in the AD. If the membership of organis
 be changed, this can be done by **Drag & Drop**. New users and correspondingly defined roles are
 imported.
 
-NOTE: If the tick wasn't set in the Synchronization column when a user is imported, no changes are
+:::note
+If the tick wasn't set in the Synchronization column when a user is imported, no changes are
 made.
+:::
 
 ### Manual synchronization
 
@@ -231,7 +251,7 @@ the synchronization runs in the background. A hint indicates that the process ha
 
 ### Synchronization via system tasks
 
-The synchronization can also be carried out automatically. This is made possible via the
+The synchronization can also run automatically. This is made possible via the
 [System tasks](/docs/passwordsecure/9.2/configuration/advancedview/mainmenufc/extras/systemtasks/system_tasks.md).
 
 ### Deleting or removing users
@@ -241,8 +261,8 @@ next synchronization. For this purpose, it is necessary for the user to be impor
 **synchronizable** user.
 
 If the user is only deleted from Netwrix Password Secure but retained in Active Directory, a
-synchronization needs to be carried out to delete it from the database. For this purpose, the wizard
-is called up via **import**. The first step is to select an organisational unit. This has no effect
+synchronization needs to run to delete it from the database. For this purpose, the wizard
+is opened via **import**. The first step is to select an organisational unit. This has no effect
 when simply deleting a user. The second step is to search for the user. Both ticks are removed.
 
 After checking the summary, the process is concluded. The synchronization is completed and the user

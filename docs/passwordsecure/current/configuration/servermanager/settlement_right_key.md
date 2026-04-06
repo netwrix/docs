@@ -80,7 +80,7 @@ current database again.
 Second case
 
 In the second case, there are users / roles who have the right key but not the right to claim. As
-far as the number of irreparable passwords is limited, these can be used to check the form field
+far as the number of irreparable passwords is limited, use them to check the form field
 permissions manually.
 
 ![installation_with_parameters_224_762x90](/images/passwordsecure/9.2/configuration/server_manager/settlement_right_key/installation_with_parameters_224_762x90.webp)

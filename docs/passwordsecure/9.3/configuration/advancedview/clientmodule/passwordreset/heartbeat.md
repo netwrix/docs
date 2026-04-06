@@ -33,8 +33,8 @@ The testing process using the heartbeat can be executed via various methods.
 
 ## Testing via Password Reset
 
-The heartbeat is always carried out before the first resetting process using a Password Reset. After
-the script has run, the testing process is carried out again. Further information on this process
+The heartbeat is always performed before the first resetting process using a Password Reset. After
+the script has run, the testing process is performed again. Further information on this process
 can also be found in the section [Rollback](/docs/passwordsecure/9.3/configuration/advancedview/clientmodule/passwordreset/rollback.md).
 
 ### Manual testing

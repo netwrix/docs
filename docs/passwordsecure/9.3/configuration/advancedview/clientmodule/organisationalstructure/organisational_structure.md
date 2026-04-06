@@ -55,13 +55,15 @@ remaining actions have already be explained for the password module.
 - **Multi Factor authentication**: Additional security during login is provided through positive
   authentication based on another factor. More on this subject…
 - **Reset password**: Administrators can reset the passwords with which users log in to Netwrix
-  Password Secure to a defined value. Naturally, this is only possible if the connection to Active
+  Password Secure to a defined value. this is only possible if the connection to Active
   Directory is configured
   via[End-to-end encryption](/docs/passwordsecure/9.3/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/end-to-end_encryption.md). In the
   alternative [Masterkey mode](/docs/passwordsecure/9.3/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/masterkey_mode.md), the
   authentication is linked to the correct entry of the AD password.
 
-NOTE: To reset a user password, membership for the user is a prerequisite.
+:::note
+To reset a user password, membership for the user is a prerequisite.
+:::
 
 The example below shows the configuration of a user where only the user themselves is a member.
 
@@ -71,8 +73,10 @@ This configuration means that the user password can't be reset by administrators
 is that if the password is lost there is no technical solution for "resetting" the password in the
 system.
 
-**CAUTION:** It isn't recommended to configure the permissions so that only the user themselves has
+:::warning
+It isn't recommended to configure the permissions so that only the user themselves has
 membership. No other interventions can be made if the password is then lost.
+:::
 
 ## Adding local organisational units
 
@@ -89,8 +93,10 @@ wizards. The example below shows the creation of a new organisational unit:
 - **Rights template group**: If an already existing organisational unit was selected under
   "allocated organisational unit", you can select one of the existing rights template groups.
 
-NOTE: The organisational unit marked in list view will be used as a default. This applies to the
+:::note
+The organisational unit marked in list view will be used as a default. This applies to the
 fields "allocated organisational unit" and also "rights template".
+:::
 
 ### Create role
 
@@ -109,5 +115,7 @@ organisational unit. If an allocated organisational unit or a rights template gr
 the first tab, the new organisational unit will inherit its permissions. These permissions can be
 adapted if desired.
 
-NOTE: The **organisational structure** module is based on the Web Application module of the same
+:::note
+The **organisational structure** module is based on the Web Application module of the same
 name. Both modules have a different scope and design but are almost identical to use.
+:::

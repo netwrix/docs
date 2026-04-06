@@ -19,19 +19,22 @@ transfer of passwords from the client to the server in the following cases:
 - Creation of an AD profile protected by a master key
 - Login of users imported from AD in Master Key mode
 
-NOTE: The database certificate can't be replaced by your own certificate.
+:::note
+The database certificate can't be replaced by your own certificate.
+:::
 
-NOTE: The expiry date for the database certificate isn't checked. The certificate thus doesn't
-need to be renewed.
+:::note
+The expiry date for the database certificate isn't checked. The certificate thus doesn't need to be renewed.
+:::
 
 :::warning
 If the database is being moved to another server, it's essential that the certificate
 is also transferred!
 :::
 
-
 #### Exporting and importing the certificate
 
 The section
 [Certificates](/docs/passwordsecure/9.1/configuration/servermanager/certificates/certificates.md)
 explains how to back up the certificate and link it again.
+

@@ -19,7 +19,9 @@ table:
 
 ![discovery service entries](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/discoveryservice/configuration/configuration_ds-2-en.webp)
 
-NOTE: The information can be grouped together using the column editor.
+:::note
+The information can be grouped together using the column editor.
+:::
 
 ## Network Scan
 
@@ -84,7 +86,6 @@ The system executing the scan – on which the Server Manager is installed – i
 scanned!
 :::
 
-
 ## Interval / Executing server / Tags
 
 This section is used to enter information about the start of the task and other additional
@@ -114,3 +115,4 @@ The **default setting** for the **Discovery Service Task** after it has been sav
 not amended!
 
 :::
+

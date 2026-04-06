@@ -25,9 +25,12 @@ The configuration is done via the user setting **First factor**.
 
 ![Smartcard 1st factor](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/firstfactor/first_factor_2-en.webp)
 
-NOTE: This option is only valid for users in master key mode
+:::note
+This option is only valid for users in master key mode
+:::
 
-**CAUTION:** Be Aware" The smartcard logon tries to determine whether the certificate belongs to the
+:::warning
+Be Aware" The smartcard logon tries to determine whether the certificate belongs to the
 user to be logged on based on the applicant in the smartcard certificate. This is done using regex,
 the default regex `^{username}[.@\\/-_:]({domain})$` or `^({domain})[.@\\/-_:]({username})$` is
 applied to the applicant. In this case, `{username}` is replaced with the user to be registered and
@@ -36,6 +39,7 @@ positive, the user is registered. If the format of your applicant in your certif
 compatible with these two regex queries, you must set a custom regex query in the Server Manager.
 `{username}` for username and `{domain}` for the AD domain SHOULD be present in the
 regex query. If the domain must be explicitly specified, it must be written in capital letters.
+:::
 
 In addition, the smartcard certificate must of course also be valid on the server!
 

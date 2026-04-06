@@ -51,6 +51,8 @@ User right
 
 - Can export
 
-NOTE: If a record is exported, this user right and also the corresponding permissions for the record
+:::note
+If a record is exported, this user right and also the corresponding permissions for the record
 must be set. The user right defines whether a user can generally export data, while the permissions
 for the record define which records can be exported.
+:::

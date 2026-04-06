@@ -33,8 +33,10 @@ permissions:
 - **Green:** The temporary permission is active.
 - **Red:** The time period for the temporary permissions has already expired.
 
-NOTE: Temporary permissions can also be assigned to multiple roles and users at the same time. You
+:::note
+Temporary permissions can also be assigned to multiple roles and users at the same time. You
 can select multiple users and roles as usual with Ctrl/Shift + left mouse button!
+:::
 
 ## Special features of the authorization system
 

@@ -39,7 +39,6 @@ Information could be lost during this process! In the example, this
 applies to the fields "Website" and "Information".
 :::
 
-
 ## The effects of changes to forms on existing records
 
 In general, changes to forms don't effect existing records. This means that a record that was
@@ -72,5 +71,5 @@ the form.
 
 A common feature of both variants is that adjustments to forms can't be automatically triggered.
 Already existing records are thus not automatically adjusted. The adjustment thus needs to be
-carried out manually. In the first case, the manual step is to use the function "Change form". In
+performed manually. In the first case, the manual step is to use the function "Change form". In
 the second case, it's sufficient to simply edit and save the record.

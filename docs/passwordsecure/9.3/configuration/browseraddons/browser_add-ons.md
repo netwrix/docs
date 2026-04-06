@@ -28,7 +28,7 @@ find more information about the installation on: Installation Browser Add-ons
 
 ## Connection via server mode
 
-If the installation of the browser extension has been carried out, the user can now open the desired
+If the installation of the browser extension has been performed, the user can now open the desired
 browser. A window appears in which the security of the connection is confirmed. Pairing is performed
 with a simple click. A new icon will also be displayed in the desired browser from this point
 onwards:
@@ -61,8 +61,10 @@ The server mode offers the following advantages:
 
 - No terminal service is required in terminal server operation
 
-**CAUTION:** that SSO applications only work via Autofill Add-on. If you are in server
+:::warning
+that SSO applications only work via Autofill Add-on. If you are in server
 mode and the Autofill Add-on has not been started, SSO applications don't work!
+:::
 
 After successful connection, the number of data records available for the current Internet page is
 displayed on the icon.
@@ -72,7 +74,7 @@ displayed on the icon.
 ## Settings
 
 All settings that relate to the add-on are made centrally on the client. The user settings system
-can be used to enter them globally per organisational unit or per user. The following options have a
+lets you enter them globally per organisational unit or per user. The following options have a
 direct impact on the add-ons and can be found in the SSO category:
 
 - Browser add-ons: Automatically send login masks ensures that the login is automatically completed
@@ -84,13 +86,17 @@ direct impact on the add-ons and can be found in the SSO category:
 The default browser option also has an impact on the add-ons. This setting defines the browser in
 which the websites are opened from the client.
 
-NOTE: the login mask for records with password masking will be ”sent
+:::note
+the login mask for records with password masking will be ”sent
 automatically\*, even if the setting Browser add-ons: Automatically send login masks has been
 deactivated.
+:::
 
 ## Working with add-ons
 
-NOTE: A record can only be used for entering data if it has a form field of type "URL".
+:::note
+A record can only be used for entering data if it has a form field of type "URL".
+:::
 
 The subscript number mentioned in the previous section is only available with active logins and
 therefore already says a lot about the “Number of possible entries”. For example, if the number “2”
@@ -106,7 +112,7 @@ Secure – as described in the following section.
 
 It is assumed that the user has to navigate manually to the website on which they want to
 automatically enter login data. This way of working is possible but isn't convenient enough. The
-add-on can be used in a similar way to bookmarks. The search field can be used to search for the
+add-on can be used in a similar way to bookmarks. The search field lets you search for the
 record in the database. The prerequisite is again that the record contains a URL.
 
 ![Record usage](/images/passwordsecure/9.2/configuration/browseradd-ons/addon-records-usage-en.webp)

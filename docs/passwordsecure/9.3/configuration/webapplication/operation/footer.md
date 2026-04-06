@@ -27,7 +27,7 @@ The history can also be displayed via a corresponding tab.
 
 4. Documents
 
-The documents tab can be used to access all linked documents.
+The documents tab lets you access all linked documents.
 
 5. Notifications
 

@@ -46,7 +46,9 @@ How to synchronize with the main database is configured here. The following opti
 - **Only for WLAN connection:** Synchronization only takes place if there's a connection via WLAN.
 - **Disabled:** It isn't synchronized
 
-NOTE: Costs may be incurred for synchronization via the mobile network!
+:::note
+Costs may be incurred for synchronization via the mobile network!
+:::
 
 **Synchronize now**
 
@@ -73,3 +75,4 @@ If logging is active, the log file can be displayed here.
 **Delete log file**
 
 Logs that are no longer needed can be deleted here.
+

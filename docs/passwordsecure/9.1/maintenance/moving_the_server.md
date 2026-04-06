@@ -81,8 +81,9 @@ is also essential to check whether the correct database has been selected in the
 
 ![restore db](/images/passwordsecure/9.1/maintenance/sql-restore-en.webp)
 
-NOTE: This method can be also used to import backups that were directly created from the Server
-Manager.
+:::note
+This method can be also used to import backups that were directly created from the Server Manager.
+:::
 
 #### 2. Setting up the server
 
@@ -104,3 +105,4 @@ Finally, the database is integrated onto the server via the database wizard.
 
 If the IP and/or host name for the server has changed, it's necessary to create/roll out new
 database profiles from the client.
+

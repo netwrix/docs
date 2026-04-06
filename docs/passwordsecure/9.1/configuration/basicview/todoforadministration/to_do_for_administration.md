@@ -12,8 +12,9 @@ The Basic view allows end users to easily manage their passwords in Netwrix Pass
 any training or prior knowledge. To ensure proper operation, the administration has to make
 a few preparations first. This will be further discussed in the following.
 
-NOTE: To make the Basic view transition as easy and smooth as possible for the user, the
-administration can orient towards this checklist.
+:::note
+To make the Basic view transition as easy and smooth as possible for the user, the administration can orient towards this checklist.
+:::
 
 #### Relevant rights and settings
 
@@ -71,3 +72,4 @@ Setting:
 **Default form** Otherwise, no form can be assigned to the new password.
 
 - Add right to the organisational unit of the user
+

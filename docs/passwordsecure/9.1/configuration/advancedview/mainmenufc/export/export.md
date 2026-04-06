@@ -22,7 +22,6 @@ particularly in conjunction with the Netwrix Password Secure
 because the export result isn't separately secured by a password.
 :::
 
-
 The export function is accessed via the Main menu/Export. There are two fundamental types of export
 – the WebViewer export and the export wizard. However, the latter is divided into four
 subcategories.
@@ -56,6 +55,7 @@ The following option is required.
 
 - Can export
 
-NOTE: If a record is exported, this user right, and also the corresponding permissions for the record
-must be set. The user right defines whether a user can generally export data, while the permissions
-for the record define which records can be exported.
+:::note
+If a record is exported, this user right, and also the corresponding permissions for the record must be set. The user right defines whether a user can generally export data, while the permissions for the record define which records can be exported.
+:::
+

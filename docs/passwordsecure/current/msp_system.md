@@ -53,6 +53,8 @@ recommended
 **CAUTION:** Every additional 100 customers/1000 users an additional Application Server - incl.
 loadbalancing - is recommended.
 
-NOTE: Individual variables - like the number of passwords per user - will affect
+:::note
+Individual variables - like the number of passwords per user - will affect
 performance. Especially for MSP-Systems it is required to monitor performance continuously, and add
 additional resources on demand.
+:::

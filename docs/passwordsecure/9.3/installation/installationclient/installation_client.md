@@ -19,8 +19,10 @@ You are required to read and accept the terms of service. These can also be prin
 The next step is to define the location of the client. The suggested location can be retained.You
 can also define whether additional components should be installed.
 
-**CAUTION:** only install the Terminal Server Service (for Autofill Add-on) if terminal
+:::warning
+only install the Terminal Server Service (for Autofill Add-on) if terminal
 server operation is intended!
+:::
 
 ![installation wizard page 2](/images/passwordsecure/9.2/installation/installation_client/installation-client-3-en.webp)
 
@@ -95,6 +97,8 @@ HKEY_CURRENT_USER\SOFTWARE\MATESO\Password Safe and Repository 8\DatabaseProfile
 
 ```
 
-NOTE: When the corresponding registry entry is set and no related database profile exists, the
+:::note
+When the corresponding registry entry is set and no related database profile exists, the
 profile will be created at the next start-up. That profiles created like this can't be
 edited or deleted in the client.
+:::

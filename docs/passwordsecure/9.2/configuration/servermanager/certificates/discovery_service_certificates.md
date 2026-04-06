@@ -12,13 +12,19 @@ If a discovery service is created, a corresponding certificate is also created:
 
 ![installation_with_parameters_202](/images/passwordsecure/9.2/configuration/server_manager/certificates/installation_with_parameters_202.webp)
 
-NOTE: The discovery service certificate can't be replaced by your own certificate.
+:::note
+The discovery service certificate can't be replaced by your own certificate.
+:::
 
-NOTE: The certificates for the discovery service have an expiry date. However, this isn't checked.
+:::note
+The certificates for the discovery service have an expiry date. However, this isn't checked.
 The certificate thus doesn't need to be renewed.
+:::
 
-**CAUTION:** If the database is being moved to another server, it is **essential that the discovery
+:::warning
+If the database is being moved to another server, it is **essential that the discovery
 service certificate is also transferred!**
+:::
 
 #### Exporting and importing the certificate
 

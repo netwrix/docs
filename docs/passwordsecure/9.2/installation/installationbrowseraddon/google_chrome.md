@@ -20,5 +20,7 @@ The installation is started via Add.
 
 The add-on is now installed and the icon is added to the browser.
 
-NOTE: It is also possible to find the Add-on link in the Web Application page footer, if it isn't
+:::note
+It is also possible to find the Add-on link in the Web Application page footer, if it isn't
 installed yet.
+:::

@@ -34,11 +34,11 @@ Upcoming tasks like export, import, print, and so on are displayed here.
 
 6. Notifications
 
-here you will be informed about incoming notifications. The notification can also be called up by
+here you will be informed about incoming notifications. The notification can also be opened by
 clicking on it.
 
 7. Account
 
 The user who is logged in can be seen under account. You can log out by clicking on the
-account. It is also possible to call up the settings in
+account. It is also possible to open the settings in
 [Account](/docs/passwordsecure/current/configuration/advancedview/mainmenufc/account.md).

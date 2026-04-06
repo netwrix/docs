@@ -39,8 +39,10 @@ the migration mode is enabled!
 
 ## Migration
 
-NOTE: During the migration, the database is in read-only mode. So you can read all records
+:::note
+During the migration, the database is in read-only mode. So you can read all records
 from the database, but it isn't possible to add new or edit existing records.
+:::
 
 #### Start migration
 

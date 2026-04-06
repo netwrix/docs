@@ -69,5 +69,5 @@ the form.
 
 A common feature of both variants is that adjustments to forms can't be automatically triggered.
 Already existing records are thus not automatically adjusted. The adjustment thus needs to be
-carried out manually. In the first case, the manual step is to use the function "Change form". In
+performed manually. In the first case, the manual step is to use the function "Change form". In
 the second case, it is sufficient to simply edit and save the record.

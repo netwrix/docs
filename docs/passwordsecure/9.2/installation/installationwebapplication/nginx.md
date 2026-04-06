@@ -38,8 +38,10 @@ directly viewed on the Server Manager.
 The configuration then still needs to be integrated onto the nginx server. It can be directly copied
 on the Server Manager for this purpose.
 
-NOTE: Every web server configuration is individual. Therefore, it is only possible to outline the
+:::note
+Every web server configuration is individual. Therefore, it is only possible to outline the
 normal process for a standard installation.
+:::
 
 ## Standard configuration
 

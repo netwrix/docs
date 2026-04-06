@@ -72,16 +72,22 @@ and the permissions for a record are important aspects.
   create a personal record for which no other user will receive permissions, simply select your own
   organisational structure and conclude the process with "save" via the ribbon.
 
-NOTE: If any kind of automatic permissions have been activated for the selected OU, this will always
+:::note
+If any kind of automatic permissions have been activated for the selected OU, this will always
 be prioritized.
+:::
 
-**CAUTION:** Even when creating private records, inheritance of permissions based on the logged-in
+:::warning
+Even when creating private records, inheritance of permissions based on the logged-in
 user can also be activated as an option. This option is described in a separate section.
+:::
 
-NOTE: The user right Allow sharing of personal passwords can be used to define that personal
-passwords can't be released to other users.
+:::note
+The user right Allow sharing of personal passwords defines whether personal
+passwords can be released to other users.
+:::
 
-**Automatic setting of permissions**: Automatic setting of permissions is carried out before the
+**Automatic setting of permissions**: Automatic setting of permissions is performed before the
 record is saved. Irrespective of whether predefined rights or rights inheritance is being used, the
-configuration is always carried out in the organisational structure or permissions area. Saving the
+configuration is always performed in the organisational structure or permissions area. Saving the
 record thus completes the process for creating the password including the issuing of permissions.

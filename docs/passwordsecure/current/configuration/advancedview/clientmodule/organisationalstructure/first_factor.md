@@ -25,7 +25,9 @@ The configuration is done via the user setting **First factor**.
 
 ![Smartcard 1st factor](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/firstfactor/first_factor_2-en.webp)
 
-NOTE: This option is only valid for users in master key mode
+:::note
+This option is only valid for users in master key mode
+:::
 
 **CAUTION:** Be Aware" The smartcard logon tries to determine whether the certificate belongs to the
 user to be logged on based on the applicant in the smartcard certificate. This is done using regex,

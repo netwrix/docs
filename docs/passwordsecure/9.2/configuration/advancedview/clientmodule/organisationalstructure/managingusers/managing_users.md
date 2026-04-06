@@ -45,7 +45,9 @@ only the differences will be covered below.
   themselves. The property **restricted user** is used to limit the visibility of the password
   field. It thus deals with purely administrative users or controlling entities.
 
-NOTE: Restricted users can't view any passwords
+:::note
+Restricted users can't view any passwords
+:::
 
 ### Configuring rights
 
@@ -61,7 +63,7 @@ globally defined user rights.
 
 ## Importing users
 
-Importing from Active Directory can be carried out in two ways that are described in a separate
+Importing from Active Directory can be performed in two ways that are described in a separate
 section.
 
 ## User licenses
@@ -71,8 +73,10 @@ other editions you can only purchase Advanced view licenses. Licensed Basic view
 users aren't able to use the Advanced view. However, Advanced view Users can also switch to the
 Basic view.
 
-**CAUTION:** For licensing reasons, it isn't intended to switch from a Advanced view user to a
+:::warning
+For licensing reasons, it isn't intended to switch from a Advanced view user to a
 Basic view user!
+:::
 
 The sales team will be happy to answer any questions you may have about licensing.
 
@@ -82,5 +86,7 @@ context menu that opens, you will find the following options under **displaying 
 
 Password -Documents -Forms -Rolls -Uses -Password Reset -System Tasks -Seal templates
 
-NOTE: All authorizations for a data record are taken into account, regardless of whether you are
+:::note
+All authorizations for a data record are taken into account, regardless of whether you are
 authorized by a role or the user.
+:::

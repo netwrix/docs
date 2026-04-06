@@ -11,8 +11,9 @@ The **logbook module** exists of the following features:
 - Filter function
 - Quick view
 
-NOTE: The Web Application module logbook is based on the same called client module logbook. Both
-modules differ in range and design. However, the handling is almost the same.
+:::note
+The Web Application module logbook is based on the same called client module logbook. Both modules differ in range and design. However, the handling is almost the same.
+:::
 
 Differences to the logbook on the Client:
 
@@ -26,3 +27,4 @@ on the Client.
 - Password Reset
 - Password rules
 - Sytem Task
+

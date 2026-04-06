@@ -20,7 +20,9 @@ following encryption techniques and algorithms are in use:
 - PBKDF2 with 610,005 SHA256 iterations for the encryption of the user keys
 - ECC (with the "NIST P-521" curve) for the private-public key procedure
 
-NOTE: All encryption algorithms used by Netwrix Password Secure are FIPS compliant.
+:::note
+All encryption algorithms used by Netwrix Password Secure are FIPS compliant.
+:::
 
 ## Applied cryptographic procedures
 
@@ -44,3 +46,4 @@ are usually passwords. However, the customer can decide what kind of data they'r
 Secrets can't be searched for.
 
 :::
+

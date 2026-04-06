@@ -23,11 +23,13 @@ diagram.
 
 ![Authorisation concept](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/permission_concept_1-en.webp)
 
-NOTE: Applying some form of permissions is **obligatory**. Applying a protective mechanism is
-**optional**.
+:::note
+Applying some form of permissions is **obligatory**. Applying a protective mechanism is **optional**.
+:::
 
-NOTE: The configuration of visibility is a technical part of the permissions process. However, this
-mechanism has a “protective character” and is thus listed under protective mechanisms.
+:::note
+The configuration of visibility is a technical part of the permissions process. However, this mechanism has a “protective character” and is thus listed under protective mechanisms.
+:::
 
 ## Basic mechanics of the permission concept
 
@@ -61,8 +63,9 @@ only to grant rights individually to employees in exceptional cases. The unplann
 personnel must also be taken into account in such concepts. Working with roles defuses such risks
 significantly.
 
-NOTE:
+:::note
 
+:::
 
 ```
 Permissions are always granted to only one user or role!
@@ -77,8 +80,9 @@ been authorized for the role.
 
 ![Membership in roles](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/permission_concept_3-en.webp)
 
-NOTE:
+:::note
 
+:::
 
 ```
 A small technical digression into the nature of the encryption can be very helpful with the basic understanding. Each role has a key pair. The first key is used to encrypt data. Access to this information is only possible with the second key. The membership in a role is equivalent to this second key.
@@ -106,8 +110,9 @@ by the administrators, and can view the records accordingly. The second user cou
 administrators. This user has extensive rights for the role. It can edit it, and add users to it.
 However, it can't see any data that's assigned to sales. It lacks membership in the role.
 
-NOTE:
+:::note
 
+:::
 
 ```
 As a member of a role, it must have at least the “read” right for the role!
@@ -139,3 +144,4 @@ This example clearly shows the advantages of the concept. The complete separatio
 users from regular users brings significant advantages. Of course, one doesn't necessarily exclude
 the other. An administrator can, of course, have full access to the role, and also be a member in it!
 The boundaries between the two often overlap, and can be freely defined in Netwrix Password Secure.
+

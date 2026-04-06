@@ -82,4 +82,7 @@ password rules.
 The password rules themselves aren't subject to any permissions. All defined rules are therefore
 available to all users. The rules are managed from the Main menu.
 
-NOTE: Users can only manage the rules if they have the appropriate user right
+:::note
+Users can only manage the rules if they have the appropriate user right
+:::
+
