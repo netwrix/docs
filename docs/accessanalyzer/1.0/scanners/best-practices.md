@@ -1,9 +1,9 @@
 ---
-title: "Best Practices"
+title: "Scanner Best Practices"
 description: "Best practices for configuring and running scanners in Access Analyzer"
 sidebar_position: 20
 ---
 
-# Best Practices
+# Scanner Best Practices
 
 *Content coming soon.*

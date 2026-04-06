@@ -1,10 +1,10 @@
 ---
-title: "Entra ID"
+title: "Entra ID Requirements"
 description: "Azure App Registration, Graph API permissions, and OAuth2 credentials"
 sidebar_position: 40
 ---
 
-# Entra ID
+# Entra ID Requirements
 
 The Entra ID connector validates connectivity to Microsoft Entra ID (formerly Azure Active Directory) using OAuth2 client credentials.
 

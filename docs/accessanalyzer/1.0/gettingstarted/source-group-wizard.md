@@ -1,9 +1,9 @@
 ---
-title: "Understanding the Source Group Wizard Workflow"
-description: "Learn how the Source Group Wizard guides you through connecting data sources and configuring scans"
+title: "Source Group Wizard"
+description: "How the Source Group Wizard guides you through connecting data sources and configuring scans"
 sidebar_position: 10
 ---
 
-# Understanding the Source Group Wizard Workflow
+# Source Group Wizard
 
 *Content coming soon.*

@@ -1,9 +1,9 @@
 ---
-title: "Setting Up My First Service Account"
-description: "Create your first service account to connect to data sources"
+title: "Setting Up a Service Account"
+description: "Create a service account to connect to data sources"
 sidebar_position: 1
 ---
 
-# Setting Up My First Service Account
+# Setting Up a Service Account
 
 *Content coming soon.*

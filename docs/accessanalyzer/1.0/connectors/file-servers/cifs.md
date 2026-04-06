@@ -6,47 +6,48 @@ sidebar_position: 10
 
 # CIFS / SMB File Share
 
-The CIFS/SMB connector scans Windows file shares to enumerate files, folders, and access permissions. It supports SMBv2 and SMBv3 protocols with concurrent scanning workers.
+Access Analyzer scans Windows file servers to enumerate files, folders, access permissions, and sensitive data.
 
-## Network Requirements
+Scanning can be performed directly from the Access Analyzer service (local mode) or via Scanners — Kubernetes-deployed containers for distributed scanning of remote environments. See the [Utilizing Scanners](../../scanners/overview.md) section for details on Scanner architecture.
 
-| Port | Protocol | Direction | Description |
-| --- | --- | --- | --- |
-| 445 | TCP | Access Analyzer → File Server | SMB file sharing |
+## Permissions
 
-## Service Account Requirements
+Configure the service account credential with the following rights on the target Windows host(s):
 
-| Requirement | Details |
-| --- | --- |
-| **Account type** | Domain or local user account on the file server |
-| **Authentication** | Username and password |
-| **Minimum permissions** | Read access and list permissions on target shares |
-| **Domain** | Required if the file server is domain-joined |
+- Group membership in both of the following local groups:
+  - **Power Users**
+  - **Backup Operators**
+- Granted the **Backup files and directories** local policy privilege
+- Granted the **Network access: Restrict clients allowed to make remote calls to SAM** Local Policies > Security Options privilege
 
 :::note
-The service account needs read-only access to the shares and folders being scanned. It does not require write, modify, or administrative permissions.
+To collect data on administrative shares and local policies for a Windows target, the credential must have group membership in the local **Administrators** group.
 :::
 
-## Credential Type
+## Windows File System Clusters
 
-| Field | Value |
-| --- | --- |
-| **Type** | Username / Password |
-| **Username format** | `DOMAIN\username` or local account name |
+When targeting a Windows File System Cluster, permissions must be configured on all nodes that comprise the cluster. Additional requirements beyond the standard permissions above:
 
-## Connector Capabilities
+- Remote Registry Service must be enabled on all cluster nodes
+- Group membership in the local **Administrators** group
+- Granted the **Log on as a batch** privilege
 
-| Operation | Description |
-| --- | --- |
-| **Test connection** | Validates SMB connectivity and authentication |
-| **Access scan** | Enumerates files, folders, and permissions with configurable worker concurrency (1–20) |
-| **Get object** | Retrieves specific file or folder metadata |
+:::note
+Target the Windows Cluster File Server Role Server (the name clients connect to) when running a File System scan against a Windows File System Cluster.
+:::
 
-## Scan Configuration Options
+## DFS Namespaces
 
-| Option | Description |
-| --- | --- |
-| **Share filtering** | Include or exclude specific shares |
-| **Scan depth** | Maximum folder depth to traverse |
-| **Worker concurrency** | Number of parallel scanning threads (1–20) |
-| **Pause / Resume** | Scans can be paused and resumed |
+For domain-based DFS namespaces, the scan is configured to target the default domain controller for the domain. For standalone namespaces or multiple namespaces, target the server(s) hosting the namespace(s) directly.
+
+If the DFS hosting server is part of a Windows Cluster, the Windows File System Cluster requirements above also apply.
+
+## Sensitive Data Discovery
+
+Sensitive Data Discovery (SDD) scans require **.NET Framework 4.7.2 or later** installed on the server being scanned.
+
+## Port Requirements
+
+| Port | Protocol | Description |
+| --- | --- | --- |
+| 445 | TCP | SMB file sharing |

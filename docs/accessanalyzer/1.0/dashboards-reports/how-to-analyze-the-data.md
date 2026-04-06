@@ -1,9 +1,9 @@
 ---
-title: "How to Analyze the Data"
-description: "Guide to analyzing data using dashboards in Access Analyzer"
+title: "Analyzing Data and Reports"
+description: "Guide to analyzing data and reports in Access Analyzer"
 sidebar_position: 10
 ---
 
-# How to Analyze the Data
+# Analyzing Data and Reports
 
 *Content coming soon.*
