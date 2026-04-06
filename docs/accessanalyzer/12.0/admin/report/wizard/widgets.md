@@ -23,7 +23,7 @@ the dropdown menu. The following widgets are available:
 - [Chart](#chart)
 - [Text](#text)
 
-The editor or wizard for the selected widget opens. See the relevant section below for information
+The editor or wizard for the selected widget opens. See the relevant section for information
 about configuring it.
 
 ![Table with configured widgets](/images/accessanalyzer/12.0/admin/report/wizard/widgetsconfigured.webp)
@@ -50,12 +50,11 @@ Use the Options section to configure the title and data source for the Grid elem
 
 The section contains the following options:
 
-- Element Title – Enter a title for the element in the text box. This will be displayed in the
-  element's header on the generated report.
+- Element Title – Enter a title for the element in the text box. The generated report displays this in the element's header.
 
 **DataSource Options**
 
-to generate results, a location must first be selected as the source of the data.
+To generate results, select a location as the data source.
 
 - Table – Use the dropdown to select the required data source. The dropdown contains the list of
   jobs within Access Analyzer that have been executed.
@@ -108,8 +107,7 @@ There are two types of grid displays:
   disables all the fields within the Table Properties section.
 
     :::note
-    to view user configured Grouping in emailed reports, the report must be
-    emailed as a **Non Interactive Grid**.
+    To view user-configured Grouping in emailed reports, email the report as a **Non Interactive Grid**.
     :::
 
 
@@ -186,8 +184,7 @@ Once a Text Editor is selected for a Text element, it can't be changed.
 
 The Basic Text Editor has the following options:
 
-- Element Title – Enter a title for the element in the text box. This will be displayed in the
-  element's header on the generated report.
+- Element Title – Enter a title for the element in the text box. The generated report displays this in the element's header.
 - Editor / Preview tabs – You can switch between the Editor and Preview tabs. The Editor tab allows
   you to edit the text and apply formatting. The Preview tab shows you how the formatted text will
   look in the generated report..
@@ -195,8 +192,7 @@ The Basic Text Editor has the following options:
   displays on a new line in the generated output where a carriage return has been used. If it isn't
   selected, the text continues on the same line.
 
-The icons listed in the table below are available in the Basic Editor (and Advanced Editor) to
-provide basic editing options for text entries.
+The following table lists the icons available in the Basic Editor (and Advanced Editor) for basic editing options.
 
 | Icon                                                                                                                               | Description                                                   |
 | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -215,15 +211,12 @@ provide basic editing options for text entries.
 
 The Advanced Text Editor has the following options:
 
-- Element Title – Enter a title for the element in the text box. This will be displayed in the
-  element's header on the generated report.
+- Element Title – Enter a title for the element in the text box. The generated report displays this in the element's header.
 - Editor / Preview tabs – You can switch between the Editor and Preview tabs. The Editor tab allows
   you to edit the text and apply formatting. The Preview tab shows you how the formatted text will
   look in the generated report..
 
-The Advanced Editor contains all the icons from the Basic Editor, see above. In addition to these,
-it has the icons with higher level editing options for text entries that are listed in the table
-below.
+The Advanced Editor contains all the icons from the Basic Editor, listed in the [Basic Text Editor](#basic-text-editor) section. In addition, it has the icons with higher level editing options for text entries that are listed in the following table.
 
 | Icon                                                                                                                                   | Description                                                     |
 | -------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
