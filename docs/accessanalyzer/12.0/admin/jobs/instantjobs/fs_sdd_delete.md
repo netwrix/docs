@@ -1,5 +1,10 @@
+---
+title: "FS_SDD_DELETE Job"
+description: "FS_SDD_DELETE Job"
+sidebar_position: 45
+---
 
-# FS_SDD_DELETE Instant Job
+# FS_SDD_DELETE Job
 
 The FS_SDD_DELETE instant job deletes Sensitive Data Discovery (SDD) data from the Tier 1 database for specified criteria, hosts, or combinations thereof. This job is available in the Instant Job Library under the File System library.
 
