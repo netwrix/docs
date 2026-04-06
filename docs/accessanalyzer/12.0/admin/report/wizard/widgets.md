@@ -82,6 +82,9 @@ You can configure the table to allow the data to be exported as a CSV file.
     - When it is configured, you can click the **All Data** button on the table section of the
       report to save the report as a CSV file. See the
       [Interactive Grids](/docs/accessanalyzer/12.0/admin/report/interactivegrids/overview.md) topic for more information.
+      ::: warning
+      Only interactive grids can be exported. Non-interactive grids will throw an "EOIeError" pop-up when attempting to use this feature.
+      :::
 - Rows – Limits the amount of rows exported to the CSV file. The default is **Visible**.
     - Visible – Only includes the amount of rows set by the **Limit Maximum number of displayed rows
       to** option in the DataSource Options section
