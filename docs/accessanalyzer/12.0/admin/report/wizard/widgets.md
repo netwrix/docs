@@ -17,7 +17,7 @@ locations where widgets need to be configured.
 ![Configure widgets](/images/accessanalyzer/12.0/admin/report/wizard/widgetsconfigure.webp)
 
 To add a new widget to an empty element, click **Configure** and select the desired widget type from
-the drop-down menu. The following widgets are available:
+the dropdown menu. The following widgets are available:
 
 - [Grid](#grid)
 - [Chart](#chart)
@@ -55,9 +55,9 @@ The section contains the following options:
 
 **DataSource Options**
 
-In order to generate results, a location must first be selected as the source of the data.
+to generate results, a location must first be selected as the source of the data.
 
-- Table – Use the drop-down to select the required data source. The drop-down contains the list of
+- Table – Use the dropdown to select the required data source. The dropdown contains the list of
   jobs within Access Analyzer that have been executed.
 - Current job only – Select this checkbox to only display data from the current job. This option is
   selected by default.
@@ -108,7 +108,7 @@ There are two types of grid displays:
   disables all the fields within the Table Properties section.
 
     :::note
-    In order to view user configured Grouping in emailed reports, the report must be
+    to view user configured Grouping in emailed reports, the report must be
     emailed as a **Non Interactive Grid**.
     :::
 
@@ -129,7 +129,7 @@ The following settings are available when Interactive grid is selected:
 - Group Column – Arranges the table to be grouped by the attributes of the selected column
 
     :::note
-    Paging and grouping are not compatible. When Paging is enabled, the Grouping options
+    Paging and grouping aren't compatible. When Paging is enabled, the Grouping options
     are disabled in the Table Properties section and in the generated report.
     :::
 
@@ -176,7 +176,7 @@ Text Editor. On this dialog, select either the Basic or Advanced Text Editor and
 Editor**. The selected editor then opens.
 
 :::note
-Once a Text Editor is selected for a Text element, it cannot be changed.
+Once a Text Editor is selected for a Text element, it can't be changed.
 :::
 
 
@@ -192,7 +192,7 @@ The Basic Text Editor has the following options:
   you to edit the text and apply formatting. The Preview tab shows you how the formatted text will
   look in the generated report..
 - Convert Carriage Returns to HTML – This checkbox is selected by default. When selected, text
-  displays on a new line in the generated output where a carriage return has been used. If it is not
+  displays on a new line in the generated output where a carriage return has been used. If it isn't
   selected, the text continues on the same line.
 
 The icons listed in the table below are available in the Basic Editor (and Advanced Editor) to
