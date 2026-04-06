@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Release mechanism
 
-## What is the release mechanism?
+## Release mechanism overview
 
 A sealed password will not be released until the number of approvals required in the seal has been
 granted. Releases can be granted by anyone who has been defined as having the required permissions
@@ -27,7 +27,7 @@ applied. Release rights have a priority over read rights
 
 ## 1. Requesting a release
 
-In order to release a seal for sealed passwords, this must be requested from the user with the
+To release a seal for sealed passwords, this must be requested from the user with the
 required permissions to issue the release. Within the Netwrix Password Secure client, this can be
 done via the buttons **Reveal** and **Seal** in the ribbon, as well as via the **Icon in the
 password field** of the data record in the reading pane.

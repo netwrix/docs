@@ -6,13 +6,13 @@ sidebar_position: 30
 
 # High availability
 
-## What is high availability?
+## High availability overview
 
 High availability is designed to guarantee the further operation of Netwrix Password Secure in the
-event of damage. A series of requirements need to be met in advance in order to use this feature
+event of damage. A series of requirements need to be met in advance to use this feature
 
 **CAUTION:** As the configuration of high availability is complex, it is (generally) implemented
-during a consultation. If you are interested in this feature, please contact us directly or contact
+during a consultation. If you are interested in this feature, contact Netwrix directly or contact
 your responsible partner.
 
 #### Requirements
@@ -21,7 +21,7 @@ The following points should be observed during the configuration.
 
 - It is essential that MSSQL Enterprise Version is used for replicating the database (even in the
   case of a replication across multiple locations)
-- To achieve a better level of protection, we recommend operating the Netwrix Password Secure
+- To achieve a better level of protection, Netwrix recommends operating the Netwrix Password Secure
   database on its own cluster
 - A Netwrix Password Secure application server needs to be licensed for each location. Every
   application server has its own configuration database.

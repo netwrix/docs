@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Seal overview
 
-## What is the seal overview?
+## Seal overview
 
 Users with the required permissions to issue the releases receive access to the current state of the
 existing seals at any time via the seal overview. The overview is accessible via the ribbon as well
@@ -52,6 +52,6 @@ breaking the seal after a security query. Viewing the password is irrelevant. On
 be manually reset by the icon to the right of the broken seal column. The state “Sealed” is
 restored.
 
-**CAUTION:** It makes no sense to re-seal already visible passwords. The user was able to view the
-password. Therefore, it is not monitorable whether the password has been saved, for example, by
+**CAUTION:** It makes no sense to re-seal already visible passwords. The user could view the
+password. Therefore, it isn't monitorable whether the password has been saved, for example, by
 screenshot. In such cases, a new password is the only way to guarantee 100% password security!

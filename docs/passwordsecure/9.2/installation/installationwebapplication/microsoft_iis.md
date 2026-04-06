@@ -37,7 +37,7 @@ web server.
 
 NOTE: If the system requirements have not been met, you will be informed that the URL Rewrite and/or
 Application Request Routing modules need to be installed. In this case, follow the instructions on
-the wizard that will then immediately open. In addition, it is necessary to install the WebSocket
+the wizard that will then immediately open. In addition, you must install the WebSocket
 Protokoll. Afterwards, config.bat needs to be executed again.
 
 If the website has been correctly created, this will be correspondingly indicated by the

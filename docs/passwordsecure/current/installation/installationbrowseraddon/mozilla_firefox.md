@@ -16,5 +16,5 @@ After the download, the add-on is simply dragged and dropped into the browser.
 
 After confirming a security question, it is installed and an icon is created in the menu bar.
 
-NOTE: It is also possible to find the Add-on link in the Web Application page footer, if it is not
+NOTE: It is also possible to find the Add-on link in the Web Application page footer, if it isn't
 installed yet

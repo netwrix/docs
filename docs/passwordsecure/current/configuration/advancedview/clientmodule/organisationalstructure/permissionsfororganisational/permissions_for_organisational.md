@@ -32,7 +32,7 @@ interfaces.
 
 ## Permissions
 
-The visibility and also inheritance mechanisms are not considered below. This section exclusively
+The visibility and also inheritance mechanisms aren't considered below. This section exclusively
 deals with permissions for the actual organisational structure. It deals with which users and roles
 have what form of permissions for a given organisational structure. Permissions for organisational
 structures can be defined via the ribbon or also the context menu that is accessed using the right
@@ -47,16 +47,16 @@ concept.
 example above shows the permissions for the "organisational structure IT".
 
 The user Max Muster possesses all rights to the organisational structure IT and can thus edit,
-delete and also grant permissions for this structure.
+delete, and also grant permissions for this structure.
 
 ## The add right
 
-The "add" right holds a special position amongst the available rights because it does not refer to
+The "add" right holds a special position amongst the available rights because it doesn't refer to
 the organisational unit itself but rather to data that will be created within it. In general, it is
 fair to say that to add objects in an organisational unit requires the add right. If a user wants to
 add a new record to an organisational unit, the user requires the above-mentioned right. In the
 example above, only the administrator has the required permissions for adding new records. Even the
-IT manager – who possess all other rights to the organisational structure "IT" – does not have the
+IT manager – who possess all other rights to the organisational structure "IT" – doesn't have the
 right to add records.
 
 **CAUTION:** The add right merely describes the right to create objects in an organisational unit.

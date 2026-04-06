@@ -21,7 +21,7 @@ sidebar_position: 7
 - During login, the field for entering the user name is no longer emptied when the database name is changed.
 
 #### Server Manager
-- The old version of the Web App, displayed in the Server Manager as “Web app (Legacy)”, can no longer be created. Please use the new web app with immediate effect!
+- The old version of the Web App, displayed in the Server Manager as “Web app (Legacy)”, can no longer be created. Use the new web app with immediate effect!
 
 # Improvements
 
@@ -30,7 +30,7 @@ sidebar_position: 7
 
 #### Server
 - The performance of the software was improved in many areas.
-- A third-party package containing a vulnerability was updated. We are not aware of any instances where the vulnerability was exploited.
+- A third-party package containing a vulnerability was updated. Netwrix isn't aware of any instances where the vulnerability was exploited.
 
 #### Server Manager
 - When adding an existing database in the Server Manager, you can now select whether the database should be activated automatically.
@@ -41,10 +41,10 @@ sidebar_position: 7
 
 #### Extended view (on Windows)
 - The button to open the website of a password is now disabled if no URL is configured. This also affects the offline add-on.
-- We have fixed an issue where the native Windows App could become unresponsive. You no longer need to end the application via Task Manager.
+- This release fixes an issue where the native Windows App could become unresponsive. You no longer need to end the application via Task Manager.
 
 #### Extended view (on web)
-- When configuring the password generator in a way that is not able to generate a password, the application no longer gets unresponsive.
+- When configuring the password generator in a way that isn't able to generate a password, the application no longer gets unresponsive.
 - When a password is revealed in the quick view, it can be entered again if a reason is required.
 - The quick view no longer closes automatically when another modal, such as entering a reason, is opened.
 - The browser window no longer hangs when a user's password is changed.

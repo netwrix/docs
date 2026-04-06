@@ -58,12 +58,12 @@ A new dialogue appears after the selection in which the type of system "to be re
 
 The functions and configuration process are described in detail in the section Scripts.
 
-NOTE: It is not possible to create a Password Reset without an associated script.
+NOTE: It isn't possible to create a Password Reset without an associated script.
 
 ### Linked passwords
 
 All records that should be reset with the Password Reset according to the selected trigger are
 listed under “Linked passwords”. Multiple objects can be entered. The linked Password Reset is also
-visible in the footer of the reading pane once it has been successfully configured.
+visible in the footer of the reading pane after it has been successfully configured.
 
 ![new script password reset](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwordreset/configuration/configuration_2-en.webp)

@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Setup wizard
 
-## What is the setup wizard?
+## Setup wizard overview
 
 The setup wizard contains all relevant settings for setting up Netwrix Password Secure. The
 individual points can also be changed later on. Separate sections are available for each.
@@ -50,7 +50,7 @@ can copy the server name from the login window of the SQL server.
 
 The user that will be used to create the database on the SQL Server is also specified. The user
 therefore needs **dbCreator** rights. Alternatively, you can use the service user for this purpose.
-The “Advanced” button allows you to specify a **Connection String.**
+The “Advanced” button lets you specify a **Connection String.**
 
 #### SMTP server
 
@@ -61,7 +61,7 @@ should it be necessary to make changes later on.
 
 ![setup-wizard-ac-4-en](/images/passwordsecure/9.1/configuration/server_manager/setupwizard/setup-wizard-ac-4-en.webp)
 
-Once the data has been entered and successfully tested, the wizard can be completed by clicking on
+After the data has been entered and successfully tested, the wizard can be completed by clicking on
 “Finish”.
 
 **Security notes**
@@ -72,8 +72,8 @@ As soon as the setup wizard has been completed, two security notes will be displ
 module that need to be confirmed.
 
 :::warning
-It is recommended that you only confirm the security notes when the corresponding point
-has actually been carried out. It is absolutely essential to ensure that regular
+It's recommended that you only confirm the security notes when the corresponding point
+has actually been carried out. It's absolutely essential to ensure that regular
 [Backup management](/docs/passwordsecure/9.1/configuration/servermanager/mainmenu/backupsettings/backup_management.md)
 are created and the
 [Certificates](/docs/passwordsecure/9.1/configuration/servermanager/certificates/certificates.md)

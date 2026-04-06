@@ -6,11 +6,11 @@ sidebar_position: 60
 
 # History
 
-## What is the history?
+## History overview
 
 Alongside saving passwords and keeping them safe, the ability to trace changes to records also has
 great relevance. The history maintains a seamless account of the versions for all form fields in a
-record. Every change to records is separately recorded, saved and can thus also be restored. In
+record. Every change to records is separately recorded, saved, and can thus also be restored. In
 addition, it is always possible to compare historical values with the current version. The history
 is thus an indispensable component of every security concept.
 
@@ -40,7 +40,7 @@ versions with the date and time of their last change are sorted in chronological
 
 ## Comparison of versions
 
-At least two versions need to be selected in order to carry out a comparison. In list view, mark the
+At least two versions need to be selected to carry out a comparison. In list view, mark the
 first version and then add another version via the “Add” button on the right of the reading pane to
 compare with the first one.
 

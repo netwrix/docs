@@ -10,7 +10,7 @@ sidebar_position: 40
 
 [https://www.youtube.com/embed/md7_VEdVuWM?rel=0](https://www.youtube.com/embed/md7_VEdVuWM?rel=0)[https://www.youtube.com/embed/md7_VEdVuWM?rel=0](https://www.youtube.com/embed/md7_VEdVuWM?rel=0)
 
-## What are databases?
+## Databases overview
 
 Databases contain all information on users, records, documents, etc. The changes to objects in
 Netwrix Password Secure will also become part of the MSSQL database. Naturally, the regular creation

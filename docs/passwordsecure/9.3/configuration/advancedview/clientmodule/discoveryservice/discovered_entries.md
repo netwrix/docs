@@ -9,7 +9,7 @@ sidebar_position: 30
 The entries for the **Discovery Service** are discovered using a **Discovery Service Task**. It can
 take some time for all the data on the systems for the entered IP network to be collected. This can
 be easily recognized by the **blue arrow** symbol on the **Discovery Service Task** and a
-corresponding message is also shown in the General display. Once the **Discovery Service Task** has
+corresponding message is also shown in the General display. After the **Discovery Service Task** has
 been completed, the data will be shown in the **Discovery Service module**.
 
 ![new discovery service task](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/discovered_entries/discovered_entries_1-en.webp)
@@ -27,7 +27,7 @@ described below.
 4. **Logbook**: The **logbook** can be found in the **footer** of the **Discovery Service Task**.
    The latest activities carried out by the **Discovery Service Task** are shown here.
 
-NOTE: The **data** is **not kept up-to-date while the task is being executed** and does not always
+NOTE: The **data** is **not kept up-to-date while the task is being executed** and doesn't always
 show the latest status. Therefore, the data should be regularly **updated** using the **F5 button**!
 
 ## Using the Discovery Service entries
@@ -45,17 +45,17 @@ Task** and selected for the **Conversion Wizard** are displayed.
 
 If multiple entries are selected for a **Password Reset**, a corresponding number of **passwords**
 and **Password Resets** need to be added in the **Conversion Wizard**. Depending on the entries
-selected (service, Active Directory user, user account), it is necessary to carry out corresponding
+selected (service, Active Directory user, user account), you must carry out corresponding
 **assignments** in the **Conversion Wizard** for the **passwords**.
 
 ![Discovery service conversion wizard ](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/discovered_entries/discovered_entries_3-en.webp)
 
-Every line must be connected to a **password** in the end. Therefore, it is necessary to carry out
+Every line must be connected to a **password** in the end. Therefore, you must carry out
 an assignment process in the **Conversion Wizard** for every entry.
 
 ![Discovery service conversion wizard ](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/discovered_entries/discovered_entries_4-en.webp)
 
-For **Active Directory users**, it is possible to assign an existing **password**.
+For **Active Directory users**, you can assign an existing **password**.
 
 NOTE: The subsequent process is carried out in the same way as when only one **Discovery Service
 entry** is selected.

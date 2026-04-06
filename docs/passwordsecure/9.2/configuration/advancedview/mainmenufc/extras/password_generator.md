@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Password generator
 
-## What is the password generator?
+## Password generator overview
 
-The complexity of passwords is generally determined by their randomness. In order to be able to rely
+The complexity of passwords is generally determined by their randomness. To be able to rely
 100% on the fact that the passwords are randomly generated, an algorithm for generating passwords is
 indispensable. The password generator performs this function and is completely integrated into the
 software.
@@ -24,7 +24,7 @@ The password generator can be opened in different ways:
 
 ![Password generator](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/password_generator/installation_with_parameters_83-en.webp)
 
-- **When creating new records:** Once the password field has been selected in the reading pane, the
+- **When creating new records:** After the password field has been selected in the reading pane, the
   password generator can then be directly opened in the “Form field” tab via the ribbon. Passwords
   generated here can be directly entered into the password field for the new record using the
   “Adopt” button. Alternatively: The password generator can also be accessed on the right in the
@@ -33,7 +33,7 @@ The password generator can be opened in different ways:
 ## Functionality
 
 The Character section is used to define the character groups that should form part of the password.
-This section can also be used to exclude (special) characters. Once the password length has been
+This section can also be used to exclude (special) characters. After the password length has been
 defined, a preview of a password that corresponds to the configured criteria is displayed on the
 bottom edge of the password generator. The “shuffle function” can be activated via the icon on the
 right next to the password preview. This will generate a new password in accordance with the defined
@@ -42,7 +42,7 @@ criteria.
 #### Phonetic passwords
 
 This type of password can be recognised by the fact that it is relatively easy to remember (they are
-“readable”) but do not have any association to terms found in dictionaries. Only the number of
+“readable”) but don't have any association to terms found in dictionaries. Only the number of
 syllables
 
 and the total length are defined in this case. Options that can be set are how the syllables are
@@ -52,7 +52,7 @@ separated and whether to use LeetSpeak.
 
 Password rule
 
-Already defined[Password rules](/docs/passwordsecure/9.2/configuration/advancedview/mainmenufc/extras/password_rules.md) can be utilised for the
+Already defined[Password rules](/docs/passwordsecure/9.2/configuration/advancedview/mainmenufc/extras/password_rules.md) can be used for the
 automatic generation of new passwords
 
 ## Multigenerator

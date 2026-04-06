@@ -7,10 +7,10 @@ sidebar_position: 20
 # Certificates
 
 Various different certificates are used to guarantee the security of Netwrix Password Secure. The
-certificates are essential for the smooth operation of Netwrix Password Secure. It is thus important
-that they are carefully backed up.
+certificates are essential for the smooth operation of Netwrix Password Secure. It's thus important
+that they're carefully backed up.
 
-## What certificates are used?
+## Certificate types
 
 The individual certificates are described in the following sections:
 
@@ -27,7 +27,7 @@ be managed via the ribbon:
 
 ![installation_with_parameters_196_647x73](/images/passwordsecure/9.1/configuration/server_manager/certificates/installation_with_parameters_196_647x73.webp)
 
-In the **Main menu**, it is also possible to start the certificate manager for all databases via the
+In the **Main menu**, it's also possible to start the certificate manager for all databases via the
 **basic configuration:**
 
 ![base configuration](/images/passwordsecure/9.1/configuration/server_manager/certificates/installation_with_parameters_197-en.webp)
@@ -64,16 +64,16 @@ This merely requires you to enter the desired .pfx file and its password.
 #### Exporting certificates
 
 The relevant certificates will be backed up by clicking on export. A password firstly needs to be
-issued here. If a storage location has not yet been entered via the settings, you are firstly asked
+issued here. If a storage location hasn't yet been entered via the settings, you're firstly asked
 to enter it.
 
-NOTE: SSL connection certificates are not included in this process and are also not backed up. These
+NOTE: SSL connection certificates aren't included in this process and are also not backed up. These
 certificates can be recreated if necessary.
 
 #### Settings
 
 You can define whether every certificate should be saved to its own file in the **settings**. If
-this option has not been activated, all relevant certificates will be backed up in one file. In
+this option hasn't been activated, all relevant certificates will be backed up in one file. In
 addition, the storage location is defined in the settings.
 
 ![installation_with_parameters_201_826x310](/images/passwordsecure/9.1/configuration/server_manager/certificates/installation_with_parameters_201_826x310.webp)

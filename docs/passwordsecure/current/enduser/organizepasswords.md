@@ -11,9 +11,9 @@ sidebar_position: 40
 The tab system is used to structure all your passwords: Tabs help you to make them easier to manage
 and find. You can create several tabs and switch between them within one click.
 
-Follow the steps to add a team tab.
+add a team tab.
 
-Step 1 – Click on the **Plus** sign and a form will open.
+Step 1 – Click the **Plus** sign and a form will open.
 
 ![newform](/images/passwordsecure/9.2/enduser/newform.webp)
 
@@ -39,7 +39,7 @@ are in (i.e., "Marketing"). Netwrix Password Secure now not only is searching fo
 ![searchresults](/images/passwordsecure/9.2/enduser/searchresults.webp)
 
 NOTE: Optimize your search results by using the **minus sign (-)** to exclude terms: Only results in
-which this word does not appear will be displayed (i.e., all social media accounts that are used
+which this word doesn't appear will be displayed (i.e., all social media accounts that are used
 outside of marketing = "-social media marketing").
 
 ## Choose Your View
@@ -60,7 +60,7 @@ The screenshot below shows the title view.
 ![switchbutton](/images/passwordsecure/9.2/enduser/switchbutton.webp)
 
 When in **tile view**, you can also drag and drop the buttons on another position. By hovering over
-them with the mouse, you will see more information like the username, and you can login with one
+them with the mouse, you will see additional details like the username, and you can login with one
 click.
 
 ![titleview](/images/passwordsecure/9.2/enduser/titleview.webp)

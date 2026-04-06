@@ -6,10 +6,10 @@ sidebar_position: 60
 
 # Reading pane
 
-## What is the reading pane?
+## Reading pane overview
 
 As with the list view, the reading pane on the Web Application is almost identical to that on the
-client. Therefore, we also refer you here to the corresponding
+client. Therefore, Password Secure also refer you here to the corresponding
 [Reading pane](/docs/passwordsecure/current/configuration/advancedview/operationandsetup/reading_pane.md) section.
 
 ![reading_pane](/images/passwordsecure/9.2/configuration/web_application/operation/reading_pane/reading_pane.webp)

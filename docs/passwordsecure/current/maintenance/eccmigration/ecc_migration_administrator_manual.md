@@ -13,7 +13,7 @@ Before you execute the migration, you must ensure that the following preparation
 - Installation of the latest Netwrix Password Secure-Server, Native Client and Web Client
 - Check in the [Database properties](/docs/passwordsecure/current/configuration/servermanager/databaseproperties/database_properties.md) if the **offline
   access** and the **mobile synchronization** are allowed
-  If that should be the case, **contact your users and make sure that they have to synchronize the
+  If that should be the case, **contact your users and ensure that they have to synchronize the
   Offline Add-on and the mobile app**.
 
 **CAUTION:** If the OfflineClient or App does have not yet synchronized items, they are lost after
@@ -29,7 +29,7 @@ the migration mode is enabled!
 
 - Delete or restore all non “permanent deleted” users
   If you have deactivated or non “permanent deleted“ users it would make sense to delete them
-  permanently, otherwise the migration would never finalize. Keep in mind, that every E2EE User must
+  permanently, otherwise the migration would never finalize. Remember that every E2EE User must
   log in, before you can complete the migration.
 - Only have **one active Netwrix Password Secure-Server**
   In the case of multiple Netwrix Password Secure-Servers, you need to stop all Netwrix Password
@@ -39,8 +39,8 @@ the migration mode is enabled!
 
 ## Migration
 
-NOTE: During the migration, the database is in read-only mode. So it is possible to read all records
-from the database, but it is not possible to add new or edit existing records.
+NOTE: During the migration, the database is in read-only mode. So you can read all records
+from the database, but it isn't possible to add new or edit existing records.
 
 #### Start migration
 
@@ -50,7 +50,7 @@ Clicking on the icon **“Start migration”** in the databases' module to start
 
 Select the database you want to migrate and enter the code-word.
 
-Remember, The code word is “Start”. Please make sure that you have read the whole documentation.
+Remember, The code word is “Start”. ensure that you have read the whole documentation.
 Otherwise, data loss might occur!
 
 ![select database](/images/passwordsecure/9.2/configuration/server_manager/ecc_migration/start-migration-2-en.webp)
@@ -63,7 +63,7 @@ As written in the message, export all required certificates via the Netwrix Pass
 Manager. If you have multiple servers in use import the certificates via the Server Manager at the
 end of the migration process.
 
-**CAUTION:** If certificates are missing the migration cannot be continued.
+**CAUTION:** If certificates are missing the migration can't be continued.
 
 #### Watch the migration process
 

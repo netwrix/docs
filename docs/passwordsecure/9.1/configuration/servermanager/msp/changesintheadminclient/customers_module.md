@@ -8,7 +8,7 @@ sidebar_position: 10
 
 #### Creating a new customer
 
-Creating a new customer is done via the Customers module (1). Here, click on New (2) in the upper
+Creating a new customer is done via the Customers module (1). Here, click New (2) in the upper
 left corner. This applies both to customers in a test phase and to customers who are to be billed
 immediately.
 
@@ -16,11 +16,11 @@ immediately.
 
 When creating a new customer, the customer name is specified under **General** (1).
 
-If (2) is not checked, a test customer is created without billing. This is then a customer in the
+If (2) isn't checked, a test customer is created without billing. This is then a customer in the
 test phase. If (2) is checked, a customer will be created who will be charged by Netwrix from the
 current month.
 
-At (3) a date is automatically entered that is four weeks in the future. This date can be changed by
+At (3) a date is automatically entered that's four weeks in the future. This date can be changed by
 the managed service provider for test customers as well as billed customers, for example to limit
 the test period or if the date of a possible termination of a billed customer should be known in
 advance.
@@ -36,7 +36,7 @@ to the on-prem version.
 ![License settings new customer](/images/passwordsecure/9.1/configuration/server_manager/msp/changes_in_ac/customers_module/licence-new-customer-msp-en_1013x675.webp)
 
 After saving, the test customers are displayed under Test (1) and the customers to be billed under
-Billed (2). When you click on a (test) customer, you will see the associated
+Billed (2). When you click a (test) customer, you'll see the associated
 
 information and activated options. By clicking the button Edit (3 + 4) you can make
 
@@ -52,11 +52,11 @@ In the view of a test customer, the general contract data can be edited under th
 information under Edit (1) and the test customer can be converted to a billed customer. Billing
 customers can no longer be converted back to test customers.
 
-Under Active options, options can be selected and deselected with Edit (2). For test customers, no
-billing data is available in the Forecast, Last Months and Cost History fields.
+Under Active options, options can be selected, and deselected with Edit (2). For test customers, no
+billing data is available in the Forecast, Last Months, and Cost History fields.
 
 Since no costs are incurred for test customers, no information is displayed here under User history
-(3), Forecast, Last months and Cost history.
+(3), Forecast, Last months, and Cost history.
 
 ![test-customer-view-msp-en_1024x742](/images/passwordsecure/9.1/configuration/server_manager/msp/changes_in_ac/customers_module/test-customer-view-msp-en_1024x742.webp)
 
@@ -64,16 +64,16 @@ Since no costs are incurred for test customers, no information is displayed here
 
 Here you can also edit the contract details and activate or deactivate options. Additionally you can
 see the user history (4) of the last months, the forecast for the current month (5) including the
-expected costs for the users and options, as well as the total amount. Furthermore, you will find
+expected costs for the users and options, as well as the total amount. Furthermore, you'll find
 the statements of the last months (6) and a graphical representation of the cost history (7).
 
 ![billed-customer-msp-en_1032x752](/images/passwordsecure/9.1/configuration/server_manager/msp/changes_in_ac/customers_module/billed-customer-msp-en_1032x752.webp)
 
 #### Deactivating and reactivating a customer
 
-Both test customers and customers to be billed can be deactivated, e.g. if a test customer cannot
-continue testing until later or if a customer to be billed does not pay his invoice. When
-deactivating, all data is retained and the customer can be completely restored.
+Both test customers and customers to be billed can be deactivated, e.g. if a test customer can't
+continue testing until later or if a customer to be billed doesn't pay his invoice. When
+deactivating, all data is retained, and the customer can be completely restored.
 
 To deactivate a customer, select the database (1) and then Deactivate (2).
 

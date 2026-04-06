@@ -18,14 +18,14 @@ C:\inetpub\wwwroot.
 ## Integrate in existing website
 
 requires there to be an existing website. Therefore, a website needs to be firstly created on the
-IIS web sever. The name of the website then needs to be entered in the Server Manager. It is also
+IIS web sever. The name of the website then needs to be entered in the Server Manager. It's also
 necessary to enter the folder from which the Web Application should be operated under "website
 directory". The format here is "/Web Application"
 
 ![IIS installation](/images/passwordsecure/9.1/installation/installation_web_application/installation-webclient-3-en.webp)
 
 Once all of the settings have been entered, the Web Application can be created via the corresponding
-button in the ribbon. When the ZIP archive containing the Web Application has been created, it is
+button in the ribbon. When the ZIP archive containing the Web Application has been created, it's
 copied to the previously defined directory (C:\inetpub\wwwroot as standard) and unzipped there to
 create a new directory.
 
@@ -35,9 +35,9 @@ The file config.bat can be found in the newly created Web Application directory 
 executed when logged on as the administrator. This will integrate the Web Application into the IIS
 web server.
 
-NOTE: If the system requirements have not been met, you will be informed that the URL Rewrite and/or
+NOTE: If the system requirements haven't been met, you'll be informed that the URL Rewrite and/or
 Application Request Routing modules need to be installed. In this case, follow the instructions on
-the wizard that will then immediately open. In addition, it is necessary to install the WebSocket
+the wizard that will then immediately open. In addition, it's necessary to install the WebSocket
 Protokoll. Afterwards, config.bat needs to be executed again.
 
 If the website has been correctly created, this will be correspondingly indicated by the
@@ -46,7 +46,7 @@ notification IIS page created.
 ![IIS-creating page](/images/passwordsecure/9.1/installation/installation_web_application/installation-webclient-4-en.webp)
 
 :::warning
-Following a successful installation, it is imperative that config.bat is deleted! The
+Following a successful installation, it's imperative that config.bat is deleted! The
 config.bat file should also not be used for an "update"
 :::
 

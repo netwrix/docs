@@ -17,7 +17,7 @@ Netwrix Password Secure App must be enabled.
 #### Autofill
 
 The login data is entered as soon as the app finds a corresponding mask on a web page or in an app.
-In some masks the process starts automatically, in others it is necessary to type in the first
+In some masks the process starts automatically, in others you must type in the first
 field.
 
 There are two possible scenarios.
@@ -35,7 +35,7 @@ first be selected.
 Exactly one password found
 
 If there is a data set that contains exactly the URL that is called up, the corresponding password
-can be suggested. A simple click on the password is then sufficient to pass the data to the website
+can be suggested. A simple click the password is then sufficient to pass the data to the website
 or app.
 
 Multiple passwords found

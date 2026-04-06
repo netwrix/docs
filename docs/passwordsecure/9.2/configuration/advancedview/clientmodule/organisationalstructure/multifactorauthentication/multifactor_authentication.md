@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Multifactor authentication
 
-## What is multifactor authentication?
+## Multifactor authentication overview
 
 By means of multifactor authentication, you can save the login – in addition to the password – with
 a further factor. Setting up a multifactor authentication can be done by either the administrator or
@@ -19,7 +19,7 @@ Manager. In the database module, open the settings for the selected database via
 
 ![database settings](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/multifactor_authentication_1-en.webp)
 
-It is possible to separately define in the settings whether it is permitted to use each interface on
+You can separately define in the settings whether it is permitted to use each interface on
 the database.
 
 ![multifactor authentication](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/multifactor_authentication_2-en.webp)
@@ -51,8 +51,8 @@ QR code is displayed, which must be scanned using the Google Authenticator app o
 
 ![google authenticator](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/multifactor_authentication_4-en.webp)
 
-Once the Google Authenticator app has detected the QR code, it will return a 6-digit PIN. You must
-then enter it in the appropriate field. Finally, click on **Create** in the ribbon.
+After the Google Authenticator app has detected the QR code, it will return a 6-digit PIN. You must
+then enter it in the appropriate field. Finally, click **Create** in the ribbon.
 
 ## RSA SecurID Token
 
@@ -84,7 +84,7 @@ The multifactor authentication can be deleted by the user himself or by another 
 authorization. The rights **Read**, **Write**, **Authorize** and **Delete** are required for another
 user to perform the deletion.
 
-In order to delete a file, you should go to the main menu. Under **Account** you will find the item
+To delete a file, you should go to the main menu. Under **Account** you will find the item
 **Multifactor Authentication**. An alternative way is to enter the management of multifactor
 authentication via the organisational structure. To do so, select the corresponding user and click
 on the **Multifactor Authentication** ribbon.

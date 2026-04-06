@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Database firewall
 
-## What is the database firewall?
+## Database firewall overview
 
-The database firewall enables you to regulate access to the database. A whitelist policy is used for
+The database firewall lets you regulate access to the database. A whitelist policy is used for
 this process. Firewall rules are used to allow access to the database in individual cases.
 
 #### Activating the firewall

@@ -9,7 +9,7 @@ sidebar_position: 30
 ## Available scripts
 
 The following scripts are supplied and can be directly used. In all scripts, a password is firstly
-selected in the upper section. This is not the password that will be reset on the target system.
+selected in the upper section. This isn't the password that will be reset on the target system.
 Instead, a user should be entered here that can complete the rest of the process on the target
 system. This password thus requires administrative rights to the target system.
 
@@ -32,7 +32,7 @@ changed. The **host name** – i.e. the target computer – and the **service na
 
 ![Service accounts scripts](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_3-en.webp)
 
-Please note that the **display name** for the **service** needs to be used.
+The **display name** for the **service** needs to be used.
 
 ![display name service](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_4-en.webp)
 

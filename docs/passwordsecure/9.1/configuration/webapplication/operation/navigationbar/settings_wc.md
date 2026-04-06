@@ -13,7 +13,7 @@ The following options are available:
 #### Language
 
 You can select German or English here by simply clicking on them. The change is made immediately and
-does not require you to restart the browser.
+doesn't require you to restart the browser.
 
 #### Extras
 
@@ -23,11 +23,11 @@ Here you have the possibility to manage templates for seals.
 
 **Tag management**
 
-The tag management allows you to manage the tags.
+The tag management lets you manage the tags.
 
 **Image management**
 
-With the image management, you can manage your icons and logos easily and quickly.
+With the image management, you can manage your icons and logos easily, and quickly.
 
 ![image management](/images/passwordsecure/9.1/configuration/web_application/operation/navigation_bar/settings/installation_with_parameters_179-en.webp)
 
@@ -43,7 +43,7 @@ After filling in and uploading the icon/logo, the process only needs to be saved
 
 **Edit / Delete icons and logos**
 
-If an icon and/or logo is outdated, you can edit or even delete the stored icons/logos.
+If an icon and/or logo is outdated, you can edit, or even delete the stored icons/logos.
 
 ![manage image](/images/passwordsecure/9.1/configuration/web_application/operation/navigation_bar/settings/installation_with_parameters_182-en.webp)
 
@@ -61,7 +61,7 @@ global
 and
 [User settings](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/usersettings/user_settings.md)
 
-The following settings are not available on the Web Application:
+The following settings aren't available on the Web Application:
 
 - Customizable window caption
 - Permitted document extensions
@@ -70,4 +70,4 @@ The following settings are not available on the Web Application:
 
 **Account**
 
-Here it is possible to change the password of the logged in user.
+Here it's possible to change the password of the logged in user.

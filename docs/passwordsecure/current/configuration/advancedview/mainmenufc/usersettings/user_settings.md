@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # User settings
 
-## What are user settings?
+## User settings overview
 
 There are many functions within Netwrix Password Secure that can be adapted to the needs of users.
 It is also possible to define various parameters for optical representations. This can be inherited
@@ -34,7 +34,7 @@ one of the following three ways:
    client settings.
 
 **CAUTION:** In addition to personal and global settings (as opposed to authorizations), settings
-are not assigned via roles, but via organisational units!
+aren't assigned via roles, but via organisational units!
 
 ![installation_with_parameters_112](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/user_rights/installation_with_parameters_112.webp)
 
@@ -53,7 +53,7 @@ present case, the users “Jones” and “Moore” inherit all settings from th
 
 ![inherit permissions](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/user_settings/installation_with_parameters_117-en.webp)
 
-The “Settings” button in the ribbon allows you to see the settings for both organisational units and
+The “Settings” button in the ribbon lets you see the settings for both organisational units and
 users. The many setting options can be restricted by the known
 [Search](/docs/passwordsecure/current/configuration/advancedview/operationandsetup/search.md) mechanisms.
 
@@ -69,7 +69,7 @@ NOTE: The inheritance for individual settings can be deactivated in the ribbon!
 ## Security levels
 
 Option groups were created in the global settings to ensure that users can control only those
-settings for which they hold permissions. Categorising security levels from 1 to 5 allows you to
+settings for which they hold permissions. Categorising security levels from 1 to 5 lets you 
 combine similar options and thus make them available to the users.
 
 ![user settings](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/user_settings/installation_with_parameters_119-en.webp)

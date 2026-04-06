@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # License settings
 
-## What are license settings?
+## License settings overview
 
 Licenses for the Netwrix Password Secure are managed within the license settings. In addition, all
 current license details are displayed in the window provided for this purpose.
@@ -15,8 +15,7 @@ current license details are displayed in the window provided for this purpose.
 
 ## Licenses
 
-**CAUTION:** Version 7 licenses cannot be used for Netwrix Password Secure version 9. “Please
-contact us”: http: //www.passwordsafe.de to obtain a version 9 license.
+**CAUTION:** Version 7 licenses can't be used for Netwrix Password Secure version 9. Contact Netwrix at http://www.passwordsafe.de to obtain a version 9 license.
 
 Licenses are linked via the Netwrix license server. Here are the details:
 
@@ -27,7 +26,7 @@ Licenses are linked via the Netwrix license server. Here are the details:
 Ensure that this server is accessible. You may also use Proxy servers. The license is retrieved from
 the server and stored in the server configuration. The license will be checked every hour, and
 updated as required. The retention time is 30 days. If there is no internet connection, you can
-continue to work for 30 days. If this period should cause problems, please contact us.
+continue to work for 30 days. If this period should cause problems, contact Netwrix support.
 
 #### Integrating and managing licenses
 
@@ -44,7 +43,7 @@ connection problems, the firewall and, if relevant, the proxy should be checked.
 
 #### How to activate the license via license file
 
-1. Transition the file attached to this email to the Netwrix Password Secure Server(s).
+1. Transition the file attached to this email to the Netwrix Password Secure servers.
 2. Open the Netwrix Password Secure Server Manager.
 3. Open the main menu and select the License settings area.
 4. Open the License file tab.

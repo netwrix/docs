@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Multifactor Authentication
 
-## What is multifactor authentication?
+## Multifactor authentication overview
 
 Multifactor authentication is used to secure the logon to the by an additional factor. The actual
 setup takes place in the client. The configured en can then be used by any user

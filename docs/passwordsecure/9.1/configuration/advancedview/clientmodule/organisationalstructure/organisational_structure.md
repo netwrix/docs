@@ -6,14 +6,14 @@ sidebar_position: 40
 
 # Organisational structure
 
-## What are organisational structures?
+## Organisational structures overview
 
 The storage of passwords or documents always takes place according to the defined organisational
 structures. The module enables complex structures to be defined, which later form the basis for the
-systematic storage of data. It is often possible to define them on the basis of already existing
-organization diagrams for the company or department. It is also possible to use other criteria, such
-as the function / activity performed, as the basis for creating hierarchies. It is always up to the
-customer themselves to decide which structure is most useful for the purpose of the application.
+systematic storage of data. It's often possible to define them on the basis of already existing
+organization diagrams for the company or department. It's also possible to use other criteria, such
+as the function / activity performed, as the basis for creating hierarchies. It's always up to the
+customer themselves to decide which structure is most useful for the application.
 
 ![Organizational structure modul](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/organizational_structures_1-en.webp)
 
@@ -35,10 +35,10 @@ remaining actions have already be explained for the password module.
 ![create new user/organisational unit](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/organizational_structures_2-en.webp)
 
 - **New organisational unit/user**: New organisational units or new users can be added via the
-  ribbon, the keyboard shortcut "CTRL + N" or also the context menu that is accessed using the right
-  mouse button. Due to its complexity, there is a separate section for this function:
+  ribbon, the keyboard shortcut "CTRL + N" or also the context menu that's accessed using the right
+  mouse button. Due to its complexity, there's a separate section for this function:
   [User management](/docs/passwordsecure/9.1/configuration/webapplication/functionalscope/organisationalstructure/user_management.md)
-- **Drag & Drop**: If this option has been activated, it is possible to move users or organisational
+- **Drag & Drop**: If this option has been activated, it's possible to move users or organisational
   units in list view via drag & drop
 - **Permissions**: The configuration of permissions within the organisational structure is important
   both for the administration of the structure and also as the basis for the permissions in
@@ -69,12 +69,12 @@ The example below shows the configuration of a user where only the user themselv
 
 ![permission for user](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/organizational_structures_3-en.webp)
 
-This configuration means that the user password cannot be reset by administrators. The disadvantage
-is that if the password is lost there is no technical solution for "resetting" the password in the
+This configuration means that the user password can't be reset by administrators. The disadvantage
+is that if the password is lost there's no technical solution for "resetting" the password in the
 system.
 
 :::warning
-It is not recommended to configure the permissions so that only the user themselves has
+It isn't recommended to configure the permissions so that only the user themselves has
 membership. No other interventions can be made if the password is then lost.
 :::
 
@@ -90,7 +90,7 @@ wizards. The example below shows the creation of a new organisational unit:
 ![Add new organisational unit](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/organizational_structures_4-en.webp)
 
 - **Allocated organisational unit**: If the new object is defined as a **main organisational unit**,
-  it is not allocated to an existing organisational unit
+  it isn't allocated to an existing organisational unit
 - **Rights template group**: If an already existing organisational unit was selected under
   "allocated organisational unit", you can select one of the existing rights template groups.
 
@@ -101,15 +101,15 @@ fields "allocated organisational unit" and also "rights template".
 
 ![Create role](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/organizational_structures_5-en.webp)
 
-When creating a new organisational unit, the second tab in the wizard enables you to directly create
-a new role. This role will not only be created but also given "read permission" to the newly created
+When creating a new organisational unit, the second tab in the wizard lets you directly create
+a new role. This role won't only be created but also given "read permission" to the newly created
 organisational unit.
 
 ### Configuring rights
 
 ![Configuring rights](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/organizational_structures_6-en.webp)
 
-The third tab of the wizard allows you to define the permissions for the newly created
+The third tab of the wizard lets you define the permissions for the newly created
 organisational unit. If an allocated organisational unit or a rights template group was defined in
 the first tab, the new organisational unit will inherit its permissions. These permissions can be
 adapted if desired.

@@ -6,8 +6,8 @@ sidebar_position: 80
 
 # SDK / API
 
-API: This interface can be used to "address Netwrix Password Secure externally" in order to, for
-example, read data for other programs. The API can only be accessed via our wrappers (SDK) using C#
+API: This interface can be used to "address Netwrix Password Secure externally" to, for
+example, read data for other programs. The API can only be accessed via the wrappers (SDK) using C#
 and JavaScript.
 
 In the JavaScript version of the API, all enums can be found under the global object "PsrApiEnums".
@@ -26,9 +26,9 @@ Server, i.e. `app-server01:11016`, must be used directly.
 
 ## Login
 
-If you do not log in to the system in advance, it is not possible to use the API. The first
+If you don't log in to the system in advance, it isn't possible to use the API. The first
 parameter for the login method is the desired database, followed by the user name and password. It
-is important to note that all methods for running the API that initiate a server call are
+is important to All methods for running the API that initiate a server call are
 implemented asynchronously. “Task” objects are returned in C# and “Promise” objects are returned in
 JavaScript.
 

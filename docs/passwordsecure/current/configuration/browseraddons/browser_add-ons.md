@@ -10,10 +10,10 @@ Passwords can also be used in the browser using the browser add-on. You can sear
 the add-on, transfer them to the clipboard or enter them in the input mask of the website
 automatically. The automatic login may require applications.
 
-In order to provide the data, the add-on needs a connection to the database. This can be set up
+To provide the data, the add-on needs a connection to the database. This can be set up
 directly in server mode.
 
-Currently, add-ons are available for the following browsers:
+, add-ons are available for the following browsers:
 
 - Microsoft Edge
 - Google Chrome
@@ -23,7 +23,7 @@ Currently, add-ons are available for the following browsers:
 
 ## Installation
 
-Please find more information about the installation on: Installation Browser Add-ons
+ find more information about the installation on: Installation Browser Add-ons
 
 ## Connection via server mode
 
@@ -42,7 +42,7 @@ The server mode must know which database profile it is connected to. There are t
 up a database profile:
 
 First, the database profile can be created manually. Therefore, he following information is
-required: IP address, Web Application URL and database name. Please note that /api is appended to
+required: IP address, Web Application URL and database name. /api is appended to
 the end of the IP address.
 
 ![database profil](/images/passwordsecure/9.2/configuration/browseradd-ons/manual-database-profile-en.webp)
@@ -60,8 +60,8 @@ The server mode offers the following advantages:
 
 - No terminal service is required in terminal server operation
 
-**CAUTION:** Please note that SSO applications only work via Autofill Add-on. If you are in server
-mode and the Autofill Add-on has not been started, SSO applications do not work!
+**CAUTION:** SSO applications only work via Autofill Add-on. If you are in server
+mode and the Autofill Add-on has not been started, SSO applications don't work!
 
 After successful connection, the number of data records available for the current Internet page is
 displayed on the icon.
@@ -83,7 +83,7 @@ direct impact on the add-ons and can be found in the SSO category:
 The default browser option also has an impact on the add-ons. This setting defines the browser in
 which the websites are opened from the client.
 
-NOTE: It is important to note that the login mask for records with password masking will be ”sent
+NOTE: Mask for records with password masking will be ”sent
 automatically\*, even if the setting Browser add-ons: Automatically send login masks has been
 deactivated.
 
@@ -103,8 +103,8 @@ Secure – as described in the following section.
 
 ## Search and navigation
 
-It is currently assumed that the user has to navigate manually to the website on which they want to
-automatically enter login data. This way of working is possible but is not convenient enough. The
+It is assumed that the user has to navigate manually to the website on which they want to
+automatically enter login data. This way of working is possible but isn't convenient enough. The
 add-on can be used in a similar way to bookmarks. The search field can be used to search for the
 record in the database. The prerequisite is again that the record contains a URL.
 

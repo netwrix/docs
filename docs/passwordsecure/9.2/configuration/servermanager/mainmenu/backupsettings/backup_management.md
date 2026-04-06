@@ -8,7 +8,7 @@ sidebar_position: 10
 
 #### Introduction
 
-Regular backups of the data should always be part of every security concept. If you wish to create
+Regular backups of the data should always be part of every security concept. If you want to create
 backups directly on the SQL server, you should also include the Netwrix Password Secure databases.
 If no central backups are carried out at the SQL level, you can create backup profiles using the
 Server Manager. The backups themselves will then be generated on the SQL Server.
@@ -21,7 +21,7 @@ beginning will be saved. This saves both time and memory capacity.
 
 #### Backup concept
 
-It is recommended that an incremental backup is run every hour. In addition, a full backup should be
+Netwrix recommends that an incremental backup is run every hour. In addition, a full backup should be
 created once a week.
 
 #### Managing the backup schedule
@@ -45,7 +45,7 @@ backups will be created in future. An end date can be optionally entered.
 
 In the advanced settings, you can configure whether the backup should be activated directly. It is
 also possible to specify whether to create incremental backups. If the date and time are added to
-the file name, a new backup is created with each run. If this is not done, the last backup is always
+the file name, a new backup is created with each run. If this isn't done, the last backup is always
 overwritten. The service user can be used to create the backup or a service user can be specified
 with a corresponding name and password.
 
@@ -59,8 +59,8 @@ Backup run
 
 The backups are executed by the SQL server in the background. If an error occurs, this is indicated
 in “orange” in the backup list. Information about any errors issued by the SQL server is displayed
-under all backups. A backup will be automatically deactivated if it does not run 5x in a row. This
-will be marked in the list in red. The schedule cannot be reactivated directly. You will need to
+under all backups. A backup will be automatically deactivated if it doesn't run 5x in a row. This
+will be marked in the list in red. The schedule can't be reactivated directly. You will need to
 open it and amend it.
 
 Other backup actions
@@ -79,7 +79,7 @@ existing databases. Firstly, select the required database. You can now select In
 
 If necessary, firstly enter login data for the user that logs in to the SQL server – although the
 service user is generally used here. Now select the backup file. All the backups contained in the
-file will then be displayed. Now simply click on Restore to restore the backup to the existing
+file will then be displayed. Now simply click Restore to restore the backup to the existing
 database.
 
 ![Database restore](/images/passwordsecure/9.2/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_261-en.webp)

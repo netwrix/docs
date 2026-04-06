@@ -46,7 +46,7 @@ How to use the HTML WebViewer can be read in the chapter with the same name.
 NOTE: The special feature of the Emergency WebViewer is that the stored OTP secret is also
 displayed.
 
-In order to use the One-Time-Password in the
+To use the One-Time-Password in the
 [EmergencyWebViewer](/docs/passwordsecure/current/configuration/advancedview/mainmenufc/extras/systemtasks/emergency_webviewer.md)
 you have to proceed as follows:
 

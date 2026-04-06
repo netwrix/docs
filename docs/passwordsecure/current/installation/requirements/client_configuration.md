@@ -8,7 +8,7 @@ sidebar_position: 30
 
 #### System Components
 
-NOTE: Our Windows Application (Win App) is not available for MSP-customers!
+NOTE: The Windows Application (Win App) isn't available for MSP-customers!
 
 |                             |                                     |                        |
 | --------------------------- | ----------------------------------- | ---------------------- |

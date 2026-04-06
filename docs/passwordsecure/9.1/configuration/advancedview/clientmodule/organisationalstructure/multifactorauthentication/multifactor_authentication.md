@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Multifactor authentication
 
-## What is multifactor authentication?
+## Multifactor authentication overview
 
 By means of multifactor authentication, you can save the login – in addition to the password – with
 a further factor. Setting up a multifactor authentication can be done by either the administrator or
@@ -19,25 +19,25 @@ Manager. In the database module, open the settings for the selected database via
 
 ![database settings](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/multifactor_authentication_1-en.webp)
 
-It is possible to separately define in the settings whether it is permitted to use each interface on
+It's possible to separately define in the settings whether it's permitted to use each interface on
 the database.
 
 ![multifactor authentication](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/multifactor_authentication_2-en.webp)
 
 ### Other settings
 
-In the user settings, it is also possible to define the "Length of validity of a multifactor
+In the user settings, it's also possible to define the "Length of validity of a multifactor
 authentication token" in minutes.
 
 NOTE: In order for a user (administrator) to be able to **configure** multifactor authentication for
-other users, the user must have the rights **read**, **write**, **delete** and **authorize**. It is
+other users, the user must have the rights **read**, **write**, **delete** and **authorize**. It's
 important that these rights exist before Multifactor Authentication is set up.
 
 ## Configuration of multifactor authentication
 
 In the
 [Organisational structure](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/organisationalstructure/organisational_structure.md)
-module, you select the user and the interface "Multifactor authentication" in the ribbon.
+module, you select the user, and the interface "Multifactor authentication" in the ribbon.
 
 ![TOTP](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/multifactor_authentication_3-en.webp)
 
@@ -52,12 +52,12 @@ QR code is displayed, which must be scanned using the Google Authenticator app o
 
 ![google authenticator](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/multifactor_authentication_4-en.webp)
 
-Once the Google Authenticator app has detected the QR code, it will return a 6-digit PIN. You must
-then enter it in the appropriate field. Finally, click on **Create** in the ribbon.
+After the Google Authenticator app has detected the QR code, it'll return a 6-digit PIN. You must
+then enter it in the appropriate field. Finally, click **Create** in the ribbon.
 
 ## RSA SecurID Token
 
-To set up multifactor authentication using RSA SecurID, simply enter the RSA user name and click
+To set up multifactor authentication using RSA SecurID, simply enter the RSA user name, and click
 **Create** directly in the ribbon.
 
 ![RSA SecurID Token](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/multifactorauthentication/multifactor_authentication_5-en.webp)
@@ -85,10 +85,10 @@ The multifactor authentication can be deleted by the user himself or by another 
 authorization. The rights **Read**, **Write**, **Authorize** and **Delete** are required for another
 user to perform the deletion.
 
-In order to delete a file, you should go to the main menu. Under **Account** you will find the item
+To delete a file, you should go to the main menu. Under **Account** you'll find the item
 **Multifactor Authentication**. An alternative way is to enter the management of multifactor
-authentication via the organisational structure. To do so, select the corresponding user and click
+authentication via the organisational structure. To do so, select the corresponding user, and click
 on the **Multifactor Authentication** ribbon.
 
-In the administration of the multi-factor authentication you will then find in the ribbon the
+In the administration of the multi-factor authentication you'll then find in the ribbon the
 possibility to delete the stored MFA.

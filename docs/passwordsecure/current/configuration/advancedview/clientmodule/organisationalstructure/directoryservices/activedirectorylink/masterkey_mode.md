@@ -63,7 +63,7 @@ NOTE: In the case of already created profiles, the encryption can no longer be c
     - Sealing
 
 NOTE: The first two options are already activated by default when configuring a new profile. If a
-connection is not possible, deactivate SecureSocketsLayer and try again.
+connection isn't possible, deactivate SecureSocketsLayer and try again.
 
 - **Other responsible users or roles** can be used to define who is permitted to carry out the
   synchronization with the AD.
@@ -77,7 +77,7 @@ generated certificate! If the database is being moved to another server, the cer
 to be transferred! Further information can be found in the section
 [Certificates](/docs/passwordsecure/current/configuration/servermanager/certificates/certificates.md).
 
-NOTE: You can now use the option to integrate a RADIUS server. Read more in
+NOTE: You can now use the option to integrate a RADIUS server. See
 [RADIUS authentication](/docs/passwordsecure/current/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/radius_authentication.md).
 
 ## Import
@@ -118,7 +118,7 @@ selection of the individual elements.
 
 ![select subjects](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/directoryservices/activedirectorylink/end_to_end_encryption_5-en.webp)
 
-NOTE: If individual users cannot be selected for import, they have already been imported via an
+NOTE: If individual users can't be selected for import, they have already been imported via an
 end-to-end encrypted profile.
 
 In the lower area you can specify whether the users just selected for import should be created as
@@ -143,7 +143,7 @@ this is symbolized by a hint.
 
 ## Imported users and organisational units
 
-The users and organisational units imported in Masterkey mode cannot be edited in Netwrix Password
+The users and organisational units imported in Masterkey mode can't be edited in Netwrix Password
 Secure. Therefore, any changes must be made in AD and synchronized. AD thus becomes the leading
 system. Affiliations to roles are also synchronized and must be set in the AD. In organisational
 units or roles created in Netwrix Password Secure, the users can be included directly in Netwrix
@@ -176,18 +176,18 @@ roles already exist in Netwrix Password Secure or have also been imported.
 
 ## Logging into Netwrix Password Secure
 
-Users who are imported using this mode can log in with the domain password. Please note that no
+Users who are imported using this mode can log in with the domain password. No
 domain needs to be specified when logging in. Of course, the login process can also be supplemented
 with
 [Multifactor Authentication](/docs/passwordsecure/current/configuration/servermanager/managingdatabases/databasesettings/multifactor_authentication_ac.md).
 
 NOTE: Logging on using Kerberos works "automatically". As long as the corresponding Kerberos server
 is accessible, the users in the domain authenticate themselves via Kerberos using their domain
-password. If the logon via Kerberos does not work – e.g. due to incorrect configuration of the
+password. If the logon via Kerberos doesn't work – e.g. due to incorrect configuration of the
 domain controller – the logon via the NTLM protocol is attempted. However, these are all settings
 that have to be made on the domain controller and have nothing to do with Netwrix Password Secure.
 
-**CAUTION:** Logging on to Netwrix Password Secure using SSO via Kerberos is currently not possible.
+**CAUTION:** Logging on to Netwrix Password Secure using SSO via Kerberos isn't possible.
 
 ## Permissions to imported objects
 
@@ -213,7 +213,7 @@ or deactivated according to the settings in the AD. If the membership of organis
 be changed, this can be done by **Drag & Drop**. New users and correspondingly defined roles are
 imported.
 
-NOTE: If the tick was not set in the Synchronization column when a user is imported, no changes are
+NOTE: If the tick wasn't set in the Synchronization column when a user is imported, no changes are
 made.
 
 ### Manual synchronization

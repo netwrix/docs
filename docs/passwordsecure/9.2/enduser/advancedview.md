@@ -8,7 +8,7 @@ sidebar_position: 50
 
 Curious about how you can manage your team in Netwrix Password Secure?
 
-Learn more about how to …
+With the Advanced view, you can:
 
 - Share passwords masked / only for a limited time (i.e. with working students or interns)
 - Separately authorize the disclosure of passwords

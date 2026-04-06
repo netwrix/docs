@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # User management
 
-## How are the users managed in the Web Application?
+## User management in the Web Application
 
 The user management strongly depends on whether the Active Directory has been connected or not. In
 Master Key mode, the Active Directory remains the leading system. In all other modes, the user

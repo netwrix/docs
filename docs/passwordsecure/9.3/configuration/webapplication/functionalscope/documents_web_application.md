@@ -6,7 +6,7 @@ sidebar_position: 90
 
 # Documents
 
-The following functions are currently available in the **Document module:**
+The following functions are available in the **Document module:**
 
 - New  
   New document can be added in the following ways:  

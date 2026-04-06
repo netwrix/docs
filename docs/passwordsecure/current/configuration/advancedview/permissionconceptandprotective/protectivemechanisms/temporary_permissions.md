@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Temporary permissions
 
-## What are temporary permissions?
+## Temporary permissions overview
 
-So far, we have covered permissions that were valid for an unlimited period. However, a permission
+So far, Password Secure has covered permissions that were valid for an unlimited period. However, a permission
 can also be granted in advance with a time restriction. Examples are users who stay in the company
 for a limited time, such as interns or trainees.
 
@@ -43,5 +43,5 @@ configurations. Conceivable constellations include a situation when the only use
 only has temporary permissions. When these permissions expire, there is no longer any user with full
 permissions. To prevent this happening, users with temporary permissions are handled differently.
 
-**CAUTION:** There must always be one user who has the “authorize” right to a record, who does not
+**CAUTION:** There must always be one user who has the “authorize” right to a record, who doesn't
 only have temporary permissions.

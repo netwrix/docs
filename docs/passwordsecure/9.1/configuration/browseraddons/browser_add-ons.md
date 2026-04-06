@@ -7,13 +7,13 @@ sidebar_position: 50
 # Browser Add-ons
 
 Passwords can also be used in the browser using the browser add-on. You can search for passwords in
-the add-on, transfer them to the clipboard or enter them in the input mask of the website
+the add-on, transfer them to the clipboard, or enter them in the input mask of the website
 automatically. The automatic login may require applications.
 
-In order to provide the data, the add-on needs a connection to the database. This can be set up
+To provide the data, the add-on needs a connection to the database. This can be set up
 directly in server mode.
 
-Currently, add-ons are available for the following browsers:
+add-ons are available for the following browsers:
 
 - Microsoft Edge
 - Google Chrome
@@ -24,7 +24,7 @@ Currently, add-ons are available for the following browsers:
 
 ## Installation
 
-Please find more information about the installation on: Installation Browser Add-ons
+find more information about the installation on: Installation Browser Add-ons
 
 ## Connection via server mode
 
@@ -39,16 +39,16 @@ If the icon is displayed as shown, it means that although the add-on has been in
 
 ## Database profiles
 
-The server mode must know which database profile it is connected to. There are two ways of setting
+The server mode must know which database profile it's connected to. There are two ways of setting
 up a database profile:
 
 First, the database profile can be created manually. Therefore, he following information is
-required: IP address, Web Application URL and database name. Please note that /api is appended to
+required: IP address, Web Application URL, and database name. The /api path is appended to
 the end of the IP address.
 
 ![database profil](/images/passwordsecure/9.1/configuration/browseradd-ons/manual-database-profile-en.webp)
 
-It is also possible that the database profile is filled out automatically. For this, you need to log
+It's also possible that the database profile is filled out automatically. For this, you need to log
 on to a database via Web Application. By clicking on the add-on in the Web Application, its profile
 can be taken over. Now all necessary information such as profile name, IP address, Web Application
 and database name are transferred.
@@ -62,8 +62,8 @@ The server mode offers the following advantages:
 - No terminal service is required in terminal server operation
 
 :::warning
-Please note that SSO applications only work via Autofill Add-on. If you are in server
-mode and the Autofill Add-on has not been started, SSO applications do not work!
+SSO applications only work via Autofill Add-on. If you're in server
+mode and the Autofill Add-on hasn't been started, SSO applications don't work!
 :::
 
 
@@ -79,7 +79,7 @@ can be used to enter them globally per organisational unit or per user. The foll
 direct impact on the add-ons and can be found in the SSO category:
 
 - Browser add-ons: Automatically send login masks ensures that the login is automatically completed
-  after the access data has been entered. It is thus not necessary to click the relevant button
+  after the access data has been entered. It's thus not necessary to click the relevant button
   manually
 - About browser add-ons: Automatically fill login masks ensures that access data is entered without
   the need for any confirmation when a website is recognised.
@@ -87,7 +87,7 @@ direct impact on the add-ons and can be found in the SSO category:
 The default browser option also has an impact on the add-ons. This setting defines the browser in
 which the websites are opened from the client.
 
-NOTE: It is important to note that the login mask for records with password masking will be ”sent
+NOTE: The login mask for records with password masking will be ”sent
 automatically\*, even if the setting Browser add-ons: Automatically send login masks has been
 deactivated.
 
@@ -107,8 +107,8 @@ Secure – as described in the following section.
 
 ## Search and navigation
 
-It is currently assumed that the user has to navigate manually to the website on which they want to
-automatically enter login data. This way of working is possible but is not convenient enough. The
+It's assumed that the user has to navigate manually to the website on which they want to
+automatically enter login data. This way of working is possible but isn't convenient enough. The
 add-on can be used in a similar way to bookmarks. The search field can be used to search for the
 record in the database. The prerequisite is again that the record contains a URL.
 

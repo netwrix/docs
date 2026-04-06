@@ -23,12 +23,12 @@ differs according to the type of user.
   migration.
 - **AD users in Master Key mode** These users log in directly with access data for the domain. It is
   thus not necessary to assign them a password. As these users directly authenticate themselves via
-  Active Directory, the currently saved password in Active Directory is thus always valid. These
+ Active Directory, the saved password in Active Directory is thus always valid. These
   users can still directly log in using the existing password even after a migration
 
 ### Required rights
 
-Various rights are required in order to issue or change user passwords. One prerequisite is the user
+Various rights are required to issue or change user passwords. One prerequisite is the user
 right **Can display organisational structure module**. **Read** and **write** rights for the user
 are also required. Finally, membership of the user is required. Normally, the user themselves and
 the user who created or imported the user have the right to change their password.
@@ -38,7 +38,7 @@ the user who created or imported the user have the right to change their passwor
 ### Assigning and changing passwords
 
 As already explained, local users are directly assigned their initial password when the user is
-created. The situation is different for users that are imported in end-to-end mode. They do not
+created. The situation is different for users that are imported in end-to-end mode. They don't
 possess a password directly after the import and can thus not log in. It is thus necessary to assign
 passwords after the import.
 
@@ -59,7 +59,7 @@ automatically deactivated after the user has successfully logged in and changed 
 
 ### Security of passwords
 
-To guarantee that passwords are sufficiently strong, it is recommended that corresponding
+To guarantee that passwords are sufficiently strong, Netwrix recommends that corresponding
 [Password rules](/docs/passwordsecure/current/configuration/advancedview/mainmenufc/extras/password_rules.md) are created. It is
 especially important to ensure here that user names are excluded. The password rule then still needs
 to be defined as a user password rule.

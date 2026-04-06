@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Apache
 
-In order to integrate the Web Application onto an Apache server, it is first necessary to enter all
+To integrate the Web Application onto an Apache server, it's first necessary to enter all
 of the relevant settings:
 
 ## Document directory
@@ -16,11 +16,11 @@ The folder from which the Web Application should be operated is entered here. Th
 
 ## SSL certificate path
 
-It is necessary to enter the directory in which the certificate will be saved here.
+It's necessary to enter the directory in which the certificate will be saved here.
 
 ## SSL certificate key path
 
-Finally, it is necessary to enter where the certificate key is located here.
+Finally, it's necessary to enter where the certificate key is located here.
 
 ![apache-en](/images/passwordsecure/9.1/installation/installation_web_application/apache-en.webp)
 
@@ -33,10 +33,10 @@ Manager.
 
 ![apache-en-2](/images/passwordsecure/9.1/installation/installation_web_application/apache-en-2.webp)
 
-The configuration can be selected using CTRL+A and copied. It is then directly integrated onto the
+The configuration can be selected using CTRL+A and copied. It's then directly integrated onto the
 Apache server.
 
-NOTE: The configuration of the Apache server is always individual. Therefore, it is only possible to
+NOTE: The configuration of the Apache server is always individual. Therefore, it's only possible to
 roughly describe the process for a standard installation.
 
 ## Standard configuration

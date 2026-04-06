@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Password rules
 
-## What are password rules?
+## Password rules overview
 
 It is generally recommended that passwords should consist of at least 12 different characters, be
 complex and be automatically created. Rules set guidelines that can be made binding for users –
@@ -26,7 +26,7 @@ User right
 ## Managing password rules
 
 If “Password rules” is selected under Main menu/Extras, the available password rules will appear in
-a separate tab in the currently active module.
+a separate tab in the active module.
 
 ![installation_with_parameters_98](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/password_rules/installation_with_parameters_98.webp)
 
@@ -39,7 +39,7 @@ configuration for this rule:
   to contain according to this rule. The required Password quality is an internal measure of
   security, which is calculated for this rule. This value always lies between 1 (very unsecure) and
   100 (maximum security).
-- **Categories:** A password can consist of a total of four categories. It is possible to define
+- **Categories:** A password can consist of a total of four categories. you can define
   which of these categories to use and also how many of them to use.
 - **Forbidden characters**: It is also possible to exclude some special characters. These characters
   need to be entered in the list without separators.
@@ -57,7 +57,7 @@ Once password rules have been defined, they can be productively used in two diff
 
 When a password field is defined in a form, one of the defined password rules can be set as the
 default. This means that the default will always be used when a new password is created. In this
-way, it is possible to ensure that the required level of complexity is maintained for certain
+way, you can ensure that the required level of complexity is maintained for certain
 passwords.
 
 ![installation_with_parameters_99](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/password_rules/installation_with_parameters_99.webp)
@@ -70,13 +70,13 @@ field is used for this purpose.
 
 ## Defining standard rules for user passwords
 
-If Master Key mode is not being used, users can change their passwords in Netwrix Password Secure.
+If Master Key mode isn't being used, users can change their passwords in Netwrix Password Secure.
 The administrator can define the password strength required for these passwords by using standard
 password rules.
 
 ## Visibility
 
-The password rules themselves are not subject to any permissions. All defined rules are therefore
+The password rules themselves aren't subject to any permissions. All defined rules are therefore
 available to all users. The rules are managed from the Main menu.
 
 NOTE: Users can only manage the rules if they have the appropriate user right

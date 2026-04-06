@@ -9,14 +9,14 @@ sidebar_position: 10
 ## Maximum encryption
 
 [Active Directory link](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/active_directory_link.md)
-with active end-to-end encryption currently offers **maximum security**. Only users, organisational
+with active end-to-end encryption offers **maximum security**. Only users, organisational
 units and roles are imported. The permissions and the hierarchical relationship between the
 individual objects needs to be separately configured in Netwrix Password Secure. The advantage
 offered by end-to-end encryption is that Active Directory is “defused” as a possible insecure
 gateway. In Master Key mode, users who control Active Directory receive de facto complete access to
-all passwords because resetting a Windows user name enables users to log in under another person’s
+all passwords because resetting a Windows user name lets users log in under another person’s
 name. Active Directory is thus the leading system. **Using an active E2EE connection, users require
-their own password for Netwrix Password Secure**. There is thus no access to users’ data via Active
+their own password for Netwrix Password Secure**. There's thus no access to users’ data via Active
 Directory.
 
 ## Relevant rights
@@ -42,7 +42,7 @@ must have access to the AD.
 
 - The relevant **user password** (domain password) is required for the user mentioned above
 - **Direct search** is recommended for very large domain trees. The representation of the tree
-  structure is omitted, elements can only be found and selected via the search.
+  structure is omitted, elements can only be found, and selected via the search.
 - The **filter** can be used to directly specify an AD path as an entry point via an LDAP query.
 - Various security options – so-called AuthenticationTypes Enumeration – can be selected for the
   connection of the AD to Netwrix Password Secure:
@@ -73,16 +73,16 @@ organisational units and/or users for the import. A search is available for this
 ![Import wizard/AD objects](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/directoryservices/activedirectorylink/end_to_end_encryption_4-en.webp)
 
 It can be seen that the organisational units **Jupiter** and **Contoso** contain items to be
-imported. The organisational units themselves will not be imported. The check next to the group
+imported. The organisational units themselves won't be imported. The check next to the group
 **Accounting** indicates that the group itself will be imported along with some of its sub-elements.
 
 There are different symbols which indicate the elements to be imported.
 
 - The element itself and all possible sub-elements will be imported
 - The element itself and some of its sub-elements will be imported
-- The element will not be imported; however, it contains elements that will be imported
+- The element won't be imported; however, it contains elements that will be imported
 
-A context menu that is accessed using the right mouse button is available within the list that
+A context menu that's accessed using the right mouse button is available within the list that
 provides helpful functions for selecting the individual elements.
 
 ![context menu](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/directoryservices/activedirectorylink/end_to_end_encryption_5-en.webp)
@@ -91,12 +91,12 @@ provides helpful functions for selecting the individual elements.
 - Deselect sub-objects removes tags from all sub-objects that are located directly below the current
   object
 - Reset all items removes all previously set tags
-- Display element details lists all information that is available for the current element
+- Display element details lists all information that's available for the current element
 
 In the lower area you can specify whether the users just selected for import should be created as
 **Light** or **Advanced User (View)**s.
 
-NOTE: If individual users, organisational units, or roles cannot be selected for import, they have
+NOTE: If individual users, organisational units, or roles can't be selected for import, they have
 already been imported via another profile
 
 ## Summary
@@ -114,12 +114,12 @@ NOTE: Depending on the amount of data, it may take several minutes to create the
 
 The import itself is carried out by the server in the background. The individual elements then
 appear in the list one by one. This may take some time, depending on the amount of import data. If
-the import is terminated, you will receive a confirmation.
+the import is terminated, you'll receive a confirmation.
 
 ![confirmation](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/directoryservices/activedirectorylink/end_to_end_encryption_7-en.webp)
 
-NOTE: As end-to-end encryption is retained in this mode, the server does not receive a key to match
-already imported users with the AD. There is thus no synchronization with the AD. Similarly, no
+NOTE: As end-to-end encryption is retained in this mode, the server doesn't receive a key to match
+already imported users with the AD. There's thus no synchronization with the AD. Similarly, no
 memberships can be imported. After the import, users must be manually assigned to the appropriate
 organisational units and roles.
 
@@ -155,7 +155,7 @@ NOTE: In end-to-end mode, **no role affiliations** are issued during the import 
 
 ## Logging into Netwrix Password Secure
 
-Users imported in this mode can not login with the domain password. Rather, a password is generated
-during import. This password is sent to the users by e-mail. If a user has not entered an e-mail
+Users imported in this mode can't log in with the domain password. Rather, a password is generated
+during import. This password is sent to the users by e-mail. If a user hasn't entered an e-mail
 address, the user name is entered as the password. The initial password can be changed by the
 administrator or the user himself at the first login.

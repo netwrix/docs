@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Settings
 
-As soon as you are logged in to the **Netwrix Password Secure App**, you can access the **settings**
+As soon as you're logged in to the **Netwrix Password Secure App**, you can access the **settings**
 via the three dots at the very top left of the screen. These will be briefly explained here.
 
 ![MobileApp - settings](/images/passwordsecure/9.1/configuration/mobiledevices/settings/settings-ma-en.webp)
@@ -16,7 +16,7 @@ via the three dots at the very top left of the screen. These will be briefly exp
 
 **Hide personal tab**
 
-In some use cases personal passwords are not needed on the mobile device. If this is the case you
+In some use cases personal passwords aren't needed on the mobile device. If this is the case you
 can hide the tab with the personal passwords.
 
 **Show all passwords in search tab**
@@ -41,10 +41,10 @@ Automatic logout from the app can be enabled and configured here.
 
 How to synchronize with the main database is configured here. The following options are available:
 
-- **Any type of connection:** as long as there is a connection, synchronization will take place. No
-  matter if it is a WLAN connection or a connection via the mobile network.
-- **Only for WLAN connection:** Synchronization only takes place if there is a connection via WLAN.
-- **Disabled:** It is not synchronized
+- **Any type of connection:** as long as there's a connection, synchronization will take place. No
+  matter if it's a WLAN connection or a connection via the mobile network.
+- **Only for WLAN connection:** Synchronization only takes place if there's a connection via WLAN.
+- **Disabled:** It isn't synchronized
 
 NOTE: Costs may be incurred for synchronization via the mobile network!
 

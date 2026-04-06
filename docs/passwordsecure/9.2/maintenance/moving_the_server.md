@@ -8,12 +8,12 @@ sidebar_position: 20
 
 ## Preparations
 
-It is necessary to make some preparations so that the move can be completed without any problems.
+You must make some preparations so that the move can be completed without any problems.
 
 #### 1. Installing the SQL server
 
 If the SQL server and the application server are on the same machine, the SQL server should be
-installed on the new machine first. It is necessary to observe the
+installed on the new machine first. you must observe the
 [MSSQL Server](/docs/passwordsecure/9.2/installation/requirements/mssql_server.md) for this process.
 
 #### 2. Installing the server
@@ -28,7 +28,7 @@ is described under
 After the server has been installed, the
 [Basic configuration](/docs/passwordsecure/9.2/configuration/servermanager/basic_configuration.md) is
 completed. A new configuration database will be created on the SQL server as a result. If you want
-to retain the old SQL server, it is necessary to give the configuration database a new name.
+to retain the old SQL server, you must give the configuration database a new name.
 
 #### 4. Deactivating the old server
 
@@ -43,13 +43,13 @@ After making these preparations, the data from the old server can be backed up.
 #### 1. Backing up the system
 
 If using a virtual machine, a backup of it should be created. The old version of the server can then
-be restored in the event of problems.
+be restored if problems occur.
 
 #### 2. Backing up the database
 
-In order to transfer the data to the new server, a backup of the database should be created.
-Although this is also possible via the Server Manager, we recommend carrying out the backup at the
-SQL level: right click on the database, then on Tasks and Backup. The desired target folder is
+To transfer the data to the new server, a backup of the database should be created.
+Although this is also possible via the Server Manager, Netwrix recommendscarrying out the backup at the
+SQL level: right click the database, then on Tasks and Backup. The desired target folder is
 selected in the following window.
 
 ![insert backup](/images/passwordsecure/9.2/maintenance/sql-backup-en.webp)
@@ -99,5 +99,5 @@ Finally, the database is integrated onto the server via the database wizard.
 
 ## Modifications on the client
 
-If the IP and/or host name for the server has changed, it is necessary to create/roll out new
+If the IP and/or host name for the server has changed, you must create/roll out new
 database profiles from the client.

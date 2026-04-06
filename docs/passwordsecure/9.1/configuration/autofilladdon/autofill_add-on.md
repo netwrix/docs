@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Autofill Add-on
 
-## What is the Autofill Add-on?
+## Autofill Add-on overview
 
 The Autofill Add-on is responsible for the automatic entry of login data in applications. This
 enables logins without knowledge of the password, which can be a particularly valuable tool in
@@ -16,7 +16,7 @@ The
 [Authorization and protection mechanisms](/docs/passwordsecure/9.1/configuration/webapplication/authorization_and_protection_mechanisms.md)
 is used to define which users should receive access.
 
-However, the password remains hidden because it is entered by Netwrix Password Secure.
+However, the password remains hidden because it's entered by Netwrix Password Secure.
 
 #### Requirements
 
@@ -38,7 +38,7 @@ The functionality of the Autofill Add-on is illustrated in the following diagram
 
 RDP and SSH
 sessions(![1](/images/passwordsecure/9.1/configuration/autofill_add-on/1.webp)
-) are not automatically started via the Autofill Add-on. Applications are created for this purpose
+) aren't automatically started via the Autofill Add-on. Applications are created for this purpose
 in the Netwrix Password Secure client. The creation and use of these connections is explained in
 detail in the corresponding section.
 

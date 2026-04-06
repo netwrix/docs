@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Organisational structure module
 
-The following functions are currently available in the **organisational structure module**:
+The following functions are available in the **organisational structure module**:
 
 - Adding/editing/deleting/authorizing users / organisational structures
 - Notifications
@@ -39,7 +39,7 @@ The Web Application offers the following functions:
 
 You can reach the Radius server, if the import is in the Masterkey mode. The Radius server will be
 provided in the Active Directory profile and will therefore deliver the possible authentication
-methods in future. You will find further informations in the
+methods in future. You'll find further informations in the
 [RADIUS authentication](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/radius_authentication.md)
 chapter.
 
@@ -68,6 +68,6 @@ Now you can add the appropriate roles and users.
 You can add users and roles in different ways:
 
 - Add the appropriate roles and users at the toolbar under **Search and add**.
-- Click on the loupe to see all the users and roles.
+- Click the loupe to see all the users and roles.
 
 ![installation_with_parameters_165](/images/passwordsecure/9.1/configuration/web_application/functional_scope/organisational_structure/installation_with_parameters_165.webp)

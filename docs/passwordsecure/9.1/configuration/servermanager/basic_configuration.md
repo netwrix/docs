@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Basic configuration
 
-## What is basic configuration?
+## Basic configuration overview
 
-Within the basic configuration, the connection to the SQL server or to the databases is defined. The
+Within the basic configuration, the connection to the SQL server, or to the databases is defined. The
 basic configuration appears the first time the Server Manager is started and can be called up at any
 time in the basic configuration.
 
@@ -22,10 +22,10 @@ A special wizard is available to carry out the configuration:
 
 #### Service address
 
-The service address of the SQL server can be selected via the drop-down menu. It is mandatory to
+The service address of the SQL server can be selected via the dropdown menu. It's mandatory to
 select the adapter via which the Server Manager can also access the SQL server.
 
-The loopback address 127.0.0.1 should not be used here.
+The loopback address 127.0.0.1 shouldn't be used here.
 
 #### Service user
 
@@ -46,12 +46,12 @@ simplicity, you can copy the server name from the login window of the SQL server
 
 ![installation_with_parameters_190](/images/passwordsecure/9.1/configuration/server_manager/baseconfiguration/installation_with_parameters_190.webp)
 
-If the option “Service user” is selected, enter the user that logs on to the SQL Server. Please note
+If the option “Service user” is selected, enter the user that logs on to the SQL Server. note
 that “dbCreator” rights are necessary to create a configuration database. “dbOwner” rights are
 sufficient if the database is created manually on the SQL server and is only accessed here. Enter
 the name of the configuration database under “Database”.
 
-NOTE: Refer to the system requirements for server section for more information about the users.
+NOTE: Refer to the system requirements for server section for details about the users.
 
 #### Expert mode
 
@@ -73,7 +73,7 @@ choose your own. Further information can be found directly in the section provid
 
 :::warning
 Exchanging or overwriting an existing certificate may cause warnings to the clients if
-the certificate is not trusted by each client.
+the certificate isn't trusted by each client.
 :::
 
 

@@ -16,7 +16,7 @@ via the three dots at the very top left of the screen. These will be briefly exp
 
 Hide personal tab
 
-In some use cases personal passwords are not needed on the mobile device. If this is the case you
+In some use cases personal passwords aren't needed on the mobile device. If this is the case you
 can hide the tab with the personal passwords.
 
 Show all passwords in search tab
@@ -44,7 +44,7 @@ How to synchronize with the main database is configured here. The following opti
 - **Any type of connection:** as long as there is a connection, synchronization will take place. No
   matter if it is a WLAN connection or a connection via the mobile network.
 - **Only for WLAN connection:** Synchronization only takes place if there is a connection via WLAN.
-- **Disabled:** It is not synchronized
+- **Disabled:** It isn't synchronized
 
 NOTE: Costs may be incurred for synchronization via the mobile network!
 

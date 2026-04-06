@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Recording a session
 
-## What is session recording?
+## Session recording overview
 
 Session recording can be used to make a visual recording of RDP and SSH sessions. These recordings
 can then be subsequently viewed and evaluated. In this context, it is also possible to limit this
@@ -23,7 +23,7 @@ The following options are required to manage sessions for an application.
 
 - Can manage recordings for an application
 
-NOTE: Please note that session recording uses disk space in the database. Although the way the
+NOTE: that session recording uses disk space in the database. Although the way the
 recordings are saved is efficient in terms of resources, the required amount of disk space varies
 greatly depending on the content. The more that is done during the recorded session, the higher the
 disk space usage.
@@ -53,7 +53,7 @@ module.
 
 ![viewing session recording](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/rdp_and_ssh_applications/recording_a_session/recording_a_session_4-en.webp)
 
-It is possible to search the session recordings using the filter as usual. It is also possible here
+You can search the session recordings using the filter as usual. It is also possible here
 to limit the search results based on the date and user. In the section on the right, it is also
 possible to further filter the searched list based on all column contents.
 

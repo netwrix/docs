@@ -6,19 +6,19 @@ sidebar_position: 80
 
 # Dashboard and widgets
 
-## What are dashboards and widgets?
+## Dashboards and widgets overview
 
 In case of large installations, the amount of information provided by Netwrix Password Secure may
 seem overwhelming. Dashboards expand the existing filter possibilities by an arbitrarily
-customizable info area, which visually prepares important events or facts
+customizable info area, which visually prepares important events, or facts
 
 ![Dashboard](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/dashboard_and_widgets/installation_with_parameters_50-en.webp)
 
 Dashboards are available in almost all
 [Client Module](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/client_module.md)s.
 A separate dashboard can be set for each individual module. **Widgets** correspond to the individual
-modules of the dashboard. There are various widgets, which can be individually defined and can be
-configured separately. In the above example, three widgets are enabled and provide information about
+modules of the dashboard. There are various widgets, which can be individually defined, and can be
+configured separately. In the above example, three widgets are enabled, and provide information about
 current notifications, password quality, and user activity. The **maximum number of possible
 widgets** is managed in
 the[User settings](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/usersettings/user_settings.md).
@@ -47,7 +47,7 @@ and editing widgets is only possible in this mode.
 
 ![Adding and removing widgets](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/dashboard_and_widgets/installation_with_parameters_51-en.webp)
 
-Use the drop-down menu to select the widget to be added \* (1) . **Then add the widget to the
+Use the dropdown menu to select the widget to be added \* (1) . **Then add the widget to the
 dashboard using the corresponding button in the ribbon** (2). The maximum number of widgets that can
 be added can be configured in the user settings. In editing mode, any widget can be directly removed
 from the dashboard via the button on the upper right edge. The processing mode is ended by saving
@@ -57,8 +57,7 @@ via the ribbon.
 
 ## Customizing widgets
 
-In the editing mode, you can customize each widget separately. To do this, select the widget and
-switch to the \* widget content tab \* in the ribbon.
+In the editing mode, you can customize each widget separately. To do this, select the widget, and switch to the \* widget content tab \* in the ribbon.
 
 ![Customizing widgets](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/dashboard_and_widgets/installation_with_parameters_53-en.webp)
 
@@ -78,7 +77,7 @@ filtered “live” and displayed in real-time.
 
 ## Arranging widgets
 
-In the edit mode, the layout of the widgets is user-defined. Drag & drop allows you to place a
+In the edit mode, the layout of the widgets is user-defined. Drag & drop lets you place a
 widget in the corresponding position on the dashboard (left, right, top, or bottom).
 
 ![Arranging widgets](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/dashboard_and_widgets/installation_with_parameters_55-en.webp)

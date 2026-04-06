@@ -16,7 +16,7 @@ modules differ in range and design. However, the handling is almost the same.
 
 Differences to the logbook on the Client:
 
-The following options are not available yet in the **Web Application**. If needed, you can use them
+The following options aren't available yet in the **Web Application**. If needed, you can use them
 on the Client.
 
 - Documents

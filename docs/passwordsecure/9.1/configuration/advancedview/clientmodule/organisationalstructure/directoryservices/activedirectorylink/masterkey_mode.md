@@ -11,7 +11,7 @@ sidebar_position: 20
 In contrast to
 [End-to-end encryption](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/end-to-end_encryption.md),
 which places the main focus on security, Masterkey mode provides the maximum level of convenience.
-It not only imports users, organisational units and roles but also their links and affiliations. It
+It not only imports users, organisational units and roles but also their links, and affiliations. It
 can be synchronized to update the information and affiliations. **In this scenario, Active Directory
 is used as a leading system**.
 
@@ -51,7 +51,7 @@ NOTE: In the case of already created profiles, the encryption can no longer be c
   elements can then only be found and selected via the search.
 - By activating the checkbox **Restrict user import to role members only**, a simplified mode is
   activated. In this mode, only AD users who are members of at least one role are imported. As soon
-  as they are no longer a member of at least one role, they are deleted from Netwrix Password
+  as they're no longer a member of at least one role, they're deleted from Netwrix Password
   Secure.
 - By activating the checkbox **Force update on next synchronization**, **ALL** records will be
   updated on the next synchronization, regardless of whether the record has changed in the Active
@@ -68,9 +68,9 @@ NOTE: In the case of already created profiles, the encryption can no longer be c
     - Sealing
 
 NOTE: The first two options are already activated by default when configuring a new profile. If a
-connection is not possible, deactivate SecureSocketsLayer and try again.
+connection isn't possible, deactivate SecureSocketsLayer, and try again.
 
-- **Other responsible users or roles** can be used to define who is permitted to carry out the
+- **Other responsible users or roles** can be used to define who's permitted to carry out the
   synchronization with the AD.
 - The option **Other domain names** can be used to save alternative spellings of the login domain.
   These must correspond to the spelling entered in the login window. For example, if a connection is
@@ -78,14 +78,14 @@ connection is not possible, deactivate SecureSocketsLayer and try again.
   out with **jupiter\user** if **jupiter** has been saved here.
 
 :::warning
-The master key is added in form of a certificate. It is **essential to back up** the
+The master key is added in form of a certificate. It's **essential to back up** the
 generated certificate! If the database is being moved to another server, the certificate also needs
 to be transferred! Further information can be found in the section
 [Certificates](/docs/passwordsecure/9.1/configuration/servermanager/certificates/certificates.md).
 :::
 
 
-NOTE: You can now use the option to integrate a RADIUS server. Read more in
+NOTE: You can now use the option to integrate a RADIUS server. See
 [RADIUS authentication](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/radius_authentication.md).
 
 ## Import
@@ -104,13 +104,13 @@ the database yet, as in this example, the data is imported into the **main organ
 
 ### Active Directory objects
 
-In the next step, select the profile you will use to import the data. Then, select organisational
+In the next step, select the profile you'll use to import the data. Then, select organisational
 units and/or users for the import. A search is available for this purpose.
 
 ![import wizard / AD objects](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/directoryservices/activedirectorylink/end_to_end_encryption_4-en.webp)
 
 As you can see, the organisational units **Jupiter** and **Contoso** contain items to be imported.
-The organisational units themselves will not be imported. The group **1099 Contractor** is imported
+The organisational units themselves won't be imported. The group **1099 Contractor** is imported
 including all sub-elements. The check next to the group **Accounting** indicates that the group
 itself will be imported along with some of its sub-elements. The ticks in the last column ensure
 that the elements are observed in future synchronization sequences.
@@ -118,7 +118,7 @@ that the elements are observed in future synchronization sequences.
 There are different symbols which indicate the elements to be imported.
 
 The element itself and all possible sub-elements will be imported The element itself and some of its
-sub-elements will be imported The element will not be imported; however, it contains elements that
+sub-elements will be imported The element won't be imported; however, it contains elements that
 will be imported
 
 Right-clicking in the list will launch a context menu. It provides helpful functions for the
@@ -126,7 +126,7 @@ selection of the individual elements.
 
 ![select subjects](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/directoryservices/activedirectorylink/end_to_end_encryption_5-en.webp)
 
-NOTE: If individual users cannot be selected for import, they have already been imported via an
+NOTE: If individual users can't be selected for import, they have already been imported via an
 end-to-end encrypted profile.
 
 In the lower area you can specify whether the users just selected for import should be created as
@@ -151,8 +151,8 @@ this is symbolized by a hint.
 
 ## Imported users and organisational units
 
-The users and organisational units imported in Masterkey mode cannot be edited in Netwrix Password
-Secure. Therefore, any changes must be made in AD and synchronized. AD thus becomes the leading
+The users and organisational units imported in Masterkey mode can't be edited in Netwrix Password
+Secure. Therefore, any changes must be made in AD, and synchronized. AD thus becomes the leading
 system. Affiliations to roles are also synchronized and must be set in the AD. In organisational
 units or roles created in Netwrix Password Secure, the users can be included directly in Netwrix
 Password Secure.
@@ -184,19 +184,19 @@ roles already exist in Netwrix Password Secure or have also been imported.
 
 ## Logging into Netwrix Password Secure
 
-Users who are imported using this mode can log in with the domain password. Please note that no
+Users who are imported using this mode can log in with the domain password. No
 domain needs to be specified when logging in. Of course, the login process can also be supplemented
 with
 [Multifactor Authentication](/docs/passwordsecure/9.1/configuration/servermanager/managingdatabases/databasesettings/multifactor_authentication_ac.md).
 
 NOTE: Logging on using Kerberos works "automatically". As long as the corresponding Kerberos server
 is accessible, the users in the domain authenticate themselves via Kerberos using their domain
-password. If the logon via Kerberos does not work – e.g. due to incorrect configuration of the
+password. If the logon via Kerberos doesn't work – e.g. due to incorrect configuration of the
 domain controller – the logon via the NTLM protocol is attempted. However, these are all settings
 that have to be made on the domain controller and have nothing to do with Netwrix Password Secure.
 
 :::warning
-Logging on to Netwrix Password Secure using SSO via Kerberos is currently not possible.
+Logging on to Netwrix Password Secure using SSO via Kerberos isn't possible.
 :::
 
 
@@ -211,20 +211,20 @@ The rights to be issued to imported users are explained in the following example
    also synchronize or change the user in the future
 3. **Other responsible users** are issued with the same rights as the **responsible user**
 4. The **Master Key** for the **Active Directory** profile will also be issued with all rights and
-   keys as it will be used for the synchronization
+   keys as it'll be used for the synchronization
 5. Finally, users will be issued with the rights for themselves
 
 NOTE: All users and roles issued with **rights** to the imported object also receive its rights key.
 
 ## Synchronization
 
-During synchronization, all relevant information for users, organisational units and roles (names,
+During synchronization, all relevant information for users, organisational units, and roles (names,
 email, etc.) is updated. Changed affiliations for roles are adjusted. Likewise, users are activated
 or deactivated according to the settings in the AD. If the membership of organisational units is to
 be changed, this can be done by **Drag & Drop**. New users and correspondingly defined roles are
 imported.
 
-NOTE: If the tick was not set in the Synchronization column when a user is imported, no changes are
+NOTE: If the tick wasn't set in the Synchronization column when a user is imported, no changes are
 made.
 
 ### Manual synchronization
@@ -243,8 +243,8 @@ The synchronization can also be carried out automatically. This is made possible
 
 ### Deleting or removing users
 
-If a user is deleted in Active Directory, it is also deleted in Netwrix Password Secure during the
-next synchronization. For this purpose, it is necessary for the user to be imported as a
+If a user is deleted in Active Directory, it's also deleted in Netwrix Password Secure during the
+next synchronization. For this purpose, it's necessary for the user to be imported as a
 **synchronizable** user.
 
 If the user is only deleted from Netwrix Password Secure but retained in Active Directory, a

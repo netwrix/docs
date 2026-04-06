@@ -8,7 +8,7 @@ sidebar_position: 10
 
 ## Setting up the offline database
 
-It is important to ensure that the right requirements have been met before setting up the Offline
+It's important to ensure that the right requirements have been met before setting up the Offline
 Add-on. The following configurations need to be defined in both the Server Manager and also the user
 rights/user settings.
 
@@ -16,12 +16,12 @@ rights/user settings.
 
 To set up offline databases, this option must be activated in the Server Manager first. This process
 is carried out separately for each database in the database view in the Server Manager in the
-“General settings” (right click on the database). This is also possible to do when the database is
+“General settings” (right click the database). This is also possible to do when the database is
 initially created.
 
 ![Properties](/images/passwordsecure/9.1/configuration/offlineclient/setup/installation_with_parameters_265-en.webp)
 
-You will find further information on this subject in the
+You'll find further information on this subject in the
 sections:[ Creating databases](/docs/passwordsecure/9.1/configuration/servermanager/creating_databases.md)
 and
 [Managing databases](/docs/passwordsecure/9.1/configuration/servermanager/managingdatabases/managing_databases.md)
@@ -49,7 +49,7 @@ possible to use several offline databases with an Offline Add-on.
 
 #### Synchronization
 
-In order to keep the data always consistent, the offline database must be synchronized regularly.
+To keep the data always consistent, the offline database must be synchronized regularly.
 Synchronization is automatically performed by the client in the background. The interval can be
 freely configured in the
 [User settings](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/usersettings/user_settings.md).
@@ -76,8 +76,8 @@ As soon as the synchronization is completed, this is indicated by a hint.
 Offline mode can be configured and personalized using the four settings mentioned:
 
 - **Offline synchronization after saving a record**: The synchronization of the offline database is
-  completed directly after saving a record. It is important to note that this only applies to those
-  records that are saved by the user who is logged in. Changes made by another user do not trigger
+  completed directly after saving a record. This only applies to those
+  records that are saved by the user who's logged in. Changes made by another user don't trigger
   any synchronization!
 - **Offline synchronization after login:** If this option is active, the offline database is
   synchronized after each restart of the client.

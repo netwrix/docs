@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Active Directory link
 
-## What are active directory profiles?
+## Active directory profiles overview
 
 The connection to Active Directory (AD) is established via so-called AD profiles. These profiles
 contain all of the information relevant for establishing a connection to AD and enable
@@ -25,7 +25,7 @@ In principle, the two variants differ by the presence of the encryption mentione
 solution with active end-to-end encryption (**E2EE**), the process may be less convenient (see
 table) but there is a huge benefit in terms of security. In Master Key mode, a master key is created
 on the server that has full permissions for all users, organisational units and roles. This
-represents an additional attack vector, which does not exist in end-to-end mode. In return, however,
+represents an additional attack vector, which doesn't exist in end-to-end mode. In return, however,
 in Master Key mode, users can be updated via synchronization with the Active Directory. Memberships
 of organisational units and roles are also imported. In the more secure end-to-end mode, this
 synchronization of the changes must be carried out manually.
@@ -57,7 +57,7 @@ Secure. In contrast, a connection in **Master Key mode offers the highest level 
 imports not only users, organisational units and roles but also their links and assignments.
 Synchronization with Active Directory is possible – **The AD is used as the leading system**.
 
-## Users, groups and roles
+## Users, groups, and roles
 
 When importing or synchronizing from Active Directory, users are also added as users in Netwrix
 Password Secure. Netwrix Password Secure also uses the organisational units as such.
@@ -71,5 +71,5 @@ displayed within Netwrix Password Secure. Both groups are imported as roles, but
 linked in any way.
 
 **CAUTION:** If Master Key mode has been selected for the Active Directory profile, the AD is the
-leading system. In this mode, roles that have been imported cannot be changed locally in Netwrix
+leading system. In this mode, roles that have been imported can't be changed locally in Netwrix
 Password Secure.

@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Account
 
-## What is an account?
+## Account overview
 
-Users can configure all user-specific information in their account. It should be noted that if the
+Users can configure all user-specific information in their account. If the
 [Masterkey mode](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/masterkey_mode.md)
 process is used, user data will always be taken from Active Directory – editing this information in
 Netwrix Password Secure is thus not possible.
@@ -29,12 +29,12 @@ case, all information will be imported from AD.
 A new image can be added or the existing one replaced or deleted by clicking on the profile image.
 
 NOTE: No changes can be made to users that were imported from AD with the aid of Master Key mode. If
-an image has been saved in AD, it will be used here.
+an image has been saved in AD, it'll be used here.
 
 #### Change password
 
-It is recommended that the user password is changed on a regular basis. If you want to use a new
-password, it is necessary to enter the existing password in advance. The strength of the password
+It's recommended that the user password is changed on a regular basis. If you want to use a new
+password, it's necessary to enter the existing password in advance. The strength of the password
 will be directly displayed.
 
 NOTE: Users who were imported from AD with the aid of Master Key mode log in with the domain
@@ -57,10 +57,10 @@ See also in
 
 #### Configure autologin
 
-This option can be used to automate the login to Netwrix Password Secure. For setup, just enter the
+This option can be used to automate the log in to Netwrix Password Secure. For setup, just enter the
 password twice and save it.
 
-The autologin is linked to the hardware and thus will not work on a different computer. If you
+The autologin is linked to the hardware and thus won't work on a different computer. If you
 change the hardware or the hardware ID, an existing autologin needs to be recreated.
 
 #### Relevant right
@@ -72,12 +72,12 @@ User right
 - Can manage autologin
 
 :::warning
-The automatic login should be handled as a process critical to security. It is
-important to note that all data can be accessed, for example, if you forget to lock the computer.
+The automatic login should be handled as a process critical to security. It's
+important that all data can be accessed, for example, if you forget to lock the computer.
 :::
 
 
-NOTE: For security reasons, the autologin is only valid for 180 days and then needs to be
+NOTE: For security reasons, the autologin is only valid for 180 days, and then needs to be
 subsequently renewed.
 
 #### Reset settings
@@ -87,6 +87,6 @@ etc. to the default values.
 
 #### Start offline synchronization
 
-If you have made changes to the database and do not want to wait for the next automatic
+If you have made changes to the database and don't want to wait for the next automatic
 synchronization, an offline synchronization can also be started manually. The synchronization runs
 in the background and is indicated by a status bar in the footer as well as by the icon. More…

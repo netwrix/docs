@@ -6,12 +6,12 @@ sidebar_position: 10
 
 # HTML WebViewer export
 
-## What is a HTML WebViewer export?
+## HTML WebViewer export overview
 
 The **WebViewer** is an option inNetwrix Password Secure for exporting passwords in an encrypted
 **HTML file**. The records are selected using the
 [Filter](/docs/passwordsecure/9.1/configuration/advancedview/operationandsetup/filter/filter.md)
-function. The passwords for which the user has the corresponding permissions are exported. They are
+function. The passwords for which the user has the corresponding permissions are exported. They're
 displayed in a current browse that has **JavaScript activated**.
 
 ## Data security
@@ -113,7 +113,7 @@ The login mask is blocked for a period of time if the password is incorrectly en
 After logging in to Netwrix Password Secure, the overview page for the \*HTML- WebViewer \* with the
 passwords is displayed.
 
-NOTE: Use the password search function in the event of more than 20 passwords!
+NOTE: Use the password search function if there are more than 20 passwords!
 
 1. Displayoftherecords(max.20)
 2. Detailedinformationontheselectedrecord
@@ -125,10 +125,10 @@ NOTE: Use the password search function in the event of more than 20 passwords!
 
 #### Closing the HTML WebViewer overview
 
-You can log out by clicking on **Logout**. In the event of a longer period of inactivity, the user
+You can log out by clicking on **Logout**. If there is a longer period of inactivity, the user
 will be **automatically logged out after a set period of time has expired (time until logout).**
 
 NOTE: You have been logged out due to inactivity.
 
 The browser will then show the **Netwrix Password Secure– HTML WebViewer / Login** again and also
-the reason for being logged out. It is possible to log in again.
+the reason for being logged out. It's possible to log in again.

@@ -4,7 +4,7 @@ description: "Why Netwrix Password Secure?"
 sidebar_position: 1
 ---
 
-# Why Netwrix Password Secure?
+# Netwrix Password Secure overview
 
 Users depend on passwords in their day-to-day business worldwide. Passwords are used constantly and everywhere,
 and they need to be professionally managed. Passwords should be safe, have at least 12 characters, and include uppercase and lowercase characters as well as special characters. In the best case, a separate access

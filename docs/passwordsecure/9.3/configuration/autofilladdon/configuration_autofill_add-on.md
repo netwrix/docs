@@ -23,14 +23,14 @@ thus also affect the client. New profiles can thus also be created via the Autof
 
 #### Context menu functionality
 
-After successfully logging in, the Autofill Add-on firstly runs in the background. Right click on
+After successfully logging in, the Autofill Add-on firstly runs in the background. Right click
 the icon in the system tray to open the context menu.
 
 ![icon options](/images/passwordsecure/9.2/configuration/autofill_add-on/configuration/installation_with_parameters_130-en.webp)
 
 - **Disconnect**: Connect to database/disconnect from database. (All connections are shown for
   multiple databases)
-- **Login** enables you to log into another database
+- **Login** lets you log into another database
 - **Disable/Enable agent** allows you the option of temporarily disabling automatic login
 - A diverse range of variables can be defined via the **Settings**
 - **Reload all Data**

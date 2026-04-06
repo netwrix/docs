@@ -6,12 +6,12 @@ sidebar_position: 60
 
 # Rollback
 
-## What is a rollback?
+## Rollback overview
 
 If an error occurs while running a script, a rollback is initiated. This ensures that the original
 password is restored.
 
-## When does a rollback run?
+## Rollback triggers
 
 The following diagram shows when and according to which criteria a rollback is initiated:
 

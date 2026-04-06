@@ -15,7 +15,7 @@ Netwrix Password Secure generally differentiates between multiple methods for se
 3. Using predefined rights
 
     - In the manual setting of permissions, the desired permissions are directly configured for each
-      record. Automatic processes and inheritance are **not** used in this case.
+      record. Automatic processes and inheritance aren't used in this case.
     - Both the use of predefined rights and also the inheritance from organisational structures are
       based on the **automated reuse** of already granted permissions according to previously
       defined rules.

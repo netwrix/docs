@@ -7,7 +7,7 @@ sidebar_position: 40
 # Installation Web Application
 
 :::warning
-This guide focuses on the initial installation of the Web Application and is not
+This guide focuses on the initial installation of the Web Application and isn't
 relevant for further updates.
 :::
 
@@ -16,7 +16,7 @@ relevant for further updates.
 
 ### System requirements
 
-Please ensured that all
+ensured that all
 [Webserver](/docs/passwordsecure/9.1/installation/requirements/webserver/webserver.md)r
 requirements have been met.
 
@@ -29,7 +29,7 @@ server and the Netwrix Password Secure server.
 ### Databases
 
 All databases that are to be used on the Web Application must be enabled for this purpose. With a
-double click on the corresponding database the option "Access via Web Application" can be activated.
+double click the corresponding database the option "Access via Web Application" can be activated.
 
 ## Installation
 
@@ -43,7 +43,7 @@ firstly needs to be entered:
 Name the folder where the ZIP archive with the Web Application should be placed.
 
 :::warning
-If t Do not use the Server Manager installation directory
+If t Don't use the Server Manager installation directory
 :::
 
 
@@ -52,7 +52,7 @@ server.
 
 ### Server IP
 
-Please check if the IP address is correct otherwise no connection to the Web Application can be
+check if the IP address is correct otherwise no connection to the Web Application can be
 established. If the IP address is wrong, you have to change it in the basic configuration of the
 Server Manager.
 
@@ -62,25 +62,25 @@ Enter the IP address or the host name of the web server.
 
 ### Port
 
-Enter the port that is used to communicate with the Web Application.
+Enter the port that's used to communicate with the Web Application.
 
 All of the subsequent steps or the required tasks will be explained in the associated chapters for
 each specific web server.
 
 ## CORS configuration
 
-A button for the so-called CORS configuration can be found on the ribbon. It is essential that this
+A button for the so-called CORS configuration can be found on the ribbon. It's essential that this
 configuration is carried out before the Web Application can be used. A list of the permitted CORS
 domains will be saved as a result. Requests received via the Web Application can then be checked
 against this list. The request will only be successfully carried out if the origin header for a
 request is available in the permitted domains.
 
-In order to add a domain, simply enter it at the bottom of the dialogue. Clicking on
+To add a domain, simply enter it at the bottom of the dialogue. Clicking on
 :material-plus-circle-outline: will add the entry to the list at the top.
 
 ![cors-en-new](/images/passwordsecure/9.1/installation/installation_web_application/cors-en-new.webp)
 
-NOTE: In general, it is sufficient to add the IP address which was also saved as the Web server host
+NOTE: In general, it's sufficient to add the IP address which was also saved as the Web server host
 address.
 
 ## Calling up the Web Application
@@ -89,7 +89,7 @@ The process for calling up the Web Application is dependent on the configuration
 
 - Web Application in root directory -> `https://hostname`
 - Web Application in a subdirectory -> `https://hostname/path-to-subdirectory`
-- Port is not set to 443 -> `https://hostname:port/path-to-subdirectory`
+- Port isn't set to 443 -> `https://hostname:port/path-to-subdirectory`
 
-NOTE: In order for the redirect to be used, it is important to ensure on apache and nginx web
+NOTE: In order for the redirect to be used, it's important to ensure on apache and nginx web
 servers that no other host listens to port 80.

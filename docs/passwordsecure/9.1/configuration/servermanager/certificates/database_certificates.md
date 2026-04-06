@@ -6,26 +6,26 @@ sidebar_position: 20
 
 # Database certificates
 
-## What is a database certificate?
+## Database certificate overview
 
 A unique certificate is created for each database. This has the name **psrDatabaseKey**:
 
 ![installation_with_parameters_207](/images/passwordsecure/9.1/configuration/server_manager/certificates/installation_with_parameters_207.webp)
 
-The database certificate **does not encrypt the database.** Rather, it is used for the encrypted
+The database certificate **doesn't encrypt the database.** Rather, it's used for the encrypted
 transfer of passwords from the client to the server in the following cases:
 
 - Creation of a WebViewer via a task
 - Creation of an AD profile protected by a master key
 - Login of users imported from AD in Master Key mode
 
-NOTE: The database certificate cannot be replaced by your own certificate.
+NOTE: The database certificate can't be replaced by your own certificate.
 
-NOTE: The expiry date for the database certificate is not checked. The certificate thus does not
+NOTE: The expiry date for the database certificate isn't checked. The certificate thus doesn't
 need to be renewed.
 
 :::warning
-If the database is being moved to another server, it is essential that the certificate
+If the database is being moved to another server, it's essential that the certificate
 is also transferred!
 :::
 

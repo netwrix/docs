@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Forms module
 
-The following functions are currently available in the **forms module**:
+The following functions are available in the **forms module**:
 
 - Add
 - Open

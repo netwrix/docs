@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Database firewall
 
-## What is the database firewall?
+## Database firewall overview
 
-The database firewall enables you to regulate access to the database. A whitelist policy is used for
+The database firewall regulates access to the database. A whitelist policy is used for
 this process. Firewall rules are used to allow access to the database in individual cases.
 
 #### Activating the firewall
@@ -35,13 +35,13 @@ The following possibilities exist:
 
 - Access from an individual computer is allowed via the IP address.
 - A Range of multiple IP addresses can also be optionally selected.
-- It is also possible to regulate access using the Computer name.
+- It's also possible to regulate access using the Computer name.
 - Finally, access can also be allowed for a certain Windows user. For example, the administrator can
   be allowed access irrespective of the computer being used.
 - The setting Grant access defines whether access is allowed or blocked. This is symbolised by a
   corresponding icon.
 
-Naturally, the rules can also be combined. It is thus possible e.g that only one defined user can
+Naturally, the rules can also be combined. It's thus possible e.g that only one defined user can
 access one database from a certain IP address.
 
 NOTE: The conditions are always combined using AND operators
@@ -73,5 +73,5 @@ also possible.
 
 **Computer-independent access for a user (Rule 4)**
 
-This rule grants access to the administrator. It is irrelevant which computer the administrator uses
+This rule grants access to the administrator. It's irrelevant which computer the administrator uses
 to log in to the database.

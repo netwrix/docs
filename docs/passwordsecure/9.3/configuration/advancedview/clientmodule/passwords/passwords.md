@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # Passwords
 
-## What are passwords?
+## Passwords overview
 
 In Netwrix Password Secure v8, the data record with the passwords represents the central data
 object. The Passwords module provides administrators and users with central access to the passwords
-for the purpose of handling this sensitive data that requires protection. Search filters in
+to handle this sensitive data that requires protection. Search filters in
 combination with color-highlighted tags enable very focussed work. Various approaches can be used to
 help apply the desired permissions to objects. Furthermore, the ergonomic structure of the module
 helps all users to use Netwrix Password Secure in an efficient and targeted manner.
@@ -52,7 +52,7 @@ The module-specific ribbon functions will be explained below.
   interaction. The issuing of notifications is carried out in the module designed for this purpose.
 - **Duplicate**: Duplicating creates an exact copy of the record in a new tab.
 - **Move**: Moves the record marked in list view to another organisational structure.
-- **Toggle** **Favorite**: The selected record is marked as a favorite. It is possible to switch
+- **Toggle** **Favorite**: The selected record is marked as a favorite. You can switch
   between all records and favorites at any time.
 - **Quick view**: A modal window opens for the selected record for 15 seconds and displays all
   available information **including the value of the password**.
@@ -60,7 +60,7 @@ The module-specific ribbon functions will be explained below.
 
 ### Permissions
 
-- **Permissions**: The drop-down menu can be used to set both password permissions and also form
+- **Permissions**: The dropdown menu can be used to set both password permissions and also form
   field permissions. This method only allows the manual setting of permissions for data (see
 
     authorization concept)
@@ -105,9 +105,9 @@ first session.
   to the comprehensive recording of historical versions of passwords, it is now possible to compare
   several versions with one another.
 - **Print**: This option can be used to open the print function.
-- **Export**: It is possible to export all the selected records and also the data defined by the
+- **Export**: You can export all the selected records and also the data defined by the
   filter to a .csv file.
-- **Change form**: It is possible to change the form used for individual records. "Mapping" of the
+- **Change form**: You can change the form used for individual records. "Mapping" of the
   previous form fields can be directly carried out in the process.
 - **Settings**: The password settings are described in a separate section.
 

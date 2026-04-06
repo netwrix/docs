@@ -21,8 +21,8 @@ Step 1 – Is your browser extension already installed? You can find out by:
 
 ![downloadextension](/images/passwordsecure/9.2/enduser/downloadextension.webp)
 
-NOTE: If you need more information about installing the browser extension, please visit the
-following topic in our documentation:
+NOTE: If you need more information about installing the browser extension, visit the
+following topic in the documentation:
 [Installation Browser Extension](https://helpcenter.netwrix.com/bundle/PasswordSecure_9.0/page/Content/PasswordSecure/Installation/Browser/Installation_Browser_Add-on.htm)
 
 Step 2 – After downloading, the browser extension is simply dragged and dropped into the browser.
@@ -35,13 +35,13 @@ to "add the extension".
 
 ![addextension](/images/passwordsecure/9.2/enduser/addextension.webp)
 
-Step 4 – Please open or reload the web application of Netwrix Password Secure (see link in email
+Step 4 – open or reload the web application of Netwrix Password Secure (see link in email
 from your administrator) to connect your user profile with the extension. See the lock icon in the
 screenshot below.
 
 ![extensionadded](/images/passwordsecure/9.2/enduser/extensionadded.webp)
 
-Step 5 – Now click on this icon in your browser to open the browser extension. See the Adopt Select
+Step 5 – Now click this icon in your browser to open the browser extension. See the Adopt Select
 **Adopt Web Application profile**. Done!
 
 ![nodatabaseprofile](/images/passwordsecure/9.2/enduser/nodatabaseprofile.webp)

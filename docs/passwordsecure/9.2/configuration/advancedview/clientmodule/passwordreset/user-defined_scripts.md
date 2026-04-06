@@ -8,11 +8,11 @@ sidebar_position: 40
 
 ## Individual solutions using your own scripts
 
-If your requirements cannot be met using the [Scripts](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/passwordreset/scripts.md), it is also possible
+If your requirements can't be met using the [Scripts](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/passwordreset/scripts.md), it is also possible
 to create your own Powershell scripts. These scripts need to meet certain requirements to be used in
 Netwrix Password Secure.
 
-## Storage location, name and call
+## Storage location, name, and call
 
 The scripts must be saved in the following directory:
 `C:\ProgramData\MATESO\Password Safe and Repository Service\System\PowerShell`
@@ -44,7 +44,7 @@ The following standard parameters can be used here:
 
 - UserName: The user name for which the password should be changed
 - Password: The password that should be reset
-- CredentialsUserName: The user name of the user authorized to carry our the reset (e.g.
+- CredentialsUserName: The user name of the user authorized to carry the reset (e.g.
   administrator)
 - CredentialsPassword: The password of the authorized user
 
@@ -69,7 +69,7 @@ been changed via a **Write-Output**. The following example simply uses the outpu
 
 ```
 
-Naturally, CredentialsUserName and CredentialsPassword can also be directly used in the script (i.e.
+CredentialsUserName and CredentialsPassword can also be directly used in the script (i.e.
 without the **scriptblock**). You can view the supplied MSSQL script as an example.
 
 ### Invoke

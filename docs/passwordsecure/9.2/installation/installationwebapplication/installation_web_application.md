@@ -6,14 +6,14 @@ sidebar_position: 40
 
 # Installation Web Application
 
-**CAUTION:** This guide focuses on the initial installation of the Web Application and is not
+**CAUTION:** This guide focuses on the initial installation of the Web Application and isn't
 relevant for further updates.
 
 ## Preparations for installation
 
 ### System requirements
 
-Please ensured that all [Webserver](/docs/passwordsecure/9.2/installation/requirements/webserver/webserver.md)r requirements have been met.
+Ensured that all [Webserver](/docs/passwordsecure/9.2/installation/requirements/webserver/webserver.md)r requirements have been met.
 
 ### SSL certificate
 
@@ -24,7 +24,7 @@ server and the Netwrix Password Secure server.
 ### Databases
 
 All databases that are to be used on the Web Application must be enabled for this purpose. With a
-double click on the corresponding database the option "Access via Web Application" can be activated.
+double click the corresponding database the option "Access via Web Application" can be activated.
 
 ## Installation
 
@@ -37,14 +37,14 @@ firstly needs to be entered:
 
 Name the folder where the ZIP archive with the Web Application should be placed.
 
-**CAUTION:** If t Do not use the Server Manager installation directory
+**CAUTION:** If t Don't use the Server Manager installation directory
 
 NOTE: If the web server is created on IIS, execute config.bat to handle integration of the web
 server.
 
 ### Server IP
 
-Please check if the IP address is correct otherwise no connection to the Web Application can be
+Check if the IP address is correct otherwise no connection to the Web Application can be
 established. If the IP address is wrong, you have to change it in the basic configuration of the
 Server Manager.
 
@@ -67,7 +67,7 @@ domains will be saved as a result. Requests received via the Web Application can
 against this list. The request will only be successfully carried out if the origin header for a
 request is available in the permitted domains.
 
-In order to add a domain, simply enter it at the bottom of the dialogue. Clicking on
+To add a domain, simply enter it at the bottom of the dialogue. Clicking on
 :material-plus-circle-outline: will add the entry to the list at the top.
 
 ![cors-en-new](/images/passwordsecure/9.2/installation/installation_web_application/cors-en-new.webp)
@@ -81,7 +81,7 @@ The process for calling up the Web Application is dependent on the configuration
 
 - Web Application in root directory -> `https://hostname`
 - Web Application in a subdirectory -> `https://hostname/path-to-subdirectory`
-- Port is not set to 443 -> `https://hostname:port/path-to-subdirectory`
+- Port isn't set to 443 -> `https://hostname:port/path-to-subdirectory`
 
-NOTE: In order for the redirect to be used, it is important to ensure on apache and nginx web
+NOTE: In order for the redirect to be used, ensure on apache and nginx web
 servers that no other host listens to port 80.

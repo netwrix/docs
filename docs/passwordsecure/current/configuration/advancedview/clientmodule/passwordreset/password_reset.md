@@ -6,7 +6,7 @@ sidebar_position: 90
 
 # Password Reset
 
-## What is a Password Reset?
+## Password Reset overview
 
 The safest passwords are those that no one knows. A Password Reset enables passwords to be reset to
 a new and unknown value according to freely definable triggers. A trigger could be a definable time

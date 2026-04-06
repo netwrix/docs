@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # EmergencyWebViewer
 
-## What is an Emergency WebViewer export?
+## Emergency WebViewer export overview
 
 Safeguarding data is essential and this should be carried out using
 [Backup management](/docs/passwordsecure/current/configuration/servermanager/mainmenu/backupsettings/backup_management.md).
-However, a backup is not sufficient in some cases e.g. if a backup cannot be directly restored due
+However, a backup isn't sufficient in some cases e.g. if a backup can't be directly restored due
 to a hardware problem. In these cases, **Netwrix Password Secure** offers the backup feature
 **Emergency WebViewer Export**.
 
@@ -40,7 +40,7 @@ a secure medium (USB stick, HDD, CD/DVD, …) and kept in a secure location!
 
 • The file can only be encrypted using the **PrivateKey.prvkey** file
 
-**CAUTION:** The export right for the passwords is not required for the Emergency WebViewer Export!
+**CAUTION:** The export right for the passwords isn't required for the Emergency WebViewer Export!
 
 ## Required rights
 
@@ -69,7 +69,7 @@ Clicking on New opens a new window and the **Emergency WebViewer Export** can be
 
 ![installation_with_parameters_91_578x390](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/system_tasks/emergency_webviewer/installation_with_parameters_91_578x390.webp)
 
-It is not possible to use the **Emergency WebViewer Export** with an **Active Directory user.**
+It isn't possible to use the **Emergency WebViewer Export** with an **Active Directory user.**
 
 ![installation_with_parameters_92_467x103](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/system_tasks/emergency_webviewer/installation_with_parameters_92_467x103.webp)
 
@@ -94,7 +94,7 @@ saved!
 
 ## Displaying the Emergency WebViewer Export tasks
 
-Once the configuration has been completed, the **system task** is displayed in the current module in
+After the configuration has been completed, the **system task** is displayed in the current module in
 the
 
 **System Tasks** tab. The user has the option of checking the data here
@@ -145,7 +145,7 @@ The following data is displayed in the overview:
 
 Overview data:
 
-1. Display of the currently available records
+1. Display of the available records
 2. Detailed information on the selected record
 3. Search, logout, timeout until logout
 4. Copy password to clipboard

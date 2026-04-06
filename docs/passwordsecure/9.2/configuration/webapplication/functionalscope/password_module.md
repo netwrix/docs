@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Password module
 
-The **Password Module** currently provides the following functions:
+The **Password Module** provides the following functions:
 
 - Create
 - Delete

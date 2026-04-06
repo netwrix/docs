@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # Passwords
 
-## What are passwords?
+## Passwords overview
 
 In Netwrix Password Secure v8, the data record with the passwords represents the central data
 object. The Passwords module provides administrators and users with central access to the passwords
-for the purpose of handling this sensitive data that requires protection. Search filters in
+to handle this sensitive data that requires protection. Search filters in
 combination with color-highlighted tags enable very focussed work. Various approaches can be used to
 help apply the desired permissions to objects. Furthermore, the ergonomic structure of the module
 helps all users to use Netwrix Password Secure in an efficient and targeted manner.
@@ -35,7 +35,7 @@ The module-specific ribbon functions will be explained below.
 ### New
 
 - **New password**: New passwords can be added via this icon in the ribbon, via the context menu
-  that is accessed using the right mouse button and via the shortcut (Ctrl + N). The next step is to
+  that's accessed using the right mouse button and via the shortcut (Ctrl + N). The next step is to
   select a suitable form.
 - **Open**: Opens the object marked in list view and provides further information about the record
   in the reading pane.
@@ -52,7 +52,7 @@ The module-specific ribbon functions will be explained below.
   interaction. The issuing of notifications is carried out in the module designed for this purpose.
 - **Duplicate**: Duplicating creates an exact copy of the record in a new tab.
 - **Move**: Moves the record marked in list view to another organisational structure.
-- **Toggle** **Favorite**: The selected record is marked as a favorite. It is possible to switch
+- **Toggle** **Favorite**: The selected record is marked as a favorite. It's possible to switch
   between all records and favorites at any time.
 - **Quick view**: A modal window opens for the selected record for 15 seconds and displays all
   available information **including the value of the password**.
@@ -60,7 +60,7 @@ The module-specific ribbon functions will be explained below.
 
 ### Permissions
 
-- **Permissions**: The drop-down menu can be used to set both password permissions and also form
+- **Permissions**: The dropdown menu can be used to set both password permissions and also form
   field permissions. This method only allows the manual setting of permissions for data (see
 
 **authorization concept)**
@@ -83,7 +83,7 @@ default. In the present case, this has been adjusted via the user settings.)
 ### Start
 
 Conveniently working with passwords is only possible via the efficient usage of automated accesses
-via RDP, SSH, general Windows applications or websites. This makes it possible to dispense with
+via RDP, SSH, general Windows applications, or websites. This makes it possible to dispense with
 (unsecure) entries via "copy & paste".
 
 - **Open web page**: If an URL is saved in the record, this menu option can be used to directly open
@@ -105,14 +105,14 @@ first session.
 
 
 - **History**: This icon opens the history for those records selected in list view in a new tab. Due
-  to the comprehensive recording of historical versions of passwords, it is now possible to compare
+  to the comprehensive recording of historical versions of passwords, it's now possible to compare
   several versions with one another.
 - **Print**: This option can be used to open the print function.
-- **Export**: It is possible to export all the selected records and also the data defined by the
+- **Export**: It's possible to export all the selected records and also the data defined by the
   filter to a .csv file.
-- **Change form**: It is possible to change the form used for individual records. "Mapping" of the
+- **Change form**: It's possible to change the form used for individual records. "Mapping" of the
   previous form fields can be directly carried out in the process.
 - **Settings**: The password settings are described in a separate section.
 
 NOTE: The password module is based on the module of the same name in the Web Application. Both
-modules have a different scope and design. However, they are almost identical to use.
+modules have a different scope and design. However, they're almost identical to use.

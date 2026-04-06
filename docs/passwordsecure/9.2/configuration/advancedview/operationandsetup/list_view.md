@@ -6,16 +6,16 @@ sidebar_position: 30
 
 # List view
 
-## What is the list view?
+## List view overview
 
 The list view is located centrally in the Netwrix Password Secure client, and is a key element of
-daily work. There are also list views in Windows operating systems. If you click on a folder in
+daily work. There are also list views in Windows operating systems. If you click a folder in
 Windows Explorer, the contents of the folder are displayed in a list view. The same is true in
 Netwrix Password Secure version 9.
 
-However, instead of folders, the content of the list view is defined by the currently applied
+However, instead of folders, the content of the list view is defined by the applied
 filter. \* This always means that the list view is the result of a filtered filter \*. For the
-currently marked record in list view, all existing form fields are output to the reading pane. With
+ marked record in list view, all existing form fields are output to the reading pane. With
 the two tabs “All” and “Favourites, the filter results can be further restricted.
 
 ![List view](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/listview/installation_with_parameters_26-en.webp)
@@ -86,6 +86,5 @@ separate tab, the list view is completely hidden
 ![editing dataset](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/listview/installation_with_parameters_33-en.webp)
 
 NOTE: Working with data records depends of course on the type of the data record. Whether passwords,
-documents or organisational structures: The handling is partly very different. For more information,
-please refer to the respective sections on the individual
+documents, or organisational structures: The handling is partly very different. See the respective sections in the
 [Client Module](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/client_module.md)

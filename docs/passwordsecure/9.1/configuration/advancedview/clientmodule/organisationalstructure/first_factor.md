@@ -6,9 +6,9 @@ sidebar_position: 40
 
 # First factor
 
-## What is meant by first factor?
+## First factor overview
 
-It is a process that regulates access to our system.
+It's a process that regulates access to the system.
 
 ## Requirements
 
@@ -33,9 +33,9 @@ user to be logged on based on the applicant in the smartcard certificate. This i
 the default regex `^{username}[.@\\/-_:]({domain})$` or `^({domain})[.@\\/-_:]({username})$` is
 applied to the applicant. In this case, `{username}` is replaced with the user to be registered and
 `{domain}` is replaced with the domain in the AD profile in the regex and if the regex query is
-positive, the user is registered. If the format of your applicant in your certificates is not
+positive, the user is registered. If the format of your applicant in your certificates isn't
 compatible with these two regex queries, you must set a custom regex query in the Server Manager.
-Please note that `{username}` for username and `{domain}` for the AD domain SHOULD be present in the
+`{username}` for username and `{domain}` for the AD domain SHOULD be present in the
 regex query. If the domain must be explicitly specified, it must be written in capital letters.
 :::
 
@@ -46,7 +46,7 @@ In addition, the smartcard certificate must of course also be valid on the serve
 
 ## Requirement
 
-For Fido2 it is mandatory that
+For Fido2 it's mandatory that
 SMTP ([Advanced settings](/docs/passwordsecure/9.1/configuration/servermanager/mainmenu/advanced_settings.md))
 is configured. In addition, an e-mail address must be stored for the AD users.
 

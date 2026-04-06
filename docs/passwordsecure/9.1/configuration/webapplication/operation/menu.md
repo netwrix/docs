@@ -6,12 +6,12 @@ sidebar_position: 40
 
 # Menu
 
-## What is the menu?
+## Menu overview
 
 The ribbon on the client has been replaced by a menu on the Web Application. The menu thus
 represents the central operating element on the Web Application. The functions available within the
-menu are dynamic and are based on the currently available actions. Different actions are possible
-depending on which view is currently being used.
+menu are dynamic and are based on the available actions. Different actions are possible
+depending on which view is being used.
 
 #### Menu bar
 
@@ -52,7 +52,7 @@ to 1 to the sections of the ribbon on the client.
 
 ![Menu](/images/passwordsecure/9.1/configuration/web_application/operation/menu_bar/installation_with_parameters_175-en.webp)
 
-In our example, the menu looks like this:
+In this example, the menu looks like this:
 
 1. New Item
 
@@ -61,11 +61,11 @@ also **Delete**.
 
 2. Actions
 
-The actions can be used, for example, to mark the password as a Favourite or also to Duplicate it.
+The actions can be used, for example, to mark the password as a Favourite, or also to Duplicate it.
 
 3. Permissions
 
-This section does not offer any additional functions than simply opening the permissions.
+This section doesn't offer any additional functions than simply opening the permissions.
 
 4. Clipboard
 
@@ -75,7 +75,7 @@ This section can be used to copy all available fields to the clipboard.
 
 A website can be called up here.
 
-NOTE: As already described, the menu is dynamic and thus appears in a variety of different forms.
+NOTE: As already described, the menu is dynamic, and thus appears in a variety of different forms.
 However, the basic function is always the same: The menu bar contains the basis functions, while the
 advanced menu contains all functions.
 

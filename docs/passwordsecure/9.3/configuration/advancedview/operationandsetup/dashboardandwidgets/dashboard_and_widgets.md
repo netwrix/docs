@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Dashboard and widgets
 
-## What are dashboards and widgets?
+## Dashboards and widgets overview
 
 In case of large installations, the amount of information provided by Netwrix Password Secure may
 seem overwhelming. Dashboards expand the existing filter possibilities by an arbitrarily
@@ -45,7 +45,7 @@ and editing widgets is only possible in this mode.
 
 ![Adding and removing widgets](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/dashboard_and_widgets/installation_with_parameters_51-en.webp)
 
-Use the drop-down menu to select the widget to be added \* (1) . **Then add the widget to the
+Use the dropdown menu to select the widget to be added \* (1) . **Then add the widget to the
 dashboard using the corresponding button in the ribbon** (2). The maximum number of widgets that can
 be added can be configured in the user settings. In editing mode, any widget can be directly removed
 from the dashboard via the button on the upper right edge. The processing mode is ended by saving
@@ -76,7 +76,7 @@ filtered “live” and displayed in real-time.
 
 ## Arranging widgets
 
-In the edit mode, the layout of the widgets is user-defined. Drag & drop allows you to place a
+In the edit mode, the layout of the widgets is user-defined. Drag & drop lets you place a
 widget in the corresponding position on the dashboard (left, right, top, or bottom).
 
 ![Arranging widgets](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/dashboard_and_widgets/installation_with_parameters_55-en.webp)

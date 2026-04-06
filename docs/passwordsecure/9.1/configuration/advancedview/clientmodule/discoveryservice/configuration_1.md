@@ -64,7 +64,7 @@ finished, the **Network Scan** scans the **network** according to these guidelin
 
 1. **Password** and **Computer scan variants**: The required password must already have been issued
    and it requires corresponding rights for the domain. Active Directory computer: Only those
-   computers that are in Active Directory are scanned (there is also the option of using it
+   computers that are in Active Directory are scanned (there's also the option of using it
    individually or pinging the network). Ping network: A network filter for the configuration of the
    network is displayed.
 2. **Network filter**: This defines the network to be scanned: either using an IP range or an IP
@@ -80,7 +80,7 @@ finished, the **Network Scan** scans the **network** according to these guidelin
    user of services or _Local user_.
 
 :::warning
-The system executing the scan – on which the Server Manager is installed – is not
+The system executing the scan – on which the Server Manager is installed – isn't
 scanned!
 :::
 

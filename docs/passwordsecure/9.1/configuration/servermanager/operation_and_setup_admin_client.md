@@ -22,18 +22,17 @@ NOTE: An initial password is required for the first login on Server Manager. The
 
 1. Ribbon
 
-As usual the ribbon can be found above. Because the module is purely informative, there is no
+As usual the ribbon can be found above. Because the module is purely informative, there's no
 functionality in the ribbon, except for updating the view
 
 2. Notification area
 
 - The info area shows the status of the specific services. Click the icon to configure services. By
-  default, the base configuration is used. If necessary, individual parameters can be replaced or
-  adapted to personal requirements.
+  default, the base configuration is used. If necessary, individual parameters can be replaced, or   adapted to personal requirements.
 - You can start and stop a specific service via
-- On the right side of the info area, the utilization of the processor and main memory is displayed
+- On the right side of the info area, the utilization of the processor, and main memory is displayed
   over two curves.
-- In the “Backup service” area, the last backups are displayed using a diagram. There is a green bar
+- In the “Backup service” area, the last backups are displayed using a diagram. There's a green bar
   for a successful backup, a red symbolizes a failed backup. Additional information is displayed via
   a mouseover.
 
@@ -67,14 +66,13 @@ also be called up – completely without accessing the SQL server.
 2. Database overview
 
 In the database overview, all databases listed alphabetically. This section can be minimised using
-the arrow symbol on the top, left edge. Right-click on one of the databases to display a context
+the arrow symbol on the top, left edge. Right-click one of the databases to display a context
 menu with all available functions.
 
 3. Notification area
 
-The Info area displays all the information about the database currently selected in the database
-overview. This information is ivided into the three subsections “Database summary, Data sets and
-Database tables”.
+The Info area displays all the information about the database selected in the database
+overview. This information is ivided into the three subsections “Database summary, Data sets, and Database tables”.
 
 4. Recent backups
 
@@ -88,7 +86,7 @@ carried out in the same way as the server log according to the colours applied.
 
 #### Backups module
 
-There is also a separate module for configuring the backups. This means that all backups can be
+There's also a separate module for configuring the backups. This means that all backups can be
 configured and managed directly from the Server Manager.
 
 ![backup-ac](/images/passwordsecure/9.1/configuration/server_manager/operation_and_setup/backup-ac.webp)
@@ -102,8 +100,7 @@ are available via right-click
 
 3. Notification area
 
-The notification area is divided into three sections. The “Basic settings, Advanced settings and
-Info” sections for the selected database can be used
+The notification area is divided into three sections. The “Basic settings, Advanced settings, and Info” sections for the selected database can be used
 
 4. Recent backups
 
@@ -112,4 +109,4 @@ The last backups are displayed in a list on the right.
 5. All backups
 
 A tabular overview shows all previous backups. The view can be sorted as usual. Here you can see at
-a glance, when which database was saved and whether the backup was successful.
+a glance, when which database was saved, and whether the backup was successful.

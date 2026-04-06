@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Password masking
 
-## What is password masking?
+## Password masking overview
 
-The safest passwords are those that you do not know. Password masking follows this approach. It
+The safest passwords are those that you don't know. Password masking follows this approach. It
 prevents the password from being shown, while allowing the use of the automatic sign-on. You can
 apply it via the button of the same name in the ribbon.
 
@@ -48,17 +48,17 @@ button in the ribbon for that purpose. Ensure that the password field is highlig
 
 The special feature when setting or editing masking via the form field permissions is that you can
 individually select users to whom masking will be applied. In the following example, masking has
-been specified only for the role of “trainees”, although the “IT” role does not have the **authorize
+been specified only for the role of “trainees”, although the “IT” role doesn't have the **authorize
 permission** either. In addition to the name of the role or the user, the icon symbolizes the fact
 that visa protection applies to trainees.
 
 ![example password masking](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/password_masking/password_masking_3-en.webp)
 
 NOTE: Use the icon in the ribbon to apply password masking to all users who have read permission on
-the record, but not the **authorize permission**. If you wish to specify more precisely for which
+the record, but not the **authorize permission**. If you want to specify more precisely for which
 users the password masking should be applied, this is also possible via the form field permissions.
 
-NOTE: It is important to note that the login mask for records with password masking will be "sent
+NOTE: Mask for records with password masking will be "sent
 automatically", even if the setting **Browser Extensions: Automatically send login masks** has been
 deactivated.
 

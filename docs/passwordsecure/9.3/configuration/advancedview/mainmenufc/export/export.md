@@ -6,17 +6,17 @@ sidebar_position: 80
 
 # Export
 
-## What is an export?
+## Export overview
 
 An export is used for extracting the data saved in the MSSQL database. Both selective (manual) and
 automated [System tasks](/docs/passwordsecure/9.3/configuration/advancedview/mainmenufc/extras/systemtasks/system_tasks.md) can extract information from
 Netwrix Password Secure in this manner.
 
-**CAUTION:** Please note that extracting passwords is always associated with a weakening of the
+**CAUTION:** that extracting passwords is always associated with a weakening of the
 security concept. The informative value of the logbook will suffer when data is exported because the
 revision of this data will no longer be logged. This aspect needs to be taken into account
 particularly in conjunction with the Netwrix Password Secure
-[Export wizard](/docs/passwordsecure/9.3/configuration/advancedview/mainmenufc/export/export_wizard.md) because the export result is not separately secured
+[Export wizard](/docs/passwordsecure/9.3/configuration/advancedview/mainmenufc/export/export_wizard.md) because the export result isn't separately secured
 by a password.
 
 The export function is accessed via the Main menu/Export. There are two fundamental types of export
@@ -39,7 +39,7 @@ rights
 
 ![Export in the ribbon](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/export/installation_with_parameters_64-en.webp)
 
-In this example, the marked role IT employee does not have the required permissions to export the
+In this example, the marked role IT employee doesn't have the required permissions to export the
 record. In contrast, the IT manager does have the required permissions. In addition, the
 administrator possesses all rights, including the right to export.
 

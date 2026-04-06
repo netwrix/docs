@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Reports
 
-## What are reports?
+## Reports overview
 
 Comprehensive reporting is an important component of the ongoing monitoring of processes in Netwrix
 Password Secure. Similar to selectively configurable
@@ -29,7 +29,7 @@ contents are always the same.
 
 The filter on the left has no relevance in relation to reports. Although reports can also be
 “tagged” in theory, filtering has no effect on the reports. In
-[List view](/docs/passwordsecure/9.2/configuration/advancedview/operationandsetup/list_view.md), there are currently three
+[List view](/docs/passwordsecure/9.2/configuration/advancedview/operationandsetup/list_view.md), there are three
 configured report requests shown.
 
 #### Creating a report request
@@ -37,7 +37,7 @@ configured report requests shown.
 New report requests can be created in list view via the ribbon or also the context menu that is
 accessed using the right mouse button. The form for creating a new report request again opens in a
 separate tab. Alongside a diverse range of variables, the report type can be defined using a
-drop-down list. There are currently dozens of report types available.
+dropdown list. There are dozens of report types available.
 
 ![installation_with_parameters_80](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/reports/installation_with_parameters_80.webp)
 
@@ -53,5 +53,5 @@ displayed in the default web browser if desired.
 
 Automated sending of reports via system tasks
 
-In general, reports are not manually created but are automatically sent to defined recipients. This
+In general, reports aren't manually created but are automatically sent to defined recipients. This
 is apossible via system tasks, which can run processes of this nature at set times.

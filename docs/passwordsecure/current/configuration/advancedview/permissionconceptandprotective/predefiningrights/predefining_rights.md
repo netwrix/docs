@@ -6,16 +6,16 @@ sidebar_position: 30
 
 # Predefining rights
 
-## What are predefined rights?
+## Predefined rights overview
 
 [Permissions for organisational structures](/docs/passwordsecure/current/configuration/advancedview/clientmodule/organisationalstructure/permissionsfororganisational/permissions_for_organisational.md)
-can be carried out separately for every record. Although this method enables you to very closely
-control every intended permission structure, it is not really efficient. On the one hand, there is
+can be carried out separately for every record. Although this method lets you very closely
+control every intended permission structure, it isn't really efficient. On the one hand, there is
 too much configuration work involved, while on the other hand, there is a danger that people who
-should also receive permissions to access data are forgotten. In addition, many users should not
+should also receive permissions to access data are forgotten. In addition, many users shouldn't
 even have the right to set permissions. “Predefining rights” is a suitable method to simplify the
 permissions and reduce error rates by using automated processes. This page covers the configuration
-of predefined rights, please also refer to the sections
+of predefined rights, also refer to the sections
 [Working with predefined rights](/docs/passwordsecure/current/configuration/advancedview/permissionconceptandprotective/predefiningrights/working_with_predefined_rights.md)
 and their
 [Scope of validity for predefined rights](/docs/passwordsecure/current/configuration/advancedview/permissionconceptandprotective/predefiningrights/scope_of_validity_for_predefined.md).
@@ -38,7 +38,7 @@ following example specifically focuses on an IT department. The following 3 hier
 In general, a senior employee is granted more extensive rights than those granted to a trainee. This
 hierarchy and the associated permission structure can be predefined. In the
 O[Organisational structure](/docs/passwordsecure/current/configuration/advancedview/clientmodule/organisationalstructure/organisational_structure.md)
-module, we now select those OUs (departments) for which rights should be predefined and select
+module, Password Secure now select those OUs (departments) for which rights should be predefined and select
 \*predefine rights” in the ribbon.
 
 ![button of predefined rights](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/predefined-rights-1-en.webp)
@@ -67,7 +67,7 @@ and **Firewall** have also been defined below.
 
 ![Standard template](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/predefined-rights-4-en.webp)
 
-A **default template group** can be defined directly next to the drop-down menu for selecting the
+A **default template group** can be defined directly next to the dropdown menu for selecting the
 template group (green arrow). This is always pre-configured when you select “IT” as the OU to save
 records.
 

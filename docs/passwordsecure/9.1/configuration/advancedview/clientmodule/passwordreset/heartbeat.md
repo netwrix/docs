@@ -6,10 +6,10 @@ sidebar_position: 50
 
 # Heartbeat
 
-## What is the heartbeat?
+## Heartbeat overview
 
 The heartbeat checks whether passwords in Netwrix Password Secure match the login data on the
-relevant systems. This process ensures that the passwords do not differ from one another.
+relevant systems. This process ensures that the passwords don't differ from one another.
 
 ## Requirements
 
@@ -41,11 +41,11 @@ can also be found in the section
 ### Manual testing
 
 The heartbeat can be executed in the ribbon for the password module by clicking on **Check login
-data**. The currently marked password is always tested.
+data**. The marked password is always tested.
 
 ### Automatic testing via the password settings
 
-It is also possible to configure the heartbeat to run cyclically. It can be configured either via
+It's also possible to configure the heartbeat to run cyclically. It can be configured either via
 the
 [User settings](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/usersettings/user_settings.md)
 or directly in the
@@ -64,8 +64,8 @@ can be displayed by moving the mouse over the icon.
 
 The icon has three different versions. These have the following meanings:
 
-The last test was successful. The password is correct The test could not be performed. For example,
-the password could not be reached. The last test was completed. However, the password is different
+The last test was successful. The password is correct The test couldn't be performed. For example,
+the password couldn't be reached. The last test was completed. However, the password is different
 to the one on the target system.
 
 ## Filtering the results

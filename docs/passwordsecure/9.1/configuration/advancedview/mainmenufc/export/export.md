@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Export
 
-## What is an export?
+## Export overview
 
 An export is used for extracting the data saved in the MSSQL database. Both selective (manual) and
 automated
@@ -14,12 +14,12 @@ automated
 can extract information from Netwrix Password Secure in this manner.
 
 :::warning
-Please note that extracting passwords is always associated with a weakening of the
+Extracting passwords is always associated with a weakening of the
 security concept. The informative value of the logbook will suffer when data is exported because the
 revision of this data will no longer be logged. This aspect needs to be taken into account
 particularly in conjunction with the Netwrix Password Secure
 [Export wizard](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/export/export_wizard.md)
-because the export result is not separately secured by a password.
+because the export result isn't separately secured by a password.
 :::
 
 
@@ -31,8 +31,7 @@ subcategories.
 
 The
 [HTML WebViewer export](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/export/html_webviewer_export.md)
-creates a HTML file protected by a password. In contrast, the export wizard creates an open and
-unprotected .csv file.
+creates a HTML file protected by a password. In contrast, the export wizard creates an open, and unprotected .csv file.
 
 ## Requirements
 
@@ -45,7 +44,7 @@ rights
 
 ![Export in the ribbon](/images/passwordsecure/9.1/configuration/advanced_view/mainmenu/export/installation_with_parameters_64-en.webp)
 
-In this example, the marked role IT employee does not have the required permissions to export the
+In this example, the marked role IT employee doesn't have the required permissions to export the
 record. In contrast, the IT manager does have the required permissions. In addition, the
 administrator possesses all rights, including the right to export.
 
@@ -57,6 +56,6 @@ The following option is required.
 
 - Can export
 
-NOTE: If a record is exported, this user right and also the corresponding permissions for the record
+NOTE: If a record is exported, this user right, and also the corresponding permissions for the record
 must be set. The user right defines whether a user can generally export data, while the permissions
 for the record define which records can be exported.

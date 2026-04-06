@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Client Module
 
-## What are modules?
+## Modules overview
 
 Netwrix Password Secure can be customized according to the needs of the users. This requirement can
 be applied by the user, and can also be applied by administrative users. This means that everyone
@@ -37,7 +37,7 @@ example).
 
 ![sorting modules](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/client_modules_3-en.webp)
 
-The navigation options enable you to define the maximum number of visible elements and also how they
+The navigation options let you define the maximum number of visible elements and also how they
 are sorted.
 
 ![sorting modules](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/client_modules_4-en.webp)

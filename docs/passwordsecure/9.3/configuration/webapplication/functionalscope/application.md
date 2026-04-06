@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Application
 
-The following functions are currently available in the **Application module**:
+The following functions are available in the **Application module**:
 
 Web & SAML applications:
 

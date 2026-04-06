@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Applications
 
-## What are applications?
+## Applications overview
 
 Applications can be used to configure automated logins to various systems. Especially when combined
 with various protective mechanisms, the company benefits in terms of security because complex
@@ -22,22 +22,21 @@ automatic logon to almost any kind of software.
 
 ## The four types of applications
 
-Netwrix Password Secure varies between four different types of applications: RDP, SSH, SSO and web
+Netwrix Password Secure varies between four different types of applications: RDP, SSH, SSO, and web
 applications.
 
 ![new application](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/applications_2-en.webp)
 
-In terms of how they are handled, **RDP and SSH** applications can be covered together. Both types
+**RDP and SSH** applications can be covered together in terms of how they are handled. Both types
 of application can be (optionally) "embedded" in Netwrix Password Secure. The relevant session then
 opens in its own tab in the [Reading pane](/docs/passwordsecure/9.2/configuration/advancedview/operationandsetup/reading_pane.md).
 All other forms of automatic logins are summarized in the **SSO applications** and **web
 applications** categories. How exactly these logins are created and used is covered in the next
 section and in the web applications chapter. They include all forms of Windows login masks and also
-applications for websites. In contrast to RDP and SSH applications, they cannot be started embedded
+applications for websites. In contrast to RDP and SSH applications, they can't be started embedded
 in Netwrix Password Secure but are instead opened as usual in their own window. These SSO
 applications need to be defined in advance. In Netwrix Password Secure, this is also described as
-[Learning the applications](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/applications/learningtheapplications/learning_the_applications.md). In contrast,
-RDP and SSH can be both completely defined and also started within Netwrix Password Secure.
+[Learning the applications](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/applications/learningtheapplications/learning_the_applications.md). RDP and SSH applications, by contrast, can be both completely defined and started within Netwrix Password Secure.
 
 ## RDP and SSH
 
@@ -59,7 +58,7 @@ The connection to the desired session can be established via the icon **Establis
 ![estabish RDP](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/applications_4-en.webp)
 
 Netwrix Password Secure now attempts to log in to the target system with the information available.
-Data that are not saved in the form will be directly requested when opening the session. It is thus
+Data that aren't saved in the form will be directly requested when opening the session. It is thus
 also possible to only enter the IP address and/or the password after starting the Netwrix Password
 Secure application. If all data has been retrieved, the RDP session will open in a tab – if so
 defined (Window mode field in the application):
@@ -71,7 +70,7 @@ defined (Window mode field in the application):
 It is also possible to complete the authentication process using SSH certificates. For this purpose,
 the certificate is saved as a document in .ppk format. (It may be necessary to firstly approve this
 file ending in the settings). The document is then linked to the record via the footer. The record
-does not need to have a password. However, it is necessary for the record to be linked to a SSH
+doesn't need to have a password. However, it is necessary for the record to be linked to a SSH
 application.
 
 ## Linking records and applications
@@ -80,7 +79,7 @@ The application defines the requirements for the desired connection and also opt
 target system. By linking records with applications, the complete login process can be automated. If
 the record now also supplies the user name and password, all of the information required for the
 login is available. Applications and records are linked via the "Start" tab in the ribbon. If this
-link to a record is established, a 1-click login to the target system is possible.
+link to a record is established, a 1-click log in to the target system is possible.
 
 ![linking RDP](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/applications_6-en.webp)
 
@@ -95,16 +94,16 @@ multiple access points.
 
 ![multiple access points](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/applications_8-en.webp)
 
-This is generally a very common scenario. Nevertheless, it should be noted that accessing multiple
+This is generally a very common scenario. Nevertheless, accessing multiple
 servers with one single password is questionable from a security standpoint. It is generally
 recommended that a unique password is issued for every server/access point.
 
-NOTE: It is possible to leave the **IP address** field empty in the application. If an **IP
+NOTE: You can leave the **IP address** field empty in the application. If an **IP
 address** field exists in the linked record then this address will be used. If there is also no IP
 address in the record, a popup window will appear in which the desired IP address can be entered
 manually.
 
-Alternatively, it is possible to connect several records with one RDP connection. In this way, you
+Alternatively, you can connect several records with one RDP connection. In this way, you
 can combine different users with an RDP connection and register them straightforward.
 
 ![connect RDP sessions](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/applications_9-en.webp)

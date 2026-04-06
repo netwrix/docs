@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # System tasks
 
-## What are system tasks?
+## System tasks overview
 
 Netwrix Password Secure supports administrators and users by automating repetitive tasks. These are
 represented as system tasks. Predefined tasks can thus be carried out at freely defined intervals.
@@ -25,9 +25,9 @@ User right
 - Can manage Emergency WebViewer export system tasks
 - Can manage WebViewer export system tasks
 
-## What can be automated?
+## Automation capabilities
 
-There are currently four different work processes that can be automated using system tasks:
+There are four different work processes that can be automated using system tasks:
 
 - **HTML WebViewer export:** Exports a freely definable selection of records in an AES-256 encrypted
   HTML file. The file is saved in the form of notifications.
@@ -36,7 +36,7 @@ There are currently four different work processes that can be automated using sy
 - **Network service scan:** Searches for service accounts on the network at defined cycles
 - **Active Directory synchronization:** The comparison with Active Directory can also be automated
   via system tasks. This requires an active directory profile to be created in advance. It is
-  important to note that only the Master Key profile can be automatically compared.
+  important to only the Master Key profile can be automatically compared.
 
 ## Creating system tasks
 
@@ -50,7 +50,7 @@ Naturally, the four work processes also share some similarities in their configu
 
 - **Status:** The system task is normally activated and then starts immediately after it has been
   saved according to the defined intervals. If the system task is deactivated here, it is still
-  saved but is not yet activated.
+  saved but isn't yet activated.
 - **Next run:** This setting describes when the system task will be performed or when it was already
   performed for the first time (if this task was already created and is now being edited)
 - **Interval:** The interval at which the system task should be executed is defined here. All
@@ -86,13 +86,13 @@ Active Directory synchronization
 Emergency WebViewer export
 
 - The Emergency WebViewer export creates an encrypted HTML file that contains all passwords. In an
-  emergency, the data required to get the system up and running again can be accessed in this file.
+  emergency, the data required to restore the system can be accessed in this file.
 
 NOTE: Tags could be defined for individual tasks – yet they have no relevance and can also not be
 used as filter criteria in the system tasks.
 
 Status
 
-A corresponding note will be displayed to indicate if a task is currently being executed.
+A corresponding note will be displayed to indicate if a task is being executed.
 
 ![installation_with_parameters_88](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/system_tasks/installation_with_parameters_88.webp)

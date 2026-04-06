@@ -6,11 +6,11 @@ sidebar_position: 40
 
 # User settings
 
-## What are user settings?
+## User settings overview
 
 There are many functions within Netwrix Password Secure that can be adapted to the needs of users.
-It is also possible to define various parameters for optical representations. This can be inherited
-both at \* user level \*, \* global \* and \* organisational units \*. In addition, there is a
+It's also possible to define various parameters for optical representations. This can be inherited
+both at \* user level \*, \* global \* and \* organisational units \*. In addition, there's a
 security level concept, which categorizes the users into five layers. The administration of settings
 can thus be linked to the presence of the required security level.
 
@@ -18,8 +18,8 @@ can thus be linked to the presence of the required security level.
 
 You can configure user settings similarly to
 [User rights](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/userrights/user_rights.md).
-Here too, there are a total of three possibilities with which a user can define his settings or be
-configured from another location. For the sake of easy manageability, it is again a good idea to
+Here too, there are a total of three possibilities with which a user can define his settings, or be
+configured from another location. For the sake of easy manageability, it's again a good idea to
 configure the users not individually, but to provide several equal users with settings.
 
 ![installation_with_parameters_116](/images/passwordsecure/9.1/configuration/advanced_view/mainmenu/user_settings/installation_with_parameters_116.webp)
@@ -36,7 +36,7 @@ one of the following three ways:
 
 :::warning
 In addition to personal and global settings (as opposed to authorizations), settings
-are not assigned via roles, but via organisational units!
+aren't assigned via roles, but via organisational units!
 :::
 
 
@@ -58,7 +58,7 @@ present case, the users “Jones” and “Moore” inherit all settings from th
 
 ![inherit permissions](/images/passwordsecure/9.1/configuration/advanced_view/mainmenu/user_settings/installation_with_parameters_117-en.webp)
 
-The “Settings” button in the ribbon allows you to see the settings for both organisational units and
+The “Settings” button in the ribbon lets you see the settings for both organisational units and
 users. The many setting options can be restricted by the known
 [Search](/docs/passwordsecure/9.1/configuration/advancedview/operationandsetup/search.md)
 mechanisms.
@@ -75,7 +75,7 @@ NOTE: The inheritance for individual settings can be deactivated in the ribbon!
 ## Security levels
 
 Option groups were created in the global settings to ensure that users can control only those
-settings for which they hold permissions. Categorising security levels from 1 to 5 allows you to
+settings for which they hold permissions. Categorising security levels from 1 to 5 lets you
 combine similar options and thus make them available to the users.
 
 ![user settings](/images/passwordsecure/9.1/configuration/advanced_view/mainmenu/user_settings/installation_with_parameters_119-en.webp)

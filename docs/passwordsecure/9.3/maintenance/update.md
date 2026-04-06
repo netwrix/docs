@@ -8,31 +8,29 @@ sidebar_position: 10
 
 ## Reasons for regular updates
 
-Our development team is constantly working on the further development of the software. This does not
+The development team is constantly working on the further development of the software. This doesn't
 only involve fixing any problems but also primarily the development of new features to adapt the
-software as best as possible to the requirements of our customers. Therefore, it is recommended that
-you regularly install updates.
+software as best as possible to the requirements of the customers. Therefore, you regularly install updates.
 
 The documentation always refers to the latest version available. If Netwrix Password Secure deviates
 from the documentation (e.g. in appearance or also its functional scope), it makes sense to firstly
 update to the latest version.
 
 NOTE: The update check on the server or the client can be used to easily install the latest version.
-The update check on the client must be activated in the settings for users beforehand. We recommend
+The update check on the client must be activated in the settings for users beforehand. Netwrix recommends
 leaving the update check deactivated for normal users! Otherwise these users could independently
-attempt to install updates. Since a new client cannot connect to an old server, this results in the
+attempt to install updates. Since a new client can't connect to an old server, this results in the
 user not being able to log in.
 
 ## Requirements
 
 The requirements should be checked or established before an update.
 
-**CAUTION:** Please always check the Changelog for requirements or breaking changes before updating!
+**CAUTION:** always check the Changelog for requirements or breaking changes before updating!
 
 ### Check the software maintenance package
 
-The right to install updates is acquired with the software maintenance package. It is important to
-note that you are permitted to install all updates as long as the software maintenance package is
+The right to install updates is acquired with the software maintenance package. You are permitted to install all updates as long as the software maintenance package is
 still active. If the software maintenance package has expired, you are only permitted to use those
 versions that were released during the term of the software maintenance package. Therefore, you
 should check whether the software maintenance package is still active before an update. This can be
@@ -49,7 +47,7 @@ problem arises.
 ### Checking compatibility
 
 An attempt is always made to design the Server Manager so that it is backwards compatible.
-Unfortunately this is not always possible. Therefore, you should always check which client version
+Unfortunately this isn't always possible. Therefore, you should always check which client version
 the Server Manager is compatible with before an update. The version history for the relevant version
 will provide this information.
 
@@ -59,8 +57,8 @@ is essential that it is noted down or temporarily saved elsewhere before an upda
 ### Latest installation files
 
 The installation files can be downloaded from the
-[customer information system](https://license.passwordsafe.de/kis). Please simply use the access
-data that we sent to you by email to log in.
+[customer information system](https://license.passwordsafe.de/kis). simply use the access
+data sent to you by email to log in.
 
 ## Perform update
 
@@ -81,7 +79,7 @@ Further information on the installation wizard can be found in the section
 
 ### Patch level update for the databases
 
-The databases are usually deactivated after updating the Server Manager because they do not yet have
+The databases are usually deactivated after updating the Server Manager because they don't yet have
 the corresponding patch level. This should be immediately checked. After logging in to the Server
 Manager, the module “Databases” is immediately visible. If the databases have been deactivated, you
 can reactivate them directly in the ribbon via the corresponding button. The patch level will be

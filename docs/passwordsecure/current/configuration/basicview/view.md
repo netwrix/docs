@@ -10,7 +10,7 @@ sidebar_position: 40
 
 The Basic view interface is arranged in tiles. If a logo/icon has been stored for a password in the
 image management, this can optionally be displayed with the associated data record. If the logo of
-the password is not available, a reduced Outlook view is displayed.
+the password isn't available, a reduced Outlook view is displayed.
 
 1. view of a Basic view button with stored logo
 
@@ -24,7 +24,7 @@ the password is not available, a reduced Outlook view is displayed.
 
 ![sql-server-log](/images/passwordsecure/9.2/configuration/basic_view/view/sql-server-log.webp)
 
-Click on the tile to open the application.
+Click the tile to open the application.
 
 ![SSO LightClient](/images/passwordsecure/9.2/configuration/basic_view/view/sso-lc-en.webp)
 
@@ -50,15 +50,15 @@ When you click the button, the following options become visible:
 - Typing assistance (Use this view to easily type out passwords)
 - -Refresh (The record will be updated.)
 
-You can only perform the above operations if you are sufficiently authorized. Please point this out
-to your in-house administrator if this is not the case for you.
+You can only perform the above operations if you are sufficiently authorized. point this out
+to your in-house administrator if this isn't the case for you.
 
 **CAUTION:** You can only execute the mentioned operations if you are sufficiently authorized.
-Please point this out to your in-house administrator if this is not the case for you.
+ point this out to your in-house administrator if this isn't the case for you.
 
 ## Image management
 
 Usually, the setup of logos/icons in the i**mage management** is done by the in-house
-administration. You can learn more about this in the FullClient
+administration. See the FullClient
 [Image management](/docs/passwordsecure/current/configuration/advancedview/mainmenufc/extras/image_manager.md)
 documentation.

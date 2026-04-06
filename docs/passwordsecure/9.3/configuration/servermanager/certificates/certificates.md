@@ -10,7 +10,7 @@ Various different certificates are used to guarantee the security of Netwrix Pas
 certificates are essential for the smooth operation of Netwrix Password Secure. It is thus important
 that they are carefully backed up.
 
-## What certificates are used?
+## Certificates in use
 
 The individual certificates are described in the following sections:
 
@@ -67,7 +67,7 @@ The relevant certificates will be backed up by clicking on export. A password fi
 issued here. If a storage location has not yet been entered via the settings, you are firstly asked
 to enter it.
 
-NOTE: SSL connection certificates are not included in this process and are also not backed up. These
+NOTE: SSL connection certificates aren't included in this process and are also not backed up. These
 certificates can be recreated if necessary.
 
 #### Settings

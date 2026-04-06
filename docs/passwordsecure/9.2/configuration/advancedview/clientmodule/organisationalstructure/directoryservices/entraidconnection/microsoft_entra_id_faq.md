@@ -6,25 +6,25 @@ sidebar_position: 10
 
 # Microsoft Entra ID Services FAQ
 
-## Is it possible to migrate from LDAP to Entra ID?
+## Migrating from LDAP to Entra ID
 
-Currently, an automated migration from LDAP users (E2E as well as MasterKey) to Entra ID users is
+, an automated migration from LDAP users (E2E as well as MasterKey) to Entra ID users is
 not possible!
 
-## Which port is used for the SCIM endpoint for provisioning users/groups from Entra ID to the Application Server?
+## SCIM endpoint port for provisioning users and groups from Entra ID to the Application Server
 
 11015 is the port that will be used for the communication from Entra ID to Netwrix Password Secure.
 
-## Does the Entra ID connection support nested groups?
+## Entra ID connection support for nested groups
 
-Due to Azure based technical limitations, Netwrix Password Secure does not support nested groups.
+Due to Azure based technical limitations, Netwrix Password Secure doesn't support nested groups.
 
-## Does Entra ID work on servers that are only available internally?
+## Entra ID on servers that are only available internally
 
-An integration on servers, that are not accessible from external sources, the integration of Entra
+An integration on servers, that aren't accessible from external sources, the integration of Entra
 ID is also possible. For this, you can use the
 [Entra ID on-premises application provisioning to SCIM-enabled apps](https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/on-premises-scim-provisioning).
-This can be installed on all or only one application server. It must be noted that the IP or DNS
+This can be installed on all or only one application server. the IP or DNS
 name of the "Tenent URL" specified in the subsequently created enterprise application is present in
 the alternative application names in the server certificate. Tip: `https://127.0.0.1:11015/scim` can
 also be specified as the "Tenent URL", in which case 127.0.0.1 must again be present in the
@@ -52,6 +52,6 @@ alternative application names in the server certificate.
 - Click "Get started"
 - Set provisioning mode "Automatic"
 - Unhide "On-Premises Connectivity"
-- Assign the just installed agent to this application by selecting it and click "Assign Agent(s)"
+- Assign the just installed agent to this application by selecting it and click "Assign Agents"
 - It takes about 20 minutes until the agent is correctly connected to your application and you can
   proceed.

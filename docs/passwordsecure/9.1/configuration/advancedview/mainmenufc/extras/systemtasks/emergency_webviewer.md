@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # EmergencyWebViewer
 
-## What is an Emergency WebViewer export?
+## Emergency WebViewer export overview
 
 Safeguarding data is essential and this should be carried out using
 [Backup management](/docs/passwordsecure/9.1/configuration/servermanager/mainmenu/backupsettings/backup_management.md).
-However, a backup is not sufficient in some cases e.g. if a backup cannot be directly restored due
+However, a backup isn't sufficient in some cases e.g. if a backup can't be directly restored due
 to a hardware problem. In these cases, **Netwrix Password Secure** offers the backup feature
 **Emergency WebViewer Export**.
 
@@ -45,7 +45,7 @@ a secure medium (USB stick, HDD, CD/DVD, …) and kept in a secure location!
 • The file can only be encrypted using the **PrivateKey.prvkey** file
 
 :::warning
-The export right for the passwords is not required for the Emergency WebViewer Export!
+The export right for the passwords isn't required for the Emergency WebViewer Export!
 :::
 
 
@@ -76,7 +76,7 @@ Clicking on New opens a new window and the **Emergency WebViewer Export** can be
 
 ![installation_with_parameters_91_578x390](/images/passwordsecure/9.1/configuration/advanced_view/mainmenu/extras/system_tasks/emergency_webviewer/installation_with_parameters_91_578x390.webp)
 
-It is not possible to use the **Emergency WebViewer Export** with an **Active Directory user.**
+It isn't possible to use the **Emergency WebViewer Export** with an **Active Directory user.**
 
 ![installation_with_parameters_92_467x103](/images/passwordsecure/9.1/configuration/advanced_view/mainmenu/extras/system_tasks/emergency_webviewer/installation_with_parameters_92_467x103.webp)
 
@@ -104,7 +104,7 @@ saved!
 
 ## Displaying the Emergency WebViewer Export tasks
 
-Once the configuration has been completed, the **system task** is displayed in the current module in
+After the configuration has been completed, the **system task** is displayed in the current module in
 the
 
 **System Tasks** tab. The user has the option of checking the data here
@@ -133,7 +133,7 @@ The **Emergency WebViewer Export** is used in the same way as the **WebViewer ex
 **passwords** are displayed in a current browser. The passwords are accessed in the **Emergency
 WebViewer Export** with the **user password** and the **key** saved for the user. The search
 function is used to select the **key (PrivateKey.prvkey)** and also to check its **validity**. If
-all data has been correctly entered, it is then possible to log in.
+all data has been correctly entered, it's then possible to log in.
 
 NOTE: The current user needs to log in using their password. If an incorrect password is entered,
 access is temporarily blocked.
@@ -161,7 +161,7 @@ The following data is displayed in the overview:
 
 Overview data:
 
-1. Display of the currently available records
+1. Display of the available records
 2. Detailed information on the selected record
 3. Search, logout, timeout until logout
 4. Copy password to clipboard

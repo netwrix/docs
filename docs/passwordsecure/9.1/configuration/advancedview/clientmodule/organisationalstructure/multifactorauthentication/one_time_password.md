@@ -8,8 +8,8 @@ sidebar_position: 20
 
 ## Using OTP in Netwrix Password Secure
 
-A one-time password is a password that is valid once and can be used for authentication or
-transactions. Accordingly, each additional authentication or authorization requires a new one-time
+A one-time password is a password that's valid once and can be used for authentication or
+transactions. Accordingly, each additional authentication, or authorization requires a new one-time
 password.
 
 ## Establishment
@@ -46,7 +46,7 @@ How to use the HTML WebViewer can be read in the chapter with the same name.
 NOTE: The special feature of the Emergency WebViewer is that the stored OTP secret is also
 displayed.
 
-In order to use the One-Time-Password in the
+To use the One-Time-Password in the
 [EmergencyWebViewer](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/extras/systemtasks/emergency_webviewer.md)
 you have to proceed as follows:
 

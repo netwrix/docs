@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # nginx
 
-In order to integrate the Web Application onto an nginx server, it is first necessary to enter all
+To integrate the Web Application onto an nginx server, it's first necessary to enter all
 of the relevant settings:
 
 ## Document directory
@@ -16,12 +16,12 @@ The folder from which the Web Application should be operated is entered here. Th
 
 ## SSL certificate path
 
-It is necessary to enter the directory in which the certificate will be saved here. The standard
+It's necessary to enter the directory in which the certificate will be saved here. The standard
 path here is /etc/nginx/certs/Web Application.crt.
 
 ## SSL certificate key path
 
-Finally, it is necessary to enter where the certificate key is located here. The default setting is
+Finally, it's necessary to enter where the certificate key is located here. The default setting is
 /etc/nginx/certs/Web Application.key.
 
 ![ngnix installation](/images/passwordsecure/9.1/installation/installation_web_application/installation-webclient-9-en.webp)
@@ -38,7 +38,7 @@ directly viewed on the Server Manager.
 The configuration then still needs to be integrated onto the nginx server. It can be directly copied
 on the Server Manager for this purpose.
 
-NOTE: Every web server configuration is individual. Therefore, it is only possible to outline the
+NOTE: Every web server configuration is individual. Therefore, it's only possible to outline the
 normal process for a standard installation.
 
 ## Standard configuration

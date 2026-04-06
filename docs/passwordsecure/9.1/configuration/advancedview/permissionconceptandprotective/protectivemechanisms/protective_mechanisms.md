@@ -6,26 +6,26 @@ sidebar_position: 40
 
 # Protective mechanisms
 
-## What are protective mechanisms?
+## Protective mechanisms overview
 
 The primary goal of Netwrix Password Secure is to ensure data security at all times. The
 authorization concept is naturally the most important component when it comes to granting users the
 intended level of permissions for accessing data. Specifically, this makes it possible to make
-certain information only available to selected employees. Nevertheless, it is still necessary to
-have protective mechanisms above and beyond the authorization concept in order to handle complex
+certain information only available to selected employees. Nevertheless, it's still necessary to
+have protective mechanisms above and beyond the authorization concept to handle complex
 requirements.
 
 - [Visibility](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/visibility.md)
-  is not separately configured but is instead directly controlled via the authorization concept
+  isn't separately configured but is instead directly controlled via the authorization concept
   (read permission). Nevertheless, it represents an important component within the existing
   protective mechanisms and is why a separate section has been dedicated to this subject.
 - By configuring
   [Temporary permissions](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/temporary_permissions.md),
-  it is possible to grant users or roles temporary access to data.
+  it's possible to grant users or roles temporary access to data.
 - [Password masking](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/password_masking.md)
   enables access to the system without having to reveal the passwords of users. The value of the
   password remains constantly hidden.
-- To link the release of highly sensitive access data to a double-check principle, it is possible to
+- To link the release of highly sensitive access data to a double-check principle, it's possible to
   use
   [Seals](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/seals/seals.md).
   The configuration of users or roles with the permissions to issue a release is possible down to a
@@ -38,15 +38,14 @@ the authorization concept.
 
 In the interplay of the
 [Authorization and protection mechanisms](/docs/passwordsecure/9.1/configuration/webapplication/authorization_and_protection_mechanisms.md),
-almost all conceivable scenarios can be depicted. It is worth mentioning again that the
-authorization concept is already a very effective tool, with limited visibility of passwords and
-data records. This concept is present everywhere in Netwrix Password Secure, and will be explained
+almost all conceivable scenarios can be depicted. It's worth mentioning again that the
+authorization concept is already a very effective tool, with limited visibility of passwords, and data records. This concept is present everywhere in Netwrix Password Secure, and will be explained
 in more detail below.
 
 ## Visibility as a basic requirement
 
 It should always be noted that **visibility** is always a basic requirement for applying further
-protective mechanisms. A record that is completely hidden from a user (= no read permission) can
+protective mechanisms. A record that's completely hidden from a user (= no read permission) can
 naturally not be given any further protective mechanisms.
 
 NOTE: The visibility of a record is always the basic requirement for applying further protective
@@ -57,13 +56,13 @@ mechanisms
 In principle, there are a diverse range of possibilities for combining the above-mentioned
 protective mechanisms. Temporary access to a “masked” record is possible just as having a “masked”
 record which is additionally secured by a double-check principle is also possible. **Nevertheless,
-it should be noted that temporary permissions in combination with seals always pose a risk.** If
+temporary permissions in combination with seals always pose a risk.** If
 releasing a seal requires approval from a person who only possesses or possessed temporary
 permissions or will only possess them in future, this could naturally conflict with the configured
 release criteria.
 
 :::warning
-The combination of seals and temporary permissions is not recommended if the user with
+The combination of seals and temporary permissions isn't recommended if the user with
 permissions to issue a release has only been given temporary permissions.
 
 :::

@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Logbook
 
-## What is a logbook?
+## Logbook overview
 
 Netwrix Password Secure logs all user interactions. These entries can be viewed and filtered via the
 logbook. The logbook records which user has made exactly what changes. This module is
@@ -25,7 +25,7 @@ The following options are required:
 
 ## Use of the filter in the logbook
 
-You can also use the filter in the logbook. This enables you to limit the number of displayed
+You can also use the filter in the logbook. This lets you limit the number of displayed
 elements based on the defined criteria. In the following example, the user is searching for logbook
 entries relating to the object type “Password” that also match the event criteria "Change". In
 short: The entries are being filtered based on changes to passwords.

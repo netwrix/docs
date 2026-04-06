@@ -12,7 +12,7 @@ available:
 #### Language
 
 You can select German or English here by simply clicking on them. The change is made immediately and
-does not require you to restart the browser.
+doesn't require you to restart the browser.
 
 #### Extras
 
@@ -22,7 +22,7 @@ Here you have the possibility to manage templates for seals.
 
 Tag management
 
-The tag management allows you to manage the tags.
+The tag management lets you manage the tags.
 
 Image management
 
@@ -58,7 +58,7 @@ The management of these settings is based on the client. Further information can
 global [User rights](/docs/passwordsecure/9.2/configuration/advancedview/mainmenufc/userrights/user_rights.md) and
 [User settings](/docs/passwordsecure/9.2/configuration/advancedview/mainmenufc/usersettings/user_settings.md)
 
-The following settings are not available on the Web Application:
+The following settings aren't available on the Web Application:
 
 - Customizable window caption
 - Permitted document extensions
@@ -67,4 +67,4 @@ The following settings are not available on the Web Application:
 
 Account
 
-Here it is possible to change the password of the logged in user.
+Here you can change the password of the logged in user.

@@ -6,33 +6,33 @@ sidebar_position: 30
 
 # Disaster recovery scenarios
 
-#### Finding a quick solution in the event of a disaster
+#### Finding a quick solution if a disaster occurs
 
-In our experience, Netwrix Password Secure is usually installed in IT in a central location. If the
+Netwrix Password Secure is typically installed in IT in a central location. If the
 system fails, it must be possible to gain access to the passwords again as quickly as possible. This
-section is designed to help you quickly find a solution in the event of a problem.
+section is designed to help you quickly find a solution if a problem occurs.
 
 #### Prevention
 
-It is extremely important to create a sensible recovery plan and to make corresponding preparations.
-Unfortunately, it is not possible to supply a finished recovery plan because it always needs to be
+It's extremely important to create a sensible recovery plan and to make corresponding preparations.
+Unfortunately, it isn't possible to supply a finished recovery plan because it always needs to be
 created individually. The following points should be taken into account in this process:
 
 **Creating backups**
 
-It is of course essential in the event of a disaster that you can access a backup that is as
-up-to-date as possible. Therefore, it is necessary to regularly create
+It's of course essential if a disaster occurs that you can access a backup that's as
+up-to-date as possible. Therefore, it's necessary to regularly create
 [Backup management](/docs/passwordsecure/9.1/configuration/servermanager/mainmenu/backupsettings/backup_management.md).
 
-Who is responsible in the event of a disaster?
+Who's responsible if a disaster occurs?
 
-The first thing to decide is who should take action in the event of a disaster. Corresponding
+The first thing to decide is who should take action if a disaster occurs. Corresponding
 deputies should also be defined. The responsible employee should have the corresponding rights
 within Netwrix Password Secure.
 
 **Providing the required passwords**
 
-What passwords do those people responsible need in order to restore Netwrix Password Secure?
+What passwords do those people responsible need to restore Netwrix Password Secure?
 
 - Domain password to log into the specific computer
 - Password for the Server Manager
@@ -120,5 +120,5 @@ As for Scenario 4 but the Active Directory is also not available.
 Solution:
 
 As described for scenario 4. If the user was imported in end-to-end mode, you can also log in
-without an AD connection. Users imported in Masterkey mode cannot log in. Therefore, it is
+without an AD connection. Users imported in Masterkey mode can't log in. Therefore, it's
 recommended that you create special, local emergency users for such cases.

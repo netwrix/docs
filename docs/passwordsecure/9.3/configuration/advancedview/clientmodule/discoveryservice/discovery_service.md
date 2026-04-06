@@ -9,7 +9,7 @@ sidebar_position: 100
 ## The problem
 
 **Service accounts** are used on most networks. These accounts are used, for example, to carry out
-certain services. It is not uncommon for **one and the same password** to be used here for multiple
+certain services. It isn't uncommon for **one and the same password** to be used here for multiple
 accounts. Manually changing these passwords is extremely time consuming. Therefore, this process is
 often ignored for reasons of convenience.
 

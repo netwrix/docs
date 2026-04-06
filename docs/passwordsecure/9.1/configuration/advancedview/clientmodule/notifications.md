@@ -6,11 +6,11 @@ sidebar_position: 30
 
 # Notifications
 
-## What are notifications?
+## Notifications overview
 
-With the notification system, you are always up-to-date on all events that you consider important.
-Almost all modules allow users to configure notifications. All configured messages are only created
-for the currently registered Netwrix Password Secure user. It is not possible to create a
+With the notification system, you're always up-to-date on all events that you consider important.
+Almost all modules let users configure notifications. All configured messages are only created
+for the registered Netwrix Password Secure user. It isn't possible to create a
 notification for another user. Each user can and should define himself which passwords, which
 triggers as well as changes are important and informative for him. The configuration of visibility
 is explained in a similar way to the other modules in one place
@@ -24,22 +24,22 @@ NOTE: The reading pane is deactivated in this module by default. It can be activ
 ## Module-specific ribbon functions
 
 There are also some ribbon functionalities that are exclusively available for the notification
-module. In particular, the function **Forward important notifications to email addresses** enables
-administrators and users to maintain control and transparency independent of the location.
+module. In particular, the function **Forward important notifications to email addresses** lets
+administrators and users maintain control and transparency independent of the location.
 
 ![Ribbon notifications](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/notifications/notifications_2-en.webp)
 
 ### Mark notifications as read
 
-The two buttons on the ribbon enable you to mark notifications as read/unread. In particular, the
+The two buttons on the ribbon let you mark notifications as read/unread. In particular, the
 filter criterion available in this context (see following screenshot) enables fast sorting according
 to current and also historical notifications.
 
 ![filter notifications](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/notifications/notifications_3-en.webp)
 
-It is possible to mark the notifications as read/unread via the ribbon and also via the context menu
-that is accessed using the right mouse button. If the corresponding setting has been activated,
-opening a notification will also mean that it is marked as read.
+It's possible to mark the notifications as read/unread via the ribbon and also via the context menu
+that's accessed using the right mouse button. If the corresponding setting has been activated,
+opening a notification will also mean that it's marked as read.
 
 ## Manual configuration of notifications
 
@@ -54,7 +54,7 @@ following dialogue can be opened via the ribbon in the "Actions" tab:
 - **Event type**: The event type for the generated notifications can be either "Info", "Warning" or
   "Error". This information can also be used e.g. as an additional filter criterion.
 
-In contrast to previous editions, it is best to configure the notifications manually. This ensures
+In contrast to previous editions, it's best to configure the notifications manually. This ensures
 that a notification is really only triggered for relevant events.
 
 ## Other triggers for notifications

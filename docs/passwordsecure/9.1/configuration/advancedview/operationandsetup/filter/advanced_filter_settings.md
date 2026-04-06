@@ -41,18 +41,18 @@ for this example.
 
 The filter management can also be found in the
 [Ribbon](/docs/passwordsecure/9.1/configuration/advancedview/operationandsetup/ribbon.md).
-Here, it is possible e.g. to expand the currently configured filter criteria, save the filter, or
-simply clear all currently applied filters.
+Here, it's possible e.g. to expand the configured filter criteria, save the filter, or
+simply clear all applied filters.
 
 ![installation_with_parameters_20](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/filter/advancedfiltersettings/installation_with_parameters_20.webp)
 
 #### Saving, editing, and deleting filters
 
-In many cases, it is recommended to store defined filters. In this way, it is possible to make
+In many cases, it's recommended to store defined filters. In this way, it's possible to make
 efficient use of filter results from previous searches. The button **“Save filter”** directly
 prompts you to assign a meaningful name to this filter. The filter is saved according to the
-criteria currently configured in the filter. This filter is now listed in the selection menu and can
-now be selected. Note that a selected filter selection is immediately applied to the filter but is
+criteria configured in the filter. This filter is now listed in the selection menu and can
+now be selected. A selected filter selection is immediately applied to the filter but is
 not automatically executed. The filter must be used for this purpose. Both the button in the ribbon,
 so also the counterpart in the filter, lead to the same result here.
 
@@ -60,14 +60,14 @@ so also the counterpart in the filter, lead to the same result here.
 
 Deleting and overwriting existing filters is identical in the procedure. The filter, which has been
 marked in the selection field, is always deleted. If an existing filter is to be overwritten, the
-name of the filter is retained and is overwritten with the filter criteria currently configured in
+name of the filter is retained and is overwritten with the filter criteria configured in
 the filter.
 
 **—————————**
 
 #### **Advanced filter**
 
-In the “Extended filter” category you can adjust the filter as desired, eg by adding or removing
+In the “Extended filter” category you can adjust the filter as desired, eg by adding, or removing
 filter groups. Clicking on **”Edit filter”** activates the processing mode. You can terminate it
 with **”Finish editing”.**
 
@@ -81,7 +81,7 @@ filter.
 In **Edit mode**, the filter view changes, in addition to the possible actions in the ribbon. Use
 the arrow buttons to adjust the order of the filter groups. The icons “Plus” and “Minus” can be used
 to create additional instances of existing filter groups or to remove existing ones. In the
-following example, a content filter was added and all other filter groups removed.
+following example, a content filter was added, and all other filter groups removed.
 
 ![Filter](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/filter/advancedfiltersettings/advanced-filter-settings-3-en_923x441.webp)
 
@@ -90,7 +90,7 @@ display all records that contain both the word “password” and the phrase “
 
 #### Negation of filters
 
-It is often important to be able to negate the filter.
+It's often important to be able to negate the filter.
 
 **Activation**
 
@@ -98,7 +98,7 @@ In the “Extended filter” category you have the possibility to activate the n
 
 ![allow negation](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/filter/advancedfiltersettings/allow-negation-en.webp)
 
-It is thus possible to refine very precisely filter results even further. This becomes more and more
+It's thus possible to refine very precisely filter results even further. This becomes more and more
 important when there are a large number of records in the database and the resulting amount of data
 is still unmanageable despite the fact that filters has been appropriately defined.
 
@@ -107,10 +107,10 @@ is still unmanageable despite the fact that filters has been appropriately defin
 Negations are defined directly in the checkbox of an element within a filter group. Without
 negations, you can only search e.g. for a tag. Negations make the following queries possible:
 
-”Deliver all records that have the tag “Development” but are not tagged with “Important”!
+”Deliver all records that have the tag “Development” but aren't tagged with “Important”!
 
 :::warning
-In order to effectively use negations, it is important that “and links” are always
-enabled. Otherwise operations with negations cannot be modelled mathematically.
+To effectively use negations, it's important that “and links” are always
+enabled. Otherwise operations with negations can't be modelled mathematically.
 
 :::

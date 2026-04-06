@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Image management
 
-## What is image management?
+## Image management overview
 
 All logos and icons are managed in the image management. They can then be linked to the
 corresponding data records. The images are then displayed in the Basic view as well as in the list
@@ -30,7 +30,7 @@ There are two ways to upload icons.
 
 1. By creating or saving the dataset.
 
-In order to import favicons directly when saving the data set, the following preconditions must be
+To import favicons directly when saving the data set, the following preconditions must be
 met:
 
 - Setting “Ask Favicon-Download “ is activated.
@@ -49,7 +49,7 @@ possibility to store icons and logos manually.
 
 ![Image management](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/image_management/installation_with_parameters_107-en.webp)
 
-Click on the + symbol to open the mask for creating images.
+Click the + symbol to open the mask for creating images.
 
 ![add image](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/image_management/installation_with_parameters_108-en.webp)
 
@@ -64,7 +64,7 @@ Click on the + symbol to open the mask for creating images.
 - ![icon_open_folder](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/image_management/icon_open_folder.webp)
   This symbol can be used to upload locally saved icons and logos.
 
-NOTE: Please note that the icons and logos are not stored locally, but in the database.
+NOTE: that the icons and logos aren't stored locally, but in the database.
 
 ## Conditions
 

@@ -9,12 +9,12 @@ sidebar_position: 30
 ## Available scripts
 
 The following scripts are supplied and can be directly used. In all scripts, a password is firstly
-selected in the upper section. This is not the password that will be reset on the target system.
+selected in the upper section. This isn't the password that will be reset on the target system.
 Instead, a user should be entered here that can complete the rest of the process on the target
 system. This password thus requires administrative rights to the target system.
 
 A delay can also be configured in every script. This may be necessary, for example, if a password is
-changed in AD and it is firstly distributed to other controllers.
+changed in AD and it's firstly distributed to other controllers.
 
 ![new script](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_1-en.webp)
 
@@ -32,7 +32,7 @@ changed. The **host name** – i.e. the target computer – and the **service na
 
 ![Service accounts scripts](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_3-en.webp)
 
-Please note that the **display name** for the **service** needs to be used.
+The **display name** for the **service** needs to be used.
 
 ![display name service](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_4-en.webp)
 
@@ -55,14 +55,14 @@ to be saved here.
 
 ## Linux user
 
-Linux users can also be reset in the same way as Windows users. It is also only necessary to enter
+Linux users can also be reset in the same way as Windows users. It's also only necessary to enter
 the **host name** and the **port** here.
 
 ![Linux user script](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_6-en.webp)
 
 ## MSSQL user
 
-This script resets passwords for local MSSQL users. It is only necessary to enter the **MSSQL
+This script resets passwords for local MSSQL users. It's only necessary to enter the **MSSQL
 instance** and the **port**.
 
 ![MSSQL user script](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_7-en.webp)

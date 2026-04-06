@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Tags
 
-## What are tags?
+## Tags overview
 
 The tag system is ubiquitous in Netwrix Password Secure. It can be used to classify and describe
 almost every object. An object can have several such tags. These are always displayed in the header

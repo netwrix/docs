@@ -6,15 +6,14 @@ sidebar_position: 20
 
 # Documents
 
-## What are documents?
+## Documents overview
 
-Security-critical data does not necessarily need to be in the form of passwords. To enable the
+Security-critical data doesn't necessarily need to be in the form of passwords. To enable the
 uniform and secure storage of data other than passwords, Netwrix Password Secure version 8 offers
 effective tools for the professional handling of sensitive documents and files. The ability to share
 documents with others according to their permissions gives you access to the current status of a
 document and helps avoid redundancies. The documents module is complemented by a sophisticated
-version management system, which records all versions of a document that were saved in the past and
-thus enables you to revert back to historical versions. The configuration of visibility is explained
+version management system, which records all versions of a document that were saved in the past, and thus lets you revert back to historical versions. The configuration of visibility is explained
 in a similar way to the other modules in one place..
 
 ![Document modul](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/documents/documents_1-en.webp)
@@ -31,10 +30,10 @@ The following option is required to add new documents.
 
 There are two ways to manage documents and files in Netwrix Password Secure v8:
 
-- **Creating a link**: In this case, only a file that is located locally or on a network drive will
-  be linked. The file itself is not stored in the database. Neither version management nor the
+- **Creating a link**: In this case, only a file that's located locally or on a network drive will
+  be linked. The file itself isn't stored in the database. Neither version management nor the
   traceability of changes in the history are possible.
-- **Storing the document in the database**: The file becomes part of the encrypted database. It is
+- **Storing the document in the database**: The file becomes part of the encrypted database. It's
   saved within the database and can be made available selectively to employees for further
   processing in the future based on their permissions.
 
@@ -57,7 +56,7 @@ history in the ribbon, as well as in the footer area for ​​the detailed view
 be used in the same way as the
 [History](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/passwords/history.md).
 The interplay between the document-specific event logbook and the history provides a complete list
-of all information that is relevant to the handling of sensitive data. Version management can be
+of all information that's relevant to the handling of sensitive data. Version management can be
 used to restore any historical versions of a document.
 
 NOTE: The file size for a **linked document** can only be updated if the document was opened using

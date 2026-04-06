@@ -8,7 +8,7 @@ sidebar_position: 70
 
 ## The new Netwrix Password Secure Mobile App – mobile and simple!
 
-With version 8.10 we have created the perfect complement to the client: **The Netwrix Password
+With version 8.10 Netwrix created the perfect complement to the client: **The Netwrix Password
 Secure Mobile App!**
 
 With its **convenient** interface, the Netwrix Password Secure Mobile App offers the perfect
@@ -16,12 +16,12 @@ prerequisite for every user to find their way around **quickly** and **easily**.
 
 For detailed documentation of the **Netwrix Password Secure Mobile App**
 
-NOTE: Please note that as of version 8.10.0, the previous version 7 App is no longer compatible.
+NOTE: As of version 8.10.0, the previous version 7 App is no longer compatible.
 
-#### Security is our ambition
+#### Security is the ambition
 
 No matter whether you work with a smartphone or a tablet, you benefit from the highest possible
-security on all iOS and Android devices. All passwords are not only available on the mobile device,
+security on all iOS and Android devices. All passwords aren't only available on the mobile device,
 but can also be automatically transferred to websites. So you can use highly complex and therefore
 secure passwords and don’t have to remember them anymore. The Netwrix Password Secure Mobile App
 thus combines security and convenience. In addition, the use of a local database ensures that
@@ -34,7 +34,7 @@ more extensive and detailed in the specially created **documentation**.
 
 ### Password management
 
-The new **Netwrix Password Secure mobile app** keeps all **passwords** safe. They can not only be
+The new **Netwrix Password Secure mobile app** keeps all **passwords** safe. They can't only be
 stored securely but also structured conveniently.
 
 ### SSO

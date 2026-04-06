@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Creating new passwords
 
-## What does creating new passwords/records mean?
+## Creating new passwords and records overview
 
 Saving a record/password stores information in the MSSQL database. This process is started in the
 Passwords module for the client. It is accessed either via the icon in the ribbon, using the
@@ -22,7 +22,7 @@ The following 2 user rights are required:
 
 ## Selecting a form
 
-When creating a new record, it is possible to select from all the forms for which the logged-in user
+When creating a new record, you can select from all the forms for which the logged-in user
 has the required permissions. To make the selection process as easy as possible, a preview of the
 form fields included in the form is shown on the right hand side.
 
@@ -51,7 +51,7 @@ record. Both values are optional.
 
 - The **validity** defines an end date until which the record is valid. This information can be
   evaluated e.g. in the logbook or in reports. It is thus possible to create a list of all expired
-  passwords for a user or an authorized entity. However, it is not possible to limit the usability
+  passwords for a user or an authorized entity. However, it isn't possible to limit the usability
   of expired passwords for security reasons.
 - **Tags** are freely definable properties of records that can be used as search criteria. This also
   allows thematically linked information to be grouped together.
@@ -59,7 +59,7 @@ record. Both values are optional.
 ## Setting permissions for new records
 
 In principle, there are various approaches for setting permissions for newly created records. All of
-them have already been described in the Authorization concept section. It is important to note here
+them have already been described in the Authorization concept section. note here
 that **manual setting of permissions is only possible after saving** a record. Automatic permissions
 are set before the record is saved. In this context, the selection of the organisational structure
 and the permissions for a record are important aspects.
@@ -79,7 +79,7 @@ be prioritized.
 user can also be activated as an option. This option is described in a separate section.
 
 NOTE: The user right Allow sharing of personal passwords can be used to define that personal
-passwords cannot be released to other users.
+passwords can't be released to other users.
 
 **Automatic setting of permissions**: Automatic setting of permissions is carried out before the
 record is saved. Irrespective of whether predefined rights or rights inheritance is being used, the

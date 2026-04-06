@@ -8,7 +8,7 @@ sidebar_position: 10
 
 ## Maximum encryption
 
-[Active Directory link](/docs/passwordsecure/9.3/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/active_directory_link.md) with active end-to-end encryption currently offers
+[Active Directory link](/docs/passwordsecure/9.3/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/active_directory_link.md) with active end-to-end encryption offers
 **maximum security**. Only users, organisational units and roles are imported. The permissions and
 the hierarchical relationship between the individual objects needs to be separately configured in
 Netwrix Password Secure. The advantage offered by end-to-end encryption is that Active Directory is
@@ -95,7 +95,7 @@ provides helpful functions for selecting the individual elements.
 In the lower area you can specify whether the users just selected for import should be created as
 **Light** or **Advanced User (View)**s.
 
-NOTE: If individual users, organisational units, or roles cannot be selected for import, they have
+NOTE: If individual users, organisational units, or roles can't be selected for import, they have
 already been imported via another profile
 
 ## Summary
@@ -117,7 +117,7 @@ the import is terminated, you will receive a confirmation.
 
 ![confirmation](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/directoryservices/activedirectorylink/end_to_end_encryption_7-en.webp)
 
-NOTE: As end-to-end encryption is retained in this mode, the server does not receive a key to match
+NOTE: As end-to-end encryption is retained in this mode, the server doesn't receive a key to match
 already imported users with the AD. There is thus no synchronization with the AD. Similarly, no
 memberships can be imported. After the import, users must be manually assigned to the appropriate
 organisational units and roles.
@@ -154,7 +154,7 @@ NOTE: In end-to-end mode, **no role affiliations** are issued during the import 
 
 ## Logging into Netwrix Password Secure
 
-Users imported in this mode can not login with the domain password. Rather, a password is generated
+Users imported in this mode can't login with the domain password. Rather, a password is generated
 during import. This password is sent to the users by e-mail. If a user has not entered an e-mail
 address, the user name is entered as the password. The initial password can be changed by the
 administrator or the user himself at the first login.

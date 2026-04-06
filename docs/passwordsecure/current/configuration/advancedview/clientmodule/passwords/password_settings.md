@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Password settings
 
-## What are password settings?
+## Password settings overview
 
 The password settings can be used to define a diverse range of options. These can be found in the
 ribbon in the subsection “Extras”. The settings open up in a new tab.

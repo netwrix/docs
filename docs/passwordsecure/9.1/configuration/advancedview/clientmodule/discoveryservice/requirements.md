@@ -43,16 +43,16 @@ adding a **Network Scan**!
   scanned (carried out by Windows as standard).
 - Help section for starting the service:
   [Microsoft Website](https://msdn.microsoft.com/de-de/library/aa826517(v=vs.85).aspx)
-- The firewall must not block WMI requests (not blocked as standard).
+- The firewall mustn't block WMI requests (not blocked as standard).
 - Help section for configuring the firewall:
   [Microsoft Website](https://msdn.microsoft.com/de-de/library/aa822854(v=vs.85).aspx)
 
-NOTE: Only **IPv4 addresses** can currently be scanned.
+NOTE: Only **IPv4 addresses** can be scanned.
 
 ### Open ports for the scan (necessary)
 
-LDAP: Port 389(TCP,UDP) RPC/WMI: Port 135(TCP) (Windows Server 2008, Windows Vista and higher
-versions) – port 49152-65535 (TCP) or a static WMI port (Windows 2000, Windows XP and Windows
+LDAP: Port 389(TCP,UDP) RPC/WMI: Port 135(TCP) (Windows Server 2008, Windows Vista, and higher
+versions) – port 49152-65535 (TCP) or a static WMI port (Windows 2000, Windows XP, and Windows
 Server 2003) – port 1025-5000 (TCP) or a static WMI port
 
 ### Computer name (Hostname)
@@ -61,8 +61,8 @@ Server 2003) – port 1025-5000 (TCP) or a static WMI port
    it was found (the IP address of the domain controller in the case of an Active Directory user).
 2. Computer name and associated IP address: The computer name is first requested on the **DNS
    server** for the domain. The computer name returned by the server also contains the domain names
-   as a postfix (e.g. Client01.domain.local). If there is no entry on the domain for the requested
-   IP address, the computer name is determined via **NetBIOS**. The domain name is not displayed on
+   as a postfix (e.g. Client01.domain.local). If there's no entry on the domain for the requested
+   IP address, the computer name is determined via **NetBIOS**. The domain name isn't displayed on
    the computer (e.g. Client01). In Netwrix Password Secure V8, the **DNS request** is the preferred
    function for determining the computer name. If no result is delivered, a request via **NetBIOS**
    is made.

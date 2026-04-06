@@ -78,7 +78,7 @@ finished, the **Network Scan** scans the **network** according to these guidelin
    second section defines the scan configuration for the local computer. Select from either Local
    user of services or _Local user_.
 
-**CAUTION:** The system executing the scan – on which the Server Manager is installed – is not
+**CAUTION:** The system executing the scan – on which the Server Manager is installed – isn't
 scanned!
 
 ## Interval / Executing server / Tags

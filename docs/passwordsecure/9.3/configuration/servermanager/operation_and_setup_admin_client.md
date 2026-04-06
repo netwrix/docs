@@ -67,12 +67,12 @@ also be called up – completely without accessing the SQL server.
 2. Database overview
 
 In the database overview, all databases listed alphabetically. This section can be minimised using
-the arrow symbol on the top, left edge. Right-click on one of the databases to display a context
+the arrow symbol on the top, left edge. Right-click one of the databases to display a context
 menu with all available functions.
 
 3. Notification area
 
-The Info area displays all the information about the database currently selected in the database
+The Info area displays all the information about the database selected in the database
 overview. This information is ivided into the three subsections “Database summary, Data sets and
 Database tables”.
 
