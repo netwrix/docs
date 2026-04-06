@@ -46,7 +46,7 @@ to your individual requirements.
 
 #### Standard tab
 
-Depending on the active module, the All passwords tab will be renamed to the corresponding module by
+Depending on the active module, the All passwords tab is renamed to the corresponding module by
 default. (All documents, all forms, etc.)
 
 ![Standard tab](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/standard-tab-en.webp)

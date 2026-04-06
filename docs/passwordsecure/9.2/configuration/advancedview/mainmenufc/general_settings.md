@@ -24,13 +24,13 @@ restarted.
 
 Starting the application minimised in the notification area
 
-You can start the client minimized if you want to run Netwrix Password Secure in the background. You
-will be able to access it through the notification area.
+You can start the client minimized to run Netwrix Password Secure in the background. You
+can then access it through the notification area.
 
 Minimise the application on closing
 
-If this option has been activated, the Netwrix Password Secure client will not end when the window
-is closed but will merely be minimised. It will continue to run in the background. It is then only
+If this option has been activated, the Netwrix Password Secure client does not end when the window
+is closed but is merely minimised. It continues to run in the background. It is then only
 possible to properly end Netwrix Password Secure via the main menu.
 
 Starting with Windows

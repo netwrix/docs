@@ -41,7 +41,7 @@ As soon as the login was successful, you are now either:
 or
 
 - in the Web Application. To switch from the Web Application to the Basic view web view, you have to
-  click your profile name. There you will be offered the option **"Switch to the Basic view"**.
+  click your profile name. There you see the option **"Switch to the Basic view"**.
 
 ![switch to lightclient](/images/passwordsecure/9.2/configuration/basic_view/start_and_login/switch-to-lc-wc-en.webp)
 

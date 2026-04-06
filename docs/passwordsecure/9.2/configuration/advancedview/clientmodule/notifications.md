@@ -62,7 +62,7 @@ that a notification is really only triggered for relevant events.
 ## Other triggers for notifications
 
 As well as manually configurable notifications, there are other triggers in Netwrix Password Secure
-which will result in notifications.
+that result in notifications.
 
 - [Seals](/docs/passwordsecure/9.2/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/seals/seals.md): Requests
   to release sealed records are handled via the notification system

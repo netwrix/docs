@@ -57,7 +57,7 @@ be predefined. Then choose **Predefine rights** in the menu bar.
 
 ![installation_with_parameters_162](/images/passwordsecure/9.2/configuration/web_application/functional_scope/organisational_structure/installation_with_parameters_162.webp)
 
-**Creating the first template group:** A modal window will appear after clicking on the icon for
+**Creating the first template group:** A modal window appears after clicking on the icon for
 adding a new template group (green arrow) in which a meaningful name for the template group should
 be entered.
 

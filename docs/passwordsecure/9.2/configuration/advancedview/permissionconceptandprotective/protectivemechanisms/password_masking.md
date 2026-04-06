@@ -49,7 +49,7 @@ button in the ribbon for that purpose. Ensure that the password field is highlig
 ![form field permissions](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/password_masking/password_masking_2-en.webp)
 
 The special feature when setting or editing masking via the form field permissions is that you can
-individually select users to whom masking will be applied. In the following example, masking has
+individually select users to whom masking is applied. In the following example, masking has
 been specified only for the role of “trainees”, although the “IT” role doesn't have the **authorize
 permission** either. In addition to the name of the role or the user, the icon symbolizes the fact
 that visa protection applies to trainees.
@@ -58,12 +58,12 @@ that visa protection applies to trainees.
 
 :::note
 Use the icon in the ribbon to apply password masking to all users who have read permission on
-the record, but not the **authorize permission**. If you want to specify more precisely for which
-users the password masking should be applied, this is also possible via the form field permissions.
+the record, but not the **authorize permission**. To specify more precisely for which
+users the password masking applies, use the form field permissions.
 :::
 
 :::note
-The login mask for records with password masking will be "sent
+The login mask for records with password masking is "sent
 automatically", even if the setting **Browser Extensions: Automatically send login masks** has been
 deactivated.
 :::

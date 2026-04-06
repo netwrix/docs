@@ -65,6 +65,6 @@ themselves.
 
 :::warning
 The configuration of permissions can be performed manually or automatically as
-described. If you want to change previously set permissions later, this has to be done manually.
+described. To change previously set permissions later, you must do so manually.
 Retrospectively defining rights isn't possible.
 :::

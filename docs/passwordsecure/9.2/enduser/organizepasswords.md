@@ -13,7 +13,7 @@ and find. You can create several tabs and switch between them within one click.
 
 To add a team tab:
 
-Step 1 – Click the **Plus** sign and a form will open.
+Step 1 – Click the **Plus** sign. A form opens.
 
 ![newform](/images/passwordsecure/9.2/enduser/newform.webp)
 
@@ -22,7 +22,7 @@ or use the search field to find the unit you need.
 
 ![search](/images/passwordsecure/9.2/enduser/search.webp)
 
-Step 3 – Click **OK** to close the form and your new team tab will open automatically.
+Step 3 – Click **OK** to close the form. Your new team tab opens automatically.
 
 ## Search with Tags
 
@@ -33,14 +33,14 @@ assign any number of tags to your passwords to categorize and find them again qu
 ![assigntags](/images/passwordsecure/9.2/enduser/assigntags.webp)
 
 To find a password, use the search field and enter a tag like the department or position you
-are in (i.e., "Marketing"). Netwrix Password Secure now not only is searching for tags, but also for
+are in (i.e., “Marketing”). Netwrix Password Secure searches for tags and also for
 “Marketing” in all Netwrix Password Secure fields (i.e., Content Marketing).
 
 ![searchresults](/images/passwordsecure/9.2/enduser/searchresults.webp)
 
 :::note
 Optimize your search results by using the **minus sign (-)** to exclude terms: Only results in
-which this word doesn't appear will be displayed (i.e., all social media accounts that are used
+which this word doesn't appear are displayed (i.e., all social media accounts that are used
 outside of marketing = "-social media marketing").
 :::
 
@@ -62,7 +62,7 @@ The following screenshot shows the tile view.
 ![switchbutton](/images/passwordsecure/9.2/enduser/switchbutton.webp)
 
 When in **tile view**, you can also drag and drop the buttons on another position. By hovering over
-them with the mouse, you will see additional information like the username, and you can log in with one
+them with the mouse, you see additional information like the username, and you can log in with one
 click.
 
 ![titleview](/images/passwordsecure/9.2/enduser/titleview.webp)

@@ -151,7 +151,7 @@ clicking on **Finish**.
 **Finish**.
 
 :::warning
-**observe the note and read it through carefully!**
+**Read the note carefully before proceeding.**
 :::
 
 An **Overview** of which actions will be performed is displayed for the user together with this

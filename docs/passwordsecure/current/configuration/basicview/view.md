@@ -45,10 +45,10 @@ When you click the button, the following options become visible:
 - -Edit (The selected record can be edited.)
 - Move (The selected record can be moved to another organisational unit)
 - Move to bin (the selected record can be deleted.)
-- -Copy username (the username of the selected record will be copied to the clipboard).
-- -Copy password (the password of the selected record will be copied to the clipboard).
+- -Copy username (copies the username of the selected record to the clipboard).
+- -Copy password (copies the password of the selected record to the clipboard).
 - Typing assistance (Use this view to type out passwords)
-- -Refresh (The record will be updated.)
+- -Refresh (updates the record.)
 
 You can only perform the above operations if you are sufficiently authorized. point this out
 to your in-house administrator if this isn't the case for you.

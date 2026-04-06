@@ -65,8 +65,8 @@ Then the whole process is completed by clicking the "Finish" button.
 ## Changing and deleting passwords
 
 To change or delete passwords you should stay on the corresponding tile with the mouse
-cursor. The control button will appear.
+cursor. The control button appears.
 
-When you click the button, you will be offered the "Edit" and "Delete" options, among others.
+When you click the button, you are offered the "Edit" and "Delete" options, among others.
 
 ![options record light client](/images/passwordsecure/9.2/configuration/basic_view/password_management/options-en.webp)

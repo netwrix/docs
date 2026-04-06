@@ -52,7 +52,7 @@ a migration is active, the user can be deleted after migration.
 #### Finishing the database wizard
 
 Once a database has been created successfully, , provided it has been selected. If no data migration
-has been selected, the new database is created directly, and will be displayed in the database
+has been selected, the new database is created directly and appears in the database
 overview.
 
 ![created new database](/images/passwordsecure/9.2/configuration/server_manager/creatingdatabase/installation_with_parameters_218-en.webp)

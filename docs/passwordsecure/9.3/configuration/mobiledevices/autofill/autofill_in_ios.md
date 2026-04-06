@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Autofill in iOS
 
-The most important comfort feature of the Netwrix Password Secure app is probably the autofill. With
+The most important comfort feature of the Netwrix Password Secure app is the autofill. With
 autofill, the credentials from the Netwrix Password Secure app are transferred directly to the login
 screens. This works both with websites in the browser and with other apps.
 

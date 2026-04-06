@@ -59,8 +59,8 @@ user name, password, and clicking the button to subsequently confirm the login.
 "Graphical recognition:" The graphical recognition function provides additional protection. It
 lets you define other factors for the SSO. An area is defined that then serves as the output
 for the comparison (e.g. for login masks with an image). To activate the graphical
-recognition function, click the eye at the top right after assigning the fields! The area that
-will serve as the output point is then marked.
+recognition function, click the eye at the top right after assigning the fields. The area that
+serves as the output point is then marked.
 :::
 
 After you have assigned all of the fields, you can exit the application process using the enter
@@ -81,8 +81,8 @@ possible here to link to the previously created application "VMware".
 
 ![connect application with record](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/learning_the_applications/learning_the_applications_6-en.webp)
 
-When the link has been established, this application can then be directly started via the ribbon in
-future. Pressing the button directly opens the linked application.
+When the link has been established, this application can be directly started via the ribbon.
+Pressing the button directly opens the linked application.
 
 ![start application](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/learning_the_applications/learning_the_applications_7-en.webp)
 

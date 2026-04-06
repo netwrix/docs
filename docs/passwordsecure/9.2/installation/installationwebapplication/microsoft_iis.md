@@ -11,8 +11,8 @@ integrating it into the system:
 
 ## Create as its own website
 
-For this option, a website with the name "Web Application" will be directly created on the IIS by
-config.bat. The Web Application will be operated here from the standard directory
+For this option, a website with the name "Web Application" is directly created on the IIS by
+config.bat. The Web Application is operated from the standard directory
 C:\inetpub\wwwroot.
 
 ## Integrate in existing website
@@ -32,17 +32,17 @@ create a new directory.
 ## Config.bat
 
 The file config.bat can be found in the newly created Web Application directory and now needs to be
-executed when logged on as the administrator. This will integrate the Web Application into the IIS
+executed when logged on as the administrator. This integrates the Web Application into the IIS
 web server.
 
 :::note
-If the system requirements have not been met, you will be informed that the URL Rewrite and/or
+If the system requirements have not been met, you are informed that the URL Rewrite and/or
 Application Request Routing modules need to be installed. In this case, follow the instructions on
-the wizard that will then immediately open. In addition, you must install the WebSocket
+the wizard that then immediately opens. In addition, you must install the WebSocket
 Protokoll. Afterwards, config.bat needs to be executed again.
 :::
 
-If the website has been correctly created, this will be correspondingly indicated by the
+If the website has been correctly created, this is correspondingly indicated by the
 notification IIS page created.
 
 ![IIS-creating page](/images/passwordsecure/9.2/installation/installation_web_application/installation-webclient-4-en.webp)

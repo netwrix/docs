@@ -38,7 +38,7 @@ Databases.
 
 Data
 
-Use this setting to define whether a template should be used. The template will provide the
+Use this setting to define whether a template should be used. The template provides the
 Database with ready-made forms and dashboard settings that make it easier to get started. The user
 Can select from English and German templates. However, it is also possible to proceed without a
 Template – you will then start with a completely empty database. If you have a backup from Password
@@ -52,7 +52,7 @@ A migration is active, the user can be deleted after migration.
 #### Finishing the database wizard
 
 Once a database has been created successfully, , provided it has been selected. If no data migration
-Has been selected, the new database is created directly, and will be displayed in the database
+Has been selected, the new database is created directly, and is displayed in the database
 Overview.
 
 ![created new database](/images/passwordsecure/9.2/configuration/server_manager/creatingdatabase/installation_with_parameters_218-en.webp)

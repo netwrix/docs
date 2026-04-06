@@ -36,8 +36,8 @@ color. 6 records are marked in the following image.
 
 ## Dialogue for configuring the permissions
 
-A new tab will be opened in the ribbon above the "Permissions" button in which the permissions can
-be configured. The tab will display the number of records that will be affected by the defined
+A new tab opens in the ribbon above the "Permissions" button where the permissions can
+be configured. The tab displays the number of records that are affected by the defined
 changes.
 
 ![rights for selected passwords](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/manual_settings/multiple_editing_of_permissions/multiple-editing-of-permissions-2-en.webp)
@@ -56,12 +56,12 @@ receives all permissions.
 
 ## Reducing permissions / removing users and roles from the permissions
 
-If you want to remove permissions, it's also necessary to add the user or the desired role to be
-edited. Clicking on **Reduce permissions** now means that permissions will be removed. This is
-indicated by the :material-minus-circle-outline: symbol. The selected permissions will be removed.
+To remove permissions, add the user or the desired role to be
+edited first. Clicking on **Reduce permissions** now means that permissions are removed. This is
+indicated by the :material-minus-circle-outline: symbol. The selected permissions are removed.
 
 :::note
-If the **read** permission is to be removed for a user or role, the user will be completely removed from the permissions.
+If the **read** permission is removed for a user or role, the user is completely removed from the permissions.
 :::
 
 ## Examples
@@ -71,10 +71,10 @@ contrast, Mr. Brewery receives all permissions:
 
 ![rights for selected passwords](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/manual_settings/multiple_editing_of_permissions/multiple-editing-of-permissions-3-en.webp)
 
-The read permission will be removed for Mr. Steiner. As removing the read permissions means that no
+The read permission is removed for Mr. Steiner. As removing the read permissions means that no
 other permissions exist for the record, Mr. Steiner is completely removed from the permissions. The
 authorize, move, export, and print permissions are being removed from Mr. Brewery. Assuming that he
-previously had all permissions, he will then have read, write, and delete permissions remaining:
+previously had all permissions, he then has read, write, and delete permissions remaining:
 
 ![edit rights for selected passwords](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/manual_settings/multiple_editing_of_permissions/multiple-editing-of-permissions-4-en.webp)
 
@@ -110,7 +110,7 @@ passwords are being edited to add the read permission the role "Sales".
 ## Seals and password masking
 
 Sealed or masked records can't be edited using batch processing. If these types of passwords are
-selected, a dialogue will be displayed when carrying out batch processing to inquire how these
+selected, a dialogue is displayed when carrying out batch processing to inquire how these
 records should be handled.
 
 ![security warning because of sealed or masked passwords](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/manual_settings/multiple_editing_of_permissions/multiple-editing-of-permissions-8-en.webp)

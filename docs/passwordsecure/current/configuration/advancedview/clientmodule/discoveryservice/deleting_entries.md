@@ -29,9 +29,9 @@ find out which **Discovery Service Task** found a particular entry by selecting 
 
 If the IP range for an existing **Discovery Service Task** is changed and the **Discovery Service
 Task** is then executed for this new IP range, the previously discovered entries from the previous
-executed **Discovery Service Task** will be deleted from the **Discovery Service**. If you want to
-carry out a **Discovery Service Task** for a different IP range, you should create a new **Discovery
-Service Task**. This will prevent any already discovered entries from being deleted. However, if the
+executed **Discovery Service Task** are deleted from the **Discovery Service**. To
+carry out a **Discovery Service Task** for a different IP range, create a new **Discovery
+Service Task**. This prevents any already discovered entries from being deleted. However, if the
 existing entries are no longer required, you can delete them by using the same **Discovery Service
 Task** with a different IP range.
 

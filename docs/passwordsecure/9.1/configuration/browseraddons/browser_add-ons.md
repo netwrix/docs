@@ -30,7 +30,7 @@ find more information about the installation on: Installation Browser Add-ons
 
 If the installation of the browser extension has been performed, the user can now open the desired
 browser. A window appears in which the security of the connection is confirmed. Pairing is performed
-with a simple click. A new icon will also be displayed in the desired browser from this point
+with a simple click. A new icon is also displayed in the desired browser from this point
 onwards:
 
 ![Icon Add-on](/images/passwordsecure/9.1/configuration/browseradd-ons/addon-icon-en.webp)
@@ -87,7 +87,7 @@ The default browser option also has an impact on the add-ons. This setting defin
 which the websites are opened from the client.
 
 :::note
-The login mask for records with password masking will be ”sent automatically\*, even if the setting Browser add-ons: Automatically send login masks has been deactivated.
+The login mask for records with password masking is “sent automatically\*, even if the setting Browser add-ons: Automatically send login masks has been deactivated.
 :::
 
 ## Working with add-ons
@@ -117,12 +117,12 @@ record in the database. The prerequisite is again that the record contains a URL
 
 The screenshot shows that the URL and the name of the record (Wikipedia) are searched. The results
 for the search are displayed and can be selected using the arrow buttons or the mouse. The selected
-website will be opened in a separate tab.
+website opens in a separate tab.
 
 ## Several passwords for one website
 
 If a user opens a page and multiple passwords with the autofill function are possible for this
-website, no entries will be made unlike in older versions. Instead, the following message appears in
+website, no entries are made unlike in older versions. Instead, the following message appears in
 a pop-up:
 
 ![Multiple entries](/images/passwordsecure/9.1/configuration/browseradd-ons/addon-multiple-passwords-en.webp)

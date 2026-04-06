@@ -65,7 +65,7 @@ After the data has been entered and successfully tested, the wizard can be compl
 
 Security notes
 
-As soon as the setup wizard has been completed, two security notes will be displayed in the
+As soon as the setup wizard has been completed, two security notes are displayed in the
 **Status**
 
 module that need to be confirmed.

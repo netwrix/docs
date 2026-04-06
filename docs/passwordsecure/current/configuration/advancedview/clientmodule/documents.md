@@ -36,7 +36,7 @@ There are two ways to manage documents and files in Netwrix Password Secure v8:
   traceability of changes in the history are possible.
 - **Storing the document in the database**: The file becomes part of the encrypted database. It is
   saved within the database and can be made available selectively to employees for further
-  processing in the future based on their permissions.
+  processing based on their permissions.
 
 ![New document](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/documents/documents_2-en.webp)
 

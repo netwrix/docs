@@ -54,7 +54,7 @@ this range then the rule blocking the computer is applied.
 
 ## Examples
 
-The functionality of the firewall will be explained in more detail using the following rules:
+The functionality of the firewall is explained in more detail using the following rules:
 
 ![defined firewall rules](/images/passwordsecure/9.2/configuration/server_manager/database_properties/installation_with_parameters_231-en.webp)
 
@@ -70,8 +70,8 @@ is blocked using this rule.
 
 Blocking an individual user (Rule 3)
 
-If you want to block a particular user (perhaps because they have left the company) then this is
-also possible.
+To block a particular user (for example, because they have left the company), create a rule that
+denies their access.
 
 Computer-independent access for a user (Rule 4)
 

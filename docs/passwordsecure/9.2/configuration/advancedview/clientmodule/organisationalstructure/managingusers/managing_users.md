@@ -32,7 +32,7 @@ only the differences are covered in the following sections.
 ![create user](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/managingusers/create-user-wc.webp)
 
 - **Allocated roles**: New users can directly be allocated one or more rolls when they are created
-- **Change password on next login**: The user will be requested to change their user password on the
+- **Change password on next login**: The user is requested to change their user password on the
   next login (obligatory)
 - **Account is deactivated**: The user is created with the status "deactivated". The account is thus
   not useable. The write rights for a user can be set/removed with this option. In editing mode, the
@@ -53,7 +53,7 @@ Restricted users can't view any passwords
 
 The second tab of the wizard lets you define the permissions for the newly created user. If an
 allocated organisational unit or a rights template group was defined in the first tab, the new user
-will inherit its permissions. Here, these permissions can be adapted if desired.
+inherits its permissions. Here, these permissions can be adapted if desired.
 
 ### Configuring user rights
 
@@ -82,7 +82,7 @@ The sales team will be happy to answer any questions you may have about licensin
 
 Display data to which the user is authorized to display the data to which a user is
 authorized, you must right-click the corresponding user in the organisational structure. In the
-context menu that opens, you will find the following options under **displaying data records**:
+context menu that opens, you find the following options under **displaying data records**:
 
 Password -Documents -Forms -Rolls -Uses -Password Reset -System Tasks -Seal templates
 

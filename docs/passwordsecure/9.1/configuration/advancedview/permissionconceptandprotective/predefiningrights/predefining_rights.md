@@ -44,7 +44,7 @@ module, select those OUs (departments) for which rights should be predefined and
 
 ![button of predefined rights](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/predefining_rights/predefined-rights-1-en.webp)
 
-- **Creating the first template group:** A new window will appear after clicking on the icon for
+- **Creating the first template group:** A new window appears after clicking on the icon for
   adding a new template group (green arrow) in which a meaningful name for the template group should
   be entered.
 

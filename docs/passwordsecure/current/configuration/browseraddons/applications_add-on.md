@@ -80,7 +80,7 @@ colour.
 ![choosed application field](/images/passwordsecure/9.2/configuration/browseradd-ons/applications/installation_with_parameters_146-en.webp)
 
 The field type (e.g. INPUT) and the field label are displayed in the field itself. In addition, an
-action is proposed which fits the field type, such as e.g. entering the user name. The action can
+action is proposed that fits the field type, such as e.g. entering the user name. The action can
 be adjusted if required. Once all fields have been captured, the system checks whether the
 actions are correct. Finally, the application can be saved.
 

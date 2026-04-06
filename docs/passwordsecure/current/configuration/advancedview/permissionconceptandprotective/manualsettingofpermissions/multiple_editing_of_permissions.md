@@ -55,8 +55,8 @@ receives all permissions.
 
 ## Reducing permissions / removing users and roles from the permissions
 
-If you want to remove permissions, it is also necessary to add the user or the desired role to be
-edited. Clicking on **Reduce permissions** now means that permissions will be removed. This is
+To remove permissions, add the user or the desired role to be
+edited. Clicking on **Reduce permissions** removes the selected permissions. This is
 indicated by the :material-minus-circle-outline: symbol. The selected permissions will be removed.
 
 :::note

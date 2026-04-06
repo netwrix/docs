@@ -14,7 +14,7 @@ needs. The following options can be configured:
 Colour scheme
 
 Various Windows colour schemes are available. The colour scheme Colorful provides e.g. different
-colours which make it easier to distinguish between the modules in the software. If the colour
+colours that make it easier to distinguish between the modules in the software. If the colour
 scheme is changed, the client must be restarted.
 
 Language

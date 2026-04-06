@@ -25,14 +25,14 @@ The following options are required to add local users.
 ## Adding local users
 
 In general, new users are added in the same way as creating a local organisational unit. Therefore,
-only the differences will be covered below.
+only the differences are covered in the following section.
 
 ### Creating users
 
 ![create user](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/organisationalstructures/managingusers/create-user-wc.webp)
 
 - **Allocated roles**: New users can directly be allocated one or more rolls when they're created
-- **Change password on next login**: The user will be requested to change their user password on the
+- **Change password on next login**: The user is requested to change their user password on the
   next login (obligatory)
 - **Account is deactivated**: The user is created with the status "deactivated". The account is thus
   not useable. The write rights for a user can be set/removed with this option. In editing mode, the
@@ -51,7 +51,7 @@ only the differences will be covered below.
 
 The second tab of the wizard lets you define the permissions for the newly created user. If an
 allocated organisational unit or a rights template group was defined in the first tab, the new user
-will inherit its permissions. Here, these permissions can be adapted if desired.
+inherits those permissions. Here, these permissions can be adapted if desired.
 
 ### Configuring user rights
 

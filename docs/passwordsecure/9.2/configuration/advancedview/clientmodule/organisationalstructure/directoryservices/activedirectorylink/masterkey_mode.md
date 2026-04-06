@@ -215,13 +215,13 @@ The rights to be issued to imported users are explained in the following example
 
 ![Permission MKM User](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/directoryservices/activedirectorylink/masterkey_mode_7-en.webp)
 
-1. In Master Key mode, **all** users will be issued with the **read** right.
-2. The **responsible user** will be issued with all rights and the key. This ensures that he can
+1. In Master Key mode, **all** users are issued with the **read** right.
+2. The **responsible user** is issued with all rights and the key. This ensures that he can
    also synchronize or change the user in the future
 3. **Other responsible users** are issued with the same rights as the **responsible user**
 4. The **Master Key** for the **Active Directory** profile will also be issued with all rights and
-   keys as it will be used for the synchronization
-5. Finally, users will be issued with the rights for themselves
+   keys as it is used for the synchronization
+5. Finally, users are issued with the rights for themselves
 
 :::note
 All users and roles issued with **rights** to the imported object also receive its rights key.

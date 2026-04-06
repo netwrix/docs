@@ -70,8 +70,7 @@ is blocked using this rule.
 
 Blocking an individual user (Rule 3)
 
-If you want to block a particular user (perhaps because they have left the company) then this is
-also possible.
+To block a particular user (perhaps because they have left the company), create a rule as shown.
 
 Computer-independent access for a user (Rule 4)
 

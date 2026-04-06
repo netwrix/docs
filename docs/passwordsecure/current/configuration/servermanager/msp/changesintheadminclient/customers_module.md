@@ -17,7 +17,7 @@ immediately.
 When creating a new customer, the customer name is specified under **General** (1).
 
 If (2) isn't checked, a test customer is created without billing. This is then a customer in the
-test phase. If (2) is checked, a customer will be created who will be charged by Netwrix from the
+test phase. If (2) is checked, a billed customer is created and Netwrix charges from the
 current month.
 
 At (3) a date is automatically entered that is four weeks in the future. This date can be changed by

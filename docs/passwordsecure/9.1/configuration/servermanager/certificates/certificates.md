@@ -38,22 +38,22 @@ Operation of the certificate manager is always the same. The only difference is 
 
 #### Checking existing certificates
 
-After opening the certificate manager, all certificates specific to Netwrix Password Secure will be
-displayed. Clicking on the certificate will display further information.
+After opening the certificate manager, all certificates specific to Netwrix Password Secure are
+displayed. Clicking on a certificate displays further information.
 
 ![installation_with_parameters_198](/images/passwordsecure/9.1/configuration/server_manager/certificates/installation_with_parameters_198.webp)
 
-Double clicking on a certificate will open the Windows Certificate Manager to provide more detailed
+Double clicking on a certificate opens the Windows Certificate Manager to provide more detailed
 information.
 
 ![installation_with_parameters_199_423x396](/images/passwordsecure/9.1/configuration/server_manager/certificates/installation_with_parameters_199_423x396.webp)
 
 #### Required certificates / deleting no longer required certificates
 
-The overview will initially only display those certificates that are being used and are thus
-required. Clicking on **All** will also display the no longer required certificates. For example, it
+The overview initially displays only those certificates that are being used and are thus
+required. Clicking on **All** also displays the no longer required certificates. For example, it
 is possible that outdated certificates exist on the machine due to a test installation. These
-certificates can be easily deleted via the corresponding button in the ribbon.
+certificates can be deleted via the corresponding button in the ribbon.
 
 ![certificates-ac-4-en](/images/passwordsecure/9.1/configuration/server_manager/certificates/certificates-ac-4-en.webp)
 
@@ -64,7 +64,7 @@ This merely requires you to enter the desired .pfx file and its password.
 
 #### Exporting certificates
 
-The relevant certificates will be backed up by clicking on export. A password firstly needs to be
+The relevant certificates are backed up by clicking on export. A password firstly needs to be
 issued here. If a storage location hasn't yet been entered via the settings, you're firstly asked
 to enter it.
 
@@ -75,13 +75,13 @@ SSL connection certificates aren't included in this process and are also not bac
 #### Settings
 
 You can define whether every certificate should be saved to its own file in the **settings**. If
-this option hasn't been activated, all relevant certificates will be backed up in one file. In
+this option hasn't been activated, all relevant certificates are backed up in one file. In
 addition, the storage location is defined in the settings.
 
 ![installation_with_parameters_201_826x310](/images/passwordsecure/9.1/configuration/server_manager/certificates/installation_with_parameters_201_826x310.webp)
 
 #### Backing up certificates
 
-If you want to automatically back up the certificates on a cyclical basis, this can be done via the
+To automatically back up the certificates on a cyclical basis, use the
 backup system. Further information can be found in the section Backup management.
 

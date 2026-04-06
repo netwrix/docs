@@ -12,8 +12,7 @@ In contrast to the
 [Automated setting of permissions](/docs/passwordsecure/9.2/configuration/advancedview/permissionconceptandprotective/automatedsettingofpermissions/automated_setting_of_permissions.md), the
 manual approach doesn't use any automatic processes. This method of setting permissions is thus
 performed separately for every record – this process isn't as recommended for newly created data.
-If you want to work effectively in the long term, the automatic setting of permissions should be
-used. However, the manual setting of permissions is generally used when editing already existing
+To work effectively in the long term, use the automatic setting of permissions. However, the manual setting of permissions is generally used when editing already existing
 records.
 
 ## Adding additional users with permissions
@@ -71,7 +70,7 @@ including all users, and reuse them for other records.
 ![preset menu](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/manual_settings/manual-setting-of-permissions-5-en.webp)
 
 The transfer of permissions and their reuse can be an important building block to create and
-maintain entitlement integrity. This method can't rule out misconfigurations, but it will minimize
+maintain entitlement integrity. This method can't rule out misconfigurations, but it minimizes
 the risk significantly. Of course, the correct configuration of these templates is a prerequisite.
 
 ## The add permission

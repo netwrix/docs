@@ -37,9 +37,9 @@ an image has been saved in AD, it will be used here.
 
 #### Change password
 
-The user password is changed on a regular basis. If you want to use a new
+The user password is changed on a regular basis. To use a new
 password, you must enter the existing password in advance. The strength of the password
-will be directly displayed.
+is directly displayed.
 
 :::note
 Users who were imported from AD with the aid of Master Key mode log in with the domain

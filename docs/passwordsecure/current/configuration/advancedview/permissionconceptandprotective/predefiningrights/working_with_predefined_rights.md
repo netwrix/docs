@@ -64,5 +64,5 @@ themselves.
 ![predefined rights diagram](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/working_with_predefining_rights/working_with_predefined_rights_4-en.webp)
 
 **CAUTION:** The configuration of permissions can be performed manually or automatically as
-described. If you want to change previously set permissions later, this has to be done manually.
+described. To change previously set permissions later, do so manually.
 Retrospectively defining rights isn't possible.

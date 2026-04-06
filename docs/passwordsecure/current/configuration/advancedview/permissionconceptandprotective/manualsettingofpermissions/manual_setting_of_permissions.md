@@ -12,8 +12,7 @@ In contrast to the
 [Automated setting of permissions](/docs/passwordsecure/current/configuration/advancedview/permissionconceptandprotective/automatedsettingofpermissions/automated_setting_of_permissions.md), the
 manual approach doesn't use any automatic processes. This method of setting permissions is thus
 performed separately for every record – this process isn't as recommended for newly created data.
-If you want to work effectively in the long term, the automatic setting of permissions should be
-used. However, the manual setting of permissions is generally used when editing already existing
+To work effectively in the long term, use the automatic setting of permissions. However, the manual setting of permissions is generally used when editing already existing
 records.
 
 ## Adding additional users with permissions

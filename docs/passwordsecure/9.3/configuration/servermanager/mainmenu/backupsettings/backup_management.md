@@ -8,8 +8,8 @@ sidebar_position: 10
 
 #### Introduction
 
-Regular backups of the data should always be part of every security concept. If you want to create
-backups directly on the SQL server, you should also include the Netwrix Password Secure databases.
+Regular backups of the data should always be part of every security concept. To create
+backups directly on the SQL server, include the Netwrix Password Secure databases.
 If no central backups are performed at the SQL level, you can create backup profiles using the
 Server Manager. The backups themselves will then be generated on the SQL Server.
 

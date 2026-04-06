@@ -13,7 +13,7 @@ Passwords are selectively made available to the different user groups by means o
 Nevertheless, there are many scenarios in which the ability to view and use a record should be
 linked to a release issued in advance. In this context, the seal is an effective protective
 mechanism. This multi-eye principle protects passwords by securing them with granular release
-mechanisms. If you want to see a password, this must be requested and released. The release can also
+mechanisms. To see a password, a request must be submitted and released. The release can also
 be temporary.
 
 ## Relevant rights
@@ -119,7 +119,7 @@ be added to the seal. The role accounting under "sealed for" has been added in t
 :::note
 When a role or a user is added to a seal, these users also receive permissions on the record
 according to the authorization granted in the seal. A role that is added under "Sealed for" receives
-the **Read permission** on the record. When you add authorization permissions, these will include
+the **Read permission** on the record. When you add authorization permissions, these include
 the **Read**, **Write**, **Delete**, and **Authorize** permission.
 :::
 

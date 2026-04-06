@@ -33,14 +33,14 @@ assign any number of tags to your passwords to categorize and find them again qu
 ![assigntags](/images/passwordsecure/9.2/enduser/assigntags.webp)
 
 To find a password, use the search field and enter a tag like the department or position you
-are in (i.e., "Marketing"). Netwrix Password Secure now not only is searching for tags, but also for
+are in (i.e., “Marketing”). Netwrix Password Secure searches not only for tags, but also for
 “Marketing” in all Netwrix Password Secure fields (i.e., Content Marketing).
 
 ![searchresults](/images/passwordsecure/9.2/enduser/searchresults.webp)
 
 :::note
 Optimize your search results by using the **minus sign (-)** to exclude terms: Only results in
-which this word doesn't appear will be displayed (i.e., all social media accounts that are used
+which this word doesn't appear are displayed (i.e., all social media accounts that are used
 outside of marketing = "-social media marketing").
 :::
 

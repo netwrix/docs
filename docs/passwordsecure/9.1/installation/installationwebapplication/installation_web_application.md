@@ -63,18 +63,18 @@ Enter the IP address or the host name of the web server.
 
 Enter the port that's used to communicate with the Web Application.
 
-All of the subsequent steps or the required tasks will be explained in the associated chapters for
+All of the subsequent steps or the required tasks are explained in the associated chapters for
 each specific web server.
 
 ## CORS configuration
 
 A button for the so-called CORS configuration can be found on the ribbon. It's essential that this
 configuration is performed before the Web Application can be used. A list of the permitted CORS
-domains will be saved as a result. Requests received via the Web Application can then be checked
-against this list. The request will only be successfully performed if the origin header for a
+domains are saved as a result. Requests received via the Web Application can then be checked
+against this list. The request is only successfully performed if the origin header for a
 request is available in the permitted domains.
 
-To add a domain, simply enter it at the bottom of the dialogue. Clicking on
+To add a domain, enter it at the bottom of the dialogue. Clicking on
 :material-plus-circle-outline: will add the entry to the list at the top.
 
 ![cors-en-new](/images/passwordsecure/9.1/installation/installation_web_application/cors-en-new.webp)

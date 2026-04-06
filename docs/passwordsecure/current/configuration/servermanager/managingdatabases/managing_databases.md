@@ -49,7 +49,7 @@ be available.
 Show connection locks
 
 In the ribbon, all connection locks can be displayed. To do this, you must first log in to the
-database. All locked users will be displayed in a list. The following is displayed:
+database. All locked users are displayed in a list. The following is displayed:
 
 - User name (if known)
 - Reason for lock

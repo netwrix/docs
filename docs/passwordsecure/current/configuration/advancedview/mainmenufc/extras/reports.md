@@ -44,7 +44,7 @@ dropdown list. There are dozens of report types available.
 ![installation_with_parameters_80](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/extras/reports/installation_with_parameters_80.webp)
 
 Use the filter to define the scope of the report e.g. to focus on a certain OU or a
-selection of tags. Once saved, the report will now be shown in the list of report requests.
+selection of tags. Once saved, the report appears in the list of report requests.
 
 ###### Manually create reports
 

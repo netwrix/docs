@@ -10,7 +10,7 @@ The entries for the **Discovery Service** are discovered using a **Discovery Ser
 take some time for all the data on the systems for the entered IP network to be collected. This can
 be recognized by the **blue arrow** symbol on the **Discovery Service Task** and a
 corresponding message is also shown in the General display. After the **Discovery Service Task** has
-been completed, the data will be shown in the **Discovery Service module**.
+been completed, the data is shown in the **Discovery Service module**.
 
 ![new discovery service task](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/discovered_entries/discovered_entries_1-en.webp)
 
@@ -21,7 +21,7 @@ described in the following sections.
    using the F5 button. Red hand: Deactivated Blue arrow: Activated and being executed Boxes:
    Corresponds to the assigned tag
 2. **General**: The latest information about the **Discovery Service Task** is shown here. A
-   **message** will be shown to indicate an active **Discovery Service Task**.
+   **message** is shown to indicate an active **Discovery Service Task**.
 3. **Overview**: Current data for the **Discovery Service Task** about its progress and subsequent
    executions are shown here.
 4. **Logbook**: The **logbook** can be found in the **footer** of the **Discovery Service Task**.

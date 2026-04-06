@@ -65,7 +65,7 @@ passwords.
 
 ###### Table view (current selection)
 
-All **selected** records will be printed out. In the following example, **Adobe** and **Anibis.ch**
+All **selected** records are printed out. In the following example, **Adobe** and **Anibis.ch**
 are thus printed out.
 
 ![selected data](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/print/installation_with_parameters_46-en.webp)
@@ -76,7 +76,7 @@ The data is printed here in table form.
 
 #### Tableview (current filter)
 
-All **filtered** records will be printed out here. In this example, all seven records are
+All **filtered** records are printed out here. In this example, all seven records are
 thus printed out.
 
 ![filtered password](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/print/installation_with_parameters_48-en.webp)

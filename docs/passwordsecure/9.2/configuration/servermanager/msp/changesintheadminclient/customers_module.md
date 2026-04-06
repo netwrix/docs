@@ -17,7 +17,7 @@ immediately.
 When creating a new customer, the customer name is specified under **General** (1).
 
 If (2) isn't checked, a test customer is created without billing. This is then a customer in the
-test phase. If (2) is checked, a customer will be created who will be charged by Netwrix from the
+test phase. If (2) is checked, a customer is created who is charged by Netwrix from the
 current month.
 
 At (3) a date is automatically entered that is four weeks in the future. This date can be changed by
@@ -36,7 +36,7 @@ to the on-prem version.
 ![License settings new customer](/images/passwordsecure/9.2/configuration/server_manager/msp/changes_in_ac/customers_module/licence-new-customer-msp-en_1013x675.webp)
 
 After saving, the test customers are displayed under Test (1) and the customers to be billed under
-Billed (2). When you click a (test) customer, you will see the associated
+Billed (2). When you click a (test) customer, you see the associated
 
 information and activated options. By clicking the button Edit (3 + 4) you can make
 
@@ -64,7 +64,7 @@ Since no costs are incurred for test customers, no information is displayed here
 
 Here you can also edit the contract details and activate or deactivate options. Additionally you can
 see the user history (4) of the last months, the forecast for the current month (5) including the
-expected costs for the users and options, as well as the total amount. Furthermore, you will find
+expected costs for the users and options, as well as the total amount. Furthermore, you find
 the statements of the last months (6) and a graphical representation of the cost history (7).
 
 ![billed-customer-msp-en_1032x752](/images/passwordsecure/9.2/configuration/server_manager/msp/changes_in_ac/customers_module/billed-customer-msp-en_1032x752.webp)

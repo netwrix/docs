@@ -36,7 +36,7 @@ Step 3 – Let`s fill out the website form in this example.
 ![username](/images/passwordsecure/9.1/enduser/username.webp)
 
 - Enter the password manually or use the password generator by clicking on the button in the middle
-  (high number). The password generator will open.
+  (high number). The password generator opens.
 
 :::note
 For details about generating passwords, see [Clean up Your Passwords](/docs/passwordsecure/9.1/enduser/cleanuppasswords.md).

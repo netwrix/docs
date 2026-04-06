@@ -8,16 +8,16 @@ sidebar_position: 10
 
 #### Introduction
 
-Regular backups of the data should always be part of every security concept. If you want to create
-backups directly on the SQL server, you should also include the Netwrix Password Secure databases.
+Regular backups of the data should always be part of every security concept. To create
+backups directly on the SQL server, include the Netwrix Password Secure databases.
 If no central backups are performed at the SQL level, you can create backup profiles using the
-Server Manager. The backups themselves will then be generated on the SQL Server.
+Server Manager. The backups themselves are then generated on the SQL Server.
 
 #### Difference between an incremental and full backup
 
 A complete backup always saves all data in a database. An incremental backup also creates a complete
-image of the database as the first step. In future, only the changes since the backup created at the
-beginning will be saved. This saves both time and memory capacity.
+image of the database as the first step. After that, only the changes since the initial backup
+are saved. This saves both time and memory capacity.
 
 #### Backup concept
 
@@ -31,7 +31,7 @@ created once a week.
 You can create a new schedule via the ribbon. This is facilitated by a wizard. All the information
 entered under
 [Backup settings](/docs/passwordsecure/9.1/configuration/servermanager/mainmenu/backupsettings/backup_settings.md)
-will be used by default.
+are used by default.
 
 A profile name is entered first. The desired databases are also selected. You also need to specify
 the directory for the backups.
@@ -42,8 +42,8 @@ the directory for the backups.
 It must be a directory on the SQL server.
 :::
 
-Now set the time interval for creating the backups. A preview on the right will show when the
-backups will be created in future. An end date can be optionally entered.
+Now set the time interval for creating the backups. A preview on the right shows when the
+backups are created. An end date can be optionally entered.
 
 ![new backup profile - interval](/images/passwordsecure/9.1/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_258-en.webp)
 
@@ -63,8 +63,8 @@ task. Further information can be found in the section
 
 The backups are executed by the SQL server in the background. If an error occurs, this is indicated
 in “orange” in the backup list. Information about any errors issued by the SQL server is displayed
-under all backups. A backup will be automatically deactivated if it doesn't run 5x in a row. This
-will be marked in the list in red. The schedule can't be reactivated directly. You'll need to
+under all backups. A backup is automatically deactivated if it doesn't run 5x in a row. This
+is marked in the list in red. The schedule can't be reactivated directly. You'll need to
 open it and amend it.
 
 **Other backup actions**
@@ -83,7 +83,7 @@ existing databases. Firstly, select the required database. You can now select In
 
 If necessary, firstly enter login data for the user that logs in to the SQL server – although the
 service user is generally used here. Now select the backup file. All the backups contained in the
-file will then be displayed. Now click Restore to restore the backup to the existing
+file are then displayed. Now click Restore to restore the backup to the existing
 database.
 
 ![Database restore](/images/passwordsecure/9.1/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_261-en.webp)

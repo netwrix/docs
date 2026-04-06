@@ -88,7 +88,7 @@ Double clicking on it and then pressing the \*Configure info field” button in 
 
 ![Configuring the info field](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/forms/forms_5-en.webp)
 
-This will open a separate tab that lets you design the info section via drag & drop. The
+This opens a separate tab that lets you design the info section via drag & drop. The
 Fields that are available on the right can be "dragged" onto the configuration window on the left.
 In the following example, "Start RDP session2 will be made visible in the info section, whereby only
 The word "RDP" is assigned a function – namely to start the RDP manager. A preview is shown in the

@@ -8,7 +8,7 @@ sidebar_position: 10
 
 ## User passwords
 
-Depending on the type of user, they will either be allocated their password in Netwrix Password
+Depending on the type of user, they are either allocated their password in Netwrix Password
 Secure or the login will be performed using access data for the domain. How the user logs in also
 differs according to the type of user.
 
@@ -19,7 +19,7 @@ differs according to the type of user.
   migrated from older versions, they receive a randomly generated password that's sent to them via
   email.
 - **AD users in end-to-end mode** These users must also be assigned a password in Netwrix Password
-  Secure. A new password will also be issued via email for these users in the case of a possible
+  Secure. A new password is also issued via email for these users in the case of a possible
   migration.
 - **AD users in Master Key mode** These users log in directly with access data for the domain. It's
   thus not necessary to assign them a password. As these users directly authenticate themselves via

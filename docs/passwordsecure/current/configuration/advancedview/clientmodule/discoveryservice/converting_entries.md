@@ -40,7 +40,7 @@ In the **Discovery Service** table, the user selects the entries for which he wa
    administrator** for the task will be used as the executing user. In addition, only those
    **Discovery Service Task entries** that are also discovered by the entered **Discovery Service
    Task** will be used for the conversion).
-2. The discovered entries will be displayed in this column with the **services** for which the user
+2. The discovered entries are displayed in this column with the **services** for which the user
    has been entered.
 3. This column shows the **discovered type** for the entry.
 4. This column shows already existing passwords in Netwrix Password Secure that match the discovered
@@ -79,7 +79,7 @@ The **settings** will be described in more detail in the following sections:
 6. Various **triggers for the Password Reset** can be selected here.
 
 **CAUTION:** After clicking on **Finish**, the **Password Resets** will be **immediately executed**
-and the **passwords changed!**. This also applies to **Windows passwords!**
+and the **passwords changed**. This also applies to **Windows passwords**.
 
 If option 1: **Do you also want to add a Password Reset?** isn't selected, \*steps 4, 5, and 6 are
 not displayed for configuration.
@@ -88,7 +88,7 @@ not displayed for configuration.
 
 :::note
 After clicking on **Finish**, one or more **passwords will be created** but **no corresponding
-Password Resets will be created!**
+Password Resets are created.**
 :::
 
 ## Assignment (Active Directory user)
@@ -150,7 +150,7 @@ clicking on **Finish**.
 
 An **Overview** of which actions will be performed is displayed for the user together with this
 note. The user can then still decide to **Cancel** the process. If you click **OK**, an
-**additional confirmation warning** will be displayed.
+**additional confirmation warning** appears.
 
 ![important note](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_10-en.webp)
 

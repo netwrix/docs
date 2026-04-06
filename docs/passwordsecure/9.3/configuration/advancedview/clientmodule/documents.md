@@ -50,7 +50,7 @@ documents in one step.
 
 ## Versioning
 
-The heart of each document management system is the ability to capture and archive changes to
+The core feature of each document management system is the ability to capture and archive changes to
 documents or files. All versions of a document can be compared with each other and historical
 versions can be restored if necessary. Netwrix Password Secure provides this functionality via the
 history in the ribbon, as well as in the footer area for ​​the detailed view of a document. This can

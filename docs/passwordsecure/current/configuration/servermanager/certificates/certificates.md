@@ -84,5 +84,4 @@ addition, the storage location is defined in the settings.
 
 #### Backing up certificates
 
-If you want to automatically back up the certificates on a cyclical basis, this can be done via the
-backup system. Further information can be found in the section Backup management.
+To automatically back up certificates on a cyclical basis, use the backup system. Further information can be found in the section Backup management.

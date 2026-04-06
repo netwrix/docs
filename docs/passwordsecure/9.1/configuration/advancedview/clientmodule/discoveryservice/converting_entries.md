@@ -64,7 +64,7 @@ The **Password Reset** is configured in the **Settings Ribbon**.
 
 ![reset setting](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_4-en.webp)
 
-The **settings** will be described in more detail below:
+The **settings** are described in more detail in the following section:
 
 1. The organisational unit in which the **Password Reset** should be created is entered here. In
    addition, a template for the rights inheritance can be entered here.
@@ -72,13 +72,13 @@ The **settings** will be described in more detail below:
 3. Adding a **Password Reset** Option 1: **Do you also want to add a Password Reset?** Adds a
    **Password Reset** If **option 1** isn't selected, the following options aren't displayed.
 4. Setting for executing a **Password Reset** Option 2: **(Execute Password Resets immediately after
-   they're created)** means that the **Password Reset** will be executed as soon as you click
+   they're created)** means that the **Password Reset** is executed as soon as you click
    **Finish**.
 5. The **responsible user for the Password Reset** is entered here.
 6. Various **triggers for the Password Reset** can be selected here.
 
 :::warning
-After clicking on **Finish**, the **Password Resets** will be **immediately executed**
+After clicking on **Finish**, the **Password Resets** are **immediately executed**
 and the **passwords changed.**. This also applies to **Windows passwords.**
 :::
 
@@ -88,7 +88,7 @@ not displayed for configuration.
 ![password reset option](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_5-en.webp)
 
 :::note
-After clicking on **Finish**, one, or more **passwords will be created** but **no corresponding Password Resets will be created.**
+After clicking on **Finish**, one or more **passwords are created** but **no corresponding Password Resets are created.**
 :::
 
 ## Assignment (Active Directory user)
@@ -128,8 +128,8 @@ The following images shows the **Assignment (Active Directory user)** Ribbon
 
 ### Summary
 
-A brief overview of the actions that will be performed with the added configuration is displayed
-in the **Summary** Ribbon. These actions will then be performed if you click **Finish**.
+A brief overview of the actions performed with the added configuration is displayed
+in the **Summary** Ribbon. These actions are then performed when you click **Finish**.
 
 ![summary](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_9-en.webp)
 
@@ -152,7 +152,7 @@ clicking on **Finish**.
 **observe the note and read it through carefully.**
 :::
 
-An **Overview** of which actions will be performed is displayed for the user together with this
+An **Overview** of the actions to be performed is displayed for the user together with this
 note. The user can then still decide to **Cancel** the process. If you click **OK**, an
 **additional confirmation warning** will be displayed.
 
@@ -161,7 +161,7 @@ note. The user can then still decide to **Cancel** the process. If you click **O
 **Security level 2:**
 
 Another **confirmation prompt** highlights that it's important to understand what you're about to
-do. It will no longer be possible to reverse the actions afterwards.
+do. It is no longer possible to reverse the actions afterwards.
 
 :::warning
 **Last chance to cancel the execution.**

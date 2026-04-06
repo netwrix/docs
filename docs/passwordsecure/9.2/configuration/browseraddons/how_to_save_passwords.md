@@ -20,7 +20,7 @@ automatically asked whether they should be created.
 
 ![new password detected](/images/passwordsecure/9.2/configuration/browseradd-ons/how_to_save_passwords/addon-create-password-en.webp)
 
-By confirming, you will be directly forwarded to the Web Application and registered there. If there
+By confirming, you are directly forwarded to the Web Application and registered there. If there
 are less fields in the deposited or selected form than in the login mask, the missing fields are
 automatically created as web form fields by default.
 
@@ -35,7 +35,7 @@ already known dataset.
 
 ![data was recognized](/images/passwordsecure/9.2/configuration/browseradd-ons/how_to_save_passwords/installation_with_parameters_151-en.webp)
 
-- **Save password**: The password will be exchanged without opening the Web Application.
+- **Save password**: The password is exchanged without opening the Web Application.
 - **check changes**: The Web Application is opened and you are logged in. The previous password has
   been replaced by the new one. However, the storage must be performed manually.
 

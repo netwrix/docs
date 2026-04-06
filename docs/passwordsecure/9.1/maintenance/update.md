@@ -14,7 +14,7 @@ software as best as possible to the requirements of customers. Therefore, it's r
 you regularly install updates.
 
 The documentation always refers to the latest version available. If Netwrix Password Secure deviates
-from the documentation (e.g. in appearance or also its functional scope), it makes sense to firstly
+from the documentation (e.g. in appearance or also its functional scope), it makes sense to first
 update to the latest version.
 
 :::note
@@ -50,7 +50,7 @@ problem arises.
 An attempt is always made to design the Server Manager so that it's backwards compatible.
 Unfortunately this isn't always possible. Therefore, you should always check which client version
 the Server Manager is compatible with before an update. The version history for the relevant version
-will provide this information.
+provides this information.
 
 :::warning
 If the password for logging in to the Server Manager on the database has been saved, it

@@ -10,7 +10,7 @@ sidebar_position: 20
 
 Users can configure all user-specific information in their account. If the
 [Masterkey mode](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/masterkey_mode.md)
-process is used, user data will always be taken from Active Directory – editing this information in
+process is used, user data is always taken from Active Directory – editing this information in
 Netwrix Password Secure is thus not possible.
 
 ![account](/images/passwordsecure/9.1/configuration/advanced_view/mainmenu/account/installation_with_parameters_123-ewn.webp)
@@ -35,9 +35,9 @@ No changes can be made to users that were imported from AD with the aid of Maste
 
 #### Change password
 
-It's recommended that the user password is changed on a regular basis. If you want to use a new
-password, it's necessary to enter the existing password in advance. The strength of the password
-will be directly displayed.
+It's recommended that the user password is changed on a regular basis. To use a new
+password, enter the existing password first. The strength of the password
+is displayed immediately.
 
 :::note
 Users who were imported from AD with the aid of Master Key mode log in with the domain password. Therefore, no password can be configured in this case.

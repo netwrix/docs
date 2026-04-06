@@ -12,8 +12,7 @@ In contrast to the
 [Automated setting of permissions](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/automatedsettingofpermissions/automated_setting_of_permissions.md),
 the manual approach doesn't use any automatic processes. This method of setting permissions is
 thus performed separately for every record – this process isn't as recommended for newly created
-data. If you want to work effectively in the long term, the automatic setting of permissions should
-be used. However, the manual setting of permissions is generally used when editing already existing
+data. To work effectively in the long term, use the automatic setting of permissions. However, the manual setting of permissions is generally used when editing already existing
 records.
 
 ## Adding additional users with permissions
@@ -38,7 +37,7 @@ The author is created with all permissions for the record. As described in the
 [Permission concept and protective mechanisms](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/permission_concept_and_protective.md),
 you can now add roles and users. 'Right click - Add' inside the userlist or use the ribbon "User and
 roles" to add a user. The filter helps you to quickly find those users who should be granted
-permissions for the record in just a few steps.
+permissions for the record.
 
 ![add user and role](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/manual_settings/manual-setting-of-permissions-2-en.webp)
 

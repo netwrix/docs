@@ -56,7 +56,7 @@ The Autofill Add-on is used for SSO applications.
 For connection to the database, the creation of a database profile is obligatory. The following
 information is required:
 
-- Profile name: The name of the profile. This will be displayed on the client in the future
+- Profile name: The name of the profile. This is displayed on the client.
 - IP address: The IP address of the Netwrix Password Secure V8 server is stored here
 - Database name: Specifies the name of the database
 

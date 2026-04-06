@@ -61,9 +61,9 @@ The connection to the desired session can be established via the icon **Establis
 ![estabish RDP](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/applications/applications_4-en.webp)
 
 Netwrix Password Secure now attempts to log in to the target system with the information available.
-Data that aren't saved in the form will be directly requested when opening the session. It's thus
+Data that aren't saved in the form are directly requested when opening the session. It's thus
 also possible to only enter the IP address and/or the password after starting the Netwrix Password
-Secure application. If all data has been retrieved, the RDP session will open in a tab – if so
+Secure application. If all data has been retrieved, the RDP session opens in a tab – if so
 defined (Window mode field in the application):
 
 ![RDP session](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/applications/applications_5-en.webp)
@@ -102,7 +102,7 @@ servers with one single password is questionable from a security standpoint. It'
 recommended that a unique password is issued for every server/access point.
 
 :::note
-It's possible to leave the **IP address** field empty in the application. If an **IP address** field exists in the linked record then this address will be used. If there's also no IP address in the record, a popup window will appear in which the desired IP address can be entered manually.
+It's possible to leave the **IP address** field empty in the application. If an **IP address** field exists in the linked record then this address is used. If there's also no IP address in the record, a popup window appears where the desired IP address can be entered manually.
 :::
 
 Alternatively, it's possible to connect several records with one RDP connection. In this way, you

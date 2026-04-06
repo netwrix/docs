@@ -13,7 +13,7 @@ encryption standard TLS 1.2** is used here. It's also possible to create a certi
 server, as well as to use an existing certificate with a CA. All computers on which a client is
 installed must trust the certificate.
 
-Otherwise, the following message will appear when the client is started:
+Otherwise, the following message appears when the client is started:
 
 **This connection isn't trusted!**
 

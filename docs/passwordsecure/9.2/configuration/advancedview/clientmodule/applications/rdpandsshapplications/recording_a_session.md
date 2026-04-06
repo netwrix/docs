@@ -41,7 +41,7 @@ SSH
 
 ![activating session recording](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/rdp_and_ssh_applications/recording_a_session/recording_a_session_3-en.webp)
 
-If the setting has been activated, the recording will start automatically the next time a connection
+If the setting has been activated, the recording starts automatically the next time a connection
 is established.
 
 :::note
@@ -63,7 +63,7 @@ possible to further filter the searched list based on all column contents.
 
 ![session records](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/rdp_and_ssh_applications/recording_a_session/recording_a_session_5-en.webp)
 
-Once a session recording has been selected, a new tab will open in which you can view the recording.
+Once a session recording has been selected, a new tab opens in which you can view the recording.
 The function "Skip inactivity" can be activated via the ribbon so that a recording can be
 effectively and quickly viewed so as only to see the relevant actions.
 

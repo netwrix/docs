@@ -49,7 +49,7 @@ decide which information should be used to fill it.
 
 ![mapping fields](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/learning_the_applications/learning_the_applications_3-en.webp)
 
-In parallel to the previous step, all of the already assigned fields will be displayed on the right
+In parallel to the previous step, all of the already assigned fields are displayed on the right
 edge of the screen. In this example, the VMware vSphere Client has a total of 4 assigned fields: IP,
 user name, password, and clicking the button to subsequently confirm the login.
 
@@ -60,7 +60,7 @@ user name, password, and clicking the button to subsequently confirm the login.
 lets you define other factors for the SSO. An area is defined that then serves as the output
 for the comparison (e.g. for login masks with an image). To activate the graphical
 recognition function, click the eye at the top right after assigning the fields. The area that
-will serve as the output point is then marked.
+serves as the output point is then marked.
 :::
 
 After you have assigned all of the fields, you can exit the application process using the enter
@@ -76,7 +76,7 @@ storage location for all users, it can then also be accessed by all other users.
 
 In the [Passwords](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/passwords/passwords.md), the newly created application can now be directly
 linked. To do this, mark the record to be linked and open the "Connect application" menu in the
-"Start" tab via the ribbon. This will open a list of all the available applications. It is now
+"Start" tab via the ribbon. This opens a list of all the available applications. It is now
 possible here to link to the previously created application "VMware".
 
 ![connect application with record](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/learning_the_applications/learning_the_applications_6-en.webp)

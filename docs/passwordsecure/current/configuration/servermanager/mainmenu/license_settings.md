@@ -25,13 +25,13 @@ Licenses are linked via the Netwrix license server. Here are the details:
 - Port 443 TCP (standard HTTPS port)
 
 Ensure that this server is accessible. You may also use Proxy servers. The license is retrieved from
-the server and stored in the server configuration. The license will be checked every hour, and
+the server and stored in the server configuration. The license is checked every hour and
 updated as required. The retention time is 30 days. If there is no internet connection, you can
 continue to work for 30 days. If this period should cause problems, contact Netwrix support.
 
 #### Integrating and managing licenses
 
-After purchase, you will receive the required license information in the form of “customer name” and
+After purchase, you receive the required license information in the form of “customer name” and
 “password”. Enter this information directly into the License Server Access area. Use the Select and
 Activate button to establish a connection to the license server. You can select the acquired
 licenses from a list. The license can be now used.

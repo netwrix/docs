@@ -14,7 +14,7 @@ it via the following link:
 
 Alternatively, you can also access the Google Store via the Autofill Add-on. To do this, right-click
 the icon to open the context menu. After a further click Install Browser Extensions the Google
-Chrome Add-on can be selected, whereupon you will be redirected directly to the Google Store.
+Chrome Add-on can be selected. You are then redirected directly to the Google Store.
 
 The installation is started via Add.
 

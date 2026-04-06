@@ -61,7 +61,7 @@ structures is explained in
 ## Adding other template groups
 
 It is also possible to configure several different right templates within one department. This may
-be necessary e.g. if there are several areas of competency within one department which should each
+be necessary e.g. if there are several areas of competency within one department that should each
 receive different permissions. Alongside the **IT general** area, the template groups **Exchange**
 and **Firewall** have also been defined in the following example.
 

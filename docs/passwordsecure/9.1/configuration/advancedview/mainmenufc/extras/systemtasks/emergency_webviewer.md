@@ -110,7 +110,7 @@ the
 
 ## Using the Emergency WebViewer.html file
 
-After the **system task** has been successfully executed, **two files** will have been created for
+After the **system task** has been successfully executed, **two files** are created for
 the password backup.
 
 1. Emergency WebViewer.html

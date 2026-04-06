@@ -10,7 +10,7 @@ sidebar_position: 20
 
 Users can configure all user-specific information in their account. if the
 [Masterkey mode](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/masterkey_mode.md)
-process is used, user data will always be taken from Active Directory – editing this information in
+process is used, user data is always taken from Active Directory – editing this information in
 Netwrix Password Secure is thus not possible.
 
 ![account](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/account/installation_with_parameters_123-ewn.webp)
@@ -23,7 +23,7 @@ areas of the profile overlap with the **management of users.** This information 
 
 :::note
 No changes can be made to users that were imported from AD using Master Key mode. In this
-case, all information will be imported from AD.
+case, all information is imported from AD.
 :::
 
 #### Editing user image
@@ -32,14 +32,14 @@ A new image can be added or the existing one replaced or deleted by clicking on 
 
 :::note
 No changes can be made to users that were imported from AD with the aid of Master Key mode. If
-an image has been saved in AD, it will be used here.
+an image has been saved in AD, it is used here.
 :::
 
 #### Change password
 
-Netwrix recommends that the user password is changed on a regular basis. If you want to use a new
+Netwrix recommends that the user password is changed on a regular basis. To use a new
 password, you must enter the existing password in advance. The strength of the password
-will be directly displayed.
+is directly displayed.
 
 :::note
 Users who were imported from AD with the aid of Master Key mode log in with the domain
@@ -70,7 +70,7 @@ See also in
 Use this option to automate the log in to Netwrix Password Secure. For setup, enter the
 password twice and save it.
 
-The autologin is linked to the hardware and thus will not work on a different computer. If you
+The autologin is linked to the hardware and thus does not work on a different computer. If you
 change the hardware or the hardware ID, an existing autologin needs to be recreated.
 
 #### Relevant right

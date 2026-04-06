@@ -14,7 +14,7 @@ software as best as possible to the requirements of the customers. Therefore, Ne
 you regularly install updates.
 
 The documentation always refers to the latest version available. If Netwrix Password Secure deviates
-from the documentation (e.g. in appearance or also its functional scope), it makes sense to firstly
+from the documentation (e.g. in appearance or functional scope), it makes sense to first
 update to the latest version.
 
 :::note

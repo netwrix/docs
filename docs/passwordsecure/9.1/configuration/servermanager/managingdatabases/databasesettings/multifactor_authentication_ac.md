@@ -20,6 +20,6 @@ In the Databases module, select a database and open its settings via the ribbon.
 In the settings you define which second factors can be used.
 
 :::note
-If you want to use "Encipherment" for PKI certificates without KeyUsageFlag, uncheck the corresponding checkbox.
+To use "Encipherment" for PKI certificates without KeyUsageFlag, uncheck the corresponding checkbox.
 :::
 

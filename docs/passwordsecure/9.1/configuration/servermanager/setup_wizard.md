@@ -36,7 +36,7 @@ This step can also be performed later “in the
 (user name and password for the licence server will be sent to you by email).
 
 If necessary, access data for a possible proxy can also be issued – otherwise the proxy in the
-operating system will be used. You can then select and activate the required license by clicking on
+operating system is used. You can then select and activate the required license by clicking on
 the corresponding button.
 
 #### Database server
@@ -50,7 +50,7 @@ and can also be edited there later on.
 The database server must be specified along with the associated SQL instance. For simplicity, you
 can copy the server name from the login window of the SQL server.
 
-The user that will be used to create the database on the SQL Server is also specified. The user
+The user used to create the database on the SQL Server is also specified. The user
 therefore needs **dbCreator** rights. Alternatively, you can use the service user for this purpose.
 The “Advanced” button lets you specify a **Connection String.**
 
@@ -68,7 +68,7 @@ After the data has been entered and successfully tested, the wizard can be compl
 
 **Security notes**
 
-As soon as the setup wizard has been completed, two security notes will be displayed in the
+As soon as the setup wizard has been completed, two security notes are displayed in the
 **Status**
 
 module that need to be confirmed.

@@ -61,7 +61,7 @@ that visa protection applies to trainees.
 ![example password masking](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/password_masking/password_masking_3-en.webp)
 
 :::note
-Use the icon in the ribbon to apply password masking to all users who have read permission on the record, but not the **authorize permission**. If you want to specify more precisely for which users the password masking should be applied, this is also possible via the form field permissions.
+Use the icon in the ribbon to apply password masking to all users who have read permission on the record, but not the **authorize permission**. To specify more precisely which users the password masking applies to, use the form field permissions.
 :::
 
 :::note

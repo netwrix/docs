@@ -71,8 +71,8 @@ You can personalize the Web App with your company’s branding by navigating to 
 
 A button for the so-called CORS configuration can be found on the ribbon. It is essential that this
 configuration is performed before the Web Application can be used. A list of the permitted CORS
-domains will be saved as a result. Requests received via the Web Application can then be checked
-against this list. The request will only be successfully performed if the origin header for a
+domains is saved as a result. Requests received via the Web Application are then checked
+against this list. The request only succeeds if the origin header for a
 request is available in the permitted domains.
 
 To add a domain, enter it at the bottom of the dialogue. Clicking on

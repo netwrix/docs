@@ -107,7 +107,7 @@ As a member of a role, it must have at least the “read” right for the role.
 ## Specific example and configuration
 
 Similar to the previous section on permission concept and protective mechanisms for roles, the
-configuration of a role will be illustrated using two users. The configuration is performed in the
+configuration of a role is illustrated using two users. The configuration is performed in the
 [Roles](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/roles.md).
 By double-clicking on the role “IT-Consultants” in the
 [List view](/docs/passwordsecure/9.1/configuration/advancedview/operationandsetup/list_view.md),

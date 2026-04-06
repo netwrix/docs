@@ -8,16 +8,15 @@ sidebar_position: 10
 
 #### Introduction
 
-Regular backups of the data should always be part of every security concept. If you want to create
-backups directly on the SQL server, you should also include the Netwrix Password Secure databases.
+Regular backups of the data should always be part of every security concept. To create
+backups directly on the SQL server, also include the Netwrix Password Secure databases.
 If no central backups are performed at the SQL level, you can create backup profiles using the
 Server Manager. The backups themselves will then be generated on the SQL Server.
 
 #### Difference between an incremental and full backup
 
 A complete backup always saves all data in a database. An incremental backup also creates a complete
-image of the database as the first step. In future, only the changes since the backup created at the
-beginning will be saved. This saves both time and memory capacity.
+image of the database as the first step. After that, only the changes since the initial backup are saved. This saves both time and memory capacity.
 
 #### Backup concept
 
@@ -40,8 +39,8 @@ the directory for the backups.
 It must be a directory on the SQL server.
 :::
 
-Now set the time interval for creating the backups. A preview on the right will show when the
-backups will be created in future. An end date can be optionally entered.
+Now set the time interval for creating the backups. A preview on the right shows when the
+backups are scheduled to run. An end date can be optionally entered.
 
 ![new backup profile - interval](/images/passwordsecure/9.2/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_258-en.webp)
 

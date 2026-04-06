@@ -54,7 +54,7 @@ Problem arises.
 An attempt is always made to design the Server Manager so that it is backwards compatible.
 Unfortunately this isn't always possible. Therefore, you should always check which client version
 The Server Manager is compatible with before an update. The version history for the relevant version
-Will provide this information.
+Provides this information.
 
 :::warning
 If the password for logging in to the Server Manager on the database has been saved, it

@@ -16,7 +16,7 @@ The folder from which the Web Application should be operated is entered here. Th
 
 ## SSL certificate path
 
-It's necessary to enter the directory in which the certificate will be saved here. The standard
+Enter the directory in which the certificate is saved. The standard
 path here is /etc/nginx/certs/Web Application.crt.
 
 ## SSL certificate key path
@@ -27,7 +27,7 @@ Finally, it's necessary to enter where the certificate key is located here. The 
 ![ngnix installation](/images/passwordsecure/9.1/installation/installation_web_application/installation-webclient-9-en.webp)
 
 Once all of the settings have been entered, the Web Application can be created via the button in the
-ribbon. The folder in which the ZIP file is located will then immediately open. The archive is
+ribbon. The folder in which the ZIP file is located then immediately opens. The archive is
 unzipped and its contents are copied to the document directory on the web server.
 
 The configuration for the nginx server was also created together with the ZIP file. This can be

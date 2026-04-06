@@ -36,11 +36,11 @@ In the **Discovery Service** table, the user selects the entries for which he wa
 ![data selection](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_2-en.webp)
 
 1. A **Discovery Service Task** first needs to be selected. This determines the context in which the
-   new data will be created (for a new **Password Reset**, the **password for the domain
+   new data is created (for a new **Password Reset**, the **password for the domain
    administrator** for the task will be used as the executing user. In addition, only those
    **Discovery Service Task entries** that are also discovered by the entered **Discovery Service
-   Task** will be used for the conversion).
-2. The discovered entries will be displayed in this column with the **services** for which the user
+   Task** are used for the conversion).
+2. The discovered entries are displayed in this column with the **services** for which the user
    has been entered.
 3. This column shows the **discovered type** for the entry.
 4. This column shows already existing passwords in Netwrix Password Secure that match the discovered
@@ -73,13 +73,13 @@ The following list describes the **settings** in more detail:
 3. Adding a **Password Reset** Option 1: **Do you also want to add a Password Reset?** Adds a
    **Password Reset** If **option 1** isn't selected, the following options aren't displayed.
 4. Setting for executing a **Password Reset** Option 2: **(Execute Password Resets immediately after
-   they are created)** means that the **Password Reset** will be executed as soon as you click
+   they are created)** means that the **Password Reset** is executed as soon as you click
    **Finish**.
 5. The **responsible user for the Password Reset** is entered here.
 6. Various **triggers for the Password Reset** can be selected here.
 
 :::warning
-After clicking on **Finish**, the **Password Resets** will be **immediately executed**
+After clicking on **Finish**, the **Password Resets** are **immediately executed**
 and the **passwords changed.**. This also applies to **Windows passwords.**
 :::
 
@@ -89,8 +89,8 @@ not displayed for configuration.
 ![password reset option](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_5-en.webp)
 
 :::note
-After clicking on **Finish**, one or more **passwords will be created** but **no corresponding
-Password Resets will be created.**
+After clicking on **Finish**, one or more **passwords are created** but **no corresponding
+Password Resets are created.**
 :::
 
 ## Assignment (Active Directory user)
@@ -130,8 +130,8 @@ The following images shows the **Assignment (Active Directory user)** Ribbon
 
 ### Summary
 
-A brief overview of the actions that will be performed with the added configuration is displayed
-in the **Summary** Ribbon. These actions will then be executed if you click **Finish**.
+A brief overview of the actions that are performed with the added configuration is displayed
+in the **Summary** Ribbon. These actions are then executed when you click **Finish**.
 
 ![summary](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/converting_entries/converting_entries_9-en.webp)
 
@@ -154,7 +154,7 @@ clicking on **Finish**.
 **observe the note and read it through carefully.**
 :::
 
-An **Overview** of which actions will be performed is displayed for the user together with this
+An **Overview** of which actions are performed is displayed for the user together with this
 note. The user can then still decide to **Cancel** the process. If you click **OK**, an
 **additional confirmation warning** will be displayed.
 
@@ -163,7 +163,7 @@ note. The user can then still decide to **Cancel** the process. If you click **O
 **Security level 2:**
 
 Another **confirmation prompt** highlights that understand what you are about to
-do. It will no longer be possible to reverse the actions afterwards.
+do. It is no longer possible to reverse the actions afterwards.
 
 :::warning
 **Last chance to cancel the execution.**

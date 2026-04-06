@@ -13,7 +13,7 @@ Passwords are selectively made available to the different user groups by means o
 Nevertheless, there are many scenarios in which the ability to view and use a record should be
 linked to a release issued in advance. In this context, the seal is an effective protective
 mechanism. This multi-eye principle protects passwords by securing them with granular release
-mechanisms. If you want to see a password, this must be requested and released. The release can also
+mechanisms. To see a password, you must request and receive a release. The release can also
 be temporary.
 
 ## Relevant rights

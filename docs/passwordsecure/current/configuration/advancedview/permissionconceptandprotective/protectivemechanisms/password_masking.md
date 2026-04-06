@@ -58,8 +58,8 @@ that visa protection applies to trainees.
 
 :::note
 Use the icon in the ribbon to apply password masking to all users who have read permission on
-the record, but not the **authorize permission**. If you want to specify more precisely for which
-users the password masking should be applied, this is also possible via the form field permissions.
+the record, but not the **authorize permission**. To specify more precisely which
+users the password masking applies to, use the form field permissions.
 :::
 
 :::note

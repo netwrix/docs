@@ -37,9 +37,9 @@ an image has been saved in AD, it will be used here.
 
 #### Change password
 
-Netwrix recommends that the user password is changed on a regular basis. If you want to use a new
-password, you must enter the existing password in advance. The strength of the password
-will be directly displayed.
+Netwrix recommends that the user password is changed on a regular basis. To set a new
+password, enter the existing password first. The strength of the password
+is displayed as you type.
 
 :::note
 Users who were imported from AD with the aid of Master Key mode log in with the domain

@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Setting up autofill
 
-The most important comfort feature of the Netwrix Password Secure App is probably the autofill, i.e.
-the possibility to enter access data directly into the input mask. The autofill must first be set up
+The most important comfort feature of the Netwrix Password Secure App is the autofill, i.e.
+the ability to enter access data directly into the input mask. The autofill must first be set up
 or configured.
 
 #### Setting up the autofill under iOS

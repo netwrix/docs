@@ -66,10 +66,10 @@ and the permissions for a record are important aspects.
 
 ![permissions new record](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwords/creating_new_passwords_4-en.webp)
 
-- **Manual setting of permissions**: If you want to manually set permissions for the record, select
+- **Manual setting of permissions**: To manually set permissions for the record, select
   the organisational structure in which the record should be saved. After saving the record, the
-  permissions can be manually amended via the permissions tab in the ribbon. If you only want to
-  create a personal record for which no other user will receive permissions, select your own
+  permissions can be manually amended via the permissions tab in the ribbon. To
+  create a personal record for which no other user receives permissions, select your own
   organisational structure and conclude the process with "save" via the ribbon.
 
 :::note

@@ -19,12 +19,12 @@ securely import them to your new solution?
 Do the following:
 
 Step 1 – Every time you log in to a website now and your browser wants to autofill, this Password
-Secure Pop-up will appear, asking you if you would like to save your secret in Netwrix Password
+Secure Pop-up appears, asking you if you would like to save your secret in Netwrix Password
 Secure. Click **Create new**. See the following screenshot.
 
 ![createnew](/images/passwordsecure/9.1/enduser/createnew.webp)
 
-Step 2 – Now the Web Application will open and automatically transfer the recognized login data,
+Step 2 – Now the Web Application opens and automatically transfers the recognized login data,
 including URL to a new data set.
 
 ![createpassword](/images/passwordsecure/9.1/enduser/createpassword.webp)
@@ -50,7 +50,7 @@ Step 2 – If it isn't classified as "strong" (green), use the integrated
 password generator to assign a new, secure password: Therefore, click the white password
 generator icon to the right of the password field. See the Strong button in the previous screenshot.
 
-Step 3 – The password generator will open. A secure password is created automatically. Click
+Step 3 – The password generator opens. A secure password is created automatically. Click
 “Apply”. (See the next chapter for details about the password manager capabilities.)
 
 ![passwordgenerator](/images/passwordsecure/9.1/enduser/passwordgenerator.webp)
