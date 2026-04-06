@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Widgets Page
 
-The Widgets page of the Report Configuration wizard allows you to configure the tables, charts, and
+Use the Widgets page of the Report Configuration wizard to configure the tables, charts, and
 text that form the report.
 
 ![Widgets page](/images/accessanalyzer/11.6/admin/report/wizard/widgets.webp)
@@ -17,13 +17,13 @@ locations where widgets need to be configured.
 ![Configure widgets](/images/accessanalyzer/11.6/admin/report/wizard/widgetsconfigure.webp)
 
 To add a new widget to an empty element, click **Configure** and select the desired widget type from
-the drop-down menu. The following widgets are available:
+the dropdown menu. The following widgets are available:
 
 - [Grid](#grid)
 - [Chart](#chart)
 - [Text](#text)
 
-The editor for the selected widget opens. See the relevant section below for information about
+The editor for the selected widget opens. See the relevant section for information about
 configuring it.
 
 ![Table with configured widgets](/images/accessanalyzer/11.6/admin/report/wizard/widgetsconfigured.webp)
@@ -38,26 +38,25 @@ following actions by selecting a row and clicking the relevant button:
 
 ## Grid
 
-The Grid widget type allows you to configure a table to be displayed on generated reports.
+Use the Grid widget type to configure a table to be displayed on generated reports.
 
 ![Grid configuration window](/images/accessanalyzer/11.6/admin/report/wizard/widgetgrid.webp)
 
 ### Options
 
-The Options section allows you to configure the title and data source for the Grid element.
+Use the Options section to configure the title and data source for the Grid element.
 
 ![Options section](/images/accessanalyzer/11.6/admin/report/wizard/widgetgridoptions.webp)
 
 The section contains the following options:
 
-- Element Title – Enter a title for the element in the text box. This will be displayed in the
-  element's header on the generated report.
+- Element Title – Enter a title for the element in the text box. The generated report displays this in the element's header.
 
 **DataSource Options**
 
-In order to generate results, a location must first be selected as the source of the data.
+To generate results, select a location as the data source.
 
-- Table – Use the drop-down to select the required data source. The drop-down contains the list of
+- Table – Use the dropdown to select the required data source. The dropdown contains the list of
   jobs within Enterprise Auditor that have been executed.
 - Current job only – Select this checkbox to only display data from the current job. This option is
   selected by default.
@@ -82,7 +81,10 @@ You can configure the table to allow the data to be exported as a CSV file.
     - When it is configured, you can click the **All Data** button on the table section of the
       report to save the report as a CSV file. See the
       [Interactive Grids](/docs/accessanalyzer/11.6/admin/report/interactivegrids/overview.md)
-      topic for more information.
+      topic for details about interactive grids.
+      :::warning
+      Only interactive grids can be exported. Non-interactive grids display an "EOIeError" pop-up when you attempt to export a non-interactive grid as CSV.
+      :::
 - Rows – Limits the amount of rows exported to the CSV file. The default is **Visible**.
     - Visible – Only includes the amount of rows set by the **Limit Maximum number of displayed rows
       to** option in the DataSource Options section
@@ -94,7 +96,7 @@ You can configure the table to allow the data to be exported as a CSV file.
 
 ### Table Properties
 
-The Table Properties section allows you to configure the display features of the grid.
+Use the Table Properties section to configure the display features of the grid.
 
 ![Table Properties section](/images/accessanalyzer/11.6/admin/report/wizard/widgetgridtableproperties.webp)
 
@@ -107,8 +109,7 @@ There are two types of grid displays:
   disables all the fields within the Table Properties section.
 
     :::note
-    In order to view user configured Grouping in emailed reports, the report must be
-    emailed as a **Non Interactive Grid**.
+    To view user-configured Grouping in emailed reports, email the report as a **Non Interactive Grid**.
     :::
 
 
@@ -118,7 +119,7 @@ The following settings are available when Interactive grid is selected:
 
 - Treat interactive grid contents as plain text (not HTML) – Enables interactive grid functionality.
   This option is selected by default.
-- Enable Paging – Enables Paging in reports. Paging allows users to interact with large sets of data
+- Enable Paging – Enables Paging in reports. With Paging, users can interact with large sets of data
   more efficiently when viewing, filtering, and sorting generated report tables by limiting the
   amount of data being displayed at a given time. Paging is enabled by default. See the
   [Paging](/docs/accessanalyzer/11.6/admin/report/interactivegrids/paging.md)
@@ -129,7 +130,7 @@ The following settings are available when Interactive grid is selected:
 - Group Column – Arranges the table to be grouped by the attributes of the selected column
 
     :::note
-    Paging and grouping are not compatible. When Paging is enabled, the Grouping options
+    Paging and grouping aren't compatible. When Paging is enabled, the Grouping options
     are disabled in the Table Properties section and in the generated report.
     :::
 
@@ -141,8 +142,8 @@ The following settings are available when Interactive grid is selected:
 
 ### Data
 
-The selected data for the table is shown in the section at the bottom of the window. This section
-allows you to configure the data to be displayed in the table.
+The selected data for the table is shown in the section at the bottom of the window. Use this section
+to configure the data to be displayed in the table.
 
 ![Data display](/images/accessanalyzer/11.6/admin/report/wizard/widgetgriddata.webp)
 
@@ -150,34 +151,33 @@ The buttons above the column names provide you options for configuring the table
 
 - Clear Sorting – Restores columns to the default placement
 - Column Chooser – Opens a pane where you can remove unwanted columns or add hidden columns
-- Filter Editor – Opens the Filter Editor which allows you to add custom filters with conditional
+- Filter Editor – Opens the Filter Editor, where you can add custom filters with conditional
   statements and logical connectives
 - Best Fit (all columns) –  Adjusts the width of the columns to display all the data within the
   cells
 
 ## Chart
 
-Chart widgets allow you to create various chart types to represent data. A Chart Section can only
+Use Chart widgets to create various chart types to represent data. A Chart Section can only
 display one chart type at a time.
 
 ![Chart configuration window](/images/accessanalyzer/11.6/admin/report/wizard/widgetchart.webp)
 
 ### Options
 
-The Options section allows you to configure the title and data source for the Chart element.
+Use the Options section to configure the title and data source for the Chart element.
 
 ![Chart Options](/images/accessanalyzer/11.6/admin/report/wizard/widgetchartoptions.webp)
 
 The section contains the following options:
 
-- Element Title – Enter a title for the element in the text box. This will be displayed in the
-  element's header on the generated report.
+- Element Title – Enter a title for the element in the text box. The generated report displays this in the element's header.
 
 **DataSource Options**
 
-In order to generate results, a location must first be selected as the source of the data.
+To generate results, select a location as the data source.
 
-- Table – Use the drop-down to select the required data source. The drop-down contains the list of
+- Table – Use the dropdown to select the required data source. The dropdown contains the list of
   jobs within Enterprise Auditor that have been executed.
 - Current job only – Select this checkbox to only display data from the current job. This option is
   selected by default.
@@ -195,7 +195,7 @@ In order to generate results, a location must first be selected as the source of
 
 ### Chart Properties
 
-The Chart Properties section allows you to select the type of chart you want to create.
+Use the Chart Properties section to select the type of chart you want to create.
 
 ![Chart Properties](/images/accessanalyzer/11.6/admin/report/wizard/widgetchartproperties.webp)
 
@@ -212,19 +212,19 @@ The following options are the available in the Chart Properties:
     - Stacked – Consolidated bar chart for comparing values
 
     :::note
-    Negative numbers cannot be plotted.
+    Negative numbers can't be plotted.
     :::
 
 
 - Show Data Labels – Displays the column name for each section within a chart
 - Enum Column – Groups the data in chart by the selected column name
-- Assign color for pie slice – Available only for pie charts. Allow you to customize the color for
-  each slice. Select the column header name from the drop-down menu, then use the color selector
+- Assign color for pie slice – Available only for pie charts. Use this option to customize the color
+  for each slice. Select the column header name from the dropdown menu, then use the color selector
   window to choose the desired color.
 
 ### Link
 
-The Link option allows you to add a hyperlink to the report to connect to other reports.
+Use the Link option to add a hyperlink to the report to connect to other reports.
 
 ![Link Published Reports Tree](/images/accessanalyzer/11.6/admin/report/wizard/widgetchartlink.webp)
 
@@ -233,35 +233,35 @@ report to link to and click **Ok**.
 
 ### Data
 
-The table of data for the chart is displayed in the middle of the window. This table allows you to
-customize the data that is to be shown in the chart.
+The table of data for the chart is displayed in the middle of the window. Use this table to
+customize the data to be shown in the chart.
 
 ![Data table](/images/accessanalyzer/11.6/admin/report/wizard/widgetchartdata.webp)
 
 The buttons above the column names provide you the following options for configuring the table
 arrangement:
 
-- Filter Editor – Opens the Filter Editor which allows you to add custom filters with conditional
+- Filter Editor – Opens the Filter Editor, where you can add custom filters with conditional
   statements and logical connectives
 - Best Fit (all columns) –  Adjusts the width of the columns to display all the data within the
   cells
 
 You can group the table by a column by dragging the column header to the bar above the header row.
-If grouping is already applied, you can right-click on the grouping bar to expand or collapse all
+If grouping is already applied, you can right-click the grouping bar to expand or collapse all
 the groups, or clear the grouping.
 
-The pane to the right of the table allows you to filter which columns are displayed on the chart.
+Use the pane to the right of the table to filter which columns are displayed on the chart.
 Select the checkbox next to the columns you want to include in the chart.
 
 ### Chart Preview
 
-At the bottom of the page a preview of the currently configured chart is displayed.
+A preview of the configured chart appears at the bottom of the page.
 
 ![Chart Preview](/images/accessanalyzer/11.6/admin/report/wizard/widgetchartpreview.webp)
 
 ## Text
 
-There are two types of text editor that allow you to configure a text element on a report.
+Two text editor types are available for configuring a text element on a report.
 
 - Basic Text Editor – Provides basic functionality like font size and style. Works with HTML script.
 - Advanced Text Editor – Provides advanced functionality like document formatting, inserting tables,
@@ -274,7 +274,7 @@ Text Editor. On this dialog, select either the Basic or Advanced Text Editor and
 Editor**. The selected editor then opens.
 
 :::note
-Once a Text Editor is selected for a Text element, it cannot be changed.
+Once a Text Editor is selected for a Text element, it can't be changed.
 :::
 
 
@@ -284,17 +284,15 @@ Once a Text Editor is selected for a Text element, it cannot be changed.
 
 The Basic Text Editor has the following options:
 
-- Element Title – Enter a title for the element in the text box. This will be displayed in the
-  element's header on the generated report.
+- Element Title – Enter a title for the element in the text box. The generated report displays this in the element's header.
 - Editor / Preview tabs – You can switch between the Editor and Preview tabs. The Editor tab allows
   you to edit the text and apply formatting. The Preview tab shows you how the formatted text will
   look in the generated report..
 - Convert Carriage Returns to HTML – This checkbox is selected by default. When selected, text
-  displays on a new line in the generated output where a carriage return has been used. If it is not
+  displays on a new line in the generated output where a carriage return has been used. If it isn't
   selected, the text continues on the same line.
 
-The icons listed in the table below are available in the Basic Editor (and Advanced Editor) to
-provide basic editing options for text entries.
+The following table lists the icons available in the Basic Editor (and Advanced Editor) for basic editing options.
 
 | Icon                                                                                                                | Description                                                   |
 | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -313,15 +311,12 @@ provide basic editing options for text entries.
 
 The Advanced Text Editor has the following options:
 
-- Element Title – Enter a title for the element in the text box. This will be displayed in the
-  element's header on the generated report.
+- Element Title – Enter a title for the element in the text box. The generated report displays this in the element's header.
 - Editor / Preview tabs – You can switch between the Editor and Preview tabs. The Editor tab allows
   you to edit the text and apply formatting. The Preview tab shows you how the formatted text will
   look in the generated report..
 
-The Advanced Editor contains all the icons from the Basic Editor, see above. In addition to these,
-it has the icons with higher level editing options for text entries that are listed in the table
-below.
+The Advanced Editor contains all the icons from the Basic Editor, listed in the [Basic Text Editor](#basic-text-editor) section. In addition, it has the icons with higher level editing options for text entries that are listed in the following table.
 
 | Icon                                                                                                                    | Description                                                     |
 | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
