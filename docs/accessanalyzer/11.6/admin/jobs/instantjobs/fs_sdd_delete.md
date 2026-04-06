@@ -25,7 +25,7 @@ The FS_SDD_DELETE instant job provides a controlled method for removing Sensitiv
 
 To see the analysis tasks for this job, navigate to **Jobs > Instant Job Library > File System > FS_SDD_DELETE** and select the **Analysis Tasks** tab.
 
-> **WARNING**: This job permanently deletes data from the database. This action can't be undone. All analysis tasks are disabled by default to prevent accidental data loss. Carefully review the data to be deleted before enabling and running any analysis task.
+> **WARNING**: This job permanently deletes data from the database. You can't undo this action. All analysis tasks are disabled by default to prevent accidental data loss. Carefully review the data to be deleted before enabling and running any analysis task.
 
 The following analysis tasks are available for the FS_SDD_DELETE job:
 
@@ -48,5 +48,5 @@ Each analysis task requires manually populating temporary database tables before
 6. Right-click the appropriate analysis task and select **Enable**.
 7. Review the enabled task to verify it will delete the correct data.
 8. Run the job by clicking **Run Job** and selecting **Local** as the target host.
-9. After the job completes, verify the data has been deleted as expected.
+9. After the job completes, verify the job deleted the data as expected.
 10. Disable the analysis task to prevent accidental future deletions.
