@@ -63,5 +63,69 @@ case "${1:-}" in
     ;;
 esac
 
-echo "Not yet implemented" >&2
-exit 1
+CHANGED_FILES_LIST="${1:?Usage: md-extension-autofix.sh <changed-files-list>}"
+
+if [ ! -f "$CHANGED_FILES_LIST" ]; then
+  echo '{"renamed": [], "skipped": []}'
+  exit 0
+fi
+
+RENAMED_FROM=()
+RENAMED_TO=()
+SKIPPED_FILES=()
+SKIP_REASONS=()
+
+while IFS= read -r file; do
+  # Only process files inside docs/
+  [[ "$file" == docs/* ]] || continue
+
+  # Skip deleted files
+  [ -f "$file" ] || continue
+
+  # Skip files that already have an extension
+  has_extension "$file" && continue
+
+  # Skip files with a known non-markdown extension
+  is_ignored_extension "$file" && continue
+
+  new_file="${file}.md"
+
+  # Skip if destination already exists
+  if [ -f "$new_file" ]; then
+    SKIPPED_FILES+=("$file")
+    SKIP_REASONS+=("$(basename "$new_file") already exists in the same folder")
+    continue
+  fi
+
+  # Skip if content doesn't look like markdown
+  if ! is_markdown_content "$file"; then
+    SKIPPED_FILES+=("$file")
+    SKIP_REASONS+=("Content doesn't look like markdown — please check and rename manually if needed")
+    continue
+  fi
+
+  # Rename and rewrite links
+  git mv "$file" "$new_file"
+  rewrite_links_in_docs "$(basename "$file")" "$(basename "$new_file")"
+
+  RENAMED_FROM+=("$file")
+  RENAMED_TO+=("$new_file")
+
+done < "$CHANGED_FILES_LIST"
+
+# Output JSON summary
+RENAMED_JSON="["
+for i in "${!RENAMED_FROM[@]}"; do
+  [ "$i" -gt 0 ] && RENAMED_JSON+=","
+  RENAMED_JSON+="{\"from\": \"${RENAMED_FROM[$i]}\", \"to\": \"${RENAMED_TO[$i]}\"}"
+done
+RENAMED_JSON+="]"
+
+SKIPPED_JSON="["
+for i in "${!SKIPPED_FILES[@]}"; do
+  [ "$i" -gt 0 ] && SKIPPED_JSON+=","
+  SKIPPED_JSON+="{\"file\": \"${SKIPPED_FILES[$i]}\", \"reason\": \"${SKIP_REASONS[$i]}\"}"
+done
+SKIPPED_JSON+="]"
+
+echo "{\"renamed\": ${RENAMED_JSON}, \"skipped\": ${SKIPPED_JSON}}"
