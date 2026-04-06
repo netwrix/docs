@@ -19,7 +19,7 @@ The FS_SDD_DELETE instant job deletes Sensitive Data Discovery (SDD) data from t
 - **Multi-console Support**: Not supported
 - **Additional Notes**: This job performs permanent data deletion with no undo capability. Access Analyzer disables all analysis tasks by default to prevent accidental data loss.
 
-The FS_SDD_DELETE instant job provides a controlled method for removing Sensitive Data Discovery data from your Tier 1 database. Use this job to clean up SDD data for specific criteria, remove data associated with decommissioned hosts, or delete specific host-and-criteria combinations. Because this job permanently deletes data with no recovery option, Access Analyzer disables all analysis tasks by default as a safety measure.
+The FS_SDD_DELETE instant job provides a controlled method for removing Sensitive Data Discovery data from your Tier 1 database. Use this job to delete SDD data for specific criteria, remove data associated with decommissioned hosts, or delete specific host-and-criteria combinations. Because this job permanently deletes data with no recovery option, Access Analyzer disables all analysis tasks by default as a safety measure.
 
 ## Analysis Tasks for the FS_SDD_DELETE Job
 
@@ -33,7 +33,7 @@ The following analysis tasks are available for the FS_SDD_DELETE job:
 
 - **Delete Criteria** – Deletes all SDD data for specified criteria from all hosts. Use this task when you want to remove all occurrences of specific criteria across your entire environment.
 - **Delete Host** – Deletes all SDD data related to a specific host. Use this task when decommissioning a host or removing all SDD data associated with a particular system.
-- **Remove Host & Criteria** – Deletes all SDD data for a specific host and criteria combination. Use this task for targeted removal of SDD data for a specific criterion on a specific host.
+- **Remove Host & Criteria** – Deletes all SDD data for a specific host and criteria combination. Use this task to remove SDD data for a specific criterion on a specific host.
 
 ### Configuring the Analysis Tasks
 
