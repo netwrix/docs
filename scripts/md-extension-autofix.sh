@@ -43,6 +43,19 @@ is_markdown_content() {
   [ "$has_frontmatter" -eq 1 ] && [ "$has_heading" -eq 1 ]
 }
 
+rewrite_links_in_docs() {
+  local old_basename="$1"
+  local new_basename="$2"
+  local expr1="s|](\([^)]*\)${old_basename})|](\1${new_basename})|g"
+  local expr2="s|](\([^)#]*\)${old_basename}#|](\1${new_basename}#|g"
+  # macOS BSD sed requires `sed -i ''`; GNU sed (Linux/CI) uses `sed -i`
+  if [[ "$(uname -s)" == "Darwin" ]]; then
+    find docs/ -name '*.md' -exec sed -i '' -e "$expr1" -e "$expr2" {} +
+  else
+    find docs/ -name '*.md' -exec sed -i -e "$expr1" -e "$expr2" {} +
+  fi
+}
+
 # Allow sourcing for tests
 case "${1:-}" in
   --test)

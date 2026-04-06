@@ -114,6 +114,40 @@ assert_false "not markdown: powershell script" "$R"
 
 rm -rf "$TMPDIR_TEST"
 
+# ---- rewrite_links_in_docs ----
+
+TMPDIR_LINKS=$(mktemp -d)
+mkdir -p "$TMPDIR_LINKS/docs/product/1.0"
+
+# File that links to the old extensionless path
+cat > "$TMPDIR_LINKS/docs/product/1.0/overview.md" <<'EOF'
+---
+title: Overview
+---
+
+# Overview
+
+See [delete matches](delete-sdd-matches) for details.
+Also see [this page](../other/delete-sdd-matches) and [anchored](delete-sdd-matches#section).
+EOF
+
+# Run rewrite from inside the temp dir
+(cd "$TMPDIR_LINKS" && rewrite_links_in_docs "delete-sdd-matches" "delete-sdd-matches.md")
+
+# Check plain link was rewritten
+grep -q '](delete-sdd-matches.md)' "$TMPDIR_LINKS/docs/product/1.0/overview.md" && R=0 || R=1
+assert_true "link rewrite: plain link updated" "$R"
+
+# Check anchored link was rewritten
+grep -q '](delete-sdd-matches.md#section)' "$TMPDIR_LINKS/docs/product/1.0/overview.md" && R=0 || R=1
+assert_true "link rewrite: anchored link updated" "$R"
+
+# Check relative path link was rewritten
+grep -q '](../other/delete-sdd-matches.md)' "$TMPDIR_LINKS/docs/product/1.0/overview.md" && R=0 || R=1
+assert_true "link rewrite: relative path link updated" "$R"
+
+rm -rf "$TMPDIR_LINKS"
+
 echo ""
 echo "Results: $PASS passed, $FAIL failed"
 if [ "$FAIL" -gt 0 ]; then
