@@ -1,9 +1,9 @@
 ---
-title: "MIP Labeling and Workflow"
+title: "MIP Labeling"
 description: "Microsoft Information Protection labeling and workflow configuration"
-sidebar_position: 30
+sidebar_position: 10
 ---
 
-# MIP Labeling and Workflow
+# MIP Labeling
 
 *Content coming soon.*

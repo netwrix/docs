@@ -1,9 +1,9 @@
 ---
-title: "Logs"
-description: "Viewing logs in the Configuration node"
-sidebar_position: 70
+title: "System Logs"
+description: "Viewing system logs in Access Analyzer"
+sidebar_position: 90
 ---
 
-# Logs
+# System Logs
 
 *Content coming soon.*

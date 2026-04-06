@@ -1,7 +1,7 @@
 ---
 title: "Service Accounts"
 description: "Managing service accounts in the Configuration node"
-sidebar_position: 20
+sidebar_position: 10
 ---
 
 # Service Accounts

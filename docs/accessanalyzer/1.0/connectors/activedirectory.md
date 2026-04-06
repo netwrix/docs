@@ -6,40 +6,34 @@ sidebar_position: 30
 
 # Active Directory
 
-The Active Directory connector synchronizes users, groups, and group memberships from Active Directory into Access Analyzer. It uses the LDAP protocol for communication.
+Access Analyzer scans Active Directory domains to enumerate users, groups, group memberships, permissions, and sensitive data.
 
-## Network Requirements
+## Supported Versions
 
-| Port | Protocol | Direction | Description |
-| --- | --- | --- | --- |
-| 389 | TCP | Access Analyzer → Domain Controller | LDAP |
-| 636 | TCP | Access Analyzer → Domain Controller | LDAPS (LDAP over SSL) |
+- Windows Server 2016 and later
+- Windows 2003 Forest level or higher
 
-## Service Account Requirements
+## Domain Controller Requirements
 
-The connector requires a domain service account with the following:
+The following must be installed on each domain controller to be scanned:
 
-| Requirement | Details |
-| --- | --- |
-| **Account type** | Domain user account |
-| **Authentication** | Username and password |
-| **Minimum permissions** | Read access to directory objects (users, groups, OUs) |
-| **Recommended group** | Domain Users (or equivalent read-only access) |
+- .NET Framework 4.5 or later
+- WINRM Service
 
-:::note
-The service account does not require Domain Admin or any write permissions. Read-only access to directory objects is sufficient for identity synchronization.
+## Permissions
+
+- Member of the **Domain Administrators** group
+
+:::info
+Use Domain Administrator or Local Administrator privileges when running Access Analyzer against an Active Directory domain controller.
 :::
 
-## Credential Type
+## Port Requirements
 
-| Field | Value |
-| --- | --- |
-| **Type** | Username / Password |
-| **Username format** | `DOMAIN\username` or `username@domain.com` |
+The following firewall ports are required for the Active Directory connector:
 
-## Connector Capabilities
-
-| Operation | Description |
-| --- | --- |
-| **Test connection** | Validates LDAP connectivity and credential authentication |
-| **Sync** | Full synchronization of users, groups, and group memberships |
+| Port | Protocol | Description |
+| --- | --- | --- |
+| 389 | TCP | LDAP |
+| 135–139 | TCP | RPC |
+| Randomly allocated high TCP ports | TCP | RPC dynamic ports |

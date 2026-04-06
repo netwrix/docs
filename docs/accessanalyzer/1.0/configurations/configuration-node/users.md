@@ -1,7 +1,7 @@
 ---
 title: "Users"
 description: "Managing users in the Configuration node"
-sidebar_position: 50
+sidebar_position: 70
 ---
 
 # Users
