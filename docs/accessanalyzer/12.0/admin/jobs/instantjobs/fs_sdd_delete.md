@@ -14,8 +14,8 @@ The FS_SDD_DELETE instant job deletes Sensitive Data Discovery (SDD) data from t
 
 - **Dependencies**: Run the 0.Collection Job Group successfully before running this job
 - **Target Hosts**: None (select Local host)
-- **Scheduling**: Can be run as desired, typically on an ad-hoc basis
-- **History Retention**: Not supported and must be turned off
+- **Scheduling**: Run as needed, typically on an ad-hoc basis
+- **History Retention**: Not supported. Turn off history retention before running this job.
 - **Multi-console Support**: Not supported
 - **Additional Notes**: This job performs permanent data deletion with no undo capability. Access Analyzer disables all analysis tasks by default to prevent accidental data loss.
 
