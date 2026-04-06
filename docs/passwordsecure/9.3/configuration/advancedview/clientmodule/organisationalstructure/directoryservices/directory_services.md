@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Directory services
 
-It is possible to use existing user and group structures from external directories with Netwrix
+You can use existing user and group structures from external directories with Netwrix
 Password Secure.
 
 Choose your preferred integration method:

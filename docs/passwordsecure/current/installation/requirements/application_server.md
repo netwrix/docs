@@ -32,7 +32,7 @@ sidebar_position: 10
     - Port 11011 TCP for communication with windows applications or web server IIS (incoming)
     - Port 11016 TCP for the Web services (incoming; only when using the Web Application)
     - Port 11018 TCP for real-time update (incoming)
-    - Port 11014 TCP for the backup service (usually does not need to be unlocked)
+    - Port 11014 TCP for the backup service (usually doesn't need to be unlocked)
     - Port 11015 TCP for Entra ID communication (incoming; only when using the Entra ID
       provisioning)
     - Port 11019 TCP for using Password Secure as Identity Provider (SAML) (incoming)

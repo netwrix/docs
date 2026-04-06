@@ -12,8 +12,8 @@ screens. This works both with websites in the browser and with other apps.
 
 #### Requirements
 
-In order to ensure automatic registration, a few prerequisites must be met. First of all, the
-automatic registration must be set up in the settings. If the **iOS keychain** is not needed, it
+To ensure automatic registration, a few prerequisites must be met. First of all, the
+automatic registration must be set up in the settings. If the **iOS keychain** isn't needed, it
 should be deactivated. This makes handling a bit easier. Finally, a database connection must exist
 and access to passwords must be possible.
 
@@ -29,11 +29,11 @@ scenarios.
 Depending on the configuration and scenario, the dialog for entry can have different
 characteristics:
 
-- First, one or more passwords are displayed that match the current page or app. These can be
+- One or more passwords that match the current page or app are displayed first. These can be
   selected and entered with a click.
-- It is also possible to open the dialog for selecting a password. If no password is found, this
+- It's also possible to open the dialog for selecting a password. If no password is found, this
   dialog is displayed directly.
-- Finally, the iOS keychain can also be opened. If this function is not needed, it can be
+- Finally, the iOS keychain can also be opened. If this function isn't needed, it can be
   deactivated. The corresponding option will then no longer be offered.
 
 **No password found**
@@ -43,14 +43,15 @@ selected.
 
 **Exact password found**
 
-If there is a data record that contains exactly the URL that is called up, the corresponding
-password can be suggested. A simple click on the password is then sufficient to pass the data to the
+If there's a data record that contains exactly the URL that's opened, the corresponding
+password can be suggested. A simple click the password is then sufficient to pass the data to the
 website or app.
 
 **Several passwords found**
 
 If several matching passwords are found in the database, the desired one must be selected.
 
-NOTE: Depending on the current state, it may be necessary to authenticate to the app before
-selecting or confirming of the password to be entered. The database then has to be unlocked via the
-password, Touch ID or Face ID.
+:::note
+Depending on the current state, it may be necessary to authenticate to the app before selecting or confirming of the password to be entered. The database then has to be unlocked via the password, Touch ID, or Face ID.
+:::
+

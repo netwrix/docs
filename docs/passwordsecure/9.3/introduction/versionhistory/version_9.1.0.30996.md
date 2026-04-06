@@ -60,7 +60,7 @@ The following names have been changed:
 | SAML Service                         | IdP service         | IdP Service         |
 
 \* This improvement affects all views (basic and advanced view), apps and add-ons (Server Manager,
-web and Windows app, autofill and offline add-on) the browser extension, API, and the server as well
+web, and Windows app, autofill, and offline add-on) the browser extension, API, and the server as well
 as MSP.
 
 #### Basic view (formerly LightClient)\*

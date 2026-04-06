@@ -26,7 +26,7 @@ sidebar_position: 20
 
 #### Web App
 
-- It is now possible to define the URL in applications of type Web as a regular expression.
+- It's now possible to define the URL in applications of type Web as a regular expression.
 
 #### Browser extension
 
@@ -40,7 +40,7 @@ sidebar_position: 20
 - The quick view and history of passwords can be opened again.
 - Spontaneous errors when changing selected passwords have been fixed.
 - Web applications with URLs defined as regex are recognized correctly.
-- Logging in to the Windows app is possible again if you were last logged in in the standard view.
+- Logging in to the Windows app is possible again if you were last logged in to the standard view.
 
 #### Web App
 

@@ -16,12 +16,11 @@ The logo acts as a home button. It always takes you back to the standard view.
 
 2. Display and hide filter
 
-As is also the case on the client, the filter or structure area can be displayed and hidden.
+As is also the case on the client, the filter or structure area can be displayed, and hidden.
 
 3. Modules
 
-As is also the case on the client, modules like passwords, organisational structures, roles and
-forms can be managed here.
+As is also the case on the client, modules like passwords, organisational structures, roles, and forms can be managed here.
 
 4. Quick search
 
@@ -30,15 +29,15 @@ fields of the complete database except the password field. The tags are still se
 
 5. Quick search
 
-Upcoming tasks like export, import, print and so on are displayed here.
+Upcoming tasks like export, import, print, and so on are displayed here.
 
 6. Notifications
 
-here you will be informed about incoming notifications. The notification can also be called up by
+here you'll be informed about incoming notifications. The notification can also be opened by
 clicking on it.
 
 7. Account
 
-The user who is currently logged in can be seen under account. You can log out by clicking on the
-account. It is also possible to call up the settings in
+The user who's logged in can be seen under account. You can log out by clicking on the
+account. It's also possible to access the settings in
 [Account](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/account.md).

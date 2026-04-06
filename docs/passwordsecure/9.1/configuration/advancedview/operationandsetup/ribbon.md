@@ -6,22 +6,22 @@ sidebar_position: 10
 
 # Ribbon
 
-## What is the ribbon?
+## Ribbon overview
 
-The ribbon is the central control element of Netwrix Password Secure Version 8. It is available in
+The ribbon is the central control element of Netwrix Password Secure Version 8. It's available in
 all modules. Netwrix Password Secure is almost always operated via the ribbon in the header area of
 the PSR client.
 
 ![Ribbon](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/ribbon/installation_with_parameters_5-en.webp)
 
-The features available within the ribbon are dynamic, and are based on the currently available
+The features available within the ribbon are dynamic, and are based on the available
 actions. Various actions can be performed, depending on which object is selected. The module
 selected also affects the features that are available in the ribbon. Of course, the most important
 actions can also be controlled via the context menu (right mouse button).
 
 ![Ribbon - Item](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/ribbon/ribbon-1-en.webp)
 
-This mainly affects the very often used features such as opening, deleting or assigning tags.
+This mainly affects the very often used features such as opening, deleting, or assigning tags.
 However, a complete listing of the possible actions is always only possible directly in the ribbon.
 This ensures that the context menu can be kept lean.
 
@@ -52,5 +52,5 @@ corresponding content tab opens in the ribbon.
 ![Content tabs](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/ribbon/installation_with_parameters_9-en.webp)
 
 Depending on the selected form field, further actions are offered in the Content tab. In the
-Password field, this is, for example, calling the password generator or the screen keyboard, or the
+Password field, this is, for example, calling the password generator, or the screen keyboard, or the
 possibility to copy it to the clipboard.
