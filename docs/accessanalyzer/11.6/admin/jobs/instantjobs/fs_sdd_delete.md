@@ -31,7 +31,7 @@ This job permanently deletes data from the database. You can't undo this action.
 
 The following analysis tasks are available for the FS_SDD_DELETE job:
 
-- **Delete Criteria** – Deletes all SDD data for specified criteria from all hosts. Use this task when you want to remove all occurrences of specific criteria across your entire environment.
+- **Delete Criteria** – Deletes all SDD data for specified criteria from all hosts. Use this task to remove all occurrences of specific criteria across your entire environment.
 - **Delete Host** – Deletes all SDD data related to a specific host. Use this task when decommissioning a host or removing all SDD data associated with a particular system.
 - **Remove Host & Criteria** – Deletes all SDD data for a specific host and criteria combination. Use this task to remove SDD data for a specific criterion on a specific host.
 
