@@ -12,7 +12,7 @@ types of Change Requests to match the change you want to manage. Here are two op
 - **Customization** Change request is used for Metadata changes, such as
   [Customizations](/docs/platgovsalesforce/customizations/customizations_overview.md).
 - **Data Record** - Change request is used for Data Changes to Revenue Cloud/
-  [CPQ](/docs/platgovsalesforce/changemanagement/enhanced_cpq_support.md).
+  [CPQ](/docs/platgovsalesforce/changemanagement/datatracking/enhanced_cpq_support.md).
 
 :::note
 Data Record Change Requests are only available with an Enterprise Compliance license.

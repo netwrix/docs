@@ -16,8 +16,6 @@ For **Non-Triggerable objects**, such as **Price Book Entry**, **Netwrix Platfor
 
 ## Enable Tracking for a Non-Triggerable Object
 
-Follow these steps to enable tracking:
-
 ### 1. Open the Object in Salesforce
 
 Navigate to: **Setup → Object Manager**

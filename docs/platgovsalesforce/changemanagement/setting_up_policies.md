@@ -102,7 +102,7 @@ for the specific records on the customization record.
 Set objects and fields that are **Tracked Non-blocking** or **Tracked Blocking** to be part of the
 policy and require a Ticket and an approval.
 
-Refer to [Set Up Data Tracking](/docs/platgovsalesforce/changemanagement/set_up_data_tracking.md) for more information on activating and
+Refer to [Set Up Data Tracking](/docs/platgovsalesforce/changemanagement/datatracking/set_up_data_tracking.md) for more information on activating and
 validating tracked fields.
 
 ### Health Check Changes

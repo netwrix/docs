@@ -6,9 +6,9 @@ sidebar_position: 4
 
 # Data Tracking - Troubleshooting
 
-This section describes common issues and known errors that users may encounter while working with **Data Tracking**. It provides guidance to help identify the cause of a problem and outlines recommended steps to resolve or mitigate it.
+This section describes common issues and known errors that users can encounter while working with **Data Tracking**. It provides guidance to help identify the cause of a problem and outlines recommended steps to resolve or mitigate it.
 
-The topics below highlight frequently reported scenarios, configuration issues, or system behaviors that may affect normal operation. Reviewing these items can help quickly diagnose problems and reduce troubleshooting time.
+The topics below highlight frequently reported scenarios, configuration issues, or system behaviors that can affect normal operation. Reviewing these items can help quickly diagnose problems and reduce troubleshooting time.
 
 ---
 
@@ -23,7 +23,7 @@ Although tracking is performed on Salesforce objects and fields, their configura
 
 ### What to check
 
-- Make sure the scanner has been executed for the relevant Salesforce types.
+- Ensure the scanner has been executed for the relevant Salesforce types.
 - Verify that the corresponding Customization exists in the system.
 
 This applies to:
@@ -42,13 +42,13 @@ Refer to the following link for instructions on how to run the scanner for speci
 
 ## Deployment Errors
 
-When selecting certain standard Salesforce objects for tracking, you may encounter issues that prevent the trigger and its corresponding test class from being successfully deployed.
+When selecting certain standard Salesforce objects for tracking, you can encounter issues that prevent the trigger and its corresponding test class from being successfully deployed.
 
 Some Salesforce objects have specific characteristics that can affect deployment.
 
 ### Known Issue
 
-Objects that do not have a **Name** field (such as `Case` or `WorkOrder`) may behave differently when:
+Objects that do not have a **Name** field (such as `Case` or `WorkOrder`) can behave differently when:
 
 - Automatically generating the test class
 - Achieving the required minimum **75% code coverage** for deployment
@@ -57,7 +57,7 @@ These cases have already been addressed in the current implementation.
 
 ### What to keep in mind
 
-- Other standard objects may still have unique behaviors that could cause deployment conflicts.
+- Other standard objects might still have unique behaviors that could cause deployment conflicts.
 - Errors during deployment are often related to how the test class is generated for those objects.
 
 ### Suggested Actions
@@ -65,7 +65,7 @@ These cases have already been addressed in the current implementation.
 - Review the deployment error message to identify the affected object.
 - Check if the object has any structural differences (e.g., missing common fields like `Name`).
 
-If you encounter a new conflicting object, further investigation or customization may be required.
+If you encounter a new conflicting object, further investigation or customization might be required.
 
 ---
 
@@ -127,8 +127,8 @@ In this example, the configuration defines that a test record for `sbaa__Approva
 
 If the required dependencies are not properly defined:
 
-- The test class may fail during execution
-- Deployment may fail due to insufficient code coverage or invalid data
+- The test class might fail during execution
+- Deployment might fail due to insufficient code coverage or invalid data
 
 ### Suggested Actions
 

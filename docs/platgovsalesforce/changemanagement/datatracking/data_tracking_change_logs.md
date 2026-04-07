@@ -66,11 +66,11 @@ The **Netwrix Platform Governance** Change Log has some features specific to dat
 
 ## Filtering Change Logs
 
-In some cases, you may want **Change Logs** to be created only when specific conditions are met.
+In some cases, you might want **Change Logs** to be created only when specific conditions are met.
 
 For example:
-- You may want to create an **Opportunity Change Log** only when an admin updates specific fields on a **Closed Won Opportunity**.
-- You may want to **exclude Change Logs** for **User-Defined CPQ Discount Schedules**.
+- You might want to create an **Opportunity Change Log** only when an admin updates specific fields on a **Closed Won Opportunity**.
+- You might want to **exclude Change Logs** for **User-Defined CPQ Discount Schedules**.
 
 **Netwrix Platform Governance** allows you to apply filters to tracked objects using either a **Report** or a custom **Apex Class**.
 

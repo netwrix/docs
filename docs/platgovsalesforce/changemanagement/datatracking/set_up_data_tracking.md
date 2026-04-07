@@ -84,7 +84,7 @@ For Salesforce objects that do not support triggers, see the [**Non-Triggerable 
 :::
 
 :::important
-Some **Salesforce standard objects** may cause issues when enabling **Data Tracking**.
+Some **Salesforce standard objects** can cause issues when enabling **Data Tracking**.
 
 If you experience problems while attempting to track certain objects, refer to the [**Troubleshooting**](data_tracking_troubleshooting.md) section for more information about known limitations and possible solutions.
 :::
@@ -97,7 +97,7 @@ Data Tracking is not designed for **high-volume objects** such as Opportunities 
 
 ## Select Fields to Track
 
-In some cases, users may need to monitor only specific sensitive fields within a tracked object, rather than tracking all changes to the object.
+In some cases, users might need to monitor only specific sensitive fields within a tracked object, rather than tracking all changes to the object.
 
 To support this, you can configure which fields should have additional tracking control.
 
