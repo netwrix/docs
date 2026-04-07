@@ -10,14 +10,28 @@ Access Analyzer requires outbound internet access during installation and operat
 
 ## Outbound Endpoints (Internet)
 
-The following endpoints must be reachable over HTTPS (port 443):
+All outbound traffic uses HTTPS (port 443). The following endpoints must be reachable from the Access Analyzer server:
 
-| Endpoint | Purpose | When Required |
-| --- | --- | --- |
-| `get.k3s.io` | K3s installer download | Installation only |
-| `raw.githubusercontent.com` | ArgoCD manifests | Installation only |
-| `oci.pkg.keygen.sh` | Netwrix OCI registry (Helm charts, application images) | Installation and updates |
-| `docker.io` / `docker.com` | Container base images | Installation and updates |
+| Endpoint | Category | Purpose | When Required |
+| --- | --- | --- | --- |
+| `api.keygen.sh` | Keygen / Licensing | License validation API | Installation and updates |
+| `oci.pkg.keygen.sh` | Keygen / Licensing | Netwrix OCI registry — Helm charts and application images | Installation and updates |
+| `raw.pkg.keygen.sh` | Keygen / Licensing | Installer script download | Installation and updates |
+| `keygen-dist.c3c9112df8df715f42d1162cdce5dba1.r2.cloudflarestorage.com` | Keygen / Licensing CDN | Keygen artifact storage | Installation and updates |
+| `api.github.com` | GitHub | GitHub API | Installation only |
+| `github.com` | GitHub | Repository and release access | Installation only |
+| `raw.githubusercontent.com` | GitHub | ArgoCD bootstrap manifests | Installation only |
+| `release-assets.githubusercontent.com` | GitHub | Release asset downloads | Installation only |
+| `pkg-containers.githubusercontent.com` | GitHub Container Registry | GitHub Packages CDN | Installation and updates |
+| `ghcr.io` | GitHub Container Registry | Container images | Installation and updates |
+| `auth.docker.io` | Docker Hub | Docker authentication | Installation and updates |
+| `registry-1.docker.io` | Docker Hub | Container images | Installation and updates |
+| `production.cloudflare.docker.com` | Docker CDN | Docker Hub CDN | Installation and updates |
+| `docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com` | Docker CDN | Docker image storage | Installation and updates |
+| `d2glxqk2uabbnd.cloudfront.net` | Docker CDN | Docker image CDN | Installation and updates |
+| `get.k3s.io` | K3s / Rancher | K3s installer download | Installation only |
+| `rpm.rancher.io` | K3s / Rancher | K3s package repository | Installation only |
+| `storage.googleapis.com` | K3s / Rancher | K3s artifact storage | Installation only |
 
 ## Internal Ports
 
@@ -41,13 +55,17 @@ All internal ports are bound to the local cluster network. Only port 443 (Traefi
 
 Depending on the connectors you configure, the Access Analyzer VM must also have outbound access to your data sources:
 
-| Connector | Target Port | Protocol | Notes |
+| Connector | Port | Protocol | Notes |
 | --- | --- | --- | --- |
-| CIFS / SMB | 445 | TCP | SMB file shares |
-| Active Directory | 389 / 636 | TCP | LDAP / LDAPS |
+| CIFS / SMB | 445 | TCP | SMB file sharing |
+| Active Directory | 389 | TCP | LDAP |
+| Active Directory | 636 | TCP | LDAPS (encrypted) |
+| Active Directory | 135–139 | TCP | RPC |
+| Active Directory | 49152–65535 | TCP | RPC dynamic ports |
 | SharePoint Online | 443 | TCP | Microsoft Graph API |
 | Entra ID | 443 | TCP | Microsoft identity platform |
-| Local Groups | 5985 / 5986 | TCP | WinRM (HTTP / HTTPS) |
+| Local Groups | 5985 | TCP | WinRM (HTTP) |
+| Local Groups | 5986 | TCP | WinRM (HTTPS) |
 
 ## Proxy Configuration
 

@@ -18,12 +18,37 @@ Before running the installer, confirm the following:
 | **Memory** | 8 GB RAM | 16 GB RAM |
 | **CPU** | 2 vCPUs | 4 vCPUs |
 | **Disk Space** | 20 GB free | 50 GB free |
-| **Network** | Outbound HTTPS (port 443) | — |
+| **Network** | Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains) below | — |
 | **License** | Valid Netwrix license key | — |
 
 :::note
 If running on a hypervisor, configure **static memory allocation** (not dynamic/ballooned memory). See [Hardware and System Requirements](/docs/accessanalyzer/1_0/install/requirements) for hypervisor-specific instructions.
 :::
+
+## Required Domains
+
+All endpoints use HTTPS (port 443). The following domains must be reachable from the Access Analyzer server before installation. For firewall rule examples, see [Network and Port Requirements](/docs/accessanalyzer/1_0/install/system/network).
+
+| Endpoint | Category | Purpose | When Required |
+| --- | --- | --- | --- |
+| `api.keygen.sh` | Keygen / Licensing | License validation API | Installation and updates |
+| `oci.pkg.keygen.sh` | Keygen / Licensing | Netwrix OCI registry — Helm charts and application images | Installation and updates |
+| `raw.pkg.keygen.sh` | Keygen / Licensing | Installer script download | Installation and updates |
+| `keygen-dist.c3c9112df8df715f42d1162cdce5dba1.r2.cloudflarestorage.com` | Keygen / Licensing CDN | Keygen artifact storage | Installation and updates |
+| `api.github.com` | GitHub | GitHub API | Installation only |
+| `github.com` | GitHub | Repository and release access | Installation only |
+| `raw.githubusercontent.com` | GitHub | ArgoCD bootstrap manifests | Installation only |
+| `release-assets.githubusercontent.com` | GitHub | Release asset downloads | Installation only |
+| `pkg-containers.githubusercontent.com` | GitHub Container Registry | GitHub Packages CDN | Installation and updates |
+| `ghcr.io` | GitHub Container Registry | Container images | Installation and updates |
+| `auth.docker.io` | Docker Hub | Docker authentication | Installation and updates |
+| `registry-1.docker.io` | Docker Hub | Container images | Installation and updates |
+| `production.cloudflare.docker.com` | Docker CDN | Docker Hub CDN | Installation and updates |
+| `docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com` | Docker CDN | Docker image storage | Installation and updates |
+| `d2glxqk2uabbnd.cloudfront.net` | Docker CDN | Docker image CDN | Installation and updates |
+| `get.k3s.io` | K3s / Rancher | K3s installer download | Installation only |
+| `rpm.rancher.io` | K3s / Rancher | K3s package repository | Installation only |
+| `storage.googleapis.com` | K3s / Rancher | K3s artifact storage | Installation only |
 
 ## Step 1: Prepare the System
 
