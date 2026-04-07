@@ -34,9 +34,7 @@ You can create a New Policy, or edit an existing one:
 - **Change Enablement Defaults** merge approval list, non conforming alerts, and sequential approval requests.
 - **System Information**, **Created By** and **Last Modified By** dates. Informational only, can't be edited.
 
-After the policy is saved, **System Information** is added show the **Created By** and **Last
-Modified By** user and time stamp. The information you entered on the form is shown on the
-**Details** tab. The Related tab is available to add Customizations and view additional
+After you save the policy, the **System Information** section displays the **Created By** and **Last Modified By** user and timestamp. The **Details** tab shows the information you entered on the form. The Related tab is available to add Customizations and view additional
 information and history.
 
 ### Information

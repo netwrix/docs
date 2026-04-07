@@ -31,7 +31,7 @@ Here are the requirements to set up Data Tracking:
 1. **Enterprise Compliance** license.
 2. Access to the **Netwrix Configuration** app. You must have the **Netwrix Administrator** and
    **Netwrix Grant Permissions** permission sets to access the app. 
-   Access can be granted to user through the following path:
+   You can grant access through the following path:
    **Setup** > **Users** > **Permission Sets Assignments** > **Edit Assignments**
 
     ![You must have these permissions to open the Configuration tool](/images/platgovsalesforce/change_management/netwrix_permissions_assignment.webp)

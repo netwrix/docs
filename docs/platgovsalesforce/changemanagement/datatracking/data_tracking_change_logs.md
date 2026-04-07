@@ -80,7 +80,7 @@ With **Netwrix Platform Governance**, you can apply filters to tracked objects u
 
 Using a **Report** is the simplest way to implement a filter.
 
-Create a report that returns a list of **record Ids**. If a tracked record update matches the report’s filter criteria, a **Change Log** will be created for that record.
+Create a report that returns a list of **record Ids**. If a tracked record update matches the report’s filter criteria, the system creates a **Change Log** for that record.
 
 #### Report Requirements
 

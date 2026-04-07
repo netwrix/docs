@@ -8,7 +8,7 @@ sidebar_position: 4
 
 This section describes common issues and known errors that users can encounter while working with **Data Tracking**. It provides guidance to help identify the cause of a problem and outlines recommended steps to resolve or mitigate it.
 
-The topics below highlight frequently reported scenarios, configuration issues, or system behaviors that can affect normal operation. Reviewing these items can help quickly diagnose problems and reduce troubleshooting time.
+The following topics highlight frequently reported scenarios, configuration issues, or system behaviors that can affect normal operation. Reviewing these items can help quickly diagnose problems and reduce troubleshooting time.
 
 ---
 
@@ -65,7 +65,7 @@ These cases have already been addressed in the current implementation.
 - Review the deployment error message to identify the affected object.
 - Check if the object has any structural differences (e.g., missing common fields like `Name`).
 
-If you encounter a new conflicting object, further investigation or customization might be required.
+If you encounter a new conflicting object, you may need to investigate further or customize the configuration.
 
 ---
 

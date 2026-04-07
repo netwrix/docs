@@ -76,5 +76,5 @@ Each Change Log is marked as either:
 - **Non-Compliant** — if no approved Change Request can be associated with the update.
 
 :::important
-A **Change Log isn't created when a data record is deleted**, because Salesforce doesn't generate **Field History records** for deleted records.
+The system **doesn't create a Change Log when a data record is deleted**, because Salesforce doesn't generate **Field History records** for deleted records.
 :::
