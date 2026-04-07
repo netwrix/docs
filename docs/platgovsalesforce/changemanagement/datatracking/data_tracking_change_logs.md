@@ -37,7 +37,7 @@ When an object is configured as **Tracked, Blocking**, the system enforces stric
 - If a change is associated with an **approved Change Request**, the system records it as a **Compliant Change Log**.
 - If a user attempts to make a change **without an approved Change Request**, the system blocks the operation.
 
-In this case, an error message is displayed and the change is not saved. This mode ensures that all modifications follow the required approval process before being applied.
+In this case, an error message is displayed and the change isn't saved. This mode ensures that all modifications follow the required approval process before being applied.
 
 :::
 
@@ -90,8 +90,8 @@ The report must meet the following requirements:
 - The **standard date filter** must be set to the **Created Date** of the record type being filtered.
 - The **first column** in the report must be the **Id** of the record.
 
-Example: Do not create Change Logs for changes in “User-Defined” CPQ Discount Schedules
-This report returns only the Discount Schedule Ids of records that do not have the “User Defined” checkbox checked.
+Example: Don't create Change Logs for changes in “User-Defined” CPQ Discount Schedules
+This report returns only the Discount Schedule Ids of records that don't have the “User Defined” checkbox checked.
 
 ![Data Tracking - Report Filter](/images/platgovsalesforce/change_management/data_tracking_report_filter.webp)
 
@@ -120,7 +120,7 @@ global Set<Id> getFilteredIds(Datetime start, Datetime end)
 The start and end times should be used by your filtering logic to return a Set of record Ids that have been modified during that time interval.
 :::
 
-#### Example: Do not create Change Logs for changes in “User-Defined” CPQ Discount Schedules.
+#### Example: Don't create Change Logs for changes in “User-Defined” CPQ Discount Schedules.
 
 Here’s an example that does the same job as the Report filter above.
 

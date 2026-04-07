@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Non-Triggerable Objects
 
-Some **Standard Salesforce objects are not triggerable**, which means it is not possible to generate and deploy triggers for them in the Salesforce environment. Because of this limitation, **Netwrix Platform Governance** cannot block the creation of records for these objects.
+Some **Standard Salesforce objects aren't triggerable**, which means it isn't possible to generate and deploy triggers for them in the Salesforce environment. Because of this limitation, **Netwrix Platform Governance** can't block the creation of records for these objects.
 
 As a result, the tracking process for these objects is different.
 
@@ -24,7 +24,7 @@ Then select the object you want to track.
 
 ### 2. Enable Field History Tracking
 
-If Field History Tracking is not already enabled:
+If Field History Tracking isn't already enabled:
 
 1. Go to **Details**
 2. Click **Edit**
@@ -76,5 +76,5 @@ Each Change Log is marked as either:
 - **Non-Compliant** — if no approved Change Request can be associated with the update.
 
 :::important
-A **Change Log is not created when a data record is deleted**, because Salesforce does not generate **Field History records** for deleted records.
+A **Change Log isn't created when a data record is deleted**, because Salesforce doesn't generate **Field History records** for deleted records.
 :::

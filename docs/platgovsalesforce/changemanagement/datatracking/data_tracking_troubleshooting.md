@@ -19,7 +19,7 @@ If you are unable to find a Salesforce object or field to track, this is usually
 Although tracking is performed on Salesforce objects and fields, their configuration depends on the **Customization** level. This means that:
 
 - Objects and fields must first exist as Customizations in the system.
-- If they are not available, they cannot be selected for tracking or filtering.
+- If they aren't available, they can't be selected for tracking or filtering.
 
 ### What to check
 
@@ -48,7 +48,7 @@ Some Salesforce objects have specific characteristics that can affect deployment
 
 ### Known Issue
 
-Objects that do not have a **Name** field (such as `Case` or `WorkOrder`) can behave differently when:
+Objects that don't have a **Name** field (such as `Case` or `WorkOrder`) can behave differently when:
 
 - Automatically generating the test class
 - Achieving the required minimum **75% code coverage** for deployment
@@ -125,7 +125,7 @@ In this example, the configuration defines that a test record for `sbaa__Approva
 
 ### Common Issue
 
-If the required dependencies are not properly defined:
+If the required dependencies aren't properly defined:
 
 - The test class might fail during execution
 - Deployment might fail due to insufficient code coverage or invalid data
@@ -139,6 +139,6 @@ If the required dependencies are not properly defined:
 Proper configuration of these dependencies is essential for successful test class generation and deployment.
 
 :::note
-The **Test Class SObject Dependency – Custom Metadata Type** is not a protected component. This means you can add or modify dependencies as needed without requiring a new package version.
+The **Test Class SObject Dependency – Custom Metadata Type** isn't a protected component. This means you can add or modify dependencies as needed without requiring a new package version.
 :::
 ---

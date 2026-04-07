@@ -32,7 +32,7 @@ You can create a New Policy, or edit an existing one:
 - **Customization Policies** impacted customization approval.
 - **Management Policies** executive approver and approval settings.
 - **Change Enablement Defaults** merge approval list, non conforming alerts, and sequential approval requests.
-- **System Information**, **Created By** and **Last Modified By** dates. Informational only, cannot be edited.
+- **System Information**, **Created By** and **Last Modified By** dates. Informational only, can't be edited.
 
 Once the policy is saved, **System Information** is added show the **Created By** and **Last
 Modified By** user and time stamp. The information you entered on the form is shown on the
@@ -136,7 +136,7 @@ impacted Customization owners.
 **Maximum number of Approvals Required**: approval is granted once the specified number of approvals
 is complete. If this field is blank, all approvers must approve.
 
-**No Order Required**: select this option to allow approvals in any order. If it is not checked,
+**No Order Required**: select this option to allow approvals in any order. If it isn't checked,
 approvals occur in the order specified.
 
 ### Change Enablement Defaults

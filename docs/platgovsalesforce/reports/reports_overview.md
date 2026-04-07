@@ -66,7 +66,7 @@ users that have Admin profiles, you can set two filters:
     - Salesforce type Equals Profile
 
 - **Date Assigned** and **Expires on** are only relevant for PermissionSets. They are blank for
-Profiles. If your org does not use the **Expires on** feature, you can remove the column from the
+Profiles. If your org doesn't use the **Expires on** feature, you can remove the column from the
 report.
 
 ![Users to Profile/PermissionSets](/images/platgovsalesforce/reports/access_reports_users_to_profile.webp)

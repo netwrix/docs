@@ -52,22 +52,22 @@ In this section, users can apply tracking recommendations to one or more objects
 
 The available tracking options for objects are:
 
-- **Not Tracked**: Changes to data records are not monitored.
+- **Not Tracked**: Changes to data records aren't monitored.
 - **Tracked, Blocking**: Changes to data records are blocked if there is no approved Change Request.
 - **Tracked, Non-Blocking**: Changes to data records are logged. If there is no approved Change Request, the Change Log marks the change as non-compliant.
 
 :::note
-While metadata changes in Salesforce can be tracked but not blocked, **Data Tracking** allows you to block most data record changes that are not pre-approved.
+While metadata changes in Salesforce can be tracked but not blocked, **Data Tracking** allows you to block most data record changes that aren't pre-approved.
 
-Changes to records in **Non-Triggerable objects** cannot be blocked. See the [**Non-Triggerable Objects**](non_triggerable_objects.md) section for more information about how these objects behave.
+Changes to records in **Non-Triggerable objects** can't be blocked. See the [**Non-Triggerable Objects**](non_triggerable_objects.md) section for more information about how these objects behave.
 :::
 
 Users can also choose whether tracking should apply to **Updates Only** for each object.
 
 - **No**: Tracks changes to both new and existing records.
-- **Yes**: Tracks changes to existing records only. Changes to new records are not tracked.
+- **Yes**: Tracks changes to existing records only. Changes to new records aren't tracked.
 
-If you want to enable tracking for objects that are not included in the recommended list, follow these steps:
+If you want to enable tracking for objects that aren't included in the recommended list, follow these steps:
 
 1. Click **Show Additional Objects for Tracking (Advanced)**. The **Additional Objects** list appears.
 2. Search for the object by typing its name.
@@ -80,7 +80,7 @@ If you want to enable tracking for objects that are not included in the recommen
 :::note
 To track objects that support triggers, **Netwrix Platform Governance** automatically creates and deploys a trigger and a test class for each selected object.
 
-For Salesforce objects that do not support triggers, see the [**Non-Triggerable Objects**](non_triggerable_objects.md) section.
+For Salesforce objects that don't support triggers, see the [**Non-Triggerable Objects**](non_triggerable_objects.md) section.
 :::
 
 :::important
@@ -92,7 +92,7 @@ If you experience problems while attempting to track certain objects, refer to t
 :::tip
 We recommend using Data Tracking only for **critical configuration objects**.
 
-Data Tracking is not designed for **high-volume objects** such as Opportunities or Quotes. For these types of objects, Salesforce’s standard **Field History Tracking** feature is a better option for monitoring changes.
+Data Tracking isn't designed for **high-volume objects** such as Opportunities or Quotes. For these types of objects, Salesforce’s standard **Field History Tracking** feature is a better option for monitoring changes.
 :::
 
 ## Select Fields to Track
@@ -113,11 +113,11 @@ To support this, you can configure which fields should have additional tracking 
 :::note
 ## Fields Excluded from Tracking (Default)
 
-By default, **Netwrix Platform Governance** does not track changes in certain field types or standard system fields.
+By default, **Netwrix Platform Governance** doesn't track changes in certain field types or standard system fields.
 
 ### Field Types Not Tracked
 
-Changes to the following field types are not tracked:
+Changes to the following field types aren't tracked:
 
 - ADDRESS  
 - BASE64  

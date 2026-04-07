@@ -142,12 +142,12 @@ Review the change request:
 ### Run Impact Analysis
 
 Open the **Impact Analysis** tab and review the information on the tabs: **Can Be Safely Deleted or Modified**, 
-**Cannot Be Safely Deleted or Modified**, and **Inactive Customizations**.
+**Can't Be Safely Deleted or Modified**, and **Inactive Customizations**.
 
-Here is an example of items on the **Cannot Be Safely Deleted or Modified** tab. The Customizations
+Here is an example of items on the **Can't Be Safely Deleted or Modified** tab. The Customizations
 and Impacted Customizations are links to each customization record.
 
-![Impact Analysis Cannot Be Safely Deleted or Modified tab](/images/platgovsalesforce/change_management/change_request_impact_analysis_light.webp)
+![Impact Analysis Can't Be Safely Deleted or Modified tab](/images/platgovsalesforce/change_management/change_request_impact_analysis_light.webp)
 
 ### View the DRD
 
@@ -178,5 +178,5 @@ add additional approvers, approver notes and begin the approval process.
 
 
 :::note
-For new objects that do not yet exist in Production, edit the Change Request and enter the full API
+For new objects that don't yet exist in Production, edit the Change Request and enter the full API
 Names of these objects into the Proposed Customization fields in the Scope Section. You can add
