@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Functional scope
 
-The **Web Application** will act as the basis for a constant enhancement. The current functional
-scope will be explained at this point. For the purposes of clarity, the relevant modules will be
+The **Web Application** acts as the basis for constant enhancement. The current functional
+scope is explained at this point. For the purposes of clarity, the relevant modules are
 described in their own subsections.
 
 #### General functions

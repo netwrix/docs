@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Organisational structure module
 
-The following functions are currently available in the **organisational structure module**:
+The following functions are available in the **organisational structure module**:
 
 - Adding/editing/deleting/authorizing users / organisational structures
 - Notifications
@@ -18,8 +18,10 @@ The following functions are currently available in the **organisational structur
 - Changing passwords
 - Print
 
-NOTE: The Web Application module organisational structure is based on the client module of the same
+:::note
+The Web Application module organisational structure is based on the client module of the same
 name. Both modules have a different scope and design but are almost identical to use.
+:::
 
 ## AD connection in the Web Application
 
@@ -55,7 +57,7 @@ be predefined. Then choose **Predefine rights** in the menu bar.
 
 ![installation_with_parameters_162](/images/passwordsecure/9.2/configuration/web_application/functional_scope/organisational_structure/installation_with_parameters_162.webp)
 
-**Creating the first template group:** A modal window will appear after clicking on the icon for
+**Creating the first template group:** A modal window appears after clicking on the icon for
 adding a new template group (green arrow) in which a meaningful name for the template group should
 be entered.
 
@@ -68,6 +70,6 @@ Now you can add the appropriate roles and users.
 You can add users and roles in different ways:
 
 - Add the appropriate roles and users at the toolbar under **Search and add**.
-- Click on the loupe to see all the users and roles.
+- Click the loupe to see all the users and roles.
 
 ![installation_with_parameters_165](/images/passwordsecure/9.2/configuration/web_application/functional_scope/organisational_structure/installation_with_parameters_165.webp)

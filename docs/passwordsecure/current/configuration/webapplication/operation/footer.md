@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Footer
 
-The footer displays various different information about the currently selected record in multiple
+The footer displays various different information about the selected record in multiple
 tabs. It can be activated or deactivated using the small arrow on the far right. The footer is
 hidden by default.
 
@@ -27,7 +27,7 @@ The history can also be displayed via a corresponding tab.
 
 4. Documents
 
-The documents tab can be used to access all linked documents.
+Use the documents tab to access all linked documents.
 
 5. Notifications
 

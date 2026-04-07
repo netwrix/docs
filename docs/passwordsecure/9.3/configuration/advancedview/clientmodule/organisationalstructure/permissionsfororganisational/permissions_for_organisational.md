@@ -16,7 +16,7 @@ permissions for organisational structures.
    [Visibility](/docs/passwordsecure/9.3/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/visibility.md)
    that selectively withholding information is a very effective
    [Protective mechanisms](/docs/passwordsecure/9.3/configuration/advancedview/permissionconceptandprotective/protectivemechanisms/protective_mechanisms.md).
-   Configuration of the visibility is carried out directly when issuing permissions to
+   Configuration of the visibility is performed directly when issuing permissions to
    organisational structures.
 2. **Inheriting permissions for records**:
    [Inheritance from organisational structures](/docs/passwordsecure/9.3/configuration/advancedview/permissionconceptandprotective/automatedsettingofpermissions/inheritance_from_organizational.md)
@@ -32,7 +32,7 @@ interfaces.
 
 ## Permissions
 
-The visibility and also inheritance mechanisms are not considered below. This section exclusively
+The visibility and also inheritance mechanisms aren't considered below. This section exclusively
 deals with permissions for the actual organisational structure. It deals with which users and roles
 have what form of permissions for a given organisational structure. Permissions for organisational
 structures can be defined via the ribbon or also the context menu that is accessed using the right
@@ -40,23 +40,29 @@ mouse button. A permissions tab appears:
 
 ![Permissions for OU](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/organisationalstructures/permissionsous/permissions_for_organizational_structures_2-en.webp)
 
-NOTE: The basic mechanisms for setting permissions is described in detail in the Authorization
+:::note
+The basic mechanisms for setting permissions is described in detail in the Authorization
 concept.
+:::
 
-**CAUTION:** It is important that the permissions displayed here are interpreted correctly! The
+:::warning
+It is important that the permissions displayed here are interpreted correctly! The
 example above shows the permissions for the "organisational structure IT".
+:::
 
 The user Max Muster possesses all rights to the organisational structure IT and can thus edit,
-delete and also grant permissions for this structure.
+delete, and also grant permissions for this structure.
 
 ## The add right
 
-The "add" right holds a special position amongst the available rights because it does not refer to
+The "add" right holds a special position amongst the available rights because it doesn't refer to
 the organisational unit itself but rather to data that will be created within it. In general, it is
 fair to say that to add objects in an organisational unit requires the add right. If a user wants to
 add a new record to an organisational unit, the user requires the above-mentioned right. In the
 example above, only the administrator has the required permissions for adding new records. Even the
-IT manager – who possess all other rights to the organisational structure "IT" – does not have the
+IT manager – who possess all other rights to the organisational structure "IT" – doesn't have the
 right to add records.
 
-**CAUTION:** The add right merely describes the right to create objects in an organisational unit.
+:::warning
+The add right merely describes the right to create objects in an organisational unit.
+:::

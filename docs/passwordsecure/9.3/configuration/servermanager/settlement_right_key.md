@@ -8,8 +8,8 @@ sidebar_position: 50
 
 #### Problem Description
 
-In the version 8.3.0.13378 passwords which cannot be decrypted for other users could be created. In
-this case, individual users or even all users do not have the necessary legal key. If a user wants
+In the version 8.3.0.13378 passwords which can't be decrypted for other users could be created. In
+this case, individual users or even all users don't have the necessary legal key. If a user wants
 to reveal an affected password, the following message is displayed:
 
 ![installation_with_parameters_219_706x98](/images/passwordsecure/9.2/configuration/server_manager/settlement_right_key/installation_with_parameters_219_706x98.webp)
@@ -63,7 +63,7 @@ should be adjusted.
 
 ###### Irreparable records (not repairable)
 
-Irreparable passwords cannot be corrected automatically. Nevertheless, it may happen that passwords
+Irreparable passwords can't be corrected automatically. Nevertheless, it may happen that passwords
 marked as irreparably can be corrected manually.
 
 First case
@@ -80,7 +80,7 @@ current database again.
 Second case
 
 In the second case, there are users / roles who have the right key but not the right to claim. As
-far as the number of irreparable passwords is limited, these can be used to check the form field
+far as the number of irreparable passwords is limited, you can check the form field
 permissions manually.
 
 ![installation_with_parameters_224_762x90](/images/passwordsecure/9.2/configuration/server_manager/settlement_right_key/installation_with_parameters_224_762x90.webp)

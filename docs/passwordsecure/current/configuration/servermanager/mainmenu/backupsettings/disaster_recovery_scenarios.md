@@ -6,33 +6,33 @@ sidebar_position: 30
 
 # Disaster recovery scenarios
 
-#### Finding a quick solution in the event of a disaster
+#### Finding a quick solution if there is a disaster
 
-In our experience, Netwrix Password Secure is usually installed in IT in a central location. If the
+In the experience, Netwrix Password Secure is usually installed in IT in a central location. If the
 system fails, it must be possible to gain access to the passwords again as quickly as possible. This
-section is designed to help you quickly find a solution in the event of a problem.
+section is designed to help you quickly find a solution if there is a problem.
 
 #### Prevention
 
 It is extremely important to create a sensible recovery plan and to make corresponding preparations.
-Unfortunately, it is not possible to supply a finished recovery plan because it always needs to be
+Unfortunately, it isn't possible to supply a finished recovery plan because it always needs to be
 created individually. The following points should be taken into account in this process:
 
 Creating backups
 
-It is of course essential in the event of a disaster that you can access a backup that is as
-up-to-date as possible. Therefore, it is necessary to regularly create
+It is of course essential if there is a disaster that you can access a backup that is as
+up-to-date as possible. Therefore, you must regularly create
 [Backup management](/docs/passwordsecure/current/configuration/servermanager/mainmenu/backupsettings/backup_management.md).
 
-Who is responsible in the event of a disaster?
+Who is responsible if there is a disaster?
 
-The first thing to decide is who should take action in the event of a disaster. Corresponding
+The first thing to decide is who should take action if there is a disaster. Corresponding
 deputies should also be defined. The responsible employee should have the corresponding rights
 within Netwrix Password Secure.
 
 Providing the required passwords
 
-What passwords do those people responsible need in order to restore Netwrix Password Secure?
+What passwords do those people responsible need to restore Netwrix Password Secure?
 
 - Domain password to log into the specific computer
 - Password for the Server Manager
@@ -75,7 +75,7 @@ Solution:
 Install the database server on new hardware. If the server name changes as a result, the licence
 needs to be reactivated. If the licence has already been activated multiple times, it may be that it
 can only be released again by Netwrix. If the SQL instance name changes, the connection to the
-database server needs to be reconfigured on the application server. This is carried out via the
+database server needs to be reconfigured on the application server. This is performed via the
 basic configuration.
 
 Any existing offline databases will continue to function properly.
@@ -93,7 +93,7 @@ it may be that the licence can only be released again by Netwrix. The basic conf
 completed to restore the connection to the database server. If the server name changes, the database
 profile on the client needs to be amended.
 
-Any existing offline databases need to be recreated!
+Any existing offline databases need to be recreated.
 
 Scenario 4
 
@@ -108,7 +108,7 @@ Restore the database from the backup. The basic configuration must be completed 
 connection to the database server. If the licence has already been activated multiple times, it may
 be that it can only be released again by Netwrix.
 
-Any existing offline databases need to be recreated!
+Any existing offline databases need to be recreated.
 
 Scenario 5
 
@@ -119,5 +119,5 @@ As for Scenario 4 but the Active Directory is also not available.
 Solution:
 
 As described for scenario 4. If the user was imported in end-to-end mode, you can also log in
-without an AD connection. Users imported in Masterkey mode cannot log in. Therefore, it is
+without an AD connection. Users imported in Masterkey mode can't log in. Therefore, it is
 recommended that you create special, local emergency users for such cases.

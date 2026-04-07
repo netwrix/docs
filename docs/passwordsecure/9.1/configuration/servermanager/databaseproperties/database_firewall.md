@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Database firewall
 
-## What is the database firewall?
+## Database firewall overview
 
-The database firewall enables you to regulate access to the database. A whitelist policy is used for
+The database firewall regulates access to the database. A whitelist policy is used for
 this process. Firewall rules are used to allow access to the database in individual cases.
 
 #### Activating the firewall
@@ -27,7 +27,7 @@ The rules already set are displayed in the section on the right. The icons
 ![+](/images/passwordsecure/9.1/configuration/server_manager/database_properties/+.webp)
 and
 ![-](/images/passwordsecure/9.1/configuration/server_manager/database_properties/-.webp)
-can be used to add or also delete rules. Rules can be edited by double clicking on them.
+lets you add or also delete rules. Rules can be edited by double clicking on them.
 
 ![firewall rule](/images/passwordsecure/9.1/configuration/server_manager/database_properties/installation_with_parameters_230-en.webp)
 
@@ -35,16 +35,18 @@ The following possibilities exist:
 
 - Access from an individual computer is allowed via the IP address.
 - A Range of multiple IP addresses can also be optionally selected.
-- It is also possible to regulate access using the Computer name.
+- It's also possible to regulate access using the Computer name.
 - Finally, access can also be allowed for a certain Windows user. For example, the administrator can
   be allowed access irrespective of the computer being used.
 - The setting Grant access defines whether access is allowed or blocked. This is symbolised by a
   corresponding icon.
 
-Naturally, the rules can also be combined. It is thus possible e.g that only one defined user can
+The rules can also be combined. It's thus possible e.g that only one defined user can
 access one database from a certain IP address.
 
-NOTE: The conditions are always combined using AND operators
+:::note
+The conditions are always combined using AND operators
+:::
 
 If two or more rules overlap, the rule with the least rights will always be applied. For example, if
 a rule allows access from a range of IP addresses but another rule blocks a specific computer within
@@ -52,7 +54,7 @@ this range then the rule blocking the computer is applied.
 
 ## Examples
 
-The functionality of the firewall will be explained in more detail using the following rules:
+The functionality of the firewall is explained in more detail using the following rules:
 
 ![defined firewall rules](/images/passwordsecure/9.1/configuration/server_manager/database_properties/installation_with_parameters_231-en.webp)
 
@@ -68,10 +70,10 @@ is blocked using this rule.
 
 **Blocking an individual user (Rule 3)**
 
-If you want to block a particular user (perhaps because they have left the company) then this is
-also possible.
+To block a particular user (perhaps because they have left the company), create a blocking rule.
 
 **Computer-independent access for a user (Rule 4)**
 
-This rule grants access to the administrator. It is irrelevant which computer the administrator uses
+This rule grants access to the administrator. It's irrelevant which computer the administrator uses
 to log in to the database.
+

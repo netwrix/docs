@@ -6,12 +6,12 @@ sidebar_position: 10
 
 # Installation with parameters
 
-## What is installation with parameters?
+## Installation with parameters overview
 
 The installation of the Netwrix Password Secure client can also be optionally run on the command
 line. This method also requires the transfer of parameters. These can be combined with one another.
 In this case, the individual parameters are separated from one another by a blank space. The
-parameters listed in the following section enable you to adapt the type of client installation.
+parameters listed in the following section let you adapt the type of client installation.
 
 ## Running on the command line with parameters
 

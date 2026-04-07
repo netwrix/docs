@@ -8,7 +8,7 @@ sidebar_position: 10
 
 #### Creating a new customer
 
-Creating a new customer is done via the Customers module (1). Here, click on New (2) in the upper
+Creating a new customer is done via the Customers module (1). Here, click New (2) in the upper
 left corner. This applies both to customers in a test phase and to customers who are to be billed
 immediately.
 
@@ -16,7 +16,7 @@ immediately.
 
 When creating a new customer, the customer name is specified under **General** (1).
 
-If (2) is not checked, a test customer is created without billing. This is then a customer in the
+If (2) isn't checked, a test customer is created without billing. This is then a customer in the
 test phase. If (2) is checked, a customer will be created who will be charged by Netwrix from the
 current month.
 
@@ -36,7 +36,7 @@ to the on-prem version.
 ![License settings new customer](/images/passwordsecure/9.2/configuration/server_manager/msp/changes_in_ac/customers_module/licence-new-customer-msp-en_1013x675.webp)
 
 After saving, the test customers are displayed under Test (1) and the customers to be billed under
-Billed (2). When you click on a (test) customer, you will see the associated
+Billed (2). When you click a (test) customer, you will see the associated
 
 information and activated options. By clicking the button Edit (3 + 4) you can make
 
@@ -71,8 +71,8 @@ the statements of the last months (6) and a graphical representation of the cost
 
 #### Deactivating and reactivating a customer
 
-Both test customers and customers to be billed can be deactivated, e.g. if a test customer cannot
-continue testing until later or if a customer to be billed does not pay his invoice. When
+Both test customers and customers to be billed can be deactivated, e.g. if a test customer can't
+continue testing until later or if a customer to be billed doesn't pay his invoice. When
 deactivating, all data is retained and the customer can be completely restored.
 
 To deactivate a customer, select the database (1) and then Deactivate (2).
