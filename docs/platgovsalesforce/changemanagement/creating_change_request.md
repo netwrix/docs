@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Creating a Change Request
 
-Change requests are the method to plan, analyze, track and approve changes. You can create different
+Change requests are the method to plan, analyze, track, and approve changes. You can create different
 types of Change Requests to match the change you want to manage. Here are two options:
 
 - **Customization** Change request is used for Metadata changes, such as
@@ -94,7 +94,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
 
     - Review existing customizations to identify the correct format.
 
-    This allows you to reference real examples from your account and ensure the API Name follows the correct structure.
+    Use this to reference real examples from your account and ensure the API Name follows the correct structure.
 
     :::
 

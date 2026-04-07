@@ -55,7 +55,7 @@ Objects that don't have a **Name** field (such as `Case` or `WorkOrder`) can beh
 
 These cases have already been addressed in the current implementation.
 
-### What to keep in mind
+### Considerations
 
 - Other standard objects might still have unique behaviors that could cause deployment conflicts.
 - Errors during deployment are often related to how the test class is generated for those objects.

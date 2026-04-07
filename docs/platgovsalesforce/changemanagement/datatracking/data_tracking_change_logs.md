@@ -8,7 +8,7 @@ sidebar_position: 3
 
 ## Overview
 
-Change Logs allow you to view details about modifications made to records on tracked objects. 
+Change Logs let you view details about modifications made to records on tracked objects. 
 
 **Data Tracking – Change Logs** can be accessed from the **Change Logs** tab by selecting the **Data Tracking Changes** list view.
 
@@ -28,7 +28,7 @@ When an object is configured as **Tracked, Non-Blocking**, the changes are monit
 - If the change is associated with an **approved Change Request**, the system records it as a **Compliant Change Log**.
 - If the change occurs **without an approved Change Request**, the system records it as a **Non-Compliant Change Log**.
 
-This mode allows users to complete their changes while ensuring that all activity is tracked and evaluated for compliance.
+In this mode, users can complete their changes while all activity is tracked and evaluated for compliance.
 
 #### Tracked, Blocking
 
@@ -55,7 +55,7 @@ The **Netwrix Platform Governance** Change Log has some features specific to dat
 
 - **Customization:** Data record Customization for the tracked object.
 - **Metadata Type:** Always blank, because it’s not metadata.
-- **Field Name:** Always “Data Change Tracking”. Can be used for creating filtered Change Log Reports and List Views.
+- **Field Name:** Always “Data Change Tracking”. Use this field to create filtered Change Log Reports and List Views.
 - **Change Overview:** Data record name, API Name of the tracked object, and operation that was done.
 - **Data Record Id:** Data record’s Salesforce Id. Use this to URL-hack directly to the updated record.
 - **Data Record Name:** Data record name.
@@ -72,7 +72,7 @@ For example:
 - You might want to create an **Opportunity Change Log** only when an admin updates specific fields on a **Closed Won Opportunity**.
 - You might want to **exclude Change Logs** for **User-Defined CPQ Discount Schedules**.
 
-**Netwrix Platform Governance** allows you to apply filters to tracked objects using either a **Report** or a custom **Apex Class**.
+With **Netwrix Platform Governance**, you can apply filters to tracked objects using either a **Report** or a custom **Apex Class**.
 
 ---
 

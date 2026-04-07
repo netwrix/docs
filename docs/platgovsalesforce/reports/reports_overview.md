@@ -58,7 +58,7 @@ Set and Profile.
 
 ![Access report by PermissionSet/Profile](/images/platgovsalesforce/reports/access_reports_permission_by_permset.webp)
 
-- **Users to Profiles/PermissionSets**: Displays the Profile, PermissionSet and PermissionSet Group
+- **Users to Profiles/PermissionSets**: Displays the Profile, PermissionSet, and PermissionSet Group
 assigned to each user. You can filter the report information. For example, if you want a list of
 users that have Admin profiles, you can set two filters:
 
@@ -78,8 +78,8 @@ Compliant.
 
 ![Access Report Profile Permissions Changes](/images/platgovsalesforce/reports/access_reports_profile_changes.webp)
 
-- **Changes to Users**: Displays the changes to tracked user data fields. Refer to
-[Enhanced CPQ Support](/docs/platgovsalesforce/changemanagement/datatracking/enhanced_cpq_support.md) for more information on
+- **Changes to Users**: Displays the changes to tracked user data fields. See
+[Enhanced CPQ Support](/docs/platgovsalesforce/changemanagement/datatracking/enhanced_cpq_support.md) for instructions on
 setting up tracking.<br /><br />If you see the message: _--String too long - Skipped lines due to CPU limit reached--_ it
 means the governor limits have been reached. Profiles and PermissionSets are very data heavy.
 Platform Governance for Salesforce skips the record and continues the scan the next day to ensure
@@ -168,8 +168,7 @@ including:
 
 These reports are available from **Netwrix Dashboard**  **Reports**  **Customizations**.
 
--  **All Customizations**: This enables you to use Salesforce functionality to filter searches
-quickly for specific customizations.
+-  **All Customizations**: Use Salesforce functionality to filter searches quickly for specific customizations.
 -  **Customization Impact**: This report shows your customizations and how they impact other objects.
 
 ## Clean Up

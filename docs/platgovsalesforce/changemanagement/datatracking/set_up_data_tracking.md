@@ -57,9 +57,9 @@ The available tracking options for objects are:
 - **Tracked, Non-Blocking**: Changes to data records are logged. If there is no approved Change Request, the Change Log marks the change as non-compliant.
 
 :::note
-While metadata changes in Salesforce can be tracked but not blocked, **Data Tracking** allows you to block most data record changes that aren't pre-approved.
+While metadata changes in Salesforce can be tracked but not blocked, with **Data Tracking** you can block most data record changes that aren't pre-approved.
 
-Changes to records in **Non-Triggerable objects** can't be blocked. See the [**Non-Triggerable Objects**](non_triggerable_objects.md) section for more information about how these objects behave.
+Changes to records in **Non-Triggerable objects** can't be blocked. See [**Non-Triggerable Objects**](non_triggerable_objects.md) to understand which objects can't be blocked and how they are handled.
 :::
 
 Users can also choose whether tracking should apply to **Updates Only** for each object.
@@ -86,11 +86,11 @@ For Salesforce objects that don't support triggers, see the [**Non-Triggerable O
 :::important
 Some **Salesforce standard objects** can cause issues when enabling **Data Tracking**.
 
-If you experience problems while attempting to track certain objects, refer to the [**Troubleshooting**](data_tracking_troubleshooting.md) section for more information about known limitations and possible solutions.
+If you experience problems while attempting to track certain objects, see [**Troubleshooting**](data_tracking_troubleshooting.md) for known limitations and possible solutions.
 :::
 
 :::tip
-We recommend using Data Tracking only for **critical configuration objects**.
+Use Data Tracking only for **critical configuration objects**.
 
 Data Tracking isn't designed for **high-volume objects** such as Opportunities or Quotes. For these types of objects, Salesforce’s standard **Field History Tracking** feature is a better option for monitoring changes.
 :::
