@@ -15,7 +15,7 @@ The following kits are region-specific.
 
 The <Company /> Onboarding Kit for NAM and LATAM Partners includes:
 
-* 0001 <Company /> Customer Resources
+* 0003 <Company /> Customer Resources
 * AMER <Company /> Partner Program Overview
 * <Company /> Partner Portal Walkthrough
 * <Company /> Deal Registration Program
@@ -26,7 +26,7 @@ The <Company /> Onboarding Kit for NAM and LATAM Partners includes:
 
 The <Company /> Onboarding Kit for EMEA/APAC Partners includes:
 
-* 0001 <Company /> Customer Resources
+* 0003 <Company /> Customer Resources
 * EMEA <Company /> Partner Marketing To-Go Menu
 * EMEA <Company /> Partner Program Overview
 * EMEA/APAC <Company /> Partner Onboarding Guide Optional
@@ -37,6 +37,6 @@ The <Company /> Onboarding Kit for EMEA/APAC Partners includes:
 
 The <Company /> Onboarding Kit for MSP Partners includes:
 
-* 0001 <Company /> Customer Resources
+* 0003 <Company /> Customer Resources
 * MSP Billing Center Explainer
 * MSP Partner Portal Walkthrough

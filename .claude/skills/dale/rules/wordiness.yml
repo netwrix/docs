@@ -1,0 +1,3 @@
+message: "This sentence is wordy. A more concise, direct alternative is possible."
+level: warning
+reason: "This rule should trigger when the user or agent writes a wordy sentence when a more concise, direct alternative is possible without altering the meaning."

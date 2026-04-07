@@ -19,7 +19,9 @@ table:
 
 ![discovery service entries](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/discoveryservice/configuration/configuration_ds-2-en.webp)
 
-NOTE: The information can be grouped together using the column editor.
+:::note
+The information can be grouped together using the column editor.
+:::
 
 ## Network Scan
 
@@ -64,7 +66,7 @@ finished, the **Network Scan** scans the **network** according to these guidelin
 
 1. **Password** and **Computer scan variants**: The required password must already have been issued
    and it requires corresponding rights for the domain. Active Directory computer: Only those
-   computers that are in Active Directory are scanned (there is also the option of using it
+   computers that are in Active Directory are scanned (there's also the option of using it
    individually or pinging the network). Ping network: A network filter for the configuration of the
    network is displayed.
 2. **Network filter**: This defines the network to be scanned: either using an IP range or an IP
@@ -80,10 +82,9 @@ finished, the **Network Scan** scans the **network** according to these guidelin
    user of services or _Local user_.
 
 :::warning
-The system executing the scan – on which the Server Manager is installed – is not
-scanned!
+The system executing the scan – on which the Server Manager is installed – isn't
+scanned.
 :::
-
 
 ## Interval / Executing server / Tags
 
@@ -111,6 +112,7 @@ Depending on the message, the **Discovery Service Task** may need to be amended.
 :::warning
 The **default setting** for the **Discovery Service Task** after it has been saved is
 **Activated!** It will **immediately actively** scan the network for data. This data is **read** but
-not amended!
+not amended.
 
 :::
+

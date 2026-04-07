@@ -52,9 +52,9 @@ Before beginning, determine which account the FSAA Proxy Scanner service is runn
 
 ```cmd
 cd C:\Path\to\FSAACertificateManager
-.\FSAACertificateManager.exe -clearCertificatesFromStore -store Server -Location LocalMachine
-.\FSAACertificateManager.exe -clearCertificatesFromStore -store Client -Location LocalMachine
-.\FSAACertificateManager.exe -clearCertificatesFromStore -store CertificateAuthority -Location LocalMachine
+.\FSAACertificateManager.exe -clearCertificatesFromStore -store Server -Location CurrentUser
+.\FSAACertificateManager.exe -clearCertificatesFromStore -store Client -Location CurrentUser
+.\FSAACertificateManager.exe -clearCertificatesFromStore -store CertificateAuthority -Location CurrentUser
 ```
 
 

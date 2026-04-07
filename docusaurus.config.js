@@ -218,7 +218,7 @@ const config = {
         logo: {
           alt: 'Netwrix Logo',
           src: 'branding/Netwrix_Logo_Dark.svg',
-          srcDark: 'branding/Netwrix_Logo_Light.svg',
+          srcDark: 'branding/logo-light.svg',
           href: '/',
         },
         items: [

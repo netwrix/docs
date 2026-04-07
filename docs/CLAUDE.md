@@ -60,15 +60,17 @@ The four core qualities:
 - Examples immediately follow the concept they illustrate
 - Never skip heading levels
 
-## Vale
+## Linting
 
-**Always run Vale before finishing any documentation edit. Run iteratively until zero errors.**
+### Vale
+
+Vale enforces 30 Netwrix-specific rules in `.vale/styles/Netwrix/` covering word choice, punctuation, formatting, and common writing issues. Vale issues are auto-fixed on PRs by the `vale-autofix` workflow — you don't need to fix them manually before pushing. You can still run Vale locally to preview issues:
 
 ```bash
 vale <file>
 ```
 
-Vale enforces 26 Netwrix-specific rules in `.vale/styles/Netwrix/`. Three require extra care:
+Two rules require extra care:
 
 - **`NoteThat`** — Replace "Note that..." or "Please note..." with an admonition block:
   ```md
@@ -80,7 +82,11 @@ Vale enforces 26 Netwrix-specific rules in `.vale/styles/Netwrix/`. Three requir
 
 - **`BoilerplateCrossRef`** and **`WeakLinkText`** — Read the surrounding context and the link destination before rewriting. The fix must reflect what the reader will actually find at the destination.
 
-- **`ImpersonalConstructions`** — Restructure with an active subject rather than simply removing the flagged phrase.
+### Dale
+
+Dale is an AI linter that catches issues regex-based Vale rules can't — passive voice, misplaced modifiers, idioms, wordiness, and other context-dependent patterns. Dale rules are in `.claude/skills/dale/rules/`. Dale issues are auto-fixed on PRs alongside Vale by the `vale-autofix` workflow.
+
+Run Dale locally with `/dale <file>`.
 
 ## Content Patterns
 
@@ -118,9 +124,9 @@ Each step is a single action. Lead with the UI element or command:
 
 ## CI/CD Context
 
-**Vale linter** — Runs on every PR touching `.md` files. Posts inline review comments. Does not block merges.
+**Auto-fix (Vale + Dale)** — Runs on PRs to `dev` with docs changes. Automatically fixes Vale issues (script for mechanical rules, Claude for judgment-based rules) and Dale issues (Claude), then posts a summary comment. No inline comments.
 
-**Doc reviewer** — Runs on every PR. Reads this file first, then categorizes issues as "in PR changes" vs. "preexisting" and posts inline suggestions reviewers can apply with one click.
+**Doc PR review** — Runs on PRs to `dev` with docs changes. Posts an editorial review summary. Does not block merges.
 
 **Doc fixer** — Triggered by an `@claude` comment on a PR. Applies fixes and pushes. Fork PRs cannot be pushed to.
 
@@ -131,7 +137,6 @@ Each step is a single action. Lead with the UI element or command:
 ## Common Mistakes
 
 - Don't manually copy KB content into versioned product folders — it's managed by the KB script
-- Don't skip Vale before submitting — it runs in CI regardless
 - Don't commit directly to `dev` or `main` — create a branch from `dev` first
 - Don't target `main` in PRs — use `dev`
 - Don't use first person anywhere in documentation content

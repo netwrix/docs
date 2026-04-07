@@ -1,0 +1,7 @@
+extends: existence
+message: "Headings should be declarative statements, not questions. Rewrite '%s' without a question mark."
+level: warning
+scope: heading
+nonword: true
+tokens:
+  - '\?'

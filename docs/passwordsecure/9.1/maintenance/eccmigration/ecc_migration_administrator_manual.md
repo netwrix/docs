@@ -10,25 +10,23 @@ sidebar_position: 10
 
 Before you execute the migration, you must ensure that the following preparations have been made:
 
-- Installation of the latest Netwrix Password Secure-Server, Native Client and Web Client
+- Installation of the latest Netwrix Password Secure-Server, Native Client, and Web Client
 - Check in the
-  [Database properties](/docs/passwordsecure/9.1/configuration/servermanger/databaseproperties/database_properties.md)
+  [Database properties](/docs/passwordsecure/9.1/configuration/servermanager/databaseproperties/database_properties.md)
   if the **offline access** and the **mobile synchronization** are allowed
-  If that should be the case, **contact your users and make sure that they have to synchronize the
+  If that should be the case, **contact your users and ensure that they have to synchronize the
   Offline Add-on and the mobile app**.
 
 :::warning
-If the OfflineClient or App does have not yet synchronized items, they are lost after
-the migration mode is enabled!
+If the OfflineClient or App does haven't yet synchronized items, they're lost after
+the migration mode is enabled.
 :::
-
 
 - Backup all certificates using the Netwrix Password Secure Server Manager
 
 :::warning
-Only certificate backups made through the Server Manager are valid!
+Only certificate backups made through the Server Manager are valid.
 :::
-
 
 ![Certificates](/images/passwordsecure/9.1/configuration/server_manager/ecc_migration/certificates-ac-1-en.webp)
 
@@ -36,7 +34,7 @@ Only certificate backups made through the Server Manager are valid!
 
 - Delete or restore all non “permanent deleted” users
   If you have deactivated or non “permanent deleted“ users it would make sense to delete them
-  permanently, otherwise the migration would never finalize. Keep in mind, that every E2EE User must
+  permanently, otherwise the migration would never finalize. Remember that every E2EE User must
   log in, before you can complete the migration.
 - Only have **one active Netwrix Password Secure-Server**
   In the case of multiple Netwrix Password Secure-Servers, you need to stop all Netwrix Password
@@ -46,8 +44,9 @@ Only certificate backups made through the Server Manager are valid!
 
 ## Migration
 
-NOTE: During the migration, the database is in read-only mode. So it is possible to read all records
-from the database, but it is not possible to add new or edit existing records.
+:::note
+During the migration, the database is in read-only mode. So it's possible to read all records from the database, but it isn't possible to add new or edit existing records.
+:::
 
 #### Start migration
 
@@ -57,8 +56,8 @@ Clicking on the icon **“Start migration”** in the databases' module to start
 
 Select the database you want to migrate and enter the code-word.
 
-Remember, The code word is “Start”. Please make sure that you have read the whole documentation.
-Otherwise, data loss might occur!
+Remember, The code word is “Start”. ensure that you have read the whole documentation.
+Otherwise, data loss might occur.
 
 ![select database](/images/passwordsecure/9.1/configuration/server_manager/ecc_migration/start-migration-2-en.webp)
 
@@ -71,13 +70,12 @@ Manager. If you have multiple servers in use import the certificates via the Ser
 end of the migration process.
 
 :::warning
-If certificates are missing the migration cannot be continued.
+If certificates are missing the migration can't be continued.
 :::
-
 
 #### Watch the migration process
 
-In the migration process you find all information about the current process, what is already
+In the migration process you find all information about the current process, what's already
 migrated and what still needs to be migrated
 
 ![migration progress](/images/passwordsecure/9.1/configuration/server_manager/ecc_migration/migration-progress-en.webp)
@@ -86,3 +84,4 @@ After each user has logged into the database and has been successfully migrated,
 complete.
 
 ![migration finished](/images/passwordsecure/9.1/configuration/server_manager/ecc_migration/migration-finished-en.webp)
+
