@@ -32,15 +32,54 @@ is_ignored_extension() {
 
 is_markdown_content() {
   local file="$1"
-  local has_frontmatter=0
-  local has_heading=0
-  if head -10 "$file" | grep -qE '^---'; then
-    has_frontmatter=1
-  fi
-  if grep -qE '^#{1,6} ' "$file"; then
-    has_heading=1
-  fi
-  [ "$has_frontmatter" -eq 1 ] && [ "$has_heading" -eq 1 ]
+  grep -qE '^#{1,6} ' "$file"
+}
+
+has_frontmatter() {
+  local file="$1"
+  head -1 "$file" | grep -qE '^---'
+}
+
+extract_h1() {
+  local file="$1"
+  grep -m 1 -E '^# ' "$file" | sed 's/^# //'
+}
+
+calculate_sidebar_position() {
+  local file="$1"
+  local dir
+  dir=$(dirname "$file")
+  local basename
+  basename=$(basename "$file")
+  local position=1
+  local count=0
+  while IFS= read -r sibling; do
+    count=$((count + 1))
+    if [ "$(basename "$sibling")" = "$basename" ]; then
+      position=$count
+    fi
+  done < <(find "$dir" -maxdepth 1 -name '*.md' | sort)
+  echo $((position * 10))
+}
+
+inject_frontmatter() {
+  local file="$1"
+  local title
+  title=$(extract_h1 "$file")
+  local position
+  position=$(calculate_sidebar_position "$file")
+  local tmp
+  tmp=$(mktemp)
+  {
+    echo "---"
+    echo "title: \"$title\""
+    echo "description: \"$title\""
+    echo "sidebar_position: $position"
+    echo "---"
+    echo ""
+    cat "$file"
+  } > "$tmp"
+  mv "$tmp" "$file"
 }
 
 rewrite_links_in_docs() {
@@ -66,7 +105,7 @@ esac
 CHANGED_FILES_LIST="${1:?Usage: md-extension-autofix.sh <changed-files-list>}"
 
 if [ ! -f "$CHANGED_FILES_LIST" ]; then
-  echo '{"renamed": [], "skipped": []}'
+  echo '{"renamed": [], "skipped": [], "frontmatter_injected": []}'
   exit 0
 fi
 
@@ -74,6 +113,7 @@ RENAMED_FROM=()
 RENAMED_TO=()
 SKIPPED_FILES=()
 SKIP_REASONS=()
+FRONTMATTER_INJECTED=()
 
 while IFS= read -r file; do
   # Only process files inside docs/
@@ -114,6 +154,13 @@ while IFS= read -r file; do
   RENAMED_FROM+=("$file")
   RENAMED_TO+=("$new_file")
 
+  # Inject frontmatter into renamed docs files (not KB — handled by derek skill)
+  if [[ "$new_file" != docs/kb/* ]] && ! has_frontmatter "$new_file"; then
+    inject_frontmatter "$new_file"
+    git add "$new_file"
+    FRONTMATTER_INJECTED+=("$new_file")
+  fi
+
 done < "$CHANGED_FILES_LIST"
 
 # Output JSON summary
@@ -131,4 +178,11 @@ for i in "${!SKIPPED_FILES[@]}"; do
 done
 SKIPPED_JSON+="]"
 
-echo "{\"renamed\": ${RENAMED_JSON}, \"skipped\": ${SKIPPED_JSON}}"
+FRONTMATTER_JSON="["
+for i in "${!FRONTMATTER_INJECTED[@]}"; do
+  [ "$i" -gt 0 ] && FRONTMATTER_JSON+=","
+  FRONTMATTER_JSON+="\"${FRONTMATTER_INJECTED[$i]}\""
+done
+FRONTMATTER_JSON+="]"
+
+echo "{\"renamed\": ${RENAMED_JSON}, \"skipped\": ${SKIPPED_JSON}, \"frontmatter_injected\": ${FRONTMATTER_JSON}}"

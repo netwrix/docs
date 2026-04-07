@@ -25,7 +25,7 @@ jobs:
             --jq '{message: .commit.message}')
           MESSAGE=$(echo "$COMMIT" | jq -r '.message')
           echo "Latest commit message: $MESSAGE"
-          if echo "$MESSAGE" | grep -qE '^fix\(docs\): add missing \.md extension'; then
+          if echo "$MESSAGE" | grep -qE '^fix\(docs\): add missing \.md extension and inject frontmatter'; then
             echo "Skipping: commit is from md-extension-autofix workflow"
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
@@ -71,11 +71,13 @@ jobs:
           echo "$SUMMARY" > /tmp/md-extension-summary.json
           RENAMED_COUNT=$(echo "$SUMMARY" | jq '.renamed | length')
           SKIPPED_COUNT=$(echo "$SUMMARY" | jq '.skipped | length')
+          FRONTMATTER_COUNT=$(echo "$SUMMARY" | jq '.frontmatter_injected | length')
           echo "renamed=$RENAMED_COUNT" >> "$GITHUB_OUTPUT"
           echo "skipped=$SKIPPED_COUNT" >> "$GITHUB_OUTPUT"
-          echo "Renamed: $RENAMED_COUNT, Skipped: $SKIPPED_COUNT"
+          echo "frontmatter=$FRONTMATTER_COUNT" >> "$GITHUB_OUTPUT"
+          echo "Renamed: $RENAMED_COUNT, Skipped: $SKIPPED_COUNT, Frontmatter injected: $FRONTMATTER_COUNT"
 
-      - name: Commit renamed files
+      - name: Commit fixes
         id: commit
         if: steps.autofix.outputs.renamed > 0
         run: |
@@ -83,7 +85,7 @@ jobs:
             echo "committed=false" >> "$GITHUB_OUTPUT"
           else
             git add -A docs/
-            git commit -m "fix(docs): add missing .md extension to renamed files"
+            git commit -m "fix(docs): add missing .md extension and inject frontmatter"
             echo "committed=true" >> "$GITHUB_OUTPUT"
           fi
 
@@ -106,9 +108,11 @@ jobs:
 
           RENAMED_COUNT=0
           SKIPPED_COUNT=0
+          FRONTMATTER_COUNT=0
           if [ -f /tmp/md-extension-summary.json ]; then
             RENAMED_COUNT=$(jq '.renamed | length' /tmp/md-extension-summary.json)
             SKIPPED_COUNT=$(jq '.skipped | length' /tmp/md-extension-summary.json)
+            FRONTMATTER_COUNT=$(jq '.frontmatter_injected | length' /tmp/md-extension-summary.json)
           fi
 
           # Nothing to report — exit silently
@@ -129,8 +133,19 @@ jobs:
               echo "Links to these files in other pages have been updated. Please review the changes in the commit above."
             fi
 
+            if [ "$FRONTMATTER_COUNT" -gt 0 ]; then
+              echo ""
+              echo "**Frontmatter injected**"
+              echo ""
+              echo "The following renamed files were missing frontmatter. \`title\`, \`description\`, and \`sidebar_position\` were derived automatically and may need manual review:"
+              echo ""
+              echo "| File |"
+              echo "|---|"
+              jq -r '.frontmatter_injected[] | "| `\(.)` |"' /tmp/md-extension-summary.json
+            fi
+
             if [ "$SKIPPED_COUNT" -gt 0 ]; then
-              if [ "$RENAMED_COUNT" -gt 0 ]; then echo ""; fi
+              echo ""
               echo "**Action needed: Possible missing \`.md\` extension**"
               echo ""
               echo "The following files were added to a docs directory without a \`.md\` extension, but couldn't be auto-renamed:"
