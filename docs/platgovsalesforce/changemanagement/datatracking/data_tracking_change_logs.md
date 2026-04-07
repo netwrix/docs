@@ -8,7 +8,7 @@ sidebar_position: 3
 
 ## Overview
 
-Change Logs allow you to view details about modifications made to records on tracked objects. 
+Change Logs let you view details about modifications made to records on tracked objects. 
 
 **Data Tracking – Change Logs** can be accessed from the **Change Logs** tab by selecting the **Data Tracking Changes** list view.
 
@@ -28,7 +28,7 @@ When an object is configured as **Tracked, Non-Blocking**, the changes are monit
 - If the change is associated with an **approved Change Request**, the system records it as a **Compliant Change Log**.
 - If the change occurs **without an approved Change Request**, the system records it as a **Non-Compliant Change Log**.
 
-This mode allows users to complete their changes while ensuring that all activity is tracked and evaluated for compliance.
+In this mode, users can complete their changes while all activity is tracked and evaluated for compliance.
 
 #### Tracked, Blocking
 
@@ -37,7 +37,7 @@ When an object is configured as **Tracked, Blocking**, the system enforces stric
 - If a change is associated with an **approved Change Request**, the system records it as a **Compliant Change Log**.
 - If a user attempts to make a change **without an approved Change Request**, the system blocks the operation.
 
-In this case, an error message is displayed and the change is not saved. This mode ensures that all modifications follow the required approval process before being applied.
+In this case, an error message is displayed and the change isn't saved. This mode ensures that all modifications follow the required approval process before being applied.
 
 :::
 
@@ -55,7 +55,7 @@ The **Netwrix Platform Governance** Change Log has some features specific to dat
 
 - **Customization:** Data record Customization for the tracked object.
 - **Metadata Type:** Always blank, because it’s not metadata.
-- **Field Name:** Always “Data Change Tracking”. Can be used for creating filtered Change Log Reports and List Views.
+- **Field Name:** Always “Data Change Tracking”. Use this field to create filtered Change Log Reports and List Views.
 - **Change Overview:** Data record name, API Name of the tracked object, and operation that was done.
 - **Data Record Id:** Data record’s Salesforce Id. Use this to URL-hack directly to the updated record.
 - **Data Record Name:** Data record name.
@@ -66,13 +66,13 @@ The **Netwrix Platform Governance** Change Log has some features specific to dat
 
 ## Filtering Change Logs
 
-In some cases, you may want **Change Logs** to be created only when specific conditions are met.
+In some cases, you might want **Change Logs** to be created only when specific conditions are met.
 
 For example:
-- You may want to create an **Opportunity Change Log** only when an admin updates specific fields on a **Closed Won Opportunity**.
-- You may want to **exclude Change Logs** for **User-Defined CPQ Discount Schedules**.
+- You might want to create an **Opportunity Change Log** only when an admin updates specific fields on a **Closed Won Opportunity**.
+- You might want to **exclude Change Logs** for **User-Defined CPQ Discount Schedules**.
 
-**Netwrix Platform Governance** allows you to apply filters to tracked objects using either a **Report** or a custom **Apex Class**.
+With **Netwrix Platform Governance**, you can apply filters to tracked objects using either a **Report** or a custom **Apex Class**.
 
 ---
 
@@ -80,7 +80,7 @@ For example:
 
 Using a **Report** is the simplest way to implement a filter.
 
-Create a report that returns a list of **record Ids**. If a tracked record update matches the report’s filter criteria, a **Change Log** will be created for that record.
+Create a report that returns a list of **record Ids**. If a tracked record update matches the report’s filter criteria, the system creates a **Change Log** for that record.
 
 #### Report Requirements
 
@@ -90,8 +90,8 @@ The report must meet the following requirements:
 - The **standard date filter** must be set to the **Created Date** of the record type being filtered.
 - The **first column** in the report must be the **Id** of the record.
 
-Example: Do not create Change Logs for changes in “User-Defined” CPQ Discount Schedules
-This report returns only the Discount Schedule Ids of records that do not have the “User Defined” checkbox checked.
+Example: Don't create Change Logs for changes in “User-Defined” CPQ Discount Schedules
+This report returns only the Discount Schedule Ids of records that don't have the “User Defined” checkbox checked.
 
 ![Data Tracking - Report Filter](/images/platgovsalesforce/change_management/data_tracking_report_filter.webp)
 
@@ -120,7 +120,7 @@ global Set<Id> getFilteredIds(Datetime start, Datetime end)
 The start and end times should be used by your filtering logic to return a Set of record Ids that have been modified during that time interval.
 :::
 
-#### Example: Do not create Change Logs for changes in “User-Defined” CPQ Discount Schedules.
+#### Example: Don't create Change Logs for changes in “User-Defined” CPQ Discount Schedules.
 
 Here’s an example that does the same job as the Report filter above.
 

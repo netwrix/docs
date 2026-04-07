@@ -19,11 +19,11 @@ You can create a New Policy, or edit an existing one:
 
 - **Information** general information about the policy.
 - **Code and Data Model Changes** change control level for code and data model changes.
-- **Automation Changes** change control level for approval process, business process, flow, workflow and process builder changes.
+- **Automation Changes** change control level for approval process, business process, flow, workflow, and process builder changes.
 - **Sharing and Visibility Changes** change control level for role, profile, permission set, data security, sharing non material and indirect changes to profile changes.
 - **Integration Changes** change control level for external site, identity, and access changes.
 - **Configuration Changes** change control level for data quality and general settings changes.
-- **Display and UI Changes** change control level for application, label and translation, layout and template changes.
+- **Display and UI Changes** change control level for application, label, translation, layout, and template changes.
 - **Analytics Changes** change control level for reports, dashboards, list view, and Einstein changes.
 - **Control Changes** change control level for control changes.
 - **Application Configuration Changes (Data)**
@@ -32,11 +32,9 @@ You can create a New Policy, or edit an existing one:
 - **Customization Policies** impacted customization approval.
 - **Management Policies** executive approver and approval settings.
 - **Change Enablement Defaults** merge approval list, non conforming alerts, and sequential approval requests.
-- **System Information**, **Created By** and **Last Modified By** dates. Informational only, cannot be edited.
+- **System Information**, **Created By** and **Last Modified By** dates. Informational only, can't be edited.
 
-Once the policy is saved, **System Information** is added show the **Created By** and **Last
-Modified By** user and time stamp. The information you entered on the form is shown on the
-**Details** tab. The Related tab is available to add Customizations and view additional
+After you save the policy, the **System Information** section displays the **Created By** and **Last Modified By** user and timestamp. The **Details** tab shows the information you entered on the form. The Related tab is available to add Customizations and view additional
 information and history.
 
 ### Information
@@ -102,8 +100,7 @@ for the specific records on the customization record.
 Set objects and fields that are **Tracked Non-blocking** or **Tracked Blocking** to be part of the
 policy and require a Ticket and an approval.
 
-Refer to [Set Up Data Tracking](/docs/platgovsalesforce/changemanagement/set_up_data_tracking.md) for more information on activating and
-validating tracked fields.
+See [Set Up Data Tracking](/docs/platgovsalesforce/changemanagement/datatracking/set_up_data_tracking.md) for instructions on activating and validating tracked fields.
 
 ### Health Check Changes
 
@@ -133,10 +130,10 @@ impacted Customization owners.
 
 **Executive Approver**: a business executive who must approve the change.
 
-**Maximum number of Approvals Required**: approval is granted once the specified number of approvals
+**Maximum number of Approvals Required**: approval is granted when the specified number of approvals
 is complete. If this field is blank, all approvers must approve.
 
-**No Order Required**: select this option to allow approvals in any order. If it is not checked,
+**No Order Required**: select this option to allow approvals in any order. If it isn't checked,
 approvals occur in the order specified.
 
 ### Change Enablement Defaults
@@ -194,7 +191,7 @@ the CustomObject Policy when added.
 
 ### Select Change Level by Salesforce Type
 
-This feature enables you to add customizations to the policy based on Salesforce type. It is
+Use this feature to add customizations to the policy based on Salesforce type. It is
 available on the **Related** tab on the policy.
 
 1. Open the policy and click the **Related** tab.
