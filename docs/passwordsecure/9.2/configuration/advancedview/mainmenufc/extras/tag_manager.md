@@ -6,9 +6,9 @@ sidebar_position: 60
 
 # Tag manager
 
-## What is the tag manager?
+## Tag manager overview
 
-All existing tags can be viewed, edited and deleted directly in the tag manager. This can be
+All existing tags can be viewed, edited, and deleted directly in the tag manager. This can be
 achieved via the filter, within the “Edit mode” of a data set as well as via the main menu under the
 group [Extras](/docs/passwordsecure/9.2/configuration/advancedview/mainmenufc/extras/extras.md).
 
@@ -31,4 +31,6 @@ User right
 
 - Manage tags
 
-**CAUTION:** It is only possible to delete tags if there are no more data associated with them
+:::warning
+It is only possible to delete tags if there are no more data associated with them
+:::

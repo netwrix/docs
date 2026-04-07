@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Advanced settings
 
-## What are advanced settings?
+## Advanced settings overview
 
 Global standard default values are specified in the advanced settings.
 

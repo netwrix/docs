@@ -14,7 +14,7 @@ The new format is: `YY.M.VVV`
 |---------|-------------|---------|
 | `YY` | Two-digit year | `26` = 2026 |
 | `M` | Month, no zero-padding | `3` = March |
-| `VVV` | Release indicator (see below) | `100` = first major |
+| `VVV` | Release indicator (see the following section) | `100` = first major |
 
 :::info[Build numbers]
 

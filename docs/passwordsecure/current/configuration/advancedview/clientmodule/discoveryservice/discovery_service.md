@@ -9,13 +9,13 @@ sidebar_position: 100
 ## The problem
 
 **Service accounts** are used on most networks. These accounts are used, for example, to carry out
-certain services. It is not uncommon for **one and the same password** to be used here for multiple
+certain services. It isn't uncommon for **one and the same password** to be used here for multiple
 accounts. Manually changing these passwords is extremely time consuming. Therefore, this process is
 often ignored for reasons of convenience.
 
 The result is that the same outdated passwords are often used for many **security-critical access
-points**. This naturally represents a **severe security risk** and leaves the door wide open for any
-attacker who gains access to just one of the passwords!
+points**. This represents a **severe security risk** and leaves the door wide open for any
+attacker who gains access to just one of the passwords.
 
 ## The solution
 

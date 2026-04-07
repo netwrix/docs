@@ -19,7 +19,7 @@ customers with less than 20 users each.
 - 16 GB RAM
 - min. 100 GB HDD
 
-**CAUTION:** Please note, that using a SQL Server with Express edition is not recommended because of
+**CAUTION:** That using a SQL Server with Express edition isn't recommended because of
 diverse limitations there.
 
 If your customer's count is growing over time, you should add every 200 users a minimum of at least:
@@ -43,7 +43,7 @@ If your customer's count is growing over time, you should add every 200 users a 
 - 1 CPU
 - 4 GB RAM
 
-RECOMMENDED: Currently, you should use an application server to handle a max of about 100
+RECOMMENDED:, you should use an application server to handle a max of about 100
 customers. So if you reach 100 customers, you should set up a second Application Server or use some
 sort of load balancing between the application servers.
 
@@ -53,6 +53,8 @@ recommended
 **CAUTION:** Every additional 100 customers/1000 users an additional Application Server - incl.
 loadbalancing - is recommended.
 
-NOTE: Please note that individual variables - like the number of passwords per user - will affect
+:::note
+Individual variables - like the number of passwords per user - will affect
 performance. Especially for MSP-Systems it is required to monitor performance continuously, and add
 additional resources on demand.
+:::

@@ -25,7 +25,7 @@ data. This user should be a member of admin for the corresponding group of domai
 can use a domain administrator.
 
 **CAUTION:** A corresponding **password** with **rights** for the **domains** must exist before
-adding a **Network Scan**!
+adding a **Network Scan**.
 
 ### Password
 
@@ -37,14 +37,16 @@ adding a **Network Scan**!
 
 - The computer to be scanned and AD controller must be accessible via the network.
 - The service: “Windows Management Instrumentation” must have been started on the computer to be
-  scanned (carried out by Windows as standard).
+  scanned (performed by Windows as standard).
 - Help section for starting the service:
   [Microsoft Website](https://msdn.microsoft.com/de-de/library/aa826517(v=vs.85).aspx)
 - The firewall must not block WMI requests (not blocked as standard).
 - Help section for configuring the firewall:
   [Microsoft Website](https://msdn.microsoft.com/de-de/library/aa822854(v=vs.85).aspx)
 
-NOTE: Only **IPv4 addresses** can currently be scanned.
+:::note
+Only **IPv4 addresses** can be scanned.
+:::
 
 ### Open ports for the scan (necessary)
 
@@ -59,7 +61,7 @@ Server 2003) – port 1025-5000 (TCP) or a static WMI port
 2. Computer name and associated IP address: The computer name is first requested on the **DNS
    server** for the domain. The computer name returned by the server also contains the domain names
    as a postfix (e.g. Client01.domain.local). If there is no entry on the domain for the requested
-   IP address, the computer name is determined via **NetBIOS**. The domain name is not displayed on
+   IP address, the computer name is determined via **NetBIOS**. The domain name isn't displayed on
    the computer (e.g. Client01). In Netwrix Password Secure V8, the **DNS request** is the preferred
    function for determining the computer name. If no result is delivered, a request via **NetBIOS**
    is made.

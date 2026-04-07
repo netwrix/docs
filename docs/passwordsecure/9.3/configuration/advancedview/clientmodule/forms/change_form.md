@@ -20,7 +20,7 @@ previously used form to the new form. In this example, a record that previously 
 
 ![change form](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/forms/change_form_2-en.webp)
 
-The drop-down menu allows you to select the target form. The comparison of current and new form
+The dropdown menu lets you select the target form. The comparison of current and new form
 fields is shown in the lower section.
 
 - Fields **marked in green** have already been assigned to the new form
@@ -34,12 +34,14 @@ The following options are required to change forms.
 
 - Can change form for a password
 
-**CAUTION:** Please note that information could be lost during this process! In the example, this
+:::warning
+that information could be lost during this process! In the example, this
 applies to the fields "Website" and "Information".
+:::
 
 ## The effects of changes to forms on existing records
 
-In general, changes to forms do not effect existing records. This means that a record that was
+In general, changes to forms don't effect existing records. This means that a record that was
 created with a certain form will not itself be changed after this form has been adapted/changed. It
 remains in its original state. However, there are methods by which changes to forms could be adopted
 by existing records. There are two possibilities in this context:
@@ -56,7 +58,7 @@ be directly shown and adopted after it is saved.
 
 The setting "Apply form changes to passwords" makes it possible to force the change to the form to
 be adopted. This becomes effective when editing the record! It is immaterial here whether changes
-are being made to the record. Simply re-editing and saving the record will cause the adjustment to
+are being made to the record. Re-editing and saving the record will cause the adjustment to
 the form.
 
 ### The following permissions/configuration must exist
@@ -67,7 +69,7 @@ the form.
 
 ## Conclusion
 
-A common feature of both variants is that adjustments to forms cannot be automatically triggered.
+A common feature of both variants is that adjustments to forms can't be automatically triggered.
 Already existing records are thus not automatically adjusted. The adjustment thus needs to be
-carried out manually. In the first case, the manual step is to use the function "Change form". In
-the second case, it is sufficient to simply edit and save the record.
+performed manually. In the first case, the manual step is to use the function "Change form". In
+the second case, it is sufficient to edit and save the record.
