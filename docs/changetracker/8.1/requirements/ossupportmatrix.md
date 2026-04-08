@@ -10,15 +10,16 @@ This page lists the platforms and use cases that Netwrix has verified. However, 
 may work on other platforms that have gcc (4.8+) compiler available.
 
 ## Hub Compatibility Matrix
-The following table shows Hub releases and the compatible components.
 
-| Hub   | Gen7 Agent | Express Agent | Sync Service | MongoDB | .NET  |
-| ----- | ---------- | ------------- | ------------ | ------- | ----- |
-| 8.1.2 | 7.2.2      | 2.2.1         | 2.2.0.0      | 8.2.3   | 8.0.0 |
-| 8.1.1 | 7.2.1      | 2.2.1         | 2.2.0.0      | 8.0.5   | 8.0.0 |
-| 8.1.0 | 7.2.0      | 2.1.1         | 2.1.0.0      | 8.0.5   | 8.0.0 |
-| 8.0.0 | 7.1.5      | 2.1.1         | 2.1.0.0      | 7.0.1   | 8.0.0 |
-| 7.7.4 | 7.1.4      | 2.1.1         | 2.0.4.4      | 7.0.1   | 6.0.0 |
+The table below shows Hub releases and the component versions verified to work with each release. Each row lists the component versions verified to work together with the corresponding Hub release; mixing versions across rows is not supported. Gen7 Agent refers to the Change Tracker Agent version 7.x line.
+
+| Hub   | Gen7 Agent | Express Agent | Sync Service | MongoDB | .NET Runtime |
+| ----- | ---------- | ------------- | ------------ | ------- | ------------ |
+| 8.1.2 | 7.2.2      | 2.2.1         | 2.2.0.0      | 8.2.3   | 8.0.0        |
+| 8.1.1 | 7.2.1      | 2.2.1         | 2.2.0.0      | 8.0.5   | 8.0.0        |
+| 8.1.0 | 7.2.0      | 2.1.1         | 2.1.0.0      | 8.0.5   | 8.0.0        |
+| 8.0.0 | 7.1.5      | 2.1.1         | 2.1.0.0      | 7.0.1   | 8.0.0        |
+| 7.7.4 | 7.1.4      | 2.1.1         | 2.0.4.4      | 7.0.1   | 6.0.0        |
 
 ## Windows Operating Systems
 
