@@ -22,7 +22,7 @@ DLL Hijack Protection makes a decision based on three things:
 2. **Is the DLL load considered risky?**
 3. **Is there an exclusion that overrides the behavior?**
 
-Only when all conditions line up does blocking occur.
+Blocking occurs only when all three conditions are met.
 
 ---
 
@@ -32,7 +32,7 @@ This depends on the selected mode:
 
 ### Safe Elevated Mode
 
-Applies **only to elevated processes** (running as admin/system).
+Applies **only to elevated processes** (running as administrator or SYSTEM).
 
 ### Anti-Hijack Mode
 
@@ -65,7 +65,7 @@ Some identities are expected to modify files as part of normal operations:
 - SYSTEM
 - Trusted Installer
 
-In real environments, you may also have:
+In production environments, you may also have:
 
 - Software deployment tools
 - Packaging accounts
@@ -174,7 +174,7 @@ Result: **Allowed**
 
 ## Best Practices
 
-- Start with **Audit Mode**.
+- Start with **Audit Mode** (which logs would-be blocks without enforcing them).
 - Move to **Safe Elevated Mode** first (low risk, high value).
 - Then enable **Anti-Hijack Mode** for broader protection.
 - Carefully define **Approved Members**.
@@ -187,10 +187,8 @@ Result: **Allowed**
 
 - Behavior depends heavily on file permissions. Unexpected ACLs can cause blocks.
 - Some legacy apps may require exclusions.
-- Interaction timing with elevation policies can occasionally affect process classification.
+- Elevation policy timing can occasionally cause a process to be misclassified. If you see unexpected blocks on elevated processes, verify which elevation policy applies to that process.
 
 ---
 
-## Summary
-
-DLL Hijack Protection blocks DLLs that can be tampered with by unauthorized users — not just obviously malicious ones. Defining your Approved Members list carefully is the most important configuration step.
+See [Best Practices](#best-practices) before enabling in production.

@@ -17,6 +17,4 @@ Two ways to handle it are demonstrated:
 - **Option 1:** Create a rule to allow the application
 - **Option 2:** Allow a specific user (e.g., DOMAIN\User) to "punch through" the protection — so when they elevate with UAC, the install is permitted
 
-Lock it down by default, then allow with intent.
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/e86uvN2Awqg" title="DLL Hijack Protection Scenario 3: Protecting Installers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
