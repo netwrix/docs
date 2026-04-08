@@ -1,0 +1,3 @@
+message: "The products field is required and must contain at least one product ID."
+level: error
+reason: "This rule triggers when the frontmatter block is missing a products field, or when the products list is empty. See the product names table in kb_style_guide.md for valid product IDs."

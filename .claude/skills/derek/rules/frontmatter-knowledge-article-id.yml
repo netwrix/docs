@@ -1,0 +1,3 @@
+message: "The knowledge_article_id field is required and must be a valid Salesforce KB article ID — starts with \"kA\" followed by alphanumeric characters (for example, kA0Qk000000XXXXKAA)."
+level: error
+reason: "This rule triggers when the frontmatter block is missing a knowledge_article_id field, or when the value does not begin with the letters \"kA\" followed only by alphanumeric characters."

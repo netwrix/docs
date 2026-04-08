@@ -1,0 +1,3 @@
+message: "The tags field must be present and must include \"kb\". This tag enables KB article filtering in Algolia search."
+level: error
+reason: "This rule triggers when the frontmatter block is missing a tags field, or when the tags list does not include the string value \"kb\". An empty tags list (tags: []) also triggers this rule."
