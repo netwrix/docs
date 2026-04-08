@@ -137,7 +137,7 @@ jobs:
               echo ""
               echo "**Frontmatter injected**"
               echo ""
-              echo "The following renamed files were missing frontmatter. \`title\`, \`description\`, and \`sidebar_position\` were derived automatically and may need manual review:"
+              echo "The following files were missing frontmatter. \`title\`, \`description\`, and \`sidebar_position\` were derived automatically and may need manual review:"
               echo ""
               echo "| File |"
               echo "|---|"
