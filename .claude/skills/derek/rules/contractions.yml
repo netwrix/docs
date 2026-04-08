@@ -1,0 +1,12 @@
+message: "Write contractions out in full in KB articles. Use \"do not\" instead of \"don't\", \"cannot\" instead of \"can't\", etc."
+level: warning
+reason: >-
+  This rule triggers when the article body contains a contraction — two words joined
+  by an apostrophe. Common contractions to flag: don't, can't, won't, you'll, it's
+  (when meaning "it is"), there's, that's, isn't, aren't, wasn't, weren't, hasn't,
+  haven't, hadn't, doesn't, didn't, wouldn't, shouldn't, couldn't, I'm, you're,
+  we're, they're, I've, you've, we've, they've, I'd, you'd, we'd, they'd.
+
+  Note: this is the opposite of the Netwrix docs style guide, which encourages
+  contractions. KB articles follow the KB style guide. Do not flag apostrophes used
+  for possessives (e.g., "the system's logs") or inside code blocks.
