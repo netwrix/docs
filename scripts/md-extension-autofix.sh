@@ -122,8 +122,15 @@ while IFS= read -r file; do
   # Skip deleted files
   [ -f "$file" ] || continue
 
-  # Skip files that already have an extension
-  has_extension "$file" && continue
+  # Skip files that already have an extension — but still inject frontmatter into .md docs files missing it
+  if has_extension "$file"; then
+    if [[ "$file" == *.md ]] && [[ "$file" != docs/kb/* ]] && ! has_frontmatter "$file" && is_markdown_content "$file"; then
+      inject_frontmatter "$file"
+      git add "$file"
+      FRONTMATTER_INJECTED+=("$file")
+    fi
+    continue
+  fi
 
   # Skip files with a known non-markdown extension
   is_ignored_extension "$file" && continue
