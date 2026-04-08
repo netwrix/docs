@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # DLL Hijack Protection Demo 2: Poorly Designed Apps Protection
 
-Scenario 2: A poorly designed application loads a DLL by name instead of using a full path — a common DLL hijacking vulnerability.
+Demo 2: A poorly designed application loads a DLL by name instead of using a full path — a common DLL hijacking vulnerability.
 
 In this demo:
 

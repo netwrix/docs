@@ -6,8 +6,6 @@ sidebar_position: 10
 
 # DLL Hijack Protection
 
-## Overview
-
 DLL Hijack Protection helps prevent attackers from exploiting how Windows loads dynamic link libraries (DLLs).
 Some applications load DLLs by name instead of full path. Windows then searches multiple locations — starting with the application's own folder. If that folder is writable by a standard user, a malicious DLL can be dropped in and executed by the application.
 DLL Hijack Protection detects and blocks these scenarios by inspecting DLL loads before they execute.
@@ -49,7 +47,7 @@ Applies to:
 
 ## What Is Considered "Risky"
 
-A DLL load is considered unsafe when the DLL can be modified by a user who is not trusted (that is, a user not listed in the Approved Members list, described in the next section).
+A DLL load is considered unsafe when the DLL can be modified by a non-approved user — that is, a user not in the Approved Members list (described in the next section).
 
 In practice, this means the DLL is located in a user-writable location. If this condition is met, the load is treated as suspicious and can be blocked.
 
@@ -122,7 +120,9 @@ Blocks the DLL load. Options:
 
 Allows the behavior and logs the event. Primarily used during testing or phased rollout.
 
-### Audit Mode
+---
+
+## Audit Mode
 
 Logs would-be blocks without enforcing them. Use Audit Mode during initial rollout to assess impact before switching to an enforcement mode.
 
@@ -197,6 +197,6 @@ Result: **Allowed**
 
 - Behavior depends heavily on file permissions. Unexpected access control lists (ACLs) can cause blocks.
 - Some legacy apps may require exclusions.
-- Elevation policy timing can occasionally cause a process to be misclassified. If you see unexpected blocks on elevated processes, verify which elevation policy applies to that process.
+- If Endpoint Privilege Manager has not finished evaluating a process's elevation policy before DLL Hijack Protection runs, the process may be misclassified. If you see unexpected blocks on elevated processes, verify which elevation policy applies to that process.
 
 ---
