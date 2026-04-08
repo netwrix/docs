@@ -1,7 +1,7 @@
 ---
 title: "Auto Rules Generator Tool (with SecureRun)"
 description: "Auto Rules Generator Tool (with SecureRun)"
-sidebar_position: 50
+sidebar_position: 30
 ---
 # Auto Rules Generator Tool (with SecureRun)
 
