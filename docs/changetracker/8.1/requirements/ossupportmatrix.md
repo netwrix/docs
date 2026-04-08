@@ -10,7 +10,7 @@ This page lists the platforms and use cases that Netwrix has verified. However, 
 may work on other platforms that have gcc (4.8+) compiler available.
 
 ## Hub Compatibility Matrix
-The table below shows Hub releases and the compatible components.
+The following table shows Hub releases and the compatible components.
 
 | Hub   | Gen7 Agent | Express Agent | Sync Service | MongoDB | .NET  |
 | ----- | ---------- | ------------- | ------------ | ------- | ----- |
@@ -22,7 +22,7 @@ The table below shows Hub releases and the compatible components.
 
 ## Windows Operating Systems
 
-The versions below cover Standard and Datacenter editions, plus the server core installation option.
+The versions in the following table cover Standard and Datacenter editions, plus the server core installation option.
 
 | Windows Operating Systems Supported | Change Tracker Management Software | Change Tracker Agent | Express Agent | Change Tracker Agentless |
 | ----------------------------------- | ---------------------------------- | -------------------- | ------------- | ------------------------ |
@@ -47,7 +47,7 @@ architectures upon request.
 | Rocky Linux 8+       |                                    | YES\*                | YES           | YES                      |
 
 \* Support for CentOS 7, RHEL 7, Fedora 39 and Oracle Linux 7 is only possible with v7.1.4 of the
-agent, later versions aren't supported on these legacy OS releases.
+agent, later versions don't support these legacy OS releases.
 
 ## Linux (Debian Based) Operating Systems
 
