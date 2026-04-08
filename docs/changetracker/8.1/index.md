@@ -50,8 +50,8 @@ xccdf content.
 
 ## Solution Architecture
 
-Netwrix Change Tracker is delivered as a 100% software solution. The central server component can be
-installed on either a Windows or Linux platform. A virtual host is supported but resources, and in
+Netwrix delivers Change Tracker as a 100% software solution. The central server component can be
+installed on either a Windows or Linux platform. Change Tracker supports virtual hosts, but resources, and in
 particular disk I/O performance, are critical. See the agent installation guides for your platform:
 
 - [Installing Gen 7 Agent for Windows](/docs/changetracker/8.1/install/agent/windows.md)
