@@ -39,21 +39,21 @@ products. In this way, Change Tracker automates the entire process by reviewing 
 against pre-defined Planned Change rules, or by retrospectively building new Planned Change Rules
 based on observed changes, hence the Closed-Loop terminology.
 
-Any changes recorded that are not matched by a Planned Change rule are reported as being potentially
+Any changes recorded that aren't matched by a Planned Change rule are reported as being potentially
 breach activity. In this way, Change Tracker provides a Host Intrusion Detection System capability.
 
 Netwrix Change Tracker have been awarded Security Software Certification for CIS Benchmarks.
 
 Other Netwrix products have also received several rewards including a series of Five Star reviews
 from SC Magazine and a Winners Award from Computer Defense Magazine. Netwrix is also an official
-OVAL Adopter utilizing OVAL vulnerability and inventory and compliance content in either SCAP or
+OVAL Adopter using OVAL vulnerability and inventory and compliance content in either SCAP or
 xccdf content.
 
 ## Solution Architecture
 
 Netwrix Change Tracker is delivered as a 100% software solution. The central server component can be
 installed on either a Windows or Linux platform. A virtual host is supported but resources, and in
-particular disk I/O performance, are critical. For more information please see:
+particular disk I/O performance, are critical. For more information see:
 
 - [Installing Gen 7 Agent for Windows](/docs/changetracker/8.1/install/agent/windows.md)
 - [Installing Gen 7 Agent for Linux](/docs/changetracker/8.1/install/agent/linuxos.md)
