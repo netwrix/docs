@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # DLL Hijack Protection: I turned it on and now getting all kinds of pop-ups
 
-You turn on DLL Hijack Protection — and suddenly apps like OneDrive start throwing block prompts.
+You turn on DLL Hijack Protection — and suddenly apps like OneDrive start displaying block prompts.
 
 The software is legitimate, but its behavior triggers DLL Hijack Protection.
 

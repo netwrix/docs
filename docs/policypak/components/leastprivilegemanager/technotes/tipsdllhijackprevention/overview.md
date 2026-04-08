@@ -14,7 +14,7 @@ This feature detects and blocks those scenarios.
 
 ---
 
-## What the Feature Actually Enforces
+## What the Feature Enforces
 
 DLL Hijack Protection makes a decision based on three things:
 
@@ -22,7 +22,7 @@ DLL Hijack Protection makes a decision based on three things:
 2. **Is the DLL load considered risky?**
 3. **Is there an exclusion that overrides the behavior?**
 
-Blocking occurs only when all three conditions are met.
+Blocking occurs when the first two conditions are met and no exclusion applies.
 
 ---
 
@@ -115,6 +115,10 @@ Blocks the DLL load. Options:
 ### Allow and Log
 
 Allows the behavior and logs the event. Primarily used during testing or phased rollout.
+
+### Audit Mode
+
+Logs would-be blocks without enforcing them. Use Audit Mode during initial rollout to assess impact before switching to an enforcement mode.
 
 ---
 

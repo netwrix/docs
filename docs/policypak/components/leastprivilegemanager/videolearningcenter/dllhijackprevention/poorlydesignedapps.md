@@ -12,6 +12,6 @@ In this demo:
 
 - The app runs and successfully pulls in a malicious Evil.dll, proving the hijack works.
 - DLL Hijack Protection is enabled — the attack is blocked and logged.
-- A false positive is handled: create a DLL Hijack rule, and the block is removed because IT has explicitly approved that DLL.
+- To handle a false positive, create a DLL Hijack rule to allow the approved DLL.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YijxsLRGMTw" title="DLL Hijack Protection Demo 2: Poorly Designed Apps Protection" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

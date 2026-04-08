@@ -19,7 +19,7 @@ DLL Hijack Protection flags and blocks it.
 
 Note, however, that this is sometimes intentional:
 
-In this demo, two ways to handle it are demonstrated:
+This demo shows two ways to handle it:
 
 - **Option 1:** Authorize the identity (allow a specific user or group to perform this action)
 - **Option 2:** Authorize the DLL itself using a matching rule (path, hash, or publisher)
