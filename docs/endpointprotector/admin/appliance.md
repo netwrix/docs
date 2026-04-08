@@ -86,16 +86,23 @@ In this section you can modify or add a DNS server address and then Save your ch
 
 ![Modify or add a DNS server address and then Save your changes](dnsconfg.webp)
 
-### Client Registration Certiﬁcate
+### Communication Security
 
-From this section, you can register and then verify the Endpoint Protector Client certiﬁcate
-signature. The client registration certiﬁcate is an additional security measure enabling
-certiﬁcate-based authentication.
+By default, all communication between Endpoint Protector Clients and the Endpoint Protector Server is encrypted using mutual TLS (mTLS). Both sides present certificates during the TLS handshake, ensuring that data in transit is protected against interception.
+
+To further harden the registration and communication process, Endpoint Protector provides two additional, optional security features that build on this foundation: **Client Registration Certificate** and **Server Certificate Validation**. When enabled, these options introduce certificate pinning into the client lifecycle — verifying not just that communication is encrypted, but
+that both endpoints are who they claim to be. 
 
 :::warning
 The Client Registration Certiﬁcate feature is not available for Linux!
 :::
 
+### Client Registration Certiﬁcate
+
+The Client Registration Certificate feature enriches the client registration process by adding a certificate verification component: the Endpoint Protector Server validates the client's certificate during the registration phase, ensuring that only clients presenting a cryptographic identity signed by a trusted CA are allowed to register.
+This provides an additional layer of protection in the enrollment flow —   ensuring that only authorized, managed devices can register with the EPP   Server, even when operating on shared or untrusted networks.
+
+**Configuration**
 
 **Step 1 –** Enable the custom certiﬁcate setting and then upload the certiﬁcate chain, Root CA and
 Intermediate;
@@ -116,6 +123,8 @@ just for testing the signature (for example the Endpoint Protector Client certi�
 **Step 3 –** Click **Save** and allow 2 minutes for the information to be validated. You will view a
 successful message conﬁrming the custom certiﬁcate was added and the test certiﬁcate is valid.
 
+ **Requirements**
+
 :::note
 The client registration authentication certiﬁcate and the Endpoint Protector server
 certiﬁcate must be issued by the same CA.
@@ -133,29 +142,41 @@ the endpoints.
 
 ### Server Certiﬁcate Validation
 
-From this section, you can conﬁgure Server Certiﬁcate Validation, which ensures that certiﬁcates
-used for all communication requests on Endpoint Protector clients are validated. This feature is
-crucial for maintaining secure communication between various Endpoint Protector products.
+While Client Registration Certificate secures the registration phase, Server   Certificate Validation extends certificate verification to all ongoing communication. When enabled, the Endpoint Protector Client validates the server's SSL certificate on every outbound request — ensuring that clients only communicate with a trusted, legitimate Endpoint Protector Server and cannot be redirected to a rogue or impersonated instance.
+When enabled,the EPP Client validates the server's SSL certificate on every outbound request, verifying three key properties:
+- **Certificate trust** — the server certificate must be issued by a trusted Certificate Authority recognized by the endpoint.
+- **Expiration date** — the server certificate must be currently valid and not expired.
+- **Hostname matching** — the server certificate's Common Name (CN) or Subject Alternative Name (SAN) must match the hostname the client is connecting to.
+
+
+:::note
+Starting from the 5.9.0.0 or later, enabling this option activates Endpoint Protector Server Certiﬁcate Validation for all Endpoint Protector Client communication. This strengthens security by ensuring trusted and valid certiﬁcates are used.
+:::
+
+**Configuration**
+
+From this section, you can conﬁgure Server Certiﬁcate Validation, which ensures that certiﬁcates used for all communication requests on Endpoint Protector clients are validated. 
+
+![From this section, you can conﬁgure Server Certiﬁcate Validation.](servercertiﬁcatevalidation.webp)
+
+Before enabling, verify that:
+- The EPP Server certificate is valid and not expired.
+- The EPP Server certificate is issued by a CA trusted by all managed endpoints.
+- The EPP Server hostname matches the certificate's CN or SAN exactly.
+
+**Client-Side Configuration**
+The server-side configuration alone is not sufficient — the EPP Client must also be prepared to participate in certificate-based registration. This is done at installation time.
+When installing the Endpoint Protector Client on Windows or macOS, the   installer wizard includes an **Increased Communication Security** checkbox. Enabling this option instructs the EPP Client to use the certificate-based authentication flow during registration and all subsequent communication with the EPP Server. For detailed installation steps and a walkthrough of the installer wizard, refer to the [Agent Installation](/docs/endpointprotector/admin/agent.md#increased-communication-security) section.
+
+:::warning
+Please use this feature responsibly. Improper certificate configuration combined with enabled certificate validation may disrupt Endpoint Protector Client to Endpoint Protector Server communication.
+**For a successful connection, both server and client certificate validation must be enabled.**
+:::
 
 :::note
 All certiﬁcate validation statuses will be reported to the Endpoint Protector Server and
 stored for debugging purposes in Endpoint Protector Client logs.
 :::
-
-
-:::warning
-Please use this feature responsibly, as improper certiﬁcate usage with certiﬁcation
-validation might disrupt Endpoint Protector Client to Endpoint Protector Server communication. For a
-successful connection, both server and client certificate validation must be enabled.
-:::
-
-
-:::note
-Starting from the 5.9.0 or later, enabling this option activates Endpoint Protector Server
-Certiﬁcate Validation for all Endpoint Protector Client communication. This strengthens security by
-ensuring trusted and valid certiﬁcates are used.
-:::
-
 
 ### Appliance Operations
 

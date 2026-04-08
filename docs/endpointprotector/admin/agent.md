@@ -170,6 +170,17 @@ Optional distributions will be provided on the product portal and are available 
 
 ![The Agent enforces the Rights and Settings received from the Endpoint Protector Server on the protected endpoints (Windows, Mac, and Linux)](setupagenttwo.webp)
 
+### Increased Communication Security
+
+During interactive installation, the installer wizard includes an **Increased Communication Security** checkbox. When enabled, the EPP Client will use certificate-based authentication during the registration process and for all subsequent communication with the EPP Server.
+This option corresponds to the **Client Registration Certificate** feature configured on the server side. Before enabling it, ensure that a cryptographic identity signed by the EPP Root CA has been deployed to the endpoint and is present in **Certificate Manager** under *Local Computer → Certificates → Personal*.
+
+
+:::note
+This option requires the **Client Registration Certificate** feature to be enabled and configured on the EPP Server ([**Appliance → Server Maintenance → Client Registration Certificate**](/docs/endpointprotector/admin/appliance.md#server-certiﬁcate-validation)) before the client is installed. Enabling it without the corresponding server-side configuration will prevent the client from registering.
+:::
+
+
 ### Installation on macOS with Deep Packet Inspection and VPN Traﬃc Intercept Active
 
 Follow the steps to install on macOS with Deep Packet Inspection and VPN Traffic Intercept active.

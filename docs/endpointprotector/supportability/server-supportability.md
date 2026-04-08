@@ -18,7 +18,7 @@ Here is the current state of all versions of Endpoint Protector Server.
 
 | **Discontinued Support** | **Limited Support** | **N-1 Track (Active Support)** | **N Track (Active Support)** |
 | --- | --- | --- | --- |
-| All versions prior to 5.9.4.1 | 5.9.4.2 (5942)<br/><br/>In Limited Support from Oct 14, 2025 to Feb 11, 2026. (120 days)<br/><br/>No new feature development or critical fixes.<br/><br/>Support is limited to configuration guidance for 5942. | There is no N-1 track at this time. | 2509.0.1.0 (25.9)<br/><br/>Released Oct 14, 2025.<br/>Full Active Support. [Link to release notes](https://community.netwrix.com/t/major-version-announcement-endpoint-protector-server-version-2509/114025) |
+| All versions prior to 5.9.4.2 <br/> Limited support endend Feb 11, 2026. | | There is no N-1 track at this time. | 2602.0.1.0 (Base image 2509/2510)<br/><br/>Released Feb 5, 2026.<br/>Full Active Support. [Link to release notes](https://community.netwrix.com/t/endpoint-protector-2602-0-1-0-server-patch-released/121912) |
 
 # Support Definitions Used In This Document
 
