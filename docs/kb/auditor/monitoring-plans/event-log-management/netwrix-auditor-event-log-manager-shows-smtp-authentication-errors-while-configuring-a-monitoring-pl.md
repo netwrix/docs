@@ -45,7 +45,7 @@ Follow the steps below to resolve the issue:
 1. Make sure that TLS 1.2 is enabled on the target server:
    - Open **Registry Editor** and navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client\Enabled`.
    - If enabled, the key value should be `"1"`.
-   - For additional information about TLS enabling, refer to the following article: Сonnection Issue when TLS 1.2 Is Required.
+   - For additional information about TLS enabling, refer to the following article: Connection Issue when TLS 1.2 Is Required.
 
 2. Configure all .NET Framework keys on the Netwrix Auditor and target server(s). Use the [download link](https://netwrix.com/download/products/KnowledgeBase/TLSRegkey.reg) to configure registry keys automatically. Run the file on your Auditor Server and all target servers.
 

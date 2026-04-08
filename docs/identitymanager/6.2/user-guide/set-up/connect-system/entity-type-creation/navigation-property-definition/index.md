@@ -22,25 +22,25 @@ information.
 > to other groups. In the UI, `memberOf` is displayed just like scalar properties, but you can click
 > its values to access each group in the list. Here for the AD entry `ADM Vidal Pierre`:
 >
-> ![Navigation Property - memberOf](/images/identitymanager/saas/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_memberof_v600.webp)
+> ![Navigation Property - memberOf](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_memberof_v600.webp)
 >
 > Clicking on one of these groups will display the group’s properties, including the other side of
 > the `memberOf` property—called `member`—which contains the list of users and groups who are
 > members. Example: `SG_APP_RAY_0_LDAP_READLDSFEDE`:
 >
-> ![Navigation Property - member](/images/identitymanager/saas/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_member_v600.webp)
+> ![Navigation Property - member](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_member_v600.webp)
 
 > As another example, a department is linked to a manager who is an existing user. The user
 > identifier is used in the `Manager` property to create the link between department and manager. In
 > the UI, `Manager` is displayed like scalar properties, but you can click it to access the
 > manager’s page:
 >
-> ![Navigation Property - Manager](/images/identitymanager/saas/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_manager_v600.webp)
+> ![Navigation Property - Manager](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_manager_v600.webp)
 >
 > Clicking the manager displays their properties, including the `Department` property, which points
 > back to the managed department:
 >
-> ![Navigation Property - Managed Department](/images/identitymanager/saas/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_managerof_v600.webp)
+> ![Navigation Property - Managed Department](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_managerof_v600.webp)
 
 Navigation properties can create a link:
 
@@ -80,7 +80,7 @@ Define navigation properties by following these steps:
    select the ones to use.
 4. Fill in the information fields:
 
-    ![Navigation Properties](/images/identitymanager/saas/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_navigationproperties_v602.webp)
+    ![Navigation Properties](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_navigationproperties_v602.webp)
 
     If you map a column from the source, the first line is for the source column, and the second is
     the new navigation property in Identity Manager (always in the entity type).
@@ -126,11 +126,11 @@ Define navigation properties by following these steps:
 > `Entries`, `assistant`, `assistantOf`, `manager`, `directReports`, `memberOf`, `member`,
 > `parentdn`, `children`
 
-**> ![AD Entity Type - Navigation Properties](/images/identitymanager/saas/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_examplead3_v603.webp)**
+**> ![AD Entity Type - Navigation Properties](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition/entitytypecreation_examplead3_v603.webp)**
 
 5. Click the gear icon to access advanced settings:
 
-    ![Advanced Settings](/images/identitymanager/saas/user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition/entitytypecreation_propertiessettings_v602.webp)
+    ![Advanced Settings](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition/entitytypecreation_propertiessettings_v602.webp)
 
     - `Icon`: Choose from [Microsoft icon set](https://uifabricicons.azurewebsites.net/)
     - **Source Expression**: Define using a property path or
@@ -138,7 +138,7 @@ Define navigation properties by following these steps:
 
         > Example: Scalar `isUnused` created by combining `accountExpires` and `lastLogonTimestamp`
         >
-        > ![Source Expression Example](/images/identitymanager/saas/user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition/entitytypecreation_sourceexpressionexample_v60.webp)
+        > ![Source Expression Example](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition/entitytypecreation_sourceexpressionexample_v60.webp)
 
     - `Flexible Comparison Expression`: Adds advanced search matching
     - `History Precision`: Set how often property history is recorded
@@ -156,7 +156,7 @@ Clicking **Continue** closes the window but **does not save** the configuration.
 After saving, a green banner reminds you to reload the schema.
 It’s not necessary after every step—but is **required after the final step** to apply changes.
 
-![Reload](/images/identitymanager/saas/user-guide/set-up/connect-system/entity-type-creation/key-selection/entitytypecreation_reload_v522.webp)
+![Reload](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/key-selection/entitytypecreation_reload_v522.webp)
 
 The **Reload** button ensures updates appear in the menu links on the UI home page.
 You’ll find it either in the banner or on the connector dashboard.

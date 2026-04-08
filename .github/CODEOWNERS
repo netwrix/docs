@@ -141,6 +141,12 @@
 /static/files/recoveryforactivedirectory/ @netwrix/recoveryforactivedirectory-docs
 /static/images/recoveryforactivedirectory/ @netwrix/recoveryforactivedirectory-docs
 
+# Identity Recovery team
+/docs/identityrecovery/ @netwrix/recoveryforactivedirectory-docs
+/sidebars/identityrecovery/ @netwrix/recoveryforactivedirectory-docs
+/static/files/identityrecovery/ @netwrix/recoveryforactivedirectory-docs
+/static/images/identityrecovery/ @netwrix/recoveryforactivedirectory-docs
+
 # Threat Manager team
 /docs/threatmanager/ @netwrix/threatmanager-docs
 /sidebars/threatmanager/ @netwrix/threatmanager-docs

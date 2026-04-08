@@ -10,6 +10,7 @@ With the Netwrix Auditor, the following Data Sources can be monitored:
 
 - [Active Directory](/docs/auditor/10.8/configuration/activedirectory/overview.md)
 - [AD FS](/docs/auditor/10.8/configuration/activedirectoryfederatedservices/overview.md)
+- [Azure Files](/docs/auditor/10.8/configuration/azurefiles/overview.md)
 - [Exchange](/docs/auditor/10.8/configuration/exchange/overview.md)
 - [File Servers](/docs/auditor/10.8/configuration/fileservers/overview.md)
 
@@ -37,3 +38,8 @@ With the Netwrix Auditor, the following Data Sources can be monitored:
 - [User Activity](/docs/auditor/10.8/configuration/useractivity/overview.md)
 - [VMware](/docs/auditor/10.8/configuration/vmware/overview.md)
 - [Windows Server](/docs/auditor/10.8/configuration/windowsserver/overview.md)
+
+## Suggest a New Data Source
+If you haven't found a suitable data source or have questions or comments about existing 
+ones, open a new topic in [Community > Products > Auditor > Ideas](https://community.netwrix.com/c/products/auditor/ideas/93)
+to discuss your feedback and get assistance.

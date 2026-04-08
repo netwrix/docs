@@ -22,7 +22,7 @@ By implementing Platform Governance for Salesforce you can:
 
 ## Installation and Initial Scan
 
-Once you install Platform Governance for Salesforce, you simply click the **Start Spider** button
+Once you install Platform Governance for Salesforce, you click the **Start Spider** button
 and your customizations are documented over the course of 4-5 days with minimal impact on system
 performance. Once completed, you have a searchable database of all your customizations.
 
@@ -36,7 +36,7 @@ have your account both fully documented and optimized.
 Use the end to end documentation of custom objects and our Clean Up Tools to:
 
 - Identify unused fields, searches and other custom objects.
-- Quickly identify dependencies to reduce the risk of breaking things in your account (i.e. see if a
+- Quickly identify dependencies to reduce the risk of breaking things in your account (for example, see if a
   search is being used in a script or workflow).
 - Use Change Requests to keep your changes organized and capture approvals.
 
@@ -77,7 +77,7 @@ Enterprise Compliance.
 The Environment Management Module enables Salesforce customers and consultants to quickly and
 accurately identify differences between any two Salesforce accounts that have Intelligent Change
 Management installed. Since both accounts have Platform Governance for Salesforce documentation in
-place, the tool can quickly and easily compare them. It is principally used in four scenarios:
+place, the tool can quickly compare them. It is principally used in four scenarios:
 
 - Sandbox Refreshes
 - Migrating Customizations Between Developer and Sandbox Accounts

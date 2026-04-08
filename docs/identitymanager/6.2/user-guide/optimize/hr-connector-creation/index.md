@@ -49,7 +49,7 @@ data, through a certification-like process.
 An HR connector is considered an inbound connector, as it writes to the central identity repository
 inside Identity Manager.
 
-![Inbound System=](/images/identitymanager/saas/user-guide/optimize/hr-connector-creation/connectorcreation_inbound.webp)
+![Inbound System=](/images/identitymanager/user-guide/optimize/hr-connector-creation/connectorcreation_inbound.webp)
 
 As Identity Manager is able to feed all managed systems, it can also feed itself thanks to specific
 connections such as the
@@ -81,27 +81,27 @@ Create an HR connector by proceeding as follows:
    [Create the Connector](/docs/identitymanager/6.2/user-guide/set-up/connect-system/connector-declaration/index.md) topic for
    additional information.
 
-    ![HR Connector Declaration](/images/identitymanager/saas/user-guide/optimize/hr-connector-creation/hr_connectordeclaration_v602.webp)
+    ![HR Connector Declaration](/images/identitymanager/user-guide/optimize/hr-connector-creation/hr_connectordeclaration_v602.webp)
 
 3. Create an Export CSV connection for each HR file to connect. See the
    [Create a Connection](/docs/identitymanager/6.2/user-guide/set-up/connect-system/connection-creation/index.md) topic for
    additional information.
 
-    ![HR Connection](/images/identitymanager/saas/user-guide/optimize/hr-connector-creation/hr_connection_v602.webp)
+    ![HR Connection](/images/identitymanager/user-guide/optimize/hr-connector-creation/hr_connection_v602.webp)
 
 4. [Create an Entity Type](/docs/identitymanager/6.2/user-guide/set-up/connect-system/entity-type-creation/index.md) corresponding
    to your model. For example:
 
-    ![HR Entity Type - Scalar Properties](/images/identitymanager/saas/user-guide/optimize/hr-connector-creation/hr_entitytypes_v602.webp)
+    ![HR Entity Type - Scalar Properties](/images/identitymanager/user-guide/optimize/hr-connector-creation/hr_entitytypes_v602.webp)
 
-    ![HR Entity Type - Navigation Properties](/images/identitymanager/saas/user-guide/optimize/hr-connector-creation/hr_entitytypen_v602.webp)
+    ![HR Entity Type - Navigation Properties](/images/identitymanager/user-guide/optimize/hr-connector-creation/hr_entitytypen_v602.webp)
 
 5. Don't forget to reload and [Synchronize Data](/docs/identitymanager/6.2/user-guide/set-up/synchronization/index.md) to access
    HR data within Identity Manager.
 
-    ![Reload](/images/identitymanager/saas/user-guide/set-up/connect-system/entity-type-creation/key-selection/entitytypecreation_reload_v522.webp)
+    ![Reload](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/key-selection/entitytypecreation_reload_v522.webp)
 
-    ![Synchronize Job](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_executionjobs_v602.webp)
+    ![Synchronize Job](/images/identitymanager/user-guide/set-up/synchronization/synchro_executionjobs_v602.webp)
 
 ## Verify HR Connector Creation
 
@@ -111,16 +111,16 @@ In order to verify the process:
 2. Access the connector's logs (from **Job Results** on the connector's dashboard) to ensure that
    synchronization completed successfully.
 
-    ![Jobs Results](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_results_v603.webp)
+    ![Jobs Results](/images/identitymanager/user-guide/set-up/synchronization/synchro_results_v603.webp)
 
 3. Check that the entity types have been added to the left menu of the home page.
 
-    ![Test Entity Type](/images/identitymanager/saas/user-guide/optimize/hr-connector-creation/hr_validatemenu_v600.webp)
+    ![Test Entity Type](/images/identitymanager/user-guide/optimize/hr-connector-creation/hr_validatemenu_v600.webp)
 
 4. Access the relevant entity types (from the menu items on the left of the home page) to check
    synchronized resources, by navigating in the UI from the accounts through a sample of
    associations, via the Eye icon:
 
-    ![Eye Icon](/images/identitymanager/saas/user-guide/set-up/synchronization/iconeye_v600.svg)
+    ![Eye Icon](/images/identitymanager/user-guide/set-up/synchronization/iconeye_v600.svg)
 
     You should seek configuration validation, not validation of the actual data being synchronized.

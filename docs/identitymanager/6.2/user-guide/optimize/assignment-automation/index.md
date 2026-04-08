@@ -29,7 +29,7 @@ decisions, based on several automation levels provided by Identity Manager:
 3. Automation of the creation of said assignment rules through
    [Perform Role Mining](/docs/identitymanager/6.2/user-guide/optimize/assignment-automation/role-mining/index.md), based on existing data analysis.
 
-![Automation Concept](/images/identitymanager/saas/user-guide/optimize/assignment-automation/automation_schema.webp)
+![Automation Concept](/images/identitymanager/user-guide/optimize/assignment-automation/automation_schema.webp)
 
 Assignment rules can sometimes give to users an entitlement that they had already received manually.
 Hence, new assignment rules can imply redundancies between the entitlements assigned manually and
@@ -64,7 +64,7 @@ The entitlement management cost mainly varies according to the number of managed
 Manual processing for entitlement requests implies a linear growth of the management cost according
 to the number of managed entitlements.
 
-![Optimal Cost Chart - Manual Assignments](/images/identitymanager/saas/user-guide/optimize/assignment-automation/automation_optimalcost_manual.webp)
+![Optimal Cost Chart - Manual Assignments](/images/identitymanager/user-guide/optimize/assignment-automation/automation_optimalcost_manual.webp)
 
 ### Automation benefits
 
@@ -78,7 +78,7 @@ There is a high potential gain coming with the automation of assignment decision
 - Machine Learning can compute the role model way faster than a person. Consequently, the model can
   be computed more frequently and thus sticks closer to reality.
 
-![Optimal Cost Chart - Automation Benefits](/images/identitymanager/saas/user-guide/optimize/assignment-automation/automation_optimalcost_automationbenefits.webp)
+![Optimal Cost Chart - Automation Benefits](/images/identitymanager/user-guide/optimize/assignment-automation/automation_optimalcost_automationbenefits.webp)
 
 Automation helps integrators find basic assignment rules and face the previous risks, thus reducing
 cost.
@@ -113,7 +113,7 @@ However, automation implies an increasing number of rules. And a high number of 
 certain complexity in rule model understanding, and consequently hiring expensive expert contractors
 to write the right rules. It drives up costs considerably and draws you near the automation wall.
 
-![Optimal Cost Chart - Automation Limits](/images/identitymanager/saas/user-guide/optimize/assignment-automation/automation_optimalcost_automationlimits.webp)
+![Optimal Cost Chart - Automation Limits](/images/identitymanager/user-guide/optimize/assignment-automation/automation_optimalcost_automationlimits.webp)
 
 The automation wall represents the automation threshold that cannot be overcome. It mostly comes
 from the fact that with limited data, automation capabilities are also limited. Everything cannot be
@@ -125,7 +125,7 @@ The idea is to stop automation when the automatic cost curve increases faster th
 curve. The optimal profitability is represented on the chart and can be achieved via the optimal mix
 of automatic and manual assignments.
 
-![Optimal Cost Chart](/images/identitymanager/saas/user-guide/optimize/assignment-automation/automation_optimalcost.webp)
+![Optimal Cost Chart](/images/identitymanager/user-guide/optimize/assignment-automation/automation_optimalcost.webp)
 
 Automation strategy consists in using Machine Learning through Role Mining to get closer to the
 automation wall. And, as Role Mining doesn't enable overcoming said wall, the goal is to move the
@@ -152,7 +152,7 @@ The process of assignment automation is the following:
     error rate and implies a lower execution cost. And thus, it brings the optimal cost closer to
     the automation wall.
 
-    ![Optimal Cost Chart - Role Mining](/images/identitymanager/saas/user-guide/optimize/assignment-automation/automation_optimalcost_rolemining.webp)
+    ![Optimal Cost Chart - Role Mining](/images/identitymanager/user-guide/optimize/assignment-automation/automation_optimalcost_rolemining.webp)
 
     **Enlarge the number of managed entitlements by tolerating errors:**
 
@@ -177,22 +177,22 @@ The process of assignment automation is the following:
     > except for `SharePoint Projects`. This fact reveals a low level of awareness among the workers
     > about their respective projects. This is a typical area for improvement in data quality.
     >
-    > ![Data Quality Example](/images/identitymanager/saas/user-guide/optimize/assignment-automation/automation_dataquality_ex.webp)
+    > ![Data Quality Example](/images/identitymanager/user-guide/optimize/assignment-automation/automation_dataquality_ex.webp)
 
     > For example, if charts show a high number of identities in the category `No Position`,
     > integrators understand that the data model must be completed for role mining to be efficient.
     >
-    > ![Data Quantity Example](/images/identitymanager/saas/user-guide/optimize/assignment-automation/automation_dataquality_ex2.webp)
+    > ![Data Quantity Example](/images/identitymanager/user-guide/optimize/assignment-automation/automation_dataquality_ex2.webp)
 
     > For example, if charts show a high number of unused roles, integrators understand that the
     > role model needs further improvement because roles are not adequate.
     >
-    > ![Data Quality Example](/images/identitymanager/saas/user-guide/optimize/assignment-automation/automation_dataquality_ex3.webp)
+    > ![Data Quality Example](/images/identitymanager/user-guide/optimize/assignment-automation/automation_dataquality_ex3.webp)
 
     > For example, if charts show low automation rate per department, integrators will understand
     > that many identities may have switched departments while keeping their previous entitlements.
     >
-    > ![Data Quality Example](/images/identitymanager/saas/user-guide/optimize/assignment-automation/automation_dataquality_ex4.webp)
+    > ![Data Quality Example](/images/identitymanager/user-guide/optimize/assignment-automation/automation_dataquality_ex4.webp)
 
 3. Improve data quality and quantity to move the automation wall.
 
@@ -202,7 +202,7 @@ The process of assignment automation is the following:
     Improvement in existing data quantity and quality entails the possibility of managing a higher
     number of entitlements.
 
-    ![Optimal Cost Chart - Improved Data](/images/identitymanager/saas/user-guide/optimize/assignment-automation/automation_optimalcost_data.webp)
+    ![Optimal Cost Chart - Improved Data](/images/identitymanager/user-guide/optimize/assignment-automation/automation_optimalcost_data.webp)
 
     A high quantity of data simplifies data analysis and inferences in assignment rules.
 

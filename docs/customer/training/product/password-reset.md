@@ -1,6 +1,6 @@
 ---
 title: Netwrix Password Reset Learning Path
-sidebar_position: 210
+sidebar_position: 215
 tags: [getting-started, training, password-reset]
 keywords: [training, course, password reset]
 description: "Learn to use Netwrix Password Reset through courses"

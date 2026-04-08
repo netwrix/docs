@@ -7,7 +7,7 @@ sidebar_position: 80
 # Change Enablement
 
 It is commonly believed doing things faster is more dangerous, and doing things slowly and carefully
-is safer. In today’s world, slower is simply not an option. Platform Governance for Salesforce
+is safer. In today's world, slower is not an option. Platform Governance for Salesforce
 realized that **Faster** can also be **Safer** and sometimes **Very Fast** can be **Extremely
 Safe**.
 

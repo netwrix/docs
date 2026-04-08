@@ -105,6 +105,11 @@
   border-color: var(--ifm-color-emphasis-200);
 }
 
+[data-theme='dark'] .featuredLabel {
+  background: linear-gradient(45deg, #8d1f1f, #835b00);
+  color: #fff;
+}
+
 .featuredCard::before {
   content: '';
   position: absolute;

@@ -41,7 +41,7 @@ Expression.
 
 For example, the source object of a scalar rule based on user records is displayed:
 
-![Property Path and Expression](/images/identitymanager/saas/integration-guide/toolkit/expressions/expression-propertypath_v602.webp)
+![Property Path and Expression](/images/identitymanager/integration-guide/toolkit/expressions/expression-propertypath_v602.webp)
 
 The field Property Path is usually filled in with the + button only when the rule involves one
 single attribute. If the object involves more than one attribute, then the attributes are to be
@@ -51,9 +51,9 @@ written in Expression (C#), with the help of predefined simple transformations. 
 The first example defines the source object as simply the user record's Login property, while the
 second defines the source object with an expression based on the user record's first and last names:
 
-![Property Path Example](/images/identitymanager/saas/integration-guide/toolkit/expressions/expression-propertypath-example1_v602.webp)
+![Property Path Example](/images/identitymanager/integration-guide/toolkit/expressions/expression-propertypath-example1_v602.webp)
 
-![Expression Example](/images/identitymanager/saas/integration-guide/toolkit/expressions/expression-propertypath-example2_v602.webp)
+![Expression Example](/images/identitymanager/integration-guide/toolkit/expressions/expression-propertypath-example2_v602.webp)
 
 ### Expressions in XML
 

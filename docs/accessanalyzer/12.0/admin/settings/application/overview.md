@@ -47,7 +47,7 @@ available in the Application log level drop-down menu include:
     - Records job completion time
 
 :::info
-Set the log level to **Warning**.
+Set the log level to **Warning**. The global log level determines what messages are written to the SA_Messages table and visible in the NAA Console. If a job has a higher log level than the global setting, those additional messages will be written to the job log only and will not appear in the database. For additional information on changing the job log level, see [Job Properties | General tab](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/jobs/job/properties/general).
 :::
 
 

@@ -25,7 +25,7 @@ Also, ensure these servers have enough RAM to prevent from performance loss - mi
 required, 16+ GB recommended.
 
 To learn more, see the How It Works and Deployment Planning topics in the Netwrix Data
-Classification Knowlege center:
+Classification Knowledge center:
 [Netwrix Data Classification Documentation](https://helpcenter.netwrix.com/category/dataclassification)..
 
 When planning for hardware resources, consider that insufficient CPU and RAM may lead to performance

@@ -14,7 +14,7 @@ map the properties in Identity Manager with those in ServiceNow, for provisionin
 Below is an example of an incident ticket in ServiceNow, where relevant properties (from Identity
 Manager's perspective) are emphasized:
 
-![ServiceNow Ticket Example](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/connectors/resourcetypemappings/servicenowresourcetypemapping/servicenow_example.webp)
+![ServiceNow Ticket Example](/images/identitymanager/integration-guide/toolkit/xml-configuration/connectors/resourcetypemappings/servicenow_example.webp)
 
 ## Examples
 

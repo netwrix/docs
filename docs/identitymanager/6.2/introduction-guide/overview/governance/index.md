@@ -18,7 +18,7 @@ Rules and roles define a policy. By definition, assignments not supported by a r
 with the policy. These assignments are identified as non-conforming in order to be acted upon by
 knowledgeable users who can decide whether the assignment is warranted, such as security officers.
 
-![Non-Conforming Assignments](/images/identitymanager/saas/integration-guide/role-assignment/assignments-of-entitlements/governance_nonconforming.webp)
+![Non-Conforming Assignments](/images/identitymanager/integration-guide/role-assignment/assignments-of-entitlements/governance_nonconforming.webp)
 
 A non-conforming assignment must be reviewed in Identity Manager by a knowledgeable user, and is
 therefore:

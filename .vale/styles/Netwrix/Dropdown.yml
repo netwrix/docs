@@ -1,0 +1,7 @@
+extends: substitution
+message: "Use 'dropdown' (one word). Avoid 'drop-down' and 'drop down'."
+level: warning
+ignorecase: true
+swap:
+  '\bdrop down\b': 'dropdown'
+  '\bdrop-down\b': 'dropdown'

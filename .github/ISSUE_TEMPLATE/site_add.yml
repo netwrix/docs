@@ -1,0 +1,74 @@
+name: Add feature to site
+description: Request new features for the documentation site.
+title: "Add: "
+labels: ["enhancement", "site", "docusaurus"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new feature for the documentation site!
+        Please provide as much information as possible about what functionality you'd like to see.
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature type (optional)
+      description: Select the type of feature you'd like to add (you can select multiple).
+      multiple: true
+      options:
+        - Search functionality
+        - Navigation (sidebar, menu, breadcrumbs)
+        - Theme or styling customization
+        - Interactive components or widgets
+        - Blog features
+        - SEO enhancements
+        - Accessibility improvements
+        - Analytics or tracking
+        - Performance optimization
+        - Content organization
+        - Custom plugin
+        - Other
+    validations:
+      required: false
+  - type: textarea
+    id: feature-request
+    attributes:
+      label: What functionality would you like to add?
+      description: |
+        Please describe the functionality or feature you'd like to add to the documentation site.
+        Include details about how it should work and where it should appear.
+        The documentation site is generated using Docusaurus, so the [Docusaurus documentation](https://docusaurus.io/docs) will be helpful for understanding the basics of what's possible.
+        Include any useful resources like links to similar features on other documentation sites, existing documentation, blog posts, mockups, diagrams, videos, GitHub repositories, or other tools and design ideas we can use. 
+        The more information you provide, the faster we can address your request.
+      placeholder: |
+        Examples:
+        - "Add a dark mode toggle to the site header."
+        - "Add a search filter to narrow results by product version."
+        - "Add the ability to bookmark frequently accessed pages."
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case or justification (optional)
+      description: |
+        Why is this functionality needed? What problem does it solve or what scenario does it address?
+      placeholder: |
+        Example: "Users frequently request a way to view the site in dark mode for better readability in low-light environments."
+    validations:
+      required: false
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Browsers (optional)
+      description: What browser are you using?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - Brave
+        - Opera
+        - Other
+    validations:
+      required: false

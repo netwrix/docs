@@ -148,5 +148,5 @@ When preparing to audit your Dell Isilon/PowerScale storage system, consider the
 
 - Auditing of the _System_ zone is not supported. As stated by Dell, this zone should be reserved
   for configuration access only. Current data should be stored in other access zones. See the
-  [Isilon OneFS 8.2.1 CLI Administration Guide](https://www.dellemc.com/en-us/collaterals/unauth/technical-guides-support-information/2019/09/docu95372.pdf)
+  [Isilon OneFS 9.10.0.0 Web Administration Guide](https://www.dell.com/support/manuals/en-al/isilon-onefs/ifs-pub-91000-administration-guide-gui/access-zones-best-practices?guid=guid-49c42b04-e9cd-4520-bfe4-ce2d2c389d87&lang=en-us)
   topic for additional information.

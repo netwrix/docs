@@ -17,7 +17,7 @@ System Health log**. Then, follow the instructions provided by Microsoft. See th
 for additional information on
 [How to Clear Event Logs](https://learn.microsoft.com/en-us/host-integration-server/core/how-to-clear-event-logs1).
 
-![healthlog](/images/auditor/10.7/admin/healthstatus/dashboard/healthlog.webp)
+![healthlog](/images/auditor/10.8/admin/healthstatus/dashboard/healthlog.webp)
 
 ## Netwrix Auditor System Health Log
 
@@ -87,6 +87,6 @@ Follow the steps to filter events.
 | Item name       | Select to display events from the certain item(s) you need.                                                                                                                                                             |
 | Event ID        | Enter event ID number or range of event IDs separated by commas. For example, 1, 3, 5-99. You can also exclude unwanted event IDs from being displayed. Type the minus sign before selected event ID. For example, -76. |
 
-![healthlogfilters_thumb_0_0](/images/auditor/10.7/admin/healthstatus/dashboard/healthlogfilters_thumb_0_0.webp)
+![healthlogfilters_thumb_0_0](/images/auditor/10.8/admin/healthstatus/dashboard/healthlogfilters_thumb_0_0.webp)
 
 The applied filters will be listed on the top of the screen under the window title.

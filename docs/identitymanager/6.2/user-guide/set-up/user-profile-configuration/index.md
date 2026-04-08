@@ -16,7 +16,7 @@ actions within Identity Manager, for a set of basic
 All the permissions for accessing items and performing actions in Identity Manager are managed by
 assigning profiles to users and permissions to profiles.
 
-![Schema - Profile Assignment](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/profiles_schema.webp)
+![Schema - Profile Assignment](/images/identitymanager/user-guide/set-up/user-profile-configuration/profiles_schema.webp)
 
 > For example, access to user lists with personal data is usually restricted to HR staff, and the
 > modification of personal data would be restricted to HR managers.
@@ -81,14 +81,14 @@ Configure a user profile by proceeding as follows:
 1. On the home page, click on **Settings** in the **Configuration** section, then on **General** >
    **Profiles** in the left menu.
 
-    ![Home - Configuration](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
+    ![Home - Configuration](/images/identitymanager/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
 
 2. Check whether the profile to configure is part of the provided list. If not, create it by
    clicking on the addition button at the top right and fill in the fields.
 
-    ![Addition Icon](/images/identitymanager/saas/user-guide/set-up/categorization/classification/iconadd_v602.svg)
+    ![Addition Icon](/images/identitymanager/user-guide/set-up/categorization/classification/iconadd_v602.svg)
 
-    ![New Profile](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/profiles_creation_v602.webp)
+    ![New Profile](/images/identitymanager/user-guide/set-up/user-profile-configuration/profiles_creation_v602.webp)
 
     - `Identifier`: must be unique among profiles and without any whitespace.
     - `Name`: will be displayed in the UI to identify the profile.
@@ -100,11 +100,11 @@ Configure a user profile by proceeding as follows:
 4. Follow Identity Manager's instructions for assigning permissions to the profile by clicking on
    the appropriate permissions, one by one, selecting if needed their responsibility scope.
 
-    ![Profile Configuration Example](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/profiles_example_v603.webp)
+    ![Profile Configuration Example](/images/identitymanager/user-guide/set-up/user-profile-configuration/profiles_example_v603.webp)
 
 5. Click on **Save** at the top of the page.
 
-    ![Save Icon](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/iconsave_v602.svg)
+    ![Save Icon](/images/identitymanager/user-guide/set-up/user-profile-configuration/iconsave_v602.svg)
 
 ## Verify Profile Configuration
 

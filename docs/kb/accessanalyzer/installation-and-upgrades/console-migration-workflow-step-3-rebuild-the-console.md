@@ -10,7 +10,6 @@ keywords:
   - scheduled tasks
   - webserver.exe.config
   - NAA_Migration
-  - Netwrix Auditor
 products:
   - access-analyzer
   - access_info_center

@@ -31,20 +31,20 @@ Review an unauthorized account by proceeding as follows:
    [Compute Role Model Task](/docs/identitymanager/6.2/integration-guide/toolkit/xml-configuration/jobs/tasks/server/computerolemodeltask/index.md)
    was launched recently, through the complete job on the **Job Execution** page:
 
-    ![Home Page - Job Execution](/images/identitymanager/saas/user-guide/set-up/synchronization/home_jobexecution_v602.webp)
+    ![Home Page - Job Execution](/images/identitymanager/user-guide/set-up/synchronization/home_jobexecution_v602.webp)
 
     Or through the connector's overview page, **Jobs** > **Compute Role Model**.
 
-    ![Resource Type Jobs](/images/identitymanager/saas/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+    ![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
 
 2. Get to the **Resource Reconciliation** page, accessible from the corresponding section on the
    home page.
 
-    ![Home Page - Resource Reconciliation](/images/identitymanager/saas/user-guide/administrate/orphan-unused-account-review/home_resourcereconciliation_v523.webp)
+    ![Home Page - Resource Reconciliation](/images/identitymanager/user-guide/administrate/orphan-unused-account-review/home_resourcereconciliation_v523.webp)
 
 3. Select `Unauthorized account` as the `Workflow State`. Orphaned accounts appear with no owner.
 
-    ![Resource Reconciliation Page](/images/identitymanager/saas/user-guide/administrate/orphan-unused-account-review/unauth_unauthorizedaccounts_v602.webp)
+    ![Resource Reconciliation Page](/images/identitymanager/user-guide/administrate/orphan-unused-account-review/unauth_unauthorizedaccounts_v602.webp)
 
 4. Choose the default resource view or the property view with the top right toggle.
 5. Click on the line of an account with an owner.
@@ -53,7 +53,7 @@ Review an unauthorized account by proceeding as follows:
     `U40897 / Internal Users / acme / com` has the owner `Maxime Guillot` with an 80% confidence
     rate.
 
-    ![Select Decision](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/unauthorized-account-review/unauth_reviewunauthorized_v602.webp)
+    ![Select Decision](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/unauthorized-account-review/unauth_reviewunauthorized_v602.webp)
 
     The displayed confidence rate means that a rule actually assigned the account to the identity,
     but with a confidence rate too low to imply full automatic assignment. Approval will be
@@ -64,7 +64,7 @@ Review an unauthorized account by proceeding as follows:
     by clicking on the edit button. See the
     [Reconcile a Property](/docs/identitymanager/6.2/user-guide/administrate/non-conforming-assignment-review/property-reconciliation/index.md) topic for additional information.
 
-    ![Edit Button](/images/identitymanager/saas/user-guide/administrate/non-conforming-assignment-review/unauthorized-account-review/unauth_updateprop_v522.webp)
+    ![Edit Button](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/unauthorized-account-review/unauth_updateprop_v522.webp)
 
 6. Select the appropriate decision.
 
@@ -76,14 +76,14 @@ Review an unauthorized account by proceeding as follows:
    overview page, **Jobs** > **Generate Provisioning Orders**, then, after this first task is done,
    **Jobs** > **Fulfill**.
 
-    ![Resource Type Jobs](/images/identitymanager/saas/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+    ![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
 
 ### Use property view
 
 By default, non-conforming assignments are listed by resource. It is possible to click on a resource
 and then access the list of all unreconciled properties for said resource.
 
-![Resource View](/images/identitymanager/saas/user-guide/administrate/orphan-unused-account-review/orphan_resourceview_v523.webp)
+![Resource View](/images/identitymanager/user-guide/administrate/orphan-unused-account-review/orphan_resourceview_v523.webp)
 
 It can be helpful to have the non-conforming assignments regrouped by property, as some of the
 changes can be similar, so very likely to be validated by the same user. This is why a property view
@@ -93,7 +93,7 @@ Once enabled, select a resource type to display all unreconciled properties link
 type. In addition, select a property to display only the unreconciled properties linked to said
 resource type and property.
 
-![Property View](/images/identitymanager/saas/user-guide/administrate/orphan-unused-account-review/orphan_propertyview_v603.webp)
+![Property View](/images/identitymanager/user-guide/administrate/orphan-unused-account-review/orphan_propertyview_v603.webp)
 
 The review process is the same with both views. However with property view, reviewers don't click on
 a given line, but choose a decision directly on the left of the property line.
@@ -101,7 +101,7 @@ a given line, but choose a decision directly on the left of the property line.
 In addition, using property view enables bulk reconciliation to approve the proposed values or keep
 the current values for several resources simultaneously.
 
-![Bulk Reconcile](/images/identitymanager/saas/user-guide/administrate/orphan-unused-account-review/orphan_bulkreconcile_v603.webp)
+![Bulk Reconcile](/images/identitymanager/user-guide/administrate/orphan-unused-account-review/orphan_bulkreconcile_v603.webp)
 
 Bulk keeping non-authorized accounts, by clicking on **Bulk Reconcile** then **Approve Current
 Values**, does not approve their unreconciled properties which will still be displayed on this
@@ -112,4 +112,4 @@ screen.
 In order to verify the process, check that the changes you ordered appear on the corresponding
 user's **View Permissions** tab.
 
-![View Permissions Tab](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)
+![View Permissions Tab](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)

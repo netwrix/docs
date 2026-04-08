@@ -34,7 +34,7 @@ selection dropdown of the following administration screens:
 By default, the entity type with the highest priority is selected first. The end user can later
 change the selection using the top-left dropdown.
 
-![Change Selection](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/user-interface/displayentitytype/ui_displaypriorities_changeselection_v521beta.webp)
+![Change Selection](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/displayentitytype/ui_displaypriorities_changeselection_v521beta.webp)
 
 Priorities are integer values, positive or negative. The most important priority is assigned to the
 lowest value.

@@ -1,0 +1,10 @@
+{
+  "label": "To do for Administration",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "to_do_for_administration"
+  }
+}

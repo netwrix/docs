@@ -12,7 +12,7 @@ This connector exports and fulfills users and roles from/to an
 
 This page is about ERP/SAP ERP 6.0.
 
-![Package: ERP/SAP ERP 6.0](/images/identitymanager/saas/integration-guide/connectors/references-connectors/saperp6/packages_saperp6_v603.webp)
+![Package: ERP/SAP ERP 6.0](/images/identitymanager/integration-guide/connectors/references-connectors/saperp6/packages_saperp6_v603.webp)
 
 ## Overview
 
@@ -95,12 +95,12 @@ To set up the prerequisites for reading follow the steps below.
 
 **Step 1 –** Copy the DLL `Sap.Data.Hana.Core.v2.1.dll` into the Runtime of Identity Manager.
 
-![connectorreadprerequisites1](/images/identitymanager/saas/integration-guide/connectors/references-connectors/saperp6/connectorreadprerequisites1.webp)
+![connectorreadprerequisites1](/images/identitymanager/integration-guide/connectors/references-connectors/saperp6/connectorreadprerequisites1.webp)
 
 **Step 2 –** Unzip the “hdbclient.zip” archive to C: drive and add the path to the Path environment
 variables.
 
-![connectorreadprerequisites2](/images/identitymanager/saas/integration-guide/connectors/references-connectors/saperp6/connectorreadprerequisites2.webp)
+![connectorreadprerequisites2](/images/identitymanager/integration-guide/connectors/references-connectors/saperp6/connectorreadprerequisites2.webp)
 
 **Step 3 –** Create environment variables: `HDBADOTNET=C:\hdbclient\ado.net` and
 `HDBADOTNETCORE=C:\hdbclient\dotnetcore`.
@@ -119,11 +119,11 @@ Make sure the Read prerequisites are configured first.
 **Step 3 –** Copy the DLLs icudt50.dll, `icuin50.dll` and icuuc50.dll into the Runtime of Identity
 Manager.
 
-![connectorwriteprerequisites](/images/identitymanager/saas/integration-guide/connectors/references-connectors/saperp6/connectorwriteprerequisites.webp)
+![connectorwriteprerequisites](/images/identitymanager/integration-guide/connectors/references-connectors/saperp6/connectorwriteprerequisites.webp)
 
 **Step 4 –** Disable DLLs search by adding the environment variable `NLSUI_7BIT_FALLBACK=YES`.
 
-![connectorwriteprerequisites2](/images/identitymanager/saas/integration-guide/connectors/references-connectors/saperp6/connectorwriteprerequisites2.webp)
+![connectorwriteprerequisites2](/images/identitymanager/integration-guide/connectors/references-connectors/saperp6/connectorwriteprerequisites2.webp)
 
 **Step 5 –** Add new environment variable `USERCUBE_DOTNET32` containing the path to dotnetx86
 (e.g.: `C: \donetx86\dotnet.exe`).

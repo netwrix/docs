@@ -36,15 +36,15 @@ Execute certification by proceeding as follows:
 1. Access the ongoing campaigns by clicking on the **Access Certification** section on the home
    page.
 
-    ![Home - Access Certification](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-execution/home_accesscertification_v523.webp)
+    ![Home - Access Certification](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-execution/home_accesscertification_v523.webp)
 
     On this page, all assignments to be reviewed are listed.
 
-    ![Access Certification](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_accesscertification_v602.webp)
+    ![Access Certification](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_accesscertification_v602.webp)
 
     Each assignment can be commented by clicking on the corresponding icon.
 
-    ![Comment Icon](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_iconcomment_v522.svg)
+    ![Comment Icon](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_iconcomment_v522.svg)
 
 2. Choose one of the three possibilities to verify all assignments one by one:
 
@@ -62,24 +62,24 @@ Execute certification by proceeding as follows:
     However, it has been manually granted or denied. Thus there is no recommendation, please review
     this entitlement carefully.
 
-    ![Recommendation Icon](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_iconrecommendation_v522.svg)
+    ![Recommendation Icon](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_iconrecommendation_v522.svg)
 
-    ![Discouragement Icon](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_icondiscouragement_v522.svg)
+    ![Discouragement Icon](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_icondiscouragement_v522.svg)
 
     - Either click on the approval icon to confirm that this entitlement is necessary for this
       identity.
 
-    ![Approval Icon](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_iconapproval_v522.svg)
+    ![Approval Icon](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_iconapproval_v522.svg)
 
     - Or click on the decline icon to confirm that this entitlement is not necessary for this
       identity.
 
-    ![Decline Icon](/images/identitymanager/saas/user-guide/set-up/connect-system/connection-creation/certifcampaign_icondecline_v522.svg)
+    ![Decline Icon](/images/identitymanager/user-guide/set-up/connect-system/connection-creation/certifcampaign_icondecline_v522.svg)
 
     - Or click on the three dots icon to highlight that this entitlement is not part of your scope
       of responsibility and forward it to the adequate person.
 
-    ![Forward Icon](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_iconforward_v522.svg)
+    ![Forward Icon](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_iconforward_v522.svg)
 
 3. Click on **Confirm Decisions** on the left of the page.
 
@@ -91,16 +91,16 @@ Execute certification by proceeding as follows:
 Existing certification campaigns are listed on the page accessible via the **Access Certification
 Campaigns** button on the home page in the **Administration** section.
 
-![Home - Access Certification Campaigns](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-scheduling/home_accesscertificationcampaigns_v602.webp)
+![Home - Access Certification Campaigns](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-scheduling/home_accesscertificationcampaigns_v602.webp)
 
-![Campaigns Page](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_campaigns_v602.webp)
+![Campaigns Page](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_campaigns_v602.webp)
 
 ### Get reports
 
 A **Download** button is available for each campaign. It downloads a CSV report that lists all the
 entitlement assignments to be reviewed, the corresponding reviewers and their decisions.
 
-![Report Example](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_decisions_v522.webp)
+![Report Example](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_decisions_v522.webp)
 
 ### Send notifications
 
@@ -116,4 +116,4 @@ campaign. The campaign administrator can then decide to actually apply said deci
 the appropriate provisioning orders for deprovisioning unjustified entitlements. Said orders will be
 considered during the next provisioning job.
 
-![Apply Decisions](/images/identitymanager/saas/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_applydecisions_v602.webp)
+![Apply Decisions](/images/identitymanager/user-guide/administrate/access-certification/certification-campaign-execution/certifcampaign_applydecisions_v602.webp)

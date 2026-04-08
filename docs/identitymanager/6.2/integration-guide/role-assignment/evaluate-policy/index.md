@@ -21,7 +21,7 @@ See the [Risk Management](/docs/identitymanager/6.2/integration-guide/governance
 
 ## Overview
 
-![Evaluate Policy Overview](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/evaluate-policy-1.webp)
+![Evaluate Policy Overview](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/evaluate-policy-1.webp)
 
 The main responsibility of the Evaluate Policy is to compute, for every fed resource, the set of
 assignments of entitlements that comply with the assignment policy.
@@ -146,7 +146,7 @@ Before starting, a context rule is applied, giving for the input resource:
 - The dimension values
 - The time period validity of every assignment computed during this Evaluate Policy iteration
 
-![Computing Context For Input Resource](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/enforce-context.webp)
+![Computing Context For Input Resource](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/enforce-context.webp)
 
 **Computing expected role assignments**
 
@@ -159,7 +159,7 @@ outcome of those rules, as assigned composite roles and assigned single roles, i
 input resource's context. They are the image of the status of trust and privilege granted to a
 resource-identity.
 
-![Computing Expected Role Assignments](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/compute-expected-1.webp)
+![Computing Expected Role Assignments](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/compute-expected-1.webp)
 
 **Enforcing composite role rules**
 
@@ -217,7 +217,7 @@ provisioning orders that are to be executed by the agent, after being validated 
 user. See the [Resource Type](/docs/identitymanager/6.2/integration-guide/toolkit/xml-configuration/provisioning/resourcetype/index.md)
 topic for additional information.
 
-![Computing Expected Provisioning Assignments](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/compute-expected-2.webp)
+![Computing Expected Provisioning Assignments](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/compute-expected-2.webp)
 
 **Enforcing resource type rules**
 
@@ -269,7 +269,7 @@ scalar assignments are added as well.
 
 **Step 3 –** **Match existing assignments with expected assignments**
 
-![Computing Expected Provisioning Assignments](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/compute-find-matching.webp)
+![Computing Expected Provisioning Assignments](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/compute-find-matching.webp)
 
 The expected assignments list is now built.
 
@@ -301,7 +301,7 @@ unwanted ones for any reason.
 
 **Step 5 –** **Correlation**
 
-![Computing Expected Provisioning Assignments](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/correlation.webp)
+![Computing Expected Provisioning Assignments](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/correlation.webp)
 
 Resource correlation rules are enforced: for every expected assigned resource type, the algorithm
 looks for a target resource that correlates the owner, which is the input resource.
@@ -346,20 +346,20 @@ The workflow state is also analyzed; assignments with Approved (or Cancellation)
 | Workflow state                    | Description                                                                                                                                                                                                                                                                                                      |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0—None                            | Used for Identity Manager's internal computation                                                                                                                                                                                                                                                                 |
-| 1—Non-conforming                  | The assignment is not supported by a rule. ![Workflow State: Non-conforming](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/1_nonconforming_v603.webp)                                                                                            |
+| 1—Non-conforming                  | The assignment is not supported by a rule. ![Workflow State: Non-conforming](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/1_nonconforming_v603.webp)                                                                                            |
 | 2—Requested - Missing Parameters  | The assignment has been requested via a workflow, but does not specify at least one required parameter for the role.                                                                                                                                                                                             |
-| 3—Pre-existing                    | The assignment is not supported by a rule, and it existed before the production launch. ![Workflow State: Pre-existing](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/3_preexisting_v603.webp)                                                   |
-| 4—Requested                       | The assignment is requested via a workflow, but not yet added. **NOTE:** Usually displayed in workflows' summaries. ![Workflow State: Pending Approval - Requested](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/4_requested_v603.webp)         |
-| 5—Calculated - Missing Parameters | The assignment was done by a rule which does not specify at least one required parameter for the role. ![Workflow State: Calculated - Missing Parameters](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/5_calculatedmissingparameters_v603.webp) |
-| 8—Pending Approval                | The assignment must be reviewed manually by a knowledgeable user. ![Workflow State: Pending Approval](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/8_pendingapproval_v603.webp)                                                                 |
+| 3—Pre-existing                    | The assignment is not supported by a rule, and it existed before the production launch. ![Workflow State: Pre-existing](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/3_preexisting_v603.webp)                                                   |
+| 4—Requested                       | The assignment is requested via a workflow, but not yet added. **NOTE:** Usually displayed in workflows' summaries. ![Workflow State: Pending Approval - Requested](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/4_requested_v603.webp)         |
+| 5—Calculated - Missing Parameters | The assignment was done by a rule which does not specify at least one required parameter for the role. ![Workflow State: Calculated - Missing Parameters](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/5_calculatedmissingparameters_v603.webp) |
+| 8—Pending Approval                | The assignment must be reviewed manually by a knowledgeable user. ![Workflow State: Pending Approval](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/8_pendingapproval_v603.webp)                                                                 |
 | 9—Pending Approval 1 of 2         | The assignment is pending the first approval on a two-step workflow.                                                                                                                                                                                                                                             |
 | 10—Pending Approval 2 of 2        | The assignment is pending the second approval on a two-step workflow.                                                                                                                                                                                                                                            |
 | 11—Pending Approval 1 of 3        | The assignment is pending the first approval on a three-step workflow.                                                                                                                                                                                                                                           |
 | 12—Pending Approval 2 of 3        | The assignment is pending the second approval on a three-step workflow.                                                                                                                                                                                                                                          |
 | 13—Pending Approval 3 of 3        | The assignment is pending the third approval on a three-step workflow.                                                                                                                                                                                                                                           |
-| 16—Approved                       | The assignment has completed all approval steps. ![Workflow State: Approved](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/16_approved_v603.webp)                                                                                                |
+| 16—Approved                       | The assignment has completed all approval steps. ![Workflow State: Approved](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/16_approved_v603.webp)                                                                                                |
 | 17—Declined                       | The assignment is explicitly declined during one of the approval steps.                                                                                                                                                                                                                                          |
-| 20—Cancellation                   | The assignment is inferred by a role that was declined. ![Workflow State: Cancellation](/images/identitymanager/saas/integration-guide/role-assignment/evaluate-policy/20_cancellation_v603.webp)                                                                                 |
+| 20—Cancellation                   | The assignment is inferred by a role that was declined. ![Workflow State: Cancellation](/images/identitymanager/integration-guide/role-assignment/evaluate-policy/20_cancellation_v603.webp)                                                                                 |
 
 **Step 7 –** **Delta**
 

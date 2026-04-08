@@ -1,0 +1,42 @@
+@startuml component
+package "Agent" {
+	class Agent {
+		DisplayName_L1 : String
+		Identifier : String
+		State : Int32
+		URI : String
+		--
+		AgentScaffoldings : Scaffolding[]
+		Connectors : Connector[]
+		Jobs : Job[]
+		TaskInstances : TaskInstance[]
+		Tasks : Task[]
+	}
+}
+package "Scaffolding" {
+	class Scaffolding {
+	}
+}
+package "Connector" {
+	class Connector {
+	}
+}
+package "Job" {
+	class Job {
+	}
+}
+package "TaskInstance" {
+	class TaskInstance {
+	}
+}
+package "Task" {
+	class Task {
+	}
+}
+Agent "0..1" --  "0..*"Scaffolding
+Agent "0..1" --  "0..*"Connector
+Agent "0..1" --  "0..*"Job
+Agent "0..1" --  "0..*"TaskInstance
+Agent "0..1" --  "0..*"Task
+hide empty members
+@enduml

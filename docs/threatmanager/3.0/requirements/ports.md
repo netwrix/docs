@@ -8,6 +8,7 @@ sidebar_position: 50
 
 Netwrix Threat Manager architecture and components interactions are shown in the figure below.
 
+
 ![threatmanagerserver](/images/threatmanager/3.0/requirements/threatmanagerserver.webp)
 
 Configure appropriate firewall rules to allow these connections.
@@ -76,6 +77,7 @@ Active Directory domain controllers:
 | Outbound                | TCP      | 135     | The endpoint mapper tells the client which randomly assigned port a service (FRS, AD replication, MAPI, etc.) is listening on |
 | Outbound                | TCP      | 389     | LDAP                                                                                                                          |
 | Outbound                | TCP      | 636     | SSL LDAP                                                                                                                      |
+| Outbound                | TCP      | 9389    | Active Directory Web Services                                                                                                 |
 | Outbound                | TCP      | Various | The port that 135 reports. Used to bulk translate AD object names between formats.(Ephemeral Ports)                           |
 
 ## Remote Action Service Firewall Rules

@@ -1,0 +1,33 @@
+@startuml component
+package "HomonymEntityLink" {
+	class HomonymEntityLink {
+		Identifier : String
+		--
+		Controls : FormControl[]
+		Filters : HomonymEntityLinkFilter[]
+		FormEntityType : EntityType
+		HomonymEntityLinkDisplayTables : DisplayTable[]
+	}
+}
+package "FormControl" {
+	class FormControl {
+	}
+}
+package "HomonymEntityLinkFilter" {
+	class HomonymEntityLinkFilter {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "DisplayTable" {
+	class DisplayTable {
+	}
+}
+HomonymEntityLink "0..1" --  "0..*"FormControl
+HomonymEntityLink "1" --  "0..*"HomonymEntityLinkFilter
+HomonymEntityLink "0..*" --  "1"EntityType
+HomonymEntityLink "0..1" --  "0..*"DisplayTable
+hide empty members
+@enduml

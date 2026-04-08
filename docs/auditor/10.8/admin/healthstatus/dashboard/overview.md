@@ -39,7 +39,7 @@ The dashboard includes the following widgets:
   [System Health](/docs/auditor/10.8/requirements/longtermarchive.md#system-health) topic for additional
   information.
 
-![healthstatusdashboard_thumb_0_0](/images/auditor/10.7/admin/healthstatus/dashboard/healthstatusdashboard_thumb_0_0.webp)
+![healthstatusdashboard_thumb_0_0](/images/auditor/10.8/admin/healthstatus/dashboard/healthstatusdashboard_thumb_0_0.webp)
 
 You can also instruct Netwrix Auditor to forward similar statistics as a health summary email to
 personnel in charge. For that, click Notification settings, then follow the steps described in the

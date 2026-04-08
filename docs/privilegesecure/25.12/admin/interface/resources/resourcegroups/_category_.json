@@ -1,0 +1,10 @@
+{
+  "label": "Resource Groups Page",
+  "position": 90,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "resourcegroups"
+  }
+}

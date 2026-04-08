@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Introduction
 
-## Welcome to the official Netwrix Password Secure documentation!
+## Welcome to the official Netwrix Password Secure documentation
 
 All Netwrix product announcements have moved to the Netwrix Community. See announcements for
 Netwrix Password Secure in the

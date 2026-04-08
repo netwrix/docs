@@ -40,7 +40,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
             **50** hours). See the [Adjust Security Event Log Size and Retention](/docs/auditor/10.8/configuration/activedirectory/securitylog.md)
             topic.
 
-        - To provide for event data collection, the Secondary Logon service must be up and running .
+        - To provide for event data collection, the Secondary Logon service must be up and running.
           Open **Administrative Tools** > **Services**, right-click the **Secondary Logon** service
           and on the **General** tab make sure that Startup type for this service is other than
           _Disabled_.
@@ -104,7 +104,7 @@ and all descendant objects**.
 
 - You can configure these settings automatically using Netwrix Auditor, as described in the
   [Active Directory: Automatic Configuration](/docs/auditor/10.8/configuration/activedirectory/automatic.md) topic.
-- To configure them manually, refer o the [Configure Object-Level Auditing](/docs/auditor/10.8/configuration/activedirectory/objectlevel.md) topic.
+- To configure them manually, refer to the [Configure Object-Level Auditing](/docs/auditor/10.8/configuration/activedirectory/objectlevel.md) topic.
 
 ### Configuration and Schema Partitions
 

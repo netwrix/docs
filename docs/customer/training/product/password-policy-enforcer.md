@@ -1,6 +1,6 @@
 ---
 title: Netwrix Password Policy Enforcer Learning Path
-sidebar_position: 200
+sidebar_position: 210
 tags: [getting-started, training, password-policy-enforcer]
 keywords: [training, course, password policy enforcer]
 description: "Learn to use Netwrix Password Policy Enforcer through courses"
@@ -11,6 +11,7 @@ import { Company, NPPE } from '@site/src/training/products';
 
 
 Estimated length: 35 minutes
+
 In this learning path, you will learn how to use <NPPE />. It contains the following courses:
 
 * 1240 <NPPE /> – Valuable Features

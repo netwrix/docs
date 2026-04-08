@@ -79,7 +79,7 @@ Follow the steps to configure Office 365 tenant as a monitored item.
   [Using Modern Authentication with Microsoft Entra ID](/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/permissions/modernauth/modernauth.md)
   topic for additional information.
 
-![tenantenvironment](/images/auditor/10.7/admin/monitoringplans/tenantenvironment.webp)
+![tenantenvironment](/images/auditor/10.8/admin/monitoringplans/tenantenvironment.webp)
 
 If you are using a government tenant, please click the **Tenant Environment** tab and select the
 desired tenant environment.
@@ -111,7 +111,7 @@ desired tenant environment.
 
 **Step 3 –** Click the **Add** button.
 
-![Add Office 365 Item window](/images/auditor/10.7/admin/monitoringplans/item_o365_basic_auth_thumb_0_0.webp)
+![Add Office 365 Item window](/images/auditor/10.8/admin/monitoringplans/item_o365_basic_auth_thumb_0_0.webp)
 
 You can use a single account to collect audit data for different Office 365 services (Microsoft
 Entra ID, Exchange Online, SharePoint Online); however, Netwrix recommends that you specify
@@ -139,7 +139,7 @@ Follow the steps to use Netwrix Privilege Secure as an account for data collect
 **Step 2 –** In the item configuration menu, select Netwrix Privilege Secure as an option for data
 collection.
 
-![npsdatacollectingaccount](/images/auditor/10.7/configuration/grouppolicy/npsdatacollectingaccount.webp)
+![npsdatacollectingaccount](/images/auditor/10.8/configuration/grouppolicy/npsdatacollectingaccount.webp)
 
 **Step 3 –** Select the type of the Access Policy you want to use in Netwrix Privilege Secure.
 Credential-based is the default option. Refer to the
@@ -152,7 +152,7 @@ and to which Netwrix Auditor has the access through a Credential-based access po
 **NOTE:** Netwrix recommends using different credentials for different monitoring plans and data
 sources.
 
-![npsdatacollectingaccountresourced](/images/auditor/10.7/configuration/grouppolicy/npsdatacollectingaccountresourced.webp)
+![npsdatacollectingaccountresourced](/images/auditor/10.8/configuration/grouppolicy/npsdatacollectingaccountresourced.webp)
 
 The second option is Resource-based. To use this option, you need to provide the Activity and
 Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Make sure

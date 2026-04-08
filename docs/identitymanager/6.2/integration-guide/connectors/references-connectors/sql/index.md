@@ -19,19 +19,19 @@ This page is about:
 - Database/[PostgreSQL](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/postgresql/index.md);
 - [SAP ASE](/docs/identitymanager/6.2/integration-guide/connectors/references-packages/sapase/index.md).
 
-![Package: Directory/Database/Generic SQL](/images/identitymanager/saas/integration-guide/connectors/references-connectors/sql/packages_sqlgeneric_v603.webp)
+![Package: Directory/Database/Generic SQL](/images/identitymanager/integration-guide/connectors/references-connectors/sql/packages_sqlgeneric_v603.webp)
 
-![Package: Directory/Database/Microsoft SQL Server](/images/identitymanager/saas/integration-guide/connectors/references-connectors/sql/packages_sqlserver_v603.webp)
+![Package: Directory/Database/Microsoft SQL Server](/images/identitymanager/integration-guide/connectors/references-connectors/sql/packages_sqlserver_v603.webp)
 
-![Package: Directory/Database/MySQL](/images/identitymanager/saas/integration-guide/connectors/references-connectors/sql/packages_sqlmy_v603.webp)
+![Package: Directory/Database/MySQL](/images/identitymanager/integration-guide/connectors/references-connectors/sql/packages_sqlmy_v603.webp)
 
-![Package: Directory/Database/ODBC](/images/identitymanager/saas/integration-guide/connectors/references-connectors/sql/packages_sqlodbc_v603.webp)
+![Package: Directory/Database/ODBC](/images/identitymanager/integration-guide/connectors/references-connectors/sql/packages_sqlodbc_v603.webp)
 
-![Package: Directory/Database/Oracle](/images/identitymanager/saas/integration-guide/connectors/references-connectors/sql/packages_sqloracle_v603.webp)
+![Package: Directory/Database/Oracle](/images/identitymanager/integration-guide/connectors/references-connectors/sql/packages_sqloracle_v603.webp)
 
-![Package: Directory/Database/PostgreSQL](/images/identitymanager/saas/integration-guide/connectors/references-connectors/sql/packages_sqlpostgre_v603.webp)
+![Package: Directory/Database/PostgreSQL](/images/identitymanager/integration-guide/connectors/references-connectors/sql/packages_sqlpostgre_v603.webp)
 
-![Package: Directory/Database/SAP ASE](/images/identitymanager/saas/integration-guide/connectors/references-connectors/sql/packages_sqlsap_v603.webp)
+![Package: Directory/Database/SAP ASE](/images/identitymanager/integration-guide/connectors/references-connectors/sql/packages_sqlsap_v603.webp)
 
 ## Overview
 
@@ -127,7 +127,7 @@ Connect to a DBMS other than Microsoft SQL Server by proceeding as follows:
 1. Download and extract the package.
     > For MySQL, download the package from [MySql.Data](https://www.nuget.org/packages/MySql.Data/).
     >
-    > ![MySQL: Download Package](/images/identitymanager/saas/integration-guide/connectors/references-connectors/sql/sql_downloadpackage.webp)
+    > ![MySQL: Download Package](/images/identitymanager/integration-guide/connectors/references-connectors/sql/sql_downloadpackage.webp)
 2. Copy the DLL file (corresponding to the correct .Net version) to the `Runtime` folder.
     > For MySQL, the DLL is `MySql.Data.dll`.
 3. Get the value required for `ProviderClassFullName` and `ProviderDllName`:
@@ -137,7 +137,7 @@ Connect to a DBMS other than Microsoft SQL Server by proceeding as follows:
 
         > For MySQL:
         >
-        > ![Package Characteristics Example](/images/identitymanager/saas/integration-guide/connectors/references-connectors/sql/sql_packagecharacteristics.webp)
+        > ![Package Characteristics Example](/images/identitymanager/integration-guide/connectors/references-connectors/sql/sql_packagecharacteristics.webp)
 
     - for another DBMS, by accessing the DBMS' documentation for .Net and finding a class with
       **Factory** in its name.

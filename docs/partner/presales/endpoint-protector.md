@@ -6,7 +6,7 @@ keywords: [training, course, certification, partners, presales, endpoint protect
 description: "Become a certified Presales Engineer for Netwrix Endpoint Protector"
 ---
 
-import { NEPValue, NEPDLP, NEPStrategies, NEPArchitecture, NEPIntro, NEPContentAware, NEPLogPolicy, NEPLogicContext, NEPeDiscovery, NEPOffline, NEPDemo, NEPAdditional } from '@site/src/training/endpoint-protector';
+import { NEPValue, NEPDLP, NEPStrategies, NEPArchitecture, NEPIntro, NEPContentAware, NEPLogPolicy, NEPLogicContext, NEPeDiscovery, NEPOffline, NEPEnforcedEncryption, NEPDemo, NEPAdditional } from '@site/src/training/endpoint-protector';
 import { Company, NEP } from '@site/src/training/products';
 
 
@@ -26,6 +26,7 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 * 3643 <NEP /> – Logic & Contextual Rules
 * 3645 <NEP /> – eDiscovery Module
 * 3646 <NEP /> – Offline Temporary Password Module
+* 4641 <NEP /> – Enforced Encryption Module
 * 5640 <NEP /> – Demo the Basic Use Cases
 
 <NEPValue />
@@ -48,8 +49,8 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 
 <NEPOffline />
 
+<NEPEnforcedEncryption />
+
 <NEPDemo />
 
 <NEPAdditional />
-
-* 4641 <NEP /> – Enforced Encryption Module

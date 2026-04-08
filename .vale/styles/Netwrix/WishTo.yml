@@ -1,0 +1,6 @@
+extends: substitution
+message: "Use '%s' instead of 'wish to', or rewrite as a direct imperative."
+level: warning
+ignorecase: true
+swap:
+  '\bwish to\b': 'want to'

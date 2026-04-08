@@ -52,7 +52,7 @@ Remember to restart the add-on service every time you update any of configuratio
 ## Review Other Parameters
 
 You can update other parameters with your own values if necessary; however, it is recommended that
-you contact Netwrixbefore modifying this section.
+you contact Netwrix before modifying this section.
 
 | Name                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

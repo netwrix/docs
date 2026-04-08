@@ -46,6 +46,8 @@ Review a full list of object types Netwrix Auditor can collect on Qumulo networ
 | Removed                 | +    | +      | -     |
 | Remove (failed attempt) | -    | -      | -     |
 | Copied                  | -    | -      | -     |
+| Change Permissions      | -    | -      | -     |
+| Change Permissions (failed attempt)     | -    | -      | -     |
 
 **NOTE:** For Qumulo system Auditor displays the actual time when the event occurred. The 'When'
 column shows the time when the syslog message arrived.

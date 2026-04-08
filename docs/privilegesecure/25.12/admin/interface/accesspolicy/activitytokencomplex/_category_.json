@@ -1,0 +1,10 @@
+{
+  "label": "Activity Token Complexity Page",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "activitytokencomplexity"
+  }
+}

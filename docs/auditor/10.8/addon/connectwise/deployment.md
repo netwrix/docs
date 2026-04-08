@@ -25,7 +25,7 @@ the Netwrix Auditor Add-On for ConnectWise Manage folder.
 Manage Integration Service**.
 
 **Step 5 –** Run the ConfigureConnection.exe and follow the steps of the wizard to configure
-connection and ticketing settings for ConectWise Manage. See the
+connection and ticketing settings for ConnectWise Manage. See the
 [Configure ConnectWise ](/docs/auditor/10.8/addon/connectwise/configure.md)topic for additional information.
 
 **Step 6 –** (optional) To adjust the add-on operation and data flow settings, edit the

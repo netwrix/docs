@@ -55,7 +55,7 @@ interval. Here we keep one version per day (1440 minutes) in the last 7 days, th
 month (43920 minutes) in the last 6 months before the previously defined period, then one version
 per year (525960 minutes) in the last 2 years before the previously defined periods.
 
-![Schema - Optimize](/images/identitymanager/saas/integration-guide/executables/references/manage-history/tools_managehistory_schema.webp)
+![Schema - Optimize](/images/identitymanager/integration-guide/executables/references/manage-history/tools_managehistory_schema.webp)
 
 For each period, if there is more than one version (i.e. `ValidFrom` is inside the interval), the
 versions are merged in the following way:

@@ -22,7 +22,7 @@ in the form of CSV/XLSX files. These files are cleansed and loaded into Identity
 Synchronization is a three-step ETL process going through export, synchronization preparation and
 the synchronization itself.
 
-![Synchronization Schema](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_schema.webp)
+![Synchronization Schema](/images/identitymanager/user-guide/set-up/synchronization/synchro_schema.webp)
 
 #### Export
 
@@ -114,7 +114,7 @@ Launch synchronization for a given managed system by proceeding as follows:
 1. Access the list of connectors by clicking on **Connectors** on the home page in the
    **Configuration** section.
 
-    ![Home - Connectors](/images/identitymanager/saas/user-guide/set-up/synchronization/home_connectors_v602.webp)
+    ![Home - Connectors](/images/identitymanager/user-guide/set-up/synchronization/home_connectors_v602.webp)
 
 2. On the relevant connector page, in the **Entity Types** frame, click on **Jobs**.
 
@@ -124,7 +124,7 @@ Launch synchronization for a given managed system by proceeding as follows:
     connection(s) and package(s), all these tasks can be launched either in incremental or complete
     mode.
 
-    ![Synchronize Job](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_executionjobs_v602.webp)
+    ![Synchronize Job](/images/identitymanager/user-guide/set-up/synchronization/synchro_executionjobs_v602.webp)
 
     - `Update Expressions`: computes the expressions used in the entity type mapping.
     - `All Tasks`: launches all previous tasks in a row.
@@ -133,7 +133,7 @@ Launch synchronization for a given managed system by proceeding as follows:
     in incremental mode. As a consequence, when clicking on the **Jobs** button, you wouldn't have a
     choice between `Complete` and `Incremental`. See below this note.
 
-    ![Synchronize Job (Only Complete)](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_executionjobs-complete_v602.webp)
+    ![Synchronize Job (Only Complete)](/images/identitymanager/user-guide/set-up/synchronization/synchro_executionjobs-complete_v602.webp)
 
 ## Manage Synchronization Automation
 
@@ -157,18 +157,18 @@ clicking on **Deactivate** on the connector's dashboard. This is particularly us
 a connector. You can also re-insert it at any time with the same button which is now named
 **Activate**.
 
-![Jobs Results Dashboard](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_dashboard_v522.webp)
+![Jobs Results Dashboard](/images/identitymanager/user-guide/set-up/synchronization/synchro_dashboard_v522.webp)
 
 You can fine-tune the synchronization and/or provisioning of the connector by clicking on the
 **Edit** button.
 
-![Edit button](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_edit_v600.webp)
+![Edit button](/images/identitymanager/user-guide/set-up/synchronization/synchro_edit_v600.webp)
 
 Click on **Job Results** to access the progress of this connector's jobs.
 
 All jobs are accessible on the **Job Execution** page in the **Administration** section.
 
-![Home - Job Execution](/images/identitymanager/saas/user-guide/set-up/synchronization/home_jobexecution_v602.webp)
+![Home - Job Execution](/images/identitymanager/user-guide/set-up/synchronization/home_jobexecution_v602.webp)
 
 ## Verify an Entity Type's Synchronization
 
@@ -179,17 +179,17 @@ In order to verify both the synchronization configuration and
 2. Access the connector's logs (from **Job Results** on the connector's dashboard) to ensure that
    synchronization completed successfully.
 
-    ![Jobs Results](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_results_v603.webp)
+    ![Jobs Results](/images/identitymanager/user-guide/set-up/synchronization/synchro_results_v603.webp)
 
 3. Check that the entity types have been added to the left menu of the home page.
 
-    ![Test Entity Type](/images/identitymanager/saas/user-guide/set-up/categorization/classification/entitytypecreation_test_v602.webp)
+    ![Test Entity Type](/images/identitymanager/user-guide/set-up/categorization/classification/entitytypecreation_test_v602.webp)
 
 4. Access the relevant entity types (from the menu items on the left of the home page) to check
    synchronized resources, by navigating in the UI from the accounts through a sample of
    associations, via the eye icon:
 
-    ![Eye Icon](/images/identitymanager/saas/user-guide/set-up/synchronization/iconeye_v600.svg)
+    ![Eye Icon](/images/identitymanager/user-guide/set-up/synchronization/iconeye_v600.svg)
 
     You should first look for configuration validation, and only later validation of the actual data
     being synchronized.
@@ -197,15 +197,15 @@ In order to verify both the synchronization configuration and
     > For example, let's say we created a connector for SAB that contains two entity types called
     > `SAB - Users` and `SAB - Groups`. Then, the home page shows them on the left.
     >
-    > ![SAB Example - Home Page](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_examplesab_v522.webp)
+    > ![SAB Example - Home Page](/images/identitymanager/user-guide/set-up/synchronization/synchro_examplesab_v522.webp)
     >
     > Clicking on `SAB - Users` displays the list of all synchronized resources.
     >
-    > ![SAB Example - Data List](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_examplesab2_v602.webp)
+    > ![SAB Example - Data List](/images/identitymanager/user-guide/set-up/synchronization/synchro_examplesab2_v602.webp)
     >
     > Clicking on any resource displays its detailed attributes, for example `Abbott Mark`:
     >
-    > ![SAB Example - Resource Attributes](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_examplesab3_v602.webp)
+    > ![SAB Example - Resource Attributes](/images/identitymanager/user-guide/set-up/synchronization/synchro_examplesab3_v602.webp)
     >
     > Clicking on any eye icon displays the corresponding resource. SAB was created here with a
     > simple user-group schema that links n users to n groups. So here, we can check these links by
@@ -225,7 +225,7 @@ logs in order to debug a situation.
 
 If the connector and/or entity type doesn't appear in the menu items, then:
 
-![Test Entity Type](/images/identitymanager/saas/user-guide/set-up/synchronization/home_entitytypes_v602.webp)
+![Test Entity Type](/images/identitymanager/user-guide/set-up/synchronization/home_entitytypes_v602.webp)
 
 Access the relevant connector's page and click on the **Reload** button to take into account the
 last changes in the entity type mappings.
@@ -237,7 +237,7 @@ recent changes in the entity type mappings.
 
 If a synchronization is blocked by an exceeded threshold, then:
 
-![Threshold warning](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_threshold_v603.webp)
+![Threshold warning](/images/identitymanager/user-guide/set-up/synchronization/synchro_threshold_v603.webp)
 
 Find out the reasons to decide whether or not to bypass the threshold. Proceed as follows:
 
@@ -246,7 +246,7 @@ Find out the reasons to decide whether or not to bypass the threshold. Proceed a
 2. Study synchronization counters and the list of all synchronization changes. These tools help you
    make a decision about whether to bypass synchronization thresholds.
 
-    ![Job progress](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_thresholdlog_v603.webp)
+    ![Job progress](/images/identitymanager/user-guide/set-up/synchronization/synchro_thresholdlog_v603.webp)
 
     In most cases, the first synchronization exceeds thresholds because no data exists in Identity
     Manager yet. Thus, a high quantity of modifications is expected and the synchronization is to be
@@ -263,7 +263,7 @@ Find out the reasons to decide whether or not to bypass the threshold. Proceed a
 
     Be cautious, check twice for mistakes before resuming.
 
-    ![Resumed Job](/images/identitymanager/saas/user-guide/set-up/synchronization/synchro_thresholdresumed_v602.webp)
+    ![Resumed Job](/images/identitymanager/user-guide/set-up/synchronization/synchro_thresholdresumed_v602.webp)
 
 If an export doesn't complete, then:
 
@@ -271,13 +271,13 @@ If an export doesn't complete, then:
 - If you manually typed the source column of a property in the entity types, then make sure that the
   source column exists in the corresponding managed system.
 
-    ![Source Column](/images/identitymanager/saas/user-guide/set-up/synchronization/entitytype_sourcecolumn_v602.webp)
+    ![Source Column](/images/identitymanager/user-guide/set-up/synchronization/entitytype_sourcecolumn_v602.webp)
 
 If a given property from users' data is displayed in an unexpected way, then:
 
 Check the format of both the application metadata and the external system.
 
-![Property Format](/images/identitymanager/saas/user-guide/set-up/synchronization/entitytype_format_v523.webp)
+![Property Format](/images/identitymanager/user-guide/set-up/synchronization/entitytype_format_v523.webp)
 
 > For example, if you find that a given date doesn't comply with what you set, then maybe the format
 > in the External System section wasn't correctly selected, thus inducing a conversion error during

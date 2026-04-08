@@ -26,7 +26,7 @@ knowledge_article_id: kA0Qk0000000Kl7KAE
 ## Introduction
 The Web App Launcher for Netwrix Privilege Secure is an application used to launch websites as RemoteApps using Microsoft Remote Desktop Services (RDS).
 
-See this article) for information about publishing RemoteApps.
+See [How to Integrate Activities with Remote Desktop Services (RDS)](https://docs.netwrix.com/docs/kb/privilegesecure/remote-desktop-and-rds/how-to-integrate-activities-with-remote-desktop-services-rds) for information about publishing RemoteApps.
 
 ## Deployment
 The Web App Launcher can be downloaded from [this link](https://dl.netwrix.com/additional/WebAppLauncher.zip).

@@ -12,7 +12,7 @@ object. Use this report to review who has access to your SQL Server objects.
 Supported object types and attributes are listed in the
 [SQL Server](/docs/auditor/10.8/configuration/sqlserver/overview.md) section.
 
-![objectpermissionssqlserver_thumb_0_0](/images/auditor/10.7/admin/reports/types/stateintime/objectpermissionssqlserver_thumb_0_0.webp)
+![objectpermissionssqlserver_thumb_0_0](/images/auditor/10.8/admin/reports/types/stateintime/objectpermissionssqlserver_thumb_0_0.webp)
 
 ## Reported data
 

@@ -1,12 +1,12 @@
 ---
 title: "Recovery for Active Directory Knowledge Base"
-description: "Knowledge base articles for Netwrix Recovery for Active Directory (version 2.6)"
+description: "Knowledge base articles for Netwrix Recovery for Active Directory"
 slug: recoveryad
 ---
 
 # Recovery for Active Directory Knowledge Base
 
-Welcome to the Netwrix Recovery for Active Directory knowledge base. This section contains troubleshooting guides, configuration instructions, best practices, and reference materials for Recovery for Active Directory version 2.6.
+Welcome to the Netwrix Recovery for Active Directory knowledge base. This section contains troubleshooting guides, configuration instructions, best practices, and reference materials.
 
 ## Browse by Category
 

@@ -40,9 +40,10 @@ The following exclusions should be configured on each NPS server:
 ```text
 \Program Files\Stealthbits\PAM\ActionService
 \Program Files\Stealthbits\PAM\ActionServiceWorker
+\Program Files\Stealthbits\PAM\HostScanService
 \Program Files\Stealthbits\PAM\DatabaseTools\Data
-\Program Files\Stealthbits\Postgres12\bin
-\ProgramData\Stealthbits\Postgres12
+\Program Files\Stealthbits\Postgres16\bin
+\ProgramData\Stealthbits\Postgres16
 ```
 
 The following exclusion should be configured on each server with a remote Proxy Service:
@@ -57,6 +58,15 @@ The following exclusions should be configured on each server with a remote Actio
 \Program Files\Stealthbits\PAM\ProxyService
 \Program Files\Stealthbits\PAM\ActionService
 \Program Files\Stealthbits\PAM\ActionServiceWorker
+```
+
+The following exclusions should be configured on each server with a remote Action Service and Host Scan Service:
+
+```text
+\Program Files\Stealthbits\PAM\ProxyService
+\Program Files\Stealthbits\PAM\ActionService
+\Program Files\Stealthbits\PAM\ActionServiceWorker
+\Program Files\Stealthbits\PAM\HostScanService
 ```
 
 The following exclusions should be configured on each server with a remote Scheduler Service:

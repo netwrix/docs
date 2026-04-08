@@ -23,7 +23,7 @@ The other MenuItems are displayed from left to right.
 
 This XML element gives the following result:
 
-![Add workflow link in resource list entity](/images/identitymanager/saas/integration-guide/ui/how-tos/create-menu-items/workflowinentitylist.webp)
+![Add workflow link in resource list entity](/images/identitymanager/integration-guide/ui/how-tos/create-menu-items/workflowinentitylist.webp)
 
 ### Create menu items for a workflow in a resource view
 
@@ -39,6 +39,6 @@ These workflows will manipulate the selected resource in the view.
 
 This XML element gives the following result:
 
-![Workflow in resource view](/images/identitymanager/saas/integration-guide/ui/how-tos/create-menu-items/workflowinresourceview.webp)
+![Workflow in resource view](/images/identitymanager/integration-guide/ui/how-tos/create-menu-items/workflowinresourceview.webp)
 
-![All workflow in resource view*](/images/identitymanager/saas/integration-guide/ui/how-tos/create-menu-items/allworkflowinresourceview.webp)
+![All workflow in resource view*](/images/identitymanager/integration-guide/ui/how-tos/create-menu-items/allworkflowinresourceview.webp)

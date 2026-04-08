@@ -8,7 +8,7 @@ sidebar_position: 20
 
 On the main Netwrix Auditor page, navigate to Subscriptions to review a list of your subscriptions.
 
-![subscription](/images/auditor/10.7/admin/subscriptions/subscription.webp)
+![subscription](/images/auditor/10.8/admin/subscriptions/subscription.webp)
 
 The table below provides instructions on how to manage your subscriptions.
 

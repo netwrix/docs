@@ -62,7 +62,7 @@ Refer to the following steps to troubleshoot the SQL Server-based causes:
    3. Verify the account credentials and the authentication method. Click **Next** > **Finish** to complete the setup.
 4. Optional—Verify the credentials of the custom SQL Server settings for the affected monitoring plan:
    1. In the left pane of the affected monitoring plan, select **Edit settings** under the **Monitoring plan** section.
-   2. In the **Audit Database** tab, review the custom connection parameters if set. Verify the authentication method and the credetials used.
+   2. In the **Audit Database** tab, review the custom connection parameters if set. Verify the authentication method and the credentials used.
    3. Click **Save & Close** to save changes.
 
 ### Long-Term Archive-based Causes

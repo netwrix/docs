@@ -14,7 +14,7 @@ may be impacted by password changes or security policies:
 - Active Directory service account
 - SMTP authentication service account
 - Application Service Account
-- Bultin Administrator account
+- Builtin Administrator account
 
 ## Database Service Account
 

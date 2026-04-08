@@ -111,7 +111,7 @@ The figure models the complete _Prepare-Synchronization_ steps applied to an Act
 export. The matching _Connector_ defines an Entity Type _AD Entry_ and two associations (_members_
 and _manager_).
 
-![Active Directory Prepare-Synchronization Example](/images/identitymanager/saas/integration-guide/synchronization/upward-data-sync/ad_preparesynchro_example.webp)
+![Active Directory Prepare-Synchronization Example](/images/identitymanager/integration-guide/synchronization/upward-data-sync/ad_preparesynchro_example.webp)
 
 ## Examples
 

@@ -1,0 +1,10 @@
+{
+  "label": "Manual",
+  "position": 1,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

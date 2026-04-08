@@ -5,7 +5,7 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { themes as prismThemes } from 'prism-react-renderer';
-import { generateDocusaurusPlugins, generateNavbarDropdowns } from './src/config/products.js';
+import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion } from './src/config/products.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -41,7 +41,7 @@ const config = {
       rspackBundler: true,
       rspackPersistentCache: true, // 2-5x faster rebuilds
       mdxCrossCompilerCache: true,
-      ssgWorkerThreads: true, // 2x faster static generation
+      ssgWorkerThreads: false, // 2x faster static generation
     },
     v4: {
       removeLegacyPostBuildHeadAttribute: true, // Required for worker threads
@@ -71,12 +71,49 @@ const config = {
   ],
 
   plugins: [
-    // Google Analytics
-    [
-      '@docusaurus/plugin-google-gtag',
+      // Disable scope hoisting to prevent O(n²) hang on large module graphs
+      function customRspackPlugin() {
+        return {
+          name: 'custom-rspack-config',
+          configureWebpack(_config, isServer) {
+            if (!isServer) {
+              return { optimization: { concatenateModules: false } };
+            }
+            return {};
+          },
+        };
+      },
+
+      // Google Analytics
+      [
+        '@docusaurus/plugin-google-gtag',
       {
         trackingID: 'G-FZPWSDMTEX',
         anonymizeIP: true,
+      },
+    ],
+    // Client-side redirects - redirect base product URLs to latest version
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: PRODUCTS.filter(product => {
+          // Only create redirects for products with multiple versions (not just 'current')
+          return !(product.versions.length === 1 && product.versions[0].version === 'current');
+        }).map(product => {
+          const latestVersion = getDefaultVersion(product);
+          const latestVersionUrl = versionToUrl(latestVersion.version);
+
+          // Use explicit customRoutePath if specified (e.g., for multi-versioned products with 'current')
+          // Otherwise use standard path generation
+          const targetPath = latestVersion.customRoutePath
+            ? latestVersion.customRoutePath
+            : `${product.path}/${latestVersionUrl}`;
+
+          return {
+            from: `/${product.path}`,
+            to: `/${targetPath}`,
+          };
+        }),
       },
     ],
     // Generate all product documentation plugins from centralized configuration
@@ -181,7 +218,7 @@ const config = {
         logo: {
           alt: 'Netwrix Logo',
           src: 'branding/Netwrix_Logo_Dark.svg',
-          srcDark: 'branding/Netwrix_Logo_Light.svg',
+          srcDark: 'branding/logo-light.svg',
           href: '/',
         },
         items: [

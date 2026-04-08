@@ -44,7 +44,7 @@ associated permissions:
 | Red       | Authorize      |
 
 Other rights also exist that are, however, not separately indicated by a color. The overview in the
-ribbon can be used to see whether the “move”, “export” and “print” rights are set or not. The
+ribbon lets you see whether the “move”, “export” and “print” rights are set or not. The
 permissions for the selected role/user are always displayed – in this case for the role “IT
 management”.
 
@@ -56,13 +56,15 @@ The [Manual setting of permissions](/docs/passwordsecure/9.2/configuration/advan
 the configuration of rights for both existing and also new records. The option of
 [Predefining rights](/docs/passwordsecure/9.2/configuration/advancedview/permissionconceptandprotective/predefiningrights/predefining_rights.md) represents a very efficient alternative. Instead of
 having to separately grant permissions for every record, a “preset” is defined once for each
-organisational structure. Once this has been done, it is sufficient in future to merely select the
+organisational structure. After this has been done, it is sufficient in future to merely select the
 organisational structure when creating a record. The permissions are then set automatically. This
-process is particularly advantageous for those users who should not set their permissions
+process is particularly advantageous for those users who shouldn't set their permissions
 themselves.
 
 ![predefined rights diagram](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/working_with_predefining_rights/working_with_predefined_rights_4-en.webp)
 
-**CAUTION:** The configuration of permissions can be carried out manually or automatically as
-described. If you want to change previously set permissions later, this has to be done manually.
-Retrospectively defining rights is not possible.
+:::warning
+The configuration of permissions can be performed manually or automatically as
+described. To change previously set permissions later, do so manually.
+Retrospectively defining rights isn't possible.
+:::

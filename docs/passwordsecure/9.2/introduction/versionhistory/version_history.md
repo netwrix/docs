@@ -9,6 +9,16 @@ sidebar_position: 30
 The previously released versions and the corresponding changelogs can be found in the following
 sections.
 
+- [Version 9.2.6.33415](/docs/passwordsecure/9.2/introduction/versionhistory/version_9.2.6.33415.md)
+
+- [Version 9.2.5.33325](/docs/passwordsecure/9.2/introduction/versionhistory/version_9.2.5.33325.md)
+
+- [Version 9.2.4.33163](/docs/passwordsecure/9.2/introduction/versionhistory/version_9.2.4.33163.md)
+
+- [Version 9.2.3.32988](/docs/passwordsecure/9.2/introduction/versionhistory/version_9.2.3.32988.md)
+
+- [Version 9.2.2.32703](/docs/passwordsecure/9.2/introduction/versionhistory/version_9.2.2.32703.md)
+
 - [Version 9.2.1.32530](/docs/passwordsecure/9.2/introduction/versionhistory/version_9.2.1.32530.md)
 
 - [Version 9.2.0.32454](/docs/passwordsecure/9.2/introduction/versionhistory/version_9.2.0.32454.md)

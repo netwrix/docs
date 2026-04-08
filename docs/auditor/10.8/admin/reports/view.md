@@ -26,12 +26,12 @@ access them instantly. See the [Navigation](/docs/auditor/10.8/admin/navigation/
 [Customize Home Screen](/docs/auditor/10.8/admin/navigation/customizehome.md) topics for additional information.
 
 1. In Netwrix Auditor Home screen, click
-   ![reports_tile](/images/auditor/10.7/admin/reports/reports_tile.webp)on
+   ![reports_tile](/images/auditor/10.8/admin/reports/reports_tile.webp)on
    the left, and in the tree on the left select the report you need.
 
 To speed up the process, you can use the **Search** field, entering the keyword to search by.
 
-![searchreports_thumb_0_0](/images/auditor/10.7/admin/reports/searchreports_thumb_0_0.webp)
+![searchreports_thumb_0_0](/images/auditor/10.8/admin/reports/searchreports_thumb_0_0.webp)
 
 2. Click View button in the right pane.
 
@@ -64,22 +64,18 @@ To apply filters
 2. Apply required filters to the report and click View Report. For example, you can update report
    timeframe, change _Who_ and _Where_ values, apply sorting, etc.
 
-Wildcards are supported. For example, type _%corp\administrator%_ in the in the Who domain\user
-field if you want to view changes made by the corp\administrator user only .
+Wildcards are supported. For example, type _%companydomain\admin2%_ in the Who domain\user field if you want to view changes made by the companydomain\admin2 user only.
 
 Do not use % in the exclusive filters (e.g., Who (Exclude domain\user)). Otherwise, you will receive
 an empty report.
 
-_escape_characters_ are not supported.
+`escape_characters` are not supported.
 
-The example below applies to the All Changes by Server report and shows the before and after views
-of the report. The filters may vary slightly depending on the audited system and report type.
+The filters may vary slightly depending on the audited system and report type.
+Below is the All Active Directory Changes report with the default filter:
 
-The report without filtering:
+![allchangesserver](/images/auditor/10.8/admin/reports/allchangesserver.webp)
 
-![allchangesserver](/images/auditor/10.7/admin/reports/allchangesserver.webp)
+Below is the same report, but filtered by a specific user on a selected domain controller, sorted by a specific type:
 
-The report below displays changes for all audited systems made by the CORP\Administrator user on the
-ROOTDC2 domain controller for a month sorted by the action type.
-
-![allchangesserverfiltered](/images/auditor/10.7/admin/reports/allchangesserverfiltered.webp)
+![allchangesserverfiltered](/images/auditor/10.8/admin/reports/allchangesserverfiltered.webp)

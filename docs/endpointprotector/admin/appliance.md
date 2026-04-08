@@ -62,6 +62,7 @@ the Endpoint Protector Administration and Reporting Tool with the new IP address
 
 Additionally, if you want to switch to using IPV6 exclusively, starting with version 2512, you can do so by turning on the IPV6 option.
 Doing so will disable the IPV4 option and vice versa.
+Changes from one IP version to another should always be followed by a Save operation to apply the configuration.
 
 ![ Change the network settings for the appliance to communicate correctly in your network using IPV6](IPV6appliancesettings.png)
 
@@ -73,7 +74,7 @@ For appliances hosted on the following types of images, IP change options will n
 When transitioning from IPv4 to IPv6 or vice versa, changes to the Nginx configuration may be necessary:
 - If you are using IPv4 and transitioning to IPv6, ensure that the Nginx configuration is updated to listen on the IPv6 address.
 - If you are using IPv6 and transitioning to IPv4, ensure that the Nginx configuration is updated to listen on the IPv4 address.
-For customers using the standard Nginx configuration (most users), adjustments are made automatically.
+For customers using the standard Nginx configuration (most users), adjustments are made automatically. Also, as stated above, changes from one IP version to another should always be followed by a Save operation to apply the configuration.
 
 For customers with custom Nginx configurations (such as those using a different port for client communication), these changes might impact the communication between the agent and server.
 

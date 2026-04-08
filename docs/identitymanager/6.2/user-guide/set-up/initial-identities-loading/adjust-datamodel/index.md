@@ -48,14 +48,14 @@ Adjust the data model by proceeding as follows:
 
 1. On the home page, click on **Settings** in the **Configuration** section.
 
-    ![Home Page - Configuration](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
+    ![Home Page - Configuration](/images/identitymanager/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
 
 2. On the **Workforce** > **Data Model** page, click on the following icon to adjust the data model
    to your specific situation.
 
-    ![Scan Data Model](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/adjust-datamodel/iconscandatamodel_v602.svg)
+    ![Scan Data Model](/images/identitymanager/user-guide/set-up/initial-identities-loading/adjust-datamodel/iconscandatamodel_v602.svg)
 
-    ![Scan Data Model](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/adjust-datamodel/initialload_scandatamodel_v60.webp)
+    ![Scan Data Model](/images/identitymanager/user-guide/set-up/initial-identities-loading/adjust-datamodel/initialload_scandatamodel_v60.webp)
 
     Identity Manager counts the entries for each attribute and suggests a quantification:
 
@@ -63,7 +63,7 @@ Adjust the data model by proceeding as follows:
     - Non-empty attributes are quantified (e.g. small, large, etc.) to be displayed in the UI's
       forms optimally (e.g. dropdown list, search tool, etc.).
 
-    ![Scan Data Model - Result](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/adjust-datamodel/initialload_scandatamodel-result_v523.webp)
+    ![Scan Data Model - Result](/images/identitymanager/user-guide/set-up/initial-identities-loading/adjust-datamodel/initialload_scandatamodel-result_v523.webp)
 
 3. Observe the result and adjust manually the data model if needed, by clicking on the properties.
 
@@ -84,11 +84,11 @@ Adjust the data model by proceeding as follows:
 
 4. Click on the Save icon at the top.
 
-    ![Save Icon](/images/identitymanager/saas/user-guide/set-up/user-profile-configuration/iconsave_v602.svg)
+    ![Save Icon](/images/identitymanager/user-guide/set-up/user-profile-configuration/iconsave_v602.svg)
 
 5. Click on the **Reload** button to apply the recent changes to the application.
 
-    ![Reload Button](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/generate-unique-properties/reload_v603.webp)
+    ![Reload Button](/images/identitymanager/user-guide/set-up/initial-identities-loading/generate-unique-properties/reload_v603.webp)
 
 ## Verify Identities Loading
 
@@ -98,7 +98,7 @@ In order to validate the process:
 
     > For example, our `Region` field in `Site` is sized as `large`.
     >
-    > ![Scan Data Model - Example](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/adjust-datamodel/initialload_scan-example_v523.webp)
+    > ![Scan Data Model - Example](/images/identitymanager/user-guide/set-up/initial-identities-loading/adjust-datamodel/initialload_scan-example_v523.webp)
 
 2. Navigate within Identity Manager to find a workflow using the test field. Observe the displaying
    mode in the UI.
@@ -106,9 +106,9 @@ In order to validate the process:
     > Our `State` field must be filled in during the creation of a new site. It can be filled by
     > opening a pop-up and choosing the region in the list.
     >
-    > ![Scan Data Model - Example](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/adjust-datamodel/initialload_scan-example2_v523.webp)
+    > ![Scan Data Model - Example](/images/identitymanager/user-guide/set-up/initial-identities-loading/adjust-datamodel/initialload_scan-example2_v523.webp)
     >
-    > ![Scan Data Model - Example](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/adjust-datamodel/initialload_scan-example3_v523.webp)
+    > ![Scan Data Model - Example](/images/identitymanager/user-guide/set-up/initial-identities-loading/adjust-datamodel/initialload_scan-example3_v523.webp)
 
 3. Back on the scanning feature, change the displaying mode of your test field and save.
 

@@ -9,7 +9,7 @@ sidebar_position: 70
 Customization records are documentation about each customization. They are automatically built and
 maintained by the Scanners. They enable you to search customizations and attach them to processes.
 
-Click on the **Customizations** tab to display all the customizations found by the scanner. You can
+Click the **Customizations** tab to display all the customizations found by the scanner. You can
 change the view to focus the results. Click the **Customization Name** to open the customization
 record.
 

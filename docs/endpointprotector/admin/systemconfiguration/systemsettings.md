@@ -149,7 +149,7 @@ You can set a number of reported threats between 100 and 1000.
 :::
 
 
-![Log Settings](logsettings.webp)
+![Log Settings](logsettings.png)
 
 ### Log Settings Use Case and Terminology
 

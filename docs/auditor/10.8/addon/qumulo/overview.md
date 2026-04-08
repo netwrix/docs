@@ -110,7 +110,7 @@ more information.
   initiator's account name in the "_Who_" field of the Auditor search results and activity
   summaries.
 - If the initiator's account name could not be resolved, then Windows SID or Qumulo auth ID will be
-  displayed in the the "_Who_" field of the search results and activity summaries.
+  displayed in the "_Who_" field of the search results and activity summaries.
 - Currently, not every detail about permission and attribute changes may be provided by Qumulo
   Cluster, so they cannot be reported by Auditor.
 - If the monitoring plan name in the add-on configuration parameter is specified incorrectly, this

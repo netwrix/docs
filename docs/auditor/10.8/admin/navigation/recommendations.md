@@ -12,7 +12,7 @@ Netwrix Service Accounts, you can start collecting data and review it with Netwr
 recommendations are based on your current product configuration and help you to experience the
 Auditor capabilities in earnest.
 
-![recommendations](/images/auditor/10.7/admin/navigation/recommendations.webp)
+![recommendations](/images/auditor/10.8/admin/navigation/recommendations.webp)
 
 Follow the steps to review the recommendations provided by Netwrix industry experts.
 
@@ -105,7 +105,7 @@ Follow the steps to manage recommendations:
 
 **Step 2 –** Click **Settings** at the bottom.
 
-![managerecommendations](/images/auditor/10.7/admin/navigation/managerecommendations.webp)
+![managerecommendations](/images/auditor/10.8/admin/navigation/managerecommendations.webp)
 
 **Step 3 –** In the Manage recommendations dialog, do the following:
 

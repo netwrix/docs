@@ -10,7 +10,7 @@ import { NPGSValue, NPGSIntro } from '@site/src/training/platform-governance-for
 import { NPGS } from '@site/src/training/products';
 
 
-Estimated length: 5 minutes
+Estimated length: 2.25 hours
 
 In this learning path, you will learn how to use <NPGS />. It contains the following courses:
 

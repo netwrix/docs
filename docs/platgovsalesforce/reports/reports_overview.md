@@ -22,8 +22,7 @@ You can define and save your own reports.
 - Customization objects have additional data to enable searching with complex queries. For example,
   search for _all objects with script dependencies that have not been used for six months_, _or all
   objects used by workflows_.
-- You can filter test scripts from regular scripts. Test scripts can be queried to review test
-  coverage and determine if they being used.
+- You can filter test scripts from regular scripts. You can query test scripts to review test coverage and determine if they are being used.
 
 :::note
 To access all reports, the following setting must be enabled:
@@ -58,7 +57,7 @@ Set and Profile.
 
 ![Access report by PermissionSet/Profile](/images/platgovsalesforce/reports/access_reports_permission_by_permset.webp)
 
-- **Users to Profiles/PermissionSets**: Displays the Profile, PermissionSet and PermissionSet Group
+- **Users to Profiles/PermissionSets**: Displays the Profile, PermissionSet, and PermissionSet Group
 assigned to each user. You can filter the report information. For example, if you want a list of
 users that have Admin profiles, you can set two filters:
 
@@ -66,7 +65,7 @@ users that have Admin profiles, you can set two filters:
     - Salesforce type Equals Profile
 
 - **Date Assigned** and **Expires on** are only relevant for PermissionSets. They are blank for
-Profiles. If your org does not use the **Expires on** feature, you can remove the column from the
+Profiles. If your org doesn't use the **Expires on** feature, you can remove the column from the
 report.
 
 ![Users to Profile/PermissionSets](/images/platgovsalesforce/reports/access_reports_users_to_profile.webp)
@@ -78,10 +77,10 @@ Compliant.
 
 ![Access Report Profile Permissions Changes](/images/platgovsalesforce/reports/access_reports_profile_changes.webp)
 
-- **Changes to Users**: Displays the changes to tracked user data fields. Refer to
-[Enhanced CPQ Support](/docs/platgovsalesforce/changemanagement/enhanced_cpq_support.md) for more information on
-setting up tracking.<br /><br />If you see the message: _--String too long - Skipped lines due to CPU limit reached--_ it simply
-means the governor limits have been reached. Profiles and PermissionSets are very data heavy.
+- **Changes to Users**: Displays the changes to tracked user data fields. See
+[Enhanced CPQ Support](/docs/platgovsalesforce/changemanagement/datatracking/enhanced_cpq_support.md) for instructions on
+setting up tracking.<br /><br />If you see the message: _--String too long - Skipped lines due to CPU limit reached--_ it
+means you have reached the governor limits. Profiles and PermissionSets are very data heavy.
 Platform Governance for Salesforce skips the record and continues the scan the next day to ensure
 there is no impact to your org.
 
@@ -168,8 +167,7 @@ including:
 
 These reports are available from **Netwrix Dashboard**  **Reports**  **Customizations**.
 
--  **All Customizations**: This enables you to use Salesforce functionality to filter searches
-quickly for specific customizations.
+-  **All Customizations**: Use Salesforce functionality to filter searches quickly for specific customizations.
 -  **Customization Impact**: This report shows your customizations and how they impact other objects.
 
 ## Clean Up
@@ -195,14 +193,12 @@ These reports are available from **Netwrix Dashboard**  **Reports**  **Change En
 -  **Approval Override**: shows all changes approved with an approval override.
 -  **What Changed?**: shows all changes that have occurred.
 -  **Unresolved Non-Compliant Changes**: displays open non-compliant changes. A non-compliant change
-indicates something was changed without the required approvals. By looking at this report, you can
-investigate changes and get an understanding of what the impacts are and see if any additional
-changes need to be made. This report is used to track changes that require action.
+indicates something was changed without the required approvals. Use this report to investigate changes, understand their impacts, and determine whether additional changes are needed. Use this report to track changes that require action.
 -  **Managed Package Updates**: displays managed package update details for auditing.
 -  **Resolved Non-Compliant Changes**: displays resolved non-compliant changes with the change
 overview and the difference summary.
 -  **Compliant Changes**: displays all compliant changes. Compliant changes are automatically marked
-as closed. This report is used to review changes that have been automatically cleared.
+as closed. Use this report to review changes that have been automatically cleared.
 -  **Consolidated Change By Type**: displays changes summarized and grouped by Salesforce Type.
 -  **Deployed Changes**: displays an end to end summary of deployed changes to enable tracking and
 reporting of changes to the system.
@@ -225,13 +221,11 @@ These reports are available from **Netwrix Dashboard**  **Reports**  **Release a
 ## Audit Reports
 
 -  **Unresolved Non-Compliant Changes**: displays open non-compliant changes. A non-compliant change
-indicates something was changed without the required approvals. By looking at this report, you can
-investigate changes and get an understanding of what the impacts are and see if any additional
-changes need to be made. This report is used to track changes that require action.
+indicates something was changed without the required approvals. Use this report to investigate changes, understand their impacts, and determine whether additional changes are needed. Use this report to track changes that require action.
 -  **Managed Package Updates**: displays managed package update details for auditing.
 -  **Resolved Non-Compliant Changes**: displays managed package update details for auditing.
 -  **Compliant Changes**: displays all compliant changes. Compliant changes are automatically marked as
-closed. This report is used to review changes that have been automatically cleared.
+closed. Use this report to review changes that have been automatically cleared.
 -  **Platform Changes**: displays any platform changes that have occurred.
 -  **Consolidated Changes By Type**: displays changes summarized and grouped by Salesforce Type.
 -  **Deployed Changes**: displays an end to end summary of deployed changes to enable tracking and

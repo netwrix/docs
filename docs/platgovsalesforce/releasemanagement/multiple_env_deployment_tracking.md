@@ -38,7 +38,7 @@ Here is the overall process flow for multiple deployment tracking:
 
 Once the change request is approved:
 
-1. Click on **Sync CR**.
+1. Click **Sync CR**.
 
     ![Sync the Change Request](/images/platgovsalesforce/release_management/push_pull_sync_cr.webp)
 
@@ -48,8 +48,8 @@ Once the change request is approved:
 
     ![Enter your credentials](/images/platgovsalesforce/release_management/push_pull_popup.webp)
 
-4. Click on **Test Connection** to make sure your credentials are correct. If your credentials are
-   not correct,click on **Save Credentials** and edit.
+4. Click **Test Connection** to make sure your credentials are correct. If your credentials are
+   not correct, click **Save Credentials** and edit.
 5. Make the necessary changes on your change request in your development/testing environment and
    **Save**.
 
@@ -59,7 +59,7 @@ Once the change request is approved:
 2. Choose a **Production** environment.
 3. Add your **Credentials**.
 4. Click **Test Connection** to make sure your credentials are correct. If your credentials are not
-   correct, click on **Save Credentials** and edit.
+   correct, click **Save Credentials** and edit.
 5. Click **Push**.
 6. Click **Push CR**.
 
@@ -70,7 +70,7 @@ After the push, the Change Request in Production has a related deployment record
 ## Create the Deployment Record
 
 1. Open the **Related Lists** tab on your change request.
-2. Click on **Run Compare Tool**. Refer to
+2. Click **Run Compare Tool**. Refer to
    [Compare Environments](/docs/platgovsalesforce/tools/environment_comparison.md) for more information.
 
     ![Run the Compare Environment tool](/images/platgovsalesforce/release_management/apex_enviro_comparison.webp)

@@ -22,7 +22,7 @@ Integration API provides the following capabilities:
 - Data out: Further automate your business processes, IT security and operations workflows by
   enriching third-party solutions with actionable audit data.
 
-![diagram_thumb_0_0](/images/auditor/10.7/api/diagram_thumb_0_0.webp)
+![diagram_thumb_0_0](/images/auditor/10.8/api/diagram_thumb_0_0.webp)
 
 Netwrix Auditor Integration API operates with XML- and JSON-formatted Activity Records—minimal
 chunks of audit data containing information on _who_ changed _what_, _when_ and _where_ this change

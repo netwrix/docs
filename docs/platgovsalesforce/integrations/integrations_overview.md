@@ -7,7 +7,7 @@ sidebar_position: 100
 # Integrations
 
 Many customers use ticketing and change approval systems in the management of changes to all of
-their business systems not just Salesforce or NetSuite. Platform Governance for Salesforce provides
+their business systems, not only Salesforce or NetSuite. Platform Governance for Salesforce provides
 integrations with external ticketing systems to improve workflows for customers using both. This
 brings all the benefits of Platform Governance for Salesforce to your external ticketing systems,
 including the impact analysis, release management and change reconciliation features.

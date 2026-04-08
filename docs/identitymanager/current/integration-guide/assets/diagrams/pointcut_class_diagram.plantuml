@@ -1,0 +1,27 @@
+@startuml component
+package "PointCut" {
+	class PointCut {
+		Mode : Int32
+		--
+		Activity : Activity
+		ActivityState : ActivityTemplateState
+		Aspect : Aspect
+	}
+}
+package "Activity" {
+	class Activity {
+	}
+}
+package "ActivityTemplateState" {
+	class ActivityTemplateState {
+	}
+}
+package "Aspect" {
+	class Aspect {
+	}
+}
+PointCut "0..*" --  "1"Activity
+PointCut "0..*" --  "1"ActivityTemplateState
+PointCut "0..*" --  "1"Aspect
+hide empty members
+@enduml

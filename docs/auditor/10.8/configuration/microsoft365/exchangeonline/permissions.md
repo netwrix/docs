@@ -75,78 +75,11 @@ and then select **Exchange.ManageAsApp**.
 
 **Step 6 –** Grant admin consent to the tenant (that is, for the Office 365 organization whose audit
 data will be collected by the newly registered app). Go to the **new app settings > API
-permissions** and click **Grant admin consent for\_**`<tenant name>`\_. When prompted to confirm
+permissions** and click **Grant admin consent for** *`<tenant name>`*. When prompted to confirm
 granting, click **Yes**.
 
 **Step 7 –** Go to **Azure Active Directory** — **Roles and administrators** and assign **Exchange
 Administrator** role.
-
-**Step 8 –** Download the PowerShell script for certificate creation, as provided in the
-[Generate a self-signed certificate ](https://docs.microsoft.com/en-us/powershell/exchange/app-only-auth-powershell-v2?view=exchange-ps#generate-a-self-signed-certificate)Microsoft
-article.
-
-**Step 9 –** To create a self-signed certificate to be used by the app, run the following command:
-
-```
-.\Create-SelfSignedCertificate.ps1 -CommonName "MyCompanyName" -StartDate 2020-04-01 -EndDate 2022-04-01
-```
-
-where:
-
-`CommonName` — specify _"Netwrix Auditor"_
-
-`StartDate` — set to current date
-
-`EndDate` — set to 2 years from now
-
-**Step 10 –** When prompted to specify a password, click **Enter**.
-
-**Step 11 –** Go to **Manage > Certificates & secrets**, click **Upload certificate** and upload
-the*.crt* file you have just created.
-
-![certificates_secrets_thumb_0_0](/images/auditor/10.7/configuration/microsoft365/exchangeonline/certificates_secrets_thumb_0_0.webp)
-
-**Step 12 –** To create Exchange Online connection session, you can provide certificate file path or
-thumbprint. If you want to use a file path, run the following command:
-
-```
-Connect-ExchangeOnline -CertificateFilePath "full_path_to_certificate"
--AppID "yourAppId" -Organization "Office365_tenant_name"
-```
-
-Application (client ID) can be found in the **Overview** page.
-
-![tenant_id_thumb_0_0](/images/auditor/10.7/configuration/microsoft365/exchangeonline/tenant_id_thumb_0_0.webp)
-
-For example:
-
-```
-Connect-ExchangeOnline -CertificateFilePath "C:\Path\MyCompanyName1.pfx"
--AppId "402b12a2-fb2b-4222-8f54-5596def1" -Organization "myorganization123.onmicrosoft.com"
-```
-
-You can use certificate thumbprint instead of file path. For that, import the certificate to the
-local certificate store, using the following command:
-
-```
-Import-PfxCertificate -FilePath "path_to_pfx_certificate" -CertStoreLocation Cert:\CurrentUser\My
-```
-
-Then run the command like following:
-
-```
-Connect-ExchangeOnline -CertificateThumbprint 6AEА5A82911ААА3F76FEE149B7B52А70DDFD88 -AppId a14a 822d-f228-412b-9222-281de23
--Organization myorganization123.onmicrosoft.com
-```
-
-Finally, run the following command to end the session:
-
-```
-Disconnect-ExchangeOnline -Confirm:$false
-```
-
-To automate the process described above, you can create a a script comprising the corresponding
-commands and schedule its launch.
 
 ## Non-owner Mailbox Access Audit: Manual Configuration
 

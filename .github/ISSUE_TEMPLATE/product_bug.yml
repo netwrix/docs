@@ -1,0 +1,189 @@
+name: Report a product bug
+description: Report a bug or issue you encountered while using a Netwrix product.
+title: "Bug: "
+labels: ["bug", "product"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this product bug report!
+        Please provide as much information as possible to help us understand and reproduce the issue.
+        > [!IMPORTANT]
+        > All product issues require review by product experts before resolution.
+        > This issue will be triaged by the product team and assigned appropriately.
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue type
+      description: Select the issue type that most closely applies (you can select multiple).
+      multiple: true
+      options:
+        - Product crashes or freezes
+        - Feature not working as expected
+        - Performance issues
+        - Installation or upgrade problems
+        - Configuration issues
+        - Error messages or alerts
+        - Data corruption or loss
+        - UI/UX issues
+        - Integration with other systems
+        - Licensing or activation issues
+        - Other
+    validations:
+      required: false
+  - type: dropdown
+    id: product
+    attributes:
+      label: Affected product and version
+      description: Select the product and version you're experiencing issues with (you can select multiple).
+      multiple: true
+      options:
+        - 1Secure
+        - Access Analyzer 11.6
+        - Access Analyzer 12.0
+        - Access Information Center 11.6
+        - Access Information Center 12.0
+        - Activity Monitor 7.1
+        - Activity Monitor 8.0
+        - Activity Monitor 9.0
+        - Auditor 10.6
+        - Auditor 10.7
+        - Auditor 10.8
+        - Change Tracker 8.0
+        - Change Tracker 8.1
+        - Customer Portal & Training Guide
+        - Data Classification 5.6.2
+        - Data Classification 5.7
+        - Directory Manager 11.0
+        - Directory Manager 11.1
+        - Endpoint Policy Manager
+        - Endpoint Protector
+        - Identity Manager 6.1
+        - Identity Manager 6.2
+        - Identity Recovery 3.1
+        - Partner Certification Training Courses
+        - Password Policy Enforcer 10.2
+        - Password Policy Enforcer 11.0
+        - Password Policy Enforcer 11.1
+        - Password Reset 3.23
+        - Password Reset 3.3
+        - Password Secure 9.1
+        - Password Secure 9.2
+        - Password Secure 9.3
+        - PingCastle
+        - Platform Governance for NetSuite
+        - Platform Governance Flashlight for NetSuite
+        - Platform Governance Flashlight for Salesforce
+        - Privilege Secure 4.1
+        - Privilege Secure 4.2
+        - Privilege Secure 25.12
+        - Privilege Secure for Discovery
+        - Recovery for Active Directory 2.6
+        - Threat Manager
+        - Threat Prevention 7.4
+        - Threat Prevention 7.5
+        - Threat Prevention 8.0
+    validations:
+      required: false
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue
+      description: |
+        Please provide a detailed description of the issue you encountered.
+        Include any error messages, unexpected behavior, or symptoms you observed.
+        If applicable, include screenshots, error logs, or recordings that demonstrate the problem.
+      placeholder: |
+        Example: "When attempting to run a compliance report in Netwrix Auditor 10.8, the application crashes with error code 0x80004005"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Reproduction steps
+      description: |
+        Please provide the exact steps needed to reproduce the issue.
+        The more detailed your steps, the easier it will be for us to identify and fix the problem.
+        Include information about your environment, configuration, or any specific conditions when the issue occurs.
+      placeholder: |
+        Example:
+        1. Open Netwrix Auditor console
+        2. Navigate to Reports > Compliance
+        3. Select 'HIPAA Compliance Report'
+        4. Click 'Generate Report'
+        5. Application crashes with error message
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: |
+        What did you expect to happen?
+      placeholder: |
+        Example: "The HIPAA compliance report should generate successfully and display results in the console."
+    validations:
+      required: false
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: |
+        What actually happened?
+      placeholder: |
+        Example: "The application crashed and displayed error 0x80004005. Had to restart the console."
+    validations:
+      required: false
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: |
+        Have you found any workaround for this issue?
+        If so, please share it here to help others who may encounter the same problem.
+      placeholder: |
+        Example: "Running the report through the web interface works correctly."
+    validations:
+      required: false
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Browsers
+      description: If this is a web-based product or web console issue, what browser are you using (you can select multiple)?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - Brave
+        - Opera
+        - Other
+        - Not applicable
+    validations:
+      required: false
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      description: What operating system are you using (you can select multiple)?
+      multiple: true
+      options:
+        - Windows Server 2016
+        - Windows Server 2019
+        - Windows Server 2022
+        - Windows 10
+        - Windows 11
+        - Linux
+        - MacOS
+        - Other
+    validations:
+      required: false
+  - type: input
+    id: contact
+    attributes:
+      label: Contact details
+      description: Please provide us with your contact details so we can follow up with you if we need more information.
+      placeholder: ex. email@example.com
+    validations:
+      required: false

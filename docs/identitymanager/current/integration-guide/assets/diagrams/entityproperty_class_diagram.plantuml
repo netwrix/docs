@@ -1,0 +1,216 @@
+@startuml component
+package "EntityProperty" {
+	class EntityProperty {
+		DisplayName_L1 : String
+		FlexibleComparisonExpression : String
+		HistoryPrecision : Int32
+		Identifier : String
+		IsKey : Boolean
+		TargetColumnIndex : Int32
+		TargetEntityType : Int64
+		Type : Int32
+		--
+		AssignedResourceBinaries : AssignedResourceBinary[]
+		AssignedResourceNavigations : AssignedResourceNavigation[]
+		AssignedResourceScalars : AssignedResourceScalar[]
+		AssociatedLocalizedProperties : EntityProperty[]
+		Association1 : EntityAssociation[]
+		Association2 : EntityAssociation[]
+		CorrespondenceIndirectResourceRules : IndirectResourceRule[]
+		CorrespondenceMembershipPropertyIndirectResourceRules : IndirectResourceRule[]
+		EndPropertyRecordSections : RecordSection[]
+		EntitlementIndirectResourceRules : IndirectResourceRule[]
+		EntityAssociationMappings1 : EntityAssociationMapping[]
+		EntityAssociationMappings2 : EntityAssociationMapping[]
+		EntityType : EntityType
+		Expression : EntityPropertyExpression[]
+		FilterEntityPropertyEntityInstances : EntityInstance[]
+		FilterPropertyEntityInstances : EntityInstance[]
+		GroupByProperty : EntityProperty
+		GroupByPropertyEntityProperties : EntityProperty[]
+		HomonymEntityLinkFiltersComparisonProperty1 : HomonymEntityLinkFilter[]
+		HomonymEntityLinkFiltersProperty1 : HomonymEntityLinkFilter[]
+		Language : Language
+		MainPropertyForms : Form[]
+		NeutralProperty : EntityProperty
+		ParentDisplayTables : DisplayTable[]
+		ParentPropertyDimensions : Dimension[]
+		PropertyChanges : Change[]
+		PropertyCriteriaEntityPropertyExpressions : EntityPropertyExpression[]
+		PropertyIndirectResourceRules : IndirectResourceRule[]
+		PropertyRecordProperties : RecordProperty[]
+		PropertyResourceFiles : ResourceFile[]
+		PropertyScaffoldings : Scaffolding[]
+		RecordEndPropertyForms : Form[]
+		RecordPropertyForms : Form[]
+		RecordSortPropertyForms : Form[]
+		RecordStartPropertyForms : Form[]
+		ResourceBinaryRules : ResourceBinaryRule[]
+		ResourceNavigationRules : ResourceNavigationRule[]
+		ResourcePropertyMappings : ResourcePropertyMapping[]
+		ResourceQueryRules : ResourceQueryRule[]
+		ResourceScalarRules : ResourceScalarRule[]
+		ResourceTypeDependsOn : ResourceType[]
+		RiskRuleItems : RiskRuleItem[]
+		RoleMappingRuleItems : RoleMappingRuleItem[]
+		RoleMappings : RoleMapping[]
+		StartPropertyRecordSections : RecordSection[]
+	}
+}
+package "AssignedResourceBinary" {
+	class AssignedResourceBinary {
+	}
+}
+package "AssignedResourceNavigation" {
+	class AssignedResourceNavigation {
+	}
+}
+package "AssignedResourceScalar" {
+	class AssignedResourceScalar {
+	}
+}
+package "EntityAssociation" {
+	class EntityAssociation {
+	}
+}
+package "IndirectResourceRule" {
+	class IndirectResourceRule {
+	}
+}
+package "RecordSection" {
+	class RecordSection {
+	}
+}
+package "EntityAssociationMapping" {
+	class EntityAssociationMapping {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "EntityPropertyExpression" {
+	class EntityPropertyExpression {
+	}
+}
+package "EntityInstance" {
+	class EntityInstance {
+	}
+}
+package "HomonymEntityLinkFilter" {
+	class HomonymEntityLinkFilter {
+	}
+}
+package "Language" {
+	class Language {
+	}
+}
+package "Form" {
+	class Form {
+	}
+}
+package "DisplayTable" {
+	class DisplayTable {
+	}
+}
+package "Dimension" {
+	class Dimension {
+	}
+}
+package "Change" {
+	class Change {
+	}
+}
+package "RecordProperty" {
+	class RecordProperty {
+	}
+}
+package "ResourceFile" {
+	class ResourceFile {
+	}
+}
+package "Scaffolding" {
+	class Scaffolding {
+	}
+}
+package "ResourceBinaryRule" {
+	class ResourceBinaryRule {
+	}
+}
+package "ResourceNavigationRule" {
+	class ResourceNavigationRule {
+	}
+}
+package "ResourcePropertyMapping" {
+	class ResourcePropertyMapping {
+	}
+}
+package "ResourceQueryRule" {
+	class ResourceQueryRule {
+	}
+}
+package "ResourceScalarRule" {
+	class ResourceScalarRule {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "RiskRuleItem" {
+	class RiskRuleItem {
+	}
+}
+package "RoleMappingRuleItem" {
+	class RoleMappingRuleItem {
+	}
+}
+package "RoleMapping" {
+	class RoleMapping {
+	}
+}
+EntityProperty "1" --  "0..*"AssignedResourceBinary
+EntityProperty "1" --  "0..*"AssignedResourceNavigation
+EntityProperty "1" --  "0..*"AssignedResourceScalar
+EntityProperty "0..1" --  "0..*"EntityProperty
+EntityProperty "1" --  "0..*"EntityAssociation
+EntityProperty "1" --  "0..*"EntityAssociation
+EntityProperty "0..1" --  "0..*"IndirectResourceRule
+EntityProperty "0..1" --  "0..*"IndirectResourceRule
+EntityProperty "0..1" --  "0..*"RecordSection
+EntityProperty "0..1" --  "0..*"IndirectResourceRule
+EntityProperty "1" --  "0..*"EntityAssociationMapping
+EntityProperty "1" --  "0..*"EntityAssociationMapping
+EntityProperty "0..*" --  "1"EntityType
+EntityProperty "1" --  "0..*"EntityPropertyExpression
+EntityProperty "0..1" --  "0..*"EntityInstance
+EntityProperty "0..1" --  "0..*"EntityInstance
+EntityProperty "0..*" --  "0..1"EntityProperty
+EntityProperty "0..1" --  "0..*"HomonymEntityLinkFilter
+EntityProperty "0..1" --  "0..*"HomonymEntityLinkFilter
+EntityProperty "0..*" --  "0..1"Language
+EntityProperty "0..1" --  "0..*"Form
+EntityProperty "0..1" --  "0..*"DisplayTable
+EntityProperty "0..1" --  "0..*"Dimension
+EntityProperty "1" --  "0..*"Change
+EntityProperty "0..1" --  "0..*"EntityPropertyExpression
+EntityProperty "1" --  "0..*"IndirectResourceRule
+EntityProperty "1" --  "0..*"RecordProperty
+EntityProperty "1" --  "0..*"ResourceFile
+EntityProperty "0..1" --  "0..*"Scaffolding
+EntityProperty "0..1" --  "0..*"Form
+EntityProperty "0..1" --  "0..*"Form
+EntityProperty "0..1" --  "0..*"Form
+EntityProperty "0..1" --  "0..*"Form
+EntityProperty "1" --  "0..*"ResourceBinaryRule
+EntityProperty "1" --  "0..*"ResourceNavigationRule
+EntityProperty "1" --  "0..*"ResourcePropertyMapping
+EntityProperty "1" --  "0..*"ResourceQueryRule
+EntityProperty "1" --  "0..*"ResourceScalarRule
+EntityProperty "0..1" --  "0..*"ResourceType
+EntityProperty "1" --  "0..*"RiskRuleItem
+EntityProperty "1" --  "0..*"RoleMappingRuleItem
+EntityProperty "1" --  "0..*"RoleMapping
+EntityProperty "0..1" --  "0..*"RecordSection
+hide empty members
+@enduml

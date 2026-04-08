@@ -12,12 +12,18 @@ is reported in the Change Log as **Documentation Change** for the **Change Type*
 **Resolution** set to _Automatically cleared documentation change. Only Help or Description
 changed_. The Change Log is closed.
 
-1. Open **Strongpoint** > **Clean Up** > **Update Field Description and Help**<br />
-You can filter the
-   results or check **Description/Help is Empty** to focus the **Field List**. Click on a column
-   heading in the **Field List** to sort the list by the selected column.
+1.  Open **Netwrix** > **Clean Up** > **Update Field Description and Help**
 
+    You can filter the
+    results by **Name**, **Script Id**, **Type** or check the **Description/Help is Empty** checkbox to automatically hide rows with populated description and help from the **Field List**.
+
+    You can also click on a column heading in the **Field List** to sort the list by the selected column.
+    :::note
+    The column with the arrow up or arrow down is the column used for sorting. (Ascending or Descending Order)
+    :::
+    ![field_column_sort](/images/platgovnetsuite/clean_up/field_column_sort.png)
+
+2.  Add or edit **Description** and **Help** text.
+    The edited text will be **highlighted in blue** to indicate which fields have been modified.
     ![cust_ui_help_update](/images/platgovnetsuite/clean_up/cust_ui_help_update.webp)
-
-2. Add or edit **Description** and **Help** text.
-3. Click **Update**
+3.  Click **Update** to submit the changes. The page will refresh and display the updated Descriptions and Help.

@@ -49,12 +49,12 @@ information.
 
 Create a single role by proceeding as follows:
 
-![Home Page - Access Roles](/images/identitymanager/saas/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
+![Home Page - Access Roles](/images/identitymanager/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
 
 **Step 1 –** On the home page in the **Configuration** section, click on **Access Roles** to access
 the roles page.
 
-![createsinglerole](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/role-manual-creation/createsinglerole.webp)
+![createsinglerole](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-manual-creation/createsinglerole.webp)
 
 **Step 2 –** On the roles page, click on the adequate category and create a role by clicking on **+
 New** at the top right corner.
@@ -142,21 +142,21 @@ creates one navigation.
 
 Create a navigation rule by proceeding as follows:
 
-![Home Page - Access Rules](/images/identitymanager/saas/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+![Home Page - Access Rules](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
 
 **Step 1 –** On the home page in the **Configuration** section, click on **Access Rules** to access
 the rules page.
 
-![Entity Type Choice](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
+![Entity Type Choice](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
 
 **Step 2 –** In the drop down menu at the top left, choose the entity type to which the future
 navigation rule will be applied.
 
-![Addition Icon](/images/identitymanager/saas/user-guide/set-up/user-profile-assignment/iconadd_v602.webp)
+![Addition Icon](/images/identitymanager/user-guide/set-up/user-profile-assignment/iconadd_v602.webp)
 
 **Step 3 –** Click on the **Navigations** tab and on the addition button at the top right corner.
 
-![Create a Navigation Rule](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/role-manual-creation/singlerolescatalog_createnavrule_v602.webp)
+![Create a Navigation Rule](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-manual-creation/singlerolescatalog_createnavrule_v602.webp)
 
 **Step 4 –** Fill in the fields.
 
@@ -182,29 +182,29 @@ Indeed, these rules thus lose their criteria and may be applied to far too many 
 
 In order to verify the process, check that the role and rule are created with the right parameters.
 
-![Home Page - Access Roles](/images/identitymanager/saas/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
+![Home Page - Access Roles](/images/identitymanager/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
 
 **Step 1 –** For roles, click on **Access Roles** on the home page in the **Configuration** section.
 
-![Access Single Roles](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_testroles_v602.webp)
+![Access Single Roles](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_testroles_v602.webp)
 
 **Step 2 –** Select single roles and find the role you created inside the right category and with
 the right parameters.
 
 Our example would look like:
 
-![Example - Generated Role](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_exampleroleresult_v602.webp)
+![Example - Generated Role](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_exampleroleresult_v602.webp)
 
-![Home Page - Access Rules](/images/identitymanager/saas/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+![Home Page - Access Rules](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
 
 **Step 3 –** For rules, click on **Access Rules** on the home page in the **Configuration** section.
 
-![Access Navigation Rules](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_testrules_v602.webp)
+![Access Navigation Rules](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_testrules_v602.webp)
 
 **Step 4 –** Select navigation rules and find the rule(s) you created with the right parameters.
 
 Our example would look like:
 
-![Example - Generated Rule](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_exampleruleresult_v523.webp)
+![Example - Generated Rule](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_exampleruleresult_v523.webp)
 
 The verification of role creation has been completed.

@@ -545,7 +545,7 @@ It is strongly recommended to use a new ```CyberArk Nav.xml``` file in the ```SC
 Adds a new menu item under the `Nav_Connectors` menu item declared in the root `Nav.xml` file. This
 new menu item gives access to the list of synchronized CyberArk SCIM objects.
 
-![SCIM CyberArk Menu Items](/images/identitymanager/saas/integration-guide/connectors/how-tos/scim-cyberark-export/scim_cyberark_export_menu_item_5.1.6.webp)
+![SCIM CyberArk Menu Items](/images/identitymanager/integration-guide/connectors/how-tos/scim-cyberark-export/scim_cyberark_export_menu_item_5.1.6.webp)
 
 ### Configuration
 
@@ -573,7 +573,7 @@ describes how a single resource should be displayed.
 
 This configuration configures that display for [christian.adam@acme.com](mailto:christian.adam@acme.com):
 
-![SCIM CyberArk Display Entity Type](/images/identitymanager/saas/integration-guide/connectors/how-tos/scim-cyberark-export/scim_cyberark_export_display_entity_type_5.1.6.webp)
+![SCIM CyberArk Display Entity Type](/images/identitymanager/integration-guide/connectors/how-tos/scim-cyberark-export/scim_cyberark_export_display_entity_type_5.1.6.webp)
 
 The scalar properties don't need to be configured: they are automatically displayed. The only information that the [Display Entity Type](/docs/identitymanager/6.2/integration-guide/toolkit/xml-configuration/user-interface/displayentitytype/index.md) adds here, is that the property ```BasicCollection``` is a navigation property. An eye icon will be displayed to take you directly to the matching page.
 
@@ -595,7 +595,7 @@ The [Display Table](/docs/identitymanager/6.2/integration-guide/toolkit/xml-conf
 
 configures the following list display:
 
-![SCIM CyberArk Display Table](/images/identitymanager/saas/integration-guide/connectors/how-tos/scim-cyberark-export/scim_cyberark_export_display_table_5.1.6.webp)
+![SCIM CyberArk Display Table](/images/identitymanager/integration-guide/connectors/how-tos/scim-cyberark-export/scim_cyberark_export_display_table_5.1.6.webp)
 
 #### Internal display name
 

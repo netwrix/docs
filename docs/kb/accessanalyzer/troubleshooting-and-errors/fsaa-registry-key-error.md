@@ -8,7 +8,7 @@ keywords:
   - NAS
   - access denied
   - FSAA scan
-  - Netwrix Auditor
+  - Netwrix Access Analyzer
   - SBTLogging
   - Host Management
 products:
@@ -53,7 +53,7 @@ If you get this after scanning a NAS host, check the details in Host Management:
 9. Change **Model** and **Manufacturer** to `N/A`.
 
 ## Product
-Netwrix Auditor
+Netwrix Access Analyzer
 
 ## Module
 SA - DC - FSAA - Activity;SA - DC - FSAA - Permissions

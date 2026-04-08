@@ -34,7 +34,7 @@ roles.
 The option B is more complicated and time-consuming than the option A, but leads to more gain. Be
 aware that you can go through the process options simultaneously.
 
-![Process Schema - How to Implement a New System](/images/identitymanager/saas/user-guide/global-process/howto-newsystem/globalprocess_schemaconnectsyst.webp)
+![Process Schema - How to Implement a New System](/images/identitymanager/user-guide/global-process/howto-newsystem/globalprocess_schemaconnectsyst.webp)
 
 ## Process Details
 

@@ -144,7 +144,7 @@ _`<UUID_OF_MOUNT_TARGET`>_ – enter the uuid of target you want to audit.
 ## Example
 
 The JSON-formatted structure below is an example of the request body that can be used to create a
-notification policy named _MOUNT_POINT_POLICY_ to audit the mount a share on Nutanix File Server
+notification policy named _MOUNT_POINT_POLICY_ to audit the mounted share on Nutanix File Server
 with the _uuid=378896fd-e829-4869-84a2-6c29268acfff_. The following operations will be audited:
 
 - "FILE_READ",

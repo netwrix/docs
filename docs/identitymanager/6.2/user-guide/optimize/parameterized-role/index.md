@@ -15,20 +15,20 @@ a navigation rule. See the
 [Create Roles in the Role Catalog](/docs/identitymanager/6.2/user-guide/set-up/single-roles-catalog-creation/index.md) topic for
 additional information.
 
-![Simple Role](/images/identitymanager/saas/user-guide/optimize/parameterized-role/parameterizedroles_simplerole.webp)
+![Simple Role](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedroles_simplerole.webp)
 
 To enable the assignment of all existing entitlements, the role model usually contains numerous
 roles.
 
 For example, the SAP role can be given with slight differences according to the users' subsidiaries:
 
-**> ![Role Matrix](/images/identitymanager/saas/user-guide/optimize/parameterized-role/parameterizedroles_numerousroles.webp)**
+**> ![Role Matrix](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedroles_numerousroles.webp)**
 
 In order to reduce the number of roles, we can configure roles with parameters by inserting a
 criterion in the navigation rules. Thus, instead of having as many roles as entitlements (left on
 the schema), we can have way fewer roles (right on the schema).
 
-![With/Without Parameters](/images/identitymanager/saas/user-guide/optimize/parameterized-role/parameterizedroles_parameters.webp)
+![With/Without Parameters](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedroles_parameters.webp)
 
 In the previous example, with a parameter on the subsidiary, the number of roles would be divided by
 three.
@@ -59,7 +59,7 @@ script in the command line.
 <Dimension Identifier="TimeSlot" DisplayName_L1="Time Slot" EntityType="Access_TimeSlot" ColumnMapping="10" IsExcludedFromRoleMining="true" />
 ```
 
-![Example - Role](/images/identitymanager/saas/user-guide/optimize/parameterized-role/parameterizedrole_examplerole_v603.webp)
+![Example - Role](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedrole_examplerole_v603.webp)
 
 **Step 2 –** Create a single role. See the
 [Create a Role Manually](/docs/identitymanager/6.2/user-guide/set-up/single-roles-catalog-creation/role-manual-creation/index.md)
@@ -72,7 +72,7 @@ topic for additional information.
 
 Here we have three navigation rules, one for each distinct time slot (dimension A). For example:
 
-![Example - Rule](/images/identitymanager/saas/user-guide/optimize/parameterized-role/parameterizedrole_examplerule_v603.webp)
+![Example - Rule](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedrole_examplerule_v603.webp)
 
 :::note
 Make sure that the corresponding dimension is specified in the right `DisplayEntityType`
@@ -96,7 +96,7 @@ value Y, then that user would get the role B.
 :::
 
 
-![Example - Role Parameter Required](/images/identitymanager/saas/user-guide/optimize/parameterized-role/parameterizedrole_exampleroleparameter_v603.webp)
+![Example - Role Parameter Required](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedrole_exampleroleparameter_v603.webp)
 
 **Step 4 –** Go back to the roles page to edit the single role from step 2, if needing to set the
 parameter required.
@@ -126,13 +126,13 @@ additional information.
 
 In our example:
 
-![Example - Step 1](/images/identitymanager/saas/user-guide/optimize/parameterized-role/parameterizedroles_parameterexamplestep1_v603.webp)
+![Example - Step 1](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedroles_parameterexamplestep1_v603.webp)
 
-![Example - Step 2](/images/identitymanager/saas/user-guide/optimize/parameterized-role/parameterizedroles_parameterexamplestep2_v603.webp)
+![Example - Step 2](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedroles_parameterexamplestep2_v603.webp)
 
 If the dimension is specified in the users' context rule, then Identity Manager will provide
 suggestions.
 
-![Example - Suggestion](/images/identitymanager/saas/user-guide/optimize/parameterized-role/parameterizedrole_examplerolesuggestion_v603.webp)
+![Example - Suggestion](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedrole_examplerolesuggestion_v603.webp)
 
 For example, concerning the `Title` dimension mentioned above.

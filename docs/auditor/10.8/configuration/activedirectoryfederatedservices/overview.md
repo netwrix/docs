@@ -78,16 +78,16 @@ need to configure audit settings manually, as described later in this section.
 **Step 1 –** Select the AD FS data source in this monitoring plan (top row under the header), click
 **Edit data source** to open its settings.
 
-![mp_adfs_listing_thumb_0_0](/images/auditor/10.7/configuration/activedirectoryfederatedservices/mp_adfs_listing_thumb_0_0.webp)
+![mp_adfs_listing_thumb_0_0](/images/auditor/10.8/configuration/activedirectoryfederatedservices/mp_adfs_listing_thumb_0_0.webp)
 
 **Step 2 –** In the **Configure audit settings** section, select **Adjust audit settings
 automatically** check box.
 
-![mp_data_source_ad_fs_thumb_0_0](/images/auditor/10.7/configuration/activedirectoryfederatedservices/mp_data_source_ad_fs_thumb_0_0.webp)
+![mp_data_source_ad_fs_thumb_0_0](/images/auditor/10.8/configuration/activedirectoryfederatedservices/mp_data_source_ad_fs_thumb_0_0.webp)
 
 **Step 3 –** Save the settings.
 
-Auditor  will automatically configure audit settings on all servers in the AD FS farm and adjust the
+Auditor will automatically configure audit settings on all servers in the AD FS farm and adjust the
 necessary log settings on these servers.
 
 ## Configure AD FS farm manually

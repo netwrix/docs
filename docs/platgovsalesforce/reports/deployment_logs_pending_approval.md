@@ -11,7 +11,7 @@ pending approval**
 
 The **Report Generation Status** should be **Complete**. If not, run the report again.
 
-Click on any of the report columns to change the sort order. The ↓ or ↑ arrow in the column heading
+Click any of the report columns to change the sort order. The ↓ or ↑ arrow in the column heading
 indicates the current column and sort order being used for the results.
 
 ### Report Options
@@ -19,7 +19,7 @@ indicates the current column and sort order being used for the results.
 -  **Summarize information by**: Select a criteria from the list to have the results summarized and grouped. Default is **None**.
 -  **Show**: Select the criteria for the deployment logs to show. Default is **All change requests**.
 -  **Time Frame**: Select the **Date Field** to be used for the report, the **Range**, and adjust the **From** and **To** fields as needed. The default **Date Field** is **Deployment Date**, **Range** is **Custom** and **From/To** is blank. Date format is _dd/mm/yyyy_.
--  **Run Report**: Runs (**Run Report Now**) the report using the selected report options. Or, click on the arrow to open the **Schedule Future Runs** option.
+-  **Run Report**: Runs (**Run Report Now**) the report using the selected report options. Or, click the arrow to open the **Schedule Future Runs** option.
 -  **Hide Details/Show Details**: **Hide Details** hides the report body and **Show Details** restores the report view.
 -  **Customize**: Opens the **Report Options**. You can change the table format, details, and included columns.
 -  **Save**: Opens the **Save** dialog with the current file name options.

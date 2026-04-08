@@ -38,7 +38,7 @@ Directory\_\_**>_**\_Active Directory\_\_**>\_**\_State-in-Time**.
 In the report filters, select a monitoring plan you want to generate a report for. To review data
 sources and items included in each plan, navigate to the Monitoring Plans section.
 
-![fileshareswindowsservers](/images/auditor/10.7/admin/reports/types/stateintime/fileshareswindowsservers.webp)
+![fileshareswindowsservers](/images/auditor/10.8/admin/reports/types/stateintime/fileshareswindowsservers.webp)
 
 Each report has a set of filters which help organize audit data in the most convenient way. See the
 [View Reports](/docs/auditor/10.8/admin/reports/view.md) topic for additional information. You can also create a subscription
@@ -67,7 +67,7 @@ threat or at least merits your special attention. With baselines specified right
 you can easily identify servers that are different from your corporate policies or best practices.
 Risks are marked with red color and are easy to spot in the report.
 
-![windowsserverinventory_thumb_0_0](/images/auditor/10.7/admin/reports/types/stateintime/windowsserverinventory_thumb_0_0.webp)
+![windowsserverinventory_thumb_0_0](/images/auditor/10.8/admin/reports/types/stateintime/windowsserverinventory_thumb_0_0.webp)
 
 You can specify baseline values specific to your organization in one of the following ways:
 

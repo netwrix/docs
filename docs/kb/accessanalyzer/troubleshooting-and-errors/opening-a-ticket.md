@@ -1,24 +1,24 @@
 ---
 description: >-
   Instructions for collecting logs and environment details when opening a
-  support ticket for Netwrix Auditor. Includes paths to console, published
-  reports, and job logs, plus how to find the product build number.
+  support ticket for Netwrix Access Analyzer. Includes paths to console logs,
+  published report logs, job logs, and instructions for locating the product
+  build number.
 keywords:
   - netwrix
-  - netwrix auditor
+  - netwrix access analyzer
+  - NAA
   - logs
   - support ticket
   - job logs
   - build number
-  - AIC
+  - access information center
   - messages table
   - troubleshooting
 products:
   - access-analyzer
 sidebar_label: Opening a Ticket
-tags:
-  - troubleshooting-and-errors
-title: "Opening a Ticket"
+title: Opening a Ticket
 knowledge_article_id: kA0Qk0000001TMXKA2
 ---
 
@@ -26,52 +26,44 @@ knowledge_article_id: kA0Qk0000001TMXKA2
 
 ## Overview
 
-This article provides guidance on collecting logs and other relevant information when submitting a support ticket for Netwrix Auditor (NEA).
+This article provides guidance on collecting logs and other relevant information when submitting a support ticket for Netwrix Access Analyzer (NAA).
 
 ## Instructions
 
-Follow the steps below to gather the necessary logs and details required for troubleshooting your NEA instance.
+Follow the steps below to gather the necessary logs and details required for troubleshooting your NAA instance.
 
 ### Logs
 
-Follow these steps to gather logs:
+The default installation directory for Netwrix Access Analyzer is:
 
-- Depending on your current **AIC** version, refer to one of the following default paths:
+```text
+C:\Program Files\STEALTHbits\Access Information Center
+```
 
-  - AIC v11.5:
+> **NOTE:** This location could be custom set. If you are unsure where the installation directory is, open `services.msc` and view the properties for the **Netwrix Access Information Center** service. The **Path to executable** field points to the Access Information Center (AIC) installation directory.
 
-    ```text
-    C:\inetpub\wwwroot\StealthAUDIT Compliance\
-    ```
-
-  - AIC v11.6:
-
-    ```text
-    C:\Program Files\STEALTHbits\Access Information Center
-    ```
-
-- Navigate to the following path to collect the **NEA Console logs**:
+- Navigate to the following path to collect the **NAA Console logs**:
 
   ```text
-  %SAInstallDir%SADatabase\Logs\Application
+  %SAInstallDir%\SADatabase\Logs\Application
   ```
 
 - Gather the **Published Reports logs** from the following path:
 
   ```text
-  %SAInstallDir%SADatabase\Logs\Web
+  %SAInstallDir%\SADatabase\Logs\Web
   ```
 
 - Collect the **job logs** using one of the following methods:
 
-  - On the home page of the job, click **View Log**, and save the log file.
+  - On the job home page, click **View Log**, and save the log file.
 
-    ![Job View Log screenshot](./../0-images/ka0Qk000000C8rR_0EMQk000007oXpZ.png)
+    ![Screenshot showing the View Log option on a job home page](./../0-images/ka0Qk000000C8rR_0EMQk000007oXpZ.png)
 
-  - Locate the **job logs** using the following path:
+  - Locate the **job logs** directly in the file system using the following path:
 
     ```text
-    %SAInstallDir%Jobs\%GROUP%\%JOB%\OUTPUT
+    %SAInstallDir%\Jobs\%GROUP%\%JOB%\OUTPUT
     ```
 
     > **NOTE:** Replace `%GROUP%` and `%JOB%` with the appropriate values. For example, to locate logs for the `1-AD_Scan` job, use the following path:
@@ -82,21 +74,14 @@ Follow these steps to gather logs:
 
   - In the **Navigation Pane**, right-click the job and select **Export**. In the new window, specify the components to export and proceed with the export.
 
-    ![Export Job screenshot](./../0-images/ka0Qk000000C8rR_0EMQk000007oXrB.png)
+    ![Screenshot showing the Export option for a job](./../0-images/ka0Qk000000C8rR_0EMQk000007oXrB.png)
 
 ## Messages Table
 
-To export job errors and warnings from the **Messages table**, proceed to the **Navigation Pane**, right-click **%JOB%**\**Status**\**Messages** and select **Export** > **Export to XML**.
+To export job errors and warnings from the **Messages** table, navigate to **%JOB%** > **Status** > **Messages** in the **Navigation Pane**, right-click **Messages**, and select **Export** > **Export to XML**.
 
 ## Product Build Number
 
-> **IMPORTANT:** Identifying your current NEA build helps determine whether the issue has already been addressed in a newer version. Follow the steps below to establish the build number in your NEA instance.
+> **IMPORTANT:** Identifying your current NAA build helps determine whether the issue has already been addressed in a newer version.
 
-- In NEA v11.5:
-
-  - In **Control Panel**, open the **Programs and Features** menu. Locate the NEA line and review the **Version** column value.
-  - In the **Apps & Features** menu, highlight the NEA entry and review the version.
-
-- In NEA v11.6:
-
-  - Navigate to **Help** > **About** in the top toolbar.
+To identify the product build number, navigate to **Help** > **About** in the top toolbar.

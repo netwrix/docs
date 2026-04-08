@@ -58,7 +58,7 @@ For example, consider a user who has a given entitlement which was assigned to t
 several distinct time periods. When creating a rule that assigns the same entitlement to them
 automatically on a given time period, then we have:
 
-![Schema - Compute Role Model](/images/identitymanager/saas/user-guide/optimize/assignment-automation/remove-redundant-assignments/redundantassignments_examplewithout.webp)
+![Schema - Compute Role Model](/images/identitymanager/user-guide/optimize/assignment-automation/remove-redundant-assignments/redundantassignments_examplewithout.webp)
 
 The redundant assignment analysis gives priority to the rules inside the role model and the policy.
 When an entitlement is assigned via a rule, it is stated as calculated, even if it is also assigned
@@ -68,7 +68,7 @@ be truncated or deleted.
 For example, consider the same situation as before. Using the redundant assignments analysis, then
 we have:
 
-![Schema - Redundant Assignment Analysis](/images/identitymanager/saas/user-guide/optimize/assignment-automation/remove-redundant-assignments/redundantassignments_examplewith.webp)
+![Schema - Redundant Assignment Analysis](/images/identitymanager/user-guide/optimize/assignment-automation/remove-redundant-assignments/redundantassignments_examplewith.webp)
 
 Redundant assignments can be removed by Identity Manager only when the corresponding assigned items
 are tagged as redundant and displayed in the most recent report. The manual assigned items that are
@@ -92,11 +92,11 @@ See the
 
 Remove redundant assignments by proceeding as follows:
 
-![Home Page - Redundant Assignments](/images/identitymanager/saas/user-guide/optimize/assignment-automation/remove-redundant-assignments/home_redundantassignments_v602.webp)
+![Home Page - Redundant Assignments](/images/identitymanager/user-guide/optimize/assignment-automation/remove-redundant-assignments/home_redundantassignments_v602.webp)
 
 **Step 1 –** Click on **Redundant Assignments** on the home page in the **Administration** section.
 
-![Redundant Assignments - Buttons](/images/identitymanager/saas/user-guide/optimize/assignment-automation/remove-redundant-assignments/redundantassignments_buttons_v602.webp)
+![Redundant Assignments - Buttons](/images/identitymanager/user-guide/optimize/assignment-automation/remove-redundant-assignments/redundantassignments_buttons_v602.webp)
 
 **Step 2 –** Click on **Analyze** to tag the manual roles and resource types from all policies
 eligible for conversion to an automatic state.
@@ -109,7 +109,7 @@ Previous tags are cleared at each instance of this tagging process.
 **Step 3 –** Click on **Download Excel** to download a dedicated XLSX report which contains one tab
 per entity type representing identities.
 
-![Redundant Assignments - Report Example](/images/identitymanager/saas/user-guide/optimize/assignment-automation/remove-redundant-assignments/redundantassignments_reportexample_v602.webp)
+![Redundant Assignments - Report Example](/images/identitymanager/user-guide/optimize/assignment-automation/remove-redundant-assignments/redundantassignments_reportexample_v602.webp)
 
 The example states that in the entity type Directory_User, the user Nicholas Acosta had the single
 role Banking/Sales/Eunomia/Administrator starting from February 28th 2023 (dateA) until May 16th
@@ -126,18 +126,18 @@ eligible manual roles to calculated.
 
 In order to verify the process:
 
-![Home Page - Directory User](/images/identitymanager/saas/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
+![Home Page - Directory User](/images/identitymanager/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
 
 **Step 1 –** Access the user directory from the home page.
 
-![View Permissions Tab](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)
+![View Permissions Tab](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/resource-creation/viewpermissions_v602.webp)
 
 **Step 2 –** For one of the users mentioned in the report, access their permissions.
 
 **Step 3 –** Check that their roles (mentioned in the report) have actually switched from approved
 to calculated.
 
-![Redundant Assignments - Result](/images/identitymanager/saas/user-guide/optimize/assignment-automation/remove-redundant-assignments/redundantassignments_reportexampleverif_v602.webp)
+![Redundant Assignments - Result](/images/identitymanager/user-guide/optimize/assignment-automation/remove-redundant-assignments/redundantassignments_reportexampleverif_v602.webp)
 
 When removing redundant assignments based on the previous report example the setting will be as
 above.

@@ -14,7 +14,7 @@ To keep the monitoring process secure, Netwrix suggests configuring role-based a
 control ensures that only appropriate users can modify the product configuration or view audit data,
 based on your company policies and the user's job responsibilities.
 
-![rbac-01](/images/auditor/10.7/admin/monitoringplans/rbac-01.webp)
+![rbac-01](/images/auditor/10.8/admin/monitoringplans/rbac-01.webp)
 
 Roles are described briefly in the table below and explained in detail in the next topic.
 

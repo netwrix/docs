@@ -54,7 +54,7 @@ These dates should then be part of entity types' properties (for example as `Sta
 [Record Section](/docs/identitymanager/6.2/integration-guide/toolkit/xml-configuration/provisioning/recordsection/index.md) and
 [Context Rule](/docs/identitymanager/6.2/integration-guide/toolkit/xml-configuration/provisioning/contextrule/index.md).
 
-![Identities - Validity Period](/images/identitymanager/saas/integration-guide/identity-management/joiners-movers-leavers/on-offboarding/validityperiod.webp)
+![Identities - Validity Period](/images/identitymanager/integration-guide/identity-management/joiners-movers-leavers/on-offboarding/validityperiod.webp)
 
 At the start date, the resource is created and a few entitlements are assigned to the identity.
 

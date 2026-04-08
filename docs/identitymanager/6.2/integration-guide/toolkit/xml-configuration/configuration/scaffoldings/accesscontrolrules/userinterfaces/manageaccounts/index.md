@@ -8,7 +8,7 @@ sidebar_position: 10
 
 Gives access to the **Manage Accounts** buttons for the users of a given entity type.
 
-![ManageAccounts Button](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/accesscontrolrules/userinterfaces/manageaccounts/accesscontrol_manageaccounts_v603.webp)
+![ManageAccounts Button](/images/identitymanager/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/accesscontrolrules/userinterfaces/manageaccounts/accesscontrol_manageaccounts_v603.webp)
 
 The scaffolding gives access to the button, but you need to get the permissions on said accounts in
 order to see anything once you click on the button.

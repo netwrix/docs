@@ -38,7 +38,7 @@ entity type itself). Let's call this entity type the "other" one.
   rule when there is the need to use variables from among users' attributes to select the resource
   to assign.
 
-![Schema - Scalar Rule](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_schemanavigation.webp)
+![Schema - Scalar Rule](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_schemanavigation.webp)
 
 > A navigation rule could add the AD group `SG_APP_SQL` to the `memberOf` navigation property to all
 > AD nominative accounts provided that the user has the single role `SQL Server Administration`.
@@ -156,20 +156,20 @@ Fill an entity type with a navigation rule by proceeding as follows:
 
 **Step 1 –** Click on **Access Rules** on the home page in the **Configuration** section.
 
-![Home - Access Rules](/images/identitymanager/saas/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+![Home - Access Rules](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
 
 **Step 2 –** In the dropdown menu at the top left, choose the source entity type for the future
 navigation rule.
 
-![Entity Type Choice](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
+![Entity Type Choice](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
 
 **Step 3 –** Click on the **Navigations** tab and on the addition button at the top right corner.
 
-![Addition Icon](/images/identitymanager/saas/user-guide/set-up/user-profile-assignment/iconadd_v602.webp)
+![Addition Icon](/images/identitymanager/user-guide/set-up/user-profile-assignment/iconadd_v602.webp)
 
 **Step 4 –** Fill in the fields.
 
-![Create a Navigation Rule](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/role-manual-creation/singlerolescatalog_createnavrule_v602.webp)
+![Create a Navigation Rule](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-manual-creation/singlerolescatalog_createnavrule_v602.webp)
 
 - `Join`: navigation property from the target entity type, whose value is to be impacted.
 - `Resource`: resource from the entity type pointed by the `Join`, which is to be added to the
@@ -185,7 +185,7 @@ navigation rule.
 
 > Our example would look like:
 >
-> ![Scalar Rule Example](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_examplenav_v602.webp)
+> ![Scalar Rule Example](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_examplenav_v602.webp)
 
 **Step 5 –** Click on **Create** and see a line added on the rules page.
 
@@ -197,24 +197,24 @@ Fill an entity type with a query rule by proceeding as follows:
 
 **Step 1 –** Click on **Access Rules** on the home page in the **Configuration** section.
 
-![Home - Access Rules](/images/identitymanager/saas/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+![Home - Access Rules](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
 
 **Step 2 –** In the dropdown menu at the top left, choose the source entity type for the future
 query rule.
 
-![Entity Type Choice](/images/identitymanager/saas/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
+![Entity Type Choice](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
 
 **Step 3 –** Click on the **Queries** tab and on the addition button at the top right corner.
 
-![Addition Icon](/images/identitymanager/saas/user-guide/set-up/user-profile-assignment/iconadd_v602.webp)
+![Addition Icon](/images/identitymanager/user-guide/set-up/user-profile-assignment/iconadd_v602.webp)
 
 Fill in the fields.
 
-![Create Query Rule](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_queryrule_v522.webp)
+![Create Query Rule](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_queryrule_v522.webp)
 
 Once the `Resource Type` is provided, more fields appear.
 
-![Query Rule Fields](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_queryrulefields_v602.webp)
+![Query Rule Fields](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_queryrulefields_v602.webp)
 
 - **Target Object** > `Property to fill`: navigation property from the target entity type, whose
   value is to be impacted.
@@ -237,9 +237,9 @@ Once the `Resource Type` is provided, more fields appear.
 
 > Our examples would look like:
 >
-> ![Query Rule Example](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_examplequery_v602.webp)
+> ![Query Rule Example](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_examplequery_v602.webp)
 >
-> ![Query Rule Example 2](/images/identitymanager/saas/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_examplequerybis_v602.webp)
+> ![Query Rule Example 2](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_examplequerybis_v602.webp)
 
 Click on **Create** and see a line added on the rules page.
 
@@ -249,7 +249,7 @@ Any modification in a navigation or query rule is taken into account when launch
 computation task, in the **Resource Types** frame of the corresponding connector's overview page,
 via **Jobs** > **Compute Role Model**.
 
-![Resource Type Jobs](/images/identitymanager/saas/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
 
 This task applies the rules and computes new properties. Therefore, if a given rule's criterion is
 modified, then all corresponding assignments are computed again. If a resource was created
@@ -272,7 +272,7 @@ In order to verify the process:
 **Step 1 –** On the corresponding connector's overview page, in the **Resource Types** frame click
 on **Jobs** > **Compute Role Model** to apply all rules.
 
-![Resource Type Jobs](/images/identitymanager/saas/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
 
 Review unauthorized accounts (on the **Resource Reconciliation** screen) and roles (on the **Role
 Reconciliation** screen) to help check query rules: if there are numerous properties to be

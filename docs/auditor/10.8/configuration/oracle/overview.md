@@ -60,7 +60,7 @@ dates set by the vendor. So, when planning your Netwrix Auditor deployment, cons
 
     - Oracle wallets are not supported
     - Lightweight drivers for Oracle Instant Client are not supported
-    - Auditor client UI does not display any warnings and / or errors regarding to trail audit mode
+    - Auditor client UI does not display any warnings and / or errors regarding trail audit mode
       operation
 
 - If you are using Oracle Database 11g and have performed seamless upgrade to the latest version of

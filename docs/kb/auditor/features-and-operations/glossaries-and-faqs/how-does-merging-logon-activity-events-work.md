@@ -27,7 +27,7 @@ How does merging Logon Activity events work?
 
 ## Answer
 
-Netwrix Auditor merges similar logon events to reduce noice and narrow the number of similar events. Merging events works as follows:
+Netwrix Auditor merges similar logon events to reduce noise and narrow the number of similar events. Merging events works as follows:
 
 1. The records are considered similar when they have the same event type, User, Name and IP of the originating workstation, Name and IP of the target workstation. For Failed Attempts the failure reasons must also match.
 
@@ -42,7 +42,7 @@ Netwrix Auditor merges similar logon events to reduce noice and narrow the numbe
 
 3. If there is an Interactive Logon based on events `4768` and `4769` where the **What** and **Workstation** fields are different, all subsequent events of this type with **What** and **Workstation** fields matching the **What** field of the original event, will be merged. Other words, if there was a remote connection to a workstation, it would overwrite all direct connections within the specified time range.
 
-4. Domain Controller Logoff events of the same type are also merged and the user sees the first one. However if there was an event `4779` (remote session disconnected), it would be considered more valueable. The product also filters out all logoffs for which the corresponding logon belongs to another event (i.e. not displayed to the user).
+4. Domain Controller Logoff events of the same type are also merged and the user sees the first one. However if there was an event `4779` (remote session disconnected), it would be considered more valuable. The product also filters out all logoffs for which the corresponding logon belongs to another event (i.e. not displayed to the user).
 
 5. Failed Attempts are also combined into a single event and the number of failed attempts is displayed.
 

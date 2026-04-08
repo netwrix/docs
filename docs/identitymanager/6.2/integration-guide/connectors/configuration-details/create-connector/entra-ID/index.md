@@ -284,7 +284,7 @@ This is how the connectors are displayed on the UI.
 Each connector should be configured with a menu item, which is created automatically when working
 via the UI.
 
-![Menu Item - Azure AD Connector](/images/identitymanager/saas/integration-guide/connectors/how-tos/create-connector/azuread/howtos_azure_menuitem_v603.webp)
+![Menu Item - Azure AD Connector](/images/identitymanager/integration-guide/connectors/how-tos/create-connector/azuread/howtos_azure_menuitem_v603.webp)
 
 In XML, it should look like this:
 
@@ -316,7 +316,7 @@ Conf/MicrosoftEntraID/MicrosoftEntraID UI.xml
 
 ```
 
-![Navigation Properties - Azure AD Connector](/images/identitymanager/saas/integration-guide/connectors/how-tos/create-connector/azuread/howtos_azure_navproperties_v603.webp)
+![Navigation Properties - Azure AD Connector](/images/identitymanager/integration-guide/connectors/how-tos/create-connector/azuread/howtos_azure_navproperties_v603.webp)
 
 Microsoft Entra ID's resources are listed in a table.
 
@@ -335,7 +335,7 @@ Conf/MicrosoftEntraID/MicrosoftEntraID UI.xml
 
 ```
 
-![Display Table - Azure AD Connector](/images/identitymanager/saas/integration-guide/connectors/how-tos/create-connector/azuread/howtos_azure_table_v603.webp)
+![Display Table - Azure AD Connector](/images/identitymanager/integration-guide/connectors/how-tos/create-connector/azuread/howtos_azure_table_v603.webp)
 
 This is how the resources are displayed on the UI.
 

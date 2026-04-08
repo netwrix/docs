@@ -40,22 +40,22 @@ Mass update identity data (in complete mode) by proceeding as follows:
 1. Access the directory connector from **Connectors** on the home page, in the **Configuration**
    section.
 
-    ![Home - Connectors](/images/identitymanager/saas/user-guide/set-up/synchronization/home_connectors_v602.webp)
+    ![Home - Connectors](/images/identitymanager/user-guide/set-up/synchronization/home_connectors_v602.webp)
 
 2. On the connector's page, choose the connection corresponding to identities.
 3. In the connection's settings, download the Excel template full of the data from your database.
 
-    ![Download Full Template](/images/identitymanager/saas/user-guide/maintain/identity-data-modification/mass-update/datamodif_downloadtemplatedata_v602.webp)
+    ![Download Full Template](/images/identitymanager/user-guide/maintain/identity-data-modification/mass-update/datamodif_downloadtemplatedata_v602.webp)
 
 4. Update the data that needs change.
 5. Ensure that the field `Path (Complete mode)` is filled with the path of the source file.
 6. Click on **Upload** and choose the file you modified with new data.
 
-    ![Upload](/images/identitymanager/saas/user-guide/maintain/identity-data-modification/mass-update/connection_upload_v602.webp)
+    ![Upload](/images/identitymanager/user-guide/maintain/identity-data-modification/mass-update/connection_upload_v602.webp)
 
 7. Click on **Check Connection** to verify the path.
 
-    ![Check Connection](/images/identitymanager/saas/user-guide/set-up/connect-system/connection-creation/connectioncreation_checkconnection_v602.webp)
+    ![Check Connection](/images/identitymanager/user-guide/set-up/connect-system/connection-creation/connectioncreation_checkconnection_v602.webp)
 
 8. Click on **Save & Close**.
 9. Back on the connector's page, launch synchronization. See the
@@ -70,12 +70,12 @@ Mass update identity data (in incremental mode) by proceeding as follows:
 1. Access the directory connector from **Connectors** on the home page, in the **Configuration**
    section.
 
-    ![Home - Connectors](/images/identitymanager/saas/user-guide/set-up/synchronization/home_connectors_v602.webp)
+    ![Home - Connectors](/images/identitymanager/user-guide/set-up/synchronization/home_connectors_v602.webp)
 
 2. On the connector's page, choose the connection corresponding to identities.
 3. In the connection's settings, download the empty Excel template.
 
-    ![Download Full Template](/images/identitymanager/saas/user-guide/maintain/identity-data-modification/mass-update/datamodif_downloadtemplateempty_v602.webp)
+    ![Download Full Template](/images/identitymanager/user-guide/maintain/identity-data-modification/mass-update/datamodif_downloadtemplateempty_v602.webp)
 
 4. Fill only the data to be modified, specify the unique identifier for each entry (for correlation
    purposes), and fill the column `Command`, which can take a few available inputs:
@@ -100,11 +100,11 @@ Mass update identity data (in incremental mode) by proceeding as follows:
 5. Ensure that the field `Path (Incremental mode)` is filled with the path of the source file.
 6. Click on **Upload** and choose the file you modified with new data.
 
-    ![Upload](/images/identitymanager/saas/user-guide/maintain/identity-data-modification/mass-update/connection_upload_v602.webp)
+    ![Upload](/images/identitymanager/user-guide/maintain/identity-data-modification/mass-update/connection_upload_v602.webp)
 
 7. Click on **Check Connection** to verify the path.
 
-    ![Check Connection](/images/identitymanager/saas/user-guide/set-up/connect-system/connection-creation/connectioncreation_checkconnection_v602.webp)
+    ![Check Connection](/images/identitymanager/user-guide/set-up/connect-system/connection-creation/connectioncreation_checkconnection_v602.webp)
 
 8. Click on **Save & Close**.
 9. Back on the connector's page, launch synchronization. See the
@@ -119,14 +119,14 @@ In order to verify the process:
 - Check manually a sample in the `User` directory accessible from the home page. You should verify
   at least your own sheet and the sheets for your hierarchy.
 
-    ![Home - Directory User](/images/identitymanager/saas/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
+    ![Home - Directory User](/images/identitymanager/user-guide/set-up/configure-workflows/home_directoryuser_v523.webp)
 
 - Check that every organization still has a manager. Organizations are accessible in the
   `Department` directory accessible from the home page.
 
-    ![Home - Directory Department](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/home_directorydepartment_v523.webp)
+    ![Home - Directory Department](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/home_directorydepartment_v523.webp)
 
-    ![List of Departments](/images/identitymanager/saas/user-guide/set-up/initial-identities-loading/load-identities/initialload_departments_v602.webp)
+    ![List of Departments](/images/identitymanager/user-guide/set-up/initial-identities-loading/load-identities/initialload_departments_v602.webp)
 
     If the system contains many organizations, then it is also possible to list them with their
     managers through the Query module.

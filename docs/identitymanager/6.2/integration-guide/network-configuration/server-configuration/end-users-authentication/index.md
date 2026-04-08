@@ -47,11 +47,11 @@ authentication.
 
 Internal method & test mode form:
 
-![authent_1](/images/identitymanager/saas/integration-guide/network-configuration/server-configuration/end-users-authentication/authent_1.webp)
+![authent_1](/images/identitymanager/integration-guide/network-configuration/server-configuration/end-users-authentication/authent_1.webp)
 
 External method prompt:
 
-![authent_2](/images/identitymanager/saas/integration-guide/network-configuration/server-configuration/end-users-authentication/authent_2.webp)
+![authent_2](/images/identitymanager/integration-guide/network-configuration/server-configuration/end-users-authentication/authent_2.webp)
 
 ## Identity Server RSA Key Pair
 

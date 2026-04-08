@@ -55,7 +55,7 @@ And with the following form for the workflow's summary on record data:
 
 The content of `MainControl` is visible during the workflow's execution:
 
-![Form Example - New User from HR](/images/identitymanager/saas/integration-guide/toolkit/xml-configuration/workflows/forms/workflowcreaterecordentityform/formexample_workflowcreaterecordentityform_v603.webp)
+![Form Example - New User from HR](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/forms/workflowcreaterecordentityform/formexample_workflowcreaterecordentityform_v603.webp)
 
 The contents of `MainSummaryControl` and `RecordSummaryControl` are visible after the workflow's
 execution.

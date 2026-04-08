@@ -11,7 +11,7 @@ PageSize and ContinuationToken parameters.
 
 The principle is to call the function with the ContinuationToken obtained from the previous call.
 
-![Pagination sequence diagram](/images/identitymanager/saas/integration-guide/api/pagination/pagination.webp)
+![Pagination sequence diagram](/images/identitymanager/integration-guide/api/pagination/pagination.webp)
 
 :::note
 Pagination is optional. If PageSize is not specified, the function will return all items
