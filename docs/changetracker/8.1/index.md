@@ -9,7 +9,7 @@ sidebar_position: 1
 Netwrix Change Tracker is a system integrity monitoring product, used for compliance programs, host
 intrusion detection and change control for enterprise IT systems. It is used by Enterprise IT
 organizations including the military, federal, banks, financial services, airlines, retailers,
-utilities and not-for-profit organizations globally.
+utilities, and not-for-profit organizations globally.
 
 The product automates the collection of configuration data from any IT devices, including Servers
 and Desktops, database systems, firewalls, network routers and switches and stores a baseline for
@@ -17,7 +17,7 @@ each device. Platforms supported include Windows, Linux, Unix, Oracle, SQL Serve
 
 Configuration data collected is then analyzed for compliance with an organizations hardened build
 standard. This is typically based on a CIS Benchmark hardening checklist or one provided by a
-manufacturer such as Microsoft, Red Hat, Oracle or Cisco, for example. Compliance standards
+manufacturer such as Microsoft, Red Hat, Oracle, or Cisco, for example. Compliance standards
 supported by Change Tracker include PCI DSS, DISA STIG, NERC CIP, ISO 27001, GLBA), FISMA), HIPAA
 HITECH, S-OX, NIST 800-53/171 and GPG 13.
 
@@ -53,7 +53,7 @@ xccdf content.
 
 Netwrix Change Tracker is delivered as a 100% software solution. The central server component can be
 installed on either a Windows or Linux platform. A virtual host is supported but resources, and in
-particular disk I/O performance, are critical. For more information see:
+particular disk I/O performance, are critical. See the agent installation guides for your platform:
 
 - [Installing Gen 7 Agent for Windows](/docs/changetracker/8.1/install/agent/windows.md)
 - [Installing Gen 7 Agent for Linux](/docs/changetracker/8.1/install/agent/linuxos.md)
@@ -69,9 +69,9 @@ propagation via syslog and email, and for more advanced, two-way integration, Ne
 provides a REST API.
 
 - Windows Servers and Workstations are tracked using a locally installed active Agent;
-- Solaris, Ubuntu, SUSE Linux, RedHat and CentOS hosts can also be tracked using an Agent;
+- Solaris, Ubuntu, SUSE Linux, RedHat, and CentOS hosts can also be tracked using an Agent;
 - Legacy Unix systems are monitored for File Integrity changes using the Express Agent;
-- Network devices, Unix and Linux Servers are also tracked using an agentless, scripted interaction
+- Network devices, Unix, and Linux Servers are also tracked using an agentless, scripted interaction
   executed automatically from the Change Tracker server or using a Proxy Agent function;
 - Detailed Configuration Policy management for Servers and Workstations and Policy Compliance
   Reporting is performed via Change Tracker Hub.
