@@ -158,7 +158,7 @@ Starting from the 5.9.0.0 or later, enabling this option activates Endpoint Prot
 
 From this section, you can conﬁgure Server Certiﬁcate Validation, which ensures that certiﬁcates used for all communication requests on Endpoint Protector clients are validated. 
 
-![From this section, you can conﬁgure Server Certiﬁcate Validation.](servercertificatevalidation.webp)
+![From this section, you can conﬁgure Server Certiﬁcate Validation.](servercertalidation.webp)
 
 Before enabling, verify that:
 - The EPP Server certificate is valid and not expired.
