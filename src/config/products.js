@@ -61,10 +61,10 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '1.0',
-        label: '1.0',
+        version: '2601',
+        label: '2601',
         isLatest: false,
-        sidebarFile: './sidebars/accessanalyzer/1.0.js',
+        sidebarFile: './sidebars/accessanalyzer/2601.js',
       },
       {
         version: '12.0',
