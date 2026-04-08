@@ -14,6 +14,8 @@ DLL Hijack Protection detects and blocks these scenarios by inspecting DLL loads
 
 To enable DLL Hijack Protection, create a DLL Hijack policy in the Least Privilege Manager node of the Group Policy Object (or PolicyPak Cloud policy), then configure the mode and Approved Members as described below.
 
+![DLL Hijack Protection policy types in the Group Policy Management Editor](/images/policypak/leastprivilege/dllhijack/dllhijack-gpo-policy-types.webp)
+
 ---
 
 ## What the Feature Enforces
