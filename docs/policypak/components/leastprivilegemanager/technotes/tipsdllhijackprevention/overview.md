@@ -14,11 +14,11 @@ DLL Hijack Protection detects and blocks these scenarios by inspecting DLL loads
 
 1. Navigate to **Group Policy Management Editor > Computer Configuration > Netwrix Endpoint Policy Manager > Endpoint Privilege Security Pak > Endpoint Privilege Manager**.
 2. Right-click a collection and select **Add > New Global DLL Hijack Protection Policy** (or **New DLL Hijack Protection Exclusions Policy**).
-3. Configure the mode and Approved Members as described below.
+3. In the policy properties, select a **Mode** (see mode descriptions below) and add the appropriate identities to **Approved Members**.
 
 ![DLL Hijack Protection policy types in the Group Policy Management Editor](/images/policypak/leastprivilege/dllhijack/dllhijack-gpo-policy-types.webp)
 
-## What the Feature Enforces
+## How DLL Load Decisions Are Made
 
 DLL Hijack Protection makes a decision based on three things:
 
@@ -73,7 +73,7 @@ In production environments, you may also have:
 
 The Approved Members list lets you explicitly trust those identities.
 
-### Default behavior
+### Default Behavior
 
 | DLL writable by | Result |
 |---|---|
@@ -92,7 +92,7 @@ Exclusions can be based on:
 - File hash
 - Digital signature
 
-### Use cases
+### Use Cases
 
 - Legacy apps doing non-standard DLL loading
 - Known safe behavior that doesn't conform to standard patterns
@@ -177,4 +177,4 @@ Result: **Allowed**
 
 - DLL Hijack Protection behavior depends on file permissions. Unexpected access control lists (ACLs) can cause blocks.
 - Some legacy apps may require exclusions.
-- If Endpoint Privilege Manager has not finished evaluating a process's elevation policy before DLL Hijack Protection runs, the process may be misclassified. If you see unexpected blocks on elevated processes, verify which elevation policy applies to that process.
+- If Endpoint Privilege Manager has not yet applied an elevation policy to a process, DLL Hijack Protection may treat that process as non-elevated. If you see unexpected blocks on elevated processes, confirm that the elevation policy for that application has been applied before DLL Hijack Protection evaluates it.

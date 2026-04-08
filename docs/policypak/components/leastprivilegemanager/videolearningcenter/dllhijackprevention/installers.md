@@ -10,7 +10,7 @@ A user downloads an app (like VLC) from the internet and tries to run it by prov
 
 Even if the user supplies valid administrator credentials, DLL Hijack Protection intervenes. In Safe Elevated Mode, the installer is blocked because it originates from an untrusted location.
 
-This demo shows two ways to handle it:
+This video demonstrates two ways to authorize the installation:
 
 - **Option 1:** Create a rule to allow the application
 - **Option 2:** Authorize a specific user (e.g., DOMAIN\User) to perform installations from that location — when they elevate with UAC, the install proceeds
