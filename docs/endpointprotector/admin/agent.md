@@ -177,7 +177,7 @@ This option corresponds to the **Client Registration Certificate** feature confi
 
 
 :::note
-This option requires the **Client Registration Certificate** feature to be enabled and configured on the EPP Server ([**Appliance → Server Maintenance → Client Registration Certificate**](/docs/endpointprotector/admin/appliance.md#server-certificate-validation)) before the client is installed. Enabling it without the corresponding server-side configuration will prevent the client from registering.
+This option requires the **Client Registration Certificate** feature to be enabled and configured on the EPP Server ([**Appliance → Server Maintenance → Client Registration Certificate**](/docs/endpointprotector/admin/appliance.md)) before the client is installed. Enabling it without the corresponding server-side configuration will prevent the client from registering.
 :::
 
 
