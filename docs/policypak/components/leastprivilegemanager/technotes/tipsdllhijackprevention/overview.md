@@ -10,11 +10,13 @@ DLL Hijack Protection helps prevent attackers from exploiting how Windows loads 
 Some applications load DLLs by name instead of full path. Windows then searches multiple locations — starting with the application's own folder. If that folder is writable by a standard user, a malicious DLL can be dropped in and executed by the application.
 DLL Hijack Protection detects and blocks these scenarios by inspecting DLL loads before they execute.
 
-To enable DLL Hijack Protection, navigate to **Group Policy Management Editor > Computer Configuration > Netwrix Endpoint Policy Manager > Endpoint Privilege Security Pak > Endpoint Privilege Manager**, right-click a collection, and select **Add > New Global DLL Hijack Protection Policy** (or **New DLL Hijack Protection Exclusions Policy**). Then configure the mode and Approved Members as described below.
+## Enable DLL Hijack Protection
+
+1. Navigate to **Group Policy Management Editor > Computer Configuration > Netwrix Endpoint Policy Manager > Endpoint Privilege Security Pak > Endpoint Privilege Manager**.
+2. Right-click a collection and select **Add > New Global DLL Hijack Protection Policy** (or **New DLL Hijack Protection Exclusions Policy**).
+3. Configure the mode and Approved Members as described below.
 
 ![DLL Hijack Protection policy types in the Group Policy Management Editor](/images/policypak/leastprivilege/dllhijack/dllhijack-gpo-policy-types.webp)
-
----
 
 ## What the Feature Enforces
 
@@ -25,8 +27,6 @@ DLL Hijack Protection makes a decision based on three things:
 3. **Is there an exclusion that overrides the behavior?**
 
 Blocking occurs when the first two conditions are met and no exclusion applies.
-
----
 
 ## When the Policy Applies
 
@@ -43,15 +43,11 @@ Applies to:
 - **Elevated processes**
 - **Standard processes running from trusted locations** (e.g., Program Files)
 
----
-
 ## What Makes a DLL Load Risky
 
 A DLL load is considered unsafe when the DLL can be modified by a non-approved user — that is, a user not in the Approved Members list (described in the next section).
 
 In practice, this means the DLL is located in a user-writable location. If this condition is met, the load is treated as suspicious and can be blocked.
-
----
 
 ## Approved Members
 
@@ -86,8 +82,6 @@ The Approved Members list lets you explicitly trust those identities.
 
 The Approved Members list directly controls what the system considers safe write access.
 
----
-
 ## Exclusions
 
 If a matching exclusion exists, the action is allowed — even if it would otherwise be blocked.
@@ -104,8 +98,6 @@ Exclusions can be based on:
 - Known safe behavior that doesn't conform to standard patterns
 - Temporary exceptions during rollout
 
----
-
 ## Actions
 
 ### Deny Execution
@@ -120,13 +112,9 @@ Blocks the DLL load. Options:
 
 Allows the behavior and logs the event. Primarily used during testing or phased rollout.
 
----
-
 ## Audit Mode
 
-Logs would-be blocks without enforcing them. Use Audit Mode during initial rollout to assess impact before switching to an enforcement mode.
-
----
+Logs potential blocks without enforcing them. Use Audit Mode during initial rollout to assess impact before switching to an enforcement mode.
 
 ## Logging Options
 
@@ -134,8 +122,6 @@ Logs would-be blocks without enforcing them. Use Audit Mode during initial rollo
 |---|---|
 | Blocked & Allowed | Full visibility (recommended) |
 | Do not generate events | No logging |
-
----
 
 ## How It Works
 
@@ -147,8 +133,6 @@ When a DLL is about to load:
 4. Final decision:
    - If risky and no exclusion → **Blocked**
    - Otherwise → **Allowed** (and optionally logged)
-
----
 
 ## Practical Examples
 
@@ -180,23 +164,17 @@ Result: **Blocked**
 
 Result: **Allowed**
 
----
-
 ## Best Practices
 
-- Start with **Audit Mode** (which logs would-be blocks without enforcing them).
+- Start with **Audit Mode** (which logs potential blocks without enforcing them).
 - Move to **Safe Elevated Mode** first (low risk, high value).
 - Then enable **Anti-Hijack Mode** for broader protection.
 - Carefully define **Approved Members**.
 - Use exclusions sparingly — don't rely on them as a long-term fix.
 - Keep logging enabled during rollout.
 
----
-
 ## Known Considerations
 
-- Behavior depends heavily on file permissions. Unexpected access control lists (ACLs) can cause blocks.
+- DLL Hijack Protection behavior depends on file permissions. Unexpected access control lists (ACLs) can cause blocks.
 - Some legacy apps may require exclusions.
 - If Endpoint Privilege Manager has not finished evaluating a process's elevation policy before DLL Hijack Protection runs, the process may be misclassified. If you see unexpected blocks on elevated processes, verify which elevation policy applies to that process.
-
----

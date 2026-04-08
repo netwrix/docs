@@ -14,7 +14,7 @@ Command:
 rundll32.exe c:\temp\DLL-Notsigned.dll,EntryPointW
 ```
 
-This is high-risk behavior — a DLL in a user-writable path being executed directly.
+This is high-risk behavior: a DLL in a user-writable path is executed directly.
 DLL Hijack Protection flags and blocks it.
 
 When this behavior is intentional or expected, the demo shows two ways to authorize it:
