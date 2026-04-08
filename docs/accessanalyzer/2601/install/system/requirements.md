@@ -10,14 +10,16 @@ Access Analyzer is deployed on a single Linux virtual machine. The installer run
 
 ## Deployment Sizing
 
-| Size | CPU | Memory | Disk | Use Case |
-| --- | --- | --- | --- | --- |
-| **Small** | 2 vCPUs (4 recommended) | 8 GB (16 GB recommended) | 20 GB free (50 GB recommended) | Evaluation and small environments |
-| **Medium** | 8 vCPUs | 32 GB | 100 GB SSD | Mid-size environments |
-| **Large** | 16 vCPUs | 64 GB | 500 GB SSD | Large enterprise environments |
+Use the **Minimum** specifications for evaluation and lab deployments. Use the **Production Recommended** specifications for customer-facing or enterprise deployments. The installer enforces the minimum thresholds — preflight checks will fail if the system falls below them.
+
+| Size | Min CPU | Min Memory | Min Disk | Prod CPU | Prod Memory | Prod Disk | Typical Environment |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **Small** | 2 vCPUs | 8 GB | 20 GB free | 8 cores | 32 GB | 1 TB SSD | Evaluation, pilots, up to ~1,000 assets |
+| **Medium** | 4 vCPUs | 16 GB | 50 GB free | 16 cores | 64 GB | 1 TB SSD | Up to ~5,000 assets |
+| **Large** | 8 vCPUs | 32 GB | 100 GB free | 32 cores | 128 GB | 1 TB SSD | 5,000+ assets / enterprise |
 
 :::note
-The `--size` flag scales memory requirements by the specified multiplier. For example, `--size 2` doubles the minimum and recommended memory thresholds. See [Environment Variables](/docs/accessanalyzer/1_0/install/environmentvariables) for details.
+The `--size` flag scales memory thresholds by the specified multiplier. For example, `--size 2` doubles the minimum and recommended memory requirements enforced by the preflight checks.
 :::
 
 ## Disk Space Requirements

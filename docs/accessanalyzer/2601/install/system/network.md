@@ -74,9 +74,68 @@ If outbound traffic is routed through a proxy, set the following environment var
 ```bash
 export HTTP_PROXY="http://<PROXY_HOST>:<PROXY_PORT>"
 export HTTPS_PROXY="http://<PROXY_HOST>:<PROXY_PORT>"
-export NO_PROXY="localhost,127.0.0.1,10.0.0.0/8"
+export NO_PROXY="localhost,127.0.0.1,.svc,.cluster.local,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
 ```
+
+## Antivirus Exclusions
+
+If an endpoint detection or antivirus product is running on the Access Analyzer host, configure exclusions for the following paths before installation. The installer's preflight checks detect common products (CrowdStrike Falcon, SentinelOne, Sophos, and others) and will prompt you to confirm exclusions are in place.
+
+| Path | Reason |
+| --- | --- |
+| `/var/lib/rancher/` | K3s runtime data |
+| `/var/lib/containerd/` | Container image layers |
+| `/run/k3s/` | K3s socket and runtime files |
+| `/usr/local/bin/k3s` | K3s binary |
+
+:::note
+Setting `SKIP_AV_CHECK=true` before running the installer bypasses the antivirus detection prompt, but does not configure exclusions automatically. Configure exclusions manually before running the installer.
+:::
 
 ## Firewall Configuration
 
-See [Network Configuration](/docs/accessanalyzer/1_0/install/network) for firewall rule examples for Azure, AWS, and on-premises environments.
+Allow outbound HTTPS (port 443) to all endpoints listed in the [Outbound Endpoints](#outbound-endpoints-internet) table above. The examples below show how to configure this on common platforms.
+
+### Azure (NSG Rule)
+
+```bash
+az network nsg rule create \
+  --resource-group <RESOURCE_GROUP> \
+  --nsg-name <NSG_NAME> \
+  --name AllowOutboundHTTPS \
+  --priority 100 \
+  --direction Outbound \
+  --access Allow \
+  --protocol Tcp \
+  --destination-port-ranges 443
+```
+
+### AWS (EC2 Security Group)
+
+```bash
+aws ec2 authorize-security-group-egress \
+  --group-id <SECURITY_GROUP_ID> \
+  --protocol tcp \
+  --port 443 \
+  --cidr 0.0.0.0/0
+```
+
+### On-Premises (ufw)
+
+```bash
+sudo ufw allow out 443/tcp
+sudo ufw reload
+```
+
+### Verify Connectivity
+
+After configuring firewall rules, verify that the required endpoints are reachable from the Access Analyzer server:
+
+```bash
+curl -I https://oci.pkg.keygen.sh
+curl -I https://ghcr.io
+curl -I https://registry-1.docker.io
+curl -I https://get.k3s.io
+```
+
+All commands should return an HTTP response (2xx or 3xx). A connection timeout or refusal indicates a firewall rule is blocking the endpoint.
