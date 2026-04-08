@@ -11,7 +11,7 @@ may work on other platforms that have gcc (4.8+) compiler available.
 
 ## Hub Compatibility Matrix
 
-The table below shows Hub releases and the component versions verified to work with each release. Each row lists the component versions verified to work together with the corresponding Hub release; mixing versions across rows is not supported. Gen7 Agent refers to the Change Tracker Agent version 7.x line.
+The table below shows Hub releases and the component versions verified to work with each release. Each row lists the component versions verified to work together with the corresponding Hub release; mixing versions across rows isn't supported. Gen7 Agent refers to the Change Tracker Agent version 7.x line.
 
 | Hub   | Gen7 Agent | Express Agent | Sync Service | MongoDB | .NET Runtime |
 | ----- | ---------- | ------------- | ------------ | ------- | ------------ |
