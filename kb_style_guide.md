@@ -187,6 +187,8 @@ This requirement exists because Algolia (the site's search provider) indexes the
 
 ### Example frontmatter block
 
+The following example shows a Symptom Resolution article.
+
 ```yaml
 ---
 description: >-
@@ -303,7 +305,7 @@ Format external links with a middot and arrow after the company name:
 
 ---
 
-## Optimizing for AI Retrieval (RAG)
+## AI Retrieval Optimization
 
 - Define technical terms clearly on first use.
 - Use consistent terminology throughout — do not use synonyms for technical terms.
