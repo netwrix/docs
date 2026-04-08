@@ -6,11 +6,11 @@ sidebar_position: 20
 
 # DLL Hijack Protection Demo 2: Poorly Designed Apps Protection
 
-Scenario 2: A poorly designed application loads a DLL by name instead of using a full path — classic DLL hijack territory.
+Scenario 2: A poorly designed application loads a DLL by name instead of using a full path — a common DLL hijacking vulnerability.
 
 In this demo:
 
-- The app runs and successfully pulls in a malicious Evil.dll, proving the hijack works.
+- The app runs and successfully loads a malicious Evil.dll, demonstrating the hijack works.
 - DLL Hijack Protection is enabled — the attack is blocked and logged.
 - To handle a false positive, create a DLL Hijack rule to allow the approved DLL.
 

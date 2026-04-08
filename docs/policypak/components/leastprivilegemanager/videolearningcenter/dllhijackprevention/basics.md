@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # DLL Hijack Protection Basics: Get to know the system with a simple example
 
-Scenario 1: Running a DLL directly with rundll32.exe from an untrusted location.
+This scenario demonstrates running a DLL directly with rundll32.exe from an untrusted location.
 
 Command:
 

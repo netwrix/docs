@@ -8,9 +8,7 @@ sidebar_position: 30
 
 A user downloads an app (like VLC) from the internet and tries to run it with admin credentials.
 
-Even if they know the password, DLL Hijack Protection steps in:
-
-In Safe Elevated Mode, the installer is blocked because it originates from an untrusted location.
+Even if they know the password, DLL Hijack Protection intervenes. In Safe Elevated Mode, the installer is blocked because it originates from an untrusted location.
 
 This demo shows two ways to handle it:
 

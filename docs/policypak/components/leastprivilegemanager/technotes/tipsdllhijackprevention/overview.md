@@ -12,6 +12,8 @@ DLL Hijack Protection helps prevent attackers from exploiting how Windows loads 
 Some applications load DLLs by name instead of full path. Windows then searches multiple locations — starting with the application's own folder. If that folder is writable by a standard user, a malicious DLL can be dropped in and executed by the application.
 DLL Hijack Protection detects and blocks these scenarios by inspecting DLL loads before they execute.
 
+To enable DLL Hijack Protection, create a DLL Hijack policy in the Least Privilege Manager node of the Group Policy Object (or PolicyPak Cloud policy), then configure the mode and Approved Members as described below.
+
 ---
 
 ## What the Feature Enforces
@@ -45,7 +47,7 @@ Applies to:
 
 ## What Is Considered "Risky"
 
-A DLL load is considered unsafe when the DLL can be modified by a user who is not trusted (that is, a user not listed in the Approved Members list).
+A DLL load is considered unsafe when the DLL can be modified by a user who is not trusted (that is, a user not listed in the Approved Members list, described in the next section).
 
 In practice, this means the DLL is located in a user-writable location. If this condition is met, the load is treated as suspicious and can be blocked.
 
@@ -191,7 +193,7 @@ Result: **Allowed**
 
 ## Known Considerations
 
-- Behavior depends heavily on file permissions. Unexpected ACLs can cause blocks.
+- Behavior depends heavily on file permissions. Unexpected access control lists (ACLs) can cause blocks.
 - Some legacy apps may require exclusions.
 - Elevation policy timing can occasionally cause a process to be misclassified. If you see unexpected blocks on elevated processes, verify which elevation policy applies to that process.
 

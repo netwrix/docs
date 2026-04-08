@@ -1,19 +1,13 @@
 ---
-title: "DLL Hijack Protection: I turned it on and now getting all kinds of pop-ups"
-description: "DLL Hijack Protection: I turned it on and now getting all kinds of pop-ups"
+title: "DLL Hijack Protection: Handling false positive block prompts after enabling the feature"
+description: "DLL Hijack Protection: Handling false positive block prompts after enabling the feature"
 sidebar_position: 40
 ---
 
-# DLL Hijack Protection: I turned it on and now getting all kinds of pop-ups
+# DLL Hijack Protection: Handling false positive block prompts after enabling the feature
 
-You turn on DLL Hijack Protection — and suddenly apps like OneDrive start displaying block prompts.
+After enabling DLL Hijack Protection, apps like OneDrive may start generating block prompts. The software is legitimate, but its DLL loading behavior triggers the protection.
 
-The software is legitimate, but its behavior triggers DLL Hijack Protection.
+The demo takes a real blocked event, converts it into a Publisher-based Allow rule, and eliminates the false positive prompts while maintaining protection.
 
-In this demo:
-
-- Take a real blocked event
-- Convert it into a Publisher-based Allow rule
-- Stop the noise while keeping protection intact
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ioSUnTs7Shw" title="DLL Hijack Protection: I turned it on and now getting all kinds of pop-ups" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ioSUnTs7Shw" title="DLL Hijack Protection: Handling false positive block prompts after enabling the feature" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
