@@ -60,8 +60,8 @@ particular disk I/O performance, are critical. For more information please see:
 
 ![Architecture](/images/changetracker/8.1/architecture.webp)
 
-For a full list of supported operating systems see
-[OS Support Matrix](/docs/changetracker/8.1/requirements/ossupportmatrix.md).
+For a full list of supported platforms see
+[Support Matrix](/docs/changetracker/8.1/requirements/supportmatrix.md).
 
 Administration and everyday usage for reporting on the change history of a device and managing
 planned changes is all provided via the secure web interface. Integration options include alert

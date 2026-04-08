@@ -1,17 +1,16 @@
 ---
-title: "OS Support Matrix"
-description: "OS Support Matrix"
+title: "Support Matrix"
+description: "Support Matrix"
 sidebar_position: 10
 ---
 
-# OS Support Matrix
+# Support Matrix
 
-This page lists the platforms and use cases that Netwrix has verified. However, the Express Agent
-may work on other platforms that have gcc (4.8+) compiler available.
+This page lists the component versions, platforms, and network devices that Netwrix has verified with Change Tracker. The Express Agent may also work on other platforms that have a gcc (4.8+) compiler available.
 
 ## Hub Compatibility Matrix
 
-The following table shows Hub releases and the component versions verified to work with each release. Each row lists the component versions verified to work together with the corresponding Hub release.
+The following table shows Hub releases and the component versions verified to work with each release.
 
 | Hub   | Gen7 Agent | Express Agent | Sync Service | MongoDB | .NET Runtime |
 | ----- | ---------- | ------------- | ------------ | ------- | ------------ |
@@ -63,8 +62,7 @@ architectures upon request.
 
 ## Other Linux Operating Systems
 
-This table assumes Intel/AMD x64 architecture. Express Agent is also available on 32 bit and s390x.
-architectures upon request.
+This table assumes Intel/AMD x64 architecture. Express Agent is also available on 32 bit and s390x architectures upon request.
 
 | Other Linux               | Change Tracker Agent | Express Agent | Change Tracker Agentless |
 | ------------------------- | -------------------- | ------------- | ------------------------ |
@@ -78,18 +76,17 @@ architectures upon request.
 | --------------- | -------------------- | ------------- | ------------------------ |
 | Solaris 11, 10  |                      | YES           | YES                      |
 | AIX 7.3, 7.2    |                      | YES           | YES                      |
-| HPUX 11i v3     |                      |               | YES                      |
-| Mac OS 12+      | YES                  | YES           | YES                      |
+| HP-UX 11i v3    |                      |               | YES                      |
+| macOS 12+       | YES                  | YES           | YES                      |
 | ESXi 7+         |                      |               | YES                      |
 
 ## Network Devices
 
-Change Tracker collects each device's OS version, startup/running config and the user list to track
-any changes over time.
+Change Tracker collects each device's OS version, startup/running config, and the user list to track any changes over time.
 
 | Network Devices          | Change Tracker Agent | Express Agent | Change Tracker Agentless |
 | ------------------------ | -------------------- | ------------- | ------------------------ |
-| CheckPoint Firewall      |                      |               | YES                      |
+| Check Point Firewall     |                      |               | YES                      |
 | Cisco IOS                |                      |               | YES                      |
 | Cisco Switch             |                      |               | YES                      |
 | Cisco Firewall           |                      |               | YES                      |
@@ -99,4 +96,4 @@ any changes over time.
 | HP Switch                |                      |               | YES                      |
 | Juniper Switch           |                      |               | YES                      |
 | Palo Alto Firewall       |                      |               | YES                      |
-| Sonicwall Firewall       |                      |               | YES                      |
+| SonicWall Firewall       |                      |               | YES                      |
