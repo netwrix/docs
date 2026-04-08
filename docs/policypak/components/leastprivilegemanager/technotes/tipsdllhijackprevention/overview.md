@@ -10,7 +10,7 @@ DLL Hijack Protection helps prevent attackers from exploiting how Windows loads 
 Some applications load DLLs by name instead of full path. Windows then searches multiple locations — starting with the application's own folder. If that folder is writable by a standard user, a malicious DLL can be dropped in and executed by the application.
 DLL Hijack Protection detects and blocks these scenarios by inspecting DLL loads before they execute.
 
-To enable DLL Hijack Protection, create a DLL Hijack policy in the Least Privilege Manager node of the Group Policy Object (or PolicyPak Cloud policy), then configure the mode and Approved Members as described below.
+To enable DLL Hijack Protection, navigate to **Group Policy Management Editor > Computer Configuration > Netwrix Endpoint Policy Manager > Endpoint Privilege Security Pak > Endpoint Privilege Manager**, right-click a collection, and select **Add > New Global DLL Hijack Protection Policy** (or **New DLL Hijack Protection Exclusions Policy**). Then configure the mode and Approved Members as described below.
 
 ![DLL Hijack Protection policy types in the Group Policy Management Editor](/images/policypak/leastprivilege/dllhijack/dllhijack-gpo-policy-types.webp)
 
@@ -45,7 +45,7 @@ Applies to:
 
 ---
 
-## What Is Considered "Risky"
+## What Makes a DLL Load Risky
 
 A DLL load is considered unsafe when the DLL can be modified by a non-approved user — that is, a user not in the Approved Members list (described in the next section).
 

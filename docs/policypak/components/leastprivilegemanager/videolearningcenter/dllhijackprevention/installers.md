@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # DLL Hijack Protection Scenario 3: Protecting Installers
 
-A user downloads an app (like VLC) from the internet and tries to run it with admin credentials.
+A user downloads an app (like VLC) from the internet and tries to run it by providing administrator credentials at a UAC prompt.
 
-Even if they know the password, DLL Hijack Protection intervenes. In Safe Elevated Mode, the installer is blocked because it originates from an untrusted location.
+Even if the user supplies valid administrator credentials, DLL Hijack Protection intervenes. In Safe Elevated Mode, the installer is blocked because it originates from an untrusted location.
 
 This demo shows two ways to handle it:
 
