@@ -9,6 +9,17 @@ sidebar_position: 10
 This page lists the platforms and use cases that Netwrix has verified. However, the Express Agent
 may work on other platforms that have gcc (4.8+) compiler available.
 
+## Hub Compatibility Matrix
+The table below shows Hub releases and the compatible components.
+
+| Hub   | Gen7 Agent | Express Agent | Sync Service | MongoDB | .NET  |
+| ----- | ---------- | ------------- | ------------ | ------- | ----- |
+| 8.1.2 | 7.2.2      | 2.2.1         | 2.2.0.0      | 8.2.3   | 8.0.0 |
+| 8.1.1 | 7.2.1      | 2.2.1         | 2.2.0.0      | 8.0.5   | 8.0.0 |
+| 8.1.0 | 7.2.0      | 2.1.1         | 2.1.0.0      | 8.0.5   | 8.0.0 |
+| 8.0.0 | 7.1.5      | 2.1.1         | 2.1.0.0      | 7.0.1   | 8.0.0 |
+| 7.7.4 | 7.1.4      | 2.1.1         | 2.0.4.4      | 7.0.1   | 6.0.0 |
+
 ## Windows Operating Systems
 
 The versions below cover Standard and Datacenter editions, plus the server core installation option.
