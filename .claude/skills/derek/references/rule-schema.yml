@@ -1,0 +1,44 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Rule
+description: A single linting rule definition for the Derek KB linter.
+type: object
+
+required:
+  - message
+  - level
+  - reason
+
+properties:
+  message:
+    type: string
+    description: The message displayed when this rule is triggered.
+    minLength: 1
+
+  level:
+    type: string
+    description: Severity level of the rule violation.
+    enum:
+      - suggestion
+      - warning
+      - error
+
+  reason:
+    type: string
+    description: >-
+      Explains what to look for when checking this rule. This may describe either a prose
+      pattern in body text (e.g., "trigger when the writer uses passive voice") or a
+      structural assertion against the document's frontmatter or heading structure
+      (e.g., "trigger when the tags field does not contain 'kb'"). Both are valid uses
+      of this field.
+    minLength: 1
+
+additionalProperties: false
+
+# Contributor note:
+# When adding a new derek rule, the reason field can describe either:
+#   - A prose pattern: natural language description of what text to flag in the body
+#   - A structural assertion: what frontmatter field or heading structure to check
+# There is no separate schema for structural vs. prose rules — reason handles both.
+# Use specific, unambiguous language so the linter knows exactly what to check.
+# Example prose reason:    "Trigger when the body contains passive voice constructions."
+# Example structural reason: "Trigger when the tags field is missing or does not include 'kb'."
