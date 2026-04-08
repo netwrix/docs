@@ -10,7 +10,7 @@ sidebar_position: 10
 
 DLL Hijack Protection helps prevent attackers from exploiting how Windows loads dynamic link libraries (DLLs).
 Some applications load DLLs by name instead of full path. Windows then searches multiple locations — starting with the application's own folder. If that folder is writable by a standard user, a malicious DLL can be dropped in and executed by the application.
-This feature detects and blocks those scenarios.
+DLL Hijack Protection detects and blocks these scenarios by inspecting DLL loads before they execute.
 
 ---
 
@@ -55,9 +55,11 @@ In practice, this means the DLL is located in a user-writable location. If this 
 
 The **Approved Members** list defines who is trusted to modify application files.
 
-> If a DLL can be modified by a user, and that user is NOT in the Approved Members list, the DLL load is blocked.
+:::note
+If a DLL can be modified by a user, and that user is **not** in the Approved Members list, the DLL load is blocked.
+:::
 
-### Why this exists
+### Purpose
 
 Some identities are expected to modify files as part of normal operations:
 
@@ -73,14 +75,14 @@ In production environments, you may also have:
 
 The Approved Members list lets you explicitly trust those identities.
 
-### What happens without tuning
+### Default behavior
 
 | DLL writable by | Result |
 |---|---|
 | Only trusted/approved identities | Allowed |
 | Any non-approved user | Blocked |
 
-This setting directly controls what the system considers "safe write access."
+The Approved Members list directly controls what the system considers safe write access.
 
 ---
 
@@ -194,5 +196,3 @@ Result: **Allowed**
 - Elevation policy timing can occasionally cause a process to be misclassified. If you see unexpected blocks on elevated processes, verify which elevation policy applies to that process.
 
 ---
-
-See [Best Practices](#best-practices) before enabling in production.

@@ -11,7 +11,7 @@ sidebar_position: 20
 #### Getting Started
 
 To get started, use the Auto Rules Generator tool to generate rules from a machine that has
-all your apps. It is in the Extras folder of the main Netwrix PolicyPak download. For more information on this issue, please see
+all your apps. It is in the Extras folder of the main Netwrix PolicyPak download. For more information, see
 [Auto Rules Generator Tool (with SecureRun)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/autorulesgeneratortool.md).
 
 #### How do we setup SecureRun when each version of the software references more than one .exe to start the program?
