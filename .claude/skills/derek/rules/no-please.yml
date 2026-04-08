@@ -1,0 +1,3 @@
+message: "Do not use \"please\" in instructions. Be direct."
+level: warning
+reason: "This rule triggers when the word \"please\" appears anywhere in the article body text. Do not flag it inside code blocks or quoted error messages."

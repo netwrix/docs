@@ -1,0 +1,3 @@
+message: "Do not use inline \"note that\" or \"please note\". Use a blockquote callout instead: > **NOTE:** ..."
+level: warning
+reason: "This rule triggers when the article body contains the phrase \"note that\" or \"please note\" used inline in body text — not inside a blockquote (lines starting with >). If the phrase appears in running prose rather than inside a > **NOTE:** callout block, this rule triggers."
