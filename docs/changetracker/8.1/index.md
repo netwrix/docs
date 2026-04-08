@@ -7,8 +7,7 @@ sidebar_position: 1
 # Netwrix Change Tracker v8.1 Documentation
 
 Netwrix Change Tracker is a system integrity monitoring product, used for compliance programs, host
-intrusion detection and change control for enterprise IT systems. Enterprise IT organizations including the military, federal, banks, financial services, airlines, retailers,
-utilities, and not-for-profit organizations globally use it.
+intrusion detection and change control for enterprise IT systems. Enterprise IT organizations worldwide use Change Tracker, including the military, federal agencies, banks, financial services companies, airlines, retailers, utilities, and not-for-profit organizations.
 
 The product automates the collection of configuration data from any IT devices, including Servers
 and Desktops, database systems, firewalls, network routers and switches and stores a baseline for
@@ -38,8 +37,7 @@ products. In this way, Change Tracker automates the entire process by reviewing 
 against pre-defined Planned Change rules, or by retrospectively building new Planned Change Rules
 based on observed changes, hence the Closed-Loop terminology.
 
-Change Tracker reports any changes that don't match a Planned Change rule as potentially breach
-activity. In this way, Change Tracker provides a Host Intrusion Detection System capability.
+Change Tracker reports any changes that don't match a Planned Change rule as potential breach activity. In this way, Change Tracker provides a Host Intrusion Detection System capability.
 
 Netwrix Change Tracker has received Security Software Certification for CIS Benchmarks.
 
@@ -62,7 +60,7 @@ particular disk I/O performance, are critical. See the agent installation guides
 For a full list of supported platforms see
 [Support Matrix](/docs/changetracker/8.1/requirements/supportmatrix.md).
 
-The secure web interface provides administration and everyday usage for reporting on the change history of a device and managing planned changes. Integration options include alert
+The secure web interface handles administration and day-to-day tasks, including reporting on device change history and managing planned changes. Integration options include alert
 propagation via syslog and email, and for more advanced, two-way integration, Netwrix Change Tracker
 provides a REST API.
 

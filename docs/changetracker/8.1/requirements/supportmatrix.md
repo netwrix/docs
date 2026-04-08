@@ -10,7 +10,7 @@ This page lists the component versions, platforms, and network devices that Netw
 
 ## Hub Compatibility Matrix
 
-The following table shows Hub releases and the component versions verified to work with each release.
+The following table shows Hub releases and the component versions verified to work with each release. When upgrading, install the component versions listed in the same row as your target Hub release.
 
 | Hub   | Gen7 Agent | Express Agent | Sync Service | MongoDB | .NET Runtime |
 | ----- | ---------- | ------------- | ------------ | ------- | ------------ |
