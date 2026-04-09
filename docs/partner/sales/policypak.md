@@ -11,7 +11,7 @@ import { Company, NPP } from '@site/src/training/products';
 
 This learning path grants <Company /> certification as a Sales Professional for this product, formerly Netwrix Endpoint Policy Manager:
 
-* Introduction to for <NPP /> Partner Sales
+* Introduction to <NPP /> Partner Sales
 * <NPP /> Core Use Cases
 * <NPP /> Non-Core Use Cases
 * Successful <NPP /> Demo with a “Magic PPTX”
