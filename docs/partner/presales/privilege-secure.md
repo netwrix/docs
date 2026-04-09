@@ -1,6 +1,6 @@
 ---
 title: Netwrix Privileged Secure Presales Engineer
-sidebar_position: 1530
+sidebar_position: 1380
 tags: [certification, partners, presales, privilege-secure]
 keywords: [training, course, certification, partners, presales, privilege secure]
 description: "Become a certified Presales Engineer for Netwrix Privileged Secure"

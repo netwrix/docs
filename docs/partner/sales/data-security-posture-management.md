@@ -1,6 +1,6 @@
 ---
 title: Netwrix Data Security Posture Management Solution Sales Professional
-sidebar_position: 1270
+sidebar_position: 1081
 tags: [certification, partners, sales, access-analyzer, auditor, data-classification, endpoint-protector, data-security-posture-management]
 keywords: [training, course, certification, partners, sales, access analyzer, auditor, data classification, endpoint protector, data security posture management]
 description: "Become a certified Sales Professional for Netwrix Data Security Posture Management"

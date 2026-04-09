@@ -1,6 +1,6 @@
 ---
 title: Netwrix Identity Threat Detection & Response Solution Sales Professional
-sidebar_position: 1310
+sidebar_position: 1121
 tags: [certification, partners, sales, identity-threat-detection-response]
 keywords: [training, course, certification, partners, sales, identity threat detection response]
 description: "Become a certified Sales Professional for Netwrix Identity Threat Detection & Response"

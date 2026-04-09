@@ -1,6 +1,6 @@
 ---
 title: Netwrix Platform Governance for Salesforce Presales Engineer
-sidebar_position: 1520
+sidebar_position: 1360
 tags: [certification, partners, presales, platform-governance-for-salesforce]
 keywords: [training, course, certification, partners, presales, platform governance for salesforce]
 description: "Become a certified Presales Engineer for Netwrix Platform Governance for Salesforce"

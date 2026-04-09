@@ -1,6 +1,6 @@
 ---
 title: Netwrix Privileged Access Management Solution Sales Professional
-sidebar_position: 1320
+sidebar_position: 1191
 tags: [certification, partners, sales,  endpoint-policy-manager, password-secure, privilege-secure, privileged-access-management]
 keywords: [training, course, certification, partners, sales, endpoint policy manager, password secure, privilege secure, privileged access management]
 description: "Become a certified Sales Professional for Netwrix Privileged Access Management"

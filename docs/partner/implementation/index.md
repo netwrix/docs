@@ -1,6 +1,6 @@
 ---
 title: Professional Services Engineer Certification Learning Paths
-sidebar_position: 1630
+sidebar_position: 1410
 tags: [certification, partners, professional-services]
 keywords: [training, course, certification, partners, professional services]
 description: "Learn about the Netwrix Professional Services Engineer ceritifcation options"

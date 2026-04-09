@@ -1,6 +1,6 @@
 ---
 title: Netwrix Password Secure – Professional Services Engineer
-sidebar_position: 1790
+sidebar_position: 1520
 tags: [certification, partners, professional-services, password-secure]
 keywords: [training, course, certification, partners, professional services, password secure]
 description: "Become a certified Professional Services Engineer for Netwrix Password Secure"

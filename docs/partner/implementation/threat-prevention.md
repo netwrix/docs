@@ -1,6 +1,6 @@
 ---
 title: Netwrix Threat Prevention – Professional Services Engineer
-sidebar_position: 1860
+sidebar_position: 1590
 tags: [certification, partners, professional-services, threat-prevention]
 keywords: [training, course, certification, partners, professional services, threat prevention]
 description: "Become a certified Professional Services Engineer for Netwrix Threat Prevention"

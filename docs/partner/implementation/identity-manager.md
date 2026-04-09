@@ -1,6 +1,6 @@
 ---
 title: Netwrix Identity Manager – Professional Services Engineer
-sidebar_position: 1770
+sidebar_position: 1490
 tags: [certification, partners, professional-services, identity-manager]
 keywords: [training, course, certification, partners, professional services, identity manager]
 description: "Become a certified Professional Services Engineer for Netwrix Identity Manager"

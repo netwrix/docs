@@ -1,6 +1,6 @@
 ---
 title: Netwrix Threat Prevention Presales Engineer
-sidebar_position: 1560
+sidebar_position: 1400
 tags: [certification, partners, presales, threat-prevention]
 keywords: [training, course, certification, partners, presales, threat prevention]
 description: "Become a certified Presales Engineer for Netwrix Threat Prevention"

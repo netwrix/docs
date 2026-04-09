@@ -1,6 +1,6 @@
 ---
 title: Netwrix PolicyPak Sales Professional
-sidebar_position: 1225
+sidebar_position: 1180
 tags: [certification, partners, sales, policypak]
 keywords: [training, course, certification, partners, sales, policypak]
 description: "Become a certified Sales Professional for Netwrix  PolicyPak"

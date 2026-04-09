@@ -1,6 +1,6 @@
 ---
 title: Netwrix Change Tracker – Professional Services Engineer
-sidebar_position: 1720
+sidebar_position: 1450
 tags: [certification, partners, professional-services, change-tracker]
 keywords: [training, course, certification, partners, professional services, change tracker]
 description: "Become a certified Professional Services Engineer for Netwrix Change Tracker"

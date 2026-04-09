@@ -1,6 +1,6 @@
 ---
 title: Netwrix Change Tracker Sales Professional
-sidebar_position: 1120
+sidebar_position: 1070
 tags: [certification, partners, sales, change-tracker]
 keywords: [training, course, certification, partners, sales, change tracker]
 description: "Become a certified Sales Professional for Netwrix Change Tracker"

@@ -1,6 +1,6 @@
 ---
 title: Netwrix Endpoint Protector Sales Professional
-sidebar_position: 1160
+sidebar_position: 1100
 tags: [certification, partners, sales, endpoint-protector, data-loss-prevention]
 keywords: [training, course, certification, partners, sales, endpoint protector, data loss prevention]
 description: "Become a certified Sales Professional for Netwrix Endpoint Protector"

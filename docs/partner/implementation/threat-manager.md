@@ -1,6 +1,6 @@
 ---
 title: Netwrix Threat Manager – Professional Services Engineer
-sidebar_position: 1850
+sidebar_position: 1580
 tags: [certification, partners, professional-services, threat-manager]
 keywords: [training, course, certification, partners, professional services, threat manager]
 description: "Become a certified Professional Services Engineer for Netwrix Threat Manager"

@@ -1,6 +1,6 @@
 ---
 title: Presales Engineer Certification Learning Paths
-sidebar_position: 1330
+sidebar_position: 1220
 tags: [certification, partners, presales]
 keywords: [training, course, certification, partners, presales]
 description: "Learn about the Netwrix Presales Engineer certification options"

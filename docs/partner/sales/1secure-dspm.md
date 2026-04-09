@@ -1,6 +1,6 @@
 ---
 title: Netwrix 1Secure Sales Professional
-sidebar_position: 1050
+sidebar_position: 1040
 tags: [certification, partners, sales, 1secure, data-security-posture-management]
 keywords: [training, course, certification, partners, sales, 1secure, data security posture management]
 description: "Become a certified Sales Professional for Netwrix 1Secure"

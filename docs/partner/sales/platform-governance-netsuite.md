@@ -1,6 +1,6 @@
 ---
 title: Netwrix Platform Governance for NetSuite Sales Professional
-sidebar_position: 1210
+sidebar_position: 1160
 tags: [certification, partners, sales, platform-governance-for-netsuite]
 keywords: [training, course, certification, partners, sales, platform governance for netsuite]
 description: "Become a certified Sales Professional for Netwrix Platform Governance for NetSuite"
