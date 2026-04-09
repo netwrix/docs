@@ -34,7 +34,7 @@ After editing docs files, hooks will suggest running Vale and Dale. Linting is h
 4. Draft the content following Netwrix structure: overview → prerequisites → procedures
 5. Include examples for every concept introduced
 6. Anticipate reader questions and answer them inline
-7. Re-read the drafted file. Fix any passive voice, hedging, future tense describing software behavior, wordiness, or idioms.
+7. Reread the drafted file. Fix any passive voice, hedging, future tense describing software behavior, wordiness, or idioms.
 
 ### Edit for style and clarity
 
@@ -42,7 +42,7 @@ After editing docs files, hooks will suggest running Vale and Dale. Linting is h
 2. Read the full document before making any changes
 3. Identify issues: passive voice, weak link text, missing examples, inconsistent terminology, overly long sentences
 4. Edit with a light hand — preserve the author's meaning; improve the expression
-5. Re-read the file. Fix any passive voice, hedging, future tense describing software behavior, wordiness, or idioms.
+5. Reread the file. Fix any passive voice, hedging, future tense describing software behavior, wordiness, or idioms.
 
 ### Incorporate external documents
 
@@ -54,7 +54,7 @@ When given an external document (e.g., `.docx`, `.pdf`, or pasted content) to me
 4. Identify where the new content fits — match the existing document's structure and heading hierarchy
 5. Merge the content, adapting it to Netwrix style: active voice, present tense, imperative procedures, examples for every concept
 6. Remove any content from the external document that duplicates what's already in the target file
-7. Re-read the merged file. Fix any passive voice, hedging, future tense describing software behavior, wordiness, or idioms.
+7. Reread the merged file. Fix any passive voice, hedging, future tense describing software behavior, wordiness, or idioms.
 
 ### Multi-file tasks
 
