@@ -1,6 +1,6 @@
 ---
 title: Learn About Netwrix PolicyPak Learning Path
-sidebar_position: 455
+sidebar_position: 470
 tags: [training, policypak]
 keywords: [training, course, policypak]
 description: "Learn about Netwrix PolicyPak through introductory courses"

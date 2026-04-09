@@ -1,6 +1,6 @@
 ---
 title: Learn About Netwrix Platform Governance for NetSuite Learning Path
-sidebar_position: 440
+sidebar_position: 450
 tags: [training, platform-governance-for-netsuite]
 keywords: [training, course, platform governance for netsuite]
 description: "Learn about Netwrix Platform Governance for NetSuite through introductory courses"
