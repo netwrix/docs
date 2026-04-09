@@ -14,7 +14,7 @@ Estimated length: 2.5 hours
 
 PREREQUISITE: <NTP /> Professional Services Engineer
 
-This learning path offers training to <Company /> partner Professional Services engineers on the <NTM /> product. However, certification is not currently available at this time. When the final courses are available to grant certification, they will be added to this learning path. You will be able to pick up where you left off. It contains the following courses:
+This learning path offers training to <Company /> partner Professional Services engineers on the <NTM /> product. However, certification isn't available at this time. When the final courses are available to grant certification, they will be added to this learning path. You will be able to pick up where you left off. It contains the following courses:
 
 * 1560 <NTM /> – Valuable Features
 * 2560 <NTM /> – Concepts & Architecture
