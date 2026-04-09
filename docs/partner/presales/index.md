@@ -6,9 +6,6 @@ keywords: [training, course, certification, partners, presales]
 description: "Learn about the Netwrix Presales Engineer certification options"
 ---
 
-import { N1S } from '@site/src/training/products';
-
-
 The following learning paths provide Partner certification for Presales Engineers:
 
 * Data Security Platform
@@ -51,6 +48,6 @@ The following learning paths provide Partner certification for Presales Engineer
         * [Netwrix PingCastle Presales Engineer](./pingcastle.md)
 * Other Certifications
     * [Netwrix Change Tracker Presales Engineer](./change-tracker.md)
-    * [Netwrix Endpoint Policy Manager Presales Engineer](./endpoint-policy-manager.md)
     * [Netwrix Platform Governance for NetSuite Presales Engineer](./platform-governance-for-netsuite.md)
     * [Netwrix Platform Governance for Salesforce Presales Engineer](./platform-governance-for-salesforce.md)
+    * [Netwrix PolicyPak Presales Engineer](./policypak.md)

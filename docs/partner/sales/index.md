@@ -6,9 +6,6 @@ keywords: [training, course, certification, partners, sales]
 description: "Learn about the Netwrix Sales Professional certification options"
 ---
 
-import { N1S } from '@site/src/training/products';
-
-
 The following learning paths provide Partner certification for Sales Professionals:
 
 * Data Security Platform
@@ -42,7 +39,7 @@ The following learning paths provide Partner certification for Sales Professiona
         * [Netwrix PingCastle Sales Professional](./pingcastle.md)
 * Other Certifications
     * [Netwrix Change Tracker Sales Professional](./change-tracker.md)
-    * [Netwrix Endpoint Policy Manager Sales Professional](./endpoint-policy-manager.md)
     * [Netwrix Password Secure Sales Professional](./password-secure.md)
     * [Netwrix Platform Governance for NetSuite Sales Professional](./platform-governance-netsuite.md)
     * [Netwrix Platform Governance for Salesforce Sales Professional](./platform-governance-salesforce.md)
+    * [Netwrix PolicyPak Sales Professional](./policypak.md)
