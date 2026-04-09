@@ -36,9 +36,8 @@ jobs:
         if: steps.bot-check.outputs.skip != 'true'
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.base.ref }}
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
-
 
       - name: Configure git identity
         if: steps.bot-check.outputs.skip != 'true'
@@ -61,15 +60,6 @@ jobs:
             echo "$CHANGED" > /tmp/changed-files.txt
             echo "count=$(echo "$CHANGED" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
           fi
-
-      - name: Fetch changed files from PR head
-        if: steps.changed-files.outputs.count > 0
-        run: |
-          git fetch origin ${{ github.event.pull_request.head.sha }}
-          while IFS= read -r file; do
-            mkdir -p "$(dirname "$file")"
-            git show FETCH_HEAD:"$file" > "$file" 2>/dev/null || true
-          done < /tmp/changed-files.txt
 
       - name: Run md-extension-autofix
         id: autofix
