@@ -155,7 +155,7 @@ while IFS= read -r file; do
   # Use mv + git add instead of git mv so it works for both tracked and untracked files
   mv "$file" "$new_file"
   git add "$new_file"
-  git rm --cached "$file" 2>/dev/null || true
+  git rm -q --cached "$file" 2>/dev/null || true
   rewrite_links_in_docs "$(basename "$file")" "$(basename "$new_file")"
 
   RENAMED_FROM+=("$file")
