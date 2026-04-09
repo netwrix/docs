@@ -67,7 +67,8 @@ jobs:
         run: |
           git fetch origin ${{ github.event.pull_request.head.sha }}
           while IFS= read -r file; do
-            git checkout FETCH_HEAD -- "$file" 2>/dev/null || true
+            mkdir -p "$(dirname "$file")"
+            git show FETCH_HEAD:"$file" > "$file" 2>/dev/null || true
           done < /tmp/changed-files.txt
 
       - name: Run md-extension-autofix
