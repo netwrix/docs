@@ -8,7 +8,7 @@ sidebar_position: 10
 
 Access Analyzer scans Windows file servers to enumerate files, folders, access permissions, and sensitive data.
 
-Scanning can be performed directly from the Access Analyzer service (local mode) or via Scanners — Kubernetes-deployed containers for distributed scanning of remote environments. See the [Utilizing Scanners](../../scanners/overview.md) section for details on Scanner architecture.
+Scanning can be performed directly from the Access Analyzer service (local mode) or via Scanners — Kubernetes-deployed containers for distributed scanning of remote environments. See the [Utilizing Scanners](../../configurations/source-groups/scanners/overview.md) section for details on Scanner architecture.
 
 ## Permissions
 
