@@ -62,6 +62,15 @@ jobs:
             echo "count=$(echo "$CHANGED" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Fetch changed files from PR head
+        if: steps.changed-files.outputs.count > 0
+        run: |
+          git fetch origin ${{ github.event.pull_request.head.sha }}
+          while IFS= read -r file; do
+            mkdir -p "$(dirname "$file")"
+            git show FETCH_HEAD:"$file" > "$file" 2>/dev/null || true
+          done < /tmp/changed-files.txt
+
       - name: Run md-extension-autofix
         id: autofix
         if: steps.changed-files.outputs.count > 0
