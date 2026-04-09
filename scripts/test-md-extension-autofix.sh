@@ -78,14 +78,14 @@ EOF
 is_markdown_content "$TMPDIR_TEST/good.md" && R=$? || R=$?
 assert_true "markdown: has frontmatter and heading" "$R"
 
-# File with only heading, no frontmatter → not markdown
+# File with only heading, no frontmatter → still markdown (frontmatter will be injected)
 cat > "$TMPDIR_TEST/no-frontmatter" <<'EOF'
 # My Heading
 
 Some content here.
 EOF
 is_markdown_content "$TMPDIR_TEST/no-frontmatter" && R=$? || R=$?
-assert_false "not markdown: heading only, no frontmatter" "$R"
+assert_true "markdown: heading only, no frontmatter" "$R"
 
 # File with only frontmatter, no heading → not markdown
 cat > "$TMPDIR_TEST/no-heading" <<'EOF'
@@ -147,6 +147,94 @@ grep -q '](../other/delete-sdd-matches.md)' "$TMPDIR_LINKS/docs/product/1.0/over
 assert_true "link rewrite: relative path link updated" "$R"
 
 rm -rf "$TMPDIR_LINKS"
+
+# ---- has_frontmatter ----
+
+TMPDIR_FM=$(mktemp -d)
+
+cat > "$TMPDIR_FM/with-frontmatter.md" <<'EOF'
+---
+title: Test
+---
+
+# Heading
+EOF
+
+cat > "$TMPDIR_FM/no-frontmatter.md" <<'EOF'
+# Heading
+
+No frontmatter here.
+EOF
+
+has_frontmatter "$TMPDIR_FM/with-frontmatter.md" && R=$? || R=$?
+assert_true "has_frontmatter: file starts with ---" "$R"
+
+has_frontmatter "$TMPDIR_FM/no-frontmatter.md" && R=$? || R=$?
+assert_false "has_frontmatter: file does not start with ---" "$R"
+
+# ---- extract_h1 ----
+
+cat > "$TMPDIR_FM/heading.md" <<'EOF'
+---
+title: Test
+---
+
+# My Article Title
+EOF
+
+RESULT=$(extract_h1 "$TMPDIR_FM/heading.md")
+[ "$RESULT" = "My Article Title" ] && R=0 || R=1
+assert_true "extract_h1: returns heading text without # prefix" "$R"
+
+# ---- calculate_sidebar_position ----
+
+mkdir -p "$TMPDIR_FM/siblings"
+touch "$TMPDIR_FM/siblings/apple.md"
+touch "$TMPDIR_FM/siblings/banana.md"
+touch "$TMPDIR_FM/siblings/cherry.md"
+touch "$TMPDIR_FM/siblings/date.md"
+touch "$TMPDIR_FM/siblings/elderberry.md"
+
+RESULT=$(calculate_sidebar_position "$TMPDIR_FM/siblings/cherry.md")
+[ "$RESULT" = "30" ] && R=0 || R=1
+assert_true "calculate_sidebar_position: 3rd of 5 → 30" "$R"
+
+RESULT=$(calculate_sidebar_position "$TMPDIR_FM/siblings/apple.md")
+[ "$RESULT" = "10" ] && R=0 || R=1
+assert_true "calculate_sidebar_position: 1st of 5 → 10" "$R"
+
+# ---- inject_frontmatter ----
+
+mkdir -p "$TMPDIR_FM/article-dir"
+touch "$TMPDIR_FM/article-dir/another.md"
+
+cat > "$TMPDIR_FM/article-dir/my-article.md" <<'EOF'
+# My Article
+
+Some content here.
+EOF
+
+inject_frontmatter "$TMPDIR_FM/article-dir/my-article.md"
+
+head -1 "$TMPDIR_FM/article-dir/my-article.md" | grep -q '^---' && R=0 || R=1
+assert_true "inject_frontmatter: file now starts with ---" "$R"
+
+grep -q 'title: "My Article"' "$TMPDIR_FM/article-dir/my-article.md" && R=0 || R=1
+assert_true "inject_frontmatter: title derived from h1" "$R"
+
+grep -q 'description: "My Article"' "$TMPDIR_FM/article-dir/my-article.md" && R=0 || R=1
+assert_true "inject_frontmatter: description matches title" "$R"
+
+grep -q 'sidebar_position:' "$TMPDIR_FM/article-dir/my-article.md" && R=0 || R=1
+assert_true "inject_frontmatter: sidebar_position present" "$R"
+
+grep -q '^# My Article' "$TMPDIR_FM/article-dir/my-article.md" && R=0 || R=1
+assert_true "inject_frontmatter: original h1 preserved" "$R"
+
+grep -q 'Some content here.' "$TMPDIR_FM/article-dir/my-article.md" && R=0 || R=1
+assert_true "inject_frontmatter: original body content preserved" "$R"
+
+rm -rf "$TMPDIR_FM"
 
 echo ""
 echo "Results: $PASS passed, $FAIL failed"
