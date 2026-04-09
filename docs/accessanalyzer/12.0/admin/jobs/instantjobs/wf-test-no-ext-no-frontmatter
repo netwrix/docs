@@ -1,0 +1,4 @@
+# Workflow Test — No Extension, No Frontmatter
+
+This file has no .md extension and no frontmatter.
+Expected: renamed to .md AND frontmatter injected.
