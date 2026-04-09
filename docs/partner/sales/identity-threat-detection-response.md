@@ -30,5 +30,5 @@ It contains the following courses:
 Upon completion, sellers will be able to:
 * Explain the business risks of an unsecured identity infrastructure (Active Directory, Entra ID), including ransomware attacks, operational downtime, and compliance failures.
 * Learn the targets for ITDR solutions
-* Uncover customer pain points that Netwrix ITDR directly addresses, such as unmanaged privileged accounts, excessive permissions, and lack of real-time threat detection.
+* Identify customer challenges that Netwrix ITDR directly addresses, such as unmanaged privileged accounts, excessive permissions, and lack of real-time threat detection.
 * Deliver the <Company /> ITDR value proposition with confidence, demonstrating how it enables proactive threat detection, automated response, and identity risk reduction.

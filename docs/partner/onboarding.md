@@ -9,7 +9,7 @@ description: "Learn about the Onboarding courses you are enrolled in"
 import { Company } from '@site/src/training/products';
 
 
-Find the information you need to get up and running with your Netwrix business. Explore the Partner Program benefits to get the maximum value from our partnership. From the deal registration program to accessing your enablement resources, to engaging with sales, marketing and technical support—find it all in our Partner Onboarding Kit.
+Find the information you need to get started with your Netwrix business. Explore the Partner Program benefits to get the maximum value from the partnership. From the deal registration program to accessing your enablement resources, to engaging with sales, marketing, and technical support—find it all in the Partner Onboarding Kit.
 
 The following kits are region-specific.
 

@@ -17,4 +17,4 @@ This learning path grants <Company /> certification as a Sales Professional for 
 
 ## <Company /> Data Loss Prevention
 
-Introducing <NEP />, our latest multi-OS data loss prevention solution designed to safeguard confidential information at rest and in motion while ensuring compliance across Windows, macOS, and Linux endpoints. This business-critical security technology enables channel partners to increase deal sizes, seize new opportunities, and expand existing accounts by addressing critical DLP requirements in data security, endpoint security, compliance, and data access governance.
+Introducing <NEP />, the latest multi-OS data loss prevention solution designed to safeguard confidential information at rest and in motion while ensuring compliance across Windows, macOS, and Linux endpoints. This business-critical security technology enables channel partners to increase deal sizes, seize new opportunities, and expand existing accounts by addressing critical DLP requirements in data security, endpoint security, compliance, and data access governance.

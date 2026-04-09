@@ -21,7 +21,7 @@ In this learning path, you will learn how to use <NPPE />. It contains the follo
 
 ## What's New in <NPPE /> v11.1
 
-Watch our customer webinar for a closer look at what’s new in <NPPE /> 11.1 and how it simplifies password security.
+Watch the customer webinar for a closer look at what’s new in <NPPE /> 11.1 and how it simplifies password security.
 
 In this live session, you'll learn how PPE 11.1 helps you:
 * Detect password reuse across accounts to improve security.
