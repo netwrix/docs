@@ -13,7 +13,7 @@ import { Company, NA, NPS } from '@site/src/training/products';
 
 Estimated length: 5.25 hours
 
-The <NPS /> Presales Engineer learning path is designed as a certification program for <Company /> partners. By completing this learning path, you will become an official Certified Partner for this product. It contains the following courses:
+The <NPS /> Presales Engineer learning path is a certification program for <Company /> partners. By completing this learning path, you will become an official Certified Partner for this product. It contains the following courses:
 
 * 1800 <NPS /> – Valuable Features
 * 2800 <NPS /> – Concepts
