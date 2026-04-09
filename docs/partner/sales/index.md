@@ -22,19 +22,23 @@ The following learning paths provide Partner certification for Sales Professiona
     * Data Access Governance Use Case
         * [Netwrix 1Secure Sales Professional](./1secure-dspm.md) 
     * Data Loss Prevention Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
         * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
     * Data Discovery & Classification Use Case
         * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
 * Identity Security Platform
     * Identity Threat Detection & Response Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
         * [Netwrix Identity Threat Detection & Response Solution Sales Professional](./identity-threat-detection-response.md)
     * Identity Governance & Administration Use Case
         * [Netwrix Identity Manager Sales Professional](./identity-manager.md)
     * Identity Security Posture Management Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
         * [Netwrix PingCastle Sales Professional](./pingcastle.md)
     * Privileged Access Management Use Case
         * [Netwrix Privileged Access Management Solution Sales Professional](./privileged-access-management.md)
     * Directory Security Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
         * [Netwrix PingCastle Sales Professional](./pingcastle.md)
 * Other Certifications
     * [Netwrix Change Tracker Sales Professional](./change-tracker.md)
