@@ -74,7 +74,7 @@ files in their new location.
 [Working with the Database](/docs/passwordreset/3.3/administration/workingwiththedatabase/working_with_the_database.md) topic for additional information.
 
 You can also move the database from SQL Server Compact to SQL Server. See the
-[Working with the Database](/docs/passwordreset/3.3/administration/workingwiththedatabase/working_with_the_database.md) topic for more information.
+[Working with the Database](/docs/passwordreset/3.3/administration/workingwiththedatabase/working_with_the_database.md) topic for instructions on moving the database to SQL Server.
 
 ### Netwrix Password Policy Enforcer
 
@@ -127,6 +127,6 @@ Enforcer, upgrade to a current and supported version first.
 :::note
 Password Policy Enforcer isn't included with Password Reset. Go to
 [www.netwrix.com/password_policy_enforcer](https://www.netwrix.com/password_policy_enforcer.html) to
-learn more about Password Policy Enforcer.
+view the Netwrix Password Policy Enforcer product page.
 
 :::

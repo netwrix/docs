@@ -57,7 +57,7 @@ reset\aprlog.bak"
 
 :::note
 Change the paths above if the database files are in a different folder. See the
-[Database](/docs/passwordreset/3.3/administration/configuringpasswordreset/general_tab.md#database) topic for more information.
+[Database](/docs/passwordreset/3.3/administration/configuringpasswordreset/general_tab.md#database) topic for instructions on changing the database file location.
 :::
 
 

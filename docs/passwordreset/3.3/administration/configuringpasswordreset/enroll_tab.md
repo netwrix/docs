@@ -42,7 +42,7 @@ To remove a question from the list:
 :::note
 You can rearrange questions by dragging them. You can also replace question lists with
 text boxes so users can enter their own questions. See the
-[Editing the HTML Templates](/docs/passwordreset/3.3/administration/editing_the_html_templates.md) document for more information
+[Editing the HTML Templates](/docs/passwordreset/3.3/administration/editing_the_html_templates.md) topic for instructions on replacing question lists with text boxes
 :::
 
 

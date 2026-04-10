@@ -19,7 +19,7 @@ Select the **Send verification codes for resets and unlocks** checkbox to enable
 codes.
 
 Select the **Users can reset and unlock with only a verification code if they have not enrolled**
-checkbox to enable automatic enrollment. Automatic enrollment allows users to reset their password
+checkbox to enable automatic enrollment. With automatic enrollment, users can reset their password
 and unlock their account even if they have not previously enrolled. Password Reset enrolls the users
 when they request a reset or unlock, and sends them a verification code for authentication. Users
 that are automatically enrolled can also manually enroll with questions later. Users that are only
