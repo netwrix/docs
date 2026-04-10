@@ -33,7 +33,7 @@ const config = {
 
   // Performance optimizations with Docusaurus Faster
   future: {
-    experimental_faster: {
+    faster: {
       swcJsLoader: true,
       swcJsMinimizer: true,
       swcHtmlMinimizer: true,
