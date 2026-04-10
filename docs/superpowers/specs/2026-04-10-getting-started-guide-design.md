@@ -189,10 +189,10 @@ Quick-reference table:
 
 Short section:
 
-- If you spot a problem but don't want to fix it yourself, create a GitHub issue
-- Add the `documentation` and `fix` labels, describe what's wrong and where
-- Claude will automatically create a PR with the fix
-- You can also comment `@claude` on any open PR to request changes
+- If you spot a problem but don't want to fix it yourself, create a GitHub issue using the **"Fix content"** template
+- The template asks you to describe the issue and provide the URL of the page where you found it
+- It automatically applies the right labels (`documentation` and `fix`)
+- Once submitted, Claude automatically picks up the issue, identifies the affected files, applies the fix, and opens a PR
 
 ### 13. Getting Help
 
