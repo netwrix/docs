@@ -1,0 +1,3 @@
+message: "This term may be unfamiliar to the reader. Define it on first use."
+level: warning
+reason: "This rule should trigger when the user or agent uses a product-specific term, acronym, or internal shorthand without defining it on first use. Common examples include product names used as verbs, internal team names, unexpanded abbreviations, or feature names without explanation."
