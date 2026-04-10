@@ -85,8 +85,8 @@ compliant password.
 ![configuring_npr_1](/images/passwordpolicyenforcer/11.0/passwordreset/administration/configuring_npr_1.webp)
 
 Password Reset displays the Password Policy Enforcer policy message when users are prompted for
-their new password, and the Password Policy Enforcer rejection message if the new password does not
-comply with the password policy. Select the **Password Policy Enforcer integration** check box if
+their new password, and the Password Policy Enforcer rejection message if the new password doesn't
+comply with the password policy. Select the **Password Policy Enforcer integration** checkbox if
 you have installed and configured Password Policy Enforcer on your domain controllers.
 
 Password Reset locates and queries a domain controller in the user's domain when Password Policy
@@ -96,7 +96,7 @@ address of a Password Policy Server. The `PPEIPAddress` value is in
 `HKEY_LOCAL_MACHINE\SOFTWARE\ANIXIS\ANIXIS Password Reset\3.0`.
 
 :::note
-Due to a protocol upgrade, Netwrix Password Reset v3.3 is not compatible with Netwrix
+Due to a protocol upgrade, Netwrix Password Reset v3.3 isn't compatible with Netwrix
 Password Policy Enforcer v8.x and earlier versions. If you are using Netwrix Password Reset with any
 of those older Netwrix Password Policy Enforcer versions, upgrade Netwrix Password
 Policy Enforcer to a current version before upgrading Netwrix Password Reset to v3.3 (or
@@ -106,7 +106,7 @@ later).
 
 Users are more likely to see the Password Policy Enforcer Generic Rejection message rather than the
 more detailed Rejection message when this registry value is set. Users may also have the wrong
-policy, or no policy enforced if the queried server is not a domain controller in the user's
+policy, or no policy enforced if the queried server isn't a domain controller in the user's
 domain.
 Password Reset sends queries to the Password Policy Server at UDP port 1333 by default. You may need to create
 firewall rules to open this port. See the Password Policy Enforcer documentation for additional information.
@@ -119,13 +119,13 @@ server configuration, and enable "Only accept encrypted client request".
 
 ![using_ppe_with_npr](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_ppe_with_npr.webp)
 
-Do not enable this option if you are using Netwrix Password Reset v3.3 with Netwrix Password
+Don't enable this option if you are using Netwrix Password Reset v3.3 with Netwrix Password
 Policy Enforcer v8.x or earlier versions, or with Netwrix Password Policy Enforcer/Web. If you are
 using Netwrix Password Reset v3.3 with any of those older versions of Netwrix Password Policy
 Enforcer, upgrade to a current and supported version first.
 
 :::note
-Password Policy Enforcer is not included with Password Reset. Go to
+Password Policy Enforcer isn't included with Password Reset. Go to
 [www.netwrix.com/password_policy_enforcer](https://www.netwrix.com/password_policy_enforcer.html) to
 learn more about Password Policy Enforcer.
 

@@ -53,7 +53,7 @@ The **Users** tab has seven columns:
 - Last Change — Date and time of last successful password change
 
 :::note
-The Data Console does not automatically display new information as it is added to the
+The Data Console doesn't automatically display new information as it is added to the
 database. Press F5 to refresh the view.
 
 :::

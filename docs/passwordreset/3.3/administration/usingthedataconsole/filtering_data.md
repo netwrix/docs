@@ -53,7 +53,7 @@ header.
 
 Click the button to show a list of values in the column.
 
-Select one or more values from the list. Rows that do not match one of the selected values are
+Select one or more values from the list. Rows that don't match one of the selected values are
 hidden.
 
 ![using_the_data_console_7](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_7.webp)
@@ -72,7 +72,7 @@ filters. Click **(Custom...)** in a column header's value list to create a custo
 ![using_the_data_console_8](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_8.webp)
 
 Custom filters can contain one or two conditions for each column. Select an operator for the first
-condition from the drop-down list below the column name. The list shows only relevant operators for each
+condition from the dropdown list below the column name. The list shows only relevant operators for each
 column.
 
 Type a value for the condition in the text box beside the operator. The text box may have a button
@@ -101,12 +101,12 @@ active filter. The button on the right side of the Filter Bar opens the Filter E
 
 ![using_the_data_console_11](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_11.webp)
 
-A button and a check box appear on the left side of the Filter Bar when a filter is active. Click
-the button to clear the filter. Toggle the check box to disable or enable the filter.
+A button and a checkbox appear on the left side of the Filter Bar when a filter is active. Click
+the button to clear the filter. Toggle the checkbox to disable or enable the filter.
 
 ![using_the_data_console_12](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_12.webp)
 
-A drop-down button appears to the right of the filter. Click it to select a recently used filter.
+A dropdown button appears to the right of the filter. Click it to select a recently used filter.
 
 ![using_the_data_console_13](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_13.webp)
 

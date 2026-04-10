@@ -36,7 +36,7 @@ Click the name of an enabled trigger to edit the trigger's e-mail template.
 
 ![configuring_npr_4](/images/passwordpolicyenforcer/11.0/passwordreset/administration/configuring_npr_4.webp)
 
-Type the name and e-mail address you wish to appear in the e-mail's From field in the **From** text
+Type the name and e-mail address you want to appear in the e-mail's From field in the **From** text
 box. The correct format is "Display Name" `<mailbox@domain.com>`
 Type the recipient's e-mail address in the **To** text box. The correct format is "Display Name"
 `<mailbox@domain.com>`. Separate multiple recipients with a semicolon. You can also use these
@@ -50,7 +50,7 @@ macros.
 | [NPR_OR_AD_EMAIL] | The e-mail address in NPR, or the e-mail address in AD if the Password Reset address is blank |
 
 :::note
-Use [NPR_OR_AD_EMAIL] with caution as Password Reset does not check the validity of e-mail
+Use [NPR_OR_AD_EMAIL] with caution as Password Reset doesn't check the validity of e-mail
 addresses. If the e-mail address in Password Reset's database is no longer valid, then Password Reset sends the alert
 only to the invalid address.
 :::
@@ -72,13 +72,13 @@ also use these macros.
 
 Password Reset stores the user's preferred language every time they successfully complete an Enroll,
 Reset, Unlock, or Change. Password Reset sends e-mail alerts in the user's preferred language, or in the current
-Web Interface language if the user's preferred language is not known. If no e-mail template exists
+Web Interface language if the user's preferred language isn't known. If no e-mail template exists
 for the user's preferred language, Password Reset sends the alert in English.
 
-Use the drop-down list at the bottom of the E-mail template editor to switch between template
+Use the dropdown list at the bottom of the E-mail template editor to switch between template
 languages. Changes are preserved as you switch between languages. The **From**, **To**, and **Bcc**
 are the same for all languages.
-A warning icon appears beside the language drop-down list if no e-mail template is defined for
+A warning icon appears beside the language dropdown list if no e-mail template is defined for
 every language. You should define an e-mail template for every language to ensure that users can
 understand their e-mail alerts.
 

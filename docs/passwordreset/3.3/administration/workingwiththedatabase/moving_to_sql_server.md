@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Moving to SQL Server
 
-Plan the database move to SQL Server before proceeding. A trial run on a lab network is recommended. You can run the Data Copy wizard more than once if you cannot complete the move on the
+Plan the database move to SQL Server before proceeding. A trial run on a lab network is recommended. You can run the Data Copy wizard more than once if you can't complete the move on the
 first attempt. A move back to SQL Server Compact is also possible.
 
 ### Create the Database
@@ -37,7 +37,7 @@ wizard also needs to be added to the db_datawriter and db_ddladmin server roles.
 
 Additional permissions can be set for users of the Data Console after the tables are created. Grant
 the DELETE privilege on the User table to users who are allowed to delete user records. Deny all
-privileges on the VerificationCode and EnrollRecord columns in the User table as they are not used
+privileges on the VerificationCode and EnrollRecord columns in the User table as they aren't used
 by the Data Console.
 
 ### Create the Tables and Copy the Data
@@ -65,7 +65,7 @@ connection settings for the service account later. The **Username** and **Passwo
 if **SQL Server Authentication** is selected. The user must be in the db_datareader, db_datawriter,
 and db_ddladmin SQL Server roles. **Encrypt connection** should be selected to protect user
 information, and **Trust server certificate** must be selected if SQL Server is using a self-signed
-certificate. SQL Server uses a self-signed certificate if a trusted certificate is not installed.
+certificate. SQL Server uses a self-signed certificate if a trusted certificate isn't installed.
 The SQL Server Native Client must be installed if **Trust server certificate** is selected.
 
 ![working_with_the_database_1](/images/passwordpolicyenforcer/11.0/passwordreset/administration/working_with_the_database_1.webp)
@@ -97,13 +97,13 @@ to a named instance.
 option should be selected to protect user information.
 
 **Step 8 –** Select the **Trust server certificate** option if SQL Server is using a self-signed
-certificate. SQL Server uses a self-signed certificate if a trusted certificate is not installed.
+certificate. SQL Server uses a self-signed certificate if a trusted certificate isn't installed.
 Select this option to allow Password Reset to connect to SQL Server with a self-signed certificate. The SQL Server Native Client must be installed if **Trust server certificate** is
 selected.
 
 **Step 9 –** Click **OK**, and then click **Apply**.
 
-**Step 10 –** Restart the Password Reset service. If the service does not start, then check the
+**Step 10 –** Restart the Password Reset service. If the service doesn't start, then check the
 database connection options and the SQL Server login, user, and server roles configured earlier. You
 can change the database back to SQL Server Compact while you troubleshoot the issue.
 

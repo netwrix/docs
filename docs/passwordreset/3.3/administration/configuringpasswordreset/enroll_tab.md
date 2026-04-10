@@ -19,7 +19,7 @@ questions from the Question List.
 
 To add a question to the list:
 
-**Step 1 –** Select a language from the drop-down list above the Question List.
+**Step 1 –** Select a language from the dropdown list above the Question List.
 
 **Step 2 –** Click **Add...**
 
@@ -31,7 +31,7 @@ To add a question to the list:
 
 To remove a question from the list:
 
-**Step 1 –** Select a language from the drop-down list above the Question List.
+**Step 1 –** Select a language from the dropdown list above the Question List.
 
 **Step 2 –** Select the question in the Question List.
 
@@ -50,12 +50,12 @@ text boxes so users can enter their own questions. See the
 
 Password Reset can send e-mail alerts to users when a request is submitted for their account. These
 alerts can be sent to the user's Active Directory e-mail address and/or to an e-mail address in
-Password Reset's database. Select the **Users must enter an e-mail address to enroll** check box if
+Password Reset's database. Select the **Users must enter an e-mail address to enroll** checkbox if
 users should enter an e-mail address during enrollment.
 
 The number of questions that users must answer to enroll is configurable, and is set to three by
-default. Select the desired number of questions from the **Users must answer...** drop-down list.
+default. Select the desired number of questions from the **Users must answer...** dropdown list.
 
 You can also set a minimum length for each answer. Only alphanumeric characters are counted because
 Password Reset only checks alphanumeric characters. Select the minimum number of alphanumeric
-characters in each answer from the **Answers must contain at least...** drop-down list.
+characters in each answer from the **Answers must contain at least...** dropdown list.
