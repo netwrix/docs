@@ -27,8 +27,7 @@ See solutions to these disadvantages in the [Moving to SQL Server](/docs/passwor
 
 ## Backing up the Database
 
-The database should be backed up regularly. The instructions below are for a SQL Server Compact
-database. If using SQL Server, then use your backup software to backup the database.
+Back up the database regularly. The following instructions apply to a SQL Server Compact database. To back up a SQL Server database, use your backup software.
 
 Follow the steps below for the recommended backup procedure.
 
