@@ -1,6 +1,6 @@
 ---
 title: Netwrix Access Analyzer Presales Engineer
-sidebar_position: 1400
+sidebar_position: 1240
 tags: [certification, partners, presales, access-analyzer, access-information-center, activity-monitor]
 keywords: [training, course, certification, partners, presales, access analyzer, access information center, activity monitor]
 description: "Become a certified Presales Engineer for Netwrix Access Analyzer"

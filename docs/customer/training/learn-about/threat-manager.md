@@ -1,6 +1,6 @@
 ---
 title: Learn About Netwrix Threat Manager Learning Path
-sidebar_position: 480
+sidebar_position: 490
 tags: [training, threat-manager]
 keywords: [training, course, threat manager]
 description: "Learn about Netwrix Threat Manager through introductory courses"

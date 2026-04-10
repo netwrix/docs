@@ -17,6 +17,7 @@ export { default as NPWS } from './password-secure.md';
 export { default as NPC } from './pingcastle.md';
 export { default as NPGN } from './platform-governance-for-netsuite.md';
 export { default as NPGS } from './platform-governance-for-salesforce.md';
+export { default as NPP } from './policypak.md';
 export { default as NPS } from './privilege-secure.md';
 export { default as NTMRM } from './threat-manager-reporting-module.md';
 export { default as NTM } from './threat-manager.md';

@@ -1,6 +1,6 @@
 ---
 title: Netwrix Identity Manager Presales Engineer
-sidebar_position: 1470
+sidebar_position: 1300
 tags: [certification, partners, presales, identity-manager]
 keywords: [training, course, certification, partners, presales, identity manager]
 description: "Become a certified Presales Engineer for Netwrix Identity Manager"
