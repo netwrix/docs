@@ -25,7 +25,7 @@ name. You can configure Password Reset to display a list of domains instead of a
 
 Add a Domain to the list
 
-Follow the steps below to add a domain to the list.
+Follow these steps to add a domain to the list.
 
 **Step 1 –** Click **Add...**
 
@@ -42,7 +42,7 @@ alphabetically.
 
 Remove a Domain from the list
 
-Follow the steps below to remove a domain from the list:
+Follow these steps to remove a domain from the list:
 
 **Step 1 –** Select the domain name in the Domain List.
 
@@ -55,7 +55,7 @@ Follow the steps below to remove a domain from the list:
 Password Reset uses an SQL Server Compact database by default. It creates two database files
 (apr.sdf and aprlog.sdf) in the Password Reset installation folder.
 
-Follow the steps below to move these files to another folder.
+Follow these steps to move these files to another folder.
 
 **Step 1 –** Close the Data Console if it is open.
 
@@ -107,7 +107,7 @@ Users are more likely to see the Password Policy Enforcer Generic Rejection mess
 more detailed Rejection message when this registry value is set. Users may also have the wrong
 policy, or no policy enforced if the queried server isn't a domain controller in the user's
 domain.
-Queries to the Password Policy Server are sent to UDP port 1333 by default. Create
+Password Reset sends queries to the Password Policy Server at UDP port 1333 by default. Create
 firewall rules to open this port if required.
 
 :::note
@@ -130,7 +130,7 @@ questions from the Question List.
 
 Add a question
 
-Follow the steps below to add a question to the list.
+Follow these steps to add a question to the list.
 
 **Step 1 –** Select a language from the dropdown list above the Question List.
 
@@ -142,7 +142,7 @@ Follow the steps below to add a question to the list.
 
 Remove a question
 
-Follow the steps below to remove a question from the list.
+Follow these steps to remove a question from the list.
 
 **Step 1 –** Select a language from the dropdown list above the Question List.
 
@@ -199,8 +199,8 @@ this option if your mail server supports pickup folders.
 
 ### Triggers
 
-Triggers define when e-mails are sent. If the trigger for an event is enabled, then Password Reset
-sends an e-mail when the event occurs. Enabled triggers are underlined.
+Triggers define when Password Reset sends e-mails. If the trigger for an event is enabled, then Password Reset
+sends an e-mail when the event occurs. Enabled triggers appear underlined.
 
 Click the name of an enabled trigger to edit the trigger's e-mail template.
 
@@ -221,8 +221,8 @@ use these macros.
 
 :::note
 Use [APR_OR_AD_EMAIL] with caution as Password Reset doesn't check the validity of e-mail
-addresses. If the e-mail address in Password Reset's database is no longer valid, then the alert is
-only sent to the invalid address.
+addresses. If the e-mail address in Password Reset's database is no longer valid, then Password Reset sends the alert
+only to the invalid address.
 :::
 
 
@@ -241,14 +241,14 @@ also use these macros.
 | [AD_USER]   | The user's Active Directory logon name  |
 
 Password Reset stores the user's preferred language every time they successfully complete an Enroll,
-Reset, Unlock, or Change. E-mail alerts are sent in the user's preferred language, or in the current
+Reset, Unlock, or Change. Password Reset sends e-mail alerts in the user's preferred language, or in the current
 Web Interface language if the user's preferred language isn't known. If an e-mail template isn't
-defined for the user's preferred language, then the alert is sent in English.
+defined for the user's preferred language, then Password Reset sends the alert in English.
 
 Use the dropdown list at the bottom of the E-mail template editor to switch between template
-languages. Changes are preserved as you switch between languages. The **From**, **To**, and **Bcc**
+languages. Password Reset preserves your changes as you switch between languages. The **From**, **To**, and **Bcc**
 are the same for all languages.
-A warning icon is shown beside the language dropdown list if an e-mail template isn't defined for
+A warning icon appears beside the language dropdown list if an e-mail template isn't defined for
 every language. Define an e-mail template for every language to ensure that users can
 understand their e-mail alerts.
 
@@ -436,7 +436,7 @@ APR minimum ages.
 
 ### Lockout
 
-Password Reset's lockout shouldn't be confused with the Windows lockout policy. A Windows lockout
+Don't confuse Password Reset's lockout with the Windows lockout policy. A Windows lockout
 stops users from logging on, whereas a Password Reset lockout stops users from resetting their
 password and unlocking their account. Windows locks out users when they enter too many incorrect
 passwords. Password Reset locks out users when they enter too many incorrect answers or verification

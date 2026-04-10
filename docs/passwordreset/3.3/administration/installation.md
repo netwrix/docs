@@ -76,12 +76,11 @@ existing member server or domain controller.
 
 ### Single Server Installation
 
-Follow the steps below to install the Web Interface and Password Reset Server on a single server.
+Follow these steps to install the Web Interface and Password Reset Server on a single server.
 
 **Step 1 –** Start the Password Reset Setup wizard (APR330.exe).
 
-**Step 2 –** The Setup wizard may ask you to backup some files if an older version of Password Reset
-is detected. Backup the files, and then click **Next**.
+**Step 2 –** The Setup wizard may ask you to backup some files if it detects an older version of Password Reset. Backup the files, and then click **Next**.
 
 **Step 3 –** Click **Next**.
 
@@ -92,7 +91,7 @@ is detected. Backup the files, and then click **Next**.
 **Step 6 –** The Setup wizard may offer to install IIS. Click **OK** to install IIS.
 
 **Step 7 –** Enter a **User Name**, **Domain**, and **Password** for the Password Reset service
-account. The account is created and added to the Domain Admins group if it doesn't exist.
+account. The Setup wizard creates the account and adds it to the Domain Admins group if it doesn't exist.
 
 :::note
 You can remove the account from the Domain Admins group later. If using an existing
@@ -149,12 +148,11 @@ The Password Reset Server responds with a datagram that has the following proper
 
 **Install Password Reset Server on an Internal Network**
 
-Follow the steps below to install the Password Reset Server on a server in the internal network.
+Follow these steps to install the Password Reset Server on a server in the internal network.
 
 **Step 1 –** Start the Password Reset Setup wizard (APR330.exe).
 
-**Step 2 –** The Setup wizard may ask you to backup some files if an older version of Password Reset
-is detected. Backup the files, and then click **Next**.
+**Step 2 –** The Setup wizard may ask you to backup some files if it detects an older version of Password Reset. Backup the files, and then click **Next**.
 
 **Step 3 –** Click **Next**.
 
@@ -163,7 +161,7 @@ is detected. Backup the files, and then click **Next**.
 **Step 5 –** Select the Server **Only option**, and then click **Next**.
 
 **Step 6 –** Type a **User Name**, **Domain**, and **Password** for the Password Reset service
-account. The account is created and added to the Domain Admins group if it doesn't exist.
+account. The Setup wizard creates the account and adds it to the Domain Admins group if it doesn't exist.
 
 :::note
 You can remove the account from the Domain Admins group later. If using an existing
@@ -179,8 +177,7 @@ box is selected, and then click **Next** twice.
 
 :::note
 Open UDP port 5100 on the Password Reset Server computer if a host-based firewall other
-than the Windows Firewall is installed. This is needed in addition to the DMZ firewall rules
-above.
+than the Windows Firewall is installed. This is needed in addition to the DMZ firewall rules.
 The Password Reset Setup wizard installs the Password Reset Server and associated files into the
 `\Program Files\Netwrix Password Reset\` folder by default. Use the SERVERDIR parameter to install
 the Password Reset Server to a different folder. For example, APR330.exe
@@ -190,12 +187,11 @@ SERVERDIR="D:\Programs\NPR\"
 
 **Install Web Interface Server in DMZ**
 
-Follow the steps below to install the Web Interface on a server in the DMZ.
+Follow these steps to install the Web Interface on a server in the DMZ.
 
 **Step 1 –** Start the Password Reset Setup wizard (APR330.exe).
 
-**Step 2 –** The Setup wizard may ask you to backup some files if an older version of Password Reset
-is detected. Backup the files, and then click **Next**.
+**Step 2 –** The Setup wizard may ask you to backup some files if it detects an older version of Password Reset. Backup the files, and then click **Next**.
 
 **Step 3 –** Click **Next**.
 
@@ -228,7 +224,7 @@ files to another directory and publish several Web Interfaces from one server. E
 present a different user interface. The Web Interfaces all communicate with the
 same NPR Server because there is only one ServerIP value.
 
-Follow the steps below to configure the Web Interfaces to communicate with different Password Reset
+Follow these steps to configure the Web Interfaces to communicate with different Password Reset
 Servers.
 
 **Step 1 –** Start the Registry Editor (regedit.exe).
@@ -340,7 +336,7 @@ installation folder for NPR V2.x was below the Program Files (x86) folder, but i
 below the Program Files folder. The database files aren't moved automatically during an upgrade, so
 you should move them to the new installation folder (or a different folder) after upgrading.
 
-Follow the steps below to move the database files to the `\Program Files\Netwrix Password Reset\`
+Follow these steps to move the database files to the `\Program Files\Netwrix Password Reset\`
 folder.
 
 **Step 1 –** Close the Data Console if it is open.
@@ -374,7 +370,7 @@ This mode can't display the new HTML templates correctly. You can upgrade the Pa
 to the latest version, or configure existing installations to use IE 11 mode. This only works on
 Windows Vista and later with IE 9 or later.
 
-Follow the steps below to configure the Password Reset Client to use IE 11 mode.
+Follow these steps to configure the Password Reset Client to use IE 11 mode.
 
 **Step 1 –** Start the Registry Editor (regedit.exe).
 

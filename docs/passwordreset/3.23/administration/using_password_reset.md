@@ -43,7 +43,7 @@ and
 [Lockout](/docs/passwordreset/3.23/administration/configuring_password_reset.md#lockout)
 topics for configuration options.
 
-Follow the steps below to manually enroll into Password Reset.
+Follow these steps to manually enroll into Password Reset.
 
 **Step 1 –** Click the **Enroll** item in the menu.
 
@@ -72,7 +72,7 @@ enabled.
 Users should use the Reset feature if they have forgotten their password. Resetting a password also
 unlocks the account if it is locked.
 
-Follow the steps below to reset an account password.
+Follow these steps to reset an account password.
 
 **Step 1 –** Click the **Reset** item in the menu.
 
@@ -87,8 +87,7 @@ questions are answered correctly.
 
 ![using_apr_2](/images/passwordreset/3.23/evaluation/introduction_1_1.webp)
 
-**Step 4 –** You may be asked to enter a verification code. The verification code is sent to your
-phone by e-mail or SMS. Type the **Code**, and then click **Next**.
+**Step 4 –** Password Reset may ask you to enter a verification code. It sends the verification code to your phone by e-mail or SMS. Type the **Code**, and then click **Next**.
 
 ![using_apr_3](/images/passwordreset/3.23/administration/using_apr_3.webp)
 
@@ -103,7 +102,7 @@ phone by e-mail or SMS. Type the **Code**, and then click **Next**.
 Users should use the Unlock feature if they know their password, but have entered it incorrectly too
 many times and locked out their account.
 
-Follow the steps below to unlock an account.
+Follow these steps to unlock an account.
 
 **Step 1 –** Click the **Unlock** item in the menu.
 
@@ -118,8 +117,7 @@ questions are answered correctly.
 
 ![using_apr_6](/images/passwordreset/3.23/administration/using_apr_6.webp)
 
-**Step 4 –** You may be asked to enter a verification code. The verification code is sent to your
-phone by e-mail or SMS. Type the **Code**, and then click **Next**.
+**Step 4 –** Password Reset may ask you to enter a verification code. It sends the verification code to your phone by e-mail or SMS. Type the **Code**, and then click **Next**.
 
 ![using_apr_7](/images/passwordreset/3.23/administration/using_apr_7.webp)
 
@@ -137,7 +135,7 @@ and [Enroll](#enroll) topics for lockout threshold settings and enrollment steps
 
 Users should use the Change feature if they know their password and would like to change it.
 
-Follow the steps below to change an account password.
+Follow these steps to change an account password.
 
 **Step 1 –** Click the **Change** item in the menu.
 

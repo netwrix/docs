@@ -83,7 +83,6 @@ To change a password:
 respective field. Click **Next**.
 
 Password Reset's user interface is built with customizable templates. You can modify the user
-interface by editing the templates. Even the error messages are defined in the templates, so you can
-edit those too. See the
+interface by editing the templates. The templates even define the error messages, so you can edit those too. See the
 [Editing the HTML Templates](/docs/passwordreset/3.23/administration/editing_the_html_templates.md)
 topic of the Administrator's Guide for additional information.

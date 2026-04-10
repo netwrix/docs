@@ -30,8 +30,7 @@ certificates from a certificate authority. You can install the Web Interface on 
 already has an SSL certificate if you would rather not purchase another one.
 
 Your certificate authority will have instructions to guide you through the certificate request and
-installation process. For details on configuring SSL certificates with IIS, see the pages
-below.
+installation process. For details on configuring SSL certificates with IIS, see the following pages.
 
 - [http://www.iis.net/learn/manage/configuring-security/how-to-set-up-ssl-on-iis](http://www.iis.net/learn/manage/configuring-security/how-to-set-up-ssl-on-iis)
 - [http://technet.microsoft.com/en-us/library/cc732230(WS.10).aspx](http://technet.microsoft.com/en-us/library/cc732230(WS.10).aspx)
@@ -107,7 +106,7 @@ so it may differ from the defaults in the Windows documentation.
 If you are using a Password Reset service account with delegated permissions and don't want these
 privileged accounts to reset their password or unlock their account with Password Reset, then there
 is no need to make any configuration changes. Windows automatically restores the original
-permissions for these accounts. This is done every hour by default.
+permissions for these accounts. Windows does this every hour by default.
 
 If you want to allow these users to reset their password and unlock their account with Password
 Reset, then you need to change the permissions for the AdminSDHolder container. The commands you

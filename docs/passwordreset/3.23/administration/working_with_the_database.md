@@ -27,10 +27,9 @@ See solutions to these disadvantages in the [Moving to SQL Server](#moving-to-sq
 
 ## Backing up the Database
 
-The database should be backed up regularly. The instructions below are for a SQL Server Compact
-database. If using SQL Server, then use your backup software to backup the database.
+Back up the database regularly. The following instructions apply to a SQL Server Compact database. If using SQL Server, use your backup software to back up the database.
 
-Follow the steps below for the recommended backup procedure.
+Follow these steps for the recommended backup procedure.
 
 **Step 1 –** Close the **Data Console** if it is open.
 
@@ -78,9 +77,7 @@ Follow the steps below to restore the database files from a backup.
 **Step 5 –** Start the **ANIXIS Password Reset** service.
 
 :::warning
-apr.sdf contains hashes of the user answers. The hashes are salted and encrypted to
-protect them from attack, but you should still ensure that this file and all backup copies are
-stored securely.
+apr.sdf contains hashes of the user answers. Password Reset salts and encrypts the hashes to protect them from attack, but you should still ensure that this file and all backup copies are stored securely.
 :::
 
 
@@ -91,11 +88,10 @@ first attempt. A move back to SQL Server Compact is also possible.
 
 ### Create the Database
 
-Your database administrator needs to set up the SQL Server database. The instructions below are an
-overview of the procedure, they aren't step-by-step instructions. APR V3.23 has been tested with
+Your database administrator needs to set up the SQL Server database. The following instructions provide an overview of the procedure, not step-by-step instructions. APR V3.23 has been tested with
 SQL Server 2012 to 2019.
 
-Follow the instructions below for an overview of the procedure.
+Follow these instructions for an overview of the procedure.
 
 **Step 1 –** Create an SQL Server database.
 
@@ -127,7 +123,7 @@ The Data Copy wizard creates the database tables and copies the data to SQL Serv
 wizard even if the SQL Server Compact database is empty. Data in the destination database is deleted
 before it is copied from the source database.
 
-Follow the steps below to create the tables and copy the data.
+Follow these steps to create the tables and copy the data.
 
 **Step 1 –** Open the Configuration Console.
 

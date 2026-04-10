@@ -22,7 +22,7 @@ credentials, and performs the requested task if the credentials are valid.
 You only need one Windows 2008 to 2019 server for the evaluation. The server can be a domain
 controller or a member server.
 
-Follow the steps below to install Password Reset on the server.
+Follow these steps to install Password Reset on the server.
 
 **Step 1 –** Start the Password Reset Setup wizard (APR330.exe).
 

@@ -76,8 +76,6 @@ Follow the steps below to restore the database files from a backup.
 **Step 5 –** Start .
 
 :::warning
-apr.sdf contains hashes of the user answers. The hashes are salted and encrypted to
-protect them from attack, but you should still ensure that this file and all backup copies are
-stored securely.
+apr.sdf contains hashes of the user answers. Password Reset salts and encrypts the hashes to protect them from attack, but you should still ensure that this file and all backup copies are stored securely.
 
 :::

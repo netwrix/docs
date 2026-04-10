@@ -10,7 +10,7 @@ the user enrolls.
 The API is disabled by default. If an attacker sends many queries to the API, they could try to
 guess the domain and user names of enrolled users. They could get the same information by sending
 many requests to the Web Interface.API is the more attractive target because API responds faster and
-API queries aren't logged to the Audit Log.
+The Audit Log doesn't record API queries.
 
 To avoid exposing the API on an Internet-facing Web Interface, leave the API disabled on that Web Interface and set up an internal
 Web Interface for API queries. Use the ServerIP registry value to point both Web Interfaces to the

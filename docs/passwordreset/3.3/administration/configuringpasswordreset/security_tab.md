@@ -57,8 +57,8 @@ NPR minimum ages.
 
 ### Lockout
 
-Password Reset's lockout shouldn't be confused with the Windows lockout policy. A Windows lockout
-stops users from logging on, whereas an Password Reset lockout stops users from resetting their
+Don't confuse Password Reset's lockout with the Windows lockout policy. A Windows lockout
+stops users from logging on, whereas a Password Reset lockout stops users from resetting their
 password and unlocking their account. Windows locks out users when they enter too many incorrect
 passwords. Password Reset locks out users when they enter too many incorrect answers or verification
 codes.

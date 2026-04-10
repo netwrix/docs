@@ -14,7 +14,7 @@ first attempt. A move back to SQL Server Compact is also possible.
 Your database administrator needs to set up the SQL Server database. The following instructions provide an overview of the procedure, not step-by-step guidance. NPR V3.30 has been tested with
 SQL Server 2012 to 2019.
 
-Follow the instructions below for an overview of the procedure.
+Follow these instructions for an overview of the procedure.
 
 **Step 1 –** Create an SQL Server database.
 

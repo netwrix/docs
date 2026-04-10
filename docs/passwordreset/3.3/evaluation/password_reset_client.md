@@ -20,7 +20,7 @@ an automated deployment, so this guide covers manual installation for the evalua
 
 ## Installing the PRC
 
-Follow the steps below to install the PRC.
+Follow these steps to install the PRC.
 
 **Step 1 –** Click **Start** > **Netwrix Password Reset** > **Client Software**.
 

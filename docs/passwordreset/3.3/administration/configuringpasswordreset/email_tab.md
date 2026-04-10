@@ -30,7 +30,7 @@ this option if your mail server supports pickup folders.
 ### Triggers
 
 Triggers define when Password Reset sends e-mails. If the trigger for an event is enabled, then Password Reset
-sends an e-mail when the event occurs. Enabled triggers are underlined.
+sends an e-mail when the event occurs. Enabled triggers appear underlined.
 
 Click the name of an enabled trigger to edit the trigger's e-mail template.
 
@@ -76,7 +76,7 @@ Web Interface language if the user's preferred language isn't known. If no e-mai
 for the user's preferred language, Password Reset sends the alert in English.
 
 Use the dropdown list at the bottom of the E-mail template editor to switch between template
-languages. Changes are preserved as you switch between languages. The **From**, **To**, and **Bcc**
+languages. Password Reset preserves your changes as you switch between languages. The **From**, **To**, and **Bcc**
 are the same for all languages.
 A warning icon appears beside the language dropdown list if no e-mail template is defined for
 every language. You should define an e-mail template for every language to ensure that users can

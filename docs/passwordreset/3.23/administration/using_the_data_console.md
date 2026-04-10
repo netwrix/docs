@@ -65,8 +65,7 @@ The Data Console can show thousands of records, but only some of them will be of
 any time. Filters let you focus on the important information.
 
 You can create simple filters by typing values directly into the filter row, or by selecting values
-from [Filtering by Column Values](#filtering-by-column-values). More complex filters are created
-with the [Custom Filters](#custom-filters)and [The Filter Editor](#the-filter-editor) windows.
+from [Filtering by Column Values](#filtering-by-column-values). Create more complex filters with the [Custom Filters](#custom-filters) and [The Filter Editor](#the-filter-editor) windows.
 
 ### The Filter Row
 
@@ -85,7 +84,7 @@ character, or a \* to match more than one character.
 
 ![using_the_data_console_4](/images/passwordreset/3.23/administration/using_the_data_console_4.webp)
 
-The image above shows a filter on the Date, Source, and Source IP columns. Only password reset
+The image shows a filter on the Date, Source, and Source IP columns. Only password reset
 events on 2/5/2015 originating from IP addresses starting with 192.168.115 are shown. The small blue
 icons in the column headers show which columns have active filters.
 
@@ -164,7 +163,7 @@ A filter also contains a root node and optionally one or more groups. These are 
 Boolean operators in the filter. Boolean operators are shown in red. Grouped conditions are
 indented.
 
-The filter in the image above contains the root node, one group, and four conditions. It will show
+The filter in the image contains the root node, one group, and four conditions. It will show
 all reset requests in the last fourteen days originating from IP addresses starting with 192.168.115
 or 192.168.119.
 
@@ -203,7 +202,7 @@ A dropdown button appears to the right of the filter. Click it to select a recen
 
 You can export the visible rows to Microsoft Excel, HTML, text, and XML formats.
 
-Follow the steps below to export the visible rows in the current tab.
+Follow these steps to export the visible rows in the current tab.
 
 **Step 1 –** Click the **Audit Log** or **Users** tab.
 
@@ -222,7 +221,7 @@ The default file type is .xlsx.
 Users are automatically deleted from Password Reset's database approximately one week after they are
 deleted from Active Directory. You can also manually delete users from the Data Console.
 
-Follow the steps below to delete a user.
+Follow these steps to delete a user.
 
 **Step 1 –** Click the **Users** tab.
 

@@ -35,7 +35,7 @@ these older operating systems.
 - 128 Kilobytes free RAM (per session if using Remote Desktop Services).
 
 You can install the PRC manually if you only have a few computers, but it is easier to perform an
-automated installation if you have many computers. Follow the instructions below to perform an
+automated installation if you have many computers. Follow these instructions to perform an
 automated installation with Group Policy.
 
 ### Create a Distribution Point
@@ -120,7 +120,7 @@ The administrative template only has to be installed once.
 
 Install PRC Administrative Template
 
-Follow the steps below to install the PRC administrative template.
+Follow these steps to install the PRC administrative template.
 
 **Step 1 –** Use the Group Policy Management Console (gpmc.msc) to display the GPOs linked at the
 domain level.
@@ -146,7 +146,7 @@ installation folder. (`\Program Files\ANIXIS Password Reset\` by default).
 
 Configure the PRC
 
-Follow the steps below to configure the Password Reset Client.
+Follow these steps to configure the Password Reset Client.
 
 **Step 1 –** Use the Group Policy Management Console (gpmc.msc) to display the GPOs linked at the
 domain level.
@@ -220,7 +220,7 @@ of the configuration settings in the right pane.
 
 ## Licensing the PRC
 
-Follow the steps below to add a license key to the PRC configuration.
+Follow these steps to add a license key to the PRC configuration.
 
 **Step 1 –** Open the **Configuration Console** and install your license key.
 
