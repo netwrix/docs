@@ -6,11 +6,11 @@ sidebar_position: 50
 
 # Using the Data Console
 
-The Data Console allows you to view and export data collected by Password Reset. Click **Start** >
+Use the Data Console to view and export data collected by Password Reset. Click **Start** >
 **ANIXIS Password Reset** > **APR Data Console** to open the console.
 
 The Data Console has three tabs. The **Recent Activity** tab shows a chart of recent requests. The
-chart is empty when Password Reset is first installed, but it will populate itself as the system is
+chart is empty when Password Reset is first installed, but it populates as the system is
 used.
 
 ![using_the_data_console](/images/passwordpolicyenforcer/10.2/password_reset/administration/using_the_data_console.webp)
@@ -54,7 +54,7 @@ The **Users** tab has seven columns:
 - Last Change — Date and time of last successful password change
 
 :::note
-The Data Console does not automatically display new information as it is added to the
+The Data Console doesn't automatically display new information as it is added to the
 database. Press F5 to refresh the view.
 :::
 
@@ -76,7 +76,7 @@ values directly into this row.
 ![using_the_data_console_3](/images/passwordreset/3.23/administration/using_the_data_console_3.webp)
 
 The Filter Row is empty when you first open the Data Console. To create a filter, click the **Filter
-Row** in the column you wish to filter. A cursor will appear. Type a value, and then press **ENTER**
+Row** in the column you want to filter. A cursor appears. Type a value, and then press **ENTER**
 or **TAB**.
 
 You may see a button to the right of the cursor. Click the button to shown an editor or selector
@@ -108,7 +108,7 @@ header.
 
 Click the button to show a list of values in the column.
 
-Select one or more values from the list. Rows that do not match one of the selected values are
+Select one or more values from the list. Rows that don't match one of the selected values are
 hidden.
 
 ![using_the_data_console_7](/images/passwordreset/3.23/administration/using_the_data_console_7.webp)
@@ -127,7 +127,7 @@ filters. Click **(Custom...)** in a column header's value list to create a custo
 ![using_the_data_console_8](/images/passwordreset/3.23/administration/using_the_data_console_8.webp)
 
 Custom filters can contain one or two conditions for each column. Select an operator for the first
-condition from the drop-down list below the column name. Only relevant operators are shown for each
+condition from the dropdown list below the column name. Only relevant operators are shown for each
 column.
 
 Type a value for the condition in the text box beside the operator. The text box may have a button
@@ -168,7 +168,7 @@ The filter in the image above contains the root node, one group, and four condit
 all reset requests in the last fourteen days originating from IP addresses starting with 192.168.115
 or 192.168.119.
 
-Click the **Click here to add a new condition** button to add a new condition to the filter. Click
+Use the **add condition** link at the bottom of the filter to add a new condition. Click
 the ellipsis button on the left of each line to add or remove conditions and groups. Click column
 names, operators, and values to edit them. Most can be selected from a list. Values can also contain
 the ? and \* wildcard characters.
@@ -190,12 +190,12 @@ active filter. The button on the right side of the Filter Bar opens the Filter E
 
 ![using_the_data_console_11](/images/passwordreset/3.23/administration/using_the_data_console_11.webp)
 
-A button and a check box appear on the left side of the Filter Bar when a filter is active. Click
-the button to clear the filter. Toggle the check box to disable or enable the filter.
+A button and a checkbox appear on the left side of the Filter Bar when a filter is active. Click
+the button to clear the filter. Toggle the checkbox to disable or enable the filter.
 
 ![using_the_data_console_12](/images/passwordreset/3.23/administration/using_the_data_console_12.webp)
 
-A drop-down button appears to the right of the filter. Click it to select a recently used filter.
+A dropdown button appears to the right of the filter. Click it to select a recently used filter.
 
 ![using_the_data_console_13](/images/passwordreset/3.23/administration/using_the_data_console_13.webp)
 
@@ -226,7 +226,7 @@ Follow the steps below to delete a user.
 
 **Step 1 –** Click the **Users** tab.
 
-**Step 2 –** Select the user(s) you wish to delete.
+**Step 2 –** Select the users you want to delete.
 
 **Step 3 –** Press the **DELETE** key, and then click **OK**.
 
