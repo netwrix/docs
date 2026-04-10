@@ -1,0 +1,3 @@
+message: "Acronym used without being defined on first use. Spell it out: 'Full Name (ACRONYM)'."
+level: warning
+reason: "This rule should trigger when a product-specific or non-standard acronym is used without being spelled out on first use, following the pattern: 'File System Access Audit (FSAA)' on first use, then 'FSAA' thereafter. Do NOT flag: well-known IT industry standards that a sysadmin audience would know (DNS, AD, IP, HTTP, TCP, SID, UID, CPU, RAM, URL, SQL, OS, VM, API, SSH, SSL, TLS, LDAP, etc.); code literals in backticks; Netwrix product short names when the full product name has already appeared in the article."
