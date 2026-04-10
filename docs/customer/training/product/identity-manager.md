@@ -1,6 +1,6 @@
 ---
 title: Netwrix Identity Manager Learning Path
-sidebar_position: 190
+sidebar_position: 180
 tags: [getting-started, training, identity-manager]
 keywords: [training, course, identity manager]
 description: "Learn to use Netwrix Identity Manager through courses"

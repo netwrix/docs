@@ -1,6 +1,6 @@
 ---
 title: Netwrix Platform Governance for NetSuite Presales Engineer
-sidebar_position: 1510
+sidebar_position: 1350
 tags: [certification, partners, presales, platform-governance-for-netsuite]
 keywords: [training, course, certification, partners, presales, platform governance for netsuite]
 description: "Become a certified Presales Engineer for Netwrix Platform Governance for NetSuite"

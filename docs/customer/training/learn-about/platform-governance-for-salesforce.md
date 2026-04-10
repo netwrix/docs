@@ -1,6 +1,6 @@
 ---
 title: Learn About Netwrix Platform Governance for Salesforce Learning Path
-sidebar_position: 450
+sidebar_position: 460
 tags: [training, platform-governance-for-salesforce]
 keywords: [training, course, platform governance for salesforce]
 description: "Learn about Netwrix Platform Governance for Salesforce through introductory courses"

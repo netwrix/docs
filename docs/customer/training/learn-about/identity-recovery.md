@@ -1,6 +1,6 @@
 ---
 title: Learn About Netwrix Identity Recovery Learning Path
-sidebar_position: 420
+sidebar_position: 410
 tags: [training, identity-recovery]
 keywords: [training, course, identity recovery]
 description: "Learn about Netwrix Identity Recovery through introductory courses"
