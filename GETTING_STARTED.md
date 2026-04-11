@@ -356,3 +356,53 @@ Now that you know the tools and the workflow, try it yourself. This exercise wal
 7. Go to [github.com/netwrix/docs](https://github.com/netwrix/docs) and create a pull request targeting **dev**.
 
 This is just practice. Don't worry about making a perfect change — the goal is to run through the workflow so it feels familiar next time.
+
+## Key Concepts
+
+- **Branch** — Your own copy of the code where you make changes without affecting anyone else.
+- **Clone** — Downloading a copy of the repository to your computer.
+- **Commit** — Saving a snapshot of your changes with a description.
+- **Dev server** — A local version of the website running on your computer for testing.
+- **Frontmatter** — Metadata at the top of a markdown file (title, description, etc.) in YAML format.
+- **localhost** — Your own computer acting as a web server (e.g., `localhost:4500`).
+- **Markdown** — A simple formatting language for writing documentation (headings, bold, links, lists, etc.).
+- **Merge** — Incorporating your changes into the main codebase after review.
+- **Node.js / npm** — Tools that build the documentation site from markdown files.
+- **Pull** — Downloading the latest changes from GitHub to your computer.
+- **Pull Request (PR)** — A request for someone to review and merge your changes.
+- **Push** — Uploading your committed changes to GitHub.
+- **Repository (repo)** — The project folder containing all documentation files and configuration.
+
+## Common Git Commands
+
+| Command | What it does |
+|---------|-------------|
+| `git status` | See what files you've changed |
+| `git checkout dev` | Switch to the dev branch |
+| `git pull` | Get the latest changes from GitHub |
+| `git checkout -b branch-name` | Create a new branch |
+| `git add <file>` | Stage a specific file for commit |
+| `git add .` | Stage all changed files |
+| `git commit -m "message"` | Commit staged changes with a description |
+| `git commit -am "message"` | Stage and commit tracked files in one step (doesn't add new files) |
+| `git push -u origin branch-name` | Push your branch to GitHub |
+| `git log --oneline` | See recent commit history |
+| `git diff` | See what you've changed since your last commit |
+
+## Using GitHub Issues with Claude
+
+If you spot a documentation problem but don't want to fix it yourself, you can file a GitHub issue and let automation handle it:
+
+1. Go to the repo's [Issues](https://github.com/netwrix/docs/issues) tab.
+2. Click **New issue**.
+3. Select the **Fix content** template.
+4. Describe the problem and paste the URL of the page where you found it.
+5. Submit the issue.
+
+The template automatically applies the right labels. Once submitted, Claude (an AI assistant) picks up the issue, identifies the affected files, applies the fix, and opens a pull request.
+
+## Getting Help
+
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** — The full workflow and writing standards reference.
+- **[netwrix_style_guide.md](netwrix_style_guide.md)** — Detailed writing standards for Netwrix documentation.
+- **Don't worry about getting everything perfect.** Automated checks catch most style issues when you open a pull request, so focus on the content and let the tooling handle the rest.
