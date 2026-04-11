@@ -113,3 +113,73 @@ VS Code is a free text editor with a built-in terminal and good Markdown preview
 2. Run the installer.
 
 That's it—no verification command needed. Just open VS Code to confirm it launches.
+
+## Cloning the Repo and Starting the Dev Server
+
+Everything so far has been setup. Now you'll use the **command line**—a text-based way to give your computer instructions by typing commands instead of clicking buttons. On Windows, the command line app you'll use is called **PowerShell**. On macOS, it's called **Terminal**. Both work the same way for the commands in this guide.
+
+### 1. Open your terminal
+
+**Windows:** Click the Start menu and search for **PowerShell**. Open it.
+
+**macOS:** Open **Terminal** from Applications > Utilities, or press Cmd+Space and search for "Terminal."
+
+You'll see a window with a blinking cursor. This is where you type commands.
+
+### 2. Navigate to where you want the project
+
+Before you download the project, you need to tell your computer where to put it. The `cd` command (short for "change directory") moves you into a folder. For example, to move into your Documents folder, type:
+
+```bash
+cd Documents
+```
+
+This is where the project folder will be created in the next step. You can choose any location you like—Documents is just a common choice.
+
+### 3. Clone the repository
+
+Now download the project by running:
+
+```bash
+git clone https://github.com/netwrix/docs.git
+```
+
+This tells Git to download the entire documentation project from GitHub to your computer. When it finishes, you'll have a new folder called `docs` containing all of the documentation files.
+
+### 4. Move into the project folder
+
+```bash
+cd docs
+```
+
+You're now inside the project. All the remaining commands should be run from here.
+
+### 5. Install dependencies
+
+```bash
+npm install
+```
+
+This downloads the packages that the documentation site needs to build and run. The first time takes a few minutes—you'll see a progress indicator while it works. You only need to do this once (or again if dependencies change).
+
+### 6. Start the dev server
+
+```bash
+npm run start
+```
+
+This builds the site and starts a local web server on your computer. The first build takes a couple of minutes because the project is large (27+ products worth of documentation). The npm scripts automatically handle the memory the build needs, so you don't need to configure anything extra.
+
+When you see a message that says the site is ready, move on to the next step.
+
+### 7. Open the site in your browser
+
+Open your web browser and go to:
+
+```
+http://localhost:4500
+```
+
+You should see the full Netwrix documentation site—running entirely on your own computer. Any changes you make to the documentation files will show up here automatically, which makes it easy to preview your work as you go.
+
+To stop the dev server when you're done, go back to your terminal and press Ctrl+C.
