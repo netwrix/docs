@@ -183,3 +183,75 @@ http://localhost:4500
 You should see the full Netwrix documentation site—running entirely on your own computer. Any changes you make to the documentation files will show up here automatically, which makes it easy to preview your work as you go.
 
 To stop the dev server when you're done, go back to your terminal and press Ctrl+C.
+
+## The Netwrix Workflow
+
+Every documentation change follows the same cycle: pull the latest code, create a branch, make your edits, and open a pull request. Here's each step.
+
+### 1. Pull the latest changes
+
+```bash
+git checkout dev
+git pull
+```
+
+You always want to start from the most up-to-date version of the documentation. The `dev` branch is where all new work goes—pulling it first makes sure you're building on top of the latest changes, not an outdated version.
+
+### 2. Create a branch
+
+```bash
+git checkout -b your-branch-name
+```
+
+This creates a new branch and switches to it. A branch is your own workspace where you can make changes without affecting anyone else's work.
+
+Use a descriptive name that says what you're changing. Start with a prefix like `update/` or `fix/`, followed by a short summary:
+
+- `update/accessanalyzer-install-steps` — updating an existing procedure
+- `fix/typo-auditor-config` — fixing a small error
+
+### 3. Edit your files
+
+Open the project in VS Code (or your preferred editor). Navigate to the file you want to change and edit it. Documentation files live in `docs/<product>/` for single-version products or `docs/<product>/<version>/` for versioned products. A later section covers the file structure in more detail.
+
+### 4. Test locally
+
+Check your changes in your browser at `http://localhost:4500`. The dev server auto-refreshes when you save a file, so you can see your updates right away. If the server isn't running, start it with:
+
+```bash
+npm run start
+```
+
+### 5. Stage and commit your changes
+
+First, stage the files you want to include. Staging tells Git which files to include in the next snapshot:
+
+```bash
+git add <filename>
+```
+
+Replace `<filename>` with the actual file path (for example, `git add docs/accessanalyzer/12.0/install.md`). To stage all changed files at once, run `git add .` instead.
+
+Then commit—saving that snapshot with a short message describing what you changed:
+
+```bash
+git commit -m "Brief description of what you changed"
+```
+
+For example: `git commit -m "Update install steps for Access Analyzer 12.0"`.
+
+### 6. Push your branch
+
+```bash
+git push -u origin your-branch-name
+```
+
+This uploads your branch to GitHub so others can see it. Replace `your-branch-name` with the name you chose in step 2.
+
+### 7. Create a pull request
+
+Go to [github.com/netwrix/docs](https://github.com/netwrix/docs). GitHub shows a prompt to create a pull request for your recently pushed branch—click it. Set the target branch to **dev**. Write a short description of what you changed and why, then click **Create pull request**.
+
+### What happens next
+
+After you open a pull request, automated checks run on your changes—style checks, an editorial review, and a build verification. A team member then reviews your work. Once approved and merged into `dev`, your changes go live the next morning through the automated daily sync from `dev` to `main`.
