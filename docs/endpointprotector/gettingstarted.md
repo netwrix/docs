@@ -8,11 +8,10 @@ sidebar_position: 2
 
 Welcome to Netwrix Endpoint Protector, your solution for securing endpoint data. With features like
 Device Control, Content Aware Protection, eDiscovery, and Enforced Encryption, Endpoint Protector
-safeguards against data breaches from a wide range of endpoints, including portable storage devices
-such as USB flash drives, external HDDs, digital cameras, MP3 players, and iPods. These devices are
-seamlessly connected to Windows, Mac, or Linux computers, increasing the risk of data theft or
-accidental loss. Ensure compliance and protect sensitive information with our user-friendly
-platform.
+safeguards against data breaches originating from a wide range of endpoints, including portable storage devices
+such as USB flash drives, external HDDs, digital cameras, MP3 players, and iPods. These devices connect
+seamlessly to Windows, Mac, or Linux computers, increasing the risk of data theft or
+accidental loss. Ensure compliance and protect sensitive information with Netwrix Endpoint Protector.
 
 ## System Requirements
 
@@ -118,7 +117,7 @@ See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration
 
 - Transition to Blocking Policies:
 
-    - Duplicate "Report Only" CAP policies and modify them to enforce restrictions.
+    - Duplicate "Report Only" Content Aware Protection (CAP) policies and modify them to enforce restrictions.
     - Activate blocking policies to prevent unauthorized data movements.
 
 See the [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md) topic for more

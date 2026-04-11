@@ -28,13 +28,13 @@ You have used the **Remove host data** option in the **FILESYSTEMACCESS** Data C
 
 Re-run the job used to remove the host data against the full **!Removed-…** name.
 
-- This is typically a custom job that was created. If you are unsure what job was run, please see the following article for how to create a custom job to drop File Server host data: [How to Drop File System Data from Netwrix Access Analyzer](/docs/kb/accessanalyzer/file-system-and-sensitive-data-discovery/dropping_file_system_data.md).
+- You typically ran a custom job. If you're unsure which job you ran, see [How to Drop File System Data from Netwrix Access Analyzer](/docs/kb/accessanalyzer/file-system-and-sensitive-data-discovery/dropping_file_system_data.md) for steps to create a custom job to drop File Server host data.
 
 - If you have already rerun the job and it throws a timeout error, then change the job timeout to a longer value.
 
   1. Right-click the job, then select **Properties** and adjust the **Timeout minutes setting** in the General tab.
-  2. Setting this value to **1440 minutes (24 hours)** for safety should suffice, although the job is unlikely to take this long.
-  3. This is to allow the job to run without timing out if there is much data to be dropped.
+  2. Setting this value to **1440 minutes (24 hours)** should be sufficient.
+  3. This prevents the job from timing out if it needs to drop a large amount of data.
 
 ## Related Article
 

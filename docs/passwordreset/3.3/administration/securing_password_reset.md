@@ -6,8 +6,7 @@ sidebar_position: 60
 
 # Securing Password Reset
 
-Password Reset has many inbuilt security features, but there are some things you should do to secure
-Password Reset. The most important of these is to install an SSL certificate for the Web Interface.
+Password Reset has many built-in security features, but you should take additional steps to secure it. The most important of these is to install an SSL certificate for the Web Interface.
 You can also set up a standard user account with delegated permissions for the Password Reset
 Server.
 
@@ -62,9 +61,7 @@ The commands you need to execute are:
 Where [object] is the distinguished name of the domain or OU containing the user accounts, and
 [account] is the name of the service account in user@domain or domain\user format.
 
-The first two commands allow NPR to reset passwords and unlock accounts. Both commands are required
-even if the Unlock item is hidden from the menu because Password Reset automatically unlocks an
-account when its password is reset. The third command allows Password Reset to set **User must
+The dsacls commands for Reset Password and lockoutTime allow Netwrix Password Reset (NPR) to reset passwords and unlock accounts. You need both commands even if the Unlock item doesn't appear in the menu, because Password Reset automatically unlocks an account when it resets the password. The third command allows Password Reset to set **User must
 change password at next logon** in Active Directory if the **Require users to change their password
 after a reset** option is enabled in the Configuration Console's **Security** tab.
 

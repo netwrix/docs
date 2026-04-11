@@ -21,9 +21,9 @@ knowledge_article_id: kA04u0000000JymCAE
 
 # Recommended Performance Counters for SAM
 
-SAM Agent comes with performance counters for some internal runtime data. These counters, along with several standard system-wide counters (memory and CPU usage, TCP disconnections, etc.), can help you diagnose performance issues.
+Netwrix Activity Monitor (SAM) Agent comes with performance counters for some internal runtime data. These counters, along with several standard system-wide counters (memory and CPU usage, TCP disconnections, etc.), can help you diagnose performance issues.
 
-The following counters are provided by SAM.
+SAM provides the following counters.
 
 ## SAM counters
 
@@ -37,7 +37,7 @@ The following counters are provided by SAM.
 | NetApp | ✔ | `Activity Monitor - NetApp\Session Negotiated` | Number of connections established with ONTAP cluster nodes |
 | NetApp | ✔ | `Activity Monitor - NetApp\Active Connections` | Number of active connections with ONTAP cluster nodes |
 | NetApp |  | `Activity Monitor - NetApp\Outage Files` | Number of outage (resilience) files processed |
-| VNX, Isilon, Unity | ✔ | `Activity Monitor - EMC\Events Received` | Number of events received from CEE |
+| VNX, Isilon, Unity | ✔ | `Activity Monitor - EMC\Events Received` | Number of events received from Common Event Enabler (CEE) |
 | VNX, Isilon, Unity | ✔ | `Activity Monitor - EMC\Events Received/sec` | Rate at which events are received from CEE |
 | VNX, Isilon, Unity | ✔ | `Activity Monitor - EMC\Events Reported` | Number of events passed the filters and being reported to outputs |
 | VNX, Isilon, Unity | ✔ | `Activity Monitor - EMC\Events Reported/sec` | Rate at which events are reported to outputs |
@@ -47,7 +47,7 @@ The following counters are provided by SAM.
 | Outputs | ✔ | `Activity Monitor - Outputs\Events Reported/sec` | Rate at which events are reported |
 | Outputs |  | `Activity Monitor - Outputs\Events Reported to Files` | Total number of events reported to log files |
 | Outputs |  | `Activity Monitor - Outputs\Events Reported to Syslog` | Total number of events reported to syslog servers |
-| Outputs |  | `Activity Monitor - Outputs\Events Reported to AMQP` | Total number of events reported to AMQP servers (not used currently) |
+| Outputs |  | `Activity Monitor - Outputs\Events Reported to AMQP` | Total number of events reported to Advanced Message Queuing Protocol (AMQP) servers (not used currently) |
 | Outputs | ✔ | `Activity Monitor - Outputs\Resolved SIDs` | Number of attempts, both successful and failed, to resolve SIDs to names |
 | Outputs | ✔ | `Activity Monitor - Outputs\Resolved SIDs/sec` | Rate at which SIDs are resolved to names |
 | Outputs | ✔ | `Activity Monitor - Outputs\Resolved SIDs Failures` | Number of failed attempts to resolve SIDs to names |
@@ -64,7 +64,7 @@ The following counters are provided by SAM.
 | Outputs | ✔ | `Activity Monitor - Outputs\DNS Queries Avg Time` | The moving average length of time, in microseconds, per a DNS query |
 | Outputs | ✔ | `Activity Monitor - Outputs\DNS Queries Max Time` | The moving maximum length of time, in microseconds, per a DNS query |
 
-It makes sense to monitor DNS and Active Directory queries (`DNS Queries...` and `Resolved SIDs...` counters) as they typically contribute the most to the processing time.
+Monitor DNS and Active Directory queries (`DNS Queries...` and `Resolved SIDs...` counters), as they typically contribute the most to processing time.
 
 In addition to the SAM counters, we recommend collecting the following system counters:
 
@@ -124,7 +124,7 @@ In addition to the SAM counters, we recommend collecting the following system co
 
 ## Prepare for performance monitoring
 
-The SAM performance counters are not registered by default. You need to register them manually.
+SAM does not register the performance counters by default. Register them manually.
 
 On each SAM Agent server:
 
@@ -155,9 +155,9 @@ On each SAM Agent server:
 
 ## Collect performance data
 
-The performance data can be observed or saved using any tool capable of collecting performance counters, for example, Performance Monitor.
+Use any tool capable of collecting performance counters (for example, Performance Monitor) to view or save the performance data.
 
-Below is a PowerShell script that collects the counters every second and stores them in `perfcounters_SERVERNAME_TIMESTAMP.csv` files. The expected file size per day is about 50MB.
+The following PowerShell script collects the counters every second and stores them in `perfcounters_SERVERNAME_TIMESTAMP.csv` files. The expected file size per day is about 50MB.
 
 Run the script on each agent server using the following command:
 
@@ -286,7 +286,7 @@ Get-Counter @variables | Export-Counter -FileFormat csv -Path $outputFile -Force
 
 ## Unregister performance counters
 
-When performance monitoring is not needed anymore, unregister the SAM performance counters.
+When you no longer need performance monitoring, unregister the SAM performance counters.
 
 On each SAM Agent server:
 

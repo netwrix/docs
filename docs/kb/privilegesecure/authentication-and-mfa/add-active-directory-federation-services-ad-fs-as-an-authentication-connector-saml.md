@@ -23,7 +23,7 @@ knowledge_article_id: kA04u0000000HR7CAM
 
 ## Summary
 
-This article outlines the process of adding Active Directory Federation Services (AD FS) to Netwrix Privilege Secure as an Authentication Connector via SAML. The article is split into two sections, *Steps for AD FS* and *Steps for Netwrix Privilege Secure*. Complete the AD FS section first.
+This article explains how to add Active Directory Federation Services (AD FS) to Netwrix Privilege Secure as an Authentication Connector via SAML. This article covers two sections: *Steps for AD FS* and *Steps for Netwrix Privilege Secure*. Complete the AD FS section first.
 
 ## Instructions
 
@@ -114,7 +114,7 @@ This article outlines the process of adding Active Directory Federation Services
 
 ### Steps for Netwrix Privilege Secure
 
-Once the *Steps for AD FS* have been completed, take the following steps in Netwrix Privilege Secure to add AD FS as an Authentication Connector via SAML.
+After completing the *Steps for AD FS*, take the following steps in Netwrix Privilege Secure to add AD FS as an Authentication Connector via SAML.
 
 1. As a Netwrix Privilege Secure admin, navigate in Netwrix Privilege Secure to **Configuration > Authentication**, and click the green **"+"** button to add a new Authentication Connector.
 
@@ -126,15 +126,15 @@ Once the *Steps for AD FS* have been completed, take the following steps in Netw
 4. On the wizard's **Configure Client** page, enter the following values:
    - Signin URI: `https://<adfs-server>.domain.com/adfs/ls`
    - Callback Address: `https://<sbpam-server>:6500/samlSigninCallback`
-   - CORS: `https://<sbpam-server>:6500`  
+   - CORS (Cross-Origin Resource Sharing): `https://<sbpam-server>:6500`  
    ![User-added image](./../0-images/ka04u000000wwIE_0EM4u000004bUj1.png)
 
-   Click **Test Connection**. If brought to a log-in page, click **Back** in your web browser and then **Next** in the Netwrix Privilege Secure wizard. If the page refreshes and brings you back to the Netwrix Privilege Secure wizard, click **Next** to proceed.
+   Click **Test Connection**. If you are redirected to a log-in page, click **Back** in your web browser, then click **Next** in the Netwrix Privilege Secure wizard. If the page refreshes and brings you back to the Netwrix Privilege Secure wizard, click **Next** to proceed.
 
 5. Select "Unspecified" for the **Name ID Policy**, and add a certificate if required. Then, click **Login** and sign in to AD FS using Active Directory credentials.  
    ![User-added image](./../0-images/ka04u000000wwIE_0EM4u000004bUj6.png)
 
-   When redirected back to this page after signing in to AD FS, if the message at the bottom reads "Login was successful" then click **Next**.
+   When AD FS redirects you back to this page after signing in, if the message reads "Login was successful", click **Next**.
 
 6. Locate a mapping you would like to use when users sign in to Netwrix Privilege Secure using AD FS, such as an email address or UPN.  
    ![User-added image](./../0-images/ka04u000000wwIE_0EM4u000004bUjB.png)
@@ -147,9 +147,9 @@ Once the *Steps for AD FS* have been completed, take the following steps in Netw
    - Signout Callback URI: `https://<sbpam-server>:6500`  
    ![User-added image](./../0-images/ka04u000000wwIE_0EM4u000004bUjL.png)
 
-   Click **Test Log Out**, then **Finish** to complete the wizard. AD FS has now been added to Netwrix Privilege Secure (via SAML) as an Authentication Connector.
+   Click **Test Log Out**, then **Finish** to complete the wizard. Netwrix Privilege Secure now uses AD FS (via SAML) as an Authentication Connector.
 
-8. The last step is to navigate to specific users in Netwrix Privilege Secure's **Users & Groups** menu, and assign the AD FS SAML authenticator.  
+8. Navigate to specific users in Netwrix Privilege Secure's **Users & Groups** menu and assign the AD FS SAML authenticator.  
    ![User-added image](./../0-images/ka04u000000wwIE_0EM4u000004bUjQ.png)
 
-When using the SAML log-in option, the user will be redirected to sign in to AD FS. Upon successful authentication, the user will be redirected to the Netwrix Privilege Secure UI as their now signed-in user.
+When using the SAML log-in option, the user signs in to AD FS. Upon successful authentication, Netwrix Privilege Secure redirects the user to the UI as their signed-in account.

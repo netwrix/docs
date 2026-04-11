@@ -7,13 +7,12 @@ sidebar_position: 10
 # Bring Your Own Vault (BYOV) Connector Configuration
 
 This topic walks through the steps necessary to configure Netwrix Privilege Secure as a BYOV
-Integration Connector that can be used to perform activities as a specific user account. This can be
-done with accounts managed by Privilege Secure, or with accounts stored inside of a Secret Vault
+Integration Connector you can use to perform activities as a specific user account. This can be
+done with accounts managed by Privilege Secure, or with accounts stored in a Secret Vault
 within Privilege Secure.
 
 Use this workflow to bypass the default "Enable Account" and "Disable Account" pre-session and
-post-session actions. In the case of a Secret Vault credential, when it is necessary to use an
-unmanaged account for an activity.
+post-session actions, or when you need to use an unmanaged Secret Vault credential for an activity.
 
 ## Set Up an Integration Connector
 
@@ -22,8 +21,8 @@ Ensure that the account you wish to use for your activity is managed by Privileg
 contained within a Secret Vault resource in Privilege Secure.
 
 :::note
-For managed accounts, ensure that the account has been rotated at least once since being
-managed. Otherwise, there will be no vaulted password in the Netwrix Privilege Secure database.
+For managed accounts, ensure you have rotated the account password at least once since managing
+it. Otherwise, there will be no vaulted password in the Netwrix Privilege Secure database.
 :::
 
 
@@ -178,7 +177,7 @@ information on configuring a BYOV connector.
 
 ### Create a User
 
-Once the integration connector has been configured, create a manually-managed user.
+After you configure the integration connector, create a manually-managed user.
 
 Follow the steps to create a manually-managed user.
 
@@ -204,7 +203,7 @@ creating a managed account.
 
 ### Set the Account Password
 
-Once the account has been manually managed, the password must be set for the account. The following
+After you manually manage the account, set the password for it. The following
 icons should be visible: Wrench (Set Password), Clipboard (Copy Password to Clipboard), and
 Information (View Password).
 
@@ -222,8 +221,8 @@ account.
 **Step 3 –** Enter a password to match the AD password, then click **Save**.
 
 :::note
-For versions before Privilege Secure 4.1, a support ticket will be needed as the Set
-Password feature is not available.
+For versions before Privilege Secure 4.1, contact support because the Set Password feature
+is not available.
 :::
 
 
@@ -233,7 +232,7 @@ topic for additional information on manually managing an account.
 
 ### Create an Activity
 
-Once the password has been set for the account, create an activity for the BYOV connector.
+After you set the password for the account, create an activity for the BYOV connector.
 
 Follow the steps to create an activity.
 
@@ -275,7 +274,7 @@ Activity.
 
 ### Configure a New Policy
 
-Once an Activity has been created, configure a new Policy.
+After you create an Activity, configure a new Policy.
 
 Follow the steps to create a Policy.
 
@@ -314,6 +313,6 @@ management.
 ![My Activities BYOV Connector](/images/privilegesecure/4.2/accessmanagement/admin/configuration/add/byovconnectormyactivities.webp)
 
 :::tip
-Remember, Always verify configurations and permissions, especially when integrating with systems
+Verify configurations and permissions, especially when integrating with systems
 like AD and using specific user accounts for critical operations.
 :::

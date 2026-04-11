@@ -25,17 +25,17 @@ knowledge_article_id: kA04u000000XmHKCA0
 
 ## Overview
 
-After resetting the service account password for Netwrix Data Classification there are several locations within the product and IIS that you must update to reflect this change. This article shows where you need to supply the new password.
+After you reset the service account password for Netwrix Data Classification, update the password in several locations within the product and IIS. This article shows where to supply the new password.
 
 ## Services
 
 ![User-added image](./../0-images/ka0Qk000000455x_0EM4u000001rDFz.png)
 
-Update the **Logon As** value for each of the services listed above to reflect the password change.
+Update the **Logon As** value for each service shown in the screenshot to reflect the password change.
 
 ## ConceptConfig
 
-Navigate to each of the locations below. These locations control the SQL database connection and the account used to make that connection. Update the account credentials for all three locations.
+Navigate to each of the following locations. These locations control the SQL database connection and the account used to make that connection. Update the account credentials for all three locations.
 
 1. `C:\Program Files\ConceptSearching\Services\ConceptCollectorService\conceptConfig.exe`
 2. `C:\inetpub\wwwroot\conceptQS\bin\conceptConfig.exe`
@@ -45,7 +45,7 @@ Navigate to each of the locations below. These locations control the SQL databas
 
 Open IIS and click **Application Pools** on the left-hand pane. Right-click on the **conceptQSAppPool** and click **Advanced Settings**.
 
-Find the **Identity** and update the password to match the new password for the account, then restart the application pool.
+Find the **Identity** and enter the new account password, then restart the application pool.
 
 ![User-added image](./../0-images/ka0Qk000000455x_0EM4u000001rDGn.png)
 
