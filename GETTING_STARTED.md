@@ -255,3 +255,58 @@ Go to [github.com/netwrix/docs](https://github.com/netwrix/docs). GitHub shows a
 ### What happens next
 
 After you open a pull request, automated checks run on your changes—style checks, an editorial review, and a build verification. A team member then reviews your work. Once approved and merged into `dev`, your changes go live the next morning through the automated daily sync from `dev` to `main`.
+
+## Frontmatter, File Structure, and Images
+
+Now that you know the workflow, here's a quick tour of how the documentation files themselves are organized.
+
+### Frontmatter
+
+Every documentation page starts with a YAML block at the top of the file called "frontmatter." It looks like this:
+
+```yaml
+---
+title: "Page Title"
+description: "Brief description for search engines"
+sidebar_position: 1
+---
+```
+
+Here's what each field does:
+
+- `title` — Sets the page title and the browser tab text.
+- `description` — A short summary used by search engines. Keep it under a sentence or two.
+- `sidebar_position` — Controls where the page appears in the sidebar navigation. Lower numbers appear first.
+
+You'll see this block at the top of every `.md` file in the project. When you create a new page, add frontmatter before any other content.
+
+### File structure
+
+Documentation files live in `docs/` and follow one of two patterns depending on the product:
+
+- **Multi-version products** have a version folder: `docs/<product>/<version>/` (e.g., `docs/accessanalyzer/12.0/`)
+- **Single-version (SaaS) products** have no version folder: `docs/<product>/` (e.g., `docs/1secure/`)
+
+One important thing to know: edits to one version don't carry over to other versions. If a fix applies to multiple versions of a product, you need to make the same edit in each version folder separately.
+
+### Images
+
+Images are stored in `static/images/<product>/` as `.webp` files, organized by version and section. For example:
+
+```
+static/images/accessanalyzer/12.0/install/setup-wizard.webp
+```
+
+When you reference an image in a markdown file, use an absolute path starting from `/images/`—not `/static/images/`. Docusaurus serves the `static/` folder at the site root, so you drop the `static` prefix:
+
+```markdown
+![Description of the image](/images/accessanalyzer/12.0/install/setup-wizard.webp)
+```
+
+Always include alt text (the part in square brackets) that describes what the image shows. This helps with accessibility and gives readers context if the image doesn't load.
+
+## Knowledge Base Articles
+
+Knowledge Base (KB) articles live in `docs/kb/<product>/` — that's the only place you should edit them. A build script automatically copies KB content into versioned product folders at build time, so you never need to manually create or copy KB files into those folders. If you do, the script overwrites them on the next build.
+
+KB articles store their images as PNG files in `0-images/` subdirectories alongside the article markdown (e.g., `docs/kb/accessanalyzer/0-images/`). This is different from regular product docs, which use `.webp` images in `static/images/`.
