@@ -1,6 +1,6 @@
 ---
 title: Netwrix Password Secure Sales Professional
-sidebar_position: 1190
+sidebar_position: 1140
 tags: [certification, partners, sales, password-secure]
 keywords: [training, course, certification, partners, sales, password secure]
 description: "Become a certified Sales Professional for Netwrix Password Secure"

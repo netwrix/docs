@@ -1,6 +1,6 @@
 ---
 title: Netwrix PingCastle Sales Professional
-sidebar_position: 1200
+sidebar_position: 1150
 tags: [certification, partners, sales, pingcastle]
 keywords: [training, course, certification, partners, sales, pingcastle]
 description: "Become a certified Sales Professional for Netwrix PingCastle"
