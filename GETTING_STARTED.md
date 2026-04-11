@@ -310,3 +310,49 @@ Always include alt text (the part in square brackets) that describes what the im
 Knowledge Base (KB) articles live in `docs/kb/<product>/` — that's the only place you should edit them. A build script automatically copies KB content into versioned product folders at build time, so you never need to manually create or copy KB files into those folders. If you do, the script overwrites them on the next build.
 
 KB articles store their images as PNG files in `0-images/` subdirectories alongside the article markdown (e.g., `docs/kb/accessanalyzer/0-images/`). This is different from regular product docs, which use `.webp` images in `static/images/`.
+
+## Practice Exercise
+
+Now that you know the tools and the workflow, try it yourself. This exercise walks you through the full cycle end to end — from pulling the latest code to opening a pull request.
+
+1. Make sure you're on `dev` with the latest changes:
+
+   ```bash
+   git checkout dev
+   git pull
+   ```
+
+2. Create a practice branch:
+
+   ```bash
+   git checkout -b practice/your-name-first-edit
+   ```
+
+   Replace `your-name` with your actual name (for example, `practice/alex-first-edit`).
+
+3. Pick any documentation page you're familiar with. Open it in VS Code and make a small improvement — fix a typo, clarify a sentence, or improve a description.
+
+4. Save the file and check your change in the browser at `http://localhost:4500`. If the dev server isn't already running, start it with:
+
+   ```bash
+   npm run start
+   ```
+
+5. Stage and commit your change:
+
+   ```bash
+   git add <the-file-you-edited>
+   git commit -m "Improve wording in <page name>"
+   ```
+
+   Replace `<the-file-you-edited>` with the actual file path and `<page name>` with a short description of the page you changed.
+
+6. Push your branch:
+
+   ```bash
+   git push -u origin practice/your-name-first-edit
+   ```
+
+7. Go to [github.com/netwrix/docs](https://github.com/netwrix/docs) and create a pull request targeting **dev**.
+
+This is just practice. Don't worry about making a perfect change — the goal is to run through the workflow so it feels familiar next time.
