@@ -49,3 +49,67 @@ This is the most common worry new contributors have, and the answer is: the work
 4. **Git keeps the full history.** Any change can be undone. Every version of every file is preserved forever.
 
 The worst thing that can happen is a reviewer asks you to adjust something—and that's just normal collaboration. So go ahead: experiment, make mistakes, and learn as you go. You can't break anything.
+
+## Installing Your Tools
+
+You need three tools to work with Netwrix documentation: Git, Node.js, and a text editor. This section walks you through installing each one on Windows or macOS.
+
+### Git
+
+Git tracks every change you make to documentation files.
+
+**Windows:**
+
+1. Download the installer from [git-scm.com](https://git-scm.com).
+2. Run the installer and accept the defaults.
+
+**macOS:**
+
+1. Open Terminal (search for "Terminal" in Spotlight).
+2. Run `xcode-select --install` and follow the prompts.
+
+**Verify the installation:**
+
+Open your terminal and run:
+
+```bash
+git --version
+```
+
+You should see a version number like `git version 2.44.0`. The exact number doesn't matter—any recent version works.
+
+### Node.js (v22 or later)
+
+Node.js powers the Docusaurus build system that turns your Markdown files into the published documentation site. You need version 22 or later.
+
+**Windows and macOS:**
+
+1. Go to [nodejs.org](https://nodejs.org) and download the **LTS** installer.
+2. Run the installer and accept the defaults.
+
+**Verify the installation:**
+
+Open your terminal and run both commands:
+
+```bash
+node --version
+```
+
+You should see `v22.x.x` or later.
+
+```bash
+npm --version
+```
+
+You should see a version number. `npm` (Node Package Manager) comes bundled with Node.js—it installs the project's dependencies.
+
+### Visual Studio Code (recommended)
+
+VS Code is a free text editor with a built-in terminal and good Markdown preview, which makes it ideal for documentation work. Any text editor works, but this guide assumes VS Code.
+
+**Windows and macOS:**
+
+1. Download VS Code from [code.visualstudio.com](https://code.visualstudio.com).
+2. Run the installer.
+
+That's it—no verification command needed. Just open VS Code to confirm it launches.
