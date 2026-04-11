@@ -11,16 +11,16 @@ tags:
 title: "Troubleshoot Failed Action Service Connections to Windows Resources (PSRemoting/WinRM)"
 knowledge_article_id: kA04u0000000HiICAU
 products:
-  - onesecure
+  - privilegesecure
 ---
 
 # Troubleshoot Failed Action Service Connections to Windows Resources (PSRemoting/WinRM)
 
 ## Overview
 
-The NPS Action Service is used for various workflows, including host scans and performing pre- and post-session actions. The Action Service must establish a connection via PowerShell Remoting (PSRemoting) for Windows target resources. PSRemoting is a PowerShell implementation of WinRM (Windows Remote Management).
+The Netwrix Privilege Secure (NPS) Action Service handles various workflows, including host scans and pre- and post-session actions. The Action Service must establish a connection via PowerShell Remoting (PSRemoting) for Windows target resources. PSRemoting is a PowerShell implementation of WinRM (Windows Remote Management).
 
-Several variables could affect the successful connection of the NPS Action Service to the target Windows resource via PSRemoting. This article outlines some of those variables and provides ways to troubleshoot and resolve them to establish a connection.
+Several variables can affect whether the NPS Action Service connects to the target Windows resource via PSRemoting. This article describes those variables and steps to resolve them.
 
 ## Instructions
 
@@ -79,11 +79,11 @@ WinRM firewall exception enabled.
 
 ### Verify ports
 
-Verify that ports 5985 (HTTP) and/or 5986 (HTTPS) are open in the Windows firewall and any network firewalls. These ports are used for WinRM communications for HTTP and HTTPS, respectively.
+Verify that ports 5985 (HTTP) and/or 5986 (HTTPS) are open in the Windows firewall and any network firewalls. WinRM uses these ports for HTTP and HTTPS communications, respectively.
 
 ### Review Group Policy settings
 
-There are Group Policy settings used to filter the origin of WinRM requests via both IPv4 and IPv6 filters. If issues with PSRemoting/WinRM communications persist even after enabling PSRemoting/WinRM and verifying firewall settings, it is possible that the IP filter in Group Policy is affecting the communication.
+Group Policy settings filter the origin of WinRM requests via IPv4 and IPv6 filters. If issues with PSRemoting/WinRM communications persist after enabling PSRemoting/WinRM and verifying firewall settings, the IP filter in Group Policy may be affecting the communication.
 
 Learn more about the **Allow remote server management through WinRM** Group Policy setting in [Configure Remote Management in Server Manager − Enabling or Disabling Remote Management ⸱ Microsoft 🡥](https://learn.microsoft.com/en-us/windows-server/administration/server-manager/configure-remote-management-in-server-manager#enabling-or-disabling-remote-management).
 
@@ -97,7 +97,7 @@ Review the access permissions set up for Remote Management Users by running the 
 Get-PSSessionConfiguration -Name Microsoft.PowerShell
 ```
 
-Review the permissions of the **BUILTIN\Remote Management Users** group under the **Permission** section. If set to **AccessDenied**, then authenticated network users (i.e., remote PSRemoting requests) will be denied access even if credentials and other variables are correct.
+Review the permissions of the **BUILTIN\Remote Management Users** group under the **Permission** section. If the permission is **AccessDenied**, authenticated network users (i.e., remote PSRemoting requests) cannot connect, even if credentials and other variables are correct.
 
 **Solution:** Run the following command in elevated PowerShell to review and change permissions for Remote Management Users:
 
