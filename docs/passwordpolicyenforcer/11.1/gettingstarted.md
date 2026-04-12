@@ -47,7 +47,7 @@ Create the **Compromised Passwords Base** prior to enabling the Compromised Pass
 
 **Clients**
 
-**PPEClt.dll** and **APRClt.dll** if either of these files are blocked, the client does not run.
+**PPEClt.DLL** if this file does not load, the client does not run.
 
 ## Next Steps
 
