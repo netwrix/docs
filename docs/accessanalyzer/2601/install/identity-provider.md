@@ -10,7 +10,7 @@ sidebar_position: 50
 This article is for the team performing the Access Analyzer deployment. It covers the cluster-level steps required to connect an identity provider to Keycloak. If you are an application administrator setting up user accounts after the IdP connection is in place, see [Identity Provider](../configurations/identity-provider.md).
 :::
 
-Access Analyzer uses Keycloak as its identity broker. Keycloak is deployed and configured automatically during installation. IdP connections are added after the cluster is running by running configuration scripts via `kubectl exec` into the Keycloak pod.
+Access Analyzer uses Keycloak as its identity broker. Keycloak is deployed and configured automatically during installation. After the cluster is running, you connect your identity provider by running configuration scripts directly in the Keycloak pod using `kubectl exec`.
 
 Configuration scripts for each IdP type are included in the Access Analyzer distribution at `scripts/configure-<type>.sh`. A verification script is available at `scripts/verify-idp-config.sh`.
 
@@ -22,11 +22,11 @@ Confirm the following before running any configuration script:
 - You have `kubectl` access to the `access-analyzer` namespace
 - The required credentials have been collected from the customer's IdP or directory administrator (see [Identity Provider — Part 1](../configurations/identity-provider.md#part-1-configure-your-identity-provider))
 - For LDAP: the Keycloak pod has network access to the LDAP server on port 636 (LDAPS) or 389 (LDAP)
-- For private CA certificates: `customCaBundle` is set in the `infra` chart values and the cluster has been (re)deployed with it
+- For private CA certificates: `customCaBundle` is set in the `infra` chart values and the cluster has been redeployed with it
 
 ## Authenticate to the Keycloak Admin CLI
 
-Run this step before configuring any IdP type. It authenticates the Keycloak Admin CLI inside the pod using the bootstrap credentials injected at deploy time.
+Run this step before configuring any IdP type. It authenticates the Keycloak Admin CLI inside the pod using the bootstrap credentials that were injected at deploy time.
 
 ```bash
 kubectl exec -n access-analyzer statefulset/keycloak -- bash -c '
@@ -38,14 +38,18 @@ kubectl exec -n access-analyzer statefulset/keycloak -- bash -c '
 ```
 
 :::note
-The bootstrap admin credentials are read from environment variables already present in the pod. Do not pass them as command-line arguments — they would appear in Kubernetes audit logs.
+The bootstrap admin credentials are read from environment variables already present in the pod. Don't pass them as command-line arguments — they would appear in Kubernetes audit logs.
 :::
 
 ## Configure Entra ID (OIDC)
 
-**Required values:** Tenant ID, Client ID, Client secret (from the Azure App Registration)
+This creates an OIDC identity provider in the `dspm` realm that redirects users to Microsoft Entra ID for authentication.
+
+**Required values:** Tenant ID, Client ID, Client secret (from the customer's Azure App Registration)
 
 **Step 1 — Create the OIDC identity provider**
+
+Creates the provider instance and points it at the tenant's OpenID Connect discovery endpoint.
 
 ```bash
 kubectl exec -i -n access-analyzer statefulset/keycloak -- bash <<EOF
@@ -63,11 +67,11 @@ kubectl exec -i -n access-analyzer statefulset/keycloak -- bash <<EOF
 EOF
 ```
 
-Replace `<tenant-id>`, `<client-id>`, and `<client-secret>` with the values collected from the customer's Azure App Registration. Pass the client secret via stdin heredoc (as shown) to keep it out of Kubernetes audit logs.
+Replace `<tenant-id>`, `<client-id>`, and `<client-secret>` with the values from the customer's Azure App Registration. The client secret is passed via stdin heredoc to keep it out of Kubernetes audit logs.
 
 **Step 2 — Refresh OIDC discovery endpoints**
 
-Keycloak does not always populate the authorization, token, and JWKS URLs from the discovery endpoint at creation time. Run this step to explicitly apply them:
+Keycloak doesn't always populate the authorization, token, and JWKS URLs from the discovery endpoint at creation time. This step fetches them explicitly and applies them to the provider.
 
 ```bash
 kubectl exec -i -n access-analyzer statefulset/keycloak -- bash <<EOF
@@ -90,7 +94,7 @@ EOF
 
 **Step 3 — Add the email mapper**
 
-This mapper is required. Access Analyzer matches pre-provisioned users to their IdP identity using the `email` claim on first sign-in. Without this mapper, authentication succeeds in Keycloak but the application cannot find the user.
+This mapper is required. Access Analyzer matches pre-provisioned user accounts to their IdP identity using the `email` claim on first sign-in. Without it, authentication succeeds in Keycloak but the application can't find the user.
 
 ```bash
 kubectl exec -n access-analyzer statefulset/keycloak -- \
@@ -102,6 +106,8 @@ kubectl exec -n access-analyzer statefulset/keycloak -- \
 ```
 
 ## Configure Entra ID (SAML)
+
+This creates a SAML 2.0 identity provider in the `dspm` realm using Microsoft Entra ID's SAML endpoint.
 
 **Required values:** Tenant ID (no client ID or secret needed for SAML)
 
@@ -125,7 +131,7 @@ Replace `<tenant-id>` with the customer's Azure AD tenant GUID.
 
 **Step 2 — Add the email mapper**
 
-Entra ID sends the email address as a URI-named SAML attribute. The mapper below maps that specific attribute to Keycloak's `email` field. The attribute URI is fixed for Entra ID and does not vary by customer.
+Entra ID sends the email address as a URI-named SAML attribute. This mapper translates it to Keycloak's `email` field. The attribute URI is fixed for Entra ID and doesn't vary by customer.
 
 ```bash
 kubectl exec -n access-analyzer statefulset/keycloak -- \
@@ -138,11 +144,13 @@ kubectl exec -n access-analyzer statefulset/keycloak -- \
 
 ## Configure Generic SAML
 
+This creates a SAML 2.0 identity provider for any SAML-compliant IdP (Okta, ADFS, and others).
+
 **Required values:** SSO URL, Entity ID, signing certificate (PEM), email attribute name
 
 **Step 1 — Strip PEM headers from the signing certificate**
 
-Keycloak expects the certificate as bare base64 without `-----BEGIN CERTIFICATE-----` headers. Strip them before running the next step:
+Keycloak expects the certificate as bare base64 without `-----BEGIN CERTIFICATE-----` headers. Run this first to prepare the certificate value.
 
 ```bash
 SAML_SIGNING_CERT=$(cat <cert-file>.pem | grep -v '^-----' | tr -d '[:space:]')
@@ -180,13 +188,13 @@ kubectl exec -n access-analyzer statefulset/keycloak -- \
 
 ## Configure LDAP / Active Directory
 
-LDAP federation is architecturally different from OIDC and SAML. It creates a **User Federation component** rather than an identity provider instance. Users enter credentials directly on the Keycloak login page — no redirect occurs.
+LDAP federation works differently from OIDC and SAML. Instead of redirecting users to an external IdP, Keycloak connects directly to the customer's directory and users enter their credentials on the Access Analyzer login page. Configuring it creates a **User Federation component** rather than an identity provider instance, and requires three additional mappers beyond the basic connection.
 
 **Required values:** LDAP server URL, service account DN, service account password, users base DN
 
 **Step 1 — Create the LDAP User Federation component**
 
-The command below targets Active Directory. For generic LDAP, replace `ad` with `other` and adjust the attribute values (`sAMAccountName` → `uid`, `cn` → `uid`, `objectGUID` → `entryUUID`, user object classes as appropriate).
+This connects Keycloak to the customer's LDAP or Active Directory. The command below targets Active Directory. For generic LDAP, replace `ad` with `other` and adjust attribute names (`sAMAccountName` → `uid`, `cn` → `uid`, `objectGUID` → `entryUUID`, user object classes as appropriate).
 
 ```bash
 LDAP_ID=$(kubectl exec -i -n access-analyzer statefulset/keycloak -- bash <<EOF
@@ -213,9 +221,11 @@ EOF
 )
 ```
 
-Pass the service account password via stdin heredoc to keep it out of audit logs. Note that LDAP federation values use JSON array syntax (`["value"]`) — this is a Keycloak API requirement for federation components.
+The service account password is passed via stdin heredoc to keep it out of audit logs. LDAP federation values use JSON array syntax (`["value"]`) — this is a Keycloak API requirement for federation components. The command captures the new component's ID in `$LDAP_ID`, which the next three steps need.
 
 **Step 2 — Add the email attribute mapper**
+
+Maps the LDAP `mail` attribute to Keycloak's `email` field. Replace `mail` if the customer's directory uses a different attribute for email.
 
 ```bash
 kubectl exec -n access-analyzer statefulset/keycloak -- \
@@ -227,11 +237,9 @@ kubectl exec -n access-analyzer statefulset/keycloak -- \
   -s '{"ldap.attribute":["mail"],"is.mandatory.in.ldap":["false"],"always.read.value.from.ldap":["false"],"read.only":["true"],"user.model.attribute":["email"]}'
 ```
 
-Replace `mail` if the customer's directory uses a different attribute for email. Confirm with the customer's directory administrator.
-
 **Step 3 — Add the provider attribute mapper**
 
-This stamps all LDAP users with a `ldap_provider` attribute so Access Analyzer can identify them as LDAP-authenticated users:
+Stamps all LDAP-synchronized users with an `ldap_provider` attribute so Access Analyzer can identify them as LDAP-authenticated.
 
 ```bash
 kubectl exec -n access-analyzer statefulset/keycloak -- \
@@ -245,7 +253,7 @@ kubectl exec -n access-analyzer statefulset/keycloak -- \
 
 **Step 4 — Add the realm protocol mapper**
 
-This surfaces the `ldap_provider` attribute as the `identity_provider` claim in OIDC tokens. This mapper is created once at the realm level and applies to all LDAP federations:
+Surfaces the `ldap_provider` attribute as the `identity_provider` claim in OIDC tokens so the application can read it. This mapper is created once at the realm level and applies to all LDAP federations.
 
 ```bash
 kubectl exec -n access-analyzer statefulset/keycloak -- \
@@ -267,7 +275,7 @@ kubectl exec -n access-analyzer statefulset/keycloak -- \
 
 ## Verify the configuration
 
-Run the verification script after configuring any IdP type. The script re-authenticates to the Keycloak Admin CLI and checks that all required components are present.
+Run the verification script after configuring any IdP type. It re-authenticates to the Keycloak Admin CLI and checks that all required components are present.
 
 **OIDC or SAML:**
 
