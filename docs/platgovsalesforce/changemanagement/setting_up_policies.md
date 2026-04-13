@@ -32,7 +32,7 @@ You can create a New Policy, or edit an existing one:
 - **Customization Policies** impacted customization approval.
 - **Management Policies** executive approver and approval settings.
 - **Change Enablement Defaults** merge approval list, non conforming alerts, and sequential approval requests.
-- **System Information**, **Created By** and **Last Modified By** dates. Informational only. You cannot edit these fields.
+- **System Information**, **Created By** and **Last Modified By** dates. Informational only. You can't edit these fields.
 
 After you save the policy, the **System Information** section displays the **Created By** and **Last Modified By** user and timestamp. The **Details** tab shows the information you entered on the form. The Related tab is available to add Customizations and view additional
 information and history.
@@ -48,7 +48,7 @@ information and history.
 - **Policy Changes Approver**: Search and select the person who must approve changes to this policy.
 
 :::note
-You can now control whether changes to the Policy require approval. If you enter an approver in the **Policy Changes Approver** field, the policy requires an approved Change Request for any changes. If the field is blank, the policy does not require an approved Change Request.
+You can now control whether changes to the Policy require approval. If you enter an approver in the **Policy Changes Approver** field, the policy requires an approved Change Request for any changes. If the field is blank, the policy doesn't require an approved Change Request.
 :::
 
 Set the required Change Level for each Metadata Type. The form shows the default.
