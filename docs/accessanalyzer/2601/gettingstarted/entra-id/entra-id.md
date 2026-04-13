@@ -16,7 +16,7 @@ Before setting up an Entra ID source group, confirm that your environment meets 
 
 Access Analyzer uses a Client ID and Secret service account to authenticate with Microsoft Entra ID via the Microsoft Graph API. This requires a registered application in your Entra ID tenant with the appropriate API permissions granted and a client secret generated for that application.
 
-See [Entra ID Service Account](../../configurations/service-accounts/entra-id.md) to create the service account and [Entra ID Requirements](../../connectors/entra-id/overview.md) for instructions on registering the application and granting the required permissions.
+See [Client ID/Secret service account](../../configurations/service-accounts/client-id-secret.md) to create the service account and [Entra ID Requirements](../../connectors/entra-id/overview.md) for instructions on registering the application and granting the required permissions.
 
 ### Network Requirements
 

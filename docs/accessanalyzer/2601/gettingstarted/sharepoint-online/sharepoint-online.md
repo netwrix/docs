@@ -16,7 +16,7 @@ Before setting up a SharePoint Online source group, confirm that your environmen
 
 Access Analyzer uses a Client ID and Certificate service account to authenticate with SharePoint Online. Only the Client ID is entered when creating the service account — the certificate is generated automatically during source group setup when you click **Generate and Download Certificate**. You then upload the certificate to your registered Entra ID application before the connection can be tested.
 
-See [SharePoint Online Service Account](../../configurations/service-accounts/sharepoint-online.md) to create the service account and [SharePoint Online Connector Requirements](../../connectors/sharepoint-online/overview.md) for instructions on registering the application.
+See [Client ID/Certificate service account](../../configurations/service-accounts/client-id-certificate.md) to create the service account and [SharePoint Online Connector Requirements](../../connectors/sharepoint-online/overview.md) for instructions on registering the application.
 
 ### Network Requirements
 
