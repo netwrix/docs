@@ -1,29 +1,30 @@
-  title: "Data Encryption at Rest and in Transit"                                                                                                        
-  description: >-                                                                                                                                        
-    Netwrix Data Classification (NDC) supports encryption for sensitive data                                                                             
-    at rest and in transit, including credentials, tokens, and API keys.                                                                                 
-    This article describes NDC's encryption methods, authentication support,                                                                             
-    and deployment considerations.                                                                                                                       
-  sidebar_label: "Data Encryption at Rest and in Transit"                                                                                                
-  keywords:                                                                                                                                              
-    - encryption                                                                                                                                         
-    - data at rest                                                                                                                                       
-    - data in transit                                                                                                                                    
-    - AES                                                                                                                                                
-    - TLS                                                                                                                                            
-    - HTTPS
-    - credentials
-    - Netwrix Data Classification                                                                                                                        
-    - NDC                                                                                                                                                
-    - security                                                                                                                                           
-    - cryptography                                                                                                                                       
-    - certificates                                                                                                                                   
-  products:
-    - data_classification
-  tags:
-    - kb
-  knowledge_article_id: kA0Qk000000XXXXKAA                                                                                                               
-  ---                                                                                                                                                    
+---
+title: "Data Encryption at Rest and in Transit"
+description: >-
+  Netwrix Data Classification (NDC) supports encryption for sensitive data
+  at rest and in transit, including credentials, tokens, and API keys.
+  This article describes NDC's encryption methods, authentication support,
+  and deployment considerations.
+sidebar_label: "Data Encryption at Rest and in Transit"
+keywords:
+  - encryption
+  - data at rest
+  - data in transit
+  - AES
+  - TLS
+  - HTTPS
+  - credentials
+  - Netwrix Data Classification
+  - NDC
+  - security
+  - cryptography
+  - certificates
+products:
+  - data_classification
+tags:
+  - kb
+knowledge_article_id: kA0Qk000000XXXXKAA
+---                                                                                                                               
                                                                                                                                                          
   # Data Encryption at Rest and in Transit                                                                                                               
                                                                                                                                                      
