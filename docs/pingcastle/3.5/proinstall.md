@@ -1,3 +1,6 @@
+---
+sidebar_position: 5
+---
 # PingCastle Pro Installation and Configuration
 
 ## Description

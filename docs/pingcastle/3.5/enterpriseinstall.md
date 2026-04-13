@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # PingCastle Enterprise Installation and Configuration
 
 import Tabs from '@theme/Tabs';

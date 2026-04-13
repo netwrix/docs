@@ -1,3 +1,6 @@
+---
+sidebar_position: 7
+---
 # PingCastle Pro User Manual
 
 ## Description

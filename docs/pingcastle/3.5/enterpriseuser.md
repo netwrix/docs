@@ -1,3 +1,6 @@
+---
+sidebar_position: 3
+---
 # PingCastle Enterprise User Manual
 
 ## Description

@@ -1,3 +1,6 @@
+---
+sidebar_position: 6
+---
 # PingCastle Pro Upgrade Guide
 
 ## Before proceeding to the upgrade

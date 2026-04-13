@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # PingCastle Enterprise Upgrade Guide
 
 ## Before proceeding to the upgrade
