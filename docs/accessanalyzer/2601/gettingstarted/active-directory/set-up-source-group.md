@@ -46,8 +46,6 @@ Access Analyzer creates the source group and a scan for each domain controller y
 
 To check scan progress, navigate to **Configuration** > **Scan Executions**.
 
-To view results after the scan completes, see [Active Directory Dashboard](../../dashboards-reports/active-directory-dashboard/overview.md).
-
 ## Edit a Source Group
 
 To modify an existing Active Directory source group, navigate to **Configuration** > **Source Groups**, select the source group, and click **Edit**. The wizard reopens with your current configuration pre-populated. You can update the source group name, service account, domain controllers, and scan schedule.
