@@ -156,7 +156,7 @@ is a non-conforming change to their Customization.
 
 ## Related
 
-The **Related** tab is available once you save the policy. You can add and view Customizations, Change
+The **Related** tab is available after you save the policy. You can add and view Customizations, Change
 Logs, Change Requests and view status and history associated with the Policy. Links are available
 for easy navigation to each item.
 
