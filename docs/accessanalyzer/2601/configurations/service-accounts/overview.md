@@ -19,8 +19,8 @@ You can create a service account in two ways:
 | --- | --- |
 | Active Directory | Username and Password |
 | File Server | Username and Password |
-| Entra ID | Client ID and Secret |
-| SharePoint Online | Client ID and Certificate |
+| Entra ID | Client ID/Secret |
+| SharePoint Online | Client ID/Certificate |
 
 ## Editing Service Accounts
 

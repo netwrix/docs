@@ -1,12 +1,14 @@
 ---
-title: "Entra ID Service Account"
-description: "Client ID and secret service accounts for Entra ID source groups"
+title: "Client ID/Secret"
+description: "Client ID and secret credentials for Entra ID source groups"
 sidebar_position: 3
 ---
 
-# Entra ID Service Account
+# Client ID/Secret
 
-Entra ID source groups use the Client ID and Secret credential type to authenticate with Microsoft Entra ID via the Microsoft Graph API. This requires a registered application in your Entra ID tenant with the appropriate API permissions granted.
+The Client ID/Secret credential type authenticates with Microsoft Entra ID via the Microsoft Graph API. Use this credential type when configuring Entra ID source groups.
+
+This requires a registered application in your Entra ID tenant with the appropriate API permissions granted.
 
 ## Fields
 
