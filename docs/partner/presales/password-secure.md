@@ -1,6 +1,6 @@
 ---
 title: Netwrix Password Secure Presales Engineer
-sidebar_position: 1490
+sidebar_position: 1330
 tags: [certification, partners, presales, password-secure]
 keywords: [training, course, certification, partners, presales, password secure]
 description: "Become a certified Presales Engineer for Netwrix Password Secure"

@@ -20,10 +20,12 @@ Write for the person who knows their job but may be new to this specific product
 - `docs/<product>/<version>/` — Versioned product documentation (e.g., `docs/accessanalyzer/12.0/`)
 - `docs/<product>/` — Single-version (SaaS) products using `version: "current"`
 - `docs/kb/` — Knowledge base articles (canonical source; never manually copy into versioned folders)
-- `static/img/product_docs/<product>/` — Images (`.webp` format, absolute paths: `/img/product_docs/...`)
+- `static/images/<product>/` — Images (`.webp` format, organized by version/section, absolute paths: `/images/...`)
 - `sidebars/<product>/<version>.js` — Sidebar configs (auto-generated; rarely need manual editing)
 
 Edits to one version do not propagate to others. Update each version that needs the change explicitly.
+
+KB articles store images as PNG files in `0-images/` subdirectories alongside the article markdown. These are copied by the KB script — don't move or rename them.
 
 ## Writing Standards
 

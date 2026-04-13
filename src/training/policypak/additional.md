@@ -1,12 +1,12 @@
-import { NEPM } from '@site/src/training/products';
+import { NPP } from '@site/src/training/products';
 
-## Additional <NEPM /> Courses for Partners
+## Additional <NPP /> Courses for Partners
 
 The following courses are available for self-enrollment through the Learning Library:
 
 :::note
 
-This product was formerly named Netwrix PolicyPak.
+This product was formerly named Netwrix Endpoint Policy Manager.
 
 :::
 

@@ -58,7 +58,7 @@ The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set aut
 
 ### Static assets
 
-Images go in `static/img/product_docs/<product>/` as `.webp` files. Reference with absolute paths: `/img/product_docs/<product>/image.webp`.
+Images go in `static/images/<product>/` as `.webp` files, organized by version and section (e.g., `static/images/passwordreset/3.3/administration/`). Reference with absolute paths: `/images/<product>/<version>/<image>.webp`. Some products share images across product boundaries (e.g., passwordreset images under `passwordpolicyenforcer/`).
 
 ## Branch Workflow
 
