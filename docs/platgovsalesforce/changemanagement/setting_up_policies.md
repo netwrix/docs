@@ -34,7 +34,7 @@ You can create a New Policy, or edit an existing one:
 - **Change Enablement Defaults** merge approval list, non conforming alerts, and sequential approval requests.
 - **System Information**, **Created By** and **Last Modified By** dates. Informational only. You can't edit these fields.
 
-After you save the policy, the **System Information** section displays the **Created By** and **Last Modified By** user and timestamp. The **Details** tab shows the information you entered on the form. The Related tab is available to add Customizations and view additional
+After you save the policy, the **System Information** section displays the **Created By** and **Last Modified By** user and timestamp. The **Details** tab shows the information you entered on the form. The **Related** tab lets you add Customizations and view additional
 information and history.
 
 ### Information
@@ -55,7 +55,7 @@ Set the required Change Level for each Metadata Type. The form shows the default
 
 | **Change Level**                        | **Description**                                                                                                                                                                         |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Log Changes Only                    | Since the scanner automatically logs all changes, this change level requires no actions for compliance. Any changes to these objects are automatically marked compliant.                 |
+| Log Changes Only                    | Since the scanner automatically logs all changes, this change level requires no actions for compliance. The scanner automatically marks any changes to these objects as compliant.        |
 | Change Request                      | Any changes to these objects require an Approved Change Request.                                                                                                                        |
 | Sandbox Development & Testing       | Any changes to these objects require an Approved Change Request in the Stage Development Project. It also requires that a parent Change Request is attached to the Development Project. |
 | Full Software Development Lifecycle | Any changes to these objects require an Approved Change Request.                                                                                                                        |
@@ -166,8 +166,8 @@ The scanner creates Change Logs when you add or remove customizations.
 
 ### Add or Remove Customizations
 
-You can add or remove customizations from the **Related** tab on the policy. Custom Fields Inherit
-the CustomObject Policy when added.
+You can add or remove customizations from the **Related** tab on the policy. Custom Fields inherit
+the CustomObject Policy when you add them.
 
 - Platform Governance automatically adds new Custom Fields to the parent **CustomObject** Policy if it exists.
 - Platform Governance adds existing Custom Fields to the parent **CustomObject** Policy from the Custom Object customization record.
