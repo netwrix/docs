@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Install Platform Governance for Salesforce
 
-Platform Governance for Salesforce is installed with package installation file sent to you by the
-Netwrix customer success team. To install:
+The Netwrix customer success team sends you a package installation file. To install Platform Governance for Salesforce:
 
 1. Click the install URL. If installing in the sandbox, replace the initial portion of the URL
    with [http://test.salesforce.com](http://test.salesforce.com)
@@ -16,8 +15,7 @@ Netwrix customer success team. To install:
    ![install1](/images/platgovsalesforce/installing_strongpoint/install1.webp)
 
 :::note
-The installation runs in the background. An email notification is sent to you when the installation
-is complete.
+The installation runs in the background. You receive an email notification when the installation completes.
 :::
 
 ## Configure Authentication
@@ -26,7 +24,7 @@ After installing the package, you need to configure authentication credentials. 
 
 ### Recommended: Named Credential Authentication (OAuth)
 
-**This is the recommended approach** for all organizations, and is **required** when High Assurance is enabled on user profiles.
+**This is the recommended approach** for all organizations, and is **required** when user profiles have High Assurance enabled.
 
 Named Credentials provide:
 - **High Assurance compatibility** - Required when Salesforce profiles have High Assurance enabled
@@ -42,11 +40,11 @@ For detailed step-by-step instructions on configuring Named Credentials with Ext
 
 The traditional method uses direct user credentials (username, password, and security token) to authenticate API calls. **This method doesn't require a Connected App**, but has significant limitations:
 
-- **Doesn't work with High Assurance** - Fails when High Assurance is enabled on user profiles
+- **Doesn't work with High Assurance** - Fails when user profiles have High Assurance enabled
 - **User-dependent** - Relies on specific user credentials; if using this method, Netwrix recommends creating a dedicated Integration User for this purpose
 
 :::warning High Assurance Incompatibility
-If your Salesforce organization has **High Assurance enabled on user profiles**, you **must** use the Named Credential authentication method. Session ID authentication will not work with High Assurance. While High Assurance is often associated with MFA requirements, it is the High Assurance setting itself that makes Named Credentials mandatory.
+If your Salesforce organization has **High Assurance enabled on user profiles**, you **must** use the Named Credential authentication method. Session ID authentication will not work with High Assurance. While many organizations associate High Assurance with MFA requirements, the High Assurance setting itself makes Named Credentials mandatory.
 :::
 
 <details>
@@ -60,13 +58,13 @@ This method uses direct user credentials without requiring a Connected App setup
 - Salesforce **security token** (obtained from user settings)
 
 **Configuration:**
-The credentials are entered directly in the Platform Governance application during the Getting Started Wizard. No Connected App or OAuth configuration is needed.
+Enter the credentials directly in the Platform Governance application during the Getting Started Wizard. You don't need a Connected App or OAuth configuration.
 
 **Best Practice:**
 When using Session ID authentication, create a dedicated Integration User specifically for Platform Governance. This approach provides better control and reduces dependencies on individual user accounts.
 
 **Limitations:**
-- Can't be used if High Assurance is enabled on user profiles
+- Doesn't work when user profiles have High Assurance enabled
 - Depends on specific user credentials, creating maintenance overhead
 - Not suitable for organizations with High Assurance requirements
 
@@ -74,9 +72,9 @@ When using Session ID authentication, create a dedicated Integration User specif
 
 ## Assign Permission Set to Users
 
-After configuring authentication, you must assign the required Permission Set to users who will access Platform Governance for Salesforce, as well as to any users running scheduled jobs or background processes required by the application.
+After configuring authentication, you must assign the required Permission Set to users who will access Platform Governance for Salesforce, and to any users running scheduled jobs or background processes the application requires.
 
-This is required because the Permission Set grants access to the data and system processes used by Platform Governance, including metadata scanning and other automated operations.
+This is required because the Permission Set grants access to the data and system processes Platform Governance uses, including metadata scanning and other automated operations.
 
 ### Assign Netwrix Grant Permissions
 
@@ -92,12 +90,12 @@ This is required because the Permission Set grants access to the data and system
 7. Click **Done**
 
 :::note Required Permission Set
-The **Netwrix Grant Permissions** permission set is required for all users who will access the Netwrix Lightning application. Without this permission set, users will not be able to use Platform Governance for Salesforce.
+All users who access the Netwrix Lightning application need the **Netwrix Grant Permissions** permission set. Without this permission set, users cannot use Platform Governance for Salesforce.
 :::
 
 ### Verify Permission Assignment
 
-To verify that the permission set has been assigned correctly:
+To verify that you assigned the permission set correctly:
 
 1. Navigate to **Setup** > **Users** > **Users**
 2. Click a user who should have access
@@ -115,7 +113,7 @@ After configuring authentication (either Named Credentials or Session ID), acces
 
 ![eula](/images/platgovsalesforce/installing_strongpoint/eula.webp)
 
-You are now ready to begin using Platform Governance for Salesforce.
+You can now use Platform Governance for Salesforce.
 
 ## Next Steps
 
