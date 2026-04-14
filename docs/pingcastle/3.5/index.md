@@ -17,7 +17,7 @@ The source code of the program is licensed to the Non-Profit Open Software Licen
 
 **Binary License and Usage**
 
-The binary code may not be included as part of a commercial package unless a license is purchased. Visit the "our services" section on https://www.pingcastle.com for more information.
+The binary code may not be included as part of a commercial package unless a license is purchased. Visit the "our services" section on https://www.pingcastle.com for licensing options.
 
 **License Expiration**
 
@@ -74,7 +74,7 @@ The following table shows which rules benefit from privileged mode and the permi
 
 PingCastle has no specific server-side requirements.
 
-For optimal performance, we recommend having Active Directory Web Services (ADWS) installed on your domain controllers. ADWS is installed by default on Windows Server 2008 R2 and later. When available, ADWS can significantly reduce scan times—often by a factor of 10 or more.
+For optimal performance, install Active Directory Web Services (ADWS) on your domain controllers. ADWS is installed by default on Windows Server 2008 R2 and later. When available, ADWS can significantly reduce scan times—often by a factor of 10 or more.
 
 ### Client Side
 
@@ -85,7 +85,7 @@ Starting with PingCastle 3.5, the .NET runtime is bundled directly with the appl
 - No local administrator privileges required
 - No additional components or frameworks need to be installed
 
-**Previous Versions**: PingCastle versions prior to 3.5 required .NET Framework 4.7.2 to be installed separately.
+**Previous Versions**: PingCastle versions before 3.5 required .NET Framework 4.7.2 to be installed separately.
 
 ## How it works
 
@@ -261,7 +261,7 @@ PingCastle generates interactive HTML maps visualizing trust relationships betwe
 
 **File**: `xxx_full_node_map.html`
 
-The full domain map displays all trust relationships between discovered domains. This dynamic, interactive map allows you to:
+The full domain map displays all trust relationships between discovered domains. With this dynamic, interactive map, you can:
 - Drag and reposition nodes for better visualization
 - View domain names by hovering over nodes
 - See trust details in a popup by hovering over trust connections
@@ -292,7 +292,7 @@ The Hilbert map provides a visual representation of network IP address space usi
 
 ## Deployment Strategies
 
-PingCastle is designed for scalable deployment in enterprise environments. For comprehensive security coverage, run healthchecks on all domains in your infrastructure. Since PingCastle doesn't require domain-specific accounts, you can leverage trust relationships to scan multiple domains efficiently.
+PingCastle is designed for scalable deployment in enterprise environments. For comprehensive security coverage, run healthchecks on all domains in your infrastructure. Since PingCastle doesn't require domain-specific accounts, you can use trust relationships to scan multiple domains efficiently.
 
 ### Decentralized Deployment
 
@@ -405,7 +405,7 @@ PingCastle.exe --reload-report report.xml --encrypt
 PingCastle.exe --reload-report encrypted-report.xml
 ```
 
-**Note**: You can specify only one key for encryption, but multiple keys can be used for decryption. Key selection is automatic.
+**Note**: You can specify only one key for encryption, but you can use multiple keys for decryption. Key selection is automatic.
 
 ### Email Delivery
 
@@ -487,7 +487,7 @@ PingCastle includes built-in scanners to check for specific security configurati
 
 ### Scanner Options
 
-Additional options can be used to control scanner behavior:
+Use these additional options to control scanner behavior:
 
 - `--scmode-all` - Scan all computers (default)
 - `--scmode-single` - Check one single computer
@@ -609,7 +609,7 @@ PingCastle.exe --help
 
 ## Frequently Asked Questions (FAQ)
 
-### Why has PingCastle.exe increased in size so much?
+### PingCastle.exe Size Increase
 
 The file size has grown significantly across recent versions due to enhanced capabilities and runtime dependencies:
 
@@ -619,11 +619,11 @@ The file size has grown significantly across recent versions due to enhanced cap
 
 The version 3.5 size increase is due to the migration from .NET Framework 4.7.2 to ASP.NET 8 with native packaging. This change eliminates the need for custom packaging tools (Fody Costura) and allows PingCastle to run without requiring users to install ASP.NET 8 prerequisites on their systems, providing a better deployment experience.
 
-### Where has the pingcastle.exe.config file gone?
+### pingcastle.exe.config File Location
 
 The configuration file format changed in version 3.5 due to the ASP.NET 8 upgrade. The legacy `PingCastle.exe.config` XML file has been replaced with `appsettings.console.json` using JSON format.
 
-### How do I migrate my settings from pingcastle.exe.config?
+### Settings Migration from pingcastle.exe.config
 
 The `PingCastleAutoUpdater.exe` includes an automatic migration process:
 
@@ -639,7 +639,7 @@ During migration:
 
 **Important**: Visually review the migrated settings in `appsettings.console.json` to ensure they are correct. No configuration context is lost if the upgrade fails.
 
-### Why does PingCastle get detected by AntiVirus products?
+### PingCastle AntiVirus Detections
 
 PingCastle has been used as a reconnaissance tool in some high-profile attacks, leading some AntiVirus and EDR products to flag it as malicious.
 
@@ -647,7 +647,7 @@ PingCastle has been used as a reconnaissance tool in some high-profile attacks, 
 
 #### Changes Made to Reduce False Positives
 
-We are actively working to reduce false positive detections:
+Netwrix is actively working to reduce false positive detections:
 
 **Packaging Changes**:
 - Removed `changelog.txt` from .zip packages, which some AV engines misinterpret
@@ -669,12 +669,12 @@ We are actively working to reduce false positive detections:
 >
 > Some antivirus or endpoint protection solutions may flag PingCastle as "hacktool" or a "potentially unwanted program (PUP)". This isn't because PingCastle is malicious, but because it has dual-use potential: the same in-depth techniques it uses to audit and test security could also be misused by attackers. It doesn't itself attack AD, but could be used during reconnaissance to enumerate risks that attackers could exploit. Security vendors often classify such advanced administrative and diagnostic tools conservatively to avoid underestimating risk. 
 >
->  It is important to emphasize that: 
+> The following applies: 
 >
 > * PingCastle is safe to use when obtained from the official source.
 > * It doesn't exploit or attack Active Directory.
 > * No malicious payloads or hidden behavior are present in the software.
-> * The detections occur only because because its ability to enumerate security risks and misconfigurations could, provide information an attacker might misuse.
+> * The detections occur only because its ability to enumerate security risks and misconfigurations could provide information an attacker might misuse.
 >
 > In short, PingCastle should be viewed in the same category as other professional penetration-testing or red-team tools: safe and valuable in the hands of administrators and security professionals, but flagged by antivirus products due to its capabilities.
 :::

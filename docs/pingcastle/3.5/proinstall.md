@@ -28,8 +28,8 @@ The Operating systems supported are:
     (with extended security updates) or subsequent, where the asp.net
     8.0 is supported
 
-  - On demand, it is possible to include any operating systems,
-    including Linux, if it is supported by asp.net core 8.0
+  - On demand, you can include any operating systems,
+    including Linux, if supported by asp.net core 8.0
 
 See the [Windows Lifecycle Fact Sheet](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)
 for details regarding each Windows release lifecycle.
@@ -47,7 +47,7 @@ The current supported databases are:
 - Any supported editions of PostGres
 
 1.  Any database supported by \"Entity Framework Core 2\" (SQLite,
- MySQL, \...) may be supported on demand. contact us for more
+ MySQL, \...) may be supported on demand. Contact Netwrix for more
     information.
 
 ## External System Dependencies
@@ -59,7 +59,7 @@ PingCastle Enterprise is using the \"asp.net core 8.0 framework\" still
 relying on \"dotnet standard 2.0\".
 
 1.  It is recommended to not expose web application but to use reverse
-    proxy like IIS, Apache2 or Nginx.
+    proxy like IIS, Apache2, or Nginx.
 
 ## Third party authentication system
 
@@ -125,9 +125,11 @@ will open a dialog "Register and app".
 
 ![](/images/pingcastle/proinstall/image6.webp)
 
-Add a name but also the redirect Uri. Please note that the redirect URI
-must point to the FQDN of the server that will be accessed. It MUST
-starts with HTTPS and MUST ends with /signin-oidc
+Add a name but also the redirect Uri.
+
+:::note
+The redirect URI must point to the FQDN of the server that will be accessed. It MUST starts with HTTPS and MUST ends with /signin-oidc.
+:::
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image7.webp)
 
@@ -148,8 +150,11 @@ connecting to the application.
 
 # SQL Express installation
 
-This chapter describe the installation of SQL Express. Please note that
-any edition of SQL Server is working.
+This chapter describe the installation of SQL Express.
+
+:::note
+Any edition of SQL Server is compatible.
+:::
 
 Download SQL Express 2019 here:
 
@@ -209,7 +214,7 @@ The MSI file guides the installation of the software:
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image16.webp)
 
-Once the license terms are accepted, the software requires a license key
+After the license terms are accepted, the software requires a license key
 which should have been distributed alongside the MSI files.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image17.webp)
@@ -268,7 +273,7 @@ The setup configures automatically the website, the database, the
 application and if the database is being created, grant the permission
 to the database to IIS (application pool)
 
-4.  When the software is removed, the setup DOES NOT remove the
+4.  When the software is removed, the setup doesn't remove the
     database.
 
 # Post installation
@@ -344,8 +349,9 @@ are referenced bellow:
 5.  Upload quota may be changed to allow large file upload in the
     Interoperability mode
 
-For IIS, please note that by default a \"Default Web Site\" is installed
-and may conflict with the PingCastle Pro application.
+:::note
+For IIS, a \"Default Web Site\" is installed by default and may conflict with the PingCastle Pro application.
+:::
 
 The solution is to stop the default website and configure it to not
 start automatically.
@@ -369,8 +375,11 @@ is provided to apply database change before a software update is
 applied.
 
 When run on IIS, PingCastle run in an application pool which needs to be
-granted privileges on the database. Note that the application pool is
-using a special Windows account which needs to be created manually.
+granted privileges on the database.
+
+:::note
+The application pool uses a special Windows account that needs to be created manually.
+:::
 
 The following SQL can grant these permissions:
 
@@ -572,7 +581,7 @@ application has to be created and a database.
 Then the configuration of the application needs to be replicated into
 the Azure Configuration page.
 
-The minimal required fields to be configured are: database, license and
+The minimal required fields to be configured are: database, license, and
 the connection string, named as "DefaultConnection".
 
 ![](/images/pingcastle/proinstall/image50.webp)
@@ -665,7 +674,7 @@ the access to the task scheduler can't be delegated.
 
 :::note
 PingCastle is using behing the hood a folder named "PingCastle" in
-the task scheduler. We will use the COM api as it exposes the security
+the task scheduler. The COM api is used as it exposes the security
 descriptor -- which isn't the case of the native PowerShell APIL
 :::
 
@@ -716,10 +725,9 @@ It is recommended to run the latest official version of PingCastle. The
 PingCastle.exe program delivered in the same directory than the
 PingCastleEnterprise is suitable for use.
 
-Please note that PingCastle Enterprise support to run the PingCastle
-audit program at a higher or lower version. If new features have been
-added, they will not be visible unless the PingCastle Enterprise program
-is updated, but no data will be lost in the mean time.
+:::note
+PingCastle Enterprise supports running the PingCastle audit program at a higher or lower version. If new features have been added, they will not be visible unless the PingCastle Enterprise program is updated, but no data will be lost in the mean time.
+:::
 
 ## Schedule
 
@@ -752,7 +760,7 @@ installing the TLS1.2 client package on the server running the audit.
 
 # Troubleshooting
 
-We recommend starting the application manually to view any problem such
+Netwrix recommends starting the application manually to view any problem such
 as:
 
 - TCP port already used
@@ -777,9 +785,7 @@ dotnet.exe PingCastlePro.dll --server.urls=http://*:8080
 However, if there is a permission problem in the database, this method
 won\'t display an error because the database will be connected under the
 user context and not the system context. Typically on Windows, the IIS
-service connect under IIS APPPool\\AppName. We recommend to look at the
-following page to grant right to the application pool account on Sql
-Server:
+service connect under IIS APPPool\\AppName. Refer to the following page to grant rights to the application pool account on SQL Server:
 
 **https://blogs.msdn.microsoft.com/ericparvin/2015/04/14/how-to-add-the-applicationpoolidentity-to-a-sql-server-login**
 
@@ -896,8 +902,6 @@ add `;User ID=sa;Password=pass123`
 ![](/images/pingcastle/proinstall/image72.webp)
 
 ## Enable Debug Logging
-
-Follow the steps to enable debug logging.
 
 1.  Log in to the PingCastle Pro Server.
 

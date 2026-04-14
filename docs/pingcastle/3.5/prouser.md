@@ -85,7 +85,7 @@ and its data.
 
 This view displays detailed information on the domain, as well as many
 other information such the results of the last report, some history,
-timeline and cartography. This can be modified by selecting a tab.
+timeline, and cartography. This can be modified by selecting a tab.
 
 Last report tab:
 
@@ -185,11 +185,11 @@ There are two way for doing so:
 - Option 1: Importing the file manually
 
 From the \"Configuration\" tab, open \"Import one or more reports.
-Once you are on the page, you can simply drag and drop any file produced
-by the PingCastle standalone executable and it will upload in the
+After you are on the page, you can drag and drop any file produced
+by the PingCastle standalone executable and it will upload to the
 PingCastle Pro solution.
 
-Once it is down, the file will be marked with either a success or a
+After it is done, the file will be marked with either a success or a
 failure.
 
 In case of a failure, a mouse over can display the associated error
@@ -219,7 +219,7 @@ can be an entity or a domain, such as the \"default\" entity.
 The API key is generated automatically but can be changed if the
 complexity requirements are met
 
-Once this is set up correctly, it is possible to directly upload reports
+After this is set up correctly, you can directly upload reports
 automatically using the command:
 
 ```bash

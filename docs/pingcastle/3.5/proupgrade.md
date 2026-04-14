@@ -16,9 +16,9 @@ each page.
 
 ## Database backup
 
-We highly recommend to backup the data before proceeding to an upgrade.
+Netwrix highly recommends backing up the data before proceeding with an upgrade.
 
-The data is stored I the database. No data is stored outside of the DB.
+The data is stored in the database. No data is stored outside of the DB.
 
 # Software requirements
 

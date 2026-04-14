@@ -298,8 +298,7 @@ Detailed view of the breakdown for a major area:
     more fully the current level of protection of the company Active
     Directory.
 
-It can be used to have an idea of the work performed as well as the work
-remaining to be done regarding the AD securing.
+Use this page to understand the work performed and the remaining work for AD security.
 
 Then a button \"Click here to get more details\" is available to switch
 to a more detailed dashboard.
@@ -314,8 +313,7 @@ This section covers the following pages:
     more fully the current level of protection of the company Active
     Directory.
 
-It can be used to have an idea of the work performed as well as the work
-remaining to be done regarding the AD securing.
+Use this page to understand the work performed and the remaining work for AD security.
 
 **Detailed view per area**
 
@@ -388,7 +386,7 @@ as a horizontal line (it impacts a domain).
 ![](/images/pingcastle/enterpriseuser/image26.webp)
 
 PingCastle recommends working on a unit consisting of 10 to 15 domains.
-Once the selection is done, PingCastle recommends ordering the items by
+After the selection is done, PingCastle recommends ordering the items by
 Maturity levels and to remove the bank items.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseuser/image27.webp)
@@ -403,10 +401,11 @@ the user to the detail of the report.
 
 ![](/images/pingcastle/enterpriseuser/image29.webp)
 
-Please note that the "View Action Plans" option changes the color of the
-items and enable the user to see quickly what the status of the action
-plan are. Typically, the first step of a remediation will be to request
-domain owners to set up an action plan without enforcing it.
+:::note
+The "View Action Plans" option changes the color of the items and enables the user to see quickly what the status of the action plans are.
+:::
+
+Typically, the first step of a remediation will be to request domain owners to set up an action plan without enforcing it.
 
 To see the top rules that need to be fixed to improve the maturity or
 the score, a selection of the 2 tab "Maturity" or "Priority" enables the
@@ -496,8 +495,8 @@ monitored.
 The objective of this page is to display the list of all the domains in
 the perimeter. This list can be filtered based on parameter to switch
 between the management view and the technical view. This filter can be
-customized by clicking on \"Advanced Filter\". The \"Search\" function
-can be used to dynamically filter domains based on name, SID or Entity.
+customized by clicking on \"Advanced Filter\". Use the \"Search\" function
+to dynamically filter domains by name, SID, or Entity.
 
 Furthermore, by default, Domains with status Removed or Out of scope are
 filtered by default.
@@ -511,7 +510,7 @@ full name open the management view for the entity.
 
 This view displays detailed information on the domain, as well as many
 other information such the results of the last report, some history,
-timeline and cartography. This can be modified by selecting a tab.
+timeline, and cartography. This can be modified by selecting a tab.
 
 ![](/images/pingcastle/enterpriseuser/image34.webp)
 
@@ -592,7 +591,7 @@ It brings the user on a page with information that needs to be filled :
 
 A domain can't be hard-deleted (unless it has been added manually by
 mistake, meaning that it is in no way connected to any other existing
-domain or report). Though, it is possible to soft delete a domain by
+domain or report). Though, you can soft-delete a domain by
 changing its status.
 
 **Status of a domain**
@@ -632,14 +631,13 @@ a child domain is discovered, the root domain is set as a root of a
 forest and is displayed in the Domains -\> Forests. A list of forest
 discovered is displayed and a special view is available.
 
-7.  This area allows you to have a clearer idea of how the domains are
-    interconnected with each other.
+7.  Use this area to understand how the domains are interconnected with each other.
 
 ## Cartography
 
 **Navigation**
 
-Each cartography can be used to navigate between domain. A mouse over on
+Use each cartography to navigate between domains. A mouse over on
 a domain displays a tooltip containing many information regarding the
 domain like its score or its entity. A double click opens the domain if
 the user is authorized to access to it.
@@ -742,17 +740,15 @@ personalize settings so that the tool fits more the Company needs.
 
 ## Entities
 
-In the \"Entities\" page, it is possible to create and configurate the
+In the \"Entities\" page, you can create and configurate the
 entities within the company.
 
 ![](/images/pingcastle/enterpriseuser/image46.webp)
 
-It is through entities that it is possible to best represent the company
-organization, so that the AD configuration matches the company
+Use entities to best represent the company organization, so that the AD configuration matches the company
 configuration.
 
-8.  It is also through entities that it is possible to identify
-    administrator for specific perimeter, meaning that these
+8.  You can also use entities to identify administrators for specific perimeters, meaning that these
     administrators will be operating on defined domains.
 
 **Add new entity**
@@ -841,13 +837,16 @@ the migration is happening.
 **Bulk actions**
 
 If many exceptions needs to be created or removed, there is an option
-available to create or remove exceptions in bulk. Please note that if an
-exception already exists, it will not be created again.
+available to create or remove exceptions in bulk.
+
+:::note
+If an exception already exists, it will not be created again.
+:::
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseuser/image55.webp)
 
 :::note
-Since PingCastle 2.11, all exceptions, migration or action plans
+Since PingCastle 2.11, all exceptions, migration, or action plans
 are tracked with their creation or last modification date and the user
 which performed this change.
 :::
@@ -870,11 +869,11 @@ There are two way for doing so:
 **Option 1: Importing the file manually**
 
 From the \"Configuration\" tab, open \"Import one or more reports.
-Once you are on the page, you can simply drag and drop any file produced
-by the PingCastle standalone executable and it will upload in the
+After you are on the page, you can drag and drop any file produced
+by the PingCastle standalone executable and it will upload to the
 PingCastle Enterprise solution.
 
-Once it is down, the file will be marked with either a success or a
+After it is done, the file will be marked with either a success or a
 failure.
 
 In case of a failure, a mouse over can display the associated error
@@ -904,7 +903,7 @@ can be an entity or a domain, such as the \"default\" entity.
 The API key is generated automatically but can be changed if the
 complexity requirements are met.
 
-Once this is set up correctly, it is possible to directly upload reports
+After this is set up correctly, you can directly upload reports
 automatically using the command:
 
 ```bash
@@ -951,8 +950,7 @@ stop the scheduled task on demand.
 
 ## Reports
 
-It is possible to view all the reports that have been imported within
-PingCastle Enterprise, regardless of the method used to import them.
+You can view all the reports imported into PingCastle Enterprise, regardless of the method used to import them.
 
 To do so, from the \"Configuration\" tab, you can click the \"View
 all reports\" to reach the page:
