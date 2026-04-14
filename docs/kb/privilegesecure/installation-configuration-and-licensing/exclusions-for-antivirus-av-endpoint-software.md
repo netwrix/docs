@@ -42,8 +42,8 @@ The following exclusions should be configured on each NPS server:
 \Program Files\Stealthbits\PAM\ActionServiceWorker
 \Program Files\Stealthbits\PAM\HostScanService
 \Program Files\Stealthbits\PAM\DatabaseTools\Data
-\Program Files\Stealthbits\Postgres16\bin
-\ProgramData\Stealthbits\Postgres16
+\Program Files\Stealthbits\PostgreSQL16\bin
+\ProgramData\Stealthbits\PostgreSQL16
 ```
 
 The following exclusion should be configured on each server with a remote Proxy Service:
