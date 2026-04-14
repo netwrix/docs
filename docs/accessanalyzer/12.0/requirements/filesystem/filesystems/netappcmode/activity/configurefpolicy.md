@@ -116,7 +116,7 @@ dedicated volume for each SVM as a staging buffer before events are sent to the 
 
 Persistent Store requires the following parameters:
 
-- Volume name – If the volume doesn't exist, it will be created automatically (recommended).
+- Volume name – If the volume doesn't exist, FPolicy creates it automatically (recommended).
 - Initial volume size – Specifies the starting size of the volume.
 - Autosize mode – Options include Off, Grow, or Grow/Shrink.
 
@@ -264,7 +264,7 @@ IMPORTANT:
 - The following values are required:
 
     - `engine-name StealthAUDITEngine`, the names of the external engine object can be customized
-      (see below).
+      (see [Customization of FPolicy Object Names](#customization-of-fpolicy-object-names)).
     - `port 9999`, Port number can be customized, but it is recommended to use 9999.
     - `extern-engine-type asynchronous`
     - `ssl-option no-auth`
@@ -501,16 +501,14 @@ article for the complete syntax and options.
 
 ### Part 4: Create Persistent Store
 
-The Persistent Store provides a temporary on-disk storage for activity events before they are sent
-to Activity Monitor Agent. The Persistent Store is optional but recommended for ONTAP 9.15.1 and
+The Persistent Store provides temporary on-disk storage for activity events before Activity Monitor Agent receives them. The Persistent Store is optional but recommended for ONTAP 9.15.1 and
 later versions.
 
 IMPORTANT:
 
 - Persistent Store is supported for ONTAP 9.15.1 and later versions.
 - The SVM used must be the one hosting the CIFS or NFS shares to be monitored.
-- There is no need to use an existing volume. A new volume will be created automatically and managed
-  by the FPolicy subsystem.
+- You don't need to use an existing volume. FPolicy creates and manages a new volume automatically.
 - The volume size depends on the duration for which the events persist and the event rate. For
   example, if you want 30 minutes of events to persist in an SVM with a capacity of 5000
   events/second and the average event record size of 0.6 KB, the required volume size is
@@ -529,7 +527,7 @@ IMPORTANT:
 
     - `volume` – The name of the volume used for event storage.
 
-        - If the volume doesn't exist, it will be automatically created on an assigned local tier.
+        - If the volume doesn't exist, FPolicy creates it automatically on an assigned local tier.
           This is recommended.
 
     - `size` – The initial size of the volume. The format is `<integer>[KB|MB|GB]`.

@@ -138,7 +138,7 @@ The discovery process collects the following information:
 2. **Fully Qualified Domain Name (FQDN)**: Complete domain name if available
 3. **IP Addresses**: Both IPv4 and IPv6 addresses from active network interfaces
 4. **MAC Addresses**: Physical addresses of network adapters
-5. **Operating System**: Type, version, and edition (server vs. desktop) - detected using methods described above
+5. **Operating System**: Type, version, and edition (server vs. desktop) - detected using the methods described in [Operating System Detection Methods](#operating-system-detection-methods)
 6. **Platform Information**: Architecture and system details
 7. **CPE Name**: Common Platform Enumeration identifier (for Linux systems)
 8. **Agent Version**: Version of the installed agent software
@@ -166,8 +166,8 @@ When a device is first discovered or re-registered, it follows this sequence:
    - If no custom script exists, default OS-based group assignment is used
 
 4. **Final Placement**: The system moves the device from "Awaiting Registration" to its target groups
-   - If appropriate groups are found, the system removes the device from "New Devices" and adds it to target groups
-   - If no appropriate groups are found or registration fails, the device **remains in "New Devices"** for manual review
+   - If the system finds appropriate groups, it removes the device from "New Devices" and adds it to target groups
+   - If the system finds no appropriate groups, or if registration fails, the device **remains in "New Devices"** for manual review
    - The system always adds the device to the "All Devices" group regardless of other group assignments
 
 ### Default Group Assignment
@@ -209,7 +209,7 @@ Organizations can customize the registration process by providing a custom regis
 - Assign devices to multiple groups based on complex criteria
 - Override default OS-based group assignments
 
-When a custom script identifies multiple groups for a device, all identified groups will be assigned (subject to the `AllRegistrationGroupsExist` configuration setting).
+When a custom script identifies multiple groups for a device, the system assigns all identified groups (subject to the `AllRegistrationGroupsExist` configuration setting).
 
 ### Group Assignment Sequence
 
@@ -217,27 +217,27 @@ The system follows this sequence when assigning groups:
 
 1. **Initial State**: Device is already in both "New Devices" and "Awaiting Registration" groups (placed there during initial discovery)
 
-2. **Remove from Awaiting Registration**: Device is removed from the "Awaiting Registration" group
+2. **Remove from Awaiting Registration**: The system removes the device from the "Awaiting Registration" group
 
 3. **Evaluate Custom Script**: If a custom registration script exists, the system executes it with the device characteristics
 
-4. **Determine Target Groups**: Groups are identified based on:
+4. **Determine Target Groups**: The system identifies groups based on:
    - Custom script results (if script exists)
    - Default OS-based mapping from the registration report (if no script)
 
 5. **Validate Groups**: If `AllRegistrationGroupsExist` is enabled, all identified groups must exist
-   - If any group doesn't exist, the entire registration is aborted
+   - If any group doesn't exist, the system aborts the entire registration
    - Device remains in "New Devices" for manual intervention
 
 6. **Remove from Previous OS Groups**: If `EnableAutoReregisterAgentAfterOsChange` is enabled, the system removes the device from previous OS-specific groups (during re-registration scenarios)
 
 7. **Add to Target Groups**: The system adds the device to all identified groups (if validation passed)
 
-8. **Add to All Devices**: Device is always added to the "All Devices" group
+8. **Add to All Devices**: The system always adds the device to the "All Devices" group
 
 9. **Handle New Devices Group**:
-   - If custom or OS-specific groups were successfully assigned, device is removed from "New Devices"
-   - If no groups were found or registration failed, device **remains in "New Devices"** as a safety net
+   - If the system successfully assigns custom or OS-specific groups, it removes the device from "New Devices"
+   - If the system finds no groups or registration fails, the device **remains in "New Devices"** as a safety net
    - This ensures administrators can always find devices that need manual group assignment
 
 ### Registration Failure Handling
@@ -480,4 +480,4 @@ For comprehensive troubleshooting, you may also want to enable DEBUG logging for
 
 ## Summary
 
-The device discovery and registration process provides a flexible framework for automatically organizing devices based on their characteristics. By understanding the discovery methods, supported operating systems, registration flow, and configuration options, you can effectively manage device onboarding and ensure devices are placed in appropriate groups for policy application and reporting.
+The device discovery and registration process provides a flexible framework for automatically organizing devices based on their characteristics. By understanding the discovery methods, supported operating systems, registration flow, and configuration options, you can effectively manage device onboarding and ensure the system places devices in appropriate groups for policy application and reporting.

@@ -51,8 +51,8 @@ the **Integration Connectors** submenu.
 
 ![BYOV Connector for Privilege Secure](/images/privilegesecure/4.2/accessmanagement/admin/configuration/add/byovconnectornps.webp)
 
-**Step 4 –** Copy and paste the following script into the "Checkout Script Block" field. (The
-"Checkin Script Block" field may be left blank.)
+**Step 4 –** Copy and paste the following script into the "Checkout Script Block" field. (You can leave the
+"Checkin Script Block" field blank.)
 
 
 Checkout Script Block

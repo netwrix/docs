@@ -49,7 +49,7 @@ removing the service account from the Domain Admins group and granting only the 
 permissions.
 
 You can grant Active Directory permissions from the command-line with dsacls.exe, or with the
-graphical user interface. The examples below use the command-line, but you can use either method.
+graphical user interface. The following examples use the command-line, but you can use either method.
 The commands you need to execute are:
 
 `dsacls "[object]" /I:S /G "[account]:CA;Reset Password;user"`

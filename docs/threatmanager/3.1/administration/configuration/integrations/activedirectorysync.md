@@ -82,8 +82,8 @@ Add New Integration window opens.
 
 **Step 5 –** Click **Test Connection** to ensure connection to the domain. This will take a moment.
 Then a message will appear in the upper right corner of the console indicating a successful or
-failed connection.If successful, move on to the next step. If failed, recheck your entries for error
-and repeat this step until a successful connection is established.
+failed connection.If successful, proceed to the next step. If failed, recheck your entries for errors
+and repeat this step until you establish a successful connection.
 
 **Step 6 –** Click Add. The Add New Integration window closes.
 
