@@ -157,7 +157,7 @@ The installer checks the following before installation begins. Results are writt
 | Check | Fail | Warn |
 |---|---|---|
 | **RAM** | Less than 8 GB total | Less than 16 GB total |
-| **CPU** | Fewer than 2 cores | — |
+| **CPU** | Fewer than 6 cores | — |
 | **Disk** | Less than 20 GB free on `/var` | — |
 | **Cgroups** | Not available at `/sys/fs/cgroup` | — |
 | **Overlay kernel module** | — | Not loaded |
@@ -190,6 +190,7 @@ The exit code indicates which phase failed:
 | `70` | App startup | Applications didn't become healthy within 30 minutes. Run `kubectl get pods -n access-analyzer` to check pod status, then contact Netwrix Support |
 | `71` | App startup | A pod entered a permanent failure state. Run `kubectl get pods -A` to identify it, then contact Netwrix Support |
 | `80` | Preflight | Resolve the reported system requirement and retry |
+| `90` | IdP configuration | IdP setup failed after the cluster was deployed. Check the log for the specific error, then use `--configure-idp-only` to retry |
 
 ## Environment Variables
 
@@ -203,8 +204,31 @@ If you prefer not to pass options on the command line — for example, in an aut
 | `LOG_LEVEL` | `--log-level` |
 | `POSTGRES_DATA_DIR` | `--postgres-data-dir` |
 | `CLICKHOUSE_DATA_DIR` | `--clickhouse-data-dir` |
+| `IDP_TYPE` | `--idp-type` |
+| `IDP_ALIAS` | `--idp-alias` |
 
 When the same option is set as both an environment variable and a command-line flag, the flag takes precedence.
+
+## Identity Provider Flags
+
+For per-IdP examples, secret collection behavior, and recovery instructions, see [Configure Identity Provider](identity-provider.md). The table below lists all available flags.
+
+| Flag | Default | Description |
+| --- | --- | --- |
+| `--idp-type <type>` | — | Federation type: `entra-oidc`, `entra-saml`, `oidc`, `saml`, `ad`, `ldap` |
+| `--idp-alias <label>` | — | Login button label |
+| `--entra-tenant-id <id>` | — | Azure AD tenant GUID (Entra ID types) |
+| `--oidc-client-id <id>` | — | OIDC application client ID |
+| `--oidc-discovery-url <url>` | — | OIDC discovery endpoint URL (generic OIDC only) |
+| `--saml-sso-url <url>` | — | SAML SSO endpoint URL |
+| `--saml-entity-id <id>` | — | SAML entity ID / audience |
+| `--saml-signing-cert <path>` | — | Path to signing certificate PEM file |
+| `--saml-email-attribute <attr>` | `email` | SAML attribute carrying the user email |
+| `--ldap-url <url>` | — | LDAP server URL |
+| `--ldap-bind-dn <dn>` | — | Service account distinguished name |
+| `--ldap-users-dn <dn>` | — | Base DN for user search |
+| `--ldap-email-attribute <attr>` | `mail` | LDAP attribute carrying the user email |
+| `--configure-idp-only` | — | Retry IdP configuration without reinstalling the cluster |
 
 ## Configuration File
 
