@@ -58,8 +58,7 @@ PingCastle Basic and PingCastle Professional require \"dotnet framework
 PingCastle Enterprise is using the \"asp.net core 8.0 framework\" still
 relying on \"dotnet standard 2.0\".
 
-1.  It is recommended to not expose web application but to use reverse
-    proxy like IIS, Apache2, or Nginx.
+1.  Netwrix recommends not exposing the web application directly. Use a reverse proxy such as IIS, Apache2, or Nginx.
 
 ## Third party authentication system
 
@@ -278,8 +277,7 @@ to the database to IIS (application pool)
 
 # Post installation
 
-to have the Azure authentication working, HTTPS must be
-enabled.
+To use Azure authentication, enable HTTPS.
 
 Check that the PingCastlePro website is installed.
 
@@ -721,7 +719,7 @@ PingCastle Enterprise.
 
 ## Program
 
-It is recommended to run the latest official version of PingCastle. The
+Run the latest official version of PingCastle. The
 PingCastle.exe program delivered in the same directory than the
 PingCastleEnterprise is suitable for use.
 

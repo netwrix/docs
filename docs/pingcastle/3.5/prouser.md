@@ -158,9 +158,7 @@ perimeter.
 within a specific domain. It means that this rule will not be applied
 for a certain period, that you have to specify. This should be use only
 when for very specific reasons, such as when a rule doesn't apply in
-your organization. Don't hesitate to contact the PingCastle editors if
-you have doubts or require extra assistance regarding how the exceptions
-are managed.
+your organization. Contact the PingCastle editors if you have doubts or require extra assistance about exception management.
 
 **Migration**
 
@@ -171,9 +169,7 @@ the migration is happening.
 
 ## Importing data
 
-PingCastle Pro is tool that will allow the administrators to easily and
-efficiently consult all the data from reports, as well as take decisions
-and such.
+PingCastle Pro allows administrators to consult all report data and make decisions.
 
 1.  Therefore, it isn't yet possible to launch scans and so directly
     from the application, so it is required to launch the PingCastle

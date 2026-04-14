@@ -95,7 +95,7 @@ PingCastle can also read its own machine-readable report files to build consolid
 
 ### Getting Started
 
-PingCastle is provided as a zip file. Simply extract the zip file and run `PingCastle.exe`—no installation required.
+PingCastle is provided as a zip file. Extract the zip file and run `PingCastle.exe`—no installation required.
 
 ## Running PingCastle
 

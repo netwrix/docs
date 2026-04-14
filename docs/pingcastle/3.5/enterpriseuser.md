@@ -114,7 +114,7 @@ Saml2, ...)
 ![Une image contenant texte, capture d'écran, Police, nombre Description générée automatiquement](/images/pingcastle/enterpriseuser/image8.webp)
 
 Claims permission is the way to assign dynamically permissions based on
-Windows group. Be advised that the claims are case sensitive. You can
+Windows group. Claims are case sensitive. You can
 also open the "View my user's claims page in "Manage your account" to
 see what claims have been pushed to Ping Castle.
 
@@ -379,9 +379,7 @@ This dashboard is used to set up a taskforce and a remediation project.
 The first view is a matrix where there are all the rules in columns and
 all the domain in lines.
 
-It should be noticed that global problems will be reflected as a
-vertical line (it impacts a rule) and local problems will be reflected
-as a horizontal line (it impacts a domain).
+Global problems appear as a vertical line (affecting a rule), and local problems appear as a horizontal line (affecting a domain).
 
 ![](/images/pingcastle/enterpriseuser/image26.webp)
 
@@ -526,8 +524,7 @@ users.
 
 ![](/images/pingcastle/enterpriseuser/image36.webp)
 
-This limitation has been introduced to not have large html page and
-block the navigation.
+This limit prevents large HTML pages from blocking navigation.
 
 The recommended solution to overcome this limit is to use the local
 PingCastle client and to export the list of accounts needed for detailed
@@ -596,8 +593,7 @@ changing its status.
 
 **Status of a domain**
 
-The status of the domain is managed using a basic lifecycle, as shown in
-the graph below.
+The domain status follows a basic lifecycle, as shown in the following graph.
 
 The default status is \"Auto Created\", and every change must be done
 manually when required.
@@ -818,8 +814,7 @@ for a certain period, that you have to specify.
 1.  This should be use only when for very specific reasons, such as when
     a rule doesn't apply in your organization.
 
-Don't hesitate to contact the PingCastle editors if you have doubts or
-require extra assistance regarding how the exceptions are managed.
+Contact the PingCastle editors if you have doubts or require extra assistance about exception management.
 
 As a precision: if no start date and no end date is defined, the
 exception is applied for all reports. If a start date is defined but no
@@ -855,9 +850,7 @@ which performed this change.
 
 ## Importing data
 
-PingCastle Enterprise is tool that will allow the administrators to
-easily and efficiently consult all the data from reports, as well as
-take decisions and such.
+PingCastle Enterprise allows administrators to consult all report data and make decisions.
 
 9.  Therefore, it isn't yet possible to launch scans and so directly
     from the application, so it is required to launch the PingCastle

@@ -23,7 +23,7 @@ The data is stored in the database. No data is stored outside of the DB.
 # Software requirements
 
 Before performing the upgrade, the software requirements for the new
-version need to be met. The table below lays out the different
+version need to be met. The following table lays out the different
 requirements for versions.
 
 | Version    | Requirement                              |
