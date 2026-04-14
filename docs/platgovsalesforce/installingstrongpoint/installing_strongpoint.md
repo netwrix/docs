@@ -74,7 +74,9 @@ When using Session ID authentication, create a dedicated Integration User specif
 
 ## Assign Permission Set to Users
 
-After configuring authentication, you must assign the required Permission Set to users who will access Platform Governance for Salesforce.
+After configuring authentication, you must assign the required Permission Set to users who will access Platform Governance for Salesforce, as well as to any users running scheduled jobs or background processes required by the application.
+
+This is required because the Permission Set grants access to the data and system processes used by Platform Governance, including metadata scanning and other automated operations.
 
 ### Assign Netwrix Grant Permissions
 
