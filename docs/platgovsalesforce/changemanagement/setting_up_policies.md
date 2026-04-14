@@ -125,7 +125,7 @@ rule.
 
 ![Uncategorized Changes](/images/platgovsalesforce/change_management/policy_new12.webp)
 
-This change control level applies to any objects not included in the other categories
+This change control level applies to any components not included in the other categories.
 
 ### Management Policies
 
