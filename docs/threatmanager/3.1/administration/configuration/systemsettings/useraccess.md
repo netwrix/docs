@@ -64,7 +64,7 @@ The table displays the following information:
       The edit icon changes to a save icon while in edit mode. See the Edit Console Access topic for
       additional information.
     - Trash icon – Opens a Warning window to confirm the action of deleting the user or group.
-      Removing a user or group removes console access for it.. Note that the builtin "ADMIN" account
+      Removing a user or group removes console access for it. The builtin "ADMIN" account
       can't have its access removed until an account besides the builtin "ADMIN" is granted
       administrative access to the console.
     - Reset MFA button – Forces the user or every user in the group to reconfigure MFA on the next
@@ -147,8 +147,6 @@ for additional information.
 :::
 
 
-Follow the steps to add console access for a user or group.
-
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **System Settings** to open the System Settings interface.
 
@@ -176,8 +174,6 @@ The user or group is added to the table with the assigned role.
 
 ### Edit Console Access
 
-Follow the steps to change the role assigned to a user or group.
-
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **System Settings** to open the System Settings interface.
 
@@ -194,8 +190,6 @@ Type for this user or group.
 The modification applies to the selected user or group.
 
 ### Edit Built-in Admin Password
-
-Follow the steps to change the password for the built-in ADMIN account.
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **System Settings** to open the System Settings interface.

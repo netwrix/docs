@@ -40,15 +40,13 @@ Directory Sync in the navigation pane.
 ## Add an Active Directory Sync Policy
 
 :::note
-Prior to adding an Active Directory Sync policy, you must first configure a Credential
+Before adding an Active Directory Sync policy, you must first configure a Credential
 Profile with credentials properly provisioned for running the sync operation for the domain. See the
 [Application Server Requirements](/docs/threatmanager/3.1/requirements/server.md) topic for the permissions. See
 the [Credential Profile Page](/docs/threatmanager/3.1/administration/configuration/integrations/credentialprofile.md) topic for additional information on creating a
 profile.
 :::
 
-
-Follow the steps to add a domain/Active Directory sync policy.
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -93,8 +91,6 @@ The domain or domain controller (the Domain value supplied in Step 4) is listed 
 navigation pane. Repeat the process to add additional domains.
 
 ## Active Directory Sync Policy Details
-
-Follow the steps to view the details of an Active Directory sync policy.
 
 **Step 7 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -161,7 +157,7 @@ The Domain Configuration tab displays the following settings:
 - Perform a full scan on next run – Indicates whether the next sync will only look for domain
   changes or run a full scan of the domain. By default, this option is enabled for the first sync
   executed when a new domain is added; however, the system disables it automatically after the first sync.
-  This can be used to fully refresh domain information, but is typically not needed for normal
+  Use this option to fully refresh domain information; it is typically not needed for normal
   operation.
 - Test Connection – Click **Test Connection** to ensure connection to the domain. This will take a
   moment. Then a message will appear in the upper right corner of the console indicating a
@@ -194,9 +190,6 @@ box above the left corner of the table. Page navigation buttons are below the ta
 export the data from the current page using the **Export CSV** button.
 
 ## Modify Active Directory Sync Policy
-
-Follow the steps to modify the Active Directory Sync policy for the selected Active Directory
-domain.
 
 **Step 1 –** On the Integrations interface, click **Active Directory Sync** in the navigation pane
 to view a list of the already created Active Directory Sync policies, if any. A policy is

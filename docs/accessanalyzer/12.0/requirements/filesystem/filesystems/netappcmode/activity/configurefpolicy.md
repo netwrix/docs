@@ -13,11 +13,11 @@ There are two ways to configure FPolicy:
 
 - Activity Monitor agent can facilitate the
   [Automatic Configuration of FPolicy](#automatic-configuration-of-fpolicy) for the monitored SVM
-  using the ONTAP API. This mode is simple, but doesn't allow you to exclude certain volumes or
+  using the ONTAP API. This mode is simple, but doesn't let you exclude certain volumes or
   shares of the SVM from being monitored. It also requires additional permissions to create and
   modify FPolicy.
 - Another option is to [Manually Configure FPolicy](#manually-configure-fpolicy) for each SVM. This
-  mode allows you to fine tune FPolicy by excluding certain volumes or shares from being monitored.
+  mode lets you fine-tune FPolicy by excluding certain volumes or shares from being monitored.
   It also reduces product permissions.
 
 Regardless of the FPolicy configuration approach, perform extra steps if you need to secure FPolicy
@@ -79,8 +79,7 @@ locally on the Activity Monitor Console server.
 ### Create PEM File for Client Certificate
 
 A certificate (Client Certificate) for the SVM needs to be copied to a PEM file. This is required
-for the TLS, mutual authentication option. Follow the steps to create the PEM file for the Client
-Certificate.
+for the TLS, mutual authentication option.
 
 **Step 1 –** On the SVM , use the following command to show the security certificate details:
 
@@ -96,7 +95,7 @@ security certificate show -vserver testserver -type server instance
 
 **Step 2 –** Copy the security certificate details into a text file and copy the public key to a PEM
 file. The following variables from security details will be needed to set mutual-authentication
-during Part 6 of manual configuration and prior to automatic configuration:
+during Part 6 of manual configuration and before automatic configuration:
 
 - SVM
 - Common Name
@@ -170,8 +169,7 @@ NetApp documentation.
 ## Manually Configure FPolicy
 
 This section describes how to manually configure FPolicy. Use manual configuration when you need to
-scope the policy to monitor specific volumes or shares. It is necessary to
-create several FPolicy components and then enable the FPolicy. See the sections corresponding to
+scope the policy to monitor specific volumes or shares. Create several FPolicy components and then enable the FPolicy. See the sections corresponding to
 each part of this list:
 
 - Part 1: Install Server Certificate on the SVM (only if using TLS authentication)
@@ -211,7 +209,7 @@ each part of this list:
 
 - Part 8: Enable the FPolicy
 
-    - Once the FPolicy is enabled, the Activity Monitor Agent can be configured to monitor the SVM.
+    - After the FPolicy is enabled, the Activity Monitor Agent can be configured to monitor the SVM.
 
 - Part 9: Connect FPolicy Server / Agent to Cluster Node (optional)
 
@@ -320,9 +318,9 @@ Maximum Notification Retention Duration: 3m
                  External Engine Format: xml
 ```
 
-For more information about creating an external engine, see the
+See the
 [vserver fpolicy policy external-engine create](https://docs.netapp.com/us-en/ontap-cli-9141/vserver-fpolicy-policy-external-engine-create.html)
-article.
+article for the complete syntax and options.
 
 ### Part 3: Create FPolicy Event
 
@@ -377,7 +375,7 @@ IMPORTANT:
     - `read` – File read operations
 
         - `first-read` – Limits notification to only first read operations for CIFS protocol. For
-          ONTAP 9.2+, this filter can be used for both CIFS and NFS protocols.
+          ONTAP 9.2+, this filter applies to both CIFS and NFS protocols.
 
     - `rename`– File rename operations
     - `rename_dir`– Directory rename operations
@@ -409,7 +407,7 @@ IMPORTANT:
     - `write` – File write operations
 
         - `first-write` – Limits notification to only first write operations for CIFS protocol. For
-          ONTAP 9.2+, this filter can be used for both CIFS and NFS protocols.
+          ONTAP 9.2+, this filter applies to both CIFS and NFS protocols.
 
 - For failed/denied events, the list of supported file operations is limited to the following
   values:
@@ -497,9 +495,9 @@ Ontap915::> fpolicy policy event show -vserver svm0 -event-name StealthAUDITScre
 Send Failed File Operation Notifications: false
 ```
 
-For more information about creating an event, see the
+See the
 [vserver fpolicy policy event create](https://docs.netapp.com/us-en/ontap-cli-9141/vserver-fpolicy-policy-event-create.html)
-article.
+article for the complete syntax and options.
 
 ### Part 4: Create Persistent Store
 
@@ -573,9 +571,9 @@ StealthAUDITPersistentStore -instance
  Size of the Persistent Store: 5GB  
  Autosize Mode for the Volume: grow_shrink
 
-For more information about creating a Persistent Store, see the
+See the
 [vserver fpolicy persistent store create](https://docs.netapp.com/us-en/ontap-cli/vserver-fpolicy-persistent-store-create.html)
-article.
+article for the complete syntax and options.
 
 ### Part 5: Create FPolicy Policy
 
@@ -678,9 +676,9 @@ User Name for Privileged Access: -
           Persistent Store Name: -
 ```
 
-For more information about creating a policy, see the
+See the
 [vserver fpolicy policy create](https://docs.netapp.com/us-en/ontap-cli/vserver-fpolicy-policy-create.html)
-article.
+article for the complete syntax and options.
 
 ### Part 6: Create FPolicy Scope
 
@@ -741,9 +739,9 @@ File Extensions to Include: -
 File Extensions to Exclude: -
 ```
 
-For more information about creating scope, see the
+See the
 [vserver fpolicy policy scope create](https://docs.netapp.com/us-en/ontap-cli-9141/vserver-fpolicy-policy-scope-create.html)
-article.
+article for the complete syntax and options.
 
 ### Part 7: Set TLS Authentication
 
@@ -826,9 +824,9 @@ svm0          StealthAUDIT                  10  on
                                                          DITEngine
 ```
 
-For more information about enabling a policy, see the
+See the
 [vserver fpolicy enable](https://docs.netapp.com/us-en/ontap-cli-9121//vserver-fpolicy-enable.html)
-article.
+article for the complete syntax and options.
 
 ### Part 9: Connect FPolicy Server / Agent to Cluster Node
 
@@ -926,6 +924,6 @@ These names can be customized in the monitored host's settings in the Activity M
 useful in two scenarios:
 
 - You want the names to match the company policies;
-- You want to configure FPolicy manually using your custom names, but also want to leverage the
+- You want to configure FPolicy manually using your custom names, but also want to use the
   "Enable and Connect FPolicy" feature of the Activity Monitor, so that the product ensures that
   FPolicy stays enabled and connected at all times.

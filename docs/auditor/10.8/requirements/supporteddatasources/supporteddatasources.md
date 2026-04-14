@@ -72,7 +72,9 @@ versions:
 - Dell VNX/VNXe/Celerra families
 - Dell PowerStore family
 
-> **NOTE:** Netwrix Auditor supports only Common Internet File System (CIFS) configuration.
+:::note
+Netwrix Auditor supports only Common Internet File System (CIFS) configuration.
+:::
 
 See the [Dell Data Storage](/docs/auditor/10.8/configuration/fileservers/delldatastorage/overview.md) topic for
 additional information.
@@ -83,7 +85,9 @@ Auditor supports monitoring the following device versions:
 
 - Dell Isilon/PowerScale versions 7.2 – 9.12
 
-> **NOTE:** Netwrix Auditor supports only CIFS configuration.
+:::note
+Netwrix Auditor supports only CIFS configuration.
+:::
 
 > **IMPORTANT:** Netwrix Auditor doesn't support auditing of the _System_ zone. Dell designates this zone for configuration access only. Store current data in other access zones.
 
@@ -98,7 +102,9 @@ Auditor supports monitoring the following device versions:
     - 9.0 – 9.17
     - 8.3
 
-> **NOTE:** Netwrix Auditor supports only CIFS configuration.
+:::note
+Netwrix Auditor supports only CIFS configuration.
+:::
 
 See the [NetApp Data ONTAP](/docs/auditor/10.8/configuration/fileservers/netappcmode/overview.md) topic for
 additional information.
@@ -187,7 +193,9 @@ Auditor supports monitoring the following versions:
 - Exchange Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** Netwrix Auditor doesn't support Department of Defense (DoD) tenant types.
+:::note
+Netwrix Auditor doesn't support Department of Defense (DoD) tenant types.
+:::
 
 See the [Exchange Online](/docs/auditor/10.8/configuration/microsoft365/exchangeonline/overview.md) topic for
 additional information.
@@ -199,7 +207,9 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** Netwrix Auditor doesn't support DoD tenant types.
+:::note
+Netwrix Auditor doesn't support DoD tenant types.
+:::
 
 See the
 [Microsoft Entra ID (formerly Azure AD)](/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/overview.md)
@@ -212,7 +222,9 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** Netwrix Auditor doesn't support DoD tenant types.
+:::note
+Netwrix Auditor doesn't support DoD tenant types.
+:::
 
 See the [MS Teams](/docs/auditor/10.8/configuration/microsoft365/teams/overview.md) topic for additional
 information.
@@ -224,7 +236,9 @@ Auditor supports monitoring the following versions:
 - SharePoint Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** Netwrix Auditor doesn't support DoD tenant types.
+:::note
+Netwrix Auditor doesn't support DoD tenant types.
+:::
 
 See the [SharePoint Online](/docs/auditor/10.8/configuration/microsoft365/sharepointonline/overview.md) topic for
 additional information.
@@ -363,7 +377,9 @@ Auditor supports monitoring the following versions:
 - Microsoft SQL Server 2014
 - Microsoft SQL Server 2012
 
-> **NOTE:** Netwrix Auditor doesn't support Linux-based versions.
+:::note
+Netwrix Auditor doesn't support Linux-based versions.
+:::
 
 See the [SQL Server](/docs/auditor/10.8/configuration/sqlserver/overview.md) topic for additional information.
 
@@ -437,9 +453,13 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2012 R2
 - Windows Server 2012
 
-> **NOTE:** DNS support on Windows Server 2008 is limited to Windows Server 2008 SP2 (32 and 64-bit).
+:::note
+DNS support on Windows Server 2008 is limited to Windows Server 2008 SP2 (32 and 64-bit).
+:::
 
-> **NOTE:** Netwrix Auditor doesn't support DHCP on Windows Server 2008.
+:::note
+Netwrix Auditor doesn't support DHCP on Windows Server 2008.
+:::
 
 Internet Information Services (IIS)
 

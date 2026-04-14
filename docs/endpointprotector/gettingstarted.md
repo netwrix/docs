@@ -81,7 +81,7 @@ See the [eDiscovery](/docs/endpointprotector/admin/ed_module/edmodule.md) topic 
     - Navigate to Device Control > Client Settings.
     - Configure Client Modes (Normal, Transparent, Stealth, etc.) and Notification Preferences.
 
-See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic for more information.
+See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic for details on client settings and modes.
 
 ### Configuring User Remediation Settings
 
@@ -91,7 +91,7 @@ See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) to
     - Configure settings such as Time Interval for user actions and User Remediation Pop-up
       notifications.
 
-See the [System Parameters](/docs/endpointprotector/admin/systempar.md) topic for more information.
+See the [System Parameters](/docs/endpointprotector/admin/systempar.md) topic for details on user remediation settings.
 
 ### Setting Up Offline Temporary Password
 
@@ -111,7 +111,7 @@ information.
     - Download and deploy Endpoint Protector Client packages for Windows, macOS, and Linux systems.
     - use MDM software or other deployment tools for efficient agent deployment.
 
-See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic for more information.
+See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic for details on deploying agent packages.
 
 ## Blocking Content Aware Protection Policies
 
@@ -133,7 +133,7 @@ information.
 
 See the
 [eDiscovery Scan Result and Actions](/docs/endpointprotector/admin/dc_module/dcmodule.md)
-topic for more information.
+topic for details on scan results and remediation actions.
 
 ## Deploying Enforced Encryption
 
@@ -156,4 +156,4 @@ topic for more information.
     - Monitoring Devices:
     - Manage Enforced Encryption devices in Clients list section.
 
-See the [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md) topic for more information.
+See the [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md) topic for details on deploying and configuring Enforced Encryption.

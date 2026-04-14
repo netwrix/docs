@@ -123,7 +123,7 @@ If the previous methods fail, the system falls back to the `uname -a` command:
 2. Searches the output for distribution-specific keywords
 3. Uses generic "Unix" or "Linux" classification if no specific match found
 
-**Version Refinement**: Once the distribution family is identified, the system maps the major version number to specific OS types (e.g., Ubuntu 20, Ubuntu 22, Ubuntu 24).
+**Version Refinement**: After the distribution family is identified, the system maps the major version number to specific OS types (e.g., Ubuntu 20, Ubuntu 22, Ubuntu 24).
 
 **Example Detection Sequence**:
 - System tries `lsb_release -sd` → Returns "Ubuntu 22.04.1 LTS"
