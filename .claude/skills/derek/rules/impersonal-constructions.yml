@@ -1,3 +1,0 @@
-message: "Avoid impersonal constructions. Rewrite with an active subject or a direct imperative."
-level: warning
-reason: "This rule triggers when the article body contains any of the following phrases: \"it is recommended\", \"it is necessary\", \"it is possible\", \"it is required\", \"it is advised\", \"it is suggested\". Do not flag these inside code blocks or quoted error messages."

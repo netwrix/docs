@@ -1,3 +1,0 @@
-message: "The description field is required and must be non-empty."
-level: error
-reason: "This rule triggers when the frontmatter block is missing a description field, or when the description value is empty or blank."

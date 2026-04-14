@@ -1,3 +1,0 @@
-message: "Use descriptive link text. Avoid generic phrases like \"click here\", \"read more\", \"learn more\", \"see more\", or \"this link\"."
-level: warning
-reason: "This rule triggers when a markdown hyperlink in the article body uses any of the following as its visible link text (the part inside square brackets): \"click here\", \"here\", \"read more\", \"learn more\", \"see more\", \"this link\", \"this article\", \"this page\". These phrases do not describe the link destination and are inaccessible to screen reader users."

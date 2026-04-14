@@ -1,3 +1,0 @@
-message: "Do not use \"please\" in instructions. Be direct."
-level: warning
-reason: "This rule triggers when the word \"please\" appears anywhere in the article body text. Do not flag it inside code blocks or quoted error messages. Do not flag \"please\" when it is part of the phrase \"please note\" — that phrase is separately governed by the no-note-that rule and will already be caught there."

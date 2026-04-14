@@ -1,3 +1,0 @@
-message: "Do not minimize the difficulty of tasks. Remove this word."
-level: warning
-reason: "This rule triggers when the article body contains any of the following words used to minimize difficulty or imply the task is obvious: simply, just, easily, basically, obviously. Do not flag these words inside code blocks or quoted error messages."

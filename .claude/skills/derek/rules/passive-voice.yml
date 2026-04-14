@@ -1,3 +1,0 @@
-message: "Avoid passive voice. Rewrite in active voice."
-level: warning
-reason: "This rule triggers when a sentence or clause in the article body uses passive voice — that is, when the grammatical subject receives the action rather than performs it. Common patterns: 'is/are/was/were/been + past participle' (e.g., 'the log is collected by the agent', 'the error was caused by'). Do not flag passive voice in quoted error messages or code blocks. Do not flag stative constructions where 'is/are' describes a state rather than an agent-patient action (e.g., 'the field is required', 'the job is complete', 'the database is corrupted')."

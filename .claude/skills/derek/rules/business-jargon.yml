@@ -1,3 +1,0 @@
-message: "Avoid business jargon. Use plain language instead (e.g., use \"use\" instead of \"utilize\")."
-level: warning
-reason: "This rule triggers when the article body contains any of the following business jargon terms: utilize, utilise (use \"use\" instead), leverage used as a verb in a non-financial context (e.g., \"leverage this feature\" — flag it; \"financial leverage\" — do not flag), synergy, synergize. Do not flag these inside code blocks or quoted error messages."

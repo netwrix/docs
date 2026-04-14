@@ -1,3 +1,0 @@
-message: "The keywords field must contain 8–12 items. Count the list items and adjust accordingly."
-level: warning
-reason: "This rule triggers when the frontmatter block is missing a keywords field, or when the keywords list contains fewer than 8 or more than 12 items. Count the list items under the keywords key to determine whether the count is in the 8–12 range."
