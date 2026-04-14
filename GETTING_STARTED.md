@@ -6,22 +6,23 @@ This guide walks you through contributing to the [Netwrix documentation site](ht
 
 ## Table of contents
 
-1. [What Is Docs-as-Code?](#what-is-docs-as-code)
-2. [Git, GitHub, and Why You Can't Break Anything](#git-github-and-why-you-cant-break-anything)
-3. [Installing Your Tools](#installing-your-tools)
-4. [Cloning the Repo and Starting the Dev Server](#cloning-the-repo-and-starting-the-dev-server)
-5. [The Netwrix Workflow](#the-netwrix-workflow)
-6. [Frontmatter, File Structure, and Images](#frontmatter-file-structure-and-images)
-7. [Knowledge Base Articles](#knowledge-base-articles)
-8. [Practice Exercise](#practice-exercise)
-9. [Key Concepts](#key-concepts)
-10. [Common Git Commands](#common-git-commands)
-11. [Using GitHub Issues with Claude](#using-github-issues-with-claude)
-12. [Getting Help](#getting-help)
+1. [What is docs-as-code?](#what-is-docs-as-code)
+2. [Git, GitHub, and why you can't break anything](#git-github-and-why-you-cant-break-anything)
+3. [Key terms](#key-terms)
+4. [Installing your tools](#installing-your-tools)
+5. [Setting up GitHub authentication](#setting-up-github-authentication)
+6. [Cloning the repo and starting the dev server](#cloning-the-repo-and-starting-the-dev-server)
+7. [The Netwrix workflow](#the-netwrix-workflow)
+8. [Frontmatter, file structure, and images](#frontmatter-file-structure-and-images)
+9. [Knowledge Base articles](#knowledge-base-articles)
+10. [Using GitHub Issues with Claude](#using-github-issues-with-claude)
+11. [Common commands](#common-commands)
+12. [Next steps](#next-steps)
+13. [Getting help](#getting-help)
 
 ---
 
-## What Is Docs-as-Code?
+## What is docs-as-code?
 
 Netwrix documentation follows a "docs-as-code" approach. Instead of editing pages in a web browser or a proprietary tool, you write plain text files in a format called Markdown, store them in a shared repository, and let a build tool ([Docusaurus](https://docusaurus.io/)) turn those files into the published website automatically.
 
@@ -32,7 +33,7 @@ Why does this matter to you?
 - **Review process** — Changes go through a review before they reach the live site, so mistakes get caught early.
 - **Automation** — Style checks, editorial reviews, and deployment all happen automatically when you submit your changes.
 
-## Git, GitHub, and Why You Can't Break Anything
+## Git, GitHub, and why you can't break anything
 
 Two tools make docs-as-code work:
 
@@ -50,7 +51,23 @@ This is the most common worry new contributors have, and the answer is: the work
 
 The worst thing that can happen is a reviewer asks you to adjust something—and that's just normal collaboration. So go ahead: experiment, make mistakes, and learn as you go. You can't break anything.
 
-## Installing Your Tools
+## Key terms
+
+- **Branch** — Your own copy of the code where you make changes without affecting anyone else.
+- **Clone** — Downloading a copy of the repository to your computer.
+- **Commit** — Saving a snapshot of your changes with a description.
+- **Dev server** — A local version of the website running on your computer for testing.
+- **Frontmatter** — Metadata at the top of a markdown file (title, description, etc.) in YAML format.
+- **localhost** — Your own computer acting as a web server (e.g., `localhost:4500`).
+- **Markdown** — A simple formatting language for writing documentation (headings, bold, links, lists, etc.).
+- **Merge** — Incorporating your changes into the main codebase after review.
+- **Node.js / npm** — Tools that build the documentation site from markdown files.
+- **Pull** — Downloading the latest changes from GitHub to your computer.
+- **Pull request (PR)** — A request for someone to review and merge your changes.
+- **Push** — Uploading your committed changes to GitHub.
+- **Repository (repo)** — The project folder containing all documentation files and configuration.
+
+## Installing your tools
 
 You need three tools to work with Netwrix documentation: Git, Node.js, and a text editor. This section walks you through installing each one on Windows or macOS.
 
@@ -114,7 +131,45 @@ VS Code is a free text editor with a built-in terminal and good Markdown preview
 
 That's it—no verification command needed. Just open VS Code to confirm it launches.
 
-## Cloning the Repo and Starting the Dev Server
+## Setting up GitHub authentication
+
+GitHub requires authentication before you can push changes or clone private repositories. The simplest method is a Personal Access Token (PAT)—a generated password that grants Git access to your GitHub account. You only need to set this up once.
+
+### Create a Personal Access Token
+
+1. Sign in to [github.com](https://github.com).
+2. Click your profile picture in the top-right corner and select **Settings**.
+3. Scroll down in the left sidebar and click **Developer settings**.
+4. Click **Personal access tokens**, then **Tokens (classic)**.
+5. Click **Generate new token**, then **Generate new token (classic)**.
+6. Give the token a descriptive name (for example, "Netwrix docs").
+7. Under **Select scopes**, check the **repo** box. This grants access to repositories.
+8. Click **Generate token**.
+9. Copy the token immediately—GitHub only shows it once. Store it somewhere safe (a password manager works well).
+
+### Use the token with Git
+
+When Git prompts you for a password during `git push` or `git clone`, enter your PAT—not your GitHub account password. Your username is your GitHub username as usual.
+
+### Cache your credentials
+
+To avoid re-entering your token every time, configure Git to remember it:
+
+**Windows (Git for Windows includes Git Credential Manager):**
+
+```bash
+git config --global credential.helper manager
+```
+
+**macOS:**
+
+```bash
+git config --global credential.helper osxkeychain
+```
+
+After running one of these commands, Git stores your credentials securely the next time you enter them. From that point on, authentication happens automatically.
+
+## Cloning the repo and starting the dev server
 
 Everything so far has been setup. Now you'll use the **command line**—a text-based way to give your computer instructions by typing commands instead of clicking buttons. On Windows, the command line app you'll use is called **PowerShell**. On macOS, it's called **Terminal**. Both work the same way for the commands in this guide.
 
@@ -154,7 +209,15 @@ cd docs
 
 You're now inside the project. All the remaining commands should be run from here.
 
-### 5. Install dependencies
+### 5. Open the project in VS Code
+
+```bash
+code .
+```
+
+This opens the current folder in VS Code, giving you a file explorer on the left and an integrated terminal at the bottom. If the `code` command doesn't work, open VS Code manually and go to **File** > **Open Folder**, then select the `docs` folder.
+
+### 6. Install dependencies
 
 ```bash
 npm install
@@ -162,7 +225,7 @@ npm install
 
 This downloads the packages that the documentation site needs to build and run. The first time takes a few minutes—you'll see a progress indicator while it works. You only need to do this once (or again if dependencies change).
 
-### 6. Start the dev server
+### 7. Start the dev server
 
 ```bash
 npm run start
@@ -172,7 +235,7 @@ This builds the site and starts a local web server on your computer. The first b
 
 When you see a message that says the site is ready, move on to the next step.
 
-### 7. Open the site in your browser
+### 8. Open the site in your browser
 
 Open your web browser and go to:
 
@@ -180,11 +243,11 @@ Open your web browser and go to:
 http://localhost:4500
 ```
 
-You should see the full Netwrix documentation site—running entirely on your own computer. Any changes you make to the documentation files will show up here automatically, which makes it easy to preview your work as you go.
+You should see the full Netwrix documentation site—running entirely on your own computer. Any changes you make to the documentation files show up here automatically, which makes it easy to preview your work as you go.
 
 To stop the dev server when you're done, go back to your terminal and press Ctrl+C.
 
-## The Netwrix Workflow
+## The Netwrix workflow
 
 Every documentation change follows the same cycle: pull the latest code, create a branch, make your edits, and open a pull request. Here's each step.
 
@@ -200,7 +263,7 @@ You always want to start from the most up-to-date version of the documentation. 
 ### 2. Create a branch
 
 ```bash
-git checkout -b your-branch-name
+git checkout -b <your-branch-name>
 ```
 
 This creates a new branch and switches to it. A branch is your own workspace where you can make changes without affecting anyone else's work.
@@ -224,7 +287,15 @@ npm run start
 
 ### 5. Stage and commit your changes
 
-First, stage the files you want to include. Staging tells Git which files to include in the next snapshot:
+First, check which files you've changed:
+
+```bash
+git status
+```
+
+This shows a list of files that have been modified, added, or deleted. Modified files appear under "Changes not staged for commit," and new files appear under "Untracked files." This is a good way to confirm you're committing exactly what you intend.
+
+Next, stage the files you want to include. Staging tells Git which files to include in the next snapshot:
 
 ```bash
 git add <filename>
@@ -243,20 +314,22 @@ For example: `git commit -m "Update install steps for Access Analyzer 12.0"`.
 ### 6. Push your branch
 
 ```bash
-git push -u origin your-branch-name
+git push -u origin <your-branch-name>
 ```
 
-This uploads your branch to GitHub so others can see it. Replace `your-branch-name` with the name you chose in step 2.
+This uploads your branch to GitHub so others can see it. Replace `<your-branch-name>` with the name you chose in step 2.
 
 ### 7. Create a pull request
 
 Go to [github.com/netwrix/docs](https://github.com/netwrix/docs). GitHub shows a prompt to create a pull request for your recently pushed branch—click it. Set the target branch to **dev**. Write a short description of what you changed and why, then click **Create pull request**.
 
+If you don't see the prompt, click the **Pull requests** tab, then **New pull request**, select your branch, and set the base branch to **dev**.
+
 ### What happens next
 
 After you open a pull request, automated checks run on your changes—style checks, an editorial review, and a build verification. A team member then reviews your work. Once approved and merged into `dev`, your changes go live the next morning through the automated daily sync from `dev` to `main`.
 
-## Frontmatter, File Structure, and Images
+## Frontmatter, file structure, and images
 
 Now that you know the workflow, here's a quick tour of how the documentation files themselves are organized.
 
@@ -305,89 +378,11 @@ When you reference an image in a markdown file, use an absolute path starting fr
 
 Always include alt text (the part in square brackets) that describes what the image shows. This helps with accessibility and gives readers context if the image doesn't load.
 
-## Knowledge Base Articles
+## Knowledge Base articles
 
-Knowledge Base (KB) articles live in `docs/kb/<product>/` — that's the only place you should edit them. A build script automatically copies KB content into versioned product folders at build time, so you never need to manually create or copy KB files into those folders. If you do, the script overwrites them on the next build.
+Knowledge Base (KB) articles live in `docs/kb/<product>/`—that's the only place you should edit them. A build script automatically copies KB content into versioned product folders at build time, so you never need to manually create or copy KB files into those folders. If you do, the script overwrites them on the next build.
 
 KB articles store their images as PNG files in `0-images/` subdirectories alongside the article markdown (e.g., `docs/kb/accessanalyzer/0-images/`). This is different from regular product docs, which use `.webp` images in `static/images/`.
-
-## Practice Exercise
-
-Now that you know the tools and the workflow, try it yourself. This exercise walks you through the full cycle end to end — from pulling the latest code to opening a pull request.
-
-1. Make sure you're on `dev` with the latest changes:
-
-   ```bash
-   git checkout dev
-   git pull
-   ```
-
-2. Create a practice branch:
-
-   ```bash
-   git checkout -b practice/your-name-first-edit
-   ```
-
-   Replace `your-name` with your actual name (for example, `practice/alex-first-edit`).
-
-3. Pick any documentation page you're familiar with. Open it in VS Code and make a small improvement — fix a typo, clarify a sentence, or improve a description.
-
-4. Save the file and check your change in the browser at `http://localhost:4500`. If the dev server isn't already running, start it with:
-
-   ```bash
-   npm run start
-   ```
-
-5. Stage and commit your change:
-
-   ```bash
-   git add <the-file-you-edited>
-   git commit -m "Improve wording in <page name>"
-   ```
-
-   Replace `<the-file-you-edited>` with the actual file path and `<page name>` with a short description of the page you changed.
-
-6. Push your branch:
-
-   ```bash
-   git push -u origin practice/your-name-first-edit
-   ```
-
-7. Go to [github.com/netwrix/docs](https://github.com/netwrix/docs) and create a pull request targeting **dev**.
-
-This is just practice. Don't worry about making a perfect change — the goal is to run through the workflow so it feels familiar next time.
-
-## Key Concepts
-
-- **Branch** — Your own copy of the code where you make changes without affecting anyone else.
-- **Clone** — Downloading a copy of the repository to your computer.
-- **Commit** — Saving a snapshot of your changes with a description.
-- **Dev server** — A local version of the website running on your computer for testing.
-- **Frontmatter** — Metadata at the top of a markdown file (title, description, etc.) in YAML format.
-- **localhost** — Your own computer acting as a web server (e.g., `localhost:4500`).
-- **Markdown** — A simple formatting language for writing documentation (headings, bold, links, lists, etc.).
-- **Merge** — Incorporating your changes into the main codebase after review.
-- **Node.js / npm** — Tools that build the documentation site from markdown files.
-- **Pull** — Downloading the latest changes from GitHub to your computer.
-- **Pull Request (PR)** — A request for someone to review and merge your changes.
-- **Push** — Uploading your committed changes to GitHub.
-- **Repository (repo)** — The project folder containing all documentation files and configuration.
-
-## Common Git Commands
-
-| Command | What it does |
-|---------|-------------|
-| `git status` | See what files you've changed |
-| `git checkout dev` | Switch to the dev branch |
-| `git pull` | Get the latest changes from GitHub |
-| `git checkout -b branch-name` | Create a new branch |
-| `git add <file>` | Stage a specific file for commit |
-| `git add .` | Stage all changed files |
-| `git commit -m "message"` | Commit staged changes with a description |
-| `git commit -am "message"` | Stage and commit tracked files in one step (doesn't add new files) |
-| `git push -u origin branch-name` | Push your branch to GitHub |
-| `git log --oneline` | See recent commit history |
-| `git diff` | See what you've changed since your last commit |
 
 ## Using GitHub Issues with Claude
 
@@ -399,10 +394,32 @@ If you spot a documentation problem but don't want to fix it yourself, you can f
 4. Describe the problem and paste the URL of the page where you found it.
 5. Submit the issue.
 
-The template automatically applies the right labels. Once submitted, Claude (an AI assistant) picks up the issue, identifies the affected files, applies the fix, and opens a pull request.
+The template automatically applies the right labels. Once submitted, Claude, an AI assistant integrated into this repository, picks up the issue, identifies the affected files, applies the fix, and opens a pull request.
 
-## Getting Help
+## Common commands
+
+These are the npm commands you'll use most often. Run them from the project's root folder (`docs/`).
+
+| Command | What it does |
+|---------|-------------|
+| `npm install` | Install project dependencies (first-time setup, or after dependencies change) |
+| `npm run start` | Start the dev server on localhost:4500 |
+| `npm run start-chok` | Start the dev server with polling (for network drives) |
+| `npm run build` | Run a full production build |
+| `npm run serve` | Serve the production build on port 8080 |
+| `npm run clear` | Clear the Docusaurus cache (fixes stale build issues) |
+| `npm run kb:clean` | Remove copied KB files from versioned folders |
+| `npm run kb:dry` | Preview what the KB copy script would do without running it |
+
+## Next steps
+
+Ready to try the workflow? Head to [Practice Exercises](PRACTICE_EXERCISES.md) for a hands-on walkthrough that takes you from your first edit to your first pull request.
+
+## Getting help
 
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** — The full workflow and writing standards reference.
 - **[netwrix_style_guide.md](netwrix_style_guide.md)** — Detailed writing standards for Netwrix documentation.
+- **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** — Solutions to common setup and Git issues.
+- **[PRACTICE_EXERCISES.md](PRACTICE_EXERCISES.md)** — Hands-on exercises to practice the workflow.
+- **Ask the docs team** — If you're stuck, reach out. No question is too basic.
 - **Don't worry about getting everything perfect.** Automated checks catch most style issues when you open a pull request, so focus on the content and let the tooling handle the rest.
