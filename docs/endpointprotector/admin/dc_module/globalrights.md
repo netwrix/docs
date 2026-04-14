@@ -54,6 +54,11 @@ devices.
 - Floppy disk drives
 - Serial ATA Controllers
 - Network Printers
+- Audio cards
+
+:::note
+Audio Device Control for sound cards is supported only on Windows and applies only to the audio output channel. Audio input channels, whether analog or digital, are not covered.
+::: 
 
 Depending on the device type, besides the Allow and Deny Access rights, additional rights are also
 available. These include Read-Only Access or multiple combinations of Allow Access but with various
