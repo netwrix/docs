@@ -1,0 +1,7 @@
+extends: existence
+message: "Avoid '%s'. Use a blockquote callout instead: '> **NOTE:** ...' or '> **IMPORTANT:** ...'"
+level: warning
+ignorecase: true
+tokens:
+  - '\bnote that\b'
+  - '\bplease note\b'
