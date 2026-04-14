@@ -24,11 +24,6 @@ All outbound traffic uses HTTPS (port 443). The following endpoints must be reac
 | `release-assets.githubusercontent.com` | GitHub | Release asset downloads | Installation only |
 | `pkg-containers.githubusercontent.com` | GitHub Container Registry | GitHub Packages CDN | Installation and updates |
 | `ghcr.io` | GitHub Container Registry | Container images | Installation and updates |
-| `auth.docker.io` | Docker Hub | Docker authentication | Installation and updates |
-| `registry-1.docker.io` | Docker Hub | Container images | Installation and updates |
-| `production.cloudflare.docker.com` | Docker CDN | Docker Hub CDN | Installation and updates |
-| `docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com` | Docker CDN | Docker image storage | Installation and updates |
-| `d2glxqk2uabbnd.cloudfront.net` | Docker CDN | Docker image CDN | Installation and updates |
 | `get.k3s.io` | K3s / Rancher | K3s installer download | Installation only |
 | `rpm.rancher.io` | K3s / Rancher | K3s package repository | Installation only |
 | `storage.googleapis.com` | K3s / Rancher | K3s artifact storage | Installation only |
@@ -134,7 +129,6 @@ After configuring firewall rules, verify that the required endpoints are reachab
 ```bash
 curl -I https://oci.pkg.keygen.sh
 curl -I https://ghcr.io
-curl -I https://registry-1.docker.io
 curl -I https://get.k3s.io
 ```
 
