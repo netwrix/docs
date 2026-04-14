@@ -110,7 +110,7 @@ However, you can complete the process manually if necessary — for example, if 
 
 ### SPAC Scans
 
-The SharePoint Activity Auditing (SPAC) scan can use the same app registration as SPAA/SPSEEK. If you haven't already created an app, follow steps 1–4 from the SPAA/SPSEEK Scans section.
+The SharePoint Activity Auditing (SPAC) scan can use the same app registration as SPAA/SPSEEK. If you have not already created an app, follow steps 1–4 from the SPAA/SPSEEK Scans section.
 
 1. From the Application Overview page, navigate to **Manage > API Permissions** and select **Add a permission**.  
    ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl91V.png)

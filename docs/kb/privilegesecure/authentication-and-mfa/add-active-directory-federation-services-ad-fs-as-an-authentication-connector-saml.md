@@ -13,7 +13,7 @@ keywords:
   - Assertion Consumer
 products:
   - privilege-secure-access-management
-sidebar_label: Add Active Directory Federation Services (AD FS) a
+sidebar_label: Add AD FS as a SAML Authentication Connector
 tags: []
 title: "Add Active Directory Federation Services (AD FS) as an Authentication Connector (SAML)"
 knowledge_article_id: kA04u0000000HR7CAM

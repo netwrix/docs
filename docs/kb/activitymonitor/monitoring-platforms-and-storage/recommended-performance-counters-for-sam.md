@@ -25,7 +25,7 @@ Netwrix Activity Monitor (SAM) Agent comes with performance counters for some in
 
 SAM provides the following counters.
 
-## SAM counters
+## SAM Counters
 
 | Category | Recommended | Counter | Description |
 | --- | ---: | --- | --- |
@@ -66,9 +66,9 @@ SAM provides the following counters.
 
 Monitor DNS and Active Directory queries (`DNS Queries...` and `Resolved SIDs...` counters), as they typically contribute the most to processing time.
 
-In addition to the SAM counters, we recommend collecting the following system counters:
+In addition to the SAM counters, Netwrix recommends collecting the following system counters:
 
-## System counters to collect
+## System Counters to Collect
 
 | Counter | Notes |
 | --- | --- |
@@ -122,7 +122,7 @@ In addition to the SAM counters, we recommend collecting the following system co
 | `\Process(MonitorService.exe)\Private Bytes` |  |
 | `\Process(MonitorService.exe)\Working Set` |  |
 
-## Prepare for performance monitoring
+## Prepare for Performance Monitoring
 
 SAM does not register the performance counters by default. Register them manually.
 
@@ -153,7 +153,7 @@ On each SAM Agent server:
    sc start SBTLoggingSvc
    ```
 
-## Collect performance data
+## Collect Performance Data
 
 Use any tool capable of collecting performance counters (for example, Performance Monitor) to view or save the performance data.
 
@@ -284,7 +284,7 @@ Write-Host "Collecting performance counters to $outputFile... Press Ctrl+C to st
 Get-Counter @variables | Export-Counter -FileFormat csv -Path $outputFile -Force
 ```
 
-## Unregister performance counters
+## Unregister Performance Counters
 
 When you no longer need performance monitoring, unregister the SAM performance counters.
 

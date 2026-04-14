@@ -23,7 +23,7 @@ sfdc_migration:
   original_categories:
   - privilege_secure_discovery
   visibility: public
-sidebar_label: SAML Assertion not yet Valid
+sidebar_label: SAML Assertion Not Yet Valid
 tags: []
 title: "SAML Assertion not yet Valid"
 knowledge_article_id: kA04u00000110p6CAA

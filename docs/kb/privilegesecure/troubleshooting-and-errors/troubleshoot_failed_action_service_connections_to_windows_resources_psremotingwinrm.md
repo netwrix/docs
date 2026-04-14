@@ -26,7 +26,7 @@ Several variables can affect whether the NPS Action Service connects to the targ
 
 Before running tests, complete the following steps on the target resource:
 
-### Verify PSRemoting and WinRM are enabled
+### Verify PSRemoting and WinRM Are Enabled
 
 In PowerShell, run the following command:
 
@@ -77,11 +77,11 @@ Created a WinRM listener on HTTP://* to accept WS-Man requests to any IP on this
 WinRM firewall exception enabled.
 ```
 
-### Verify ports
+### Verify Ports
 
 Verify that ports 5985 (HTTP) and/or 5986 (HTTPS) are open in the Windows firewall and any network firewalls. WinRM uses these ports for HTTP and HTTPS communications, respectively.
 
-### Review Group Policy settings
+### Review Group Policy Settings
 
 Group Policy settings filter the origin of WinRM requests via IPv4 and IPv6 filters. If issues with PSRemoting/WinRM communications persist after enabling PSRemoting/WinRM and verifying firewall settings, the IP filter in Group Policy may be affecting the communication.
 
@@ -89,7 +89,7 @@ Learn more about the **Allow remote server management through WinRM** Group Poli
 
 ![Windows Group Policy: Allow remote server management through WinRM](./../0-images/servlet_image_16fc9e2e2432.png)
 
-### Allow full control to Remote Management Users
+### Allow Full Control to Remote Management Users
 
 Review the access permissions set up for Remote Management Users by running the following command in elevated PowerShell:
 
@@ -130,7 +130,7 @@ test\admin
 
 The output indicates that the credentials used can run remote PowerShell commands on the target resource from the Action Service server via WinRM.
 
-## Related articles
+## Related Articles
 
 [Configure Remote Management in Server Manager − Enabling or Disabling Remote Management ⸱ Microsoft 🡥](https://learn.microsoft.com/en-us/windows-server/administration/server-manager/configure-remote-management-in-server-manager#enabling-or-disabling-remote-management)
 

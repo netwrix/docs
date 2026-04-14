@@ -28,7 +28,7 @@ You have used the **Remove host data** option in the **FILESYSTEMACCESS** Data C
 
 Re-run the job used to remove the host data against the full **!Removed-…** name.
 
-- You typically ran a custom job. If you're unsure which job you ran, see [How to Drop File System Data from Netwrix Access Analyzer](/docs/kb/accessanalyzer/file-system-and-sensitive-data-discovery/dropping_file_system_data.md) for steps to create a custom job to drop File Server host data.
+- You typically ran a custom job. If you are unsure which job you ran, see [How to Drop File System Data from Netwrix Access Analyzer](/docs/kb/accessanalyzer/file-system-and-sensitive-data-discovery/dropping_file_system_data.md) for steps to create a custom job to drop File Server host data.
 
 - If you have already rerun the job and it throws a timeout error, then change the job timeout to a longer value.
 

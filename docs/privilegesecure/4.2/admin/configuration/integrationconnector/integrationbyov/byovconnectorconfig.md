@@ -221,8 +221,7 @@ account.
 **Step 3 –** Enter a password to match the AD password, then click **Save**.
 
 :::note
-For versions before Privilege Secure 4.1, contact support because the Set Password feature
-is not available.
+For versions before Privilege Secure 4.1, [contact Support](https://netwrix.com/en/support/) because the Set Password feature is not available.
 :::
 
 
