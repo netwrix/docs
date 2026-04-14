@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Install Platform Governance for Salesforce
 
-Platform Governance for Salesforce is installed with package installation file sent to you by our
-customer success team. To install:
+Platform Governance for Salesforce is installed with package installation file sent to you by the
+Netwrix customer success team. To install:
 
 1. Click the install URL. If installing in the sandbox, replace the initial portion of the URL
    with [http://test.salesforce.com](http://test.salesforce.com)
@@ -43,7 +43,7 @@ For detailed step-by-step instructions on configuring Named Credentials with Ext
 The traditional method uses direct user credentials (username, password, and security token) to authenticate API calls. **This method doesn't require a Connected App**, but has significant limitations:
 
 - **Doesn't work with High Assurance** - Fails when High Assurance is enabled on user profiles
-- **User-dependent** - Relies on specific user credentials; if using this method, we recommend creating a dedicated Integration User for this purpose
+- **User-dependent** - Relies on specific user credentials; if using this method, Netwrix recommends creating a dedicated Integration User for this purpose
 
 :::warning High Assurance Incompatibility
 If your Salesforce organization has **High Assurance enabled on user profiles**, you **must** use the Named Credential authentication method. Session ID authentication will not work with High Assurance. While High Assurance is often associated with MFA requirements, it is the High Assurance setting itself that makes Named Credentials mandatory.
@@ -55,7 +55,7 @@ If your Salesforce organization has **High Assurance enabled on user profiles**,
 This method uses direct user credentials without requiring a Connected App setup.
 
 **Requirements:**
-- Salesforce **username** (we recommend using a dedicated Integration User)
+- Salesforce **username** (Netwrix recommends using a dedicated Integration User)
 - Salesforce **password**
 - Salesforce **security token** (obtained from user settings)
 
