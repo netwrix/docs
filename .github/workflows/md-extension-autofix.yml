@@ -1,0 +1,170 @@
+name: MD Extension Auto-Fix
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - dev
+
+concurrency:
+  group: md-extension-autofix-${{ github.event.pull_request.number }}
+
+jobs:
+  md-extension-autofix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Check if triggered by bot commit
+        id: bot-check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          COMMIT=$(gh api repos/${{ github.repository }}/commits/${{ github.event.pull_request.head.sha }} \
+            --jq '{message: .commit.message}')
+          MESSAGE=$(echo "$COMMIT" | jq -r '.message')
+          echo "Latest commit message: $MESSAGE"
+          if echo "$MESSAGE" | grep -qE '^fix\(docs\): add missing \.md extension and inject frontmatter'; then
+            echo "Skipping: commit is from md-extension-autofix workflow"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout PR branch
+        if: steps.bot-check.outputs.skip != 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: Configure git identity
+        if: steps.bot-check.outputs.skip != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Get changed files in docs/
+        id: changed-files
+        if: steps.bot-check.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          CHANGED=$(gh pr diff "$PR_NUMBER" --name-only | grep -E '^docs/' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "No docs/ files changed"
+            echo "count=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "$CHANGED" > /tmp/changed-files.txt
+            echo "count=$(echo "$CHANGED" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run md-extension-autofix
+        id: autofix
+        if: steps.changed-files.outputs.count > 0
+        run: |
+          chmod +x scripts/md-extension-autofix.sh
+          SUMMARY=$(./scripts/md-extension-autofix.sh /tmp/changed-files.txt)
+          echo "$SUMMARY" > /tmp/md-extension-summary.json
+          RENAMED_COUNT=$(echo "$SUMMARY" | jq '.renamed | length')
+          SKIPPED_COUNT=$(echo "$SUMMARY" | jq '.skipped | length')
+          FRONTMATTER_COUNT=$(echo "$SUMMARY" | jq '.frontmatter_injected | length')
+          echo "renamed=$RENAMED_COUNT" >> "$GITHUB_OUTPUT"
+          echo "skipped=$SKIPPED_COUNT" >> "$GITHUB_OUTPUT"
+          echo "frontmatter=$FRONTMATTER_COUNT" >> "$GITHUB_OUTPUT"
+          echo "Renamed: $RENAMED_COUNT, Skipped: $SKIPPED_COUNT, Frontmatter injected: $FRONTMATTER_COUNT"
+
+      - name: Commit fixes
+        id: commit
+        if: steps.autofix.outputs.renamed > 0
+        run: |
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          else
+            git add -A docs/
+            git commit -m "fix(docs): add missing .md extension and inject frontmatter"
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Push fixes
+        if: steps.commit.outputs.committed == 'true'
+        continue-on-error: true
+        env:
+          VALE_TOKEN: ${{ secrets.VALE_TOKEN }}
+        run: |
+          git remote set-url origin "https://x-access-token:${VALE_TOKEN}@github.com/${{ github.repository }}.git"
+          git push
+
+      - name: Post PR comment
+        if: steps.changed-files.outputs.count > 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          REPO=${{ github.repository }}
+
+          RENAMED_COUNT=0
+          SKIPPED_COUNT=0
+          FRONTMATTER_COUNT=0
+          if [ -f /tmp/md-extension-summary.json ]; then
+            RENAMED_COUNT=$(jq '.renamed | length' /tmp/md-extension-summary.json)
+            SKIPPED_COUNT=$(jq '.skipped | length' /tmp/md-extension-summary.json)
+            FRONTMATTER_COUNT=$(jq '.frontmatter_injected | length' /tmp/md-extension-summary.json)
+          fi
+
+          # Nothing to report — exit silently
+          if [ "$RENAMED_COUNT" -eq 0 ] && [ "$SKIPPED_COUNT" -eq 0 ]; then
+            exit 0
+          fi
+
+          {
+            if [ "$RENAMED_COUNT" -gt 0 ]; then
+              echo "**Auto-fix: Missing \`.md\` extensions added**"
+              echo ""
+              echo "The following files were missing a \`.md\` extension and would not have appeared on the docs site. They've been renamed automatically:"
+              echo ""
+              echo "| Original filename | Renamed to |"
+              echo "|---|---|"
+              jq -r '.renamed[] | "| `\(.from)` | `\(.to | split("/") | last)` |"' /tmp/md-extension-summary.json
+              echo ""
+              echo "Links to these files in other pages have been updated. Please review the changes in the commit above."
+            fi
+
+            if [ "$FRONTMATTER_COUNT" -gt 0 ]; then
+              echo ""
+              echo "**Frontmatter injected**"
+              echo ""
+              echo "The following files were missing frontmatter. \`title\`, \`description\`, and \`sidebar_position\` were derived automatically and may need manual review:"
+              echo ""
+              echo "| File |"
+              echo "|---|"
+              jq -r '.frontmatter_injected[] | "| `\(.)` |"' /tmp/md-extension-summary.json
+            fi
+
+            if [ "$SKIPPED_COUNT" -gt 0 ]; then
+              echo ""
+              echo "**Action needed: Possible missing \`.md\` extension**"
+              echo ""
+              echo "The following files were added to a docs directory without a \`.md\` extension, but couldn't be auto-renamed:"
+              echo ""
+              echo "| File | Reason |"
+              echo "|---|---|"
+              jq -r '.skipped[] | "| `\(.file)` | \(.reason) |"' /tmp/md-extension-summary.json
+              echo ""
+              echo "If these are markdown pages, add the \`.md\` extension and push again."
+            fi
+          } > /tmp/md-extension-comment.md
+
+          # Delete previous comments from this workflow
+          COMMENT_IDS=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" \
+            --jq '[.[] | select(
+              .user.login == "github-actions[bot]" and
+              (.body | (contains("Auto-fix: Missing `.md` extensions") or contains("Action needed: Possible missing `.md` extension")))
+            ) | .id] | .[]' 2>/dev/null || true)
+          for ID in $COMMENT_IDS; do
+            gh api "repos/${REPO}/issues/comments/${ID}" -X DELETE 2>/dev/null || true
+          done
+
+          gh pr comment "$PR_NUMBER" --repo "$REPO" --body-file /tmp/md-extension-comment.md

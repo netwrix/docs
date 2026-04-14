@@ -1,6 +1,6 @@
 ---
 title: Netwrix 1Secure Sales Professional
-sidebar_position: 1050
+sidebar_position: 1040
 tags: [certification, partners, sales, 1secure, data-security-posture-management]
 keywords: [training, course, certification, partners, sales, 1secure, data security posture management]
 description: "Become a certified Sales Professional for Netwrix 1Secure"
@@ -17,7 +17,7 @@ This learning path grants <Company /> certification as a Sales Professional for 
 
 ## Introduction to <N1S /> DSPM for MSPs
 
-This sales-focused course is specifically tailored for Managed Service Providers (MSPs). It is designed to empower your team with the knowledge and skills needed to effectively sell and implement <N1S /> DSPM. By the end of the course, participants will:
+This sales-focused course targets Managed Service Providers (MSPs). It empowers your team with the knowledge and skills needed to effectively sell and implement <N1S /> DSPM. By the end of the course, participants will:
 
 * Understand what is driving and accelerating cloud adoption
 * Recognize the security challenges in Microsoft cloud-based and on-prem environments

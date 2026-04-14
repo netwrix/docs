@@ -1,6 +1,6 @@
 ---
 title: Netwrix Change Tracker – Professional Services Engineer
-sidebar_position: 1720
+sidebar_position: 1450
 tags: [certification, partners, professional-services, change-tracker]
 keywords: [training, course, certification, partners, professional services, change tracker]
 description: "Become a certified Professional Services Engineer for Netwrix Change Tracker"
@@ -13,7 +13,7 @@ import { Company, NCT } from '@site/src/training/products';
 
 Estimated length: 2.5 hours
 
-This learning path offers training to <Company /> partner Professional Services engineers on the <NCT /> product. However, certification is not currently available at this time. When the final courses are available to grant certification, they will be added to this learning path. You will be able to pick up where you left off. It contains the following courses:
+This learning path offers training to <Company /> partner Professional Services engineers on the <NCT /> product. However, certification isn't available at this time. When the final courses are available to grant certification, they will be added to this learning path. You can continue from your current progress. It contains the following courses:
 
 * 1900 <NCT /> – Valuable Features
 * 2902 <NCT /> – Architecture

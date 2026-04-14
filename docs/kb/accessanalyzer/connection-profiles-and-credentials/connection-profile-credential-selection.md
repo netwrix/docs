@@ -30,7 +30,7 @@ Netwrix Access Analyzer tries to match the domain in the **Account** column in t
 1. The Target Host's `WindowsDomain`, as visible in **Host Management**.  
 2. The Target Host's `DNSDomain`, as visible in **Host Management** (only if the Target Host's `WindowsDomain` value is blank).
 
-If neither match, Netwrix Access Analyzer will attempt each credential in the Connection Profile in the order listed within the Connection Profile.
+If neither matches, Netwrix Access Analyzer attempts each credential in the Connection Profile in the listed order.
 
 ## Product / Module / Legacy ID
 - **Product:** Netwrix Access Analyzer  

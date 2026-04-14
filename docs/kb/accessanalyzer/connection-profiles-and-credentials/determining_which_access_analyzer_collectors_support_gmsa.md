@@ -27,21 +27,21 @@ Which Netwrix Access Analyzer (formerly Enterprise Auditor) data collectors supp
 
 ## Answer
 
-Not all data collectors in Netwrix Access Analyzer are compatible with gMSA. gMSAs are used to enhance security and simplify password management for services running on Windows, but they require explicit support within the collector's implementation.
+Not all data collectors in Netwrix Access Analyzer are compatible with gMSA. gMSAs enhance security and simplify password management for services running on Windows, but they require explicit support within the collector's implementation.
 
-The following Netwrix Access Analyzer data collectors have been tested and confirmed to support execution under a **gMSA**:
+The following Netwrix Access Analyzer data collectors support execution under a **gMSA**:
 
 - **ADActivity**
 - **ADInventory**
 - **ADPermissions**
-- **FSAA**
+- **File System Access Audit (FSAA)**
 - **PasswordSecurity**
 - **SmartLog** (only when using **Network Query** mode)
-- **SPAA**
+- **SharePoint Access Auditing (SPAA)**
 
 > **NOTE:** The **SmartLog** collector supports gMSA only when it is configured to use **Network Query**. It does **not** support gMSA in other modes.
 
-Ensure that the gMSA account is granted all required permissions as described in the Help Center:
+Grant the gMSA account all required permissions as described in the Help Center:
 
 [Configure a gMSA Account for Collector Connections](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/connection/gmsa)
 

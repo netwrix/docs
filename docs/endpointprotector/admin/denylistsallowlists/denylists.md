@@ -424,3 +424,7 @@ Label names can be obtained from the NDC administrator. Consider using the exact
 :::
 
 ![Confguration for Netwrix Data Classification](NDCClassification.png)
+
+:::note
+The NDC labeling feature is supported only on EPP Clients version 2605.x.x.x and later.
+:::

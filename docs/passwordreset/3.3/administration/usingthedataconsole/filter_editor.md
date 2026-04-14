@@ -13,14 +13,14 @@ Editor** button in the lower right corner of the Data Console.
 ![using_the_data_console_9](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_9.webp)
 
 A filter may contain several conditions. Conditions start with a column name, followed by an
-operator, and sometimes a value. Column names are shown in green, operators in maroon, and values in
+operator, and sometimes a value. The Filter Editor shows column names in green, operators in maroon, and values in
 blue.
 
-A filter also contains a root node and optionally one or more groups. These are used to include
-Boolean operators in the filter. Boolean operators are shown in red. Grouped conditions are
+A filter also contains a root node and optionally one or more groups. These include
+Boolean operators in the filter. The Filter Editor shows Boolean operators in red. Grouped conditions are
 indented.
 
-The filter in the image above contains the root node, one group, and four conditions. It will show
+The filter in the image contains the root node, one group, and four conditions. It shows
 all reset requests in the last fourteen days originating from IP addresses starting with 192.168.115
 or 192.168.119.
 

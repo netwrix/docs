@@ -11,31 +11,26 @@ assigned roles for console access.
 
 ![System Settings interface on the User Access page](/images/threatmanager/3.0/administration/configuration/systemsettings/page.webp)
 
-Roles are assigned by the following methods:
+Assign roles using one of the following methods:
 
-- Group Membership – Members of the group will be given the role assigned
+- Group Membership – Members of the group receive the assigned role
 
     :::note
-    If a user is a member of multiple assigned groups, the group with the highest level of
-    privilege is assigned
+    If a user belongs to multiple assigned groups, the system assigns the group with the highest privilege level.
     :::
 
 
 - Direct User Assignment – Assigns a role directly to a user
 
     :::note
-    If a user is assigned a role directly, it takes priority over any group membership
-    roles that have been assigned
+    If a user is assigned a role directly, it takes priority over any group membership roles.
     :::
 
 
 The User Access page includes the following sections:
 
-- Users & Groups – It provides the ability to allow or deny console access and configure
-  authentication types for users and groups. See the Users & Groups topic for additional
-  information.
-- Settings – It provides the ability to customize the user login page and configure the token
-  expiration time for authenticated users. See the Settings topic for additional information.
+- Users & Groups – Allows or denies console access and configures authentication types for users and groups. See the Users & Groups topic for additional information.
+- Settings – Customizes the user login page and configures the token expiration time for authenticated users. See the Settings topic for additional information.
 
 ## Users & Groups
 
@@ -65,7 +60,7 @@ The table displays the following information:
   Authentication Types Defined topic for additional information.
 - Action – This column has the following icons for conducting actions on the user or group:
 
-    - Edit icon – Allows you to edit the columns in the selected row by enabling drop-down menus.
+    - Edit icon – Opens drop-down menus to edit the columns in the selected row.
       The edit icon changes to a save icon while in edit mode. See the Edit Console Access topic for
       additional information.
     - Trash icon – Opens a Warning window to confirm the action of deleting the user or group.
@@ -137,9 +132,8 @@ The following authentication types can be assigned to users and groups:
   solution (Authenticator, DUO, etc.)
 - No MFA – This type uses only an Active Directory username and password for authentication
 - Authentication Provider Profiles – This type enables third-party authentication providers using
-  RADIUS, OpenID, and SAML integrations. Methods of authentication will vary based on the
-  third-party authentication provider. This must be configure in the Authentication Provider page of
-  the Integrations interface in order to be available for user assignment.
+  Remote Authentication Dial-In User Service (RADIUS), OpenID, and SAML integrations. Authentication methods vary based on the
+  third-party authentication provider. Configure this in the Authentication Provider page of the Integrations interface before assigning it to users.
 
 See the [Authentication Provider Page](/docs/threatmanager/3.1/administration/configuration/integrations/page/page.md) topic for
 additional information.
@@ -197,7 +191,7 @@ Type for this user or group.
 
 **Step 4 –** Click the Save icon, which replaced the Edit icon.
 
-The modification for the selected user or group is committed.
+The modification applies to the selected user or group.
 
 ### Edit Built-in Admin Password
 
@@ -219,7 +213,7 @@ built-in ADMIN account. The Edit password for built-in admin window opens.
 
 **Step 6 –** Click Save. The Edit password for built-in admin window closes.
 
-The password for the built-in ADMIN account has been updated.
+Netwrix Threat Manager updates the built-in ADMIN account password.
 
 ## Settings
 
