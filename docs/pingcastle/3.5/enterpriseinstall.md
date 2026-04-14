@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # PingCastle Enterprise Installation and Configuration
 
 import Tabs from '@theme/Tabs';
@@ -384,7 +387,7 @@ If you need to import reports larger than 200MB manually, you'll need to adjust 
    ```
 
 :::warning
-This setting only affects the client-side validation. Ensure your IIS upload limit (configured above) is set appropriately to handle files of this size.
+This setting only affects the client-side validation. Ensure your IIS upload limit (configured earlier) is set appropriately to handle files of this size.
 :::
 
 :::note
@@ -1419,7 +1422,7 @@ PingCastle Enterprise can run on any infrastructure that supports ASP.NET Core 8
 
 **Windows with IIS (Manual Installation)**
 - [Host ASP.NET Core on Windows with IIS](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/)
-- Follow the steps outlined above: extract ZIP, create IIS website, disable Default Web Site, configure app pool, and set SQL permissions
+- Follow the steps outlined earlier: extract ZIP, create IIS website, disable Default Web Site, configure app pool, and set SQL permissions
 
 **Linux (Limited Support - Manual Installation)**
 - [Host ASP.NET Core on Linux with Nginx](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx)
@@ -1968,7 +1971,7 @@ Proxy settings rely on the current user proxy configuration, which can be define
 <details>
 <summary>Configuring SAML2 with Okta</summary>
 
-Configure PingCastle Enterprise with Okta as your SAML2 identity provider using the steps below.
+Configure PingCastle Enterprise with Okta as your SAML2 identity provider using the following steps.
 
 #### Step 1 Access Okta Admin Portal
 
@@ -2165,7 +2168,7 @@ If the certificate can't be recognized, an error is displayed:
 
 ![Certificate Not Recognized](/images/pingcastle/enterpriseinstall/Authentication/cert-not-recognized.webp)
 
-Ensure the user account login matches one of the certificate identifiers listed above.
+Ensure the user account login matches one of the certificate identifiers listed earlier.
 
   </TabItem>
 </Tabs>
@@ -2256,7 +2259,7 @@ The Email configuration section in appsettings.json supports both providers:
 
 The email functionality sends password reset requests and notifications such as weekly reports.
 
-For detailed instructions on configuring Modern Authentication with Office 365, see the section below.
+For detailed instructions on configuring Modern Authentication with Office 365, see the following section.
 
 ### Modern Authentication with Office 365 Using Graph API
 
@@ -3194,7 +3197,7 @@ logging is enabled).
 ### Connection tests
 
 To verify the connection is properly configured, you can sync a domain using
-the button described above.
+the button described earlier.
 
 If there is an error, it will be displayed as an exception.
 

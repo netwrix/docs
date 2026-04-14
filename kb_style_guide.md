@@ -4,7 +4,7 @@ This guide establishes writing standards for Netwrix Knowledge Base (KB) article
 
 This guide is enforced by the `derek` linter skill (`/derek <kb-file>`).
 
-> **Important for documentation contributors:** This guide conflicts with the Netwrix docs style guide (`netwrix_style_guide.md`) on two points — contractions and heading case. Do not apply docs style guide rules to KB articles. Do not run `/dale` on KB files.
+> **Important for documentation contributors:** This guide conflicts with the Netwrix docs style guide (`netwrix_style_guide.md`) on two points — contractions and heading case. Do not apply docs style guide rules to KB articles. You can run `/dale` on KB files, but when applying fixes, follow `kb_style_guide.md` — not `docs/CLAUDE.md`.
 
 | Topic | KB rule | Docs rule |
 |---|---|---|
