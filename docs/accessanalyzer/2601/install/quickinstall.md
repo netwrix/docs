@@ -14,15 +14,19 @@ Before running the installer, confirm the following:
 
 | Requirement | Minimum | Recommended |
 | --- | --- | --- |
-| **Operating System** | Ubuntu 24.04 LTS (x86_64) | — |
+| **Operating System** | Ubuntu 24.04 LTS (x86_64) — recommended; see note below | — |
 | **Memory** | 8 GB RAM | 16 GB RAM |
-| **CPU** | 2 vCPUs | 4 vCPUs |
+| **CPU** | 6 vCPUs | 8 vCPUs |
 | **Disk Space** | 20 GB free | 50 GB free |
 | **Network** | Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains) below | — |
 | **License** | Valid Netwrix license key | — |
 
 :::note
-If running on a hypervisor, configure **static memory allocation** (not dynamic/ballooned memory). See [Hardware and System Requirements](/docs/accessanalyzer/1_0/install/requirements) for hypervisor-specific instructions.
+**Supported OS:** Ubuntu 24.04 LTS is the primary tested platform. Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are also compatible. AIX and non-Linux operating systems are not supported.
+:::
+
+:::note
+If running on a hypervisor, configure **static memory allocation** (not dynamic/ballooned memory). See [Hardware and System Requirements](/docs/accessanalyzer/2601/install/system/requirements) for hypervisor-specific instructions.
 :::
 
 ## Required Domains
