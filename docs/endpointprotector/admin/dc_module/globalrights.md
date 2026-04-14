@@ -32,7 +32,7 @@ devices.
 ![Standard supported Devices](standarddevices.webp)
 
 - Removable Storage Devices
-- Normal USB Flash Drives, U3 and Autorun Drives, Disk on Key, etc.
+- Normal USB Flash Drives, U3, and Autorun Drives, Disk on Key, etc.
 - USB 1.1, USB 2.0, USB 3.0
 - Memory Cards - SD Cards, MMC Cards, Compact Flash Cards, etc.
 - Card Readers - internal and external
@@ -104,11 +104,11 @@ environments.
 You can also use this option to manage USB access through the virtual environment.
 
 When using a virtual environment, the USB devices will not be displayed in the Endpoint Protector
-Notiﬁer with their original names, VID and PID information. Only the original information will
+Notiﬁer with their original names, VID, and PID information. Only the original information will
 remain the serial number.
 
 For example; in the below image, you can view the 3 devices detected by Endpoint Protector have
-different VID, PID and device code, but they all have the same serial number.
+different VID, PID, and device code, but they all have the same serial number.
 
 :::note
 The Endpoint Protector Client doesn't distinguish between USB devices (e.g. USB hard
