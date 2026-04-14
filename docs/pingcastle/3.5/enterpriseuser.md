@@ -8,7 +8,7 @@ sidebar_position: 3
 PingCastle Enterprise is a tool designed to improve and follow the
 Active Directory overall security level. This software has been
 developed to be compatible with most of the possible existing
-configurations. The goal (when the tool was created) was not to aim for
+configurations. The goal (when the tool was created) wasn't to aim for
 perfection, but to provide reliable data to present the situation to the
 management, thus improving over time.
 
@@ -28,7 +28,7 @@ That means that all the JavaScript code of the application is stored in
 separate files and that JavaScript included in the page via injection
 will not run in the browser. This protection can be checked via third
 party service such as \"security headers\". It means that
-\"unsafe-inline\" and \"unsafe-eval\" are not accepted.
+\"unsafe-inline\" and \"unsafe-eval\" aren't accepted.
 
 ![](/images/pingcastle/enterpriseuser/image2.webp)
 
@@ -88,7 +88,7 @@ method are provided.
 
 ## Authorization
 
-Ping Castle allows to setup permissions on Entities, or objects (Domains
+Ping Castle allows to set up permissions on Entities, or objects (Domains
 or AzureAD)
 
 The permissions can be set on the detail of the Entities
@@ -195,7 +195,7 @@ The product implements three main layers of permission:
 
 - Domains -- Represent the lowest level of access. A user with
   domain-level access can only view reports for that specific domain.
-  They do not have access to other domains or to the dashboard unless
+  They don't have access to other domains or to the dashboard unless
   assigned through an entity or elevated role.
 
 ![](/images/pingcastle/enterpriseuser/image12.webp)
@@ -212,7 +212,7 @@ set up a filter to only see a more narrowed down set of data.
 
 ![](/images/pingcastle/enterpriseuser/image13.webp)
 
-When a user does not have access to the root of the organization and
+When a user doesn't have access to the root of the organization and
 have access to multiple area of the organization, the application
 display by default the first organization that the user can access.
 
@@ -239,7 +239,7 @@ etc.) while more detailed pages can be shown in the advanced menu.
 
 This view is mainly dedicated for the company management, notably the
 \"Maturity Assessment\" part, as it will show KPI as well as Objectives
-and goals in order to improve the overall level of security of the AD.
+and goals to improve the overall level of security of the AD.
 
 Nonetheless, it can also be used by Technical stakeholder such as AD
 administrator, as it can greatly assist in the technical remediation.
@@ -269,7 +269,7 @@ the CMMI methodology applied to the AD:
 - Ownership - ensure all domains have an owner and that this owner is
   doing its job
 
-- External Trusts - ensure all domains are not connected to external
+- External Trusts - ensure all domains aren't connected to external
   companies
 
 **Repeatable**
@@ -343,7 +343,7 @@ KPI evolved in the past.
 Each chart is dynamic, and a category can be filtered out by clicking on
 it in the legend.
 
-Moreover, a click on certain data can forward you directly to the page
+Moreover, a click certain data can forward you directly to the page
 containing the data that were used to elaborate the chart.
 
 Indicators for the related tab:
@@ -376,7 +376,7 @@ if they are OK or not. It can be filtered to only show relevant
 information (a.k.a. what affects your security negatively), and it can
 also be download in CSV format.
 
-This dashboard is used to setup a taskforce and a remediation project.
+This dashboard is used to set up a taskforce and a remediation project.
 
 The first view is a matrix where there are all the rules in columns and
 all the domain in lines.
@@ -406,7 +406,7 @@ the user to the detail of the report.
 Please note that the "View Action Plans" option changes the color of the
 items and enable the user to see quickly what the status of the action
 plan are. Typically, the first step of a remediation will be to request
-domain owners to setup an action plan without enforcing it.
+domain owners to set up an action plan without enforcing it.
 
 To see the top rules that need to be fixed to improve the maturity or
 the score, a selection of the 2 tab "Maturity" or "Priority" enables the
@@ -504,7 +504,7 @@ filtered by default.
 
 ![](/images/pingcastle/enterpriseuser/image33.webp)
 
-A click on the domain open the domain view and a click on the entity
+A click the domain open the domain view and a click the entity
 full name open the management view for the entity.
 
 **Detail information on a domain**
@@ -520,7 +520,7 @@ Last report tab:
 ![](/images/pingcastle/enterpriseuser/image35.webp)
 
 The full detail of the last report performed is accessible in this tab,
-though it is not shown here.
+though it isn't shown here.
 
 By default when there is a list of users, the output is limited to 100
 users.
@@ -590,7 +590,7 @@ It brings the user on a page with information that needs to be filled :
 
 ![](/images/pingcastle/enterpriseuser/image42.webp)
 
-A domain cannot be hard-deleted (unless it has been added manually by
+A domain can't be hard-deleted (unless it has been added manually by
 mistake, meaning that it is in no way connected to any other existing
 domain or report). Though, it is possible to soft delete a domain by
 changing its status.
@@ -608,7 +608,7 @@ manually when required.
 - Auto Created: The domain has been created automatically by the
   PingCastle Enterprise solution, which means it is connected to another
   domain which you are monitoring. It is mandatory that you act on this
-  domain status, as the \"Auto Created\" status should not remain.
+  domain status, as the \"Auto Created\" status shouldn't remain.
 
 - Active: Normal status of a domain when it is monitored by the
   PingCastle Enterprise solution
@@ -623,7 +623,7 @@ manually when required.
 
 - Out of Scope: Status used to simulate a hard-deletion. This status
   should be set when the domain is no actually belonging to your
-  organization and should not be followed by your company.
+  organization and shouldn't be followed by your company.
 
 ## Forest
 
@@ -730,13 +730,13 @@ that an existing trust has been modified.
 Technical event:
 
 There has been a significant technical change modifying the global level
-of security, but which is not yet covered by the existing rules. This is
-a very rare event and it is not likely that you have this kind of event.
+of security, but which isn't yet covered by the existing rules. This is
+a very rare event and it isn't likely that you have this kind of event.
 
 # Tool configuration (\"Configuration\")
 
 The \"Configuration\" view of the PingCastle Enterprise application
-allows the user to set up all the tool in order to be able to use it
+allows the user to set up all the tool to be able to use it
 completely. It is also in this view that the user will be able to
 personalize settings so that the tool fits more the Company needs.
 
@@ -776,7 +776,7 @@ Example to show how to reorganize entities:
 Each entity has a dedicated \"Details\" page that contains information.
 It is on this page that you can have access to all the information of
 the Entity, including the Owner permissions. It is also here that you
-can edit these rights, in order to establish which key people will be
+can edit these rights, to establish which key people will be
 accountable for a specified entity.
 
 For instance, the page for PingCastle Enterprise entity:
@@ -797,7 +797,7 @@ being displayed:
 ![Une image contenant texte Description générée
 automatiquement](/images/pingcastle/enterpriseuser/image52.webp)
 
-Please pay attention to the next chart. It represents the evolution of
+pay attention to the next chart. It represents the evolution of
 the number of rules per maturity level. Because an action plan has been
 defined, a vertifical line represents today. Everything at the right is
 the projected evolution of the maturity level based on the action items.
@@ -815,14 +815,14 @@ perimeter.
 
 **Rule exceptions**
 
-\"Rule exceptions\" can be set in order to completely disable a rule
+\"Rule exceptions\" can be set to completely disable a rule
 within a specific domain. It means that this rule will not be applied
 for a certain period, that you have to specify.
 
 1.  This should be use only when for very specific reasons, such as when
-    a rule does not apply in your organization.
+    a rule doesn't apply in your organization.
 
-Do not hesitate to contact the PingCastle editors if you have doubts or
+Don't hesitate to contact the PingCastle editors if you have doubts or
 require extra assistance regarding how the exceptions are managed.
 
 As a precision: if no start date and no end date is defined, the
@@ -860,7 +860,7 @@ PingCastle Enterprise is tool that will allow the administrators to
 easily and efficiently consult all the data from reports, as well as
 take decisions and such.
 
-9.  Therefore, it is not yet possible to launch scans and so directly
+9.  Therefore, it isn't yet possible to launch scans and so directly
     from the application, so it is required to launch the PingCastle
     tool in standalone mode and to then import the report that are
     produced that way.
@@ -869,7 +869,7 @@ There are two way for doing so:
 
 **Option 1: Importing the file manually**
 
-From the \"Configuration\" tab, open \"Import one or more report(s).
+From the \"Configuration\" tab, open \"Import one or more reports.
 Once you are on the page, you can simply drag and drop any file produced
 by the PingCastle standalone executable and it will upload in the
 PingCastle Enterprise solution.
@@ -893,7 +893,7 @@ the \"Agents\" page and configurate the PingCastle agent accordingly.
 
 ![](/images/pingcastle/enterpriseuser/image59.webp)
 
-The first step is to create an Agent API key. Click on the create button
+The first step is to create an Agent API key. Click the create button
 to reach the creation page.
 
 ![](/images/pingcastle/enterpriseuser/image60.webp)
@@ -928,18 +928,18 @@ The API can be browsed using the link found in the agent page:
 
 The scheduler feature enables the application admin to schedule scans.
 
-It relies on the Windows Task Scheduler and thus is not available on
+It relies on the Windows Task Scheduler and thus isn't available on
 other operating systems than Windows. It requires a post installation
 step (see the installation documentation) to use it.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseuser/image63.webp)
 
-To create a new scheduled scan, click on Create and the fill the
+To create a new scheduled scan, click Create and the fill the
 information required.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseuser/image64.webp)
 
-Once created (if the permission was not granted, an error will be shown
+Once created (if the permission wasn't granted, an error will be shown
 with the required steps to fix this problem), the detail of the
 scheduler is shown.
 
@@ -954,7 +954,7 @@ stop the scheduled task on demand.
 It is possible to view all the reports that have been imported within
 PingCastle Enterprise, regardless of the method used to import them.
 
-To do so, from the \"Configuration\" tab, you can click on the \"View
+To do so, from the \"Configuration\" tab, you can click the \"View
 all reports\" to reach the page:
 
 ![](/images/pingcastle/enterpriseuser/image66.webp)
@@ -974,10 +974,10 @@ Follow the instructions to access the Manage My Account window.
 
 1.  Log in to your account.
 
-2.  Click on your profile icon located in the top-right corner of the
+2.  Click your profile icon located in the top-right corner of the
     application.
 
-3.  Select **Manage My Account** from the drop-down menu. This opens the
+3.  Select **Manage My Account** from the dropdown menu. This opens the
     Manage Your Account Window.
 
 ![A screenshot of the "Manage My Account"

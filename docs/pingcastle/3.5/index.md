@@ -46,13 +46,13 @@ website https://www.pingcastle.com/methodology/
 
 ### Active Directory Account
 
-PingCastle requires an Active Directory account to connect and perform audits. In most cases, a standard user account with no special privileges is sufficient—the account can even be from a trusted domain and does not need to be part of the local administrators group.
+PingCastle requires an Active Directory account to connect and perform audits. In most cases, a standard user account with no special privileges is sufficient—the account can even be from a trusted domain and doesn't need to be part of the local administrators group.
 
 ### Privileged Mode
 
 PingCastle offers a privileged mode that enhances the reliability and accuracy of specific security checks. While non-privileged mode works for basic operations and many checks, privileged mode provides higher confidence results for certain assessments.
 
-**Running as Administrator**: Running PingCastle as an administrator is not required for most operations, though certain checks (such as DNS-related checks) may have limited functionality without administrator privileges.
+**Running as Administrator**: Running PingCastle as an administrator isn't required for most operations, though certain checks (such as DNS-related checks) may have limited functionality without administrator privileges.
 
 **Privileged Mode Command**:
 ```
@@ -249,9 +249,9 @@ For a fast network map without full healthcheck scores (under 5 minutes), use th
 PingCastle.exe --carto
 ```
 
-This option discovers all reachable domains, performs a lightweight scan, and generates trust relationship maps. The SID Filtering status is accurate, but individual domain scores are not available. Scans run in parallel for speed.
+This option discovers all reachable domains, performs a lightweight scan, and generates trust relationship maps. The SID Filtering status is accurate, but individual domain scores aren't available. Scans run in parallel for speed.
 
-**Note**: Cartography reports cannot be combined when run from multiple locations. For comprehensive multi-location data, use Option 1 or Option 2 instead.
+**Note**: Cartography reports can't be combined when run from multiple locations. For comprehensive multi-location data, use Option 1 or Option 2 instead.
 
 ## Trust Relationship Maps
 
@@ -594,7 +594,7 @@ PingCastle.exe --hc-conso --filter-date 2024-01-01 --center-on primary.local --x
 | 1 | InvalidLicenseDomainPattern - license contains invalid domain limitation pattern |
 | 2 | DomainNotAllowed - specified domain not allowed by license restrictions |
 | 3 | MissingApiEndpointArgument - `--api-endpoint` requires a URL argument |
-| 4 | InvalidApiEndpointArgument - `--api-endpoint` URL is not valid |
+| 4 | InvalidApiEndpointArgument - `--api-endpoint` URL isn't valid |
 | 5 | MissingApiKeyArgument - `--api-key` requires a key argument |
 | 6 | InvalidLicense - license validation failed or expired |
 | 7 | InvalidCommandLineArguments - command line parsing failed |
@@ -643,7 +643,7 @@ During migration:
 
 PingCastle has been used as a reconnaissance tool in some high-profile attacks, leading some AntiVirus and EDR products to flag it as malicious.
 
-**Recommended Action**: Whitelist PingCastle.exe on specific systems and/or users where it is authorized for security assessments. Normal end users should not be running PingCastle.
+**Recommended Action**: Whitelist PingCastle.exe on specific systems and/or users where it is authorized for security assessments. Normal end users shouldn't be running PingCastle.
 
 #### Changes Made to Reduce False Positives
 
@@ -667,12 +667,12 @@ We are actively working to reduce false positive detections:
 >
 >  PingCastle is a trusted security assessment tool designed to help organizations evaluate the health and security posture of their Active Directory environments. 
 >
-> Some antivirus or endpoint protection solutions may flag PingCastle as "hacktool" or a "potentially unwanted program (PUP)". This is not because PingCastle is malicious, but because it has dual-use potential: the same in-depth techniques it uses to audit and test security could also be misused by attackers. It does not itself attack AD, but could be used during reconnaissance to enumerate risks that attackers could exploit. Security vendors often classify such advanced administrative and diagnostic tools conservatively to avoid underestimating risk. 
+> Some antivirus or endpoint protection solutions may flag PingCastle as "hacktool" or a "potentially unwanted program (PUP)". This isn't because PingCastle is malicious, but because it has dual-use potential: the same in-depth techniques it uses to audit and test security could also be misused by attackers. It doesn't itself attack AD, but could be used during reconnaissance to enumerate risks that attackers could exploit. Security vendors often classify such advanced administrative and diagnostic tools conservatively to avoid underestimating risk. 
 >
 >  It is important to emphasize that: 
 >
 > * PingCastle is safe to use when obtained from the official source.
-> * It does not exploit or attack Active Directory.
+> * It doesn't exploit or attack Active Directory.
 > * No malicious payloads or hidden behavior are present in the software.
 > * The detections occur only because because its ability to enumerate security risks and misconfigurations could, provide information an attacker might misuse.
 >
