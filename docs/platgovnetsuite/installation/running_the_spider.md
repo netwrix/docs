@@ -10,7 +10,7 @@ The first time the spider is run the entire account is scanned. Subsequent spide
 changes since the last run.
 
 :::note
-The **Strongpoint** tab is only available to Administrators unless you specifically add it to other
+The **Netwrix** tab is only available to Administrators unless you specifically add it to other
 roles. Refer to [Setting Access and Permissions](/docs/platgovnetsuite/installation/setting_strongpoint_tab_access.md) for more
 information.
 :::
@@ -24,22 +24,31 @@ To run the spider:
 
 1. Log in as an Administrator. NetSuite security standards require an active Administrator login to
    execute some of the spider’s tasks.
-2. Open **Strongpoint** > **Tools** > **Strongpoint Spider**.
-3. Select **ReSpider All Records - SLOW** from **Update or ReSpider** if available.
-4. Click **Start Spider**. While the spider is running, you must do the following:
+2. Open **Netwrix** > **Tools** > **Netwrix Spider**.
+
+   <img src="/images/platgovnetsuite/installing_strongpoint/manual_spider.webp" alt="Manual Spider - Select record types to index, then run the spider" width="450" />
+
+3. Select **ALL** from **Record Types** input.
+4. Click **Run Spider**. While the spider is running, you must do the following:
 
     - Keep the Spider tab open. If you close it, start it again.
     - Keep your NetSuite session active.
     - Remain logged in as an Administrator.
 
-The gears spin during this part of the spider run. It can take between 45-60 minutes to complete.
-When finished, the gears stop spinning and **Spider Finished** is displayed below the **Start
-Spider** button. You can close the tab when finished. The spider continues to work in the background
-to document your account.
+
+<img src="/images/platgovnetsuite/installing_strongpoint/manual_spider_processing.webp" alt="Manual Spider Processing" width="450" />
+
+The **Run Spider** button should turn into **Processing...**. It can take between 45-60 minutes to complete.
+When finished, the button goes back to **Run Spider** and the icon stops spinning.
+
+<img src="/images/platgovnetsuite/installing_strongpoint/manual_spider_status.webp" alt="Manual Spider Status" width="450" />
+
+The Spider Status is **Index Finished**. You can close the tab when finished. The spider continues to work
+in the background to document your account.
 
 If you are not sure the spider completed successfully:
 
-1. Open **Strongpoint** > **Strongpoint Support** > **Installation Settings**
+1. Open **Netwrix** > **Netwrix Support** > **Installation Settings**
 2. Click **Print**.
 3. Print to a **PDF** file.
 4. Email the file and any questions to your Customer Success Manager.
@@ -56,8 +65,8 @@ any issues that arise are captured during the data validation phase.
 
 ### Confirm the Spider is Complete
 
-Open **Strongpoint** > **Strongpoint Support** > **Installation Settings** and review the **Spider
-Status** tab to confirm the **Last Completed Spider** shows a date.
+Open **Netwrix** > **Netwrix Support** > **Installation Settings** and review the **Spider Status**
+tab to confirm the **Last Completed Spider** shows a date.
 
 ![Review the Spider Status tab of the Installation Settings](/images/platgovnetsuite/installing_strongpoint/install_settings_spider_status.webp)
 
@@ -72,7 +81,7 @@ There are very large differences between NetSuite accounts. The automated algori
 everything during the first pass. Platform Governance for NetSuite has a variety of tools to
 validate the data.
 
-1. Open **Strongpoint** > **Support** > **Installation Settings**
+1. Open **Netwrix** > **Netwrix Support** > **Installation Settings**
 2. Click **View**
 3. Review the **Recommendation** column for any Customization Types labeled **ReSpider This Record**
    or **Run DeDuplicate**. You can click on the column head to change the sort order, or use the
@@ -80,13 +89,10 @@ validate the data.
    Types** so you can ReSpider them.
 4. Review the **Documented Record Count** looking for any **0** (zero) values. Note the
    **Customization Types** so you can ReSpider them. No action is required if the value is blank.
-5. Open **Strongpoint** > **Tools** > **Strongpoint Spider**
-6. Select **ReSpider All Records - SLOW** from **Update or ReSpider**
-7. **Select the Record Types** you noted. Use Ctrl-Click to select multiple record types. You do not
-   want to start over by ReSpidering the entire account. You can also enter an optional **Name
-   Filter**: entering all of part of the customization name to focus the spider. You can use the
-   **%** wildcard to search with the given name.
-8. Click **Start Spider**. Customization and Records processed information is displayed when the
+5. Open **Netwrix** > **Tools** > **Netwrix Spider**
+6. **Select the Record Types** you noted. Use Ctrl-Click to select multiple record types. You do not
+   want to start over by ReSpidering the entire account.
+7. Click **Run Spider**. Customization and Records processed information is displayed when the
    spider completes.
 
 :::note
@@ -99,37 +105,35 @@ record type with the issue.
 
 You can ReSpider your account at any time.
 
-1. Open **Strongpoint** > **Tools** > **Strongpoint Spider**
-2. Select **Update Only - FAST** from **Update or ReSpider**
-3. Select one or more record types that have an issue. You can also enter an optional **Name
-   Filter**: entering all of part of the customization name to focus the spider. You can use the
-   **%** wildcard to search with the given name. Here are the record types:
+1. Open **Netwrix** > **Tools** > **Netwrix Spider**
+2. Select one or more record types that have an issue.
 
 > |                          |                            |                                   |
 > | ------------------------ | -------------------------- | --------------------------------- |
-> | Custom Entity Fields     | Mass Updates               | User Roles                        |
-> | Custom CRM Fields        | Suitelet                   | Custom Report                     |
-> | Custom Body Fields       | RESTlet                    | Bundle                            |
-> | Custom Column Fields     | User Event Script          | Online Customer Form              |
-> | Custom Item Fields       | Scheduled Script           | Custom Record Forms               |
-> | Custom Item Options      | Client Script              | Group                             |
-> | Item Number Fields       | Mass Update Script         | Subsidiary                        |
-> | Other Fields             | Portlet Script             | Department                        |
-> | Custom Lists             | Custom Workflow Action     | Class                             |
-> | Custom Records           | Bundle Installation Script | Location                          |
-> | Custom Record Fields     | Map/Reduce Script          | Custom Segment                    |
-> | Custom Entry Forms       | Plug-In                    | Email Template                    |
-> | Custom Transaction Forms | Script Deployments         | Custom Advanced PDF/HTML Template |
-> | Searches                 | Workflow                   |                                   |
+> | Entity Field             | Mass Update                | Custom Report                     |
+> | CRM Field                | Suitelet Script            | Bundle                            |
+> | Body Field               | RESTlet Script             | Online Customer Form              |
+> | Column Field             | User Event Script          | Custom Record Form                |
+> | Item Field               | Scheduled Script           | Group                             |
+> | Item Option Field        | Client Script              | Subsidiary                        |
+> | Item Number Field        | Mass Update Script         | Department                        |
+> | Other Field              | Portlet Script             | Class                             |
+> | List                     | Workflow Action Script     | Location                          |
+> | Record                   | Bundle Installation Script | Custom Segment                    |
+> | Custom Record Field      | Map/Reduce Script          | Email Template                    |
+> | Address Form             | Plug-In Script             | Custom Advanced PDF/HTML Template |
+> | Entry Form               | Script Deployment          | SuiteApp                          |
+> | Transaction Form         | Workflow                   | Access Token                      |
+> | Search                   | User Role                  | Integration                       |
 
-1. Click **Start Spider**. Customization and Records processed information is displayed when the
+1. Click **Run Spider**. Customization and Records processed information is displayed when the
    spider completes.
 
 ## Saving a Status Report
 
 If you are working with a consultant who needs to see the results of this view:
 
-1. Open **Strongpoint** > **Support** > **Installation Settings**
+1. Open **Netwrix** > **Netwrix Support** > **Installation Settings**
 2. Click **View**
 3. Click **Print** and save it as a PDF.
 4. Email the pdf file to the consultant.
