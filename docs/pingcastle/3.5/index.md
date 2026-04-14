@@ -17,7 +17,7 @@ The source code of the program is licensed to the Non-Profit Open Software Licen
 
 **Binary License and Usage**
 
-The binary code may not be included as part of a commercial package unless a license is purchased. Visit the "our services" section on https://www.pingcastle.com for licensing options.
+The binary code may not be included as part of a commercial package unless a license is purchased. Visit the services section on https://www.pingcastle.com for licensing options.
 
 **License Expiration**
 
