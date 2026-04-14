@@ -8,12 +8,25 @@ sidebar_position: 2
 
 The Username and Password credential type is used by Active Directory and file server source groups. Both require a domain account whose credentials Access Analyzer uses to connect and authenticate during scans.
 
+## Create a Username/Password service account
+
+1. Navigate to **Configuration** > **Service Accounts**.
+2. Click **Add Service Account**.
+3. In the **Name** field, enter a descriptive name for this service account.
+4. From the **Service account type** drop-down, select **Username/Password**.
+
+   ![Add service account form showing Username/Password fields: name, username, and password](/images/accessanalyzer/2601/configurations/add-service-account-username-password.png)
+
+5. In the **Username** field, enter the domain account in `DOMAIN\username` or `username@domain` format.
+6. In the **Password** field, enter the account password.
+7. Click **Add account**.
+
 ## Fields
 
 | Field | Description |
 | --- | --- |
 | **Name** | A display name that identifies this service account in Access Analyzer. |
-| **Username** | The domain user account in `DOMAIN\username` format. |
+| **Username** | The domain user account in `DOMAIN\username` or `username@domain` format. |
 | **Password** | The password for the domain account. |
 
 ## Active Directory

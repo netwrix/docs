@@ -1,0 +1,10 @@
+{
+  "label": "Migration from StealthAUDIT / Access Analyzer",
+  "position": 10,
+  "collapsed": false,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "index"
+  }
+}
