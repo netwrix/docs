@@ -773,7 +773,7 @@ export function hasKBContent(productId) {
     '1secure', 'accessanalyzer', 'accessinformationcenter', 'activitymonitor',
     'auditor', 'changetracker', 'dataclassification', 'directorymanager',
     'policypak', 'endpointprotector', 'passwordpolicyenforcer',
-    'passwordreset', 'privilegesecure', 'privilegesecurediscovery',
+    'passwordreset', 'pingcastle', 'privilegesecure', 'privilegesecurediscovery',
     'threatmanager', 'threatprevention'
   ];
   return kbProducts.includes(productId);
