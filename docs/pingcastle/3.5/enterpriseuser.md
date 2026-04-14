@@ -6,9 +6,7 @@ sidebar_position: 3
 ## Description
 
 PingCastle Enterprise is a tool designed to improve and follow the
-Active Directory overall security level. This software has been
-developed to be compatible with most of the possible existing
-configurations. The goal (when the tool was created) wasn't to aim for
+Active Directory overall security level. This software is compatible with most existing configurations. The goal (when the tool was created) wasn't to aim for
 perfection, but to provide reliable data to present the situation to the
 management, thus improving over time.
 
@@ -202,10 +200,7 @@ The product implements three main layers of permission:
 
 ## Page organization
 
-All the pages of the PingCastle Enterprise solution has been designed in
-order to be as clear as possible. It means that, when it is possible,
-the pages follow the same kind of architecture, enabling the users to
-quickly get used to the solution in general.
+All PingCastle Enterprise pages are designed to be as clear as possible. When possible, pages follow the same structure, enabling users to navigate the solution quickly.
 
 For instance, most pages can show \"All data\" available to the user or
 set up a filter to only see a more narrowed down set of data.
@@ -789,7 +784,7 @@ being displayed:
 ![Une image contenant texte Description générée
 automatiquement](/images/pingcastle/enterpriseuser/image52.webp)
 
-pay attention to the next chart. It represents the evolution of
+Review the following chart. It represents the evolution of
 the number of rules per maturity level. Because an action plan has been
 defined, a vertifical line represents today. Everything at the right is
 the projected evolution of the maturity level based on the action items.

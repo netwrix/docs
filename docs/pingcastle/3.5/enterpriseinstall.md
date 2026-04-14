@@ -556,7 +556,7 @@ Restart-WebAppPool -Name "PingCastleEnterprise"
 
 If you want to minimize the permissions granted to the application pool identity, you can create scheduled tasks manually or through scripts, then grant the application pool identity only **start and stop** permissions (not edit permissions).
 
-PingCastle uses a folder named "PingCastle" in the Windows Task Scheduler. The scripts below use the COM API to manage security descriptors, which isn't available through the native PowerShell API.
+PingCastle uses a folder named "PingCastle" in the Windows Task Scheduler. The following scripts use the COM API to manage security descriptors, which isn't available through the native PowerShell API.
 
 #### New-PingCastleHealthCheckScheduledTask Function
 
@@ -1703,7 +1703,7 @@ You can then view the log stream:
 
 ![App Service log stream view](/images/pingcastle/enterpriseinstall/image76.webp)
 
-In the example below, the connectionString wasn't found because Docker doesn't forward it. This must be corrected before the application can start:
+In the following example, the connectionString wasn't found because Docker doesn't forward it. Correct this before the application can start:
 
 ![Connection string error displayed in log stream](/images/pingcastle/enterpriseinstall/image77.webp)
 

@@ -6,8 +6,7 @@ sidebar_position: 5
 ## Description
 
 PingCastle Pro is a tool designed to improve and follow the Active
-Directory overall security level. This software has been developed to be
-compatible with most of the possible existing configurations. The goal
+Directory overall security level. This software is compatible with most existing configurations. The goal
 (when the tool was created) wasn't to aim for perfection, but to
 provide reliable data to present the situation to the management, thus
 improving over time.
@@ -825,8 +824,7 @@ And the message when running on the command line:
 
 ![](/images/pingcastle/proinstall/image62.webp)Solution:
 
-identify the correct version of the framework and install it. Don't
-forget to install the IIS middleware is you are installing on IIS.
+Identify the correct version of the framework and install it. Also install the IIS middleware if you are installing on IIS.
 
 :::note
 The last error was related to the missing KB KB2533623
@@ -834,26 +832,22 @@ The last error was related to the missing KB KB2533623
 
 ## Error at the application startup
 
-When the application is unable to start, the following message are
-shown:
+When the application is unable to start, the following messages appear:
 
 ![C:\Users\Adiant\AppData\Local\Temp\brower_error.webp](/images/pingcastle/proinstall/image63.webp)
 
 ![C:\Users\Adiant\AppData\Local\Temp\event1000.webp](/images/pingcastle/proinstall/image64.webp)
 
-A more detailed message are shown in the event log or directly on the
-command line:
+A more detailed message appears in the event log or directly on the command line:
 
 ![C:\Users\Adiant\AppData\Local\Temp\event1026.webp](/images/pingcastle/proinstall/image65.webp)
 
-In this case, the license was invalid and need to be replaced in the
-file appsettings.Production.json.
+In this case, the license was invalid. Update it in appsettings.Production.json.
 
 ## Accurate permissions on the database
 
 When the database doesn\'t contain the table needed, the application
-tries to create them. If the permissions aren't granted, a message will
-be generated and the application will not be able to start.
+tries to create them. If the permissions aren't granted, an error appears and the application can't start.
 
 ![C:\Users\Adiant\AppData\Local\Temp\sql_auth_error.webp](/images/pingcastle/proinstall/image66.webp)
 
@@ -908,7 +902,7 @@ add `;User ID=sa;Password=pass123`
 3.  This is usually located at: C:\\PingCastlePro
 
 4.  Edit the **Appsettings.json** file so the Logging Section looks like
-    the example below:
+    the following example:
 
 ```json
 "Logging": {

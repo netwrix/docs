@@ -6,8 +6,7 @@ sidebar_position: 7
 ## Description
 
 PingCastle Pro is a tool designed to improve and follow the Active
-Directory overall security level. This software has been developed to be
-compatible with most of the possible existing configurations. The goal
+Directory overall security level. This software is compatible with most existing configurations. The goal
 (when the tool was created) wasn't to aim for perfection, but to
 provide reliable data to present the situation to the management, thus
 improving over time.

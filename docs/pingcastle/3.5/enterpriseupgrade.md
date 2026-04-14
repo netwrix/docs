@@ -38,23 +38,23 @@ requirements for versions.
 
 You have to download the .zip file of the program.
 
-The .msi file has not been designed for upgrade.
+The .msi file does not support upgrades.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseupgrade/rid17.webp)
 
 **Recommended installation on Windows**
 
-If the program was installed through the MSI, the upgrade path is simple. IIS must be stopped.
+If the program was installed through the MSI, the upgrade path is simple. Stop IIS.
 
-All the files installed have to be replaced from the ones from the zip.
+Replace all installed files with the files from the zip.
 
 Untouched files should be configuration files (appsettings.\* and the web.config file)
 
-Then IIS must be started.
+Then start IIS.
 
 **Other installations**
 
-You must upgrade the program files and ensure that the library requirements (dotnet version, ...) are fulfilled.
+You must upgrade the program files and meet the library requirements (dotnet version, ...).
 
 # Post installation
 
