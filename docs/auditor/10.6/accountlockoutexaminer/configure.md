@@ -12,7 +12,7 @@ environment, as described in this section.
 ## System requirements
 
 Make sure that the machine where you plan install the solution meets the system requirements listed
-below.
+below:
 
 **Hardware:**
 
