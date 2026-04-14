@@ -57,7 +57,7 @@ devices.
 - Audio cards
 
 :::note
-Audio Device Control for sound cards is supported only on Windows and applies only to the audio output channel. Audio input channels, whether analog or digital, are not covered.
+Audio Device Control for sound cards is supported only on Windows and applies only to the audio output channel. Audio input channels, whether analog or digital, aren't covered.
 ::: 
 
 Depending on the device type, besides the Allow and Deny Access rights, additional rights are also
@@ -75,7 +75,7 @@ For detailed information on Trusted Device™ and Enforced Encryption, refer to 
 :::note
 With the WiFi – Block if wired network is present option you can disable the WiFi
 connection, while a wired network connection is present. The WiFi connection will be available when
-the wired network is not present.
+the wired network isn't present.
 :::
 
 
@@ -111,7 +111,7 @@ For example; in the below image, you can view the 3 devices detected by Endpoint
 different VID, PID and device code, but they all have the same serial number.
 
 :::note
-The Endpoint Protector Client does not distinguish between USB devices (e.g. USB hard
+The Endpoint Protector Client doesn't distinguish between USB devices (e.g. USB hard
 drive vs USB Webcam) by Device name/VID/PID.
 :::
 
@@ -147,8 +147,8 @@ adding devices:
 ![ Add multiple devices at the same time.](multipledevices.webp)
 
 :::note
-Although this feature can work in situations where the Serial Number range does not follow
-a noticeable pattern, this is not recommended. In this type of situation, some devices will be
+Although this feature can work in situations where the Serial Number range doesn't follow
+a noticeable pattern, this isn't recommended. In this type of situation, some devices will be
 ignored by Endpoint Protector and will not have the expected effect.
 :::
 
