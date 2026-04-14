@@ -20,9 +20,9 @@ tags:
 
 ## Overview
 
-The legacy Netwrix Access Analyzer product organizes target systems as **Hosts** grouped into **Host Lists**. Access Analyzer 26 uses **Sources** organized into **Source Groups**. This article explains how to inventory your legacy host lists and recreate them as source groups and sources in AA26.
+Use this article to inventory the host lists in your legacy Netwrix Access Analyzer installation and recreate them as source groups and sources in Access Analyzer 26.
 
-Before starting this procedure, complete [Migrating Connection Profiles to Service Accounts](./migrate-credentials.md). The source group creation wizard requires a service account, and the account must exist before you create the group.
+Before starting this procedure, complete [Migrating Connection Profiles to Service Accounts](./migrate-credentials.md). The source group creation wizard requires a service account to be present before you can create a group.
 
 ---
 
@@ -64,7 +64,7 @@ Legacy jobs targeting SQL Server, Exchange, Unix, or other systems do not have c
 ## Before you begin
 
 - [ ] All service accounts have been created in AA26 ([Migrating Connection Profiles](./migrate-credentials.md)).
-- [ ] Scanners have been deployed for Active Directory and File Server source groups. See the scanner deployment documentation in the Access Analyzer product docs.
+- [ ] Scanner nodes have been deployed for Active Directory and File Server source groups, or you have confirmed that the Default Scanner (local) meets your scanning needs ([Migrating Proxy Servers to Scanners](./migrate-proxy-servers.md)).
 - [ ] You have a written inventory of host lists and their members (see Step 1).
 - [ ] You have planned which legacy host lists map to which AA26 source groups.
 
@@ -73,120 +73,6 @@ Legacy jobs targeting SQL Server, Exchange, Unix, or other systems do not have c
 ## Step 1 — Inventory legacy host lists
 
 Export a complete inventory of your legacy host lists and hosts before making any changes.
-
-### Option A — Export using PowerShell (recommended)
-
-The following script queries the legacy NAA SQL Server database to export all host lists and their members. Run it on a machine with access to the legacy SQL Server.
-
-```powershell
-<#
-.SYNOPSIS
-    Exports all host lists and their member hosts from the legacy NAA SQL Server database.
-    Use this output to plan source group creation in AA26.
-
-.PARAMETER SqlServer
-    Hostname or IP address of the legacy NAA SQL Server.
-
-.PARAMETER Database
-    Name of the legacy NAA database (default: StealthAUDIT).
-
-.EXAMPLE
-    .\Export-LegacyHostLists.ps1 -SqlServer "sql01.corp.local" -Database "StealthAUDIT"
-#>
-
-param(
-    [Parameter(Mandatory)]
-    [string]$SqlServer,
-
-    [string]$Database = 'StealthAUDIT'
-)
-
-$ErrorActionPreference = 'Stop'
-
-Write-Host "Connecting to $SqlServer\$Database ..." -ForegroundColor Cyan
-
-try {
-    $conn = New-Object System.Data.SqlClient.SqlConnection
-    $conn.ConnectionString = "Server=$SqlServer;Database=$Database;Integrated Security=True;"
-    $conn.Open()
-
-    # CHECKPOINT: Verify host list table names before running.
-    # Run this query first to confirm the table names in your environment:
-    # SELECT name FROM sys.tables WHERE name LIKE '%Host%' ORDER BY name
-    #
-    # Common table names in NAA 11.6 and 12.0:
-    #   SA_HostMaster      - all registered hosts (hostname, OS, IP, domain)
-    #   SA_HostLists       - host list definitions (name, type, description)
-    #   SA_HostListMembers - junction table linking hosts to host lists
-
-    $query = @"
-SELECT
-    hl.HostListName,
-    hl.HostListType,
-    hl.Description        AS ListDescription,
-    h.HostName,
-    h.DNSName,
-    h.IPAddress,
-    h.OperatingSystem,
-    h.Domain,
-    h.OSType
-FROM
-    SA_HostLists       hl
-    JOIN SA_HostListMembers hlm ON hl.HostListID = hlm.HostListID
-    JOIN SA_HostMaster      h   ON hlm.HostID    = h.HostID
-ORDER BY
-    hl.HostListName,
-    h.HostName
-"@
-
-    $cmd    = New-Object System.Data.SqlClient.SqlCommand($query, $conn)
-    $reader = $cmd.ExecuteReader()
-
-    $results = @()
-    while ($reader.Read()) {
-        $results += [PSCustomObject]@{
-            HostListName  = $reader['HostListName']
-            HostListType  = $reader['HostListType']
-            ListDesc      = $reader['ListDescription']
-            HostName      = $reader['HostName']
-            DNSName       = $reader['DNSName']
-            IPAddress     = $reader['IPAddress']
-            OS            = $reader['OperatingSystem']
-            Domain        = $reader['Domain']
-            OSType        = $reader['OSType']
-        }
-    }
-    $reader.Close()
-    $conn.Close()
-
-    Write-Host "Found $($results.Count) host-list entries across $((($results | Select-Object -ExpandProperty HostListName) | Sort-Object -Unique).Count) lists." -ForegroundColor Green
-    $results | Format-Table -AutoSize
-
-    $outputPath = ".\LegacyHostLists_$(Get-Date -Format 'yyyyMMdd_HHmmss').csv"
-    $results | Export-Csv -Path $outputPath -NoTypeInformation
-    Write-Host "`nExported to: $outputPath" -ForegroundColor Green
-
-    Write-Host @"
-
-NEXT STEPS:
-  1. Open the exported CSV.
-  2. For each host list, identify what connector type each host requires (File Server, Active Directory, Entra ID, SharePoint).
-  3. Group hosts by connector type — this determines your AA26 source groups.
-  4. Proceed to Step 2 to create source groups in AA26.
-"@ -ForegroundColor Cyan
-}
-catch {
-    Write-Host "Error: $_" -ForegroundColor Red
-    Write-Host @"
-
-If the query fails with 'Invalid object name', confirm your table names:
-  Run: SELECT name FROM sys.tables WHERE name LIKE '%Host%' ORDER BY name
-Then update the table names in this script accordingly.
-"@ -ForegroundColor Yellow
-}
-```
-
-### Option B — Export manually from the NAA console
 
 1. Open the Netwrix Access Analyzer console.
 2. Navigate to **Host Management** in the left panel.
@@ -220,7 +106,7 @@ Select the connector type that matches the hosts you are migrating. If you have 
 | **Name** | A descriptive name that identifies the source type and scope. Example: `File Servers — East Coast` |
 | **Service Account** | Select the service account you created for this connector type. |
 | **Max Concurrent Scans** | Leave at `1` for initial setup. Increase after validating the first scan. |
-| **Scanner Labels** | For Active Directory and File Server groups, add labels matching your deployed scanners. |
+| **Scanner Labels** | For Active Directory and File Server groups, add the key-value labels that match the scanner nodes you deployed. Leave empty to use the Default Scanner (local scanning from the AA26 server). |
 
 Add sources to the group:
 - For each host in the matching legacy host list, click **Add Source** and enter the hostname or IP address.
@@ -234,167 +120,13 @@ Select the scan types to enable. Configure the scan schedule using a cron expres
 
 Click **Save** to create the source group.
 
----
-
-## Step 3 — Import sources using PowerShell
-
-If you have many hosts to add, the following script reads the CSV exported in Step 1 and creates sources in AA26 via the REST API. Run it source group by source group, after verifying the source group exists in AA26.
-
-```powershell
-<#
-.SYNOPSIS
-    Creates AA26 sources from a legacy host list export CSV for a specified source group.
-    Run this script once per source group, after the group has been created in the AA26 UI.
-
-.PARAMETER AA26BaseUrl
-    Base URL of your AA26 instance. Example: https://aa26.corp.local
-
-.PARAMETER AA26Email
-    Email address of an AA26 administrator account.
-
-.PARAMETER SourceGroupId
-    The UUID of the target source group in AA26.
-    Find this in the AA26 URL when viewing a source group, or via GET /api/v1/source-groups.
-
-.PARAMETER CsvPath
-    Path to the CSV file exported by Export-LegacyHostLists.ps1.
-
-.PARAMETER HostListName
-    Name of the legacy host list to import from the CSV (must match exactly).
-
-.EXAMPLE
-    .\Import-AA26Sources.ps1 `
-        -AA26BaseUrl "https://aa26.corp.local" `
-        -AA26Email "admin@corp.local" `
-        -SourceGroupId "a1b2c3d4-e5f6-7890-abcd-ef1234567890" `
-        -CsvPath ".\LegacyHostLists_20240414.csv" `
-        -HostListName "East Coast File Servers"
-#>
-
-param(
-    [Parameter(Mandatory)] [string]$AA26BaseUrl,
-    [Parameter(Mandatory)] [string]$AA26Email,
-    [Parameter(Mandatory)] [string]$SourceGroupId,
-    [Parameter(Mandatory)] [string]$CsvPath,
-    [Parameter(Mandatory)] [string]$HostListName
-)
-
-$ErrorActionPreference = 'Stop'
-
-# ── AUTHENTICATE ──────────────────────────────────────────────────────────────
-Write-Host "Authenticating to AA26 ..." -ForegroundColor Cyan
-$AA26Password = Read-Host "Enter AA26 password for $AA26Email" -AsSecureString
-$plainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto(
-    [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($AA26Password)
-)
-
-# Submit login form and capture session cookie
-$loginBody = "email=$([Uri]::EscapeDataString($AA26Email))&password=$([Uri]::EscapeDataString($plainPassword))"
-$session   = New-Object Microsoft.PowerShell.Commands.WebRequestSession
-
-try {
-    $loginResponse = Invoke-WebRequest `
-        -Uri            "$AA26BaseUrl/login" `
-        -Method         POST `
-        -Body           $loginBody `
-        -ContentType    'application/x-www-form-urlencoded' `
-        -WebSession     $session `
-        -MaximumRedirection 5
-
-    $plainPassword = $null  # Clear from memory
-
-    if ($session.Cookies.Count -eq 0) {
-        throw "Login may have failed — no session cookie received. Verify credentials and the login endpoint."
-    }
-    Write-Host "Authenticated successfully." -ForegroundColor Green
-}
-catch {
-    Write-Host "Authentication failed: $_" -ForegroundColor Red
-    Write-Host "Verify the AA26 base URL and credentials, then retry." -ForegroundColor Yellow
-    exit 1
-}
-
-# ── LOAD HOST LIST FROM CSV ───────────────────────────────────────────────────
-Write-Host "`nLoading host list '$HostListName' from $CsvPath ..." -ForegroundColor Cyan
-
-$allHosts   = Import-Csv -Path $CsvPath
-$targetList = $allHosts | Where-Object { $_.HostListName -eq $HostListName }
-
-if ($targetList.Count -eq 0) {
-    Write-Host "No hosts found for host list '$HostListName'. Check the HostListName value and retry." -ForegroundColor Red
-    exit 1
-}
-
-Write-Host "Found $($targetList.Count) host(s) in list '$HostListName'." -ForegroundColor Green
-$targetList | Select-Object HostName, DNSName, IPAddress, OS | Format-Table -AutoSize
-
-# CHECKPOINT
-Write-Host "`nReview the host list above." -ForegroundColor Yellow
-$confirm = Read-Host "Proceed with adding these hosts to source group '$SourceGroupId'? (yes/no)"
-if ($confirm -ne 'yes') { Write-Host "Aborted."; exit 0 }
-
-# ── ADD SOURCES TO SOURCE GROUP ───────────────────────────────────────────────
-$created = 0
-$failed  = 0
-$errors  = @()
-
-foreach ($h in $targetList) {
-    $hostName = if ($h.DNSName) { $h.DNSName } else { $h.HostName }
-
-    $sourceBody = @{
-        name                   = $h.HostName
-        source_group_id        = $SourceGroupId
-        connection_parameters  = @{
-            host = $hostName
-        }
-    } | ConvertTo-Json -Depth 5
-
-    try {
-        $response = Invoke-RestMethod `
-            -Uri         "$AA26BaseUrl/api/v1/sources" `
-            -Method      POST `
-            -Body        $sourceBody `
-            -ContentType 'application/json' `
-            -WebSession  $session
-
-        Write-Host "  [OK] Added: $($h.HostName) ($hostName)" -ForegroundColor Green
-        $created++
-    }
-    catch {
-        Write-Host "  [FAIL] $($h.HostName): $_" -ForegroundColor Red
-        $errors += [PSCustomObject]@{ HostName = $h.HostName; Error = $_.ToString() }
-        $failed++
-    }
-}
-
-# ── SUMMARY ───────────────────────────────────────────────────────────────────
-Write-Host "`n── Import Summary ──────────────────────────────────────────────" -ForegroundColor Cyan
-Write-Host "  Created : $created" -ForegroundColor Green
-Write-Host "  Failed  : $failed"  -ForegroundColor $(if ($failed -gt 0) { 'Red' } else { 'Green' })
-
-if ($errors.Count -gt 0) {
-    $errorPath = ".\ImportErrors_$(Get-Date -Format 'yyyyMMdd_HHmmss').csv"
-    $errors | Export-Csv -Path $errorPath -NoTypeInformation
-    Write-Host "`nErrors exported to: $errorPath" -ForegroundColor Yellow
-    Write-Host "Review and resolve errors, then re-run for failed hosts only." -ForegroundColor Yellow
-}
-
-Write-Host @"
-
-NEXT STEPS:
-  1. In AA26, open the source group and verify each source is listed.
-  2. Click Test Connection on each source to validate connectivity.
-  3. Proceed to configure scan schedules: Migrating Job Schedules.
-"@ -ForegroundColor Cyan
-```
-
 :::note
-The `connection_parameters` structure in the API call varies by connector type. The example above shows the minimal format for File Server sources. For Active Directory sources, the parameter is typically `domain` rather than `host`. Review the AA26 API documentation at `<your-aa26-url>/api-docs` for connector-specific parameter schemas.
+Add sources to the group one at a time using the **Add Source** button in the source group UI, or use the AA26 REST API. See [Step 3 — Test connections](#step-3--test-connections) after all sources have been added.
 :::
 
 ---
 
-## Step 4 — Test connections
+## Step 3 — Test connections
 
 After adding sources, verify that AA26 can reach each target:
 
