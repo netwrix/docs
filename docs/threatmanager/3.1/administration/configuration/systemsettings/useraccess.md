@@ -34,7 +34,7 @@ The User Access page includes the following sections:
 
 ## Users & Groups
 
-The Users & Groups section provides the ability to allow or deny console access and configure
+The Users & Groups section lets you allow or deny console access and configure
 authentication types for users and groups.
 
 ![Users and Groups section of the User Access page](/images/threatprevention/7.5/reportingmodule/configuration/systemsettings/usersgroups.webp)
@@ -45,7 +45,7 @@ The table displays the following information:
   which disables console access
 
     :::note
-    Disabling a user or group disables that level of access. It does not block the user or
+    Disabling a user or group disables that level of access. It doesn't block the user or
     group from logging into the console if they have access through another role assignment.
     :::
 
@@ -60,12 +60,12 @@ The table displays the following information:
   Authentication Types Defined topic for additional information.
 - Action – This column has the following icons for conducting actions on the user or group:
 
-    - Edit icon – Opens drop-down menus to edit the columns in the selected row.
+    - Edit icon – Opens dropdown menus to edit the columns in the selected row.
       The edit icon changes to a save icon while in edit mode. See the Edit Console Access topic for
       additional information.
     - Trash icon – Opens a Warning window to confirm the action of deleting the user or group.
       Removing a user or group removes console access for it.. Note that the builtin "ADMIN" account
-      cannot have its access removed until an account besides the builtin "ADMIN" is granted
+      can't have its access removed until an account besides the builtin "ADMIN" is granted
       administrative access to the console.
     - Reset MFA button – Forces the user or every user in the group to reconfigure MFA on the next
       login. This option is only available if an MFA authentication type is applied to the user or
@@ -82,7 +82,7 @@ additional information.
 The following Roles can be assigned to AD users and groups:
 
 - Administrator – This role provides unrestricted access to all functionality
-- Report Administrator – This role can configure/utilize anything on the investigations page
+- Report Administrator – This role can configure/use anything on the investigations page
 
     - No access to Configuration pages
     - No access to the Threat Response page
@@ -111,7 +111,7 @@ The following Roles can be assigned to AD users and groups:
     - No access to Playbooks
     - Unable to trigger Playgroups from Threats
 
-- Report Reviewer – This role can only utilize investigations that have been directly assigned to
+- Report Reviewer – This role can only use investigations that have been directly assigned to
   them
 
     - No access to Configuration pages
@@ -157,10 +157,10 @@ Console Access window opens.
 
 ![Add Console Access window](/images/threatprevention/7.5/reportingmodule/configuration/systemsettings/addconsoleaccess.webp)
 
-**Step 3 –** Begin typing a user or group name in the **User Access** box. The drop-down menu will
+**Step 3 –** Begin typing a user or group name in the **User Access** box. The dropdown menu will
 populate as you type with available options. Select a user or group from the menu.
 
-**Step 4 –** Select an authentication type from the **Authentication Type** drop-down menu.
+**Step 4 –** Select an authentication type from the **Authentication Type** dropdown menu.
 
 :::tip
 Remember, authentication provider profile types are displayed after an integration has been
@@ -168,7 +168,7 @@ configured on the Authentication Provider page of the Integrations interface.
 :::
 
 
-**Step 5 –** Select a role to assign it to the user or group from the **Role** drop-down menu.
+**Step 5 –** Select a role to assign it to the user or group from the **Role** dropdown menu.
 
 **Step 6 –** Click Add. The Add Console Access window closes.
 
@@ -184,9 +184,9 @@ menu. Then select **System Settings** to open the System Settings interface.
 **Step 2 –** On the User Access page of the System Settings interface, click the **Edit** icon for a
 user or group.
 
-![User and Groups section showing the 3 drop-down menus in Edit mode](/images/threatprevention/7.5/reportingmodule/configuration/systemsettings/editaccess.webp)
+![User and Groups section showing the 3 dropdown menus in Edit mode](/images/threatprevention/7.5/reportingmodule/configuration/systemsettings/editaccess.webp)
 
-**Step 3 –** Use the drop-down menus to modify the Access rule type, Role, and/or Authentication
+**Step 3 –** Use the dropdown menus to modify the Access rule type, Role, and/or Authentication
 Type for this user or group.
 
 **Step 4 –** Click the Save icon, which replaced the Edit icon.
@@ -217,7 +217,7 @@ Netwrix Threat Manager updates the built-in ADMIN account password.
 
 ## Settings
 
-The Settings section provides the ability to customize the user login page and configure the token
+The Settings section lets you customize the user login page and configure the token
 expiration time for authenticated users.
 
 ![Settings section of the User Access page](/images/threatmanager/3.0/administration/configuration/systemsettings/settings.webp)
@@ -230,7 +230,7 @@ expiration time for authenticated users.
     - The second page is the multi-factor authentication page
 
 - Token expiration time – The period of inactivity before the user is required to re-authenticate
-  for access to the console. Select the desired expiration time from the drop-down menu:
+  for access to the console. Select the desired expiration time from the dropdown menu:
 
     - 15 Minutes
     - 30 Minutes

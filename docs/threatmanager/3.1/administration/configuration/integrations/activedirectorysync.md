@@ -20,7 +20,7 @@ Directory domains, if any. Each added domain represents a sync policy.
 ![Integrations interface on the Active Directory Sync page](/images/threatmanager/3.0/administration/configuration/integrations/page.webp)
 
 A service named Active Directory Service continuously runs to collect data for the specified
-domain(s). It evaluates the Update Sequence Number (USN) of an object and syncs when the object changes. The table
+domains. It evaluates the Update Sequence Number (USN) of an object and syncs when the object changes. The table
 provides the following information:
 
 - Name – Name of the domain. This may be either the domain DNS name or domain controller hostname.
@@ -58,13 +58,13 @@ Add New Integration window opens.
 
 ![Add New Integration window with Active Directory Sync type selected](/images/threatprevention/7.5/reportingmodule/configuration/integrations/activedirectorysync.webp)
 
-**Step 3 –** In the Type drop-down menu, select Active Directory Sync.
+**Step 3 –** In the Type dropdown menu, select Active Directory Sync.
 
 **Step 4 –** Enter the following information:
 
 - Domain – Enter the domain DNS name or domain controller hostname in the required format of
   [DOMAIN.COM], e.g. NT-DC03.NWXTech.com
-- Credential Profile – Select the Credential Profile by name from the drop-down menu. This was
+- Credential Profile – Select the Credential Profile by name from the dropdown menu. This was
   pre-created in the Credential Profiles page.
 - Enabled / Disabled – Toggle indicates if the policy is enabled to run the sync service. By default
   it is set to Enabled.
@@ -189,7 +189,7 @@ The table provides the following information:
 - Status – Event status for the sync task
 
 By default, the table displays 10 records at a time. However, you can set this to 50,
-100, or 1,000 rows with the drop-down menu above the right corner of the table. There is a search
+100, or 1,000 rows with the dropdown menu above the right corner of the table. There is a search
 box above the left corner of the table. Page navigation buttons are below the table. You can also
 export the data from the current page using the **Export CSV** button.
 
@@ -205,14 +205,14 @@ represented by the domain for which it is created.
 **Step 2 –** The Domain Configuration tab opens, where you can make the desired modification.
 
 :::tip
-Remember, the domain cannot be modified.
+Remember, the domain can't be modified.
 :::
 
 
 ![Active Directory Sync details page for a specific domain showing the Domain Configuration tab](/images/threatmanager/3.0/administration/configuration/integrations/domainconfigurationtab.webp)
 
 **Step 3 –** To modify the Credential Profile, select the Credential Profile by name from the
-drop-down menu. This was pre-created in the Credential Profiles page.
+dropdown menu. This was pre-created in the Credential Profiles page.
 
 :::note
 If you modify the Credential Profile for a domain, click **Test Connection** to ensure

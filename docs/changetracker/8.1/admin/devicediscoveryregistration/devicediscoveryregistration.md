@@ -68,7 +68,7 @@ The system supports discovery and management of the following operating systems:
 
 #### Windows OS Type Detection
 
-Windows operating system detection uses **build numbers** to accurately identify the OS version, as the standard version information is not reliable for Windows Server 2012 R2 and later versions.
+Windows operating system detection uses **build numbers** to accurately identify the OS version, as the standard version information isn't reliable for Windows Server 2012 R2 and later versions.
 
 **Detection Process**:
 
@@ -104,7 +104,7 @@ The system first attempts to use the `lsb_release` command if available:
 
 **Method 2: Release Files**
 
-If LSB is not available, the system examines release files in `/etc/`:
+If LSB isn't available, the system examines release files in `/etc/`:
 
 1. Searches for files matching `/etc/*release` (including symlinks)
 2. Reads and parses these files as key-value pairs
@@ -278,7 +278,7 @@ This fallback approach ensures that devices requiring manual intervention can al
 
 **Behaviour**:
 - When `true`: If a device's OS changes (e.g., after an upgrade), the system automatically moves it back to "Awaiting Registration" and runs the registration process again
-- When `false`: OS changes do not trigger automatic re-registration
+- When `false`: OS changes don't trigger automatic re-registration
 
 **Use Case**: Enable this setting if you want devices to be automatically reassigned to appropriate OS-specific groups after operating system upgrades.
 
@@ -341,7 +341,7 @@ For comprehensive troubleshooting, you may also want to enable DEBUG logging for
 
 ### OS Type Not Correctly Identified
 
-**Impact**: If the agent cannot correctly identify the operating system type, the device registration process will encounter problems because both the registration report and custom registration scripts depend on accurate OS Type information.
+**Impact**: If the agent can't correctly identify the operating system type, the device registration process will encounter problems because both the registration report and custom registration scripts depend on accurate OS Type information.
 
 **Possible Causes**:
 1. **Outdated Agent**: Agent version doesn't recognize newer operating systems

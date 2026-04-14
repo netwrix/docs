@@ -109,7 +109,7 @@ information.
 
     - Access System Configuration > Client Software.
     - Download and deploy Endpoint Protector Client packages for Windows, macOS, and Linux systems.
-    - Utilize MDM software or other deployment tools for efficient agent deployment.
+    - use MDM software or other deployment tools for efficient agent deployment.
 
 See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic for more information.
 
@@ -148,7 +148,7 @@ topic for more information.
 
     - Download Enforced Encryption installer for Windows/macOS.
     - Copy installer to USB root.
-    - Execute installer from USB to setup Enforced Encryption.
+    - Execute installer from USB to set up Enforced Encryption.
 
 - Configuration:
 

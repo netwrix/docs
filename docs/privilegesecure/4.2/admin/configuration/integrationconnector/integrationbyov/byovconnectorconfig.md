@@ -17,7 +17,7 @@ post-session actions, or when you need to use an unmanaged Secret Vault credenti
 ## Set Up an Integration Connector
 
 Begin by setting up an Integration Connector for using Netwrix Privilege Secure as a BYOV Connector.
-Ensure that the account you wish to use for your activity is managed by Privilege Secure or is
+Ensure that the account you want to use for your activity is managed by Privilege Secure or is
 contained within a Secret Vault resource in Privilege Secure.
 
 :::note
@@ -40,14 +40,14 @@ the **Integration Connectors** submenu.
 - Connector Name – Enter a name to uniquely identify the connector
 - Connector Description (Optional) – Enter a brief description to identify the service account
 - Connector Template – A selection of templates for connector configurations. Select **BYOV** from
-  the drop-down list.
+  the dropdown list.
 - API Url – The base URL for the API being used for the vault integration. Ex:
   http://localhost:6500.
 - App ID – The application ID for the vault. Enter **SbPAM**.
 - Client Certificate – The base 64 string from the certificate file being used to authenticate to
   the vault. Leave blank.
 - Advanced – Use this section to override the default behavior of the connector by providing a
-  custom PowerShell script. Click on the **Advanced** section to edit the Checkout Script Block and
+  custom PowerShell script. Click the **Advanced** section to edit the Checkout Script Block and
   the Checkin Script Block or Skip the Certificate Check.
 - Skip Certificate Check – Select the checkbox
 
@@ -185,16 +185,16 @@ Follow the steps to create a manually-managed user.
 
 ![Select a User to manage account](/images/privilegesecure/4.2/accessmanagement/admin/configuration/add/byovmanageuser.webp)
 
-**Step 2 –** Search or scroll to find the user you wish to manage. Once identified, check the box
+**Step 2 –** Search or scroll to find the user you want to manage. Once identified, check the box
 next to the account name.
 
 ![Select Manual manage account](/images/privilegesecure/4.2/accessmanagement/admin/configuration/add/byovmanualmanageaccount.webp)
 
-**Step 3 –** Click on the **Manage** button that becomes available above the list, and select
+**Step 3 –** Click the **Manage** button that becomes available above the list, and select
 **Manual**.
 
 :::note
-Ensure the user is not already managed or added into Privilege Secure.
+Ensure the user isn't already managed or added into Privilege Secure.
 :::
 
 
@@ -214,14 +214,14 @@ account.
 
 ![Managed User Wrench Icon](/images/privilegesecure/4.2/accessmanagement/admin/configuration/add/byovmanageuserwrench.webp)
 
-**Step 2 –** Click on the **Wrench** icon to set the password.
+**Step 2 –** Click the **Wrench** icon to set the password.
 
 ![Set password for the credential window](/images/privilegesecure/4.2/accessmanagement/admin/configuration/add/byovsetpassword.webp)
 
 **Step 3 –** Enter a password to match the AD password, then click **Save**.
 
 :::note
-For versions before Privilege Secure 4.1, [contact Support](https://netwrix.com/en/support/) because the Set Password feature is not available.
+For versions before Privilege Secure 4.1, [contact Support](https://netwrix.com/en/support/) because the Set Password feature isn't available.
 :::
 
 
@@ -247,7 +247,7 @@ Follow the steps to create an activity.
 - Login Account — Displays the account used to log onto the resource. Select **Vault** from the drop
   down menu.
 - Activity Type — Controls the type of actions for the activity. Select **Interactive** from the
-  drop down menu.
+  dropdown menu.
 - Vault Connector — Displays a list of previously configured vault connectors. Select the vault
   connector created from the steps above.
 

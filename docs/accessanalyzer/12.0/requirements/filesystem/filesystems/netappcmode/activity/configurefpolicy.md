@@ -13,7 +13,7 @@ There are two ways to configure FPolicy:
 
 - Activity Monitor agent can facilitate the
   [Automatic Configuration of FPolicy](#automatic-configuration-of-fpolicy) for the monitored SVM
-  using the ONTAP API. This mode is simple, but does not allow you to exclude certain volumes or
+  using the ONTAP API. This mode is simple, but doesn't allow you to exclude certain volumes or
   shares of the SVM from being monitored. It also requires additional permissions to create and
   modify FPolicy.
 - Another option is to [Manually Configure FPolicy](#manually-configure-fpolicy) for each SVM. This
@@ -117,7 +117,7 @@ dedicated volume for each SVM as a staging buffer before events are sent to the 
 
 Persistent Store requires the following parameters:
 
-- Volume name – If the volume does not exist, it will be created automatically (recommended).
+- Volume name – If the volume doesn't exist, it will be created automatically (recommended).
 - Initial volume size – Specifies the starting size of the volume.
 - Autosize mode – Options include Off, Grow, or Grow/Shrink.
 
@@ -141,7 +141,7 @@ To check that the SVM has assigned local tiers, use the following command:
 
 **vserver show -vserver [SVM_NAME] -fields aggr-list**
 
-The command shows currently local tiers. If no tiers are assigned, "-" is displayed.
+The command shows local tiers. If no tiers are assigned, "-" is displayed.
 
 To assign local tiers to the SVM use the following command:
 
@@ -161,7 +161,7 @@ the directory structure, and protects it from accidental deletion by marking it 
 
 If you choose to create the volume manually, ensure the following:
 
-- The volume is not mounted and has no junction point.
+- The volume isn't mounted and has no junction point.
 - The snapshot policy for the volume is set to none.
 
 For additional and up-to-date recommendations on volumes for the Persistent Store, refer to the
@@ -185,7 +185,7 @@ each part of this list:
 
 - Part 3: Create FPolicy Events
 
-    - An FPolicy event defines which protocol(s) to monitor and which file access events to monitor.
+    - An FPolicy event defines which protocols to monitor and which file access events to monitor.
 
 - Part 4: Create Persistent Store (only if Persistent Store is used. RECOMMENDED)
 
@@ -531,7 +531,7 @@ IMPORTANT:
 
     - `volume` – The name of the volume used for event storage.
 
-        - If the volume does not exist, it will be automatically created on an assigned local tier.
+        - If the volume doesn't exist, it will be automatically created on an assigned local tier.
           This is recommended.
 
     - `size` – The initial size of the volume. The format is `<integer>[KB|MB|GB]`.
@@ -691,10 +691,10 @@ with an asterisk (\*).
 IMPORTANT:
 
 - The SVM used must be the SVM hosting the CIFS or NFS shares to be monitored.
-- It is not necessary to specify both volumes and shares. One or the other is sufficient.
+- It isn't necessary to specify both volumes and shares. One or the other is sufficient.
 - If you want to monitor everything, set the "`volumes-to-include`" value to "`*`".
 
-Use the following command to create the FPolicy scope by specifying volume(s):
+Use the following command to create the FPolicy scope by specifying volumes:
 
 ```
 vserver fpolicy policy scope create -vserver [SVM_NAME] -policy-name StealthAUDIT -volumes-to-include [VOLUME_NAME],[VOLUME_NAME]
@@ -706,7 +706,7 @@ Example:
 vserver fpolicy policy scope create -vserver testserver -policy-name StealthAUDIT -volumes-to-include samplevolume1,samplevolume2
 ```
 
-Use the following command to create the FPolicy scope by specifying share(s):
+Use the following command to create the FPolicy scope by specifying shares:
 
 ```
 vserver fpolicy policy scope create -vserver [SVM_NAME] -policy-name StealthAUDIT -shares-to-include [SHARE_NAME],[SHARE_NAME]
@@ -876,7 +876,7 @@ Starting ONTAP 9.15.1 and later versions, it is recommended to enable the Persis
 that stores events on disk before they are sent to the Activity Monitor Agent. This reduces
 client-side latency and increases resilience during network delays or bursts of activity. To enable
 the Persistent Store, specify a volume name and size on the Persistent Store tab of the FPolicy page
-in the monitored host properties. The volume will be automatically created if it does not already
+in the monitored host properties. The volume will be automatically created if it doesn't already
 exist. See the [Persistent Store](#persistent-store) topic for additional information on the
 recommended volume size.
 
