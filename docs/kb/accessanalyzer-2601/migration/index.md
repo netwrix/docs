@@ -25,7 +25,7 @@ This section covers migrating credentials, target servers, and job schedules fro
 
 ## In this section
 
-| Article | Use this article to... |
+| Article | Description |
 | --- | --- |
 | [Migrating Connection Profiles to Service Accounts](./migrate-credentials.md) | Inventory legacy connection profiles and recreate them as service accounts in AA26. |
 | [Migrating Proxy Servers to Scanners](./migrate-proxy-servers.md) | Replace legacy Windows proxy servers with Linux-based AA26 scanner nodes for File Server and Active Directory scanning. |
@@ -39,7 +39,7 @@ This section covers migrating credentials, target servers, and job schedules fro
 
 ## Concept mapping
 
-Each legacy concept maps directly to an AA26 equivalent. Use this table as a reference throughout the migration.
+Each legacy concept maps directly to an AA26 equivalent. Refer to this table throughout the migration.
 
 | Legacy Concept | AA26 Equivalent | Key Difference |
 | --- | --- | --- |

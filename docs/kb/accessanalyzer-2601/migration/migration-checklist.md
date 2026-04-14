@@ -16,15 +16,11 @@ tags:
 
 # Migration Checklist
 
-Use this checklist to plan and track an AA26 deployment. It covers one scope of adoption — a connector type, a site, a set of hosts, or a full environment. If you're adopting AA26 incrementally, complete a separate instance of this checklist for each scope.
+Complete each section before moving to the next.
 
-Both AA26 and the legacy product can run simultaneously. There is no requirement to decommission or fully migrate anything as part of this process.
-
-**Customer:** _____________________________ &nbsp;&nbsp; **Date:** _____________________________
+**Customer:** _____________________________ &nbsp;&nbsp; **Migration date:** _____________________________
 
 **Engineer:** _____________________________ &nbsp;&nbsp; **AA26 version:** _____________________________
-
-**Scope of this deployment:** _____________________________
 
 ---
 
@@ -129,10 +125,9 @@ For each source group, run an initial access scan manually before enabling the s
 
 ### Legacy system
 
-- [ ] Decision made on whether to stop legacy jobs for sources now covered by AA26 *(optional — both systems can run simultaneously)*.
-- [ ] If legacy jobs for in-scope sources are being stopped: jobs have been disabled and the date recorded.
-- [ ] Read-only SQL Server access confirmed for authorized users (compliance, legal, analysts) who need historical records.
-- [ ] Coverage boundary documented per source: _________________________ (date AA26 began collecting for each in-scope source).
+- [ ] Legacy NAA jobs for migrated sources stopped or disabled to prevent duplicate collection.
+- [ ] Read-only SQL Server access confirmed for authorized users (compliance, legal, analysts).
+- [ ] Coverage start date documented for each migrated source: _________________________.
 - [ ] Compliance and legal teams notified of which system holds records for which sources and time periods.
 
 ### AA26 system

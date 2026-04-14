@@ -21,7 +21,7 @@ tags:
 
 ## Overview
 
-Use this article to map the data collector settings from your legacy Netwrix Access Analyzer jobs to scan parameters in Access Analyzer 26. Scans in AA26 replace the legacy job/data collector model. Each source has one scan per scan type, and scan parameters are configured directly on the scan rather than in a job wizard.
+Scans in AA26 replace the legacy job/data collector model. Each source has one scan per scan type, and scan parameters are configured directly on the scan rather than in a job wizard. The tables and procedures below map each legacy data collector setting to its AA26 equivalent by connector type.
 
 Before starting this procedure, complete [Migrating Target Servers and Host Lists to Source Groups](./migrate-target-servers.md). Scans exist within source groups and are associated with specific sources.
 
@@ -29,7 +29,7 @@ Before starting this procedure, complete [Migrating Target Servers and Host List
 
 ## Data collector to scan type mapping
 
-Each legacy data collector maps to a specific AA26 scan type. Use this table to identify which scans to configure for each source.
+Each legacy data collector maps to a specific AA26 scan type:
 
 | Legacy Data Collector | AA26 Scan Type | Notes |
 | --- | --- | --- |

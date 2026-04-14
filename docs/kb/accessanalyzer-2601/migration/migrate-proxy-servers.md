@@ -21,7 +21,9 @@ tags:
 
 ## Overview
 
-Use this article to replace legacy Netwrix Access Analyzer proxy servers with scanner nodes in Access Analyzer 26. Scanners perform distributed scanning for File Server and Active Directory source groups. If your legacy environment used proxy servers to scan file servers close to their network location, you must deploy equivalent scanner nodes in AA26 before your File Server and Active Directory source groups can run.
+Scanner nodes in Access Analyzer 26 replace legacy Windows proxy servers for distributed File Server and Active Directory scanning. If your legacy environment used proxy servers to scan hosts close to their network location, deploy equivalent scanner nodes in AA26 so scans run in the same distributed fashion.
+
+Without dedicated scanner nodes, File Server and Active Directory source groups use the Default Scanner, which runs scans from the central AA26 server. This works for small or centralized environments but isn't optimized for distributed deployments where proximity to the target matters.
 
 :::note
 Entra ID and SharePoint Online source groups do not use scanners. Those connectors connect directly from the AA26 service. Only File Server and Active Directory source groups require scanner deployment.

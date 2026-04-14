@@ -21,7 +21,7 @@ tags:
 
 ## Overview
 
-Use this article to inventory the connection profiles in your legacy Netwrix Access Analyzer installation and recreate them as service accounts in Access Analyzer 26. Service accounts in AA26 replace connection profiles and serve the same purpose: storing the credentials that scanners use to connect to data sources.
+Service accounts in AA26 replace legacy connection profiles and serve the same purpose: storing the credentials that scanners use to connect to data sources. Complete this inventory and recreation process before creating source groups.
 
 Complete this procedure before creating source groups. The source group creation wizard requires a service account to be present before you can create a group.
 

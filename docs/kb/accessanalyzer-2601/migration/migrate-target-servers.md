@@ -20,7 +20,7 @@ tags:
 
 ## Overview
 
-Use this article to inventory the host lists in your legacy Netwrix Access Analyzer installation and recreate them as source groups and sources in Access Analyzer 26.
+This procedure covers inventorying the host lists in your legacy Netwrix Access Analyzer installation and recreating them as source groups and sources in Access Analyzer 26.
 
 Before starting this procedure, complete [Migrating Connection Profiles to Service Accounts](./migrate-credentials.md). The source group creation wizard requires a service account to be present before you can create a group.
 
