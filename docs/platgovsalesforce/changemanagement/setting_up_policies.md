@@ -125,7 +125,7 @@ rule.
 
 ![Uncategorized Changes](/images/platgovsalesforce/change_management/policy_new12.webp)
 
-This is the change control level to be applied to any objects not included in the other categories
+This change control level applies to any objects not included in the other categories
 
 ### Management Policies
 
@@ -201,4 +201,4 @@ available on the **Related** tab on the policy.
 5. Click the right arrow to add selections to the **Selected Salesforce Type List**. Click the left
    arrow to remove items from the selected list.
 6. Click **Save** when complete. A confirmation dialog appears. Click **OK** to confirm you
-   want to add all of the customizations from the selected Salesforce types.
+   want to add all the customizations from the selected Salesforce types.
