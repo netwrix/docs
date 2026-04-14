@@ -57,7 +57,7 @@ Set the required Change Level for each Metadata Type. The form shows the default
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Log Changes Only                    | Since the scanner automatically logs all changes, this change level requires no actions for compliance. The scanner automatically marks any changes to these components as compliant.        |
 | Change Request                      | Any changes to these components require an Approved Change Request.                                                                                                                        |
-| Sandbox Development & Testing       | Any changes to these components require an Approved Change Request in the Stage Development Project. It also requires that a parent Change Request is attached to the Development Project. |
+| Sandbox Development & Testing       | Any changes to these components require an Approved Change Request in the Stage Development Project. It also requires that you attach a parent Change Request to the Development Project. |
 | Full Software Development Lifecycle | Any changes to these components require an Approved Change Request in the Stage Deployment Record or Rollback Record.                                                                                                                        |
 
 ### Code and Data Model Changes
