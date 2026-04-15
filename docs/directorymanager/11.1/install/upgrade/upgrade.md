@@ -8,8 +8,6 @@ sidebar_position: 10
 
 The topic guides you to upgrade to Directory Manager 11.1 from Directory Manager 10.
 
-Follow the steps to upgrade.
-
 Step 1 – To launch the Upgrade wizard, click **Next** on the GroupID Successfully Configured page of
 the Configuration Tool.
 
@@ -91,7 +89,7 @@ can choose to upgrade all or selective data of the previous version. Options are
     :::
 
 
-    If you want to upgrade configurations, history and all groups using the Directory Manager
+    If you want to upgrade configurations, history, and all groups using the Directory Manager
     Upgrade wizard , then you must select the Configurations, History, and Groups checkboxes.
 
 Step 5 – Click **Next**.
