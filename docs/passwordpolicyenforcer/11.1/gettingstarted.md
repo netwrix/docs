@@ -43,11 +43,11 @@ Create the **Compromised Passwords Base** prior to enabling the Compromised Pass
 
 **Domain Controller**
 
-**PPE.DLL** if this file does not load, the password policy is not enforced.
+**PPE.DLL** if this file doesn't load, the password policy isn't enforced.
 
 **Clients**
 
-**PPEClt.DLL** if this file does not load, the client does not run.
+**PPEClt.DLL** if this file doesn't load, the client doesn't run.
 
 ## Next Steps
 
