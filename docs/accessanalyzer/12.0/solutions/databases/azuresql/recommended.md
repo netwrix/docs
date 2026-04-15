@@ -33,7 +33,6 @@ schedule it.
     profiles to accommodate multiple credentials.
     :::
 
-- Define and validate connection information in the Connection screen
 - [0-AzureSQL_InstanceDiscovery Job](/docs/accessanalyzer/12.0/solutions/databases/azuresql/collection-azuresql/0-azuresql_instancediscovery.md) run
   successfully
 
@@ -56,8 +55,8 @@ topic for additional information.
 The Connection Profile should be assigned under the **Databases** > 0.Collection > Azure SQL >
 Settings > Connection node. By default, the connection node uses the Default Profile configured at
 the global settings level. However, since this may not be the Connection Profile with the necessary
-permissions for the assigned hosts, click the radio button for the Select one of the following user
-defined profiles option and select the appropriate Connection Profile drop-down menu.
+permissions for the assigned hosts, click the radio button for the S**elect one of the following user
+defined profiles** option and select the appropriate Connection Profile drop-down menu.
 
 See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.
