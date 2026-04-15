@@ -1,6 +1,6 @@
 {
-  "label": "Microsoft SQL Server Solution",
-  "position": 70,
+  "label": "Azure SQL Solution",
+  "position": 75,
   "collapsed": true,
   "collapsible": true,
   "link": {
