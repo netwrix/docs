@@ -166,7 +166,7 @@ Analyzer.
 secret**.
 
 **Step 6 –** Enter a unique identifier in the Description field of the Add a client secret window.
-Select a Expiration time frame from the drop down. Click **Add** when finished.
+Select a Expiration time frame from the dropdown. Click **Add** when finished.
 
 :::tip
 Remember, you will have to update the Access Analyzer Connection Profile once the expiration time
@@ -189,25 +189,25 @@ Follow the steps below to add a role assignment to the custom role and newly reg
 Analyzer Azure SQL application.
 
 **Step 1 –** Navigate to the Subscriptions blade and click the **Access Control (IAM)** option.
-Click the **Add** drop down > Click **Add role assignment**.
+Click the **Add** dropdown > Click **Add role assignment**.
 
 ![Azure SQL - Add a Role Assignment](/images/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_13z.webp)
 
-**Step 2 –** Search for and click the recently created custom role from the Role drop down. See
+**Step 2 –** Search for and click the recently created custom role from the Role dropdown. See
 [Create a StealthAUDIT Custom Role](#create-a-stealthaudit-custom-role) for steps required to create
 a custom role in the Azure portal.
 
 **Step 3 –** Search for and select the recently registered Azure SQL application from the Select
-drop down. See [Register an Azure SQL Application](#register-an-azure-sql-application) for steps
+dropdown. See [Register an Azure SQL Application](#register-an-azure-sql-application) for steps
 required to register an Azure SQL application in the Azure portal. The registered application will
 be visible in the Selected members window. Click **Save** when finished.
 
 ![Azure SQL - Add a role assignment window](/images/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_14z.webp)
 
-**Step 4 –** Search for and select the SQL Server Contributor role in the Role drop down.
+**Step 4 –** Search for and select the SQL Server Contributor role in the Role dropdown.
 
 **Step 5 –** Search for and select the recently registered Azure SQL application from the Select
-drop down. See [Register an Azure SQL Application](#register-an-azure-sql-application) for steps
+dropdown. See [Register an Azure SQL Application](#register-an-azure-sql-application) for steps
 required to register an Azure SQL application in the Azure portal. The registered application will
 be visible in the Selected members window. Click **Save** when finished.
 
@@ -216,7 +216,7 @@ be visible in the Selected members window. Click **Save** when finished.
 **Step 6 –** Navigate to the **Subscriptions** blade. Click **Access Control (IAM)**.
 
 **Step 7 –** Click the **Check access** menu tab Search for and select the recently registered Azure
-SQL application from the drop down. See
+SQL application from the dropdown. See
 [Register an Azure SQL Application](#register-an-azure-sql-application) for steps required to
 register an Azure SQL application in the Azure portal. A preview window will appear on the
 right-hand side of the window.

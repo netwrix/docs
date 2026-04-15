@@ -6,7 +6,7 @@ sidebar_position: 75
 
 # Target Azure SQL Requirements, Permissions, and Ports
 
-The Access Analyzer for Databases Solution provides the ability to audit and monitor Azure SQL
+The Access Analyzer for Databases Solution lets you audit and monitor Azure SQL
 database environments to collect permissions, sensitive data, and activity events. It scans:
 
 - Azure SQL

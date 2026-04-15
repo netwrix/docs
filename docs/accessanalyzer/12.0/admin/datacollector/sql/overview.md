@@ -85,7 +85,7 @@ For SQL:
 
     - Read access to SQL instance
     - Requires SQL Full-Text and Semantic Extractions for Search feature to be installed on the
-      target SQL instance(s) when using the **Scan full rows for sensitive data** option on the
+      target SQL instances when using the **Scan full rows for sensitive data** option on the
       Options wizard page
     - Grant Authenticate Server to [DOMAIN\USER]
     - Grant Connect SQL to [DOMAIN\USER]

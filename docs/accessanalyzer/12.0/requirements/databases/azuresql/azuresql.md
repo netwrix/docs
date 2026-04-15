@@ -15,7 +15,7 @@ Microsoft Knowledge Base article for additional information.
 :::info
 It is recommended to create a new user when leveraging a least privilege access
 model to access the AzureSQL database because the user must exist in the master database and all
-target database(s). A least privilege access model is one that uses the bare minimum privileges
+target databases. A least privilege access model is one that uses the bare minimum privileges
 required to carry out collections for the AzureSQL data collector.
 :::
 
@@ -24,10 +24,10 @@ The following role and permission are required for the Least Privilege Model:
 
 - db_datareader role
 - View Database Performance State permission
-- Control permission on target database(s)
+- Control permission on target databases
 
     :::note
-    Control permission must be granted on any database you wish to collect data for.
+    Control permission must be granted on any database you want to collect data for.
     :::
 
 
