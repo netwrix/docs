@@ -32,4 +32,4 @@ preconfigured for this job.
 
 The default analysis task is:
 
-- AIC Import – Activity — Imports Azure SQL Activity to the AIC
+- AIC Import – Activity — Imports Azure SQL Activity to the Access Information Center (AIC)

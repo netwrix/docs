@@ -80,7 +80,7 @@ preconfigured for this job.
 
 The default analysis tasks are:
 
-- AIC Import – Hosts — Imports SQL Hosts to the AIC
+- AIC Import – Hosts — Imports SQL Hosts to the Access Information Center (AIC)
 - AIC Import – Instance Permissions Node — Imports a node for instance permission for each instance
 - AIC Import – Databases — Imports each database in the SQL instances
 - AIC Import – Permissions — Imports SQL Permission to the AIC

@@ -40,10 +40,9 @@ These are dependent upon the size of the target environment:
 | Disk Space  | 460 GB               | 280 GB                   | 160 GB                | 80 GB                |
 
 :::note
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the
-minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per host.For
-example, if the job is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are
-required (8x2=16).
+If running Sensitive Data Discovery (SDD) scans, you must increase the minimum amount of RAM. Each
+thread requires a minimum of 2 additional GB of RAM per host. For example, a job configured to scan
+8 hosts at a time requires an extra 16 GB of RAM (8x2=16).
 :::
 
 

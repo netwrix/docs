@@ -34,4 +34,4 @@ The default analysis tasks are:
 
 - Azure SQL SSD Matches View — Brings the Azure SQL SSD Matches View to the SA console
 - Azure SQL SSD Match Hits View — Brings the Azure SQL SSD Match Hits View to the SA Console
-- AIC Impot SSD — Imports Azure SQL SSD to the AIC
+- AIC Impot SSD — Imports Azure SQL SSD to the Access Information Center (AIC)

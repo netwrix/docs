@@ -15,7 +15,7 @@ solution use this information for further analysis and to produce respective rep
 The jobs in 0.Collection Jobs Group are:
 
 - 0-AzureSQL_InstanceDiscovery Job — Enumerates a list of Azure SQL Server Instances from target
-  endpoints and populates the necessary instance connection information which is used throughout the
+  endpoints and populates the necessary instance connection information for use throughout the
   solution set
 - [1-AzureSQL_PermissionScan Job](/docs/accessanalyzer/12.0/solutions/databases/azuresql/collection-azuresql/1-azuresql_permissionscan.md) — Collects Azure SQL database level
   permissions from all targeted Azure SQL database servers

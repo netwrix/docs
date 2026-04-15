@@ -20,7 +20,7 @@ Within Access Analyzer for Azure SQL, roles are created specifically to target A
 - Managed Instances
 - Elastic Pools
 
-Role can be largely defined by the scope that particular role possesses. A scope-defined role has
+The scope of a particular role largely defines that role. A scope-defined role has
 access to, or is limited to all resources in a Management Group, Subscription, Resource Group or
 Resource. For example, if all SQL databases reside within a resource group, then the scope can be
 restricted to that resource group. If databases reside in different resource groups, then the scope
@@ -30,7 +30,7 @@ This will enable Access Analyzer to discover all the SQL databases present in th
 
 ## Create a StealthAUDIT Custom Role
 
-Follow the steps below to create an Azure SQL custom role at the subscription level.
+Follow these steps to create an Azure SQL custom role at the subscription level.
 
 ![Azure Portal - Azure Services](/images/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_1.webp)
 
@@ -45,7 +45,7 @@ subscriptions in the left-hand menu.
 **Step 3 –** Click **Add** > Add **Custom Role**.
 
 **Step 4 –** Create a JSON file using the subscription ID provided by Microsoft Azure (see the
-example below) and save it to a local directory.
+following example) and save it to a local directory.
 
 ```json
 {
@@ -112,8 +112,8 @@ example below) and save it to a local directory.
 
 ![Azure SQL Configuration - Create a Custom Role section](/images/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_3.webp)
 
-**Step 5 –** Once created, click **Start from JSON** in the Azure portal and select the JSON file.
-Once that file is chosen, the Review + Create button should be enabled.
+**Step 5 –** After creating the JSON file, click **Start from JSON** in the Azure portal and select
+it. Selecting that file enables the Review + Create button.
 
 Click **Review + Create** to create the role or click **Next** to review and edit the permissions.
 When the JSON file is opened, the Custom Role Name and Description boxes will be populated
@@ -136,7 +136,7 @@ the role to be made available to the resources.
 
 ## Register an Azure SQL Application
 
-Follow the steps below to create an Azure SQL Application Registration in the Azure portal.
+Follow these steps to create an Azure SQL Application Registration in the Azure portal.
 
 **Step 1 –** In the Azure portal under Azure Services, click the **App Registration** icon.
 
@@ -168,15 +168,15 @@ secret**.
 Select a Expiration time frame from the dropdown. Click **Add** when finished.
 
 :::tip
-Remember, you will have to update the Access Analyzer Connection Profile after the expiration time
-frame is reached (within 24 months, for example).
+Remember to update the Access Analyzer Connection Profile after the expiration time frame ends
+(within 24 months, for example).
 :::
 
 
 **Step 7 –** Make note of the key under the Value column.
 
 :::note
-The Value key on this paged will be used to create the Access Analyzer connection profile.
+Use the Value key on this page to create the Access Analyzer connection profile.
 :::
 
 
@@ -184,8 +184,8 @@ The Value key on this paged will be used to create the Access Analyzer connectio
 
 ## Add a Role Assignment
 
-Follow the steps below to add a role assignment to the custom role and newly registered Access
-Analyzer Azure SQL application.
+Follow these steps to add a role assignment to the custom role and newly registered Access Analyzer
+Azure SQL application.
 
 **Step 1 –** Navigate to the Subscriptions blade and click the **Access Control (IAM)** option.
 Click the **Add** dropdown > Click **Add role assignment**.
