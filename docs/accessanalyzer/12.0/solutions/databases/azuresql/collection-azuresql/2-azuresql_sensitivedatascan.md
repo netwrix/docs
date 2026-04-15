@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # 2-AzureSQL_SensitiveDataScan Job
 
-The 2-AzureSQL_SensitiveDataScan Job is designed to discover sensitive data in the Azure SQL
-instances and databases based on pre-defined or user-defined search criteria.
+The 2-AzureSQL_SensitiveDataScan Job discovers sensitive data in Azure SQL instances and databases
+based on pre-defined or user-defined search criteria.
 
 ## Queries for the 2–AzureSQL_SensitiveDataScan Job
 

@@ -11,10 +11,10 @@ Group.
 
 ## Azure SQL 0.Collection Job Group
 
-The Azure SQL Solution has been configured to inherit down from the Azure SQL > Settings node.
-However, it is best practice to assign the host list and the Connection Profile at the data
-collection level, the 0.Collection Job Group. Once these are assigned to the job group, it can be
-run directly or scheduled.
+The Azure SQL Solution inherits settings from the Azure SQL > Settings node. However, it is best
+practice to assign the host list and the Connection Profile at the data collection level, the
+0.Collection Job Group. Once you assign these to the job group, you can run it directly or
+schedule it.
 
 **Dependencies**
 
@@ -52,9 +52,8 @@ Profile containing the credentials for the targeted environment. See the
 [SQL Custom Connection Profile & Default Dynamic Host List](/docs/accessanalyzer/12.0/admin/datacollector/sql/configurejob.md)
 topic for additional information.
 
-The Connection Profile should be assigned under the **Databases** > 0.Collection > Azure SQL >
-Settings > Connection node. It is set to Use the Default Profile, as configured at the global
-settings level. However, since this may not be the Connection Profile with the necessary permissions
+Assign the Connection Profile under the **Databases** > 0.Collection > Azure SQL > Settings >
+Connection node. It is set to Use the Default Profile, as configured at the global settings level. However, since this may not be the Connection Profile with the necessary permissions
 for the assigned hosts, click the radio button for **Select one of the following user-defined profiles**
 and select the appropriate Connection Profile from the dropdown menu.
 
@@ -70,8 +69,8 @@ daily.
 
 **Run Order**
 
-The 0.Collection Jobs must be run first and in order. The other Azure SQL Solution sub-job groups
-can be run in any order, together, or individually, after running the 0.Collection Job Group.
+Run the 0.Collection Jobs first and in order. You can run the other Azure SQL Solution sub-job
+groups in any order, together, or individually, after running the 0.Collection Job Group.
 
 :::info
 Run the solution at the top level.

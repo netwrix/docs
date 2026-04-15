@@ -12,10 +12,9 @@ Group.
 
 ## SQL Solution 0.Collection Job Group
 
-The SQL Solution has been configured to inherit down from the SQL > Settings node. However, it is
-best practice to assign the host list and the Connection Profile at the data collection level, the
-0.Collection Job Group. Once these are assigned to the job group, it can be run directly or
-scheduled.
+The SQL Solution inherits settings from the SQL > Settings node. However, it is best practice to
+assign the host list and the Connection Profile at the data collection level, the 0.Collection Job
+Group. Once you assign these to the job group, you can run it directly or schedule it.
 
 **Dependencies**
 
@@ -35,9 +34,9 @@ scheduled.
     - [Privileged Accounts Job Group](/docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/overview.md)
 
 Some of the 0.Collection Job Group queries can be scoped to target specific databases/instances.
-However, it is necessary for the SA_SQL_Instances table to be populated before attempting to scope
-the queries. Therefore, the [0-SQL_InstanceDiscovery Job](/docs/accessanalyzer/12.0/solutions/databases/sql/collection/0-sql_instancediscovery.md)
-must be manually executed before attempting to scope the 0.Collection Job Group queries.
+However, you must populate the SA_SQL_Instances table before scoping the queries. Therefore, run
+the [0-SQL_InstanceDiscovery Job](/docs/accessanalyzer/12.0/solutions/databases/sql/collection/0-sql_instancediscovery.md)
+manually before scoping the 0.Collection Job Group queries.
 
 **Targeted Hosts**
 
@@ -56,12 +55,12 @@ The 0.Collection Job Group has been set to run against the following default dyn
 
 The SQL Data Collector requires a specific set of permissions. See the Permissions section for
 necessary permissions. The account used can be either an Active Directory account or a SQL account.
-After the account has been provisioned, create a custom Connection Profile containing the credentials
-for the targeted environment. See the
+After provisioning the account, create a custom Connection Profile containing the credentials for
+the targeted environment. See the
 [SQL Custom Connection Profile & Default Dynamic Host List](/docs/accessanalyzer/12.0/admin/datacollector/sql/configurejob.md)
 topic for additional information.
 
-The Connection Profile should be assigned under the SQL > 0.Collection > Settings > Connection node.
+Assign the Connection Profile under the SQL > 0.Collection > Settings > Connection node.
 It is set to Use the Default Profile, as configured at the global settings level. However, since
 this may not be the Connection Profile with the necessary permissions for the assigned hosts, click
 the radio button for the Select one of the following user defined profiles option and select the
@@ -79,8 +78,8 @@ daily.
 
 **Run Order**
 
-The 0.Collection Jobs must be run first and in order. The other SQL Solution sub-job groups can be
-run in any order, together, or individually, after running the 0.Collection Job Group.
+Run the 0.Collection Jobs first and in order. You can run the other SQL Solution sub-job groups in
+any order, together, or individually, after running the 0.Collection Job Group.
 
 :::info
 Run the solution at the top level.

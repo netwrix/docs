@@ -7,8 +7,8 @@ sidebar_position: 20
 # 0.Collection > Azure SQL Job Group
 
 The 0.Collection Job Group, located at **Databases** > **0.Collection** > **AzureSQL** collects
-high–level summary information from targeted Azure SQL Instances. This information is used by other
-jobs in the Azure SQL solution further analysis and for producing respective reports.
+high–level summary information from targeted Azure SQL Instances. The other jobs in the Azure SQL
+solution use this information for further analysis and to produce respective reports.
 
 ![0.Collection Job Group - Azure SQL](/images/accessanalyzer/12.0/solutions/databases/azuresql/collection/collectionjobmenu.webp)
 

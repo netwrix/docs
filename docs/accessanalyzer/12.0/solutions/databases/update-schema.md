@@ -31,9 +31,9 @@ The following query is selected by default:
     Creates or updates storage database tables used by databases data collectors.
 
 When this query runs, it applies a series of versioned SQL patches to the Access Analyzer storage
-database (not the target database servers being scanned). Each patch is recorded in the
-`SA_SQL_Patches` table so that patches are only applied once; patches are skipped on subsequent
-runs if they have already been applied.
+database (not the target database servers being scanned). The job records each patch in the
+`SA_SQL_Patches` table so that each patch runs only once; the job skips already-applied patches on
+subsequent runs.
 
 The shared patches applied by this job create the following objects in the storage database:
 

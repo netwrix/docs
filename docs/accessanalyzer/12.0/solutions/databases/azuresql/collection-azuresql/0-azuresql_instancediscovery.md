@@ -6,9 +6,8 @@ sidebar_position: 10
 
 # 0-AzureSQL_InstanceDiscovery Job
 
-The Azure SQL Instance Discovery job is responsible for enumerating a list of Azure SQL Server
-Instances from target endpoints and populating the necessary instance connection information which
-will be used throughout the solution set.
+The Azure SQL Instance Discovery job enumerates Azure SQL Server Instances from target endpoints
+and populates the necessary instance connection information used throughout the solution set.
 
 ## Queries for the 0-AzureSQL_InstanceDiscovery Job
 

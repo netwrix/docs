@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # 1-AzureSQL_PermissionScan Job
 
-The 1–AzureSQL_PermissionScan Job is designed to collect Azure SQL instance and database level
-permissions from all the targeted instances.
+The 1–AzureSQL_PermissionScan Job collects Azure SQL instance and database level permissions from
+all targeted instances.
 
 ## Queries for the 1–AzureSQL_PermissionsScan Job
 
