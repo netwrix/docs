@@ -15,13 +15,12 @@ export default function VersionSwitcher() {
   let currentVersion = null;
 
   for (const product of PRODUCTS) {
-    // Extract the product path segment (e.g., 'passwordsecure' from 'docs/passwordsecure')
-    const productPathSegment = product.path.split('/').pop();
+    // Check if the URL starts with this product's path (e.g., 'docs/auditor')
+    const productPathParts = product.path.split('/').filter((part) => part);
+    const matches = productPathParts.every((part, i) => pathParts[i] === part);
 
-    // Check if this product's path segment is in the URL
-    const productIndex = pathParts.indexOf(productPathSegment);
-
-    if (productIndex !== -1) {
+    if (matches) {
+      const productIndex = productPathParts.length - 1;
       matchedProduct = product;
 
       // Check if there's a version segment after the product
