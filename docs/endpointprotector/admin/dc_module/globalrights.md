@@ -10,8 +10,8 @@ From this section, you can manage the entire system and specify what rights and 
 globally, to all Endpoint Protector entities.
 
 :::note
-If device rights or other settings will be conﬁgured granularly for entities, the priority
-order, starting with the highest, will be as follows:
+If you configure device rights or other settings granularly for entities, the priority
+order, starting with the highest, is as follows:
 :::
 
 
@@ -25,14 +25,14 @@ Global Settings.
 ## Device Types (Standard)
 
 Endpoint Protector supports a wide range of device types, which represent key sources of security
-breaches. These devices can be authorized, which makes it possible for the users to view, create, or
-modify their content and for administrators to view the data transferred to and from the authorized
+breaches. These devices can be authorized, which allows users to view, create, or
+modify their content and allows administrators to view the data transferred to and from the authorized
 devices.
 
 ![Standard supported Devices](standarddevices.webp)
 
 - Removable Storage Devices
-- Normal USB Flash Drives, U3 and Autorun Drives, Disk on Key, etc.
+- Normal USB Flash Drives, U3, and Autorun Drives, Disk on Key, etc.
 - USB 1.1, USB 2.0, USB 3.0
 - Memory Cards - SD Cards, MMC Cards, Compact Flash Cards, etc.
 - Card Readers - internal and external
@@ -54,6 +54,11 @@ devices.
 - Floppy disk drives
 - Serial ATA Controllers
 - Network Printers
+- Audio cards
+
+:::note
+Audio Device Control for sound cards is supported only on Windows and applies only to the audio output channel. Audio input channels, whether analog or digital, aren't covered.
+::: 
 
 Depending on the device type, besides the Allow and Deny Access rights, additional rights are also
 available. These include Read-Only Access or multiple combinations of Allow Access but with various
@@ -70,7 +75,7 @@ For detailed information on Trusted Device™ and Enforced Encryption, refer to 
 :::note
 With the WiFi – Block if wired network is present option you can disable the WiFi
 connection, while a wired network connection is present. The WiFi connection will be available when
-the wired network is not present.
+the wired network isn't present.
 :::
 
 
@@ -85,8 +90,8 @@ Occasionally, the EPP system may display a limitation where certain webcams can 
 
 ![Bluetooth Device Management on Mac](macbluetooth.webp)
 
-By default, the majority of device types are blocked. However, as a working internet connection or
-wireless keyboards are needed during the conﬁguration process, several devices are set to Allow
+By default, Endpoint Protector blocks the majority of device types. However, because you need a working internet connection or
+wireless keyboards during the conﬁguration process, Endpoint Protector sets several devices to Allow
 Access. These include Wi-Fi, Bluetooth, Network Share, Additional Keyboard, and USB Modem.
 
 ![Device Type configuration](devicetypes.webp)
@@ -98,15 +103,14 @@ environments.
 
 You can also use this option to manage USB access through the virtual environment.
 
-When using a virtual environment, the USB devices will not be displayed in the Endpoint Protector
-Notiﬁer with their original names, VID and PID information. Only the original information will
+When using a virtual environment, the Endpoint Protector Notiﬁer will not display the USB devices with their original names, VID, and PID information. Only the original information will
 remain the serial number.
 
-For example; in the below image, you can view the 3 devices detected by Endpoint Protector have
-different VID, PID and device code, but they all have the same serial number.
+For example; in the following image, you can view the 3 devices detected by Endpoint Protector have
+different VID, PID, and device code, but they all have the same serial number.
 
 :::note
-The Endpoint Protector Client does not distinguish between USB devices (e.g. USB hard
+The Endpoint Protector Client doesn't distinguish between USB devices (e.g. USB hard
 drive vs USB Webcam) by Device name/VID/PID.
 :::
 
@@ -117,7 +121,7 @@ drive vs USB Webcam) by Device name/VID/PID.
 
 From this section, you can manage access rights for a speciﬁc device.
 
-Device rights can be set either Globally or, per Group, User, or Computer, by using the Manage
+You can set device rights either Globally or per Group, User, or Computer by using the Manage
 Rights action from each section/entity.
 
 ![Manage access rights for a speciﬁc device.](specificdevices.webp)
@@ -142,9 +146,8 @@ adding devices:
 ![ Add multiple devices at the same time.](multipledevices.webp)
 
 :::note
-Although this feature can work in situations where the Serial Number range does not follow
-a noticeable pattern, this is not recommended. In this type of situation, some devices will be
-ignored by Endpoint Protector and will not have the expected effect.
+Although this feature can work in situations where the Serial Number range doesn't follow
+a noticeable pattern, this isn't recommended. In this type of situation, Endpoint Protector will ignore some devices, and they will not have the expected effect.
 :::
 
 

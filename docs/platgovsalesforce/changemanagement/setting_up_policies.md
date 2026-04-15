@@ -55,10 +55,10 @@ Set the required Change Level for each Metadata Type. The form shows the default
 
 | **Change Level**                        | **Description**                                                                                                                                                                         |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Log Changes Only                    | Since the scanner automatically logs all changes, this change level requires no actions for compliance. The scanner automatically marks any changes to these objects as compliant.        |
-| Change Request                      | Any changes to these objects require an Approved Change Request.                                                                                                                        |
-| Sandbox Development & Testing       | Any changes to these objects require an Approved Change Request in the Stage Development Project. It also requires that a parent Change Request is attached to the Development Project. |
-| Full Software Development Lifecycle | Any changes to these objects require an Approved Change Request.                                                                                                                        |
+| Log Changes Only                    | Since the scanner automatically logs all changes, this change level requires no actions for compliance. The scanner automatically marks any changes to these components as compliant.        |
+| Change Request                      | Any changes to these components require an Approved Change Request.                                                                                                                        |
+| Sandbox Development & Testing       | Any changes to these components require an Approved Change Request in the Stage Development Project. It also requires that you attach a parent Change Request to the Development Project. |
+| Full Software Development Lifecycle | Any changes to these components require an Approved Change Request in the Stage Deployment Record or Rollback Record.                                                                                                                        |
 
 ### Code and Data Model Changes
 
@@ -92,11 +92,7 @@ Set the required Change Level for each Metadata Type. The form shows the default
 
 ![Control Change Levels](/images/platgovsalesforce/change_management/policy_new9.webp)
 
-Controls the change level required for different types of changes. Health Check Changes affect the
-way Platform Governance handles changes for the customization records for each Salesforce Health Check group
-(session settings, file upload and security settings), so you can track and report on current
-settings. There is a [Health Settings](/docs/platgovsalesforce/customizations/understanding_customization_record.md) tab
-for the specific records on the customization record.
+Controls the change level required for different types of changes. 
 
 ### Application Configuration Changes (Data)
 
@@ -109,10 +105,13 @@ See [Set Up Data Tracking](/docs/platgovsalesforce/changemanagement/datatracking
 
 ### Health Check Changes
 
+Health Check Changes affect the way Platform Governance handles changes for the customization records for each Salesforce Health Check group
+(session settings, file upload and security settings), so you can track and report on current
+settings. There is a [Health Settings](/docs/platgovsalesforce/customizations/understanding_customization_record.md) tab
+for the specific records on the customization record.
+
 ![Health Check Changes](/images/platgovsalesforce/change_management/policy_new16_a.webp)
 
-Select the change level for **Health Check Changes**: **None**, **Log Changes Only**, **Change
-Request**, **Sandbox Development & Testing**, or **Full Software Development Lifecycle**.
 
 ### IT Policies
 
@@ -122,12 +121,11 @@ Specify the **Preliminary Approver**. Enter part of the name to see a matching l
 changes, you can also set a **Final Approver**. This person must approve all changes affected by the
 rule.
 
-### Customization Policies
+### Uncategorized Changes
 
-![Customization Policies](/images/platgovsalesforce/change_management/policy_new12.webp)
+![Uncategorized Changes](/images/platgovsalesforce/change_management/policy_new12.webp)
 
-**Require Impacted Customization Approval**: select this option to require approval from all
-impacted Customization owners.
+This change control level applies to any components not included in the other categories.
 
 ### Management Policies
 
@@ -140,19 +138,6 @@ impacted Customization owners.
 **No Order Required**: select this option to allow approvals in any order. If it isn't checked,
 approvals occur in the order specified.
 
-### Change Enablement Defaults
-
-![Change Enablement Defaults](/images/platgovsalesforce/change_management/policy_new15.webp)
-
-**Merge Approval Lists**: select this option to merge lists when multiple policies apply to a
-change.
-
-**Sequential Approval Requests**: select this option to send approval emails one at a time as each
-approver approves the change. If not checked, all approvers receive the approval emails at the same
-time.
-
-**Non-conforming Customization Alerts**: select this option to alert Customization Owners if there
-is a non-conforming change to their Customization.
 
 ## Related
 
@@ -216,4 +201,4 @@ available on the **Related** tab on the policy.
 5. Click the right arrow to add selections to the **Selected Salesforce Type List**. Click the left
    arrow to remove items from the selected list.
 6. Click **Save** when complete. A confirmation dialog appears. Click **OK** to confirm you
-   want to add all of the customizations from the selected Salesforce types.
+   want to add all the customizations from the selected Salesforce types.
