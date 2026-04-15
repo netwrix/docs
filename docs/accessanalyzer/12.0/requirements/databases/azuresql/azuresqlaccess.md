@@ -12,8 +12,7 @@ Azure SQL Auditing supports three different audit log destinations. At present A
 supports storage as the audit log destination. This document describes the necessary permissions
 required to configure the Access Analyzer Azure SQL Job Group.
 
-Access Analyzerfor Azure SQL enables users to create custom roles which allow for differential
-access to Access Analyzer.
+With Access Analyzer for Azure SQL, you can create custom roles for differential access to Access Analyzer.
 
 Within Access Analyzer for Azure SQL, roles are created specifically to target Azure SQL Databases:
 
@@ -117,7 +116,7 @@ example below) and save it to a local directory.
 Once that file is chosen, the Review + Create button should be enabled.
 
 Click **Review + Create** to create the role or click **Next** to review and edit the permissions.
-Once the JSON file is opened, the Custom Role Name and Description boxes will be populated
+When the JSON file is opened, the Custom Role Name and Description boxes will be populated
 automatically. The name and description of the custom role can be customized if required in this
 step.
 
@@ -150,7 +149,7 @@ Follow the steps below to create an Azure SQL Application Registration in the Az
 **Step 3 –** Enter a **Name** for the application and select an appropriate option from the
 Supported account types options.
 
-**Step 4 –** Click **Register** at the bottom of the page when finished. Once the application has
+**Step 4 –** Click **Register** at the bottom of the page when finished. After the application has
 been registered, the App registration overview blade will appear. Take note of the _Application
 (client) ID_ on this page.
 
@@ -169,7 +168,7 @@ secret**.
 Select a Expiration time frame from the dropdown. Click **Add** when finished.
 
 :::tip
-Remember, you will have to update the Access Analyzer Connection Profile once the expiration time
+Remember, you will have to update the Access Analyzer Connection Profile after the expiration time
 frame is reached (within 24 months, for example).
 :::
 

@@ -6,15 +6,15 @@ sidebar_position: 10
 
 # AzureSQL Target Least Privilege Model
 
-To access the AzureSQL database, users require the Control permission for the target database. Users
+To access the AzureSQL database, users require the Control permission for the target database. Users
 with the Control Database permission have access to perform activity scans due to the function
-leveraged by AzureSQL to return the required audit logs. See the
+used by AzureSQL to return the required audit logs. See the
 [Auditing for Azure SQL Database and Azure Synapse Analytics](https://docs.microsoft.com/en-us/azure/azure-sql/database/auditing-overview?view=azuresql)
 Microsoft Knowledge Base article for additional information.
 
 :::info
 It is recommended to create a new user when leveraging a least privilege access
-model to access the AzureSQL database because the user must exist in the master database and all
+model to access the AzureSQL database because the user must exist in the master database and all
 target databases. A least privilege access model is one that uses the bare minimum privileges
 required to carry out collections for the AzureSQL data collector.
 :::
@@ -31,7 +31,7 @@ The following role and permission are required for the Least Privilege Model:
     :::
 
 
-Follow the steps to configure the least privilege access model for AzureSQL collections.
+Configure the least privilege access model for AzureSQL collections:
 
 **Step 1 –** To login with the user, run the following script against the master database:
 
@@ -48,7 +48,7 @@ the target database before proceeding to the next step.
 
 **Step 3 –** Run the following script against the target database to apply the db_datareader role:
 
-**EXEC sp_addrolemember N’db_datareader’, N’LPAUser’**
+**EXEC sp_addrolemember N'db_datareader', N'LPAUser'**
 
 **Step 4 –** Apply the View Database State Permission against the target database with the following
 script:

@@ -13,7 +13,7 @@ Group.
 
 The Azure SQL Solution inherits settings from the Azure SQL > Settings node. However, it is best
 practice to assign the host list and the Connection Profile at the data collection level, the
-0.Collection Job Group. Once you assign these to the job group, you can run it directly or
+0.Collection Job Group. After you assign these to the job group, you can run it directly or
 schedule it.
 
 **Dependencies**
