@@ -1,0 +1,17 @@
+extends: substitution
+message: "Use the contraction '%s' instead of the formal form."
+level: warning
+ignorecase: true
+swap:
+  '\bdo not\b': "don't"
+  '\bdoes not\b': "doesn't"
+  '\bdid not\b': "didn't"
+  '\bcannot\b': "can't"
+  '\bcan not\b': "can't"
+  '\bwould not\b': "wouldn't"
+  '\bshould not\b': "shouldn't"
+  '\bcould not\b': "couldn't"
+  '\bis not\b': "isn't"
+  '\bare not\b': "aren't"
+  '\bwas not\b': "wasn't"
+  '\bwere not\b': "weren't"

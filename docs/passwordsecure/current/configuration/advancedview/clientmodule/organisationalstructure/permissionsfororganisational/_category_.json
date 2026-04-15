@@ -1,0 +1,10 @@
+{
+  "label": "Permissions for organisational structures",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "permissions_for_organisational"
+  }
+}

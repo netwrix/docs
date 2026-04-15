@@ -18,8 +18,8 @@ URL**
 
 2. Set display of the Basic view or Advanced view
 
-The setting **Display passwords in Basic view & display passwords in Advanced view** allows you to
-configure the display of both clients. The passwords can be displayed with an icon, logo or in text
+The setting **Display passwords in Basic view & display passwords in Advanced view** lets you
+configure the display of both clients. The passwords can be displayed with an icon, logo, or in text
 form.
 
 3. Are users in the right organisational unit?
@@ -37,4 +37,4 @@ will prompt the user to log in to the Basic view.
 
 5. Add default applications (optional)
 
-It is advised to create the applications, which shall be stored as passwords, beforehand.
+It's advised to create the applications, which shall be stored as passwords, beforehand.

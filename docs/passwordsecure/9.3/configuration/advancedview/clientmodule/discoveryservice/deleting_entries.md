@@ -12,11 +12,11 @@ Service Task** that was executed and can be found and displayed using the filter
 
 ## Deletion process
 
-The discovered data in the **Discovery Service** cannot simply be deleted and removed from the
+The discovered data in the **Discovery Service** can't be deleted directly and removed from the
 **Discovery Service entries**. As the entries have a **link to the Discovery Service Task**, it is
 necessary to delete the discovered entries via the **Discovery Service Task** that was created. If
-entries were discovered using a joint **Discovery Service Task**, it is not possible to simply
-delete them. This is the case if two different users have carried out a scan on the same area. If
+entries were discovered using a joint **Discovery Service Task**, it isn't possible to
+delete them individually. This is the case if two different users have performed a scan on the same area. If
 you delete one of the two **Discovery Service Task**, only the entries that had a single link to
 this **Discovery Service Task** will be deleted. The entries for the other **Discovery Service
 Task** will be retained and must be deleted via the associated **Discovery Service Task**. You can
@@ -29,8 +29,8 @@ find out which **Discovery Service Task** found a particular entry by selecting 
 
 If the IP range for an existing **Discovery Service Task** is changed and the **Discovery Service
 Task** is then executed for this new IP range, the previously discovered entries from the previous
-executed **Discovery Service Task** will be deleted from the **Discovery Service**. If you want to
-carry out a **Discovery Service Task** for a different IP range, you should create a new **Discovery
+executed **Discovery Service Task** will be deleted from the **Discovery Service**. To
+carry out a **Discovery Service Task** for a different IP range, create a new **Discovery
 Service Task**. This will prevent any already discovered entries from being deleted. However, if the
 existing entries are no longer required, you can delete them by using the same **Discovery Service
 Task** with a different IP range.
@@ -47,5 +47,7 @@ Task** with a different IP range.
 10. A new scan using Task A with a different IP address 192.168.150.2 will not delete the data from
     Task B
 
-NOTE: The **Password Resets** and **passwords** created using the **Conversion Wizard** are not
+:::note
+The **Password Resets** and **passwords** created using the **Conversion Wizard** aren't
 deleted when the **Discovery Service Tasks** are deleted.
+:::

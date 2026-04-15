@@ -48,13 +48,16 @@
     "3.23",
     "3.3"
   ],
+  "pingcastle": [
+    "3.5"
+  ],
   "privilegesecure": [
     "25.12",
     "4.1",
     "4.2"
   ],
   "privilegesecurediscovery": [
-    "current"
+    "2.22"
   ],
   "recoveryforactivedirectory": [
     "2.6",

@@ -116,7 +116,7 @@ By following the official operating system vendor policies, we can:
 
 The following outlines our current OS support approach for Windows, macOS, and Linux environments, including version requirements, exceptions, and links to vendor documentation for up‑to‑date lifecycle information.
 
-## Windows Client and Server OS Support
+### Windows Client and Server OS Support
 
 Netwrix Endpoint Protector (EPP) Agent supports all **Microsoft Windows client and server operating systems** that remain within Microsoft’s **Mainstream Support** or **Extended Security Update (ESU)** phase. This includes:
 
@@ -133,20 +133,22 @@ When a Windows OS transitions from **Mainstream** to **Extended Support**, Netwr
 
 However, customers should be aware that **legacy operating systems may lack compatibility with modern security components**—such as updated encryption libraries or secure communications mechanisms—which are increasingly required in current environments. These limitations are outside our control and may impact agent reliability or feature availability.
 
-_Windows 10 End of Life Note_
+#### Windows 10 End of Life Note
 
-Windows 10 is currently in the final stages of support, with official end-of-service dates approaching for various editions. Once these dates pass, Netwrix will treat Windows 10 the same as other Extended Support operating systems:
+Windows 10 has reached end of support. Netwrix will treat Windows 10 the same as other Extended Support operating systems:
 
 - No development fixes will be committed for OS-specific issues
 - Operation is “best effort” only
 - Any known incompatibilities will be noted in the Netwrix Community Release Notes
+
+[Source: Microsoft announcement](https://support.microsoft.com/en-us/windows/windows-10-support-has-ended-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281#:~:text=Windows%2010%20support%20has%20ended%20on%20October%2014%2C%202025%20%2D%20Microsoft%20Support.)
 
 _General Guidance_
 
 Customers are strongly encouraged to plan migrations to supported operating systems ahead of published Microsoft EOL timelines. This ensures continued compatibility, access to full product capabilities, and ongoing support.
 
 **Important:**
-Netwrix EPP is **not supported** on of Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2008, Windows 7, Windows XP, or any earlier versions. The final EPP Agent build with “best effort” support for these operating systems is 5.9.4.0 (Windows version 6.2.3.1010). No future builds will be produced for them.
+Netwrix EPP is **not supported** on Early build of Windows 10 64bit, Windows 10 32bit, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2008, Windows 7, Windows XP, or any earlier versions. The final EPP Agent build with “best effort” support for these operating systems is 5.9.4.0 (Windows version 6.2.3.1010). No future builds will be produced for them.
 
 ### macOS Clients
 

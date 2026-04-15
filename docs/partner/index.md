@@ -13,7 +13,7 @@ import { Company } from '@site/src/training/products';
 
 ![Netwrix University Dashboard](@site/static/images/training/partner-dashboard.png)
 
-You are automatically enrolled in a Partner Onboarding Kit learning path. The learning path will be visible on your dashboard. You can search for role-specific learning paths by name. See the following topics for a list of learning paths available for each role:
+You are automatically enrolled in a Partner [Onboarding Kit learning path](onboarding.md). The learning path will be visible on your dashboard. You can search for role-specific learning paths by name. See the following topics for a list of learning paths available for each role:
 
 * [Sales Professionals](./sales/index.md)
 * [Presales Engineers](./presales/index.md)

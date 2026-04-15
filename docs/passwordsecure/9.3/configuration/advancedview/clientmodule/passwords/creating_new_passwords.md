@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Creating new passwords
 
-## What does creating new passwords/records mean?
+## Creating new passwords and records
 
 Saving a record/password stores information in the MSSQL database. This process is started in the
 Passwords module for the client. It is accessed either via the icon in the ribbon, using the
@@ -22,7 +22,7 @@ The following 2 user rights are required:
 
 ## Selecting a form
 
-When creating a new record, it is possible to select from all the forms for which the logged-in user
+When creating a new record, you can select from all the forms for which the logged-in user
 has the required permissions. To make the selection process as easy as possible, a preview of the
 form fields included in the form is shown on the right hand side.
 
@@ -51,7 +51,7 @@ record. Both values are optional.
 
 - The **validity** defines an end date until which the record is valid. This information can be
   evaluated e.g. in the logbook or in reports. It is thus possible to create a list of all expired
-  passwords for a user or an authorized entity. However, it is not possible to limit the usability
+  passwords for a user or an authorized entity. However, it isn't possible to limit the usability
   of expired passwords for security reasons.
 - **Tags** are freely definable properties of records that can be used as search criteria. This also
   allows thematically linked information to be grouped together.
@@ -59,29 +59,35 @@ record. Both values are optional.
 ## Setting permissions for new records
 
 In principle, there are various approaches for setting permissions for newly created records. All of
-them have already been described in the Authorization concept section. It is important to note here
+them have already been described in the Authorization concept section. note here
 that **manual setting of permissions is only possible after saving** a record. Automatic permissions
 are set before the record is saved. In this context, the selection of the organisational structure
 and the permissions for a record are important aspects.
 
 ![permissions new record](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwords/creating_new_passwords_4-en.webp)
 
-- **Manual setting of permissions**: If you want to manually set permissions for the record, select
+- **Manual setting of permissions**: To manually set permissions for the record, select
   the organisational structure in which the record should be saved. After saving the record, the
-  permissions can be manually amended via the permissions tab in the ribbon. If you only want to
-  create a personal record for which no other user will receive permissions, simply select your own
+  permissions can be manually amended via the permissions tab in the ribbon. To
+  create a personal record for which no other user receives permissions, select your own
   organisational structure and conclude the process with "save" via the ribbon.
 
-NOTE: If any kind of automatic permissions have been activated for the selected OU, this will always
+:::note
+If any kind of automatic permissions have been activated for the selected OU, this will always
 be prioritized.
+:::
 
-**CAUTION:** Even when creating private records, inheritance of permissions based on the logged-in
+:::warning
+Even when creating private records, inheritance of permissions based on the logged-in
 user can also be activated as an option. This option is described in a separate section.
+:::
 
-NOTE: The user right Allow sharing of personal passwords can be used to define that personal
-passwords cannot be released to other users.
+:::note
+The user right Allow sharing of personal passwords lets you define that personal
+passwords can't be released to other users.
+:::
 
-**Automatic setting of permissions**: Automatic setting of permissions is carried out before the
+**Automatic setting of permissions**: Automatic setting of permissions is performed before the
 record is saved. Irrespective of whether predefined rights or rights inheritance is being used, the
-configuration is always carried out in the organisational structure or permissions area. Saving the
+configuration is always performed in the organisational structure or permissions area. Saving the
 record thus completes the process for creating the password including the issuing of permissions.

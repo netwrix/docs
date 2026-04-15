@@ -1,3 +1,3 @@
-message: "Do not use negative assumptions about what users can or cannot do."
+message: "Don't make negative assumptions about what users can or cannot do."
 level: warning
 reason: "This rule should trigger when the user or agent writes something that assumes a user cannot do something without the product."

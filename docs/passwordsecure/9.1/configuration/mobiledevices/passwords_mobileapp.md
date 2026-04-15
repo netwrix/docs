@@ -17,7 +17,7 @@ usually used by more than one user.
 
 **Prerequisites**
 
-The following prerequisites must be met in order to create new global passwords:
+The following prerequisites must be met to create new global passwords:
 
 - User right **Can create new passwords**
 - **Add right** to the corresponding organizational unit
@@ -37,8 +37,8 @@ The following user rights are required to create personal passwords:
 
 #### Create passwords
 
-When creating a new record, it is necessary to know whether it is a personal or a global password.
-Because according to this criterion you should select the appropriate tab and click on the + located
+When creating a new record, it's necessary to know whether it's a personal or a global password.
+Because according to this criterion you should select the appropriate tab and click the + located
 in the upper right corner.
 
 ![create new password](/images/passwordsecure/9.1/configuration/mobiledevices/passwords/create-new-password-ma-en.webp)
@@ -47,18 +47,18 @@ After that, select the required **form**.
 
 ![select form](/images/passwordsecure/9.1/configuration/mobiledevices/passwords/select-form-ma-en.webp)
 
-Then, once you have filled in all the relevant information of the selected form, one click on
+Then, after you have filled in all the relevant information of the selected form, one click
 **Save** is enough to create the password.
 
 ![new entry MobileApp](/images/passwordsecure/9.1/configuration/mobiledevices/passwords/new-entry-ma-en.webp)
 
 #### Editing passwords
 
-To edit a password, click on the corresponding password and select the pencil icon.
+To edit a password, click the corresponding password, and select the pencil icon.
 
 ![editing password](/images/passwordsecure/9.1/configuration/mobiledevices/passwords/new-entry-ma-2-en.webp)
 
-As soon as you click on the pencil icon again in the new window, in the so-called read-only view,
+As soon as you click the pencil icon again in the new window, in the so-called read-only view,
 you can edit all existing fields.
 
 ![edit passwordfield MobileApp](/images/passwordsecure/9.1/configuration/mobiledevices/passwords/edit-passwordfield-ma-en.webp)
@@ -67,7 +67,7 @@ you can edit all existing fields.
 
 #### Delete
 
-Passwords can currently only be deleted via the Full- or Web Application.
+Passwords can only be deleted via the Full- or Web Application.
 
 #### Tags
 
@@ -75,11 +75,11 @@ Tags can be added or removed both when creating and editing a password.
 
 ![MobileApp - Tags](/images/passwordsecure/9.1/configuration/mobiledevices/passwords/edit-tag-ma-en.webp)
 
-It is also possible to create a completely new tag.
+It's also possible to create a completely new tag.
 
-This is possible by searching in the tag selection in the search field for a tag that does not
+This is possible by searching in the tag selection in the search field for a tag that doesn't
 already exist.
 
-You will then be offered the option of creating this previously non-existent tag.
+You'll then be offered the option of creating this previously non-existent tag.
 
 ![Mobileapp - select/create tag](/images/passwordsecure/9.1/configuration/mobiledevices/passwords/select-tag-ma-en.webp)

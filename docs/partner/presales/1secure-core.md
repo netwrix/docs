@@ -1,6 +1,6 @@
 ---
 title: Netwrix 1Secure Core Presales Engineer
-sidebar_position: 1340
+sidebar_position: 1230
 tags: [certification, partners, presales, 1secure]
 keywords: [training, course, certification, partners, presales, 1secure]
 description: "Become a certified Presales Engineer for Netwrix 1Secure"

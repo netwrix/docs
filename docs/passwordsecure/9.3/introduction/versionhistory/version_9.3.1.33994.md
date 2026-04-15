@@ -15,9 +15,9 @@ sidebar_position: 3
 
 # Improvements
 #### Web app (basic and extended view)
-- The "wrong password" hint in the login screen changes once the lock time has expired.
+- The "wrong password" hint in the login screen changes after the lock time has expired.
 - Text updates to improve clarity and consistency. This also affects the Windows app and the browser extensions.
-- The second factor configuration now uses a more modern design.
+- The second factor configuration uses a more modern design.
 
 #### Server
 - Improved performance of server side ECC migration.
