@@ -1,0 +1,10 @@
+extends: existence
+message: "Avoid generic link text '%s'. Write descriptive link text that describes the destination or action."
+level: warning
+ignorecase: true
+tokens:
+  - '\bclick here\b'
+  - '\bthis link\b'
+  - '\blearn more\b'
+  - '\bsee more\b'
+  - '\bread more\b'
