@@ -16,7 +16,7 @@ LDAP and authentication services meet the following requirements:
   - Access via: `certlm.msc` → Trusted Root Certification Authorities → Certificates
 
 #### Certificate Validity Requirements
-Certificates are validated against these criteria:
+Directory Manager validates certificates against these criteria:
 
 1. **Certificate must not be null** - A valid certificate must be presented
 2. **Certificate must be within validity period**

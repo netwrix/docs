@@ -48,7 +48,7 @@ Before proceeding with the upgrade, verify that all SSL/TLS certificates used fo
 
 :::warning
 - Connections using self-signed certificates NOT in the Trusted Root CA store will FAIL after upgrade
-- Authentication and LDAP operations will be blocked if certificates are invalid
+- Invalid certificates will block authentication and LDAP operations
 :::
 
 **If any certificates are missing or invalid:**
@@ -79,10 +79,10 @@ can choose to upgrade all or selective data of the previous version. Options are
     ![3-select_modules-custom](/images/directorymanager/11.1/install/upgrade/3-select_modules-custom.webp)
 
     :::note
-    If later on, you want to upgrade specific groups and their history via the Upgrade-Group
+    If you later want to upgrade specific groups and their history via the Upgrade-Group
     commandlet, then you must upgrade the Configuration and History in the first upgrade run. This
     will upgrade the history in the database as per Directory Manager 11.1 format and replicates it
-    to Elasticsearch. Later on, when you upgrade specific groups and their history using the
+    to Elasticsearch. Later, when you upgrade specific groups and their history using the
     Upgrade-Group commandlet, that will be done successfully. See the
     [Upgrade-Group](/docs/directorymanager/11.1/managementshell/smartgroup/upgradegroup.md) commandlet for additional
     information.
@@ -132,7 +132,7 @@ connect to different child domains in a forest with different service accounts a
 messaging providers.
 
 - If an identity store already exists in Directory Manager 10 for the destination domains that the
-  jobs connect to, then jobs are moved to the respective identity stores in Directory Manager 11.1.
+  jobs connect to, the Upgrade wizard moves the jobs to the respective identity stores in Directory Manager 11.1.
 - When there is no identity store in Directory Manager 10 for the destination domain that the jobs
   connect to, the Upgrade wizard reads the FQDN of the destination domains used in the jobs and
   tries to create a forest structure. On identifying one, it proceeds to create an identity store
@@ -188,12 +188,12 @@ will not be displayed.
 :::
 
 
-Step 13 – During upgrade, Synchronize schedules are also moved to identity stores.
+Step 13 – During upgrade, the Upgrade wizard also moves Synchronize schedules to identity stores.
 The Upgrade wizard will check the jobs added to a schedule. If the destination in a job is a
 directory provider, it will automatically move the schedule to the respective identity store.
 
 :::tip
-Remember, during upgrade, identity stores are created for destination directory providers of
+Remember, during upgrade, the Upgrade wizard creates identity stores for destination directory providers of
 Synchronize jobs (i.e., for providers that don't have an identity store in the source version).
 :::
 
@@ -229,8 +229,8 @@ Step 15 – Review the summary and click **Next**.
 
 ![Upgrade Progress page](/images/directorymanager/11.1/install/upgrade/6-upgrade_process_complete.webp)
 
-Directory Manager is upgraded while the Upgrade Process displays the upgrade progress. On successful
-upgrade, the Upgradce Completed message above the progress bar is displayed.
+The Upgrade Process upgrades Directory Manager while displaying the upgrade progress. On successful
+upgrade, Directory Manager displays the Upgrade Completed message above the progress bar.
 
 Step 16 – Click **Next**.
 
