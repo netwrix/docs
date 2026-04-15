@@ -39,7 +39,7 @@ However, it is necessary for the SA_SQL_Instances table to be populated before a
 the queries. Therefore, the [0-SQL_InstanceDiscovery Job](/docs/accessanalyzer/12.0/solutions/databases/sql/collection/0-sql_instancediscovery.md)
 must be manually executed before attempting to scope the 0.Collection Job Group queries.
 
-**Targeted Host(s)**
+**Targeted Hosts**
 
 The 0.Collection Job Group has been set to run against the following default dynamic host list:
 
@@ -47,7 +47,7 @@ The 0.Collection Job Group has been set to run against the following default dyn
 
     :::note
     Default dynamic host lists are populated from hosts in the Host Master Table which
-    meet the host inventory criteria for the list. Ensure the appropriate host list(s) have been
+    meet the host inventory criteria for the list. Ensure the appropriate host lists have been
     populated through host inventory results.
     :::
 
@@ -65,7 +65,7 @@ The Connection Profile should be assigned under the SQL > 0.Collection > Setting
 It is set to Use the Default Profile, as configured at the global settings level. However, since
 this may not be the Connection Profile with the necessary permissions for the assigned hosts, click
 the radio button for the Select one of the following user defined profiles option and select the
-appropriate Connection Profile drop-down menu.
+appropriate Connection Profile dropdown menu.
 
 See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.

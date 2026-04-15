@@ -28,7 +28,7 @@ configured to scan 8 hosts at a time, then an extra 16 GB of RAM are required (8
 
 :::note
 The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and does not require any configuration; it has been
+server. The JDK deployed is prepackaged and doesn't require any configuration; it has been
 preconfigured to work with Access Analyzer and should never be customized through Java. It will not
 conflict with other JDKs or Java Runtimes in the same environment.
 :::

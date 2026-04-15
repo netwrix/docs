@@ -26,7 +26,7 @@ run directly or scheduled.
 
 - Successful configuration of an AzureSQL-specific connection profile
 - Creation of an Azure Tenancy host list (ex. COMPANY.onmicrosoft.com) and Azure Active Directory
-  user credential(s)
+  user credentials
 
     :::info
     To avoid functional issues with Access Analyzer, create multiple connection
@@ -37,7 +37,7 @@ run directly or scheduled.
 - [0-AzureSQL_InstanceDiscovery Job](/docs/accessanalyzer/12.0/solutions/databases/azuresql/collection-azuresql/0-azuresql_instancediscovery.md) run
   successfully
 
-**Targeted Host(s)**
+**Targeted Hosts**
 
 The 0.Collection Job Group has been set to run against the following default dynamic host list:
 
@@ -56,7 +56,7 @@ The Connection Profile should be assigned under the **Databases** > 0.Collection
 Settings > Connection node. It is set to Use the Default Profile, as configured at the global
 settings level. However, since this may not be the Connection Profile with the necessary permissions
 for the assigned hosts, click the radio button for **Select one of the following user-defined profiles**
-and select the appropriate Connection Profile from the drop-down menu.
+and select the appropriate Connection Profile from the dropdown menu.
 
 See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.

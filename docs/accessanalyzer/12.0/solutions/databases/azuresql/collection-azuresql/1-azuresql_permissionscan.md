@@ -25,13 +25,13 @@ Permissions Collection category. Follow the steps to customize configurations.
 **Step 1 –** Navigate to the **Databases** > 0.Collection > AzureSQL > 1-AzureSQL_PermissionsScan >
 Configure node and select **Queries**.
 
-**Step 2 –** In the Query Selection view, select the PermissionsScan query and click on Query
+**Step 2 –** In the Query Selection view, select the PermissionsScan query and click Query
 Properties. The Query Properties window appears.
 
 **Step 3 –** Select the Data Source tab and click Configure. The SQL Data Collector Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for this
+Don't make changes to other wizard pages as they have been pre-configured for this
 job.
 :::
 
@@ -71,7 +71,7 @@ Navigate to the Databases > 0.Collection > **AzureSQL** > 1-AzureSQL_Permissions
 node and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
