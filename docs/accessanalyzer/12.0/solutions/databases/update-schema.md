@@ -7,7 +7,7 @@ sidebar_position: 10
 # Update_Schema Job
 
 The Update_Schema job within the .Databases Schema job group creates and updates the schema for the
-tables, views, and functions used by the Databases Solution. This job needs to run prior to the
+tables, views, and functions used by the Databases Solution. This job needs to run before the
 other jobs in the 0.Collection job group for both new installations and upgrades. The job can be
 scheduled with any of the collections. Don't delete the job from the job tree.
 

@@ -20,7 +20,7 @@ The 1–AzureSQL_PermissionsScan Job uses the SQL Data Collector for the followi
 ### Configure the PermissionsScan Query
 
 The 1-AzureSQL_PermissionScan Job is preconfigured to run using the default settings within the
-Permissions Collection category. Follow the steps to customize configurations.
+Permissions Collection category. To customize configurations, complete the following steps.
 
 **Step 1 –** Navigate to the **Databases** > 0.Collection > AzureSQL > 1-AzureSQL_PermissionsScan >
 Configure node and select **Queries**.

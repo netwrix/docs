@@ -47,7 +47,7 @@ The 0.Collection Job Group has been set to run against the following default dyn
 
 The SQL Data Collector requires a specific set of permissions. See the Permissions section for
 necessary permissions. The account used can be either an Active Directory account with database
-login enabled or a SQL account. Once the account has been provisioned, create a custom Connection
+login enabled or a SQL account. After the account has been provisioned, create a custom Connection
 Profile containing the credentials for the targeted environment. See the
 [SQL Custom Connection Profile & Default Dynamic Host List](/docs/accessanalyzer/12.0/admin/datacollector/sql/configurejob.md)
 topic for additional information.
@@ -71,7 +71,7 @@ daily.
 **Run Order**
 
 The 0.Collection Jobs must be run first and in order. The other Azure SQL Solution sub-job groups
-can be run in any order, together or individually, after running the 0.Collection Job Group.
+can be run in any order, together, or individually, after running the 0.Collection Job Group.
 
 :::info
 Run the solution at the top level.
