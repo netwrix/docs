@@ -1,6 +1,6 @@
 extends: existence
 message: "Avoid '%s'. Write specific cross-reference text that describes what the reader will find."
-level: suggestion
+level: warning
 ignorecase: true
 tokens:
   - '\bfor more information\b'

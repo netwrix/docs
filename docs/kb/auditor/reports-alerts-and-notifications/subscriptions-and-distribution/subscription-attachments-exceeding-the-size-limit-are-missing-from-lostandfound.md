@@ -40,7 +40,7 @@ Subscription attachments exceeding the 50MB size are missing from your `\<NAserv
 1. Open the **Computer Management** tool.
 2. In the left pane, expand the **System Tools** tree. Expand the **Shared Folders** folder, and click **Shares**.
 3. Select the **Netwrix_Auditor_Subscriptions$** share, right-click it, and select **Properties**.
-4. In the **Share Permissions** tab, review the users added. Make sure the serivce account for the affected monitoring plan is included with **Full Control** permissions.
+4. In the **Share Permissions** tab, review the users added. Make sure the service account for the affected monitoring plan is included with **Full Control** permissions.
 5. Apply the changes, and close the window.
 
 - Review the share folder path.

@@ -34,7 +34,7 @@ The `agent.ini` file in the program installation folder provides for more specif
 - `Skip`: do not process a domain controller
 
 **Example**:  
-You have 6 domain controllers; 5 of them are located in New York and 1  in Seattle. You do not need to use agents in the New York domain controllers since they have fast network connections while the one loocated in Seattle is slow due to its distance from the main office. You can enable Lightweight Agents in Netwrix Auditor, open `agent.ini` and specify the agent monitoring as follows:
+You have 6 domain controllers; 5 of them are located in New York and 1  in Seattle. You do not need to use agents in the New York domain controllers since they have fast network connections while the one located in Seattle is slow due to its distance from the main office. You can enable Lightweight Agents in Netwrix Auditor, open `agent.ini` and specify the agent monitoring as follows:
 
 ```
 [NY1.acme.com](http://NY1.acme.com)=remote

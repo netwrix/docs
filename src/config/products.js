@@ -242,10 +242,10 @@ export const PRODUCTS = [
     defaultVersion: '11.1',
   },
   {
-    id: 'endpointpolicymanager',
-    name: 'Endpoint Policy Manager',
+    id: 'policypak',
+    name: 'PolicyPak',
     description: 'Group Policy management and enforcement',
-    path: 'docs/endpointpolicymanager',
+    path: 'docs/policypak',
     categories: ['Endpoint Management'],
     icon: '',
     versions: [
@@ -253,7 +253,7 @@ export const PRODUCTS = [
         version: 'current',
         label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/sidebar.js',
+        sidebarFile: './sidebars/policypak.js',
       },
     ],
   },
@@ -378,13 +378,21 @@ export const PRODUCTS = [
     name: 'Password Secure',
     description: 'Secure password management',
     path: 'docs/passwordsecure',
-    categories: ['Privileged Access Management (PAM)'],
+    categories: ['Identity Management'],
     icon: '',
     versions: [
       {
+        version: 'current',
+        label: 'Current',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordsecure/current.js',
+        customRoutePath: 'docs/passwordsecure/current',
+        customDocPath: 'docs/passwordsecure/current'
+      },
+      {
         version: '9.3',
         label: '9.3',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/passwordsecure/9.3.js',
       },
       {
@@ -392,15 +400,9 @@ export const PRODUCTS = [
         label: '9.2',
         isLatest: false,
         sidebarFile: './sidebars/passwordsecure/9.2.js',
-      },
-      {
-        version: '9.1',
-        label: '9.1',
-        isLatest: false,
-        sidebarFile: './sidebars/passwordsecure/9.1.js',
-      },
+      }
     ],
-    defaultVersion: '9.3',
+    defaultVersion: 'current',
   },
   {
     id: 'pingcastle',
@@ -521,12 +523,13 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: 'current',
-        label: 'current',
+        version: '2.22',
+        label: '2.22',
         isLatest: true,
-        sidebarFile: './sidebars/privilegesecurediscovery.js',
+        sidebarFile: './sidebars/privilegesecurediscovery/2.22.js',
       },
     ],
+    defaultVersion: '2.22',
   },
   {
     id: 'recoveryforactivedirectory',
@@ -586,16 +589,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '3.0',
-        label: '3.0',
-        isLatest: false,
-        sidebarFile: './sidebars/threatmanager/3.0.js',
-      },
-      {
         version: '3.1',
         label: '3.1',
         isLatest: true,
         sidebarFile: './sidebars/threatmanager/3.1.js',
+      },
+      {
+        version: '3.0',
+        label: '3.0',
+        isLatest: false,
+        sidebarFile: './sidebars/threatmanager/3.0.js',
       },
     ],
     defaultVersion: '3.1',
@@ -769,8 +772,8 @@ export function hasKBContent(productId) {
   const kbProducts = [
     '1secure', 'accessanalyzer', 'accessinformationcenter', 'activitymonitor',
     'auditor', 'changetracker', 'dataclassification', 'directorymanager',
-    'endpointpolicymanager', 'endpointprotector', 'passwordpolicyenforcer',
-    'passwordreset', 'privilegesecure', 'privilegesecurediscovery',
+    'policypak', 'endpointprotector', 'passwordpolicyenforcer',
+    'passwordreset', 'pingcastle', 'privilegesecure', 'privilegesecurediscovery',
     'threatmanager', 'threatprevention'
   ];
   return kbProducts.includes(productId);

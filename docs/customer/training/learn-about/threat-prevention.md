@@ -1,6 +1,6 @@
 ---
 title: Learn About Netwrix Threat Prevention Learning Path
-sidebar_position: 490
+sidebar_position: 500
 tags: [training, threat-prevention]
 keywords: [training, course, threat prevention ]
 description: "Learn about Netwrix Threat Prevention  through introductory courses"

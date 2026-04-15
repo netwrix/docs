@@ -19,7 +19,7 @@ name. You can configure Password Reset to display a list of domains instead of a
 
 **Add a Domain to the list**
 
-Follow the steps below to add a domain to the list.
+To add a domain to the list:
 
 **Step 1 –** Click **Add...**
 
@@ -28,7 +28,7 @@ Follow the steps below to add a domain to the list.
 **Step 3 –** Click **OK**, and then click **Apply**.
 
 :::note
-The most frequently used domain should be first in the list as it will be the default. You
+The most frequently used domain should be first in the list, because it becomes the default. You
 can rearrange the domains by dragging them to another position. You can also click Sort to sort them
 alphabetically.
 :::
@@ -36,7 +36,7 @@ alphabetically.
 
 **Remove a Domain from the list**
 
-Follow the steps below to remove a domain from the list:
+To remove a domain from the list:
 
 **Step 1 –** Select the domain name in the Domain List.
 
@@ -49,7 +49,7 @@ Follow the steps below to remove a domain from the list:
 Password Reset uses an SQL Server Compact database by default. It creates two database files
 (apr.sdf and aprlog.sdf) in the Password Reset installation folder.
 
-Follow the steps below to move these files to another folder.
+To move these files to another folder:
 
 **Step 1 –** Close the Data Console if it is open.
 
@@ -98,8 +98,8 @@ address of a Password Policy Server. The `PPEIPAddress` value is in
 :::note
 Due to a protocol upgrade, Netwrix Password Reset v3.3 is not compatible with Netwrix
 Password Policy Enforcer v8.x and earlier versions. If you are using Netwrix Password Reset with any
-of those older Netwrix Password Policy Enforcer versions, please consider upgrading Netwrix Password
-Policy Enforcer first to a current version, and only then upgrade Netwrix Password Reset to v3.3 (or
+of those older Netwrix Password Policy Enforcer versions, upgrade Netwrix Password
+Policy Enforcer to a current version before upgrading Netwrix Password Reset to v3.3 (or
 later).
 :::
 
@@ -108,22 +108,21 @@ Users are more likely to see the Password Policy Enforcer Generic Rejection mess
 more detailed Rejection message when this registry value is set. Users may also have the wrong
 policy, or no policy enforced if the queried server is not a domain controller in the user's
 domain.
-Queries to the Password Policy Server are sent to UDP port 1333 by default. You may need to create
+Password Reset sends queries to the Password Policy Server at UDP port 1333 by default. You may need to create
 firewall rules to open this port. See the Password Policy Enforcer documentation for additional information.
 
 :::note
-Due to a protocol upgrade, it is now recommended to enable protocol encryption for
-clients. To do so, please navigate to the PPS Properties in your Netwrix Password Policy Enforcer
+Due to a protocol upgrade, enable protocol encryption for clients. Navigate to the PPS Properties in your Netwrix Password Policy Enforcer
 server configuration, and enable "Only accept encrypted client request".
 :::
 
 
 ![using_ppe_with_npr](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_ppe_with_npr.webp)
 
-Please do not enable this option if you are using Netwrix Password Reset v3.3 with Netwrix Password
+Do not enable this option if you are using Netwrix Password Reset v3.3 with Netwrix Password
 Policy Enforcer v8.x or earlier versions, or with Netwrix Password Policy Enforcer/Web. If you are
 using Netwrix Password Reset v3.3 with any of those older versions of Netwrix Password Policy
-Enforcer, please consider upgrading first to a current and supported version.
+Enforcer, upgrade to a current and supported version first.
 
 :::note
 Password Policy Enforcer is not included with Password Reset. Go to

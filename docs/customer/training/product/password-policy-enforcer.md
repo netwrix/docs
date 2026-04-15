@@ -1,6 +1,6 @@
 ---
 title: Netwrix Password Policy Enforcer Learning Path
-sidebar_position: 210
+sidebar_position: 200
 tags: [getting-started, training, password-policy-enforcer]
 keywords: [training, course, password policy enforcer]
 description: "Learn to use Netwrix Password Policy Enforcer through courses"
@@ -21,7 +21,7 @@ In this learning path, you will learn how to use <NPPE />. It contains the follo
 
 ## What's New in <NPPE /> v11.1
 
-Watch our customer webinar for a closer look at what’s new in <NPPE /> 11.1 and how it simplifies password security.
+Watch the customer webinar for a closer look at what’s new in <NPPE /> 11.1 and how it simplifies password security.
 
 In this live session, you'll learn how PPE 11.1 helps you:
 * Detect password reuse across accounts to improve security.

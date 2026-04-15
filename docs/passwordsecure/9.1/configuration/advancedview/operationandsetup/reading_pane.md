@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Reading pane
 
-## What is the reading pane?
+## Reading pane overview
 
 The reading pane on the right side of the client always corresponds to the detailed view of the
 selected record in the list view and can be completely deactivated via the ribbon. In addition, you
@@ -35,20 +35,20 @@ as well as the
 are displayed.
 
 :::warning
-It should be noted that the details area cannot be used for editing records! Although
+The details area can't be used for editing records! Although
 it displays all of the data, editing is only possible if the record has been opened.
 :::
 
 
 2. Footer area
 
-In the footer area of the reading pane, it is possible to display various information for the
-currently selected record. The button can be activated via the button provided. It is hidden by
+In the footer area of the reading pane, it's possible to display various information for the
+selected record. The button can be activated via the button provided. It's hidden by
 default.
 
 ![Footer area](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/readingpane/installation_with_parameters_36-en.webp)
 
-The logbook, linked documents, history, notifications and password resets can be accessed separately
+The logbook, linked documents, history, notifications, and password resets can be accessed separately
 here via the tabs. The individual elements can be viewed with a double-click, as well as by using
 the quick view (space bar). Double clicking always opens a separate tab, the quick view merely opens
 a modal window

@@ -15,7 +15,7 @@ To review intelligence data, you must be assigned the Global administrator or Gl
 in the product. The users assigned the Reviewer role on a certain plan or folder have a limited
 access to data—only within a delegated scope. See the
 [Role-Based Access and Delegation](/docs/auditor/10.8/admin/monitoringplans/delegation.md) topic for additional
-informatuion.
+information.
 
 ![allactivedirectorychanges_thumb_0_0](/images/auditor/10.8/admin/reports/allactivedirectorychanges_thumb_0_0.webp)
 

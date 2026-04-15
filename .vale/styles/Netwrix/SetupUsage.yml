@@ -1,0 +1,14 @@
+extends: substitution
+message: "Use '%s' — 'setup' is a noun or adjective. The verb form is 'set up' (two words)."
+level: warning
+ignorecase: true
+swap:
+  '\bto setup\b': 'to set up'
+  '\bwill setup\b': 'will set up'
+  '\bcan setup\b': 'can set up'
+  '\bmust setup\b': 'must set up'
+  '\bshould setup\b': 'should set up'
+  '\bhave setup\b': 'have set up'
+  '\bhas setup\b': 'has set up'
+  '\bhad setup\b': 'had set up'
+  '\bgetting setup\b': 'getting set up'

@@ -23,7 +23,7 @@ These group Managed Service Accounts should meet the related requirements, as li
 
 1. The account requires Read share permission on the audited shared folders.
 2. The account requires Read NTFS permission on all objects in the audited folders.
-3. The account requires the following permissins on Qumulo Cluster:
+3. The account requires the following permissions on Qumulo Cluster:
    - **FILE_READ_ACCESS**: Provides read access to all files regardless of permissions
    - **FS_ATTRIBUTES_READ**: Read file system statistics
    - **FS_SETTINGS_READ**: View file system permissions settings

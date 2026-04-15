@@ -34,7 +34,7 @@ You may see any of the following error messages under Event ID 1260, 1261, 1262,
 Refer to the following possible causes and resolutions:
 
 Event descriptions:
-- 1260 − Unable to make the configuration snapshot of SharePoint farm %affected_Shapoint_farm% due to the following error: %error%. As a result, changes to the farm properties, features and solutions may not be reported correctly.
+- 1260 − Unable to make the configuration snapshot of SharePoint farm %affected_SharePoint_farm% due to the following error: %error%. As a result, changes to the farm properties, features and solutions may not be reported correctly.
 - 1261 − Unable to make the configuration snapshot of web application %affected_web_application%.
 - 1262 − Unable to make the configuration snapshot of site collection %affected_site_collection%.
 - 1263 − Unable to make the configuration snapshot for feature %ID%.

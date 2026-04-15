@@ -55,7 +55,7 @@ Follow the steps to review risks and pin important ones to the Home Screen.
 
 **Step 1 –** On the main Auditor page, click the Risk Assessment tile.
 
-**Step 2 –** Review the Risk Assessment Overview dashbord and select the risk you are interested in,
+**Step 2 –** Review the Risk Assessment Overview dashboard and select the risk you are interested in,
 such as "_User Accounts with administrative permissions_". See the
 [IT Risk Assessment Overview ](/docs/auditor/10.8/admin/riskassessment/overview.md) topic for additional information.
 

@@ -1,0 +1,3 @@
+message: "Do not use the 'x is not y, x is z' format."
+level: warning
+reason: "This rule should trigger when the user or agent writes something in the negative-postive form, for example 'x is not y, x is z'—or similar."

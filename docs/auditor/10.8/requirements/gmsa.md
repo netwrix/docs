@@ -192,7 +192,7 @@ account, depending on what purpose a gMSA account will be used for.
 
         _Remember,_ that a gMSA account cannot access SSRS due to Microsoft restrictions.
 
-- If you are going to use a gMSA as a data collection accoun for User Activity or User Activity
+- If you are going to use a gMSA as a data collection account for User Activity or User Activity
   Video Recording, refer to the following topics:
 
     - [User Activity](/docs/auditor/10.8/configuration/useractivity/overview.md)

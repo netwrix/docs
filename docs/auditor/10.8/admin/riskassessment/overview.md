@@ -71,7 +71,7 @@ to the audit database.
 
 Also, consider that all risk metrics and related reports require state-in-time data to be collected.
 You can select the relevant option when creating a new monitoring plan, as described in the
-[Create a New Monitoring Plan](/docs/auditor/10.8/admin/monitoringplans/create.md) section. For the exising plan, refer to
+[Create a New Monitoring Plan](/docs/auditor/10.8/admin/monitoringplans/create.md) section. For the existing plan, refer to
 the procedure below.
 
 To verify the necessary settings of the existing plan

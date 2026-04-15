@@ -15,13 +15,13 @@ keywords:
 products:
   - auditor
 visibility: public
-sidebar_label: 'Can any additional attribites be displayed in the '
+sidebar_label: 'Can any additional attributes be displayed in the '
 tags: []
-title: "Can any additional attribites be displayed in the modification reports?"
+title: "Can any additional attributes be displayed in the modification reports?"
 knowledge_article_id: kA00g000000H9VrCAK
 ---
 
-# Can any additional attribites be displayed in the modification reports?
+# Can any additional attributes be displayed in the modification reports?
 
 How do I get the values of the additional attributes to be displayed in any particular SSRS based report.
 

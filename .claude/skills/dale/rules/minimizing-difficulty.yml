@@ -1,0 +1,3 @@
+message: "Do not minimize the difficulty of tasks users are performing."
+level: warning
+reason: "This rule should trigger when the documentation minimizes task difficulty—for example, 'With [product], you can easily [task].'"

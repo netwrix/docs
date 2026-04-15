@@ -9,6 +9,8 @@
 
 # Generated files
 .docusaurus
+.playwright-mcp
+.claude
 .cache-loader
 build
 claude_logs

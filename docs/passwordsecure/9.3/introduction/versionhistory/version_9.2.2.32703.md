@@ -76,7 +76,7 @@ sidebar_position: 9
 
 - Some missing components of the new design of the web app have now also been updated.
 
-- Some errors in which texts were not loaded correctly have been fixed.
+- Some errors in which texts weren't loaded correctly have been fixed.
 
 - The web app is loading the correct language again.
 
@@ -84,7 +84,7 @@ sidebar_position: 9
 
 #### Basic view
 
-- Some errors in which texts were not loaded correctly have been fixed.
+- Some errors in which texts weren't loaded correctly have been fixed.
 
 #### Browser extensions
 

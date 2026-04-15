@@ -23,7 +23,7 @@ You must enroll into Password Reset before you can use it to reset your password
 account. You can enroll manually by providing some information about yourself, or Password Reset can
 enroll you automatically and send a verification code to confirm your identity.
 
-Follow the steps below to manually enroll into Password Reset.
+To manually enroll into Password Reset:
 
 **Step 1 –** Click the **Enroll** item in the menu.
 
@@ -44,7 +44,7 @@ incorrect password. This may trigger a lockout if the Windows account lockout po
 Use the Reset feature when you have forgotten your password. Resetting a password also unlocks the
 account if it is locked.
 
-Follow the steps below to reset a password.
+To reset a password:
 
 **Step 1 –** Click the **Reset** item in the menu.
 
@@ -60,7 +60,7 @@ Follow the steps below to reset a password.
 Use the Unlock feature when you know the password, but have entered it incorrectly too many times
 and Windows has locked out your account.
 
-Follow the steps below to unlock an account.
+To unlock an account:
 
 **Step 1 –** Click the **Unlock** item in the menu.
 
@@ -73,7 +73,7 @@ Follow the steps below to unlock an account.
 
 Use the Change feature when you know the password and would like to change it.
 
-Follow the steps below to change a password.
+To change a password:
 
 **Step 1 –** Click the **Change** item in the menu.
 
@@ -82,7 +82,7 @@ Follow the steps below to change a password.
 **Step 3 –** Enter the **Old Password**, **New Password**, and **Confirm Password** in the
 respective field. Click **Next**.
 
-Password Reset's user interface is built with customizable templates. You can easily modify the user
+Password Reset's user interface is built with customizable templates. You can modify the user
 interface by editing the templates. Even the error messages are defined in the templates, so you can
 edit those too. See the
 [Editing the HTML Templates](/docs/passwordreset/3.23/administration/editing_the_html_templates.md)
