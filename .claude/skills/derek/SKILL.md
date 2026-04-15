@@ -58,7 +58,7 @@ Check that all required fields are present and valid:
 | `keywords` | Present, contains 8–12 items |
 | `products` | Present, contains at least one product ID |
 | `tags` | Present and includes `kb` |
-| `knowledge_article_id` | Present; starts with `kA` followed by alphanumeric characters |
+| `knowledge_article_id` | If present, must not be empty — a non-empty value must start with `kA` followed by alphanumeric characters. If absent, do not flag. |
 
 Flag each missing or invalid field as a separate row in the output table.
 
@@ -92,7 +92,14 @@ Check that Netwrix product names follow the correct pattern from `kb_style_guide
 - All subsequent mentions: short product name (e.g., "Auditor")
 - No unapproved abbreviations (e.g., "NA" for Netwrix Auditor)
 
-## 5. Keywords and Description Quality
+## 5. Admonition Format
+
+KB articles use blockquote callouts, not Docusaurus admonition syntax. Flag any `:::note`, `:::tip`, `:::warning`, or `:::danger` blocks and tell the writer to convert them:
+
+- `> **NOTE:**` — for supplementary information
+- `> **IMPORTANT:**` — for critical information that could cause issues if ignored
+
+## 6. Keywords and Description Quality
 
 **Keywords:** The 8–12 keywords should be specific and searchable — error codes, product names, technical terms, and phrases a customer would type into a search bar. Flag if keywords are too generic, simply repeat the title, or are missing obvious terms visible in the article body.
 
