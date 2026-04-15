@@ -72,7 +72,7 @@ its work as LOCAL SYSTEM and tries to run an un-trusted file. Therefore, when th
 list, the attack attempt will fail.
 
 For a video demo of this scenario,
-see [SecureRun to block User AND System executables](/docs/policypak/components/leastprivilegemanager/videolearningcenter/bestpractices/usersystemexecutables.md)
+see [SecureRun to block User AND System executables](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/usersystemexecutables.md)
 
 ## Scenario 2: Specific rule to block an app from being run, even as local System.
 

@@ -1,6 +1,6 @@
 {
-  "label": "Netwrix Privilege Secure For Access Management Integration",
-  "position": 100,
+  "label": "PP Least Priv + Netwrix NPS",
+  "position": 130,
   "collapsed": true,
   "collapsible": true
 }

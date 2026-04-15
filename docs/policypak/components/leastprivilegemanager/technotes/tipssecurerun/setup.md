@@ -10,12 +10,9 @@ sidebar_position: 20
 
 #### Getting Started
 
-Watch this quick video for tips on setting up Secure Run:
-[Stop Ransomware and other unknown zero day attacks with PolicyPak SecureRun(TM)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/howtoandtechsupport/stopransomware.md).
-
-In addition we have a tool called Auto Rules Generator for generating rules from a machine that has
-all your apps. It is in the Extras folder of the main Netwrix PolicyPak download. For more information on this issue, please see
-[Auto Rules Generator Tool (with SecureRun)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/autorulesgeneratortool.md).
+To get started, use the Auto Rules Generator tool to generate rules from a machine that has
+all your installed applications. The tool is in the Extras folder of the Netwrix PolicyPak download, available from the Netwrix customer portal. For more information, see
+[Auto Rules Generator Tool (with SecureRun)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/autorulesgeneratortool.md).
 
 #### How do we setup SecureRun when each version of the software references more than one .exe to start the program?
 
