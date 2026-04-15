@@ -16,7 +16,7 @@ products:
 ### SSL Certificate Connection Failures
 
 #### Symptom
-- Authentication failures when accessing GroupID Admin Center
+- Authentication failures when accessing Directory Manager Admin Center
 - LDAP connection errors
 - "The remote certificate is invalid" errors
 - HTTP 401 Unauthorized responses
@@ -34,7 +34,7 @@ Self-signed certificates or certificates with incomplete chains that were previo
 #### Diagnostic Steps
 
 1. **Check Application Logs:**
-   - Review GroupID Admin Center logs for SSL/certificate errors
+   - Review Directory Manager Admin Center logs for SSL/certificate errors
    - Look for exceptions related to `X509Certificate2` or `SslPolicyErrors`
 
 2. **Verify Certificate Installation:**
@@ -77,7 +77,7 @@ Self-signed certificates or certificates with incomplete chains that were previo
 
 3. **Restart services:**
    - Restart IIS Application Pool (if using IIS)
-   - Or restart GroupID Admin Center service
+   - Or restart Directory Manager Admin Center service
    - Or restart the web application
 
 **For Expired Certificates:**
@@ -106,7 +106,7 @@ Self-signed certificates or certificates with incomplete chains that were previo
 #### Verification After Resolution
 
 1. **Test authentication:**
-   - Access GroupID Admin Center login page
+   - Access Directory Manager Admin Center login page
    - Attempt to authenticate
    - Verify successful login
 

@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # SQL Certificate for Windows Authentication
 
-Before installing or configuring GroupID Admin Center, ensure all SSL/TLS certificates used for 
+Before installing or configuring Directory Manager Admin Center, ensure all SSL/TLS certificates used for 
 LDAP and authentication services meet the following requirements:
 
 #### Certificate Installation Location
@@ -45,4 +45,4 @@ Certificates are validated against these criteria:
 
 5. Verify the certificate appears in the Trusted Root CA store
 
-6. Restart the GroupID Admin Center service/application pool
+6. Restart the Directory Manager Admin Center service/application pool
