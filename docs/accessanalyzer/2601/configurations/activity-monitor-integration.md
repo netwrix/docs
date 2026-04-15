@@ -1,18 +1,7 @@
 ---
 title: "Activity Monitor Integration"
-description: "How to configure Netwrix Activity Monitor to send real-time file system activity data to Access Analyzer 26"
-keywords:
-  - activity monitor
-  - real-time monitoring
-  - file system activity
-  - NAM integration
-  - file events
-products:
-  - access-analyzer
-sidebar_label: "Activity Monitor Integration"
-tags:
-  - configuration
-  - activity-monitor
+description: "How to configure Netwrix Activity Monitor to send real-time file system activity data to Access Analyzer"
+sidebar_position: 85
 ---
 
 # Activity Monitor Integration
@@ -96,4 +85,4 @@ If no events appear after a few minutes, check the following:
 ## Related links
 
 - [Netwrix Activity Monitor Documentation](https://docs.netwrix.com/docs/activitymonitor)
-- [Access Analyzer 26 — Service Accounts](../migration/migrate-credentials.md)
+- [Migrate Credentials](../kb/migration/migrate-credentials.md)
