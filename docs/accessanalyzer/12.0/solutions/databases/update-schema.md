@@ -12,8 +12,7 @@ other jobs in the 0.Collection job group for both new installations and upgrades
 scheduled with any of the collections. Don't delete the job from the job tree.
 
 :::info
-This job doesn't need to be moved. Leave it to run as part of the .Databases Schema
-job group.
+Leave this job in the .Databases Schema job group. Don't move it.
 :::
 
 ## Query for the Update_Schema Job

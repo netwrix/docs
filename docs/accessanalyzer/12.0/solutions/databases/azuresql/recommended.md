@@ -47,12 +47,12 @@ The 0.Collection Job Group has been set to run against the following default dyn
 The SQL Data Collector requires a specific set of permissions. See the
 [AzureSQL Target Least Privilege Model](/docs/accessanalyzer/12.0/requirements/databases/azuresql/azuresql.md)
 topic for the required permissions. The account used can be either an Active Directory account with
-database login enabled or a SQL account. Once the account has been provisioned, create a custom
+database login enabled or a SQL account. After provisioning the account, create a custom
 Connection Profile containing the credentials for the targeted environment. See the
 [SQL Custom Connection Profile & Default Dynamic Host List](/docs/accessanalyzer/12.0/admin/datacollector/sql/configurejob.md)
 topic for additional information.
 
-The Connection Profile should be assigned under the **Databases** > 0.Collection > Azure SQL >
+Assign the Connection Profile under the **Databases** > 0.Collection > Azure SQL >
 Settings > Connection node. By default, the connection node uses the Default Profile configured at
 the global settings level. However, since this may not be the Connection Profile with the necessary
 permissions for the assigned hosts, click the radio button for the **Select one of the following user

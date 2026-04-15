@@ -22,9 +22,9 @@ topic for additional information.
 
 **Sensitive Data Discovery Considerations**
 
-If running Sensitive Data Discovery (SDD) scans, you must increase the minimum amount of RAM. Each
-thread requires a minimum of 2 additional GB of RAM per host. For example, if the job is configured
-to scan 8 hosts at a time, then an extra 16 GB of RAM are required (8x2=16).
+If you run Sensitive Data Discovery (SDD) scans, you must increase the minimum amount of RAM. Each
+thread requires a minimum of 2 additional GB of RAM per host. For example, a job configured to scan
+8 hosts at a time requires an extra 16 GB of RAM (8x2=16).
 
 :::note
 Access Analyzer installs the appropriate JDK (Java) version for Sensitive Data Discovery on the
@@ -45,7 +45,6 @@ sensitive data.
 The Azure SQL Solution includes:
 
 - Databases > 0.Collection > AzureSQL >
-  [0.Collection > Azure SQL Job Group](/docs/accessanalyzer/12.0/solutions/databases/azuresql/collection-azuresql/overview.md) — This job group is
-  designed to collect high-level summary information from targeted Azure SQL Instances. This
-  information is used by other jobs in the Azure SQL solution set to provide further analysis and
-  for producing respective reports.
+  [0.Collection > Azure SQL Job Group](/docs/accessanalyzer/12.0/solutions/databases/azuresql/collection-azuresql/overview.md) — This job group
+  collects high-level summary information from targeted Azure SQL Instances. Other jobs in the
+  Azure SQL solution use this information for further analysis and to produce reports.
