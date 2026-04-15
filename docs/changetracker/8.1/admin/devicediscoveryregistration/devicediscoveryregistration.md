@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes how devices are discovered and registered within the system. The process consists of two main phases:
+This document describes how the system discovers and registers devices. The process consists of two main phases:
 
 1. **Device Discovery** - Identifying device characteristics and operating system details
 2. **Device Registration** - Placing devices into appropriate groups based on their characteristics
@@ -153,22 +153,22 @@ Device registration is the process of placing newly discovered devices into appr
 
 When a device is first discovered or re-registered, it follows this sequence:
 
-1. **Initial Placement**: Device is placed in both the "New Devices" and "Awaiting Registration" groups
-   - The "New Devices" group serves as a safety net - if the registration process fails for any reason, the device can still be found here
+1. **Initial Placement**: The system places the device in both the "New Devices" and "Awaiting Registration" groups
+   - The "New Devices" group provides a fallback — if the registration process fails for any reason, the device can still be found here
    - This ensures devices are never "lost" during the registration process
 
-2. **Registration Report Execution**: A registration report is run to collect device characteristics
+2. **Registration Report Execution**: The system runs a registration report to collect device characteristics
    - The report gathers information such as operating system type, version, and other attributes
-   - This data is used to determine appropriate group placement
+   - This data determines appropriate group placement
 
-3. **Group Assignment**: Based on the report results and custom scripts, the device is assigned to groups
+3. **Group Assignment**: Based on the report results and custom scripts, the system assigns the device to groups
    - Custom registration scripts can examine the collected data and apply business logic
    - If no custom script exists, default OS-based group assignment is used
 
-4. **Final Placement**: Device is moved from "Awaiting Registration" to its target groups
-   - If appropriate groups are found, the device is removed from "New Devices" and added to target groups
+4. **Final Placement**: The system moves the device from "Awaiting Registration" to its target groups
+   - If appropriate groups are found, the system removes the device from "New Devices" and adds it to target groups
    - If no appropriate groups are found or registration fails, the device **remains in "New Devices"** for manual review
-   - Device is always added to the "All Devices" group regardless of other group assignments
+   - The system always adds the device to the "All Devices" group regardless of other group assignments
 
 ### Default Group Assignment
 
@@ -219,7 +219,7 @@ The system follows this sequence when assigning groups:
 
 2. **Remove from Awaiting Registration**: Device is removed from the "Awaiting Registration" group
 
-3. **Evaluate Custom Script**: If a custom registration script exists, it is executed with the device characteristics
+3. **Evaluate Custom Script**: If a custom registration script exists, the system executes it with the device characteristics
 
 4. **Determine Target Groups**: Groups are identified based on:
    - Custom script results (if script exists)
@@ -229,9 +229,9 @@ The system follows this sequence when assigning groups:
    - If any group doesn't exist, the entire registration is aborted
    - Device remains in "New Devices" for manual intervention
 
-6. **Remove from Previous OS Groups**: If `EnableAutoReregisterAgentAfterOsChange` is enabled, device is removed from previous OS-specific groups (during re-registration scenarios)
+6. **Remove from Previous OS Groups**: If `EnableAutoReregisterAgentAfterOsChange` is enabled, the system removes the device from previous OS-specific groups (during re-registration scenarios)
 
-7. **Add to Target Groups**: Device is added to all identified groups (if validation passed)
+7. **Add to Target Groups**: The system adds the device to all identified groups (if validation passed)
 
 8. **Add to All Devices**: Device is always added to the "All Devices" group
 
@@ -252,7 +252,7 @@ If the registration process encounters issues, the device remains in the "New De
 
 - **Validation Failures**: Any validation failure during the registration process results in the device staying in "New Devices"
 
-This safety-net approach ensures that devices requiring manual intervention can always be found in the "New Devices" group, preventing devices from being "lost" in the system.
+This fallback approach ensures that devices requiring manual intervention can always be found in the "New Devices" group, preventing devices from being "lost" in the system.
 
 ---
 
@@ -277,7 +277,7 @@ This safety-net approach ensures that devices requiring manual intervention can 
 **Default Value**: `false`
 
 **Behaviour**:
-- When `true`: If a device's OS changes (e.g., after an upgrade), it is automatically moved back to "Awaiting Registration" and the registration process runs again
+- When `true`: If a device's OS changes (e.g., after an upgrade), the system automatically moves it back to "Awaiting Registration" and runs the registration process again
 - When `false`: OS changes do not trigger automatic re-registration
 
 **Use Case**: Enable this setting if you want devices to be automatically reassigned to appropriate OS-specific groups after operating system upgrades.

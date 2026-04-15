@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # General settings
 
-## What are general settings?
+## General settings overview
 
 The **general settings** relate to users. Thus, each user can customize the software to their own
 needs. The following options can be configured:
@@ -24,8 +24,8 @@ restarted.
 
 Starting the application minimised in the notification area
 
-You can start the client minimized if you wish to run Netwrix Password Secure in the background. You
-will be able to access it through the notification area.
+You can start the client minimized to run Netwrix Password Secure in the background. You
+can then access it through the notification area.
 
 Minimise the application on closing
 

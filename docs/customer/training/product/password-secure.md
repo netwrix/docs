@@ -1,6 +1,6 @@
 ---
 title: Netwrix Password Secure Learning Path
-sidebar_position: 220
+sidebar_position: 210
 tags: [getting-started, training, password-secure]
 keywords: [training, course, password secure]
 description: "Learn to use Netwrix Password Secure through courses"

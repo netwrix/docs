@@ -1,0 +1,18 @@
+extends: existence
+message: "Remove '%s' and state the point directly."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - '\bit should be noted that\b'
+  - '\bit is important to note that\b'
+  - '\bit is important to ensure that\b'
+  - '\bit is important to\b'
+  - '\bit is recommended that\b'
+  - '\bit is necessary to\b'
+  - '\bit is possible to\b'
+  - '\bit is worth noting that\b'
+  - '\bit must be noted that\b'
+  - '\bas mentioned previously\b'
+  - '\bas previously mentioned\b'
+  - '\bneedless to say\b'

@@ -1,0 +1,10 @@
+{
+  "label": "Microsoft Entra ID connection",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "entra_id_connection"
+  }
+}

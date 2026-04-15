@@ -28,12 +28,12 @@ knowledge_article_id: kA04u0000000IvhCAE
 ## Issue
 `Error during processing: Could not open registry key SYSTEM\CurrentControlSet\Services\SBTLogging\Parameters for reading: Access is denied (5); local: False`
 
-If you get this error after running an FSAA scan, the scan was unable to open a registry key.
+If you get this error after running a File System Access Audit (FSAA) scan, the scan was unable to open a registry key.
 
 ## Instructions
 
 ### Windows
-If you get this after scanning a Windows host, either the registry key doesn't exist or access is denied. To investigate:
+If you get this after scanning a Windows host, either the registry key does not exist or the scan cannot access it. To investigate:
 
 1. Open **Regedit**.
 2. From **Start**, open **CMD** and run **Regedit** (run it using the same credential as the scan).

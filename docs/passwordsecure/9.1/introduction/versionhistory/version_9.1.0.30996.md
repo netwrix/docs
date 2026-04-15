@@ -13,7 +13,7 @@ sidebar_position: 40
 - UserVoice Winner: Stored OTPs can now be retrieved directly via the browser extension.
 - New improved autofill logic: The autofill function has been completely revised to enable a more
   convenient automatic login in the browser.
-- Cross-platform authentication is now possible: The Windows app, browser extension and autofill
+- Cross-platform authentication is now possible: The Windows app, browser extension, and autofill
   add-on can now authenticate each other.
 - UserVoice Winner: You can now also use htaccess forms for automatic login.
 - The SSO agent connection for the browser extension has been deprecated. Here you can find
@@ -59,8 +59,8 @@ The following names have been changed:
 | AdminClient                          | Server Manager      | Server Manager      |
 | SAML Service                         | IdP service         | IdP Service         |
 
-\* This improvement affects all views (basic and advanced view), apps and add-ons (Server Manager,
-web and Windows app, autofill and offline add-on) the browser extension, API, and the server as well
+\* This improvement affects all views (basic and advanced view), apps, and add-ons (Server Manager,
+web, and Windows app, autofill, and offline add-on) the browser extension, API, and the server as well
 as MSP.
 
 #### Basic view (formerly LightClient)\*
@@ -102,5 +102,5 @@ This only affects the Windows app:
 
 #### API
 
-- It is no longer possible to attach data to more than one organizational unit.
+- It's no longer possible to attach data to more than one organizational unit.
 - Passwords that are changed via the JavaScript API/SDKbuD are encrypted correctly.

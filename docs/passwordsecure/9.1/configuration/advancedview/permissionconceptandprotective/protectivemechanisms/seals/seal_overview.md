@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Seal overview
 
-## What is the seal overview?
+## Seal overview
 
 Users with the required permissions to issue the releases receive access to the current state of the
 existing seals at any time via the seal overview. The overview is accessible via the ribbon as well
@@ -32,7 +32,7 @@ returned to the "sealed" state.
 
 #### 2. Release process
 
-If a user has requested a release, it is in the **release process**. This status is highlighted by
+If a user has requested a release, it's in the **release process**. This status is highlighted by
 an icon next to the user name, since a possible release can be actively granted by the authorized
 user. These so-called **important entries** can also be filtered in the headline of the seal
 overview in via the column. The maximum duration of an release request can be configured in the
@@ -53,8 +53,8 @@ be manually reset by the icon to the right of the broken seal column. The state 
 restored.
 
 :::warning
-It makes no sense to re-seal already visible passwords. The user was able to view the
-password. Therefore, it is not monitorable whether the password has been saved, for example, by
-screenshot. In such cases, a new password is the only way to guarantee 100% password security!
+It makes no sense to re-seal already visible passwords. The user could view the
+password. Therefore, it isn't monitorable whether the password has been saved, for example, by
+screenshot. In such cases, a new password is the only way to guarantee 100% password security.
 
 :::

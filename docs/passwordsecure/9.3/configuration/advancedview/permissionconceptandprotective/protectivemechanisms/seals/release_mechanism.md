@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Release mechanism
 
-## What is the release mechanism?
+## Release mechanism overview
 
 A sealed password will not be released until the number of approvals required in the seal has been
 granted. Releases can be granted by anyone who has been defined as having the required permissions
@@ -16,25 +16,28 @@ release request to the final grant of the release and the breaking of the seal.
 ## Users and roles in the release mechanism
 
 As noted in the previous sections, seals always restrict the right of a user to view a specific
-password. Even if the configuration is usually done at the level of the role, each user is naturally
-responsible for his own request when carrying out the release. Even if a seal is defined for a role,
+password. Even if the configuration is usually done at the level of the role, each user is responsible for his own request when carrying out the release. Even if a seal is defined for a role,
 technically separate seals are created for each individual member of the role.
 
-NOTE: Requests or releases are only valid for the respective user!
+:::note
+Requests or releases are only valid for the respective user.
+:::
 
-**CAUTION:** If a user is a member of several roles of a seal, the "stronger" right is always
+:::warning
+If a user is a member of several roles of a seal, the "stronger" right is always
 applied. Release rights have a priority over read rights
+:::
 
 ## 1. Requesting a release
 
-In order to release a seal for sealed passwords, this must be requested from the user with the
+To release a seal for sealed passwords, this must be requested from the user with the
 required permissions to issue the release. Within the Netwrix Password Secure client, this can be
 done via the buttons **Reveal** and **Seal** in the ribbon, as well as via the **Icon in the
 password field** of the data record in the reading pane.
 
 ![seal protection](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/seals/release_mechanism/release_mechanism_1-en.webp)
 
-A modal window opens, which can be used to request the seal. The reason for the entry will be
+A modal window opens, which lets you request the seal. The reason for the entry will be
 displayed to the users with the required permissions to issue the release.
 
 ![start seal process](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/protective_mechanisms/seals/release_mechanism/release_mechanism_2-en.webp)

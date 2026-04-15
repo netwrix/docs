@@ -1,0 +1,10 @@
+{
+  "label": "Dashboard and widgets",
+  "position": 80,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "dashboard_and_widgets"
+  }
+}

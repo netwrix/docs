@@ -1,0 +1,6 @@
+extends: existence
+message: "Use a single space after sentence-ending punctuation, not two."
+level: warning
+nonword: true
+tokens:
+  - '[.!?]\s{2,}\S'

@@ -19,7 +19,7 @@ These are the minimum system requirements for managing approximately 10 customer
 - 100 GB HDD minimum
 
 :::warning
-SQL Server Express edition is not recommended due to its limitations.
+SQL Server Express edition isn't recommended due to its limitations.
 :::
 
 As your customer count grows, add the following resources for every 200 additional users:
@@ -43,7 +43,7 @@ As your customer count grows, add the following resources for every 200 addition
 - 4 GB RAM
 
 :::tip
-Configure each application server to handle a maximum of 100 customers. When you reach that limit, set up a second application server or implement load balancing across your application servers.
+Configure each application server to handle a maximum of 100 customers. When you reach that limit, set up a second application server, or implement load balancing across your application servers.
 :::
 
 :::warning
@@ -55,5 +55,5 @@ Add an additional application server — including load balancing — for every 
 :::
 
 :::note
-Individual variables, such as the number of passwords per user, affect performance. For MSP systems, monitor performance continuously and add resources as needed.
+Individual variables, such as the number of passwords per user, affect performance. For MSP systems, monitor performance continuously, and add resources as needed.
 :::

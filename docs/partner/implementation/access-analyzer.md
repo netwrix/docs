@@ -1,6 +1,6 @@
 ---
 title: Netwrix Access Analyzer Professional Services Engineer
-sidebar_position: 1700
+sidebar_position: 1430
 tags: [certification, partners, professional-services, access-analyzer, access-information-center, activity-monitor]
 keywords: [training, course, certification, partners, professional services, access analyzer, access information center, activity monitor]
 description: "Become a certified Professional Services Engineer for Netwrix Access Analyzer"
