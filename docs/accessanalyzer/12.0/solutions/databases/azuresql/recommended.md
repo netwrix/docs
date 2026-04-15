@@ -45,27 +45,27 @@ The 0.Collection Job Group has been set to run against the following default dyn
 
 **Connection Profile**
 
-The SQL Data Collector requires a specific set of permissions. See the Permissions section for
-necessary permissions. The account used can be either an Active Directory account with database
-login enabled or a SQL account. After the account has been provisioned, create a custom Connection
-Profile containing the credentials for the targeted environment. See the
+The SQL Data Collector requires a specific set of permissions. See the
+[AzureSQL Target Least Privilege Model](/docs/accessanalyzer/12.0/requirements/databases/azuresql/azuresql.md)
+topic for the required permissions. The account used can be either an Active Directory account with
+database login enabled or a SQL account. Once the account has been provisioned, create a custom
+Connection Profile containing the credentials for the targeted environment. See the
 [SQL Custom Connection Profile & Default Dynamic Host List](/docs/accessanalyzer/12.0/admin/datacollector/sql/configurejob.md)
 topic for additional information.
 
-Assign the Connection Profile under the **Databases** > 0.Collection > Azure SQL > Settings >
-Connection node. It is set to Use the Default Profile, as configured at the global settings level. However, since this may not be the Connection Profile with the necessary permissions
-for the assigned hosts, click the radio button for **Select one of the following user-defined profiles**
-and select the appropriate Connection Profile from the dropdown menu.
+The Connection Profile should be assigned under the **Databases** > 0.Collection > Azure SQL >
+Settings > Connection node. By default, the connection node uses the Default Profile configured at
+the global settings level. However, since this may not be the Connection Profile with the necessary
+permissions for the assigned hosts, click the radio button for the Select one of the following user
+defined profiles option and select the appropriate Connection Profile drop-down menu.
 
 See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.
 
 **Schedule Frequency**
 
-One of the most important decisions to make is how frequently to collect this data. The Azure SQL
-Job Group can be scheduled to run as desired depending on the types of auditing being conducted and
-the scope of the target environment. The general recommendation is to schedule the solution to run
-daily.
+Schedule frequency depends on the types of auditing being conducted and the scope of the target
+environment. The general recommendation is to run the solution daily.
 
 **Run Order**
 

@@ -23,7 +23,8 @@ See the following topics for target environment requirements:
 - [Target Oracle Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/oracle/oracle.md)
 - [Target PostgreSQL Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/postgresql.md)
 - [Target Redshift Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/redshift.md)
-- [Target SQL Server Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/sql/sql.md)
+- [Target Microsoft SQL Server Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/sql/sql.md)
+- [Target Azure SQL Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/azuresql/overview.md)
 
 ## Databases Solution Requirements on the Access Analyzer Console
 

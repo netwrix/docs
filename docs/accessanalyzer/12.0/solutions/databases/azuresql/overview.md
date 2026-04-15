@@ -17,18 +17,18 @@ security assessment for Azure SQL.
 **Requirements, Permissions, and Ports**
 
 See the
-[Target SQL Server Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/sql/sql.md)
+[Target Azure SQL Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/azuresql/overview.md)
 topic for additional information.
 
 **Sensitive Data Discovery Considerations**
 
-If you run Sensitive Data Discovery (SDD) scans, you must increase the minimum amount of RAM. Each
-thread requires a minimum of 2 additional GB of RAM per host. For example, a job configured to scan
-8 hosts at a time requires an extra 16 GB of RAM (8x2=16).
+If running Sensitive Data Discovery (SDD) scans, you must increase the minimum amount of RAM. Each
+thread requires a minimum of 2 additional GB of RAM per host. For example, if the job is configured
+to scan 8 hosts at a time, then an extra 16 GB of RAM are required (8x2=16).
 
 :::note
-The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and doesn't require any configuration; it has been
+Access Analyzer installs the appropriate JDK (Java) version for Sensitive Data Discovery on the
+server. The JDK deployed is prepackaged and does not require any configuration; it has been
 preconfigured to work with Access Analyzer and should never be customized through Java. It will not
 conflict with other JDKs or Java Runtimes in the same environment.
 :::

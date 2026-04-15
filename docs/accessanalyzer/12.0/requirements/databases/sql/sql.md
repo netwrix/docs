@@ -1,15 +1,13 @@
 ---
-title: "Target SQL Server Requirements, Permissions, and Ports"
-description: "Target SQL Server Requirements, Permissions, and Ports"
+title: "Target Microsoft SQL Server Requirements, Permissions, and Ports"
+description: "Target Microsoft SQL Server Requirements, Permissions, and Ports"
 sidebar_position: 70
 ---
 
-# Target SQL Server Requirements, Permissions, and Ports
+# Target Microsoft SQL Server Requirements, Permissions, and Ports
 
 The Access Analyzer for Databases Solution provides the ability to audit and monitor SQL Server
 database environments to collect permissions, sensitive data, and activity events. It scans:
-
-- Azure SQL
 
 - SQL Server 2022
 - SQL Server 2019
@@ -89,8 +87,6 @@ This solution employs the following data collector to scan the target environmen
     - Grant View server state to [DOMAIN\USER]
     - Grant Control Server to [DOMAIN\USER] (specifically required for the Weak Passwords Job)
 
-See the [Azure SQL Auditing Configuration](/docs/accessanalyzer/12.0/requirements/databases/sql/azuresqlaccess.md) topic for additional
-information.
 
 ## Ports
 
