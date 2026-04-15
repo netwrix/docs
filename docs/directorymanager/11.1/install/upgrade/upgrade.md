@@ -39,7 +39,7 @@ Before proceeding with the upgrade, verify that all SSL/TLS certificates used fo
 2. **Check certificate validity:**
    - Double-click each certificate
    - Verify "Valid from" and "Valid to" dates
-   - Ensure certificates are not expired
+   - Ensure certificates aren't expired
 ![2-1-check_certificate_validity](/images/directorymanager/11.1/install/upgrade/2-1-check_certificate_validity.webp)
 
 3. **Verify certificate chain:**
@@ -81,7 +81,7 @@ can choose to upgrade all or selective data of the previous version. Options are
     ![3-select_modules-custom](/images/directorymanager/11.1/install/upgrade/3-select_modules-custom.webp)
 
     :::note
-    If later on, you wish to upgrade specific groups and their history via the Upgrade-Group
+    If later on, you want to upgrade specific groups and their history via the Upgrade-Group
     commandlet, then you must upgrade the Configuration and History in the first upgrade run. This
     will upgrade the history in the database as per Directory Manager 11.1 format and replicates it
     to Elasticsearch. Later on, when you upgrade specific groups and their history using the
@@ -150,8 +150,8 @@ messaging providers.
     :::
 
 
-    The wizard does not create a separate identity store for each child domain in the same forest.
-    In case it cannot determine a forest structure, it creates separate identity stores for each
+    The wizard doesn't create a separate identity store for each child domain in the same forest.
+    In case it can't determine a forest structure, it creates separate identity stores for each
     domain.
 
 Step 10 – For Synchronize jobs that use Office 365 as messaging provider in Directory Manager 10,
@@ -178,7 +178,7 @@ for that domain exists or not.
 
 - If an identity store for that domain exists or if it being created for a Synchronize job in this
   upgrade process, Directory Manager will bind the reports to it.
-- If an identity store for that domain does not exist, then you have to create an identity store for
+- If an identity store for that domain doesn't exist, then you have to create an identity store for
   it. It must essentially be an Active Directory identity store. The wizard will bind the reports
   generated in Directory Manager 10 to the identity store, so you will be able to view them in
   Directory Manager 11.1.
@@ -196,7 +196,7 @@ directory provider, it will automatically move the schedule to the respective id
 
 :::tip
 Remember, during upgrade, identity stores are created for destination directory providers of
-Synchronize jobs (i.e., for providers that do not have an identity store in the source version).
+Synchronize jobs (i.e., for providers that don't have an identity store in the source version).
 :::
 
 
@@ -221,8 +221,8 @@ This page displays a complete summary of the data to be copied/upgraded for your
 These options were selected on the Select modules to upgrade page..
 
 :::note
-If there are any disabled identity store(s) in the source Directory Manager version, Directory
-Manager will not upgrade those identity store(s). However, data of those identity store(s) will
+If there are any disabled identity stores in the source Directory Manager version, Directory
+Manager will not upgrade those identity stores. However, data of those identity stores will
 remain intact in the source Directory Manager version.
 :::
 
