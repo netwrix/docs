@@ -20,7 +20,7 @@ run directly or scheduled.
 
 - Full registration within Microsoft's Azure portal:
 
-    - Creation of a Access Analyzer Azure SQL Role in the Access control (IAM) section
+    - Creation of an Access Analyzer Azure SQL Role in the Access control (IAM) section
     - Successful registration of the Access Analyzer app
     - Successful creation of an Application (client) ID
 
@@ -55,8 +55,8 @@ topic for additional information.
 The Connection Profile should be assigned under the **Databases** > 0.Collection > Azure SQL >
 Settings > Connection node. It is set to Use the Default Profile, as configured at the global
 settings level. However, since this may not be the Connection Profile with the necessary permissions
-for the assigned hosts, click the radio button for the Select one of the following user defined
-profiles option and select the appropriate Connection Profile drop-down menu.
+for the assigned hosts, click the radio button for **Select one of the following user-defined profiles**
+and select the appropriate Connection Profile from the drop-down menu.
 
 See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.

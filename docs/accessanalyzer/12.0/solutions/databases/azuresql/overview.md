@@ -35,17 +35,17 @@ conflict with other JDKs or Java Runtimes in the same environment.
 
 **Location**
 
-The Azure SQL Solution within the Jobs tree, as part of the Database Solution: Jobs > Database >
+The Azure SQL Solution is located within the Jobs tree, as part of the Database Solution: Jobs > Database >
 Azure SQL.
 
-The Database Solution license includes all supported database platforms supported by Access
-Analyzer. Additionally, Sensitive Data Discovery enables the solution to search database content for
+The Database Solution license covers all database platforms that Access Analyzer supports.
+Additionally, Sensitive Data Discovery enables the solution to search database content for
 sensitive data.
 
 The Azure SQL Solution includes:
 
 - Databases > 0.Collection > AzureSQL >
   [0.Collection > Azure SQL Job Group](/docs/accessanalyzer/12.0/solutions/databases/azuresql/collection-azuresql/overview.md) — This job group is
-  designed to collect high level summary information from targeted Azure SQL Instances. This
+  designed to collect high-level summary information from targeted Azure SQL Instances. This
   information is used by other jobs in the Azure SQL solution set to provide further analysis and
   for producing respective reports.

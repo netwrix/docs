@@ -39,7 +39,7 @@ conflict with other JDKs or Java Runtimes in the same environment.
 
 **Location**
 
-The Microsoft SQL Server Solution within the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
+The Microsoft SQL Server Solution is located within the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
 
 The Database Solution license includes all supported database platforms supported by Access
 Analyzer. Additionally, Sensitive Data Discovery enables the solution to search database content for
