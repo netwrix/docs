@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Compute a **scalar** Property"
 description: "Compute a **scalar** Property"
 sidebar_position: 20
@@ -111,7 +111,7 @@ synchronize the property back to Identity Manager; **Create Only** to use this c
 
 For example, consider a system, that we want to connect to Identity Manager (let's call it SYST) using a title property. Consider also that SYST needs to be provisioned with the value of title, but does not allow any other system to retrieve said value.
 
-In this case, we use **Create Only** so that Identity Manager sends the adequate provisioning order upon creation, and then is able to change the provisioning state to **Executed** without synchronization. If any changes impact that ****scalar** Property** value the workflow state will be modified to **PolicyApprovedWithChanges** meaning that the policy value is not equal to the external system's value and that will not be provisioned.
+In this case, we use **Create Only** so that Identity Manager sends the adequate provisioning order upon creation, and then sets the provisioning state to **None** without synchronization. If any changes impact that ****scalar** Property** value the workflow state will be modified to **PolicyApprovedWithChanges** meaning that the policy value is not equal to the external system's value and that will not be provisioned.
 
 - Comparison type: Comparison type between the value of the target object computed by the rule and
 its value from the managed system. Non-conforming values are displayed on the **Provisioning Review** screen.
