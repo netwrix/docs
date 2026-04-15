@@ -1,6 +1,6 @@
 ---
 title: Netwrix Platform Governance for NetSuite Professional Services Engineer
-sidebar_position: 1810
+sidebar_position: 1540
 tags: [certification, partners, professional-services, platform-governance-for-netsuite]
 keywords: [training, course, certification, partners, professional services, platform governance for netsuite]
 description: "Become a certified Professional Services Engineer for Netwrix Platform Governance for NetSuite"

@@ -10,14 +10,13 @@ the user enrolls.
 The API is disabled by default. If an attacker sends many queries to the API, they could try to
 guess the domain and user names of enrolled users. They could get the same information by sending
 many requests to the Web Interface.API is the more attractive target because API responds faster and
-API queries are not logged to the Audit Log.
+API queries aren't logged to the Audit Log.
 
-If you do not want to enable the API because your Web Interface is accessible from the Internet,
-then you could leave the API disabled on your Internet-facing Web Interface and set up an internal
+To avoid exposing the API on an Internet-facing Web Interface, leave the API disabled on that Web Interface and set up an internal
 Web Interface for API queries. Use the ServerIP registry value to point both Web Interfaces to the
 same APR Server, and enable the API only on the internal server. See the
 [Multiple Server Installation](/docs/passwordreset/3.23/administration/installation.md#multiple-server-installation)
-topic for more information.
+topic for firewall and installation steps.
 
 Follow the steps below to enable the API.
 
@@ -47,7 +46,7 @@ There are three possible responses:
 | Response                | Meaning                                |
 | ----------------------- | -------------------------------------- |
 | `{"isEnrolled": true}`  | User is enrolled                       |
-| `{"isEnrolled": false}` | User is not enrolled or does not exist |
+| `{"isEnrolled": false}` | User isn't enrolled or doesn't exist |
 | `{}`                    | System maintenance is running          |
 
 The API may also return one of these HTTP errors:
@@ -55,13 +54,13 @@ The API may also return one of these HTTP errors:
 | Error                     | Reason                                     |
 | ------------------------- | ------------------------------------------ |
 | 400 Bad Request           | Invalid request path                       |
-| 403 Forbidden             | API disabled, or cannot read configuration |
+| 403 Forbidden             | API disabled, or can't read configuration |
 | 500 Internal Server Error | Other error                                |
 
 ## Performance and Caching
 
-API performance is dependent on many factors. Synchronous queries will suffice in most cases, but
-asynchronous queries are recommended to avoid delays.
+API performance depends on many factors. Synchronous queries suffice in most cases, but
+use asynchronous queries to avoid delays.
 
 Avoid unnecessary calls to the API as they can overload the server. Try to call the API only once
 after users logon.

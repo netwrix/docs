@@ -8,26 +8,38 @@ description: "Learn about the Netwrix Sales Professional certification options"
 
 The following learning paths provide Partner certification for Sales Professionals:
 
-* Netwrix 1Secure Editions
-    * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
-* Data Security Posture Management Solution
-    * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
-    * [Netwrix Data Security Posture Management Solution Sales Professional](./data-security-posture-management.md)
-* Directory Management Solution
-    * [Netwrix Directory Management Solution Sales Professional](./directory-management.md)
-* Endpoint Management Solution
+* Data Security Platform
+    * AI Governance Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
+    * Data Security Posture Management Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix Data Security Posture Management Solution Sales Professional](./data-security-posture-management.md)
+        * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
+    * Data Access Governance Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md) 
+    * Data Loss Prevention Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
+    * Data Discovery & Classification Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+* Identity Security Platform
+    * Identity Threat Detection & Response Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix Identity Threat Detection & Response Solution Sales Professional](./identity-threat-detection-response.md)
+    * Identity Governance & Administration Use Case
+        * [Netwrix Identity Manager Sales Professional](./identity-manager.md)
+    * Identity Security Posture Management Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix PingCastle Sales Professional](./pingcastle.md)
+    * Privileged Access Management Use Case
+        * [Netwrix Privileged Access Management Solution Sales Professional](./privileged-access-management.md)
+    * Directory Security Use Case
+        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix PingCastle Sales Professional](./pingcastle.md)
+* Other Certifications
     * [Netwrix Change Tracker Sales Professional](./change-tracker.md)
-    * [Netwrix Endpoint Policy Manager Sales Professional](./endpoint-policy-manager.md)
-    * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
-    * [Netwrix Endpoint Management Solution Sales Professional](./endpoint-management.md)
-* Identity Management Solution
-    * [Netwrix Identity Manager Sales Professional](./identity-manager.md)
+    * [Netwrix Password Secure Sales Professional](./password-secure.md)
     * [Netwrix Platform Governance for NetSuite Sales Professional](./platform-governance-netsuite.md)
     * [Netwrix Platform Governance for Salesforce Sales Professional](./platform-governance-salesforce.md)
-* Identity Threat Detection & Response Solution
-    * [Netwrix PingCastle Sales Professional](./pingcastle.md)
-    * [Netwrix Identity Threat Detection & Response Solution Sales Professional](./identity-threat-detection-response.md)
-* Privilege Access Management Solution
-    * [Netwrix Endpoint Policy Manager Sales Professional](./endpoint-policy-manager.md)
-    * [Netwrix Password Secure Sales Professional](./password-secure.md)
-    * [Netwrix Privileged Access Management Solution Sales Professional](./privileged-access-management.md)
+    * [Netwrix PolicyPak Sales Professional](./policypak.md)

@@ -8,7 +8,7 @@ sidebar_position: 30
 
 Review the following for additional information:
 
-- [OS Support Matrix](/docs/changetracker/8.1/requirements/ossupportmatrix.md)
+- [Support Matrix](/docs/changetracker/8.1/requirements/supportmatrix.md)
 - [Agent and Device Ports](/docs/changetracker/8.1/requirements/agentdeviceports.md)
 - [Hub Installation for Windows](/docs/changetracker/8.1/requirements/windowsserver.md)
 - [Gen 7 Agent for Windows](/docs/changetracker/8.1/requirements/gen7agentwindows.md)

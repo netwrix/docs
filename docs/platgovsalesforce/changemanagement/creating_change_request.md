@@ -6,13 +6,13 @@ sidebar_position: 40
 
 # Creating a Change Request
 
-Change requests are the method to plan, analyze, track and approve changes. You can create different
+Change requests are the method to plan, analyze, track, and approve changes. You can create different
 types of Change Requests to match the change you want to manage. Here are two options:
 
 - **Customization** Change request is used for Metadata changes, such as
   [Customizations](/docs/platgovsalesforce/customizations/customizations_overview.md).
 - **Data Record** - Change request is used for Data Changes to Revenue Cloud/
-  [CPQ](/docs/platgovsalesforce/changemanagement/enhanced_cpq_support.md).
+  [CPQ](/docs/platgovsalesforce/changemanagement/datatracking/enhanced_cpq_support.md).
 
 :::note
 Data Record Change Requests are only available with an Enterprise Compliance license.
@@ -94,11 +94,11 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
 
     - Review existing customizations to identify the correct format.
 
-    This allows you to reference real examples from your account and ensure the API Name follows the correct structure.
+    Use this to reference real examples from your account and ensure the API Name follows the correct structure.
 
     :::
 
-6. **Save** the **Change Request**. A confirmation is displayed when the change request is saved and the user is redirected to the record view page.
+6. **Save** the **Change Request**. When you save the change request, a confirmation appears and the system redirects you to the record view page.
 
     ![Continue with the Change Request](/images/platgovsalesforce/change_management/change_request_new2_light.webp)
 
@@ -142,12 +142,12 @@ Review the change request:
 ### Run Impact Analysis
 
 Open the **Impact Analysis** tab and review the information on the tabs: **Can Be Safely Deleted or Modified**, 
-**Cannot Be Safely Deleted or Modified**, and **Inactive Customizations**.
+**Can't Be Safely Deleted or Modified**, and **Inactive Customizations**.
 
-Here is an example of items on the **Cannot Be Safely Deleted or Modified** tab. The Customizations
+Here is an example of items on the **Can't Be Safely Deleted or Modified** tab. The Customizations
 and Impacted Customizations are links to each customization record.
 
-![Impact Analysis Cannot Be Safely Deleted or Modified tab](/images/platgovsalesforce/change_management/change_request_impact_analysis_light.webp)
+![Impact Analysis Can't Be Safely Deleted or Modified tab](/images/platgovsalesforce/change_management/change_request_impact_analysis_light.webp)
 
 ### View the DRD
 
@@ -157,7 +157,7 @@ Open the **DRD** tab to review the dependency diagram.
 
 ### Submit the Change Request for Approval
 
-Change request approvers are automatically assigned based on the policy. In this section, you can
+The policy automatically assigns approvers to the change request. In this section, you can
 add additional approvers, approver notes and begin the approval process.
 
   ![Expand Approval section](/images/platgovsalesforce/change_management/change_request_approvals_light.webp)
@@ -171,12 +171,11 @@ add additional approvers, approver notes and begin the approval process.
 
 2. Click **Save**.
 
-3. Click **Submit for Approval** on the path to start the approval process. Approval notifications are sent to the
-   approvers.
+3. Click **Submit for Approval** on the path to start the approval process. The system sends approval notifications to the approvers.
 
    ![Change Request Pending Approval](/images/platgovsalesforce/change_management/change_request_submit_approval.webp)
 
 
 :::note
-For new objects that do not yet exist in Production, edit the Change Request and enter the full API
+For new objects that don't yet exist in Production, edit the Change Request and enter the full API
 Names of these objects into the Proposed Customization fields in the Scope Section. You can add

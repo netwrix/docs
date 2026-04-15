@@ -20,10 +20,12 @@ Write for the person who knows their job but may be new to this specific product
 - `docs/<product>/<version>/` — Versioned product documentation (e.g., `docs/accessanalyzer/12.0/`)
 - `docs/<product>/` — Single-version (SaaS) products using `version: "current"`
 - `docs/kb/` — Knowledge base articles (canonical source; never manually copy into versioned folders)
-- `static/img/product_docs/<product>/` — Images (`.webp` format, absolute paths: `/img/product_docs/...`)
+- `static/images/<product>/` — Images (`.webp` format, organized by version/section, absolute paths: `/images/...`)
 - `sidebars/<product>/<version>.js` — Sidebar configs (auto-generated; rarely need manual editing)
 
 Edits to one version do not propagate to others. Update each version that needs the change explicitly.
+
+KB articles store images as PNG files in `0-images/` subdirectories alongside the article markdown. These are copied by the KB script — don't move or rename them.
 
 ## Writing Standards
 
@@ -62,15 +64,15 @@ The four core qualities:
 
 ## Linting
 
-### Vale (pre-push)
+### Vale
 
-Vale runs via a pre-push hook that checks changed `docs/*.md` files and reports errors. The hook currently runs in warning mode — it shows errors but does not block the push. Always run Vale locally and fix all errors before pushing.
+Vale enforces 30 Netwrix-specific rules in `.vale/styles/Netwrix/` covering word choice, punctuation, formatting, and common writing issues. Vale issues are auto-fixed on PRs by the `vale-autofix` workflow — you don't need to fix them manually before pushing. You can still run Vale locally to preview issues:
 
 ```bash
 vale <file>
 ```
 
-Vale enforces 30 Netwrix-specific rules in `.vale/styles/Netwrix/` covering word choice, punctuation, formatting, and common writing issues. Two rules require extra care:
+Two rules require extra care:
 
 - **`NoteThat`** — Replace "Note that..." or "Please note..." with an admonition block:
   ```md
@@ -82,9 +84,9 @@ Vale enforces 30 Netwrix-specific rules in `.vale/styles/Netwrix/` covering word
 
 - **`BoilerplateCrossRef`** and **`WeakLinkText`** — Read the surrounding context and the link destination before rewriting. The fix must reflect what the reader will actually find at the destination.
 
-### Dale (PR review)
+### Dale
 
-Dale is an AI linter that runs during PR review. It catches issues that regex-based Vale rules can't — passive voice, misplaced modifiers, idioms, wordiness, and other context-dependent patterns. Dale rules are in `.claude/skills/dale/rules/`.
+Dale is an AI linter that catches issues regex-based Vale rules can't — passive voice, misplaced modifiers, idioms, wordiness, and other context-dependent patterns. Dale rules are in `.claude/skills/dale/rules/`. Dale issues are auto-fixed on PRs alongside Vale by the `vale-autofix` workflow.
 
 Run Dale locally with `/dale <file>`.
 
@@ -124,11 +126,9 @@ Each step is a single action. Lead with the UI element or command:
 
 ## CI/CD Context
 
-**Vale (pre-push hook)** — Runs automatically before every push. Currently in warning mode — shows errors but does not block the push. Writers should fix all Vale errors locally before pushing.
+**Auto-fix (Vale + Dale)** — Runs on PRs to `dev` with docs changes. Automatically fixes Vale issues (script for mechanical rules, Claude for judgment-based rules) and Dale issues (Claude), then posts a summary comment. No inline comments.
 
-**Vale (PR review)** — Runs on PRs to `dev` with docs changes. Posts up to 25 inline review comments on changed lines plus a summary PR comment.
-
-**Doc PR review** — Runs on PRs to `dev` with docs changes. Posts Dale inline comments and an editorial review summary. Does not block merges.
+**Doc PR review** — Runs on PRs to `dev` with docs changes. Posts an editorial review summary. Does not block merges.
 
 **Doc fixer** — Triggered by an `@claude` comment on a PR. Applies fixes and pushes. Fork PRs cannot be pushed to.
 
@@ -139,7 +139,6 @@ Each step is a single action. Lead with the UI element or command:
 ## Common Mistakes
 
 - Don't manually copy KB content into versioned product folders — it's managed by the KB script
-- Don't ignore Vale warnings before pushing — fix errors to keep documentation clean
 - Don't commit directly to `dev` or `main` — create a branch from `dev` first
 - Don't target `main` in PRs — use `dev`
 - Don't use first person anywhere in documentation content

@@ -683,7 +683,7 @@ function SearchPageContent() {
                         position: 'sticky',
                         top: 'var(--ifm-navbar-height)',
                         zIndex: 10,
-                        backgroundColor: 'var(--ifm-navbar-background-color)',
+                        backgroundColor: 'var(--ifm-background-color)',
                         paddingTop: '16px',
                         paddingBottom: '12px',
                     }}>
@@ -708,6 +708,8 @@ function SearchPageContent() {
                                         fontSize: '16px',
                                         borderRadius: '8px',
                                         border: '2px solid var(--ifm-color-emphasis-300)',
+                                        background: 'var(--ifm-background-color)',
+                                        color: 'var(--ifm-font-color-base)',
                                         marginBottom: '0',
                                         transition: 'border-color 0.2s',
                                     }}
@@ -852,7 +854,7 @@ function SearchPageContent() {
                         flexDirection: 'column',
                         paddingTop: '16px',
                         paddingBottom: '16px',
-                        backgroundColor: 'var(--ifm-navbar-background-color)',
+                        backgroundColor: 'var(--ifm-background-color)',
                     }}>
                         <MultiSelect
                             label="Products"

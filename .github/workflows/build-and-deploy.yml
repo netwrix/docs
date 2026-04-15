@@ -8,6 +8,7 @@ on:
   pull_request:
     branches:
       - dev
+      - main
   workflow_dispatch:
     inputs:
       environment:
@@ -21,7 +22,7 @@ on:
 
 concurrency:
   group: deploy-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   determine-environment:

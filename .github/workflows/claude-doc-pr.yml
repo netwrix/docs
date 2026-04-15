@@ -14,6 +14,10 @@ on:
   issue_comment:
     types: [created]
 
+concurrency:
+  group: doc-pr-${{ github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: true
+
 jobs:
   doc-review:
     if: github.event_name == 'pull_request'
@@ -24,7 +28,22 @@ jobs:
       issues: write
       id-token: write
     steps:
+      - name: Check if triggered by autofix commit
+        id: bot-check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          MESSAGE=$(gh api repos/${{ github.repository }}/commits/${{ github.event.pull_request.head.sha }} --jq '.commit.message')
+          echo "Latest commit message: $MESSAGE"
+          if echo "$MESSAGE" | grep -qE '^fix\((vale|dale)\):|^ci: trigger build'; then
+            echo "Skipping: commit is from autofix workflow"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Checkout repository
+        if: steps.bot-check.outputs.skip != 'true'
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -32,6 +51,7 @@ jobs:
 
       - name: Get changed markdown files
         id: changed-files
+        if: steps.bot-check.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -61,80 +81,6 @@ jobs:
           for ID in $COMMENT_IDS; do
             gh api repos/${{ github.repository }}/issues/comments/${ID} -X DELETE 2>/dev/null || true
           done
-          # Dismiss previous bot reviews (Dale) so they don't pile up
-          REVIEW_IDS=$(gh api repos/${{ github.repository }}/pulls/${PR_NUMBER}/reviews \
-            --jq '[.[] | select(.user.login == "github-actions[bot]" and .state == "COMMENTED" and (.body | contains("Dale found"))) | .id] | .[]' 2>/dev/null || true)
-          for ID in $REVIEW_IDS; do
-            gh api repos/${{ github.repository }}/pulls/${PR_NUMBER}/reviews/${ID}/dismissals \
-              -f message="Superseded by new review" -f event="DISMISS" 2>/dev/null || true
-          done
-
-      - name: Run Dale linting
-        id: dale
-        if: steps.changed-files.outputs.count > 0
-        uses: anthropics/claude-code-action@v1
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          show_full_output: true
-          prompt: |
-            You are Dale, a documentation linter. Your ONLY job is to check files against Dale rules and write results to a JSON file.
-
-            CHANGED FILES: ${{ steps.changed-files.outputs.files }}
-
-            INSTRUCTIONS:
-
-            Step 1: Read each Dale rule file:
-            - .claude/skills/dale/rules/minimizing-difficulty.yml
-            - .claude/skills/dale/rules/negative-assumptions.yml
-            - .claude/skills/dale/rules/xy-slop.yml
-
-            Step 2: Read each changed file listed above (split on commas).
-
-            Step 3: For each file, check every line against each rule's "reason" field. When a line triggers a rule, record it.
-
-            Step 4: Write results to /tmp/dale-results.json as a JSON array. Each entry must have:
-            - "path": the file path exactly as given above
-            - "line": the line number (integer)
-            - "rule": the rule filename without extension (e.g. "minimizing-difficulty")
-            - "message": the rule's "message" field value
-
-            If no issues found, write an empty array: []
-
-            Example output:
-            [{"path":"docs/foo/bar.md","line":7,"rule":"minimizing-difficulty","message":"Do not minimize the difficulty of tasks users are performing."}]
-
-            IMPORTANT: Write ONLY the JSON file. Do not post comments, do not run any other tools. Your task is done when /tmp/dale-results.json exists.
-          claude_args: '--allowedTools "Read,Write"'
-
-      - name: Post Dale inline comments
-        id: dale-post
-        if: steps.changed-files.outputs.count > 0
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          DALE_COUNT=0
-          if [ -f /tmp/dale-results.json ]; then
-            DALE_COUNT=$(jq 'length' /tmp/dale-results.json 2>/dev/null || echo "0")
-          fi
-
-          echo "dale_count=$DALE_COUNT" >> "$GITHUB_OUTPUT"
-
-          if [ "$DALE_COUNT" -gt 0 ]; then
-            echo "Posting $DALE_COUNT Dale inline comments"
-            # Transform Dale results into PR review comment format
-            COMMENTS_JSON=$(jq '[.[] | {"path": .path, "line": .line, "body": ("**Dale** (`" + .rule + "`): " + .message)}]' /tmp/dale-results.json)
-            jq -n \
-              --arg body "**Dale found ${DALE_COUNT} issue(s).** See inline comments below." \
-              --argjson comments "$COMMENTS_JSON" \
-              '{"body": $body, "event": "COMMENT", "comments": $comments}' \
-              | gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/reviews \
-                  --input - 2>&1
-          else
-            echo "No Dale issues found"
-          fi
 
       - name: Get PR diff
         id: diff
@@ -151,60 +97,18 @@ jobs:
         uses: anthropics/claude-code-action@v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DOC_PR_FILES: ${{ steps.changed-files.outputs.files }}
+          DOC_PR_NUMBER: ${{ github.event.pull_request.number }}
+          DOC_PR_REPO: ${{ github.repository }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
           prompt: |
-            You are a documentation reviewer. Your ONLY job is to:
-            1. Read the PR diff and changed files
-            2. Do a brief editorial review
-            3. Post a formatted review comment to the PR
+            /doc-pr
 
-            CONTEXT:
-            - Repository: ${{ github.repository }}
-            - PR number: ${{ github.event.pull_request.number }}
-            - Changed files: ${{ steps.changed-files.outputs.files }}
-            - Dale issues: ${{ steps.dale-post.outputs.dale_count }} (already posted as inline comments)
-            - PR diff is at: /tmp/pr-diff.txt
-
-            NOTE: Vale linting runs separately (vale-linter workflow) and posts inline review comments plus a summary PR comment. Do not run Vale or include Vale issues in this review.
-
-            INSTRUCTIONS:
-
-            Step 1: Read /tmp/pr-diff.txt to see what changed. Then read each changed file to understand context.
-
-            Step 2: Do a brief editorial review of ONLY added/modified lines, focusing on:
-            - Voice: passive voice, first person, impersonal phrases
-            - Clarity: hard-to-parse sentences, ambiguous references
-            - Surface: wordiness, redundancy
-            Do NOT duplicate issues already caught by Dale — focus on what linters miss.
-
-            Step 3: Write the review to /tmp/doc-pr-review.md with this EXACT structure:
-
-            ## Documentation PR Review
-
-            ### Editorial Review
-            (list editorial issues as bullet points: **Category** — Line N: description. Suggested fix: "...")
-            (if no issues found, write "No editorial issues found.")
-
-            ### Summary
-            N Dale issues (see inline comments), N editorial suggestions across N files.
-
-            ---
-            **What to do next:**
-            Comment `@claude` on this PR followed by your instructions. For example:
-            - `@claude fix all issues`
-            - `@claude fix only the Dale issues`
-            - `@claude reorganize the prerequisites section`
-            - `@claude help improve the flow of this document`
-            > Automated fixes are only available for branches in this repository, not forks.
-
-            Step 4: Post the comment by running this exact command:
-            gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body-file /tmp/doc-pr-review.md
-
-            IMPORTANT: You MUST complete all 4 steps. Your task is NOT done until step 4 succeeds.
-          claude_args: '--allowedTools "Bash,Read,Write"'
+            The PR diff is already saved at /tmp/pr-diff.txt — read it instead of running gh pr diff.
+          claude_args: '--allowedTools "Bash,Read,Write,Glob,Grep,Skill(doc-pr)"'
 
       - name: Verify review was posted
         if: steps.changed-files.outputs.count > 0
@@ -263,6 +167,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ steps.pr-info.outputs.branch }}
+          token: ${{ secrets.VALE_TOKEN }}
           fetch-depth: 0
 
       - name: Handle @claude request
@@ -273,45 +178,8 @@ jobs:
           COMMENT_BODY: ${{ github.event.comment.body }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.VALE_TOKEN }}
           show_full_output: true
           prompt: |
             /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
-          claude_args: '--allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(dale),Skill(doc-help)"'
-
-      - name: Resolve inline comments and dismiss old reviews
-        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          PR_NUMBER=${{ steps.pr-info.outputs.number }}
-          REPO=${{ github.repository }}
-          OWNER="${REPO%%/*}"
-          NAME="${REPO##*/}"
-
-          # Resolve all Dale and Vale inline comment threads
-          THREAD_IDS=$(gh api graphql -f query='
-            query($owner:String!,$name:String!,$pr:Int!) {
-              repository(owner:$owner,name:$name) {
-                pullRequest(number:$pr) {
-                  reviewThreads(first:100) {
-                    nodes { id isResolved comments(first:1) { nodes { body } } }
-                  }
-                }
-              }
-            }' -f owner="$OWNER" -f name="$NAME" -F pr="$PR_NUMBER" \
-            --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false and ((.comments.nodes[0].body | contains("**Dale**")) or (.comments.nodes[0].body | contains("**Vale**")))) | .id' 2>/dev/null || true)
-          for TID in $THREAD_IDS; do
-            gh api graphql -f query='
-              mutation($tid:ID!) {
-                resolveReviewThread(input:{threadId:$tid}) { thread { isResolved } }
-              }' -f tid="$TID" 2>/dev/null || true
-          done
-
-          # Dismiss all previous Dale and Vale reviews
-          REVIEW_IDS=$(gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews \
-            --jq '[.[] | select(.user.login == "github-actions[bot]" and ((.body | contains("Dale found")) or (.body | contains("Vale found")))) | .id] | .[]' 2>/dev/null || true)
-          for ID in $REVIEW_IDS; do
-            gh api repos/${REPO}/pulls/${PR_NUMBER}/reviews/${ID}/dismissals \
-              -f message="Superseded after fixes applied" -f event="DISMISS" 2>/dev/null || true
-          done
+          claude_args: '--max-turns 50 --allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(doc-help)"'

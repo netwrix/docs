@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Tabs
 
-Once you have successfully logged in, you will find yourself in the view where all the user's
+After you have successfully logged in, you'll find yourself in the view where all the user's
 passwords are located.
 
 ![all passwords in mobile app](/images/passwordsecure/9.1/configuration/mobiledevices/tabs/all-passwords-ma-en.webp)
@@ -15,7 +15,7 @@ Here you have the following options:
 
 **Action menu**
 
-With a click on
+With a click
 ![three-points-en](/images/passwordsecure/9.1/configuration/mobiledevices/tabs/three-points-en.webp)
 the action menu is opened.
 
@@ -24,18 +24,18 @@ the action menu is opened.
 The following actions are offered:
 
 - **Open settings** (more information can be found in the Settings chapter).
-- **Close tab** (the option is offered only if you are in one of the organizational units tabs. The
+- **Close tab** (the option is offered only if you're in one of the organizational units tabs. The
   default ones are excluded)
-- **Logout** (you will be logged out from the database)
+- **Logout** (you'll be logged out from the database)
 - **Cancel** (closes the action menu and returns to the tab view)
 
 **Tabs**
 
-Below the passwords there is a bar for managing tabs.
+Below the passwords there's a bar for managing tabs.
 
 ![manage tabs](/images/passwordsecure/9.1/configuration/mobiledevices/tabs/all-passwords-ma-2-en.webp)
 
-By clicking on the plus sign there is a possibility to add more tabs.
+By clicking on the plus sign there's a possibility to add more tabs.
 
 ![add tabs](/images/passwordsecure/9.1/configuration/mobiledevices/tabs/add-tabs-ma.webp)
 

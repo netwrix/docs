@@ -1,0 +1,7 @@
+extends: existence
+message: "Rewrite '%s' in active voice — for example, 'Use X to...' or 'X lets you...'."
+level: warning
+ignorecase: true
+tokens:
+  - '\bcan be used to\b'
+  - '\bcan be used for\b'
