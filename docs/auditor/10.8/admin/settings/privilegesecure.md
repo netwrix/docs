@@ -6,10 +6,9 @@ sidebar_position: 70
 
 # Netwrix Privilege Secure
 
-Starting with version 10.7, you can implement the integration between Netwrix Auditor and Netwrix
-Privilege Secure.
+Starting with version 10.7, you can integrate Netwrix Auditor with Netwrix Privilege Secure.
 
-The integration can be configured for the following Auditor data sources:
+You can configure the integration for the following Auditor data sources:
 
 - Active Directory. For details, see
     [Use Netwrix Privilege Secure as a Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/activedirectory/overview.md#use-netwrix-privilege-secure-as-a-data-collecting-account).
@@ -49,7 +48,7 @@ The integration can be configured for the following Auditor data sources:
 
 **Step 4 –** Specify the Privilege Secure URL.
 
-**NOTE:** If Netwrix Privilege Secure uses an untrusted certificate, a page with the certificate details will be displayed. Review the certificate information and, if the certificate is acceptable, select the **I want Netwrix Auditor to trust this certificate when connecting to this server** checkbox to continue.
+**NOTE:** If Netwrix Privilege Secure uses an untrusted certificate, Netwrix Auditor displays a page with the certificate details. Review the certificate information and, if the certificate is acceptable, select the **I want Netwrix Auditor to trust this certificate when connecting to this server** checkbox to continue.
 
 **Step 5 –** Specify the application name and Netwrix Auditor client certificate. The following two
 options are available:
@@ -69,8 +68,7 @@ options are available:
 2. In the window that appears, go to the **Details** tab, click **Copy to File...**, and follow the
    Certificate Export Wizard.
 
-**Step 8 –** Install the certificate on the machine where Netwrix Privilege Secure is installed. To
-do so, follow the steps below:
+**Step 8 –** Install the certificate on the machine where Netwrix Privilege Secure is installed. Follow these steps:
 
 1. Right-click the imported certificate and select the **Install Certificate** option.
 2. In the Certificate Import Wizard, select **Local Machine** as a Store Location and click
@@ -94,7 +92,7 @@ documentation.
 
 **Step 12 –** After validation, click **Finish**.
 
-Integration between Netwrix Auditor and Netwrix Privilege Secure is established. Before using
+Netwrix Auditor now integrates with Netwrix Privilege Secure. Before using
 Netwrix Privilege Secure for data collection in Netwrix Auditor, ensure that you created a
 dedicated Access Policy and Connection Profile in Netwrix Privilege Secure.
 
