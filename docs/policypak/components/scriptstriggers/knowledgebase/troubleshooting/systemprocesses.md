@@ -7,7 +7,7 @@ sidebar_position: 70
 # Why don't Batch and PowerShell scripts get blocked when SYSTEM processes are blocked
 
 When implementing SecureRun to block both User and System processes (as demonstrated in
-[SecureRun to block User AND System executables](/docs/policypak/components/leastprivilegemanager/videolearningcenter/bestpractices/usersystemexecutables.md)
+[SecureRun to block User AND System executables](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/usersystemexecutables.md)
 video) we find that EXEs, MSIs and VB scripts get smacked down as expected when running as the USER,
 ADMIN or SYSTEM account. However, Batch and PowerShell scripts that are started from within a
 previously opened cmd.exe or powershell.exe window do not get blocked when running as a system

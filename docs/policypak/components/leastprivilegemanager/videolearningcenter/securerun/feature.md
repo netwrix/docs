@@ -1,7 +1,7 @@
 ---
 title: "Using Least Privilege Manager's SecureRun Feature"
 description: "Using Least Privilege Manager's SecureRun Feature"
-sidebar_position: 7
+sidebar_position: 5
 ---
 # Using Least Privilege Manager's SecureRun Feature
 
