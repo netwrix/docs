@@ -41,8 +41,6 @@ The integration can be configured for the following Auditor data sources:
 
 ## Enable and Configure Netwrix Privilege Secure Integration
 
-Follow the steps to enable and configure Netwrix Privilege Secure integration.
-
 **Step 1 –** In Netwrix Auditor, navigate to Settings in the upper right corner.
 
 **Step 2 –** Select Netwrix Privilege Secure.
