@@ -31,7 +31,7 @@ Follow the steps to play a video:
 To open User Activity report for the selected user or server, you can also click the link in the Who
 and Where columns of the All Users Activity report.
 
-**Note:** In Microsoft SQL Server Reporting Services (SSRS) 2019 and later, hyperlinks using the file:// protocol may not appear or be clickable in reports (for example, links to video recordings). This occurs because the SSRS server property **SupportedHyperlinkSchemes** does not include the file protocol by default.
+**Note:** In Microsoft SQL Server Reporting Services (SSRS) 2019 and later, hyperlinks using the file:// protocol may not appear or be clickable in reports (for example, links to video recordings). This occurs because the SSRS server property **SupportedHyperlinkSchemes** doesn't include the file protocol by default.
 
 To enable support for file:// links, update the **SupportedHyperlinkSchemes** property to include file (for example: http,https,mailto,file) in the SSRS configuration.
 
