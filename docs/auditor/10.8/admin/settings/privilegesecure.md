@@ -65,8 +65,8 @@ options are available:
 **Step 7 –** Export the Netwrix Auditor server certificate for subsequent installation on the host with Netwrix Privilege Secure:
 
 1. Click **View** next to the **Certificate Serial Number** field.
-2. In the window that appears, go to the **Details** tab, click **Copy to File...**, and follow the
-   Certificate Export Wizard.
+2. In the window that appears, go to the **Details** tab, click **Copy to File...**, and follow the Certificate Export Wizard, selecting DER encoded binary X.509 (.CER) as the export format.
+3. After successful export, copy the certificate to the machine where Netwrix Privilege Secure is installed.
 
 **Step 8 –** Install the certificate on the machine where Netwrix Privilege Secure is installed. Follow these steps:
 
@@ -96,17 +96,12 @@ Netwrix Auditor now integrates with Netwrix Privilege Secure. Before using
 Netwrix Privilege Secure for data collection in Netwrix Auditor, ensure that you created a
 dedicated Access Policy and Connection Profile in Netwrix Privilege Secure.
 
-**NOTE:** For additional information, see the
-[Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
-documentation. Key concepts used in the integration:
+**NOTE:** Key concepts used in the integration:
 
 - **Resource-based** — Netwrix Privilege Secure creates a temporary account at the start of the session and removes it when the session ends. This policy type requires the target system to be onboarded in Netwrix Privilege Secure as a resource (a server, domain, database, or website). No pre-existing account on the resource is required. Netwrix recommends using the Netwrix Auditor host as the resource.
 - **Credential-based** — Uses an account that already exists on the target resource. You must create the account, grant it the required permissions, and then define it in Netwrix Privilege Secure as a Credential before you can add it to the policy.
-- **Connection Profile** — A Connection Profile defines the session settings for the policy: maximum session duration, session extension options, proxy configuration, session recording, and approval workflow. Configure Connection Profiles in Netwrix Privilege Secure under **Policy** > **Access Policy** > **Connection Profiles**.
+- **Connection Profile** — A Connection Profile defines the session settings for the policy: maximum session duration, session extension options, proxy configuration, session recording, and approval workflow. If data collection requires sessions longer than the default duration, configure the Connection Profile to support up to 72 hours. Configure Connection Profiles in Netwrix Privilege Secure under **Policy** > **Access Policy** > **Connection Profiles**.
 
-**NOTE:** If data collection requires sessions longer than the default duration, configure the Connection Profile to support up to 72 hours. Set **Extend By** to match **Max Duration**, then use one of the following combinations:
-
-- **Max Duration**: 120 minutes, **Session Extension Limit**: 35
-- **Max Duration**: 60 minutes, **Session Extension Limit**: 71
-
-Both configurations result in a maximum total session duration of 72 hours (4,320 minutes).
+For additional information, see the
+[Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
+documentation.
