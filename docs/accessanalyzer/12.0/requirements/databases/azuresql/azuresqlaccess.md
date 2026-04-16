@@ -30,8 +30,6 @@ This will enable Access Analyzer to discover all the SQL databases present in th
 
 ## Create a StealthAUDIT Custom Role
 
-Follow these steps to create an Azure SQL custom role at the subscription level.
-
 ![Azure Portal - Azure Services](/images/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_1.webp)
 
 **Step 1 –** Sign in to Azure. Navigate to the Azure Services section and click **Subscriptions**.
@@ -136,8 +134,6 @@ the role to be made available to the resources.
 
 ## Register an Azure SQL Application
 
-Follow these steps to create an Azure SQL Application Registration in the Azure portal.
-
 **Step 1 –** In the Azure portal under Azure Services, click the **App Registration** icon.
 
 ![AzureSQL - App Registrations - New Registration](/images/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_5.webp)
@@ -183,9 +179,6 @@ Use the Value key on this page to create the Access Analyzer connection profile.
 ![Azure SQL - Access Control (IAM) page](/images/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_11z.webp)
 
 ## Add a Role Assignment
-
-Follow these steps to add a role assignment to the custom role and newly registered Access Analyzer
-Azure SQL application.
 
 **Step 1 –** Navigate to the Subscriptions blade and click the **Access Control (IAM)** option.
 Click the **Add** dropdown > Click **Add role assignment**.
