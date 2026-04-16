@@ -1,9 +1,9 @@
 ---
-title: "NetApp"
-description: "Connector requirements for NetApp file servers"
-sidebar_position: 50
+title: "NetApp ONTAP"
+description: "Supported platforms, permissions, and network ports for NetApp ONTAP CIFS/SMB scanning"
+sidebar_position: 20
 ---
 
-# NetApp
+# NetApp ONTAP
 
 *Content coming soon.*

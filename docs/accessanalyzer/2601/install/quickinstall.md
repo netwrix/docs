@@ -14,15 +14,19 @@ Before running the installer, confirm the following:
 
 | Requirement | Minimum | Recommended |
 | --- | --- | --- |
-| **Operating System** | Ubuntu 24.04 LTS (x86_64) | — |
-| **Memory** | 8 GB RAM | 16 GB RAM |
-| **CPU** | 2 vCPUs | 4 vCPUs |
-| **Disk Space** | 20 GB free | 50 GB free |
+| **Operating System** | Ubuntu 24.04 LTS (x86_64) — recommended; see note below | — |
+| **Memory** | 8 GB RAM | 32 GB RAM |
+| **CPU** | 6 vCPUs | 8 vCPUs |
+| **Disk Space** | 20 GB free | 1 TB SSD |
 | **Network** | Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains) below | — |
 | **License** | Valid Netwrix license key | — |
 
 :::note
-If running on a hypervisor, configure **static memory allocation** (not dynamic/ballooned memory). See [Hardware and System Requirements](/docs/accessanalyzer/1_0/install/requirements) for hypervisor-specific instructions.
+**Supported OS:** Ubuntu 24.04 LTS is the primary tested platform. Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are also compatible. AIX and non-Linux operating systems are not supported.
+:::
+
+:::note
+If running on a hypervisor, configure **static memory allocation** (not dynamic/ballooned memory). See [Hardware and System Requirements](/docs/accessanalyzer/2601/install/system/requirements) for hypervisor-specific instructions.
 :::
 
 ## Required Domains
@@ -41,11 +45,6 @@ All endpoints use HTTPS (port 443). The following domains must be reachable from
 | `release-assets.githubusercontent.com` | GitHub | Release asset downloads | Installation only |
 | `pkg-containers.githubusercontent.com` | GitHub Container Registry | GitHub Packages CDN | Installation and updates |
 | `ghcr.io` | GitHub Container Registry | Container images | Installation and updates |
-| `auth.docker.io` | Docker Hub | Docker authentication | Installation and updates |
-| `registry-1.docker.io` | Docker Hub | Container images | Installation and updates |
-| `production.cloudflare.docker.com` | Docker CDN | Docker Hub CDN | Installation and updates |
-| `docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com` | Docker CDN | Docker image storage | Installation and updates |
-| `d2glxqk2uabbnd.cloudfront.net` | Docker CDN | Docker image CDN | Installation and updates |
 | `get.k3s.io` | K3s / Rancher | K3s installer download | Installation only |
 | `rpm.rancher.io` | K3s / Rancher | K3s package repository | Installation only |
 | `storage.googleapis.com` | K3s / Rancher | K3s artifact storage | Installation only |
@@ -73,6 +72,10 @@ Your license key grants access to the Netwrix package registry. Keep it confiden
 
 ## Step 3: Run the Installer
 
+:::warning
+If you plan to connect an identity provider (Entra ID, Okta, Active Directory, or other), **do not run the command below yet.** See [Optional: Configure Identity Provider](#optional-configure-identity-provider) further down this page — IdP flags must be added to this command at install time.
+:::
+
 Download and execute the installer in a single command:
 
 ```bash
@@ -90,6 +93,21 @@ The installer performs the following automatically:
 :::note
 Installation typically takes 15–30 minutes depending on network speed and system resources. The installer displays progress in real time.
 :::
+
+## Optional: Configure Identity Provider
+
+By default, Access Analyzer uses local user accounts. If your organization requires single sign-on, you can connect an identity provider by adding flags to the Step 3 install command. This step is fully optional — skip it if you plan to use local accounts.
+
+| `--idp-type` value | Use case |
+| --- | --- |
+| `entra-oidc` | Microsoft Entra ID via OIDC (recommended for Entra ID) |
+| `entra-saml` | Microsoft Entra ID via SAML 2.0 |
+| `oidc` | Generic OIDC — Okta, Auth0, Ping Identity, and others |
+| `saml` | Generic SAML 2.0 — Okta, ADFS, and others |
+| `ad` | Active Directory via LDAP (on-premises) |
+| `ldap` | Generic LDAP |
+
+For full instructions, required flags, and per-IdP examples, see [Configure Identity Provider](identity-provider.md).
 
 ## Step 4: Verify the Installation
 
@@ -124,6 +142,10 @@ Access Analyzer uses a self-signed TLS certificate by default. Accept the browse
 3. Click **Create Account** to finalize
 
 The first account created automatically receives the **Administrator** role.
+
+:::note
+If you configured an identity provider in the optional step above, this local account creation flow may not apply. IdP-authenticated users are pre-provisioned rather than self-registered. See [Identity Provider](identity-provider.md#next-steps) for details. **To be confirmed with the development team.**
+:::
 
 ## Step 7: Sign In
 

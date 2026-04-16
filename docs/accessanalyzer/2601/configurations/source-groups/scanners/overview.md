@@ -13,7 +13,7 @@ Scanners are lightweight, containerized agents used by Access Analyzer to perfor
 Scanners are available for the following connectors only:
 
 - **Active Directory**
-- **Windows File Servers**
+- **File Server** (all supported file system types)
 
 All other connectors (Entra ID, SharePoint Online) connect directly from the Access Analyzer service and do not use Scanners.
 
@@ -25,7 +25,7 @@ Scanners run as Kubernetes Jobs — short-lived containers that are deployed on 
 | --- | --- | --- |
 | **Distributed scanning** | Proxy server / Applet deployment | Kubernetes-deployed Scanner containers |
 | **Deployment model** | Manual, persistent agent | On-demand Kubernetes Jobs |
-| **Supported targets** | All file system types | Active Directory, Windows File Servers |
+| **Supported targets** | All file system types | Active Directory, all supported file system types |
 
 ## Pending Documentation
 

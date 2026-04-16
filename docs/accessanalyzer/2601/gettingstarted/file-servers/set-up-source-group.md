@@ -55,8 +55,6 @@ Access Analyzer creates the source group and a scan for each file server you add
 
 To check scan progress, navigate to **Configuration** > **Scan Executions**.
 
-To view results after the scan completes, see [Data Security Dashboard](../../dashboards-reports/data-security-dashboard/overview.md).
-
 ## Edit a Source Group
 
 To modify an existing file server source group, navigate to **Configuration** > **Source Groups**, select the source group, and click **Edit**. The wizard reopens with your current configuration pre-populated. You can update the source group name, service account, file servers, and scan settings.

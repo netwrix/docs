@@ -10,13 +10,15 @@ Access Analyzer is deployed on a single Linux virtual machine. The installer run
 
 ## Deployment Sizing
 
-Use the **Minimum** specifications for evaluation and lab deployments. Use the **Production Recommended** specifications for customer-facing or enterprise deployments. The installer enforces the minimum thresholds — preflight checks will fail if the system falls below them.
+The installer enforces absolute minimums via preflight checks — installation is blocked if the system falls below these thresholds. Use the **Production Recommended** specifications for customer-facing or enterprise deployments.
 
-| Size | Min CPU | Min Memory | Min Disk | Prod CPU | Prod Memory | Prod Disk | Typical Environment |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| **Small** | 2 vCPUs | 8 GB | 20 GB free | 8 cores | 32 GB | 1 TB SSD | Evaluation, pilots, up to ~1,000 assets |
-| **Medium** | 4 vCPUs | 16 GB | 50 GB free | 16 cores | 64 GB | 1 TB SSD | Up to ~5,000 assets |
-| **Large** | 8 vCPUs | 32 GB | 100 GB free | 32 cores | 128 GB | 1 TB SSD | 5,000+ assets / enterprise |
+**Absolute installer minimums (enforced by preflight):** 6 vCPUs, 8 GB RAM, 20 GB free disk.
+
+| Size | Recommended CPU | Recommended Memory | Recommended Disk | Typical Environment |
+| --- | --- | --- | --- | --- |
+| **Small** | 8 cores | 32 GB | 1 TB SSD | Evaluation, pilots, up to ~1,000 assets |
+| **Medium** | 16 cores | 64 GB | 1 TB SSD | Up to ~5,000 assets |
+| **Large** | 32 cores | 128 GB | 1 TB SSD | 5,000+ assets / enterprise |
 
 :::note
 The `--size` flag scales memory thresholds by the specified multiplier. For example, `--size 2` doubles the minimum and recommended memory requirements enforced by the preflight checks.
@@ -40,9 +42,13 @@ Write access is also verified for `/var`, `/tmp`, and `/etc`.
 
 | Requirement | Value |
 | --- | --- |
-| **Distribution** | Ubuntu 24.04 LTS |
+| **Distribution** | Ubuntu 24.04 LTS (primary tested platform) |
 | **Architecture** | x86_64 (amd64) |
 | **Kernel** | 5.15 or later |
+
+**Compatible distributions (engineer-validated):** Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are compatible with the installer. Ubuntu is Debian-based, so Debian stable releases are also supported.
+
+**Not supported:** AIX and other non-Linux operating systems are not compatible. The installer requires a 64-bit Linux distribution with kernel capabilities including cgroups v1/v2, Linux namespaces, and overlay filesystem support.
 
 ## Kernel and Container Runtime Requirements
 

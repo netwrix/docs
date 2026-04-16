@@ -17,6 +17,7 @@
  * @property {string} label - Display label for the version
  * @property {boolean} isLatest - Whether this is the latest version
  * @property {string} [sidebarFile] - Custom sidebar file path (defaults to generated path)
+ * @property {string} [kbSource] - Optional override for the KB source directory for this version (relative to repo root). When set, this version pulls KB articles from this directory instead of the product-level default (docs/kb/<productId>/).
  */
 
 /**
@@ -65,6 +66,7 @@ export const PRODUCTS = [
         label: '2601',
         isLatest: false,
         sidebarFile: './sidebars/accessanalyzer/2601.js',
+        kbSource: 'docs/kb/accessanalyzer-2601',
       },
       {
         version: '12.0',
@@ -248,10 +250,10 @@ export const PRODUCTS = [
     defaultVersion: '11.1',
   },
   {
-    id: 'policypak',
-    name: 'PolicyPak',
+    id: 'endpointpolicymanager',
+    name: 'Endpoint Policy Manager',
     description: 'Group Policy management and enforcement',
-    path: 'docs/policypak',
+    path: 'docs/endpointpolicymanager',
     categories: ['Endpoint Management'],
     icon: '',
     versions: [
@@ -259,7 +261,7 @@ export const PRODUCTS = [
         version: 'current',
         label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/policypak.js',
+        sidebarFile: './sidebars/sidebar.js',
       },
     ],
   },
@@ -384,21 +386,13 @@ export const PRODUCTS = [
     name: 'Password Secure',
     description: 'Secure password management',
     path: 'docs/passwordsecure',
-    categories: ['Identity Management'],
+    categories: ['Privileged Access Management (PAM)'],
     icon: '',
     versions: [
       {
-        version: 'current',
-        label: 'Current',
-        isLatest: true,
-        sidebarFile: './sidebars/passwordsecure/current.js',
-        customRoutePath: 'docs/passwordsecure/current',
-        customDocPath: 'docs/passwordsecure/current'
-      },
-      {
         version: '9.3',
         label: '9.3',
-        isLatest: false,
+        isLatest: true,
         sidebarFile: './sidebars/passwordsecure/9.3.js',
       },
       {
@@ -406,9 +400,15 @@ export const PRODUCTS = [
         label: '9.2',
         isLatest: false,
         sidebarFile: './sidebars/passwordsecure/9.2.js',
-      }
+      },
+      {
+        version: '9.1',
+        label: '9.1',
+        isLatest: false,
+        sidebarFile: './sidebars/passwordsecure/9.1.js',
+      },
     ],
-    defaultVersion: 'current',
+    defaultVersion: '9.3',
   },
   {
     id: 'pingcastle',
@@ -529,13 +529,12 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '2.22',
-        label: '2.22',
+        version: 'current',
+        label: 'current',
         isLatest: true,
-        sidebarFile: './sidebars/privilegesecurediscovery/2.22.js',
+        sidebarFile: './sidebars/privilegesecurediscovery.js',
       },
     ],
-    defaultVersion: '2.22',
   },
   {
     id: 'recoveryforactivedirectory',
@@ -595,16 +594,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '3.1',
-        label: '3.1',
-        isLatest: true,
-        sidebarFile: './sidebars/threatmanager/3.1.js',
-      },
-      {
         version: '3.0',
         label: '3.0',
         isLatest: false,
         sidebarFile: './sidebars/threatmanager/3.0.js',
+      },
+      {
+        version: '3.1',
+        label: '3.1',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.1.js',
       },
     ],
     defaultVersion: '3.1',
@@ -778,7 +777,7 @@ export function hasKBContent(productId) {
   const kbProducts = [
     '1secure', 'accessanalyzer', 'accessinformationcenter', 'activitymonitor',
     'auditor', 'changetracker', 'dataclassification', 'directorymanager',
-    'policypak', 'endpointprotector', 'passwordpolicyenforcer',
+    'endpointpolicymanager', 'endpointprotector', 'passwordpolicyenforcer',
     'passwordreset', 'privilegesecure', 'privilegesecurediscovery',
     'threatmanager', 'threatprevention'
   ];
