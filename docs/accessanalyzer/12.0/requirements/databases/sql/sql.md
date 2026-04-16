@@ -16,7 +16,7 @@ database environments to collect permissions, sensitive data, and activity event
 
 **Target SQL Server Requirements**
 
-The following are requirements for the SQL Server to be scanned:
+The target SQL Server must meet the following requirements:
 
 - WINRM Service installed
 - Ensure the following rights are in the `ROOT\Microsoft\SQLServer` and `ROOT\Interop` WMI

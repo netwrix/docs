@@ -20,7 +20,7 @@ required to carry out collections for the AzureSQL data collector.
 :::
 
 
-The following role and permission are required for the Least Privilege Model:
+The Least Privilege Model requires the following role and permissions:
 
 - db_datareader role
 - View Database Performance State permission
@@ -59,4 +59,4 @@ script:
 
 **GRANT CONTROL ON DATABASE**
 
-The user is granted Control permission based on the least privilege access model.
+This step grants Control permission to the user based on the least privilege access model.

@@ -11,7 +11,7 @@ application name of the application responsible for activity events, an IP Addre
 the client server, and sensitive data reports. This data collector also provides information on
 Oracle databases including infrastructure and operations.
 
-The SQL Data Collector has been preconfigured within the Database data collection jobs for Db2,
+The SQL Data Collector comes preconfigured within the Database data collection jobs for Db2,
 MySQL, Oracle, PostgreSQL, Redshift, and SQL Server databases. Both this data collector and the
 Database Solution are available with a special Access Analyzer license. See the following topics for
 additional information:

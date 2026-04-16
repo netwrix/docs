@@ -10,8 +10,8 @@ The core components for Netwrix Access Analyzer (formerly Enterprise Auditor) ar
 Analyzer Console server, SQL Server, and Access Information Center. See the
 [Requirements](/docs/accessanalyzer/12.0/requirements/overview.md) topic for the core requirements.
 
-In addition to these, integration with either the Netwrix Activity Monitor is required for event
-activity data to be scanned. See the
+In addition to these, Access Analyzer requires integration with Netwrix Activity Monitor to scan
+event activity data. See the
 [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor)
 for installation requirements and information on collecting activity data.
 
@@ -65,7 +65,7 @@ For scanning SQL databases, the following are additional requirements for the Co
 **Sensitive Data Discovery Auditing Requirement**
 
 :::note
-The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
+Access Analyzer installs the appropriate JDK (Java) version for Sensitive Data Discovery on the
 server. The JDK deployed is prepackaged and doesn't require any configuration; it has been
 preconfigured to work with Access Analyzer and should never be customized through Java. It will not
 conflict with other JDKs or Java Runtimes in the same environment.

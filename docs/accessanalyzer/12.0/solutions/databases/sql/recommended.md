@@ -71,10 +71,8 @@ information.
 
 **Schedule Frequency**
 
-One of the most important decisions to make is how frequently to collect this data. The SQL Job
-Group can be scheduled to run as desired depending on the types of auditing being conducted and the
-scope of the target environment. The general recommendation is to schedule the solution to run
-daily.
+Schedule the SQL Job Group to run based on the types of auditing and the scope of the target
+environment. The general recommendation is to run the solution daily.
 
 **Run Order**
 

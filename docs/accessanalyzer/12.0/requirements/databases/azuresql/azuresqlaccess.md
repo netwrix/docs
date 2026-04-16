@@ -14,7 +14,7 @@ required to configure the Access Analyzer Azure SQL Job Group.
 
 With Access Analyzer for Azure SQL, you can create custom roles for differential access to Access Analyzer.
 
-Within Access Analyzer for Azure SQL, roles are created specifically to target Azure SQL Databases:
+Access Analyzer for Azure SQL creates roles specifically to target Azure SQL Databases:
 
 - Stand-Alone Databases
 - Managed Instances
@@ -26,7 +26,7 @@ Resource. For example, if all SQL databases reside within a resource group, then
 restricted to that resource group. If databases reside in different resource groups, then the scope
 for the custom role should be at the subscription level.
 
-This will enable Access Analyzer to discover all the SQL databases present in the subscription.
+This enables Access Analyzer to discover all SQL databases in the subscription.
 
 ## Create a StealthAUDIT Custom Role
 
@@ -114,21 +114,20 @@ following example) and save it to a local directory.
 it. Selecting that file enables the Review + Create button.
 
 Click **Review + Create** to create the role or click **Next** to review and edit the permissions.
-When the JSON file is opened, the Custom Role Name and Description boxes will be populated
-automatically. The name and description of the custom role can be customized if required in this
-step.
+When you open the JSON file, the Custom Role Name and Description boxes are populated
+automatically. You can customize the name and description of the custom role in this step.
 
 ![Azure SQL Configuration - Create a Cusotm Role window](/images/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_4.webp)
 
 **Step 6 –** Click Create. This action will save and finalize a custom role entitled Access Analyzer
 Azure SQL Role.
 
-**Step 7 –** Click OK on the final screen to complete the custom role creation process. The custom
-role can now be used to register the Access Analyzer application within the Azure portal.
+**Step 7 –** Click OK on the final screen to complete the custom role creation process. Use the
+custom role to register the Access Analyzer application in the Azure portal.
 
 :::note
-Depending upon the number of resources in the Azure tenancy, it might take some time for
-the role to be made available to the resources.
+Depending on the number of resources in the Azure tenancy, the role might take some time to
+become available.
 :::
 
 
@@ -145,8 +144,8 @@ the role to be made available to the resources.
 **Step 3 –** Enter a **Name** for the application and select an appropriate option from the
 Supported account types options.
 
-**Step 4 –** Click **Register** at the bottom of the page when finished. After the application has
-been registered, the App registration overview blade will appear. Take note of the _Application
+**Step 4 –** Click **Register** at the bottom of the page when finished. After you register the
+application, the App registration overview blade appears. Note the _Application
 (client) ID_ on this page.
 
 :::note
