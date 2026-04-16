@@ -34,7 +34,7 @@ However, you can export Password Policy Enforcer's domain configuration with the
 ldifde -f PPE10.1.txt -d "CN=Password Policy Enforcer 10.0,CN=System,DC=netwrix,DC=net" -l
 url,wWWHomePage
 
-Change the domain name in the command to match your domain. User, group, and OU assignments are not valid in the new domain and must be updated after the import. Do this from the PPE Management Console in the Policy Properties page for each policy. See the
+Change the domain name in the command to match your domain. User, group, and OU assignments aren't valid in the new domain and must be updated after the import. Do this from the PPE Management Console in the Policy Properties page for each policy. See the
 [Assigning Policies](/docs/passwordpolicyenforcer/10.2/administration/managingpolicies/assigning_policies.md)
 topic for additional information. You must also import your license into the new domain from the About tab on the PPS Properties page.
 
