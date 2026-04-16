@@ -26,9 +26,9 @@ Policies in the right pane.
 **Step 3 –** Enter a password in the Old Password and New Password text boxes.
 
 The Password Policy Enforcer management console tests the password by simulating a password change,
-but it does not change the user's password. It displays a green check mark below the Test button if
+but it doesn't change the user's password. It displays a green check mark below the Test button if
 the new password complies with the Password Policy Enforcer password policy, or a red cross if it
-does not comply. Detailed test results appear in the results panel below the New Password text box.
+doesn't comply. Detailed test results appear in the results panel below the New Password text box.
 
 The Results tab shows the test results for each rule. The check boxes show which rules the new
 password complied with.
@@ -37,7 +37,7 @@ password complied with.
 | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
 | ![testing_the_password_policy_1](/images/passwordpolicyenforcer/10.2/evaluation/testing_the_password_policy_1.webp) | Rule disabled or not tested.                      |
 | ![testing_the_password_policy_2](/images/passwordpolicyenforcer/10.2/evaluation/testing_the_password_policy_2.webp) | Rule enabled, password complies with rule         |
-| ![testing_the_password_policy_3](/images/passwordpolicyenforcer/10.2/evaluation/testing_the_password_policy_3.webp) | Rule enabled, password does not comply with rule. |
+| ![testing_the_password_policy_3](/images/passwordpolicyenforcer/10.2/evaluation/testing_the_password_policy_3.webp) | Rule enabled, password doesn't comply with rule. |
 
 Click the Log tab to view Password Policy Enforcer's internal event log. The information in the
 event log can help you to understand why Password Policy Enforcer accepted or rejected a password.
@@ -46,14 +46,14 @@ event log can help you to understand why Password Policy Enforcer accepted or re
 Policy testing simulates a password change, but it may not always reflect what happens
 when a user changes their password. See the
 [Managing Policies](/docs/passwordpolicyenforcer/10.2/administration/managingpolicies/managing_policies.md)
-topic for more information.
+topic for details.
 :::
 
 
 ## Windows Change Password Screen
 
 This is how most users change their password. Testing password policies from the Windows Change
-Password screen is useful because it allows you to see what your users see.
+Password screen is useful because it shows you exactly what your users see.
 
 Follow the steps below to test password policies from the Windows Change Password screen.
 
@@ -75,14 +75,14 @@ these messages are customizable.
 
 ![introduction_3](/images/passwordpolicyenforcer/10.2/evaluation/introduction_3.webp)
 
-The Password Policy Client does not modify any Windows system files, and you do not have to install
+The Password Policy Client doesn't modify any Windows system files, and you don't have to install
 it to enforce a Password Policy Enforcer password policy. Web browser based versions of the Password
 Policy Enforcer Client are also available.
 
 ## Active Directory Users / Computers Console and local Users and Groups Console
 
 Administrators often change domain passwords from the Active Directory Users and Computers console
-and local passwords from the Local Users and Groups console. In fact, these consoles do not change
+and local passwords from the Local Users and Groups console. In fact, these consoles don't change
 passwords; they reset them. This is an important distinction because a password reset is:
 
 - Restricted to privileged users
@@ -107,7 +107,7 @@ Follow the steps below to test password policies from these consoles.
 **Step 4 –** Click **OK**.
 
 :::note
-These consoles do not explain why a password was rejected. Use the Password Policy
+These consoles don't explain why a password was rejected. Use the Password Policy
 Enforcer management console, or the Change Password screen with the Password Policy Enforcer Client
 installed to see this information.
 :::
@@ -119,9 +119,9 @@ Enforcer is enforcing the password policy correctly.
 
 | Password | Result   | Reason                                       |
 | -------- | -------- | -------------------------------------------- |
-| AbdF6    | Rejected | Does not contain at least 7 characters       |
-| abd65fgo | Rejected | Does not contain an upper alpha character    |
-| ABD65FGO | Rejected | Does not contain a lower alpha character     |
+| AbdF6    | Rejected | Doesn't contain at least 7 characters       |
+| abd65fgo | Rejected | Doesn't contain an upper alpha character    |
+| ABD65FGO | Rejected | Doesn't contain a lower alpha character     |
 | PPETest1 | Rejected | Similar to user logon name                   |
 | Aardvark | Rejected | Similar to common password (dictionary file) |
 | tseTEPP  | Accepted | N/A                                          |
@@ -136,11 +136,10 @@ password policy, but this highlights some weaknesses in this policy:
 - Aardv@rk is Aardvark with an @ substituting an "a."
 
 These three passwords are only marginally stronger than the rejected passwords. The next section
-shows you how to improve the password policy so Password Policy Enforcer will reject these
-passwords.
+shows you how to improve the password policy so Password Policy Enforcer rejects these passwords.
 
 :::note
-Contact Netwrix support[ ](mailto:support@anixis.com)if Password Policy Enforcer is not
-working as expected, and we will help you to resolve the problem.
+Contact Netwrix support[ ](mailto:support@anixis.com)if Password Policy Enforcer isn't
+working as expected.
 
 :::

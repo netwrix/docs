@@ -10,8 +10,7 @@ The Password Policy Server (PPS) is the Password Policy Enforcer component that 
 responds to queries from the Password Policy Client. PPS properties are global settings that apply
 to all Password Policy Enforcer policies. See the
 [Password Policy Client](/docs/passwordpolicyenforcer/10.2/administration/passwordpolicyclient/password_policy_client.md)
-topic for additional information. If you do choose any of the options which log PPE Events, the
-events will be viewable in Windows Event Viewer. See the
+topic for additional information. If you choose any of the options that log PPE Events, the events are viewable in Windows Event Viewer. See the
 [View Event Logs in Windows Event Viewer](#view-event-logs-in-windows-event-viewer) topic for
 additional information.
 
@@ -32,11 +31,11 @@ The General tab provides options to enable or disable policy enforcement and log
 - Enforce policy when password is reset — Check this box if Password Policy Enforcer should enforce
   the password policy when a password is reset.
 
-    - If this option is not selected, administrators and helpdesk operators will not have to comply
+    - If this option isn't selected, administrators and helpdesk operators won't have to comply
       with the password policy when resetting a user's password, or creating a new user account.
-    - This option does not change the behavior of the Minimum Age rule, as this rule is never
+    - This option doesn't change the behavior of the Minimum Age rule, as this rule is never
       enforced during a reset.
-    - The History rule is only enforced during a reset if this check box is selected, and the
+    - The History rule is only enforced during a reset if this checkbox is selected, and the
       **Enforce this rule when a password is reset** checkbox is selected in the History Rule
       Properties page. See the
       [Rules](/docs/passwordpolicyenforcer/10.2/administration/rules/rules.md)
@@ -44,13 +43,13 @@ The General tab provides options to enable or disable policy enforcement and log
 
 - Log event when password not checked by app— Check this box if Password Policy Enforcer should add
   an entry to the Windows Application Event Log whenever it accepts a password without checking it.
-  This my occur if:
+  This may occur if:
 
     - Password Policy Enforcer is disabled
     - The policy assigned to a user is disabled
     - No policy is assigned to a user or an error occurs when determining the assigned policy, and a
-      Default Policy is not specified
-    - A password is reset, and the Enforce policy when password is reset checkbox is not selected
+      Default Policy isn't specified
+    - A password is reset, and the Enforce policy when password is reset checkbox isn't selected
 
 - Log event when password rejected by app— Check this box if Password Policy Enforcer should add an
   entry to the Windows Application Event Log whenever it rejects a password. The logged event
@@ -58,10 +57,10 @@ The General tab provides options to enable or disable policy enforcement and log
 
     - Username
     - Source (client or server)
-    - The rules the password did not comply with.
+    - The rules the password didn't comply with.
 
         :::note
-        Password Policy Enforcer does not send passwords or password hashes over the
+        Password Policy Enforcer doesn't send passwords or password hashes over the
         network, even when logging rejections by the Password Policy Client.
         :::
 
@@ -77,20 +76,20 @@ The General tab provides options to enable or disable policy enforcement and log
         password is rejected by the Password Policy Server, then an event is logged irrespective of
         the client version.
 
-    - The logged event may not show all the rules the password did not comply with because some
+    - The logged event may not show all the rules the password didn't comply with because some
       rules are only enforced by the Password Policy Server.
 
-        For example, a password that does not comply with the Length, Complexity, and Compromised
+        For example, a password that doesn't comply with the Length, Complexity, and Compromised
         rules would only show the Length and Complexity rules in the event when rejected by the
         Password Policy Enforcer Client because the Compromised rule is only enforced by the server.
 
-        If the Password Policy Enforcer Client is not installed, then the server will log the event
+        If the Password Policy Enforcer Client isn't installed, then the server logs the event
         with all three rules because the server enforces all these rules. See the
         [Rules](/docs/passwordpolicyenforcer/10.2/administration/rules/rules.md)
         topic for additional information.
 
     - Client rejections may not be logged, or they may be logged more than once if the Password
-      Policy Client and Password Policy Server cannot communicate reliably.
+      Policy Client and Password Policy Server can't communicate reliably.
 
 - Log event when password accepted by app— Check this box if Password Policy Enforcer should add an
   entry to the Windows Application Event Log whenever it accepts a password. The logged event
@@ -104,21 +103,21 @@ The General tab provides options to enable or disable policy enforcement and log
   [Netwrix Password Reset and Web](/docs/passwordpolicyenforcer/10.2/administration/password_reset.md)
   topic for additional information.
 
-    - Client requests do not contain passwords or password hashes, and they were not encrypted prior
+    - Client requests don't contain passwords or password hashes, and they weren't encrypted prior
       to Password Reset and Web V9.0.
-    - Select this option if you are not using the Password Reset/Web V8.x Password Policy Client,
+    - Select this option if you aren't using the Password Reset/Web V8.x Password Policy Client,
       Password Reset V3.x, or PPE/Web V7.x (or earlier). Password Policy Enforcer accepts both
-      encrypted and unencrypted requests if this option is not selected.
+      encrypted and unencrypted requests if this option isn't selected.
 
         :::note
-        For versions v9.x and above, this option will be selected by default.
+        For versions v9.x and above, this option is selected by default.
         :::
 
 
-Choose a password policy from the Default Policy drop-down list. Users must comply with the default
+Choose a password policy from the Default Policy dropdown list. Users must comply with the default
 policy if no other policy is assigned to them. See the
 [Managing Policies](/docs/passwordpolicyenforcer/10.2/administration/managingpolicies/managing_policies.md)
-topic for additional information. Using Password Policy Enforcer without a default policy is not
+topic for additional information. Using Password Policy Enforcer without a default policy isn't
 recommended, as it may leave some passwords unchecked.
 
 ### Exempt Users from a Password Policy
@@ -130,13 +129,13 @@ default policy is specified.
 
 **Step 2 –** Leave all the rules disabled for this policy.
 
-**Step 3 –** Assign this policy to the users who do not have to comply with any Password Policy
+**Step 3 –** Assign this policy to the users who don't have to comply with any Password Policy
 Enforcer rules.
 
 Refer to the
 [Managing Policies](/docs/passwordpolicyenforcer/10.2/administration/managingpolicies/managing_policies.md)
 topic for a diagrammatic representation of Password Policy Enforcer's policy selection algorithm, or
-use the Test Policies page to quickly determine which policy Password Policy Enforcer will enforce
+use the Test Policies page to quickly determine which policy Password Policy Enforcer enforces
 for a particular user. See the
 [Managing Policies](/docs/passwordpolicyenforcer/10.2/administration/managingpolicies/managing_policies.md)
 topic for additional information.
@@ -148,7 +147,7 @@ policy, then Password Policy Enforcer enforces the policy for all users.
 
 
 The Password Policy Client and Password Policy Server communicate over UDP port 1333 by default. If
-you need to change the default port, then type the new port number in the **Password Policy Server
+you need to change the default port, then enter the new port number in the **Password Policy Server
 Port** text box. Setting the port number to zero stops Password Policy Enforcer from accepting
 client requests. If you change the port number, then you must also:
 
@@ -175,7 +174,7 @@ Follow the steps below to disable Password Policy Enforcer.
 **Step 5 –** Click **OK** to close the PPS Properties page.
 
 The Password Policy Server icon in the left pane of the management console displays a red X when
-Password Policy Enforcer is not checking passwords.
+Password Policy Enforcer isn't checking passwords.
 
 Follow the steps below to re-enable Password Policy Enforcer.
 
@@ -191,8 +190,7 @@ Follow the steps below to re-enable Password Policy Enforcer.
 
 :::note
 Password Policy Enforcer is disabled or enabled immediately, but if the management console
-is connected to a domain configuration, there will be some delay while Active Directory propagates
-the change to the other domain controllers. See the
+is connected to a domain configuration, Active Directory propagates the change to other domain controllers with a short delay. See the
 [Connect to a Configuration](/docs/passwordpolicyenforcer/10.2/administration/connecting.md)
 topic for additional information. A user's password history may be updated even when Password Policy
 Enforcer is disabled. See the
@@ -203,7 +201,7 @@ topic for additional information.
 
 ## Email Tab
 
-The Email tab allows you to configure the e-mail delivery options.
+Use the Email tab to configure the e-mail delivery options.
 
 ![emailtab](/images/passwordpolicyenforcer/10.2/administration/emailtab.webp)
 
@@ -224,19 +222,17 @@ The Email tab allows you to configure the e-mail delivery options.
 
 ## License Tab
 
-The License tab allows you to see the status of your license.
+The License tab shows the status of your license.
 
 Click the **License** tab to display your Password Policy Enforcer license details.
 
 ![licensetab](/images/passwordpolicyenforcer/10.2/administration/licensetab.webp)
 
-Follow the steps to activate license for Netwrix Password Policy Enforcer.
-
 **Step 1 –** Receive a license key from
 [](https://www.netwrix.com/support.html)[Netwrix Support](https://www.netwrix.com/support.html)
 after purchasing the Netwrix Password Policy Enforcer.
 
-If you have not yet purchased the product, you can contact
+If you haven't yet purchased the product, you can contact
 [Netwrix Support](https://www.netwrix.com/support.html)[ ](https://www.netwrix.com/support.html)to
 obtain it.
 

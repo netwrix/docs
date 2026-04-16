@@ -13,8 +13,8 @@ Password Policy Client messages.
   Password Policy Enforcer Client installed
 - Rejection Reason — Displays why an intended password was rejected on clients that have the Netwrix
   Password Policy Enforcer Client installed
-- Generic Rejection — Displays if Password Policy Enforcer does not have a specific reason for the
-  rejection, generally because the password does not comply with the Windows password policy
+- Generic Rejection — Displays if Password Policy Enforcer doesn't have a specific reason for the
+  rejection, generally because the password doesn't comply with the Windows password policy
 
 Follow the steps below to edit a policy's message templates.
 
@@ -22,11 +22,11 @@ Follow the steps below to edit a policy's message templates.
 
 ![customizing_message_templates_1](/images/passwordpolicyenforcer/10.2/administration/customizing_message_templates_1.webp)
 
-**Step 2 –** Click the **desired policy** in the right pane of the management console.
+**Step 2 –** Click the policy you want in the right pane of the management console.
 
 ![customizing_message_templates_2](/images/passwordpolicyenforcer/10.2/administration/customizing_message_templates_2.webp)
 
-**Step 3 –** Right-click the desired policy to display the policy Settings page. Click
+**Step 3 –** Right-click the policy you want to display the policy Settings page. Click
 **Properties**.
 
 ![customizing_message_templates_3](/images/passwordpolicyenforcer/10.2/administration/customizing_message_templates_3.webp)
@@ -35,7 +35,7 @@ Follow the steps below to edit a policy's message templates.
 
 ![customizing_message_templates_4](/images/passwordpolicyenforcer/10.2/administration/customizing_message_templates_4.webp)
 
-**Step 5 –** Choose a language from the Language drop-down list.
+**Step 5 –** Choose a language from the Language dropdown list.
 
 ![customizing_message_templates_5](/images/passwordpolicyenforcer/10.2/administration/customizing_message_templates_5.webp)
 
@@ -48,10 +48,10 @@ The Password Policy Client displays three messages to help users choose a passwo
 
 - The Password Policy message is shown as the user changes their password. This message explains the
   password policy to the user.
-- The Rejection Reason message is shown if a password does not comply with the Password Policy
+- The Rejection Reason message is shown if a password doesn't comply with the Password Policy
   Enforcer password policy. This message tells the user why their password was rejected.
-- The Generic Rejection message is shown if Password Policy Enforcer does not have a specific reason
-  for the rejection, generally because the password does not comply with the Windows password
+- The Generic Rejection message is shown if Password Policy Enforcer doesn't have a specific reason
+  for the rejection, generally because the password doesn't comply with the Windows password
   policy.
 
 ### Password Policy Client Message Components
@@ -65,7 +65,7 @@ white.
 ### Live Password Message
 
 Password Policy Client messages can be configured to display live feedback to end users as they
-enter their passwords. This feature allows users to see if their passwords meet the requirements of
+enter their passwords. With this feature, users can see whether their passwords meet the requirements of
 the policy set by the organization. The image below illustrates an example of a live policy message.
 
 ![livepolicymessageexample](/images/passwordpolicyenforcer/10.2/administration/livepolicymessageexample.webp)

@@ -14,18 +14,18 @@ Policy Enforcer Settings window displays current HIBP database information and c
 options.
 
 The HIBP database must be initially deployed to a server or workstation with an internet connection
-that can retrieve and format the file. Once the database is formatted, you can distribute the HIBP
+that can retrieve and format the file. After the database is formatted, you can distribute the HIBP
 database to your domain controllers so the Password Policy Enforcer server can check passwords
 against the HIBP database.
 
 ## Considerations When Deploying the HIBP Database
 
-Prior to deploying the HIBP database, consider the pros and cons when choosing its deployment
+Before deploying the HIBP database, consider the pros and cons when choosing its deployment
 location.
 
 - The HIBP database takes up additional space on the machine where it is copied (approximately 13
   GB)
-- A network connection to the application server is not required to check passwords against the HIBP
+- A network connection to the application server isn't required to check passwords against the HIBP
   database
 
 ## Installation and Configuration
@@ -47,7 +47,7 @@ Only run this from one server.
 
 ### Passwords Hash Database
 
-Password Policy Enforcer utilizes the Passwords Hash database to check if users’ new and pending
+Password Policy Enforcer uses the Passwords Hash database to check if users’ new and pending
 password (i.e. during a password reset) matches the hash of a compromised password from a data
 breach.
 
@@ -88,11 +88,11 @@ size of the hash file, this download takes up a significant amount of CPU and do
         - [https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip](https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip)
         - [https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip.sha256.txt](https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip.sha256.txt)
 
-        Then, the File option can be used and incremental updates will be enabled.
+        Then use the File option to enable incremental updates.
 
 - Location:
 
-    - File – If the application server does not have internet access, you can manually download the
+    - File – If the application server doesn't have internet access, you can manually download the
       HIBP database and select the **File** radio button to browse to your local copy of the
       database
     - Web Site – This option points to the Netwrix website that hosts a copy of the latest HIBP
@@ -103,12 +103,11 @@ size of the hash file, this download takes up a significant amount of CPU and do
 
     - If Website is selected, then clicking **Apply** downloads the HIBP database from the Netwrix
       website and then processes the database for use by the application
-    - If File is selected, then clicking **Apply** will process the local copy of the (manually
-      obtained) database for use by the application
+    - If File is selected, then clicking **Apply** processes the local copy of the (manually obtained) database for use by the application
 
 ### Hash File Replication
 
-Password Policy Enforcer does not distribute hash file updates to other computers, but you can use
+Password Policy Enforcer doesn't distribute hash file updates to other computers, but you can use
 the Windows Distributed File System to ensure that all domain controllers have the latest hash
 files. Copy the hash files into the Sysvol share on one domain controller, and the Distributed File
 System will copy the files into the Sysvol share of all other domain controllers. Configure the
@@ -120,7 +119,7 @@ See the
 [Compromised Rule](/docs/passwordpolicyenforcer/10.2/administration/rules/compromised_rule.md)
 topic for additional information.
 
-The path above only works if the computer has a Sysvol share. This will not be the case if you are
+The path above only works if the computer has a Sysvol share. This won't be the case if you are
 using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
 local policies. If you are using Password Policy Enforcer for local policies and want all computers
 to receive hash file updates, then use the Sysvol share for file replication and a script or
@@ -135,31 +134,28 @@ degrades performance, and could jeopardize security.
 ## Scheduler
 
 Password Policy Enforcer administrators can use the Scheduler portion of the HIBP Updater to
-automate the tool to retrieve and/or prepare the HIBP dataset. The Scheduler utilizes Microsoft Task
+automate the tool to retrieve and/or prepare the HIBP dataset. The Scheduler uses Microsoft Task
 Scheduler technology to execute the process.
 
 ### How to Schedule a Task
 
-Follow the steps to schedule a task.
-
 **Step 1 –** Click **Scheduler** in the HIBP Updater.
 
-**Step 2 –** Click **Add Schedule**. An Edit Schedule window will appear that looks similar to the
-HIBP Updater window.
+**Step 2 –** Click **Add Schedule**. The Edit Schedule window opens, similar to the HIBP Updater window.
 
 ![editschedule](/images/passwordpolicyenforcer/10.2/administration/editschedule.webp)
 
 **Step 3 –** Enter the Name and Description of the schedule.
 
-**Step 4 –** Select **Add Trigger** to add the interval that you wish to have the schedule run.
+**Step 4 –** Select **Add Trigger** to add the interval that you want to have the schedule run.
 
 - You can add as many triggers as you want to a schedule.
 
 **Step 5 –** Select the Update Type and Location to get the update.
 
-**Step 6 –** Once you have setup your schedule, click **OK** to save the schedule.
+**Step 6 –** After you have set up your schedule, click **OK** to save the schedule.
 
-The HIBP database will be updated according to the configurations.
+The HIBP database is updated according to the schedule.
 
 ### Schedule List
 

@@ -7,8 +7,7 @@ sidebar_position: 50
 # Management Console
 
 This section introduces you to the Password Policy Enforcer management console, and explains how to
-configure Password Policy Enforcer's global properties. You will also learn how to disable and
-enable Password Policy Enforcer without uninstalling it.
+configure Password Policy Enforcer's global properties and how to disable and enable Password Policy Enforcer without uninstalling it.
 
 ## Management Console Overview
 

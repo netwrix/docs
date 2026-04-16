@@ -21,20 +21,20 @@ Follow the steps below to test your configuration.
 
 **Step 3 –** Select the **Password** Test tab.
 
-**Step 4 –** Type a **user name** in the User name text box, and a password in the Old Password and
+**Step 4 –** Enter a **user name** in the User name text box, and a password in the Old Password and
 New Password text boxes.
 
 **Step 5 –** Click **Test**, or wait a few seconds if Test passwords as I type is selected.
 
 :::note
-Policy testing simulates a password change, but it does not change the password. As it is
-only a simulation, you do not have to enter the correct password in the Old Password text box.
+Policy testing simulates a password change, but it doesn't change the password. As it is
+only a simulation, you don't have to enter the correct password in the Old Password text box.
 :::
 
 
 The Password Policy Enforcer management console displays a green check mark below the Test button if
 the new password complies with the Password Policy Enforcer password policy, or a red cross if it
-does not comply. Detailed test results appear in the results panel.
+doesn't comply. Detailed test results appear in the results panel.
 
 **Step 6 –** Click the **Results** tab to view the test results for each rule. The check boxes show
 which rules the new password complied with.
@@ -43,7 +43,7 @@ which rules the new password complied with.
 | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
 | ![testing_the_password_policy_1](/images/passwordpolicyenforcer/10.2/evaluation/testing_the_password_policy_1.webp) | Rule disabled or not tested.                      |
 | ![testing_the_password_policy_2](/images/passwordpolicyenforcer/10.2/evaluation/testing_the_password_policy_2.webp) | Rule enabled, password complies with rule         |
-| ![testing_the_password_policy_3](/images/passwordpolicyenforcer/10.2/evaluation/testing_the_password_policy_3.webp) | Rule enabled, password does not comply with rule. |
+| ![testing_the_password_policy_3](/images/passwordpolicyenforcer/10.2/evaluation/testing_the_password_policy_3.webp) | Rule enabled, password doesn't comply with rule. |
 
 ![managing_policies_12](/images/passwordpolicyenforcer/10.2/administration/managing_policies_12.webp)
 
@@ -74,23 +74,21 @@ Follow the steps below to test your configuration.
 **Step 4 –** Select the location of the folder where you want to upload the result.
 
 :::note
-It is recommended that the Password File and Result folder are not located on a shared
-drive, so the processing can be done faster.
+Keep the Password File and Result folder on a local drive, not a shared drive, for faster processing.
 :::
 
 
-**Step 5 –** Select a desired policy from the drop down list.
+**Step 5 –** Select a desired policy from the dropdown list.
 
-**Step 6 –** If you want to receive a list of unacceptable passwords, you should use the following
-filters:
+**Step 6 –** To receive a list of unacceptable passwords, use the following filters:
 
-- Show compliant passwords – the compliant passwords will be displayed.
-- Show rejected passwords – the rejected passwords will be displayed.
+- Show compliant passwords – displays compliant passwords.
+- Show rejected passwords – displays rejected passwords.
 
 **Step 7 –** Click the **Run** button.
 
-Statistics allows you to see the file line size, the number of passwords processed, and the result
-of processing each line. Click on the desired filters to show compliant and/or rejected passwords.
+Statistics shows the file line size, the number of passwords processed, and the result
+of processing each line. Click the filters you want to show compliant and/or rejected passwords.
 
 | Statistics of the Bulk Password Testing |                                                                                                         |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -105,13 +103,13 @@ of processing each line. Click on the desired filters to show compliant and/or r
 
 - Policy testing simulates a password change, but it may not always reflect what happens when a user
   changes their password. A password change may yield different results to a policy test because:
-- Policy testing does not simulate the Windows password policy rules. If the Windows password rules
+- Policy testing doesn't simulate the Windows password policy rules. If the Windows password rules
   are enabled, then Windows may reject a password even though it complies with all the Password
   Policy Enforcer rules.
-- Policy testing does not enforce the Minimum Age rule.
-- Policy testing does not enforce the History rule.
+- Policy testing doesn't enforce the Minimum Age rule.
+- Policy testing doesn't enforce the History rule.
 - Policy testing enforces the password policy even if Password Policy Enforcer or the assigned
-  policy is disabled. This allows you to test your configuration before enabling Password Policy
+  policy is disabled. Use this to test your configuration before enabling Password Policy
   Enforcer, or a new password policy.
 - Policy testing occurs on the computer that the management console is running on. If the management
   console is connected to a remote domain configuration, then it may not find the dictionary file on

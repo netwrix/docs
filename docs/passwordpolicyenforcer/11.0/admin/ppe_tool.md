@@ -16,15 +16,12 @@ designed to perform the following functions:
 - Generate user-friendly reports that contain configuration values and descriptions.
 - Create HTML reports with configuration values and descriptions of the PPE server instance.
 
-This topic will cover how to install the PPE Tool, customize and run reports, and configuration
-options in the PPE Tool.
+This topic covers how to install the PPE Tool, customize and run reports, and review configuration options in the PPE Tool.
 
 ## Using the PPE Tool
 
 The PPE Tool installs with the default installation of Password Policy Enforcer under the
-`C:\Program Files (x86)\Password Policy Enforcer\ppetool` folder. Once installed, the PPE Tool
-allows users to perform a number of operations related to Password Policy Enforcer functionality
-which are described in the table below.
+`C:\Program Files (x86)\Password Policy Enforcer\ppetool` folder. After installation, the PPE Tool supports a number of operations related to Password Policy Enforcer functionality, which are described in the following table.
 
 :::note
 All PPE Tool operations can be executed from the Command Prompt, if run with administrator
@@ -36,7 +33,7 @@ rights.
 
 :::info
 PPE Tool operations should only be executed one at a time. For example, you
-should not execute the /e (Export) and /i (Import) operations simultaneously; you should not run /e
+shouldn't execute the /e (Export) and /i (Import) operations simultaneously; you shouldn't run /e
 (Export) and /r (Report) operations simultaneously.
 :::
 
@@ -47,17 +44,17 @@ should not execute the /e (Export) and /i (Import) operations simultaneously; 
 | --------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | /?        | help                   | <ul><li>Displays Help and exits the application. All other options are ignored.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | /m        | minimal                | <ul><li>Configures the PPE Tool to operate in Minimal mode.</li><li>This operation strips away all extraneous information (e.g., policy messages, license information, etc.) while importing or exporting to the PPE Tool.</li><li>By default, the PPE Tool imports and exports all information available (e.g., policy messages, license information, etc.).</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| /d        | domain [in controller] | <ul><li>Configures the PPE Tool to operate in Domain mode.</li><li>The default controller is localhost.</li><li>This operation will make PPE Tool work with the LDAP Password Policy Enforcer instance. PPE Tool imports or exports configurations from the local registry.</li><li>To use this operation , you must run PPE Tool as a domain administrator user. However, this operation can be used on both the domain controller and on any member. If an invalid domain controller is provided as an argument, then the PPE Tool will fail at the import / export stage.</li><li>This operation is ignored when used to create reports from the file source (present with the /c (Config [in file name]) option). When the PPE Tool starts in a domain environment without the /d (Domain [in controller]) operation, a warning message will appear. However, this will not prevent the PPE Tool from operating on a local environment.</li></ul> |
-| /c        | config [in file name]  | <ul><li>Uses a config file instead of Password Policy Enforcer export when exporting reports (in the case of /i (Import), /h (Human [out file name]), and /r (Report [out file name]).</li><li>The default file is `config.xml`.</li><li>This operation defines the input file for the i/ (Import) operation, and thus is necessary for importing files to the PPE Tool. An error message will appear if the /c (Config [in file name]) option is omitted.</li><li>By default, the /h (Human [out file name]) and /r (Report [out file name]) operations use the Password Policy Enforcer instance as the reporting source. The /c (Config [in file name]) operation should provide the source configuration file as an argument to create reports. If an invalid file name is provided as an argument in this operation, the PPE Tool will display the appropriate error message and will fail.</li></ul>                                            |
+| /d        | domain [in controller] | <ul><li>Configures the PPE Tool to operate in Domain mode.</li><li>The default controller is localhost.</li><li>This operation makes PPE Tool work with the LDAP Password Policy Enforcer instance. PPE Tool imports or exports configurations from the local registry.</li><li>To use this operation , you must run PPE Tool as a domain administrator user. However, this operation can be used on both the domain controller and on any member. If an invalid domain controller is provided as an argument, then the PPE Tool will fail at the import / export stage.</li><li>This operation is ignored when used to create reports from the file source (present with the /c (Config [in file name]) option). When the PPE Tool starts in a domain environment without the /d (Domain [in controller]) operation, a warning message appears. However, this won't prevent the PPE Tool from operating on a local environment.</li></ul> |
+| /c        | config [in file name]  | <ul><li>Uses a config file instead of Password Policy Enforcer export when exporting reports (in the case of /i (Import), /h (Human [out file name]), and /r (Report [out file name]).</li><li>The default file is `config.xml`.</li><li>This operation defines the input file for the i/ (Import) operation, and thus is necessary for importing files to the PPE Tool. An error message will appear if the /c (Config [in file name]) option is omitted.</li><li>By default, the /h (Human [out file name]) and /r (Report [out file name]) operations use the Password Policy Enforcer instance as the reporting source. The /c (Config [in file name]) operation should provide the source configuration file as an argument to create reports. If an invalid file name is provided as an argument in this operation, the PPE Tool displays the appropriate error message and exits.</li></ul>                                            |
 
 
 Operations PPE Tool options are as follows:
 
 | Task | Task Name              | Task Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ---- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| /e   | export [out file name] | <ul><li>Exports config data (default) from the Password Policy Enforcer instance to the file.</li><li>This operations is enabled by default.</li><li>This operation can not be used with /c (Config [in file name]) or i/ (Import) operations, but can be combined with /h (Human [out file name]).</li></ul>                                                                                                                                                                                                                                  |
-| /i   | import                 | <ul><li>Imports the config file.</li><li>Imports existing configuration using the input configuration file defined by the /d (Domain [in controller]) . If the /c (Config [in file name]) operation is omitted, the PPE Tool will display an error message and exit the application.</li><li>When i/ (Import) is used with the /h (Human [out file name]) or /r (Report [out file name]) operations, the latter will be ignored.</li><li>/d (Domain [in controller]) and /m (Minimal) operations my affect the result of the import.</li></ul> |
-| /h   | human [out file name]  | <ul><li>Converts the config file to a human-readable format and produces a human-readable report based on the current Password Policy Enforcer instance configuration or the configuration provided by the /d (Domain [in controller]).</li><li>If no custom file name is provided, the default file name will be `config_human_readable.xml`.</li></ul>                                                                                                                                                                                       |
+| /e   | export [out file name] | <ul><li>Exports config data (default) from the Password Policy Enforcer instance to the file.</li><li>This operations is enabled by default.</li><li>This operation can't be used with /c (Config [in file name]) or i/ (Import) operations, but can be combined with /h (Human [out file name]).</li></ul>                                                                                                                                                                                                                                  |
+| /i   | import                 | <ul><li>Imports the config file.</li><li>Imports existing configuration using the input configuration file defined by the /d (Domain [in controller]) . If the /c (Config [in file name]) operation is omitted, the PPE Tool displays an error message and exits.</li><li>When i/ (Import) is used with the /h (Human [out file name]) or /r (Report [out file name]) operations, the latter is ignored.</li><li>/d (Domain [in controller]) and /m (Minimal) operations may affect the result of the import.</li></ul> |
+| /h   | human [out file name]  | <ul><li>Converts the config file to a human-readable format and produces a human-readable report based on the current Password Policy Enforcer instance configuration or the configuration provided by the /d (Domain [in controller]).</li><li>If no custom file name is provided, the default file name is `config_human_readable.xml`.</li></ul>                                                                                                                                                                                       |
 | /r   | report [out file name] | <ul><li>Converts the config file to HTML and produces an HTML report file based on the current Password Policy Enforcer instance configuration or the configuration provided by the /d (Domain [in controller]).</li><li>Generates the HTML report into `C:\Program Files (x86)\Password Policy Enforcer\Report` alongside the .css file.</li><li>The default files name is `report.html`.</li></ul>                                                                                                                                           |
 
 
@@ -71,7 +68,7 @@ C:\Windows/system32>cd..
 
 `C:\`[location of PPE Tool]`>`[operation]
 
-Once this location has been accessed in the Command console, enter one of the following commands in
+After this location has been accessed in the Command console, enter one of the following commands in
 the [operation] variable above to execute a PPE Tool operation in the Command console.
 
 | Action                                                                                       | Operation                                                                                           | Message                                                                                                                                                                                                                                                             |
@@ -85,22 +82,22 @@ the [operation] variable above to execute a PPE Tool operation in the Command c
 ### Generating Reports with Custom Descriptions
 
 The PPE Tool generates user-friendly reports by processing configuration tags (i.e., `<PPE>`). For
-example, the PPE Tool will search for the file tagname.xml (or, ppe.xml in this case). This file has
+example, the PPE Tool searches for the file tagname.xml (or, ppe.xml in this case). This file has
 root elements which name match each file name. Each root tag contains child tags (e.g., `<tag>`).
 Each tag has the following attributes:
 
 - name — Contains the original tag name from the input configuration file. If this attribute is
-  missed, then the original tag and its value will be absent in the human-readable report.
+  missed, then the original tag and its value are absent in the human-readable report.
 - DisplayName — Contains the user-friendly description for the original tag. If this attribute is
-  missed, then the original tag and its value will be presented in the report without a description.
+  missed, then the original tag and its value appear in the report without a description.
 
 The `<tag>` tag can also contain the child `<FLAGS>` tag. This tag can have an optional attribute
 'mode' and this attribute can have the following values:
 
-- value (default) — With the default value, the report will only contain tag descriptions for the
+- value (default) — With the default value, the report contains only tag descriptions for the
   child `<flag>` tag. The 'value' attribute matches the child `<flag>` tag with the value of the
   original tag.
-- combined — With the combined value, the report will contain the child `<flag>` tags which contain
+- combined — With the combined value, the report contains the child `<flag>` tags which contain
   values that are bitwise or are the result of the original values.
 
 #### Example of 'value' mode

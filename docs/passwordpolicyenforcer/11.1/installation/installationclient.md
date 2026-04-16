@@ -13,7 +13,7 @@ across your network. You can also install/uninstall the products using command l
 
 **Step 1 –** Navigate to the folder where you extracted the installers downloaded from Netwrix.
 
-**Step 2 –** Click on the **Netwrix_PPE_Client**version**x64.msi** (64 bit OS) or
+**Step 2 –** Click the **Netwrix_PPE_Client**version**x64.msi** (64 bit OS) or
 **Netwrix_PPE_Client**version**x86.msi** (32 bit OS) installation package. The installer is
 launched.
 
@@ -44,13 +44,13 @@ during startup.
 ## Testing the Password Policy Client
 
 Test the Password Policy Client by logging on to a computer and pressing the CTRL + ALT + DEL keys
-and clicking the **Change a password** item. If you do not see the password policy, it could be
-because a Password Policy Enforcer policy has not been assigned to you, or because the firewall
-rules have not been created.
+and clicking the **Change a password** item. If you don't see the password policy, it could be
+because a Password Policy Enforcer policy hasn't been assigned to you, or because the firewall
+rules haven't been created.
 
 :::note
-The Password Policy Client does not store or send passwords or password hashes over the
-network. An attacker cannot determine user passwords by sniffing the communication protocol. The
+The Password Policy Client doesn't store or send passwords or password hashes over the
+network. An attacker can't determine user passwords by sniffing the communication protocol. The
 protocol is also encrypted by default for additional protection.
 :::
 
@@ -59,7 +59,7 @@ protocol is also encrypted by default for additional protection.
 
 You may need to create firewall rules for the Password Policy Client if your domain controllers are
 running a software (host) firewall, or if the Password Policy Client and Password Policy Server
-communicate through a firewall. Firewall rules are not necessary for local policies because the
+communicate through a firewall. Firewall rules aren't necessary for local policies because the
 Password Policy Client and Password Policy Server are on the same computer.
 
 ### Windows Firewall

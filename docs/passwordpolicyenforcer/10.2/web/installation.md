@@ -31,14 +31,14 @@ Password Policy Enforcer/Web.
 Follow the steps below to manage various circumstances that may arise during installation. Listed
 below are common situations that impact installation and the steps necessary to work around them:
 
-- [If IIS is not installed on Windows 2012](#if-iisis-not-installed-on-windows-2012)
+- [If IIS isn't installed on Windows 2012](#if-iisis-not-installed-on-windows-2012)
 - [If IIS is already installed on Windows 2012](#if-iisis-already-installed-on-windows-2012)
-- [If IIS is not installed on Windows 2008](#if-iisis-not-installed-on-windows-2008)
+- [If IIS isn't installed on Windows 2008](#if-iisis-not-installed-on-windows-2008)
 - [If IIS is already installed on Windows 2008](#if-iisis-already-installed-on-windows-2008)
 
-#### If IIS is not installed on Windows 2012
+#### If IIS isn't installed on Windows 2012
 
-Follow the steps below to prepare IIS is IIS is not installed on Windows 2012.
+Follow the steps below to prepare IIS is IIS isn't installed on Windows 2012.
 
 **Step 1 –** Start the Server Manager (ServerManager.exe).
 
@@ -94,9 +94,9 @@ Follow the steps below to prepare IIS is IIS is already installed on Windows 2
 
 **Step 10 –** Wait for the ISAPI Extensions feature to install, then click **Close**.
 
-#### If IIS is not installed on Windows 2008
+#### If IIS isn't installed on Windows 2008
 
-Follow the steps below to prepare IIS if IIS is not installed on Windows 2008.
+Follow the steps below to prepare IIS if IIS isn't installed on Windows 2008.
 
 **Step 1 –** Start the Server Manager console (ServerManager.msc).
 
@@ -183,8 +183,8 @@ customized HTML templates and images before upgrading. The HTML templates and 
 in the `\Inetpub\wwwroot\ppeweb\` folder by default.
 
 :::note
-A full backup of the PPE/Web server is recommended. This allows you to roll back to the
-previous version if the upgrade cannot be completed. You may need to restart Windows after
+A full backup of the PPE/Web server is recommended. Use it to roll back to the
+previous version if the upgrade can't be completed. You may need to restart Windows after
 upgrading.
 :::
 
@@ -201,7 +201,7 @@ integration.
 **Step 1 –** Start the PPE/Web Setup Wizard and follow the prompts. The Setup Wizard uninstalls the
 previous version. There is no need to manually uninstall previous versions.
 
-**Step 2 –** Restore any customized HTML templates and images after upgrading. Do not restore
+**Step 2 –** Restore any customized HTML templates and images after upgrading. Don't restore
 PPEWeb.dll from the backup as it belongs to the previous version.
 
 ## Upgrading from PPW/Web V6.x
@@ -216,8 +216,8 @@ customized HTML templates and iages before upgrading The HTML templates and im
 the `\Inetpub\wwwroot\ppeweb\` folder by default.
 
 :::note
-A full backup of the PPE/Web server is recommended. This allows you to roll back to the
-previous version if the upgrade cannot be completed. You may need to restart Windows after
+A full backup of the PPE/Web server is recommended. Use it to roll back to the
+previous version if the upgrade can't be completed. You may need to restart Windows after
 upgrading.
 :::
 
@@ -236,17 +236,16 @@ Follow the steps below to upgrade PPE/Web to V7.11.
 **Step 1 –** Start the PPE/Web Setup Wizard and follow the prompts The Setup Wizard uninstalls the
 previous version. There is no need to manually uninstall previous versions.
 
-**Step 2 –** Restore any customized HTML templates and images after upgrading. Do not restore
+**Step 2 –** Restore any customized HTML templates and images after upgrading. Don't restore
 PPEWeb.dll from the backup as it belongs to the previous version.
 
-**Step 3 –** Open the Configuration Console to import you PPE/Web configuration settings. You will
-also need to install your new license key if you have a perpetual license. See the
+**Step 3 –** Open the Configuration Console to import your PPE/Web configuration settings. If you have a perpetual license, also install your new license key. See the
 [Configuration](/docs/passwordpolicyenforcer/10.2/web/configuration.md)
 topic for additional information.
 
 ## Upgrading from PPE/Web V3.x
 
-PPE/Web V3.x did not include a Setup Wizard, so you should manually remove the old version before
+PPE/Web V3.x didn't include a Setup Wizard, so you should manually remove the old version before
 upgrading.
 
 #### Removing PPE/Web V3.x
@@ -279,8 +278,7 @@ Follow the steps below to upgrade to PPE/Web V7.x.
 **Step 2 –** Open the Configuration console to configure PPE/Web and install your new license key.
 
 :::note
-Any customizations to the PPE/Web V3.x user interface will need to be recreated after
-upgrading to PPE/Web V7.11. See the
+Any customizations to the PPE/Web V3.x user interface must be recreated after upgrading to PPE/Web V7.11. See the
 [Editing HTML Templates](/docs/passwordpolicyenforcer/10.2/web/editing_html_templates.md)
 topic for additional information.
 

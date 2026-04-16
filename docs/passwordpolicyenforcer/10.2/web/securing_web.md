@@ -8,8 +8,7 @@ sidebar_position: 50
 
 Password Policy Enforcer/Web is designed to operate securely, but you must ensure that the web
 server is also secure. Follow Microsoft's recommendations to secure the web server, and always
-install and use an SSL certificate if Password Policy Enforcer/Web will be used on an unencrypted
-network.
+install and use an SSL certificate if Password Policy Enforcer/Web is used on an unencrypted network.
 
 ## Installing and Using an SSL Certificate
 
@@ -18,18 +17,16 @@ you need to set up SSL (Secure Sockets Layer) encryption for the connection betw
 and the web server.
 
 :::warning
-Do not use Password Policy Enforcer/Web on a production network without SSL encryption.
+Don't use Password Policy Enforcer/Web on a production network without SSL encryption.
 :::
 
 
 You can use a self-signed certificate, but most organizations purchase certificates from a
-certificate authority. This is a recurring cost, and you will need to complete forms for the
-certificate authority to verify your identity. You can install Password Policy Enforcer/Web on a
-server that already has an SSL certificate if you would rather not purchase another one.
+certificate authority. This is a recurring cost, and you must complete forms for the certificate authority to verify your identity. You can install Password Policy Enforcer/Web on a server that already has an SSL certificate to avoid purchasing another one.
 
 The IIS documentation explains how request, install, and use SSL certificates.
 
-Refer to the following documentation for more information:
+See the following documentation:
 
 - Windows 2012 & 2008
 

@@ -25,7 +25,7 @@ the selected user.
 **Step 3 –** Enter a password to test.
 
 The Password Policy Enforcer configuration console tests the password by simulating a password
-change, but it does not change the user's password. A green check mark indicates the password
+change, but it doesn't change the user's password. A green check mark indicates the password
 complies, a red and white x indicates the password fails. Detailed test results appear in the
 results pane.
 
@@ -48,7 +48,7 @@ topic for additional information.
 ## Windows Change Password Screen
 
 This is how most users change their password. Testing password policies from the Windows Change
-Password screen is useful because it allows you to see what your users see.
+Password screen is useful because it shows you exactly what your users see.
 
 From the Windows Change Password screen:
 
@@ -70,14 +70,14 @@ these messages are customizable.
 
 ![introduction_3](/images/passwordpolicyenforcer/11.1/evaluation/introduction_3.webp)
 
-The Password Policy Client does not modify any Windows system files, and you do not have to install
+The Password Policy Client doesn't modify any Windows system files, and you don't have to install
 it to enforce a Password Policy Enforcer password policy. Web browser based versions of the Password
 Policy Enforcer Client are also available.
 
 ## Active Directory Users / Computers Console and local Users and Groups Console
 
 Administrators often change domain passwords from the Active Directory Users and Computers console
-and local passwords from the Local Users and Groups console. In fact, these consoles do not change
+and local passwords from the Local Users and Groups console. In fact, these consoles don't change
 passwords; they reset them. This is an important distinction because a password reset is:
 
 - Restricted to privileged users
@@ -102,7 +102,7 @@ Follow the steps below to test password policies from these consoles.
 **Step 4 –** Click **OK**.
 
 :::note
-These consoles do not explain why a password was rejected. Use the Password Policy
+These consoles don't explain why a password was rejected. Use the Password Policy
 Enforcer configuration console, or the Change Password screen with the Password Policy Enforcer
 Client installed to see this information.
 :::
@@ -114,9 +114,9 @@ enforcing the password policy correctly.
 
 | Password | Result   | Reason                                       |
 | -------- | -------- | -------------------------------------------- |
-| AbdF6    | Rejected | Does not contain at least 7 characters       |
-| abd65fgo | Rejected | Does not contain an upper alpha character    |
-| ABD65FGO | Rejected | Does not contain a lower alpha character     |
+| AbdF6    | Rejected | Doesn't contain at least 7 characters       |
+| abd65fgo | Rejected | Doesn't contain an upper alpha character    |
+| ABD65FGO | Rejected | Doesn't contain a lower alpha character     |
 | PPETest1 | Rejected | Similar to user logon name                   |
 | Aardvark | Rejected | Similar to common password (dictionary file) |
 | tseTEPP  | Accepted | N/A                                          |
@@ -134,7 +134,7 @@ These three passwords are only marginally stronger than the rejected passwords. 
 shows you how to improve the password policy so Password Policy Enforcer rejects these passwords.
 
 :::note
-Contact Netwrix support[ ](mailto:support@anixis.com)if Password Policy Enforcer is not
-working as expected. We can help you resolve the problem.
+Contact [Netwrix support](mailto:support@anixis.com) if Password Policy Enforcer isn't
+working as expected.
 
 :::

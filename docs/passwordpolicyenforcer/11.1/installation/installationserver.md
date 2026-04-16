@@ -22,7 +22,7 @@ The Server installation package includes multiple features selected during insta
 
 - PPE Server – enforces password policies. It can be installed on Domain Controllers for domain
   password policy, or on servers and workstations for local account password policy.
-- Configuration Console – manages policy configuration. Install where ever needed.
+- Configuration Console – manages policy configuration. Install wherever needed.
 - Mailer Service – sends email reminders. Install on any server.
 
 **Step 1 –** Download the installation package from Netwrix.
@@ -39,7 +39,7 @@ controller. You must repeat these steps for each server where the features are i
 :::
 
 
-**Step 3 –** Click on the **Netwrix_PPE_Server_version_x64.msi** installation package. The
+**Step 3 –** Click the **Netwrix_PPE_Server_version_x64.msi** installation package. The
 installer is launched.
 
 ![Server Setup](/images/passwordpolicyenforcer/11.1/install/serversetup1.webp)
@@ -58,11 +58,11 @@ Agreement**.
 **Step 7 –** Select the features to install. The required storage is shown for each selection.
 
 - PPE Server – enforces password policies. It can be installed on Domain Controllers for domain
-  password policy, or on servers and workstations for local account password policy. It is not
+  password policy, or on servers and workstations for local account password policy. It isn't
   selected by default.
-- Configuration Console – manages policy configuration. Install where ever needed. Selected by
+- Configuration Console – manages policy configuration. Install wherever needed. Selected by
   default.
-- Mailer Service – sends email reminders. It is not selected by default.
+- Mailer Service – sends email reminders. It isn't selected by default.
 
 **Step 8 –** The default location is shown. Click **Browse** and select a new location if needed.
 

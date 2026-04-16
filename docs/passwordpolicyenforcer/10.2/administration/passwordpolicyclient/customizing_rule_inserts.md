@@ -16,12 +16,12 @@ Follow the steps below to edit a rule's inserts.
 
 ![customizing_rule_inserts_1](/images/passwordpolicyenforcer/10.2/administration/customizing_rule_inserts_1.webp)
 
-**Step 2 –** Click the **desired policy** in the right pane of the management console. In this
+**Step 2 –** Click the policy you want in the right pane of the management console. In this
 example it is Policy 1.
 
 ![customizing_rule_inserts_2](/images/passwordpolicyenforcer/10.2/administration/customizing_rule_inserts_2.webp)
 
-**Step 3 –** Double-click the **desired rule** to display the Rule Properties page. In this example
+**Step 3 –** Double-click the rule you want to display the Rule Properties page. In this example
 it is a
 [Compromised Rule](/docs/passwordpolicyenforcer/10.2/administration/rules/compromised_rule.md).
 
@@ -50,10 +50,10 @@ The Password Policy Client displays three messages to help users choose a passwo
 
 - The Password Policy message is shown as the user changes their password. This message explains the
   password policy to the user.
-- The Rejection Reason message is shown if a password does not comply with the Password Policy
+- The Rejection Reason message is shown if a password doesn't comply with the Password Policy
   Enforcer password policy. This message tells the user why their password was rejected.
-- The Generic Rejection message is shown if Password Policy Enforcer does not have a specific reason
-  for the rejection, generally because the password does not comply with the Windows password
+- The Generic Rejection message is shown if Password Policy Enforcer doesn't have a specific reason
+  for the rejection, generally because the password doesn't comply with the Windows password
   policy.
 
 ### Password Policy Client Message Components

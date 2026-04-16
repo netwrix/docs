@@ -17,7 +17,7 @@ and conditions.
 
 **Step 3 –** Select the Express option, and then click **Next**.
 
-**Step 4 –** Select the **Password Policy Server** check box if it is not selected.
+**Step 4 –** Select the **Password Policy Server** checkbox if it isn't selected.
 
 **Step 5 –** Click **Next** to install Password Policy Enforcer.
 

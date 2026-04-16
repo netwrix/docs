@@ -10,7 +10,7 @@ The Windows password policy rules can place restrictions on password history, ag
 complexity. If you enable the Password Policy Enforcer rules and the Windows rules, then users must
 comply with both sets of rules.
 
-Password Policy Enforcer has its own history, minimum and maximum age, length, and complexity rules.
+Password Policy Enforcer has its own history, minimum age, and maximum age, length, and complexity rules.
 See the [Rules](/docs/passwordpolicyenforcer/11.1/admin/manage-policies/rules/rules.md) topic for additional information. You can use the Password Policy Enforcer
 and Windows rules together. A password is only accepted if it complies with the Windows and Password
 Policy Enforcer password policies.
@@ -43,7 +43,7 @@ Settings**, **Account Policies**, and **Password Policy** items.
 ![installing_ppe_3](/images/passwordpolicyenforcer/11.1/evaluation/preparing_the_computer.webp)
 
 :::note
-You do not have to disable all the Windows password policy rules to use Password Policy
+You don't have to disable all the Windows password policy rules to use Password Policy
 Enforcer. You can use a combination of Password Policy Enforcer and Windows rules together if you
 like. Just remember that a password is only accepted if it complies with the rules enforced by both
 Windows and Password Policy Enforcer.

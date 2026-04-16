@@ -58,8 +58,8 @@ customized HTML templates and images before upgrading. The HTML templates and 
 in the `\Inetpub\wwwroot\ppeweb\` folder by default.
 
 :::note
-A full backup of the PPE Web server is recommended. This allows you to roll back to the
-previous version if the upgrade cannot be completed. You may need to restart Windows after
+A full backup of the PPE Web server is recommended. Use it to roll back to the
+previous version if the upgrade can't be completed. You may need to restart Windows after
 upgrading.
 :::
 
@@ -76,5 +76,5 @@ integration.
 **Step 1 –** Start the PPE Web Setup Wizard and follow the prompts. The Setup Wizard uninstalls the
 previous version. There is no need to manually uninstall previous versions.
 
-**Step 2 –** Restore any customized HTML templates and images after upgrading. Do not restore
+**Step 2 –** Restore any customized HTML templates and images after upgrading. Don't restore
 PPEWeb.dll from the backup as it belongs to the previous version.

@@ -6,13 +6,13 @@ sidebar_position: 20
 
 # Configuring the Password Policy Client
 
-The Password Policy Client is self-configuring and does not require manual configuration in most
+The Password Policy Client is self-configuring and doesn't require manual configuration in most
 cases. You may need to manually configure the Password Policy Client if:
 
 - You want to install it in a disabled state to be enabled later.
 - You want to change the display settings for small screens.
 - The Password Policy Client displays policy messages in the wrong language.
-- The default communication settings are not suitable (for example, if you change the default
+- The default communication settings aren't suitable (for example, if you change the default
   Password Policy Server Port).
 
 Password Policy Enforcer includes an administrative template to help configure the Password Policy
@@ -51,7 +51,7 @@ section for additional information.
 **`<domain_name>`**, right-click **`<OU_name>`** and select **Create a GPO** in this domain and Link
 it here.
 
-Once the GPO was configured, it will have the following view:
+After the GPO is configured, it has the following view:
 
 ![ppc_configuration3](/images/passwordpolicyenforcer/10.2/administration/ppc_configuration3.webp)
 
@@ -62,7 +62,7 @@ Once the GPO was configured, it will have the following view:
 
 ![ppc_configuration4](/images/passwordpolicyenforcer/10.2/administration/ppc_configuration4.webp)
 
-**Step 9 –** Click on **Netwrix Password Policy Client** to open a list of modification settings
+**Step 9 –** Click **Netwrix Password Policy Client** to open a list of modification settings
 with brief descriptions of each.
 
 ![ppc_configuration5](/images/passwordpolicyenforcer/10.2/administration/ppc_configuration5.webp)
@@ -92,7 +92,7 @@ Windows 10 and 11.
 the domain level.
 
 :::note
-If you are not using Active Directory, then open the Local Group Policy Editor
+If you aren't using Active Directory, then open the Local Group Policy Editor
 (gpedit.msc) and skip step 2.
 :::
 
