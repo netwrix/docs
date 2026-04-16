@@ -36,7 +36,7 @@ below are common situations that impact installation and the steps necessary to 
 - [If IIS isn't installed on Windows 2008](#if-iisis-not-installed-on-windows-2008)
 - [If IIS is already installed on Windows 2008](#if-iisis-already-installed-on-windows-2008)
 
-#### If IIS isn't installed on Windows 2012
+#### If IIS isn't installed on Windows 2012 {#if-iisis-not-installed-on-windows-2012}
 
 Follow the steps below to prepare IIS is IIS isn't installed on Windows 2012.
 
@@ -94,7 +94,7 @@ Follow the steps below to prepare IIS is IIS is already installed on Windows 2
 
 **Step 10 –** Wait for the ISAPI Extensions feature to install, then click **Close**.
 
-#### If IIS isn't installed on Windows 2008
+#### If IIS isn't installed on Windows 2008 {#if-iisis-not-installed-on-windows-2008}
 
 Follow the steps below to prepare IIS if IIS isn't installed on Windows 2008.
 
