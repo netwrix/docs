@@ -1,7 +1,7 @@
 ---
 title: "SecureRun to block User AND System executables"
 description: "SecureRun to block User AND System executables"
-sidebar_position: 90
+sidebar_position: 40
 ---
 # SecureRun to block User AND System executables
 

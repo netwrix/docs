@@ -1,7 +1,7 @@
 ---
 title: "Least Privilege Manager: Block All Unsigned with SecureRun"
 description: "Least Privilege Manager: Block All Unsigned with SecureRun"
-sidebar_position: 90
+sidebar_position: 20
 ---
 # Least Privilege Manager: Block All Unsigned with SecureRun
 
@@ -46,5 +46,3 @@ that run through anyway, but this version is also going to just be blocked. Okay
 you've got your bases covered. Nice new feature helping make your world even more secure than it was
 before that. Hope this helps you out. Looking forward to getting you started with PolicyPak real
 soon.
-
-

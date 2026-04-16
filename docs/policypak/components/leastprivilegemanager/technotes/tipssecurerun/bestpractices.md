@@ -36,7 +36,7 @@ to run through SecureRun. It will create the required allow and elevate policies
 create policies to block applications that would otherwise be automatically allowed.
 
 For more information on using the Auto-Rules Generator Tool, see
-[Auto Rules Generator Tool (with SecureRun)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/autorulesgeneratortool.md)
+[Auto Rules Generator Tool (with SecureRun)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/autorulesgeneratortool.md)
 
 ## Post-installation Options
 
