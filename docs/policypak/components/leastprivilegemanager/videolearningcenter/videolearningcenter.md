@@ -14,9 +14,9 @@ See the following Video topics for more information on Least Privilege Manager.
 - [Use Group Policy to remove local admin rights (then PolicyPak to enable Least Privilege)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/removelocaladmin.md)
 - [Link to Computer, Filter by User](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/userfilter.md)
 - [Installing applications-and-Preconfigured-Rules](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/installapplications.md)
-- [Auto Rules Generator Tool (with SecureRun)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/autorulesgeneratortool.md)
+- [Auto Rules Generator Tool (with SecureRun)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/autorulesgeneratortool.md)
 - [PolicyPak Application Control with PP Least Privilege Manager](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/applicationcontrol.md)
-- [Using Least Privilege Manager's SecureRun Feature](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/feature.md)
+- [Using Least Privilege Manager's SecureRun Feature](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/feature.md)
 - [COM Support](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/comsupport.md)
 - [Overcome UAC prompts for Active X controls](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/uacpromptsactivex.md)
 
@@ -28,8 +28,7 @@ See the following Video topics for more information on Least Privilege Manager.
 - [More security with Combo Rules](/docs/policypak/components/leastprivilegemanager/videolearningcenter/howtoandtechsupport/securitycomborules.md)
 - [Least Privilege Manager: Deny Messages](/docs/policypak/components/leastprivilegemanager/videolearningcenter/howtoandtechsupport/denymessages.md)
 - [Prevent Edge from Launching](/docs/policypak/components/leastprivilegemanager/videolearningcenter/howtoandtechsupport/preventedge.md)
-- [Stop Ransomware and other unknown zero day attacks with PolicyPak SecureRun(TM)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/howtoandtechsupport/stopransomware.md)
-- [Least Privilege Manager: Block All Unsigned with SecureRun](/docs/policypak/components/leastprivilegemanager/videolearningcenter/howtoandtechsupport/preventunsigned.md)
+- [Least Privilege Manager: Block All Unsigned with SecureRun](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/preventunsigned.md)
 - [Least Privilege Manager: Use Item Level Targeting to hone in when rules apply.](/docs/policypak/components/leastprivilegemanager/videolearningcenter/howtoandtechsupport/itemleveltargeting.md)
 
 ## Methods: Cloud, MDM, SCCM, PDQ
@@ -49,7 +48,7 @@ See the following Video topics for more information on Least Privilege Manager.
 - [Least Privilege Manager and Wildcards](/docs/policypak/components/leastprivilegemanager/videolearningcenter/bestpractices/wildcards.md)
 - [Reduce or specify Service Account Rights](/docs/policypak/components/leastprivilegemanager/videolearningcenter/bestpractices/serviceaccountrights.md)
 - [Block PowerShell in General, Open up for specific items](/docs/policypak/components/leastprivilegemanager/videolearningcenter/bestpractices/powershellblock.md)
-- [SecureRun to block User AND System executables](/docs/policypak/components/leastprivilegemanager/videolearningcenter/bestpractices/usersystemexecutables.md)
+- [SecureRun to block User AND System executables](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/usersystemexecutables.md)
 - [Elevate apps as standard user, BLOCK other Admins](/docs/policypak/components/leastprivilegemanager/videolearningcenter/bestpractices/appblock.md)
 - [PolicyPak Least Priv Manager: Self Elevate Mode](/docs/policypak/components/leastprivilegemanager/videolearningcenter/bestpractices/selfelevatemode.md)
 
