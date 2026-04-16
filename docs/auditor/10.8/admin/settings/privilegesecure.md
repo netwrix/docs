@@ -1,6 +1,6 @@
 ---
 title: "Netwrix Privilege Secure"
-description: "Netwrix Privilege Secure"
+description: "Configure integration between Netwrix Auditor and Netwrix Privilege Secure"
 sidebar_position: 70
 ---
 
@@ -11,41 +11,26 @@ Privilege Secure.
 
 The integration can be configured for the following Auditor data sources:
 
-- Active Directory.
+- Active Directory. For details, see
+    [Use Netwrix Privilege Secure as a Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/activedirectory/overview.md#use-netwrix-privilege-secure-as-a-data-collecting-account).
 
-    See the
-    [Use Netwrix Privilege Secure as a Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/activedirectory/overview.md#use-netwrix-privilege-secure-as-a-data-collecting-account)
-    topic for additional information.
+- Group Policy. For details, see
+    [Use Netwrix Privilege Secure as a Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/grouppolicy/overview.md#use-netwrix-privilege-secure-as-a-data-collecting-account).
 
-- Group Policy.
+- Logon Activity. For details, see
+    [Use Netwrix Privilege Secure as a Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/logonactivity/overview.md#use-netwrix-privilege-secure-as-a-data-collecting-account).
 
-    See the
-    [Use Netwrix Privilege Secure as a Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/grouppolicy/overview.md#use-netwrix-privilege-secure-as-a-data-collecting-account)
-    topic for additional information.
+- Microsoft Entra ID. For details, see
+    [How to Add Microsoft Entra ID Monitoring Plan Using Netwrix Privilege Secure](/docs/auditor/10.8/admin/monitoringplans/microsoftentraid/overview.md#how-to-add-microsoft-entra-id-monitoring-plan-using-netwrix-privilege-secure).
 
-- Logon Activity.
+- Windows File Server. For details, see
+    [Use Netwrix Privilege Secure as a Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/fileservers/windowsfileserver.md#use-netwrix-privilege-secure-as-a-data-collecting-account).
 
-    See the
-    [Use Netwrix Privilege Secure as a Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/logonactivity/overview.md#use-netwrix-privilege-secure-as-a-data-collecting-account)
-    topic for additional information.
+- Windows Server. For details, see
+    [Use Netwrix Privilege Secure as a Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/windows/overview.md#use-netwrix-privilege-secure-as-a-data-collecting-account).
 
-- Microsoft Entra ID.
+- Exchange. For details, see [Exchange](/docs/auditor/10.8/admin/monitoringplans/exchange/overview.md).
 
-    See the
-    [How to Add Microsoft Entra ID Monitoring Plan Using Netwrix Privilege Secure](/docs/auditor/10.8/admin/monitoringplans/microsoftentraid/overview.md#how-to-add-microsoft-entra-id-monitoring-plan-using-netwrix-privilege-secure)
-    topic for additional information.
-
-- Windows File Server.
-
-    See the
-    [Use Netwrix Privilege Secure as a Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/fileservers/windowsfileserver.md#use-netwrix-privilege-secure-as-a-data-collecting-account)
-    topic for additional information.
-
-- Windows Server.
-
-    See the
-    [Use Netwrix Privilege Secure as a Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/windows/overview.md#use-netwrix-privilege-secure-as-a-data-collecting-account)
-    topic for additional information.
 
 ## Software Requirements
 
@@ -66,47 +51,42 @@ Follow the steps to enable and configure Netwrix Privilege Secure integration.
 
 **Step 4 –** Specify the Privilege Secure URL.
 
+**NOTE:** If Netwrix Privilege Secure uses an untrusted certificate, a page with the certificate details will be displayed. Review the certificate information and, if the certificate is acceptable, select the **I want Netwrix Auditor to trust this certificate when connecting to this server** checkbox to continue.
+
 **Step 5 –** Specify the application name and Netwrix Auditor client certificate. The following two
 options are available:
 
 - New/Generate certificate – Create a new certificate.
 - Select an existing certificate – Select an available certificate from the drop-down list.
 
+**NOTE:** Do not use spaces in the application name.
+
 ![npsclientcertificate](/images/auditor/10.8/admin/settings/npsclientcertificate.webp)
 
 **Step 6 –** Click **Next**.
 
-**Step 7 –** You need to manually export the Netwrix Auditor server certificate. To do so, follow
-the steps below:
+**Step 7 –** Export the Netwrix Auditor server certificate for subsequent installation on the host with Netwrix Privilege Secure:
 
-1. On the machine where Netwrix Auditor is installed, press the Windows key + R to open the Run
-   dialog box. Type "_mmc_" in the box and click **OK**. This will open MMC (Microsoft Management
-   Console).
-2. **Click File > Add/Remove Snap-in...** and locate Certificates icon.
-3. In the pop-up window, select the **Computer account** and click **Next**.
-4. Make sure that the **Local Computer** option is selected in the next window, then click
-   **Finish**. The Certificates menu will appear.
-5. Go to **Certificates (Local Computer) > Personal > Certificates > `{Certificate Name}`** and
-   click **Export**.
-6. After successful export, copy the certificate to the machine where Netwrix Privilege Secure is
-   installed.
+1. Click **View** next to the **Certificate Serial Number** field.
+2. In the window that appears, go to the **Details** tab, click **Copy to File...**, and follow the
+   Certificate Export Wizard.
 
 **Step 8 –** Install the certificate on the machine where Netwrix Privilege Secure is installed. To
 do so, follow the steps below:
 
-1. Right-click the imported certificate and select **Install Certificate** option.
+1. Right-click the imported certificate and select the **Install Certificate** option.
 2. In the Certificate Import Wizard, select **Local Machine** as a Store Location and click
    **Next**.
-3. In the next menu, select **Paste all certificates in the following store** option, click
-   **Browse** and select **Trusted Root Certification Authorities** folder in the pop-up menu.
+3. In the next menu, select the **Place all certificates in the following store** option, click
+   **Browse**, and select the **Trusted Root Certification Authorities** folder in the pop-up menu.
 4. Click **Finish**.
 
 **Step 9 –** Launch Netwrix Privilege Secure to create an application user for Netwrix Auditor with
-the Application name and Certificate Serial Number that you received. Refer to the
+the Application name and Certificate Serial Number that you received. For details, see the
 [Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
-documentation for additional instructions.
+documentation.
 
-**Step 10 –** Provide the security key you got in Netwrix Privilege Secure.
+**Step 10 –** In Netwrix Auditor, enter the security key obtained from Netwrix Privilege Secure.
 
 ![npsintegrationparameters](/images/auditor/10.8/admin/settings/npsintegrationparameters.webp)
 
@@ -114,10 +94,23 @@ documentation for additional instructions.
 
 ![npsintegrationfinished](/images/auditor/10.8/admin/settings/npsintegrationfinished.webp)
 
-**Step 12 –** After the validation, click **Finish**.
+**Step 12 –** After validation, click **Finish**.
 
-Integration between Netwrix Auditor and Netwrix Privilege Secure is established. Before using the
+Integration between Netwrix Auditor and Netwrix Privilege Secure is established. Before using
 Netwrix Privilege Secure for data collection in Netwrix Auditor, make sure that you created a
-dedicated Access Policy and Connection Profile in Netwrix Privilege Secure. Refer to the
+dedicated Access Policy and Connection Profile in Netwrix Privilege Secure.
+
+**NOTE:** For additional information, see the
 [Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
-documentation for additional information.
+documentation. Key concepts used in the integration:
+
+- **Resource-based** — Netwrix Privilege Secure creates a temporary account at the start of the session and removes it when the session ends. This policy type requires the target system to be onboarded in Netwrix Privilege Secure as a resource (a server, domain, database, or website). No pre-existing account on the resource is required. Netwrix recommends using the Netwrix Auditor host as the resource.
+- **Credential-based** — Uses an account that already exists on the target resource. You must create the account, grant it the required permissions, and then define it in Netwrix Privilege Secure as a Credential before you can add it to the policy.
+- **Connection Profile** — A Connection Profile defines the session settings for the policy: maximum session duration, session extension options, proxy configuration, session recording, and approval workflow. Configure Connection Profiles in Netwrix Privilege Secure under **Policy** > **Access Policy** > **Connection Profiles**.
+
+**NOTE:** If data collection requires sessions longer than the default duration, configure the Connection Profile to support up to 72 hours. Set **Extend By** to match **Max Duration**, then use one of the following combinations:
+
+- **Max Duration**: 120 minutes, **Session Extension Limit**: 35
+- **Max Duration**: 60 minutes, **Session Extension Limit**: 71
+
+Both configurations result in a maximum total session duration of 72 hours (4,320 minutes).
