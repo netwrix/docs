@@ -48,7 +48,7 @@ You can configure the integration for the following Auditor data sources:
 
 **Step 4 –** Specify the Privilege Secure URL.
 
-**NOTE:** If Netwrix Privilege Secure uses an untrusted certificate, Netwrix Auditor displays a page with the certificate details. Review the certificate information and, if the certificate is acceptable, select the **I want Netwrix Auditor to trust this certificate when connecting to this server** checkbox to continue.
+**NOTE:** If Netwrix Privilege Secure uses an untrusted certificate, Netwrix Auditor displays a page with the certificate details. Review the certificate information and, if the certificate is acceptable, select the checkbox to allow Netwrix Auditor to trust this certificate when connecting to this server.
 
 **Step 5 –** Specify the application name and Netwrix Auditor client certificate. The following two
 options are available:
