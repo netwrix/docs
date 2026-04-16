@@ -60,7 +60,7 @@ For sources added to AA26, the product collects the following data:
 | Active Directory and Entra ID users, groups, and memberships | IAM sync | ClickHouse |
 | Real-time file system activity events | Netwrix Activity Monitor (NAM) integration | ClickHouse |
 
-Real-time file system activity events require Netwrix Activity Monitor to be installed and monitoring the target hosts. See [Activity Monitor Integration](../configurations/activity-monitor-integration.md) for configuration steps.
+Real-time file system activity events require Netwrix Activity Monitor to be installed and monitoring the target hosts. See the **Activity Monitor Integration** page under Configuration for setup steps.
 
 ---
 
