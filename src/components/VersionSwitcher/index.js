@@ -42,8 +42,8 @@ export default function VersionSwitcher() {
     return null;
   }
 
-  // Sort versions so latest is always first (on the left)
-  const sortedVersions = [...matchedProduct.versions].sort((a, b) => {
+  // Sort versions so latest is always first (on the left), excluding hidden versions
+  const sortedVersions = [...matchedProduct.versions].filter(v => !v.hidden).sort((a, b) => {
     if (a.isLatest) return -1;
     if (b.isLatest) return 1;
     return 0;
