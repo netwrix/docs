@@ -62,7 +62,7 @@ Before 2017
 - New Component — Remote Work Delivery Manager: Deliver software to Windows 10 via SMB share, Amazon
   S3 or other cloud services
 - Least Privlege Manager: Automatically block unsigned Applications
-  [Least Privilege Manager: Block All Unsigned with SecureRun](/docs/policypak/components/leastprivilegemanager/videolearningcenter/howtoandtechsupport/preventunsigned.md)
+  [Least Privilege Manager: Block All Unsigned with SecureRun](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/preventunsigned.md)
 - Compliance Reporter now 10x faster
 
 2021
