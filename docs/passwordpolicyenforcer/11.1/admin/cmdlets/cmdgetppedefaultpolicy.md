@@ -18,7 +18,7 @@ The **Get-PPEDefaultPolicy** cmdlet reports the name of the Password Policy Enfo
 
 This cmdlet supports the common parameters: **Verbose**, **Debug**, **ErrorAction**,
 **ErrorVariable**, **WarningAction**, **WarningVariable**, **OutBuffer**, **PipelineVariable**, and
-**OutVariable**. For more information, see [about_CommonParameters](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.5).
+**OutVariable**. See [about_CommonParameters](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.5).
 
 **EXAMPLE**
 

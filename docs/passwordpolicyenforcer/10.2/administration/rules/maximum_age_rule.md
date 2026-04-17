@@ -17,23 +17,22 @@ policies.
 Configure the Settings tab to ensure that passwords are changed regularly to increase their
 effectiveness.
 
-Select the **Enabled** check box to enable the Maximum Age rule.
+Select the **Enabled** checkbox to enable the Maximum Age rule.
 
-Choose a value from the first days drop-down list to specify how many days must elapse before
+Choose a value from the first days dropdown list to specify how many days must elapse before
 passwords expire.
 
 You can encourage users to choose longer passwords by extending the lifetime of their password if it
 exceeds a certain length. To enable this feature, choose a higher value from the second days
-drop-down list and a minimum length from the contains drop-down list. Passwords that contain the
-required number of characters will not expire until the second (higher) days value. If both days
+dropdown list and a minimum length from the contains dropdown list. Passwords that contain the
+required number of characters won't expire until the second (higher) days value. If both days
 values are identical, then passwords will expire after the specified number of days, irrespective of
 length.
 
 :::note
 When the Maximum Age rule is configured to delay the expiry of longer passwords, it
 creates an Active Directory security group called "PPE Extended Maximum Age Users". Password Policy
-Enforcer uses this group to identify which users are eligible for a delayed password expiry. Users
-are added and removed from the group automatically. You can move and rename this group, but do not
+Enforcer uses this group to identify which users are eligible for a delayed password expiry. Password Policy Enforcer adds and removes users from the group automatically. You can move and rename this group, but don't
 change the pre-Windows 2000 name. Contact Netwrix support if you must change the pre-Windows 2000
 name. Change a Password Policy Enforcer configuration setting (any setting) after moving or renaming
 the group to trigger a cache update in Password Policy Enforcer. Password Policy Enforcer recreates
@@ -48,7 +47,7 @@ PDC emulator operations master role. With this optional feature enabled Passwor
 will log an event for every password that expires. Events are logged to the Windows Application
 Event Log.
 
-Choose a value from the Mode drop-down list to specify how Password Policy Enforcer handles expired
+Choose a value from the Mode dropdown list to specify how Password Policy Enforcer handles expired
 passwords. The Standard mode forces all users with expired passwords to change their password during
 logon. The Transitional modes force a percentage of users with expired passwords to change their
 password during logon. The Warning mode warns users that their password has expired without forcing
@@ -75,7 +74,7 @@ to change it.
 
 :::note
 The password expiry prompt is a Windows client feature, and is displayed even if the
-Password Policy Client is not installed. Windows clients display the prompt 5 days before passwords
+Password Policy Client isn't installed. Windows clients display the prompt 5 days before passwords
 expire by default. You can alter this behavior in the Windows Group Policy security settings. See
 the
 [Interactive logon: Prompt user to change password before expiration](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/interactive-logon-prompt-user-to-change-password-before-expiration)
@@ -85,7 +84,7 @@ Microsoft article for additional information.
 
 Password Policy Enforcer expires passwords at 1:00 AM every day on the domain controller holding the
 PDC emulator operations master role. It sets "User must change password at next logon" for users
-whose password has expired, or is due to expire on that day. Password Policy Enforcer does not
+whose password has expired, or is due to expire on that day. Password Policy Enforcer doesn't
 expire passwords if the Maximum Age rule is in Warning mode, or for users with "Password never
-expires" set in Active Directory. Some passwords will not expire immediately when the Maximum Age
+expires" set in Active Directory. Some passwords won't expire immediately when the Maximum Age
 rule is in a Transitional mode.
