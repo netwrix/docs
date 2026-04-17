@@ -6,11 +6,11 @@ keywords: [training, course, identity manager]
 description: "Learn about Netwrix Identity Manager through introductory courses"
 ---
 
-import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlanning } from '@site/src/training/identity-manager';
+import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlanning, NIMIntro } from '@site/src/training/identity-manager';
 import { NIM } from '@site/src/training/products';
 
 
-Estimated length: 1 hour
+Estimated length: 4 hours 22 minutes
 
 In this learning path, you will be introduced to <NIM />, formerly Netwrix Usercube. It contains the following courses:
 
@@ -19,6 +19,7 @@ In this learning path, you will be introduced to <NIM />, formerly Netwrix Userc
 * 2720 <NIM /> – Concepts
 * 2721 <NIM /> – Architecture
 * 2722 <NIM /> – IGA Project Planning
+* 3720 Introduction to <NIM />
 
 <NIMValue />
 
@@ -29,3 +30,5 @@ In this learning path, you will be introduced to <NIM />, formerly Netwrix Userc
 <NIMArchitecture />
 
 <NIMProjectPlanning />
+
+<NIMIntro />
