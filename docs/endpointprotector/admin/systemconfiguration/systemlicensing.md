@@ -55,7 +55,7 @@ Click **View Licenses** to allow the management of the endpoint licenses.
 If one or more licensed Workstations have been permanently decommissioned - its license can be released and reassigned. Released licenses will automatically be reassigned to other active Workstations.
 
 By using the automatic release license functionality, licenses can be released from decommissioned Workstations, that have not been seen online for over a certain number of days (15, 30, 90 days, etc.).
-It is not intended for frequent repeated reassignment of licenses among ephemeral or non-persistent virtual desktops, pooled sessions, or other temporary compute instances.
+It isn't intended for frequent repeated reassignment of licenses among ephemeral or non-persistent virtual desktops, pooled sessions, or other temporary compute instances.
 If you operate a non-persistent VDI environment, contact Netwrix to ensure your deployment and licensing model align with product use requirements. 
 
 ![Automatic Release Licenses  ](autoreleaselicenses.webp)
