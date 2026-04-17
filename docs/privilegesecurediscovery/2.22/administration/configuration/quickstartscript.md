@@ -15,12 +15,12 @@ This [QS (Quickstart) Script.zip](https://github.com/user-attachments/files/2680
 
 This script requires Python and PIP:
 
-- The QS can be installed on a local Windows server and run through the Windows Command Line or within one of the Ubuntu servers that NPSD is deployed on. 
+- The QS can be installed on a local Windows server and run through the Windows Command Line or within one of the Ubuntu servers that NPSD is deployed on. 
 - There are accompanying files contained in the original zip document
 - QuickStart Authenticates via an API key.
 - Python and PIP Version Required
 
-    - Python's latest version can be downloaded here [Download Python | Python.org](https://www.python.org/downloads/) but note that the tool has not been fully tested past the 3.9.x release
+    - Python's latest version can be downloaded here [Download Python | Python.org](https://www.python.org/downloads/) but the tool has not been fully tested past the 3.9.x release
       so there will be some nuances that aren't documented that can arise during installation with a version greater than the 3.9.x. 
     - Previous versions of Privilege Secure supported Python2, but it's strongly recommended to
       Upgrade to Python3.
@@ -52,7 +52,7 @@ Notes:
   error
 
 At this point you will need to generate an API Key within the UI. When you run the QuickStart script
-for the first time it will ask you input the API Key. We recommend storing this securely given the
+for the first time it will ask you input the API Key. Store this securely given the
 level of access it grants. **_Note: You will not be able to see the key again after closing the
 dialogue box. If you didn't save it, revoke the key in the UI and create a new one._**
 
@@ -64,13 +64,13 @@ Example:
 config = {    'baseUrl': 'https://localhost/api/v1',    'userId': '59057412c4e92dccc356552c',    'provisionUser': 'jita.universal'}
 ```
 
-- baseUrl:  Url of Privilege Secure API
-- userId:  Privilege Secure Admin User ID tied to API Key
-- provisionUser:  Optional. Account name to filter on in generated report
+- baseUrl:  Url of Privilege Secure API
+- userId:  Privilege Secure Admin User ID tied to API Key
+- provisionUser:  Optional. Account name to filter on in generated report
 
 (**Optional**). As of QuickStart version 2.12+, the above "config" block can be broken out into a
-separate file that persists across QuickStart script upgrades.  Save the config block to a file in
-the same directory as the QuickStart script named:  config.json
+separate file that persists across QuickStart script upgrades. Save the config block to a file in
+the same directory as the QuickStart script named:  config.json
 
 Edit the values to suite the environment and user:
 
@@ -78,8 +78,8 @@ Edit the values to suite the environment and user:
 {"baseUrl": "https://localhost/api/v1","userId": "59057412c4e92dccc356552c","provisionUser": "jita.universal"}
 ```
 
-Note:  The config.json file uses double quotes.
+Note:  The config.json file uses double quotes.
 
-- baseUrl:  Url of Privilege Secure API
-- userId:  Privilege Secure Admin User ID tied to API Key
-- provisionUser:  Optional. Account name to filter on in generated report
+- baseUrl:  Url of Privilege Secure API
+- userId:  Privilege Secure Admin User ID tied to API Key
+- provisionUser:  Optional. Account name to filter on in generated report
