@@ -12,7 +12,7 @@ Protector Client and Deep Packet Inspection settings. As the ﬁrst layer of sec
 Protector, it is activated by default in every conﬁguration provided.
 
 For a detailed overview of the devices that are discovered and covered under the Device Control
-settings, please refer to the
+settings, refer to the
 [Device Types (Standard)](globalrights.md#device-types-standard) subtopic.
 
 ## Dashboard

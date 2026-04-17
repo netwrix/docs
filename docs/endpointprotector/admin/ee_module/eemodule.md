@@ -18,7 +18,7 @@ can be opened by any user only after it is decrypted, therefore requiring the us
 information out of Enforced Encryption.
 
 :::warning
-Enforced Encryption is not compatible with devices that have a write-protection
+Enforced Encryption isn't compatible with devices that have a write-protection
 mechanism in place, preventing the modiﬁcation or deletion of data. The write-protection mechanism
 can be enforced using a hardware component (for example a switch on the USB device) or a software
 component.
@@ -89,7 +89,7 @@ Both Enforced Encryption deployments are straightforward and require the user on
 password.
 
 :::note
-On Macs, USB storage devices with multiple partitions are not supported by Enforced
+On Macs, USB storage devices with multiple partitions aren't supported by Enforced
 Encryption and Trusted Device™ Level 1.
 :::
 
@@ -121,7 +121,7 @@ to the Endpoint Protector Server if the Endpoint Protector Client is present on 
 action takes place regardless of the File Tracing option being enabled or not for that speciﬁc
 computer through the Device Control module.
 
-In case the Endpoint Protector Client is not present, the information is stored locally in an
+In case the Endpoint Protector Client isn't present, the information is stored locally in an
 encrypted format on the device and it will be sent at a later time from any other computer with the
 Endpoint Protector Client installed.
 
@@ -152,7 +152,7 @@ When an Enforced Encryption (EE) encrypted USB drive is used by multiple users o
 
 Netwrix Enforced Encryption Read-Only Mode for unmanaged computers is an innovative feature designed to maintain data security standards across non-corporate devices. It allows administrators to grant access to EE encrypted drives on personal computers, conference room setups, or exhibition areas while ensuring security through a Read-Only configuration. This enables the seamless transfer of corporate data across different environments, providing robust protection without sacrificing accessibility.
 
-To activate this mode, navigate to the "Global Settings" section related to Enforced Encryption, and switch on the "EE Read-Only mode" toggle. Please refer to [Global Settings - EE configuration](/docs/endpointprotector/admin/dc_module/globalsettings#easylock-settings).
+To activate this mode, navigate to the "Global Settings" section related to Enforced Encryption, and switch on the "EE Read-Only mode" toggle. refer to [Global Settings - EE configuration](/docs/endpointprotector/admin/dc_module/globalsettings#easylock-settings).
 
 ![Enforced Encryption Read-Only Mode](eeromode.webp)
 
@@ -170,13 +170,13 @@ password, and more.
 Protecting Data in Transit is essential to ensure no third party has access to data in case a device
 is lost or stolen. The Enforced Encryption solution gives administrators the possibility to protect
 conﬁdential data on portable devices in case of loss or theft. Ensuring only encrypted devices can
-be used on computers where Endpoint Protector is present can be done by utilizing Trusted Device™.
+be used on computers where Endpoint Protector is present can be done by using Trusted Device™.
 Trusted Device™ must receive authorization from the Endpoint Protector Server, otherwise, they will
 be unusable. There are four levels of security for Trusted Device™:
 
 - Level 1 – Minimum security for oﬃce and personal use with a focus on software-based encryption for
   data security. Any USB Flash Drive and most other portable storage devices can be turned into a
-  Trusted Device™ Level 1. It does not require any speciﬁc hardware but it does need an encryption
+  Trusted Device™ Level 1. It doesn't require any speciﬁc hardware but it does need an encryption
   solution such as Enforced Encryption
 - Level 2 – Medium security level with biometric data protection or advanced software-based data
   encryption. It requires special hardware that includes security software and has been tested for
