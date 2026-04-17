@@ -12,7 +12,7 @@ import { NAMAdditional } from '@site/src/training/activity-monitor';
 import { Company, NAA, NAM } from '@site/src/training/products';
 
 
-While certification isn't yet available, watch these recordings to learn about the newest product at <Company />!
+While certification isn't yet available, watch these recordings to learn about the newest product at <Company />.
 
 <NAA26Additional />
 

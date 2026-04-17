@@ -12,7 +12,7 @@ import { NIM } from '@site/src/training/products';
 
 Estimated length: 4 hours 22 minutes
 
-In this learning path, you will be introduced to <NIM />, formerly Netwrix Usercube. It contains the following courses:
+This learning path introduces you to <NIM />, formerly Netwrix Usercube. It contains the following courses:
 
 * 1720 <NIM /> – Valuable Features
 * 1721 <NIM /> – Identity & Identity Life Cycle
