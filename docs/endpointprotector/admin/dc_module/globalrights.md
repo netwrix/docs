@@ -95,7 +95,7 @@ Audio Device Control for sound cards is supported only on Windows and applies on
 ::: 
 
 :::note
-Occasionally, the EPP system may display a limitation where certain webcams can be activated in Zoom meetings, even when rights are set to DENY in computer settings. To enforce proper rights after configuration, a restart of the PC is mandatory in such cases.
+Occasionally, the EPP system may display a limitation where certain webcams can activate in Zoom meetings, even when you set rights to DENY in computer settings. To enforce proper rights after configuration, you must restart the PC.
 :::
 
 ### Bluetooth Low Energy Devices on macOS
@@ -111,7 +111,7 @@ On macOS version 14 (Sonoma) and higher, Bluetooth devices are managed only when
 ![Bluetooth Device Management on Mac](macbluetooth.webp)
 
 :::note
-Occasionally, the EPP system may display a limitation where certain webcams can be activated in Zoom meetings, even when rights are set to DENY in computer settings. To enforce proper rights after configuration, a restart of the PC is mandatory in such cases.
+Occasionally, the EPP system may display a limitation where certain webcams can activate in Zoom meetings, even when you set rights to DENY in computer settings. To enforce proper rights after configuration, you must restart the PC.
 :::
 
 By default, Endpoint Protector blocks the majority of device types. However, because you need a working internet connection or wireless keyboards during the conﬁguration process, Endpoint Protector sets several devices to Allow Access. These include Wi-Fi, Bluetooth, Network Share, Additional Keyboard, and USB Modem.

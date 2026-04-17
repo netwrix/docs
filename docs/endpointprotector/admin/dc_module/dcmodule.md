@@ -8,8 +8,8 @@ sidebar_position: 30
 
 From this section, you can manage all entities in the system, their subsequent rights, and settings.
 You can also manage other types of settings from the Device Control section such as Endpoint
-Protector Client and Deep Packet Inspection settings. As the ﬁrst layer of security within Endpoint
-Protector, it is activated by default in every conﬁguration provided.
+Protector Client and Deep Packet Inspection settings. As the first layer of security within Endpoint
+Protector, Device Control activates by default in every configuration provided.
 
 For a detailed overview of the devices that are discovered and covered under the Device Control
 settings, refer to the
@@ -25,7 +25,7 @@ from the top-right calendars and view the data in real time.
 
 ## Device Types (Standard)
 
-Endpoint Protector supports a wide range of device types, which represent key sources of security breaches. These devices can be authorized. With authorization, users can view, create, or modify their content, and administrators can view the data transferred to and from the authorized devices.
+Endpoint Protector supports a wide range of device types, which represent key sources of security breaches. You can authorize these devices. With authorization, users can view, create, or modify their content, and administrators can view the data transferred to and from the authorized devices.
 
 ![Standard supported Devices](standarddevices.webp)
 
