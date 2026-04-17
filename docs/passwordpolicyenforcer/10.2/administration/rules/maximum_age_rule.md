@@ -32,8 +32,7 @@ length.
 :::note
 When the Maximum Age rule is configured to delay the expiry of longer passwords, it
 creates an Active Directory security group called "PPE Extended Maximum Age Users". Password Policy
-Enforcer uses this group to identify which users are eligible for a delayed password expiry. Users
-are added and removed from the group automatically. You can move and rename this group, but don't
+Enforcer uses this group to identify which users are eligible for a delayed password expiry. Password Policy Enforcer adds and removes users from the group automatically. You can move and rename this group, but don't
 change the pre-Windows 2000 name. Contact Netwrix support if you must change the pre-Windows 2000
 name. Change a Password Policy Enforcer configuration setting (any setting) after moving or renaming
 the group to trigger a cache update in Password Policy Enforcer. Password Policy Enforcer recreates

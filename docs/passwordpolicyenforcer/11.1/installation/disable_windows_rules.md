@@ -45,7 +45,7 @@ Settings**, **Account Policies**, and **Password Policy** items.
 :::note
 You don't have to disable all the Windows password policy rules to use Password Policy
 Enforcer. You can use a combination of Password Policy Enforcer and Windows rules together if you
-like. Just remember that a password is only accepted if it complies with the rules enforced by both
+like. Remember that a password is only accepted if it complies with the rules enforced by both
 Windows and Password Policy Enforcer.
 
 :::

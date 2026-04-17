@@ -17,7 +17,7 @@ to comply with both policies. This isn't recommended for the evaluation because 
 may stop users from reusing recent passwords, or from changing their password more than once a day.
 These restrictions can make it difficult to evaluate Password Policy Enforcer.
 
-Follow the steps below to disable the Windows password policy.
+Complete the following steps to disable the Windows password policy.
 
 **Step 1 –** Open the appropriate policy management tool:
 
@@ -41,7 +41,7 @@ Follow the steps below to disable the Windows password policy.
 
 **Step 4 –** Enter **0** in the text box, then click **OK**.
 
-**Step 5 –** Repeat the step above for the Maximum Password Age and Minimum Password Length
+**Step 5 –** Repeat the preceding step for the Maximum Password Age and Minimum Password Length
 policies.
 
 **Step 6 –** Double-click the **Group Policy Management Editor**.

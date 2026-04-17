@@ -28,8 +28,7 @@ enabled by default. Password Policy Enforcer/Web is an ISAPI (Internet Server Ap
 Programming Interface) extension, so you must enable ISAPI extensions on the server that will host
 Password Policy Enforcer/Web.
 
-Follow the steps below to manage various circumstances that may arise during installation. Listed
-below are common situations that impact installation and the steps necessary to work around them:
+Complete the following steps to manage various circumstances that may arise during installation. The following are common situations that impact installation and the steps necessary to work around them:
 
 - [If IIS isn't installed on Windows 2012](#if-iisis-not-installed-on-windows-2012)
 - [If IIS is already installed on Windows 2012](#if-iisis-already-installed-on-windows-2012)
@@ -38,7 +37,7 @@ below are common situations that impact installation and the steps necessary to 
 
 #### If IIS isn't installed on Windows 2012 {#if-iisis-not-installed-on-windows-2012}
 
-Follow the steps below to prepare IIS is IIS isn't installed on Windows 2012.
+Complete the following steps to prepare IIS is IIS isn't installed on Windows 2012.
 
 **Step 1 –** Start the Server Manager (ServerManager.exe).
 
@@ -68,7 +67,7 @@ Follow the steps below to prepare IIS is IIS isn't installed on Windows 2012.
 
 #### If IIS is already installed on Windows 2012
 
-Follow the steps below to prepare IIS is IIS is already installed on Windows 2012
+Complete the following steps to prepare IIS is IIS is already installed on Windows 2012
 
 **Step 1 –** Start the Server Manager (ServerManager.exe).
 
@@ -96,7 +95,7 @@ Follow the steps below to prepare IIS is IIS is already installed on Windows 2
 
 #### If IIS isn't installed on Windows 2008 {#if-iisis-not-installed-on-windows-2008}
 
-Follow the steps below to prepare IIS if IIS isn't installed on Windows 2008.
+Complete the following steps to prepare IIS if IIS isn't installed on Windows 2008.
 
 **Step 1 –** Start the Server Manager console (ServerManager.msc).
 
@@ -120,7 +119,7 @@ Follow the steps below to prepare IIS if IIS isn't installed on Windows 2008.
 
 #### If IIS is already installed on Windows 2008
 
-Follow the steps below to prepare IIS is IIS is already installed on Windows 2008.
+Complete the following steps to prepare IIS is IIS is already installed on Windows 2008.
 
 **Step 1 –** Start the Server Manager console (ServerManager.msc).
 
@@ -143,7 +142,7 @@ Follow the steps below to prepare IIS is IIS is already installed on Windows 20
 The Setup Wizard copies the required files onto the server and configures IIS to run the Password
 Policy Enforcer/Web application.
 
-Follow the steps below to install PPE/Web.
+Complete the following steps to install PPE/Web.
 
 **Step 1 –** Start the Password Policy Enforcer/Web Setup Wizard (PPEWeb711.exe).
 
@@ -231,7 +230,7 @@ integration.
 
 #### Upgrading to V7.11Upgrading to V7.11
 
-Follow the steps below to upgrade PPE/Web to V7.11.
+Complete the following steps to upgrade PPE/Web to V7.11.
 
 **Step 1 –** Start the PPE/Web Setup Wizard and follow the prompts The Setup Wizard uninstalls the
 previous version. There is no need to manually uninstall previous versions.
@@ -250,7 +249,7 @@ upgrading.
 
 #### Removing PPE/Web V3.x
 
-Follow the steps below to manually remove PPE/Web V3.x.
+Complete the following steps to manually remove PPE/Web V3.x.
 
 **Step 1 –** Open the IIS Manager console.
 
@@ -271,7 +270,7 @@ the PPE/Web V3.x files are most likely located in the `\Inetpub\wwwroot\ppeweb\`
 
 #### Upgrading to V7.11
 
-Follow the steps below to upgrade to PPE/Web V7.x.
+Complete the following steps to upgrade to PPE/Web V7.x.
 
 **Step 1 –** Start the PPE/Web Setup Wizard and follow the prompts.
 

@@ -25,7 +25,7 @@ instead of an empty text box.
 
 **Add Domain**
 
-Follow the steps below to add a domain to the list.
+Complete the following steps to add a domain to the list.
 
 **Step 1 –** Click the **Add...** button.
 
@@ -42,7 +42,7 @@ them alphabetically.
 
 **Remove Domain**
 
-Follow the steps below to remove a domain from the list.
+Complete the following steps to remove a domain from the list.
 
 **Step 1 –** Select the domain name from the Domain List.
 
@@ -77,7 +77,7 @@ license. See [Netwrix Password Policy Enforcer](https://www.netwrix.com/password
 
 The About tab contains version and license key information.
 
-Follow the steps below to install a new license key.
+Complete the following steps to install a new license key.
 
 **Step 1 –** Copy the entire license e-mail to the clipboard.
 

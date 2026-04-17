@@ -43,7 +43,7 @@ called a field.
 
 `<!--USERNAME-->`
 
-Fields are replaced by some other information. For example, the field above is replaced with a
+Fields are replaced by some other information. For example, this field is replaced with a
 username.
 
 #### Resource Strings

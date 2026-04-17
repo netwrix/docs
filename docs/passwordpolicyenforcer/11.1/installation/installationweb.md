@@ -18,7 +18,7 @@ Click the following link to download Password Policy Enforcer Web:
 The Setup Wizard copies the required files onto the server and configures IIS to run the Password
 Policy Enforcer Web application.
 
-Follow the steps below to install PPE Web.
+Follow the steps to install PPE Web.
 
 **Step 1 –** Start the Password Policy Enforcer Web Setup Wizard (PPEWeb711.exe).
 

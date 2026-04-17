@@ -69,7 +69,7 @@ calculations. See the
 topic for additional information.
 
 When setting the compliance level, consider that some rules may be disabled when a user enters a
-passphrase. See the Passphrases section below for additional information. Password Policy Enforcer
+passphrase. See the Passphrases tab for additional information. Password Policy Enforcer
 accepts passphrases that comply with all enabled rules, irrespective of the compliance level. This
 ensures that passphrases can be used, even if they don't meet the compliance level when Password
 Policy Enforcer is configured to disable one or more rules for passphrases.
@@ -80,8 +80,8 @@ program when a password is changed** text box. The path can contain environment 
 `%SystemRoot%`. Every computer running Password Policy Enforcer should have a local copy of the
 program, and only authorized users should have access to it, or any of its components.
 
-The user logon name and new password are sent to the program as command-line parameters. For
-example, if you add the commands below to a batch file, Password Policy Enforcer records each user's logon name and new password in a text file called passwords.txt:
+Password Policy Enforcer sends the user logon name and new password to the program as command-line parameters. For
+example, if you add the following commands to a batch file, Password Policy Enforcer records each user's logon name and new password in a text file called passwords.txt:
 
 **echo Username: %1 >> c:\passwords.txt**
 

@@ -240,7 +240,7 @@ unless all logon names have the same length. Setting the tolerance to Auto allow
 Enforcer to calculate an appropriate tolerance during every password change.
 
 Password Policy Enforcer sets the tolerance to the length of the comparison parameter minus one. The
-table below shows some parameter values and the calculated tolerance. Password Policy Enforcer
+following table shows some parameter values and the calculated tolerance. Password Policy Enforcer
 rejects a password if it contains all the text in the Value column (or a derivative of it if
 character substitution detection or bi-directional analysis is enabled).
 

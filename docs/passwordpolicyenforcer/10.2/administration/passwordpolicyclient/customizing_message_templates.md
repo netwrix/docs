@@ -16,7 +16,7 @@ Password Policy Client messages.
 - Generic Rejection — Displays if Password Policy Enforcer doesn't have a specific reason for the
   rejection, generally because the password doesn't comply with the Windows password policy
 
-Follow the steps below to edit a policy's message templates.
+Complete the following steps to edit a policy's message templates.
 
 **Step 1 –** Click the **Policies** item to display the Policies view.
 
@@ -56,7 +56,7 @@ The Password Policy Client displays three messages to help users choose a passwo
 
 ### Password Policy Client Message Components
 
-Password Policy Client messages are built using templates, macros, and inserts. The image below
+Password Policy Client messages are built using templates, macros, and inserts. The following image
 shows a sample policy message with the template in blue, a macro in green, and policy inserts in
 white.
 
@@ -64,9 +64,9 @@ white.
 
 ### Live Password Message
 
-Password Policy Client messages can be configured to display live feedback to end users as they
+You can configure Password Policy Client messages to display live feedback to end users as they
 enter their passwords. With this feature, users can see whether their passwords meet the requirements of
-the policy set by the organization. The image below illustrates an example of a live policy message.
+the policy set by the organization. The following image illustrates an example of a live policy message.
 
 ![livepolicymessageexample](/images/passwordpolicyenforcer/10.2/administration/livepolicymessageexample.webp)
 

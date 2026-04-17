@@ -14,7 +14,7 @@ topic for additional information. If you choose any of the options that log PPE�
 [View Event Logs in Windows Event Viewer](#view-event-logs-in-windows-event-viewer) topic for
 additional information.
 
-Follow the steps below to open the PPS Properties page:
+Complete the following steps to open the PPS Properties page:
 
 ![configuring_ppe_6](/images/passwordpolicyenforcer/10.2/administration/configuring_ppe_6.webp)
 
@@ -122,7 +122,7 @@ recommended, as it may leave some passwords unchecked.
 
 ### Exempt Users from a Password Policy
 
-Follow the steps below to exempt some users from having to comply with the password policy when a
+Complete the following steps to exempt some users from having to comply with the password policy when a
 default policy is specified.
 
 **Step 1 –** Create a new policy for these users.
@@ -159,7 +159,7 @@ client requests. If you change the port number, then you must also:
 You can disable Password Policy Enforcer to stop checking new passwords for compliance with the
 password policy.
 
-Follow the steps below to disable Password Policy Enforcer.
+Complete the following steps to disable Password Policy Enforcer.
 
 **Step 1 –** Click the **Password Policy Server** item to display the Password Policy Server view.
 
@@ -176,7 +176,7 @@ Follow the steps below to disable Password Policy Enforcer.
 The Password Policy Server icon in the left pane of the management console displays a red X when
 Password Policy Enforcer isn't checking passwords.
 
-Follow the steps below to re-enable Password Policy Enforcer.
+Complete the following steps to re-enable Password Policy Enforcer.
 
 **Step 1 –** Click the **Password Policy Server** item to display the Password Policy Server view.
 
@@ -244,7 +244,7 @@ The license file has been imported.
 
 ## View Event Logs in Windows Event Viewer
 
-Follow the steps below to view events logs in Windows Event Viewer.
+Complete the following steps to view events logs in Windows Event Viewer.
 
 **Step 1 –** Open **Windows Event Viewer**.
 
@@ -263,4 +263,4 @@ To view Log Properties, navigate to the Actions menu and select **Properties**.
 
 ![Log Properties Window](/images/passwordpolicyenforcer/10.2/administration/vieweventlogslogproperties.webp)
 
-The Log Properties window displays. Settings for this log can be configured from this window.
+The Log Properties window displays. You can configure settings for this log from this window.

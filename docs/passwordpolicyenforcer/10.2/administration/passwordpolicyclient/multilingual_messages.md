@@ -9,12 +9,11 @@ sidebar_position: 50
 The Password Policy Client initially displays all messages in English, but you can configure it to
 display messages in 30 other languages.
 
-Follow the steps below to configure Password Policy Client for another language.
+Complete the following steps to configure Password Policy Client for another language.
 
-**Step 1 –** Configure message templates for the new language (see Customizing Message Templates
-above).
+**Step 1 –** Configure message templates for the new language (see [Customizing Message Templates](/docs/passwordpolicyenforcer/10.2/administration/passwordpolicyclient/customizing_message_templates.md)).
 
-**Step 2 –** Configure rule inserts for each enabled rule (see Customizing Rule Inserts above).
+**Step 2 –** Configure rule inserts for each enabled rule (see [Customizing Rule Inserts](/docs/passwordpolicyenforcer/10.2/administration/passwordpolicyclient/customizing_rule_inserts.md)).
 
 ![the_password_policy_client_6](/images/passwordpolicyenforcer/10.2/administration/the_password_policy_client_6.webp)
 

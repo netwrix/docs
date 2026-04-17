@@ -31,7 +31,7 @@ Settings**, **Account Policies**, and **Password Policy** items.
 
 **Step 6 –** Enter **0** in the text box, then click **OK**.
 
-**Step 7 –** Repeat the step above for the **Maximum password age**, **Minimum password age**, and
+**Step 7 –** Repeat this step for the **Maximum password age**, **Minimum password age**, and
 **Minimum password length** policies.
 
 **Step 8 –** Double-click **Password must meet complexity requirements** in the right pane.

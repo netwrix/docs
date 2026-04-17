@@ -65,7 +65,7 @@ program when password is changed** text box. The path can contain environment va
 program, and only authorized users should have access to it, or any of its components.
 
 The user logon name and new password are sent to the program as command-line parameters. For
-example, if you add the commands below to a batch file, Password Policy Enforcer records each user's
+example, if you add the following commands to a batch file, Password Policy Enforcer records each user's
 logon name and new password in a text file named **passwords.txt**:
 
 **echo Username: %1 >> c:\passwords.txt**

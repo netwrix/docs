@@ -106,7 +106,7 @@ Windows password history attributes.
 :::
 
 
-Follow the steps below to create a new Active Directory attribute for the password history.
+Follow the following steps to create a new Active Directory attribute for the password history.
 
 **Step 1 –** Log on to the server holding the Schema Operations Master role with an account that is
 a member of the Schema Admins group.

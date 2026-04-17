@@ -17,7 +17,7 @@ topic for additional information. You can use the Password Policy Enforcer and W
 together. A password is only accepted if it complies with the Windows and Password Policy Enforcer
 password policies.
 
-Follow the steps below to disable the Windows password policy rules:
+Complete the following steps to disable the Windows password policy rules:
 
 **Step 1 –** Start the Group Policy Management Console (gpmc.msc).
 
@@ -33,7 +33,7 @@ Settings**, **Account Policies**, and **Password Policy** items.
 
 **Step 6 –** Enter **0** in the text box, then click **OK**.
 
-**Step 7 –** Repeat the step above for the **Maximum password age**, **Minimum password age**, and
+**Step 7 –** Repeat the preceding step for the **Maximum password age**, **Minimum password age**, and
 **Minimum password length** policies.
 
 **Step 8 –** Double-click **Password must meet complexity requirements** in the right pane.

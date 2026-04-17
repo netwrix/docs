@@ -11,7 +11,7 @@ create your first Password Policy Enforcer password policy. Password Policy Enfo
 passwords in this state, so users only need to comply with the Windows password policy rules (if
 enabled).
 
-Follow the steps below to create a Password Policy Enforcer password policy.
+Complete the following steps to create a Password Policy Enforcer password policy.
 
 **Step 1 –** Click **Start** > **Password Policy Enforcer 10** > **PPE Configuration** to open the
 Password Policy Enforcer management console.

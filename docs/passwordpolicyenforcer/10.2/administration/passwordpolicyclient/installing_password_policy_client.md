@@ -25,7 +25,7 @@ Netwrix no longer provides technical support for these versions.
 
 You can install the Password Policy Client manually by running the Password Policy Enforcer
 installer (PPE10.2.exe) and choosing the Express Setup option if you only need to install it on a
-few computers. If you have many computers, then follow the instructions below to perform an
+few computers. If you have many computers, then follow the following instructions to perform an
 automated installation with Group Policy, or use your regular software distribution tool to do the
 same.
 
@@ -39,7 +39,7 @@ topic for additional information.
 
 If you didn't create a distribution point for Password Policy Enforcer, then create one now.
 
-Follow the steps below to create a Password Policy Client distribution point.
+Complete the following steps to create a Password Policy Client distribution point.
 
 **Step 1 –** Log on to a server as an administrator.
 
@@ -50,7 +50,7 @@ access to authorized personnel only.
 
 ### Copy PPECIt10.2.msi into the Distribution Point
 
-Follow the steps below to copy the .msi file into the distribution point.
+Complete the following steps to copy the .msi file into the distribution point.
 
 **Step 1 –** Start the Password Policy Enforcer installer (PPE10.2.exe).
 
@@ -71,7 +71,7 @@ the distribution point.
 
 ## Create a Group Policy Object
 
-Follow the steps below to create a group policy object.
+Complete the following steps to create a group policy object.
 
 **Step 1 –** Start the **Group Policy Management Console** (gpmc.msc).
 
@@ -86,7 +86,7 @@ this domain, and Link it here...**.
 
 ## Edit the Group Policy Object
 
-Follow the steps below to edit a group policy object.
+Complete the following steps to edit a group policy object.
 
 **Step 1 –** Right-click the **Password Policy Client GPO**, then click the **Edit...** edit.
 
@@ -143,7 +143,7 @@ If Windows Firewall is enabled on your domain controllers, then you must create 
 allow connections to the Password Policy Server. Windows Firewall is enabled by default on Windows
 Server 2008 and later.
 
-Follow the steps below to create the port exception on all domain controllers.
+Complete the following steps to create the port exception on all domain controllers.
 
 **Step 1 –** Use the **Group Policy Management Console** (gpmc.msc) to display the GPOs linked to
 the Domain Controllers OU.

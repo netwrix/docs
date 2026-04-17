@@ -19,7 +19,7 @@ Policy Enforcer.
 :::
 
 
-Follow the steps below to manually install Password Policy Enforcer.
+Complete the following steps to manually install Password Policy Enforcer.
 
 **Step 1 –** Start the Password Policy Enforcer installer from the PPE10.exe file.
 
@@ -35,13 +35,13 @@ conditions.
 **Step 6 –** Click **Yes** when asked to restart the computer.
 
 If you are evaluating Password Policy Enforcer on a domain with more than one domain controller,
-repeat the steps above on every domain controller in the domain.
+repeat the preceding steps on every domain controller in the domain.
 
 The Password Policy Client is an optional Password Policy Enforcer component that helps users to
 choose a compliant password. You don't have to install the Password Policy Client to enforce a
 Password Policy Enforcer password policy, but installing the Password Policy Client will make it
 easier for users to choose a password. If you are testing Password Policy Enforcer on a domain that
-contains client computers, then repeat the steps above on any Windows client computers if you would
+contains client computers, then repeat the preceding steps on any Windows client computers if you would
 like to evaluate the Password Policy Client. You don't need to select the **Password Policy
 Server** checkbox to install the Password Policy Client on a client computer.
 

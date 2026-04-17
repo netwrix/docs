@@ -117,7 +117,7 @@ Compromised rule to read the files from:
 
 See the [Compromised Rule](/docs/passwordpolicyenforcer/11.0/admin/manage-policies/rules/compromised_rule.md) topic for additional information.
 
-The path above only works if the computer has a Sysvol share. This won't be the case if you are
+This path only works if the computer has a Sysvol share. This won't be the case if you are
 using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
 local policies. If you are using Password Policy Enforcer for local policies and want all computers
 to receive hash file updates, then use the Sysvol share for file replication and a script or

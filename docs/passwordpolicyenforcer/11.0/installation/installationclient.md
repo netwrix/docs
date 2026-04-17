@@ -68,7 +68,7 @@ If Windows Firewall is enabled on your domain controllers, then you must create 
 allow connections to the Password Policy Server. Windows Firewall is enabled by default on Windows
 Server 2008 and later.
 
-Follow the steps below to create the port exception on all domain controllers.
+Follow the following steps to create the port exception on all domain controllers.
 
 **Step 1 –** Use the **Group Policy Management Console** (gpmc.msc) to display the GPOs linked to
 the Domain Controllers OU.

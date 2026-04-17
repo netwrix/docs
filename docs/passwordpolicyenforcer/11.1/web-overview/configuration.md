@@ -24,7 +24,7 @@ instead of an empty text box.
 
 **Add Domain**
 
-Follow the steps below to add a domain to the list.
+Follow the steps to add a domain to the list.
 
 **Step 1 –** Click the **Add...** button.
 
@@ -41,7 +41,7 @@ them alphabetically.
 
 **Remove Domain**
 
-Follow the steps below to remove a domain from the list.
+Follow the steps to remove a domain from the list.
 
 **Step 1 –** Select the domain name from the Domain List.
 

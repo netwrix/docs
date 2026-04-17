@@ -150,7 +150,7 @@ dictionary file. Copy the dictionary file into the Sysvol share on one domain co
 Distributed File System will copy the file into the Sysvol share of all other domain controllers.
 Configure the Dictionary rule to read the file from \\127.0.0.1\sysvol\your.domain\filename.txt
 
-The path above only works if the computer has a Sysvol share. This won't be the case if you are
+This path only works if the computer has a Sysvol share. This won't be the case if you are
 using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
 local polices. If you are using Password Policy Enforcer for local policies and want all computers
 to receive dictionary file updates, then use the Sysvol share for file replication and a script or

@@ -11,7 +11,7 @@ from the Password Policy Enforcer management console.
 
 ## Password Test
 
-Follow the steps below to test your configuration.
+Complete the following steps to test your configuration.
 
 **Step 1 –** Click the **Policies** item to display the Policies view.
 
@@ -63,7 +63,7 @@ a get a report of the accepted and rejected passwords.
 
 ![bulkpasswordtest](/images/passwordpolicyenforcer/10.2/administration/bulkpasswordtest.webp)
 
-Follow the steps below to test your configuration.
+Complete the following steps to test your configuration.
 
 **Step 1 –** Click the **Policies** item to display the Policies view.
 

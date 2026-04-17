@@ -41,7 +41,7 @@ This procedure disables the Windows password policy:
 
 **Step 4 –** Enter **0** in the text box, then click **OK**.
 
-**Step 5 –** Repeat the step above for the Maximum Password Age and Minimum Password Length
+**Step 5 –** Repeat this step for the Maximum Password Age and Minimum Password Length
 policies.
 
 **Step 6 –** Double-click the **Group Policy Management Editor**.

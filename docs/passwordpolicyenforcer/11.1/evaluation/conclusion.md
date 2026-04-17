@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Conclusion
 
-Congratulations! You have successfully installed, configured, and tested Netwrix Password Policy
+You have successfully installed, configured, and tested Netwrix Password Policy
 Enforcer. This guide is an introduction to Password Policy Enforcer's capabilities. You can enforce
 almost any password policy imaginable with Password Policy Enforcer, customize the Password Policy
 Client messages, and even synchronize passwords with other networks and applications. The

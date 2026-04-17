@@ -87,7 +87,7 @@ Password Policy Enforcer can enforce the password policy for both password chan
 resets. It does this by default, but you can configure it to only enforce the password policy for
 password changes. The Minimum Age rule is never enforced when a password is reset.
 
-Follow the steps below to test password policies from these consoles.
+Follow the following steps to test password policies from these consoles.
 
 **Step 1 –** Open the appropriate console:
 

@@ -14,7 +14,7 @@ to directly edit Password Policy Enforcer's configuration settings.
 Create a Configuration Report and e-mail it to Netwrix Support if Password Policy Enforcer isn't
 working as expected. The Configuration Report helps Netwrix Support diagnose the problem.
 
-Follow the steps below to create a Configuration Report.
+Complete the following steps to create a Configuration Report.
 
 **Step 1 –** Click the **Password Policy Server** item to display the Password Policy Server view.
 
@@ -38,7 +38,7 @@ Change the domain name in the command to match your domain. User, group, and OU 
 [Assigning Policies](/docs/passwordpolicyenforcer/10.2/administration/managingpolicies/assigning_policies.md)
 topic for additional information. You must also import your license into the new domain from the About tab on the PPS Properties page.
 
-Follow the steps below to edit the edit the PPE10.1.txt file .
+Complete the following steps to edit the edit the PPE10.1.txt file .
 
 **Step 1 –** Open the **PPE10.1.txt** file in a text editor.
 
@@ -75,7 +75,7 @@ Only configure the settings on the Property Editor tab if instructed to do so by
 :::
 
 
-Follow the steps below to open and configure the Property Editor.
+Complete the following steps to open and configure the Property Editor.
 
 **Step 1 –** Click the **Password Policy Server** item to display the Password Policy Server view.
 

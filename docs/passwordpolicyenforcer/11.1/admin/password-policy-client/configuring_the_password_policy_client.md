@@ -81,7 +81,7 @@ You can change the default display settings to control which user interface elem
 the point at which they are hidden. The display of the Password Policy message box is also
 configurable.
 
-Follow the steps below to change the default display settings for the Password Policy Client on
+Follow the steps to change the default display settings for the Password Policy Client on
 Windows 10 and 11.
 
 **Step 1 –** Use the **Group Policy Management Console** (gpmc.msc) to display the GPOs linked at

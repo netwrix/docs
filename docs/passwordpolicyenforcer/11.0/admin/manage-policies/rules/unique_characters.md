@@ -9,7 +9,7 @@ sidebar_position: 120
 The Unique Characters rule rejects passwords that don't contain a minimum number of unique
 characters. For example, the password "aaaaaaaa" only contains one unique character (a), whereas
 "mypassword" contains nine unique characters (mypasword). Increasing the number of unique characters
-in a password increases password strength by avoiding repetitive sequences that are easily guessed.
+in a password increases password strength by avoiding repetitive sequences that are easy to guess.
 The Unique Characters rule is case sensitive, so "LoOpHole" contains seven unique characters
 (LoOpHle).
 

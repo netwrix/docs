@@ -66,7 +66,7 @@ You can also use Group Policy to distribute Password Policy Enforcer's local con
 computers in a domain. This is only necessary for local password policies. Domain password policies
 automatically replicate to the domain controllers because they are stored in Active Directory.
 
-Follow the steps below to distribute Password Policy Enforcer's local configuration with Group
+Follow the steps to distribute Password Policy Enforcer's local configuration with Group
 Policy.
 
 **Step 1 –** Start the Group Policy Management Console (gpmc.msc).

@@ -20,7 +20,7 @@ The Password Policy Enforcer Mailer isn't installed by default. Only install it 
 each domain. The Password Policy Enforcer Mailer can be installed on any server, including a domain
 controller.
 
-Follow the steps below to install the Password Policy Enforcer Mailer:
+Complete the following steps to install the Password Policy Enforcer Mailer:
 
 **Step 1 –** Start the Password Policy Enforcer Installer (PPE10.2.exe).
 
@@ -32,7 +32,7 @@ conditions.
 **Step 4 –** Double-click the **PPE10.2.msi** file.
 
 **Step 5 –** If you are prompted to Modify, Repair, or Remove the installation, select **Modify**,
-then click **Next**. Proceed to step 11. Don't disable the other features as described below.
+then click **Next**. Proceed to step 11. Don't disable the other features as described in the following steps.
 
 :::warning
 If prompted to Modify, Repair, or Remove, don't modify any settings or disable any

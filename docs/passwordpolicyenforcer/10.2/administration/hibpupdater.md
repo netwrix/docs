@@ -6,10 +6,10 @@ sidebar_position: 140
 
 # HIBP Updater
 
-Password Policy Enforcer can be configured to use the Have I Been Pwnd (HIBP) database. A copy of
+You can configure Password Policy Enforcer to use the Have I Been Pwned (HIBP) database. A copy of
 this database is hosted on the Netwrix website. The HIBP database contains a list of the hashes of
-known compromised passwords. During password change operations, the application can be configured to
-reject passwords with a hash that matches a hash in the HIBP database.can be configuredThe Password
+known compromised passwords. During password change operations, you can configure the application to
+reject passwords with a hash that matches a hash in the HIBP database. The Password
 Policy Enforcer Settings window displays current HIBP database information and configuration
 options.
 
@@ -119,7 +119,7 @@ See the
 [Compromised Rule](/docs/passwordpolicyenforcer/10.2/administration/rules/compromised_rule.md)
 topic for additional information.
 
-The path above only works if the computer has a Sysvol share. This won't be the case if you are
+The preceding path only works if the computer has a Sysvol share. This won't be the case if you are
 using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
 local policies. If you are using Password Policy Enforcer for local policies and want all computers
 to receive hash file updates, then use the Sysvol share for file replication and a script or
@@ -155,7 +155,7 @@ Scheduler technology to execute the process.
 
 **Step 6 –** After you have set up your schedule, click **OK** to save the schedule.
 
-The HIBP database is updated according to the schedule.
+The HIBP Updater updates the database according to the schedule.
 
 ### Schedule List
 

@@ -43,11 +43,11 @@ provided field.
 
 ### Differentiate Password Policies
 
-The example below instructs how to change the minimum password length for the Admins policy from
+The following example instructs how to change the minimum password length for the Admins policy from
 seven to nine characters. To differentiate the policies, change the minimum password length for the
 Admins policy from seven to nine characters.
 
-Follow the steps below to differentiate password policies.
+Complete the following steps to differentiate password policies.
 
 **Step 1 –** Click the **Admins** policy in the left pane of the management console.
 

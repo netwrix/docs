@@ -8,9 +8,9 @@ sidebar_position: 30
 
 Rule inserts allow the Password Policy and Rejection Reason messages to display the most appropriate
 information for each user. Most Password Policy Enforcer rules have a Policy and Reason insert. The
-Policy insert is used by the [POLICY] macro, and the Reason insert is used by the [REASON] macro.
+The [POLICY] macro uses the Policy insert, and the [REASON] macro uses the Reason insert.
 
-Follow the steps below to edit a rule's inserts.
+Complete the following steps to edit a rule's inserts.
 
 **Step 1 –** Click the **Policies** item to display the Policies view.
 
@@ -58,7 +58,7 @@ The Password Policy Client displays three messages to help users choose a passwo
 
 ### Password Policy Client Message Components
 
-Password Policy Client messages are built using templates, macros, and inserts. The image below
+Password Policy Client messages are built using templates, macros, and inserts. The following image
 shows a sample policy message with the template in blue, a macro in green, and policy inserts in
 white.
 

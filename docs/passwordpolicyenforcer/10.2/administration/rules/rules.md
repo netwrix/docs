@@ -14,7 +14,7 @@ rules for a policy:
 
 **Step 2 –** Double-click the policy you want in the right pane of the management console.
 
-Rules are shown in the right pane of the management console. A check mark beside a rule indicates
+The management console shows rules in the right pane. A check mark beside a rule indicates
 that the rule is enabled (being enforced). Double-click a rule to show the rule's properties.
 
 ## Detecting Character Substitution
@@ -213,7 +213,7 @@ unless all logon names have the same length. Setting the tolerance to Auto allow
 Enforcer to calculate an appropriate tolerance during every password change.
 
 Password Policy Enforcer sets the tolerance to the length of the comparison parameter minus one. The
-table below shows some parameter values and the calculated tolerance. Password Policy Enforcer
+following table shows some parameter values and the calculated tolerance. Password Policy Enforcer
 rejects a password if it contains all the text in the Value column (or a derivative of it if
 character substitution detection or bi-directional analysis is enabled).
 

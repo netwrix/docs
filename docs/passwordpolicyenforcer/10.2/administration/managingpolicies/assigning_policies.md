@@ -96,7 +96,7 @@ enforce Policy B for all users in the Users\Students and Users\Students\Science 
 the policy assigned to the nearest parent container.
 
 If a policy assignment conflict still exists, then Password Policy Enforcer checks the priority of
-each remaining policy, and enforces the policy with the highest priority. See the diagram above for
+each remaining policy, and enforces the policy with the highest priority. See the Policy Assignment Conflicts diagram for
 a diagrammatic representation of this algorithm.
 
 Use the Log tab in the Test Policies page to quickly determine which policy Password Policy Enforcer

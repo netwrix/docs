@@ -77,8 +77,8 @@ your desired policy.
 
 Character rules can be combined to enforce complex password requirements. For example, you may need
 to enforce a policy such as "passwords must contain a numeric character, but not in the first two
-positions" to ensure compatibility with some other system. This is done by using two of the
-Character rules. The first rule (shown on the left below) ensures that passwords contain at least
+positions" to ensure compatibility with some other system. Use two of the
+Character rules to accomplish this. The first rule (shown on the left in the following table) ensures that passwords contain at least
 one numeric character. The second rule ensures that passwords don't contain any numeric characters
 in the first two positions.
 

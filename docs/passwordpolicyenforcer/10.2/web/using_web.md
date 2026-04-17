@@ -39,7 +39,7 @@ Enforcer/Web without the reminder message.
 
 ## Changing a Password
 
-Follow the steps below to change a password with Password Policy Enforcer/Web.
+Complete the following steps to change a password with Password Policy Enforcer/Web.
 
 **Step 1 –** Click **Change Password** on the Welcome page.
 

@@ -48,9 +48,9 @@ The History rule isn't enforced when testing passwords from the Test Policies pa
 :::
 
 
-Password Policy Enforcer updates a user's password history whenever their password changes. The
-password history is updated even if Password Policy Enforcer or the assigned policy is disabled. A
-user's password history is deleted if the user doesn't have an assigned policy, or if the History
+Password Policy Enforcer updates a user's password history whenever their password changes. It
+updates the password history even if Password Policy Enforcer or the assigned policy is disabled. A
+Password Policy Enforcer deletes a user's password history if the user doesn't have an assigned policy, or if the History
 rule is disabled at the time of the password change.
 
 Password Policy Enforcer's password history is stored in Active Directory for domain user accounts,
@@ -104,7 +104,7 @@ Windows password history attributes.
 :::
 
 
-Follow the steps below to create a new Active Directory attribute for the password history.
+Complete the following steps to create a new Active Directory attribute for the password history.
 
 **Step 1 –** Log on to the server holding the Schema Operations Master role with an account that is
 a member of the Schema Admins group.

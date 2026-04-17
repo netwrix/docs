@@ -9,7 +9,7 @@ sidebar_position: 10
 You must configure the email delivery options in the PPS Properties page before the Password Policy
 Enforcer Mailer can send email notifications to users.
 
-Follow the steps below to configure the email delivery options.
+Complete the following steps to configure the email delivery options.
 
 **Step 1 –** Click the **Password Policy Server** item to display the Password Policy Server view.
 

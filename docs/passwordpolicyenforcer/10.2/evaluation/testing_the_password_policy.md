@@ -13,7 +13,7 @@ Users and Computers / Local Users and Groups consoles.
 ## Management Console
 
 This is often the best way to test password policies because it shows you the most information.
-Follow the steps below to test password policies from the Password Policy Enforcer management
+Complete the following steps to test password policies from the Password Policy Enforcer management
 console.
 
 **Step 1 –** Click the Policies item in the left pane of the management console, then click Test
@@ -55,7 +55,7 @@ topic for details.
 This is how most users change their password. Testing password policies from the Windows Change
 Password screen is useful because it shows you exactly what your users see.
 
-Follow the steps below to test password policies from the Windows Change Password screen.
+Complete the following steps to test password policies from the Windows Change Password screen.
 
 **Step 1 –** Press **CTRL + ALT + DEL**.
 
@@ -92,7 +92,7 @@ Password Policy Enforcer can enforce the password policy for both password chan
 resets. It does this by default, but you can configure it to only enforce the password policy for
 password changes. The Minimum Age rule is never enforced when a password is reset.
 
-Follow the steps below to test password policies from these consoles.
+Complete the following steps to test password policies from these consoles.
 
 **Step 1 –** Open the appropriate console:
 
@@ -113,7 +113,7 @@ installed to see this information.
 :::
 
 
-The table below contains some sample passwords and expected test results when the Users policy is
+The following table contains some sample passwords and expected test results when the Users policy is
 enforced. Try to change the password for the PPETestUser account to confirm that Password Policy
 Enforcer is enforcing the password policy correctly.
 
