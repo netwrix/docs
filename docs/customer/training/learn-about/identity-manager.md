@@ -10,7 +10,7 @@ import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlannin
 import { NIM } from '@site/src/training/products';
 
 
-Estimated length: 4 hours 22 minutes
+Estimated length: 2 hours 40 minutes
 
 This learning path introduces you to <NIM />, formerly Netwrix Usercube. It contains the following courses:
 
