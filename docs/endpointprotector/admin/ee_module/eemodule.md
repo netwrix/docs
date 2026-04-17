@@ -36,6 +36,12 @@ Enforced Encryption works on read-only mode if the device was formatted on Windo
 Encryption conﬁgured on Windows or some ﬁles were encrypted on Windows. On macOS, these ﬁles can be
 decrypted, except for NTFS due to incompatibility with Enforced Encryption.
 
+## Enforced Encryption Endpoint Application
+
+The Enforced Encryption application is available for two platforms: Windows and macOS. Both operating systems have the same interface, and data encrypted on one operating system can be read by the other.
+
+![Enforced Encryption interface](eeinterface.webp)
+
 
 ## Enforced Encryption 140-3 FIPS Validated Engine
 
@@ -53,22 +59,31 @@ Enforced Encryption is supported for both Mac and Windows computers.
 
 ![Enforced Encryption is supported for both Mac and Windows computers](deployment.webp)
 
-Deployment can be done automatically if **Allow Access if Trusted Device™ Level 1+** is selected
+**Deployment can be done automatically** if **Allow Access if Trusted Device™ Level 1+** is selected
 for the USB Storage Devices. This can be done by going to Device Control, Global Rights section, or
 using the quick links provided, as per the image above.
 
-Manual deployment is also available. Download links for both Windows and Mac are available in this
+There is also the possibility to deploy the Enforced Encryption Client directly on a USB stick through the EPP Client Notifier.
+
+![Enforced Encryption deployment by EPP Client Notifier](deployment2.webp)
+
+![Enforced Encryption deployment by EPP Client Notifier](deployment3.webp)
+
+When clicked, an OS popup should appear indicating that the process has started.
+![Enforced Encryption deployment popup](deployment4.webp)
+
+**Manual deployment** is also available. Download links for both Windows and Mac are available in this
 section. The downloaded Enforced Encryption ﬁle must be copied onto the USB storage device and
 executed from the root of the device. Due to extended security features for manual deployment,
 Enforced Encryption will have to be redownloaded from the Endpoint Protector interface each time it
 will be used to encrypt a new USB storage device.
 
-:::note
-Starting with Endpoint Protector 5.2.0.0, manual deployment can also be made by the user
-if the device is set on Allow Access, by pressing the small USB icon- Encrypt Device with Enforced
-Encryption.
-:::
 
+After successful deployment, the user is asked to configure the Encryption password, as shown below.
+![Enforced Encryption first run config](eeconfig.webp)
+
+If everything is configured correctly, the Enforced Encryption login screen should appear.
+![Enforced Encryption splash screen login](eelogin.webp)
 
 Both Enforced Encryption deployments are straightforward and require the user only to conﬁgure a
 password.
@@ -77,7 +92,6 @@ password.
 On Macs, USB storage devices with multiple partitions are not supported by Enforced
 Encryption and Trusted Device™ Level 1.
 :::
-
 
 ## Enforced Encryption Settings
 
