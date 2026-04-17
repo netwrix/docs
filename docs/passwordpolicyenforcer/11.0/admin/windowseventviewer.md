@@ -6,8 +6,6 @@ sidebar_position: 100
 
 # View Event Logs in Windows Event Viewer
 
-Follow these steps to view event logs in Windows Event Viewer.
-
 **Step 1 –** Open **Windows Event Viewer**.
 
 ![View Event Logs](/images/passwordpolicyenforcer/11.0/administration/vieweventlogs.webp)

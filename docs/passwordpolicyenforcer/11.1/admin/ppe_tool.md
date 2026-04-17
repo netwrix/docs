@@ -16,7 +16,7 @@ designed to perform the following functions:
 - Generate user-friendly reports that contain configuration values and descriptions.
 - Create HTML reports with configuration values and descriptions of the PPE server instance.
 
-This topic covers how to install the PPE Tool, customize and run reports, and review configuration options in the PPE Tool.
+This topic covers how to install the PPE Tool, how to customize and run reports, and how to review configuration options in the PPE Tool.
 
 ## Using the PPE Tool
 
