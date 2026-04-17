@@ -24,7 +24,7 @@ Global Settings.
 
 ## Device Types (Standard)
 
-Endpoint Protector supports a wide range of device types, which represent key sources of security breaches. These devices can be authorized, which allows users to view, create, or modify their content and allows administrators to view the data transferred to and from the authorized devices.
+Endpoint Protector supports a wide range of device types, which represent key sources of security breaches. These devices can be authorized. With authorization, users can view, create, or modify their content, and administrators can view the data transferred to and from the authorized devices.
 
 Current list of all Device Categories:
 - USB Storage Device
