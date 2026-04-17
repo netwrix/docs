@@ -10,8 +10,8 @@ The core components for Netwrix Access Analyzer (formerly Enterprise Auditor) ar
 Analyzer Console server, SQL Server, and Access Information Center. See the
 [Requirements](/docs/accessanalyzer/12.0/requirements/overview.md) topic for the core requirements.
 
-In addition to these, integration with either the Netwrix Activity Monitor is required for event
-activity data to be scanned. See the
+In addition to these, Access Analyzer requires integration with Netwrix Activity Monitor to scan
+event activity data. See the
 [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor)
 for installation requirements and information on collecting activity data.
 
@@ -23,7 +23,8 @@ See the following topics for target environment requirements:
 - [Target Oracle Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/oracle/oracle.md)
 - [Target PostgreSQL Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/postgresql.md)
 - [Target Redshift Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/redshift.md)
-- [Target SQL Server Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/sql/sql.md)
+- [Target Microsoft SQL Server Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/sql/sql.md)
+- [Target Azure SQL Requirements, Permissions, and Ports](/docs/accessanalyzer/12.0/requirements/databases/azuresql/overview.md)
 
 ## Databases Solution Requirements on the Access Analyzer Console
 
@@ -39,10 +40,9 @@ These are dependent upon the size of the target environment:
 | Disk Space  | 460 GB               | 280 GB                   | 160 GB                | 80 GB                |
 
 :::note
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the
-minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per host.For
-example, if the job is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are
-required (8x2=16).
+If running Sensitive Data Discovery (SDD) scans, you must increase the minimum amount of RAM. Each
+thread requires a minimum of 2 additional GB of RAM per host. For example, a job configured to scan
+8 hosts at a time requires an extra 16 GB of RAM (8x2=16).
 :::
 
 
@@ -65,8 +65,8 @@ For scanning SQL databases, the following are additional requirements for the Co
 **Sensitive Data Discovery Auditing Requirement**
 
 :::note
-The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and does not require any configuration; it has been
+Access Analyzer installs the appropriate JDK (Java) version for Sensitive Data Discovery on the
+server. The JDK deployed is prepackaged and doesn't require any configuration; it has been
 preconfigured to work with Access Analyzer and should never be customized through Java. It will not
 conflict with other JDKs or Java Runtimes in the same environment.
 :::

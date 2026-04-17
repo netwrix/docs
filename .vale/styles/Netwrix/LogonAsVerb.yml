@@ -1,0 +1,23 @@
+extends: existence
+message: "Use 'log on' (two words) as a verb. 'Logon' is a noun or adjective only. Found: '%s'"
+level: warning
+ignorecase: true
+tokens:
+  # Infinitive: preceded by a verb or modal — unambiguous verb context
+  - '\b(need|needs|needed|have|has|had|want|wants|wanted|try|tries|tried|attempt|attempts|attempted|able)\s+to\s+logon\b'
+  - '\b(will|can|could|must|should|would|shall|may|might)\s+logon\b'
+  # Relative pronoun subject: "who logon"
+  - '\bwho\s+logon\b'
+  # Personal pronoun subjects
+  - '\b(they|you|we|he|she|it)\s+logon\b'
+  # Adverb before logon — unambiguous verb context
+  - '\b(normally|infrequently|typically|usually|always|never|now|still|also|just)\s+logon\b'
+  # "cannot logon", "can't logon"
+  - '\b(cannot|can.t)\s+logon\b'
+  # "unable to logon"
+  - '\bunable\s+to\s+logon\b'
+  # "connect/logon" compound verb construction
+  - '\bconnect/logon\b'
+  # Subject + logon + preposition (verb use with clear postfix signal)
+  # "users logon with", "users logon onto", "users logon using"
+  - '\busers?\s+logon\s+(with|onto|using)\b'

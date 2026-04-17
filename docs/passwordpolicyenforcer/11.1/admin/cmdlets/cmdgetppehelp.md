@@ -23,7 +23,7 @@ Name of the cmdlet for help. Can also use **-C** or **-c**.
 
 This cmdlet supports the common parameters: **Verbose**, **Debug**, **ErrorAction**,
 **ErrorVariable**, **WarningAction**, **WarningVariable**, **OutBuffer**, **PipelineVariable**, and
-**OutVariable**. For more information, see [about_CommonParameters](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.5).
+**OutVariable**. See [about_CommonParameters](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.5).
 
 **EXAMPLE**
 
@@ -53,7 +53,7 @@ https://www.netwrix.com/password_policy_enforcer.html
 
 To see the examples, type: "get-help Get-PPEHelp -examples".
 
-For more information, type: "get-help Get-PPEHelp -detailed".
+For detailed information, type: "get-help Get-PPEHelp -detailed".
 
 For technical information, type: "get-help Get-PPEHelp -full".
 
