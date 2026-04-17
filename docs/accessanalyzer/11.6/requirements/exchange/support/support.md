@@ -40,7 +40,7 @@ The following tables provide a breakdown of support by job group:
 | 1. HUB Metrics        | No              | Yes           | Yes           | Yes           | Yes           | No         |
 | 2. CAS Metrics        | No              | Yes           | Yes           | Yes           | Yes           | No         |
 | 3. Database           | No              | Limited\*     | Limited\*     | Yes           | Yes           | Yes        |
-| 4. Mailboxes          | Yes             | Yes           | Yes           | Yes           | Yes           | No         |
+| 4. Mailboxes          | Yes\*\*\*             | Yes           | Yes           | Yes           | Yes           | No         |
 | 5. Public Folders     | No              | No            | No            | Yes           | Yes           | Yes        |
 | 6. Distribution Lists | Yes             | Yes           | Yes           | Yes           | Yes           | No         |
 | 7. Sensitive Data     | Yes             | Yes           | Yes           | Yes           | Limited\*     | Mix\*\*    |
@@ -49,6 +49,8 @@ The following tables provide a breakdown of support by job group:
 \* Limited indicates that some of the data collectors can target the environment, but not all.
 
 \*\* Mix indicates some data collectors are MAPI-based, but not all.
+
+\*\*\* The "Logons" group is not compatible with Exchange Online targets. For the Exchange Online version of this group, use 8. Exchange Online\Mailboxes.
 
 ## Exchange Solution to Permissions Alignment
 
