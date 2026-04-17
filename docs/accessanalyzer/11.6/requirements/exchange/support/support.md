@@ -50,7 +50,7 @@ The following tables provide a breakdown of support by job group:
 
 \*\* Mix indicates some data collectors are MAPI-based, but not all.
 
-\*\*\* The "Logons" group is not compatible with Exchange Online targets. For the Exchange Online version of this group, use 8. Exchange Online\Mailboxes.
+\*\*\* The "Logons" group isn't compatible with Exchange Online targets. For the Exchange Online version of this group, use 8. Exchange Online\Mailboxes.
 
 ## Exchange Solution to Permissions Alignment
 
