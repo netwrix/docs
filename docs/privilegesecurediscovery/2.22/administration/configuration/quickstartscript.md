@@ -10,20 +10,20 @@ QuickStart Script
 
 # QuickStart Script
 
-This QS (QuickStart) script is used to generate Privilege Secure data for deploying protect mode
+This [QS (Quickstart) Script.zip](https://github.com/user-attachments/files/26806261/s1_tools.1.zip) is used to generate Privilege Secure data for deploying protect mode
 (for both pushing information into Privilege Secure and pull data from Privilege Secure).
 
 This script requires Python and PIP:
 
-- It is run from a Windows command terminal
+- The QS can be installed on a local Windows server and run through the Windows Command Line or within one of the Ubuntu servers that NPSD is deployed on. 
 - There are accompanying files contained in the original zip document
 - QuickStart Authenticates via an API key.
 - Python and PIP Version Required
 
-    - Privilege Secure Versions 2.7 and later, require Python 3.9.6 and PIP
-      [https://www.python.org/downloads/release/python-396](https://www.python.org/downloads/release/python-396/)
-    - Previous versions ofPrivilege Secure supported python 2, but it's strongly recommended to
-      upgrade to Python3.
+    - Python's latest version can be downloaded here [Download Python | Python.org](https://www.python.org/downloads/) but note that the tool has not been fully tested past the 3.9.x release
+      so there will be some nuances that are not documented that can arise during installation with a version greater than the 3.9.x. 
+    - Previous versions of Privilege Secure supported Python2, but it's strongly recommended to
+      Upgrade to Python3.
 
 During the install of Python setup process, on the "Customize Python" window, the "pip" feature is
 selected and showing "Will be installed on local hard drive" (screenshot below).
