@@ -21,7 +21,7 @@ This script requires Python and PIP:
 - Python and PIP Version Required
 
     - Python's latest version can be downloaded here [Download Python | Python.org](https://www.python.org/downloads/) but note that the tool has not been fully tested past the 3.9.x release
-      so there will be some nuances that are not documented that can arise during installation with a version greater than the 3.9.x. 
+      so there will be some nuances that aren't documented that can arise during installation with a version greater than the 3.9.x. 
     - Previous versions of Privilege Secure supported Python2, but it's strongly recommended to
       Upgrade to Python3.
 
@@ -54,7 +54,7 @@ Notes:
 At this point you will need to generate an API Key within the UI. When you run the QuickStart script
 for the first time it will ask you input the API Key. We recommend storing this securely given the
 level of access it grants. **_Note: You will not be able to see the key again after closing the
-dialogue box. If you did not save it, revoke the key in the UI and create a new one._**
+dialogue box. If you didn't save it, revoke the key in the UI and create a new one._**
 
 Next edit the reports\*.py and update the config block values to suite the environment and user.
 
