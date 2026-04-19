@@ -33,7 +33,7 @@ Returns all the agents according to the provided query.
 #### Post
 ##### Summary:
 
-Creates a agent.
+Creates an agent.
 
 ##### Parameters:
 
@@ -52,7 +52,7 @@ Creates a agent.
 #### Get
 ##### Summary:
 
-Returns a agent corresponding to the provided identifier and its information according to the provided query.
+Returns an agent corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -76,7 +76,7 @@ Returns a agent corresponding to the provided identifier and its information acc
 #### Put
 ##### Summary:
 
-Updates a agent.
+Updates an agent.
 
 ##### Parameters:
 
@@ -94,7 +94,7 @@ Updates a agent.
 #### Delete
 ##### Summary:
 
-Deletes a agent.
+Deletes an agent.
 
 ##### Parameters:
 

@@ -1,0 +1,34 @@
+@startuml component
+package "AccessControlRule" {
+	class AccessControlRule {
+		DisplayName_L1 : String
+		Identifier : String
+		--
+		EntityType : EntityType
+		Entries : AccessControlEntry[]
+		Filters : AccessControlFilter[]
+		Profile : Profile
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "AccessControlEntry" {
+	class AccessControlEntry {
+	}
+}
+package "AccessControlFilter" {
+	class AccessControlFilter {
+	}
+}
+package "Profile" {
+	class Profile {
+	}
+}
+AccessControlRule "0..*" --  "1"EntityType
+AccessControlRule "1" --  "0..*"AccessControlEntry
+AccessControlRule "1" --  "0..*"AccessControlFilter
+AccessControlRule "0..*" --  "1"Profile
+hide empty members
+@enduml

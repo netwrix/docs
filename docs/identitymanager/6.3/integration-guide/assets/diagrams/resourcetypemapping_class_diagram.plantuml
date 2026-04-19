@@ -1,0 +1,38 @@
+@startuml component
+package "ResourceTypeMapping" {
+	class ResourceTypeMapping {
+		C0 : String
+		C1 : String
+		C10 : String
+		C2 : String
+		C3 : String
+		C4 : String
+		C5 : String
+		C6 : String
+		C7 : String
+		C8 : String
+		C9 : String
+		Type : Int32
+		--
+		Connection : Connection
+		PasswordResetSetting : PasswordResetSettings
+		ResourcePropertyMappings : ResourcePropertyMapping[]
+	}
+}
+package "Connection" {
+	class Connection {
+	}
+}
+package "PasswordResetSettings" {
+	class PasswordResetSettings {
+	}
+}
+package "ResourcePropertyMapping" {
+	class ResourcePropertyMapping {
+	}
+}
+ResourceTypeMapping "0..*" --  "1"Connection
+ResourceTypeMapping "0..*" --  "0..1"PasswordResetSettings
+ResourceTypeMapping "1" --  "0..*"ResourcePropertyMapping
+hide empty members
+@enduml

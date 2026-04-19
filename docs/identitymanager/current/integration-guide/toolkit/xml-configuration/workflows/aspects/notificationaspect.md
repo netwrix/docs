@@ -1,10 +1,16 @@
-﻿---
+---
 title: "NotificationAspect"
 description: "Sends a notification email to one or several users."
 sidebar_position: 7
 ---
 
 Sends a notification email to one or several users.
+
+## Authorized code in templates
+
+Razor templates referenced by `RazorFile_L*` are compiled with the same security restrictions as [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#white-list). Only methods, classes, and namespaces from the white list can be used in template code.
+
+See [Razor template white list](/docs/identitymanager/current/integration-guide/toolkit/expressions#razor-template-white-list) for the template-specific additions.
 
 
 ## Examples
@@ -42,7 +48,7 @@ A pointcut is a mechanism telling Identity Manager when to execute the linked [a
 
 The position of the pointcut is specified by an activity state and a mode (before or after).
 
-![pointcut Schema](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/aspects/addchangeaspect/pointcut.webp)
+![pointcut Schema](/images/identitymanager/pointcut.webp)
 
 
 |Property|Details|

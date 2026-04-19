@@ -1,0 +1,27 @@
+@startuml component
+package "InputType" {
+	class InputType {
+		Identifier : String
+		--
+		InputTypeDisplayEntityProperties : DisplayEntityProperty[]
+		InputTypeFormControls : FormControl[]
+		InputTypeSearchBarCriteria : SearchBarCriterion[]
+	}
+}
+package "DisplayEntityProperty" {
+	class DisplayEntityProperty {
+	}
+}
+package "FormControl" {
+	class FormControl {
+	}
+}
+package "SearchBarCriterion" {
+	class SearchBarCriterion {
+	}
+}
+InputType "1" --  "0..*"DisplayEntityProperty
+InputType "1" --  "0..*"FormControl
+InputType "1" --  "0..*"SearchBarCriterion
+hide empty members
+@enduml
