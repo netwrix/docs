@@ -1,0 +1,15 @@
+@startuml component
+package "AccessControlEntityType" {
+	class AccessControlEntityType {
+		Identifier : String
+		--
+		Properties : AccessControlEntityProperty[]
+	}
+}
+package "AccessControlEntityProperty" {
+	class AccessControlEntityProperty {
+	}
+}
+AccessControlEntityType "1" --  "0..*"AccessControlEntityProperty
+hide empty members
+@enduml

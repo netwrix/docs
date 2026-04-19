@@ -1,0 +1,24 @@
+@startuml component
+package "ActivityTemplate" {
+	class ActivityTemplate {
+		DisplayName_L1 : String
+		Identifier : String
+		--
+		ActivityTemplateActivityTemplateStates : ActivityTemplateState[]
+		FirstState : ActivityTemplateState
+		TemplateActivities : Activity[]
+	}
+}
+package "ActivityTemplateState" {
+	class ActivityTemplateState {
+	}
+}
+package "Activity" {
+	class Activity {
+	}
+}
+ActivityTemplate "1" --  "0..*"ActivityTemplateState
+ActivityTemplate "0..*" --  "0..1"ActivityTemplateState
+ActivityTemplate "1" --  "0..*"Activity
+hide empty members
+@enduml

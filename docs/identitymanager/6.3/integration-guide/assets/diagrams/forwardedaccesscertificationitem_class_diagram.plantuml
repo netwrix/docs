@@ -1,0 +1,18 @@
+@startuml component
+package "ForwardedAccessCertificationItem" {
+	class ForwardedAccessCertificationItem {
+		Comment : String
+		Date : DateTime
+		From : Int64
+		To : Int64
+		--
+		Item : AccessCertificationItem
+	}
+}
+package "AccessCertificationItem" {
+	class AccessCertificationItem {
+	}
+}
+ForwardedAccessCertificationItem "0..*" --  "1"AccessCertificationItem
+hide empty members
+@enduml

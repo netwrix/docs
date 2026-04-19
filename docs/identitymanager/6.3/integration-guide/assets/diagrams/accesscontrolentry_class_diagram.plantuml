@@ -1,0 +1,32 @@
+@startuml component
+package "AccessControlEntry" {
+	class AccessControlEntry {
+		CanExecute : Boolean
+		FullAccessProperties : Boolean
+		IsPostCondition : Boolean
+		IsPreCondition : Boolean
+		Notify : Boolean
+		Priority : Int32
+		--
+		Permission : AccessControlPermission
+		PropertyGroup : AccessControlPropertyGroup
+		Rule : AccessControlRule
+	}
+}
+package "AccessControlPermission" {
+	class AccessControlPermission {
+	}
+}
+package "AccessControlPropertyGroup" {
+	class AccessControlPropertyGroup {
+	}
+}
+package "AccessControlRule" {
+	class AccessControlRule {
+	}
+}
+AccessControlEntry "0..*" --  "1"AccessControlPermission
+AccessControlEntry "0..*" --  "0..1"AccessControlPropertyGroup
+AccessControlEntry "0..*" --  "1"AccessControlRule
+hide empty members
+@enduml

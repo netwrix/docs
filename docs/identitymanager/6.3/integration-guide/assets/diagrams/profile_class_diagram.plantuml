@@ -1,0 +1,41 @@
+@startuml component
+package "Profile" {
+	class Profile {
+		DisplayName_L1 : String
+		Identifier : String
+		IsComponent : Boolean
+		--
+		AssignedProfiles : AssignedProfile[]
+		ProfileOpenIdClients : OpenIdClient[]
+		ProfileProfileRules : ProfileRule[]
+		ProfileScaffoldings : Scaffolding[]
+		Rules : AccessControlRule[]
+	}
+}
+package "AssignedProfile" {
+	class AssignedProfile {
+	}
+}
+package "OpenIdClient" {
+	class OpenIdClient {
+	}
+}
+package "ProfileRule" {
+	class ProfileRule {
+	}
+}
+package "Scaffolding" {
+	class Scaffolding {
+	}
+}
+package "AccessControlRule" {
+	class AccessControlRule {
+	}
+}
+Profile "1" --  "0..*"AssignedProfile
+Profile "1" --  "0..*"OpenIdClient
+Profile "1" --  "0..*"ProfileRule
+Profile "0..1" --  "0..*"Scaffolding
+Profile "1" --  "0..*"AccessControlRule
+hide empty members
+@enduml
