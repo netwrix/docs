@@ -98,7 +98,7 @@ dedicated Access Policy and Connection Profile in Netwrix Privilege Secure.
 
 **NOTE:** Key concepts used in the integration:
 
-- **Resource-based** — Netwrix Privilege Secure creates a temporary account at the start of the session and removes it when the session ends. This policy type requires you to onboard the target system in Netwrix Privilege Secure as a resource (a server, domain, database, or website). You do not need a pre-existing account on the resource. Netwrix recommends using the Netwrix Auditor host as the resource.
+- **Resource-based** — Netwrix Privilege Secure creates a temporary account at the start of the session and removes it when the session ends. This policy type requires you to onboard the target system in Netwrix Privilege Secure as a resource (a server, domain, database, or website). You don't need a pre-existing account on the resource. Netwrix recommends using the Netwrix Auditor host as the resource.
 - **Credential-based** — Uses an account that already exists on the target resource. You must create the account, grant it the required permissions, and then define it in Netwrix Privilege Secure as a Credential before you can add it to the policy.
 - **Connection Profile** — A Connection Profile defines the session settings for the policy: maximum session duration, session extension options, proxy configuration, session recording, and approval workflow. If data collection requires sessions longer than the default duration, configure the Connection Profile to support up to 72 hours. Configure Connection Profiles in Netwrix Privilege Secure under **Policy** > **Access Policy** > **Connection Profiles**.
 
