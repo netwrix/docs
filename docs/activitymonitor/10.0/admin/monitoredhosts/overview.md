@@ -13,6 +13,8 @@ Agent:
 
 - Windows
 - Azure Files
+- Cohesity SmartFiles
+- CTERA
 - Dell Celerra or VNX
 - Dell Isilon/PowerScale
 - Dell PowerStore
@@ -22,7 +24,7 @@ Agent:
   [Linux Agent Deployment](/docs/activitymonitor/10.0/admin/agents/linux.md) topic for additional information.
 - Nasuni
 - NetApp
-- Nutanix
+- Nutanix Files
 - Panzura
 - Qumulo
 - Microsoft Entra ID (formerly Azure AD)
@@ -147,9 +149,3 @@ desired one. If they differ and the immutable mode is enabled, the product displ
 status section that a server restart is required. After the reboot, the changes take effect and the
 immutable mode is enabled.
 
-### Qumulo Monitoring Status
-
-The **No connections from Qumulo clusters** error may be displayed in the status section. This error
-indicates that the Qumulo nodes have not yet connected to the agent. This can happen either because
-an incorrect address or port is specified in the Audit page of the Qumulo Web Interface, or because
-the port (4496 by default) is blocked by a firewall.

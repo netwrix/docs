@@ -11,12 +11,13 @@ through the host’s Properties window.
 
 ![Activity Monitor with Edit button identified ](/images/activitymonitor/9.0/admin/monitoredhosts/properties/hostpropertiesoverview.webp)
 
-On the Monitored Hosts tab, select the host and click Edit, or right-click on a host and select
+On the Monitored Hosts & Services tab, select the host and click Edit, or right-click on a host and select
 **Edit Host** from the right-click menu, to open the host’s Properties window. The tabs vary based
 on the type of host selected:
 
 - [Auditing Tab](/docs/activitymonitor/10.0/admin/monitoredhosts/properties/auditing.md) — Dell Isilon/PowerScale devices only
 - [Connection Tab](/docs/activitymonitor/10.0/admin/monitoredhosts/properties/connection.md) — Microsoft Entra ID, Exchange Online, and SharePoint Online only
+- [Cohesity Tab](/docs/activitymonitor/10.0/admin/monitoredhosts/properties/cohesity.md) — Cohesity SmartFiles devices only
 - [Dell Tab](/docs/activitymonitor/10.0/admin/monitoredhosts/properties/dell.md) — Dell devices only
 - [FPolicy Tab](/docs/activitymonitor/10.0/admin/monitoredhosts/properties/fpolicy.md) — NetApp devices only
 - [Hitachi NAS Tab](/docs/activitymonitor/10.0/admin/monitoredhosts/properties/hitachinas.md) — Hitachi NAS devices only

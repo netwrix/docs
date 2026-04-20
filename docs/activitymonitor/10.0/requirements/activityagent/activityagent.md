@@ -94,6 +94,13 @@ environment requirements.
 
 
 
+**Cohesity SmartFiles**
+
+- Cohesity SmartFiles 6.8+
+
+See the [Cohesity SmartFiles Activity Auditing Configuration](/docs/activitymonitor/10.0/requirements/activityagent/nas-device-configuration/cohesity-activity.md) topic for target
+environment requirements.
+
 **CTERA Edge Filter**
 
 - CTERA Portal 7.5.x+

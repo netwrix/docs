@@ -33,6 +33,7 @@ In this mode, the agent is installed on a Windows Server and configured to monit
 |------------|-----------------------|
 |**File Systems**||
 |Azure Files||
+|Cohesity SmartFiles||
 |CTERA||
 |Dell VNX/Celerra|Dell Common Event Enabler|
 |Dell Isilon/PowerScale|Dell Common Event Enabler|

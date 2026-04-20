@@ -21,6 +21,16 @@ article.
 
 There might be a need for additional ports for the target environment.
 
+## Cohesity SmartFiles Additional Firewall Rules
+
+The following firewall settings are required for communication between the Activity Monitor Activity
+Agent server and the target Cohesity SmartFiles cluster:
+
+| Communication Direction                    | Protocol | Ports | Description              |
+| ------------------------------------------ | -------- | ----- | ------------------------ |
+| Activity Agent Server to Cohesity          | TCP      | 445   | SMB — audit log access   |
+| Activity Agent Server to Cohesity          | HTTPS    | 443   | Cohesity API             |
+
 ## CTERA Additional Firewall Rules
 
 The following firewall settings are required for communication between the Activity Monitor Agent
