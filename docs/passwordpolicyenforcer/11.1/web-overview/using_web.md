@@ -24,7 +24,7 @@ You can also include the username and/or domain in the URL:
 
 :::info
 Install the SSL Certificate the web server and use the HTTPS protocol if Password
-Policy Enforcer Web will be used on an unencrypted network. See the
+Policy Enforcer Web is used on an unencrypted network. See the
 [Install an SSL Certificate](/docs/passwordpolicyenforcer/11.1/web-overview/securing_web.md) topic for additional
 information.
 :::

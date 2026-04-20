@@ -36,18 +36,18 @@ Password Policy Enforcer Web is a separate product enabling users to change thei
 password from a web browser. See the [Password Policy Enforcer Web](/docs/passwordpolicyenforcer/11.0/web-overview/web_overview.md) topic for
 additional information.
 
-Create the **Compromised Passwords Base** prior to enabling the Compromised Password Check. See the
+Create the **Compromised Passwords Base** before enabling the Compromised Password Check. See the
 [HIBP Updater](/docs/passwordpolicyenforcer/11.0/installation/hibpupdater.md) topic for additional information.
 
 ## Exclude PPE Files from AntiVirus Checks
 
 **Domain Controller**
 
-**PPE.DLL** if this file does not load, the password policy is not enforced.
+**PPE.DLL** if this file doesn't load, the password policy isn't enforced.
 
 **Clients**
 
-**PPEClt.dll** and **APRClt.dll** if either of these files are blocked, the client does not run.
+**PPEClt.dll** and **APRClt.dll** if either of these files are blocked, the client doesn't run.
 
 ## Next Steps
 

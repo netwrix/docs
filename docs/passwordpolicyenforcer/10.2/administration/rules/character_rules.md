@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # Character Rules
 
-Password Policy Enforcer has seven Character rules that reject passwords if they contain, or do not
+Password Policy Enforcer has seven Character rules that reject passwords if they contain, or don't
 contain certain characters. These rules can increase password strength or ensure password
 compatibility with other systems.
 
@@ -20,9 +20,9 @@ Password Policy Enforcer will select the Password Policy Enforcer character on t
 page.
 
 :::note
-Only Password Policy Enforcer 10.2 and higher will contain the Windows character set.
-Password Policy Enforcer 9, Netwrix Password Reset3 and Password Policy Enforcer/Web 7 (and older
-for all products) will always use the Password Policy Enforcer character set.
+Only Password Policy Enforcer 10.2 and later contain the Windows character set.
+Password Policy Enforcer 9, Netwrix Password Reset 3, and Password Policy Enforcer/Web 7 (and older
+for all products) always use the Password Policy Enforcer character set.
 :::
 
 
@@ -39,32 +39,30 @@ This default character set contains the following:
 | Custom      | No default characters                                                    |
 
 
-Select the **Enabled** check box to enable the Character rule.
+Select the **Enabled** checkbox to enable the Character rule.
 
 Select the **contain** option if this rule should ensure that new passwords contain certain
 characters. Only one character is required by default, but you can specify a different value by
-choosing the required number of characters from the drop-down list beside the **contain** option.
+choosing the required number of characters from the dropdown list beside the **contain** option.
 
-Select the **not contain any...** option if this rule should ensure that new passwords do not
+Select the **not contain any...** option if this rule should ensure that new passwords don't
 contain certain characters.
 
-If you want to restrict this rule to certain character positions, then choose the starting position
-from the **in position** drop-down list, and the ending position from the **to** drop-down list. For
+To restrict this rule to certain character positions, choose the starting position from the **in position** dropdown list, and the ending position from the **to** dropdown list. For
 example, you may want to enforce a rule that requires a numeric character in the second character
 position to maintain compatibility with some other system.
 
-Select the **Embedded** check box if users are required to embed these characters within their
-passwords. For example, the passwords "12hello", "1hello", and "hello$987" do not contain any
+Select the **Embedded** checkbox if users are required to embed these characters within their
+passwords. For example, the passwords "12hello", "1hello", and "hello$987" don't contain any
 embedded numeric characters, but these passwords do contain embedded numeric characters (shown in
 bold type): "he**7**llo", "4he**3**llo", "23hello**7**$45". Embedded numeric and special characters
 can help to protect passwords from cracking attacks.
 
-Type a character set name in the **Name** text box. The Password Policy Client displays the new
+Enter a character set name in the **Name** text box. The Password Policy Client displays the new
 name, but the Password Policy Enforcer management console continues to display the original
 character set name.
 
-Type some characters in the **Characters** text box if you would like to define a custom character
-set to replace the default. For example, enter "AaEeIiOoUu" to create a vowel character set.
+Enter some characters in the **Characters** text box to define a custom character set to replace the default. For example, enter "AaEeIiOoUu" to create a vowel character set.
 
 Click the **Messages** tab to customize the Password Policy Client rule inserts.
 
@@ -79,9 +77,9 @@ your desired policy.
 
 Character rules can be combined to enforce complex password requirements. For example, you may need
 to enforce a policy such as "passwords must contain a numeric character, but not in the first two
-positions" to ensure compatibility with some other system. This is done by using two of the
-Character rules. The first rule (shown on the left below) ensures that passwords contain at least
-one numeric character. The second rule ensures that passwords do not contain any numeric characters
+positions" to ensure compatibility with some other system. Use two of the
+Character rules to accomplish this. The first rule (shown on the left in the following table) ensures that passwords contain at least
+one numeric character. The second rule ensures that passwords don't contain any numeric characters
 in the first two positions.
 
 |                                                                                                                           |                                                                                                                           |
@@ -89,6 +87,6 @@ in the first two positions.
 | ![ppe_rules_13](/images/passwordpolicyenforcer/10.2/administration/ppe_rules_13.webp) | ![ppe_rules_14](/images/passwordpolicyenforcer/10.2/administration/ppe_rules_14.webp) |
 
 Password Policy Enforcer has only one Numeric rule, so the second requirement must be enforced by
-one of the other rules. Any unused Character rule can be used for this purpose by changing its name
-and default character set. In this Example, the Custom rule was chosen as it was not being used. The
+one of the other rules. Use any unused Character rule for this purpose by changing its name
+and default character set. In this Example, the Custom rule was chosen as it wasn't being used. The
 character set name was changed to "numeric", and the character set was defined as "1234567890".

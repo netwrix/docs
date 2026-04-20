@@ -28,7 +28,7 @@ Name of the policy file. Can also use **-F** or **-f**.
 
 This cmdlet supports the common parameters: **Verbose**, **Debug**, **ErrorAction**,
 **ErrorVariable**, **WarningAction**, **WarningVariable**, **OutBuffer**, **PipelineVariable**, and
-**OutVariable**. For more information, see [about_CommonParameters](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.5).
+**OutVariable**. See [about_CommonParameters](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.5).
 
 **EXAMPLE**
 

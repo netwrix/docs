@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # 1-AzureSQL_PermissionScan Job
 
-The 1–AzureSQL_PermissionScan Job is designed to collect Azure SQL instance and database level
-permissions from all the targeted instances.
+The 1–AzureSQL_PermissionScan Job collects Azure SQL instance and database level permissions from
+all targeted instances.
 
 ## Queries for the 1–AzureSQL_PermissionsScan Job
 
@@ -20,18 +20,18 @@ The 1–AzureSQL_PermissionsScan Job uses the SQL Data Collector for the followi
 ### Configure the PermissionsScan Query
 
 The 1-AzureSQL_PermissionScan Job is preconfigured to run using the default settings within the
-Permissions Collection category. Follow the steps to customize configurations.
+Permissions Collection category. To customize configurations, complete the following steps.
 
 **Step 1 –** Navigate to the **Databases** > 0.Collection > AzureSQL > 1-AzureSQL_PermissionsScan >
 Configure node and select **Queries**.
 
-**Step 2 –** In the Query Selection view, select the PermissionsScan query and click on Query
+**Step 2 –** In the Query Selection view, select the PermissionsScan query and click Query
 Properties. The Query Properties window appears.
 
 **Step 3 –** Select the Data Source tab and click Configure. The SQL Data Collector Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for this
+Don't make changes to other wizard pages as they have been pre-configured for this
 job.
 :::
 
@@ -71,7 +71,7 @@ Navigate to the Databases > 0.Collection > **AzureSQL** > 1-AzureSQL_Permissions
 node and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -80,7 +80,7 @@ preconfigured for this job.
 
 The default analysis tasks are:
 
-- AIC Import – Hosts — Imports SQL Hosts to the AIC
+- AIC Import – Hosts — Imports SQL Hosts to the Access Information Center (AIC)
 - AIC Import – Instance Permissions Node — Imports a node for instance permission for each instance
 - AIC Import – Databases — Imports each database in the SQL instances
 - AIC Import – Permissions — Imports SQL Permission to the AIC

@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # 4-AzureSQL_ServerSettings Job
 
-The 4–AzureSQL_ServerSettings Job is designed to collect Azure SQL instance and database
-configuration settings so they can be evaluated against recommended best practices.
+The 4–AzureSQL_ServerSettings Job collects Azure SQL instance and database configuration settings
+for evaluation against recommended best practices.
 
 ## Queries for the 4–AzureSQL_ServerSettings Job
 
@@ -29,7 +29,7 @@ Navigate to the **Databases** > **0.Collection** > **Azure SQL** >
 task.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

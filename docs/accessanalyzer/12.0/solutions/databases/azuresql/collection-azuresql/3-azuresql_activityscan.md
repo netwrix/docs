@@ -23,7 +23,7 @@ Navigate to the **Databases** > **0.Collection** > **Azure SQL** >
 **3–AzureSQL_ActivityScan** > **Configure** node and select **Analysis** to view the analysis task.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -32,4 +32,4 @@ preconfigured for this job.
 
 The default analysis task is:
 
-- AIC Import – Activity — Imports Azure SQL Activity to the AIC
+- AIC Import – Activity — Imports Azure SQL Activity to the Access Information Center (AIC)

@@ -1,0 +1,6 @@
+extends: existence
+message: "Avoid the Latin abbreviation '%s'. Rewrite the clause using plain English — for example, 'meaning', 'in other words', or rephrase to integrate the explanation naturally."
+level: warning
+ignorecase: false
+tokens:
+  - '\bi\.e\.'
