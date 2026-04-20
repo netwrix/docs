@@ -33,7 +33,7 @@ Returns all the accessControlEntrys according to the provided query.
 #### Post
 ##### Summary:
 
-Creates a accessControlEntry.
+Creates an accessControlEntry.
 
 ##### Parameters:
 
@@ -52,7 +52,7 @@ Creates a accessControlEntry.
 #### Get
 ##### Summary:
 
-Returns a accessControlEntry corresponding to the provided identifier and its information according to the provided query.
+Returns an accessControlEntry corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -76,7 +76,7 @@ Returns a accessControlEntry corresponding to the provided identifier and its in
 #### Put
 ##### Summary:
 
-Updates a accessControlEntry.
+Updates an accessControlEntry.
 
 ##### Parameters:
 
@@ -94,7 +94,7 @@ Updates a accessControlEntry.
 #### Delete
 ##### Summary:
 
-Deletes a accessControlEntry.
+Deletes an accessControlEntry.
 
 ##### Parameters:
 
@@ -139,7 +139,7 @@ Returns all the accessControlFilters according to the provided query.
 #### Post
 ##### Summary:
 
-Creates a accessControlFilter.
+Creates an accessControlFilter.
 
 ##### Parameters:
 
@@ -158,7 +158,7 @@ Creates a accessControlFilter.
 #### Get
 ##### Summary:
 
-Returns a accessControlFilter corresponding to the provided identifier and its information according to the provided query.
+Returns an accessControlFilter corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -182,7 +182,7 @@ Returns a accessControlFilter corresponding to the provided identifier and its i
 #### Put
 ##### Summary:
 
-Updates a accessControlFilter.
+Updates an accessControlFilter.
 
 ##### Parameters:
 
@@ -200,7 +200,7 @@ Updates a accessControlFilter.
 #### Delete
 ##### Summary:
 
-Deletes a accessControlFilter.
+Deletes an accessControlFilter.
 
 ##### Parameters:
 
@@ -247,7 +247,7 @@ Returns all the accessControlPermissions according to the provided query.
 #### Get
 ##### Summary:
 
-Returns a accessControlPermission corresponding to the provided identifier and its information according to the provided query.
+Returns an accessControlPermission corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -298,7 +298,7 @@ Returns all the accessControlRules according to the provided query.
 #### Post
 ##### Summary:
 
-Creates a accessControlRule.
+Creates an accessControlRule.
 
 ##### Parameters:
 
@@ -317,7 +317,7 @@ Creates a accessControlRule.
 #### Get
 ##### Summary:
 
-Returns a accessControlRule corresponding to the provided identifier and its information according to the provided query.
+Returns an accessControlRule corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -341,7 +341,7 @@ Returns a accessControlRule corresponding to the provided identifier and its inf
 #### Put
 ##### Summary:
 
-Updates a accessControlRule.
+Updates an accessControlRule.
 
 ##### Parameters:
 
@@ -359,7 +359,7 @@ Updates a accessControlRule.
 #### Delete
 ##### Summary:
 
-Deletes a accessControlRule.
+Deletes an accessControlRule.
 
 ##### Parameters:
 

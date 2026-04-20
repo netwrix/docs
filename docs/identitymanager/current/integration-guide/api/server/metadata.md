@@ -298,7 +298,7 @@ Returns all the entity associations according to the provided query.
 #### Post
 ##### Summary:
 
-Creates a entity association.
+Creates an entity association.
 
 ##### Parameters:
 
@@ -317,7 +317,7 @@ Creates a entity association.
 #### Get
 ##### Summary:
 
-Returns a entity association corresponding to the provided identifier and its information according to the provided query.
+Returns an entity association corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -341,7 +341,7 @@ Returns a entity association corresponding to the provided identifier and its in
 #### Put
 ##### Summary:
 
-Updates a entity association.
+Updates an entity association.
 
 ##### Parameters:
 
@@ -359,7 +359,7 @@ Updates a entity association.
 #### Delete
 ##### Summary:
 
-Deletes a entity association.
+Deletes an entity association.
 
 ##### Parameters:
 
@@ -404,7 +404,7 @@ Returns all the entity properties according to the provided query.
 #### Post
 ##### Summary:
 
-Creates a entity property.
+Creates an entity property.
 
 ##### Parameters:
 
@@ -423,7 +423,7 @@ Creates a entity property.
 #### Get
 ##### Summary:
 
-Returns a entity property corresponding to the provided identifier and its information according to the provided query.
+Returns an entity property corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -447,7 +447,7 @@ Returns a entity property corresponding to the provided identifier and its infor
 #### Put
 ##### Summary:
 
-Updates a entity property.
+Updates an entity property.
 
 ##### Parameters:
 
@@ -465,7 +465,7 @@ Updates a entity property.
 #### Delete
 ##### Summary:
 
-Deletes a entity property.
+Deletes an entity property.
 
 ##### Parameters:
 
@@ -511,7 +511,7 @@ Returns all the entity types according to the provided query.
 #### Post
 ##### Summary:
 
-Creates a entity type.
+Creates an entity type.
 
 ##### Parameters:
 
@@ -530,7 +530,7 @@ Creates a entity type.
 #### Get
 ##### Summary:
 
-Returns a entity type corresponding to the provided identifier and its information according to the provided query.
+Returns an entity type corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -554,7 +554,7 @@ Returns a entity type corresponding to the provided identifier and its informati
 #### Put
 ##### Summary:
 
-Updates a entity type.
+Updates an entity type.
 
 ##### Parameters:
 
@@ -572,7 +572,7 @@ Updates a entity type.
 #### Delete
 ##### Summary:
 
-Deletes a entity type.
+Deletes an entity type.
 
 ##### Parameters:
 

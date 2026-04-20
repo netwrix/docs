@@ -19,12 +19,12 @@ An entity type mapping shares the same identifier as its related entity type.
 | C0 optional | **Type:** String **Description:** In a Microsoft Entra ID connector (formerly Azure Active Directory), generic column used to map the entities to be exported. By default, Identity Manager exports: `user`; `group`; `directoryRole`; `servicePrincipal`. |
 | ConnectionTable optional | **Type:** String **Description:** Name of the CSV file which contains, or will contain, the exported data from the corresponding entity type. |
 | Connector optional | **Type:** Int64 **Description:** Identifier of the related connector. |
-| MaximumDeletedLines <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Deleted lines threshold. Sets the maximum number of resources that can be removed from the entity type when running the synchronization job. |
-| MaximumInsertedLines <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Inserted lines threshold. Sets the maximum number of resources that can be added into the entity type when running the synchronization job. |
-| MaximumUpdatedLines <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Updated lines threshold. Sets the maximum number of resources that can be modified within the entity type when running the synchronization job. |
 | MaxPercentageDeletedLines <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Deleted lines threshold in percent. |
 | MaxPercentageInsertedLines <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Inserted lines threshold in percent. |
 | MaxPercentageUpdatedLines <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Updated lines threshold in percent. |
+| MaximumDeletedLines <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Deleted lines threshold. Sets the maximum number of resources that can be removed from the entity type when running the synchronization job. |
+| MaximumInsertedLines <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Inserted lines threshold. Sets the maximum number of resources that can be added into the entity type when running the synchronization job. |
+| MaximumUpdatedLines <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Updated lines threshold. Sets the maximum number of resources that can be modified within the entity type when running the synchronization job. |
 
 ## Child Element: Property
 Contains all the [entity properties](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype#child-element-property) of an [entity type](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype) that can be synchronized into Identity Manager physical model. Each mapping share the same id as its corresponding property in the entity type.
