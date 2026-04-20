@@ -7,7 +7,7 @@ sidebar_position: 1
 # Netwrix Password Policy Enforcer v11.1
 
 Netwrix Password Policy Enforcer helps secure your network by ensuring users set strong passwords.
-When a user enters a password that does not comply with the password policy, Password Policy
+When a user enters a password that doesn't comply with the password policy, Password Policy
 Enforcer immediately rejects the password and details why the password was rejected.
 
 # Requirements
@@ -19,10 +19,10 @@ domain controllers, and changes to the accounts are replicated amongst the domai
 
 Local user accounts exist in the SAM database of workstations and servers. The workstations and
 servers may be standalone, or domain members. Information about these accounts is only kept on the
-host computer, and does not replicate to any other computers.
+host computer, and doesn't replicate to any other computers.
 
 A typical Windows network has both domain and local user accounts, but you may not want to enforce
-Password Policy Enforcer password policies for both account types. If your users normally logon with
+Password Policy Enforcer password policies for both account types. If your users normally log on with
 a domain account, then you will most likely only use Password Policy Enforcer to enforce password
 policies for the domain accounts.
 

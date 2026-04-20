@@ -24,46 +24,58 @@ Global Settings.
 
 ## Device Types (Standard)
 
-Endpoint Protector supports a wide range of device types, which represent key sources of security
-breaches. These devices can be authorized, which allows users to view, create, or
-modify their content and allows administrators to view the data transferred to and from the authorized
-devices.
+Endpoint Protector supports a wide range of device types, which represent key sources of security breaches. These devices can be authorized. With authorization, users can view, create, or modify their content, and administrators can view the data transferred to and from the authorized devices.
 
-![Standard supported Devices](standarddevices.webp)
-
-- Removable Storage Devices
-- Normal USB Flash Drives, U3, and Autorun Drives, Disk on Key, etc.
-- USB 1.1, USB 2.0, USB 3.0
-- Memory Cards - SD Cards, MMC Cards, Compact Flash Cards, etc.
-- Card Readers - internal and external
-- CD/DVD-Player/Burner - internal and external
-- Digital Cameras
-- Smartphones / Handhelds / PDAs (includes Nokia N-Series, Blackberry, and Windows CE compatible
-  devices, Windows Mobile devices, etc.)
-- iPods / iPhones / iPads
-- MP3 Player / Media Player Devices
-- External HDDs / portable hard disks
-- FireWire Devices
-- PCMCIA Devices
-- Biometric Devices
-- Bluetooth
-- Printers (applies to serial, USB, and LTP connection methods)
-- Express Card (SSD)
-- Wireless USB
-- LPT/Parallel ports \*applies only to storage devices
-- Floppy disk drives
-- Serial ATA Controllers
+Current list of all Device Categories:
+- USB Storage Device
+- Internal CD or DVD RW
+- External CD or DVD RW
+- Internal Card Reader
+- Internal Floppy Drive
+- Local Printers
 - Network Printers
-- Audio cards
+- Windows Portable Device (Media Transfer Protocol)
+- Digital Camera
+- BlackBerry
+- Mobile Phones (Sony Ericsson, etc.)
+- SmartPhone (USB Sync)
+- SmartPhone (Windows CE)
+- SmartPhone (Symbian)
+- Webcam
+- iPhone
+- iPad
+- iPod
+- VM USB Device
+- Serial ATA Controller
+- WiFi
+- Bluetooth
+  - Bluetooth Radio
+  - Bluetooth Tablet
+  - Bluetooth Other
+  - Bluetooth Keyboard
+  - Bluetooth Mouse
+  - Bluetooth Smartphone
+  - Bluetooth Headphones
+- FireWire Bus
+- Serial Port
+- PCMCIA Device
+- Card Reader Device (MTD)
+- Card Reader Device (SCSI)
+- ZIP Drive
+- Teensy Board
+- Thunderbolt
+- Network Share
+- Infrared Dongle
+- Parallel Port (LPT)
+- Thin Client Storage (RDP Storage)
+- Additional Keyboard
+- USB Modem
+- Android Smartphone (Media Transfer Protocol)
+- Chip Card Device
+- Biometric Devices
+- Audio Device (Output)
 
-:::note
-Audio Device Control for sound cards is supported only on Windows and applies only to the audio output channel. Audio input channels, whether analog or digital, aren't covered.
-::: 
-
-Depending on the device type, besides the Allow and Deny Access rights, additional rights are also
-available. These include Read-Only Access or multiple combinations of Allow Access but with various
-limitations, such as Allow access but exclude from CAP scanning or Allow Access if Trusted Device
-Level 1 to 4.
+![Device Type configuration](globalrights.webp)
 
 The Trusted Device™ technology integrated within Endpoint Protector is available in four security
 levels, depending on the degree of protection offered by a device (trusted devices using Enforced
@@ -78,23 +90,31 @@ connection, while a wired network connection is present. The WiFi connection wil
 the wired network isn't present.
 :::
 
+:::note
+Audio Device Control for sound cards is supported only on Windows and applies only to the audio output channel. Audio input channels, whether analog or digital, aren't covered.
+::: 
 
 :::note
-On macOS version 14 (Sonoma) and higher, Bluetooth devices are managed only when the
-device is connected and visible under ‘My Devices’ in the Bluetooth section of ‘System settings’.
+Occasionally, the EPP system may display a limitation where certain webcams can activate in Zoom meetings, even when you set rights to DENY in computer settings. To enforce proper rights after configuration, you must restart the PC.
 :::
 
+### Bluetooth Low Energy Devices on macOS
+
+The standard Bluetooth protocol on macOS works accurately and with full granularity and feature parity to other operating systems.
+
+However, macOS handles Bluetooth Low Energy (BLE) devices differently. Due to the shortened handshake frame in the BLE protocol, macOS may misidentify the device category in rare edge cases, which can cause the EPP Client to behave unexpectedly. This behavior is a macOS limitation and is outside of Netwrix Endpoint Protector's control. To mitigate this, Netwrix Endpoint Protector provides predefined tailored BLE device categories.
+
 :::note
-Occasionally, the EPP system may display a limitation where certain webcams can be activated in Zoom meetings, even when rights are set to DENY in computer settings. To enforce proper rights after configuration, a restart of the PC is mandatory in such cases.
+On macOS version 14 (Sonoma) and higher, Bluetooth devices are managed only when the device is connected and visible under ‘My Devices’ in the Bluetooth section of ‘System settings’.
 :::
 
 ![Bluetooth Device Management on Mac](macbluetooth.webp)
 
-By default, Endpoint Protector blocks the majority of device types. However, because you need a working internet connection or
-wireless keyboards during the conﬁguration process, Endpoint Protector sets several devices to Allow
-Access. These include Wi-Fi, Bluetooth, Network Share, Additional Keyboard, and USB Modem.
+:::note
+Occasionally, the EPP system may display a limitation where certain webcams can activate in Zoom meetings, even when you set rights to DENY in computer settings. To enforce proper rights after configuration, you must restart the PC.
+:::
 
-![Device Type configuration](devicetypes.webp)
+By default, Endpoint Protector blocks the majority of device types. However, because you need a working internet connection or wireless keyboards during the conﬁguration process, Endpoint Protector sets several devices to Allow Access. These include Wi-Fi, Bluetooth, Network Share, Additional Keyboard, and USB Modem.
 
 ### VM USB Device Usage
 

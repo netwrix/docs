@@ -296,7 +296,6 @@ for FILE in "${FILES_ARRAY[@]}"; do
         Netwrix.LatinAbbreviations)
           NEW_CONTENT=$(echo "$LINE_CONTENT" \
             | sed -E 's/\be\.g\./for example/g' \
-            | sed -E 's/\bi\.e\./that is/g' \
             | sed -E 's/\betc\./and so on/g')
           ;;
         Netwrix.Please)

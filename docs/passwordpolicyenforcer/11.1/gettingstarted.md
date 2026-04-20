@@ -43,7 +43,7 @@ Create the **Compromised Passwords Base** before enabling the Compromised Passwo
 
 **Domain Controller**
 
-**PPE.DLL** if this file doesn't load, PPE cannot enforce the password policy.
+**PPE.DLL** if this file doesn't load, PPE can't enforce the password policy.
 
 **Clients**
 

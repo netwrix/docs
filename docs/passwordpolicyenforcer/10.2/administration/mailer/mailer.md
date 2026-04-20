@@ -7,7 +7,7 @@ sidebar_position: 120
 # Mailer
 
 Netwrix Password Policy Enforcer can send email reminders to domain users before their passwords
-expire. This is especially useful for users who logon infrequently, and for remote users who access
+expire. This is especially useful for users who log on infrequently, and for remote users who access
 the network without logging on to the domain. You must install the Password Policy Enforcer Mailer
 and configure the email delivery and email message options to send email reminders to users.
 
@@ -16,11 +16,11 @@ to change the service account password before it expires.
 
 ## Installing the Mailer
 
-The Password Policy Enforcer Mailer is not installed by default. Only install it on one server in
+The Password Policy Enforcer Mailer isn't installed by default. Only install it on one server in
 each domain. The Password Policy Enforcer Mailer can be installed on any server, including a domain
 controller.
 
-Follow the steps below to install the Password Policy Enforcer Mailer:
+Complete the following steps to install the Password Policy Enforcer Mailer:
 
 **Step 1 –** Start the Password Policy Enforcer Installer (PPE10.2.exe).
 
@@ -32,10 +32,10 @@ conditions.
 **Step 4 –** Double-click the **PPE10.2.msi** file.
 
 **Step 5 –** If you are prompted to Modify, Repair, or Remove the installation, select **Modify**,
-then click **Next**. Proceed to step 11. Do not disable the other features as described below.
+then click **Next**. Proceed to step 11. Don't disable the other features as described in the following steps.
 
 :::warning
-If prompted to Modify, Repair, or Remove, do not modify any settings or disable any
+If prompted to Modify, Repair, or Remove, don't modify any settings or disable any
 features as described in steps 6 - 10.
 :::
 

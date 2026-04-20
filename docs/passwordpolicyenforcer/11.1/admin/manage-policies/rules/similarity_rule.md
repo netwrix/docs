@@ -12,7 +12,7 @@ similarity may indicate that a user is serializing their passwords. For example,
 
 ![Similarity Rule](/images/passwordpolicyenforcer/11.1/administration/similarity.webp)
 
-Select the **Similarity** check box to enable the Similarity rule.
+Select the **Similarity** checkbox to enable the Similarity rule.
 
 Select **Current password** to apply the similarity rules the user's existing password. The Password
 Policy Enforcer client must be installed on the user's machine to enforce this rule.

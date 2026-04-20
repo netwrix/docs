@@ -40,7 +40,7 @@ local **Location** depending on your evaluation set up.
 
 - Members of the Domain Admins group (or the PPETestAdmin user, if not using a domain controller)
   must now comply with the Administrators policy. All other users must comply with the Users policy.
-  Users will not notice any difference at this point because the two polices are enforcing identical
+  Users won't notice any difference at this point because the two polices are enforcing identical
   rules.
 
 ### Differentiate Password Policies
@@ -52,7 +52,7 @@ to nine characters.
 
 **Step 2 –** Open the **Length** rule.
 
-**Step 3 –** Select **9** from the **At Least** drop-down list.
+**Step 3 –** Select **9** from the **At Least** dropdown list.
 
 ![Set the length to 9](/images/passwordpolicyenforcer/11.0/evaluation/evallength9.webp)
 

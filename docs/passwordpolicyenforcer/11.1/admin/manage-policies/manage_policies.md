@@ -20,7 +20,7 @@ Double click the **PPE Configuration** desktop shortcut.
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.1/evaluation/ppedashboard.webp)
 
 The Configuration Console dashboard shows **No password policies have been set up** when you are
-getting started with Password Policy Enforcer. Once you **Add a policy**, the dashboard shows the
+getting started with Password Policy Enforcer. After you **Add a policy**, the dashboard shows the
 defined policies and tool links. In this example, the Default Password Policy and CIS Password
 Policy Guide have been added.
 
@@ -29,11 +29,11 @@ Policy Guide have been added.
 The policy management links are all on the Password Policies tile:
 
 - [Add a Policy.](#add-a-policy)
-- [Set Up a Policy](#set-up-a-policy) (click on existing policy name).
+- [Set Up a Policy](#set-up-a-policy) (click existing policy name).
 - [Test Policy.](#test-policy)
 - [Set Priorities.](#set-priorities)
 - [Export.](#export)
-- Context menu (3 stacked dots) beside each defined policy [Make Copy](#make-copy), [Make Default/Remove Default](#make-defaultremove-default), [Rename](#rename) and [Delete](#delete).
+- Context menu (3 stacked dots) beside each defined policy [Make Copy](#make-copy), [Make Default/Remove Default](#make-defaultremove-default), [Rename](#rename), and [Delete](#delete).
 
 ## Add a Policy
 
@@ -50,7 +50,7 @@ with the selected policy.
 
 ### Policy Templates
 
-Password Policy Enforcer contains Out-of-the-box Policy Templates based on the requirements of the
+Password Policy Enforcer contains Built-in Policy Templates based on the requirements of the
 most popular regulatory frameworks.
 
 - Center for Internet Security (CIS) Password Policy Guide – See the
@@ -93,7 +93,7 @@ most popular regulatory frameworks.
 
 ## Set Up a Policy
 
-Once you add a policy, it needs to be set up or reviewed if you used a template. Click on the policy
+After you add a policy, it needs to be set up or reviewed if you used a template. Click the policy
 name to edit the policy. For each policy:
 
 - Set up [Rules](/docs/passwordpolicyenforcer/11.1/admin/manage-policies/rules/rules.md).
@@ -147,7 +147,7 @@ context menu items are also available when you are editing a policy.
 **Step 1 –** Click the context menu next to the policy to set as the default.
 
 **Step 2 –** Select **Make default** from the context menu. The policy is assigned to all domain
-users who do not have a specific policy assigned. **Default** is indicated in the policy list. The
+users who don't have a specific policy assigned. **Default** is indicated in the policy list. The
 context menu changes to **Remove Default**.
 
 :::note
@@ -187,7 +187,7 @@ specified.
 
 **Step 2 –** Leave all the rules disabled for this policy.
 
-**Step 3 –** Assign this policy to the users who do not have to comply with any Password Policy
+**Step 3 –** Assign this policy to the users who don't have to comply with any Password Policy
 Enforcer rules.
 
 :::warning
@@ -197,7 +197,7 @@ policy, then Password Policy Enforcer enforces the policy for all users.
 
 
 The Password Policy Client and Password Policy Server communicate over UDP port 1333 by default. If
-you need to change the default port, then type the new port number in the **Password Policy Server
+you need to change the default port, then enter the new port number in the **Password Policy Server
 Port** text box. Setting the port number to zero stops Password Policy Enforcer from accepting
 client requests. If you change the port number, then you must also:
 

@@ -7,17 +7,17 @@ sidebar_position: 10
 # Preparing the Computer
 
 You only need one computer for the evaluation. A Windows Server 2016, 2019, or 2022 domain
-controller in its own domain is recommended. You can also use Windows 8, 10 or 11 if you only need
+controller in its own domain is recommended. You can also use Windows 8, 10, or 11 if you only need
 to enforce policies for local accounts.
 
 ## Disable the Windows Password Policy Rules
 
 If the Password Policy Enforcer and Windows password policies are both enabled, then users will have
-to comply with both policies. This is not recommended for the evaluation because the Windows policy
+to comply with both policies. This isn't recommended for the evaluation because the Windows policy
 may stop users from reusing recent passwords, or from changing their password more than once a day.
 These restrictions can make it difficult to evaluate Password Policy Enforcer.
 
-Follow the steps below to disable the Windows password policy.
+Complete the following steps to disable the Windows password policy.
 
 **Step 1 –** Open the appropriate policy management tool:
 
@@ -41,7 +41,7 @@ Follow the steps below to disable the Windows password policy.
 
 **Step 4 –** Enter **0** in the text box, then click **OK**.
 
-**Step 5 –** Repeat the step above for the Maximum Password Age and Minimum Password Length
+**Step 5 –** Repeat the preceding step for the Maximum Password Age and Minimum Password Length
 policies.
 
 **Step 6 –** Double-click the **Group Policy Management Editor**.
@@ -54,7 +54,7 @@ policies.
 
 ## Create Test Accounts
 
-Create two user accounts for the evaluation, PPETestUser and PPETestAdmin.
+Create two user accounts for the evaluation: PPETestUser and PPETestAdmin.
 
 ![preparing_the_computer_1](/images/passwordpolicyenforcer/10.2/evaluation/preparing_the_computer_1.webp)
 

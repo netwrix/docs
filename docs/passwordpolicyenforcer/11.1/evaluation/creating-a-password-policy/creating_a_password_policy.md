@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Create a Password Policy
 
-There are no password policies defined when Password Policy Enforcer is first installed. You can now
+Password Policy Enforcer has no password policies defined when first installed. You can now
 create your first Password Policy Enforcer password policy. Password Policy Enforcer accepts all
 passwords in this state, so users only need to comply with the Windows password policy rules (if
 enabled).
@@ -32,7 +32,7 @@ policies see [Policy Templates ](/docs/passwordpolicyenforcer/11.1/evaluation/cr
 
 **Step 5 –** Click **Create policy**.
 
-Your policy is created. The policy settings are opened, showing the first item on the **Rules** tab.
+Password Policy Enforcer creates the policy and opens the policy settings, showing the first item on the **Rules** tab.
 
 ![New policy open for settings](/images/passwordpolicyenforcer/11.1/evaluation/newpolicysettings.webp)
 
