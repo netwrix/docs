@@ -45,3 +45,44 @@ Complete the following fields:
 
 See the [Permissions for Exchange Auditing](/docs/auditor/10.8/configuration/exchange/permissions.md) topic
 for additional information.
+
+## Use Netwrix Privilege Secure as a Data Collecting Account
+
+Starting with version 10.7, you can use Netwrix Privilege Secure to manage the account for
+collecting data, after configuring the integration. See the
+[Netwrix Privilege Secure](/docs/auditor/10.8/admin/settings/privilegesecure.md) topic for additional information about
+integration and supported data sources. In this case, the credentials will not be stored by Netwrix
+Auditor. Instead, they will be managed by Netwrix Privilege Secure and provided on demand, ensuring
+password rotation or using temporary accounts for data collection.
+
+Follow the steps to use Netwrix Privilege Secure as an account for data collection.
+
+**Step 1 –** Select the desired item.
+
+**Step 2 –** In the item configuration menu, select Netwrix Privilege Secure as an option for data
+collection.
+
+![npsdatacollectingaccount](/images/auditor/10.8/configuration/grouppolicy/npsdatacollectingaccount.webp)
+
+**Step 3 –** Select the type of the Access Policy you want to use in Netwrix Privilege Secure.
+Credential-based is the default option. Refer to the
+[Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
+documentation to learn more about Access Policies.
+
+In this case, you need to provide the username of the account managed by Netwrix Privilege Secure,
+and to which Netwrix Auditor has the access through a Credential-based access policy.
+
+**NOTE:** Netwrix recommends using different credentials for different monitoring plans and data
+sources.
+
+![npsdatacollectingaccountresourced](/images/auditor/10.8/configuration/grouppolicy/npsdatacollectingaccountresourced.webp)
+
+The second option is Resource-based. To use this option, you need to provide the Activity and
+Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Make sure
+that you specified the same names as in Netwrix Privilege Secure.
+
+The Resource name in this case is where the activity will be performed. For example, if you grant
+the data collecting account the access to a local Administrators group - the resource is the server
+where the permission will be granted.
+
+Netwrix Privilege Secure is ready to use as an account for data collection.
