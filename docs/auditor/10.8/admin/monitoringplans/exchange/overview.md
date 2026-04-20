@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Exchange
 
-**NOTE:** Prior to configuring your monitoring plan, read and complete the instructions in
+**NOTE:** Before configuring your monitoring plan, read and complete the instructions in
 the following topics:
 
 - [Protocols and Ports Required](/docs/auditor/10.8/requirements/ports.md) – To ensure successful data
@@ -55,9 +55,9 @@ integration and supported data sources. In this case, the credentials will not b
 Auditor. Instead, they will be managed by Netwrix Privilege Secure and provided on demand, ensuring
 password rotation or using temporary accounts for data collection.
 
-Follow the steps to use Netwrix Privilege Secure as an account for data collection.
+To use Netwrix Privilege Secure as an account for data collection:
 
-**Step 1 –** Select the desired item.
+**Step 1 –** Select the item you want to configure.
 
 **Step 2 –** In the item configuration menu, select Netwrix Privilege Secure as an option for data
 collection.
@@ -67,7 +67,7 @@ collection.
 **Step 3 –** Select the type of the Access Policy you want to use in Netwrix Privilege Secure.
 Credential-based is the default option. Refer to the
 [Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
-documentation to learn more about Access Policies.
+documentation for information about Access Policies.
 
 In this case, you need to provide the username of the account managed by Netwrix Privilege Secure,
 and to which Netwrix Auditor has the access through a Credential-based access policy.
