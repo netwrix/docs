@@ -69,7 +69,7 @@ Credential-based is the default option. Refer to the
 documentation for information about Access Policies.
 
 In this case, you need to provide the username of the account managed by Netwrix Privilege Secure,
-and to which Netwrix Auditor has the access through a Credential-based access policy.
+and to which Netwrix Auditor has access through a Credential-based access policy.
 
 **NOTE:** Netwrix recommends using different credentials for different monitoring plans and data
 sources.
@@ -78,10 +78,10 @@ sources.
 
 The second option is Resource-based. To use this option, you need to provide the Activity and
 Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Ensure
-that you specified the same names as in Netwrix Privilege Secure.
+the names match those in Netwrix Privilege Secure.
 
-The Resource name in this case is where the activity will be performed. For example, if you grant
-the data collecting account the access to a local Administrators group - the resource is the server
-where the permission will be granted.
+The Resource name in this case is where the activity occurs. For example, if you grant
+the data collecting account access to a local Administrators group - the resource is the server
+where Netwrix Privilege Secure grants the permission.
 
 Netwrix Privilege Secure is ready to use as an account for data collection.
