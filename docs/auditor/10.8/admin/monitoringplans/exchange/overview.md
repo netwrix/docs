@@ -77,7 +77,7 @@ sources.
 ![npsdatacollectingaccountresourced](/images/auditor/10.8/configuration/grouppolicy/npsdatacollectingaccountresourced.webp)
 
 The second option is Resource-based. To use this option, you need to provide the Activity and
-Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. ensure
+Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Ensure
 that you specified the same names as in Netwrix Privilege Secure.
 
 The Resource name in this case is where the activity will be performed. For example, if you grant
