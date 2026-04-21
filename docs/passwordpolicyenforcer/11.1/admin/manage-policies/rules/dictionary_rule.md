@@ -116,7 +116,7 @@ computers sharing a common Password Policy Enforcer configuration.
 
 Click the **Sort** button if the dictionary file is being used with Password Policy Enforcer for the
 first time, or if words have been added to the file since it was last sorted. The Password Policy
-Enforcer management console will sort and reformat the file so that Password Policy Enforcer can use
+Enforcer Configuration Console will sort and reformat the file so that Password Policy Enforcer can use
 it. Sorting also removes duplicate words, so the sorted file may be smaller than the original.
 
 Click the **Messages** tab to customize the Password Policy Client rule inserts. If both Dictionary

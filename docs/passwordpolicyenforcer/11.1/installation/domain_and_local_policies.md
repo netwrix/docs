@@ -55,7 +55,7 @@ limitations, the following rules and features can't be used with local password 
 
 Password Policy Enforcer's configuration is stored in Active Directory for domain password policies,
 and in the Windows registry for local password policies. The Connect To page in the Password Policy
-Enforcer management console. Use it to choose a configuration source. See the
+Enforcer Configuration Console. Use it to choose a configuration source. See the
 [Connected To](/docs/passwordpolicyenforcer/11.1/admin/configconsole.md#connected-to) topic for additional information. Changes you make to
 Password Policy Enforcer's domain configuration are replicated to all domain controllers in the
 domain. Changes to a local configuration are applied only to the local computer. If you want to use
