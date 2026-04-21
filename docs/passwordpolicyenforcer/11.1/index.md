@@ -34,7 +34,7 @@ The Configuration Console has some additional requirements:
  - [PowerShell 7.4 or higher](https://github.com/powershell/powershell/releases) if you intend to use the cmdlets
 
 ### Password Policy Enforcer Mailer Service
-This component sends email from Password Policy Enforcer to your mail server. Although not required, several PPE features use it, so you'll most likely want to install it on one server in the domain. This component requires the [.NET Desktop Runtime 8.0.15 or higher](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.26-windows-x64-installer?cid=getdotnetcore).
+This component sends email from Password Policy Enforcer to your mail server. Although not required, this component supports several PPE features, so you'll most likely want to install it on one server in the domain. This component requires the [.NET Desktop Runtime 8.0.15 or higher](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.26-windows-x64-installer?cid=getdotnetcore).
 
 ### Password Policy Enforcer Client
 The Password Policy Client helps users to choose a compliant password by showing them the password policy rules, and also which rules they don't comply with. This component is optional, but very beneficial. It works on all operating systems listed in the System Requirements section, but you'll typically only install it on users' computers and virtual desktops.

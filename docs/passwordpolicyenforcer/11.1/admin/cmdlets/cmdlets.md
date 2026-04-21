@@ -9,7 +9,7 @@ sidebar_position: 60
 Cmdlets are available to manage Password Policy Enforcer from a Windows PowerShell. The
 cmdlets aren't case-sensitive.
 
-Starting with version **11.1**, the PowerShell cmdlets are built on .NET 8.0 and require PowerShell version 7.5 or newer to function.
+Starting with version **11.1**, the PowerShell cmdlets use .NET 8.0 and require PowerShell version 7.5 or newer to function.
 **Installation link**: [https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5)
 
 To establish the connection:
