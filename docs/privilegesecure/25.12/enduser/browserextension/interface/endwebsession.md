@@ -9,7 +9,7 @@ sidebar_position: 20
 If the web session needs to be ended before the remaining time for the session has expired, clicking
 the extension icon will display the green session page.
 
-Follow the steps to end a Web Session.
+To end a Web Session.
 
 **Step 1 –** Open the browser extension interface to display the green session page
 

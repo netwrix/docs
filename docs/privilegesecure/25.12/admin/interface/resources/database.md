@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Add New Database
 
-Follow the steps to add a database to the Privilege SecureConsole. Supported database platforms
+To add a database to the Privilege SecureConsole. Supported database platforms
 include:
 
 - Microsoft SQL
@@ -20,7 +20,7 @@ include:
 
 ![Add Database](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/adddatabase.webp)
 
-**Step 4 –** Select **Microsoft SQL Server** or **Oracle** from the Platform drop-down list.
+**Step 4 –** Select **Microsoft SQL Server** or **Oracle** from the Platform dropdown list.
 
 **Step 5 –** Enter the instance name for the server.
 
@@ -38,15 +38,15 @@ The domain is used as the default domain for database activities.
 :::
 
 
-**Step 9 –** From the drop-down menu, select a previously added service account with credentials for
+**Step 9 –** From the dropdown menu, select a previously added service account with credentials for
 the database.
 
 - See the [Service Accounts Page](/docs/privilegesecure/25.12/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional
-  information.
+information.
 
-    - Visit icon – Go to the Service Account page to view details of the selected service account.
-    - Add New Service Account icon – Open the Add New Service Account window. The fields are
-      identical to those on the Service Accounts page.
+- Visit icon – Go to the Service Account page to view details of the selected service account.
+- Add New Service Account icon – Open the Add New Service Account window. The fields are
+identical to those on the Service Accounts page.
 
 **Step 10 –** Click **Save** to save the configuration options and enable the Scan Now button.
 

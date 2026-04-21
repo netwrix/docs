@@ -17,9 +17,9 @@ Approval Workflows.
 The Approvals Dashboard has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
-- Approve — Approves the selected session(s)
-- Deny — Denies the selected session(s)
+table or list is filtered to the matching results.
+- Approve — Approves the selected sessions
+- Deny — Denies the selected sessions
 - Refresh — Reload the information displayed
 
 The table has the following columns:
@@ -27,20 +27,20 @@ The table has the following columns:
 - Checkbox — Check to select one or more items to complete a bulk action
 - Status — Shows status information for the session:
 
-    - Waiting for Approval — The session requires approval to begin.
-    - Canceling — The session is either expired or was canceled manually by the user or an Privilege
-      Secure administrator.
+- Waiting for Approval — The session requires approval to begin.
+- Canceling — The session is either expired or was canceled manually by the user or an Privilege
+Secure administrator.
 
 - Requested — Date and time of when the session was created
 - Requested By — User who requested the session
 - Host — Resource that the user will run the activity on
 - Login Account — Displays the account used to log onto the resource
 - Activity — Displays the name of the activity. Click the link to view additional details. See the
-  [Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.
+[Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.
 - Start — Indicates when the activity starts. This refers to when the activity’s actions will be
-  executed and not when the user logs on to the resource.
+executed and not when the user logs on to the resource.
 - End — Indicates when the session is scheduled to end the activity, which is determined by the
-  start time plus the maximum session duration set by the access policy Connection Profile
+start time plus the maximum session duration set by the access policy Connection Profile
 - Notes — Any notes that were entered when the session was created
 - Ticket Number — Any ticket numbers that were entered when the session was created
 

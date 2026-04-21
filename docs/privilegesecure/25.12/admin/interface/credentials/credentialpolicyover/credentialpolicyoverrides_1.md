@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Add Credential Policy Override
 
-Follow the steps to add Credential Policy Override to the Privilege Secure Console.
+To add Credential Policy Override to the Privilege Secure Console.
 
 **Step 1 –** Navigate to the **Policy** > **Credentials** > **Credential Policy Overrides** page.
 
@@ -18,13 +18,13 @@ Follow the steps to add Credential Policy Override to the Privilege Secure Conso
 
 - Name — Displays the name of the credential
 - Description — Description of the policy
-- Scheduled Change Policy — Select a previously added schedule policy from the drop-down list. How
-  often the credentials for a managed account are changed (credential rotation). See the
-  [Credentials Dashboard](/docs/privilegesecure/25.12/admin/dashboard/credentials.md) and
-  [Schedule Policies Page](/docs/privilegesecure/25.12/admin/interface/platforms/schedulepolicies/schedulepolicies.md) topic for additional information.
+- Scheduled Change Policy — Select a previously added schedule policy from the dropdown list. How
+often the credentials for a managed account are changed (credential rotation). See the
+[Credentials Dashboard](/docs/privilegesecure/25.12/admin/dashboard/credentials.md) and
+[Schedule Policies Page](/docs/privilegesecure/25.12/admin/interface/platforms/schedulepolicies/schedulepolicies.md) topic for additional information.
 - Verification Schedule — How often to verify the credentials for managed accounts on the resources
-  defined by the selected platform. See the [Credentials Dashboard](/docs/privilegesecure/25.12/admin/dashboard/credentials.md)
-  topic for additional information on managed accounts.
+defined by the selected platform. See the [Credentials Dashboard](/docs/privilegesecure/25.12/admin/dashboard/credentials.md)
+topic for additional information on managed accounts.
 
 **Step 4 –** Click **Save** to create the new credential policy override.
 

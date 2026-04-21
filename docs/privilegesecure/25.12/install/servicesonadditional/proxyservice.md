@@ -8,7 +8,7 @@ sidebar_position: 10
 
 Logging directly onto managed systems from desktops leaves artifacts that can be compromised and
 requires ports to be opened into secure networks. A critical element of the Privilege Secure
-solution is the proxy, which is able to broker the connection between security zones. The
+solution is the proxy, which can broker the connection between security zones. The
 application includes an advanced session proxy service for automatic connection to privileged
 sessions.
 
@@ -21,21 +21,20 @@ The NPS Proxy Service installer is in the Extras folder of the ZIP file download
 Customer portal. See the [Install Components & Methods](/docs/privilegesecure/25.12/install/components.md) topic for additional
 information.
 
-Follow the steps to install the NPS Proxy Service on another server that will run services for the
+To install the NPS Proxy Service on another server that will run services for the
 application.
 
-**Step 1 –** Make sure that you have configured the Antivirus exclusions according to the following
+**Step 1 –** ensure that you have configured the Antivirus exclusions according to the following
 Netwrix knowledge base article: [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
 
 **Step 2 –** Copy the `NPS.ProxyService.exe` file to the desktop of the remote server.
 
-**Step 3 –** Right-click on the installer and select Run as administrator. The Netwrix Privilege
+**Step 3 –** Right-click the installer and select Run as administrator. The Netwrix Privilege
 Secure Proxy Service Setup wizard opens.
 
 ![Netwrix Privileged Secure Proxy Service Setup wizard on the EULA page](/images/privilegesecure/25.12/accessmanagement/install/licenseagreement_2.webp)
 
-**Step 4 –** On the End User License Agreement page, check the I agree to the license terms and
-conditions box and click Options.
+**Step 4 –** On the End User License Agreement page, accept the license terms and conditions and click Options.
 
 :::tip
 Remember, it is a best practice to read the agreement before accepting it.
@@ -73,8 +72,7 @@ server.
 
 **Example Values**
 
-When referring to the NPS Application server, we will use the following example values in our
-configuration. Replace these values with values that are specific for your environment.
+The examples in this article use the following values for the NPS Application server. Replace these values with values specific to your environment.
 
 **NPS Application Server**
 
@@ -88,7 +86,7 @@ configuration. Replace these values with values that are specific for your envir
 
 ### NPS Application Server
 
-Follow the steps to prepare the NPA Appl;ication server
+To prepare the NPA Appl;ication server
 
 :::note
 All commands are executed on the NPS Application Server as administrator.
@@ -135,7 +133,7 @@ register your remote service..
 
 ### Remote NPS Proxy Server
 
-Follow the steps to register the Remote NPS Proxy Service.
+To register the Remote NPS Proxy Service.
 
 :::note
 All commands are executed on the Remote NPS Proxy Server as an administrator.
@@ -182,11 +180,11 @@ SSH session, the following error message is displayed:
 
 `ssh: handshake failed: ssh: no common algorithm for key exchange; client offered: [curve25519-sha256@libssh.org ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha1], server offered: [diffie-hellman-group1-sha1]`
 
-Ideally the Cisco device should be upgraded to support secure ciphers. If this is not possible, it
+Ideally the Cisco device should be upgraded to support secure ciphers. If this isn't possible, it
 is necessary to add additional ciphers to machines with older (insecure) ciphers that need to be
 managed with SSH. You can “opt-in” by configuring the cipher suites used by the NPS Proxy Service.
 
-Follow the steps to add Cipher information to the NPS Proxy Service.
+To add Cipher information to the NPS Proxy Service.
 
 **Step 1 –** Open a command prompt as an Administrator.
 

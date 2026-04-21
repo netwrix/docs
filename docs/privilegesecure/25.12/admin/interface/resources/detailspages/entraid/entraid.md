@@ -16,23 +16,23 @@ The details page shows the following information:
 
 - Name — Displays the name of the resource
 - Trashcan icon — Removes the selected resource from being managed by the application. A
-  confirmation window will display.
+confirmation window will display.
 - Platform — Displays the type of platform, which defines the resource
 - Tenant ID — Displays the globally unique identifier for the targeted tenant implementation as
-  found in Entra ID
+found in Entra ID
 - Logon URL — Displays the primary logon page
 - Email Domain — Displays the domain part of the user principal name used by the Tenant as found in
-  Entra ID on the Users page, under “Identity Issuer”
+Entra ID on the Users page, under “Identity Issuer”
 - Associated Domain — For hybrid Entra ID environments, assign the on-premises Active Directory
-  domain that is synchronized with the tenant, otherwise leave set to **None**
+domain that is synchronized with the tenant, otherwise leave set to **None**
 - Process Group Memberships — Select this checkbox to enable Netwrix Privilege Secure to collect
-  group membership information. This is unchecked by default.
+group membership information. This is unchecked by default.
 - Synchronize Now button — Scans the domain for users, groups, members, and computers. The Cancel
-  button, which is only visible when scanning can be used to stop the resource scan. This scan can
-  also be scheduled from the [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md).
+button, which is only visible when scanning lets you stop the resource scan. This scan can
+also be scheduled from the [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md).
 - Service Account — Displays the service account associated with the resource
 
-If any of these settings are modified, Save and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
 
 The details page has the following tabs:

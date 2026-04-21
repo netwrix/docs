@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # First Launch
 
-Once the database and application are installed, the next step is to walk through the Setup Wizard.
+after the database and application are installed, the next step is to walk through the Setup Wizard.
 
 ![Netwrix Setup Launcher showing the Netwrix Privilege Secure with a green checkmark](/images/privilegesecure/25.12/accessmanagement/install/launcherstep4.webp)
 
@@ -15,7 +15,7 @@ The Netwrix Setup Launcher can be closed, if it was used during installation.
 :::info
 The first user, your primary Administrator, will be setup through the wizard. It
 is recommended that you have a multi-factor authentication (MFA) solution (Authenticator, DUO,
-Symantec VIP, etc.) ready to setup for this account through the wizard.
+Symantec VIP, etc.) ready to set up for this account through the wizard.
 :::
 
 
@@ -34,30 +34,30 @@ You will need to following information for your environment to complete the wiza
 
 - Domain account and its password to be the primary application Administrator
 
-    :::info
-    Use a non-privileged account and use the application to access privileged
-    accounts.
-    :::
+:::info
+Use a non-privileged account and use the application to access privileged
+accounts.
+:::
 
 
 - Multi-factor authenticator (MFA) app on your phone to register this application Administrator
-  account
+account
 
-    :::note
-    This step can be skipped during the wizard, and an MFA can be added at a later time,
-    but that is not recommended.
-    :::
+:::note
+This step can be skipped during the wizard, and an MFA can be added at a later time,
+but that isn't recommended.
+:::
 
 
 - Active Directory service account and its password
 
-    :::note
-    This service account must have membership in the Domain Admins group for the domain
-    where the primary application Administrator account resides.
-    :::
+:::note
+This service account must have membership in the Domain Admins group for the domain
+where the primary application Administrator account resides.
+:::
 
 
-Follow the steps to walk through the Setup Wizard.
+To walk through the Setup Wizard.
 
 **Step 1 –** Launch the  Setup Wizard.
 
@@ -72,7 +72,7 @@ the following information and then click Next:
 
 - Domain – Enter the account's domain in `domain.com` format
 - Username – Enter the account. The domain will auto-populate from the field above.
-- Password – Enter the account's password. The eye icon can be used to view the entry.
+- Password – Enter the account's password. The eye icon lets you view the entry.
 
 ![Setup Wizard on the Step 2 page](/images/privilegesecure/25.12/accessmanagement/install/authenticator.webp)
 
@@ -80,17 +80,17 @@ the following information and then click Next:
 MFA provider.
 
 - Scan the QR code or manually enter the provided key into the MFA phone app. The MFA will provide a
-  verification code.
+verification code.
 - Enter the verification code in the textbox.
 - Click **Next**, while the code is still active.
 
-    :::note
-    MFA for this account can be done at a later time through the User details page. If
-    that is desired, click Setup Later and skip to Step 6 of these instructions. The initial account
-    will be set to Not Required MFA. See the
-    [User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md)
-    topic for additional information.
-    :::
+:::note
+MFA for this account can be done at a later time through the User details page. If
+that is desired, click Setup Later and skip to Step 6 of these instructions. The initial account
+will be set to Not Required MFA. See the
+[User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md)
+topic for additional information.
+:::
 
 
 ![Setup Wizard on the Step 2 page displaying the recovery codes](/images/privilegesecure/25.12/accessmanagement/install/authenticatorcodes.webp)
@@ -105,10 +105,10 @@ in case you lose your phone with the authenticator app. Click **Next**.
 administrator privileges. Enter the following information and then click **Next**:
 
 - Username – Enter the account. The domain will auto-populate from the Step 1 page.
-- Password – Enter the account's password. The eye icon can be used to view the entry.
+- Password – Enter the account's password. The eye icon lets you view the entry.
 
 :::note
-This service account will be used to run domain synchronization. If you do not have an
+This service account will be used to run domain synchronization. If you don't have an
 account with domain administrator privileges ready when walking through the Setup Wizard, you can
 click the Exit Wizard link. See the Exit Wizard Early topic for additional information.
 :::
@@ -122,7 +122,7 @@ and is tracked by the status bar. When synchronization is complete, the Step 5 p
 :::note
 Problems with service registration may occur if accessing the wizard from a remote
 IP address. If this does occur during domain synchronization, you will be redirected to a dedicated
-error page, which allows you to ignore certificate errors during the initial configuration.
+error page, which lets you ignore certificate errors during the initial configuration.
 :::
 
 
@@ -147,7 +147,7 @@ click **Close**. When all tests are successful, the window and the Setup Wizard 
 
 ![My Activities interfacing displaying the Activity Token for Domain Admin Access activity created by the Setup Wizard](/images/privilegesecure/25.12/accessmanagement/install/myactivities.webp)
 
-When the Setup Wizard closes, you are redirected to the My Activities interfacing . The activity
+When the Setup Wizard closes, you are redirected to the My Activities interfacing. The activity
 created by the Setup Wizard, Activity Token for Domain Admin Access, is displayed.
 
 Take a [Product Tour](/docs/privilegesecure/25.12/admin/navigation/producttour.md) of the console or onboard more users and resources.
@@ -155,7 +155,7 @@ See the [Getting Started](/docs/privilegesecure/25.12/gettingstarted.md) topic f
 
 ## Exit Wizard Early
 
-It is possible to exit the Setup Wizard from Step 3, Step 4, and Step 5 pages. If you do that, then
+You can exit the Setup Wizard from Step 3, Step 4, and Step 5 pages. If you do that, then
 the Setup Wizard will not create the Activity Token for Domain Admin Access activity. You will need
 to complete the following to create your first access policy, depending on what page of the wizard
 you exited from:

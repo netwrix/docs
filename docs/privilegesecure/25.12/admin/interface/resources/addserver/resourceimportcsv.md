@@ -12,18 +12,18 @@ Resources can be onboarded via a CSV import process. Create a CSV file with the 
 - Operating System — Displays the operating system of the resource. This is an optional value.
 - IP Address — Displays the IP address for the resource
 - Platform — Displays the type of platform, which defines the resource. This is an optional value,
-  but it must be an exact match to known platforms on the
-  [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md).
+but it must be an exact match to known platforms on the
+[Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md).
 - Credential — Displays the service account associated with the resource. This is an optional value,
-  but it must be an exact match to known service accounts on the
-  [Service Accounts Page](/docs/privilegesecure/25.12/admin/configuration/serviceaccounts/serviceaccounts.md).
+but it must be an exact match to known service accounts on the
+[Service Accounts Page](/docs/privilegesecure/25.12/admin/configuration/serviceaccounts/serviceaccounts.md).
 
 The CSV file must contain one resource per row. Each resource must be identified by either a DNS
 Host Name or an IP Address. All other values are optional.
 
 ## Download Template
 
-There is a template available. Follow the steps to download the template.
+There is a template available. To download the template.
 
 **Step 1 –** Navigate to either the Resources dashboard or the Resources page.
 

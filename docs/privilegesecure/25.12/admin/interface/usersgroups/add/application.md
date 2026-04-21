@@ -8,13 +8,13 @@ sidebar_position: 20
 
 Applications are a special type of user that allow external entities to interact with Privilege
 Secure via the REST API interface. Capabilities within the product are identical to standard users
-with the exception that Applications are not able to log on through the product UI. Each Application
+with the exception that Applications aren't able to log on through the product UI. Each Application
 has a unique name that is used to identify the application calling the API; authentication is via a
 combination of certificate serial number and API key.
 
 ![addapplication](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/addapplication.webp)
 
-Follow the steps to add an Application to an Access Policy.
+To add an Application to an Access Policy.
 
 **Step 1 –** Navigate to the **Users & Groups** page.
 
@@ -32,4 +32,4 @@ certificate to the Trusted Root Certification Authorities on the Privilege Secur
 
 **Step 6 –** Click the **Save** button when finished.
 
-The new Applicationhas been added to the the Users & Groups page.
+The new Applicationhas been added to the Users & Groups page.

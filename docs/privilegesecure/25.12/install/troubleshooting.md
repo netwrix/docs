@@ -14,7 +14,7 @@ Privilege Secure Console.
 The Enablement Toolkit is a utility that offers a GUI for common testing scenarios used when
 troubleshooting the application.
 
-The Toolkit is available to download as a .zip file from the Privilege Secure installer's Extras
+The Toolkit is available to download as a.zip file from the Privilege Secure installer's Extras
 folder. See the [Install Components & Methods](/docs/privilegesecure/25.12/install/components.md) topic for additional
 information.
 
@@ -24,21 +24,21 @@ information.
 
 ## Install the Enablement Toolkit
 
-Follow the steps to install the Enablement Toolkit.
+To install the Enablement Toolkit.
 
-**Step 1 –** Once the Privilege Secure Installer file has been downloaded, unzip and open the
+**Step 1 –** after the Privilege Secure Installer file has been downloaded, unzip, and open the
 Enablement Toolkit.exe from the **Privilege Secure Installer Package** > **Extras Folder**.
 
 :::note
 The Enablement Toolkit application should be run as a local Administrator. If the user
-account running the toolkit is not a local administrator, Windows will request administrator
+account running the toolkit isn't a local administrator, Windows will request administrator
 credentials.
 :::
 
 
 ![SbPAM Enablement Toolkit - EULA Agreement window](/images/privilegesecure/25.12/accessmanagement/admin/sbpamenablementtoolkit_-_1_-_eula_agreement.webp)
 
-**Step 2 –** Click **I Accept** on the Enablement Toolkit EULA window. The Enablement Toolkit window
+**Step 2 –** Accept the EULA on the Enablement Toolkit EULA window. The Enablement Toolkit window
 opens.
 
 ## Enablement Toolkit Window
@@ -50,37 +50,37 @@ following fields for all operations:
 
 - File Menu Options:
 
-    - Save Results – Saves the results of the operation after a successful execution of the
-      operation
-    - Exit – Closes the Enablement Toolkit window
+- Save Results – Saves the results of the operation after a successful execution of the
+operation
+- Exit – Closes the Enablement Toolkit window
 
 - Help Menu Options:
 
-    - About – Displays information about the Enablement Toolkit.
-    - Help (Selected Operation) – Displays the following key information about the selected
-      operation:
+- About – Displays information about the Enablement Toolkit.
+- Help (Selected Operation) – Displays the following key information about the selected
+operation:
 
-        - Selected Operation – The current operation selected
-        - Required Fields – Any fields which must be populated to execute the selected operation
-        - Notes – Suggested actions or features to use within the selected operation interface
-        - Description – A brief summary of the selected action
+- Selected Operation – The current operation selected
+- Required Fields – Any fields which must be populated to execute the selected operation
+- Notes – Suggested actions or features to use within the selected operation interface
+- Description – A brief summary of the selected action
 
-- Operation Menu – The operation menu drop-down list contains the following operations:
+- Operation Menu – The operation menu dropdown list contains the following operations:
 
-    :::note
-    See the Enablement Toolkit Operations topic for additional information about each
-    operation.
-    :::
+:::note
+See the Enablement Toolkit Operations topic for additional information about each
+operation.
+:::
 
 
-    - Enumerate Active Directory Objects
-    - Verify Domain Group Membership for Credential
-    - Verify Local Windows Group Membership for User Account
-    - Verify WinRM Status for Host
-    - Port Scan for Host
-    - Verify SSH Connectivity for Host
-    - Set Privilege Secure AppSettingUser Config Files
-    - Export Privilege Secure Diagnostics
+- Enumerate Active Directory Objects
+- Verify Domain Group Membership for Credential
+- Verify Local Windows Group Membership for User Account
+- Verify WinRM Status for Host
+- Port Scan for Host
+- Verify SSH Connectivity for Host
+- Set Privilege Secure AppSettingUser Config Files
+- Export Privilege Secure Diagnostics
 
 - Execute – Click this button to initiate the selected operation
 - Stop – Click this button to stop the selected operation
@@ -89,7 +89,7 @@ following fields for all operations:
 
 ## Configure and Execute an Operation
 
-Follow the steps to execute an operation.
+To execute an operation.
 
 **Step 1 –** Select an Operation from the dropdown menu.
 
@@ -118,16 +118,16 @@ This table lists available in the Enablement Toolkit with descriptions, notes, a
 of operations. This menu can be accessed by clicking **Help** > **Help (Selected Operation)** or by
 pressing **F1**.
 
-| Operation                                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Required Fields                                                                 | Notes                                                                                    |
+| Operation | Description | Required Fields | Notes |
 | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Enumerate Active Directory Objects                     | Enumerates domain or domain controller specified in the Domain field for counts of users, group members, and computers. The target domain / domain controller can be specified by IP or DNS Name                                                                                                                                                                                                                                                                                                                                                | <ul><li>Domain</li><li>Username</li><li>Password</li></ul>                      | Enable the Use TLS checkbox for LDAPS lookups instead of LDAP.                           |
-| Verify Domain Group Membership for Credential          | Verifies that a domain group exists and that the user specified in the Domain / User field is a member of that group. The Domain / User field is the `<domain>\\<user>` to be queried for the domain group in the Group field. The Username and Password fields are used for authentication to the domain, which can be any domain user. The target domain / domain controller can be specified by either IP, DNS Name, or domain name.                                                                                                         | <ul><li>Domain / User</li><li>Group</li><li>Username</li><li>Password</li></ul> | Enable the Use TLS checkbox for LDAPS lookups instead of LDAP.                           |
-| Verify Local Windows Group Membership for User Account | Verifies that a local Windows group exists and that the user specified in the User / Host field is a member of that group. The User / Host field is the `<user>@<hostname>` to be queried for the local Windows group in the Group field. This needs to be in the format: `<user@hostname>` The Username (ex. domain\user) and Password fields are used for authe ntication to the Windows host as a local administrator. Both Domain and local accounts can be used for authentication as long as the account is a local administrator.        | <ul><li>User / Host</li><li>Group</li><li>Username</li><li>Password</li></ul>   | A domain user must be used for authentication if verifying domain user group membership. |
-| Verify WinRM Status for Host                           | Checks the following criteria related to WinRM (PSRemoting) connectivity to the Host: <ul><li>Port scan for port 5985</li><li>Verify WinRM is enabled</li><li>Verify supplied credentials can authenticate</li><li>Verify Invoke-Command runs with supplied credentials The Host field is the host to be tested. The Username and Password fields are used for authentication. If only the Host field is used, the only the port scan and WinRM are tested. If Host, Username, and Password fields are used, then all tests will run.</li></ul> | <ul><li>Host</li></ul>                                                          | Only port 5985 is used for testing WinRM (PSRemoting). Port 5986 is not tested.          |
-| Port Scan for Host                                     | Scans the Host for will-known ports: <ul><li>SSH (Port 22)</li><li>RDP (Port 3389)</li><li>WinRM (Port 5985)</li><li>WinRM (Port 5986)</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                | <ul><li>Host</li></ul>                                                          | A ping test is also performed and is reported in the output's heading.                   |
-| Verify SSH Connectivity for Host                       | Verifies SSH connectivity and authentication to the target Host. The well-known SSH port (port 22) is used by default but can be customized. The Username and Password fields are used to authenticate the SSH session. The ability to run sudo commands, specify which sudo commands the user has access to, and whether or not the user's sudo commands use the "NOPASSWD" directive are also checked.                                                                                                                                        | <ul><li>Host</li><li>Port</li><li>Username</li><li>Password</li></ul>           | N/A                                                                                      |
-| Set Privilege Secure AppSettingUser Config Files       | Sets the hostname in each Privilege Secure appsetting.user.json configuration file. This hostname should match the CN of the server's IIS-bound certificate for the Privilege Secure web application. The syntax used in the filed should be the full URL, for example: https://hostname.domain.com:6500                                                                                                                                                                                                                                        | <ul><li>Host</li></ul>                                                          | Should be run on each Privilege Secure server with an IIS-bound certificate installed.   |
-| Export Privilege Secure Diagnostics                    | Exports logs, various configuration files, and version information for the Privilege Secure server. A date range can be selected for the logs to reduce operation runtime. Upon execution, the user will be prompted to pick a location where the diagnostics will be zipped and saved.                                                                                                                                                                                                                                                         | <ul><li>Date Range</li></ul>                                                    | Only exports diagnostics for the Privilege Secure server running this application.       |
+| Enumerate Active Directory Objects | Enumerates domain or domain controller specified in the Domain field for counts of users, group members, and computers. The target domain / domain controller can be specified by IP or DNS Name | <ul><li>Domain</li><li>Username</li><li>Password</li></ul> | Enable the Use TLS checkbox for LDAPS lookups instead of LDAP. |
+| Verify Domain Group Membership for Credential | Verifies that a domain group exists and that the user specified in the Domain / User field is a member of that group. The Domain / User field is the `<domain>\\<user>` to be queried for the domain group in the Group field. The Username and Password fields are used for authentication to the domain, which can be any domain user. The target domain / domain controller can be specified by either IP, DNS Name, or domain name. | <ul><li>Domain / User</li><li>Group</li><li>Username</li><li>Password</li></ul> | Enable the Use TLS checkbox for LDAPS lookups instead of LDAP. |
+| Verify Local Windows Group Membership for User Account | Verifies that a local Windows group exists and that the user specified in the User / Host field is a member of that group. The User / Host field is the `<user>@<hostname>` to be queried for the local Windows group in the Group field. This needs to be in the format: `<user@hostname>` The Username (ex. domain\user) and Password fields are used for authe ntication to the Windows host as a local administrator. Both Domain and local accounts is useful for authentication as long as the account is a local administrator. | <ul><li>User / Host</li><li>Group</li><li>Username</li><li>Password</li></ul> | A domain user must be used for authentication if verifying domain user group membership. |
+| Verify WinRM Status for Host | Checks the following criteria related to WinRM (PSRemoting) connectivity to the Host: <ul><li>Port scan for port 5985</li><li>Verify WinRM is enabled</li><li>Verify supplied credentials can authenticate</li><li>Verify Invoke-Command runs with supplied credentials The Host field is the host to be tested. The Username and Password fields are used for authentication. If only the Host field is used, the only the port scan and WinRM are tested. If Host, Username, and Password fields are used, then all tests will run.</li></ul> | <ul><li>Host</li></ul> | Only port 5985 is used for testing WinRM (PSRemoting). Port 5986 isn't tested. |
+| Port Scan for Host | Scans the Host for will-known ports: <ul><li>SSH (Port 22)</li><li>RDP (Port 3389)</li><li>WinRM (Port 5985)</li><li>WinRM (Port 5986)</li></ul> | <ul><li>Host</li></ul> | A ping test is also performed and is reported in the output's heading. |
+| Verify SSH Connectivity for Host | Verifies SSH connectivity and authentication to the target Host. The well-known SSH port (port 22) is used by default but can be customized. The Username and Password fields are used to authenticate the SSH session. The ability to run sudo commands, specify which sudo commands the user has access to, and whether the user's sudo commands use the "NOPASSWD" directive are also checked. | <ul><li>Host</li><li>Port</li><li>Username</li><li>Password</li></ul> | N/A |
+| Set Privilege Secure AppSettingUser Config Files | Sets the hostname in each Privilege Secure appsetting.user.json configuration file. This hostname should match the CN of the server's IIS-bound certificate for the Privilege Secure web application. The syntax used in the filed should be the full URL, for example: https://hostname.domain.com:6500 | <ul><li>Host</li></ul> | Should be run on each Privilege Secure server with an IIS-bound certificate installed. |
+| Export Privilege Secure Diagnostics | Exports logs, various configuration files, and version information for the Privilege Secure server. A date range can be selected for the logs to reduce operation runtime. Upon execution, the user will be prompted to pick a location where the diagnostics will be zipped and saved. | <ul><li>Date Range</li></ul> | Only exports diagnostics for the Privilege Secure server running this application. |
 
 
 ## Sign RDP Files to Prevent Publisher Warning
@@ -141,7 +141,7 @@ resolve the trust problem with RDP files.
 
 To obtain the certificate thumbprint, open the Certificates snap-in. From there, the certificate
 thumbprint can be found in the local computer's certificates store on the Netwrix Privilege Secure
-server. This certificate thumbprint can be used to certify the Privilege Secure Web Service as well.
+server. This certificate thumbprint lets you certify the Privilege Secure Web Service as well.
 Follow the steps below to obtain a certificate thumbprint.
 
 **Step 1 –** Open the Windows Certificate Manager Tool (certmgr.exe).
@@ -176,13 +176,13 @@ ensure the unknown publisher warning disappears completely.
 Components** > **Remote Desktop Services** > **Remote Desktop Connection Client**.
 
 :::note
-Do not expand the Remote Desktop Connection Client folder.
+don't expand the Remote Desktop Connection Client folder.
 :::
 
 
 ![Troubleshooting - GPO Settings](/images/privilegesecure/25.12/accessmanagement/admin/troubleshootinggposettings.webp)
 
-**Step 3 –** Click **Specify SHA1 thumbprints of certificates representing trusted .rdp
+**Step 3 –** Click **Specify SHA1 thumbprints of certificates representing trusted.rdp
 publishers**.
 
 **Step 4 –** Click **Policy Settings** in the upper left-hand corner.
@@ -201,12 +201,12 @@ policy.
 
 :::note
 IIS_IUSRS account must have read permissions to the certificate used by Privilege Secure
-in certlm.msc. Otherwise, in the PAM-WebService log the "Could not sign RDP file with certificate
-for RDP Session: Keyset does not exist" error will appear and the RDP file won't be signed.
+in certlm.msc. Otherwise, in the PAM-WebService log the "couldn't sign RDP file with certificate
+for RDP Session: Keyset doesn't exist" error will appear and the RDP file won't be signed.
 :::
 
 
 ## Update InsecureSkipVerify and RestURL
 
 - Rest URL - This setting determines the Rest API URL that is used to send REST calls to the Netwrix
-  Privilege Secure Web service.
+Privilege Secure Web service.

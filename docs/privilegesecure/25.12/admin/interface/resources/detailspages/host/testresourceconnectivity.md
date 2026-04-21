@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # Test Resource Connectivity Window
 
-Follow the steps to test the host resource connectivity:
+To test the host resource connectivity:
 
 **Step 1 –** Navigate to the Resources page.
 
-**Step 2 –** Select the resource(s) to modify.
+**Step 2 –** Select the resources to modify.
 
 **Step 3 –** Click the **Test** button.
 

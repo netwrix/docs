@@ -16,5 +16,5 @@ configuration options for a Website Platform.
 - Name — Displays the name of the policy
 - Description — Description of the policy
 
-If any of these settings are modified, Save and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
