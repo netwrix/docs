@@ -1,0 +1,24 @@
+@startuml component
+package "ConnectionTable" {
+	class ConnectionTable {
+		DisplayName : String
+		Identifier : String
+		Path : String
+		UpdateDate : DateTime
+		--
+		Columns : ConnectionColumn[]
+		Connection : Connection
+	}
+}
+package "ConnectionColumn" {
+	class ConnectionColumn {
+	}
+}
+package "Connection" {
+	class Connection {
+	}
+}
+ConnectionTable "1" --  "0..*"ConnectionColumn
+ConnectionTable "0..*" --  "1"Connection
+hide empty members
+@enduml

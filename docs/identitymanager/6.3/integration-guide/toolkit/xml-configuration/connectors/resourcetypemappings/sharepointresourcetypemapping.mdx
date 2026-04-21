@@ -1,0 +1,18 @@
+---
+title: "SharePointResourceTypeMapping"
+description: " "
+sidebar_position: 11
+---
+
+import ResourcetypemappingIdentifier from '@site/docs/identitymanager/current/_partials/resourcetypemapping-identifier.mdx';
+
+<ResourcetypemappingIdentifier />
+
+## Examples
+```xml
+<SharePointResourceTypeMapping Identifier="SharePoint_Entity_NominativeUser" Connection="SharePointExportFulfillment">
+  <Property Property="Name" IsDNProperty="true" />
+  <Property Property="Collection" IsParentProperty="true" />
+</SharePointResourceTypeMapping>
+```
+

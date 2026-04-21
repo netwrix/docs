@@ -1,0 +1,24 @@
+@startuml component
+package "HomonymEntityLinkFilter" {
+	class HomonymEntityLinkFilter {
+		Expression1 : String
+		Operator1 : Byte
+		--
+		ComparisonProperty1 : EntityProperty
+		HomonymEntityLink : HomonymEntityLink
+		Property1 : EntityProperty
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "HomonymEntityLink" {
+	class HomonymEntityLink {
+	}
+}
+HomonymEntityLinkFilter "0..*" --  "0..1"EntityProperty
+HomonymEntityLinkFilter "0..*" --  "1"HomonymEntityLink
+HomonymEntityLinkFilter "0..*" --  "0..1"EntityProperty
+hide empty members
+@enduml

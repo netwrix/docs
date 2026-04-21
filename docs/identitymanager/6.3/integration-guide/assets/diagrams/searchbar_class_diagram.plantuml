@@ -1,0 +1,40 @@
+@startuml component
+package "SearchBar" {
+	class SearchBar {
+		--
+		EntityType : EntityType
+		Menu : MenuItem
+		SearchBarCriteria : SearchBarCriterion[]
+		SearchBarDesignElement : SearchBarDesignElement
+		SearchedBinding : Binding
+		SearchedEntityType : EntityType
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "MenuItem" {
+	class MenuItem {
+	}
+}
+package "SearchBarCriterion" {
+	class SearchBarCriterion {
+	}
+}
+package "SearchBarDesignElement" {
+	class SearchBarDesignElement {
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+SearchBar "0..*" --  "1"EntityType
+SearchBar "0..*" --  "0..1"MenuItem
+SearchBar "1" --  "0..*"SearchBarCriterion
+SearchBar "0..*" --  "1"SearchBarDesignElement
+SearchBar "0..*" --  "0..1"Binding
+SearchBar "0..*" --  "1"EntityType
+hide empty members
+@enduml

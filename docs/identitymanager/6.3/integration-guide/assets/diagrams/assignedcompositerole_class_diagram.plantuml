@@ -1,0 +1,72 @@
+@startuml component
+package "AssignedCompositeRole" {
+	class AssignedCompositeRole {
+		EndDate : DateTime
+		IsDenied : Boolean
+		IsIndirect : Boolean
+		IsInferred : Boolean
+		ManualAssignmentEndDateLockedToContext : Boolean
+		OwnerType : Int64
+		Performer : Int64
+		ReconciliationComment : String
+		RedundantAssignment : Boolean
+		RequestComment : String
+		Requester : Int64
+		ReviewComment1 : String
+		ReviewComment2 : String
+		ReviewComment3 : String
+		Reviewer1 : Int64
+		Reviewer2 : Int64
+		Reviewer3 : Int64
+		RiskReviewComment : String
+		RiskReviewer : Int64
+		StartDate : DateTime
+		WhenPerformed : DateTime
+		WhenReviewed1 : DateTime
+		WhenReviewed2 : DateTime
+		WhenReviewed3 : DateTime
+		WhenRiskReviewed : DateTime
+		WorkflowState : Byte
+		--
+		AccessCertificationItems : AccessCertificationItem[]
+		AssignedCompositeRole1IdentifiedRisks : IdentifiedRisk[]
+		AssignedCompositeRole2IdentifiedRisks : IdentifiedRisk[]
+		Owner : Resource
+		ParametersContext : Context
+		Role : CompositeRole
+		WorkflowInstance : WorkflowInstance
+	}
+}
+package "AccessCertificationItem" {
+	class AccessCertificationItem {
+	}
+}
+package "IdentifiedRisk" {
+	class IdentifiedRisk {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "Context" {
+	class Context {
+	}
+}
+package "CompositeRole" {
+	class CompositeRole {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+AssignedCompositeRole "0..1" --  "0..*"AccessCertificationItem
+AssignedCompositeRole "0..1" --  "0..*"IdentifiedRisk
+AssignedCompositeRole "0..1" --  "0..*"IdentifiedRisk
+AssignedCompositeRole "0..*" --  "1"Resource
+AssignedCompositeRole "0..*" --  "1"Context
+AssignedCompositeRole "0..*" --  "1"CompositeRole
+AssignedCompositeRole "0..*" --  "0..1"WorkflowInstance
+hide empty members
+@enduml

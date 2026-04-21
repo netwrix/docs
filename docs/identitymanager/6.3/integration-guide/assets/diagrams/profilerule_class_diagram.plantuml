@@ -1,0 +1,29 @@
+@startuml component
+package "ProfileRule" {
+	class ProfileRule {
+		IsDenied : Boolean
+		RootExpression : String
+		SubExpression : String
+		--
+		B0 : Binding
+		Context : ProfileRuleContext
+		Profile : Profile
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "ProfileRuleContext" {
+	class ProfileRuleContext {
+	}
+}
+package "Profile" {
+	class Profile {
+	}
+}
+ProfileRule "0..*" --  "0..1"Binding
+ProfileRule "0..*" --  "1"ProfileRuleContext
+ProfileRule "0..*" --  "1"Profile
+hide empty members
+@enduml

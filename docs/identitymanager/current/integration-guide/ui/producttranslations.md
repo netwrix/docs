@@ -8,7 +8,7 @@ sidebar_position: 10
 
 This topic shows how to import product translations into Identity Manager. A product translation means a translation of a Identity Manager's component, for example a button display message, not the translation of a configured component.
 
-Currently in preview mode, Identity Manager supports both left to right and right to left languages.  Use the toggle on the Settings Page to activate right to left languages.
+Identity Manager supports right to left languages in preview mode. See [Activating Preview Features](../../preview-features#activating-preview-features) for setup instructions.
 
 ## JSON Translation File
 

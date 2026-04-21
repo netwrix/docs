@@ -1,0 +1,175 @@
+@startuml component
+package "ResourceType" {
+	class ResourceType {
+		AllowAdd : Boolean
+		AllowRemove : Boolean
+		ApprovalWorkflowType : Int32
+		ArgumentsExpression : String
+		AssignmentCount : Int32
+		BaseRole : Int64
+		BlockProvisioning : Boolean
+		CorrelateMultipleResources : Boolean
+		Description_L1 : String
+		DiscardManualAssignments : Boolean
+		DisplayName_L1 : String
+		FulfillHoursAheadOfTime : Int32
+		FullName_L1 : String
+		HideOnSimplifiedView : Boolean
+		Identifier : String
+		ImplicitApproval : Byte
+		ManualAssignmentEndDateLockedToContextMode : Byte
+		MaximumDelete : Int32
+		MaximumDeletePercent : Int32
+		MaximumInsert : Int32
+		MaximumInsertPercent : Int32
+		MaximumUpdate : Int32
+		MaximumUpdatePercent : Int32
+		OrphanCount : Int32
+		P0 : Boolean
+		ProlongationWithoutApproval : Byte
+		R0 : Boolean
+		RemoveOrphans : Boolean
+		SuggestAllCorrelations : Boolean
+		TransmittedStateValidityPeriod : Int32
+		--
+		AccessCertificationDataFilters : AccessCertificationDataFilter[]
+		AutomationRules : AutomationRule[]
+		Category : Category
+		DependsOn : ResourceType
+		DependsOnChildren : ResourceType[]
+		DependsOnOwnerProperty : EntityProperty
+		FilterResourceTypeEntityInstances : EntityInstance[]
+		Policy : Policy
+		ProfileContexts : ProfileContext[]
+		ProfileRuleContexts : ProfileRuleContext[]
+		ResourceBinaryRules : ResourceBinaryRule[]
+		ResourceClassificationRules : ResourceClassificationRule[]
+		ResourceCorrelationRules : ResourceCorrelationRule[]
+		ResourceNavigationRules : ResourceNavigationRule[]
+		ResourceQueryRules : ResourceQueryRule[]
+		ResourceScalarRules : ResourceScalarRule[]
+		ResourceTypeAssignedResourceTypes : AssignedResourceType[]
+		ResourceTypeIndirectResourceRules : IndirectResourceRule[]
+		ResourceTypeResourceTypeRules : ResourceTypeRule[]
+		ResourceTypeResourceTypesCategories : ResourceTypesCategory[]
+		RiskRuleItems : RiskRuleItem[]
+		RoleMappings : RoleMapping[]
+		SourceEntityType : EntityType
+		TargetEntityType : EntityType
+		TaskResourceType : TaskResourceType[]
+	}
+}
+package "AccessCertificationDataFilter" {
+	class AccessCertificationDataFilter {
+	}
+}
+package "AutomationRule" {
+	class AutomationRule {
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "EntityInstance" {
+	class EntityInstance {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "ProfileContext" {
+	class ProfileContext {
+	}
+}
+package "ProfileRuleContext" {
+	class ProfileRuleContext {
+	}
+}
+package "ResourceBinaryRule" {
+	class ResourceBinaryRule {
+	}
+}
+package "ResourceClassificationRule" {
+	class ResourceClassificationRule {
+	}
+}
+package "ResourceCorrelationRule" {
+	class ResourceCorrelationRule {
+	}
+}
+package "ResourceNavigationRule" {
+	class ResourceNavigationRule {
+	}
+}
+package "ResourceQueryRule" {
+	class ResourceQueryRule {
+	}
+}
+package "ResourceScalarRule" {
+	class ResourceScalarRule {
+	}
+}
+package "AssignedResourceType" {
+	class AssignedResourceType {
+	}
+}
+package "IndirectResourceRule" {
+	class IndirectResourceRule {
+	}
+}
+package "ResourceTypeRule" {
+	class ResourceTypeRule {
+	}
+}
+package "ResourceTypesCategory" {
+	class ResourceTypesCategory {
+	}
+}
+package "RiskRuleItem" {
+	class RiskRuleItem {
+	}
+}
+package "RoleMapping" {
+	class RoleMapping {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "TaskResourceType" {
+	class TaskResourceType {
+	}
+}
+ResourceType "0..1" --  "0..*"AccessCertificationDataFilter
+ResourceType "0..1" --  "0..*"AutomationRule
+ResourceType "0..*" --  "0..1"Category
+ResourceType "0..*" --  "0..1"ResourceType
+ResourceType "0..*" --  "0..1"EntityProperty
+ResourceType "0..1" --  "0..*"EntityInstance
+ResourceType "0..*" --  "1"Policy
+ResourceType "0..1" --  "0..*"ProfileContext
+ResourceType "0..1" --  "0..*"ProfileRuleContext
+ResourceType "1" --  "0..*"ResourceBinaryRule
+ResourceType "1" --  "0..*"ResourceClassificationRule
+ResourceType "1" --  "0..*"ResourceCorrelationRule
+ResourceType "1" --  "0..*"ResourceNavigationRule
+ResourceType "1" --  "0..*"ResourceQueryRule
+ResourceType "1" --  "0..*"ResourceScalarRule
+ResourceType "1" --  "0..*"AssignedResourceType
+ResourceType "1" --  "0..*"IndirectResourceRule
+ResourceType "1" --  "0..*"ResourceTypeRule
+ResourceType "1" --  "0..*"ResourceTypesCategory
+ResourceType "1" --  "0..*"RiskRuleItem
+ResourceType "1" --  "0..*"RoleMapping
+ResourceType "0..*" --  "1"EntityType
+ResourceType "0..*" --  "1"EntityType
+ResourceType "1" --  "0..*"TaskResourceType
+hide empty members
+@enduml
