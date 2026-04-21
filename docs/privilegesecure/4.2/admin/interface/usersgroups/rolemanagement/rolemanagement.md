@@ -16,15 +16,15 @@ The pane on the left side of the page displays a list of the configured roles. T
 following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Blue + button — Create a new role. See the [Add Custom Role](/docs/privilegesecure/4.2/admin/interface/usersgroups/rolemanagement/customrole.md) for additional
-  information.
+information.
 - Copy icon — Clones a role and adds a new entry to the Role list
 - Trashcan icon — Deletes the access policy. Icon appears when policy is hovered over. A
-  confirmation window will display.
+confirmation window will display.
 
 :::note
-The default Administrator, User, and Reviewer roles cannot be copied, deleted, or
+The default Administrator, User, and Reviewer roles can't be copied, deleted, or
 modified. Only custom roles can be copied, deleted, or modified.
 :::
 

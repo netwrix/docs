@@ -23,11 +23,11 @@ The following controls are available in the top right corner of the Sessions int
 
 - Resolution options:
 
-    - Dynamic
-    - 1280x720
-    - 1920x1080
-    - 2560x1440
-    - 3840x2160
+- Dynamic
+- 1280x720
+- 1920x1080
+- 2560x1440
+- 3840x2160
 
 - Ctrl+Alt+Delete — Sends a Ctrl+Alt+Delete command to the session
 - Close — Closes the session

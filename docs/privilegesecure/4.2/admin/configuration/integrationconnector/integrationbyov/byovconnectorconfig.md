@@ -17,7 +17,7 @@ post-session actions, or when you need to use an unmanaged Secret Vault credenti
 ## Set Up an Integration Connector
 
 Begin by setting up an Integration Connector for using Netwrix Privilege Secure as a BYOV Connector.
-Ensure that the account you wish to use for your activity is managed by Privilege Secure or is
+Ensure that the account you want to use for your activity is managed by Privilege Secure or is
 contained within a Secret Vault resource in Privilege Secure.
 
 :::note
@@ -28,7 +28,7 @@ it. Otherwise, there will be no vaulted password in the Netwrix Privilege Secure
 
 ### Configure the Activity Connector
 
-Follow the steps to configure an Activity Connector.
+To configure an Activity Connector.
 
 **Step 1 –** In the Netwrix Privilege Secure console, navigate to the **Configuration** menu, and
 the **Integration Connectors** submenu.
@@ -40,15 +40,15 @@ the **Integration Connectors** submenu.
 - Connector Name – Enter a name to uniquely identify the connector
 - Connector Description (Optional) – Enter a brief description to identify the service account
 - Connector Template – A selection of templates for connector configurations. Select **BYOV** from
-  the drop-down list.
+the dropdown list.
 - API Url – The base URL for the API being used for the vault integration. Ex:
-  http://localhost:6500.
+http://localhost:6500.
 - App ID – The application ID for the vault. Enter **SbPAM**.
 - Client Certificate – The base 64 string from the certificate file being used to authenticate to
-  the vault. Leave blank.
+the vault. Leave blank.
 - Advanced – Use this section to override the default behavior of the connector by providing a
-  custom PowerShell script. Click on the **Advanced** section to edit the Checkout Script Block and
-  the Checkin Script Block or Skip the Certificate Check.
+custom PowerShell script. Click the **Advanced** section to edit the Checkout Script Block and
+the Checkin Script Block or Skip the Certificate Check.
 - Skip Certificate Check – Select the checkbox
 
 ![BYOV Connector for Privilege Secure](/images/privilegesecure/4.2/accessmanagement/admin/configuration/add/byovconnectornps.webp)
@@ -179,22 +179,22 @@ information on configuring a BYOV connector.
 
 After you configure the integration connector, create a manually-managed user.
 
-Follow the steps to create a manually-managed user.
+To create a manually-managed user.
 
 **Step 1 –** Navigate to **Dashboard** > **Credentials** tab.
 
 ![Select a User to manage account](/images/privilegesecure/4.2/accessmanagement/admin/configuration/add/byovmanageuser.webp)
 
-**Step 2 –** Search or scroll to find the user you wish to manage. Once identified, check the box
+**Step 2 –** Search or scroll to find the user you want to manage. Once identified, check the box
 next to the account name.
 
 ![Select Manual manage account](/images/privilegesecure/4.2/accessmanagement/admin/configuration/add/byovmanualmanageaccount.webp)
 
-**Step 3 –** Click on the **Manage** button that becomes available above the list, and select
+**Step 3 –** Click the **Manage** button that becomes available above the list, and select
 **Manual**.
 
 :::note
-Ensure the user is not already managed or added into Privilege Secure.
+Ensure the user isn't already managed or added into Privilege Secure.
 :::
 
 
@@ -207,21 +207,21 @@ After you manually manage the account, set the password for it. The following
 icons should be visible: Wrench (Set Password), Clipboard (Copy Password to Clipboard), and
 Information (View Password).
 
-Follow the steps to set an account password.
+To set an account password.
 
 **Step 1 –** Navigate to **Dashboard** > **Credentials** tab and locate the manually managed
 account.
 
 ![Managed User Wrench Icon](/images/privilegesecure/4.2/accessmanagement/admin/configuration/add/byovmanageuserwrench.webp)
 
-**Step 2 –** Click on the **Wrench** icon to set the password.
+**Step 2 –** Click the **Wrench** icon to set the password.
 
 ![Set password for the credential window](/images/privilegesecure/4.2/accessmanagement/admin/configuration/add/byovsetpassword.webp)
 
 **Step 3 –** Enter a password to match the AD password, then click **Save**.
 
 :::note
-For versions before Privilege Secure 4.1, [contact Support](https://netwrix.com/en/support/) because the Set Password feature is not available.
+For versions before Privilege Secure 4.1, [contact Support](https://netwrix.com/en/support/) because the Set Password feature isn't available.
 :::
 
 
@@ -233,7 +233,7 @@ topic for additional information on manually managing an account.
 
 After you set the password for the account, create an activity for the BYOV connector.
 
-Follow the steps to create an activity.
+To create an activity.
 
 **Step 1 –** Navigate to **Policy** tab > **Activities**.
 
@@ -245,16 +245,16 @@ Follow the steps to create an activity.
 - Description — Description of the policy
 - Platform — Displays the type of platform, which defines the resource
 - Login Account — Displays the account used to log onto the resource. Select **Vault** from the drop
-  down menu.
+down menu.
 - Activity Type — Controls the type of actions for the activity. Select **Interactive** from the
-  drop down menu.
+dropdown menu.
 - Vault Connector — Displays a list of previously configured vault connectors. Select the vault
-  connector created from the steps above.
+connector created from the steps above.
 
 :::note
-You may use accounts stored in a Vault and added as a resource once the integration is
+You may use accounts stored in a Vault and added as a resource after the integration is
 created. Also, you may apply domain or other local accounts managed by Netwrix Privilege Secure, but
-the password must be rotated once prior to use with an activity.
+the password must be rotated once before use with an activity.
 :::
 
 
@@ -275,7 +275,7 @@ Activity.
 
 After you create an Activity, configure a new Policy.
 
-Follow the steps to create a Policy.
+To create a Policy.
 
 **Step 1 –** Navigate to the **Policy** tab > **Access Policy**.
 
@@ -285,21 +285,21 @@ Follow the steps to create a Policy.
 [Add Access Policy](/docs/privilegesecure/4.2/admin/interface/accesspolicy/accesspolicy_1.md) topic for additional information.
 
 - Set the Type as **Resource Based** and select a Connection Profile, with **Default** being
-  sufficient for most setups.
+sufficient for most setups.
 
 **Step 3 –** Click **Save** to create the Access Policy.
 
-**Step 4 –** Once the Access Policy is created, add the following:
+**Step 4 –** after the Access Policy is created, add the following:
 
 - Users to the Policy. See the
-  [Users Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/users.md) topic for
-  additional information.
+[Users Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/users.md) topic for
+additional information.
 - Activity created for the BYOV Connector. See the
-  [Activities Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/activities/activities.md)
-  topic for additional information.
+[Activities Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/activities/activities.md)
+topic for additional information.
 - Associated resources intended for this Activity. See the
-  [Resources Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/resources/resources.md)
-  topic for additional information.
+[Resources Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/resources/resources.md)
+topic for additional information.
 
 See the [Add Access Policy](/docs/privilegesecure/4.2/admin/interface/accesspolicy/accesspolicy_1.md) topic for additional information on
 creating an Access Policy.

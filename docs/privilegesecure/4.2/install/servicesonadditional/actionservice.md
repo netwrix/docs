@@ -16,20 +16,20 @@ information.
 
 :::note
 Before you begin, the NPS Proxy Service must be registered with a corresponding
-application server on the server you will be installing the Action Service prior to installation.
+application server on the server you will be installing the Action Service before installation.
 The Proxy Service is installed as part of the Action Service installation package. See the
 [Proxy Service Install](/docs/privilegesecure/4.2/install/servicesonadditional/proxyservice.md) topic for installation instructions.
 :::
 
 
-Follow the steps to install the NPS Action Service on another server.
+To install the NPS Action Service on another server.
 
 :::tip
 Remember, You must configure the Antivirus exclusions according to the [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
 knowledge base article.
 :::
 
-**Step 1 –** Make sure that you have configured the Antivirus exclusions according to the following
+**Step 1 –** ensure that you have configured the Antivirus exclusions according to the following
 Netwrix knowledge base article: [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
 
 **Step 2 –** Move the NPS.ActionService.exe installation package to the desktop of the remote
@@ -46,8 +46,7 @@ wizard will open.
 
 **Step 5 –** Enter the destination folder for installation and click OK.
 
-**Step 6 –** Read the End User License Agreement and check the I accept the terms in the License
-Agreement checkbox.
+**Step 6 –** Read the End User License Agreement and accept the license terms.
 
 **Step 7 –** Click Install to begin the installation. The setup wizard displays the installation
 progress.
@@ -64,11 +63,11 @@ If the Action Service is installed on a remote machine, it must be configured to
 Privilege Secure server. This configuration is done by supplying the Privilege Secure server and
 credentials in a command line utility.
 
-Follow the steps to configure the key exchange.
+To configure the key exchange.
 
 **Step 1 –** On the application server, run **cmd** as Administrator.
 
-**Step 2 –** Type the following commands to export the encryption keys for the secondary:
+**Step 2 –** Enter the following commands to export the encryption keys for the secondary:
 
 
 Encryption Key Export
@@ -81,7 +80,7 @@ cd C:\Program Files\Stealthbits\PAM\KeyTools
 **Step 3 –** Take note of the password for the export file.
 
 :::warning
-This temporary password protects the NPS-AM encryption keys during copying. Do not save
+This temporary password protects the NPS-AM encryption keys during copying. don't save
 it to digital media or transmit it with the encryption key package.
 :::
 
@@ -91,7 +90,7 @@ server.
 
 **Step 5 –** On the (Action/Scheduler/Siem) service server, run cmd as Administrator.
 
-**Step 6 –** Type the following commands to import the encryption keys:
+**Step 6 –** Enter the following commands to import the encryption keys:
 
 
 Encryption Key Import
@@ -107,7 +106,7 @@ cd C:\Program Files\Stealthbits\PAM\KeyTools
 
 The key exchange is now configured.
 
-Follow the steps to configure the Action Service.
+To configure the Action Service.
 
 **Step 1 –** Open a command prompt as an administrator.
 
@@ -119,16 +118,16 @@ C:\Program Files\Stealthbits\PAM\ActionService\
 **Step 3 –** Run the following command to automatically register the action service. Enter the Admin
 password when prompted:
 
-- The `[PrivilegeSecureServer]` parameter is the Host Name, IP, FQDN or URL
+- The `[PrivilegeSecureServer]` parameter is the Host Name, IP, FQDN, or URL
 - The default `[Port]` parameter is 6500
 - The [admin] should be an NPS administrator in "DOMAIN\username" format
 
 ActionService.exe –register -u admin [PrivilegeSecureServer:Port]
 
-- For installations without a trusted https certificate on the Privilege Secure server, the “-I”
-  parameter must be added:
+- For installations without a trusted https certificate on the Privilege Secure server, the `-I`
+parameter must be added:
 
-ActionService.exe –register -u admin -I [PrivilegeSecureServer:Port]
+`ActionService.exe –register -u admin -I [PrivilegeSecureServer:Port]`
 
 - The command prompt will show if the configuration was successful.
 

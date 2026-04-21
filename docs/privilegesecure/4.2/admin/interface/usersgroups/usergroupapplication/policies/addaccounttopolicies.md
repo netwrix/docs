@@ -14,7 +14,7 @@ created in the [ Policy Interface](/docs/privilegesecure/4.2/admin/interface/int
 The window has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Available Policies — Shows all available policies
 - Policies s to Add — Shows selected policies
 - Arrow icons — Use the arrows to move selection in and out of the Policies to Add section
@@ -34,7 +34,7 @@ Follow the steps below to add a policy to the present account.
 
 **Step 1 –** Navigate to the **Users & Groups** page.
 
-**Step 2 –** In the Users & Groups list, click the name of the desired account to open the User
+**Step 2 –** In the Users & Groups list, click the name of the account you want to open the User
 page.
 
 **Step 3 –** Select the **Policies** tab.

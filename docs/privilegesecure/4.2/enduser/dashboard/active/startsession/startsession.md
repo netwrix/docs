@@ -16,12 +16,12 @@ Also note the icons to view and copy the password for the session as plain text,
 enabled in the access policy Connection Profiles.
 
 - Copy to Clipboard icon — Click to copy the password for the session as plain text. For
-  resource–based activities for end users, this is only available if enabled in the activity's
-  Access Policy. The password can always be viewed for credential–based activities.
+resource–based activities for end users, this is only available if enabled in the activity's
+Access Policy. The password can always be viewed for credential–based activities.
 - View Password icon — Click to view the password for the session as plain text. For resource–based
-  activities for end users, this is only available if enabled in the activity's Access Policy. The
-  password can always be viewed for credential–based activities. To view a password, select the Eye
-  icon. Users will have 20 seconds to view the password or copy it.
+activities for end users, this is only available if enabled in the activity's Access Policy. The
+password can always be viewed for credential–based activities. To view a password, select the Eye
+icon. Users will have 20 seconds to view the password or copy it.
 - Connection icon — Click the icon to begin the activity session.
 
 Alternatively, configure any RDP / SSH Manager for remote login, including:
