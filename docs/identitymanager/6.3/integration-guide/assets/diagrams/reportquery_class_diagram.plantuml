@@ -1,0 +1,23 @@
+@startuml component
+package "ReportQuery" {
+	class ReportQuery {
+		DisplayName_L1 : String
+		Identifier : String
+		Query : String
+		--
+		ReportQueryMenuItems : MenuItem[]
+		ReturnedEntityType : EntityType
+	}
+}
+package "MenuItem" {
+	class MenuItem {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+ReportQuery "0..1" --  "0..*"MenuItem
+ReportQuery "0..*" --  "1"EntityType
+hide empty members
+@enduml

@@ -1,0 +1,20 @@
+@startuml component
+package "TaskDimension" {
+	class TaskDimension {
+		--
+		Dimension : Dimension
+		Task : Task
+	}
+}
+package "Dimension" {
+	class Dimension {
+	}
+}
+package "Task" {
+	class Task {
+	}
+}
+TaskDimension "0..*" --  "1"Dimension
+TaskDimension "0..*" --  "1"Task
+hide empty members
+@enduml

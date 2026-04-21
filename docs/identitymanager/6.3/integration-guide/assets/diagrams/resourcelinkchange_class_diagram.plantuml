@@ -1,0 +1,10 @@
+@startuml component
+package "ResourceLinkChange" {
+	class ResourceLinkChange {
+		ChangeOperation : Int32
+		JobInstance : Int64
+		Type : Int64
+	}
+}
+hide empty members
+@enduml

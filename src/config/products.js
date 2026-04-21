@@ -283,6 +283,20 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: 'current',
+        label: 'Current',
+        isLatest: true,
+        sidebarFile: './sidebars/identitymanager/current.js',
+        customRoutePath: 'docs/identitymanager/current',
+        customDocPath: 'docs/identitymanager/current',
+      },
+      {
+        version: '6.3',
+        label: '6.3',
+        isLatest: false,
+        sidebarFile: './sidebars/identitymanager/6.3.js',
+      },
+      {
         version: '6.2',
         label: '6.2',
         isLatest: false,
@@ -293,14 +307,6 @@ export const PRODUCTS = [
         label: '6.1',
         isLatest: false,
         sidebarFile: './sidebars/identitymanager/6.1.js',
-      },
-      {
-        version: 'current',
-        label: '6.3',
-        isLatest: true,
-        sidebarFile: './sidebars/identitymanager/current.js',
-        customRoutePath: 'docs/identitymanager/current',
-        customDocPath: 'docs/identitymanager/current',
       },
     ],
     defaultVersion: 'current',

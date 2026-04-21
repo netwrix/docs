@@ -21,7 +21,7 @@ A menu item displays grouped navigation actions.
 |---|---|
 | DisplayName_L1 optional | **Type:** String **Description:** Display name of the menu item in language 1 (up to 16). |
 | EntityType optional | **Type:** Int64 **Description:** Represents the linked entity type. |
-| IconCode optional | **Type:** String **Description:** Code of one of [Microsoft's fabric icons](https://uifabricicons.azurewebsites.net/) to be displayed with the menu item. **Note:** on Microsoft page, see the icons' codes by moving the mouse over the icons, or using the detailed view. |
+| IconCode optional | **Type:** String **Description:** Code of one of [Microsoft's fabric icons](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons#available-icons) to be displayed with the menu item. **Note:** on Microsoft page, see the icons' codes by moving the mouse over the icons, or using the detailed view. |
 | Identifier required | **Type:** String **Description:** Unique identifier of the item. |
 | IsExpandedByDefault <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** Is an expanded by default menu item. |
 | IsSelfForm <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is a self form menu item. |

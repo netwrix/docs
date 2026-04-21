@@ -1,0 +1,28 @@
+@startuml component
+package "DisplayEntityType" {
+	class DisplayEntityType {
+		Color : String
+		D0IsActive : Boolean
+		HideRoles : Boolean
+		IconCode : String
+		IsHierarchical : Boolean
+		MinSearchLength : Int32
+		PluralDisplayName_L1 : String
+		Priority : Int32
+		--
+		AutocompleteBinding : Binding
+		Properties : DisplayEntityProperty[]
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "DisplayEntityProperty" {
+	class DisplayEntityProperty {
+	}
+}
+DisplayEntityType "0..*" --  "0..1"Binding
+DisplayEntityType "1" --  "0..*"DisplayEntityProperty
+hide empty members
+@enduml
