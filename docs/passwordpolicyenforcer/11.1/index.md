@@ -17,7 +17,7 @@ A typical Windows network has both domain and local user accounts. Password Poli
 - 10 megabytes free RAM (75 megabytes if using [Argon2](admin/manage-policies/rules/history_rule.md#hash-function) hashes)
 
 :::note
-The disk space requirement doesn't include the compromised database. If you want to block known compromised passwords, then add 30 gigabytes of disk space. You can keep the database locally or on a network share. The initial download and extraction requires approximately 100 gigabytes temporarily. Subsequent updates are significanly smaller as they only contain new records. These estimates will increase over time as the database grows.
+The disk space requirement doesn't include the compromised database. If you want to block known compromised passwords, then add 30 gigabytes of disk space. You can keep the database locally or on a network share. The initial download and extraction requires approximately 100 gigabytes temporarily. Subsequent updates are significantly smaller as they only contain new records. These estimates will increase over time as the database grows.
 :::
 
 
@@ -40,7 +40,7 @@ This component sends email from Password Policy Enforcer to your mail server. Al
 The Password Policy Client helps users to choose a compliant password by showing them the password policy rules, and also which rules they don't comply with. This component is optional, but very beneficial. It works on all operating systems listed in the System Requirements section, but you'll typically only install it on users' computers and virtual desktops.
 
 ### Password Policy Enforcer Web
-Password Policy Enforcer Web is an optional component that runs on Microsoft Internet Information Services (IIS). It has similar features to the client, but via a web interface. It is ideal for customers that would prefer not to install the Password Policy Client, and those wanting to integrate an Active Directory password change feature into their own applications.
+Password Policy Enforcer Web is an optional component that runs on Microsoft Internet Information Services (IIS). It has similar features to the client, but via a web interface. Use Password Policy Enforcer Web if you prefer not to install the Password Policy Client, or if you want to integrate Active Directory password changes into your own applications.
 
 :::note
 The [Similarity rule](admin/manage-policies/rules/similarity_rule.md) only works when users change passwords from the Password Policy Client, Password Policy Enforcer Web, or Netwrix Password Reset.
