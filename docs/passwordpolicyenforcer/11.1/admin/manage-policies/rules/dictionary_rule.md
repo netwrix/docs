@@ -132,8 +132,8 @@ that all computers have a local copy of the updated and sorted file.
 The custom dictionary should meet the following requirements:
 
 1. The dictionary should begin and end with a blank line.
-2. All words are capitalized.
-3. The sort button is pressed after pointing to a file in the dictionary rule.
+2. Capitalize all words.
+3. Press the Sort button after pointing to a file in the dictionary rule.
 
 :::note
 If you are using a custom dictionary, use a different filename. The default

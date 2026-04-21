@@ -49,8 +49,7 @@ Turn on **Verbose Logging** to view the performed tests and results.
 
 ## Bulk Password Test
 
-Bulk Password Test feature allows to check a large number of passwords against a selected policy and
-a get a report of the accepted and rejected passwords.
+The Bulk Password Test feature lets you check a large number of passwords against a selected policy and get a report of the accepted and rejected passwords.
 
 **Step 1 –** Click **Test policy** from the Configuration Console dashboard or when you are setting
 up a policy.
