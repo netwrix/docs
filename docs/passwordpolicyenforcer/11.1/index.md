@@ -5,90 +5,43 @@ sidebar_position: 1
 ---
 
 # Netwrix Password Policy Enforcer v11.1
+Netwrix Password Policy Enforcer (PPE) helps you secure your network by ensuring users choose strong passwords. Password Policy Enforcer rejects new passwords that don't comply with your password policy. If you install the optional Password Policy Client, users can also see which rules their password didn't comply with.
 
-Netwrix Password Policy Enforcer helps secure your network by ensuring users set strong passwords.
-When a user enters a password that doesn't comply with the password policy, Password Policy
-Enforcer immediately rejects the password and details why the password was rejected.
+A typical Windows network has both domain and local user accounts. Password Policy Enforcer can enforce password policies for both account types, but you will most likely use it for domain accounts in Active Directory.
 
-# Requirements
 
-Netwrix Password Policy Enforcer 11 can be installed for both domain and local user accounts.
+## System Requirements
+- Windows Server 2016, 2019, 2022, and 2025
+- Windows 10 and 11
+- 50 megabytes free disk space
+- 10 megabytes free RAM (75 megabytes if using [Argon2](admin/manage-policies/rules/history_rule.md#hash-function) hashes)
 
-Domain user accounts exist in Active Directory. Information about these accounts is kept on the
-domain controllers, and changes to the accounts are replicated amongst the domain controllers.
+:::note
+The disk space requirement doesn't include the compromised database. If you want to block known compromised passwords, then add 30 gigabytes of disk space. You can keep the database locally or on a network share. The initial download and extraction requires approximately 100 gigabytes temporarily. Subsequent updates are significanly smaller as they only contain new records. These estimates will increase over time as the database grows.
+:::
 
-Local user accounts exist in the SAM database of workstations and servers. The workstations and
-servers may be standalone, or domain members. Information about these accounts is only kept on the
-host computer, and doesn't replicate to any other computers.
 
-A typical Windows network has both domain and local user accounts, but you may not want to enforce
-Password Policy Enforcer password policies for both account types. If your users normally log on with
-a domain account, then you will most likely only use Password Policy Enforcer to enforce password
-policies for the domain accounts.
+## System Components
 
-Password Policy/Web is installed on a Windows server and accessed via user browsers.
+### Password Policy Enforcer Server (PPS)
+The PPS is the component that enforces the password policy. Install it on all the domain controllers to enforce a password policy for Active Directory user accounts. You can also install the PPS on individual servers and workstations to enforce a password policy for local user accounts on those computers.
 
-## Password Policy Enforcer Server
+### Configuration Console
+The Configuration Console configures PPE. You will typically install this on your own computer or a management server, but you can also install it on the domain controllers. The Configuration Console also includes some PowerShell cmdlets. Use of the cmdlets is optional.
 
-Here are the requirements for both the full and evaluation Password Policy Enforcer installations.
+The Configuration Console has some additional requirements:
+ - [.NET Desktop Runtime 8.0.15 or higher](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.26-windows-x64-installer?cid=getdotnetcore)
+ - [PowerShell 7.4 or higher](https://github.com/powershell/powershell/releases) if you intend to use the cmdlets
 
-- Windows Server Versions (64 bit):
+### Password Policy Enforcer Mailer Service
+This component sends email from Password Policy Enforcer to your mail server. Although not required, several PPE features use it, so you'll most likely want to install it on one server in the domain. This component requires the [.NET Desktop Runtime 8.0.15 or higher](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.26-windows-x64-installer?cid=getdotnetcore).
 
-- 2016
-- 2019
-- 2022
-- 2025
+### Password Policy Enforcer Client
+The Password Policy Client helps users to choose a compliant password by showing them the password policy rules, and also which rules they don't comply with. This component is optional, but very beneficial. It works on all operating systems listed in the System Requirements section, but you'll typically only install it on users' computers and virtual desktops.
 
-- Windows Workstation Versions (64 bit only)
+### Password Policy Enforcer Web
+Password Policy Enforcer Web is an optional component that runs on Microsoft Internet Information Services (IIS). It has similar features to the client, but via a web interface. It is ideal for customers that would prefer not to install the Password Policy Client, and those wanting to integrate an Active Directory password change feature into their own applications.
 
-- 10
-- 11
-
-- PowerShell 7.4 or higher
-
-## Password Policy Enforcer Client
-
-Here are the requirements for both the full and evaluation Password Policy Enforcer installations.
-
-- Windows Server Versions (64 bit):
-
-- 2016
-- 2019
-- 2022
-- 2025
-
-- Windows Workstation Versions (64 and 32 bit)
-
-- 10
-- 11
-
-## Password Policy Enforcer Configuration Console
-
-Here are the requirements for both the full and evaluation Password Policy Enforcer installations.
-
-- Windows Server Versions (64 bit):
-
-- 2016
-- 2019
-- 2022
-- 2025
-
-- Windows Workstation Versions (64 and 32 bit)
-
-- 10
-- 11
-
-- .NET Desktop Runtime 8.0.15 or higher
-
-## Password Policy Enforcer Web
-
-Here are the requirements for the Password Policy Enforcer Web. Password Policy Enforcer Web can
-share server resources with other applications. It can be installed on an existing, well secured web
-server.
-
-- Windows Server Versions:
-
-    - 2016
-    - 2019
-    - 2022
-    - Microsoft IIS
+:::note
+The [Similarity rule](admin/manage-policies/rules/similarity_rule.md) only works for password changes made from the Password Policy Client, Password Policy Enforcer Web, or Netwrix Password Reset.
+:::

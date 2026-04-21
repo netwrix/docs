@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # PPE cmdlets
 
-The PPE Cmdlets are available to manage Password Policy Enforcer from a Windows PowerShell. The
+Cmdlets are available to manage Password Policy Enforcer from a Windows PowerShell. The
 cmdlets aren't case-sensitive.
 
 Starting with version **11.1**, the PowerShell cmdlets are built on .NET 8.0 and require PowerShell version 7.5 or newer to function.
@@ -18,7 +18,7 @@ To establish the connection:
 the **Run as Administrator** option.
 
 **Step 2 –** Import the PPE cmdlets module:
-**Import-Module "C:\Program Files\Netwrix\Password Policy Enforcer\PS\PPEConf.PowerShell.dll"**
+**Import-Module "$env:ProgramFiles\Netwrix\Password Policy Enforcer\PS\PPEConf.PowerShell.dll"**
 
 **Step 3 –** Connect to your domain:
 **Connect-PPE -d "_domain_"** where _domain_ is the full name of your domain controller.
