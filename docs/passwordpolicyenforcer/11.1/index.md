@@ -43,5 +43,5 @@ The Password Policy Client helps users to choose a compliant password by showing
 Password Policy Enforcer Web is an optional component that runs on Microsoft Internet Information Services (IIS). It has similar features to the client, but via a web interface. It is ideal for customers that would prefer not to install the Password Policy Client, and those wanting to integrate an Active Directory password change feature into their own applications.
 
 :::note
-The [Similarity rule](admin/manage-policies/rules/similarity_rule.md) only works for password changes made from the Password Policy Client, Password Policy Enforcer Web, or Netwrix Password Reset.
+The [Similarity rule](admin/manage-policies/rules/similarity_rule.md) only works when users change passwords from the Password Policy Client, Password Policy Enforcer Web, or Netwrix Password Reset.
 :::
