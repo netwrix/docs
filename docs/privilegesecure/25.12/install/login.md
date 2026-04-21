@@ -31,7 +31,7 @@ firewalls.
 
 Users can still log in with an expired license. If a license is expired, and the login attempt does
 not exceed the license count, users will still be able to log in. If a license is expired, and the
-login attempt does exceed the license count, Privilege Secure will prevent the login.
+login attempt does exceed the license count, Privilege Secure will prevent the login.
 
 :::warning
 If your license is expired, and you can still log in, you will not be able to create
@@ -41,12 +41,12 @@ activity sessions or new users.
 
 To log in to the Privilege Secure Console.
 
-**Step 1 –** Open Privilege Secure in a browser window. The Login screen will show the
-Authentication Connector that is set as the default.
+**Step 1 –** Open Privilege Secure in a browser window. The Login screen shows the
+Authentication Connector set as the default.
 
 :::note
 Privilege Secure requires a multi-factor authentication (MFA) solution (Authenticator,
-DUO, Symantec VIP, etc) for all user accounts unless otherwise configured in the Initial Set Up
+DUO, Symantec VIP, etc.) for all user accounts unless otherwise configured in the Initial Set Up
 Wizard. If required, first time users must register with an MFA to use with their login credentials.
 :::
 
@@ -73,7 +73,7 @@ enter the user credentials.
 ![Dashboard Interface](/images/privilegesecure/25.12/accessmanagement/enduser/active.png)
 
 :::note
-After five incorrect login attempts, the user will be locked out of the account for five
+After five incorrect login attempts, the user is locked out of the account for five
 minutes. Additional incorrect login attempts will extend this time by five minutes for each failed
 login. See the
 [User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md) topic for

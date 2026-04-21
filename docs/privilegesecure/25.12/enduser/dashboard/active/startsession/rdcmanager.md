@@ -167,7 +167,7 @@ User Name Format:
 `\<connection string>`
 
 :::note
-The user name starts with \_\_ (back slash).
+The user name starts with \_\_ (back slash).
 :::
 
 

@@ -12,11 +12,11 @@ session to be automatically connected to the resource.
 
 ![startsessionrag](/images/privilegesecure/4.2/remoteaccessgateway/enduser/dashboard/startsessionrag.webp)
 
-Clicking the **Session** icon via the Active Dashboard will launch a session on the Sessions tab.
+Clicking the **Session** icon via the Active Dashboard launches a session on the Sessions tab.
 
 ![sessionwindowrag](/images/privilegesecure/4.2/remoteaccessgateway/enduser/dashboard/sessionwindowrag.webp)
 
-The Rec icon is displayed in the top right corner of the session to indicate that the Proxy Service
+The Rec icon appears in the top right corner of the session to indicate that the Proxy Service
 is recording the session.
 
 The following controls are available in the top right corner of the Sessions interface.
@@ -34,5 +34,5 @@ The following controls are available in the top right corner of the Sessions int
 
 ![sessionstabrag](/images/privilegesecure/4.2/remoteaccessgateway/enduser/dashboard/sessionstabrag.webp)
 
-Clicking on the **Sessions** tab will display a list of all available sessions and allow the user to
+Clicking on the **Sessions** tab displays a list of all available sessions and allow the user to
 switch between sessions.

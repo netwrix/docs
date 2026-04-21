@@ -15,8 +15,7 @@ Click the expand icon for an active session on the [Active Dashboard](/docs/priv
 
 ![Active Session expanded](/images/privilegesecure/4.2/accessmanagement/admin/dashboard/window/activesessionexpand.webp)
 
-If the user has logged into the activity session more than once, multiple session recordings will
-display. Only the current session can be viewed live. See the
+If the user has logged into the activity session more than once, multiple session recordings display. Only the current session can be viewed live. See the
 [Replay Viewer Window](/docs/privilegesecure/4.2/admin/dashboard/historical/replayviewer.md) topic for additional information on recorded sessions.
 
 There are two types of Live Session Viewer windows:
@@ -37,7 +36,7 @@ The Live Session Viewer for RDP Sessions window has the following features:
 Action options
 
 - Terminate Session icon – Click the icon to disconnect the user and end the session. A confirmation
-window will appear. See the [Terminate Proxy Session Window](/docs/privilegesecure/4.2/admin/dashboard/active/terminateproxysession.md) topic for
+window appears. See the [Terminate Proxy Session Window](/docs/privilegesecure/4.2/admin/dashboard/active/terminateproxysession.md) topic for
 additional information.
 - Lock icon – Opens the Lock Session window to prevent the user from interacting with the host but
 keeps the session active. See the [Lock Session](/docs/privilegesecure/4.2/admin/dashboard/active/locksession.md) topic for additional information.
@@ -56,10 +55,10 @@ actions were executed and not when the user was logged on to the resource.
 Activity Details
 
 - Time line — Displays activity as it occurs in real-time during the session in the pane to the left
-of the player. By default this time line will include keystroke activity.
+of the player. By default this time line includes keystroke activity.
 
 :::note
-If RDP Session Monitoring is enabled, then it will also include Windows metadata
+If RDP Session Monitoring is enabled, then it also includes Windows metadata
 activity in the time line. This monitoring requires the Netwrix Privilege Secure Remote Desktop
 Monitor service to be installed on the target host. See the
 [Install Remote Desktop Monitor Service on Target RDP Hosts](/docs/privilegesecure/4.2/install/servicesonadditional/rdpmonitor.md)
@@ -78,7 +77,7 @@ The Live Session Viewer for SSH Sessions window has the following features:
 Action options
 
 - Terminate Session icon – Click the icon to disconnect the user and end the session. A confirmation
-window will appear. See the [Terminate Proxy Session Window](/docs/privilegesecure/4.2/admin/dashboard/active/terminateproxysession.md) topic for
+window appears. See the [Terminate Proxy Session Window](/docs/privilegesecure/4.2/admin/dashboard/active/terminateproxysession.md) topic for
 additional information.
 - Lock icon – Opens the Lock Session window to prevent the user from interacting with the host but
 keeps the session active. See the [Lock Session](/docs/privilegesecure/4.2/admin/dashboard/active/locksession.md) topic for additional information.
@@ -97,7 +96,7 @@ actions were executed and not when the user was logged on to the resource.
 Activity Details
 
 - Time line — Displays activity as it occurs in real-time during the session in the pane to the left
-of the player. By default this time line will include keystroke activity.
+of the player. By default this time line includes keystroke activity.
 
 Other Details
 
@@ -117,7 +116,7 @@ The Live Session Viewer for Recording Sessions window has the following features
 Action options
 
 - Terminate Session icon – Click the icon to disconnect the user and end the session. A confirmation
-window will appear. See the [Terminate Proxy Session Window](/docs/privilegesecure/4.2/admin/dashboard/active/terminateproxysession.md) topic for
+window appears. See the [Terminate Proxy Session Window](/docs/privilegesecure/4.2/admin/dashboard/active/terminateproxysession.md) topic for
 additional information.
 - Lock icon – Opens the Lock Session window to prevent the user from interacting with the host but
 keeps the session active. See the [Lock Session](/docs/privilegesecure/4.2/admin/dashboard/active/locksession.md) topic for additional information.

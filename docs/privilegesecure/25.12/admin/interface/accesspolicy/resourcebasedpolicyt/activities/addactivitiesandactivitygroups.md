@@ -43,9 +43,9 @@ The Add Activities and Groups window has the following features:
 
 - Search – Searches the table or list for matches to the search string. When matches are found, the
 table or list is filtered to the matching results.
-- Available Activities and Groups – Shows all activities and groups that have been added to the
+- Available Activities and Groups – Shows all activities and groups that are added to the
 console
-- Activities and Groups to Add – Shows all activities and groups that have been added to the
+- Activities and Groups to Add – Shows all activities and groups that are added to the
 protection policy
 - Column headers can be sorted in ascending or descending order
 

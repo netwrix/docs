@@ -14,7 +14,7 @@ To add activities to the console.
 
 ![Add an Activity](/images/privilegesecure/4.2/accessmanagement/admin/policy/add/addactivity.webp)
 
-**Step 3 –** Enter the information for the activity you want. The configuration options will vary
+**Step 3 –** Enter the information for the activity you want. The configuration options varies
 depending on each selection.
 
 The pane on the left side of the page displays a list of the configured activities. This pane has
@@ -26,7 +26,7 @@ table or list is filtered to the matching results.
 - Copy icon — Clones the activity and adds a new entry to the Activities list. Icon appears when
 activity is hovered over.
 - Trashcan icon — Deletes the activity. Icon appears when activity is hovered over. A confirmation
-window will display.
+window displays.
 
 **Step 4 –** Enter the configuration information on the right side of the page. Configuration
 options include:
@@ -36,9 +36,9 @@ options include:
 - Platform — Displays the type of platform, which defines the resource.
 - Login Account — Displays the account used to log onto the resource.
 - Activity Type — Controls the type of actions for the activity.
-- Requester Login Format — Indicates the format that will be used to prefill the Username field for
+- Requester Login Format — Indicates the format that is used to prefill the Username field for
 logging into the resource. It must exactly match the username defined on the resource.
-- Application to Launch — Indicates the application that will be launched on the RDS server that the
+- Application to Launch — Indicates the application that launches on the RDS server that the
 user is connected to by Privilege Secure
 - Logon URL — Displays the primary logon page
 
@@ -47,10 +47,10 @@ user is connected to by Privilege Secure
 **Step 6 –** With the new activity selected, configure the following settings. See the
 [Add Action Window](/docs/privilegesecure/4.2/admin/interface/activities/addaction/addaction.md) topic for additional information:
 
-- Pre-Session (Grant) — List of actions that will run before the session begins. These actions may
+- Pre-Session (Grant) — List of actions that runs before the session begins. These actions may
 be paired with a corresponding Post-Session action.
-- Session (Connect) — List of actions that will run during the session
-- Post-Session (Remove) — List of actions that will run after the session completes. These actions
+- Session (Connect) — List of actions that runs during the session
+- Post-Session (Remove) — List of actions that runs after the session completes. These actions
 may be paired with a corresponding Pre-Session action.
 
 The new activity is added to the console and is shown in the Activities list.

@@ -20,7 +20,7 @@ fields.
 
 - Name – Provide a unique name for the connection profile
 - Description – Provide an optional description to indicate the purpose of connection profile
-- Configure the Proxy settings, which control what proxy server will be used to start the session.
+- Configure the Proxy settings, which control what proxy server start the session.
 When customizing to use a specific proxy RDP (port 4489) and SSH (port 4422) proxy server, only
 one server can be listed.
 
@@ -32,7 +32,7 @@ If you want to use more than one proxy server, a load balancer must be used in f
 parameters for a connection profile.
 
 :::note
-On this step, you will need to also select a default Activity Token Complexity policy
+On this step, you must also select a default Activity Token Complexity policy
 for the connection profile
 :::
 

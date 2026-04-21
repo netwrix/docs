@@ -54,10 +54,10 @@ or was manually canceled by the user or an Privilege Secure administrator
 **Activity Details**
 
 - Time line — Displays recorded activity that occurred during the session in the pane to the left of
-the player. By default this time line will include keystroke activity.
+the player. By default this time line include keystroke activity.
 
 :::note
-If RDP Session Monitoring is enabled, then it will also include Windows metadata
+If RDP Session Monitoring is enabled, then it will also include Windows metadata
 activity in the time line. This monitoring requires the Netwrix Privilege Secure Remote Desktop
 Monitor service to be installed on the target host. See the
 [Install Remote Desktop Monitor Service on Target RDP Hosts](/docs/privilegesecure/25.12/install/servicesonadditional/rdpmonitor.md)
@@ -102,7 +102,7 @@ or was manually canceled by the user or an Privilege Secure administrator
 **Activity Details**
 
 - Time line — Displays recorded activity that occurred during the session in the pane to the left of
-the player. By default this time line will include keystroke activity.
+the player. By default this time line include keystroke activity.
 
 ## Replay Viewer for Website Host Sessions
 

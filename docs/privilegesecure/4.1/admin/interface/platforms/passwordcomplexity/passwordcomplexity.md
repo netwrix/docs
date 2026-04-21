@@ -37,7 +37,7 @@ topic for additional information.
 - Copy icon — Create a new password complexity policy based on the current selection. Icon appears
 when policy is hovered over.
 - Trashcan icon — Deletes the password complexity policy. Icon appears when policy is hovered over.
-A confirmation window will display.
+A confirmation window displays.
 
 :::note
 The default password policy can't be deleted.

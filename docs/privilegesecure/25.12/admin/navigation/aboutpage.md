@@ -17,7 +17,7 @@ application. It also lets you upload a new license file. See the
 
 ## License Information
 
-At the top of the About page, the following license information is displayed:
+At the top of the About page, the following license information displays:
 
 - Version – Displays the version number of the installed application
 - License Type – Displays the type of license you own

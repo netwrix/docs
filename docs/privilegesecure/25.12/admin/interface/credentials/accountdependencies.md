@@ -34,7 +34,7 @@ unsuccessful. This status only appears when the Reset on Mismatch option is enab
 
 - Last Checked — Date timestamp of the last verification check
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
 
 The window has the following features:
@@ -92,6 +92,6 @@ Service to find all service accounts with dependencies.
 
 **Step 5 –** Click **Change Now** to initiate credential rotation.
 
-- Privilege Secure will cycle through each dependent service and scheduled task.
+- Privilege Secure will cycle through each dependent service and scheduled task.
 
 Credential rotation for the selected account is complete.

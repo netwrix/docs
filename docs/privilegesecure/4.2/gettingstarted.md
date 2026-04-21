@@ -32,7 +32,7 @@ sales representative to purchase a license:
 additional information.
 
 Privilege Secure licensing is done according to user count. Any user who is provisioned access to
-Privilege Secure will consume a license after their first login. This is true for all users,
+Privilege Secure consumes a license after their first login. This is true for all users,
 regardless of role (Administrator, Reviewer, User, or Custom Role).
 
 ## Add Service Accounts & Domains
@@ -41,9 +41,9 @@ before using Privilege Secure, add the service accounts and domains that
 contain the users, groups, and resources:
 
 - [Service Accounts Page](/docs/privilegesecure/4.2/admin/configuration/serviceaccounts/serviceaccounts.md) — Add the account credentials
-that will grant access to the required resources
+that grants access to the required resources
 - [Add New Domain](/docs/privilegesecure/4.2/admin/interface/resources/addandchange/domain.md) — Add the Active Directory domains that contain the
-users, groups, resources, and service accounts that Privilege Secure will use to grant access
+users, groups, resources, and service accounts that Privilege Secure uses to grant access
 
 ## Add Users, Resources & Activities
 
@@ -53,11 +53,11 @@ perform and on what resources. An Access Policy consists of three parts that mus
 first:
 
 - [Users & Groups Page](/docs/privilegesecure/4.2/admin/interface/usersgroups/usersgroups.md) — Add the Users and Groups from AD that
-will use the Privilege Secure Console
+uses the Privilege Secure Console
 - [Resources Page](/docs/privilegesecure/4.2/admin/interface/resources/resources.md) — Add the resources such as Windows or Linux
-servers that the users will access via the Privilege Secure Console
-- [Activities Page](/docs/privilegesecure/4.2/admin/interface/activities/activities.md) — Add the actions that Privilege Secure will
-perform before, during, and after a session, such as temporarily adding the user to a local admins
+servers that the users accesses via the Privilege Secure Console
+- [Activities Page](/docs/privilegesecure/4.2/admin/interface/activities/activities.md) — Add the actions that Privilege Secure performs
+ before, during, and after a session, such as temporarily adding the user to a local admins
 group
 
 ## Configure Access Policies
@@ -66,7 +66,7 @@ after the users, groups, and resources are added to the console, it is now possi
 policies to control privileged access:
 
 - [Connection Profiles Page](/docs/privilegesecure/4.2/admin/interface/accesspolicy/connectionprofiles/connectionprofiles.md) — Add the connection profile
-that will be used with the access policy
+that is used with the access policy
 - [Access Policy Page](/docs/privilegesecure/4.2/admin/interface/accesspolicy/accesspolicy.md) — Create the access policies to control
 privileged access to resources
 

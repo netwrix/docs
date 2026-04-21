@@ -8,7 +8,7 @@ sidebar_position: 30
 
 An internal service account is a type of service account used by Privilege Secure with no
 dependencies (windows services or scheduled tasks). When an internal service account (Managed Type
-_Internal_) is selected and set to be managed by Privilege Secure, a pop up window will display and
+_Internal_) is selected and set to be managed by Privilege Secure, a pop up window displays and
 Privilege Secure searches for a matching user.
 
 ![Manage internal service account](/images/privilegesecure/4.1/accessmanagement/admin/policy/window/credentials/manageinternalserviceaccount.webp)
@@ -26,7 +26,7 @@ user in Active Directory.
 
 Try the following possible solutions to resolve:
 
-- Perform an AD Sync to collect the latest AD data from the domain. See the
+- Perform an AD Sync to collect the latest AD data from the domain. See the
 [Domain Details Page](/docs/privilegesecure/4.1/admin/interface/resources/detailspages/domain/domain.md)
 topic for additional information.
 - Check the user is added to the Privilege Secure console. See the
@@ -39,7 +39,7 @@ topic for additional information.
 
 ## Manually Manage an Internal Service Account
 
-If the manual option is selected, a new window will open to set the password for the credential.
+If the manual option is selected, a new window opens to set the password for the credential.
 
 ![Set password for credential window](/images/privilegesecure/4.1/accessmanagement/admin/policy/window/credentials/setpasswordcredential.webp)
 

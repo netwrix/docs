@@ -14,11 +14,11 @@ To create an activity session.
 
 **Step 2 –** Click **Create Session** to start a new activity session.
 
-- If an Activity is assigned to a single resource, the Activity card will display the name of the
+- If an Activity is assigned to a single resource, the Activity card displays the name of the
 resource; selecting **Create Session** from the session ribbon will immediately start the
 Activity.
-- If the Activity is assigned to more than one resource, the Activity card will display the number
-of resources; selecting **Create Session** from the session ribbon will open the Configure Session
+- If the Activity is assigned to more than one resource, the Activity card displays the number
+of resources; selecting **Create Session** from the session ribbon opens the Configure Session
 window.
 :::warning
 If your license is expired and you can still log in, you will not be able to create activity sessions.
@@ -40,14 +40,14 @@ resource list.
 ![startsessionuser](/images/privilegesecure/25.12/accessmanagement/enduser/access/startsessionuser.webp)
 
 :::note
-If an approval is required, the Waiting for approval message will display until it has
+If an approval is required, the Waiting for approval message displays until it has
 been granted.
 :::
 
 
 ![stopsession](/images/privilegesecure/25.12/accessmanagement/enduser/access/stopsession.webp)
 
-**Step 4 –** When provisioned, an activity session will display an Available status with a green
+**Step 4 –** When provisioned, an activity session displays an Available status with a green
 icon. Click **Available** to launch the session.
 
 - The contextual menu (…) to the top right of the active session card contains options to stop an
@@ -56,4 +56,4 @@ Profile.
 - All sessions may be managed via the Dashboard interface, and the My Activities interface
 interchangeably.
 
-Provisioning and active sessions are displayed in the session ribbon, newest sessions to the left.
+Provisioning and active sessions display in the session ribbon, newest sessions to the left.

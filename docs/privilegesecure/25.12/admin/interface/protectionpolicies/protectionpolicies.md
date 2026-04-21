@@ -7,7 +7,7 @@ sidebar_position: 30
 # Protection Policies Page
 
 The Protection Policies page is accessible from the Navigation pane under Policy. It shows the
-configured protection policies, which are used to monitor local groups on a resource for changes.
+configured protection policies, which monitor local groups on a resource for changes.
 Only users or groups added to the protection policy are permitted. When the resource is scanned, any
 local group members that aren't listed on the
 [Allowed Members Tab for Protection Policies](/docs/privilegesecure/25.12/admin/interface/protectionpolicies/allowedmembers.md) are removed
@@ -30,14 +30,14 @@ information.
 - Copy icon — Create a new protection policy based on the current selection. Icon appears when the
 policy is hovered over.
 - Trashcan icon — Deletes the protection policy. Icon appears when policy is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 The selected protection policy details display at the top of the main pane:
 
 - Name — Displays the name of the policy
 - Description — Description of the policy
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
 
 The tabs at the bottom of the main pane are for associating Resource, Members, and Schedule to the

@@ -10,7 +10,7 @@ To configure secure WinRM connection for the selected host:
 
 **Step 1 –** Navigate to the Resources page.
 
-**Step 2 –** Select the resources to modify.
+**Step 2 –** Select the resources to modify.
 
 **Step 3 –** Click the **WinRM Config** button.
 
@@ -29,11 +29,11 @@ connection to the host you want resource. The following options are available:
 
 :::note
 This option is applicable to the host and NPS certificates. If you selected a new
-self-signed certificate option, it will be generated automatically and imported to Netwrix Privilege
+self-signed certificate option, it is generated automatically and imported to Netwrix Privilege
 Secure.
 :::
 
 
 **Step 5 –** Click **Submit**.
 
-Secure WinRM connection has been configured for the selected host.
+Secure WinRM connection is configured for the selected host.

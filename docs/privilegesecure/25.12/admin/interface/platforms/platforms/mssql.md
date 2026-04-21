@@ -10,7 +10,7 @@ The Microsoft SQL Server menu displays the configuration options for Microsoft S
 
 ![Microsoft SQL Server Platform Configuration](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/platforms/mssql.webp)
 
-Details for the selected platform are displayed on the right side of the page. Below are the
+Details for the selected platform display on the right side of the page. Below are the
 configuration options for a Microsoft SQL Server Platform.
 
 - Name — Displays the name of the policy
@@ -37,5 +37,5 @@ managed accounts.
 verification step finds that the existing password for an account doesn't match what Privilege
 Secure expects.
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.

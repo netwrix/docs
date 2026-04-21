@@ -6,15 +6,15 @@ sidebar_position: 20
 
 # First Launch
 
-after the database and application are installed, the next step is to walk through the Setup Wizard.
+After the database and application are installed, the next step is to walk through the Setup Wizard.
 
 ![Netwrix Setup Launcher showing the Netwrix Privilege Secure with a green checkmark](/images/privilegesecure/4.1/accessmanagement/install/launcherstep4.webp)
 
 The Netwrix Setup Launcher can be closed, if it was used during installation.
 
 :::info
-The first user, your primary Administrator, will be setup through the wizard. It
-is recommended that you have a multi-factor authentication (MFA) solution (Authenticator, DUO,
+The first user, your primary Administrator, is set up through the wizard. We recommend
+that you have a multi-factor authentication (MFA) solution (Authenticator, DUO,
 Symantec VIP, etc.) ready to set up for this account through the wizard.
 :::
 
@@ -30,7 +30,7 @@ There are two methods for launching the Setup Wizard:
 
 ## Setup Wizard
 
-You will need to following information for your environment to complete the wizard:
+You need the following information for your environment to complete the wizard:
 
 - Domain account and its password to be the primary application Administrator
 
@@ -59,7 +59,7 @@ where the primary application Administrator account resides.
 
 To walk through the Setup Wizard.
 
-**Step 1 –** Launch the  Setup Wizard.
+**Step 1 –** Launch the Setup Wizard.
 
 ![Setup Wizard on the Welcome page](/images/privilegesecure/4.1/accessmanagement/install/welcome.webp)
 
@@ -95,8 +95,8 @@ topic for additional information.
 
 ![Setup Wizard on the Step 2 page displaying the recovery codes](/images/privilegesecure/4.1/accessmanagement/install/authenticatorcodes.webp)
 
-**Step 5 –** One-time recovery codes are provided for the registered authenticator. It is
-recommended to copy these codes with the Copy to clipboard link and save them in a secure location
+**Step 5 –** One-time recovery codes are provided for the registered authenticator. We recommend
+that you copy these codes with the Copy to clipboard link and save them in a secure location
 in case you lose your phone with the authenticator app. Click **Next**.
 
 ![Setup Wizard on the Step 3 page](/images/privilegesecure/4.1/accessmanagement/install/adserviceaccount.webp)
@@ -122,15 +122,15 @@ and is tracked by the status bar. When synchronization is complete, the Step 5 p
 
 :::note
 Problems with service registration may occur if accessing the wizard from a remote
-IP address. If this does occur during domain synchronization, you will be redirected to a dedicated
+IP address. If this does occur during domain synchronization, you are redirected to a dedicated
 error page, which lets you ignore certificate errors during the initial configuration.
 :::
 
 
 ![Setup Wizard on the Step 5 page](/images/privilegesecure/4.1/accessmanagement/install/resource.webp)
 
-**Step 8 –** On the Step 4 page, select the first resource to be onboarded. The Setup Wizard will
-create your first access policy to grant Domain Admin Access with an Activity Token to this
+**Step 8 –** On the Step 4 page, select the first resource to be onboarded. The Setup Wizard
+creates your first access policy to grant Domain Admin Access with an Activity Token to this
 resource. The selected resource displays a green checkmark at the beginning of the row. Click **Add
 resource**.
 

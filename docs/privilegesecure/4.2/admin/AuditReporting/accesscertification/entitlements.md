@@ -103,7 +103,7 @@ selected access certification task and shown on the Entitlements Tab for Access 
 
 :::note
 It isn't necessary to review all entitlements at once. Changes are automatically saved to
-the selected access certification task and can be returned to at any time (the Status will show as
+the selected access certification task and can be returned to at any time (the Status shows as
 Incomplete).
 :::
 
@@ -118,5 +118,5 @@ Alternatively, You can manually reassign users to an access policy.
 save the changes to user access.
 
 When the changes have been committed, the export button is enabled. Export the table to CSV if
-desired. The status of the access certification task will change to Complete. Now that the access
+desired. The status of the access certification task changes to Complete. Now that the access
 entitlements have been reviewed, the task can't be deleted.

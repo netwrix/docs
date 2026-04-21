@@ -30,7 +30,7 @@ To add an approval workflow to the console.
 
 Workflow Tiers (only visible when Approval Type is set to Tiered):
 
-- Delete icon – Deletes the selected Workflow Tier (A confirmation window will display)
+- Delete icon – Deletes the selected Workflow Tier (A confirmation window displays)
 - Edit icon – Modify the escalation settings for the Workflow Tier
 - Escalation – The amount of time available to approve the request before it is escalated
 - Escalation Account – The user that the request will be escalated to
@@ -38,7 +38,7 @@ Workflow Tiers (only visible when Approval Type is set to Tiered):
 - Approvers – The users or groups that can approve a request. See the Approvals Dashboard topic
 for additional information on how to approve a requested session.
 - Add Approver icon – Add a user or group as an approver
-- Remove Approver icon – Removes the selected approver (A confirmation window will display)
+- Remove Approver icon – Removes the selected approver (A confirmation window displays)
 - Approvals Required – The number of approvers required to approve the request
 
 **Step 5 –** Click the **Edit** icon to open the Tier Escalation window.
@@ -99,14 +99,14 @@ request.
 
 Workflow Tier settings (only visible when Approval Type is set to Tiered):
 
-- Delete icon – Deletes the selected Workflow Tier (A confirmation window will display)
+- Delete icon – Deletes the selected Workflow Tier (A confirmation window displays)
 - Edit icon – Modify the escalation settings for the Workflow Tier
 - Escalation – The amount of time available to approve the request before it is escalated
 - Escalation Account – The user that the request will be escalated to
 - Escalation Group – The group that the request will be escalated to
 - Approvers – The users or groups that can approve a request.
 - Add Approver icon – Add a user or group as an Approver.
-- Remove Approver icon – Removes the selected Approver (A confirmation window will display)
+- Remove Approver icon – Removes the selected Approver (A confirmation window displays)
 - Approvals Required – The number of Approvers required to approve the request
 
 :::tip

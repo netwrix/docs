@@ -30,7 +30,7 @@ Create Local Account option has no effect
 
 - %samaccountname%, %department%, %email%, %userprincipalname%, %displayname%
 
-- Use a mask to define an account that will be created locally on the target resource — For example,
+- Use a mask to define an account that is created locally on the target resource — For example,
 a mask of “`%domain%_%samaccountname%`” in conjunction with the Create Local Account option set to
 yes, will result in a local account being created using name substitution so the user
 “sblab\jsmith” will be connected to a local account named “sblab_jsmith”
@@ -68,14 +68,14 @@ supplied `stringToManipulate` parameter.
 
 `int numCharactersReturned` must be a positive number.
 
-If `int numCharactersReturned` exceeds string `stringToManipulate` then the entire string will be
+If `int numCharactersReturned` exceeds string `stringToManipulate` then the entire string is
 returned.
 
 **Examples**
 
 %first(jsmith,3)/first%
 
-**The above example will return: "jsm"**
+**The above example returns: "jsm"**
 
 A common use case for this function is to manipulate Privilege Secure Login Account Template masks
 such as `%samaccountname%`, to change how what the Login Account Template evaluates to when an
@@ -115,11 +115,11 @@ supplied string, then an empty string is returned.
 
 `%substr(jsmith,2)/substr%`
 
-**The above example will return "mith"**
+**The above example returns "mith"**
 
 `%substr(jsmith,-2)/substr%`
 
-**The above example will return "th"**
+**The above example returns "th"**
 
 A common use case for this function is to manipulate Privilege Secure Login Account Template masks
 such as "`%samaccountname%`" to change how what the Login Account Template evaluates to when an

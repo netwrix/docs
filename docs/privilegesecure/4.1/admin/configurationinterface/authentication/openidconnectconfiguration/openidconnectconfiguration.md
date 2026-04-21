@@ -73,16 +73,16 @@ grant type** and **Allow Access Token with implicit grant type** are both enable
 
 **Step 8 –** Enter valid credentials for the OpenID Connect provider and sign in.
 
-**Step 9 –** If the sign in was successful, the generated access token will display. This is passed
+**Step 9 –** If the sign in was successful, the generated access token displays. This is passed
 to the UserTokenController so that the user information can be extracted. Click Next.
 
 **Step 10 –** On the Configure ID Mapping page, click **Get User Data**.
 
 ![chapter_4_configuration_interface_6](/images/privilegesecure/4.1/accessmanagement/admin/configuration/wizard/chapter_4_configuration_interface_6.webp)
 
-SpPAM will use the access token to retrieve user data from the OpenId Connect provider. The OpenID
+SpPAM will use the access token to retrieve user data from the OpenId Connect provider. The OpenID
 Connect provider requires a User Id Field for sign in. specify which field in
-Active Directory should map to that User Id Field, so that Privilege Secure can automatically fill
+Active Directory should map to that User Id Field, so that Privilege Secure can automatically fill
 in the required credentials at login. The value provided is used to sign in to the multi factor
 authenticator (MFA) when a user logs in to the Privilege Secure Console.
 
@@ -104,13 +104,13 @@ configuration in the provider (unfortunately, there is no consistency in how the
 formatted):
 - Introspection Endpoint – _(Preferred)_ Not supported by all providers. Also validates the
 token.
-- UserInfo Endpoint – Microsoft Entra ID has two User Info endpoints which return slightly
+- UserInfo Endpoint – Microsoft Entra ID has two User Info endpoints which return slightly
 different data sets (be sure to check both). Some providers require authorization for this
 endpoint. May otherwise validate the token.
 - Token parsing – _(Least preferred)_ The access token contains claims which include some user
 information. This is the least secure method since the token is received indirectly. This
 option shouldn't be used unless all other options have failed.
-- Field – Shows the possible fields used by the OpenID Connect provider detected by Privilege
+- Field – Shows the possible fields used by the OpenID Connect provider detected by Privilege
 Secure.
 - Example Value – Shows an example value for the field based on the login credentials provided in
 the previous step. This represents the format of the value that will be used to sign in to the MFA
@@ -132,7 +132,7 @@ applicable AD field to the User Id Field. This is the value that will be used to
 during login. In the Login Format dropdown, select the applicable AD field to map to the User Id
 Field.
 
-**Step 13 –** Click Finish. A window will display the updated configuration settings.
+**Step 13 –** Click Finish. A window displays the updated configuration settings.
 
 ![chapter_4_configuration_interface_8](/images/privilegesecure/4.1/accessmanagement/admin/configuration/wizard/chapter_4_configuration_interface_8.webp)
 

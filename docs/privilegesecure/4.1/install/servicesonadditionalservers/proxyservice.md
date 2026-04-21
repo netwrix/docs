@@ -12,9 +12,9 @@ solution is the proxy, which can broker the connection between security zones. T
 application includes an advanced session proxy service for automatic connection to privileged
 sessions.
 
-The NPS Proxy Service is installed on the proxy server as part of Privilege Secure install. It must
+The NPS Proxy Service is installed on the proxy server as part of Privilege Secure install. It must
 also be installed on any server running services for the application, specifically the NPS Action
-Service, the NPS Scheduler Service, and NPS SIEM Service. This provides the option to run sessions
+Service, the NPS Scheduler Service, and NPS SIEM Service. This provides the option to run sessions
 defined in the application from different locations within your organization.
 
 The NPS Proxy Service installer is in the Extras folder of the ZIP file downloaded from the Netwrix
@@ -22,7 +22,7 @@ Customer portal. See the
 [Install Components & Methods](/docs/privilegesecure/4.1/install/components/components.md)
 topic for additional information.
 
-To install the NPS Proxy Service on another server that will run services for the
+To install the NPS Proxy Service on another server that runs services for the
 application.
 
 :::tip
@@ -55,7 +55,7 @@ Remember, it is a best practice to read the agreement before accepting it.
 - To change the default location, click Browse and set a new location.
 - When the location is set, click OK.
 
-**Step 5 –** You will return to the End User License Agreement page. Click Install.
+**Step 5 –** You returns to the End User License Agreement page. Click Install.
 
 :::note
 The installation process begins and the wizard displays the its Progress. This may take a
@@ -88,7 +88,7 @@ mesh or additional Proxy server installed.
 :::
 
 
-**Step 2 –** Open the JSON file as an Administrator (via Administrator command prompt) on both
+**Step 2 –** Open the JSON file as an Administrator (via Administrator command prompt) on both
 servers.
 
 **Step 3 –** (Optional) This step is only necessary if FQDN is required for DNS, otherwise don't
@@ -141,7 +141,7 @@ The NPS Proxy Service is now registered with the Privilege Secure application.
 ## SSH for Legacy Cisco Device
 
 If the Cisco device is running with insecure ciphers when the user attempts to connect to an
-SSH session, the following error message is displayed:
+SSH session, the following error message is displayed:
 
 ssh: handshake failed: ssh: no common algorithm for key exchange; client offered:
 [curve25519-sha256@libssh.org ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521

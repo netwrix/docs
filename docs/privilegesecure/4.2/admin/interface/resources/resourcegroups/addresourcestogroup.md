@@ -26,7 +26,7 @@ table or list is filtered to the matching results.
 
 - Type – Host resource
 - Name – Name of the resource
-- Operating System – The operating system on the resource
+- Operating System – The operating system on the resource
 - DNS Host Name – The DNS host name for the resource
 
 **Step 4 –** To add a resource to the resource group, click a row in the Available Resources list

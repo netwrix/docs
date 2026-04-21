@@ -22,8 +22,8 @@ table or list is filtered to the matching results.
 - Add — Opens the Add a Managed User window. See the
 [Add a Managed User Window](/docs/privilegesecure/4.2/admin/interface/resources/detailspages/website/userswebsite/addamanageduser.md) topic for additional
 information.
-- Edit — Opens the Edit a Managed User window. See Edit a Managed User for additional information.
-- Delete — Removes the selected item from the resource. A confirmation window will display.
+- Edit — Opens the Edit a Managed User window. See Edit a Managed User for additional information.
+- Delete — Removes the selected item from the resource. A confirmation window displays.
 - Refresh — Reload the information displayed
 
 The table has the following columns:

@@ -24,7 +24,7 @@ include:
 
 **Step 5 –** Enter the instance name for the server.
 
-**Step 6 –** Enter the IP address for the server.
+**Step 6 –** Enter the IP address for the server.
 
 **Step 7 –** Enter the port for the server. The default ports for each database platform are:
 

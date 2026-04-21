@@ -29,7 +29,7 @@ Only applicable to Website resources.
 
 ![addmanageduser](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/addmanageduser.webp)
 
-**Step 4 –** Specify the username/password combination that will be used to log users onto the
+**Step 4 –** Specify the username/password combination that log users onto the
 website. Enter the following information:
 
 - Display Name – The friendly name for the account

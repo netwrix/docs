@@ -22,7 +22,7 @@ report via email).
 ![reportstree](/images/privilegesecure/4.1/accessmanagement/admin/auditreporting/page/reportstree.webp)
 
 The Search Reports box will search all report names, both predefined and custom, for the specified
-report name. The report tree will then be filtered down to the matching reports.
+report name. The report tree then be filtered down to the matching reports.
 
 ## Report Folders
 
@@ -78,7 +78,7 @@ report
 - Source dropdown List – Contains data sources that allow the report to look at different data sets
 related to Privilege Secure administration. See the [Data Sources](#data-sources) topic for
 additional information.
-- Timeframe dropdown List – Contains a number of predefined timeframes, ranging from “Last Hour” to
+- Timeframe dropdown List – Contains several predefined timeframes, ranging from “Last Hour” to
 “Last 30 Days”. Additionally, “Custom” can be selected, which makes visible a “Start date” date
 picker and an “End date” date picker.
 - Attribute dropdown List – Contains attributes from the given Source that can be paired with an
@@ -157,7 +157,7 @@ The Filters tab has the following configuration options:
 query
 - Download Report – Generates and downloads the report, either as PDF or as CSV
 - Save – Saves any modifications to the report. If this is a predefined or platform based report, it
-will save as a new report under My Reports
+saves as a new report under My Reports
 - Delete **(available for custom reports only)** – Deletes the custom report
 - Source dropdown List – Contains data sources that allow the report to look at different data sets
 related to Privilege Secure administration. See the [Data Sources](#data-sources) topic for

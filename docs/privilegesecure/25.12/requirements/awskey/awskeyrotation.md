@@ -8,10 +8,10 @@ sidebar_position: 10
 
 Organizations using AWS Key Management Service (AWS KMS) can configure Netwrix Privilege Secure to
 rotate security keys. When creating an AWS KMS protection key for Privilege Secure, configuration
-must start by creating a policy in AWS. Once a AWS policy is created, a connection to the AWS policy
+must start by creating a policy in AWS. After a AWS policy is created, a connection to the AWS policy
 can be configured using Privilege Secure Rotate AWS Key tool.
 
-The AWS KMS key isn't used to encrypt the secret key, but will be used to encrypt the key that is
+The AWS KMS key isn't used to encrypt the secret key, but encrypt the key that is
 used to encrypt the secret key.
 
 ## Rotate AWS Key
@@ -38,7 +38,7 @@ AWS KMS key into the AWS Connection settings fields.
 **Step 6 –** When all fields are completed, click the **Rotate** button to update all encrypted
 values in the Privilege Secure system.
 
-The tool will take a few minutes to run (especially on larger systems) and the log window will show
+The tool takes a few minutes to run (especially on larger systems) and the log window shows
 the results of the rotation.
 
 :::note

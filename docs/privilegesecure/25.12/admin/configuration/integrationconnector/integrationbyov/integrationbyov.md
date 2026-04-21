@@ -36,4 +36,4 @@ the Checkin Script Block or Skip the Certificate Check.
 
 **Step 4 –** Click the Save icon to create the new integration connector.
 
-The Build Your Own Vault has been configured.
+The Build Your Own Vault is configured.

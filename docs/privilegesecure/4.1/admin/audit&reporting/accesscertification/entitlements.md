@@ -104,7 +104,7 @@ selected access certification task and shown on the
 
 :::note
 It isn't necessary to review all entitlements at once. Changes are automatically saved to
-the selected access certification task and can be returned to at any time (the Status will show as
+the selected access certification task and can be returned to at any time (the Status shows as
 Incomplete).
 :::
 

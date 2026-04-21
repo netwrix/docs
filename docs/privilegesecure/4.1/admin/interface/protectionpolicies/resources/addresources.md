@@ -29,7 +29,7 @@ Both tables have the following columns:
 - Name — Displays the name of the resource. Click the link to view additional details. See the
 [Resources Page](/docs/privilegesecure/4.1/admin/interface/resources/resources.md)
 topic for addition information.
-- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
+- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
 - Operating System— Displays the operating system of the resource
 
 ## Add Resources
@@ -53,7 +53,7 @@ are found, both tables are filtered to the matching results.
 
 - Type – The type of the resource
 - Name – The name of the resource
-- DNS Host Name – The DNS host name for a host, or FQDN for a domain
+- DNS Host Name – The DNS host name for a host, or FQDN for a domain
 - Operating System – Operating System of resource
 
 **Step 4 –** To add a resource to the protection policy, click a row in the Available Resources

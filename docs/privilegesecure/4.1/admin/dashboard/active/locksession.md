@@ -32,7 +32,7 @@ To lock a session.
 - Opening New Activities on this Resource – Prevent user from opening new activity to this
 resource while locked.
 - Any Further Activity on this Resource – Lock all sessions and prevent the user from any
-further activity while locked. The Users & Groups Details page for the user will indicate that
+further activity while locked. The Users & Groups Details page for the user will indicate that
 the account is locked.
 
 **Step 3 –** Click **Okay** to confirm.

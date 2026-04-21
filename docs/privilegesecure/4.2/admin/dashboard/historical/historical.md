@@ -22,7 +22,7 @@ information.
 - Mine tab — Shows sessions for the logged in user
 - Resource Name – Filter by Host value
 - User Name — Filter by Session User
-- User Type — Filter by type of user: All, User, Application, or Local User
+- User Type — Filter by type of user: All, User, Application, or Local User
 - Recording data — Filter by keystroke data and, when enabled, RDP Windows event activity. See
 the [Install Remote Desktop Monitor Service on Target RDP Hosts](/docs/privilegesecure/4.2/install/servicesonadditional/rdpmonitor.md)
 topic for additional information.
@@ -60,7 +60,7 @@ the requestor
 - Session User— User who requested the session. Click the link to view additional details. See the
 [User, Group, & Application Details Page](/docs/privilegesecure/4.2/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md) topic
 for additional information.
-- Host — Resource that the user will run the activity on. Click the link to view additional details.
+- Host — Resource that the user runs the activity on. Click the link to view additional details.
 The details vary based on the type of resource. See the following topics for additional
 information:
 

@@ -46,7 +46,7 @@ The table has the following columns:
 another user. See the [Live Session Viewer Window](/docs/privilegesecure/4.2/admin/dashboard/active/liveviewer.md) topic for additional
 information.
 - If the user has logged into the remote session more than once, multiple session recordings
-will display. If a recording of the session is available, the replay viewer allows an admin to
+displays. If a recording of the session is available, the replay viewer allows an admin to
 watch a replay of the remote session. See the [Replay Viewer Window](/docs/privilegesecure/4.2/admin/dashboard/historical/replayviewer.md)
 topic for additional information.
 
@@ -71,7 +71,7 @@ Secure administrator.
 - Requested By — User who requested the session. Click the link to view additional details. See the
 [User, Group, & Application Details Page](/docs/privilegesecure/4.2/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md) topic
 for additional information.
-- Host — Resource that the user will run the activity on. Click the link to view additional
+- Host — Resource that the user runs the activity on. Click the link to view additional
 details.The details vary based on the type of resource. See the following topics for additional
 information:
 

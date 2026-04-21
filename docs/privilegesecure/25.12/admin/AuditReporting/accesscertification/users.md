@@ -32,7 +32,7 @@ Add Users to Review topic for additional information.
 To add users and groups to the access certification task.
 
 :::note
-It isn't possible to add or remove users after they have been added.
+It isn't possible to add or remove users after they are added.
 :::
 
 
@@ -68,7 +68,7 @@ Users/Groups table and it is immediately moved to the Users & Groups to Add tabl
 Available Users/Groups table.
 
 :::warning
-It isn't possible to add or remove users after they have been added to the access
+It isn't possible to add or remove users after they are added to the access
 certification task.
 :::
 

@@ -13,7 +13,7 @@ Help link and the User Menu:
 
 - Interfaces:
 
-- Access — Grants access to the My Activities page. Activities are be displayed as individual
+- Access — Grants access to the My Activities page. Activities are displayed as individual
 cards, organized alphabetically or by Access Policy. See the
 [Access > My Activities Page](/docs/privilegesecure/4.2/admin/myactivities/myactivities.md) topic for additional. information.
 - Dashboard — View summaries of recent activity logs and user sessions. See the
@@ -33,7 +33,7 @@ activity statistics and reports. See the
 
 - Dark Mode — Toggle “Dark Mode” for the console. Hover over the toggle switch to see a preview
 of Dark Mode.
-- Product Tour — Re-starts walk-through of Privilege Secure features. See the
+- Product Tour — Re-starts walk-through of Privilege Secure features. See the
 [Product Tour](/docs/privilegesecure/4.2/admin/navigation/producttour.md) topic for additional information.
 - Settings — Opens the settings page to allow the user to register services
 - Logout — Signs the user out of the current session and opens the Login screen

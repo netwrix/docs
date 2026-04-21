@@ -15,7 +15,7 @@ representative to purchase a license.
 
 ## System Architecture
 
-Netwrix Privilege Secure consists of a number of components that work together to manage and report
+Netwrix Privilege Secure consists of several components that work together to manage and report
 on activity:
 
 - Web Interface – Allows the user to access and configure the Privilege Secure Console, via the Web
@@ -29,7 +29,7 @@ the web service. The service mesh registers to the webservice on TCP/6520 and al
 communication is over TCP/6523 for Leaf nodes and TCP/6524 for cluster nodes.
 - License Service – The Privilege Secure license service by default installs with a 30 day / 10 user
 license. When the license expires, only the built in Admin account can log into the product until
-a valid license is added; under these conditions, a red error is displayed on the main login page.
+a valid license is added; under these conditions, a red error appears on the main login page.
 The license service communicates with the central web service via TCP/6500 by default.
 - Email Service – The email service connects Privilege Secure to an external SMTP server. It
 supports authenticated and unauthenticated connections as well as TLS. The email service
@@ -46,7 +46,7 @@ back to the central web service via the Service Mesh.
 - Action Service – Connects Privilege Secure to managed resources and runs actions defined in the
 console on those resources, such as Active Directory synchronization, password changes and account
 orchestration. Many action services may be connected to the Privilege Secure web service via the
-Service Mesh. Outgoing connections will vary according to action.
+Service Mesh. Outgoing connections varies according to action.
 - Proxy Service (Session Proxy) – The Privilege Secure proxy service connects users to resources via
 RDP and SSH protocols; the proxy is also responsible for storage of session recordings via its
 iolog component. Many proxies can be implemented for load balancing and redundancy and
@@ -75,7 +75,7 @@ installation, and initial configuration can be completed in as little as 20 minu
 
 ## Privilege Secure Server with Remote Services
 
-The Proxy and Action services will consume resources according to load. Often 
+The Proxy and Action services consumes resources according to load. Often 
 install Proxy and Action Services on additional hosts for scalability, redundancy, or network
 segmentation. Adding these services to other hosts provides the option to disable these services on
 the application server.
@@ -88,7 +88,7 @@ talk directly to the Proxy service, illustrated with a green arrow over port:
 - RDP port is TCP 4489
 - SSH port is TCP 4422
 
-The Proxy will talk to the managed resources over their native ports:
+The Proxy talks to the managed resources over their native ports:
 
 - RDP port is TCP 3389
 - SSH port is TCP 22
@@ -128,7 +128,7 @@ However, it does require the manual intervention to failover.
 The Active-Active configuration for high-availability is available for both the PostgreSQL and SQL
 Server database options. No manual intervention is required. Many application servers can be added
 to the database for redundancy and scalability. However, setup is more complex than an
-Active-Passive configuration. Also, you will need an additional server for the database.
+Active-Passive configuration. Also, you need an additional server for the database.
 
 ![Active-Active Database Deployment Diagram](/images/privilegesecure/4.2/accessmanagement/install/activeactivedatabase.webp)
 

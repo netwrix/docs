@@ -29,4 +29,4 @@ The fields will change depending on the selected frequency.
 
 **Step 4 –** Click Save to accept the changes.
 
-The task will run at the new scheduled frequency.
+The task runs at the new scheduled frequency.

@@ -31,7 +31,7 @@ firewalls.
 
 Users can still log in with an expired license. If a license is expired, and the login attempt does
 not exceed the license count, users will still be able to log in. If a license is expired, and the
-login attempt does exceed the license count, Privilege Secure will prevent the login.
+login attempt does exceed the license count, Privilege Secure will prevent the login.
 
 :::warning
 If your license is expired, and you can still log in, you will not be able to create
@@ -41,7 +41,7 @@ activity sessions or new users.
 
 To log in to the Privilege Secure Console.
 
-**Step 1 –** Open Privilege Secure in a browser window. The Login screen will show the
+**Step 1 –** Open Privilege Secure in a browser window. The Login screen shows the
 Authentication Connector that is set as the default.
 
 :::note

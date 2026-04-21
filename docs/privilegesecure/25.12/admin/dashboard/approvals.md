@@ -7,7 +7,7 @@ sidebar_position: 30
 # Approvals Dashboard
 
 The Approvals Dashboard displays requested sessions that require approval. Users and group members
-designated as approvers will see the pending sessions queued here. The session must be approved
+designated as approvers sees the pending sessions queued here. The session must be approved
 before the requestor can log in to the session. See the
 [Connection Profiles Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/connectionprofiles/connectionprofiles.md) topic for additional information on
 Approval Workflows.
@@ -33,7 +33,7 @@ Secure administrator.
 
 - Requested — Date and time of when the session was created
 - Requested By — User who requested the session
-- Host — Resource that the user will run the activity on
+- Host — Resource that the user run the activity on
 - Login Account — Displays the account used to log onto the resource
 - Activity — Displays the name of the activity. Click the link to view additional details. See the
 [Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.

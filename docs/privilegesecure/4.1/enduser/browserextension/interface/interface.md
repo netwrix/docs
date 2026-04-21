@@ -64,13 +64,13 @@ topic for additional information.
 ## Settings Tab for Browser Extension
 
 Configure basic settings for the browser extension. For additional settings, log in to the Privilege
-Secure Console.
+Secure Console.
 
 ![Browser Extension Settings Tab](/images/privilegesecure/4.1/accessmanagement/enduser/browserextension/browserextensionsettings.webp)
 
 The Settings tab has the following features:
 
-- End web sessions automatically — If selected, Activities will automatically close if there are no
+- End web sessions automatically — If selected, Activities automatically close if there are no
 active web sessions in any tab
 - Delete RDP files after 1 day — If selected, temp files downloaded into the download folder as part
 of Privilege Secure RDP sessions will be removed after 1 day

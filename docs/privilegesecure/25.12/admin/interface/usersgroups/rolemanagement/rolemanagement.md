@@ -21,13 +21,13 @@ table or list is filtered to the matching results.
 information.
 - Copy icon — Clones a role and adds a new entry to the Role list
 - Trashcan icon — Deletes the access policy. Icon appears when policy is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 ## Default Role Permissions
 
 The default roles provide users with the following permissions:
 
-- **Administrator** — Grants access to all Privilege Secure Console configuration options
+- **Administrator** — Grants access to all Privilege Secure Console configuration options
 - **User** — Creates sessions based on assigned access policy. This role is automatically assigned when
 a user is onboarded.
 - **Reviewer** — Grants ability to review access entitlement. See the

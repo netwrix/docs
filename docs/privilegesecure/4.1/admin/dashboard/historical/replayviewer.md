@@ -57,7 +57,7 @@ Activity Details:
 the player. By default this time line will include keystroke activity.
 
 :::note
-If RDP Session Monitoring is enabled, then it will also include Windows metadata
+If RDP Session Monitoring is enabled, then it will also include Windows metadata
 activity in the time line. This monitoring requires the Netwrix Privilege Secure Remote Desktop
 Monitor service to be installed on the target host. See the
 [Install Remote Desktop Monitor Service on Target RDP Hosts](/docs/privilegesecure/4.1/install/servicesonadditionalservers/rdpmonitor.md)

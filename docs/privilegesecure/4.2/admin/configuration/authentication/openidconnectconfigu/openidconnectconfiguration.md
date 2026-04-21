@@ -30,16 +30,16 @@ To verify the OpenID Connect configuration:
 **Step 3 –** On the Configure Client page, enter the following information:
 
 - Issuer – The OpenId Connect provider issuer URI. Out-going redirection requires the correct
-“Issuer” path to be set. Incorrect settings will generally result in a 404 error.
+“Issuer” path to be set. Incorrect settings generally results in a 404 error.
 - Client Id – The OpenId Connect provider application Id for Privilege Secure
 - Callback Address – The OpenID Connect provider requires the Privilege Secure callback path to be
-authorized. Generally this is displayed by the provider after redirection. Enter the address and
+authorized. Generally this appears by the provider after redirection. Enter the address and
 port of the Privilege Secure server:
 
 [protocol]//[hostname]:[port]/callback
 
 - CORS – The OpenID Connect provider requires the Privilege Secure callback location to be
-configured for CORS. This will either be displayed by the provider after redirection, or a 500
+configured for CORS. This either be displayed by the provider after redirection, or a 500
 error is returned. If an error is returned, CORS is probably not configured with the correct
 information. Enter the address and port of the Privilege Secure server:
 
@@ -72,22 +72,22 @@ type and Allow Access Token with implicit grant type are both enabled.
 
 **Step 8 –** Enter valid credentials for the OpenID Connect provider and sign in.
 
-**Step 9 –** If the sign in was successful, the generated access token will display. This is passed
+**Step 9 –** If the sign in was successful, the generated access token displays. This is passed
 to the UserTokenController so that the user information can be extracted. Click Next.
 
 **Step 10 –** On the Configure ID Mapping page, click **Get User Data**.
 
 ![chapter_4_configuration_interface_6](/images/privilegesecure/4.2/accessmanagement/admin/configuration/wizard/chapter_4_configuration_interface_6.webp)
 
-Privilege Secure will use the access token to retrieve user data from the OpenId Connect provider.
+Privilege Secure uses the access token to retrieve user data from the OpenId Connect provider.
 The OpenID Connect provider requires a User Id Field for sign in. specify which
-field in Active Directory should map to that User Id Field, so that Privilege Secure can
+field in Active Directory should map to that User Id Field, so that Privilege Secure can
 automatically fill in the required credentials at login. The value provided is used to sign in to
 the multi factor authenticator (MFA) when a user logs in to the Privilege Secure Console.
 
 to connect a user from the OpenID Connect provider to a user in the Privilege Secure copy
 of the AD data, map a field in the provider list to a field in the Privilege
-Secure host user table. The exact fields to map will vary between providers and according to the
+Secure host user table. The exact fields to map varies between providers and according to the
 user’s AD configuration.
 
 The table displays the retrieved data that is useful for the host user lookup. The user must
@@ -95,28 +95,28 @@ select from the displayed records a field that corresponds to a value in their A
 example, if the AD data contains email addresses, they can select any of the fields which contain
 email addresses.
 
-Field values will vary according to the information supplied by the provider. Example Values come
-from the provider and will vary:
+Field values varies according to the information supplied by the provider. Example Values come
+from the provider and varies:
 
 - Source – There are three ways to extract the data, depending on the provider and the application
 configuration in the provider (unfortunately, there is no consistency in how the data is
 formatted):
 - Introspection Endpoint – _(Preferred)_ Not supported by all providers. Also validates the
 token.
-- UserInfo Endpoint – Microsoft Entra ID has two User Info endpoints which return slightly
+- UserInfo Endpoint – Microsoft Entra ID has two User Info endpoints which return slightly
 different data sets (be sure to check both). Some providers require authorization for this
 endpoint. May otherwise validate the token.
 - Token parsing – _(Least preferred)_ The access token contains claims which include some user
 information. This is the least secure method since the token is received indirectly. This
 option shouldn't be used unless all other options have failed.
-- Field – Shows the possible fields used by the OpenID Connect provider detected by Privilege
+- Field – Shows the possible fields used by the OpenID Connect provider detected by Privilege
 Secure.
 - Example Value – Shows an example value for the field based on the login credentials provided in
-the previous step. This represents the format of the value that will be used to sign in to the MFA
+the previous step. This represents the format of the value that is used to sign in to the MFA
 during log in.
 
 :::note
-These aren't the credentials that will be used during the login process; only an
+These aren't the credentials that is used during the login process; only an
 example of the format of those credentials. The actual credentials used are unique to each user
 and are setup during the MFA registration process for that user.
 :::
@@ -127,11 +127,11 @@ and are setup during the MFA registration process for that user.
 ![chapter_4_configuration_interface_7](/images/privilegesecure/4.2/accessmanagement/admin/configuration/wizard/chapter_4_configuration_interface_7.webp)
 
 **Step 12 –** The selected Source and User ID fields from the previous table are shown. Now map the
-applicable AD field to the User Id Field. This is the value that will be used to sign in to the MFA
+applicable AD field to the User Id Field. This is the value that is used to sign in to the MFA
 during login. In the Login Format dropdown, select the applicable AD field to map to the User Id
 Field.
 
-**Step 13 –** Click Finish. A window will display the updated configuration settings.
+**Step 13 –** Click Finish. A window displays the updated configuration settings.
 
 ![chapter_4_configuration_interface_8](/images/privilegesecure/4.2/accessmanagement/admin/configuration/wizard/chapter_4_configuration_interface_8.webp)
 

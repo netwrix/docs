@@ -61,7 +61,7 @@ administrator.
 
 :::note
 A server restart will be required after the installer in complete. A notification in the
-installer will display after the upgrade procedure is complete.
+installer displays after the upgrade procedure is complete.
 :::
 
 

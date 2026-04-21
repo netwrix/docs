@@ -51,7 +51,7 @@ For SSH the user can extend by typing **Ctrl+X** when prompted.
 ## SSH for Legacy Cisco Device
 
 If the Cisco device is running with insecure ciphers when the user attempts to connect to an
-SSH session, the following error message is displayed:
+SSH session, the following error message is displayed:
 
 ssh: handshake failed: ssh: no common algorithm for key exchange; client offered:
 [curve25519-sha256@libssh.org ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521

@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Browser Extension App
 
-The browser extension lets users use Privilege Secure to login and launch web sessions directly
+The browser extension lets users use Privilege Secure to login and launch web sessions directly
 through the browser.
 
 Supported on both Chrome and Edge browsers (version 116 or higher), the Privilege Secure browser

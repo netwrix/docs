@@ -22,7 +22,7 @@ table or list is filtered to the matching results.
 for additional information.
 - Copy icon — Clones a role and adds a new entry to the Role list
 - Trashcan icon — Deletes the access policy. Icon appears when policy is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 :::note
 The default Administrator, User, and Reviewer roles can't be copied, deleted, or

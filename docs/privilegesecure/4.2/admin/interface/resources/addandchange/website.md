@@ -24,7 +24,7 @@ when defining a website Activity.
 Privilege Secure, select the resource from the dropdown list to ensure that AD account operations
 are performed on the domain controller the website resource is bound to
 - Associated Domain Controller – _(optional)_ A specific domain controller may be selected to ensure
-that AD account operations are performed on a domain controller the website will reference for
+that AD account operations are performed on a domain controller the website references for
 authentication
 - Service Account – _(optional)_ The service account used when activity _actions_ require a
 provisioned account to interact with the resource, e.g. custom PowerShell. From the dropdown

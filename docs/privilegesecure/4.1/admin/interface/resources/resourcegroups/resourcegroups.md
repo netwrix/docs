@@ -22,7 +22,7 @@ table or list is filtered to the matching results.
 topic for additional information.
 - Copy icon — Duplicates the resource group. Icon appears when group is hovered over.
 - Trashcan icon — Deletes the resource group. Icon appears when group is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 The selected resource group details display at the top of the main pane. The following details vary
 based on the type of resource group:
@@ -31,7 +31,7 @@ based on the type of resource group:
 - Map to OU checkbox — Indicates if the group is mapped to an OU. The following settings are enabled
 when checked:
 
-- Sync Now button — Maps the specified OU to the group. A confirmation dialog is displayed to
+- Sync Now button — Maps the specified OU to the group. A confirmation dialog is displayed to
 allow the user the option to either Sync Now or Cancel.
 - OU FQDN — Displays the fully qualified domain name of the OU if mapping is enabled
 - Include Child OUs checkbox — Indicates if child OUs of the specified OU are included in the
@@ -68,7 +68,7 @@ topic for additional information.
 - Remove — Removes the selected item from the group
 - Manage — Set the selected account to be managed by Privilege Secure. This button is only available
 when the account Managed Type is Standard or Internal. For an Internal account, a pop up window
-will display.. Password rotation can be set to automatic or manual for managed accounts.
+displays.. Password rotation can be set to automatic or manual for managed accounts.
 - Unmanage — Remove the account from being managed by Privilege Secure
 - Change Platform — Opens the Change Platform window to modify the type of platform for the selected
 host resource. See the
@@ -88,8 +88,8 @@ The table has the following columns:
 - Local Admin — Indicates if the account is managed by Privilege Secure
 - Resource — Name of the resource
 - Operating System— Displays the operating system of the resource
-- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
-- IP Address — Displays the IP address for the resource
+- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
+- IP Address — Displays the IP address for the resource
 - Service Account — Displays the service account associated with the resource
 - Last Scanned — Date timestamp for the last time the resource was scanned
 

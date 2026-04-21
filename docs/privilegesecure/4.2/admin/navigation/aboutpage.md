@@ -17,7 +17,7 @@ application. It also lets you upload a new license file. See the
 
 ## License Information
 
-At the top of the About page, the following license information is displayed:
+At the top of the About page, the following license information appears:
 
 - Version – Displays the version number of the installed application
 - License Type – Displays the type of license you own
@@ -28,8 +28,7 @@ moved to the box below Customer Info for the Full license type.
 - Licenses Applied – Number of licenses in use
 
 :::note
-Licensing is done according to user count. Any user who has provisioned access will
-consume a license after their first login. This is true for all users, regardless of role.
+Licensing is done according to user count. Any user who has provisioned access consumes a license after their first login. This is true for all users, regardless of role.
 :::
 
 

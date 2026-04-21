@@ -12,7 +12,7 @@ To remove a resource.
 
 **Step 1 –** Navigate to the **Resources** page.
 
-**Step 2 –** Select the resources to modify.
+**Step 2 –** Select the resources to modify.
 
 **Step 3 –** Click **Remove** to open the Remove Resource window.
 

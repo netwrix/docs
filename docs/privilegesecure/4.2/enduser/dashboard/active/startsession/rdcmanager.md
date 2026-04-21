@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The Netwrix Privilege Secure proxy service lets you launch DirectConnect sessions via
 third-party Remote Desktop Connection Management software. Passing a DirectConnect string to the
-proxy server will launch an RDP connection. This topic explains the formatting for the connection
+proxy server launches an RDP connection. This topic explains the formatting for the connection
 string, with specific examples given for some popular Remote Desktop Connection Management programs.
 
 :::note
@@ -167,7 +167,7 @@ User Name Format:
 `\<connection string>`
 
 :::note
-The user name starts with \_\_ (back slash).
+The user name starts with \_\_ (back slash).
 :::
 
 

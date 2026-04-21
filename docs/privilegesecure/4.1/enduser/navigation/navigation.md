@@ -30,7 +30,7 @@ another browser tab
 
 - Dark Mode — Toggle “Dark Mode” for the console. Hover over the toggle switch to see a preview
 of Dark Mode.
-- Product Tour — Re-starts walk-through of Privilege Secure features. See the
+- Product Tour — Re-starts walk-through of Privilege Secure features. See the
 [Product Tour](/docs/privilegesecure/4.1/enduser/navigation/producttour.md)
 topic for additional information.
 - Logout — Signs the user out of the current session and opens the Login screen

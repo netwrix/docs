@@ -20,14 +20,14 @@ The details page displays the following information:
 - Scheduled — Displays the number of sessions scheduled for the resource
 - Test button — Opens the Test Resource Connectivity window. See the
 [Test Resource Connectivity Window](/docs/privilegesecure/4.1/admin/interface/resources/testresourceconnectivity.md)
-topic for additional information.
+topic for additional information.
 - Scan Now button — Scans a host resource for local users, groups, windows services, and scheduled
-tasks. A confirmation window will display.. The Cancel button, which is only visible when scanning
+tasks. A confirmation window displays.. The Cancel button, which is only visible when scanning
 lets you stop the resource scan. This scan can also be scheduled from the
 [Platforms Page](/docs/privilegesecure/4.1/admin/interface/platforms/overview.md).
 - WinRM Config button — Opens the Configure Secure WinRM Connection window. See the
 [Configure Secure WinRM Connection Window](/docs/privilegesecure/4.1/admin/interface/resources/configuresecurewinrmconnection.md)
-topic for additional information.
+topic for additional information.
 - Platform — Displays the type of platform, which defines the resource
 - Service Account — Displays the service account associated with the resource
 - Blue arrow button — Opens the Service Account details page. See the
@@ -35,12 +35,12 @@ topic for additional information.
 topic for additional information.
 - Green plus button — Opens the Add New Service Account window. See the
 [Add New Service Account Window](/docs/privilegesecure/4.1/admin/interface/resources/addandchange/addnewserviceaccount.md)
-topic for additional information.
-- IP Address — Displays the IP address for the resource
+topic for additional information.
+- IP Address — Displays the IP address for the resource
 - SSH Port — Displays the SSH port number
 - RDP Port — Displays the RDP port number
-- WinRM Port — Displays the WinRM port number
-- WinRM HTTPS Port — Displays the WinRM HTTPS port number
+- WinRM Port — Displays the WinRM port number
+- WinRM HTTPS Port — Displays the WinRM HTTPS port number
 - WinRM Disabled checkbox — If this checkbox is selected, Netwrix Privilege Secure will not attempt
 to communicate to the target resource via WinRM. This value is determined during the initial host
 scan of the resource, but will not be automatically changed during subsequent host scans.
@@ -52,9 +52,9 @@ thumbprint mismatch occurs during a connection to the resource.
 
 - Allow Connection — This setting will allow a connection to the host. (No event is generated.)
 - Log Event and Allow — This setting will allow a connection to the host and log an event in the
-Event table. If a SIEM connection is configured, an event will be sent to SIEM as well.
+Event table. If a SIEM connection is configured, an event is sent to SIEM as well.
 - Log Event and Block — This setting will block the connection to the host and log an event in
-the Event table. If a SIEM connection is configured, an event will be sent to SIEM as well.
+the Event table. If a SIEM connection is configured, an event is sent to SIEM as well.
 
 If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.

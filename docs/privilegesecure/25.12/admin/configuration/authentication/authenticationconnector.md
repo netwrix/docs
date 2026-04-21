@@ -29,7 +29,7 @@ fields will change depending on the selection.
 **Step 4 –** Enter the information from the applicable authentication connector provider. See the
 [Authentication Page](/docs/privilegesecure/25.12/admin/configuration/authentication/authentication.md) section for detailed descriptions of the fields.
 
-- For OpenID Connect, open the
+- For OpenID Connect, open the
 [OpenID Connect Configuration Wizard](/docs/privilegesecure/25.12/admin/configuration/authentication/openidconnectconfigu/openidconnectconfiguration.md)
 - For SAML, open the [SAML Configuration Wizard](/docs/privilegesecure/25.12/admin/configuration/authentication/samlconfiguration.md)
 

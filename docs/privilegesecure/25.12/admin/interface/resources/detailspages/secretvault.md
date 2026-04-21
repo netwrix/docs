@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Secrets Vault Details Page
 
-Secret Vaults are used to store any manually-managed resource, username, or password combination. This page describes how to add credentials and files to a vault.
+Secret Vaults store any manually-managed resource, username, or password combination. This page describes how to add credentials and files to a vault.
 
 For information on allowing users access to the credentials and files in the vault, see [Access Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/addaccesspolicy.md) and create an Access Policy that is Credential based. Then see [Credential-based Access Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/credentials.md)
 
@@ -15,7 +15,7 @@ For information on allowing users access to the credentials and files in the vau
 The details page shows the following information:
 
 - Name — Displays the name of the resource
-- Trashcan icon — Deletes this credential. A confirmation window will display.
+- Trashcan icon — Deletes this credential. A confirmation window displays.
 - Platform — Displays the type of platform, which defines the resource
 - Description — Description of the policy
 
@@ -28,7 +28,7 @@ table or list is filtered to the matching results.
 - Add — Opens the Add a Managed Account window. Add the resource name, username, secret, and comments (opional).
 ![Add managed account](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/details/addmanagedaccount.png)
 - Edit — Opens the Edit a Managed Account window. 
-- Delete — Removes the selected item. A confirmation window will appear.
+- Delete — Removes the selected item. A confirmation window appears.
 - Refresh — Reload the information displayed
 
 The table has the following columns:
@@ -48,7 +48,7 @@ The Files tab is where files are added to the vault and has the following featur
 - Add — Opens the Add Encrypted File window. Drag and drop the file or click the designated area to browse. Add a comment (optional)
 ![Add managed account](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/details/addfile.png)
 - Edit — Opens the Edit a Encrypted File window. 
-- Delete — Removes the selected item. A confirmation window will appear.
+- Delete — Removes the selected item. A confirmation window appears.
 - Refresh — Reload the information displayed
 
 The table has the following columns:

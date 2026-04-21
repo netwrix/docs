@@ -77,13 +77,13 @@ The Filters tab has the following configuration options:
 report
 - Source dropdown List – Contains data sources that allow the report to look at different data sets
 related to Privilege Secure administration. See the Data Sources topic for additional information.
-- Timeframe dropdown List – Contains a number of predefined timeframes, ranging from “Last Hour” to
+- Timeframe dropdown List – Contains several predefined timeframes, ranging from “Last Hour” to
 “Last 30 Days”. Additionally, “Custom” can be selected, which makes visible a “Start date” date
 picker and an “End date” date picker.
 - Attribute dropdown List – Contains attributes from the given Source that can be paired with an
 operator and a value
 - Operator – Contains operators that lets you filter an attribute
-- Value – This field allows manual entry of a value against which the operator will be applied. The
+- Value – This field allows manual entry of a value against which the operator is applied. The
 field also offers a dropdown menu which is populated with values from the backend database.
 
 ### Data Sources
@@ -168,7 +168,7 @@ picker and an “End date” date picker.
 - Attribute dropdown List – Contains attributes from the given Source that can be paired with an
 operator and a value.
 - Operator – Contains operators that lets you filter an attribute.
-- Value – Allows manual entry of a value against which the operator will be applied. The field also
+- Value – Allows manual entry of a value against which the operator is applied. The field also
 offers a dropdown menu which is populated with values from the backend database.
 
 ### Subscriptions Tab
@@ -180,7 +180,7 @@ The Subscriptions tab allows the Privilege Secure user to Subscribe to the repor
 The report will be emailed to the Email value for the user, which is populated based on Active
 Directory attributes and can be confirmed for a given user by checking the Users and Groups page. If
 a new custom schedule is needed for a Subscription, one can be created under the **Policy** >
-**Platforms** > **Schedule Policies** menu. All Schedule Policies will show up in the list when you
+**Platforms** > **Schedule Policies** menu. All Schedule Policies shows up in the list when you
 Subscribe to a report. See the [Schedule Policies Page](/docs/privilegesecure/25.12/admin/interface/platforms/schedulepolicies/schedulepolicies.md) topic
 for additional information.
 

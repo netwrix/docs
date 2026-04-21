@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Action Service Install
 
-The NPS Action Service is installed on the application server as part of Privilege Secure install.
+The NPS Action Service is installed on the application server as part of Privilege Secure install.
 It can also be installed on additional servers. This provides the option to run actions from
 different locations within an organization.
 
@@ -41,7 +41,7 @@ Netwrix knowledge base article:
 server.
 
 **Step 3 –** Open the NPS.ActionService.exe and the Netwrix Privilege Secure Action Service Setup
-wizard will open.
+wizard opens.
 
 ![licenseagreement](/images/privilegesecure/4.1/accessmanagement/install/licenseagreement_3.webp)
 
@@ -134,7 +134,7 @@ parameter must be added:
 
 `ActionService.exe –register -u admin -I [PrivilegeSecureServer:Port]`
 
-- The command prompt will show if the configuration was successful.
+- The command prompt shows if the configuration was successful.
 
 **Step 4 –** Exit the command prompt.
 

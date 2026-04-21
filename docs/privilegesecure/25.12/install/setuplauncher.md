@@ -24,8 +24,8 @@ Antivirus software should be disabled on this computer during the installation.
 
 
 Right-click the NPS_Setup.exe file and select Run as administrator. The Netwrix Setup Launcher
-will open. The launcher runs a prerequisites setup check. The green checkmark indicates the
-prerequisites have been met and you are ready to install the database.
+opens. The launcher runs a prerequisites setup check. The green checkmark indicates the
+prerequisites are met and you are ready to install the database.
 
 :::warning
 The Advanced checkbox provides the option to switch databases to Microsoft SQLServer.
@@ -46,7 +46,7 @@ To install the PostgreSQL database.
 wizard opens.
 
 :::note
-If PostgreSQL v16 is already installed, a green checkmark is displayed to the left of the
+If PostgreSQL v16 is already installed, a green checkmark displays to the left of the
 Install PostgreSQL 16 button and you can install the Privilege Secure application.
 :::
 
@@ -85,7 +85,7 @@ take a few moments.
 wizard closes.
 
 :::note
-A reboot may be required.
+A reboot is required.
 :::
 
 
@@ -128,7 +128,7 @@ C:\Program Files\Stealthbits\PAM
 - To change the default location, click **Browse** and set a new location.
 - When the location is set, click **OK**.
 
-**Step 4 –** You will return to the End User License Agreement page. Click **Install**.
+**Step 4 –** You returns to the End User License Agreement page. Click **Install**.
 
 :::note
 The installation process begins and the wizard displays the its Progress. This may take a
@@ -140,7 +140,7 @@ few moments.
 
 **Step 5 –** When installation is complete, click **Close**.
 
-The installer displays a message that it is applying permissions. The application will require a
+The installer displays a message that it is applying permissions. The application require a
 server reboot at the end of the installation.
 
 Once installation is complete, open, and walk through the Netwrix Privilege Secure Setup Wizard. The

@@ -10,7 +10,7 @@ The Password Complexity page is accessible from the Navigation pane under Policy
 shows configured password complexity policies that can be applied to platforms.
 
 When Privilege Secure creates a managed account on a local system or domain it also sets the user
-password. The password that is generated will follow the complexity rules configured in the related
+password. The password that is generated follow the complexity rules configured in the related
 password policy associated with that platform. The Default policy is used if a password policy
 can't be determined. See the [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) topic for additional
 information.
@@ -35,7 +35,7 @@ table or list is filtered to the matching results.
 - Copy icon — Create a new password complexity policy based on the current selection. Icon appears
 when policy is hovered over.
 - Trashcan icon — Deletes the password complexity policy. Icon appears when policy is hovered over.
-A confirmation window will display.
+A confirmation window displays.
 
 :::note
 The default password policy can't be deleted.
@@ -56,7 +56,7 @@ list contains the following options:
 
 - Length — The maximum number of characters the password complexity policy will enforce
 - Max Consecutive Chars — The maximum number of consecutively occurring characters that the password
-complexity policy will allow
+complexity policy allow
 - Characters to Exclude — Custom characters the password complexity policy will exclude.
 - Included Characters — Check boxes containing additional inclusive parameters for the policy:
 
@@ -64,5 +64,5 @@ complexity policy will allow
 - Uppercase — At least one uppercase character in the password
 - Numbers — At least one number in the password
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.

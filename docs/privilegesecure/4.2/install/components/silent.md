@@ -19,6 +19,6 @@ nps.exe /quiet
 
 nps.exe /quiet PRODUCTDIR="[Path]"
 
-For example: `nps.exe /quiet PRODUCTDIR="D:\Stealthbits\PAM"`
+For example: `nps.exe /quiet PRODUCTDIR="D:\Stealthbits\PAM"`
 
 The Privilege Secure application installs in the background to the specified folder location.

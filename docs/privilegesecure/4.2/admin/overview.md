@@ -7,7 +7,7 @@ sidebar_position: 40
 # Administration
 
 Netwrix Privilege Secure enables administrators and helpdesk professionals to perform their
-day-to-day activities easily and without the complexity of traditional Privileged Access Management
+day-to-day activities without the complexity of traditional Privileged Access Management
 (PAM) tools. As a next generation Privileged Access Management solution, Privilege Secure focuses on
 controlling the activity that needs to be performed rather than mapping access to an account. The
 result is a reduced attack surface that drastically improves an organization’s overall security

@@ -30,18 +30,18 @@ name (FQDN), or IP Address of the server in the browser. Also, access can be res
 firewalls.
 
 Users can still log in with an expired license. If a license is expired, and the login attempt does
-not exceed the license count, users will still be able to log in. If a license is expired, and the
-login attempt does exceed the license count, Privilege Secure will prevent the login.
+not exceed the license count, users is still able to log in. If a license is expired, and the
+login attempt does exceed the license count, Privilege Secure prevents the login.
 
 :::warning
-If your license is expired, and you can still log in, you will not be able to create
+If your license is expired, and you can still log in, you cannot create
 activity sessions or new users.
 :::
 
 
 To log in to the Privilege Secure Console.
 
-**Step 1 –** Open Privilege Secure in a browser window. The Login screen will show the
+**Step 1 –** Open Privilege Secure in a browser window. The Login screen shows the
 Authentication Connector that is set as the default.
 
 :::note
@@ -73,8 +73,8 @@ enter the user credentials.
 ![Dashboard Interface](/images/privilegesecure/4.2/accessmanagement/enduser/activedashboarduser.webp)
 
 :::note
-After five incorrect login attempts, the user will be locked out of the account for five
-minutes. Additional incorrect login attempts will extend this time by five minutes for each failed
+After five incorrect login attempts, the user is locked out of the account for five
+minutes. Additional incorrect login attempts extends this time by five minutes for each failed
 login. See the
 [User, Group, & Application Details Page](/docs/privilegesecure/4.2/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md) topic for
 additional information on how to unlock an account.

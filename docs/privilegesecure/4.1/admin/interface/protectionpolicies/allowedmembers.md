@@ -73,7 +73,7 @@ Allowed Members tab.
 ![Edit Protected Group Members Window](/images/privilegesecure/4.1/accessmanagement/admin/policy/tab/policyprotection/editprotectedgroupmembers.webp)
 
 **Step 4 –** Click the Trashcan icon next to a member to remove them from a Protected Group. A
-confirmation window will appear.
+confirmation window appears.
 
 **Step 5 –** (Optional) Enter a Group Member in the provided field.
 

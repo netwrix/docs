@@ -7,7 +7,7 @@ sidebar_position: 20
 # Requirements
 
 This document describes the recommended configuration of the servers needed to install this product
-in a production environment. Depending on the size of the organization, it is recommended to review
+in a production environment. Depending on the size of the organization, we recommend that you review
 your environment and requirements with a support engineer before deployment to ensure all
 exceptions are covered.
 

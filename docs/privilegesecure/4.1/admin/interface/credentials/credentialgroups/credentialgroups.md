@@ -23,7 +23,7 @@ table or list is filtered to the matching results.
 [Add Credential Group](/docs/privilegesecure/4.1/admin/interface/credentials/credentialgroups/credentialgroup.md)
 topic for additional information.
 - Trashcan icon — Deletes the access policy. Icon appears when policy is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 The selected access policy details display at the top of the main pane:
 

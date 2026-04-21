@@ -24,7 +24,7 @@ Antivirus software should be disabled on this computer during the installation.
 
 
 Right-click the NPS_Setup.exe file and select Run as administrator. The Netwrix Setup Launcher
-will open. The launcher runs a prerequisites setup check. The green checkmark indicates the
+opens. The launcher runs a prerequisites setup check. The green checkmark indicates the
 prerequisites have been met and you are ready to install the database.
 
 :::warning
@@ -128,7 +128,7 @@ Remember, it is a best practice to read the agreement before accepting it.
 - To change the default location, click **Browse** and set a new location.
 - When the location is set, click **OK**.
 
-**Step 4 –** You will return to the End User License Agreement page. Click **Install**.
+**Step 4 –** You returns to the End User License Agreement page. Click **Install**.
 
 :::note
 The installation process begins and the wizard displays the its Progress. This may take a

@@ -17,7 +17,7 @@ representative to purchase a license.
 
 ## System Architecture
 
-Netwrix Privilege Secure consists of a number of components that work together to manage and report
+Netwrix Privilege Secure consists of several components that work together to manage and report
 on activity:
 
 - Web Interface – Allows the user to access and configure the Privilege Secure Console, via the Web
@@ -102,7 +102,7 @@ remoting over:
 - WinRM port TCP 5985 or 5986
 - SSH port 22
 
-The Action service also needs to communicate with Active Directory on a variety of different ports.
+The Action service also needs to communicate with Active Directory on various different ports.
 
 The Service Mesh connects remote services to the central Web service. Each remote “leaf” node is
 configured as a mesh so traffic may be routed via the most efficient route back to the web service.

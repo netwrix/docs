@@ -21,8 +21,8 @@ The page has the following features:
 Accounts can also be locked from the Active Dashboard.
 - Unlock Account — Indicates if the account is locked. When the account is locked, the user will not
 be able to create a session. Click the button to unlock the account.
-- Reset MFA — Click the button to force the user to reset MFA for Privilege Secure login. Resetting
-the user's MFA will generate a new TOTP secret for the user to register an authenticator. See
+- Reset MFA — Click the button to force the user to reset MFA for Privilege Secure login. Resetting
+the user's MFA generates a new TOTP secret for the user to register an authenticator. See
 [Reset User MFA](/docs/privilegesecure/4.1/admin/interface/usersgroups/usergroupapplication/resetmfa.md)
 topic for additional information.
 

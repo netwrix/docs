@@ -10,7 +10,7 @@ To change the platform type for a host resource.
 
 **Step 1 –** Navigate to the **Resources** page.
 
-**Step 2 –** Select the resources to modify.
+**Step 2 –** Select the resources to modify.
 
 **Step 3 –** Click **Change Platform** to open the Change Platform window.
 

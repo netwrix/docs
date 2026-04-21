@@ -22,7 +22,7 @@ contained within a Secret Vault resource in Privilege Secure.
 
 :::note
 For managed accounts, ensure you have rotated the account password at least once since managing
-it. Otherwise, there will be no vaulted password in the Netwrix Privilege Secure database.
+it. Otherwise, there is no vaulted password in the Netwrix Privilege Secure database.
 :::
 
 
@@ -61,112 +61,112 @@ Checkout Script Block
 
 ```
 param (
-    $Options,
-    $Credential
+    $Options,
+    $Credential
 )
 $Token = $Options.RestApiToken
 $Uri = $Options.RestApiUri
-<# 
+<# 
 $Message = (ConvertTo-Json $Options -Depth 12)
 Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"
 #>
 function Get-CredentialMatch {
-    [CmdletBinding()]
-    param (
-        $CredentialAccount,
-        $CredentialResource,
-        $Token,
-        $Uri
-    )
-    $credentials = @()
-    $skip = 0
-    $take = 100
-    $result = $null
-    if ($null -ne $CredentialAccount) {        
-        $FilterText = "$($CredentialAccount)"
-        $Message = "FILTERTEXT: $FilterText"
-        Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"            
-        do {            
-            $Params = @{
-                RestApiToken = $Token;                
-                Uri          = "$($Uri.TrimEnd("/"))/api/v1/Credential/Search?skip=$skip&take=$take&filterText=$FilterText&credentialType=1";
-            }            
-            $result = Invoke-SbPAMRest @Params          
-            <#
-            $Message = (ConvertTo-Json $result)
-            Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"
-            #>
-            $result.Data | ForEach-Object { $credentials += $_ }
-            $skip += $take        
-        } until ($credentials.Count -ge $result.RecordsTotal)    
-        $credentials | Foreach-Object { 
-            $Message = "FOUND: $($_.Id) UserName: $($_.UserName)" 
-            Write-Host "$(ConvertTo-Json $_)"
-            Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"
-        }        
-        $Message = "Find UserName -eq $CredentialAccount"
-        Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"
-        $result = $credentials | Where-Object -Property UserName -eq $CredentialAccount
-        if ($null -eq $result) {
-            $Test = "$($Options.TargetHost.DnsHostName)\$CredentialAccount"            
-            if ($null -ne $Options.TargetHost.NetBiosName) {
-                $Test = "$($Options.TargetHost.NetBiosName)\$CredentialAccount"
-            }
-            $Message = "Find UserName -eq $Test"
-            Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"
-            $result = $credentials | Where-Object -Property UserName -eq $Test
-        }
-        if ($null -eq $result) {
-            $result = $credentials | Where-Object { $_.Username -match $CredentialAccount -and $_.Domain -eq $CredentialResource }
-        }
-    }
-    return $result
+    [CmdletBinding()]
+    param (
+        $CredentialAccount,
+        $CredentialResource,
+        $Token,
+        $Uri
+    )
+    $credentials = @()
+    $skip = 0
+    $take = 100
+    $result = $null
+    if ($null -ne $CredentialAccount) {        
+        $FilterText = "$($CredentialAccount)"
+        $Message = "FILTERTEXT: $FilterText"
+        Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"            
+        do {            
+            $Params = @{
+                RestApiToken = $Token;                
+                Uri          = "$($Uri.TrimEnd("/"))/api/v1/Credential/Search?skip=$skip&take=$take&filterText=$FilterText&credentialType=1";
+            }            
+            $result = Invoke-SbPAMRest @Params          
+            <#
+            $Message = (ConvertTo-Json $result)
+            Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"
+            #>
+            $result.Data | ForEach-Object { $credentials += $_ }
+            $skip += $take        
+        } until ($credentials.Count -ge $result.RecordsTotal)    
+        $credentials | Foreach-Object { 
+            $Message = "FOUND: $($_.Id) UserName: $($_.UserName)" 
+            Write-Host "$(ConvertTo-Json $_)"
+            Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"
+        }        
+        $Message = "Find UserName -eq $CredentialAccount"
+        Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"
+        $result = $credentials | Where-Object -Property UserName -eq $CredentialAccount
+        if ($null -eq $result) {
+            $Test = "$($Options.TargetHost.DnsHostName)\$CredentialAccount"            
+            if ($null -ne $Options.TargetHost.NetBiosName) {
+                $Test = "$($Options.TargetHost.NetBiosName)\$CredentialAccount"
+            }
+            $Message = "Find UserName -eq $Test"
+            Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"
+            $result = $credentials | Where-Object -Property UserName -eq $Test
+        }
+        if ($null -eq $result) {
+            $result = $credentials | Where-Object { $_.Username -match $CredentialAccount -and $_.Domain -eq $CredentialResource }
+        }
+    }
+    return $result
 }
 ### If this is an activity then use the LoginAccountName
 $TargetAccount = $Options.ActivitySession.LoginAccountName
 $CredentialAccount = $null
 $CredentialResource = $null
 if ($null -ne $Options.ActivitySession) {
-    $CredentialAccount = $Options.ActivitySession.LoginAccountName    
+    $CredentialAccount = $Options.ActivitySession.LoginAccountName    
 }
 $Message = "CredentialAccount: $CredentialAccount"
 Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"
-### This is a service account, so the info should be in the Credential    
-if ($null -eq $CredentialAccount) {        
-    $CredentialAccount = $Credential.Username
+### This is a service account, so the info should be in the Credential    
+if ($null -eq $CredentialAccount) {        
+    $CredentialAccount = $Credential.Username
 }
 $Message = "CredentialAccount: $CredentialAccount"
 Add-SbPAMActionLog -Type Info -Message "BYOV: $Message"
 $result = Get-CredentialMatch -CredentialAccount $CredentialAccount -Token $Token -Uri $Uri
 if ($null -eq $result) {
-    if ($CredentialAccount -match ".*@.*") {
-        $Parts = $CredentialAccount.Split("@")
-        $CredentialAccount = $Parts[0]
-        $CredentialResource = $Parts[1]
-    }
-    $result = Get-CredentialMatch -CredentialAccount $CredentialAccount -CredentialResource $CredentialResource -Token $Token -Uri $Uri
+    if ($CredentialAccount -match ".*@.*") {
+        $Parts = $CredentialAccount.Split("@")
+        $CredentialAccount = $Parts[0]
+        $CredentialResource = $Parts[1]
+    }
+    $result = Get-CredentialMatch -CredentialAccount $CredentialAccount -CredentialResource $CredentialResource -Token $Token -Uri $Uri
 }
 if ($null -ne $result) {
-    $Params = @{
-        RestApiToken = $Token;                
-        Uri          = "$($Uri.TrimEnd("/"))/api/v1/Credential/$($result[0].CredentialId)?showPassword=true";    
-    }    
-    $result = Invoke-SbPAMRest @Params
-    # To support domain users in secret vaults
-    if ($result.Username -match ".*\.*") {
-        $Parts = $result.Username.split("\")
-        $Credential.Username = $Parts[1]
-        $Credential.Domain = $Parts[0]
-        $Credential.Password = $result.Password
-    }
-    $Credential.Username = $result.Username
-    $Credential.Domain = $result.Domain
-    $Credential.Password = $result.Password
-    return $Credential
+    $Params = @{
+        RestApiToken = $Token;                
+        Uri          = "$($Uri.TrimEnd("/"))/api/v1/Credential/$($result[0].CredentialId)?showPassword=true";    
+    }    
+    $result = Invoke-SbPAMRest @Params
+    # To support domain users in secret vaults
+    if ($result.Username -match ".*\.*") {
+        $Parts = $result.Username.split("\")
+        $Credential.Username = $Parts[1]
+        $Credential.Domain = $Parts[0]
+        $Credential.Password = $result.Password
+    }
+    $Credential.Username = $result.Username
+    $Credential.Domain = $result.Domain
+    $Credential.Password = $result.Password
+    return $Credential
 }
 else {
-    $Message = "Unable to find credential for $CredentialAccount $CredentialResource"
-    Add-SbPAMActionLog -Type Error -Message "BYOV: $Message"
+    $Message = "Unable to find credential for $CredentialAccount $CredentialResource"
+    Add-SbPAMActionLog -Type Error -Message "BYOV: $Message"
 }
 ```
 

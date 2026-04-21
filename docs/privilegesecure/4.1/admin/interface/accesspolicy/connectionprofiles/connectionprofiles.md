@@ -22,7 +22,7 @@ table or list is filtered to the matching results.
 [Add Connection Profile](/docs/privilegesecure/4.1/admin/interface/accesspolicy/connectionprofiles/connectionprofile.md)
 topic for additional information.
 - Trashcan icon — Deletes the connection profile. Icon appears when profile is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 The selected profile details display in the main pane:
 
@@ -31,12 +31,12 @@ The selected profile details display in the main pane:
 - Proxy settings:
 
 - RDP Proxy — Specific proxy, format `host:port`, that should be used for RDP activities in an
-access policy. If the field is blank, the local Proxy on the Privilege Secure server will be
+access policy. If the field is blank, the local Proxy on the Privilege Secure server is
 used.
 - SSH Proxy — Specific proxy, format `host:port`, that should be used for SSH activities in an
-access policy. If the field is blank, the local Proxy on the Privilege Secure server will be
+access policy. If the field is blank, the local Proxy on the Privilege Secure server is
 used.
-- Allow Proxy Auto Connects — If disabled, the requestor will be prompted for secondary
+- Allow Proxy Auto Connects — If disabled, the requestor is prompted for secondary
 authentication (password and MFA) when executing proxy connects from the
 [Active Dashboard](/docs/privilegesecure/4.1/admin/dashboard/active/active.md).
 - Record Proxy Sessions — Specify if the proxy will record the session. This will allow a user

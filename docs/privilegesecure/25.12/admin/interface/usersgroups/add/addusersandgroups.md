@@ -7,8 +7,8 @@ sidebar_position: 10
 # Add Users & Groups Window
 
 The Add Users & Groups window lets you select users. From the
-[Users & Groups Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usersgroups.md), this window is used to onboard users. From other
-interfaces, this window is used to select onboarded users.
+[Users & Groups Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usersgroups.md), this window onboard users. From other
+interfaces, this window select onboarded users.
 
 ![Add Users and Groups to the console](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/usersgroups/addusersgroupstoconsole.webp)
 

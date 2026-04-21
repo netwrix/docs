@@ -21,7 +21,7 @@ table or list is filtered to the matching results.
 [Add Activity Token Complexity Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/activitytokencomplex/activitytokencomplexity_1.md) topic for additional
 information.
 - Trashcan icon — Deletes the activity token complexity policy. Icon appears when profile is hovered
-over. A confirmation window will display.
+over. A confirmation window displays.
 
 The selected activity token complexity policy details display in the main pane:
 
@@ -37,7 +37,7 @@ This list contains the following options:
 
 - Length — The maximum number of characters the activity token complexity policy will enforce
 - Max Consecutive Chars — The maximum number of consecutively occurring characters that the activity
-token complexity policy will allow
+token complexity policy allow
 - Characters to Exclude — Custom characters the activity token complexity policy will exclude.
 Characters entered in this field will be excluded in addition to the characters listed beneath the
 Additional characters excluded section.
@@ -50,5 +50,5 @@ token complexity policy:
 - Uppercase — At least one uppercase character in the password
 - Numbers — At least one number in the password
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.

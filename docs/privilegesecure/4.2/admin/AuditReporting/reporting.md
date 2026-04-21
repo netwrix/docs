@@ -21,8 +21,8 @@ report via email).
 
 ![Reports Tree](/images/privilegesecure/4.2/accessmanagement/admin/auditreporting/page/reportstree.webp)
 
-The Search Reports box will search all report names, both predefined and custom, for the specified
-report name. The report tree will then be filtered down to the matching reports.
+The Search Reports box searches all report names, both predefined and custom, for the specified
+report name. The report tree is then filtered down to the matching reports.
 
 ## Report Folders
 
@@ -31,7 +31,7 @@ The Reports tree contains the following folders.
 **Favorites Folder**
 
 This folder in the report tree contains reports that have been marked with a star for easy access.
-Clicking the star on a favorite report will remove it from the Favorites folder.
+Clicking the star on a favorite report removes it from the Favorites folder.
 
 **Predefined Reports**
 
@@ -77,13 +77,13 @@ The Filters tab has the following configuration options:
 report
 - Source dropdown List – Contains data sources that allow the report to look at different data sets
 related to Privilege Secure administration. See the Data Sources topic for additional information.
-- Timeframe dropdown List – Contains a number of predefined timeframes, ranging from “Last Hour” to
+- Timeframe dropdown List – Contains several predefined timeframes, ranging from “Last Hour” to
 “Last 30 Days”. Additionally, “Custom” can be selected, which makes visible a “Start date” date
 picker and an “End date” date picker.
 - Attribute dropdown List – Contains attributes from the given Source that can be paired with an
 operator and a value
 - Operator – Contains operators that lets you filter an attribute
-- Value – This field allows manual entry of a value against which the operator will be applied. The
+- Value – This field allows manual entry of a value against which the operator is applied. The
 field also offers a dropdown menu which is populated with values from the backend database.
 
 ### Data Sources
@@ -134,7 +134,7 @@ following attributes for a given user account:
 - Privilege
 
 :::note
-The Subscriptions tab will not be enabled until saving the report. See the Subscriptions
+The Subscriptions tab is not enabled until saving the report. See the Subscriptions
 Tab topic for additional information.
 :::
 
@@ -155,10 +155,10 @@ The Filters tab has the following configuration options:
 - Run Query – Runs the query for the given report, and returns any data matching the configured
 query
 - Download Report – Generates and downloads the report, either as PDF or as CSV. The file name of
-the downloaded report will indicate the name of the report and the time of download. For example,
+the downloaded report indicates the name of the report and the time of download. For example,
 "All Linux Sessions-24-05-07-164307".
 - Save – Saves any modifications to the report. If this is a predefined or platform based report, it
-will save as a new report under My Reports
+saves as a new report under My Reports
 - Delete (available for custom reports only) – Deletes the custom report
 - Source dropdown List – Contains data sources that allow the report to look at different data sets
 related to Privilege Secure administration. See the Data Sources topic for additional information.
@@ -168,7 +168,7 @@ picker and an “End date” date picker.
 - Attribute dropdown List – Contains attributes from the given Source that can be paired with an
 operator and a value.
 - Operator – Contains operators that lets you filter an attribute.
-- Value – Allows manual entry of a value against which the operator will be applied. The field also
+- Value – Allows manual entry of a value against which the operator is applied. The field also
 offers a dropdown menu which is populated with values from the backend database.
 
 ### Subscriptions Tab
@@ -177,10 +177,10 @@ The Subscriptions tab allows the Privilege Secure user to Subscribe to the repor
 
 ![Reporting Subscriptions Tab](/images/privilegesecure/4.2/accessmanagement/admin/auditreporting/page/subscriptionstab.webp)
 
-The report will be emailed to the Email value for the user, which is populated based on Active
+The report is emailed to the Email value for the user, which is populated based on Active
 Directory attributes and can be confirmed for a given user by checking the Users and Groups page. If
 a new custom schedule is needed for a Subscription, one can be created under the **Policy** >
-**Platforms** > **Schedule Policies** menu. All Schedule Policies will show up in the list when you
+**Platforms** > **Schedule Policies** menu. All Schedule Policies shows up in the list when you
 Subscribe to a report. See the [Schedule Policies Page](/docs/privilegesecure/4.2/admin/interface/platforms/schedulepolicies/schedulepolicies.md) topic
 for additional information.
 
@@ -190,6 +190,6 @@ The Subscriptions tab has the following configuration options:
 subscribed Privilege Secure user
 - Subscribe/Unsubscribe button – Subscribe or unsubscribe the logged in user to the report according
 to a specified schedule from the dropdown menu
-- CSV checkbox – If checked, a CSV of the report will be emailed to the subscribed user
-- PDF checkbox – If checked, a PDF of the report will be emailed to the subscribed user
+- CSV checkbox – If checked, a CSV of the report is emailed to the subscribed user
+- PDF checkbox – If checked, a PDF of the report is emailed to the subscribed user
 - Subscriptions table – Shows the subscribed users for the report, and their subscription schedule

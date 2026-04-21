@@ -30,10 +30,10 @@ Create Local Account option has no effect
 
 - %samaccountname%, %department%, %email%, %userprincipalname%, %displayname%
 
-- Use a mask to define an account that will be created locally on the target resource — For example,
+- Use a mask to define an account that is created locally on the target resource — For example,
 a mask of “`%domain%_%samaccountname%`” in conjunction with the Create Local Account option set to
-yes, will result in a local account being created using name substitution so the user
-“sblab\jsmith” will be connected to a local account named “sblab_jsmith”
+yes, results in a local account being created using name substitution so the user
+“sblab\jsmith” is connected to a local account named “sblab_jsmith”
 
 :::note
 The value of each mask can be customized on the
@@ -67,14 +67,14 @@ supplied `stringToManipulate` parameter.
 
 `int numCharactersReturned` must be a positive number.
 
-If `int numCharactersReturned` exceeds string `stringToManipulate` then the entire string will be
-returned.
+If `int numCharactersReturned` exceeds string `stringToManipulate` then the entire string is returned
+.
 
 **Examples**
 
 `%first(jsmith,3)/first%`
 
-The above example will return: "jsm"
+The above example returns: "jsm"
 
 A common use case for this function is to manipulate Privilege Secure Login Account Template masks
 such as `%samaccountname%`, to change how what the Login Account Template evaluates to when an
@@ -85,7 +85,7 @@ For example:
 `%first(%samaccountname%,3)/first%`
 
 In the example above, if "`%samaccountname%`" normally evaluates to "jsmith" then the return value
-of the `first()` function will be "jsm"
+of the `first()` function is "jsm"
 
 ### substr()
 
@@ -114,11 +114,11 @@ supplied string, then an empty string is returned.
 
 `%substr(jsmith,2)/substr%`
 
-The above example will return "mith"
+The above example returns "mith"
 
 `%substr(jsmith,-2)/substr%`
 
-The above example will return "th"
+The above example returns "th"
 
 A common use case for this function is to manipulate Privilege Secure Login Account Template masks
 such as "`%samaccountname%`" to change how what the Login Account Template evaluates to when an
@@ -129,7 +129,7 @@ For example:
 `%substr(%samaccountname%,2)/substr%`
 
 In the example above, if "`%samaccountname%`" normally evaluates to "jsmith" then the return value
-of the `substr()` function will be "mith"
+of the `substr()` function is "mith"
 
 ### replace()
 
@@ -148,13 +148,13 @@ The string to be replaced
 
 `newString (string)`
 
-The string that will replace the newString
+The string that replaces the newString
 
 **Examples**
 
 `%replace(jsmith,smith,jones)/replace%`
 
-The above example will return "jjones"
+The above example returns "jjones"
 
 ### trim()
 
@@ -168,7 +168,7 @@ The string or Privilege Secure Login Account Template mask to be manipulated.
 
 `numberOfCharacters (int)`
 
-A non-negative integer should be supplied. That many characters will be trimmed from the end of the
+A non-negative integer should be supplied. That many characters is trimmed from the end of the
 string.
 
 **Notes**
@@ -180,7 +180,7 @@ empty string is returned.
 
 `%trim(jsmith-suffix,7)/trim%`
 
-The above example will return "jsmith"
+The above example returns "jsmith"
 
 A common use case for this function is to remove known suffixes from Privilege Secure Login Account
 Template masks such as "`%samaccountname%`" to change what the Login Account Template evaluates to

@@ -36,7 +36,7 @@ table or list is filtered to the matching results.
 [Add Schedule Policy](/docs/privilegesecure/4.1/admin/interface/platforms/schedulepolicies/schedulepolicy.md)
 topic for additional information.
 - Trashcan icon — Deletes the schedule policy. Icon appears when profile is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 :::note
 The default password policy can't be deleted.

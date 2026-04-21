@@ -16,12 +16,12 @@ The tab displays the following information:
 application. The certificate should be signed by a Certificate Authority (CA). Ensure the
 certificate is trusted by IIS by adding the CA trusted root certificate to the Trusted Root
 Certification Authorities on the Privilege Secure server.
-- API Key — The unique key used as part of Application authentication. The API key has the following
+- API Key — The unique key used as part of Application authentication. The API key has the following
 icons:
 
-- Copy — Copies the value to the clipboard. Only available when the API Key is visible.
+- Copy — Copies the value to the clipboard. Only available when the API Key is visible.
 - Reveal / Hide — Shows or hides value
-- Regenerate — Generates a new API key. Only the current API key is valid.
+- Regenerate — Generates a new API key. Only the current API key is valid.
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons appear. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.

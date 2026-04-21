@@ -38,7 +38,7 @@ AWS KMS key into the AWS Connection settings fields.
 **Step 6 –** When all fields are completed, click the **Rotate** button to update all encrypted
 values in the Privilege Secure system.
 
-The tool will take a few minutes to run (especially on larger systems) and the log window will show
+The tool will take a few minutes to run (especially on larger systems) and the log window shows
 the results of the rotation.
 
 :::note

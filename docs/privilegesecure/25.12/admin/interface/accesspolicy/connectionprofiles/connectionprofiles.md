@@ -21,7 +21,7 @@ table or list is filtered to the matching results.
 - Blue + button — Create a new connection profile. See the
 [Add Connection Profile](/docs/privilegesecure/25.12/admin/interface/accesspolicy/connectionprofiles/connectionprofile.md) topic for additional information.
 - Trashcan icon — Deletes the connection profile. Icon appears when profile is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 The selected profile details display in the main pane:
 
@@ -38,7 +38,7 @@ used.
 - Allow Proxy Auto Connects — If disabled, the requester will be prompted for secondary
 authentication (password and MFA) when executing proxy connects from the
 [Active Dashboard](/docs/privilegesecure/25.12/admin/dashboard/active/active.md).
-- Record Proxy Sessions — Specify if the proxy will record the session. This will allow a user
+- Record Proxy Sessions — Specify if the proxy will record the session. This allows a user
 with the admin role to watch a remote session live, or review it later. See the
 [Replay Viewer Window](/docs/privilegesecure/25.12/admin/dashboard/historical/replayviewer.md) topic for additional
 information.
@@ -57,7 +57,7 @@ information.
 - Extend By — The additional number of minutes that the session will be extended. See the
 [Start Activity Session](/docs/privilegesecure/25.12/enduser/dashboard/active/startsession/startsession.md) topic for additional
 information.
-- Session Extension Limit — The number of times the user will be able to extend their session.
+- Session Extension Limit — The number of times the user can extend their session.
 See the [Start Activity Session](/docs/privilegesecure/25.12/enduser/dashboard/active/startsession/startsession.md) topic for
 additional information.
 - Monitor for Logon — Monitor user logon to the resource
@@ -98,16 +98,16 @@ the default activity token complexity policy.
 
 - Credential Management settings:
 
-- Allow User to Access Password — When checked, the user will be able to view or copy the
+- Allow User to Access Password — When checked, the user can view or copy the
 password from the [Active Dashboard](/docs/privilegesecure/25.12/admin/dashboard/active/active.md) for the managed account that
 is used for the activity. The password that the user sees is valid only while the session is
 active. This option is enabled by default.
-- Enable credential auto-fill in browser extension — When checked, the Console will allow
+- Enable credential auto-fill in browser extension — When checked, the Console allow
 auto-fill in the browser extension. This option is enabled by default.
 - Enable 'Show Password' option in user interface and browser extension — When checked, the
-Console will enable the 'Show Password' icon on the login page of both the Console and the
+Console enable the 'Show Password' icon on the login page of both the Console and the
 browser extension. This option is disabled by default
-- View Password Timeout (seconds) — Enter he number of seconds the user will be able to view
+- View Password Timeout (seconds) — Enter he number of seconds the user can view
 their password in the login page
 
 - Website settings:
@@ -134,5 +134,5 @@ their password in the login page
 - Tiered – Approval is required for the session. See the
 [Add Approval Workflow](/docs/privilegesecure/25.12/admin/interface/accesspolicy/connectionprofiles/connectionprofileapproval.md) topic for additional information.
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.

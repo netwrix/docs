@@ -17,20 +17,20 @@ Allows the rest call to skip the certificate check for the built-in check out st
 ## CheckoutScriptBlock
 
 Supply a PowerShell script block to be used for checking out password from CyberArk. The script
-block will be called with two arguments. It is recommended to use a param() block as follows:
+block will be called with two arguments. We recommend that you use a param() block as follows:
 
 ```powershell
 param(
 
-        [Parameter(Mandatory = $true)]
+ [Parameter(Mandatory = $true)]
 
 $Options,
 
-        [Parameter(Mandatory = $true)]
+ [Parameter(Mandatory = $true)]
 
-        $Credential
+ $Credential
 
-    )
+ )
 ```
 
 The scriptblock must return the updated $Credential setting the Username, Domain, and Password value
@@ -38,7 +38,7 @@ to the values that represent the information for the account checked out. The de
 will set these values to the returned Username, Address, and Content of the response from the API
 call of the Central Credential Provider.
 
-$Options will have settings from the BYOV connector and information populated by the activity
+$Options have settings from the BYOV connector and information populated by the activity
 session.
 
 | Variable Name | Definition | Example Value |
@@ -74,7 +74,7 @@ out.
 | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
 | $Credential.Username | The username to be checked out, this should be updated with the actual name of the account that was checked out. | Username |
 | $Credential.Domain | The domain name of the user to be checked out, this should be updated with actual domain OR computer name if local computer account | Example Example.com HOST HOST.EXAMPLE.COM |
-| $Credential.Password | On checkout this will have a random value, overwrite this with the actual password given by the vault | |
+| $Credential.Password | On checkout this has a random value, overwrite this with the actual password given by the vault | |
 | $Credential.SudoCommand | The command to use for performing elevated commands on a Linux/Unix based system. Add a value to override the default of “sudo” | sudo |
 | $Credential.PasswordValueConnectorId | The vault connector GUID identifier for this credential. This has the same value as the $Options.Connector.Id | |
 | $Credential.PasswordVaultInfo | A JSON string that contains vault specific options for this credential | |
@@ -87,24 +87,24 @@ information.
 Supply PowerShell script block to be used for checking in password from CyberArk. The script block
 will be called with two arguments. you use a param() block as follows:
 
-`    param(`
+` param(`
 
-`        [Parameter(Mandatory = $true)]`
+` [Parameter(Mandatory = $true)]`
 
-`        $Options,`
+` $Options,`
 
-`        [Parameter(Mandatory = $true)]`
+` [Parameter(Mandatory = $true)]`
 
-`        $Credential`
+` $Credential`
 
-`    )`
+` )`
 
 The scriptblock must return the updated $Credential setting the Username, Domain, and Password value
 to the values that represent the checked in account information. The default implementation will set
 these values to the returned Username, Address, and Content of the response from the API call of the
 Central Credential Provider.
 
-$Options will have settings from the BYOV connector and information populated by the activity
+$Options have settings from the BYOV connector and information populated by the activity
 session.
 
 | Variable Name | Definition | Example Value |

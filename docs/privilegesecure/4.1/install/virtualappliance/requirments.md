@@ -23,7 +23,7 @@ topic for additional information.
 
 ## Software Requirements
 
-The table below lists minimum software requirements for the virtual appliance deployment:
+the following table lists minimum software requirements for the virtual appliance deployment:
 
 | Virtual Environment | Requirements |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

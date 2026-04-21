@@ -78,14 +78,14 @@ certificate.
 
 **Step 9 –** Enter valid credentials for the SAML provider and sign in.
 
-**Step 10 –** If the sign in was successful, the Provider User Name/Id will display. This is passed
+**Step 10 –** If the sign in was successful, the Provider User Name/Id displays. This is passed
 to the UserTokenController so that the user information can be extracted. Click Next.
 
 ![SAML Configuration Wizard, Retrieved Data](/images/privilegesecure/4.1/accessmanagement/admin/configuration/wizard/samlconfigidmapping.webp)
 
-SpPAM will use the access token to retrieve user data from the SAML provider. The SAML provider
+SpPAM will use the access token to retrieve user data from the SAML provider. The SAML provider
 requires a User Id Field for sign in. specify which field in Active Directory
-should map to that User Id Field, so that Privilege Secure can automatically fill in the required
+should map to that User Id Field, so that Privilege Secure can automatically fill in the required
 credentials at login. The value provided is used to sign in to the multi factor authenticator (MFA)
 when a user logs in to the Privilege Secure Console.
 
@@ -102,7 +102,7 @@ email addresses.
 Field values will vary according to the information supplied by the provider. Example Values come
 from the provider and will vary:
 
-- Field – Shows the possible fields used by the OpenID Connect provider detected by Privilege
+- Field – Shows the possible fields used by the OpenID Connect provider detected by Privilege
 Secure.
 - Example Value – Shows an example value for the field based on the login credentials provided in
 the previous step. This represents the format of the value that will be used to sign in to the MFA
@@ -133,7 +133,7 @@ Field.
 - Signout URI – The Signout URI must be the simple logout address (not a SAML SLO endpoint) which
 takes a parameter for the post logout redirection.
 
-- Examples for Microsoft Entra ID:
+- Examples for Microsoft Entra ID:
 
 **https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri**
 
@@ -156,7 +156,7 @@ and modify them where needed. Then, verify the Log Out page again.
 
 **Step 16 –** Click the browser’s back arrow to return to the Test Logout wizard page.
 
-**Step 17 –** If the logout was successful, click Finish. A window will display the updated
+**Step 17 –** If the logout was successful, click Finish. A window displays the updated
 configuration settings.
 
 ![SAML Configuration updating connector settings](/images/privilegesecure/4.1/accessmanagement/admin/configuration/wizard/samlconfigupdateconnector.webp)

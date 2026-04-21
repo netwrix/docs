@@ -6,11 +6,11 @@ sidebar_position: 60
 
 # SIEM Service
 
-The SIEM Service shows the SIEM-specific details for the selected service.
+The SIEM Service shows the SIEM-specific details for the selected service.
 
 ![servicenodes_siemservice](/images/privilegesecure/4.1/accessmanagement/admin/configuration/servicetype/servicenodes_siemservice.webp)
 
-The SIEM Service page has the following features:
+The SIEM Service page has the following features:
 
 - Search — Searches the Message column to match the search string. When matches are found, the table
 is filtered to the matching results.
@@ -26,7 +26,7 @@ Not Sent.
 - Not Sent — Indicates the message has not been sent.
 
 - Message — The SIEM event to be processed.
-- SIEM Host — The SIEM server the event is destined for.
+- SIEM Host — The SIEM server the event is destined for.
 - Resource — The resource associated with the event, If applicable.
 - Account — The account associated with the event, if applicable.
 - Activity — The activity associated with the event, if applicable.

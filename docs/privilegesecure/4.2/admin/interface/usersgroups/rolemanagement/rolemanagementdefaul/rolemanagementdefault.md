@@ -59,7 +59,7 @@ The table columns can be resized and sorted in ascending or descending order.
 
 The default roles provide users with the following permissions:
 
-- Administrators — Grants access to all Privilege Secure Console configuration options
+- Administrators — Grants access to all Privilege Secure Console configuration options
 - Users — Creates sessions based on assigned access policy. This role is automatically assigned when
 a user is onboarded.
 - Reviewers — Grants ability to review access entitlement. See the

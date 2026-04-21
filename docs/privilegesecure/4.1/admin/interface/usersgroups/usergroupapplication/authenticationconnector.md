@@ -19,7 +19,7 @@ topic for additional information.
 
 Select the method of authentication for the user or group:
 
-- Internal MFA — User will be prompted using the internal MFA when signing into the Privilege Secure
+- Internal MFA — User is prompted using the internal MFA when signing into the Privilege Secure
 console
 - Duo (and other RADIUS profile values) — RADIUS profile that will be used for MFA when the user
 signs into the Privilege Secure console

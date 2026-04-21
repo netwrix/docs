@@ -7,9 +7,9 @@ sidebar_position: 60
 # AWS Key Management Service
 
 AWS Key Management Service (AWS KMS) is a managed service that makes it easy for you to create and
-control the cryptographic keys that are used to protect your data. Organizations using AWS Key
+control the cryptographic keys that protect your data. Organizations using AWS Key
 Management Service (AWS KMS) can configure Netwrix Privilege Secure to rotate security Keys. The KMS
-key isn't used to encrypt the secret key, but will be used to encrypt the key that is used to
+key isn't used to encrypt the secret key, but encrypt the key that 
 encrypt the secret key.
 
 See the
@@ -109,7 +109,7 @@ option.
 ![Copy Access Key](/images/privilegesecure/25.12/accessmanagement/requirements/copyaccesskey.webp)
 
 **Step 11 –** after the Key has been created, copy, or download the Access key and Secret access key.
-These keys will be used by Privilege Secure to access the AWS KMS key encryption and decryption
+These keys is used by Privilege Secure to access the AWS KMS key encryption and decryption
 functionality.
 
 **Step 12 –** Click **Done** when finished.
@@ -172,7 +172,7 @@ Click **Next** to continue.
 **Step 9 –** Click the **Copy** button from the newly created key, and store the ARN from the
 details.
 
-The ARN will be used by Privilege Secure to identify the key used for encryption.
+The ARN is used by Privilege Secure to identify the key used for encryption.
 
 ### Least Privilege Policy
 

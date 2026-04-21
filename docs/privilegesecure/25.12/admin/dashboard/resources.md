@@ -33,7 +33,7 @@ additional information.
 [Add New Database](/docs/privilegesecure/25.12/admin/interface/resources/database.md)topic for additional information.
 
 - Remove — Removes the selected resource from being managed by the application. A confirmation
-window will display. See the
+window displays. See the
 [Remove Resource Window](/docs/privilegesecure/25.12/admin/interface/resources/removeresource.md) topic for additional
 information.
 - Change Platform — Opens the Change Platform window to modify the type of platform for the selected
@@ -41,12 +41,12 @@ host resource.
 - Change Service Account — Opens the Change Service Account window to modify the service account
 associated with the selected host resource. 
 - Scan Resource — Scans a host resource for local users, groups, windows services, and scheduled
-tasks. A confirmation window will display.
+tasks. A confirmation window displays.
 - Search — Searches the table or list for matches to the search string. When matches are found, the
 table or list is filtered to the matching results.
 - Filter — Provides options to filter results based on a chosen criterion:
 
-- Type— Filter by the type of resource: All, Host, Domain, Website, Azure AD, Secret Vault, or
+- Type— Filter by the type of resource: All, Host, Domain, Website, Azure AD, Secret Vault, or
 Database. The dropdown menu the definition for each Type icon used in the table.
 
 - Refresh — Reload the information displayed
@@ -70,8 +70,8 @@ details vary based on the type of resource.
 - Scheduled — Displays the number of sessions scheduled for the resource
 - Access Policies — Displays the number of access policies associated with the resource
 - Protection Policies — Displays the number of protection policies associated with the resource
-- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
-- IP Address — Displays the IP address for the resource
+- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
+- IP Address — Displays the IP address for the resource
 - Domain — Displays the domain name for the resource. Click the link to view additional details. See
 the [Domain Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/domain/domain.md) topic for additional information.
 - Service Account — Displays the service account associated with the resource. Click the link to

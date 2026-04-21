@@ -30,7 +30,7 @@ Netwrix knowledge base article:
 server.
 
 **Step 3 –** Open the NPS.SchedulerService.exe and thePrivilege Secure Scheduler Service Setup
-wizard will open.
+wizard opens.
 
 ![licenseagreement](/images/privilegesecure/4.1/accessmanagement/install/licenseagreement_4.webp)
 
@@ -121,7 +121,7 @@ Admin password when prompted:
 - For installations without a trusted https certificate on the Privilege Secure server, the ``-I``
 parameter must be added:
 - NPS.SchedulerService.exe –register -u admin `-I` [PrivilegeSecureServer:Port]
-- The command prompt will show if the configuration was successful.
+- The command prompt shows if the configuration was successful.
 
 **Step 4 –** Exit the command prompt.
 

@@ -21,7 +21,7 @@ table or list is filtered to the matching results.
 hovered over. This is intended to cover use cases where the built-in account differs from the
 norm.
 - Trashcan icon — Deletes the platform. Icon appears when policy is hovered over and is only
-available for duplicated platforms. A confirmation window will display.
+available for duplicated platforms. A confirmation window displays.
 
 Default platforms include:
 

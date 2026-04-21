@@ -12,9 +12,9 @@ solution is the proxy, which can broker the connection between security zones. T
 application includes an advanced session proxy service for automatic connection to privileged
 sessions.
 
-The NPS Proxy Service is installed on the proxy server as part of Privilege Secure install. It must
+The NPS Proxy Service is installed on the proxy server as part of Privilege Secure install. It must
 also be installed on any server running services for the application, specifically the NPS Action
-Service, NPS Host Scan Service, the NPS Scheduler Service, and NPS SIEM Service. This provides the option to run sessions
+Service, NPS Host Scan Service, the NPS Scheduler Service, and NPS SIEM Service. This provides the option to run sessions
 defined in the application from different locations within your organization.
 
 The NPS Proxy Service installer is in the Extras folder of the ZIP file downloaded from the Netwrix
@@ -50,7 +50,7 @@ Remember, it is a best practice to read the agreement before accepting it.
 - To change the default location, click Browse and set a new location.
 - When the location is set, click OK.
 
-**Step 6 –** You will return to the End User License Agreement page. Click Install.
+**Step 6 –** You returns to the End User License Agreement page. Click Install.
 
 :::note
 The installation process begins and the wizard displays the its Progress. This may take a
@@ -101,8 +101,8 @@ All commands are executed on the NPS Application Server as administrator.
 
 ```
 {
-    "advertise": ["[ Server FQDN]","[ Server IP Address]"],
-    "tag": []
+ "advertise": ["[ Server FQDN]","[ Server IP Address]"],
+ "tag": []
 }
 ```
 
@@ -110,8 +110,8 @@ For example:
 
 ```
 {
-    "advertise": ["nps-app.nwxtech.net","192.168.99.1"],
-    "tag": []
+ "advertise": ["nps-app.nwxtech.net","192.168.99.1"],
+ "tag": []
 }
 ```
 
@@ -128,7 +128,7 @@ del C:\ProgramData\Stealthbits\PAM\tls\certs\sbpam-node.crt
 "C:\Program Files\Stealthbits\PAM\ProxyService\sbpam-proxy.exe" register ca-hash
 ```
 
-**Step 5 –** Copy the returned hash value and save it for later, you will need this value when you
+**Step 5 –** Copy the returned hash value and save it for later, you need this value when you
 register your remote service..
 
 ### Remote NPS Proxy Server
@@ -147,8 +147,8 @@ default location is `C:\ProgramData\Stealthbits\PAM\ProxyService`.
 
 ```
 {
-    "advertise": ["nps-remote.nwxtech.net","192.168.99.2"],
-    "tag": []
+ "advertise": ["nps-remote.nwxtech.net","192.168.99.2"],
+ "tag": []
 }
 ```
 
@@ -176,7 +176,7 @@ The Privilege Secure Proxy Service is now registered with the Privilege Secure a
 ## SSH for Legacy Cisco Device
 
 If the Cisco device is running with insecure ciphers when the user attempts to connect to an
-SSH session, the following error message is displayed:
+SSH session, the following error message displays:
 
 `ssh: handshake failed: ssh: no common algorithm for key exchange; client offered: [curve25519-sha256@libssh.org ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha1], server offered: [diffie-hellman-group1-sha1]`
 
@@ -205,30 +205,30 @@ installation directory. The default path is:
 
 ```
 {
-    "listenaddress": "0.0.0.0:4422",
-    "ClientSettings": {
-        "Algorithms": {
-            "KeyExchanges": [
-                "curve25519-sha256@libssh.org",
-                "ecdh-sha2-nistp256",
-                "ecdh-sha2-nistp384",
-                "ecdh-sha2-nistp521",
-                "diffie-hellman-group14-sha1",
-                "diffie-hellman-group1-sha1"
-            ],
-            "Ciphers": [
-                "aes128-gcm@openssh.com",
-                "chacha20-poly1305@openssh.com",
-                "aes128-ctr",
-                "aes192-ctr",
-                "aes256-ctr",
-                "aes128-cbc",
-                "3des-cbc",
-                "aes192-cbc",
-                "aes256-cbc"
-            ]
-        }
-    }
+ "listenaddress": "0.0.0.0:4422",
+ "ClientSettings": {
+ "Algorithms": {
+ "KeyExchanges": [
+ "curve25519-sha256@libssh.org",
+ "ecdh-sha2-nistp256",
+ "ecdh-sha2-nistp384",
+ "ecdh-sha2-nistp521",
+ "diffie-hellman-group14-sha1",
+ "diffie-hellman-group1-sha1"
+ ],
+ "Ciphers": [
+ "aes128-gcm@openssh.com",
+ "chacha20-poly1305@openssh.com",
+ "aes128-ctr",
+ "aes192-ctr",
+ "aes256-ctr",
+ "aes128-cbc",
+ "3des-cbc",
+ "aes192-cbc",
+ "aes256-cbc"
+ ]
+ }
+ }
 }
 ```
 

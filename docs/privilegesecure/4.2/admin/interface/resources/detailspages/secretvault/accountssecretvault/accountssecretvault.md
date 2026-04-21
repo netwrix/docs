@@ -20,7 +20,7 @@ information.
 - Edit — Opens the Edit a Managed Account window. See the
 [Edit a Managed Account Window](/docs/privilegesecure/4.2/admin/interface/resources/detailspages/secretvault/accountssecretvault/editamanagedaccount.md) topic for
 additional information.
-- Delete — Removes the selected item. A confirmation window will appear.
+- Delete — Removes the selected item. A confirmation window appears.
 - Refresh — Reload the information displayed
 
 The table has the following columns:

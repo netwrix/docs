@@ -28,7 +28,7 @@ topic for additional information.
 - Default icon — Indicates if connector is set as default. Icon appears when activity is hovered
 over. Click the icon to change or clear the default.
 - Trashcan icon — Deletes the connector. Icon appears when activity is hovered over. A confirmation
-window will display.
+window displays.
 
 The selected connector details display at the top of the main pane:
 
@@ -42,7 +42,7 @@ commit the modifications. Click **Cancel** to discard the modifications.
 
 ## MFA Connector Type
 
-The following fields apply to the MFA Connector Type:
+The following fields apply to the MFA Connector Type:
 
 - Server FQDN / IP — Address of the RADIUS server proxy
 - Remote Port — Port of the RADIUS server proxy
@@ -53,8 +53,8 @@ RADIUS proxy
 with the RADIUS proxy
 - Timeout (Seconds) — Indicates how long before Privilege Secure determines that the communication
 with the RADIUS proxy has failed
-- Title for MFA Auth Dialog — Title that will appear at the top of the authentication dialog
-- Text for MFA Auth Dialog — Text that will be displayed to the user prompting for action
+- Title for MFA Auth Dialog — Title that appears at the top of the authentication dialog
+- Text for MFA Auth Dialog — Text that displays to the user prompting for action
 - Send NAS Identifier checkbox — Indicates if the NAS identifiers are transmitted to the RADIUS
 proxy. This is required for certain RADIUS proxy implementations that require it. The NAS IP
 Address value is the IP address of the Privilege Secure server; the NAS Identifier is “SbPAM”.
@@ -66,9 +66,9 @@ phone app prompt for authorization.
 - Prefix for Response Text — Displays the value that is added to the beginning of the responses. The
 value will vary according to server.
 - Format for Username (Allows Custom Entries) — Displays the Username value that is sent to the
-RADIUS server (default: SAMAccountname@NetBiosDomain). This format will be used by the
+RADIUS server (default: SAMAccountname@NetBiosDomain). This format will be used by the
 authenticator at log in. If configured to use "Email" or "UPN" (optional attributes) the
-authenticator will use that format at log in, but send the default value to the RADIUS server.
+authenticator will use that format at log in, but send the default value to the RADIUS server.
 
 ## OpenID Connect Connector Type
 

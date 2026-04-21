@@ -42,7 +42,7 @@ The Add Resources and Resource Groups window has the following features:
 
 - Search – Searches the table or list for matches to the search string. When matches are found, the
 table or list is filtered to the matching results.
-- Available Resources and Resource Groups – Shows all resources that have been added to the console
+- Available Resources and Resource Groups – Shows all resources that are added to the console
 - Resources and Resource Groups to Add – Shows the resources to be added to the protection policy
 - Column headers can be sorted in ascending or descending order
 

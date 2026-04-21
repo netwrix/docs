@@ -8,7 +8,7 @@ sidebar_position: 20
 
 An internal service account is a type of service account used by Privilege Secure with no
 dependencies (windows services or scheduled tasks). When an internal service account (Managed Type
-_Internal_) is selected and set to be managed by Privilege Secure, a pop up window will display and
+_Internal_) is selected and set to be managed by Privilege Secure, a pop up window displays and
 Privilege Secure searches for a matching user.
 
 ![Manage internal service account](/images/privilegesecure/4.2/accessmanagement/admin/policy/window/credentials/manageinternalserviceaccount.webp)
@@ -19,14 +19,14 @@ If a matching user is found, there are three options to manage the selected acco
 - Manual — Manages the account and password manually
 - Cancel — Closes the window with no changes to the account
 
-If the message “No matching user found” is displayed, Privilege Secure is unable to find a matching
+If the message “No matching user found” appears, Privilege Secure is unable to find a matching
 user in Active Directory.
 
 ![No matching user found](/images/privilegesecure/4.2/accessmanagement/admin/policy/window/credentials/matchinguserfalse.webp)
 
 Try the following possible solutions to resolve:
 
-- Perform an AD Sync to collect the latest AD data from the domain. See the
+- Perform an AD Sync to collect the latest AD data from the domain. See the
 [Domain Details Page](/docs/privilegesecure/4.2/admin/interface/resources/detailspages/domain/domain.md) topic for additional information.
 - Check the user is added to the Privilege Secure console. See the
 [Users & Groups Page](/docs/privilegesecure/4.2/admin/interface/usersgroups/usersgroups.md) topic for additional information.
@@ -37,7 +37,7 @@ information.
 
 ## Manually Manage an Internal Service Account
 
-If the manual option is selected, a new window will open to set the password for the credential.
+If the manual option is selected, a new window opens to set the password for the credential.
 
 ![Set password for credential window](/images/privilegesecure/4.2/accessmanagement/admin/policy/window/credentials/setpasswordcredential.webp)
 
@@ -46,7 +46,7 @@ updated and the service account can be manually managed.
 
 ![Manually Managed Account](/images/privilegesecure/4.2/accessmanagement/admin/policy/window/credentials/credentialsmanuallymanageaccount.webp)
 
-The selected account will now display the following options.
+The selected account now displays the following options.
 
 - Set Password icon — Opens the Set Password for Credential window to set a new password for the
 selected account.

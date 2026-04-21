@@ -176,7 +176,7 @@ additional information.
 
 ## Role Users
 
-Role Users is located at the bottom of the Custom Role details page. This will be the user that has
+Role Users is located at the bottom of the Custom Role details page. This is the user that has
 access to the Custom Role.
 
 ![Role Users for Custom Role](/images/privilegesecure/4.2/accessmanagement/admin/policy/page/details/customroleusers.webp)

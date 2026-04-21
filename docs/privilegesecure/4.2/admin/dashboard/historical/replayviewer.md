@@ -54,10 +54,10 @@ or was manually canceled by the user or an Privilege Secure administrator
 **Activity Details**
 
 - Time line — Displays recorded activity that occurred during the session in the pane to the left of
-the player. By default this time line will include keystroke activity.
+the player. By default this time line includes keystroke activity.
 
 :::note
-If RDP Session Monitoring is enabled, then it will also include Windows metadata
+If RDP Session Monitoring is enabled, then it also includes Windows metadata
 activity in the time line. This monitoring requires the Netwrix Privilege Secure Remote Desktop
 Monitor service to be installed on the target host. See the
 [Install Remote Desktop Monitor Service on Target RDP Hosts](/docs/privilegesecure/4.2/install/servicesonadditional/rdpmonitor.md)
@@ -70,8 +70,7 @@ topic for additional information.
 The Replay Viewer for SSH sessions is applicable to Linux and Cisco resources.
 
 :::note
-When a user enters input into a password prompt during an SSH session, the keystrokes will
-be obscured in the Replay Viewer.
+When a user enters input into a password prompt during an SSH session, the keystrokes are obscured in the Replay Viewer.
 :::
 
 
@@ -102,7 +101,7 @@ or was manually canceled by the user or an Privilege Secure administrator
 **Activity Details**
 
 - Time line — Displays recorded activity that occurred during the session in the pane to the left of
-the player. By default this time line will include keystroke activity.
+the player. By default this time line includes keystroke activity.
 
 ## Replay Viewer for Website Host Sessions
 

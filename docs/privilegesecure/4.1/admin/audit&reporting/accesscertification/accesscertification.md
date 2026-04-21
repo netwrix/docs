@@ -25,7 +25,7 @@ topic for additional information.
 
 - Status – Shows status information for the task
 
-- Setup – Admin is in the process of creating an access certification task. It isn't
+- Setup – Admin is creating an access certification task. It isn't
 visible to the reviewer in this state
 - Ready to Start – Waiting for the reviewer to review the task
 - Incomplete – Review of user access started by the reviewer
@@ -33,7 +33,7 @@ visible to the reviewer in this state
 by the requestor.
 
 - Delete icon – Remove the selected access certification task from the console (A confirmation
-window will display)
+window displays)
 
 The right of the page shows details of the selected access certification task and has the following
 features:

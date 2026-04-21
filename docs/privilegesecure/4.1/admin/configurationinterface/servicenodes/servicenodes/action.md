@@ -35,7 +35,7 @@ filtered to the matching results.
 - Column headers can be sorted by ascending or descending order:
 
 - Name – Name of the action processed
-- Resource – The resource the action will run on
+- Resource – The resource the action runs on
 - User – The account associated with the action
 - Status – Shows status information for the action:
 
@@ -63,7 +63,7 @@ filtered to the matching results.
 - Column headers can be sorted by ascending or descending order:
 
 - Name – Name of the action to be executed
-- Resource – The resource the action will run on
+- Resource – The resource the action runs on
 - User – The account associated with the action
 - Status – Shows status information for the action:
 

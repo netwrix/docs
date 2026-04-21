@@ -19,6 +19,6 @@ To install the Privilege Secure application from the command prompt.
 
 **nps.exe /quiet PRODUCTDIR="[Path]"**
 
-For example: `nps.exe /quiet PRODUCTDIR="D:\Stealthbits\PAM"`
+For example: `nps.exe /quiet PRODUCTDIR="D:\Stealthbits\PAM"`
 
 The Privilege Secure application installs in the background to the specified folder location.

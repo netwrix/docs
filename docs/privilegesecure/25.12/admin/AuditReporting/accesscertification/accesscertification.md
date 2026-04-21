@@ -8,7 +8,7 @@ sidebar_position: 10
 
 On the Access Certification page, create, or review access certification tasks to audit and remediate
 user access. Only Users / group members assigned the Admin Role can create access certification
-tasks. Users / group members with the Reviewer role will see the access certification tasks
+tasks. Users / group members with the Reviewer role sees the access certification tasks
 assigned to them here.
 
 ![Access Certification Page](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/page/page.webp)
@@ -25,7 +25,7 @@ information.
 
 - Status – Shows status information for the task
 
-- Setup – Admin is in the process of creating an access certification task. It isn't
+- Setup – Admin is creating an access certification task. It isn't
 visible to the reviewer in this state
 - Ready to Start – Waiting for the reviewer to review the task
 - Incomplete – Review of user access started by the reviewer
@@ -33,7 +33,7 @@ visible to the reviewer in this state
 by the requestor.
 
 - Delete icon – Remove the selected access certification task from the console (A confirmation
-window will display)
+window displays)
 
 The right of the page shows details of the selected access certification task and has the following
 features:

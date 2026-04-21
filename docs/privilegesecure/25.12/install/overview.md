@@ -6,16 +6,16 @@ sidebar_position: 30
 
 # Installation
 
-These topics describes the installation and initial configuration process of Netwrix Privilege
-Secure. before installing Privilege Secure, ensure that all installation requirements have been
+These topics describe the installation and initial configuration process of Netwrix Privilege
+Secure. Before installing Privilege Secure, ensure that all installation requirements are
 met. See the [Requirements](/docs/privilegesecure/25.12/requirements/overview.md) topic for additional information.
 
-Privilege Secure comes with a temporary 30-day license. contact the organization’s sales
+Privilege Secure includes a temporary 30-day license. Contact the organization’s sales
 representative to purchase a license.
 
 ## System Architecture
 
-Netwrix Privilege Secure consists of a number of components that work together to manage and report
+Netwrix Privilege Secure consists of several components that work together to manage and report
 on activity:
 
 - Web Interface – Allows the user to access and configure the Privilege Secure Console, via the Web
@@ -28,11 +28,11 @@ components on TCP/6500 but can be configured to run on any port e.g. https port 
 the web service. The service mesh registers to the webservice on TCP/6520 and all subsequent
 communication is over TCP/6523 for Leaf nodes and TCP/6524 for cluster nodes.
 - License Service – The Privilege Secure license service by default installs with a 30 day / 10 user
-license. When the license expires, only the built in Admin account can log into the product until
-a valid license is added; under these conditions, a red error is displayed on the main login page.
+license. When the license expires, only the built-in Admin account can log into the product until
+a valid license is added; under these conditions, a red error displays on the main login page.
 The license service communicates with the central web service via TCP/6500 by default.
 - Email Service – The email service connects Privilege Secure to an external SMTP server. It
-supports authenticated and unauthenticated connections as well as TLS. The email service
+supports authenticated and unauthenticated connections and TLS. The email service
 communicates with the central web service via TCP/6500 by default.
 - Scheduler Service – The scheduler service is responsible for setting up and maintaining any
 date/time-specific actions such as password changes and system scans etc. It is installed by
@@ -44,9 +44,9 @@ and uses a template configuration for portability; built-in templates are availa
 CEF and LEEF. It is installed by default on the Privilege Secure server; remote nodes communicate
 back to the central web service via the Service Mesh.
 - Action Service – Connects Privilege Secure to managed resources and runs actions defined in the
-console on those resources, such as Active Directory synchronization, password changes and account
-orchestration. Many action services may be connected to the Privilege Secure web service via the
-Service Mesh. Outgoing connections will vary according to action.
+console on those resources, such as Active Directory synchronization, password changes, and account
+orchestration. Many action services can connect to the Privilege Secure web service through the
+Service Mesh. Outgoing connections vary according to action.
 - Proxy Service (Session Proxy) – The Privilege Secure proxy service connects users to resources via
 RDP and SSH protocols; the proxy is also responsible for storage of session recordings via its
 iolog component. Many proxies can be implemented for load balancing and redundancy and
@@ -66,29 +66,29 @@ additional information.
 
 ## Single Privilege Secure Server
 
-Privilege Secure for Access Management can be installed on a single Windows server. Typically, this
-architecture is only used for Proof of Concepts or testing purposes. All components are installed on
+Install Privilege Secure for Access Management on a single Windows server. Typically, this
+architecture is only used for Proof of Concepts or testing purposes. All components install on
 the application server. This scenario provides rapid start capability, and in most cases,
-installation, and initial configuration can be completed in as little as 20 minutes.
+you complete installation and initial configuration in about 20 minutes.
 
 ![Single Server Deployment](/images/privilegesecure/25.12/accessmanagement/install/singleserverdeployment.png)
 
 ## Privilege Secure Server with Remote Services
 
-The Proxy and Action services will consume resources according to load. Often 
+The Proxy and Action services consume resources according to load. Often you
 install Proxy and Action Services on additional hosts for scalability, redundancy, or network
 segmentation. Adding these services to other hosts provides the option to disable these services on
 the application server.
 
 ![Distributed Architecture Data Flow Diagram](/images/privilegesecure/25.12/accessmanagement/install/distributedarchitecture.png)
 
-The user can contact the Web service over port 6500, illustrated with a blue arrow. They can also
-talk directly to the Proxy service, illustrated with a green arrow over port:
+The user can contact the Web service over port 6500, shown as a blue arrow. They can also
+connect directly to the Proxy service, shown as a green arrow over port:
 
 - RDP port is TCP 4489
 - SSH port is TCP 4422
 
-The Proxy will talk to the managed resources over their native ports:
+The Proxy connects to the managed resources over their native ports:
 
 - RDP port is TCP 3389
 - SSH port is TCP 22
@@ -111,24 +111,24 @@ The Service Mesh registers to the Web service on TCP 6520. All subsequent commun
 
 ## Active-Passive Database Deployment with PostgreSQL Database
 
-For high-availability, the application allows two identical servers to be configured such that at
-any one time, all components of all hosts are active for the purposes of load-balancing and
-redundancy, with a replicated database pair. When the Primary becomes unavailable, a
-high-availability configuration tool is used to manually instigate failover. All external components
+For high-availability, the application lets you configure two identical servers so that at
+any one time, all components of all hosts are active for load-balancing and
+redundancy, with a replicated database pair. When the Primary becomes unavailable,
+use a high-availability configuration tool to manually initiate failover. All external components
 on operational resources continue to service requests.
 
 ![Active-Passive Database Deployment Diagram](/images/privilegesecure/25.12/accessmanagement/install/activepassivedatabase.png)
 
 The Active-Passive configuration, which is only available with the PostgreSQL database, allows you
 to use the embedded database. It is also the simplest option for configuring high-availability.
-However, it does require the manual intervention to failover.
+However, it does require manual intervention to failover.
 
 ## Active-Active Database Deployment
 
-The Active-Active configuration for high-availability is available for both the PostgreSQL and SQL
-Server database options. No manual intervention is required. Many application servers can be added
+The Active-Active configuration for high-availability supports both the PostgreSQL and SQL
+Server database options. Failover requires no manual intervention. You can add many application servers
 to the database for redundancy and scalability. However, setup is more complex than an
-Active-Passive configuration. Also, you will need an additional server for the database.
+Active-Passive configuration. You also need an additional server for the database.
 
 ![Active-Active Database Deployment Diagram](/images/privilegesecure/25.12/accessmanagement/install/activeactivedatabase.png)
 
@@ -143,7 +143,7 @@ Server.
 
 ## Third-Party Vault Integration
 
-Often it is desirable to pull managed credentials from existing vaults into Privilege Secure
+Often you want to pull managed credentials from existing vaults into Privilege Secure
 activities. Benefits include:
 
 - Faster deployment
@@ -155,10 +155,10 @@ activities. Benefits include:
 
 ## LAPS Integration
 
-Microsoft Active Directory supports the changing of local Administrator passwords. The LAPS
-integration allows those passwords to be used for Privilege Secure activities. Benefits include:
+Microsoft Active Directory supports changing local Administrator passwords. The LAPS
+integration lets Privilege Secure activities use those passwords. Benefits include:
 
-- use existing investment in local password management
+- Use existing investment in local password management
 - Faster deployment time
 - Offboard password changing process to Active Directory
 

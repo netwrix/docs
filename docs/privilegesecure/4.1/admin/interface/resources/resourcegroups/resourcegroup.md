@@ -20,7 +20,7 @@ To add resource groups to the console.
 - Map to OU checkbox — Indicates if the group is mapped to an OU. The following settings are enabled
 when checked:
 
-- Sync Now button — Maps the specified OU to the group. A confirmation dialog is displayed to
+- Sync Now button — Maps the specified OU to the group. A confirmation dialog is displayed to
 allow the user the option to either Sync Now or Cancel.
 - OU FQDN — Displays the fully qualified domain name of the OU if mapping is enabled
 - Include Child OUs checkbox — Indicates if child OUs of the specified OU are included in the

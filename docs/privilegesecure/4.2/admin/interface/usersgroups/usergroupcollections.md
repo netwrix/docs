@@ -11,7 +11,7 @@ shows session information for user and group collections. To gain access to the 
 console, users, or groups have to be added in the top level [Users & Groups Page](/docs/privilegesecure/4.2/admin/interface/usersgroups/usersgroups.md).
 
 Collections are conglomerated users and groups (that have already been granted rights in the
-console) that will gain the same rights collectively. Like users and groups individually,
+console) that gains the same rights collectively. Like users and groups individually,
 collections can also be added to policies. Collections are helpful as they allow multiple roles to
 be assigned in a single action in the console. The information in the User and Group Collections
 table is also displayed on the **Users Dashboard**.
@@ -27,7 +27,7 @@ table or list is filtered to the matching results.
 [Add Users & Groups Window](/docs/privilegesecure/4.2/admin/interface/usersgroups/add/addusersandgroups.md) topic for additional
 information.
 - Trashcan icon — Deletes the access policy. Icon appears when policy is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 The selected collection details display at the top of the main pane:
 

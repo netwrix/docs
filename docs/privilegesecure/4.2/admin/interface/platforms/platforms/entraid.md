@@ -7,11 +7,11 @@ sidebar_position: 20
 # Microsoft Entra ID Platform Policy Configuration
 
 The Microsoft Entra ID (formerly Azure AD) menu displays the configuration options for Microsoft
-Entra ID platforms.
+Entra ID platforms.
 
 ![Azure AD Platform Configuration](/images/privilegesecure/4.2/accessmanagement/admin/policy/page/platforms/azuread.webp)
 
-Details for the selected platform are displayed on the right side of the page. Below are the
+Details for the selected platform appear on the right side of the page. Below are the
 configuration options for an Microsoft Entra ID Platform.
 
 - Name — Displays the name of the policy
@@ -37,9 +37,9 @@ the [Resources Page](/docs/privilegesecure/4.2/admin/interface/resources/resourc
 defined by the selected platform. See the
 [Credentials Dashboard](/docs/privilegesecure/4.2/admin/dashboard/credentials.md) topic for additional information on
 managed accounts.
-- Reset on Mismatch — When selected, this option will force a password rotation if the password
+- Reset on Mismatch — When selected, this option forces a password rotation if the password
 verification step finds that the existing password for an account doesn't match what Privilege
 Secure expects.
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons appear. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.

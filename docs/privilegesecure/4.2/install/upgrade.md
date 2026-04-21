@@ -9,7 +9,7 @@ sidebar_position: 50
 This chapter describes the basic steps needed to upgrade Netwrix Privilege Secure.
 
 :::note
-As part of the upgrade process, the Privilege Secure installer will complete a mandatory
+As part of the upgrade process, the Privilege Secure installer completes a mandatory
 encryption key rotation. Customers who are running Privilege Secure in high-availability mode or use
 distributed Action Service or Proxy components should refer to
 the[ Upgrading to Privilege Secure (fomerly SbPAM) 3.6 or Higher - High Availability and Remote Services Configurations](https://kb.netwrix.com/8422)
@@ -43,7 +43,7 @@ This is an advanced configuration and requires additional support from Netwrix.
 To upgrade Netwrix Privilege Secure from an existing version.
 
 :::note
-before upgrading Privilege Secure, the installer will scan for the current version
+before upgrading Privilege Secure, the installer scans for the current version
 PostgreSQL and prompt you to upgrade if needed.
 :::
 
@@ -60,8 +60,8 @@ irreparable damage to the Privilege Secure database and loss of data.
 administrator.
 
 :::note
-A server restart will be required after the installer in complete. A notification in the
-installer will display after the upgrade procedure is complete.
+A server restart is required after the installer in complete. A notification in the
+installer displays after the upgrade procedure is complete.
 :::
 
 

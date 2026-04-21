@@ -27,7 +27,7 @@ Both tables have the following columns:
 - Type — Classification of the activity
 - Name — Displays the name of the resource. Click the link to view additional details. See the
 [Resources Page](/docs/privilegesecure/25.12/admin/interface/resources/resources.md) topic for addition information.
-- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
+- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
 - Operating System— Displays the operating system of the resource
 
 ## Add Resources
@@ -45,13 +45,13 @@ The Add Resources window has the following features:
 
 - Search – Searches the Name and Operating System columns to match the search string. When matches
 are found, both tables are filtered to the matching results.
-- Available Resources – Shows all resources that have been added to the console
+- Available Resources – Shows all resources that are added to the console
 - Resources to Add – Shows the resources to be added to the protection policy
 - Column headers can be sorted in ascending or descending order
 
 - Type – The type of the resource
 - Name – The name of the resource
-- DNS Host Name – The DNS host name for a host, or FQDN for a domain
+- DNS Host Name – The DNS host name for a host, or FQDN for a domain
 - Operating System – Operating System of resource
 
 **Step 4 –** To add a resource to the protection policy, click a row in the Available Resources

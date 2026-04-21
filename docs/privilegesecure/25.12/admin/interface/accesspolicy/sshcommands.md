@@ -17,7 +17,7 @@ pane has the following features:
 - Search — Searches the table or list for matches to the search string. 
 - Blue + button — Create a new set of command restrictions. 
 - Trashcan icon — Deletes the SSH command restriction group. Icon appears when profile is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 ## SSH Command Restriction Fields
 

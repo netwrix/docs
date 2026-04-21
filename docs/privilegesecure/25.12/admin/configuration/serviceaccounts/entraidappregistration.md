@@ -39,7 +39,7 @@ Create an App Registration in Entra ID (Entra ID > App Registrations) as an admi
 **Step 5 –** Click **Grant Admin Consent**.
 
 Ensure the Grant Admin Consent was successful within the Configured permissions menu. A message at
-the top of the page will display the following message: Sucessfully granted admin consent for the
+the top of the page displays the following message: Sucessfully granted admin consent for the
 requested permissions.
 
 ## Generate Secret
@@ -94,7 +94,7 @@ Add the Microsoft Entra ID Tenant resource to Privilege Secure using the Tenant 
 [Add New Microsoft Entra ID Tenant](/docs/privilegesecure/25.12/admin/interface/resources/entraidtenant.md) topic for additional
 information.
 
-## Rotate a Microsoft Entra ID Account Password in a Hybrid Tenant
+## Rotate a Microsoft Entra ID Account Password in a Hybrid Tenant
 
 In order for existing account passwords to be rotated by Privilege Secure in hybrid Microsoft Entra
 ID tenants, the Password Writeback feature in Microsoft Entra ID must be enabled. Enabling Password

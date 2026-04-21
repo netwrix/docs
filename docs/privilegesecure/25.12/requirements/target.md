@@ -15,7 +15,7 @@ Netwrix Privilege Secure supports management of the following target environment
 - Websites
 - Microsoft SQL Server databases
 - Oracle databases (container instances)
-- Microsoft Entra ID (formerly Azure AD)
+- Microsoft Entra ID (formerly Azure AD)
 - Linux distributions with SSHv2 or higher that are under LTS
 
 - Debian

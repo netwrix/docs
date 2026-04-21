@@ -29,8 +29,8 @@ Only applicable to Microsoft Entra ID and Website resources.
 - URL — The URL or string to match
 - Match Type — A Match Type is required:
 
-- Domain — A match will be made on the domain name
-- Exact — A match will only be made if the URL exactly matches
+- Domain — A match is made on the domain name
+- Exact — A match is only made if the URL exactly matches
 - Never — Never match the URL
 - StartsWith — Only match if the URL starts with this value
 - Regex — Match based upon valid regex string

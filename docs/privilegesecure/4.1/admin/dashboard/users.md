@@ -17,7 +17,7 @@ The Users table has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
 table or list is filtered to the matching results.
-- Filter — Provides options to filter results based on a chosen criterion: User or Groups
+- Filter — Provides options to filter results based on a chosen criterion: User or Groups
 - Add User — Opens the Add Users and Groups window. See the
 [Add Users & Groups Window](/docs/privilegesecure/4.1/admin/interface/usersgroups/add/addusersandgroups.md)
 topic for additional information.

@@ -15,7 +15,7 @@ policies, and service accounts for the host resources and domain. The Resources 
 The Resources table has the following features:
 
 - Search — Searches the table or list for matches to the search string. 
-- Filter by the type of resource in the dropdown: All, Host, Domain, Website, Azure AD, Secret Vault, or Database. 
+- Filter by the type of resource in the dropdown: All, Host, Domain, Website, Azure AD, Secret Vault, or Database. 
 
 - Add — Opens a list of available resources to add. The Add list contains the following options:
 
@@ -35,10 +35,10 @@ Details page for a new tenant. See the
 [Add New Database](/docs/privilegesecure/25.12/admin/interface/resources/database.md)topic for additional information.
 
 - Remove — Removes the selected resource from being managed by the application. A confirmation
-window will display. See the [Remove Resource Window](/docs/privilegesecure/25.12/admin/interface/resources/removeresource.md) topic
+window displays. See the [Remove Resource Window](/docs/privilegesecure/25.12/admin/interface/resources/removeresource.md) topic
 for additional information.
 - Scan Resource — Scans a host resource for local users, groups, windows services, and scheduled
-tasks. A confirmation window will display.. See the [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) topic
+tasks. A confirmation window displays.. See the [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) topic
 for additional information.
 - Refresh — Reload the information displayed
 
@@ -61,8 +61,8 @@ details vary based on the type of resource.
 - Scheduled — Displays the number of sessions scheduled for the resource
 - Access Policies — Displays the number of access policies associated with the resource
 - Protection Policies — Displays the number of protection policies associated with the resource
-- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
-- IP Address — Displays the IP address for the resource
+- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
+- IP Address — Displays the IP address for the resource
 - Domain — Displays the domain name for the resource. Click the link to view additional details. See
 the [Domain Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/domain/domain.md) topic for additional information.
 - Service Account — Displays the service account associated with the resource. Click the link to

@@ -22,15 +22,15 @@ table or list is filtered to the matching results. You can search for a specific
 
 - Method — Filter by whether the account is managed by the application: All, Managed, and
 Unmanaged. Managed accounts include both Automatic managed and Manual managed.
-- Managed Type — Filter by account type: All, Internal, Standard, and Service. An Internal
+- Managed Type — Filter by account type: All, Internal, Standard, and Service. An Internal
 account is a Privilege Secure application local account.
-- Privilege Type — Filter by type of privilege the account has: Not Set, Administrator, Power
+- Privilege Type — Filter by type of privilege the account has: Not Set, Administrator, Power
 User, Guest, User, Sudoer, Linux User, Cisco Privilege 0, Cisco Privilege 1, and Cisco
 Privilege 15
 
 - Manage — Set the selected account to be managed by Privilege Secure. This button is only available
 when the account Managed Type is Standard or Internal. For an Internal account, a pop up window
-will display. See the
+displays. See the
 [Manage Internal Service Accounts](/docs/privilegesecure/4.2/admin/interface/credentials/manageinternalserviceaccount.md) section
 for additional information.
 - Unmanage — Remove the account from being managed by Privilege Secure

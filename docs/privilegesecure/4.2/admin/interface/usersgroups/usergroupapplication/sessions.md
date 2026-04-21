@@ -23,7 +23,7 @@ The table has the following columns:
 
 - Requested — Date and time of when the session was created
 - User — Displays the account used to log onto the resource
-- Host — Resource that the user will run the activity on. The details vary based on the type of
+- Host — Resource that the user runs the activity on. The details vary based on the type of
 resource. See the [Resources Page](/docs/privilegesecure/4.2/admin/interface/resources/resources.md) topic for additional information.
 - Start — Indicates when the activity started. This refers to when the activity’s actions were
 executed and not when the user was logged on to the resource.

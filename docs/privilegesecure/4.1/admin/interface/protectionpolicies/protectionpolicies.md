@@ -39,7 +39,7 @@ information.
 - Copy icon — Create a new protection policy based on the current selection. Icon appears when the
 policy is hovered over.
 - Trashcan icon — Deletes the protection policy. Icon appears when policy is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 The selected protection policy details display at the top of the main pane:
 

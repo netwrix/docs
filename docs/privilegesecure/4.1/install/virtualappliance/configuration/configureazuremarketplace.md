@@ -6,13 +6,13 @@ sidebar_position: 20
 
 # Configure Azure Marketplace VM Instance
 
-Follow the steps below to configure the Azure Marketplace VM instance.
+Follow the following steps to configure the Azure Marketplace VM instance.
 
 **Step 1 –** Log in to the Microsoft Azure Marketplace and navigate to **Virtual machines**.
 
 **Step 2 –** Select the Netwrix Privilege Secure image in the Software list.
 
-**Step 3 –** Select Create VM and complete the following fields:
+**Step 3 –** Select Create VM and complete the following fields:
 
 | Option | Description |
 | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

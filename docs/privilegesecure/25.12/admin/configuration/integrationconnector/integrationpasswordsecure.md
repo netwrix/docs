@@ -48,7 +48,7 @@ This API key enables NPS to connect to the Password Secure vault.
 **Step 5** - Click **Next** to generate the API token and copy it to a safe location (you'll use this in the NPS configuration).
 
 :::info
-after you create the token, you can't see it again. If you lose the token, you will need to generate a new one without deleting the old one. A newly generated token without deleting the old one will be valid.
+after you create the token, you can't see it again. If you lose the token, you must generate a new one without deleting the old one. A newly generated token without deleting the old one will be valid.
 :::
 
 ### Create a New Password (AD User Template)
@@ -162,7 +162,7 @@ In production environments, you will typically use existing users.
 
 After completing these steps, you can use the specified user accounts on the defined resources.
 
-This setup is ideal for scenarios where a single account is used across multiple resources but needs to be managed securely with credentials stored in Password Secure.
+This setup is ideal for scenarios where a single account is used across multiple resources but must be managed securely with credentials stored in Password Secure.
 
 ## System Diagram: Vault Login Activity with Password Secure Integration
 
@@ -188,4 +188,4 @@ Always verify configurations and permissions, especially when integrating with s
 - The DLLs shipped with NPS are compatible with Password Secure versions 9.2.0 and above
 - If you need to use a newer version of Password Secure, manually replace (“hot-swap”) the DLLs in:
 `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\PsrApi`
-- Updated DLLs will be included in new NPS product releases, but for immediate compatibility with the latest Password Secure releases, manual updates may be required. The SDK can be downloaded from the Password Secure Customer Information System.
+- Updated DLLs will be included in new NPS product releases, but for immediate compatibility with the latest Password Secure releases, manual updates is required. The SDK can be downloaded from the Password Secure Customer Information System.

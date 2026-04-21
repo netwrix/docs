@@ -52,7 +52,7 @@ on an Available session:
 - Launch Session — Launches a session in the Sessions tab
 
 - Requested — Date and time of when the session was created
-- Host — Resource that the user will run the activity on
+- Host — Resource that the user runs the activity on
 - Login Account — Displays the account used to log onto the resource
 - Activity — Displays the name of the activity.
 - Start — Indicates when the activity started. This refers to when the activity’s actions were

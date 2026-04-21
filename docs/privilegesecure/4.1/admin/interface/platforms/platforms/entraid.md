@@ -7,7 +7,7 @@ sidebar_position: 20
 # Microsoft Entra ID Platform Policy Configuration
 
 The Microsoft Entra ID (formerly Azure AD) menu displays the configuration options for Microsoft
-Entra ID platforms.
+Entra ID platforms.
 
 ![Azure AD Platform Configuration](/images/privilegesecure/4.1/accessmanagement/admin/policy/page/platforms/azuread.webp)
 

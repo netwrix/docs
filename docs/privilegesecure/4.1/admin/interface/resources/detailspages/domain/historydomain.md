@@ -16,10 +16,10 @@ The History tab has the following features:
 table or list is filtered to the matching results.
 - Type — Provides options to filter results based on a chosen criterion:
 
-- Status — Filter by status message type: All Statuses, Information, Warning, and Error
+- Status — Filter by status message type: All Statuses, Information, Warning, and Error
 - Event Type — Filter by event type: Unspecified, Status, Service Start, Password Rotation, Host
 Scan, AD Sync, and Activity Session
-- Service Type — Filter by service type: Unspecified, Web UI, Action Service, Proxy Service,
+- Service Type — Filter by service type: Unspecified, Web UI, Action Service, Proxy Service,
 Schedule Service, and Email Service
 
 - Refresh — Reload the information displayed

@@ -23,7 +23,7 @@ On the Email Settings tab, view, and edit the email service settings.
 
 The Email Settings tab has the following features:
 
-- From Address – The address that will be shown in the 'From' field of the email
+- From Address – The address that is shown in the 'From' field of the email
 - Hostname (FQDN or IP) – SMTP host that Privilege Secure needs to connect to
 - Port – SMTP port
 - Credentials for Connection – Service account with credentials for the SMTP server

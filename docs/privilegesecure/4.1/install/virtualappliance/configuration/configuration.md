@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Configuration
 
-Follow the steps below to configure your virtual appliance with Netwrix Privilege Secure.
+Follow the following steps to configure your virtual appliance with Netwrix Privilege Secure.
 
-**Step 1 –** Read and accept the EULA in the License terms page.
+**Step 1 –** Read and accept the EULA in the License terms page.
 
 **Step 2 –** Specify a password for the built-in administrator account. The password should comply
 to the following criteria:
@@ -23,12 +23,12 @@ to the following criteria:
 
 **Step 5 –** Log in to the virtual machine.
 
-**Step 6 –** The Windows PowerShell will start ad automatically run the configuration script.
+**Step 6 –** The Windows PowerShell starts ad automatically run the configuration script.
 
 Press any key to read the license agreement and then press **Y** to accept it.
 
-You will be prompted to configure the virtual machine. Press Enter and follow the steps listed in
-the table below:
+You is prompted to configure the virtual machine. Press Enter and follow the steps listed in
+the following table:
 
 | | |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -38,7 +38,7 @@ the table below:
 | Join computer to the domain or workgroup | <ul><li>Select **N** for Workgroup — this is a recommended scenario for domain or workgroup Netwrix Privilege Secure server.</li><li>Select **Y** for domain and specify FQDN (e.g., corp.local ). Then enter the domain administrator's name and password. <br />**NOTE:** As a security product, it is critical to ensure that access to the Netwrix Privilege Secure server is limited and controlled. As a security best practice, joining the virtual appliance to a domain is strongly discouraged. Otherwise, engage secure practices to ensure that domain administrator access to the virtual appliance is controlled and limited through group policy settings. See the next section for security best practices.</li></ul> |
 
 
-**Step 7 –** When finished, you will be prompted to reboot the virtual machine for the changes to
+**Step 7 –** When finished, you are prompted to reboot the virtual machine for the changes to
 take effect.
 
 **Step 8 –** log in to the virtual machine and ensure date/time/time-zone are set correctly, and that

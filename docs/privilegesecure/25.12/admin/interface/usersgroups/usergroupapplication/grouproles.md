@@ -6,7 +6,7 @@ sidebar_position: 90
 
 # Group Roles Tab
 
-The Group Roles tab shows whether the current group has been assigned an application role.
+The Group Roles tab shows whether the current group is assigned an application role.
 
 ![Group Roles Tab for User Groups](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/usersgroups/usergroupsgrouproletab.webp)
 
@@ -23,6 +23,6 @@ The table has the following columns:
 - Checkbox — Check to select one or more items
 - Role — List of available roles. See the [Role Management Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/rolemanagement/rolemanagement.md) topic
 for additional details.
-- Assigned — Indicates whether the role has been assigned
+- Assigned — Indicates whether the role is assigned
 
 The table columns can be resized and sorted in ascending or descending order.

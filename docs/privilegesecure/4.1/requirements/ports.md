@@ -45,7 +45,7 @@ The following ports must be open for communication between the proxy and Privile
 | Administrators | Concurrent Sessions | Memory | CPU Cores | Disk (max) |
 | -------------- | ------------------- | ------ | --------- | ------------- |
 | 450 | 150 | 16 GB | 4 cores | 21 GB per day |
-| 900 | 300 | 32 GB | 8 cores | 42 GB per day |
+| 900 | 300 | 32 GB | 8 cores | 42 GB per day |
 | 1800 | 600 | 64 GB | 16 cores | 84 G per day |
 
 **Additional Considerations**
@@ -69,4 +69,4 @@ The following ports must be open for communication between Privilege Secure and 
 | 22 | TCP | Privilege Secure server | ![single_direction_arrow](/images/privilegesecure/4.1/accessmanagement/requirements/single_direction_arrow.webp) | Linux Hosts | SSH Proxy / Password change |
 | 6520 | TCP | Privilege Secure server | ![arrow](/images/privilegesecure/4.1/accessmanagement/requirements/arrow.webp) | Remote Proxy | Register Proxy Service |
 | 6500 | TCP | Privilege Secure server | ![arrow](/images/privilegesecure/4.1/accessmanagement/requirements/arrow.webp) | Remote Action Service | Register Action Service |
-| **443** | HTTPS (TCP) | Privilege Secure Server | ![arrow](/images/privilegesecure/4.1/accessmanagement/requirements/arrow.webp) | Azure | Azure Graph API Access |
+| **443** | HTTPS (TCP) | Privilege Secure Server | ![arrow](/images/privilegesecure/4.1/accessmanagement/requirements/arrow.webp) | Azure | Azure Graph API Access |

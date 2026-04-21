@@ -17,7 +17,7 @@ table or list is filtered to the matching results.
 - Filter — Provides options to filter results based on a chosen criterion: Managed and Not Onboarded
 - Manage — Set the selected account to be managed by Privilege Secure. This button is only available
 when the account Managed Type is Standard or Internal. For an Internal account, a pop up window
-will display.. Password rotation can be set to automatic or manual for managed accounts.
+displays. Password rotation can be set to automatic or manual for managed accounts.
 - Unmanage — Remove the account from being managed by Privilege Secure
 - Schedule Rotation — Add the credential rotation task to the queue. This button is only available
 when the Method is Automatic managed.
@@ -42,7 +42,7 @@ The table has the following columns:
 created
 - Managed — Indicates if the account is managed by Privilege Secure. See the
 [Credentials Page](/docs/privilegesecure/4.2/admin/interface/credentials/credentials.md) topic for additional information.
-- Rotate Start | End — Indicates if the account will have a password rotation on session start, end,
+- Rotate Start | End — Indicates if the account has a password rotation on session start, end,
 both, or neither
 - Dependents — Number of scheduled tasks or Windows services using this account.
 - Status — Indicates if the account credentials have been verified by Privilege Secure. See the

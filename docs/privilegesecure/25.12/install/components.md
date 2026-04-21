@@ -24,7 +24,7 @@ can be installed separately or through the Netwrix Setup Launcher.
 
 - Privilege Secure Setup – Installs the application
 
-- Pre-Reqs folder – Contains an application executable for installed the required version of.NET Framework. By default, this installer is run as part of the Netwrix Setup Launcher.
+- Pre-Reqs folder – Contains an application executable for installed the required version of.NET Framework. By default, this installer is run as part of the Netwrix Setup Launcher.
 - The Extras folder – Contains additional standalone installers:
 
 - Enablement Toolkit.exe – Installs a utility that offers a GUI for common testing scenarios
@@ -58,8 +58,8 @@ Step 2.
 desired, coordinate with [Netwrix Support](https://www.netwrix.com/support.html) and
 consult the [How to Configure High Availability (HA) Using SbPAM.HaMgr.exe (now NPS.HaMgr.exe)](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations) knowledge base article.
 - NPS.ProxyService – Installs the NPS Proxy Service nodes. It is available as both an EXE and
-MSI format. By default, this service is installed on the application server. This executable
-can be copied to other servers to install the service. The MSI can be used with a software
+MSI format. By default, this service is installed on the application server. This executable
+can be copied to other servers to install the service. The MSI can be used with a software
 deployment tool. See the [Proxy Service Install](/docs/privilegesecure/25.12/install/servicesonadditional/proxyservice.md) topic for additional
 information.
 - NPS.HostScanService.msi - Installs the NPS Host Scan Service. By default, this service
@@ -70,11 +70,11 @@ additional information.
 is installed on the application server. This executable can be copied to other servers to
 install the service. See the [Scheduler Service Install](/docs/privilegesecure/25.12/install/servicesonadditional/schedulerservice.md) topic for
 additional information.
-- NPS.SiemService.exe – Installs the NPS SIEM Service nodes. This executable can be copied to
+- NPS.SiemService.exe – Installs the NPS SIEM Service nodes. This executable can be copied to
 other servers to install the service. See the SIEM Service Install topic for additional
 information.
 - NPS.TSMon.exe – Installs the Netwrix Privilege Secure Remote Desktop Service. This service is
-used to monitor Windows events during an RDP session. See the
+used to monitor Windows events during an RDP session. See the
 [Install Remote Desktop Monitor Service on Target RDP Hosts](/docs/privilegesecure/25.12/install/servicesonadditional/rdpmonitor.md) topic for
 additional information.
 - SbPAMPowershellModules.msi – Installs the Netwrix Privilege Secure PowerShell modules. These

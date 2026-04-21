@@ -21,7 +21,7 @@ table or list is filtered to the matching results.
 [Add Activity Token Complexity Policy](/docs/privilegesecure/4.1/admin/interface/accesspolicy/activitytokencomplexity/activitytokencomplexity_1.md)
 topic for additional information.
 - Trashcan icon — Deletes the activity token complexity policy. Icon appears when profile is hovered
-over. A confirmation window will display.
+over. A confirmation window displays.
 
 The selected activity token complexity policy details display in the main pane:
 

@@ -6,18 +6,18 @@ sidebar_position: 40
 
 # Add New Microsoft Entra ID Tenant
 
-To add Microsoft Entra ID (formerly Azure AD) resource to the Privilege Secure
+To add Microsoft Entra ID (formerly Azure AD) resource to the Privilege Secure
 Console.
 
 **Step 1 –** Navigate to the **Resources** page.
 
-**Step 2 –** Click **Add** > **New Microsoft Entra ID Tenant**
+**Step 2 –** Click **Add** > **New Microsoft Entra ID Tenant**
 
 ![Add Azure AD Tenant](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/addazureadtenant.webp)
 
 **Step 3 –** Enter the following information:
 
-- Enter Entra ID Name — Displays the name of the resource
+- Enter Entra ID Name — Displays the name of the resource
 - Platform — Displays the type of platform, which defines the resource
 - Tenant ID — Displays the globally unique identifier for the targeted tenant implementation as
 found in Entra ID
@@ -38,5 +38,5 @@ identical to those on the Service Accounts page.
 
 **Step 4 –** Click **Save** to add the Microsoft Entra ID Tenant to the console.
 
-The new Microsoft Entra ID tenant has been on-boarded. See the
+The new Microsoft Entra ID tenant has been on-boarded. See the
 [Microsoft Entra ID Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/entraid/entraid.md) topic for additional information.

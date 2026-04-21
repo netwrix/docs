@@ -7,7 +7,7 @@ sidebar_position: 20
 # End Web Session
 
 If the web session needs to be ended before the remaining time for the session has expired, clicking
-the extension icon will display the green session page.
+the extension icon displays the green session page.
 
 To end a Web Session.
 
@@ -26,7 +26,7 @@ Tab** button on the page or close the tab manually.
 ![Browser Extension End Session Message](/images/privilegesecure/4.1/accessmanagement/enduser/browserextension/browserextensionendsession.webp)
 
 If the browser extension is configured to automatically end the Activity when all sessions are
-closed, the Activity will automatically be canceled if there are no remaining browser tabs for the
+closed, the Activity automatically be canceled if there are no remaining browser tabs for the
 Activity. See the
 [Settings Tab for Browser Extension](/docs/privilegesecure/4.1/enduser/browserextension/interface/interface.md#settings-tab-for-browser-extension)
 topic for additional information.

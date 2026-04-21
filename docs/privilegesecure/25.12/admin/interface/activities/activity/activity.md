@@ -26,7 +26,7 @@ table or list is filtered to the matching results.
 - Copy icon — Clones the activity and adds a new entry to the Activities list. Icon appears when
 activity is hovered over.
 - Trashcan icon — Deletes the activity. Icon appears when activity is hovered over. A confirmation
-window will display.
+window displays.
 
 **Step 4 –** Enter the configuration information on the right side of the page. Configuration
 options include:
@@ -36,7 +36,7 @@ options include:
 - Platform — Displays the type of platform, which defines the resource.
 - Login Account — Displays the account used to log onto the resource.
 - Activity Type — Controls the type of actions for the activity.
-- Requester Login Format — Indicates the format that will be used to prefill the Username field for
+- Requester Login Format — Indicates the format that prefill the Username field for
 logging into the resource. It must exactly match the username defined on the resource.
 - Application to Launch — Indicates the application that will be launched on the RDS server that the
 user is connected to by Privilege Secure

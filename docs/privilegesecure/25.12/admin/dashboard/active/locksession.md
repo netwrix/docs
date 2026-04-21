@@ -30,12 +30,12 @@ To lock a session.
 - Opening New Activities on this Resource – Prevent user from opening new activity to this
 resource while locked.
 - Any Further Activity on this Resource – Lock all sessions and prevent the user from any
-further activity while locked. The Users & Groups Details page for the user will indicate that
+further activity while locked. The Users & Groups Details page for the user indicate that
 the account is locked.
 
 **Step 3 –** Click **Okay** to confirm.
 
-The session is locked and the Lock Session message is displayed to the session user within their RDP
+The session is locked and the Lock Session message displays to the session user within their RDP
 or SSH clients. To unlock an active session, either:
 
 - From the Active Dashboard, select the session and click **Unlock Activity**.

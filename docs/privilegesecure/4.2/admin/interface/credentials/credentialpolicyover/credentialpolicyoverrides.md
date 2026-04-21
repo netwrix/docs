@@ -8,9 +8,7 @@ sidebar_position: 70
 
 The Credential Policy Overrides page is accessible from the Policy Navigation pane under Credentials
 and displays the configured Credential Policy Overrides. If a credential is added to a Credential
-Policy Override, that credential's scheduled change policy and verification schedule will be
-inherited from the Credential Policy Override, rather than being inherited from the credential's
-platform.
+Policy Override, that credential's scheduled change policy and verification schedule is inherited from the Credential Policy Override, rather than from the credential's platform.
 
 ![Credential Policy Overrides Page](/images/privilegesecure/4.2/accessmanagement/admin/policy/page/credentialpolicyoverridepage.webp)
 
@@ -23,14 +21,14 @@ table or list is filtered to the matching results.
 [Add Credential Policy Override](/docs/privilegesecure/4.2/admin/interface/credentials/credentialpolicyover/credentialpolicyoverrides_1.md) topic for additional
 information.
 - Trashcan icon — Deletes the policy. Icon appears when policy is hovered over. A confirmation
-window will display.
+window displays.
 
 The selected access policy details display at the top of the main pane:
 
 - Name — Displays the name of the policy
 - Description — Description of the policy
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons appear. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
 
 The table has the following features:

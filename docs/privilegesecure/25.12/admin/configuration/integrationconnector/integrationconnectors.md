@@ -18,7 +18,7 @@ pane has the following features:
 table or list is filtered to the matching results.
 - Green + button — Create a new connector
 - Trashcan icon — Deletes the connector. Icon appears when activity is hovered over. A confirmation
-window will display.
+window displays.
 
 The selected connector details display at the top of the main pane:
 
@@ -44,5 +44,5 @@ The remaining fields vary based on the type selected.
 :::
 
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.

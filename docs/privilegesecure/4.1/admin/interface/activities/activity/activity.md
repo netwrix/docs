@@ -26,7 +26,7 @@ table or list is filtered to the matching results.
 - Copy icon — Clones the activity and adds a new entry to the Activities list. Icon appears when
 activity is hovered over.
 - Trashcan icon — Deletes the activity. Icon appears when activity is hovered over. A confirmation
-window will display.
+window displays.
 
 **Step 4 –** Enter the configuration information on the right side of the page. Configuration
 options include:
@@ -48,10 +48,10 @@ user is connected to by Privilege Secure
 [Add Action Window](/docs/privilegesecure/4.1/admin/interface/activities/addaction/addaction.md)
 topic for additional information:
 
-- Pre-Session (Grant) — List of actions that will run before the session begins. These actions may
+- Pre-Session (Grant) — List of actions that runs before the session begins. These actions may
 be paired with a corresponding Post-Session action.
-- Session (Connect) — List of actions that will run during the session
-- Post-Session (Remove) — List of actions that will run after the session completes. These actions
+- Session (Connect) — List of actions that runs during the session
+- Post-Session (Remove) — List of actions that runs after the session completes. These actions
 may be paired with a corresponding Pre-Session action.
 
 The new activity is added to the console and is shown in the Activities list.

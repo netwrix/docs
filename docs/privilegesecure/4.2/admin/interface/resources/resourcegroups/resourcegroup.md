@@ -20,7 +20,7 @@ To add resource groups to the console.
 - Map to OU checkbox — Indicates if the group is mapped to an OU. The following settings are enabled
 when checked:
 
-- Sync Now button — Maps the specified OU to the group. A confirmation dialog is displayed to
+- Sync Now button — Maps the specified OU to the group. A confirmation dialog appears to
 allow the user the option to either Sync Now or Cancel.
 - OU FQDN — Displays the fully qualified domain name of the OU if mapping is enabled
 - Include Child OUs checkbox — Indicates if child OUs of the specified OU are included in the
@@ -37,7 +37,7 @@ of events on the resources in the selected group:
 in the selected group
 - On (Manage All Accounts) — Manage all Local Administrator accounts on the resources in the
 selected group
-- Per Individual Resource — Set whether the Local Administrator accounts will be managed on a
+- Per Individual Resource — Set whether the Local Administrator accounts is managed on a
 per resource basis
 
 **Step 4 –** Click **Save** to create the new resource group.

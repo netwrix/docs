@@ -16,7 +16,7 @@ The details page shows the following information:
 
 - Name — Displays the name of the resource
 - Trashcan icon — Removes the selected resource from being managed by the application. A
-confirmation window will display.
+confirmation window displays.
 - Platform — Displays the type of platform, which defines the resource
 - Tenant ID — Displays the globally unique identifier for the targeted tenant implementation as
 found in Entra ID
@@ -32,7 +32,7 @@ button, which is only visible when scanning lets you stop the resource scan. Thi
 also be scheduled from the [Platforms Page](/docs/privilegesecure/4.2/admin/interface/platforms/overview.md).
 - Service Account — Displays the service account associated with the resource
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons appear. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
 
 The details page has the following tabs:

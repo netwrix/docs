@@ -19,7 +19,7 @@ table or list is filtered to the matching results.
 - Add — Opens the Add Website URL window. See the
 [Add Website URL Window](/docs/privilegesecure/4.1/admin/interface/resources/detailspages/website/urlswebsite/addwebsiteurl.md)
 topic for additional information.
-- Edit — Opens the Edit Website URL window. See Edit Website URL for additional information.
+- Edit — Opens the Edit Website URL window. See Edit Website URL for additional information.
 - Remove — Removes the selected item
 - Refresh — Reload the information displayed
 

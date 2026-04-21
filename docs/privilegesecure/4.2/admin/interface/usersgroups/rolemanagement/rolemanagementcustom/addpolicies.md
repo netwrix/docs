@@ -30,7 +30,7 @@ Both tables have the following columns:
 
 To add a policy to a custom role.
 
-**Step 1 –** Navigate to the **Users & Groups** > **Role Management** page.
+**Step 1 –** Navigate to the **Users & Groups** > **Role Management** page.
 
 **Step 2 –** Select a custom role from the left-hand menu.
 

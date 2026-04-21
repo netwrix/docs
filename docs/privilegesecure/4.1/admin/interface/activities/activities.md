@@ -7,7 +7,7 @@ sidebar_position: 10
 # Activities Page
 
 The Activities page is accessible from the Navigation pane under Activities. It shows the configured
-activities, which contain the actions that will run during the session such as granting admin
+activities, which contain the actions that runs during the session such as granting admin
 privileges.
 
 Activities are for singular activities based on a specific platform whereas Activity Groups can be
@@ -33,13 +33,13 @@ topic for additional information.
 - Copy icon — Clones the activity and adds a new entry to the Activities list. Icon appears when
 activity is hovered over.
 - Trashcan icon — Deletes the activity. Icon appears when activity is hovered over. A confirmation
-window will display.
+window displays.
 
 The selected activity details display at the top of the main pane:
 
 - Name — Displays the name of the activity
 - Description — Description of the policy
-- Platform — Displays the type of platform, which defines the resource: Active Directory, Microsoft
+- Platform — Displays the type of platform, which defines the resource: Active Directory, Microsoft
 Entra ID, Cisco, Linux, Website, and Windows
 - Login Account — Controls the type of account used to log into the resource: Requester, Managed,
 Activity Token, Resource, and Vault. See the [Login Account Types](#login-account-types) topic for
@@ -48,13 +48,13 @@ additional information.
 
 - Interactive — Activity expects the requester to log on to a host desktop or CLI interface
 either directly or via the proxy
-- Interactive App Launch — Activity will launch an application on the requested resource
-- Task Automation — Activity will run an automated script requiring no user interaction
+- Interactive App Launch — Activity launches an application on the requested resource
+- Task Automation — Activity runs an automated script requiring no user interaction
 
 - Requester Login Format — Indicates the format that will be used to prefill the Username field for
 logging into the resource. It must exactly match the username defined on the resource. This option
 is only visible when the Login Account is set to Requester. The format options
-include: Domain\SamAcccountName, SamAccountName, UPN (User Principal Name), and Email
+include: Domain\SamAcccountName, SamAccountName, UPN (User Principal Name), and Email
 - Login Account Template — Template determines the format of the account created for Managed,
 Activity Token, Resource, and Vault Login Accounts. See the
 [Login Account Templates](/docs/privilegesecure/4.1/admin/interface/activities/activity/activityloginaccounttemplates.md)
@@ -64,11 +64,11 @@ if it doesn't already exist. When the Activity starts, a check is made to determ
 exists. If the account exists, the user is connected to the account on the resource. If the
 account doesn't exist, the account is created and a password is set. The user is then connected
 to the account on the resource. This option is only visible when the Login Account is set to
-Activity Token or Managed. It can't be disabled for Activity Token.
+Activity Token or Managed. It can't be disabled for Activity Token.
 - Delete After Use checkbox — Indicates whether the account will be deleted at the end of the
 activity. If an account was created to perform the activity, check this option to remove the
 account after the activity is complete. Otherwise, the account will be disabled at the end of the
-activity session. This option is only visible when the Login Account is set to Activity Token or
+activity session. This option is only visible when the Login Account is set to Activity Token or
 Managed. It can't be disabled for Activity Token.
 
 :::note
@@ -93,13 +93,13 @@ topic for additional information.
 user is connected to by Privilege Secure. This option is only visible when the Activity Type is
 set to Interactive App Launch.
 
-- Preferred RDS Host — Displays the name of the RDS server that will launch the application
+- Preferred RDS Host — Displays the name of the RDS server that launches the application
 specified in the Application to Launch field. This option is only visible when the Platform is
 set to Active Directory.
 
 - Logon URL — Displays the primary logon page. When this field has a value, it will override the
 Logon URL defined on the Website resource. This option is only visible when the Platform is set to
-Microsoft Entra ID or Website. See the
+Microsoft Entra ID or Website. See the
 [Microsoft Entra ID Details Page](/docs/privilegesecure/4.1/admin/interface/resources/detailspages/entraid/entraid.md)
 and
 [Website Details Page](/docs/privilegesecure/4.1/admin/interface/resources/detailspages/website/website.md)
@@ -111,10 +111,10 @@ commit the modifications. Click **Cancel** to discard the modifications.
 Below the activity details in the main pane are the session details, the actions that will occur
 before, during, and after the session:
 
-- Pre-Session (Grant) — List of actions that will run before the session begins. These actions may
+- Pre-Session (Grant) — List of actions that runs before the session begins. These actions may
 be paired with a corresponding Post-Session action.
-- Session (Connect) — List of actions that will run during the session
-- Post-Session (Remove) — List of actions that will run after the session completes. These actions
+- Session (Connect) — List of actions that runs during the session
+- Post-Session (Remove) — List of actions that runs after the session completes. These actions
 may be paired with a corresponding Pre-Session action.
 
 A Link icon shows actions that are linked. Deleting a linked action will delete the corresponding

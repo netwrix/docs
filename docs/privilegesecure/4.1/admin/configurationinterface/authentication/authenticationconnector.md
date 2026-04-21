@@ -30,7 +30,7 @@ fields will change depending on the selection.
 [Authentication Page](/docs/privilegesecure/4.1/admin/configurationinterface/authentication/authentication.md)
 section for detailed descriptions of the fields.
 
-- For OpenID Connect, open the
+- For OpenID Connect, open the
 [OpenID Connect Configuration Wizard](/docs/privilegesecure/4.1/admin/configurationinterface/authentication/openidconnectconfiguration/openidconnectconfiguration.md)
 - For SAML, open the
 [SAML Configuration Wizard](/docs/privilegesecure/4.1/admin/configurationinterface/authentication/samlconfiguration.md)

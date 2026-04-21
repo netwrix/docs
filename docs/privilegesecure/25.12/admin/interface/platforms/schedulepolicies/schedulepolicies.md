@@ -32,7 +32,7 @@ table or list is filtered to the matching results.
 - Green + button — Create a new schedule policy. See the
 [Add Schedule Policy](/docs/privilegesecure/25.12/admin/interface/platforms/schedulepolicies/schedulepolicy.md) topic for additional information.
 - Trashcan icon — Deletes the schedule policy. Icon appears when profile is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 :::note
 The default password policy can't be deleted.

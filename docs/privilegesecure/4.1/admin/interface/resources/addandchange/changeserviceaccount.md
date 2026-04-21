@@ -10,7 +10,7 @@ To change the service account for a host resource.
 
 **Step 1 –** Navigate to the Resources page.
 
-**Step 2 –** Select the resources to modify.
+**Step 2 –** Select the resources to modify.
 
 **Step 3 –** Click Change Service Account to open the Change Service Account window.
 

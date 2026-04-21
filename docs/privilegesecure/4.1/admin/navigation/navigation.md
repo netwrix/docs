@@ -39,7 +39,7 @@ topic for additional information.
 
 - Dark Mode — Toggle “Dark Mode” for the console. Hover over the toggle switch to see a preview
 of Dark Mode.
-- Product Tour — Re-starts walk-through of Privilege Secure features. See the
+- Product Tour — Re-starts walk-through of Privilege Secure features. See the
 [Product Tour](/docs/privilegesecure/4.1/admin/navigation/producttour.md)
 topic for additional information.
 - Settings — Opens the settings page to allow the user to register services

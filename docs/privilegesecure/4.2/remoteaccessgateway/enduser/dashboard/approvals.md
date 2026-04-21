@@ -7,7 +7,7 @@ sidebar_position: 30
 # Approvals Dashboard
 
 The Approvals Dashboard displays requested sessions that require approval. Users and group members
-designated as approvers will see the pending sessions queued here. The session must be approved
+designated as approvers see the pending sessions queued here. The session must be approved
 before the requestor can log in to the session.
 
 :::note
@@ -37,11 +37,11 @@ Secure administrator.
 
 - Requested — Date and time of when the session was created
 - Requested By — User who requested the session
-- Host — Resource that the user will run the activity on
+- Host — Resource that the user runs the activity on
 - Login Account — Displays the account used to log onto the resource
 - Activity — Displays the name of the activity
-- Start — Indicates when the activity starts. This refers to when the activity’s actions will be
-executed and not when the user logs on to the resource.
+- Start — Indicates when the activity starts. This refers to when the activity’s actions executes
+ and not when the user logs on to the resource.
 - End — Indicates when the session is scheduled to end the activity, which is determined by the
 start time plus the maximum session duration set by the access policy Connection Profile
 - Notes — Any notes that were entered when the session was created

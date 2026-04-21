@@ -39,7 +39,7 @@ Create an App Registration in Entra ID (Entra ID > App Registrations) as an admi
 **Step 5 –** Click **Grant Admin Consent**.
 
 Ensure the Grant Admin Consent was successful within the Configured permissions menu. A message at
-the top of the page will display the following message: Sucessfully granted admin consent for the
+the top of the page displays the following message: Sucessfully granted admin consent for the
 requested permissions.
 
 ## Generate Secret
@@ -83,7 +83,7 @@ registration instead of User Administrator.
 **Step 5 –** Search for the name of the previously created App Registration, click it, and click
 **Select**.
 
-**Step 6 –** Click **Next**, then select the **Setting** Tab and provide justification text before
+**Step 6 –** Click **Next**, then select the **Setting** Tab and provide justification text before
 clicking **Assign**.
 
 The service account can now be added to Privilege Secure, using the Application (Client) ID and
@@ -94,13 +94,13 @@ Add the Microsoft Entra ID Tenant resource to Privilege Secure using the Tenant 
 [Add New Microsoft Entra ID Tenant](/docs/privilegesecure/4.2/admin/interface/resources/addandchange/entraidtenant.md) topic for additional
 information.
 
-## Rotate a Microsoft Entra ID Account Password in a Hybrid Tenant
+## Rotate a Microsoft Entra ID Account Password in a Hybrid Tenant
 
 In order for existing account passwords to be rotated by Privilege Secure in hybrid Microsoft Entra
 ID tenants, the Password Writeback feature in Microsoft Entra ID must be enabled. Enabling Password
 Writeback allows hybrid account passwords to be updated either in on-prem AD or in Microsoft Entra
-ID, and the result will be synced to the other location. Without having this functionality enabled
-in a hybrid Microsoft Entra ID tenant, all attempts to change an account's password will fail.
+ID, and the result is synced to the other location. Without having this functionality enabled
+in a hybrid Microsoft Entra ID tenant, all attempts to change an account's password fails.
 
 Enabling Password Writeback isn't specific to Privilege Secure. See the
 [Open Enable Entra ID password writeback](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback)

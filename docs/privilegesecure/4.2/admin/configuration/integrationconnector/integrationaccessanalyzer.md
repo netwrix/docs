@@ -8,14 +8,14 @@ successfully run before Privilege Secure can import the data:
 - Windows > Privileged Accounts > Local Administrators Job Group
 
 See the
-[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
+[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information.
 
 ## Configure the Access Role
 
 To configure the access role in Access Analyzer. See the Access Role section of the
 Web Service REST API for Applications Access Data Remotely topic of the
-[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
+[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information.
 
 **Step 1 –** In Access Analyzer, navigate to the Access Node and click the Add Access link in the

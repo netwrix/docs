@@ -21,7 +21,7 @@ Access Policy. The password can always be viewed for credential–based activiti
 - View Password icon — Click to view the password for the session as plain text. For resource–based
 activities for end users, this is only available if enabled in the activity's Access Policy. The
 password can always be viewed for credential–based activities. To view a password, select the Eye
-icon. Users will have 20 seconds to view the password or copy it.
+icon. Users has 20 seconds to view the password or copy it.
 - Connection icon — Click the icon to begin the activity session.
 
 Alternatively, configure any RDP / SSH Manager for remote login, including:
@@ -36,7 +36,7 @@ for additional information.
 
 ## Session Extension
 
-Each session will remain active for a pre-configured amount of time based on the Connection Profile
+Each session remains active for a pre-configured amount of time based on the Connection Profile
 being used with the Access Policy. Session extension options can be configured in the connection
 profile that allow a session to be extended by the user, in increments.
 
@@ -50,7 +50,7 @@ For NPS users with the Administrator role, session extension is always enabled.
 
 ![Extend Activity Session](/images/privilegesecure/4.2/accessmanagement/enduser/dashboard/extendsession.webp)
 
-For RDP, a pop-up message is displayed in the session window.
+For RDP, a pop-up message appears in the session window.
 
 ![extendsessionssh](/images/privilegesecure/4.2/accessmanagement/enduser/dashboard/extendsessionssh.webp)
 

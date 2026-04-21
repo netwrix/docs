@@ -17,7 +17,7 @@ table or list is filtered to the matching results.
 - Filter — Provides options to filter results based on a chosen criterion: Managed and Not Onboarded
 - Manage — Set the selected account to be managed by Privilege Secure. This button is only available
 when the account Managed Type is Standard or Internal. For an Internal account, a pop up window
-will display.. Password rotation can be set to automatic or manual for managed accounts.
+displays.. Password rotation can be set to automatic or manual for managed accounts.
 - Unmanage — Remove the account from being managed by Privilege Secure
 - Schedule Rotation — Add the credential rotation task to the queue. This button is only available
 when the Method is Automatic managed.

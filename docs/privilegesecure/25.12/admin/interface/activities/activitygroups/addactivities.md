@@ -41,7 +41,7 @@ The Add Activities and Activity Groups window has the following features:
 
 - Search – Searches the Name and Operating System columns to match the search string. When matches
 are found, both tables are filtered to the matching results.
-- Available Credentials and Groups– Shows all Credentials and Groups that have been added to the
+- Available Credentials and Groups– Shows all Credentials and Groups that are added to the
 console
 - Credentials and Groups to Add – Shows the Credentials and Groups to be added to the protection
 policy

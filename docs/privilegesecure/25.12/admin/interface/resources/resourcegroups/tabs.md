@@ -15,7 +15,7 @@ The table has the following features:
 - Remove — Removes the selected item from the group
 - Manage — Set the selected account to be managed by Privilege Secure. This button is only available
 when the account Managed Type is Standard or Internal. For an Internal account, a pop up window
-will display.. Password rotation can be set to automatic or manual for managed accounts.
+displays.. Password rotation can be set to automatic or manual for managed accounts.
 - Unmanage — Remove the account from being managed by Privilege Secure
 - Change Platform — Opens the Change Platform window to modify the type of platform for the selected
 host resource. 
@@ -31,8 +31,8 @@ The table has the following columns:
 - Local Admin — Indicates if the account is managed by Privilege Secure
 - Resource — Name of the resource
 - Operating System— Displays the operating system of the resource
-- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
-- IP Address — Displays the IP address for the resource
+- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
+- IP Address — Displays the IP address for the resource
 - Service Account — Displays the service account associated with the resource
 - Last Scanned — Date timestamp for the last time the resource was scanned
 

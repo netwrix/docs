@@ -28,7 +28,7 @@ table or list is filtered to the matching results.
 [Add Users & Groups Window](/docs/privilegesecure/4.1/admin/interface/usersgroups/add/addusersandgroups.md)
 topic for additional information.
 - Trashcan icon — Deletes the access policy. Icon appears when policy is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 The selected collection details display at the top of the main pane:
 

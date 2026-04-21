@@ -15,10 +15,10 @@ The Database Details page shows the following information:
 
 - Name — Displays the name of the resource
 - Trashcan icon — Removes the selected resource from being managed by the application. A
-confirmation window will display.
+confirmation window displays.
 - Platform — Displays the type of platform, which defines the resource
 - Server — The instance name for the server
-- IP Address — Displays the IP address for the resource
+- IP Address — Displays the IP address for the resource
 - Port — The port for the server
 - Domain — Displays the fully qualified domain name (FQDN)
 
@@ -36,14 +36,14 @@ scheduled from the [Platforms Page](/docs/privilegesecure/25.12/admin/interface/
 
 - Status — During synchronization, the button displays as spinning
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
 
- The database details page has the following tabs:
+ The database details page has the following tabs:
 
 - Users – Displays database login accounts that aren't domain users or local computer users
 - Groups – Displays login accounts that are domain users or local computer accounts
-- Databases – Displays a list of discovered databases See the
+- Databases – Displays a list of discovered databases See the
 [Databases Tab](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/databases/databases_1.md) topic for additional information.
 - Roles – Displays roles and who has those roles on the database and at the server level
 - Sessions – Displays previous sessions that have used this resource as a target

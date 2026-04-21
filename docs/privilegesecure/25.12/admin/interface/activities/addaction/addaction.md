@@ -27,15 +27,15 @@ These actions may be paired with a corresponding Pre-Session action.
 **Step 4 –** Complete the following fields:
 
 - Action Type - Icon indicates the type of object.
-- AD Object Type - AD Object Type — Select which type of object to manage in the Organizational
+- AD Object Type - AD Object Type — Select which type of object to manage in the Organizational
 Unit, a User or Computer..
 - AD Organizational Unit for the Action - AD Organizational Unit — Enter a pre-existing
-Organizational Unit the login account will have delegated permissions for.
+Organizational Unit the login account have delegated permissions for.
 - AD Rights to be Added - AD Rights to be Added — Select which right will be delegated to the login
 account for managing the previously specified Organizational Unit.
 - Continue on Error - Continue on Error — If an error occurs, continue to the next step rather than
 halting the action.
-- Action Name - Action Name — (Optional) Edit the name of the action.
+- Action Name - Action Name — (Optional) Edit the name of the action.
 - Paired Actions Name - Paired Action's Name — (Optional) Edit the name of the paired action
 
 See the [Action Types](/docs/privilegesecure/25.12/admin/interface/activities/addaction/activityactiontypes.md) section for detailed descriptions of the
@@ -58,7 +58,7 @@ existing action and then create a new action to get a new Action Type.
 
 
 **Step 7 –** If desired, You can automatically run any Protection Policies associated with
-the resource when the session completes. Simply add the **Invoke Protection Policies** action to the
+the resource when the session completes. add the **Invoke Protection Policies** action to the
 Post-Session group. See the [Protection Policies Page](/docs/privilegesecure/25.12/admin/interface/protectionpolicies/protectionpolicies.md) topic for
 additional information.
 

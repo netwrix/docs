@@ -14,7 +14,7 @@ the expiration date of a license about to expire.
 However, you can import your license file on the About page (User Options > About). An expired
 license doesn't necessarily prevent users from logging in. If a license is expired, and the login
 attempt doesn't exceed the license count, users will still be able to log in. If a license is
-expired, and the login attempt does exceed the license count, Privilege Secure will prevent the
+expired, and the login attempt does exceed the license count, Privilege Secure will prevent the
 login.
 
 Licensing is done according to user count. Any user who has provisioned access will consume a

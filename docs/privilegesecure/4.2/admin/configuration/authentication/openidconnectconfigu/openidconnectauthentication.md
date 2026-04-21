@@ -16,7 +16,7 @@ to use the OpenID login functionality with Privilege Secure an Okta user must ma
 in an AD domain that Privilege Secure is aware of.
 
 :::note
-The user will also need to be given access to Privilege Secure by assigning them a role
+The user also needs to be given access to Privilege Secure by assigning them a role
 from the Config->Role Management screen.
 :::
 
@@ -33,10 +33,10 @@ To add a new user, click the Add Person button:
 
 ![Add person to Okta](/images/privilegesecure/4.2/accessmanagement/admin/configuration/integrationdetails/oktaaddperson.webp)
 
-Privilege Secure will use the ‘Username’ value to search the host-user table for the matching user.
+Privilege Secure uses the ‘Username’ value to search the host-user table for the matching user.
 
 The OpenID Connector configuration screen gives 3 options for the host-user field that the Okta
-Username will be matched against – under the Login Format dropdown:
+Username is matched against – under the Login Format dropdown:
 
 - sAMAccountName
 - User Principal Name
@@ -59,7 +59,7 @@ for the second UPN.
 
 To create a user, enter the appropriate Username value and other data. Set the
 Password option to ‘Set by Admin’ and setting it yourself. If the user is required to set (or reset)
-their own password then it will be handled on the Okta side – which won’t give control back to
+their own password then it is handled on the Okta side – which won’t give control back to
 Privilege Secure until it’s done.
 
 ### Assigning Users to Applications
@@ -67,7 +67,7 @@ Privilege Secure until it’s done.
 This example has one application with users automatically assigned – but that may not
 always be the case, so…
 
-When the user has been created click their name and you will see the User Details screen:
+When the user has been created click their name and you see the User Details screen:
 
 ![Assign Apps top users](/images/privilegesecure/4.2/accessmanagement/admin/configuration/integrationdetails/oktaassignapps.webp)
 

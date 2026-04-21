@@ -1,10 +1,10 @@
 ---
-title: "Privilege Secure Reviewer User Overview"
-description: "Privilege Secure Reviewer User Overview"
+title: "Privilege Secure Reviewer User Overview"
+description: "Privilege Secure Reviewer User Overview"
 sidebar_position: 50
 ---
 
-# Privilege Secure Reviewer User Overview
+# Privilege Secure Reviewer User Overview
 
 This topic and its subtopics are written for users who have been assigned as a Privilege Secure
 Reviewer.
@@ -12,7 +12,7 @@ Reviewer.
 New Reviewers added to Privilege Secure will need to go through the MFA registration process before
 they can log in. By default, Privilege Secure requires a multi-factor authentication (MFA) solution
 (Authenticator, DUO, Symantec VIP etc) for all user accounts. Upon initial login, the Reviewer must
-complete MFA registration to proceed with using Privilege Secure. It is recommended to
+complete MFA registration to proceed with using Privilege Secure. We recommend that you
 check with the organization's Administrators for login requirements.
 
 ## First Time Login
@@ -35,7 +35,7 @@ firewalls.
 
 To log in to the Privilege Secure.
 
-**Step 1 –** Open Privilege Secure in a browser window. The Login screen will show the
+**Step 1 –** Open Privilege Secure in a browser window. The Login screen shows the
 Authentication Connector that is set as the default.
 
 :::note
@@ -61,13 +61,13 @@ enter. Instead there's just a single button to login.
 
 ![Okta authentication connector](/images/privilegesecure/4.1/accessmanagement/enduser/oktadefault.webp)
 
-- Clicking the authentication connector will redirect the user to the IdP login screen, which will
+- Clicking the authentication connector redirects the user to the IdP login screen, which will
 log the user in (with whatever MFA is set up in the IdP) and then revert the user back to the
 Privilege Secure dashboard once authenticated. Steps 4-7 will be skipped when using an IdP login.
 
 **Step 4 –** Click log in to proceed.
 
-**Step 5 –** A QR code will be displayed to register with an authenticator application.
+**Step 5 –** A QR code displays to register with an authenticator application.
 
 **Step 6 –** Enter the code provided by the registered multi-factor authenticator (MFA).
 

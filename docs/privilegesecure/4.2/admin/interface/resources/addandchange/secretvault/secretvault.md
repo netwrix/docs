@@ -26,7 +26,7 @@ A secret vault has been onboarded. See the
 [Secret Vault Details Page](/docs/privilegesecure/4.2/admin/interface/resources/detailspages/secretvault/secretvault.md) topic for additional information.
 
 :::warning
-Next, you will have to manually enter and update credentials for each applicable user.
+Next, you must manually enter and update credentials for each applicable user.
 Credentials are assigned through the Credential-based Access Policy for password release. See the
 [Credentials Tab for Credential Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/credentialbasedpolic/credentials/credentials.md)
 topic for additional information.

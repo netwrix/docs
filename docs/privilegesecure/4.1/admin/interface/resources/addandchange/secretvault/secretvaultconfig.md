@@ -11,7 +11,7 @@ Secret Vaults lets you provide Privilege Secure users with access to vaulted sec
 
 ## Add a Secret Vault
 
-Follow the steps below to add a new Secret Vault.
+Follow the following steps to add a new Secret Vault.
 
 **Step 1 –** Navigate to the Policy > Resources page.
 
@@ -31,7 +31,7 @@ Follow the steps below to add a new Secret Vault.
 
 **Step 6 –** Click the **Add** button to add an account to access the Secrete Vault.
 
-**Step 7 –** The Add a Managed Account window will open. Enter the following information:
+**Step 7 –** The Add a Managed Account window opens. Enter the following information:
 
 - Resource Name
 - Username

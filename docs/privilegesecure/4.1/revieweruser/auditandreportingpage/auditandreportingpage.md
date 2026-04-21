@@ -31,7 +31,7 @@ table or list is filtered to the matching results.
 
 - Status – Shows status information for task:
 
-- Setup – Admin is in the process of creating an access certification task. It isn't
+- Setup – Admin is creating an access certification task. It isn't
 visible to the reviewer in this state
 - Ready to Start – Waiting for the reviewer to review the task
 - Incomplete – Review of user access started by the reviewer
@@ -47,4 +47,4 @@ features:
 entitlements
 - See the
 [Entitlements](/docs/privilegesecure/4.1/revieweruser/auditandreportingpage/entitlement.md)
-topic for additional information
+topic for additional information

@@ -7,7 +7,7 @@ sidebar_position: 30
 # Allowed Members Tab for Protection Policies
 
 The Allowed Members tab shows the configuration options for managing the groups governed by the
-selected protection policy. Any group members discovered that aren't in the list will be removed
+selected protection policy. Any group members discovered that aren't in the list is removed
 from the local group on the resource during the next scheduled sync.
 
 ![Protection Policy Allowed Member Tab](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/policyprotection/allowedmembers.webp)
@@ -55,7 +55,7 @@ resource.
 
 The new group is added to the protection policy and is shown on the Allowed Members Tab for
 Protection Policies. When the resource is scanned, any group members not permitted by the protection
-policy will be removed from the local group on the resource.
+policy is removed from the local group on the resource.
 
 ### Edit Protected Group Members
 
@@ -71,7 +71,7 @@ To edit the members of a local groups within the selected protection policy.
 ![Edit Protected Group Members Window](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/policyprotection/editprotectedgroupmembers.webp)
 
 **Step 4 –** Click the **Trashcan** icon next to a member to remove them from a Protected Group. A
-confirmation window will appear.
+confirmation window appears.
 
 **Step 5 –** (Optional) Enter a Group Member in the provided field.
 

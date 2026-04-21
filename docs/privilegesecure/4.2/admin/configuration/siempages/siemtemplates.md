@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # SIEM Templates Page
 
-The SIEM Templates page is accessible from the Navigation pane under Configuration > SIEM. Privilege
+The SIEM Templates page is accessible from the Navigation pane under Configuration > SIEM. Privilege
 Secure can output events to third-party SIEM solutions for reporting, correlation, and notification.
 The SIEM Templates page determine the format and the nature of the event data.
 
@@ -32,9 +32,9 @@ To add a custom SIEM template to the Privilege Secure Console.
 - Description — Description of the policy
 - Characters To Escape — Characters that need to be escaped
 - Escape Characters — Characters used to escape
-- Format — The event data string that will be sent to the SIEM Server is displayed in the Format
+- Format — The event data string that is sent to the SIEM Server appears in the Format
 field. This can be edited directly
-- Event Picker — A list of events that can be sent is displayed in a scrollable list. To add events,
+- Event Picker — A list of events that can be sent appears in a scrollable list. To add events,
 position the cursor in the Format field and select the green plus icon next to the events you wish
 to add in the event picker
 

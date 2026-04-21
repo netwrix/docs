@@ -27,7 +27,7 @@ cards, organized alphabetically or by Access Policy. See the
 
 - Dark Mode — Toggle “Dark Mode” for the console. Hover over the toggle switch to see a preview
 of Dark Mode.
-- Product Tour — Re-starts walk-through of Privilege Secure features. See the
+- Product Tour — Re-starts walk-through of Privilege Secure features. See the
 [Product Tour](/docs/privilegesecure/25.12/enduser/navigation/producttour.md) topic for additional information.
 - Logout — Signs the user out of the current session and opens the Login screen
 - About — Shows version and license information for the console

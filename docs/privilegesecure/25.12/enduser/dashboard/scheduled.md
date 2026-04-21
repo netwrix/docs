@@ -42,7 +42,7 @@ Secure administrator.
 
 - Requested — Date and time of when the session was created
 - Requested By — User who requested the session
-- Host — Resource that the user will run the activity on
+- Host — Resource that the user run the activity on
 - Login Account — Displays the account used to log onto the resource
 - Activity — Displays the name of the activity
 - Start — Indicates when the activity starts. This refers to when the activity’s actions will be

@@ -16,7 +16,7 @@ to use the OpenID login functionality with Privilege Secure an Okta user must ma
 in an AD domain that Privilege Secure is aware of.
 
 :::note
-The user will also need to be given access to Privilege Secure by assigning them a role
+The user also need to be given access to Privilege Secure by assigning them a role
 from the Config->Role Management screen.
 :::
 
@@ -67,7 +67,7 @@ Privilege Secure until it’s done.
 This example has one application with users automatically assigned – but that may not
 always be the case, so…
 
-When the user has been created click their name and you will see the User Details screen:
+When the user has been created click their name and you sees the User Details screen:
 
 ![Assign Apps top users](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/oktaassignapps.webp)
 

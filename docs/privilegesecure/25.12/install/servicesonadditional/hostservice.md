@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Host Scan Service Install
 
-The NPS Host Scan Service is installed on the application server as part of Privilege Secure install.
+The NPS Host Scan Service is installed on the application server as part of Privilege Secure install.
 It can also be installed on additional servers. This provides the option to run host scans from
 different locations within an organization.
 
@@ -16,7 +16,7 @@ information.
 
 :::note
 Before you begin, the NPS Proxy Service must be registered with a corresponding
-application server on the server you will be installing the Host Scan Service before installation. See the
+application server on the server you are installing the Host Scan Service before installation. See the
 [Proxy Service Install](/docs/privilegesecure/25.12/install/servicesonadditional/proxyservice.md) topic for installation instructions.
 
 Additionally, The Action Service must be installed on the same server that you plan to add the Host Scan service. This is because the Host Scan service relies on the Action Service Worker. See [Action Service Install](/docs/privilegesecure/25.12/install/servicesonadditional/actionservice.md)
@@ -32,7 +32,7 @@ Netwrix knowledge base article: [Exclusions for Antivirus (AV) & Endpoint Softwa
 server.
 
 **Step 3 –** Open the NPS.HostScanService.msi and the Netwrix Privilege Secure Host Scan Service Setup
-wizard will open. Click Next.
+wizard opens. Click Next.
 
 **Step 4 –** Read the End User License Agreement and accept the license terms.
 
@@ -121,7 +121,7 @@ parameter must be added:
 
 `NPS.HostScanService.msi –register -u admin -I [PrivilegeSecureServer:Port]`
 
-- The command prompt will show if the configuration was successful.
+- The command prompt shows if the configuration was successful.
 
 **Step 4 –** Exit the command prompt.
 

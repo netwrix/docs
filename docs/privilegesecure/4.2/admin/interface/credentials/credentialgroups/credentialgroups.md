@@ -22,14 +22,14 @@ table or list is filtered to the matching results.
 - Blue + button — Create a new credential group. See the
 [Add Credential Groups](/docs/privilegesecure/4.2/admin/interface/credentials/credentialgroups/credentialgroup.md) topic for additional information.
 - Trashcan icon — Deletes the access policy. Icon appears when policy is hovered over. A
-confirmation window will display.
+confirmation window displays.
 
 The selected access policy details display at the top of the main pane:
 
 - Name — Displays the name of the policy
 - Description — Description of the policy
 
-If any of these settings are modified, Save, and Cancel buttons are displayed. Click **Save** to
+If any of these settings are modified, Save, and Cancel buttons appear. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
 
 The table has the following features:

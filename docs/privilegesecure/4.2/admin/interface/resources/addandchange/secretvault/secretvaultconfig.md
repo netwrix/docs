@@ -31,7 +31,7 @@ Follow the steps below to add a new Secret Vault.
 
 **Step 6 –** Click the **Add** button to add an account to access the Secret Vault.
 
-**Step 7 –** The Add a Managed Account window will open. Enter the following information:
+**Step 7 –** The Add a Managed Account window opens. Enter the following information:
 
 - Resource Name
 - Username
@@ -91,5 +91,5 @@ See the
 [Credentials Tab for Credential Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/credentialbasedpolic/credentials/credentials.md)
 for additional information.
 
-The new Secret Vault access policy has been created. Users added to the policy will now have a
+The new Secret Vault access policy has been created. Users added to the policy now has a
 Credential Release tile on the My Activities page.

@@ -19,7 +19,7 @@ The Resources table has the following features:
 table or list is filtered to the matching results.
 - Filter — Provides options to filter results based on a chosen criterion:
 
-- Type— Filter by the type of resource: All, Host, Domain, Website, Azure AD, Secret Vault, or
+- Type— Filter by the type of resource: All, Host, Domain, Website, Azure AD, Secret Vault, or
 Database. The dropdown menu the definition for each Type icon used in the table.
 
 - Add — Opens a list of available resources to add. The Add list contains the following options:
@@ -45,7 +45,7 @@ topic for additional information.
 for additional information.
 
 - Remove — Removes the selected resource from being managed by the application. A confirmation
-window will display.
+window displays.
 - Change Platform — Opens the Change Platform window to modify the type of platform for the selected
 host resource. See the
 [Change Platform Window](/docs/privilegesecure/4.1/admin/interface/resources/addandchange/changeplatform.md)
@@ -55,7 +55,7 @@ associated with the selected host resource. See the
 [Change Service Account Window](/docs/privilegesecure/4.1/admin/interface/resources/addandchange/changeserviceaccount.md)
 topic for additional information.
 - Scan Resource — Scans a host resource for local users, groups, windows services, and scheduled
-tasks. A confirmation window will display.. See the
+tasks. A confirmation window displays.. See the
 [Platforms Page](/docs/privilegesecure/4.1/admin/interface/platforms/overview.md)
 topic for additional information.
 - Refresh — Reload the information displayed
@@ -79,8 +79,8 @@ details vary based on the type of resource.
 - Scheduled — Displays the number of sessions scheduled for the resource
 - Access Policies — Displays the number of access policies associated with the resource
 - Protection Policies — Displays the number of protection policies associated with the resource
-- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
-- IP Address — Displays the IP address for the resource
+- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
+- IP Address — Displays the IP address for the resource
 - Domain — Displays the domain name for the resource. Click the link to view additional details. See
 the
 [Domain Details Page](/docs/privilegesecure/4.1/admin/interface/resources/detailspages/domain/domain.md)

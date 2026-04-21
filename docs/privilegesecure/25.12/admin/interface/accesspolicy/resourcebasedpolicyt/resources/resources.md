@@ -33,7 +33,7 @@ The table has the following columns:
 vary based on the type of resource. See the [Resources Page](/docs/privilegesecure/25.12/admin/interface/resources/resources.md) topic for
 additional information.
 - Type — Icon indicates the type of object
-- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
+- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
 - Operating System — Displays the operating system of the resource
 - Active Session Count — Displays the number of active sessions on the resource
 

@@ -19,7 +19,7 @@ information.
 - Search — Searches the table or list for matches to the search string. 
 
 :::note
-If a seach finds a match for a user (or users) that isn't already listed in the policy, an "Add User" box appears. Clicking on this box will open the Add User modal with the search results for quickly adding users.
+If a seach finds a match for a user (or users) that isn't already listed in the policy, an "Add User" box appears. Clicking on this box opens the Add User modal with the search results for quickly adding users.
 :::
 
 ![Quick Add](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/policyresource/quickadd.png)

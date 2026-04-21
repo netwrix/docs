@@ -17,7 +17,7 @@ To add a schedule policy to the console.
 **Step 3 –** Enter the following information:
 
 :::note
-The fields will change depending on the selected frequency.
+The fields changes depending on the selected frequency.
 :::
 
 

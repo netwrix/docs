@@ -24,7 +24,7 @@ The table has the following columns:
 vary based on the type of resource. See the
 [Resources Page](/docs/privilegesecure/4.1/admin/interface/resources/resources.md)
 topic for additional information.
-- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
+- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
 - Operating System — Displays the operating system of the resource
 
 The table columns can be resized and sorted in ascending or descending order.
