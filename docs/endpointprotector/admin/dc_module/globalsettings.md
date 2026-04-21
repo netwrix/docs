@@ -247,6 +247,8 @@ Select from the drop-down list a client mode to deﬁne the Endpoint Protector C
     - Not display system tray notiﬁcations
     - Apply all set rights and settings as per their conﬁguration
 
+    When Hidden Icon mode is selected, the **Show notifications in Hidden Icon mode** setting becomes available under the Client Mode section. This setting is disabled by default. Enable it to allow client notifications to be displayed while the Endpoint Protector Client icon remains hidden.
+
 6. Silent - this mode is similar to Normal mode, except that pop-up notiﬁcations are not visible to
    the user.
 
