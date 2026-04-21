@@ -250,22 +250,6 @@ export const PRODUCTS = [
     defaultVersion: '11.1',
   },
   {
-    id: 'endpointpolicymanager',
-    name: 'Endpoint Policy Manager',
-    description: 'Group Policy management and enforcement',
-    path: 'docs/endpointpolicymanager',
-    categories: ['Endpoint Management'],
-    icon: '',
-    versions: [
-      {
-        version: 'current',
-        label: 'Current',
-        isLatest: true,
-        sidebarFile: './sidebars/sidebar.js',
-      },
-    ],
-  },
-  {
     id: 'endpointprotector',
     name: 'Endpoint Protector',
     description: 'Comprehensive endpoint security',
@@ -777,7 +761,7 @@ export function hasKBContent(productId) {
   const kbProducts = [
     '1secure', 'accessanalyzer', 'accessinformationcenter', 'activitymonitor',
     'auditor', 'changetracker', 'dataclassification', 'directorymanager',
-    'endpointpolicymanager', 'endpointprotector', 'passwordpolicyenforcer',
+    'endpointprotector', 'passwordpolicyenforcer',
     'passwordreset', 'privilegesecure', 'privilegesecurediscovery',
     'threatmanager', 'threatprevention'
   ];
