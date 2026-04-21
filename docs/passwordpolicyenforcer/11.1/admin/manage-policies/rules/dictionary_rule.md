@@ -18,7 +18,7 @@ for long passwords.
 
 Select the **Dictionary** checkbox to enable the Dictionary rule.
 
-Browse to a dictionary file. A sample file **Dict.txt** is installed in the **\Program Files\Netwrix\Password Policy Enforcer\\** folder. This file is sorted and ready to use. It contains
+Browse to a dictionary file. Password Policy Enforcer installs a sample file **Dict.txt** in the **\Program Files\Netwrix\Password Policy Enforcer\\** folder. This file is sorted and ready to use. It contains
 approximately 257,000 words, names, and acronyms.
 
 Select the **Detect inclusion of non-alpha characters** checkbox if Password Policy Enforcer should
@@ -89,7 +89,7 @@ wildcard template formats:
 </table>
 
 
-Partial matching is performed even if Wildcard analysis is disabled. For example, the dictionary
+Password Policy Enforcer performs partial matching even if Wildcard analysis is disabled. For example, the dictionary
 word "password" rejects the passwords "My**Password**$", "**Password**100", and
 "12**password**34" even if Wildcard analysis is disabled.
 
@@ -103,8 +103,8 @@ Policy Enforcer doesn't contain any wildcard templates.
 Choose a value from the Tolerance dropdown list to specify the maximum number of consecutive matching characters that Password Policy Enforcer tolerates before rejecting a password. For example, the dictionary word "**sword**" and the password "4my**sword**%" contain five consecutive matching characters (shown in bold). Password Policy Enforcer rejects this password if the tolerance is four or lower, and accepts it if the tolerance is five or higher.
 
 Click the **Browse** button to select a dictionary file, or enter a path into the text box. The path
-can contain environment variables like %SystemRoot%. A sample dictionary is installed in the
-\Program Files (x86)\Password Policy Enforcer\ folder. The dictionary file should be read from a
+can contain environment variables like %SystemRoot%. Password Policy Enforcer installs a sample dictionary in the
+\Program Files (x86)\Password Policy Enforcer\ folder. Read the dictionary file from a
 local disk. Using a shared dictionary degrades performance, and could jeopardize security.
 
 :::note

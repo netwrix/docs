@@ -24,8 +24,7 @@ up a policy.
 
 **Step 2 –** Select a **user**.
 
-**Step 3 –** **Type in a password to simulate its change**. As you type, the new password is
-evaluated and the results are displayed.
+**Step 3 –** **Type in a password to simulate its change**. As you type, Password Policy Enforcer evaluates the new password and displays the results.
 
 ![Failing Password](/images/passwordpolicyenforcer/11.1/administration/testuserfail.webp)
 
@@ -103,6 +102,6 @@ You can use the **Report settings** to customize the report:
   the local computer, or the local dictionary file may be different to the one on the domain
   controller. Copy the dictionary file onto the local computer (in the same path) to avoid this
   problem.
-- If the Configuration Console is connected to a domain configuration and the Password Policy Enforcer
-  configuration was modified recently, then Active Directory may still be propagating the new
+- If the Configuration Console is connected to a domain configuration and you recently modified the Password Policy Enforcer
+  configuration, then Active Directory may still be propagating the new
   configuration to the other domain controllers.
