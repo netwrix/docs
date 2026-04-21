@@ -7,7 +7,7 @@ sidebar_position: 20
 # Deployment
 
 In addition to traditional on-premises deployment, Netwrix Privilege Secure now offers new
-deployment options that can speed time-to-value by getting you up and running in less than 15
+deployment options that can speed time-to-value by getting you running in less than 15
 minutes. The following additional deployment options are available:
 
 Virtual appliance — If you run a Microsoft Hyper-V or VMware vSphere, you can deploy Netwrix
@@ -27,14 +27,13 @@ Consider Microsoft limits for evaluation versions of Windows Server 2019. You ha
 to complete online activation, otherwise your Windows evaluation license expires and the virtual
 appliance will shut down every hour. Provide a valid license for Windows Server or ensure Internet
 connection to connect to Microsoft Licensing Activation Center and register your license. Refer to
-Microsoft article for more information:
+Microsoft article :
 [Upgrade and conversion options for Windows Server 2019](https://docs.microsoft.com/en-us/windows-server/get-started/supported-upgrade-paths).
 :::
 
 
 Furthermore, you can register your license by phone. See
-[Microsoft Licensing Activation Centers worldwide telephone numbers](https://www.microsoft.com/en-us/licensing/existing-customer/activation-centers)
-for more information.
+[Microsoft Licensing Activation Centers worldwide telephone numbers](https://www.microsoft.com/en-us/licensing/existing-customer/activation-centers).
 
 Navigate to the Netwrix website at
 [https://www.netwrix.com/sbpam.html](https://www.netwrix.com/sbpam.html) and start the Virtual

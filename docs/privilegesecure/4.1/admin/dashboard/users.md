@@ -16,14 +16,14 @@ same information as the
 The Users table has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Filter — Provides options to filter results based on a chosen criterion: User or Groups
 - Add User — Opens the Add Users and Groups window. See the
-  [Add Users & Groups Window](/docs/privilegesecure/4.1/admin/interface/usersgroups/add/addusersandgroups.md)
-  topic for additional information.
+[Add Users & Groups Window](/docs/privilegesecure/4.1/admin/interface/usersgroups/add/addusersandgroups.md)
+topic for additional information.
 - Add Application — Opens the Add Application page. See the
-  [Add Application](/docs/privilegesecure/4.1/admin/interface/usersgroups/add/application.md)
-  for additional information.
+[Add Application](/docs/privilegesecure/4.1/admin/interface/usersgroups/add/application.md)
+for additional information.
 - Remove — Removes console access from the selected account
 - Refresh — Reload the information displayed
 
@@ -32,8 +32,8 @@ The table has the following columns:
 - Checkbox — Check to select one or more items
 - Type — Icon indicates the type of object
 - Name — Displays the name of the account. Click the link to view additional details. See the
-  [User, Group, & Application Details Page](/docs/privilegesecure/4.1/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md)
-  topic for additional information.
+[User, Group, & Application Details Page](/docs/privilegesecure/4.1/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md)
+topic for additional information.
 - User Name — Displays the sAMAccountName for the account
 - User Principal Name — Displays the UPN value for the account
 - Email — Displays the associated email address, if available

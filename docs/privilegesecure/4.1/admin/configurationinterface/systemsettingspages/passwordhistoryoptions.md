@@ -14,9 +14,9 @@ System Settings.
 The page shows details of the password history settings and has the following features:
 
 - Name — Name of the selected settings
-- Historical Password Limit — Number of previous passwords that cannot be reused (Range: 1 - 50,
-  Default: 7)
+- Historical Password Limit — Number of previous passwords that can't be reused (Range: 1 - 50,
+Default: 7)
 - Days of Password Retention — The number of days before the password expires (Range 1 - 365,
-  Default 30)
+Default 30)
 - Save button (only visible when editing) — Saves changes
 - Cancel button (only visible when editing) — Discards changes

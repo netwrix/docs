@@ -13,7 +13,7 @@ tenant to Privilege Secure, the following information is required:
 - App Secret (For service account)
 - Tenant ID (To add resource)
 
-Log in to Microsoft Entra ID and follow the steps to generate the required information for Privilege
+Log in to Microsoft Entra ID and To generate the required information for Privilege
 Secure.
 
 ## Create App Registration
@@ -30,12 +30,12 @@ Azure.
 **Step 4 –** Using this menu, grant the following Microsoft Graph API permissions:
 
 - Application Permissions:
-    - Directory.ReadWrite.All
-    - Group.ReadWrite.All
-    - User.ReadWrite.All
-    - RoleManagement.ReadWrite.Directory
+- Directory.ReadWrite.All
+- Group.ReadWrite.All
+- User.ReadWrite.All
+- RoleManagement.ReadWrite.Directory
 - Delegated Permissions:
-    - User.Read
+- User.Read
 
 **Step 5 –** Click **Grant Admin Consent**.
 
@@ -63,7 +63,7 @@ displayed again.
 Add the App Registration to the User Administrators role.
 
 :::note
-User Administrator is the least privileged model and cannot manage Global Administrator.
+User Administrator is the least privileged model and can't manage Global Administrator.
 To manage the Global Administrator role, assign the Global Administrator role to the App
 registration instead of User Administrator.
 :::
@@ -73,11 +73,11 @@ registration instead of User Administrator.
 
 **Step 2 –** Click **Roles and Administrators**.
 
-**Step 3 –** Locate and click on the **User Administrators** role.
+**Step 3 –** Locate and click the **User Administrators** role.
 
 **Step 4 –** Click **Add Assignments**.
 
-**Step 5 –** Search for the name of the previously created App Registration, click on it, and click
+**Step 5 –** Search for the name of the previously created App Registration, click it, and click
 **Add**.
 
 The service account can now be added to Privilege Secure, using the Application (Client) ID and
@@ -97,6 +97,6 @@ Writeback allows hybrid account passwords to be updated either in on-prem AD or 
 ID, and the result will be synced to the other location. Without having this functionality enabled
 in a hybrid Microsoft Entra ID tenant, all attempts to change an account's password will fail.
 
-Enabling Password Writeback is not specific to Privilege Secure. See the
+Enabling Password Writeback isn't specific to Privilege Secure. See the
 [Open Enable Azure Active Directory password writeback](https://docs.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-sspr-writeback)
 Microsoft article for additional information.

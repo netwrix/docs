@@ -18,10 +18,10 @@ Netwrix Privilege Secure supports management of the following target environment
 - Microsoft Entra ID (formerly Azure AD)
 - Linux distributions with SSHv2 or higher
 
-    - Debian
-    - CentOS
-    - Red Hat Enterprise Linux (RHEL)
-    - openSUSE
+- Debian
+- CentOS
+- Red Hat Enterprise Linux (RHEL)
+- openSUSE
 
 Additional Supported Platforms (no local account management or pre-configured activity steps)
 
@@ -34,32 +34,32 @@ The following permissions are required for the service accounts:
 
 - For Active Directory and Windows member server/desktop management:
 
-    - Membership in the Domain Administrators group in the target domain(s)
+- Membership in the Domain Administrators group in the target domains
 
 - For Linux server management:
 
-    - Service account on each server to be managed or a central domain account in the case of
-      AD-bridged hosts
-    - Permissions may either be root or delegated via sudo or other commercial least privilege
-      solutions
+- Service account on each server to be managed or a central domain account in the case of
+AD-bridged hosts
+- Permissions may either be root or delegated via sudo or other commercial least privilege
+solutions
 
 - For standalone Windows Servers/desktops:
 
-    - Membership in the local Administrator group on each server/desktop to be managed
+- Membership in the local Administrator group on each server/desktop to be managed
 
 - For Microsoft Entra ID management:
 
-    - Microsoft Graph API
+- Microsoft Graph API
 
-        - Application Permissions:
+- Application Permissions:
 
-            - Directory.ReadWrite.All
-            - Group.ReadWrite.All
-            - User.ReadWrite.All
-            - RoleManagement.ReadWrite.Directory
+- Directory.ReadWrite.All
+- Group.ReadWrite.All
+- User.ReadWrite.All
+- RoleManagement.ReadWrite.Directory
 
-        - Delegated Permissions:
+- Delegated Permissions:
 
-            - User.Read
+- User.Read
 
-    - App Registration added to the User Administrators directory role
+- App Registration added to the User Administrators directory role

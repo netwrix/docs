@@ -24,9 +24,9 @@ The instance may take a few minutes or more to launch. Although your Instance St
 may be unavailable. You can check the image health in two ways:
 
 - Right-click the **instance** and select **Instance Settings** > **Get Instance Screenshot** and
-  review image current state.
+review image current state.
 - Right-click the **instance** and select **Instance Settings** > **Get System Log**. Empty log
-  means that your image is still being prepared.
+means that your image is still being prepared.
 
 Wait until the System Log contains the Windows is Ready for Use message and connect to the instance.
 

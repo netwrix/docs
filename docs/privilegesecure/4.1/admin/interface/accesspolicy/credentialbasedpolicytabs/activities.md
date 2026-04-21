@@ -14,12 +14,12 @@ Credential Release activity is associated with a Credential Based Access Policy.
 The Activities tab has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Type— Provides options to filter results based on a chosen criterion:
 
-    - All — Displays all activity for users and groups
-    - Activity — Displays user activity
-    - Activity Group — Displays group activity
+- All — Displays all activity for users and groups
+- Activity — Displays user activity
+- Activity Group — Displays group activity
 
 - Refresh — Reload the information displayed
 

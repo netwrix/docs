@@ -8,7 +8,7 @@ sidebar_position: 10
 
 Logging directly onto managed systems from desktops leaves artifacts that can be compromised and
 requires ports to be opened into secure networks. A critical element of the Privilege Secure
-solution is the proxy, which is able to broker the connection between security zones. The
+solution is the proxy, which can broker the connection between security zones. The
 application includes an advanced session proxy service for automatic connection to privileged
 sessions.
 
@@ -22,7 +22,7 @@ Customer portal. See the
 [Install Components & Methods](/docs/privilegesecure/4.1/install/components/components.md)
 topic for additional information.
 
-Follow the steps to install the NPS Proxy Service on another server that will run services for the
+To install the NPS Proxy Service on another server that will run services for the
 application.
 
 :::tip
@@ -34,13 +34,12 @@ knowledge base article.
 
 **Step 1 –** Copy the `NPS.ProxyService.exe` file to the desktop of the remote server.
 
-**Step 2 –** Right-click on the installer and select Run as administrator. The Netwrix Privilege
+**Step 2 –** Right-click the installer and select Run as administrator. The Netwrix Privilege
 Secure Proxy Service Setup wizard opens.
 
 ![Netwrix Privileged Secure Proxy Service Setup wizard on the EULA page](/images/privilegesecure/4.1/accessmanagement/install/licenseagreement_2.webp)
 
-**Step 3 –** On the End User License Agreement page, check the I agree to the license terms and
-conditions box and click Options.
+**Step 3 –** On the End User License Agreement page, accept the license terms and conditions and click Options.
 
 :::tip
 Remember, it is a best practice to read the agreement before accepting it.
@@ -76,7 +75,7 @@ to run automatically in the Services app (`services.msc`).
 When the NPS Proxy Service is installed on a remote machine, it must be registered with the proxy
 server.
 
-Follow the steps to register the NPS Proxy Service.
+To register the NPS Proxy Service.
 
 **Step 1 –** Validate the existence of the `sbpam_node.json` file in the installation directory of
 both the application and desired servers. The default location is:
@@ -92,7 +91,7 @@ mesh or additional Proxy server installed.
 **Step 2 –** Open the JSON file as an Administrator (via Administrator command prompt) on both
 servers.
 
-**Step 3 –** (Optional) This step is only necessary if FQDN is required for DNS, otherwise do not
+**Step 3 –** (Optional) This step is only necessary if FQDN is required for DNS, otherwise don't
 change and move to step four. Ensure that the `"advertise"` value of the JSON file on each server
 has the Privilege Secure proxy server information:
 
@@ -148,11 +147,11 @@ ssh: handshake failed: ssh: no common algorithm for key exchange; client offered
 [curve25519-sha256@libssh.org ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521
 diffie-hellman-group14-sha1], server offered: [diffie-hellman-group1-sha1]
 
-Ideally the Cisco device should be upgraded to support secure ciphers. If this is not possible, it
+Ideally the Cisco device should be upgraded to support secure ciphers. If this isn't possible, it
 is necessary to add additional ciphers to machines with older (insecure) ciphers that need to be
 managed with SSH. You can “opt-in” by configuring the cipher suites used by the NPS Proxy Service.
 
-Follow the steps to add Cipher information to the NPS Proxy Service.
+To add Cipher information to the NPS Proxy Service.
 
 **Step 1 –** Open a command prompt as an Administrator.
 

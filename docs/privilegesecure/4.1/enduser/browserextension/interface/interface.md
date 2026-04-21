@@ -30,21 +30,21 @@ topic for additional information.
 
 The Activities tab has the following features:
 
--   - / - buttons (top right) — Expand or collapse all Resource Activities
+- - / - buttons (top right) — Expand or collapse all Resource Activities
 - Resources list — Shows all resources mapped to the user via an access policy. Click a Resource to
-  expand it and show associated Activities.
+expand it and show associated Activities.
 
-    - Activities — Click an Activity to start an Activity Session. See the
-      [Start Web Session](/docs/privilegesecure/4.1/enduser/browserextension/interface/startwebsession.md)
-      topic for additional information.
-    - Favorite icon — Click the favorite icon to move the Activity to the top of the list.
-    - Settings icon — Click to open the browser extension settings
-    - Session icon — If a session is active, the following icons are shown (see the
-      [Start Web Session](/docs/privilegesecure/4.1/enduser/browserextension/interface/startwebsession.md)
-      topic for additional information):
+- Activities — Click an Activity to start an Activity Session. See the
+[Start Web Session](/docs/privilegesecure/4.1/enduser/browserextension/interface/startwebsession.md)
+topic for additional information.
+- Favorite icon — Click the favorite icon to move the Activity to the top of the list.
+- Settings icon — Click to open the browser extension settings
+- Session icon — If a session is active, the following icons are shown (see the
+[Start Web Session](/docs/privilegesecure/4.1/enduser/browserextension/interface/startwebsession.md)
+topic for additional information):
 
-        - Green icon – Select to launch the web session
-        - Red icon – Select to end the current web session
+- Green icon – Select to launch the web session
+- Red icon – Select to end the current web session
 
 ## Current Tab for Browser Extension
 
@@ -56,8 +56,8 @@ The Current tab shows the resource that matches the current URL at the top, with
 activities available for that resource expanded. It has the following features:
 
 - Activities — Click an Activity to start an Activity Session. See the
-  [Start Web Session](/docs/privilegesecure/4.1/enduser/browserextension/interface/startwebsession.md)
-  topic for additional information.
+[Start Web Session](/docs/privilegesecure/4.1/enduser/browserextension/interface/startwebsession.md)
+topic for additional information.
 - Favorite icon — Click the favorite icon to move the Activity to the top of the list.
 - Settings icon — Click to open the browser extension settings
 
@@ -71,7 +71,7 @@ Secure Console.
 The Settings tab has the following features:
 
 - End web sessions automatically — If selected, Activities will automatically close if there are no
-  active web sessions in any tab
+active web sessions in any tab
 - Delete RDP files after 1 day — If selected, temp files downloaded into the download folder as part
-  of Privilege Secure RDP sessions will be removed after 1 day
+of Privilege Secure RDP sessions will be removed after 1 day
 - Logout button — Logout of the browser extension

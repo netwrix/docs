@@ -14,7 +14,7 @@ Privilege Secure supports any RDP / SSH Client, including:
 - MS Terminal Services Client (Remote Desktop)
 
 On all Privilege Secure servers, it is recommended to exclude the following directories from
-antivirus and endpoint protection software. Please note a drive letter is not specified in each
+antivirus and endpoint protection software. a drive letter isn't specified in each
 path, as that can be customized during each Privilege Secure and service installation.
 
 - \Program Files\Stealthbits\PAM\ActionService
@@ -33,23 +33,23 @@ Exclusions:
 
 - Action:
 
-    - \Program Files\Stealthbits\PAM\ActionService
-    - \Program Files\Stealthbits\PAM\ActionServiceWorker
-    - \Stealthbits\PAM\ProxyService\
+- \Program Files\Stealthbits\PAM\ActionService
+- \Program Files\Stealthbits\PAM\ActionServiceWorker
+- \Stealthbits\PAM\ProxyService\
 
 - Proxy:
 
-    - \Stealthbits\PAM\ProxyService\
+- \Stealthbits\PAM\ProxyService\
 
 - Scheduler:
 
-    - \Stealthbits\PAM\SbPAM.SchedulerService\
-    - \Stealthbits\PAM\ProxyService\
+- \Stealthbits\PAM\SbPAM.SchedulerService\
+- \Stealthbits\PAM\ProxyService\
 
 Review the example below:
 
 Before you begin, it is recommended to exclude the following directories from antivirus and endpoint
-protection software. Please note a drive letter is not specified in each path, as that can be
+protection software. a drive letter isn't specified in each path, as that can be
 customized during Action Service installation:
 
 - \Program Files\Stealthbits\PAM\ActionService
