@@ -10,8 +10,8 @@ The Groups tab for Microsoft Entra ID (formerly Azure AD) shows information abou
 selected resource.
 
 :::note
-Groups in hybrid environments will be associated with the on-premises Active Directory
-domain resource (if the on-premises domain has been synced by Privilege Secure). This view will show
+Groups in hybrid environments is associated with the on-premises Active Directory
+domain resource (if the on-premises domain has been synced by Privilege Secure). This view shows
 cloud-only EntraID groups.
 :::
 

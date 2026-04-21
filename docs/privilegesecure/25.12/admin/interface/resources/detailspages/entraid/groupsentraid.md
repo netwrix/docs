@@ -11,7 +11,7 @@ selected resource.
 
 :::note
 Groups in hybrid environments will be associated with the on-premises Active Directory
-domain resource (if the on-premises domain has been synced by Privilege Secure). This view will show
+domain resource (if the on-premises domain has been synced by Privilege Secure). This view shows
 cloud-only EntraID groups.
 :::
 

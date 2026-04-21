@@ -6,21 +6,21 @@ sidebar_position: 10
 
 # Add Custom Role
 
-The Add Role window allows users to add a role to Privilege Secure's Users & Groups Role Management
+The Add Role window lets users add a role to Privilege Secure's Users & Groups Role Management
 module.
 
 ![usersgroupsaddrolewindow](/images/privilegesecure/4.2/accessmanagement/admin/policy/add/usersgroupsaddrolewindow.webp)
 
 The Add Role window has the following features:
 
-- Enter Role Name — Name that will be displayed to represent the role.
-- Description — A brief summary of the purpose of the role.
-- Save button — Saves the new role to the Users & Groups module.
+- Enter Role Name — Name that displays to represent the role.
+- Description — A brief summary of the purpose of the role.
+- Save button — Saves the new role to the Users & Groups module.
 - Cancel button — Cancels the Add Role process and closes the window.
 
-Follow the steps below to add a role to the Users & Groups Role Management module.
+Follow the steps below to add a role to the Users & Groups Role Management module.
 
-**Step 1 –** Navigate to the **Users & Groups** > **Role Management** page.
+**Step 1 –** Navigate to the **Users & Groups** > **Role Management** page.
 
 **Step 2 –** Click the **Add Role** button.
 

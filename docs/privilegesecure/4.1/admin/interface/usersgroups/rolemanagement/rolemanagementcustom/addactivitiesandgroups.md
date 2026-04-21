@@ -28,7 +28,7 @@ Both tables have the following columns:
 
 ## Add Activities
 
-Follow the steps to add activities to the selected access policy.
+To add activities to the selected access policy.
 
 **Step 1 –** Navigate to the Policy > Access Policies page.
 
@@ -40,16 +40,16 @@ Activities tab.
 The Add Activities and Activity Groups window has the following features:
 
 - Search – Searches the Name and Operating System columns to match the search string. When matches
-  are found, both tables are filtered to the matching results.
+are found, both tables are filtered to the matching results.
 - Available Credentials and Groups– Shows all Credentials and Groups that have been added to the
-  console
+console
 - Credentials and Groups to Add – Shows the Credentials and Groups to be added to the protection
-  policy
+policy
 - Column headers can be sorted in ascending or descending order
 
-    - Name – The name of the activity
-    - Type – The type of activity, individual or group
-    - Description – Additional details for the activity
+- Name – The name of the activity
+- Type – The type of activity, individual, or group
+- Description – Additional details for the activity
 
 **Step 4 –** To add an activity to the access policy, click a row in the Available Activities list
 and it is immediately moved to the Activities & Groups to Add list.

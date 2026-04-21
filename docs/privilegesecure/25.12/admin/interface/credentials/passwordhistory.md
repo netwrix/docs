@@ -12,15 +12,15 @@ The Password History window shows all historical passwords for the selected mana
 
 The window has the following features:
 
-- Show Password(s) — Click to view all passwords
-- Hide Password(s) — Click to hide all passwords
+- Show Passwords — Click to view all passwords
+- Hide Passwords — Click to hide all passwords
 - Refresh — Reload the information displayed
 
 The window has the following columns:
 
 - Creation Date — Date timestamp when the item was created
 - Password (Click to View) — Displays the password. By default, it will be hidden. Click an
-  individual password to view it or click the Show Password(s) button to view all passwords in the
-  table.
+individual password to view it or click the Show Passwords button to view all passwords in the
+table.
 
 The table columns can be resized and sorted in ascending or descending order.
