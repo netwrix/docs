@@ -1,53 +1,48 @@
 ---
 title: "Active Directory"
-description: "LDAP connectivity, service account permissions, and network ports"
+description: "Requirements for the Active Directory connector"
 sidebar_position: 30
 ---
 
 # Active Directory
 
-Access Analyzer scans Active Directory domains to enumerate users, groups, group memberships, permissions, and sensitive data.
+The Active Directory connector reads domain controllers remotely over LDAP to collect identity data from your Active Directory domains. The connector doesn't require agent installation on domain controllers.
 
-## Supported Versions
+The connector collects:
+
+- Users (including disabled and stale accounts)
+- Groups and group memberships (including nested groups and circular membership chains)
+- Domains
+
+## Supported versions
 
 - Windows Server 2016 and later
-- Windows 2003 Forest level or higher
+- Windows Server 2003 forest functional level or higher
 
-## Domain Controller Requirements
+## Requirements
 
-The following must be installed on each domain controller to be scanned:
+### Service account
 
-- .NET Framework 4.5 or later
-- WINRM Service
+The connector authenticates using a service account with a username and password. The account must be a member of the domain you're scanning and have:
 
-## Permissions
-
-- Member of the **Domain Administrators** group
-
-:::info
-Use Domain Administrator or Local Administrator privileges when running Access Analyzer against an Active Directory domain controller.
-:::
-
-A least privilege model can be configured based on your auditing needs. See the [Least Privilege Model](#least-privilege-model) section for additional information.
-
-## Port Requirements
-
-The following firewall ports are required for the Active Directory connector:
-
-| Port | Protocol | Description |
-| --- | --- | --- |
-| 389 | TCP | LDAP |
-| 636 | TCP | LDAPS |
-| 135–139 | TCP | RPC |
-| Randomly allocated high TCP ports | TCP | RPC dynamic ports |
-
-## Least Privilege Model
-
-The following minimum permissions must be configured at the domain level in Active Directory:
-
-- Read access to directory tree
-- List Contents and Read Property on the Deleted Objects Container
+- Read access to the directory tree
+- List Contents and Read Property on the Deleted Objects container
 
 :::note
-See the Microsoft [Searching for Deleted Objects](https://technet.microsoft.com/en-us/library/cc978013.aspx) article and the Microsoft [Dsacls](https://technet.microsoft.com/en-us/library/cc771151(v=ws.11).aspx) article for additional information.
+For information on granting access to the Deleted Objects container, see the Microsoft [Searching for Deleted Objects](https://technet.microsoft.com/en-us/library/cc978013.aspx) article and [Dsacls](https://technet.microsoft.com/en-us/library/cc771151(v=ws.11).aspx) reference.
 :::
+
+### Ports
+
+Open the following ports on all domain controllers you want to scan:
+
+| Port | Protocol | Description |
+|------|----------|-------------|
+| 389 | TCP | LDAP |
+| 636 | TCP | LDAPS (when SSL is enabled) |
+| 135–139 | TCP | RPC |
+| 49152–65535 | TCP | RPC dynamic ports |
+
+## Next steps
+
+Once requirements are met, see [Set Up Active Directory Source Group](../gettingstarted/active-directory/set-up-source-group.md) to configure your first scan.

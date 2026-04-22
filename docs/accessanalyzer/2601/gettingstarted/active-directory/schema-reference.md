@@ -25,7 +25,7 @@ All tables include the following columns populated by Access Analyzer during eac
 
 ## Tables
 
-### active_directory_user
+### Active Directory User
 
 Stores one row per user object discovered in an Active Directory scan.
 
@@ -100,7 +100,7 @@ Stores one row per user object discovered in an Active Directory scan.
 | `last_logon_timestamp` | `Nullable(DateTime)` | Optional. Replicated logon timestamp (`lastLogonTimestamp`); updated at intervals and may lag behind the actual last logon by up to 14 days. |
 | `bad_pwd_count` | `Nullable(Int32)` | Optional. Number of consecutive failed logon attempts. |
 | `bad_password_time` | `Nullable(DateTime)` | Optional. Timestamp of the last failed logon attempt. |
-| `lockout_time` | `Nullable(DateTime)` | Optional. Timestamp when the account was locked out; `NULL` or zero indicates the account is not locked. |
+| `lockout_time` | `Nullable(DateTime)` | Optional. Timestamp when the account was locked out; `NULL` or zero indicates the account isn't locked. |
 | `last_logoff` | `Nullable(DateTime)` | Optional. Timestamp of the last logoff. |
 
 #### Delegation information
@@ -125,7 +125,7 @@ Stores one row per user object discovered in an Active Directory scan.
 
 ---
 
-### active_directory_group
+### Active Directory Group
 
 Stores one row per group object discovered in an Active Directory scan.
 
@@ -157,9 +157,9 @@ Stores one row per group object discovered in an Active Directory scan.
 
 ---
 
-### active_directory_group_membership
+### Active Directory Group Membership
 
-Stores one row per direct membership relationship between a group and a member object (user or group). Nesting is not flattened in this table; use `active_directory_effective_group_membership` for flattened membership.
+Stores one row per direct membership relationship between a group and a member object (user or group). Nesting isn't flattened in this table; use `active_directory_effective_group_membership` for flattened membership.
 
 **Primary key:** `(group_dn, member_dn)`
 
@@ -167,7 +167,7 @@ Stores one row per direct membership relationship between a group and a member o
 |--------|------|-------------|
 | `group_dn` | `String` | Distinguished name (DN) of the group. |
 | `member_dn` | `String` | Distinguished name (DN) of the member object. |
-| `foreign_sid` | `Nullable(String)` | Optional. SID of the member when the member is from a foreign (trusted) domain and a DN is not available. |
+| `foreign_sid` | `Nullable(String)` | Optional. SID of the member when the member is from a foreign (trusted) domain and a DN isn't available. |
 
 **Relations**
 
@@ -181,7 +181,7 @@ Stores one row per direct membership relationship between a group and a member o
 
 ---
 
-### active_directory_user_custom_attribute
+### Active Directory User Custom Attribute
 
 Stores custom Active Directory attribute values collected for user objects during a scan. Each row represents one attribute key-value pair for one user. An attribute with no value produces a row with `attr_value = NULL`.
 
@@ -201,7 +201,7 @@ Stores custom Active Directory attribute values collected for user objects durin
 
 ---
 
-### active_directory_effective_group_membership
+### Active Directory Effective Group Membership
 
 Stores the fully flattened, transitively resolved group membership graph. This table is populated by the `active_directory_effective_group_membership_mv` materialized view, which refreshes on a schedule after each scan. Each row represents one effective membership relationship at a given nesting depth.
 
