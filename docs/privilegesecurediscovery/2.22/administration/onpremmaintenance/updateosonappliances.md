@@ -39,7 +39,7 @@ mEvl
 
 ```
 
-**NOTE:** If the database replication is not in healthy state, resolve that before continuing.
+**NOTE:** If the database replication isn't in healthy state, resolve that before continuing.
 
 Primary node only: Check Privilege Secure services and nodes status:
 

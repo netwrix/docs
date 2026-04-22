@@ -53,17 +53,17 @@ Test (suggested minimum yearly)
 
 - It is recommended to test DR at least yearly. This can be part of a wider DR test or specific to
   Privilege Secure.
-- A test window should be created for this as changes to Privilege Secure DR would not be propagated
+- A test window should be created for this as changes to Privilege Secure DR wouldn't be propagated
   back to the main production instance.
 - After a test ensure that services are down on the DR node. This will avoid the DR environment
-  overriding changes from Production. The command below can be utilized for this:
+  overriding changes from Production. The command below can be used for this:
 
     - `s1 stop expire worker scanner`
 
 ## Run Quickstart to Review Protect Mode and Persistence (suggested weekly)
 
 - Quickstart should be run frequently to ensure that all machines remain in protect mode. The output
-  from Quickstart can be filtered for any machines that do not show in protect mode. This
+  from Quickstart can be filtered for any machines that don't show in protect mode. This
   ensures that the build process and addition or protect mode is being executed as expected.
 - Quickstart can also be used for a review of persistent access. This should be minimized to service
   accounts. A review to look for user accounts set to persistent should be carried out. If these are
@@ -77,7 +77,7 @@ Test (suggested minimum yearly)
   [Splunk and SIEM Queries](../../integrations/siem/splunkqueries.md)
 - The "change system policy" output should be reviewed for any removal of protect mode.
 - The "slow JITA access" and "time it takes for JITA access" can give an indication if users are
-  being slowed down in their ability to elevate privilege when utilizing Privilege Secure.
+  being slowed down in their ability to elevate privilege when using Privilege Secure.
 
 ## Mongo Health (suggested weekly)
 

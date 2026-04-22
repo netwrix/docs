@@ -61,7 +61,7 @@ Repo assets:
 - `gopass`
 
 :::note
-A Git remote is not required for the standard NPS-D customer-machine deployment flow. `git` is still
+A Git remote isn't required for the standard NPS-D customer-machine deployment flow. `git` is still
 installed in the validated path because `gopass` defaults to a local Git-backed store, even when no
 remote is configured.
 :::
@@ -85,7 +85,7 @@ configuration so `gopass` can decrypt during `docker login`.
 - macOS (Apple Silicon and Intel)
 
 :::note
-Windows is not supported by the official `docker-credential-pass` helper. For Windows environments,
+Windows isn't supported by the official `docker-credential-pass` helper. For Windows environments,
 use WSL Ubuntu with the Linux binary.
 :::
 
@@ -102,7 +102,7 @@ config file:
 
 Docker will then execute `docker-credential-pass` when storing or retrieving credentials.
 
-This configuration is client-side. It does not depend on Docker Desktop and it still applies when
+This configuration is client-side. It doesn't depend on Docker Desktop and it still applies when
 the Docker client talks to a remote engine.
 
 If the Docker config file already exists, add or replace only the `credsStore` key and keep the
@@ -400,7 +400,7 @@ mkdir -p "$HOME/.local/bin"
 install -m 0755 /tmp/docker-credential-pass "$HOME/.local/bin/docker-credential-pass"
 ```
 
-If `$HOME/.local/bin` is not already on `PATH`:
+If `$HOME/.local/bin` isn't already on `PATH`:
 
 ```bash
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.profile"
@@ -442,7 +442,7 @@ gpg --batch --generate-key "$HOME/gpg-batch"
 ```
 
 :::note
-To use a passphrase-protected key instead, remove `%no-protection` and make sure a working
+To use a passphrase-protected key instead, remove `%no-protection` and ensure a working
 `pinentry` program is configured before using `docker login`.
 :::
 
@@ -488,7 +488,7 @@ aws ecr get-login-password --region us-west-2 \
   | docker login --username "$REGISTRY_USER" --password-stdin "$REGISTRY"
 ```
 
-**Step 11 –** Verify that Docker did not store inline credentials:
+**Step 11 –** Verify that Docker didn't store inline credentials:
 
 ```bash
 grep -q '"auth"' "$HOME/.docker/config.json" && echo "unexpected inline auth found"
@@ -605,7 +605,7 @@ ln -sf "$(which gopass)" "$HOME/.local/bin/pass"
 
 The store symlink is created after gopass initialization in step 6.
 
-**Step 4 –** Configure Git identity for the local `gopass` store. A remote repository is not
+**Step 4 –** Configure Git identity for the local `gopass` store. A remote repository isn't
 required:
 
 ```bash

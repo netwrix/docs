@@ -204,7 +204,7 @@ Token**.
 - **Permissions:** Full API access (or minimum required)
 - **Expiration:** Set according to your security policy
 
-**Step 3 –** Copy and securely save the API token immediately — it does not display again.
+**Step 3 –** Copy and securely save the API token immediately — it doesn't display again.
 
 ---
 
@@ -685,5 +685,5 @@ mongo npsd --eval 'db.computers.findOne({"_id": "COMPUTER_ID"}, {"lastScan": 1})
 - Passwords use session-specific RSA key pairs (2048-bit)
 - All API communications use TLS 1.2+
 - NPS-D automatically cleans up temporary files
-- NPS-D does not log sensitive data in plain text
+- NPS-D doesn't log sensitive data in plain text
 - HTTP proxy with authentication is supported
