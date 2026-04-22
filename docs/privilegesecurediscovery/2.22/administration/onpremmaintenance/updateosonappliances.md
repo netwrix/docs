@@ -53,9 +53,9 @@ Check for the swarm leader:
 s1 nodes | grep Leader
 ```
 
-Only if the node being updated has a MANAGER STATUS of leader, run the below command on a different
-node to change the swarm Leader. Replace `<hostname>` with the hostname of the node being upgraded
-and run the command below.
+Only if the node being updated has a MANAGER STATUS of leader, run the following command on a
+different node to change the swarm Leader, replacing `<hostname>` with the hostname of the node
+being upgraded:
 
 ```
 HNupg=`<hostname>` ;  sudo docker node demote $HNupg; sleep 10; sudo docker node promote $HNupg

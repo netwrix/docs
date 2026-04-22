@@ -15,9 +15,9 @@ Docker Secrets Matching DR Site to PROD Site
 Privilege Secure uses Docker secrets to encrypt sensitive data, such as passwords, SSH keys, and
 SSL certificates, for transmission over the network.
 
-This secret is created during the installation of Privilege Secure. To backup and restore data from
-one Privilege Secure instance to another, these secrets must match. Examples of where data would be
-required to be transferred data between Privilege Secure instances include:
+Privilege Secure creates this secret during installation. To backup and restore data from
+one Privilege Secure instance to another, these secrets must match. Examples of when you need to
+transfer data between Privilege Secure instances include:
 
 - Backing up the database to a disaster recovery instance
 - Transferring from a single appliance, like a PoC, to a high availability cluster
@@ -69,16 +69,15 @@ Paste the two lines cut from above and save the file.
 
 ### Applying the Docker Secret to the New Privilege Secure Instance
 
-During thePrivilege Secure install, where the Docker secret key is created, instead apply the new
-key:
+During the Privilege Secure install, at the step that creates the Docker secret key, apply the new
+key instead:
 
 ```
 sudo docker secret create key.txt/secureone/data/key.txt
 ```
 
-Continue the deployment. After the install, you can verify the key was used by following the step
-in the 'Retrieve the Docker Secret from Current SecureONE Instance' section at the start of this
-article.
+Continue the deployment. After the install, verify the key was used by following the steps in the 'Retrieve the Docker
+Secret from Current SecureONE Instance' section.
 
 ### Troubleshooting
 

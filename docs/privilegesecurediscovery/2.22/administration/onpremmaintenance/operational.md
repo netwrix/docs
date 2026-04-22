@@ -22,8 +22,7 @@ be done at regular intervals:
 
 ![image.webp](/images/privilegesecure/4.2/discovery/admin/maintenance/360053539334_image.webp)
 
-- The manager status should be listed as "Leader" for a single node or "Leader" and "Reachable" as
-  above. The Leader is the primary manager node and the Reachable nodes are managers. In the event
+- The manager status shows "Leader" for a single node or "Leader" and "Reachable" for a cluster. The Leader is the primary manager node and the Reachable nodes are managers. In the event
   of a failure of a node an election to determine a new primary manager takes place. A single node
   can fail without any indication to users.
 
@@ -31,8 +30,8 @@ be done at regular intervals:
 
 - Disk space should be checked on a periodic basis. The command to check this is: df -h
 - This command is disk free with the switch h for human readable. Disk usage over 80% should be
-  checked to see if there are any specific reasons for excessive disk usage. If this the space can
-  not be reduced successfully, additional disc space should be added. The Customer Success team can
+  checked to see if there are any specific reasons for excessive disk usage. If the space cannot be
+  reduced successfully, add additional disk space. The Customer Success team can
   assist with the review and reduction of used disc space and also increase of disk space (physical
   or virtual, dependent on environment).
 
@@ -40,9 +39,9 @@ be done at regular intervals:
 
 Review (suggested weekly)
 
-- Check that backups are being executed on the production node and successfully copied to DR.
-- Confirm that backups with appropriate recent date exist on DR server. Backups are usually executed
-  from a cron run script daily.
+- Check that backups are running on the production node and copying successfully to DR.
+- Confirm that backups with appropriate recent date exist on DR server. A cron script typically runs
+  backups daily.
 - If the backup is set to restore the database backup daily, check the logs for any errors.
 - Production Primary Node:
 - ls -lath /secureone/data/db/backups
@@ -51,33 +50,31 @@ Review (suggested weekly)
 
 Test (suggested minimum yearly)
 
-- It is recommended to test DR at least yearly. This can be part of a wider DR test or specific to
+- Test DR at least yearly. This can be part of a wider DR test or specific to
   Privilege Secure.
 - A test window should be created for this as changes to Privilege Secure DR wouldn't be propagated
   back to the main production instance.
 - After a test ensure that services are down on the DR node. This will avoid the DR environment
-  overriding changes from Production. Use the command below:
+  overriding changes from Production. Use the following command:
 
     - `s1 stop expire worker scanner`
 
 ## Run Quickstart to Review Protect Mode and Persistence (suggested weekly)
 
-- Quickstart should be run frequently to ensure that all machines remain in protect mode. The output
-  from Quickstart can be filtered for any machines that don't show in protect mode. This
-  ensures that the build process and addition or protect mode is being executed as expected.
+- Run Quickstart frequently to ensure that all machines remain in protect mode. Filter the Quickstart
+  output for any machines that don't show in protect mode. This ensures that the build process and
+  addition of protect mode runs as expected.
 - Quickstart can also be used for a review of persistent access. This should be minimized to service
   accounts. A review to look for user accounts set to persistent should be performed. If these are
   truly required to be persistent, then they should be switched to a service account.
 
 ## Privilege Secure Log Review - SIEM (suggested weekly)
 
-- Typically a SIEM solution is best placed to report any issues that can be captured in Privilege
-  Secure logs.
-- An example set of queries for Splunk is included here:
-  [Splunk and SIEM Queries](../../integrations/siem/splunkqueries.md)
-- The "change system policy" output should be reviewed for any removal of protect mode.
-- The "slow JITA access" and "time it takes for JITA access" can give an indication if users are
-  being slowed down in their ability to elevate privilege when using Privilege Secure.
+- Typically, a SIEM solution best reports issues that Privilege Secure logs capture.
+- For Splunk query examples, see [Splunk and SIEM Queries](../../integrations/siem/splunkqueries.md).
+- Review the "change system policy" output for any removal of protect mode.
+- The "slow JITA access" and "time it takes for JITA access" indicate whether users experience slow
+  privilege elevation when using Privilege Secure.
 
 ## Mongo Health (suggested weekly)
 

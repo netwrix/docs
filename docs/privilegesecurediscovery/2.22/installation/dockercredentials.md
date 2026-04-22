@@ -91,8 +91,8 @@ use WSL Ubuntu with the Linux binary.
 
 ## Common Docker Configuration
 
-On every platform, Docker must be told to use the helper by adding the following to the user Docker
-config file:
+On every platform, configure Docker to use the helper by adding the following to the Docker config
+file:
 
 ```json
 {
@@ -115,7 +115,7 @@ This installer sets up GPG keys and the `gopass` credential store in the `HOME` 
 user who runs the script. Docker's credential helper (`docker-credential-pass`) resolves credentials
 from the `$HOME` of whatever user invokes `docker` at runtime.
 
-This script assumes Docker commands are run as root (for example, via `sudo docker`). Run the
+This script assumes you run Docker commands as root (for example, via `sudo docker`). Run the
 installer accordingly:
 
 ```bash
@@ -182,8 +182,8 @@ aws ecr get-login-password --region us-west-2 \
 Expected output: `Login Succeeded`
 
 This command uses your AWS credentials to get a temporary ECR token (valid 12 hours) and passes it
-directly to `docker login`. The token is then stored encrypted by `docker-credential-pass` —
-nothing is written in plain text to `~/.docker/config.json`.
+directly to `docker login`. `docker-credential-pass` then stores the encrypted token —
+`~/.docker/config.json` receives no plain-text credentials.
 
 **Step 4 –** Verify the credential was stored correctly:
 
@@ -257,8 +257,8 @@ aws ecr get-login-password --region us-west-2 \
 
 Expected output: `Login Succeeded`
 
-The temporary ECR token is stored encrypted by `docker-credential-pass`. Nothing is written in
-plain text to `~/.docker/config.json`.
+`docker-credential-pass` stores the encrypted temporary ECR token. `~/.docker/config.json`
+receives no plain-text credentials.
 
 ### Step 3: Verify the login result before deploying NPS-D
 
@@ -301,19 +301,19 @@ During logout, Docker asks the helper to delete the stored credential entry.
 
 ## Operator Usage Notes
 
-- The helper is used automatically by Docker after `credsStore: pass` is configured. Operators
+- Docker uses the helper automatically after you configure `credsStore: pass`. Operators
   don't need to invoke it directly during routine deployments.
 - Credentials are scoped to the registry hostname. Log in separately for each registry the customer
   environment needs.
 - The standard deployment model is local only. One engineer account or one machine gets one local
-  encrypted store. No remote repository is needed.
+  encrypted store. You don't need a remote repository.
 - `printf '%s' "$REGISTRY" | docker-credential-pass get` is a direct verification command when
   operators need to confirm which credential is stored.
 - `docker-credential-pass list` shows which registry entries exist.
 - If a customer machine already uses another Docker credential store, switching `credsStore` to
   `pass` changes the active credential backend for that Docker client.
-- For customer-machine operators, prefer interactive `docker login` so the token is entered at
-  Docker's password prompt instead of being placed in shell history or environment variables.
+- For customer-machine operators, prefer interactive `docker login` so you enter the token at
+  Docker's password prompt instead of placing it in shell history or environment variables.
 - If unattended automation is required, only use `--password-stdin` from a secure secret source.
   Don't hardcode the token into the command line or export it in the shell profile.
 
@@ -413,7 +413,7 @@ export PATH="$HOME/.local/bin:$PATH"
 ln -sf "$(which gopass)" "$HOME/.local/bin/pass"
 ```
 
-The store symlink is created after gopass initialization in step 8.
+Create the store symlink after gopass initialization in step 8.
 
 **Step 5 –** Configure Git identity for the `gopass` store. This doesn't require any remote
 repository:
@@ -603,7 +603,7 @@ export PATH="$HOME/.local/bin:$PATH"
 ln -sf "$(which gopass)" "$HOME/.local/bin/pass"
 ```
 
-The store symlink is created after gopass initialization in step 6.
+Create the store symlink after gopass initialization in step 6.
 
 **Step 4 –** Configure Git identity for the local `gopass` store. A remote repository isn't
 required:

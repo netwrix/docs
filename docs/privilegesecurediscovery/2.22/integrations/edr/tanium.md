@@ -153,7 +153,7 @@ collection.
 ### Create the NPSD Management package
 
 :::note
-This package is only required if you plan to use Protect mode (JITA) or Deny functionality. For
+You only need this package if you plan to use Protect mode (JITA) or Deny functionality. For
 scan-only operations, skip this section.
 :::
 
@@ -686,4 +686,4 @@ mongo npsd --eval 'db.computers.findOne({"_id": "COMPUTER_ID"}, {"lastScan": 1})
 - All API communications use TLS 1.2+
 - NPS-D automatically cleans up temporary files
 - NPS-D doesn't log sensitive data in plain text
-- HTTP proxy with authentication is supported
+- NPS-D supports HTTP proxy with authentication
