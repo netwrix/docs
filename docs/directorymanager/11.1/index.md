@@ -8,11 +8,10 @@ sidebar_position: 1
 
 Managing directory objects (for example, Active Directory users and groups) can be a challenge:
 Employees move locations, change departments, and start new groups all the time. As a result, IT
-professionals are faced with the daunting task of continually managing and updating security and
+professionals face the daunting task of continually managing and updating security and
 distribution groups — often having to do so manually.
 
-Directory Manager is an Identity and Access Management (IAM) solution that makes it easy to stay on top of all the changes, requests,
-and requirements that IT sees every day.
+Directory Manager is an Identity and Access Management (IAM) solution that helps IT manage all the changes, requests, and requirements that arise every day.
 
 ## Functions
 
@@ -63,7 +62,7 @@ and SharePoint sites.
 - View entitlements from both an object’s perspective and a resource’s perspective.
 - Evaluate entitlements to limit users and groups to the least privileges.
 - Manage entitlements by assigning necessary permissions, modifying permissions, and revoking
-  unnecessary permissions on the go.
+  unnecessary permissions as needed.
 
 ### Password Management
 
