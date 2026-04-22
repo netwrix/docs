@@ -82,9 +82,9 @@ options are available:
 1. Click **View** next to the **Certificate Serial Number** field.
 ![npsclientcertificatecopy](/images/auditor/10.8/admin/settings/npsclientcertificatecopy.webp)
 2. In the window that appears, go to the **Details** tab, click **Copy to File...**, and follow the Certificate Export Wizard, selecting DER encoded binary X.509 (.CER) as the export format.
-3. After successful export, copy the certificate to the machine where Netwrix Privilege Secure is installed.
+3. After successful export, copy the certificate to the machine running Netwrix Privilege Secure.
 
-**Step 8 –** Install the certificate on the machine where Netwrix Privilege Secure is installed. Follow these steps:
+**Step 8 –** Install the certificate on the machine running Netwrix Privilege Secure. Follow these steps:
 
 1. Right-click the copied certificate and select the **Install Certificate** option.
 2. In the Certificate Import Wizard, select **Local Machine** as a Store Location and click
