@@ -61,11 +61,9 @@ To use Netwrix Privilege Secure as an account for data collection:
 **Step 2 –** In the item configuration menu, select Netwrix Privilege Secure as an option for data
 collection.
 
-![npsdatacollectingaccount](/images/auditor/10.8/configuration/grouppolicy/npsdatacollectingaccount.webp)
-
 **Step 3 –** Select the type of the Access Policy you want to use in Netwrix Privilege Secure.
 Credential-based is the default option. Refer to the
-[Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
+[Netwrix Privilege Secure](/docs/privilegesecure/25_12/)
 documentation for information about Access Policies.
 
 In this case, you need to provide the username of the account managed by Netwrix Privilege Secure,
@@ -73,8 +71,6 @@ and to which Netwrix Auditor has the access through a Credential-based access po
 
 **NOTE:** Netwrix recommends using different credentials for different monitoring plans and data
 sources.
-
-![npsdatacollectingaccountresourced](/images/auditor/10.8/configuration/grouppolicy/npsdatacollectingaccountresourced.webp)
 
 The second option is Resource-based. To use this option, you need to provide the Activity and
 Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Ensure
