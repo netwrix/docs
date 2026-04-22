@@ -22,11 +22,10 @@ Each report has a set of filters which help organize audit data in the most conv
 report you want to receive on a regular basis. See the [Subscriptions](/docs/auditor/10.8/admin/subscriptions/overview.md)
 topic for additional information.
 
-Follow the steps to play a video:
+**To play a video:**
 
-**Step 1 –** Navigate to **Reports** → **User Activity**. Select any report and click View.
-
-**Step 2 –** Click a link in the **When** column.
+1. Navigate to **Reports** → **User Activity**. Select any report and click View.
+2. Click a link in the **When** column.
 
 To open User Activity report for the selected user or server, you can also click the link in the Who
 and Where columns of the All Users Activity report.
