@@ -32,6 +32,10 @@ The account can be a local ONTAP user or a domain account from an Active Directo
 |------|----------|-------------|
 | 445 | TCP | SMB file sharing |
 
+## Set up
+
+To add a NetApp ONTAP SVM to Access Analyzer, see [Set Up File Server Source Group](../../gettingstarted/file-servers/set-up-source-group.md). Add each SVM as a separate server entry using the SVM's CIFS server hostname or IP address. The connector connects to each SVM independently.
+
 ## Known behavior
 
 NetApp ONTAP may return invalid timestamp values on some systems due to a Year 2038 overflow issue in the ONTAP CIFS implementation. Access Analyzer detects and handles this automatically — affected timestamps are recorded as empty rather than causing a scan error.

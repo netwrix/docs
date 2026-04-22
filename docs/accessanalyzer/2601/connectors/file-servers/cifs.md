@@ -28,6 +28,10 @@ The connector authenticates using a service account with a username and password
 |------|----------|-------------|
 | 445 | TCP | SMB file sharing |
 
+## Set up
+
+To add a Windows file server or SMB-compatible server to Access Analyzer, see [Set Up File Server Source Group](../../gettingstarted/file-servers/set-up-source-group.md).
+
 ## DFS namespaces
 
 For domain-based Distributed File System (DFS) namespaces, the scan targets the default domain controller for the domain. For standalone namespaces or multiple namespaces, add the server or servers hosting the namespace directly to the source group.

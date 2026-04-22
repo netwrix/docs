@@ -8,7 +8,7 @@ sidebar_position: 40
 
 The Dell Unity connector reads file shares over SMB to collect share permissions, folder and file ACLs, and file contents for sensitive data classification. The connector doesn't require agent installation on the storage system.
 
-Dell Unity serves CIFS/SMB shares through NAS servers. The CIFS protocol must be configured on each NAS server you want to scan. Add each NAS server as a separate server entry in the source group, using its IP address or hostname.
+Dell Unity serves CIFS/SMB shares through NAS servers. The CIFS protocol must be configured on each NAS server you want to scan.
 
 ## Supported versions
 
@@ -30,3 +30,7 @@ The account can be a local user on the NAS server or a domain account from an Ac
 | Port | Protocol | Description |
 |------|----------|-------------|
 | 445 | TCP | SMB file sharing |
+
+## Set up
+
+To add a Dell Unity NAS server to Access Analyzer, see [Set Up File Server Source Group](../../gettingstarted/file-servers/set-up-source-group.md). Add each NAS server as a separate server entry using its IP address or hostname. The connector connects to each NAS server independently.
