@@ -1,49 +1,70 @@
 ---
 title: "Scanner Best Practices"
 description: "Best practices for configuring and running scanners in Access Analyzer"
-sidebar_position: 20
+sidebar_position: 50
 ---
 
 # Scanner Best Practices
 
 ## Use scanner labels to isolate scan traffic
 
-Scanner labels route scan executions to specific scanner pools. Use them to prevent scan traffic from one environment from sharing resources with another.
+Scanner labels route scan executions to specific scanner pools. Use them to keep scan traffic between environments isolated and prevent resource contention.
 
 Common labeling patterns:
 
-| Use Case | Example Label |
-| --- | --- |
+| Use case | Example label |
+|----------|---------------|
 | Separate production and non-production scanning | `environment=production`, `environment=staging` |
 | Route by geographic region | `region=us-east`, `region=eu-west` |
 | Dedicate scanners to high-sensitivity source groups | `tier=restricted` |
 
-Define a labeling scheme before deploying scanners and apply it consistently. Labels applied to a source group are inherited by all scan executions in that group — you don't need to set them per source.
+Define a labeling scheme before deploying scanners and apply it consistently. Labels assigned to a source group are used by all scan executions in that group — you don't need to set them per source.
 
-## Set Max Concurrent Scans conservatively
+:::note
+The label `scanner-default` is reserved for the built-in system scanner and can't be applied to custom scanners.
+:::
 
-Start with the default value of 1 and increase only after validating that the target environment can handle parallel connections.
+## Plan for scanner redundancy
 
-Before increasing the limit:
+Assign the same label to multiple scanners that cover the same environment. When a source group targets a label that multiple scanners carry, any of those scanners can run the job — so if one scanner is offline or unhealthy, scans still execute on the others.
+
+A single scanner per label is a single point of failure. For production environments, deploy at least two scanners per label.
+
+## Set Workers conservatively
+
+The **Workers** setting controls the number of concurrent enumeration threads a scan uses when reading from a target. The default is `3` and the valid range is `1–20`.
+
+Start at the default and increase only after validating that the target environment can handle parallel connections.
+
+Before increasing Workers:
 
 - Confirm the domain controller, file server, or other target can sustain simultaneous authenticated connections without degraded performance.
 - Verify the network path between the scanner and the target has sufficient bandwidth for parallel data transfer.
-- Consider the number of source groups that may run simultaneously — the limit is per group, and multiple groups can run at the same time.
+- Consider the number of source groups that may run at the same time — multiple groups can run simultaneously across the same scanner, multiplying the actual connection count on the target.
 
-A safe approach is to increase the limit by 2–3 at a time and monitor scan completion times and target resource utilization before increasing further.
+A safe approach is to increase by 2–3 at a time and monitor scan completion times and target resource utilization before increasing further.
+
+## Monitor scanner health
+
+Check the Scanners page regularly to review scanner health status. A scanner in Warning state is under resource pressure — disk, memory, or CPU — and scan performance may be degraded. A scanner in Error state has reported health issues and needs investigation before running additional scans.
+
+Common causes of Warning and Error states:
+
+- Disk space consumed by k3s container images or log files — clean up unused images if disk pressure is persistent
+- Memory pressure from running multiple large scans in parallel — reduce Workers or stagger scan schedules
+- Network connectivity issues between the scanner host and the Access Analyzer server on port 6443
+
+See [Manage Scanners](./manage-scanners.md) for a full reference of health status values.
 
 ## Group sources by environment and sensitivity
 
 Group sources that share the same operational profile — same environment (production vs. staging), same geographic location, and similar sensitivity level. Avoid mixing high-sensitivity and low-priority sources in a single group.
 
-This approach has two benefits:
-
-- It lets you assign different scanner pools and service accounts to different groups based on the security requirements of the environment.
-- It makes aggregate scan status meaningful — a group that mixes critical and non-critical sources produces a status that doesn't clearly reflect the health of either.
+This lets you assign dedicated scanner pools and service accounts to each group based on security requirements, and keeps aggregate scan status meaningful.
 
 ## Use least-privilege service accounts
 
-Each source group requires a service account for authentication. Assign an account that has only the permissions required for the connectors in that group.
+Each source group requires a service account for authentication against the targets it scans. Assign an account that has only the permissions required for the connectors in that group.
 
 - Don't share a single service account across source groups that scan different environments.
 - Don't reuse a service account between source groups with different sensitivity levels.
@@ -51,12 +72,12 @@ Each source group requires a service account for authentication. Assign an accou
 
 ## Follow a consistent naming convention
 
-Source group names appear in the list view, in scan execution logs, and in any reporting that references the source. A consistent naming convention makes groups easier to identify and manage.
+Source group names appear in the list view, in scan execution logs, and in reporting. A consistent naming convention makes groups easier to identify and manage.
 
 A useful pattern: `<source-type>-<environment>-<location>`. For example:
 
 - `ad-production-us-east`
 - `fileserver-staging-eu-west`
-- `sharepoint-production`
+- `fileserver-production-eu-central`
 
 Names are case-insensitive and must be unique across all source groups. Avoid names that embed credentials, IP addresses, or other values that change over time.
