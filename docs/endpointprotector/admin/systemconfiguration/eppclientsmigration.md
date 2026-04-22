@@ -37,7 +37,7 @@ For MacOS and Linux computers, the DPI certificate needs to be manually redeploy
 ![](MigrateSettingDC.png)
 
 1.  Go to **Device Control -\> Computers**
-2.  For the desired computers to be migrated, go to **Actions/Migrate to New EPP Server.** When clicked, marked computer should receive instruction to re-register in new EPP Server
+2.  For the computers you want to migrate, go to **Actions/Migrate to New EPP Server.** When clicked, marked computer should receive instruction to re-register in new EPP Server
 3.  After the EPP Client will receive instructions with the next server communication cycle, the migration will begin
 
 :::note

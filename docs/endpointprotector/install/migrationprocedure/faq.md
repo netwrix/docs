@@ -10,24 +10,24 @@ This chapter consolidates the most common questions and issues encountered durin
 
 ---
 
-## Can I skip 5.9.4.2 and migrate directly to 2510 from an older version?
+## Migrating Directly to 2510 from an Older Version
 
 **No.** Only backups created on version **5.9.4.2** are accepted by 2510 and further versions. If you are on any version from 5.7.0.0 to 5.9.4.1, you must first apply the cumulative patch to reach 5.9.4.2, create the backup there, and then deploy 2510.
 
 Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 onto 2510 will fail at the import step.
 
-> 💡 **Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, it may be worth evaluating a clean deployment of the 2510/2602 image rather than going through the full migration path. Reconfiguring EPP from scratch can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where historical log data isn't required. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.
+> 💡 **Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, it may be worth evaluating a clean deployment of the 2510/2602 image rather than going through the full migration path. Reconfiguring EPP on a fresh base installation can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where historical log data isn't required. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.
 
 ---
 
 
-## What happens if I restore a 2509 backup onto a 2510 server?
+## Restoring a 2509 Backup onto a 2510 Server
 
 This is supported. Restoring a 2509 configuration backup onto a 2510 server simply migrates the configuration — the OS remains 2510. Once patched to 2602, the result is functionally equivalent to a native 2510-based deployment at 2602. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
 
 ---
 
-## My backup import is returning a 500 error. What do I do?
+## Backup Import Returns a 500 Error
 
 This most commonly occurs with large backups or under-resourced VMs.
 
@@ -40,7 +40,7 @@ This most commonly occurs with large backups or under-resourced VMs.
 
 ---
 
-## Network/IP settings won't save on the new 2510 server. What's wrong?
+## Network/IP Settings Not Saving on the New 2510 Server
 
 The IP configuration page fails to save if **only one DNS field is filled**. This is a known product issue affecting 2509 and early 2510 builds.
 
@@ -48,7 +48,7 @@ The IP configuration page fails to save if **only one DNS field is filled**. Thi
 
 ---
 
-## Email alerts stopped working after migration. How do I fix it?
+## Email Alerts Not Working After Migration
 
 SMTP credentials aren't always fully restored from the backup and typically need to be re-entered manually after migration.
 
@@ -88,7 +88,7 @@ Entra ID / SSO application registrations may need to be refreshed after migratio
 
 ---
 
-## EPP clients aren't communicating after migration. What should I check?
+## EPP Clients Not Communicating After Migration
 
 **Checklist:**
 1. Confirm the new server's IP/FQDN is reachable from endpoints (firewall, DNS).
@@ -101,7 +101,7 @@ Entra ID / SSO application registrations may need to be refreshed after migratio
 
 ---
 
-## The Audit Log Backup is running and never finishes. How do I stop it?
+## Audit Log Backup Running Without Completing
 
 This is a known issue after migration to 2510/2601.
 
@@ -113,7 +113,7 @@ This is a known issue after migration to 2510/2601.
 
 ---
 
-## After migration, I can't download Artifact logs. The page shows an error.
+## Artifact Logs Unavailable After Migration
 
 This is a known issue. Contact Netwrix Support for the latest fix status and remediation steps.
 
@@ -163,7 +163,7 @@ This is a known product defect on 2601.
 
 ---
 
-## I'm in an air-gapped / offline environment. How do I activate 2510?
+## Activating 2510 in an Air-Gapped or Offline Environment
 
 Air-gapped activation requires an **Offline Activation Patch** specific to 2510. This is a separate patch from the EPP software cumulative patch and must be requested in advance.
 
@@ -175,7 +175,7 @@ Air-gapped activation requires an **Offline Activation Patch** specific to 2510.
 
 ---
 
-## PHP for ELS (ELS for PHP) installation is failing. What do I do?
+## PHP for ELS (ELS for PHP) Installation Failing
 
 This can occur in some migration paths when the license isn't correctly recognized.
 
@@ -193,7 +193,7 @@ This is a known reporting layer issue that doesn't affect actual policies or enf
 
 ---
 
-## How long does the complete migration process take end-to-end?
+## Complete Migration Process Duration
 
 Approximate time estimates based on real migration experience:
 
@@ -214,7 +214,7 @@ Approximate time estimates based on real migration experience:
 
 ---
 
-## Can I keep the old 5.9.4.2 server running alongside the new 2510 server?
+## Running the Old 5.9.4.2 Server Alongside the New 2510 Server
 
 **Yes, and it is recommended** — at least temporarily. The old server:
 - Retains all historical event logs and file shadows (not migrated to 2510).
@@ -222,7 +222,7 @@ Approximate time estimates based on real migration experience:
 - Can be consulted for compliance or forensic purposes if any applicable regulation requires retention of historical data.
 
 :::tip
-Keep the old server **offline** once the new 2510/2602 environment is validated. Activate access to it only on demand (e.g. for a compliance review or rollback). Leaving it online unnecessarily increases the attack surface, particularly given that 5.9.4.2 no longer receives security patches.
+Keep the old server **offline** after the new 2510/2602 environment is validated. Activate access to it only on demand (e.g. for a compliance review or rollback). Leaving it online unnecessarily increases the attack surface, particularly given that 5.9.4.2 no longer receives security patches.
 :::
 
 Decommission the old server only after:

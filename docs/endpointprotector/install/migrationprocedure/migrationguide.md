@@ -140,7 +140,7 @@ Confirm hypervisor version compatibility **before** scheduling a migration maint
 :::
 
 :::note
-The hypervisor recommendations above reflect our best guidance based on the EPP image format and known compatibility. However, hypervisor provisioning, configuration, and ongoing maintenance fall outside the scope of Netwrix support. Netwrix can't assist with hypervisor-side issues — customers are responsible for their own virtualisation infrastructure.
+The hypervisor recommendations above reflect the best available guidance based on the EPP image format and known compatibility. However, hypervisor provisioning, configuration, and ongoing maintenance fall outside the scope of Netwrix support. Netwrix can't assist with hypervisor-side issues — customers are responsible for their own virtualisation infrastructure.
 :::
 
 ### System Resource Assessment
@@ -166,7 +166,7 @@ You can verify disk space, current server versions in Appliance -> Server Inform
 For authoritative CPU, RAM, and disk minimum recommendations, refer to the official User Manual: [Netwrix Endpoint Protector — Server Requirements](/docs/endpointprotector/requirements/server)
 
 :::tip
-If disk space is below 30%, perform database shrinking via **System Maintenance → Audit Log Backups** before proceeding. Exporting old logs to an external SIEM or repository reduces DB size significantly. If not possible, consider expanding the associated disk space. For more information, see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup).
+If disk space is below 30%, perform database shrinking via **System Maintenance → Audit Log Backups** before proceeding. Exporting old logs to an external SIEM or repository reduces DB size significantly. If not possible, consider expanding the associated disk space. To export logs, see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup).
 :::
 
 ### Maintenance Window Planning
@@ -192,11 +192,11 @@ EPP clients continue logging events locally during server downtime. All queued e
 :::
 
 :::tip
-In large enterprise environments with a high number of active EPP clients, we recommend **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, allowing the server to focus on the upgrade and ensuring no logs are left unprocessed in the queue. Client communications can be disabled in several ways:
+In large enterprise environments with a high number of active EPP clients, Netwrix recommends **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, allowing the server to focus on the upgrade and ensuring no logs are left unprocessed in the queue. Client communications can be disabled in several ways:
 - Blocking the EPP communication port on the perimeter or host-based firewall
 - Blocking the port at the virtual machine network stack level (vSwitch port group policy, NSX rule, or equivalent)
 
-Re-enable communications once the upgraded server has been verified and is ready to accept traffic.
+Re-enable communications after the upgraded server has been verified and is ready to accept traffic.
 :::
 
 ### VM Snapshot and Backup
@@ -204,7 +204,7 @@ Re-enable communications once the upgraded server has been verified and is ready
 **This step is non-negotiable. Don't proceed without completing both.**
 
 :::note
-VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, we consider a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot means there is no rollback path — in the event of a failure, recovery may be impossible without one, and Netwrix Support will be unable to assist with restoring the environment.
+VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, Netwrix considers a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot means there is no rollback path — if there is a failure, recovery may be impossible without one, and Netwrix Support will be unable to assist with restoring the environment.
 :::
 
 **Step 1 — Create a VM snapshot** on your hypervisor (VMware, Hyper-V, ESXi, AWS, Azure, etc.).
@@ -237,9 +237,9 @@ Store backup files in a secure repository with limited access. The backup contai
 
 **Step 3 — Export logs and file shadows separately (optional but recommended):**
 
-Logs and file shadows are **not included** in the System Configuration Backup. If you need historical logs for compliance or forensics:
+Logs and file shadows **aren't** included in the System Configuration Backup. If you need historical logs for compliance or forensics:
 
-- Use **System Maintenance → Audit Log Backups** to export logs to an external location. For more information, see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup).
+- Use **System Maintenance → Audit Log Backups** to export logs to an external location. See [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup) for export steps.
 - Retain the old server VM after migration for log access.
 
 :::tip
@@ -294,7 +294,7 @@ The patch includes:
 
 ![Offline Patch Uploader wizard — file selection and Upload button](offline_patch_wizard.webp)
 
-6. Once the file is uploaded, click **Back** when prompted.
+6. After the file is uploaded, click **Back** when prompted.
 7. The progress notification will appear in the Software Update section.
 
 ![Software Update — active upgrade progress status](upgrade_progress.webp)
@@ -306,7 +306,7 @@ The patch installation typically takes **15–60 minutes** depending on server p
 
 ### Post-Patch Verification
 
-Once the installation completes:
+After the installation completes:
 
 1. The console will display **"Last updates applied successfully"** status.
 2. Refresh your browser and log back in.
@@ -558,7 +558,7 @@ Complete all items in this checklist after the migration is finished.
 
 ### Re-Enabling Client Communications
 
-Once the restore is verified and client packages are uploaded:
+After the restore is verified and client packages are uploaded:
 
 1. Navigate to **System Configuration → System Settings**.
 2. Re-enable client communications.
