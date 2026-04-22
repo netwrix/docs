@@ -10,6 +10,12 @@ sidebar_position: 50
 This article is for the team performing the Access Analyzer deployment. It covers the installer flags required to connect an identity provider at install time. If you are an application administrator setting up user accounts after the IdP connection is in place, see [Identity Provider](../configurations/identity-provider.md).
 :::
 
+**Related reading:**
+
+- [Quick Install](quickinstall.md) — Active Directory deployment using environment variables, end-to-end
+- [Installer Command Reference](install-commands.md) — full catalog of every installer flag and environment variable
+- [TLS Certificate Requirements](system/certificates.md) — certificate formats, SAN rules, CA bundle preparation
+
 Access Analyzer supports connecting an identity provider (IdP) so users authenticate through your organization's directory rather than with local credentials. IdP federation is **optional** — if you omit `--idp-type` at install time, Access Analyzer is deployed without Keycloak and uses local accounts only.
 
 When `--idp-type` is configured, the installer automatically:
@@ -24,9 +30,21 @@ When `--idp-type` is configured, the installer automatically:
 Confirm the following before running the installer with IdP flags:
 
 - The Access Analyzer cluster system requirements are met — see [Hardware and System Requirements](system/requirements.md)
+- TLS certificates are prepared and placed on the VM — see [TLS Certificate Requirements](system/certificates.md)
 - You have collected the required credentials from the customer's IdP or directory administrator (see [Identity Provider — Part 1](../configurations/identity-provider.md#part-1-configure-your-identity-provider))
 - For LDAP/AD: the Access Analyzer server has network access to the LDAP server on port 636 (LDAPS) or 389 (LDAP)
 - For a private CA certificate: you have the PEM file available on the server and will pass `--ca-bundle <path>` to the installer
+
+:::warning
+`--hostname` is required and must:
+
+- Be a real DNS hostname (not an IP address — IPs will not work because the browser TLS handshake requires the hostname in the certificate's SAN).
+- Be lowercase, and match lowercase in the certificate SAN list. Keycloak's OIDC issuer URL is derived from this value; a case mismatch between SAN and browser-normalized hostname produces HTTP 401 at sign-in.
+- Resolve the same from client browsers and in-cluster pods. The installer configures the in-cluster rewrite automatically; the customer is responsible for the public DNS record or `/etc/hosts` entry that client browsers use.
+- Avoid the `.local` and `.localhost` TLDs — both break in-cluster DNS resolution and silently break OIDC login flows.
+
+For full certificate format and preparation details, see [TLS Certificate Requirements](system/certificates.md).
+:::
 
 ## Choosing an IdP type
 
@@ -39,6 +57,10 @@ Confirm the following before running the installer with IdP flags:
 | `ad` | Active Directory via LDAP (on-premises) |
 | `ldap` | Generic LDAP |
 
+:::note
+`--idp-alias` must match `[A-Za-z0-9._-]+` — letters, digits, hyphens, underscores, and dots only. Spaces are not allowed. The alias is shown as the label on the login button.
+:::
+
 ## Configure Entra ID (OIDC)
 
 **Required flags:** `--idp-type entra-oidc`, `--idp-alias`, `--entra-tenant-id`, `--oidc-client-id`
@@ -50,7 +72,7 @@ export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- \
   --idp-type entra-oidc \
-  --idp-alias "Entra ID" \
+  --idp-alias entra-id \
   --entra-tenant-id <tenant-id> \
   --oidc-client-id <client-id>
 ```
@@ -70,7 +92,7 @@ export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- \
   --idp-type entra-saml \
-  --idp-alias "Entra ID" \
+  --idp-alias entra-id \
   --entra-tenant-id <tenant-id>
 ```
 
@@ -89,7 +111,7 @@ export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- \
   --idp-type oidc \
-  --idp-alias "Okta" \
+  --idp-alias okta \
   --oidc-discovery-url https://<your-okta-domain>/.well-known/openid-configuration \
   --oidc-client-id <client-id>
 ```
@@ -111,7 +133,7 @@ export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- \
   --idp-type saml \
-  --idp-alias "Okta" \
+  --idp-alias okta \
   --saml-sso-url https://<your-idp>/sso/saml \
   --saml-entity-id https://<your-idp>/saml/metadata \
   --saml-signing-cert /path/to/signing-cert.pem
@@ -123,18 +145,28 @@ If your IdP sends the email address under a different attribute name (such as `m
 
 ## Configure Active Directory
 
+:::tip
+For a step-by-step end-to-end walkthrough using environment variables (recommended for most customers), see the [Quick Install](quickinstall.md). The section below is the flag-level reference.
+:::
+
 **Required flags:** `--idp-type ad`, `--idp-alias`, `--ldap-url`, `--ldap-bind-dn`, `--ldap-users-dn`
 
 **Optional:** `--ldap-email-attribute` (default: `mail`)
 
 **Prompted secret:** LDAP bind credential — entered interactively, never written to disk or logs
 
+If your domain controller's LDAPS certificate is signed by an internal CA not in the OS trust store (typical for on-prem AD), pass the root CA cert via `--ca-bundle`. Without it, Keycloak's LDAPS handshake to the DC will fail with a TLS trust error. The CA that signed the DC's LDAPS certificate may be different from the CA that signed your Access Analyzer server's TLS certificate — verify the DC's cert chain specifically. See [TLS Certificate Requirements](system/certificates.md) for details on assembling the CA bundle.
+
 ```bash
 export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- \
+  --hostname aa2601.corp.example.com \
+  --tls-cert /opt/dspm-tls/aa2601.crt \
+  --tls-key /opt/dspm-tls/aa2601.key \
+  --ca-bundle /opt/dspm-tls/ca-bundle.crt \
   --idp-type ad \
-  --idp-alias "Active Directory" \
+  --idp-alias active-directory \
   --ldap-url ldaps://dc.corp.example.com:636 \
   --ldap-bind-dn "CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com" \
   --ldap-users-dn "OU=Users,DC=corp,DC=example,DC=com"
@@ -158,12 +190,18 @@ Use this type for OpenLDAP and other non-AD LDAP directories.
 export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- \
+  --hostname aa2601.corp.example.com \
+  --tls-cert /opt/dspm-tls/aa2601.crt \
+  --tls-key /opt/dspm-tls/aa2601.key \
+  --ca-bundle /opt/dspm-tls/ca-bundle.crt \
   --idp-type ldap \
-  --idp-alias "LDAP" \
+  --idp-alias ldap \
   --ldap-url ldaps://ldap.corp.example.com:636 \
   --ldap-bind-dn "CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com" \
   --ldap-users-dn "OU=Users,DC=corp,DC=example,DC=com"
 ```
+
+As with the Active Directory section above, pass `--ca-bundle` with the root CA cert that signed the directory's LDAPS certificate when it is not in the OS trust store.
 
 The `ldap` type uses generic LDAP defaults: `uid` for the username attribute and `entryUUID` for the UUID attribute.
 
@@ -175,7 +213,7 @@ If IdP configuration fails after the cluster is already running, use `--configur
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- \
   --configure-idp-only \
   --idp-type entra-oidc \
-  --idp-alias "Entra ID" \
+  --idp-alias entra-id \
   --entra-tenant-id <tenant-id> \
   --oidc-client-id <client-id>
 ```
@@ -431,3 +469,89 @@ LDAP_BIND_DN=<service-account-dn> \
 LDAP_BIND_CREDENTIAL=<service-account-password> \
 ./scripts/verify-idp-config.sh
 ```
+
+## Troubleshooting IdP configuration
+
+IdP configuration runs as the final step of the installer, after Keycloak is healthy. A failure here means the cluster and applications are running correctly — only the identity federation is missing.
+
+### Check the installer log
+
+The installer log contains the full `kcadm.sh` output:
+
+```bash
+grep -A 20 "Configuring IdP federation" /var/log/dspm-installer.log
+```
+
+### Common error messages
+
+| Message | Likely cause |
+| --- | --- |
+| `Failed to authenticate with Keycloak admin CLI` | Keycloak pod not ready; check pod status below |
+| `Connection refused` or `curl` error in OIDC step | Discovery URL unreachable from the cluster node |
+| `409 Conflict` from `kcadm.sh create` | An IdP with this alias already exists in Keycloak |
+| `File not found` for signing cert | `--saml-signing-cert` path was invalid at install time |
+| `PKIX path building failed` in Keycloak logs (LDAP sign-ins fail silently) | CA bundle is missing the LDAPS DC's CA — see [TLS Certificate Requirements](system/certificates.md#multi-domain-and-multi-ca-environments) |
+
+### Check Keycloak pod health
+
+```bash
+# Confirm the pod is running
+kubectl get pods -n access-analyzer -l app=keycloak
+
+# Check for recent errors in the Keycloak logs
+kubectl logs -n access-analyzer statefulset/keycloak --tail=50
+```
+
+### Retry using --configure-idp-only
+
+If the cluster is healthy but IdP configuration failed, re-run the installer with `--configure-idp-only`. This skips K3s and ArgoCD entirely and retries only the Keycloak configuration:
+
+```bash
+curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- \
+  --configure-idp-only \
+  --hostname aa2601.corp.example.com \
+  --ca-bundle /opt/dspm-tls/ca-bundle.crt \
+  --idp-type <type> \
+  --idp-alias <alias> \
+  # ...same --idp-* flags used during the original install
+```
+
+`--configure-idp-only` does not require `--license-key`.
+
+### If retry fails with 409 Conflict
+
+If a previous partial run created the IdP instance in Keycloak before failing (for example, during mapper creation), the retry fails with a `409 Conflict`. Remove the partial IdP first using `kcadm.sh` inside the Keycloak pod.
+
+Authenticate first:
+
+```bash
+kubectl exec -n access-analyzer statefulset/keycloak -- \
+  /opt/keycloak/bin/kcadm.sh config credentials \
+    --server http://localhost:8080/auth --realm master \
+    --user "$KC_BOOTSTRAP_ADMIN_USERNAME" \
+    --password "$KC_BOOTSTRAP_ADMIN_PASSWORD"
+```
+
+For **OIDC or SAML** IdPs:
+
+```bash
+kubectl exec -n access-analyzer statefulset/keycloak -- \
+  /opt/keycloak/bin/kcadm.sh delete \
+    identity-provider/instances/<alias> -r dspm
+```
+
+For **LDAP or AD** IdPs (child mappers cascade-delete automatically):
+
+```bash
+LDAP_ID=$(kubectl exec -n access-analyzer statefulset/keycloak -- \
+  /opt/keycloak/bin/kcadm.sh get components -r dspm \
+    -q name=<alias> \
+    -q type=org.keycloak.storage.UserStorageProvider \
+    --fields id -c \
+  | python3 -c "import sys,json; d=json.load(sys.stdin); print(d[0]['id'] if d else '')")
+
+kubectl exec -n access-analyzer statefulset/keycloak -- \
+  /opt/keycloak/bin/kcadm.sh delete components/"${LDAP_ID}" -r dspm
+```
+
+Replace `<alias>` with the value that was passed to `--idp-alias` during the failed install. Then re-run `--configure-idp-only`.

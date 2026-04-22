@@ -25,6 +25,10 @@ Before completing the steps below, confirm that the infrastructure and network r
 
 ## Part 1: Configure your identity provider
 
+:::tip
+For a complete Active Directory walkthrough that pairs this user-configuration guide with the installer-side steps, see the [Quick Install](../install/quickinstall.md).
+:::
+
 ### Entra ID (OIDC)
 
 Complete the following steps in Azure Portal before connecting Access Analyzer.
@@ -104,6 +108,34 @@ Collect the following values:
 
 ## Part 2: Prepare Access Analyzer
 
+### Sign in as the bootstrap User Admin
+
+<!-- SYNC: install/quickinstall.md "Sign in as the bootstrap User Admin" -->
+<!-- If you change this block, update the matching block in install/quickinstall.md -->
+
+The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Admin** role. This account can create and manage other users but **cannot** access system configuration. Use it on first login to pre-provision your users, then sign out and sign back in as an Administrator for system-level work.
+
+1. Retrieve the bootstrap admin password from the Kubernetes secret:
+
+   ```bash
+   sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
+     -o jsonpath='{.data.password}' | base64 -d; echo
+   ```
+
+2. Open a browser and navigate to `https://<your-hostname>`.
+
+3. Sign in with:
+   - **Username**: `admin@dspm.local`
+   - **Password**: (from step 1)
+
+4. Complete first-login setup:
+   - Scan the QR code with an authenticator app, enter a device name, submit the one-time code. **Save this enrollment** — you will need the same authenticator for any future bootstrap admin login.
+   - Enter a first name and last name. **Do not change the email address.**
+
+Proceed to [Pre-provision user accounts](#pre-provision-user-accounts) below.
+
+<!-- END SYNC -->
+
 ### Pre-provision user accounts
 
 Before a user can sign in through the identity provider, their account must exist in Access Analyzer. The application authenticates them against your IdP successfully but denies access if no matching account has been created.
@@ -115,10 +147,27 @@ The email address entered during pre-provisioning must exactly match the address
 1. Navigate to **Configuration** > **Users**.
 2. Click **Add User**.
 3. Enter the user's **Name** and **Email** address.
-4. Select a **Role**: **Administrator** or **Viewer**.
+4. Select a **Role**: **Administrator**, **User Admin**, or **Viewer** (see [Roles](#roles) below).
 5. Click **Create User**.
 
+Assign at least one user the **Administrator** role — the bootstrap `admin@dspm.local` account is a User Admin only and cannot access system configuration. Assign at least one additional user the **User Admin** role if you want a non-bootstrap user to manage accounts going forward.
+
 No password is required for pre-provisioned accounts. For details on managing users, see [Users](users.md).
+
+### Roles
+
+<!-- SYNC: install/quickinstall.md "Roles" -->
+<!-- If you change this block, update the matching block in install/quickinstall.md -->
+
+Access Analyzer has three roles. **User Admin** and **Administrator** have non-overlapping responsibilities by design — most deployments assign at least one user to each. The bootstrap `admin@dspm.local` account is seeded as User Admin, so it can pre-provision the rest of your users, including your first Administrator.
+
+| Role | Description |
+| --- | --- |
+| **Administrator** | System configuration rights: configure sources, scans, connectors, application settings. Does **not** have user management rights. |
+| **User Admin** | User and role management rights: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
+| **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
+
+<!-- END SYNC -->
 
 ## How sign-in works after IdP is configured
 

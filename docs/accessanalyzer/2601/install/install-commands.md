@@ -194,24 +194,45 @@ The exit code indicates which phase failed:
 
 ## Environment Variables
 
-If you prefer not to pass options on the command line — for example, in an automated deployment script — several options can be set as environment variables. These are picked up automatically if they are exported before the install command runs.
+Most options can be set as environment variables instead of command-line flags. This is the recommended style for scripted or automated deployments — see the [Quick Install](quickinstall.md) for an end-to-end example.
 
-| Environment variable | Equivalent option |
-|---|---|
-| `LICENSE_KEY` | `--license-key` |
-| `DRY_RUN` | `--dry-run` |
-| `ACCEPT_WARNINGS` | `--accept-warnings` |
-| `LOG_LEVEL` | `--log-level` |
-| `POSTGRES_DATA_DIR` | `--postgres-data-dir` |
-| `CLICKHOUSE_DATA_DIR` | `--clickhouse-data-dir` |
-| `IDP_TYPE` | `--idp-type` |
-| `IDP_ALIAS` | `--idp-alias` |
+Export the variables before running the installer. When the same option is set as both an environment variable and a command-line flag, the flag takes precedence.
 
-When the same option is set as both an environment variable and a command-line flag, the flag takes precedence.
+| Environment variable | Equivalent flag | Example |
+| --- | --- | --- |
+| `LICENSE_KEY` | `--license-key` | `NWRX-XXXX-XXXX-XXXX` |
+| `DSPM_HOSTNAME` | `--hostname` | `aa2601.corp.example.com` |
+| `DSPM_TARGET_REVISION` | `--target-revision` | `1.*` (latest stable) or `0.3.362-dev` |
+| `SIZE` | `--size` | `1` (default), `2`, up to `10` |
+| `TLS_CERT_FILE` | `--tls-cert` | `/opt/dspm-tls/aa2601.crt` |
+| `TLS_KEY_FILE` | `--tls-key` | `/opt/dspm-tls/aa2601.key` |
+| `TLS_CA_BUNDLE_FILE` | `--ca-bundle` | `/opt/dspm-tls/ca-bundle.crt` |
+| `IDP_TYPE` | `--idp-type` | `ad`, `ldap`, `oidc`, `entra-oidc`, `saml`, `entra-saml` |
+| `IDP_ALIAS` | `--idp-alias` | `corporate-ad` (no spaces) |
+| `LDAP_URL` | `--ldap-url` | `ldaps://dc01.example.com:636` |
+| `LDAP_BIND_DN` | `--ldap-bind-dn` | `CN=svc-dspm,OU=ServiceAccounts,DC=example,DC=com` |
+| `LDAP_USERS_DN` | `--ldap-users-dn` | `CN=Users,DC=example,DC=com` |
+| `LDAP_EMAIL_ATTRIBUTE` | `--ldap-email-attribute` | `mail` (default) |
+| `LDAP_BIND_CREDENTIAL` | (secret — see Quick Install) | (see Quick Install) |
+| `POSTGRES_DATA_DIR` | `--postgres-data-dir` | `/mnt/ssd/postgres` |
+| `CLICKHOUSE_DATA_DIR` | `--clickhouse-data-dir` | `/mnt/nvme/clickhouse` |
+| `ACCEPT_WARNINGS` | `--accept-warnings` | `true` |
+| `LOG_LEVEL` | `--log-level` | `info` (default), `debug`, `warn`, `error` |
+| `HTTP_PROXY` / `HTTPS_PROXY` | (no flag) | `http://proxy.example.com:8080` |
+| `NO_PROXY` | (no flag) | `localhost,127.0.0.1,.svc,.cluster.local` |
+| `SKIP_AV_CHECK` | (no flag) | `true` |
+| `DRY_RUN` | `--dry-run` | `true` |
+
+:::note
+`LDAP_BIND_CREDENTIAL` is the only secret environment variable, and the installer does not actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
+:::
 
 ## Identity Provider Flags
 
-For per-IdP examples, secret collection behavior, and recovery instructions, see [Configure Identity Provider](identity-provider.md). The table below lists all available flags.
+The table below lists every IdP flag the installer accepts. For end-to-end examples, see one of these walkthroughs:
+
+- [Quick Install](quickinstall.md) — Active Directory deployment using environment variables (recommended for most customers)
+- [Configure Identity Provider](identity-provider.md) — per-IdP example commands for Entra ID (OIDC/SAML), Okta, generic OIDC, generic SAML, AD, and LDAP, plus recovery with `--configure-idp-only`
 
 | Flag | Default | Description |
 | --- | --- | --- |
