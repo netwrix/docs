@@ -419,7 +419,7 @@ grep "bulk_scan.*error" /var/log/npsd/svc_scan.log
 
 ---
 
-## PowerShell Scripts & Packages
+## PowerShell Scripts & Packages {#powershell-scripts-packages}
 
 ### secureone_management.ps1
 
