@@ -16,14 +16,29 @@ Before running the installer, confirm the following.
 
 ### System requirements
 
-| Requirement | Minimum | Recommended |
+**Absolute installer minimums (enforced by preflight):** 6 vCPUs, 24 GB RAM, 20 GB free disk on `/`. Installation is blocked if the system falls below these thresholds.
+
+Choose a deployment size based on your environment:
+
+| Size | CPU | Memory | Disk | Typical Environment |
+| --- | --- | --- | --- | --- |
+| **Small** | 8 cores | 24 GB | 1 TB SSD | Evaluation, pilots, up to ~1,000 assets |
+| **Medium** | 16 cores | 48 GB | 1 TB SSD | Up to ~5,000 assets |
+| **Large** | 32 cores | 64 GB | 1 TB SSD | 5,000+ assets / enterprise |
+
+**Disk space** — the installer validates free space on multiple paths:
+
+| Path | Minimum Free Space | Purpose |
 | --- | --- | --- |
-| **Operating System** | Ubuntu 24.04 LTS (x86_64) — recommended; see note below | — |
-| **Memory** | 8 GB RAM | 32 GB RAM |
-| **CPU** | 6 vCPUs | 8 vCPUs |
-| **Disk Space** | 20 GB free | 1 TB SSD |
-| **Network** | Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains) below | — |
-| **License** | Valid Netwrix license key | — |
+| `/` | 20 GB | Root filesystem |
+| `/var` | 20 GB | K3s data, containers, logs |
+| `/var/lib` | 20 GB | K3s data directory |
+| `/var/log` | 5 GB | System and application logs |
+| `/etc` | 1 GB | Configuration files |
+
+**Network:** Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains) below.
+
+**License:** Valid Netwrix license key.
 
 :::note
 **Supported OS:** Ubuntu 24.04 LTS is the primary tested platform. Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are also compatible. AIX and non-Linux operating systems are not supported.
@@ -89,6 +104,20 @@ Ports the Access Analyzer server must be able to reach on your data sources and 
 | Entra ID | 443 | TCP | Microsoft identity platform |
 | Local Groups | 5985 | TCP | WinRM (HTTP) |
 | Local Groups | 5986 | TCP | WinRM (HTTPS) |
+
+### Internal port requirements
+
+These ports are used within the Access Analyzer VM for service-to-service communication. No external firewall rules are required — only port 443 (Traefik) is exposed externally.
+
+| Port | Protocol | Service | Description |
+| --- | --- | --- | --- |
+| 443 | TCP | Traefik | HTTPS ingress for web UI and API |
+| 6443 | TCP | K3s API | Kubernetes API server |
+| 8090 | TCP | ArgoCD | ArgoCD UI (via port-forward) |
+| 5432 | TCP | PostgreSQL | Database connections |
+| 8123 | TCP | ClickHouse | HTTP interface |
+| 9000 | TCP | ClickHouse | Native protocol |
+| 6379 | TCP | Redis | Cache and queue connections |
 
 For firewall rule examples, see [Network and Port Requirements](/docs/accessanalyzer/2601/install/system/network).
 

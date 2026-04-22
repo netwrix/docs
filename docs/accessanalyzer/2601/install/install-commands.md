@@ -113,7 +113,7 @@ Each directory must already exist and be writable before the installer runs. The
 
 ### Scaling resources for larger servers
 
-The `--size` option scales CPU and memory allocations for all Access Analyzer workloads. The default value of `1` suits the minimum recommended hardware (16 GB RAM, 4 vCPUs). Increase this on servers with more resources:
+The `--size` option scales CPU and memory allocations for all Access Analyzer workloads. The default value of `1` suits the minimum recommended hardware (24 GB RAM, 6 vCPUs). Increase this on servers with more resources:
 
 ```bash
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- --size 2
@@ -156,7 +156,7 @@ The installer checks the following before installation begins. Results are writt
 
 | Check | Fail | Warn |
 |---|---|---|
-| **RAM** | Less than 8 GB total | Less than 16 GB total |
+| **RAM** | Less than 24 GB total | Less than 48 GB total |
 | **CPU** | Fewer than 6 cores | — |
 | **Disk** | Less than 20 GB free on `/var` | — |
 | **Cgroups** | Not available at `/sys/fs/cgroup` | — |

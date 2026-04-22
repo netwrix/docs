@@ -12,13 +12,13 @@ Access Analyzer is deployed on a single Linux virtual machine. The installer run
 
 The installer enforces absolute minimums via preflight checks — installation is blocked if the system falls below these thresholds. Use the **Production Recommended** specifications for customer-facing or enterprise deployments.
 
-**Absolute installer minimums (enforced by preflight):** 6 vCPUs, 8 GB RAM, 20 GB free disk.
+**Absolute installer minimums (enforced by preflight):** 6 vCPUs, 24 GB RAM, 20 GB free disk.
 
 | Size | Recommended CPU | Recommended Memory | Recommended Disk | Typical Environment |
 | --- | --- | --- | --- | --- |
-| **Small** | 8 cores | 32 GB | 1 TB SSD | Evaluation, pilots, up to ~1,000 assets |
-| **Medium** | 16 cores | 64 GB | 1 TB SSD | Up to ~5,000 assets |
-| **Large** | 32 cores | 128 GB | 1 TB SSD | 5,000+ assets / enterprise |
+| **Small** | 8 cores | 24 GB | 1 TB SSD | Evaluation, pilots, up to ~1,000 assets |
+| **Medium** | 16 cores | 48 GB | 1 TB SSD | Up to ~5,000 assets |
+| **Large** | 32 cores | 64 GB | 1 TB SSD | 5,000+ assets / enterprise |
 
 :::note
 The `--size` flag scales memory thresholds by the specified multiplier. For example, `--size 2` doubles the minimum and recommended memory requirements enforced by the preflight checks.
@@ -79,7 +79,7 @@ mem.balloon.enable = "FALSE"
 Configure static memory instead of dynamic memory:
 
 ```powershell
-Set-VMMemory -VMName "<VM_NAME>" -DynamicMemoryEnabled $false -StartupBytes 16GB
+Set-VMMemory -VMName "<VM_NAME>" -DynamicMemoryEnabled $false -StartupBytes 24GB
 ```
 
 ### KVM / QEMU
@@ -96,10 +96,10 @@ Use hugepages for better memory performance. Add the following to your VM XML co
 
 | System Memory | Swap Recommendation |
 | --- | --- |
-| 16 GB or more | Optional |
-| Less than 16 GB | 2–4 GB recommended |
+| 32 GB or more | Optional |
+| Less than 32 GB | 2–4 GB recommended |
 
-If no swap is configured on a system with less than 16 GB of RAM, the installer issues a warning. To create a swap file:
+If no swap is configured on a system with less than 32 GB of RAM, the installer issues a warning. To create a swap file:
 
 ```bash
 sudo fallocate -l 4G /swapfile
