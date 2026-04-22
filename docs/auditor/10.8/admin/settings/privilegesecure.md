@@ -77,7 +77,7 @@ options are available:
 
 **Step 6 –** Click **Next**.
 
-**Step 7 –** Export the Netwrix Auditor server certificate for installation on the Netwrix Privilege Secure host:
+**Step 7 –** Export the Netwrix Auditor server certificate to install on the Netwrix Privilege Secure host:
 
 1. Click **View** next to the **Certificate Serial Number** field.
 ![npsclientcertificatecopy](/images/auditor/10.8/admin/settings/npsclientcertificatecopy.webp)
@@ -102,7 +102,7 @@ the Application name and Certificate Serial Number that you received.
 [Netwrix Privilege Secure](/docs/privilegesecure/25_12/) documentation.
 
 
-**Step 10 –** In Netwrix Auditor, enter the API key obtained from Netwrix Privilege Secure and click **Next**.
+**Step 10 –** In Netwrix Auditor, enter the API key from Netwrix Privilege Secure and click **Next**.
 
 ![npsintegrationparameters](/images/auditor/10.8/admin/settings/npsintegrationparameters.webp)
 

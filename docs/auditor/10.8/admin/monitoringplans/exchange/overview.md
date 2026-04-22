@@ -15,8 +15,7 @@ the following topics:
 - [Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/dataaccounts.md) – Configure data collecting accounts as required to
   audit your IT systems
 
-- [Exchange](/docs/auditor/10.8/configuration/exchange/overview.md) – Configure data source as required to be
-  monitored
+- [Exchange](/docs/auditor/10.8/configuration/exchange/overview.md) – Configure the data source as required for monitoring
 
 Complete the following fields:
 
@@ -66,7 +65,7 @@ Credential-based is the default option. Refer to the
 [Netwrix Privilege Secure](/docs/privilegesecure/25_12/)
 documentation for information about Access Policies.
 
-In this case, you need to provide the username of the account managed by Netwrix Privilege Secure,
+In this case, you need to provide the username of the account that Netwrix Privilege Secure manages,
 and to which Netwrix Auditor has access through a Credential-based access policy.
 
 **NOTE:** Netwrix recommends using different credentials for different monitoring plans and data
