@@ -12,10 +12,10 @@ organized alphabetically or by Access Policy.
 ![My Activities Page](/images/privilegesecure/4.2/accessmanagement/admin/access/myactivities.webp)
 
 To access the My Activities page, open the Access interface. If there is only a single activity card
-present on this page that activity will open automatically.
+present on this page that activity opens automatically.
 
 Activities may be sorted in alphabetical order (the default) or organized into groups according to
-Access Policy. Duplicate activities will be automatically grouped into a single card on this
+Access Policy. Duplicate activities is automatically grouped into a single card on this
 interface. In the modal for provisioning the session, the user can still select from the multiple
 Access Policies that are duplicating their access to the activity.
 

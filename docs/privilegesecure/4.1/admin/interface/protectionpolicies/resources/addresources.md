@@ -15,7 +15,7 @@ onboarded in the
 The window has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Available Resources — Shows all available resources
 - Resources And Groups to Add — Shows selected resources
 - Arrow icons — Use the arrows to move selection in and out of the Resources to Add section
@@ -27,14 +27,14 @@ Both tables have the following columns:
 - Checkbox — Check to select one or more items
 - Type — Classification of the activity
 - Name — Displays the name of the resource. Click the link to view additional details. See the
-  [Resources Page](/docs/privilegesecure/4.1/admin/interface/resources/resources.md)
-  topic for addition information.
-- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
+[Resources Page](/docs/privilegesecure/4.1/admin/interface/resources/resources.md)
+topic for addition information.
+- DNS Host Name — Displays the DNS host name for a host resource or the FQDN for a domain resource
 - Operating System— Displays the operating system of the resource
 
 ## Add Resources
 
-Follow the steps to add resources to the selected protection policy.
+To add resources to the selected protection policy.
 
 **Step 1 –** Navigate to the Policy > Protection Policies page.
 
@@ -46,15 +46,15 @@ Resources tab.
 The Add Resources window has the following features:
 
 - Search – Searches the Name and Operating System columns to match the search string. When matches
-  are found, both tables are filtered to the matching results.
+are found, both tables are filtered to the matching results.
 - Available Resources – Shows all resources that have been added to the console
 - Resources to Add – Shows the resources to be added to the protection policy
 - Column headers can be sorted in ascending or descending order
 
-    - Type – The type of the resource
-    - Name – The name of the resource
-    - DNS Host Name – The DNS host name for a host, or FQDN for a domain
-    - Operating System – Operating System of resource
+- Type – The type of the resource
+- Name – The name of the resource
+- DNS Host Name – The DNS host name for a host, or FQDN for a domain
+- Operating System – Operating System of resource
 
 **Step 4 –** To add a resource to the protection policy, click a row in the Available Resources
 table and it is immediately moved to the Resources to Add table.
@@ -64,5 +64,5 @@ Resources table.
 
 **Step 6 –** Click Add to add the resources to the protection policy.
 
-The new resource(s) are added to the protection policy and are shown on the
+The new resources are added to the protection policy and are shown on the
 [Resources Tab for Protection Policies](/docs/privilegesecure/4.1/admin/interface/protectionpolicies/resources/resources.md).

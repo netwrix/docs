@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Add New Service Account Window
 
-Follow the steps to add a new Service Account to a host resource:
+To add a new Service Account to a host resource:
 
 **Step 1 –** Navigate to the **Resources** page.
 

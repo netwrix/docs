@@ -1,34 +1,34 @@
 ---
-title: "Privilege Secure End User Overview"
-description: "Privilege Secure End User Overview"
+title: "Privilege Secure End User Overview"
+description: "Privilege Secure End User Overview"
 sidebar_position: 60
 ---
 
-# Privilege Secure End User Overview
+# Privilege Secure End User Overview
 
-This topic and its subtopics are written for users who have been assigned as a Privilege Secure
-User.  All NPS-AM users are assigned this role when they are onboarded. Accordingly, the Auditor, Approver, and Reviewer roles are mostly covered here because they are also Users. The specific differences are in these three locations:
- - Approvers at [Approvers Dashboard: Approvers](/docs/privilegesecure/25.12/enduser/dashboard/approvals.md)
- - Auditors at [Historical Dashboard: Auditors](/docs/privilegesecure/25.12/enduser/dashboard/historicalauditor/historical.md)
- - Reviewers at [Audit and Reporting: Reviewer](/docs/privilegesecure/25.12/enduser/auditreviewer.md)
+This topic and its subtopics address users assigned the Privilege Secure
+User role. Every NPS-AM user receives this role during onboarding. The Auditor, Approver, and Reviewer roles share most of the same tasks because they are also Users. The specific differences are in these three locations:
+- Approvers at [Approvers Dashboard: Approvers](/docs/privilegesecure/25.12/enduser/dashboard/approvals.md)
+- Auditors at [Historical Dashboard: Auditors](/docs/privilegesecure/25.12/enduser/dashboard/historicalauditor/historical.md)
+- Reviewers at [Audit and Reporting: Reviewer](/docs/privilegesecure/25.12/enduser/auditreviewer.md)
 
-New users added to the Console will need to go through the MFA registration process before they can
+New users added to the Console must complete the MFA registration process before they
 log in. Privilege Secure requires a multi-factor authentication (MFA) solution (Authenticator, DUO,
-Symantec VIP etc) for all user accounts. Upon initial login, the user must complete MFA registration
-in order to proceed with using Privilege Secure. It is recommended to check with the organization's
+Symantec VIP, etc.) for all user accounts. On initial login, the user must complete MFA registration
+to proceed with using Privilege Secure. Check with the organization's
 Administrators for login requirements.
 
-There is also a Browser Extension that can be installed for Privilege Secure users. See the
+Privilege Secure users can also install a Browser Extension. See the
 [Browser Extension App](/docs/privilegesecure/25.12/enduser/browserextension/browserextension.md) topic for additional information.
 
-## First Time Login
+## First-Time Login
 
-Once Privilege Secure is installed, users can launch the application from the desktop icon or can be
-accessed via the URL provided by an Privilege Secure Administrator, for example:
+After you install Privilege Secure, users can launch the application from the desktop icon or through
+the URL provided by a Privilege Secure Administrator, for example:
 
 https://ExampleServer01:6500
 
-Since Privilege Secure is a browser-based application, it is possible to access the web interface
+Privilege Secure is a browser-based application, so you can access the web interface
 remotely. In most environments, enter the URL for the host on which Privilege Secure is installed
 into a supported browser address bar. For example, if Privilege Secure is installed on server
 `ExampleServer01`, then the address is:
@@ -36,44 +36,43 @@ into a supported browser address bar. For example, if Privilege Secure is instal
 https://ExampleServer01:6500
 
 Depending on the organization’s network environment, use the NetBIOS name, fully qualified domain
-name (FQDN), or IP Address of the server in the browser. Also, access can be restricted through
-firewalls.
+name (FQDN), or IP Address of the server in the browser. Firewalls can also restrict access.
 
-Follow the steps to log in to the Privilege Secure.
+To log in to Privilege Secure:
 
-**Step 1 –** Open Privilege Secure in a browser window. The Login screen will show the
-Authentication Connector that is set as the default.
+**Step 1 –** Open Privilege Secure in a browser window. The Login screen shows the
+Authentication Connector set as the default.
 
 :::note
 Privilege Secure requires a multi-factor authentication (MFA) solution (Authenticator,
-DUO, Symantec VIP, etc) for all user accounts unless otherwise configured by an Administrator. If
-required, first time users must register with an MFA to use with their login credentials.
+DUO, Symantec VIP, etc.) for all user accounts unless an Administrator configures otherwise. If
+required, first-time users must register with an MFA to use with their login credentials.
 :::
 
 
 ![Default Login](/images/privilegesecure/25.12/accessmanagement/enduser/defaultloginuser.webp)
 
-**Step 2 –** Either click the default authentication connector button, or click **Log In with a
-Different Account** to display all of the authentication connectors that are registered with
+**Step 2 –** Click the default authentication connector button, or click **Log In with a
+Different Account** to display all authentication connectors registered with
 Privilege Secure.
 
 ![Alternate Login](/images/privilegesecure/25.12/accessmanagement/enduser/alternatelogin.webp)
 
-**Step 3 –** Login to Privilege Secure with a configured authentication connector, or enter the user
+**Step 3 –** Log in to Privilege Secure with a configured authentication connector, or enter the user
 credentials.
 
-- When using an authentication connector, there's no 'username' or 'password' field for the user to
-  enter. Instead there's just a single button to login.
+- When using an authentication connector, there's no 'username' or 'password' field to
+enter. Instead, there's just a single button to log in.
 
 ![Okta authentication connector](/images/privilegesecure/25.12/accessmanagement/enduser/oktadefault.webp)
 
-- Clicking the authentication connector will redirect the user to the IdP login screen, which will
-  log the user in (with whatever MFA is set up in the IdP) and then revert the user back to the
-  Privilege Secure dashboard once authenticated. Steps 4-7 will be skipped when using an IdP login.
+- Clicking the authentication connector redirects the user to the IdP login screen, which
+logs the user in (with whatever MFA the IdP uses) and then returns the user to the
+Privilege Secure dashboard after authentication. IdP login skips Steps 4–7.
 
-**Step 4 –** Click Login to proceed.
+**Step 4 –** Click Log In to proceed.
 
-**Step 5 –** A QR code will be displayed to register with an authenticator application.
+**Step 5 –** A QR code displays to register with an authenticator application.
 
 **Step 6 –** Enter the code provided by the registered multi-factor authenticator (MFA).
 

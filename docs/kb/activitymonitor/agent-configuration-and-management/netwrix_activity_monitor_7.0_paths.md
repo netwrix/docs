@@ -21,6 +21,8 @@ products:
 
 NAM 7.0 has changed its installation and configuration paths from 6.0. This article explains all the different locations and files that are used for the NAM agent and console.
 
+If collecting SharePoint Online activity for Access Analyzer, please review and update the SPAC System Scan job query configuration to reflect these new values: [SPAA: Activity Log Locations](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/datacollector/spaa/activityloglocations)
+
 ## Installation Binaries (Default Location)
 
 *Only includes installation binaries; doesn't include config files or logs.*

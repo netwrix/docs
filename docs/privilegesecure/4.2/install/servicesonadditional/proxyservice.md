@@ -8,20 +8,20 @@ sidebar_position: 10
 
 Logging directly onto managed systems from desktops leaves artifacts that can be compromised and
 requires ports to be opened into secure networks. A critical element of the Privilege Secure
-solution is the proxy, which is able to broker the connection between security zones. The
+solution is the proxy, which can broker the connection between security zones. The
 application includes an advanced session proxy service for automatic connection to privileged
 sessions.
 
-The NPS Proxy Service is installed on the proxy server as part of Privilege Secure install. It must
+The NPS Proxy Service is installed on the proxy server as part of Privilege Secure install. It must
 also be installed on any server running services for the application, specifically the NPS Action
-Service, the NPS Scheduler Service, and NPS SIEM Service. This provides the option to run sessions
+Service, the NPS Scheduler Service, and NPS SIEM Service. This provides the option to run sessions
 defined in the application from different locations within your organization.
 
 The NPS Proxy Service installer is in the Extras folder of the ZIP file downloaded from the Netwrix
 Customer portal. See the [Install Components & Methods](/docs/privilegesecure/4.2/install/components/components.md) topic for additional
 information.
 
-Follow the steps to install the NPS Proxy Service on another server that will run services for the
+To install the NPS Proxy Service on another server that runs services for the
 application.
 
 :::tip
@@ -31,13 +31,12 @@ knowledge base article.
 
 **Step 1 –** Copy the `NPS.ProxyService.exe` file to the desktop of the remote server.
 
-**Step 2 –** Right-click on the installer and select Run as administrator. The Netwrix Privilege
+**Step 2 –** Right-click the installer and select Run as administrator. The Netwrix Privilege
 Secure Proxy Service Setup wizard opens.
 
 ![Netwrix Privileged Secure Proxy Service Setup wizard on the EULA page](/images/privilegesecure/4.2/accessmanagement/install/licenseagreement_2.webp)
 
-**Step 3 –** On the End User License Agreement page, check the I agree to the license terms and
-conditions box and click Options.
+**Step 3 –** On the End User License Agreement page, accept the license terms and conditions and click Options.
 
 :::tip
 Remember, it is a best practice to read the agreement before accepting it.
@@ -53,7 +52,7 @@ Remember, it is a best practice to read the agreement before accepting it.
 - To change the default location, click Browse and set a new location.
 - When the location is set, click OK.
 
-**Step 5 –** You will return to the End User License Agreement page. Click Install.
+**Step 5 –** You returns to the End User License Agreement page. Click Install.
 
 :::note
 The installation process begins and the wizard displays the its Progress. This may take a
@@ -75,8 +74,7 @@ server.
 
 **Example Values**
 
-When referring to the NPS Application server, we will use the following example values in our
-configuration. Replace these values with values that are specific for your environment.
+The examples in this article use the following values for the NPS Application server. Replace these values with values specific to your environment.
 
 **NPS Application Server**
 
@@ -90,7 +88,7 @@ configuration. Replace these values with values that are specific for your envir
 
 **NPS Application Server**
 
-Follow the steps to register the NPS Proxy Service.
+To register the NPS Proxy Service.
 
 :::note
 All commands are executed on the NPS Application Server as administrator.
@@ -103,18 +101,18 @@ both servers. The default location is:
 `C:\ProgramData\Stealthbits\PAM\ProxyService`
 
 :::note
-If you are going to use the DNS FQDN to connect from your remote server, you will need to
-make sure that the FQDN is listed in the `sbpam_node.json` file.
+If you are going to use the DNS FQDN to connect from your remote server, you must
+ensure that the FQDN is listed in the `sbpam_node.json` file.
 :::
 
 
-**Step 2 –** Open the JSON file as an administrator (via administrator command prompt) on both
+**Step 2 –** Open the JSON file as an administrator (via administrator command prompt) on both
 servers. The JSON file can be located at
 `C:\ProgramData\Stealthbits\PAM\ProxyService\sbpam_node.json`
 
 :::warning
-If this is not the first remote service, do not change the name of your NPS Application
-Server. If you do, you will need to re-register all the remote proxy servers.
+If this isn't the first remote service, don't change the name of your NPS Application
+Server. If you do, you must re-register all the remote proxy servers.
 :::
 
 
@@ -123,8 +121,8 @@ Server information, if changes are made, ensure they are saved:
 
 ```
 {
-    "advertise": ["[ Server FQDN]","[ Server IP Address]"],
-    "tag": []
+    "advertise": ["[ Server FQDN]","[ Server IP Address]"],
+    "tag": []
 }
 ```
 
@@ -132,8 +130,8 @@ For example:
 
 ```
 {
-    "advertise": ["newyorksrv10.nwxtech.com","192.168.13.172"],
-    "tag": []
+    "advertise": ["newyorksrv10.nwxtech.com","192.168.13.172"],
+    "tag": []
 }
 ```
 
@@ -162,12 +160,12 @@ the new proxy service server.
 "C:\Program Files\Stealthbits\PAM\ProxyService\sbpam-proxy.exe" register ca-hash
 ```
 
-**Step 6 –** Copy the returned hash value and save it for later, you will need this value when you
+**Step 6 –** Copy the returned hash value and save it for later, you need this value when you
 register your remote service..
 
 **Remote NPS Proxy Server**
 
-Follow the steps to register the Remote NPS Proxy Service.
+To register the Remote NPS Proxy Service.
 
 :::note
 All commands are executed on the Remote NPS Proxy Server as an administrator.
@@ -177,17 +175,17 @@ All commands are executed on the Remote NPS Proxy Server as an administrator.
 **Step 1 –** Validate the existence of the `sbpam_node.json` file in the installation directory. The
 default location is `C:\ProgramData\Stealthbits\PAM\ProxyService`.
 
-**Step 2 –** Open the JSON file as an administrator (via administrator command prompt) on both
+**Step 2 –** Open the JSON file as an administrator (via administrator command prompt) on both
 servers.
 
-**Step 3 –** (Optional) This step is only necessary if FQDN is required for DNS, otherwise do not
+**Step 3 –** (Optional) This step is only necessary if FQDN is required for DNS, otherwise don't
 change and move to step four. Ensure that the `"advertise"` value of the JSON file on the remote
 server has remote proxy server information:
 
 ```
 {
-    "advertise": ["nsp-remote-proxy.example.com","192.168.99.2"],
-    "tag": []
+    "advertise": ["nsp-remote-proxy.example.com","192.168.99.2"],
+    "tag": []
 }
 ```
 
@@ -214,15 +212,15 @@ The Privilege Secure Proxy Service is now registered with the Privilege Secure a
 ## SSH for Legacy Cisco Device
 
 If the Cisco device is running with insecure ciphers when the user attempts to connect to an
-SSH session, the following error message is displayed:
+SSH session, the following error message appears:
 
 `ssh: handshake failed: ssh: no common algorithm for key exchange; client offered: [curve25519-sha256@libssh.org ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha1], server offered: [diffie-hellman-group1-sha1]`
 
-Ideally the Cisco device should be upgraded to support secure ciphers. If this is not possible, it
+Ideally the Cisco device should be upgraded to support secure ciphers. If this isn't possible, it
 is necessary to add additional ciphers to machines with older (insecure) ciphers that need to be
 managed with SSH. You can “opt-in” by configuring the cipher suites used by the NPS Proxy Service.
 
-Follow the steps to add Cipher information to the NPS Proxy Service.
+To add Cipher information to the NPS Proxy Service.
 
 **Step 1 –** Open a command prompt as an Administrator.
 
@@ -243,33 +241,33 @@ installation directory. The default path is:
 
 ```
 {
-    "listenaddress": "0.0.0.0:4422",
-    "ClientSettings": {
-        "Algorithms": {
-            "KeyExchanges": [
-                "curve25519-sha256@libssh.org",
-                "ecdh-sha2-nistp256",
-                "ecdh-sha2-nistp384",
-                "ecdh-sha2-nistp521",
-                "diffie-hellman-group14-sha1",
-                "diffie-hellman-group1-sha1"
-            ],
-            "Ciphers": [
-                "aes128-gcm@openssh.com",
-                "chacha20-poly1305@openssh.com",
-                "aes128-ctr",
-                "aes192-ctr",
-                "aes256-ctr",
-                "aes128-cbc",
-                "3des-cbc",
-                "aes192-cbc",
-                "aes256-cbc"
-            ]
-        }
-    }
+    "listenaddress": "0.0.0.0:4422",
+    "ClientSettings": {
+        "Algorithms": {
+            "KeyExchanges": [
+                "curve25519-sha256@libssh.org",
+                "ecdh-sha2-nistp256",
+                "ecdh-sha2-nistp384",
+                "ecdh-sha2-nistp521",
+                "diffie-hellman-group14-sha1",
+                "diffie-hellman-group1-sha1"
+            ],
+            "Ciphers": [
+                "aes128-gcm@openssh.com",
+                "chacha20-poly1305@openssh.com",
+                "aes128-ctr",
+                "aes192-ctr",
+                "aes256-ctr",
+                "aes128-cbc",
+                "3des-cbc",
+                "aes192-cbc",
+                "aes256-cbc"
+            ]
+        }
+    }
 }
 ```
 
-This will add the additional Key Exchange `diffie-hellman-group1-sha1` and the additional Ciphers
+This adds the additional Key Exchange `diffie-hellman-group1-sha1` and the additional Ciphers
 `aes128-cbc`, `3des-cbc`, `aes192-cbc`,` aes256-cbc`, required to make old Cisco Machines work with
 remote login.
