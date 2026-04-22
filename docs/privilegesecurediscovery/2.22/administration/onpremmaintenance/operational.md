@@ -56,7 +56,7 @@ Test (suggested minimum yearly)
 - A test window should be created for this as changes to Privilege Secure DR wouldn't be propagated
   back to the main production instance.
 - After a test ensure that services are down on the DR node. This will avoid the DR environment
-  overriding changes from Production. The command below can be used for this:
+  overriding changes from Production. Use the command below:
 
     - `s1 stop expire worker scanner`
 
@@ -66,7 +66,7 @@ Test (suggested minimum yearly)
   from Quickstart can be filtered for any machines that don't show in protect mode. This
   ensures that the build process and addition or protect mode is being executed as expected.
 - Quickstart can also be used for a review of persistent access. This should be minimized to service
-  accounts. A review to look for user accounts set to persistent should be carried out. If these are
+  accounts. A review to look for user accounts set to persistent should be performed. If these are
   truly required to be persistent, then they should be switched to a service account.
 
 ## Privilege Secure Log Review - SIEM (suggested weekly)
@@ -99,7 +99,7 @@ Time Sync
   source: mongo3:27017
    syncedTo: Tue Sep 22 2020 16:03:34 GMT+0000 (UTC)
    0 secs (0 hrs) behind the primary
-- In the event of a variation in time, contact the Remediant Customer Success team.
+- If there is a variation in time, contact the Remediant Customer Success team.
 
 Mongo status
 
@@ -131,7 +131,7 @@ sudo docker exec -it $(sudo docker ps | grep mongo | cut -d' ' -f1) mongo Secure
 ## Version and OS updates (suggested quarterly minimum)
 
 - Ensure quarterly meeting to review updates to Privilege Secure version and OS patches/updates.
-- Patches can be applied monthly. The Customer Success team can be contacted prior to updates to
+- Patches can be applied monthly. The Customer Success team can be contacted before updates to
   ensure no known issues.
 
 **See also:** [Docker Credentials Helper](../../installation/dockercredentials.md) — secure

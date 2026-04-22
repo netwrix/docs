@@ -105,7 +105,7 @@ Docker will then execute `docker-credential-pass` when storing or retrieving cre
 This configuration is client-side. It doesn't depend on Docker Desktop and it still applies when
 the Docker client talks to a remote engine.
 
-If the Docker config file already exists, add or replace only the `credsStore` key and keep the
+If the Docker config file already exists, replace only the `credsStore` key and keep the
 other keys that the machine already uses. Don't leave registry credentials behind under `auths`.
 
 ## Credential Store Context
@@ -274,7 +274,7 @@ Expected result:
 
 ### Step 4: Run the NPS-D deployment or upgrade
 
-Once the registry login is in place, use the existing NPS-D deployment mechanism for that customer
+After the registry login is in place, use the existing NPS-D deployment mechanism for that customer
 machine.
 
 Docker Compose:
