@@ -25,7 +25,7 @@ All tables include the following columns populated by Access Analyzer during eac
 
 ## Tables
 
-### cifs_object
+### CIFS Object
 
 Stores the file system inventory collected during a scan — one row per file, directory, or share discovered on a file server.
 
@@ -33,14 +33,14 @@ Stores the file system inventory collected during a scan — one row per file, d
 |--------|------|-------------|
 | `host` | `String` | Hostname of the file server. |
 | `share_name` | `String` | Name of the share on the file server. |
-| `share_path` | `String` | UNC path of the share root. |
+| `share_path` | `String` | Universal Naming Convention (UNC) path of the share root. |
 | `path` | `String` | Full path of the object within the share. |
 | `object_type` | `Enum8('FILE', 'DIRECTORY', 'SHARE')` | Whether the object is a file, directory, or share. |
 | `parent_path` | `String` | Full path of the parent directory. |
 | `name` | `String` | Name of the file or directory. |
 | `file_extension` | `String` | File extension, if applicable. Empty string for directories and shares. |
 | `file_size` | `UInt64` | Size of the file in bytes. Zero for directories and shares. |
-| `owner_sid` | `String` | SID of the file or directory owner. |
+| `owner_sid` | `String` | Security identifier (SID) of the file or directory owner. |
 | `group_owner_sid` | `String` | SID of the primary group owner. |
 | `created_time` | `Nullable(DateTime)` | Optional. Timestamp when the object was created. |
 | `modified_time` | `Nullable(DateTime)` | Optional. Timestamp when the object was last modified. |
@@ -69,7 +69,7 @@ Stores the file system inventory collected during a scan — one row per file, d
 
 ---
 
-### cifs_permission
+### CIFS Permission
 
 Stores NTFS ACEs (access control entries) for files and directories — one row per trustee per path.
 
@@ -98,7 +98,7 @@ Stores NTFS ACEs (access control entries) for files and directories — one row 
 
 ---
 
-### cifs_share_permission
+### CIFS Share Permission
 
 Stores share-level ACEs — one row per trustee per share. Share permissions apply in addition to NTFS permissions; the effective access a user has is the intersection of both.
 
@@ -123,7 +123,7 @@ Stores share-level ACEs — one row per trustee per share. Share permissions app
 
 ---
 
-### cifs_sensitive_data
+### CIFS Sensitive Data
 
 Stores sensitive data classification findings — one row per taxonomy term match per file path.
 
@@ -149,7 +149,7 @@ Stores sensitive data classification findings — one row per taxonomy term matc
 
 ---
 
-### cifs_sensitive_data_mip_labels
+### CIFS Sensitive Data MIP Labels
 
 Stores Microsoft Information Protection (MIP) sensitivity label decisions for files that contain sensitive data findings. Each row records the label action Access Analyzer determined for a file based on its classification results. MIP labels are sourced from an Entra ID source group configured in the same Access Analyzer instance — Access Analyzer uses that source group to resolve label definitions and apply or recommend label changes.
 

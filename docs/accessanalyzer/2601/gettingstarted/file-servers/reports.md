@@ -8,6 +8,10 @@ sidebar_position: 50
 
 File Servers source groups include a set of pre-built reports that answer common security questions about permissions, sensitive data exposure, access patterns, and data content across your CIFS/SMB file shares. Reports are available under the Reports section after the first scan completes and update each time a scan runs.
 
+:::note
+Activity reports (Activity Investigation and Sensitive Data Activity) require Netwrix Activity Monitor (NAM) to be configured and streaming events to Access Analyzer. See [Activity Monitor Integration](../../configurations/activity-monitor-integration.md) for setup instructions.
+:::
+
 ## Available reports
 
 | Location | Report | Description |
