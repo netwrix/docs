@@ -89,4 +89,7 @@ Troubleshooting section above.
 
 [Docker: Manage sensitive data with Docker secrets](https://docs.docker.com/engine/swarm/secrets/)
 
+**See also:** [Docker Credentials Helper](dockercredentials.md) — secure credential storage for
+pulling private registry images during NPSD deployment and upgrades.
+
 

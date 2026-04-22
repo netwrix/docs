@@ -134,4 +134,7 @@ sudo docker exec -it $(sudo docker ps | grep mongo | cut -d' ' -f1) mongo Secure
 - Patches can be applied monthly. The Customer Success team can be contacted prior to updates to
   ensure no known issues.
 
+**See also:** [Docker Credentials Helper](../../installation/dockercredentials.md) — secure
+credential storage for pulling private registry images during NPSD deployment and upgrades.
+
 

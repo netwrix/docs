@@ -164,4 +164,7 @@ existing configurations, setting, or file.
 
 - s1 status; s1 nodes
 
+**See also:** [Docker Credentials Helper](../../installation/dockercredentials.md) — secure
+credential storage required when pulling private registry images during NPSD upgrades.
+
 
