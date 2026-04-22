@@ -24,9 +24,9 @@ The following best practices are drawn from the complete migration workflow and 
 | # | Best Practice |
 |---|---|
 | 07 | Always create a VM snapshot AND a System Configuration Backup — they serve different recovery purposes. |
-| 08 | Store the System Backup Key in a password manager or secure vault. It cannot be recovered if lost. |
+| 08 | Store the System Backup Key in a password manager or secure vault. It can't be recovered if lost. |
 | 09 | Label all backups with version, date, and purpose (e.g., `pre-patch-5942`, `migration-to-2510`). |
-| 10 | For compliance-regulated environments, export audit logs separately before migration — they are not in the config backup. |
+| 10 | For compliance-regulated environments, export audit logs separately before migration — they aren't in the config backup. |
 | 11 | Test backup restoration in a non-production environment at least once before relying on it for production recovery. |
 
 ## Database and Infrastructure
@@ -35,7 +35,7 @@ The following best practices are drawn from the complete migration workflow and 
 |---|---|
 | 12 | Maintain at least 30% free disk space at all times — enforce this via monitoring before and after migration. |
 | 13 | For databases over 50 GB, always engage Netwrix Support for supervised migrations. |
-| 14 | Do not perform other server changes or upgrades for 24 hours after the 5.9.4.2 patch — background DB jobs are running. |
+| 14 | Don't perform other server changes or upgrades for 24 hours after the 5.9.4.2 patch — background DB jobs are running. |
 | 15 | Allocate additional CPU and RAM temporarily during migration — doubling resources can cut migration time by 2–3×. See [Server Requirements](/docs/endpointprotector/requirements/server) for baseline recommendations. |
 | 16 | Use SSD-backed storage for the EPP VM — spinning disk significantly increases upgrade and query times for large DBs. See [Server Requirements](/docs/endpointprotector/requirements/server) for storage minimums. |
 
@@ -80,6 +80,6 @@ The following best practices are drawn from the complete migration workflow and 
 
 | # | Best Practice |
 |---|---|
-| 34 | Do not apply server patches immediately after backup restore — the patch pipeline can be disrupted by the import process. Allow 24 hours before patching. |
+| 34 | Don't apply server patches immediately after backup restore — the patch pipeline can be disrupted by the import process. Allow 24 hours before patching. |
 | 35 | Monitor Audit Log Backup jobs after migration — they can enter an infinite running state. Verify job completion before scheduling recurring backups. |
 | 36 | For air-gapped / offline environments, obtain the Offline Activation Patch for 2510 before the maintenance window begins — request it from Netwrix Support in advance. |

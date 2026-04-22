@@ -21,7 +21,7 @@ sidebar_position: 20
 
 ## Network Settings Won't Save on 2510
 
-**Symptom:** IP configuration changes do not save; error appears after clicking Save.
+**Symptom:** IP configuration changes don't save; error appears after clicking Save.
 
 **Root cause:** Known bug in 2510 where the settings page requires both DNS fields to be filled.
 
@@ -35,13 +35,13 @@ sidebar_position: 20
 
 **Step 1 — Contact Netwrix Support for the backup export fix script (do this first):**
 
-Contact Netwrix Support and request the **5.9.4.2 backup export fix**. This script trims the backup file below 200 MB by dropping unnecessary legacy tables from the export that are not required for migration. This is the preferred resolution and requires no backend access on your part.
+Contact Netwrix Support and request the **5.9.4.2 backup export fix**. This script trims the backup file below 200 MB by dropping unnecessary legacy tables from the export that aren't required for migration. This is the preferred resolution and requires no backend access on your part.
 
-If the fix script does not bring the file below 200 MB, contact Netwrix Support for the manual upload limit adjustment procedure.
+If the fix script doesn't bring the file below 200 MB, contact Netwrix Support for the manual upload limit adjustment procedure.
 
 ---
 
-## EE Clients Cannot Connect After Migration
+## EE Clients Can't Connect After Migration
 
 **Symptom:** Enforced Encryption clients fail to connect or show as untrusted.
 

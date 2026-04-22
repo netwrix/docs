@@ -13,7 +13,7 @@ Only EPP Client 2511.x.x.x and higher are available for the migration operation.
 :::
 
 :::note
-This feature requires EPP Server 2601 or later. It cannot be used to migrate clients from version 5.9.4.2 to earlier image-based releases such as 2510.
+This feature requires EPP Server 2601 or later. It can't be used to migrate clients from version 5.9.4.2 to earlier image-based releases such as 2510.
 :::
 
 ## Configuring the **EPP Clients Migration** page

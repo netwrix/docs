@@ -16,7 +16,7 @@ This chapter consolidates the most common questions and issues encountered durin
 
 Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 onto 2510 will fail at the import step.
 
-> 💡 **Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, it may be worth evaluating a clean deployment of the 2510/2602 image rather than going through the full migration path. Reconfiguring EPP from scratch can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where historical log data is not required. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.
+> 💡 **Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, it may be worth evaluating a clean deployment of the 2510/2602 image rather than going through the full migration path. Reconfiguring EPP from scratch can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where historical log data isn't required. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.
 
 ---
 
@@ -33,7 +33,7 @@ This most commonly occurs with large backups or under-resourced VMs.
 
 **Steps:**
 1. Verify you have at least 2 GB of free disk space on the 2510 VM.
-2. Verify the backup file is not corrupted — re-download from the source server.
+2. Verify the backup file isn't corrupted — re-download from the source server.
 3. Verify the backup was created on 5.9.4.2 (not another version).
 4. Try increasing PHP upload limits temporarily (see [Backup File Exceeds 200 MB Import Limit](troubleshooting#backup-file-exceeds-200-mb-import-limit)).
 5. If none of the above resolves it, contact Netwrix Support with the server logs from `/var/log/epp/`.
@@ -44,13 +44,13 @@ This most commonly occurs with large backups or under-resourced VMs.
 
 The IP configuration page fails to save if **only one DNS field is filled**. This is a known product issue affecting 2509 and early 2510 builds.
 
-**Workaround:** Fill both the Primary and Secondary DNS fields. Use `8.8.8.8` (Primary) and `8.8.4.4` (Secondary) if you do not have a secondary internal DNS server.
+**Workaround:** Fill both the Primary and Secondary DNS fields. Use `8.8.8.8` (Primary) and `8.8.4.4` (Secondary) if you don't have a secondary internal DNS server.
 
 ---
 
 ## Email alerts stopped working after migration. How do I fix it?
 
-SMTP credentials are not always fully restored from the backup and typically need to be re-entered manually after migration.
+SMTP credentials aren't always fully restored from the backup and typically need to be re-entered manually after migration.
 
 **Steps:**
 1. Navigate to **System Configuration → System Settings → Email Configuration**.
@@ -88,14 +88,14 @@ Entra ID / SSO application registrations may need to be refreshed after migratio
 
 ---
 
-## EPP clients are not communicating after migration. What should I check?
+## EPP clients aren't communicating after migration. What should I check?
 
 **Checklist:**
 1. Confirm the new server's IP/FQDN is reachable from endpoints (firewall, DNS).
 2. Confirm client communications are enabled on the server (**System Configuration → System Settings**).
 3. Confirm client packages (5.9.4.3 or later, ideally 2602) are uploaded to the server.
 4. Check the **Device Control → Computers** page and sort by **Last Seen**.
-5. If clients were on 5.9.4.1 or older and 5.9.4.3 was not deployed first, they cannot receive the 2602 client package directly — deploy 5.9.4.3 first via your software distribution tool before upgrading to 2602. See [Phase 3 — Uploading EPP & EE Client Packages](migrationguide#phase-3---uploading-epp--ee-client-packages) for the full client upgrade path.
+5. If clients were on 5.9.4.1 or older and 5.9.4.3 wasn't deployed first, they can't receive the 2602 client package directly — deploy 5.9.4.3 first via your software distribution tool before upgrading to 2602. See [Phase 3 — Uploading EPP & EE Client Packages](migrationguide#phase-3---uploading-epp--ee-client-packages) for the full client upgrade path.
 6. Verify that firewall rules allow HTTPS connections on the configured EPP communication port.
 7. Consider reinstalling the EPP Client if it appears to be corrupted.
 
@@ -109,7 +109,7 @@ This is a known issue after migration to 2510/2601.
 1. Navigate to **System Maintenance → Audit Log Backups**.
 2. If a job has been running more than 4 hours, attempt to cancel it from the UI.
 3. If the cancel option is unresponsive, contact Netwrix Support — a backend intervention may be required to reset the job state.
-4. Do not start new Audit Log Backup jobs until the stuck job is resolved.
+4. Don't start new Audit Log Backup jobs until the stuck job is resolved.
 
 ---
 
@@ -119,7 +119,7 @@ This is a known issue. Contact Netwrix Support for the latest fix status and rem
 
 ---
 
-## The Log Report page is not loading / Export is failing.
+## The Log Report page isn't loading / Export is failing.
 
 This can occur after migration due to backend indexing activity on the newly restored database.
 
@@ -131,13 +131,13 @@ This can occur after migration due to backend indexing activity on the newly res
 
 ---
 
-## The server is not sending CAP (Content Aware Protection) reports after migration.
+## The server isn't sending CAP (Content Aware Protection) reports after migration.
 
 **Steps:**
 1. Verify Content Aware Protection policies are active (**Content Aware Protection → Policies**).
 2. Check that the CAP Dashboard shows recent activity.
 3. Generate a test transfer that should be detected and confirm whether it appears in CAP logs.
-4. If policies are active but reports are not being generated or sent, contact Netwrix Support — this is a known post-migration defect.
+4. If policies are active but reports aren't being generated or sent, contact Netwrix Support — this is a known post-migration defect.
 
 ---
 
@@ -157,7 +157,7 @@ This is a known product defect that can appear after migration.
 This is a known product defect on 2601.
 
 **Steps:**
-1. Do not repeatedly attempt to apply backend updates if the server crashes on the first attempt.
+1. Don't repeatedly attempt to apply backend updates if the server crashes on the first attempt.
 2. Take a VM snapshot before any retry.
 3. Contact Netwrix Support immediately — a targeted fix is required.
 
@@ -177,10 +177,10 @@ Air-gapped activation requires an **Offline Activation Patch** specific to 2510.
 
 ## PHP for ELS (ELS for PHP) installation is failing. What do I do?
 
-This can occur in some migration paths when the license is not correctly recognized.
+This can occur in some migration paths when the license isn't correctly recognized.
 
 **Steps:**
-1. Verify your license file contains the `"php_els":"<value>"` field. If this field is missing, your license does not include ELS for PHP entitlement — contact Netwrix Support or your account team to request a refreshed license before proceeding.
+1. Verify your license file contains the `"php_els":"<value>"` field. If this field is missing, your license doesn't include ELS for PHP entitlement — contact Netwrix Support or your account team to request a refreshed license before proceeding.
 2. Re-import the license via **System Configuration → System Licensing → Import License**.
 3. After import, navigate to **Appliance → Server Information** and confirm **ELS for PHP = Active**.
 4. If ELS still shows as inactive or the installation fails after re-import, contact Netwrix Support — some cases require a manual backend fix.
@@ -189,7 +189,7 @@ This can occur in some migration paths when the license is not correctly recogni
 
 ## The Effective Rights Report is empty after migration.
 
-This is a known reporting layer issue that does not affect actual policies or enforcement. Contact Netwrix Support for the latest status and available patch.
+This is a known reporting layer issue that doesn't affect actual policies or enforcement. Contact Netwrix Support for the latest status and available patch.
 
 ---
 

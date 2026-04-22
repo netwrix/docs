@@ -38,7 +38,7 @@ Backups from versions **other than 5.9.4.2** will **not** be accepted. The inter
 :::
 
 :::warning
-The license must be imported on the fresh 2510 image **before** applying patches. Without an active ELS for PHP license, the server cannot receive OS and patch updates.
+The license must be imported on the fresh 2510 image **before** applying patches. Without an active ELS for PHP license, the server can't receive OS and patch updates.
 :::
 
 ---
@@ -92,7 +92,7 @@ Migration upgrade to 2510 image with 2602 patch is the **recommended path** for 
 ## Pre-Migration Prerequisites and Checklist
 
 :::warning 
-Support for 5.9.4.2 and all older versions ended **14 February 2026**. If you are reading this guide on a 5.x server, your environment is currently running without security coverage. Schedule your migration maintenance window as soon as possible.
+Support for 5.9.4.2 and all older versions ended **14 February 2026**. If you are reading this guide on a 5.x server, your environment is running without security coverage. Schedule your migration maintenance window as soon as possible.
 :::
 
 Complete **all** items in this checklist before beginning any upgrade or migration activity.
@@ -115,7 +115,7 @@ If the `php_els` field is missing:
 - Contact Netwrix Support or your account team to request a refreshed license before proceeding.
 
 :::warning
-Without a valid `php_els` license, the new server's underlying OS components will **not** receive updates after migration. Do not proceed without confirming this field exists.
+Without a valid `php_els` license, the new server's underlying OS components will **not** receive updates after migration. Don't proceed without confirming this field exists.
 :::
 
 You can validate php_els component status in Appliance -> Server Information tab
@@ -140,14 +140,14 @@ Confirm hypervisor version compatibility **before** scheduling a migration maint
 :::
 
 :::note
-The hypervisor recommendations above reflect our best guidance based on the EPP image format and known compatibility. However, hypervisor provisioning, configuration, and ongoing maintenance fall outside the scope of Netwrix support. Netwrix cannot assist with hypervisor-side issues — customers are responsible for their own virtualisation infrastructure.
+The hypervisor recommendations above reflect our best guidance based on the EPP image format and known compatibility. However, hypervisor provisioning, configuration, and ongoing maintenance fall outside the scope of Netwrix support. Netwrix can't assist with hypervisor-side issues — customers are responsible for their own virtualisation infrastructure.
 :::
 
 ### System Resource Assessment
 
 Before any upgrade, assess the health of the current appliance.
 For upgrades from 5.7.0.0 to 5.9.2  ensure disk space and allocation for DB is sufficient.
-For migration from 5.9.4.2, please remember that migration will not cover EPP logs data, only configuration part. 
+For migration from 5.9.4.2, remember that migration will not cover EPP logs data, only configuration part. 
 
 **In the EPP Console:**
 
@@ -201,10 +201,10 @@ Re-enable communications once the upgraded server has been verified and is ready
 
 ### VM Snapshot and Backup
 
-**This step is non-negotiable. Do not proceed without completing both.**
+**This step is non-negotiable. Don't proceed without completing both.**
 
 :::note
-VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix does not manage, verify, or maintain hypervisor-level snapshots. However, we consider a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot means there is no rollback path — in the event of a failure, recovery may be impossible without one, and Netwrix Support will be unable to assist with restoring the environment.
+VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, we consider a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot means there is no rollback path — in the event of a failure, recovery may be impossible without one, and Netwrix Support will be unable to assist with restoring the environment.
 :::
 
 **Step 1 — Create a VM snapshot** on your hypervisor (VMware, Hyper-V, ESXi, AWS, Azure, etc.).
@@ -222,7 +222,7 @@ Keep the VM snapshot active until you have fully validated the new 2510 environm
 1. Log in to Endpoint Protector Console.
 2. Navigate to **System Maintenance → System Backup**.
 3. Click **Create**, enter a name and description (include the date and version, e.g., `pre-upgrade-5942-2026-04-20`), click **Save**.
-4. **Save the System Backup Key** displayed in the prompt — this key is required for restoration and cannot be recovered.
+4. **Save the System Backup Key** displayed in the prompt — this key is required for restoration and can't be recovered.
 5. Wait for the status to show **"Ready to download"**, then download the backup file.
 
 ![System Maintenance → System Backup — backup creation wizard](backup_wizard.webp)
@@ -266,11 +266,11 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 
 ## Phase 1 — Upgrade to 5.9.4.2 via Cumulative Patch
 
-This phase applies to environments currently running **any version from 5.7.0.0 through 5.9.4.1**. The cumulative patch upgrades your server directly to 5.9.4.2 in a single operation, incorporating all fixes and features introduced across every intermediate version.
+This phase applies to environments running **any version from 5.7.0.0 through 5.9.4.1**. The cumulative patch upgrades your server directly to 5.9.4.2 in a single operation, incorporating all fixes and features introduced across every intermediate version.
 
 ### Downloading the Cumulative Patch
 
-The 5.9.4.2 cumulative patch is available from the Netwrix Community portal. Contact your Netwrix account team or Customer Support to obtain the patch file if you do not have direct access.
+The 5.9.4.2 cumulative patch is available from the Netwrix Community portal. Contact your Netwrix account team or Customer Support to obtain the patch file if you don't have direct access.
 
 :::tip
 📹 **Community Portal:** A video walkthrough of the cumulative patch process is available at the Netwrix Community: [5.9.4.2 Cumulative Upgrade Patch for Endpoint Protector Server 5.7.0.0–5.9.4.1](https://community.netwrix.com/t/5-9-4-2-cumulative-upgrade-patch-for-endpoint-protector-server-5-7-0-0-5-9-4-1/9321)
@@ -313,14 +313,14 @@ Once the installation completes:
 3. Navigate to **Appliance → Server Information** and confirm the version shows **5.9.4.2**.
 4. Verify the update history: **Dashboard → Live Update → View all applied updates**.
 
-After the patch applies successfully, **do not perform any further upgrades or major configuration changes for at least 24 hours**. Although the UI confirms the patch as complete, a set of critical background processes continues running after the visible upgrade finishes. These include:
+After the patch applies successfully, **don't perform any further upgrades or major configuration changes for at least 24 hours**. Although the UI confirms the patch as complete, a set of critical background processes continues running after the visible upgrade finishes. These include:
 
 - **Database schema migration** — aligns internal table structures and indexes to the new version format
 - **Log reindexing** — rebuilds search indexes across stored audit and event logs
 - **Service reconfiguration** — updates internal service dependencies, daemon configurations, and file path mappings introduced by the patch
 - **Nightly cron maintenance** — runs at 9:00 PM and performs integrity checks, cache rebuilds, and housekeeping tasks that finalize the upgrade state
 
-These tasks run silently in the background and do not produce visible progress in the console. Performing another upgrade, restoring a backup, or making significant configuration changes before these processes complete impact the stability or in edge cases can corrupt the database or leave the server in an inconsistent state that is difficult to recover from.
+These tasks run silently in the background and don't produce visible progress in the console. Performing another upgrade, restoring a backup, or making significant configuration changes before these processes complete impact the stability or in edge cases can corrupt the database or leave the server in an inconsistent state that is difficult to recover from.
 
 
 ### Create Final Backup at 5.9.4.2
@@ -391,7 +391,7 @@ Both the **2509** and **2510** base images can be upgraded directly to 2602. The
    - Configure DNS
 
 :::note
-⚠️ **Known Issue:** IP network settings may not save correctly if only one DNS field is filled. **Workaround:** Fill **both** DNS fields. Use for example Google's public DNS (`8.8.8.8` and `8.8.4.4`) as a secondary if you do not have a second internal DNS server.
+⚠️ **Known Issue:** IP network settings may not save correctly if only one DNS field is filled. **Workaround:** Fill **both** DNS fields. Use for example Google's public DNS (`8.8.8.8` and `8.8.4.4`) as a secondary if you don't have a second internal DNS server.
 :::
 
 ![2510 Network Configuration — IP, subnet, gateway, both DNS fields filled](2510_network_config.webp)
@@ -413,7 +413,7 @@ Disabling client communications prevents endpoints from registering with an inco
 ### Import License on the Fresh 2510 Image
 
 :::warning
-The license must be imported **before** applying any patches. Without an active ELS for PHP license, the server cannot receive OS updates, and the patch process will fail or be incomplete.
+The license must be imported **before** applying any patches. Without an active ELS for PHP license, the server can't receive OS updates, and the patch process will fail or be incomplete.
 :::
 
 1. Navigate to **System Configuration → System Licensing → Import License**.
@@ -428,7 +428,7 @@ in case of errors:
 ![Appliance → Server Information — ELS for PHP = Error after license import](els_error.webp)
 
 :::danger
-If ELS for PHP is **not Active**, stop and resolve this before proceeding. The server cannot receive patches without it, and the subsequent upgrade step will not complete successfully.
+If ELS for PHP is **not Active**, stop and resolve this before proceeding. The server can't receive patches without it, and the subsequent upgrade step will not complete successfully.
 :::
 
 ### Upgrade the 2510 Image to the Latest Version (2602)
@@ -478,37 +478,37 @@ The 5.9.4.2 backup is restored onto the fully patched 2602 server. The backup fo
 ![System Backup list — Ready to download status confirming successful restore](backup_ready_restored.webp)
 
 :::tip
-Restoration can take several minutes depending on backup size. Do not interrupt the process or close the browser. If the console appears frozen, wait at least 5 minutes before refreshing.
+Restoration can take several minutes depending on backup size. Don't interrupt the process or close the browser. If the console appears frozen, wait at least 5 minutes before refreshing.
 :::
 
 :::warning
 Large backups on under-resourced VMs can cause **server unresponsiveness or a 500 error** during import. If you receive a 500 error:
 
-1. Do not retry immediately — check server logs via SSH first.
+1. Don't retry immediately — check server logs via SSH first.
 2. Verify at least 2 GB free disk space on the VM.
-3. Verify the backup file is not corrupted (re-download from the source server if needed).
+3. Verify the backup file isn't corrupted (re-download from the source server if needed).
 4. Contact Netwrix Support if the error persists.
 :::
 
 ## Phase 3 - Uploading EPP & EE Client Packages
 
-The new 2509/2510 server and further EPP Server patches do not include client packages by default. You must upload them manually.
+The new 2509/2510 server and further EPP Server patches don't include client packages by default. You must upload them manually.
 
 If you are using an external tool to manage your packages, you can ignore this section unless you are a Netwrix Enforced Encryption (EasyLock) customer — in that case, you need to follow the instructions below.
 
 ### Certificate Bridge and Upgrade Path
 
-Understanding the required package set requires knowing why a direct upgrade from older 5.x clients to 2602 is not possible.
+Understanding the required package set requires knowing why a direct upgrade from older 5.x clients to 2602 isn't possible.
 
 Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and transitioned all code signing certificates from **CoSoSys signatures** to **Netwrix signatures**. This transition affects how endpoint clients verify server-pushed updates:
 
 | Client Version | Trusted Signatures | Notes |
 |---|---|---|
-| 5.9.4.1 and older | CoSoSys only | Cannot verify Netwrix-signed packages |
+| 5.9.4.1 and older | CoSoSys only | Can't verify Netwrix-signed packages |
 | **5.9.4.3** | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
-| 2511 and newer | Netwrix only | Cannot be pushed to 5.9.4.1 clients directly |
+| 2511 and newer | Netwrix only | Can't be pushed to 5.9.4.1 clients directly |
 
-Clients on 5.9.4.1 or older **cannot** upgrade directly to 2602. They must first upgrade to **5.9.4.3** (which trusts both signature types), then proceed to 2602:
+Clients on 5.9.4.1 or older **can't** upgrade directly to 2602. They must first upgrade to **5.9.4.3** (which trusts both signature types), then proceed to 2602:
 
 ![EPP Server Migration — end-to-end process diagram](clientupgradediagram.webp)
 
@@ -597,7 +597,7 @@ If using Deep Packet Inspection or Content Aware Protection:
 
 1. Verify the root CA certificate is trusted on endpoints.
 2. Test a known-blocked transfer to confirm CAP policy is active.
-3. If certificates are not trusted, and you used a **different IP/FQDN**, you may need to push the new root CA via GPO or MDM.
+3. If certificates aren't trusted, and you used a **different IP/FQDN**, you may need to push the new root CA via GPO or MDM.
 
 ### Backup Creation Verification
 
@@ -607,7 +607,7 @@ If using Deep Packet Inspection or Content Aware Protection:
 
 ### Third-Party Integration Reconfiguration
 
-After migration, all 3rd-party integrations must be **manually re-imported and reconfigured**. While configuration data is included in the backup, credentials and connection secrets are not always fully restored, and integration endpoints may require re-registration against the new server.
+After migration, all 3rd-party integrations must be **manually re-imported and reconfigured**. While configuration data is included in the backup, credentials and connection secrets aren't always fully restored, and integration endpoints may require re-registration against the new server.
 
 Re-import and reconfigure each active integration before proceeding to verification:
 
@@ -637,7 +637,7 @@ If an integration fails verification, use the steps below:
 
 **SMTP / Email alerts not firing:**
 1. Navigate to **System Configuration → System Settings → Email Configuration**.
-2. Re-enter SMTP credentials — passwords are not always restored from backup.
+2. Re-enter SMTP credentials — passwords aren't always restored from backup.
 3. Use the test email function and check server logs if delivery fails.
 4. Verify firewall allows outbound on the configured SMTP port (25, 465, or 587).
 
@@ -647,12 +647,12 @@ If an integration fails verification, use the steps below:
 3. Trigger a manual sync and monitor for completion.
 
 :::warning
-AD Sync may appear to complete successfully but only import a partial set of users or groups. Always cross-check the imported object count against your directory — do not rely solely on the "success" status message.
+AD Sync may appear to complete successfully but only import a partial set of users or groups. Always cross-check the imported object count against your directory — don't rely solely on the "success" status message.
 :::
 
 **Entra ID / SSO / SCIM not working:**
 1. Navigate to **System Configuration → SSO / Single Sign-On**.
-2. Re-enter tenant ID, client ID, and client secret — these are not restored from backup.
+2. Re-enter tenant ID, client ID, and client secret — these aren't restored from backup.
 3. Verify the redirect URI registered in Azure AD matches the new server address.
 4. Perform a test SSO login in an incognito window.
 5. If SCIM provisioning is broken, re-generate the SCIM token in the EPP console and update it in Entra ID.
@@ -660,7 +660,7 @@ AD Sync may appear to complete successfully but only import a partial set of use
 **SIEM / Syslog events not forwarding:**
 1. Reconfigure the SIEM destination IP, port, and protocol.
 2. Generate a test event and confirm it reaches the SIEM receiver.
-3. If events still do not appear, contact Netwrix Support — a server-side script may be required to restart the syslog forwarding service.
+3. If events still don't appear, contact Netwrix Support — a server-side script may be required to restart the syslog forwarding service.
 
 **AWS / S3 file shadows unreachable:**
 1. Navigate to **System Configuration → File Shadow Repository**.
@@ -675,11 +675,11 @@ After migration to 2510/2601, the **Audit Log Backup job can enter a state where
 
 After migration, verify:
 1. Navigate to **System Maintenance → Audit Log Backups**.
-2. Check that any running audit backup jobs have a defined end time and are not stuck in an active state.
+2. Check that any running audit backup jobs have a defined end time and aren't stuck in an active state.
 3. If a job has been running for more than 4 hours with no progress, stop it and contact Netwrix Support.
 
 :::tip
-Do not start Audit Log Backup jobs immediately after migration. Allow the server to stabilize for 24 hours, then start a test backup and monitor its completion before scheduling recurring jobs.
+Don't start Audit Log Backup jobs immediately after migration. Allow the server to stabilize for 24 hours, then start a test backup and monitor its completion before scheduling recurring jobs.
 :::
 
 ### Performance Baseline Comparison
