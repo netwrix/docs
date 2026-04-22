@@ -30,7 +30,7 @@ be done at regular intervals:
 
 - Disk space should be checked on a periodic basis. The command to check this is: df -h
 - This command is disk free with the switch h for human readable. Disk usage over 80% should be
-  checked to see if there are any specific reasons for excessive disk usage. If the space cannot be
+  checked to see if there are any specific reasons for excessive disk usage. If the space can't be
   reduced successfully, add additional disk space. The Customer Success team can
   assist with the review and reduction of used disc space and also increase of disk space (physical
   or virtual, dependent on environment).
