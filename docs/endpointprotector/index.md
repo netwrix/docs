@@ -19,7 +19,7 @@ Enforced Encryption.
 Device Control empowers organizations to manage and monitor all device activities at the endpoint,
 ensuring that sensitive data remains protected from unauthorized access or transfer. Content Aware
 Protection extends this security by scanning and detecting sensitive content at all potential exit
-points, whether it is being copied to external devices or transmitted over the internet.
+points, whether users are copying it to external devices or transmitting it over the internet.
 
 Moreover, Endpoint Protector facilitates compliance with regulatory standards such as PCI-DSS,
 HIPAA, and GDPR through predefined discovery patterns and response strategies. It caters to diverse

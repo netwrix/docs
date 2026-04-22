@@ -23,7 +23,7 @@ sidebar_position: 20
 
 **Symptom:** IP configuration changes don't save; error appears after clicking Save.
 
-**Root cause:** Known bug in 2510 where the settings page requires both DNS fields to be filled.
+**Root cause:** Known bug in 2510 where the settings page requires you to fill both DNS fields.
 
 **Resolution:** Enter a value in **both** DNS fields (use `8.8.8.8` and `8.8.4.4` if no secondary DNS is available).
 
@@ -35,7 +35,7 @@ sidebar_position: 20
 
 **Step 1 — Contact Netwrix Support for the backup export fix script (do this first):**
 
-Contact Netwrix Support and request the **5.9.4.2 backup export fix**. This script trims the backup file below 200 MB by dropping unnecessary legacy tables from the export that aren't required for migration. This is the preferred resolution and requires no backend access on your part.
+Contact Netwrix Support and request the **5.9.4.2 backup export fix**. This script trims the backup file below 200 MB by dropping unnecessary legacy tables from the export that migration doesn't require. This is the preferred resolution and requires no backend access on your part.
 
 If the fix script doesn't bring the file below 200 MB, contact Netwrix Support for the manual upload limit adjustment procedure.
 
@@ -48,8 +48,8 @@ If the fix script doesn't bring the file below 200 MB, contact Netwrix Support f
 **Most likely cause:** The new server IP/FQDN is different from the old server.
 
 **Resolution:**
-- If same IP/FQDN was used: verify that certificates were restored from the backup (check **System Configuration → Certificates**).
-- If different IP/FQDN was used: users must decrypt their drives, reconnect to the new server, and re-encrypt. Contact Netwrix Support for mass re-encryption scripts.
+- If you used the same IP/FQDN: verify that the backup restored the certificates (check **System Configuration → Certificates**).
+- If you used a different IP/FQDN: users must decrypt their drives, reconnect to the new server, and re-encrypt. Contact Netwrix Support for mass re-encryption scripts.
 
 ---
 
@@ -57,7 +57,7 @@ If the fix script doesn't bring the file below 200 MB, contact Netwrix Support f
 
 **Symptom:** SIEM integration stops receiving events after restore.
 
-**Resolution:** SIEM functionality may require reconfiguration after migration. Contact Netwrix Support and provide diagnostic logs — a specialized restoration script may be required.
+**Resolution:** SIEM functionality may require reconfiguration after migration. Contact Netwrix Support and provide diagnostic logs — Netwrix Support may need to run a specialized restoration script.
 
 ---
 
@@ -66,7 +66,7 @@ If the fix script doesn't bring the file below 200 MB, contact Netwrix Support f
 **Symptom:** Endpoints show as offline; Last Seen timestamps are old.
 
 **Checklist:**
-1. Verify client communications are re-enabled on the new server.
+1. Verify that you have re-enabled client communications on the new server.
 2. Confirm the new server is reachable on the expected IP/FQDN from endpoints.
 3. Check that client packages (5.9.4.3) are uploaded to the server.
 4. Verify the old server is no longer running on the same IP if using same-IP strategy.

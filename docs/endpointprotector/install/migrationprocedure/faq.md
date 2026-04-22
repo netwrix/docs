@@ -12,7 +12,7 @@ This chapter consolidates the most common questions and issues encountered durin
 
 ## Migrating Directly to 2510 from an Older Version
 
-**No.** Only backups created on version **5.9.4.2** are accepted by 2510 and further versions. If you are on any version from 5.7.0.0 to 5.9.4.1, you must first apply the cumulative patch to reach 5.9.4.2, create the backup there, and then deploy 2510.
+**No.** 2510 and later versions accept only backups created on version **5.9.4.2**. If you are on any version from 5.7.0.0 to 5.9.4.1, you must first apply the cumulative patch to reach 5.9.4.2, create the backup there, and then deploy 2510.
 
 Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 onto 2510 will fail at the import step.
 
@@ -50,7 +50,7 @@ The IP configuration page fails to save if **only one DNS field is filled**. Thi
 
 ## Email Alerts Not Working After Migration
 
-SMTP credentials aren't always fully restored from the backup and typically need to be re-entered manually after migration.
+The backup doesn't always fully restore SMTP credentials, and you typically need to re-enter them manually after migration.
 
 **Steps:**
 1. Navigate to **System Configuration → System Settings → Email Configuration**.
@@ -75,7 +75,7 @@ AD/LDAP connectivity credentials may need re-entry after migration.
 
 ## SSO / Entra ID login fails after migration to 2510.
 
-Entra ID / SSO application registrations may need to be refreshed after migration.
+You may need to refresh Entra ID / SSO application registrations after migration.
 
 **Steps:**
 1. Navigate to **System Configuration → SSO**.
@@ -95,7 +95,7 @@ Entra ID / SSO application registrations may need to be refreshed after migratio
 2. Confirm client communications are enabled on the server (**System Configuration → System Settings**).
 3. Confirm client packages (5.9.4.3 or later, ideally 2602) are uploaded to the server.
 4. Check the **Device Control → Computers** page and sort by **Last Seen**.
-5. If clients were on 5.9.4.1 or older and 5.9.4.3 wasn't deployed first, they can't receive the 2602 client package directly — deploy 5.9.4.3 first via your software distribution tool before upgrading to 2602. See [Phase 3 — Uploading EPP & EE Client Packages](migrationguide#phase-3---uploading-epp--ee-client-packages) for the full client upgrade path.
+5. If clients were on 5.9.4.1 or older and you didn't deploy 5.9.4.3 first, they can't receive the 2602 client package directly — deploy 5.9.4.3 first via your software distribution tool before upgrading to 2602. See [Phase 3 — Uploading EPP & EE Client Packages](migrationguide#phase-3---uploading-epp--ee-client-packages) for the full client upgrade path.
 6. Verify that firewall rules allow HTTPS connections on the configured EPP communication port.
 7. Consider reinstalling the EPP Client if it appears to be corrupted.
 
@@ -137,7 +137,7 @@ This can occur after migration due to backend indexing activity on the newly res
 1. Verify Content Aware Protection policies are active (**Content Aware Protection → Policies**).
 2. Check that the CAP Dashboard shows recent activity.
 3. Generate a test transfer that should be detected and confirm whether it appears in CAP logs.
-4. If policies are active but reports aren't being generated or sent, contact Netwrix Support — this is a known post-migration defect.
+4. If policies are active but the server isn't generating or sending reports, contact Netwrix Support — this is a known post-migration defect.
 
 ---
 

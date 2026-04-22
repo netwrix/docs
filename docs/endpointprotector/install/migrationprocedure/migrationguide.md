@@ -84,7 +84,7 @@ Always verify your source server version before creating the migration backup.
 | Rollback option | VM snapshot | Keep old VM alive |
 
 :::tip
-Migration upgrade to 2510 image with 2602 patch is the **recommended path** for any environment still on legacy 5.x versions. In-place upgrades within the 5.x series should only be used as an intermediate step to reach 5.9.4.2.
+Netwrix recommends the migration upgrade path to the 2510 image with 2602 patch for any environment still on legacy 5.x versions. Use in-place upgrades within the 5.x series only as an intermediate step to reach 5.9.4.2.
 :::
 
 ---
@@ -147,7 +147,7 @@ The hypervisor recommendations above reflect the best available guidance based o
 
 Before any upgrade, assess the health of the current appliance.
 For upgrades from 5.7.0.0 to 5.9.2  ensure disk space and allocation for DB is sufficient.
-For migration from 5.9.4.2, remember that migration will not cover EPP logs data, only configuration part. 
+For migration from 5.9.4.2, note that migration transfers the configuration only — EPP logs data remain on the source server. 
 
 **In the EPP Console:**
 
@@ -222,7 +222,7 @@ Keep the VM snapshot active until you have fully validated the new 2510 environm
 1. Log in to Endpoint Protector Console.
 2. Navigate to **System Maintenance → System Backup**.
 3. Click **Create**, enter a name and description (include the date and version, e.g., `pre-upgrade-5942-2026-04-20`), click **Save**.
-4. **Save the System Backup Key** displayed in the prompt — this key is required for restoration and can't be recovered.
+4. **Save the System Backup Key** displayed in the prompt — you need this key for restoration and cannot recover it if lost.
 5. Wait for the status to show **"Ready to download"**, then download the backup file.
 
 ![System Maintenance → System Backup — backup creation wizard](backup_wizard.webp)
@@ -237,7 +237,7 @@ Store backup files in a secure repository with limited access. The backup contai
 
 **Step 3 — Export logs and file shadows separately (optional but recommended):**
 
-Logs and file shadows **aren't** included in the System Configuration Backup. If you need historical logs for compliance or forensics:
+The System Configuration Backup does not include logs and file shadows. If you need historical logs for compliance or forensics:
 
 - Use **System Maintenance → Audit Log Backups** to export logs to an external location. See [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup) for export steps.
 - Retain the old server VM after migration for log access.
@@ -320,7 +320,7 @@ After the patch applies successfully, **don't perform any further upgrades or ma
 - **Service reconfiguration** — updates internal service dependencies, daemon configurations, and file path mappings introduced by the patch
 - **Nightly cron maintenance** — runs at 9:00 PM and performs integrity checks, cache rebuilds, and housekeeping tasks that finalize the upgrade state
 
-These tasks run silently in the background and don't produce visible progress in the console. Performing another upgrade, restoring a backup, or making significant configuration changes before these processes complete impact the stability or in edge cases can corrupt the database or leave the server in an inconsistent state that is difficult to recover from.
+These tasks run silently in the background and don't produce visible progress in the console. Performing another upgrade, restoring a backup, or making significant configuration changes before these processes complete can impact stability or, in edge cases, corrupt the database or leave the server in an inconsistent state that is difficult to recover.
 
 
 ### Create Final Backup at 5.9.4.2
@@ -360,7 +360,7 @@ Before deploying the new VM, decide whether the new 2510 server will use the **s
 - DNS records remain unchanged.
 
 :::tip
-Always use the **same IP/FQDN** option. The operational complexity and user impact of changing the IP/FQDN — especially in environments using Enforced Encryption — is very high and should only be considered when technically unavoidable.
+Always use the **same IP/FQDN** option. The operational complexity and user impact of changing the IP/FQDN — especially in environments using Enforced Encryption — is very high. Consider a different IP/FQDN only when technically unavoidable.
 :::
 
 #### Option B — Different IP/FQDN (Not Recommended Except for Device Control-Only Environments)
@@ -597,17 +597,17 @@ If using Deep Packet Inspection or Content Aware Protection:
 
 1. Verify the root CA certificate is trusted on endpoints.
 2. Test a known-blocked transfer to confirm CAP policy is active.
-3. If certificates aren't trusted, and you used a **different IP/FQDN**, you may need to push the new root CA via GPO or MDM.
+3. If endpoints don't trust the certificates, and you used a **different IP/FQDN**, you may need to push the new root CA via GPO or MDM.
 
 ### Backup Creation Verification
 
 1. Navigate to **System Maintenance → System Backup**.
-2. Verify that backup  are configured and active.
+2. Verify that backups are configured and active.
 3. Run a test backup and confirm **"Ready to download"** status.
 
 ### Third-Party Integration Reconfiguration
 
-After migration, all 3rd-party integrations must be **manually re-imported and reconfigured**. While configuration data is included in the backup, credentials and connection secrets aren't always fully restored, and integration endpoints may require re-registration against the new server.
+After migration, manually re-import and reconfigure all 3rd-party integrations. While the backup includes configuration data, it doesn't always fully restore credentials and connection secrets, and integration endpoints may require re-registration against the new server.
 
 Re-import and reconfigure each active integration before proceeding to verification:
 

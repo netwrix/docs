@@ -6,7 +6,7 @@ sidebar_position: 11
 
 # Best Practices Summary
 
-The following best practices are drawn from the complete migration workflow and should be applied to any EPP Server upgrade or migration:
+The following best practices come from the complete migration workflow and apply to any EPP Server upgrade or migration:
 
 ## Planning
 
@@ -24,7 +24,7 @@ The following best practices are drawn from the complete migration workflow and 
 | # | Best Practice |
 |---|---|
 | 07 | Always create a VM snapshot AND a System Configuration Backup — they serve different recovery purposes. |
-| 08 | Store the System Backup Key in a password manager or secure vault. It can't be recovered if lost. |
+| 08 | Store the System Backup Key in a password manager or secure vault. You can't recover it if lost. |
 | 09 | Label all backups with version, date, and purpose (e.g., `pre-patch-5942`, `migration-to-2510`). |
 | 10 | For compliance-regulated environments, export audit logs separately before migration — they aren't in the config backup. |
 | 11 | Test backup restoration in a non-production environment at least once before relying on it for production recovery. |
@@ -62,9 +62,9 @@ The following best practices are drawn from the complete migration workflow and 
 
 | # | Best Practice |
 |---|---|
-| 26 | Create the migration backup on **exactly version 5.9.4.2** — not 5.9.4.1, not 5.9.4.0. Any other version will be rejected or cause OS regression on 2510. |
+| 26 | Create the migration backup on **exactly version 5.9.4.2** — not 5.9.4.1, not 5.9.4.0. 2510 rejects any other version and may cause OS regression. |
 | 27 | Label every backup file with the server version and date in the filename (e.g., `epp-5942-backup-2026-04-21.bak`). Mislabelled backups are a leading cause of wrong-version import errors. |
-| 28 | Restoring a 2509 configuration backup onto a 2510 server is supported — the OS remains 2510 and the result is functionally equivalent to a native 2510 deployment. The only consideration is disk sizing: verify that disk capacity is sufficient, as the 2509 base image uses a smaller default disk allocation than 2510. |
+| 28 | You can restore a 2509 configuration backup onto a 2510 server — the OS remains 2510 and the result is functionally equivalent to a native 2510 deployment. The only consideration is disk sizing: verify that disk capacity is sufficient, as the 2509 base image uses a smaller default disk allocation than 2510. |
 | 29 | After applying the 5.9.4.2 cumulative patch, wait 24 hours for background DB tasks to complete before creating the migration backup. |
 
 ## 3rd-Party Integrations
@@ -73,13 +73,13 @@ The following best practices are drawn from the complete migration workflow and 
 |---|---|
 | 30 | Treat all 3rd-party integrations (SMTP, AD/LDAP, SSO, SIEM, S3) as **not migrated** until manually verified post-migration. |
 | 31 | Document all integration credentials and settings before migration — have them ready for re-entry post-restore. |
-| 32 | After AD Sync completes, verify the imported object count matches expectations — silent partial imports have been observed even when sync reports success. |
+| 32 | After AD Sync completes, verify the imported object count matches expectations — silent partial imports can occur even when sync reports success. |
 | 33 | For SIEM integrations, contact Netwrix Support proactively after migration — restoration may require a specialized script. |
 
 ## Post-Migration Stability
 
 | # | Best Practice |
 |---|---|
-| 34 | Don't apply server patches immediately after backup restore — the patch pipeline can be disrupted by the import process. Allow 24 hours before patching. |
+| 34 | Don't apply server patches immediately after backup restore — the import process can disrupt the patch pipeline. Allow 24 hours before patching. |
 | 35 | Monitor Audit Log Backup jobs after migration — they can enter an infinite running state. Verify job completion before scheduling recurring backups. |
 | 36 | For air-gapped / offline environments, obtain the Offline Activation Patch for 2510 before the maintenance window begins — request it from Netwrix Support in advance. |
