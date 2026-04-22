@@ -11,7 +11,7 @@ Employees move locations, change departments, and start new groups all the time.
 professionals are faced with the daunting task of continually managing and updating security and
 distribution groups — often having to do so manually.
 
-Directory Manager is an IAM solution that makes it easy to stay on top of all the changes, requests,
+Directory Manager is an Identity and Access Management (IAM) solution that makes it easy to stay on top of all the changes, requests,
 and requirements that IT sees every day.
 
 ## Functions
