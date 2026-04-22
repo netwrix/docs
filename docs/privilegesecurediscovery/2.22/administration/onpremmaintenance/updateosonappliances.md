@@ -116,7 +116,7 @@ existing configurations, setting, or file.
 
         - Verify "Availability" is set to "Active" on updated node.
 
-- After the updated node is reachable, Ctrl+C to get out of the watch command
+- After the updated node is reachable, press Ctrl+C to stop the watch command
 - Check DB replication status, "stateStr" should be "PRIMARY" or "SECONDARY"; and replication time
   difference, a few seconds is acceptable:
 - ```

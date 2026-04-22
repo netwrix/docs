@@ -391,7 +391,7 @@ db.integrations_edr_config.updateOne(
 
 - Executes before individual device scans
 - The system removes successfully scanned devices from the individual scan queue
-- Devices that fail fall back to individual scanning
+- Devices that fail revert to individual scanning
 
 ### Monitor bulk scans
 

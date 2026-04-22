@@ -50,7 +50,7 @@ Check the file was created and has two lines.
 cat /secureone/data/key.txt; echo
 ```
 
-Note:  Without the`; echo` in the command above, the second line will run into the command prompt,
+Note:  Without the`; echo` in the preceding command, the second line will run into the command prompt,
 this is expected as that line doesn't have a carriage return. 
 
 Highlight the two lines of the key, stopping at the end of the second line, don't include the
@@ -59,7 +59,7 @@ carriage return, and copy.
 ### Copy Docker Secret to New Privilege Secure Instance
 
 SSH into the primary node of the new instance. Use your favorite text editor to create a key.txt
-file to use for as the new Docker secret. Vim is used in the below example:
+file to use for as the new Docker secret. The following example uses Vim:
 
 ```
 sudo vim /secureone/data/key.txt
@@ -76,7 +76,7 @@ key instead:
 sudo docker secret create key.txt/secureone/data/key.txt
 ```
 
-Continue the deployment. After the install, verify the key was used by following the steps in the 'Retrieve the Docker
+Continue the deployment. After the install, verify the new key is in use by following the steps in the 'Retrieve the Docker
 Secret from Current SecureONE Instance' section.
 
 ### Troubleshooting

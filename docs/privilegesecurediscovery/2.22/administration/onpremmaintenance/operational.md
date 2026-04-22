@@ -10,8 +10,7 @@ Operational Maintenance
 
 # Operational Maintenance
 
-Once Privilege Secure is rolled out there are various maintenance and operational items that should
-be done at regular intervals:
+Once Privilege Secure is deployed, perform the following maintenance and operational tasks at regular intervals:
 
 ## Privilege Secure Processes (suggested daily)
 
@@ -28,9 +27,8 @@ be done at regular intervals:
 
 ## Disk Maintenance (suggested weekly)
 
-- Disk space should be checked on a periodic basis. The command to check this is: df -h
-- This command is disk free with the switch h for human readable. Disk usage over 80% should be
-  checked to see if there are any specific reasons for excessive disk usage. If the space can't be
+- Check disk space periodically. The command is: df -h
+- This command is disk free with the switch h for human readable. Investigate disk usage over 80% for specific causes of excessive usage. If the space can't be
   reduced successfully, add additional disk space. The Customer Success team can
   assist with the review and reduction of used disc space and also increase of disk space (physical
   or virtual, dependent on environment).
@@ -52,8 +50,7 @@ Test (suggested minimum yearly)
 
 - Test DR at least yearly. This can be part of a wider DR test or specific to
   Privilege Secure.
-- A test window should be created for this as changes to Privilege Secure DR wouldn't be propagated
-  back to the main production instance.
+- Create a test window, since changes to Privilege Secure DR don't propagate back to the main production instance.
 - After a test ensure that services are down on the DR node. This will avoid the DR environment
   overriding changes from Production. Use the following command:
 
@@ -80,7 +77,7 @@ Test (suggested minimum yearly)
 
 Time Sync
 
-- Run the following command to check that the servers are remaining in sync with time:
+- Run the following command to check that servers remain in sync:
 - sudo docker exec -it $(sudo docker ps | grep mongo | cut -d' ' -f1) mongo SecureONE --eval
   'rs.printSlaveReplicationInfo()'
 - The result should show that there is little or no difference in time:
