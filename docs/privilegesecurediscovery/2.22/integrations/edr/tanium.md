@@ -105,8 +105,8 @@ devices.
 ## Part A: Tanium Cloud Setup
 
 :::warning
-The following configuration must be performed by a Tanium administrator. Each step must be
-completed exactly as specified for the integration to function correctly.
+A Tanium administrator must perform the following configuration. Complete each step exactly
+as specified for the integration to function correctly.
 :::
 
 ### Create the NPS Admin Members sensor
@@ -204,7 +204,7 @@ Token**.
 - **Permissions:** Full API access (or minimum required)
 - **Expiration:** Set according to your security policy
 
-**Step 3 –** Copy and securely save the API token immediately — it will not be shown again.
+**Step 3 –** Copy and securely save the API token immediately — it does not display again.
 
 ---
 
@@ -390,7 +390,7 @@ db.integrations_edr_config.updateOne(
 **Step 2 –** Bulk scans run automatically as part of the regular `svc_scan` cycle:
 
 - Executes before individual device scans
-- Successfully scanned devices are removed from the individual scan queue
+- The system removes successfully scanned devices from the individual scan queue
 - Devices that fail fall back to individual scanning
 
 ### Monitor bulk scans
@@ -681,9 +681,9 @@ mongo npsd --eval 'db.computers.findOne({"_id": "COMPUTER_ID"}, {"lastScan": 1})
 
 ### Security considerations
 
-- API tokens are encrypted at rest using AES-256
+- NPS-D encrypts API tokens at rest using AES-256
 - Passwords use session-specific RSA key pairs (2048-bit)
 - All API communications use TLS 1.2+
-- Temporary files are automatically cleaned up
-- No sensitive data is logged in plain text
+- NPS-D automatically cleans up temporary files
+- NPS-D does not log sensitive data in plain text
 - HTTP proxy with authentication is supported
