@@ -6,6 +6,13 @@ sidebar_position: 10
 
 # Overview
 
+:::note Using an older version?
+This documentation covers **Access Analyzer 2601**, the latest release — a containerized, Linux-based deployment. If you are running a previous Windows-based installation, select your version below:
+
+- [Access Analyzer 12.0 documentation](https://docs.netwrix.com/docs/accessanalyzer/12_0)
+- [Access Analyzer 11.6 documentation](https://docs.netwrix.com/docs/accessanalyzer/11_6)
+:::
+
 ## Product Overview
 
 Netwrix Access Analyzer is an on-premises Data Security Posture Management (DSPM) platform that helps security and compliance teams discover where sensitive data lives, who has access to it, and where access risks exist across their environment.
