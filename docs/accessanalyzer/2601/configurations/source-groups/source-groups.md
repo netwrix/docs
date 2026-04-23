@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Source Groups
 
-A source group is a named container that organizes data sources of the same type for coordinated scanning. All sources in a group share a service account and a concurrency limit, and you can run or stop scans across all sources in the group with a single action.
+A source group is a named container that organizes data sources of the same type for coordinated scanning. All sources in a group share a service account, and you can run or stop scans across all sources in the group with a single action.
 
 Navigate to **Configuration** > **Source Groups** to view, create, and manage source groups.
 
@@ -20,7 +20,7 @@ The source groups list displays all configured source groups. Each row shows:
 | **Source Type** | The type of data source in the group (Active Directory, File Server, Entra ID, or SharePoint Online). |
 | **Service Account** | The service account used to authenticate scans in this group. |
 | **Status** | Whether the group is **Active** or **Inactive**. Inactive groups are excluded from scheduled scan runs. |
-| **Scan Types** | The scan types configured for this group (Access Scan, Sensitive Data Scan, or both). |
+| **Scan Types** | The scan types configured for this group. Varies by source type — see [Scan types](scans.md#scan-types). |
 | **Scanner Labels** | Key-value labels used to route scans to specific scanner pools. Displayed only for Active Directory and File Server groups. |
 | **Last Scan** | The timestamp of the most recent completed scan execution across all sources in the group. |
 
@@ -32,10 +32,9 @@ Use the search field to filter by name. You can sort by any column and filter by
 2. Enter a **Name** and optional **Description**. Names must be unique (case-insensitive) and between 1 and 255 characters.
 3. Select the **Source Type**. This value is permanent — it can't be changed after the group is created.
 4. Select or create a **Service Account**. The wizard filters available accounts to those compatible with the selected source type. To create a new account inline, click **+** next to the field.
-5. Set **Max Concurrent Scans**. This controls how many sources within the group can scan simultaneously. The default is 1. See [Scans](scans.md) for guidance on choosing a value.
-6. For Active Directory and File Server groups, optionally add **Scanner Labels** to route scans to a specific scanner pool. See [Scanners](scanners/overview.md).
-7. Add sources and configure scan parameters. You can also add sources later from the group detail view.
-8. Click **Save**.
+5. For Active Directory and File Server groups, optionally add **Scanner Labels** to route scans to a specific scanner pool. See [Scanners](scanners/overview.md).
+6. Add sources and configure scan parameters. You can also add sources later from the group detail view.
+7. Click **Save**.
 
 :::warning
 Changing the source type is not possible after a source group is created. If you need a different source type, create a new source group and delete the original.
@@ -47,7 +46,6 @@ Changing the source type is not possible after a source group is created. If you
 2. Modify any of the following fields:
    - Name and description
    - Service account
-   - Max concurrent scans
    - Scanner labels
    - Status (Active or Inactive)
 3. Click **Save**.
@@ -72,7 +70,7 @@ You can't remove a source that has a scan in a pending, running, pausing, paused
 
 ## Run scans
 
-To start scans across all sources in a group, click the **Run** button in the actions menu for the group. Access Analyzer queues scan executions for every configured scan in the group, subject to the **Max Concurrent Scans** limit.
+To start scans across all sources in a group, click the **Run** button in the actions menu for the group. Access Analyzer queues scan executions for every configured scan in the group.
 
 To run scans for a single source, open the source from the **View Sources** drawer and use the source-level run action.
 
@@ -98,6 +96,5 @@ You can't delete a source group while any of its scans are in a pending, running
 | **Name** | 1–255 characters; must be unique (case-insensitive) across all source groups |
 | **Description** | Maximum 10,000 characters |
 | **Source type** | Set at creation; can't be changed afterward |
-| **Max concurrent scans** | 1–30; default is 1 |
 | **Delete** | Blocked while any source has an active scan execution |
 | **Remove source** | Blocked while that source has an active scan execution |

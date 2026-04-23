@@ -11,7 +11,7 @@ Deploying a scanner registers a remote Linux host as a custom scanner node in Ac
 ## Before you begin
 
 - Confirm the scanner host meets all [requirements](./requirements.md).
-- Create an **SSH Username / SSH Key** service account in Access Analyzer with access to the scanner host. You can also create it inline during the wizard — see step 5 below.
+- Create an **SSH Username / SSH Key** service account in Access Analyzer with access to the scanner host. You can also create it inline during the wizard — see step 7 below.
 - Have the scanner host's public SSH host key ready. You can retrieve it by running the following command from any machine that can reach the host, replacing `<host>` with the scanner's hostname or IP address:
 
   ```bash
@@ -24,16 +24,18 @@ Deploying a scanner registers a remote Linux host as a custom scanner node in Ac
 
 1. Navigate to **Configuration** > **Scanners**.
 2. Click **Deploy Scanner**. The Deploy Scanner drawer opens.
-3. In the **Name or IP** field, enter the hostname or IP address of the scanner host (for example, `scanner01.company.com` or `192.168.1.50`).
-4. In the **SSH Host Key** field, paste the public SSH host key you retrieved during preparation. Access Analyzer uses this key to verify the host identity during registration.
-5. In the **Service Account** dropdown, select the SSH Username / SSH Key account that has access to the scanner host.
+3. In the **Name** field, enter a display name for the scanner (for example, `Production Scanner`). This name identifies the scanner in the Scanners table and in source group configuration.
+4. In the **SSH Host** field, enter the hostname or IP address of the scanner host (for example, `node01.company.com` or `192.168.1.50`).
+5. In the **SSH Host Key** field, paste the public SSH host key you retrieved during preparation. Access Analyzer uses this key to verify the host identity during registration.
+6. In the **SSH Port** field, enter the SSH port if your scanner host uses a non-standard port. Defaults to `22` if left blank.
+7. In the **Service Account** dropdown, select the SSH Username / SSH Key account that has access to the scanner host.
 
    - To create a new service account without leaving the wizard, click **+** next to the dropdown. The account type is pre-set to SSH Username / SSH Key. After saving, the new account is automatically selected and all other fields are preserved.
    - To edit the selected account, click the pencil icon. The SSH key field is blank in edit mode — you must re-enter the private key before saving.
 
-6. Under **Labels**, add at least one label. Labels are required and are used to route scans from source groups to this scanner.
+8. Under **Labels**, add at least one label. You must add at least one label before the scanner can be deployed — the **Deploy** button remains disabled until a label is applied.
 
-   - Enter a key and a value, then press **Enter**. The label appears as a chip.
+   - Enter a key and a value, then click **Add**. The label appears as a chip.
    - To add additional labels, repeat the process.
    - To remove a label, click the **×** on its chip.
    - Label keys and values are automatically normalized to lowercase with spaces converted to hyphens.
@@ -42,9 +44,9 @@ Deploying a scanner registers a remote Linux host as a custom scanner node in Ac
    Previously used labels appear as chips you can click to pre-fill the key and value fields. This helps you apply consistent labels across multiple scanners.
    :::
 
-7. Optionally, click **Test Connection** to verify that Access Analyzer can reach the scanner host over SSH before deploying. A green indicator confirms connectivity; a red indicator with a message identifies the problem.
+9. Optionally, click **Test connection** to verify that Access Analyzer can reach the scanner host over SSH before deploying. A green indicator confirms connectivity; a red indicator with a message identifies the problem.
 
-8. Click **Deploy**. Access Analyzer connects to the scanner host over SSH and runs the registration script.
+10. Click **Deploy**. Access Analyzer connects to the scanner host over SSH and runs the registration script.
 
 ## What happens during registration
 

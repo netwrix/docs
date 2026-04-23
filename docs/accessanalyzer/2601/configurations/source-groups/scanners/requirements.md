@@ -30,6 +30,20 @@ The registration script runs automatically over SSH. Before registering a scanne
 - `bash` is installed
 - The SSH service account used during registration has passwordless `sudo` access
 
+### Preflight checks
+
+When you click **Deploy** in the Deploy Scanner wizard, Access Analyzer runs the following preflight checks on the target host before installing k3s. All checks must pass for registration to proceed.
+
+| Check | Requirement |
+|-------|-------------|
+| `curl` available | `curl` must be installed and on the system PATH |
+| `bash` available | `bash` must be installed and on the system PATH |
+| Passwordless sudo | The SSH service account must be able to run `sudo` without a password prompt |
+| Internet access | The host must be able to reach `https://get.k3s.io` to download the k3s installer |
+| Disk space | At least 5 GB free on `/` |
+| Memory | At least 512 MB available RAM |
+| CPU | At least 2 CPU cores |
+
 ## Network requirements
 
 ### Ports
@@ -41,15 +55,23 @@ The registration script runs automatically over SSH. Before registering a scanne
 
 Port 22 is only required during the initial registration. After the scanner is registered, the scanner host connects outbound to the Access Analyzer server on port 6443 to receive and run scan jobs. Port 22 can be restricted or closed after registration is complete.
 
+:::note
+The SSH port defaults to **22** but is configurable in the Deploy Scanner wizard. If your scanner host runs SSH on a non-standard port, enter it in the **SSH Port** field during deployment.
+:::
+
 ### Internet access
 
-The registration script downloads the k3s installer from `https://get.k3s.io`. The scanner host must be able to reach this URL during registration. After registration completes, internet access is not required for normal scan operation.
+The registration script downloads the k3s installer from `https://get.k3s.io`. The scanner host must be able to reach this URL **during registration only**. After registration completes, internet access is not required for normal scan operation.
 
 ## Service account
 
 Scanner deployment requires an **SSH Username / SSH Key** service account in Access Analyzer. This account must:
 
 - Have SSH access to the scanner host
-- Use an unencrypted private key in PEM format
+- Use an **unencrypted** private key in PEM format
 
-See [SSH Username / SSH Key](../../service-accounts/ssh-username-key.md) to create this account. You can also create it inline from the Deploy Scanner wizard without navigating away.
+:::warning
+Passphrase-protected private keys are not supported. The registration script will fail if the key requires a passphrase. Use a key generated without a passphrase, or strip the passphrase before creating the service account.
+:::
+
+See [SSH Username / SSH Key](../../service-accounts/ssh-username-key.md) to create this account. You can also create it inline from the Deploy Scanner wizard using the **+** button next to the Service Account field without navigating away.
