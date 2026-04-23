@@ -32,3 +32,11 @@ See [Client ID/Certificate service account](../../configurations/service-account
 - The application's **Tenant ID** and **Client ID**.
 - A Client ID and Certificate service account created in Access Analyzer.
 - Network connectivity from the Access Analyzer server to port 443 confirmed.
+
+:::note
+Access Analyzer reads MIP sensitivity labels on SharePoint Online files during Sensitive Data scans. Labels are collected and surfaced in scan results — no changes are made to labels on any scanned file.
+:::
+
+:::note
+**Sensitive Data scans require a completed Access scan.** The Access scan builds the site and document library inventory that the Sensitive Data scan uses. Run the Access scan first, then enable Sensitive Data on a subsequent scan. Enabling both on the very first scan is supported but will extend the initial scan duration.
+:::

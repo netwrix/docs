@@ -40,3 +40,11 @@ See [Username and Password](../../configurations/service-accounts/username-passw
 - The hostname or IP address of each file server you plan to add.
 - A Username and Password service account created in Access Analyzer with read access to the target file servers.
 - Network connectivity from the Access Analyzer server to port 445 on each file server confirmed.
+
+:::note
+When you add a file server source group, Access Analyzer automatically creates a **Local Users and Groups** scan for each host. This scan collects local user and group accounts directly from the file server and runs alongside your Access and Sensitive Data scans.
+:::
+
+:::note
+File activity reports — including open, modify, and delete events, and anomaly detection — require a separate **Netwrix Activity Monitor** deployment. Without Activity Monitor, activity-related reports will show no data. See [File Activity Monitoring](../../overview/overview.md#key-capabilities) for details.
+:::

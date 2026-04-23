@@ -8,6 +8,10 @@ sidebar_position: 1
 
 Access Analyzer connects to Microsoft Entra ID to synchronize users, groups, role assignments, and Microsoft Information Protection (MIP) sensitivity labels from your tenant. MIP labels — defined in Microsoft Purview — are retrieved during the scan and made available in the Sensitive Data configuration, where you can map them to sensitive data types for use in file server and SharePoint Online scans.
 
+:::note
+MIP sensitivity labels are collected during the Entra ID sync and become available for use in **File Server** and **SharePoint Online** Sensitive Data scans. Run the Entra ID scan at least once before enabling MIP label detection in those source groups.
+:::
+
 ## Prerequisites
 
 Before setting up an Entra ID source group, confirm that your environment meets the requirements below. The source group wizard connects to Microsoft Entra ID over HTTPS using a registered application's client credentials, so the Access Analyzer server must be able to reach the Microsoft identity platform and an app registration must be configured in your tenant with the required API permissions.

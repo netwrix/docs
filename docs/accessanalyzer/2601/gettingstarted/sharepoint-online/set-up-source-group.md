@@ -18,6 +18,10 @@ sidebar_position: 3
 
 6. Under **Certificate**, click **Generate and Download Certificate** to generate a certificate and download it to your machine. Upload this certificate to your registered Entra ID application before proceeding. See [Certificate Configuration](../../connectors/sharepoint-online/tenant-certificate-config.md) for upload steps.
 
+   :::note
+   If you click **Regenerate Certificate** in the future, the new certificate must be uploaded to your Entra ID App Registration to replace the old one. Removing the old certificate from the App Registration is a manual step in the Azure portal — Access Analyzer cannot remove it on your behalf.
+   :::
+
 7. Click **Test Connection** to verify that Access Analyzer can authenticate to your SharePoint Online tenant. Resolve any failures before proceeding.
 
 8. Click **Next**.
