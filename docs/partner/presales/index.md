@@ -11,18 +11,25 @@ The following learning paths provide Partner certification for Presales Engineer
 * Data Security Platform
     * AI Governance Use Case
         * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
+        * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
+        * [Netwrix Access Analyzer 26+ Presales Engineer](./access-analyzer-26+.md)
         * [Netwrix Endpoint Protector Presales Engineer](./endpoint-protector.md)
     * Data Security Posture Management Use Case
         * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
+        * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
+        * [Netwrix Access Analyzer 26+ Presales Engineer](./access-analyzer-26+.md)
         * [Netwrix Endpoint Protector Presales Engineer](./endpoint-protector.md)
     * Data Access Governance Use Case
         * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
         * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
+        * [Netwrix Access Analyzer 26+ Presales Engineer](./access-analyzer-26+.md)
     * Data Loss Prevention Use Case
         * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
         * [Netwrix Endpoint Protector Presales Engineer](./endpoint-protector.md)
     * Data Discovery & Classification Use Case
         * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
+        * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
+        * [Netwrix Access Analyzer 26+ Presales Engineer](./access-analyzer-26+.md)
         * [Netwrix Data Classification Presales Engineer](./data-classification.md)
 * Identity Security Platform
     * Identity Threat Detection & Response Use Case
@@ -44,8 +51,11 @@ The following learning paths provide Partner certification for Presales Engineer
         * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
         * [Netwrix Auditor Presales Engineer](./auditor.md)
         * [Netwrix Directory Manager Presales Engineer](./directory-manager.md)
+        * [Netwrix Identity Recovery Presales Engineer](./identity-recovery.md)
         * [Netwrix Password Secure Presales Engineer](./password-secure.md)
         * [Netwrix PingCastle Presales Engineer](./pingcastle.md)
+        * [Netwrix Threat Manager Presales Engineer](./threat-manager.md)
+        * [Netwrix Threat Prevention Presales Engineer](./threat-prevention.md)
 * Other Certifications
     * [Netwrix Change Tracker Presales Engineer](./change-tracker.md)
     * [Netwrix Platform Governance for NetSuite Presales Engineer](./platform-governance-for-netsuite.md)
