@@ -1,9 +1,9 @@
 ---
-title: "SharePoint Online Schema Reference"
+title: "Schema reference"
 sidebar_position: 40
 ---
 
-# SharePoint Online Schema Reference
+# SharePoint Online schema reference
 
 Access Analyzer stores SharePoint Online scan data in the `access_analyzer` ClickHouse database. The tables below are created when you set up a SharePoint Online source group and run a scan. Use this reference when querying scan data directly or integrating Access Analyzer data with external tools.
 
