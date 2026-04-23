@@ -19,7 +19,7 @@ Enforced Encryption.
 Device Control empowers organizations to manage and monitor all device activities at the endpoint,
 ensuring that sensitive data remains protected from unauthorized access or transfer. Content Aware
 Protection extends this security by scanning and detecting sensitive content at all potential exit
-points, whether it is being copied to external devices or transmitted over the internet.
+points, whether users are copying it to external devices or transmitting it over the internet.
 
 Moreover, Endpoint Protector facilitates compliance with regulatory standards such as PCI-DSS,
 HIPAA, and GDPR through predefined discovery patterns and response strategies. It caters to diverse
@@ -33,13 +33,13 @@ safeguard critical business data.
 
 ## Supportability Notice
 
-**Netwrix Endpoint Protector 2509 is now the current supported version.** To ensure optimal security, performance, and access to the latest features, we recommend upgrading to version 2509 or later.
+**Netwrix Endpoint Protector 2509 is now the current supported version.** To ensure optimal security, performance, and access to the latest features, Netwrix recommends upgrading to version 2509 or later.
 
 ### Support Status Overview
 
-- **Current Version (2509+)**: Full active support with new features, security updates, and comprehensive technical assistance
-- **Previous Versions (5.9.4.2 and earlier)**: Limited support until **December 29, 2025**
-- **After December 29, 2025**: All previous versions transition to discontinued support
+- **Current EPP Server Version (2602)**: Full active support with new features, security updates, and comprehensive technical assistance
+- **Current EPP Client & EE Version (2602)**: Full active support with new features, security updates, and comprehensive technical assistance
+- **Previous Versions (5.9.4.2 and earlier)**: All previous versions transition to discontinued support
 
 ### What This Means
 
@@ -51,7 +51,7 @@ safeguard critical business data.
 
 ### Stay Protected
 
-For detailed information about our support policies and recommended upgrade paths, visit our **Supportability** section, which includes both [Client Statement](supportability/client-supportability.md) and [Server Statement](supportability/server-supportability.md) guidance.
+For detailed information about the support policies and recommended upgrade paths, visit the **Supportability** section, which includes both [Client Statement](supportability/client-supportability.md) and [Server Statement](supportability/server-supportability.md) guidance.
 
 ## Getting Started
 
