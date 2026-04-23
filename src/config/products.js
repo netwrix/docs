@@ -522,12 +522,13 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: 'current',
-        label: 'current',
+        version: '2.22',
+        label: '2.22',
         isLatest: true,
-        sidebarFile: './sidebars/privilegesecurediscovery.js',
+        sidebarFile: './sidebars/privilegesecurediscovery/2.22.js',
       },
     ],
+    defaultVersion: '2.22',
   },
   {
     id: 'recoveryforactivedirectory',
@@ -770,8 +771,6 @@ export function hasKBContent(productId) {
   const kbProducts = [
     '1secure', 'accessanalyzer', 'accessinformationcenter', 'activitymonitor',
     'auditor', 'changetracker', 'dataclassification', 'directorymanager',
-    'endpointprotector', 'passwordpolicyenforcer',
-    'passwordreset', 'privilegesecure', 'privilegesecurediscovery',
     'policypak', 'endpointprotector', 'passwordpolicyenforcer',
     'passwordreset', 'pingcastle', 'privilegesecure', 'privilegesecurediscovery',
     'threatmanager', 'threatprevention'
