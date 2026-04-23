@@ -4,6 +4,9 @@ description: "Configure email server settings and OAuth 2.0 authentication for M
 sidebar_position: 35
 ---
 
+![OAuth Email Settings](OAuthMailSettings.png)
+
+
 # Mail Settings
 
 From this section, you can configure the email server settings that Endpoint Protector uses to send notifications, alerts, and test emails.
@@ -79,6 +82,60 @@ OAuth is supported for Microsoft Exchange Online. Your subscription must be one 
 **Step 3 –** Go to **Client Credentials** > **Client Secrets**. Create a new client secret and copy the value.
 
 **Step 4 –** Go to **API Permissions** > **Add a permission** > **Microsoft Graph** > **Delegated Permissions**. Select **SMTP.Send** and **offline_access**, then click **Grant admin consent** for the selected permissions.
+
+
+## Mail Server Logs
+
+![Mail Server Logs](MailServerLogs.png)
+
+From the **Mail Server Logs** tab you can review the errors captured when Endpoint Protector tries to send a message through the configured email server. Use this view to troubleshoot delivery failures directly from the UI instead of opening a shell on the appliance.
+
+Access the logs from **System Configuration** > **Mail Settings** > **Mail Server Logs** tab.
+
+### Log columns
+
+| Column | Description |
+|---|---|
+| Authentication Type | Whether the send attempt used **Basic** or **OAuth** authentication |
+| Status | Status of the captured event (currently `error` for all entries) |
+| Log Message | Human-readable error, including the SMTP return code or OAuth error code reported by the server |
+| Registered at | Server timestamp when the error was captured |
+| Mail Settings | Click the row to expand and review the mail server configuration in effect at the time of the error |
+
+### What gets logged
+
+The tab captures the following error categories when encountered during a send attempt:
+
+- **DNS / hostname resolution failures** — for example, *Could not resolve hostname `smtp.office365.com`*
+- **Connection timeouts** — for example, *Connection timed out after 30 seconds while connecting to `smtp.office365.com:587`*
+- **TLS/SSL handshake failures** — for example, *TLS handshake failed - peer certificate validation error*
+- **SMTP server return codes** — including authentication failures (`535`), invalid recipients (`550`), service throttling (`421`), and policy rejections (`554`)
+- **OAuth errors** — Microsoft Azure error codes such as `AADSTS50011` (redirect URI mismatch), `AADSTS700082` (refresh token expired), and `AADSTS7000215` (invalid client secret)
+
+### Row details
+
+Click any row to expand it and review the **Mail Settings** snapshot that was active at the time of the error. The snapshot includes:
+
+- **Basic** entries — Hostname, SMTP Port, Username, Encryption Type
+- **OAuth** entries — Hostname, SMTP Port, Username, Tenant ID, Application (Client) ID, Redirect URI
+
+:::note
+The Client Secret and the OAuth access and refresh tokens are never written to the logs.
+:::
+
+### Supplemental log files
+
+Errors are also written to log files on the appliance for additional context and for cases not captured by the UI:
+
+| Scenario | Log file |
+|---|---|
+| OAuth errors and SMTP errors over SSL/TLS | `/var/eppfiles/epp_logger/epp_mail.log` |
+| Basic authentication using SMTP with TLS 1.3 | `/var/log/mail.log` |
+
+:::note
+Basic authentication errors that occur over SMTP with TLS 1.3 are written only to `/var/log/mail.log` and are not shown in the Mail Server Logs tab. To review those errors, open the file directly on the appliance.
+:::
+
 
 ## UI messages
 

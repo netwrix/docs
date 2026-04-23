@@ -173,7 +173,7 @@ Filters (in addition to common params):
 - `machine_name` (partial match)
 - `client_name` (partial match)
 
-**GET /event-logs/{id}**
+**GET /event-logs/(id)**
 
 Returns a single event log entry by ID.
 
@@ -189,13 +189,13 @@ Filters (in addition to common params):
 - `machine_name` (partial match)
 - `client_name` (partial match)
 
-**GET /device-control-logs/{id}**
+**GET /device-control-logs/(id)**
 
 Returns a single device control log entry by ID.
 
 ### Alert Statuses
 
-**GET /alert-statuses/{id}**
+**GET /alert-statuses/(id)**
 
 Returns a single alert status entry by ID.
 
@@ -219,7 +219,7 @@ Common filters include:
 - `machine_name`
 - `client_name`
 
-**GET /content-filtering-logs/{id}**
+**GET /content-filtering-logs/(id)**
 
 Returns a single log entry (includes fields excluded from list responses for performance).
 
@@ -227,7 +227,7 @@ Returns a single log entry (includes fields excluded from list responses for per
 
 Lists content filtering alert definitions.
 
-**GET /content-filtering-alerts/{id}**
+**GET /content-filtering-alerts/(id)**
 
 Returns a single alert definition.
 
@@ -257,7 +257,7 @@ Lists EasyLock send alert log entries.
 
 ### Data at Rest (eDiscovery)
 
-**GET /data-rest-alerts/{id}**
+**GET /data-rest-alerts/(id)**
 
 Returns a single Data-at-Rest alert entry by ID.
 
@@ -267,7 +267,7 @@ Returns a single Data-at-Rest alert entry by ID.
 
 Lists SCIM API request logs.
 
-**GET /scim-logs/{id}**
+**GET /scim-logs/(id)**
 
 Returns a single SCIM log entry including request/response bodies.
 
@@ -279,7 +279,7 @@ Lists authentication attempt logs. Date field: `created_at`
 
 ### Export Logs
 
-**GET /export-logs/{id}**
+**GET /export-logs/(id)**
 
 Returns a single export job log entry by ID.
 

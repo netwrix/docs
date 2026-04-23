@@ -63,7 +63,7 @@ nginx -t && /etc/init.d/nginx reload
 ```
 
 :::note
-Some Endpoint Protector operations regenerate the nginx configuration from templates. To persist this change across updates, also add the same block to the nginx template files. See [Logs REST API Installation](/docs/endpointprotector/admin/logsrestapi/installation.md) for details.
+Some Endpoint Protector operations regenerate the nginx configuration from templates. To persist this change across updates, also add the same block to the nginx template files. See the Logs REST API Installation document for details.
 :::
 
 ## Step 2 — Create the api_key table (if missing)

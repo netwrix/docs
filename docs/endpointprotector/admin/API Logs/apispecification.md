@@ -178,7 +178,7 @@ Example:
 GET /api/logs/event-logs?machine_name=WORKSTATION&start_date=2025-01-01&per_page=10
 ```
 
-**GET /event-logs/{id}**
+**GET /event-logs/(id)**
 
 Returns a single event log entry by ID with the same fields as the list endpoint.
 
@@ -229,13 +229,13 @@ Response fields:
 | `timestamp` | `olog.timestamp` | Unix timestamp |
 | `department_id` | `olog.department_id` | Department ID |
 
-**GET /device-control-logs/{id}**
+**GET /device-control-logs/(id)**
 
 Returns a single device control log entry by ID with the same fields as the list endpoint.
 
 ### Alert Statuses
 
-**GET /alert-statuses/{id}**
+**GET /alert-statuses/(id)**
 
 Returns a single alert status entry by ID.
 
@@ -287,7 +287,7 @@ Response fields: `id`, `loclogid`, `event_id`, `machine_id`, `machine_name`, `ip
 Hash columns (`loghash`, `loghasht`, etc.) are excluded from list responses for performance. Use the detail endpoint to retrieve all fields.
 :::
 
-**GET /content-filtering-logs/{id}**
+**GET /content-filtering-logs/(id)**
 
 Returns a single content filtering log with all fields (including hash columns and `event_name`).
 
@@ -301,7 +301,7 @@ Filters: `event_id`, `content_policy`, `department_id`
 
 Response fields: `id`, `name`, `department_id`, `group_id`, `machine_id`, `client_id`, `content_policy`, `event_id`, `old_alert`, `created_at`, `created_by_user_id`, `event_name`
 
-**GET /content-filtering-alerts/{id}**
+**GET /content-filtering-alerts/(id)**
 
 Returns a single content filtering alert by ID with event name.
 
@@ -351,7 +351,7 @@ Response fields: `id`, `event_id`, `machine_id`, `user_id`, `group_id`, `status`
 
 ### Data at Rest
 
-**GET /data-rest-alerts/{id}**
+**GET /data-rest-alerts/(id)**
 
 Returns a single Data-at-Rest alert with event name.
 
@@ -380,7 +380,7 @@ Response fields: `id`, `timestamp`, `request_id`, `http_method`, `endpoint`, `st
 `request_body` and `response_body` are excluded from list responses. Use the detail endpoint.
 :::
 
-**GET /scim-logs/{id}**
+**GET /scim-logs/(id)**
 
 Returns a single SCIM log entry including `request_body` and `response_body`.
 
@@ -404,7 +404,7 @@ Response fields: `id`, `user_id`, `ip`, `number_attempts`, `block`, `created_at`
 
 ### Export Logs
 
-**GET /export-logs/{id}**
+**GET /export-logs/(id)**
 
 Returns a single export log entry including the `description` field.
 

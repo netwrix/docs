@@ -508,7 +508,7 @@ the System Administrators section.
 
 ## E-mail Server Settings
 
-:::note
+:::warning
 The E-mail Server Settings have been moved to a new section. Go to **System Configuration** > **[Mail Settings](/docs/endpointprotector/admin/systemconfiguration/mailsettings.md)** to configure email server settings and authentication.
 :::
 
