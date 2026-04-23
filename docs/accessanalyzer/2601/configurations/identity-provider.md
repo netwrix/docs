@@ -18,9 +18,6 @@ Before completing the steps below, confirm that the infrastructure and network r
 
 | Type | Description |
 | --- | --- |
-| **Entra ID (OIDC)** | Access Analyzer redirects users to Microsoft Entra ID for authentication using OpenID Connect. |
-| **Entra ID (SAML)** | Access Analyzer redirects users to Microsoft Entra ID for authentication using SAML 2.0. |
-| **Generic SAML** | Access Analyzer redirects users to any SAML 2.0-compliant identity provider (Okta, ADFS, and others). |
 | **LDAP / Active Directory** | Access Analyzer connects directly to your LDAP directory or Active Directory. Users enter their directory credentials on the Access Analyzer login page — no redirect occurs. |
 
 ## Part 1: Configure your identity provider
@@ -28,6 +25,8 @@ Before completing the steps below, confirm that the infrastructure and network r
 :::tip
 For a complete Active Directory walkthrough that pairs this user-configuration guide with the installer-side steps, see the [Quick Install](../install/quickinstall.md).
 :::
+
+<!-- HIDDEN: Entra ID (OIDC), Entra ID (SAML), and Generic SAML are post-GA. Uncomment when ready to publish.
 
 ### Entra ID (OIDC)
 
@@ -78,6 +77,8 @@ Register Access Analyzer as a service provider in your IdP using the **SP ACS UR
 | **Entity ID** | Your IdP's issuer/entity identifier |
 | **Signing certificate** | Your IdP's SAML signing certificate in PEM format |
 | **Email attribute name** | The SAML attribute your IdP uses to carry the user's email address (common values: `email`, `mail`, or `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`) |
+
+END HIDDEN -->
 
 ### LDAP / Active Directory
 
@@ -171,7 +172,7 @@ Access Analyzer has three roles. The bootstrap `admin@dspm.local` account is see
 
 ## How sign-in works after IdP is configured
 
-When identity provider integration is active, the Access Analyzer login page redirects users to your IdP (for OIDC and SAML) or presents a credential form that validates against your directory (for LDAP).
+When identity provider integration is active, the Access Analyzer login page presents a credential form that validates against your directory.
 
 On first sign-in, Access Analyzer matches the email address from the IdP token or LDAP directory to the pre-provisioned account and permanently links the IdP identity to that account. On all subsequent sign-ins, the user's unique IdP identifier is used directly.
 

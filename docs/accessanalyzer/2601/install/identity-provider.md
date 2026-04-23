@@ -50,16 +50,21 @@ For full certificate format and preparation details, see [TLS Certificate Requir
 
 | `--idp-type` value | Use case |
 | --- | --- |
+| `ad` | Active Directory via LDAP (on-premises) |
+| `ldap` | Generic LDAP |
+
+<!-- HIDDEN: Post-GA IdP types. Uncomment when ready to publish.
 | `entra-oidc` | Microsoft Entra ID via OIDC (recommended for Entra ID) |
 | `entra-saml` | Microsoft Entra ID via SAML 2.0 |
 | `oidc` | Generic OIDC — Okta, Auth0, Ping Identity, and others |
 | `saml` | Generic SAML 2.0 — Okta, ADFS, and others |
-| `ad` | Active Directory via LDAP (on-premises) |
-| `ldap` | Generic LDAP |
+END HIDDEN -->
 
 :::note
 `--idp-alias` must match `[A-Za-z0-9._-]+` — letters, digits, hyphens, underscores, and dots only. Spaces are not allowed. The alias is shown as the label on the login button.
 :::
+
+<!-- HIDDEN: Entra ID OIDC, Entra ID SAML, Generic OIDC, and Generic SAML are post-GA. Uncomment when ready to publish.
 
 ## Configure Entra ID (OIDC)
 
@@ -143,6 +148,8 @@ Pass the path to the signing certificate PEM file. The installer strips the `---
 
 If your IdP sends the email address under a different attribute name (such as `mail` or a URI), add `--saml-email-attribute <attribute-name>`.
 
+END HIDDEN -->
+
 ## Configure Active Directory
 
 :::tip
@@ -212,10 +219,11 @@ If IdP configuration fails after the cluster is already running, use `--configur
 ```bash
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- \
   --configure-idp-only \
-  --idp-type entra-oidc \
-  --idp-alias entra-id \
-  --entra-tenant-id <tenant-id> \
-  --oidc-client-id <client-id>
+  --idp-type ad \
+  --idp-alias active-directory \
+  --ldap-url ldaps://dc.corp.example.com:636 \
+  --ldap-bind-dn "CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com" \
+  --ldap-users-dn "OU=Users,DC=corp,DC=example,DC=com"
 ```
 
 :::note
@@ -246,6 +254,8 @@ kubectl exec -n access-analyzer statefulset/keycloak -- bash -c '
 :::note
 The bootstrap admin credentials are read from environment variables already present in the pod. Don't pass them as command-line arguments — they would appear in Kubernetes audit logs.
 :::
+
+<!-- HIDDEN: Manual OIDC/SAML configuration sections are post-GA. Uncomment when ready to publish.
 
 ### Configure Entra ID (OIDC) — manual
 
@@ -370,6 +380,8 @@ kubectl exec -n access-analyzer statefulset/keycloak -- \
   -s 'config={"syncMode":"INHERIT","attribute.name":"<email-attribute-name>","user.attribute":"email"}'
 ```
 
+END HIDDEN -->
+
 ### Configure LDAP / Active Directory — manual
 
 **Required values:** LDAP server URL, service account DN, service account password, users base DN
@@ -447,13 +459,6 @@ kubectl exec -n access-analyzer statefulset/keycloak -- \
 
 ### Verify the configuration — manual
 
-**OIDC or SAML:**
-
-```bash
-TYPE=oidc ALIAS=entra-oidc ./scripts/verify-idp-config.sh
-TYPE=saml ALIAS=entra-saml ./scripts/verify-idp-config.sh
-```
-
 **LDAP (component check only):**
 
 ```bash
@@ -487,9 +492,7 @@ grep -A 20 "Configuring IdP federation" /var/log/dspm-installer.log
 | Message | Likely cause |
 | --- | --- |
 | `Failed to authenticate with Keycloak admin CLI` | Keycloak pod not ready; check pod status below |
-| `Connection refused` or `curl` error in OIDC step | Discovery URL unreachable from the cluster node |
 | `409 Conflict` from `kcadm.sh create` | An IdP with this alias already exists in Keycloak |
-| `File not found` for signing cert | `--saml-signing-cert` path was invalid at install time |
 | `PKIX path building failed` in Keycloak logs (LDAP sign-ins fail silently) | CA bundle is missing the LDAPS DC's CA — see [TLS Certificate Requirements](system/certificates.md#multi-domain-and-multi-ca-environments) |
 
 ### Check Keycloak pod health
@@ -530,14 +533,6 @@ kubectl exec -n access-analyzer statefulset/keycloak -- \
     --server http://localhost:8080/auth --realm master \
     --user "$KC_BOOTSTRAP_ADMIN_USERNAME" \
     --password "$KC_BOOTSTRAP_ADMIN_PASSWORD"
-```
-
-For **OIDC or SAML** IdPs:
-
-```bash
-kubectl exec -n access-analyzer statefulset/keycloak -- \
-  /opt/keycloak/bin/kcadm.sh delete \
-    identity-provider/instances/<alias> -r dspm
 ```
 
 For **LDAP or AD** IdPs (child mappers cascade-delete automatically):

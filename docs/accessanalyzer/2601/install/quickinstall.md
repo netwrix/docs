@@ -1,14 +1,14 @@
 ---
 title: "Quick Install"
-description: "Install Access Analyzer on a fresh Linux VM with Active Directory or Entra ID OIDC authentication, end-to-end"
+description: "Install Access Analyzer on a fresh Linux VM with Active Directory authentication, end-to-end"
 sidebar_position: 5
 ---
 
 # Quick Install
 
-This guide walks through installing Access Analyzer on a fresh Linux VM with either **Active Directory** or **Entra ID OIDC** as the identity provider. Follow the prerequisites top-to-bottom, then jump to the option that matches your environment.
+This guide walks through installing Access Analyzer on a fresh Linux VM with **Active Directory** as the identity provider.
 
-For other identity providers (Okta, generic OIDC, SAML) or the CLI-flag reference, see [Configure Identity Provider](identity-provider.md).
+For the CLI-flag reference, see [Configure Identity Provider](identity-provider.md).
 
 ## Prerequisites Checklist
 
@@ -61,7 +61,7 @@ See [TLS Certificate Requirements](system/certificates.md) for the full specific
   ```
 
 :::warning
-`DSPM_HOSTNAME` must be a DNS hostname, **not an IP address**. The browser TLS handshake requires a hostname in the certificate's SAN. Avoid the `.local` and `.localhost` TLDs — both break in-cluster DNS resolution and silently break OIDC login flows.
+`DSPM_HOSTNAME` must be a DNS hostname, **not an IP address**. The browser TLS handshake requires a hostname in the certificate's SAN. Avoid the `.local` and `.localhost` TLDs — both break in-cluster DNS resolution and silently break sign-in flows.
 :::
 
 ### DNS
@@ -71,7 +71,7 @@ The value you pick for `DSPM_HOSTNAME` must resolve to the VM's IP address from:
 - Client browsers — configure a DNS A record, or add an entry to each client's `hosts` file.
 - In-cluster pods — handled automatically by the installer's CoreDNS rewrite. No customer action needed.
 
-### Active Directory information (Option A only)
+### Active Directory information
 
 Gather these values from your directory team before starting:
 
@@ -80,6 +80,8 @@ Gather these values from your directory team before starting:
 - Service account password
 - Base DN where your user accounts are stored (for example, `CN=Users,DC=example,DC=com`)
 - Email attribute name (usually `mail`)
+
+<!-- HIDDEN: Entra ID OIDC (Option B) is post-GA. Uncomment when ready to publish.
 
 ### Entra ID information (Option B only)
 
@@ -107,6 +109,8 @@ Before running the installer, register Access Analyzer as an application in your
 | **Tenant ID** | Directory (tenant) ID | Entra admin center > Overview > Directory (tenant) ID |
 | **Client ID** | Application (client) ID | App registration > Overview > Application (client) ID |
 | **Client Secret** | OIDC client secret — entered at the interactive prompt during install | Certificates & secrets — copy immediately after creation |
+
+END HIDDEN -->
 
 ### Connector port requirements
 
@@ -168,7 +172,7 @@ All outbound endpoints use HTTPS (port 443). The following domains must be reach
 
 ---
 
-## Option A: Active Directory Authentication
+## Active Directory Authentication
 
 ### Step 1: Prepare the VM — upload certs and trust the CA
 
@@ -309,6 +313,8 @@ The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Adm
 
 ---
 
+<!-- HIDDEN: Option B (Entra ID OIDC) is post-GA. Uncomment when ready to publish.
+
 ## Option B: Entra ID Authentication (OIDC)
 
 ### Step 1: Prepare the VM — upload certs and trust the CA
@@ -396,6 +402,8 @@ The same bootstrap account flow applies for Entra ID as for AD. Follow [Option A
 
 1. Navigate to `https://<DSPM_HOSTNAME>`.
 2. Enter the email and password for a pre-provisioned Entra ID user and sign in.
+
+END HIDDEN -->
 
 ---
 

@@ -53,6 +53,41 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
 The version number for each Access Analyzer release will be published here before general availability. Replace `[VERSION]` with the version string provided in the release notes.
 :::
 
+## Environment Variables
+
+Most options can be set as environment variables instead of command-line flags. This is the recommended style for scripted or automated deployments — see the [Quick Install](quickinstall.md) for an end-to-end example.
+
+Export the variables before running the installer. When the same option is set as both an environment variable and a command-line flag, the flag takes precedence.
+
+| Environment variable | Equivalent flag | Example |
+| --- | --- | --- |
+| `LICENSE_KEY` | `--license-key` | `NWRX-XXXX-XXXX-XXXX` |
+| `DSPM_HOSTNAME` | `--hostname` | `aa2601.corp.example.com` |
+| `DSPM_TARGET_REVISION` | `--target-revision` | `1.*` (latest stable) or `0.3.362-dev` |
+| `SIZE` | `--size` | `1` (default), `2`, up to `10` |
+| `TLS_CERT_FILE` | `--tls-cert` | `/opt/dspm-tls/aa2601.crt` |
+| `TLS_KEY_FILE` | `--tls-key` | `/opt/dspm-tls/aa2601.key` |
+| `TLS_CA_BUNDLE_FILE` | `--ca-bundle` | `/opt/dspm-tls/ca-bundle.crt` |
+| `IDP_TYPE` | `--idp-type` | `ad`, `ldap` |
+| `IDP_ALIAS` | `--idp-alias` | `corporate-ad` (no spaces) |
+| `LDAP_URL` | `--ldap-url` | `ldaps://dc01.example.com:636` |
+| `LDAP_BIND_DN` | `--ldap-bind-dn` | `CN=svc-dspm,OU=ServiceAccounts,DC=example,DC=com` |
+| `LDAP_USERS_DN` | `--ldap-users-dn` | `CN=Users,DC=example,DC=com` |
+| `LDAP_EMAIL_ATTRIBUTE` | `--ldap-email-attribute` | `mail` (default) |
+| `LDAP_BIND_CREDENTIAL` | (secret — see Quick Install) | (see Quick Install) |
+| `POSTGRES_DATA_DIR` | `--postgres-data-dir` | `/mnt/ssd/postgres` |
+| `CLICKHOUSE_DATA_DIR` | `--clickhouse-data-dir` | `/mnt/nvme/clickhouse` |
+| `ACCEPT_WARNINGS` | `--accept-warnings` | `true` |
+| `LOG_LEVEL` | `--log-level` | `info` (default), `debug`, `warn`, `error` |
+| `HTTP_PROXY` / `HTTPS_PROXY` | (no flag) | `http://proxy.example.com:8080` |
+| `NO_PROXY` | (no flag) | `localhost,127.0.0.1,.svc,.cluster.local` |
+| `SKIP_AV_CHECK` | (no flag) | `true` |
+| `DRY_RUN` | `--dry-run` | `true` |
+
+:::note
+`LDAP_BIND_CREDENTIAL` is the only secret environment variable, and the installer does not actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
+:::
+
 ## Running the Installer
 
 When you run the curl command above, the installer automatically:
@@ -131,6 +166,59 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
 
 The log is written to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. Terminal progress output is not affected — only the log file verbosity changes.
 
+## Identity Provider Flags
+
+The table below lists every IdP flag the installer accepts. For end-to-end examples, see one of these walkthroughs:
+
+- [Quick Install](quickinstall.md) — Active Directory deployment using environment variables (recommended for most customers)
+- [Configure Identity Provider](identity-provider.md) — example commands for Active Directory and LDAP, plus recovery with `--configure-idp-only`
+
+| Flag | Default | Description |
+| --- | --- | --- |
+| `--idp-type <type>` | — | Federation type: `ad`, `ldap` |
+| `--idp-alias <label>` | — | Login button label |
+| `--ldap-url <url>` | — | LDAP server URL |
+| `--ldap-bind-dn <dn>` | — | Service account distinguished name |
+| `--ldap-users-dn <dn>` | — | Base DN for user search |
+| `--ldap-email-attribute <attr>` | `mail` | LDAP attribute carrying the user email |
+| `--configure-idp-only` | — | Retry IdP configuration without reinstalling the cluster |
+
+## Configuration File
+
+If you run the installer on multiple servers with the same options, you can store common settings in `~/.dspm/installer.yaml` to avoid repeating them every time:
+
+```yaml
+# ~/.dspm/installer.yaml
+log-level: info
+postgres-data-dir: /mnt/ssd/postgres
+clickhouse-data-dir: /mnt/nvme/clickhouse
+size: 2
+```
+
+Don't store your license key in this file. Use the `LICENSE_KEY` environment variable instead.
+
+**Precedence order** (highest to lowest): command-line flags > environment variables > configuration file > defaults.
+
+## Preflight Check Requirements
+
+The installer checks the following before installation begins. Results are written to `/var/log/dspm-preflight.json`.
+
+| Check | Fail | Warn |
+|---|---|---|
+| **RAM** | Less than 24 GB total | Less than 48 GB total |
+| **CPU** | Fewer than 6 cores | — |
+| **Disk** | Less than 20 GB free on `/var` | — |
+| **Cgroups** | Not available at `/sys/fs/cgroup` | — |
+| **Overlay kernel module** | — | Not loaded |
+| **OS family** | — | Unrecognized Linux distribution |
+| **SELinux** | — | SELinux in enforcing mode |
+| **Antivirus** | — | Known antivirus software detected |
+| **Network** | DNS resolution fails for a required domain | TCP connection timeout to a required domain |
+
+A **FAIL** result stops the installer and must be resolved. A **WARN** result also stops the installer by default — see [If the Installer Stops with Warnings](#if-the-installer-stops-with-warnings) below.
+
+For the full list of required network domains, see [Network and Port Requirements](/docs/accessanalyzer/2601/install/system/network).
+
 ## If the Installer Stops with Warnings
 
 By default, the installer stops when a preflight warning is detected. In some cases you may know the warning is acceptable for your environment. Use `--accept-warnings` to allow installation to continue:
@@ -149,26 +237,6 @@ Before using this option, identify which warning is being reported and review th
 | Antivirus software detected | An antivirus agent is running and may interfere with container storage paths. | Configure exclusions for the k3s paths listed in the warning output before accepting. |
 
 If you're unsure whether a warning is safe to accept, contact Netwrix Support before proceeding.
-
-## Preflight Check Requirements
-
-The installer checks the following before installation begins. Results are written to `/var/log/dspm-preflight.json`.
-
-| Check | Fail | Warn |
-|---|---|---|
-| **RAM** | Less than 24 GB total | Less than 48 GB total |
-| **CPU** | Fewer than 6 cores | — |
-| **Disk** | Less than 20 GB free on `/var` | — |
-| **Cgroups** | Not available at `/sys/fs/cgroup` | — |
-| **Overlay kernel module** | — | Not loaded |
-| **OS family** | — | Unrecognized Linux distribution |
-| **SELinux** | — | SELinux in enforcing mode |
-| **Antivirus** | — | Known antivirus software detected |
-| **Network** | DNS resolution fails for a required domain | TCP connection timeout to a required domain |
-
-A **FAIL** result stops the installer and must be resolved. A **WARN** result also stops the installer by default — see [If the Installer Stops with Warnings](#if-the-installer-stops-with-warnings) above.
-
-For the full list of required network domains, see [Network and Port Requirements](/docs/accessanalyzer/2601/install/system/network).
 
 ## If the Installer Fails
 
@@ -191,78 +259,3 @@ The exit code indicates which phase failed:
 | `71` | App startup | A pod entered a permanent failure state. Run `kubectl get pods -A` to identify it, then contact Netwrix Support |
 | `80` | Preflight | Resolve the reported system requirement and retry |
 | `90` | IdP configuration | IdP setup failed after the cluster was deployed. Check the log for the specific error, then use `--configure-idp-only` to retry |
-
-## Environment Variables
-
-Most options can be set as environment variables instead of command-line flags. This is the recommended style for scripted or automated deployments — see the [Quick Install](quickinstall.md) for an end-to-end example.
-
-Export the variables before running the installer. When the same option is set as both an environment variable and a command-line flag, the flag takes precedence.
-
-| Environment variable | Equivalent flag | Example |
-| --- | --- | --- |
-| `LICENSE_KEY` | `--license-key` | `NWRX-XXXX-XXXX-XXXX` |
-| `DSPM_HOSTNAME` | `--hostname` | `aa2601.corp.example.com` |
-| `DSPM_TARGET_REVISION` | `--target-revision` | `1.*` (latest stable) or `0.3.362-dev` |
-| `SIZE` | `--size` | `1` (default), `2`, up to `10` |
-| `TLS_CERT_FILE` | `--tls-cert` | `/opt/dspm-tls/aa2601.crt` |
-| `TLS_KEY_FILE` | `--tls-key` | `/opt/dspm-tls/aa2601.key` |
-| `TLS_CA_BUNDLE_FILE` | `--ca-bundle` | `/opt/dspm-tls/ca-bundle.crt` |
-| `IDP_TYPE` | `--idp-type` | `ad`, `ldap`, `oidc`, `entra-oidc`, `saml`, `entra-saml` |
-| `IDP_ALIAS` | `--idp-alias` | `corporate-ad` (no spaces) |
-| `LDAP_URL` | `--ldap-url` | `ldaps://dc01.example.com:636` |
-| `LDAP_BIND_DN` | `--ldap-bind-dn` | `CN=svc-dspm,OU=ServiceAccounts,DC=example,DC=com` |
-| `LDAP_USERS_DN` | `--ldap-users-dn` | `CN=Users,DC=example,DC=com` |
-| `LDAP_EMAIL_ATTRIBUTE` | `--ldap-email-attribute` | `mail` (default) |
-| `LDAP_BIND_CREDENTIAL` | (secret — see Quick Install) | (see Quick Install) |
-| `POSTGRES_DATA_DIR` | `--postgres-data-dir` | `/mnt/ssd/postgres` |
-| `CLICKHOUSE_DATA_DIR` | `--clickhouse-data-dir` | `/mnt/nvme/clickhouse` |
-| `ACCEPT_WARNINGS` | `--accept-warnings` | `true` |
-| `LOG_LEVEL` | `--log-level` | `info` (default), `debug`, `warn`, `error` |
-| `HTTP_PROXY` / `HTTPS_PROXY` | (no flag) | `http://proxy.example.com:8080` |
-| `NO_PROXY` | (no flag) | `localhost,127.0.0.1,.svc,.cluster.local` |
-| `SKIP_AV_CHECK` | (no flag) | `true` |
-| `DRY_RUN` | `--dry-run` | `true` |
-
-:::note
-`LDAP_BIND_CREDENTIAL` is the only secret environment variable, and the installer does not actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
-:::
-
-## Identity Provider Flags
-
-The table below lists every IdP flag the installer accepts. For end-to-end examples, see one of these walkthroughs:
-
-- [Quick Install](quickinstall.md) — Active Directory deployment using environment variables (recommended for most customers)
-- [Configure Identity Provider](identity-provider.md) — per-IdP example commands for Entra ID (OIDC/SAML), Okta, generic OIDC, generic SAML, AD, and LDAP, plus recovery with `--configure-idp-only`
-
-| Flag | Default | Description |
-| --- | --- | --- |
-| `--idp-type <type>` | — | Federation type: `entra-oidc`, `entra-saml`, `oidc`, `saml`, `ad`, `ldap` |
-| `--idp-alias <label>` | — | Login button label |
-| `--entra-tenant-id <id>` | — | Azure AD tenant GUID (Entra ID types) |
-| `--oidc-client-id <id>` | — | OIDC application client ID |
-| `--oidc-discovery-url <url>` | — | OIDC discovery endpoint URL (generic OIDC only) |
-| `--saml-sso-url <url>` | — | SAML SSO endpoint URL |
-| `--saml-entity-id <id>` | — | SAML entity ID / audience |
-| `--saml-signing-cert <path>` | — | Path to signing certificate PEM file |
-| `--saml-email-attribute <attr>` | `email` | SAML attribute carrying the user email |
-| `--ldap-url <url>` | — | LDAP server URL |
-| `--ldap-bind-dn <dn>` | — | Service account distinguished name |
-| `--ldap-users-dn <dn>` | — | Base DN for user search |
-| `--ldap-email-attribute <attr>` | `mail` | LDAP attribute carrying the user email |
-| `--configure-idp-only` | — | Retry IdP configuration without reinstalling the cluster |
-
-## Configuration File
-
-If you run the installer on multiple servers with the same options, you can store common settings in `~/.dspm/installer.yaml` to avoid repeating them every time:
-
-```yaml
-# ~/.dspm/installer.yaml
-log-level: info
-postgres-data-dir: /mnt/ssd/postgres
-clickhouse-data-dir: /mnt/nvme/clickhouse
-size: 2
-```
-
-Don't store your license key in this file. Use the `LICENSE_KEY` environment variable instead.
-
-**Precedence order** (highest to lowest): command-line flags > environment variables > configuration file > defaults.
