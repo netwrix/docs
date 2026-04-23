@@ -32,9 +32,9 @@ You can create a New Policy, or edit an existing one:
 - **Customization Policies** impacted customization approval.
 - **Management Policies** executive approver and approval settings.
 - **Change Enablement Defaults** merge approval list, non conforming alerts, and sequential approval requests.
-- **System Information**, **Created By** and **Last Modified By** dates. Informational only, can't be edited.
+- **System Information**, **Created By** and **Last Modified By** dates. Informational only. You can't edit these fields.
 
-After you save the policy, the **System Information** section displays the **Created By** and **Last Modified By** user and timestamp. The **Details** tab shows the information you entered on the form. The Related tab is available to add Customizations and view additional
+After you save the policy, the **System Information** section displays the **Created By** and **Last Modified By** user and timestamp. The **Details** tab shows the information you entered on the form. The **Related** tab lets you add Customizations and view additional
 information and history.
 
 ### Information
@@ -45,15 +45,20 @@ information and history.
 - **Default Policy**: Check if this is the default change/approval policy.
 - **Parent Policy**: Search and add a parent policy (if applicable).
 - **Active**: Check if the policy is active.
+- **Policy Changes Approver**: Search and select the person who must approve changes to this policy.
 
-Set the required Change Level for each Metadata Type. The default is shown in the form.
+:::note
+You can now control whether changes to the Policy require approval. If you enter an approver in the **Policy Changes Approver** field, the policy requires an approved Change Request for any changes. If the field is blank, the policy doesn't require an approved Change Request.
+:::
+
+Set the required Change Level for each Metadata Type. The form shows the default.
 
 | **Change Level**                        | **Description**                                                                                                                                                                         |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Log Changes Only                    | Since the system automatically logs all changes, this change level requires no actions for compliance. Any changes to these objects are automatically marked compliant.                 |
-| Change Request                      | Any changes to these objects require an Approved Change Request.                                                                                                                        |
-| Sandbox Development & Testing       | Any changes to these objects require an Approved Change Request in the Stage Development Project. It also requires that a parent Change Request is attached to the Development Project. |
-| Full Software Development Lifecycle | Any changes to these objects require an Approved Change Request.                                                                                                                        |
+| Log Changes Only                    | Since the scanner automatically logs all changes, this change level requires no actions for compliance. The scanner automatically marks any changes to these components as compliant.        |
+| Change Request                      | Any changes to these components require an Approved Change Request.                                                                                                                        |
+| Sandbox Development & Testing       | Any changes to these components require an Approved Change Request in the Stage Development Project. It also requires that you attach a parent Change Request to the Development Project. |
+| Full Software Development Lifecycle | Any changes to these components require an Approved Change Request in the Stage Deployment Record or Rollback Record.                                                                                                                        |
 
 ### Code and Data Model Changes
 
@@ -87,11 +92,7 @@ Set the required Change Level for each Metadata Type. The default is shown in th
 
 ![Control Change Levels](/images/platgovsalesforce/change_management/policy_new9.webp)
 
-Controls the change level required for different types of changes. Health Check Changes affect the
-way changes are handled for the customization records for each Salesforce Health Check group
-(session settings, file upload and security settings), so you can track and report on current
-settings. There is a [Health Settings](/docs/platgovsalesforce/customizations/understanding_customization_record.md) tab
-for the specific records on the customization record.
+Controls the change level required for different types of changes. 
 
 ### Application Configuration Changes (Data)
 
@@ -104,10 +105,13 @@ See [Set Up Data Tracking](/docs/platgovsalesforce/changemanagement/datatracking
 
 ### Health Check Changes
 
+Health Check Changes affect the way Platform Governance handles changes for the customization records for each Salesforce Health Check group
+(session settings, file upload and security settings), so you can track and report on current
+settings. There is a [Health Settings](/docs/platgovsalesforce/customizations/understanding_customization_record.md) tab
+for the specific records on the customization record.
+
 ![Health Check Changes](/images/platgovsalesforce/change_management/policy_new16_a.webp)
 
-Select the change level for **Health Check Changes**: **None**, **Log Changes Only**, **Change
-Request**, **Sandbox Development & Testing**, or **Full Software Development Lifecycle**.
 
 ### IT Policies
 
@@ -117,12 +121,11 @@ Specify the **Preliminary Approver**. Enter part of the name to see a matching l
 changes, you can also set a **Final Approver**. This person must approve all changes affected by the
 rule.
 
-### Customization Policies
+### Uncategorized Changes
 
-![Customization Policies](/images/platgovsalesforce/change_management/policy_new12.webp)
+![Uncategorized Changes](/images/platgovsalesforce/change_management/policy_new12.webp)
 
-**Require Impacted Customization Approval**: select this option to require approval from all
-impacted Customization owners.
+This change control level applies to any components not included in the other categories.
 
 ### Management Policies
 
@@ -130,47 +133,31 @@ impacted Customization owners.
 
 **Executive Approver**: a business executive who must approve the change.
 
-**Maximum number of Approvals Required**: approval is granted when the specified number of approvals
-is complete. If this field is blank, all approvers must approve.
+**Maximum number of Approvals Required**: Platform Governance grants approval when the specified number of approvers have approved. If this field is blank, all approvers must approve.
 
 **No Order Required**: select this option to allow approvals in any order. If it isn't checked,
 approvals occur in the order specified.
 
-### Change Enablement Defaults
-
-![Change Enablement Defaults](/images/platgovsalesforce/change_management/policy_new15.webp)
-
-**Merge Approval Lists**: select this option to merge lists when multiple policies apply to a
-change.
-
-**Sequential Approval Requests**: select this option to send approval emails one at a time as each
-approver approves the change. If not checked, all approvers receive the approval emails at the same
-time.
-
-**Non-conforming Customization Alerts**: select this option to alert Customization Owners if there
-is a non-conforming change to their Customization.
 
 ## Related
 
-The **Related** tab is available once a policy is saved. You can add and view Customizations, Change
+The **Related** tab is available after you save the policy. You can add and view Customizations, Change
 Logs, Change Requests and view status and history associated with the Policy. Links are available
 for easy navigation to each item.
 
-Change Logs are created when customizations are added or removed.
+The scanner creates Change Logs when you add or remove customizations.
 
 ![Policy Related tab](/images/platgovsalesforce/change_management/policy_related_tab.webp)
 
 ### Add or Remove Customizations
 
-You can add or remove customizations from the **Related** tab on the policy. Custom Fields Inherit
-the CustomObject Policy when added.
+You can add or remove customizations from the **Related** tab on the policy. Custom Fields inherit
+the CustomObject Policy when you add them.
 
-- New Custom Fields are automatically added to the parent **CustomObject** Policy if it exists.
-- Existing Custom Fields are added to the parent **CustomObject** Policy from the Custom Object
-  customization record.
-- Change Logs are generated for customization changes.
-- Changes are reported in the **Reports** > **Change Enablement** > **Change/Approval Policy
-  Changes**.
+- Platform Governance automatically adds new Custom Fields to the parent **CustomObject** Policy if it exists.
+- Platform Governance adds existing Custom Fields to the parent **CustomObject** Policy from the Custom Object customization record.
+- The scanner generates Change Logs for customization changes.
+- Platform Governance reports changes under **Reports** > **Change Enablement** > **Change/Approval Policy Changes**.
 
 1. Open the policy and click the **Related** tab.
 2. Click **Add Customizations**.
@@ -213,5 +200,5 @@ available on the **Related** tab on the policy.
 
 5. Click the right arrow to add selections to the **Selected Salesforce Type List**. Click the left
    arrow to remove items from the selected list.
-6. Click **Save** when complete. A confirmation dialog is displayed. Click **OK** to confirm you
-   want to add all of the customizations from the selected Salesforce types.
+6. Click **Save** when complete. A confirmation dialog appears. Click **OK** to confirm you
+   want to add all the customizations from the selected Salesforce types.

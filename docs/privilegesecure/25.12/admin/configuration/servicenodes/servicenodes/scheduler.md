@@ -42,16 +42,16 @@ The Action Queues tab shows all scheduled services.
 The Action Queues table has the following features:
 
 - Search – Searches the columns to match the search string. When matches are found, the table is
-  filtered to the matching results.
+filtered to the matching results.
 - Refresh button – Reload the information displayed
 - Column headers can be sorted by ascending or descending order:
 
-    - Start Time – Indications when the action started
-    - End Time – Indications when the action completed
-    - Job Name – Name of the scheduled action
-    - AQ Status – Status of the service
-    - AQ Status Description – Describes the status type
-    - Activity Status – Shows status information for the action:
+- Start Time – Indications when the action started
+- End Time – Indications when the action completed
+- Job Name – Name of the scheduled action
+- AQ Status – Status of the service
+- AQ Status Description – Describes the status type
+- Activity Status – Shows status information for the action:
 
-        - Complete – Action completed successfully
-        - Failed – Action failed
+- Complete – Action completed successfully
+- Failed – Action failed

@@ -1,0 +1,16 @@
+@startuml component
+package "TileDesignElement" {
+	class TileDesignElement {
+		DisplayName_L1 : String
+		Identifier : String
+		--
+		Tiles : Tile[]
+	}
+}
+package "Tile" {
+	class Tile {
+	}
+}
+TileDesignElement "1" --  "0..*"Tile
+hide empty members
+@enduml

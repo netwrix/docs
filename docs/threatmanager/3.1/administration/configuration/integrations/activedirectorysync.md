@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Active Directory Sync Page
 
-The Active Directory Sync page within the Integrations interface lists the domains that are synced
-to the Threat Manager database. The sync operation gets all information about an Active Directory
+The Active Directory Sync page within the Integrations interface lists the Active Directory domains synced to the Threat Manager database. The sync operation gets all information about an Active Directory
 environment (users, groups, hosts, etc). See the
 [Permissions for Active Directory Sync ](/docs/threatmanager/3.1/requirements/permissions/adsync.md) topic for
 additional information about the permissions required for Active Directory syncing.
@@ -21,7 +20,7 @@ Directory domains, if any. Each added domain represents a sync policy.
 ![Integrations interface on the Active Directory Sync page](/images/threatmanager/3.0/administration/configuration/integrations/page.webp)
 
 A service named Active Directory Service continuously runs to collect data for the specified
-domain(s). It evaluates the USN value of an object and syncs when the object changes. The table
+domain(s). It evaluates the Update Sequence Number (USN) of an object and syncs when the object changes. The table
 provides the following information:
 
 - Name – Name of the domain. This may be either the domain DNS name or domain controller hostname.
@@ -161,15 +160,14 @@ The Domain Configuration tab displays the following settings:
   article for additional information.
 - Perform a full scan on next run – Indicates whether the next sync will only look for domain
   changes or run a full scan of the domain. By default, this option is enabled for the first sync
-  executed when a new domain is added; however, it is disabled automatically after the first sync.
+  executed when a new domain is added; however, the system disables it automatically after the first sync.
   This can be used to fully refresh domain information, but is typically not needed for normal
   operation.
 - Test Connection – Click **Test Connection** to ensure connection to the domain. This will take a
   moment. Then a message will appear in the upper right corner of the console indicating a
   successful or failed connection.
 
-The Save button is enabled when any settings are modified. Click it to commit the changes before
-leaving the page.
+The Save button activates when you modify any settings. Click it to commit the changes before leaving the page.
 
 ### Sync History Tab
 
@@ -190,7 +188,7 @@ The table provides the following information:
 - Computers Changed – Number of computer objects with changes detected since the last sync
 - Status – Event status for the sync task
 
-The table is designed to display 10 records at a time, by default. However, you can set this to 50,
+By default, the table displays 10 records at a time. However, you can set this to 50,
 100, or 1,000 rows with the drop-down menu above the right corner of the table. There is a search
 box above the left corner of the table. Page navigation buttons are below the table. You can also
 export the data from the current page using the **Export CSV** button.
@@ -238,4 +236,4 @@ full scan of the domain.
 **Step 9 –** The Save button is enabled when any settings are modified. Click it to commit the
 changes before leaving the page.
 
-The changes to the Domain Configuration have been saved.
+Netwrix Threat Manager saves the Domain Configuration changes.

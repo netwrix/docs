@@ -30,7 +30,7 @@ Uninstall all: msiexec /uninstall Netwrix_PPE_Server**version**x64.msi /q
 
 Uninstall only particular feature: msiexec /i _path_to_your_msi_file.msi_ REMOVE=_FeatureName_ /qn
 
-If a reboot was not done, add **/forcerestart** at the end
+If a reboot wasn't done, add **/forcerestart** at the end
 
 ## Mailer
 
@@ -49,4 +49,4 @@ run in this mode. Use the /send parameter judiciously to avoid sending duplicate
 
 To test email delivery options without sending any emails to users, run PPEMail.exe with the /test
 parameter followed by your email address. For example, PPEMail.exe /test johnsmith@netwrix.com. This
-will send one test email to your mail server or pickup folder.
+sends one test email to your mail server or pickup folder.

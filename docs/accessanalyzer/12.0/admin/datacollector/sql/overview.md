@@ -11,7 +11,7 @@ application name of the application responsible for activity events, an IP Addre
 the client server, and sensitive data reports. This data collector also provides information on
 Oracle databases including infrastructure and operations.
 
-The SQL Data Collector has been preconfigured within the Database data collection jobs for Db2,
+The SQL Data Collector comes preconfigured within the Database data collection jobs for Db2,
 MySQL, Oracle, PostgreSQL, Redshift, and SQL Server databases. Both this data collector and the
 Database Solution are available with a special Access Analyzer license. See the following topics for
 additional information:
@@ -85,7 +85,7 @@ For SQL:
 
     - Read access to SQL instance
     - Requires SQL Full-Text and Semantic Extractions for Search feature to be installed on the
-      target SQL instance(s) when using the **Scan full rows for sensitive data** option on the
+      target SQL instances when using the **Scan full rows for sensitive data** option on the
       Options wizard page
     - Grant Authenticate Server to [DOMAIN\USER]
     - Grant Connect SQL to [DOMAIN\USER]
@@ -94,16 +94,16 @@ For SQL:
     - Grant View server state to [DOMAIN\USER]
     - Grant Control Server to [DOMAIN\USER] (specifically required for the Weak Passwords Job)
 
-See the [Azure SQL Auditing Configuration](/docs/accessanalyzer/12.0/requirements/databases/sql/azuresqlaccess.md)
+See the [Azure SQL Auditing Configuration](/docs/accessanalyzer/12.0/requirements/databases/azuresql/azuresqlaccess.md)
 topic and the
-[AzureSQL Target Least Privilege Model](/docs/accessanalyzer/12.0/requirements/databases/sql/azuresql.md)
+[AzureSQL Target Least Privilege Model](/docs/accessanalyzer/12.0/requirements/databases/azuresql/azuresql.md)
 topic for additional information.
 
 **Sensitive Data Discovery Considerations**
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
-of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job
-is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+If running Sensitive Data Discovery (SDD) scans, you must increase the minimum amount of RAM. Each
+thread requires a minimum of 2 additional GB of RAM per host. For example, a job configured to scan
+8 hosts at a time requires an extra 16 GB of RAM (8x2=16).
 
 ## SQL Query Configuration
 

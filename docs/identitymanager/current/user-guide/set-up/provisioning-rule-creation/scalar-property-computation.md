@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Compute a **scalar** Property"
 description: "Compute a **scalar** Property"
 sidebar_position: 20
@@ -18,7 +18,7 @@ The right tools for the job are **scalar** rules.
 
 A **scalar** property's value can be computed by a **scalar** rule, based on at least one **scalar** property from the source entity type, possibly writing a C# expression.
 
-![Schema - **scalar** Rule](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/scalar-property-computation/provrules_schemascalar.webp)
+![Schema - **scalar** Rule](/images/identitymanager/provrules_schemascalar.webp)
 
 A **scalar** rule could define the **scalar** property displayName of nominative AD accounts based on its owner's name with the expression:
 
@@ -76,23 +76,23 @@ See the [Categorize Resources](../../../user-guide/set-up/categorization) topic 
 
 Fill an entity type with a **scalar** rule by proceeding as follows:
 
-![Home - Access Rules](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+![Home - Access Rules](/images/identitymanager/home_rules_v602.webp)
 
 **Step 1 :** Click on **Access Rules** on the home page in the **Configuration** section.
 
-![Entity Type Choice](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
+![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
 **Step 2 :** In the dropdown menu at the top left, choose the source entity type for the future **scalar** rule.
 
-![iconadd_v602](/images/identitymanager/user-guide/set-up/user-profile-assignment/iconadd_v602.webp)
+![iconadd_v602](/images/identitymanager/iconadd_v602.webp)
 
 **Step 3 :** Click on the **Scalars** tab and on the addition button at the top right corner.
 
-![Create **scalar** Rule](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/scalar-property-computation/provrules_scalarrule_v522.webp)
+![Create **scalar** Rule](/images/identitymanager/provrules_scalarrule_v522.webp)
 
 **Step 4 :** Fill in the fields.
 
-![**scalar** Rule Fields](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/scalar-property-computation/provrules_scalarrulefields_v602.webp)
+![**scalar** Rule Fields](/images/identitymanager/provrules_scalarrulefields_v602.webp)
 
 Once the Resource Type is provided, more fields appear.
 
@@ -119,7 +119,7 @@ its value from the managed system. Non-conforming values are displayed on the **
 
 Our example would look like:
 
-![**scalar** Rule Example](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/scalar-property-computation/provrules_examplescalar_v522.webp)
+![**scalar** Rule Example](/images/identitymanager/provrules_examplescalar_v522.webp)
 
 **Step 5 :** Click on **Create** and see a line added on the rules page.
 
@@ -127,7 +127,7 @@ Our example would look like:
 
 Any modification in a **scalar** rule is taken into account when launching the role model computation task, in the **Resource Types** frame of the corresponding connector's overview page, via **Jobs** > **Compute Role Model**.
 
-![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
 This task applies the rules and computes new properties. Therefore, if a given rule's criterion is modified, then all corresponding assignments are computed again. If a resource was created automatically for an identity through a **scalar** rule (and its single role criterion), and if the user's criteria do not comply with the new version of the rule, then the corresponding resource is automatically deleted.
 
@@ -139,7 +139,7 @@ Simulations are available in order to anticipate the changes induced by a creati
 
 In order to verify the process:
 
-![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
 **Step 1 :** On the corresponding connector's overview page, in the **Resource Types** frame click on **Jobs** > **Compute Role Model** to apply all rules.
 

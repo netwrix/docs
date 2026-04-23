@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Google Workspace"
 description: "Google Workspace"
 sidebar_position: 70
@@ -10,11 +10,11 @@ This connector exports and fulfills users and groups from/to a [Google Workspace
 
 This page is about [Google Workspace](../../../integration-guide/connectors/references-packages/googleworkspace).
 
-![Package: Directory/Google Workspace](/images/identitymanager/integration-guide/connectors/references-connectors/googleworkspace/packages_workspace_v603.webp)
+![Package: Directory/Google Workspace](/images/identitymanager/packages_workspace_v603.webp)
 
 ## Overview
 
-Google Workspace provides a set of softwares and products developed by Google. The Google Workspace connector exports and fulfills users and groups from/to a Google Workspace instance. It exports user-group memberships too.
+Google Workspace provides a set of softwares and products developed by Google. The Google Workspace connector exports and fulfills users, groups, organizational units, roles and role assignments from/to a Google Workspace instance. It exports user-group memberships too.
 
 ## Prerequisites
 
@@ -23,16 +23,20 @@ Implementing this connector requires:
 - reading first the
 [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent)documentation;
 - a service account impersonating the following permission scopes:
-[https://www.googleapis.com/auth/admin.directory. user](https://www.googleapis.com/auth/admin.directory.user) and [https://www.googleapis.com/auth/admin.directory.group](https://www.googleapis.com/auth/admin.directory.group).
+[https://www.googleapis.com/auth/admin.directory.user](https://www.googleapis.com/auth/admin.directory.user) and [https://www.googleapis.com/auth/admin.directory.group](https://www.googleapis.com/auth/admin.directory.group).
 
 See [Google's documentation](https://developers.google.com/workspace/guides/**create**-credentials#googles-documentation) Google's documentation to **create** the service account with the right impersonation.
 
 :::tip
  Remember, Google's documentation describes this procedure as optional, while the Google Workspace connector requires it. 
 :::
+
+:::note
+ To discover custom user schemas during schema refresh, the service account also requires the [https://www.googleapis.com/auth/admin.directory.userschema.readonly](https://www.googleapis.com/auth/admin.directory.userschema.readonly) scope. Without this scope, the schema refresh still returns all standard attributes but will not include custom schema columns.
+:::
 ## Export
 
-This connector extracts users, groups and user-group memberships from a Google Workspace instance, and write the output to CSV files.
+This connector extracts users, groups, organizational units, roles, role assignments and user-group memberships from a Google Workspace instance, and write the output to CSV files.
 
 ### Configuration
 
@@ -90,7 +94,7 @@ The identifier of the connection and thus the name of the subsection must:
 
 This connector is meant to generate to the [Application Settings](../../../integration-guide/network-configuration/agent-configuration/appsettings)Export Output folder the following CSV files:
 
-- `GoogleExportFulfillment_Users.csv` and `GoogleExportFulfillment_Groups.csv` whose headers come
+- `GoogleExportFulfillment_Users.csv`, `GoogleExportFulfillment_Groups.csv`, `GoogleExportFulfillment_OrgUnits.csv`, `GoogleExportFulfillment_Roles.csv` and `GoogleExportFulfillment_RoleAssignments.csv` whose headers come
 from the entity type mapping's `ConnectionColumn` and from the entity association mappings' columns which are not _members_ columns;
 - `GoogleExportFulfillment_Members.csv` with the following columns:
     - **value**: ID of the group;

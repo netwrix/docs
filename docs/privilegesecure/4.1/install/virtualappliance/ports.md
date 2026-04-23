@@ -19,4 +19,4 @@ Review the following network port requirements for the virtual appliance:
 - To managed Windows Servers/Desktops & Domain Controllers (WinRM) – ports 5985 and 5986
 - To managed Windows Servers (RDP) – port 3389
 - To managed Linux Servers (SSH) – port 22
-- To Domain Controllers – ports 389, 445, 464, 686 and 9389
+- To Domain Controllers – ports 389, 445, 464, 686, and 9389

@@ -23,7 +23,7 @@ information. If you are performing an automated installation with Group Policy, 
 
 :::note
 Upgrade all your servers and domain controllers. Configuration changes performed with the
-new version do not affect servers running an older version. If you have multiple versions, you must
+new version don't affect servers running an older version. If you have multiple versions, you must
 make configuration changes in both configuration consoles until all domain controllers are upgraded
 to 11. Failure to do so may lead to inconsistent enforcement of the password policy.
 :::
@@ -31,7 +31,7 @@ to 11. Failure to do so may lead to inconsistent enforcement of the password pol
 
 Open the [License](/docs/passwordpolicyenforcer/11.1/admin/configconsole.md#license) settings on the Configuration Console
 after an upgrade to check your license details. Password Policy Enforcer reverts to a 30-day
-evaluation license if it cannot import the license key.
+evaluation license if it can't import the license key.
 
 **Upgrading the Password Policy Client**
 
@@ -42,7 +42,7 @@ Policy, then add the new client **.msi** file to the same Group Policy Object us
 older version. Upgrade and reboot the Password Policy Servers before upgrading the clients.
 
 The Password Policy Enforcer 11 Password Policy Server is backwards compatible with the V10.x and
-V9.x Password Policy Client. You are not required to update the Password Policy Clients, but it is
+V9.x Password Policy Client. You aren't required to update the Password Policy Clients, but it is
 recommended.
 
 **Upgrading the Mailer**
@@ -53,4 +53,4 @@ topic for additional information.
 
 **Upgrade Notes**
 
-- Versions 9.x and above do not support perpetual license keys.
+- Versions 9.x and above don't support perpetual license keys.

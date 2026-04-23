@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Start Web Session
 
-Follow the steps to start a web activity session.
+To start a web activity session.
 
 **Step 1 –** In the browser extension interface, select either the **Activities** or **Current**
 tab.

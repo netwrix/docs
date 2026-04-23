@@ -14,13 +14,13 @@ Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
 or
 Double click the **PPE Configuration** desktop shortcut.
 
-**Step 2 –** Click on a policy name to open the policy configuration page.
+**Step 2 –** Click a policy name to open the policy configuration page.
 
 **Step 3 –** Open the **Properties** tab.
 
 ![Set the Policy Properties](/images/passwordpolicyenforcer/11.0/administration/properties.webp)
 
-Each policy must have a unique name. To change the name of a policy, type the new name in the text
+Each policy must have a unique name. To change the name of a policy, enter the new name in the text
 box.
 
 Enter any **Notes** about the policy
@@ -36,9 +36,9 @@ products) always use the Password Policy Enforcer character set.
 :::
 
 
-- Some languages such as Japanese do not distinguish between uppercase and lowercase. These
+- Some languages such as Japanese don't distinguish between uppercase and lowercase. These
   characters are in the Windows Alpha set, but not in the Upper or Lower sets.
-- Characters classified as a space, punctuation, control or blank by Windows are included in the
+- Characters classified as a space, punctuation, control, or blank by Windows are included in the
   Special character set. If these characters are also included in some other set by Windows (for
   example, a superscript one is both a decimal digit and punctuation), then Password Policy Enforcer
   only includes them in the Special character set when the Windows character set is selected.
@@ -46,7 +46,7 @@ products) always use the Password Policy Enforcer character set.
   in the High set. When using the Windows character set, a character is only included in the High
   set if it is above ANSI 126 and not included in any other set by Windows.
 
-Select the number of rules for **Passwords must comply with** from the drop-down list to specifiy
+Select the number of rules for **Passwords must comply with** from the dropdown list to specifiy
 the required compliance level for this policy. The default value **(all the rules**) requires users
 to comply with all enabled rules. Choose an alternative option if Password Policy Enforcer should
 enforce a more lenient password policy. The Minimum Age and Maximum Age rules are excluded from
@@ -55,7 +55,7 @@ compliance level calculations. See the [Rules](/docs/passwordpolicyenforcer/11.0
 When setting the compliance level, consider that some rules may be disabled when a user enters a
 passphrase. See the [Passphrase](/docs/passwordpolicyenforcer/11.0/admin/manage-policies/passphrases.md) topic for additional information. Password Policy
 Enforcer accepts passphrases that comply with all enabled rules, irrespective of the compliance
-level. This ensures that passphrases can be used, even if they do not meet the compliance level when
+level. This ensures that passphrases can be used, even if they don't meet the compliance level when
 Password Policy Enforcer is configured to disable one or more rules for passphrases.
 
 Password Policy Enforcer can start a password synchronization application or script whenever a user
@@ -65,7 +65,7 @@ program when password is changed** text box. The path can contain environment va
 program, and only authorized users should have access to it, or any of its components.
 
 The user logon name and new password are sent to the program as command-line parameters. For
-example, if you add the commands below to a batch file, Password Policy Enforcer records each user's
+example, if you add the following commands to a batch file, Password Policy Enforcer records each user's
 logon name and new password in a text file named **passwords.txt**:
 
 **echo Username: %1 >> c:\passwords.txt**
@@ -73,7 +73,7 @@ logon name and new password in a text file named **passwords.txt**:
 echo Password: %2 >> c:\passwords.txt
 
 :::warning
-This script is shown as an example only. You should not store user passwords.
+This script is shown as an example only. You shouldn't store user passwords.
 :::
 
 
@@ -81,7 +81,7 @@ The command can now include the [USERNAME] and [PASSWORD] macros. If neither is 
 command is executed with both parameters to maintain compatibility with existing programs/scripts.
 
 :::info
-Use the [USERNAME] parameter if the password is not needed by the program/script
-so that the password is not unnecessarily sent to the change notification command/script.
+Use the [USERNAME] parameter if the password isn't needed by the program/script
+so that the password isn't unnecessarily sent to the change notification command/script.
 
 :::

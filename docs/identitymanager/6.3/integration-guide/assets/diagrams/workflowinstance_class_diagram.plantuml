@@ -1,0 +1,95 @@
+@startuml component
+package "WorkflowInstance" {
+	class WorkflowInstance {
+		C0 : String
+		C1 : String
+		I40 : Int64
+		I41 : Int64
+		Identifier : String
+		IsCompleted : Boolean
+		WhenCompleted : DateTime
+		--
+		ActivityInstances : ActivityInstance[]
+		AssignedCompositeRoles : AssignedCompositeRole[]
+		AssignedResourceTypes : AssignedResourceType[]
+		AssignedSingleRoles : AssignedSingleRole[]
+		CurrentActivity : Activity
+		CurrentActivityInstance : ActivityInstance
+		CurrentState : ActivityTemplateState
+		CurrentTransition : ActivityTemplateTransition
+		IdentifiedRisks : IdentifiedRisk[]
+		Type : EntityType
+		Workflow : Workflow
+		WorkflowInstanceAssignedResourceBinaries : AssignedResourceBinary[]
+		WorkflowInstanceAssignedResourceNavigations : AssignedResourceNavigation[]
+		WorkflowInstanceAssignedResourceScalars : AssignedResourceScalar[]
+	}
+}
+package "ActivityInstance" {
+	class ActivityInstance {
+	}
+}
+package "AssignedCompositeRole" {
+	class AssignedCompositeRole {
+	}
+}
+package "AssignedResourceType" {
+	class AssignedResourceType {
+	}
+}
+package "AssignedSingleRole" {
+	class AssignedSingleRole {
+	}
+}
+package "Activity" {
+	class Activity {
+	}
+}
+package "ActivityTemplateState" {
+	class ActivityTemplateState {
+	}
+}
+package "ActivityTemplateTransition" {
+	class ActivityTemplateTransition {
+	}
+}
+package "IdentifiedRisk" {
+	class IdentifiedRisk {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Workflow" {
+	class Workflow {
+	}
+}
+package "AssignedResourceBinary" {
+	class AssignedResourceBinary {
+	}
+}
+package "AssignedResourceNavigation" {
+	class AssignedResourceNavigation {
+	}
+}
+package "AssignedResourceScalar" {
+	class AssignedResourceScalar {
+	}
+}
+WorkflowInstance "1" --  "0..*"ActivityInstance
+WorkflowInstance "0..1" --  "0..*"AssignedCompositeRole
+WorkflowInstance "0..1" --  "0..*"AssignedResourceType
+WorkflowInstance "0..1" --  "0..*"AssignedSingleRole
+WorkflowInstance "0..*" --  "1"Activity
+WorkflowInstance "0..*" --  "0..1"ActivityInstance
+WorkflowInstance "0..*" --  "1"ActivityTemplateState
+WorkflowInstance "0..*" --  "1"ActivityTemplateTransition
+WorkflowInstance "0..1" --  "0..*"IdentifiedRisk
+WorkflowInstance "0..*" --  "1"EntityType
+WorkflowInstance "0..*" --  "1"Workflow
+WorkflowInstance "0..1" --  "0..*"AssignedResourceBinary
+WorkflowInstance "0..1" --  "0..*"AssignedResourceNavigation
+WorkflowInstance "0..1" --  "0..*"AssignedResourceScalar
+hide empty members
+@enduml

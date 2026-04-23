@@ -1,0 +1,31 @@
+@startuml component
+package "EntityPropertyExpression" {
+	class EntityPropertyExpression {
+		Expression : String
+		Identifier : String
+		Priority : Int32
+		--
+		Binding : Binding
+		EntityType : EntityType
+		Property : EntityProperty
+		PropertyCriteria : EntityProperty
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+EntityPropertyExpression "0..*" --  "0..1"Binding
+EntityPropertyExpression "0..*" --  "1"EntityType
+EntityPropertyExpression "0..*" --  "1"EntityProperty
+EntityPropertyExpression "0..*" --  "0..1"EntityProperty
+hide empty members
+@enduml

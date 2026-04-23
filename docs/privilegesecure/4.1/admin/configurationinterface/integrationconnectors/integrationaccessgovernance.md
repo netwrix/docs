@@ -10,7 +10,7 @@ Netwrix Enterprise Auditor can be configured to send administrator information t
 For integration, the following Enterprise Auditor job groups must be successfully run before
 Privilege Secure can import the data:
 
-- .Active Directory Inventory Job Group
+-.Active Directory Inventory Job Group
 - Windows > Privileged Accounts > Local Administrators Job Group
 
 See the
@@ -19,7 +19,7 @@ for additional information.
 
 ## Configure the Access Role
 
-Follow the steps to configure the access role in StealthAUDIT. See the Access Role section of the
+To configure the access role in StealthAUDIT. See the Access Role section of the
 Web Service REST API for Applications Access Data Remotely topic of the
 [Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
 for additional information.
@@ -37,18 +37,18 @@ Select Tables and click Add to open the Select Database Objects window.
 
 - Tables:
 
-    - SA_ADInventory_Domains
-    - SA_SG_LocalAdmins_Details
+- SA_ADInventory_Domains
+- SA_SG_LocalAdmins_Details
 
 - Views:
 
-    - SA_ADInventory_ComputersView
-    - SA ADInventory_UsersView
+- SA_ADInventory_ComputersView
+- SA ADInventory_UsersView
 
-    :::note
-    Type in the Filter Objects by Name box to filter the list of objects by the characters
-    entered.
-    :::
+:::note
+Type in the Filter Objects by Name box to filter the list of objects by the characters
+entered.
+:::
 
 
 **Step 5 –** Click OK to return to the Application Access page.
@@ -59,10 +59,10 @@ Select Tables and click Add to open the Select Database Objects window.
 app token:
 
 - Application name – Enter "Privilege Secure"
-- Access Expiration – Set the desired expiration for the client secret:
+- Access Expiration – Set the expiration you want for the client secret:
 
-    - Access expires within – Select a timeframe from the drop-down list. The default is 72 hours.
-    - Access expires on specified date – Select a date from the drop-down list
+- Access expires within – Select a timeframe from the dropdown list. The default is 72 hours.
+- Access expires on specified date – Select a date from the dropdown list
 
 - Generate – Click this button to generate the Client ID and Client secret
 - Client ID – Copy the Client ID for use in Privilege Secure
@@ -80,7 +80,7 @@ used to get data from the Enterprise Auditor endpoint.
 
 ## Add Service Account for StealthAUDIT Connector
 
-Follow the steps to add the service accounts for the Enterprise Auditor integration connector. See
+To add the service accounts for the Enterprise Auditor integration connector. See
 the
 [Add Service Account](/docs/privilegesecure/4.1/admin/configurationinterface/serviceaccounts/serviceaccount.md)
 topic for additional information.
@@ -94,10 +94,10 @@ Configuration > Service Accounts page.
 
 - Enter Name –Enterprise Auditor API
 - Enter Description – (Optional) Brief description to identify the service account
-- Domain – This field is not required
+- Domain – This field isn't required
 - Username – Enter the Client ID from the Access Role wizard in Enterprise Auditor
 - Password – Enter the Client Secret from the Access Role wizard in Enterprise Auditor
-- Platform – Select Windows from the drop-down list
+- Platform – Select Windows from the dropdown list
 
 **Step 4 –** Click the Save icon to create the new service account.
 
@@ -109,13 +109,13 @@ theEnterprise Auditor server. Enter the following information:
 - Domain – The domain the Enterprise Auditor server is on
 - Username – A local admin account for the Enterprise Auditor server
 - Password – The password for the local admin account
-- Platform – Select Windows from the drop-down list
+- Platform – Select Windows from the dropdown list
 
 The next step is to configure the integration connector.
 
 ## Add a Connector for StealthAUDIT
 
-Follow the steps to add the Enterprise Auditor Connector.
+To add the Enterprise Auditor Connector.
 
 **Step 1 –** In the (Undefined variable: SbPAM.Product Short) Console, navigate to the
 Configuration > Integration Connectors page.
@@ -129,9 +129,9 @@ Configuration > Integration Connectors page.
 - Connector Name – Enter a name to uniquely identify the connector
 - Connector Description (Optional) – Enter a brief description to identify the service account
 - Connector Template – A selection of templates for connector configurations. Select StealthAUDIT
-  from the drop-down list.
+from the dropdown list.
 - Server Hostname – The hostname of the server that Privilege Secure needs to connect to the server
-  that Enterprise Auditor is installed on
+that Enterprise Auditor is installed on
 - Port – The port used by the service that Privilege Secure needs to connect to
 - REST Credentials – Enter the Client ID from the Access Role wizard in Enterprise Auditor
 - PowerShell Credentials – Enter the Client Secret from the Access Role wizard in Enterprise Auditor
@@ -142,7 +142,7 @@ The next step is to import the data from Enterprise Auditor.
 
 ## Import Data from Enterprise Auditor
 
-Follow the steps to import the users, groups, and resources associated with administrator accounts
+To import the users, groups, and resources associated with administrator accounts
 from Enterprise Auditor.
 
 **Step 1 –** In the Privilege Secure Console, navigate to the Configuration > Integration Connectors

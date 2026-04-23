@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Usercube-Manage-History"
 description: "Usercube-Manage-History"
 sidebar_position: 260
@@ -9,6 +9,15 @@ sidebar_position: 260
 This tool optimizes the data history stored in the database, reducing its size and enhancing database performance.
 
 The inner workings of this executable are based on the `ValidFrom` and `ValidTo` attributes that specify the validity period of a given assignment. These attributes are inside the following tables which are the tables actually purged: `ur_resources`; `ur_resourcelinks`; `up_assignedcompositeroles`; `up_assignedsingleroles`; `up_assignedresourcenavigations`; `up_assignedresourcetypes`.
+
+### Protected resources
+
+When purging `ur_resources`, resources that are still referenced by other product data (assignments, workflows, certifications, etc.) are treated differently from fully unreferenced resources:
+
+- **Referenced (protected)**: the most recently expired row is kept, with only `Id`, `Type`, `ValidFrom`, `ValidTo` and `DisplayName_L*` retained.
+- **Unreferenced**: all expired rows are deleted entirely.
+
+This preserves a traceable record of the resource for audit purposes.
 
 ## Examples
 
@@ -42,7 +51,7 @@ The database's history can be optimized by removing intermediate versions based 
 
 The following example reduces the history from the database, keeping at most one history version per interval. Here we keep one version per day (1440 minutes) in the last 7 days, then one version per month (43920 minutes) in the last 6 months before the previously defined period, then one version per year (525960 minutes) in the last 2 years before the previously defined periods.
 
-![Schema - Optimize](/images/identitymanager/integration-guide/executables/references/manage-history/tools_managehistory_schema.webp)
+![Schema - Optimize](/images/identitymanager/tools_managehistory_schema.webp)
 
 For each period, if there is more than one version (i.e. `ValidFrom` is inside the interval), the versions are merged in the following way:
 
@@ -99,8 +108,8 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
  | --excluded-resource-columns required if --entity-type is set | String list | When using `<b>--clean-duplicates</b>` option, defines the list of column names (the name of the columns in the `UR_Resources` table, or the Identifier of the corresponding um_entityproperty) to exclude when comparing rows of `UR_Resources` table. | 
  | <b>--in-memory</b> default value: False | No value | Performs optimizations in memory instead of the database. It implies heavy memory consumption but light SQL load. | 
  | --optimize optional | String list | Reduces the history and optimizes the versions that are kept based on the precision given through ranges in the argument. A range is specified by a duration in minutes followed by the number of occurrences. For example 60:10 defines a range of 60 minutes repeated 10 times, or 10 snapshots repeated at 60 minute intervals. For each interval, at most one version is kept in the history. The intervals are evaluated in the given order from now, backwards. In the previous example, it means the more recent versions are kept with a high precision (one per day initially), then with lesser and lesser precision (one per month and then one per year). If the data has not changed over an interval, no optimization can be done. | 
- | --purge-before-date optional | String | Deletes all the history older than the given date in the yyyyMMdd format. | 
- | --purge-before-months optional | String | Deletes all the history older than the given number of months. | 
+ | --purge-before-date optional | String | Deletes all the history older than the given date in the yyyyMMdd format. For `ur_resources`, referenced resources are kept; see [Protected resources](#protected-resources). |
+ | --purge-before-months optional | String | Deletes all the history older than the given number of months. For `ur_resources`, referenced resources are kept; see [Protected resources](#protected-resources). |
  | --database-connection-string required | String | Connection string of the database. | 
 
 The available actions (clean duplicates; purge; optimize) are all optional, but at least one must be used in the executable command.
