@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Add Access Policy
 
-Follow the steps to add access policies to the console.
+To add access policies to the console.
 
 :::tip
 Remember, a connection profile is required to create an access policy. You can create one ahead of
@@ -25,10 +25,10 @@ to create one during these steps.
 
 - Name – Displays the name of the policy
 - Description – (Optional) Description of the policy
-- Type – Classification of the access policy. The Type drop-down contains the following options:
+- Type – Classification of the access policy. The Type dropdown contains the following options:
 
-    - Resource Based
-    - Credential Based
+- Resource Based
+- Credential Based
 
 - Connection Profile – Displays the name of the connection profile associated to the access policy
 
@@ -39,12 +39,12 @@ Resources/Credentials to the policy. See the following topics for additional inf
 
 - Resource Based Policy
 
-    - [Users Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/users.md)
-    - [Activities Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/activities/activities.md)
-    - [Resources Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/resources/resources.md)
+- [Users Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/users.md)
+- [Activities Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/activities/activities.md)
+- [Resources Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/resources/resources.md)
 
 - Credential Based Policy
 
-    - [Users Tab for Credential Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/credentialbasedpolic/users.md)
-    - [Activities Tab for Credential Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/credentialbasedpolic/activities.md)
-    - [Credentials Tab for Credential Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/credentialbasedpolic/credentials/credentials.md)
+- [Users Tab for Credential Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/credentialbasedpolic/users.md)
+- [Activities Tab for Credential Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/credentialbasedpolic/activities.md)
+- [Credentials Tab for Credential Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/credentialbasedpolic/credentials/credentials.md)

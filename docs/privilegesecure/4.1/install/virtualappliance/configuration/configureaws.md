@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Configure AWS Instance
 
-Follow the steps below to configure an AWS instance.
+Follow the following steps to configure an AWS instance.
 
 **Step 1 –** Log in to the AWS Management Console and navigate to Amazon EC2 launch wizard.
 
@@ -24,9 +24,9 @@ The instance may take a few minutes or more to launch. Although your Instance St
 may be unavailable. You can check the image health in two ways:
 
 - Right-click the **instance** and select **Instance Settings** > **Get Instance Screenshot** and
-  review image current state.
+review image current state.
 - Right-click the **instance** and select **Instance Settings** > **Get System Log**. Empty log
-  means that your image is still being prepared.
+means that your image is still being prepared.
 
 Wait until the System Log contains the Windows is Ready for Use message and connect to the instance.
 
@@ -55,5 +55,5 @@ by clicking the downloaded **RDP file**.
 **Step 7 –** In the Windows Security dialog, provide the password you have copied on the step 5 and
 log on to the instance.
 
-Ignore the security certificate errors warnings. An AWS Instance has been configured for Netwrix
+Ignore the security certificate errors warnings. An AWS Instance has been configured for Netwrix
 Privilege Secure.

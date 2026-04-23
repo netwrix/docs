@@ -15,9 +15,9 @@ Activities are created in the
 The window has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
-- Filter — Provides options to filter results based on a chosen criterion: All, Activity or Activity
-  Group
+table or list is filtered to the matching results.
+- Filter — Provides options to filter results based on a chosen criterion: All, Activity, or Activity
+Group
 - Available Activities — Shows all available activities and activity groups
 - Activities & Activity Groups to Add — Shows selected activities and activity groups
 - Add — Adds modifications and closes window
@@ -31,7 +31,7 @@ Both tables have the following columns:
 
 ## Add Activities
 
-Follow the steps to add activities to the selected access policy.
+To add activities to the selected access policy.
 
 **Step 1 –** Navigate to the Policy > Access Policies page.
 
@@ -43,16 +43,16 @@ Activities tab.
 The Add Activities and Groups window has the following features:
 
 - Search – Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Available Activities and Groups – Shows all activities and groups that have been added to the
-  console
+console
 - Activities and Groups to Add – Shows all activities and groups that have been added to the
-  protection policy
+protection policy
 - Column headers can be sorted in ascending or descending order
 
-    - Name — Displays the name of the activity
-    - Type — Classification of the activity
-    - Description — Description of the policy
+- Name — Displays the name of the activity
+- Type — Classification of the activity
+- Description — Description of the policy
 
 **Step 4 –** To add an activity to the access policy, click a row in the Available Activities list
 and it is immediately moved to the Activities & Groups to Add list.

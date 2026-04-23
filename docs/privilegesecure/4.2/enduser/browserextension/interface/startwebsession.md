@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Start Web Session
 
-Follow the steps to start a web activity session.
+To start a web activity session.
 
 **Step 1 –** In the browser extension interface, select either the **Activities** or **Current**
 tab.
@@ -26,5 +26,4 @@ tab.
 
 ![Browser Extension Starting a Web Session](/images/privilegesecure/4.2/accessmanagement/enduser/browserextension/browserextensionstartsession.webp)
 
-A count-down timer indicates how much time is remaining for the web session. A REC icon will be
-overlayed on the extension if the current page is being recorded.
+A count-down timer indicates how much time is remaining for the web session. A REC icon overlays the extension if the current page is being recorded.

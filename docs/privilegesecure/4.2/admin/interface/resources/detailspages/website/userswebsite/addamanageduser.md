@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # Add a Managed User Window
 
-Manually managed user accounts may be added to the website resource. These accounts can be used for
+Manually managed user accounts may be added to the website resource. These accounts is useful for
 activities on the resource by specifying the username value in the “Login Account Template” field of
 the Activity. See the [Activities Page](/docs/privilegesecure/4.2/admin/interface/activities/activities.md) topic for additional information.
 
-Follow the steps to add or edit a managed user account for the resource.
+To add or edit a managed user account for the resource.
 
 :::note
 Only applicable to Website resources.
@@ -19,7 +19,7 @@ Only applicable to Website resources.
 
 **Step 1 –** Navigate to the **Resources** page.
 
-**Step 2 –** Click the name of the desired resource to open the Resource Details page and select the
+**Step 2 –** Click the name of the resource you want to open the Resource Details page and select the
 **Users** tab.
 
 **Step 3 –** Do the following:
@@ -29,14 +29,14 @@ Only applicable to Website resources.
 
 ![addmanageduser](/images/privilegesecure/4.2/accessmanagement/admin/policy/window/resources/addmanageduser.webp)
 
-**Step 4 –** Specify the username/password combination that will be used to log users onto the
+**Step 4 –** Specify the username/password combination that is used to log users onto the
 website. Enter the following information:
 
 - Display Name – The friendly name for the account
 - Username – The account in the exact format specified in the “Login Account Template” field of the
-  Activity, e.g. `domain\user` or `user@domain.com`. See the
-  [Activities Page](/docs/privilegesecure/4.2/admin/interface/activities/activities.md) topic for additional information.
-- Password – Contains the service account password. The Eye icon can be used to view the password.
+Activity, e.g. `domain\user` or `user@domain.com`. See the
+[Activities Page](/docs/privilegesecure/4.2/admin/interface/activities/activities.md) topic for additional information.
+- Password – Contains the service account password. The Eye icon lets you view the password.
 
 **Step 5 –** Click **Okay** to accept changes.
 

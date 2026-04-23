@@ -15,5 +15,5 @@ The Action Service Settings page has the following features:
 
 - Description — Description of the policy
 - Timeout Override — Check this box to expose the current timeout override option
-- Timeout Override (minutes) — Enter a time (in minutes) to customize or override the current action
-  service timeout limit
+- Timeout Override (minutes) — Enter a time (in minutes) to customize or override the current action
+service timeout limit

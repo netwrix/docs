@@ -16,12 +16,12 @@ Also note the icons to view and copy the password for the session as plain text,
 enabled in the access policy Connection Profiles.
 
 - Copy to Clipboard icon — Click to copy the password for the session as plain text. For
-  resource–based activities for end users, this is only available if enabled in the activity's
-  Access Policy. The password can always be viewed for credential–based activities.
+resource–based activities for end users, this is only available if enabled in the activity's
+Access Policy. The password can always be viewed for credential–based activities.
 - View Password icon — Click to view the password for the session as plain text. For resource–based
-  activities for end users, this is only available if enabled in the activity's Access Policy. The
-  password can always be viewed for credential–based activities. To view a password, select the Eye
-  icon. Users will have 20 seconds to view the password or copy it.
+activities for end users, this is only available if enabled in the activity's Access Policy. The
+password can always be viewed for credential–based activities. To view a password, select the Eye
+icon. Users will have 20 seconds to view the password or copy it.
 - Connection icon — Click the icon to begin the activity session.
 
 Alternatively, configure any RDP / SSH Manager for remote login, including:
@@ -51,13 +51,13 @@ For SSH the user can extend by typing **Ctrl+X** when prompted.
 ## SSH for Legacy Cisco Device
 
 If the Cisco device is running with insecure ciphers when the user attempts to connect to an
-SSH session, the following error message is displayed:
+SSH session, the following error message is displayed:
 
 ssh: handshake failed: ssh: no common algorithm for key exchange; client offered:
 [curve25519-sha256@libssh.org ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521
 diffie-hellman-group14-sha1], server offered: [diffie-hellman-group1-sha1]
 
-Ideally the Cisco device should be upgraded to support secure ciphers. If this is not possible, it
+Ideally the Cisco device should be upgraded to support secure ciphers. If this isn't possible, it
 is necessary to add additional ciphers to machines with older (insecure) ciphers that need to be
 managed with SSH. You can “opt-in” by configuring the cipher suites used by the Proxy Service.
 
