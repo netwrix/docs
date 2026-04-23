@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Configuring Policy Rules
 
-The policy you just created does not enforce any password requirements yet. You can now configure
+The policy you just created doesn't enforce any password requirements yet. You can now configure
 the policy to enforce these rules:
 
 - Password must contain at least seven characters.
@@ -24,19 +24,19 @@ policy's rules. Rules are displayed in the right pane.
 
 **Step 3 –** Select the **Characters (Alpha Lower)** rule.
 
-**Step 4 –** Select the **Enabled** check box, then click **OK**.
+**Step 4 –** Select the **Enabled** checkbox, then click **OK**.
 
 **Step 5 –** Double-click the **Characters (Alpha Upper)** rule.
 
-**Step 6 –** Select the **Enabled** check box, then click **OK**.
+**Step 6 –** Select the **Enabled** checkbox, then click **OK**.
 
 **Step 7 –** Double-click the **User Logon Name** rule.
 
-**Step 8 –** Select the **Enabled** check box, then click **OK**.
+**Step 8 –** Select the **Enabled** checkbox, then click **OK**.
 
 **Step 9 –** Double-click the **Dictionary** rule.
 
-**Step 10 –** Select the **Enabled** check box.
+**Step 10 –** Select the **Enabled** checkbox.
 
 **Step 11 –** Click **Browse**, select **Dict.txt** from the **\Program File (x86)\Password Policy
 Enforcer** folder.

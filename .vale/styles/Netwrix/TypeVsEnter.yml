@@ -1,0 +1,9 @@
+extends: substitution
+message: "Use '%s' — 'enter' is hardware-neutral and preferred over 'type' when instructing users to supply text."
+level: warning
+ignorecase: true
+swap:
+  '\btype the\b': 'Enter the'
+  '\btype a\b': 'Enter a'
+  '\btype an\b': 'Enter an'
+  '\btype your\b': 'Enter your'

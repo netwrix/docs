@@ -110,7 +110,7 @@ folder and **FromAddress** to `no-reply@<organization>.com`;
 For example (in `*appsettings.agent.json*`):
 ```json "PasswordResetSettings": { "TwoFactorSettings": { "ApplicationUri": "http://localhost:5000" }, "EncryptionCertificate": { "File": "../identitymanager.pfx", "Password": "secret" }, "MailSettings": { "PickupDirectory": "../Mails", "FromAddress": "no-reply@contoso.com" } } ```
 
-    - **SourcesRootPaths** contains the path to the `Sources` folder.
+    - **SourcesRootPaths** contains the list of root folders from which the agent is allowed to read source files (CSV, Excel, etc.). There is no default — all paths are blocked until this is set. Configure it explicitly, even if only one folder is needed. For cloud installations, Netwrix configures this setting.
 
 For example (in `*appsettings.agent.json*`):
 

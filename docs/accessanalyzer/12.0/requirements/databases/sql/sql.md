@@ -1,15 +1,13 @@
 ---
-title: "Target SQL Server Requirements, Permissions, and Ports"
-description: "Target SQL Server Requirements, Permissions, and Ports"
+title: "Target Microsoft SQL Server Requirements, Permissions, and Ports"
+description: "Target Microsoft SQL Server Requirements, Permissions, and Ports"
 sidebar_position: 70
 ---
 
-# Target SQL Server Requirements, Permissions, and Ports
+# Target Microsoft SQL Server Requirements, Permissions, and Ports
 
-The Access Analyzer for Databases Solution provides the ability to audit and monitor SQL Server
+The Access Analyzer for Databases Solution lets you audit and monitor SQL Server
 database environments to collect permissions, sensitive data, and activity events. It scans:
-
-- Azure SQL
 
 - SQL Server 2022
 - SQL Server 2019
@@ -18,7 +16,7 @@ database environments to collect permissions, sensitive data, and activity event
 
 **Target SQL Server Requirements**
 
-The following are requirements for the SQL Server to be scanned:
+The target SQL Server must meet the following requirements:
 
 - WINRM Service installed
 - Ensure the following rights are in the `ROOT\Microsoft\SQLServer` and `ROOT\Interop` WMI
@@ -80,7 +78,7 @@ This solution employs the following data collector to scan the target environmen
 
     - Read access to SQL instance
     - Requires SQL Full-Text and Semantic Extractions for Search feature to be installed on the
-      target SQL instance(s) when using the **Scan full rows for sensitive data** option on the
+      target SQL instances when using the **Scan full rows for sensitive data** option on the
       Options wizard page
     - Grant Authenticate Server to [DOMAIN\USER]
     - Grant Connect SQL to [DOMAIN\USER]
@@ -89,8 +87,6 @@ This solution employs the following data collector to scan the target environmen
     - Grant View server state to [DOMAIN\USER]
     - Grant Control Server to [DOMAIN\USER] (specifically required for the Weak Passwords Job)
 
-See the [Azure SQL Auditing Configuration](/docs/accessanalyzer/12.0/requirements/databases/sql/azuresqlaccess.md) topic for additional
-information.
 
 ## Ports
 

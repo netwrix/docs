@@ -17,7 +17,7 @@ Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
 or
 Double click the **PPE Configuration** desktop shortcut.
 
-**Step 2 –** Click on a policy name to open the policy configuration page.
+**Step 2 –** Click a policy name to open the policy configuration page.
 
 **Step 3 –** Open the **Users & Groups** tab.
 
@@ -31,18 +31,18 @@ configuration. The assignment is invalidated if the user is renamed.
 When a policy is assigned to a group, Password Policy Enforcer enforces the policy for all members
 of the group as well as any nested groups. For example, if the Helpdesk group is a member of the
 Info Tech group, then any policy assigned to the Info Tech group also applies to the members of the
-Helpdesk group. If this behavior is not desired, then you can assign a different policy to the
+Helpdesk group. If this behavior isn't desired, then you can assign a different policy to the
 Helpdesk group.
 
 When a policy is assigned to a container, Password Policy Enforcer enforces the policy for all users
 in the container as well as any child containers. For example, if the Helpdesk and Managers OUs are
 children of the Info Tech OU, then any policy assigned to the Info Tech OU also applies to the two
-child OUs. If this behavior is not desired, then you can assign a different policy to a child OU.
+child OUs. If this behavior isn't desired, then you can assign a different policy to a child OU.
 
 ![managing_policies_3](/images/passwordpolicyenforcer/11.1/administration/managing_policies_3.webp)
 
 :::note
-Different assignment types can be used for a single policy. For example, you may assign
+You can use different assignment types for a single policy. For example, you may assign
 users to a policy by both OU and group at the same time.
 :::
 
@@ -53,7 +53,7 @@ As you assign users and groups to the policy, they are displayed on the page.
 
 To remove a policy assignment:
 
-**Step 1 –** Select the user, group or container. For example, **Administrators** under **Groups**.
+**Step 1 –** Select the user, group, or container. For example, **Administrators** under **Groups**.
 
 **Step 2 –** Click the trash can icon in the appropriate header. For example, **Groups**.
 

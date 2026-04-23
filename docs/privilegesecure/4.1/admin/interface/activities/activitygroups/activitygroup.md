@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Add Activity Groups
 
-Follow the steps to add activity groups to the console.
+To add activity groups to the console.
 
 **Step 1 –** Navigate to the Activities page.
 
@@ -24,7 +24,7 @@ Follow the steps to add activity groups to the console.
 **Step 5 –** With the new activity group selected, configure the following settings:
 
 - Add activities to the activity group. See the
-  [Add Activities Window](/docs/privilegesecure/4.1/admin/interface/activities/activitygroups/addactivities.md)
-  topic for additional information.
+[Add Activities Window](/docs/privilegesecure/4.1/admin/interface/activities/activitygroups/addactivities.md)
+topic for additional information.
 
 The new activity group is added to the console and is shown in the Activity Groups list.

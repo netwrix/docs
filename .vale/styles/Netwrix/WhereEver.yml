@@ -1,0 +1,6 @@
+extends: substitution
+message: "Replace '%s' with 'wherever' (one word)."
+level: warning
+ignorecase: true
+swap:
+  'where ever': 'wherever'

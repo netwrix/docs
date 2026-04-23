@@ -6,8 +6,6 @@ sidebar_position: 120
 
 # Uninstall Netwrix Password Policy Enforcer
 
-Follow the steps to uninstall Password Policy Enforcer.
-
 You can uninstall Password Policy Enforcer on every domain server and computer, or use Group Policy
 Management to remove the PPE Server and PPE Client on all machines.
 

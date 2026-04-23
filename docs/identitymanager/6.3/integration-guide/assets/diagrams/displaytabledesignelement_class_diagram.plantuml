@@ -1,0 +1,16 @@
+@startuml component
+package "DisplayTableDesignElement" {
+	class DisplayTableDesignElement {
+		DisplayName_L1 : String
+		Identifier : String
+		--
+		DisplayTables : DisplayTable[]
+	}
+}
+package "DisplayTable" {
+	class DisplayTable {
+	}
+}
+DisplayTableDesignElement "1" --  "0..*"DisplayTable
+hide empty members
+@enduml

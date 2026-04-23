@@ -7,7 +7,7 @@ sidebar_position: 40
 # HashiCorp Integration
 
 Privilege Secure contains a built-in vault for credential management, but can uniquely map to a
-HashiCorp vault. HashiCorp connectors can be used for the following purposes:
+HashiCorp vault. HashiCorp connectors is useful for the following purposes:
 
 - Service Accounts – Use to perform Active Directory synchronization
 - Activities – Use to configure the target account for the activity
@@ -25,7 +25,7 @@ additional information.
 
 ## Add a Vault Connector for HashiCorp
 
-Follow the steps to add a vault connector for HashiCorp.
+To add a vault connector for HashiCorp.
 
 **Step 1 –** Navigate to the Configuration > Integration Connectors page.
 
@@ -38,7 +38,7 @@ Follow the steps to add a vault connector for HashiCorp.
 - Connector Name – Enter a name to uniquely identify the connector
 - Connector Description (Optional) – Enter a brief description to identify the service account
 - Connector Template – A selection of templates for connector configurations. Select HashiCorp from
-  the drop-down list.
+the dropdown list.
 - Access Token – The access token generated in HashiCorp
 - Skip Certificate Check – Select to ignore certification warnings when connecting to the server
 

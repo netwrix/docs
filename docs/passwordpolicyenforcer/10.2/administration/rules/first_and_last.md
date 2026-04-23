@@ -6,14 +6,14 @@ sidebar_position: 120
 
 # First and Last Character Rules
 
-The First and Last Character rules reject passwords that do not begin or end with an appropriate
+The First and Last Character rules reject passwords that don't begin or end with an appropriate
 character. These rules are typically used to ensure password compatibility with other systems.
 
 |                                                                                                                           |                                                                                                                           |
 | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | ![ppe_rules_15](/images/passwordpolicyenforcer/10.2/administration/ppe_rules_15.webp) | ![ppe_rules_16](/images/passwordpolicyenforcer/10.2/administration/ppe_rules_16.webp) |
 
-Select the **Enabled** check box to enable the First or Last Character rule.
+Select the **Enabled** checkbox to enable the First or Last Character rule.
 
 Select the **begin** (First Character rule) or **end** (Last Character rule) option if you want to
 specify the **acceptable** character sets.

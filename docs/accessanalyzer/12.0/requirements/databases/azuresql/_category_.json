@@ -1,0 +1,10 @@
+{
+  "label": "Target Azure SQL Requirements, Permissions, and Ports",
+  "position": 75,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

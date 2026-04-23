@@ -18,9 +18,9 @@ topic for additional information.
 - Eight megabytes free RAM (72 megabytes if using Argon2 hashes)
 
 :::note
-Users do not have to change their password immediately after Password Policy Enforcer is
+Users don't have to change their password immediately after Password Policy Enforcer is
 installed. They can continue using their current password until it expires, even if their current
-password does not comply with the password policy. Installing Password Policy Enforcer does not
+password doesn't comply with the password policy. Installing Password Policy Enforcer doesn't
 extend the Active Directory schema.
 :::
 
