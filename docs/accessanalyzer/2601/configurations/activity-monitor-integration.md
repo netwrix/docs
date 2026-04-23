@@ -8,9 +8,9 @@ sidebar_position: 85
 
 ## Overview
 
-Access Analyzer integrates with **Netwrix Activity Monitor (NAM)** to ingest real-time file system, SharePoint Online, and Microsoft 365 Copilot activity events. Once configured, these events populate the activity reports in AA26 and power anomaly detection and sensitive data activity tracking.
+Access Analyzer integrates with **Netwrix Activity Monitor (NAM)** to ingest real-time file system, SharePoint Online, and Microsoft 365 Copilot activity events. Once configured, these events populate the activity reports in AA2601 and power anomaly detection and sensitive data activity tracking.
 
-The integration works through a built-in TCP listener that NAM agents connect to over a secure, mutually authenticated TLS 1.3 channel. Events stream continuously from NAM agents into AA26's analytics database (ClickHouse), where they become available in reports.
+The integration works through a built-in TCP listener that NAM agents connect to over a secure, mutually authenticated TLS 1.3 channel. Events stream continuously from NAM agents into AA2601's analytics database (ClickHouse), where they become available in reports.
 
 ### Architecture
 
@@ -20,14 +20,14 @@ NAM Agent(s)
     │  TLS 1.3 (default port 1514)
     │  mTLS — client certificate required
     ▼
-AA26 NAM Listener (core-api)
+AA2601 NAM Listener (core-api)
     │
     │  Validated & buffered in memory
     ▼
 ClickHouse (analytics database)
     │
     ▼
-AA26 Reports (file system activity, SharePoint, Copilot)
+AA2601 Reports (file system activity, SharePoint, Copilot)
 ```
 
 ### Event Types
@@ -43,10 +43,10 @@ AA26 Reports (file system activity, SharePoint, Copilot)
 
 Authentication uses **mutual TLS with SPKI hash pinning**:
 
-- AA26 requires TLS 1.3 — no older protocol versions are accepted.
+- AA2601 requires TLS 1.3 — no older protocol versions are accepted.
 - NAM agents must present a client certificate on every connection.
 - Certificate chain validation is intentionally permissive — NAM agents use self-signed certificates.
-- Real agent authentication is performed by matching the SHA-256 hash of the agent's certificate public key (SPKI hash) against a persistent allowlist in AA26's database.
+- Real agent authentication is performed by matching the SHA-256 hash of the agent's certificate public key (SPKI hash) against a persistent allowlist in AA2601's database.
 
 SPKI hashes survive certificate renewal as long as the key pair is unchanged. Re-enrollment is only required when an agent generates a new key pair.
 
@@ -54,15 +54,15 @@ SPKI hashes survive certificate renewal as long as the key pair is unchanged. Re
 
 ## Prerequisites
 
-Before connecting NAM agents to AA26:
+Before connecting NAM agents to AA2601:
 
-- **Netwrix Activity Monitor** must be installed and monitoring the hosts for which you want real-time activity in AA26. Confirm monitoring is active before adding the AA26 output.
-- **TLS certificates** must be provisioned on the AA26 server. The server certificate and private key paths are set via the environment variables `SYSLOG_TLS_CERT_PATH` and `SYSLOG_TLS_KEY_PATH`. Contact your infrastructure team if the listener is not starting.
-- **Network connectivity** must allow NAM agents to reach AA26 on TCP port 1514 (default) through any firewalls or network policies.
-- You must have **Administrator** access to AA26 to generate enrollment tokens and view enrolled agents.
+- **Netwrix Activity Monitor** must be installed and monitoring the hosts for which you want real-time activity in AA2601. Confirm monitoring is active before adding the AA2601 output.
+- **TLS certificates** must be provisioned on the AA2601 server. The server certificate and private key paths are set via the environment variables `SYSLOG_TLS_CERT_PATH` and `SYSLOG_TLS_KEY_PATH`. Contact your infrastructure team if the listener is not starting.
+- **Network connectivity** must allow NAM agents to reach AA2601 on TCP port 1514 (default) through any firewalls or network policies.
+- You must have **Administrator** access to AA2601 to generate enrollment tokens and view enrolled agents.
 
 :::note
-Activity data flows from NAM to AA26 — AA26 does not initiate the connection. Ensure firewalls allow outbound traffic from each NAM agent host to the AA26 server on the configured listener port.
+Activity data flows from NAM to AA2601 — AA2601 does not initiate the connection. Ensure firewalls allow outbound traffic from each NAM agent host to the AA2601 server on the configured listener port.
 :::
 
 ---
@@ -71,7 +71,7 @@ Activity data flows from NAM to AA26 — AA26 does not initiate the connection. 
 
 ### Step 1 — Verify the Listener Is Running
 
-The listener starts automatically when AA26 starts, provided TLS certificates are present and the `enable_activitymonitor_ingestion` feature flag is enabled (it is by default).
+The listener starts automatically when AA2601 starts, provided TLS certificates are present and the `enable_activitymonitor_ingestion` feature flag is enabled (it is by default).
 
 To confirm it is active:
 
@@ -91,9 +91,9 @@ If the listener is not running, check the application logs for the reason — mi
 Tokens expire after **1 hour**. Generating a new token immediately invalidates any previously issued token. A single token can enroll multiple agents simultaneously — plan your enrollment session and generate the token immediately before you begin.
 :::
 
-### Step 3 — Add the AA26 Output in Netwrix Activity Monitor
+### Step 3 — Add the AA2601 Output in Netwrix Activity Monitor
 
-Add an AA26 output destination to each monitoring policy in NAM that covers the hosts you want to stream into AA26.
+Add an AA2601 output destination to each monitoring policy in NAM that covers the hosts you want to stream into AA2601.
 
 :::note
 The following steps describe the general configuration flow. Exact menu labels and field names in the NAM console may differ depending on your NAM version. Verify the steps against the NAM documentation for your installed version.
@@ -103,16 +103,16 @@ The following steps describe the general configuration flow. Exact menu labels a
 2. Navigate to the monitoring policy for the target host or host group.
 3. Open the output configuration for that policy.
 4. Add a new output destination and select the **Netwrix Access Analyzer** output type.
-5. Enter the hostname or IP address of your AA26 instance and the listener port (default: 1514).
+5. Enter the hostname or IP address of your AA2601 instance and the listener port (default: 1514).
 6. When prompted for an enrollment token, enter the token you generated in Step 2.
 7. Save the output configuration.
 8. Repeat for each monitoring policy covering additional hosts.
 
-The NAM agent connects to AA26, presents its client certificate, and sends an enrollment request. AA26 validates the token, adds the agent's SPKI hash to the trusted agents allowlist, and confirms enrollment. After that, the agent reconnects and begins streaming events. The enrollment token is no longer needed unless the agent generates a new key pair.
+The NAM agent connects to AA2601, presents its client certificate, and sends an enrollment request. AA2601 validates the token, adds the agent's SPKI hash to the trusted agents allowlist, and confirms enrollment. After that, the agent reconnects and begins streaming events. The enrollment token is no longer needed unless the agent generates a new key pair.
 
 ### Step 4 — Verify Enrollment
 
-After enrollment, the agent appears in AA26's trusted agents list. You can view enrolled agents via the API:
+After enrollment, the agent appears in AA2601's trusted agents list. You can view enrolled agents via the API:
 
 ```
 GET /api/v1/nam-listener/agents
@@ -120,7 +120,7 @@ GET /api/v1/nam-listener/agents
 
 Each entry shows the agent's hostname, source IP, and enrollment timestamp.
 
-To confirm AA26 is receiving events:
+To confirm AA2601 is receiving events:
 
 1. Log in to Access Analyzer.
 2. Navigate to the resource or host that NAM is monitoring.
@@ -158,7 +158,7 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 
 | Setting | Default | Range | Description |
 | --- | --- | --- | --- |
-| `activitymonitor_enrollment_first_message_timeout_seconds` | 10 | 5 – 60 | Seconds AA26 waits for the first message after a new connection is established. Connections that send nothing within this window are closed. |
+| `activitymonitor_enrollment_first_message_timeout_seconds` | 10 | 5 – 60 | Seconds AA2601 waits for the first message after a new connection is established. Connections that send nothing within this window are closed. |
 | `activitymonitor_enrollment_ban_duration_seconds` | 10 | 5 – 300 | Seconds a source IP is blocked after a protocol violation (invalid enrollment code, malformed JSON, or unexpected message format). |
 | `activitymonitor_max_message_size` | 16,777,216 (16 MB) | 65,536 – 67,108,864 | Maximum byte size of a single message from a NAM agent. If exceeded without a line delimiter, the connection is dropped. |
 
@@ -166,7 +166,7 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 
 | Setting | Default | Range | Description |
 | --- | --- | --- | --- |
-| `activitymonitor_shutdown_drain_timeout_seconds` | 300 | 10 – 3,600 | Maximum seconds AA26 waits for buffered events to finish writing to ClickHouse during a graceful shutdown. After this window, remaining writer threads are force-terminated and events still in the buffer are lost. |
+| `activitymonitor_shutdown_drain_timeout_seconds` | 300 | 10 – 3,600 | Maximum seconds AA2601 waits for buffered events to finish writing to ClickHouse during a graceful shutdown. After this window, remaining writer threads are force-terminated and events still in the buffer are lost. |
 
 ---
 
@@ -176,13 +176,13 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 
 Use the default port (1514) unless you have a conflict. If you must change it:
 
-- Update NAM agent configuration to match **before** saving the new port in AA26.
+- Update NAM agent configuration to match **before** saving the new port in AA2601.
 - Update firewall rules and network policies before making the change.
 - Changing the port requires all currently connected agents to reconnect.
 
 ### TLS Certificate Management
 
-- **Monitor certificate expiration.** AA26 logs a warning when the server certificate is within 30 days of expiry, and again within 7 days. Treat the 30-day warning as actionable.
+- **Monitor certificate expiration.** AA2601 logs a warning when the server certificate is within 30 days of expiry, and again within 7 days. Treat the 30-day warning as actionable.
 - **NAM agents use self-signed certificates** — this is expected and supported. Do not replace them with CA-signed certificates unless your NAM deployment specifically requires it.
 - **Key pair rotation requires re-enrollment.** If a NAM agent generates a new key pair (for example, after a reinstall), its previous SPKI hash entry will no longer match. Re-enroll the agent using a new enrollment token. Remove the stale entry via the API: `DELETE /api/v1/nam-listener/agents/:spki_hash`.
 
@@ -214,7 +214,7 @@ Start with defaults. Only adjust if you observe specific symptoms.
 
 ### Kubernetes Shutdown Considerations
 
-The `activitymonitor_shutdown_drain_timeout_seconds` setting (default: 300 seconds) controls how long AA26 waits during graceful shutdown to flush buffered events to ClickHouse.
+The `activitymonitor_shutdown_drain_timeout_seconds` setting (default: 300 seconds) controls how long AA2601 waits during graceful shutdown to flush buffered events to ClickHouse.
 
 In Kubernetes deployments, the pod's `terminationGracePeriodSeconds` must be greater than this value plus a small buffer for the rest of the shutdown sequence. If `terminationGracePeriodSeconds` is less than the drain timeout, Kubernetes will force-kill the pod before drain completes and buffered events will be lost.
 
@@ -245,7 +245,7 @@ The listener retries startup up to 5 times with exponential backoff (starting at
 
 ### A NAM agent cannot connect
 
-- Verify network connectivity from the agent host to AA26 on the configured port (default: 1514).
+- Verify network connectivity from the agent host to AA2601 on the configured port (default: 1514).
 - Verify the agent is configured with the correct hostname and port. The port in NAM agent configuration must match `activitymonitor_tcp_port`.
 - Verify the agent has a valid TLS client certificate. Connections without a client certificate are rejected and the source IP is temporarily banned.
 
@@ -256,7 +256,7 @@ The listener retries startup up to 5 times with exponential backoff (starting at
 
 ### Events are not appearing in reports
 
-- Verify ClickHouse is healthy and reachable from AA26. Writer threads log errors if ClickHouse writes fail.
+- Verify ClickHouse is healthy and reachable from AA2601. Writer threads log errors if ClickHouse writes fail.
 - Check `activitymonitor_batch_interval_seconds` — at the default of 10 seconds, there is a short delay between an event occurring and appearing in a report.
 - Check application logs for buffer queue depth statistics. If the buffer is full, ClickHouse writes may be lagging — consider increasing `activitymonitor_buffer_max_size` or `activitymonitor_clickhouse_batch_size`.
 
@@ -267,7 +267,7 @@ Repeated IP bans (governed by `activitymonitor_enrollment_ban_duration_seconds`)
 - Verify the agent is sending the correct enrollment payload. The agent should be a supported Netwrix Activity Monitor version.
 - Verify the enrollment token has not expired (1-hour TTL). An expired token causes an invalid-code rejection and a short ban. Generate a new token and retry.
 
-Bans are short (default: 10 seconds) and reset on pod restart. For persistent issues, check NAM agent logs for the specific error response AA26 sends during enrollment.
+Bans are short (default: 10 seconds) and reset on pod restart. For persistent issues, check NAM agent logs for the specific error response AA2601 sends during enrollment.
 
 ### Enrolled agents list has stale entries
 
