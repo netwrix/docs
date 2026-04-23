@@ -17,11 +17,26 @@ Access Analyzer connects to the following source types:
 - **File servers** — Scans SMB/CIFS file shares for permissions, folder-level ACLs, file ownership, and sensitive data content
 - **SharePoint Online** — Scans SharePoint sites for permissions, sharing links, and sensitive data across document libraries
 - **Active Directory** — Syncs users, groups, group memberships, and security risks from on-premises AD domains
-- **Entra ID** — Syncs Microsoft Information Protection (MIP) sensitivity labels from your Microsoft 365 tenant
+- **Entra ID** — Syncs users, groups, and roles from your Microsoft 365 tenant, and collects Microsoft Information Protection (MIP) sensitivity labels applied across the tenant
 
 After each scan, results are stored in a high-performance analytics database and made available through embedded Metabase dashboards and reports. Security teams can filter by domain, file server, site, or classification type, and drill into specific findings without writing queries.
 
+:::note
+Scans are **read-only**. Access Analyzer does not modify files, permissions, or directory objects on any scanned source. No persistent agents are installed on file servers or domain controllers — edge scanners run as short-lived jobs and terminate after each scan.
+:::
+
+## Key Capabilities
+
+| Capability | Description |
+| --- | --- |
+| **Sensitive Data Discovery** | Classifies file content across file servers and SharePoint Online against built-in detection patterns for PII, PHI, credentials, and financial data. Findings are mapped to compliance frameworks including GDPR, HIPAA, PCI DSS, and CCPA. |
+| **Access Risk Analysis** | Identifies open access, overly permissive ACLs, broken permission inheritance, and stale entitlements across file shares and SharePoint sites. Shows effective permissions for any user or group. |
+| **Identity Inventory** | Continuously syncs users, groups, memberships, and roles from Active Directory and Entra ID. Tracks group nesting, stale accounts, and role assignments across your identity providers. |
+| **File Activity Monitoring** | Ingests real-time file system and SharePoint activity events from Netwrix Activity Monitor. Powers activity reports and enables anomaly detection and sensitive data activity tracking. Requires a separate Netwrix Activity Monitor deployment. |
+
 ## Architecture Overview
+
+This section describes how Access Analyzer components are deployed and how data flows through the system. It is primarily intended for IT administrators and architects planning or troubleshooting a deployment.
 
 Access Analyzer runs entirely within your Kubernetes cluster. All components — the web application, API server, analytics database, and connector jobs — deploy to a single `access-analyzer` namespace. No data leaves your infrastructure.
 
@@ -98,3 +113,12 @@ graph TB
 | **PostgreSQL** | Application data: users, sources, scans, scan executions, service accounts, configuration |
 | **ClickHouse** | Scan results: file objects, permissions, ACLs, group memberships, sensitive data findings |
 | **Redis** | Sidekiq job queue and session cache for the Core API |
+
+## Next Steps
+
+| | |
+| --- | --- |
+| **New to Access Analyzer?** | Read [Key Concepts](/docs/accessanalyzer/2601/overview/keyconcepts) to learn the terminology used throughout the product and documentation. |
+| **Ready to install?** | Follow the [Quick Install](/docs/accessanalyzer/2601/install/quickinstall) guide for an end-to-end deployment walkthrough. |
+| **Planning your deployment?** | Review [Hardware and System Requirements](/docs/accessanalyzer/2601/install/system/requirements) and [Network and Port Requirements](/docs/accessanalyzer/2601/install/system/network) before provisioning your server. |
+| **Connecting your first source?** | Go to **Configuration** > **Source Groups** in the application and use the Connect Source wizard. |
