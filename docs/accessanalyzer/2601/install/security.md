@@ -24,12 +24,12 @@ Your Netwrix license key provides access to the OCI package registry. Treat it a
 
 - Restrict access to the K3s API server (port 6443) to trusted networks only
 - Limit inbound access to the Access Analyzer web interface to authorized IP ranges
-- Use firewall rules to allow only the minimum required outbound endpoints — see [Network Configuration](/docs/accessanalyzer/1_0/install/network)
+- Use firewall rules to allow only the minimum required outbound endpoints — see [Network Configuration](/docs/accessanalyzer/2601/install/system/network)
 
 ## TLS / SSL
 
 - Replace the default self-signed certificate with a certificate issued by a trusted CA for production use
-- Ensure outbound TLS verification is enabled by mounting your organization's CA bundle — see [SSL / TLS Configuration](/docs/accessanalyzer/1_0/install/ssl)
+- Ensure outbound TLS verification is enabled by mounting your organization's CA bundle — see [SSL / TLS Configuration](/docs/accessanalyzer/2601/install/system/certificates)
 
 ## RBAC and Access Control
 

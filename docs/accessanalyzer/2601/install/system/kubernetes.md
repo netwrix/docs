@@ -33,7 +33,7 @@ K3s is installed and managed automatically by the Access Analyzer installer. The
 
 ## Kernel Features
 
-The following kernel features must be available. The installer [preflight checks](/docs/accessanalyzer/1_0/install/preflight) validate these automatically:
+The following kernel features must be available. The installer validates these automatically during installation (see [System Requirements](/docs/accessanalyzer/2601/install/system/requirements)):
 
 | Feature | Description |
 | --- | --- |

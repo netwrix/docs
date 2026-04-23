@@ -23,7 +23,7 @@ All pods should be in one of these states:
 | `Running` | Pod is active and healthy |
 | `Completed` | One-time job completed successfully |
 
-If any pods show `CrashLoopBackOff`, `Error`, or `ImagePullBackOff`, see [Troubleshooting](/docs/accessanalyzer/1_0/troubleshooting/overview).
+If any pods show `CrashLoopBackOff`, `Error`, or `ImagePullBackOff`, check the [application logs](/docs/accessanalyzer/2601/configurations/logs).
 
 ## ArgoCD Application Status
 
@@ -92,6 +92,6 @@ kubectl top pods -A --sort-by=memory
 
 ## Next Steps
 
-- [Create your first admin account](/docs/accessanalyzer/1_0/gettingstarted/firstlogin) and sign in
-- [Configure a data source](/docs/accessanalyzer/1_0/gettingstarted/firstscan/overview) and run your first scan
-- Review [DSPMctl CLI](/docs/accessanalyzer/1_0/install/dspmctl) for ongoing application management
+- [Create your first admin account](/docs/accessanalyzer/2601/configurations/users) and sign in
+- [Configure a data source](/docs/accessanalyzer/2601/gettingstarted/active-directory/active-directory) and run your first scan
+- Review [install commands](/docs/accessanalyzer/2601/install/install-commands) for ongoing application management

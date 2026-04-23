@@ -49,4 +49,4 @@ The service should not be found or should show as inactive.
 
 ## Reinstallation
 
-After uninstalling, you can reinstall Access Analyzer by running the installer again. See [Quick Install](/docs/accessanalyzer/1_0/install/quickinstall) or [Step-by-Step Installation](/docs/accessanalyzer/1_0/install/stepbystep).
+After uninstalling, you can reinstall Access Analyzer by running the installer again. See [Quick Install](/docs/accessanalyzer/2601/install/quickinstall) or [Install Commands](/docs/accessanalyzer/2601/install/install-commands).

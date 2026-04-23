@@ -104,8 +104,8 @@ If multiple resolutions exist, use ### subheadings for each.
 
 ## Related Links
 
-- [Netwrix Access Analyzer Documentation — System Requirements](URL)
-- [Link text describing destination — add a line for each relevant resource](URL)
+- [Netwrix Access Analyzer Documentation — System Requirements](/docs/accessanalyzer/2601/install/system/requirements)
+- [Link text describing destination — add a line for each relevant resource](#)
 
 ---
 
@@ -163,7 +163,7 @@ Remove this section before publishing.
 | File path (inline) | `` `backtick` `` | Open `` `C:\Program Files\Netwrix` `` |
 | Important callout | `> **IMPORTANT:** ...` | Warns of irreversible actions |
 | Note callout | `> **NOTE:** ...` | Non-critical supplemental info |
-| External link | `[Name ⸱ Company 🡥](URL)` | [SMB Security ⸱ Microsoft 🡥](URL) |
+| External link | `[Name ⸱ Company 🡥](URL)` | [SMB Security ⸱ Microsoft 🡥](https://example.com) |
 | Image alt text | [Action shown] + [key UI elements] | "Dialog box for scan settings with Schedule tab active" |
 | Product — first mention | Full name | Netwrix Access Analyzer |
 | Product — subsequent mentions | Short name | Access Analyzer |
