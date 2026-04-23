@@ -93,5 +93,5 @@ kubectl top pods -A --sort-by=memory
 ## Next Steps
 
 - [Create your first admin account](/docs/accessanalyzer/2601/configurations/users) and sign in
-- [Configure a data source](/docs/accessanalyzer/2601/gettingstarted/active-directory/active-directory) and run your first scan
+- [Configure a data source](../gettingstarted/active-directory/active-directory.md) and run your first scan
 - Review [install commands](/docs/accessanalyzer/2601/install/install-commands) for ongoing application management
