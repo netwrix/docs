@@ -1,54 +1,38 @@
 ---
-title: "Entra ID Requirements"
-description: "Azure App Registration, Graph API permissions, and OAuth2 credentials"
-sidebar_position: 40
+title: "Entra ID"
+description: "Requirements for connecting Access Analyzer to Microsoft Entra ID"
+sidebar_position: 1
 ---
 
-# Entra ID Requirements
+# Entra ID
 
-The Entra ID connector validates connectivity to Microsoft Entra ID (formerly Azure Active Directory) using OAuth2 client credentials.
+Access Analyzer connects to Microsoft Entra ID using OAuth2 client credentials through a pre-configured Microsoft Entra ID application. It accesses Entra ID through Microsoft Graph to synchronize users, groups, role assignments, and Microsoft Information Protection (MIP) sensitivity labels.
 
+Before adding Entra ID as a data source, you must register a dedicated Microsoft Entra ID application and grant it the required permissions.
 
-## Network Requirements
+## Scan types
 
-| Port | Protocol | Direction | Description |
-| --- | --- | --- | --- |
-| 443 | TCP | Access Analyzer → Microsoft identity platform | HTTPS |
+| Scan type | Description |
+| --- | --- |
+| **Users, Groups, and Roles** | Synchronizes users, groups, and role assignments from the Entra ID tenant. The first scan runs in full; subsequent scans collect only changes since the last run. Also retrieves MIP sensitivity labels automatically when the scan runs. |
 
-## Azure App Registration
+## Before you begin
 
-An Azure AD (Entra ID) app registration is required.
+You need the following before adding Entra ID as a data source:
 
-### Required API Permissions
+- A user account with the **Global Administrator**, **Application Administrator**, or **Cloud Application Administrator** role in Microsoft Entra ID, to register an application and grant admin consent for permissions
+- A registered Microsoft Entra ID application with the required API permissions — see [Entra Tenant Requirements](entra-requirements.md)
+- A client secret generated for the registered application — see [Client Secret Configuration](app-registration-secret.md)
 
-| Permission | Type | Description |
+When configuring the Entra ID source in Access Analyzer, you need the following values from your registered application:
+
+- **Application (client) ID**
+- **Directory (tenant) ID**
+- **Client secret value**
+
+## Network requirements
+
+| Protocol | Port | Destination |
 | --- | --- | --- |
-| `User.Read.All` | Application | Read all user profiles |
-| `Group.Read.All` | Application | Read all group memberships |
-| `InformationProtectionPolicy.Read.All` | Application | Read your organization's information protection policies — required for MIP label retrieval |
-
-### Registration Steps
-
-1. Sign in to the [Azure portal](https://portal.azure.com) and navigate to **Microsoft Entra ID** > **App registrations**
-2. Click **New registration** and provide a name
-3. Under **API permissions**, add the required Microsoft Graph application permissions
-4. Grant admin consent for the permissions
-5. Under **Certificates & secrets**, create a client secret
-6. Note the **Application (client) ID**, **Tenant ID**, and **Client Secret**
-
-## Credential Type
-
-| Field | Value |
-| --- | --- |
-| **Type** | OAuth2 Client Credentials |
-| **Client ID** | Application (client) ID |
-| **Client Secret** | Client secret value |
-| **Tenant ID** | Directory (tenant) ID |
-
-## Connector Capabilities
-
-| Operation | Description |
-| --- | --- |
-| **Test connection** | Validates OAuth2 authentication and Graph API connectivity |
-| **Users, Groups and Roles sync** | Synchronizes users, groups, and role assignments from the Entra ID tenant |
-| **MIP label retrieval** | Retrieves Microsoft Information Protection sensitivity labels from the tenant for use in sensitive data classification |
+| HTTPS | 443 | Microsoft identity platform (`login.microsoftonline.com`) |
+| HTTPS | 443 | Microsoft Graph API (`graph.microsoft.com`) |
