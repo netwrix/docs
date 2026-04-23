@@ -9,7 +9,7 @@ sidebar_position: 70
 The Users page lets you create and manage the accounts that have access to Netwrix Access Analyzer. Navigate to **Configuration** > **Users** to view and manage all users.
 
 :::note
-This page is available to users with the **User Admin** role only. Users with the Administrator or Viewer role cannot access this page.
+This page is available to users with the **User Admin** or **Administrator** role. Users with the Viewer role cannot access this page.
 :::
 
 ## Users list
@@ -28,12 +28,12 @@ Use the search field to filter by name or email. You can sort by any column.
 
 ## Roles
 
-Access Analyzer has three roles with intentionally non-overlapping responsibilities:
+Access Analyzer has three roles:
 
 | Role | Description |
 | --- | --- |
-| **Administrator** | System configuration rights: configure sources, scans, connectors, application settings. Does **not** have user management rights. |
-| **User Admin** | User and role management rights: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. |
+| **Administrator** | Full access: system configuration (sources, scans, connectors, application settings) and user management (create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users). |
+| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
 A user can only hold one role at a time.
@@ -64,9 +64,9 @@ After installation, complete the following steps in order before handing the pro
 | Step | Action | Notes |
 | --- | --- | --- |
 | **1** | Sign in as `admin@dspm.local` | Uses the bootstrap User Admin account. Retrieve the password using the kubectl command above. |
-| **2** | Create at least one named **User Admin** | Ensures user access control is not dependent on the bootstrap account. This person manages who can sign in and what roles they hold. |
-| **3** | Create at least one **Administrator** | Grants access to system configuration — sources, scans, connectors, and application settings. This is typically the person responsible for setting up and maintaining the product. |
-| **4** | Create **Viewer** accounts as needed | Optional. Add Viewer accounts for stakeholders who need read-only access to dashboards and reports but do not need configuration or user management rights. |
+| **2** | Create at least one named **User Admin** | Provides a dedicated account for user management with no system configuration access. Use this account for ongoing user administration so that Administrator accounts are not required for routine user changes. |
+| **3** | Create at least one **Administrator** | Grants full access — system configuration and user management. This is typically the person responsible for setting up and maintaining the product. |
+| **4** | Create **Viewer** accounts as needed | Optional. Add Viewer accounts for stakeholders who need read-only access to dashboards and reports. |
 | **5** | Sign out of the bootstrap account | Day-to-day work should be done from named accounts. |
 
 ## Add a user

@@ -32,15 +32,15 @@ Service accounts are managed in **Configuration** > **Service Accounts** and can
 
 ## User Roles
 
-Access Analyzer has three roles with intentionally non-overlapping responsibilities:
+Access Analyzer has three roles:
 
 | Role | Responsibilities |
 | --- | --- |
-| **Administrator** | Manages system configuration — sources, scans, connectors, service accounts, and application settings. Cannot manage users or roles. |
-| **User Admin** | Manages users and role assignments — creates accounts, assigns roles, and pre-provisions federated users. Cannot change system configuration. |
+| **Administrator** | Full access: manages system configuration (sources, scans, connectors, service accounts, application settings) and user management (create accounts, assign roles, manage users). |
+| **User Admin** | User and role management only — creates accounts, assigns roles, and pre-provisions federated users. Cannot change system configuration. |
 | **Viewer** | Read-only access to data, reports, and dashboards. Cannot make changes. |
 
-Most deployments assign at least one person to both the Administrator and User Admin roles. For a full walkthrough of role assignment, see the [Quick Install — Roles](/docs/accessanalyzer/2601/install/quickinstall#roles) section.
+For a full walkthrough of role assignment, see the [Quick Install — Roles](/docs/accessanalyzer/2601/install/quickinstall#roles) section.
 
 ## Connectors
 

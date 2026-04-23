@@ -408,11 +408,11 @@ This table is also published at [Configuration > Identity Provider > Roles](../c
 
 | Role | Description |
 | --- | --- |
-| **Administrator** | System configuration rights: configure sources, scans, connectors, application settings. Does **not** have user management rights. |
-| **User Admin** | User and role management rights: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
+| **Administrator** | Full access: system configuration (sources, scans, connectors, application settings) and user management (create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users). |
+| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
-**User Admin** and **Administrator** have non-overlapping responsibilities by design. Most deployments assign at least one user to each role. The bootstrap `admin@dspm.local` account is seeded as User Admin — you'll use it to pre-provision the rest of your users, including your first Administrator.
+The **User Admin** role exists to provide a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration. The bootstrap `admin@dspm.local` account is seeded as User Admin — you'll use it to pre-provision the rest of your users, including your first Administrator.
 
 <!-- END SYNC -->
 

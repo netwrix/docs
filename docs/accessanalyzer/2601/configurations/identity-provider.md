@@ -159,12 +159,12 @@ No password is required for pre-provisioned accounts. For details on managing us
 <!-- SYNC: install/quickinstall.md "Roles" -->
 <!-- If you change this block, update the matching block in install/quickinstall.md -->
 
-Access Analyzer has three roles. **User Admin** and **Administrator** have non-overlapping responsibilities by design — most deployments assign at least one user to each. The bootstrap `admin@dspm.local` account is seeded as User Admin, so it can pre-provision the rest of your users, including your first Administrator.
+Access Analyzer has three roles. The bootstrap `admin@dspm.local` account is seeded as User Admin, so it can pre-provision the rest of your users, including your first Administrator.
 
 | Role | Description |
 | --- | --- |
-| **Administrator** | System configuration rights: configure sources, scans, connectors, application settings. Does **not** have user management rights. |
-| **User Admin** | User and role management rights: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
+| **Administrator** | Full access: system configuration (sources, scans, connectors, application settings) and user management (create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users). |
+| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
 <!-- END SYNC -->
