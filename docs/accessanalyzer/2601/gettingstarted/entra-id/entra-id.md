@@ -27,7 +27,7 @@ See [Client ID/Secret service account](../../configurations/service-accounts/cli
 
 ### Before You Begin
 
-- A registered application in your Entra ID tenant with the required API permissions granted.
+- A registered application in your Entra ID tenant with the required API permissions granted, including `InformationProtectionPolicy.Read.All` for MIP label retrieval.
 - The application's **Tenant ID** and **Client ID**.
 - A client secret generated for the application.
 - A Client ID and Secret service account created in Access Analyzer.

@@ -8,9 +8,6 @@ sidebar_position: 40
 
 The Entra ID connector validates connectivity to Microsoft Entra ID (formerly Azure Active Directory) using OAuth2 client credentials.
 
-:::note
-In Access Analyzer v1.0, the Entra ID connector supports **test connection only**. Full identity synchronization is not available in this release.
-:::
 
 ## Network Requirements
 
@@ -26,8 +23,9 @@ An Azure AD (Entra ID) app registration is required.
 
 | Permission | Type | Description |
 | --- | --- | --- |
-| `User.Read.All` | Application | Read all user profiles (for future sync capability) |
-| `Group.Read.All` | Application | Read all group memberships (for future sync capability) |
+| `User.Read.All` | Application | Read all user profiles |
+| `Group.Read.All` | Application | Read all group memberships |
+| `InformationProtectionPolicy.Read.All` | Application | Read your organization's information protection policies — required for MIP label retrieval |
 
 ### Registration Steps
 
@@ -52,3 +50,5 @@ An Azure AD (Entra ID) app registration is required.
 | Operation | Description |
 | --- | --- |
 | **Test connection** | Validates OAuth2 authentication and Graph API connectivity |
+| **Users, Groups and Roles sync** | Synchronizes users, groups, and role assignments from the Entra ID tenant |
+| **MIP label retrieval** | Retrieves Microsoft Information Protection sensitivity labels from the tenant for use in sensitive data classification |

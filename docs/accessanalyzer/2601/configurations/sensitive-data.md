@@ -24,7 +24,7 @@ The MIP configuration section connects Access Analyzer to a Microsoft Entra ID t
 1. In the **Tenant ID** dropdown, select the Entra ID source that represents the tenant whose MIP labels you want to use.
 2. Click **Save Configuration**.
 
-The dropdown lists all Entra ID sources configured in Access Analyzer. If no Entra ID sources appear, add one on the **Sources** page first.
+The dropdown lists Entra ID source groups that have completed at least one **Users, Groups and Roles** scan. If the dropdown is empty, either no Entra ID source group exists or the scan has not run yet. Run the scan first, then return to this page to select the tenant.
 
 After you select a tenant, Access Analyzer retrieves the associated MIP labels. The status bar below the dropdown shows:
 
@@ -112,19 +112,28 @@ Enabling OCR increases scan processing time.
 
 ## Label handling behavior
 
-The **Label Settings** drawer controls how Access Analyzer applies, updates, or removes MIP labels during scans. To open it, click **Label Settings** in the upper-right corner of the Sensitive Data Types card.
+The **Label Settings** drawer controls whether Access Analyzer writes MIP sensitivity labels back to files during sensitive data scans, and how it handles files that already carry a label. To open it, click **Label Settings** in the upper-right corner of the Sensitive Data Types card.
+
+These settings apply globally and can be overridden per-scan in the scan configuration.
+
+:::note
+Label write-back applies to **File Server and SharePoint Online sensitive data scans only**. Entra ID and Active Directory scans do not support label application.
+:::
+
+:::note
+Label write-back only occurs when **both** conditions are met: a MIP label is mapped to the detected data type in the Sensitive Data Types table, **and** the relevant option below is enabled. All options are off by default — by default, Access Analyzer detects and classifies files but does not write any labels to files.
+:::
 
 ### Options
 
-| Option | Default | Description |
-| --- | --- | --- |
-| **Clear label if no longer sensitive** | Off | When enabled, Access Analyzer removes the MIP label from a file if the file no longer matches any enabled sensitive data type in a subsequent scan. |
-| **Allow overwriting existing labels** | Off | When enabled, Access Analyzer applies the mapped label even if the file already has a MIP label assigned. When disabled, Access Analyzer skips files that already have a label. |
-| **Allow downgrading labels** | Off | When enabled, Access Analyzer can replace a higher-priority label with a lower-priority one. Requires **Allow overwriting existing labels** to be enabled. |
+**Clear label if no longer sensitive**
+When enabled, Access Analyzer removes the MIP label from a file if a subsequent scan finds the file no longer matches any enabled sensitive data type. Off by default.
 
-:::warning
-**Allow downgrading labels** requires **Allow overwriting existing labels** to be on. If you turn off **Allow overwriting existing labels**, the **Allow downgrading labels** option is unavailable.
-:::
+**Allow overwriting existing labels**
+When enabled, Access Analyzer applies the mapped label to files that already have a MIP label assigned. When disabled, files that already carry any MIP label are skipped — only unlabeled files receive a label. Off by default.
+
+- **Allow downgrading labels** *(requires Allow overwriting existing labels to be on)*
+  When enabled, Access Analyzer can replace a higher-priority label with a lower-priority one (for example, replacing "Confidential" with "General"). When disabled, only upgrades or equal-priority replacements are applied. This option is unavailable when **Allow overwriting existing labels** is off. Off by default.
 
 To configure label handling:
 

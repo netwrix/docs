@@ -65,5 +65,6 @@ The Overview page for the newly registered application opens. Note the following
 
 | API | Permission | Description |
 | --- | --- | --- |
-| Microsoft Graph | Directory.Read.All | Read directory data |
-| Microsoft Graph | Policy.Read.All | Read your organization's policies (required for state-in-time reports) |
+| Microsoft Graph | `Directory.Read.All` | Read directory data |
+| Microsoft Graph | `Policy.Read.All` | Read your organization's policies (required for state-in-time reports) |
+| Microsoft Graph | `InformationProtectionPolicy.Read.All` | Read your organization's information protection policies — required for MIP label retrieval |
