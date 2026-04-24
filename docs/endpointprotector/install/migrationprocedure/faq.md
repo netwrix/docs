@@ -240,7 +240,7 @@ Decommission the old server only after:
 
 ---
 
-## Can I Revert from 2510 or a Later Version Back to a 5.x Server?
+## Reverting from 2510 or a Later Version to a 5.x Server
 
 The migration from 5.x to 2510 is one-way — there is no supported downgrade path. If critical issues are discovered after migration, the only supported rollback method is restoring the pre-migration VM snapshot of your 5.9.4.2 server. This is why keeping the old server VM alive and taking a snapshot before migration is mandatory.
 

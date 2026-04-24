@@ -9,7 +9,7 @@ sidebar_position: 10
 Content Aware Policies are sets of rules for sensitive content detection that enforce ﬁle transfers
 management on selected entities (users, computers, groups, departments).
 
-From this section, you can create a new policy, edit or delete an existing policy or create and
+From this section, you can create a new policy, edit or delete an existing policy, or create and
 apply a predeﬁned policy.
 
 For example; Content Aware Policy can be set to only block Credit Cards AND Email Addresses. In this
@@ -78,7 +78,7 @@ Depending on the speciﬁc application and OS, some limitations may apply.
       content but allow the user to remediate the action by using a justiﬁcation
 
 :::note
-Initially, we recommend using the Report only action to gain a better view of data use
+Initially, Netwrix recommends using the Report only action to gain a better view of data use
 across your network and not interrupt your activity.
 :::
 
@@ -87,7 +87,7 @@ across your network and not interrupt your activity.
 
 :::note
 To enforce the Outside Hours and Outside Network options, after you save the policy,
-enable the setting on the speciﬁc device from Device Control, Global settings, Group or Computers.
+enable the setting on the speciﬁc device from Device Control, Global settings, Group, or Computers.
 :::
 
 
@@ -98,7 +98,7 @@ enable the setting on the speciﬁc device from Device Control, Global settings,
 - Policy Status – enable to set policy status to active
 - Client Notiﬁcations – enable this setting to send notiﬁcations to clients
 - Global Thresholds – if disabled, the threshold can be considered a Regular Threshold
-- Threat Threshold – type the number of maximum allowed content violations for a ﬁle transfer
+- Threat Threshold – enter the number of maximum allowed content violations for a ﬁle transfer
 - File size threshold – enter the ﬁle size (in MB) starting from which the ﬁle transfer is either
   blocked or reported
 
@@ -120,8 +120,8 @@ This setting doesn't apply for File Name and File Location.
 
 :::note
 The Threshold option applies only to multiple ﬁlters, including Predeﬁned Content, Custom
-Content, and Regular Expressions. As a general rule, it is recommended that Block & Report policies
-that use the Threshold should be placed with higher priority than Report Only policies.
+Content, and Regular Expressions. As a general rule, place Block & Report policies that use the Threshold at higher priority than
+Report Only policies.
 :::
 
 
@@ -146,7 +146,7 @@ numbers, emphasizing the distinctions between Regular and Global Thresholds.
 
 ## Policy Exit Points
 
-Policy Exit Points allow you to monitor and control the transfer of sensitive data across various
+Use Policy Exit Points to monitor and control the transfer of sensitive data across various
 platforms and channels. The following exit points are available for monitoring.
 
 ### Applications
@@ -242,7 +242,7 @@ player, using either Drag and Drop or Copy and Paste actions.
 
 ### Clipboard
 
-The Clipboard functionality enables you to monitor all content captured through Copy & Paste or Cut
+Use the Clipboard functionality to monitor all content captured through Copy & Paste or Cut
 & Paste operations.
 
 :::note
@@ -344,7 +344,7 @@ security, content blocking occurs during the copy operation.
 :::
 
 
-![The Clipboard functionality enables you to monitor all content captured through Copy & Paste or Cut & Paste operations](policyexitclipboard.webp)
+![Clipboard functionality for monitoring content captured through Copy & Paste or Cut & Paste operations](policyexitclipboard.webp)
 
 Newer Linux Ubuntu versions have 'snap'-based applications installed by default, affecting Endpoint
 Protector Client functionality. This may result in missing ﬁle-related events in Content Aware

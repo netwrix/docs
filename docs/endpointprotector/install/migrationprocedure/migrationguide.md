@@ -143,7 +143,7 @@ The hypervisor recommendations above reflect the best available guidance based o
 
 Before any upgrade, assess the health of the current appliance.
 - For upgrades from 5.7.0.0 to 5.9.2.x, verify that disk space and database (DB) allocation are sufficient.
-- For migration from 5.9.4.2, note that the migration transfers configuration only — EPP log data isn't included.
+- For migration from 5.9.4.2, the migration transfers configuration only — EPP log data isn't included.
 
 **In the EPP Console:**
 
