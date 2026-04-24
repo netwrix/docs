@@ -16,7 +16,7 @@ Before running the installer, confirm the following.
 
 ### System requirements
 
-**Absolute installer minimums (enforced by preflight):** 6 vCPUs, 24 GB RAM, 20 GB free disk on `/`. Installation is blocked if the system falls below these thresholds.
+**Absolute installer minimums (enforced by preflight):** 6 vCPUs, 24 GB RAM, 20 GB free disk on `/`. The preflight check blocks installation if the system falls below these thresholds.
 
 Choose a deployment size based on your environment:
 
@@ -36,12 +36,12 @@ Choose a deployment size based on your environment:
 | `/var/log` | 5 GB | System and application logs |
 | `/etc` | 1 GB | Configuration files |
 
-**Network:** Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains) below.
+**Network:** Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains).
 
 **License:** Valid Netwrix license key.
 
 :::note
-**Supported OS:** Ubuntu 24.04 LTS is the primary tested platform. Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are also compatible. AIX and non-Linux operating systems aren't supported.
+**Supported OS:** Ubuntu 24.04 LTS is the primary tested platform. Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are also compatible. Access Analyzer doesn't support AIX or non-Linux operating systems.
 :::
 
 :::note
@@ -136,7 +136,7 @@ Ports the Access Analyzer server must be able to reach on your data sources and 
 
 ### Internal port requirements
 
-These ports are used within the Access Analyzer VM for service-to-service communication. No external firewall rules are required — only port 443 (Traefik) is exposed externally.
+These ports handle service-to-service communication within the Access Analyzer VM. No external firewall rules are required — the installer exposes only port 443 (Traefik) externally.
 
 | Port | Protocol | Service | Description |
 | --- | --- | --- | --- |
@@ -248,7 +248,7 @@ curl -sLfo /tmp/dspm-install.sh \
   "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:${LICENSE_KEY}"
 ```
 
-Run it with one of the two password options below. Installation takes 15–30 minutes.
+Run it with one of the following two password options. Installation takes 15–30 minutes.
 
 #### Option — Pipe the LDAP bind password (automated)
 
@@ -264,7 +264,7 @@ Runs non-interactively. Suitable for scripted or automated installs. After the i
 bash /tmp/dspm-install.sh
 ```
 
-The installer pauses part-way through and displays `Enter LDAP bind credential:`. Enter the password (input is silent — no characters are echoed) and press Enter. The password is never placed in shell history, environment, or disk. Requires a human at the keyboard at that moment.
+The installer pauses part-way through and displays `Enter LDAP bind credential:`. Enter the password (input is silent — no characters appear) and press Enter. The password never enters shell history, the environment, or disk. Requires a human at the keyboard at that moment.
 
 :::note
 Setting `LDAP_BIND_CREDENTIAL` as an environment variable isn't an alternative. The installer always reads the bind password interactively, which overwrites any exported value. Use one of the two options above.
@@ -422,15 +422,15 @@ END HIDDEN -->
 <!-- SYNC: configurations/identity-provider.md "Roles" -->
 <!-- If you change this block, update the matching block in configurations/identity-provider.md -->
 
-This table is also published at [Configuration > Identity Provider > Roles](../configurations/identity-provider.md#roles). It is duplicated here so this guide reads top-to-bottom.
+This table is also published at [Configuration > Identity Provider > Roles](../configurations/identity-provider.md#roles). This guide duplicates it here so it reads top-to-bottom.
 
 | Role | Description |
 | --- | --- |
 | **Administrator** | Full access: system configuration (sources, scans, connectors, application settings) and user management (create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users). |
-| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
+| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The installer assigns this role to the bootstrap `admin@dspm.local` account. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
-The **User Admin** role exists to provide a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration. The bootstrap `admin@dspm.local` account is seeded as User Admin — you'll use it to pre-provision the rest of your users, including your first Administrator.
+The **User Admin** role exists to provide a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration. The installer seeds the bootstrap `admin@dspm.local` account as User Admin — you'll use it to pre-provision the rest of your users, including your first Administrator.
 
 <!-- END SYNC -->
 
