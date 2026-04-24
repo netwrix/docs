@@ -10,7 +10,7 @@ sidebar_position: 20
 
 **Symptom:** The import wizard rejects the backup file or shows an error.
 
-**Root cause:** The backup was created on a version **other than 5.9.4.2**.
+**Root cause:** The backup originates from a server version **other than 5.9.4.2**.
 
 **Resolution:**
 1. Verify the source server is on 5.9.4.2 (Appliance → Server Information).

@@ -24,7 +24,7 @@ The following best practices come from the complete migration workflow and apply
 | # | Best Practice |
 |---|---|
 | 07 | Always create a VM snapshot AND a System Configuration Backup — they serve different recovery purposes. |
-| 08 | Store the System Backup Key in a password manager or secure vault. You can't recover it if lost. |
+| 08 | Store the System Backup Key in a password manager or secure vault. You can't recover it if you lose it. |
 | 09 | Label all backups with version, date, and purpose (e.g., `pre-patch-5942`, `migration-to-2510`). |
 | 10 | For compliance-regulated environments, export audit logs separately before migration — they aren't in the config backup. |
 | 11 | Test backup restoration in a non-production environment at least once before relying on it for production recovery. |
@@ -56,7 +56,7 @@ The following best practices come from the complete migration workflow and apply
 | 22 | If you are using EPP Server Client Upgrade feature, never upgrade Clients directly from 5.9.4.1 (or older) to 2511 or later clients — upgrade to 5.9.4.3 first as the signature bridge. |
 | 23 | Use enterprise deployment tools (Intune, SCCM, Jamf) for client upgrades rather than relying solely on EPP's built-in (rate-limited to 50/hour). |
 | 24 | Always run a pilot deployment of 10–20 endpoints before mass client rollout. |
-| 25 | For EE environments, upload both Windows and macOS EE clients to the server before enabling client communications — the server requires both packages to be present regardless of which OS your endpoints use. |
+| 25 | For Enforced Encryption (EE) environments, upload both Windows and macOS EE clients to the server before enabling client communications — the server requires both packages to be present regardless of which OS your endpoints use. |
 | 26 | Plan client updates for off-peak hours to minimize end-user disruption. |
 
 ## Backup Version Discipline

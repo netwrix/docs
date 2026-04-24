@@ -35,7 +35,7 @@ configuration, either reported, blocked, or allowed.
 
 
 Similar to Device Control policies, Content Aware policies remain enforced on a computer even after
-it is disconnected from the company network.
+the computer disconnects from the company network.
 
 One or more Content Aware Policy can be enforced on the same computer, user, group, or department.
 To avoid any conﬂicts between the applied rules, a prioritization of policies is performed through a
@@ -352,7 +352,7 @@ Protection scans. The reliance on 'snap'-based applications also affects ﬁle-r
 activities, exacerbating this limitation. Consider non-’snap’-based applications (where possible) as
 alternative conﬁgurations for optimal functionality.
 
-Below are additional setting found under Policy Exit Points:
+The following are additional settings found under Policy Exit Points:
 
 1. **Network Share** Endpoint Protector will report all the events for Report Only policies for
    macOS. For Block & Report policies the transfer from a Local Share towards the Local Disk,

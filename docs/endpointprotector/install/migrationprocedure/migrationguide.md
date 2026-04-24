@@ -27,7 +27,7 @@ Endpoint Protector's new server platform runs on Ubuntu 22.04 LTS and requires a
 - **2509** — The original release. No longer available for download. Customers already running 2509 don't need to switch to 2510 unless they require a larger initial storage disk size.
 - **2510** — Recommended for new deployments. Includes improvements to disk sizing and DHCP/DNS configuration.
 
-Both images can be upgraded directly to the current patch version (**2602**). Upgrade the base image to 2602 before importing the configuration backup.
+You can upgrade both images directly to the current patch version (**2602**). Upgrade the base image to 2602 before importing the configuration backup.
 
 The complete migration process follows this sequence:
 
@@ -54,7 +54,7 @@ The 2510 base image (and any patch version built on top of it, such as 2602) acc
 - The migration process validates the backup format and version checksum before restoring.
 
 :::note
-The backup should be restored **after** the 2510 image has been fully patched to 2602. The 5.9.4.2 backup format remains compatible across all patch versions of the new image (2510, 2511, …, 2602).
+Restore the backup **after** you fully patch the 2510 image to 2602. The 5.9.4.2 backup format remains compatible across all patch versions of the new image (2510, 2511, …, 2602).
 :::
 
 **Version compatibility matrix:**
@@ -143,7 +143,7 @@ The hypervisor recommendations above reflect the best available guidance based o
 
 Before any upgrade, assess the health of the current appliance.
 - For upgrades from 5.7.0.0 to 5.9.2.x, verify that disk space and database (DB) allocation are sufficient.
-- For migration from 5.9.4.2, the migration transfers configuration only — EPP log data isn't included.
+- For migration from 5.9.4.2, the migration transfers configuration only — EPP log data doesn't migrate.
 
 **In the EPP Console:**
 
@@ -256,7 +256,7 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 | 8 | Appliance → Server Information screenshot taken | ☐ |
 | 9 | Updated license file obtained (with `php_els`) | ☐ |
 | 10 | EPP Client 5.9.4.3 (for customers not migrated yet) or latest packages downloaded | ☐ |
-| 11 | EE Client 2509+ packages downloaded (if applicable) | ☐ |
+| 11 | Enforced Encryption (EE) Client 2509+ packages downloaded (if applicable) | ☐ |
 
 ---
 

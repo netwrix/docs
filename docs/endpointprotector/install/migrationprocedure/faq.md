@@ -170,7 +170,7 @@ This is a known product defect on 2601.
 
 ## Activating 2510 in an Air-Gapped or Offline Environment
 
-Air-gapped activation requires an **Offline Activation Patch** specific to 2510. This is a separate patch from the EPP software cumulative patch and must be requested in advance.
+Air-gapped activation requires an **Offline Activation Patch** specific to 2510. This is a separate patch from the EPP software cumulative patch; request it from Netwrix Support in advance.
 
 **Steps:**
 1. Contact Netwrix Support or your account team before the migration maintenance window.
