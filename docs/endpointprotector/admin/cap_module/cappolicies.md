@@ -175,6 +175,13 @@ Flash Active X.
 To distinguish OneDrive for Business from OneDrive, enable Deep Packet Inspection (DPI).
 :::
 
+:::warning
+If your policy uses **All Applications** and new applications are introduced in a server update,
+those applications will appear as selected but won't be enforced until the policy is re-saved.
+After upgrading, open any affected CAP policies and save them to apply monitoring to newly
+added applications.
+:::
+
 
 ![Monitor transfers from the following exit points](policyexistpoints.webp)
 
