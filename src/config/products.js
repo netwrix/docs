@@ -250,6 +250,22 @@ export const PRODUCTS = [
     defaultVersion: '11.1',
   },
   {
+    id: 'policypak',
+    name: 'PolicyPak',
+    description: 'Group Policy management and enforcement',
+    path: 'docs/policypak',
+    categories: ['Endpoint Management'],
+    icon: '',
+    versions: [
+      {
+        version: 'current',
+        label: 'Current',
+        isLatest: true,
+        sidebarFile: './sidebars/policypak.js',
+      },
+    ],
+  },
+  {
     id: 'endpointprotector',
     name: 'Endpoint Protector',
     description: 'Comprehensive endpoint security',
