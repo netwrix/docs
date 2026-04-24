@@ -42,7 +42,7 @@ Edited config:
 
 - sudo vim /secureone/conf/fluentd/fluent.conf
 
-Edit the match docker.\*\* section. Example below. Mind the indents, alter IP, port, and tag as
+Edit the match docker.\*\* section. See the following example. Mind the indents, alter IP, port, and tag as
 necessary. File example contents:
 
 ```
@@ -103,7 +103,7 @@ necessary. File example contents:
 </match>
 ```
 
-Relaunch fleuntd to pull in new configuration:
+Relaunch fleuntd to load the new configuration:
 
 - s1 restart fluentd
 
@@ -121,7 +121,7 @@ Command to check fluent.conf running on current fluentd service:
 
 Once log forwarding is setup, the activity for each Privilege Secure's services (api, worker,
 scanner, ldapsync, analytics_engine, internal_api, health_reporter, and expire) will be forwarded
-based off of the match stanza that includes all Docker services "docker.\*\*" generated.
+based on the match stanza that includes all Docker services "docker.\*\*" generated.
 
 Example of the services (aka "container_name"), being forward, from different SIEMs:
 
