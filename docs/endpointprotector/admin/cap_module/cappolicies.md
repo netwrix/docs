@@ -41,7 +41,7 @@ One or more Content Aware Policy can be enforced on the same computer, user, gro
 To avoid any conﬂicts between the applied rules, a prioritization of policies is performed through a
 left-to-right ordering. The leftmost policy has the highest priority (Priority 1), while the
 rightmost policy has the lowest priority. Changing priorities for one or more policies can be
-performed by moving the policy to the right or the left with a simple click on the left arrow for
+performed by moving the policy to the right or the left with a simple click the left arrow for
 higher priority or on the right arrow for lower priority.
 
 To manage Content Aware Protection policies, you can:
@@ -91,7 +91,7 @@ enable the setting on the speciﬁc device from Device Control, Global settings,
 :::
 
 
-- Policy Template – select a custom notiﬁcation from the drop-down list or create one from System
+- Policy Template – select a custom notiﬁcation from the dropdown list or create one from System
   Parameters, Device Types and Notiﬁcation,
  [Custom Content Aware Protection Notiﬁcations](/docs/endpointprotector/admin/systempar.md)
   section
@@ -114,7 +114,7 @@ Threshold must be a positive, whole number.
   consideration the threshold.
 
 :::note
-This setting does not apply for File Name and File Location.
+This setting doesn't apply for File Name and File Location.
 :::
 
 
@@ -139,7 +139,7 @@ numbers, emphasizing the distinctions between Regular and Global Thresholds.
 1. Block & Report Policy for SSN and Phone Numbers:
 
     - Set a policy to block transfers of both SSNs and phone numbers
-    - Regular Threshold: Does not block two threats (SSN + phone number)
+    - Regular Threshold: Doesn't block two threats (SSN + phone number)
     - Global Threshold: Blocks two SSNs or any combination of two threats
 
 ![Block & Report policies to handle Social Security Numbers (SSN) and phone numbers](policyinformation.webp)
@@ -316,7 +316,7 @@ The Paste operation is allowed when the user changes the window to other applica
 :::
 
 
-For example; in a Content Aware policy, Firefox is monitored, Chrome is not monitored and the Apply
+For example; in a Content Aware policy, Firefox is monitored, Chrome isn't monitored and the Apply
 Paste restrictions to all monitored applications setting is enabled. The user performs a Copy
 operation from Notepad which contains conﬁdential information, then the Paste operation on Firefox
 is blocked, and the Paste operation on Chrome is allowed
@@ -332,13 +332,13 @@ is blocked, and the Paste operation on Chrome is allowed
 Use this setting to extend the applications not listed in a Content Aware policy and block the Paste
 operations.
 
-For example; Microsoft Word is not listed in a Content Aware policy, but you can select the
+For example; Microsoft Word isn't listed in a Content Aware policy, but you can select the
 application from the list to monitor the Paste operation on the Microsoft Word app.
 
 On-demand, Endpoint Protector can add other applications.
 
 :::warning
-On certain Linux environments, like those utilizing Wayland protocol by default, paste
+On certain Linux environments, like those using Wayland protocol by default, paste
 control is limited due to Wayland's lack of support for detecting the focused window. To ensure
 security, content blocking occurs during the copy operation.
 :::

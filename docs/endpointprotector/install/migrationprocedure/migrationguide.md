@@ -143,7 +143,7 @@ The hypervisor recommendations above reflect the best available guidance based o
 
 Before any upgrade, assess the health of the current appliance.
 - For upgrades from 5.7.0.0 to 5.9.2.x, verify that disk space and database (DB) allocation are sufficient.
-- For migration from 5.9.4.2, note that the migration transfers configuration only — EPP log data is not included.
+- For migration from 5.9.4.2, note that the migration transfers configuration only — EPP log data isn't included.
 
 **In the EPP Console:**
 
@@ -218,7 +218,7 @@ Keep the VM snapshot active until you have fully validated the new 2510 environm
 1. Log in to Endpoint Protector Console.
 2. Navigate to **System Maintenance → System Backup**.
 3. Click **Create**, enter a name and description (include the date and version, e.g., `pre-upgrade-5942-2026-04-20`), click **Save**.
-4. **Save the System Backup Key** displayed in the prompt — you need this key for restoration and cannot recover it if lost.
+4. **Save the System Backup Key** displayed in the prompt — you need this key for restoration and can't recover it if lost.
 5. Wait for the status to show **"Ready to download"**, then download the backup file.
 
 ![System Maintenance → System Backup — backup creation wizard](backup_wizard.webp)
@@ -233,7 +233,7 @@ Store backup files in a secure repository with limited access. The backup contai
 
 **Step 3 — Export logs and file shadows separately (optional but recommended):**
 
-The System Configuration Backup does not include logs and file shadows. If you need historical logs for compliance or forensics:
+The System Configuration Backup doesn't include logs and file shadows. If you need historical logs for compliance or forensics:
 
 - Use **System Maintenance → Audit Log Backups** to export logs to an external location. See [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup) for export steps.
 - Retain the old server VM after migration for log access.
@@ -502,7 +502,7 @@ If you are using an external tool to manage your packages, you can ignore this s
 Download the Endpoint Protector Clients from the [My Products portal on netwrix.com](https://customer.netwrix.com/sign_in.html?rf=my_products.html), or request them from your account team.
 
 :::note
-The EPP Server Client Upgrade feature does not support Linux client upgrades — Linux clients must be upgraded manually by administrators.
+The EPP Server Client Upgrade feature doesn't support Linux client upgrades — Linux clients must be upgraded manually by administrators.
 :::
 
 
