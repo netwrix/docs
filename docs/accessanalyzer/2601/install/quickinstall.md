@@ -258,13 +258,13 @@ printf '<Service-Account-Password>\n' | bash /tmp/dspm-install.sh
 
 Runs non-interactively. Suitable for scripted or automated installs. After the install completes, clear your shell history if others can read the session (`history -c`, and clear `~/.bash_history` or equivalent) — the password was part of the `printf` command line.
 
-#### Option — Type the password when prompted
+#### Option — Enter the password when prompted
 
 ```bash
 bash /tmp/dspm-install.sh
 ```
 
-The installer pauses part-way through and displays `Enter LDAP bind credential:`. Type the password (input is silent — no characters are echoed) and press Enter. The password is never placed in shell history, environment, or disk. Requires a human at the keyboard at that moment.
+The installer pauses part-way through and displays `Enter LDAP bind credential:`. Enter the password (input is silent — no characters are echoed) and press Enter. The password is never placed in shell history, environment, or disk. Requires a human at the keyboard at that moment.
 
 :::note
 Setting `LDAP_BIND_CREDENTIAL` as an environment variable isn't an alternative. The installer always reads the bind password interactively, which overwrites any exported value. Use one of the two options above.
