@@ -170,9 +170,12 @@ Select Adobe Flash Player from the Web Browser category to block sites that use 
 Flash Active X.
 :::
 
-
 :::note
 To distinguish OneDrive for Business from OneDrive, enable Deep Packet Inspection (DPI).
+:::
+
+:::warning
+After an EPP Server upgrade, if your CAP policy Exit points are configured by selecting a whole category, edit the policy and review the application list to ensure any newly added apps are included. Click **Save** to push the updated configuration to EPP Clients.
 :::
 
 
