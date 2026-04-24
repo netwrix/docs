@@ -1,4 +1,4 @@
----
+﻿---
 title: "Forward Logs to Syslog Servers and SIEM Solutions"
 description: "Forward Logs to Syslog Servers and SIEM Solutions"
 sidebar_position: 20
@@ -67,8 +67,9 @@ necessary.  File example contents:
     packet_size 4096
     #program can ingest as tag, etc.
     program secureone
-    # hostname can ingest as source, origin, etc.
-    hostname node_hostname_here
+    # hostname in the syslog header - defaults to the host server's hostname.
+    # Override by setting S1_NODE_HOSTNAME on the host (see Hostname Configuration below).
+    hostname "#{ENV['S1_NODE_HOSTNAME'] || Socket.gethostname}"
     ## TLS options
     # tls <true or false>
     # ca_file <path to CA cert bundle>
@@ -134,6 +135,53 @@ all the SecureONE listed services are not displaying.
 ### Humio
 
 ![360063180233_mceclip1](/images/privilegesecure/4.2/discovery/integrations/siem/360063180233_mceclip1.webp)
+
+## Hostname Configuration in Syslog Output {#hostname-configuration}
+
+:::note
+Hostname configuration in syslog output is available in NPS-D 2.22.13, 26.03.1, or later.
+:::
+
+By default, NPS-D automatically uses the host server's hostname in the syslog header. Docker Swarm
+passes the node hostname to the Fluentd container at runtime, so no manual configuration is required
+in most environments.
+
+Before this change, logs showed a Docker container ID in the hostname field (for example,
+`a3f2b1c4d5e6`), which made SIEM correlation difficult. Logs now show the actual server hostname.
+
+**Example syslog output:**
+
+```
+<13>Apr 7 11:15:14 secureone secureone: {"asctime": "2026-04-07 11:15:13,669", "levelname": "INFO", "message": "EntraId config processing", "service": "svc-scan", ...}
+```
+
+The syslog header fields map as follows:
+
+| Field | Value | Notes |
+|-------|-------|-------|
+| `hostname` | `secureone` | Host server hostname, set automatically |
+| `program` | `secureone` | Fixed value declared in `fluent.conf` |
+| Log body | JSON object | Full structured log from the NPS-D service |
+
+### Override the Hostname
+
+To use a custom hostname or IP address instead of the auto-detected value, set the
+`S1_NODE_HOSTNAME` environment variable on the host before starting the Docker Swarm:
+
+```bash
+export S1_NODE_HOSTNAME=my-custom-hostname-or-ip
+```
+
+The Fluentd configuration resolves the hostname in this order:
+
+1. `S1_NODE_HOSTNAME` environment variable — if set, this value is used
+2. `Socket.gethostname` — falls back to the OS hostname of the node
+
+This is the relevant directive in `fluent.conf`:
+
+```
+hostname "#{ENV['S1_NODE_HOSTNAME'] || Socket.gethostname}"
+```
 
 ## Troubleshooting
 
