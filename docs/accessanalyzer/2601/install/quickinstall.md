@@ -198,7 +198,7 @@ sudo update-ca-certificates
 Paste and customize the following at the top of your terminal session. Every subsequent command references these variables.
 
 ```bash
-export DSPM_TARGET_REVISION="<version, e.g. 0.3.*-dev or leave unset for latest>"
+# export DSPM_TARGET_REVISION="1.0.8"    # optional — omit to stay on latest; see version syntax below
 export LICENSE_KEY="<Your-License-Key>"
 export DSPM_HOSTNAME="<AA2601 FQDN, e.g. aa2601.corp.example.com>"
 export TLS_CERT_FILE="/opt/dspm-tls/<hostname>.crt"
@@ -227,7 +227,17 @@ export LDAP_EMAIL_ATTRIBUTE="mail"
 | `LDAP_BIND_DN` | Distinguished name of the read-only service account | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` |
 | `LDAP_USERS_DN` | Base DN for the OU containing user accounts | `CN=Users,DC=corp,DC=example,DC=com` |
 | `LDAP_EMAIL_ATTRIBUTE` | LDAP attribute storing the user's email address | `mail` |
-| `DSPM_TARGET_REVISION` | (Optional) Specific version to install. Omit for latest | `0.3.*-dev` |
+| `DSPM_TARGET_REVISION` | (Optional) Controls which version is installed and auto-upgraded to. Omit to stay on the latest release. | `1.0.8` |
+
+**Version syntax for `DSPM_TARGET_REVISION`:**
+
+| Value | Behavior |
+| --- | --- |
+| (unset) | Installs the latest release; auto-upgrades to the latest version with no limit |
+| `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
+| `1.*` | Auto-upgrades to any 1.x version |
+
+For most deployments, either omit this variable to stay on the latest release, or pin to a specific version (for example, `1.0.8`) to control when upgrades happen during your organization's patching cycle.
 
 ### Step 3: Download and run the installer
 

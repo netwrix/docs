@@ -49,9 +49,15 @@ export DSPM_TARGET_REVISION='[VERSION]'
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -
 ```
 
-:::note
-The version number for each Access Analyzer release will be published here before general availability. Replace `[VERSION]` with the version string provided in the release notes.
-:::
+Version strings control which release is installed and what auto-upgrades apply:
+
+| Value | Behavior |
+| --- | --- |
+| (unset) | Installs the latest release; auto-upgrades to the latest version with no limit |
+| `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
+| `1.*` | Auto-upgrades to any 1.x version |
+
+For most deployments, either omit this variable to stay on the latest release, or pin to a specific version (for example, `1.0.8`) to control when upgrades happen during your organization's patching cycle.
 
 ## Environment Variables
 
@@ -63,7 +69,7 @@ Export the variables before running the installer. When the same option is set a
 | --- | --- | --- |
 | `LICENSE_KEY` | `--license-key` | `NWRX-XXXX-XXXX-XXXX` |
 | `DSPM_HOSTNAME` | `--hostname` | `aa2601.corp.example.com` |
-| `DSPM_TARGET_REVISION` | `--target-revision` | `1.*` (latest stable) or `0.3.362-dev` |
+| `DSPM_TARGET_REVISION` | `--target-revision` | `1.0.8` (pinned) or omit for latest |
 | `SIZE` | `--size` | `1` (default), `2`, up to `10` |
 | `TLS_CERT_FILE` | `--tls-cert` | `/opt/dspm-tls/aa2601.crt` |
 | `TLS_KEY_FILE` | `--tls-key` | `/opt/dspm-tls/aa2601.key` |
