@@ -24,7 +24,7 @@ You will need:
 
 3. Click **Edit** next to **Globals**
 <img width="705" height="363" alt="image" src="https://github.com/user-attachments/assets/f1a21342-ab16-4df5-8159-e703b8deb1a3" />
-<br>
+<br />
 
 Add the following variables:
 
@@ -62,7 +62,7 @@ Note:
 
 1. Click on the **Tests** tab
 <img width="609" height="154" alt="image" src="https://github.com/user-attachments/assets/33b7cefc-bc32-4785-92d6-3256c4a719ad" />
-<br>
+<br />
 2. Paste the following:
 
 ```javascript
