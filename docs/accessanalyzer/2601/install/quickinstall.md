@@ -41,7 +41,7 @@ Choose a deployment size based on your environment:
 **License:** Valid Netwrix license key.
 
 :::note
-**Supported OS:** Ubuntu 24.04 LTS is the primary tested platform. Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are also compatible. AIX and non-Linux operating systems are not supported.
+**Supported OS:** Ubuntu 24.04 LTS is the primary tested platform. Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are also compatible. AIX and non-Linux operating systems aren't supported.
 :::
 
 :::note
@@ -267,7 +267,7 @@ bash /tmp/dspm-install.sh
 The installer pauses part-way through and displays `Enter LDAP bind credential:`. Type the password (input is silent — no characters are echoed) and press Enter. The password is never placed in shell history, environment, or disk. Requires a human at the keyboard at that moment.
 
 :::note
-Setting `LDAP_BIND_CREDENTIAL` as an environment variable is not an alternative. The installer always reads the bind password interactively, which overwrites any exported value. Use one of the two options above.
+Setting `LDAP_BIND_CREDENTIAL` as an environment variable isn't an alternative. The installer always reads the bind password interactively, which overwrites any exported value. Use one of the two options above.
 :::
 
 ### Step 4: Verify the installation
@@ -286,7 +286,7 @@ All pods should show `Running` or `Completed` status. All ArgoCD applications sh
 <!-- SYNC: configurations/identity-provider.md "Sign in as the bootstrap User Admin" -->
 <!-- If you change this block, update the matching block in configurations/identity-provider.md -->
 
-The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Admin** role. This account can create and manage other users but **cannot** access system configuration. Use it on first login to pre-provision your AD users, then sign out and sign back in as an Administrator for system-level work.
+The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Admin** role. This account can create and manage other users but **can't** access system configuration. Use it on first log in to pre-provision your AD users, then sign out and sign back in as an Administrator for system-level work.
 
 1. Retrieve the bootstrap admin password:
 
@@ -303,14 +303,14 @@ The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Adm
 
 4. Complete first-login setup:
    - Scan the QR code with an authenticator app, enter a device name, submit the one-time code. **Save this enrollment** — you will need the same authenticator for any future bootstrap admin login.
-   - Enter a first name and last name. **Do not change the email address.**
+   - Enter a first name and last name. **Don't change the email address.**
 
 5. Pre-provision each user who should be able to sign in. For each user:
    - Click **+ Add User**.
    - Enter the Name and Email. The email must match the user's AD `mail` attribute exactly, **including case**.
    - Assign a role (see [Roles](#roles) below).
 
-   Assign at least one user the **Administrator** role — the bootstrap account cannot access system configuration, so someone needs to. Assign at least one additional user the **User Admin** role if you want a non-bootstrap user to manage accounts going forward.
+   Assign at least one user the **Administrator** role — the bootstrap account can't access system configuration, so someone needs to. Assign at least one additional user the **User Admin** role if you want a non-bootstrap user to manage accounts going forward.
 
 6. Sign out.
 
@@ -443,11 +443,11 @@ For certificate-specific issues, see [TLS Certificate Requirements — Troublesh
 | Sign-in returns HTTP 401 with correct credentials | SAN hostname is mixed-case; browser normalized it to lowercase | Re-issue the certificate with lowercase hostname in the SAN list |
 | Installer exits with "Failed to read TLS private key" | Key file owned by `root`, installer runs as non-root user | `sudo chown <install-user> /opt/dspm-tls/<hostname>.key` |
 | Sign-in silently fails with `PKIX path building failed` in Keycloak logs | CA bundle is missing the LDAPS DC's CA (AD only) | Concatenate the DC's LDAPS CA into the bundle and re-run the installer with `--configure-idp-only` |
-| Browser rejects the application URL with a SAN mismatch error | `DSPM_HOSTNAME` is an IP, or SAN does not include the hostname in use | Use a DNS hostname for `DSPM_HOSTNAME` and verify the cert SAN list |
+| Browser rejects the application URL with a SAN mismatch error | `DSPM_HOSTNAME` is an IP, or SAN doesn't include the hostname in use | Use a DNS hostname for `DSPM_HOSTNAME` and verify the cert SAN list |
 | Installer rejects `--idp-alias` | Alias contains a space or special character | Use only letters, digits, hyphens, underscores, and dots |
-| Sign-in fails after pre-provisioning | Pre-provisioned email does not match the directory attribute | Confirm the email matches exactly, including case |
-| Entra ID login redirects fail | Redirect URI in App Registration does not match | Verify the redirect URI is `https://<DSPM_HOSTNAME>/auth/realms/dspm/broker/entra-id/endpoint` exactly |
-| Entra ID login prompt does not appear | Client secret entered incorrectly or has expired | Re-run with `--configure-idp-only` and re-enter the secret; rotate the secret in Azure if expired |
+| Sign-in fails after pre-provisioning | Pre-provisioned email doesn't match the directory attribute | Confirm the email matches exactly, including case |
+| Entra ID login redirects fail | Redirect URI in App Registration doesn't match | Verify the redirect URI is `https://<DSPM_HOSTNAME>/auth/realms/dspm/broker/entra-id/endpoint` exactly |
+| Entra ID login prompt doesn't appear | Client secret entered incorrectly or has expired | Re-run with `--configure-idp-only` and re-enter the secret; rotate the secret in Azure if expired |
 
 For other identity provider failures, see [Configure Identity Provider — Troubleshooting](identity-provider.md#troubleshooting-idp-configuration).
 

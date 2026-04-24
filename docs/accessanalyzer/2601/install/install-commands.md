@@ -91,7 +91,7 @@ Export the variables before running the installer. When the same option is set a
 | `DRY_RUN` | `--dry-run` | `true` |
 
 :::note
-`LDAP_BIND_CREDENTIAL` is the only secret environment variable, and the installer does not actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
+`LDAP_BIND_CREDENTIAL` is the only secret environment variable, and the installer doesn't actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
 :::
 
 ## Running the Installer
@@ -170,7 +170,7 @@ If an installation fails and you need more detail to diagnose the problem, run w
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- --log-level debug
 ```
 
-The log is written to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. Terminal progress output is not affected — only the log file verbosity changes.
+The log is written to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. Terminal progress output isn't affected — only the log file verbosity changes.
 
 ## Identity Provider Flags
 
