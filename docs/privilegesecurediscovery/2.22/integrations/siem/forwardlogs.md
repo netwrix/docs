@@ -128,7 +128,7 @@ Example of the services (aka "container_name"), being forward, from different SI
 ### Splunk
 
 **NOTE:** This view sort by top 10 values based on event count per "container_name", which is why
-all the SecureONE listed services are not displaying.
+all the SecureONE listed services aren't displaying.
 
 ![360063180233_mceclip0](/images/privilegesecure/4.2/discovery/integrations/siem/360063180233_mceclip0.webp)
 
