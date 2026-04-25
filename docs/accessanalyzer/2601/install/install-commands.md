@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Installer Command Reference
 
-Access Analyzer is installed using a single curl command that downloads and runs the installer. You can pass options to this command to customize how the product is deployed on your server. Most installations need only a license key and accept all defaults.
+You install Access Analyzer using a single curl command that downloads and runs the installer. You can pass options to this command to customize how the product is deployed on your server. Most installations need only a license key and accept all defaults.
 
 ## Before You Run the Installer
 
@@ -26,7 +26,7 @@ Your license key authenticates access to the Netwrix package registry. Don't sha
 
 ### Choose an installer version
 
-**Without specifying a version**, the installer downloads the latest stable release automatically. This is appropriate for initial deployments and when you're ready to take the latest release:
+**Without specifying a version**, the installer downloads the latest stable release automatically. This is appropriate for initial deployments and when you want to install the latest release:
 
 ```bash
 # Set the Keygen license key variable
@@ -49,21 +49,27 @@ export DSPM_TARGET_REVISION='[VERSION]'
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -
 ```
 
-:::note
-The version number for each Access Analyzer release will be published here before general availability. Replace `[VERSION]` with the version string provided in the release notes.
-:::
+Version strings control which release is installed and what auto-upgrades apply:
+
+| Value | Behavior |
+| --- | --- |
+| (unset) | Installs the latest release; auto-upgrades to the latest version with no limit |
+| `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
+| `1.*` | Auto-upgrades to any 1.x version |
+
+For most deployments, either omit this variable to stay on the latest release, or pin to a specific version (for example, `1.0.8`) to control when upgrades happen during your organization's patching cycle.
 
 ## Environment Variables
 
-Most options can be set as environment variables instead of command-line flags. This is the recommended style for scripted or automated deployments — see the [Quick Install](quickinstall.md) for an end-to-end example.
+You can set most options as environment variables instead of command-line flags. This is the recommended style for scripted or automated deployments — see the [Quick Install](quickinstall.md) for an end-to-end example.
 
-Export the variables before running the installer. When the same option is set as both an environment variable and a command-line flag, the flag takes precedence.
+Export the variables before running the installer. When you set the same option as both an environment variable and a command-line flag, the flag takes precedence.
 
 | Environment variable | Equivalent flag | Example |
 | --- | --- | --- |
 | `LICENSE_KEY` | `--license-key` | `NWRX-XXXX-XXXX-XXXX` |
 | `DSPM_HOSTNAME` | `--hostname` | `aa2601.corp.example.com` |
-| `DSPM_TARGET_REVISION` | `--target-revision` | `1.*` (latest stable) or `0.3.362-dev` |
+| `DSPM_TARGET_REVISION` | `--target-revision` | `1.0.8` (pinned) or omit for latest |
 | `SIZE` | `--size` | `1` (default), `2`, up to `10` |
 | `TLS_CERT_FILE` | `--tls-cert` | `/opt/dspm-tls/aa2601.crt` |
 | `TLS_KEY_FILE` | `--tls-key` | `/opt/dspm-tls/aa2601.key` |
@@ -85,12 +91,12 @@ Export the variables before running the installer. When the same option is set a
 | `DRY_RUN` | `--dry-run` | `true` |
 
 :::note
-`LDAP_BIND_CREDENTIAL` is the only secret environment variable, and the installer does not actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
+`LDAP_BIND_CREDENTIAL` is the only secret environment variable, and the installer doesn't actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
 :::
 
 ## Running the Installer
 
-When you run the curl command above, the installer automatically:
+When you run the curl command, the installer automatically:
 
 1. Runs preflight checks to verify your system meets requirements
 2. Installs Kubernetes (k3s v1.33.4, the version validated by Netwrix for this release)
@@ -102,7 +108,7 @@ Installation typically takes 15–30 minutes depending on network speed and hard
 
 ### Passing additional options
 
-To customize the installation, add options after `bash -s --`. Everything after `--` is forwarded to the installer:
+To customize the installation, add options after `bash -s --`. The installer receives everything after `--`:
 
 ```bash
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- --dry-run
@@ -116,7 +122,7 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
   --clickhouse-data-dir /mnt/nvme/clickhouse
 ```
 
-The available options are described in the sections below.
+The following sections describe the available options.
 
 ### Validate before installing (dry run)
 
@@ -164,11 +170,11 @@ If an installation fails and you need more detail to diagnose the problem, run w
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- --log-level debug
 ```
 
-The log is written to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. Terminal progress output is not affected — only the log file verbosity changes.
+The installer writes the log to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. Terminal progress output isn't affected — only the log file verbosity changes.
 
 ## Identity Provider Flags
 
-The table below lists every IdP flag the installer accepts. For end-to-end examples, see one of these walkthroughs:
+The following table lists every IdP flag the installer accepts. For end-to-end examples, see one of these walkthroughs:
 
 - [Quick Install](quickinstall.md) — Active Directory deployment using environment variables (recommended for most customers)
 - [Configure Identity Provider](identity-provider.md) — example commands for Active Directory and LDAP, plus recovery with `--configure-idp-only`
@@ -201,7 +207,7 @@ Don't store your license key in this file. Use the `LICENSE_KEY` environment var
 
 ## Preflight Check Requirements
 
-The installer checks the following before installation begins. Results are written to `/var/log/dspm-preflight.json`.
+The installer checks the following before installation begins. The installer writes results to `/var/log/dspm-preflight.json`.
 
 | Check | Fail | Warn |
 |---|---|---|
@@ -215,7 +221,7 @@ The installer checks the following before installation begins. Results are writt
 | **Antivirus** | — | Known antivirus software detected |
 | **Network** | DNS resolution fails for a required domain | TCP connection timeout to a required domain |
 
-A **FAIL** result stops the installer and must be resolved. A **WARN** result also stops the installer by default — see [If the Installer Stops with Warnings](#if-the-installer-stops-with-warnings) below.
+A **FAIL** result stops the installer. Resolve it before retrying. A **WARN** result also stops the installer by default — see [If the Installer Stops with Warnings](#if-the-installer-stops-with-warnings).
 
 For the full list of required network domains, see [Network and Port Requirements](/docs/accessanalyzer/2601/install/system/network).
 
