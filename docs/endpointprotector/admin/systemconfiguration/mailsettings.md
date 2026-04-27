@@ -86,8 +86,6 @@ OAuth is supported for Microsoft Exchange Online. Your subscription must be one 
 
 ## Mail Server Logs
 
-![Mail Server Logs](Mailserverlogs.png)
-
 From the **Mail Server Logs** tab you can review the errors captured when Endpoint Protector tries to send a message through the configured email server. Use this view to troubleshoot delivery failures directly from the UI instead of opening a shell on the appliance.
 
 Access the logs from **System Configuration** > **Mail Settings** > **Mail Server Logs** tab.
