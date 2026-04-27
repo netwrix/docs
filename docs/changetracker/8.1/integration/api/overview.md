@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # API
 
-Netwrix Change Tracker provides a comprehensive REST API that allows customers to integrate with the platform programmatically. This is particularly useful for customers who run multiple instances of Netwrix Change Tracker in multiple regions, as they can use the API to pull data from each instance and build global reports containing data from all instances.
+Netwrix Change Tracker provides a comprehensive REST API that allows customers to integrate with the platform programmatically. This is particularly useful for customers who run multiple instances of Netwrix Change Tracker in multiple regions, as they can use the API to pull data from each instance and build global reports across all instances.
 
 ## Authentication
 
@@ -20,17 +20,17 @@ The raw OpenAPI 3.0 spec (YAML) is also available for download or import into to
 
 ## Available Endpoints
 
-The following commonly-used API endpoints are documented in detail:
+This section documents the following commonly-used API endpoints in detail:
 
 - [Agents](/docs/changetracker/8.1/integration/api/agents.md) – Pull data on agent statuses, configurations, and group memberships using the agentsRanked endpoint. Use this API to retrieve detailed information about all agents in your environment, including their group memberships and applied tracking templates.
 
-- [Register Agents](/docs/changetracker/8.1/integration/api/register-agents.md) – Normally used by agents to register with the Hub, but you can use this API to register proxied devices to be accessed through a proxy agent.
+- [Register Agents](/docs/changetracker/8.1/integration/api/register-agents.md) – Agents normally use this endpoint to register with the Hub, but you can also use this API to register proxied devices through a proxy agent.
 
-- [Credentials](/docs/changetracker/8.1/integration/api/credentials.md) – Manage authentication credentials used by ChangeTracker to connect to various systems and services. This API provides endpoints for creating, retrieving, updating, and deleting credentials for different credential types including Shell, Database, FTP, Cloud, ESX, ITSM, and Splunk.
+- [Credentials](/docs/changetracker/8.1/integration/api/credentials.md) – Manage authentication credentials that ChangeTracker uses to connect to various systems and services. This API provides endpoints for creating, retrieving, updating, and deleting credentials for different credential types including Shell, Database, FTP, Cloud, ESX, ITSM, and Splunk.
 
 ## API Usage Best Practices
 
-When working with the ChangeTracker API, consider the following best practices:
+Follow these best practices when using the ChangeTracker API:
 
 1. **Rate Limiting**: Implement appropriate rate limiting in your applications to avoid overwhelming the API.
 
@@ -70,4 +70,4 @@ $requestBody = @{
 $result = Invoke-RestMethod -Method Post -ContentType application/json -Uri $uri -WebSession $myWebSession -Body $requestBody
 ```
 
-Each endpoint's request parameters, authentication requirements, and usage examples are covered in the [Available Endpoints](#available-endpoints) section.
+The [Available Endpoints](#available-endpoints) section covers each endpoint's request parameters, authentication requirements, and usage examples.
