@@ -18,10 +18,10 @@ We cover a range of deployment methods, including:
 - Cloud Platforms: Deployment strategies for AWS, GCP, and Azure, assuming existing cloud accounts
   and basic platform knowledge.
 - Active Directory Integration: Leveraging Group Policy Objects for efficient client deployment.
-- Third-party Management Tools: Utilizing JAMF and Microsoft Intune for streamlined deployment.
+- Third-party Management Tools: using JAMF and Microsoft Intune for streamlined deployment.
 
 :::warning Important
-This section of the documentation is provided as a best-effort guideline to support deployment. It is optional and may not always reflect the latest interface or features, as third-party products can change frequently. For the most up-to-date information, please refer to the official resources from the product vendor.
+This section of the documentation is provided as a best-effort guideline to support deployment. It is optional and may not always reflect the latest interface or features, as third-party products can change frequently. For the most up-to-date information, refer to the official resources from the product vendor.
 :::
 
 ## Staging the Server
@@ -33,7 +33,7 @@ Customer-Managed or Provider- Managed. If Customer-Managed is a desired option, 
 installed On-Premise or in a Hosted-Cloud Environment.
 
 The On-Premise option for a Customer-Managed instance allows for a virtualized image to be set up in
-a customer’s LAN setting. Virtualization options include, but are not limited to: VMware and
+a customer’s LAN setting. Virtualization options include, but aren't limited to: VMware and
 Hyper-V. The Hosted-Cloud method of deployment allows for use of a customer’s Amazon Web Services
 (AWS), Azure, or Google Cloud Platform (GCP) instance. To obtain more specific information for each
 of these options, see the [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) topic and the
@@ -43,8 +43,8 @@ Alternatively, if a Provider-Managed setup is required, an instance of Endpoint 
 spun up in an isolated cloud environment. To obtain more details on the Provider- Managed option,
 speak with your Netwrix Account Manager.
 
-Please note, in order to use the Endpoint Protector Server in a production environment, a License
-Key is required. After purchasing Endpoint Protector with the necessary module(s), your Account
+Please note, to use the Endpoint Protector Server in a production environment, a License
+Key is required. After purchasing Endpoint Protector with the necessary modules, your Account
 Manager will assign a license that can be installed within the Endpoint Protector Management Console
 (the configuration interface available on the Endpoint Protector Server).
 
@@ -81,7 +81,7 @@ When connected, Netwrix may access the following metadata information:
   - License utilization
   - Module Activation Status
 
-The above metadata is collected strictly for licensing and statistical purposes. It does not include any customer-sensitive information or content stored or processed by your company.
+The above metadata is collected strictly for licensing and statistical purposes. It doesn't include any customer-sensitive information or content stored or processed by your company.
 
 Additionally, internet connectivity allows your company to:
 
