@@ -13,7 +13,7 @@ Only EPP Client 2511.x.x.x and higher are available for the migration operation.
 :::
 
 :::note
-This feature requires EPP Server 2601 or later. It can't be used to migrate clients from version 5.9.4.2 to earlier image-based releases such as 2510.
+This feature requires EPP Server 2601 or later. It can't be used to migrate clients between EPP Server 5.9.4.2 and image-based releases earlier than 2601, such as 2510.
 :::
 
 ## Configuring the **EPP Clients Migration** page
@@ -24,7 +24,7 @@ This feature requires EPP Server 2601 or later. It can't be used to migrate clie
 2.  Add **New EPP Server** details. Here, you can specify the domain (eg. example.netwrix.com) or IP address (eg. 192.168.0.2) of the new target EPP server
 3.  Add the **New EPP Port** details. Here you can specify Server - Client communication port (eg. 443) of new target EPP server
 
-Optionally, preserve EE Client communication details. When enabled, this option preserves existing EE communication details and does not migrate the EE client to the new EPP server. This is useful for complex migration plans and edge cases.
+Optionally, preserve EE Client communication details. When enabled, this option preserves existing EE communication details and doesn't migrate the EE client to the new EPP server. This is useful for complex migration plans and edge cases.
 
 :::note
 For MacOS and Linux computers, you must manually redeploy the DPI certificate after a successful migration.
