@@ -4,19 +4,19 @@ description: "Netwrix Endpoint Protector — Server Migration & Upgrade Guide"
 sidebar_position: 10
 ---
 
-**Document Version:** 2.0  
-**Last Updated:** April 2026  
-**Applies To:** Endpoint Protector Server versions 5.7.0.0 → 5.9.4.2 → 2510 base image → 2602 (latest)  
+*Document version: 2.0*
 
 ---
 
-> 🚨 **Action Required — Support Ended 14 February 2026**
->
-> Support for Endpoint Protector Server version **5.9.4.2 and all older versions has been discontinued as of 14 February 2026**. Customers still running any 5.x version are no longer receiving security patches, bug fixes, or technical support.
->
-> **Migration to the new image-based platform (2510 with latest patch 2602) must be completed immediately.**
->
-> For the full support lifecycle and version status, see: [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability)
+:::warning
+**Action Required — Support Ended 14 February 2026**
+
+Support for Endpoint Protector Server version **5.9.4.2 and all older versions has been discontinued as of 14 February 2026**. Customers still running any 5.x version are no longer receiving security patches, bug fixes, or technical support.
+
+**Migration to the new image-based platform (2510 with latest patch 2602) must be completed immediately.**
+
+For the full support lifecycle and version status, see: [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability)
+:::
 
 ---
 
@@ -27,7 +27,7 @@ Endpoint Protector's new server platform runs on Ubuntu 22.04 LTS and requires a
 - **2509** — The original release. No longer available for download. Customers already running 2509 don't need to switch to 2510 unless they require a larger initial storage disk size.
 - **2510** — Recommended for new deployments. Includes improvements to disk sizing and DHCP/DNS configuration.
 
-Both images can be upgraded directly to the current patch version (**2602**). Upgrade the base image to 2602 before importing the configuration backup.
+You can upgrade both images directly to the current patch version (**2602**). Upgrade the base image to 2602 before importing the configuration backup.
 
 The complete migration process follows this sequence:
 
@@ -54,7 +54,7 @@ The 2510 base image (and any patch version built on top of it, such as 2602) acc
 - The migration process validates the backup format and version checksum before restoring.
 
 :::note
-The backup should be restored **after** the 2510 image has been fully patched to 2602. The 5.9.4.2 backup format remains compatible across all patch versions of the new image (2510, 2511, …, 2602).
+Restore the backup **after** you fully patch the 2510 image to 2602. The 5.9.4.2 backup format remains compatible across all patch versions of the new image (2510, 2511, …, 2602).
 :::
 
 **Version compatibility matrix:**
@@ -71,6 +71,10 @@ The backup should be restored **after** the 2510 image has been fully patched to
 Only backups created on **exactly version 5.9.4.2** are accepted.
 Always verify your source server version before creating the migration backup.
 :::
+
+### New EPP Client and Server versioning
+
+Starting with the 2509 EPP Server release in October 2025, a new versioning scheme has been introduced. For details, see [Unified EPP Clients and Server Versioning](/docs/endpointprotector/install/overview.md).
 
 ### In-Place Upgrade vs. Migration Upgrade
 
@@ -106,20 +110,16 @@ Version 2510 requires an updated license format that includes a `php_els` field.
 1. Open your current EPP Server console.
 2. Navigate to **System Configuration → System Licensing**.
 3. Download or view the license file content.
-4. Verify that the license file contains a field ending with: `"php_els":"your-unique-value"`
-
-![System Configuration → System Licensing — license details and ELS status](system_licensing.webp)
+4. Verify that the license file contains a field ending with: `"php_els":"your-unique-value"`, as shown in the following example.
+  ![EPP License file — php_els component](licensefile_php_els.webp)
 
 If the `php_els` field is missing:
-- Licenses issued **after January 1, 2025** typically include it.
+- Licenses issued **after January 1, 2025** typically include the `php_els` field.
 - Contact Netwrix Support or your account team to request a refreshed license before proceeding.
 
 :::warning
 Without a valid `php_els` license, the new server's underlying OS components will **not** receive updates after migration. Don't proceed without confirming this field exists.
 :::
-
-You can validate php_els component status in Appliance -> Server Information tab
-![Appliance → Server Information — license](server_info_license.webp)
 
 ### Hypervisor Compatibility Check
 
@@ -128,7 +128,7 @@ You can validate php_els component status in Appliance -> Server Information tab
 - VMware vSphere 6.7+
 - VMware ESXi 7.0+
 - Microsoft Hyper-V (Windows Server 2016+)
-- Proxmox VE (note: IP/network configuration requires manual attention — see Section 10)
+- Proxmox VE (IP/network configuration requires manual attention after deployment)
 - AWS, Azure, GCP (cloud deployments — snapshot behavior differs per provider)
 
 :::warning
@@ -146,8 +146,8 @@ The hypervisor recommendations above reflect the best available guidance based o
 ### System Resource Assessment
 
 Before any upgrade, assess the health of the current appliance.
-For upgrades from 5.7.0.0 to 5.9.2  ensure disk space and allocation for DB is sufficient.
-For migration from 5.9.4.2, note that migration transfers the configuration only — EPP logs data remain on the source server. 
+- For upgrades from 5.7.0.0 to 5.9.2.x, verify that disk space and database (DB) allocation are sufficient.
+- For migration from 5.9.4.2, the migration transfers configuration only — EPP log data doesn't migrate.
 
 **In the EPP Console:**
 
@@ -158,7 +158,7 @@ For migration from 5.9.4.2, note that migration transfers the configuration only
    - Database Disk Space occupied (current DB size)
    - RAM and CPU allocation
 
-You can verify disk space, current server versions in Appliance -> Server Information section.
+You can verify disk space and current server versions in Appliance → Server Information.
 ![Appliance → Server Information — system health: version, disk usage, database size, CPU/RAM](server_info_health.webp)
 
 **Minimum resource requirements before proceeding:**
@@ -180,7 +180,7 @@ Plan a maintenance window that accounts for the following:
 - Post-migration verification: **30–60 minutes**
 - Client package uploads: **10–20 minutes**
 
-These times are based on laboratory test results and may vary in your environment depending on a number of factors, including hardware assigned to the appliance.
+These times are based on laboratory test results and may vary in your environment depending on several factors, including hardware assigned to the appliance.
 
 **During the upgrade window, the following will be unavailable:**
 - EPP/EE client communication with the server
@@ -222,7 +222,7 @@ Keep the VM snapshot active until you have fully validated the new 2510 environm
 1. Log in to Endpoint Protector Console.
 2. Navigate to **System Maintenance → System Backup**.
 3. Click **Create**, enter a name and description (include the date and version, e.g., `pre-upgrade-5942-2026-04-20`), click **Save**.
-4. **Save the System Backup Key** displayed in the prompt — you need this key for restoration and cannot recover it if lost.
+4. **Save the System Backup Key** displayed in the prompt — you need this key for restoration and can't recover it if lost.
 5. Wait for the status to show **"Ready to download"**, then download the backup file.
 
 ![System Maintenance → System Backup — backup creation wizard](backup_wizard.webp)
@@ -237,7 +237,7 @@ Store backup files in a secure repository with limited access. The backup contai
 
 **Step 3 — Export logs and file shadows separately (optional but recommended):**
 
-The System Configuration Backup does not include logs and file shadows. If you need historical logs for compliance or forensics:
+The System Configuration Backup doesn't include logs and file shadows. If you need historical logs for compliance or forensics:
 
 - Use **System Maintenance → Audit Log Backups** to export logs to an external location. See [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup) for export steps.
 - Retain the old server VM after migration for log access.
@@ -260,7 +260,7 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 | 8 | Appliance → Server Information screenshot taken | ☐ |
 | 9 | Updated license file obtained (with `php_els`) | ☐ |
 | 10 | EPP Client 5.9.4.3 (for customers not migrated yet) or latest packages downloaded | ☐ |
-| 11 | EE Client 2509+ packages downloaded (if applicable) | ☐ |
+| 11 | Enforced Encryption (EE) Client 2509+ packages downloaded (if applicable) | ☐ |
 
 ---
 
@@ -313,14 +313,14 @@ After the installation completes:
 3. Navigate to **Appliance → Server Information** and confirm the version shows **5.9.4.2**.
 4. Verify the update history: **Dashboard → Live Update → View all applied updates**.
 
-After the patch applies successfully, **don't perform any further upgrades or major configuration changes for at least 24 hours**. Although the UI confirms the patch as complete, a set of critical background processes continues running after the visible upgrade finishes. These include:
+After the patch applies successfully, **don't perform any further upgrades or major configuration changes for at least 24 hours**. Although the UI confirms the patch as complete, critical background processes continue running after the visible upgrade finishes. These include:
 
 - **Database schema migration** — aligns internal table structures and indexes to the new version format
 - **Log reindexing** — rebuilds search indexes across stored audit and event logs
 - **Service reconfiguration** — updates internal service dependencies, daemon configurations, and file path mappings introduced by the patch
 - **Nightly cron maintenance** — runs at 9:00 PM and performs integrity checks, cache rebuilds, and housekeeping tasks that finalize the upgrade state
 
-These tasks run silently in the background and don't produce visible progress in the console. Performing another upgrade, restoring a backup, or making significant configuration changes before these processes complete can impact stability or, in edge cases, corrupt the database or leave the server in an inconsistent state that is difficult to recover.
+These tasks run silently in the background and don't produce visible progress in the console. Performing another upgrade, restoring a backup, or making significant configuration changes before these processes complete can impact stability or, in edge cases, corrupt the database and leave the server in an inconsistent state.
 
 
 ### Create Final Backup at 5.9.4.2
@@ -373,7 +373,9 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 | Root CA redistribution | New root CA must be pushed to all endpoints via GPO/MDM |
 | High server load | Certificate regeneration for all endpoints creates a burst load spike |
 
-> ⚠️ **Warning:** If using Enforced Encryption and you change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. This is strongly discouraged.
+:::warning
+If using Enforced Encryption and you change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. This is strongly discouraged.
+:::
 
 ### Deploying the 2510 Base Image
 
@@ -381,7 +383,7 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 Both the **2509** and **2510** base images can be upgraded directly to 2602. The **2510 image is recommended** for new deployments — it includes improvements to disk sizing (320 GB) and resolves DHCP/DNS configuration issues present in 2509. If you already have a 2509 image available, it is fully supported and reaches 2602 without any intermediate image migration.
 :::
 
-1. Download the Endpoint Protector **2510** VM image from the Netwrix portal or as provided by your account team.
+1. Download the Endpoint Protector **2510** VM image from the [My Products portal on netwrix.com](https://customer.netwrix.com/sign_in.html?rf=my_products.html), or request it from your account team.
 2. Deploy the VM in your hypervisor environment.
    - Minimum disk: **320 GB**
    - Ensure at least **2 GB of free space** on the VM
@@ -421,10 +423,15 @@ The license must be imported **before** applying any patches. Without an active 
 3. After import, go to **Appliance → Server Information**.
 4. Confirm that **"ELS for PHP = Active"** is displayed before continuing.
 
-If license has been properly imported you should be able to see:
+You can validate the php_els component status in Appliance → Server Information.
+![Appliance → Server Information — license](server_info_license.webp)
+
+If the license was imported successfully, the Server Information page shows:
+
 ![Appliance → Server Information — ELS for PHP = Active after license import](els_active_highlighted.webp)
 
-in case of errors:
+If errors appear:
+
 ![Appliance → Server Information — ELS for PHP = Error after license import](els_error.webp)
 
 :::danger
@@ -433,7 +440,7 @@ If ELS for PHP is **not Active**, stop and resolve this before proceeding. The s
 
 ### Upgrade the 2510 Image to the Latest Version (2602)
 
-With the license active, upgrade the fresh 2510 image to the current latest patch version. At time of writing this is **2602**, but always apply all available updates.
+With the license active, upgrade the fresh 2510 image to the current latest patch version. The current version is **2602** — always apply all available updates.
 
 1. Navigate to **System Configuration → Server Update**.
 2. Use the **Offline Patch Uploader** if the server has no internet access:
@@ -490,11 +497,27 @@ Large backups on under-resourced VMs can cause **server unresponsiveness or a 50
 4. Contact Netwrix Support if the error persists.
 :::
 
-## Phase 3 - Uploading EPP & EE Client Packages
+## Phase 3 — Uploading EPP & EE Client Packages
 
 The new 2509/2510 server and further EPP Server patches don't include client packages by default. You must upload them manually.
 
 If you are using an external tool to manage your packages, you can ignore this section unless you are a Netwrix Enforced Encryption (EasyLock) customer — in that case, you need to follow the instructions below.
+
+Download the Endpoint Protector Clients from the [My Products portal on netwrix.com](https://customer.netwrix.com/sign_in.html?rf=my_products.html), or request them from your account team.
+
+:::note
+The EPP Server Client Upgrade feature doesn't support Linux client upgrades — Linux clients must be upgraded manually by administrators.
+:::
+
+The average size of EPP Clients update is:
+
+- Endpoint Protector Client for Windows ~ 50 MB
+- Endpoint Protector Client for macOS ~ 50 MB
+- Endpoint Protector Client for Linux ~ 15 MB (with no dependencies)
+- Endpoint Protector Enforced Encryption Client ~ 15 MB
+- Endpoint Protector Server ~ 30 MB
+
+For environments where the payload of an update is a concern, you can save bandwidth by using Offline Patches. You can also deploy Endpoint Protector Clients manually, directly on each endpoint.
 
 ### Certificate Bridge and Upgrade Path
 
@@ -510,7 +533,7 @@ Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and tran
 
 Clients on 5.9.4.1 or older **can't** upgrade directly to 2602. They must first upgrade to **5.9.4.3** (which trusts both signature types), then proceed to 2602:
 
-![EPP Server Migration — end-to-end process diagram](clientupgradediagram.webp)
+![EPP Client Migration — end-to-end process diagram](clientupgradediagram.webp)
 
 ### Required Packages
 
@@ -539,6 +562,10 @@ The client update mechanism controls how EPP clients are distributed and updated
 Upload **both** EE clients for Windows and macOS if both operating systems are in use in your organization. Missing even one platform's EE client can break encryption enforcement on that platform.
 :::
 
+### Obsolete OS limitations
+
+As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), obsolete and discontinued operating systems aren't supported by the latest EPP Client versions. If continued use of the EPP Client on an unsupported operating system is required, the last available Client version compatible with that operating system must be used. While such Client versions may retain the ability to communicate with the EPP Server, they are no longer covered under the standard support agreement. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Support in such cases is provided on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000).
+
 ---
 
 ## Post-Migration Verification
@@ -554,7 +581,7 @@ Complete all items in this checklist after the migration is finished.
 | Server responds to browser access | `https://<server>:443` loads normally |
 | License imported successfully | System Configuration → System Licensing |
 
-![Appliance → Server Information on 2510 — version, ELS status, system health](server_info_2510.webp)
+![Appliance → Server Information — license](server_info_license.webp)
 
 ### Re-Enabling Client Communications
 
@@ -614,8 +641,10 @@ Re-import and reconfigure each active integration before proceeding to verificat
 | Integration | Where to Reconfigure |
 |---|---|
 | SMTP / Email alerts | System Configuration → System Settings → Email Configuration |
-| AD / LDAP | System Configuration → Active Directory / LDAP |
-| Entra ID / SSO / SCIM | System Configuration → SSO / Single Sign-On |
+| AD / LDAP | Directory Services → Microsoft Active Directory  |
+| Entra ID | Directory Services → Azure Active Directory |
+| SCIM | Directory Services → SCIM API Configuration |
+| SSO  | System Configuration → SSO / Single Sign-On |
 | SIEM / Syslog | System Configuration → SIEM Settings |
 | AWS / S3 / File Shadows | System Configuration → File Shadow Repository |
 
@@ -704,7 +733,9 @@ If using EPP's built-in upgrade:
 2. Select the target OS and agent version, click **Next**.
 3. Select target computers carefully.
 
-> ⚠️ **Warning:** EPP's built-in upgrade is rate-limited to **50 machines per hour**. For large deployments, plan accordingly or use external deployment tools.
+:::warning
+EPP's built-in upgrade is rate-limited to **50 machines per hour**. For large deployments, plan accordingly or use external deployment tools.
+:::
 
 :::tip
 Always upgrade a small pilot group (10–20 endpoints across diverse hardware/OS configurations) before mass rollout. Validate behavior, policies, and communication for 24–48 hours before proceeding with the full fleet.
