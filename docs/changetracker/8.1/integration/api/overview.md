@@ -12,9 +12,15 @@ Netwrix Change Tracker provides a comprehensive REST API that allows customers t
 
 All API endpoints require authentication. See [Authentication](/docs/changetracker/8.1/integration/api/authentication.md) for an example script.
 
+## API Reference
+
+For a complete interactive reference of all Hub API endpoints, see the [ChangeTracker Hub API Reference](/docs/changetracker/8_1/integration/api/api-reference). The reference is generated directly from the OpenAPI 3.0 spec served by the Hub and covers all available endpoints with request/response schemas.
+
+The raw OpenAPI 3.0 spec (YAML) is also available for download or import into tools like Postman and Insomnia.
+
 ## Available Endpoints
 
-The following API endpoints are available in Netwrix Change Tracker:
+The following commonly-used API endpoints are documented in detail:
 
 - [Agents](/docs/changetracker/8.1/integration/api/agents.md) – Pull data on agent statuses, configurations, and group memberships using the agentsRanked endpoint. This API allows you to retrieve detailed information about all agents in your environment, including their group memberships and applied tracking templates.
 
