@@ -11,7 +11,7 @@ environments. Whether you are managing physical hardware, virtual appliances, cl
 infrastructure, or integrating with existing management systems, this resource offers essential
 information and procedures.
 
-We cover a range of deployment methods, including:
+This section covers a range of deployment methods, including:
 
 - Physical and Virtual Appliances: Detailed instructions for configuration, deployment, and
   management.
@@ -43,10 +43,9 @@ Alternatively, if a Provider-Managed setup is required, an instance of Endpoint 
 spun up in an isolated cloud environment. To obtain more details on the Provider- Managed option,
 speak with your Netwrix Account Manager.
 
-Please note, to use the Endpoint Protector Server in a production environment, a License
-Key is required. After purchasing Endpoint Protector with the necessary modules, your Account
-Manager will assign a license that can be installed within the Endpoint Protector Management Console
-(the configuration interface available on the Endpoint Protector Server).
+:::note
+To use the Endpoint Protector Server in a production environment, a License Key is required. After purchasing Endpoint Protector with the necessary modules, your Account Manager will assign a license that can be installed within the Endpoint Protector Management Console (the configuration interface available on the Endpoint Protector Server).
+:::
 
 The following sections will delve deeper into the different methods used to deploy Endpoint
 Protector, offering step-by-step instructions and best practices.
