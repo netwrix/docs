@@ -110,7 +110,7 @@ Version 2510 requires an updated license format that includes a `php_els` field.
 1. Open your current EPP Server console.
 2. Navigate to **System Configuration → System Licensing**.
 3. Download or view the license file content.
-4. Verify that the license file contains a field ending with: `"php_els":"your-unique-value"`, as shown in the example below.
+4. Verify that the license file contains a field ending with: `"php_els":"your-unique-value"`, as shown in the following example.
   ![EPP License file — php_els component](licensefile_php_els.webp)
 
 If the `php_els` field is missing:
@@ -180,7 +180,7 @@ Plan a maintenance window that accounts for the following:
 - Post-migration verification: **30–60 minutes**
 - Client package uploads: **10–20 minutes**
 
-These times are based on laboratory test results and may vary in your environment depending on a number of factors, including hardware assigned to the appliance.
+These times are based on laboratory test results and may vary in your environment depending on several factors, including hardware assigned to the appliance.
 
 **During the upgrade window, the following will be unavailable:**
 - EPP/EE client communication with the server
@@ -313,7 +313,7 @@ After the installation completes:
 3. Navigate to **Appliance → Server Information** and confirm the version shows **5.9.4.2**.
 4. Verify the update history: **Dashboard → Live Update → View all applied updates**.
 
-After the patch applies successfully, **don't perform any further upgrades or major configuration changes for at least 24 hours**. Although the UI confirms the patch as complete, a set of critical background processes continues running after the visible upgrade finishes. These include:
+After the patch applies successfully, **don't perform any further upgrades or major configuration changes for at least 24 hours**. Although the UI confirms the patch as complete, critical background processes continue running after the visible upgrade finishes. These include:
 
 - **Database schema migration** — aligns internal table structures and indexes to the new version format
 - **Log reindexing** — rebuilds search indexes across stored audit and event logs
@@ -517,9 +517,7 @@ The average size of EPP Clients update is:
 - Endpoint Protector Enforced Encryption Client ~ 15 MB
 - Endpoint Protector Server ~ 30 MB
 
-For environments where the payload of an update is a concern, saving the bandwidth can easily be
-done by using Offline Patches. Moreover, the Endpoint Protector Clients can also be deployed
-manually, directly on each endpoint.
+For environments where the payload of an update is a concern, you can save bandwidth by using Offline Patches. You can also deploy Endpoint Protector Clients manually, directly on each endpoint.
 
 ### Certificate Bridge and Upgrade Path
 

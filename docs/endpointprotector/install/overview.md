@@ -26,29 +26,22 @@ This section of the documentation is provided as a best-effort guideline to supp
 
 ## Staging the Server
 
-To start using Endpoint Protector, a server instance needs to be made available. The server is where
-all endpoint controls and behavior will be configured, and is the vehicle for delivering the
+To start using Endpoint Protector, you need to deploy a server instance. The server hosts all endpoint controls and behavior configuration and delivers the
 Endpoint Protector agent to endpoint systems. There are two principal options for server management;
-Customer-Managed or Provider- Managed. If Customer-Managed is a desired option, the server can be
-installed On-Premise or in a Hosted-Cloud Environment.
+Customer-Managed or Provider- Managed. If Customer-Managed is a desired option, you can install the server On-Premise or in a Hosted-Cloud Environment.
 
-The On-Premise option for a Customer-Managed instance allows for a virtualized image to be set up in
-a customer’s LAN setting. Virtualization options include, but aren't limited to: VMware and
+The On-Premise option for a Customer-Managed instance allows you to set up a virtualized image in your LAN. Virtualization options include, but aren't limited to: VMware and
 Hyper-V. The Hosted-Cloud method of deployment allows for use of a customer’s Amazon Web Services
-(AWS), Azure, or Google Cloud Platform (GCP) instance. To obtain more specific information for each
-of these options, see the [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) topic and the
+(AWS), Azure, or Google Cloud Platform (GCP) instance. For more information on each of these options, see the [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) topic and the
 [Cloud Services](/docs/endpointprotector/install/configuration/overview.md) topic.
 
-Alternatively, if a Provider-Managed setup is required, an instance of Endpoint Protector can be
-spun up in an isolated cloud environment. To obtain more details on the Provider- Managed option,
-speak with your Netwrix Account Manager.
+Alternatively, if a Provider-Managed setup is required, Netwrix can deploy an instance of Endpoint Protector in an isolated cloud environment. For details on the Provider-Managed option, speak with your Netwrix Account Manager.
 
 :::note
 To use the Endpoint Protector Server in a production environment, a License Key is required. After purchasing Endpoint Protector with the necessary modules, your Account Manager will assign a license that can be installed within the Endpoint Protector Management Console (the configuration interface available on the Endpoint Protector Server).
 :::
 
-The following sections will delve deeper into the different methods used to deploy Endpoint
-Protector, offering step-by-step instructions and best practices.
+The following sections describe the different methods for deploying Endpoint Protector, with step-by-step instructions and best practices.
 
 ## Communication Between Endpoint Protector Server and Netwrix Servers
 
@@ -80,7 +73,7 @@ When connected, Netwrix may access the following metadata information:
   - License utilization
   - Module Activation Status
 
-The above metadata is collected strictly for licensing and statistical purposes. It doesn't include any customer-sensitive information or content stored or processed by your company.
+Netwrix collects this metadata strictly for licensing and statistical purposes. It doesn't include any customer-sensitive information or content stored or processed by your company.
 
 Additionally, internet connectivity allows your company to:
 
