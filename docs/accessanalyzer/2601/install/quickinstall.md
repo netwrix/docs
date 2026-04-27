@@ -16,7 +16,7 @@ Before running the installer, confirm the following.
 
 ### System requirements
 
-**Absolute installer minimums (enforced by preflight):** 6 vCPUs, 24 GB RAM, 20 GB free disk on `/`. Installation is blocked if the system falls below these thresholds.
+**Absolute installer minimums (enforced by preflight):** 6 vCPUs, 24 GB RAM, 20 GB free disk on `/`. The preflight check blocks installation if the system falls below these thresholds.
 
 Choose a deployment size based on your environment:
 
@@ -36,12 +36,12 @@ Choose a deployment size based on your environment:
 | `/var/log` | 5 GB | System and application logs |
 | `/etc` | 1 GB | Configuration files |
 
-**Network:** Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains) below.
+**Network:** Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains).
 
 **License:** Valid Netwrix license key.
 
 :::note
-**Supported OS:** Ubuntu 24.04 LTS is the primary tested platform. Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are also compatible. AIX and non-Linux operating systems are not supported.
+**Supported OS:** Ubuntu 24.04 LTS is the primary tested platform. Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are also compatible. Access Analyzer doesn't support AIX or non-Linux operating systems.
 :::
 
 :::note
@@ -136,7 +136,7 @@ Ports the Access Analyzer server must be able to reach on your data sources and 
 
 ### Internal port requirements
 
-These ports are used within the Access Analyzer VM for service-to-service communication. No external firewall rules are required — only port 443 (Traefik) is exposed externally.
+These ports handle service-to-service communication within the Access Analyzer VM. No external firewall rules are required — the installer exposes only port 443 (Traefik) externally.
 
 | Port | Protocol | Service | Description |
 | --- | --- | --- | --- |
@@ -198,7 +198,7 @@ sudo update-ca-certificates
 Paste and customize the following at the top of your terminal session. Every subsequent command references these variables.
 
 ```bash
-export DSPM_TARGET_REVISION="<version, e.g. 0.3.*-dev or leave unset for latest>"
+# export DSPM_TARGET_REVISION="1.0.8"    # optional — omit to stay on latest; see version syntax below
 export LICENSE_KEY="<Your-License-Key>"
 export DSPM_HOSTNAME="<AA2601 FQDN, e.g. aa2601.corp.example.com>"
 export TLS_CERT_FILE="/opt/dspm-tls/<hostname>.crt"
@@ -227,7 +227,17 @@ export LDAP_EMAIL_ATTRIBUTE="mail"
 | `LDAP_BIND_DN` | Distinguished name of the read-only service account | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` |
 | `LDAP_USERS_DN` | Base DN for the OU containing user accounts | `CN=Users,DC=corp,DC=example,DC=com` |
 | `LDAP_EMAIL_ATTRIBUTE` | LDAP attribute storing the user's email address | `mail` |
-| `DSPM_TARGET_REVISION` | (Optional) Specific version to install. Omit for latest | `0.3.*-dev` |
+| `DSPM_TARGET_REVISION` | (Optional) Controls which version is installed and auto-upgraded to. Omit to stay on the latest release. | `1.0.8` |
+
+**Version syntax for `DSPM_TARGET_REVISION`:**
+
+| Value | Behavior |
+| --- | --- |
+| (unset) | Installs the latest release; auto-upgrades to the latest version with no limit |
+| `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
+| `1.*` | Auto-upgrades to any 1.x version |
+
+For most deployments, either omit this variable to stay on the latest release, or pin to a specific version (for example, `1.0.8`) to control when upgrades happen during your organization's patching cycle.
 
 ### Step 3: Download and run the installer
 
@@ -238,7 +248,7 @@ curl -sLfo /tmp/dspm-install.sh \
   "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:${LICENSE_KEY}"
 ```
 
-Run it with one of the two password options below. Installation takes 15–30 minutes.
+Run it with one of the following two password options. Installation takes 15–30 minutes.
 
 #### Option — Pipe the LDAP bind password (automated)
 
@@ -248,16 +258,16 @@ printf '<Service-Account-Password>\n' | bash /tmp/dspm-install.sh
 
 Runs non-interactively. Suitable for scripted or automated installs. After the install completes, clear your shell history if others can read the session (`history -c`, and clear `~/.bash_history` or equivalent) — the password was part of the `printf` command line.
 
-#### Option — Type the password when prompted
+#### Option — Enter the password when prompted
 
 ```bash
 bash /tmp/dspm-install.sh
 ```
 
-The installer pauses part-way through and displays `Enter LDAP bind credential:`. Type the password (input is silent — no characters are echoed) and press Enter. The password is never placed in shell history, environment, or disk. Requires a human at the keyboard at that moment.
+The installer pauses part-way through and displays `Enter LDAP bind credential:`. Enter the password (input is silent — no characters appear) and press Enter. The password never enters shell history, the environment, or disk. Requires a human at the keyboard at that moment.
 
 :::note
-Setting `LDAP_BIND_CREDENTIAL` as an environment variable is not an alternative. The installer always reads the bind password interactively, which overwrites any exported value. Use one of the two options above.
+Setting `LDAP_BIND_CREDENTIAL` as an environment variable isn't an alternative. The installer always reads the bind password interactively, which overwrites any exported value. Use one of the two options above.
 :::
 
 ### Step 4: Verify the installation
@@ -276,7 +286,7 @@ All pods should show `Running` or `Completed` status. All ArgoCD applications sh
 <!-- SYNC: configurations/identity-provider.md "Sign in as the bootstrap User Admin" -->
 <!-- If you change this block, update the matching block in configurations/identity-provider.md -->
 
-The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Admin** role. This account can create and manage other users but **cannot** access system configuration. Use it on first login to pre-provision your AD users, then sign out and sign back in as an Administrator for system-level work.
+The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Admin** role. This account can create and manage other users but **can't** access system configuration. Use it on first log in to pre-provision your AD users, then sign out and sign back in as an Administrator for system-level work.
 
 1. Retrieve the bootstrap admin password:
 
@@ -293,14 +303,14 @@ The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Adm
 
 4. Complete first-login setup:
    - Scan the QR code with an authenticator app, enter a device name, submit the one-time code. **Save this enrollment** — you will need the same authenticator for any future bootstrap admin login.
-   - Enter a first name and last name. **Do not change the email address.**
+   - Enter a first name and last name. **Don't change the email address.**
 
 5. Pre-provision each user who should be able to sign in. For each user:
    - Click **+ Add User**.
    - Enter the Name and Email. The email must match the user's AD `mail` attribute exactly, **including case**.
    - Assign a role (see [Roles](#roles) below).
 
-   Assign at least one user the **Administrator** role — the bootstrap account cannot access system configuration, so someone needs to. Assign at least one additional user the **User Admin** role if you want a non-bootstrap user to manage accounts going forward.
+   Assign at least one user the **Administrator** role — the bootstrap account can't access system configuration, so someone needs to. Assign at least one additional user the **User Admin** role if you want a non-bootstrap user to manage accounts going forward.
 
 6. Sign out.
 
@@ -412,15 +422,15 @@ END HIDDEN -->
 <!-- SYNC: configurations/identity-provider.md "Roles" -->
 <!-- If you change this block, update the matching block in configurations/identity-provider.md -->
 
-This table is also published at [Configuration > Identity Provider > Roles](../configurations/identity-provider.md#roles). It is duplicated here so this guide reads top-to-bottom.
+This table is also published at [Configuration > Identity Provider > Roles](../configurations/identity-provider.md#roles). This guide duplicates it here so it reads top-to-bottom.
 
 | Role | Description |
 | --- | --- |
 | **Administrator** | Full access: system configuration (sources, scans, connectors, application settings) and user management (create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users). |
-| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
+| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The installer assigns this role to the bootstrap `admin@dspm.local` account. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
-The **User Admin** role exists to provide a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration. The bootstrap `admin@dspm.local` account is seeded as User Admin — you'll use it to pre-provision the rest of your users, including your first Administrator.
+The **User Admin** role exists to provide a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration. The installer seeds the bootstrap `admin@dspm.local` account as User Admin — you'll use it to pre-provision the rest of your users, including your first Administrator.
 
 <!-- END SYNC -->
 
@@ -433,11 +443,11 @@ For certificate-specific issues, see [TLS Certificate Requirements — Troublesh
 | Sign-in returns HTTP 401 with correct credentials | SAN hostname is mixed-case; browser normalized it to lowercase | Re-issue the certificate with lowercase hostname in the SAN list |
 | Installer exits with "Failed to read TLS private key" | Key file owned by `root`, installer runs as non-root user | `sudo chown <install-user> /opt/dspm-tls/<hostname>.key` |
 | Sign-in silently fails with `PKIX path building failed` in Keycloak logs | CA bundle is missing the LDAPS DC's CA (AD only) | Concatenate the DC's LDAPS CA into the bundle and re-run the installer with `--configure-idp-only` |
-| Browser rejects the application URL with a SAN mismatch error | `DSPM_HOSTNAME` is an IP, or SAN does not include the hostname in use | Use a DNS hostname for `DSPM_HOSTNAME` and verify the cert SAN list |
+| Browser rejects the application URL with a SAN mismatch error | `DSPM_HOSTNAME` is an IP, or SAN doesn't include the hostname in use | Use a DNS hostname for `DSPM_HOSTNAME` and verify the cert SAN list |
 | Installer rejects `--idp-alias` | Alias contains a space or special character | Use only letters, digits, hyphens, underscores, and dots |
-| Sign-in fails after pre-provisioning | Pre-provisioned email does not match the directory attribute | Confirm the email matches exactly, including case |
-| Entra ID login redirects fail | Redirect URI in App Registration does not match | Verify the redirect URI is `https://<DSPM_HOSTNAME>/auth/realms/dspm/broker/entra-id/endpoint` exactly |
-| Entra ID login prompt does not appear | Client secret entered incorrectly or has expired | Re-run with `--configure-idp-only` and re-enter the secret; rotate the secret in Azure if expired |
+| Sign-in fails after pre-provisioning | Pre-provisioned email doesn't match the directory attribute | Confirm the email matches exactly, including case |
+| Entra ID login redirects fail | Redirect URI in App Registration doesn't match | Verify the redirect URI is `https://<DSPM_HOSTNAME>/auth/realms/dspm/broker/entra-id/endpoint` exactly |
+| Entra ID login prompt doesn't appear | Client secret entered incorrectly or has expired | Re-run with `--configure-idp-only` and re-enter the secret; rotate the secret in Azure if expired |
 
 For other identity provider failures, see [Configure Identity Provider — Troubleshooting](identity-provider.md#troubleshooting-idp-configuration).
 
