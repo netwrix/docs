@@ -26,7 +26,7 @@ Consequently, when the identity store workflow is triggered, the linked flow is 
 
 :::note
 When the flow is approved in Power Automate, the identity store workflow request is auto
-approved. However, if the identity store workflow request is approved first, the flow would not be
+approved. However, if the identity store workflow request is approved first, the flow wouldn't be
 auto approved.
 :::
 
@@ -34,9 +34,9 @@ auto approved.
 ### Pre-steps before configuring connection to Power Automate
 
 1. Check your certificate and ensure that it is valid. 
-2. Make sure the Directory Manager server is deployed on a machine that is exposed over the
+2. ensure the Directory Manager server is deployed on a machine that is exposed over the
    Internet, as Power Automate needs to communicate with the Directory Manager server for processing
-   requests. Power Automate cannot communicate with a server deployed on a machine behind NAT.
+   requests. Power Automate can't communicate with a server deployed on a machine behind NAT.
 
 
 ### Connect an Identity Store to Power Automate
