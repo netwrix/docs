@@ -22,9 +22,9 @@ The raw OpenAPI 3.0 spec (YAML) is also available for download or import into to
 
 The following commonly-used API endpoints are documented in detail:
 
-- [Agents](/docs/changetracker/8.1/integration/api/agents.md) – Pull data on agent statuses, configurations, and group memberships using the agentsRanked endpoint. This API allows you to retrieve detailed information about all agents in your environment, including their group memberships and applied tracking templates.
+- [Agents](/docs/changetracker/8.1/integration/api/agents.md) – Pull data on agent statuses, configurations, and group memberships using the agentsRanked endpoint. Use this API to retrieve detailed information about all agents in your environment, including their group memberships and applied tracking templates.
 
-- [Register Agents](/docs/changetracker/8.1/integration/api/register-agents.md) – Normally used by agents to register with the Hub, but this API allows you to register proxied devices to be accessed through a proxy agent.
+- [Register Agents](/docs/changetracker/8.1/integration/api/register-agents.md) – Normally used by agents to register with the Hub, but you can use this API to register proxied devices to be accessed through a proxy agent.
 
 - [Credentials](/docs/changetracker/8.1/integration/api/credentials.md) – Manage authentication credentials used by ChangeTracker to connect to various systems and services. This API provides endpoints for creating, retrieving, updating, and deleting credentials for different credential types including Shell, Database, FTP, Cloud, ESX, ITSM, and Splunk.
 
