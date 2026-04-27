@@ -72,6 +72,10 @@ Only backups created on **exactly version 5.9.4.2** are accepted.
 Always verify your source server version before creating the migration backup.
 :::
 
+### New EPP Client and Server versioning
+
+Starting with the 2509 EPP Server release in October 2025, a new versioning scheme has been introduced. For details, see [Unified EPP Clients and Server Versioning](/docs/endpointprotector/install/overview.md).
+
 ### In-Place Upgrade vs. Migration Upgrade
 
 | Aspect | In-Place Upgrade | Migration Upgrade |
@@ -505,6 +509,17 @@ Download the Endpoint Protector Clients from the [My Products portal on netwrix.
 The EPP Server Client Upgrade feature doesn't support Linux client upgrades — Linux clients must be upgraded manually by administrators.
 :::
 
+The average size of EPP Clients update is:
+
+- Endpoint Protector Client for Windows ~ 50 MB
+- Endpoint Protector Client for macOS ~ 50 MB
+- Endpoint Protector Client for Linux ~ 15 MB (with no dependencies)
+- Endpoint Protector Enforced Encryption Client ~ 15 MB
+- Endpoint Protector Server ~ 30 MB
+
+For environments where the payload of an update is a concern, saving the bandwidth can easily be
+done by using Offline Patches. Moreover, the Endpoint Protector Clients can also be deployed
+manually, directly on each endpoint.
 
 ### Certificate Bridge and Upgrade Path
 
@@ -548,6 +563,10 @@ The client update mechanism controls how EPP clients are distributed and updated
 :::warning
 Upload **both** EE clients for Windows and macOS if both operating systems are in use in your organization. Missing even one platform's EE client can break encryption enforcement on that platform.
 :::
+
+### Obsolete OS limitations
+
+As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), obsolete and discontinued operating systems are not supported by the latest EPP Client versions. If continued use of the EPP Client on an unsupported operating system is required, the last available Client version compatible with that operating system must be used. While such Client versions may retain the ability to communicate with the EPP Server, they are no longer covered under the standard support agreement. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Support in such cases is provided on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000).
 
 ---
 

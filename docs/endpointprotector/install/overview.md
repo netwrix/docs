@@ -91,3 +91,32 @@ Additionally, internet connectivity allows your company to:
 :::note 
 All communication with Netwrix servers is governed by the applicable privacy and security policies.
 :::
+
+
+## Unified EPP Clients and Server Versioning
+
+Starting with version 2509, Netwrix standardizes EPP product versioning. The versioning format follows a structured scheme that encodes the release year, month, target platform, and build metadata.
+
+**Key aspects of the new versioning system**
+
+**Structured format:** Version numbers follow the format:
+
+`YYMM.O.C.B`
+
+**`YYMM`** — Release year and month (e.g., `2603` = March 2026)
+
+**`O`** — Target platform or component:
+- `0` = Server
+- `1` = Windows Client
+- `2` = Mac Client
+- `3` = Linux Client
+- `4` = Combined Win-Mac Environments (EE)
+
+**`C`** — Custom/fork/build increment:
+- `0` = internal
+- `1` = standard releases
+- `2+` = customer-specific builds or hotfixes
+
+**`B`** — Optional build number for internal tracking
+
+**Consistency across interfaces:** This versioning format is applied across all UI pages where version numbers appear, including dashboards, reports, maintenance tools, and the EPP Client Notifier.
