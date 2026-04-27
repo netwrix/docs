@@ -44,7 +44,7 @@ When working with the ChangeTracker API, consider the following best practices:
 
 ## Example Usage
 
-Below is a simple example of how to use the API with PowerShell:
+The following example shows how to use the API with PowerShell:
 
 ```powershell
 # Set up a session variable for the Admin user
@@ -70,4 +70,4 @@ $requestBody = @{
 $result = Invoke-RestMethod -Method Post -ContentType application/json -Uri $uri -WebSession $myWebSession -Body $requestBody
 ```
 
-For more detailed information about each API endpoint, refer to the specific API documentation pages linked above.
+For more information about each API endpoint, refer to the API documentation pages listed in the Available Endpoints section.
