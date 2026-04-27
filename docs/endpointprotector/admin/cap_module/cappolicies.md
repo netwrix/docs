@@ -9,7 +9,7 @@ sidebar_position: 10
 Content Aware Policies are sets of rules for sensitive content detection that enforce ﬁle transfers
 management on selected entities (users, computers, groups, departments).
 
-From this section, you can create a new policy, edit or delete an existing policy or create and
+From this section, you can create a new policy, edit or delete an existing policy, or create and
 apply a predeﬁned policy.
 
 For example; Content Aware Policy can be set to only block Credit Cards AND Email Addresses. In this
@@ -35,13 +35,13 @@ configuration, either reported, blocked, or allowed.
 
 
 Similar to Device Control policies, Content Aware policies remain enforced on a computer even after
-it is disconnected from the company network.
+the computer disconnects from the company network.
 
 One or more Content Aware Policy can be enforced on the same computer, user, group, or department.
 To avoid any conﬂicts between the applied rules, a prioritization of policies is performed through a
 left-to-right ordering. The leftmost policy has the highest priority (Priority 1), while the
 rightmost policy has the lowest priority. Changing priorities for one or more policies can be
-performed by moving the policy to the right or the left with a simple click on the left arrow for
+performed by moving the policy to the right or the left with a simple click the left arrow for
 higher priority or on the right arrow for lower priority.
 
 To manage Content Aware Protection policies, you can:
@@ -78,7 +78,7 @@ Depending on the speciﬁc application and OS, some limitations may apply.
       content but allow the user to remediate the action by using a justiﬁcation
 
 :::note
-Initially, we recommend using the Report only action to gain a better view of data use
+Initially, Netwrix recommends using the Report only action to gain a better view of data use
 across your network and not interrupt your activity.
 :::
 
@@ -87,18 +87,18 @@ across your network and not interrupt your activity.
 
 :::note
 To enforce the Outside Hours and Outside Network options, after you save the policy,
-enable the setting on the speciﬁc device from Device Control, Global settings, Group or Computers.
+enable the setting on the speciﬁc device from Device Control, Global settings, Group, or Computers.
 :::
 
 
-- Policy Template – select a custom notiﬁcation from the drop-down list or create one from System
+- Policy Template – select a custom notiﬁcation from the dropdown list or create one from System
   Parameters, Device Types and Notiﬁcation,
  [Custom Content Aware Protection Notiﬁcations](/docs/endpointprotector/admin/systempar.md)
   section
 - Policy Status – enable to set policy status to active
 - Client Notiﬁcations – enable this setting to send notiﬁcations to clients
 - Global Thresholds – if disabled, the threshold can be considered a Regular Threshold
-- Threat Threshold – type the number of maximum allowed content violations for a ﬁle transfer
+- Threat Threshold – enter the number of maximum allowed content violations for a ﬁle transfer
 - File size threshold – enter the ﬁle size (in MB) starting from which the ﬁle transfer is either
   blocked or reported
 
@@ -114,14 +114,14 @@ Threshold must be a positive, whole number.
   consideration the threshold.
 
 :::note
-This setting does not apply for File Name and File Location.
+This setting doesn't apply for File Name and File Location.
 :::
 
 
 :::note
 The Threshold option applies only to multiple ﬁlters, including Predeﬁned Content, Custom
-Content, and Regular Expressions. As a general rule, it is recommended that Block & Report policies
-that use the Threshold should be placed with higher priority than Report Only policies.
+Content, and Regular Expressions. As a general rule, place Block & Report policies that use the Threshold at higher priority than
+Report Only policies.
 :::
 
 
@@ -139,14 +139,14 @@ numbers, emphasizing the distinctions between Regular and Global Thresholds.
 1. Block & Report Policy for SSN and Phone Numbers:
 
     - Set a policy to block transfers of both SSNs and phone numbers
-    - Regular Threshold: Does not block two threats (SSN + phone number)
+    - Regular Threshold: Doesn't block two threats (SSN + phone number)
     - Global Threshold: Blocks two SSNs or any combination of two threats
 
 ![Block & Report policies to handle Social Security Numbers (SSN) and phone numbers](policyinformation.webp)
 
 ## Policy Exit Points
 
-Policy Exit Points allow you to monitor and control the transfer of sensitive data across various
+Use Policy Exit Points to monitor and control the transfer of sensitive data across various
 platforms and channels. The following exit points are available for monitoring.
 
 ### Applications
@@ -170,9 +170,12 @@ Select Adobe Flash Player from the Web Browser category to block sites that use 
 Flash Active X.
 :::
 
-
 :::note
 To distinguish OneDrive for Business from OneDrive, enable Deep Packet Inspection (DPI).
+:::
+
+:::warning
+After an EPP Server upgrade, if your CAP policy Exit points are configured by selecting a whole category, edit the policy and review the application list to ensure any newly added apps are included. Click **Save** to push the updated configuration to EPP Clients.
 :::
 
 
@@ -239,7 +242,7 @@ player, using either Drag and Drop or Copy and Paste actions.
 
 ### Clipboard
 
-The Clipboard functionality enables you to monitor all content captured through Copy & Paste or Cut
+Use the Clipboard functionality to monitor all content captured through Copy & Paste or Cut
 & Paste operations.
 
 :::note
@@ -313,7 +316,7 @@ The Paste operation is allowed when the user changes the window to other applica
 :::
 
 
-For example; in a Content Aware policy, Firefox is monitored, Chrome is not monitored and the Apply
+For example; in a Content Aware policy, Firefox is monitored, Chrome isn't monitored and the Apply
 Paste restrictions to all monitored applications setting is enabled. The user performs a Copy
 operation from Notepad which contains conﬁdential information, then the Paste operation on Firefox
 is blocked, and the Paste operation on Chrome is allowed
@@ -329,19 +332,19 @@ is blocked, and the Paste operation on Chrome is allowed
 Use this setting to extend the applications not listed in a Content Aware policy and block the Paste
 operations.
 
-For example; Microsoft Word is not listed in a Content Aware policy, but you can select the
+For example; Microsoft Word isn't listed in a Content Aware policy, but you can select the
 application from the list to monitor the Paste operation on the Microsoft Word app.
 
 On-demand, Endpoint Protector can add other applications.
 
 :::warning
-On certain Linux environments, like those utilizing Wayland protocol by default, paste
+On certain Linux environments, like those using Wayland protocol by default, paste
 control is limited due to Wayland's lack of support for detecting the focused window. To ensure
 security, content blocking occurs during the copy operation.
 :::
 
 
-![The Clipboard functionality enables you to monitor all content captured through Copy & Paste or Cut & Paste operations](policyexitclipboard.webp)
+![Clipboard functionality for monitoring content captured through Copy & Paste or Cut & Paste operations](policyexitclipboard.webp)
 
 Newer Linux Ubuntu versions have 'snap'-based applications installed by default, affecting Endpoint
 Protector Client functionality. This may result in missing ﬁle-related events in Content Aware
@@ -349,7 +352,7 @@ Protection scans. The reliance on 'snap'-based applications also affects ﬁle-r
 activities, exacerbating this limitation. Consider non-’snap’-based applications (where possible) as
 alternative conﬁgurations for optimal functionality.
 
-Below are additional setting found under Policy Exit Points:
+The following are additional settings found under Policy Exit Points:
 
 1. **Network Share** Endpoint Protector will report all the events for Report Only policies for
    macOS. For Block & Report policies the transfer from a Local Share towards the Local Disk,
