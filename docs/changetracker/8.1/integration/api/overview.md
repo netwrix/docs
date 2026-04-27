@@ -14,7 +14,7 @@ All API endpoints require authentication. See [Authentication](/docs/changetrack
 
 ## API Reference
 
-For a complete interactive reference of all Hub API endpoints, see the [ChangeTracker Hub API Reference](/docs/changetracker/8_1/integration/api/api-reference). The reference is generated directly from the OpenAPI 3.0 spec served by the Hub and covers all available endpoints with request/response schemas.
+For a complete interactive reference of all Hub API endpoints, see the [ChangeTracker Hub API Reference](/docs/changetracker/8_1/integration/api/api-reference). The Hub generates this reference directly from its OpenAPI 3.0 spec, covering all available endpoints with request/response schemas.
 
 The raw OpenAPI 3.0 spec (YAML) is also available for download or import into tools like Postman and Insomnia.
 
@@ -44,7 +44,7 @@ When working with the ChangeTracker API, consider the following best practices:
 
 ## Example Usage
 
-Below is a simple example of how to use the API with PowerShell:
+The following example shows how to use the API with PowerShell:
 
 ```powershell
 # Set up a session variable for the Admin user
@@ -70,4 +70,4 @@ $requestBody = @{
 $result = Invoke-RestMethod -Method Post -ContentType application/json -Uri $uri -WebSession $myWebSession -Body $requestBody
 ```
 
-For more detailed information about each API endpoint, refer to the specific API documentation pages linked above.
+For more information about each endpoint, refer to the specific API documentation pages in the [Available Endpoints](#available-endpoints) section.
