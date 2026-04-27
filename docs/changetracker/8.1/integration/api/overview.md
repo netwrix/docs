@@ -70,4 +70,4 @@ $requestBody = @{
 $result = Invoke-RestMethod -Method Post -ContentType application/json -Uri $uri -WebSession $myWebSession -Body $requestBody
 ```
 
-For more information about each API endpoint, refer to the API documentation pages listed in the Available Endpoints section.
+See the [Available Endpoints](#available-endpoints) section for documentation pages covering each API endpoint.
