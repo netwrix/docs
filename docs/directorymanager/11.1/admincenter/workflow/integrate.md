@@ -9,8 +9,8 @@ sidebar_position: 40
 You can link an identity store in Directory Manager to Power Automate to achieve the following:
 
 - **Trigger a flow from** Directory Manager - To achieve this, you have to link a workflow in an
-  identity store to a Power Automate flow. When the Directory Manager workflow is triggered, the
-  linked flow is auto triggered.
+  identity store to a Power Automate flow. When the Directory Manager workflow triggers, the
+  linked flow triggers automatically.
 
 ## Trigger a Flow from Directory Manager
 
@@ -22,7 +22,7 @@ be linked to flows.
 - Link a workflow to a flow by providing the URL of that flow in the workflow .See the Link an
   Identity Store Workflow to a Flow topic.
 
-Consequently, when the identity store workflow is triggered, the linked flow is auto triggered.
+Consequently, when the identity store workflow triggers, the linked flow triggers automatically.
 
 :::note
 When the flow is approved in Power Automate, the identity store workflow request is auto
@@ -33,7 +33,7 @@ auto approved.
 
 ### Pre-steps before configuring connection to Power Automate
 
-1. Check your certificate and ensure that it is valid. 
+1. Check your certificate and ensure it is valid. 
 2. ensure the Directory Manager server is deployed on a machine that is exposed over the
    Internet, as Power Automate needs to communicate with the Directory Manager server for processing
    requests. Power Automate can't communicate with a server deployed on a machine behind NAT.
@@ -68,7 +68,7 @@ service and the Power Automate platform.
       registered it in Microsoft Entra Admin Center.
     - **Client Secret** - the client secret value to the Directory Manager application when you
       registered it in Microsoft Entra Admin Center.
-    - **Redirect URI** - the URL of the endpoint which is used for authorization in Power Automate
+    - **Redirect URI** - the URL of the endpoint that Power Automate uses for authorization
       `https://<GroupID server name>/AdminCenter/api/MsFlow/OAuthCallback`. For example: 
       https://powerautomate-netwrix1.msappproxy.net/AdminCenter/api/MsFlow/OAuthCallback
 
@@ -85,8 +85,8 @@ service and the Power Automate platform.
 ### Link an Identity Store Workflow to a Flow
 
 To link an identity store workflow to a Power Automate flow, generate a flow template from an
-identity store workflow and provide the URL of the flow in workflow settings. When the workflow is
-triggered, the linked flow is auto triggered.
+identity store workflow and provide the URL of the flow in workflow settings. When the workflow
+triggers, the linked flow triggers automatically.
 
 **To link a workflow to a flow:**
 
