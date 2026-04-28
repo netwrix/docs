@@ -294,7 +294,7 @@ The patch includes:
 
 ![Offline Patch Uploader wizard — file selection and Upload button](offline_patch_wizard.webp)
 
-6. After the file is uploaded, click **Back** when prompted.
+6. After you upload the file, click **Back** when prompted.
 7. The progress notification will appear in the Software Update section.
 
 ![Software Update — active upgrade progress status](upgrade_progress.webp)

@@ -44,7 +44,7 @@ The following best practices come from the complete migration workflow and apply
 
 | # | Best Practice |
 |---|---|
-| 18 | Always reuse the same IP/FQDN for the new 2510 server. Changing it creates cascading certificate and EE trust failures. |
+| 18 | Always reuse the same IP/FQDN for the new 2510 server. Changing it creates cascading certificate and Enforced Encryption (EE) trust failures. |
 | 19 | Fill both DNS fields in network settings on 2510 — a known bug prevents saving with only one DNS entry. |
 | 20 | Disable client communications on the new server before restoring a backup to prevent partial-state registrations. |
 | 21 | After migration, monitor SIEM connectivity — it may require reconfiguration and Netwrix Support may need to provide a restoration script. |

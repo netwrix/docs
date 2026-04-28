@@ -10,7 +10,7 @@ Netwrix is committed to providing high-performing solutions. To achieve this, th
 
 This document defines how Endpoint Protector server updates are released, supported, and how customers can stay fully supported.
 
-In plain terms, a version is considered supported if it is either the most recent (“N”) or the previous (“N-1”) major version—and fully patched. Additionally, environments must ideally use the latest Endpoint Protector Agent to get active support when reporting issues.
+In plain terms, Netwrix considers a version supported if it is either the most recent (“N”) or the previous (“N-1”) major version—and fully patched. Additionally, environments must ideally use the latest Endpoint Protector Agent to get active support when reporting issues.
 
 Here is the current state of all versions of Endpoint Protector Server.
 
@@ -24,7 +24,7 @@ Here is the current state of all versions of Endpoint Protector Server.
 
 ## This section builds on the official Netwrix support tier definitions: Active, Limited, and Discontinued Support
 
-While those terms apply across all Netwrix products, the definitions below explain how they apply specifically to Endpoint Protector Server—with detailed guidance on patching, version status, and compatibility requirements.
+While those terms apply across all Netwrix products, the following definitions explain how they apply specifically to Endpoint Protector Server—with detailed guidance on patching, version status, and compatibility requirements.
 
 Additionally in this section, you will understand the Endpoint Protector Server specific vocabulary around versions, patches, and so on.
 
@@ -52,7 +52,7 @@ A product version in its **limited support** phase is eligible to receive suppor
 - Is eligible to receive assistance from the Netwrix professional services team, including support for existing customizations
 - May remain available for download in the Netwrix Customer Portal, but is ineligible to receive support for new installations
 
-In short, Netwrix will try to help, but resolution is only limited to configurable items already in that version since no new code updates will be considered.
+In short, Netwrix will try to help, but the resolution covers only configurable items already in that version since Netwrix won't deliver new code updates.
 
 ### Discontinued Support
 
@@ -130,7 +130,7 @@ When a new F&F patch is released, the CSP chain resets. New CSPs will apply only
 
 - Each security patch released after a Fixes & Features patch depends on that F&F version.
 - Example: You can't apply the October CSP unless the October F&F Patch is already installed.
-- If you skip one or more CSPs and later apply the next F&F patch, all prior CSPs from that F&F cycle are automatically included
+- If you skip one or more CSPs and later apply the next F&F patch, the patch automatically includes all prior CSPs from that F&F cycle
 - F&F patches establish a new baseline. All CSPs released after that point apply only to that version.
 
 ## Example Scenarios
@@ -187,7 +187,7 @@ Netwrix Endpoint Protector is available in two deployment models: **Netwrix-host
 
 For both SaaS and Self-Hosted deployments:
 
-- Critical Security Patches (CSPs) are considered mandatory and are applied automatically to **all environments**, including staging and production.
+- Netwrix considers Critical Security Patches (CSPs) mandatory and applies them automatically to **all environments**, including staging and production.
 - Customers can't defer or opt out of Critical Security Patches in SaaS environments.
 - Organizations with strict change control requirements should consider the Self-Hosted model, where updates are manually applied under customer-defined conditions.
 
@@ -261,7 +261,7 @@ Netwrix Endpoint Protector (EPP) follows a support model where the current (“N
 
 A new major version is triggered only under specific technical conditions—not merely because a new server image or patch has been released.
 
-A version is designated as a new major version (“Next Version”) when one or more of the following triggering conditions occur:
+Netwrix designates a version as a new major version (“Next Version”) when one or more of the following triggering conditions occur:
 
 - Operating System Foundation Changes: The underlying OS (typically Ubuntu) is upgraded to a new LTS or version that introduces fundamental changes that can't be backported.
 - Core Component Shifts: Replacement or major revision of critical third-party components (e.g., database engines, libraries, middleware) that materially alter how the system operates.
@@ -281,7 +281,7 @@ This means not every new image produced or patch released will bump the major ve
 
 At the top of this document, the current N and N-1 versions in support are always listed, so the status is clear at all times.
 
-The goal is (generally) around one N version per year; but could change if any of the triggering events occur above.
+The goal is (generally) around one N version per year, but could change if any of the triggering conditions described earlier occur.
 
 # Diagram toward understanding EPP Server Support
 
