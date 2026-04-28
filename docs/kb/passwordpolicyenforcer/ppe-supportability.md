@@ -45,6 +45,12 @@ The latest version of PPE is always the definitive reference — check the [Netw
 
 ---
 
+### Operating System Support
+
+The Password Policy Enforcer documentation includes a list of supported Windows versions. Support is only available for the compatible Windows versions.
+
+---
+
 ### Support Level Definitions
 
 #### Active Support (Latest Version)
@@ -114,7 +120,7 @@ If you are running the latest version of PPE with all components upgraded:
 If you are on the previous major version of PPE:
 
 - The support team will provide configuration guidance to help you work within your current version.
-- If you report a bug, Netwrix will ask you to first verify whether the issue exists in the latest version (in production or a test environment).
+- If you report a bug that is known to be fixed in a later version, then we will ask you to upgrade to the latest version. If the bug is new, we will try to reproduce it on the latest version. If we cannot reproduce it, we may ask you to upgrade to the latest version to confirm whether the problem still exists. Bug fixes will only be applied to the current version, unless they are also security fixes, in which case they will be applied to older versions according to the table above.
 - If the issue is confirmed in the latest version, Netwrix will develop a fix for the latest version only and will not backport it to N−1.
 - Netwrix will patch security vulnerabilities for N−1.
 - Netwrix will recommend upgrading to the latest version at every opportunity.
@@ -131,7 +137,8 @@ Customers on any version older than N−1 are not eligible for support. Netwrix 
 
 Staying current with PPE is the best way to ensure your password policy enforcement is secure, effective, and fully supported. Netwrix recommends:
 
-- Upgrade all PPE components together when a new version is released — never mix component versions.
+PPE's components (Server, Client, Configuration Console, Mailer and PPE/Web) are developed and tested as a single package. You will have the best experience using all the components from a single version. Refer to the upgrade instructions in the documentation for the correct upgrade procedure. During an upgrade, you will temporarily run components from two versions simultaneously. Do not enable any new features in the new version during this time, or run mixed versions for an extended time. If you encounter a problem that we believe is caused by mismatching versions, then we may ask you to finish the upgrade before we continue troubleshooting the issue.
+
 - Review the release notes before upgrading to understand what has changed.
 - Test upgrades in a non-production environment before rolling out to your full domain.
 - Plan upgrades proactively rather than reactively — waiting until you encounter an issue on an unsupported version limits your options.
