@@ -247,6 +247,8 @@ Select from the drop-down list a client mode to deﬁne the Endpoint Protector C
     - Not display system tray notiﬁcations
     - Apply all set rights and settings as per their conﬁguration
 
+    When Hidden Icon mode is selected, the **Show notifications in Hidden Icon mode** setting becomes available under the Client Mode section. This setting is disabled by default. Enable it to allow client notifications to be displayed while the Endpoint Protector Client icon remains hidden.
+
 6. Silent - this mode is similar to Normal mode, except that pop-up notiﬁcations are not visible to
    the user.
 
@@ -901,10 +903,10 @@ On the Global > Computer > User Settings page, configure the following settings
 **Step 1 –** Enable **Debug Mode** from the DEBUG logging section.
 
 **Step 2 –** Click and select an option on the **set logs level** (None, Error, Warning,
-Informational, Debug) drop down.
+Informational, Debug) drop down. For new deployments, the default level is **Error**.
 
 **Step 3 –** For Error, Warning, Informational, and Debug log levels select **obfuscate sensitive
-data**.
+data**. For new deployments, **Obfuscate Sensitive Data** is enabled by default.
 
 **Step 4 –** **Save.**
 
