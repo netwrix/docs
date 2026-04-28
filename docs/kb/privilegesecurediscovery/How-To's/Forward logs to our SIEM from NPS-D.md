@@ -1,12 +1,30 @@
+---
+title: "Forward Logs to SIEM via Fluentd"
+description: "Steps to validate and update the Fluentd configuration to forward logs from Privilege Secure Discovery (NPS-D) to a SIEM, including backup, update, and service restart procedures."
+sidebar_label: "Forward Logs to SIEM via Fluentd"
+keywords:
+- Fluentd
+- SIEM
+- NPS-D
+- Privilege Secure Discovery
+- fluent.conf
+- log forwarding
+- syslog
+- Docker
+products:
+- privilege-secure-discovery
+tags:
+- kb
+- how-tos
+---
 
-## Forward Logs to SIEM via Fluentd (Validation and Update Steps)
+# Forward Logs to SIEM via Fluentd
 
-Below are the recommended steps to be completed during a scheduled downtime window or support call, in case the service restart causes any issues.
+Complete the following steps during a scheduled downtime window or support call, in case the service restart causes any issues.
 
-Please reference the [Forward Logs to Syslog Servers and SIEM Solutions | Netwrix Product Documentation](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/integrations/siem/forwardlogs)
- for the required configuration (stanza) details.
+Refer to [Forward Logs to Syslog Servers and SIEM Solutions](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/integrations/siem/forwardlogs) for the required configuration (stanza) details.
 
-### Procedure
+## Procedure
 
 1. SSH into the server.
 
@@ -22,11 +40,13 @@ sudo cp -v /secureone/conf/fluentd/fluent.conf /secureone/conf/fluentd/fluent.co
 sudo grep -C4 host /secureone/conf/fluentd/fluent.conf
 ```
 
-Note: If the above command returns no results, review the full file to confirm the required entries exist:
+:::note
+If the above command returns no results, review the full file to confirm the required entries exist:
 
 ```
 sudo cat /secureone/conf/fluentd/fluent.conf
 ```
+:::
 
 4. Update the IP/hostname, port(s), and protocol using a text editor (vi, vim, or nano). Example:
 
@@ -54,13 +74,11 @@ sudo docker service logs --tail 50 --follow s1_fluentd
 sudo docker exec -it $(sudo docker ps | grep fluentd | cut -d' ' -f1) fluentd -c /fluentd/etc/fluent.conf --dry-run
 ```
 
-### Validation Notes
+## Validation Notes
 
-* No red lines should appear in the output
-* Green indicates successfully loaded
-* Yellow indicates warnings
-* Red indicates failure to load
+* No red lines should appear in the output.
+* Green indicates successfully loaded.
+* Yellow indicates warnings.
+* Red indicates failure to load.
 
-
-
-The configuration file details referenced in this KBA [Forward Logs to Syslog Servers and SIEM Solutions | Netwrix Product Documentation](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/integrations/siem/forwardlogs) will require mainly host (FQDN or ID), port number, and protocol variables to be confirmed prior to the update. Once these three pieces of data are confirmed, the configuration can be updated and typically takes around 30 minutes in a scheduled window to complete.
+The configuration requires the host (FQDN or IP), port number, and protocol to be confirmed before the update. Once these three values are confirmed, the update typically takes around 30 minutes in a scheduled window to complete.
