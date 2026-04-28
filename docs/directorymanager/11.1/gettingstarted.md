@@ -88,18 +88,8 @@ This section lists the browsers, devices, and languages that Directory Manager s
 Directory Manager Admin Center and the portals detect the language settings of the web browser
 accessing them, and attempt to serve content in that language. Supported languages are:
 
-- Danish
-- Dutch
 - English (default)
-- Finnish
-- French
-- German
-- Icelandic
-- Italian
-- Portuguese
-- Spanish
-- Swedish
-- Turkish
+- French (Password Center)
 
 If Directory Manager does not support the browser’s language set or if it cannot detect it, English
 is used to serve the content.
