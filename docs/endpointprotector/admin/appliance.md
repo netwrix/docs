@@ -360,6 +360,8 @@ The standard format for the Device Control fields is as follows:
 - [Date/Time(Client)]
 - [Date/Time(Server UTC)]
 - [Date/Time(Client UTC)]
+- [Shadow Exists]
+- [Repository Type]
 
 #### Content Aware Protection
 
@@ -395,6 +397,9 @@ The standard format for the Content Aware Protection fields is as follows:
 - [Date/Time(Client)]
 - [Date/Time(Server UTC)]
 - [Date/Time(Client UTC)]
+- [Certificate State]
+- [Shadow Exists]
+- [Repository Type]
 
 #### E-Discovery
 
