@@ -91,5 +91,5 @@ accessing them, and attempt to serve content in that language. Supported languag
 - English (default)
 - French (Password Center)
 
-If Directory Manager does not support the browser’s language set or if it cannot detect it, English
+If Directory Manager doesn't support the browser’s language set or if it can't detect it, English
 is used to serve the content.
