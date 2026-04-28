@@ -10,7 +10,7 @@ sidebar_position: 20
 
 **Symptom:** The import wizard rejects the backup file or shows an error.
 
-**Root cause:** The backup was created on a version **other than 5.9.4.2**.
+**Root cause:** The backup originates from a server version **other than 5.9.4.2**.
 
 **Resolution:**
 1. Verify the source server is on 5.9.4.2 (Appliance → Server Information).
@@ -49,7 +49,7 @@ If the fix script doesn't bring the file below 200 MB, contact Netwrix Support f
 
 **Resolution:**
 - If you used the same IP/FQDN: verify that the backup restored the certificates (check **System Configuration → Certificates**).
-- If you used a different IP/FQDN: users must decrypt their drives, reconnect to the new server, and re-encrypt. Contact Netwrix Support for mass re-encryption scripts.
+- If you used a different IP/FQDN: users must decrypt their drives, reconnect to the new server, and re-encrypt.
 
 ---
 
@@ -71,5 +71,6 @@ If the fix script doesn't bring the file below 200 MB, contact Netwrix Support f
 3. Check that client packages (5.9.4.3) are uploaded to the server.
 4. Verify the old server is no longer running on the same IP if using same-IP strategy.
 5. Check endpoint firewall rules allow outbound on ports 443 and any other configured EPP ports.
+6. Test with a clean install of the latest EPP Client to eliminate potential issues caused by a corrupted existing client.
 
 ---
