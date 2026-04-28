@@ -6,7 +6,7 @@ sidebar_position: 3
 
 # Getting Started
 
-To get started with Directory Manager, it would be helpful to get an understanding of the following:
+To get started with Directory Manager, review the following:
 
 - Directory Manager clients
 - Initial Admin Center configurations after installation
@@ -15,7 +15,7 @@ To get started with Directory Manager, it would be helpful to get an understandi
 
 ## Clients 
 
-The Directory Manager application comprises of the following main modules or clients:
+The Directory Manager application comprises the following main modules or clients:
 
 **Admin Center**
 
@@ -91,5 +91,4 @@ accessing them, and attempt to serve content in that language. Supported languag
 - English (default)
 - French (Password Center)
 
-If Directory Manager doesn't support the browser’s language set or if it can't detect it, English
-is used to serve the content.
+If Directory Manager doesn't support the browser’s language set or if it can't detect it, Directory Manager serves content in English.
