@@ -30,7 +30,7 @@ generate reports to analyze the directory.
 
 **Self-Service Password Reset portal (SSPR)**
 
-This portal enables users to manage their directory account passwords, i.e., the password for the
+With this portal, users can manage their directory account passwords, i.e., the password for the
 account they use to access their workstations and other Microsoft services. Users can change and
 reset their passwords, as well as unlock their accounts. They can also enroll their accounts in
 Directory Manager and link accounts in different identity stores.
@@ -58,9 +58,9 @@ The following settings must be configured in Admin Center, so that administrator
 perform identity and access management tasks using Directory Manager:
 
 - Create and configure identity stores - An identity store is built on an identity provider and
-  enables you to manage objects and object permissions in the provider. See the
+  lets you manage objects and object permissions in the provider. See the
   [Identity Stores](/docs/directorymanager/11.1/admincenter/identitystore/overview.md) topic for additional information.
-- Create data sources - A data source is built on a provider, such as directories, databases and
+- Create data sources - A data source is built on a provider, such as directories, databases, and
   files. Data sources are used as source and destination in Synchronize jobs, in query-based
   searches, and in group membership queries. See the
   [ Data Sources](/docs/directorymanager/11.1/admincenter/datasource/overview.md) topic for additional information.
