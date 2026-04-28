@@ -175,7 +175,10 @@ To distinguish OneDrive for Business from OneDrive, enable Deep Packet Inspectio
 :::
 
 :::warning
-After an EPP Server upgrade, if your CAP policy Exit points are configured by selecting a whole category, edit the policy and review the application list to ensure any newly added apps are included. Click **Save** to push the updated configuration to EPP Clients.
+If your policy uses **All Applications** and new applications are introduced in a server update,
+those applications will appear as selected but won't be enforced until the policy is re-saved.
+After upgrading, open any affected CAP policies and save them to apply monitoring to newly
+added applications.
 :::
 
 
