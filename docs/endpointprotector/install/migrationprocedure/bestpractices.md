@@ -59,7 +59,7 @@ The following best practices come from the complete migration workflow and apply
 | 25 | For Enforced Encryption (EE) environments, upload both Windows and macOS EE clients to the server before enabling client communications — the server requires both packages to be present regardless of which OS your endpoints use. |
 | 26 | Plan client updates for off-peak hours to minimize end-user disruption. |
 | 27 | If a Client Upgrade task is stuck, clean up all existing Client Upgrade tasks on the EPP Server and create a new task — stale tasks can block the upgrade queue. |
-| 28 | If a Client Upgrade task does not start or remains stuck on a Windows endpoint, reboot the endpoint before retrying — the EPP Client installer uses msiexec, which can be blocked by a pending restart or a previous failed installation. |
+| 28 | If a Client Upgrade task doesn't start or remains stuck on a Windows endpoint, reboot the endpoint before retrying — the EPP Client installer uses msiexec, which can be blocked by a pending restart or a previous failed installation. |
 
 ## Backup Version Discipline
 
