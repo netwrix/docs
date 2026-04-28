@@ -17,6 +17,7 @@
  * @property {string} label - Display label for the version
  * @property {boolean} isLatest - Whether this is the latest version
  * @property {string} [sidebarFile] - Custom sidebar file path (defaults to generated path)
+ * @property {string} [kbSource] - Optional override for the KB source directory for this version (relative to repo root). When set, this version pulls KB articles from this directory instead of the product-level default (docs/kb/<productId>/).
  */
 
 /**
@@ -61,9 +62,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '2601',
+        label: '2601',
+        isLatest: true,
+        sidebarFile: './sidebars/accessanalyzer/2601.js',
+        kbSource: 'docs/kb/accessanalyzer-2601',
+      },
+      {
         version: '12.0',
         label: '12.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/accessanalyzer/12.0.js',
       },
       {
@@ -73,7 +81,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/accessanalyzer/11.6.js',
       },
     ],
-    defaultVersion: '12.0',
+    defaultVersion: '2601',
   },
   {
     id: 'accessinformationcenter',
@@ -598,16 +606,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '3.1',
-        label: '3.1',
-        isLatest: true,
-        sidebarFile: './sidebars/threatmanager/3.1.js',
-      },
-      {
         version: '3.0',
         label: '3.0',
         isLatest: false,
         sidebarFile: './sidebars/threatmanager/3.0.js',
+      },
+      {
+        version: '3.1',
+        label: '3.1',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.1.js',
       },
     ],
     defaultVersion: '3.1',

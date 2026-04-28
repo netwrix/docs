@@ -36,10 +36,10 @@ The following learning paths provide Partner certification for Sales Professiona
         * [Netwrix Privileged Access Management Solution Sales Professional](./privileged-access-management.md)
     * Directory Security Use Case
         * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix Password Secure Sales Professional](./password-secure.md)
         * [Netwrix PingCastle Sales Professional](./pingcastle.md)
 * Other Certifications
     * [Netwrix Change Tracker Sales Professional](./change-tracker.md)
-    * [Netwrix Password Secure Sales Professional](./password-secure.md)
     * [Netwrix Platform Governance for NetSuite Sales Professional](./platform-governance-netsuite.md)
     * [Netwrix Platform Governance for Salesforce Sales Professional](./platform-governance-salesforce.md)
     * [Netwrix PolicyPak Sales Professional](./policypak.md)

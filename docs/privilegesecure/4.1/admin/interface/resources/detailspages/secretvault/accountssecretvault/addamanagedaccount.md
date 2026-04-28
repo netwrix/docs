@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Add a Managed Account Window
 
-Follow the steps below to add a managed account to the secret vault.
+Follow the following steps to add a managed account to the secret vault.
 
 **Step 1 –** Click the **Add** button.
 
@@ -16,8 +16,8 @@ Follow the steps below to add a managed account to the secret vault.
 
 - Resource Name —Displays the name of the resource
 - Username — Displays the name of the account
-- Password _(optional)_ — Contains the service account password. The Eye icon can be used to view
-  the password.
+- Password _(optional)_ — Contains the service account password. The Eye icon lets you view
+the password.
 
 **Step 3 –** Click **Okay** when finished.
 

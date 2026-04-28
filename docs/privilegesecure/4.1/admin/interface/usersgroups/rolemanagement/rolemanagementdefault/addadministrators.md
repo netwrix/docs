@@ -15,11 +15,11 @@ in the
 The window has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Filter — Provides options to filter results based on a chosen criterion:User, Group, Application,
-  Collection, and Local User
+Collection, and Local User
 - Available Accounts — Shows all available users, groups, applications, collections, and local users
-  that have been onboarded
+that have been onboarded
 - Accounts to Add — Shows selected users, groups, applications, collections, and local users
 - Add button — Adds modifications and closes window
 - Cancel — Closes the window
@@ -35,7 +35,7 @@ The tables in both sections have the following columns:
 
 ## Select Users
 
-Follow the steps to grant users the Administrator role. See the
+To grant users the Administrator role. See the
 [Role Management Page](/docs/privilegesecure/4.1/admin/interface/usersgroups/rolemanagement/rolemanagement.md)
 section for a list of roles and their functions.
 
@@ -45,7 +45,7 @@ section for a list of roles and their functions.
 
 **Step 3 –** Click Add User to open the Add Administrators window.
 
-**Step 4 –** Select the checkbox for the desired accounts in the Available Accounts table..
+**Step 4 –** Select the checkbox for the accounts you want in the Available Accounts table..
 
 **Step 5 –** Click Add to add the accounts to the role.
 

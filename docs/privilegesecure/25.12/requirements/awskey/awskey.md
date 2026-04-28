@@ -7,9 +7,9 @@ sidebar_position: 60
 # AWS Key Management Service
 
 AWS Key Management Service (AWS KMS) is a managed service that makes it easy for you to create and
-control the cryptographic keys that are used to protect your data. Organizations using AWS Key
+control the cryptographic keys that protect your data. Organizations using AWS Key
 Management Service (AWS KMS) can configure Netwrix Privilege Secure to rotate security Keys. The KMS
-key is not used to encrypt the secret key, but will be used to encrypt the key that is used to
+key isn't used to encrypt the secret key, but encrypt the key that 
 encrypt the secret key.
 
 See the
@@ -26,7 +26,7 @@ AWS. There will be multiple configuration steps needed within AWS.
 
 ### Create an AWS Policy
 
-Follow the steps to create a policy in AWS.
+To create a policy in AWS.
 
 **Step 1 –** Log into AWS.
 
@@ -45,7 +45,7 @@ the ‘KMS’ service.
 
 ![Select Decrypt permission checkbox](/images/privilegesecure/25.12/accessmanagement/requirements/selectdecryptioncheckbox.webp)
 
-**Step 6 –** Under the Write dropdown menu, locate and select the **Decrypt permission** checkbox.
+**Step 6 –** Under the Write dropdown menu, locate, and select the **Decrypt permission** checkbox.
 
 ![Select Any In This Account](/images/privilegesecure/25.12/accessmanagement/requirements/selectanyinthisaccount.webp)
 
@@ -66,7 +66,7 @@ The policy is created.
 
 ### Create a User
 
-Follow the steps to create a user in AWS.
+To create a user in AWS.
 
 **Step 1 –** Navigate to the **IAM** page, and then the **User** page.
 
@@ -92,14 +92,14 @@ now**.
 
 ![User Security Credentials Tab](/images/privilegesecure/25.12/accessmanagement/requirements/usersecuritycredentialstab.webp)
 
-**Step 7 –** Once the user has been created, select the user and navigate to the **Security
+**Step 7 –** after the user has been created, select the user and navigate to the **Security
 credentials** tab.
 
 **Step 8 –** Select **Create access key**.
 
 ![Select Application Running Outside AWS](/images/privilegesecure/25.12/accessmanagement/requirements/selectapplicationrunningoutsideaws.webp)
 
-**Step 9 –** Once the creation window opens, select the **Application running outside of AWS**
+**Step 9 –** after the creation window opens, select the **Application running outside of AWS**
 option.
 
 ![Set Tag and Create Key](/images/privilegesecure/25.12/accessmanagement/requirements/settagcreatekey.webp)
@@ -108,14 +108,14 @@ option.
 
 ![Copy Access Key](/images/privilegesecure/25.12/accessmanagement/requirements/copyaccesskey.webp)
 
-**Step 11 –** Once the Key has been created, copy or download the Access key and Secret access key.
-These keys will be used by Privilege Secure to access the AWS KMS key encryption and decryption
+**Step 11 –** after the Key has been created, copy, or download the Access key and Secret access key.
+These keys is used by Privilege Secure to access the AWS KMS key encryption and decryption
 functionality.
 
 **Step 12 –** Click **Done** when finished.
 
 :::warning
-Do not delete the AWS user Access Key without rotating the NPS key first.
+don't delete the AWS user Access Key without rotating the NPS key first.
 :::
 
 
@@ -130,7 +130,7 @@ rotating access keys.
 
 ### Create a Managed Key
 
-Follow the steps to create a managed key in AWS.
+To create a managed key in AWS.
 
 **Step 1 –** Navigate to the **Key Management Service** page.
 
@@ -155,7 +155,7 @@ continue.
 **Step 6 –** Add a Key Administrator if required.
 
 :::note
-The NPS Key user created earlier does not require administrative permissions at this
+The NPS Key user created earlier doesn't require administrative permissions at this
 level.
 :::
 
@@ -172,7 +172,7 @@ Click **Next** to continue.
 **Step 9 –** Click the **Copy** button from the newly created key, and store the ARN from the
 details.
 
-The ARN will be used by Privilege Secure to identify the key used for encryption.
+The ARN is used by Privilege Secure to identify the key used for encryption.
 
 ### Least Privilege Policy
 
@@ -189,7 +189,7 @@ to create a least privilege policy.
 
 ![Policy Editor Window](/images/privilegesecure/25.12/accessmanagement/requirements/policyeditorwindow.webp)
 
-**Step 4 –** Once the policy editor window opens, switch to the Visual display mode and expand the
+**Step 4 –** after the policy editor window opens, switch to the Visual display mode and expand the
 KMS item dropdown.
 
 ![Expand Resources Item](/images/privilegesecure/25.12/accessmanagement/requirements/expandresourcesitem.webp)

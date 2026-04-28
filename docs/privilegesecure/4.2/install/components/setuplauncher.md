@@ -8,8 +8,7 @@ sidebar_position: 10
 
 :::warning
 The PostgreSQL database must be installed before installing the application. It can be
-installed separately or through the Netwrix Setup Launcher. Also note that the application will
-require a server reboot at the end of the installation.
+installed separately or through the Netwrix Setup Launcher. The application also requires a server reboot at the end of the installation.
 :::
 
 
@@ -23,13 +22,13 @@ Antivirus software should be disabled on this computer during the installation.
 :::
 
 
-Right-click on the NPS_Setup.exe file and select Run as administrator. The Netwrix Setup Launcher
-will open. The launcher runs a prerequisites setup check. The green checkmark indicates the
+Right-click the NPS_Setup.exe file and select Run as administrator. The Netwrix Setup Launcher
+opens. The launcher runs a prerequisites setup check. The green checkmark indicates the
 prerequisites have been met and you are ready to install the database.
 
 :::warning
 The Advanced checkbox provides the option to switch databases to Microsoft SQLServer.
-This is not a recommended configuration and requires additional support from Netwrix.
+This isn't a recommended configuration and requires additional support from Netwrix.
 :::
 
 
@@ -40,13 +39,13 @@ Antivirus software should be disabled on this computer during the installation.
 :::
 
 
-Follow the steps to install the PostgreSQL database.
+To install the PostgreSQL database.
 
 **Step 1 –** In the Netwrix Setup Launcher, click **Install PostgreSQL 16**. The PostgeSQL v16 Setup
 wizard opens.
 
 :::note
-If PostgreSQL v16 is already installed, a green checkmark is displayed to the left of the
+If PostgreSQL v16 is already installed, a green checkmark appears to the left of the
 Install PostgreSQL 16 button and you can install the Privilege Secure application.
 :::
 
@@ -57,8 +56,7 @@ Install PostgreSQL 16 button and you can install the Privilege Secure applicatio
 
 ![Stealthbits PostgreSQL v12 Setup Wizard on the License Agreement page](/images/privilegesecure/4.2/accessmanagement/install/licenseagreement.webp)
 
-**Step 3 –** On the End User License Agreement page, check the **I accept the license agreement**
-box and click **Next**.
+**Step 3 –** On the End User License Agreement page, accept the license agreement and click **Next**.
 
 :::tip
 Remember, it is a best practice to read the agreement before accepting it.
@@ -99,7 +97,7 @@ Antivirus software should be disabled on this computer during the installation.
 :::
 
 
-Follow the steps to install Privilege Secure application.
+To install Privilege Secure application.
 
 ![Netwrix Setup Launcher showing the PostgreSQL Setup with a green checkmark](/images/privilegesecure/4.2/accessmanagement/install/launcherstep3.webp)
 
@@ -113,8 +111,7 @@ This window remains open in the background while the database is installed.
 
 ![Netwrix Privilege Secure Setup wizard on the License Agreement page](/images/privilegesecure/4.2/accessmanagement/install/licenseagreement_1.webp)
 
-**Step 2 –** On the End User License Agreement page, check the **I agree to the license terms and
-conditions** box and click **Options**.
+**Step 2 –** On the End User License Agreement page, accept the license terms and conditions and click **Options**.
 
 :::tip
 Remember, it is a best practice to read the agreement before accepting it.
@@ -130,7 +127,7 @@ C:\Program Files\Stealthbits\PAM
 - To change the default location, click **Browse** and set a new location.
 - When the location is set, click **OK**.
 
-**Step 4 –** You will return to the End User License Agreement page. Click **Install**.
+**Step 4 –** You returns to the End User License Agreement page. Click **Install**.
 
 :::note
 The installation process begins and the wizard displays the its Progress. This may take a
@@ -142,9 +139,9 @@ few moments.
 
 **Step 5 –** When installation is complete, click **Close**.
 
-The installer displays a message that it is applying permissions. The application will require a
+The installer displays a message that it is applying permissions. The application requires a
 server reboot at the end of the installation.
 
-Once installation is complete, open and walk through the Netwrix Privilege Secure Setup Wizard. The
+Once installation is complete, open, and walk through the Netwrix Privilege Secure Setup Wizard. The
 Wizard can be accessed through the Netwrix Privilege Secure desktop icon or locally on the default
 port. See the [First Launch](/docs/privilegesecure/4.2/install/firstlaunch.md) topic for additional information.
