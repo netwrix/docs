@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Netwrix Endpoint Protector Server-Side Support Policy
 
-At Netwrix, we are committed to providing high-performing solutions. To achieve this, our support policy focuses on maintaining compatibility with recent software versions. Staying current with both the server and the agent is critical to accessing full support, ensuring end-to-end functionality, and maintaining optimal security.
+Netwrix is committed to providing high-performing solutions. To achieve this, the support policy focuses on maintaining compatibility with recent software versions. Staying current with both the server and the agent is critical to accessing full support, ensuring end-to-end functionality, and maintaining optimal security.
 
 This document defines how Endpoint Protector server updates are released, supported, and how customers can stay fully supported.
 
@@ -18,7 +18,7 @@ Here is the current state of all versions of Endpoint Protector Server.
 
 | **Discontinued Support** | **Limited Support** | **N-1 Track (Active Support)** | **N Track (Active Support)** |
 | --- | --- | --- | --- |
-| All versions prior to 5.9.4.2 <br/> Limited support ended Feb 11, 2026. | | There is no N-1 track at this time. | 2604.0.1.0 (Base image 2509/2510)<br/><br/>Released 4th May, 2026.<br/>Full Active Support. |
+| All versions before 5.9.4.2 <br/> Limited support ended Feb 11, 2026. | | There is no N-1 track at this time. | 2604.0.1.0 (Base image 2509/2510)<br/><br/>Released 4th May, 2026.<br/>Full Active Support. |
 
 # Support Definitions Used In This Document
 
@@ -26,9 +26,9 @@ Here is the current state of all versions of Endpoint Protector Server.
 
 While those terms apply across all Netwrix products, the definitions below explain how they apply specifically to Endpoint Protector Server—with detailed guidance on patching, version status, and compatibility requirements.
 
-Additionally in this section, you will understand the Endpoint Protector Server specific vocabulary around versions, patches and so on.
+Additionally in this section, you will understand the Endpoint Protector Server specific vocabulary around versions, patches, and so on.
 
-## Understanding Active, Limited and Discontinued Support
+## Understanding Active, Limited, and Discontinued Support
 
 The following is a summary of Netwrix's standard support lifecycle stages. These definitions apply across all Netwrix products and set the baseline for what kind of assistance and updates a customer can expect at each stage of the product version lifecycle.
 
@@ -52,7 +52,7 @@ A product version in its **limited support** phase is eligible to receive suppor
 - Is eligible to receive assistance from the Netwrix professional services team, including support for existing customizations
 - May remain available for download in the Netwrix Customer Portal, but is ineligible to receive support for new installations
 
-In short, we will try to help you, but our resolution is only limited to configurable items already in that version since no new code updates will be considered.
+In short, Netwrix will try to help, but resolution is only limited to configurable items already in that version since no new code updates will be considered.
 
 ### Discontinued Support
 
@@ -209,7 +209,7 @@ To balance stability with early access, Netwrix applies a tiered rollout strateg
 
 **3\. Deployment Operations**
 
-- As lifecycle and automation tooling evolves, our mechanisms may expand to support more granular targeting and faster feedback loops; but right now all SaaS Staging Customers will get updates at the same time.
+- As lifecycle and automation tooling evolves, Netwrix mechanisms may expand to support more granular targeting and faster feedback loops; but right now all SaaS Staging Customers will get updates at the same time.
 
 **Self-Hosted (On-Premises) Customers**
 
@@ -233,29 +233,29 @@ Security patches (CSPs) are mandatory in SaaS. In Self-Hosted deployments, CSPs 
 
 # General Supportability Guidelines and Definitions
 
-To maintain full, Active support and avoid disruptions, we recommend:
+To maintain full, Active support and avoid disruptions, Netwrix recommends:
 
 - Regular Updates: Keep both the EPP server and agent versions current. Staying in the N or N-1 track plus keeping CSP and F&F patches updated ensures continued access to all security plus new features and fixes.
 - EPP Server updates: When a new patch for EPP server version is available, test the update in your environment promptly to ensure compatibility and performance.
-- Issue Reproduction: If a bug or issue arises, our support team AT LEAST requires that the latest agent version be installed and the issue reproduced on that version, before proceeding with a support case. If you’re using an outdated EPP server, support may also require you to update EPP server to the latest F&F and/or CSP for full end-to-end checking before a case is permitted to proceed.
+- Issue Reproduction: If a bug or issue arises, the Netwrix support team AT LEAST requires that the latest agent version be installed and the issue reproduced on that version, before proceeding with a support case. If you’re using an outdated EPP server, support may also require you to update EPP server to the latest F&F and/or CSP for full end-to-end checking before a case is permitted to proceed.
 
 ## How to Get Ideal Support (Practical)
 
-We realize many customers can't upgrade their entire estate to the latest versions of server (with the latest patches) and/or have the latest client release on every endpoint.
+Netwrix understands that many customers can't upgrade their entire estate to the latest versions of server (with the latest patches) and/or have the latest client release on every endpoint.
 
 But from a “problem validation” point you will need to be on a supported Server version with the latest cumulative patches as well as the latest client.
 
-This is the only configuration our support engineers will be testing against your concern.
+This is the only configuration Netwrix support engineers will be testing against your concern.
 
-As such you might want to maintain a small scale test lab which enables you to test your concern in the “latest environment.” _We will provide some free licenses under most circumstances (subject to approval)._
+As such you might want to maintain a small scale test lab to test your concern in the “latest environment.” _Netwrix will provide some free licenses under most circumstances (subject to approval)._
 
 By having a small test lab, you can do all your pre-flight testing of upgrading to latest Offline Patch, perform pre-flight transitions to latest major versions, and test the latest agent before a mass agent rollout.
 
-TIP: You can learn more about a mass agent rollout using the “Ring Philosophy” (wherein a small amount of computers gets latest agents in a controlled manner.) Learn more about this in our “Netwrix Endpoint Protector Agent Support Policy” companion document.
+TIP: For information about a mass agent rollout using the “Ring Philosophy” (wherein a small amount of computers gets latest agents in a controlled manner), see the “Netwrix Endpoint Protector Agent Support Policy” companion document.
 
-As long as you’re able to replicate a concern with a supported server (with latest patch) and latest client (in production or a test environment), we will then endeavor fix the concern.
+As long as you’re able to replicate a concern with a supported server (with latest patch) and latest client (in production or a test environment), Netwrix will then endeavor to fix the concern.
 
-# When Is a New Major “N” Server Version (“Next Version”) Triggered?
+# When a New Major “N” Server Version (“Next Version”) Is Triggered
 
 Netwrix Endpoint Protector (EPP) follows a support model where the current (“N”) and previous (“N-1”) major server versions are fully supported, as long as they are fully patched. However, customers may ask: _When does a new version get designated as a “Next Version,” replacing the previous N and N-1?_
 
@@ -270,18 +270,18 @@ A version is designated as a new major version (“Next Version”) when one or 
 
 Note: In rare cases where a significant security vulnerability may be discovered and remediated in a way that can't be delivered through an Offline Patch to the current image. In these cases, Netwrix will mark the new release as the start of a new N-track. At the same time, both the previous N and N-1 tracks will be transitioned to Limited Support, regardless of patch status.
 
-What _Does Not_ Trigger a “Next Version” Event:
+What _Doesn't_ Trigger a “Next Version” Event:
 
 - A regular Offline Patch to address bugs or introduce minor feature updates
 - Server image refreshes that don't change core OS or system components. (Typically provided to new Endpoint Protector customers; but existing Endpoint Protector customers are welcome to use them.)
 - Performance optimizations or configuration adjustments
 - Security enhancements that _can_ be delivered through the standard offline patching mechanism
 
-This means not every new image we produce or patch will bump the major version designation. Customers can continue using N and N-1 versions with confidence, as long as they apply the latest cumulative Offline Patches.
+This means not every new image produced or patch released will bump the major version designation. Customers can continue using N and N-1 versions with confidence, as long as they apply the latest cumulative Offline Patches.
 
-At the top of this document, we will always express the current N and N-1 versions which are in support, so it can be clear at all times.
+At the top of this document, the current N and N-1 versions in support are always listed, so the status is clear at all times.
 
-Our goal is (generally) around one N version per year; but could change if any of the triggering events occur above.
+The goal is (generally) around one N version per year; but could change if any of the triggering events occur above.
 
 # Diagram toward understanding EPP Server Support
 
@@ -292,7 +292,7 @@ In this theoretical diagram (also where the version numbers and release dates ma
 ![Server N-Paths Architecture](server-N-paths.png)
 
 - Version N is 2509.0.1.0 (25.9)
-- Version N-1 is not available
+- Version N-1 isn't available
 
 Both "tracks" are fully supported as long as the latest Offline Patch is applied to that track. In this theoretical diagram, if the date is June 2026 the actual supported configuration would be:
 
