@@ -14,7 +14,7 @@ This is an assisted process. The following steps explain what information to sub
 After submitting your ticket, allow up to three (3) business days for the Netwrix team to complete the backend tenant provisioning. The Netwrix team will notify you when your environment is ready.
 :::
 
-**What You Will Need Before Submitting**
+## What You Will Need Before Submitting
 
 Have the following ready when you open your support ticket:
 
@@ -23,7 +23,7 @@ Have the following ready when you open your support ticket:
 - The email domain your users will authenticate with (for example, yourcompany.com)
 - Access to an Entra ID or Okta admin who can register an application and generate a Client ID and Client Secret
 
-**Step 1 – Open a Netwrix Support Ticket**
+## Step 1 – Open a Netwrix Support Ticket
 
 Open a ticket through the [Netwrix support portal](https://www.netwrix.com/tickets.html#/open-a-ticket).
 
@@ -31,29 +31,27 @@ In your ticket, select **Netwrix PolicyPak**, include the information listed abo
 
 The PolicyPak Support team will receive your ticket and coordinate with the Netwrix internal team responsible for tenant provisioning. You don't need to contact any other team directly.
 
-:::note
-A specialized internal Netwrix team performs the backend provisioning step manually. Allow up to three business days for this step to complete.
-:::
+## Step 2 – Netwrix Provisions Your 1Secure Tenant (No Action Required)
 
-**Step 2 – Netwrix Provisions Your 1Secure Tenant (No Action Required)**
+PolicyPak Cloud SSO is handled through Netwrix 1Secure, Netwrix's identity management platform, which manages authentication for your tenant.
 
 Once your ticket is received, the Netwrix internal team creates a Netwrix 1Secure tenant for your organization and invites your designated administrator using their corporate email address. This step happens entirely on the Netwrix side.
 
 This step is complete when you receive a "Welcome to Netwrix 1Secure" invitation email in your inbox.
 
-**Step 3 – Accept the Netwrix 1Secure Invitation Email**
+## Step 3 – Accept the Netwrix 1Secure Invitation Email
 
 Your designated administrator will receive a "Welcome to Netwrix 1Secure" email from noreply-account@netwrix.com. Open the email and click **Activate my Netwrix account**.
 
 :::warning
-The activation link is unique to your account and expires in 2 days. Act on it promptly.
+The activation link expires 48 hours after it is sent.
 :::
 
 ![Welcome to Netwrix 1Secure invitation email with activation button](/images/policypak/cloud/singlesignon/ppcloudsso6.webp)
 
-**Step 4 – Set Your Netwrix Account Password**
+## Step 4 – Set Your Netwrix Account Password
 
-If the user isn't already provisioned, clicking the activation link prompts you to create a password for your Netwrix account. This is a one-time step required to access the 1Secure portal where SSO is configured.
+If your account isn't already set up, clicking the activation link prompts you to create a password for your Netwrix account. This is a one-time step required to access the 1Secure portal where SSO is configured.
 
 Your password must meet the following requirements:
 
@@ -63,13 +61,17 @@ Your password must meet the following requirements:
 
 ![Netwrix account password setup screen](/images/policypak/cloud/singlesignon/ppcloudsso5.webp)
 
-**Step 5 – Configure SSO in Netwrix 1Secure**
+## Step 5 – Configure SSO in Netwrix 1Secure
 
 Once your account is activated, navigate to the [Netwrix 1Secure portal](https://1secure.netwrix.com/) and sign in.
 
 Go to **Configuration** > **My Organization** > **Authentication**, then open **Authentication Settings**. Select your SSO method (Entra ID or OIDC for Okta), enter your domain name, and supply the Client ID and Client Secret from your identity provider.
 
-Use the following Netwrix documentation guides to register your application and obtain these values:
+:::note
+If you use a different OIDC-compatible provider, select **OIDC** and follow the same fields as the Okta path.
+:::
+
+Before continuing, register your application and obtain a Client ID and Client Secret by following the appropriate guide:
 
 - [Configure SSO with Entra ID / OIDC](https://docs.netwrix.com/docs/1secure/admin/login/sso#configure-sso-with-openid-connect-authentication)
 - [Generate a Client Secret Value](https://docs.netwrix.com/docs/1secure/configuration/registerconfig/#generate-client-secret-value)
@@ -80,7 +82,7 @@ Optionally enter a Client Secret Expiry Date. Netwrix 1Secure will alert you bef
 
 ![Authentication Settings in Netwrix 1Secure with Client ID and Client Secret fields highlighted](/images/policypak/cloud/singlesignon/ppcloudsso3.webp)
 
-**Step 6 – Add Your Federated User as a PolicyPak Cloud Administrator**
+## Step 6 – Add Your Federated User as a PolicyPak Cloud Administrator
 
 Once SSO is configured in 1Secure, return to the PolicyPak Cloud portal. Navigate to your company's administration area and use the **Add New Company Administrator** dialog to add your Entra ID or Okta user as an administrator.
 
@@ -88,9 +90,9 @@ Enter the user's first name, last name, and their federated email address — th
 
 ![Add New Company Administrator dialog in PolicyPak Cloud](/images/policypak/cloud/singlesignon/ppcloudsso4.webp)
 
-**Step 7 – Sign In to PolicyPak Cloud with SSO**
+## Step 7 – Sign In to PolicyPak Cloud with SSO
 
-Your federated administrator can now sign in to PolicyPak Cloud using their corporate identity. On first login, your identity provider may display a permissions consent prompt for the 1Secure application. Click **Accept** to grant the necessary permissions and continue.
+The federated administrator can now sign in to PolicyPak Cloud using their corporate identity. On first login, your identity provider may display a permissions consent prompt for the 1Secure application. Click **Accept** to grant the necessary permissions and sign in to PolicyPak Cloud.
 
 :::note
 The requested permissions cover only viewing your basic profile and maintaining access to data you have already authorized. This is a standard consent screen for OIDC-based applications.
@@ -102,7 +104,7 @@ After you accept, PolicyPak Cloud redirects you and signs you in as your federat
 
 ![PolicyPak Cloud portal with federated SSO user account active](/images/policypak/cloud/singlesignon/ppcloudsso2.webp)
 
-**Summary**
+## Summary
 
 1. Open a Netwrix support ticket requesting PolicyPak Cloud SSO setup. Include your company name, admin email, IdP type, and domain.
 2. The Netwrix internal team provisions your 1Secure tenant within 3 business days. No action required from you.
@@ -112,6 +114,6 @@ After you accept, PolicyPak Cloud redirects you and signs you in as your federat
 6. Add your federated user as a Company Administrator in the PolicyPak Cloud portal.
 7. Sign in to PolicyPak Cloud with your corporate SSO credentials and accept the IdP consent prompt on first login.
 
-**Questions or Issues?**
+## Questions or Issues?
 
 If you encounter any issues at any stage of this process, reply to your existing support ticket or open a new one through the [Netwrix support portal](https://www.netwrix.com/tickets.html#/open-a-ticket). The PolicyPak Support team will assist you and coordinate with the appropriate internal team as needed.
