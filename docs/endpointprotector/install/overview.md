@@ -21,7 +21,7 @@ This section covers a range of deployment methods, including:
 - Third-party Management Tools: using JAMF and Microsoft Intune for streamlined deployment.
 
 :::warning Important
-This section of the documentation is provided as a best-effort guideline to support deployment. It is optional and may not always reflect the latest interface or features, as third-party products can change frequently. For the most up-to-date information, refer to the official resources from the product vendor.
+This section of the documentation provides best-effort guidance on deployment. It is optional and may not always reflect the latest interface or features, as third-party products can change frequently. For the most up-to-date information, refer to the official resources from the product vendor.
 :::
 
 ## Staging the Server
@@ -37,7 +37,7 @@ Hyper-V. The Hosted-Cloud method of deployment allows for use of a customer’s 
 Alternatively, if a Provider-Managed setup is required, Netwrix can deploy an instance of Endpoint Protector in an isolated cloud environment. For details on the Provider-Managed option, speak with your Netwrix Account Manager.
 
 :::note
-To use the Endpoint Protector Server in a production environment, a License Key is required. After purchasing Endpoint Protector with the necessary modules, your Account Manager will assign a license that can be installed within the Endpoint Protector Management Console (the configuration interface available on the Endpoint Protector Server).
+To use the Endpoint Protector Server in a production environment, you need a License Key. After purchasing Endpoint Protector with the necessary modules, your Account Manager will assign a license that you can install in the Endpoint Protector Management Console (the configuration interface available on the Endpoint Protector Server).
 :::
 
 The following sections describe the different methods for deploying Endpoint Protector, with step-by-step instructions and best practices.
@@ -80,7 +80,7 @@ Additionally, internet connectivity allows your company to:
 - Activate modules by communicating with Netwrix servers
 
 :::note 
-All communication with Netwrix servers is governed by the applicable privacy and security policies.
+The applicable privacy and security policies govern all communication with Netwrix servers.
 :::
 
 

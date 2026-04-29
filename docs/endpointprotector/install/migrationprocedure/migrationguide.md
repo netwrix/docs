@@ -11,9 +11,9 @@ sidebar_position: 10
 :::warning
 **Action Required — Support Ended 14 February 2026**
 
-Support for Endpoint Protector Server version **5.9.4.2 and all older versions has been discontinued as of 14 February 2026**. Customers still running any 5.x version are no longer receiving security patches, bug fixes, or technical support.
+Netwrix discontinued support for Endpoint Protector Server version **5.9.4.2 and all older versions** as of 14 February 2026. Customers still running any 5.x version are no longer receiving security patches, bug fixes, or technical support.
 
-**Migration to the new image-based platform (2510 with latest patch 2604) must be completed immediately.**
+**Complete migration to the new image-based platform (2510 with latest patch 2604) immediately.**
 
 For the full support lifecycle and version status, see: [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability)
 :::
@@ -34,11 +34,11 @@ The complete migration process follows this sequence:
 ![EPP Server Migration — end-to-end process diagram](eppmigrationdiagram.webp)
 
 :::warning
-Backups from versions **other than 5.9.4.2** will **not** be accepted. The intermediate upgrade step to 5.9.4.2 is **mandatory** — skipping it will result in a failed restoration.
+The server does not accept backups from versions **other than 5.9.4.2**. The intermediate upgrade step to 5.9.4.2 is **mandatory** — skipping it will result in a failed restoration.
 :::
 
 :::warning
-The license must be imported on the fresh 2510 image **before** applying patches. Without an active ELS for PHP license, the server can't receive OS and patch updates.
+Import the license on the fresh 2510 image **before** applying patches. Without an active ELS for PHP license, the server can't receive OS and patch updates.
 :::
 
 ---
@@ -68,7 +68,7 @@ Restore the backup **after** you fully patch the 2510 image to 2602. The 5.9.4.2
 
 
 :::warning
-Only backups created on **exactly version 5.9.4.2** are accepted.
+The server accepts only backups created on **exactly version 5.9.4.2**.
 Always verify your source server version before creating the migration backup.
 :::
 
@@ -476,7 +476,7 @@ Large backups on under-resourced VMs can cause **server unresponsiveness or a 50
 You can validate the php_els component status in Appliance → Server Information.
 ![Appliance → Server Information — license](server_info_license.webp)
 
-If the license was imported successfully, the Server Information page shows:
+If you imported the license successfully, the Server Information page shows:
 
 ![Appliance → Server Information — ELS for PHP = Active after license import](els_active_highlighted.webp)
 
@@ -555,7 +555,7 @@ Upload **both** EE clients for Windows and macOS if both operating systems are i
 
 ### Obsolete OS limitations
 
-As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), obsolete and discontinued operating systems aren't supported by the latest EPP Client versions. If continued use of the EPP Client on an unsupported operating system is required, the last available Client version compatible with that operating system must be used. While such Client versions may retain the ability to communicate with the EPP Server, they are no longer covered under the standard support agreement. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Support in such cases is provided on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000).
+As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), obsolete and discontinued operating systems aren't supported by the latest EPP Client versions. If continued use of the EPP Client on an unsupported operating system is required, the last available Client version compatible with that operating system must be used. While such Client versions may retain the ability to communicate with the EPP Server, they are no longer covered under the standard support agreement. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Netwrix provides support in such cases on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000).
 
 ---
 
