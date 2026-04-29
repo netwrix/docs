@@ -7,11 +7,11 @@ sidebar_position: 9
 ## New
 
 ### Web application: Advanced view
-- It is now possible to manage and execute reports in the web app for all users having the user right 'Can manage reports' set to active.
+- It is now possible to manage and execute reports in the web app for all users having the user right "Can manage reports" set to active.
 
 ## Improved
 ### Windows application
-- When filtering trees and tables in the Windows app, it is possible again to logically search with 'OR' expressions by separating search values by space.
+- When filtering trees and tables in the Windows app, it is possible again to logically search with "OR" expressions by separating search values by space.
 
 ### Web application: Advanced view
 - When adding a field to a password and the default name already exists in the password, the application automatically appends a counter to the suggested field name.
@@ -32,7 +32,7 @@ sidebar_position: 9
 ### Web application: Advanced view
 - When editing forms, the application now displays all fields again, not only the first 20.
 - It wasn't possible to save Active Directory profiles. This issue is now resolved.
-- Fixed an issue where the application always set the public/private shield in the header to 'Private' after creating a shared password.
+- Fixed an issue where the application always set the public/private shield in the header to "Private" after creating a shared password.
 - Fixed an issue where it was possible to render HTML in the list of options. Following the suggested `Content-Security-Policy` header for the web server, it wasn't possible to cause any damage.
 - It is no longer possible to save a seal with negative validity times.
 - The content of the "Special characters" field in the password generator can now be changed properly again.
