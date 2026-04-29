@@ -11,9 +11,9 @@ sidebar_position: 10
 :::warning
 **Action Required — Support Ended 14 February 2026**
 
-Support for Endpoint Protector Server version **5.9.4.2 and all older versions has been discontinued as of 14 February 2026**. Customers still running any 5.x version are no longer receiving security patches, bug fixes, or technical support.
+Netwrix discontinued support for Endpoint Protector Server version **5.9.4.2 and all older versions** as of 14 February 2026. Customers still running any 5.x version are no longer receiving security patches, bug fixes, or technical support.
 
-**Migration to the new image-based platform (2510 with latest patch 2602) must be completed immediately.**
+**Complete migration to the new image-based platform (2510 with latest patch 2604) immediately.**
 
 For the full support lifecycle and version status, see: [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability)
 :::
@@ -27,18 +27,18 @@ Endpoint Protector's new server platform runs on Ubuntu 22.04 LTS and requires a
 - **2509** — The original release. No longer available for download. Customers already running 2509 don't need to switch to 2510 unless they require a larger initial storage disk size.
 - **2510** — Recommended for new deployments. Includes improvements to disk sizing and DHCP/DNS configuration.
 
-You can upgrade both images directly to the current patch version (**2602**). Upgrade the base image to 2602 before importing the configuration backup.
+You can upgrade both images directly to the current patch version (**2604**). Upgrade the base image to 2604 before importing the configuration backup.
 
 The complete migration process follows this sequence:
 
 ![EPP Server Migration — end-to-end process diagram](eppmigrationdiagram.webp)
 
 :::warning
-Backups from versions **other than 5.9.4.2** will **not** be accepted. The intermediate upgrade step to 5.9.4.2 is **mandatory** — skipping it will result in a failed restoration.
+The server does not accept backups from versions **other than 5.9.4.2**. The intermediate upgrade step to 5.9.4.2 is **mandatory** — skipping it will result in a failed restoration.
 :::
 
 :::warning
-The license must be imported on the fresh 2510 image **before** applying patches. Without an active ELS for PHP license, the server can't receive OS and patch updates.
+Import the license on the fresh 2510 image **before** applying patches. Without an active ELS for PHP license, the server can't receive OS and patch updates.
 :::
 
 ---
@@ -47,14 +47,14 @@ The license must be imported on the fresh 2510 image **before** applying patches
 
 ### Why 5.9.4.2 Is a Required Stepping Stone
 
-The 2510 base image (and any patch version built on top of it, such as 2602) accepts configuration backups exclusively from version **5.9.4.2**. This is because:
+The 2510 base image (and any patch version built on top of it, such as 2604) accepts configuration backups exclusively from version **5.9.4.2**. This is because:
 
 - The internal database schema at 5.9.4.2 is the last known-compatible schema for import into the new image platform.
 - The reworked backend OS (Ubuntu 22.04) introduced breaking changes to service configurations and file paths.
 - The migration process validates the backup format and version checksum before restoring.
 
 :::note
-Restore the backup **after** you fully patch the 2510 image to 2602. The 5.9.4.2 backup format remains compatible across all patch versions of the new image (2510, 2511, …, 2602).
+Restore the backup **after** you fully patch the 2510 image to 2602. The 5.9.4.2 backup format remains compatible across all patch versions of the new image (2510, 2511, …, 2604).
 :::
 
 **Version compatibility matrix:**
@@ -64,11 +64,11 @@ Restore the backup **after** you fully patch the 2510 image to 2602. The 5.9.4.2
 | Older than 5.7.0.0 | ❌ Step-by-step upgrade path required first |
 | 5.7.0.0 – 5.9.4.1 | ❌ Must reach 5.9.4.2 first via cumulative patch |
 | **5.9.4.2** | ✅ **Yes — the only accepted source version from historical image appliances** |
-| **2509, 2510, 2601, 2602** | ✅ **Yes - Possible** |
+| **2509, 2510, 2601, 2602, 2604** | ✅ **Yes - Possible** |
 
 
 :::warning
-Only backups created on **exactly version 5.9.4.2** are accepted.
+The server accepts only backups created on **exactly version 5.9.4.2**.
 Always verify your source server version before creating the migration backup.
 :::
 
@@ -76,19 +76,8 @@ Always verify your source server version before creating the migration backup.
 
 Starting with the 2509 EPP Server release in October 2025, a new versioning scheme has been introduced. For details, see [Unified EPP Clients and Server Versioning](/docs/endpointprotector/install/overview.md).
 
-### In-Place Upgrade vs. Migration Upgrade
-
-| Aspect | In-Place Upgrade | Migration Upgrade |
-|---|---|---|
-| What it does | Updates EPP app on existing OS | Moves config to a new clean VM |
-| OS updated? | ❌ No | ✅ Yes |
-| Event logs migrated? | ✅ Yes | ❌ No (config only) |
-| Risk level | Medium | Low (old VM preserved) |
-| Required for 2510? | Not applicable | ✅ Required for 2510 |
-| Rollback option | VM snapshot | Keep old VM alive |
-
 :::tip
-Netwrix recommends the migration upgrade path to the 2510 image with 2602 patch for any environment still on legacy 5.x versions. Use in-place upgrades within the 5.x series only as an intermediate step to reach 5.9.4.2.
+Netwrix recommends the migration upgrade path to the 2510 image with 2604 patch for any environment still on legacy 5.x versions. Use in-place upgrades within the 5.x series only as an intermediate step to reach 5.9.4.2.
 :::
 
 ---
@@ -294,7 +283,7 @@ The patch includes:
 
 ![Offline Patch Uploader wizard — file selection and Upload button](offline_patch_wizard.webp)
 
-6. After the file is uploaded, click **Back** when prompted.
+6. After you upload the file, click **Back** when prompted.
 7. The progress notification will appear in the Software Update section.
 
 ![Software Update — active upgrade progress status](upgrade_progress.webp)
@@ -412,57 +401,39 @@ Immediately after the new VM is provisioned and reachable, disable client commun
 Disabling client communications prevents endpoints from registering with an incomplete server configuration. Re-enable only after the full restoration and verification is complete.
 :::
 
-### Import License on the Fresh 2510 Image
+### Activate trial license on a newly deployed image
 
-:::warning
-The license must be imported **before** applying any patches. Without an active ELS for PHP license, the server can't receive OS updates, and the patch process will fail or be incomplete.
-:::
+To be able to upgrade a clean appliance, at least a Trial license should be activated. Go to **System Configuration** → **Licensing** and choose **Free Trial**. The proper license will be imported in a later step, after the upgrade and backup restore process.
+If activated successfully, you should see a green banner at the top.
 
-1. Navigate to **System Configuration → System Licensing → Import License**.
-2. Upload the license file that contains the `php_els` field.
-3. After import, go to **Appliance → Server Information**.
-4. Confirm that **"ELS for PHP = Active"** is displayed before continuing.
+![EPP License Trial activation](licensetrialactivation.webp)
 
-You can validate the php_els component status in Appliance → Server Information.
-![Appliance → Server Information — license](server_info_license.webp)
 
-If the license was imported successfully, the Server Information page shows:
+### Upgrade the 2510 Image to the Latest Version (2604)
 
-![Appliance → Server Information — ELS for PHP = Active after license import](els_active_highlighted.webp)
-
-If errors appear:
-
-![Appliance → Server Information — ELS for PHP = Error after license import](els_error.webp)
-
-:::danger
-If ELS for PHP is **not Active**, stop and resolve this before proceeding. The server can't receive patches without it, and the subsequent upgrade step will not complete successfully.
-:::
-
-### Upgrade the 2510 Image to the Latest Version (2602)
-
-With the license active, upgrade the fresh 2510 image to the current latest patch version. The current version is **2602** — always apply all available updates.
+With the license active, upgrade the fresh 2510 image to the current latest patch version. The current version is **2604** — always apply all available updates.
 
 1. Navigate to **System Configuration → Server Update**.
 2. Use the **Offline Patch Uploader** if the server has no internet access:
    - Navigate to **Dashboard → Live Update → Offline Patch Uploader**.
-   - Upload the patch file for each version in sequence until reaching 2602.
+   - Upload the 2604 cumulative patch file — it covers all versions from 2509 to 2604 in a single update.
 
 ![System Configuration → Software Update — patch upload and version progression](../../admin/systemconfiguration/softwareupdate.webp)
 
 :::tip
-For air-gapped environments, request all interim patch files (2510 → 2511 → … → 2602) from Netwrix Support **before** the maintenance window.
+For air-gapped environments, follow the same procedure using the 2604 cumulative patch file — this is the same patch used for online environments.
 :::
 
 3. After each patch, refresh browser and verify the version in **Appliance → Server Information** before applying the next.
-4. Once on 2602, confirm the server is stable and all services are running before proceeding to the backup restore.
+4. Once on 2604, confirm the server is stable and all services are running before proceeding to the backup restore.
 
-![Appliance → Server Information — version 2602 after patching](server_info_2602.webp)
+![Appliance → Server Information — version 2604 after patching](server_info_2602.webp)
 
-### Restoring the 5.9.4.2 Backup onto 2602
+### Restoring the 5.9.4.2 Backup onto 2604
 
-The 5.9.4.2 backup is restored onto the fully patched 2602 server. The backup format is compatible with all versions in the new image series (2510 through 2602 and later).
+The 5.9.4.2 backup is restored onto the fully patched 2604 server. The backup format is compatible with all versions in the new image series (2510 through 2604 and later).
 
-1. Log in to the **2602 server console**.
+1. Log in to the **2604 server console**.
 2. Navigate to **System Maintenance → System Backup v2**.
 3. Click **Import and Restore (Migrate)**.
 
@@ -475,14 +446,13 @@ The 5.9.4.2 backup is restored onto the fully patched 2602 server. The backup fo
 ![Import and Restore wizard — file selection, key entry, and Import button](import_restore_wizard.webp)
 
 7. Monitor the restore progress: the status will show **"Generating"** while restoring.
-   - Click **Reload** above the status column to refresh progress.
-   - If the console becomes unresponsive, refresh the browser — this is normal during application restart.
 
-![System Backup list — Generating status during active restore](backup_generating.webp)
-
-8. Once complete, the status changes to **"Ready to download"**.
+8. Once complete, the status changes to **"Your back import file has been queued"**. 
 
 ![System Backup list — Ready to download status confirming successful restore](backup_ready_restored.webp)
+
+9. After few minutes, click **Reload** above the status column to refresh progress. If the console becomes unresponsive, refresh the browser — this is normal during application restart.
+
 
 :::tip
 Restoration can take several minutes depending on backup size. Don't interrupt the process or close the browser. If the console appears frozen, wait at least 5 minutes before refreshing.
@@ -495,6 +465,27 @@ Large backups on under-resourced VMs can cause **server unresponsiveness or a 50
 2. Verify at least 2 GB free disk space on the VM.
 3. Verify the backup file isn't corrupted (re-download from the source server if needed).
 4. Contact Netwrix Support if the error persists.
+:::
+### Import License on the Upgraded EPP server image with restore configuration
+
+1. Navigate to **System Configuration → System Licensing → Import License**.
+2. Upload the license file that contains the `php_els` field.
+3. After import, go to **Appliance → Server Information**.
+4. Confirm that **"ELS for PHP = Active"** is displayed before continuing.
+
+You can validate the php_els component status in Appliance → Server Information.
+![Appliance → Server Information — license](server_info_license.webp)
+
+If you imported the license successfully, the Server Information page shows:
+
+![Appliance → Server Information — ELS for PHP = Active after license import](els_active_highlighted.webp)
+
+If errors appear:
+
+![Appliance → Server Information — ELS for PHP = Error after license import](els_error.webp)
+
+:::danger
+If ELS for PHP is **not Active**, stop and resolve this before proceeding. The server can't receive patches without it, and the subsequent upgrade step will not complete successfully.
 :::
 
 ## Phase 3 — Uploading EPP & EE Client Packages
@@ -528,7 +519,7 @@ Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and tran
 | Client Version | Trusted Signatures | Notes |
 |---|---|---|
 | 5.9.4.1 and older | CoSoSys only | Can't verify Netwrix-signed packages |
-| **5.9.4.3** | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
+|5.9.4.3 | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
 | 2511 and newer | Netwrix only | Can't be pushed to 5.9.4.1 clients directly |
 
 Clients on 5.9.4.1 or older **can't** upgrade directly to 2602. They must first upgrade to **5.9.4.3** (which trusts both signature types), then proceed to 2602:
@@ -564,7 +555,7 @@ Upload **both** EE clients for Windows and macOS if both operating systems are i
 
 ### Obsolete OS limitations
 
-As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), obsolete and discontinued operating systems aren't supported by the latest EPP Client versions. If continued use of the EPP Client on an unsupported operating system is required, the last available Client version compatible with that operating system must be used. While such Client versions may retain the ability to communicate with the EPP Server, they are no longer covered under the standard support agreement. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Support in such cases is provided on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000).
+As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), obsolete and discontinued operating systems aren't supported by the latest EPP Client versions. If continued use of the EPP Client on an unsupported operating system is required, the last available Client version compatible with that operating system must be used. While such Client versions may retain the ability to communicate with the EPP Server, they are no longer covered under the standard support agreement. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Netwrix provides support in such cases on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000).
 
 ---
 
@@ -576,7 +567,7 @@ Complete all items in this checklist after the migration is finished.
 
 | Check | How to Verify |
 |---|---|
-| Server version shows latest 2602.0.x.x version | Appliance → Server Information |
+| Server version shows latest 2604.0.x.x version | Appliance → Server Information |
 | ELS for PHP = Active | Appliance → Server Information |
 | Server responds to browser access | `https://<server>:443` loads normally |
 | License imported successfully | System Configuration → System Licensing |

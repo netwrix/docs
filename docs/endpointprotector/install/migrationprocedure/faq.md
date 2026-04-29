@@ -17,7 +17,7 @@ This page covers the most common questions and issues encountered during EPP ser
 Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 onto 2510 will fail at the import step.
 
 :::tip
-**Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, it may be worth evaluating a clean deployment of the 2510/2602 image rather than going through the full migration path. Reconfiguring EPP on a fresh base installation can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where historical log data isn't required. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.
+**Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, it may be worth evaluating a clean deployment of the 2510/2604 image rather than going through the full migration path. Reconfiguring EPP on a fresh base installation can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where historical log data isn't required. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.
 :::
 
 ---
@@ -25,7 +25,7 @@ Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 onto 2510 wi
 
 ## Restoring a 2509 Backup onto a 2510 Server
 
-This is supported. Restoring a 2509 configuration backup onto a 2510 server simply migrates the configuration — the OS remains 2510. Once patched to 2602, the result is functionally equivalent to a native 2510-based deployment at 2602. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
+Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. Once patched to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
 
 ---
 
@@ -208,7 +208,9 @@ Approximate time estimates based on real migration experience:
 | Background DB tasks post-patch | Up to 24 hours (scheduled at 9 PM nightly) |
 | System backup creation at 5.9.4.2 | 5–30 minutes depending on config size |
 | New 2510 VM deployment and network config | 30–60 minutes |
-| Backup restore on 2510 | 15–45 minutes |
+| Trial license activation on 2510 | 5 minutes |
+| Upgrade 2510 to 2604 | 15–30 minutes |
+| Backup restore on 2604 | 15–45 minutes |
 | License re-import and verification | 5–10 minutes |
 | Client package uploads | 10–20 minutes |
 | Integration reconfiguration and testing | 30–90 minutes |
@@ -229,7 +231,7 @@ Plan for a full business day of active migration work, plus a 24-hour monitoring
 - Can be consulted for compliance or forensic purposes if any applicable regulation requires retention of historical data.
 
 :::tip
-Keep the old server **offline** after the new 2510/2602 environment is validated. Activate access to it only on demand (e.g. for a compliance review or rollback). Leaving it online unnecessarily increases the attack surface, particularly given that 5.9.4.2 no longer receives security patches.
+Keep the old server **offline** after the new 2510/2604 environment is validated. Activate access to it only on demand (e.g. for a compliance review or rollback). Leaving it online unnecessarily increases the attack surface, particularly given that 5.9.4.2 no longer receives security patches.
 :::
 
 Decommission the old server only after:

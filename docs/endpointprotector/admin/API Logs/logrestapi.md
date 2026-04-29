@@ -6,6 +6,34 @@ sidebar_position: 10
 
 # Logs REST API
 
+:::warning 
+Preview feature — Support-enabled
+
+The Logs REST API is a Preview capability. It is disabled by default and is not automatically exposed on Endpoint Protector servers.
+
+Enable this API only after Netwrix Support has reviewed your use case and provided setup guidance. Preview availability, endpoint coverage, response fields, authentication behavior, request limits, and configuration steps may change before general availability.
+
+:::
+
+## Availability
+
+The Logs REST API is available as a controlled Preview for approved integration and reporting use cases.
+
+It is intended for customers who need read-only programmatic access to selected Endpoint Protector log and audit data, for example for SIEM pull ingestion, custom reporting dashboards, incident investigations, or internal automation.
+
+The API is not enabled by default. To request Preview access, open a Netwrix Support case and include:
+
+- Endpoint Protector version and deployment type
+- Target integration or consuming system
+- Log families required
+- Expected request volume and frequency
+- Source IP ranges or network path
+- Whether the intended use is test, pilot, or production
+
+Netwrix Support will confirm suitability for the Preview, assist with enablement, and provide the setup guidance required for your environment.
+
+For standard log forwarding to SIEM platforms, customers can continue to use the existing Endpoint Protector SIEM integration. The Logs REST API Preview is a separate optional path for use cases that require pull-based API access or custom integration logic.
+
 ## Overview
 
 The Logs REST API provides a read-only interface to query Endpoint Protector logs and audit trails over HTTPS in JSON format. Use it for:
