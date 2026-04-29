@@ -114,6 +114,6 @@ After you accept, PolicyPak Cloud redirects you and signs you in as your federat
 6. Add your federated user as a Company Administrator in the PolicyPak Cloud portal.
 7. Sign in to PolicyPak Cloud with your corporate SSO credentials and accept the IdP consent prompt on first login.
 
-## Questions or Issues?
+## Troubleshooting
 
 If you encounter any issues at any stage of this process, reply to your existing support ticket or open a new one through the [Netwrix support portal](https://www.netwrix.com/tickets.html#/open-a-ticket). The PolicyPak Support team will assist you and coordinate with the appropriate internal team as needed.
