@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Single Sign-On (SSO) — Customer Request Guide
 
-PolicyPak Cloud supports Single Sign-On (SSO) using your organization's identity provider (IdP) — such as Microsoft Entra ID (Azure AD) or Okta. Once configured, users can log in to PolicyPak Cloud using their existing corporate credentials instead of a separate password.
+PolicyPak Cloud supports Single Sign-On (SSO) using your organization's identity provider (IdP) — such as Microsoft Entra ID (Azure AD) or Okta. Once SSO is configured, users can log in to PolicyPak Cloud using their existing corporate credentials instead of a separate password.
 
 This is an assisted process. The following steps explain what information to submit, what the Netwrix team does on the backend, and what you need to do to finish the configuration.
 
@@ -19,7 +19,7 @@ After submitting your ticket, allow up to three (3) business days for the Netwri
 Have the following ready when you open your support ticket:
 
 - Your PolicyPak Cloud company name and the email address of your current company administrator
-- Your identity provider type: Microsoft Entra ID, Okta, or another OIDC-compatible provider
+- Your identity provider type: Microsoft Entra ID, Okta, or another OpenID Connect (OIDC)-compatible provider
 - The email domain your users will authenticate with (for example, yourcompany.com)
 - Access to an Entra ID or Okta admin who can register an application and generate a Client ID and Client Secret
 
@@ -33,25 +33,25 @@ The PolicyPak Support team will receive your ticket and coordinate with the Netw
 
 ## Step 2 – Netwrix Provisions Your 1Secure Tenant (No Action Required)
 
-PolicyPak Cloud SSO is handled through Netwrix 1Secure, Netwrix's identity management platform, which manages authentication for your tenant.
+Netwrix 1Secure, Netwrix's identity management platform, handles PolicyPak Cloud SSO and manages authentication for your tenant.
 
-Once your ticket is received, the Netwrix internal team creates a Netwrix 1Secure tenant for your organization and invites your designated administrator using their corporate email address. This step happens entirely on the Netwrix side.
+After receiving your ticket, the Netwrix internal team creates a Netwrix 1Secure tenant for your organization and invites your designated administrator using their corporate email address. This step happens entirely on the Netwrix side.
 
-This step is complete when you receive a "Welcome to Netwrix 1Secure" invitation email in your inbox.
+This step is complete when you receive a "Welcome to Netwrix 1Secure" invitation email.
 
 ## Step 3 – Accept the Netwrix 1Secure Invitation Email
 
 Your designated administrator will receive a "Welcome to Netwrix 1Secure" email from noreply-account@netwrix.com. Open the email and click **Activate my Netwrix account**.
 
 :::warning
-The activation link expires 48 hours after it is sent.
+The activation link expires 48 hours after Netwrix sends it.
 :::
 
 ![Welcome to Netwrix 1Secure invitation email with activation button](/images/policypak/cloud/singlesignon/ppcloudsso6.webp)
 
 ## Step 4 – Set Your Netwrix Account Password
 
-If your account isn't already set up, clicking the activation link prompts you to create a password for your Netwrix account. This is a one-time step required to access the 1Secure portal where SSO is configured.
+If your account isn't already set up, clicking the activation link prompts you to create a password for your Netwrix account. This is a one-time step required to access the 1Secure portal where you configure SSO.
 
 Your password must meet the following requirements:
 
