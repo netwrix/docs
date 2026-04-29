@@ -30,10 +30,9 @@ To start using Endpoint Protector, you need to deploy a server instance. The ser
 Endpoint Protector agent to endpoint systems. There are two principal options for server management;
 Customer-Managed or Provider- Managed. If Customer-Managed is a desired option, you can install the server On-Premise or in a Hosted-Cloud Environment.
 
-The On-Premise option for a Customer-Managed instance allows you to set up a virtualized image in your LAN. Virtualization options include, but aren't limited to: VMware and
+With the On-Premise option for a Customer-Managed instance, you can set up a virtualized image in your LAN. Virtualization options include, but aren’t limited to: VMware and
 Hyper-V. The Hosted-Cloud method of deployment allows for use of a customer’s Amazon Web Services
-(AWS), Azure, or Google Cloud Platform (GCP) instance. For more information on each of these options, see the [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) topic and the
-[Cloud Services](/docs/endpointprotector/install/configuration/overview.md) topic.
+(AWS), Azure, or Google Cloud Platform (GCP) instance. See [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) for supported VM formats including VMware and Hyper-V, and [Cloud Services](/docs/endpointprotector/install/configuration/overview.md) for AWS, Azure, and GCP deployment details.
 
 Alternatively, if a Provider-Managed setup is required, Netwrix can deploy an instance of Endpoint Protector in an isolated cloud environment. For details on the Provider-Managed option, speak with your Netwrix Account Manager.
 
@@ -123,4 +122,4 @@ Starting with version 2509, Netwrix standardizes EPP product versioning. The ver
 | Server, April 2026, internal build #7 | 2604.0.0.7 |
 
 
-With this enhancement, our goal is to enhance your workflow by providing a transparent and easily navigable versioning system.
+This versioning system provides a transparent and easily navigable structure, improving your workflow.
