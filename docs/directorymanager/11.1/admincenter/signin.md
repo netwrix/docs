@@ -47,7 +47,7 @@ permissions in the identity store.
 
 Use one of the following methods to sign in.
 
-- Type the Admin Center URL in the address bar of a web browser and press Enter. For example:  
+- Enter the Admin Center URL in the address bar of a web browser and press Enter. For example:  
   https://[machine name]:4443//AdminCenter
 - On the Windows Start menu, search for the Directory Manager 11.x icon and double-click it to
   launch Admin Center in a browser window.
@@ -59,8 +59,6 @@ You can sign in using any of the following methods:
 - Access Admin Center
 
 ### With your Identity Store Account
-
-Follow the steps to signin with your identify store account.
 
 Step 1 – On the **GroupID Authenticate** page, click an identity store to connect to.
 
