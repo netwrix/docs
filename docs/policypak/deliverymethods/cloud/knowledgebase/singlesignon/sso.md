@@ -8,10 +8,10 @@ sidebar_position: 1
 
 PolicyPak Cloud supports Single Sign-On (SSO) using your organization's identity provider (IdP) — such as Microsoft Entra ID (Azure AD) or Okta. Once configured, users can log in to PolicyPak Cloud using their existing corporate credentials instead of a separate password.
 
-This is an assisted process. The steps below explain what information to submit, what the Netwrix team does on the backend, and what you need to complete on your end to finish the configuration.
+This is an assisted process. The following steps explain what information to submit, what the Netwrix team does on the backend, and what you need to do to finish the configuration.
 
 :::note
-After submitting your ticket, allow up to three (3) business days for the Netwrix team to complete the backend tenant provisioning. You will be notified when your environment is ready.
+After submitting your ticket, allow up to three (3) business days for the Netwrix team to complete the backend tenant provisioning. The Netwrix team will notify you when your environment is ready.
 :::
 
 **What You Will Need Before Submitting**
@@ -32,7 +32,7 @@ In your ticket, select **Netwrix PolicyPak**, include the information listed abo
 The PolicyPak Support team will receive your ticket and coordinate with the Netwrix internal team responsible for tenant provisioning. You don't need to contact any other team directly.
 
 :::note
-The backend provisioning step is performed by a specialized internal Netwrix team and isn't automated. Allow up to three business days for this step to complete.
+A specialized internal Netwrix team performs the backend provisioning step manually. Allow up to three business days for this step to complete.
 :::
 
 **Step 2 – Netwrix Provisions Your 1Secure Tenant (No Action Required)**
@@ -75,7 +75,7 @@ Use the following Netwrix documentation guides to register your application and 
 - [Generate a Client Secret Value](https://docs.netwrix.com/docs/1secure/configuration/registerconfig/#generate-client-secret-value)
 
 :::tip
-Optionally enter a Client Secret Expiry Date. Netwrix 1Secure will alert you before the secret expires so your SSO connection can be renewed without disrupting access.
+Optionally enter a Client Secret Expiry Date. Netwrix 1Secure will alert you before the secret expires so you can renew your SSO connection without disrupting access.
 :::
 
 ![Authentication Settings in Netwrix 1Secure with Client ID and Client Secret fields highlighted](/images/policypak/cloud/singlesignon/ppcloudsso3.webp)
@@ -93,12 +93,12 @@ Enter the user's first name, last name, and their federated email address — th
 Your federated administrator can now sign in to PolicyPak Cloud using their corporate identity. On first login, your identity provider may display a permissions consent prompt for the 1Secure application. Click **Accept** to grant the necessary permissions and continue.
 
 :::note
-The permissions requested are limited to viewing your basic profile and maintaining access to data you have already authorized. This is a standard consent screen for OIDC-based applications.
+The requested permissions cover only viewing your basic profile and maintaining access to data you have already authorized. This is a standard consent screen for OIDC-based applications.
 :::
 
 ![Microsoft Entra ID permissions consent prompt on first SSO login](/images/policypak/cloud/singlesignon/ppcloudsso1.webp)
 
-After accepting, you will be redirected back to PolicyPak Cloud and signed in as your federated user. SSO is now fully active for your domain.
+After you accept, PolicyPak Cloud redirects you and signs you in as your federated user. SSO is now fully active for your domain.
 
 ![PolicyPak Cloud portal with federated SSO user account active](/images/policypak/cloud/singlesignon/ppcloudsso2.webp)
 
