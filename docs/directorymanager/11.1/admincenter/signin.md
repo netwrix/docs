@@ -6,11 +6,11 @@ sidebar_position: 40
 
 # Access Admin Center
 
-Admin Center is a web-based application that can be accessed over the Internet and Intranet. It
+Admin Center is a web-based application accessible over the Internet and Intranet. It
 comes with a default provider,Directory Manager, which primarily facilitates first-time log in to the
 application. Typically, the Directory Manager provider has one default user, _Super Admin_, that has
 full access to the Admin Center. On signing in, this user can create identity stores and configure
-settings to get the application ready for use.
+settings to set up the application.
 
 ## Sign In
 
@@ -33,14 +33,14 @@ Use any of the following methods to connect and sign in:
   provider is configured with the selected identity store.
 
     :::note
-    Microsoft Entra ID MFA enabled users can't log into Directory Manager using their
-    username and password. They will be authenticated through the SAML provider configured for in
+    Microsoft Entra ID MFA enabled users can't log into Directory Manager using their
+    username and password. Directory Manager authenticates them through the SAML provider configured in
     Directory Manager.
     :::
 
 
 Next, you may have to pass second factor authentication, depending on whether it is enabled for your
-role in the identity store. You can perform tasks in the Admin Center in keeping with your role and
+role in the identity store. You can perform tasks in the Admin Center according to your role and
 permissions in the identity store.
 
 **To Sign In**
@@ -70,8 +70,7 @@ Step 3 – After providing your credentials, click **Sign In**.
 
 ### With a SAML Provider
 
-You can opt for single sign-on across all Directory Manager clients, provided that a SAML provider
-is configured with Directory Manager. See the following topics for additional information on the
+You can opt for single sign-on across all Directory Manager clients, provided that you have configured a SAML provider in Directory Manager. See the following topics for additional information on the
 SAML provider configuration:
 
 - [Configure Directory Manager in Microsoft Entra ID for SSO](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/configureinentra.md)
@@ -81,7 +80,7 @@ On the **GroupID Authenticate** page, click the button or image for the provider
 in.
 
 :::note
-For Microsoft Entra ID MFA enabled users, a SAML provider must be configured for signing into
+For Microsoft Entra ID MFA enabled users, you must configure a SAML provider for signing into
 Directory Manager.
 :::
 
@@ -91,15 +90,15 @@ Directory Manager.
 The administrator can enable second factor authentication for a security role in an identity store.
 
 If enabled for your role in the identity store, you must pass second factor authentication after
-signing in via any of the above methods.
+signing in via any of these methods.
 
 For second factor authentication, one of the following applies:
 
-- If you have not enrolled your identity store account in Directory Manager, the Enroll Account page
-  is displayed. You must enroll using at least one authentication type. See the
+- If you have not enrolled your identity store account in Directory Manager, Directory Manager displays the Enroll Account page.
+  You must enroll using at least one authentication type. See the
   [Enroll your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/enroll.md) topic.
-- If you have already enrolled your identity store account in Directory Manager, the Authenticate
-  page is displayed. It lists the authentication types your account is enrolled with. Select an
+- If you have already enrolled your identity store account in Directory Manager, Directory Manager displays the Authenticate
+  page. It lists the authentication types your account is enrolled with. Select an
   authentication type to authenticate. See the
   [Authenticate your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/authenticate.md) topic.
 
