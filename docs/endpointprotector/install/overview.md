@@ -112,3 +112,15 @@ Starting with version 2509, Netwrix standardizes EPP product versioning. The ver
 **`B`** — Optional build number for internal tracking
 
 **Consistency across interfaces:** This versioning format is applied across all UI pages where version numbers appear, including dashboards, reports, maintenance tools, and the EPP Client Notifier.
+
+
+**Examples of the New Versioning**
+| Description | Version |
+|---|---|
+| February 2026 server, standard build | 2602.0.1.0 |
+| February 2026 Windows client, standard | 2602.1.1.0 |
+| RHEL client, May 2026, custom #3 | 2605.4.3.0 |
+| Server, April 2026, internal build #7 | 2604.0.0.7 |
+
+
+With this enhancement, our goal is to enhance your workflow by providing a transparent and easily navigable versioning system.

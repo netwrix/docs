@@ -76,17 +76,6 @@ Always verify your source server version before creating the migration backup.
 
 Starting with the 2509 EPP Server release in October 2025, a new versioning scheme has been introduced. For details, see [Unified EPP Clients and Server Versioning](/docs/endpointprotector/install/overview.md).
 
-### In-Place Upgrade vs. Migration Upgrade
-
-| Aspect | In-Place Upgrade | Migration Upgrade |
-|---|---|---|
-| What it does | Updates EPP app on existing OS | Moves config to a new clean VM |
-| OS updated? | ❌ No | ✅ Yes |
-| Event logs migrated? | ✅ Yes | ❌ No (config only) |
-| Risk level | Medium | Low (old VM preserved) |
-| Required for 2510? | Not applicable | ✅ Required for 2510 |
-| Rollback option | VM snapshot | Keep old VM alive |
-
 :::tip
 Netwrix recommends the migration upgrade path to the 2510 image with 2604 patch for any environment still on legacy 5.x versions. Use in-place upgrades within the 5.x series only as an intermediate step to reach 5.9.4.2.
 :::
@@ -412,31 +401,13 @@ Immediately after the new VM is provisioned and reachable, disable client commun
 Disabling client communications prevents endpoints from registering with an incomplete server configuration. Re-enable only after the full restoration and verification is complete.
 :::
 
-### Import License on the Fresh 2510 Image
+### Activate trial license on a newly deployed image
 
-:::warning
-The license must be imported **before** applying any patches. Without an active ELS for PHP license, the server can't receive OS updates, and the patch process will fail or be incomplete.
-:::
+To be able to upgrade a clean appliance, at least a Trial license should be activated. Go to **System Configuration** → **Licensing** and choose **Free Trial**. The proper license will be imported in a later step, after the upgrade and backup restore process.
+If activated successfully, you should see a green banner at the top.
 
-1. Navigate to **System Configuration → System Licensing → Import License**.
-2. Upload the license file that contains the `php_els` field.
-3. After import, go to **Appliance → Server Information**.
-4. Confirm that **"ELS for PHP = Active"** is displayed before continuing.
+![EPP License Trial activation](licensetrialactivation.webp)
 
-You can validate the php_els component status in Appliance → Server Information.
-![Appliance → Server Information — license](server_info_license.webp)
-
-If the license was imported successfully, the Server Information page shows:
-
-![Appliance → Server Information — ELS for PHP = Active after license import](els_active_highlighted.webp)
-
-If errors appear:
-
-![Appliance → Server Information — ELS for PHP = Error after license import](els_error.webp)
-
-:::danger
-If ELS for PHP is **not Active**, stop and resolve this before proceeding. The server can't receive patches without it, and the subsequent upgrade step will not complete successfully.
-:::
 
 ### Upgrade the 2510 Image to the Latest Version (2604)
 
@@ -475,14 +446,13 @@ The 5.9.4.2 backup is restored onto the fully patched 2604 server. The backup fo
 ![Import and Restore wizard — file selection, key entry, and Import button](import_restore_wizard.webp)
 
 7. Monitor the restore progress: the status will show **"Generating"** while restoring.
-   - Click **Reload** above the status column to refresh progress.
-   - If the console becomes unresponsive, refresh the browser — this is normal during application restart.
 
-![System Backup list — Generating status during active restore](backup_generating.webp)
-
-8. Once complete, the status changes to **"Ready to download"**.
+8. Once complete, the status changes to **"Your back import file has been queued"**. 
 
 ![System Backup list — Ready to download status confirming successful restore](backup_ready_restored.webp)
+
+9. After few minutes, click **Reload** above the status column to refresh progress. If the console becomes unresponsive, refresh the browser — this is normal during application restart.
+
 
 :::tip
 Restoration can take several minutes depending on backup size. Don't interrupt the process or close the browser. If the console appears frozen, wait at least 5 minutes before refreshing.
@@ -495,6 +465,27 @@ Large backups on under-resourced VMs can cause **server unresponsiveness or a 50
 2. Verify at least 2 GB free disk space on the VM.
 3. Verify the backup file isn't corrupted (re-download from the source server if needed).
 4. Contact Netwrix Support if the error persists.
+:::
+### Import License on the Upgraded EPP server image with restore configuration
+
+1. Navigate to **System Configuration → System Licensing → Import License**.
+2. Upload the license file that contains the `php_els` field.
+3. After import, go to **Appliance → Server Information**.
+4. Confirm that **"ELS for PHP = Active"** is displayed before continuing.
+
+You can validate the php_els component status in Appliance → Server Information.
+![Appliance → Server Information — license](server_info_license.webp)
+
+If the license was imported successfully, the Server Information page shows:
+
+![Appliance → Server Information — ELS for PHP = Active after license import](els_active_highlighted.webp)
+
+If errors appear:
+
+![Appliance → Server Information — ELS for PHP = Error after license import](els_error.webp)
+
+:::danger
+If ELS for PHP is **not Active**, stop and resolve this before proceeding. The server can't receive patches without it, and the subsequent upgrade step will not complete successfully.
 :::
 
 ## Phase 3 — Uploading EPP & EE Client Packages

@@ -208,7 +208,9 @@ Approximate time estimates based on real migration experience:
 | Background DB tasks post-patch | Up to 24 hours (scheduled at 9 PM nightly) |
 | System backup creation at 5.9.4.2 | 5–30 minutes depending on config size |
 | New 2510 VM deployment and network config | 30–60 minutes |
-| Backup restore on 2510 | 15–45 minutes |
+| Trial license activation on 2510 | 5 minutes |
+| Upgrade 2510 to 2604 | 15–30 minutes |
+| Backup restore on 2604 | 15–45 minutes |
 | License re-import and verification | 5–10 minutes |
 | Client package uploads | 10–20 minutes |
 | Integration reconfiguration and testing | 30–90 minutes |
