@@ -32,7 +32,7 @@ In your ticket, select **Netwrix PolicyPak**, include the information listed abo
 The PolicyPak Support team will receive your ticket and coordinate with the Netwrix internal team responsible for tenant provisioning. You don't need to contact any other team directly.
 
 :::note
-The backend provisioning step is performed by a specialized internal Netwrix team and is not automated. Allow up to three business days for this step to complete.
+The backend provisioning step is performed by a specialized internal Netwrix team and isn't automated. Allow up to three business days for this step to complete.
 :::
 
 **Step 2 – Netwrix Provisions Your 1Secure Tenant (No Action Required)**
@@ -53,7 +53,7 @@ The activation link is unique to your account and expires in 2 days. Act on it p
 
 **Step 4 – Set Your Netwrix Account Password**
 
-If the user is not already provisioned, clicking the activation link prompts you to create a password for your Netwrix account. This is a one-time step required to access the 1Secure portal where SSO is configured.
+If the user isn't already provisioned, clicking the activation link prompts you to create a password for your Netwrix account. This is a one-time step required to access the 1Secure portal where SSO is configured.
 
 Your password must meet the following requirements:
 
