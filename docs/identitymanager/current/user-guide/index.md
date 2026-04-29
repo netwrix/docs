@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # User Guide
 
-Identity Manager's User Guide leads the reader through all the necessary steps to autonomously build an IGA solution based on Identity Manager, either from scratch or using Identity Manager's IGA Core Solution, with the aim of quickly delivering value. Test
+Identity Manager's User Guide leads the reader through all the necessary steps to autonomously build an IGA solution based on Identity Manager, either from scratch or using Identity Manager's IGA Core Solution, with the aim of quickly delivering value. Testttttttt
 
 ## Target Audience
 
