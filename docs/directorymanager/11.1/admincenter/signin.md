@@ -105,6 +105,17 @@ For second factor authentication, one of the following applies:
   authentication type to authenticate. See the
   [Authenticate your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/authenticate.md) topic.
 
+## Login Throttling
+
+To protect against brute-force attacks, Directory Manager enforces login throttling for system user accounts based on the originating IP address. This applies when signing in using the Directory Manager provider.
+
+- You have up to 3 consecutive failed sign-in attempts before your IP address is locked out.
+- After 3 failed attempts, your IP address is blocked for 5 minutes.
+- When the lockout expires, one additional attempt is granted:
+    - If the attempt fails, your IP address is locked out for another 5 minutes.
+    - If the attempt succeeds, the attempt counter resets and you regain the full 3-attempt allowance.
+- A successful sign-in at any point resets the attempt counter.
+
 ## Sign Out
 
 In the Admin Center, click your name in the top right corner and select **Sign Out**.
