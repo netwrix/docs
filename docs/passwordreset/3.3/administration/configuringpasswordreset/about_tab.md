@@ -15,8 +15,7 @@ To install a new license key, copy the entire license e-mail to the clipboard, a
 license from clipboard.
 
 :::note
-Password Reset includes a 30-day evaluation license for up to 50 users. Please
-[contact Netwrix support](mailto:support@netwrix.com)[](mailto:support@anixis.com) if you would like
-to evaluate Password Reset with more than 50 users.
+Password Reset includes a 30-day evaluation license for up to 50 users. [Contact Netwrix support](mailto:support@netwrix.com)[](mailto:support@anixis.com) to
+evaluate Password Reset with more than 50 users.
 
 :::

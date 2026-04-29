@@ -1,0 +1,44 @@
+@startuml component
+package "Connection" {
+	class Connection {
+		DeactivationExportFulfill : Int32
+		DisplayName_L1 : String
+		HasRefreshSchemaFailed : Boolean
+		Identifier : String
+		Package521 : Int64
+		RefreshSchemaDate : DateTime
+		--
+		Connection : ResourceTypeMapping[]
+		Connector : Connector
+		Package : ConnectionPackage
+		Tables : ConnectionTable[]
+		Transformations : ConnectionTransformation[]
+	}
+}
+package "ResourceTypeMapping" {
+	class ResourceTypeMapping {
+	}
+}
+package "Connector" {
+	class Connector {
+	}
+}
+package "ConnectionPackage" {
+	class ConnectionPackage {
+	}
+}
+package "ConnectionTable" {
+	class ConnectionTable {
+	}
+}
+package "ConnectionTransformation" {
+	class ConnectionTransformation {
+	}
+}
+Connection "1" --  "0..*"ResourceTypeMapping
+Connection "0..*" --  "1"Connector
+Connection "0..*" --  "1"ConnectionPackage
+Connection "1" --  "0..*"ConnectionTable
+Connection "1" --  "0..*"ConnectionTransformation
+hide empty members
+@enduml

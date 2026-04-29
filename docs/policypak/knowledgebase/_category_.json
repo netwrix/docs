@@ -1,0 +1,10 @@
+{
+  "label": "Netwrix PolicyPak Knowledge Base Articles",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "knowledgebase"
+  }
+}

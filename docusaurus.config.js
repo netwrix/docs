@@ -33,7 +33,7 @@ const config = {
 
   // Performance optimizations with Docusaurus Faster
   future: {
-    experimental_faster: {
+    faster: {
       swcJsLoader: true,
       swcJsMinimizer: true,
       swcHtmlMinimizer: true,
@@ -67,6 +67,23 @@ const config = {
           customCss: './src/css/custom.css',
         },
       }),
+    ],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            id: 'changetracker-hub-8-1',
+            spec: 'static/openapi/changetracker-hub-8.1.yaml',
+            route: '/docs/changetracker/8_1/integration/api/reference',
+          },
+        ],
+        theme: {
+          options: {
+            scrollYOffset: '.navbar',
+          },
+        },
+      },
     ],
   ],
 
@@ -218,7 +235,7 @@ const config = {
         logo: {
           alt: 'Netwrix Logo',
           src: 'branding/Netwrix_Logo_Dark.svg',
-          srcDark: 'branding/Netwrix_Logo_Light.svg',
+          srcDark: 'branding/logo-light.svg',
           href: '/',
         },
         items: [

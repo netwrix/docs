@@ -110,9 +110,11 @@ following information:
 
 ![Count – the number of matched items](matcheditemscount.webp)
 
+Use the **Show/Hide Columns** dropdown to customize which columns are visible in the report. The **Date/Time(Client UTC)** column is available in this dropdown but is hidden by default.
+
 From the Filters section, check the **Include old logs prior to 5.7** upgrade option from the ﬁlter
 section to include all logs in your searches. If the option is not selected, the ﬁlters will apply
-only to the new structure of logs.
+only to the new structure of logs. The **Date/Time(Client UTC)** field is also available as a filter option.
 
 ![Content Aware Protection Filters](capfilters.webp)
 
@@ -132,7 +134,7 @@ You can export Content Aware Logs as an Excel, PDF, or CSV or create and export 
 report as a CSV or XLSX ﬁle.
 
 Excel/PDF/CSV – situated above the Content Aware Reports list, this will export only the default
-columns
+columns. The **Date/Time(Client UTC)** column is included in exports when selected via Show/Hide Columns.
 
 ![Export Content Aware Reports](exportreports.webp)
 

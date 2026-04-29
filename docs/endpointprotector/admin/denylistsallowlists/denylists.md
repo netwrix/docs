@@ -401,26 +401,40 @@ future releases.
 
 ![Confguration for Microsoft Information Protection (MIP) ](mipclassification.webp)
 
+
 ## NDC Classification
 
-This section covers the use of and integration with Netwrix Data Classification, including classification within Content Aware Protection and eDiscovery policies.
+This section covers the use of and integration with Netwrix Data Classification (NDC), including classification within Content Aware Protection and eDiscovery policies.
 
-Netwrix Data Classification is a tool designed to help organizations manage and protect their data more effectively by identifying, categorizing, and tagging data based on predefined policies. It assists in understanding where sensitive and valuable data resides, how it is being used, and who has access to it. The primary goals of data classification include enhancing data security, optimizing data management, ensuring compliance with regulations, and facilitating informed decision-making.
+Netwrix Data Classification helps organizations identify, categorize, and tag data based on predefined policies. With NDC, you can understand where sensitive data resides, how it is used, and who has access to it, which supports data security, regulatory compliance, and informed decision-making.
 
-Starting with the 25.12 release, Endpoint Protector allows direct label definition for Content Aware
-Protection and eDiscovery policies via the Endpoint Protector Server interface.
+Starting with the 25.12 release, Endpoint Protector allows direct NDC label definition for Content Aware Protection and eDiscovery policies through the Endpoint Protector Server interface, so you do not need to build custom dictionaries to recognize labeled files.
 
-The Endpoint Protector Server offers the option to define custom labels for policy use like for ex. "ex. Confidential" in:
-- keywords field
-- document label custom field
-- both
+![Configuration for Netwrix Data Classification](NDCClassification.png)
 
-This flexibility allows administrators to avoid creating custom dictionaries to recognize labeled files.
+### Configure an NDC label
 
-NDC labels can be used along other CAP conditions, including content-aware and label-aware data scanning. This enables granular control over data protection based on NDC data classifications.
+Each NDC entry in a denylist defines a single classification to match against Office document properties. Configure the following fields:
+
+- **Name** — the name of the denylist entry.
+- **Description** — an optional description of the entry.
+- **NDC name property value** — the **Field Name** value defined in NDC. NDC stores this as a custom property name in the Office document. Obtain the value from your NDC administrator.
+- **NDC label value** — the label value assigned in NDC. NDC stores this as a custom property value in the Office document. Obtain the value from your NDC administrator.
+- **Look for** — controls which properties Endpoint Protector scans. See [Look for options](#look-for-options) for the behavior of each choice.
 
 :::note
-Label names can be obtained from the NDC administrator. Consider using the exact label definition, such as 'Confidential|Internal' to narrow detection.
+Each NDC entry is uniquely identified by the combination of **NDC name property value** and **NDC label value**. You can configure multiple entries that share the same property name with different label values — for example, `Sensitivity = Confidential` and `Sensitivity = Restricted`.
 :::
 
-![Confguration for Netwrix Data Classification](NDCClassification.png)
+### Look for options
+
+Use the **Look for** field to control how Endpoint Protector matches the classification on a scanned document:
+
+- **NDC name property value** — scans only after the NDC name property value is defined, and ignores all other properties. The **NDC label value** field can be left empty.
+- **NDC label value** — scans only after the NDC label value is defined, and ignores all other properties. The **NDC name property value** field can be left empty.
+- **Both NDC name property + label value** — scans for both the NDC name property and the corresponding label value, as configured.
+- **Keywords** — scans only for the NDC label in the **Keywords** document property, which supports alternative NDC label detection.
+
+:::note
+The NDC labeling feature is supported only on Endpoint Protector Client version 2605.x.x.x and later.
+:::

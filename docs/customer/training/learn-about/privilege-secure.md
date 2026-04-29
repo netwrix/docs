@@ -1,6 +1,6 @@
 ---
 title: Learn About Netwrix Privilege Secure Learning Path
-sidebar_position: 460
+sidebar_position: 480
 tags: [training, privilege-secure]
 keywords: [training, course, privilege secure]
 description: "Learn about Netwrix Privilege Secure through introductory courses"

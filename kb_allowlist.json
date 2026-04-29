@@ -4,7 +4,8 @@
   ],
   "accessanalyzer": [
     "11.6",
-    "12.0"
+    "12.0",
+    "2601"
   ],
   "accessinformationcenter": [
     "11.6",
@@ -47,6 +48,9 @@
   "passwordreset": [
     "3.23",
     "3.3"
+  ],
+  "pingcastle": [
+    "3.5"
   ],
   "privilegesecure": [
     "25.12",

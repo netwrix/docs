@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Define **scalar** Properties"
 description: "Define **scalar** Properties"
 sidebar_position: 20
@@ -14,7 +14,7 @@ Here you will learn how to define **scalar** properties, which contain **scalar*
 
 > For example: `DisplayName`; `Email`; `Identifier`; `StartDate`; etc.
 >
-> ![**scalar** Properties](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition/entitytypecreation_scalarex_v600.webp)
+> ![**scalar** Properties](/images/identitymanager/entitytypecreation_scalarex_v600.webp)
 
 Most often, properties inside Identity Manager are each linked to a property from the managed system. This way, data from the managed system can be imported into Identity Manager and stored in the corresponding property. These properties are **mapped** from the source (see step 2).
 
@@ -34,13 +34,13 @@ Define the entity type's **scalar** properties by proceeding as follows:
 2. In the entity type's **Properties** section, click on **Map **scalar** properties** to display
 existing columns from the external source, and select the properties to be used in the entity type.
 
-    ![Map from source](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition/entitytypecreation_scalarpropertiesmap_v602.webp)
+    ![Map from source](/images/identitymanager/entitytypecreation_scalarpropertiesmap_v602.webp)
 
 You need to configure at least one property to be able to define primary keys later, and thus create an entity type.
 
 3. Fill in the information fields.
 
-    ![**scalar** properties](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition/entitytypecreation_scalarproperties_v603.webp)
+    ![**scalar** properties](/images/identitymanager/entitytypecreation_scalarproperties_v603.webp)
 
     - **APPLICATION METADATA**: fields about the future display of the properties inside Identity
 Manager.
@@ -81,13 +81,13 @@ from Identity Manager to the connected system, whenever different from a string.
             > `thumbnailPhoto` of format `Binary` or `objectCategory` as `RDN` or `pwdLastSet` as
             > `1601 Date`.
 >
-            > ![AD Entity Type - **scalar** Properties](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition/entitytypecreation_examplead2_v602.webp)
+            > ![AD Entity Type - **scalar** Properties](/images/identitymanager/entitytypecreation_examplead2_v602.webp)
 
 4. Click on the Gear symbol to add advanced settings if needed.
 
-    ![Advanced Settings](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition/entitytypecreation_propertiessettings_v602.webp)
+    ![Advanced Settings](/images/identitymanager/entitytypecreation_propertiessettings_v602.webp)
 
-    - `Icon`: can be chosen from [Microsoft's list](https://uifabricicons.azurewebsites.net/) and
+    - `Icon`: can be chosen from [Microsoft's list](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons#available-icons) and
 will be displayed with the property among users' data.
     - **Source Expression**: expression that defines the property based on at least one source
 object. Can be defined by a property path and/or [Expressions](../../../../integration-guide/toolkit/expressions).
@@ -95,7 +95,7 @@ object. Can be defined by a property path and/or [Expressions](../../../../integ
         > For example, `isUnused` is created to spot unused accounts via a combination of
         > `accountExpires` and `lastLogonTimestamp`:
 >
-        > ![Advanced Settings](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition/entitytypecreation_sourceexpressionexample_v60.webp)
+        > ![Advanced Settings](/images/identitymanager/entitytypecreation_sourceexpressionexample_v60.webp)
 
     - `Flexible Comparison Expression`: expression that inserts adaptable comparison flexibility
 when using a searchbar for the property.
@@ -117,7 +117,7 @@ Clicking on **Continue** closes the pop-up window so that you can continue the c
 
 Every time an entity type mapping is modified and saved, a green pop-up appears saying that you should reload the schema to implement the changes. You do not need to click on the button every time. It is essential though to reload after the final changes are made.
 
-![Reload](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/key-selection/entitytypecreation_reload_v522.webp)
+![Reload](/images/identitymanager/entitytypecreation_reload_v522.webp)
 
 The **Reload** button mostly enables your changes to appear in the menu items, which configure the left menu links on the UI's home page.
 
@@ -131,7 +131,7 @@ Before saving, you must first [Select Primary Keys](../../../../user-guide/set-u
 
 If the Format column is not displayed in the External System part, then:
 
-![**scalar** properties](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition/entitytypecreation_scalarpropertieswithoutformat_v522.webp)
+![**scalar** properties](/images/identitymanager/entitytypecreation_scalarpropertieswithoutformat_v522.webp)
 
 Refresh the connections' schemas.
 

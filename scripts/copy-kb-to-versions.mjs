@@ -60,6 +60,14 @@ function buildConfig() {
       return v.version;
     });
 
+    // Build per-version KB source overrides (from optional kbSource field on each version entry)
+    const versionSources = {};
+    product.versions.forEach(v => {
+      if (v.kbSource) {
+        versionSources[v.version] = v.kbSource;
+      }
+    });
+
     // Special handling: KB folder name mapping (for legacy naming)
     const kbFolderName =
       productId === 'recoveryforactivedirectory' ? 'recoveryad' :
@@ -75,6 +83,7 @@ function buildConfig() {
 
     config[productId] = {
       versions: versions,
+      versionSources: versionSources,
       source: `docs/kb/${kbFolderName}`,
       destinationPattern: destinationPattern
     };
@@ -252,6 +261,16 @@ function validateConfig(CONFIG) {
 
     // Validate source path stays under repo root
     validateDestinationPath(productConfig.source);
+
+    // Validate per-version source overrides
+    if (productConfig.versionSources) {
+      for (const [ver, src] of Object.entries(productConfig.versionSources)) {
+        if (typeof src !== 'string') {
+          throw new Error(`Invalid versionSources[${ver}] for product ${product}: expected string`);
+        }
+        validateDestinationPath(src);
+      }
+    }
 
     // Validate destination pattern stays under repo root (sample substitution)
     const testDest = productConfig.destinationPattern.replace('{version}', '1.0');
@@ -600,13 +619,6 @@ function main() {
       console.log(`\n📚 Product: ${product}`);
       console.log('-'.repeat(60));
 
-      // Check if source exists
-      if (!fs.existsSync(config.source)) {
-        console.log(`⚠️  Source not found: ${config.source}`);
-        totalVersionErrors++;
-        continue;
-      }
-
       // Process each version (isolated)
       for (const version of config.versions) {
         // Skip if filtered out
@@ -618,14 +630,24 @@ function main() {
           // Validate version format
           validateVersionFormat(version);
 
+          // Resolve KB source: use per-version override if defined, otherwise fall back to product default
+          const versionSource = config.versionSources?.[version] ?? config.source;
+
           const destination = config.destinationPattern.replace('{version}', version);
 
           // Validate destination path
           validateDestinationPath(destination);
 
           console.log(`\n  📖 Version: ${version}`);
-          console.log(`     Source: ${config.source}`);
+          console.log(`     Source: ${versionSource}`);
           console.log(`     Dest:   ${destination}`);
+
+          // Check if source exists (per-version, since sources may differ)
+          if (!fs.existsSync(versionSource)) {
+            console.log(`     ⚠️  Source not found: ${versionSource}`);
+            totalVersionErrors++;
+            continue;
+          }
 
           // If --clean is set, remove destination first
           if (isClean && fs.existsSync(destination)) {
@@ -644,7 +666,7 @@ function main() {
           // Copy KB content (always happens, regardless of --clean)
           if (!isDryRun) {
             const errorCount = { count: 0 };
-            const result = copyDirectorySync(config.source, destination, config.source, product, errorCount);
+            const result = copyDirectorySync(versionSource, destination, versionSource, product, errorCount);
 
             if (errorCount.count > 0) {
               console.log(`     ⚠️  Copied with ${errorCount.count} file errors`);

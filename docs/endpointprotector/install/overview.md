@@ -11,45 +11,37 @@ environments. Whether you are managing physical hardware, virtual appliances, cl
 infrastructure, or integrating with existing management systems, this resource offers essential
 information and procedures.
 
-We cover a range of deployment methods, including:
+This section covers a range of deployment methods, including:
 
 - Physical and Virtual Appliances: Detailed instructions for configuration, deployment, and
   management.
 - Cloud Platforms: Deployment strategies for AWS, GCP, and Azure, assuming existing cloud accounts
   and basic platform knowledge.
 - Active Directory Integration: Leveraging Group Policy Objects for efficient client deployment.
-- Third-party Management Tools: Utilizing JAMF and Microsoft Intune for streamlined deployment.
+- Third-party Management Tools: using JAMF and Microsoft Intune for streamlined deployment.
 
 :::warning Important
-This section of the documentation is provided as a best-effort guideline to support deployment. It is optional and may not always reflect the latest interface or features, as third-party products can change frequently. For the most up-to-date information, please refer to the official resources from the product vendor.
+This section of the documentation is provided as a best-effort guideline to support deployment. It is optional and may not always reflect the latest interface or features, as third-party products can change frequently. For the most up-to-date information, refer to the official resources from the product vendor.
 :::
 
 ## Staging the Server
 
-To start using Endpoint Protector, a server instance needs to be made available. The server is where
-all endpoint controls and behavior will be configured, and is the vehicle for delivering the
+To start using Endpoint Protector, you need to deploy a server instance. The server hosts all endpoint controls and behavior configuration and delivers the
 Endpoint Protector agent to endpoint systems. There are two principal options for server management;
-Customer-Managed or Provider- Managed. If Customer-Managed is a desired option, the server can be
-installed On-Premise or in a Hosted-Cloud Environment.
+Customer-Managed or Provider- Managed. If Customer-Managed is a desired option, you can install the server On-Premise or in a Hosted-Cloud Environment.
 
-The On-Premise option for a Customer-Managed instance allows for a virtualized image to be set up in
-a customer’s LAN setting. Virtualization options include, but are not limited to: VMware and
+The On-Premise option for a Customer-Managed instance allows you to set up a virtualized image in your LAN. Virtualization options include, but aren't limited to: VMware and
 Hyper-V. The Hosted-Cloud method of deployment allows for use of a customer’s Amazon Web Services
-(AWS), Azure, or Google Cloud Platform (GCP) instance. To obtain more specific information for each
-of these options, see the [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) topic and the
+(AWS), Azure, or Google Cloud Platform (GCP) instance. For more information on each of these options, see the [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) topic and the
 [Cloud Services](/docs/endpointprotector/install/configuration/overview.md) topic.
 
-Alternatively, if a Provider-Managed setup is required, an instance of Endpoint Protector can be
-spun up in an isolated cloud environment. To obtain more details on the Provider- Managed option,
-speak with your Netwrix Account Manager.
+Alternatively, if a Provider-Managed setup is required, Netwrix can deploy an instance of Endpoint Protector in an isolated cloud environment. For details on the Provider-Managed option, speak with your Netwrix Account Manager.
 
-Please note, in order to use the Endpoint Protector Server in a production environment, a License
-Key is required. After purchasing Endpoint Protector with the necessary module(s), your Account
-Manager will assign a license that can be installed within the Endpoint Protector Management Console
-(the configuration interface available on the Endpoint Protector Server).
+:::note
+To use the Endpoint Protector Server in a production environment, a License Key is required. After purchasing Endpoint Protector with the necessary modules, your Account Manager will assign a license that can be installed within the Endpoint Protector Management Console (the configuration interface available on the Endpoint Protector Server).
+:::
 
-The following sections will delve deeper into the different methods used to deploy Endpoint
-Protector, offering step-by-step instructions and best practices.
+The following sections describe the different methods for deploying Endpoint Protector, with step-by-step instructions and best practices.
 
 ## Communication Between Endpoint Protector Server and Netwrix Servers
 
@@ -81,7 +73,7 @@ When connected, Netwrix may access the following metadata information:
   - License utilization
   - Module Activation Status
 
-The above metadata is collected strictly for licensing and statistical purposes. It does not include any customer-sensitive information or content stored or processed by your company.
+Netwrix collects this metadata strictly for licensing and statistical purposes. It doesn't include any customer-sensitive information or content stored or processed by your company.
 
 Additionally, internet connectivity allows your company to:
 
@@ -91,3 +83,32 @@ Additionally, internet connectivity allows your company to:
 :::note 
 All communication with Netwrix servers is governed by the applicable privacy and security policies.
 :::
+
+
+## Unified EPP Clients and Server Versioning
+
+Starting with version 2509, Netwrix standardizes EPP product versioning. The versioning format follows a structured scheme that encodes the release year, month, target platform, and build metadata.
+
+**Key aspects of the new versioning system**
+
+**Structured format:** Version numbers follow the format:
+
+`YYMM.O.C.B`
+
+**`YYMM`** — Release year and month (e.g., `2603` = March 2026)
+
+**`O`** — Target platform or component:
+- `0` = Server
+- `1` = Windows Client
+- `2` = Mac Client
+- `3` = Linux Client
+- `4` = Combined Win-Mac Environments (EE)
+
+**`C`** — Custom/fork/build increment:
+- `0` = internal
+- `1` = standard releases
+- `2+` = customer-specific builds or hotfixes
+
+**`B`** — Optional build number for internal tracking
+
+**Consistency across interfaces:** This versioning format is applied across all UI pages where version numbers appear, including dashboards, reports, maintenance tools, and the EPP Client Notifier.

@@ -1,0 +1,30 @@
+@startuml component
+package "UnicityCheckRule" {
+	class UnicityCheckRule {
+		SourceExpression : String
+		TargetExpression : String
+		--
+		Aspect : Aspect
+		SourceBinding : Binding
+		TargetBinding : Binding
+		TargetEntityType : EntityType
+	}
+}
+package "Aspect" {
+	class Aspect {
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+UnicityCheckRule "0..*" --  "1"Aspect
+UnicityCheckRule "0..*" --  "0..1"Binding
+UnicityCheckRule "0..*" --  "0..1"Binding
+UnicityCheckRule "0..*" --  "1"EntityType
+hide empty members
+@enduml

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Create Activity Session
 
-Follow the steps to create an activity session.
+To create an activity session.
 
 **Step 1 –** Navigate to the Dashboard > Active page.
 
@@ -16,7 +16,7 @@ Follow the steps to create an activity session.
 
 **Step 3 –** On the Request Type page, enter the following information:
 
-- Select Activity – Search for and select an activity from the drop-down list
+- Select Activity – Search for and select an activity from the dropdown list
 
 **Step 4 –** Click Next to go to the Resource Selection page.
 
@@ -24,7 +24,7 @@ Follow the steps to create an activity session.
 
 **Step 5 –** On the Resource Selection page, enter the following information:
 
-- Select the resource(s) from the table
+- Select the resources from the table
 - (Optional) Click View Selections to view all selected resources
 
 **Step 6 –** Click **Next** to go to the Notes page.
@@ -53,7 +53,7 @@ Follow the steps to create an activity session.
 **Step 12 –** Click Finish to create the session.
 
 The new session is created and is shown in the applicable dashboard in the Dashboard interface. If
-approval is required, the status Waiting for Approval is shown. The requester cannot log in to the
+approval is required, the status Waiting for Approval is shown. The requester can't log in to the
 session until the request is approved and the status changes to Available.
 
 When the status Available is shown, the remote session is ready. Click the Connection icon to begin

@@ -22,7 +22,7 @@ report via email).
 ![reportstree](/images/privilegesecure/4.1/accessmanagement/admin/auditreporting/page/reportstree.webp)
 
 The Search Reports box will search all report names, both predefined and custom, for the specified
-report name. The report tree will then be filtered down to the matching reports.
+report name. The report tree then be filtered down to the matching reports.
 
 ## Report Folders
 
@@ -74,22 +74,22 @@ The Filters tab has the following configuration options:
 
 - Save – Saves the report and add it to the My Reports folder in the report tree
 - Cancel – Cancels the creation of the report and clear all edits that have been made to the new
-  report
-- Source Drop-down List – Contains data sources that allow the report to look at different data sets
-  related to Privilege Secure administration. See the [Data Sources](#data-sources) topic for
-  additional information.
-- Timeframe Drop-down List – Contains a number of predefined timeframes, ranging from “Last Hour” to
-  “Last 30 Days”. Additionally, “Custom” can be selected, which makes visible a “Start date” date
-  picker and an “End date” date picker.
-- Attribute Drop-down List – Contains attributes from the given Source that can be paired with an
-  operator and a value
-- Operator – Contains operators that can be used to filter an attribute
+report
+- Source dropdown List – Contains data sources that allow the report to look at different data sets
+related to Privilege Secure administration. See the [Data Sources](#data-sources) topic for
+additional information.
+- Timeframe dropdown List – Contains several predefined timeframes, ranging from “Last Hour” to
+“Last 30 Days”. Additionally, “Custom” can be selected, which makes visible a “Start date” date
+picker and an “End date” date picker.
+- Attribute dropdown List – Contains attributes from the given Source that can be paired with an
+operator and a value
+- Operator – Contains operators that lets you filter an attribute
 - Value – This field allows manual entry of a value against which the operator will be applied. The
-  field also offers a drop-down menu which is populated with values from the backend database.
+field also offers a dropdown menu which is populated with values from the backend database.
 
 ### Data Sources
 
-The Source drop-down list contains the following data sources for reports.
+The Source dropdown list contains the following data sources for reports.
 
 **Activity Sessions**
 
@@ -147,29 +147,29 @@ identically.
 
 ### Filters Tab
 
-Customize the desired configuration settings in the Filters tab.
+Customize the configuration you want settings in the Filters tab.
 
 ![filterstab](/images/privilegesecure/4.1/accessmanagement/admin/auditreporting/page/filterstab.webp)
 
 The Filters tab has the following configuration options:
 
 - Run Query – Runs the query for the given report, and returns any data matching the configured
-  query
+query
 - Download Report – Generates and downloads the report, either as PDF or as CSV
 - Save – Saves any modifications to the report. If this is a predefined or platform based report, it
-  will save as a new report under My Reports
+saves as a new report under My Reports
 - Delete **(available for custom reports only)** – Deletes the custom report
-- Source Drop-down List – Contains data sources that allow the report to look at different data sets
-  related to Privilege Secure administration. See the [Data Sources](#data-sources) topic for
-  additional information.
-- Timeframe Drop-down List – Contains several predefined timeframes, ranging from “Last Hour” to
-  “Last 30 Days”. Additionally, “Custom” can be selected, which makes visible a “Start date” date
-  picker and an “End date” date picker.
-- Attribute Drop-down List – Contains attributes from the given Source that can be paired with an
-  operator and a value.
-- Operator – Contains operators that can be used to filter an attribute.
+- Source dropdown List – Contains data sources that allow the report to look at different data sets
+related to Privilege Secure administration. See the [Data Sources](#data-sources) topic for
+additional information.
+- Timeframe dropdown List – Contains several predefined timeframes, ranging from “Last Hour” to
+“Last 30 Days”. Additionally, “Custom” can be selected, which makes visible a “Start date” date
+picker and an “End date” date picker.
+- Attribute dropdown List – Contains attributes from the given Source that can be paired with an
+operator and a value.
+- Operator – Contains operators that lets you filter an attribute.
 - Value – Allows manual entry of a value against which the operator will be applied. The field also
-  offers a drop-down menu which is populated with values from the backend database.
+offers a dropdown menu which is populated with values from the backend database.
 
 ### Subscriptions Tab
 
@@ -185,9 +185,9 @@ a new custom schedule is needed for a Subscription, one can be created under the
 The Subscriptions tab has the following configuration options:
 
 - Search – Allows the subscriptions for this report to be searched based on the username of the
-  subscribed Privilege Secure user
+subscribed Privilege Secure user
 - Subscribe/Unsubscribe button – Subscribe or unsubscribe the logged in user to the report according
-  to a specified schedule from the drop-down menu
+to a specified schedule from the dropdown menu
 - CSV checkbox – If checked, a CSV of the report will be emailed to the subscribed user
 - PDF checkbox – If checked, a PDF of the report will be emailed to the subscribed user
 - Subscriptions table – Shows the subscribed users for the report, and their subscription schedule

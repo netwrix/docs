@@ -6,13 +6,11 @@ sidebar_position: 20
 
 # Filter
 
-## What is a filter?
+## Filter overview
 
 The freely configurable filters of the PSR client provide all methods for easy retrieval of stored
-data. The filter criteria are always adapted according to the module in which you are currently
-located. When you select one or several search criteria, and click on “Apply filter”, the results
-will be displayed in the list view. If necessary, this process can be repeated as desired and
-further restrictions can be added.
+data. The filter criteria are always adapted according to the module in which you're located. When you select one or several search criteria, and click “Apply filter”, the results
+will be displayed in the list view. If necessary, this process can be repeated as desired, and further restrictions can be added.
 
 ## Relevant rights
 
@@ -24,10 +22,10 @@ The following option is required for editing filters:
 
 ![Filter](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/filter/installation_with_parameters_10-en.webp)
 
-## Who is allowed to use the filter?
+## Filter permissions
 
 The filter is an indispensable working tool because of the possibility to restrict existing results
-according to individual requirements. Consequently, all users can use the filter. It is, of course,
+according to individual requirements. Consequently, all users can use the filter. It's, of course,
 possible to place restrictions for filter criteria. This means that the filter criteria available to
 individual employees can be restricted by means of
 [Authorization and protection mechanisms](/docs/passwordsecure/9.1/configuration/webapplication/authorization_and_protection_mechanisms.md).
@@ -39,8 +37,8 @@ password if he has the read permission for that form.
 There are no permissions for
 [Tags](/docs/passwordsecure/9.1/configuration/advancedview/operationandsetup/tags.md).
 This means that any employee can use any tags. The display order in the filter is determined by the
-frequency of use. This process is not critical to security, since tags do not grant any permissions.
-They are merely a supportive measure for filtering.
+frequency of use. This process isn't critical to security, since tags don't grant any permissions.
+They're merely a supportive measure for filtering.
 :::
 
 
@@ -55,7 +53,7 @@ authorization.
 
 ![editing criteria](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/filter/installation_with_parameters_11-en.webp)
 
-As you can see, 133 records are not really manageable. In most situations you will need to reduce
+As you can see, 133 records aren't really manageable. In most situations you'll need to reduce
 the number of records by adding filters.
 
 **Adding filter criteria**
@@ -64,7 +62,7 @@ The filter **organization** can be applied directly to the authorizations to res
 records according to the authorizations granted. In this case, the logged-on user holds rights for
 various areas. However, it would like to see only those records which are assigned to the **Own
 passwords** area within the organisational structure. In addition, there should be further
-restrictions, which could be formulated as in the following sentence: “Deliver all records from my
+restrictions, which could be formulated as in the following sentence: “Deliver all records from the
 own passwords that were created with the form **password** and which contain the expression **2016**
 and the tag **Administrator**.
 
@@ -74,8 +72,8 @@ As can be seen, the filter delivers the desired results. The extent to which the
 match the three remaining data sets is assigned in colour.
 
 :::warning
-When filtering with several criteria, such as forms, content and tags, all filter
-criteria must be complied with. It is therefore a logical “AND operation”. Other possible methods
+When filtering with several criteria, such as forms, content, and tags, all filter
+criteria must be complied with. It's therefore a logical “AND operation”. Other possible methods
 for linking criteria are described in detail in the Advanced Filter Settings.
 :::
 
@@ -95,15 +93,15 @@ address:**
 
 ![Content filter](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/filter/installation_with_parameters_14-en.webp)
 
-It is very easy to abstract, because of the present example, that the filter can be adapted to your
-personal requirements. It is thus the most important tool to be able to retrieve data once stored in
+It's very easy to abstract, because of the present example, that the filter can be adapted to your
+personal requirements. It's thus the most important tool to be able to retrieve data once stored in
 the database.
 
 :::warning
 The effectiveness of the filter is closely linked to data integrity. Only when data is
-kept clean, efficient operation with the filter is ensured. It is important that employees are
+kept clean, efficient operation with the filter is ensured. It's important that employees are
 trained in the correct handling of the filter tool as well as when creating the records. Workshops
-show the best success rate in this context. If you require further information, contact us under
-mail to: sales@passwordsafe.de.
+show the best success rate in this context. For further information, contact the sales team at
+sales@passwordsafe.de.
 
 :::

@@ -1,0 +1,9 @@
+extends: existence
+message: "Avoid '%s'. Documentation should describe the current state without temporal qualifiers."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - '\bcurrently\b'
+  - '\bpresently\b'
+  - '\bas of this writing\b'

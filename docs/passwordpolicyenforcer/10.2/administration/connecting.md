@@ -18,7 +18,7 @@ all the domain controllers in the domain, so you only need to configure one doma
 each domain. If you are using Password Policy Enforcer in more than one domain, then you will need
 to configure each domain separately.
 
-Follow the steps below to connect to a domain configuration.
+Complete the following steps to connect to a domain configuration.
 
 **Step 1 –** Click the **Netwrix Password Policy Enforcer** item to display the Password Policy
 Enforcer view.
@@ -30,21 +30,21 @@ Enforcer view.
 **Step 4 –** Enter the **name** or **IP address** of a domain controller, then click **OK**.
 
 :::note
-You cannot make changes to the Password Policy Enforcer configuration while the management
+You can't make changes to the Password Policy Enforcer configuration while the management
 console is connected to a read-only domain controller.
 :::
 
 
 ## Connecting to a Local Configuration
 
-A local configuration is used by only one computer, so it does not replicate to any other computers.
+A local configuration applies to only one computer, so it doesn't replicate to any other computers.
 You can copy a local configuration to another computer by exporting the configuration from the
 registry, and then importing it into the registry of the other computer. You can also use Group
 Policy to distribute a local configuration to many computers. See the
 [Domain and Local Policies](/docs/passwordpolicyenforcer/10.2/administration/domain_and_local_policies.md)
 topic for additional information.
 
-Follow the steps below to connect to a computer's local configuration.
+Complete the following steps to connect to a computer's local configuration.
 
 **Step 1 –** Click the **Netwrix Password Policy Enforcer** item to display the Password Policy
 Enforcer view.

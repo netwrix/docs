@@ -1,6 +1,6 @@
 ---
 description: >-
-  Netwrix OneSecutre may report the Password never expires setting as enabled
+  Netwrix 1Secure may report the Password never expires setting as enabled
   for accounts even though Active Directory shows it as disabled. This article
   explains the cause (a GPO with maxPasswordAge=0) and how to resolve it.
 keywords:
@@ -9,7 +9,7 @@ keywords:
   - GPO
   - Group Policy
   - Active Directory
-  - Netwrix OneSecutre
+  - Netwrix 1Secure
   - password policy
   - report
 products:
@@ -29,8 +29,8 @@ In Netwrix 1Secure, the **Password never expires** setting is incorrectly report
 
 ## Cause
 
-A GPO with the `maxPasswordAge=0` parameter is applied to the affected accounts. The parameter causes Netwrix OneSecutre to report the **Password never expires** setting as enabled.
+A GPO with the `maxPasswordAge=0` parameter is applied to the affected accounts. The parameter causes Netwrix 1Secure to report the **Password never expires** setting as enabled.
 
 ## Resolution
 
-In the corresponding GPO, set the `maxPasswordAge` parameter to any non-zero value. This will allow Netwrix OneSecutre to correctly report the affected accounts.
+In the corresponding GPO, set the `maxPasswordAge` parameter to any non-zero value. This will allow Netwrix 1Secure to correctly report the affected accounts.

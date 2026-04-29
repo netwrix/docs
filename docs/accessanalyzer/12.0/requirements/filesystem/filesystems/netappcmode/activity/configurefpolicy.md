@@ -20,8 +20,8 @@ There are two ways to configure FPolicy:
   mode allows you to fine tune FPolicy by excluding certain volumes or shares from being monitored.
   It also reduces product permissions.
 
-Regardless of the chosen approach for FPolicy configuration, one also needs to perform extra steps
-if the FPolicy communication has to be secured with TLS.
+Regardless of the FPolicy configuration approach, perform extra steps if you need to secure FPolicy
+communication with TLS.
 
 ## TLS Authentication Options
 
@@ -29,34 +29,32 @@ There are two TLS FPolicy Authentication options that can be used:
 
 - TLS, server authentication – Server only authentication
 
-    - A certificate (Server Certificate) for the Agent server needs to be generated and copied to a
-      PEM file. The Server Certificate PEM file needs to be saved locally on the Activity Monitor
-      Console server.
-    - For manual FPolicy configuration, the Server Certificate needs to be installed on the SVM, and
-      then server-authentication set.
+    - Generate a Server Certificate for the Agent server and copy it to a PEM file. Save the Server
+      Certificate PEM file locally on the Activity Monitor Console server.
+    - For manual FPolicy configuration, install the Server Certificate on the SVM and then set
+      server-authentication.
     - For automatic FPolicy configuration, the Activity Monitor manages installation of the Server
       Certificate.
 
 - TLS, mutual authentication – Mutual authentication
 
-    - A certificate (Server Certificate) for the Agent server needs to be generated and copied to a
-      PEM file. The Server Certificate PEM file needs to be saved locally on the Activity Monitor
+    - Generate a Server Certificate for the Agent server and copy it to a PEM file. Save the Server
+      Certificate PEM file locally on the Activity Monitor Console server.
+    - Copy the SVM's Client Certificate to a PEM file and save it locally on the Activity Monitor
       Console server.
-    - A certificate (Client Certificate) for the SVM needs to be copied to a PEM file and saved
-      locally on the Activity Monitor Console server.
-    - For manual FPolicy configuration, the Server Certificate needs to be installed on the SVM and
-      then mutual-authentication set.
-    - For automatic FPolicy configuration, mutual-authentication set before the configuration
+    - For manual FPolicy configuration, install the Server Certificate on the SVM and then set
+      mutual-authentication.
+    - For automatic FPolicy configuration, set mutual-authentication before the configuration
       process. The Activity Monitor manages installation of both certificates.
 
 ### Generate Server Certificate
 
-A certificate (Server Certificate) for the Agent server needs to be generated and copied to a PEM
-file. This is required for both of the TLS authentication options.
+Generate a Server Certificate for the Agent server and copy it to a PEM file. Both TLS
+authentication options require this certificate.
 
 The PEM file must contain both Public Key and Private Key parts. A certificate may be self-signed or
-issued by a certification authority. Below are the steps for generation of a self-signed certificate
-using OpenSSL toolkit.
+issued by a certification authority. The following steps generate a self-signed certificate using
+the OpenSSL toolkit.
 
 Use the following command on the agent server to create the Server Certificate and copy it to a .pem
 file:
@@ -108,7 +106,7 @@ during Part 6 of manual configuration and prior to automatic configuration:
 **Step 3 –** Copy the value of Public Key Certificate field to a PEM file. The value spans multiple
 lines, starts with "`----BEGIN CERTIFICATE-----`" and ends with "`-----END CERTIFICATE-----`".
 
-The Client Certificate PEM file has been created.
+The Client Certificate PEM file is ready.
 
 ## Persistent Store
 
@@ -158,9 +156,8 @@ This command is available to cluster administrators at the admin privilege level
 :::
 
 
-It is recommended to allow the volume to be created automatically. In this case, the FPolicy
-subsystem manages the volume, maintains the directory structure, and protects it from accidental
-deletion by marking it as not mountable.
+Allow the FPolicy subsystem to create the volume automatically. It manages the volume, maintains
+the directory structure, and protects it from accidental deletion by marking it as not mountable.
 
 If you choose to create the volume manually, ensure the following:
 
@@ -172,8 +169,8 @@ NetApp documentation.
 
 ## Manually Configure FPolicy
 
-This section describes how to manually configure FPolicy. Manual configuration of the FPolicy is
-recommended if the policy needs to be scoped to monitor select volumes or shares. It is necessary to
+This section describes how to manually configure FPolicy. Use manual configuration when you need to
+scope the policy to monitor specific volumes or shares. It is necessary to
 create several FPolicy components and then enable the FPolicy. See the sections corresponding to
 each part of this list:
 
@@ -223,8 +220,7 @@ each part of this list:
 
 ### Part 1: Install Server Certificate on the SVM
 
-If using the TLS authentication options, it is necessary to install the Server Certificate on the
-SVM.
+If using the TLS authentication options, install the Server Certificate on the SVM.
 
 Use the following command to install the Server Certificate:
 
@@ -324,8 +320,7 @@ Maximum Notification Retention Duration: 3m
                  External Engine Format: xml
 ```
 
-Relevant NetApp Documentation: To learn more about creating an external engine, please visit the
-NetApp website and read the
+For more information about creating an external engine, see the
 [vserver fpolicy policy external-engine create](https://docs.netapp.com/us-en/ontap-cli-9141/vserver-fpolicy-policy-external-engine-create.html)
 article.
 
@@ -355,9 +350,8 @@ IMPORTANT:
     - `monitor-fileop-failure` – `true `or `false`, indicates whether failed file operations are
       reported.
 
-- Limiting the file operations to be monitored is an excellent way to limit the performance impact
-  the FPolicy will have on the NetApp device. The file operations from which to choose are below
-  with additional filter options:
+- Limiting monitored file operations reduces the performance impact on the NetApp device. The
+  following file operations are available, with filter options:
 
     - `create` – File create operations
     - `create_dir` – Directory create operations
@@ -503,8 +497,7 @@ Ontap915::> fpolicy policy event show -vserver svm0 -event-name StealthAUDITScre
 Send Failed File Operation Notifications: false
 ```
 
-Relevant NetApp Documentation: To learn more about creating an event, please visit the NetApp
-website and read the
+For more information about creating an event, see the
 [vserver fpolicy policy event create](https://docs.netapp.com/us-en/ontap-cli-9141/vserver-fpolicy-policy-event-create.html)
 article.
 
@@ -580,9 +573,9 @@ StealthAUDITPersistentStore -instance
  Size of the Persistent Store: 5GB  
  Autosize Mode for the Volume: grow_shrink
 
-Visit the NetApp website and see the
+For more information about creating a Persistent Store, see the
 [vserver fpolicy persistent store create](https://docs.netapp.com/us-en/ontap-cli/vserver-fpolicy-persistent-store-create.html)
-article for additional information about creating a Persistent Store.
+article.
 
 ### Part 5: Create FPolicy Policy
 
@@ -685,16 +678,15 @@ User Name for Privileged Access: -
           Persistent Store Name: -
 ```
 
-Relevant NetApp Documentation: To learn more about creating a policy, please visit the NetApp
-website and read the
+For more information about creating a policy, see the
 [vserver fpolicy policy create](https://docs.netapp.com/us-en/ontap-cli/vserver-fpolicy-policy-create.html)
 article.
 
 ### Part 6: Create FPolicy Scope
 
-The FPolicy scope creates the filters necessary to perform scans on specific shares or volumes. It
-is possible to set the scope to monitor all volumes or all shares by replacing the volume/share name
-variable [SVM_NAME] in the command with an asterisk (\*).
+The FPolicy scope creates the filters necessary to perform scans on specific shares or volumes. To
+monitor all volumes or all shares, replace the volume/share name variable [SVM_NAME] in the command
+with an asterisk (\*).
 
 IMPORTANT:
 
@@ -749,15 +741,13 @@ File Extensions to Include: -
 File Extensions to Exclude: -
 ```
 
-Relevant NetApp Documentation: To learn more about creating scope, please visit the NetApp website
-and read the
+For more information about creating scope, see the
 [vserver fpolicy policy scope create](https://docs.netapp.com/us-en/ontap-cli-9141/vserver-fpolicy-policy-scope-create.html)
 article.
 
 ### Part 7: Set TLS Authentication
 
-If using the TLS authentication options, it is necessary to set authentication for the type of
-authentication.
+If using the TLS authentication options, set the appropriate authentication type.
 
 #### Set Server-Authentication
 
@@ -797,7 +787,7 @@ vserver fpolicy policy external-engine show -fields ssl-option
 
 ### Part 8: Enable the FPolicy
 
-The FPolicy must be enabled before the Activity Monitor Agent can be configured to monitor the SVM.
+Enable the FPolicy before configuring the Activity Monitor Agent to monitor the SVM.
 
 IMPORTANT:
 
@@ -836,8 +826,7 @@ svm0          StealthAUDIT                  10  on
                                                          DITEngine
 ```
 
-Relevant NetApp Documentation: To learn more about enabling a policy, please visit the NetApp
-website and read the
+For more information about enabling a policy, see the
 [vserver fpolicy enable](https://docs.netapp.com/us-en/ontap-cli-9121//vserver-fpolicy-enable.html)
 article.
 
@@ -891,13 +880,13 @@ in the monitored host properties. The volume will be automatically created if it
 exist. See the [Persistent Store](#persistent-store) topic for additional information on the
 recommended volume size.
 
-If using the TLS, mutual authentication option, you will need to create the PEM file for the Client
-Certification, which is needed during the monitored host configuration in the Activity Monitor. It
-will also be necessary to set mutual authentication on the SVM.
+If using the TLS, mutual authentication option, create the PEM file for the Client Certificate,
+which you need during the monitored host configuration in the Activity Monitor. You must also set
+mutual authentication on the SVM.
 
 ### Set TLS Mutual-Authentication
 
-If using the TLS, mutual authentication options, it is necessary to set authentication.
+If using the TLS, mutual authentication options, set authentication as follows.
 
 Use the following command to set mutual-authentication:
 

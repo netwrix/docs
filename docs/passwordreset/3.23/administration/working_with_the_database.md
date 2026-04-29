@@ -59,7 +59,7 @@ net start "ANIXIS Password Reset"
 :::note
 Change the paths above if the database files are in a different folder. See the
 [Database](/docs/passwordreset/3.23/administration/configuring_password_reset.md#database)
-topic for more information.
+topic for database path configuration steps.
 :::
 
 
@@ -86,14 +86,13 @@ stored securely.
 
 ## Moving to SQL Server
 
-Some planning is needed before moving the database to SQL Server. A trial run on a lab network is
-recommended. You can run the Data Copy wizard more than once if you cannot complete the move on the
+Plan the database migration before moving to SQL Server. Netwrix recommends a trial run on a lab network. You can run the Data Copy wizard more than once if you can't complete the move on the
 first attempt. A move back to SQL Server Compact is also possible.
 
 ### Create the Database
 
 Your database administrator needs to set up the SQL Server database. The instructions below are an
-overview of the procedure, they are not step-by-step instructions. APR V3.23 has been tested with
+overview of the procedure, they aren't step-by-step instructions. APR V3.23 has been tested with
 SQL Server 2012 to 2019.
 
 Follow the instructions below for an overview of the procedure.
@@ -119,7 +118,7 @@ wizard also needs to be added to the db_datawriter and db_ddladmin server roles.
 
 Additional permissions can be set for users of the Data Console after the tables are created. Grant
 the DELETE privilege on the Usr table to users who are allowed to delete user records. Deny all
-privileges on the VerificationCode and EnrollRecord columns in the User table as they are not used
+privileges on the VerificationCode and EnrollRecord columns in the User table as they aren't used
 by the Data Console.
 
 ### Create the Tables and Copy the Data
@@ -148,7 +147,7 @@ connection settings for the service account later. The **Username** and **Passwo
 if **SQL Server Authentication** is selected. The user must be in the db_datareader, db_datawriter,
 and db_ddladmin SQL Server roles. **Encrypt connection** should be selected to protect user
 information, and **Trust server certificate** must be selected if SQL Server is using a self-signed
-certificate. SQL Server uses a self-signed certificate if a trusted certificate is not installed.
+certificate. SQL Server uses a self-signed certificate if a trusted certificate isn't installed.
 The SQL Server Native Client must be installed if **Trust server certificate** is selected.
 
 ![working_with_the_database_1](/images/passwordreset/3.23/administration/working_with_the_database_1.webp)
@@ -182,20 +181,20 @@ to a named instance.
 option should be selected to protect user information.
 
 **Step 8 –** Select the **Trust server certificate** option if SQL Server is using a self-signed
-certificate. SQL Server uses a self-signed certificate if a trusted certificate is not installed.
-Password Reset cannot connect to SQL Server with a self-signed certificate if this option is not
+certificate. SQL Server uses a self-signed certificate if a trusted certificate isn't installed.
+Password Reset can't connect to SQL Server with a self-signed certificate if this option isn't
 selected. The SQL Server Native Client must be installed if **Trust server certificate** is
 selected.
 
 **Step 9 –** Click **OK**, and then click **Apply**.
 
-**Step 10 –** Restart the Password Reset service. If the service does not start, then check the
+**Step 10 –** Restart the Password Reset service. If the service doesn't start, then check the
 database connection options and the SQL Server login, user, and server roles configured earlier. You
 can change the database back to SQL Server Compact while you troubleshoot the issue.
 
 ### Other Tasks
 
-Open the Data Console and set your SQL Server connection options. You will need to enter a password
+Open the Data Console and set your SQL Server connection options. You must enter a password
 every time you open the Data Console if **SQL Server Authentication** is selected. The Data Console
 executable and help file (APRDC.exe and APR.chm) can be copied to the computers of other users who
 will use the Data Console.

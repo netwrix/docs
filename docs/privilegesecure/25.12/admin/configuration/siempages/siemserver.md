@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # SIEM Server Page
 
-The SIEM Server page is accessible from the Navigation pane under Configuration > SIEM. Privilege
+The SIEM Server page is accessible from the Navigation pane under Configuration > SIEM. Privilege
 Secure can output events to third-party SIEM solutions for reporting, correlation, and notification.
 The SIEM Servers page define the SIEM endpoint, the method of connection, and the SIEM template to
 be used.
@@ -31,7 +31,7 @@ template to define the format/data to be sent.
 ### SIEM Service
 
 Events destined for SIEM Servers are sent to a queue. The SIEM service is responsible for pulling
-events out the queue and processing them. Multiple SIEM services may be used to process high volumes
+events out the queue and processing them. Multiple SIEM services process high volumes
 of events.
 
 ![SIEM Serivce Page](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/siemservice.webp)

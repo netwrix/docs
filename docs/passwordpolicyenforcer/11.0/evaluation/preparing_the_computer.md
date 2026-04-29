@@ -13,7 +13,7 @@ enforce policies for local accounts.
 ## Disable the Windows Password Policy Rules
 
 If the Password Policy Enforcer and Windows password policies are both enabled, then users must
-comply with both policies. This is not recommended for the evaluation because the Windows policy may
+comply with both policies. This isn't recommended for the evaluation because the Windows policy may
 stop users from reusing recent passwords, or from changing their password more than once a day.
 These restrictions can make it difficult to evaluate Password Policy Enforcer.
 
@@ -41,7 +41,7 @@ This procedure disables the Windows password policy:
 
 **Step 4 –** Enter **0** in the text box, then click **OK**.
 
-**Step 5 –** Repeat the step above for the Maximum Password Age and Minimum Password Length
+**Step 5 –** Repeat this step for the Maximum Password Age and Minimum Password Length
 policies.
 
 **Step 6 –** Double-click the **Group Policy Management Editor**.
@@ -54,7 +54,7 @@ policies.
 
 ## Create Test Accounts
 
-Create two user accounts for the evaluation, **PPETestUser** and **PPETestAdmin**.
+Create two user accounts for the evaluation: **PPETestUser** and **PPETestAdmin**.
 
 ![preparing_the_computer_1](/images/passwordpolicyenforcer/11.0/evaluation/preparing_the_computer_1.webp)
 

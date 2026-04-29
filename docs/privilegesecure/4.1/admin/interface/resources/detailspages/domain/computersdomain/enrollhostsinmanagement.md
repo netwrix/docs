@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Enroll Hosts in Management Window
 
-Follow these steps to add a computer as NPS Managed Resource:
+To add a computer as NPS Managed Resource:
 
 **Step 1 –** Navigate to **Resources** page.
 
