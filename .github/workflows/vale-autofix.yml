@@ -135,27 +135,11 @@ jobs:
           echo "fixed=$PHASE1_TOTAL" >> "$GITHUB_OUTPUT"
           echo "Phase 1 fixed $PHASE1_TOTAL issue(s)"
 
-      - name: Commit Phase 1 fixes
-        id: phase1-commit
-        if: steps.phase1.outputs.fixed > 0
-        run: |
-          if git diff --quiet; then
-            echo "committed=false" >> "$GITHUB_OUTPUT"
-          else
-            git add -A docs/
-            git commit -m "fix(vale): auto-fix substitutions and removals"
-            echo "committed=true" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Update heading anchors (Phase 1)
-        if: steps.phase1-commit.outputs.committed == 'true'
+        if: steps.phase1.outputs.fixed > 0
         run: |
           RESULT=$(bash scripts/vale-autofix.sh --anchors-only 2>&1 || true)
           echo "$RESULT"
-          if ! git diff --quiet; then
-            git add -A docs/
-            git commit -m "fix(vale): update anchor links for changed headings"
-          fi
 
       - name: Re-run Vale for remaining violations
         id: vale-remaining
@@ -239,13 +223,7 @@ jobs:
             }
             ```
 
-            After writing the summary, stage and commit your changes:
-            ```bash
-            git add -A docs/
-            git commit -m "fix(vale): auto-fix rewrites (AI-assisted)"
-            ```
-
-            IMPORTANT: Write the summary JSON file BEFORE committing. Do NOT run git push — the workflow handles pushing. Do not post any PR comments.
+            IMPORTANT: Write the summary JSON file, then stop. Do NOT run any git commands — the workflow handles staging, committing, and pushing in a single combined commit. Do not post any PR comments.
           claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
 
       - name: Phase 3 — Dale fixes
@@ -307,14 +285,20 @@ jobs:
             ```
             If no issues found, write: {"fixed": [], "skipped": []}
 
-            Step 6: Stage and commit your changes:
-            ```bash
-            git add -A docs/
-            git commit -m "fix(dale): auto-fix documentation issues (AI-assisted)"
-            ```
+            Step 6: Write the summary JSON file (see Step 5 format above), then stop.
 
-            IMPORTANT: Write the summary JSON file BEFORE committing. Do NOT run git push — the workflow handles pushing. Do not post any PR comments.
+            IMPORTANT: Do NOT run any git commands — the workflow handles staging, committing, and pushing in a single combined commit. Do not post any PR comments.
           claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
+
+      - name: Commit all fixes
+        if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
+        run: |
+          git add -A docs/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "fix(vale): auto-fix style issues (Vale + Dale)"
+          fi
 
       - name: Push all fixes
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
