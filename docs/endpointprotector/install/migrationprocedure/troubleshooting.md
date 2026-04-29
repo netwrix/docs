@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Troubleshooting Common Issues
 
-## Backup Restore Fails or Is Rejected by 2510
+## Backup Restore Fails or Is Rejected by the Server
 
 **Symptom:** The import wizard rejects the backup file or shows an error.
 
@@ -57,7 +57,7 @@ If the fix script doesn't bring the file below 200 MB, contact Netwrix Support f
 
 **Symptom:** SIEM integration stops receiving events after restore.
 
-**Resolution:** SIEM functionality may require reconfiguration after migration. Contact Netwrix Support and provide diagnostic logs — Netwrix Support may need to run a specialized restoration script.
+**Resolution:** SIEM functionality may require reconfiguration after migration.
 
 ---
 

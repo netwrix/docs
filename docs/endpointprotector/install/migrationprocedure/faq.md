@@ -25,7 +25,7 @@ Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 onto 2510 wi
 
 ## Restoring a 2509 Backup onto a 2510 Server
 
-This is supported. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. Once patched to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
+Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. Once patched to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
 
 ---
 
@@ -208,7 +208,9 @@ Approximate time estimates based on real migration experience:
 | Background DB tasks post-patch | Up to 24 hours (scheduled at 9 PM nightly) |
 | System backup creation at 5.9.4.2 | 5–30 minutes depending on config size |
 | New 2510 VM deployment and network config | 30–60 minutes |
-| Backup restore on 2510 | 15–45 minutes |
+| Trial license activation on 2510 | 5 minutes |
+| Upgrade 2510 to 2604 | 15–30 minutes |
+| Backup restore on 2604 | 15–45 minutes |
 | License re-import and verification | 5–10 minutes |
 | Client package uploads | 10–20 minutes |
 | Integration reconfiguration and testing | 30–90 minutes |
