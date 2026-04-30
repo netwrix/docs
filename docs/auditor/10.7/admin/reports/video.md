@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Reports with Video
 
-Netwrix Auditor can be configured to capture video of user activity on the monitored computers that
-helps analyze and control changes made there. When you click a link, a video player opens and
+You can configure Netwrix Auditor to capture video of user activity on the monitored computers, which
+helps you analyze and control changes made there. When you click a link, a video player opens and
 playback of the recorded user activity starts, showing launched applications, actions, etc.
 
 To view reports with video, navigate to Reports → User Activity.
