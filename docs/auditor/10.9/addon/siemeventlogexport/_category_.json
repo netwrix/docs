@@ -1,0 +1,10 @@
+{
+  "label": "SIEM Generic Integration for Event Log Export",
+  "position": 230,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}
