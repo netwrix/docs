@@ -57,12 +57,12 @@ SPKI hashes survive certificate renewal as long as the key pair is unchanged. Re
 Before connecting NAM agents to AA2601:
 
 - **Netwrix Activity Monitor** must be installed and monitoring the hosts for which you want real-time activity in AA2601. Confirm monitoring is active before adding the AA2601 output.
-- **TLS certificates** must be provisioned on the AA2601 server. The server certificate and private key paths are set via the environment variables `SYSLOG_TLS_CERT_PATH` and `SYSLOG_TLS_KEY_PATH`. Contact your infrastructure team if the listener is not starting.
+- **TLS certificates** must be provisioned on the AA2601 server. The server certificate and private key paths are set via the environment variables `SYSLOG_TLS_CERT_PATH` and `SYSLOG_TLS_KEY_PATH`. Contact your infrastructure team if the listener isn't starting.
 - **Network connectivity** must allow NAM agents to reach AA2601 on TCP port 4504 (default) through any firewalls or network policies.
 - You must have **Administrator** access to AA2601 to generate enrollment tokens and view enrolled agents.
 
 :::note
-Activity data flows from NAM to AA2601 — AA2601 does not initiate the connection. Ensure firewalls allow outbound traffic from each NAM agent host to the AA2601 server on the configured listener port.
+Activity data flows from NAM to AA2601 — AA2601 doesn't initiate the connection. Ensure firewalls allow outbound traffic from each NAM agent host to the AA2601 server on the configured listener port.
 :::
 
 ---
@@ -78,7 +78,7 @@ To confirm it is active:
 1. Go to **Configuration > Application Settings > Feature Flags**.
 2. Verify `enable_activitymonitor_ingestion` is set to `true`.
 
-If the listener is not running, check the application logs for the reason — missing certificate, disabled feature flag, or a startup error.
+If the listener isn't running, check the application logs for the reason — missing certificate, disabled feature flag, or a startup error.
 
 ### Step 2 — Generate an Enrollment Token
 
@@ -178,18 +178,18 @@ Use the default port (4504) unless you have a conflict. If you must change it:
 
 - Update NAM agent configuration to match **before** saving the new port in AA2601.
 - Update firewall rules and network policies before making the change.
-- Changing the port requires all currently connected agents to reconnect.
+- Changing the port requires all connected agents to reconnect.
 
 ### TLS Certificate Management
 
 - **Monitor certificate expiration.** AA2601 logs a warning when the server certificate is within 30 days of expiry, and again within 7 days. Treat the 30-day warning as actionable.
-- **NAM agents use self-signed certificates** — this is expected and supported. Do not replace them with CA-signed certificates unless your NAM deployment specifically requires it.
+- **NAM agents use self-signed certificates** — this is expected and supported. Don't replace them with CA-signed certificates unless your NAM deployment specifically requires it.
 - **Key pair rotation requires re-enrollment.** If a NAM agent generates a new key pair (for example, after a reinstall), its previous SPKI hash entry will no longer match. Re-enroll the agent using a new enrollment token. Remove the stale entry via the API: `DELETE /api/v1/nam-listener/agents/:spki_hash`.
 
 ### Enrollment Token Practices
 
 - **Generate the token immediately before enrollment.** The 1-hour window is intentionally short.
-- **Do not share tokens in email or chat.** Treat enrollment tokens like temporary passwords — use a secure transfer method.
+- **Don't share tokens in email or chat.** Treat enrollment tokens like temporary passwords — use a secure transfer method.
 - **For bulk enrollment**, all agents can use the same token as long as they enroll within the 1-hour window.
 - **Revoke stale entries** when decommissioning a NAM agent host. An enrolled agent with a stale SPKI entry poses no security risk, but maintaining a clean allowlist helps with auditing.
 
@@ -210,7 +210,7 @@ Start with defaults. Only adjust if you observe specific symptoms.
 **If you have many agents connecting simultaneously:**
 - Raise `activitymonitor_max_connections` to at least the number of expected concurrent agents, with 20–30% headroom.
 
-**Do not lower `activitymonitor_connection_timeout` below your NAM polling interval.** If NAM sends events every 5 minutes and the timeout is less than 300 seconds, agents will be dropped between batches and forced to reconnect constantly. The default of 900 seconds provides safe headroom for most polling configurations.
+**Don't lower `activitymonitor_connection_timeout` below your NAM polling interval.** If NAM sends events every 5 minutes and the timeout is less than 300 seconds, agents will be dropped between batches and forced to reconnect constantly. The default of 900 seconds provides safe headroom for most polling configurations.
 
 ### Kubernetes Shutdown Considerations
 
@@ -228,33 +228,33 @@ To temporarily disable ingestion without removing agent configurations:
 The listener stops accepting new connections. Existing agents will see their connections close and queue events locally per NAM's own buffering. When you re-enable ingestion, agents reconnect and resume streaming.
 
 :::note
-Disabling and re-enabling does not cause data loss for events that occurred while disabled, as long as NAM agents have sufficient local buffering.
+Disabling and re-enabling doesn't cause data loss for events that occurred while disabled, as long as NAM agents have sufficient local buffering.
 :::
 
 ---
 
 ## Troubleshooting
 
-### The listener is not starting
+### The listener isn't starting
 
 - Verify `enable_activitymonitor_ingestion` is `true` in **Configuration > Application Settings > Feature Flags**.
 - Verify the TLS certificate environment variables (`SYSLOG_TLS_CERT_PATH`, `SYSLOG_TLS_KEY_PATH`) are set and the files are readable. The application logs report a specific error if a certificate is missing, unreadable, or expired.
-- Verify the configured port is not already bound by another process.
+- Verify the configured port isn't already bound by another process.
 
 The listener retries startup up to 5 times with exponential backoff (starting at 0.5s, capping at 30s). Check logs for `"Failed to start NAM Listener"` messages with retry counts.
 
-### A NAM agent cannot connect
+### A NAM agent can't connect
 
 - Verify network connectivity from the agent host to AA2601 on the configured port (default: 4504).
 - Verify the agent is configured with the correct hostname and port. The port in NAM agent configuration must match `activitymonitor_tcp_port`.
 - Verify the agent has a valid TLS client certificate. Connections without a client certificate are rejected and the source IP is temporarily banned.
 
-### An agent connected but is not sending data
+### An agent connected but isn't sending data
 
-- Verify the agent was successfully enrolled. An agent that has not completed enrollment is silently rejected on data connections because its SPKI hash is not in the allowlist. Re-enroll using a new token.
-- Verify `activitymonitor_connection_timeout` is not shorter than the agent's event polling interval. If agents idle longer than the timeout, they are dropped between batches and must reconnect.
+- Verify the agent was successfully enrolled. An agent that has not completed enrollment is silently rejected on data connections because its SPKI hash isn't in the allowlist. Re-enroll using a new token.
+- Verify `activitymonitor_connection_timeout` isn't shorter than the agent's event polling interval. If agents idle longer than the timeout, they are dropped between batches and must reconnect.
 
-### Events are not appearing in reports
+### Events aren't appearing in reports
 
 - Verify ClickHouse is healthy and reachable from AA2601. Writer threads log errors if ClickHouse writes fail.
 - Check `activitymonitor_batch_interval_seconds` — at the default of 10 seconds, there is a short delay between an event occurring and appearing in a report.
