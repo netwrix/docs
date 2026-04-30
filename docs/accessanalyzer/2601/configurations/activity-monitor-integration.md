@@ -36,19 +36,19 @@ AA2601 Reports (file system activity, SharePoint, Copilot)
 | --- | --- |
 | **File System Events** | SMB/CIFS file access, reads, writes, renames, permission changes — path, user, bytes transferred |
 | **SharePoint Online Events** | SharePoint file and folder activity — user, site, event type |
-| **LEEF Events** | Network-format events — vendor, product, source/destination IP, signatures |
+| **Log Event Extended Format (LEEF) Events** | Network-format events — vendor, product, source/destination IP, signatures |
 | **Copilot Events** | Microsoft 365 Copilot interactions — user, entity, workload, region |
 
 ### Security Model
 
 Authentication uses **mutual TLS with SPKI hash pinning**:
 
-- AA2601 requires TLS 1.3 — no older protocol versions are accepted.
+- AA2601 requires TLS 1.3 and rejects older protocol versions.
 - NAM agents must present a client certificate on every connection.
 - Certificate chain validation is intentionally permissive — NAM agents use self-signed certificates.
-- Real agent authentication is performed by matching the SHA-256 hash of the agent's certificate public key (SPKI hash) against a persistent allowlist in AA2601's database.
+- AA2601 performs real agent authentication by matching the SHA-256 hash of the agent's certificate public key (SPKI hash) against a persistent allowlist in its database.
 
-SPKI hashes survive certificate renewal as long as the key pair is unchanged. Re-enrollment is only required when an agent generates a new key pair.
+SPKI hashes survive certificate renewal as long as the key pair is unchanged. Re-enroll only when an agent generates a new key pair.
 
 ---
 
@@ -108,7 +108,7 @@ The following steps describe the general configuration flow. Exact menu labels a
 7. Save the output configuration.
 8. Repeat for each monitoring policy covering additional hosts.
 
-The NAM agent connects to AA2601, presents its client certificate, and sends an enrollment request. AA2601 validates the token, adds the agent's SPKI hash to the trusted agents allowlist, and confirms enrollment. After that, the agent reconnects and begins streaming events. The enrollment token is no longer needed unless the agent generates a new key pair.
+The NAM agent connects to AA2601, presents its client certificate, and sends an enrollment request. AA2601 validates the token, adds the agent's SPKI hash to the trusted agents allowlist, and confirms enrollment. After that, the agent reconnects and begins streaming events. You no longer need the enrollment token unless the agent generates a new key pair.
 
 ### Step 4 — Verify Enrollment
 
@@ -126,13 +126,13 @@ To confirm AA2601 is receiving events:
 2. Navigate to the resource or host that NAM is monitoring.
 3. Review the activity data for recent file events.
 
-If no events appear after a few minutes, see [Troubleshooting](#troubleshooting) below.
+If no events appear after a few minutes, see [Troubleshooting](#troubleshooting).
 
 ---
 
 ## Application Settings Reference
 
-All Activity Monitor settings are at **Configuration > Application Settings > Activity Monitor**. Settings take effect immediately when saved — no restart required. Each setting shows its current value, default, and an **Overridden** badge when changed from the default. Use the reset (↺) button to restore an individual setting to its default.
+All Activity Monitor settings are at **Configuration > Application Settings > Activity Monitor**. Settings take effect immediately when you save them — no restart required. Each setting shows its current value, default, and an **Overridden** badge when changed from the default. Use the reset (↺) button to restore an individual setting to its default.
 
 ### Connection Settings
 
@@ -158,15 +158,15 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 
 | Setting | Default | Range | Description |
 | --- | --- | --- | --- |
-| `activitymonitor_enrollment_first_message_timeout_seconds` | 10 | 5 – 60 | Seconds AA2601 waits for the first message after a new connection is established. Connections that send nothing within this window are closed. |
+| `activitymonitor_enrollment_first_message_timeout_seconds` | 10 | 5 – 60 | Seconds AA2601 waits for the first message after a new connection is established. AA2601 closes connections that send nothing within this window. |
 | `activitymonitor_enrollment_ban_duration_seconds` | 10 | 5 – 300 | Seconds a source IP is blocked after a protocol violation (invalid enrollment code, malformed JSON, or unexpected message format). |
-| `activitymonitor_max_message_size` | 16,777,216 (16 MB) | 65,536 – 67,108,864 | Maximum byte size of a single message from a NAM agent. If exceeded without a line delimiter, the connection is dropped. |
+| `activitymonitor_max_message_size` | 16,777,216 (16 MB) | 65,536 – 67,108,864 | Maximum byte size of a single message from a NAM agent. If exceeded without a line delimiter, AA2601 drops the connection. |
 
 ### Shutdown Settings
 
 | Setting | Default | Range | Description |
 | --- | --- | --- | --- |
-| `activitymonitor_shutdown_drain_timeout_seconds` | 300 | 10 – 3,600 | Maximum seconds AA2601 waits for buffered events to finish writing to ClickHouse during a graceful shutdown. After this window, remaining writer threads are force-terminated and events still in the buffer are lost. |
+| `activitymonitor_shutdown_drain_timeout_seconds` | 300 | 10 – 3,600 | Maximum seconds AA2601 waits for buffered events to finish writing to ClickHouse during a graceful shutdown. After this window, AA2601 force-terminates remaining writer threads and loses any events still in the buffer. |
 
 ---
 
@@ -216,7 +216,7 @@ Start with defaults. Only adjust if you observe specific symptoms.
 
 The `activitymonitor_shutdown_drain_timeout_seconds` setting (default: 300 seconds) controls how long AA2601 waits during graceful shutdown to flush buffered events to ClickHouse.
 
-In Kubernetes deployments, the pod's `terminationGracePeriodSeconds` must be greater than this value plus a small buffer for the rest of the shutdown sequence. If `terminationGracePeriodSeconds` is less than the drain timeout, Kubernetes will force-kill the pod before drain completes and buffered events will be lost.
+In Kubernetes deployments, the pod's `terminationGracePeriodSeconds` must be greater than this value plus a small buffer for the rest of the shutdown sequence. If `terminationGracePeriodSeconds` is less than the drain timeout, Kubernetes will force-kill the pod before drain completes, losing any buffered events.
 
 ### Disabling the Integration
 
@@ -251,8 +251,8 @@ The listener retries startup up to 5 times with exponential backoff (starting at
 
 ### An agent connected but isn't sending data
 
-- Verify the agent was successfully enrolled. An agent that has not completed enrollment is silently rejected on data connections because its SPKI hash isn't in the allowlist. Re-enroll using a new token.
-- Verify `activitymonitor_connection_timeout` isn't shorter than the agent's event polling interval. If agents idle longer than the timeout, they are dropped between batches and must reconnect.
+- Verify the agent was successfully enrolled. AA2601 silently rejects data connections from agents that have not completed enrollment because their SPKI hash isn't in the allowlist. Re-enroll using a new token.
+- Verify `activitymonitor_connection_timeout` isn't shorter than the agent's event polling interval. If agents idle longer than the timeout, AA2601 drops them between batches and they must reconnect.
 
 ### Events aren't appearing in reports
 
@@ -262,7 +262,7 @@ The listener retries startup up to 5 times with exponential backoff (starting at
 
 ### An agent keeps getting banned
 
-Repeated IP bans (governed by `activitymonitor_enrollment_ban_duration_seconds`) are triggered by protocol violations: invalid enrollment codes, malformed JSON, or unexpected message formats.
+Protocol violations trigger repeated IP bans (governed by `activitymonitor_enrollment_ban_duration_seconds`): invalid enrollment codes, malformed JSON, or unexpected message formats.
 
 - Verify the agent is sending the correct enrollment payload. The agent should be a supported Netwrix Activity Monitor version.
 - Verify the enrollment token has not expired (1-hour TTL). An expired token causes an invalid-code rejection and a short ban. Generate a new token and retry.
