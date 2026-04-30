@@ -142,7 +142,7 @@ When multiple users or different machines use an Enforced Encryption (EE) encryp
 
 Netwrix Enforced Encryption Read-Only Mode for unmanaged computers is an innovative feature designed to maintain data security standards across non-corporate devices. It allows administrators to grant access to EE encrypted drives on personal computers, conference room setups, or exhibition areas while ensuring security through a Read-Only configuration. This enables the seamless transfer of corporate data across different environments, providing robust protection without sacrificing accessibility.
 
-To activate this mode, navigate to the "Global Settings" section related to Enforced Encryption, and switch on the "EE Read-Only mode" toggle. refer to [Global Settings - EE configuration](/docs/endpointprotector/admin/dc_module/globalsettings#easylock-settings).
+To activate this mode, navigate to the "Global Settings" section related to Enforced Encryption, and switch on the "EE Read-Only mode" toggle. refer to [Global Settings - EE configuration](/docs/endpointprotector/admin/dc_module/globalsettings#enforced-encryption-easylock-settings).
 
 ![Enforced Encryption Read-Only Mode](eeromode.webp)
 
