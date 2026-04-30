@@ -77,7 +77,7 @@ Starting with the 2511 Clients release, the install parameters "IPV6MAPPING," "S
 
 ### macOS
 :::note
-For macOS, please contact the Netwrix Support team to obtain the latest version of the
+For macOS, contact the Netwrix Support team to obtain the latest version of the
 installer script, which allows customization of installation parameters.
 :::
 
@@ -140,7 +140,7 @@ then provide the following information:
 
 ## Agent Installation
 
-To see which distributions are supported for EPP, please check the [supportability article](/docs/endpointprotector/supportability/client-supportability.md).
+To see which distributions are supported for EPP, check the [supportability article](/docs/endpointprotector/supportability/client-supportability.md).
 
 For Windows and Mac, your input in installing the Endpoint Protector Agent is minimal. The
 Installation folder and Server information are already pre-conﬁgured, and downloadable from the
@@ -210,7 +210,7 @@ Protector Client** > **Deep Packet Inspection**.
 ![Activating Deep Packet Inspection](./systemconfiguration/dpion.webp)
 
 :::note
-For more information about Deep Packet Inspection and configurable options, please visit the dedicated [documentation section for DPI](/docs/endpointprotector/admin/cap_module/deeppacket.md).
+For more information about Deep Packet Inspection and configurable options, visit the dedicated [documentation section for DPI](/docs/endpointprotector/admin/cap_module/deeppacket.md).
 :::
 
 **Step 7 –** Go to the **System Conﬁguration** section, then **System Settings** > **Deep Packet
@@ -265,8 +265,8 @@ and **allow** the Endpoint Protector Client Extension.
 At this point, the macOS Endpoint Protector Client installation is completed.
 
 :::note
-If EPPNotiﬁer is not visible or notiﬁcations do not display after the installation or
-upgrade of the Endpoint Protector Client on macOS, please resolve this issue by restarting your
+If EPPNotiﬁer isn't visible or notiﬁcations don't display after the installation or
+upgrade of the Endpoint Protector Client on macOS, resolve this issue by restarting your
 machine. In situations where the Endpoint Protector Client is installed and then uninstalled on
 macOS, you may still see EPPNotiﬁer in the Notiﬁcation settings. To remove it from the list, simply
 right-click and select "Reset notiﬁcations."
@@ -308,7 +308,7 @@ The following are several examples of supported distributions:
 #### Setting the Server IP
 
 For all RedHat-based distributions, you need to follow an additional step after executing the above
-commands in order to set the Endpoint Protector Server IP.
+commands to set the Endpoint Protector Server IP.
 
 Based on each distribution, follow the corresponding method:
 
@@ -319,10 +319,10 @@ Based on each distribution, follow the corresponding method:
 ## The Windows Subsystem for Linux
 
 The Windows Subsystem for Linux (WSL) allows you to run native Linux distributions directly within
-your Windows environment. However, due to its nature, the Endpoint Protector Client cannot be
+your Windows environment. However, due to its nature, the Endpoint Protector Client can't be
 directly installed as an application within WSL.
 
-While direct installation is not possible, you can still manage and control the usage of WSL
+While direct installation isn't possible, you can still manage and control the usage of WSL
 applications through the Application Denylist feature in Endpoint Protector. This allows you to
 define specific applications or processes associated with WSL that you want to restrict and monitor.
 
@@ -342,7 +342,7 @@ This could be:
 - `wsl --list`– This entry will target the `wsl --list` command.
 
 :::note
-Endpoint Protector Client cannot directly control the usage of WSL Bash command-line tools
+Endpoint Protector Client can't directly control the usage of WSL Bash command-line tools
 on Windows.
 :::
 
@@ -368,7 +368,7 @@ When the daemon starts, it checks for the presence of all expected files and rep
 | Term | Meaning |
 |---|---|
 | **Install files** | The full set of files expected to be present on the endpoint after a successful EPP Client installation. |
-| **Installation file missing** | One or more expected files could not be found during the startup check. This condition triggers a Client Integrity Failure event. |
+| **Installation file missing** | One or more expected files couldn't be found during the startup check. This condition triggers a Client Integrity Failure event. |
 
 ## Policy Received Events
 
@@ -385,7 +385,7 @@ Any change to Computer or User settings — including configuration items, right
 
 ### How the EPP Client Classifies Termination
 
-If the EPP Client service was not stopped cleanly, the agent evaluates the state of relevant files, registry keys, and drivers to determine what happened. Based on the results, one of three events is reported:
+If the EPP Client service wasn't stopped cleanly, the agent evaluates the state of relevant files, registry keys, and drivers to determine what happened. Based on the results, one of three events is reported:
 
 | Event Type | Condition & Meaning |
 |---|---|

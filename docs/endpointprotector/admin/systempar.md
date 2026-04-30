@@ -44,11 +44,11 @@ policy and the affected file.
 
 Traditionally, Content Aware Protection Notifications were delivered in plain text. Starting from
 Agent version 6.2.3.1 (Windows), 3.0.3.1 (Mac), and 2.4.3.1 (Linux), users can use HTML code to
-format notifications. By utilizing HTML, administrators can highlight key information such as threat
+format notifications. By using HTML, administrators can highlight key information such as threat
 names or affected files with bold, italics, or underlining, making it easier for users to
 understand. In addition, you can employ colors to differentiate sections or emphasize critical
 details within the notification. This results in visually engaging notifications that capture user
-attention and ensure important information is not missed.
+attention and ensure important information isn't missed.
 
 Follow the steps to create notifications.
 
@@ -73,7 +73,7 @@ For example, the file named 'financial_report.xlsx' (`\{fileName\}`) was classif
 'Confidential' (`\{type\}`) because it contains confidential data.
 
 Once created, you can associate the custom notification with a specific Content Aware Policy using
-the Notification Template drop-down menu.
+the Notification Template dropdown menu.
 
 To ensure notifications display correctly and securely, Endpoint Protector supports a limited set of
 HTML elements. The following list shows the supported elements you can use in your notifications.
@@ -111,7 +111,7 @@ This section is available only if the Device Control User Remediation setting is
 [User Remediation](#user-remediation) section. In this section you can add, edit and delete custom
 notiﬁcations for Device Control User Remediation.
 
-You can add a maximum of 100 custom notiﬁcations but you cannot delete the default entry.
+You can add a maximum of 100 custom notiﬁcations but you can't delete the default entry.
 
 Follow the steps to add a new custom notiﬁcation.
 
@@ -127,7 +127,7 @@ Follow the steps to add a new custom notiﬁcation.
 **Example: USB Driver(deviceName) is blocked(action)**
 
 Once the notiﬁcation was created, you can select the custom notiﬁcation from the User Remediation
-Notiﬁcation Template drop-down located in the Device Control section, Global Setting, Users,
+Notiﬁcation Template dropdown located in the Device Control section, Global Setting, Users,
 Computers and Groups.
 
 ![Custom Device Control User Remediation Notiﬁcations](userremediationnotif.webp)
@@ -148,7 +148,7 @@ helps decrease false positives.
 :::note
 This feature applies at a global level, for both Content Aware Protection and eDiscovery
 Policies. If enabled, the context detection will supersede the content only detection through the
-system. Please ensure the accuracy of the rules and the relevance for your scenarios before enabling
+system. ensure the accuracy of the rules and the relevance for your scenarios before enabling
 this functionality.
 :::
 
@@ -186,20 +186,20 @@ as:
 - Category and Type – the content aware detection function.
 - Surrounding text – the number of characters of the search interval to determine the context.
 - Related Dictionary – a set of keywords related to the PII.
-- Related Regular Expression – an additional way of adding a related rule that is not among the
+- Related Regular Expression – an additional way of adding a related rule that isn't among the
   content aware detection functions.
 - Related File Type – the related ﬁle type.
 - Related File Size (MB) – the related ﬁle size, in megabytes.
 - Minimum Matches – the minimum number of items to match to validate the detection rule.
 - Unrelated Dictionary – a set of keywords not related to the PII.
-- Unrelated Regular Expression – an additional way of adding a non-related rule that is not among
+- Unrelated Regular Expression – an additional way of adding a non-related rule that isn't among
   the content aware detection functions.
 - Unrelated File Type – the unrelated ﬁle type.
 - Unrelated File Size (MB) – the unrelated ﬁle size, in megabytes.
 - Maximum Matches – the value above which the rule will not be validated (recommended value is 0).
 
 :::warning
-Do not forget to Generate the Contextual XML after creating or making changes to
+Don't forget to Generate the Contextual XML after creating or making changes to
 contextual rules!
 :::
 
@@ -292,8 +292,8 @@ The Advanced Scanning Exceptions feature allows applications to be excluded from
 endpoints with the Advanced Printing and MTP Scanning feature enabled.
 
 This feature maintains a list of applications into which Endpoint Protector will not inject its DLL
-when the “Advanced Printer and MTP Scanning” is enabled. For instance, many applications that cannot
-print or copy files to MTP devices do not require the injection of the Endpoint Protector DLL.
+when the “Advanced Printer and MTP Scanning” is enabled. For instance, many applications that can't
+print or copy files to MTP devices don't require the injection of the Endpoint Protector DLL.
 Adding such applications to the exceptions list improves performance and avoids unexpected
 interactions with Endpoint Protector.
 
@@ -329,7 +329,7 @@ remediation sessions, certiﬁcate management, unplanned client terminations, ar
 DPI bypassed traﬃc. These events provide granular insight into various system activities, ensuring
 that organizations can maintain robust security and compliance measures.
 
-For a detailed view of all events and their descriptions, please see the table below.
+For a detailed view of all events and their descriptions, see the table below.
 
 | Event Name                                   | Description                                                                                                                     | Additional Explanations |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
@@ -454,7 +454,7 @@ represents the reason selected by the end-user to justify the threat or device r
 
 To add a new justiﬁcation, click **Add**, ﬁll in the mandatory ﬁelds and then click **Save**. You
 can add up to a maximum of 10 justiﬁcations. By default, several justiﬁcations are already added,
-but make sure that at least one justiﬁcation is enabled all the time.
+but ensure that at least one justiﬁcation is enabled all the time.
 
 To enable and enforce the end-user to view User Remediation pop-up notiﬁcations, manage the option
 from Device Control, Global Settings, [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md).
@@ -480,13 +480,13 @@ section, click **Create**, ﬁll in the mandatory ﬁelds and **Save**.
 
 **Step 3 –** Enable the **User Remediation Pop-up** setting from the
 [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic and then select the **customized notiﬁcation**
-from the User Remediation Notiﬁcation Template drop-down list;
+from the User Remediation Notiﬁcation Template dropdown list;
 
 ![User Remediation Pop-up](userremediationpopup.webp)
 
 **Step 4 –** Navigate to [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md), Device Types section and
 enable **User Remediation** for devices with limited access – devices that have full access
-permission cannot beneﬁt from the User Remediation feature.
+permission can't beneﬁt from the User Remediation feature.
 
 :::note
 For built-in devices, such as Webcam and Network share, the User Remediation feature is
@@ -508,15 +508,15 @@ Follow these steps to remediate the device.
 
 **Step 3 –** On the Self Remediate section:
 
-1. Select a **justiﬁcation** from the drop-down list.
+1. Select a **justiﬁcation** from the dropdown list.
 2. Add a **reason** for the justiﬁcation (if required).
 3. Navigate to the **custom URL** situated under the logo.
 4. Add your credentials if the **Require Credentials** setting was enabled (click the username icon
    to refresh your current username).
 
     1. When reopening the dialog, if a different username was used for authentication, EPP Notiﬁer
-       will automatically switch back to the username of the currently logged-in user.
-    2. Usernames are not case sensitive.
+ will automatically switch back to the username of the logged-in user.
+    2. Usernames aren't case sensitive.
 
 5. Add the **number of minutes** needed to remediate the device (you can hover over the default
    number to view the maximum time interval)
