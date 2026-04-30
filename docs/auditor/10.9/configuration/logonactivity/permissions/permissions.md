@@ -1,0 +1,53 @@
+---
+title: "Permissions for Logon Activity Auditing"
+description: "Permissions for Logon Activity Auditing"
+sidebar_position: 10
+---
+
+# Permissions for Logon Activity Auditing
+
+Before creating a monitoring plan to audit the Logon Activity in your domain, determine
+the domain account for data collection.
+
+When selecting the domain account, consider the following:
+
+- If network traffic compression is enabled, the account must belong to the Domain Admins group.
+- If network traffic compression is disabled, the account can belong to the Domain Admins group or be a non-administrative account configured with minimum rights (see below).
+- For the data collection account, use a different account than the one Auditor uses to access the database.
+- If you use a group Managed Service Account (gMSA), the data collection account must be a member of the local Administrators group on the Netwrix Auditor host.
+
+## Configure Account to Collect Logon Activity
+
+This section explains how to configure an account to collect Logon Activity with
+minimum rights assignment. The following instructions apply only if you plan to create a monitoring
+plan with network traffic compression disabled and don't want to adjust audit settings
+automatically.
+
+**NOTE:** If the account is a member of the Domain Admins group, you can skip these steps.
+
+Before creating an account, grant the _Read_ permission on the SECURITY registry key
+`(HKEY_LOCAL_MACHINE\SECURITY)` for an admin account under which you will make changes in Group
+Policy.
+
+**Step 1 –** Create a domain user with the following privileges:
+
+- Back up files and directories. See the
+   [Configure the Back up Files and Directories Policy](/docs/auditor/10.9/configuration/fileservers/windows/configuration.md)
+  topic for additional information.
+- Access this computer from the network. See the
+  [Configure Access this computer from the network Policy](/docs/auditor/10.9/configuration/logonactivity/permissions/networkaccess.md) topic for additional information.
+- Manage auditing and security log. See the
+  [Configure the Manage Auditing and Security Log Policy](/docs/auditor/10.9/configuration/activedirectory/permissions.md#configure-the-manage-auditing-and-security-log-policy)
+  topic for additional information.
+
+**Step 2 –** Grant the _Read_ permission on the following registry keys to this user:
+
+- `HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv`
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg`
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security`
+
+See the
+[Assign Permission To Read the Registry Key](/docs/auditor/10.9/configuration/windowsserver/permissions.md#assign-permission-to-read-the-registry-key)
+topic for instructions on using Registry Editor to assign permissions.
+
+  
