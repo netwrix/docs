@@ -62,7 +62,7 @@ Where:
 - AUTHUSR – Username (if authentication for proxy is needed)
 - AUTHPASS – Password (if authentication for proxy is needed)
 
-You can also use CLI Commands below to install Endpoint Protector Client in speciﬁc mode of working.
+You can also use the following CLI commands to install Endpoint Protector Client in speciﬁc mode of working.
 
 - WSIP – server address
 - WSPORT – server port number
@@ -123,7 +123,7 @@ Additional CLI commands for Linux in speciﬁc mode:
 
 ## Bypass Proxy Settings
 
-You have the ability to bypass proxy settings for all operating systems.
+You can bypass proxy settings for all operating systems.
 
 #### Windows and macOS
 
@@ -152,12 +152,12 @@ this before installing link.
 :::
 
 
-The main supported Linux distributions are listed below:
+The main supported Linux distributions are:
 
 - Ubuntu
 - RedHat
 
-Optional distributions will be provided on the product portal and are available upon request after validation by the Netwrix Product Team. Below are examples of on-demand distributions:
+Optional distributions will be provided on the product portal and are available upon request after validation by the Netwrix Product Team. The following are examples of on-demand distributions:
 - Debian
 - Fedora
 - Pardus OS
@@ -262,7 +262,7 @@ and **allow** the Endpoint Protector Client Extension.
 
 ![proxypop-up](proxypop-up.webp)
 
-At this point, the macOS Endpoint Protector Client installation is completed.
+At this point, the macOS Endpoint Protector Client installation is complete.
 
 :::note
 If EPPNotiﬁer isn't visible or notiﬁcations don't display after the installation or
@@ -356,9 +356,9 @@ The Client Integrity check runs automatically at EPP service/daemon startup. It 
 - The existence of all expected EPP component files on the endpoint.
 - The validity of file signatures *(signature validation applies to Windows only)*.
 
-If the check passes without issue, the status is reported as **Client Integrity OK**, confirming all EPP component files are present and their signatures are valid (on Windows).
+If the check passes without issue, Endpoint Protector reports the status as **Client Integrity OK**, confirming all EPP component files are present and their signatures are valid (on Windows).
 
-If the check fails for any reason, a **Client Integrity Failure** event is reported in the EPP Server.
+If the check fails for any reason, the EPP Server reports a **Client Integrity Failure** event.
 
 ### File Existence vs. Missing Installation File
 
@@ -367,7 +367,7 @@ When the daemon starts, it checks for the presence of all expected files and rep
 | Term | Meaning |
 |---|---|
 | **Install files** | The full set of files expected to be present on the endpoint after a successful EPP Client installation. |
-| **Installation file missing** | One or more expected files couldn't be found during the startup check. This condition triggers a Client Integrity Failure event. |
+| **Installation file missing** | The startup check couldn't find one or more expected files. This condition triggers a Client Integrity Failure event. |
 
 ## Policy Received Events
 

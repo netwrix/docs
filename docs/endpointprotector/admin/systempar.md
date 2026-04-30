@@ -133,9 +133,7 @@ Computers, and Groups.
 
 ## Contextual Detection
 
-From this section, you can manage the contextual detection for the entire system. If enabled, the
-conﬁdential information detected by Endpoint Protector will be inspected for both content and
-context.
+From this section, you can manage the contextual detection for the entire system. If enabled, Endpoint Protector will inspect detected confidential information for both content and context.
 
 In addition to the function that detects sensitive information (e.g.: Credit Cards, IDs, Passports,
 Driving Licenses, etc.), the context will also be taken into consideration (e.g.: proximity to other
@@ -152,9 +150,7 @@ this functionality.
 :::
 
 
-After the Contextual Detection feature is enabled, it will apply at a global level, based on the
-rules deﬁned in the Contextual XML (but also linked to the conﬁgured Content Aware Protection and
-eDiscovery policies).
+After you enable the Contextual Detection feature, it applies at a global level, based on the rules deﬁned in the Contextual XML (also linked to the conﬁgured Content Aware Protection and eDiscovery policies).
 
 There are two options to create the Contextual rules:
 
@@ -171,8 +167,7 @@ prioritization of individual policy conﬁgurations.
 
 ### Creating the XML
 
-This method is recommended for general use as it is the easiest method and it can cover most use
-cases.
+Netwrix recommends this method for general use as it is the easiest method and covers most use cases.
 
 ![Creating the XML](contextualdetectionone.webp)
 
@@ -208,10 +203,9 @@ contextual rules!
 This method is recommended for advanced Administrators as it offers extended functionalities but it
 also requires a deeper understanding of the XML syntax.
 
-Advanced contextual functionalities are also available. For this method, the Contextual XML ﬁle has
-to be edited manually by the Administrator and then uploaded to the Endpoint Protector Server.
+Advanced contextual functionalities are also available. For this method, the Administrator must manually edit the Contextual XML file and upload it to the Endpoint Protector Server.
 
-Proximity, Dictionaries, Regex, etc. have to be deﬁned within the XML document. In addition to the
+Define Proximity, Dictionaries, Regex, and other items within the XML document. In addition to the
 functionalities described in the previous chapter, there are more complex options available like:
 Conﬁdence Level, additional Functions to consider when determining the Main Function, etc.
 
@@ -328,7 +322,7 @@ remediation sessions, certiﬁcate management, unplanned client terminations, ar
 DPI bypassed traﬃc. These events provide granular insight into various system activities, ensuring
 that organizations can maintain robust security and compliance measures.
 
-For a detailed view of all events and their descriptions, see the table below.
+For a detailed view of all events and their descriptions, see the following table.
 
 | Event Name                                   | Description                                                                                                                     | Additional Explanations |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
