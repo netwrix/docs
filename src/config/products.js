@@ -627,11 +627,17 @@ export const PRODUCTS = [
       {
         version: '3.1',
         label: '3.1',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/threatmanager/3.1.js',
       },
+      {
+        version: '3.2',
+        label: '3.2',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.2.js',
+      },
     ],
-    defaultVersion: '3.1',
+    defaultVersion: '3.2',
   },
   {
     id: 'threatprevention',
