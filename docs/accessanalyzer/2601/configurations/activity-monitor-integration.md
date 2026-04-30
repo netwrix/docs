@@ -17,7 +17,7 @@ The integration works through a built-in TCP listener that NAM agents connect to
 ```
 NAM Agent(s)
     │
-    │  TLS 1.3 (default port 1514)
+    │  TLS 1.3 (default port 4504)
     │  mTLS — client certificate required
     ▼
 AA2601 NAM Listener (core-api)
@@ -58,7 +58,7 @@ Before connecting NAM agents to AA2601:
 
 - **Netwrix Activity Monitor** must be installed and monitoring the hosts for which you want real-time activity in AA2601. Confirm monitoring is active before adding the AA2601 output.
 - **TLS certificates** must be provisioned on the AA2601 server. The server certificate and private key paths are set via the environment variables `SYSLOG_TLS_CERT_PATH` and `SYSLOG_TLS_KEY_PATH`. Contact your infrastructure team if the listener is not starting.
-- **Network connectivity** must allow NAM agents to reach AA2601 on TCP port 1514 (default) through any firewalls or network policies.
+- **Network connectivity** must allow NAM agents to reach AA2601 on TCP port 4504 (default) through any firewalls or network policies.
 - You must have **Administrator** access to AA2601 to generate enrollment tokens and view enrolled agents.
 
 :::note
@@ -103,7 +103,7 @@ The following steps describe the general configuration flow. Exact menu labels a
 2. Navigate to the monitoring policy for the target host or host group.
 3. Open the output configuration for that policy.
 4. Add a new output destination and select the **Netwrix Access Analyzer** output type.
-5. Enter the hostname or IP address of your AA2601 instance and the listener port (default: 1514).
+5. Enter the hostname or IP address of your AA2601 instance and the listener port (default: 4504).
 6. When prompted for an enrollment token, enter the token you generated in Step 2.
 7. Save the output configuration.
 8. Repeat for each monitoring policy covering additional hosts.
@@ -138,7 +138,7 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 
 | Setting | Default | Range | Description |
 | --- | --- | --- | --- |
-| `activitymonitor_tcp_port` | 1514 | 1 – 65535 | TCP port the listener binds to. Must match the port configured in NAM agent settings. |
+| `activitymonitor_tcp_port` | 4504 | 1 – 65535 | TCP port the listener binds to. Must match the port configured in NAM agent settings. |
 | `activitymonitor_max_connections` | 100 | 10 – 1000 | Maximum simultaneous agent connections. Connections beyond this limit are rejected at the TCP layer. |
 | `activitymonitor_connection_timeout` | 900 | 5 – 3600 | Seconds of inactivity before an idle agent connection is dropped. Set this to be comfortably longer than your NAM polling interval. |
 
@@ -174,7 +174,7 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 
 ### Port Configuration
 
-Use the default port (1514) unless you have a conflict. If you must change it:
+Use the default port (4504) unless you have a conflict. If you must change it:
 
 - Update NAM agent configuration to match **before** saving the new port in AA2601.
 - Update firewall rules and network policies before making the change.
@@ -245,7 +245,7 @@ The listener retries startup up to 5 times with exponential backoff (starting at
 
 ### A NAM agent cannot connect
 
-- Verify network connectivity from the agent host to AA2601 on the configured port (default: 1514).
+- Verify network connectivity from the agent host to AA2601 on the configured port (default: 4504).
 - Verify the agent is configured with the correct hostname and port. The port in NAM agent configuration must match `activitymonitor_tcp_port`.
 - Verify the agent has a valid TLS client certificate. Connections without a client certificate are rejected and the source IP is temporarily banned.
 
