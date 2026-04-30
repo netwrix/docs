@@ -22,7 +22,7 @@ Each report has a set of filters which help organize audit data in the most conv
 report you want to receive on a regular basis. See the [Subscriptions](/docs/auditor/10.7/admin/subscriptions/overview.md)
 topic for additional information.
 
-Follow the steps to play a video:
+**To play a video:**
 
 **Step 1 –** Navigate to **Reports** → **User Activity**. Select any report and click View.
 
