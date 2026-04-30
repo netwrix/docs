@@ -1,16 +1,21 @@
 ---
-title: "Upgrade Threat Manager from 3.0 to 3.1"
-description: "Upgrade Threat Manager from 3.0 to 3.1"
-sidebar_position: 30
+title: "Upgrade Threat Manager from 3.1 to 3.2"
+description: "Upgrade Threat Manager from 3.1 to 3.2"
+sidebar_position: 35
 ---
 
-# Upgrade Threat Manager from 3.0 to 3.1
+# Upgrade Threat Manager from 3.1 to 3.2
 
-The upgrade process from Threat Manager 3.0 to 3.1 involves the following steps:
+The upgrade process from Threat Manager 3.1 to 3.2 involves the following steps:
 
 - Upgrade PostgreSQL
 
-- Install Threat Manager 3.1
+- Install Threat Manager 3.2
+
+- (Optional) Upgrade PostgreSQL 14 to PostgreSQL 18
+
+For instructions on migrating the Threat Manager database from PostgreSQL 14 to PostgreSQL 18,
+see the [Upgrade PostgreSQL 14 to 18](/docs/threatmanager/3.2/install/upgrade/upgrade_pg14_to_pg18.md) topic.
 
 ## Upgrade PostgreSQL
 
@@ -49,21 +54,21 @@ antivirus scans:
 
 PostgreSQL may fail to start or behave unexpectedly when monitored by any tool.
 
-## Install Threat Manager 3.1
+## Install Threat Manager 3.2
 
 **Step 1 –** Click the Netwrix Threat Manager **Setup** button on the Netwrix Threat Manager setup
 window. The following window is displayed:
 
-![Install Threat Manager 3.1 Page](/images/threatmanager/3.2/intsall/upgrade/ntm-initial.webp)
+![Install Threat Manager 3.2 Page](/images/threatmanager/3.2/intsall/upgrade/ntm-initial.webp)
 
 **Step 2 –** Click **Install**.
 
-![Install Netwrix Threat Manager 3.1 page](/images/threatmanager/3.2/intsall/upgrade/ntm-eula.webp)
+![Install Netwrix Threat Manager 3.2 page](/images/threatmanager/3.2/intsall/upgrade/ntm-eula.webp)
 
 **Step 3 –** On the End User License Agreement page, review and accept the licensing agreement and
 then click **Next**.
 
-![Threat Manager 3.1 Defalt Setup Folder](/images/threatmanager/3.2/intsall/upgrade/ntm-location.webp)
+![Threat Manager 3.2 Default Setup Folder](/images/threatmanager/3.2/intsall/upgrade/ntm-location.webp)
 
 **Step 4 –** By default, the installation directory is set to:
 
@@ -96,7 +101,7 @@ already created them. The installer will also by default install AD and Entra Po
 
 **Step 9 –** The installation process will begin and the Setup wizard will display the progress.
 
-![Threat Manager 3.1 Installed Successfully page](/images/threatmanager/3.2/intsall/upgrade/ntm-success.webp)
+![Threat Manager 3.2 Installed Successfully page](/images/threatmanager/3.2/intsall/upgrade/ntm-success.webp)
 
 **Step 10 –** Click **Exit** when the installation completes successfully. The Netwrix Threat
 Manager Setup wizard closes.
@@ -104,10 +109,17 @@ Manager Setup wizard closes.
 **Step 11 –** Now that both components have been installed, close the Netwrix Threat Manager Setup
 Launcher.
 
-Threat Manager 3.1 is now installed, and the database has been upgraded.
+Threat Manager 3.2 is now installed, and the database has been upgraded.
 
 :::info
 After successfully upgrading to the latest Threat Manager version, clear your
 browser cache for better performance and user experience.
 
 :::
+
+## Upgrade PostgreSQL 14 to PostgreSQL 18 (Optional)
+
+PostgreSQL 14 reaches end-of-life on November 12, 2026. After upgrading to Threat Manager 3.2, you
+may optionally migrate your database to PostgreSQL 18. See the
+[Upgrade PostgreSQL 14 to 18](/docs/threatmanager/3.2/install/upgrade/upgrade_pg14_to_pg18.md) topic for
+full instructions.
