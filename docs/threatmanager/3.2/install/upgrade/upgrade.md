@@ -28,7 +28,7 @@ features.
 :::
 
 
-| Netwrix Activity Monitor Version | Compatibility with Threat Manager v3.1  |
+| Netwrix Activity Monitor Version | Compatibility with Threat Manager v3.2  |
 | --- | --- |
 | 7.1 | Fully compatible for monitoring of: <br /><ul><li>File System Data</li><li>Active Directory Data</li><li>Microsoft Entra ID Data</li></ul> Threat Manager also supports file copy event type and file size information. <br />**NOTE:** SharePoint, SharePoint Online, Exchange Online, Linux, and SQL monitoring are not supported  |
 | 7.0 | Fully compatible for monitoring of: <br /><ul><li>File System Data</li><li>Active Directory Data</li><li>Microsoft Entra ID Data</li></ul> Threat Manager also supports file copy event type and file size information. <br />**NOTE:** SharePoint, SharePoint Online, Exchange Online, Linux, and SQL monitoring are not supported. |
@@ -43,19 +43,20 @@ server where Netwrix Threat Manageris installed.
 
 **Step 2 –** Right-click on each Threat Manager service and click Stop in the following order:
 
+- Netwrix Threat Manager Web Service
 - Netwrix Threat Manager Action Service
 - Netwrix Threat Manager Active Directory Service
+- Netwrix Threat Manager Azure Service
 - Netwrix Threat Manager Email Service
 - Netwrix Threat Manager Event Service
 - Netwrix Threat Manager Integration Service
 - Netwrix Threat Manager Job Service
 - Netwrix Threat Manager License Service
 - Netwrix Threat Manager SIEM Service
-- Netwrix Threat Manager Web Service
 
 ## Upgrade Cases
 
 You can:
 
-- [Upgrade Threat Manager from 2.8 to 3.0](/docs/threatmanager/3.2/install/upgrade/upgrade3.0.md)
-- [Upgrade Threat Manager from 2.6/2.7 To 2.8](/docs/threatmanager/3.2/install/upgrade/upgrade2.8.md)
+- [Upgrade PostgreSQL from 14 To 18](/docs/threatmanager/3.2/install/upgrade/upgrade_pg14_to_pg18.md)
+- [Upgrade Threat Manager from 3.1 to 3.2](/docs/threatmanager/3.2/install/upgrade/upgrade3.2.md)

@@ -606,10 +606,10 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '3.0',
-        label: '3.0',
-        isLatest: false,
-        sidebarFile: './sidebars/threatmanager/3.0.js',
+        version: '3.2',
+        label: '3.2',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.2.js',
       },
       {
         version: '3.1',
@@ -618,10 +618,10 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/threatmanager/3.1.js',
       },
       {
-        version: '3.2',
-        label: '3.2',
-        isLatest: true,
-        sidebarFile: './sidebars/threatmanager/3.2.js',
+        version: '3.0',
+        label: '3.0',
+        isLatest: false,
+        sidebarFile: './sidebars/threatmanager/3.0.js',
       },
     ],
     defaultVersion: '3.2',
