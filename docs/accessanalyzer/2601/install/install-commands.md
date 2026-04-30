@@ -32,8 +32,16 @@ Your license key authenticates access to the Netwrix package registry. Don't sha
 # Set the Keygen license key variable
 export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 
-# Run installation
-curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -
+# Download and install the DSPM installer binary for your Linux system architecture (x86_64 or ARM64) using your license key.
+ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+TMP_FILE=$(mktemp)
+curl -sLf -o "$TMP_FILE" "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:$LICENSE_KEY"
+sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
+rm -f "$TMP_FILE"
+
+# Launches the installation wizard 
+sudo dspm-installer --license-key '$LICENSE_KEY'
+Use "dspm-installer [command] --help" for more information about a command.
 ```
 
 **To pin to a specific release** — recommended when you want to control when upgrades happen during your organization's patching cycle — export the version before running the same curl command:
@@ -45,8 +53,18 @@ export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 # Pin to a specific release version
 export DSPM_TARGET_REVISION='[VERSION]'
 
-# Run installation
-curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -
+# Download and install the DSPM installer binary for your Linux system architecture (x86_64 or ARM64) using your license key.
+ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+TMP_FILE=$(mktemp)
+curl -sLf -o "$TMP_FILE" "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:$LICENSE_KEY"
+sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
+rm -f "$TMP_FILE"
+
+# Launches the installation wizard
+sudo dspm-installer --license-key '$LICENSE_KEY'
+
+Use "dspm-installer [command] --help" for more information about a command.
+
 ```
 
 Version strings control which release is installed and what auto-upgrades apply:
@@ -106,6 +124,8 @@ When you run the curl command, the installer automatically:
 
 Installation typically takes 15–30 minutes depending on network speed and hardware.
 
+---
+<!-- HIDDEN:
 ### Passing additional options
 
 To customize the installation, add options after `bash -s --`. The installer receives everything after `--`:
@@ -171,7 +191,7 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
 ```
 
 The installer writes the log to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. Terminal progress output isn't affected — only the log file verbosity changes.
-
+---
 ## Identity Provider Flags
 
 The following table lists every IdP flag the installer accepts. For end-to-end examples, see one of these walkthroughs:
@@ -224,13 +244,13 @@ The installer checks the following before installation begins. The installer wri
 A **FAIL** result stops the installer. Resolve it before retrying. A **WARN** result also stops the installer by default — see [If the Installer Stops with Warnings](#if-the-installer-stops-with-warnings).
 
 For the full list of required network domains, see [Network and Port Requirements](/docs/accessanalyzer/2601/install/system/network).
-
+END HIDDEN -->
 ## If the Installer Stops with Warnings
 
 By default, the installer stops when a preflight warning is detected. In some cases you may know the warning is acceptable for your environment. Use `--accept-warnings` to allow installation to continue:
 
 ```bash
-curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- --accept-warnings
+sudo dspm-installer --accept-warnings
 ```
 
 Before using this option, identify which warning is being reported and review the guidance below:

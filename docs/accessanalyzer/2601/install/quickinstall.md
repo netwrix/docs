@@ -244,10 +244,20 @@ For most deployments, either omit this variable to stay on the latest release, o
 Download the installer:
 
 ```bash
-curl -sLfo /tmp/dspm-install.sh \
-  "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:${LICENSE_KEY}"
-```
 
+# Download and install the DSPM installer binary for your Linux system architecture (x86_64 or ARM64) using your license key.
+ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+TMP_FILE=$(mktemp)
+curl -sLf -o "$TMP_FILE" "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:$LICENSE_KEY"
+sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
+rm -f "$TMP_FILE"
+ 
+# Launches the installation wizard
+sudo dspm-installer --license-key '$LICENSE_KEY'
+ 
+Use "dspm-installer [command] --help" for more information about a command.
+```
+<!-- HIDDEN:
 Run it with one of the following two password options. Installation takes 15–30 minutes.
 
 #### Option — Pipe the LDAP bind password (automated)
@@ -269,7 +279,7 @@ The installer pauses part-way through and displays `Enter LDAP bind credential:`
 :::note
 Setting `LDAP_BIND_CREDENTIAL` as an environment variable isn't an alternative. The installer always reads the bind password interactively, which overwrites any exported value. Use one of the two options above.
 :::
-
+END HIDDEN -->
 ### Step 4: Verify the installation
 
 After the installer completes, confirm all pods are healthy:
