@@ -54,7 +54,7 @@ See [TLS Certificate Requirements](system/certificates.md) for the full specific
 
 - **Application TLS certificate** (PEM). The Subject Alternative Name (SAN) list must include `DSPM_HOSTNAME` **in lowercase** and the server's IP address.
 - **Private key** paired with the certificate (PEM). Must be readable by the OS user running the installer, not just `root`.
-- **CA bundle** (PEM). Must contain the CA that signed the application certificate. If using AD authentication, it must also contain the CA that signed the domain controller's LDAPS certificate. If these are different CAs, concatenate them:
+- **CA bundle** (PEM). Must contain the CA that signed the application certificate. For AD authentication, the CA bundle must also contain the CA that signed the domain controller's LDAPS certificate. If these are different CAs, concatenate them:
 
   ```bash
   cat app-ca.crt ldaps-ca.crt > ca-bundle.crt
@@ -120,7 +120,7 @@ Ports the Access Analyzer server must be able to reach on your data sources and 
 
 - **Outbound** from the Access Analyzer server to the target source/host — **required** for all connectors.
 - **Inbound** at the target source/host from the Access Analyzer server — **required** (the target must accept the connection on the listed port).
-- **Two-way communication** between the Access Analyzer server and the target — **optional**. Can be configured for environments that require it, but not required for any connector.
+- **Two-way communication** between the Access Analyzer server and the target — **optional**. You can configure it for environments that require it, but no connector requires it.
 
 | Connector | Port | Protocol | Notes |
 | --- | --- | --- | --- |
@@ -318,7 +318,7 @@ The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Adm
 5. Pre-provision each user who should be able to sign in. For each user:
    - Click **+ Add User**.
    - Enter the Name and Email. The email must match the user's AD `mail` attribute exactly, **including case**.
-   - Assign a role (see [Roles](#roles) below).
+   - Assign a role (see [Roles](#roles)).
 
    Assign at least one user the **Administrator** role — the bootstrap account can't access system configuration, so someone needs to. Assign at least one additional user the **User Admin** role if you want a non-bootstrap user to manage accounts going forward.
 

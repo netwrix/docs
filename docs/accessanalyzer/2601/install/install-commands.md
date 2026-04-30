@@ -67,7 +67,7 @@ Use "dspm-installer [command] --help" for more information about a command.
 
 ```
 
-Version strings control which release is installed and what auto-upgrades apply:
+Version strings control which release the installer installs and what auto-upgrades apply:
 
 | Value | Behavior |
 | --- | --- |
@@ -253,7 +253,7 @@ By default, the installer stops when a preflight warning is detected. In some ca
 sudo dspm-installer --accept-warnings
 ```
 
-Before using this option, identify which warning is being reported and review the guidance below:
+Before using this option, identify which warning the installer reports and review the following:
 
 | Warning | What it means | Recommended action |
 |---|---|---|
