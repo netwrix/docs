@@ -146,7 +146,7 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 
 | Setting | Default | Range | Description |
 | --- | --- | --- | --- |
-| `activitymonitor_reactor_threads` | 0 (auto) | 0 – 32 | Async I/O threads for handling connections. `0` automatically uses one thread per CPU core — correct for almost all deployments. |
+| `activitymonitor_reactor_threads` | 0 (auto) | 0 – 32 | Async input/output threads for handling connections. `0` automatically uses one thread per CPU core — correct for almost all deployments. |
 | `activitymonitor_buffer_threads` | 8 | 1 – 16 | Writer threads that drain the in-memory event buffer to ClickHouse. More threads help sustain high write rates. |
 | `activitymonitor_buffer_max_size` | 10,000 | 1,000 – 500,000 | Maximum events held in memory at once. When full, new arrivals are held at the TCP layer (backpressure to agents) rather than dropped. |
 | `activitymonitor_batch_size` | 100 | 10 – 1,000 | Events grouped per internal processing batch. |
