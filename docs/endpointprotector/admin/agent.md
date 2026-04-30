@@ -91,7 +91,7 @@ follow these steps:
 
 `cd pathToLinuxClientFolder`
 
-**Step 2 –** To run commands as root, run the following command and type your password.
+**Step 2 –** To run commands as root, run the following command and enter your password.
 
 `sudo su`
 
@@ -183,7 +183,7 @@ This option requires the **Client Registration Certificate** feature to be enabl
 
 ### Installation on macOS with Deep Packet Inspection and VPN Traﬃc Intercept Active
 
-Follow the steps to install on macOS with Deep Packet Inspection and VPN Traffic Intercept active.
+To install on macOS with Deep Packet Inspection and VPN Traffic Intercept active:
 
 **Step 1 –** Open the Endpoint Protector Server.
 
@@ -210,7 +210,7 @@ Protector Client** > **Deep Packet Inspection**.
 ![Activating Deep Packet Inspection](./systemconfiguration/dpion.webp)
 
 :::note
-For more information about Deep Packet Inspection and configurable options, visit the dedicated [documentation section for DPI](/docs/endpointprotector/admin/cap_module/deeppacket.md).
+See [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket.md) for configuration details and available options.
 :::
 
 **Step 7 –** Go to the **System Conﬁguration** section, then **System Settings** > **Deep Packet
@@ -242,7 +242,7 @@ Inspection Certiﬁcate**, and download the **CA Certiﬁcate**.
 - Temporarily Disable Deep Packet Inspection – this option will temporary disable Deep Packet
   Inspection
 - Block Internet Access – this option will end the Internet connection until the end-user approves
-  the Endpoint Protector Proxy Conﬁguration once the computer is rebooted.
+  the Endpoint Protector Proxy Conﬁguration after the computer is rebooted.
 
 ![Activate Intercept VPN Traﬃc](./systemconfiguration/interceptvpntraffic.webp)
 
@@ -318,15 +318,14 @@ Based on each distribution, follow the corresponding method:
 
 ## The Windows Subsystem for Linux
 
-The Windows Subsystem for Linux (WSL) allows you to run native Linux distributions directly within
+With the Windows Subsystem for Linux (WSL), you can run native Linux distributions directly within
 your Windows environment. However, due to its nature, the Endpoint Protector Client can't be
 directly installed as an application within WSL.
 
 While direct installation isn't possible, you can still manage and control the usage of WSL
-applications through the Application Denylist feature in Endpoint Protector. This allows you to
-define specific applications or processes associated with WSL that you want to restrict and monitor.
+applications through the Application Denylist feature in Endpoint Protector. Use it to define specific applications or processes associated with WSL that you want to restrict and monitor.
 
-Follow the steps to use use Denylists to control WSL applications.
+To control WSL applications using Denylists:
 
 **Step 1 –** Navigate to the [Denylists and Allowlists](/docs/endpointprotector/admin/denylistsallowlists/overview.md)
 section within the Endpoint Protector Console.
@@ -350,7 +349,7 @@ on Windows.
 
 This article explains key EPP Client behaviors related to integrity checking, policy synchronization, and service termination. It covers how the EPP Client validates itself at startup, how policy changes are communicated and downloaded, and how different types of client termination are classified and reported.
 
-### What Is the Client Integrity Check?
+### Client Integrity Check
 
 The Client Integrity check runs automatically at EPP service/daemon startup. It verifies two things:
 

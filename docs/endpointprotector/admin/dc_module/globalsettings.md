@@ -26,7 +26,7 @@ the Client’s behavior for each speciﬁc entity (Global, Groups, and Computers
 - Client Mode – select a mode to change Endpoint Protector Client behavior.
 
     :::note
-    Learn more from the [Client Mode](#client-mode) section.
+    See [Client Mode](#client-mode) for a list of available client modes.
     :::
 
 
@@ -55,8 +55,9 @@ the Client’s behavior for each speciﬁc entity (Global, Groups, and Computers
 - Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized
   termination and modiﬁcation
 
-> **CAUTION:** A machine or service reboot is mandatory after enabling this setting to work
-> correctly.
+:::warning
+A machine or service reboot is mandatory after enabling this setting to work correctly.
+:::
 
 - Policy Refresh Interval (sec) – enter the time interval at which the Client checks with the Server
   and updates with the latest settings, rights, and policies.
@@ -283,7 +284,7 @@ In this section, you can manage the following settings:
   intercept VPN traﬃc on macOS using the network extension framework
 
     :::note
-    Learn more from the [Intercept VPN Traﬃc](#intercept-vpn-traﬃc) topic.
+    See [Intercept VPN Traﬃc](#intercept-vpn-traﬃc) for configuration details.
     :::
 
 - Linux proxy loopback address –  aims to facilitate seamless integration with custom VPN and proxy solutions, particularly those like Cisco ANYConnect. When activated, you can specify a custom loopback address, tipically within the 127.0.0.0/8 range. This features is applicable for Linux Clients with version 2509.x.x.x or later
@@ -342,8 +343,7 @@ In this section, you can manage the following settings:
             - ‘Certiﬁcate Pinning’ also falls under this category.
 
         :::note
-        Learn more about
-        [Using Wireshark for Network Traﬃc Analysis](#using-wireshark-for-network-traﬃc-analysis).
+        See [Using Wireshark for Network Traﬃc Analysis](#using-wireshark-for-network-traﬃc-analysis) for details on diagnosing traffic.
         :::
 
 
@@ -403,8 +403,7 @@ In this section, you can manage the following settings:
 
 
     :::note
-    Learn more about Timeout Period for Bypassed Websites, and Handling of Bypassed
-    Domains and Applications.
+    See [Timeout Period for Bypassed Websites](#timeout-period-for-bypassed-websites) and [Handling of Bypassed Domains and Applications](#handling-of-bypassed-domains-and-applications) for details.
     :::
 
 
@@ -412,7 +411,7 @@ In this section, you can manage the following settings:
   Endpoint Protector Server when connections are being bypassed on endpoints.
 
     :::note
-    Learn more about [Bypass Log Reporting Frequency](#bypass-log-reporting-frequency).
+    See [Bypass Log Reporting Frequency](#bypass-log-reporting-frequency) for details.
     :::
 
 - DPI Bypass for Unidentified Application – this will enable bypassing DPI while logging traffic details,
@@ -536,14 +535,14 @@ Protector server achieves this reset.
 
 ### Using Wireshark for Network Traﬃc Analysis
 
-Prior to a "DPI certiﬁcate rejected" event, Wireshark can be instrumental in diagnosing network
+Before a "DPI certiﬁcate rejected" event, Wireshark can be instrumental in diagnosing network
 traﬃc. The presence of a "TLS alert" error in Wireshark signals the impending event.
 
 ## File Tracing and Shadowing
 
 In this section, you can manage the following settings:
 
-- File Tracing – this feature allows you to monitor data traﬃc between protected endpoints and
+- File Tracing – use this feature to monitor data traﬃc between protected endpoints and
   removable devices, internal eSATA HDDs, and Network Shares. It also shows other actions that took
   place, such as ﬁles named, deleted, accessed, modiﬁed, etc.
 
@@ -574,7 +573,7 @@ not occur for newly created ﬁles; however, the system diligently tracks ﬁle 
 File Shadowing for subsequent ﬁle events as expected.
 
 :::note
-For your deployment, we strongly advise activating File Shadowing for not more than 15% of
+For your deployment, limit File Shadowing to not more than 15% of
 your total endpoint capacity (e.g., for a 1000 endpoint deployment, File Shadowing should be set to
 a maximum of 150 endpoints for optimal performance). For more users, contact customer support
 for recommended settings.
@@ -584,14 +583,14 @@ for recommended settings.
 - Exclude Extensions from Tracing – you can disable File Tracing for speciﬁc ﬁle types.
 
 - Exclude Extensions from Scanning – you can disable scanning for speciﬁc ﬁle types.
-- File Tracing Direction – this setting enables you to monitor ﬁle transfers based on transfer
+- File Tracing Direction – use this setting to monitor ﬁle transfers based on transfer
   direction:
 
     - Outgoing File Tracing Direction is deﬁned by transfers made from the local machine to
       removable devices.
     - Incoming File Tracing Direction indicates transfers from the removable devices to the local
       machine.
-    - Both (Outgoing & Incoming) allows you to monitor all types of transfers that are made between
+    - Both (Outgoing & Incoming) monitors all types of transfers made between
       removable devices and the local machine.
 
     :::note
@@ -603,7 +602,7 @@ for recommended settings.
 
     :::note
  MTP (Media Transfers Protocols) file transfer is supported only on Windows
-    client machines. It allows you to transfer files in one direction, from your PC to your Android
+    client machines. You can transfer files in one direction, from your PC to your Android
     device.
     :::
 
@@ -885,7 +884,7 @@ and if Deep Packet Inspection is enabled, it will collect supplementary Deep Pac
 along with sslsplit logs.
 
 :::note
-We recommend using the Debug level mode as it contains more than error and warning type
+Use the Debug level mode, as it contains more than error and warning type
 information.
 :::
 
@@ -911,7 +910,7 @@ data**. For new deployments, **Obfuscate Sensitive Data** is enabled by default.
 **Step 4 –** **Save.**
 
 :::note
-Read the [Data Obfuscation Rules](#data-obfuscation-rules) section for more information.
+See [Data Obfuscation Rules](#data-obfuscation-rules) for a description of how data is obfuscated.
 :::
 
 
@@ -1013,7 +1012,7 @@ Endpoint Protector installed or in relation to a list of trusted Endpoint Protec
   To prevent EasyLock from running on computers that don’t have the EPP Client installed, enable **Client Presence Required** at the global level.
   :::
 
-- **EE Read-Only Mode** — When enabled, EasyLock blocks write access to encrypted drives on computers not managed by the EPP Client. When disabled (default), EasyLock doesn’t start at all on unmanaged computers. For more information, refer to [Enforced Encryption in Read-Only mode](/docs/endpointprotector/admin/ee_module/eemodule.md#enforced-encryption-in-read-only-mode).
+- **EE Read-Only Mode** — When enabled, EasyLock blocks write access to encrypted drives on computers not managed by the EPP Client. When disabled (default), EasyLock doesn’t start at all on unmanaged computers. See [Enforced Encryption in Read-Only mode](/docs/endpointprotector/admin/ee_module/eemodule.md#enforced-encryption-in-read-only-mode) for configuration details.
 
 ![Enforced Encryption in Read-Only mode](eeromode.webp)
 

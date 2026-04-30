@@ -9,7 +9,7 @@ sidebar_position: 150
 ## Device Types and Notiﬁcations
 
 From this section you can view and manage device types and notiﬁcations, view and enable default
-notiﬁcations and their translations and deﬁne custom notiﬁcations for Content Aware Protection
+notiﬁcations and their translations, and deﬁne custom notiﬁcations for Content Aware Protection
 policies and Device Control User Remediation.
 
 ![Manage device types and notiﬁcations](devicetypesnotif.webp)
@@ -38,7 +38,7 @@ individually for computers or groups, from their speciﬁc Settings sections.
 
 ### Custom Content Aware Protection Notiﬁcations
 
-Endpoint Protector allows you to create informative notifications that users see when a Content
+With Endpoint Protector, you can create informative notifications that users see when a Content
 Aware Policy blocks or reports a file. These notifications provide context about the triggered
 policy and the affected file.
 
@@ -50,7 +50,7 @@ understand. In addition, you can employ colors to differentiate sections or emph
 details within the notification. This results in visually engaging notifications that capture user
 attention and ensure important information isn't missed.
 
-Follow the steps to create notifications.
+To create notifications:
 
 **Step 1 –** Click the **Create** button.
 
@@ -89,31 +89,30 @@ HTML elements. The following list shows the supported elements you can use in yo
 
     - `<span style="color: #rrggbb;">Text</span>` (color) - Replace `#rrggbb` with a hexadecimal
       color code (e.g., `style="color: red;"` for red text)
-    - `<span style="font-size: xxpx;">Text<span>` (font size) - Replace `xxpx` with the desired font
-      size in pixels (e.g., `style="font-size: 16px;"` for 16px font)
+    - `<span style="font-size: xxpx;">Text<span>` (font size) - Replace `xxpx` with the font size you want in pixels (e.g., `style="font-size: 16px;"` for 16px font)
 
 - Links:
 
     - `<a href="URL">Text</a>` - Replace `URL` with the actual website address and `Text` with the
       clickable link text (e.g., `<a href="https://www.netwrix.com">Netwrix Website</a>`)
 
-Follow the steps to create notifications using HTML code.
+To create notifications using HTML code:
 
 **Step 1 –** As described in the previous steps, create a new notification by clicking **Create**
 and entering a name, title, and body text.
 
-**Step 2 –** Within the body text editor, directly enter the desired HTML code to format your
+**Step 2 –** Within the body text editor, directly enter the HTML code you want to format your
 message.
 
 ### Custom Device Control User Remediation Notiﬁcations
 
 This section is available only if the Device Control User Remediation setting is enabled from the
-[User Remediation](#user-remediation) section. In this section you can add, edit and delete custom
+[User Remediation](#user-remediation) section. In this section you can add, edit, and delete custom
 notiﬁcations for Device Control User Remediation.
 
 You can add a maximum of 100 custom notiﬁcations but you can't delete the default entry.
 
-Follow the steps to add a new custom notiﬁcation.
+To add a new custom notiﬁcation:
 
 **Step 1 –** Click **Create**.
 
@@ -126,9 +125,9 @@ Follow the steps to add a new custom notiﬁcation.
 
 **Example: USB Driver(deviceName) is blocked(action)**
 
-Once the notiﬁcation was created, you can select the custom notiﬁcation from the User Remediation
+After the notiﬁcation is created, you can select it from the User Remediation
 Notiﬁcation Template dropdown located in the Device Control section, Global Setting, Users,
-Computers and Groups.
+Computers, and Groups.
 
 ![Custom Device Control User Remediation Notiﬁcations](userremediationnotif.webp)
 
@@ -153,7 +152,7 @@ this functionality.
 :::
 
 
-Once the Contextual Detection feature is enabled, it will apply at a global level, based on the
+After the Contextual Detection feature is enabled, it will apply at a global level, based on the
 rules deﬁned in the Contextual XML (but also linked to the conﬁgured Content Aware Protection and
 eDiscovery policies).
 
@@ -313,11 +312,11 @@ This subsection displays a list with all access rights that can be assigned to d
 
 ## Events
 
-In this section you can view, manage and export the events list logged by Endpoint Protector. You
+In this section you can view, manage, and export the events list logged by Endpoint Protector. You
 can also edit event names and descriptions or enable/disable logging for speciﬁc events from the
 Actions column.
 
-![View, manage and export the events list logged by Netwrix Endpoint Protector](listofevents.webp)
+![View, manage, and export the events list logged by Netwrix Endpoint Protector](listofevents.webp)
 
 ### Events Types and Descriptions
 
@@ -463,7 +462,7 @@ from Device Control, Global Settings, [Device Control](/docs/endpointprotector/a
 
 ### Enabling User Remediation
 
-Follow the steps to use User Remediation for Device Control.
+To use User Remediation for Device Control:
 
 **Step 1 –** Enable the User Remediation for Device Control feature from
 [User Remediation Settings](#user-remediation-settings)
@@ -498,7 +497,7 @@ not available.
 
 ### User Remediation Usage
 
-Follow these steps to remediate the device.
+To remediate the device:
 
 **Step 1 –** Open the Endpoint Protector notiﬁer and go to the Device Control tab.
 
