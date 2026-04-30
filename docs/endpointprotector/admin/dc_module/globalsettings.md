@@ -996,14 +996,24 @@ Data is not obfuscated for the ﬁle-type threat, ﬁle-size threat, and date th
 
 ![Data Obfuscation Example](dataobfuscationfour.webp)
 
-## EasyLock Settings
+## Enforced Encryption (EasyLock) Settings
 
 From this section you can allow EasyLock to be installed and run only on computers that have
 Endpoint Protector installed or in relation to a list of trusted Endpoint Protector Servers.
 
 ![Allow EasyLock to be installed](easylocksettings.webp)
 
-EE Read Only mode, will block write access to encrypted drive on computers not managed by EPP Client. Default value is OFF, it means that EE application will not start on computer not managed by EPP Client. For more information refer to [Enforced Encryption in Read-Only mode](/docs/endpointprotector/admin/ee_module/eemodule.md#enforced-encryption-in-read-only-mode)
+- **Endpoint Protector Client Presence Required** — When enabled, EasyLock (Enforced Encryption) runs only on computers where the Endpoint Protector (EPP) Client is installed.
+
+  Group-level Client Presence settings take effect only when the EPP Client is present and can evaluate the applicable user or computer group policy. If a user connects an encrypted USB drive to a computer without the EPP Client, that computer can’t evaluate group-level EasyLock settings, and EasyLock falls back to the global Client Presence setting instead.
+
+  For example, if Client Presence is disabled globally but enabled for a specific user or group, the group-level setting applies only on computers where the EPP Client is running. On computers without the EPP Client, the global setting is used.
+
+  :::note
+  To prevent EasyLock from running on computers that don’t have the EPP Client installed, enable **Client Presence Required** at the global level.
+  :::
+
+- **EE Read-Only Mode** — When enabled, EasyLock blocks write access to encrypted drives on computers not managed by the EPP Client. When disabled (default), EasyLock doesn’t start at all on unmanaged computers. For more information, refer to [Enforced Encryption in Read-Only mode](/docs/endpointprotector/admin/ee_module/eemodule.md#enforced-encryption-in-read-only-mode).
 
 ![Enforced Encryption in Read-Only mode](eeromode.webp)
 
