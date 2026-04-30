@@ -331,59 +331,59 @@ that organizations can maintain robust security and compliance measures.
 
 For a detailed view of all events and their descriptions, please see the table below.
 
-| Event Name                                   | Description                                                                                                                     |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Connected                                    | Device Connected                                                                                                                |
-| Disconnected                                 | Device Disconnected                                                                                                             |
-| File Read                                    | File read from device                                                                                                           |
-| File Write                                   | File written to device                                                                                                          |
-| File Read-Write                              | File read and write from device                                                                                                 |
-| File Rename                                  | File from device renamed                                                                                                        |
-| File Delete                                  | File deleted from device                                                                                                        |
-| Device TD                                    | Trusted Device™ connected                                                                                                       |
-| Deleted                                      | File deleted from device                                                                                                        |
-| Enable Read-Only                             | Device Read-Only Enabled                                                                                                        |
-| Enable if TD Level 1                         | Allows access when a Trusted Device™ is connected (e.g., a USB stick with EasyLock installed, which is automatically launched)  |
-| Enable if TD Level 2                         | Allows access when Trust Level 2 device is connected                                                                            |
-| Enable if TD Level 3                         | Allows access when Trust Level 3 device is connected                                                                            |
-| Enable if TD Level 4                         | Allows access when Trust Level 4 device is connected                                                                            |
-| AD Synchronization                           | AD Synchronization                                                                                                              |
-| Blocked                                      | Device or port blocked                                                                                                          |
-| Unblocked                                    | Device or port unblocked                                                                                                        |
-| Oﬄine Temporary Password Used                | Oﬄine Temporary Password Used                                                                                                   |
-| User Login                                   | User Login                                                                                                                      |
-| File Encrypt                                 | File encrypted using EasyLock                                                                                                   |
-| File Decrypt                                 | File decrypted using EasyLock                                                                                                   |
-| File Encrypt (oﬄine)                         | File encrypted using EasyLock when not communicating with the Endpoint Protector Server                                         |
-| File Decrypt (oﬄine)                         | File decrypted using EasyLock when not communicating with the Endpoint Protector Server                                         |
-| Content Threat Detected                      | Content Aware Protection <ul><li>Threat Detected</li></ul>                                                                      |
-| Content Threat Blocked                       | Content Aware Protection <ul><li>Threat Blocked</li></ul>                                                                       |
-| File Copy                                    | A ﬁle was copied to or from a removable device                                                                                  |
-| Content Threat Discovered                    | eDiscovery <ul><li>Threat Discovered</li></ul>                                                                                  |
-| eDiscovery Client Action                     | eDiscovery <ul><li>Action received successfully</li></ul>                                                                       |
-| User Logout                                  | User Logout                                                                                                                     |
-| Client Integrity OK                          | Endpoint Protector Client Integrity ok                                                                                          |
-| Client Integrity Fail                        | Endpoint Protector Client Integrity failed                                                                                      |
-| Policies Received                            | Endpoint Protector Client received policy successfully                                                                          |
-| Uninstall Attempt                            | Endpoint Protector Client uninstall attempt                                                                                     |
-| EasyLock – successfully deployed             | EasyLock <ul><li>successfully deployed</li></ul>                                                                                |
-| EasyLock <ul><li>deployment failed</li></ul> | EasyLock <ul><li>deployment failed</li></ul>                                                                                    |
-| File Printed                                 | File sent to printer successfully                                                                                               |
-| User Information Updated                     | User information updated successfully                                                                                           |
-| Transfer Limit Reached                       | Transfer Limit Reached                                                                                                          |
-| External Repository Upload                   | File Shadow uploaded to Repository successfully                                                                                 |
-| External Repository Upload Fail              | File Shadow uploaded to Repository failed                                                                                       |
-| Content Remediation Session Active           | Content Aware Protection <ul><li>Threat Remediated</li></ul>                                                                    |
-| Content Remediation Request Canceled by User | Content Aware Protection <ul><li>User Remediation dialog was closed by the user</li></ul>                                       |
-| Forced Uninstall Attempt                     | Endpoint Protector Client forced uninstall attempt                                                                              |
-| Device Remediation Request Canceled by User  | Device Control <ul><li>User Remediation dialog was closed by the user</li></ul>                                                 |
-| Device Remediation Session Canceled          | Device Temporarily Unlock with User Remediation canceled                                                                        |
-| Device Remediation Session Active            | Device Temporarily Unlocked with User Remediation                                                                               |
-| Device Remediation Session Ended             | Device Temporarily Unlock with User Remediation ended                                                                           |
-| Certiﬁcate added to Keychain/store           | Certiﬁcate added to Keychain/store successfully                                                                                 |
-| Unplanned Client Termination                 | Unplanned Client Termination                                                                                                    |
-| Artifact Received                            | Artifact Received                                                                                                               |
-| DPI Bypassed Traﬃc                           | DPI Bypassed Traﬃc                                                                                                              |
+| Event Name                                   | Description                                                                                                                     | Additional Explanations |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| Connected                                    | Device Connected                                                                                                                |                         |
+| Disconnected                                 | Device Disconnected                                                                                                             |                         |
+| File Read                                    | File read from device                                                                                                           |                         |
+| File Write                                   | File written to device                                                                                                          |                         |
+| File Read-Write                              | File read and write from device                                                                                                 |                         |
+| File Rename                                  | File from device renamed                                                                                                        |                         |
+| File Delete                                  | File deleted from device                                                                                                        |                         |
+| Device TD                                    | Trusted Device™ connected                                                                                                       |                         |
+| Deleted                                      | File deleted from device                                                                                                        |                         |
+| Enable Read-Only                             | Device Read-Only Enabled                                                                                                        |                         |
+| Enable if TD Level 1                         | Allows access when a Trusted Device™ is connected (e.g., a USB stick with EasyLock installed, which is automatically launched)  |                         |
+| Enable if TD Level 2                         | Allows access when Trust Level 2 device is connected                                                                            |                         |
+| Enable if TD Level 3                         | Allows access when Trust Level 3 device is connected                                                                            |                         |
+| Enable if TD Level 4                         | Allows access when Trust Level 4 device is connected                                                                            |                         |
+| AD Synchronization                           | AD Synchronization                                                                                                              |                         |
+| Blocked                                      | Device or port blocked                                                                                                          |                         |
+| Unblocked                                    | Device or port unblocked                                                                                                        |                         |
+| Oﬄine Temporary Password Used                | Oﬄine Temporary Password Used                                                                                                   |                         |
+| User Login                                   | User Login                                                                                                                      |                         |
+| File Encrypt                                 | File encrypted using EasyLock                                                                                                   |                         |
+| File Decrypt                                 | File decrypted using EasyLock                                                                                                   |                         |
+| File Encrypt (oﬄine)                         | File encrypted using EasyLock when not communicating with the Endpoint Protector Server                                         |                         |
+| File Decrypt (oﬄine)                         | File decrypted using EasyLock when not communicating with the Endpoint Protector Server                                         |                         |
+| Content Threat Detected                      | Content Aware Protection <ul><li>Threat Detected</li></ul>                                                                      |                         |
+| Content Threat Blocked                       | Content Aware Protection <ul><li>Threat Blocked</li></ul>                                                                       |                         |
+| File Copy                                    | A ﬁle was copied to or from a removable device                                                                                  |                         |
+| Content Threat Discovered                    | eDiscovery <ul><li>Threat Discovered</li></ul>                                                                                  |                         |
+| eDiscovery Client Action                     | eDiscovery <ul><li>Action received successfully</li></ul>                                                                       |                         |
+| User Logout                                  | User Logout                                                                                                                     |                         |
+| Client Integrity OK                          | Endpoint Protector Client Integrity ok   | Logged when the EPP Client starts and all component files and their signatures pass verification. Signature validation applies to Windows only. |
+| Client Integrity Fail                        | Endpoint Protector Client Integrity failed | Logged when the EPP Client starts and one or more component files are missing or their signatures fail verification. Signature validation applies to Windows only. |
+| Policies Received | Endpoint Protector Client received policy successfully   | Logged when the EPP Client downloads updated settings from the server. Any change to Computer or User settings — such as configuration items, rights, or policies — updates the configuration XML and its hash. When the EPP Client connects to the EPP Server, it presents its current XML hash. If the hash differs from what the server holds, the server sends the updated configuration for the client to download automatically. |
+| Uninstall Attempt                            | Endpoint Protector Client uninstall attempt  | Logged when a deliberate uninstall of the EPP Client is initiated — either directly on the endpoint (for example, via Add/Remove Programs) or from the EPP Server using the Uninstall Client action. |
+| EasyLock – successfully deployed             | EasyLock <ul><li>successfully deployed</li></ul>                                                                                |                         |
+| EasyLock <ul><li>deployment failed</li></ul> | EasyLock <ul><li>deployment failed</li></ul>                                                                                    |                         |
+| File Printed                                 | File sent to printer successfully                                                                                               |                         |
+| User Information Updated                     | User information updated successfully                                                                                           |                         |
+| Transfer Limit Reached                       | Transfer Limit Reached                                                                                                          |                         |
+| External Repository Upload                   | File Shadow uploaded to Repository successfully                                                                                 |                         |
+| External Repository Upload Fail              | File Shadow uploaded to Repository failed                                                                                       |                         |
+| Content Remediation Session Active           | Content Aware Protection <ul><li>Threat Remediated</li></ul>                                                                    |                         |
+| Content Remediation Request Canceled by User | Content Aware Protection <ul><li>User Remediation dialog was closed by the user</li></ul>                                       |                         |
+| Forced Uninstall Attempt                     | Endpoint Protector Client forced uninstall attempt | Logged when the EPP Client service is stopped or terminated and one or more component files, registry keys, or drivers are found in an unexpected state. |
+| Device Remediation Request Canceled by User  | Device Control - Remediation dialog was closed by the user |                         |
+| Device Remediation Session Canceled          | Device Temporarily Unlock with User Remediation canceled                                                                        |                         |
+| Device Remediation Session Active            | Device Temporarily Unlocked with User Remediation                                                                               |                         |
+| Device Remediation Session Ended             | Device Temporarily Unlock with User Remediation ended                                                                           |                         |
+| Certiﬁcate added to Keychain/store           | Certiﬁcate added to Keychain/store successfully                                                                                 |                         |
+| Unplanned Client Termination                 | Unplanned Client Termination | Logged when the EPP Client service stops or is terminated unexpectedly, but all component files, registry keys, and drivers are intact. |
+| Artifact Received                            | Artifact Received  |   |
+| DPI Bypassed Traﬃc                           | DPI Bypassed Traﬃc                                                                                                              |                         |
 
 
 ## User Remediation

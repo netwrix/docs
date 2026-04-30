@@ -6,6 +6,26 @@ sidebar_position: 40
 
 # Logs REST API Specification
 
+:::warning 
+Preview feature — Support-enabled
+
+The Logs REST API is a Preview capability. It is disabled by default and is not automatically exposed on Endpoint Protector servers.
+
+Enable this API only after Netwrix Support has reviewed your use case and provided setup guidance. Preview availability, endpoint coverage, response fields, authentication behavior, request limits, and configuration steps may change before general availability.
+
+:::
+
+:::warning 
+Preview API contract
+
+This technical reference describes the current Preview API surface for approved Logs REST API deployments.
+
+Use this reference only after Netwrix Support has enabled the API in your environment. Because the feature is in Preview, endpoints, fields, filters, examples, limits, and configuration requirements may change before general availability.
+
+Integrations should be designed to tolerate additive response fields, documented error responses, pagination, and future contract refinements.
+:::
+
+
 **Version:** 1.0  
 **Base URL:** `https://<epp-server>/api/logs/`  
 **Protocol:** HTTPS only (TLS 1.2+)  

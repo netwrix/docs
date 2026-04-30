@@ -13,6 +13,7 @@ You can choose to self-enroll in "Learn About" learning paths available within t
 
 * [Learn About Netwrix 1Secure Learning Path](./1secure.md)
 * [Learn About Netwrix Access Analyzer Learning Path](./access-analyzer.md)
+* [Learn About Netwrix Access Analyzer 26+ Learning Path](./access-analyzer-data.md)
 * [Learn About Netwrix Activity Monitor Learning Path](./activity-monitor.md)
 * [Learn About Netwrix Auditor Learning Path](./auditor.md)
 * [Learn About Netwrix Change Tracker Learning Path](./change-tracker.md)
