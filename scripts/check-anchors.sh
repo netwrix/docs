@@ -51,6 +51,16 @@ anchor_exists() {
   [[ "${HEADING_CACHE[$file]}" == *" $anchor "* ]]
 }
 
+list_anchors() {
+  local file="$1"
+  load_headings "$file"
+  local slugs="${HEADING_CACHE[$file]:-}" result=""
+  for slug in $slugs; do
+    result="${result:+$result · }#$slug"
+  done
+  printf '%s' "$result"
+}
+
 check_file() {
   local source_file="$1"
   local abs_source source_dir
@@ -99,8 +109,13 @@ check_file() {
       [[ -f "$target_file" ]] || continue
 
       if ! anchor_exists "$target_file" "$anchor"; then
-        printf '  %s:%d -> #%s not found in %s\n' \
-          "${source_file#$REPO_ROOT/}" "$line_num" "$anchor" "${target_file#$REPO_ROOT/}"
+        local available
+        available="$(list_anchors "$target_file")"
+        printf '  %s:%d\n' "${source_file#$REPO_ROOT/}" "$line_num"
+        printf '    %s\n' "${line#"${line%%[![:space:]]*}"}"
+        printf '    #%s not found in %s\n' "$anchor" "${target_file#$REPO_ROOT/}"
+        [[ -n "$available" ]] && printf '    Available: %s\n' "$available"
+        printf '\n'
         (( ERRORS++ )) || true
       fi
     done

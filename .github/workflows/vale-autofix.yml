@@ -247,7 +247,7 @@ jobs:
           ./scripts/check-anchors.sh "${FILES[@]}" > /tmp/anchor-check-output.txt 2>&1 || BROKEN=1
           if [ "$BROKEN" -eq 1 ]; then
             grep '^\s' /tmp/anchor-check-output.txt > /tmp/anchor-errors.txt || true
-            BROKEN=$(wc -l < /tmp/anchor-errors.txt | tr -d ' ')
+            BROKEN=$(grep -oE 'Found [0-9]+' /tmp/anchor-check-output.txt | grep -oE '[0-9]+' | tail -1 || echo "0")
             echo "Broken anchors found:"
             cat /tmp/anchor-check-output.txt
           fi
@@ -355,9 +355,9 @@ jobs:
           # Collect anchor check results
           BROKEN_ANCHORS=0
           ANCHOR_BODY=""
-          if [ -f /tmp/anchor-errors.txt ] && [ -s /tmp/anchor-errors.txt ]; then
-            BROKEN_ANCHORS=$(wc -l < /tmp/anchor-errors.txt | tr -d ' ')
-            ANCHOR_BODY=$(cat /tmp/anchor-errors.txt)
+          if [ -f /tmp/anchor-check-output.txt ] && [ -s /tmp/anchor-check-output.txt ]; then
+            BROKEN_ANCHORS=$(grep -oE 'Found [0-9]+' /tmp/anchor-check-output.txt | grep -oE '[0-9]+' | tail -1 || echo "0")
+            ANCHOR_BODY=$(cat /tmp/anchor-errors.txt 2>/dev/null || true)
           fi
 
           # Build the summary comment
