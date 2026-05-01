@@ -9,7 +9,11 @@ sidebar_position: 40
 Once a domain or a host/service is being monitored the event stream can be sent to multiple outputs. There
 are three types of outputs:
 
-- File – Creates an activity log as a TSV or JSON file for every day of activity
+
+- Netwrix Access Analyzer 26 – Sends activity events to Netwrix Access Analyzer 26 and above
+
+- File – Creates an activity log as a TSV or JSON file for every day of activity. 
+  Use this output type to integrate with Access Analyzer 12 and below.
 
 - Syslog – Sends activity events to the configured SIEM server.
   For file servers, this option is also used to send activity events to Netwrix Threat Manager.
@@ -38,6 +42,7 @@ Output Properties window has the following tabs:
 
 Output Properties window has the following tabs:
 
+- [Access Analyzer 26 Tab](/docs/activitymonitor/10.0/admin/outputs/accessanalyzer26.md), Access Analyzer 26 output only
 - [Log Files Tab](/docs/activitymonitor/10.0/admin/outputs/logfiles.md), File output only
 - [Syslog Tab](/docs/activitymonitor/10.0/admin/outputs/syslog/syslog.md), Syslog output only
 - [Operations Tab](/docs/activitymonitor/10.0/admin/outputs/operations/operations.md)
@@ -92,30 +97,32 @@ Output Properties window has the following tabs:
 
 Output Properties window has the following tabs:
 
-- [Additional Properties Tab](/docs/activitymonitor/10.0/admin/outputs/additionalproperties.md)
+- [Access Analyzer 26 Tab](/docs/activitymonitor/10.0/admin/outputs/accessanalyzer26.md), Access Analyzer 26 output only
 - [Log Files Tab](/docs/activitymonitor/10.0/admin/outputs/logfiles.md), File output only
-- [Operations Tab](/docs/activitymonitor/10.0/admin/outputs/operations/operations.md)
 - [Syslog Tab](/docs/activitymonitor/10.0/admin/outputs/syslog/syslog.md), Syslog output only
+- [Operations Tab](/docs/activitymonitor/10.0/admin/outputs/operations/operations.md)
+- [Additional Properties Tab](/docs/activitymonitor/10.0/admin/outputs/additionalproperties.md)
 
 ## For SQL Server Hosts
 
 Output Properties window has the following tabs:
 
-- [Account Exclusions Tab](/docs/activitymonitor/10.0/admin/outputs/accountexclusions/accountexclusions.md)
-- [Additional Properties Tab](/docs/activitymonitor/10.0/admin/outputs/additionalproperties.md)
 - [Log Files Tab](/docs/activitymonitor/10.0/admin/outputs/logfiles.md), File output only
+- [Syslog Tab](/docs/activitymonitor/10.0/admin/outputs/syslog/syslog.md), Syslog output only
 - [Operations Tab](/docs/activitymonitor/10.0/admin/outputs/operations/operations.md)
 - [Objects Tab](/docs/activitymonitor/10.0/admin/outputs/objects.md)
-- [Syslog Tab](/docs/activitymonitor/10.0/admin/outputs/syslog/syslog.md), Syslog output only
+- [Account Exclusions Tab](/docs/activitymonitor/10.0/admin/outputs/accountexclusions/accountexclusions.md)
+- [Additional Properties Tab](/docs/activitymonitor/10.0/admin/outputs/additionalproperties.md)
 
 ## For Windows File Server Hosts
 
 Output Properties window has the following tabs:
 
-- [Account Exclusions Tab](/docs/activitymonitor/10.0/admin/outputs/accountexclusions/accountexclusions.md)
-- [Additional Properties Tab](/docs/activitymonitor/10.0/admin/outputs/additionalproperties.md)
+- [Access Analyzer 26 Tab](/docs/activitymonitor/10.0/admin/outputs/accessanalyzer26.md), Access Analyzer 26 output only
 - [Log Files Tab](/docs/activitymonitor/10.0/admin/outputs/logfiles.md), File output only
+- [Syslog Tab](/docs/activitymonitor/10.0/admin/outputs/syslog/syslog.md), Syslog output only
 - [Operations Tab](/docs/activitymonitor/10.0/admin/outputs/operations/operations.md)
 - [Path Filtering Tab](/docs/activitymonitor/10.0/admin/outputs/pathfiltering/pathfiltering.md)
 - [Protocols Tab](/docs/activitymonitor/10.0/admin/outputs/protocols.md)
-- [Syslog Tab](/docs/activitymonitor/10.0/admin/outputs/syslog/syslog.md), Syslog output only
+- [Account Exclusions Tab](/docs/activitymonitor/10.0/admin/outputs/accountexclusions/accountexclusions.md)
+- [Additional Properties Tab](/docs/activitymonitor/10.0/admin/outputs/additionalproperties.md)

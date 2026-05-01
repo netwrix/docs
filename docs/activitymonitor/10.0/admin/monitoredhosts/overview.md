@@ -47,7 +47,7 @@ For all other hosts, the agent is deployed to a Windows proxy server.
 
 **Tab**
 
-Once the agent(s) installation is complete, hosts can be added for monitoring. The tab is not
+After agent installation is complete, hosts can be added for monitoring. The tab isn't
 visible within the console until at least one agent has been deployed.
 
 This tab is comprised of a button bar and a table of hosts being monitored. A list of outputs is
@@ -55,14 +55,14 @@ listed under each monitored host. These are destinations to which events are for
 
 ## Button Bar
 
-The button bar allows users to take the following actions:
+Use the button bar to take the following actions:
 
 ![Activity Monitor with Monitored Hosts & Services tab identified](/images/activitymonitor/9.0/admin/monitoredhosts/monitoredhoststab.webp)
 
 - Toggle Collapse – Expands and collapses all Monitored Hosts/Services for viewing or hiding host's outputs
 - Add Host – Opens the Add New Host window to configure monitoring of a new host or platform. See
-  the section for instructions on adding the desired target environment.
-- Add Output – Opens the Add New Output windows to create new output for the selected host or hosts.
+  the section for instructions on adding the target environment you want.
+- Add Output – Opens the Add New Output windows to create new output for the selected hosts or services.
 - Remove – Remove the selected hosts or outputs from the monitored hosts/services table and end monitoring. A
   window prompts for confirmation to remove the selected hosts or outputs.
 - Edit – Opens the selected hosts or outputs' Properties window to modify monitoring settings
@@ -76,8 +76,8 @@ can select several hosts or outputs and edit, disable, enable, remove them, or a
 the same time.
 
 Bulk editing allows the user to selectively modify hosts or outputs. For example, with bulk editing
-it is possible to add a user to Account Exclusions, or set the retention period for log files, or
-disable reporting of Directory Read operations, etc.
+you can add a user to Account Exclusions, set the retention period for log files, or
+disable reporting of Directory Read operations.
 
 To initiate bulk editing, select multiple hosts or outputs (`Ctrl+A` and `Ctrl+Shift+A` may help
 here), and click the **Edit** Edit button. The Properties window shows divergent settings as blank
@@ -102,21 +102,14 @@ The monitored hosts/services table provides the following information:
 - Status – Indicates the status of activity monitoring for the host. See the Error Propagation topic
   for additional information.
 - Received Events – Timestamp of the last event received
-- Comment – Comment provided by user:
-    - Often this indicates the desired output, e.g. Access Analyzer.
-    - This can be useful if adding the same monitored host multiple times with different
-      configurations for different outputs.
-    - If a Activity Monitor Agent has been deployed to a Windows server where an activity agent is
-      deployed, then the Comment identifies the host as "Managed by Activity Monitor", and that
-      'monitored host' is not editable. Add the host again for other outputs.
+- Comment – Comment provided by user
 
 Hosts can have more than one output. To view a host's outputs, expand the host by clicking the white
 arrow to the left of the Monitored Host name.
 
-For integration with Netwrix Access Analyzer, only one configuration
-of a 'monitored host' can be set as the Netwrix Access Analyzer
-output. After a 'monitored host' has been added, use the Edit feature to identify the configuration
-as being for Netwrix Access Analyzer on the Log Files tab of the
+To integrate with Netwrix Access Analyzer 12 and below, set one file output as the Netwrix Access Analyzer 12
+output. After you add an output, use the Edit feature to identify the configuration
+as being for Netwrix Access Analyzer 12 and earlier on the Log Files tab of the
 host's Properties window. See the [Log Files Tab](/docs/activitymonitor/10.0/admin/outputs/logfiles.md) topic for additional
 information.
 
@@ -130,7 +123,7 @@ to view more information on various status conditions.
 ![errorpropogationpopulated](/images/activitymonitor/9.0/admin/monitoredhosts/errorpropogationpopulated.webp)
 
 Click the **Down Arrow** to expand the Status section. The information listed is dependent on which
-host or output is currently selected in the Monitored Hosts & Services table. Users can find information on the
+host or output is selected in the Monitored Hosts & Services table. Users can find information on the
 **Current State** of a host, as well as viewing a history of changes in state.
 
 The possible statuses depend on the type of hosts being monitored. What is common is that the status

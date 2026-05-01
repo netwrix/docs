@@ -1,7 +1,7 @@
 ---
 title: "Additional Properties Tab"
 description: "Additional Properties Tab"
-sidebar_position: 20
+sidebar_position: 120
 ---
 
 # Additional Properties Tab
@@ -34,5 +34,5 @@ Properties window closes.
 
 If a Threat Prevention Agent has been deployed to the same Windows proxy server where and activity
 agent is deployed to monitor NAS devices, then the **Comment** column in the monitored hosts/services table
-identifies the host as being “Managed by Threat Prevention”, and that ‘monitored host’ configuration
-is not editable through the Activity Monitor Console. Simply add the host again for other outputs.
+identifies the host as being “Managed by Threat Prevention”, and that output
+isn't editable through the Activity Monitor Console. Add another output if needed.

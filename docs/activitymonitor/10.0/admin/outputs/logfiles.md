@@ -1,7 +1,7 @@
 ---
 title: "Log Files Tab"
 description: "Log Files Tab"
-sidebar_position: 40
+sidebar_position: 42
 ---
 
 # Log Files Tab
@@ -26,7 +26,7 @@ The tab contains the following settings:
   information recorded per event.
 
     :::note
-    This setting effects activity log retention whether or not the archiving feature is
+    This setting effects activity log retention whether the archiving feature is
     enabled.
     :::
 
@@ -66,7 +66,7 @@ The tab contains the following settings:
   is 10 days.
 
     :::note
-    This setting effects activity log retention whether or not the archiving feature is
+    This setting effects activity log retention whether the archiving feature is
     enabled.
     :::
 
@@ -83,7 +83,7 @@ The tab contains the following settings:
       [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
       for additional information.
     - For integration with Netwrix Threat Prevention NAS monitoring, this setting only controls the
-      log retention period for NAS devices, as Netwrix Threat Prevention does not read Windows file
+      log retention period for NAS devices, as Netwrix Threat Prevention doesn't read Windows file
       server activity from Activity Monitor.
 
 - Report account names – Indicates if an Account Name column is added in the activity log files
@@ -92,7 +92,7 @@ The tab contains the following settings:
 
     :::note
     This is needed to feed data into Splunk in a Syslog output. However, Netwrix Access
-    Analyzer  does not support log files with headers. Therefore, do
+    Analyzer doesn't support log files with headers. Therefore, do
     not select this option for a File output designed for Netwrix Access Analyzer.
     :::
 
@@ -142,7 +142,7 @@ The tab contains the following settings:
   is 10 days.
 
     :::note
-    This setting effects activity log retention whether or not the archiving feature is
+    This setting effects activity log retention whether the archiving feature is
     enabled.
     :::
 
@@ -158,7 +158,7 @@ The tab contains the following settings:
 
     :::note
     This is needed to feed data into Splunk in a Syslog output. However, Netwrix Access
-    Analyzer  does not support log files with headers. Therefore, do
+    Analyzer doesn't support log files with headers. Therefore, do
     not select this option for a File output designed for Netwrix Access Analyzer.
     :::
 
@@ -197,7 +197,7 @@ The tab contains the following settings:
   is 10 days.
 
     :::note
-    This setting effects activity log retention whether or not the archiving feature is
+    This setting effects activity log retention whether the archiving feature is
     enabled.
     :::
 
@@ -236,7 +236,7 @@ The tab contains the following settings:
   is 10 days.
 
     :::note
-    This setting effects activity log retention whether or not the archiving feature is
+    This setting effects activity log retention whether the archiving feature is
     enabled.
     :::
 
