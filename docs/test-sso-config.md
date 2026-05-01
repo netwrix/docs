@@ -11,14 +11,14 @@ without re-entering credentials. This article describes how to configure SSO usi
 
 ## Prerequisites
 
-Before configuring SSO, ensure that the following requirements are met:
+Before configuring SSO, ensure you meet the following requirements:
 
 - Your Identity Provider (IdP) supports SAML 2.0
 - You have administrative access to both the IdP and Netwrix Auditor
 - SSL/TLS is enabled on your Netwrix Auditor server
 
 :::warning
-SSO configuration can't be reversed without administrative access to the IdP. To disable SSO after it is enabled, you must access the IdP administration console and deactivate or delete the Netwrix Auditor SAML application. Plan your deployment before enabling SSO for all users.
+You can't reverse the SSO configuration without administrative access to the IdP. To disable SSO after you enable it, you must access the IdP administration console and deactivate or delete the Netwrix Auditor SAML application. Plan your deployment before enabling SSO for all users.
 :::
 
 ## Configure the Identity Provider
@@ -37,8 +37,7 @@ SSO configuration can't be reversed without administrative access to the IdP. To
 
 **Step 2 –** Select **SAML 2.0** as the authentication method.
 
-**Step 3 –** Configure the Service Provider (SP) binding settings and upload the metadata file you downloaded in the
-previous section.
+**Step 3 –** Configure the Service Provider (SP) binding settings and upload the metadata file you downloaded in the Configure the Identity Provider section.
 
 **Step 4 –** Don't modify the Entity ID after saving — changing this value will break existing
 SSO sessions.
@@ -53,7 +52,7 @@ After Netwrix Auditor saves the configuration, it redirects users to the IdP log
 
 **Step 2 –** Navigate to your Netwrix Auditor login URL.
 
-**Step 3 –** Confirm that you are redirected to the IdP login page.
+**Step 3 –** Confirm that Netwrix Auditor redirects you to the IdP login page.
 
 **Step 4 –** Enter valid SSO credentials and confirm that authentication succeeds.
 
@@ -65,6 +64,4 @@ If users can't log in after enabling SSO, check the following:
 
 - Verify the metadata file was uploaded correctly. The file must be a valid SAML 2.0 XML metadata file downloaded from your IdP application settings.
 - Confirm the IdP SAML application is active and not in a draft or disabled state.
-- Check that the Netwrix Auditor server time is synchronized with the IdP — authentication tokens
-  are generated based on timestamp comparison, and clock skew greater than five minutes will cause
-  failures.
+- Check that the Netwrix Auditor server time is synchronized with the IdP — the IdP generates authentication tokens based on timestamp comparison, and clock skew greater than five minutes will cause failures.
