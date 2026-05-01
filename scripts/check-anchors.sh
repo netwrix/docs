@@ -115,9 +115,13 @@ check_file() {
       # Check if target file exists; report broken links to markdown files
       if [[ -n "$path" ]] && ! [[ -f "$target_file" ]]; then
         if [[ "$target_file" =~ \.(md|mdx)$ ]]; then
-          printf '  %s:%d\n' "${source_file#$REPO_ROOT/}" "$line_num"
+          local rel_source="${source_file#$REPO_ROOT/}"
+          local msg="${target_file#$REPO_ROOT/} not found"
+          [[ "${GITHUB_ACTIONS:-}" == "true" ]] && \
+            printf '::error file=%s,line=%d::%s\n' "$rel_source" "$line_num" "$msg"
+          printf '  %s:%d\n' "$rel_source" "$line_num"
           printf '    %s\n' "$trimmed_line"
-          printf '    %s not found\n' "${target_file#$REPO_ROOT/}"
+          printf '    %s\n' "$msg"
           printf '\n'
           (( ERRORS++ )) || true
         fi
@@ -128,9 +132,13 @@ check_file() {
       if [[ -n "$anchor" ]] && ! anchor_exists "$target_file" "$anchor"; then
         local available
         available="$(list_anchors "$target_file")"
-        printf '  %s:%d\n' "${source_file#$REPO_ROOT/}" "$line_num"
+        local rel_source="${source_file#$REPO_ROOT/}"
+        local msg="#${anchor} not found in ${target_file#$REPO_ROOT/}"
+        [[ "${GITHUB_ACTIONS:-}" == "true" ]] && \
+          printf '::error file=%s,line=%d::%s\n' "$rel_source" "$line_num" "$msg"
+        printf '  %s:%d\n' "$rel_source" "$line_num"
         printf '    %s\n' "$trimmed_line"
-        printf '    #%s not found in %s\n' "$anchor" "${target_file#$REPO_ROOT/}"
+        printf '    %s\n' "$msg"
         [[ -n "$available" ]] && printf '    Available: %s\n' "$available"
         printf '\n'
         (( ERRORS++ )) || true
