@@ -35,8 +35,8 @@ jobs:
         run: |
           MESSAGE=$(gh api repos/${{ github.repository }}/commits/${{ github.event.pull_request.head.sha }} --jq '.commit.message')
           echo "Latest commit message: $MESSAGE"
-          if echo "$MESSAGE" | grep -qE '^fix\((vale|dale)\):|^ci: trigger build'; then
-            echo "Skipping: commit is from autofix workflow"
+          if echo "$MESSAGE" | grep -qE '^fix\((vale|dale)\):|^ci: trigger build|^docs: apply .* fixes from PR review'; then
+            echo "Skipping: commit is from autofix or doc-fixer workflow"
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
@@ -162,6 +162,18 @@ jobs:
           gh pr comment ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} \
             --body "This PR is from a fork. Automated fixes cannot be pushed directly. I can still review and suggest changes — apply them manually from the comments."
 
+      - name: Post acknowledgment comment
+        id: ack-comment
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          COMMENT_ID=$(gh pr comment "${{ steps.pr-info.outputs.number }}" \
+            --repo "${{ github.repository }}" \
+            --body "**Acknowledged:** Analyzing your request — I'll update this comment with a task list shortly." \
+            --format json | jq -r '.id')
+          echo "comment_id=$COMMENT_ID" >> "$GITHUB_OUTPUT"
+
       - name: Checkout repository
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         uses: actions/checkout@v4
@@ -176,6 +188,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMENT_BODY: ${{ github.event.comment.body }}
+          PROGRESS_COMMENT_ID: ${{ steps.ack-comment.outputs.comment_id }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.VALE_TOKEN }}
