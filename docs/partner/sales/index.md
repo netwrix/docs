@@ -8,33 +8,33 @@ description: "Learn about the Netwrix Sales Professional certification options"
 
 The following learning paths provide Partner certification for Sales Professionals:
 
-* Data Security Platform
-    * AI Governance Use Case
+* Data Security
+    * AI Governance
         * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
         * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
-    * Data Security Posture Management Use Case
+    * Data Security Posture Management
         * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
         * [Netwrix Data Security Posture Management Solution Sales Professional](./data-security-posture-management.md)
         * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
-    * Data Access Governance Use Case
+    * Data Access Governance
         * [Netwrix 1Secure Sales Professional](./1secure-dspm.md) 
-    * Data Loss Prevention Use Case
+    * Data Loss Prevention
         * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
         * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
-    * Data Discovery & Classification Use Case
+    * Data Discovery & Classification
         * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
-* Identity Security Platform
-    * Identity Threat Detection & Response Use Case
+* Identity Security
+    * Identity Threat Detection & Response
         * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
         * [Netwrix Identity Threat Detection & Response Solution Sales Professional](./identity-threat-detection-response.md)
-    * Identity Governance & Administration Use Case
+    * Identity Governance & Administration
         * [Netwrix Identity Manager Sales Professional](./identity-manager.md)
-    * Identity Security Posture Management Use Case
+    * Identity Security Posture Management
         * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
         * [Netwrix PingCastle Sales Professional](./pingcastle.md)
-    * Privileged Access Management Use Case
+    * Privileged Access Management
         * [Netwrix Privileged Access Management Solution Sales Professional](./privileged-access-management.md)
-    * Directory Security Use Case
+    * Directory Security
         * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
         * [Netwrix Password Secure Sales Professional](./password-secure.md)
         * [Netwrix PingCastle Sales Professional](./pingcastle.md)

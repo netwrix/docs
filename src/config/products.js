@@ -250,6 +250,22 @@ export const PRODUCTS = [
     defaultVersion: '11.1',
   },
   {
+    id: 'policypak',
+    name: 'PolicyPak',
+    description: 'Group Policy management and enforcement',
+    path: 'docs/policypak',
+    categories: ['Endpoint Management'],
+    icon: '',
+    versions: [
+      {
+        version: 'current',
+        label: 'Current',
+        isLatest: true,
+        sidebarFile: './sidebars/policypak.js',
+      },
+    ],
+  },
+  {
     id: 'endpointprotector',
     name: 'Endpoint Protector',
     description: 'Comprehensive endpoint security',
@@ -328,9 +344,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '11.2',
+        label: '11.2',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordpolicyenforcer/11.2.js',
+      },
+      {
         version: '11.1',
         label: '11.1',
-        isLatest: true,
+        isLatest: false,
+        hidden: true,
         sidebarFile: './sidebars/passwordpolicyenforcer/11.1.js',
       },
       {
@@ -348,7 +371,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/passwordpolicyenforcer/10.2.js',
       },
     ],
-    defaultVersion: '11.1',
+    defaultVersion: '11.2',
   },
   {
     id: 'passwordreset',
@@ -379,13 +402,21 @@ export const PRODUCTS = [
     name: 'Password Secure',
     description: 'Secure password management',
     path: 'docs/passwordsecure',
-    categories: ['Privileged Access Management (PAM)'],
+    categories: ['Identity Management'],
     icon: '',
     versions: [
       {
+        version: 'current',
+        label: 'Current',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordsecure/current.js',
+        customRoutePath: 'docs/passwordsecure/current',
+        customDocPath: 'docs/passwordsecure/current'
+      },
+      {
         version: '9.3',
         label: '9.3',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/passwordsecure/9.3.js',
       },
       {
@@ -393,15 +424,9 @@ export const PRODUCTS = [
         label: '9.2',
         isLatest: false,
         sidebarFile: './sidebars/passwordsecure/9.2.js',
-      },
-      {
-        version: '9.1',
-        label: '9.1',
-        isLatest: false,
-        sidebarFile: './sidebars/passwordsecure/9.1.js',
-      },
+      }
     ],
-    defaultVersion: '9.3',
+    defaultVersion: 'current',
   },
   {
     id: 'pingcastle',

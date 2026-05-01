@@ -6,11 +6,11 @@ sidebar_position: 20
 
 # Troubleshooting Common Issues
 
-## Backup Restore Fails or Is Rejected by 2510
+## Backup Restore Fails or Is Rejected by the Server
 
 **Symptom:** The import wizard rejects the backup file or shows an error.
 
-**Root cause:** The backup was created on a version **other than 5.9.4.2**.
+**Root cause:** The backup originates from a server version **other than 5.9.4.2**.
 
 **Resolution:**
 1. Verify the source server is on 5.9.4.2 (Appliance → Server Information).
@@ -49,7 +49,7 @@ If the fix script doesn't bring the file below 200 MB, contact Netwrix Support f
 
 **Resolution:**
 - If you used the same IP/FQDN: verify that the backup restored the certificates (check **System Configuration → Certificates**).
-- If you used a different IP/FQDN: users must decrypt their drives, reconnect to the new server, and re-encrypt. Contact Netwrix Support for mass re-encryption scripts.
+- If you used a different IP/FQDN: users must decrypt their drives, reconnect to the new server, and re-encrypt.
 
 ---
 
@@ -57,7 +57,7 @@ If the fix script doesn't bring the file below 200 MB, contact Netwrix Support f
 
 **Symptom:** SIEM integration stops receiving events after restore.
 
-**Resolution:** SIEM functionality may require reconfiguration after migration. Contact Netwrix Support and provide diagnostic logs — Netwrix Support may need to run a specialized restoration script.
+**Resolution:** SIEM functionality may require reconfiguration after migration.
 
 ---
 
@@ -71,5 +71,20 @@ If the fix script doesn't bring the file below 200 MB, contact Netwrix Support f
 3. Check that client packages (5.9.4.3) are uploaded to the server.
 4. Verify the old server is no longer running on the same IP if using same-IP strategy.
 5. Check endpoint firewall rules allow outbound on ports 443 and any other configured EPP ports.
+6. Test with a clean install of the latest EPP Client to eliminate potential issues caused by a corrupted existing client.
+
+---
+
+## Endpoints Not Upgrading via EPP Server Client Upgrade tool
+
+**Symptom:** Endpoints Upgrade seems stuck to pending
+
+**Checklist:**
+1. Verify that you have the latest EPP Server in use.
+2. Clean up all old Client Upgrade tasks existing on EPP Server.
+3. Check version of EPP Client used in upgrade process vs Client version which you want to upgrade - to eliminate the [Certificate Bridge issue](/docs/endpointprotector/install/migrationprocedure/migrationguide.md#certificate-bridge-and-upgrade-path).
+4. Create a new task.
+5. Ensure the affected endpoint with current EPP Client is communicating, and refresh policy.
+6. Ensure that the affected Windows endpoint is restarted; the installer uses msiexec, which can be blocked by any other previous failed installations.
 
 ---

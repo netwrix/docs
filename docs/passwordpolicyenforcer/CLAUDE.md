@@ -15,17 +15,18 @@ This file scopes guidance to the **Password Policy Enforcer (PPE)** product docu
 
 | Version | Status | Notes |
 |---|---|---|
-| `11.1` | Latest (default) | Active version — most edits land here |
+| `11.2` | Latest (default) | Active version — most edits land here |
+| `11.1` | Hidden | Previous minor; don't surface in navigation |
 | `11.0` | Hidden | Kept for users on 11.0; don't surface in navigation |
 | `10.2` | Hidden | Legacy; different section layout (see below) |
 
-Edits to one version **do not** propagate. Apply changes to each version explicitly when they apply to more than one. When a change only applies to 11.1 (new feature, renamed control), note that clearly and skip the older versions.
+Edits to one version **do not** propagate. Apply changes to each version explicitly when they apply to more than one. When a change only applies to 11.2 (new feature, renamed control), note that clearly and skip the older versions.
 
 ## Section Layout Differences
 
 The layout was reorganized between 10.2 and 11.x. When moving content between versions, map sections — don't assume paths match.
 
-**11.x (`11.1/`, `11.0/`):**
+**11.x (`11.2/`, `11.1/`, `11.0/`):**
 - `admin/` — Administration overview, cmdlets, Configuration Console, Compromised Password Check, Password Policy Client, PPE Tool, system audit, troubleshooting, Windows Event Viewer, `manage-policies/` (policies, messages, passphrases, properties, test, users/groups, `rules/`)
 - `installation/` — Server, Client, Configuration Console, Mailer, Web, GPM, HIBP Updater, domain vs. local policies, upgrade, uninstall, writeback
 - `web-overview/` — Web component overview, configuration, securing, using, editing HTML templates
@@ -61,8 +62,8 @@ KB articles are **canonically** in `/docs/kb/` and copied into each version's `k
 
 ## Cmdlets Convention
 
-PowerShell cmdlet pages under `11.1/admin/cmdlets/` follow a fixed naming pattern: `cmd<verb><noun>.md` (e.g., `cmdgetppepolicies.md`, `cmdsetppeenabled.md`). New cmdlet pages should match that pattern and be added to both the cmdlets index (`cmdlets.md`) and the sidebar (auto-generated — verify after build).
+PowerShell cmdlet pages under `11.2/admin/cmdlets/` follow a fixed naming pattern: `cmd<verb><noun>.md` (e.g., `cmdgetppepolicies.md`, `cmdsetppeenabled.md`). New cmdlet pages should match that pattern and be added to both the cmdlets index (`cmdlets.md`) and the sidebar (auto-generated — verify after build).
 
 ## Rules Pages
 
-Each password rule under `11.1/admin/manage-policies/rules/` is its own file (character, complexity, compromised, dictionary, history, length, min/max age, patterns, repetition, similarity, unique characters). When adding a new rule type, create a new file in this folder and link from `rules.md` — don't collapse into an existing file.
+Each password rule under `11.2/admin/manage-policies/rules/` is its own file (character, complexity, compromised, dictionary, history, length, min/max age, patterns, repetition, similarity, unique characters). When adding a new rule type, create a new file in this folder and link from `rules.md` — don't collapse into an existing file.
