@@ -6,7 +6,7 @@ sidebar_position: 996
 
 # Test Scenario 06
 
-**Expected result:** 1 error reporting the file as not found. The anchor `#some-heading` should not be checked because the file itself is missing.
+**Expected result:** 1 error reporting the file as not found. The anchor `#some-heading` shouldn't be checked because the file itself is missing.
 
 ## Body
 

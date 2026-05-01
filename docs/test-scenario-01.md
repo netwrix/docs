@@ -14,4 +14,4 @@ This heading is the target.
 
 ## Body
 
-See the [Valid Heading](#valid-heading) section above.
+See the [Valid Heading](#valid-heading) section.

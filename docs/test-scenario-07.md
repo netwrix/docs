@@ -10,4 +10,4 @@ sidebar_position: 997
 
 ## Body
 
-Visit [Netwrix](https://www.netwrix.com) for more information.
+Visit [Netwrix](https://www.netwrix.com) to explore available security products.

@@ -6,7 +6,7 @@ sidebar_position: 9990
 
 # Test Scenario 10
 
-**Expected result:** 1 error. The anchor `#nonexistent` is not in the target file. Because the target file has no headings at all, the "Available:" line should be omitted entirely.
+**Expected result:** 1 error. The anchor `#nonexistent` isn't in the target file. Because the target file has no headings at all, the "Available:" line should be omitted entirely.
 
 ## Body
 

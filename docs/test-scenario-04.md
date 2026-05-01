@@ -6,7 +6,7 @@ sidebar_position: 994
 
 # Test Scenario 04
 
-**Expected result:** 1 error. `#registrations` (with a trailing `s`) does not exist in the target file. Available list should include `#registration`.
+**Expected result:** 1 error. `#registrations` (with a trailing `s`) doesn't exist in the target file. Available list should include `#registration`.
 
 ## Body
 
