@@ -80,20 +80,25 @@ check_file() {
       continue
     fi
     $in_fence && continue
-    [[ "$line" == *"#"* ]] || continue
+    [[ "$line" == *"]("* ]] || continue
 
     local rest="$line"
     while [[ "$rest" =~ $link_re ]]; do
       local href="${BASH_REMATCH[1]}"
       rest="${rest#*]($href)}"
-      [[ "$href" == *"#"* ]] || continue
 
       # Strip optional link title: path#anchor "title" -> path#anchor
       href="$(sed -E "s/[[:space:]]+[\"'][^\"']*[\"']$//" <<< "$href")"
 
+      # Skip external URLs and special schemes (http://, mailto:, etc.)
+      [[ "$href" =~ ^[a-zA-Z][a-zA-Z0-9+.-]*: ]] && continue
+
       local path="${href%%#*}"
-      local anchor="${href#*#}"
-      [[ -n "$anchor" ]] || continue
+      local anchor=""
+      [[ "$href" == *"#"* ]] && anchor="${href#*#}"
+
+      # Nothing to check — empty href
+      [[ -z "$path" && -z "$anchor" ]] && continue
 
       local target_file
       if [[ -z "$path" ]]; then
@@ -105,14 +110,26 @@ check_file() {
       fi
       target_file="$(realpath -m "$target_file" 2>/dev/null || printf '%s' "$target_file")"
 
-      # Skip if target doesn't exist — broken links are Docusaurus's job
-      [[ -f "$target_file" ]] || continue
+      local trimmed_line="${line#"${line%%[![:space:]]*}"}"
 
-      if ! anchor_exists "$target_file" "$anchor"; then
+      # Check if target file exists; report broken links to markdown files
+      if [[ -n "$path" ]] && ! [[ -f "$target_file" ]]; then
+        if [[ "$target_file" =~ \.(md|mdx)$ ]]; then
+          printf '  %s:%d\n' "${source_file#$REPO_ROOT/}" "$line_num"
+          printf '    %s\n' "$trimmed_line"
+          printf '    %s not found\n' "${target_file#$REPO_ROOT/}"
+          printf '\n'
+          (( ERRORS++ )) || true
+        fi
+        continue
+      fi
+
+      # Check anchor if present
+      if [[ -n "$anchor" ]] && ! anchor_exists "$target_file" "$anchor"; then
         local available
         available="$(list_anchors "$target_file")"
         printf '  %s:%d\n' "${source_file#$REPO_ROOT/}" "$line_num"
-        printf '    %s\n' "${line#"${line%%[![:space:]]*}"}"
+        printf '    %s\n' "$trimmed_line"
         printf '    #%s not found in %s\n' "$anchor" "${target_file#$REPO_ROOT/}"
         [[ -n "$available" ]] && printf '    Available: %s\n' "$available"
         printf '\n'
