@@ -1,0 +1,22 @@
+@startuml component
+package "JobStep" {
+	class JobStep {
+		LaunchOrder : Int32
+		Level : Int32
+		--
+		Job : Job
+		Task : Task
+	}
+}
+package "Job" {
+	class Job {
+	}
+}
+package "Task" {
+	class Task {
+	}
+}
+JobStep "0..*" --  "1"Job
+JobStep "0..*" --  "1"Task
+hide empty members
+@enduml

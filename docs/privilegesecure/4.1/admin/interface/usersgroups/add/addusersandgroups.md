@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Add Users & Groups Window
 
-The Add Users & Groups window allows you to select users. From the
+The Add Users & Groups window lets you select users. From the
 [Users & Groups Page](/docs/privilegesecure/4.1/admin/interface/usersgroups/usersgroups.md),
 this window is used to onboard users. From other interfaces, this window is used to select onboarded
 users.
@@ -16,23 +16,23 @@ users.
 The window has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Filter — Provides options to filter results based on a chosen criterion:
 
-    - For Onboarding — User and Group,
-    - For All Other Reasons — User, Group, Application, Collection, and Local User
+- For Onboarding — User and Group,
+- For All Other Reasons — User, Group, Application, Collection, and Local User
 
 - Available Accounts:
 
-    - For Onboarding — Shows all available users and groups from the Active Directory sync
-    - For All Other Reasons — Shows all available users, groups, applications, collections, and
-      local users that have been onboarded
+- For Onboarding — Shows all available users and groups from the Active Directory sync
+- For All Other Reasons — Shows all available users, groups, applications, collections, and
+local users that have been onboarded
 
 - Accounts to Add:
 
-    - For Onboarding — Shows selected users and groups
-    - For All Other Reasons — Shows selected users, groups, applications, collections, and local
-      users
+- For Onboarding — Shows selected users and groups
+- For All Other Reasons — Shows selected users, groups, applications, collections, and local
+users
 
 - Add button — Adds modifications and closes window
 - Cancel — Closes the window
@@ -49,7 +49,7 @@ The tables in both sections have the following columns:
 
 ## Add Users and Groups
 
-Follow the steps to add users and groups to the console from AD.
+To add users and groups to the console from AD.
 
 **Step 1 –** Navigate to the Policy > Users and Groups page.
 
@@ -57,7 +57,7 @@ Follow the steps to add users and groups to the console from AD.
 
 **Step 3 –** Filter by Users or Groups, or use the Search feature.
 
-**Step 4 –** Select the checkbox for the desired users in the Available Accounts table.
+**Step 4 –** Select the checkbox for the users you want in the Available Accounts table.
 
 **Step 5 –** Click Add to add one or more accounts.
 

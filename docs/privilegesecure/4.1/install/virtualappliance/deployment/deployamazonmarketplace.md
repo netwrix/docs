@@ -11,10 +11,10 @@ with enhanced cloud deployment options:
 
 - Amazon Marketplace — Discover Netwrix Privilege Secure if you have an active AWS account.
 
-    Consider that this section describes evaluation steps to investigate the Netwrix Privilege
-    Secure functionality and it does not contain detailed instructions on how to use and configure
-    Amazon services and instances. Refer to
-    [AWS Documentation](https://aws.amazon.com/documentation/) for more information.
+Consider that this section describes evaluation steps to investigate the Netwrix Privilege
+Secure functionality and it doesn't contain detailed instructions on how to use and configure
+Amazon services and instances. Refer to
+[AWS Documentation](https://aws.amazon.com/documentation/).
 
 - Windows Amazon Marketplace — Discover Netwrix Privilege Secure if you have an active Microsoft
-  account.
+account.

@@ -4,7 +4,8 @@
   ],
   "accessanalyzer": [
     "11.6",
-    "12.0"
+    "12.0",
+    "2601"
   ],
   "accessinformationcenter": [
     "11.6",
@@ -58,7 +59,7 @@
     "4.2"
   ],
   "privilegesecurediscovery": [
-    "2.22"
+    "current"
   ],
   "recoveryforactivedirectory": [
     "2.6",

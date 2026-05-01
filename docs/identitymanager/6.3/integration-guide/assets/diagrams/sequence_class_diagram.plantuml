@@ -1,0 +1,8 @@
+@startuml component
+package "Sequence" {
+	class Sequence {
+		Value : Int64
+	}
+}
+hide empty members
+@enduml

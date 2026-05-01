@@ -68,6 +68,23 @@ const config = {
         },
       }),
     ],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            id: 'changetracker-hub-8-1',
+            spec: 'static/openapi/changetracker-hub-8.1.yaml',
+            route: '/docs/changetracker/8_1/integration/api/reference',
+          },
+        ],
+        theme: {
+          options: {
+            scrollYOffset: '.navbar',
+          },
+        },
+      },
+    ],
   ],
 
   plugins: [

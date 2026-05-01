@@ -14,7 +14,7 @@ and fix errors.
 A managed system is synchronized and provisioned to/from Identity Manager with the following task
 sequence:
 
-![Synchronization/Provisioning Schema](/images/identitymanager/integration-guide/tasks-jobs/how-tos/troubleshoot-connector-jobs/troubleshoot_synchroprovschema.webp)
+![Synchronization/Provisioning Schema](/images/identitymanager/troubleshoot_synchroprovschema.webp)
 
 ### Export data
 

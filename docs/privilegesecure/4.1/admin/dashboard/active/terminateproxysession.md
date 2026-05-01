@@ -6,10 +6,10 @@ sidebar_position: 40
 
 # Terminate Proxy Session Window
 
-When viewing a session with the live session viewer, it is possible to disconnect the session in the
+When viewing a session with the live session viewer, You can disconnect the session in the
 event that suspicious or unauthorized activity is observed.
 
-Follow the steps to a lock the session.
+To a lock the session.
 
 **Step 1 –** In the Live Session Viewer, click the **Terminate Session** icon.
 
@@ -18,7 +18,7 @@ Follow the steps to a lock the session.
 **Step 2 –** In the Terminate Proxy Session window, select from the following options:
 
 - Cancel Activity Session – Check to cancel the active session in Privilege Secure and prevent the
-  user logging in again through the same session.
+user logging in again through the same session.
 
 **Step 3 –** Click **Okay** to disconnect the session.
 

@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Change Permission Assignment
 
-Follow the steps to add or remove permission assignments from a custom role.
+To add or remove permission assignments from a custom role.
 
-**Step 1 –** Navigate to the Policy > **Users & Groups** > **Role Management** page.
+**Step 1 –** Navigate to the Policy > **Users & Groups** > **Role Management** page.
 
 **Step 2 –** Click a custom role item from the left-hand menu.
 

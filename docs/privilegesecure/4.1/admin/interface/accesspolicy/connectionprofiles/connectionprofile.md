@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Add Connection Profile
 
-Follow the steps to add a connection profile to the console. See the
+To add a connection profile to the console. See the
 [Connection Profiles Page](/docs/privilegesecure/4.1/admin/interface/accesspolicy/connectionprofiles/connectionprofiles.md)
 topic for detailed descriptions of the fields.
 
@@ -16,28 +16,30 @@ topic for detailed descriptions of the fields.
 
 ![Add Connection Profile](/images/privilegesecure/4.1/accessmanagement/admin/policy/add/addconnectionprofile.webp)
 
-**Step 3 –** Enter the desired information to configure a new connection profile.
+**Step 3 –** Enter the information you want to configure a new connection profile.
 
 - Provide a unique name
 - Provide an optional **Description** to indicate the purpose of connection profile
 - Configure the Proxy settings, which control what proxy server will be used to start the session.
-  When customizing to use a specific proxy RDP (port 4489) and SSH (port 4422) proxy server, only
-  one server can be listed.
-- **NOTE:** If you want to use more than one proxy server, a load balancer must be used in front of
-  the servers.
+When customizing to use a specific proxy RDP (port 4489) and SSH (port 4422) proxy server, only
+one server can be listed.
+:::note
+If you want to use more than one proxy server, a load balancer must be used in front of
+:::
+the servers.
 - Configure the **Session** **Control** settings to set up session duration and user logons
-  parameters for a connection profile.
+parameters for a connection profile.
 
-    :::note
-    On this step, you will need to also select a default Activity Token Complexity policy
-    for the connection profile.
-    :::
+:::note
+On this step, you will need to also select a default Activity Token Complexity policy
+for the connection profile.
+:::
 
 
 - Configure the **Credential Management** settings, which control parameters for the password used
-  for this connection profile.
+for this connection profile.
 - Configure the **Website** settings which control cleaning of the website data and allow recording
-  the computer audio, if needed.
+the computer audio, if needed.
 - Configure the **Approval Workflow** settings.
 
 **Step 4 –** Click Save to create the new connection profile.

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Add Protection Policy
 
-Follow the steps to add a Protection policy to the console.
+To add a Protection policy to the console.
 
 **Step 1 –** Navigate to the **Policy** > **Protection Policies** page.
 

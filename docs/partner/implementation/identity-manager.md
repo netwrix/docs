@@ -6,19 +6,20 @@ keywords: [training, course, certification, partners, professional services, ide
 description: "Become a certified Professional Services Engineer for Netwrix Identity Manager"
 ---
 
-import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlanning, NIMAdditional } from '@site/src/training/identity-manager';
+import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlanning, NIMAdditional, NIMIntro } from '@site/src/training/identity-manager';
 import { Company, NIM } from '@site/src/training/products';
 
 
-Estimated length: 1 hour
+Estimated length: 2 hours 40 minutes
 
-This learning path offers training to <Company /> partner Professional Services engineers on <NIM />, formerly Netwrix Usercube. However, certification isn't available at this time. When the final courses are available to grant certification, they will be added to this learning path. You can continue from your current progress. It contains the following courses:
+This learning path offers training to <Company /> partner Professional Services engineers on <NIM />, formerly Netwrix Usercube. However, certification isn't available at this time. When the final courses are available to grant certification, this learning path will include them. You can continue from your current progress. It contains the following courses:
 
 * 1720 <NIM /> – Valuable Features
 * 1721 <NIM /> – Identity & Identity Life Cycle
 * 2720 <NIM /> – Concepts
 * 2721 <NIM /> – Architecture
 * 2722 <NIM /> – IGA Project Planning
+* 3720 Introduction to <NIM />
 
 <NIMValue />
 
@@ -29,5 +30,7 @@ This learning path offers training to <Company /> partner Professional Services 
 <NIMArchitecture />
 
 <NIMProjectPlanning />
+
+<NIMIntro />
 
 <NIMAdditional />

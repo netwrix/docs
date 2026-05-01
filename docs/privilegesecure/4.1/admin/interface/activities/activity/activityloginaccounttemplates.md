@@ -9,31 +9,31 @@ sidebar_position: 20
 There are three options for Login Account Templates in an Activity:
 
 - Use a specific account name — For example, to always connect the Activity as a service account
-  might be “democorp\svc_account_name”
+might be “democorp\svc_account_name”
 - Use a mask to select a user’s unique admin account using variable substitution.
 
-    - For Users and Groups, acceptable substitute variables that map to the users AD attributes are:
-      `%domain%`, `%samaccountname%`, `%email%`, `%department%`, `%sessionid%`, `%hostname%`,
-      `%dnshostname%`, `%fqdn%`, `%upn-username%`, `%upn-domain%`, `%email-username%`,
-      `%email-domain%`, `%firstname%`, `%lastname%`, `%displayname%`, `%fullname%`
+- For Users and Groups, acceptable substitute variables that map to the users AD attributes are:
+`%domain%`, `%samaccountname%`, `%email%`, `%department%`, `%sessionid%`, `%hostname%`,
+`%dnshostname%`, `%fqdn%`, `%upn-username%`, `%upn-domain%`, `%email-username%`,
+`%email-domain%`, `%firstname%`, `%lastname%`, `%displayname%`, `%fullname%`
 
-        - Example 1: “`%domain%\%samaccountname%-a`”, a user with an Privilege Secure login name of
-          “sblab\jsmith” would result in a login account of “sblab\jsmith-a”
-        - Example 2: “`%upn-username%-a@%upn-domain%`”, a user with an Privilege Secure login name
-          of “jsmith@sblab.com” would result in a login account of “jsmith-a@sblab.com”
-        - Example 3: “`%email-username%-a@%email-domain%`”, a user with an Privilege Secure login
-          name of “jsmith@netwrix.com” would result in a login account of “jsmith-a@netwrix.com”
-        - When a domain name is detected in the template field, i.e. contains a “\” character, the
-          Create Local Account option has no effect
+- Example 1: “`%domain%\%samaccountname%-a`”, a user with an Privilege Secure login name of
+“sblab\jsmith” would result in a login account of “sblab\jsmith-a”
+- Example 2: “`%upn-username%-a@%upn-domain%`”, a user with an Privilege Secure login name
+of “jsmith@sblab.com” would result in a login account of “jsmith-a@sblab.com”
+- Example 3: “`%email-username%-a@%email-domain%`”, a user with an Privilege Secure login
+name of “jsmith@netwrix.com” would result in a login account of “jsmith-a@netwrix.com”
+- When a domain name is detected in the template field, i.e. contains a “\” character, the
+Create Local Account option has no effect
 
-    - For Applications, the following masks are available:
+- For Applications, the following masks are available:
 
-        - %samaccountname%, %department%, %email%, %userprincipalname%, %displayname%
+- %samaccountname%, %department%, %email%, %userprincipalname%, %displayname%
 
-- Use a mask to define an account that will be created locally on the target resource — For example,
-  a mask of “`%domain%_%samaccountname%`” in conjunction with the Create Local Account option set to
-  yes, will result in a local account being created using name substitution so the user
-  “sblab\jsmith” will be connected to a local account named “sblab_jsmith”
+- Use a mask to define an account that is created locally on the target resource — For example,
+a mask of “`%domain%_%samaccountname%`” in conjunction with the Create Local Account option set to
+yes, will result in a local account being created using name substitution so the user
+“sblab\jsmith” will be connected to a local account named “sblab_jsmith”
 
 :::note
 The value of each mask can be customized on the
@@ -68,14 +68,14 @@ supplied `stringToManipulate` parameter.
 
 `int numCharactersReturned` must be a positive number.
 
-If `int numCharactersReturned` exceeds string `stringToManipulate` then the entire string will be
+If `int numCharactersReturned` exceeds string `stringToManipulate` then the entire string is
 returned.
 
 **Examples**
 
 %first(jsmith,3)/first%
 
-**The above example will return: "jsm"**
+**The above example returns: "jsm"**
 
 A common use case for this function is to manipulate Privilege Secure Login Account Template masks
 such as `%samaccountname%`, to change how what the Login Account Template evaluates to when an
@@ -115,11 +115,11 @@ supplied string, then an empty string is returned.
 
 `%substr(jsmith,2)/substr%`
 
-**The above example will return "mith"**
+**The above example returns "mith"**
 
 `%substr(jsmith,-2)/substr%`
 
-**The above example will return "th"**
+**The above example returns "th"**
 
 A common use case for this function is to manipulate Privilege Secure Login Account Template masks
 such as "`%samaccountname%`" to change how what the Login Account Template evaluates to when an

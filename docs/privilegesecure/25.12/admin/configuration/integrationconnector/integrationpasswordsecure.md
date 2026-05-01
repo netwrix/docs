@@ -14,11 +14,11 @@ Netwrix Privilege Secure now integrates with Netwrix Password Secure to enable c
 
 Before you begin configuring the integration, you must have a working Password Secure server and Web Application set up.
 
-Password Secure should be installed on a separate server from NPS and properly configured prior to integration. It also requires its own database to store credentials.
+Password Secure should be installed on a separate server from NPS and properly configured before integration. It also requires its own database to store credentials.
 
 Follow the instructions in the official documentation to install and configure the **Password Secure server** ([installation guide](/docs/passwordsecure/9_3/installation/)) and to start the **Web Application** ([web application guide](/docs/passwordsecure/9_3/configuration/webapplication/web_application)).
 
-Once the server and web application are installed and configured, continue with the steps below.
+after the server and web application are installed and configured, continue with the steps below.
 
 ### Generate an API Key
 
@@ -48,7 +48,7 @@ This API key enables NPS to connect to the Password Secure vault.
 **Step 5** - Click **Next** to generate the API token and copy it to a safe location (you'll use this in the NPS configuration).
 
 :::info
-Once you create the token, you cannot see it again. If you lose the token, you will need to generate a new one without deleting the old one. A newly generated token without deleting the old one will be valid.
+after you create the token, you can't see it again. If you lose the token, you must generate a new one without deleting the old one. A newly generated token without deleting the old one will be valid.
 :::
 
 ### Create a New Password (AD User Template)
@@ -108,7 +108,7 @@ In production environments, you will typically use existing users.
 
 - **Connector Name:** (e.g., "NPS Password")
 - **Connector Description:** (optional)
-- **Connector Template:** Select **Password Secure** from the drop-down.
+- **Connector Template:** Select **Password Secure** from the dropdown.
 - **API URL:** Enter the base URL for Password Secure's API (e.g., `https://your-ps-server/api/`)
 - **Service Account:** Select the service account you set up earlier (e.g., "NPS Password")
 - **Advanced:** Check "Skip Certificate Check".
@@ -130,8 +130,8 @@ In production environments, you will typically use existing users.
 - **Name:** Activity name
 - **Description:** Activity description
 - **Platform:** — Type of platform, which defines the resource
-- **Login Account** — The account used to log onto the resource. Select **"Vault"** from the drop-down.
-- **Activity Type** — Controls the type of actions for the activity. Select **Interactive** from the drop down menu.
+- **Login Account** — The account used to log onto the resource. Select **"Vault"** from the dropdown.
+- **Activity Type** — Controls the type of actions for the activity. Select **Interactive** from the dropdown menu.
 - **Vault Connector** — Displays a list of previously configured connectors. Select the Password Secure connector.
 
 ![NPS Activity Config](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/nps-activity-config.webp)
@@ -162,7 +162,7 @@ In production environments, you will typically use existing users.
 
 After completing these steps, you can use the specified user accounts on the defined resources.
 
-This setup is ideal for scenarios where a single account is used across multiple resources but needs to be managed securely with credentials stored in Password Secure.
+This setup is ideal for scenarios where a single account is used across multiple resources but must be managed securely with credentials stored in Password Secure.
 
 ## System Diagram: Vault Login Activity with Password Secure Integration
 
@@ -174,7 +174,7 @@ When a vault login-type activity is initiated and the selected vault is of type 
 4. The cmdlet logs in to Password Secure using the configured **API Key**.
 5. The module searches for the specified Domain\User in Password Secure.
 6. If the user's password is found, the credential is returned to the requester.
-7. If the user's password is not found, a null value is returned.
+7. If the user's password isn't found, a null value is returned.
 
 ![Password Secure Vault Diagram](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/ps-vault-diagram.webp)
 
@@ -188,4 +188,4 @@ Always verify configurations and permissions, especially when integrating with s
 - The DLLs shipped with NPS are compatible with Password Secure versions 9.2.0 and above
 - If you need to use a newer version of Password Secure, manually replace (“hot-swap”) the DLLs in:
 `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\PsrApi`
-- Updated DLLs will be included in new NPS product releases, but for immediate compatibility with the latest Password Secure releases, manual updates may be required. The SDK can be downloaded from the Password Secure Customer Information System.
+- Updated DLLs will be included in new NPS product releases, but for immediate compatibility with the latest Password Secure releases, manual updates is required. The SDK can be downloaded from the Password Secure Customer Information System.

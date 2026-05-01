@@ -75,6 +75,24 @@ jobs:
             echo "$CHANGED_MD_FILES" > /tmp/changed-files.txt
           fi
 
+      - name: Check anchor links
+        id: anchor-check
+        if: steps.changed-files.outputs.count > 0
+        continue-on-error: true
+        run: |
+          chmod +x scripts/check-anchors.sh
+          touch /tmp/anchor-errors.txt
+          BROKEN=0
+          mapfile -t FILES < /tmp/changed-files.txt
+          ./scripts/check-anchors.sh "${FILES[@]}" > /tmp/anchor-check-output.txt 2>&1 || BROKEN=1
+          if [ "$BROKEN" -eq 1 ]; then
+            grep '^\s' /tmp/anchor-check-output.txt > /tmp/anchor-errors.txt || true
+            BROKEN=$(wc -l < /tmp/anchor-errors.txt | tr -d ' ')
+            echo "Broken anchors found:"
+            cat /tmp/anchor-check-output.txt
+          fi
+          echo "broken=$BROKEN" >> "$GITHUB_OUTPUT"
+
       - name: Install Vale
         if: steps.changed-files.outputs.count > 0
         run: |
@@ -387,8 +405,27 @@ jobs:
           # Count affected files
           FILE_COUNT=$(wc -l < /tmp/changed-files.txt | tr -d ' ')
 
+          # Collect anchor check results
+          BROKEN_ANCHORS=0
+          ANCHOR_BODY=""
+          if [ -f /tmp/anchor-errors.txt ] && [ -s /tmp/anchor-errors.txt ]; then
+            BROKEN_ANCHORS=$(wc -l < /tmp/anchor-errors.txt | tr -d ' ')
+            ANCHOR_BODY=$(cat /tmp/anchor-errors.txt)
+          fi
+
           # Build the summary comment
           {
+            if [ "$BROKEN_ANCHORS" -gt 0 ]; then
+              echo "## ⚠️ Broken Anchor Links"
+              echo ""
+              echo "**${BROKEN_ANCHORS} broken anchor link(s) found — these will cause the build to fail.**"
+              echo ""
+              echo "\`\`\`"
+              echo "$ANCHOR_BODY"
+              echo "\`\`\`"
+              echo ""
+            fi
+
             echo "## Auto-Fix Summary"
             echo ""
             echo "**${TOTAL_FIXED} issues fixed, ${TOTAL_SKIPPED} skipped across ${FILE_COUNT} files**"
@@ -424,7 +461,7 @@ jobs:
 
           # Delete previous Vale Auto-Fix comments
           COMMENT_IDS=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" \
-            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("## Auto-Fix Summary"))) | .id] | .[]' 2>/dev/null || true)
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("## Auto-Fix Summary") or .body | contains("## ⚠️ Broken Anchor Links"))) | .id] | .[]' 2>/dev/null || true)
           for ID in $COMMENT_IDS; do
             gh api "repos/${REPO}/issues/comments/${ID}" -X DELETE 2>/dev/null || true
           done

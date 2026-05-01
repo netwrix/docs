@@ -23,12 +23,12 @@ topic for additional information.
 
 ## Software Requirements
 
-The table below lists minimum software requirements for the virtual appliance deployment:
+the following table lists minimum software requirements for the virtual appliance deployment:
 
-| Virtual Environment | Requirements                                                                                                                                                         |
+| Virtual Environment | Requirements |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| VMware              | <ul><li>VMware server: ESXi 6.7, 6.5, 6.0</li><li>VMware workstation: 11 and 12</li></ul>                                                                            |
-| Hyper-V Server      | <ul><li>Microsoft Windows Server 2022</li><li>Microsoft Windows Server 2019</li><li>Microsoft Windows Server 2016</li><li>Microsoft Windows Server 2012 R2</li></ul> |
+| VMware | <ul><li>VMware server: ESXi 6.7, 6.5, 6.0</li><li>VMware workstation: 11 and 12</li></ul> |
+| Hyper-V Server | <ul><li>Microsoft Windows Server 2022</li><li>Microsoft Windows Server 2019</li><li>Microsoft Windows Server 2016</li><li>Microsoft Windows Server 2012 R2</li></ul> |
 
 
 ## Virtual Hardware Configuration
@@ -37,13 +37,13 @@ When deploying the Netwrix Privilege Secure virtual appliance, a pre-configured 
 created. Default hardware configuration of the VM where the virtual appliance will be deployed is as
 follows:
 
-| Parameter          | Value                                                               |
+| Parameter | Value |
 | ------------------ | ------------------------------------------------------------------- |
-| **Common**         |                                                                     |
-| Processor          | 4 Cores                                                             |
-| RAM                | 16 GB RAM                                                           |
-| HDD                | 100 GB                                                              |
-| **VMware only**    |                                                                     |
-| Total Video Memory | 16 MB                                                               |
-| Network adapter    | vmxnet3                                                             |
-| Other              | VMware Tools will be checked automatically and updated if necessary |
+| **Common** | |
+| Processor | 4 Cores |
+| RAM | 16 GB RAM |
+| HDD | 100 GB |
+| **VMware only** | |
+| Total Video Memory | 16 MB |
+| Network adapter | vmxnet3 |
+| Other | VMware Tools will be checked automatically and updated if necessary |

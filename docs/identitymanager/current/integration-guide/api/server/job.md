@@ -688,7 +688,7 @@ Returns all the EntityType's task according to the provided query.
 #### Post
 ##### Summary:
 
-Creates a EntityType's task.
+Creates an EntityType's task.
 
 ##### Parameters:
 
@@ -707,7 +707,7 @@ Creates a EntityType's task.
 #### Get
 ##### Summary:
 
-Returns a EntityType's task corresponding to the provided identifier and its information according to the provided query.
+Returns an EntityType's task corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -731,7 +731,7 @@ Returns a EntityType's task corresponding to the provided identifier and its inf
 #### Put
 ##### Summary:
 
-Updates a EntityType's task.
+Updates an EntityType's task.
 
 ##### Parameters:
 
@@ -749,7 +749,7 @@ Updates a EntityType's task.
 #### Delete
 ##### Summary:
 
-Deletes a EntityType's task.
+Deletes an EntityType's task.
 
 ##### Parameters:
 
