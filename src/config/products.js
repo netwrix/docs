@@ -344,9 +344,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '11.2',
+        label: '11.2',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordpolicyenforcer/11.2.js',
+      },
+      {
         version: '11.1',
         label: '11.1',
-        isLatest: true,
+        isLatest: false,
+        hidden: true,
         sidebarFile: './sidebars/passwordpolicyenforcer/11.1.js',
       },
       {
@@ -364,7 +371,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/passwordpolicyenforcer/10.2.js',
       },
     ],
-    defaultVersion: '11.1',
+    defaultVersion: '11.2',
   },
   {
     id: 'passwordreset',
