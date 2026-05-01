@@ -6,12 +6,12 @@ sidebar_position: 10
 
 # Configure Single Sign-On
 
-Single Sign-On (SSO) allows users to authenticate once and gain access to multiple applications
+With Single Sign-On (SSO), you authenticate once and gain access to multiple applications
 without re-entering credentials. This article describes how to configure SSO using SAML 2.0.
 
 ## Prerequisites
 
-Before configuring SSO, make sure that the following requirements are met:
+Before configuring SSO, ensure that the following requirements are met:
 
 - Your Identity Provider (IdP) supports SAML 2.0
 - You have administrative access to both the IdP and Netwrix Auditor
@@ -23,13 +23,13 @@ Before configuring SSO, make sure that the following requirements are met:
 
 **Step 2 –** Create a new SAML application for Netwrix Auditor.
 
-**Step 3 –** The metadata XML file is downloaded from the application settings page.
+**Step 3 –** Download the metadata XML file from the application settings page.
 
-**Step 4 –** For more information about SAML application setup, [click here](https://www.netwrix.com/support.html).
+**Step 4 –** See [Netwrix Support](https://www.netwrix.com/support.html) for SAML application setup guidance.
 
 ## Before You Begin
 
-Keep in mind that SSO configuration cannot be undone without administrative access to the IdP.
+SSO configuration can't be undone without administrative access to the IdP.
 Plan your rollout carefully before enabling SSO for all users.
 
 ## Configure Netwrix Auditor
@@ -41,13 +41,12 @@ Plan your rollout carefully before enabling SSO for all users.
 **Step 3 –** Configure the SP binding settings and upload the metadata file you downloaded in the
 previous section.
 
-**Step 4 –** Do not modify the Entity ID after saving — changing this value will break existing
+**Step 4 –** Don't modify the Entity ID after saving — changing this value will break existing
 SSO sessions.
 
 **Step 5 –** Click **Save**.
 
-After the configuration is saved by Netwrix Auditor, users are redirected to the IdP login page
-on their next sign-in attempt.
+After Netwrix Auditor saves the configuration, it redirects users to the IdP login page on their next sign-in attempt.
 
 ## Verify the SSO Configuration
 
@@ -55,16 +54,15 @@ on their next sign-in attempt.
 
 **Step 2 –** Navigate to your Netwrix Auditor login URL.
 
-**Step 3 –** As described above, users will be redirected to the IdP login page automatically.
+**Step 3 –** Netwrix Auditor redirects users to the IdP login page automatically.
 
 **Step 4 –** Enter valid SSO credentials and confirm that authentication succeeds.
 
-If authentication fails, refer to the [Troubleshooting SSO Issues](#troubleshooting-sso) section
-below.
+If authentication fails, refer to the [Troubleshooting SSO Issues](#troubleshooting-sso) section.
 
 ## Troubleshoot SSO Issues
 
-If users cannot log in after enabling SSO, check the following:
+If users can't log in after enabling SSO, check the following:
 
 - Verify the metadata file was uploaded correctly — see [SSO prerequisites](sso-prerequisites.md)
   for file format requirements.
