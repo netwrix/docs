@@ -32,23 +32,25 @@ Split the comma-separated file list into individual file paths for processing.
 
 This stage applies the doc-help editing analysis to the PR changes — but non-interactively. You are producing a written review, not having a conversation.
 
-1. Run `gh pr diff $DOC_PR_NUMBER` to get the diff
-2. For each changed file, read the full file content
-3. Analyze ONLY the added or modified lines (lines starting with `+` in the diff) against these priorities:
+**Work from the diff only. Do not read the full file content.** The diff is your entire input for the review. This is intentional: pre-existing issues in unchanged lines are out of scope for a PR review.
 
-   **Structure** — Is the document organized so readers can find what they need? Can a reader scanning the page quickly find the section they need? For procedures, can someone follow it step by step? For explanatory content, does it build from simple to complex?
+1. The PR diff is already saved at `/tmp/pr-diff.txt` — read it with the Read tool
+2. For each changed file, identify the added lines (lines starting with `+`, excluding the `+++` file header)
+3. Analyze those added lines against these priorities:
 
-   **Clarity** — Is the content easy to understand? Can the reader follow the explanation without having to reread, guess at meaning, or fill in gaps?
+   **Structure** — Do the added lines fit logically into the document? If they introduce a new section or step, is it in the right place? Can a reader scanning the page find it?
 
-   **Completeness** — After reading, can the reader do what they came to do? Are there gaps that would force them to search elsewhere or open a support ticket?
+   **Clarity** — Are the added lines easy to understand? Can the reader follow without rereading, guessing at meaning, or filling in gaps?
+
+   **Completeness** — Do the added lines leave the reader with unanswered questions? If a new concept, term, or step is introduced, is enough context provided?
 
 For each issue found, note:
-- The file path and line number
+- The file path and line number (use the line number from the diff's `@@` hunk header plus offset)
 - The priority category (Structure, Clarity, or Completeness)
 - A specific description of the problem
 - A concrete suggested fix
 
-Only report issues on lines that were added or modified in this PR. Do not flag preexisting issues.
+Only report issues on added lines (`+` lines). Never flag lines prefixed with `-` or ` ` (context lines).
 
 **Idiom tagging:** When the editorial review catches an idiom or figurative expression, tag it with `[idiom]` at the start of the bullet so the fixer can identify it and add it to the Vale `Idioms.yml` rule. Example:
 
