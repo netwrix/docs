@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # check-anchors.sh — Validate that #anchor hrefs in markdown files resolve to real headings
 # Usage:
-#   check-anchors.sh --staged          check staged .md docs/ files (pre-commit mode)
+#   check-anchors.sh --staged          check staged .md/.mdx docs/ files (pre-commit mode)
 #   check-anchors.sh <file> [file...]  check specific files
-# Exits 1 if any broken anchors are found
+# Exits 1 if any broken links are found
 
 set -euo pipefail
 
@@ -145,7 +145,7 @@ if [[ "${1:-}" == "--staged" ]]; then
   while IFS= read -r f; do
     [[ -f "$REPO_ROOT/$f" ]] && FILES+=("$REPO_ROOT/$f")
   done < <(git -C "$REPO_ROOT" diff --cached --name-only --diff-filter=ACM \
-    | grep -E '\.md$' | grep '^docs/' || true)
+    | grep -E '\.mdx?$' | grep '^docs/' || true)
 else
   for f in "$@"; do
     [[ -f "$f" ]] && FILES+=("$f")
@@ -156,13 +156,13 @@ if [[ ${#FILES[@]} -eq 0 ]]; then
   exit 0
 fi
 
-printf 'Checking anchor links in %d file(s)...\n' "${#FILES[@]}"
+printf 'Checking links in %d file(s)...\n' "${#FILES[@]}"
 for file in "${FILES[@]}"; do
   check_file "$file"
 done
 
 if [[ "$ERRORS" -gt 0 ]]; then
-  printf '\nFound %d broken anchor link(s).\n' "$ERRORS"
+  printf '\nFound %d broken link(s).\n' "$ERRORS"
   exit 1
 fi
 
