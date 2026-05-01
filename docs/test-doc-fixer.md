@@ -15,7 +15,7 @@ Before you begin, ensure that the following requirements are met:
 
 - An SMTP server is available on your network
 - The Netwrix Auditor service account has permission to relay email through that server
-- You don't have firewall rules blocking outbound traffic on the SMTP port
+- You don't have firewall rules blocking outbound traffic on port 25 or 587 (SMTP)
 
 ## Configure the SMTP Server
 
@@ -26,7 +26,7 @@ Before you begin, ensure that the following requirements are met:
 **Step 3 –** Enter your SMTP server address, port, and credentials.
 
 **Step 4 –** Click **Send Test Email** to verify the connection. If no test email is received,
-review the troubleshooting steps in the Troubleshoot Notification Failures section.
+see [Troubleshoot Notification Failures](#troubleshoot-notification-failures).
 
 See [Netwrix Support](https://www.netwrix.com/support.html) for SMTP configuration assistance.
 
@@ -36,18 +36,28 @@ See [Netwrix Support](https://www.netwrix.com/support.html) for SMTP configurati
 
 **Step 2 –** Click **Add Rule** to create a new rule.
 
-**Step 3 –** Select the activity type and set the threshold. Netwrix Auditor evaluates thresholds per
-monitoring plan, not globally.
+**Step 3 –** Select the activity type and set the threshold.
 
-**Step 4 –** Under **Notification**, select the recipient group configured in the previous section.
+:::note
+Netwrix Auditor evaluates thresholds per monitoring plan, not globally.
+:::
+
+**Step 4 –** Under **Notification**, select the recipient group for this alert.
 
 **Step 5 –** Click **Save**. The rule activates immediately.
 
 ## Troubleshoot Notification Failures
 
+### Test email failures
+
+If the test email in [Configure the SMTP Server](#configure-the-smtp-server) is not received, verify
+the server address, port, and credentials you entered in Step 3.
+
+### Alert email failures
+
 If you don't receive alert emails after the rule triggers, check the following:
 
-- Verify that the SMTP settings in the Configure the SMTP Server section are correct
+- Verify that the SMTP settings in the [Configure the SMTP Server](#configure-the-smtp-server) section are correct
 - Confirm that no firewall is blocking port 25 or 587 on the Auditor server
 - Open the Netwrix Auditor audit log to confirm the alert was triggered
 
