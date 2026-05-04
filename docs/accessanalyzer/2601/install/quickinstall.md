@@ -440,7 +440,7 @@ This table is also published at [Configuration > Identity Provider > Roles](../c
 | **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The installer assigns this role to the bootstrap `admin@dspm.local` account. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
-The **User Admin** role exists to provide a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration. The installer seeds the bootstrap `admin@dspm.local` account as User Admin — you'll use it to pre-provision the rest of your users, including your first Administrator.
+The **User Admin** role provides a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration. The installer seeds the bootstrap `admin@dspm.local` account as User Admin — you'll use it to pre-provision the rest of your users, including your first Administrator.
 
 <!-- END SYNC -->
 

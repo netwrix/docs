@@ -72,7 +72,7 @@ Version strings control which release the installer installs and what auto-upgra
 
 | Value | Behavior |
 | --- | --- |
-| (unset) | Defaults to 1.* — auto-upgrades within the 1.x line; a future 2.x release does not install automatically |
+| (unset) | Defaults to 1.* — auto-upgrades within the 1.x line; a future 2.x release doesn't install automatically |
 | `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
 | `1.*` | Auto-upgrades to any 1.x version |
 
@@ -197,7 +197,7 @@ END HIDDEN -->
 ---
 ## Identity Provider Flags
 
-The following table lists every IdP flag the installer accepts. For end-to-end examples, see one of these walkthroughs:
+The following table lists every identity provider (IdP) flag the installer accepts. For end-to-end examples, see one of these walkthroughs:
 
 - [Quick Install](quickinstall.md) — Active Directory deployment using environment variables (recommended for most customers)
 - [Configure Identity Provider](identity-provider.md) — example commands for Active Directory and LDAP, plus recovery with `--configure-idp-only`
