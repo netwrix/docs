@@ -6,7 +6,7 @@ sidebar_position: 5
 
 # Quick Install
 
-This guide walks through installing Access Analyzer on a fresh Linux VM with **Active Directory** as the identity provider.
+This guide covers installing Access Analyzer on a fresh Linux VM with **Active Directory** as the identity provider.
 
 For the CLI-flag reference, see [Configure Identity Provider](identity-provider.md).
 
@@ -53,7 +53,7 @@ If running on a hypervisor, configure **static memory allocation** (not dynamic/
 See [TLS Certificate Requirements](system/certificates.md) for the full specification. At a minimum you need:
 
 - **Application TLS certificate** (PEM). The Subject Alternative Name (SAN) list must include `DSPM_HOSTNAME` **in lowercase** and the server's IP address.
-- **Private key** paired with the certificate (PEM). Must be readable by the OS user running the installer, not just `root`.
+- **Private key** paired with the certificate (PEM). The OS user running the installer must be able to read it, not just `root`.
 - **CA bundle** (PEM). Must contain the CA that signed the application certificate. For AD authentication, the CA bundle must also contain the CA that signed the domain controller's LDAPS certificate. If these are different CAs, concatenate them:
 
   ```bash
@@ -219,7 +219,7 @@ export LDAP_EMAIL_ATTRIBUTE="mail"
 | `LICENSE_KEY` | Netwrix license key | `NWRX-XXXX-XXXX-XXXX` |
 | `DSPM_HOSTNAME` | Fully qualified domain name. Must be lowercase and match the cert SAN | `aa2601.corp.example.com` |
 | `TLS_CERT_FILE` | Full path to PEM server certificate | `/opt/dspm-tls/aa2601.crt` |
-| `TLS_KEY_FILE` | Full path to PEM private key. Must be readable by the install user | `/opt/dspm-tls/aa2601.key` |
+| `TLS_KEY_FILE` | Full path to PEM private key. The install user must be able to read this file | `/opt/dspm-tls/aa2601.key` |
 | `TLS_CA_BUNDLE_FILE` | Full path to CA bundle (application CA + LDAPS DC CA) | `/opt/dspm-tls/ca-bundle.crt` |
 | `IDP_TYPE` | Identity provider type | `ad` |
 | `IDP_ALIAS` | Login button label. Letters, digits, hyphens, underscores, dots only | `active-directory` |
