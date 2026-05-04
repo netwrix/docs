@@ -43,7 +43,7 @@ rm -f "$TMP_FILE"
 sudo dspm-installer
 ```
 
-Use "dspm-installer [command] --help" for more information about a command.
+Run `dspm-installer [command] --help` to view usage and available options for any command.
 
 **To pin to a specific release** — recommended when you want to control when upgrades happen during your organization's patching cycle — export the version before running the same curl command:
 
@@ -65,14 +65,14 @@ rm -f "$TMP_FILE"
 sudo dspm-installer
 ```
 
-Use "dspm-installer [command] --help" for more information about a command.
+Run `dspm-installer [command] --help` to view usage and available options for any command.
 
 
 Version strings control which release the installer installs and what auto-upgrades apply:
 
 | Value | Behavior |
 | --- | --- |
-| (unset) | Defaults to 1.* — auto-upgrades within the 1.x line; a future 2.x release will not be installed automatically |
+| (unset) | Defaults to 1.* — auto-upgrades within the 1.x line; a future 2.x release does not install automatically |
 | `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
 | `1.*` | Auto-upgrades to any 1.x version |
 
@@ -250,7 +250,7 @@ For the full list of required network domains, see [Network and Port Requirement
 
 ## If the Installer Stops with Warnings
 
-By default, the installer stops when a preflight warning is detected. In some cases you may know the warning is acceptable for your environment. Use `--accept-warnings` to allow installation to continue:
+By default, the installer stops when it detects a preflight warning. In some cases you may know the warning is acceptable for your environment. Use `--accept-warnings` to allow installation to continue:
 
 ```bash
 sudo dspm-installer --accept-warnings

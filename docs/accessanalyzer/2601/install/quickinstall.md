@@ -69,7 +69,7 @@ See [TLS Certificate Requirements](system/certificates.md) for the full specific
 The value you pick for `DSPM_HOSTNAME` must resolve to the VM's IP address from:
 
 - Client browsers — configure a DNS A record, or add an entry to each client's `hosts` file.
-- In-cluster pods — handled automatically by the installer's CoreDNS rewrite. No customer action needed.
+- In-cluster pods — the installer's CoreDNS rewrite handles these automatically. No customer action needed.
 
 ### Active Directory information
 
@@ -136,7 +136,7 @@ Ports the Access Analyzer server must be able to reach on your data sources and 
 
 ### Internal port requirements
 
-These ports handle service-to-service communication within the Access Analyzer VM. No external firewall rules are required — the installer exposes only port 443 (Traefik) externally.
+These ports handle service-to-service communication within the Access Analyzer VM. The deployment requires no external firewall rules — the installer exposes only port 443 (Traefik) externally.
 
 | Port | Protocol | Service | Description |
 | --- | --- | --- | --- |
@@ -152,7 +152,7 @@ For firewall rule examples, see [Network and Port Requirements](/docs/accessanal
 
 ## Required Domains
 
-All outbound endpoints use HTTPS (port 443). The following domains must be reachable from the Access Analyzer server before installation. For firewall rule examples, see [Network and Port Requirements](/docs/accessanalyzer/2601/install/system/network).
+All outbound endpoints use HTTPS (port 443). The Access Analyzer server must reach the following domains before installation. For firewall rule examples, see [Network and Port Requirements](/docs/accessanalyzer/2601/install/system/network).
 
 | Endpoint | Category | Purpose | When Required |
 | --- | --- | --- | --- |
@@ -256,7 +256,7 @@ rm -f "$TMP_FILE"
 sudo dspm-installer
 ```
 
-Use "dspm-installer [command] --help" for more information about a command.
+Run `dspm-installer [command] --help` to view usage and available options for any command.
 <!-- HIDDEN:
 Run it with one of the following two password options. Installation takes 15–30 minutes.
 
