@@ -77,3 +77,7 @@ Agreement**.
 
 **Step 11 –** Click **Finish** when installation is complete. You are prompted to restart your
 system for the changes to take effect.
+
+:::tip
+Consider excluding **PPE.DLL** from antivirus scanning on your domain controllers. If this file is blocked from loading, PPE can't enforce the password policy.
+:::

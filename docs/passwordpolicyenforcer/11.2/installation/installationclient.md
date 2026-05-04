@@ -38,6 +38,10 @@ Agreement**.
 
 The client is installed. There is no associated desktop icon or menu item.
 
+:::tip
+Consider excluding **PPEClt.DLL** from antivirus scanning on client computers. If this file is blocked from loading, the Password Policy Client doesn't run.
+:::
+
 Restart each computer to complete the installation. Windows installs the Password Policy Client
 during startup.
 
