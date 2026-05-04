@@ -39,8 +39,8 @@ Use any of the following methods to connect and sign in:
     :::
 
 
-Next, you may have to pass second factor authentication, depending on whether it is enabled for your
-role in the identity store. You can perform tasks in the Admin Center according to your role and
+Next, you may have to pass second factor authentication, depending on whether your role in the
+identity store requires it. You can perform tasks in the Admin Center according to your role and
 permissions in the identity store.
 
 **To Sign In**
@@ -70,7 +70,7 @@ Step 3 – After providing your credentials, click **Sign In**.
 
 ### With a SAML Provider
 
-You can opt for single sign-on across all Directory Manager clients, provided that you have configured a SAML provider in Directory Manager. See the following topics for additional information on the
+You can use single sign-on across all Directory Manager clients if you have configured a SAML provider in Directory Manager. See the following topics for additional information on the
 SAML provider configuration:
 
 - [Configure Directory Manager in Microsoft Entra ID for SSO](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/configureinentra.md)
@@ -98,7 +98,7 @@ For second factor authentication, one of the following applies:
   You must enroll using at least one authentication type. See the
   [Enroll your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/enroll.md) topic.
 - If you have already enrolled your identity store account in Directory Manager, Directory Manager displays the Authenticate
-  page. It lists the authentication types your account is enrolled with. Select an
+  page. It lists the authentication types you enrolled with. Select an
   authentication type to authenticate. See the
   [Authenticate your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/authenticate.md) topic.
 
@@ -106,14 +106,14 @@ For second factor authentication, one of the following applies:
 
 To protect against brute-force attacks, Directory Manager enforces sign-in throttling based on the originating IP address. This applies when signing in using the Directory Manager provider.
 
-- After 3 consecutive failed sign-in attempts, your IP address is blocked for 5 minutes.
+- After 3 consecutive failed sign-in attempts, Directory Manager blocks your IP address for 5 minutes.
 - When the lockout expires, you get one additional attempt:
-    - If the attempt fails, your IP address is locked out for another 5 minutes.
+    - If the attempt fails, Directory Manager locks out your IP address for another 5 minutes.
     - If the attempt succeeds, the attempt counter resets and you regain the full 3-attempt allowance.
 - A successful sign-in at any point resets the attempt counter.
 
 :::note
-Locked IP addresses are automatically unblocked after the 5-minute timeout. To unblock an IP address immediately, an administrator can delete its record from the `ProviderLoginThrottle` table in the Directory Manager database.
+Directory Manager automatically unblocks locked IP addresses after the 5-minute timeout. To unblock an IP address immediately, an administrator can delete its record from the `ProviderLoginThrottle` table in the Directory Manager database.
 :::
 
 
