@@ -48,8 +48,8 @@ recommended.
 **Upgrading the Mailer**
 
 The Password Policy Enforcer installer detects existing installations of the Password Policy
-Enforcer Mailer and upgrades them to 11. See the [Install Mailer Service](/docs/passwordpolicyenforcer/11.2/installation/installationmailer.md)
-topic for additional information.
+Enforcer Mailer and upgrades them to 11. See [Install the Password Policy Server](/docs/passwordpolicyenforcer/11.2/installation/installationserver.md)
+for information on installing the Mailer Service feature.
 
 **Upgrade Notes**
 
