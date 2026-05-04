@@ -41,9 +41,7 @@ The Bundle ID has been updated due to NetSuite changes.
 
 ## Set the Number of Row in List Segments
 
-It is important that you set your NUMBER OF ROWS IN LIST SEGMENTS to 1,000. This is a NetSuite best
-practice and critical for the proper spidering of your workflows. If you are unable to edit this
-field, refer to
+Set your NUMBER OF ROWS IN LIST SEGMENTS to 1,000. This is a NetSuite best practice and critical for the proper spidering of your workflows. If you cannot edit this field, refer to
 [Can't Change the Number of Rows in List Segments](/docs/platgovnetsuite/reportabug/list_segments_not_editable.md)
 
 To set the Number of Rows in List Segments:
@@ -53,7 +51,7 @@ To set the Number of Rows in List Segments:
 3. Set the value to **1,000**.
 4. Click **Save**.
 
-If the field is grayed out, it should be set as a **Company Preference:**
+If the field is grayed out, set it as a **Company Preference**:
 
 1. Select **Company Preferences** from **Set Up** > **General Preferences** on the NetSuite main
    menu.

@@ -29,7 +29,7 @@ The report has the following tabs:
   Count** column represents the number of objects the spider detected. The **Documented Record
   Count** represents the number of objects that were documented. In most cases, they should match
   when the spider is complete. If you access the report before the scheduled scripts are complete,
-  you may see incomplete or duplicate records. These will be cleaned up after the scripts complete
+  you may see incomplete or duplicate records. These are cleaned up after the scripts complete
   their work.
 
 ### Documentation
@@ -80,13 +80,13 @@ Accesses change management features:
   handle complex fields. After the **Enable Case to Change Request Workflow** is enabled, a **Create
   Change Request** button is available on the **Case** record (**Lists** > **Support** >
   **Cases**).
-  Here is an example using a **Formula** for the **Case to Change Request Field Mapping**:
+  The following example uses a **Formula** for the **Case to Change Request Field Mapping**:
   ![Example of a Formula in the Case to Change Request Field Mapping](/images/platgovnetsuite/installing_strongpoint/casetocrformula.webp)
 - **Do Not ReSpider Automatically**: sets the default condition for the **Do Not ReSpider
   Automatically** setting on the
   [ITGC Change Request](/docs/platgovnetsuite/changemanagement/creating_change_request.md). The default is
   unchecked.
-  When enabled, an automatic ReSpider occurs when a Change Request status is changed to
+  When enabled, an automatic ReSpider occurs when a Change Request status changes to
   **Completed**. This starts the ReSpider and ensures that all change logs are complete before
   changing the status. If automatic ReSpidering is turned off, there is a risk of changes being
   marked as non-compliant if the change logs aren't complete when the user changes the status to

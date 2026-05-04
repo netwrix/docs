@@ -6,8 +6,7 @@ sidebar_position: 40
 
 # Creating Four Mass Updates
 
-After you have created the first two mass updates and the two saved searches, you need to follow a
-similar process to ensure the rest of the objects have been included for the bundle removal.
+After you create the first two mass updates and the two saved searches, follow a similar process to include the remaining objects for the bundle removal.
 
 ## Mass Update Scenario 3
 

@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # Go Live Frequently Asked Questions
 
-Here is a list of common questions customers have asked after they Go Live.
+The following are common questions after going live.
 
 > _How To_: [Create a Change Request for Role Assignment](#create-a-change-request-for-role-assignment)
 >
@@ -95,12 +95,11 @@ Administrators can perform Approval Overrides on a Change Request.
 
     ![Change Status to Approved](/images/platgovnetsuite/installing_strongpoint/golive_approval_override.webp)
 
-The Status bar is set to **Approved (Override)** and the administrator's name is displayed in the
-**Approval Override By** field.
+The Status bar shows **Approved (Override)** and the **Approval Override By** field shows the administrator's name.
 
 ## Change By Field Showing AutoSpider or Couldn't Be Determined
 
-If the AutoSpider isn't run, your Change Logs will be missing the **Changed by** and **Actual
+If the AutoSpider isn't run, your Change Logs are missing the **Changed by** and **Actual
 Change Date** fields. When the Change Log is newly created, the fields contain **Pending
 AutoSpider**. If too many days go by, the fields change to **Couldn't be determined**.
 
@@ -118,8 +117,7 @@ Deployment Record on the Change Request. To properly add and deploy a script:
 5. Deploy the script.
 
 If your site uses [Opportunistic Clearance](/docs/platgovnetsuite/changemanagement/opportunisticclearance/opportunistic_clearance.md), the
-deployment record is handled automatically. You should ensure you understand all of the
-ramifications of Opportunistic Clearance before enabling it for your account.
+deployment record is handled automatically. Review all implications of Opportunistic Clearance before enabling it for your account.
 
 ## Change Logs Attached to the Wrong Change Request
 

@@ -6,13 +6,9 @@ sidebar_position: 30
 
 # Categorizing Customizations
 
-Part of the bundle removal process is to categorize all the customizations in your account, this is
-completed with saved searches and csv imports and exports (due to some limitations with mass
-updates).
+Categorizing all customizations in your account is part of the bundle removal process. This is done with saved searches and CSV imports and exports, because mass updates don't have summary criteria for this type of search.
 
-Bundle components that don't have relationships outside the bundle or customizations that aren't
-related to the bundle need to be flagged with CSV imports/exports since mass updates don't have
-summary criteria for this type of search.
+Bundle components that don't have relationships outside the bundle, or customizations that aren't related to the bundle, must be flagged with CSV imports and exports.
 
 ## Create First Saved Search
 

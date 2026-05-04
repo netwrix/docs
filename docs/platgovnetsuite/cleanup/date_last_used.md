@@ -6,8 +6,7 @@ sidebar_position: 50
 
 # Date Last Used
 
-Use Date Last Used (DLU) to see what customizations haven't been used recently and could be
-deleted.
+Use Date Last Used (DLU) to identify customizations that haven't been used recently and can be deleted.
 
 Date Last Used (DLU) is captured for changes triggered by users or other customizations. Platform
 Governance for NetSuite uses a System Notes search to retrieve the date last used for Fields, Saved
@@ -55,8 +54,7 @@ Used field.
 **Searches**:
 
 - For searches the DLU is the last time search was used that is listed in search metadata.
-- Blank DLU indicates a search that have not been used since the time when NetSuite started
-  capturing in 2009.
+- Blank DLU indicates a search that has not been used since NetSuite started capturing in 2009.
 - Search “Date Last Used” are checked depending upon the Time To Live specified for searches.
 - Searches run in Dashboard Portlets doesn't update the DLU. DLU can't be determined for searches
   only used through Portlets.

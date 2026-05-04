@@ -41,7 +41,7 @@ You can perform these actions as part of your review:
 - Add a Permission
 - Complete the Permission Review
 
-Once an action is taken, the Permission review changes to **In Progress**.
+After an action is taken, the Permission review changes to **In Progress**.
 
 Other available actions:
 
@@ -74,7 +74,7 @@ To change a permission level:
 
     ![Reason for change](/images/platgovnetsuite/uar/uar_owner/change_request_reason.webp)
 
-    A Change Request is generated for each level change. Status is changed to either **Change
+    A Change Request is generated for each level change. Status changes to either **Change
     Request** and the **Change Request ID** added, or **Waiting for CR** if there is an existing
     change request in progress as part of another review. Click the **Change Request ID** to open
     the Change Request.
@@ -98,7 +98,7 @@ To add a permission:
 4. Enter a brief description of why the change is requested when prompted for the **Reason for
    Change**. Click **Accept** when complete.
 
-    A Change Request is generated for each new permission. Status is changed to either **Change
+    A Change Request is generated for each new permission. Status changes to either **Change
     Request** and the **Change Request ID** added, or **Waiting for CR** if there is an existing
     change request in progress as part of another review. Click the **Change Request ID** to open
     the Change Request.
@@ -111,7 +111,7 @@ To add a permission:
 ### Complete the Permission Review
 
 Each permission must be in the **Complete** or **CR Complete status**, with all change requests
-finished before you can click **Complete Review**. Once a review is complete, no further changes can
+finished before you can click **Complete Review**. After a review is complete, no further changes can
 be made.
 
 ![Permission review complete when all rows are complete](/images/platgovnetsuite/uar/uar_owner/permission_review_complete.webp)

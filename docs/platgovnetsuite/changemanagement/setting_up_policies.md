@@ -63,9 +63,7 @@ required for changes to the objects to be compliant with this policy.
 
 ### Change Levels
 
-**No Logs Created**: changes to these objects update the customization documentation is updated but
-doesn't create change logs. A warning text is displayed when the Administrator sets the change
-level to **No Logs Created**.
+**No Logs Created**: changes to these objects update the customization documentation but don't create change logs. A warning appears when the Administrator sets the change level to **No Logs Created**.
 
 **Log Changes Only**: changes to these objects are automatically marked compliant.
 
@@ -158,9 +156,7 @@ This section is only applies to the default policy.
 
 **ITGC Approvers**
 
-Groups are an efficient method to specify approvers. For example, if you need one approver from each
-of several company functions, you can create a group for each functional area, and select a minimum
-of 1 approval. Once each group has approved, the policy moves on to the **Final Approver**.
+Groups are an efficient method to specify approvers. For example, if you need one approver from each of several company functions, create a group for each functional area and select a minimum of 1 approval. After each group approves, the policy moves on to the **Final Approver**.
 
 - **Group Name**: enter a descriptive name to identify the approvers.
 - **Approvers**: click in the entry box and select approvers from the available user list.
@@ -231,10 +227,7 @@ Segregation of Duties Policies specify the approvers for this policy.
 
 ## Set Up Additional Policies
 
-In some cases, you may want stricter controls on certain objects. For example, many public
-companies create a specific policy for SOX related searches, since they want it tighter than Log
-Only for those objects. To set up object specific policies, the initial spider must be complete, so
-you can attach the Customization Record to the policy.
+In some cases, you need stricter controls on certain objects. For example, many public companies create a specific policy for SOX-related searches when they need tighter controls than Log Only. To set up object-specific policies, the initial spider must be complete so you can attach the Customization Record to the policy.
 
 To set up additional policies:
 
@@ -262,10 +255,9 @@ To set up additional policies:
 - Select the customization.
 - Click **Attach**.
 
-9. Click **Save** when you are finished adding customizations to the Policy.
+9. Click **Save** when you finish adding customizations to the Policy.
 
-Another method to add customization is through NetSuite's **Mass Update**. Here is the basic
-process. See the NetSuite help for details on Mass Update.
+Another method to add customizations is through NetSuite's **Mass Update**. The basic process follows. See the NetSuite help for details on Mass Update.
 
 1. Open **Lists** > **Mass Updates**
 2. Expand **General Updates** > **Custom Records** > **Customization**

@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # SoD Test Case Scenarios
 
-Here are test case scenarios for SoD rules:
+The following are test case scenarios for SoD rules:
 
 - Assign an Admin Role to a User
 - Set Conflicting Global Permissions for a User
@@ -35,10 +35,7 @@ To assign an administrator role to a user:
 
 **Result**
 
-If the SoD rule is violated, the change made will not be allowed and will be blocked right away. A
-user shouldn't be assigned an Administrator role unless there is a pre-approved change request. A
-prompt violation message will be seen by the user trying to make the change. The user will not be
-able to proceed with the save action.
+If the SoD rule is violated, the change is blocked immediately. A user can't be assigned an Administrator role without a pre-approved change request. The user trying to make the change sees a violation prompt and cannot proceed with saving.
 
 ## Set Conflicting Global Permissions for a User
 

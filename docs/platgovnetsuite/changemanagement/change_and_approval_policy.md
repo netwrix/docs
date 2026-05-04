@@ -38,8 +38,7 @@ For example, a company may have multiple policies. For example:
 - **Controls Policy** applies to key reports and controls listed on the policy that need specific
   approval to modify and ensures there are no changes without a proper audit review.
 
-Once in place, the policies remind users of the level of change management required as well as
-monitors the changes that do occur and raises alerts to IT if there are any change violations.
+When policies are in place, they remind users of the level of change management required and monitor changes that occur, raising alerts to IT for any change violations.
 
 You can create a custom change request form for a Policy Approval. Refer to
 [Using Custom Change Request Forms](/docs/platgovnetsuite/changemanagement/use_custom_cr_forms.md) for information on implementing your
@@ -51,7 +50,7 @@ Non-material changes are changes detected in objects that aren't performed by a 
 have functional impact. You can review these changes on the
 [Non-Material Changes report](/docs/platgovnetsuite/change_management_reports.md).
 
-Here is the criteria for non-material changes:
+The criteria for non-material changes:
 
 - System generated changes.
 - XML changes that don't directly affect the object definition. For example, Script Deployment

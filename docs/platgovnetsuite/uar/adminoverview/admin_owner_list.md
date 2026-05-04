@@ -11,7 +11,7 @@ from reviews. All changes are captured in the [UAR History](/docs/platgovnetsui
 
 Auditors can view the Owner list and Owner notes, but can't add or remove owners.
 
-Here is an example of the **Owner List**:
+The following is an example of the **Owner List**:
 
 ![Administrator Owner list](/images/platgovnetsuite/uar/uar_admin/owner_list.webp)
 

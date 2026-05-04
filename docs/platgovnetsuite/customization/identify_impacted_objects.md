@@ -92,16 +92,13 @@ From the ERD Search Form, you can search by:
 
 ![erdsearchform-2](/images/platgovnetsuite/customizations/erdsearchform-2.webp)
 
-After you have finished your search, you can create a Process Issue or a Change Request from the
-results.
+After you finish your search, you can create a Process Issue or a Change Request from the results.
 
 ![erdsearchform-3](/images/platgovnetsuite/customizations/erdsearchform-3.webp)
 
 ## Customization Impact Search
 
-The Customization Impact Search displays customizations and the other customizations that are
-impacted by those customizations. For example, it will show if a field is used in a script or a
-search.
+The Customization Impact Search displays customizations and the other customizations impacted by them. For example, it shows if a field is used in a script or a search.
 
 To access a customization quick search:
 

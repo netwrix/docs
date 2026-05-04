@@ -21,12 +21,12 @@ Advanced SoD provides:
 - **Warning messages and email alerts** to let you know when you are in an undesired zone.
 - **Custom reports** for documentation, retroactive approvals and continuous access reviews,
   ultimately preserving audit trails.
-- The power of **Agent** to fill in gaps, monitor, and document activities of “super users” and those
+- The power of **Agent** to fill gaps, monitor, and document activities of “super users” and those
   with positional authority.
 
 ## Benefits of Advanced SoD
 
-By implementing Advanced SoD you can create flexible and easy to maintain rules.
+Advanced SoD lets you create flexible, easy-to-maintain rules.
 
 You can create rules that:
 

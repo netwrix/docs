@@ -59,24 +59,15 @@ New: **Formula Update in Searches**
 The **Strongpoint Open Noncompliant Changes**, **Strongpoint What Changed**, and **Open Noncompliant
 Changes - Audit** searches criteria has been updated.
 
-As part of an ongoing effort to minimize non-material change logs and save time on reporting, Netwrix
-has reviewed and updated some of the filters in the non-compliant and what changed compliance
-reports.
+As part of an ongoing effort to minimize non-material change logs and save time on reporting, Netwrix reviewed and updated some of the filters in the non-compliant and what-changed compliance reports.
 
-A filter was discovered in the search criteria that could cause change logs to be excluded. This
-filter was used during the implementation of change detection through the autospider portlet, to
-filter out duplicate logs caused by late reconciliation of changes done by the scheduling processes. With the
-improved process scheduling, the filter is no longer needed.
+A filter in the search criteria could cause change logs to be excluded. This filter was used during the implementation of change detection through the autospider portlet to filter out duplicate logs caused by late reconciliation of changes made by the scheduling processes. With the improved process scheduling, the filter is no longer needed.
 
-For some accounts, this may result in additional change logs from previous periods in these reports.
-These logs were always available on the customization records and the original change log
-information will not have changed.
+For some accounts, this may result in additional change logs from previous periods in these reports. These logs were always available on the customization records and the original change log information has not changed.
 
 New: Jira On-Prem
 
-Atlassian is discontinuing support for the Jira On-Prem solution. Jira Cloud will be the only
-supported option. You can use the Strongpoint [Integration API](/docs/platgovnetsuite/ticketingintegrations/apioverview/api_overview.md) to create
-your own integration with your ticketing system.
+Atlassian discontinued support for the Jira On-Prem solution. Jira Cloud is the only supported option. Use the Strongpoint [Integration API](/docs/platgovnetsuite/ticketingintegrations/apioverview/api_overview.md) to create your own integration with your ticketing system.
 
 **Resolved Issues**
 

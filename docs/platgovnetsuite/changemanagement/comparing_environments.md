@@ -6,10 +6,7 @@ sidebar_position: 170
 
 # Comparing Environments
 
-Compare Environments is a powerful tool to locate customization differences between accounts. It is
-a best practice to compare accounts by type (this is a mandatory field). You can compare up to 1000
-records. If there are more than 1000 records, it compares the first 1000 and sends you a
-notification that there were more than 1000 records to compare and to restrict the comparison.
+Compare Environments locates customization differences between accounts. Compare accounts by type (this is a mandatory field). You can compare up to 1000 records. If there are more than 1000 records, the tool compares the first 1000 and notifies you to restrict the comparison.
 
 - Set up TBA Credentials
 - Run Compare Environments
@@ -39,7 +36,7 @@ Environments and to use the **Change Account** feature on a Change Requests.
     - **Token ID** enter your token ID.
     - **Token Secret** enter your token secret.
 
-4. Click **Save**. Your credentials are now saved for the environment.
+4. Click **Save**. The credentials are saved for the environment.
 
 Repeat this process for all environments you use for environment compare or looking up
 customizations with the **Change Account** feature on a Change Request. Refer to
@@ -61,7 +58,7 @@ TBA Credentials** section the first time you use this feature.
 2. Enter the information for the target account and source accounts. Tokens are persistent between
    your sessions.
 
-Here are the field and filter options.
+The following are the field and filter options.
 
 :::note
 Only administrators can view the Consumer Key, Consumer Secret, Token ID and Token Secret
@@ -135,7 +132,7 @@ When using filters, use only one filter at a time. An exception is using
 ### Pre-Deployment
 
 :::note
-If you are migrating new objects, they won't exist in your target account.
+New objects being migrated don't exist in the target account yet.
 :::
 
 To determine what to compare pre-deployment:
@@ -162,11 +159,9 @@ To determine what to compare post-deployment:
 
 ### Communicating Results
 
-An **Environment Compare Log** is created, and automatically linked to the Change Request for
-reference. The log can be shared if there are issues.
+An **Environment Compare Log** is created and automatically linked to the Change Request for reference. Share the log if there are issues.
 
-If there are issues, the Deployment Engineer can make changes and re-run the Environment Comparison
-to ensure the environments are synchronized.
+If there are issues, the Deployment Engineer can make changes and re-run the Environment Comparison to ensure the environments are synchronized.
 
 ## Viewing Differences Between Environments
 

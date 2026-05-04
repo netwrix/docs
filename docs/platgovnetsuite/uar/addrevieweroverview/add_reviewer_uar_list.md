@@ -10,7 +10,7 @@ Access your Additional Reviewer list from **UAR List** in your menu bar, or one
 shortcuts. Your UAR List displays either the list of Global Reviews or Single Reviews. The view is
 controlled with the **Sort By** selection in the Filters section.
 
-Here is an example of the **Global** review list:
+The following is an example of the **Global** review list:
 
 ![UAR list additional reviewer](/images/platgovnetsuite/uar/uar_additional_reviewer/additional_user_uar_list.webp)
 

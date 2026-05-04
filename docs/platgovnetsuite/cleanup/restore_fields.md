@@ -6,8 +6,7 @@ sidebar_position: 80
 
 # Restore Fields
 
-There isn't a direct restore tool for fields, however you can get your archived fields back using
-**Import Assistant** and the CSV file created for archiving.
+There isn't a direct restore tool for fields, but you can restore your archived fields using **Import Assistant** and the CSV file created for archiving.
 
 ## Import Assistant
 

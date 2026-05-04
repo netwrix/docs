@@ -6,8 +6,7 @@ sidebar_position: 20
 
 # Using the ERD
 
-The Entity Relationship Diagram, **ERD** is a visual representation of your Customizations where you
-can easily review the relationships and dependencies. The ERD is easily accessible:
+The Entity Relationship Diagram (ERD) is a visual representation of your Customizations where you can review relationships and dependencies. The ERD is easily accessible:
 
 - **Strongpoint** > **Customizations** > **ERD View**
 - ERD Search, refer to [Enabling the ERD Search on the Dashboard](#enabling-the-erdsearch-on-the-dashboard)

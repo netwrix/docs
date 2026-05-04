@@ -23,7 +23,7 @@ Open **Strongpoint** > **Change Management Reports** and one of the available re
 
 ## Policy Changes
 
-This report displays policy changes. This is used by change managers to monitor policies.
+This report displays policy changes. Change managers use it to monitor policies.
 
 The criteria for this report includes:
 
@@ -31,8 +31,7 @@ The criteria for this report includes:
 
 ## Open Non-Compliant Changes
 
-This report displays non-compliant changes that have not been resolved. This is used by change
-managers to track changes that require action.
+This report displays non-compliant changes that have not been resolved. Change managers use it to track changes that require action.
 
 The criteria for this report includes:
 
@@ -47,8 +46,7 @@ The criteria for this report excludes:
 
 ## Resolved Non-Compliant Changes
 
-This report displays non-compliant changes that have been resolved. This is used by change managers
-and auditors to review non-complaint changes that have been resolved.
+This report displays non-compliant changes that have been resolved. Change managers and auditors use it to review non-compliant changes that have been resolved.
 
 The criteria for this report includes:
 
@@ -63,9 +61,7 @@ The criteria for this report excludes:
 
 ## Compliant Changes
 
-This report displays changes that the system has automatically cleared as compliant. Compliant
-changes are automatically marked as closed. This is used by Change Managers and auditors to review
-changes that have been automatically cleared as compliant.
+This report displays changes that the system automatically cleared as compliant. Compliant changes are automatically marked as closed. Change Managers and auditors use it to review changes that have been automatically cleared as compliant.
 
 The criteria for this report includes:
 
@@ -79,8 +75,7 @@ The criteria for this report excludes:
 
 ## Approval Override
 
-This report displays changes with an Approval Override. This is used by Change Managers and auditors
-to review changes that have been approved outside of the specified approval process.
+This report displays changes with an Approval Override. Change Managers and auditors use it to review changes approved outside the specified approval process.
 
 The criteria for this report includes:
 
@@ -143,7 +138,7 @@ The criteria for this report excludes:
 
 - Non-material Platform changes
 
-Here is the criteria for non-material changes:
+The criteria for non-material changes:
 
 - System generated changes.
 - XML changes that don't directly affect the object definition. For example, Script Deployment
@@ -183,8 +178,7 @@ The criteria for this report excludes:
 
 ## What Changed
 
-This report is used by Change Managers to view a complete listing of all changes in the system
-excluding non-material changes.
+This report gives Change Managers a complete listing of all changes in the system, excluding non-material changes.
 
 The criteria for this report includes:
 

@@ -20,9 +20,7 @@ Platform Governance for NetSuite extends your current change management system s
 - Manage deployments and sandbox refreshes using best practices.
 
 :::note
-Once a change request is complete, best practice is to change the status to **Completed**. If there
-are multiple open change requests referencing the same object, any changes to the object result in
-the change log being associated with the oldest of the approved change requests.
+When a change request is complete, change the status to **Completed**. If there are multiple open change requests referencing the same object, any changes to the object are associated with the oldest of the approved change requests.
 :::
 
 ## Plan, Approve, and Deploy Changes
@@ -73,15 +71,11 @@ processes, customizations, and clean up activities.
 
 ### Confirm with a Deployment Record
 
-When tracking Full Software Development Lifecycle changes, use the Deployment Record to
-track deployment approvals. Once a Change Request is approved, this documents a change is ready for
-development. At this point, a new change request with the Stage Deployment Record can be created and
-tracked.
+When tracking full software development lifecycle changes, use the Deployment Record to track deployment approvals. After a Change Request is approved, this documents that a change is ready for development. At this point, create and track a new change request with the Stage Deployment Record.
 
 This enables:
 
 - Tracking of deployment activities.
-- Documentation of approvals for deployment to document that any changes that occurred during
-  development have been approved and that the appropriate pre-deployment checks have been completed.
+- Documentation of approvals for deployment, confirming that changes that occurred during development have been approved and that the appropriate pre-deployment checks have been completed.
 
 This record is linked to the original change request to enable end to end reporting of the change.

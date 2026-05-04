@@ -20,7 +20,7 @@ administrator.
 
     ![Select your role](/images/platgovnetsuite/uar/uar_role.webp)
 
-Here is an example of the UAR Admin dashboard:
+The following is an example of the UAR Admin dashboard:
 
 ![UAR Admin Dashboard](/images/platgovnetsuite/uar/dashboard_admin.webp)
 

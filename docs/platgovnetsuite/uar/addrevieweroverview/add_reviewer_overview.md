@@ -14,7 +14,7 @@ dashboard.
 1. Open **User Access Review** from NetSuite.
 2. Click **UAR Additional Reviewer** to log in. Your User Access Review dashboard is displayed.
 
-Here is an example additional reviewer dashboard showing new assignments.
+The following is an example additional reviewer dashboard showing new assignments.
 
 ![Additional Reviewer Dashboard](/images/platgovnetsuite/uar/uar_additional_reviewer/dashboard_add_reviewer.webp)
 

@@ -10,7 +10,7 @@ Access your owner User Access Reviews List from **UAR List** in your menu bar, 
 shortcuts. Your UAR List displays either the list of Global Reviews or Single Reviews. The view is
 controlled with the **Sort By** selection in the Filters section.
 
-Here are examples of the **Global** and **Single** review lists:
+The following are examples of the **Global** and **Single** review lists:
 
 ![Owner UAR list](/images/platgovnetsuite/uar/uar_owner/uar_list_owner.webp)
 

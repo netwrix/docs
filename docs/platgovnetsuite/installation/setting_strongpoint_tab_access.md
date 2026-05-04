@@ -18,7 +18,7 @@ Access to the Strongpoint tab must be granted to other users or roles:
 
 1. Open **Customization** > **Centers and Tabs** > **Center Tabs**
 2. Click **Edit** by Strongpoint
-   The **Label** should be **Strongpoint**.
+   Confirm the **Label** is **Strongpoint**.
 3. Click the **Audience** tab.
 4. Grant access to the appropriate users and roles. Refer to NetSuite’s Help for more details on
    **Role and Tab Access**.

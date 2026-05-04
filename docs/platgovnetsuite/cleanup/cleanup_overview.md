@@ -102,8 +102,7 @@ Change Requests can be created and managed through:
 
 ### Organize the Results
 
-The results can be sorted and filtered and are required to group and manage the output for
-subsequent steps. You may chose to clean up based on process or record type.
+The results can be sorted and filtered to group and manage the output for subsequent steps. Choose to clean up based on process or record type.
 
 Every Customization record has a Clean-Up Status field to track the status of the
 clean-up process for that object.
@@ -116,7 +115,7 @@ The statuses are:
 - **Under Investigation**: A holding status while deciding what to do.
 - **Disabled/Hidden**:Tracks that the customization has been disabled.
 - **Archive**: Tracks that the data / set-up was archived.
-- **Deleted**: Tracks that the customization has been deleted. The doc will be inactivated.
+- **Deleted**: Tracks that the customization has been deleted. The doc is inactivated.
 - **Ignore**: Removes it from the searches.
 - **Specific tasks**: Fix Script Id and Reassign Owner.
 
@@ -129,10 +128,7 @@ You can report on these statuses to organize your work.
 Some changes such as deletion, changes to scriptID, and Help impact the customization itself. For
 these types of changes, create a Change Request.
 
-However, for Clean Up, you can create new change requests and assign them to the customizations. In
-the results view, “Create Change Request” creates a new change request. After it is added to that
-customization it will appear under “Related Change Requests”. You can have multiple customizations
-assigned to multiple change requests as appropriate.
+For Clean Up, create new change requests and assign them to the customizations. In the results view, “Create Change Request” creates a new change request. After it is added to that customization, it appears under “Related Change Requests”. You can assign multiple customizations to multiple change requests as appropriate.
 
 ![faq-clean-up-create-change-req](/images/platgovnetsuite/clean_up/faq-clean-up-create-change-req.webp)
 
@@ -148,6 +144,4 @@ The Change Request has archiving and deletion tools to help clean up the account
 
 ### ReSpider
 
-At the end of the process of updating the customization record, the account should be re-spidered to
-update the Customization Records that document the customizations that were changed. It can be
-re-spidered just for a particular record type that is all that was changed.
+At the end of the process of updating the customization record, re-spider the account to update the Customization Records that document the changed customizations. Re-spider just for a particular record type if that is all that was changed.

@@ -90,7 +90,7 @@ The following are general definitions of access levels for permissions in NetSui
 
 11. **Save** the rule.
 
-Once a Rule is saved, the **Change ID** and **Run Retroactive** functions are available.
+After a Rule is saved, the **Change ID** and **Run Retroactive** functions are available.
 
 There are four tabs to access details:
 
@@ -119,7 +119,7 @@ To view the updates to your SoD rules:
 
 ![Updates to SoD Rules report](/images/platgovnetsuite/sod/sod_rules_update_report.webp)
 
-With this report, you can easily identify modified pre-defined SoD rules. There is a saved import
+With this report, you can identify modified pre-defined SoD rules. There is a saved import
 SoD Rule Import available to enable bulk add or update SoD rules to your production environment.
 
 1. Create a **.csv** file with the following fields:

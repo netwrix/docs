@@ -35,7 +35,7 @@ continue to use that and reference the external ticket in the Change Request.
 6. Change the **Owner** if needed.
 7. Select a **Type** for the issue. **Type** is used for sorting and organizing issues. You can set
    up types to trigger alerts to object owners and managers. You can use the predefined types or use
-   **New** to create your own. Here are basic definitions:
+   **New** to create your own. The following are basic definitions:
 
     - **Question**: question about a feature, function, or process.
     - **Suggestion**: idea for improving functionality or process.
@@ -77,7 +77,7 @@ continue to use that and reference the external ticket in the Change Request.
     - **Completed As Process Issue**: work has been completed, all changes and change requests are
       complete, deployed, and verified.
     - **Converted to Change Request**: a change request has been created for the issue.
-    - **Next Review**: indicates the issue will be looked at again the next time process issues are
+    - **Next Review**: indicates the issue is reviewed again the next time process issues are
       reviewed.
     - **Closed**: either the process issue is closed with no action, or the same criteria as
       **Completed As A Process Issue**. The Spider is automatically run when the **Status** is set
@@ -93,7 +93,7 @@ continue to use that and reference the external ticket in the Change Request.
     issue, or add existing Change Request information.
 19. **Save** the Process Issue.
 
-Once a Process Issue is saved, you can open it and use the **New Task** and **New Meeting**
+After a Process Issue is saved, you can open it and use the **New Task** and **New Meeting**
 functionality, or edit the issue to update status information.
 
 Use the ERD tab to visually view the records and see the relationships.

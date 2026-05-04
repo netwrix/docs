@@ -80,7 +80,7 @@ Specify a Bundle to use a bundle for the scope of change. This is optional.
 
     ![Specify an optional Bundle ID](/images/platgovnetsuite/integrations/zendesk_bundleid.webp)
 
-After you have made a change, the **Request Approval** button is available if you are a member of a
+After you make a change, the **Request Approval** button is available if you are a member of a
 group with the [Set up Approvals](zendesk_integration.md#set-up-approvals) permission.
 
 ![Request Approval button appears when a change has been made.](/images/platgovnetsuite/integrations/zendesk_request_approval.webp)

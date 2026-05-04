@@ -6,9 +6,7 @@ sidebar_position: 80
 
 # Using Custom Change Request Forms
 
-You can create custom change request forms for ITGC, Agent Pre-Approval, SoD Rule Change, SoD
-Approval, Policy Approval and User Provisioning. After you have created your custom forms, modify the
-Script Deployment Parameters to use your forms.
+You can create custom change request forms for ITGC, Agent Pre-Approval, SoD Rule Change, SoD Approval, Policy Approval, and User Provisioning. After you create your custom forms, modify the Script Deployment Parameters to use your forms.
 
 1. Open **Customization** > **Scripting** > **Scripts**
 2. Search for **customdeploy_flo_display_cr**

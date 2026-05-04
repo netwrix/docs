@@ -12,7 +12,7 @@ updates and saved searches. By following the bundle removal process, the current
 Customizations that are built on top of a bundle can cause issues or break when the bundle is
 removed. Platform Governance for NetSuite helps you determine what could cause issues or break if you remove the bundle by:
 
-- Safely and easily recognizing which customizations are built on top of the bundle.
+- Recognizing which customizations are built on top of the bundle.
 - Seeing how customizations relate to different components.
 - Detecting all the components that don't connect to any object in your NetSuite account.
 - Identifying and separating objects that have the possibility of breaking.
@@ -35,10 +35,7 @@ To remove a bundle:
     possible, find a TAM resource that is familiar with Platform
     Governance for NetSuite as well as is familiar with the bundle type that you are trying to
     remove.  
-    **Developer and/or Administrator**: Depending on how your business processes are built around
-    your scripts, when you remove the bundle the associated scripts will be removed as well. A
-    developer and/or administrator should be assigned to investigate the scripts, see what scripts
-    need to be recreated and rebuild them.
+    **Developer and/or Administrator**: When you remove the bundle, the associated scripts are removed as well. Assign a developer or administrator to investigate the scripts, identify which scripts need to be recreated, and rebuild them.
 
 2. Document your account. If Platform Governance for NetSuite is already installed and running in
    your account, you can run a manual spider to update your account. If you have a new account,
@@ -48,5 +45,4 @@ To remove a bundle:
 5. Create Saved Searches and export/import CSV files (where applicable).
 6. Export the information to Excel.
 
-The process should be completed in your sandbox environment to see how it affects your other
-environments (production).
+Complete the process in your sandbox environment to see how it affects your other environments (production).

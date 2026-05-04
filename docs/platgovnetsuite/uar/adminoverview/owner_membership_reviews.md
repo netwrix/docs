@@ -27,7 +27,7 @@ You can perform these actions as part of your review:
 - Assign an Additional Reviewer
 - Complete the Membership Review
 
-Once an action is taken, the Membership review changes to **In Progress**.
+After an action is taken, the Membership review changes to **In Progress**.
 
 Other available actions:
 
@@ -79,7 +79,7 @@ To remove one or more users from the role:
 
     ![Reason for change](/images/platgovnetsuite/uar/uar_owner/change_request_reason.webp)
 
-    A Change Request is generated for each user removed from the role. Status is changed to either
+    A Change Request is generated for each user removed from the role. Status changes to either
     **Change Request** and the **Change Request ID** added, or **Waiting for CR** if there is an
     existing change request in progress as part of another review. Click the **Change Request ID**
     to open the Change Request.
@@ -107,7 +107,7 @@ You can add additional reviewers to the review:
 ### Complete the Membership Review
 
 Each row must be in the **Complete** or **CR Complete status**, with all change requests finished
-before you can click **Complete Review**. Once a review is complete, no further changes can be made.
+before you can click **Complete Review**. After a review is complete, no further changes can be made.
 
 ## Review Notes
 

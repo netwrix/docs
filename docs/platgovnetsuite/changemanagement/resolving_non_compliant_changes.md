@@ -15,10 +15,7 @@ To access the Open Non-Compliant Changes Report:
     ![Non-Compliant Change Report](/images/platgovnetsuite/change_management/noncompliantreport.webp)
     ![NonCompliant Flags](/images/platgovnetsuite/change_management/noncompliant_flags.webp)
 
-2. A noncompliant change means something got changed without the required approvals. **View** each
-   change log record to investigate the change, or use the Mass Update procedure. You can
-   retroactively attach a change request to a noncompliant change and get the necessary approvals
-   for the change to be compliant.
+2. A noncompliant change means a change occurred without the required approvals. **View** each change log record to investigate the change, or use the Mass Update procedure. Retroactively attach a change request to a noncompliant change and get the necessary approvals for the change to be compliant.
 
     1. Create a New [Change Request](/docs/platgovnetsuite/changemanagement/creating_change_request.md) or open an existing one.
     2. Set it to **Pending Approval**.
@@ -27,13 +24,12 @@ To access the Open Non-Compliant Changes Report:
     5. Enter the **Related Change Request**.
     6. Enter the **Related Process Issue** if applicable.
     7. Enter the **Resolution Description**.
-    8. Once all changes are made, select **Closed** for the **Status**.
+    8. After all changes are made, select **Closed** for the **Status**.
     9. **Save** the Change Log.
 
 ## Resolving Open Non-Compliant Changes Using Mass Update
 
-There are occasions where you want to resolve Open Non-Compliant Change Logs without going through
-each one manually. For example, if your Change and Approval Policy was incorrectly set-up or if it
+There are occasions where you need to resolve Open Non-Compliant Change Logs without going through each one manually. For example, if your Change and Approval Policy was incorrectly set-up or if it
 was in place before your Go-Live. For these scenarios Netwrix recommends you create a **Mass
 Update** to resolve all applicable incidents.
 

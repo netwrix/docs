@@ -16,9 +16,7 @@ before using this feature.
 
 Saved Searches are powerful customizations used throughout NetSuite and interconnected to other
 customizations. As user-created Saved Searches proliferate, NetSuite accounts become inefficient and
-overall performance degrades. This rules-based tool provides administrators the ability to identify
-and archive Saved Searches and keep NetSuite accounts organized, easy to understand, and improve
-efficiency and performance. Archived searches can be restored with limitations.
+overall performance degrades. This rules-based tool enables administrators to identify and archive Saved Searches and keep NetSuite accounts organized, efficient, and easy to understand. Archived searches can be restored with limitations.
 
 The **Automated Search Clean Up** tool has two operating modes:
 
@@ -136,8 +134,7 @@ Lists any searches excluded after the **Preview** function is used.
 The **Preview** function provides a quick method to mark Saved Searches to be retained or to
 included for clean up. The Run Now feature begins an immediate run for the rule.
 
-1. Administrators can click **Preview** on an Search Clean Up Rule. **Preview** displays the rule,
-   filters and conditions.
+1. Click **Preview** on a Search Clean Up Rule. **Preview** displays the rule, filters, and conditions.
 2. Review the Search List.
    Check **Include** to trigger a final notification email to be sent to the owner/user.
    Check **Retain Search** to keep the search.
@@ -150,7 +147,7 @@ included for clean up. The Run Now feature begins an immediate run for the rule.
 
 ### Run Now
 
-This option immediately begins an Search Clean Up using the current rule.
+This option immediately begins a Search Clean Up using the current rule.
 
 If a Saved Search matches the Clean Up Rule:
 
@@ -223,9 +220,7 @@ Click **Notification Tracker** on the **Notifications** tab to launch the tracke
 
 ### Notification Tracker
 
-Accesses all of the communications and history for search clean ups. You can list all notifications
-sent by rule or by the job. Provides traceability between the clean up rules, clean up jobs, and
-email notifications.
+Accesses all communications and history for search clean ups. List all notifications sent by rule or by job. Provides traceability between the clean up rules, clean up jobs, and email notifications.
 
 ![cleanup_notification_tracker](/images/platgovnetsuite/clean_up/cleanup_notification_tracker.webp)
 
@@ -252,29 +247,24 @@ The Retain process:
 - Updates the **Date Last Used, Retained/Restored** to the current date.
 - Adds the search to the **Automated Search Clean Up** > **Retained Searches** report. The **Search
   Retain Reason** is shown on this report.
-- Notifies the owners/users the search will be retained.
+- Notifies the owners/users that the search is retained.
 
 ## Auto Archiving a Search
 
-If search owners or users don't click **Retain this search** in the email notifications, the
-search is archived. The Archive process:
+If search owners or users don't click **Retain this search** in the email notifications, the search is archived. The Archive process:
 
 - Archives the search.
 - Adds the search to the **Automated Search Clean Up** > **Archived Searches** report.
 - Marks Customization record for the search **Inactive**.
-- A **Restore** button is added to the **Clean Up** tab on the customization record for the search.
+- A **Restore** button appears on the **Clean Up** tab on the customization record for the search.
 - Auto Archive notifications are sent to the rule owner and administrators. A **Restore** link is
   included in the email.
 
 ## Restoring an Auto Archived Search
 
-A NetSuite Administrator can restore an auto archived search with some limitations. Open the **Clean
-Up** tab of the Customization record for the search or the report **Automated Search Clean Up** >
-**Archived Searches**. Click **Restore**. Or use the **Restore** link in the email sent to the rule
-owner and administrators.
+A NetSuite Administrator can restore an auto archived search with some limitations. Open the **Clean Up** tab of the Customization record for the search, or the **Automated Search Clean Up** > **Archived Searches** report. Click **Restore**, or use the **Restore** link in the email sent to the rule owner and administrators.
 
-- Search is restored with limitations. Restored searches have a different internal ID from their
-  original version, resetting the audit trail.
+- Search is restored with limitations. Restored searches have a different internal ID from the original version, resetting the audit trail.
 - Updates the **Date Last Used, Retained/Restored** to the current date.
 - Adds the search to the **Automated Search Clean Up** > **Retained Searches** list.
 

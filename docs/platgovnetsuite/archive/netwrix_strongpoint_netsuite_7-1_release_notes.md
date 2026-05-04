@@ -10,10 +10,8 @@ sidebar_position: 30
 
 November 30, 2023
 
-- Support links are changing December 1st, the new link is
-  [https://www.netwrix.com/support.html](https://www.netwrix.com/support.html)
-- NetSuite changes, such a moving an account to a different datacenter, are now treated as a
-  Platform change. They don't create a non-compliant Change Log record.
+- Support links changed December 1st. The new link is [https://www.netwrix.com/support.html](https://www.netwrix.com/support.html).
+- NetSuite changes, such as moving an account to a different datacenter, are now treated as a Platform change. They don't create a non-compliant Change Log record.
 - Improved handling of custom employee center roles across the Strongpoint spiders.
 - Bundle updates were enabling **Automatic Synchronization** between Strongpoint and Jira, changing
   settings where **Automatic Synchronization** was disabled. **Automatic Synchronization** defaults
@@ -67,29 +65,26 @@ September 20, 2023
 
     ![Refresh Changed By](/images/platgovnetsuite/change_management/change_log_refresh.webp)
 
-- Removed extraneous Customization record link in Search Clean Up notification emails.
-  Non-Strongpoint users receive the notification and can't use the link.
+- Removed an extraneous Customization record link in Search Clean Up notification emails. Non-Strongpoint users who receive the notification cannot use the link.
 
 ## Core 7.1
 
 August 23, 2023
 
-Every release may contain enhancements internally and customer-specific bug fixes to keep
-Strongpoint running smoothly.
+Every release contains internal enhancements and customer-specific bug fixes to keep Strongpoint running smoothly.
 
 **NetSuite Release 2023.2 Support**
 
 The Strongpoint Searches have been updated to support NetSuite's change of **Formula (Text) Fields**
 to the new **Formula (HTML) Fields**. This is a NetSuite security enhancement.
 
-Strongpoint 7.1 must be installed before the NetSuite 2023.2 release to ensure a smooth upgrade:
+Install Strongpoint 7.1 before the NetSuite 2023.2 release to ensure a smooth upgrade:
 
-1. Install Strongpoint 7.1 in your Sandbox August 15th.
-2. Test Strongpoint 7.1 before August 22nd. Contact your Customer Success Manager if you have
-   questions.
-3. Strongpoint 7.1 will be pushed to your production environment starting August 23rd.
+1. Install Strongpoint 7.1 in your Sandbox by August 15th.
+2. Test Strongpoint 7.1 before August 22nd. Contact your Customer Success Manager if you have questions.
+3. Strongpoint 7.1 was pushed to your production environment starting August 23rd.
 
-NetSuite will begin pushing release 2023.2 the end of August.
+NetSuite began pushing release 2023.2 at the end of August.
 
 If you have custom searches, you must update them to support the NetSuite change. To view the list
 of saved searches in your account that contain code in **Formula(Text)** fields, open:
@@ -127,22 +122,19 @@ NetSuite Release 2023.2 Support
 The Strongpoint Searches have been updated to support NetSuite's change of **Formula (Text) Fields**
 to the new **Formula (HTML) Fields**. This is a NetSuite security enhancement.
 
-Strongpoint 7.1 and SoD 1.6 must be installed before the NetSuite 2023.2 release to ensure a
-smooth upgrade:
+Install Strongpoint 7.1 and SoD 1.6 before the NetSuite 2023.2 release to ensure a smooth upgrade:
 
-1. Install Strongpoint 7.1 and SoD 1.6 in your Sandbox August 15th.
-2. Test Strongpoint 7.1 and SoD 1.6 before August 22nd. Contact your Customer Success Manager if you
-   have questions.
-3. Strongpoint 7.1 and SoD 1.6 will be pushed to your production environment starting August 23rd.
+1. Install Strongpoint 7.1 and SoD 1.6 in your Sandbox by August 15th.
+2. Test Strongpoint 7.1 and SoD 1.6 before August 22nd. Contact your Customer Success Manager if you have questions.
+3. Strongpoint 7.1 and SoD 1.6 were pushed to your production environment starting August 23rd.
 
-NetSuite will begin pushing release 2023.2 the end of August.
+NetSuite began pushing release 2023.2 at the end of August.
 
 ## Jira 1.3
 
 November 30, 2023
 
-- Support links are changing December 1st, the new link is
-  [https://www.netwrix.com/support.html](https://www.netwrix.com/support.html)
+- Support links changed December 1st. The new link is [https://www.netwrix.com/support.html](https://www.netwrix.com/support.html).
 
 ## Jira 1.2.16
 
@@ -169,14 +161,14 @@ September 27, 2023
 
 ## Jira 1.2.13
 
-Here are the enhancements for the release:
+The following are the enhancements for the release:
 
 - Change customization name to allow Single quotes (').
 - Added **Location** to the **Type** dropdown on the **Add Proposed Customization** form.
 
 ## Jira 1.2.11
 
-Here are the enhancements for the release:
+The following are the enhancements for the release:
 
 - Import Customizations from Jira
 - Enable Allow NS to Jira Push (must be done before creating a ticket from NetSuite to Jira)
@@ -210,7 +202,7 @@ Jira.
 3. Click **Push to Jira**.
 4. Select your Jira project.
    ![Select a Jira Project](/images/platgovnetsuite/release_notes/jira_ns_jira_push2.webp)
-5. Click **Push**. A Change Request Pushed message is displayed. Click **Close**.
+5. Click **Push**. A Change Request Pushed message appears. Click **Close**.
 6. Open the **Related Change Records** tab. The ticket number is added as an **External Change
    Request Number**. **CM-15** in this example.
    ![The ticket number is on the Related Change Records tab](/images/platgovnetsuite/release_notes/jira_create_cr_related_change.webp)
@@ -222,16 +214,14 @@ Jira.
 
 ## Jira 1.2.10
 
-Here are the enhancements for the release:
+The following are the enhancements for the release:
 
 - Credentials are now persistent, and don't need to be entered every time.
 - Strongpoint Settings page added to Jira
 
 Strongpoint Settings for Jira
 
-The Strongpoint Settings app is accessed through Jira. This is where you create your Token Based
-Authentication (TBA) credentials for your account. Once created, they are available to you for easy
-selection when performing your tasks.
+The Strongpoint Settings app is accessed through Jira. Use it to create your Token Based Authentication (TBA) credentials for your account. After creation, they are available for easy selection when performing your tasks.
 
 Token-Based Authentication is set up through NetSuite. Refer to
 [Setting up Token-Based Authentication](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md).

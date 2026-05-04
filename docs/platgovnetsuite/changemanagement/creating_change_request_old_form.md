@@ -55,11 +55,8 @@ To do this, in your **production** account:
   are safe to change.
 - **Change Request:** you are planning on changing objects that require approval to change.
 
-6. Click **Impact Analysis**. This will show you how objects are connected to other things.
-7. Scroll down to the bottom of the page and click the **Impact Analysis** tab.This shows you
-   which customization records can or can't be safely modified as well as customizations that are
-   inactive. You see a list of the customization records that have been included, and warnings for
-   impacted customization records that need to be investigated before you make a change.
+6. Click **Impact Analysis**. This shows how objects are connected to other things.
+7. Scroll down to the bottom of the page and click the **Impact Analysis** tab. This shows which customization records can or can't be safely modified, as well as customizations that are inactive. You see a list of the customization records that have been included, and warnings for impacted customization records that need to be investigated before you make a change.
 
     ![impactanalysissubtab](/images/platgovnetsuite/change_management/impactanalysissubtab.webp)
 

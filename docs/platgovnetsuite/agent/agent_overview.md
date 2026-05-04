@@ -9,10 +9,9 @@ sidebar_position: 130
 Use Agent to monitor and manage the creation, deletion, or change of key records and fields
 associated with transactional and master data as well as system critical settings by:
 
-- Filling in the gaps left by Segregation of Duties (SoD) by providing monitoring and documentation
-  of situations such as:
+- Filling gaps left by Segregation of Duties (SoD) by monitoring and documenting situations such as:
     - Positional authority conflicts: having the power to override controls.
-    - Admin / Full access user: having permissions to do just about anything in the system.
+    - Admin / Full access user: having permissions to perform any action in the system.
 - Turning basic saved searches into powerful monitoring controls by automatically checking on them
   on an hourly, daily, weekly, monthly, or quarterly basis.
 - Capturing the results of saved searches into an immutable Change Log.
@@ -24,13 +23,10 @@ associated with transactional and master data as well as system critical setting
   record level.
 - Creating tasks and issues automatically and assigning to specific employees when a control
   violation takes place.
-- Extending NetSuite capabilities with cross-match functionality to easily perform a double JOIN in
-  your search.
+- Extending NetSuite capabilities with cross-match functionality to perform a double JOIN in your search.
 
-Check out Netwrix University for helpful tutorials.
-[Sign in to your Netwrix account](https://www.netwrix.com/my_training.html) to access the NS3-2
-Agent Financial Controls series. Contact your Customer Success Manager if you don't have access to
-Netwrix University.
+Netwrix University offers tutorials for Agent Financial Controls.
+[Sign in to your Netwrix account](https://www.netwrix.com/my_training.html) to access the NS3-2 Agent Financial Controls series. Contact your Customer Success Manager if you don't have access to Netwrix University.
 
 ## Agent Control Categories
 
@@ -60,7 +56,7 @@ match for the control incident result.
 Yes, the Change Request’s Customization field can accommodate multiple Control records. All of the
 controls listed under the Customization field are associated with the Change Request.
 
-##### How Agent handles Pre-approvals when the control results are grouped (i.e. Group Results In Alert checkbox is marked in the Control setting)
+##### How Agent handles Pre-approvals when the control results are grouped (the Group Results In Alert checkbox is marked in the Control setting)
 
 When the results are grouped, all results must match the Change Request Control filters for the
 Change Log to be a pre-approved incident.

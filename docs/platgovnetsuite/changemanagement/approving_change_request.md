@@ -19,12 +19,8 @@ NetSuite users and have the correct
 2. When the Change Request opens, **Approve** and **Reject** buttons are available at the top of the
    form:
 
-    - If all approvers approve the Change Request, the status is changed to **Approved** or
-      **Approved (Override)** if an administrator approved it. Implement the changes specified by
-      the Change Request.
-    - If an approver rejects the Change Request, the status is changed to **Rejected**. You can
-      return the Change Request to **In Progress**, edit it, and reset it to **Pending Approval** if
-      there are errors or omissions.
+    - If all approvers approve the Change Request, the status changes to **Approved** or **Approved (Override)** if an administrator approved it. Implement the changes specified by the Change Request.
+    - If an approver rejects the Change Request, the status changes to **Rejected**. Return the Change Request to **In Progress**, edit it, and reset it to **Pending Approval** if there are errors or omissions.
 
 3. Change Request owner
    [Completes and Validates the Change Request](/docs/platgovnetsuite/changemanagement/completing_validating_change_request.md).

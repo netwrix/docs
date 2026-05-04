@@ -33,7 +33,7 @@ To run the spider:
     - Remain logged in as an Administrator.
 
 The gears spin during this part of the spider run. It can take between 45-60 minutes to complete.
-When finished, the gears stop spinning and **Spider Finished** is displayed below the **Start
+When finished, the gears stop spinning and **Spider Finished** appears below the **Start
 Spider** button. You can close the tab when finished. The spider continues to work in the background
 to document your account.
 
@@ -103,7 +103,7 @@ You can ReSpider your account at any time.
 2. Select **Update Only - FAST** from **Update or ReSpider**
 3. Select one or more record types that have an issue. You can also enter an optional **Name
    Filter**: entering all of part of the customization name to focus the spider. You can use the
-   **%** wildcard to search with the given name. Here are the record types:
+   **%** wildcard to search with the given name. The following are the record types:
 
 > |                          |                            |                                   |
 > | ------------------------ | -------------------------- | --------------------------------- |
@@ -141,7 +141,7 @@ for fully scriptable customization types. Customization metadata and changes are
 a day when the spiders run. If there are multiple record changes within the day, separate change
 logs are created for each change to capture system notes and audit trails.
 
-Here is the schedule for each customization type.
+The following is the schedule for each customization type.
 
 |                                            |                      |                                       |
 | ------------------------------------------ | -------------------- | ------------------------------------- |

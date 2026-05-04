@@ -147,7 +147,7 @@ must have access granted for the **Strongpoint Developer Role**.
 
 ### Set Up Token Based Authentication
 
-Token Based Authentication is set up through NetSuite. Here is the basic process:
+Token Based Authentication is set up through NetSuite. The basic process is as follows:
 
 1. NetSuite Administrator creates an Integration Record for the Platform Governance for NetSuite
    application. This only needs to be performed once per account. Open **Setup** > **Integration** >
@@ -159,7 +159,7 @@ Token Based Authentication is set up through NetSuite. Here is the basic process
    **Integration Management** > **Manage Integrations**.
 2. Each user creates their token in NetSuite. Refer to the
    [NetSuite help Manage TBA Tokens in the NetSuite UI](https://netsuite.custhelp.com/app/answers/detail/a_id/41902)
-   for details. After you have created your tokens, add them to Jira.
+   for details. After you create your tokens, add them to Jira.
 3. Open **Jira**.
 4. Open your **Projects** page:
 

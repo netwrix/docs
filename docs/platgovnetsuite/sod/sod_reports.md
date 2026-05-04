@@ -6,7 +6,7 @@ sidebar_position: 90
 
 # SoD Reports
 
-Here are the reports available for SoD:
+The following reports are available for SoD:
 
 SoD Role Management<br />
 SoD Incident Management<br />

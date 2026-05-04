@@ -6,17 +6,9 @@ sidebar_position: 10
 
 # Clean Up Unused Customizations
 
-Platform Governance for NetSuite has powerful tools to analyze, organize, and delete unused
-customizations in a safe and secure manner.
+Platform Governance for NetSuite has tools to analyze, organize, and delete unused customizations safely.
 
-Cleaning up fields has a direct impact on system performance. Larger records load slower than small
-ones. When a record loads in NetSuite, the system formulates the SQL request, retrieves the data
-from the database, assembles the interface, retrieves any related list data or build the
-corresponding interface element (in edit mode) amongst other steps. While these are all highly
-optimized, records with large field sizes load slower. There can also be impact on system
-performance from alerts and other searches applied on demand to data when it is being saved
-(particularly if there are custom SQL formulas). The impact is dependent on the extent of the change
-and what else is causing performance lag.
+Cleaning up fields directly affects system performance. Larger records load slower than smaller ones. When a record loads in NetSuite, the system formulates the SQL request, retrieves the data from the database, assembles the interface, and retrieves any related list data or builds the corresponding interface element (in edit mode), among other steps. Although these are all highly optimized, records with large field sizes load slower. Alerts and other searches applied on demand when data is saved can also affect system performance, especially when custom SQL formulas are involved. The impact depends on the extent of the change and other sources of performance lag.
 
 You can organize clean up activities by record types to start with larger groups of customizations
 before progressing to individual customizations. For example you could progress in the following
@@ -114,8 +106,7 @@ practices to determine if it is appropriate to delete any of the customizations.
 
 ## Archive Field Data
 
-Once a Change Request has been approved the **Archive Customizations** button is available. When
-clicked, any fields in the change request are archived and stored in the **File Cabinet**.
+After a Change Request is approved, the **Archive Customizations** button is available. When clicked, any fields in the change request are archived and stored in the **File Cabinet**.
 
 ![archive](/images/platgovnetsuite/clean_up/archive.webp)
 
@@ -124,8 +115,7 @@ Deleted or Modified** tab.
 
 ## Back Up Searches, Scripts, and Workflows
 
-While there is no mass un-delete functionality, critical information about scripts, searches, and
-workflows are preserved in the Customization Record.
+There is no mass un-delete functionality, but critical information about scripts, searches, and workflows is preserved in the Customization Record.
 
 - **Searches**: All fields, filters, criteria, and other search elements are documented in the
   Searches tab.
@@ -145,4 +135,4 @@ There are two choices for deleting customizations:
 
 ## Close the Change Request
 
-Once all activities are complete, mark the change request as complete.
+After all activities are complete, mark the change request as complete.

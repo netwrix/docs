@@ -6,9 +6,7 @@ sidebar_position: 70
 
 # Creating a Change Request
 
-Before making any changes, understand the scope of the planned change, potential
-impacts and the level of change required. Documentation is also available if you are using the old
-[Change Request](/docs/platgovnetsuite/changemanagement/creating_change_request_old_form.md) form. Refer to
+Before making any changes, understand the scope of the planned change, potential impacts, and the level of change required. Documentation is also available if you are using the old [Change Request](/docs/platgovnetsuite/changemanagement/creating_change_request_old_form.md) form. Refer to
 [Setting Preferred Forms](/docs/platgovnetsuite/customization/setting_preferred_forms.md) for information on
 designating your preferred Change Request form.
 
@@ -58,7 +56,7 @@ request in your sandbox account.
         - Enter a **Script File** name and click **Lookup** to find a customization by all or part
           of the script file name. For example, **26** shows everything beginning with **26**.
         - Use multiple filters to further refine your search. For example, **Name** starting with
-          **a** and **Type** of **List** show all **List** customizations starting with **A**. Once
+          **a** and **Type** of **List** show all **List** customizations starting with **A**. After
           the customizations are displayed:
         - Hover over **Details** to see specifics of the customization.
         - Click the box(es) to select one or more customizations. Check in the **Name** header to
@@ -156,9 +154,7 @@ request in your sandbox account.
         - External Link
         - Parent Change Request
 
-5. Click **Pending Approval** in the status bar when you are finished with the Change Request. A
-   confirmation prompt is displayed. When confirmed, Approval Notifications are sent to the
-   approvers.
+5. Click **Pending Approval** in the status bar when you finish the Change Request. A confirmation prompt appears. After you confirm, Approval Notifications are sent to the approvers.
 
     ![change_request_new_pendapprove](/images/platgovnetsuite/change_management/change_request_new_pendapprove.webp)
 
@@ -178,7 +174,7 @@ You can Cancel a Change Request:
 3. Confirm cancellation when prompted.
 4. Click **Save**.
 
-Status is changed to **Cancelled CR**.
+Status changes to **Cancelled CR**.
 
 ## Status Bar States
 
@@ -206,7 +202,7 @@ Approval section added to the Change Request.
 
 Status can be demoted.
 
-Status promoted based on Approvers actions.
+Status advances based on approver actions.
 
 ![change_request_bar_approved](/images/platgovnetsuite/change_management/change_request_bar_approved.webp)
 

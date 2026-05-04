@@ -67,7 +67,7 @@ There are two requirements to analyze and report script performance data:
 
 There are pre-built saved mass updates to quickly do this, but some factors need to be considered.
 
-Since tags need to be added to the script file, there are some limitations on the data Platform
+Because tags need to be added to the script file, there are some limitations on the data Platform
 Governance for NetSuite can analyze for locked scripts.
 
 1. **Locked Script Records**: A locked script record doesn't impact script analysis since Platform
@@ -83,7 +83,7 @@ Governance for NetSuite can analyze for locked scripts.
         - Document who is executing the script
         - Provides a sense of how often it is executing. It tracks the number of executions per tag and
       averages them. The number can vary based on the placement of the tags and how the script is
-      executed any given time. While it doesn't provide an exact number, it will be within the
+      executed any given time. Although it doesn't provide an exact number, it is within the
       right range and can help identify if a script is executing significantly more than the
       transaction volume would indicate.
     - Without audit tags: Same and locked and hidden scripts below.
@@ -116,15 +116,14 @@ In this case you can either add the audit tags and change the log levels manuall
 updates.
 
 Platform Governance for NetSuite has tools to automatically change the log level of script
-deployments and add start tags to files. However, before deploying these tools, you may want to
-consider the following factors.
+deployments and add start tags to files. Before deploying these tools, consider the following factors.
 
 1. Changing the log level from Error or Emergency to Audit, which is required for Script Analysis
    may increase the level of log entries that appear on the Execution Log tab based on what tags are
    in the scripts.
 2. Log levels **can't** be automatically changed for bundled deployments. Bundled deployment log
    levels need to be changed manually.
-3. Since audit tags can only be added to unlocked files, changing the log levels of locked files
+3. Because audit tags can only be added to unlocked files, changing the log levels of locked files
    serves no purpose from a Script Analysis perspective.
 
 Platform Governance for NetSuite has the following capabilities to set up script analysis. Specific
@@ -133,7 +132,7 @@ ways to use these tools depend on your objectives and account setup.
 ## Identify which Scripts and how many Scripts have Locked and Hidden Files
 
 As mentioned above, audit tags can't be added to these files and changing the log levels is moot. A
-future bundle will have this search built in, but you can quickly identify and count the number of
+future bundle includes this search, but you can identify and count the number of
 locked scripts by creating this saved search:
 
 - Create a new saved search, type Customization
@@ -143,8 +142,7 @@ locked scripts by creating this saved search:
 - You can add Type to the results to see the script type
 
 Compare this number to the number of scripts in your account (Customizations>Scripting [ensure all
-filters are cleared]). If a large proportion of your scripts are locked and hidden, you may want to
-focus your analysis by changing the log level and adding audit tags to a limited number of scripts.
+filters are cleared]). If a large proportion of your scripts are locked and hidden, consider focusing your analysis by changing the log level and adding audit tags to a limited number of scripts.
 
 **Customization Record**: You can also see if a script file is locked by looking at the
 Customization record for that script. On the **Scripting** tab, check the script file. If there are
@@ -179,6 +177,6 @@ There are several searches that provide data about script performance and errors
 
 Another critical script is the **Strongpoint Parse Script Files SS** (note there is also an on
 demand version OD). This reads each unlocked script file to check for changes, updates the
-documentation and stores an archive copy of any previous version of the code. Once complete it
+documentation and stores an archive copy of any previous version of the code. After it completes, it
 triggers the **Strongpoint MakeJoins** script to complete the documentation by attaching related
 fields and saved searches.

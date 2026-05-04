@@ -10,7 +10,7 @@ This view makes it easy to identify roles without owners, and facilitates adding
 **Pending Role Assignments** from your menu bar. All changes are captured in the
 [UAR History](/docs/platgovnetsuite/uar/adminoverview/uar_history.md).
 
-Here is an example of the **Pending Role Assignments**:
+The following is an example of the **Pending Role Assignments**:
 
 ![Pending role assignments](/images/platgovnetsuite/uar/uar_admin/pending_role_assignments.webp)
 

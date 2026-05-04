@@ -13,7 +13,7 @@ sidebar_position: 30
 - Create Reviews to a Role
 - View Reviews
 
-Here is an example of the Admin dashboard displayed when you log in:
+The following is an example of the Admin dashboard displayed when you log in:
 
 ![Admin Dashboard](/images/platgovnetsuite/uar/dashboard_admin.webp)
 

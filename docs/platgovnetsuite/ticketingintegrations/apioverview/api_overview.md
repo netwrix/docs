@@ -14,12 +14,12 @@ applications can integrate via these APIs.
 - **ERD** and **Impact Analysis** tools are available.
 
 - [Customizations API](/docs/platgovnetsuite/ticketingintegrations/apioverview/customizationsapi/customizations_api.md) can be retrieved from your NetSuite account and can be
-  added and removed from your Change Requests. Here is the Customization API command:
+  added and removed from your Change Requests. The following is the Customization API command:
 
     - [Get Customizations](/docs/platgovnetsuite/ticketingintegrations/apioverview/customizationsapi/get_customizations.md): Returns customizations based on your filters.
 
 - [Change Request API](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/change_request_api.md) can be created, updated, retrieved, and deleted. The
-  ERD and Impact Analysis tools are available. Here are the Change Request API commands:
+  ERD and Impact Analysis tools are available. The following are the Change Request API commands:
 
     - [Get Change Request](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/get_change_request.md): Returns the change request associated with an
       External ID.

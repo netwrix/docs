@@ -11,9 +11,7 @@ the NetSuite record. Change Logs are accessed from the
 [Change Management Reports](/docs/platgovnetsuite/change_management_reports.md).
 
 :::note
-Once a change request is complete, best practice is to change the status to **Completed**. If there
-are multiple open change requests referencing the same object, any changes to the object result in
-the change log being associated with the oldest of the approved change requests.
+When a change request is complete, change the status to **Completed**. If there are multiple open change requests referencing the same object, any changes to the object are associated with the oldest of the approved change requests.
 :::
 
 To open a Change Log:
@@ -119,14 +117,13 @@ The **Values** tab displays the changes that occurred in the Change Log.
 
 ## Finding Users Who Have Made Changes
 
-When you want to find out who has made changes, you can run any of the Change Reports and view who
-made a change in the **Change By** column.
+To find out who has made changes, run any of the Change Reports and view who made a change in the **Change By** column.
 
 The **Change By** and **Actual Date** of the change logs are retrieved using System Notes Search for
 supported record types. If a System Note isn't available, **Change By** displays **Could Not Be
 Determined** in the Report List.
 
-Recorded types that aren't supported can be retrieved from the AutoSpider.
+Record types that aren't supported can be retrieved from the AutoSpider.
 
 | Supported Records for System Notes Search                                                                                                                                                                                                                                                                                                                                                                                                       | Change By retrieved from the AutoSpider                                                                   |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |

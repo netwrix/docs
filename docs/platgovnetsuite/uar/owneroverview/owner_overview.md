@@ -22,7 +22,7 @@ access the dashboard.
 1. Open **User Access Review** from NetSuite.
 2. Click **UAR Owner** to log in. Your owner dashboard is displayed.
 
-Here is an example owner dashboard showing new assignments.
+The following is an example owner dashboard showing new assignments.
 
 ![UAR Owner dashboard](/images/platgovnetsuite/uar/uar_owner/dashboard_owner.webp)
 

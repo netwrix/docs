@@ -38,8 +38,7 @@ To set up the Zendesk integration:
 
 ## Install the App
 
-Here are the steps to install the Zendesk app. You must have **Admin** privileges to install the
-app.
+To install the Zendesk app, you must have **Admin** privileges.
 
 1. Open your Zendesk dashboard.
 2. Click the **Admin** icon in the left panel. It should open a new window to Admin Center.

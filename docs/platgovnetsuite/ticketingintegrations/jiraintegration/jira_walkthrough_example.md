@@ -69,7 +69,7 @@ consecutive attempts to login, your account is suspended for 30 minutes.
 
 ## Add Customizations
 
-After you have logged in, the form is displayed.
+After you log in, the form is displayed.
 ![Jira Strongpoint form](/images/platgovnetsuite/release_notes/jira_strongpoint_form.webp)
 
 - **Synchronized with** displays the connected account. Click **Change Account** to switch to a
@@ -166,7 +166,7 @@ is an alternative if you have a lot of customizations.
 ### Impact Analysis
 
 The impact analysis tool reviews your customizations for dependencies or risks. Click **Impact
-Analysis** to run the tool. Here is an example report:
+Analysis** to run the tool. The following is an example report:
 
 ![Impact analysis report](/images/platgovnetsuite/integrations/jira_example_impact_analysis.webp)
 
@@ -188,7 +188,7 @@ dependencies.
 
 ## Ready for Development
 
-After you have resolved any risk or conflicts, your changes are ready for development:
+After you resolve any risks or conflicts, your changes are ready for development:
 
 1. Change the Jira status of your ticket to match the status set up for **Jira Statuses for Pending
    Approval Status**. For example, **Selected for Development**.

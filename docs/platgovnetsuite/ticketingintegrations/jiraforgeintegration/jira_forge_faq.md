@@ -21,6 +21,6 @@ This section covers frequently asked questions and basic troubleshooting for Pla
     - This is Atlassian's way of securing data. Every install or update is a fresh start. However, there are 2 ways to retrieve the data: (1) Raise a ticket to Atlassian support to restore the data in the instance for when the Jira Forge app was installed or updated. (2) Manually re-enter the data.
 
 5. Is there impact to existing Connect tickets if Forge is being used?
-    - **No**. Since the change request information is being pulled from the NetSuite account that Jira Forge is connected to, there should be no impact when switching to the Forge app.
+    - **No**. Since the change request information is being pulled from the NetSuite account that Jira Forge is connected to, switching to the Forge app has no impact on existing tickets.
 
 **Back to:** [Jira Forge Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough)

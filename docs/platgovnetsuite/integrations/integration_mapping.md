@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The Integration Mapping tool maps customizations between External Systems and NetSuite.
 
-Here is the basic process.
+The basic process is as follows.
 
 1. Create the External System Customization record. (optional)
 2. Create a **.csv** file.
@@ -35,7 +35,7 @@ System, it can be automatically created by the tool.
 The **.csv** file is where you specify the customization mapping between the External System and
 NetSuite. The file is uploaded when you run the tool. You can create a file with the specified
 headings, or download the template with the link on the first page of the Integration Mapping tool.
-Don't change the specified headings. Here is the template:
+Don't change the specified headings. The following is the template:
 
 ![int_map_csv_template](/images/platgovnetsuite/integrations/int_map_csv_template.webp)
 
@@ -110,7 +110,7 @@ Open **Strongpoint** > **Integrations** > **Mapping Tool**
 
 2. Click the linked **Internal ID** to display the ERD for each mapped customization.
 
-Here is an example of an expanded ERD showing **Integrations**, **Sources**, and **External
-Dependent Fields**. Note the **External Dependent Fields** is highlighted with a green header.
+The following example shows an expanded ERD with **Integrations**, **Sources**, and **External
+Dependent Fields**. The **External Dependent Fields** are highlighted with a green header.
 
 ![int_mapping_ext_erd](/images/platgovnetsuite/integrations/int_mapping_ext_erd.webp)

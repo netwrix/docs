@@ -6,9 +6,7 @@ sidebar_position: 200
 
 # FAQ
 
-Platform Governance for NetSuite is a stress-free change management and compliance software for
-NetSuite and Salesforce. It helps companies manage change in their systems, enabling them to drive
-growth with confidence and certainty. Here are answers to frequently asked questions:
+Platform Governance for NetSuite is change management and compliance software for NetSuite and Salesforce. It helps companies manage change in their systems with confidence. The following are answers to frequently asked questions:
 
 -  [Can Platform Governance for NetSuite provide a SOC1 Report?](#can-platform-governance-for-netsuite-provide-a-soc1-report)
 
@@ -50,22 +48,13 @@ can be reimported and retained for archiving purposes by an authorized user.
 
 #### What is the time or effort required to use Platform Governance for NetSuite
 
-A lot less than you would expect. The first phase is to get a complete customization
-documentation library. All this requires is for the Administrator to install the bundle, press
-"Start Spider" and let the system run. After a few nights, the system documentation is complete and
-you can review the results in the Status Report.
+The first phase is to get a complete customization documentation library. The Administrator installs the bundle, presses **Start Spider**, and lets the system run. After a few nights, the system documentation is complete and you can review the results in the Status Report.
 
 User guides and online videos are available to walk you through Clean Up, Script Analysis and other
 capabilities. Because Platform Governance for NetSuite creates complete documentation and updates on
 an ongoing basis with your NetSuite and Salesforce records, you can use the pre-built searches or
-create your own to get instant visibility into your account. While Platform Governance for NetSuite
-greatly reduces the amount of time to find information and identify interdependencies, the NetSuite
-and Salesforce Administrators still need to do the appropriate due diligence and analysis to
-ensure their actions are appropriate and safe.
+create your own to get instant visibility into your account. Platform Governance for NetSuite greatly reduces the time to find information and identify interdependencies. NetSuite and Salesforce Administrators still need to perform appropriate due diligence and analysis to ensure their actions are appropriate and safe.
 
 #### Who needs a Platform Governance for NetSuite License — what is the difference between an editor and a viewer
 
-Licenses are only required for editors of Platform Governance for NetSuite (i.e. people who create
-or edit processes or view customization documentation). No license is required for users who merely
-view documentation. A company will normally start with a small team (the base includes three seats)
-and then add users as their usage expands.
+Licenses are required for editors of Platform Governance for NetSuite (people who create or edit processes or view customization documentation). No license is required for users who only view documentation. Companies typically start with a small team (the base includes three seats) and add users as usage expands.

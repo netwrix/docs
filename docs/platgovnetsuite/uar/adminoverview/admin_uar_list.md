@@ -11,7 +11,7 @@ shortcuts. Your UAR List displays either the list of Global Reviews or Single R
 controlled with the **Sort By** selection in the Filters section. All changes are captured in the
 [UAR History](/docs/platgovnetsuite/uar/adminoverview/uar_history.md).
 
-Here is an example of the **Global** review list:
+The following is an example of the **Global** review list:
 
 ![Administrator UAR list](/images/platgovnetsuite/uar/uar_admin/admin_uar.webp)
 
@@ -125,7 +125,7 @@ Reminders can be sent from the administrator's UAR List or from the Review list
 
 ## Review List
 
-Clicking on a **Name** in the UAR List opens the Review List. Here is an example.
+Clicking on a **Name** in the UAR List opens the Review List. The following is an example.
 
 ![Review List](/images/platgovnetsuite/uar/uar_admin/admin_review_list.webp)
 

@@ -6,11 +6,7 @@ sidebar_position: 30
 
 # Setting Up Subsidiary Policies
 
-Use Subsidiary Approval to set subsidiary-specific policies based on the employees using a
-customization. Once an administrator sets up a change policy for a subsidiary, the subsidiary
-approvers are set for the process, and the process is attached to the policy. Subsidiary Processes
-are automatically created by the spider. Employees using customizations are evaluated and Employee
-subsidiaries and corresponding Subsidiary Processes are set to the customization.
+Use Subsidiary Approval to set subsidiary-specific policies based on the employees using a customization. After an administrator sets up a change policy for a subsidiary, the subsidiary approvers are set for the process and the process is attached to the policy. The spider automatically creates Subsidiary Processes. Employees using customizations are evaluated, and Employee subsidiaries and corresponding Subsidiary Processes are set on the customization.
 
 To set up Subsidiary Approvals:
 

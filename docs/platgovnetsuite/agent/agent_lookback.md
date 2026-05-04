@@ -10,7 +10,7 @@ _Agent Lookback_ gives **Enterprise** license customers the capability to run an
 a specified past date through the current date. The control is run in single day batches, simulating
 a daily run.
 
-The Agent Lookback is accessed from the Customization record for the control.
+Access Agent Lookback from the Customization record for the control.
 
 1. Open **Strongpoint** > **Financial Controls** > **Controls**.
 2. **Edit** the control to run.
@@ -25,10 +25,8 @@ The Agent Lookback is accessed from the Customization record for the control.
 7. Add the details and click **Set**.
 8. Click **Add** .
 9. Click **Save**.
-10. The **Lookback Start Date** and **Lookback Next Date** are now populated on your Customization
-    record.
-11. **Save** the customization record. The Lookback agent runs single day batches for the specified
-    dates.
+10. The **Lookback Start Date** and **Lookback Next Date** are populated on your Customization record.
+11. **Save** the customization record. The Lookback agent runs single-day batches for the specified dates.
 
 ### Lookback Run
 
