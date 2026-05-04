@@ -15,7 +15,7 @@ You install Access Analyzer using a single curl command that downloads and runs 
 Export your license key as an environment variable before running any installer command. This keeps the key out of your shell history and makes it available to the installer automatically.
 
 ```bash
-export LICENSE_KEY="[YOUR_LICENSE_KEY]]"
+export LICENSE_KEY="[YOUR_LICENSE_KEY]"
 ```
 
 Replace "[YOUR_LICENSE_KEY]" with the license key Netwrix provided. All examples on this page assume you have exported this variable.
