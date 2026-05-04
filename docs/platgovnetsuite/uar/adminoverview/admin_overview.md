@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # UAR Admin
 
-**UAR Admin** manages the UAR process. Administrators login to NetSuite and open
+**UAR Admin** manages the UAR process. Administrators log in to NetSuite and open
 [User Access Review](/docs/platgovnetsuite/uar/access_app.md) to access the dashboard. UAR administrators can:
 
 - Assign owners to a role

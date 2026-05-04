@@ -7,7 +7,7 @@ sidebar_position: 10
 # Understanding the Customization Record
 
 Customization records are the documentation about each customization. They are normally built and
-maintained by the Spiders. They enable you to search the customizations and attach them to
+maintained by the Spiders. Use them to search the customizations and attach them to
 processes.
 
 Customization records tell you:
@@ -65,7 +65,7 @@ The tabs provide detailed information about the customization:
   customizations include States, Actions, and Workflow Fields not applicable when viewing Field
   customizations.
 - **ERD**: Displays the Entity-Relationship Diagram centered around this customization.
-- **Clean Up**: Comments, classification and clean up status associated with the customization.
+- **Clean Up**: Comments, classification, and clean up status associated with the customization.
   Search records have additional fields for Automated Search Clean Up alerts, rules, and status.
 - **Change Log**: Displays the change log for the customization.
 - **Related Change Log**: Displays any related change logs for the customization.

@@ -6,16 +6,15 @@ sidebar_position: 80
 
 # Bundle Removal Overview
 
-We can help you remove bundles from NetSuite in the safest and best possible manner by using mass
-updates and saved searches, leaving you with an efficient use of time and effort. By following the
-bundle removal process, the current functionality in your account keeps working as expected.
+Platform Governance for NetSuite helps you remove bundles from NetSuite safely and efficiently using mass
+updates and saved searches. By following the bundle removal process, the current functionality in your account keeps working as expected.
 
 Customizations that are built on top of a bundle can cause issues or break when the bundle is
-removed. We help you determine what could cause issues or break if you remove the bundle by:
+removed. Platform Governance for NetSuite helps you determine what could cause issues or break if you remove the bundle by:
 
 - Safely and easily recognizing which customizations are built on top of the bundle.
 - Seeing how customizations relate to different components.
-- Detecting all the components that do not connect to any object in your NetSuite account.
+- Detecting all the components that don't connect to any object in your NetSuite account.
 - Identifying and separating objects that have the possibility of breaking.
 - Creating an alternative for how your account would function when you remove the bundle.
 
@@ -30,10 +29,10 @@ To remove a bundle:
     **Resources**:  
     **Project Manager**: You should appoint a project manager, you can assign an internal technical
     resource if available or NetSuite can provide you with a Technical Account Manager (TAM). There
-    is a cost for hiring a TAM if it is not included in your NetSuite support package. You may need
-    more than one TAM resource depending on how heavily customized your bundle is. If a TAM is not
+    is a cost for hiring a TAM if it isn't included in your NetSuite support package. You may need
+    more than one TAM resource depending on how heavily customized your bundle is. If a TAM isn't
     available, NetSuite can also provide you with a resource from professional services. When
-    possible, it is recommended that you find a TAM resource that is familiar with Platform
+    possible, find a TAM resource that is familiar with Platform
     Governance for NetSuite as well as is familiar with the bundle type that you are trying to
     remove.  
     **Developer and/or Administrator**: Depending on how your business processes are built around

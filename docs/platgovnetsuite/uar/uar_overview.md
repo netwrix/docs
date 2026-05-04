@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # User Access Review
 
-Roles and Permissions are not a set once and forget about them activity. Both should be reviewed
+Roles and Permissions aren't a set once and forget about them activity. Both should be reviewed
 regularly to ensure your data is secured and users in your organization have the right access.
 **User Access Review** streamlines this review process, making it easy to manage and review all
 access to your NetSuite data. UAR users must have a [license](/docs/platgovnetsuite/uar/install_app.md).
@@ -39,7 +39,7 @@ Access and permissions to UAR is controlled by roles:
     - Request Changes to Permission or Permission Levels to owned Roles.
     - Request Changes to Role Assignments for owned Roles.
     - Designate an Additional Approver for a Membership Review for owned Roles. For example, a user
-      that does not report to you has a Role you own. You may want the user’s supervisor to also
+      that doesn't report to you has a Role you own. You may want the user’s supervisor to also
       approve the Role Assignment.
 
 - **UAR Auditor** read-only access to the UAR to perform auditing functions.

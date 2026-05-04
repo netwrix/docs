@@ -12,7 +12,7 @@ remove access, or grant temporary access. You can specify the access by **Affect
 **Affected Roles**. The existing approval process is used.
 
 :::note
-The **administrator** role cannot be automatically provisioned.
+The **administrator** role can't be automatically provisioned.
 :::
 
 The new form is accessed from **Strongpoint** > **Change Management Tools** > **User Provisioning
@@ -58,8 +58,8 @@ custom form.
 6. **Save** the change request.
 7. Click **Pending Approval** in the status bar.
 
-Once the request is approved, the roles are automatically added if you enabled
-**Auto-Provisioning**. The change request status is shown as **Complete**. Otherwise, once the
+After the request is approved, the roles are automatically added if you enabled
+**Auto-Provisioning**. The change request status is shown as **Complete**. Otherwise, after the
 request is approved, you need to manually add the roles and update the status.
 
 A compliant Change Log is generated:
@@ -91,7 +91,7 @@ The **Values** tab shows the details of the role changes.
 10. **Save** the change request.
 11. Click **Pending Approval** in the status bar.
 
-Once the request is approved, the roles are automatically removed at the specified time if you
+After the request is approved, the roles are automatically removed at the specified time if you
 enabled **Auto-Role Removal**. The change request status is shown as **Complete**. Otherwise, once
 the request is approved, you need to manually remove the roles and update the status.
 

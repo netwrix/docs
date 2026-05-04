@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Installing Platform Governance for NetSuite
 
-To get Platform Governance for NetSuite up and running, you need to do the following:
+To install Platform Governance for NetSuite, complete the following steps:
 
 1. [Install the bundle](#install-the-bundle) using the correct bundle name and the bundle ID.
 2. [Set the number of rows in list segments](#set-the-number-of-row-in-list-segments) to 1,000. This
@@ -15,7 +15,7 @@ To get Platform Governance for NetSuite up and running, you need to do the follo
 4. [Run the spider](running_the_spider). The spider scans your account in a standardized manner. A
    series of scheduled scripts is run to document the connections between the customizations.
 
-Starting with Version 6.2.5, queues and priority allocation are deprecated. The bundle is now
+Starting with Version 6.2.5, queues, and priority allocation are deprecated. The bundle is now
 installed using processor architecture for scheduled scripts. All deployments are set to low
 priority.
 
@@ -44,7 +44,7 @@ The Bundle ID has been updated due to NetSuite changes.
 It is important that you set your NUMBER OF ROWS IN LIST SEGMENTS to 1,000. This is a NetSuite best
 practice and critical for the proper spidering of your workflows. If you are unable to edit this
 field, refer to
-[Cannot Change the Number of Rows in List Segments](/docs/platgovnetsuite/reportabug/list_segments_not_editable.md)
+[Can't Change the Number of Rows in List Segments](/docs/platgovnetsuite/reportabug/list_segments_not_editable.md)
 
 To set the Number of Rows in List Segments:
 

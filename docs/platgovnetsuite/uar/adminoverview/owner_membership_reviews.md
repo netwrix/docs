@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Membership Reviews
 
-This type of review is used to keep your roles up to date. When you click on a membership review,
+This type of review is used to keep your roles up to date. When you click a membership review,
 the list of users with the role is displayed. The links open the appropriate record in NetSuite, for
 example the **User** link opens the **User** record. Access membership reviews from **UAR List** in
 your menu bar, or one of the review shortcuts.
@@ -61,7 +61,7 @@ This display provides a global view of the user's access.
 1. Select the user.
 2. Review their Global Permissions, Other Roles, and SoD Violations. The links all open the specific
    records for further review. If the user should retain the role, click **Mark Completed**. The
-   status is updated. You cannot undo this action.
+   status is updated. You can't undo this action.
    ![Mark user as reviewed](/images/platgovnetsuite/uar/uar_owner/mark_complete.webp)
 
 ### Remove Users from the Role
@@ -88,14 +88,14 @@ To remove one or more users from the role:
 
     If the Change Request is rejected (**CR Rejected status**) or canceled (**CR Cancelled**), the
     user row is returned to a pending state and can then be reviewed again. Use the Change Request
-    ID link to open the Change Request and review the **Approver Comments** for more information.
+    ID link to open the Change Request and review the **Approver Comments** for rejection details.
 
 ### Assign an Additional Reviewer
 
 You can add additional reviewers to the review:
 
 1. Select the user.
-2. Select an additional reviewer from the drop down list.
+2. Select an additional reviewer from the dropdown list.
    ![Assign an additional reviewer](/images/platgovnetsuite/uar/uar_owner/additional_user_assign.webp)
    The user line is highlighted. You can click **Undo** to cancel the addition before you click
    **Submit**.

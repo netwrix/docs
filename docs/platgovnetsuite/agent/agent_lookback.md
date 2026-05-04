@@ -20,7 +20,7 @@ The Agent Lookback is accessed from the Customization record for the control.
 
 4. Set **Control Type** to **Lookback Control** or **Lookback Control with Admin Verification**.
 5. Click **Go to Record**.
-6. In the **Filter** drop down, select **User Fields**. Select a date such as **Date Created**. The
+6. In the **Filter** dropdown, select **User Fields**. Select a date such as **Date Created**. The
    first date in the filter becomes the lookback start date.
 7. Add the details and click **Set**.
 8. Click **Add** .
@@ -34,7 +34,7 @@ The Agent Lookback is accessed from the Customization record for the control.
 
 Administrators can initiate and cancel Lookback Runs from the **Controls** tab on a Customization
 record. The control search must have at least one date filter set to be used by the Lookback run.
-Controls cannot be grouped by run.
+Controls can't be grouped by run.
 
 ![Schedule or initiate a Lookback run.](/images/platgovnetsuite/financial_controls/lookback_run.webp)
 
@@ -47,8 +47,8 @@ Controls cannot be grouped by run.
       Run** box (edit).
 
 - **Last Action** displays the last user action.
-- **Start Date** is the beginning date to use for the lookback run. Future dates are not allowed.
-- **End Date** is the ending date for the lookback run. Future dates are not allowed.
+- **Start Date** is the beginning date to use for the lookback run. Future dates aren't allowed.
+- **End Date** is the ending date for the lookback run. Future dates aren't allowed.
 - **Next Date** is a reference field displaying the last lookup date of the lookback run.
 
 The Lookback run checks for existing Control logs to avoid log duplication. The Control record,

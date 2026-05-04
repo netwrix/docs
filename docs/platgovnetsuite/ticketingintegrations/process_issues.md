@@ -31,16 +31,16 @@ continue to use that and reference the external ticket in the Change Request.
    A Unique **ID** is generated after the Process Issue is created.
 4. Enter a meaningful **Name** for the Process Issue.
 5. Select a **Parent Issue** if applicable. This field is used to group issues. You can either type
-   part of the name and press Tab, or use the drop down icon and select from a list.
+   part of the name and press Tab, or use the dropdown icon and select from a list.
 6. Change the **Owner** if needed.
 7. Select a **Type** for the issue. **Type** is used for sorting and organizing issues. You can set
    up types to trigger alerts to object owners and managers. You can use the predefined types or use
    **New** to create your own. Here are basic definitions:
 
-    - **Question**: question about a feature, function or process.
+    - **Question**: question about a feature, function, or process.
     - **Suggestion**: idea for improving functionality or process.
     - **Broken Process**: problem with a process, but not blocking productivity or performance.
-    - **Waste**: steps or work that is not necessary.
+    - **Waste**: steps or work that isn't necessary.
     - **Control Log**: An automatically created process if you have the **Strongpoint Controls**
       package.
     - **Script Error**: error within a script causing it not to function as expected.
@@ -67,15 +67,15 @@ continue to use that and reference the external ticket in the Change Request.
     the **Status** is set to **Closed**.
 13. Click **Add Proposed Customization** to create a customization for this Process Issue. Select
     the **Type** and complete the **Script ID** or **Name**, depending on the **Type**. Click **+Add
-    more proposed customizations** to add another, or **Add Proposed Customization(s)** to continue.
-14. Assign a **Status** to help track the issue. Do not assign as **Completed As Process Issue** or
-    **Closed** until all work has been done, and all change requests are completed, deployed and
+    more proposed customizations** to add another, or **Add Proposed Customizations** to continue.
+14. Assign a **Status** to help track the issue. Don't assign as **Completed As Process Issue** or
+    **Closed** until all work has been done, and all change requests are completed, deployed, and
     verified.
 
     - **Not Started** is the default.
     - **In Progress**: work or investigation has started.
     - **Completed As Process Issue**: work has been completed, all changes and change requests are
-      complete, deployed and verified.
+      complete, deployed, and verified.
     - **Converted to Change Request**: a change request has been created for the issue.
     - **Next Review**: indicates the issue will be looked at again the next time process issues are
       reviewed.
@@ -106,13 +106,13 @@ You can manage your Process Issues through reports:
 
 Open **Strongpoint** > **Process Issues** > **Process Issue Overview**
 
-You can enter filters to sort the issues and click on the column heads to change the sort order.
-Reports can be exported to CSV, Excel, PDF, printed or emailed using the icons.
+You can enter filters to sort the issues and click the column heads to change the sort order.
+Reports can be exported to CSV, Excel, PDF, printed, or emailed using the icons.
 
 You can also edit some fields inline:
 
-1. Click on **EDIT** in the report tool bar. When enabled, it is green with a check mark.
-2. Click on the red pencil icon in the column head. Columns without the pencil icon cannot be
+1. Click **EDIT** in the report tool bar. When enabled, it is green with a check mark.
+2. Click the red pencil icon in the column head. Columns without the pencil icon can't be
    edited.
 3. Click in the column to open a text box.
 

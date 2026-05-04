@@ -59,13 +59,13 @@ New: **Formula Update in Searches**
 The **Strongpoint Open Noncompliant Changes**, **Strongpoint What Changed**, and **Open Noncompliant
 Changes - Audit** searches criteria has been updated.
 
-As part of an ongoing effort to minimize non-material change logs and save time on reporting, we
-have reviewed and updated some of the filters in our non-compliant and what changed compliance
+As part of an ongoing effort to minimize non-material change logs and save time on reporting, Netwrix
+has reviewed and updated some of the filters in the non-compliant and what changed compliance
 reports.
 
 A filter was discovered in the search criteria that could cause change logs to be excluded. This
 filter was used during the implementation of change detection through the autospider portlet, to
-filter out duplicate logs caused by late reconciliation of changes done by our processes. With the
+filter out duplicate logs caused by late reconciliation of changes done by the scheduling processes. With the
 improved process scheduling, the filter is no longer needed.
 
 For some accounts, this may result in additional change logs from previous periods in these reports.
@@ -84,7 +84,7 @@ These issues have been resolved in this release:
 
 - _New Fields not detected by scheduled spiders_. A usage limit error was fixed so the new fields
   are now documented.
-- _Change log for Role changes are showing as Could Not Be Determined_. An error was occurring if
+- _Change log for Role changes are showing as Couldn't Be Determined_. An error was occurring if
   the access history was blank for an employee.
 
 ## SoD 1.6.5

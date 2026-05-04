@@ -15,8 +15,8 @@ December 22, 2023
 **New:** **Strongpoint Integration API**
 
 Strongpoint is excited to release an [Integration API](/docs/platgovnetsuite/ticketingintegrations/apioverview/api_overview.md) to enable your
-developers to support your ticketing systems! Customers enthusiastically embraced our Strongpoint
-pre-built integrations for Jira, ServiceNow and Zendesk. The API makes this integration
+developers to support your ticketing systems! Customers enthusiastically embraced the Strongpoint
+pre-built integrations for Jira, ServiceNow, and Zendesk. The API makes this integration
 functionality available to everyone. Integrating your systems with your Strongpoint account helps
 you make the most of your change management and ticketing strategies.
 
@@ -24,7 +24,7 @@ Here are the API highlights:
 
 - **Customizations** can be retrieved from your NetSuite account and can be added and removed from
   your Change Requests.
-- **Change Requests** can be created, updated, retrieved and deleted.
+- **Change Requests** can be created, updated, retrieved, and deleted.
 - **ERD** and **Impact Analysis** tools are available.
 - API commands are documented in the [Integration API](/docs/platgovnetsuite/ticketingintegrations/apioverview/api_overview.md) section of this
   guide.
@@ -35,7 +35,7 @@ Here are the API highlights:
 
 NetSuite has removed the scheduled status on scripts after a sandbox is refreshed. This stops the
 Strongpoint scripts required for environment compares, change requests built to push to production,
-and other activities. This suitelet enables you to automatically reset all of your Strongpoint
+and other activities. Use this suitelet to automatically reset all of your Strongpoint
 scripts. If you have scheduled custom scripts in your sandbox, you must manually set the status
 after a sandbox refresh.
 
@@ -51,7 +51,7 @@ after a sandbox refresh.
     ![Open the Deployment tab](/images/platgovnetsuite/release_notes/script_deploy_tab.webp)
 
 6. Click the Suitelet name: **Strongpoint Reset Schedule Deployments**.
-7. Click on the Script **URL**.
+7. Click the Script **URL**.
 
     ![Click the Script URL](/images/platgovnetsuite/release_notes/script_deploy_url.webp)
 
@@ -62,7 +62,7 @@ December 19, 2023
 - Changed the format of the **Reason for Exemption** column on the **Strongpoint SoD Change Requests
   (List)** report to **Formula Text**. Due to NetSuite 2023.2 changes, HTML tags were displaying in
   the report. Refer to NetSuite Release 2023.2 Support for more details on the NetSuite change.
-- Improved handling of inline edits on Employee names. Making an inline name change does not affect
+- Improved handling of inline edits on Employee names. Making an inline name change doesn't affect
   open SoD Exemptions for the employee.
 
 **NetSuite Release 2023.2 Support**

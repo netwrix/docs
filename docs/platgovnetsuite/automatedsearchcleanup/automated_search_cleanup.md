@@ -11,7 +11,7 @@ and manage Saved Searches. Accumulated searches contribute to inefficiency in Ne
 
 :::note
 Review the [Automated Search Clean Up Considerations](/docs/platgovnetsuite/automatedsearchcleanup/automated_search_cleanup_considerations.md)
-prior to using this feature.
+before using this feature.
 :::
 
 Saved Searches are powerful customizations used throughout NetSuite and interconnected to other
@@ -59,16 +59,16 @@ Rules**
 ![autocleanup](/images/platgovnetsuite/clean_up/autocleanup.webp)
 
 - **Name** is the assigned name for the **Search Clean Up Rule Record**.
-- **Rule Owner(s)** is the administrator or owners for the rule record.
+- **Rule Owners** is the administrator or owners for the rule record.
 - **Description** is the purpose of the rule record. An informative description helps administrators
   easily maintain and identify rules.
-- **Notify Search Owners Prior to Archive** check to send email to search owners prior to archive.
+- **Notify Search Owners Before Archive** check to send email to search owners before archive.
   Default is checked.
-- **Notify Search Users Prior to Archive** check to send email to search users prior to archive.
+- **Notify Search Users Before Archive** check to send email to search users before archive.
   Default is checked.
 - **Notify Supervisor for Inactive Owners** check to send email to an inactive owner's supervisor.
   Default is checked.
-- **Automatic** is used to include the rule in the automated search. This option is not available
+- **Automatic** is used to include the rule in the automated search. This option isn't available
   until the **Preview** function has been used.
 - **Inactive** check to exclude this Search Clean Up Rule from the automated search.
 - **Filter Summary** displays all of the current filters for the rule.
@@ -83,7 +83,7 @@ This section is available when **Automatic** is checked.
 - **Weekly Event**: check and enter the **Repeat** frequency to schedule clean up weekly.
 - **Monthly Event**: check and enter the **Repeat** frequency to schedule clean up monthly.
 - **Yearly Event**: check to schedule a yearly run.
-- **Next Run Date**: this field is populated by the system, and cannot be edited. The date is added
+- **Next Run Date**: this field is populated by the system, and can't be edited. The date is added
   when the schedule is saved.
 - **End By**: pick a date to stop running automatic clean up.
 - **No End Date**: check to never stop the scheduled clean up.
@@ -114,16 +114,16 @@ This section is available when **Automatic** is checked.
 
 **Advanced Filters**
 
-- **Search Owner(s)** filters searches by matching selected owners or if **Exclude Owner(s)** is
+- **Search Owners** filters searches by matching selected owners or if **Exclude Owners** is
   checked, to exclude matching owners for the rule. Multiple owners can be selected. Default is
   blank and unchecked.
-- **Owner's Department(s)** filters searches by matching departments to the rule or if **Exclude
-  Department(s)** is checked, to exclude matching departments for the rule. Multiple departments can
+- **Owner's Departments** filters searches by matching departments to the rule or if **Exclude
+  Departments** is checked, to exclude matching departments for the rule. Multiple departments can
   be selected. Default is blank and unchecked.
 - **Owner's Subsidiary** filters searches by matching subsidiaries to the rule or if **Exclude
   Subsidiary** is checked, to exclude matching subsidiaries for the rule. Multiple subsidiaries can
   be selected. Default is blank and unchecked.
-- **Inactive Owner(s)** filters searches by matching inactive owners. Default is blank.
+- **Inactive Owners** filters searches by matching inactive owners. Default is blank.
 - **All Inactive Owners** filters searches by all inactive owners. Default is unchecked. A maximum
   of 1000 inactive users are loaded. A warning is displayed if there are additional inactive users.
 
@@ -158,10 +158,10 @@ If a Saved Search matches the Clean Up Rule:
 2. Immediate notice to all search owners and search users with their searches that are about to be
    archived. Notifications include a **Retain this Search** link. A **Preview** link is available
    for the user to view the Search.
-3. If the **Retain Search** link is not used and the Saved Search has not been used, final
+3. If the **Retain Search** link isn't used and the Saved Search has not been used, final
    notifications are sent to all search owners and search users seven calendar days after the **Run
    Now** option was used. The notification includes the date the search is to be archived.
-4. If the **Retain Search** link is not used and the Saved Search has not been used by the archive
+4. If the **Retain Search** link isn't used and the Saved Search has not been used by the archive
    date:
 
     - Saved Search is archived.
@@ -180,19 +180,19 @@ searches**, **retained searches**, **scheduled to be archived searches** and **a
     - Notification is emailed to the rule owner. The Saved Search is also included in the summary
       notification to the rule owner.
     - Notifications are sent the first closest Sunday since the rule was marked **Automatic**.
-    - Notification is emailed to the search owners unless **Notify Search Owners Prior to Archive**
+    - Notification is emailed to the search owners unless **Notify Search Owners Before Archive**
       is turned off for the rule.
-    - Notification is emailed to the search users unless **Notify Search Users Prior to Archive** is
+    - Notification is emailed to the search users unless **Notify Search Users Before Archive** is
       turned off for the rule.
     - All email notifications include a **Retain this Search** link. A **Preview** link is available
       for the user to view the Search.
     - Saved Search is added to the **Automated Search Clean Up** > **Searches To Be Archived
       (Auto)** list.
 
-2. If the **Retain Search** link is not used and the Saved Search has not been used, second
+2. If the **Retain Search** link isn't used and the Saved Search has not been used, second
    notifications are sent the following Sunday after the first notification date. The notification
    includes the date the search is to be archived.
-3. If the **Retain Search** link is not used and the Saved Search has not been used by the archive
+3. If the **Retain Search** link isn't used and the Saved Search has not been used by the archive
    date:
 
     - Saved Search is archived.
@@ -256,7 +256,7 @@ The Retain process:
 
 ## Auto Archiving a Search
 
-If search owners or users do not click on **Retain this search** in the email notifications, the
+If search owners or users don't click **Retain this search** in the email notifications, the
 search is archived. The Archive process:
 
 - Archives the search.
@@ -283,10 +283,10 @@ owner and administrators.
 ### Limitations to Restoring Auto Archived Searches
 
 Items from the **Criteria** and **Results** tabs are restored with the exception of **Public**
-searches with the **Period** filter. Auto archiving does not occur with **Private** searches with
-the **Period** filter, as they cannot be deleted or archived.
+searches with the **Period** filter. Auto archiving doesn't occur with **Private** searches with
+the **Period** filter, as they can't be deleted or archived.
 
-The following check boxes on the Search form are not restored if they were checked:
+The following check boxes on the Search form aren't restored if they were checked:
 
 - Available as List View
 - Available as Dashboard View
@@ -294,7 +294,7 @@ The following check boxes on the Search form are not restored if they were check
 - Available for Reminders
 - Show in Menu
 
-Items from the following tabs on the Search form are not retained when an auto archived search is
+Items from the following tabs on the Search form aren't retained when an auto archived search is
 restored:
 
 - Highlighting

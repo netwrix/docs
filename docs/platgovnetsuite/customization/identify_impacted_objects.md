@@ -20,13 +20,13 @@ You can find impacted objects in several ways:
 
 The customization list provides a complete list of all the customization records.
 
-It enables you to:
+Use it to:
 
 - Filter the view.
 - Access the Customization Record.
 - Access the actual customization record by clicking on the **Link** column on the right.
 
-Changing the view enables you to access many clean up tools, which can also be accessed by going to
+Changing the view gives you access to many clean up tools, which can also be accessed by going to
 **Clean Up** located under the **Strongpoint** tab.
 
 To access the customization list:
@@ -42,13 +42,13 @@ To access a customization quick search, open **Strongpoint** > **Customizations*
 Quick Search**
 
 You can search using several factors and submit. When looking up by **Name**, using **Contains**
-helps if you do not have the exact name.
+helps if you don't have the exact name.
 
 ![custquicksearch](/images/platgovnetsuite/customizations/custquicksearch.webp)
 
 ## ERD View
 
-The ERD provides a way to look at customizations by record type. A left click on the customization
+The ERD provides a way to look at customizations by record type. A left click the customization
 name brings up the customization record.
 
 1. Open **Strongpoint**> **Customizations** > **ERD View**
@@ -58,10 +58,10 @@ name brings up the customization record.
     - **Field Name Filter**: enter all or part of a field name to filter the results.
     - **Date Last Used Filter**: enter a date range to filter the results.
     - **Hide standard fields without relationships**: check this box to hide all standard fields
-      that do not have relationships from the results.
+      that don't have relationships from the results.
     - **Hide all standard fields**: check this box to hide all standard fields from the results.
     - **Hide all fields without custom relationships**: check this box to hide all unused fields
-      that do not have custom relationships from the results.
+      that don't have custom relationships from the results.
     - **Hide Unused fields**: check this box to hide all unused fields from the results, based on
       the DLU.
 
@@ -69,7 +69,7 @@ name brings up the customization record.
 
     ![erd-view](/images/platgovnetsuite/customizations/erd-view.webp)
 
-5. Click on any item to expand the view. For large lists, click **More** to see the additional
+5. Click any item to expand the view. For large lists, click **More** to see the additional
    items.
    External sources headers are highlighted in green.
 
@@ -79,7 +79,7 @@ name brings up the customization record.
 
 ## ERD Search Form
 
-The ERD search form enables you to search by different record types. You can also use it to create a
+Use the ERD search form to search by different record types. You can also use it to create a
 Process Issue or a Change Request. Refer to [Enabling the ERD Search](/docs/platgovnetsuite/customization/using_erd.md).
 
 From the ERD Search Form, you can search by:
@@ -92,7 +92,7 @@ From the ERD Search Form, you can search by:
 
 ![erdsearchform-2](/images/platgovnetsuite/customizations/erdsearchform-2.webp)
 
-Once you have finished your search, you can create a Process Issue or a Change Request from the
+After you have finished your search, you can create a Process Issue or a Change Request from the
 results.
 
 ![erdsearchform-3](/images/platgovnetsuite/customizations/erdsearchform-3.webp)

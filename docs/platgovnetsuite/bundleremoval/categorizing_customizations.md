@@ -10,8 +10,8 @@ Part of the bundle removal process is to categorize all the customizations in yo
 completed with saved searches and csv imports and exports (due to some limitations with mass
 updates).
 
-Bundle components that do not have relationships outside the bundle or customizations that are not
-related to the bundle need to be flagged with CSV imports/exports since mass updates do not have
+Bundle components that don't have relationships outside the bundle or customizations that aren't
+related to the bundle need to be flagged with CSV imports/exports since mass updates don't have
 summary criteria for this type of search.
 
 ## Create First Saved Search
@@ -85,7 +85,7 @@ summary criteria for this type of search.
 
 1. Open **Lists** > **Search** > **Saved Searches**
 2. Find the **In bundle with no outside relationships** saved search.
-3. Under the **Criteria** tab, click on **Standard** and add the following filters:
+3. Under the **Criteria** tab, click **Standard** and add the following filters:
 
 | | Filter | Description |
 | --- | --- | --- |

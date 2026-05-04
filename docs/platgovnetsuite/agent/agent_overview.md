@@ -6,7 +6,7 @@ sidebar_position: 130
 
 # Agent Overview
 
-Agent allows you to monitor and manage the creation, deletion, or change of key records and fields
+Use Agent to monitor and manage the creation, deletion, or change of key records and fields
 associated with transactional and master data as well as system critical settings by:
 
 - Filling in the gaps left by Segregation of Duties (SoD) by providing monitoring and documentation
@@ -29,7 +29,7 @@ associated with transactional and master data as well as system critical setting
 
 Check out Netwrix University for helpful tutorials.
 [Sign in to your Netwrix account](https://www.netwrix.com/my_training.html) to access the NS3-2
-Agent Financial Controls series. Contact your Customer Success Manager if you do not have access to
+Agent Financial Controls series. Contact your Customer Success Manager if you don't have access to
 Netwrix University.
 
 ## Agent Control Categories
@@ -50,17 +50,17 @@ Pre-Approved Control Incidents
 
 ## Agent FAQ
 
-##### Can you create multiple pre-approved Change Requests for a single Control?
+##### Creating multiple pre-approved Change Requests for a single Control
 
 Yes, Agent goes through the list of multiple Change Requests it is associated with until it finds a
 match for the control incident result.
 
-##### Can you use a single Change Request for multiple Controls?
+##### Using a single Change Request for multiple Controls
 
 Yes, the Change Request’s Customization field can accommodate multiple Control records. All of the
 controls listed under the Customization field are associated with the Change Request.
 
-##### How does Agent handle Pre-approvals when the control results are grouped? (i.e. Group Results In Alert checkbox is marked in the Control setting)
+##### How Agent handles Pre-approvals when the control results are grouped (i.e. Group Results In Alert checkbox is marked in the Control setting)
 
 When the results are grouped, all results must match the Change Request Control filters for the
 Change Log to be a pre-approved incident.

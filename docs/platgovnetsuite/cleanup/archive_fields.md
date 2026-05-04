@@ -28,7 +28,7 @@ To create a change request:
 
 ![archivefields1](/images/platgovnetsuite/clean_up/archivefields1.webp)
 
-6. Click on the **Archive Customizations** if you find your customizations under **Cannot Be Safely
+6. Click the **Archive Customizations** if you find your customizations under **Cannot Be Safely
 Deleted or Modified** and under **Warning it says Not Archived**
 
 ![archivefields2](/images/platgovnetsuite/clean_up/archivefields2.webp)

@@ -1,10 +1,10 @@
 ---
-title: "Spider Spins and Does Not Finish"
-description: "Spider Spins and Does Not Finish"
+title: "Spider Spins and Doesn't Finish"
+description: "Spider Spins and Doesn't Finish"
 sidebar_position: 60
 ---
 
-# Spider Spins and Does Not Finish
+# Spider Spins and Doesn't Finish
 
 If you kick off a spider and the gears on the page spin for more than an hour, this is likely an
 issue with the **IP Restriction**. Contact Netwrix support at

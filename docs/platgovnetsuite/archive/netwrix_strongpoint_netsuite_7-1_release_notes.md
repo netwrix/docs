@@ -13,14 +13,14 @@ November 30, 2023
 - Support links are changing December 1st, the new link is
   [https://www.netwrix.com/support.html](https://www.netwrix.com/support.html)
 - NetSuite changes, such a moving an account to a different datacenter, are now treated as a
-  Platform change. They do not create a non-compliant Change Log record.
+  Platform change. They don't create a non-compliant Change Log record.
 - Improved handling of custom employee center roles across the Strongpoint spiders.
 - Bundle updates were enabling **Automatic Synchronization** between Strongpoint and Jira, changing
   settings where **Automatic Synchronization** was disabled. **Automatic Synchronization** defaults
   to enabled for new installations. Refer to [Jira](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) topic for
   more information.
 - Enhanced handling of nonmaterial changes for fields using html coding. Special symbols ( < > & " )
-  in fields do not generate non-compliant change logs.
+  in fields don't generate non-compliant change logs.
 - Improved handling of the **Date Last Used** script to avoid time limit errors.
 
 ## Core 7.1.2
@@ -40,7 +40,7 @@ November 2, 2023
 - Removed the Token Based Authentication Setup note link from **Environment Compare**.
 - Improved ReSpider Now to prevent duplicated change logs.
 - Improved handling of Non-material change workflow instances.
-- Improved handling of platform changes on the Record type. Non-compliant change logs are not
+- Improved handling of platform changes on the Record type. Non-compliant change logs aren't
   generated for permissions and links sublists it the **permittedrole** or **linkcenter** is empty.
   The change is noted in the log.
 
@@ -50,7 +50,7 @@ October 16, 2023
 
 - **Change Log Evaluation**: Change logs related to workflows were labeled with a **Scripted
   Object** change type. The labeling caused discrepancies in the change log evaluation.
-- **Search Functionality**: The **Execute as Admin Workflows** search was not displaying data, even
+- **Search Functionality**: The **Execute as Admin Workflows** search wasn't displaying data, even
   when executed workflows were present.
 
 ## Core 7.1.1
@@ -58,7 +58,7 @@ October 16, 2023
 September 20, 2023
 
 - Added **Refresh Changed By** button to refresh change information on Change Logs. If the **Actual
-  Change Date** is empty or **Change By** is set to **Could Not Be Determined** or **Pending
+  Change Date** is empty or **Change By** is set to **Couldn't Be Determined** or **Pending
   Autospider**, a **Refresh Changed By** button is available. When clicked, it populates **Actual
   Change Date** and **Change By** fields.
 
@@ -68,13 +68,13 @@ September 20, 2023
     ![Refresh Changed By](/images/platgovnetsuite/change_management/change_log_refresh.webp)
 
 - Removed extraneous Customization record link in Search Clean Up notification emails.
-  Non-Strongpoint users receive the notification and cannot use the link.
+  Non-Strongpoint users receive the notification and can't use the link.
 
 ## Core 7.1
 
 August 23, 2023
 
-Every release may contain enhancements behind the scenes and customer-specific bug fixes to keep
+Every release may contain enhancements internally and customer-specific bug fixes to keep
 Strongpoint running smoothly.
 
 **NetSuite Release 2023.2 Support**
@@ -82,7 +82,7 @@ Strongpoint running smoothly.
 The Strongpoint Searches have been updated to support NetSuite's change of **Formula (Text) Fields**
 to the new **Formula (HTML) Fields**. This is a NetSuite security enhancement.
 
-Strongpoint 7.1 must be installed prior to the NetSuite 2023.2 release to ensure a smooth upgrade:
+Strongpoint 7.1 must be installed before the NetSuite 2023.2 release to ensure a smooth upgrade:
 
 1. Install Strongpoint 7.1 in your Sandbox August 15th.
 2. Test Strongpoint 7.1 before August 22nd. Contact your Customer Success Manager if you have
@@ -127,7 +127,7 @@ NetSuite Release 2023.2 Support
 The Strongpoint Searches have been updated to support NetSuite's change of **Formula (Text) Fields**
 to the new **Formula (HTML) Fields**. This is a NetSuite security enhancement.
 
-Strongpoint 7.1 and SoD 1.6 must be installed prior to the NetSuite 2023.2 release to ensure a
+Strongpoint 7.1 and SoD 1.6 must be installed before the NetSuite 2023.2 release to ensure a
 smooth upgrade:
 
 1. Install Strongpoint 7.1 and SoD 1.6 in your Sandbox August 15th.
@@ -150,14 +150,14 @@ September 27, 2023
 
 - Improved handling of the Jira Token field. It is now stored as an API Secret in NetSuite. Refer to
   [https://suiteanswers.custhelp.com/app/answers/detail/a_id/98285](https://suiteanswers.custhelp.com/app/answers/detail/a_id/98285)
-  for more information.
+  for details on NetSuite API Secrets.
 - Improved handling of the Change Request owner assignment. **Owner** is now the person who pushed
   the ticket into NetSuite.
 
 ## Jira 1.2.15
 
 - Replaced the persistent popup message in the Strongpoint Jira integration when project restricted
-  access is in effect. You see a static note in the tab if you do not have access, instead of a more
+  access is in effect. You see a static note in the tab if you don't have access, instead of a more
   intrusive popup message requiring interaction. (Jira On-prem was updated August 2023, Jira Cloud
   updated November 2023)
 
@@ -172,17 +172,17 @@ September 27, 2023
 Here are the enhancements for the release:
 
 - Change customization name to allow Single quotes (').
-- Added **Location** to the **Type** drop down on the **Add Proposed Customization** form.
+- Added **Location** to the **Type** dropdown on the **Add Proposed Customization** form.
 
 ## Jira 1.2.11
 
 Here are the enhancements for the release:
 
 - Import Customizations from Jira
-- Enable Allow NS to Jira Push (must be done prior to creating a ticket from NetSuite to Jira)
+- Enable Allow NS to Jira Push (must be done before creating a ticket from NetSuite to Jira)
 - Create Ticket from NetSuite to Jira
 - Change customization name to allow Single quotes (').
-- Added **Group** to the **Type** drop down on the **Add Proposed Customization** form.
+- Added **Group** to the **Type** dropdown on the **Add Proposed Customization** form.
 
 Import Customizations from Jira
 
@@ -224,7 +224,7 @@ Jira.
 
 Here are the enhancements for the release:
 
-- Credentials are now persistent, and do not need to be entered every time.
+- Credentials are now persistent, and don't need to be entered every time.
 - Strongpoint Settings page added to Jira
 
 Strongpoint Settings for Jira
@@ -268,7 +268,7 @@ October 13, 2023
 - Added a **GL Impact** field and a **Permission Risk Severity** dropdown to the Permission
   record.
   **GL Impact** field is a **Y/N** choice.
-  **Permission Risk Severity** can be **High**, **Medium**, **Low** or **Null** (default).
+  **Permission Risk Severity** can be **High**, **Medium**, **Low**, or **Null** (default).
 - Added **GL Impact** and **Permission Risk Severity** filters to the Permission Revews lists.
 - Added **GL Impact** and **Permission Risk Severity** columns to the Permission Review.
 

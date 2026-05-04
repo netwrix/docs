@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Clean Up Unused Customizations
 
-Platform Governance for NetSuite has powerful tools to analyze, organize and delete unused
+Platform Governance for NetSuite has powerful tools to analyze, organize, and delete unused
 customizations in a safe and secure manner.
 
 Cleaning up fields has a direct impact on system performance. Larger records load slower than small
@@ -24,7 +24,7 @@ order:
 
 - **Bundles**: Removing unused bundles eliminates large groups of records and other customizations
 - **Records**: Removing records eliminates large groups of customizations
-- **Forms/Scripts**: Depending on your requirements, you can move unused forms, scripts, fields and
+- **Forms/Scripts**: Depending on your requirements, you can move unused forms, scripts, fields, and
   associated customizations to progress through your account
 
 Cleaning up fields makes the account more understandable and reduces the likelihood of confusion.
@@ -34,7 +34,7 @@ The basic clean up process:
 1. Analyze Unused Customizations and Identify Dependencies
 2. Create Change Requests
 3. Archive Field Data
-4. Back Up Searches, Scripts and Workflows
+4. Back Up Searches, Scripts, and Workflows
 5. Delete Customizations
 6. Close the Change Request
 
@@ -44,18 +44,18 @@ The basic clean up process:
 2. Enter filtering information to streamline your search. Searching on all unused customizations can
    take a long time to load and can time out.
 
-    ![Enter criteria prior to searching for unused customizations](/images/platgovnetsuite/clean_up/customizations_cleanup_unused_filters.webp)
+    ![Enter criteria before searching for unused customizations](/images/platgovnetsuite/clean_up/customizations_cleanup_unused_filters.webp)
 
 3. Click **Search**.
     The results are coded with a flag in the first column and the text either blue (Inactive owner)
    or black.
    ![Cleanup Key](/images/platgovnetsuite/clean_up/customizations_cleanup_key.webp)
-    You can hover over the flag for more information. If the text is blue, **Inactive Owner** is
+    You can hover over the flag to see the flag description. If the text is blue, **Inactive Owner** is
    displayed regardless of the flag color.
 
     ![customizations_cleanup_list](/images/platgovnetsuite/clean_up/customizations_cleanup_list.webp)
 
-4. Click **View** next to each Customization to investigate. You can right-click on **View** and
+4. Click **View** next to each Customization to investigate. You can right-click **View** and
    select **Open in a new tab or window** to keep your results page available.
 
     ![View the Customization Record](/images/platgovnetsuite/clean_up/customizations_cleanup_view_record.webp)
@@ -86,7 +86,7 @@ warnings and status for each customization attached to the Change Request.
 The **Impact Analysis** tab has the following elements:
 
 **Can be safely deleted or modified**: A list of the customizations linked to the change request
-that do not trigger any of the warnings below.
+that don't trigger any of the warnings below.
 
 **Archiving Status**: Users can set the archiving status for fields to be deleted. Archive status
 can have the following values:
@@ -102,8 +102,8 @@ that have triggered one of the following warnings:
 - **Active Processes**: this customization is linked to an active process.
 - **Critical Searches:** this customization is used in a formula or filter of a search and could
   cause the search to break if modified or deleted. Fields that are only in criteria or results of
-  searches do not trigger this warning since the search would still function. Searches that haven’t
-  been used in over a year do not trigger this warning.
+  searches don’t trigger this warning since the search would still function. Searches that haven’t
+  been used in over a year don’t trigger this warning.
 - **Dependent Scripts**: this customization is used in a script.
 - **Recently Used**: this customization has been used in the last 6 months.
 - **Dependent Workflows**: this customization is used in a workflow.
@@ -122,15 +122,15 @@ clicked, any fields in the change request are archived and stored in the **File 
 The status of those fields changes to **Archived**. The customization moves to the **Can Be Safely
 Deleted or Modified** tab.
 
-## Back Up Searches, Scripts and Workflows
+## Back Up Searches, Scripts, and Workflows
 
-While there is no mass un-delete functionality, critical information about scripts, searches and
+While there is no mass un-delete functionality, critical information about scripts, searches, and
 workflows are preserved in the Customization Record.
 
-- **Searches**: All fields, filters, criteria and other search elements are documented in the
+- **Searches**: All fields, filters, criteria, and other search elements are documented in the
   Searches tab.
 - **Scripts:** A script archive file is attached to the customization record.
-- **Workflow:** Workflow actions, states, fields, conditions and other elements are documented in
+- **Workflow:** Workflow actions, states, fields, conditions, and other elements are documented in
   the Related Workflows tab.
 
 The customization record of deleted customizations are inactive and accessible for future reference.

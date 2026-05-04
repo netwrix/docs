@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Creating a Change Request
 
-Before making any changes, it is important to understand the scope of the planned change, potential
+Before making any changes, understand the scope of the planned change, potential
 impacts and the level of change required. Documentation is also available if you are using the old
 [Change Request](/docs/platgovnetsuite/changemanagement/creating_change_request_old_form.md) form. Refer to
 [Setting Preferred Forms](/docs/platgovnetsuite/customization/setting_preferred_forms.md) for information on
@@ -32,7 +32,7 @@ request in your sandbox account.
 
     - **Name**: Add a name to the change request.
     - **Stage**: Select the type of change you want to make.
-    - **Change Overview**: Add a summary of the desired change.
+    - **Change Overview**: Add a summary of the change.
     - **Lookup Customization** launches a window where you can search for customizations in the
       current account or a different account:
         - Click **Change Account** to log into another account or sandbox and look up
@@ -50,7 +50,7 @@ request in your sandbox account.
         - **Select User** from the list to search all customizations **Modified By** selected user.
           This uses the **Change By** field in the change logs. The list is updated if the source
           account is changed. The **User Not Determined** option is for logs without system notes,
-          where the user cannot be identified. **User Not Determined** can be used with the **From**
+          where the user can't be identified. **User Not Determined** can be used with the **From**
           and **To** filters to search on the log creation date instead of the actual change date.
         - Select dates in the **From** and/or **To** fields to search all customizations that were
           changed on or after the **From** date or on or before the **To** date. Use both fields to
@@ -64,7 +64,7 @@ request in your sandbox account.
         - Click the box(es) to select one or more customizations. Check in the **Name** header to
           toggle **Selecting** or **Deselecting All**.
         - Click **Add Selected Customizations**. If the Customization (based on Script ID) exists in the current account it is added to the
-          **Customizations**. If it does not exist, it is added to the **Proposed Customizations**. After the action completes, all checkboxes are cleared and a green confirmation message appears 
+          **Customizations**. If it doesn't exist, it is added to the **Proposed Customizations**. After the action completes, all checkboxes are cleared and a green confirmation message appears 
           indicating that the customizations were added successfully.
         - To add other customization types, update the filters and repeat the process.
         - Click **Close** to exit **Lookup Customization**.
@@ -81,13 +81,13 @@ request in your sandbox account.
       Click **Choose File** and navigate to your SDF zipped file.
     - **Do Not ReSpider Automatically**: when unchecked, an Automatic ReSpider occurs when the
       Change Request status is set to **Completed**.
-      The ReSpider ensures that all change logs are complete prior to changing the status. If
+      The ReSpider ensures that all change logs are complete before changing the status. If
       automatic ReSpidering is turned off, there is a risk of changes being marked as non-compliant
-      if the change logs are not complete when the user changes the status to **Completed**. The
+      if the change logs aren't complete when the user changes the status to **Completed**. The
       default for the **Do Not ReSpider Automatically** is set on the
       [Configuration and Stats Change Management](/docs/platgovnetsuite/installation/installation_settings_report.md)
       tab.
-    - **Proposed Customizations**: Use this field when you are adding customizations that do not yet
+    - **Proposed Customizations**: Use this field when you are adding customizations that don't yet
       exist in your account. You can add multiple Script IDs by separating them with commas. Can be
       used in conjunction with customizations that already exist.
        New **Entry** and **Transaction** forms can be pre-approved by adding the Script ID of the
@@ -98,7 +98,7 @@ request in your sandbox account.
 
       | Proposed Customization | Change Level |
       | --- | --- |
-      | customworkflow, customscript, customdeploy or anything with extensions: .js .ssp .ss | Script Object Changes |
+      | customworkflow, customscript, customdeploy, or anything with extensions: .js .ssp .ss | Script Object Changes |
       | customsearch, customreport | Searches and Reports |
       | customrole | User Role Changes |
       | Files with extensions: .html .txt | Web-Related Changes |
@@ -107,11 +107,11 @@ request in your sandbox account.
     - **Affected Process(es)**: Select any processes affected by this Change Request. Select
       **Import From Processes** to automatically import affected processes.
     - **Affected Bundle ID/APP ID**: Use this field to specify a bundle ID or SuiteApp ID. Separate
-      multiple IDs with commas. Note, this does not run the Impact Analysis. To run the Impact
+      multiple IDs with commas. Note, this doesn't run the Impact Analysis. To run the Impact
       Analysis, use the Lookup Customization feature with a **Bundle ID**.
 
 3. Click **In Progress** in the status bar to indicate you are working on the Change Request.
-4. **Save** the Change Request. New sections and tabs are available once you save:
+4. **Save** the Change Request. New sections and tabs are available after you save:
 
     1. **Push to Jira** button is available if the
        [Jira integration](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) is available, and
@@ -137,10 +137,10 @@ request in your sandbox account.
         | List referenced by a search related field (in a filter or formula) | Formula Objects               | Critical Searches       |
 
         There are three categories for customizations: Review any warnings or issues with the
-        impacted customization record(s) before you make a change.
+        impacted customization records before you make a change.
 
         - Can Be Safely Deleted or Modified
-        - Cannot Be Safely Deleted or Modified
+        - Can't Be Safely Deleted or Modified
         - Inactive Customizations (Already Deleted)
 
     5. The **ERD** tab opens the visual Entity Relationship Diagram where you can easily review the

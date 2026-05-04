@@ -12,7 +12,7 @@ account and provides you with a measurable view of your status.
 
 To access the report, open **Strongpoint** > **Strongpoint Support** > **Installation Settings**
 
-- Click **View** to view or print the desired report.
+- Click **View** to view or print the report.
 - Click **Edit** to change global settings or add user notes
 
 ## Configuration and Stats
@@ -29,7 +29,7 @@ The report has the following tabs:
   Count** column represents the number of objects the spider detected. The **Documented Record
   Count** represents the number of objects that were documented. In most cases, they should match
   when the spider is complete. If you access the report before the scheduled scripts are complete,
-  you may see incomplete or duplicate records. These will be cleaned up once the scripts complete
+  you may see incomplete or duplicate records. These will be cleaned up after the scripts complete
   their work.
 
 ### Documentation
@@ -59,7 +59,7 @@ Script Archive File Folder ID can be edited.
   initiation of the script.
 - **Scripts with FLOStart Tags**: number of scripts with FLOEnd tag inserted to calculate execution
   time.
-- **Scripts with No Audit Tags**: number of scripts that are not being monitored (no inserted
+- **Scripts with No Audit Tags**: number of scripts that aren't being monitored (no inserted
   FLOStart or FLOEnd tags).
 - **Script Archive File Folder ID**: file identifier of the script archive folder. The **Enable Auto
   Archive** and default **Auto Archive Folder** are specified on the Installation tab. If enabled, a
@@ -87,9 +87,9 @@ Accesses change management features:
   [ITGC Change Request](/docs/platgovnetsuite/changemanagement/creating_change_request.md). The default is
   unchecked.
   When enabled, an automatic ReSpider occurs when a Change Request status is changed to
-  **Completed**. This starts the ReSpider and ensures that all change logs are complete prior to
+  **Completed**. This starts the ReSpider and ensures that all change logs are complete before
   changing the status. If automatic ReSpidering is turned off, there is a risk of changes being
-  marked as non-compliant if the change logs are not complete when the user changes the status to
+  marked as non-compliant if the change logs aren't complete when the user changes the status to
   **Completed**.
 - **Enhanced User Provisioning**: enables access management for onboarding/offboarding and access
   change using the **[User Access Change Request](/docs/platgovnetsuite/changemanagement/user_provisioning.md)**.
@@ -97,7 +97,7 @@ Accesses change management features:
   **User Provisioning Change Request** when **Enhanced User Provisioning** is enabled.
 - **Enable Auto-Role Removal**: automatically implement the offboarding changes approved though the
   **User Provisioning Change Request** when **Enhanced User Provisioning** is enabled.
-- **Notification Sender**: select an email address from the drop down to use when sending
+- **Notification Sender**: select an email address from the dropdown to use when sending
   notification emails. This sender is used when sending alerts for the following:
     - **User Access** (Onboarding, Offboarding, Temporary Access)
     - **ITGC**
@@ -106,7 +106,7 @@ Accesses change management features:
     - **SoD Approval**
     - **SoD Rule Change**
 - **CR Email Template**: if you customize your **SoD Exemption Approval** or **SoD Rule Change
-  Approval** CR Templates, add them here so they are not overwritten when the next bundle is
+  Approval** CR Templates, add them here so they aren't overwritten when the next bundle is
   installed. Refer to [Advanced PDF / HTML Templates](/docs/platgovnetsuite/customization/pdf_html_templates.md).
   ![CR Email Template section on the Installation Settings Change Management tab](/images/platgovnetsuite/installing_strongpoint/change_management_cr_email_template.webp)
 
@@ -141,20 +141,19 @@ Accesses the global parameters. Select **Edit** to change them.
 ### Notes
 
 Displays **User Notes** and **System Notes**. Use **New Note** or the **Create New** > **Note** from
-the page drop down icon to create a new User Note.
+the page dropdown icon to create a new User Note.
 
 ### Jira Integration
 
 Specifies the Jira credentials to use when Jira and Platform Governance for NetSuite are integrated.
-Refer to [Jira Integration](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) for more information.
+See [Jira Integration](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) for setup instructions.
 
 ### ServiceNow Integration
 
 Specifies the ServiceNow credentials to use when ServiceNow and Platform Governance for NetSuite are
-integrated. Refer to [ServiceNow Integration](/docs/platgovnetsuite/ticketingintegrations/servicenowintegration/servicenow_integration.md) for more
-information.
+integrated. See [ServiceNow Integration](/docs/platgovnetsuite/ticketingintegrations/servicenowintegration/servicenow_integration.md) for setup instructions.
 
 ### Menu Management
 
-Enables hiding menu items you do not use, to improve navigation. Refer to
-[Managing Menus](/docs/platgovnetsuite/installation/managing_menus.md) for more information.
+Enables hiding menu items you don't use, to improve navigation. See
+[Managing Menus](/docs/platgovnetsuite/installation/managing_menus.md) for menu configuration steps.

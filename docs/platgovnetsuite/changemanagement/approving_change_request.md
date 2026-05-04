@@ -31,10 +31,10 @@ NetSuite users and have the correct
 
 :::note
 Administrators can approve a Change Request. The status is set to **Approved (Override)** and the
-administrator's name is displayed in the **Approval Override By** field. If the **Block Approval of Own Change Request** is enabled, Administrators cannot override their own change requests.
+administrator's name is displayed in the **Approval Override By** field. If the **Block Approval of Own Change Request** is enabled, Administrators can't override their own change requests.
 :::
 
 :::note
-Once the Change Request is approved, you cannot change the customizations attached to the Change
+After the Change Request is approved, you can't change the customizations attached to the Change
 Request.
 :::

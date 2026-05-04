@@ -19,8 +19,8 @@ sidebar_position: 70
       level.
     - **Reason for Role or Permission Change** Enter the information supporting the approval
       request.
-    - Select one or more of the **Affected Employee(s)**, **Customization (User Role)**, **Proposed
-      User Role(s)**, **Proposed Global Permission(s)**, and **Affected Rule(s)**.
+    - Select one or more of the **Affected Employees**, **Customization (User Role)**, **Proposed
+      User Roles**, **Proposed Global Permissions**, and **Affected Rules**.
 
 3. Click **In Progress** in the status bar to indicate you are working on the request.
 4. Click **Preview SoD Violations** to see what violations may occur.

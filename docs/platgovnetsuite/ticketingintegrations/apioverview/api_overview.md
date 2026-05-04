@@ -6,11 +6,11 @@ sidebar_position: 40
 
 # Integration API
 
-The Integration API enables external access to Customization and Change Request objects. Third party
-application are able to integrate via these APIs.
+The Integration API provides external access to Customization and Change Request objects. Third party
+applications can integrate via these APIs.
 
 - **Customizations**
-- **Change Requests** can be created, updated, retrieved and deleted.
+- **Change Requests** can be created, updated, retrieved, and deleted.
 - **ERD** and **Impact Analysis** tools are available.
 
 - [Customizations API](/docs/platgovnetsuite/ticketingintegrations/apioverview/customizationsapi/customizations_api.md) can be retrieved from your NetSuite account and can be
@@ -18,7 +18,7 @@ application are able to integrate via these APIs.
 
     - [Get Customizations](/docs/platgovnetsuite/ticketingintegrations/apioverview/customizationsapi/get_customizations.md): Returns customizations based on your filters.
 
-- [Change Request API](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/change_request_api.md) can be created, updated, retrieved and deleted. The
+- [Change Request API](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/change_request_api.md) can be created, updated, retrieved, and deleted. The
   ERD and Impact Analysis tools are available. Here are the Change Request API commands:
 
     - [Get Change Request](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/get_change_request.md): Returns the change request associated with an

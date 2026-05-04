@@ -28,7 +28,7 @@ Use **Clear** to reset the Filters.
     - Second Date field only: All reviews created before the specified date are listed.
     - Both Date fields: All reviews created in the date range are listed.
 
-- **Status** Select from the drop down list. **All** is the default.
+- **Status** Select from the dropdown list. **All** is the default.
   Possible statuses are **Not Started**, **Pending Assignment**, **In Progress**, **Complete**,
   **Cancelled** and **Waiting for CR**.
 - **Sort By** Displays a list of either **Global Reviews** or **Single Reviews**. **Global Reviews**
@@ -53,15 +53,15 @@ Use **Clear** to reset the Filters.
 - **Owner** (single) is the owner of the role review type.
 - **Status** Current status of the review:
 
-    - **Pending Assignment** Review does not have an assigned owner.
+    - **Pending Assignment** Review doesn't have an assigned owner.
     - **Not Started** Email notification has been sent, review has not been started.
     - **In Progress** Review has been started.
     - **Additional Reviewer** Review has been assigned to an additional reviewer.
     - **Change Request** Change request has been created. The **Change Request ID** is added to the
       row. The link opens the Change Request. **CR Rejected**, **CR Cancelled**, and **CR Complete**
       are the other Change Request status values.
-    - **Waiting for CR** Change request cannot be started, because there is an existing change
-      request in progress for the role or permission as part of a different global review. Once the
+    - **Waiting for CR** Change request can't be started, because there is an existing change
+      request in progress for the role or permission as part of a different global review. After the
       existing change request is complete, the current review can continue.
     - **Cancelled** Review has been canceled. Canceled global reviews are shown in the UAR History
       list. Canceled single reviews are shown in the global review.
@@ -86,12 +86,12 @@ Use **Clear** to reset the Filters.
 
     ![Create a review](/images/platgovnetsuite/uar/uar_admin/create_review2.webp)
 
-4. Use the drop down to **Select Global Review** this option is only if you chose **Single**. It is
+4. Use the dropdown to **Select Global Review** this option is only if you chose **Single**. It is
    not available if you are creating a new **Global** review. The existing information for the
    Global review is populated.
 5. Add or remove one or more roles. The left pane shows all the available roles, the right pane
    shows the roles you have added. The **Add all active roles** shows active roles in the left pane.
-   It toggles to **Show all active and assigned roles** in the left pane. You cannot change
+   It toggles to **Show all active and assigned roles** in the left pane. You can't change
    permissions on Standard roles or the Administrator role..
 6. Select **Type of Review**. This is only available if you are creating a new **Global** review.
    You can select one or both options.
@@ -142,13 +142,13 @@ Use **Clear** to reset the Filters.
     - Second Date field only: All reviews created before the specified date are listed.
     - Both Date fields: All reviews created in the date range are listed.
 
-- **Status** Select from the drop down list. **All** is the default.
+- **Status** Select from the dropdown list. **All** is the default.
   Possible statuses are **Not Started**, **Pending Assignment**, **In Progress**, **Complete**,
   **Cancelled** and **Waiting for CR**.
-- **Role** Select the role from the drop down list. **All** is the default.
+- **Role** Select the role from the dropdown list. **All** is the default.
 - **Type of Review** Displays **Both**, **Membership** only, or **Permission** only reviews in the
   Review list.
-- **Owner** Select from the drop down list.
+- **Owner** Select from the dropdown list.
 
 ### Review List Actions
 
@@ -172,7 +172,7 @@ There are various actions you can perform from this list:
 - **Owner** Current review owner.
 - **Status** Current status of the review:
 
-    - **Pending Assignment** Review does not have an assigned owner.
+    - **Pending Assignment** Review doesn't have an assigned owner.
     - **Not Started** Email notification has been sent, review has not been started.
     - **In Progress** Review has been started.
     - **Additional Reviewer** Review has been assigned to an
@@ -180,8 +180,8 @@ There are various actions you can perform from this list:
     - **Change Request** Change request has been created. The **Change Request ID** is added to the
       row. The link opens the Change Request. **CR Rejected**, **CR Cancelled**, and **CR Complete**
       are the other Change Request status values.
-    - **Waiting for CR** Change request cannot be started, because there is an existing change
-      request in progress for the role or permission as part of a different global review. Once the
+    - **Waiting for CR** Change request can't be started, because there is an existing change
+      request in progress for the role or permission as part of a different global review. After the
       existing change request is complete, the current review can continue.
     - **Cancelled** Review has been canceled. Canceled global reviews are shown in the UAR History
       list. Canceled single reviews are shown in the global review.

@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # UAR Auditor
 
-Auditors have view only access to specific UAR data. Auditors login to NetSuite and open
+Auditors have view only access to specific UAR data. Auditors log in to NetSuite and open
 [User Access Review](/docs/platgovnetsuite/uar/access_app.md) to access the dashboard.
 
 1. Open **User Access Review** from NetSuite.

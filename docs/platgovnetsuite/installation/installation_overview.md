@@ -24,7 +24,7 @@ Once your installation is complete, you can review the
 [Installation Settings](/docs/platgovnetsuite/installation/installation_settings_report.md) report.
 
 :::note
-Optional menu items are hidden by default to keep the menus clean and easy to use. If users do not
+Optional menu items are hidden by default to keep the menus clean and easy to use. If users don't
 see a menu item, they can turn it on through [Menu Management](/docs/platgovnetsuite/installation/managing_menus.md), assuming the
 feature is included in your [License Type](/docs/platgovnetsuite/installation/features_by_license_type.md).
 :::

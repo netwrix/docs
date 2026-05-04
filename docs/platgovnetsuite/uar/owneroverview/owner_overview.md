@@ -16,7 +16,7 @@ The [Owner User Access Reviews List](/docs/platgovnetsuite/uar/owneroverview/own
 reviews.
 
 Owners are notified with an email message when a new review has been assigned. You can click one of
-the links in the email, or login to NetSuite and open [User Access Review](/docs/platgovnetsuite/uar/access_app.md) to
+the links in the email, or log in to NetSuite and open [User Access Review](/docs/platgovnetsuite/uar/access_app.md) to
 access the dashboard.
 
 1. Open **User Access Review** from NetSuite.

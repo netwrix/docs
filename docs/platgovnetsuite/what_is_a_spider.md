@@ -1,10 +1,10 @@
 ---
-title: "What is a Spider?"
+title: "What is a spider"
 description: "What is a Spider?"
 sidebar_position: 16
 ---
 
-# What is a Spider?
+# What is a spider
 
 The Spider searches your account and creates the documentation for your customizations. The spider
 includes dependencies for saved searches in standard and custom fields. Here are items documented by
@@ -40,9 +40,9 @@ by Spidering all the customization records as well doing a full update on the re
 account (every customization). The initial manual Spider is run during as part of the installation
 process: [Running the Spider](/docs/platgovnetsuite/installation/running_the_spider.md).
 
-When running the spider, you must keep the window open for the spider to continue working. Do not
+When running the spider, you must keep the window open for the spider to continue working. Don't
 change roles or accounts during spidering. NetSuite security standards require an active
-Administrator login to execute some of the spider’s tasks.
+Administrator log in to execute some of the spider’s tasks.
 
 You can specify specific record types to focus the spider:
 
@@ -52,10 +52,10 @@ The AutoSpider monitors your account on an ongoing basis to see if customization
 occurred. This is a light scan of the data to determine if there were any changes. If changes are
 detected, you are reminded to ReSpider your account.
 
-Best practice is to run the AutoSpider regularly. If the AutoSpider is not run, your Change Logs
+Best practice is to run the AutoSpider regularly. If the AutoSpider isn't run, your Change Logs
 will be missing the **Changed by** and **Actual Change Date** fields. When the Change Log is newly
 created, the fields contain **Pending AutoSpider**. If too many days go by, the fields change to
-**Could not be determined**.
+**Couldn't be determined**.
 
 ### AutoSpider Portlet
 
@@ -66,7 +66,7 @@ The **AutoSpider Portlet** is required to update certain object types in NetSuit
 through the dashboard portlet, it picks up all changes on custom objects and triggers the scheduled
 scripts to reflect them in the Customization records, going back two days. 
 
-The AutoSpider portlet is required in order to update these object types:
+The AutoSpider portlet is required to update these object types:
 
 - Bundle
 - SuiteApp
@@ -86,14 +86,14 @@ The AutoSpider portlet is required in order to update these object types:
 ## ReSpider Now
 
 The **ReSpider Now** feature is used to document or update documentation for a specific
-customization or a specific set of customizations on demand. Once you are finished adding your
-new/updated objects to your customization record or change request, simply click **ReSpider Now** on
+customization or a specific set of customizations on demand. After you finish adding your
+new/updated objects to your customization record or change request, click **ReSpider Now** on
 your form, and your documentation is updated in real time. Here is an example of a customization
 record with the **ReSpider Now** option:
 
 ![ReSpiderNow](/images/platgovnetsuite/respider_now.webp)
 
-Proposed customizations do not work for custom forms and custom reports, since they do not have
-Script IDs. NetSuite is currently working on this, but it is still in development. For searches,
-**ReSpider Now** uses the permissions of the current logged in user. If the user does not have the
+Proposed customizations don't work for custom forms and custom reports, since they don't have
+Script IDs. NetSuite is working on this. For searches,
+**ReSpider Now** uses the permissions of the current logged-in user. If the user doesn't have the
 correct permission set, the search shows as private.

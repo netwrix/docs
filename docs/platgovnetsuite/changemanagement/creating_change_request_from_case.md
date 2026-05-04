@@ -18,6 +18,6 @@ The Change Request is created, populating the fields specified in the
 [Case to Change Request Field Mapping](/docs/platgovnetsuite/installation/installation_settings_report.md)
 set up. The Change Request status is set to **Not Started**.
 
-If the **Create Change Request** button is not visible on the Case, the
+If the **Create Change Request** button isn't visible on the Case, the
 [Enable Case to Change Request Workflow](/docs/platgovnetsuite/installation/installation_settings_report.md)
-is not enabled. Contact your system administrator.
+isn't enabled. Contact your system administrator.

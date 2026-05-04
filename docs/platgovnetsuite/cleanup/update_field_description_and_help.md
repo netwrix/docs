@@ -17,7 +17,7 @@ changed_. The Change Log is closed.
     You can filter the
     results by **Name**, **Script Id**, **Type** or check the **Description/Help is Empty** checkbox to automatically hide rows with populated description and help from the **Field List**.
 
-    You can also click on a column heading in the **Field List** to sort the list by the selected column.
+    You can also click a column heading in the **Field List** to sort the list by the selected column.
     :::note
     The column with the arrow up or arrow down is the column used for sorting. (Ascending or Descending Order)
     :::

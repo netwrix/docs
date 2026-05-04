@@ -42,7 +42,7 @@ Change Request, where the mandated approvers are included.
    Only**.
 3. Set the Change Levels on the **Change Controls** tab.
 4. Leave the fields blank on the **IT Policies** tab.
-5. Make sure **Require Affected Process Approval** is selected on the **Process Policies** tab.
+5. Ensure **Require Affected Process Approval** is selected on the **Process Policies** tab.
 6. Click **Save**. Leave the new policy open and continue with the next steps.
 
     ![multi_stream_new_policy](/images/platgovnetsuite/change_management/multi_stream_new_policy.webp)

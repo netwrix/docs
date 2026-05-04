@@ -16,7 +16,7 @@ sidebar_position: 160
 6. Click **Save**. The Change Level Required, Current Stage and Change Policy are displayed.
 7. For this example:
 
-    If you are not an **Approver**:
+    If you aren't an **Approver**:
 
     1. Click **Edit**.
     2. Select yourself as an **Additional Approver**.

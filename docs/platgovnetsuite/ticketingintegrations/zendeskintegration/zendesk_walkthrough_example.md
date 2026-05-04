@@ -6,12 +6,12 @@ sidebar_position: 10
 
 # Zendesk Walkthrough Example
 
-This walkthrough is one example based on our test account. You must
-[install and configure](/docs/platgovnetsuite/ticketingintegrations/zendeskintegration/zendesk_integration.md) the Zendesk integration, prior to using this
+This walkthrough is one example based on a test account. You must
+[install and configure](/docs/platgovnetsuite/ticketingintegrations/zendeskintegration/zendesk_integration.md) the Zendesk integration, before using this
 walkthrough.
 
 :::note
-Alerts and notifications may occur during this walkthrough, and are not included in these steps. For
+Alerts and notifications may occur during this walkthrough, and aren't included in these steps. For
 example, override alert, notifications for approvers, and notification for the change request.
 :::
 
@@ -22,7 +22,7 @@ The walkthrough demonstrates these steps:
 
 ## Create a Zendesk Ticket
 
-1. Login in to your Zendesk dashboard.
+1. Log in to your Zendesk dashboard.
 2. Open your **Views**.
 
     ![Open the Zendesk Views](/images/platgovnetsuite/integrations/zendesk_views.webp)
@@ -38,7 +38,7 @@ The walkthrough demonstrates these steps:
     - **Select Assignee**: assignees are added as users or groups.
         - Click **take it** to assign it to yourself.
         - Start typing a user name and pick from one of the matches. User names are listed by group.
-        - Expand the drop down and open a group. Select a user or assign it to the group.
+        - Expand the dropdown and open a group. Select a user or assign it to the group.
     - **Followers**: add users to follow this ticket.
         - Click **follow** to add yourself.
         - Start typing a user name and pick from one of the matches.
@@ -49,7 +49,7 @@ The walkthrough demonstrates these steps:
    can also **Apply macro** if applicable.
 
 :::note
-The app information is not available until the ticket is created.
+The app information isn't available until the ticket is created.
 :::
 
 6. Click **Submit as New**.
@@ -61,7 +61,7 @@ The app information is not available until the ticket is created.
 Open your new Zendesk ticket. **Test Ticket** in this example.
 
 :::note
-If you do not see the app, make sure the Apps are toggled on using the Apps icon
+If you don't see the app, ensure the Apps are toggled on using the Apps icon
 ![Zendesk Apps visibility icon](/images/platgovnetsuite/integrations/zendesk_apps_icon.webp)
 and verify you are a member of a group or role
 [authorized to access the app](/docs/platgovnetsuite/ticketingintegrations/zendeskintegration/zendesk_integration.md).
@@ -73,14 +73,14 @@ and verify you are a member of a group or role
 
 Specify a Bundle to use a bundle for the scope of change. This is optional.
 
-1. Expand the drop down.
+1. Expand the dropdown.
 2. Enter the Bundle ID.
-3. Click + to add the bundle. 232111 in this example. You can remove a bundle using the drop down
+3. Click + to add the bundle. 232111 in this example. You can remove a bundle using the dropdown
    toggle.
 
     ![Specify an optional Bundle ID](/images/platgovnetsuite/integrations/zendesk_bundleid.webp)
 
-Once you have made a change, the **Request Approval** button is available if you are a member of a
+After you have made a change, the **Request Approval** button is available if you are a member of a
 group with the [Set up Approvals](zendesk_integration.md#set-up-approvals) permission.
 
 ![Request Approval button appears when a change has been made.](/images/platgovnetsuite/integrations/zendesk_request_approval.webp)
@@ -122,7 +122,7 @@ There is an options menu available for each added customization. Options include
 There is an options menu available for each added proposed customization. Click options to **Remove**
 the customization.
 
-### Need Help?
+### Getting help
 
 If you encounter any issues or need assistance, contact 
 support at this [link](https://www.netwrix.com/support.html).

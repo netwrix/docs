@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Creating Four Mass Updates
 
-Once you have created the first two mass updates and the two saved searches, you need to follow a
-similar process to make sure the rest of the objects have been included for the bundle removal.
+After you have created the first two mass updates and the two saved searches, you need to follow a
+similar process to ensure the rest of the objects have been included for the bundle removal.
 
 ## Mass Update Scenario 3
 
@@ -29,7 +29,7 @@ This mass update captures all the outside bundle components referenced by inside
 
 5. Open the **Mass Update Fields** tab.
 6. Scroll down and check the box for **Removal Scenario**
-7. Choose **Outside bundle referenced by inside** from the drop down menu.
+7. Choose **Outside bundle referenced by inside** from the dropdown menu.
 8. Check the box for **Removal Scenario 3**
 9. Click **Save**
 
@@ -50,7 +50,7 @@ This mass update captures all the bundle objects that are referencing non bundle
 
 5. Open the **Mass Update Fields** tab.
 6. Scroll down and check the box for **Removal Scenario**
-7. Select **In bundle referencing record outside** from the drop down menu.
+7. Select **In bundle referencing record outside** from the dropdown menu.
 8. Check the box for **Removal Scenario 4**
 9. Click **Save**
 
@@ -67,13 +67,13 @@ This mass update flags all Non bundle components dependent on bundle components.
 | --- | :---: | --- | --- | :---: | --- |
 | Filter 1 | | Inactive | Is false | | and |
 | Filter 2 | | Clean-Up Status | Is Under Investigation | | and |
-| Filter 3 | ( | Data Source(s): Clean-Up Status | Is To Be Cleaned Up | | or |
+| Filter 3 | ( | Data Sources: Clean-Up Status | Is To Be Cleaned Up | | or |
 | Filter 4 | | List: Clean-Up Status | Is To Be Cleaned Up | | or |
 | Filter 5 | | Parent: Clean-Up Status | Is To Be Cleaned Up | ) | |
 
 5. Open the **Mass Update Fields** tab.
 6. Scroll down and check the box for **Removal Scenario**
-7. Choose **Outside bundle referencing inside** from the drop down menu.
+7. Choose **Outside bundle referencing inside** from the dropdown menu.
 8. Check the box for **Removal Scenario 5**
 9. Click **Save**
 
@@ -94,7 +94,7 @@ This mass update captures all the bundle components referenced by non bundle com
 
 5. Open the **Mass Update Fields** tab.
 6. Scroll down and check the box for **Removal Scenario**
-7. In **bundle referenced by outside** from the drop down menu.
+7. In **bundle referenced by outside** from the dropdown menu.
 8. Check the box for **Removal Scenario 6**
 9. Click **Save**
 

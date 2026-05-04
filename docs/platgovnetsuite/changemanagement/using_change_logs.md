@@ -6,7 +6,7 @@ sidebar_position: 140
 
 # Using Change Logs
 
-Change Logs allow you to see the type of change, who made the change and view the system notes of
+Use Change Logs to see the type of change, who made the change, and view the system notes of
 the NetSuite record. Change Logs are accessed from the
 [Change Management Reports](/docs/platgovnetsuite/change_management_reports.md).
 
@@ -32,7 +32,7 @@ fields can be retrieved.
 
 :::note
 
-Some Object types do not produce System Notes or History Notes for changes.  In this case the **Actual Change Date** is empty and the **Change By** is set to **Could Not Be Determined**.
+Some Object types don't produce System Notes or History Notes for changes. In this case the **Actual Change Date** is empty and the **Change By** is set to **Could Not Be Determined**.
 
 :::
 
@@ -49,7 +49,7 @@ Change Logs are different based on the type of change. These are the major field
 **Actual Change Date**: Date of the system note entry reflecting the change date. There must be an
 available system note to display the date.
 
-**Customization**: Linked customization(s) that have changed.
+**Customization**: Linked customizations that have changed.
 
 **Deleted Customization**: Name of the deleted customization. Used with deleted Script Deployments.
 
@@ -91,7 +91,7 @@ analysis of a non-compliant change.
 
 **Non-Material Clearance Reason**: Used when a change is evaluated as non-material. **Non-Material
 Object Changes** are changes detected in the object definition not caused by human intervention and
-do not have any functional impact. Examples include NetSuite internal IDs, object XML structure or
+don't have any functional impact. Examples include NetSuite internal IDs, object XML structure or
 JSON representation or reordering values in a list.
 
 **Non-Material Checked**: Indicates if the change log has been evaluated as non-material.
@@ -123,10 +123,10 @@ When you want to find out who has made changes, you can run any of the Change Re
 made a change in the **Change By** column.
 
 The **Change By** and **Actual Date** of the change logs are retrieved using System Notes Search for
-supported record types. If a System Note is not available, **Change By** displays **Could Not Be
+supported record types. If a System Note isn't available, **Change By** displays **Could Not Be
 Determined** in the Report List.
 
-Recorded types that are not supported can be retrieved from the AutoSpider.
+Recorded types that aren't supported can be retrieved from the AutoSpider.
 
 | Supported Records for System Notes Search                                                                                                                                                                                                                                                                                                                                                                                                       | Change By retrieved from the AutoSpider                                                                   |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -143,7 +143,7 @@ Deployment, and Script.
 
 In an open Change Log:
 
-1. Click on a linked **Customization** to open the Customization Record. **Strongpoint Return Jira
+1. Click a linked **Customization** to open the Customization Record. **Strongpoint Return Jira
    Ticket Info (Suitelet Script)** in this example.
 
     ![Change Log Customization link](/images/platgovnetsuite/change_management/change_log_customization_link.webp)

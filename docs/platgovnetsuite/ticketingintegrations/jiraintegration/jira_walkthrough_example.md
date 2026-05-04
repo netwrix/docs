@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Jira Walkthrough Example
 
-This walkthrough is one example based on our test account. You must
+This walkthrough is one example based on a test account. You must
 [install and configure](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) the Jira integration, including setting up the
-**[Jira Statuses](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md)** prior to using this walkthrough.
+**[Jira Statuses](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md)** before using this walkthrough.
 
 The walkthrough demonstrates these steps:
 
@@ -21,7 +21,7 @@ The walkthrough demonstrates these steps:
 
 ## Create a Jira Ticket
 
-1. Login to your Jira account.
+1. Log in to your Jira account.
 2. Open a Project.
 3. Click **Create** (**+**).
 
@@ -37,7 +37,7 @@ The walkthrough demonstrates these steps:
 5. Click **Create**.
 
 :::note
-Alerts and notifications may occur during this walkthrough, and are not included in these steps. For
+Alerts and notifications may occur during this walkthrough, and aren't included in these steps. For
 example, override alert, notifications for approvers, and notification for the change request.
 :::
 
@@ -59,17 +59,17 @@ example, override alert, notifications for approvers, and notification for the c
    section). The **Synchronized with**status displays the account you are logged into for NetSuite.
 
 :::note
-You cannot login if you do not have the **appropriate role permissions to create a Change Request**.
+You can't log in if you don't have the **appropriate role permissions to create a Change Request**.
 :::
 
-If you do not enter the correct email or password, an error is displayed. After six unsuccessful
+If you don't enter the correct email or password, an error is displayed. After six unsuccessful
 consecutive attempts to login, your account is suspended for 30 minutes.
 
 ![jira_example_credentials_error](/images/platgovnetsuite/integrations/jira_example_credentials_error.webp)
 
 ## Add Customizations
 
-Once you have logged in, the form is displayed.
+After you have logged in, the form is displayed.
 ![Jira Strongpoint form](/images/platgovnetsuite/release_notes/jira_strongpoint_form.webp)
 
 - **Synchronized with** displays the connected account. Click **Change Account** to switch to a
@@ -93,7 +93,7 @@ Once you have logged in, the form is displayed.
       Customizations** list. You can delete added Customizations with the
       ![delete](/images/platgovnetsuite/integrations/delete.webp)icon.
 - **Push** creates the Change Request in NetSuite. **Push** is also used to manually update your
-  Change Request if you are not using the [Automatic Synchronization](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) feature.
+  Change Request if you aren't using the [Automatic Synchronization](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) feature.
 - **Push External** same as **Push** except you can specify a different Jira account.
 - **Impact Analysis** and **View ERD** are tools to Perform Risk Assessment.
 
@@ -122,11 +122,11 @@ Once you have logged in, the form is displayed.
 
 ### Add Proposed Customizations
 
-In this procedure, we are adding a new Customization.
+In this procedure, this procedure adds a new Customization.
 
 1. Enter a new, valid Script ID in the **Add Customizations** field. For this example, enter
    **customlist_customer_priorities**.
-2. Click (**+**) to add it. If the Script ID is valid, and does not match an existing Script ID, the
+2. Click (**+**) to add it. If the Script ID is valid, and doesn't match an existing Script ID, the
    new Customization is added to the **Proposed Customizations** list.
 
     ![Customization added to Proposed Customization list](/images/platgovnetsuite/integrations/jira_example_proposed_customization.webp)
@@ -149,7 +149,7 @@ Strongpoint**.
 
 ### Import Customizations from Jira
 
-In this procedure, we are adding customizations exported into an xml file. This is not required, but
+In this procedure, this procedure adds customizations exported into an xml file. This isn't required, but
 is an alternative if you have a lot of customizations.
 
 1. Click **Import Customization**.
@@ -170,7 +170,7 @@ Analysis** to run the tool. Here is an example report:
 
 ![Impact analysis report](/images/platgovnetsuite/integrations/jira_example_impact_analysis.webp)
 
-Before proceeding with your changes, review each warning to ensure your change does not break
+Before proceeding with your changes, review each warning to ensure your change doesn't break
 something. Dependencies can easily be reviewed with the ERD tool.
 
 ### View ERD
@@ -188,11 +188,11 @@ dependencies.
 
 ## Ready for Development
 
-Once you have resolved any risk or conflicts, your changes are ready for development:
+After you have resolved any risk or conflicts, your changes are ready for development:
 
 1. Change the Jira status of your ticket to match the status set up for **Jira Statuses for Pending
    Approval Status**. For example, **Selected for Development**.
-2. Click **Push** if you are not using [Automatic Synchronization](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) to push
+2. Click **Push** if you aren't using [Automatic Synchronization](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) to push
    status changes. A confirmation your Change Request was Created/Updated is displayed.
 3. Expand the **Change Request** field on the right. The status is now **Pending Approval**. There
    is a link to open the Change Request in NetSuite.
@@ -211,11 +211,11 @@ ticket is ready to be updated.
 1. Expand the **Change Request** field on the right. The status is **Approved**.
    ![Change Request is now Approved](/images/platgovnetsuite/integrations/jira_example_approved.webp)
 2. Change the Jira status of your ticket to match the status set up for **Jira Statuses for Approved
-   Status**. In our example set up, we have two possible statuses: **Ready for Deployment** and
-   **Done**. Setting up two statuses enables you to split up the deployment and the ticket closure
+   Status**. In this example set up, there are two possible statuses: **Ready for Deployment** and
+   **Done**. Two statuses let you split up the deployment and the ticket closure
    if you want to monitor the deployment task separately. Both statuses are valid for Deployment,
    but only **Done** closes the Jira ticket and updates the Change Request to **Completed**.
-3. Click **Push** if you are not using [Automatic Synchronization](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) to push
+3. Click **Push** if you aren't using [Automatic Synchronization](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) to push
    status changes. A confirmation your Change Request was Created/Updated is displayed.
 4. If you used **Ready for Deployment**, update your Jira status to **Done** once your deployment
    and verification activities are complete.

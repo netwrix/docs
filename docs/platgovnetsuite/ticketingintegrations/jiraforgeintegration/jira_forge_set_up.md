@@ -25,15 +25,17 @@ Netwrix Platform Governance(Strongpoint) bundle is a key prerequisite for Jira F
 
 For installation details you may refer to the installation guide found in [Installing Platform Governance for NetSuite](/docs/platgovnetsuite/installation/installing_strongpoint).
 
-#### NOTE: 
+:::note
 If the latest version of the bundle is already installed, you may skip this part.
+:::
 
 ### Install the latest Netwrix Platform Governance Jira bundle
 
-This step will require a user to have NetSuite account access and an Administrator role for that account. This bundle must be version **2.0** or higher to work properly. The Netwrix Platform Governance Jira bundle is a non-managed bundle, please check the [Community](https://community.netwrix.com/c/products/platform-governance-netsuite/181) regularly for the latest updates and announcements. 
+This step will require a user to have NetSuite account access and an Administrator role for that account. This bundle must be version **2.0** or higher to work properly. The Netwrix Platform Governance Jira bundle is a non-managed bundle,   check the [Community](https://community.netwrix.com/c/products/platform-governance-netsuite/181) regularly for the latest updates and announcements. 
 
-#### NOTE:
+:::note
 If the latest version of the bundle is already installed, you may skip this part.
+:::
 
 1. Log in to the NetSuite account and navigate to Search & Install Bundles page.
     - In the Dashboard main menu: **Customization > SuiteBundler > Search & Install Bundles**
@@ -42,7 +44,7 @@ If the latest version of the bundle is already installed, you may skip this part
 
 ![Jira Forge Bundle Search](/images/platgovnetsuite/integrations/jira_forge_jira_bundle_search.webp)
 
-3. Click on Netwrix Platform Governance Jira bundle in the search results.
+3. Click Netwrix Platform Governance Jira bundle in the search results.
 4. Click Install when the Bundle Details opens.
 5. Click Install Bundle on the Preview Bundle Install page.
 
@@ -80,12 +82,13 @@ This step will require a user to have NetSuite account access and an Administrat
 
 Token Based Authentication is set up through NetSuite. Here is the basic process:
 
-1. NetSuite Administrator creates an Integration Record for the Platform Governance for NetSuite application. This only needs to be performed once per account. Open **Setup > Integration > Integration Management > Manage Integrations > New**. For more information, refer to the NetSuite help article Create Integration Records for Applications to Use TBA. To view a list of integration records in this account, open **Setup > Integration > Integration Management > Manage Integrations**.
+1. NetSuite Administrator creates an Integration Record for the Platform Governance for NetSuite application. This only needs to be performed once per account. Open **Setup > Integration > Integration Management > Manage Integrations > New**. See the NetSuite help article "Create Integration Records for Applications to Use TBA" for details. To view a list of integration records in this account, open **Setup > Integration > Integration Management > Manage Integrations**.
 
-    #### NOTE: 
-    Please take note and keep these values to yourself.
+    :::note
+    Take note of these values and keep them secure.
+    :::
 
-2. Each user creates their token in NetSuite. Refer to the NetSuite help Manage TBA Tokens in the NetSuite UI for details. Once you have created your tokens, add them to Jira.
+2. Each user creates their token in NetSuite. Refer to the NetSuite help Manage TBA Tokens in the NetSuite UI for details. After you have created your tokens, add them to Jira.
 3. Create an Access Token by navigating to main menu, **Setup > Users/Roles > Access Tokens > New**.
 4. Fill the fields with the following values:
     - Application Name: The Integration Record that was created in Step 1.
@@ -95,31 +98,32 @@ Token Based Authentication is set up through NetSuite. Here is the basic process
     - Skip checking Inactive checkbox
 5. Click 'Save'.
 
-    #### NOTE: 
+    :::note
     You can also create a Token Based Authentication for your NetSuite Administrator role. Follow the steps below:
-    1. Login as an **Administrator** role in NetSuite.
-    2. In your NetSuite account dashboard, navigate to the bottom left part of the page. Under **Settings**, you should see **Manage Access Tokens** and be able to click the link.
+    1. Log in as an **Administrator** role in NetSuite.
+    2. In your NetSuite account dashboard, navigate to the bottom left part of the page. Under **Settings**, you should see **Manage Access Tokens**. Click the link.
 
 
     ![Jira Forge NetSuite Admin TBA](/images/platgovnetsuite/integrations/jira_forge_netsuite_tba_admin.webp)
 
-    3. You should be redirected to **My Access Tokens** page. Click the **New My Access Token** button, this allows you to create a TBA record for your Administrator role.
-    4. Select an Application Name(Integration record) for this token.
+    3. On the **My Access Tokens** page, click the **New My Access Token** button to create a TBA record for your Administrator role.
+    4. Select an Application Name (Integration record) for this token.
     5. Click **Save**.
     
-    **IMPORTANT:** Please take note and keep these values to yourself.
+    **IMPORTANT:** Take note of these values and keep them secure.
+    :::
 
 ### Set up Jira Credentials
 
 This step will require a user to have Jira instance access and a user to have NetSuite account access.
 
 1. Create a Jira token via this URL: https://id.atlassian.com/manage-profile/security/api-tokens
-    - Take note of the token value as this will be associated with your email address that is used to login to the Atlassian/Jira ecosystem. Refer to the Atlassian documentation to obtain a Token.
+    - Take note of the token value as this will be associated with your email address that is used to log in to the Atlassian/Jira ecosystem. Refer to the Atlassian documentation to obtain a Token.
 2. In this step, you should have the following credentials on hand
     - Jira user email address
     - Jira token generated above.
 3. In NetSuite, go to Netwrix Configuration and Stats by navigating in the main menu, **Netwrix > Netwrix Support > Installation Settings**. There should only be **ONE(1)** record displayed. Click 'Edit' and it should open the Configuration and Stats page.
-4. Click 'Jira Integration' tab. You should be able to see a number of fields. Turn your attention to Jira User and Jira Token fields.
+4. Click 'Jira Integration' tab. You should be can see a number of fields. Turn your attention to Jira User and Jira Token fields.
 5. Populate these fields with the following values:
     - Jira User - Jira user email address in step 2.
     - Jira token - Jira token generated in step 1.
@@ -127,7 +131,7 @@ Click 'Save'.
 
 ### Set up Jira Status Mapping
 
-To take advantage of the automatic synchronization feature, we recommend reviewing your Jira statuses to be mapped to the Change Management statuses. When a ticket status is updated to a mapped status, Platform Governance for NetSuite handles the synchronization between Jira and NetSuite.
+To take advantage of the automatic synchronization feature, review your Jira statuses to be mapped to the Change Management statuses. When a ticket status is updated to a mapped status, Platform Governance for NetSuite handles the synchronization between Jira and NetSuite.
 
 The mapping allows multiple Jira statuses to map to each Change Request status. The mapping is part of the Configure NetSuite and Jira procedure.
 
@@ -136,7 +140,7 @@ Refer to the Atlassian documentation for instructions on
 
 1. In NetSuite, go to Netwrix Configuration and Stats by navigating in the main menu, **Netwrix > Netwrix Support > Installation Settings**. There should only be **ONE(1)** record displayed. Click 'Edit' and it should open the Configuration and Stats page.
 
-Enter the mappings between your Jira statuses and the Change Request statuses. For best practice, define your Jira statuses prior to this step. You can enter multiple Jira statuses for each Change Request status, separated by commas. For example, Ready for Deployment,Done. Assign your relevant mapping for each of the Change Request statuses:
+Enter the mappings between your Jira statuses and the Change Request statuses. For best practice, define your Jira statuses before this step. You can enter multiple Jira statuses for each Change Request status, separated by commas. For example, Ready for Deployment,Done. Assign your relevant mapping for each of the Change Request statuses:
 
 **Jira Statuses for In Progress Status**
 
@@ -150,9 +154,9 @@ Enter the mappings between your Jira statuses and the Change Request statuses. F
 
 **Jira Statuses for Canceled Status**
 
-2. Check Automatic Synchronization to enable Platform Governance for NetSuite to handle the synchronization between Jira and NetSuite when a Ticket status is updated to a mapped status, without having to click Push. If you are using an account where you do not want to create a Change Request, leave this unchecked so you can do your research or testing without generating Change Requests.
+2. Check Automatic Synchronization to enable Platform Governance for NetSuite to handle the synchronization between Jira and NetSuite when a Ticket status is updated to a mapped status, without having to click Push. If you are using an account where you don't want to create a Change Request, leave this unchecked so you can do your research or testing without generating Change Requests.
 
-3. Check Allow NS to Jira Push to enable pushing NetSuite change requests into Jira. Otherwise, you can leave it as unchecked if you do not need to enable this feature.
+3. Check Allow NS to Jira Push to enable pushing NetSuite change requests into Jira. Otherwise, you can leave it as unchecked if you don't need to enable this feature.
 
 Click 'Save'
 
@@ -207,7 +211,7 @@ This step will require a user to have Jira instance access where Netwrix Platfor
 
 5. Click 'Create' and the newly added/created TBA record should be listed in the page.
 
-Additionally, 'Update' and 'Delete' buttons are found on the right part of your record. These buttons allow you to update or delete the record, respectively.
+Additionally, 'Update' and 'Delete' buttons are found on the right part of your record. Use these buttons to update or delete the record, respectively.
 
 
 ![Jira Forge Netwrix NetSuite Settings TBA List](/images/platgovnetsuite/integrations/jira_forge_tba_list.webp)

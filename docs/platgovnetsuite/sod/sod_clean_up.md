@@ -15,7 +15,7 @@ Platform Governance for NetSuite automatically removes employees from SoD Approv
 of these conditions occur:
 
 - NetSuite access is removed
-- Applicable role(s) are removed
+- Applicable roles are removed
 - Employee is In-activated
 
 :::note

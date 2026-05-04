@@ -22,7 +22,7 @@ To access the Open Non-Compliant Changes Report:
 
     1. Create a New [Change Request](/docs/platgovnetsuite/changemanagement/creating_change_request.md) or open an existing one.
     2. Set it to **Pending Approval**.
-    3. Once it is approved and complete, set the **Status** of the Change Request to **Complete**.
+    3. After it is approved and complete, set the **Status** of the Change Request to **Complete**.
     4. **Edit** the Change Log from the report.
     5. Enter the **Related Change Request**.
     6. Enter the **Related Process Issue** if applicable.

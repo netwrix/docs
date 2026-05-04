@@ -10,7 +10,7 @@ Multi-Environment Change Management helps you manage changes between your Produc
 Development/Testing accounts. The design is based on:
 
 - Changes to production accounts go through appropriate development and testing in separate NetSuite
-  accounts to ensure that the performance and data in production are not compromised.
+  accounts to ensure that the performance and data in production aren't compromised.
 - Documenting the process of transitioning changes through these accounts is critical to ensure that
   the process is followed to manage the risks associated with changes in NetSuite.
 - Change Requests and Deployment Records, along with Environment Comparison enable the documentation
@@ -24,17 +24,17 @@ least the Strongpoint Developer Role to perform a Change Request Push.
 
 ## Create a Master Change Request in Production
 
-A best practice is to create change requests in your production account so that they are not lost,
+A best practice is to create change requests in your production account so that they aren't lost,
 they have an audit trail and approvals can be shown.
 
 1. Open **Strongpoint** > **Change Management Tools** > **ITGC Change Request**.
-2. Enter all required fields and additional approver(s).
+2. Enter all required fields and additional approvers.
 3. Click Pending Approval. Wait until the Change Request is approved.
 4. Open **Strongpoint** > **Change Management Tools** > **ITGC Change Request**.
 5. Click **Edit** on the appropriate Change Request.
 6. Open the **Sync Tool** tab on the Change Request.
 7. Set the **Target** environment (where the Change Request will be pushed).
-8. Set the Target login credentials: **Target Email and Target Password**.
+8. Set the Target log in credentials: **Target Email and Target Password**.
 9. Set the **Account ID Target** (this is automatically loaded upon selecting Target account).
 10. Set the **Account Target Role**.
 11. Click **Push**.
@@ -60,14 +60,14 @@ they have an audit trail and approvals can be shown.
 ## Run Pre-Deployment Environment Comparison
 
 1. Run **Strongpoint** > **Change Management Tools** > **Compare Environments**
-2. Enter the login credentials of the **Target** and **Source** Accounts.
+2. Enter the log in credentials of the **Target** and **Source** Accounts.
 3. Set the **Comparison Type** to **Target Newer than Source**.
 4. Click the **Compare** button.
    Refer to [Comparing Environments](/docs/platgovnetsuite/changemanagement/comparing_environments.md) for more details.
 
 ## Create the Deployment Record
 
-Once you have compared your environments, get the deployment record approved. When your deployment
+After you have compared your environments, get the deployment record approved. When your deployment
 record is approved, deploy the customizations listed on the change request.
 
 In your Production environment:
@@ -86,7 +86,7 @@ In your Production environment:
 ## Run Post-Deployment Environment Comparison
 
 1. Run **Strongpoint** > **Change Management Tools** > **Compare Environments**
-2. Enter the login credentials of the **Target** and **Source** Accounts.
+2. Enter the log in credentials of the **Target** and **Source** Accounts.
 3. Set the **Comparison Type** to **Target Newer than Source**.
 4. Click the **Compare** button.
    Refer to [Comparing Environments](/docs/platgovnetsuite/changemanagement/comparing_environments.md) for more details.

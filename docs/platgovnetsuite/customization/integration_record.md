@@ -17,7 +17,7 @@ Quick Search** to locate an integration record.
 The main section of the Integration Record summarizes the key information, including Application ID,
 name, description, state, and change history.
 
-The **Authentication** tab enables you to specify additional authorization for the integration:
+The **Authentication** tab is where you specify additional authorization for the integration:
 
 ![Integration record example](/images/platgovnetsuite/customizations/integration_record.webp)
 

@@ -13,9 +13,9 @@ to date.
 
 By implementing Platform Governance for NetSuite you can:
 
-- Automatically catalog all custom fields, scripts, forms, searches, records and workflows.
-- Visually browse standard and custom fields, lists and records to find all related scripts,
-  searches, users and departments.
+- Automatically catalog all custom fields, scripts, forms, searches, records, and workflows.
+- Visually browse standard and custom fields, lists, and records to find all related scripts,
+  searches, users, and departments.
 - Capture and search script comments and identify poorly commented code.
 - Automatically track changes to your customizations using the change logs, so you can see what
   customizations were changed, how they were changed, when they were changed and who changed them.
@@ -25,7 +25,7 @@ Check out Netwrix University for helpful tutorials.
 
 ## Installation and Initial Scan
 
-Once you install Platform Governance for NetSuite, you simply click the **Start Spider** button and
+After you install Platform Governance for NetSuite, click the **Start Spider** button and
 your customizations are documented over the course of 4-5 days with minimal impact on system
 performance. Once completed, you have a searchable database of all your customizations.
 
@@ -36,18 +36,17 @@ have your account both fully documented and optimized.
 
 ### Clean Up
 
-Use the end to end documentation of custom objects and our Clean Up Tools to:
+Use the end to end documentation of custom objects and the Clean Up Tools to:
 
-- Identify unused fields, searches and other custom objects.
+- Identify unused fields, searches, and other custom objects.
 - Quickly identify dependencies to reduce the risk of breaking things in your account (i.e. see if a
   search is being used in a script or workflow).
 - Use Change Requests to keep your changes organized and capture approvals.
 
 ### Script Management
 
-Critical Script Analysis enables you to determine how healthy your scripts are and what areas you
-can fix to improve your account. With our tools and the Critical Script Analysis methodology you
-can:
+Critical Script Analysis lets you determine how healthy your scripts are and what areas you
+can fix to improve your account. With the Critical Script Analysis methodology you can:
 
 - Identify high priority scripts based on usage.
 - Identify people and departments triggering scripts to focus on scripts that could be
@@ -93,7 +92,7 @@ Agent automates IT and financial controls and critical change practices to ensur
 master data are compliant. It can:
 
 - Check for process problems regularly without user event scripts.
-- Automatically generate and assign tasks, cases or process issues for each detected problem.
+- Automatically generate and assign tasks, cases, or process issues for each detected problem.
 - Automatically alert key stakeholders.
 - Log control violations for clearance.
 - Store relevant data as a CSV to create a snapshot for compliance or troubleshooting purposes.

@@ -9,7 +9,7 @@ sidebar_position: 10
 Access your **Owner List** from your menu bar. This is where Administrators can add or remove owners
 from reviews. All changes are captured in the [UAR History](/docs/platgovnetsuite/uar/adminoverview/uar_history.md).
 
-Auditors can view the Owner list and Owner notes, but cannot add or remove owners.
+Auditors can view the Owner list and Owner notes, but can't add or remove owners.
 
 Here is an example of the **Owner List**:
 
@@ -21,11 +21,11 @@ Filters help you organize your Owner list.
 
 Use **Clear** to reset the Filters.
 
-- **Center Type** Select from the drop down list. **All** is the default.
+- **Center Type** Select from the dropdown list. **All** is the default.
 - **Role Type of Review** Displays **Both**, **Custom** only, or **Standard** only roles in the
   list.
-- **Owner** Select from the drop down list. **All** is the default.
-- **Role** Select from the drop down list. **All** is the default.
+- **Owner** Select from the dropdown list. **All** is the default.
+- **Role** Select from the dropdown list. **All** is the default.
 - Select either **All Roles** (default) or **Roles with missing Owners**.
 
 ## Owner List
@@ -39,7 +39,7 @@ Use **Clear** to reset the Filters.
 - **Role** is the role to be reviewed.
 - **From Bundle** the bundle number if applicable.
 - **Custom/Standard** the role type.
-- **Center Type** the center for the role.
+- **Center Type**: enter the center for the role.
 - **Role Membership Owner** the user assigned to the role membership.
 - **Role Permission Owner** the user assigned to the role permissions.
 - **Access Owner** the user assigned to the role access.
@@ -53,9 +53,9 @@ Use **Clear** to reset the Filters.
 
     ![Add Owner](/images/platgovnetsuite/uar/uar_admin/add_owner.webp)
 
-3. **Select Role** from the drop down. From Bundle, Custom/Standard and Center Type are
+3. **Select Role** from the dropdown. From Bundle, Custom/Standard and Center Type are
    automatically added.
-4. Select users from the drop downs for the ownership roles.
+4. Select users from the dropdowns for the ownership roles.
 5. Click **Save** when your changes are complete.
 
 ### Change Owner
@@ -63,8 +63,8 @@ Use **Clear** to reset the Filters.
 You can change any of the owners from the Owner List.
 
 1. Open **Owner List** from your menu bar.
-2. Select an existing role. The drop down lists for the ownership roles are displayed.
-3. Select users from the drop downs for the ownership roles.
+2. Select an existing role. The dropdown lists for the ownership roles are displayed.
+3. Select users from the dropdowns for the ownership roles.
 4. Click **Save** when your changes are complete.
 
 ### Remove Owner

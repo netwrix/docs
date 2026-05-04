@@ -20,7 +20,7 @@ Here is the basic process.
 
 ## Create the External System Customization Record
 
-You can create the External System before using the mapping tool. If you do not create the External
+You can create the External System before using the mapping tool. If you don't create the External
 System, it can be automatically created by the tool.
 
 1. Open **Strongpoint** > **Customizations** > **Customization** > **New**
@@ -35,7 +35,7 @@ System, it can be automatically created by the tool.
 The **.csv** file is where you specify the customization mapping between the External System and
 NetSuite. The file is uploaded when you run the tool. You can create a file with the specified
 headings, or download the template with the link on the first page of the Integration Mapping tool.
-Do not change the specified headings. Here is the template:
+Don't change the specified headings. Here is the template:
 
 ![int_map_csv_template](/images/platgovnetsuite/integrations/int_map_csv_template.webp)
 
@@ -50,7 +50,7 @@ Do not change the specified headings. Here is the template:
 
 ## Open Integration Mapping tool
 
-The Mapping Tool menu item is hidden by default. If you do not see the option in your menu, refer to
+The Mapping Tool menu item is hidden by default. If you don't see the option in your menu, refer to
 the [Managing Menus](/docs/platgovnetsuite/installation/managing_menus.md) topic for information on making it
 available.
 
@@ -89,7 +89,7 @@ Open **Strongpoint** > **Integrations** > **Mapping Tool**
 
     ![int_map_search](/images/platgovnetsuite/integrations/int_map_search.webp)
 
-3. Search by all or part of a **Name**, **Type** or all or part of a **ScriptID**. For example,
+3. Search by all or part of a **Name**, **Type**, or all or part of a **ScriptID**. For example,
    enter _cust_ for **Name** and click **Search** to find all customizations containing the search
    term:
 

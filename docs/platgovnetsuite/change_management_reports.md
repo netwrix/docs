@@ -131,7 +131,7 @@ The criteria for this report excludes:
 ## Non-Material Changes
 
 This report displays changes to non-material objects. **Non-Material Object Changes** are changes
-detected in the object definition not caused by human intervention and do not have any functional
+detected in the object definition not caused by human intervention and don't have any functional
 impact. Examples include NetSuite internal IDs, object XML structure or JSON representation or
 reordering values in a list.
 
@@ -146,7 +146,7 @@ The criteria for this report excludes:
 Here is the criteria for non-material changes:
 
 - System generated changes.
-- XML changes that do not directly affect the object definition. For example, Script Deployment
+- XML changes that don't directly affect the object definition. For example, Script Deployment
   where it shows all related scripts that are deployed to the same record.
 - Customization record changes that sets references to other customizations but there is no change
   in actual record definition. For example, the list customization is added as dependency to the
@@ -156,7 +156,7 @@ Here is the criteria for non-material changes:
   record on bundle updates. This **Internal Id** change is flagged as non-material because a
   deletion log is created.
 - Initial setting of **Bundle Id** to a customization record because some customizations (for
-  example, **custom record field**) do not have the bundle information within their metadata.
+  example, **custom record field**) don't have the bundle information within their metadata.
 - **Scripting/Workflow to Field Update** when a script/workflow is added as reference in the field
   customization record. The valid change is documented on the **Script** or **Workflow** instead of
   the field.

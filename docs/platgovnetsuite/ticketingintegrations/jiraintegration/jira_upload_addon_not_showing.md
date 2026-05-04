@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Jira Upload Add On Not Showing
 
-If the Upload add on is not shown on your screen, you are either not a Jira administrator or you
+If the Upload add on isn't shown on your screen, you are either not a Jira administrator or you
 have not checked **Enable development mode**.
 
 To enable development mode:

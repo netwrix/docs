@@ -22,7 +22,7 @@ analyzed. The change policy that applies is identified based on the IT risk from
 Record and the process risk from the Process Records.
 
 The Change and Approval Policy also determines the change level required for any detected changes to
-be compliant. This ensures that even changes that do not go through the planned change management
+be compliant. This ensures that even changes that don't go through the planned change management
 process are analyzed against the policy for compliance.
 
 For example, a company may have multiple policies. For example:
@@ -47,14 +47,14 @@ custom form.
 
 ## Non-Material Changes
 
-Non-material changes are changes detected in objects that are not performed by a human and do not
+Non-material changes are changes detected in objects that aren't performed by a human and don't
 have functional impact. You can review these changes on the
 [Non-Material Changes report](/docs/platgovnetsuite/change_management_reports.md).
 
 Here is the criteria for non-material changes:
 
 - System generated changes.
-- XML changes that do not directly affect the object definition. For example, Script Deployment
+- XML changes that don't directly affect the object definition. For example, Script Deployment
   where it shows all related scripts that are deployed to the same record.
 - Customization record changes that sets references to other customizations but there is no change
   in actual record definition. For example, the list customization is added as dependency to the
@@ -64,7 +64,7 @@ Here is the criteria for non-material changes:
   record on bundle updates. This **Internal Id** change is flagged as non-material because a
   deletion log is created.
 - Initial setting of **Bundle Id** to a customization record because some customizations (for
-  example, **custom record field**) do not have the bundle information within their metadata.
+  example, **custom record field**) don't have the bundle information within their metadata.
 - **Scripting/Workflow to Field Update** when a script/workflow is added as reference in the field
   customization record. The valid change is documented on the **Script** or **Workflow** instead of
   the field.

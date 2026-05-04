@@ -10,10 +10,10 @@ After you have run your initial spider, the AutoSpider monitors your account on 
 see if customization changes have occurred. This is a light scan of the data to determine if there
 were any changes. If changes are detected, you are reminded to ReSpider your account.
 
-Best practice is to run the AutoSpider regularly. If the AutoSpider is not run, your Change Logs
+Best practice is to run the AutoSpider regularly. If the AutoSpider isn't run, your Change Logs
 will be missing the **Changed by** and **Actual Change Date** fields. When the Change Log is newly
 created, the fields contain **Pending AutoSpider**. If too many days go by, the fields change to
-**Could not be determined**.
+**Couldn't be determined**.
 
 ## Set Up the AutoSpider
 
@@ -26,7 +26,7 @@ portlet to load and see the **Spider Triggered** message before continuing.
 The **AutoSpider Portlet** is required to update certain object types in NetSuite. Once triggered
 through the dashboard portlet, it picks up all changes on custom objects and triggers the scheduled
 scripts to reflect them in the Customization records, going back two days. The AutoSpider portlet is
-required in order to update these object types:
+required to update these object types:
 
 - Bundle
 - Custom Report

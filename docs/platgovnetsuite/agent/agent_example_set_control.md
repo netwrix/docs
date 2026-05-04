@@ -86,7 +86,7 @@ From the customization record:
   effectively perform a double join to filter your data and eliminate false positives. For example,
   a script to create an invoice from the user interface is saved to be run as administrator. A user
   creates the invoice from the interface as part of their work flow. Running a search for
-  administrator-touched transactions causes false positives as the user is not an administrator.
+  administrator-touched transactions causes false positives as the user isn't an administrator.
   Using cross match, the first Saved Search is for all transactions by an administrator. The second
   Saved Search is an employee search using the administrator role. Cross Match returns the
   intersection of those two searches, showing only the transactions performed by administrators.

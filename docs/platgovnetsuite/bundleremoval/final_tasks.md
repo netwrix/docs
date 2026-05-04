@@ -9,14 +9,14 @@ sidebar_position: 70
 ## Reviewing Critical and Non Critical Sheets
 
 **Critical sheets** include all customizations that make use of the bundle components. You should
-make sure you are aware of what these bundle components are doing and analyze the risks of removing
+ensure you are aware of what these bundle components are doing and analyze the risks of removing
 them. Specifically, you should review the customizations from scenarios 3 and 6: Scenario 3: are
 non-bundle components that are used by bundle components, so there may be fields that are set by
-scripts, workflows or searches that belong to the bundle. Scenario 6: are non-bundle components that
+scripts, workflows, or searches that belong to the bundle. Scenario 6: are non-bundle components that
 use at least one bundle component for something, so their functionality and/or display may be
 broken.
 
-**Non critical sheets** include all the customizations from scenarios 1, 2, 4 and 5.
+**Non critical sheets** include all the customizations from scenarios 1, 2, 4, and 5.
 
 ## Testing
 

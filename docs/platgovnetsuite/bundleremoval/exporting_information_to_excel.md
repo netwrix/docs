@@ -19,7 +19,7 @@ and 6 to find affected customizations.
 To export the results to Excel:
 
 1. Select **View** on **Removal Scenarios 5 and 6**.
-2. Click on the **Excel** icon.
+2. Click the **Excel** icon.
 3. Export **Removal Scenario 5** and **Scenario 6** to Excel.
 4. Choose the record you want to investigate. (for example, **custom open task default**)
 5. Each record shows all its relationships (both inside and outside bundle).
