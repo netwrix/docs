@@ -18,7 +18,7 @@ Export your license key as an environment variable before running any installer 
 export LICENSE_KEY="[YOUR_LICENSE_KEY]]"
 ```
 
-Replace "[YOUR_LICENSE_KEY]" with the license key provided by Netwrix. All examples on this page assume you have exported this variable.
+Replace "[YOUR_LICENSE_KEY]" with the license key Netwrix provided. All examples on this page assume you have exported this variable.
 
 :::warning
 Your license key authenticates access to the Netwrix package registry. Don't share it, commit it to version control, or leave it visible in script files.
@@ -26,7 +26,7 @@ Your license key authenticates access to the Netwrix package registry. Don't sha
 
 ### Choose an installer version
 
-**Without specifying a version**, the installer downloads the latest stable release automatically. This is appropriate for initial deployments and when you want to install the latest release:
+If you don't specify a version, the installer downloads the latest stable release automatically. This is appropriate for initial deployments and when you want to install the latest release:
 
 ```bash
 # Set the Keygen license key variable
@@ -118,7 +118,7 @@ Export the variables before running the installer. When you set the same option 
 When you run the curl command, the installer automatically:
 
 1. Runs preflight checks to verify your system meets requirements
-2. Installs Kubernetes (k3s v1.33.4, the version validated by Netwrix for this release)
+2. Installs Kubernetes (k3s v1.33.4, the version Netwrix validated for this release)
 3. Deploys ArgoCD as the GitOps controller
 4. Pulls and deploys the Access Analyzer application stack from the Netwrix registry
 5. Waits for all components to become healthy

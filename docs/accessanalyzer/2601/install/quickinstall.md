@@ -256,7 +256,7 @@ rm -f "$TMP_FILE"
 sudo dspm-installer
 ```
 
-When prompted, enter the password for the service account specified in `LDAP_BIND_DN`.
+When prompted, enter the password for the service account you specified in `LDAP_BIND_DN`.
 
 Run `dspm-installer [command] --help` to view usage and available options for any command.
 <!-- HIDDEN:
@@ -434,7 +434,7 @@ END HIDDEN -->
 <!-- SYNC: configurations/identity-provider.md "Roles" -->
 <!-- If you change this block, update the matching block in configurations/identity-provider.md -->
 
-This table is also published at [Configuration > Identity Provider > Roles](../configurations/identity-provider.md#roles). This guide duplicates it here so it reads top-to-bottom.
+This table also appears at [Configuration > Identity Provider > Roles](../configurations/identity-provider.md#roles). This guide duplicates it here so it reads top-to-bottom.
 
 | Role | Description |
 | --- | --- |
