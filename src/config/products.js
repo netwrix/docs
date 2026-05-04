@@ -511,9 +511,14 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '26.03',
+        label: '26.03',
+        isLatest: true,
+        sidebarFile: './sidebars/privilegesecure/26.03.js',
+      },    {
         version: '25.12',
         label: '25.12',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/privilegesecure/25.12.js',
       },
       {
@@ -522,14 +527,8 @@ export const PRODUCTS = [
         isLatest: false,
         sidebarFile: './sidebars/privilegesecure/4.2.js',
       },
-      {
-        version: '4.1',
-        label: '4.1',
-        isLatest: false,
-        sidebarFile: './sidebars/privilegesecure/4.1.js',
-      },
     ],
-    defaultVersion: '25.12',
+    defaultVersion: '26.03',
   },
   {
     id: 'privilegesecurediscovery',

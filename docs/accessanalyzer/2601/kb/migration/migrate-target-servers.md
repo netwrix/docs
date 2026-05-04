@@ -4,7 +4,7 @@ description: "How to inventory legacy Netwrix Access Analyzer host lists and rec
 keywords:
   - host list migration
   - source group migration
-  - migrate hosts to AA2601
+  - migrate hosts to AA26
   - stealthaudit host list
   - access analyzer source groups
   - target server migration
@@ -30,24 +30,24 @@ Before starting this procedure, complete [Migrating Connection Profiles to Servi
 
 In the legacy product, a single host list can contain any mix of target system types. A list named "East Coast Servers" might include file servers, Active Directory domain controllers, and SharePoint sites.
 
-**AA2601 source groups are single-type.** Each group is created for one connector type, and that type is permanent — it can't be changed after creation. You must split mixed-type host lists into separate source groups before you begin.
+**AA26 source groups are single-type.** Each group is created for one connector type, and that type is permanent — it can't be changed after creation. You must split mixed-type host lists into separate source groups before you begin.
 
 **Planning example:**
 
-| Legacy Host List | Hosts | AA2601 Source Groups |
+| Legacy Host List | Hosts | AA26 Source Groups |
 | --- | --- | --- |
 | East Coast Servers | 12 file servers, 2 AD domains | East Coast — File Servers (12 sources)<br/>East Coast — Active Directory (2 sources) |
 | Cloud Resources | Entra ID tenant, SharePoint site | Cloud — Entra ID (1 source)<br/>Cloud — SharePoint Online (1 source) |
 
-Plan your source group structure on paper before creating anything in AA2601.
+Plan your source group structure on paper before creating anything in AA26.
 
 ---
 
 ## Supported connector types
 
-AA2601 currently supports the following connector types. Only hosts of these types need to be migrated:
+AA26 currently supports the following connector types. Only hosts of these types need to be migrated:
 
-| Legacy Collector / Target Type | AA2601 Connector |
+| Legacy Collector / Target Type | AA26 Connector |
 | --- | --- |
 | File System (FSAA) — Windows file servers | File Server |
 | File System (FSAA) — NetApp ONTAP | File Server |
@@ -57,16 +57,16 @@ AA2601 currently supports the following connector types. Only hosts of these typ
 | Azure AD / Entra ID | Entra ID |
 | SPAA — SharePoint Online | SharePoint Online |
 
-Legacy jobs targeting SQL Server, Exchange, Unix, or other systems do not have corresponding connectors in AA2601 at this time. Document those targets separately for future migration phases.
+Legacy jobs targeting SQL Server, Exchange, Unix, or other systems do not have corresponding connectors in AA26 at this time. Document those targets separately for future migration phases.
 
 ---
 
 ## Before you begin
 
-- [ ] All service accounts have been created in AA2601 ([Migrating Connection Profiles](./migrate-credentials.md)).
+- [ ] All service accounts have been created in AA26 ([Migrating Connection Profiles](./migrate-credentials.md)).
 - [ ] Scanner nodes have been deployed for Active Directory and File Server source groups, or you have confirmed that the Default Scanner (local) meets your scanning needs ([Migrating Proxy Servers to Scanners](./migrate-proxy-servers.md)).
 - [ ] You have a written inventory of host lists and their members (see Step 1).
-- [ ] You have planned which legacy host lists map to which AA2601 source groups.
+- [ ] You have planned which legacy host lists map to which AA26 source groups.
 
 ---
 
@@ -106,7 +106,7 @@ Select the connector type that matches the hosts you are migrating. If you have 
 | **Name** | A descriptive name that identifies the source type and scope. Example: `File Servers — East Coast` |
 | **Service Account** | Select the service account you created for this connector type. |
 | **Max Concurrent Scans** | Leave at `1` for initial setup. Increase after validating the first scan. |
-| **Scanner Labels** | For Active Directory and File Server groups, add the key-value labels that match the scanner nodes you deployed. Leave empty to use the Default Scanner (local scanning from the AA2601 server). |
+| **Scanner Labels** | For Active Directory and File Server groups, add the key-value labels that match the scanner nodes you deployed. Leave empty to use the Default Scanner (local scanning from the AA26 server). |
 
 Add sources to the group:
 - For each host in the matching legacy host list, click **Add Source** and enter the hostname or IP address.
@@ -121,14 +121,14 @@ Select the scan types to enable. Configure the scan schedule using a cron expres
 Click **Save** to create the source group.
 
 :::note
-Add sources to the group one at a time using the **Add Source** button in the source group UI, or use the AA2601 REST API. See [Step 3 — Test connections](#step-3--test-connections) after all sources have been added.
+Add sources to the group one at a time using the **Add Source** button in the source group UI, or use the AA26 REST API. See [Step 3 — Test connections](#step-3--test-connections) after all sources have been added.
 :::
 
 ---
 
 ## Step 3 — Test connections
 
-After adding sources, verify that AA2601 can reach each target:
+After adding sources, verify that AA26 can reach each target:
 
 1. Navigate to **Configuration** > **Source Groups**.
 2. Click the actions menu for your new source group and select **View Sources**.

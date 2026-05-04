@@ -21,12 +21,12 @@ tags:
 
 ## Overview
 
-Scanner nodes in Access Analyzer 26 replace legacy Windows proxy servers for distributed File Server and Active Directory scanning. If your legacy environment used proxy servers to scan hosts close to their network location, deploy equivalent scanner nodes in AA2601 so scans run in the same distributed fashion.
+Scanner nodes in Access Analyzer 26 replace legacy Windows proxy servers for distributed File Server and Active Directory scanning. If your legacy environment used proxy servers to scan hosts close to their network location, deploy equivalent scanner nodes in AA26 so scans run in the same distributed fashion.
 
-Without dedicated scanner nodes, File Server and Active Directory source groups use the Default Scanner, which runs scans from the central AA2601 server. This works for small or centralized environments but isn't optimized for distributed deployments where proximity to the target matters.
+Without dedicated scanner nodes, File Server and Active Directory source groups use the Default Scanner, which runs scans from the central AA26 server. This works for small or centralized environments but isn't optimized for distributed deployments where proximity to the target matters.
 
 :::note
-Entra ID and SharePoint Online source groups do not use scanners. Those connectors connect directly from the AA2601 service. Only File Server and Active Directory source groups require scanner deployment.
+Entra ID and SharePoint Online source groups do not use scanners. Those connectors connect directly from the AA26 service. Only File Server and Active Directory source groups require scanner deployment.
 :::
 
 ---
@@ -35,18 +35,18 @@ Entra ID and SharePoint Online source groups do not use scanners. Those connecto
 
 In the legacy product, distributed scanning relied on Windows proxy servers running the FSAA Proxy Service (`FSAAAppletServer.exe`). These were persistent Windows agents deployed manually and assigned per-job in the Data Collector wizard.
 
-AA2601 replaces this with **scanner nodes**: Linux virtual machines that AA2601 registers via SSH and automatically configures with a lightweight Kubernetes (K3s) runtime. Scans run as on-demand containers — there is no persistent agent process, and no manual service installation.
+AA26 replaces this with **scanner nodes**: Linux virtual machines that AA26 registers via SSH and automatically configures with a lightweight Kubernetes (K3s) runtime. Scans run as on-demand containers — there is no persistent agent process, and no manual service installation.
 
-| | Legacy Proxy Server | AA2601 Scanner Node |
+| | Legacy Proxy Server | AA26 Scanner Node |
 | --- | --- | --- |
 | **Operating system** | Windows | Linux |
-| **Deployment** | Manual installer on each Windows host | Automated via SSH from AA2601 |
+| **Deployment** | Manual installer on each Windows host | Automated via SSH from AA26 |
 | **Runtime** | Persistent Windows service | On-demand containers (per scan) |
 | **Assignment** | Per-job (Scan Server Selection wizard page) | Per-source group (via scanner labels) |
 | **Connectors supported** | FSAA, ADInventory, and others | File Server, Active Directory |
 | **Default option** | Local mode (EA console) | Default Scanner (local, always available) |
 
-The **Default Scanner** is available immediately without any deployment. It runs scans directly from the AA2601 server — equivalent to the legacy "Local Server" option in the Scan Server Selection page. If your legacy environment ran all scans locally, the Default Scanner covers this case without any migration action.
+The **Default Scanner** is available immediately without any deployment. It runs scans directly from the AA26 server — equivalent to the legacy "Local Server" option in the Scan Server Selection page. If your legacy environment ran all scans locally, the Default Scanner covers this case without any migration action.
 
 ---
 
@@ -54,7 +54,7 @@ The **Default Scanner** is available immediately without any deployment. It runs
 
 - [ ] Identify which legacy proxy servers are in use and which jobs reference them.
 - [ ] Confirm the replacement Linux VMs are provisioned and accessible via SSH.
-- [ ] Obtain an SSH Username/Key service account with access to each Linux VM. This account is used by AA2601 during scanner registration.
+- [ ] Obtain an SSH Username/Key service account with access to each Linux VM. This account is used by AA26 during scanner registration.
 - [ ] Plan your scanner labeling scheme before deploying. Scanner labels route scans to specific scanner pools. A consistent scheme — for example, `region=us-east` or `environment=production` — makes source group assignment straightforward.
 
 ---
@@ -80,7 +80,7 @@ Navigate to **Configuration** > **Scanners** in Access Analyzer 26.
 
 ![Scanners list showing the Default Scanner with columns for Name/IP, Labels, Source Groups, Health Status, and Last Heartbeat](/images/accessanalyzer/2601/migration/scanners-list.png)
 
-The list shows all registered scanner nodes. The **Default Scanner** is always present and represents local scanning from the AA2601 server.
+The list shows all registered scanner nodes. The **Default Scanner** is always present and represents local scanning from the AA26 server.
 
 Click **Deploy Scanner** to register a new scanner node.
 
@@ -92,12 +92,12 @@ Complete the form for each scanner node you are deploying:
 | --- | --- |
 | **Name** | A display name that identifies this scanner. Use a name that reflects its location or purpose, for example `us-east-scanner-01`. |
 | **SSH Host** | The hostname or IP address of the Linux VM. |
-| **SSH Host Key** | The public SSH host key of the target machine. AA2601 uses this to verify the identity of the remote host before connecting. Retrieve it by running `ssh-keyscan <hostname>` on the target machine or your management workstation. |
+| **SSH Host Key** | The public SSH host key of the target machine. AA26 uses this to verify the identity of the remote host before connecting. Retrieve it by running `ssh-keyscan <hostname>` on the target machine or your management workstation. |
 | **SSH Port** | The SSH port. Defaults to 22 if not specified. |
-| **Service Account** | An SSH Username/Key service account that has SSH access to the Linux VM. AA2601 uses these credentials to connect and install the K3s runtime. |
+| **Service Account** | An SSH Username/Key service account that has SSH access to the Linux VM. AA26 uses these credentials to connect and install the K3s runtime. |
 | **Labels** | Key-value pairs used to route scans to this scanner. Add at least one label that matches your labeling scheme, for example `region=us-east`. |
 
-Click **Test connection** before clicking **Deploy** to verify that AA2601 can reach the Linux VM with the provided credentials. Deployment installs the K3s runtime on the target machine automatically.
+Click **Test connection** before clicking **Deploy** to verify that AA26 can reach the Linux VM with the provided credentials. Deployment installs the K3s runtime on the target machine automatically.
 
 Repeat for each scanner node you are deploying.
 
@@ -115,7 +115,7 @@ After deploying scanner nodes, configure each source group to use them.
 Scans in that source group will route to any scanner node matching all specified labels. If no labels are set on a source group, scans use the Default Scanner.
 
 :::note
-A source group can match multiple scanner nodes if more than one node carries the specified labels. AA2601 distributes scans across matching nodes.
+A source group can match multiple scanner nodes if more than one node carries the specified labels. AA26 distributes scans across matching nodes.
 :::
 
 ---

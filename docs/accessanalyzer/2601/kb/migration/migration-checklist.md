@@ -20,7 +20,7 @@ Complete each section before moving to the next.
 
 **Customer:** _____________________________ &nbsp;&nbsp; **Migration date:** _____________________________
 
-**Engineer:** _____________________________ &nbsp;&nbsp; **AA2601 version:** _____________________________
+**Engineer:** _____________________________ &nbsp;&nbsp; **AA26 version:** _____________________________
 
 ---
 
@@ -35,7 +35,7 @@ Complete this section before making any changes to either system.
 - [ ] Exported host list data using `Export-LegacyHostLists.ps1` or manual console export.
 - [ ] Identified which host lists contain mixed types and documented the required split into separate source groups.
 - [ ] Documented all connection profiles: name, credential type, username/domain.
-- [ ] Identified which connection profiles map to which credential type in AA2601 (Username/Password, Client ID/Secret, Client ID/Certificate).
+- [ ] Identified which connection profiles map to which credential type in AA26 (Username/Password, Client ID/Secret, Client ID/Certificate).
 - [ ] Noted which legacy jobs are in scope for migration (AD, file server, SharePoint, Entra ID jobs).
 - [ ] Noted which legacy jobs are out of scope (SQL Server, Exchange, Unix, and other unsupported connectors).
 - [ ] Exported job schedule data using `Export-LegacySchedules.ps1` or manual review.
@@ -48,10 +48,10 @@ Complete this section before making any changes to either system.
 - [ ] Identified the activity table names for historical data that needs to remain accessible.
 - [ ] Confirmed who requires read access to the legacy SQL Server database post-migration.
 
-### AA2601 environment readiness
+### AA26 environment readiness
 
-- [ ] AA2601 instance is deployed and accessible.
-- [ ] Administrator account credentials for AA2601 are confirmed.
+- [ ] AA26 instance is deployed and accessible.
+- [ ] Administrator account credentials for AA26 are confirmed.
 - [ ] Scanners are deployed and online for all required connector types (Active Directory, File Server).
 - [ ] Network connectivity is confirmed from scanner to each target system on required ports.
 - [ ] Required app registrations in Entra ID / Azure are in place (for Entra ID and SharePoint Online sources).
@@ -60,11 +60,11 @@ Complete this section before making any changes to either system.
 
 ## Migration phase 1 — Credentials
 
-- [ ] All required Username/Password service accounts created in AA2601.
+- [ ] All required Username/Password service accounts created in AA26.
   - Count: _____ accounts
-- [ ] All required Client ID/Secret service accounts created in AA2601.
+- [ ] All required Client ID/Secret service accounts created in AA26.
   - Count: _____ accounts
-- [ ] All required Client ID/Certificate service accounts created in AA2601.
+- [ ] All required Client ID/Certificate service accounts created in AA26.
   - Count: _____ accounts
 - [ ] Each service account verified by visual inspection in the Service Accounts list.
 
@@ -85,7 +85,7 @@ Complete one row per source group.
 | | | | | Pass / Fail |
 | | | | | Pass / Fail |
 
-- [ ] All source groups created in AA2601.
+- [ ] All source groups created in AA26.
 - [ ] All sources added to their respective groups.
 - [ ] Test Connection passed for every source in every group.
 - [ ] Scanner labels verified on Active Directory and File Server groups.
@@ -130,9 +130,9 @@ For each source group, run an initial access scan manually before enabling the s
 - [ ] Coverage start date documented for each migrated source: _________________________.
 - [ ] Compliance and legal teams notified of which system holds records for which sources and time periods.
 
-### AA2601 system
+### AA26 system
 
-- [ ] AA2601 scheduled scans running on configured cron schedule without errors.
+- [ ] AA26 scheduled scans running on configured cron schedule without errors.
 - [ ] No scan execution failures in the first 48 hours of scheduled operation.
 - [ ] Users and roles configured for all required analysts and administrators.
 - [ ] Dashboards and reports accessible to relevant users.
@@ -140,7 +140,7 @@ For each source group, run an initial access scan manually before enabling the s
 ### Handover
 
 - [ ] Migration summary document completed and delivered to customer.
-- [ ] Customer IT or security team trained on AA2601 source group management.
+- [ ] Customer IT or security team trained on AA26 source group management.
 - [ ] Customer IT or security team trained on interpreting scan results.
 - [ ] Support escalation path communicated to customer.
 

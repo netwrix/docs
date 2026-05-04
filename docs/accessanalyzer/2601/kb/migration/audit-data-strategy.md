@@ -23,7 +23,7 @@ tags:
 
 Access Analyzer 26 uses a separate database stack (ClickHouse and PostgreSQL) and does not connect to or read from the legacy SQL Server database. Historical audit records collected by the previous version remain in the original SQL Server database and are not affected by the migration.
 
-The sections below cover what data remains in the SQL Server database, how to maintain access to it, and what data AA2601 collects going forward.
+The sections below cover what data remains in the SQL Server database, how to maintain access to it, and what data AA26 collects going forward.
 
 ---
 
@@ -32,7 +32,7 @@ The sections below cover what data remains in the SQL Server database, how to ma
 Any data you need to maintain for audit and compliance purposes remains in the SQL Server database. This includes activity records from monitored sources and state-in-time collections such as sensitive data discovery findings.
 
 :::note
-State-in-time collections — such as sensitive data findings and permissions snapshots — are stale as soon as they are collected. The priority after migrating to AA2601 is to get the equivalent scans running in AA2601 so that current data is available there.
+State-in-time collections — such as sensitive data findings and permissions snapshots — are stale as soon as they are collected. The priority after migrating to AA26 is to get the equivalent scans running in AA26 so that current data is available there.
 :::
 
 ## Maintaining access to historical records
@@ -45,13 +45,13 @@ To maintain access to historical records:
 
 2. **Grant read-only SQL access** to security analysts, compliance officers, and legal teams who need to query historical records.
 
-3. **Document the coverage start date for each source.** Record the date AA2601 began collecting data for each migrated source. This date determines which system to query for audit requests that span the migration.
+3. **Document the coverage start date for each source.** Record the date AA26 began collecting data for each migrated source. This date determines which system to query for audit requests that span the migration.
 
 ---
 
 ## What Access Analyzer 26 collects
 
-For sources added to AA2601, the product collects the following data:
+For sources added to AA26, the product collects the following data:
 
 | Data Type | Source | Stored In |
 | --- | --- | --- |
@@ -74,7 +74,7 @@ Notify your compliance and legal teams of the coverage start date for each migra
 | --- | --- |
 | Data collected before migration | Legacy NAA SQL Server database |
 | Data collected after migration | Access Analyzer 26 (ClickHouse) |
-| Sources not yet migrated to AA2601 | Legacy NAA SQL Server database |
+| Sources not yet migrated to AA26 | Legacy NAA SQL Server database |
 
 ---
 

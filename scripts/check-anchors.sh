@@ -9,7 +9,13 @@ set -euo pipefail
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 ERRORS=0
-declare -A HEADING_CACHE
+CACHE_DIR="$(mktemp -d)"
+trap 'rm -rf "$CACHE_DIR"' EXIT
+
+# Produce a filesystem-safe cache key from a file path
+cache_key() {
+  printf '%s' "$1" | tr -dc 'a-zA-Z0-9._-' | tr '/' '_'
+}
 
 slugify() {
   local heading="$1"
@@ -22,14 +28,14 @@ slugify() {
     | sed -E 's/^#+ +//' \
     | tr '[:upper:]' '[:lower:]' \
     | sed -E "s/[^a-z0-9 -]//g" \
-    | sed -E 's/ +/-/g' \
-    | sed -E 's/-+/-/g' \
+    | sed -E 's/ /-/g' \
     | sed -E 's/^-+//;s/-+$//'
 }
 
 load_headings() {
   local file="$1"
-  [[ -v HEADING_CACHE["$file"] ]] && return
+  local key="$CACHE_DIR/$(cache_key "$file")"
+  [[ -f "$key" ]] && return
   local slugs=" "
   local in_fence=false
   while IFS= read -r line; do
@@ -42,13 +48,14 @@ load_headings() {
       slugs+="$(slugify "$line") "
     fi
   done < "$file"
-  HEADING_CACHE["$file"]="$slugs"
+  printf '%s' "$slugs" > "$key"
 }
 
 anchor_exists() {
   local file="$1" anchor="$2"
   load_headings "$file"
-  [[ "${HEADING_CACHE[$file]}" == *" $anchor "* ]]
+  local key="$CACHE_DIR/$(cache_key "$file")"
+  grep -qF " $anchor " "$key"
 }
 
 check_file() {

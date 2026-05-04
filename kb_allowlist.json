@@ -54,11 +54,11 @@
   ],
   "privilegesecure": [
     "25.12",
-    "4.1",
+    "26.03",
     "4.2"
   ],
   "privilegesecurediscovery": [
-    "current"
+    "2.22"
   ],
   "recoveryforactivedirectory": [
     "2.6",

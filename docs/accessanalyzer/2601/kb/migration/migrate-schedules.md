@@ -6,7 +6,7 @@ keywords:
   - job schedule migration
   - cron expression
   - windows task scheduler migration
-  - scan schedule AA2601
+  - scan schedule AA26
   - stealthaudit schedule
 products:
   - access-analyzer
@@ -20,13 +20,13 @@ tags:
 
 ## Overview
 
-The legacy product schedules data collection using Windows Task Scheduler triggers. AA2601 schedules scans using cron expressions — a standard five-field format. The steps below cover how to export legacy schedule data, translate trigger settings to cron format, and apply the resulting schedules to source groups in AA2601.
+The legacy product schedules data collection using Windows Task Scheduler triggers. AA26 schedules scans using cron expressions — a standard five-field format. The steps below cover how to export legacy schedule data, translate trigger settings to cron format, and apply the resulting schedules to source groups in AA26.
 
 ---
 
 ## Concept comparison
 
-| Legacy Concept | AA2601 Equivalent |
+| Legacy Concept | AA26 Equivalent |
 | --- | --- |
 | Schedule / Trigger on a job or job group | Cron expression on a scan configuration |
 | Schedule Service Account (Windows Task Scheduler) | Scanner service account (runs the scan) |
@@ -34,13 +34,13 @@ The legacy product schedules data collection using Windows Task Scheduler trigge
 | Daily / Weekly / Monthly trigger | Equivalent cron expression |
 | Run As — specific domain account | Service account assigned to the source group |
 
-In AA2601, the scan schedule is set at the source group level and applies to all sources in the group. If you need different schedules for individual sources, override the schedule at the source level after creating the group.
+In AA26, the scan schedule is set at the source group level and applies to all sources in the group. If you need different schedules for individual sources, override the schedule at the source level after creating the group.
 
 ---
 
 ## Cron expression reference
 
-AA2601 uses standard five-field cron expressions in UTC by default. Each field controls a time component:
+AA26 uses standard five-field cron expressions in UTC by default. Each field controls a time component:
 
 ```
 ┌───────── minute (0–59)
@@ -68,14 +68,14 @@ AA2601 uses standard five-field cron expressions in UTC by default. Each field c
 | Every 12 hours | `0 */12 * * *` | Runs at 00:00 and 12:00 UTC daily. |
 
 :::note
-AA2601 stores cron schedules in UTC. If your legacy jobs used local time triggers, convert them to UTC when creating the cron expression. Set the **Time Zone** field on the scan configuration if you want to define the schedule in local time.
+AA26 stores cron schedules in UTC. If your legacy jobs used local time triggers, convert them to UTC when creating the cron expression. Set the **Time Zone** field on the scan configuration if you want to define the schedule in local time.
 :::
 
 ---
 
 ## Before you begin
 
-- [ ] Source groups and sources have been created in AA2601 ([Migrating Target Servers and Host Lists](./migrate-target-servers.md)).
+- [ ] Source groups and sources have been created in AA26 ([Migrating Target Servers and Host Lists](./migrate-target-servers.md)).
 - [ ] You have a documented list of legacy job schedules (from Step 1 below).
 - [ ] You have determined which cron expressions to use for each source group.
 
@@ -108,7 +108,7 @@ For each source group:
 6. Click **Save**.
 
 :::note
-If different legacy jobs targeting the same set of hosts had different schedules, you might need to split those hosts across separate source groups in AA2601 so each group can have its own schedule.
+If different legacy jobs targeting the same set of hosts had different schedules, you might need to split those hosts across separate source groups in AA26 so each group can have its own schedule.
 :::
 
 Repeat the steps in [Step 2](#step-2--configure-scan-schedules-in-access-analyzer) for each source group until all schedules are configured.
