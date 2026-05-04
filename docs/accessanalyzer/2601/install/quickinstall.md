@@ -227,7 +227,7 @@ export LDAP_EMAIL_ATTRIBUTE="mail"
 | `LDAP_BIND_DN` | Distinguished name of the read-only service account | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` |
 | `LDAP_USERS_DN` | Base DN for the OU containing user accounts | `CN=Users,DC=corp,DC=example,DC=com` |
 | `LDAP_EMAIL_ATTRIBUTE` | LDAP attribute storing the user's email address | `mail` |
-| `DSPM_TARGET_REVISION` | (Optional) Controls which version is installed and auto-upgraded to. Omit to stay on the latest release. | `1.0.8` |
+| `TARGET_REVISION` | (Optional) Controls which version is installed and auto-upgraded to. Omit to stay on the latest release. | `1.0.8` |
 
 **Version syntax for `DSPM_TARGET_REVISION`:**
 
@@ -254,9 +254,9 @@ rm -f "$TMP_FILE"
  
 # Launches the installation wizard
 sudo dspm-installer
- 
-Use "dspm-installer [command] --help" for more information about a command.
 ```
+
+Use "dspm-installer [command] --help" for more information about a command.
 <!-- HIDDEN:
 Run it with one of the following two password options. Installation takes 15–30 minutes.
 
