@@ -40,7 +40,7 @@ sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
 rm -f "$TMP_FILE"
 
 # Launches the installation wizard 
-sudo dspm-installer --license-key '$LICENSE_KEY'
+sudo dspm-installer
 Use "dspm-installer [command] --help" for more information about a command.
 ```
 
