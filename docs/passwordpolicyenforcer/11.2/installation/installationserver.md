@@ -1,83 +1,52 @@
 ---
-title: "Install Password Policy Enforcer on a Server"
-description: "Install Password Policy Enforcer on a Server"
+title: "Install the Server Components"
+description: "Install the PPE Server, Configuration Console, and Mailer Service components on domain controllers, servers, or workstations using the Setup wizard or the command line."
 sidebar_position: 20
 ---
 
-# Install Password Policy Enforcer on a Server
+# Install the Server Components
 
-Password Policy Enforcer server should be installed on every domain controller to enforce the
-password policy for domain user accounts, or on individual servers and workstations to enforce the
-password policy for local user accounts.
-
-If your domain contains some read-only domain controllers, then installation of Password Policy
-Enforcer on these servers is only necessary if you are using the following features:
-
-- [Rules](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/rules.md)
-- [Password Policy Client](/docs/passwordpolicyenforcer/11.2/admin/password-policy-client/password_policy_client.md)
-- [Netwrix Password Reset](https://helpcenter.netwrix.com/category/passwordreset)
-- [Password Policy Enforcer Web](/docs/passwordpolicyenforcer/11.2/web-overview/web_overview.md)
-
-The Server installation package includes multiple features selected during installation:
-
-- PPE Server – enforces password policies. It can be installed on Domain Controllers for domain
-  password policy, or on servers and workstations for local account password policy.
-- Configuration Console – manages policy configuration. Install wherever needed.
-- Mailer Service – sends email reminders. Install on any server.
-
-**Step 1 –** Download the installation package from Netwrix.
-
-**Step 2 –** Extract the installers from the compressed file. If you are going to use Group Policy
-Manager to install Netwrix Password Policy Enforcer, copy the **msi** files to a distribution
-folder. See the [Install with Group Policy Management](/docs/passwordpolicyenforcer/11.2/installation/installationgpm.md) topic for additional
-details. You can also install/uninstall the products using command line
-[Silent Installation](/docs/passwordpolicyenforcer/11.2/admin/command_line_interface.md#silent-installation).
+The Password Policy Enforcer (PPE) server installer includes the following components:
+- **Password Policy Server (PPS)** — also known as the _PPE Service for DCs_. This component is typically installed on all the domain controllers in a domain. See [Domain and Local Policies](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md) for more information if your domain includes read-only domain controllers, or if you intend to enforce password policies for local user accounts.
+- **Configuration Console** — Graphical and command-line tools to configure PPE. Install this component on any computer that you want to configure Password Policy Enforcer from. This could be a domain controller, a management server, or your computer.
+- **Mailer Service** — Sends email on behalf of PPE. It is typically installed on one server in the domain.
 
 :::note
-Continue with these steps to install one or more features on your current server or domain
-controller. You must repeat these steps for each server where the features are installed.
+The [introduction](/docs/passwordpolicyenforcer/11.2/index.md) has more information about these components, including their system requirements.
 :::
 
+To manually install one or more server components:
 
-**Step 3 –** Click the **Netwrix_PPE_Server_version_x64.msi** installation package. The
-installer is launched.
+1. Run **Netwrix_PPE_Server_11.2.0.148_x64.msi**. The Setup wizard opens.
 
-![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup1.webp)
+   ![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup1.webp)
 
-**Step 4 –** Click **Next**.
+2. Click **Next**.
 
-![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup2.webp)
+   ![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup2.webp)
 
-**Step 5 –** Review the End-User License Agreement. Click **I accept the terms in the License
-Agreement**.
+3. Review the End-User License Agreement, select the check box to accept the Agreement, then click **Next**.
 
-**Step 6 –** Click **Next**.
+   ![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup3.webp)
 
-![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup3.webp)
+4. Select one or more features to install, then click **Next**.
 
-**Step 7 –** Select the features to install. The required storage is shown for each selection.
+   ![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup4.webp)
 
-- PPE Server – enforces password policies. It can be installed on Domain Controllers for domain
-  password policy, or on servers and workstations for local account password policy. It isn't
-  selected by default.
-- Configuration Console – manages policy configuration. Install wherever needed. Selected by
-  default.
-- Mailer Service – sends email reminders. It isn't selected by default.
+5. Review your selections, then click **Install**.
 
-**Step 8 –** The default location is shown. Click **Browse** and select a new location if needed.
+   ![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup5.webp)
 
-**Step 9 –** Click **Next**.
+6. Click **Finish** when installation is complete. If prompted to restart the computer, then restart before using the installed components.
 
-![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup4.webp)
+If you have many domain controllers, use a software deployment tool or [Group Policy](/docs/passwordpolicyenforcer/11.2/installation/installationgpm.md) to automate the deployment. You can also run msiexec directly to install from the command line. For example, to silently install only the PPS:
 
-**Step 10 –** Review your selections. Click **Back** to make any changes. When ready, click
-**Install**.
+ ```batch
+msiexec /i Netwrix_PPE_Server_11.2.0.148_x64.msi ADDLOCAL=FeatureServerPPE /q
+```
 
-![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup5.webp)
-
-**Step 11 –** Click **Finish** when installation is complete. You are prompted to restart your
-system for the changes to take effect.
+The ADDLOCAL argument tells msiexec which components to install. `ADDLOCAL=FeatureServerPPE,FeatureConsole,FeaturePPEMailerServer` installs all the server components.
 
 :::tip
-Consider excluding **PPE.DLL** from antivirus scanning on your domain controllers. If this file is blocked from loading, PPE can't enforce the password policy.
+Add an exclusion for `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPE.DLL` to exclude PPE from antivirus or other security software. This is optional.
 :::
