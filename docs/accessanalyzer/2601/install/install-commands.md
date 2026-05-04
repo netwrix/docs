@@ -45,7 +45,7 @@ sudo dspm-installer
 
 Run `dspm-installer [command] --help` to view usage and available options for any command.
 
-**To pin to a specific release** — recommended when you want to control when upgrades happen during your organization's patching cycle — export the version before running the same curl command:
+**To pin to a specific release** — recommended when you want to control when upgrades happen during your organization's patching cycle — export the version before downloading and running the installer:
 
 ```bash
 # Set the Keygen license key variable
@@ -99,7 +99,7 @@ Export the variables before running the installer. When you set the same option 
 | `LDAP_BIND_DN` | `--ldap-bind-dn` | `CN=svc-dspm,OU=ServiceAccounts,DC=example,DC=com` |
 | `LDAP_USERS_DN` | `--ldap-users-dn` | `CN=Users,DC=example,DC=com` |
 | `LDAP_EMAIL_ATTRIBUTE` | `--ldap-email-attribute` | `mail` (default) |
-| `LDAP_BIND_CREDENTIAL` | (secret — see Quick Install) | (see Quick Install) |
+| `LDAP_BIND_PASSWORD` | (secret — see Quick Install) | (see Quick Install) |
 | `POSTGRES_DATA_DIR` | `--postgres-data-dir` | `/mnt/ssd/postgres` |
 | `CLICKHOUSE_DATA_DIR` | `--clickhouse-data-dir` | `/mnt/nvme/clickhouse` |
 | `ACCEPT_WARNINGS` | `--accept-warnings` | `true` |
@@ -110,7 +110,7 @@ Export the variables before running the installer. When you set the same option 
 | `DRY_RUN` | `--dry-run` | `true` |
 
 :::note
-`LDAP_BIND_CREDENTIAL` is the only secret environment variable, and the installer doesn't actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
+`LDAP_BIND_PASSWORD` is the only secret environment variable, and the installer doesn't actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
 :::
 
 ## Running the Installer
@@ -195,6 +195,7 @@ The installer writes the log to `/var/log/dspm-installer.log`. Accepted values a
 
 END HIDDEN -->
 ---
+
 ## Identity Provider Flags
 
 The following table lists every identity provider (IdP) flag the installer accepts. For end-to-end examples, see one of these walkthroughs:

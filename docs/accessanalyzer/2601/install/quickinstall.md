@@ -198,7 +198,7 @@ sudo update-ca-certificates
 Paste and customize the following at the top of your terminal session. Every subsequent command references these variables.
 
 ```bash
-# export DSPM_TARGET_REVISION="1.0.8"    # optional — omit to stay on latest; see version syntax below
+# export TARGET_REVISION="1.0.8"          # optional — omit to stay on latest; see version syntax below
 export LICENSE_KEY="<Your-License-Key>"
 export DSPM_HOSTNAME="<AA2601 FQDN, e.g. aa2601.corp.example.com>"
 export TLS_CERT_FILE="/opt/dspm-tls/<hostname>.crt"
@@ -229,11 +229,11 @@ export LDAP_EMAIL_ATTRIBUTE="mail"
 | `LDAP_EMAIL_ATTRIBUTE` | LDAP attribute storing the user's email address | `mail` |
 | `TARGET_REVISION` | (Optional) Controls which version is installed and auto-upgraded to. Omit to stay on the latest release. | `1.0.8` |
 
-**Version syntax for `DSPM_TARGET_REVISION`:**
+**Version syntax for `TARGET_REVISION`:**
 
 | Value | Behavior |
 | --- | --- |
-| (unset) | Installs the latest release; auto-upgrades to the latest version with no limit |
+| (unset) | Defaults to `1.*` — installs the latest 1.x release and auto-upgrades within 1.x |
 | `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
 | `1.*` | Auto-upgrades to any 1.x version |
 
@@ -255,6 +255,8 @@ rm -f "$TMP_FILE"
 # Launches the installation wizard
 sudo dspm-installer
 ```
+
+When prompted, enter the password for the service account specified in `LDAP_BIND_DN`.
 
 Run `dspm-installer [command] --help` to view usage and available options for any command.
 <!-- HIDDEN:
