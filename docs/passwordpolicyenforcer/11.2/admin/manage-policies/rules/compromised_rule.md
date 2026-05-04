@@ -22,5 +22,5 @@ degrades performance, and could jeopardize security.
 :::
 
 
-See the [HIBP Updater](/docs/passwordpolicyenforcer/11.2/installation/hibpupdater.md) topic for the information about the Have I Been Pwnd (HIBP)
+See the [HIBP Updater](/docs/passwordpolicyenforcer/11.2/admin/hibpupdater.md) topic for the information about the Have I Been Pwnd (HIBP)
 database usage.

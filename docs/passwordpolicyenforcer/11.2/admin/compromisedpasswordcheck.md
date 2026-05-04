@@ -12,7 +12,7 @@ The check can be scheduled to run at any time to verify existing passwords again
 
 :::note
 Create the **Compromised Passwords Base** file before enabling the Compromised Password
-Check. See the [HIBP Updater](/docs/passwordpolicyenforcer/11.2/installation/hibpupdater.md) topic for instructions.
+Check. See the [HIBP Updater](/docs/passwordpolicyenforcer/11.2/admin/hibpupdater.md) topic for instructions.
 :::
 
 
@@ -32,7 +32,7 @@ Click the **Compromised Password Check** toggle to enable/disable the feature.
 ![Compromised Password Check](/images/passwordpolicyenforcer/11.2/administration/compromisedpasswords.webp)
 
 - **Compromised Passwords Base** specify the database to use when checking for compromised
-  passwords. Netwrix recommends using the [HIBP Updater](/docs/passwordpolicyenforcer/11.2/installation/hibpupdater.md) to create this database.
+  passwords. Netwrix recommends using the [HIBP Updater](/docs/passwordpolicyenforcer/11.2/admin/hibpupdater.md) to create this database.
   Click **Browse** to navigate to the folder. Default is **C:\HIBP\DB**
 - **Domain Controller (FQDN)** specify the fully qualified domain controller name where you want to
   run the password check. Click **Browse** and select from the list.
