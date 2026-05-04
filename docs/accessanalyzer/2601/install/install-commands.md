@@ -15,10 +15,10 @@ You install Access Analyzer using a single curl command that downloads and runs 
 Export your license key as an environment variable before running any installer command. This keeps the key out of your shell history and makes it available to the installer automatically.
 
 ```bash
-export LICENSE_KEY='[YOUR_LICENSE_KEY]'
+export LICENSE_KEY="[YOUR_LICENSE_KEY]]"
 ```
 
-Replace `[YOUR_LICENSE_KEY]` with the license key provided by Netwrix. All examples on this page assume you have exported this variable.
+Replace "[YOUR_LICENSE_KEY]" with the license key provided by Netwrix. All examples on this page assume you have exported this variable.
 
 :::warning
 Your license key authenticates access to the Netwrix package registry. Don't share it, commit it to version control, or leave it visible in script files.
@@ -41,17 +41,18 @@ rm -f "$TMP_FILE"
 
 # Launches the installation wizard 
 sudo dspm-installer
-Use "dspm-installer [command] --help" for more information about a command.
 ```
+
+Use "dspm-installer [command] --help" for more information about a command.
 
 **To pin to a specific release** — recommended when you want to control when upgrades happen during your organization's patching cycle — export the version before running the same curl command:
 
 ```bash
 # Set the Keygen license key variable
-export LICENSE_KEY='[YOUR_LICENSE_KEY]'
+export LICENSE_KEY='[Y]'
 
 # Pin to a specific release version
-export DSPM_TARGET_REVISION='[VERSION]'
+export TARGET_REVISION='[VERSION]'
 
 # Download and install the DSPM installer binary for your Linux system architecture (x86_64 or ARM64) using your license key.
 ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
@@ -62,16 +63,16 @@ rm -f "$TMP_FILE"
 
 # Launches the installation wizard
 sudo dspm-installer
+```
 
 Use "dspm-installer [command] --help" for more information about a command.
 
-```
 
 Version strings control which release the installer installs and what auto-upgrades apply:
 
 | Value | Behavior |
 | --- | --- |
-| (unset) | Installs the latest release; auto-upgrades to the latest version with no limit |
+| (unset) | Defaults to 1.* — auto-upgrades within the 1.x line; a future 2.x release will not be installed automatically |
 | `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
 | `1.*` | Auto-upgrades to any 1.x version |
 
@@ -87,7 +88,7 @@ Export the variables before running the installer. When you set the same option 
 | --- | --- | --- |
 | `LICENSE_KEY` | `--license-key` | `NWRX-XXXX-XXXX-XXXX` |
 | `DSPM_HOSTNAME` | `--hostname` | `aa2601.corp.example.com` |
-| `DSPM_TARGET_REVISION` | `--target-revision` | `1.0.8` (pinned) or omit for latest |
+| `TARGET_REVISION` | `--target-revision` | `1.0.8` (pinned) or omit for latest |
 | `SIZE` | `--size` | `1` (default), `2`, up to `10` |
 | `TLS_CERT_FILE` | `--tls-cert` | `/opt/dspm-tls/aa2601.crt` |
 | `TLS_KEY_FILE` | `--tls-key` | `/opt/dspm-tls/aa2601.key` |
@@ -191,6 +192,8 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
 ```
 
 The installer writes the log to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. Terminal progress output isn't affected — only the log file verbosity changes.
+
+END HIDDEN -->
 ---
 ## Identity Provider Flags
 
@@ -244,7 +247,7 @@ The installer checks the following before installation begins. The installer wri
 A **FAIL** result stops the installer. Resolve it before retrying. A **WARN** result also stops the installer by default — see [If the Installer Stops with Warnings](#if-the-installer-stops-with-warnings).
 
 For the full list of required network domains, see [Network and Port Requirements](/docs/accessanalyzer/2601/install/system/network).
-END HIDDEN -->
+
 ## If the Installer Stops with Warnings
 
 By default, the installer stops when a preflight warning is detected. In some cases you may know the warning is acceptable for your environment. Use `--accept-warnings` to allow installation to continue:
