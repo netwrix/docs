@@ -1,0 +1,10 @@
+{
+  "label": "Protection Policies",
+  "position": 95,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "protectionpolicies"
+  }
+}

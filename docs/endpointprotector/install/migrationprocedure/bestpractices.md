@@ -44,7 +44,7 @@ The following best practices come from the complete migration workflow and apply
 
 | # | Best Practice |
 |---|---|
-| 18 | Always reuse the same IP/FQDN for the new 2510 server. Changing it creates cascading certificate and EE trust failures. |
+| 18 | Always reuse the same IP/FQDN for the new 2510 server. Changing it creates cascading certificate and Enforced Encryption (EE) trust failures. |
 | 19 | Fill both DNS fields in network settings on 2510 — a known bug prevents saving with only one DNS entry. |
 | 20 | Disable client communications on the new server before restoring a backup to prevent partial-state registrations. |
 | 21 | After migration, monitor SIEM connectivity — it may require reconfiguration and Netwrix Support may need to provide a restoration script. |
@@ -58,29 +58,31 @@ The following best practices come from the complete migration workflow and apply
 | 24 | Always run a pilot deployment of 10–20 endpoints before mass client rollout. |
 | 25 | For Enforced Encryption (EE) environments, upload both Windows and macOS EE clients to the server before enabling client communications — the server requires both packages to be present regardless of which OS your endpoints use. |
 | 26 | Plan client updates for off-peak hours to minimize end-user disruption. |
+| 27 | If a Client Upgrade task is stuck, clean up all existing Client Upgrade tasks on the EPP Server and create a new task — stale tasks can block the upgrade queue. |
+| 28 | If a Client Upgrade task doesn't start or remains stuck on a Windows endpoint, reboot the endpoint before retrying — the EPP Client installer uses msiexec, which can be blocked by a pending restart or a previous failed installation. |
 
 ## Backup Version Discipline
 
 | # | Best Practice |
 |---|---|
-| 27 | Create the migration backup on **exactly version 5.9.4.2** — not 5.9.4.1, not 5.9.4.0. 2510 rejects any other version and may cause OS regression. |
-| 28 | Label every backup file with the server version and date in the filename (e.g., `epp-5942-backup-2026-04-21.bak`). Mislabelled backups are a leading cause of wrong-version import errors. |
-| 29 | You can restore a 2509 configuration backup onto a 2510 server — the OS remains 2510 and the result is functionally equivalent to a native 2510 deployment. The only consideration is disk sizing: verify that disk capacity is sufficient, as the 2509 base image uses a smaller default disk allocation than 2510. |
-| 30 | After applying the 5.9.4.2 cumulative patch, wait 24 hours for background DB tasks to complete before creating the migration backup. |
+| 29 | Create the migration backup on **exactly version 5.9.4.2** — not 5.9.4.1, not 5.9.4.0. 2510 rejects any other version and may cause OS regression. |
+| 30 | Label every backup file with the server version and date in the filename (e.g., `epp-5942-backup-2026-04-21.bak`). Mislabelled backups are a leading cause of wrong-version import errors. |
+| 31 | You can restore a 2509 configuration backup onto a 2510 server — the OS remains 2510 and the result is functionally equivalent to a native 2510 deployment. The only consideration is disk sizing: verify that disk capacity is sufficient, as the 2509 base image uses a smaller default disk allocation than 2510. |
+| 32 | After applying the 5.9.4.2 cumulative patch, wait 24 hours for background DB tasks to complete before creating the migration backup. |
 
 ## 3rd-Party Integrations
 
 | # | Best Practice |
 |---|---|
-| 31 | Treat all 3rd-party integrations (SMTP, AD/LDAP, SSO, SIEM, S3) as **not migrated** until manually verified post-migration. |
-| 32 | Document all integration credentials and settings before migration — have them ready for re-entry post-restore. |
-| 33 | After AD Sync completes, verify the imported object count matches expectations — silent partial imports can occur even when sync reports success. |
-| 34 | For SIEM integrations, contact Netwrix Support proactively after migration — restoration may require a specialized script. |
+| 33 | Treat all 3rd-party integrations (SMTP, AD/LDAP, SSO, SIEM, S3) as **not migrated** until manually verified post-migration. |
+| 34 | Document all integration credentials and settings before migration — have them ready for re-entry post-restore. |
+| 35 | After AD Sync completes, verify the imported object count matches expectations — silent partial imports can occur even when sync reports success. |
+| 36 | For SIEM integrations, contact Netwrix Support proactively after migration — restoration may require a specialized script. |
 
 ## Post-Migration Stability
 
 | # | Best Practice |
 |---|---|
-| 35 | Don't apply server patches immediately after backup restore — the import process can disrupt the patch pipeline. Allow 24 hours before patching. |
-| 36 | Monitor Audit Log Backup jobs after migration — they can enter an infinite running state. Verify job completion before scheduling recurring backups. |
-| 37 | For air-gapped / offline environments, obtain the Offline Activation Patch for 2510 before the maintenance window begins — request it from Netwrix Support in advance. |
+| 37 | Don't apply server patches immediately after backup restore — the import process can disrupt the patch pipeline. Allow 24 hours before patching. |
+| 38 | Monitor Audit Log Backup jobs after migration — they can enter an infinite running state. Verify job completion before scheduling recurring backups. |
+| 39 | For air-gapped / offline environments, obtain the Offline Activation Patch for 2510 before the maintenance window begins — request it from Netwrix Support in advance. |

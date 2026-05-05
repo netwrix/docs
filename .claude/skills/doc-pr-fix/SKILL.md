@@ -47,17 +47,27 @@ Example tasks for a "fix all issues" request:
 
 Only include tasks for what the writer actually asked for. The task list must reflect the writer's request exactly.
 
-Then post a PR comment mirroring your task list so the writer can see what you're doing:
+Then update the acknowledgment comment (already posted by the workflow) with your task list. The comment ID is in `$PROGRESS_COMMENT_ID`:
 
 ```bash
-PROGRESS_COMMENT_ID=$(gh pr comment "$PR_NUMBER" --body "$(cat <<'EOF'
+gh api repos/{owner}/{repo}/issues/comments/$PROGRESS_COMMENT_ID \
+  -X PATCH -f body="$(cat <<'EOF'
 **Fix in progress:**
 
 - [ ] Apply editorial suggestions in `path/to/file.md`
 - [ ] Verify changes
 - [ ] Commit and push
 EOF
-)" --format json | jq -r '.id' 2>/dev/null || echo "")
+)"
+```
+
+If `$PROGRESS_COMMENT_ID` is empty for any reason, fall back to creating a new comment:
+
+```bash
+if [ -z "${PROGRESS_COMMENT_ID:-}" ]; then
+  PROGRESS_COMMENT_ID=$(gh pr comment "$PR_NUMBER" --body "**Fix in progress:** ..." \
+    --format json | jq -r '.id' 2>/dev/null || echo "")
+fi
 ```
 
 As you complete each Todo task, also update the PR comment to check off the corresponding item:

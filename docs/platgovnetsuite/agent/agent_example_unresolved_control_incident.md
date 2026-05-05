@@ -6,10 +6,7 @@ sidebar_position: 70
 
 # Example: Unresolved Control Incident
 
-A modification has been made to the **Purchase Limit** and **Purchase Approval Limit** for Luigi
-Derossi from 0.00 to 5,000.00. The change has been saved and the control has been run from the
-Customization record. Since the change was made without prior approval, the change is logged and can
-be found under **Unresolved Control Incidents**.
+The **Purchase Limit** and **Purchase Approval Limit** for Luigi Derossi were modified from 0.00 to 5,000.00. The change was saved and the control was run from the Customization record. Because the change was made without prior approval, it is logged under **Unresolved Control Incidents**.
 
 To view unresolved control incidents:
 

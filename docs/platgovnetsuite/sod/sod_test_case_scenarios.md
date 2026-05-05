@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # SoD Test Case Scenarios
 
-Here are test case scenarios for SoD rules:
+The following are test case scenarios for SoD rules:
 
 - Assign an Admin Role to a User
 - Set Conflicting Global Permissions for a User
@@ -19,7 +19,7 @@ Here are test case scenarios for SoD rules:
 
 **SoD Rules**
 
-Admin Role should not be assigned without second level approval and monitoring.
+Admin Role shouldn't be assigned without second level approval and monitoring.
 
 **Process**
 
@@ -35,16 +35,13 @@ To assign an administrator role to a user:
 
 **Result**
 
-If the SoD rule is violated, the change made will not be allowed and will be blocked right away. A
-user should not be assigned an Administrator role unless there is a pre-approved change request. A
-prompt violation message will be seen by the user trying to make the change. The user will not be
-able to proceed with the save action.
+If the SoD rule is violated, the change is blocked immediately. A user can't be assigned an Administrator role without a pre-approved change request. The user trying to make the change sees a violation prompt and cannot proceed with saving.
 
 ## Set Conflicting Global Permissions for a User
 
 SoD Rules
 
-Users who have permission to create Sales Orders should not have the permission to Approve Sales
+Users who have permission to create Sales Orders shouldn't have the permission to Approve Sales
 orders.
 
 Process
@@ -71,8 +68,8 @@ If the SoD rule is violated, an SoD incident is logged and the user is prompted 
 
 **SoD Rules**
 
-Anyone who can create a journal should not be able to approve it. Users who have permission to
-create sales orders should not have the permission to approve sales orders.
+Anyone who can create a journal shouldn't be able to approve it. Users who have permission to
+create sales orders shouldn't have the permission to approve sales orders.
 
 **Process**
 
@@ -94,7 +91,7 @@ If the SoD rule is violated, an SoD incident is logged and the user is prompted 
 
 **SoD Rules**
 
-Anyone who can create a bill should not be able to approve it and should not reconcile.
+Anyone who can create a bill shouldn't be able to approve it and shouldn't reconcile.
 
 **Process**
 
@@ -143,7 +140,7 @@ To assign an administrator role:
 
 **Result**
 
-1. The change made is NOT blocked. There would be NO SoD Violation pop-up.
+1. The change made isn't blocked. There would be NO SoD Violation pop-up.
 2. Employee now has the Administrator role.
 3. The SoD Rule field in the Employee form is set to Cleared.
 4. A Change Log is created, and is listed under the Resolved SoD Incidents list on the **Access**
@@ -151,7 +148,7 @@ To assign an administrator role:
    Incidents**.
 5. The Change Log has the following details:
 
-    - Change Log is compliant (**Noncompliance** checkbox is NOT checked)
+    - Change Log is compliant (**Noncompliance** checkbox isn't checked)
     - **SoD Rule** is Administrator assignment requires approval
     - The employee given the new Administrator role is set in the **Affected Employee** field
     - The pre approved Change Request is set in the **Related Change Request** field
@@ -160,9 +157,9 @@ To assign an administrator role:
 
 **SoD Rules**
 
-Anyone who can create a journal should not be able to approve it.
+Anyone who can create a journal shouldn't be able to approve it.
 
-Anyone entering customer orders cannot approve or process it.
+Anyone entering customer orders can't approve or process it.
 
 **Process**
 

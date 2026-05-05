@@ -344,9 +344,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '11.2',
+        label: '11.2',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordpolicyenforcer/11.2.js',
+      },
+      {
         version: '11.1',
         label: '11.1',
-        isLatest: true,
+        isLatest: false,
+        hidden: true,
         sidebarFile: './sidebars/passwordpolicyenforcer/11.1.js',
       },
       {
@@ -364,7 +371,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/passwordpolicyenforcer/10.2.js',
       },
     ],
-    defaultVersion: '11.1',
+    defaultVersion: '11.2',
   },
   {
     id: 'passwordreset',
@@ -511,9 +518,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '26.03',
+        label: '26.03',
+        isLatest: true,
+        sidebarFile: './sidebars/privilegesecure/26.03.js',
+      },
+      {
         version: '25.12',
         label: '25.12',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/privilegesecure/25.12.js',
       },
       {
@@ -522,14 +535,8 @@ export const PRODUCTS = [
         isLatest: false,
         sidebarFile: './sidebars/privilegesecure/4.2.js',
       },
-      {
-        version: '4.1',
-        label: '4.1',
-        isLatest: false,
-        sidebarFile: './sidebars/privilegesecure/4.1.js',
-      },
     ],
-    defaultVersion: '25.12',
+    defaultVersion: '26.03',
   },
   {
     id: 'privilegesecurediscovery',

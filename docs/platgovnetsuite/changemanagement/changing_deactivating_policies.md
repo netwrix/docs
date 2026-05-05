@@ -6,9 +6,7 @@ sidebar_position: 40
 
 # Changing or Deactivating Policies
 
-Policy records determine the non compliance level of changes. Given that changes to these records
-has a direct impact on the compliance levels, it is important to document and approve any
-modifications. You can deactivate or modify policies with an open and approved change request.
+Policy records determine the noncompliance level of changes. Because changes to these records directly affect compliance levels, document and approve all modifications. You can deactivate or modify policies with an open and approved change request.
 
 This diagram shows the overall process of what happens when you update a policy:
 
@@ -31,7 +29,7 @@ To change an existing policy:
 
 ## Deactivate a Policy
 
-Policies cannot be deleted; however you can deactivate the policy.
+Policies can't be deleted; however you can deactivate the policy.
 
 To deactivate a policy:
 

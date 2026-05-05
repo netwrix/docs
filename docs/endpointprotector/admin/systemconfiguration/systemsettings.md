@@ -508,22 +508,11 @@ the System Administrators section.
 
 ## E-mail Server Settings
 
-![E-mail Server Settings](mailserversettings.webp)
-
-Manage Email server settings based on the email type you use - native or SMTP.
-
-:::note
-To enable this feature, you need an Internet connection.
+:::warning
+The E-mail Server Settings have been moved to a new section. Go to **System Configuration** > **[Mail Settings](/docs/endpointprotector/admin/systemconfiguration/mailsettings.md)** to configure email server settings and authentication.
 :::
 
-
-Manage email server settings based on your email type—native or SMTP, with support for TLS 1.3.
-
-![E-mail Server Settings](mailserversettingstwo.webp)
-
-![E-mail Server Settings](mailserversettingsthree.webp)
-
-### Proxy Server Settings
+## Proxy Server Settings
 
 Conﬁgure Proxy server settings by managing the following:
 
