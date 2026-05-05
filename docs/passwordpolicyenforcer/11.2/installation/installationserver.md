@@ -15,6 +15,8 @@ The Password Policy Enforcer (PPE) server installer includes the following compo
 The [introduction](/docs/passwordpolicyenforcer/11.2/index.md) has more information about these components, including their system requirements.
 :::
 
+## Manual Installation
+
 To manually install one or more server components:
 
 1. Run **Netwrix_PPE_Server_11.2.0.148_x64.msi**. The Setup wizard opens.
@@ -29,7 +31,7 @@ To manually install one or more server components:
 
    ![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup3.webp)
 
-4. Select one or more features to install, then click **Next**.
+4. Select one or more components to install, then click **Next**.
 
    ![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup4.webp)
 
@@ -39,7 +41,9 @@ To manually install one or more server components:
 
 6. Click **Finish** when installation is complete. If prompted to restart the computer, then restart before using the installed components.
 
-If you have many domain controllers, use a software deployment tool or [Group Policy](/docs/passwordpolicyenforcer/11.2/installation/installationgpm.md) to automate the deployment. You can also run msiexec directly to install from the command line. For example, to silently install only the PPS:
+## Automated Deployment
+
+If you have many domain controllers, use a software deployment tool or [Group Policy](/docs/passwordpolicyenforcer/11.2/installation/installationgpm.md) to automate the deployment. You can also run msiexec to install from the command line. For example, run this command with elevated permissions to silently install only the PPS component and immediately restart the computer:
 
  ```batch
 msiexec /i Netwrix_PPE_Server_11.2.0.148_x64.msi ADDLOCAL=FeatureServerPPE /q
@@ -50,3 +54,12 @@ The ADDLOCAL argument tells msiexec which components to install. `ADDLOCAL=Featu
 :::tip
 Add an exclusion for `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPE.DLL` to exclude PPE from antivirus or other security software. This is optional.
 :::
+
+## Uninstalling
+
+You can uninstall, repair or change the installed server components from the **Installed apps** page in Windows Settings, or the **Uninstall or change a program** page in Control Panel. You can also run msiexec to uninstall from the command line. For example, run this command with elevated permissions to silently uninstall all the PPE server components without restarting the computer:
+
+```batch
+msiexec /x Netwrix_PPE_Server_11.2.0.148_x64.msi /q /norestart
+```
+Use the REMOVE argument to remove individual components. For example, `REMOVE=FeaturePPEMailerServer`
