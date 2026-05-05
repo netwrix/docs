@@ -66,7 +66,7 @@ Create change requests in your production account so they aren't lost, maintain 
 
 ## Create the Deployment Record
 
-After you compare your environments, get the deployment record approved. When approved, deploy the customizations listed on the change request.
+After you compare your environments, submit the deployment record for approval. When approvers approve it, deploy the customizations listed on the change request.
 
 In your Production environment:
 

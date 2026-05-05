@@ -22,7 +22,7 @@ To set up Subsidiary Approvals:
 9. Select **Change Levels** on the **Change Controls** tab.
 10. On the **Subsidiary** tab, check **Require Subsidiary Process Approval**.
 11. Click **Attach** and add the policy to a subsidiary process.
-12. **Save** the policy. You are prompted to begin the approval process.
+12. **Save** the policy. A prompt appears to begin the approval process.
 13. Enter a **Name** and **Change Overview** for the **Policy Change Approval**.
 14. Click **In Progress** in the status bar.
 15. **Save** the Approval.

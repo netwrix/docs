@@ -10,7 +10,7 @@ To access the Open Non-Compliant Changes Report:
 
 1. Open **Strongpoint** > **Change Management Reports** > **Open NonCompliant Changes**
    The Non-Compliant Changes Report gives you a list of the [Change Logs](/docs/platgovnetsuite/changemanagement/using_change_logs.md). You
-   can filter the report or sort by the column heads.
+   can filter the report or sort by column headings.
 
     ![Non-Compliant Change Report](/images/platgovnetsuite/change_management/noncompliantreport.webp)
     ![NonCompliant Flags](/images/platgovnetsuite/change_management/noncompliant_flags.webp)
@@ -19,7 +19,7 @@ To access the Open Non-Compliant Changes Report:
 
     1. Create a New [Change Request](/docs/platgovnetsuite/changemanagement/creating_change_request.md) or open an existing one.
     2. Set it to **Pending Approval**.
-    3. After it is approved and complete, set the **Status** of the Change Request to **Complete**.
+    3. After approvers approve it and it is complete, set the **Status** of the Change Request to **Complete**.
     4. **Edit** the Change Log from the report.
     5. Enter the **Related Change Request**.
     6. Enter the **Related Process Issue** if applicable.

@@ -120,7 +120,7 @@ Reminders can be sent from the administrator's UAR List or from the Review list
 
 1. Open the UAR List from your menu bar or a shortcut.
 2. Select one or more reviews.
-3. Click **Send Reminders**. Reminders are sent immediately.
+3. Click **Send Reminders**. The system sends reminders immediately.
 4. Click **Accept** to exit.
 
 ## Review List

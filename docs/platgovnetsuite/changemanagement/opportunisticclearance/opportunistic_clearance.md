@@ -35,7 +35,7 @@ Deployment or library script changes must meet these rules to be automatically c
     - Main script has an Open Approved Change Request.
 - Change Request **Stage** meets the required [Policy Change Level](/docs/platgovnetsuite/changemanagement/setting_up_policies.md).
 
-If all rules are met, the Change Request is attached to the Change Log and the log is compliant. The
+If all rules are met, the system attaches the Change Request to the Change Log and the log is compliant. The
 **Resolution Description** in the Change Log is set to **Automatically cleared in existing Open
 Approved CR via related customization [**_Object Name_**(**_ScriptID_**)]**. The _Object Name_ and _ScriptID_ are inserted from the original Change Request. The deployment or library script
 doesn't need to be present in any Open Approved Change Request.
@@ -51,7 +51,7 @@ Field changes must meet these rules to be automatically cleared:
       Request.
 - Change Request **Stage** meets the required [Policy Change Level](/docs/platgovnetsuite/changemanagement/setting_up_policies.md).
 
-If all rules are met, the Change Request is attached to the Change Log and the log is compliant. The
+If all rules are met, the system attaches the Change Request to the Change Log and the log is compliant. The
 **Resolution Description** in the Change Log is set to **Automatically cleared in existing Open Approved CR via related customization [**_Field Name_**]**. The _Field Name_ is inserted from the
 original Change Request. The field doesn't need to be present in any Open Approved Change Request.
 [Example Field Change Use Case](/docs/platgovnetsuite/changemanagement/opportunisticclearance/example_field_changes_related_approved_change.md)
@@ -66,7 +66,7 @@ Record changes must meet these rules to be automatically cleared:
       parent has an Open Approved Change Request.
 - Change Request **Stage** meets the required [Policy Change Level](/docs/platgovnetsuite/changemanagement/setting_up_policies.md).
 
-If all rules are met, the Change Request is attached to the Change Log and the log is compliant. The
+If all rules are met, the system attaches the Change Request to the Change Log and the log is compliant. The
 **Resolution Description** in the Change Log is set to **Automatically cleared in existing Open Approved CR via related customization [**_Record Name_**]**. The _Record Name_ is inserted from
 the original Change Request. The record doesn't need to be present in any Open Approved Change
 Request. [Example Record Change Use Case](/docs/platgovnetsuite/changemanagement/opportunisticclearance/example_record_changes_related_approved_change.md)
@@ -81,7 +81,7 @@ Approved Workflow changes must meet these rules to be automatically cleared:
     - Related Workflow has an Open Approved Change Request.
 - Change Request **Stage** meets the required [Policy Change Level](/docs/platgovnetsuite/changemanagement/setting_up_policies.md).
 
-If all rules are met, the Change Request is attached to the Change Log and the log is compliant. The
+If all rules are met, the system attaches the Change Request to the Change Log and the log is compliant. The
 **Resolution Description** in the Change Log is set to **Automatically cleared in existing Open Approved CR via related customization [**_Search Name_**]**. The _Search Name_ is inserted
 from the original Change Request.The search doesn't need to be present in any Open Approved Change
 Request.[ Example Search Change Use Case](/docs/platgovnetsuite/changemanagement/opportunisticclearance/example_search_changes_related_approved_change.md)

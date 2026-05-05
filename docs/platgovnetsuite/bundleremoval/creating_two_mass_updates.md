@@ -52,7 +52,7 @@ The second mass update flags all the objects related to the bundle and sets the 
 |  | Parens | Filter | Description | Parens | And/Or |
 | --- | :---: | --- | --- | :---: | --- |
 | Filter 1 | | Inactive | Is false | | and |
-| Filter 2 | | Clean-Up Status | Is Not To Be Cleaned Up | | and |
+| Filter 2 | | Clean-Up Status | Isn't To Be Cleaned Up | | and |
 | Filter 3 | ( | Data Sources: Clean-Up Status | Is To Be Cleaned Up | | or |
 | Filter 4 | | Scripts: Clean-Up Status | Is To Be Cleaned Up | | or |
 | Filter 5 | | Forms: Clean-Up Status | Is To Be Cleaned Up | | or |

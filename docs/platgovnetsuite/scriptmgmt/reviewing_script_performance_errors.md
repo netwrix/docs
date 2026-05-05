@@ -36,7 +36,7 @@ Script error reporting requires the scripts to be in at least Audit mode.
 **Error Report**: Summary of all the available errors logged in the system for various scripts.
 Errors are summarized into types by excluding specific data such as line numbers, ids, and where
 detectable, execution data. The result is a manageable number of errors. Error data expires over
-time. This shouldn't be viewed as a continuing or reliable view of all errors over time.
+time. Don't use this as a continuing or reliable view of all errors over time.
 
 **Yesterday’s Script Errors**: Summary of all the available errors logged in the system for various
 scripts for the previous day.

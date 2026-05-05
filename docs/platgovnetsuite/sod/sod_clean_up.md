@@ -6,8 +6,7 @@ sidebar_position: 40
 
 # SoD Clean Up
 
-The new **SoD** > **SoD Clean Up** menu accesses the power of Saved Searches to enable easy,
-efficient clean up of your roles. Many NetSuite accounts are littered with unused roles and role
+The new **SoD** > **SoD Clean Up** menu accesses the power of Saved Searches to enable efficient clean up of your roles. Many NetSuite accounts are littered with unused roles and role
 assignments. Eliminating this clutter reduces the violations you encounter, and makes it easier to
 see exactly what is going on in your accounts.
 

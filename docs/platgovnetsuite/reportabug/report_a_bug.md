@@ -14,8 +14,7 @@ improvements, submit feedback through one of the following options:
 
 ## Contact Support
 
-You can contact Support with any feedback or issues. There are links within Platform Governance for
-NetSuite to make it easy to access the Netwrix support site at
+You can contact Support with any feedback or issues. Platform Governance for NetSuite includes links to access the Netwrix support site at
 [https://www.netwrix.com/support.html](https://www.netwrix.com/support.html)
 
 - Click **Submit a Support Case** from the
@@ -28,8 +27,7 @@ NetSuite to make it easy to access the Netwrix support site at
 
 ## Comment on a User Guide Topic
 
-There is a comment button at the end of each topic, enabling you to easily send feedback to Support
-on the topic.
+A comment button at the end of each topic lets you send feedback to Support on the topic.
 
 ![Click to leave feedback on the current topic.](/images/platgovnetsuite/troubleshooting/comment_button.webp)
 

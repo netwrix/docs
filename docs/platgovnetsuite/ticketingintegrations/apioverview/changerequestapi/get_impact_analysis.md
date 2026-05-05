@@ -37,8 +37,8 @@ script=customscript_flo_int_change_request_api&deploy=1&actionType=getImpactAnal
 
 ### Request Headers
 
-This API uses OAuth 1.0 type for its request headers and Token Based Authentication for user
-credentials. Header tokens should be encoded in HMAC SHA256.
+This API uses OAuth 1.0 for its request headers and Token Based Authentication for user
+credentials. Encode header tokens in HMAC SHA256.
 
 ### Format
 
@@ -158,7 +158,7 @@ the attached customizations don't have impact analysis data available.
 
 **"Uncan load Impact Analysis. External ID: xxxx"**: There is an error with the change request.
 
-Error messages are returned if any exceptions are encountered.
+The API returns error messages if any exceptions are encountered.
 
 ### Sample Response
 

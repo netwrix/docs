@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Categorizing Customizations
 
-Categorizing all customizations in your account is part of the bundle removal process. This is done with saved searches and CSV imports and exports, because mass updates don't have summary criteria for this type of search.
+Categorizing all customizations in your account is part of the bundle removal process. Use saved searches and CSV imports and exports, because mass updates don't have summary criteria for this type of search.
 
-Bundle components that don't have relationships outside the bundle, or customizations that aren't related to the bundle, must be flagged with CSV imports and exports.
+Flag bundle components that don't have relationships outside the bundle, or customizations that aren't related to the bundle, with CSV imports and exports.
 
 ## Create First Saved Search
 
@@ -19,7 +19,7 @@ Bundle components that don't have relationships outside the bundle, or customiza
 | | Filter | Description |
 | --- | --- | --- |
 | Filter 1 | Inactive | Is false |
-| Filter 2 | Clean-Up Status | Is Not To Be Cleaned Up |
+| Filter 2 | Clean-Up Status | Isn't To Be Cleaned Up |
 
 4. On the **Criteria** tab, click **Summary** and add the following:
 
@@ -87,7 +87,7 @@ Bundle components that don't have relationships outside the bundle, or customiza
 | --- | --- | --- |
 | Filter 1 | Inactive | Is false |
 | Filter 2 | Clean-Up Status
-   | Is Not To Be Cleaned Up |
+   | Isn't To Be Cleaned Up |
 
 4. On the **Criteria** tab, click **Summary** and add the following:
 

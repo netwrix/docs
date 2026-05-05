@@ -44,7 +44,7 @@ to use that and reference the external ticket in the Change Request.
 
 ### Plan with a Change Request
 
-Change Requests are used to plan and track changes to the system.
+Use Change Requests to plan and track changes to the system.
 
 They allow for common actions associated with change requests including:
 

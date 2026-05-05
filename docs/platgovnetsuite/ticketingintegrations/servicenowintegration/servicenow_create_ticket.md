@@ -52,11 +52,11 @@ configured before use.
 
     ![servicenow_impact_analysis_ns](/images/platgovnetsuite/integrations/servicenow_impact_analysis_ns.webp)
 
-13. Click **ERD** in the menu bar. The list is populated with the customizations added to the
+13. Click **ERD** in the menu bar. The list populates with the customizations added to the
     ticket. Select a customization to view the ERDs as needed.
 
     ![servicenow_erd](/images/platgovnetsuite/integrations/servicenow_erd.webp)
 
-14. Click **Submit**. The list of change requests is displayed.
+14. Click **Submit**. The list of change requests appears.
 15. After the change request is moved to the Authorize state, click **Push Deployment Record** in the
     menu bar to complete the change request.

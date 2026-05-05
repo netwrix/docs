@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Pending Role Assignments
 
-This view makes it easy to identify roles without owners, and facilitates adding owners. Access your
+This view helps you identify roles without owners and add owners. Access your
 **Pending Role Assignments** from your menu bar. All changes are captured in the
 [UAR History](/docs/platgovnetsuite/uar/adminoverview/uar_history.md).
 
@@ -45,7 +45,7 @@ Use **Clear** to reset the Filters.
 You can assign owners on the **Pending Role Assignments List**.
 
 1. Open **Pending Role Assignments** from your menu bar.
-2. Select an existing role. The dropdown lists for the ownership roles are displayed.
+2. Select an existing role. The dropdown lists for the ownership roles appear.
 3. Select users from the dropdowns for the ownership roles.
 4. Click **Save** when your changes are complete.
 

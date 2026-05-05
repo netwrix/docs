@@ -68,7 +68,7 @@ The following are the custom permissions needed for each role.
 #### Manage SoD
 
 :::note
-On the Custom Role, you must check **Do Not Restrict Employee Fields**.
+On the Custom Role, you must check **Don't Restrict Employee Fields**.
 :::
 
 > [Strongpoint License](/docs/platgovnetsuite/installation/license_manager.md) +

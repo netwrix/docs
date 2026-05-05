@@ -37,7 +37,7 @@ have your account both fully documented and optimized.
 Use the end to end documentation of custom objects and the Clean Up Tools to:
 
 - Identify unused fields, searches, and other custom objects.
-- Quickly identify dependencies to reduce the risk of breaking customizations in your account (for example, see if a search is being used in a script or workflow).
+- Identify dependencies to reduce the risk of breaking customizations in your account (for example, see if a search is being used in a script or workflow).
 - Use Change Requests to keep your changes organized and capture approvals.
 
 ### Script Management
@@ -55,7 +55,7 @@ can fix to improve your account. With the Critical Script Analysis methodology y
 Platform Governance for NetSuite is the only application for NetSuite that enables end to end change
 management and compliance. This process can be achieved effectively in only 5 weeks after install.
 
-Platform Governance for NetSuite enables you to:
+With Platform Governance for NetSuite, you can:
 
 - Track all changes to custom objects in NetSuite.
 - Automatically be alerted to non-compliant changes.
@@ -72,7 +72,7 @@ Enterprise Compliance.
 
 ### Environment Comparison
 
-The Environment Management Module enables NetSuite customers and consultants to identify differences between any two NetSuite accounts that have Platform Governance for NetSuite Intelligent Change Management installed. Because both accounts have Platform Governance for NetSuite documentation in place, the tool can compare them quickly. It is primarily used in four scenarios:
+The Environment Management Module enables NetSuite customers and consultants to identify differences between any two NetSuite accounts that have Platform Governance for NetSuite Intelligent Change Management installed. Because both accounts have Platform Governance for NetSuite documentation in place, the tool can compare them. It is primarily used in four scenarios:
 
 1. Sandbox Refreshes
 2. Migrating Customizations Between Developer and Sandbox Accounts

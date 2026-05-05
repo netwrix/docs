@@ -32,7 +32,7 @@ Netwrix University offers tutorials for Agent Financial Controls.
 
 | Category                     | Description                                                            |
 | ---------------------------- | ---------------------------------------------------------------------- |
-| Monitor                      | Using customized saved searches driven agent control tool.             |
+| Monitor                      | Uses customized saved searches as the agent control tool.             |
 | Authorizations and Approvals | Using change management                                                |
 | Blocking Controls            | Using restrictions to protect critical data at field or record levels. |
 

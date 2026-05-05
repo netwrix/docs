@@ -57,7 +57,7 @@ request in your sandbox account.
           of the script file name. For example, **26** shows everything beginning with **26**.
         - Use multiple filters to further refine your search. For example, **Name** starting with
           **a** and **Type** of **List** show all **List** customizations starting with **A**. After
-          the customizations are displayed:
+          the customizations appear:
         - Hover over **Details** to see specifics of the customization.
         - Click the box(es) to select one or more customizations. Check in the **Name** header to
           toggle **Selecting** or **Deselecting All**.
@@ -77,12 +77,12 @@ request in your sandbox account.
       upload their Sandbox development file. The Change Request populates the scope with the
       existing customizations and adds new ones to proposed customizations.
       Click **Choose File** and navigate to your SDF zipped file.
-    - **Do Not ReSpider Automatically**: when unchecked, an Automatic ReSpider occurs when the
+    - **Don't ReSpider Automatically**: when unchecked, an Automatic ReSpider occurs when the
       Change Request status is set to **Completed**.
       The ReSpider ensures that all change logs are complete before changing the status. If
       automatic ReSpidering is turned off, there is a risk of changes being marked as non-compliant
       if the change logs aren't complete when the user changes the status to **Completed**. The
-      default for the **Do Not ReSpider Automatically** is set on the
+      default for the **Don't ReSpider Automatically** is set on the
       [Configuration and Stats Change Management](/docs/platgovnetsuite/installation/installation_settings_report.md)
       tab.
     - **Proposed Customizations**: Use this field when you are adding customizations that don't yet
@@ -123,7 +123,7 @@ request in your sandbox account.
 
         ![change_request_new_saved](/images/platgovnetsuite/change_management/change_request_new_saved.webp)
 
-    4. **Impact Analysis** is automatically run. The results are shown on the **Impact Analysis**
+    4. The system automatically runs **Impact Analysis**. The results appear on the **Impact Analysis**
        tab. In addition to all of the direct dependencies, indirect dependencies are also considered
        to determine the change level for each customization. If there are multiple change levels,
        the most stringent one is applied.
@@ -141,7 +141,7 @@ request in your sandbox account.
         - Can't Be Safely Deleted or Modified
         - Inactive Customizations (Already Deleted)
 
-    5. The **ERD** tab opens the visual Entity Relationship Diagram where you can easily review the
+    5. The **ERD** tab opens the visual Entity Relationship Diagram where you can review the
        dependencies for the Customizations affected by the change request.
     6. **Related Change Record** information results are shown on the **Related Change Records**
        tab:
@@ -154,7 +154,7 @@ request in your sandbox account.
         - External Link
         - Parent Change Request
 
-5. Click **Pending Approval** in the status bar when you finish the Change Request. A confirmation prompt appears. After you confirm, Approval Notifications are sent to the approvers.
+5. Click **Pending Approval** in the status bar when you finish the Change Request. A confirmation prompt appears. After you confirm, the system sends Approval Notifications to the approvers.
 
     ![change_request_new_pendapprove](/images/platgovnetsuite/change_management/change_request_new_pendapprove.webp)
 

@@ -81,10 +81,10 @@ From the customization record:
   it here.
 - **Risk/Requirement**: Assign or create a new Control Process and Risk Requirement. For example,
   **1259 Purchase Order Controls**.
-- **Control Error/Warning**: displays warnings or errors.
+- **Control Error/Warning**: Displays warnings or errors.
 - **Cross Match Control**, **Cross Match Field** and **Cross Match Operator** can be set to
   effectively perform a double join to filter your data and eliminate false positives. For example,
-  a script to create an invoice from the user interface is saved to be run as administrator. A user
+  a script to create an invoice from the user interface runs as administrator. A user
   creates the invoice from the interface as part of their work flow. Running a search for
   administrator-touched transactions causes false positives as the user isn't an administrator.
   Using cross match, the first Saved Search is for all transactions by an administrator. The second
@@ -97,5 +97,5 @@ From the customization record:
 
     ![Designating the customization as a control](/images/platgovnetsuite/financial_controls/agent_example4.webp)
 
-The control is triggered as configured and all instances are logged under **Unresolved Control
+The system triggers the control as configured and logs all instances under **Unresolved Control
 Incidents**, **Resolved Control Incidents** or **Pre-approved Control Incidents**.

@@ -28,6 +28,6 @@ To find the relationships that only exist within the bundle:
 
 1. Copy the name of a record.
 2. Go to the opposite scenario and do a search with the pasted name.
-3. This shows the bundle components in use so you know what is removed when the bundle is gone. These are the records that need to be replicated.
+3. This shows the bundle components in use so you know what the bundle removes when you delete it. Replicate these records.
 
 **Next Step:** [Final Tasks](/docs/platgovnetsuite/bundleremoval/final_tasks.md)

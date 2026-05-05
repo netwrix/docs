@@ -49,14 +49,14 @@ To do this, in your **production** account:
     ![scope-3](/images/platgovnetsuite/change_management/scope-3.webp)
 
 4. **Save** the Change Request.
-5. In the upper right hand corner, see the **Change Control Level Required** and choose either:
+5. In the upper-right corner, see the **Change Control Level Required** and choose either:
 
 - **Log Only**: you are planning on changing only Saved Searches that have no dependencies, so they
   are safe to change.
 - **Change Request:** you are planning on changing objects that require approval to change.
 
 6. Click **Impact Analysis**. This shows how objects are connected to other things.
-7. Scroll down to the bottom of the page and click the **Impact Analysis** tab. This shows which customization records can or can't be safely modified, as well as customizations that are inactive. You see a list of the customization records that have been included, and warnings for impacted customization records that need to be investigated before you make a change.
+7. Click the **Impact Analysis** tab. This shows which customization records can or can't be safely modified, as well as customizations that are inactive. You see a list of the customization records that have been included, and warnings for impacted customization records that need to be investigated before you make a change.
 
     ![impactanalysissubtab](/images/platgovnetsuite/change_management/impactanalysissubtab.webp)
 

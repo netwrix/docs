@@ -33,7 +33,7 @@ The walkthrough demonstrates these steps:
 
 4. Enter your information for the **Ticket**:
 
-    - **Requester**: start typing the name of the requester. Matching names are displayed. Click **+
+    - **Requester**: start typing the name of the requester. Matching names appear. Click **+
       Add user** to add a new user.
     - **Select Assignee**: assignees are added as users or groups.
         - Click **take it** to assign it to yourself.

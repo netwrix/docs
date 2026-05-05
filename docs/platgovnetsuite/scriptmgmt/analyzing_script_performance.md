@@ -10,7 +10,7 @@ For Script Monitoring to function effectively:
 
 - Scripts must be deployed with a log status that supports Audit tag logging — DEBUG or AUDIT, for example
 - Script must be unlocked.
-- Log level AUDIT is preferred since it is more efficient. DEBUG isn't required for released code.
+- AUDIT log level is preferred because it is more efficient. DEBUG isn't required for released code.
   It can be left in place on locked but not hidden code to permit some monitoring to occur.
 
 Scripts that aren't in AUDIT mode can be found using the search **Strongpoint** > **Script
@@ -31,7 +31,7 @@ Platform Governance for NetSuite has an Archive folder to store the original ver
 folder must be set on the mass update when adding audit tags.
 
 Audit tags can't be automatically added for Client Scripts due to the NetSuite Client Script
-execution flow. They can be manually added, as described in this topic. These procedures only apply
+execution flow. You can manually add them, as described in this topic. These procedures only apply
 to unlocked scripts.
 
 1. Open **Documents** > **Files** > **File Cabinet**
@@ -52,9 +52,9 @@ to unlocked scripts.
     ![Add Audit Tag Mass Update](/images/platgovnetsuite/script_management/audittag.webp)
 
 9. Click **Preview** to review the actions. Click **Perform Update** to add the Start tags.
-10. End tags are used to measure script average run time. In many cases, there is no systematic way
-    of identifying where the end of the script is. The recommended approach is to use the script
-    metrics, such as **# of daily executions** to prioritize which scripts you want to measure the
+10. End tags measure script average run time. In many cases, there is no systematic way
+    of identifying where the end of the script is. Use the script
+    metrics, such as **# of daily executions**, to prioritize which scripts you want to measure the
     average run time. Then add the end tag manually to the end of the script.
 
 ## Adding Audit Tags Manually
@@ -94,7 +94,7 @@ for SuiteScript 2.0 syntax details.
 
 ## Validate the Tags
 
-The audit tag information is updated in the documentation after the Script Parser runs (daily). You
+The Script Parser updates the audit tag information in the documentation after it runs (daily). You
 can validate the audit tags are in place by:
 
 - Running **Strongpoint** > **Script Management** > **Scripts with No Audit Tags**

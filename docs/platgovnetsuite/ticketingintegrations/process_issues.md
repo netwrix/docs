@@ -28,7 +28,7 @@ continue to use that and reference the external ticket in the Change Request.
 2. Select a **Custom Form** or use the default **Process Issue Form**.
 3. Assign a **Number** for the Process Issue. This is any alphanumeric code you use to identify this
    process issue.
-   A Unique **ID** is generated after the Process Issue is created.
+   The system generates a unique **ID** after you create the Process Issue.
 4. Enter a meaningful **Name** for the Process Issue.
 5. Select a **Parent Issue** if applicable. This field is used to group issues. You can either type
    part of the name and press Tab, or use the dropdown icon and select from a list.
@@ -63,7 +63,7 @@ continue to use that and reference the external ticket in the Change Request.
 11. Add one or more **Customizations** affected by the issue. Platform Governance for NetSuite
     analyzes the customization records, attaches them to appropriate policies and determines the
     Change Control Level required.
-12. Check **Do Not ReSpider Automatically** if you prefer not to automatically run the spider when
+12. Check **Don't ReSpider Automatically** if you prefer not to automatically run the spider when
     the **Status** is set to **Closed**.
 13. Click **Add Proposed Customization** to create a customization for this Process Issue. Select
     the **Type** and complete the **Script ID** or **Name**, depending on the **Type**. Click **+Add
@@ -81,7 +81,7 @@ continue to use that and reference the external ticket in the Change Request.
       reviewed.
     - **Closed**: either the process issue is closed with no action, or the same criteria as
       **Completed As A Process Issue**. The Spider is automatically run when the **Status** is set
-      to **Closed** unless **Do Not ReSpider Automatically** is checked.
+      to **Closed** unless **Don't ReSpider Automatically** is checked.
 
 15. Select one or more additional **Approvers**. Mandated approvers are set by the appropriate
     policy.

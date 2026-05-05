@@ -20,7 +20,7 @@ the links in the email, or log in to NetSuite and open [User Access Review](/doc
 access the dashboard.
 
 1. Open **User Access Review** from NetSuite.
-2. Click **UAR Owner** to log in. Your owner dashboard is displayed.
+2. Click **UAR Owner** to log in. Your owner dashboard opens.
 
 The following is an example owner dashboard showing new assignments.
 

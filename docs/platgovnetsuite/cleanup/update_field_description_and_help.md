@@ -6,10 +6,10 @@ sidebar_position: 40
 
 # Update Field Description and Help
 
-Documentation only changes are always compliant. If
-[Opportunistic Clearance](/docs/platgovnetsuite/changemanagement/opportunisticclearance/opportunistic_clearance.md) is on, this object change
-is reported in the Change Log as **Documentation Change** for the **Change Type** and the
-**Resolution** set to _Automatically cleared documentation change. Only Help or Description
+Documentation-only changes are always compliant. If
+[Opportunistic Clearance](/docs/platgovnetsuite/changemanagement/opportunisticclearance/opportunistic_clearance.md) is on, the system reports this object change
+in the Change Log as **Documentation Change** for the **Change Type** and sets the
+**Resolution** to _Automatically cleared documentation change. Only Help or Description
 changed_. The Change Log is closed.
 
 1.  Open **Netwrix** > **Clean Up** > **Update Field Description and Help**

@@ -6,14 +6,13 @@ sidebar_position: 20
 
 # Using the ERD
 
-The Entity Relationship Diagram (ERD) is a visual representation of your Customizations where you can review relationships and dependencies. The ERD is easily accessible:
+The Entity Relationship Diagram (ERD) is a visual representation of your Customizations where you can review relationships and dependencies. Access the ERD from:
 
-- **Strongpoint** > **Customizations** > **ERD View**
-- ERD Search, refer to [Enabling the ERD Search on the Dashboard](#enabling-the-erdsearch-on-the-dashboard)
+- **Strongpoint** > **Customizations** > **ERD View**
+- ERD Search, refer to [Enabling the ERD Search on the Dashboard](#enabling-the-erd-search-on-the-dashboard)
 - Tabs on various pages, for example, Customization record, Change Requests, and Process Issues.
 
-The ERD provides a way to look at customizations by record type. A left click the customization
-name brings up the customization record.
+The ERD provides a way to look at customizations by record type. Left-clicking the customization name opens the customization record.
 
 1. Open **Strongpoint**> **Customizations** > **ERD View**
 2. Select a **Record Type** from the list.
@@ -27,7 +26,7 @@ name brings up the customization record.
     - **Hide all fields without custom relationships**: check this box to hide all unused fields
       that don't have custom relationships from the results.
     - **Hide Unused fields**: check this box to hide all unused fields from the results, based on
-      the DLU.
+      the Date Last Used (DLU).
 
 4. Click **Show Record ERD**.
 
@@ -41,7 +40,7 @@ name brings up the customization record.
 
 6. Click **Open Record** on any Customization to open the actual record.
 
-## Enabling the ERD Search on the Dashboard
+## Enabling the ERD Search on the Dashboard
 
 To enable the ERD Search:
 

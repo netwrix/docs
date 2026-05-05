@@ -13,7 +13,7 @@ Netwrix Strongpoint for Netsuite 7.3 Release Notes
 April 15, 2024
 
 - Improved evaluation for handling customizations in Change Logs that are included in normal bundles
-  to ensure they are set to Compliant. Managed and 3rd party Bundle handling is unchanged.
+  to ensure the system sets them to Compliant. Managed and 3rd party Bundle handling is unchanged.
 - Improved handling of Strongpoint Bundle Change Level Processing, ensuring consistency between
   Change Types.
 - Added a legend to the Environment Compare results.
@@ -27,9 +27,9 @@ March 18, 2024
 - Improved handling of fields that are Platform changes not user changes.
 - Improved handling of changes to standard NetSuite roles:
 
-    - Changes to Standard role permissions (internal id < 1000) are flagged as platform changes.
-    - Changes to Custom role permissions are evaluated based on the policy.
-    - User Role assignment changes are evaluated based on policy.
+    - The system flags changes to Standard role permissions (internal id < 1000) as platform changes.
+    - The system evaluates changes to Custom role permissions based on the policy.
+    - The system evaluates User Role assignment changes based on policy.
 
 - Streamlined searching for changes for Chart of Accounts.
 - Increased flexibility for routing Agent Change Request approvals to make the process-based
@@ -56,8 +56,8 @@ February 26, 2024
 
 New: **Formula Update in Searches**
 
-The **Strongpoint Open Noncompliant Changes**, **Strongpoint What Changed**, and **Open Noncompliant
-Changes - Audit** searches criteria has been updated.
+Netwrix updated the search criteria for **Strongpoint Open Noncompliant Changes**, **Strongpoint What Changed**, and **Open Noncompliant
+Changes - Audit**.
 
 As part of an ongoing effort to minimize non-material change logs and save time on reporting, Netwrix reviewed and updated some of the filters in the non-compliant and what-changed compliance reports.
 
@@ -71,10 +71,9 @@ Atlassian discontinued support for the Jira On-Prem solution. Jira Cloud is the 
 
 **Resolved Issues**
 
-These issues have been resolved in this release:
+This release resolves the following issues:
 
-- _New Fields not detected by scheduled spiders_. A usage limit error was fixed so the new fields
-  are now documented.
+- _New Fields not detected by scheduled spiders_. Netwrix fixed a usage limit error so the system now documents the new fields.
 - _Change log for Role changes are showing as Couldn't Be Determined_. An error was occurring if
   the access history was blank for an employee.
 

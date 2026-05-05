@@ -39,7 +39,7 @@ The main section of the Customization Record summarizes the key information for 
 - **Scriptid**: Displays the record’s Script ID.
 - **Related Objects**: Summarizes the related object dependencies by object type. Click links to
   open detailed view. For example, there could be multiple scripts and workflows that depend on this
-  object. Click links to open detailed view as shown.
+  object. Click the links to open the detailed view.
 
 ![cust_ui_related_objects](/images/platgovnetsuite/customizations/cust_ui_related_objects.webp)
 

@@ -10,16 +10,14 @@ The Integration API provides external access to Customization and Change Request
 applications can integrate via these APIs.
 
 - **Customizations**
-- **Change Requests** can be created, updated, retrieved, and deleted.
-- **ERD** and **Impact Analysis** tools are available.
+- **Change Requests**: create, update, retrieve, and delete.
+- **ERD** and **Impact Analysis** tools are available.
 
-- [Customizations API](/docs/platgovnetsuite/ticketingintegrations/apioverview/customizationsapi/customizations_api.md) can be retrieved from your NetSuite account and can be
-  added and removed from your Change Requests. The following is the Customization API command:
+- [Customizations API](/docs/platgovnetsuite/ticketingintegrations/apioverview/customizationsapi/customizations_api.md): retrieve customizations from your NetSuite account and add or remove them from your Change Requests. The following is the Customization API command:
 
     - [Get Customizations](/docs/platgovnetsuite/ticketingintegrations/apioverview/customizationsapi/get_customizations.md): Returns customizations based on your filters.
 
-- [Change Request API](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/change_request_api.md) can be created, updated, retrieved, and deleted. The
-  ERD and Impact Analysis tools are available. The following are the Change Request API commands:
+- [Change Request API](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/change_request_api.md): create, update, retrieve, and delete change requests. The ERD and Impact Analysis tools are available. The following are the Change Request API commands:
 
     - [Get Change Request](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/get_change_request.md): Returns the change request associated with an
       External ID.
@@ -27,7 +25,7 @@ applications can integrate via these APIs.
       customization and/or proposed customizations.
     - [Delete Customizations in a Change Request](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/delete_customizations_change_request.md): removes
       customizations and/or proposed customizations.
-    - [Get ERD](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/get_erd.md): returns ERD URL links for each customization.
+    - [Get ERD](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/get_erd.md): returns ERD URL links for each customization.
     - [Get Impact Analysis](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/get_impact_analysis.md): returns the impact analysis data for each
       customization. Customizations are categorized as _Safe to Modify_, _Not Safe to Modify_, and
       _Inactive_.
@@ -36,8 +34,8 @@ applications can integrate via these APIs.
 
 ## Postman Links
 
-Both the Customizations and Change Requests API documentation are published in
-[Postman](http://postman.com/). You can try out the API commands in the Postman interface.
+Both the Customizations and Change Requests API documentation are published in
+[Postman](http://postman.com/). You can try out the API commands in the Postman interface.
 
 - [Customizations](https://documenter.getpostman.com/view/30883336/2s9YeABubu) API
 - [Change Requests](https://documenter.getpostman.com/view/30883336/2s9YeABubr) API

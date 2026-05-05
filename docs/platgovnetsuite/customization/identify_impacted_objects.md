@@ -48,8 +48,7 @@ helps if you don't have the exact name.
 
 ## ERD View
 
-The ERD provides a way to look at customizations by record type. A left click the customization
-name brings up the customization record.
+The Entity Relationship Diagram (ERD) provides a way to look at customizations by record type. Left-clicking the customization name opens the customization record.
 
 1. Open **Strongpoint**> **Customizations** > **ERD View**
 2. Select a **Record Type** from the list.
@@ -63,7 +62,7 @@ name brings up the customization record.
     - **Hide all fields without custom relationships**: check this box to hide all unused fields
       that don't have custom relationships from the results.
     - **Hide Unused fields**: check this box to hide all unused fields from the results, based on
-      the DLU.
+      the Date Last Used (DLU).
 
 4. Click **Show Record ERD**.
 

@@ -7,7 +7,7 @@ sidebar_position: 20
 # Additional Reviewer Membership Reviews
 
 This type of review is used to keep your roles up to date. When you click a membership review,
-the list of users with the role is displayed. The links open the appropriate record in NetSuite, for
+the review displays the list of users with the role. The links open the appropriate record in NetSuite, for
 example the **User** link opens the **User** record.
 
 As an **Additional Reviewer**, you can only review Users in the Role Membership that are assigned to
@@ -41,7 +41,7 @@ This display provides a global view of the user's access.
 - **User**: the person assigned the role.
 - **Global Permissions**: any global permissions assigned to this user.
 - **Other Roles**: all roles assigned to this user.
-- **SoD Violations**: any existing SoD violations for this user. Only applicable if your
+- **SoD Violations**: any existing Segregation of Duties (SoD) violations for this user. Only applicable if your
   organization uses SoD.
 - **Status**: the current review status. Can be **Not Started**, **Completed**, **Change Request**,
   **CR Approved**, **CR Rejected**, **CR Cancelled**, **CR Complete**, or **Additional Reviewer**.
@@ -53,7 +53,7 @@ This display provides a global view of the user's access.
    ![Reviewing user roles](/images/platgovnetsuite/uar/uar_additional_reviewer/additional_user_reviewer_review.webp)
 2. Review their Global Permissions, Other Roles, and SoD Violations. The links all open the specific
    records for further review. If the user should retain the role, click **Mark Completed**. The
-   status is updated. You can't undo this action.
+   status updates. You can't undo this action.
    ![Mark your review complete](/images/platgovnetsuite/uar/uar_additional_reviewer/additional_user_reviewer_complete.webp)
 3. Click **Submit** or make additional changes.
 
@@ -66,17 +66,17 @@ To remove one or more users from the role:
    records for further review. If the user should be removed from the role, click **Remove Role
    Membership**. The user line is highlighted. Click **Undo** to cancel changes that have not be
    submitted.
-3. Click **Submit** or make additional changes. A Change Request is generated for each user removed
-   from the role. Status is changed to either **Change Request** and the **Change Request
+3. Click **Submit** or make additional changes. The system generates a Change Request for each user removed
+   from the role. The status changes to either **Change Request** and the **Change Request
    ID** added, or **Waiting for CR** if there is an existing change request in progress as part of
    another review. Click the **Change Request ID** to open the Change Request.
    ![Remove a role](/images/platgovnetsuite/uar/uar_additional_reviewer/additional_user_review_remove.webp)
    If the Change Request is rejected (**CR Rejected status**) or canceled (**CR Cancelled**), the
-   user row is returned to a pending state and can then be reviewed again.
+   user row returns to a pending state and becomes available for review again.
    ![Remove a user from a role](/images/platgovnetsuite/uar/uar_owner/remove_user_from_role.webp)
    If
    the Change Request is rejected (**CR Rejected status**) or canceled (**CR Cancelled**), the user
-   row is returned to a pending state and can then be reviewed again.
+   row returns to a pending state and becomes available for review again.
 
 ## Review Notes
 

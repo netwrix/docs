@@ -28,12 +28,12 @@ Change Managers and System Administrators quickly realize the integration benefi
 
 ## Technical Considerations
 
-The following should be considered before deploying the ServiceNow integration:
+Review the following before deploying the ServiceNow integration:
 
-1. The integration is a client script that can be enabled or disabled by form, user, or role. It has
+1. The integration is a client script that you can enable or disable by form, user, or role. It has
    high order value to ensure it is the last thing to run and doesn't interrupt any other process.
 2. All functions are self-executing, complying with ServiceNow's best practices.
-3. No DOM manipulation or global scripts are deployed.
+3. The integration deploys no DOM manipulation or global scripts.
 4. No external libraries are needed. It is plain JavaScript.
 5. No direct or custom database access is required.
 6. NetSuite connections use the REST ServiceNow interface, executing on the client side to prevent
@@ -45,7 +45,7 @@ The following should be considered before deploying the ServiceNow integration:
 
 ## Deployment Process
 
-This process is performed by the ServiceNow Administrator.
+The ServiceNow Administrator performs this process.
 
 1. Create a ServiceNow ticket for deployment.
 2. Click **Select Account** to connect to Platform Governance for NetSuite.
@@ -54,6 +54,5 @@ This process is performed by the ServiceNow Administrator.
     - Parsed from text with script identifiers.
     - Added as customizations using the **Connector** tab.
 
-4. Click **Push Deployment Record** when complete. A Change Request is created using the changes in
-   the ServiceNow ticket.
+4. Click **Push Deployment Record** when complete. Platform Governance for NetSuite creates a Change Request using the changes in the ServiceNow ticket.
 5. Start a **Respider** to create the Change Log and documents.

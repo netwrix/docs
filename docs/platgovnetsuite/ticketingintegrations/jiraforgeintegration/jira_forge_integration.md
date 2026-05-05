@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Jira Forge
 
-Platform Governance for NetSuite's Change Management capabilities are integrated with Jira, one of the most popular issue ticketing and development project management systems. Customers can look for and include NetSuite Customizations, assess impacts for requested changes, and push Jira change tickets into a Change Request. This enables easy management of changes, seamless tracking of compliant changes, and automating the reconciliation of change logs during an audit.
+Platform Governance for NetSuite's Change Management capabilities are integrated with Jira, one of the most popular issue ticketing and development project management systems. Customers can look for and include NetSuite Customizations, assess impacts for requested changes, and push Jira change tickets into a Change Request. This enables streamlined management of changes, seamless tracking of compliant changes, and automated reconciliation of change logs during an audit.
 
 ## Integration Overview
 
@@ -39,9 +39,9 @@ Change Managers and System Administrators quickly realize the integration benefi
 
 Review these considerations before deploying the Jira integration:
 
-1. Platform Governance for NetSuite integration is implemented as a Forge app. It can be enabled or disabled based on configuration and runs independently of other scripts, ensuring it doesn't interfere with existing processes.
+1. Platform Governance for NetSuite integration is implemented as a Forge app. You can enable or disable it based on configuration. It runs independently of other scripts, ensuring it doesn't interfere with existing processes.
 2. All functions are self-executing, complying with Atlassian Jira Forge's best practices.
-3. No DOM manipulation or global scripts are deployed.
+3. The app deploys no DOM manipulation or global scripts.
 4. No external libraries are needed. It is plain JavaScript.
 5. No direct or custom database access is required. Data resides either in the Atlassian instance or the connected NetSuite account.
 6. NetSuite connections use the REST Atlassian Jira Forge's interface, executing on the client side to prevent server load.

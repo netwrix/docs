@@ -7,7 +7,7 @@ sidebar_position: 30
 # Using Agent Lookback
 
 _Agent Lookback_ gives **Enterprise** license customers the capability to run an agent control from
-a specified past date through the current date. The control is run in single day batches, simulating
+a specified past date through the current date. Agent Lookback runs the control in single day batches, simulating
 a daily run.
 
 Access Agent Lookback from the Customization record for the control.
@@ -25,7 +25,7 @@ Access Agent Lookback from the Customization record for the control.
 7. Add the details and click **Set**.
 8. Click **Add** .
 9. Click **Save**.
-10. The **Lookback Start Date** and **Lookback Next Date** are populated on your Customization record.
+10. The system populates the **Lookback Start Date** and **Lookback Next Date** on your Customization record.
 11. **Save** the customization record. The Lookback agent runs single-day batches for the specified dates.
 
 ### Lookback Run
@@ -49,8 +49,8 @@ Controls can't be grouped by run.
 - **End Date** is the ending date for the lookback run. Future dates aren't allowed.
 - **Next Date** is a reference field displaying the last lookup date of the lookback run.
 
-The Lookback run checks for existing Control logs to avoid log duplication. The Control record,
-Agent Incident Data, Agent Incident Employee and Change Data table are all used as criteria to
+The Lookback run checks for existing Control logs to avoid log duplication. The system uses the Control record,
+Agent Incident Data, Agent Incident Employee and Change Data table as criteria to
 detect duplication. Duplicates can occur if the search changed between the Lookback date parameters
 and the Lookback Run date.
 

@@ -14,11 +14,11 @@ December 22, 2023
 
 **New:** **Strongpoint Integration API**
 
-Strongpoint is excited to release an [Integration API](/docs/platgovnetsuite/ticketingintegrations/apioverview/api_overview.md) to enable your
-developers to support your ticketing systems! Customers enthusiastically embraced the Strongpoint
+Strongpoint releases an [Integration API](/docs/platgovnetsuite/ticketingintegrations/apioverview/api_overview.md) to enable your
+developers to support your ticketing systems. Customers enthusiastically embraced the Strongpoint
 pre-built integrations for Jira, ServiceNow, and Zendesk. The API makes this integration
 functionality available to everyone. Integrating your systems with your Strongpoint account helps
-you make the most of your change management and ticketing strategies.
+you optimize your change management and ticketing strategies.
 
 API highlights:
 

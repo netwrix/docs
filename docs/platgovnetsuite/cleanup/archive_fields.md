@@ -13,22 +13,22 @@ When cleaning up your account with Platform Governance for NetSuite clean up too
 To create a change request:
 
 1. Open Strongpoint > **Change Management** > **Change Request**
-2. Fill out all relevant fields and include all the customization you want to delete in the
-   **Customizations** field, add the customizations you want to delete.
+2. Fill out all relevant fields and add the customizations you want to delete in the
+   **Customizations** field.
 3. Click **Save**.
 4. Click the **Impact Analysis** button.
 5. Under the **Impact Analysis tab**, the customizations you selected are listed under one or more
    tabs:
 
     - Can Be Safely Deleted or Modified
-    - Cannot Be Safely Deleted or Modified or
+    - Can't Be Safely Deleted or Modified or
     - Inactive Customizations (Already Deleted)
 
 ![archivefields1](/images/platgovnetsuite/clean_up/archivefields1.webp)
 
-6. Click the **Archive Customizations** if you find your customizations under **Cannot Be Safely
+6. Click the **Archive Customizations** if you find your customizations under **Can't Be Safely
 Deleted or Modified** and under **Warning it says Not Archived**
 
 ![archivefields2](/images/platgovnetsuite/clean_up/archivefields2.webp)
 
-7. After your customizations are processed and archived, they appear under **Can be Safely Deleted or Modified**. Your [archive folder](/docs/platgovnetsuite/cleanup/set_up_archive_folder.md) contains the CSV file you can download. The file name includes the field type and the script ID.
+7. After the system processes and archives your customizations, they appear under **Can be Safely Deleted or Modified**. Your [archive folder](/docs/platgovnetsuite/cleanup/set_up_archive_folder.md) contains the CSV file you can download. The file name includes the field type and the script ID.

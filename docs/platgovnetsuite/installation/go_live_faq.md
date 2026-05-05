@@ -128,7 +128,7 @@ Best practice is to change the status of completed Change Requests to **Complete
 
 ## Managed Bundle changes showing as non-compliant changes
 
-This situation is generally caused due to a time gap between Spider runs. Managed Bundles are
+This situation is generally caused by a time gap between Spider runs. Managed Bundles are
 evaluated after other changes. The Spider adds them to the non-compliant report the first time a
 Managed Bundle is encountered. When the Spider is next run, it knows about the Managed Bundle and
 removes it from the non-compliant report.

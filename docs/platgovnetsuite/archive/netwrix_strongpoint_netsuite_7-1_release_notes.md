@@ -11,7 +11,7 @@ sidebar_position: 30
 November 30, 2023
 
 - Support links changed December 1st. The new link is [https://www.netwrix.com/support.html](https://www.netwrix.com/support.html).
-- NetSuite changes, such as moving an account to a different datacenter, are now treated as a Platform change. They don't create a non-compliant Change Log record.
+- NetSuite changes, such as moving an account to a different datacenter, now count as Platform changes. They don't create a non-compliant Change Log record.
 - Improved handling of custom employee center roles across the Strongpoint spiders.
 - Bundle updates were enabling **Automatic Synchronization** between Strongpoint and Jira, changing
   settings where **Automatic Synchronization** was disabled. **Automatic Synchronization** defaults
@@ -28,7 +28,7 @@ November 2, 2023
 - Removed **People Related to Customization** search from the **Strongpoint** > **Customization**
   menu.
 - Increased the number of employees and roles for User Provisioning per run. If there are more than
-  the limit, multiple runs are processed. The **User Provisioning Error** field reports the Change
+  the limit, the system processes multiple runs. The **User Provisioning Error** field reports the Change
   Request is in process until all of the runs are complete.
 - Improved handling of Affected Employees if an error occurs during provisioning. The error only
   appears once per employee.
@@ -46,8 +46,8 @@ November 2, 2023
 
 October 16, 2023
 
-- **Change Log Evaluation**: Change logs related to workflows were labeled with a **Scripted
-  Object** change type. The labeling caused discrepancies in the change log evaluation.
+- **Change Log Evaluation**: The system labeled change logs related to workflows with a **Scripted
+  Object** change type. This caused discrepancies in the change log evaluation.
 - **Search Functionality**: The **Execute as Admin Workflows** search wasn't displaying data, even
   when executed workflows were present.
 
@@ -65,13 +65,13 @@ September 20, 2023
 
     ![Refresh Changed By](/images/platgovnetsuite/change_management/change_log_refresh.webp)
 
-- Removed an extraneous Customization record link in Search Clean Up notification emails. Non-Strongpoint users who receive the notification cannot use the link.
+- Removed an extraneous Customization record link in Search Clean Up notification emails. Non-Strongpoint users who receive the notification can't use the link.
 
 ## Core 7.1
 
 August 23, 2023
 
-Every release contains internal enhancements and customer-specific bug fixes to keep Strongpoint running smoothly.
+Every release contains internal enhancements and customer-specific bug fixes to maintain Strongpoint stability.
 
 **NetSuite Release 2023.2 Support**
 
@@ -82,7 +82,7 @@ Install Strongpoint 7.1 before the NetSuite 2023.2 release to ensure a smooth up
 
 1. Install Strongpoint 7.1 in your Sandbox by August 15th.
 2. Test Strongpoint 7.1 before August 22nd. Contact your Customer Success Manager if you have questions.
-3. Strongpoint 7.1 was pushed to your production environment starting August 23rd.
+3. Netwrix pushed Strongpoint 7.1 to your production environment starting August 23rd.
 
 NetSuite began pushing release 2023.2 at the end of August.
 
@@ -126,7 +126,7 @@ Install Strongpoint 7.1 and SoD 1.6 before the NetSuite 2023.2 release to ensure
 
 1. Install Strongpoint 7.1 and SoD 1.6 in your Sandbox by August 15th.
 2. Test Strongpoint 7.1 and SoD 1.6 before August 22nd. Contact your Customer Success Manager if you have questions.
-3. Strongpoint 7.1 and SoD 1.6 were pushed to your production environment starting August 23rd.
+3. Netwrix pushed Strongpoint 7.1 and SoD 1.6 to your production environment starting August 23rd.
 
 NetSuite began pushing release 2023.2 at the end of August.
 
@@ -203,13 +203,13 @@ Jira.
 4. Select your Jira project.
    ![Select a Jira Project](/images/platgovnetsuite/release_notes/jira_ns_jira_push2.webp)
 5. Click **Push**. A Change Request Pushed message appears. Click **Close**.
-6. Open the **Related Change Records** tab. The ticket number is added as an **External Change
+6. Open the **Related Change Records** tab. The system adds the ticket number as an **External Change
    Request Number**. **CM-15** in this example.
    ![The ticket number is on the Related Change Records tab](/images/platgovnetsuite/release_notes/jira_create_cr_related_change.webp)
 7. Open Jira.
 8. Navigate to **CM-15** ticket.
    ![Open the ticket in Jira](/images/platgovnetsuite/release_notes/jira_ns_jira_push3.webp)
-9. Click **Strongpoint NetSuite**. The customizations from the change request are added.
+9. Click **Strongpoint NetSuite**. Jira adds the customizations from the change request.
    ![Customizations are added to the ticket](/images/platgovnetsuite/release_notes/jira_ns_jira_push4.webp)
 
 ## Jira 1.2.10
@@ -221,7 +221,7 @@ The following are the enhancements for the release:
 
 Strongpoint Settings for Jira
 
-The Strongpoint Settings app is accessed through Jira. Use it to create your Token Based Authentication (TBA) credentials for your account. After creation, they are available for easy selection when performing your tasks.
+Access the Strongpoint Settings app through Jira. Use it to create your Token Based Authentication (TBA) credentials for your account. After creation, they are available for easy selection when performing your tasks.
 
 Token-Based Authentication is set up through NetSuite. Refer to
 [Setting up Token-Based Authentication](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md).

@@ -18,6 +18,6 @@ Ticketing Integrations with NetSuite include:
 - [ServiceNow](/docs/platgovnetsuite/ticketingintegrations/servicenowintegration/servicenow_integration.md)
 - [Zendesk](/docs/platgovnetsuite/ticketingintegrations/zendeskintegration/zendesk_integration.md)
 - [Integration API](/docs/platgovnetsuite/ticketingintegrations/apioverview/api_overview.md) enables your developers to support your ticketing
-  systems, making the integration functionality availcan everyone. Integrating your systems with
+  systems, making the integration functionality available to everyone. Integrating your systems with
   your Platform Governance for NetSuite account helps you make the most of your change management
   and ticketing strategies.

@@ -51,7 +51,7 @@ This process enables an administrator to select approvers other than the IT Appr
 
     ![multi_stream_attach](/images/platgovnetsuite/change_management/multi_stream_attach.webp)
 
-3. Click **Attach**. The process is now shown on the **Process Policies** tab.
+3. Click **Attach**. The process now appears on the **Process Policies** tab.
 
     ![multi_stream_attach_result](/images/platgovnetsuite/change_management/multi_stream_attach_result.webp)
 

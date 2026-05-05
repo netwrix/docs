@@ -23,7 +23,7 @@ Open **Strongpoint** > **Change Management Reports** and one of the available re
 
 ## Policy Changes
 
-This report displays policy changes. Change managers use it to monitor policies.
+Change managers use this report to monitor policy changes.
 
 The criteria for this report includes:
 
@@ -31,7 +31,7 @@ The criteria for this report includes:
 
 ## Open Non-Compliant Changes
 
-This report displays non-compliant changes that have not been resolved. Change managers use it to track changes that require action.
+Change managers use this report to track unresolved non-compliant changes that require action.
 
 The criteria for this report includes:
 
@@ -46,7 +46,7 @@ The criteria for this report excludes:
 
 ## Resolved Non-Compliant Changes
 
-This report displays non-compliant changes that have been resolved. Change managers and auditors use it to review non-compliant changes that have been resolved.
+Change managers and auditors use this report to review resolved non-compliant changes.
 
 The criteria for this report includes:
 
@@ -61,7 +61,7 @@ The criteria for this report excludes:
 
 ## Compliant Changes
 
-This report displays changes that the system automatically cleared as compliant. Compliant changes are automatically marked as closed. Change Managers and auditors use it to review changes that have been automatically cleared as compliant.
+Change Managers and auditors use this report to review changes the system automatically cleared as compliant. The system automatically marks compliant changes as closed.
 
 The criteria for this report includes:
 
@@ -75,7 +75,7 @@ The criteria for this report excludes:
 
 ## Approval Override
 
-This report displays changes with an Approval Override. Change Managers and auditors use it to review changes approved outside the specified approval process.
+Change Managers and auditors use this report to review changes approved outside the specified approval process.
 
 The criteria for this report includes:
 
@@ -90,8 +90,7 @@ The criteria for this report excludes:
 
 ## Managed Bundle/App Updates
 
-This report displays changes that have been initiated by managed or third-party Bundle or App
-updates.
+This report displays changes initiated by managed or third-party Bundle or App updates.
 
 - _Managed Bundle/Apps_ are pushed to target accounts by a third-party provider.
 - _Third-Party Bundle/Apps_ are third-party products that can be updated on demand for target
@@ -113,7 +112,7 @@ The criteria for this report excludes:
 
 ## Platform Changes
 
-This report displays platform changes to objects.
+This report lists platform changes to objects.
 
 The criteria for this report includes:
 
@@ -125,9 +124,7 @@ The criteria for this report excludes:
 
 ## Non-Material Changes
 
-This report displays changes to non-material objects. **Non-Material Object Changes** are changes
-detected in the object definition not caused by human intervention and don't have any functional
-impact. Examples include NetSuite internal IDs, object XML structure or JSON representation or
+This report displays changes to non-material objects. **Non-Material Object Changes** are changes detected in the object definition that human intervention didn't cause and that don't have any functional impact. Examples include NetSuite internal IDs, object XML structure or JSON representation or
 reordering values in a list.
 
 The criteria for this report includes:
@@ -178,7 +175,7 @@ The criteria for this report excludes:
 
 ## What Changed
 
-This report gives Change Managers a complete listing of all changes in the system, excluding non-material changes.
+This report gives Change Managers a complete list of all changes in the system, excluding non-material changes.
 
 The criteria for this report includes:
 

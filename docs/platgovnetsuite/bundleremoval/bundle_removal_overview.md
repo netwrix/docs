@@ -35,7 +35,7 @@ To remove a bundle:
     possible, find a TAM resource that is familiar with Platform
     Governance for NetSuite as well as is familiar with the bundle type that you are trying to
     remove.  
-    **Developer and/or Administrator**: When you remove the bundle, the associated scripts are removed as well. Assign a developer or administrator to investigate the scripts, identify which scripts need to be recreated, and rebuild them.
+    **Developer and/or Administrator**: When you remove the bundle, NetSuite also removes the associated scripts. Assign a developer or administrator to investigate the scripts, identify which scripts need to be recreated, and rebuild them.
 
 2. Document your account. If Platform Governance for NetSuite is already installed and running in
    your account, you can run a manual spider to update your account. If you have a new account,

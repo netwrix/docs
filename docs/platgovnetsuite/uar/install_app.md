@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Installing User Access Review
 
-The User Access Review app must be installed and licensed before it can be used.
+The User Access Review (UAR) app must be installed and licensed before it can be used.
 
 - Installing the Bundle
 - Licensing New Users for the UAR App

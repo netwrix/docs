@@ -76,7 +76,7 @@ Use **Clear** to reset the Filters.
 
 ## Review List
 
-When you open a global review using the **Name** link in the UAR list, the Review list is displayed,
+When you open a global review using the **Name** link in the UAR list, the Review list opens,
 showing all of the single reviews associated with the global review.
 
 ![Review list of associated single reviews under a global review](/images/platgovnetsuite/uar/uar_owner/review_list.webp)

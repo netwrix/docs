@@ -55,21 +55,21 @@ example, override alert, notifications for approvers, and notification for the c
 
     ![Check Token Based Authentication](/images/platgovnetsuite/integrations/jira_token_authentication.webp)
 
-4. Click **Connect**. If the connection is successful, the form is displayed (see Add Customizations
-   section). The **Synchronized with**status displays the account you are logged into for NetSuite.
+4. Click **Connect**. If the connection is successful, the form appears (see Add Customizations
+   section). The **Synchronized with** status displays the account you are logged into for NetSuite.
 
 :::note
 You can't log in if you don't have the **appropriate role permissions to create a Change Request**.
 :::
 
-If you don't enter the correct email or password, an error is displayed. After six unsuccessful
+If you don't enter the correct email or password, an error appears. After six unsuccessful
 consecutive attempts to login, your account is suspended for 30 minutes.
 
 ![jira_example_credentials_error](/images/platgovnetsuite/integrations/jira_example_credentials_error.webp)
 
 ## Add Customizations
 
-After you log in, the form is displayed.
+After you log in, the form appears.
 ![Jira Strongpoint form](/images/platgovnetsuite/release_notes/jira_strongpoint_form.webp)
 
 - **Synchronized with** displays the connected account. Click **Change Account** to switch to a
@@ -115,14 +115,14 @@ After you log in, the form is displayed.
 
 6. Enter the Script ID **custentity_fmt_cust_credit_on_hold** in **Add Customizations** and click
    **+**.
-7. The **Set Customer Credit on Hold (Entity Field)** is displayed. Select it, and click **Add
+7. The **Set Customer Credit on Hold (Entity Field)** appears. Select it, and click **Add
    Selected Customizations**. The selected Customization is added to the **Existing Customizations**
    list. The **Change Level Required** changes from **Log Changes Only** to **Change Request**,
    which is the policy for the **Set Customer Credit on Hold** field.
 
 ### Add Proposed Customizations
 
-In this procedure, this procedure adds a new Customization.
+This procedure adds a new Customization.
 
 1. Enter a new, valid Script ID in the **Add Customizations** field. For this example, enter
    **customlist_customer_priorities**.
@@ -139,7 +139,7 @@ Strongpoint**.
 1. Change the Jira status of your ticket to match the status set up for **Jira Statuses for In
    Progress Status**. For example, **In Progress**.
 2. Click **Push** to create the Change Request. This step is required for both manual and automatic
-   synchronization. A confirmation your Change Request was Created/Updated is displayed. The change
+   synchronization. A confirmation that your Change Request was created or updated appears. The change
    request is created in NetSuite with the **In Progress** status. If you mapped some of your Jira
    statuses, then **Push** is only available those mapped statuses.
 3. Expand the **Change Request** field on the right. The status is now **In Progress**. There is a
@@ -149,7 +149,7 @@ Strongpoint**.
 
 ### Import Customizations from Jira
 
-In this procedure, this procedure adds customizations exported into an xml file. This isn't required, but
+This procedure adds customizations exported into an xml file. This isn't required, but
 is an alternative if you have a lot of customizations.
 
 1. Click **Import Customization**.
@@ -171,7 +171,7 @@ Analysis** to run the tool. The following is an example report:
 ![Impact analysis report](/images/platgovnetsuite/integrations/jira_example_impact_analysis.webp)
 
 Before proceeding with your changes, review each warning to ensure your change doesn't break
-something. Dependencies can easily be reviewed with the ERD tool.
+something. Review dependencies with the ERD tool.
 
 ### View ERD
 
@@ -193,7 +193,7 @@ After you resolve any risks or conflicts, your changes are ready for development
 1. Change the Jira status of your ticket to match the status set up for **Jira Statuses for Pending
    Approval Status**. For example, **Selected for Development**.
 2. Click **Push** if you aren't using [Automatic Synchronization](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) to push
-   status changes. A confirmation your Change Request was Created/Updated is displayed.
+   status changes. A confirmation that your Change Request was created or updated appears.
 3. Expand the **Change Request** field on the right. The status is now **Pending Approval**. There
    is a link to open the Change Request in NetSuite.
 
@@ -216,18 +216,17 @@ ticket is ready to be updated.
    if you want to monitor the deployment task separately. Both statuses are valid for Deployment,
    but only **Done** closes the Jira ticket and updates the Change Request to **Completed**.
 3. Click **Push** if you aren't using [Automatic Synchronization](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) to push
-   status changes. A confirmation your Change Request was Created/Updated is displayed.
+   status changes. A confirmation that your Change Request was created or updated appears.
 4. If you used **Ready for Deployment**, update your Jira status to **Done** once your deployment
    and verification activities are complete.
 
 If you open the Change Request in NetSuite:
 
-- All Customizations added from Jira are displayed.
+- All customizations added from Jira appear.
 - **Affected Bundle ID** is added (if used).
 - **Change Overview** is set to the Jira ticket description.
 - Change Request is **Approved** and ready to be deployed.
-- **Originated System**, **External Change Request Number** and **External Link** to the Jira ticket
-  are populated on the **Related Change Records** tab.
+- The **Related Change Records** tab shows the **Originated System**, **External Change Request Number**, and **External Link** to the Jira ticket.
 - If the Jira status is **Done**, the Change Request shows as **Completed**.
 
     ![The completed change request](/images/platgovnetsuite/integrations/jira_example_completed.webp)

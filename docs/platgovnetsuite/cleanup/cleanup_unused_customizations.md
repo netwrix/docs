@@ -39,7 +39,7 @@ The basic clean up process:
     ![Enter criteria before searching for unused customizations](/images/platgovnetsuite/clean_up/customizations_cleanup_unused_filters.webp)
 
 3. Click **Search**.
-    The results are coded with a flag in the first column and the text either blue (Inactive owner)
+    The results display a flag in the first column and the text in either blue (Inactive owner)
    or black.
    ![Cleanup Key](/images/platgovnetsuite/clean_up/customizations_cleanup_key.webp)
     You can hover over the flag to see the flag description. If the text is blue, **Inactive Owner** is
@@ -88,7 +88,7 @@ can have the following values:
 - Skip
 - Manually Complete
 
-**Cannot Be Safely Deleted or Modified**: A list of the customizations linked to the change request
+**Can't Be Safely Deleted or Modified**: A list of the customizations linked to the change request
 that have triggered one of the following warnings:
 
 - **Active Processes**: this customization is linked to an active process.
@@ -106,7 +106,7 @@ practices to determine if it is appropriate to delete any of the customizations.
 
 ## Archive Field Data
 
-After a Change Request is approved, the **Archive Customizations** button is available. When clicked, any fields in the change request are archived and stored in the **File Cabinet**.
+After approvers approve a Change Request, the **Archive Customizations** button becomes available. When you click it, the system archives any fields in the change request and stores them in the **File Cabinet**.
 
 ![archive](/images/platgovnetsuite/clean_up/archive.webp)
 
@@ -115,7 +115,7 @@ Deleted or Modified** tab.
 
 ## Back Up Searches, Scripts, and Workflows
 
-There is no mass un-delete functionality, but critical information about scripts, searches, and workflows is preserved in the Customization Record.
+No mass un-delete functionality exists, but the Customization Record preserves critical information about scripts, searches, and workflows.
 
 - **Searches**: All fields, filters, criteria, and other search elements are documented in the
   Searches tab.
@@ -123,7 +123,7 @@ There is no mass un-delete functionality, but critical information about scripts
 - **Workflow:** Workflow actions, states, fields, conditions, and other elements are documented in
   the Related Workflows tab.
 
-The customization record of deleted customizations are inactive and accessible for future reference.
+The customization records of deleted customizations are inactive and accessible for future reference.
 
 ## Delete Customizations
 

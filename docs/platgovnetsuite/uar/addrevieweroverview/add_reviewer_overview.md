@@ -12,7 +12,7 @@ in the email, or log in to NetSuite and open [User Access Review](/docs/platgovn
 dashboard.
 
 1. Open **User Access Review** from NetSuite.
-2. Click **UAR Additional Reviewer** to log in. Your User Access Review dashboard is displayed.
+2. Click **UAR Additional Reviewer** to log in. Your User Access Review dashboard opens.
 
 The following is an example additional reviewer dashboard showing new assignments.
 

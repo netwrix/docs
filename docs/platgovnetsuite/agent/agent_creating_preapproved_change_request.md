@@ -35,8 +35,8 @@ To create a pre-approved change request for a control:
     if you make
     changes.![agent_pre_app_approval_section](/images/platgovnetsuite/financial_controls/agent_pre_app_approval_section.webp)
 
-    Related Change Record information is added when you save. The results are shown on the **Related
-    Change Records** tab.
+    When you save, the system adds Related Change Record information. The **Related
+    Change Records** tab displays the results.
 
     - Created From
     - Originated System
@@ -46,7 +46,7 @@ To create a pre-approved change request for a control:
     - External Link
     - Parent Change Request
 
-7. Click **Pending Approval** in the status bar when you finish the Change Request. A confirmation prompt appears. After you confirm, Approval Notifications are sent to the approvers.
+7. Click **Pending Approval** in the status bar when you finish the Change Request. A confirmation prompt appears. After you confirm, the system sends Approval Notifications to the approvers.
 8. After approval, click **Completed** in the status bar to finish the Change Request. If rejected, return the Change Request to **In Progress**, fix any issues, and resubmit it for **Pending Approval**.
 
 ### Status Bar States
@@ -61,7 +61,7 @@ Change Request **In Progress**.
 
 Can be demoted to **Not Started**.
 
-Approval section is added when the Change Request is saved.
+The system adds the Approval section when you save the Change Request.
 
 When ready for approval, click **Pending Approval**.
 

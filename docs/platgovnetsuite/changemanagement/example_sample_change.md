@@ -52,7 +52,7 @@ sidebar_position: 160
 
 ## Create a Non-Compliant Change
 
-This change is flagged as non-compliant and appears on the report as **Non-Compliant**.
+The system flags this change as non-compliant, and it appears on the report as **Non-Compliant**.
 
 1. Change the **Entity Field** (for example, apply it to **Project**) and click **Save**.
 2. Open the Customization Record.

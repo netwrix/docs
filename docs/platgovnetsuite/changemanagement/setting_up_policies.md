@@ -147,8 +147,8 @@ This section is only applies to the default policy.
 
     :::note
     Specifying a **Final Approver** locks the default policy and all child policies. If a
-    user attempts to change a policy, a notice is displayed. Click **Request Approval**. The form is
-    launched, with your proposed changes populated.
+    user attempts to change a policy, the system displays a notice. Click **Request Approval**. The form opens
+    with your proposed changes populated.
     :::
 
 
@@ -156,7 +156,7 @@ This section is only applies to the default policy.
 
 **ITGC Approvers**
 
-Groups are an efficient method to specify approvers. For example, if you need one approver from each of several company functions, create a group for each functional area and select a minimum of 1 approval. After each group approves, the policy moves on to the **Final Approver**.
+Groups are an efficient way to specify approvers. For example, if you need one approver from each of several company functions, create a group for each functional area and select a minimum of 1 approval. After each group approves, the policy moves on to the **Final Approver**.
 
 - **Group Name**: enter a descriptive name to identify the approvers.
 - **Approvers**: click in the entry box and select approvers from the available user list.

@@ -9,7 +9,7 @@ sidebar_position: 10
 Platform Governance for NetSuite's Change Management capabilities are integrated with Jira, one of
 the most popular issue ticketing and development project management systems. Customers can
 look for and include NetSuite Customizations, assess impacts for requested changes, and push Jira
-change tickets into a Change Request. This enables easy management of changes, seamless tracking of
+change tickets into a Change Request. This enables streamlined management of changes, seamless tracking of
 compliant changes and automating the reconciliation of change logs during an audit.
 
 ## Integration Overview
@@ -43,7 +43,7 @@ Change Managers and System Administrators quickly realize the integration benefi
 
 Review these considerations before deploying the Jira integration:
 
-1. Platform Governance for NetSuite's integration is a client script that can be enabled or disabled
+1. Platform Governance for NetSuite's integration is a client script that you can enable or disable
    by form, user, or role. It has high order value to ensure it is the last thing to run and does
    not interrupt any other process.
 2. All functions are self-executing, complying with Jira best practices.
@@ -181,7 +181,7 @@ Token Based Authentication is set up through NetSuite. The basic process is as f
 
 ### Jira Integration Deployment
 
-This process is performed by the Jira Administrator.
+The Jira Administrator performs this process.
 
 1. Create a Jira ticket for deployment.
 2. Select **Strongpoint NetSuite** activity tab. Select a NetSuite account to connect to.

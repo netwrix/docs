@@ -7,7 +7,7 @@ sidebar_position: 20
 # Accessing User Access Review
 
 The User Access Review bundle must be [installed](/docs/platgovnetsuite/uar/install_app.md), and users must have NetSuite
-accounts and a UAR license to access User Access Review.
+accounts and a User Access Review (UAR) license to access User Access Review.
 
 **User Access Review** is available on the NetSuite menu bar if you have a
 [license](/docs/platgovnetsuite/uar/install_app.md). If it isn't on your menu, contact your Netwrix or NetSuite

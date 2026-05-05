@@ -20,11 +20,11 @@ This list describes some of the special cases encountered when using the
 
 ### Limitations to Restoring Auto Archived Searches
 
-Items from the **Criteria** and **Results** tabs are restored with the exception of **Public**
+The system restores items from the **Criteria** and **Results** tabs, with the exception of **Public**
 searches with the **Period** filter. Auto archiving doesn't occur with **Private** searches with
 the **Period** filter, as they can't be deleted or archived.
 
-The following check boxes on the Search form aren't restored if they were checked:
+The system does not restore the following check boxes on the Search form if they were checked:
 
 - Available as List View
 - Available as Dashboard View
@@ -32,14 +32,13 @@ The following check boxes on the Search form aren't restored if they were checke
 - Available for Reminders
 - Show in Menu
 
-Items from the following tabs on the Search form aren't retained when an auto archived search is
-restored:
+The system doesn't retain items from the following tabs on the Search form when restoring an auto archived search:
 
 - Highlighting
 - Available Filters
 - Audience
 - Email
-- Audit Trail: the restored search is assigned a new Internal ID. The audit trail only contains
+- Audit Trail: the system assigns the restored search a new Internal ID. The audit trail only contains
   entries for the new Internal ID.
 
 ![Search form](/images/platgovnetsuite/clean_up/limitation_restoring_searches.webp)

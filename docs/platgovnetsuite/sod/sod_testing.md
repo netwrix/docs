@@ -15,7 +15,7 @@ Testing Mode provides two ways to test a rule without generating SoD incidents:
 - Test on Roles: checks to see if there are any roles violating the rule.
 - Test on Employees: checks to see if any employees are violating the rule.
 
-The violations list in Employee or Role customizations are updated during testing.
+Testing updates the violations list in Employee or Role customizations.
 
 To access Testing Mode:
 

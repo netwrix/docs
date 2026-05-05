@@ -20,8 +20,8 @@ Platform Governance for NetSuite doesn't document or analyze locked scripts.
 
 ## Automatically Archiving Scripts
 
-If enabled, a copy of each script is archived when it is changed, keeping a full version history.
-The archived script versions are saved in the script archive folder, are also accessible in the
+If enabled, Platform Governance for NetSuite archives a copy of each script when it changes, keeping a full version history.
+The archived script versions reside in the script archive folder and are also accessible in the
 Customization record for the script. Archiving all script changes does use storage space. It is a
 good practice to occasionally review and clean up old versions. To enable automatic archiving:
 
@@ -61,11 +61,10 @@ With Platform Governance for NetSuite, you can systematically analyze:
 
 There are two requirements to analyze and report script performance data:
 
-1. Start Tags must be inserted at the beginning of the script to track frequency of
-   execution and who is triggering the script. End tags are required for Script Average Run Time.
+1. Insert Start Tags at the beginning of the script to track frequency of execution and who is triggering the script. End tags are required for Script Average Run Time.
 2. Log level of the scripts be set to at least Audit or Debug.
 
-There are pre-built saved mass updates to quickly do this, but some factors need to be considered.
+There are pre-built saved mass updates to do this, but some factors need to be considered.
 
 Because tags need to be added to the script file, there are some limitations on the data Platform
 Governance for NetSuite can analyze for locked scripts.
@@ -86,7 +85,7 @@ Governance for NetSuite can analyze for locked scripts.
       executed any given time. Although it doesn't provide an exact number, it is within the
       right range and can help identify if a script is executing significantly more than the
       transaction volume would indicate.
-    - Without audit tags: Same and locked and hidden scripts below.
+    - Without audit tags: Same as locked and hidden scripts (see item 3).
 
 3. **Locked and hidden script files**: For scripts where the script file is hidden and locked,
    Platform Governance for NetSuite can't track performance metrics, in most cases. However, if the
@@ -101,8 +100,7 @@ on the questions you are trying to answer:
 **Which scripts are executing too often or being triggered by the wrong people across the whole account**
 
 This question would require a broader approach and applying audit tags and changing log levels
-across the account. However, if you have a large number of locked and hidden scripts, you may be
-forced to go with a more focused approach due to the limitations mentioned above.
+across the account. However, if you have a large number of locked and hidden scripts, you may need a more focused approach due to the limitations described in this section.
 
 **How scripts perform in a particular process**
 
@@ -131,7 +129,7 @@ ways to use these tools depend on your objectives and account setup.
 
 ## Identify which Scripts and how many Scripts have Locked and Hidden Files
 
-As mentioned above, audit tags can't be added to these files and changing the log levels is moot. A
+As described in this section, audit tags can't be added to these files and changing the log levels is moot. A
 future bundle includes this search, but you can identify and count the number of
 locked scripts by creating this saved search:
 

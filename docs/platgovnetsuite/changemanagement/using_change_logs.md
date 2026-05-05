@@ -21,8 +21,8 @@ To open a Change Log:
 
 ![changelog-1](/images/platgovnetsuite/change_management/changelog-1.webp)
 
-If the **Actual Change Date** is empty or **Change By** is set to **Could Not Be Determined** or
-**Pending Autospider**, a **Refresh Changed By** button is available. When clicked, it populates
+If the **Actual Change Date** is empty or **Change By** is set to **Couldn't Be Determined** or
+**Pending Autospider**, a **Refresh Changed By** button is available. When you click it, the button populates
 **Actual Change Date** and **Change By** fields.
 
 The button is only available for Object types where the **Actual Change Date** and **Change By**
@@ -30,7 +30,7 @@ fields can be retrieved.
 
 :::note
 
-Some Object types don't produce System Notes or History Notes for changes. In this case the **Actual Change Date** is empty and the **Change By** is set to **Could Not Be Determined**.
+Some Object types don't produce System Notes or History Notes for changes. In this case the **Actual Change Date** is empty and the **Change By** is set to **Couldn't Be Determined**.
 
 :::
 
@@ -94,8 +94,8 @@ JSON representation or reordering values in a list.
 
 **Non-Material Checked**: Indicates if the change log has been evaluated as non-material.
 
-**Status**: Current state of the Change Log. This field is manually set, except it is automatically
-set to complete when a compliant change is complete.
+**Status**: Current state of the Change Log. Set this field manually, except the system automatically
+sets it to complete when a compliant change is complete.
 
 **Operation**:The reason for the Change Log. For example, **edit** or **delete**.
 
@@ -120,10 +120,10 @@ The **Values** tab displays the changes that occurred in the Change Log.
 To find out who has made changes, run any of the Change Reports and view who made a change in the **Change By** column.
 
 The **Change By** and **Actual Date** of the change logs are retrieved using System Notes Search for
-supported record types. If a System Note isn't available, **Change By** displays **Could Not Be
+supported record types. If a System Note isn't available, **Change By** displays **Couldn't Be
 Determined** in the Report List.
 
-Record types that aren't supported can be retrieved from the AutoSpider.
+The AutoSpider can retrieve record types that aren't supported.
 
 | Supported Records for System Notes Search                                                                                                                                                                                                                                                                                                                                                                                                       | Change By retrieved from the AutoSpider                                                                   |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |

@@ -10,7 +10,7 @@ Auditors have view only access to specific UAR data. Auditors log in to NetSuit
 [User Access Review](/docs/platgovnetsuite/uar/access_app.md) to access the dashboard.
 
 1. Open **User Access Review** from NetSuite.
-2. Click **UAR Auditor** to log in. Your auditor dashboard is displayed.
+2. Click **UAR Auditor** to log in. Your auditor dashboard opens.
 
 The following is an example auditor dashboard showing new assignments.
 

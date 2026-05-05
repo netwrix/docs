@@ -20,7 +20,7 @@ Platform Governance for NetSuite is change management and compliance software fo
 
 #### Can Platform Governance for NetSuite provide a SOC1 Report
 
-Contact your Account Manager to request a SOC1 type 2 report. Reports are available by the end of
+Contact your Account Manager to request a Service Organization Control (SOC) 1 type 2 report. Reports are available by the end of
 January. A bridge letter can be provided if necessary.
 
 Platform Governance for NetSuite doesn't issue SOC2 reports.

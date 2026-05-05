@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Jira Forge Set Up
 
-The steps below show detailed instructions and prerequisites on how to set up Platform Governance Jira Integration.
+The following steps show detailed instructions and prerequisites on how to set up Platform Governance Jira Integration.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ The steps below show detailed instructions and prerequisites on how to set up Pl
 
 ### Install the latest Netwrix Platform Governance(Strongpoint) bundle
 
-Netwrix Platform Governance(Strongpoint) bundle is a key prerequisite for Jira Forge to work. It is required that your NetSuite account is installed with the latest version or at least **7.7.5** or above. 
+Netwrix Platform Governance(Strongpoint) bundle is a key prerequisite for Jira Forge to work. Your NetSuite account must have the latest version or at least **7.7.5** installed. 
 
 For installation details you may refer to the installation guide found in [Installing Platform Governance for NetSuite](/docs/platgovnetsuite/installation/installing_strongpoint).
 
@@ -31,7 +31,7 @@ If the latest version of the bundle is already installed, you may skip this part
 
 ### Install the latest Netwrix Platform Governance Jira bundle
 
-This step will require a user to have NetSuite account access and an Administrator role for that account. This bundle must be version **2.0** or higher to work properly. The Netwrix Platform Governance Jira bundle is a non-managed bundle,   check the [Community](https://community.netwrix.com/c/products/platform-governance-netsuite/181) regularly for the latest updates and announcements. 
+This step requires NetSuite account access and an Administrator role for that account. This bundle must be version **2.0** or higher to work properly. The Netwrix Platform Governance Jira bundle is a non-managed bundle,   check the [Community](https://community.netwrix.com/c/products/platform-governance-netsuite/181) regularly for the latest updates and announcements. 
 
 :::note
 If the latest version of the bundle is already installed, you may skip this part.
@@ -59,13 +59,13 @@ This process requires access to the Atlassian Marketplace and Administrator perm
 
 ![Jira Forge Marketplace Search](/images/platgovnetsuite/integrations/jira_forge_marketplace_search_results.webp)
 
-4. After selecting, you are redirected to the product overview page.
+4. After selecting, the product overview page opens.
 
 
 ![Jira Forge Marketplace Overview](/images/platgovnetsuite/integrations/jira_forge_marketplace_overview.webp)
 
 5. Click the **Get it now** button found at the upper-right part of the page.
-6. You are redirected to the installation process. Select the Jira instance where you want to install Netwrix Platform Governance Forge
+6. The installation process opens. Select the Jira instance where you want to install Netwrix Platform Governance Forge
 
 
 ![Jira Forge Marketplace Select Site](/images/platgovnetsuite/integrations/jira_forge_marketplace_select_site.webp)
@@ -78,7 +78,7 @@ This process requires access to the Atlassian Marketplace and Administrator perm
 
 ### Set up NetSuite Token-based Authentication Credentials
 
-This step will require a user to have NetSuite account access and an Administrator role to that account.
+This step requires NetSuite account access and an Administrator role for that account.
 
 Token Based Authentication is set up through NetSuite. The basic process is as follows:
 
@@ -99,7 +99,7 @@ Token Based Authentication is set up through NetSuite. The basic process is as f
 5. Click 'Save'.
 
     :::note
-    You can also create a Token Based Authentication for your NetSuite Administrator role. Follow the steps below:
+    You can also create a Token Based Authentication for your NetSuite Administrator role. Follow these steps:
     1. Log in as an **Administrator** role in NetSuite.
     2. In your NetSuite account dashboard, navigate to the bottom left part of the page. Under **Settings**, you should see **Manage Access Tokens**. Click the link.
 
@@ -121,9 +121,9 @@ This step requires Jira instance access and NetSuite account access.
     - Note the token value, as it is associated with your email address for the Atlassian/Jira ecosystem. Refer to the Atlassian documentation to obtain a Token.
 2. Have the following credentials ready
     - Jira user email address
-    - Jira token generated above.
-3. In NetSuite, go to Netwrix Configuration and Stats by navigating in the main menu, **Netwrix > Netwrix Support > Installation Settings**. Only one record is displayed. Click **Edit** to open the Configuration and Stats page.
-4. Click 'Jira Integration' tab. Several fields are displayed. Turn your attention to Jira User and Jira Token fields.
+    - Jira token generated in step 1.
+3. In NetSuite, go to Netwrix Configuration and Stats by navigating in the main menu, **Netwrix > Netwrix Support > Installation Settings**. Only one record appears. Click **Edit** to open the Configuration and Stats page.
+4. Click 'Jira Integration' tab. Several fields appear. Turn your attention to Jira User and Jira Token fields.
 5. Populate these fields with the following values:
     - Jira User - Jira user email address in step 2.
     - Jira token - Jira token generated in step 1.
@@ -138,7 +138,7 @@ The mapping allows multiple Jira statuses to map to each Change Request status. 
 Refer to the Atlassian documentation for instructions on
 [Defining status field values](https://confluence.atlassian.com/adminjiraserver070/defining-status-field-values-749382903.html?_ga=2.262596428.1900070949.1572132057-2138500458.1540834491).
 
-1. In NetSuite, go to Netwrix Configuration and Stats by navigating in the main menu, **Netwrix > Netwrix Support > Installation Settings**. Only one record is displayed. Click **Edit** to open the Configuration and Stats page.
+1. In NetSuite, go to Netwrix Configuration and Stats by navigating in the main menu, **Netwrix > Netwrix Support > Installation Settings**. Only one record appears. Click **Edit** to open the Configuration and Stats page.
 
 Enter the mappings between your Jira statuses and the Change Request statuses. For best practice, define your Jira statuses before this step. You can enter multiple Jira statuses for each Change Request status, separated by commas. For example, Ready for Deployment,Done. Assign your relevant mapping for each of the Change Request statuses:
 

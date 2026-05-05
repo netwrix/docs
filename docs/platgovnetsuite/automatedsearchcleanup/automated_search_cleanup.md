@@ -59,7 +59,7 @@ Rules**
 - **Name** is the assigned name for the **Search Clean Up Rule Record**.
 - **Rule Owners** is the administrator or owners for the rule record.
 - **Description** is the purpose of the rule record. An informative description helps administrators
-  easily maintain and identify rules.
+  maintain and identify rules.
 - **Notify Search Owners Before Archive** check to send email to search owners before archive.
   Default is checked.
 - **Notify Search Users Before Archive** check to send email to search users before archive.
@@ -123,7 +123,7 @@ This section is available when **Automatic** is checked.
   be selected. Default is blank and unchecked.
 - **Inactive Owners** filters searches by matching inactive owners. Default is blank.
 - **All Inactive Owners** filters searches by all inactive owners. Default is unchecked. A maximum
-  of 1000 inactive users are loaded. A warning is displayed if there are additional inactive users.
+  of 1000 inactive users are loaded. The system displays a warning if additional inactive users exist.
 
 **Excluded Searches From Preview**
 
@@ -131,8 +131,8 @@ Lists any searches excluded after the **Preview** function is used.
 
 ### Rule Preview
 
-The **Preview** function provides a quick method to mark Saved Searches to be retained or to
-included for clean up. The Run Now feature begins an immediate run for the rule.
+The **Preview** function provides a method to mark Saved Searches to be retained or to
+include for clean up. The Run Now feature begins an immediate run for the rule.
 
 1. Click **Preview** on a Search Clean Up Rule. **Preview** displays the rule, filters, and conditions.
 2. Review the Search List.
@@ -151,20 +151,20 @@ This option immediately begins a Search Clean Up using the current rule.
 
 If a Saved Search matches the Clean Up Rule:
 
-1. Summary notification of all the matching saved searches is sent to the rule owner.
-2. Immediate notice to all search owners and search users with their searches that are about to be
+1. The system sends a summary notification of all matching saved searches to the rule owner.
+2. The system sends an immediate notice to all search owners and search users about their searches that are about to be
    archived. Notifications include a **Retain this Search** link. A **Preview** link is available
    for the user to view the Search.
-3. If the **Retain Search** link isn't used and the Saved Search has not been used, final
-   notifications are sent to all search owners and search users seven calendar days after the **Run
+3. If the **Retain Search** link isn't used and the Saved Search has not been used, the system sends final
+   notifications to all search owners and search users seven calendar days after the **Run
    Now** option was used. The notification includes the date the search is to be archived.
 4. If the **Retain Search** link isn't used and the Saved Search has not been used by the archive
    date:
 
-    - Saved Search is archived.
-    - Archive notifications are sent to rule owner and all search owners/users.
-    - Search is added to administrator's Archived Searches list.
-    - Summary notification of all auto-archived searches are sent to the rule owner.
+    - The system archives the Saved Search.
+    - The system sends Archive notifications to the rule owner and all search owners/users.
+    - The system adds the search to the administrator's Archived Searches list.
+    - The system sends a summary notification of all auto-archived searches to the rule owner.
 
 ## Automated Run Workflow
 
@@ -174,27 +174,27 @@ searches**, **retained searches**, **scheduled to be archived searches** and **a
 
 1. When a Saved Search matches a Clean Up Rule:
 
-    - Notification is emailed to the rule owner. The Saved Search is also included in the summary
+    - The system emails a notification to the rule owner and includes the Saved Search in the summary
       notification to the rule owner.
-    - Notifications are sent the first closest Sunday since the rule was marked **Automatic**.
-    - Notification is emailed to the search owners unless **Notify Search Owners Before Archive**
+    - The system sends notifications on the first closest Sunday since the rule was marked **Automatic**.
+    - The system emails a notification to the search owners unless **Notify Search Owners Before Archive**
       is turned off for the rule.
-    - Notification is emailed to the search users unless **Notify Search Users Before Archive** is
+    - The system emails a notification to the search users unless **Notify Search Users Before Archive** is
       turned off for the rule.
     - All email notifications include a **Retain this Search** link. A **Preview** link is available
       for the user to view the Search.
-    - Saved Search is added to the **Automated Search Clean Up** > **Searches To Be Archived
+    - The system adds the Saved Search to the **Automated Search Clean Up** > **Searches To Be Archived
       (Auto)** list.
 
-2. If the **Retain Search** link isn't used and the Saved Search has not been used, second
-   notifications are sent the following Sunday after the first notification date. The notification
+2. If the **Retain Search** link isn't used and the Saved Search has not been used, the system sends second
+   notifications the following Sunday after the first notification date. The notification
    includes the date the search is to be archived.
 3. If the **Retain Search** link isn't used and the Saved Search has not been used by the archive
    date:
 
-    - Saved Search is archived.
-    - Archive notifications are sent to rule owner and all search owners/users.
-    - Search is added to administrator's Archived Searches list.
+    - The system archives the Saved Search.
+    - The system sends Archive notifications to the rule owner and all search owners/users.
+    - The system adds the search to the administrator's Archived Searches list.
 
 ![cleanup_tab](/images/platgovnetsuite/clean_up/cleanup_tab.webp)
 
@@ -231,8 +231,7 @@ All** to keep all of them. Use the **Preview** link to view each Search.
 
 ![cleanup_warning](/images/platgovnetsuite/clean_up/cleanup_warning.webp)
 
-**Retain this search** prevents archiving an individual search. The **Retain Search** form is
-displayed so you can add the **Reason for Retaining** the search. Click **Save and Exit** when
+**Retain this search** prevents archiving an individual search. The system displays the **Retain Search** form so you can add the **Reason for Retaining** the search. Click **Save and Exit** when
 complete.
 
 ![Provide a reason to retain an individual search](/images/platgovnetsuite/clean_up/clean_up_retain_search.webp)
@@ -251,20 +250,19 @@ The Retain process:
 
 ## Auto Archiving a Search
 
-If search owners or users don't click **Retain this search** in the email notifications, the search is archived. The Archive process:
+If search owners or users don't click **Retain this search** in the email notifications, the system archives the search. The Archive process:
 
 - Archives the search.
 - Adds the search to the **Automated Search Clean Up** > **Archived Searches** report.
 - Marks Customization record for the search **Inactive**.
 - A **Restore** button appears on the **Clean Up** tab on the customization record for the search.
-- Auto Archive notifications are sent to the rule owner and administrators. A **Restore** link is
-  included in the email.
+- The system sends Auto Archive notifications to the rule owner and administrators. The email includes a **Restore** link.
 
 ## Restoring an Auto Archived Search
 
 A NetSuite Administrator can restore an auto archived search with some limitations. Open the **Clean Up** tab of the Customization record for the search, or the **Automated Search Clean Up** > **Archived Searches** report. Click **Restore**, or use the **Restore** link in the email sent to the rule owner and administrators.
 
-- Search is restored with limitations. Restored searches have a different internal ID from the original version, resetting the audit trail.
+- The system restores the search with limitations. Restored searches have a different internal ID from the original version, resetting the audit trail.
 - Updates the **Date Last Used, Retained/Restored** to the current date.
 - Adds the search to the **Automated Search Clean Up** > **Retained Searches** list.
 
@@ -272,11 +270,11 @@ A NetSuite Administrator can restore an auto archived search with some limitatio
 
 ### Limitations to Restoring Auto Archived Searches
 
-Items from the **Criteria** and **Results** tabs are restored with the exception of **Public**
+The system restores items from the **Criteria** and **Results** tabs, with the exception of **Public**
 searches with the **Period** filter. Auto archiving doesn't occur with **Private** searches with
 the **Period** filter, as they can't be deleted or archived.
 
-The following check boxes on the Search form aren't restored if they were checked:
+The system does not restore the following check boxes on the Search form if they were checked:
 
 - Available as List View
 - Available as Dashboard View
@@ -284,14 +282,13 @@ The following check boxes on the Search form aren't restored if they were checke
 - Available for Reminders
 - Show in Menu
 
-Items from the following tabs on the Search form aren't retained when an auto archived search is
-restored:
+The system doesn't retain items from the following tabs on the Search form when restoring an auto archived search:
 
 - Highlighting
 - Available Filters
 - Audience
 - Email
-- Audit Trail: the restored search is assigned a new Internal ID. The audit trail only contains
+- Audit Trail: the system assigns the restored search a new Internal ID. The audit trail only contains
   entries for the new Internal ID.
 
 ![Search form](/images/platgovnetsuite/clean_up/limitation_restoring_searches.webp)

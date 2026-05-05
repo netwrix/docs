@@ -74,7 +74,7 @@ obtain new values.
 - **Source**: Select source environment.
 - **Target**: Select target environment.
 
-After you enter the source and targets, the following information is populated:
+After you enter the source and targets, the system populates the following information:
 
 - **Account ID Source**: ID for the source environment account .
 - **Source Consumer Key**: Consumer Key of the Integration Record from the source account.
@@ -159,7 +159,7 @@ To determine what to compare post-deployment:
 
 ### Communicating Results
 
-An **Environment Compare Log** is created and automatically linked to the Change Request for reference. Share the log if there are issues.
+The system creates an **Environment Compare Log** and automatically links it to the Change Request for reference. Share the log if there are issues.
 
 If there are issues, the Deployment Engineer can make changes and re-run the Environment Comparison to ensure the environments are synchronized.
 

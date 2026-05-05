@@ -9,7 +9,7 @@ sidebar_position: 30
 Platform Governance For NetSuite's Change Management capabilities are integrated with Zendesk, one
 of the most popular customer service and issue ticketing systems. Customers can look for and
 include NetSuite Customizations, assess impacts for requested changes, and push Zendesk change
-tickets into a Change Request. This enables easy management of changes, seamless tracking of
+tickets into a Change Request. This enables streamlined management of changes, seamless tracking of
 compliant changes and automating the reconciliation of change logs during an audit.
 
 User benefits include:
@@ -47,11 +47,11 @@ To install the Zendesk app, you must have **Admin** privileges.
     ![Open the Zendesk Marketplace](/images/platgovnetsuite/integrations/zendesk_admin_marketplace.webp)
 
 4. Search for **Platform Governance For NetSuite**.
-5. Click **Platform Governance For NetSuite** when it is displayed.
+5. Click **Platform Governance For NetSuite** when it appears.
 
     ![Platform Governance For NetSuite app in the Marketplace](/images/platgovnetsuite/integrations/zendesk_platform_governance.webp)
 
-6. Click **Install**. When installation is complete, you are prompted to sign in to your Zendesk
+6. Click **Install**. When installation is complete, a sign-in prompt appears for your Zendesk
    dashboard to continue.
 7. Click the **Admin** icon in the left panel. It should open a new window to Admin Center.
 8. Navigate to **Apps and integrations** > **Zendesk Support apps**.
@@ -94,7 +94,7 @@ To install the Zendesk app, you must have **Admin** privileges.
     - **Enable group restrictions**: Check this option to restrict access to the app based on group
       membership. Enter the groups allowed to access the app.
 
-11. Click **Install**. The keys, secrets, and token information is hidden when it is saved.
+11. Click **Install**. The keys, secrets, and token information are hidden after saving.
 
 ## Set up Approvals
 

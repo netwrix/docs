@@ -58,9 +58,9 @@ custom form.
 6. **Save** the change request.
 7. Click **Pending Approval** in the status bar.
 
-After the request is approved, the roles are automatically added if **Auto-Provisioning** is enabled. The change request status shows as **Complete**. Otherwise, after the request is approved, manually add the roles and update the status.
+After approvers approve the request, the system automatically adds the roles if **Auto-Provisioning** is enabled. The change request status shows as **Complete**. Otherwise, after approvers approve the request, manually add the roles and update the status.
 
-A compliant Change Log is generated:
+The system generates a compliant Change Log:
 
 ![A compliant change log is created](/images/platgovnetsuite/change_management/provisioning_change_log.webp)
 
@@ -88,7 +88,7 @@ The **Values** tab shows the details of the role changes.
 10. **Save** the change request.
 11. Click **Pending Approval** in the status bar.
 
-After the request is approved, the roles are automatically removed at the specified time if **Auto-Role Removal** is enabled. The change request status shows as **Complete**. Otherwise, after the request is approved, manually remove the roles and update the status.
+After approvers approve the request, the system automatically removes the roles at the specified time if **Auto-Role Removal** is enabled. The change request status shows as **Complete**. Otherwise, after approvers approve the request, manually remove the roles and update the status.
 
 A compliant Change Log is generated. The **Values** tab shows the details of the role changes.
 

@@ -51,4 +51,4 @@ To send the results to a recipient:
 
     ![saved_search_timeout4](/images/platgovnetsuite/troubleshooting/saved_search_timeout4.webp)
 
-The search is executed in the background and the CSV file saved in the NetSuite File Cabinet.
+NetSuite executes the search in the background and saves the CSV file in the NetSuite File Cabinet.

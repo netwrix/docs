@@ -63,7 +63,7 @@ Use **Clear** to reset the Filters.
 You can change any of the owners from the Owner List.
 
 1. Open **Owner List** from your menu bar.
-2. Select an existing role. The dropdown lists for the ownership roles are displayed.
+2. Select an existing role. The dropdown lists for the ownership roles appear.
 3. Select users from the dropdowns for the ownership roles.
 4. Click **Save** when your changes are complete.
 

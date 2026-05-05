@@ -22,8 +22,8 @@ Clean up involves some or all of the following steps:
 
 ### Clean Up Tools
 
-Platform Governance for NetSuite has a series of built in Clean Up Tools to enable Administrators to
-clean up their NetSuite account in an organized and efficient manner. The tools can be accessed from
+Platform Governance for NetSuite has a series of built-in Clean Up Tools that enable administrators to
+clean up their NetSuite account in an organized, efficient way. The tools can be accessed from
 **Strongpoint**> **Clean Up** or from **Strongpoint** > **Strongpoint Overview**.
 
 There are many types of clean up, but they generally follow the same process:
@@ -128,7 +128,7 @@ You can report on these statuses to organize your work.
 Some changes such as deletion, changes to scriptID, and Help impact the customization itself. For
 these types of changes, create a Change Request.
 
-For Clean Up, create new change requests and assign them to the customizations. In the results view, “Create Change Request” creates a new change request. After it is added to that customization, it appears under “Related Change Requests”. You can assign multiple customizations to multiple change requests as appropriate.
+For Clean Up, create new change requests and assign them to the customizations. In the results view, “Create Change Request” creates a new change request. After you add it to that customization, it appears under “Related Change Requests”. You can assign multiple customizations to multiple change requests as appropriate.
 
 ![faq-clean-up-create-change-req](/images/platgovnetsuite/clean_up/faq-clean-up-create-change-req.webp)
 

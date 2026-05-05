@@ -35,7 +35,7 @@ To assign an administrator role to a user:
 
 **Result**
 
-If the SoD rule is violated, the change is blocked immediately. A user can't be assigned an Administrator role without a pre-approved change request. The user trying to make the change sees a violation prompt and cannot proceed with saving.
+If the SoD rule is violated, Platform Governance for NetSuite blocks the change immediately. Users require a pre-approved change request to assign the Administrator role. The user trying to make the change sees a violation prompt and can't proceed with saving.
 
 ## Set Conflicting Global Permissions for a User
 
@@ -62,7 +62,7 @@ To set global permissions for a user:
 
 **Result**
 
-If the SoD rule is violated, an SoD incident is logged and the user is prompted with a warning.
+If the SoD rule is violated, Platform Governance for NetSuite logs an SoD incident and prompts the user with a warning.
 
 ## Assign a User a Single User Role that Violates SoD rule
 
@@ -85,7 +85,7 @@ To set a user role:
 
 **Result**
 
-If the SoD rule is violated, an SoD incident is logged and the user is prompted with a warning.
+If the SoD rule is violated, Platform Governance for NetSuite logs an SoD incident and prompts the user with a warning.
 
 ## Assign a Combination of Multiple Roles that Violates SoD rule
 
@@ -107,7 +107,7 @@ To set up multiple roles:
 
 **Result**
 
-If the SoD rule is violated, an SoD incident is logged and the user is prompted with a warning.
+If the SoD rule is violated, Platform Governance for NetSuite logs an SoD incident and prompts the user with a warning.
 
 ## Assign an Employee the Administrator Role with a Pre-Approved Change Request
 
@@ -140,10 +140,10 @@ To assign an administrator role:
 
 **Result**
 
-1. The change made isn't blocked. There would be NO SoD Violation pop-up.
+1. The system doesn't block the change. There is no SoD Violation pop-up.
 2. Employee now has the Administrator role.
 3. The SoD Rule field in the Employee form is set to Cleared.
-4. A Change Log is created, and is listed under the Resolved SoD Incidents list on the **Access**
+4. Platform Governance for NetSuite creates a Change Log and lists it under the Resolved SoD Incidents list on the **Access**
    tab. It is also listed under **SoD** > **SoD Incident Management Reports** > **Resolved SoD
    Incidents**.
 5. The Change Log has the following details:
@@ -186,4 +186,4 @@ Anyone entering customer orders can't approve or process it.
 
 Violations are caught after employee save.
 
-Violation clear out in the employee record after the approved Change Request is saved.
+Violations clear in the employee record after you save the approved Change Request.

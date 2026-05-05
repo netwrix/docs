@@ -35,7 +35,7 @@ Status** displays additional information:
 
 Date Last Used for customizations is calculated in a number of different ways:
 
-Each night it checks all of the fields and scripts that were actually used and updates the Date Last
+Each night it checks all fields and scripts that were used and updates the Date Last
 Used field.
 
 **Fields**:
@@ -53,7 +53,7 @@ Used field.
 
 **Searches**:
 
-- For searches the DLU is the last time search was used that is listed in search metadata.
+- For searches, the DLU is the last time the search was used, as listed in search metadata.
 - Blank DLU indicates a search that has not been used since NetSuite started capturing in 2009.
 - Search “Date Last Used” are checked depending upon the Time To Live specified for searches.
 - Searches run in Dashboard Portlets doesn't update the DLU. DLU can't be determined for searches

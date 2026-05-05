@@ -17,13 +17,10 @@ Policies. These Change and Approval Policies define:
 The [Setting Up Policies](/docs/platgovnetsuite/changemanagement/setting_up_policies.md) topic has details on setting up the Change /
 Approval Policies.
 
-When Process Issues or Change Requests are created, the impacted customizations and processes are
-analyzed. The change policy that applies is identified based on the IT risk from the Customization
-Record and the process risk from the Process Records.
+When you create Process Issues or Change Requests, the system analyzes the impacted customizations and processes and identifies the applicable change policy based on the IT risk from the Customization Record and the process risk from the Process Records.
 
 The Change and Approval Policy also determines the change level required for any detected changes to
-be compliant. This ensures that even changes that don't go through the planned change management
-process are analyzed against the policy for compliance.
+be compliant. This ensures that the system analyzes even changes that don't go through the planned change management process against the policy for compliance.
 
 For example, a company may have multiple policies. For example:
 
@@ -79,9 +76,7 @@ The criteria for non-material changes:
 
 Platform Governance for NetSuite can process changes that are bundled together as a group. There are
 different processes for **Managed Bundles** (changes pushed by a third party) and **Non-Managed
-Bundles** (your own packaged changes). System generated **Manage Bundle** change requests are now
-created with an approved status to be consistent with the change logs (compliant) that are attached
-to it.
+Bundles** (your own packaged changes). The system now creates **Manage Bundle** change requests with an approved status to be consistent with the compliant change logs attached to them.
 
 | Change Type                                | Change Request                                                                                                                                          | Action When Change Detected                                                                                                                            | Status        | Report                     |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | -------------------------- |

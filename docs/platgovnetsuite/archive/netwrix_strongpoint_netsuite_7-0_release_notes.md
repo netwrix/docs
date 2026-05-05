@@ -10,7 +10,7 @@ sidebar_position: 40
 
 July 28, 2023
 
-- Improved handling of searches used in script deployments. Changes are now evaluated as scripted
+- Improved handling of searches used in script deployments. The system now evaluates changes as scripted
   objects to check for deployment dependencies.
 - Added a warning on the change request for generic deployment script IDs. Using the generic ID
   fetches all deployment customizations that share this non-unique ID.
@@ -24,8 +24,7 @@ July 28, 2023
 
 June 23, 2023
 
-- Clarified handling of User Role Assignment changes with associated scripts. Assignments are now
-  reported more accurately in the Change Log and not noted as Scripted Object changes.
+- Clarified handling of User Role Assignment changes with associated scripts. The system now reports assignments more accurately in the Change Log and no longer labels them as Scripted Object changes.
 
 ## Core 7.0.2
 
@@ -50,8 +49,7 @@ June 16, 2023
 
 May 16, 2023
 
-- Updated handling of system changes due to a NetSuite change in user base permissions. System
-  changes are now handled as platform changes, and don't generate non-compliant change logs for
+- Updated handling of system changes due to a NetSuite change in user base permissions. The system now handles these changes as platform changes, and doesn't generate non-compliant change logs for
   user roles.
 
     Manually resolve any non-compliant changes the system generated before this release. This update isn't retroactive.
@@ -67,8 +65,7 @@ April 21, 2023
 This change ensures the Strongpoint scripts don't impact your performance. This change affects both
 new installs and updates to existing Strongpoint for NetSuite installations.
 
-There is an exception for customers using the **Agent** module to run **Large Controls**. These
-scripts are set to **Standard** priority. Contact your Customer Success Manager for assistance if
+There is an exception for customers using the **Agent** module to run **Large Controls**. Strongpoint sets these scripts to **Standard** priority. Contact your Customer Success Manager for assistance if
 you are considering changing these associated scripts to a lower priority.
 
 ### **Mass Update Type Available as a Change Request Proposed Customization**
@@ -81,7 +78,7 @@ you are considering changing these associated scripts to a lower priority.
 ### **NetSuite Make Copy Creates Content and Resets Status**
 
 Strongpoint ensures the **Make Copy** command found under the **Actions** option only copies the
-content, not the status. Copied change requests are set to the **Not Started** status.
+content, not the status. Strongpoint sets copied change requests to the **Not Started** status.
 
 ![Make Copy doesn't copy the status](/images/platgovnetsuite/release_notes/change_request_make_copy.webp)
 
@@ -135,13 +132,13 @@ Jira.
 4. Select your Jira project.
    ![Select a Jira Project](/images/platgovnetsuite/release_notes/jira_ns_jira_push2.webp)
 5. Click **Push**. A Change Request Pushed message appears. Click **Close**.
-6. Open the **Related Change Records** tab. The ticket number is added as an **External Change
+6. Open the **Related Change Records** tab. The system adds the ticket number as an **External Change
    Request Number**. **CM-15** in this example.
    ![The ticket number is on the Related Change Records tab](/images/platgovnetsuite/release_notes/jira_create_cr_related_change.webp)
 7. Open Jira.
 8. Navigate to **CM-15** ticket.
    ![Open the ticket in Jira](/images/platgovnetsuite/release_notes/jira_ns_jira_push3.webp)
-9. Click **Strongpoint NetSuite**. The customizations from the change request are added.
+9. Click **Strongpoint NetSuite**. Jira adds the customizations from the change request.
    ![Customizations are added to the ticket](/images/platgovnetsuite/release_notes/jira_ns_jira_push4.webp)
 
 ## Jira 1.2.10
@@ -153,7 +150,7 @@ The following are the enhancements for the release:
 
 ### Strongpoint Settings for Jira
 
-The Strongpoint Settings app is accessed through Jira. Use it to create your Token Based Authentication (TBA) credentials for your account. After creation, they are available for easy selection when performing your tasks.
+Access the Strongpoint Settings app through Jira. Use it to create your Token Based Authentication (TBA) credentials for your account. After creation, they are available for easy selection when performing your tasks.
 
 Token-Based Authentication is set up through NetSuite. Refer to
 [Setting up Token-Based Authentication](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md).

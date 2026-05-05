@@ -44,7 +44,7 @@ To create an approved change request:
    [Create a Change Request](/docs/platgovnetsuite/changemanagement/creating_change_request.md) for more details about
    the status bar.
 
-The violation clears in the employee record after the approved Change Request is saved.
+The violation clears in the employee record after you save the approved Change Request.
 
 ## Create an Approved Change Request - Old Method
 
@@ -67,4 +67,4 @@ To create an approved change request:
 
 4. Click **Save**.
 
-The violation clears in the employee record after the approved Change Request is saved.
+The violation clears in the employee record after you save the approved Change Request.
