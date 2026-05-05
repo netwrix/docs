@@ -60,3 +60,24 @@ limitations apply:
 
 - The password reset functionality would be limited to objects falling in the User role, User
   Administrator role, and Helpdesk role.
+
+## Limitations of Microsoft Teams Channels
+
+The Microsoft Graph API does not return Microsoft Teams objects in delta query results when a
+channel is added, removed, or modified. As a result, Directory Manager cannot detect Teams channel
+changes incrementally and must replicate all Microsoft Teams objects on every replication cycle.
+This is a known Microsoft platform limitation.
+
+This behavior has a performance impact because all Microsoft Teams are replicated regardless of
+whether changes occurred. To mitigate this, you can enable or disable Teams channel replication
+using the `ReplicateTeamsChannelChanges` setting in the following file:
+
+`[Installation Directory]\ReplicationService\Inetpub\GroupIDReplicationService\Web\appsettings.json`
+
+```json
+"EntraID": {
+  "ReplicateTeamsChannelChanges": false
+}
+```
+
+This setting is disabled `false` by default. Set it to `true` to enable full Teams channel replication.
