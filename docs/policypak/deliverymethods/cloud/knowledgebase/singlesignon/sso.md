@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Single Sign-On (SSO) — Customer Request Guide
 
-PolicyPak Cloud supports Single Sign-On (SSO) using your organization's identity provider (IdP) — such as Microsoft Entra ID (Azure AD) or Okta. Once SSO is configured, users can log in to PolicyPak Cloud using their existing corporate credentials instead of a separate password.
+PolicyPak Cloud supports Single Sign-On (SSO) using your organization's identity provider (IdP) — such as Microsoft Entra ID (Azure AD) or Okta. Once you configure SSO, users can log in to PolicyPak Cloud using their existing corporate credentials instead of a separate password.
 
 This is an assisted process. The following steps explain what information to submit, what the Netwrix team does on the backend, and what you need to do to finish the configuration.
 
@@ -51,7 +51,7 @@ The activation link expires 48 hours after Netwrix sends it.
 
 ## Step 4 – Set Your Netwrix Account Password
 
-If your account isn't already set up, clicking the activation link prompts you to create a password for your Netwrix account. This is a one-time step required to access the 1Secure portal where you configure SSO.
+If you haven't already set up your account, clicking the activation link prompts you to create a password for your Netwrix account. This is a one-time step required to access the 1Secure portal where you configure SSO.
 
 Your password must meet the following requirements:
 
