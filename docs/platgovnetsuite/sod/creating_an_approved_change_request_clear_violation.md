@@ -9,7 +9,7 @@ sidebar_position: 80
 ## Assign a Non-Compliant Role to an Employee
 
 :::note
-Make sure the SoD Rule that it will violate is **Non-Blocking**. This way the employee record can be
+Ensure the SoD Rule that it will violate is **Non-Blocking**. This way the employee record can be
 saved even if it is a non-compliant role.
 :::
 
@@ -34,8 +34,8 @@ To create an approved change request:
       level.
     - **Reason for Role or Permission Change**: Enter the information supporting the approval
       request.
-    - Select one or more of the **Affected Employee(s)**, **Affected Rule(s)** and **Affected User
-      Role(s)**.
+    - Select one or more of the **Affected Employees**, **Affected Rules** and **Affected User
+      Roles**.
 
 3. Click **In Progress** in the status bar to indicate you are working on the request.
 4. **Save** the Change Request.

@@ -12,7 +12,7 @@ process. An archive folder must be created before the Clean Up process.
 ## Create the Archive Folder
 
 1. Open **NetSuite Home** > **Set Preferences**
-2. Under **Defaults**, make sure **Show Internal IDS** is checked on the **General** tab.
+2. Under **Defaults**, ensure **Show Internal IDS** is checked on the **General** tab.
 3. Click **Save**
 4. Open **Documents** > **Files** > **File Cabinet** > **New**
 5. Name the folder **Strongpoint Archived Data Files**.
@@ -35,7 +35,7 @@ To assign the internal ID to a deployed script:
 ![scripts-1](/images/platgovnetsuite/clean_up/scripts-1.webp)
 
 4. Open the **Deployments** tab.
-5. Click on **Strongpoint Auto Archive – OD**.
+5. Click **Strongpoint Auto Archive – OD**.
 
     ![scripts-2](/images/platgovnetsuite/clean_up/scripts-2.webp)
 

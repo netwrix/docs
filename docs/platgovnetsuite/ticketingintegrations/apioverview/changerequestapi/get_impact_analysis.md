@@ -150,13 +150,13 @@ Returns a JSON format string.
 customizations attached to the change request.
 
 **"No Impact Analysis detected."**: No impact analysis detected, either no customizations attached or
-the attached customizations do not have impact analysis data available.
+the attached customizations don't have impact analysis data available.
 
 ### Error Messages
 
 **Message**
 
-**"Unable to load Impact Analysis. External ID: xxxx"**: There is an error with the change request.
+**"Uncan load Impact Analysis. External ID: xxxx"**: There is an error with the change request.
 
 Error messages are returned if any exceptions are encountered.
 

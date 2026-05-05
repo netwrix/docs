@@ -6,11 +6,9 @@ sidebar_position: 50
 
 # Investigating Through Saved Searches
 
-After running all the mass updates and CSV imports (where needed), you can build six saved searches,
-one for each scenario. Within each scenario you can easily identify all the customizations for
-further investigation.
+After running all the mass updates and CSV imports (where needed), build six saved searches, one for each scenario. Within each scenario you can identify all the customizations for further investigation.
 
-Included in the results columns of these saved searches, you will find the following fields:
+The results columns of these saved searches include the following fields:
 
 - **Name**: to identify the customization.
 - **ScriptID**: to locate the customization.
