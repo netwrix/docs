@@ -6,13 +6,13 @@ sidebar_position: 3
 
 # Getting Started
 
-After you have successfully installed Netwrix Change Tracker, and logged in for the first time (see [Two Factor Authentication](#two-factor-authentication)), you can start using it. Change Tracker can collect data for the
+After you have installed Netwrix Change Tracker, and logged in for the first time (see [Two Factor Authentication](#two-factor-authentication)), you can start using it. Change Tracker can collect data for the
 reports with or without agents. By default, Change Tracker installs an agent on the machine, so
 you can check the data collection and reports using that agent. Alternatively, you can
 collect data from other devices in your network. In both cases, your starting point will be the
 [Device Tab](/docs/changetracker/8.1/admin/devices.md).
 
-After you have established data collection, use the Reports tab to view reports on you device's
+After establishing data collection, use the Reports tab to view reports on your device's
 configuration.
 
 Next, use the [Planned Changes Tab](/docs/changetracker/8.1/admin/plannedchanges/plannedchanges.md) manage change events and filter any
@@ -26,7 +26,7 @@ Change Tracker, review the [Settings Tab](/docs/changetracker/8.1/admin/settings
 Sign in as the root "admin" account and follow the instructions to register Change Tracker with an
 authenticator app on your mobile device.
 
-Once you have registered Change Tracker with your authenticator app, use it to provide a One-Time Passcode (OTP) to complete
+After registering Change Tracker with your authenticator app, use it to provide a One-Time Passcode (OTP) to complete
 the 2FA registration.
 
 You must now provide a One-Time Passcode (OTP) during the sign in process.
