@@ -83,8 +83,13 @@ _process_heading_pairs() {
 }
 
 update_heading_anchors() {
+  local base_ref="${1:-}"
   local diff_output
-  diff_output=$(git diff HEAD~1 HEAD -- '*.md' 2>/dev/null || true)
+  if [ -n "$base_ref" ]; then
+    diff_output=$(git diff "${base_ref}" -- '*.md' 2>/dev/null || true)
+  else
+    diff_output=$(git diff HEAD -- '*.md' 2>/dev/null || true)
+  fi
 
   if [ -z "$diff_output" ]; then
     return 0
@@ -159,7 +164,7 @@ case "${1:-}" in
     return 0 2>/dev/null || exit 0
     ;;
   --anchors-only)
-    update_heading_anchors
+    update_heading_anchors "${2:-}"
     exit 0
     ;;
 esac
