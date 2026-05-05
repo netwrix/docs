@@ -9,7 +9,7 @@ sidebar_position: 30
 This procedure is used to install the client on your current workstation. See the
 [Install with Group Policy Management](/docs/passwordpolicyenforcer/11.2/installation/installationgpm.md) top for details on installing the client
 across your network. You can also install/uninstall the products using command line
-[Silent Installation](/docs/passwordpolicyenforcer/11.2/admin/command_line_interface.md#silent-installation).
+[Silent Installation](/docs/passwordpolicyenforcer/11.2/installation/installationserver.md#automated-deployment).
 
 **Step 1 –** Navigate to the folder where you extracted the installers downloaded from Netwrix.
 

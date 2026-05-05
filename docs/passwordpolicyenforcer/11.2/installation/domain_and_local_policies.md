@@ -1,7 +1,7 @@
 ---
 title: "Domain and Local Policies"
 description: "Domain and Local Policies"
-sidebar_position: 10
+sidebar_position: 50
 ---
 
 # Domain and Local Policies

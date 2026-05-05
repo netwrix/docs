@@ -1,7 +1,7 @@
 ---
 title: "Install the Server Components"
 description: "Install the PPE Server, Configuration Console, and Mailer Service components on domain controllers, servers, or workstations using the Setup wizard or the command line."
-sidebar_position: 20
+sidebar_position: 10
 ---
 
 # Install the Server Components

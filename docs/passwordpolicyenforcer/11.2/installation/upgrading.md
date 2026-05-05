@@ -1,7 +1,7 @@
 ---
 title: "Upgrading Password Policy Enforcer"
 description: "Upgrading Password Policy Enforcer"
-sidebar_position: 110
+sidebar_position: 60
 ---
 
 # Upgrading Password Policy Enforcer
@@ -11,7 +11,7 @@ Upgrades are supported for versions 9.0 and above. Contact Customer Support at
 upgrading older versions
 
 You can also install/uninstall the products using command line
-[Silent Installation](/docs/passwordpolicyenforcer/11.2/admin/command_line_interface.md#silent-installation).
+[Silent Installation](/docs/passwordpolicyenforcer/11.2/installation/installationserver.md#automated-deployment).
 
 **Upgrading the Password Policy Server**
 

@@ -1,7 +1,7 @@
 ---
 title: "Disable Windows Rules"
 description: "Disable Windows Rules"
-sidebar_position: 80
+sidebar_position: 20
 ---
 
 # Disable Windows Rules
