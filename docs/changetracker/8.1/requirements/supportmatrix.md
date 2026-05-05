@@ -46,8 +46,7 @@ architectures upon request.
 | Oracle Linux 7+      |                                    | ✓\*                | ✓           | ✓                      |
 | Rocky Linux 8+       |                                    | ✓\*                | ✓           | ✓                      |
 
-\* Support for CentOS 7, RHEL 7, Fedora 39 and Oracle Linux 7 is only possible with v7.1.4 of the
-agent, later versions don't support these legacy OS releases.
+\* CentOS 7, RHEL 7, Fedora 39, and Oracle Linux 7 require agent v7.1.4; later versions don't support these legacy OS releases.
 
 ## Linux (Debian Based) Operating Systems
 
