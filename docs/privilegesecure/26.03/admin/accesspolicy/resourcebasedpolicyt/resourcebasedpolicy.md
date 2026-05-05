@@ -4,7 +4,7 @@ description: "Resource Based Policy"
 sidebar_position: 20
 ---
 
-# Users Tab for Resource Based Access Policies
+## Users Tab for Resource Based Access Policies
 
 The Users tab shows the users and groups associated with the selected access policy.
 
@@ -55,7 +55,7 @@ additional information.
 
 The table columns can be resized and sorted in ascending or descending order.
 
-# Activities Tab for Resource Based Access Policies
+## Activities Tab for Resource Based Access Policies
 
 The Activities tab shows the activities associated with the selected access policy.
 
@@ -87,7 +87,7 @@ The table has the following columns:
 
 The table columns can be resized and sorted in ascending or descending order.
 
-# Add Activities and Activity Groups Window
+## Add Activities and Activity Groups Window
 
 The Add Activities and Activity Groups window provides a list of Activities that have been created.
 Activities are created in the [Activities Page](/docs/privilegesecure/26.03/admin/activities/activities.md).
@@ -147,7 +147,7 @@ Available Activities list.
 The new activities and activity groups are added to the access policy and are shown in the
 [Activities Tab for Resource Based Access Policies](#activities-tab-for-resource-based-access-policies).
 
-# Resources Tab for Resource Based Access Policies
+## Resources Tab for Resource Based Access Policies
 
 The Resources tab shows the resources associated with the selected access policy.
 
@@ -182,7 +182,7 @@ additional information.
 
 The table columns can be resized and sorted in ascending or descending order.
 
-# Add Resources and Resource Groups Window
+## Add Resources and Resource Groups Window
 
 The Add Resources and Resource Groups window provides a list of resources that have been onboarded.
 Resources are onboarded in the [Resources Page](/docs/privilegesecure/26.03/admin/resources/resources.md).

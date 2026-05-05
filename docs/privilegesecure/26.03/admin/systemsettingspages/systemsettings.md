@@ -91,7 +91,7 @@ Set any data rentention policies your organization requires and number of days:
 - Email Rentention
 - I/O Logs (Session recordings)
 
-# Services
+## Services
 
 After a website certificate is installed in IIS, update the Netwrix Privilege
 Secure web services to ensure they are calling the correct URL. If the Web Services are set to the
