@@ -529,3 +529,18 @@ html {
 .DocSearch-Dropdown::-webkit-scrollbar-thumb:hover {
     background: var(--docsearch-primary-color);
 }
+
+/* Fix Redoc sidebar navigation: .api-content uses overflow:hidden + contain:layout
+   which intercepts scrollIntoView and prevents click-to-scroll from reaching the window.
+   Also, html has scroll-behavior:smooth (Docusaurus default) but Redoc's scroll correction
+   (scrollBy(0, -59)) fires synchronously after scrollIntoView(), cancelling the animation.
+   Forcing auto on the Redoc page makes the scroll instant so the offset correction applies
+   at the correct position. The html.plugin-redoc class is set only on the API reference page. */
+.api-content {
+    overflow: visible !important;
+    contain: none !important;
+}
+
+html.plugin-redoc {
+    scroll-behavior: auto !important;
+}

@@ -102,6 +102,8 @@ The Backup export CSV ﬁle will differ based on the Endpoint Protector Server v
 - For Endpoint Protector 5.7.0.0, reports, only one ﬁle containing all threats discovered, separated
   by an underscore
 
+When backing up Content Aware logs, the export includes the **Date/Time(Client UTC)** field.
+
 :::warning
 The audit log backups feature allows you to create copies and/or dumps of logs and file shadows into an export file, either manually or on a scheduled basis. Please note that the initial storage location for these export files is not suitable for long-term storage. It is essential that administrators download and store these files in secure locations to ensure their safety. In SaaS environments, be aware that export files may be lost during the upgrade process, so regular downloading and secure storage are crucial.
 :::

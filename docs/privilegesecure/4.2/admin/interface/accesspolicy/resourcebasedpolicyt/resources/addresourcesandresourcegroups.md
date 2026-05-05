@@ -14,11 +14,11 @@ Resources are onboarded in the [Resources Page](/docs/privilegesecure/4.2/admin/
 The window has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
-- Filter — Provides options to filter results based on a chosen criterion: All, Resource or Resource
-  Group
+table or list is filtered to the matching results.
+- Filter — Provides options to filter results based on a chosen criterion: All, Resource, or Resource
+Group
 - Available Resources and Resource Groups — Shows all available resources and resource groups that
-  have been onboarded
+have been onboarded
 - Resources and Resource Groups to Add — Shows selected resources and resource groups
 - Add — Adds modifications and closes window
 - Cancel — Discards modifications and closes the window
@@ -30,7 +30,7 @@ Both tables have the following columns:
 
 ## Add Resources
 
-Follow the steps to add resources and resource groups to the selected access policy.
+To add resources and resource groups to the selected access policy.
 
 **Step 1 –** Navigate to the **Policy** > **Access Policies** page.
 
@@ -41,13 +41,13 @@ Follow the steps to add resources and resource groups to the selected access pol
 The Add Resources and Resource Groups window has the following features:
 
 - Search – Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Available Resources and Resource Groups – Shows all resources that have been added to the console
 - Resources and Resource Groups to Add – Shows the resources to be added to the protection policy
 - Column headers can be sorted in ascending or descending order
 
-    - Name – The name of the resource
-    - Operating System – Operating System of resource
+- Name – The name of the resource
+- Operating System – Operating System of resource
 
 **Step 4 –** Filter by Resources or Resource Groups, and use the search feature.
 
@@ -58,7 +58,7 @@ to Add table.
 **Step 6 –** (Optional) Click a row in the Resources and Resource Groups to Add table to move it
 back to the Available Resources / Resource Groups table.
 
-**Step 7 –** Click **Add** to add the resource(s) and resource group(s) to the access policy.
+**Step 7 –** Click **Add** to add the resources and resource groups to the access policy.
 
-The new resource(s) and resource group(s) are added to the access policy and are shown in the
+The new resources and resource groups are added to the access policy and are shown in the
 [Resources Tab for Resource Based Access Policies](/docs/privilegesecure/4.2/admin/interface/accesspolicy/resourcebasedpolicyt/resources/resources.md).

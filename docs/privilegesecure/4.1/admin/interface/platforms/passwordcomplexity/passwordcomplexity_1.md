@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Add Password Complexity Policy
 
-Follow the steps to add a password policy to the console.
+To add a password policy to the console.
 
 **Step 1 –** Navigate to the **Policy** > **Platforms** > **Password Complexity** page.
 
@@ -19,20 +19,20 @@ Follow the steps to add a password policy to the console.
 - Name – This is a snippet
 - Description – Description of the policy
 - Must start with – Enter the symbol type from which the password must start with (uppercase,
-  symbol, etc.)
+symbol, etc.)
 - Must end with – Enter the symbol type from which the password must end with (uppercase, symbol,
-  etc.)
-- Length – Provide the desired password length
+etc.)
+- Length – Provide the password you want length
 - Max consecutive chars – Select maximum number of consecutive characters
 - Characters to exclude – select characters to exclude from the password body
 - Include characters – select characters type to be excluded from the password body. Possible values
-  are:
+are:
 
-    - Lowercase
-    - Uppercase
-    - Symbols
-    - Spaces
-    - Numbers
+- Lowercase
+- Uppercase
+- Symbols
+- Spaces
+- Numbers
 
 **Step 4 –** Click **Save** to create the new password policy.
 
