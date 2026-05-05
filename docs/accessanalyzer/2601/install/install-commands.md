@@ -49,7 +49,7 @@ Run `dspm-installer [command] --help` to view usage and available options for an
 
 ```bash
 # Set the Keygen license key variable
-export LICENSE_KEY='[Y]'
+export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 
 # Pin to a specific release version
 export TARGET_REVISION='[VERSION]'
