@@ -27,7 +27,7 @@ To manually install one or more server components:
 
    ![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup2.webp)
 
-3. Review the End-User License Agreement, select the check box to accept the Agreement, then click **Next**.
+3. Review the End-User License Agreement, select the checkbox to accept the Agreement, then click **Next**.
 
    ![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup3.webp)
 
@@ -57,7 +57,7 @@ Add an exclusion for `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPE.DLL` t
 
 ## Uninstalling
 
-You can uninstall, repair or change the installed server components from the **Installed apps** page in Windows Settings, or the **Uninstall or change a program** page in Control Panel. You can also run msiexec to uninstall from the command line. For example, run this command with elevated permissions to silently uninstall all the PPE server components without restarting the computer:
+You can uninstall, repair, or change the installed server components from the **Installed apps** page in Windows Settings, or the **Uninstall or change a program** page in Control Panel. You can also run msiexec to uninstall from the command line. For example, run this command with elevated permissions to silently uninstall all the PPE server components without restarting the computer:
 
 ```batch
 msiexec /x Netwrix_PPE_Server_11.2.0.148_x64.msi /q /norestart
