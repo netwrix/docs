@@ -153,8 +153,8 @@ messaging providers.
     domain.
 
 Step 10 – For Synchronize jobs that use Office 365 as messaging provider in Directory Manager 10,
-the wizard would require you to provide the PFX certificate. All Synchronize jobs that use Office
-365 as messaging provider will be listed on the wizard page. Expand each job and provide the PFX
+the wizard would require you to provide the PFX certificate. The wizard page lists all Synchronize jobs that use Office
+365 as messaging provider. Expand each job and provide the PFX
 certificate along with its password.
 
 ![Upgrade wizard Synchronize Messaging System page](/images/directorymanager/11.1/install/upgrade/entraidsynmessagingsystem.webp)
@@ -170,12 +170,12 @@ Provide the following information:
 
 Step 11 – Click **Next**.
 
-Step 12 – In Directory Manager 10 and earlier versions, reports were generated for the domain that
-the Directory Manager server was joined to. During upgrade, the wizard checks if an identity store
-for that domain exists or not.
+Step 12 – In Directory Manager 10 and earlier versions, Directory Manager generated reports for the domain that
+the Directory Manager server was joined to. During upgrade, the wizard checks whether an identity store
+for that domain exists.
 
-- If an identity store for that domain exists or if it being created for a Synchronize job in this
-  upgrade process, Directory Manager will bind the reports to it.
+- If an identity store for that domain exists or if the upgrade process is creating one for a Synchronize job in this
+  upgrade, Directory Manager will bind the reports to it.
 - If an identity store for that domain doesn't exist, then you have to create an identity store for
   it. It must essentially be an Active Directory identity store. The wizard will bind the reports
   generated in Directory Manager 10 to the identity store, so you will be able to view them in
