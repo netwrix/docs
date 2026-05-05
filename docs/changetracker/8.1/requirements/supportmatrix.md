@@ -25,7 +25,7 @@ The following table shows Hub releases and the component versions verified to wo
 The versions in the following table cover Standard and Datacenter editions, plus the server core installation option.
 
 | Windows Operating Systems Supported | Change Tracker Management Software | Change Tracker Agent | Express Agent | Change Tracker Agentless |
-| ----------------------------------- | ---------------------------------- | -------------------- | ------------- | ------------------------ |
+| ----------------------------------- | :--------------------------------: | :------------------: | :-----------: | :----------------------: |
 | Windows 10                          |                                    | ✓                  | ✓           | ✓                      |
 | Windows 11                          |                                    | ✓                  | ✓           | ✓                      |
 | Windows Server 2025                 | ✓                                | ✓                  | ✓           | ✓                      |
@@ -39,7 +39,7 @@ This table assumes Intel/AMD x64 architecture. Express Agent is also available o
 architectures upon request.
 
 | Linux (RedHat Based) | Change Tracker Management Software | Change Tracker Agent | Express Agent | Change Tracker Agentless |
-| -------------------- | ---------------------------------- | -------------------- | ------------- | ------------------------ |
+| -------------------- | :--------------------------------: | :------------------: | :-----------: | :----------------------: |
 | CentOS 7+            |                                    | ✓\*                | ✓           | ✓                      |
 | RHEL 7+              |                                    | ✓\*                | ✓           | ✓                      |
 | Fedora 39+           |                                    | ✓\*                | ✓           | ✓                      |
@@ -55,7 +55,7 @@ This table assumes Intel/AMD x64 architecture. Express Agent is also available o
 architectures upon request.
 
 | Linux (Debian Based)         | Change Tracker Management Software | Change Tracker Agent | Express Agent | Change Tracker Agentless |
-| ---------------------------- | ---------------------------------- | -------------------- | ------------- | ------------------------ |
+| ---------------------------- | :--------------------------------: | :------------------: | :-----------: | :----------------------: |
 | Debian 10+                   |                                    | ✓                  | ✓           | ✓                      |
 | Ubuntu 16.04+                |                                    | ✓                  | ✓           | ✓                      |
 | Raspberry Pi OS (Debian) 10+ |                                    |                      | ✓           | ✓                      |
@@ -65,7 +65,7 @@ architectures upon request.
 This table assumes Intel/AMD x64 architecture. Express Agent is also available on 32 bit and s390x architectures upon request.
 
 | Other Linux               | Change Tracker Agent | Express Agent | Change Tracker Agentless |
-| ------------------------- | -------------------- | ------------- | ------------------------ |
+| ------------------------- | :------------------: | :-----------: | :----------------------: |
 | SUSE Linux Enterprise 12+ | ✓                  | ✓           | ✓                      |
 | openSUSE 15+              | ✓                  | ✓           | ✓                      |
 | Alpine Linux 3.17+        | ✓                  | ✓           | ✓                      |
@@ -73,7 +73,7 @@ This table assumes Intel/AMD x64 architecture. Express Agent is also available o
 ## Other Platforms
 
 | Other platforms | Change Tracker Agent | Express Agent | Change Tracker Agentless |
-| --------------- | -------------------- | ------------- | ------------------------ |
+| --------------- | :------------------: | :-----------: | :----------------------: |
 | Solaris 11, 10  |                      | ✓           | ✓                      |
 | AIX 7.3, 7.2    |                      | ✓           | ✓                      |
 | HP-UX 11i v3    |                      |               | ✓                      |
@@ -85,7 +85,7 @@ This table assumes Intel/AMD x64 architecture. Express Agent is also available o
 Change Tracker collects each device's OS version, startup/running config, and the user list to track any changes over time.
 
 | Network Devices          | Change Tracker Agent | Express Agent | Change Tracker Agentless |
-| ------------------------ | -------------------- | ------------- | ------------------------ |
+| ------------------------ | :------------------: | :-----------: | :----------------------: |
 | Check Point Firewall     |                      |               | ✓                      |
 | Cisco IOS                |                      |               | ✓                      |
 | Cisco Switch             |                      |               | ✓                      |
