@@ -38,16 +38,40 @@ Passcode (OTP) is not provided during the sign in process, one may be required w
 certain actions within Change Tracker for the first time during a session.
 
 If the root admin user is NOT able to use an authenticator app for 2FA on the first login, then set
-the following configuration settings in the C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore)
-Hub\Configs\appsettings.json file as shown:
+the following configuration settings in
+`C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) Hub\Configs\appsettings.json`:
 
+```
 security > auth > twoFactor > "registerAdmin": "false"
-
 security > auth > twoFactor > "fallbackEnabled": "true" (default setting)
+```
 
-![2faconfiguration](/images/changetracker/8.1/admin/2faconfiguration.webp)
+```json
+"security": {
+    "xsrf": {
+        "headersenabled": "true"
+    },
+    "auth": {
+        "lockoutenabled": "false",
+        "lockoutmaxloginattempts": "3",
+        "lockoutdurationminutes": "0",
+        "ipblockingmaxloginattempts": "3",
+        "ipblockingwindowminutes": "10",
+        "ipblockingdurationminutes": "10",
+        "postonly": "false",
+        "ssoenabled": "false",
+        "ssoheader": "",
+        "hidelogin": "false",
+        "twoFactor": {
+            "registerAdmin": "false",
+            "fallbackEnabled": "true"
+        }
+    }
+}
+```
 
 A One-Time Passcode (OTP) may be required when attempting certain actions within Change Tracker for
 the first time during a session. Without 2FA or an authenticator app, this OTP will be written to
-the application log file (C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore)
-Hub\logs\hubservice-log.txt) which is only accessible by local admins.
+the application log file
+(`C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) Hub\logs\hubservice-log.txt`),
+which is only accessible by local admins.
