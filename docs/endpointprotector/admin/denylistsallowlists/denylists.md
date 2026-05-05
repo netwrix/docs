@@ -100,6 +100,9 @@ File Location Denylist will not apply to groups of users, only to groups of comp
 File Location Denylist will only apply for the selected computer groups after 15 minutes.
 :::
 
+:::note
+**Known limitation:** Location-based denylists and allowlists are not reliable when Deep Packet Inspection (DPI) is active. DPI operates at the network level and identifies files by matching transferred data hashes against files on the local machine. If the same file exists in multiple locations, Endpoint Protector cannot determine which copy was transferred, and location-based rules cannot be applied.
+:::
 
 ![File Location New Denylist](filelocationnewdenylists.webp)
 

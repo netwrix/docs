@@ -36,6 +36,10 @@ points:
 - Print screens
 - Printers and others
 
+:::note
+**Known limitation:** When using Zoho WorkDrive or GDrive (Google Drive) sync applications, reported or blocked file names display internal cache paths instead of the original file name, which prevents location-based and file name denylists from working reliably. Block and Report log entries may be duplicated due to application-level transfer retries, and reported file sizes may be inaccurate. File shadowing works intermittently — shadows may contain corrupted content or be created without a hash, preventing download from the server.
+:::
+
 ## Content Aware Protection Activation
 
 Content Aware Protection comes as the second level of data protection available in Endpoint

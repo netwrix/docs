@@ -105,6 +105,10 @@ The same behavior also applies for Groups. The Administrator has the option to c
 
 ![New File Location Allowlists ](filelocationnewdenylists.webp)
 
+:::note
+**Known limitation:** Location-based denylists and allowlists are not reliable when Deep Packet Inspection (DPI) is active. DPI operates at the network level and identifies files by matching transferred data hashes against files on the local machine. If the same file exists in multiple locations, Endpoint Protector cannot determine which copy was transferred, and location-based rules cannot be applied.
+:::
+
 ## Network Share
 
 Network Share Allowlists are custom-deﬁned lists of network share addresses where transfers of

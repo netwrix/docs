@@ -30,6 +30,10 @@ To ensure consistent DPI behavior after enabling or disabling the feature or upg
 the Endpoint Protector, a restart of your computer is required.
 :::
 
+:::note
+**Known limitation:** Location-based denylists and allowlists are not reliable when Deep Packet Inspection (DPI) is active. DPI operates at the network level and identifies files by matching transferred data hashes against files on the local machine. If the same file exists in multiple locations, Endpoint Protector cannot determine which copy was transferred, and location-based rules cannot be applied.
+:::
+
 ## Stealthy DPI vs. regular DPI
 
 What are the different network visibility strategies available on Windows?

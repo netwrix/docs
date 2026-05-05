@@ -139,8 +139,7 @@ the Client’s behavior for each speciﬁc entity (Global, Groups, and Computers
 
 
 - User Remediation Pop-up – this setting is available when the
- [User Remediation](/docs/endpointprotector/admin/systempar.md#user-remediation) feature is active and enables
-[User Remediation](/docs/endpointprotector/admin/systempar.md#user-remediation) feature is active and enables
+  [User Remediation](/docs/endpointprotector/admin/systempar.md#user-remediation) feature is active and enables
   User Remediation pop-up notiﬁcations for end-users.
 - Enforce User Remediation Pop-up - this setting is available only if the User Remediation Pop-up
   setting is enabled. When this setting is enabled, end-users cannot disable User Remediation Pop-up
@@ -633,14 +632,14 @@ For example, when a user opens Microsoft Word, an Endpoint Protector DLL is load
 - Advanced Scanning Exceptions is a list of applications into which Endpoint Protector won't inject its DLL when the "Advanced Printer and MTP Scanning" is enabled.
 For example, many applications can't be used to print or to copy files to MTP devices, so it does not make sense to inject the Endpoint Protector DLL into them. For best performance or to avoid unexpected interactions with Endpoint Protector, these applications can be added to the “Advanced Scanning Exceptions” list.
 
-- Block Print from Browsers – Enable this setting to prevent users from printing web pages from any
-  supported browser on Windows.
+- Block Print from Browsers – prevents users from printing web pages from any supported browser on Windows. For details, see [Block Print from Browsers](#block-print-from-browsers).
 
     :::note
     The Content-Aware Protection (CAP) feature is available only for Chrome and Edge via a
     dedicated extension. For other browsers, this setting will block print functionality.
     :::
 
+![Block Print from Browsers settings](blockprintone.webp)
 
 - Block Print if CAP Cannot Process File – This setting determines the action if CAP cannot access
   the file content. By default, printing is allowed. This option applies only to Chrome and Edge
@@ -649,10 +648,10 @@ For example, many applications can't be used to print or to copy files to MTP de
 - File Hash - if you enable this setting, a ﬁle hash will be generated and included in the ﬁle
   transfer logs.
 
-- Scan Printed Document – select if you want to be notiﬁed a threat was restricted on the whole
-  document or on the speciﬁc page.
+- Scan Printed Document – specifies whether to scan the entire document or individual pages when a print operation is detected.
+  - `Per printed page` – scans each page as it is printed. Metadata is not included, as metadata is not printed.
+  - `Per document` – scans the entire file, including metadata (MIP/NDC). Use this option when metadata inspection is required.
 
-![File Tracing and Shadowing Settings](blockprintone.webp)
 
 :::warning
 Newer Linux Ubuntu versions have 'snap'-based applications installed by default,
@@ -697,6 +696,9 @@ Upgrading the Endpoint Protector Client with the browser plug-in enabled will re
 full computer restart.
 :::
 
+:::note
+When printing from Excel Online, changes made in the last few seconds may not be inspected immediately. The web application must sync recent changes to OneDrive before Endpoint Protector can inspect them. The sync delay depends on your connection bandwidth and the autosave configuration in your Microsoft 365 apps.
+:::
 
 ![blockprinttwo](blockprinttwo.webp)
 
@@ -914,6 +916,9 @@ data**. For new deployments, **Obfuscate Sensitive Data** is enabled by default.
 Read the [Data Obfuscation Rules](#data-obfuscation-rules) section for more information.
 :::
 
+:::warning
+Use debug mode only for troubleshooting or when replicating an issue for further Netwrix Support Escalations. Debug mode enables detailed logging of all EPP Client operations, which causes local EPP logs to grow rapidly. For regular operation, use a less verbose mode, such as `informational` or `error`.
+:::
 
 ![Used to debug feature and collect logs](debugloggingtwo.webp)
 
