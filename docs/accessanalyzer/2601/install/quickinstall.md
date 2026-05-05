@@ -6,7 +6,7 @@ sidebar_position: 5
 
 # Quick Install
 
-This guide walks through installing Access Analyzer on a fresh Linux VM with **Active Directory** as the identity provider.
+This guide covers installing Access Analyzer on a fresh Linux VM with **Active Directory** as the identity provider.
 
 For the CLI-flag reference, see [Configure Identity Provider](identity-provider.md).
 
@@ -53,8 +53,8 @@ If running on a hypervisor, configure **static memory allocation** (not dynamic/
 See [TLS Certificate Requirements](system/certificates.md) for the full specification. At a minimum you need:
 
 - **Application TLS certificate** (PEM). The Subject Alternative Name (SAN) list must include `DSPM_HOSTNAME` **in lowercase** and the server's IP address.
-- **Private key** paired with the certificate (PEM). Must be readable by the OS user running the installer, not just `root`.
-- **CA bundle** (PEM). Must contain the CA that signed the application certificate. If using AD authentication, it must also contain the CA that signed the domain controller's LDAPS certificate. If these are different CAs, concatenate them:
+- **Private key** paired with the certificate (PEM). The OS user running the installer must be able to read it, not just `root`.
+- **CA bundle** (PEM). Must contain the CA that signed the application certificate. For AD authentication, the CA bundle must also contain the CA that signed the domain controller's LDAPS certificate. If these are different CAs, concatenate them:
 
   ```bash
   cat app-ca.crt ldaps-ca.crt > ca-bundle.crt
@@ -69,7 +69,7 @@ See [TLS Certificate Requirements](system/certificates.md) for the full specific
 The value you pick for `DSPM_HOSTNAME` must resolve to the VM's IP address from:
 
 - Client browsers — configure a DNS A record, or add an entry to each client's `hosts` file.
-- In-cluster pods — handled automatically by the installer's CoreDNS rewrite. No customer action needed.
+- In-cluster pods — the installer's CoreDNS rewrite handles these automatically. No customer action needed.
 
 ### Active Directory information
 
@@ -120,7 +120,7 @@ Ports the Access Analyzer server must be able to reach on your data sources and 
 
 - **Outbound** from the Access Analyzer server to the target source/host — **required** for all connectors.
 - **Inbound** at the target source/host from the Access Analyzer server — **required** (the target must accept the connection on the listed port).
-- **Two-way communication** between the Access Analyzer server and the target — **optional**. Can be configured for environments that require it, but not required for any connector.
+- **Two-way communication** between the Access Analyzer server and the target — **optional**. You can configure it for environments that require it, but no connector requires it.
 
 | Connector | Port | Protocol | Notes |
 | --- | --- | --- | --- |
@@ -136,7 +136,7 @@ Ports the Access Analyzer server must be able to reach on your data sources and 
 
 ### Internal port requirements
 
-These ports handle service-to-service communication within the Access Analyzer VM. No external firewall rules are required — the installer exposes only port 443 (Traefik) externally.
+These ports handle service-to-service communication within the Access Analyzer VM. The deployment requires no external firewall rules — the installer exposes only port 443 (Traefik) externally.
 
 | Port | Protocol | Service | Description |
 | --- | --- | --- | --- |
@@ -152,7 +152,7 @@ For firewall rule examples, see [Network and Port Requirements](/docs/accessanal
 
 ## Required Domains
 
-All outbound endpoints use HTTPS (port 443). The following domains must be reachable from the Access Analyzer server before installation. For firewall rule examples, see [Network and Port Requirements](/docs/accessanalyzer/2601/install/system/network).
+All outbound endpoints use HTTPS (port 443). The Access Analyzer server must reach the following domains before installation. For firewall rule examples, see [Network and Port Requirements](/docs/accessanalyzer/2601/install/system/network).
 
 | Endpoint | Category | Purpose | When Required |
 | --- | --- | --- | --- |
@@ -198,7 +198,7 @@ sudo update-ca-certificates
 Paste and customize the following at the top of your terminal session. Every subsequent command references these variables.
 
 ```bash
-# export DSPM_TARGET_REVISION="1.0.8"    # optional — omit to stay on latest; see version syntax below
+# export TARGET_REVISION="1.0.8"          # optional — omit to stay on latest; see version syntax below
 export LICENSE_KEY="<Your-License-Key>"
 export DSPM_HOSTNAME="<AA2601 FQDN, e.g. aa2601.corp.example.com>"
 export TLS_CERT_FILE="/opt/dspm-tls/<hostname>.crt"
@@ -219,7 +219,7 @@ export LDAP_EMAIL_ATTRIBUTE="mail"
 | `LICENSE_KEY` | Netwrix license key | `NWRX-XXXX-XXXX-XXXX` |
 | `DSPM_HOSTNAME` | Fully qualified domain name. Must be lowercase and match the cert SAN | `aa2601.corp.example.com` |
 | `TLS_CERT_FILE` | Full path to PEM server certificate | `/opt/dspm-tls/aa2601.crt` |
-| `TLS_KEY_FILE` | Full path to PEM private key. Must be readable by the install user | `/opt/dspm-tls/aa2601.key` |
+| `TLS_KEY_FILE` | Full path to PEM private key. The install user must be able to read this file | `/opt/dspm-tls/aa2601.key` |
 | `TLS_CA_BUNDLE_FILE` | Full path to CA bundle (application CA + LDAPS DC CA) | `/opt/dspm-tls/ca-bundle.crt` |
 | `IDP_TYPE` | Identity provider type | `ad` |
 | `IDP_ALIAS` | Login button label. Letters, digits, hyphens, underscores, dots only | `active-directory` |
@@ -227,13 +227,13 @@ export LDAP_EMAIL_ATTRIBUTE="mail"
 | `LDAP_BIND_DN` | Distinguished name of the read-only service account | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` |
 | `LDAP_USERS_DN` | Base DN for the OU containing user accounts | `CN=Users,DC=corp,DC=example,DC=com` |
 | `LDAP_EMAIL_ATTRIBUTE` | LDAP attribute storing the user's email address | `mail` |
-| `DSPM_TARGET_REVISION` | (Optional) Controls which version is installed and auto-upgraded to. Omit to stay on the latest release. | `1.0.8` |
+| `TARGET_REVISION` | (Optional) Controls which version is installed and auto-upgraded to. Omit to stay on the latest release. | `1.0.8` |
 
-**Version syntax for `DSPM_TARGET_REVISION`:**
+**Version syntax for `TARGET_REVISION`:**
 
 | Value | Behavior |
 | --- | --- |
-| (unset) | Installs the latest release; auto-upgrades to the latest version with no limit |
+| (unset) | Defaults to `1.*` — installs the latest 1.x release and auto-upgrades within 1.x |
 | `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
 | `1.*` | Auto-upgrades to any 1.x version |
 
@@ -244,10 +244,22 @@ For most deployments, either omit this variable to stay on the latest release, o
 Download the installer:
 
 ```bash
-curl -sLfo /tmp/dspm-install.sh \
-  "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:${LICENSE_KEY}"
+
+# Download and install the DSPM installer binary for your Linux system architecture (x86_64 or ARM64) using your license key.
+ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+TMP_FILE=$(mktemp)
+curl -sLf -o "$TMP_FILE" "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:$LICENSE_KEY"
+sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
+rm -f "$TMP_FILE"
+ 
+# Launches the installation wizard
+sudo dspm-installer
 ```
 
+When prompted, enter the password for the service account you specified in `LDAP_BIND_DN`.
+
+Run `dspm-installer [command] --help` to view usage and available options for any command.
+<!-- HIDDEN:
 Run it with one of the following two password options. Installation takes 15–30 minutes.
 
 #### Option — Pipe the LDAP bind password (automated)
@@ -269,7 +281,7 @@ The installer pauses part-way through and displays `Enter LDAP bind credential:`
 :::note
 Setting `LDAP_BIND_CREDENTIAL` as an environment variable isn't an alternative. The installer always reads the bind password interactively, which overwrites any exported value. Use one of the two options above.
 :::
-
+END HIDDEN -->
 ### Step 4: Verify the installation
 
 After the installer completes, confirm all pods are healthy:
@@ -308,7 +320,7 @@ The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Adm
 5. Pre-provision each user who should be able to sign in. For each user:
    - Click **+ Add User**.
    - Enter the Name and Email. The email must match the user's AD `mail` attribute exactly, **including case**.
-   - Assign a role (see [Roles](#roles) below).
+   - Assign a role (see [Roles](#roles)).
 
    Assign at least one user the **Administrator** role — the bootstrap account can't access system configuration, so someone needs to. Assign at least one additional user the **User Admin** role if you want a non-bootstrap user to manage accounts going forward.
 
@@ -422,7 +434,7 @@ END HIDDEN -->
 <!-- SYNC: configurations/identity-provider.md "Roles" -->
 <!-- If you change this block, update the matching block in configurations/identity-provider.md -->
 
-This table is also published at [Configuration > Identity Provider > Roles](../configurations/identity-provider.md#roles). This guide duplicates it here so it reads top-to-bottom.
+This table also appears at [Configuration > Identity Provider > Roles](../configurations/identity-provider.md#roles). This guide duplicates it here so it reads top-to-bottom.
 
 | Role | Description |
 | --- | --- |
@@ -430,7 +442,7 @@ This table is also published at [Configuration > Identity Provider > Roles](../c
 | **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The installer assigns this role to the bootstrap `admin@dspm.local` account. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
-The **User Admin** role exists to provide a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration. The installer seeds the bootstrap `admin@dspm.local` account as User Admin — you'll use it to pre-provision the rest of your users, including your first Administrator.
+The **User Admin** role provides a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration. The installer seeds the bootstrap `admin@dspm.local` account as User Admin — you'll use it to pre-provision the rest of your users, including your first Administrator.
 
 <!-- END SYNC -->
 

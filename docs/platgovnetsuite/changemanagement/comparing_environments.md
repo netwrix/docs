@@ -6,10 +6,7 @@ sidebar_position: 170
 
 # Comparing Environments
 
-Compare Environments is a powerful tool to locate customization differences between accounts. It is
-a best practice to compare accounts by type (this is a mandatory field). You can compare up to 1000
-records. If there are more than 1000 records, it compares the first 1000 and sends you a
-notification that there were more than 1000 records to compare and to restrict the comparison.
+Compare Environments locates customization differences between accounts. Compare accounts by type (this is a mandatory field). You can compare up to 1000 records. If there are more than 1000 records, the tool compares the first 1000 and notifies you to restrict the comparison.
 
 - Set up TBA Credentials
 - Run Compare Environments
@@ -32,14 +29,14 @@ Environments and to use the **Change Account** feature on a Change Requests.
 3. Enter the information for the environment:
 
     - **Name** enter the environment name.
-    - **Account ID** enter the account ID. If it is a Sandbox account, make sure **\_SB1** is
-      appended. Do not use -sb1.
+    - **Account ID** enter the account ID. If it is a Sandbox account, ensure **\_SB1** is
+      appended. Don't use -sb1.
     - **Consumer Key** enter the consumer key.
     - **Consumer Secret** enter the consumer secret.
     - **Token ID** enter your token ID.
     - **Token Secret** enter your token secret.
 
-4. Click **Save**. Your credentials are now saved for the environment.
+4. Click **Save**. The credentials are saved for the environment.
 
 Repeat this process for all environments you use for environment compare or looking up
 customizations with the **Change Account** feature on a Change Request. Refer to
@@ -61,7 +58,7 @@ TBA Credentials** section the first time you use this feature.
 2. Enter the information for the target account and source accounts. Tokens are persistent between
    your sessions.
 
-Here are the field and filter options.
+The following are the field and filter options.
 
 :::note
 Only administrators can view the Consumer Key, Consumer Secret, Token ID and Token Secret
@@ -77,7 +74,7 @@ obtain new values.
 - **Source**: Select source environment.
 - **Target**: Select target environment.
 
-Once you enter the source and targets, the following information is populated:
+After you enter the source and targets, the following information is populated:
 
 - **Account ID Source**: ID for the source environment account .
 - **Source Consumer Key**: Consumer Key of the Integration Record from the source account.
@@ -99,7 +96,7 @@ Once you enter the source and targets, the following information is populated:
   clicked Run Compare from a Change Request, the number is automatically populated. This filter is
   advised when deploying a bundle of changes from one account to another.
 - **Get Items from Search**: Compares objects identified by the criteria in a Customization Saved
-  Search. Create the Saved Search prior to running the comparison. Within the Saved Search, you must
+  Search. Create the Saved Search before running the comparison. Within the Saved Search, you must
   have the **Script ID** in the **Results** column. This filter is advised when comparing changes in
   a bundle or other criteria that you can use for a saved search.
 - **Comparison Type**: This a mandatory field. There are two predefined comparison types.
@@ -113,8 +110,8 @@ Once you enter the source and targets, the following information is populated:
 - **Quick Add**: Add individual customization records you want to compare.
 - **Include Children**: Check to include Children in your comparison.
 - **Display Non-Material Changes Results**: Check to include non-material changes between the
-  environments. This does not affect functionality. **Non-Material Object Changes** are changes
-  detected in the object definition not caused by human intervention and do not have any functional
+  environments. This doesn't affect functionality. **Non-Material Object Changes** are changes
+  detected in the object definition not caused by human intervention and don't have any functional
   impact. Examples include NetSuite internal IDs, object XML structure or JSON representation or
   reordering values in a list.
 - **Exclude Managed Bundle/App Components**: Check to exclude all Managed Bundle or App
@@ -126,7 +123,7 @@ Once you enter the source and targets, the following information is populated:
   included/excluded, separating them with commas.
 
 :::note
-When using filters, it is recommended that you only use one filter at a time. An exception is using
+When using filters, use only one filter at a time. An exception is using
 **Customization Type** and **Get Items from Search** together.
 :::
 
@@ -135,13 +132,13 @@ When using filters, it is recommended that you only use one filter at a time. An
 ### Pre-Deployment
 
 :::note
-If you are migrating new objects, they will not exist in your target account.
+New objects being migrated don't exist in the target account yet.
 :::
 
 To determine what to compare pre-deployment:
 
 1. Create a **New Change Request** in Production (so it survives any Refreshes).
-2. Attach the **Customization Record(s)** to the Change Request.
+2. Attach the **Customization Records** to the Change Request.
 3. Wait for Approval (if required).
 4. On the **Change Request** open **Deployment Validation** > **Run Compare Tool**
 5. Select the environments for the **Target** and **Source** Accounts.
@@ -154,7 +151,7 @@ To determine what to compare pre-deployment:
 To determine what to compare post-deployment:
 
 1. Use the **Change Request** from the pre-deployment or create a new one.
-2. If creating a new one, attach the **Customization Record(s)** to the Change Request.
+2. If creating a new one, attach the **Customization Records** to the Change Request.
 3. On the **Change Request** go to > **Deployment Validation** > **Run Compare Tool**
 4. Select the environments for the **Target** and **Source** Accounts.
 5. Set the **Comparison Type** to **Diff**.
@@ -162,11 +159,9 @@ To determine what to compare post-deployment:
 
 ### Communicating Results
 
-An **Environment Compare Log** is created, and automatically linked to the Change Request for
-reference. The log can be shared if there are issues.
+An **Environment Compare Log** is created and automatically linked to the Change Request for reference. Share the log if there are issues.
 
-If there are issues, the Deployment Engineer can make changes and re-run the Environment Comparison
-to ensure the environments are synchronized.
+If there are issues, the Deployment Engineer can make changes and re-run the Environment Comparison to ensure the environments are synchronized.
 
 ## Viewing Differences Between Environments
 

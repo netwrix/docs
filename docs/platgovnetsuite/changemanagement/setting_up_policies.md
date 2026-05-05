@@ -28,14 +28,14 @@ sidebar_position: 20
       Change Policy picking process with **Global Object Level Policy** _enabled_:
         - If customizations or customization processes are attached to specific policies, pick the most
       stringent policy.
-        - If there are no object-specific policies, look for policies that are not attached to any
+        - If there are no object-specific policies, look for policies that aren't attached to any
       customization or process. Compare the change level among all resulting policies and the
       Default Policy, then pick the most stringent policy.
-- **Parent Policy**: Parent policy information to help organize policies, does not impact the
-  process. This field is not available when editing the Default Policy. For child policies, it can
+- **Parent Policy**: Parent policy information to help organize policies, doesn't impact the
+  process. This field isn't available when editing the Default Policy. For child policies, it can
   be changed when the policy is edited.
 - **Owner**: Person who created the policy.
-- **Inactive**: Checked if the policy is not active.
+- **Inactive**: Checked if the policy isn't active.
 - **Log XML Only Change**: Checked to track online changes that occur in the XML, such as NetSuite
   internal changes.Recommended to leave this unchecked due to the volume of false positives you
   would need to manage.
@@ -63,9 +63,7 @@ required for changes to the objects to be compliant with this policy.
 
 ### Change Levels
 
-**No Logs Created**: changes to these objects update the customization documentation is updated but
-does not create change logs. A warning text is displayed when the Administrator sets the change
-level to **No Logs Created**.
+**No Logs Created**: changes to these objects update the customization documentation but don't create change logs. A warning appears when the Administrator sets the change level to **No Logs Created**.
 
 **Log Changes Only**: changes to these objects are automatically marked compliant.
 
@@ -88,11 +86,11 @@ To add new change levels, select **New** or use the **+** next to a field when e
 
 #### Complex Objects
 
-- **Scripted Objects**: Scripts, Workflows and any object upon with a script or workflow dependency.
+- **Scripted Objects**: Scripts, Workflows, and any object upon with a script or workflow dependency.
   Default: Log Changes Only
 - **Formula Objects**: Fields used in Formulas. Default: Sandbox Development & Testing
 - **Workflows and Related Objects**: Changes to Workflows, or any objects used by a Workflow. When
-  an object is used by a Script and a Workflow, we use the higher level between Scripted Objects,
+  an object is used by a Script and a Workflow, Platform Governance for NetSuite uses the higher level between Scripted Objects,
   and Workflows and Related Objects change controls. Default: Change Request
 - **Integration Objects**: Changes to External Records, External Fields, External Systems, and
   Integrations. Default: Log Changes Only
@@ -158,16 +156,14 @@ This section is only applies to the default policy.
 
 **ITGC Approvers**
 
-Groups are an efficient method to specify approvers. For example, if you need one approver from each
-of several company functions, you can create a group for each functional area, and select a minimum
-of 1 approval. Once each group has approved, the policy moves on to the **Final Approver**.
+Groups are an efficient method to specify approvers. For example, if you need one approver from each of several company functions, create a group for each functional area and select a minimum of 1 approval. After each group approves, the policy moves on to the **Final Approver**.
 
 - **Group Name**: enter a descriptive name to identify the approvers.
 - **Approvers**: click in the entry box and select approvers from the available user list.
 - **No Order Required**: check the box if approvers can approve in any order. If not checked,
   approvers must approve in the order specified in the **Approvers** entry.
 - **Min # of Approvals Required**: select the minimum number of approvers for the group. This option
-  is not available if **No Order Required** is not checked.
+  isn't available if **No Order Required** isn't checked.
 - **Add Row**: click to add another ITGC Approver Group. Click the red **X** to delete an existing
   group.
 
@@ -190,12 +186,12 @@ Process Policies are only applicable if you implement Manage Process Risk.
   Request. Default is checked.
 - **Include Process Editors as Alternates**: Check to include Process Editors as alternate
   approvers. Process Editors are specified on the **Continuous** **Improvement** tab of the
-  **Process** record. Default is not checked.
+  **Process** record. Default isn't checked.
 - **Require Impacted Process Approval**: Check to require approval from process owners of related
-  objects. Often these owners are not specifically listed in the Change Request. Default is not
+  objects. Often these owners aren't specifically listed in the Change Request. Default isn't
   checked.
 - **Require Parent Process Owner Approval**: Owners of processes at or above the parent level must
-  approve. Default is not checked.
+  approve. Default isn't checked.
 - **New Process**: Launches the new Process form.
 
 ## Customization Policies
@@ -203,9 +199,9 @@ Process Policies are only applicable if you implement Manage Process Risk.
 Customization Policies specifies the objects affected by the policy.
 
 - **Require Object Owner Approval**: Owner of the customization record. Likely the person who
-  created the object. Default is not checked. Recommend checking this box.
+  created the object. Default isn't checked. Recommend checking this box.
 - **Require Impacted Customization Approval**: Owner of any impacted customization record in
-  NetSuite. Default is not checked.
+  NetSuite. Default isn't checked.
 - **View** and **Customization**: Select a View and navigate to a Customization. Click **Attach** to
   add the selected customization to the Policy.
 - **New Customization**: Launches the new Customization form.
@@ -216,7 +212,7 @@ Customization Policies specifies the objects affected by the policy.
 Control Policies specify controls for this policy.
 
 - **Control Assignee Approval**: Checked if there is a control assignee in Control Policies.
-- **Process Owner(s)**: Checked if there are any process owners in Control Policies.
+- **Process Owners**: Checked if there are any process owners in Control Policies.
 - **Control Owner**: Checked if there is a control owner in Control Policies.
 
 ## SoD Policies
@@ -231,10 +227,7 @@ Segregation of Duties Policies specify the approvers for this policy.
 
 ## Set Up Additional Policies
 
-In some cases, you may want stricter controls on certain objects. For example, many of our public
-companies create a specific policy for SOX related searches, since they want it tighter than Log
-Only for those objects. To set up object specific policies, the initial spider must be complete, so
-you can attach the Customization Record to the policy.
+In some cases, you need stricter controls on certain objects. For example, many public companies create a specific policy for SOX-related searches when they need tighter controls than Log Only. To set up object-specific policies, the initial spider must be complete so you can attach the Customization Record to the policy.
 
 To set up additional policies:
 
@@ -256,16 +249,15 @@ To set up additional policies:
    policies applied to specific objects, the higher change level is selected to keep the change
    compliant.
 
-- Change the **View** to help locate the desired customization.
+- Change the **View** to help locate the customization you want.
 - Enter all of part of the customization in **Customization**, or click the double down arrow icon
   to select the **List** option.
 - Select the customization.
 - Click **Attach**.
 
-9. Click **Save** when you are finished adding customizations to the Policy.
+9. Click **Save** when you finish adding customizations to the Policy.
 
-Another method to add customization is through NetSuite's **Mass Update**. Here is the basic
-process. Refer to the NetSuite help for more information on Mass Update.
+Another method to add customizations is through NetSuite's **Mass Update**. The basic process follows. See the NetSuite help for details on Mass Update.
 
 1. Open **Lists** > **Mass Updates**
 2. Expand **General Updates** > **Custom Records** > **Customization**

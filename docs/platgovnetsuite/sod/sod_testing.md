@@ -29,13 +29,13 @@ Any of these events require a role to be re-evaluated:
 
 **Trigger Role Job**
 
-- Anytime Role(s) are added/updated
+- Anytime Roles are added/updated
 - Anytime the Rules are added/updated
 - Manual trigger on the Role
 
 **Trigger Role Assignment**
 
-- Anytime Role(s) are added/updated
+- Anytime Roles are added/updated
 - Anytime the Rules are added/updated
 - Anytime Role Assignments on an Employee are added/updated
 - Anytime Global Permissions are added/updated
