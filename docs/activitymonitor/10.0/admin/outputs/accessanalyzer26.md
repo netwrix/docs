@@ -17,8 +17,8 @@ Select an Access Analyzer 26 output from the Monitored Hosts/Services tab and cl
 The tab contains the following settings:
 
 - Server in SERVER:PORT format – Server name of the Netwrix Access Analyzer 26 application server and
-  the communication port being used between the applications. The format must be SERVER:PORT, e.g.
-  newyorksrv10:4504.
+  the communication port being used between the applications. The format must be `SERVER:PORT`, e.g.
+  `AASRV01:4504`.
 
     - The server name can be a short name, fully qualified domain name (FQDN), or IP address, as long as the agent can resolve it.
     - The default port for Netwrix Access Analyzer 26 is 4504.

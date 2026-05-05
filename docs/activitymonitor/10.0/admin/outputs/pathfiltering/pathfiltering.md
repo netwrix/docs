@@ -21,7 +21,7 @@ The tab contains the following settings and features:
 
 - Add – Opens the Add or Edit Path window to add a new path to the list. See the
   [Add or Edit Path Window](/docs/activitymonitor/10.0/admin/outputs/pathfiltering/addeditpath.md) topic for additional information.
-- Remove – Removes the selected path from the list. Confirmation is not requested.
+- Remove – Removes the selected path from the list. Confirmation isn't requested.
 
     :::warning
     If a path is removed by accident, use the **Cancel** button to discard the change.
@@ -32,7 +32,7 @@ The tab contains the following settings and features:
   buttons move the selected path up or down in the list
 - Edit – Opens the Add or Edit Path window to modify the selected path. See the
   [Add or Edit Path Window](/docs/activitymonitor/10.0/admin/outputs/pathfiltering/addeditpath.md) topic for additional information.
-- Type a path below to test whether it will be included or excluded – Enter a path in the textbox to
+- Enter a path below to test whether it will be included or excluded – Enter a path in the textbox to
   test whether it will be included/excluded based on the path filtering list
 
     - Result – Under the text box, a description of whether the indicated path is included or
@@ -55,7 +55,7 @@ precedence, and the ‘Edward’ child folder will not be monitored.
 
 
 :::note
-If ‘Include’ is not listed under the Filter Type column (or no Include filter paths are
+If ‘Include’ isn't listed under the Filter Type column (or no Include filter paths are
 added), then all current and new discovered drives will be monitored.
 :::
 
@@ -71,7 +71,7 @@ The tab contains the following settings and features:
 
 - Add – Opens the Add or Edit Path window to add a new path to the list. See the
   [Add or Edit Path Window](/docs/activitymonitor/10.0/admin/outputs/pathfiltering/addeditpath.md) topic for additional information.
-- Remove – Removes the selected path from the list. Confirmation is not requested.
+- Remove – Removes the selected path from the list. Confirmation isn't requested.
 
     :::warning
     If a path is removed by accident, use the **Cancel** button to discard the change.
@@ -82,7 +82,7 @@ The tab contains the following settings and features:
   buttons move the selected path up or down in the list
 - Edit – Opens the Add or Edit Path window to modify the selected path. See the
   [Add or Edit Path Window](/docs/activitymonitor/10.0/admin/outputs/pathfiltering/addeditpath.md) topic for additional information.
-- Type a path below to test whether it will be included or excluded – Enter a path in the textbox to
+- Enter a path below to test whether it will be included or excluded – Enter a path in the textbox to
   test whether it will be included/excluded based on the path filtering list
 
     - Result – Under the text box, a description of whether the indicated path is included or
@@ -105,7 +105,7 @@ precedence, and the ‘Edward’ child folder will not be monitored.
 
 
 :::note
-If ‘Include’ is not listed under the Filter Type column (or no Include filter paths are
+If ‘Include’ isn't listed under the Filter Type column (or no Include filter paths are
 added), then all current and new discovered drives will be monitored.
 :::
 
@@ -135,7 +135,7 @@ The tab contains the following settings and features:
 
 - Add – Opens the Add or Edit Path window to add a new path to the list. See the
   [Add or Edit Path Window](/docs/activitymonitor/10.0/admin/outputs/pathfiltering/addeditpath.md) topic for additional information.
-- Remove – Removes the selected path from the list. Confirmation is not requested.
+- Remove – Removes the selected path from the list. Confirmation isn't requested.
 
     :::warning
     If a path is removed by accident, use the **Cancel** button to discard the change.
@@ -148,7 +148,7 @@ The tab contains the following settings and features:
   [Add or Edit Path Window](/docs/activitymonitor/10.0/admin/outputs/pathfiltering/addeditpath.md) topic for additional information.
 - Add all local drives – Retrieves and adds all local drives to the bottom of the list with a type
   of Include
-- Type a path below to test whether it will be included or excluded – Enter a path in the textbox to
+- Enter a path below to test whether it will be included or excluded – Enter a path in the textbox to
   test whether it will be included/excluded based on the path filtering list
 
     - Result – Under the text box, a description of whether the indicated path is included or
@@ -171,10 +171,52 @@ precedence, and the ‘Edward’ child folder will not be monitored.
 
 
 :::note
-If ‘Include’ is not listed under the Filter Type column (or no Include filter paths are
+If ‘Include’ isn't listed under the Filter Type column (or no Include filter paths are
 added), then all current and new discovered drives will be monitored.
 :::
 
+
+Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The output
+Properties window closes.
+
+
+## For Microsoft 365 Copilot Hosts
+
+The Path Filtering tab for a Microsoft 365 Copilot host includes an additional option to control
+which resources are reported.
+
+**Report activity on non-Microsoft resources** – When unchecked (default), only activity on
+Microsoft 365 resources (SharePoint, OneDrive, Teams, Outlook, and Forms) is reported. When checked,
+activity on all resources accessed during Copilot interactions, including external websites, is
+reported.
+
+The tab also contains the following path filtering settings:
+
+- Add – Opens the Add or Edit Path window to add a new path to the list. See the
+  [Add or Edit Path Window](/docs/activitymonitor/10.0/admin/outputs/pathfiltering/addeditpath.md)
+  topic for additional information.
+- Remove – Removes the selected path from the list. Confirmation isn't requested.
+
+    :::warning
+    If a path is removed by accident, use the **Cancel** button to discard the change.
+    :::
+
+
+- Move Up / Move Down – Since path filters are evaluated in the order specified by the table, these
+  buttons move the selected path up or down in the list.
+- Edit – Opens the Add or Edit Path window to modify the selected path. See the
+  [Add or Edit Path Window](/docs/activitymonitor/10.0/admin/outputs/pathfiltering/addeditpath.md)
+  topic for additional information.
+- Enter a path below to test whether it will be included or excluded – Enter a path in the textbox
+  to test whether it will be included/excluded based on the path filtering list.
+
+    - Result – Under the text box, a description of whether the indicated path is included or
+      excluded will appear.
+
+- Exclude extensions – Displays a space-separated list of file extensions that are excluded.
+
+The table lists paths that are being filtered, displaying columns for Type (Include or Exclude) and
+Pattern. Path filters are evaluated in the order specified by the table.
 
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The output
 Properties window closes.

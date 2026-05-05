@@ -23,6 +23,7 @@ following topics for additional information:
 - [Dell Unity](/docs/activitymonitor/10.0/admin/monitoredhosts/add/dellunity.md)
 - [Exchange Online](/docs/activitymonitor/10.0/admin/monitoredhosts/add/exchangeonline.md)
 - [Hitachi](/docs/activitymonitor/10.0/admin/monitoredhosts/add/hitachi.md)
+- [Microsoft 365 Copilot](/docs/activitymonitor/10.0/admin/monitoredhosts/add/m365copilot.md)
 - [Microsoft Entra ID](/docs/activitymonitor/10.0/admin/monitoredhosts/add/entraid.md)
 - [Nasuni](/docs/activitymonitor/10.0/admin/monitoredhosts/add/nasuni.md)
 - [NetApp](/docs/activitymonitor/10.0/admin/monitoredhosts/add/netapp.md)

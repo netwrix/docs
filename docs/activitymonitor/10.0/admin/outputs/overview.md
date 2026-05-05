@@ -7,18 +7,18 @@ sidebar_position: 40
 # Output Types
 
 Once a domain or a host/service is being monitored the event stream can be sent to multiple outputs. There
-are three types of outputs:
+are four types of outputs:
 
 
-- Netwrix Access Analyzer 26 – Sends activity events to Netwrix Access Analyzer 26 and above
+- **Netwrix Access Analyzer 26** – Sends activity events to Netwrix Access Analyzer 26 and above
 
-- File – Creates an activity log as a TSV or JSON file for every day of activity. 
+- **File** – Creates an activity log as a TSV or JSON file for every day of activity. 
   Use this output type to integrate with Access Analyzer 12 and below.
 
-- Syslog – Sends activity events to the configured SIEM server.
+- **Syslog** – Sends activity events to the configured SIEM server.
   For file servers, this option is also used to send activity events to Netwrix Threat Manager.
   
-- Netwrix Threat Manager – Sends Active Directory activity events to Netwrix Threat Manager
+- **Netwrix Threat Manager** – Sends Active Directory activity events to Netwrix Threat Manager
 
     :::note
     This output type is only available for Monitored Domains
