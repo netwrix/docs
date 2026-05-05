@@ -15,10 +15,10 @@ You install Access Analyzer using a single curl command that downloads and runs 
 Export your license key as an environment variable before running any installer command. This keeps the key out of your shell history and makes it available to the installer automatically.
 
 ```bash
-export LICENSE_KEY='[YOUR_LICENSE_KEY]'
+export LICENSE_KEY="[YOUR_LICENSE_KEY]"
 ```
 
-Replace `[YOUR_LICENSE_KEY]` with the license key provided by Netwrix. All examples on this page assume you have exported this variable.
+Replace "[YOUR_LICENSE_KEY]" with the license key Netwrix provided. All examples on this page assume you have exported this variable.
 
 :::warning
 Your license key authenticates access to the Netwrix package registry. Don't share it, commit it to version control, or leave it visible in script files.
@@ -26,34 +26,53 @@ Your license key authenticates access to the Netwrix package registry. Don't sha
 
 ### Choose an installer version
 
-**Without specifying a version**, the installer downloads the latest stable release automatically. This is appropriate for initial deployments and when you want to install the latest release:
+If you don't specify a version, the installer downloads the latest stable release automatically. This is appropriate for initial deployments and when you want to install the latest release:
 
 ```bash
 # Set the Keygen license key variable
 export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 
-# Run installation
-curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -
+# Download and install the DSPM installer binary for your Linux system architecture (x86_64 or ARM64) using your license key.
+ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+TMP_FILE=$(mktemp)
+curl -sLf -o "$TMP_FILE" "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:$LICENSE_KEY"
+sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
+rm -f "$TMP_FILE"
+
+# Launches the installation wizard 
+sudo dspm-installer
 ```
 
-**To pin to a specific release** — recommended when you want to control when upgrades happen during your organization's patching cycle — export the version before running the same curl command:
+Run `dspm-installer [command] --help` to view usage and available options for any command.
+
+**To pin to a specific release** — recommended when you want to control when upgrades happen during your organization's patching cycle — export the version before downloading and running the installer:
 
 ```bash
 # Set the Keygen license key variable
 export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 
 # Pin to a specific release version
-export DSPM_TARGET_REVISION='[VERSION]'
+export TARGET_REVISION='[VERSION]'
 
-# Run installation
-curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -
+# Download and install the DSPM installer binary for your Linux system architecture (x86_64 or ARM64) using your license key.
+ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+TMP_FILE=$(mktemp)
+curl -sLf -o "$TMP_FILE" "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:$LICENSE_KEY"
+sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
+rm -f "$TMP_FILE"
+
+# Launches the installation wizard
+sudo dspm-installer
 ```
 
-Version strings control which release is installed and what auto-upgrades apply:
+Run `dspm-installer [command] --help` to view usage and available options for any command.
+
+
+Version strings control which release the installer installs and what auto-upgrades apply:
 
 | Value | Behavior |
 | --- | --- |
-| (unset) | Installs the latest release; auto-upgrades to the latest version with no limit |
+| (unset) | Defaults to 1.* — auto-upgrades within the 1.x line; a future 2.x release doesn't install automatically |
 | `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
 | `1.*` | Auto-upgrades to any 1.x version |
 
@@ -69,7 +88,7 @@ Export the variables before running the installer. When you set the same option 
 | --- | --- | --- |
 | `LICENSE_KEY` | `--license-key` | `NWRX-XXXX-XXXX-XXXX` |
 | `DSPM_HOSTNAME` | `--hostname` | `aa2601.corp.example.com` |
-| `DSPM_TARGET_REVISION` | `--target-revision` | `1.0.8` (pinned) or omit for latest |
+| `TARGET_REVISION` | `--target-revision` | `1.0.8` (pinned) or omit for latest |
 | `SIZE` | `--size` | `1` (default), `2`, up to `10` |
 | `TLS_CERT_FILE` | `--tls-cert` | `/opt/dspm-tls/aa2601.crt` |
 | `TLS_KEY_FILE` | `--tls-key` | `/opt/dspm-tls/aa2601.key` |
@@ -80,7 +99,7 @@ Export the variables before running the installer. When you set the same option 
 | `LDAP_BIND_DN` | `--ldap-bind-dn` | `CN=svc-dspm,OU=ServiceAccounts,DC=example,DC=com` |
 | `LDAP_USERS_DN` | `--ldap-users-dn` | `CN=Users,DC=example,DC=com` |
 | `LDAP_EMAIL_ATTRIBUTE` | `--ldap-email-attribute` | `mail` (default) |
-| `LDAP_BIND_CREDENTIAL` | (secret — see Quick Install) | (see Quick Install) |
+| `LDAP_BIND_PASSWORD` | (secret — see Quick Install) | (see Quick Install) |
 | `POSTGRES_DATA_DIR` | `--postgres-data-dir` | `/mnt/ssd/postgres` |
 | `CLICKHOUSE_DATA_DIR` | `--clickhouse-data-dir` | `/mnt/nvme/clickhouse` |
 | `ACCEPT_WARNINGS` | `--accept-warnings` | `true` |
@@ -91,7 +110,7 @@ Export the variables before running the installer. When you set the same option 
 | `DRY_RUN` | `--dry-run` | `true` |
 
 :::note
-`LDAP_BIND_CREDENTIAL` is the only secret environment variable, and the installer doesn't actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
+`LDAP_BIND_PASSWORD` is the only secret environment variable, and the installer doesn't actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
 :::
 
 ## Running the Installer
@@ -99,13 +118,15 @@ Export the variables before running the installer. When you set the same option 
 When you run the curl command, the installer automatically:
 
 1. Runs preflight checks to verify your system meets requirements
-2. Installs Kubernetes (k3s v1.33.4, the version validated by Netwrix for this release)
+2. Installs Kubernetes (k3s v1.33.4, the version Netwrix validated for this release)
 3. Deploys ArgoCD as the GitOps controller
 4. Pulls and deploys the Access Analyzer application stack from the Netwrix registry
 5. Waits for all components to become healthy
 
 Installation typically takes 15–30 minutes depending on network speed and hardware.
 
+---
+<!-- HIDDEN:
 ### Passing additional options
 
 To customize the installation, add options after `bash -s --`. The installer receives everything after `--`:
@@ -172,9 +193,12 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
 
 The installer writes the log to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. Terminal progress output isn't affected — only the log file verbosity changes.
 
+END HIDDEN -->
+---
+
 ## Identity Provider Flags
 
-The following table lists every IdP flag the installer accepts. For end-to-end examples, see one of these walkthroughs:
+The following table lists every identity provider (IdP) flag the installer accepts. For end-to-end examples, see one of these walkthroughs:
 
 - [Quick Install](quickinstall.md) — Active Directory deployment using environment variables (recommended for most customers)
 - [Configure Identity Provider](identity-provider.md) — example commands for Active Directory and LDAP, plus recovery with `--configure-idp-only`
@@ -227,13 +251,13 @@ For the full list of required network domains, see [Network and Port Requirement
 
 ## If the Installer Stops with Warnings
 
-By default, the installer stops when a preflight warning is detected. In some cases you may know the warning is acceptable for your environment. Use `--accept-warnings` to allow installation to continue:
+By default, the installer stops when it detects a preflight warning. In some cases you may know the warning is acceptable for your environment. Use `--accept-warnings` to allow installation to continue:
 
 ```bash
-curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- --accept-warnings
+sudo dspm-installer --accept-warnings
 ```
 
-Before using this option, identify which warning is being reported and review the guidance below:
+Before using this option, identify which warning the installer reports and review the following:
 
 | Warning | What it means | Recommended action |
 |---|---|---|
