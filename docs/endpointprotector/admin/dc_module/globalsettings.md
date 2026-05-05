@@ -272,17 +272,17 @@ For more Deep Packet Inspection (DPI) description refer to dedicated chapter: [D
 
 In this section, you can manage the following settings:
 
-- Deep Packet Inspection - if enabled, network and browser traﬃc can be inspected for content. This
+- Deep Packet Inspection - if enabled, network and browser traffic can be inspected for content. This
   option is required for both the Deep Packet Inspection Allowlists and URL and Domain Denylist
 
 - Use Stealthy DPI Driver – enable this driver to improve interoperability with independent software
   vendors
 
-- Intercept VPN Traﬃc – if you enable this setting, you allow the Endpoint Protector Client to
-  intercept VPN traﬃc on macOS using the network extension framework
+- Intercept VPN Traffic – if you enable this setting, you allow the Endpoint Protector Client to
+  intercept VPN traffic on macOS using the network extension framework
 
     :::note
-    See the [Intercept VPN Traﬃc](#intercept-vpn-traﬃc) topic.
+    See the [Intercept VPN Traffic](#intercept-vpn-traffic) topic.
     :::
 
 - Linux proxy loopback address –  aims to facilitate seamless integration with custom VPN and proxy solutions, particularly those like Cisco ANYConnect. When activated, you can specify a custom loopback address, tipically within the 127.0.0.0/8 range. This features is applicable for Linux Clients with version 2509.x.x.x or later
@@ -300,7 +300,7 @@ In this section, you can manage the following settings:
 
     :::warning
     Disabling setting ‘Peer Certiﬁcate Validation’ will not impact Endpoint Protector
-    functionality. It should only be disabled when an alternative network traﬃc inspection product,
+    functionality. It should only be disabled when an alternative network traffic inspection product,
     such as a Secure Web Gateway Solution, is validating website certiﬁcates.
     :::
 
@@ -318,8 +318,8 @@ In this section, you can manage the following settings:
     :::
 
 
-- DPI Bypass Traﬃc – this setting automatically bypasses non-inspectable traﬃc and sends an event
-  for allowed traﬃc.
+- DPI Bypass Traffic – this setting automatically bypasses non-inspectable traffic and sends an event
+  for allowed traffic.
 
     Possible Bypass reasons:
 
@@ -339,7 +339,7 @@ In this section, you can manage the following settings:
             - ‘Certiﬁcate Pinning’ also falls under this category.
 
         :::note
-        See [Using Wireshark for Network Traﬃc Analysis](#using-wireshark-for-network-traﬃc-analysis).
+        See [Using Wireshark for Network Traffic Analysis](#using-wireshark-for-network-traffic-analysis).
         :::
 
 
@@ -414,19 +414,19 @@ In this section, you can manage the following settings:
   if available. Applicable only to EPP Clients for Linux with version 2.4.5.x or higher.
 
 
-![If enabled, network and browser traﬃc can be inspected for content](dpiconfiguration.png)
+![If enabled, network and browser traffic can be inspected for content](dpiconfiguration.png)
 
-### Intercept VPN Traﬃc
+### Intercept VPN Traffic
 
 :::note
-For more additional DPI Intercept VPN traffic, check: [Deep Packet Inspection Intercept VPN Traﬃc](/docs/endpointprotector/admin/cap_module/deeppacket.md#deep-packet-inspection-diagrams).
+For more additional DPI Intercept VPN traffic, check: [Deep Packet Inspection Intercept VPN Traffic](/docs/endpointprotector/admin/cap_module/deeppacket.md#deep-packet-inspection-diagrams).
 :::
 
-If you enable this setting, the Endpoint Protector Client will intercept VPN traﬃc on macOS using
+If you enable this setting, the Endpoint Protector Client will intercept VPN traffic on macOS using
 the network extension framework.
 
 :::note
-The Intercept VPN Traﬃc feature is only available when the Deep Packet Inspection feature
+The Intercept VPN Traffic feature is only available when the Deep Packet Inspection feature
 is enabled. It will only work for macOS from version 11.0 onwards and only if Deep Packet Inspection
 Certiﬁcate is also added.
 :::
@@ -436,7 +436,7 @@ To use this feature, follow these steps:
 
 **Step 1 –** Enable **Deep Packet Inspection**.
 
-**Step 2 –** Enable **Intercept VPN Traﬃc**.
+**Step 2 –** Enable **Intercept VPN Traffic**.
 
 **Step 3 –** Select an option for **Endpoint Protector behavior when network extension is disabled**
 
@@ -529,16 +529,16 @@ To reset the bypass state and clear associated records, administrators can initi
 process. Temporarily disabling and subsequently re-enabling the bypass DPI setting on the Endpoint
 Protector server achieves this reset.
 
-### Using Wireshark for Network Traﬃc Analysis
+### Using Wireshark for Network Traffic Analysis
 
 Before a "DPI certiﬁcate rejected" event, Wireshark can be instrumental in diagnosing network
-traﬃc. The presence of a "TLS alert" error in Wireshark signals the impending event.
+traffic. The presence of a "TLS alert" error in Wireshark signals the impending event.
 
 ## File Tracing and Shadowing
 
 In this section, you can manage the following settings:
 
-- File Tracing – use this feature to monitor data traﬃc between protected endpoints and
+- File Tracing – use this feature to monitor data traffic between protected endpoints and
   removable devices, internal eSATA HDDs, and Network Shares. It also shows other actions that took
   place, such as ﬁles named, deleted, accessed, modiﬁed, etc.
 
@@ -563,7 +563,7 @@ File Shadowing can't be used without File Tracing.
 :::
 
 
-File Shadowing can be delayed due to network traﬃc and Endpoint Protector Settings for different
+File Shadowing can be delayed due to network traffic and Endpoint Protector Settings for different
 computers or ﬁle sizes. Shadowed ﬁles are usually available after a few minutes. Shadow creation may
 not occur for newly created ﬁles; however, the system diligently tracks ﬁle activities and generates
 File Shadowing for subsequent ﬁle events as expected.
