@@ -295,8 +295,8 @@ In this section, you can manage the following settings:
   validation of the websites that are accessed by the user when DPI is active
 
     - Ignore Expiration Date - when checked, Endpoint Protector ignores expired certificates and permits traffic.
-    - Ignore Trust - when checked, Endpoint Protector does not validate certificates against the Root Certificate.
-    - Ignore Hostname - when checked, Endpoint Protector does not validate the certificate hostname property against the server hostname.
+    - Ignore Trust - when checked, Endpoint Protector doesn't validate certificates against the Root Certificate.
+    - Ignore Hostname - when checked, Endpoint Protector doesn't validate the certificate hostname property against the server hostname.
 
     :::warning
     Disabling setting ‘Peer Certificate Validation’ will not impact Endpoint Protector
@@ -518,16 +518,13 @@ Endpoint Protector employs a nuanced approach to handle bypassed domains and app
 
 #### Memory and Disk Persistence
 
-Bypassed website information is stored in both memory and on disk. This dual storage ensures that
-the list of skipped websites is readily accessible for efficient future reference. By persisting this
-information, the frequency of log generation can be controlled to avoid unnecessary strain on
-resources.
+Endpoint Protector stores bypassed website information in both memory and on disk. This dual storage ensures that
+the list of skipped websites is readily accessible for efficient future reference. Persisting this
+information controls the frequency of log generation and avoids unnecessary strain on resources.
 
 #### Clearing Bypass State
 
-To reset the bypass state and clear associated records, administrators can initiate a simple
-process. Temporarily disabling and subsequently re-enabling the bypass DPI setting on the Endpoint
-Protector server achieves this reset.
+To reset the bypass state and clear associated records, administrators can temporarily disable and re-enable the bypass DPI setting on the Endpoint Protector server.
 
 ### Using Wireshark for Network Traffic Analysis
 
@@ -548,8 +545,7 @@ In this section, you can manage the following settings:
 - File Shadowing – this feature extends the information provided by File Tracing, creating exact
   copies of files accessed by users.
 
-The creation of shadow copies can be triggered by the following events: file copy, file write, and file
-read. Events such as file deleted, file renamed, etc. don't trigger the function. You can enable File
+The following events trigger shadow copy creation: file copy, file write, and file read. Events such as file deleted, file renamed, etc. don't trigger the function. You can enable File
 Shadowing on all supported Removable Devices:
 
 - eSATA HDDs or Time Machines
@@ -610,10 +606,10 @@ For your deployment, activate File Shadowing for not more than 15% of your total
 
 ![File Tracing and Shadowing Settings](filetracingshadowing.webp)
 
-- Metadata Scanning - if you disable this setting, metadata will not be scanned for PDFs, ZIPs, and
+- Metadata Scanning - if you disable this setting, Endpoint Protector will not scan metadata for PDFs, ZIPs, and
   Office Files DOCX, XLSX, PPTX, DOC, XLX, PPT).
 
-- Advanced Printer and MTP Scanning – enables a feature in Endpoint Protector by which a small DLL is loaded into certain Windows applications when they are launched. That small DLL enables Endpoint Protector to monitor printing and files copied to MTP devices, by hooking Windows API functions responsible with printing and copying files to MTP devices.
+- Advanced Printer and MTP Scanning – enables a feature that loads a small DLL into certain Windows applications when they launch. That small DLL enables Endpoint Protector to monitor printing and files copied to MTP devices, by hooking Windows API functions responsible with printing and copying files to MTP devices.
 For example, when a user opens Microsoft Word, an Endpoint Protector DLL is loaded into Microsoft Word's address space. If the user wants to print a document, that DLL is called, and Endpoint Protector can scan the printed document content. If the printed content contains sensitive data Endpoint Protector can block the print operation.
 
 
@@ -668,8 +664,7 @@ This setting is available only for Windows.
 
 :::warning
 After enabling the Block Print from Browsers setting and applying the configuration on
-the Client to enforce it, be aware that open browser tabs will need to be reloaded, or a
-browser restart will be required for the changes to take effect.
+the Client to enforce it, be aware that you will need to reload open browser tabs or restart the browser for the changes to take effect.
 :::
 
 
