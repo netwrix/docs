@@ -13,11 +13,9 @@ some ﬁles (e.g. Word, Excel, PDFs, etc.) can contain conﬁdential information
 Credit Cards, etc.), other ﬁles are highly unlikely to contain such data (e.g. .dll, .exe, .mp3,
 .avi, etc.).
 
-The purpose of the MIME Type Allowlists is to eliminate the use of resources to inspect redundant
-and unnecessary ﬁles for content, as well as reducing false positives due to information detected in
-the metadata of ﬁles where the risk of data loss is extremely low.
+MIME Type Allowlists prevent Endpoint Protector from inspecting redundant files for content and reduce false positives from file metadata where the risk of data loss is low.
 
-Example: As songs or video ﬁles cannot contain lists of credit card numbers, there is no need to
+Example: As songs or video ﬁles can't contain lists of credit card numbers, there is no need to
 inspect them using content ﬁlters.
 
 MIME Type Allowlists are available for both the Content Aware Protection and eDiscovery modules and
@@ -25,10 +23,7 @@ apply to Custom Content, Predeﬁned Content, and Regular Expressions.
 
 :::note
 By default, graphic ﬁles, media ﬁles, some password-protected archive ﬁles and some system
-ﬁles are automatically deﬁned within the MIME Type Allowlists. While this can be changed, we
-recommend only doing so after gaining a deeper understanding of the type of data transferred used,
-or stored by the users in your system, and the subsequent logs increase in the Endpoint Protector
-Server.
+ﬁles are automatically deﬁned within the MIME Type Allowlists. While this can be changed, only do so after gaining a deeper understanding of the type of data transferred, used, or stored by the users in your system, and the subsequent logs increase in the Endpoint Protector Server.
 :::
 
 
@@ -47,7 +42,7 @@ To create a new allowlist, under the list of available allowlists, click **Add**
 and **description** and then select a ﬁle from the list or upload a new ﬁle you can use in multiple
 allowlists.
 
-Once the allowlist is created, it will be displayed on the Allowed File list and will be available
+After the allowlist is created, it will be displayed on the Allowed File list and will be available
 when creating or editing a Content Aware Protection or eDiscovery policy.
 
 ![New Allowed Files Allowlists ](newallowedfilesallowlists.webp)
@@ -83,10 +78,10 @@ a desktop folder on Windows use the pattern "?:\Users\\\*\Desktop\".
 
 ![File Location Allowlists](filelocationallowlists.webp)
 
-You can add a new allowlist or edit, delete or export from the Actions column.
+You can add a new allowlist or edit, delete, or export from the Actions column.
 
 From this section, you can view and add ﬁle location denylists and from the Actions column, you can
-edit, delete or export an existing denylist.
+edit, delete, or export an existing denylist.
 
 To create a new denylist, under the list of available denylists, click **Add**, provide a **name**
 and **description**, add the items separated by a new line, comma, or semicolon and then select the
@@ -96,17 +91,17 @@ File Location Allowlists will not apply to groups of users, only to groups of co
 Location Allowlists will only apply for the selected computer groups after 15 minutes.
 
 :::note
-By clicking the "Select All Computers" checkbox, ONLY computers existing in the Computers list at that moment can be checked and selected all at once. This DOES NOT imply that all the computers that will ever exist in the EPP Server Computer's list will be added to the "Allowlist - File Location" exception.
+By clicking the "Select All Computers" checkbox, ONLY computers existing in the Computers list at that moment can be checked and selected all at once. This doesn't imply that all the computers that will ever exist in the EPP Server Computer's list will be added to the "Allowlist - File Location" exception.
 
 This is because adding new entities by default to the File Location's Allowlist exceptions without the Administrator knowledge could prove troublesome. When a new computer is added to the EPP Server, the "Select All Computers" checkbox becomes unchecked again but the computers that were checked before remain selected. By pressing that checkbox again, the newly added/unselected computers are added to the selectoion.
 
-The same behavior also applies for Groups. The Administrator has the option to create custom Groups based on the existing computers/users already existing in the EPP Server's DB. When a new computer is added, it is not allocated to a group by default because the group in which the computer will be placed might not be the one that the Administrator intended for it to be in and it needs to be added manually.
+The same behavior also applies for Groups. The Administrator has the option to create custom Groups based on the existing computers/users already existing in the EPP Server's DB. When a new computer is added, it isn't allocated to a group by default because the group in which the computer will be placed might not be the one that the Administrator intended for it to be in and it needs to be added manually.
 :::
 
 ![New File Location Allowlists ](filelocationnewdenylists.webp)
 
 :::note
-**Known limitation:** Location-based denylists and allowlists are not reliable when Deep Packet Inspection (DPI) is active. DPI operates at the network level and identifies files by matching transferred data hashes against files on the local machine. If the same file exists in multiple locations, Endpoint Protector cannot determine which copy was transferred, and location-based rules cannot be applied.
+**Known limitation:** Location-based denylists and allowlists aren't reliable when Deep Packet Inspection (DPI) is active. DPI operates at the network level and identifies files by matching transferred data hashes against files on the local machine. If the same file exists in multiple locations, Endpoint Protector can't determine which copy was transferred, and location-based rules can't be applied.
 :::
 
 ## Network Share
@@ -131,7 +126,7 @@ inside a Content Aware Protection Policy.
 
 ![Network Share Allowlists ](networkshareallowlists.webp)
 
-You can add a new allowlist or edit, delete or export from the Actions column.
+You can add a new allowlist or edit, delete, or export from the Actions column.
 
 To create a new allowlist, under the list of available allowlists, click **Add**, provide a **name**
 and **description**, add server name or IP address to deﬁne a network share path separated by a new
@@ -141,7 +136,7 @@ Network Share Allowlists will not apply to groups of users, only to groups of co
 Share Allowlists will only apply for the selected computer groups after 15 minutes.
 
 :::warning
-Do not type the network share path with backslashes (\\) 192.168.0.1\public\users\test;
+Don't enter the network share path with backslashes (\\) 192.168.0.1\public\users\test;
 ﬁleserver\documents\example
 :::
 
@@ -160,13 +155,13 @@ E-mail Domain Allowlists are available only for the Content Aware Protection mod
 
 ![E-mail Domain Allowlists](emaildomainallowlists.webp)
 
-You can add a new allowlist or edit, delete or export from the Actions column.
+You can add a new allowlist or edit, delete, or export from the Actions column.
 
 To create a new allowlist, under the list of available allowlists, click **Add**, provide a **name**
 and **description** and then type or paste items at least three characters separated by a new line,
 comma, or semicolon. You can import content using the sample ﬁle provided on the form.
 
-Once the allowlist is created, it will be displayed on the E-mail Domain list and will be available
+After the allowlist is created, it will be displayed on the E-mail Domain list and will be available
 when creating or editing a Content Aware Protection policy.
 
 ![New E-mail Domain Allowlists ](newemaildomainallowlists.webp)
@@ -188,7 +183,7 @@ information uploads.
 
 ![Deep Packet Inspection Allowlists ](dpiallowlists.webp)
 
-You can add a new allowlist or edit, delete or export from the Actions column.
+You can add a new allowlist or edit, delete, or export from the Actions column.
 
 You can create or import up to 100 lists of dictionaries, each dictionary comprising up to 50000 web
 domains.
@@ -206,7 +201,7 @@ or semicolon. You can import content using the sample ﬁle provided on the form
 Example: example.endpointprotector, \*example.com, \*example\*, https://website.com, etc.
 
 :::warning
-“?” cannot be used to replace a character.
+“?” can't be used to replace a character.
 :::
 
 
@@ -219,7 +214,7 @@ Due to Gmail usage, take the following into consideration:
   drop option
 - You need to allow **doc.google.com** to add images in the email body
 
-Once the allowlist is created, it will be displayed on the Deep Packet Inspection list and will be
+After the allowlist is created, it will be displayed on the Deep Packet Inspection list and will be
 available when creating or editing a Content Aware Protection policy.
 
 ![New Deep Packet Inspection Allowlists](newdpiallowlists.webp)

@@ -10,7 +10,7 @@ The Deep Packet Inspection functionality provides a certain degree of granularit
 ﬁne-tune the content inspection functionality to the network speciﬁcations.
 
 :::note
-Enabling Deep Packet Inspection could impact upload speed of inspected ﬁles. Use our
+Enabling Deep Packet Inspection could impact upload speed of inspected ﬁles. Use the
 network extension instead of Packet Filter as a possible workaround (i.e., turn Intercept VPN Traﬃc
 on).
 :::
@@ -31,7 +31,7 @@ the Endpoint Protector, a restart of your computer is required.
 :::
 
 :::note
-**Known limitation:** Location-based denylists and allowlists are not reliable when Deep Packet Inspection (DPI) is active. DPI operates at the network level and identifies files by matching transferred data hashes against files on the local machine. If the same file exists in multiple locations, Endpoint Protector cannot determine which copy was transferred, and location-based rules cannot be applied.
+**Known limitation:** Location-based denylists and allowlists aren't reliable when Deep Packet Inspection (DPI) is active. DPI operates at the network level and identifies files by matching transferred data hashes against files on the local machine. If the same file exists in multiple locations, Endpoint Protector can't determine which copy was transferred, and location-based rules can't be applied.
 :::
 
 ## Stealthy DPI vs. regular DPI
@@ -45,7 +45,7 @@ How do Stealthy DPI and Redirect-Based DPI compare in terms of EPP Client functi
 
 -   Stealthy DPI and Redirect-Based DPI are functionally similar and require no changes to Endpoint Protector policies. Users can select the mode that best suits their infrastructure preferences. Both methods use the same resources and generate identical events.
 -   However, they differ in handling bypasses for failed connections:
-    -   Regular DPI (Redirect-Based): Offers more flexibility by allowing a feature to bypass connections that cannot be intercepted, with the proxy rebuilding the network connection to the destination after a failure.
+    -   Regular DPI (Redirect-Based): Offers more flexibility by allowing a feature to bypass connections that can't be intercepted, with the proxy rebuilding the network connection to the destination after a failure.
     -   Stealthy DPI: Achieves a similar bypass result using the improved "DPI Bypass" feature available in Endpoint Protector version 5.9.3.0.
 
 When should you choose Stealthy DPI over Regular DPI (Redirect-Based)?
@@ -55,7 +55,7 @@ When should you choose Stealthy DPI over Regular DPI (Redirect-Based)?
 
 ## Deep Packet Inspection Diagrams
 
-The diagrams below illustrate the high-level logic for Deep Packet Inspection (DPI) across different operating systems. Additionally, they illustrate the distinctions between Stealthy and Regular DPI modes of operation for macOS.
+The following diagrams illustrate the high-level logic for Deep Packet Inspection (DPI) across different operating systems. Additionally, they illustrate the distinctions between Stealthy and Regular DPI modes of operation for macOS.
 
 ### For Windows
 - regular DPI
@@ -81,10 +81,10 @@ Certiﬁcate Authority to intercept network traﬃc by Deep Packet Inspection an
 Protector Server communication.
 
 Endpoint Protector offers the option to automatically refresh Certiﬁcates with various scheduling
-alternatives. After a new Certiﬁcate is generated, it will be sent in to the Client and replace the
+alternatives. After Endpoint Protector generates a new Certificate, it sends the Certificate to the Client to replace the
 existing one.
 
-To conﬁgure Deep Packet Inspection - Auto-refresh Certiﬁcate feature, please reference the following
+To conﬁgure Deep Packet Inspection - Auto-refresh Certiﬁcate feature, reference the following
 steps:
 
 **Step 1 –** Go to **System Conﬁguration** > **System Settings**> **Deep Packet Inspection -
@@ -92,15 +92,14 @@ Auto-refresh Certiﬁcate** and chose **Automatically** option
 
 **Step 2 –** Choose one of available scheduling options and **Save** changes.
 
-**Step 3 –** New Certiﬁcate will be distributed automatically to the endpoints after it is
-generated.
+**Step 3 –** Endpoint Protector automatically distributes the new Certificate to the endpoints after generating it.
 
 **Step 4 –** Reboot the endpoint to enforce a new Certiﬁcate.
 
 
 ![Conﬁguring the Deep Packet Inspection - Auto-refresh Certiﬁcate feature](autorefreshcert.webp)
 
-EPP DPI module generates a certificate only at the first time a user visits a website and caches that certificate for subsequent visits to the same website. The certificate cache deletion interval can be configured in EPP Server versions 5.8.0.0 and above (please refer to this UM section [System Settings - DPI certificate](/docs/endpointprotector/admin/systemconfiguration/systemsettings) . Alternatively, the certificate cache is cleared either upon computer reboot or when the DPI feature is disabled.
+EPP DPI module generates a certificate only at the first time a user visits a website and caches that certificate for subsequent visits to the same website. The certificate cache deletion interval can be configured in EPP Server versions 5.8.0.0 and above (refer to this UM section [System Settings - DPI certificate](/docs/endpointprotector/admin/systemconfiguration/systemsettings) . Alternatively, the certificate cache is cleared either upon computer reboot or when the DPI feature is disabled.
 
 Endpoint Protector employs the same criteria as the Chromium open-source web browser for verifying website certificates, referencing the corporate CA certificates found in the system certificate stores. You can assess this validation by using diagnostic websites like https://badssl.com/.
 
@@ -155,7 +154,7 @@ select **Always Trust**.
 **Step 6 –** **Save** the changes.
 
 :::warning
-Please be aware that regenerating the Server Certificate Stack will require macOS and
+be aware that regenerating the Server Certificate Stack will require macOS and
 Linux users to manually add the new certificate into the keychain. On Windows, the certificate will
 be updated automatically.
 :::
@@ -235,7 +234,7 @@ Protection Policy.
 ![Deep Packet Inspection Ports and Settings](dpiports.webp)
 
 :::note
-The "Local" flag setting will only function with "Stealthy DPI" on Windows and "Intercept VPN Traffic" on macOS. It is not operational on Linux.
+The "Local" flag setting will only function with "Stealthy DPI" on Windows and "Intercept VPN Traffic" on macOS. It isn't operational on Linux.
 :::
 
 In this section you can also manage the following settings:
@@ -271,7 +270,7 @@ In this section you can also manage the following settings:
 
 - Block unsupported protocols in New Outlook – Enable this setting to block unsupported protocols and the send email function in New Outlook without affecting legacy Outlook. Recommended for those not using the EPP add-in to limit the app as an egress channel. Keep off if EPP add-in is used.
 
-- Monitor webmail – Enable this setting to scan the subject and body for Gmail, Outlook and Yahoo on
+- Monitor webmail – Enable this setting to scan the subject and body for Gmail, Outlook, and Yahoo on
   the browser. Attachments will be monitored regardless of this setting.
 
     :::warning
@@ -284,7 +283,7 @@ In this section you can also manage the following settings:
 
     You can also use the Monitor webmail feature to detect source code for web browsers emails in
     subject and body. For email applications, source code can be detected in subject, and for the
-    body, source code cannot be enabled for detection without breaking other functionality.
+    body, source code can't be enabled for detection without breaking other functionality.
 
     :::note
     Always use Monitor webmail with Extended Source Code Detection setting enabled.
@@ -294,7 +293,7 @@ In this section you can also manage the following settings:
 - Allowed domains for Google Business accounts - You can use this setting to allow the users to
   access speciﬁc Google domains for professional usage when Deep Packet Inspection is enabled.
 
-    To specify the allowed business accounts, type an entry on the Add allowed Business accounts and
+    To specify the allowed business accounts, enter a value in the Add allowed Business accounts field and
     then click **+**
 
     The new entry will be displayed on the Allowed Business accounts list, from where you can delete
@@ -302,19 +301,19 @@ In this section you can also manage the following settings:
 
     :::warning
     Endpoint Protector will block access to all Google domains (business and private)
-    used for Gmail, Google Drive, Google Docs, etc. that are not listed here. If the list remains
+    used for Gmail, Google Drive, Google Docs, etc. that aren't listed here. If the list remains
     empty, no Google domain will be blocked.
     :::
 
 
 ![Allowed domains for Google Business accounts](alloweddomainsgoogle.webp)
     :::warning
-    "To include consumer Google Accounts, such as those ending in @gmail.com and @googlemail.com, enter "consumer_accounts" in the list instead of "gmail.com". This change is necessary, and the current issue is being closed as "won't fix". We may consider opening a documentation task to link the relevant Google document to our user manual. For more information, refer to: [Google Support](https://support.google.com/a/answer/1668854?hl=en).
+    To include consumer Google Accounts, such as those ending in @gmail.com and @googlemail.com, enter "consumer_accounts" in the list instead of "gmail.com". See [Google Support documentation on this topic](https://support.google.com/a/answer/1668854?hl=en).
     :::
 
 ### Monitor Webmail JSON Format Parser Usage
 
-To use this setting, you need to be familiarized with JSON concepts and structures.
+To use this setting, you must be familiar with JSON concepts and structures.
 
 Go over the following Syntax examples considering the values used are the default values from the
 Endpoint Protector Server UI:
@@ -353,7 +352,7 @@ Endpoint Protector Server UI:
 
 :::info
 It is advised, that due to recent changes applied by cloud providers, to not
-apply any changes in the JSON parser, unless Monitor Webmail is not working
+apply any changes in the JSON parser, unless Monitor Webmail isn't working
 :::
 
 

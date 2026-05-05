@@ -8,7 +8,7 @@ sidebar_position: 50
 
 Starting from Endpoint Protector Clients version 5.9.4.3, New Outlook can be fully managed as a Content Aware Protection Exit Point via the Microsoft 365 Web Add-in. Unlike COM add-ins for classic Outlook, which are installed directly on individual endpoints, Microsoft Web Add-ins need to be deployed centrally using the Microsoft 365 Admin Center or manually within the user account in Outlook application.
 
-Microsoft 365 Web Add-ins are associated with user accounts rather than computers or devices. Once an add-in is deployed to a user account, every device that the user employs to access that account will have the add-in available. This means it cannot be restricted to just one device, such as the user's Mac computer only.
+Microsoft 365 Web Add-ins are associated with user accounts rather than computers or devices. Once an add-in is deployed to a user account, every device that the user employs to access that account will have the add-in available. This means it can't be restricted to just one device, such as the user's Mac computer only.
 
 For detailed instructions and more information, refer to the official documentation available through Microsoft and Endpoint Protector resources:
 - [Microsoft resources](https://learn.microsoft.com/en-us/office/dev/add-ins/overview/office-add-ins)
@@ -19,12 +19,12 @@ Both Netwrix and Microsoft recommend deploying the add-in in phases, starting wi
 :::
 
 :::warning Important
-It is important to configure the policy correctly so that the add-in is deployed selectively, rather than to all users—especially those who do not require it. The JavaScript variable configuration also allows the add-in to remain inactive or non-obtrusive unless the EPP agent is running on a device. This ensures that the add-in does not block operations unnecessarily if the agent is not active. Refer to the dedicated subchapter [Default Behavior of New Outlook Add-in and EPP Client](#default-behavior-of-new-outlook-add-in-and-epp-client).
+Configure the policy correctly so that the add-in is deployed selectively, rather than to all users—especially those who don't require it. The JavaScript variable configuration also allows the add-in to remain inactive or non-obtrusive unless the EPP agent is running on a device. This ensures that the add-in doesn't block operations unnecessarily if the agent isn't active. Refer to the dedicated subchapter [Default Behavior of New Outlook Add-in and EPP Client](#default-behavior-of-new-outlook-add-in-and-epp-client).
 :::
 
 When you install an add-in in Outlook.com, it will also appear in other versions of Outlook. For example, if you install an add-in in Outlook.com, you will see it when you open the desktop version of Outlook.
 
-The EPP Client will also enforce the Content Aware Policies on those accounts when accessed through Outlook on the Web, with no additional configuration needed. Note that the presence of the add-in is not displayed in the Outlook interface.
+The EPP Client will also enforce the Content Aware Policies on those accounts when accessed through Outlook on the Web, with no additional configuration needed. The Outlook interface doesn't display the add-in.
 
 To obtain the Outlook add-in manifest and validator files, visit the latest announcements on the <a href="https://community.netwrix.com/t/version-5-9-4-3-released-now-with-hotfix-1/15972" target="_blank" title="Netwrix community portal" alt="Netwrix community portal">Netwrix community portal</a> or contact <a href="https://www.netwrix.com/support.html" target="_blank" title="Netwrix Support" alt="Netwrix Support">Netwrix Global Services &amp; Support</a>.
 
@@ -43,11 +43,11 @@ The Endpoint Protector add-in requires certain files to be hosted by the custome
 
    - **mainpage.html** - Needs to be hosted; this is the entry point of the add-in.
    - **validator.js** - The script that performs the necessary functions for the add-in.
-   - **main_64.png, main_128.png** - These icons are also required by Microsoft; otherwise, the add-in cannot be validated by Microsoft admin center.
+   - **main_64.png, main_128.png** - These icons are also required by Microsoft; otherwise, the add-in can't be validated by Microsoft admin center.
 
    Hosting the above ensures that the add-in can communicate appropriately with the EPP system to enable its functionalities.
 
-   You are responsible for hosting these files. Host them at a publicly reachable URL. The URL of each hosted file must match the value configured in the manifest. Refer to the following chapters for details.
+   You are responsible for hosting these files. Host them at a publicly reachable URL. The URL of each hosted file must match the value configured in the manifest. The following chapters describe each requirement.
 
    :::warning Important
    Any downtime affecting the hosted files (mainpage.html, validator.js) will prevent users with the add-in assigned from sending any emails.
@@ -102,7 +102,7 @@ This is required by the Microsoft add-in validator. Replace the placeholder URLs
     <AppDomain>www.example.com</AppDomain>
     ```
 
-    Make sure that every domain in the URLs of the hosted files is added to the `<AppDomains>` list:
+    ensure that you add every domain in the URLs of the hosted files to the `<AppDomains>` list:
     - If the same domain is used for all URLs, it only needs to be added once.
     - Extend the existing list by adding your domain at the end between the `<AppDomain></AppDomain>` tags, and before the closing `</AppDomains>` tag.
 
@@ -139,7 +139,7 @@ Ensure these URLs are correctly hosted on your server and accessible via the int
 
 The default behavior of the New Outlook add-in and EPP Client will align with the EPP Content Aware Protection (CAP) policy defined for email and Outlook actions. This includes capabilities such as reporting, blocking, and other egress channel controls when specific conditions are met.
 
-However, the add-in has a predefined, hardcoded behavior when it cannot communicate with the EPP Client, assuming the EPP Client is not present. In this scenario, it is configured to allow sending messages. For customers who wish to enforce a restrictive policy that blocks the option to send out emails, this option is available.
+However, the add-in has a predefined, hardcoded behavior when it can't communicate with the EPP Client, assuming the EPP Client isn't present. In this scenario, it is configured to allow sending messages. For customers who want to enforce a restrictive policy that blocks the option to send out emails, this option is available.
 
 **To change that:**
 
@@ -174,9 +174,9 @@ This prompt supports only one language locale.
 
 ## Manual Deployment Method
 
-The manual deployment method is not recommended because it must be repeated for each user account. This method is intended for pilot phases, troubleshooting, or feature PoCs.
+The manual deployment method isn't recommended because it must be repeated for each user account. This method is intended for pilot phases, troubleshooting, or feature PoCs.
 
-This option is only available if your organization allows users to add custom add-ins.
+This option is only available if your organization lets users add custom add-ins.
 
 Refer to official Microsoft KB article: [Use add-ins in Outlook](https://support.microsoft.com/en-us/office/use-add-ins-in-outlook-1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8)
 
@@ -194,7 +194,7 @@ Refer to official Microsoft KB article: [Use add-ins in Outlook](https://support
 
 ## Central Deployment Method
 
-The central deployment method provides administrators with the capability to deploy the EPP New Outlook add-in in phases across global user populations. This approach helps minimize administrative effort and ensures a smooth implementation process. For detailed guidance, refer to the official Microsoft Knowledge Base (KB): [Office add-ins](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/office-addins?view=o365-worldwide).
+The central deployment method allows administrators to deploy the EPP New Outlook add-in in phases across global user populations. This approach helps minimize administrative effort and ensures a smooth implementation process. For detailed guidance, refer to the official Microsoft Knowledge Base (KB): [Office add-ins](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/office-addins?view=o365-worldwide).
 
 **To deploy the add-in through the Microsoft Admin Center (https://admin.microsoft.com/):**
 
@@ -205,9 +205,9 @@ The central deployment method provides administrators with the capability to dep
  ![Choose Upload custom apps](msaddincustomappselect.webp "Choose Upload custom apps")
 5. Under **Upload Apps to Deploy**, choose the **App type** of **Office Add-in**, choose **Upload manifest file (.xml) from device**, and click **Choose File**.\
  ![Upload Apps to Deploy](msaddincentraladdinfileselect.webp "Upload Apps to Deploy")
-6. After selecting the file and clicking **Next**, under **Add users**, choose **Specific users/groups** and use the search box to populate the search box with the desired groups.\
+6. After selecting the file and clicking **Next**, under **Add users**, choose **Specific users/groups** and use the search box to populate the search box with the groups you want.\
   ![Specific users/groups selector](msaddinspecifictargetuser.webp "Specific users/groups selector")
-7. When the desired list appears under **To be added**, click **Next** and then click **Accept Permissions**. Review the needed permissions and click **Accept**.
+7. When the list appears under **To be added**, click **Next** and then click **Accept Permissions**. Review the needed permissions and click **Accept**.
 8. Ensure to keep **Deployment Method** as **Fixed (Default)**.
 9. Click **Next** and then **Finish deployment**.
 10. After making changes, allow some time for them to propagate. According to Microsoft, this process can take anywhere from a few minutes to up to 24 hours.

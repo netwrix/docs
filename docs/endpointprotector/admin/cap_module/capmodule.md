@@ -18,7 +18,7 @@ accidental or intentional ﬁle transfers of sensitive company data, such as:
   databases, etc.
 
 :::warning
-Endpoint Protector cannot scan encrypted ﬁles or applications that use encryption to
+Endpoint Protector can't scan encrypted ﬁles or applications that use encryption to
 secure communication.
 :::
 
@@ -43,7 +43,7 @@ points:
 ## Content Aware Protection Activation
 
 Content Aware Protection comes as the second level of data protection available in Endpoint
-Protector. The module is displayed but requires a simple activation by pressing the Enable button.
+Protector. The module is displayed but requires activation by pressing the Enable button.
 If not previously provided, the contact details of the Main Administrator will be required.
 
 

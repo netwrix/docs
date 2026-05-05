@@ -19,13 +19,13 @@ This new functionality enables businesses to maintain precise control over infor
 
 **Benefits**
 
-By implementing these controls, organizations can ensure that sensitive information is protected during interactions with AI applications, thereby reducing the risk of data leaks and maintaining compliance with internal and external data security policies.
+By implementing these controls, organizations can protect sensitive information during interactions with AI applications, thereby reducing the risk of data leaks and maintaining compliance with internal and external data security policies.
 
 ## AI Interaction Visibility and Control in Netwrix Endpoint Protector: Data Loss Prevention for LLMs
 
 Endpoint Protector extends Data Loss Prevention to the most widely used AI technologies — including ChatGPT, Microsoft Copilot, Google Gemini, DeepSeek, X Grok, Claude, Meta AI, and Perplexity — ensuring secure and compliant use across your organization. Coverage includes the embedded Microsoft Copilot add-in in Windows 11, New Outlook, New Teams, and Edge. Endpoint Protector also provides visibility and control over ChatGPT and Copilot native clients.
 
-## How to configure Netwrix EPP to be able to monitor AI prompt transactions?
+## Configure Netwrix EPP to Monitor AI Prompt Transactions
 
 To monitor or control AI prompts with EPP, you need to meet the following prerequisites:
 
@@ -34,7 +34,7 @@ To monitor or control AI prompts with EPP, you need to meet the following prereq
 -   CAP license with the Content Aware Protection (CAP) module enabled
 -   DPI (Deep Packet Inspection) module enabled
 
-If all of the above requirements are fulfilled, most of the setup is already complete. This is because any existing web browser monitor/control policy will automatically apply to user interactions with supported AI chat applications, enforcing your policy definitions when violations occur.
+If you meet all of the preceding requirements, most of the setup is already complete. This is because any existing web browser monitor/control policy will automatically apply to user interactions with supported AI chat applications, enforcing your policy definitions when violations occur.
 
 ## Use Case Example
 
@@ -46,7 +46,7 @@ To configure a CAP policy for this purpose:
 
 ![Define base CAP policy settings](capai_usecase01_01.webp)
 
-2.  Define CAP application exit points by selecting the web browsers you want to monitor or control. Make sure the relevant browsers are checked so the policy will be applied when users interact with AI chat applications through these browsers.
+2.  Define CAP application exit points by selecting the web browsers you want to monitor or control. ensure the relevant browsers are checked so the policy applies when users interact with AI chat applications through these browsers.
 
 ![Define CAP application exit points](capai_usecase01_02.webp)
 
@@ -55,13 +55,13 @@ To configure a CAP policy for this purpose:
 ![Define CAP Policy Denylists](capai_usecase01_03.webp)
 
 4.  Save the policy and assign it to your selected endpoints.
-5.  This will ensure that the policy is enforced on the devices where you want to monitor or control AI prompt transactions.
+5.  Endpoint Protector enforces the policy on the devices where you want to monitor or control AI prompt transactions.
 
-**You can check above example at the video below:**
+**Watch the following video to see this example:**
 
 <video controls width="100%">
   <source src="/videos/endpointprotector/capaiusecase1.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
+  Your browser doesn't support the video tag.
 </video>
 
 **Description of video**:
@@ -80,7 +80,7 @@ To configure a CAP policy for this purpose:
 
 ![Define base CAP policy settings](capai_usecase01_01.webp)
 
-2.  Define CAP application exit points by selecting the web browsers you want to monitor or control. Make sure the relevant browsers are checked so the policy will be applied when users interact with AI chat applications through these browsers.
+2.  Define CAP application exit points by selecting the web browsers you want to monitor or control. ensure the relevant browsers are checked so the policy applies when users interact with AI chat applications through these browsers.
 
 :::tip
 For Copilot plugins in New Outlook, Teams, or Windows 11 25H2, also verify the in-app definitions for Outlook and Teams when configuring policies.
@@ -98,13 +98,13 @@ You can use contextual rules to create complex pattern definitions for more accu
 ![Define CAP Policy contextual parameters](capai_usecase02_02.webp)
 
 4.  Save the policy and assign it to your selected endpoints.
-5.  This will ensure that the policy is enforced on the devices where you want to monitor or control AI prompt transactions.
+5.  Endpoint Protector enforces the policy on the devices where you want to monitor or control AI prompt transactions.
 
-**You can check above example at the video below:**
+**Watch the following video to see this example:**
 
 <video controls width="100%">
   <source src="/videos/endpointprotector/capaiusecase2.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
+  Your browser doesn't support the video tag.
 </video>
 
 **Description of video:**
