@@ -1,0 +1,10 @@
+{
+  "label": "Resource Based Policy",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "resourcebasedpolicy"
+  }
+}
