@@ -18,7 +18,8 @@ keywords:
 products:
   - auditor
 sidebar_label: MSP License Out of Compliance in Proxy Environments
-tags: []
+tags:
+  - kb
 title: "MSP License Out of Compliance in Proxy Environments"
 knowledge_article_id: KB_463417
 ---
@@ -27,21 +28,23 @@ knowledge_article_id: KB_463417
 
 ## Symptom
 
-Netwrix Auditor displays the following message at startup:
+One or more of the following issues may be present in your environment:
 
-```text
-Your Netwrix Auditor license is currently out of compliance.
-For information, see the Licenses page in Settings.
-```
+- Netwrix Auditor displays the following message at startup:
 
-The System Health log shows **Event ID 2222** with an error similar to:
+  ```text
+  Your Netwrix Auditor license is currently out of compliance.
+  For information, see the Licenses page in Settings.
+  ```
 
-```text
-Unable to connect to the remote server. Check your firewall settings
-to allow access to https://license.nwxcorp.com
-```
+- The System Health log shows **Event ID 2222** with an error similar to:
 
-Trace logs show connection failures to `54.89.181.210:443` (or other Netwrix-owned IPs).
+  ```text
+  Unable to connect to the remote server. Check your firewall settings
+  to allow access to https://license.nwxcorp.com
+  ```
+
+- Trace logs show connection failures to `54.89.181.210:443` (or other Netwrix-owned IPs).
 
 ## Cause
 
@@ -50,17 +53,15 @@ Trace logs show connection failures to `54.89.181.210:443` (or other Netwrix-own
 Two additional factors can also block license sync:
 
 - The `<CustomInstanceIdentificator>` tag in **MSP.xml** is empty (no company name specified).
-- The registry value `MSPStartDelayerEnabled` is not set to `false`, which delays **Call.Home.exe** execution.
+- The `MSPStartDelayerEnabled` registry value, when not equal to `false`, delays **Call.Home.exe** execution.
 
 ## Resolution
 
-### Step 1 — Create a proxy configuration file for Call.Home.exe
+### Step 1 — Create a Proxy Configuration File for Call.Home.exe
 
-In the Netwrix Auditor installation folder under `\Netwrix Auditor\Administrative Console\`, create a file named:
+- In the Auditor installation folder under `\Netwrix Auditor\Administrative Console\`, create a file named **`Netwrix.CallHome.config`**.
 
-**`Netwrix.CallHome.config`**
-
-Add the following content, replacing the proxy address with your environment's proxy:
+- Add the following content, replacing the proxy address with your environment's proxy:
 
 ```xml
 <configuration>
@@ -73,7 +74,7 @@ Add the following content, replacing the proxy address with your environment's p
 </configuration>
 ```
 
-### Step 2 — Add the company name to MSP.xml
+### Step 2 — Add the Company Name to MSP.xml
 
 Open `\Netwrix Auditor\Administrative Console\MSP.xml` and add your organization name between the `<CustomInstanceIdentificator>` tags:
 
@@ -81,7 +82,7 @@ Open `\Netwrix Auditor\Administrative Console\MSP.xml` and add your organization
 <CustomInstanceIdentificator>YourCompanyName</CustomInstanceIdentificator>
 ```
 
-### Step 3 — Set the registry value to allow immediate execution
+### Step 3 — Set the Registry Value to Allow Immediate Execution
 
 In the registry, navigate to:
 
@@ -94,13 +95,13 @@ Create or update the String Value:
 - **Name:** `MSPStartDelayerEnabled`
 - **Value:** `false`
 
-### Step 4 — Run Call.Home.exe manually to force a sync
+### Step 4 — Run Call.Home.exe Manually to Force a Sync
 
-From the Administrative Console folder, run **Call.Home.exe** manually. Confirm that license usage updates correctly in both the MSP portal and the Netwrix Auditor console.
+From the Administrative Console folder, run **Call.Home.exe** manually. Confirm that license usage updates correctly in both the MSP portal and the Auditor console.
 
 ## Proxy Allowlist
 
-Ensure the following URLs and IPs are whitelisted on your proxy server (port 443):
+Add the following URLs and IPs to your proxy server's allowlist (port 443):
 
 | URL / IP | Notes |
 |---|---|

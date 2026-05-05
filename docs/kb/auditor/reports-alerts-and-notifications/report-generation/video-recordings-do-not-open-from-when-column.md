@@ -16,35 +16,40 @@ keywords:
 products:
   - auditor
 sidebar_label: Video Recordings Do Not Open from the When Field
-tags: []
-title: "Video Recordings Do Not Open from the When Column in User Activity Reports"
+tags:
+  - kb
+title: "Video Recordings Do Not Open from the When Field in User Activity Reports"
 knowledge_article_id: kA0Qk000000XXXXKAA
 ---
 
 # Video Recordings Do Not Open from the When Field
 
-## Question
+## Symptom
 
-Why does the **When** field in User Activity reports not open the related video recording?
+In User Activity reports, clicking the link in the **When** field does not open the related video recording. Reports with video should allow users to click the link in the **When** field to open the recorded video.
 
-## Answer
+## Cause
 
-According to the product documentation, reports with video should allow users to click the link in the **When** field to open the recorded video.
+SQL Server Reporting Services (SSRS) may suppress the hyperlink used by the report. In the investigated case, the `SupportedHyperlinkSchemes` setting did not include the `file` protocol. As a result, SSRS did not render the `file://` hyperlink, and the **When** field did not function as a clickable video link.
 
-If this does not happen, SQL Server Reporting Services (SSRS) may be suppressing the hyperlink used by the report. In the investigated case, the `SupportedHyperlinkSchemes` setting did not include the `file` protocol. As a result, the `file://` hyperlink was not rendered, and the **When** field did not function as a clickable video link.
+## Resolution
 
-To resolve this issue, add `file` to the list of supported hyperlink schemes in SSRS so that the value changes from `http,https,mailto` to `http,https,mailto,file`.
+1. Add `file` to the list of supported hyperlink schemes in SSRS so that the value changes from `http,https,mailto` to `http,https,mailto,file`.
 
-This setting can be updated in SQL Server Management Studio by connecting to the Reporting Services instance, opening the report server properties, navigating to the **Advanced** tab, and editing the **SupportedHyperlinkSchemes** value.
+   - **Using SQL Server Management Studio:**
+     - Connect to the Reporting Services instance.
+     - Open the report server properties.
+     - Navigate to the **Advanced** tab.
+     - Edit the **SupportedHyperlinkSchemes** value to `http,https,mailto,file`.
 
-It can also be updated directly in the `ReportServer` database with the following command:
+   - **Using a direct database command:** Replace `localhost\SQLEXPRESS` with the actual SQL Server instance that hosts the `ReportServer` database, then run:
 
-```powershell
-Invoke-Sqlcmd -ServerInstance "localhost\SQLEXPRESS" -Database "ReportServer" -Query "UPDATE ConfigurationInfo SET Value = 'http,https,mailto,file' WHERE Name = 'SupportedHyperlinkSchemes'"
-```
+     ```powershell
+     Invoke-Sqlcmd -ServerInstance "localhost\SQLEXPRESS" -Database "ReportServer" -Query "UPDATE ConfigurationInfo SET Value = 'http,https,mailto,file' WHERE Name = 'SupportedHyperlinkSchemes'"
+     ```
 
-If necessary, restart the SSRS service after making the change. Replace `localhost\SQLEXPRESS` with the actual SQL Server instance that hosts the `ReportServer` database.
+2. If necessary, restart the SSRS service after making the change.
 
-After the change is applied, open the affected User Activity report again and verify that the **When** field is clickable.
+3. Open the affected User Activity report again and verify that the **When** field is clickable.
 
-Modern web browsers may still block `file://` links when reports are opened through the SSRS web portal over HTTP or HTTPS. In such cases, the link may still not work in the browser because of browser security restrictions, but it should work when the report is opened through the Netwrix Auditor console.
+> **NOTE:** Modern web browsers may still block `file://` links when you open reports through the SSRS web portal over HTTP or HTTPS. In such cases, the link may still not work in the browser because of browser security restrictions, but it should work when you open the report through the Netwrix Auditor console.
