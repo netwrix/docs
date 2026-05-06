@@ -16,7 +16,7 @@ The server requires a license key provided by Netwrix Identity Manager (formerly
 
 The server is a .NET application.
 
-Running the server requires installing the [Windows hosting bundle for ASP**.NET** Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+Running the server requires installing the [Windows hosting bundle for ASP**.NET** Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
 
 ## Hosting
 

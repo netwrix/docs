@@ -17,9 +17,7 @@ No matter whether the machine is virtual or physical, running a Identity Manager
 :::
 ## Software
 
-[.NET version 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0/runtime) or higher must be installed.
-
-**Microsoft Excel** must be installed.
+[.NET version 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0/runtime) or higher must be installed.
 
 A **web browser** must be accessible to test the future installation. Identity Manager's UI supports all popular browsers:
 
